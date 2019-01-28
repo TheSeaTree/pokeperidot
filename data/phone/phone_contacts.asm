@@ -10,4 +10,3 @@ ENDM
 
 PhoneContacts:
 ; entries correspond to PHONE_* constants
-	phone TRAINER_NONE, PHONECONTACT_BUENA, GOLDENROD_DEPT_STORE_ROOF, ANYTIME, BuenaPhoneScript1, ANYTIME, BuenaPhoneScript2

@@ -1,7 +1,7 @@
 Phone_GenericCall_Male:
 	special RandomPhoneMon
 	farscall PhoneScript_Random2
-	; 0, .Bragging
+	ifequal 0, .Bragging
 	farscall PhoneScript_Generic_Male
 	farjump Phone_FoundAMon_Male
 
@@ -11,7 +11,7 @@ Phone_GenericCall_Male:
 Phone_GenericCall_Female:
 	special RandomPhoneMon
 	farscall PhoneScript_Random2
-	; 0, .Bragging
+	ifequal 0, .Bragging
 	farscall PhoneScript_Generic_Female
 	farjump Phone_FoundAMon_Female
 
@@ -29,7 +29,7 @@ Phone_BraggingCall_Female:
 Phone_FoundAMon_Male:
 	special RandomPhoneWildMon
 	farscall PhoneScript_Random2
-	; 0, .GotAway
+	ifequal 0, .GotAway
 	farscall Phone_WhoDefeatedMon_Male
 	farjump PhoneScript_HangupText_Male
 
@@ -39,7 +39,7 @@ Phone_FoundAMon_Male:
 Phone_FoundAMon_Female:
 	special RandomPhoneWildMon
 	farscall PhoneScript_Random2
-	; 0, .GotAway
+	ifequal 0, .GotAway
 	farscall Phone_WhoDefeatedMon_Female
 	farjump PhoneScript_HangupText_Female
 
@@ -56,23 +56,6 @@ Phone_GotAwayCall_Female:
 
 Phone_WhosBragging_Male:
 	checkcode VAR_CALLERID
-	; PHONE_SCHOOLBOY_JACK, .Jack
-	; PHONE_COOLTRAINERM_GAVEN, .Gaven
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_YOUNGSTER_JOEY, .Joey
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_FISHER_RALPH, .Ralph
-	; PHONE_HIKER_ANTHONY, .Anthony
-	; PHONE_CAMPER_TODD, .Todd
-	; PHONE_BUG_CATCHER_ARNIE, .Arnie
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_SCHOOLBOY_CHAD, .Chad
-	; PHONE_POKEFANM_DEREK, .Derek
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_POKEMANIAC_BRENT, .Brent
-	; PHONE_BIRDKEEPER_VANCE, .Vance
-	; PHONE_FISHER_WILTON, .Wilton
-	; PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext JackIntelligenceText
@@ -161,14 +144,6 @@ Phone_WhosBragging_Male:
 
 Phone_WhosBragging_Female:
 	checkcode VAR_CALLERID
-	; PHONE_POKEFAN_BEVERLY, .Beverly
-	; PHONE_COOLTRAINERF_BETH, .Beth
-	; PHONE_COOLTRAINERF_REENA, .Reena
-	; PHONE_PICNICKER_LIZ, .Liz
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
-	; PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x174688
@@ -212,23 +187,6 @@ Phone_WhosBragging_Female:
 
 Phone_WhoDefeatedMon_Male:
 	checkcode VAR_CALLERID
-	; PHONE_SCHOOLBOY_JACK, .Jack
-	; PHONE_COOLTRAINERM_GAVEN, .Gaven
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_YOUNGSTER_JOEY, .Joey
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_FISHER_RALPH, .Ralph
-	; PHONE_HIKER_ANTHONY, .Anthony
-	; PHONE_CAMPER_TODD, .Todd
-	; PHONE_BUG_CATCHER_ARNIE, .Arnie
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_SCHOOLBOY_CHAD, .Chad
-	; PHONE_POKEFANM_DEREK, .Derek
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_POKEMANIAC_BRENT, .Brent
-	; PHONE_BIRDKEEPER_VANCE, .Vance
-	; PHONE_FISHER_WILTON, .Wilton
-	; PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext JackDefeatedMonText
@@ -317,14 +275,6 @@ Phone_WhoDefeatedMon_Male:
 
 Phone_WhoDefeatedMon_Female:
 	checkcode VAR_CALLERID
-	; PHONE_POKEFAN_BEVERLY, .Beverly
-	; PHONE_COOLTRAINERF_BETH, .Beth
-	; PHONE_COOLTRAINERF_REENA, .Reena
-	; PHONE_PICNICKER_LIZ, .Liz
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
-	; PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1746c3
@@ -368,23 +318,6 @@ Phone_WhoDefeatedMon_Female:
 
 Phone_WhoLostAMon_Male:
 	checkcode VAR_CALLERID
-	; PHONE_SCHOOLBOY_JACK, .Jack
-	; PHONE_COOLTRAINERM_GAVEN, .Gaven
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_YOUNGSTER_JOEY, .Joey
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_FISHER_RALPH, .Ralph
-	; PHONE_HIKER_ANTHONY, .Anthony
-	; PHONE_CAMPER_TODD, .Todd
-	; PHONE_BUG_CATCHER_ARNIE, .Arnie
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_SCHOOLBOY_CHAD, .Chad
-	; PHONE_POKEFANM_DEREK, .Derek
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_POKEMANIAC_BRENT, .Brent
-	; PHONE_BIRDKEEPER_VANCE, .Vance
-	; PHONE_FISHER_WILTON, .Wilton
-	; PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x174165
@@ -473,14 +406,6 @@ Phone_WhoLostAMon_Male:
 
 Phone_WhoLostAMon_Female:
 	checkcode VAR_CALLERID
-	; PHONE_POKEFAN_BEVERLY, .Beverly
-	; PHONE_COOLTRAINERF_BETH, .Beth
-	; PHONE_COOLTRAINERF_REENA, .Reena
-	; PHONE_PICNICKER_LIZ, .Liz
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
-	; PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x174734
@@ -532,23 +457,6 @@ PhoneScript_WantsToBattle_Female:
 
 PhoneScript_RematchText_Male:
 	checkcode VAR_CALLERID
-	; PHONE_SCHOOLBOY_JACK, .Jack
-	; PHONE_SAILOR_HUEY, .Huey
-	; PHONE_COOLTRAINERM_GAVEN, .Gaven
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_YOUNGSTER_JOEY, .Joey
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_FISHER_RALPH, .Ralph
-	; PHONE_HIKER_ANTHONY, .Anthony
-	; PHONE_CAMPER_TODD, .Todd
-	; PHONE_BUG_CATCHER_ARNIE, .Arnie
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_SCHOOLBOY_CHAD, .Chad
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_POKEMANIAC_BRENT, .Brent
-	; PHONE_BIRDKEEPER_VANCE, .Vance
-	; PHONE_FISHER_WILTON, .Wilton
-	; PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1741e1
@@ -637,13 +545,6 @@ PhoneScript_RematchText_Male:
 
 PhoneScript_RematchText_Female:
 	checkcode VAR_CALLERID
-	; PHONE_COOLTRAINERF_BETH, .Beth
-	; PHONE_COOLTRAINERF_REENA, .Reena
-	; PHONE_PICNICKER_LIZ, .Liz
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
-	; PHONE_PICNICKER_ERIN, .Erin
 
 .Beth:
 	farwritetext UnknownText_0x174e4e
@@ -690,26 +591,6 @@ TiffanyItsAwful:
 
 PhoneScript_HangupText_Male:
 	checkcode VAR_CALLERID
-	; PHONE_SCHOOLBOY_JACK, .Jack
-	; PHONE_SAILOR_HUEY, .Huey
-	; PHONE_COOLTRAINERM_GAVEN, .Gaven
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_YOUNGSTER_JOEY, .Joey
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_FISHER_RALPH, .Ralph
-	; PHONE_HIKER_ANTHONY, .Anthony
-	; PHONE_CAMPER_TODD, .Todd
-	; PHONE_JUGGLER_IRWIN, .Irwin
-	; PHONE_BUG_CATCHER_ARNIE, .Arnie
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_SCHOOLBOY_CHAD, .Chad
-	; PHONE_POKEFANM_DEREK, .Derek
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_POKEMANIAC_BRENT, .Brent
-	; PHONE_BIRDKEEPER_VANCE, .Vance
-	; PHONE_FISHER_WILTON, .Wilton
-	; PHONE_BLACKBELT_KENJI, .Kenji
-	; PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x174251
@@ -793,14 +674,6 @@ PhoneScript_HangupText_Male:
 
 PhoneScript_HangupText_Female:
 	checkcode VAR_CALLERID
-	; PHONE_POKEFAN_BEVERLY, .Beverly
-	; PHONE_COOLTRAINERF_BETH, .Beth
-	; PHONE_COOLTRAINERF_REENA, .Reena
-	; PHONE_PICNICKER_LIZ, .Liz
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
-	; PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1747ac
@@ -856,8 +729,6 @@ PhoneScriptRareWildMon:
 
 PhoneScript_BugCatchingContest:
 	checkcode VAR_CALLERID
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_POKEFANM_DEREK, .Derek
 
 .Wade:
 	farwritetext WadeBugCatchingContestText
@@ -896,12 +767,6 @@ UnknownScript_0xa05de:
 
 PhoneScript_FoundItem_Male:
 	checkcode VAR_CALLERID
-	; PHONE_BIRDKEEPER_JOSE, .Jose
-	; PHONE_BUG_CATCHER_WADE, .Wade
-	; PHONE_SCHOOLBOY_ALAN, .Alan
-	; PHONE_POKEFANM_DEREK, .Derek
-	; PHONE_FISHER_TULLY, .Tully
-	; PHONE_FISHER_WILTON, .Wilton
 
 .Jose:
 	farwritetext JoseFoundSomethingText
@@ -929,10 +794,6 @@ PhoneScript_FoundItem_Male:
 
 PhoneScript_FoundItem_Female:
 	checkcode VAR_CALLERID
-	; PHONE_POKEFAN_BEVERLY, .Beverly
-	; PHONE_PICNICKER_GINA, .Gina
-	; PHONE_LASS_DANA, .Dana
-	; PHONE_PICNICKER_TIFFANY, .Tiffany
 
 .Beverly:
 	farwritetext BeverlyFoundNuggetText

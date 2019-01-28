@@ -18,6 +18,7 @@
 *.sav
 *.rtc
 *.cht
+*.png
 
 # rgbds extras
 *.map
