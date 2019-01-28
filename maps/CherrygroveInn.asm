@@ -59,9 +59,9 @@ CherrygroveInnNoMonsText:
 	
 	para "Please do return"
 	line "if you get a"
-	cont "#MON. I would be"
-	cont "happy to take care"
-	cont "of it."
+	cont "#MON. I would"
+	cont "be happy to take"
+	cont "care of it."
 	done
 	
 CherrygroveInnNurseText:
