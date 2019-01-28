@@ -9,7 +9,6 @@ SECTION "Evolutions and Attacks", ROMX
 ;    * db EVOLVE_ITEM, used item, species
 ;    * db EVOLVE_TRADE, held item (or -1 for none), species
 ;    * db EVOLVE_HAPPINESS, TR_* constant (ANYTIME, MORNDAY, NITE), species
-;    * db EVOLVE_STAT, level, ATK_*_DEF constant (LT, GT, EQ), species
 ;    * db EVOLVE_HOLD, item, time of day, species
 ; - db 0 ; no more evolutions
 ; - Learnset (in increasing level order):
@@ -23,7 +22,6 @@ EvoTypeSizes::
 	db 2 ; EVOLVE_ITEM
 	db 2 ; EVOLVE_TRADE
 	db 2 ; EVOLVE_HAPPINESS
-	db 3 ; EVOLVE_STAT
 	db 3 ; EVOLVE_HOLD
 
 

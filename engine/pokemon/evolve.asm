@@ -90,34 +90,6 @@ EvolveAfterBattle_MasterLoop:
 	cp EVOLVE_HOLD
 	jp z, .hold
 
-; EVOLVE_STAT
-	ld a, [wTempMonLevel]
-	cp [hl]
-	jp c, .dont_evolve_1
-
-	call IsMonHoldingEverstone
-	jp z, .dont_evolve_1
-
-	push hl
-	ld de, wTempMonAttack
-	ld hl, wTempMonDefense
-	ld c, 2
-	call CompareBytes
-	ld a, ATK_EQ_DEF
-	jr z, .got_tyrogue_evo
-	ld a, ATK_LT_DEF
-	jr c, .got_tyrogue_evo
-	ld a, ATK_GT_DEF
-.got_tyrogue_evo
-	pop hl
-
-	inc hl
-	cp [hl]
-	jp nz, .dont_evolve_2
-
-	inc hl
-	jp .proceed
-
 .happiness
 	ld a, [wTempMonHappiness]
 	cp HAPPINESS_TO_EVOLVE
@@ -649,19 +621,7 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	cp EVOLVE_STAT ; This evolution type has the extra parameter of stat comparison.
-	jr nz, .not_tyrogue
 	inc hl
-
-.not_tyrogue
-	inc hl
-	ld a, [wCurPartySpecies]
-	cp [hl]
-	jr z, .found_preevo
-	inc hl
-	ld a, [hl]
-	and a
-	jr nz, .loop2
 
 .no_evolve
 	inc c

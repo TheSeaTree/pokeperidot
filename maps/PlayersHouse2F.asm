@@ -117,11 +117,16 @@ PlayersHouseBookshelfScript:
 ;	giveitem TM_SHADOW_BALL
 ;	giveitem TM_DRAGONBREATH
 ;	giveitem TM_TELEPORT
+;	giveitem TM_PSYCH_UP
+;	giveitem TM_SLUDGE_BOMB
 ;	giveitem TM_ROCK_SMASH
 ;	giveitem TM_FLY
+;	giveitem TM_ROCK_SLIDE
+;	giveitem TM_EARTHQUAKE
 ;	giveitem TM_IRON_HEAD
 ;	giveitem TM_CUT
 ;	giveitem TM_THIEF
+;	giveitem TM_WHIRLPOOL
 ;	giveitem TM_SWAGGER
 ;	giveitem TM_NASTY_PLOT
 ;	giveitem TM_SUBSTITUTE
@@ -136,11 +141,7 @@ PlayersHouseBookshelfScript:
 ;	giveitem TM_GIGA_DRAIN
 ;	giveitem TM_DRAGON_DANCE
 ;	giveitem TM_SWORDS_DANCE
-;	giveitem TM_ROCK_SLIDE
-;	giveitem TM_EARTHQUAKE
 ;	giveitem TM_BULLDOZE
-;	giveitem TM_AQUA_JET
-;	giveitem TM_SLUDGE_BOMB
 ;	giveitem TM_PLAY_ROUGH
 ;	giveitem HM_SURF
 ;	loadwildmon SEARION, 10
