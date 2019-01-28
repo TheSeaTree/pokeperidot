@@ -148,32 +148,33 @@ BuenaPrize:
 
 .Text_AskWhichPrize:
 	; Which prize would you like?
-	text_jump UnknownText_0x1c589f
-	db "@"
+	text_far UnknownText_0x1c589f
+	text_end
 
 .Text_IsThatRight:
 	; ? Is that right?
-	text_jump UnknownText_0x1c58bc
-	db "@"
+	text_far UnknownText_0x1c58bc
+	text_end
 
-.Text_HereYouGo:	; Here you go!
-	text_jump UnknownText_0x1c58d1
-	db "@"
+.Text_HereYouGo:
+	; Here you go!
+	text_far UnknownText_0x1c58d1
+	text_end
 
 .Text_NotEnoughPoints:
 	; You don't have enough points.
-	text_jump UnknownText_0x1c58e0
-	db "@"
+	text_far UnknownText_0x1c58e0
+	text_end
 
 .Text_NoRoom:
 	; You have no room for it.
-	text_jump UnknownText_0x1c58ff
-	db "@"
+	text_far UnknownText_0x1c58ff
+	text_end
 
 .Text_PleaseComeBackAgain:
 	; Oh. Please come back again!
-	text_jump UnknownText_0x1c591a
-	db "@"
+	text_far UnknownText_0x1c591a
+	text_end
 
 Buena_DisplayBlueCardBalance:
 	ld hl, BlueCardBalanceMenuHeader

@@ -20,19 +20,23 @@ noise: MACRO
 ENDM
 
 ; MusicCommands indexes (see audio/engine.asm)
-	enum_start $d8
+	enum_start $d0, +8
+FIRST_MUSIC_CMD EQU __enum__
 
-	enum notetype_cmd ; $d8
+	enum octave_cmd ; $d0
 octave: MACRO
-	db notetype_cmd - (\1)
+	db octave_cmd | 8 - (\1)
 ENDM
 
+__enumdir__ = +1
+
+	enum notetype_cmd ; $d8
 notetype: MACRO
 	db notetype_cmd
 	db \1 ; note_length
-	if _NARG >= 2
+if _NARG >= 2
 	db \2 ; intensity
-	endc
+endc
 ENDM
 
 	enum pitchoffset_cmd ; $d9
@@ -68,11 +72,11 @@ ENDM
 	enum sound_duty_cmd ; $de
 sound_duty: MACRO
 	db sound_duty_cmd
-	if _NARG == 4
+if _NARG == 4
 	db \1 | (\2 << 2) | (\3 << 4) | (\4 << 6) ; duty sequence
-	else
-	db \1 ; one-byte duty value for legacy support
-	endc
+else
+	db \1 ; LEGACY: Support for one-byte duty value
+endc
 ENDM
 
 	enum togglesfx_cmd ; $df

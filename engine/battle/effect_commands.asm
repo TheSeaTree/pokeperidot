@@ -15,7 +15,7 @@ DoEnemyTurn:
 	jr z, DoTurn
 
 	ld a, [wBattleAction]
-	cp BATTLEACTION_E
+	cp BATTLEACTION_STRUGGLE
 	jr z, DoTurn
 	cp BATTLEACTION_SWITCH1
 	ret nc
@@ -1873,6 +1873,8 @@ BattleCommand_EffectChance:
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 
+	; BUG: 1/256 chance to fail even for a 100% effect chance,
+	; since carry is not set if BattleRandom == [hl] == 255
 	call BattleRandom
 	cp [hl]
 	pop hl
@@ -4512,8 +4514,8 @@ BattleCommand_StatUpMessage:
 	jp BattleTextBox
 
 .stat
-	text_jump UnknownText_0x1c0cc6
-	start_asm
+	text_far UnknownText_0x1c0cc6
+	text_asm
 	ld hl, .up
 	ld a, [wLoweredStat]
 	and $f0
@@ -4522,12 +4524,12 @@ BattleCommand_StatUpMessage:
 	ret
 
 .wayup
-	text_jump UnknownText_0x1c0cd0
-	db "@"
+	text_far UnknownText_0x1c0cd0
+	text_end
 
 .up
-	text_jump UnknownText_0x1c0ce0
-	db "@"
+	text_far UnknownText_0x1c0ce0
+	text_end
 
 BattleCommand_StatDownMessage:
 	ld a, [wFailedMessage]
@@ -4542,8 +4544,8 @@ BattleCommand_StatDownMessage:
 	jp BattleTextBox
 
 .stat
-	text_jump UnknownText_0x1c0ceb
-	start_asm
+	text_far UnknownText_0x1c0ceb
+	text_asm
 	ld hl, .fell
 	ld a, [wLoweredStat]
 	and $f0
@@ -4552,11 +4554,12 @@ BattleCommand_StatDownMessage:
 	ret
 
 .sharplyfell
-	text_jump UnknownText_0x1c0cf5
-	db "@"
+	text_far UnknownText_0x1c0cf5
+	text_end
+
 .fell
-	text_jump UnknownText_0x1c0d06
-	db "@"
+	text_far UnknownText_0x1c0d06
+	text_end
 
 TryLowerStat:
 ; Lower stat c from stat struct hl (buffer de).
@@ -4823,7 +4826,7 @@ CalcPlayerStats:
 	ld bc, wBattleMonAttack
 
 	ld a, 5
-	call CalcStats
+	call CalcBattleStats
 
 	ld hl, BadgeStatBoosts
 	call CallBattleCore
@@ -4844,7 +4847,7 @@ CalcEnemyStats:
 	ld bc, wEnemyMonAttack
 
 	ld a, 5
-	call CalcStats
+	call CalcBattleStats
 
 	call BattleCommand_SwitchTurn
 
@@ -4856,7 +4859,7 @@ CalcEnemyStats:
 
 	jp BattleCommand_SwitchTurn
 
-CalcStats:
+CalcBattleStats:
 .loop
 	push af
 	ld a, [hli]
@@ -5606,8 +5609,8 @@ BattleCommand_Charge:
 	jp EndMoveEffect
 
 .UsedText:
-	text_jump UnknownText_0x1c0d0e ; "<USER>"
-	start_asm
+	text_far UnknownText_0x1c0d0e ; "<USER>"
+	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	cp RAZOR_WIND
@@ -5638,33 +5641,33 @@ BattleCommand_Charge:
 
 .RazorWind:
 ; 'made a whirlwind!'
-	text_jump UnknownText_0x1c0d12
-	db "@"
+	text_far UnknownText_0x1c0d12
+	text_end
 
 .Solarbeam:
 ; 'took in sunlight!'
-	text_jump UnknownText_0x1c0d26
-	db "@"
+	text_far UnknownText_0x1c0d26
+	text_end
 
 .SkullBash:
 ; 'lowered its head!'
-	text_jump UnknownText_0x1c0d3a
-	db "@"
+	text_far UnknownText_0x1c0d3a
+	text_end
 
 .SkyAttack:
 ; 'is glowing!'
-	text_jump UnknownText_0x1c0d4e
-	db "@"
+	text_far UnknownText_0x1c0d4e
+	text_end
 
 .Fly:
 ; 'flew up high!'
-	text_jump UnknownText_0x1c0d5c
-	db "@"
+	text_far UnknownText_0x1c0d5c
+	text_end
 
 .Dig:
 ; 'dug a hole!'
-	text_jump UnknownText_0x1c0d6c
-	db "@"
+	text_far UnknownText_0x1c0d6c
+	text_end
 
 BattleCommand3c:
 ; unused
@@ -6172,21 +6175,6 @@ BattleCommand_Heal:
 	jp StdBattleTextBox
 
 INCLUDE "engine/battle/move_effects/transform.asm"
-
-BattleSideCopy:
-; Copy bc bytes from hl to de if it's the player's turn.
-; Copy bc bytes from de to hl if it's the enemy's turn.
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .copy
-
-; Swap hl and de
-	push hl
-	ld h, d
-	ld l, e
-	pop de
-.copy
-	jp CopyBytes
 
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
@@ -6808,8 +6796,8 @@ BattleCommand_ClearText:
 	ld hl, .text
 	jp BattleTextBox
 
-.text
-	db "@"
+.text:
+	text_end
 
 SkipToBattleCommand:
 ; Skip over commands until reaching command b.

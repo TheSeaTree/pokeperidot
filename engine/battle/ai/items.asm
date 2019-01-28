@@ -708,8 +708,8 @@ AI_Switch:
 	ret
 
 TextJump_EnemyWithdrew:
-	text_jump Text_EnemyWithdrew
-	db "@"
+	text_far Text_EnemyWithdrew
+	text_end
 
 Function384d5: ; This appears to be unused
 	call AIUsedItemSound
@@ -828,5 +828,5 @@ PrintText_UsedItemOn:
 	jp PrintText
 
 TextJump_EnemyUsedOn:
-	text_jump Text_EnemyUsedOn
-	db "@"
+	text_far Text_EnemyUsedOn
+	text_end

@@ -1,3 +1,5 @@
+RANDY_OT_ID EQU 01001
+
 TryAddMonToParty:
 ; Check if to copy wild mon or generate a new one
 	; Whose is it?
@@ -1194,8 +1196,8 @@ GiveEgg::
 	ld hl, wPartyMon1Happiness
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
-	ld a, [wMonStatusFlags]
-	bit 1, a
+	ld a, [wDebugFlags]
+	bit DEBUG_FIELD_F, a
 	ld a, 1
 	jr nz, .got_init_happiness
 	ld a, [wBaseEggSteps]
@@ -1724,9 +1726,9 @@ GivePoke::
 	ld hl, wPartyMon1ID
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
-	ld a, HIGH(01001)
+	ld a, HIGH(RANDY_OT_ID)
 	ld [hli], a
-	ld [hl], LOW(01001)
+	ld [hl], LOW(RANDY_OT_ID)
 	pop bc
 	farcall SetGiftPartyMonCaughtData
 	jr .skip_nickname
@@ -1800,8 +1802,8 @@ GivePoke::
 
 TextJump_WasSentToBillsPC:
 	; was sent to BILL's PC.
-	text_jump Text_WasSentToBillsPC
-	db "@"
+	text_far Text_WasSentToBillsPC
+	text_end
 
 InitNickname:
 	push de
@@ -1809,7 +1811,7 @@ InitNickname:
 	call DisableSpriteUpdates
 	pop de
 	push de
-	ld b, $0
+	ld b, NAME_MON
 	farcall NamingScreen
 	pop hl
 	ld de, wStringBuffer1

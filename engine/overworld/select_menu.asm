@@ -12,8 +12,8 @@ SelectMenu::
 	jp CloseText
 
 ItemMayBeRegisteredText:
-	text_jump UnknownText_0x1c1cf3
-	db "@"
+	text_far UnknownText_0x1c1cf3
+	text_end
 
 CheckRegisteredItem:
 	ld a, [wWhichRegisteredItem]

@@ -2,7 +2,8 @@
 
 These are known bugs and glitches in the original Pokémon Crystal game: code that clearly does not work as intended, or that only works in limited circumstances but has the possibility to fail or crash.
 
-Fixes are written in the `diff` format. If you're familiar with git, this should look farmiliar:
+Fixes are written in the `diff` format. If you've used Git before, this should look familiar:
+
 ```diff
  this is some code
 -delete red - lines
@@ -15,6 +16,7 @@ Fixes are written in the `diff` format. If you're familiar with git, this should
 - [Thick Club and Light Ball can make (Special) Attack wrap around above 1024](#thick-club-and-light-ball-can-make-special-attack-wrap-around-above-1024)
 - [Metal Powder can increase damage taken with boosted (Special) Defense](#metal-powder-can-increase-damage-taken-with-boosted-special-defense)
 - [Reflect and Light Screen can make (Special) Defense wrap around above 1024](#reflect-and-light-screen-can-make-special-defense-wrap-around-above-1024)
+- [Moves with a 100% secondary effect chance will not trigger it in 1/256 uses](#moves-with-a-100-secondary-effect-chance-will-not-trigger-it-in-1256-uses)
 - [Belly Drum sharply boosts Attack even with under 50% HP](#belly-drum-sharply-boosts-attack-even-with-under-50-hp)
 - [Confusion damage is affected by type-boosting items and Explosion/Self-Destruct doubling](#confusion-damage-is-affected-by-type-boosting-items-and-explosionself-destruct-doubling)
 - [Moves that lower Defense can do so after breaking a Substitute](#moves-that-lower-defense-can-do-so-after-breaking-a-substitute)
@@ -39,6 +41,7 @@ Fixes are written in the `diff` format. If you're familiar with git, this should
 - [Love Ball boosts catch rate for the wrong gender](#love-ball-boosts-catch-rate-for-the-wrong-gender)
 - [Fast Ball only boosts catch rate for three Pokémon](#fast-ball-only-boosts-catch-rate-for-three-pokémon)
 - [Dragon Scale, not Dragon Fang, boosts Dragon-type moves](#dragon-scale-not-dragon-fang-boosts-dragon-type-moves)
+- [Clair can give TM24 Dragonbreath twice](#clair-can-give-tm24-dragonbreath-twice)
 - [Daisy's grooming doesn't always increase happiness](#daisys-grooming-doesnt-always-increase-happiness)
 - [Magikarp in Lake of Rage are shorter, not longer](#magikarp-in-lake-of-rage-are-shorter-not-longer)
 - [Magikarp length limits have a unit conversion error](#magikarp-length-limits-have-a-unit-conversion-error)
@@ -88,8 +91,7 @@ Fixes are written in the `diff` format. If you're familiar with git, this should
 +	ret nc
 +
 +.cap
-+	ld h, HIGH(MAX_STAT_VALUE)
-+	ld l, LOW(MAX_STAT_VALUE)
++	ld hl, MAX_STAT_VALUE
  	ret
 ```
 
@@ -126,8 +128,7 @@ Fixes are written in the `diff` format. If you're familiar with git, this should
 +	ret nc
 +
 +.cap
-+	ld b, HIGH(MAX_STAT_VALUE)
-+	ld c, LOW(MAX_STAT_VALUE)
++	ld bc, MAX_STAT_VALUE
  	ret
 ```
 
@@ -160,6 +161,35 @@ This bug existed for all battles in Gold and Silver, and was only fixed for sing
 (This fix also affects Thick Club, Light Ball, and Metal Powder, as described above, but their specific fixes in the above bugs allow more accurate damage calculations.)
 
 
+## Moves with a 100% secondary effect chance will not trigger it in 1/256 uses
+
+*Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
+
+([Video](https://www.youtube.com/watch?v=mHkyO5T5wZU&t=206))
+
+**Fix:** Edit `BattleCommand_EffectChance` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
+
+```diff
+-	; BUG: 1/256 chance to fail even for a 100% effect chance,
+-	; since carry is not set if BattleRandom == [hl] == 255
++	ld a, [hl]
++	cp 100 percent
++	jr z, .ok
+ 	call BattleRandom
+ 	cp [hl]
+-	pop hl
+-	ret c
++	jr c, .ok
+
+ .failed
+ 	ld a, 1
+ 	ld [wEffectFailed], a
+ 	and a
++.ok
++	pop hl
+ 	ret
+```
+
 ## Belly Drum sharply boosts Attack even with under 50% HP
 
 *Fixing this bug will break compatibility with standard Pokémon Crystal for link battles.*
@@ -183,7 +213,9 @@ This bug existed for all battles in Gold and Silver, and was only fixed for sing
  	callfar CheckUserHasEnoughHP
  	jr nc, .failed
 +
++	push bc
 +	call BattleCommand_AttackUp2
++	pop bc
 +	ld a, [wAttackMissed]
 +	and a
 +	jr nz, .failed
@@ -249,7 +281,7 @@ This bug affects Acid, Iron Tail, and Rock Smash.
  	ld a, [hli]
  	or [hl]
 -	ret z
-+	jp z, .failed
++	jr z, .failed
 ```
 
 Add this to the end of each file:
@@ -480,31 +512,32 @@ This bug existed for all battles in Gold and Silver, and was only fixed for sing
 
 ## AI makes a false assumption about `CheckTypeMatchup`
 
-In [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm).
+**Fix:** Edit `BattleCheckTypeMatchup` in [engine/battle/effect_commands.asm](/engine/battle/effect_commands.asm):
 
-```asm
-BattleCheckTypeMatchup:
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, CheckTypeMatchup
-	ld hl, wBattleMonType1
-CheckTypeMatchup:
-; There is an incorrect assumption about this function made in the AI related code: when
-; the AI calls CheckTypeMatchup (not BattleCheckTypeMatchup), it assumes that placing the
-; offensive type in a will make this function do the right thing. Since a is overwritten,
-; this assumption is incorrect. A simple fix would be to load the move type for the
-; current move into a in BattleCheckTypeMatchup, before falling through, which is
-; consistent with how the rest of the code assumes this code works like.
-	push hl
-	push de
-	push bc
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	ld d, a
+```diff
+ BattleCheckTypeMatchup:
+ 	ld hl, wEnemyMonType1
+ 	ldh a, [hBattleTurn]
+ 	and a
+ 	jr z, CheckTypeMatchup
+ 	ld hl, wBattleMonType1
++	ld a, BATTLE_VARS_MOVE_TYPE
++	call GetBattleVar ; preserves hl, de, and bc
+ CheckTypeMatchup:
+-; There is an incorrect assumption about this function made in the AI related code: when
+-; the AI calls CheckTypeMatchup (not BattleCheckTypeMatchup), it assumes that placing the
+-; offensive type in a will make this function do the right thing. Since a is overwritten,
+-; this assumption is incorrect. A simple fix would be to load the move type for the
+-; current move into a in BattleCheckTypeMatchup, before falling through, which is
+-; consistent with how the rest of the code assumes this code works like.
+ 	push hl
+ 	push de
+ 	push bc
+-	ld a, BATTLE_VARS_MOVE_TYPE
+-	call GetBattleVar
+ 	ld d, a
+ 	...
 ```
-
-*To do:* Fix this bug.
 
 
 ## NPC use of Full Heal or Full Restore does not cure Nightmare status
@@ -610,7 +643,7 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
 +	ld [hl], a
 +	ret
 +
- +.UseExpFormula
++.UseExpFormula
  	ld a, [wBaseGrowthRate]
  	add a
  	add a
@@ -632,16 +665,16 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
  	text_start
  	line "a boosted"
  	cont "@"
--	deciram wStringBuffer2, 2, 4
-+	deciram wStringBuffer2, 2, 5
+-	text_decimal wStringBuffer2, 2, 4
++	text_decimal wStringBuffer2, 2, 5
  	text " EXP. Points!"
  	prompt
 
  Text_StringBuffer2ExpPoints::
  	text_start
  	line "@"
--	deciram wStringBuffer2, 2, 4
-+	deciram wStringBuffer2, 2, 5
+-	text_decimal wStringBuffer2, 2, 4
++	text_decimal wStringBuffer2, 2, 5
  	text " EXP. Points!"
  	prompt
 ```
@@ -679,7 +712,7 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
 
 ## Moon Ball does not boost catch rate
 
-**Fix:** Edit `MoonBallMultiplier` in [items/item_effects.asm](/items/item_effects.asm):
+**Fix:** Edit `MoonBallMultiplier` in [items/item_effects.asm](/engine/items/item_effects.asm):
 
 ```diff
 -; Moon Stone's constant from Pokémon Red is used.
@@ -697,7 +730,7 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
 
 ## Love Ball boosts catch rate for the wrong gender
 
-**Fix:** Edit `LoveBallMultiplier` in [items/item_effects.asm](/items/item_effects.asm):
+**Fix:** Edit `LoveBallMultiplier` in [items/item_effects.asm](/engine/items/item_effects.asm):
 
 ```diff
  .wildmale
@@ -713,7 +746,7 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
 
 ## Fast Ball only boosts catch rate for three Pokémon
 
-**Fix:** Edit `FastBallMultiplier` in [items/item_effects.asm](/items/item_effects.asm):
+**Fix:** Edit `FastBallMultiplier` in [items/item_effects.asm](/engine/items/item_effects.asm):
 
 ```diff
  .loop
@@ -745,6 +778,23 @@ This can bring Pokémon straight from level 1 to 100 by gaining just a few exper
  ; DRAGON_SCALE
 -	item_attribute 2100, HELD_DRAGON_BOOST, 10, CANT_SELECT, ITEM, ITEMMENU_NOUSE, ITEMMENU_NOUSE
 +	item_attribute 2100, HELD_NONE, 10, CANT_SELECT, ITEM, ITEMMENU_NOUSE, ITEMMENU_NOUSE
+```
+
+
+## Clair can give TM24 Dragonbreath twice
+
+([Video](https://www.youtube.com/watch?v=8BvBjqxmyOk))
+
+**Fix:** Edit `DragonsDen1F_MapScripts` in [maps/DragonsDen1F.asm](/maps/DragonsDen1F.asm):
+
+```diff
+-	db 0 ; callbacks
++	db 1 ; callbacks
++	callback MAPCALLBACK_NEWMAP, .UnsetClairScene
++
++.UnsetClairScene:
++	setmapscene DRAGONS_DEN_B1F, SCENE_DRAGONSDENB1F_NOTHING
++	end
 ```
 
 
@@ -922,7 +972,7 @@ First, edit [engine/battle/battle_transition.asm](/engine/battle/battle_transiti
 +	jr nz, .loop
 +
 +.okay
-+	ld de, MON_LEVEL - MON_HP
++	ld de, MON_LEVEL - MON_HP - 1
 +	add hl, de
 	ld de, 0
 -	ld a, [wBattleMonLevel]
@@ -1017,10 +1067,10 @@ Finally, edit [engine/battle/read_trainer_party.asm](/engine/battle/read_trainer
 +.skip_trainer
 +	dec b
 +	jr z, .got_trainer
-+.loop1
++.skip_party
 +	ld a, [hli]
 +	cp $ff
-+	jr nz, .loop1
++	jr nz, .skip_party
 +	jr .skip_trainer
 +.got_trainer
 +
@@ -1388,42 +1438,45 @@ This supports up to six entries.
 
 ## `ScriptCall` can overflow `wScriptStack` and crash
 
-In [engine/overworld/scripting.asm](/engine/overworld/scripting.asm):
+**Fix:** Edit `ScriptCall` in [engine/overworld/scripting.asm](/engine/overworld/scripting.asm):
 
-```asm
-ScriptCall:
-; Bug: The script stack has a capacity of 5 scripts, yet there is
-; nothing to stop you from pushing a sixth script.  The high part
-; of the script address can then be overwritten by modifications
-; to wScriptDelay, causing the script to return to the rst/interrupt
-; space.
-
-	push de
-	ld hl, wScriptStackSize
-	ld e, [hl]
-	inc [hl]
-	ld d, $0
-	ld hl, wScriptStack
-	add hl, de
-	add hl, de
-	add hl, de
-	pop de
-	ld a, [wScriptBank]
-	ld [hli], a
-	ld a, [wScriptPos]
-	ld [hli], a
-	ld a, [wScriptPos + 1]
-	ld [hl], a
-	ld a, b
-	ld [wScriptBank], a
-	ld a, e
-	ld [wScriptPos], a
-	ld a, d
-	ld [wScriptPos + 1], a
-	ret
+```diff
+ ScriptCall:
+-; Bug: The script stack has a capacity of 5 scripts, yet there is
+-; nothing to stop you from pushing a sixth script.  The high part
+-; of the script address can then be overwritten by modifications
+-; to wScriptDelay, causing the script to return to the rst/interrupt
+-; space.
+-
++	ld hl, wScriptStackSize
++	ld a, [hl]
++	cp 5
++	ret nc
+ 	push de
+-	ld hl, wScriptStackSize
+-	ld e, [hl]
+ 	inc [hl]
++	ld e, a
+ 	ld d, 0
+ 	ld hl, wScriptStack
+ 	add hl, de
+ 	add hl, de
+ 	add hl, de
+ 	pop de
+ 	ld a, [wScriptBank]
+ 	ld [hli], a
+ 	ld a, [wScriptPos]
+ 	ld [hli], a
+ 	ld a, [wScriptPos + 1]
+ 	ld [hl], a
+ 	ld a, b
+ 	ld [wScriptBank], a
+ 	ld a, e
+ 	ld [wScriptPos], a
+ 	ld a, d
+ 	ld [wScriptPos + 1], a
+ 	ret
 ```
-
-*To do:* Fix this bug.
 
 
 ## `LoadSpriteGFX` does not limit the capacity of `UsedSprites`

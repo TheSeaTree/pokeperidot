@@ -38,19 +38,17 @@ FlagAction::
 ;    1  SET_FLAG    set bit
 ;    2  CHECK_FLAG  check bit
 ; de: bit number
-; hl: index within bit table
+; hl: pointer to the flag array
 
 	; get index within the byte
 	ld a, e
 	and 7
 
 	; shift de right by three bits (get the index within memory)
+rept 3
 	srl d
 	rr e
-	srl d
-	rr e
-	srl d
-	rr e
+endr
 	add hl, de
 
 	; implement a decoder

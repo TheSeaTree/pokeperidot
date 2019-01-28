@@ -20,8 +20,8 @@ _DeleteSaveData:
 
 .Text_ClearAllSaveData:
 	; Clear all save data?
-	text_jump UnknownText_0x1c564a
-	db "@"
+	text_far UnknownText_0x1c564a
+	text_end
 
 .NoYesMenuHeader:
 	db 0 ; flags

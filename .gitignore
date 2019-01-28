@@ -45,3 +45,5 @@ pokecrystal.txt
 gfx/pokemon/*/bitmask.asm
 gfx/pokemon/*/frames.asm
 !gfx/pokemon/*/shiny.pal
+engine/phone/phone_gossip.asm
+engine/phone/phone_scripts.asm

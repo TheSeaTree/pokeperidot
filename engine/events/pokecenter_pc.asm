@@ -111,8 +111,8 @@ PC_CheckPartyForPokemon:
 
 .MustHavePokemonToUse:
 	; Bzzzzt! You must have a #MON to use this!
-	text_jump UnknownText_0x1c1328
-	db "@"
+	text_far UnknownText_0x1c1328
+	text_end
 
 BillsPC:
 	call PC_PlayChoosePCSound
@@ -201,8 +201,8 @@ _PlayersHousePC:
 
 UnknownText_0x156ff:
 	; turned on the PC.
-	text_jump UnknownText_0x1c1353
-	db "@"
+	text_far UnknownText_0x1c1353
+	text_end
 
 _PlayersPC:
 	ld a, b
@@ -305,8 +305,8 @@ PC_DisplayTextWaitMenu:
 
 UnknownText_0x157cc:
 	; What do you want to do?
-	text_jump UnknownText_0x1c1368
-	db "@"
+	text_far UnknownText_0x1c1368
+	text_end
 
 PlayerWithdrawItemMenu:
 	call LoadStandardMenuHeader
@@ -373,16 +373,16 @@ PlayerWithdrawItemMenu:
 	ret
 
 .HowManyText:
-	text_jump _PlayersPCHowManyWithdrawText
-	db "@"
+	text_far _PlayersPCHowManyWithdrawText
+	text_end
 
 .WithdrewText:
-	text_jump _PlayersPCWithdrewItemsText
-	db "@"
+	text_far _PlayersPCWithdrewItemsText
+	text_end
 
 .NoRoomText:
-	text_jump _PlayersPCNoRoomWithdrawText
-	db "@"
+	text_far _PlayersPCNoRoomWithdrawText
+	text_end
 
 PlayerTossItemMenu:
 	call LoadStandardMenuHeader
@@ -444,8 +444,8 @@ PlayerDepositItemMenu:
 
 .NoItemsInBag:
 	; No items here!
-	text_jump UnknownText_0x1c13df
-	db "@"
+	text_far UnknownText_0x1c13df
+	text_end
 
 .TryDepositItem:
 	ld a, [wCurItem]
@@ -545,16 +545,16 @@ PlayerDepositItemMenu:
 	ret
 
 .HowManyText:
-	text_jump _PlayersPCHowManyDepositText
-	db "@"
+	text_far _PlayersPCHowManyDepositText
+	text_end
 
 .DepositText:
-	text_jump _PlayersPCDepositItemsText
-	db "@"
+	text_far _PlayersPCDepositItemsText
+	text_end
 
 .NoRoomText:
-	text_jump _PlayersPCNoRoomDepositText
-	db "@"
+	text_far _PlayersPCNoRoomDepositText
+	text_end
 
 PlayerMailBoxMenu:
 	farcall _PlayerMailBoxMenu
@@ -652,30 +652,30 @@ PC_DisplayText:
 
 PokecenterPCText_BootedUpPC:
 	; turned on the PC.
-	text_jump UnknownText_0x1c144d
-	db "@"
+	text_far UnknownText_0x1c144d
+	text_end
 
 PokecenterPCText_AccessWhosePC:
 	; Access whose PC?
-	text_jump UnknownText_0x1c1462
-	db "@"
+	text_far UnknownText_0x1c1462
+	text_end
 
 PokecenterPCText_AccessedBillsPC:
 	; BILL's PC accessed. #MON Storage System opened.
-	text_jump UnknownText_0x1c1474
-	db "@"
+	text_far UnknownText_0x1c1474
+	text_end
 
 PokecenterPCText_AccessedOwnPC:
 	; Accessed own PC. Item Storage System opened.
-	text_jump UnknownText_0x1c14a4
-	db "@"
+	text_far UnknownText_0x1c14a4
+	text_end
 
 PokecenterPCText_AccessedOaksPC:
 	; PROF.OAK's PC accessed. #DEX Rating System opened.
-	text_jump UnknownText_0x1c14d2
-	db "@"
+	text_far UnknownText_0x1c14d2
+	text_end
 
 PokecenterPCText_LinkClosed:
 	; … Link closed…
-	text_jump UnknownText_0x1c1505
-	db "@"
+	text_far UnknownText_0x1c1505
+	text_end

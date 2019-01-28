@@ -88,8 +88,8 @@ DisplayCaughtContestMonStats:
 
 SwitchMonText:
 	; Switch #MON?
-	text_jump UnknownText_0x1c10cf
-	db "@"
+	text_far UnknownText_0x1c10cf
+	text_end
 
 DisplayAlreadyCaughtText:
 	call GetPokemonName
@@ -98,8 +98,8 @@ DisplayAlreadyCaughtText:
 
 .AlreadyCaughtText:
 	; You already caught a @ .
-	text_jump UnknownText_0x1c10dd
-	db "@"
+	text_far UnknownText_0x1c10dd
+	text_end
 
 DummyPredef2F:
 DummyPredef38:

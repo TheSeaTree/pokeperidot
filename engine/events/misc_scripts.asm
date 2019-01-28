@@ -29,13 +29,13 @@ FindItemInBallScript::
 
 .text_found
 	; found @ !
-	text_jump UnknownText_0x1c0a1c
-	db "@"
+	text_far UnknownText_0x1c0a1c
+	text_end
 
 .text_bag_full
 	; But   can't carry any more items.
-	text_jump UnknownText_0x1c0a2c
-	db "@"
+	text_far UnknownText_0x1c0a2c
+	text_end
 
 .TryReceiveItem:
 	xor a

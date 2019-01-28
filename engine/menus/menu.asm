@@ -732,8 +732,8 @@ Error_Cant_ExitMenu:
 	jr .InfiniteLoop
 
 .Text_NoWindowsAvailableForPopping:
-	text_jump UnknownText_0x1c46b7
-	db "@"
+	text_far UnknownText_0x1c46b7
+	text_end
 
 _InitVerticalMenuCursor::
 	ld a, [wMenuDataFlags]

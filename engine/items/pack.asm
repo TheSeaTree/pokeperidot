@@ -26,7 +26,7 @@ Pack:
 	jr .loop
 
 .done
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	ld [wLastPocket], a
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
@@ -63,7 +63,7 @@ Pack:
 
 .InitItemsPocket:
 	xor a ; ITEM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -91,7 +91,7 @@ Pack:
 
 .InitKeyItemsPocket:
 	ld a, KEY_ITEM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -119,7 +119,7 @@ Pack:
 
 .InitTMHMPocket:
 	ld a, TM_HM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	xor a
@@ -213,7 +213,7 @@ Pack:
 
 .InitBallsPocket:
 	ld a, BALL_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -500,7 +500,7 @@ TossMenu:
 	ret
 
 Unreferenced_ResetPocketCursorPositions:
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	and a ; ITEM_POCKET
 	jr z, .items
 	dec a ; BALL_POCKET
@@ -532,7 +532,7 @@ RegisterItem:
 	ld a, [wItemAttributeParamBuffer]
 	and a
 	jr nz, .cant_register
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	rrca
 	rrca
 	and REGISTERED_POCKET
@@ -616,8 +616,8 @@ GiveItem:
 	ret
 .Egg:
 	; An EGG can't hold an item.
-	text_jump Text_AnEGGCantHoldAnItem
-	db "@"
+	text_far Text_AnEGGCantHoldAnItem
+	text_end
 
 QuitItemSubmenu:
 	ret
@@ -636,7 +636,7 @@ BattlePack:
 	jr .loop
 
 .end
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	ld [wLastPocket], a
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
@@ -673,7 +673,7 @@ BattlePack:
 
 .InitItemsPocket:
 	xor a ; ITEM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -701,7 +701,7 @@ BattlePack:
 
 .InitKeyItemsPocket:
 	ld a, KEY_ITEM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -729,7 +729,7 @@ BattlePack:
 
 .InitTMHMPocket:
 	ld a, TM_HM_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	xor a
@@ -752,7 +752,7 @@ BattlePack:
 
 .InitBallsPocket:
 	ld a, BALL_POCKET
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -903,7 +903,7 @@ InitPackBuffers:
 	; pocket id -> jumptable index
 	ld a, [wLastPocket]
 	maskbits NUM_POCKETS
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	inc a
 	add a
 	dec a
@@ -919,7 +919,7 @@ DepositSellInitPackBuffers:
 	ldh [hBGMapMode], a
 	ld [wJumptableIndex], a ; PACKSTATE_INITGFX
 	ld [wPackJumptableIndex], a ; PACKSTATE_INITGFX
-	ld [wCurrPocket], a ; ITEM_POCKET
+	ld [wCurPocket], a ; ITEM_POCKET
 	ld [wPackUsedItem], a
 	ld [wSwitchItem], a
 	call Pack_InitGFX
@@ -1004,7 +1004,7 @@ DepositSellPack:
 	ret
 
 InitPocket:
-	ld [wCurrPocket], a
+	ld [wCurPocket], a
 	call ClearPocketList
 	call DrawPocketName
 	call WaitBGMap_DrawPackGFX
@@ -1209,7 +1209,7 @@ Pack_PrintTextNoScroll:
 WaitBGMap_DrawPackGFX:
 	call WaitBGMap
 DrawPackGFX:
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	maskbits NUM_POCKETS
 	ld e, a
 	ld d, 0
@@ -1381,7 +1381,7 @@ PlacePackGFX:
 	ret
 
 DrawPocketName:
-	ld a, [wCurrPocket]
+	ld a, [wCurPocket]
 	; * 15
 	ld d, a
 	swap a
@@ -1548,59 +1548,59 @@ PC_Mart_BallsPocketMenuHeader:
 
 Text_PackNoItems:
 	; No items.
-	text_jump UnknownText_0x1c0b9a
-	db "@"
+	text_far UnknownText_0x1c0b9a
+	text_end
 
 Text_ThrowAwayHowMany:
 	; Throw away how many?
-	text_jump UnknownText_0x1c0ba5
-	db "@"
+	text_far UnknownText_0x1c0ba5
+	text_end
 
 Text_ConfirmThrowAway:
 	; Throw away @ @ (S)?
-	text_jump UnknownText_0x1c0bbb
-	db "@"
+	text_far UnknownText_0x1c0bbb
+	text_end
 
 Text_ThrewAway:
 	; Threw away @ (S).
-	text_jump UnknownText_0x1c0bd8
-	db "@"
+	text_far UnknownText_0x1c0bd8
+	text_end
 
 Text_ThisIsntTheTime:
 	; OAK:  ! This isn't the time to use that!
-	text_jump UnknownText_0x1c0bee
-	db "@"
+	text_far UnknownText_0x1c0bee
+	text_end
 
 TextJump_YouDontHaveAMon:
 	; You don't have a #MON!
-	text_jump Text_YouDontHaveAMon
-	db "@"
+	text_far Text_YouDontHaveAMon
+	text_end
 
 Text_RegisteredItem:
 	; Registered the @ .
-	text_jump UnknownText_0x1c0c2e
-	db "@"
+	text_far UnknownText_0x1c0c2e
+	text_end
 
 Text_CantRegister:
 	; You can't register that item.
-	text_jump UnknownText_0x1c0c45
-	db "@"
+	text_far UnknownText_0x1c0c45
+	text_end
 
 Text_MoveItemWhere:
 	; Where should this be moved to?
-	text_jump UnknownText_0x1c0c63
-	db "@"
+	text_far UnknownText_0x1c0c63
+	text_end
 
 Text_PackEmptyString:
 	;
-	text_jump UnknownText_0x1c0c83
-	db "@"
+	text_far UnknownText_0x1c0c83
+	text_end
 
 TextJump_YouCantUseItInABattle:
 	; Doesn't seem to be used anywhere
 	; "You can't use it in a battle."
-	text_jump Text_YouCantUseItInABattle
-	db "@"
+	text_far Text_YouCantUseItInABattle
+	text_end
 
 PackMenuGFX:
 INCBIN "gfx/pack/pack_menu.2bpp"

@@ -32,7 +32,7 @@ _NameRater:
 	ld [wNamedObjectIndexBuffer], a
 	ld [wCurSpecies], a
 	call GetBaseData
-	ld b, 0
+	ld b, NAME_MON
 	ld de, wStringBuffer2
 	farcall _NamingScreen
 ; If the new name is empty, treat it as unchanged.
@@ -182,54 +182,54 @@ NameRaterIntroText:
 	; Hello, hello! I'm the NAME RATER.
 	; I rate the names of #MON.
 	; Would you like me to rate names?
-	text_jump UnknownText_0x1c0043
-	db "@"
+	text_far UnknownText_0x1c0043
+	text_end
 
 NameRaterWhichMonText:
 	; Which #MON's nickname should I rate for you?
-	text_jump UnknownText_0x1c00a0
-	db "@"
+	text_far UnknownText_0x1c00a0
+	text_end
 
 NameRaterIsGoodText:
 	; Hm… @ … That's a fairly decent name.
 	; But, how about a slightly better nickname?
 	; Want me to give it a better name?
-	text_jump UnknownText_0x1c00cd
-	db "@"
+	text_far UnknownText_0x1c00cd
+	text_end
 
 NameRaterWhichNameText:
 	; All right. What name should we give it, then?
-	text_jump UnknownText_0x1c0142
-	db "@"
+	text_far UnknownText_0x1c0142
+	text_end
 
 NameRaterEvenBetterText:
 	; That's a better name than before! Well done!
-	text_jump UnknownText_0x1c0171
-	db "@"
+	text_far UnknownText_0x1c0171
+	text_end
 
 NameRaterCancelText:
 	; OK, then. Come again sometime.
-	text_jump UnknownText_0x1c019e
-	db "@"
+	text_far UnknownText_0x1c019e
+	text_end
 
 NameRaterTradedText:
 	; Hm… @ ? What a great name! It's perfect.
 	; Treat @ with loving care.
-	text_jump UnknownText_0x1c01be
-	db "@"
+	text_far UnknownText_0x1c01be
+	text_end
 
 NameRaterEggText:
 	; Whoa… That's just an EGG.
-	text_jump UnknownText_0x1c0208
-	db "@"
+	text_far UnknownText_0x1c0208
+	text_end
 
 NameRaterSameAsBeforeText:
 	; It might look the different as before,
 	; but this new name is much better! Well done!
-	text_jump UnknownText_0x1c0222
-	db "@"
+	text_far UnknownText_0x1c0222
+	text_end
 
 NameRaterDoneText:
 	; All right. This #MON is now named @ .
-	text_jump UnknownText_0x1c0272
-	db "@"
+	text_far UnknownText_0x1c0272
+	text_end

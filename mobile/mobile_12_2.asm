@@ -241,8 +241,8 @@ Function4a94e:
 
 UnknownText_0x4a9be:
 	; Pick three #MON for battle.
-	text_jump UnknownText_0x1c51d7
-	db "@"
+	text_far UnknownText_0x1c51d7
+	text_end
 
 Function4a9c3:
 	ld hl, wd002
@@ -294,8 +294,8 @@ Function4a9d7:
 
 UnknownText_0x4aa1d:
 	; , @  and @ . Use these three?
-	text_jump UnknownText_0x1c51f4
-	db "@"
+	text_far UnknownText_0x1c51f4
+	text_end
 
 Function4aa22:
 	call ClearBGPalettes
@@ -794,8 +794,8 @@ Function4ad17:
 
 UnknownText_0x4ad51:
 	; Only three #MON may enter.
-	text_jump UnknownText_0x1c521c
-	db "@"
+	text_far UnknownText_0x1c521c
+	text_end
 
 Function4ad56:
 	farcall OpenPartyStats

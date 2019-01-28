@@ -7,8 +7,8 @@ RepelWoreOffScript::
 
 .text
 	; REPEL's effect wore off.
-	text_jump UnknownText_0x1bd308
-	db "@"
+	text_far UnknownText_0x1bd308
+	text_end
 
 UseAnotherRepelScript::
 	opentext
@@ -47,13 +47,13 @@ HiddenItemScript::
 
 .found_text
 	; found @ !
-	text_jump UnknownText_0x1bd321
-	db "@"
+	text_far UnknownText_0x1bd321
+	text_end
 
 .no_room_text
 	; But   has no space left…
-	text_jump UnknownText_0x1bd331
-	db "@"
+	text_far UnknownText_0x1bd331
+	text_end
 
 SetMemEvent:
 	ld hl, wEngineBuffer1

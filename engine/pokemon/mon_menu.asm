@@ -63,18 +63,18 @@ TossItemFromPC:
 
 .TossHowMany:
 	; Toss out how many @ (S)?
-	text_jump UnknownText_0x1c1a90
-	db "@"
+	text_far UnknownText_0x1c1a90
+	text_end
 
 .ConfirmToss:
 	; Throw away @ @ (S)?
-	text_jump UnknownText_0x1c1aad
-	db "@"
+	text_far UnknownText_0x1c1aad
+	text_end
 
 .TossedThisMany:
 	; Discarded @ (S).
-	text_jump UnknownText_0x1c1aca
-	db "@"
+	text_far UnknownText_0x1c1aca
+	text_end
 
 .CantToss:
 	ld hl, .TooImportantToToss
@@ -83,8 +83,8 @@ TossItemFromPC:
 
 .TooImportantToToss:
 	; That's too impor- tant to toss out!
-	text_jump UnknownText_0x1c1adf
-	db "@"
+	text_far UnknownText_0x1c1adf
+	text_end
 
 CantUseItem:
 	ld hl, CantUseItemText
@@ -92,8 +92,8 @@ CantUseItem:
 	ret
 
 CantUseItemText:
-	text_jump UnknownText_0x1c1b03
-	db "@"
+	text_far UnknownText_0x1c1b03
+	text_end
 
 PartyMonItemName:
 	ld a, [wCurItem]
@@ -391,36 +391,36 @@ GiveTakeItemMenuData:
 	db "TAKE@"
 
 TookAndMadeHoldText:
-	text_jump UnknownText_0x1c1b2c
-	db "@"
+	text_far UnknownText_0x1c1b2c
+	text_end
 
 MadeHoldText:
-	text_jump UnknownText_0x1c1b57
-	db "@"
+	text_far UnknownText_0x1c1b57
+	text_end
 
 PleaseRemoveMailText:
-	text_jump UnknownText_0x1c1b6f
-	db "@"
+	text_far UnknownText_0x1c1b6f
+	text_end
 
 IsntHoldingAnythingText:
-	text_jump UnknownText_0x1c1b8e
-	db "@"
+	text_far UnknownText_0x1c1b8e
+	text_end
 
 ItemStorageIsFullText:
-	text_jump UnknownText_0x1c1baa
-	db "@"
+	text_far UnknownText_0x1c1baa
+	text_end
 
 TookFromText:
-	text_jump UnknownText_0x1c1bc4
-	db "@"
+	text_far UnknownText_0x1c1bc4
+	text_end
 
 SwitchAlreadyHoldingText:
-	text_jump UnknownText_0x1c1bdc
-	db "@"
+	text_far UnknownText_0x1c1bdc
+	text_end
 
 CantBeHeldText:
-	text_jump UnknownText_0x1c1c09
-	db "@"
+	text_far UnknownText_0x1c1c09
+	text_end
 
 GetPartyItemLocation:
 	push af
@@ -562,33 +562,33 @@ MonMailAction:
 
 .mailwilllosemessagetext
 ; The MAIL will lose its message. OK?
-	text_jump UnknownText_0x1c1c22
-	db "@"
+	text_far UnknownText_0x1c1c22
+	text_end
 
 .tookmailfrommontext
 ; MAIL detached from <POKEMON>.
-	text_jump UnknownText_0x1c1c47
-	db "@"
+	text_far UnknownText_0x1c1c47
+	text_end
 
 .bagfulltext
 ; There's no space for removing MAIL.
-	text_jump UnknownText_0x1c1c62
-	db "@"
+	text_far UnknownText_0x1c1c62
+	text_end
 
 .sendmailtopctext
 ; Send the removed MAIL to your PC?
-	text_jump UnknownText_0x1c1c86
-	db "@"
+	text_far UnknownText_0x1c1c86
+	text_end
 
 .mailboxfulltext
 ; Your PC's MAILBOX is full.
-	text_jump UnknownText_0x1c1ca9
-	db "@"
+	text_far UnknownText_0x1c1ca9
+	text_end
 
 .sentmailtopctext
 ; The MAIL was sent to your PC.
-	text_jump UnknownText_0x1c1cc4
-	db "@"
+	text_far UnknownText_0x1c1cc4
+	text_end
 
 OpenPartyStats:
 	call LoadStandardMenuHeader
@@ -749,8 +749,8 @@ MonMenu_Softboiled_MilkDrink:
 
 .Text_NotEnoughHP:
 	; Not enough HP!
-	text_jump UnknownText_0x1c1ce3
-	db "@"
+	text_far UnknownText_0x1c1ce3
+	text_end
 
 .CheckMonHasEnoughHP:
 ; Need to have at least (MaxHP / 5) HP left.

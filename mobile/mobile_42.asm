@@ -1174,7 +1174,7 @@ Function10895e:
 
 Function108963:
 	ld de, vTiles2 tile $31
-asm_108966
+asm_108966:
 	call DelayFrame
 	ld hl, vTiles2
 	lb bc, $a, $31 ; $a is the bank of ?????
@@ -1541,16 +1541,16 @@ Function108bec:
 	ret
 
 .PlayerWillTradeMon:
-	text_jump UnknownText_0x1bc787
-	db "@"
+	text_far UnknownText_0x1bc787
+	text_end
 
 .ForPartnersMon:
-	text_jump UnknownText_0x1bc79d
-	db "@"
+	text_far UnknownText_0x1bc79d
+	text_end
 
 .UnusedTextPlayersMonTrade:
-	text_jump UnknownText_0x1bc7b0
-	db "@"
+	text_far UnknownText_0x1bc7b0
+	text_end
 
 Function108c16:
 	ld a, $90
@@ -1562,8 +1562,8 @@ Function108c16:
 	ret
 
 .TakeGoodCareOfMon:
-	text_jump UnknownText_0x1bc7c3
-	db "@"
+	text_far UnknownText_0x1bc7c3
+	text_end
 
 Function108c2b:
 	ld a, $90
@@ -1575,8 +1575,8 @@ Function108c2b:
 	ret
 
 .PlayersMonTrade:
-	text_jump UnknownText_0x1bc7dd
-	db "@"
+	text_far UnknownText_0x1bc7dd
+	text_end
 
 Function108c40:
 	ld a, $90
@@ -1598,12 +1598,12 @@ Function108c40:
 	ret
 
 .TakeGoodCareOf:
-	text_jump UnknownText_0x1bc7f0
-	db "@"
+	text_far UnknownText_0x1bc7f0
+	text_end
 
 .CameBack:
-	text_jump UnknownText_0x1bc80a
-	db "@"
+	text_far UnknownText_0x1bc80a
+	text_end
 
 Function108c6d:
 	ld hl, LZ_108fe7

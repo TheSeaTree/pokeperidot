@@ -507,8 +507,8 @@ LinkTimeout:
 
 .TooMuchTimeHasElapsed:
 	; Too much time has elapsed. Please try again.
-	text_jump UnknownText_0x1c4183
-	db "@"
+	text_far UnknownText_0x1c4183
+	text_end
 
 ExchangeBytes:
 	ld a, TRUE
@@ -1489,16 +1489,16 @@ Function28926:
 
 .Text_CantTradeLastMon:
 	; If you trade that #MON, you won't be able to battle.
-	text_jump UnknownText_0x1c41b1
-	db "@"
+	text_far UnknownText_0x1c41b1
+	text_end
 
 .String_Stats_Trade:
 	db "STATS     TRADE@"
 
 .Text_Abnormal:
 	; Your friend's @  appears to be abnormal!
-	text_jump UnknownText_0x1c41e6
-	db "@"
+	text_far UnknownText_0x1c41e6
+	text_end
 
 Function28ac9:
 	ld a, [wMenuCursorY]
@@ -1950,8 +1950,8 @@ String28eab:
 
 UnknownText_0x28eb8:
 	; Trade @ for @ ?
-	text_jump UnknownText_0x1c4212
-	db "@"
+	text_far UnknownText_0x1c4212
+	text_end
 
 String28ebd:
 	db   "Trade completed!@"

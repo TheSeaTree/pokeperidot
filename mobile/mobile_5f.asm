@@ -178,33 +178,33 @@ CheckStringForErrors:
 .loop
 	ld a, [de]
 	inc de
-	and a
+	and a ; "<NULL>"
 	jr z, .NextChar
-	cp $60
+	cp FIRST_REGULAR_TEXT_CHAR
 	jr nc, .NextChar
-	cp $4e
+	cp "<NEXT>"
 	jr z, .NextChar
 	cp "@"
 	jr z, .Done
-	cp $5
+	cp "ガ"
 	jr c, .Fail
 	cp "<PLAY_G>"
 	jr c, .NextChar
-	cp $19
+	cp "<JP_18>" + 1
 	jr c, .Fail
-	cp $1d
+	cp "<NI>"
 	jr c, .NextChar
-	cp $26
+	cp "<NO>" + 1
 	jr c, .Fail
-	cp $35
+	cp "<ROUTE>"
 	jr c, .NextChar
-	cp $3a
+	cp "<GREEN>" + 1
 	jr c, .Fail
-	cp $3f
+	cp "<ENEMY>"
 	jr c, .NextChar
-	cp $40
+	cp "<ENEMY>" + 1
 	jr c, .Fail
-	cp $49
+	cp "<MOM>"
 	jr c, .NextChar
 
 .Fail:
@@ -1109,7 +1109,7 @@ Function17d711:
 	ld l, a
 	jp hl
 
-asm_17d721
+asm_17d721:
 	call Function17e5af
 	ld a, $2
 	ld [wcd77], a
@@ -2571,7 +2571,7 @@ Function17e026:
 	ld bc, $1a
 	add hl, bc
 
-asm_17e0ee
+asm_17e0ee:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a

@@ -310,8 +310,8 @@ _PlayerMailBoxMenu:
 	jp MenuTextBoxBackup
 
 .EmptyMailboxText:
-	text_jump _EmptyMailboxText
-	db "@"
+	text_far _EmptyMailboxText
+	text_end
 
 InitMail:
 ; initialize wMailboxCount and beyond with incrementing values, one per mail
@@ -453,16 +453,16 @@ MailboxPC:
 	jp MenuTextBoxBackup
 
 .PutAwayText:
-	text_jump ClearedMailPutAwayText
-	db "@"
+	text_far ClearedMailPutAwayText
+	text_end
 
 .PackFullText:
-	text_jump MailPackFullText
-	db "@"
+	text_far MailPackFullText
+	text_end
 
 .MessageLostText:
-	text_jump MailMessageLostText
-	db "@"
+	text_far MailMessageLostText
+	text_end
 
 .GetMailType:
 	push af
@@ -521,16 +521,16 @@ MailboxPC:
 	jp CloseSubmenu
 
 .HoldingMailText:
-	text_jump MailAlreadyHoldingItemText
-	db "@"
+	text_far MailAlreadyHoldingItemText
+	text_end
 
 .EggText:
-	text_jump MailEggText
-	db "@"
+	text_far MailEggText
+	text_end
 
 .MailMovedText:
-	text_jump MailMovedFromBoxText
-	db "@"
+	text_far MailMovedFromBoxText
+	text_end
 
 .Cancel:
 	ret

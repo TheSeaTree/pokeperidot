@@ -64,7 +64,7 @@ dd: MACRO ; four-byte (big-endian)
 ENDM
 
 bigdw: MACRO ; big-endian word
-	dx 2, \1
+	dx 2, \1 ; db HIGH(\1), LOW(\1)
 ENDM
 
 dba: MACRO ; dbw bank, address
@@ -97,7 +97,7 @@ endc
 ENDM
 
 dsprite: MACRO
-; y tile, y pxl, x tile, x pxl, vtile offset, flags, attributes
+; y tile, y pxl, x tile, x pxl, vtile offset, attributes
 	db (\1 * 8) % $100 + \2, (\3 * 8) % $100 + \4, \5, \6
 ENDM
 
