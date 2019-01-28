@@ -2670,7 +2670,7 @@ BattleAnim_NightShade:
 	anim_bgp $1b
 	anim_obp1 $1b
 	anim_wait 32
-	anim_call BattleAnim_FollowPlayerHead_1
+	anim_call BattleAnim_UserObj_2Row
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
 	anim_sound 0, 1, SFX_PSYCHIC
 	anim_wait 96
@@ -3704,7 +3704,7 @@ BattleAnim_IcyWind:
 	anim_wait 8
 	anim_loop 2, .loop
 	anim_wait 16
-	anim_bgeffect ANIM_BG_HEAD_FOLLOW, $0, $1, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
 	anim_wait 6
 	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
 	anim_wait 64
@@ -4980,13 +4980,13 @@ BattleAnim_Synthesis_branch_cbc80:
 
 BattleAnim_TargetObj_1Row:
 	anim_battlergfx_2row
-	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $0, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $0, $0
 	anim_wait 6
 	anim_ret
 
 BattleAnim_TargetObj_2Row:
 	anim_battlergfx_1row
-	anim_bgeffect ANIM_BG_HEAD_FOLLOW, $0, $0, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $0, $0
 	anim_wait 6
 	anim_ret
 
@@ -5000,13 +5000,13 @@ BattleAnim_ShowMon_0:
 
 BattleAnim_UserObj_1Row:
 	anim_battlergfx_2row
-	anim_bgeffect ANIM_BG_FEET_FOLLOW, $0, $1, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
 	anim_wait 6
 	anim_ret
 
-BattleAnim_FollowPlayerHead_1:
+BattleAnim_UserObj_2Row:
 	anim_battlergfx_1row
-	anim_bgeffect ANIM_BG_HEAD_FOLLOW, $0, $1, $0
+	anim_bgeffect ANIM_BG_BATTLEROBJ_2ROW, $0, $1, $0
 	anim_wait 4
 	anim_ret
 
