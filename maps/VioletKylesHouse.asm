@@ -1,6 +1,5 @@
 	const_def 2 ; object constants
 	const VIOLETKYLESHOUSE_POKEFAN_M
-	const VIOLETKYLESHOUSE_KYLE
 
 VioletKylesHouse_MapScripts:
 	db 0 ; scene scripts
@@ -9,14 +8,6 @@ VioletKylesHouse_MapScripts:
 
 VioletKylesHousePokefanMScript:
 	jumptextfaceplayer VioletKylesHousePokefanMText
-
-Kyle:
-	faceplayer
-	opentext
-	trade NPC_TRADE_KYLE
-	waitbutton
-	closetext
-	end
 
 VioletKylesHousePokefanMText:
 	text "A #MON you get"
@@ -41,6 +32,5 @@ VioletKylesHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 1 ; object events
 	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletKylesHousePokefanMScript, -1
-	object_event  6,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Kyle, -1

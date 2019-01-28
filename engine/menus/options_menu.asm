@@ -71,11 +71,11 @@ StringOptions:
 	db "        :<LF>"
 	db "PRINT<LF>"
 	db "        :<LF>"
-	db "MENU ACCOUNT<LF>"
+	db "CLOCK VIEW<LF>"
 	db "        :<LF>"
 	db "FRAME<LF>"
 	db "        :TYPE<LF>"
-	db "CANCEL@"
+	db "DONE@"
 
 GetOptionPointer:
 	ld a, [wJumptableIndex] ; load the cursor position to a

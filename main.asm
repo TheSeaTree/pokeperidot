@@ -173,7 +173,6 @@ INCLUDE "data/battle/effect_command_pointers.asm"
 
 SECTION "bank10", ROMX
 
-INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
 
@@ -182,6 +181,7 @@ SECTION "bank11", ROMX
 
 INCLUDE "engine/events/fruit_trees.asm"
 INCLUDE "engine/battle/ai/move.asm"
+INCLUDE "engine/pokedex/pokedex.asm"
 INCLUDE "engine/pokedex/pokedex_2.asm"
 INCLUDE "engine/pokemon/mail.asm"
 
@@ -390,40 +390,10 @@ INCLUDE "data/battle_anims/oam.asm"
 INCLUDE "data/battle_anims/object_gfx.asm"
 
 
-SECTION "Pic Animations 1", ROMX
-
-INCLUDE "engine/gfx/pic_animation.asm"
-INCLUDE "gfx/pokemon/anim_pointers.asm"
-INCLUDE "gfx/pokemon/anims.asm"
-INCLUDE "gfx/pokemon/idle_pointers.asm"
-INCLUDE "gfx/pokemon/idles.asm"
-INCLUDE "gfx/pokemon/unown_anim_pointers.asm"
-INCLUDE "gfx/pokemon/unown_anims.asm"
-INCLUDE "gfx/pokemon/unown_idle_pointers.asm"
-INCLUDE "gfx/pokemon/unown_idles.asm"
-INCLUDE "gfx/pokemon/bitmask_pointers.asm"
-INCLUDE "gfx/pokemon/bitmasks.asm"
-INCLUDE "gfx/pokemon/unown_bitmask_pointers.asm"
-INCLUDE "gfx/pokemon/unown_bitmasks.asm"
-
-
-SECTION "Pic Animations 2", ROMX
-
-INCLUDE "gfx/pokemon/frame_pointers.asm"
-INCLUDE "gfx/pokemon/kanto_frames.asm"
-
-
 SECTION "Font Inversed", ROMX
 
 FontInversed:
 INCBIN "gfx/font/font_inversed.1bpp"
-
-
-SECTION "Pic Animations 3", ROMX
-
-INCLUDE "gfx/pokemon/johto_frames.asm"
-INCLUDE "gfx/pokemon/unown_frame_pointers.asm"
-INCLUDE "gfx/pokemon/unown_frames.asm"
 
 
 SECTION "bank38", ROMX

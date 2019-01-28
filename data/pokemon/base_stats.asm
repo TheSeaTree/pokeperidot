@@ -1,16 +1,19 @@
 tmhm: MACRO
 ; used in data/pokemon/base_stats/*.asm
-tms1 = 0 ; TM01-TM24 (24)
-tms2 = 0 ; TM25-TM48 (24)
-tms3 = 0 ; TM49-TM50 + HM01-HM07 + MT01-MT03 (12/24)
+_tms1 = 0 ; TM01-TM24 (24)
+_tms2 = 0 ; TM25-TM48 (24)
+_tms3 = 0 ; TM49-TM50 + HM01-HM07 + MT01-MT03 (12/24)
+_tms4 = 0 ; TM73-TM80 (8/24)
 rept _NARG
 	if DEF(\1_TMNUM)
 	if \1_TMNUM < 24 + 1
-tms1 = tms1 | (1 << ((\1_TMNUM) - 1))
+_tms1 = _tms1 | (1 << ((\1_TMNUM) - 1))
 	elif \1_TMNUM < 48 + 1
-tms2 = tms2 | (1 << ((\1_TMNUM) - 1 - 24))
+_tms2 = _tms2 | (1 << ((\1_TMNUM) - 1 - 24))
+	elif \1_TMNUM < 72 + 1
+_tms3 = _tms3 | (1 << ((\1_TMNUM) - 1 - 48))
 	else
-tms3 = tms3 | (1 << ((\1_TMNUM) - 1 - 48))
+_tms4 = _tms3 | (1 << ((\1_TMNUM) - 1 - 72))
 	endc
 	else
 		fail "\1 is not a TM, HM, or move tutor move"
@@ -18,16 +21,20 @@ tms3 = tms3 | (1 << ((\1_TMNUM) - 1 - 48))
 	shift
 endr
 rept 3 ; TM01-TM24 (24/24)
-	db tms1 & $ff
-tms1 = tms1 >> 8
+	db _tms1 & $ff
+_tms1 = _tms1 >> 8
 endr
 rept 3 ; TM25-TM48 (24/24)
-	db tms2 & $ff
-tms2 = tms2 >> 8
+	db _tms2 & $ff
+_tms2 = _tms2 >> 8
 endr
-rept 2 ; TM49-TM50 + HM01-HM07 + MT01-MT03 (12/16)
-	db tms3 & $ff
-tms3 = tms3 >> 8
+rept 3 ; TM49-TM72 (24/24)
+	db _tms3 & $ff
+_tms3 = _tms3 >> 8
+endr
+rept 1 ; TM73-TM80 (8/24)
+	db _tms4 & $ff
+_tms4 = _tms4 >> 8
 endr
 ENDM
 
@@ -50,8 +57,8 @@ INCLUDE "data/pokemon/base_stats/beedrill.asm"
 INCLUDE "data/pokemon/base_stats/pidgey.asm"
 INCLUDE "data/pokemon/base_stats/pidgeotto.asm"
 INCLUDE "data/pokemon/base_stats/pidgeot.asm"
-INCLUDE "data/pokemon/base_stats/rattata.asm"
-INCLUDE "data/pokemon/base_stats/raticate.asm"
+INCLUDE "data/pokemon/base_stats/rinring.asm"
+INCLUDE "data/pokemon/base_stats/nyanell.asm"
 INCLUDE "data/pokemon/base_stats/spearow.asm"
 INCLUDE "data/pokemon/base_stats/fearow.asm"
 INCLUDE "data/pokemon/base_stats/ekans.asm"
@@ -85,8 +92,8 @@ INCLUDE "data/pokemon/base_stats/diglett.asm"
 INCLUDE "data/pokemon/base_stats/dugtrio.asm"
 INCLUDE "data/pokemon/base_stats/meowth.asm"
 INCLUDE "data/pokemon/base_stats/persian.asm"
-INCLUDE "data/pokemon/base_stats/psyduck.asm"
-INCLUDE "data/pokemon/base_stats/golduck.asm"
+INCLUDE "data/pokemon/base_stats/smola.asm"
+INCLUDE "data/pokemon/base_stats/ancor.asm"
 INCLUDE "data/pokemon/base_stats/mankey.asm"
 INCLUDE "data/pokemon/base_stats/primeape.asm"
 INCLUDE "data/pokemon/base_stats/growlithe.asm"
@@ -137,8 +144,8 @@ INCLUDE "data/pokemon/base_stats/exeggcute.asm"
 INCLUDE "data/pokemon/base_stats/exeggutor.asm"
 INCLUDE "data/pokemon/base_stats/cubone.asm"
 INCLUDE "data/pokemon/base_stats/marowak.asm"
-INCLUDE "data/pokemon/base_stats/hitmonlee.asm"
-INCLUDE "data/pokemon/base_stats/hitmonchan.asm"
+INCLUDE "data/pokemon/base_stats/concher.asm"
+INCLUDE "data/pokemon/base_stats/searion.asm"
 INCLUDE "data/pokemon/base_stats/lickitung.asm"
 INCLUDE "data/pokemon/base_stats/koffing.asm"
 INCLUDE "data/pokemon/base_stats/weezing.asm"
@@ -196,8 +203,8 @@ INCLUDE "data/pokemon/base_stats/sentret.asm"
 INCLUDE "data/pokemon/base_stats/furret.asm"
 INCLUDE "data/pokemon/base_stats/hoothoot.asm"
 INCLUDE "data/pokemon/base_stats/noctowl.asm"
-INCLUDE "data/pokemon/base_stats/ledyba.asm"
-INCLUDE "data/pokemon/base_stats/ledian.asm"
+INCLUDE "data/pokemon/base_stats/cubbolt.asm"
+INCLUDE "data/pokemon/base_stats/electiger.asm"
 INCLUDE "data/pokemon/base_stats/spinarak.asm"
 INCLUDE "data/pokemon/base_stats/ariados.asm"
 INCLUDE "data/pokemon/base_stats/crobat.asm"
@@ -206,8 +213,8 @@ INCLUDE "data/pokemon/base_stats/lanturn.asm"
 INCLUDE "data/pokemon/base_stats/pichu.asm"
 INCLUDE "data/pokemon/base_stats/cleffa.asm"
 INCLUDE "data/pokemon/base_stats/igglybuff.asm"
-INCLUDE "data/pokemon/base_stats/togepi.asm"
-INCLUDE "data/pokemon/base_stats/togetic.asm"
+INCLUDE "data/pokemon/base_stats/shifur.asm"
+INCLUDE "data/pokemon/base_stats/snowmad.asm"
 INCLUDE "data/pokemon/base_stats/natu.asm"
 INCLUDE "data/pokemon/base_stats/xatu.asm"
 INCLUDE "data/pokemon/base_stats/mareep.asm"
@@ -267,8 +274,8 @@ INCLUDE "data/pokemon/base_stats/donphan.asm"
 INCLUDE "data/pokemon/base_stats/porygon2.asm"
 INCLUDE "data/pokemon/base_stats/stantler.asm"
 INCLUDE "data/pokemon/base_stats/smeargle.asm"
-INCLUDE "data/pokemon/base_stats/tyrogue.asm"
-INCLUDE "data/pokemon/base_stats/hitmontop.asm"
+INCLUDE "data/pokemon/base_stats/tangrowth.asm"
+INCLUDE "data/pokemon/base_stats/gremini.asm"
 INCLUDE "data/pokemon/base_stats/smoochum.asm"
 INCLUDE "data/pokemon/base_stats/elekid.asm"
 INCLUDE "data/pokemon/base_stats/magby.asm"
@@ -283,3 +290,4 @@ INCLUDE "data/pokemon/base_stats/tyranitar.asm"
 INCLUDE "data/pokemon/base_stats/lugia.asm"
 INCLUDE "data/pokemon/base_stats/ho_oh.asm"
 INCLUDE "data/pokemon/base_stats/celebi.asm"
+INCLUDE "data/pokemon/base_stats/octank.asm"

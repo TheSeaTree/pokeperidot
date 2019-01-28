@@ -940,8 +940,16 @@ DoRepelStep:
 	ld [wRepelEffect], a
 	ret nz
 
+	ld a, [wRepelType]
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
 	ld a, BANK(RepelWoreOffScript)
 	ld hl, RepelWoreOffScript
+	jr nc, .got_script
+	ld a, BANK(UseAnotherRepelScript)
+	ld hl, UseAnotherRepelScript
+.got_script
 	call CallScript
 	scf
 	ret
@@ -1612,7 +1620,7 @@ CmdQueue_StoneTable:
 	ld hl, OBJECT_NEXT_TILE
 	add hl, de
 	ld a, [hl]
-	call CheckPitTile
+;	call CheckPitTile
 	jr nz, .next
 
 	ld hl, OBJECT_DIRECTION_WALKING

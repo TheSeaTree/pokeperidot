@@ -17,7 +17,7 @@ BuenasPasswordTable:
 .Beverages:     db BUENA_ITEM,   12, FRESH_WATER, SODA_POP, LEMONADE
 .HealingItems:  db BUENA_ITEM,   12, POTION, ANTIDOTE, PARLYZ_HEAL
 .Balls:         db BUENA_ITEM,   12, POKE_BALL, GREAT_BALL, ULTRA_BALL
-.Pokemon1:      db BUENA_MON,    10, PIKACHU, RATTATA, GEODUDE
+.Pokemon1:      db BUENA_MON,    10, PIKACHU, RINRING, GEODUDE
 .Pokemon2:      db BUENA_MON,    10, HOOTHOOT, SPINARAK, DROWZEE
 .JohtoTowns:    db BUENA_STRING, 16, "NEW BARK TOWN@", "CHERRYGROVE CITY@", "AZALEA TOWN@"
 .Types:         db BUENA_STRING,  6, "FLYING@", "BUG@", "GRASS@"

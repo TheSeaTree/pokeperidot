@@ -41,10 +41,10 @@ InitClock:
 	call .ClearScreen
 	call WaitBGMap
 	call RotateFourPalettesRight
-	ld hl, Text_WokeUpOak
-	call PrintText
-	ld hl, wTimeSetBuffer
-	ld bc, 50
+;	ld hl, Text_WokeUpOak
+;	call PrintText
+;	ld hl, wTimeSetBuffer
+;	ld bc, 50
 	xor a
 	call ByteFill
 	ld a, 10 ; default hour = 10 AM
@@ -113,9 +113,9 @@ InitClock:
 
 .MinutesAreSet:
 	call InitTimeOfDay
-	ld hl, OakText_ResponseToSetTime
-	call PrintText
-	call WaitPressAorB_BlinkCursor
+;	ld hl, OakText_ResponseToSetTime
+;	call PrintText
+;	call WaitPressAorB_BlinkCursor
 	pop af
 	ldh [hInMenu], a
 	ret
@@ -289,11 +289,6 @@ PrintTwoDigitNumberRightAlign:
 	call PrintNum
 	ret
 
-Text_WokeUpOak:
-	; Zzz… Hm? Wha…? You woke me up! Will you check the clock for me?
-	text_jump UnknownText_0x1bc29c
-	db "@"
-
 Text_WhatTimeIsIt:
 	; What time is it?
 	text_jump UnknownText_0x1bc2eb
@@ -304,9 +299,9 @@ String_oclock:
 
 Text_WhatHrs:
 	; What?@ @
-	text_jump UnknownText_0x1bc2fd
+;	text_jump UnknownText_0x1bc2fd
 	start_asm
-	hlcoord 1, 16
+	hlcoord 1, 14
 	call DisplayHourOClock
 	ld hl, .QuestionMark
 	ret
@@ -326,9 +321,9 @@ String_min:
 
 Text_WhoaMins:
 	; Whoa!@ @
-	text_jump UnknownText_0x1bc31b
+;	text_jump UnknownText_0x1bc31b
 	start_asm
-	hlcoord 7, 14
+	hlcoord 1, 14
 	call DisplayMinutesWithMinString
 	ld hl, .QuestionMark
 	ret
@@ -336,51 +331,6 @@ Text_WhoaMins:
 .QuestionMark:
 	; ?
 	text_jump UnknownText_0x1bc323
-	db "@"
-
-OakText_ResponseToSetTime:
-	start_asm
-	decoord 1, 14
-	ld a, [wInitHourBuffer]
-	ld c, a
-	call PrintHour
-	ld [hl], ":"
-	inc hl
-	ld de, wInitMinuteBuffer
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
-	ld b, h
-	ld c, l
-	ld a, [wInitHourBuffer]
-	cp MORN_HOUR
-	jr c, .nite
-	cp DAY_HOUR + 1
-	jr c, .morn
-	cp NITE_HOUR
-	jr c, .day
-.nite:
-	ld hl, .sodark
-	ret
-.morn:
-	ld hl, .overslept
-	ret
-.day:
-	ld hl, .yikes
-	ret
-
-.overslept
-	; ! I overslept!
-	text_jump UnknownText_0x1bc326
-	db "@"
-
-.yikes
-	; ! Yikes! I over- slept!
-	text_jump UnknownText_0x1bc336
-	db "@"
-
-.sodark
-	; ! No wonder it's so dark!
-	text_jump UnknownText_0x1bc34f
 	db "@"
 
 TimeSetBackgroundGFX:

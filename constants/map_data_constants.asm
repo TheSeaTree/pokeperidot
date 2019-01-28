@@ -70,17 +70,6 @@ const_value = -1
 	const SPAWN_HOME
 	const SPAWN_DEBUG
 ; kanto
-	const SPAWN_PALLET
-	const SPAWN_VIRIDIAN
-	const SPAWN_PEWTER
-	const SPAWN_CERULEAN
-	const SPAWN_ROCK_TUNNEL
-	const SPAWN_VERMILION
-	const SPAWN_LAVENDER
-	const SPAWN_SAFFRON
-	const SPAWN_CELADON
-	const SPAWN_FUCHSIA
-	const SPAWN_CINNABAR
 	const SPAWN_INDIGO
 ; johto
 	const SPAWN_NEW_BARK
@@ -96,9 +85,7 @@ const_value = -1
 	const SPAWN_LAKE_OF_RAGE
 	const SPAWN_BLACKTHORN
 	const SPAWN_MT_SILVER
-	const SPAWN_FAST_SHIP
 NUM_SPAWNS EQU const_value
 
 ; outdoor sprite limits (see engine/overworld/overworld.asm)
-MAX_OUTDOOR_SPRITES EQU 23
 SPRITE_GFX_LIST_CAPACITY EQU $20

@@ -1,40 +1,78 @@
 	const_def 2 ; object constants
 	const DIGLETTSCAVE_POKEFAN_M
+	const DIGLETTSCAVE_ROCK
 
 DiglettsCave_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+	
+TrainerBlackbeltAxel:
+	trainer BLACKBELT_T, AXEL, EVENT_BEAT_BLACKBELT_AXEL, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
 
-DiglettsCavePokefanMScript:
-	jumptextfaceplayer DiglettsCavePokefanMText
+.Script:
+	endifjustbattled
+	opentext
+	writetext Route3CaveWinText
+	waitbutton
+	closetext
+	end	
+	
+TrainerHikerAdam:
+	trainer HIKER, ADAM, EVENT_BEAT_HIKER_ADAM, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
 
+.Script:
+	endifjustbattled
+	opentext
+	writetext Route3CaveWinText
+	waitbutton
+	closetext
+	end	
+
+TrainerBeautyBlaze:
+	trainer BEAUTY, BLAZE, EVENT_BEAT_BEAUTY_BLAZE, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext Route3CaveWinText
+	waitbutton
+	closetext
+	end	
+
+DiglettsCaveBoulder:
+	jumpstd strengthboulder	
+	
 DiglettsCaveHiddenMaxRevive:
 	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
+	
+Route3BlackBelt:
+	itemball BLACKBELT
 
-DiglettsCavePokefanMText:
-	text "A bunch of DIGLETT"
-	line "popped out of the"
-
-	para "ground! That was"
-	line "shocking."
+Route3CaveTrainerText:
+	text "I am a"
+	line "#MON trainer!"
 	done
-
+	
+Route3CaveWinText:
+	text "I lost."
+	done
+	
 DiglettsCave_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
-	warp_event  3, 33, VERMILION_CITY, 10
-	warp_event  5, 31, DIGLETTS_CAVE, 5
-	warp_event 15,  5, ROUTE_2, 5
-	warp_event 17,  3, DIGLETTS_CAVE, 6
-	warp_event 17, 33, DIGLETTS_CAVE, 2
-	warp_event  3,  3, DIGLETTS_CAVE, 4
+	db 2 ; warp events
+	warp_event 21,  11, ROUTE_3, 3
+	warp_event  3,  13, ROUTE_3, 4
 
 	db 0 ; coord events
 
 	db 1 ; bg events
 	bg_event  6, 11, BGEVENT_ITEM, DiglettsCaveHiddenMaxRevive
 
-	db 1 ; object events
-	object_event  3, 31, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCavePokefanMScript, -1
+	db 5 ; object events
+	object_event 13, 6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltAxel, -1
+	object_event 2, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAdam, -1
+	object_event 15, 15, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerBeautyBlaze, -1
+	object_event 15,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveBoulder, -1
+	object_event 11, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route3BlackBelt, EVENT_ROUTE_3_BLACKBELT

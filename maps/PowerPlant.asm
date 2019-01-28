@@ -171,9 +171,6 @@ PowerPlantManager:
 	iftrue .GotZapCannon
 	writetext UnknownText_0x1893c4
 	buttonsound
-	verbosegiveitem TM_ZAP_CANNON
-	iffalse .NoRoom
-	setevent EVENT_GOT_TM07_ZAP_CANNON
 	writetext UnknownText_0x1893f4
 	waitbutton
 .NoRoom:

@@ -58,7 +58,7 @@
 	const CRY_GLIGAR
 	const CRY_CLEFFA
 	const CRY_SLUGMA
-	const CRY_LEDYBA
+	const CRY_CUBBOLT
 	const CRY_ENTEI
 	const CRY_WOOPER
 	const CRY_MANTINE

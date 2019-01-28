@@ -7,7 +7,7 @@
 	const STARTMENUITEM_SAVE     ; 4
 	const STARTMENUITEM_OPTION   ; 5
 	const STARTMENUITEM_EXIT     ; 6
-	const STARTMENUITEM_POKEGEAR ; 7
+;	const STARTMENUITEM_POKEGEAR ; 7
 	const STARTMENUITEM_QUIT     ; 8
 
 StartMenu::
@@ -183,7 +183,7 @@ StartMenu::
 	dw StartMenu_Save,     .SaveString,     .SaveDesc
 	dw StartMenu_Option,   .OptionString,   .OptionDesc
 	dw StartMenu_Exit,     .ExitString,     .ExitDesc
-	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
+;	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
 	dw StartMenu_Quit,     .QuitString,     .QuitDesc
 
 .PokedexString:  db "#DEX@"
@@ -316,8 +316,8 @@ endr
 	ld hl, wPokegearFlags
 	bit POKEGEAR_OBTAINED_F, [hl]
 	jr z, .no_pokegear
-	ld a, STARTMENUITEM_POKEGEAR
-	call .AppendMenuList
+;	ld a, STARTMENUITEM_POKEGEAR
+;	call .AppendMenuList
 .no_pokegear
 
 	ld a, STARTMENUITEM_STATUS
@@ -367,17 +367,31 @@ endr
 	call .IsMenuAccountOn
 	ret z
 	call ._DrawMenuAccount
-	decoord 0, 14
-	jp .MenuDesc
+	hlcoord 0, 0
+	ld b, 1
+	ld c, 8
+	call TextBox
+	call CheckRTCStatus
+	and $80
+	call UpdateTime
+	ld b, a
+	decoord 1, 1
+	ldh a, [hHours]
+	ld b, a
+	ldh a, [hMinutes]
+	ld c, a
+	decoord 1, 1
+	farcall PrintHoursMins
+	ret
 
 ._DrawMenuAccount:
 	call .IsMenuAccountOn
 	ret z
-	hlcoord 0, 13
-	lb bc, 5, 10
-	call ClearBox
-	hlcoord 0, 13
-	ld b, 3
+	hlcoord 0, 0
+	lb bc, 1, 8
+	call TextBox
+	hlcoord 0, 0
+	ld b, 1
 	ld c, 8
 	jp TextBoxPalette
 

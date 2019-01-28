@@ -66,7 +66,7 @@ EvolveAfterBattle_MasterLoop:
 	ld b, a
 
 	cp EVOLVE_TRADE
-	jr z, .trade
+	jp z, .trade
 
 	ld a, [wLinkMode]
 	and a
@@ -86,6 +86,9 @@ EvolveAfterBattle_MasterLoop:
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
+	
+	cp EVOLVE_HOLD
+	jp z, .hold
 
 ; EVOLVE_STAT
 	ld a, [wTempMonLevel]
@@ -113,7 +116,7 @@ EvolveAfterBattle_MasterLoop:
 	jp nz, .dont_evolve_2
 
 	inc hl
-	jr .proceed
+	jp .proceed
 
 .happiness
 	ld a, [wTempMonHappiness]
@@ -125,7 +128,7 @@ EvolveAfterBattle_MasterLoop:
 
 	ld a, [hli]
 	cp TR_ANYTIME
-	jr z, .proceed
+	jp z, .proceed
 	cp TR_MORNDAY
 	jr z, .happiness_daylight
 
@@ -140,6 +143,28 @@ EvolveAfterBattle_MasterLoop:
 	cp NITE_F
 	jp z, .dont_evolve_3
 	jr .proceed
+	
+.hold
+	; Get current item
+	push hl
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Item
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	ld b, a
+	pop hl
+
+	; Check the item
+	ld a, [hli]
+	cp b
+	jp nz, .dont_evolve_2
+	
+	xor a
+	ld [wTempMonItem], a
+	ld a, [hli]
+	cp TR_ANYTIME
+	jp z, .proceed
 
 .trade
 	ld a, [wLinkMode]

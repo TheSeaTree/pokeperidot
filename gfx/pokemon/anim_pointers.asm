@@ -163,8 +163,8 @@ AnimationPointers:
 	dw FurretAnimation
 	dw HoothootAnimation
 	dw NoctowlAnimation
-	dw LedybaAnimation
-	dw LedianAnimation
+	dw CubboltAnimation
+	dw ElectigerAnimation
 	dw SpinarakAnimation
 	dw AriadosAnimation
 	dw CrobatAnimation

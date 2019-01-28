@@ -70,7 +70,6 @@ GetAnimatedFrontpic:
 	xor a
 	ldh [hBGMapMode], a
 	call _GetFrontpic
-	call GetAnimatedEnemyFrontpic
 	pop af
 	ldh [rSVBK], a
 	ret
@@ -121,75 +120,11 @@ GetFrontpicPointer:
 	call AddNTimes
 	ld a, d
 	call GetFarByte
-	call FixPicBank
 	push af
 	inc hl
 	ld a, d
 	call GetFarHalfword
 	pop bc
-	ret
-
-GetAnimatedEnemyFrontpic:
-	ld a, BANK(vTiles3)
-	ldh [rVBK], a
-	push hl
-	ld de, wDecompressScratch
-	ld c, 7 * 7
-	ldh a, [hROMBank]
-	ld b, a
-	call Get2bpp
-	pop hl
-	ld de, 7 * 7 tiles
-	add hl, de
-	push hl
-	ld a, BANK(wBasePicSize)
-	ld hl, wBasePicSize
-	call GetFarWRAMByte
-	pop hl
-	and $f
-	ld de, wDecompressEnemyFrontpic + 5 * 5 tiles
-	ld c, 5 * 5
-	cp 5
-	jr z, .got_dims
-	ld de, wDecompressEnemyFrontpic + 6 * 6 tiles
-	ld c, 6 * 6
-	cp 6
-	jr z, .got_dims
-	ld de, wDecompressEnemyFrontpic + 7 * 7 tiles
-	ld c, 7 * 7
-.got_dims
-	push hl
-	push bc
-	call LoadFrontpicTiles
-	pop bc
-	pop hl
-	ld de, wDecompressScratch
-	ldh a, [hROMBank]
-	ld b, a
-	call Get2bpp
-	xor a
-	ldh [rVBK], a
-	ret
-
-LoadFrontpicTiles:
-	ld hl, wDecompressScratch
-	swap c
-	ld a, c
-	and $f
-	ld b, a
-	ld a, c
-	and $f0
-	ld c, a
-	push bc
-	call LoadOrientedFrontpic
-	pop bc
-.loop
-	push bc
-	ld c, 0
-	call LoadOrientedFrontpic
-	pop bc
-	dec b
-	jr nz, .loop
 	ret
 
 GetMonBackpic:
@@ -223,7 +158,6 @@ GetMonBackpic:
 	add hl, bc
 	ld a, d
 	call GetFarByte
-	call FixPicBank
 	push af
 	inc hl
 	ld a, d
@@ -243,50 +177,6 @@ GetMonBackpic:
 	ldh [rSVBK], a
 	ret
 
-FixPicBank:
-; This is a thing for some reason.
-
-PICS_FIX EQU $36
-GLOBAL PICS_FIX
-
-	push hl
-	push bc
-	sub BANK("Pics 1") - PICS_FIX
-	ld c, a
-	ld b, 0
-	ld hl, .PicsBanks
-	add hl, bc
-	ld a, [hl]
-	pop bc
-	pop hl
-	ret
-
-.PicsBanks:
-	db BANK("Pics 1")  ; BANK("Pics 1") + 0
-	db BANK("Pics 2")  ; BANK("Pics 1") + 1
-	db BANK("Pics 3")  ; BANK("Pics 1") + 2
-	db BANK("Pics 4")  ; BANK("Pics 1") + 3
-	db BANK("Pics 5")  ; BANK("Pics 1") + 4
-	db BANK("Pics 6")  ; BANK("Pics 1") + 5
-	db BANK("Pics 7")  ; BANK("Pics 1") + 6
-	db BANK("Pics 8")  ; BANK("Pics 1") + 7
-	db BANK("Pics 9")  ; BANK("Pics 1") + 8
-	db BANK("Pics 10") ; BANK("Pics 1") + 9
-	db BANK("Pics 11") ; BANK("Pics 1") + 10
-	db BANK("Pics 12") ; BANK("Pics 1") + 11
-	db BANK("Pics 13") ; BANK("Pics 1") + 12
-	db BANK("Pics 14") ; BANK("Pics 1") + 13
-	db BANK("Pics 15") ; BANK("Pics 1") + 14
-	db BANK("Pics 16") ; BANK("Pics 1") + 15
-	db BANK("Pics 17") ; BANK("Pics 1") + 16
-	db BANK("Pics 18") ; BANK("Pics 1") + 17
-	db BANK("Pics 19") ; BANK("Pics 1") + 18
-	db BANK("Pics 20") ; BANK("Pics 1") + 19
-	db BANK("Pics 21") ; BANK("Pics 1") + 20
-	db BANK("Pics 22") ; BANK("Pics 1") + 21
-	db BANK("Pics 23") ; BANK("Pics 1") + 22
-	db BANK("Pics 24") ; BANK("Pics 1") + 23
-
 Function511ec:
 	ld a, c
 	push de
@@ -296,7 +186,6 @@ Function511ec:
 	call AddNTimes
 	ld a, BANK(PokemonPicPointers)
 	call GetFarByte
-	call FixPicBank
 	push af
 	inc hl
 	ld a, BANK(PokemonPicPointers)
@@ -327,7 +216,6 @@ GetTrainerPic:
 	push de
 	ld a, BANK(TrainerPicPointers)
 	call GetFarByte
-	call FixPicBank
 	push af
 	inc hl
 	ld a, BANK(TrainerPicPointers)

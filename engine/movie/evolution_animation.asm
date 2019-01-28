@@ -118,10 +118,7 @@ EvolutionAnimation:
 
 	ld a, [wPlayerHPPal]
 	ld [wCurPartySpecies], a
-	hlcoord 7, 2
-	ld d, $0
-	ld e, ANIM_MON_EVOLVE
-	predef AnimateFrontpic
+	call PlayMonCry2
 
 	pop af
 	ld [wCurPartySpecies], a

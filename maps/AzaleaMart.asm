@@ -21,26 +21,29 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "There's no GREAT"
-	line "BALL here. #"
+	text "When you first"
+	line "catch a #MON,"
+	cont "it may be weak."
 
-	para "BALLS will have"
-	line "to do."
+	para "But it will even-"
+	line "tually grow to be"
+	cont "strong."
 
-	para "I wish KURT would"
-	line "make me some of"
-	cont "his custom BALLS."
+	para "It's important to"
+	line "treat #MON with"
+	cont "love."
 	done
 
 AzaleaMartBugCatcherText:
-	text "A GREAT BALL is"
-	line "better for catch-"
-	cont "ing #MON than a"
-	cont "# BALL."
+	text "#MON can hold"
+	line "items like POTION"
+	cont "and ANTIDOTE."
 
-	para "But KURT's might"
-	line "be better some-"
-	cont "times."
+	para "But they don't"
+	line "appear to know how"
+
+	para "to use manmade"
+	line "items."
 	done
 
 AzaleaMart_MapEvents:

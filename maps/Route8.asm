@@ -1,9 +1,4 @@
 	const_def 2 ; object constants
-	const ROUTE8_BIKER1
-	const ROUTE8_BIKER2
-	const ROUTE8_BIKER3
-	const ROUTE8_SUPER_NERD1
-	const ROUTE8_SUPER_NERD2
 	const ROUTE8_FRUIT_TREE
 
 Route8_MapScripts:
@@ -11,182 +6,174 @@ Route8_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerBikerDwayne:
-	trainer BIKER, DWAYNE, EVENT_BEAT_BIKER_DWAYNE, BikerDwayneSeenText, BikerDwayneBeatenText, 0, .Script
+TrainerSwimmerKait:
+	trainer SWIMMERF, KAIT, EVENT_BEAT_SWIMMERF_KAIT, SwimmerKaitText, SwimmerKaitWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerDwayneAfterBattleText
+	writetext SwimmerKaitAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerBikerHarris:
-	trainer BIKER, HARRIS, EVENT_BEAT_BIKER_HARRIS, BikerHarrisSeenText, BikerHarrisBeatenText, 0, .Script
+	
+TrainerBirdKeeperAlex:
+	trainer BIRD_KEEPER, ALEX, EVENT_BEAT_BIRD_KEEPER_ALEX, BirdkeeperAlexText, BirdkeeperAlexWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerHarrisAfterBattleText
+	writetext BirdkeeperAlexAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerBikerZeke:
-	trainer BIKER, ZEKE, EVENT_BEAT_BIKER_ZEKE, BikerZekeSeenText, BikerZekeBeatenText, 0, .Script
+	
+TrainerFirebreatherBrian:
+	trainer FIREBREATHER, BRIAN, EVENT_BEAT_FIREBREATHER_BRIAN, FirebreatherBrianText, FirebreatherBrianWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BikerZekeAfterBattleText
+	writetext FirebreatherBrianAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerSupernerdSam:
-	trainer SUPER_NERD, SAM, EVENT_BEAT_SUPER_NERD_SAM, SupernerdSamSeenText, SupernerdSamBeatenText, 0, .Script
+	
+TrainerLassStephanie:
+	trainer LASS, STEPHANIE, EVENT_BEAT_LASS_STEPHANIE, LassStephanieText, LassStephanieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SupernerdSamAfterBattleText
+	writetext LassStephanieAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerSupernerdTom:
-	trainer SUPER_NERD, TOM, EVENT_BEAT_SUPER_NERD_TOM, SupernerdTomSeenText, SupernerdTomBeatenText, 0, .Script
+	
+TrainerJugglerRobert:
+	trainer JUGGLER, ROBERT, EVENT_BEAT_JUGGLER_ROBERT, JugglerRobertText, JugglerRobertWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SupernerdTomAfterBattleText
+	writetext JugglerRobertAfterText
 	waitbutton
 	closetext
 	end
-
-Route8LockedDoor:
-	jumptext Route8LockedDoorText
-
+	
 Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
 
 Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
+	
+Route8MoonStone:
+	itemball MOON_STONE
+	
+Route8RareCandy:
+	itemball RARE_CANDY
 
-BikerDwayneSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERATION"
-	cont "trainer group."
-
-	para "We'll drive you"
-	line "under our wheels!"
+Route8Revive:
+	itemball REVIVE
+	
+Route8Rock:
+	jumpstd smashrock	
+	
+SwimmerKaitText:
+	text "I am a"
+	line "#MON trainer."
 	done
 
-BikerDwayneBeatenText:
-	text "S-sorry!"
+SwimmerKaitWinText:
+	text "I lost."
+	done
+	
+SwimmerKaitAfterText:
+	text "I lost."
+	done
+	
+BirdkeeperAlexText:
+	text "I am a"
+	line "#MON trainer."
 	done
 
-BikerDwayneAfterBattleText:
-	text "The KANTO #MON"
-	line "FEDERATION will"
-	cont "never fall!"
+BirdkeeperAlexWinText:
+	text "I lost."
+	done
+	
+BirdkeeperAlexAfterText:
+	text "I lost."
+	done
+	
+FirebreatherBrianText:
+	text "I am a"
+	line "#MON trainer."
+	done
+	
+FirebreatherBrianWinText:
+	text "I lost."
+	done
+	
+FirebreatherBrianAfterText:
+	text "I lost."
+	done
+	
+LassStephanieText:
+	text "I am a"
+	line "#MON trainer."
 	done
 
-BikerHarrisSeenText:
-	text "The cops shut down"
-	line "our UNDERGROUND"
-
-	para "PATH! That really"
-	line "fries me!"
+LassStephanieWinText:
+	text "I lost."
 	done
-
-BikerHarrisBeatenText:
-	text "F-forgive me!"
+	
+LassStephanieAfterText:
+	text "I lost."
 	done
-
-BikerHarrisAfterBattleText:
-	text "Wiped out by some"
-	line "punk from JOHTO…"
+	
+JugglerRobertText:
+	text "I am a"
+	line "#MON trainer."
 	done
-
-BikerZekeSeenText:
-	text "We're the KANTO"
-	line "#MON FEDERA-"
-	cont "TION!"
-	cont "Right on!"
+	
+JugglerRobertWinText:
+	text "I lost."
 	done
-
-BikerZekeBeatenText:
-	text "Yikes! Sorry!"
+	
+JugglerRobertAfterText:
+	text "I lost."
 	done
-
-BikerZekeAfterBattleText:
-	text "We'll try not to"
-	line "disturb anyone"
-	cont "from now on…"
-	done
-
-SupernerdSamSeenText:
-	text "How does the MAG-"
-	line "NET TRAIN work?"
-	done
-
-SupernerdSamBeatenText:
-	text "I just want to see"
-	line "the MAGNET TRAIN…"
-	done
-
-SupernerdSamAfterBattleText:
-	text "The power of mag-"
-	line "nets is awesome!"
-	done
-
-SupernerdTomSeenText:
-	text "Hm… You've got"
-	line "many GYM BADGES."
-	done
-
-SupernerdTomBeatenText:
-	text "Just as I thought…"
-	line "You're tough!"
-	done
-
-SupernerdTomAfterBattleText:
-	text "GYM BADGES give"
-	line "you advantages in"
-	cont "battles."
-	done
-
-Route8LockedDoorText:
-	text "It's locked…"
-	done
-
+	
 Route8UndergroundPathSignText:
-	text "The flyer's torn."
-
-	para "It's impossible to"
-	line "read…"
+	text "Underground."
 	done
 
 Route8_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  4,  4, ROUTE_8_SAFFRON_GATE, 3
-	warp_event  4,  5, ROUTE_8_SAFFRON_GATE, 4
-
+	db 5 ; warp events
+	warp_event 31, 21, ROUTE_7_UNDERGROUND, 7
+	warp_event  4, 58, ROUTE_8_GOLDENROD_GATE, 3
+	warp_event  4, 59, ROUTE_8_GOLDENROD_GATE, 4
+	warp_event 33, 50, ROUTE_8_ROUTE_10_GATE, 1
+	warp_event 33, 51, ROUTE_8_ROUTE_10_GATE, 2
+	
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event 11,  7, BGEVENT_READ, Route8UndergroundPathSign
-	bg_event 10,  5, BGEVENT_READ, Route8LockedDoor
+	db 1 ; bg events
+	bg_event 30, 22, BGEVENT_READ, Route8UndergroundPathSign
 
-	db 6 ; object events
-	object_event 10,  8, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 5, TrainerBikerDwayne, -1
-	object_event 10,  9, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 5, TrainerBikerHarris, -1
-	object_event 10, 10, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerBikerZeke, -1
-	object_event 23,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerSupernerdSam, -1
-	object_event 31, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 4, TrainerSupernerdTom, -1
-	object_event 33,  5, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	db 13 ; object events
+	object_event 20, 45, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
+	object_event  4, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8MoonStone, EVENT_ROUTE_8_MOON_STONE
+	object_event 10, 69, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8RareCandy, EVENT_ROUTE_8_RARE_CANDY
+	object_event  8, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8Revive, EVENT_ROUTE_8_REVIVE
+	object_event 24, 21, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerKait, -1 
+	object_event 18, 35, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAlex, -1
+	object_event 17, 53, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBrian, -1
+	object_event  9, 58, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerLassStephanie, -1
+	object_event 27, 50, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerJugglerRobert, -1
+	object_event 29, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1
+	object_event 20, 21, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1
+	object_event 25, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1
+	object_event 23, 22, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1

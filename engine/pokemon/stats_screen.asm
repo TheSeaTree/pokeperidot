@@ -122,8 +122,6 @@ StatsScreen_WaitAnim:
 	ret
 
 .try_anim
-	farcall SetUpPokeAnim
-	jr nc, .finish
 	ld hl, wcf64
 	res 6, [hl]
 .finish
@@ -459,7 +457,7 @@ Unreferenced_Function4df7f:
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $62 ; horizontal divider (empty HP/exp bar)
+	ld a, $d9 ; horizontal divider (empty HP/exp bar)
 .loop
 	ld [hli], a
 	dec b
@@ -574,7 +572,7 @@ StatsScreen_LoadGFX:
 .done_status
 	hlcoord 1, 15
 	predef PrintMonTypes
-	hlcoord 9, 8
+	hlcoord 10, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
 	ld a, $31 ; vertical divider
@@ -583,95 +581,17 @@ StatsScreen_LoadGFX:
 	add hl, de
 	dec b
 	jr nz, .vertical_divider
-	ld de, .ExpPointStr
-	hlcoord 10, 9
-	call PlaceString
-	hlcoord 17, 14
-	call .PrintNextLevel
-	hlcoord 13, 10
-	lb bc, 3, 7
-	ld de, wTempMonExp
-	call PrintNum
-	call .CalcExpToNextLevel
-	hlcoord 13, 13
-	lb bc, 3, 7
-	ld de, wBuffer1
-	call PrintNum
-	ld de, .LevelUpStr
-	hlcoord 10, 12
-	call PlaceString
-	ld de, .ToStr
-	hlcoord 14, 14
-	call PlaceString
-	hlcoord 11, 16
-	ld a, [wTempMonLevel]
-	ld b, a
-	ld de, wTempMonExp + 2
-	predef FillInExpBar
-	hlcoord 10, 16
-	ld [hl], $40 ; left exp bar end cap
-	hlcoord 19, 16
-	ld [hl], $41 ; right exp bar end cap
+	hlcoord 11, 8
+	ld bc, 6
+	predef PrintTempMonStats
 	ret
-
-.PrintNextLevel:
-	ld a, [wTempMonLevel]
-	push af
-	cp MAX_LEVEL
-	jr z, .AtMaxLevel
-	inc a
-	ld [wTempMonLevel], a
-.AtMaxLevel:
-	call PrintLevel
-	pop af
-	ld [wTempMonLevel], a
-	ret
-
-.CalcExpToNextLevel:
-	ld a, [wTempMonLevel]
-	cp MAX_LEVEL
-	jr z, .AlreadyAtMaxLevel
-	inc a
-	ld d, a
-	farcall CalcExpAtLevel
-	ld hl, wTempMonExp + 2
-	ld hl, wTempMonExp + 2
-	ldh a, [hQuotient + 3]
-	sub [hl]
-	dec hl
-	ld [wBuffer3], a
-	ldh a, [hQuotient + 2]
-	sbc [hl]
-	dec hl
-	ld [wBuffer2], a
-	ldh a, [hQuotient + 1]
-	sbc [hl]
-	ld [wBuffer1], a
-	ret
-
-.AlreadyAtMaxLevel:
-	ld hl, wBuffer1
-	xor a
-	ld [hli], a
-	ld [hli], a
-	ld [hl], a
-	ret
-
+	
 .Status_Type:
 	db   "STATUS/"
 	next "TYPE/@"
 
 .OK_str:
 	db "OK @"
-
-.ExpPointStr:
-	db "EXP POINTS@"
-
-.LevelUpStr:
-	db "LEVEL UP@"
-
-.ToStr:
-	db "TO@"
 
 .PkrsStr:
 	db "#RUS@"
@@ -723,7 +643,7 @@ StatsScreen_LoadGFX:
 
 .BluePage:
 	call .PlaceOTInfo
-	hlcoord 10, 8
+	hlcoord 9, 8
 	ld de, SCREEN_WIDTH
 	ld b, 10
 	ld a, $31 ; vertical divider
@@ -732,19 +652,98 @@ StatsScreen_LoadGFX:
 	add hl, de
 	dec b
 	jr nz, .BluePageVerticalDivider
-	hlcoord 11, 8
-	ld bc, 6
-	predef PrintTempMonStats
+
+	ld de, .ExpPointStr
+	hlcoord 10, 9
+	call PlaceString
+	hlcoord 17, 14
+	call .PrintNextLevel
+	hlcoord 13, 10
+	lb bc, 3, 7
+	ld de, wTempMonExp
+	call PrintNum
+	call .CalcExpToNextLevel
+	hlcoord 13, 13
+	lb bc, 3, 7
+	ld de, wBuffer1
+	call PrintNum
+	ld de, .LevelUpStr
+	hlcoord 10, 12
+	call PlaceString
+	ld de, .ToStr
+	hlcoord 14, 14
+	call PlaceString
+	hlcoord 11, 16
+	ld a, [wTempMonLevel]
+	ld b, a
+	ld de, wTempMonExp + 2
+	predef FillInExpBar
+	hlcoord 10, 16
+	ld [hl], $df ; left exp bar end cap
+	hlcoord 19, 16
+	ld [hl], $eb ; right exp bar end cap
 	ret
+
+.PrintNextLevel:
+	ld a, [wTempMonLevel]
+	push af
+	cp MAX_LEVEL
+	jr z, .AtMaxLevel
+	inc a
+	ld [wTempMonLevel], a
+.AtMaxLevel:
+	call PrintLevel
+	pop af
+	ld [wTempMonLevel], a
+	ret
+
+.CalcExpToNextLevel:
+	ld a, [wTempMonLevel]
+	cp MAX_LEVEL
+	jr z, .AlreadyAtMaxLevel
+	inc a
+	ld d, a
+	farcall CalcExpAtLevel
+	ld hl, wTempMonExp + 2
+	ld hl, wTempMonExp + 2
+	ldh a, [hQuotient + 3]
+	sub [hl]
+	dec hl
+	ld [wBuffer3], a
+	ldh a, [hQuotient + 2]
+	sbc [hl]
+	dec hl
+	ld [wBuffer2], a
+	ldh a, [hQuotient + 1]
+	sbc [hl]
+	ld [wBuffer1], a
+	ret
+
+.AlreadyAtMaxLevel:
+	ld hl, wBuffer1
+	xor a
+	ld [hli], a
+	ld [hli], a
+	ld [hl], a
+	ret
+
+.ExpPointStr:
+	db "EXP POINTS@"
+
+.LevelUpStr:
+	db "LEVEL UP@"
+
+.ToStr:
+	db "TO@"
 
 .PlaceOTInfo:
 	ld de, IDNoString
-	hlcoord 0, 9
-	call PlaceString
-	ld de, OTString
 	hlcoord 0, 12
 	call PlaceString
-	hlcoord 2, 10
+	ld de, OTString
+	hlcoord 0,  9
+	call PlaceString
+	hlcoord 2, 13
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -752,7 +751,7 @@ StatsScreen_LoadGFX:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 13
+	hlcoord 2, 10
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -764,7 +763,7 @@ StatsScreen_LoadGFX:
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 13
+	hlcoord 9, 10
 	ld [hl], a
 .done
 	ret
@@ -776,7 +775,7 @@ StatsScreen_LoadGFX:
 	dw wBufferMonOT
 
 IDNoString:
-	db "<ID>№.@"
+	db "ID/@"
 
 OTString:
 	db "OT/@"
@@ -846,10 +845,6 @@ StatsScreen_PlaceFrontpic:
 	call StatsScreen_LoadTextBoxSpaceGFX
 	ld de, vTiles2 tile $00
 	predef GetAnimatedFrontpic
-	hlcoord 0, 0
-	ld d, $0
-	ld e, ANIM_MON_MENU
-	predef LoadMonAnimation
 	ld hl, wcf64
 	set 6, [hl]
 	ret
@@ -905,6 +900,8 @@ StatsScreen_GetAnimationParam:
 	jr z, .egg
 	call CheckFaintedFrzSlp
 	jr c, .FaintedFrzSlp
+	jr .Wildmon
+
 .egg
 	xor a
 	scf
@@ -1046,9 +1043,6 @@ StatsScreen_AnimateEgg:
 	ld de, vTiles2 tile $00
 	predef GetAnimatedFrontpic
 	pop de
-	hlcoord 0, 0
-	ld d, $0
-	predef LoadMonAnimation
 	ld hl, wcf64
 	set 6, [hl]
 	ret

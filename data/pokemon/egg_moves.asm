@@ -17,11 +17,9 @@ BulbasaurEggMoves:
 	db LIGHT_SCREEN
 	db SKULL_BASH
 	db SAFEGUARD
-if !_CRYSTAL
-	db CHARM
-endc
 	db RAZOR_WIND
 	db PETAL_DANCE
+	db AGILITY
 	db -1 ; end
 
 CharmanderEggMoves:
@@ -30,7 +28,7 @@ CharmanderEggMoves:
 	db ROCK_SLIDE
 	db BITE
 	db OUTRAGE
-	db BEAT_UP
+	db DREAD_STORM
 	db -1 ; end
 
 SquirtleEggMoves:
@@ -46,12 +44,9 @@ PidgeyEggMoves:
 	db PURSUIT
 	db FAINT_ATTACK
 	db FORESIGHT
-if !_CRYSTAL
-	db STEEL_WING
-endc
 	db -1 ; end
 
-RattataEggMoves:
+RinringEggMoves:
 	db SCREECH
 	db FLAME_WHEEL
 	db FURY_SWIPES
@@ -70,12 +65,8 @@ SpearowEggMoves:
 
 EkansEggMoves:
 	db PURSUIT
-	db SLAM
 	db SPITE
-	db BEAT_UP
-if _CRYSTAL
 	db CRUNCH
-endc
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -83,29 +74,24 @@ SandshrewEggMoves:
 	db SAFEGUARD
 	db COUNTER
 	db RAPID_SPIN
-if _CRYSTAL
 	db METAL_CLAW
-endc
 	db -1 ; end
 
 NidoranFEggMoves:
 	db SUPERSONIC
 	db DISABLE
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db FOCUS_ENERGY
-	db CHARM
 	db COUNTER
-	db BEAT_UP
 	db -1 ; end
 
 NidoranMEggMoves:
 	db SUPERSONIC
 	db DISABLE
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db CONFUSION
 	db AMNESIA
 	db COUNTER
-	db BEAT_UP
 	db -1 ; end
 
 VulpixEggMoves:
@@ -129,9 +115,7 @@ OddishEggMoves:
 	db RAZOR_LEAF
 	db FLAIL
 	db SYNTHESIS
-if !_CRYSTAL
-	db CHARM
-endc
+	db AGILITY
 	db -1 ; end
 
 ParasEggMoves:
@@ -140,9 +124,7 @@ ParasEggMoves:
 	db COUNTER
 	db PSYBEAM
 	db FLAIL
-if !_CRYSTAL
 	db SWEET_SCENT
-endc
 	db LIGHT_SCREEN
 	db PURSUIT
 	db -1 ; end
@@ -158,17 +140,15 @@ DiglettEggMoves:
 	db SCREECH
 	db ANCIENTPOWER
 	db PURSUIT
-	db BEAT_UP
 	db -1 ; end
 
 MeowthEggMoves:
 	db SPITE
-	db CHARM
 	db HYPNOSIS
 	db AMNESIA
 	db -1 ; end
 
-PsyduckEggMoves:
+SMolaEggMoves:
 	db ICE_BEAM
 	db HYPNOSIS
 	db PSYBEAM
@@ -176,18 +156,15 @@ PsyduckEggMoves:
 	db LIGHT_SCREEN
 	db FUTURE_SIGHT
 	db PSYCHIC_M
-if _CRYSTAL
 	db CROSS_CHOP
-endc
 	db -1 ; end
 
 MankeyEggMoves:
 	db ROCK_SLIDE
 	db FORESIGHT
-	db MEDITATE
+	db SWORDS_DANCE
 	db COUNTER
 	db REVERSAL
-	db BEAT_UP
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -196,6 +173,7 @@ GrowlitheEggMoves:
 	db CRUNCH
 	db THRASH
 	db FIRE_SPIN
+	db WILD_CHARGE
 	db -1 ; end
 
 PoliwagEggMoves:
@@ -214,8 +192,7 @@ AbraEggMoves:
 
 MachopEggMoves:
 	db LIGHT_SCREEN
-	db MEDITATE
-	db ROLLING_KICK
+	db SWORDS_DANCE
 	db ENCORE
 	db -1 ; end
 
@@ -225,6 +202,7 @@ BellsproutEggMoves:
 	db REFLECT
 	db SYNTHESIS
 	db LEECH_LIFE
+	db AGILITY
 	db -1 ; end
 
 TentacoolEggMoves:
@@ -236,7 +214,6 @@ TentacoolEggMoves:
 	db -1 ; end
 
 GeodudeEggMoves:
-	db MEGA_PUNCH
 	db ROCK_SLIDE
 	db -1 ; end
 
@@ -245,21 +222,18 @@ PonytaEggMoves:
 	db THRASH
 	db DOUBLE_KICK
 	db HYPNOSIS
-	db CHARM
 	db QUICK_ATTACK
+	db WILD_CHARGE
 	db -1 ; end
 
 SlowpokeEggMoves:
 	db SAFEGUARD
 	db BELLY_DRUM
 	db FUTURE_SIGHT
-	db STOMP
+	db HEADBUTT
 	db -1 ; end
 
 FarfetchDEggMoves:
-if !_CRYSTAL
-	db STEEL_WING
-endc
 	db FORESIGHT
 	db MIRROR_MOVE
 	db GUST
@@ -280,7 +254,6 @@ SeelEggMoves:
 	db PERISH_SONG
 	db DISABLE
 	db PECK
-	db SLAM
 	db ENCORE
 	db -1 ; end
 
@@ -288,11 +261,12 @@ GrimerEggMoves:
 	db HAZE
 	db MEAN_LOOK
 	db LICK
+	db RECOVER
 	db -1 ; end
 
 ShellderEggMoves:
 	db BUBBLEBEAM
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db BARRIER
 	db RAPID_SPIN
 	db SCREECH
@@ -319,7 +293,6 @@ KrabbyEggMoves:
 	db HAZE
 	db AMNESIA
 	db FLAIL
-	db SLAM
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -328,6 +301,7 @@ ExeggcuteEggMoves:
 	db REFLECT
 	db MEGA_DRAIN
 	db ANCIENTPOWER
+	db AGILITY
 	db -1 ; end
 
 CuboneEggMoves:
@@ -337,14 +311,15 @@ CuboneEggMoves:
 	db SCREECH
 	db SKULL_BASH
 	db PERISH_SONG
-if _CRYSTAL
 	db SWORDS_DANCE
-endc
 	db -1 ; end
 
+SearionEggMoves:
+	db -1 ; end
+	
 LickitungEggMoves:
 	db BELLY_DRUM
-	db MAGNITUDE
+	db BULLDOZE
 	db BODY_SLAM
 	db -1 ; end
 
@@ -363,13 +338,14 @@ RhyhornEggMoves:
 	db THRASH
 	db PURSUIT
 	db COUNTER
-	db MAGNITUDE
+	db BULLDOZE
 	db -1 ; end
 
 ChanseyEggMoves:
 	db PRESENT
 	db METRONOME
 	db HEAL_BELL
+	db WILD_CHARGE
 	db -1 ; end
 
 TangelaEggMoves:
@@ -378,10 +354,11 @@ TangelaEggMoves:
 	db MEGA_DRAIN
 	db REFLECT
 	db AMNESIA
+	db AGILITY
 	db -1 ; end
 
 KangaskhanEggMoves:
-	db STOMP
+	db HEADBUTT
 	db FORESIGHT
 	db FOCUS_ENERGY
 	db SAFEGUARD
@@ -403,14 +380,6 @@ GoldeenEggMoves:
 	db HYDRO_PUMP
 	db -1 ; end
 
-if !_CRYSTAL
-StaryuEggMoves:
-	db AURORA_BEAM
-	db BARRIER
-	db SUPERSONIC
-	db -1 ; end
-endc
-
 MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
@@ -430,6 +399,14 @@ PinsirEggMoves:
 	db FURY_ATTACK
 	db FLAIL
 	db -1 ; end
+	
+TaurosEggMoves:
+	db PRESENT
+	db REVERSAL
+	db SEISMIC_TOSS
+	db WILD_CHARGE
+	db FLARE_BLITZ
+	db -1 ; end
 
 LaprasEggMoves:
 	db AURORA_BEAM
@@ -438,13 +415,11 @@ LaprasEggMoves:
 
 EeveeEggMoves:
 	db FLAIL
-	db CHARM
 	db -1 ; end
 
 OmanyteEggMoves:
 	db BUBBLEBEAM
 	db AURORA_BEAM
-	db SLAM
 	db SUPERSONIC
 	db HAZE
 	db -1 ; end
@@ -461,23 +436,20 @@ AerodactylEggMoves:
 	db WHIRLWIND
 	db PURSUIT
 	db FORESIGHT
-if !_CRYSTAL
-	db STEEL_WING
-endc
+	db DREAD_STORM
 	db -1 ; end
 
 SnorlaxEggMoves:
 	db LICK
-if !_CRYSTAL
-	db CHARM
-endc
 	db -1 ; end
 
 DratiniEggMoves:
+	db COIL
 	db LIGHT_SCREEN
 	db MIST
 	db HAZE
 	db SUPERSONIC
+	db DREAD_STORM
 	db -1 ; end
 
 ChikoritaEggMoves:
@@ -495,9 +467,8 @@ CyndaquilEggMoves:
 	db REVERSAL
 	db THRASH
 	db FORESIGHT
-if _CRYSTAL
 	db SUBMISSION
-endc
+	db WILD_CHARGE
 	db -1 ; end
 
 TotodileEggMoves:
@@ -512,7 +483,7 @@ TotodileEggMoves:
 SentretEggMoves:
 	db DOUBLE_EDGE
 	db PURSUIT
-	db SLASH
+	db CUT
 	db FOCUS_ENERGY
 	db REVERSAL
 	db -1 ; end
@@ -523,15 +494,15 @@ HoothootEggMoves:
 	db FAINT_ATTACK
 	db WING_ATTACK
 	db WHIRLWIND
-if _CRYSTAL
 	db SKY_ATTACK
-endc
 	db -1 ; end
 
-LedybaEggMoves:
-	db PSYBEAM
-	db BIDE
-	db LIGHT_SCREEN
+CubboltEggMoves:
+	db BODY_SLAM
+	db CRUNCH
+	db SAFEGUARD
+	db THRASH
+	db FLARE_BLITZ
 	db -1 ; end
 
 SpinarakEggMoves:
@@ -571,7 +542,7 @@ IgglybuffEggMoves:
 	db FAINT_ATTACK
 	db -1 ; end
 
-TogepiEggMoves:
+ShifurEggMoves:
 	db PRESENT
 	db MIRROR_MOVE
 	db PECK
@@ -584,12 +555,12 @@ NatuEggMoves:
 	db DRILL_PECK
 	db QUICK_ATTACK
 	db FAINT_ATTACK
-	db STEEL_WING
+	db HYPNOSIS
 	db -1 ; end
 
 MareepEggMoves:
 	db THUNDERBOLT
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db BODY_SLAM
 	db SAFEGUARD
 	db SCREECH
@@ -608,7 +579,7 @@ MarillEggMoves:
 	db -1 ; end
 
 SudowoodoEggMoves:
-	db SELFDESTRUCT
+	db EXPLOSION
 	db -1 ; end
 
 HoppipEggMoves:
@@ -619,6 +590,7 @@ HoppipEggMoves:
 	db REFLECT
 	db AMNESIA
 	db PAY_DAY
+	db AGILITY
 	db -1 ; end
 
 AipomEggMoves:
@@ -627,9 +599,7 @@ AipomEggMoves:
 	db PURSUIT
 	db AGILITY
 	db SPITE
-	db SLAM
 	db DOUBLESLAP
-	db BEAT_UP
 	db -1 ; end
 
 YanmaEggMoves:
@@ -650,9 +620,7 @@ MurkrowEggMoves:
 	db QUICK_ATTACK
 	db MIRROR_MOVE
 	db WING_ATTACK
-if _CRYSTAL
 	db SKY_ATTACK
-endc
 	db -1 ; end
 
 MisdreavusEggMoves:
@@ -661,11 +629,10 @@ MisdreavusEggMoves:
 	db -1 ; end
 
 GirafarigEggMoves:
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db AMNESIA
 	db FORESIGHT
 	db FUTURE_SIGHT
-	db BEAT_UP
 	db -1 ; end
 
 PinecoEggMoves:
@@ -681,6 +648,7 @@ DunsparceEggMoves:
 	db ROCK_SLIDE
 	db BITE
 	db RAGE
+	db WILD_CHARGE
 	db -1 ; end
 
 GligarEggMoves:
@@ -699,6 +667,7 @@ SnubbullEggMoves:
 	db HEAL_BELL
 	db LICK
 	db LEER
+	db WILD_CHARGE
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -728,13 +697,11 @@ SneaselEggMoves:
 
 TeddiursaEggMoves:
 	db CRUNCH
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db SEISMIC_TOSS
 	db FOCUS_ENERGY
 	db COUNTER
-if _CRYSTAL
 	db METAL_CLAW
-endc
 	db -1 ; end
 
 SlugmaEggMoves:
@@ -742,7 +709,7 @@ SlugmaEggMoves:
 	db -1 ; end
 
 SwinubEggMoves:
-	db TAKE_DOWN
+	db DOUBLE_EDGE
 	db BITE
 	db BODY_SLAM
 	db ROCK_SLIDE
@@ -777,16 +744,13 @@ MantineEggMoves:
 	db TWISTER
 	db HYDRO_PUMP
 	db HAZE
-	db SLAM
 	db -1 ; end
 
 SkarmoryEggMoves:
 	db DRILL_PECK
 	db PURSUIT
 	db WHIRLWIND
-if _CRYSTAL
 	db SKY_ATTACK
-endc
 	db -1 ; end
 
 HoundourEggMoves:
@@ -796,16 +760,13 @@ HoundourEggMoves:
 	db COUNTER
 	db SPITE
 	db REVERSAL
-	db BEAT_UP
 	db -1 ; end
 
 PhanpyEggMoves:
 	db FOCUS_ENERGY
 	db BODY_SLAM
 	db ANCIENTPOWER
-if _CRYSTAL
 	db WATER_GUN
-endc
 	db -1 ; end
 
 StantlerEggMoves:
@@ -814,6 +775,7 @@ StantlerEggMoves:
 	db DISABLE
 	db LIGHT_SCREEN
 	db BITE
+	db WILD_CHARGE
 	db -1 ; end
 
 TyrogueEggMoves:
@@ -823,42 +785,38 @@ TyrogueEggMoves:
 	db MIND_READER
 	db -1 ; end
 
+GreminiEggMoves:
+	db RECOVER
+	db -1
+	
 SmoochumEggMoves:
-if !_CRYSTAL
-	db LOVELY_KISS
-endc
-	db MEDITATE
+	db CALM_MIND
 	db -1 ; end
 
 ElekidEggMoves:
 	db KARATE_CHOP
 	db BARRIER
-	db ROLLING_KICK
-	db MEDITATE
-if _CRYSTAL
+	db CALM_MIND
 	db CROSS_CHOP
-endc
 	db -1 ; end
 
 MagbyEggMoves:
 	db KARATE_CHOP
-	db MEGA_PUNCH
 	db BARRIER
 	db SCREECH
-if _CRYSTAL
 	db CROSS_CHOP
-endc
 	db -1 ; end
 
 MiltankEggMoves:
 	db PRESENT
 	db REVERSAL
 	db SEISMIC_TOSS
+	db WILD_CHARGE
 	db -1 ; end
 
 LarvitarEggMoves:
 	db PURSUIT
-	db STOMP
+	db HEADBUTT
 	db OUTRAGE
 	db FOCUS_ENERGY
 	db ANCIENTPOWER

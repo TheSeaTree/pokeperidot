@@ -17,6 +17,7 @@
 *.sgm
 *.sav
 *.rtc
+*.cht
 
 # rgbds extras
 *.map

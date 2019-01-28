@@ -29,7 +29,7 @@ MainMenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 16, 7
+	menu_coords 0, 0, 11, 7
 	dw .MenuData
 	db 1 ; default option
 
@@ -46,7 +46,7 @@ MainMenu:
 	db "OPTION@"
 	db "MYSTERY GIFT@"
 	db "MOBILE@"
-	db "MOBILE STUDIUM@"
+	db "MOBILE STADIUM@"
 
 .Jumptable:
 	dw MainMenu_Continue
@@ -234,14 +234,13 @@ MainMenu_PrintCurrentTimeAndDay:
 	call CheckRTCStatus
 	and $80
 	jr nz, .TimeFail
-	hlcoord 0, 14
+	hlcoord 5, 14
 	ld b, 2
-	ld c, 18
+	ld c, 8
 	call TextBox
 	ret
 
 .TimeFail:
-	call SpeechTextBox
 	ret
 
 .PlaceTime:
@@ -250,21 +249,15 @@ MainMenu_PrintCurrentTimeAndDay:
 	ret z
 	call CheckRTCStatus
 	and $80
-	jp nz, .PrintTimeNotSet
 	call UpdateTime
-	call GetWeekday
 	ld b, a
-	decoord 1, 15
-	call .PlaceCurrentDay
-	decoord 4, 16
+	decoord 6, 16
 	ldh a, [hHours]
+	ld b, a
+	ldh a, [hMinutes]
 	ld c, a
-	farcall PrintHour
-	ld [hl], ":"
-	inc hl
-	ld de, hMinutes
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
-	call PrintNum
+	decoord 6, 16
+	farcall PrintHoursMins
 	ret
 
 .min

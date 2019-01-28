@@ -30,7 +30,7 @@ DayCareManScript_Inside:
 	closetext
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	special GiveOddEgg
+	giveegg CUBONE, 5
 	opentext
 	writetext DayCareText_GotOddEgg
 	playsound SFX_KEY_ITEM
@@ -57,6 +57,8 @@ DayCareManScript_Inside:
 DayCareLadyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_ODD_EGG
+	iffalse .DontHaveOddEgg
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
 	iftrue .HusbandWasLookingForYou
 	special DayCareLady
@@ -69,6 +71,30 @@ DayCareLadyScript:
 	waitbutton
 	closetext
 	end
+	
+.DontHaveOddEgg
+	writetext DayCareLadyText_GiveOddEgg
+	buttonsound
+	closetext
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	giveegg SHIFUR, 5
+	opentext
+	writetext DayCareText_GotOddEgg
+	playsound SFX_KEY_ITEM
+	waitsfx
+	writetext DayCareText_DescribeOddEgg
+	waitbutton
+	closetext
+	setevent EVENT_GOT_ODD_EGG
+	end
+	
+.PartyFull:
+	opentext
+	writetext DayCareText_PartyFull
+	waitbutton
+	closetext
+	end
 
 DayCareBookshelf:
 	jumpstd difficultbookshelf
@@ -76,29 +102,6 @@ DayCareBookshelf:
 Text_GrampsLookingForYou:
 	text "Gramps was looking"
 	line "for you."
-	done
-
-Text_DayCareManTalksAboutEggTicket:
-	text "I'm the DAY-CARE"
-	line "MAN."
-
-	para "There's something"
-	line "new in GOLDENROD"
-
-	para "called the TRADE"
-	line "CORNER."
-
-	para "I was given an EGG"
-	line "TICKET that can be"
-
-	para "traded in for a"
-	line "ODD EGG."
-
-	para "But since we run a"
-	line "DAY-CARE, we don't"
-
-	para "need it. You may"
-	line "as well have it."
 	done
 
 DayCareManText_GiveOddEgg:
@@ -111,6 +114,30 @@ DayCareManText_GiveOddEgg:
 	para "I was raising"
 	line "#MON with my"
 	cont "wife, you see."
+
+	para "We were shocked to"
+	line "find an EGG!"
+
+	para "How incredible is"
+	line "that?"
+
+	para "Well, wouldn't you"
+	line "like this EGG?"
+
+	para "Then fine, this is"
+	line "yours to keep!"
+	done
+
+DayCareLadyText_GiveOddEgg:
+	text "I'm the DAY-CARE"
+	line "LADY."
+
+	para "Do you know about"
+	line "EGGS?"
+
+	para "I was raising"
+	line "#MON with my"
+	cont "husband, you see."
 
 	para "We were shocked to"
 	line "find an EGG!"
@@ -144,7 +171,7 @@ DayCareText_DescribeOddEgg:
 	para "But the trainer"
 	line "didn't want the"
 
-	para "EGG, so I'd kept"
+	para "EGG, so we kept"
 	line "it around."
 	done
 
@@ -156,11 +183,9 @@ DayCareText_PartyFull:
 DayCare_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  0,  5, ROUTE_34, 3
-	warp_event  0,  6, ROUTE_34, 4
-	warp_event  2,  7, ROUTE_34, 5
-	warp_event  3,  7, ROUTE_34, 5
+	db 2 ; warp events
+	warp_event  2,  7, GOLDENROD_CITY, 4
+	warp_event  3,  7, GOLDENROD_CITY, 4
 
 	db 0 ; coord events
 

@@ -5,20 +5,18 @@ Marts:
 	dw MartViolet
 	dw MartAzalea
 	dw MartCianwood
+	dw MartCianwoodRobbed
 	dw MartGoldenrod2F1
 	dw MartGoldenrod2F2
 	dw MartGoldenrod3F
 	dw MartGoldenrod4F
-	dw MartGoldenrod5F1
-	dw MartGoldenrod5F2
-	dw MartGoldenrod5F3
-	dw MartGoldenrod5F4
+	dw MartGoldenrod5F
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartBlackthorn
-	dw MartViridian
+	dw MartGoldenrod
 	dw MartPewter
 	dw MartCerulean
 	dw MartLavender
@@ -54,30 +52,23 @@ MartCherrygroveDex:
 	db -1 ; end
 
 MartViolet:
-	db 10 ; # items
+	db 6 ; # items
 	db POKE_BALL
+	db GREAT_BALL
 	db POTION
-	db ESCAPE_ROPE
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db AWAKENING
-	db X_DEFEND
-	db X_ATTACK
-	db X_SPEED
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartAzalea:
-	db 9 ; # items
-	db CHARCOAL
+	db 6 ; # items
 	db POKE_BALL
 	db POTION
-	db SUPER_POTION
 	db ESCAPE_ROPE
 	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartCianwood:
@@ -88,6 +79,12 @@ MartCianwood:
 	db FULL_HEAL
 	db REVIVE
 	db -1 ; end
+	
+MartCianwoodRobbed:
+	db 2
+	db POTION
+	db ANTIDOTE
+	db -1
 
 MartGoldenrod2F1:
 	db 7 ; # items
@@ -132,36 +129,11 @@ MartGoldenrod4F:
 	db HP_UP
 	db -1 ; end
 
-MartGoldenrod5F1:
+MartGoldenrod5F:
 	db 3 ; # items
 	db TM_THUNDERPUNCH
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
-	db -1 ; end
-
-MartGoldenrod5F2:
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db -1 ; end
-
-MartGoldenrod5F3:
-	db 4 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_ROCK_SMASH
-	db -1 ; end
-
-MartGoldenrod5F4:
-	db 5 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_HEADBUTT
-	db TM_ROCK_SMASH
 	db -1 ; end
 
 MartOlivine:
@@ -225,19 +197,17 @@ MartBlackthorn:
 	db X_ATTACK
 	db -1 ; end
 
-MartViridian:
-	db 9 ; # items
-	db ULTRA_BALL
-	db HYPER_POTION
-	db FULL_HEAL
-	db REVIVE
+MartGoldenrod:
+	db 6 ; # items
+	db POKE_BALL
+	db GREAT_BALL
+	db SUPER_POTION
+	db REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
-	db FLOWER_MAIL
+	db ETHER
 	db -1 ; end
-
+	
 MartPewter:
 	db 7 ; # items
 	db GREAT_BALL
@@ -313,11 +283,11 @@ MartCeladon2F2:
 
 MartCeladon3F:
 	db 5 ; # items
-	db TM_HIDDEN_POWER
-	db TM_SUNNY_DAY
+	db TM_PSYCH_UP
 	db TM_PROTECT
-	db TM_RAIN_DANCE
-	db TM_SANDSTORM
+	db TM_THUNDERPUNCH
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
 	db -1 ; end
 
 MartCeladon4F:

@@ -304,8 +304,8 @@ IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  5, 13, ROUTE_23, 1
-	warp_event  6, 13, ROUTE_23, 2
+	warp_event  5, 13, ROUTE_1, 1
+	warp_event  6, 13, ROUTE_1, 2
 	warp_event  0, 13, POKECENTER_2F, 1
 	warp_event 14,  3, WILLS_ROOM, 1
 

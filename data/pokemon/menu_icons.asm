@@ -54,8 +54,8 @@ MonMenuIcons:
 	db ICON_DIGLETT     ; DUGTRIO
 	db ICON_FOX         ; MEOWTH
 	db ICON_FOX         ; PERSIAN
-	db ICON_MONSTER     ; PSYDUCK
-	db ICON_MONSTER     ; GOLDUCK
+	db ICON_FISH        ; PSYDUCK
+	db ICON_FISH        ; GOLDUCK
 	db ICON_FIGHTER     ; MANKEY
 	db ICON_FIGHTER     ; PRIMEAPE
 	db ICON_FOX         ; GROWLITHE
@@ -106,8 +106,8 @@ MonMenuIcons:
 	db ICON_ODDISH      ; EXEGGUTOR
 	db ICON_MONSTER     ; CUBONE
 	db ICON_MONSTER     ; MAROWAK
-	db ICON_FIGHTER     ; HITMONLEE
-	db ICON_FIGHTER     ; HITMONCHAN
+	db ICON_SHELL       ; HITMONLEE
+	db ICON_FOX         ; HITMONCHAN
 	db ICON_MONSTER     ; LICKITUNG
 	db ICON_BLOB        ; KOFFING
 	db ICON_BLOB        ; WEEZING
@@ -138,8 +138,8 @@ MonMenuIcons:
 	db ICON_FOX         ; JOLTEON
 	db ICON_FOX         ; FLAREON
 	db ICON_VOLTORB     ; PORYGON
-	db ICON_SHELL       ; OMANYTE
-	db ICON_SHELL       ; OMASTAR
+	db ICON_OMANYTE     ; OMANYTE
+	db ICON_OMANYTE     ; OMASTAR
 	db ICON_SHELL       ; KABUTO
 	db ICON_SHELL       ; KABUTOPS
 	db ICON_BIRD        ; AERODACTYL
@@ -165,8 +165,8 @@ MonMenuIcons:
 	db ICON_FOX         ; FURRET
 	db ICON_BIRD        ; HOOTHOOT
 	db ICON_BIRD        ; NOCTOWL
-	db ICON_BUG         ; LEDYBA
-	db ICON_BUG         ; LEDIAN
+	db ICON_FOX         ; CUBBOLT
+	db ICON_FOX         ; ELECTIGER
 	db ICON_BUG         ; SPINARAK
 	db ICON_BUG         ; ARIADOS
 	db ICON_BAT         ; CROBAT
@@ -176,7 +176,7 @@ MonMenuIcons:
 	db ICON_CLEFAIRY    ; CLEFFA
 	db ICON_JIGGLYPUFF  ; IGGLYBUFF
 	db ICON_CLEFAIRY    ; TOGEPI
-	db ICON_BIRD        ; TOGETIC
+	db ICON_CLEFAIRY    ; TOGETIC
 	db ICON_BIRD        ; NATU
 	db ICON_BIRD        ; XATU
 	db ICON_FOX         ; MAREEP
@@ -224,7 +224,7 @@ MonMenuIcons:
 	db ICON_EQUINE      ; PILOSWINE
 	db ICON_SHELL       ; CORSOLA
 	db ICON_FISH        ; REMORAID
-	db ICON_FISH        ; OCTILLERY
+	db ICON_JELLYFISH   ; OCTILLERY
 	db ICON_MONSTER     ; DELIBIRD
 	db ICON_FISH        ; MANTINE
 	db ICON_BIRD        ; SKARMORY
@@ -236,8 +236,8 @@ MonMenuIcons:
 	db ICON_VOLTORB     ; PORYGON2
 	db ICON_EQUINE      ; STANTLER
 	db ICON_MONSTER     ; SMEARGLE
-	db ICON_FIGHTER     ; TYROGUE
-	db ICON_FIGHTER     ; HITMONTOP
+	db ICON_ODDISH      ; TYROGUE
+	db ICON_BIRD        ; HITMONTOP
 	db ICON_HUMANSHAPE  ; SMOOCHUM
 	db ICON_HUMANSHAPE  ; ELEKID
 	db ICON_HUMANSHAPE  ; MAGBY
@@ -252,3 +252,5 @@ MonMenuIcons:
 	db ICON_LUGIA       ; LUGIA
 	db ICON_HO_OH       ; HO_OH
 	db ICON_HUMANSHAPE  ; CELEBI
+	db ICON_JELLYFISH   ; OCTANK
+	db ICON_EGG         ; EGG

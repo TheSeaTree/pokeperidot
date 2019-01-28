@@ -139,5 +139,5 @@ BattleCommand_SleepTalk:
 	ret z
 	cp EFFECT_FLY
 	ret z
-	cp EFFECT_BIDE
+	cp EFFECT_BIDE	
 	ret

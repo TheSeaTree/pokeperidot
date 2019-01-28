@@ -1,46 +1,22 @@
 	const_def 2 ; object constants
-	const ROUTE4_YOUNGSTER
-	const ROUTE4_LASS1
-	const ROUTE4_LASS2
-	const ROUTE4_POKE_BALL
+	const ROUTE4_COOLTRAINER_F
+	const ROUTE4_SCIENTIST
 
 Route4_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperHank:
-	trainer BIRD_KEEPER, HANK, EVENT_BEAT_BIRD_KEEPER_HANK, BirdKeeperHankSeenText, BirdKeeperHankBeatenText, 0, .Script
+TrainerLassMelissa:
+	trainer LASS, MELISSA, EVENT_BEAT_LASS_MELISSA, LassMelissaText, LassMelissaWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperHankAfterBattleText
+	writetext LassMelissaWinText
 	waitbutton
 	closetext
-	end
-
-TrainerPicnickerHope:
-	trainer PICNICKER, HOPE, EVENT_BEAT_PICNICKER_HOPE, PicnickerHopeSeenText, PicnickerHopeBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PicnickerHopeAfterBattleText
-	waitbutton
-	closetext
-	end
-
-TrainerPicnickerSharon:
-	trainer PICNICKER, SHARON, EVENT_BEAT_PICNICKER_SHARON, PicnickerSharonSeenText, PicnickerSharonBeatenText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext PicnickerSharonAfterBattleText
-	waitbutton
-	closetext
-	end
+	end	
 
 MtMoonSquareSign:
 	jumptext MtMoonSquareSignText
@@ -50,65 +26,24 @@ Route4HPUp:
 
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
-
-BirdKeeperHankSeenText:
-	text "I'm raising my"
-	line "#MON. Want to"
-	cont "battle with me?"
+	
+LassMelissaText:
+	text "My #MON are the"
+	line "most loyal!"
 	done
-
-BirdKeeperHankBeatenText:
-	text "Ack! I lost that"
-	line "one…"
+	
+LassMelissaWinText:
+	text "We weren't"
+	line "prepared for some-"
+	cont "one as strong as"
+	cont "you."
 	done
-
-BirdKeeperHankAfterBattleText:
-	text "If you have a"
-	line "specific #MON"
-
-	para "that you want to"
-	line "raise, put it out"
-
-	para "first, then switch"
-	line "it right away."
-
-	para "That's how to do"
-	line "it."
-	done
-
-PicnickerHopeSeenText:
-	text "I have a feeling"
-	line "that I can win."
-
-	para "Let's see if I'm"
-	line "right!"
-	done
-
-PicnickerHopeBeatenText:
-	text "Aww, you are too"
-	line "strong."
-	done
-
-PicnickerHopeAfterBattleText:
-	text "I heard CLEFAIRY"
-	line "appear at MT.MOON."
-
-	para "But where could"
-	line "they be?"
-	done
-
-PicnickerSharonSeenText:
-	text "Um…"
-	line "I…"
-	done
-
-PicnickerSharonBeatenText:
-	text "…"
-	done
-
-PicnickerSharonAfterBattleText:
-	text "……I'll go train"
-	line "some more…"
+	
+LassMelissaAfterText:
+	text "My #MON may be"
+	line "loyal, but they"
+	cont "were no match for"
+	cont "you."
 	done
 
 MtMoonSquareSignText:
@@ -121,17 +56,19 @@ MtMoonSquareSignText:
 Route4_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event  2,  5, MOUNT_MOON, 2
-
+	db 6 ; warp events
+	warp_event  8,  12, ROUTE_3_ROUTE_4_GATE, 3
+	warp_event  8,  13, ROUTE_3_ROUTE_4_GATE, 4
+	warp_event 43,  14, ROUTE_4_FOREST_GATE, 1
+	warp_event 43,  15, ROUTE_4_FOREST_GATE, 2
+	warp_event  4,  46, ROUTE_4_AZALEA_GATE, 3
+	warp_event  4,  47, ROUTE_4_AZALEA_GATE, 4
+	
 	db 0 ; coord events
 
 	db 2 ; bg events
 	bg_event  3,  7, BGEVENT_READ, MtMoonSquareSign
 	bg_event 10,  3, BGEVENT_ITEM, Route4HiddenUltraBall
 
-	db 4 ; object events
-	object_event 17,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperHank, -1
-	object_event  9,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerHope, -1
-	object_event 21,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerSharon, -1
-	object_event 26,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route4HPUp, EVENT_ROUTE_4_HP_UP
+	db 1 ; object events
+	object_event 17,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerLassMelissa, -1

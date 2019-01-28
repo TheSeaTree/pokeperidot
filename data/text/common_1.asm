@@ -150,23 +150,12 @@ UnknownText_0x1bc272::
 UnknownText_0x1bc288::
 	text "CARD FOLDER open.@@"
 
-UnknownText_0x1bc29c::
-	text "<……><……><……><……><……><……>"
-	line "<……><……><……><……><……><……>"
-
-	para "Zzz… Hm? Wha…?"
-	line "You woke me up!"
-
-	para "Will you check the"
-	line "clock for me?"
-	prompt
-
 UnknownText_0x1bc2eb::
 	text "What time is it?"
 	done
 
 UnknownText_0x1bc2fd::
-	text "What?@@"
+	text "Is @@"
 
 UnknownText_0x1bc305::
 	text "?"
@@ -177,27 +166,10 @@ UnknownText_0x1bc308::
 	done
 
 UnknownText_0x1bc31b::
-	text "Whoa!@@"
+	text "Is @@"
 
 UnknownText_0x1bc323::
 	text "?"
-	done
-
-UnknownText_0x1bc326::
-	text "!"
-	line "I overslept!"
-	done
-
-UnknownText_0x1bc336::
-	text "!"
-	line "Yikes! I over-"
-	cont "slept!"
-	done
-
-UnknownText_0x1bc34f::
-	text "!"
-	line "No wonder it's so"
-	cont "dark!"
 	done
 
 UnknownText_0x1bc369::
@@ -1283,6 +1255,13 @@ UnknownText_0x1bd308::
 	line "wore off."
 	done
 
+UseAnotherRepelText::
+	text "REPEL's effect"
+	line "wore off."
+
+	para "Use another?"
+	done
+	
 UnknownText_0x1bd321::
 	text "<PLAYER> found"
 	line "@"

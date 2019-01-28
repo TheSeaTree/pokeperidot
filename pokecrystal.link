@@ -47,8 +47,8 @@ ROMX $07
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
-	"Egg Moves"
 ROMX $09
+	"Egg Moves"
 	"bank9"
 ROMX $0a
 	"bankA"
@@ -137,13 +137,8 @@ ROMX $32
 ROMX $33
 	"Move Animations"
 	"Extra Songs 2"
-ROMX $34
-	"Pic Animations 1"
-ROMX $35
-	"Pic Animations 2"
 ROMX $36
 	"Font Inversed"
-	"Pic Animations 3"
 ROMX $37
 	"Tileset Data 6"
 ROMX $38

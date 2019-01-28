@@ -1,0 +1,113 @@
+##############################################################################
+# Hex Workshop Color Map Definition File (cmap)
+#
+# General Format:
+#   <hex_sequence> | <charrange> = <color_definiton> [,<comment>]
+# 
+# <hex_sequence> 
+#  Defines a hex sequence.  The hex sequence must a valid quoted hex string
+#  and can represent between 1 to 32 bytes of data.
+#   
+#  Example:
+#    "00AABBCC"
+#
+# <charrange>
+#   Defines a range of characters in decimal.
+#
+#   For example, byte 0 to 32 is represented as:
+#     charrange(0, 32)
+#
+# <color_definition>
+#   Defines the color definition.  Each color definition is defined using an
+#   RGB tuple.  For example, RGB(<red>, <green>, <blue>), where each color
+#   component is a decimal value between 0 and 255.
+#
+#   RGB(<red>, <green>, <blue>)
+#     Defines the RGB value for either the foreground or background for
+#     both the hex and text/ascii areas.  This format is compatible with
+#     Hex Workshop v5.x and earlier.
+#
+#     To display all instances of 'DDDD' in black on yellow:
+#       "DDDD"=RGB(0, 0, 0), RGB(255, 255, 0)  
+#
+#   hexFgRGB(<red>, <green>, <blue>)
+#     Defines the hex foreground color.
+#  
+#   hexBgRGB(<red>, <green>, <blue>)
+#     Defines the hex background color.
+#
+#   hexRectRGB(<red>, <green>, <blue>)
+#     Defines the hex border rectangle color.
+#
+#   asciiFgRGB(<red>, <green>, <blue>)
+#     Defines the ascii foreground color.
+#
+#   asciiBgRGB(<red>, <green>, <blue>)
+#     Defines the ascii background color.
+#
+#   asciiRectRGB(<red>, <green>, <blue>)
+#     Defines the ascii border rectangle color.
+#
+# <comment>
+#    Defines a comment for a particular color mapping.  The comment is
+#    displayed in a tooltip when hovering the mouse cursor over rendered
+#    data in Hex Workshop.
+#
+#    Example:
+#        comment("My Color Mapping")
+#
+##############################################################################
+#
+# Examples:
+#
+# Displays all instances of "00000000" in White on Black:
+#   "00000000" = RGB(255, 255, 255), RGB(0, 0, 0)
+#
+# Displays all instances of "00000000" in a Red Rectangle:
+#   "00000000" = asciiRectRGB(255, 0, 0), hexRectRGB(255, 0, 0)
+#
+# Displays all instances of "00000000" in Blue on Yellow (hex) and Green on 
+# Yellow (ascii):
+#   "00000000" = asciiFgRGB(0, 255, 0), hexFgRGB(0, 0, 255), RGB(255, 255, 0)
+#
+# Displays all instances of "00000000" in Blue on Yellow (hex) and Green on 
+# gray (ascii):
+#   "00000000" = asciiFgRGB(0, 255, 0), hexFgRGB(0, 0, 255), asciiBgRGB(192, 192, 192), hexBgRGB(255, 255, 0)
+#
+# Displays all instances of "00000000" with a yellow background in the hex 
+# display and yellow border rectangle in the ascii display:
+#   "00000000" = hexBgRGB(255, 255, 0), asciiRectRGB(255, 255, 0)
+##PAMSFT
+
+"11" = RGB(0, 0, 0), RGB(0, 255, 0)
+"24" = RGB(0, 255, 0), RGB(120, 56, 0)
+"1A" = RGB(0, 0, 0), RGB(224, 248, 160)
+"23" = RGB(0, 255, 0), RGB(120, 56, 0)
+"0A" = RGB(0, 0, 0), RGB(255, 128, 64)
+"14" = RGB(255, 251, 240), RGB(120, 56, 0)
+"25" = RGB(0, 255, 0), RGB(120, 56, 0)
+"15" = RGB(0, 255, 0), RGB(120, 56, 0)
+"03" = RGB(0, 255, 0), RGB(120, 56, 0)
+"07" = RGB(0, 0, 0), RGB(160, 160, 164)
+"16" = RGB(0, 0, 0), RGB(160, 160, 164)
+"26" = RGB(0, 0, 0), RGB(160, 160, 164)
+"06" = RGB(0, 0, 0), RGB(160, 160, 164)
+"27" = RGB(0, 0, 0), RGB(160, 160, 164)
+"17" = RGB(0, 0, 0), RGB(160, 160, 164)
+"18" = RGB(255, 251, 240), RGB(0, 0, 255)
+"0B" = RGB(0, 255, 0), RGB(0, 0, 255)
+"22" = RGB(0, 255, 0), RGB(0, 0, 255)
+"21" = RGB(0, 255, 0), RGB(0, 0, 255)
+"04" = RGB(0, 255, 0), RGB(120, 56, 0)
+"05" = RGB(0, 255, 0), RGB(120, 56, 0)
+"0D" = RGB(255, 0, 0), RGB(120, 56, 0), asciiRectRGB(255, 0, 0), hexRectRGB(255, 0, 0)
+"0C" = RGB(255, 0, 0), RGB(224, 248, 160), asciiRectRGB(255, 0, 0), hexRectRGB(255, 0, 0)
+"00" = RGB(0, 255, 0), RGB(0, 0, 255)
+"10" = RGB(0, 255, 0), RGB(0, 0, 255)
+"20" = RGB(0, 255, 0), RGB(0, 0, 255)
+"19" = RGB(0, 0, 255), RGB(224, 248, 160)
+"01" = RGB(0, 255, 0), RGB(0, 0, 255)
+"02" = RGB(0, 255, 0), RGB(0, 0, 255)
+"09" = RGB(0, 255, 0), RGB(0, 0, 255)
+"0E" = RGB(255, 0, 0), RGB(0, 0, 255), asciiRectRGB(255, 0, 0), hexRectRGB(255, 0, 0)
+"13" = RGB(0, 255, 0), RGB(120, 56, 0)

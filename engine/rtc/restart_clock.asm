@@ -37,8 +37,8 @@ RestartClock:
 	set NO_TEXT_SCROLL, [hl]
 	call LoadStandardMenuHeader
 	call ClearTileMap
-	ld hl, .Text_SetWithControlPad
-	call PrintText
+;	ld hl, .Text_SetWithControlPad
+;	call PrintText
 	call .SetClock
 	call ExitMenu
 	pop bc
@@ -58,11 +58,12 @@ RestartClock:
 	db "@"
 
 .SetClock:
-	ld a, 1
-	ld [wBuffer1], a ; which digit
-	ld [wBuffer2], a
-	ld a, 8
-	ld [wBuffer3], a
+	farcall InitClock
+;	ld a, 1
+;	ld [wBuffer1], a ; which digit
+;	ld [wBuffer2], a
+;	ld a, 8
+;	ld [wBuffer3], a
 	call UpdateTime
 	call GetWeekday
 	ld [wBuffer4], a
@@ -77,10 +78,10 @@ RestartClock:
 	and a
 	ret nz
 	call .PrintTime
-	ld hl, .Text_IsThisOK
-	call PrintText
-	call YesNoBox
-	jr c, .cancel
+;	ld hl, .Text_IsThisOK
+;	call PrintText
+;	call YesNoBox
+;	jr c, .cancel
 	ld a, [wBuffer4]
 	ld [wStringBuffer2], a
 	ld a, [wBuffer5]
@@ -90,7 +91,7 @@ RestartClock:
 	xor a
 	ld [wStringBuffer2 + 3], a
 	call InitTime
-	call .PrintTime
+;	call .PrintTime
 	ld hl, .Text_ClockReset
 	call PrintText
 	call WaitPressAorB_BlinkCursor
@@ -190,7 +191,7 @@ RestartClock:
 	ld b, 5
 	ld c, 18
 	call TextBox
-	decoord 1, 8
+	decoord 11, 8
 	ld a, [wBuffer4]
 	ld b, a
 	farcall PrintDayOfWeek
@@ -198,7 +199,7 @@ RestartClock:
 	ld b, a
 	ld a, [wBuffer6]
 	ld c, a
-	decoord 11, 8
+	decoord 1, 8
 	farcall PrintHoursMins
 	ld a, [wBuffer2]
 	lb de, " ", " "

@@ -908,6 +908,16 @@ HPIsFullText:
 	line "HP is full!"
 	prompt
 
+TeleportOutText:
+	text "<USER>"
+	line "teleported away!"
+	prompt
+	
+TeleportInText:
+	text "<USER>"
+	line "took its place!"
+	prompt
+	
 DraggedOutText:
 	text "<USER>"
 	line "was dragged out!"

@@ -246,10 +246,10 @@ SuicuneFrameIterator:
 	ret
 
 .Frames:
-	db $80 ; vTiles3 tile $80
-	db $88 ; vTiles3 tile $88
+	db $00 ; vTiles3 tile $80
+	db $00 ; vTiles3 tile $88
 	db $00 ; vTiles5 tile $00
-	db $08 ; vTiles5 tile $08
+	db $00 ; vTiles5 tile $08
 
 LoadSuicuneFrame:
 	hlcoord 6, 12

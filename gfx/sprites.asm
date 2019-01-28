@@ -106,3 +106,10 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+
+SECTION "Sprites 3", ROMX
+
+ConeSpriteGFX:: 			   INCBIN "gfx/sprites/cone.2bpp"
+ProfSpriteGFX::				   INCBIN "gfx/sprites/professor.2bpp"
+AmberSpriteGFX::			   INCBIN "gfx/sprites/amber.2bpp"
+BookSpriteGFX::				   INCBIN "gfx/sprites/book.2bpp"

@@ -365,6 +365,9 @@ LoadBuyMenuText:
 	ret
 
 MartAskPurchaseQuantity:
+	ld a, [wCurItem]
+	cp TM01
+	jr nc, .PurchaseQuantityOfTM
 	call GetMartDialogGroup ; gets a pointer from GetMartDialogGroup.MartTextFunctionPointers
 	inc hl
 	inc hl
@@ -374,6 +377,44 @@ MartAskPurchaseQuantity:
 	cp 1
 	jp z, BargainShopAskPurchaseQuantity
 	jp RooftopSaleAskPurchaseQuantity
+
+.PurchaseQuantityOfTM:
+	push de
+	ld hl, wNumItems
+	call CheckItem
+	pop de
+	jp c, .AlreadyHaveTM
+	farcall GetItemPrice
+	ld a, d
+	ld [wBuffer1], a
+	ld a, e
+	ld [wBuffer2], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld a, 99
+	ld [wItemQuantityBuffer], a
+	farcall BuySell_MultiplyPrice
+	push hl
+	ld hl, hMoneyTemp
+	ldh a, [hProduct + 1]
+	ld [hli], a
+	ldh a, [hProduct + 2]
+	ld [hli], a
+	ldh a, [hProduct + 3]
+	ld [hl], a
+	pop hl
+	ret
+
+.AlreadyHaveTM:
+	ld hl, .AlreadyHaveTMText
+	call PrintText
+	call JoyWaitAorB
+	scf
+	ret
+
+.AlreadyHaveTMText:
+	text_jump AlreadyHaveTMText
+	db "@"
 
 GetMartDialogGroup:
 	ld a, [wEngineBuffer1]
@@ -693,7 +734,7 @@ Text_BargainShop_ComeAgain:
 	db "@"
 
 Text_Pharmacist_Intro:
-	; What's up? Need some medicine?
+	; I don't have much to offer.
 	text_jump UnknownText_0x1c4e5f
 	db "@"
 

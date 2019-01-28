@@ -58,10 +58,28 @@ GoldenrodHappinessRaterTeacherScript:
 	end
 
 GoldenrodHappinessRaterPokefanMScript:
+	checkevent EVENT_GOT_EXP_SHARE
+	iftrue .gotit
+	faceplayer
+	opentext
+	writetext GoldenrodHappinessRaterGiveExpShare
+	waitbutton
+	verbosegiveitem EXP_SHARE
+	waitbutton
+	setevent EVENT_GOT_EXP_SHARE
+	writetext GoldenrodHappinessRaterPokefanMText
+	waitbutton
+	turnobject LAST_TALKED, LEFT
+	closetext
+	end
+	
+.gotit
 	jumptextfaceplayer GoldenrodHappinessRaterPokefanMText
+	turnobject LAST_TALKED, LEFT
+	end
 
-GoldenrodHappinessRaterTwinScript:
-	jumptextfaceplayer GoldenrodHappinessRaterTwinText
+GoldenrodHappinessRaterYoungsterScript:
+	jumptextfaceplayer GoldenrodHappinessRaterYoungsterText
 
 HappinessRatersHouseBookshelf:
 	jumpstd difficultbookshelf
@@ -116,7 +134,7 @@ GoldenrodHappinessRatingText_LooksMean:
 	cont "It looks mean."
 	done
 
-GoldenrodHappinessRaterPokefanMText:
+GoldenrodHappinessRaterYoungsterText:
 	text "I keep losing in"
 	line "battles, and my"
 
@@ -128,27 +146,42 @@ GoldenrodHappinessRaterPokefanMText:
 	cont "like me much…"
 	done
 
-GoldenrodHappinessRaterTwinText:
+GoldenrodHappinessRaterPokefanMText:
+	text "That right there"
+	line "is an EXP. SHARE."
+	
+	para "Give it to a"
+	line "#MON and it'll"
+	cont "grow stronger"
+	cont "without needing to"
+	cont "leave its BALL."
+	done
+	
+GoldenrodHappinessRaterGiveExpShare:
 	text "When I use an item"
 	line "on my #MON, it"
 	cont "acts really glad!"
+	
+	para "You should try"
+	line "giving an item to"
+	cont "your #MON too!"
 	done
 
 GoldenrodHappinessRater_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, GOLDENROD_CITY, 3
-	warp_event  3,  7, GOLDENROD_CITY, 3
+	warp_event  3,  7, GOLDENROD_CITY, 5
+	warp_event  4,  7, GOLDENROD_CITY, 5
 
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event  0,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
+	bg_event  6,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
-	bg_event  7,  1, BGEVENT_READ, HappinessRatersHouseRadio
+	bg_event  2,  1, BGEVENT_READ, HappinessRatersHouseRadio
 
 	db 3 ; object events
-	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1
-	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1
-	object_event  5,  6, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTwinScript, -1
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1
+	object_event  5,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterPokefanMScript, -1
+	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterYoungsterScript, -1

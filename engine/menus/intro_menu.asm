@@ -28,16 +28,16 @@ PrintDayOfWeek:
 	ret
 
 .Days:
-	db "SUN@"
-	db "MON@"
-	db "TUES@"
-	db "WEDNES@"
-	db "THURS@"
-	db "FRI@"
-	db "SATUR@"
+	db "@"
+	db "@"
+	db "@"
+	db "@"
+	db "@"
+	db "@"
+	db "@"
 
 .Day:
-	db "DAY@"
+	db "@"
 
 NewGame_ClearTileMapEtc:
 	xor a
@@ -79,7 +79,7 @@ NewGame:
 AreYouABoyOrAreYouAGirl:
 	farcall Mobile_AlwaysReturnNotCarry ; some mobile stuff
 	jr c, .ok
-	farcall InitGender
+;	farcall InitGender
 	ret
 
 .ok
@@ -649,7 +649,7 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTileMap
 
-	ld a, WOOPER
+	ld a, NIDORAN_M
 	ld [wCurSpecies], a
 	ld [wCurPartySpecies], a
 	call GetBaseData
@@ -667,7 +667,72 @@ OakSpeech:
 
 	ld hl, OakText2
 	call PrintText
-	ld hl, OakText4
+	ld hl, OakText4	
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTileMap
+	
+	ld a, SPEAROW
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_WipeInFrontpic
+	
+	ld hl, OakText4a
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTileMap
+	
+	ld a, HORSEA
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_WipeInFrontpic
+	
+	ld hl, OakText4b
+	call PrintText
+	call RotateThreePalettesRight
+	call ClearTileMap
+
+	ld a, GROWLITHE
+	ld [wCurSpecies], a
+	ld [wCurPartySpecies], a
+	call GetBaseData
+
+	hlcoord 6, 4
+	call PrepMonFrontpic
+
+	xor a
+	ld [wTempMonDVs], a
+	ld [wTempMonDVs + 1], a
+
+	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call Intro_WipeInFrontpic
+	
+	ld hl, OakText4c
+	call PrintText
+	ld hl, OakText4d
 	call PrintText
 	call RotateThreePalettesRight
 	call ClearTileMap
@@ -689,6 +754,7 @@ OakSpeech:
 
 	xor a
 	ld [wCurPartySpecies], a
+	farcall InitGender
 	farcall DrawIntroPlayerPic
 
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
@@ -709,7 +775,7 @@ OakText1:
 OakText2:
 	text_jump _OakText2
 	start_asm
-	ld a, WOOPER
+	ld a, NIDORAN_M
 	call PlayMonCry
 	call WaitSFX
 	ld hl, OakText3
@@ -721,6 +787,42 @@ OakText3:
 
 OakText4:
 	text_jump _OakText4
+	db "@"
+	
+OakText4a:
+	text_jump _OakText4a
+	start_asm
+	ld a, SPEAROW
+	call PlayMonCry
+	call WaitSFX
+	ld hl, OakText3
+	ret
+	
+OakText4b:
+	text_jump _OakText4b
+	start_asm
+	ld a, HORSEA
+	call PlayMonCry
+	call WaitSFX
+	ld hl, OakText3
+	ret	
+	
+OakText4c:
+	text_jump _OakText4c
+	start_asm
+	ld a, GROWLITHE
+	call PlayMonCry
+	call WaitSFX
+	ld hl, OakText3
+	ret
+	
+
+OakText4d:
+	text_jump _OakText4d
+	db "@"
+
+OakText4e:
+	text_jump _OakText4e
 	db "@"
 
 OakText5:
@@ -776,7 +878,7 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "CHRIS@@@@@@"
+	db "FRANK@@@@@@"
 .Kris:
 	db "KRIS@@@@@@@"
 
@@ -864,8 +966,8 @@ Intro_RotatePalettesLeftFrontpic:
 	ret
 
 IntroFadePalettes:
-	db %01010100
-	db %10101000
+;	db %01010100
+;	db %10101000
 	db %11111100
 	db %11111000
 	db %11110100
@@ -955,7 +1057,7 @@ Intro_PlacePlayerSprite:
 CrystalIntroSequence:
 	callfar Copyright_GFPresents
 	jr c, StartTitleScreen
-	farcall CrystalIntro
+;	farcall CrystalIntro
 
 StartTitleScreen:
 	ldh a, [rSVBK]
@@ -974,6 +1076,10 @@ StartTitleScreen:
 
 	pop af
 	ldh [rSVBK], a
+	
+	ld a, NATU
+	call PlayMonCry
+	call WaitSFX
 
 	ld hl, rLCDC
 	res rLCDC_SPRITE_SIZE, [hl] ; 8x8

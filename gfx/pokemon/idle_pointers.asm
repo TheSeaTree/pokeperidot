@@ -163,8 +163,8 @@ AnimationIdlePointers:
 	dw FurretAnimationIdle
 	dw HoothootAnimationIdle
 	dw NoctowlAnimationIdle
-	dw LedybaAnimationIdle
-	dw LedianAnimationIdle
+	dw CubboltAnimationIdle
+	dw ElectigerAnimationIdle
 	dw SpinarakAnimationIdle
 	dw AriadosAnimationIdle
 	dw CrobatAnimationIdle

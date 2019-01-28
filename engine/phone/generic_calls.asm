@@ -24,26 +24,6 @@ PhoneScript_AnswerPhone_Male:
 	checktime NITE
 	iftrue PhoneScript_AnswerPhone_Male_Nite
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1b4dc5
@@ -147,27 +127,7 @@ PhoneScript_AnswerPhone_Male:
 
 PhoneScript_AnswerPhone_Male_Day:
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
-
+	
 .Jack:
 	farwritetext UnknownText_0x1b4ded
 	buttonsound
@@ -270,27 +230,7 @@ PhoneScript_AnswerPhone_Male_Day:
 
 PhoneScript_AnswerPhone_Male_Nite:
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
-
+	
 .Jack:
 	farwritetext UnknownText_0x1b4e16
 	buttonsound
@@ -397,14 +337,6 @@ PhoneScript_AnswerPhone_Female:
 	checktime NITE
 	iftrue PhoneScript_AnswerPhone_Female_Nite
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b4f21
@@ -448,14 +380,6 @@ PhoneScript_AnswerPhone_Female:
 
 PhoneScript_AnswerPhone_Female_Day:
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b4f4d
@@ -499,14 +423,6 @@ PhoneScript_AnswerPhone_Female_Day:
 
 PhoneScript_AnswerPhone_Female_Nite:
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b4f75
@@ -554,26 +470,6 @@ PhoneScript_GreetPhone_Male:
 	checktime NITE
 	iftrue PhoneScript_GreetPhone_Male_Nite
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1b4e3e
@@ -677,26 +573,6 @@ PhoneScript_GreetPhone_Male:
 
 PhoneScript_GreetPhone_Male_Day:
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1b4e72
@@ -800,26 +676,6 @@ PhoneScript_GreetPhone_Male_Day:
 
 PhoneScript_GreetPhone_Male_Nite:
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_SAILOR_HUEY, .Huey
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_JUGGLER_IRWIN, .Irwin
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_BLACKBELT_KENJI, .Kenji
-	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1b4e9e
@@ -927,14 +783,6 @@ PhoneScript_GreetPhone_Female:
 	checktime NITE
 	iftrue PhoneScript_GreetPhone_Female_Nite
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b4fa1
@@ -978,14 +826,6 @@ PhoneScript_GreetPhone_Female:
 
 PhoneScript_GreetPhone_Female_Day:
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b4fda
@@ -1029,14 +869,6 @@ PhoneScript_GreetPhone_Female_Day:
 
 PhoneScript_GreetPhone_Female_Nite:
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b5004
@@ -1080,23 +912,6 @@ PhoneScript_GreetPhone_Female_Nite:
 
 PhoneScript_Generic_Male:
 	checkcode VAR_CALLERID
-	ifequal PHONE_SCHOOLBOY_JACK, .Jack
-	ifequal PHONE_COOLTRAINERM_GAVEN, .Gaven
-	ifequal PHONE_BIRDKEEPER_JOSE, .Jose
-	ifequal PHONE_YOUNGSTER_JOEY, .Joey
-	ifequal PHONE_BUG_CATCHER_WADE, .Wade
-	ifequal PHONE_FISHER_RALPH, .Ralph
-	ifequal PHONE_HIKER_ANTHONY, .Anthony
-	ifequal PHONE_CAMPER_TODD, .Todd
-	ifequal PHONE_BUG_CATCHER_ARNIE, .Arnie
-	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
-	ifequal PHONE_SCHOOLBOY_CHAD, .Chad
-	ifequal PHONE_POKEFANM_DEREK, .Derek
-	ifequal PHONE_FISHER_TULLY, .Tully
-	ifequal PHONE_POKEMANIAC_BRENT, .Brent
-	ifequal PHONE_BIRDKEEPER_VANCE, .Vance
-	ifequal PHONE_FISHER_WILTON, .Wilton
-	ifequal PHONE_HIKER_PARRY, .Parry
 
 .Jack:
 	farwritetext UnknownText_0x1b4ecd
@@ -1190,14 +1005,6 @@ PhoneScript_Generic_Male:
 
 PhoneScript_Generic_Female:
 	checkcode VAR_CALLERID
-	ifequal PHONE_POKEFAN_BEVERLY, .Beverly
-	ifequal PHONE_COOLTRAINERF_BETH, .Beth
-	ifequal PHONE_COOLTRAINERF_REENA, .Reena
-	ifequal PHONE_PICNICKER_LIZ, .Liz
-	ifequal PHONE_PICNICKER_GINA, .Gina
-	ifequal PHONE_LASS_DANA, .Dana
-	ifequal PHONE_PICNICKER_TIFFANY, .Tiffany
-	ifequal PHONE_PICNICKER_ERIN, .Erin
 
 .Beverly:
 	farwritetext UnknownText_0x1b502b

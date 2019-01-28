@@ -10,7 +10,7 @@ AsleepTreeMonsNite:
 	db SPEAROW
 	db EKANS
 	db EXEGGCUTE
-	db LEDYBA
+	db CUBBOLT
 	db AIPOM
 	db -1 ; end
 
@@ -19,7 +19,7 @@ AsleepTreeMonsDay:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
-	db HERACROSS
+	db RINRING
 	db -1 ; end
 
 AsleepTreeMonsMorn:
@@ -27,5 +27,5 @@ AsleepTreeMonsMorn:
 	db HOOTHOOT
 	db NOCTOWL
 	db SPINARAK
-	db HERACROSS
+	db RINRING
 	db -1 ; end

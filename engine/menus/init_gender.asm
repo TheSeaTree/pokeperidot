@@ -22,9 +22,9 @@ InitCrystalData:
 INCLUDE "mobile/mobile_12.asm"
 
 InitGender:
-	call InitGenderScreen
+;	call InitGenderScreen
 	call LoadGenderScreenPal
-	call LoadGenderScreenLightBlueTile
+;	call LoadGenderScreenLightBlueTile
 	call WaitBGMap2
 	call SetPalettes
 	ld hl, TextJump_AreYouABoyOrAreYouAGirl

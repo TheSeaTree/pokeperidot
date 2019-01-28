@@ -10,7 +10,7 @@
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
 	const COMET_PUNCH  ; 04
-	const MEGA_PUNCH   ; 05
+	const DREAD_STORM  ; 05
 	const PAY_DAY      ; 06
 	const FIRE_PUNCH   ; 07
 	const ICE_PUNCH    ; 08
@@ -26,13 +26,13 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const BIND         ; 14
-	const SLAM         ; 15
+	const STRUGGLE_BUG ; 15
 	const VINE_WHIP    ; 16
-	const STOMP        ; 17
+	const ICICLE_SPEAR ; 17
 	const DOUBLE_KICK  ; 18
 	const MEGA_KICK    ; 19
-	const JUMP_KICK    ; 1a
-	const ROLLING_KICK ; 1b
+	const BULK_UP      ; 1a
+	const COIL         ; 1b
 	const SAND_ATTACK  ; 1c
 	const HEADBUTT     ; 1d
 	const HORN_ATTACK  ; 1e
@@ -41,7 +41,7 @@
 	const TACKLE       ; 21
 	const BODY_SLAM    ; 22
 	const WRAP         ; 23
-	const TAKE_DOWN    ; 24
+	const FLARE_BLITZ  ; 24
 	const THRASH       ; 25
 	const DOUBLE_EDGE  ; 26
 	const TAIL_WHIP    ; 27
@@ -101,7 +101,7 @@
 	const CONFUSION    ; 5d
 	const PSYCHIC_M    ; 5e
 	const HYPNOSIS     ; 5f
-	const MEDITATE     ; 60
+	const DRAGON_DANCE ; 60
 	const AGILITY      ; 61
 	const QUICK_ATTACK ; 62
 	const RAGE         ; 63
@@ -115,7 +115,7 @@
 	const MINIMIZE     ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
-	const WITHDRAW     ; 6e
+	const CONVERSIONZ  ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
 	const LIGHT_SCREEN ; 71
@@ -125,7 +125,7 @@
 	const BIDE         ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
-	const SELFDESTRUCT ; 78
+	const COSMIC_POWER ; 78
 	const EGG_BOMB     ; 79
 	const LICK         ; 7a
 	const SMOG         ; 7b
@@ -133,13 +133,13 @@
 	const BONE_CLUB    ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
-	const CLAMP        ; 80
+	const AQUA_JET     ; 80
 	const SWIFT        ; 81
 	const SKULL_BASH   ; 82
 	const SPIKE_CANNON ; 83
-	const CONSTRICT    ; 84
+	const QUIVER_DANCE ; 84
 	const AMNESIA      ; 85
-	const KINESIS      ; 86
+	const DRAIN_PUNCH  ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const GLARE        ; 89
@@ -163,18 +163,18 @@
 	const BONEMERANG   ; 9b
 	const REST         ; 9c
 	const ROCK_SLIDE   ; 9d
-	const HYPER_FANG   ; 9e
+	const CALM_MIND    ; 9e
 	const SHARPEN      ; 9f
 	const CONVERSION   ; a0
 	const TRI_ATTACK   ; a1
-	const SUPER_FANG   ; a2
-	const SLASH        ; a3
+	const WILD_CHARGE  ; a2
+	const GUNK_SHOT    ; a3
 	const SUBSTITUTE   ; a4
 	const STRUGGLE     ; a5
 	const SKETCH       ; a6
-	const TRIPLE_KICK  ; a7
+	const BULLET_PUNCH ; a7
 	const THIEF        ; a8
-	const SPIDER_WEB   ; a9
+	const IRON_HEAD    ; a9
 	const MIND_READER  ; aa
 	const NIGHTMARE    ; ab
 	const FLAME_WHEEL  ; ac
@@ -202,8 +202,8 @@
 	const DESTINY_BOND ; c2
 	const PERISH_SONG  ; c3
 	const ICY_WIND     ; c4
-	const DETECT       ; c5
-	const BONE_RUSH    ; c6
+	const PLAY_ROUGH   ; c5
+	const MOONBLAST    ; c6
 	const LOCK_ON      ; c7
 	const OUTRAGE      ; c8
 	const SANDSTORM    ; c9
@@ -227,7 +227,7 @@
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd
-	const MAGNITUDE    ; de
+	const BULLDOZE     ; de
 	const DYNAMICPUNCH ; df
 	const MEGAHORN     ; e0
 	const DRAGONBREATH ; e1
@@ -256,12 +256,12 @@
 	const FUTURE_SIGHT ; f8
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
-	const BEAT_UP      ; fb
+	const DRAIN_KISS   ; fb
+	const NASTY_PLOT   ; fc
+	const HURRICANE	   ; fd
+	const BUG_BUZZ     ; fe
 NUM_ATTACKS EQU const_value + -1
 
-	const MOVE_OR_ANIM_FC ; fc
-	const MOVE_OR_ANIM_FD ; fd
-	const MOVE_OR_ANIM_FE ; fe
 
 ; Battle animations use the same constants as the moves up to this point
 	const ANIM_SWEET_SCENT_2     ; ff

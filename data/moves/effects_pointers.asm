@@ -157,3 +157,15 @@ MoveEffectsPointers:
 	dw BeatUp
 	dw Fly
 	dw DefenseCurl
+	dw CalmMind
+	dw BulkUp
+	dw DragonDance
+	dw QuiverDance
+	dw CosmicPower
+	dw SpeedUpHit
+	dw BurnRecoilHit
+	dw ParaRecoilHit
+	dw Hurricane
+	dw ConversionZ
+	dw Coil
+	dw Growth

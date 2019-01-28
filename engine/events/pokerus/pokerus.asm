@@ -19,7 +19,7 @@ GivePokerusAndConvertBerries:
 ; If we haven't been to Goldenrod City at least once,
 ; prevent the contraction of Pokerus.
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
+	bit STATUSFLAGS_POKEDEX_F, [hl]
 	ret z
 	call Random
 	ldh a, [hRandomAdd]
@@ -125,7 +125,7 @@ ConvertBerriesToBerryJuice:
 ; If we haven't been to Goldenrod City at least once,
 ; prevent Shuckle from turning held Berry into Berry Juice.
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_REACHED_GOLDENROD_F, [hl]
+	bit STATUSFLAGS_POKEDEX_F, [hl]
 	ret z
 	call Random
 	cp 6 percent + 1 ; 1/16 chance

@@ -75,10 +75,4 @@ PredefPointers::
 	add_predef CheckTypeMatchup
 	add_predef ConvertMon_1to2
 	add_predef NewPokedexEntry
-	add_predef Unused_AnimateMon_Slow_Normal
 	add_predef PlaceStatusString
-	add_predef LoadMonAnimation
-	add_predef AnimateFrontpic
-	add_predef Unused_HOF_AnimateAlignedFrontpic ; $48
-	add_predef HOF_AnimateFrontpic
-	dbw -1, InexplicablyEmptyFunction ; ???

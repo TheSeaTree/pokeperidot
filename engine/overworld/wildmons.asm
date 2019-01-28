@@ -47,9 +47,9 @@ FindNest:
 
 .kanto
 	decoord 0, 0
-	ld hl, KantoGrassWildMons
+	ld hl, JohtoGrassWildMons
 	call .FindGrass
-	ld hl, KantoWaterWildMons
+	ld hl, JohtoWaterWildMons
 	jp .FindWater
 
 .FindGrass:
@@ -382,23 +382,23 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
-	ld hl, SwarmGrassWildMons
+	ld hl, JohtoGrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
 	ld hl, JohtoGrassWildMons
-	ld de, KantoGrassWildMons
+	ld de, JohtoGrassWildMons
 	call _JohtoWildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
 _WaterWildmonLookup:
-	ld hl, SwarmWaterWildMons
+	ld hl, JohtoWaterWildMons
 	ld bc, WATER_WILDDATA_LENGTH
 	call _SwarmWildmonCheck
 	ret c
 	ld hl, JohtoWaterWildMons
-	ld de, KantoWaterWildMons
+	ld de, JohtoWaterWildMons
 	call _JohtoWildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
@@ -505,15 +505,15 @@ InitRoamMons:
 	ld [wRoamMon2Level], a
 
 ; raikou starting map
-	ld a, GROUP_ROUTE_42
+	ld a, GROUP_ROUTE_4
 	ld [wRoamMon1MapGroup], a
-	ld a, MAP_ROUTE_42
+	ld a, MAP_ROUTE_4
 	ld [wRoamMon1MapNumber], a
 
 ; entei starting map
-	ld a, GROUP_ROUTE_37
+	ld a, GROUP_ROUTE_3
 	ld [wRoamMon2MapGroup], a
-	ld a, MAP_ROUTE_37
+	ld a, MAP_ROUTE_3
 	ld [wRoamMon2MapNumber], a
 
 ; hp
@@ -773,7 +773,7 @@ RandomUnseenWildMon:
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .GetGrassmon
-	ld hl, KantoGrassWildMons
+	ld hl, JohtoGrassWildMons
 	call LookUpWildmonsForMapDE
 	jr nc, .done
 
@@ -845,7 +845,7 @@ RandomPhoneWildMon:
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .ok
-	ld hl, KantoGrassWildMons
+	ld hl, JohtoGrassWildMons
 	call LookUpWildmonsForMapDE
 
 .ok
@@ -961,7 +961,7 @@ RandomPhoneMon:
 
 INCLUDE "data/wild/johto_grass.asm"
 INCLUDE "data/wild/johto_water.asm"
-INCLUDE "data/wild/kanto_grass.asm"
-INCLUDE "data/wild/kanto_water.asm"
-INCLUDE "data/wild/swarm_grass.asm"
-INCLUDE "data/wild/swarm_water.asm"
+;INCLUDE "data/wild/kanto_grass.asm"
+;INCLUDE "data/wild/kanto_water.asm"
+;INCLUDE "data/wild/swarm_grass.asm"
+;INCLUDE "data/wild/swarm_water.asm"

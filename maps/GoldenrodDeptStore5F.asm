@@ -25,34 +25,7 @@ GoldenrodDeptStore5F_MapScripts:
 GoldenrodDeptStore5FClerkScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_TM02_HEADBUTT
-	iftrue .headbutt
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
-	iftrue .onlyrocksmash
-	jump .neither
-
-.headbutt
-	checkevent EVENT_GOT_TM08_ROCK_SMASH
-	iftrue .both
-	jump .onlyheadbutt
-
-.neither
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_1
-	closetext
-	end
-
-.onlyheadbutt
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_2
-	closetext
-	end
-
-.onlyrocksmash
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_3
-	closetext
-	end
-
-.both
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_4
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F
 	closetext
 	end
 
@@ -73,8 +46,9 @@ GoldenrodDeptStore5FReceptionistScript:
 .VeryHappy:
 	writetext UnknownText_0x5615a
 	buttonsound
+	checkitem TM_RETURN
+	iftrue .AlreadyGotTM
 	verbosegiveitem TM_RETURN
-	iffalse .Done
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
 	closetext
 	end
@@ -88,9 +62,13 @@ GoldenrodDeptStore5FReceptionistScript:
 .NotVeryHappy:
 	writetext UnknownText_0x561d8
 	buttonsound
-	verbosegiveitem TM_FRUSTRATION
-	iffalse .Done
 	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
+	closetext
+	end
+
+.AlreadyGotTM:
+	writetext GoldenrodDeptStore5FAlreadyGotTMText
+	waitbutton
 	closetext
 	end
 
@@ -120,14 +98,6 @@ Carrie:
 
 GoldenrodDeptStore5FLassScript:
 	jumptextfaceplayer GoldenrodDeptStore5FLassText
-
-Mike:
-	faceplayer
-	opentext
-	trade NPC_TRADE_MIKE
-	waitbutton
-	closetext
-	end
 
 GoldenrodDeptStore5FPokefanMScript:
 	jumptextfaceplayer GoldenrodDeptStore5FPokefanMText
@@ -171,6 +141,11 @@ UnknownText_0x56202:
 
 	para "just perfect for"
 	line "your #MON."
+	done
+
+GoldenrodDeptStore5FAlreadyGotTMText:
+	text "Oh, you already"
+	line "have this TM…"
 	done
 
 UnknownText_0x56241:
@@ -229,10 +204,9 @@ GoldenrodDeptStore5F_MapEvents:
 	bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore5FDirectory
 	bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore5FElevatorButton
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FClerkScript, -1
 	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FLassScript, -1
-	object_event  6,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Mike, -1
 	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FPokefanMScript, -1
 	object_event  9,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Carrie, -1
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

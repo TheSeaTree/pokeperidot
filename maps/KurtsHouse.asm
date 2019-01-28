@@ -351,8 +351,6 @@ KurtsGranddaughter1:
 	iftrue KurtsGranddaughterFunScript
 	checkevent EVENT_FOREST_IS_RESTLESS
 	iftrue .Lonely
-	checkevent EVENT_FAST_SHIP_FIRST_TIME
-	iftrue .Dad
 	checkevent EVENT_CLEARED_SLOWPOKE_WELL
 	iftrue .SlowpokeBack
 	checkevent EVENT_AZALEA_TOWN_SLOWPOKETAIL_ROCKET

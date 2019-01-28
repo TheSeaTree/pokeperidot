@@ -6,8 +6,9 @@ RainDanceMoves:
 	db SURF
 	db BUBBLEBEAM
 	db THUNDER
+	db HURRICANE
 	db WATERFALL
-	db CLAMP
+	db AQUA_JET
 	db BUBBLE
 	db CRABHAMMER
 	db OCTAZOOKA

@@ -262,9 +262,9 @@ CheckPlayerTurn:
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
-	; 50% chance of hitting itself
+	; 33% chance of hitting itself
 	call BattleRandom
-	cp 50 percent + 1
+	cp 33 percent + 1
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
@@ -1690,8 +1690,6 @@ BattleCommand_CheckHit:
 	ret z
 	cp FISSURE
 	ret z
-	cp MAGNITUDE
-	ret z
 
 .LockedOn:
 	ld a, 1
@@ -1748,8 +1746,6 @@ BattleCommand_CheckHit:
 	ret z
 	cp FISSURE
 	ret z
-	cp MAGNITUDE
-	ret
 
 .ThunderRain:
 ; Return z if the current move always hits in rain, and it is raining.
@@ -2556,7 +2552,19 @@ DittoMetalPowder:
 .done
 	scf
 	rr c
+	
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp b
+	jr c, .cap
+	ld a, LOW(MAX_STAT_VALUE)
+	cp c
+	ret nc
+
+.cap
+	ld b, HIGH(MAX_STAT_VALUE)
+	ld c, LOW(MAX_STAT_VALUE)
 	ret
+
 
 BattleCommand_DamageStats:
 ; damagestats
@@ -2763,7 +2771,7 @@ LightBallBoost:
 	push bc
 	push de
 	ld b, PIKACHU
-	ld c, PIKACHU
+	ld c, RAICHU
 	ld d, LIGHT_BALL
 	call SpeciesItemBoost
 	pop de
@@ -2808,6 +2816,17 @@ SpeciesItemBoost:
 ; Double the stat
 	sla l
 	rl h
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
+	ret nc
+
+.cap
+	ld h, HIGH(MAX_STAT_VALUE)
+	ld l, LOW(MAX_STAT_VALUE)
 	ret
 
 EnemyAttackDamage:
@@ -3618,8 +3637,6 @@ BattleCommand_SleepTarget:
 	jp nz, PrintDidntAffect2
 
 	ld hl, DidntAffect1Text
-	call .CheckAIRandomFail
-	jr c, .fail
 
 	ld a, [de]
 	and a
@@ -3659,34 +3676,6 @@ BattleCommand_SleepTarget:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextBox
-
-.CheckAIRandomFail:
-	; Enemy turn
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_fail
-
-	; Not in link battle
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_fail
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_fail
-
-	; Not locked-on by the enemy
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_fail
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	ret c
-
-.dont_fail
-	xor a
-	ret
 
 BattleCommand_PoisonTarget:
 ; poisontarget
@@ -3758,27 +3747,6 @@ BattleCommand_Poison:
 	and a
 	jr nz, .failed
 
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	call CheckSubstituteOpp
 	jr nz, .failed
 	ld a, [wAttackMissed]
@@ -4089,6 +4057,8 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
+	call CheckIfTargetIsElectricType
+	ret z
 	call GetOpponentItem
 	ld a, b
 	cp HELD_PREVENT_PARALYZE
@@ -4110,6 +4080,21 @@ BattleCommand_ParalyzeTarget:
 	call PrintParalyze
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
+	
+CheckIfTargetIsElectricType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp ELECTRIC
+	ret z
+	ld a, [de]
+	cp ELECTRIC
+	ret
 
 BattleCommand_AttackUp:
 ; attackup
@@ -4180,7 +4165,21 @@ BattleCommand_EvasionUp2:
 ; evasionup2
 	ld b, $10 | EVASION
 	jr BattleCommand_StatUp
-
+	
+BattleCommand_Growth:
+; growth
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .Sunny
+	ld b, SP_ATTACK
+	jr BattleCommand_StatUp
+	ret
+	
+.Sunny
+	ld b, $10 | SP_ATTACK
+	jr BattleCommand_StatUp
+	ret
+	
 BattleCommand_StatUp:
 ; statup
 	call RaiseStat
@@ -4409,41 +4408,12 @@ BattleCommand_StatDown:
 ; Sharply lower the stat if applicable.
 	ld a, [wLoweredStat]
 	and $f0
-	jr z, .ComputerMiss
+	jr z, .GotAmountToLower
 	dec b
-	jr nz, .ComputerMiss
+	jr nz, .GotAmountToLower
 	inc b
 
-.ComputerMiss:
-; Computer opponents have a 25% chance of failing.
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .DidntMiss
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .DidntMiss
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .DidntMiss
-
-; Lock-On still always works.
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .DidntMiss
-
-; Attacking moves that also lower accuracy are unaffected.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_ACCURACY_DOWN_HIT
-	jr z, .DidntMiss
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .Failed
-
-.DidntMiss:
+.GotAmountToLower:
 	call CheckSubstituteOpp
 	jr nz, .Failed
 
@@ -5753,7 +5723,6 @@ BattleCommand_TrapTarget:
 	dbw BIND,      UsedBindText      ; 'used BIND on'
 	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
 	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw CLAMP,     ClampedByText     ; 'was CLAMPED by'
 	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
 
 INCLUDE "engine/battle/move_effects/mist.asm"
@@ -5949,27 +5918,6 @@ BattleCommand_Paralyze:
 	jp StdBattleTextBox
 
 .no_item_protection
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .dont_sample_failure
-
-	ld a, [wLinkMode]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr nz, .dont_sample_failure
-
-	ld a, [wPlayerSubStatus5]
-	bit SUBSTATUS_LOCK_ON, a
-	jr nz, .dont_sample_failure
-
-	call BattleRandom
-	cp 25 percent + 1 ; 25% chance AI fails
-	jr c, .failed
-
-.dont_sample_failure
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -6046,9 +5994,14 @@ INCLUDE "engine/battle/move_effects/substitute.asm"
 
 BattleCommand_RechargeNextTurn:
 ; rechargenextturn
+	call BattleCommand_CheckFaint
+	jr c, .skip
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_RECHARGE, [hl]
+	ret
+
+.skip
 	ret
 
 EndRechargeOpp:
@@ -6685,9 +6638,7 @@ INCLUDE "engine/battle/move_effects/thunder.asm"
 
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.
-	ld a, BATTLE_VARS_SUBSTATUS3_OPP
-	call GetBattleVar
-	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	xor a
 	ret
 
 GetUserItem:

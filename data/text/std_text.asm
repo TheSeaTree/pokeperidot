@@ -72,8 +72,8 @@ NurseReturnPokemonText:
 	done
 
 NurseGoodbyeText:
-	text "We hope to see you"
-	line "again."
+	text "Stay safe and be"
+	line "careful."
 	done
 
 ; not used
@@ -385,4 +385,22 @@ RegisteredNumber2Text:
 	line "@"
 	text_from_ram wStringBuffer3
 	text "'s number."
+	done
+	
+CantLeaveGymText:
+	text "You can't abandon"
+	line "a GYM challenge!"
+	done
+	
+GymFirstTimeText:
+	text "You will be unable"
+	line "to leave this GYM"
+	cont "until you defeat"
+	cont "the leader or"
+	cont "white out."
+	done
+
+AskEnterGymText:
+	text "Would you like to"
+	line "enter the GYM?"
 	done

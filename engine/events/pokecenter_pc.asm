@@ -429,7 +429,7 @@ PlayerDepositItemMenu:
 
 .close
 	call CloseSubmenu
-
+	
 .nope
 	xor a
 	ret
@@ -448,6 +448,9 @@ PlayerDepositItemMenu:
 	db "@"
 
 .TryDepositItem:
+	ld a, [wCurItem]
+	cp TM01
+	jr nc, .denied
 	ld a, [wSpriteUpdatesEnabled]
 	push af
 	ld a, $0
@@ -459,6 +462,15 @@ PlayerDepositItemMenu:
 	pop af
 	ld [wSpriteUpdatesEnabled], a
 	ret
+	
+.denied
+	ld hl, .NoTMHM
+	call PrintText
+	ret
+	
+.NoTMHM
+	text_jump _NoTMHMinPC
+	db "@"
 
 .dw
 ; entries correspond to ITEMMENU_* constants

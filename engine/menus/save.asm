@@ -4,9 +4,6 @@ SaveMenu:
 	call SpeechTextBox
 	call UpdateSprites
 	farcall SaveMenu_CopyTilemapAtOnce
-	ld hl, Text_WouldYouLikeToSaveTheGame
-	call SaveTheGame_yesorno
-	jr nz, .refused
 	call AskOverwriteSaveFile
 	jr c, .refused
 	call PauseGameLogic
@@ -229,21 +226,9 @@ _SavingDontTurnOffThePower:
 	call SavingDontTurnOffThePower
 SavedTheGame:
 	call _SaveGameData
-	; wait 32 frames
-	ld c, 32
-	call DelayFrames
-	; copy the original text speed setting to the stack
-	ld a, [wOptions]
-	push af
-	; set text speed to medium
-	ld a, TEXT_DELAY_MED
-	ld [wOptions], a
 	; <PLAYER> saved the game!
 	ld hl, Text_PlayerSavedTheGame
 	call PrintText
-	; restore the original text speed setting
-	pop af
-	ld [wOptions], a
 	ld de, SFX_SAVE
 	call WaitPlaySFX
 	call WaitSFX
@@ -329,18 +314,9 @@ SavingDontTurnOffThePower:
 	ldh [hJoypadPressed], a
 	ldh [hJoypadSum], a
 	ldh [hJoypadDown], a
-	; Save the text speed setting to the stack
-	ld a, [wOptions]
-	push af
-	; Set the text speed to medium
-	ld a, TEXT_DELAY_MED
-	ld [wOptions], a
 	; SAVING... DON'T TURN OFF THE POWER.
 	ld hl, Text_SavingDontTurnOffThePower
 	call PrintText
-	; Restore the text speed setting
-	pop af
-	ld [wOptions], a
 	; Wait for 16 frames
 	ld c, 16
 	call DelayFrames

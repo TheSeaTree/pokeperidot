@@ -575,7 +575,6 @@ DefenseDownHit:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	effectchance ; bug: duplicate effectchance shouldn't be here
 	defensedown
 	statdownmessage
 	endmove
@@ -1054,7 +1053,7 @@ DoParalyze:
 	checksafeguard
 	paralyze
 	endmove
-
+	
 SkyAttack:
 	checkcharge
 	checkobedience
@@ -1803,7 +1802,6 @@ HiddenPower:
 	supereffectivetext
 	checkfaint
 	buildopponentrage
-	kingsrock
 	endmove
 
 RainDance:
@@ -2075,3 +2073,217 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
+	
+CalmMind:
+	checkobedience
+	usedmovetext
+	doturn
+	specialattackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	specialdefenseup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	
+BulkUp:
+	checkobedience
+	usedmovetext
+	doturn
+	attackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	defenseup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	
+DragonDance:
+	checkobedience
+	usedmovetext
+	doturn
+	attackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	speedup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+
+QuiverDance:
+	checkobedience
+	usedmovetext
+	doturn
+	specialattackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	specialdefenseup
+	raisesub
+	statupmessage
+	statupfailtext
+	speedup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	
+CosmicPower:
+	checkobedience
+	usedmovetext
+	doturn
+	defenseup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	specialdefenseup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	
+SpeedUpHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	effectchance
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	speedup
+	statupmessage
+	endmove
+	
+BurnRecoilHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	defrost
+	recoil
+	checkfaint
+	buildopponentrage
+	kingsrock
+	effectchance
+	burntarget
+	endmove
+	
+ParaRecoilHit:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	recoil
+	checkfaint
+	buildopponentrage
+	kingsrock
+	effectchance
+	paralyzetarget
+	endmove
+
+Hurricane:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	thunderaccuracy
+	doubleflyingdamage
+	checkhit
+	effectchance
+	stab
+	damagevariation
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	confusetarget
+	endmove
+	
+ConversionZ:
+	checkobedience
+	usedmovetext
+	doturn
+	conversion
+	allstatsup
+	endmove
+	
+Coil:
+	checkobedience
+	usedmovetext
+	doturn
+	attackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	defenseup
+	raisesub
+	statupmessage
+	statupfailtext
+	accuracyup
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	
+Growth:
+	checkobedience
+	usedmovetext
+	doturn
+	attackup
+	lowersub
+	statupanim
+	statupmessage
+	statupfailtext
+	growth
+	raisesub
+	statupmessage
+	statupfailtext
+	endmove
+	

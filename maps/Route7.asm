@@ -1,48 +1,37 @@
+	const_def 2 ; object constants
+
 Route7_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+	
+Route7Rock:
+	jumpstd smashrock
 
 Route7UndergroundPathSign:
 	jumptext Route7UndergroundPathSignText
 
-Route7LockedDoor:
-	jumptext Route7LockedDoorText
-
 Route7UndergroundPathSignText:
-	text "What's this flyer?"
-
-	para "… Uncouth trainers"
-	line "have been holding"
-
-	para "battles in the"
-	line "UNDERGROUND PATH."
-
-	para "Because of rising"
-	line "complaints by lo-"
-	cont "cal residents, the"
-	cont "UNDERGROUND PATH"
-	cont "has been sealed"
-	cont "indefinitely."
-
-	para "CELADON POLICE"
-	done
-
-Route7LockedDoorText:
-	text "It's locked…"
+	text "UNDERGROUND PATH"
+	
+	para "ROUTE 7-"
+	line "ROUTE 8"
 	done
 
 Route7_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event 15,  6, ROUTE_7_SAFFRON_GATE, 1
-	warp_event 15,  7, ROUTE_7_SAFFRON_GATE, 2
-
+	db 1 ; warp events
+	warp_event 45, 21, ROUTE_7_UNDERGROUND, 1
+	
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  5, 11, BGEVENT_READ, Route7UndergroundPathSign
-	bg_event  6,  9, BGEVENT_READ, Route7LockedDoor
+	db 1 ; bg events
+	bg_event  46, 22, BGEVENT_READ, Route7UndergroundPathSign
 
-	db 0 ; object events
+	db 5 ; object events
+	object_event 47, 23, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7Rock, -1
+	object_event 48, 20, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7Rock, -1
+	object_event 50, 16, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7Rock, -1
+	object_event 45, 17, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7Rock, -1
+	object_event 42, 23, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7Rock, -1

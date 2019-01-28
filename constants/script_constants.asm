@@ -192,12 +192,13 @@ EMOTE_MEM EQU -1
 	const FRUITTREE_ROUTE_42_2    ; 16
 	const FRUITTREE_ROUTE_42_3    ; 17
 	const FRUITTREE_ROUTE_11      ; 18
-	const FRUITTREE_ROUTE_2       ; 19
+	const FRUITTREE_ROUTE_2_1     ; 19
 	const FRUITTREE_ROUTE_1       ; 1a
 	const FRUITTREE_ROUTE_8       ; 1b
 	const FRUITTREE_PEWTER_CITY_1 ; 1c
 	const FRUITTREE_PEWTER_CITY_2 ; 1d
-	const FRUITTREE_FUCHSIA_CITY  ; 1e
+	const FRUITTREE_ROUTE_5       ; 1e
+	const FRUITTREE_ROUTE_2_2     ; 1f
 NUM_FRUIT_TREES EQU const_value + -1
 
 ; describedecoration arguments

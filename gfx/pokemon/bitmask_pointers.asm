@@ -163,8 +163,8 @@ BitmasksPointers:
 	dw FurretBitmasks
 	dw HoothootBitmasks
 	dw NoctowlBitmasks
-	dw LedybaBitmasks
-	dw LedianBitmasks
+	dw CubboltBitmasks
+	dw ElectigerBitmasks
 	dw SpinarakBitmasks
 	dw AriadosBitmasks
 	dw CrobatBitmasks

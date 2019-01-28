@@ -43,7 +43,6 @@ GoldenrodDeptStoreElevatorScript:
 
 GoldenrodDeptStoreElevatorData:
 	db 7 ; floors
-	elevfloor FLOOR_B1F, 2, GOLDENROD_DEPT_STORE_B1F
 	elevfloor FLOOR_1F,  4, GOLDENROD_DEPT_STORE_1F
 	elevfloor FLOOR_2F,  3, GOLDENROD_DEPT_STORE_2F
 	elevfloor FLOOR_3F,  3, GOLDENROD_DEPT_STORE_3F

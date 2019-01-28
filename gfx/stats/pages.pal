@@ -1,15 +1,15 @@
-; pink
+; Page 1 (Blue)
 	RGB 31, 31, 31
-	RGB 31, 19, 31
-	RGB 31, 15, 31
+	RGB 17, 31, 31
+	RGB 17, 31, 31
 	RGB 00, 00, 00
-; green
+; Page 2 (Green)
 	RGB 31, 31, 31
 	RGB 21, 31, 14
 	RGB 17, 31, 00
 	RGB 00, 00, 00
-; blue
+; Page 3 (Orange)
 	RGB 31, 31, 31
-	RGB 17, 31, 31
-	RGB 17, 31, 31
+	RGB 31, 22,  4
+	RGB 31, 22,  4
 	RGB 00, 00, 00

@@ -26,9 +26,9 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     KRABBY,     10
 .Shore_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     KRABBY,     20
-	db  90 percent + 1, KRABBY,     20
+	db  35 percent,     MAGIKARP,   10
+	db  70 percent,     KRABBY,     15
+	db  90 percent + 1, KRABBY,     15
 	db 100 percent,     time_group 0
 .Shore_Super:
 	db  40 percent,     KRABBY,     40
@@ -41,9 +41,9 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     TENTACOOL,  10
 .Ocean_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     TENTACOOL,  20
-	db  90 percent + 1, CHINCHOU,   20
+	db  35 percent,     SHELLDER,   12
+	db  70 percent,     TENTACOOL,  13
+	db  90 percent + 1, SHELLDER,   13
 	db 100 percent,     time_group 2
 .Ocean_Super:
 	db  40 percent,     CHINCHOU,   40
@@ -56,9 +56,9 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     GOLDEEN,    10
 .Lake_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     GOLDEEN,    20
-	db  90 percent + 1, GOLDEEN,    20
+	db  35 percent,     MAGIKARP,   10
+	db  70 percent,     GOLDEEN,    10
+	db  90 percent + 1, GOLDEEN,    13
 	db 100 percent,     time_group 4
 .Lake_Super:
 	db  40 percent,     GOLDEEN,    40
@@ -71,9 +71,9 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     POLIWAG,    10
 .Pond_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     POLIWAG,    20
-	db  90 percent + 1, POLIWAG,    20
+	db  35 percent,     MAGIKARP,   10
+	db  70 percent,     POLIWAG,    11
+	db  90 percent + 1, POLIWAG,    13
 	db 100 percent,     time_group 6
 .Pond_Super:
 	db  40 percent,     POLIWAG,    40

@@ -62,10 +62,10 @@ Cry_Slugma:
 	musicheader 2, 5, Cry_Slugma_Ch5
 	musicheader 1, 8, Cry_Slugma_Ch8
 
-Cry_Ledyba:
-	musicheader 3, 5, Cry_Ledyba_Ch5
-	musicheader 1, 6, Cry_Ledyba_Ch6
-	musicheader 1, 8, Cry_Ledyba_Ch8
+Cry_Cubbolt:
+	musicheader 3, 5, Cry_Cubbolt_Ch5
+	musicheader 1, 6, Cry_Cubbolt_Ch6
+	musicheader 1, 8, Cry_Cubbolt_Ch8
 
 Cry_Wooper:
 	musicheader 3, 5, Cry_Wooper_Ch5
@@ -535,14 +535,14 @@ Cry_Slugma_Ch8:
 	noise __,  9, $a1, $5c
 	endchannel
 
-Cry_Ledyba_Ch5:
+Cry_Cubbolt_Ch5:
 	tone $0002
 	dutycycle $2
-	jumpchannel Cry_Ledyba_branch_f3202
+	jumpchannel Cry_Cubbolt_branch_f3202
 
-Cry_Ledyba_Ch6:
+Cry_Cubbolt_Ch6:
 	sound_duty 1, 0, 0, 0
-Cry_Ledyba_branch_f3202:
+Cry_Cubbolt_branch_f3202:
 	sound __,  4, $f8, $0791
 	sound __,  4, $d8, $078d
 	sound __,  3, $0, 0
@@ -551,7 +551,7 @@ Cry_Ledyba_branch_f3202:
 	sound __,  5, $e1, $0751
 	endchannel
 
-Cry_Ledyba_Ch8:
+Cry_Cubbolt_Ch8:
 	noise __,  4, $59, $21
 	noise __,  4, $81, $0
 	noise __,  3, $20, $0

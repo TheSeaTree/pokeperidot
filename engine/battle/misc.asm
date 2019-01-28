@@ -206,7 +206,7 @@ DoBadgeTypeBoosts:
 
 .done_min
 	add hl, de
-	jr nc, .Update
+	jp nc, .Update
 
 	ld hl, $ffff
 

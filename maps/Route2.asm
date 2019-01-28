@@ -1,47 +1,116 @@
 	const_def 2 ; object constants
-	const ROUTE2_BUG_CATCHER1
-	const ROUTE2_BUG_CATCHER2
-	const ROUTE2_BUG_CATCHER3
+	const ROUTE2_CAMPER
+	const ROUTE2_COOLTRAINER_F2
+	const ROUTE2_COOLTRAINER_F3
+	const ROUTE2_COOLTRAINER_F4
+	const ROUTE2_COOLTRAINER_F5
+	const ROUTE2_COOLTRAINER_F6
 	const ROUTE2_POKE_BALL1
 	const ROUTE2_POKE_BALL2
 	const ROUTE2_POKE_BALL3
-	const ROUTE2_POKE_BALL4
-	const ROUTE2_FRUIT_TREE
+	const ROUTE2_FRUIT_TREE1
+	const ROUTE2_FRUIT_TREE2
 
 Route2_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-TrainerBugCatcherRob:
-	trainer BUG_CATCHER, ROB, EVENT_BEAT_BUG_CATCHER_ROB, BugCatcherRobSeenText, BugCatcherRobBeatenText, 0, .Script
+TrainerCamperNicholas:
+	trainer CAMPER, NICHOLAS, EVENT_BEAT_CAMPER_NICHOLAS, CamperNicholasText, CamperNicholasWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherRobAfterBattleText
+	writetext CamperNicholasAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerBugCatcherEd:
-	trainer BUG_CATCHER, ED, EVENT_BEAT_BUG_CATCHER_ED, BugCatcherEdSeenText, BugCatcherEdBeatenText, 0, .Script
+	
+TrainerPicnickerJamie:
+	trainer PICNICKER, JAMIE, EVENT_BEAT_PICNICKER_JAMIE, PicnickerJamieText, PicnickerJamieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherEdAfterBattleText
+	writetext PicnickerJamieAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerBugCatcherDoug:
-	trainer BUG_CATCHER, DOUG, EVENT_BEAT_BUG_CATCHER_DOUG, BugCatcherDougSeenText, BugCatcherDougBeatenText, 0, .Script
+	
+TrainerBugCatcherLiam:
+	trainer BUG_CATCHER, LIAM, EVENT_BEAT_BUG_CATCHER_LIAM, BugCatcherLiamText, BugCatcherLiamWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherDougAfterBattleText
+	writetext BugCatcherLiamText
+	waitbutton
+	closetext
+	end
+	
+TrainerLassNicole:
+	trainer LASS, NICOLE, EVENT_BEAT_LASS_NICOLE, LassNicoleText, LassNicoleWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassNicoleAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerBirdKeeperPhillip:
+	trainer BIRD_KEEPER, PHIL, EVENT_BEAT_BIRD_KEEPER_PHIL, BirdKeeperPhilText, BirdKeeperPhilWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperPhilAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerYoungsterJack:
+	trainer YOUNGSTER, JACK, EVENT_BEAT_YOUNGSTER_JACK, YoungsterJackText, YoungsterJackWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext YoungsterJackAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerTeacherAndrea:
+	trainer TEACHER, ANDREA, EVENT_BEAT_TEACHER_ANDREA, TeacherAndreaText, TeacherAndreaWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherAndreaAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerSchoolboyJohnny:
+	trainer SCHOOLBOY, JOHNNY, EVENT_BEAT_SCHOOLBOY_JOHNNY, SchoolboyJohnnyText, SchoolboyJohnnyWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SchoolboyJohnnyAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerSchoolboyDanny:
+	trainer SCHOOLBOY, DANNY, EVENT_BEAT_SCHOOLBOY_DANNY, SchoolboyDannyText, SchoolboyDannyWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SchoolboyDannyAfterText
 	waitbutton
 	closetext
 	end
@@ -49,127 +118,224 @@ TrainerBugCatcherDoug:
 Route2Sign:
 	jumptext Route2SignText
 
-Route2DiglettsCaveSign:
-	jumptext Route2DiglettsCaveSignText
+Route2TrainerTips:
+	jumptext Route2TrainerTipsText
 
-Route2DireHit:
-	itemball DIRE_HIT
+Route2Potion1:
+	itemball POTION
+	
+Route2Potion2:
+	itemball SUPER_POTION
+	
+Route2PokeBall:
+	itemball POKE_BALL	
+	
+Route2LeafStone:
+	itemball LEAF_STONE
+	
+Route2FruitTree1:
+	fruittree FRUITTREE_ROUTE_2_1
 
-Route2MaxPotion:
-	itemball MAX_POTION
+Route2FruitTree2:
+	fruittree FRUITTREE_ROUTE_2_2
 
-Route2Carbos:
-	itemball CARBOS
-
-Route2Elixer:
-	itemball ELIXER
-
-Route2FruitTree:
-	fruittree FRUITTREE_ROUTE_2
-
-Route2HiddenMaxEther:
-	hiddenitem MAX_ETHER, EVENT_ROUTE_2_HIDDEN_MAX_ETHER
-
-Route2HiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_ROUTE_2_HIDDEN_FULL_HEAL
-
-Route2HiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_ROUTE_2_HIDDEN_FULL_RESTORE
-
-Route2HiddenRevive:
-	hiddenitem REVIVE, EVENT_ROUTE_2_HIDDEN_REVIVE
-
-BugCatcherRobSeenText:
-	text "My bug #MON are"
-	line "tough. Prepare to"
-	cont "lose!"
+CamperNicholasText:
+	text "I bet you couldn't"
+	line "see me here with"
+	cont "my camouflage!"
 	done
 
-BugCatcherRobBeatenText:
-	text "I was whipped…"
+CamperNicholasWinText:
+	text "I didn't plan on"
+	line "anyone actually"
+	cont "seeing me…"
 	done
 
-BugCatcherRobAfterBattleText:
-	text "I'm going to look"
-	line "for stronger bug"
-	cont "#MON."
+CamperNicholasAfterText:
+	text "I should learn to"
+	line "battle better than"
+	cont "I can hide."
+	done
+	
+PicnickerJamieText:
+	text "I found this"
+	line "#MON all"
+	cont "on my own!"
+	done
+	
+PicnickerJamieWinText:
+	text "It was a lot of"
+	line "fun battling you!"
+	done
+	
+PicnickerJamieAfterText:
+	text "I don't know many"
+	line "girls that like to"
+	cont "play out here"
+	cont "in the woods."
 	done
 
-BugCatcherEdSeenText:
-	text "If you walk in"
-	line "tall grass wearing"
-
-	para "shorts, do you get"
-	line "nicks and cuts?"
+BugCatcherLiamText:
+	text "Bug #MON are"
+	line "fascinating!"
+	
+	para "Let me show you"
+	line "my collection!"
+	done
+	
+BugCatcherLiamWinText:
+	text "Aw man, I lost!"
+	done
+	
+BugCatcherLiamAfterText:
+	text "I'm proud of my"
+	line "#MON."
+	
+	para "They put up"
+	line "a good fight!"
+	done
+	
+LassNicoleText:
+	text "I love cute"
+	line "#MON!"
+	done
+	
+LassNicoleWinText:
+	text "My babies!"
+	done
+	
+LassNicoleAfterText:
+	text "Some #MON"
+	line "can only be found"
+	cont "after dark."
+	
+	para "They must sleep"
+	line "during the day."
+	done
+	
+BirdKeeperPhilText:
+	text "I flew here using"
+	line "my bird #MON!"
+	done
+	
+BirdKeeperPhilWinText:
+	text "Now I'll have to"
+	line "walk home…"
+	done
+	
+BirdKeeperPhilAfterText:
+	text "Bird #MON are"
+	line "much more common"
+	cont "to the east."
+	done
+	
+YoungsterJackText:
+	text "My big brother"
+	line "let me borrow"
+	cont "his #MON!"
+	done
+	
+YoungsterJackWinText:
+	text "He told me these"
+	line "were strong…"
+	done
+	
+YoungsterJackAfterText:
+	text "I will just have"
+	line "to explore other"
+	cont "routes to find my"
+	cont "own #MON."
+	done
+	
+TeacherAndreaText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+TeacherAndreaWinText:
+	text "I lost."
+	done
+	
+TeacherAndreaAfterText:
+	text "I lost."
+	done
+	
+SchoolboyJohnnyText:
+	text "I am a"
+	line "#MON trainer!"
 	done
 
-BugCatcherEdBeatenText:
-	text "Ouch, ouch, ouch!"
+SchoolboyJohnnyWinText:
+	text "I lost."
+	done
+	
+SchoolboyJohnnyAfterText:
+	text "I lost."
+	done
+	
+	
+SchoolboyDannyText:
+	text "I am a"
+	line "#MON trainer!"
 	done
 
-BugCatcherEdAfterBattleText:
-	text "They'll really"
-	line "sting when you"
-	cont "take a bath."
+SchoolboyDannyWinText:
+	text "I lost."
 	done
-
-BugCatcherDougSeenText:
-	text "Why don't girls"
-	line "like bug #MON?"
+	
+SchoolboyDannyAfterText:
+	text "I lost."
 	done
-
-BugCatcherDougBeatenText:
-	text "No good!"
-	done
-
-BugCatcherDougAfterBattleText:
-	text "Bug #MON squish"
-	line "like plush toys"
-
-	para "when you squeeze"
-	line "their bellies."
-
-	para "I love how they"
-	line "feel!"
-	done
-
+	
 Route2SignText:
 	text "ROUTE 2"
 
-	para "VIRIDIAN CITY -"
-	line "PEWTER CITY"
+	para "CHERRYGROVE CITY -"
+	line "VIOLET CITY"
 	done
 
-Route2DiglettsCaveSignText:
-	text "DIGLETT'S CAVE"
+Route2TrainerTipsText:
+	text "TRAINER TIPS "
+	
+	para "It is usually"
+	line "safer to walk"
+	cont "through pathways"
+	cont "with tall grass."
+	
+	para "You will avoid"
+	line "trainers looking"
+	cont "for a battle."
 	done
 
 Route2_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
-	warp_event 15, 15, ROUTE_2_NUGGET_HOUSE, 1
-	warp_event 15, 31, ROUTE_2_GATE, 3
-	warp_event 16, 27, ROUTE_2_GATE, 1
-	warp_event 17, 27, ROUTE_2_GATE, 2
-	warp_event 12,  7, DIGLETTS_CAVE, 3
-
+	db 4 ; warp events
+	warp_event  39, 32, ROUTE_2_AZALEA_GATE, 1
+	warp_event  39, 33, ROUTE_2_AZALEA_GATE, 2
+	warp_event  39,  2, ROUTE_2_GATE, 1
+	warp_event  39,  3, ROUTE_2_GATE, 2
+	
 	db 0 ; coord events
+	
+	db 2 ; bg events
+	bg_event  5, 5, BGEVENT_READ, Route2Sign
+	bg_event 18, 30, BGEVENT_READ, Route2TrainerTips
 
-	db 6 ; bg events
-	bg_event  7, 51, BGEVENT_READ, Route2Sign
-	bg_event 11,  9, BGEVENT_READ, Route2DiglettsCaveSign
-	bg_event  7, 23, BGEVENT_ITEM, Route2HiddenMaxEther
-	bg_event  4, 14, BGEVENT_ITEM, Route2HiddenFullHeal
-	bg_event  4, 27, BGEVENT_ITEM, Route2HiddenFullRestore
-	bg_event 11, 30, BGEVENT_ITEM, Route2HiddenRevive
-
-	db 8 ; object events
-	object_event 10, 45, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 5, TrainerBugCatcherRob, -1
-	object_event  6,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINCLOCKWISE, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherEd, -1
-	object_event  0, 40, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherDoug, -1
-	object_event  0, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2DireHit, EVENT_ROUTE_2_DIRE_HIT
-	object_event  2, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2MaxPotion, EVENT_ROUTE_2_MAX_POTION
-	object_event 19,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Carbos, EVENT_ROUTE_2_CARBOS
-	object_event 14, 50, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Elixer, EVENT_ROUTE_2_ELIXER
-	object_event 10, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree, -1
+	db 15 ; object events
+	object_event  8,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNicholas, -1
+	object_event 10,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerJamie, -1
+	object_event 10, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherLiam, -1
+	object_event  5, 19, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassNicole, -1
+	object_event 20, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperPhillip, -1
+	object_event 28, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJack, -1
+	object_event 35, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Potion1, EVENT_ROUTE_2_POKE_BALL
+	object_event 11,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2PokeBall, EVENT_ROUTE_2_POTION1
+	object_event 18, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Potion2, EVENT_ROUTE_2_POTION2
+	object_event  9, 15, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree1, -1
+	object_event  5, 36, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route2FruitTree2, -1
+	object_event 28,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerSchoolboyDanny, -1
+	object_event 31, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyJohnny, -1
+	object_event 35, 16, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherAndrea, -1
+	object_event 28,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2LeafStone, EVENT_ROUTE_2_LEAF_STONE
+	

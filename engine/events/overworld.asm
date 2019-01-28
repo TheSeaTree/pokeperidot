@@ -133,16 +133,9 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_HIVEBADGE
-	call CheckBadge
-	jr c, .nohivebadge
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
-	ret
-
-.nohivebadge
-	ld a, $80
 	ret
 
 .nothingtocut
@@ -286,9 +279,6 @@ OWFlash:
 
 .CheckUseFlash:
 ; Flash
-	ld de, ENGINE_ZEPHYRBADGE
-	farcall CheckBadge
-	jr c, .nozephyrbadge
 	push hl
 	farcall SpecialAerodactylChamber
 	pop hl
@@ -303,10 +293,6 @@ OWFlash:
 
 .notadarkcave
 	call FieldMoveFailed
-	ld a, $80
-	ret
-
-.nozephyrbadge
 	ld a, $80
 	ret
 
@@ -352,8 +338,6 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	ld de, ENGINE_FOGBADGE
-	call CheckBadge
 	jr c, .asm_c956
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
@@ -509,10 +493,6 @@ TrySurfOW::
 	call CheckDirection
 	jr c, .quit
 
-	ld de, ENGINE_FOGBADGE
-	call CheckEngineFlag
-	jr c, .quit
-
 	ld d, SURF
 	call CheckPartyMove
 	jr c, .quit
@@ -565,9 +545,6 @@ FlyFunction:
 
 .TryFly:
 ; Fly
-	ld de, ENGINE_STORMBADGE
-	call CheckBadge
-	jr c, .nostormbadge
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .outdoors
@@ -588,10 +565,6 @@ FlyFunction:
 	ld [wDefaultSpawnpoint], a
 	call CloseWindow
 	ld a, $1
-	ret
-
-.nostormbadge
-	ld a, $82
 	ret
 
 .indoors
@@ -645,8 +618,6 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
-	ld de, ENGINE_RISINGBADGE
-	farcall CheckBadge
 	ld a, $80
 	ret c
 	call CheckMapCanWaterfall
@@ -715,9 +686,6 @@ Script_UsedWaterfall:
 TryWaterfallOW::
 	ld d, WATERFALL
 	call CheckPartyMove
-	jr c, .failed
-	ld de, ENGINE_RISINGBADGE
-	call CheckEngineFlag
 	jr c, .failed
 	call CheckMapCanWaterfall
 	jr c, .failed
@@ -979,9 +947,9 @@ StrengthFunction:
 
 .TryStrength:
 ; Strength
-	ld de, ENGINE_PLAINBADGE
-	call CheckBadge
-	jr c, .Failed
+;	ld de, ENGINE_PLAINBADGE
+;	call CheckBadge
+;	jr c, .Failed
 	jr .UseStrength
 
 .Unreferenced_AlreadyUsing:
@@ -1079,9 +1047,9 @@ TryStrengthOW:
 	call CheckPartyMove
 	jr c, .nope
 
-	ld de, ENGINE_PLAINBADGE
-	call CheckEngineFlag
-	jr c, .nope
+;	ld de, ENGINE_PLAINBADGE
+;	call CheckEngineFlag
+;	jr c, .nope
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
@@ -1118,9 +1086,6 @@ Jumptable_cdae:
 	dw .FailWhirlpool
 
 .TryWhirlpool:
-	ld de, ENGINE_GLACIERBADGE
-	call CheckBadge
-	jr c, .noglacierbadge
 	call TryWhirlpoolMenu
 	jr c, .failed
 	ld a, $1
@@ -1128,10 +1093,6 @@ Jumptable_cdae:
 
 .failed
 	ld a, $2
-	ret
-
-.noglacierbadge
-	ld a, $80
 	ret
 
 .DoWhirlpool:
@@ -1212,8 +1173,6 @@ TryWhirlpoolOW::
 	ld d, WHIRLPOOL
 	call CheckPartyMove
 	jr c, .failed
-	ld de, ENGINE_GLACIERBADGE
-	call CheckEngineFlag
 	jr c, .failed
 	call TryWhirlpoolMenu
 	jr c, .failed
@@ -1331,8 +1290,8 @@ AskHeadbuttScript:
 UnknownText_0xcee6:
 	; A #MON could be in this tree. Want to HEADBUTT it?
 	text_jump UnknownText_0x1c08bc
-	db "@"
-
+	db "@"	
+	
 RockSmashFunction:
 	call TryRockSmashFromMenu
 	and $7f
@@ -1416,7 +1375,7 @@ AskRockSmashScript:
 	opentext
 	writetext UnknownText_0xcf77
 	yesorno
-	iftrue RockSmashScript
+	jump RockSmashScript
 	closetext
 	end
 .no
@@ -1426,7 +1385,7 @@ UnknownText_0xcf72:
 	; Maybe a #MON can break this.
 	text_jump UnknownText_0x1c0906
 	db "@"
-
+	
 UnknownText_0xcf77:
 	; This rock looks breakable. Want to use ROCK SMASH?
 	text_jump UnknownText_0x1c0924
@@ -1792,10 +1751,6 @@ GotOffTheBikeText:
 TryCutOW::
 	ld d, CUT
 	call CheckPartyMove
-	jr c, .cant_cut
-
-	ld de, ENGINE_HIVEBADGE
-	call CheckEngineFlag
 	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)

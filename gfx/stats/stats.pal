@@ -1,6 +1,6 @@
-; pink
-	RGB 31, 19, 31
-; green
-	RGB 21, 31, 14
-; blue
+; Page 1 (Blue)
 	RGB 17, 31, 31
+; Page 2 (Green)
+	RGB 21, 31, 14
+; Page 3 (Orange)
+	RGB 31, 22,  4

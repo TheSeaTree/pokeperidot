@@ -84,17 +84,6 @@ INCBIN "data/tilesets/mansion_metatiles.bin"
 TilesetMansionColl:
 INCLUDE "data/tilesets/mansion_collision.asm"
 
-TilesetCaveGFX:
-INCBIN "gfx/tilesets/cave.2bpp.lz"
-
-TilesetCaveMeta:
-TilesetDarkCaveMeta:
-INCBIN "data/tilesets/cave_metatiles.bin"
-
-TilesetCaveColl:
-TilesetDarkCaveColl:
-INCLUDE "data/tilesets/cave_collision.asm"
-
 
 SECTION "Tileset Data 3", ROMX
 
@@ -279,15 +268,6 @@ INCLUDE "data/tilesets/lighthouse_collision.asm"
 TilesetForestColl:
 INCLUDE "data/tilesets/forest_collision.asm"
 
-TilesetFacilityGFX:
-INCBIN "gfx/tilesets/facility.2bpp.lz"
-
-TilesetFacilityMeta:
-INCBIN "data/tilesets/facility_metatiles.bin"
-
-TilesetFacilityColl:
-INCLUDE "data/tilesets/facility_collision.asm"
-
 TilesetBattleTowerOutsideMeta:
 INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 
@@ -306,6 +286,17 @@ INCLUDE "data/tilesets/beta_word_room_collision.asm"
 
 
 SECTION "Tileset Data 7", ROMX
+
+TilesetCaveGFX:
+INCBIN "gfx/tilesets/cave.2bpp.lz"
+
+TilesetCaveMeta:
+TilesetDarkCaveMeta:
+INCBIN "data/tilesets/cave_metatiles.bin"
+
+TilesetCaveColl:
+TilesetDarkCaveColl:
+INCLUDE "data/tilesets/cave_collision.asm"
 
 TilesetRuinsOfAlphGFX:
 TilesetBetaWordRoomGFX:
@@ -335,3 +326,32 @@ INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
 
 TilesetAerodactylWordRoomMeta:
 INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
+
+TilesetJohtoCityGFX:
+INCBIN "gfx/tilesets/johto_city.2bpp.lz"
+
+TilesetJohtoCityMeta:
+INCBIN "data/tilesets/johto_city_metatiles.bin"
+
+TilesetJohtoCityColl:
+INCLUDE "data/tilesets/johto_city_collision.asm"
+
+TilesetMountainGFX:
+INCBIN "gfx/tilesets/mountain.2bpp.lz"
+
+TilesetMountainMeta:
+INCBIN "data/tilesets/mountain_metatiles.bin"
+
+TilesetMountainColl
+INCLUDE "data/tilesets/mountain_collision.asm"
+
+SECTION "Tileset Data 9", ROMX
+
+TilesetFacilityGFX:
+INCBIN "gfx/tilesets/facility.2bpp.lz"
+
+TilesetFacilityMeta:
+INCBIN "data/tilesets/facility_metatiles.bin"
+
+TilesetFacilityColl:
+INCLUDE "data/tilesets/facility_collision.asm"

@@ -1,6 +1,6 @@
 DefaultOptions:
 ; wOptions: med text speed
-	db TEXT_DELAY_MED
+	db %01100001 ;Fast text, battle scene on, battle style set, stereo sound
 ; wSaveFileExists: no
 	db FALSE
 ; wTextBoxFrame: frame 1

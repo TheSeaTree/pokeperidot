@@ -162,16 +162,11 @@ UnknownText_0x1c0384::
 	prompt
 
 UnknownText_0x1c0396::
-	text "It contained"
+	text "It contains"
 	line "@"
 	text_from_ram wStringBuffer2
 	text "."
-
-	para "Teach @"
-	text_from_ram wStringBuffer2
-	text_start
-	line "to a #MON?"
-	done
+	prompt
 
 UnknownText_0x1c03c2::
 	text_from_ram wStringBuffer2
@@ -441,11 +436,8 @@ UnknownText_0x1c08ac::
 	done
 
 UnknownText_0x1c08bc::
-	text "A #MON could be"
-	line "in this tree."
-
-	para "Want to HEADBUTT"
-	line "it?"
+	text "Want to HEADBUTT"
+	line "this tree?"
 	done
 
 UnknownText_0x1c08f0::
@@ -460,10 +452,7 @@ UnknownText_0x1c0906::
 	done
 
 UnknownText_0x1c0924::
-	text "This rock looks"
-	line "breakable."
-
-	para "Want to use ROCK"
+	text "Want to use ROCK"
 	line "SMASH?"
 	done
 
@@ -501,10 +490,8 @@ UnknownText_0x1c09c7::
 	done
 
 UnknownText_0x1c09dd::
-	text "This tree can be"
-	line "CUT!"
-
-	para "Want to use CUT?"
+	text "Want to use CUT"
+	line "on this tree?"
 	done
 
 UnknownText_0x1c0a05::
@@ -720,11 +707,7 @@ UnknownText_0x1c0d6c::
 _ActorNameText::
 	text "<USER>@@"
 
-_UsedMove1Text::
-	text_start
-	line "used @@"
-
-_UsedMove2Text::
+_UsedMoveText::
 	text_start
 	line "used @@"
 
@@ -734,25 +717,6 @@ _UsedInsteadText::
 
 _MoveNameText::
 	text_from_ram wStringBuffer2
-	db "@@"
-
-_EndUsedMove1Text::
-	text "!"
-	done
-
-_EndUsedMove2Text::
-	text "!"
-	done
-
-_EndUsedMove3Text::
-	text "!"
-	done
-
-_EndUsedMove4Text::
-	text "!"
-	done
-
-_EndUsedMove5Text::
 	text "!"
 	done
 
@@ -781,52 +745,60 @@ UnknownText_0x1c0dd8::
 	done
 
 UnknownText_0x1c0df3::
-	text "It's @"
-	text_from_ram wBreedMon2Nick
+	text "The @"
+	text_from_ram wBreedMon1
 	text_start
-	line "that was left with"
-	cont "the DAY-CARE LADY."
+	line "over there looks"
+	cont "lonely. It must"
+	cont "want a friend!"
+	done
+	
+UnknownText_0x1c0df3b::
+	text "The @"
+	text_from_ram wBreedMon2
+	text_start
+	line "over there looks"
+	cont "lonely. It must"
+	cont "want a friend!"
 	done
 
 UnknownText_0x1c0e24::
-	text "It's @"
+	text "The @"
 	text_from_ram wBreedMon1
 	text_start
-	line "that was left with"
-	cont "the DAY-CARE MAN."
+	line "and @"
+	text_from_ram wBreedMon2
+	text_start
+	cont "you left at the"
+	cont "DAY-CARE are hav-"
+	cont "ing lots of fun!"
 	done
 
 UnknownText_0x1c0e54::
-	text "It's brimming with"
-	line "energy."
+	text "They're brimming"
+	line "with energy."
 	prompt
 
 UnknownText_0x1c0e6f::
-	text "It has no interest"
-	line "in @"
-	text_from_ram wStringBuffer1
-	text "."
+	text "…they seem to pre-"
+	line "fer playing with"
+	cont "other #MON."
 	prompt
 
 UnknownText_0x1c0e8d::
-	text "It appears to care"
-	line "for @"
-	text_from_ram wStringBuffer1
-	text "."
+	text "…they don't seem"
+	line "to like each other"
+	cont "very much"
 	prompt
 
 UnknownText_0x1c0eac::
-	text "It's friendly with"
-	line "@"
-	text_from_ram wStringBuffer1
-	text "."
+	text "They seem to get"
+	line "along together."
 	prompt
 
 UnknownText_0x1c0ec6::
-	text "It shows interest"
-	line "in @"
-	text_from_ram wStringBuffer1
-	text "."
+	text "The two get along"
+	line "very well."
 	prompt
 
 _EmptyMailboxText::
@@ -1113,6 +1085,11 @@ _PlayersPCNoRoomDepositText::
 	line "store items."
 	prompt
 
+_NoTMHMinPC::
+	text "This item can't be"
+	line "deposited."
+	prompt
+	
 UnknownText_0x1c144d::
 	text "<PLAYER> turned on"
 	line "the PC."
@@ -1492,10 +1469,7 @@ UnknownText_0x1c1cf3::
 	done
 
 _OakText1::
-	text "Hello! Sorry to"
-	line "keep you waiting!"
-
-	para "Welcome to the"
+	text "Welcome to the"
 	line "world of #MON!"
 
 	para "My name is OAK."
@@ -1515,26 +1489,45 @@ _OakText3::
 	db "@@"
 
 _OakText4::
-	text "People and #MON"
-	line "live together by"
-
-	para "supporting each"
-	line "other."
-
-	para "Some people play"
-	line "with #MON, some"
-	cont "battle with them."
+	text "#MON can be"
+	line "found anywhere and"
+	cont "everywhere!"
 	prompt
+	
+_OakText4a::
+	text "They fill our"
+	line "expansive skies."
+	db "@@"
+	
+_OakText4b::
+	text "Give life to our"
+	line "beautiful oceans."
+	db "@@"
+	
+_OakText4c::
+	text "And even live with"
+	line "us as just another"
+	cont "family member!"
+	db "@@"
+	
+_OakText4d::
+	text "It's impossible to"
+	line "avoid #MON in"
+	cont "this world!"
+	prompt
+	
+_OakText4e::
+	db "@@"
 
 _OakText5::
-	text "But we don't know"
+	text "We don't yet know"
 	line "everything about"
-	cont "#MON yet."
+	cont "#MON."
 
-	para "There are still"
-	line "many mysteries to"
-	cont "solve."
+	para "So much of this"
+	line "world is still a"
+	cont "mystery to us."
 
-	para "That's why I study"
-	line "#MON every day."
+	para "That brings me to"
+	line "my next question."
 	prompt

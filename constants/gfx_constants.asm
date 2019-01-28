@@ -40,15 +40,3 @@ HP_RED    EQU 2
 	const SPRITEOAMSTRUCT_ATTRIBUTES ; 3
 SPRITEOAMSTRUCT_LENGTH EQU const_value
 NUM_SPRITE_OAM_STRUCTS EQU 40 ; see wVirtualOAM
-
-; PokeAnims indexes (see engine/gfx/pic_animation.asm)
-	const_def
-	const ANIM_MON_SLOW
-	const ANIM_MON_NORMAL
-	const ANIM_MON_MENU
-	const ANIM_MON_TRADE
-	const ANIM_MON_EVOLVE
-	const ANIM_MON_HATCH
-	const ANIM_MON_HOF
-	const ANIM_MON_EGG1
-	const ANIM_MON_EGG2

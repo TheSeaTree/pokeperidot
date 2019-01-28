@@ -165,11 +165,11 @@ GoldenrodMagnetTrainStationGentlemanText:
 GoldenrodMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  8, 17, GOLDENROD_CITY, 5
-	warp_event  9, 17, GOLDENROD_CITY, 5
-	warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 4
-	warp_event 11,  5, SAFFRON_MAGNET_TRAIN_STATION, 3
+	db 2 ; warp events
+	warp_event  8, 17, AZALEA_TOWN, 1
+	warp_event  9, 17, AZALEA_TOWN, 1
+;	warp_event  6,  5, SAFFRON_MAGNET_TRAIN_STATION, 4
+;	warp_event 11,  5, SAFFRON_MAGNET_TRAIN_STATION, 3
 
 	db 1 ; coord events
 	coord_event 11,  6, SCENE_DEFAULT, Script_ArriveFromSaffron

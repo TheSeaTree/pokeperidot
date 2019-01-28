@@ -9,16 +9,18 @@ Route12SuperRodHouse_MapScripts:
 Route12SuperRodHouseFishingGuruScript:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SUPER_ROD
+	checkevent EVENT_GOT_GOOD_ROD
 	iftrue .GotSuperRod
 	writetext OfferSuperRodText
 	yesorno
 	iffalse .Refused
+	checkflag ENGINE_HIVEBADGE
+	iffalse .DontHaveHiveBadge
 	writetext GiveSuperRodText
 	buttonsound
-	verbosegiveitem SUPER_ROD
+	verbosegiveitem GOOD_ROD
 	iffalse .NoRoom
-	setevent EVENT_GOT_SUPER_ROD
+	setevent EVENT_GOT_GOOD_ROD
 .GotSuperRod:
 	writetext GaveSuperRodText
 	waitbutton
@@ -31,18 +33,26 @@ Route12SuperRodHouseFishingGuruScript:
 .NoRoom:
 	closetext
 	end
+.DontHaveHiveBadge
+	writetext DontHaveHiveBadgeText
+	waitbutton
+	closetext
+	end
 
 SuperRodHouseBookshelf:
 ; unused
 	jumpstd picturebookshelf
 
 OfferSuperRodText:
-	text "I'm the FISHING"
-	line "GURU's younger"
-	cont "brother."
+	text "Welcome to"
+	line "my home."
+
+	para "I am the "
+	line "FISHING GURU!"
 
 	para "I can see that you"
-	line "like fishing."
+	line "show interest"
+	cont "in fishing."
 
 	para "There's no doubt"
 	line "in my mind at all!"
@@ -57,7 +67,7 @@ GiveSuperRodText:
 
 	para "Here, fishing fan!"
 	line "Take this--it's a"
-	cont "SUPER ROD."
+	cont "GOOD ROD."
 	done
 
 GaveSuperRodText:
@@ -76,13 +86,32 @@ DontWantSuperRodText:
 	text "Huh? My own eyes"
 	line "deceived me?"
 	done
+	
+DontHaveHiveBadgeText:
+	text "Yes, yes. Just as"
+	line "I thought!"
+	
+	para "…Unfortunately"
+	line "I can't let you"
+	cont "have this ROD just"
+	cont "this moment."
+	
+	para "Come back with"
+	line "the BADGE of a"
+	cont "water-type leader."
+	
+	para "Then you may have"
+	line "this GOOD ROD"
+	cont "and share the joy"
+	cont "of fishing!"
+	done
 
 Route12SuperRodHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_12, 1
-	warp_event  3,  7, ROUTE_12, 1
+	warp_event  2,  7, ROUTE_5, 1
+	warp_event  3,  7, ROUTE_5, 1
 
 	db 0 ; coord events
 

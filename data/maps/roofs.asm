@@ -17,10 +17,10 @@ MapGroupRoofs:
 	db ROOF_AZALEA    ;  5 (Blackthorn)
 	db -1             ;  6
 	db -1             ;  7
-	db ROOF_AZALEA    ;  8 (Azalea)
+	db ROOF_GOLDENROD ;  8 (Azalea)
 	db ROOF_AZALEA    ;  9 (Lake of Rage)
-	db ROOF_VIOLET    ; 10 (Violet)
-	db ROOF_GOLDENROD ; 11 (Goldenrod)
+	db ROOF_AZALEA    ; 10 (Violet)
+	db ROOF_AZALEA    ; 11 (Goldenrod)
 	db -1             ; 12
 	db -1             ; 13
 	db -1             ; 14
@@ -33,7 +33,7 @@ MapGroupRoofs:
 	db -1             ; 21
 	db ROOF_OLIVINE   ; 22 (Cianwood)
 	db -1             ; 23
-	db ROOF_NEW_BARK  ; 24 (New Bark)
+	db ROOF_OLIVINE  ; 24 (New Bark)
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Cherrygrove)
 

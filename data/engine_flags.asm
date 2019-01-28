@@ -74,17 +74,6 @@ EngineFlags:
 	; fly
 	engine_flag wVisitedSpawns, SPAWN_HOME
 	engine_flag wVisitedSpawns, SPAWN_DEBUG
-	engine_flag wVisitedSpawns, SPAWN_PALLET
-	engine_flag wVisitedSpawns, SPAWN_VIRIDIAN
-	engine_flag wVisitedSpawns, SPAWN_PEWTER
-	engine_flag wVisitedSpawns, SPAWN_CERULEAN ; $38
-	engine_flag wVisitedSpawns, SPAWN_ROCK_TUNNEL
-	engine_flag wVisitedSpawns, SPAWN_VERMILION
-	engine_flag wVisitedSpawns, SPAWN_LAVENDER
-	engine_flag wVisitedSpawns, SPAWN_SAFFRON
-	engine_flag wVisitedSpawns, SPAWN_CELADON
-	engine_flag wVisitedSpawns, SPAWN_FUCHSIA
-	engine_flag wVisitedSpawns, SPAWN_CINNABAR
 	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
 	engine_flag wVisitedSpawns, SPAWN_NEW_BARK
 	engine_flag wVisitedSpawns, SPAWN_CHERRYGROVE
@@ -132,66 +121,6 @@ EngineFlags:
 	engine_flag wCelebiEvent, CELEBIEVENT_FOREST_IS_RESTLESS_F
 
 	; rematches
-	engine_flag wDailyRematchFlags,  0 ; jack
-	engine_flag wDailyRematchFlags,  1 ; huey
-	engine_flag wDailyRematchFlags,  2 ; gaven
-	engine_flag wDailyRematchFlags,  3 ; beth ; $68
-	engine_flag wDailyRematchFlags,  4 ; jose
-	engine_flag wDailyRematchFlags,  5 ; reena
-	engine_flag wDailyRematchFlags,  6 ; joey
-	engine_flag wDailyRematchFlags,  7 ; wade
-	engine_flag wDailyRematchFlags,  8 ; ralph
-	engine_flag wDailyRematchFlags,  9 ; liz
-	engine_flag wDailyRematchFlags, 10 ; anthony
-	engine_flag wDailyRematchFlags, 11 ; todd ; $70
-	engine_flag wDailyRematchFlags, 12 ; gina
-	engine_flag wDailyRematchFlags, 13 ; arnie
-	engine_flag wDailyRematchFlags, 14 ; alan
-	engine_flag wDailyRematchFlags, 15 ; dana
-	engine_flag wDailyRematchFlags, 16 ; chad
-	engine_flag wDailyRematchFlags, 17 ; tully
-	engine_flag wDailyRematchFlags, 18 ; brent
-	engine_flag wDailyRematchFlags, 19 ; tiffany ; $78
-	engine_flag wDailyRematchFlags, 20 ; vance
-	engine_flag wDailyRematchFlags, 21 ; wilton
-	engine_flag wDailyRematchFlags, 22 ; parry
-	engine_flag wDailyRematchFlags, 23 ; erin
-
-	engine_flag wDailyPhoneItemFlags, 0 ; beverly has nugget
-	engine_flag wDailyPhoneItemFlags, 1 ; jose has star piece
-	engine_flag wDailyPhoneItemFlags, 2 ; wade has item (see EVENT_WADE_HAS_*** in constants/event_flags.asm)
-	engine_flag wDailyPhoneItemFlags, 3 ; gina has leaf stone ; $80
-	engine_flag wDailyPhoneItemFlags, 4 ; alan has fire stone
-	engine_flag wDailyPhoneItemFlags, 5 ; liz has thunderstone
-	engine_flag wDailyPhoneItemFlags, 6 ; derek has nugget
-	engine_flag wDailyPhoneItemFlags, 7 ; tully has water stone
-	engine_flag wDailyPhoneItemFlags, 8 ; tiffany has pink bow
-	engine_flag wDailyPhoneItemFlags, 9 ; wilton has item (see EVENT_WILTON_HAS_*** in constants/event_flags.asm)
-
-	engine_flag wDailyPhoneTimeOfDayFlags,  0 ; jack
-	engine_flag wDailyPhoneTimeOfDayFlags,  1 ; huey ; $88
-	engine_flag wDailyPhoneTimeOfDayFlags,  2 ; gaven
-	engine_flag wDailyPhoneTimeOfDayFlags,  3 ; beth
-	engine_flag wDailyPhoneTimeOfDayFlags,  4 ; jose
-	engine_flag wDailyPhoneTimeOfDayFlags,  5 ; reena
-	engine_flag wDailyPhoneTimeOfDayFlags,  6 ; joey
-	engine_flag wDailyPhoneTimeOfDayFlags,  7 ; wade
-	engine_flag wDailyPhoneTimeOfDayFlags,  8 ; ralph
-	engine_flag wDailyPhoneTimeOfDayFlags,  9 ; liz ; $90
-	engine_flag wDailyPhoneTimeOfDayFlags, 10 ; anthony
-	engine_flag wDailyPhoneTimeOfDayFlags, 11 ; todd
-	engine_flag wDailyPhoneTimeOfDayFlags, 12 ; gina
-	engine_flag wDailyPhoneTimeOfDayFlags, 13 ; arnie
-	engine_flag wDailyPhoneTimeOfDayFlags, 14 ; alan
-	engine_flag wDailyPhoneTimeOfDayFlags, 15 ; dana
-	engine_flag wDailyPhoneTimeOfDayFlags, 16 ; chad
-	engine_flag wDailyPhoneTimeOfDayFlags, 17 ; tully ; $98
-	engine_flag wDailyPhoneTimeOfDayFlags, 18 ; brent
-	engine_flag wDailyPhoneTimeOfDayFlags, 19 ; tiffany
-	engine_flag wDailyPhoneTimeOfDayFlags, 20 ; vance
-	engine_flag wDailyPhoneTimeOfDayFlags, 21 ; wilton
-	engine_flag wDailyPhoneTimeOfDayFlags, 22 ; parry
-	engine_flag wDailyPhoneTimeOfDayFlags, 23 ; erin
 
 	engine_flag wPlayerSpriteSetupFlags, PLAYERSPRITESETUP_FEMALE_TO_MALE_F
 

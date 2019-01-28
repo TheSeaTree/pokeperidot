@@ -6,6 +6,7 @@ AlphabeticalPokedexOrder:
 	db AIPOM
 	db ALAKAZAM
 	db AMPHAROS
+	db ANCOR
 	db ARBOK
 	db ARCANINE
 	db ARIADOS
@@ -31,6 +32,7 @@ AlphabeticalPokedexOrder:
 	db CLEFAIRY
 	db CLEFFA
 	db CLOYSTER
+	db CONCHER
 	db CORSOLA
 	db CROBAT
 	db CROCONAW
@@ -73,7 +75,6 @@ AlphabeticalPokedexOrder:
 	db GLOOM
 	db GOLBAT
 	db GOLDEEN
-	db GOLDUCK
 	db GOLEM
 	db GRANBULL
 	db GRAVELER
@@ -82,9 +83,6 @@ AlphabeticalPokedexOrder:
 	db GYARADOS
 	db HAUNTER
 	db HERACROSS
-	db HITMONCHAN
-	db HITMONLEE
-	db HITMONTOP
 	db HO_OH
 	db HOOTHOOT
 	db HOPPIP
@@ -110,8 +108,8 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
-	db LEDIAN
-	db LEDYBA
+	db ELECTIGER
+	db CUBBOLT
 	db LICKITUNG
 	db LUGIA
 	db MACHAMP
@@ -148,6 +146,8 @@ AlphabeticalPokedexOrder:
 	db NIDORINO
 	db NINETALES
 	db NOCTOWL
+	db NYANELL
+	db OCTANK
 	db OCTILLERY
 	db ODDISH
 	db OMANYTE
@@ -173,7 +173,6 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PRIMEAPE
-	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
 	db QUILAVA
@@ -181,20 +180,22 @@ AlphabeticalPokedexOrder:
 	db RAICHU
 	db RAIKOU
 	db RAPIDASH
-	db RATICATE
-	db RATTATA
 	db REMORAID
 	db RHYDON
 	db RHYHORN
+	db RINRING
+	db SMOLA
 	db SANDSHREW
 	db SANDSLASH
 	db SCIZOR
 	db SCYTHER
 	db SEADRA
 	db SEAKING
+	db SEARION
 	db SEEL
 	db SENTRET
 	db SHELLDER
+	db SHIFUR
 	db SHUCKLE
 	db SKARMORY
 	db SKIPLOOM
@@ -206,6 +207,7 @@ AlphabeticalPokedexOrder:
 	db SMOOCHUM
 	db SNEASEL
 	db SNORLAX
+	db SNOWMAD
 	db SNUBBULL
 	db SPEAROW
 	db SPINARAK
@@ -220,16 +222,15 @@ AlphabeticalPokedexOrder:
 	db SUNKERN
 	db SWINUB
 	db TANGELA
+	db TANGROWTH
 	db TAUROS
 	db TEDDIURSA
 	db TENTACOOL
 	db TENTACRUEL
-	db TOGEPI
-	db TOGETIC
+	db GREMINI
 	db TOTODILE
 	db TYPHLOSION
 	db TYRANITAR
-	db TYROGUE
 	db UMBREON
 	db UNOWN
 	db URSARING

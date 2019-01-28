@@ -37,8 +37,8 @@
 	const PIDGEY     ; 10
 	const PIDGEOTTO  ; 11
 	const PIDGEOT    ; 12
-	const RATTATA    ; 13
-	const RATICATE   ; 14
+	const RINRING    ; 13
+	const NYANELL    ; 14
 	const SPEAROW    ; 15
 	const FEAROW     ; 16
 	const EKANS      ; 17
@@ -72,8 +72,8 @@
 	const DUGTRIO    ; 33
 	const MEOWTH     ; 34
 	const PERSIAN    ; 35
-	const PSYDUCK    ; 36
-	const GOLDUCK    ; 37
+	const SMOLA      ; 36
+	const ANCOR      ; 37
 	const MANKEY     ; 38
 	const PRIMEAPE   ; 39
 	const GROWLITHE  ; 3a
@@ -124,8 +124,8 @@
 	const EXEGGUTOR  ; 67
 	const CUBONE     ; 68
 	const MAROWAK    ; 69
-	const HITMONLEE  ; 6a
-	const HITMONCHAN ; 6b
+	const CONCHER    ; 6a
+	const SEARION    ; 6b
 	const LICKITUNG  ; 6c
 	const KOFFING    ; 6d
 	const WEEZING    ; 6e
@@ -184,8 +184,8 @@ JOHTO_POKEMON EQU const_value
 	const FURRET     ; a2
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
-	const LEDYBA     ; a5
-	const LEDIAN     ; a6
+	const CUBBOLT    ; a5
+	const ELECTIGER  ; a6
 	const SPINARAK   ; a7
 	const ARIADOS    ; a8
 	const CROBAT     ; a9
@@ -194,8 +194,8 @@ JOHTO_POKEMON EQU const_value
 	const PICHU      ; ac
 	const CLEFFA     ; ad
 	const IGGLYBUFF  ; ae
-	const TOGEPI     ; af
-	const TOGETIC    ; b0
+	const SHIFUR     ; af
+	const SNOWMAD    ; b0
 	const NATU       ; b1
 	const XATU       ; b2
 	const MAREEP     ; b3
@@ -255,8 +255,8 @@ JOHTO_POKEMON EQU const_value
 	const PORYGON2   ; e9
 	const STANTLER   ; ea
 	const SMEARGLE   ; eb
-	const TYROGUE    ; ec
-	const HITMONTOP  ; ed
+	const TANGROWTH  ; ec
+	const GREMINI    ; ed
 	const SMOOCHUM   ; ee
 	const ELEKID     ; ef
 	const MAGBY      ; f0
@@ -271,8 +271,8 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const OCTANK     ; fc
 NUM_POKEMON EQU const_value + -1
-	const MON_FC     ; fc
 	const EGG        ; fd
 	const MON_FE     ; fe
 

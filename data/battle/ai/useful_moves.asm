@@ -19,5 +19,7 @@ UsefulMoves:
 	db RECOVER
 	db FIRE_BLAST
 	db SOFTBOILED
-	db SUPER_FANG
+	db MOONLIGHT
+	db MORNING_SUN
+	db SPORE
 	db -1 ; end

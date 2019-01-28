@@ -18,8 +18,8 @@ PokedexDataPointerTable:
 	dw PidgeyPokedexEntry
 	dw PidgeottoPokedexEntry
 	dw PidgeotPokedexEntry
-	dw RattataPokedexEntry
-	dw RaticatePokedexEntry
+	dw RinringPokedexEntry
+	dw NyanellPokedexEntry
 	dw SpearowPokedexEntry
 	dw FearowPokedexEntry
 	dw EkansPokedexEntry
@@ -53,8 +53,8 @@ PokedexDataPointerTable:
 	dw DugtrioPokedexEntry
 	dw MeowthPokedexEntry
 	dw PersianPokedexEntry
-	dw PsyduckPokedexEntry
-	dw GolduckPokedexEntry
+	dw SMolaPokedexEntry
+	dw AncorPokedexEntry
 	dw MankeyPokedexEntry
 	dw PrimeapePokedexEntry
 	dw GrowlithePokedexEntry
@@ -105,8 +105,8 @@ PokedexDataPointerTable:
 	dw ExeggutorPokedexEntry
 	dw CubonePokedexEntry
 	dw MarowakPokedexEntry
-	dw HitmonleePokedexEntry
-	dw HitmonchanPokedexEntry
+	dw ConcherPokedexEntry
+	dw SearionPokedexEntry
 	dw LickitungPokedexEntry
 	dw KoffingPokedexEntry
 	dw WeezingPokedexEntry
@@ -164,8 +164,8 @@ PokedexDataPointerTable:
 	dw FurretPokedexEntry
 	dw HoothootPokedexEntry
 	dw NoctowlPokedexEntry
-	dw LedybaPokedexEntry
-	dw LedianPokedexEntry
+	dw CubboltPokedexEntry
+	dw ElectigerPokedexEntry
 	dw SpinarakPokedexEntry
 	dw AriadosPokedexEntry
 	dw CrobatPokedexEntry
@@ -174,8 +174,8 @@ PokedexDataPointerTable:
 	dw PichuPokedexEntry
 	dw CleffaPokedexEntry
 	dw IgglybuffPokedexEntry
-	dw TogepiPokedexEntry
-	dw TogeticPokedexEntry
+	dw ShifurPokedexEntry
+	dw SnowmadPokedexEntry
 	dw NatuPokedexEntry
 	dw XatuPokedexEntry
 	dw MareepPokedexEntry
@@ -235,8 +235,8 @@ PokedexDataPointerTable:
 	dw Porygon2PokedexEntry
 	dw StantlerPokedexEntry
 	dw SmearglePokedexEntry
-	dw TyroguePokedexEntry
-	dw HitmontopPokedexEntry
+	dw TangrowthPokedexEntry
+	dw GreminiPokedexEntry
 	dw SmoochumPokedexEntry
 	dw ElekidPokedexEntry
 	dw MagbyPokedexEntry
@@ -251,3 +251,4 @@ PokedexDataPointerTable:
 	dw LugiaPokedexEntry
 	dw HoOhPokedexEntry
 	dw CelebiPokedexEntry
+	dw OctankPokedexEntry

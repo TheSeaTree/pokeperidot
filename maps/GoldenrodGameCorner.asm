@@ -63,8 +63,14 @@ GoldenrodGameCornerTMVendor_LoopScript:
 	verticalmenu
 	closewindow
 	ifequal 1, .Thunder
+	checkitem TM_THUNDER
+	iftrue GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript
 	ifequal 2, .Blizzard
+	checkitem TM_BLIZZARD
+	iftrue GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript
 	ifequal 3, .FireBlast
+	checkitem TM_FIRE_BLAST
+	iftrue GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript
 	jump GoldenrodGameCornerPrizeVendor_CancelPurchaseScript
 
 .Thunder:
@@ -109,6 +115,11 @@ GoldenrodGameCornerTMVendor_FinishScript:
 	waitsfx
 	playsound SFX_TRANSACTION
 	writetext GoldenrodGameCornerPrizeVendorHereYouGoText
+	waitbutton
+	jump GoldenrodGameCornerTMVendor_LoopScript
+
+GoldenrodGameCornerPrizeVendor_AlreadyHaveTMScript:
+	writetext GoldenrodGameCornerPrizeVendorAlreadyHaveTMText
 	waitbutton
 	jump GoldenrodGameCornerTMVendor_LoopScript
 
@@ -333,6 +344,11 @@ GoldenrodGameCornerPrizeVendorConfirmPrizeText:
 
 GoldenrodGameCornerPrizeVendorHereYouGoText:
 	text "Here you go!"
+	done
+
+GoldenrodGameCornerPrizeVendorAlreadyHaveTMText:
+	text "But you already"
+	line "have that TM!"
 	done
 
 GoldenrodGameCornerPrizeVendorNeedMoreCoinsText:

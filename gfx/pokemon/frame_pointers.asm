@@ -163,8 +163,8 @@ FramesPointers:
 	dw FurretFrames
 	dw HoothootFrames
 	dw NoctowlFrames
-	dw LedybaFrames
-	dw LedianFrames
+	dw CubboltFrames
+	dw ElectigerFrames
 	dw SpinarakFrames
 	dw AriadosFrames
 	dw CrobatFrames

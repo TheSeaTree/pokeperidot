@@ -320,7 +320,7 @@ MenuHeader_UsableKeyItem:
 	db "USE@"
 	db "GIVE@"
 	db "TOSS@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_UseGiveTossRegisterQuit:
@@ -376,7 +376,7 @@ MenuHeader_UnusableKeyItem:
 	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
 	db 3 ; items
 	db "USE@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_UseRegisterQuit:
@@ -395,7 +395,7 @@ MenuHeader_HoldableKeyItem:
 	db 4 ; items
 	db "GIVE@"
 	db "TOSS@"
-	db "SEL@"
+	db "REG@"
 	db "QUIT@"
 
 Jumptable_GiveTossRegisterQuit:

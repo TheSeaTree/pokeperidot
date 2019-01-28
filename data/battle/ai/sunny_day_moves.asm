@@ -6,7 +6,9 @@ SunnyDayMoves:
 	db FLAMETHROWER
 	db FIRE_SPIN
 	db FIRE_BLAST
+	db FLARE_BLITZ
 	db SACRED_FIRE
 	db MORNING_SUN
+	db MOONLIGHT
 	db SYNTHESIS
 	db -1 ; end

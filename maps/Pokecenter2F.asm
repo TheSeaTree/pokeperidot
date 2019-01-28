@@ -68,8 +68,6 @@ Script_BattleRoomClosed:
 	end
 
 LinkReceptionistScript_Trade:
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iffalse Script_TradeCenterClosed
 	opentext
 	writetext Text_TradeReceptionistIntro
 	yesorno
@@ -170,8 +168,6 @@ BattleTradeMobile_WalkIn:
 	end
 
 LinkReceptionistScript_Battle:
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iffalse Script_BattleRoomClosed
 	opentext
 	writetext Text_BattleReceptionistIntro
 	yesorno
@@ -382,7 +378,6 @@ Script_LeftMobileTradeRoom:
 	special Function101220
 	scall Script_WalkOutOfMobileTradeRoom
 	setscene SCENE_DEFAULT
-	setmapscene MOBILE_TRADE_ROOM, SCENE_DEFAULT
 	end
 
 Script_WalkOutOfMobileTradeRoom:
@@ -402,7 +397,6 @@ Script_LeftMobileBattleRoom:
 	special Function101220
 	scall Script_WalkOutOfMobileBattleRoom
 	setscene SCENE_DEFAULT
-	setmapscene MOBILE_BATTLE_ROOM, SCENE_DEFAULT
 	end
 
 Script_WalkOutOfMobileBattleRoom:
@@ -578,7 +572,6 @@ Script_LeftTimeCapsule:
 	applymovement POKECENTER2F_TIME_CAPSULE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_2
 .Done:
 	setscene SCENE_DEFAULT
-	setmapscene TIME_CAPSULE, SCENE_DEFAULT
 	end
 
 Pokecenter2FLinkRecordSign:
@@ -1023,13 +1016,10 @@ Text_BrokeStadiumRules:
 Pokecenter2F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 3 ; warp events
 	warp_event  0,  7, POKECENTER_2F, -1
 	warp_event  5,  0, TRADE_CENTER, 1
 	warp_event  9,  0, COLOSSEUM, 1
-	warp_event 13,  2, TIME_CAPSULE, 1
-	warp_event  6,  0, MOBILE_TRADE_ROOM, 1
-	warp_event 10,  0, MOBILE_BATTLE_ROOM, 1
 
 	db 0 ; coord events
 

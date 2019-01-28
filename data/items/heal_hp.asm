@@ -1,5 +1,5 @@
 HealingHPAmounts:
-	dbw FRESH_WATER,   50
+	dbw FRESH_WATER,   30
 	dbw SODA_POP,      60
 	dbw LEMONADE,      80
 	dbw HYPER_POTION, 200

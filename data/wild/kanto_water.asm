@@ -22,9 +22,9 @@ KantoWaterWildMons:
 
 	map_id ROUTE_6
 	db 2 percent ; encounter rate
-	db 10, PSYDUCK
-	db 5, PSYDUCK
-	db 10, GOLDUCK
+	db 10, SMOLA
+	db 5, SMOLA
+	db 10, ANCOR
 
 	map_id ROUTE_9
 	db 4 percent ; encounter rate
@@ -127,12 +127,6 @@ KantoWaterWildMons:
 	db 35, TENTACOOL
 	db 30, TENTACOOL
 	db 35, TENTACRUEL
-
-	map_id CELADON_CITY
-	db 2 percent ; encounter rate
-	db 20, GRIMER
-	db 15, GRIMER
-	db 15, MUK
 
 	map_id FUCHSIA_CITY
 	db 2 percent ; encounter rate

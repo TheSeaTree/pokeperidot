@@ -23,9 +23,6 @@ prob_total = 0
 ; Elekid
 	prob 12
 	prob 2
-; Tyrogue
-	prob 10
-	prob 1
 
 OddEggs:
 
@@ -341,56 +338,4 @@ OddEgg1End:
 	bigdw 15 ; Spd
 	bigdw 12 ; SAtk
 	bigdw 11 ; SDef
-	db "EGG@@@@@@@@"
-
-	db TYROGUE
-	db NO_ITEM
-	db TACKLE, DIZZY_PUNCH, 0, 0
-	dw 02560 ; OT ID
-	dt 125 ; Exp
-	; Stat exp
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	dn 0, 0, 0, 0 ; DVs
-	db 35, 10, 0, 0 ; PP
-	db 20 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
-	db 0, 0 ; Status
-	bigdw 0 ; HP
-	bigdw 18 ; Max HP
-	bigdw 8 ; Atk
-	bigdw 8 ; Def
-	bigdw 8 ; Spd
-	bigdw 8 ; SAtk
-	bigdw 8 ; SDef
-	db "EGG@@@@@@@@"
-
-	db TYROGUE
-	db NO_ITEM
-	db TACKLE, DIZZY_PUNCH, 0, 0
-	dw 00256 ; OT ID
-	dt 125 ; Exp
-	; Stat exp
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	bigdw 0
-	dn 2, 10, 10, 10 ; DVs
-	db 35, 10, 0, 0 ; PP
-	db 20 ; Happiness
-	db 0, 0, 0 ; Pokerus, Caught data
-	db 5 ; Level
-	db 0, 0 ; Status
-	bigdw 0 ; HP
-	bigdw 18 ; Max HP
-	bigdw 8 ; Atk
-	bigdw 9 ; Def
-	bigdw 9 ; Spd
-	bigdw 9 ; SAtk
-	bigdw 9 ; SDef
 	db "EGG@@@@@@@@"

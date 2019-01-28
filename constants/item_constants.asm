@@ -30,7 +30,7 @@
 	const FIRE_STONE   ; 16
 	const THUNDERSTONE ; 17
 	const WATER_STONE  ; 18
-	const ITEM_19      ; 19
+	const OLD_AMBER    ; 19
 	const HP_UP        ; 1a
 	const PROTEIN      ; 1b
 	const IRON         ; 1c
@@ -50,12 +50,12 @@
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
-	const ITEM_2D      ; 2d
+	const DOME_FOSSIL  ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f
 	const LEMONADE     ; 30
 	const X_ATTACK     ; 31
-	const ITEM_32      ; 32
+	const HELIX_FOSSIL ; 32
 	const X_DEFEND     ; 33
 	const X_SPEED      ; 34
 	const X_SPECIAL    ; 35
@@ -109,7 +109,7 @@
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
-	const PINK_BOW     ; 68
+	const SILK_SCARF   ; 68
 	const STICK        ; 69
 	const SMOKE_BALL   ; 6a
 	const NEVERMELTICE ; 6b
@@ -175,7 +175,7 @@
 	const NORMAL_BOX   ; a7
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
-	const POLKADOT_BOW ; aa
+	const PINK_BOW     ; aa
 	const ITEM_AB      ; ab
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
@@ -196,98 +196,9 @@
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
 	const ITEM_BE      ; be
-
-add_tm: MACRO
-if !DEF(TM01)
-TM01 = const_value
-	enum_start 1
-endc
-	define _\@_1, "TM_\1"
-	const _\@_1
-	enum \1_TMNUM
-ENDM
-
-; see data/moves/tmhm_moves.asm for moves
-	add_tm DYNAMICPUNCH ; bf
-	add_tm HEADBUTT     ; c0
-	add_tm CURSE        ; c1
-	add_tm ROLLOUT      ; c2
 	const ITEM_C3       ; c3
-	add_tm ROAR         ; c4
-	add_tm TOXIC        ; c5
-	add_tm ZAP_CANNON   ; c6
-	add_tm ROCK_SMASH   ; c7
-	add_tm PSYCH_UP     ; c8
-	add_tm HIDDEN_POWER ; c9
-	add_tm SUNNY_DAY    ; ca
-	add_tm SWEET_SCENT  ; cb
-	add_tm SNORE        ; cc
-	add_tm BLIZZARD     ; cd
-	add_tm HYPER_BEAM   ; ce
-	add_tm ICY_WIND     ; cf
-	add_tm PROTECT      ; d0
-	add_tm RAIN_DANCE   ; d1
-	add_tm GIGA_DRAIN   ; d2
-	add_tm ENDURE       ; d3
-	add_tm FRUSTRATION  ; d4
-	add_tm SOLARBEAM    ; d5
-	add_tm IRON_TAIL    ; d6
-	add_tm DRAGONBREATH ; d7
-	add_tm THUNDER      ; d8
-	add_tm EARTHQUAKE   ; d9
-	add_tm RETURN       ; da
-	add_tm DIG          ; db
 	const ITEM_DC       ; dc
-	add_tm PSYCHIC_M    ; dd
-	add_tm SHADOW_BALL  ; de
-	add_tm MUD_SLAP     ; df
-	add_tm DOUBLE_TEAM  ; e0
-	add_tm ICE_PUNCH    ; e1
-	add_tm SWAGGER      ; e2
-	add_tm SLEEP_TALK   ; e3
-	add_tm SLUDGE_BOMB  ; e4
-	add_tm SANDSTORM    ; e5
-	add_tm FIRE_BLAST   ; e6
-	add_tm SWIFT        ; e7
-	add_tm DEFENSE_CURL ; e8
-	add_tm THUNDERPUNCH ; e9
-	add_tm DREAM_EATER  ; ea
-	add_tm DETECT       ; eb
-	add_tm REST         ; ec
-	add_tm ATTRACT      ; ed
-	add_tm THIEF        ; ee
-	add_tm STEEL_WING   ; ef
-	add_tm FIRE_PUNCH   ; f0
-	add_tm FURY_CUTTER  ; f1
-	add_tm NIGHTMARE    ; f2
-NUM_TMS = const_value - TM01 - 2 ; discount ITEM_C3 and ITEM_DC
 
-add_hm: MACRO
-if !DEF(HM01)
-HM01 = const_value
-endc
-	define _\@_1, "HM_\1"
-	const _\@_1
-	enum \1_TMNUM
-ENDM
-
-	add_hm CUT          ; f3
-	add_hm FLY          ; f4
-	add_hm SURF         ; f5
-	add_hm STRENGTH     ; f6
-	add_hm FLASH        ; f7
-	add_hm WHIRLPOOL    ; f8
-	add_hm WATERFALL    ; f9
-NUM_HMS = const_value - HM01
-
-add_mt: MACRO
-	enum \1_TMNUM
-ENDM
-
-	add_mt FLAMETHROWER
-	add_mt THUNDERBOLT
-	add_mt ICE_BEAM
-NUM_TM_HM_TUTOR = __enum__ + -1
 
 	const ITEM_FA       ; fa
 

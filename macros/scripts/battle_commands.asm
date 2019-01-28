@@ -130,6 +130,7 @@ ENDM
 	command specialdefenseup2       ; 7b
 	command accuracyup2             ; 7c
 	command evasionup2              ; 7d
+	command growth
 	command attackdown              ; 7e
 	command defensedown             ; 7f
 	command speeddown               ; 80

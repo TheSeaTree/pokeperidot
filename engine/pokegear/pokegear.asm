@@ -110,51 +110,6 @@ PokeGear:
 	ret
 
 Pokegear_LoadGFX:
-	call ClearVBank1
-	ld hl, TownMapGFX
-	ld de, vTiles2
-	ld a, BANK(TownMapGFX)
-	call FarDecompress
-	ld hl, PokegearGFX
-	ld de, vTiles2 tile $30
-	ld a, BANK(PokegearGFX)
-	call FarDecompress
-	ld hl, PokegearSpritesGFX
-	ld de, vTiles0
-	ld a, BANK(PokegearSpritesGFX)
-	call Decompress
-	ld a, [wMapGroup]
-	ld b, a
-	ld a, [wMapNumber]
-	ld c, a
-	call GetWorldMapLocation
-	cp FAST_SHIP
-	jr z, .ssaqua
-	farcall GetPlayerIcon
-	push de
-	ld h, d
-	ld l, e
-	ld a, b
-	; standing sprite
-	push af
-	ld de, vTiles0 tile $10
-	ld bc, 4 tiles
-	call FarCopyBytes
-	pop af
-	pop hl
-	; walking sprite
-	ld de, 12 tiles
-	add hl, de
-	ld de, vTiles0 tile $14
-	ld bc, 4 tiles
-	call FarCopyBytes
-	ret
-
-.ssaqua
-	ld hl, FastShipGFX
-	ld de, vTiles0 tile $10
-	ld bc, 8 tiles
-	call CopyBytes
 	ret
 
 FastShipGFX:
@@ -208,8 +163,6 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp FAST_SHIP
-	jr z, .FastShip
 	cp SPECIAL_MAP
 	jr nz, .LoadLandmark
 	ld a, [wBackupMapGroup]
@@ -219,12 +172,6 @@ TownMap_InitCursorAndPlayerIconPositions:
 	call GetWorldMapLocation
 .LoadLandmark:
 	ld [wPokegearMapPlayerIconLandmark], a
-	ld [wPokegearMapCursorLandmark], a
-	ret
-
-.FastShip:
-	ld [wPokegearMapPlayerIconLandmark], a
-	ld a, NEW_BARK_TOWN
 	ld [wPokegearMapCursorLandmark], a
 	ret
 
@@ -322,8 +269,6 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -521,11 +466,11 @@ Pokegear_UpdateClock:
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 6, 8
+	decoord 6, 7
 	farcall PrintHoursMins
-	ld hl, .DayText
-	bccoord 6, 6
-	call PlaceHLTextAtBC
+;	ld hl, .DayText
+;	bccoord 6, 6
+;	call PlaceHLTextAtBC
 	ret
 
 	db "ごぜん@"
@@ -537,8 +482,6 @@ Pokegear_UpdateClock:
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -572,7 +515,7 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	ld d, SILVER_CAVE
+	ld d, BATTLE_TOWER
 	ld e, NEW_BARK_TOWN
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
@@ -735,12 +678,11 @@ TownMap_GetKantoLandmarkLimits:
 	ld a, [wStatusFlags]
 	bit STATUSFLAGS_HALL_OF_FAME_F, a
 	jr z, .not_hof
-	ld d, ROUTE_28
-	ld e, PALLET_TOWN
+	ld d, BATTLE_TOWER
 	ret
 
 .not_hof
-	ld d, ROUTE_28
+	ld d, BATTLE_TOWER
 	ld e, VICTORY_ROAD
 	ret
 
@@ -1472,7 +1414,6 @@ RadioChannels:
 	dbw 28, .PokemonMusic
 	dbw 32, .LuckyChannel
 	dbw 40, .BuenasPassword
-	dbw 52, .RuinsOfAlphRadio
 	dbw 64, .PlacesAndPeople
 	dbw 72, .LetsAllSing
 	dbw 78, .PokeFluteRadio
@@ -1504,12 +1445,6 @@ RadioChannels:
 	call .InJohto
 	jr nc, .NoSignal
 	jp LoadStation_BuenasPassword
-
-.RuinsOfAlphRadio:
-	ld a, [wPokegearMapPlayerIconLandmark]
-	cp RUINS_OF_ALPH
-	jr nz, .NoSignal
-	jp LoadStation_UnownRadio
 
 .PlacesAndPeople:
 	call .InJohto
@@ -1543,10 +1478,6 @@ RadioChannels:
 	ld a, [wPokegearMapPlayerIconLandmark]
 	cp MAHOGANY_TOWN
 	jr z, .ok
-	cp ROUTE_43
-	jr z, .ok
-	cp LAKE_OF_RAGE
-	jr nz, .NoSignal
 .ok
 	jp LoadStation_EvolutionRadio
 
@@ -1559,8 +1490,6 @@ RadioChannels:
 
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -2280,8 +2209,6 @@ FlyMap:
 	call GetWorldMapLocation
 .CheckRegion:
 ; The first 46 locations are part of Johto. The rest are in Kanto.
-	cp KANTO_LANDMARK
-	jr nc, .KantoFlyMap
 .JohtoFlyMap:
 ; Note that .NoKanto should be modified in tandem with this branch
 	push af
@@ -2290,43 +2217,11 @@ FlyMap:
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
-; ..and end at Silver Cave.
-	ld a, FLY_MT_SILVER
+; ..and end at Pokemon League.
+	ld a, FLY_INDIGO
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap
-	call .MapHud
-	pop af
-	call TownMapPlayerIcon
-	ret
-
-.KantoFlyMap:
-; The event that there are no flypoints enabled in a map is not
-; accounted for. As a result, if you attempt to select a flypoint
-; when there are none enabled, the game will crash. Additionally,
-; the flypoint selection has a default starting point that
-; can be flown to even if none are enabled.
-; To prevent both of these things from happening when the player
-; enters Kanto, fly access is restricted until Indigo Plateau is
-; visited and its flypoint enabled.
-	push af
-	ld c, SPAWN_INDIGO
-	call HasVisitedSpawn
-	and a
-	jr z, .NoKanto
-; Kanto's map is only loaded if we've visited Indigo Plateau
-
-; Flypoints begin at Pallet Town...
-	ld a, FLY_PALLET
-	ld [wStartFlypoint], a
-; ...and end at Indigo Plateau
-	ld a, FLY_INDIGO
-	ld [wEndFlypoint], a
-; Because Indigo Plateau is the first flypoint the player
-; visits, it's made the default flypoint.
-	ld [wTownMapPlayerIconLandmark], a
-; Fill out the map
-	call FillKantoMap
 	call .MapHud
 	pop af
 	call TownMapPlayerIcon
@@ -2340,8 +2235,8 @@ FlyMap:
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
-; ..and end at Silver Cave
-	ld a, FLY_MT_SILVER
+; ..and end at Pokemon League
+	ld a, FLY_INDIGO
 	ld [wEndFlypoint], a
 	call FillJohtoMap
 	pop af
@@ -2594,8 +2489,6 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -2622,14 +2515,7 @@ Pokedex_GetArea:
 
 .GetPlayerOrFastShipIcon:
 	ld a, [wTownMapPlayerIconLandmark]
-	cp FAST_SHIP
-	jr z, .FastShip
 	farcall GetPlayerIcon
-	ret
-
-.FastShip:
-	ld de, FastShipGFX
-	ld b, BANK(FastShipGFX)
 	ret
 
 TownMapBGUpdate:

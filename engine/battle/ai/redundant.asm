@@ -38,7 +38,6 @@ AI_Redundant:
 	dbw EFFECT_SAFEGUARD,    .Safeguard
 	dbw EFFECT_RAIN_DANCE,   .RainDance
 	dbw EFFECT_SUNNY_DAY,    .SunnyDay
-	dbw EFFECT_TELEPORT,     .Teleport
 	dbw EFFECT_MORNING_SUN,  .MorningSun
 	dbw EFFECT_SYNTHESIS,    .Synthesis
 	dbw EFFECT_MOONLIGHT,    .Moonlight
@@ -187,7 +186,6 @@ AI_Redundant:
 	farcall AICheckEnemyMaxHP
 	jr nc, .NotRedundant
 
-.Teleport:
 .Redundant:
 	ld a, 1
 	and a

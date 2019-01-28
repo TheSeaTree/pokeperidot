@@ -1,6 +1,5 @@
 _OakText6::
-	text "Now, what did you"
-	line "say your name was?"
+	text "…And your name?"
 	prompt
 
 _OakText7::
@@ -17,20 +16,13 @@ _OakText7::
 
 	para "A world of dreams"
 	line "and adventures"
-
-	para "with #MON"
-	line "awaits! Let's go!"
-
-	para "I'll be seeing you"
-	line "later!"
+	cont "with #MON"
+	cont "awaits!"
 	done
 
 UnknownText_0x1c40e6::
-	text "The clock's time"
-	line "may be wrong."
-
-	para "Please reset the"
-	line "time."
+	text "Please reset the"
+	line "clock."
 	prompt
 
 UnknownText_0x1c411c::
@@ -477,6 +469,11 @@ UnknownText_0x1c4bfd::
 	text "How many?"
 	done
 
+AlreadyHaveTMText::
+	text "You already have"
+	line "that TM."
+	done
+
 UnknownText_0x1c4c08::
 	deciram wItemQuantityChangeBuffer, 1, 2
 	text " @"
@@ -581,8 +578,8 @@ UnknownText_0x1c4e46::
 	done
 
 UnknownText_0x1c4e5f::
-	text "What's up? Need"
-	line "some medicine?"
+	text "I don't have much"
+	line "to offer."
 	done
 
 UnknownText_0x1c4e7e::
@@ -908,9 +905,7 @@ UnknownText_0x1c55d6::
 	done
 
 UnknownText_0x1c55db::
-	text "Password OK."
-	line "Select CONTINUE &"
-	cont "reset settings."
+	text "Clock reset."
 	prompt
 
 UnknownText_0x1c560b::

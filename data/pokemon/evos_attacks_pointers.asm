@@ -19,8 +19,8 @@ EvosAttacksPointers::
 	dw PidgeyEvosAttacks
 	dw PidgeottoEvosAttacks
 	dw PidgeotEvosAttacks
-	dw RattataEvosAttacks
-	dw RaticateEvosAttacks
+	dw RinringEvosAttacks
+	dw NyanellEvosAttacks
 	dw SpearowEvosAttacks
 	dw FearowEvosAttacks
 	dw EkansEvosAttacks
@@ -54,8 +54,8 @@ EvosAttacksPointers::
 	dw DugtrioEvosAttacks
 	dw MeowthEvosAttacks
 	dw PersianEvosAttacks
-	dw PsyduckEvosAttacks
-	dw GolduckEvosAttacks
+	dw SMolaEvosAttacks
+	dw AncorEvosAttacks
 	dw MankeyEvosAttacks
 	dw PrimeapeEvosAttacks
 	dw GrowlitheEvosAttacks
@@ -107,7 +107,7 @@ EvosAttacksPointers::
 	dw CuboneEvosAttacks
 	dw MarowakEvosAttacks
 	dw HitmonleeEvosAttacks
-	dw HitmonchanEvosAttacks
+	dw SearionEvosAttacks
 	dw LickitungEvosAttacks
 	dw KoffingEvosAttacks
 	dw WeezingEvosAttacks
@@ -165,8 +165,8 @@ EvosAttacksPointers::
 	dw FurretEvosAttacks
 	dw HoothootEvosAttacks
 	dw NoctowlEvosAttacks
-	dw LedybaEvosAttacks
-	dw LedianEvosAttacks
+	dw CubboltEvosAttacks
+	dw ElectigerEvosAttacks
 	dw SpinarakEvosAttacks
 	dw AriadosEvosAttacks
 	dw CrobatEvosAttacks
@@ -175,8 +175,8 @@ EvosAttacksPointers::
 	dw PichuEvosAttacks
 	dw CleffaEvosAttacks
 	dw IgglybuffEvosAttacks
-	dw TogepiEvosAttacks
-	dw TogeticEvosAttacks
+	dw ShifurEvosAttacks
+	dw SnowmadEvosAttacks
 	dw NatuEvosAttacks
 	dw XatuEvosAttacks
 	dw MareepEvosAttacks
@@ -236,8 +236,8 @@ EvosAttacksPointers::
 	dw Porygon2EvosAttacks
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
-	dw TyrogueEvosAttacks
-	dw HitmontopEvosAttacks
+	dw TangrowthEvosAttacks
+	dw GreminiEvosAttacks
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks
 	dw MagbyEvosAttacks
@@ -252,3 +252,4 @@ EvosAttacksPointers::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw OctankEvosAttacks

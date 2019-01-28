@@ -41,11 +41,11 @@ Pokered_MonIndices:
 	db CHANSEY
 	db MACHOKE
 	db MR__MIME
-	db HITMONLEE
-	db HITMONCHAN
+	db CONCHER
+	db SEARION
 	db ARBOK
 	db PARASECT
-	db PSYDUCK
+	db SMOLA
 	db DROWZEE
 	db GOLEM
 	db HERACROSS ; MISSINGNO.
@@ -126,7 +126,7 @@ Pokered_MonIndices:
 	db BUTTERFREE
 	db MACHAMP
 	db DONPHAN ; MISSINGNO.
-	db GOLDUCK
+	db ANCOR
 	db HYPNO
 	db GOLBAT
 	db MEWTWO
@@ -138,13 +138,13 @@ Pokered_MonIndices:
 	db SMEARGLE ; MISSINGNO.
 	db KINGLER
 	db CLOYSTER
-	db TYROGUE ; MISSINGNO.
+	db TANGROWTH ; MISSINGNO.
 	db ELECTRODE
 	db CLEFABLE
 	db WEEZING
 	db PERSIAN
 	db MAROWAK
-	db HITMONTOP ; MISSINGNO.
+	db GREMINI ; MISSINGNO.
 	db HAUNTER
 	db ABRA
 	db ALAKAZAM
@@ -163,8 +163,8 @@ Pokered_MonIndices:
 	db BLISSEY ; MISSINGNO.
 	db PONYTA
 	db RAPIDASH
-	db RATTATA
-	db RATICATE
+	db RINRING
+	db NYANELL
 	db NIDORINO
 	db NIDORINA
 	db GEODUDE
@@ -203,8 +203,8 @@ Pokered_MonIndices:
 	db FURRET
 	db HOOTHOOT
 	db NOCTOWL
-	db LEDYBA
-	db LEDIAN
+	db CUBBOLT
+	db ELECTIGER
 	db SPINARAK
 	db ARIADOS
 	db CROBAT
@@ -213,8 +213,8 @@ Pokered_MonIndices:
 	db PICHU
 	db CLEFFA
 	db IGGLYBUFF
-	db TOGEPI
-	db TOGETIC
+	db SHIFUR
+	db SNOWMAD
 	db NATU
 	db XATU
 	db MAREEP

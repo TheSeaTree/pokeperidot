@@ -52,6 +52,7 @@ SCENE_FINISHED EQU 1
 	const_def
 	const SCENE_CHERRYGROVECITY_NOTHING    ; 0
 	const SCENE_CHERRYGROVECITY_MEET_RIVAL ; 1
+	const SCENE_CHERRYGROVECITY_FINISHED   ; 2
 
 ; wRoute32SceneID
 	const_def 1
@@ -75,16 +76,21 @@ SCENE_FINISHED EQU 1
 	const SCENE_ROUTE36NATIONALPARKGATE_UNUSED              ; 1
 	const SCENE_ROUTE36NATIONALPARKGATE_LEAVE_CONTEST_EARLY ; 2
 
+; wVioletCitySceneID
+	const_def
+	const SCENE_VIOLETCITY_NOTHING              ; 0
+	const SCENE_VIOLETCITY_DEFEATED_RIVAL       ; 1	
+	
 ; wAzaleaTownSceneID
 	const_def
 	const SCENE_AZALEATOWN_NOTHING              ; 0
-	const SCENE_AZALEATOWN_RIVAL_BATTLE         ; 1
+	const SCENE_AZALEATOWN_DEFEATED_RIVAL       ; 1
 	const SCENE_AZALEATOWN_KURT_RETURNS_GS_BALL ; 2
 
-; wGoldenrodGymSceneID
+; wGoldenrodCitySceneID
 	const_def
-	const SCENE_GOLDENRODGYM_NOTHING              ; 0
-	const SCENE_GOLDENRODGYM_WHITNEY_STOPS_CRYING ; 1
+	const SCENE_GOLDENRODCITY_NOTHING              ; 0
+	const SCENE_GOLDENRODCITY_DEFEATED_RIVAL ; 1
 
 ; wRoute42SceneID
 	const_def
@@ -96,6 +102,11 @@ SCENE_FINISHED EQU 1
 	const SCENE_CIANWOODCITY_NOTHING            ; 0
 	const SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE ; 1
 
+;wBattleTowerOutsideSceneID
+	const_def
+	const SCENE_PALEROCK3F_NOTHING              ; 0
+	const SCENE_PALEROCK3F_OPEN       ; 1	
+	
 ; wBurnedTower1FSceneID
 	const_def 1
 	const SCENE_BURNEDTOWER1F_RIVAL_BATTLE ; 1
@@ -155,3 +166,8 @@ SCENE_FINISHED EQU 1
 	const_def 1
 	const SCENE_FASTSHIP1F_ENTER_SHIP   ; 1
 	const SCENE_FASTSHIP1F_MEET_GRANDPA ; 2
+	
+; wPalerockMountain3FSceneID
+	const_def 1
+	const SCENE_PALEROCK_DEFAULT ; 1
+	const SCENE_PALEROCK_BUTTON_PRESSED ; 2

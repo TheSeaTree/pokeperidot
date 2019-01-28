@@ -3,12 +3,12 @@ TrainerClassDVs:
 	;  atk,def,spd,spc
 	dn  9, 10,  7,  7 ; FALKNER
 	dn  8,  8,  8,  8 ; BUGSY
-	dn  9,  8,  8,  8 ; WHITNEY
-	dn  9,  8,  8,  8 ; MORTY
-	dn  9,  8,  8,  8 ; PRYCE
-	dn  9,  8,  8,  8 ; JASMINE
-	dn  9,  8,  8,  8 ; CHUCK
-	dn  7, 12, 13, 13 ; CLAIR
+	dn  9,  9,  9,  9 ; WHITNEY
+	dn  9,  9,  9,  9 ; MORTY
+	dn 10, 10, 10, 10 ; PRYCE
+	dn 10, 10, 10, 10 ; JASMINE
+	dn 10, 10, 10, 10 ; CHUCK
+	dn 15, 15, 15, 15 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  9,  8,  8,  8 ; POKEMON_PROF
 	dn 13, 12, 13, 13 ; WILL

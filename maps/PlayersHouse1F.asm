@@ -3,7 +3,7 @@
 	const PLAYERSHOUSE1F_MOM2
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
-	const PLAYERSHOUSE1F_POKEFAN_F
+	const PLAYERSHOUSE1F_GRANNY
 
 PlayersHouse1F_MapScripts:
 	db 2 ; scene scripts
@@ -18,115 +18,64 @@ PlayersHouse1F_MapScripts:
 .DummyScene1:
 	end
 
-MeetMomLeftScript:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-
-MeetMomRightScript:
-	playmusic MUSIC_MOM
-	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
-	turnobject PLAYER, LEFT
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .OnRight
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsTowardPlayerMovement
-	jump MeetMomScript
-
-.OnRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
 	opentext
-	writetext ElmsLookingForYouText
-	buttonsound
-	stringtotext GearName, MEM_BUFFER_1
-	scall PlayersHouse1FReceiveItemStd
-	setflag ENGINE_POKEGEAR
-	setflag ENGINE_PHONE_CARD
-	addcellnum PHONE_MOM
-	setscene SCENE_FINISHED
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Girl
+	writetext BoyText
+	waitbutton
+	jump .After
+	
+.Girl
+	writetext GirlText
+	waitbutton
+	jump .After
+	
+.After
+	writetext HurryUpElmIsWaitingText
+	yesorno
+	iffalse .Directions
+	writetext MomGoodLuck
+	waitbutton
+	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	closetext
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
-	writetext MomGivesPokegearText
-	buttonsound
-	special SetDayOfWeek
-.SetDayOfWeek:
-	writetext IsItDSTText
-	yesorno
-	iffalse .WrongDay
-	special InitialSetDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-	jump .DayOfWeekDone
-
-.WrongDay:
-	special InitialClearDSTFlag
-	yesorno
-	iffalse .SetDayOfWeek
-.DayOfWeekDone:
-	writetext ComeHomeForDSTText
-	yesorno
-	iffalse .ExplainPhone
-	jump .KnowPhone
-
-.KnowPhone:
-	writetext KnowTheInstructionsText
-	buttonsound
-	jump .FinishPhone
-
-.ExplainPhone:
-	writetext DontKnowTheInstructionsText
-	buttonsound
-	jump .FinishPhone
-
-.FinishPhone:
-	writetext InstructionsNextText
-	waitbutton
-	closetext
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .FromRight
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .FromLeft
-	jump .Finish
-
-.FromRight:
-	applymovement PLAYERSHOUSE1F_MOM1, MomTurnsBackMovement
-	jump .Finish
-
-.FromLeft:
-	applymovement PLAYERSHOUSE1F_MOM1, MomWalksBackMovement
-	jump .Finish
-
-.Finish:
-	special RestartMapMusic
-	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
-
-MeetMomTalkedScript:
-	playmusic MUSIC_MOM
-	jump MeetMomScript
-
-GearName:
-	db "#GEAR@"
-
-PlayersHouse1FReceiveItemStd:
-	jumpstd receiveitem
+	
+.Directions
+	writetext ElmsLabDirections
+	waitbutton
+	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	closetext
 	end
 
 MomScript:
 	faceplayer
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	checkscene
-	iffalse MeetMomTalkedScript ; SCENE_DEFAULT
+	iffalse MeetMomScript ; SCENE_DEFAULT
 	opentext
 	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 	iftrue .FirstTimeBanking
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	iftrue .BankOfMom
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue .GaveMysteryEgg
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iftrue .GotAPokemon
 	writetext HurryUpElmIsWaitingText
+	yesorno
+	iffalse .Directions
+	writetext MomGoodLuck
 	waitbutton
 	closetext
+	turnobject PLAYERSHOUSE1F_MOM1, LEFT
+	end
+	
+.Directions
+	writetext ElmsLabDirections
+	waitbutton
+	closetext
+	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
 
 .GotAPokemon:
@@ -141,8 +90,6 @@ MomScript:
 	closetext
 	end
 
-.GaveMysteryEgg:
-	setevent EVENT_FIRST_TIME_BANKING_WITH_MOM
 .BankOfMom:
 	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	special BankOfMom
@@ -176,10 +123,83 @@ NeighborScript:
 	jump .Main
 
 .Main:
-	writetext NeighborText
+	closetext
+	turnobject PLAYERSHOUSE1F_GRANNY, RIGHT
+	end
+	
+TownMapSceneLeft:
+	turnobject PLAYERSHOUSE1F_GRANNY, DOWN
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_GRANNY, 15
+	opentext
+	writetext NeighborGivesPotion1
 	waitbutton
 	closetext
-	turnobject PLAYERSHOUSE1F_POKEFAN_F, RIGHT
+	playmusic MUSIC_MOM
+	turnobject PLAYER, LEFT
+	showemote EMOTE_QUESTION, PLAYER, 15
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyWalksToPlayerLeft
+	opentext
+	writetext NeighborGivesPotion2
+	waitbutton
+	verbosegiveitem TOWN_MAP
+	writetext NeighborGivesTownMap
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyLeftTurn
+	opentext
+	writetext NeighborGivesPotion3
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyRightTurn
+	opentext
+	writetext NeighborGivesPotion4
+	waitbutton
+	closetext
+	applymovement PLAYER, MovementData_MoveForGranny
+	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave1
+	setscene SCENE_FINISHED
+	playsound SFX_ENTER_DOOR
+	disappear PLAYERSHOUSE1F_GRANNY
+	waitsfx
+	special RestartMapMusic
+	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	end
+
+TownMapSceneRight:
+	turnobject PLAYERSHOUSE1F_GRANNY, DOWN
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_GRANNY, 15
+	opentext
+	writetext NeighborGivesPotion1
+	waitbutton
+	closetext
+	playmusic MUSIC_MOM
+	turnobject PLAYER, LEFT
+	showemote EMOTE_QUESTION, PLAYER, 15
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyWalksToPlayerRight
+	opentext
+	writetext NeighborGivesPotion2
+	waitbutton
+	verbosegiveitem TOWN_MAP
+	writetext NeighborGivesTownMap
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyLeftTurn
+	opentext
+	writetext NeighborGivesPotion3
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_GRANNY, GrannyRightTurn
+	opentext
+	writetext NeighborGivesPotion4
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave2
+	setscene SCENE_FINISHED
+	playsound SFX_ENTER_DOOR
+	disappear PLAYERSHOUSE1F_GRANNY
+	waitsfx
+	special RestartMapMusic
+	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	end
 
 TVScript:
@@ -193,122 +213,105 @@ SinkScript:
 
 FridgeScript:
 	jumptext FridgeText
-
-MomTurnsTowardPlayerMovement:
-	turn_head RIGHT
+	
+GrannyWalksToPlayerLeft:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
 	step_end
 
-MomWalksToPlayerMovement:
-	slow_step RIGHT
+GrannyWalksToPlayerRight:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step_end
+	
+GrannyLeftTurn:
+	turn_step LEFT
 	step_end
 
-MomTurnsBackMovement:
-	turn_head LEFT
+GrannyRightTurn:
+	turn_step RIGHT
 	step_end
 
-MomWalksBackMovement:
-	slow_step LEFT
+PlayerWalksToMomMovement:
+	step LEFT
+	step_end
+	
+MovementData_GrannyLeave1:
+	step RIGHT
+	turn_step DOWN
 	step_end
 
-ElmsLookingForYouText:
-	text "Oh, <PLAYER>…! Our"
-	line "neighbor, PROF."
+MovementData_GrannyLeave2:
+	turn_step DOWN
+	step_end
 
-	para "ELM, was looking"
-	line "for you."
-
-	para "He said he wanted"
-	line "you to do some-"
-	cont "thing for him."
-
-	para "Oh! I almost for-"
-	line "got! Your #MON"
-
-	para "GEAR is back from"
-	line "the repair shop."
-
-	para "Here you go!"
+MovementData_MoveForGranny:
+	step RIGHT
+	turn_step LEFT
+	step_end
+	
+BoyText:
+	text "I can't believe my"
+	line "baby is ready to"
+	cont "receive a #MON"
+	cont "of his very own."
+	
+	para "I'm so excited"
+	line "for you!"
 	done
-
-MomGivesPokegearText:
-	text "#MON GEAR, or"
-	line "just #GEAR."
-
-	para "It's essential if"
-	line "you want to be a"
-	cont "good trainer."
-
-	para "Oh, the day of the"
-	line "week isn't set."
-
-	para "You mustn't forget"
-	line "that!"
+	
+GirlText:
+	text "I can't believe my"
+	line "baby is ready to"
+	cont "receive a #MON"
+	cont "of her very own."
+	
+	para "I'm so excited"
+	line "for you!"
 	done
-
-IsItDSTText:
-	text "Is it Daylight"
-	line "Saving Time now?"
-	done
-
-ComeHomeForDSTText:
-	text "Come home to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time."
-
-	para "By the way, do you"
-	line "know how to use"
-	cont "the PHONE?"
-	done
-
-KnowTheInstructionsText:
-	text "Don't you just"
-	line "turn the #GEAR"
-
-	para "on and select the"
-	line "PHONE icon?"
-	done
-
-DontKnowTheInstructionsText:
-	text "I'll read the"
-	line "instructions."
-
-	para "Turn the #GEAR"
-	line "on and select the"
-	cont "PHONE icon."
-	done
-
-InstructionsNextText:
-	text "Phone numbers are"
-	line "stored in memory."
-
-	para "Just choose a name"
-	line "you want to call."
-
-	para "Gee, isn't that"
-	line "convenient?"
-	done
-
+	
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
-	line "ing for you."
+	text "Go pay PROF. ELM a"
+	line "visit, she will be"
+	cont "expecting you."
 
-	para "Hurry up, baby!"
+	para "Do you remember"
+	line "where her lab is?"
+	done
+	
+ElmsLabDirections:	
+	text "Her lab is in"
+	line "PAVONA VILLAGE,"
+	cont "right at the other"
+	cont "end of Route 1."
+	
+	para "Good luck, honey!"
+	
+	para "Be sure to pick a"
+	line "good #MON!"
+	done
+	
+MomGoodLuck:
+	text "Alright baby,"
+	line "good luck!"
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was PROF."
-	line "ELM's errand?"
+	text "You chose a"
+	line "#MON already?"
+	
+	para "Let me see!"
+	
+	para "Aw! It's adorable!"
 
-	para "…"
-
-	para "That does sound"
-	line "challenging."
-
-	para "But, you should be"
-	line "proud that people"
-	cont "rely on you."
+	para "It's good to see"
+	line "you inherited"
+	cont "my taste."
 	done
 
 ImBehindYouText:
@@ -337,18 +340,48 @@ NeighborNiteIntroText:
 	para "I'm visiting!"
 	done
 
-NeighborText:
-	text "<PLAY_G>, have you"
-	line "heard?"
+NeighborGivesPotion1:
+	text "Leaving so soon,"
+	line "<PLAY_G>?"
+	done
 
-	para "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
+NeighborGivesPotion2:
+	text "I got you a small"
+	line "gift to help out"
+	cont "on the start of"
+	cont "your adventure!"
+	done
+	
+NeighborGivesPotion3:
+	text "It was so long ago"
+	line "I began my own"
+	cont "journey."
+	
+	para "I was but a little"
+	line "girl at the time."
+	done
+	
+NeighborGivesTownMap:
+	text "A traveler should"
+	line "always have a map."
+	
+	para "You never know"
+	line "when it will be"
+	cont "useful."
+	done
+	
+NeighborGivesPotion4:
+	text "I shouldn't waste"
+	line "your time with my"
+	cont "stories."
+	
+	para "You will make"
+	line "plenty of your"
+	cont "own in time."
+	
+	para "Good luck on"
+	line "journey! Come"
+	cont "visit any time."
 	done
 
 StoveText:
@@ -392,8 +425,8 @@ PlayersHouse1F_MapEvents:
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	db 2 ; coord events
-	coord_event  8,  4, SCENE_DEFAULT, MeetMomLeftScript
-	coord_event  9,  4, SCENE_DEFAULT, MeetMomRightScript
+	coord_event  6,  7, SCENE_DEFAULT, TownMapSceneLeft
+	coord_event  7,  7, SCENE_DEFAULT, TownMapSceneRight
 
 	db 4 ; bg events
 	bg_event  0,  1, BGEVENT_READ, StoveScript
@@ -402,8 +435,8 @@ PlayersHouse1F_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, TVScript
 
 	db 5 ; object events
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  2,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  0,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  4,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

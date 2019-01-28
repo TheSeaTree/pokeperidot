@@ -81,7 +81,74 @@ PlayersHouseRadioScript:
 	end
 
 PlayersHouseBookshelfScript:
-	jumpstd picturebookshelf
+;	giveitem MASTER_BALL
+;	giveitem TM_CALM_MIND
+;	giveitem TM_BULK_UP
+;	giveitem TM_HIDDEN_POWER
+;	giveitem TM_ROAR
+;	giveitem TM_TOXIC
+;	giveitem TM_SUBMISSION
+;	giveitem TM_HEADBUTT
+;	giveitem TM_CURSE
+;	giveitem TM_FIRE_PUNCH
+;	giveitem TM_FLAMETHROWER
+;	giveitem TM_FIRE_BLAST
+;	giveitem TM_ICE_PUNCH
+;	giveitem TM_ICE_BEAM
+;	giveitem TM_BLIZZARD
+;	giveitem TM_THUNDERPUNCH
+;	giveitem TM_THUNDERBOLT
+;	giveitem TM_THUNDER
+;	giveitem TM_HURRICANE
+;	giveitem TM_WATERFALL
+;	giveitem TM_HYPER_BEAM
+;	giveitem TM_THUNDER_WAVE
+;	giveitem TM_LEECH_LIFE
+;	giveitem TM_ICY_WIND
+;	giveitem TM_STRENGTH
+;	giveitem TM_RETURN
+;	giveitem TM_REFLECT
+;	giveitem TM_LIGHT_SCREEN
+;	giveitem TM_SAFEGUARD
+;	giveitem TM_PROTECT
+;	giveitem TM_ENDURE
+;	giveitem TM_PSYCHIC_M
+;	giveitem TM_CRUNCH
+;	giveitem TM_SHADOW_BALL
+;	giveitem TM_DRAGONBREATH
+;	giveitem TM_TELEPORT
+;	giveitem TM_ROCK_SMASH
+;	giveitem TM_FLY
+;	giveitem TM_IRON_HEAD
+;	giveitem TM_CUT
+;	giveitem TM_THIEF
+;	giveitem TM_SWAGGER
+;	giveitem TM_NASTY_PLOT
+;	giveitem TM_SUBSTITUTE
+;	giveitem TM_REST
+;	giveitem TM_SLEEP_TALK
+;	giveitem TM_ATTRACT
+;	giveitem TM_DOUBLE_TEAM
+;	giveitem TM_SUNNY_DAY
+;	giveitem TM_RAIN_DANCE
+;	giveitem TM_SANDSTORM
+;	giveitem TM_SOLARBEAM
+;	giveitem TM_GIGA_DRAIN
+;	giveitem TM_DRAGON_DANCE
+;	giveitem TM_SWORDS_DANCE
+;	giveitem TM_ROCK_SLIDE
+;	giveitem TM_EARTHQUAKE
+;	giveitem TM_BULLDOZE
+;	giveitem TM_AQUA_JET
+;	giveitem TM_SLUDGE_BOMB
+;	giveitem TM_PLAY_ROUGH
+;	giveitem HM_SURF
+;	loadwildmon SEARION, 10
+;	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
+;	startbattle
+;	reloadmapafterbattle
+;	turnobject PLAYER, DOWN
+	end
 
 PlayersHousePCScript:
 	opentext

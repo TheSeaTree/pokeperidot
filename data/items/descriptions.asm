@@ -5,7 +5,7 @@ ItemDescriptions:
 	dw BrightpowderDesc
 	dw GreatBallDesc
 	dw PokeBallDesc
-	dw TeruSama1Desc
+	dw TownMapDesc
 	dw BicycleDesc
 	dw MoonStoneDesc
 	dw AntidoteDesc
@@ -24,7 +24,7 @@ ItemDescriptions:
 	dw FireStoneDesc
 	dw ThunderStoneDesc
 	dw WaterStoneDesc
-	dw TeruSama2Desc
+	dw OldAmberDesc
 	dw HPUpDesc
 	dw ProteinDesc
 	dw IronDesc
@@ -44,12 +44,12 @@ ItemDescriptions:
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
-	dw TeruSama3Desc
+	dw DomeFossilDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw TeruSama4Desc
+	dw HelixFossilDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -276,8 +276,9 @@ PokeBallDesc:
 	db   "An item for catch-"
 	next "ing #MON.@"
 
-TeruSama1Desc:
-	db   "?@"
+TownMapDesc:
+	db   "A map of the"
+	next "local area.@"
 
 BicycleDesc:
 	db   "A collapsible bike"
@@ -351,8 +352,9 @@ WaterStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-TeruSama2Desc:
-	db   "?@"
+OldAmberDesc:
+	db   "Ancient fossil"
+	next "of a #MON.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -430,8 +432,9 @@ DireHitDesc:
 	db   "Ups critical hit"
 	next "ratio. (1 BTL)@"
 
-TeruSama3Desc:
-	db   "?@"
+DomeFossilDesc:
+	db   "Ancient fossil"
+	next "of a #MON.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -449,8 +452,9 @@ XAttackDesc:
 	db   "Raises ATTACK."
 	next "(1 BTL)@"
 
-TeruSama4Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "Ancient fossil"
+	next "of a #MON.@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."

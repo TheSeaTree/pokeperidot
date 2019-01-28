@@ -7,9 +7,10 @@ MoveTutor:
 	call GetSGBLayout
 	xor a
 	ld [wItemAttributeParamBuffer], a
-	call .GetMoveTutorMove
-	ld [wNamedObjectIndexBuffer], a
+	ld a, [wScriptVar]
+	ld [wd265], a
 	ld [wPutativeTMHMMove], a
+	ld [wNamedObjectIndexBuffer], a
 	call GetMoveName
 	call CopyName1
 	farcall ChooseMonToLearnTMHM
@@ -23,33 +24,13 @@ MoveTutor:
 	call CheckCanLearnMoveTutorMove
 	jr nc, .loop
 	xor a ; FALSE
-	ld [wScriptVar], a
 	jr .quit
 
 .cancel
 	ld a, -1
-	ld [wScriptVar], a
 .quit
-	call CloseSubmenu
-	ret
-
-.GetMoveTutorMove:
-	ld a, [wScriptVar]
-	cp MOVETUTOR_FLAMETHROWER
-	jr z, .flamethrower
-	cp MOVETUTOR_THUNDERBOLT
-	jr z, .thunderbolt
-	; MOVETUTOR_ICE_BEAM
-	ld a, ICE_BEAM
-	ret
-
-.flamethrower
-	ld a, FLAMETHROWER
-	ret
-
-.thunderbolt
-	ld a, THUNDERBOLT
-	ret
+	ld [wScriptVar], a
+	jp CloseSubmenu
 
 CheckCanLearnMoveTutorMove:
 	ld hl, .MenuHeader

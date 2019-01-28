@@ -10,7 +10,7 @@ SpriteMons:
 	db ZUBAT
 	db MAGIKARP
 	db SQUIRTLE
-	db TOGEPI
+	db CLEFFA
 	db BUTTERFREE
 	db DIGLETT
 	db POLIWAG
@@ -35,3 +35,5 @@ SpriteMons:
 	db GYARADOS
 	db LUGIA
 	db HO_OH
+	db OMANYTE
+	

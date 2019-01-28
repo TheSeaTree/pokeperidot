@@ -116,7 +116,7 @@ ItemEffects:
 	dw NoEffect            ; PNK_APRICORN
 	dw NoEffect            ; BLACKGLASSES
 	dw NoEffect            ; SLOWPOKETAIL
-	dw NoEffect            ; PINK_BOW
+	dw NoEffect            ; SILK_SCARF
 	dw NoEffect            ; STICK
 	dw NoEffect            ; SMOKE_BALL
 	dw NoEffect            ; NEVERMELTICE
@@ -139,13 +139,13 @@ ItemEffects:
 	dw RevivalHerbEffect   ; REVIVAL_HERB
 	dw NoEffect            ; HARD_STONE
 	dw NoEffect            ; LUCKY_EGG
-	dw CardKeyEffect       ; CARD_KEY
+	dw NoEffect            ; CARD_KEY
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; EGG_TICKET
 	dw NoEffect            ; LOST_ITEM
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
-	dw BasementKeyEffect   ; BASEMENT_KEY
+	dw NoEffect            ; BASEMENT_KEY
 	dw NoEffect            ; PASS
 	dw NoEffect            ; ITEM_87
 	dw NoEffect            ; ITEM_88
@@ -182,12 +182,12 @@ ItemEffects:
 	dw NormalBoxEffect     ; NORMAL_BOX
 	dw GorgeousBoxEffect   ; GORGEOUS_BOX
 	dw EvoStoneEffect      ; SUN_STONE
-	dw NoEffect            ; POLKADOT_BOW
+	dw NoEffect            ; PINK_BOW
 	dw NoEffect            ; ITEM_AB
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
-	dw SquirtbottleEffect  ; SQUIRTBOTTLE
+	dw NoEffect            ; SQUIRTBOTTLE
 	dw NoEffect            ; ITEM_B0
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
@@ -328,7 +328,7 @@ PokeBallEffect:
 	and 1 << FRZ | SLP
 	ld c, 10
 	jr nz, .addstatus
-	; ld a, [wEnemyMonStatus]
+	ld a, [wEnemyMonStatus]
 	and a
 	ld c, 5
 	jr nz, .addstatus
@@ -434,16 +434,8 @@ PokeBallEffect:
 ; caught as a Ditto, even if it was something else like Mew.
 ; To fix, do not set [wTempEnemyMonSpecies] to DITTO.
 	bit SUBSTATUS_TRANSFORMED, a
-	jr nz, .ditto
-	jr .not_ditto
+	jr nz, .load_data
 
-.ditto
-	ld a, DITTO
-	ld [wTempEnemyMonSpecies], a
-	jr .load_data
-
-.not_ditto
-	set SUBSTATUS_TRANSFORMED, [hl]
 	ld hl, wEnemyBackupDVs
 	ld a, [wEnemyMonDVs]
 	ld [hli], a
@@ -917,7 +909,7 @@ MoonBallMultiplier:
 	push bc
 	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
-	cp MOON_STONE_RED ; BURN_HEAL
+	cp MOON_STONE
 	pop bc
 	ret nz
 
@@ -976,7 +968,7 @@ LoveBallMultiplier:
 	pop de
 	cp d
 	pop bc
-	ret nz ; for the intended effect, this should be "ret z"
+	ret z ; for the intended effect, this should be "ret z"
 
 	sla b
 	jr c, .max
@@ -1014,7 +1006,7 @@ FastBallMultiplier:
 	cp -1
 	jr z, .next
 	cp c
-	jr nz, .next ; for the intended effect, this should be "jr nz, .loop"
+	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop"
 	sla b
 	jr c, .max
 
@@ -1131,7 +1123,14 @@ ReturnToBattle_UseBall:
 	ret
 
 TownMapEffect:
-	farcall PokegearMap
+	call FadeToMenu
+	farcall _TownMap
+	call Call_ExitMenu
+	xor a
+	ldh [hBGMapMode], a
+	farcall Pack_InitGFX
+	farcall WaitBGMap_DrawPackGFX
+	farcall Pack_InitColors
 	ret
 
 BicycleEffect:
@@ -2094,6 +2093,8 @@ UseRepel:
 
 	ld a, b
 	ld [wRepelEffect], a
+	ld a, [wCurItem]
+	ld [wRepelType], a
 	jp UseItemText
 
 TextJump_RepelUsedEarlierIsStillInEffect:
@@ -2356,6 +2357,8 @@ RestorePPEffect:
 	ld a, [hl]
 	cp SKETCH
 	jr z, .CantUsePPUpOnSketch
+	cp CONVERSIONZ
+	jr z, .CantUsePPUpOnSketch
 
 	ld bc, MON_PP - MON_MOVES
 	add hl, bc
@@ -2554,18 +2557,6 @@ UnknownText_0xf739:
 	; PP was restored.
 	text_jump UnknownText_0x1c5cf1
 	db "@"
-
-SquirtbottleEffect:
-	farcall _Squirtbottle
-	ret
-
-CardKeyEffect:
-	farcall _CardKey
-	ret
-
-BasementKeyEffect:
-	farcall _BasementKey
-	ret
 
 SacredAshEffect:
 	farcall _SacredAsh

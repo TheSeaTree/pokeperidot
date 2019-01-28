@@ -14,7 +14,7 @@ BattleCommand_Teleport:
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
 	bit SUBSTATUS_CANT_RUN, a
-	jr nz, .failed
+	jr nz, .switchout
 ; Only need to check these next things if it's your turn
 	ldh a, [hBattleTurn]
 	and a
@@ -22,7 +22,7 @@ BattleCommand_Teleport:
 ; Can't teleport from a trainer battle
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .failed
+	jr nz, .switchout
 ; If your level is greater than the opponent's, you run without fail.
 	ld a, [wCurPartyLevel]
 	ld b, a
@@ -50,7 +50,7 @@ BattleCommand_Teleport:
 .enemy_turn
 	ld a, [wBattleMode]
 	dec a
-	jr nz, .failed
+	jp nz, .enemyswitch
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
@@ -87,3 +87,98 @@ BattleCommand_Teleport:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextBox
+	
+.switchout
+	call CheckPlayerHasMonToSwitchTo
+	jr c, .failed
+
+	call UpdateBattleMonInParty
+	ld a, $1
+	ld [wKickCounter], a
+	call AnimateCurrentMove
+	ld c, 20
+	call DelayFrames
+	hlcoord 9, 7
+	lb bc, 5, 11
+	call ClearBox
+	ld hl, TeleportOutText
+	call StdBattleTextBox
+	ld a, [wPartyCount]
+	ld b, a
+	ld a, [wCurBattleMon]
+	ld c, a
+.random_loop_trainer_playeristarget
+; Transition into switchmon menu
+	call LoadStandardMenuHeader
+	farcall SetUpBattlePartyMenu_NoLoop
+
+	farcall ForcePickSwitchMonInBattle
+
+; Return to battle scene
+	call ClearPalettes
+	farcall _LoadBattleFontsHPBar
+	call CloseWindow
+	call ClearSprites
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld b, SCGB_BATTLE_COLORS
+	call GetSGBLayout
+	call SetPalettes
+	ld hl, SwitchPlayerMon
+	call CallBattleCore
+
+	ld hl, TeleportInText
+	call StdBattleTextBox
+
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+.enemyswitch
+	call FindAliveEnemyMons
+	jr c, .switch_fail
+	call UpdateEnemyMonInParty
+	ld a, $1
+	ld [wKickCounter], a
+	call AnimateCurrentMove
+	ld hl, TeleportOutText
+	call StdBattleTextBox
+	hlcoord 1, 0
+	lb bc, 4, 10
+	call ClearBox
+	ld c, 20
+	call DelayFrames
+	ld a, [wOTPartyCount]
+	ld b, a
+	ld a, [wCurOTMon]
+	ld c, a
+; select a random enemy mon to switch to
+.random_loop_trainer
+	call BattleRandom
+	and $7
+	cp b
+	jr nc, .random_loop_trainer
+	cp c
+	jr z, .random_loop_trainer
+	push af
+	push bc
+	ld hl, wOTPartyMon1HP
+	call GetPartyLocation
+	ld a, [hli]
+	or [hl]
+	pop bc
+	pop de
+	jr z, .random_loop_trainer
+	ld a, d
+	inc a
+	ld [wEnemySwitchMonIndex], a
+	callfar ForceEnemySwitch
+
+	ld hl, TeleportInText
+	call StdBattleTextBox
+
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+.switch_fail
+	jp .failed

@@ -36,6 +36,8 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetJohtoModernAnim:
 TilesetKantoAnim:
+TilesetJohtoCityAnim:
+TilesetMountainAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -43,6 +45,7 @@ TilesetKantoAnim:
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -56,6 +59,7 @@ TilesetParkAnim:
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
@@ -70,6 +74,7 @@ TilesetForestAnim:
 	dw NULL,  ForestTreeLeftAnimation2
 	dw NULL,  ForestTreeRightAnimation2
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  StandingTileFrame8
@@ -82,6 +87,7 @@ TilesetJohtoAnim:
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw WhirlpoolFrames1, AnimateWhirlpoolTile
 	dw WhirlpoolFrames2, AnimateWhirlpoolTile
 	dw WhirlpoolFrames3, AnimateWhirlpoolTile
@@ -98,6 +104,7 @@ UnusedTilesetAnim_fc0d7:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
+	dw NULL,  AnimateFlowerTile2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -122,7 +129,8 @@ TilesetPortAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+;	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -273,7 +281,7 @@ TilesetAerodactylWordRoomAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
-
+	
 DoneTileAnimation:
 ; Reset the animation command loop.
 	xor a
@@ -648,6 +656,35 @@ AnimateFlowerTile:
 	ld sp, hl
 
 	ld hl, vTiles2 tile $03
+
+	jp WriteTile
+	
+AnimateFlowerTile2:
+; No parameters.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+; Alternate tile graphic every other frame
+	ld a, [wTileAnimationTimer]
+	and %10
+	ld e, a
+
+; CGB has different color mappings for flowers.
+	ldh a, [hCGB]
+	and 1
+
+	add e
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, FlowerTileFrames
+	add hl, de
+	ld sp, hl
+
+	ld hl, vTiles2 tile $7c
 
 	jp WriteTile
 

@@ -1,4 +1,4 @@
-MAP_NAME_SIGN_START EQU $60
+MAP_NAME_SIGN_START EQU $c0
 
 ReturnFromMapSetupScript::
 	xor a
@@ -14,8 +14,6 @@ ReturnFromMapSetupScript::
 	ld c, a
 	call GetWorldMapLocation
 	ld [wCurrentLandmark], a
-	call .CheckNationalParkGate
-	jr z, .nationalparkgate
 
 	call GetMapEnvironment
 	cp GATE
@@ -72,28 +70,12 @@ ReturnFromMapSetupScript::
 	ret z
 	cp SPECIAL_MAP
 	ret z
-	cp RADIO_TOWER
-	ret z
-	cp LAV_RADIO_TOWER
-	ret z
 	cp UNDERGROUND_PATH
 	ret z
 	cp INDIGO_PLATEAU
 	ret z
-	cp POWER_PLANT
-	ret z
 	ld a, 1
 	and a
-	ret
-
-.CheckNationalParkGate:
-	ld a, [wMapGroup]
-	cp GROUP_ROUTE_35_NATIONAL_PARK_GATE
-	ret nz
-	ld a, [wMapNumber]
-	cp MAP_ROUTE_35_NATIONAL_PARK_GATE
-	ret z
-	cp MAP_ROUTE_36_NATIONAL_PARK_GATE
 	ret
 
 PlaceMapNameSign::
@@ -126,7 +108,7 @@ PlaceMapNameSign::
 
 LoadMapNameSignGFX:
 	ld de, MapEntryFrameGFX
-	ld hl, vTiles2 tile MAP_NAME_SIGN_START
+	ld hl, vTiles0 tile MAP_NAME_SIGN_START
 	lb bc, BANK(MapEntryFrameGFX), 14
 	call Get2bpp
 	ret
@@ -137,7 +119,13 @@ InitMapNameFrame:
 	ld c, 18
 	call InitMapSignAttrMap
 	call PlaceMapNameFrame
+	hlcoord 1, 1
+	ld de, .Entering
+	call PlaceString
 	ret
+	
+.Entering:
+	db "Entering:@"
 
 PlaceMapNameCenterAlign:
 	ld a, [wCurrentLandmark]
@@ -178,7 +166,7 @@ InitMapSignAttrMap:
 	inc b
 	inc c
 	inc c
-	ld a, PAL_BG_TEXT | PRIORITY
+	ld a, PAL_BG_ROOF | PRIORITY
 .loop
 	push bc
 	push hl
@@ -199,9 +187,12 @@ PlaceMapNameFrame:
 	; top left
 	ld a, MAP_NAME_SIGN_START + 1
 	ld [hli], a
+	; top left, second column
+	ld a, MAP_NAME_SIGN_START + 2
+	ld [hli], a
 	; top row
 	ld a, MAP_NAME_SIGN_START + 2
-	call .FillTopBottom
+	call .FillTop
 	; top right
 	ld a, MAP_NAME_SIGN_START + 4
 	ld [hli], a
@@ -216,17 +207,23 @@ PlaceMapNameFrame:
 	; left, second line
 	ld a, MAP_NAME_SIGN_START + 6
 	ld [hli], a
+	; left, second line, second column
+	ld a, MAP_NAME_SIGN_START + 3
+	ld [hli], a
 	; second line
-	call .FillMiddle
+	call .FillMiddle2
 	; right, second line
-	ld a, MAP_NAME_SIGN_START + 12
+	ld a, MAP_NAME_SIGN_START + 11
 	ld [hli], a
 	; bottom left
 	ld a, MAP_NAME_SIGN_START + 7
 	ld [hli], a
+	; bottom left, second line, second column
+	ld a, MAP_NAME_SIGN_START + 9
+	ld [hli], a
 	; bottom
 	ld a, MAP_NAME_SIGN_START + 8
-	call .FillTopBottom
+	call .FillBottom
 	; bottom right
 	ld a, MAP_NAME_SIGN_START + 10
 	ld [hl], a
@@ -241,19 +238,29 @@ PlaceMapNameFrame:
 	jr nz, .loop
 	ret
 
-.FillTopBottom:
-	ld c, 5
-	jr .enterloop
-
-.continueloop
+.FillBottom:
+	ld c, SCREEN_WIDTH - 3
+	ld a, MAP_NAME_SIGN_START + 8
+.loop2
 	ld [hli], a
-	ld [hli], a
-
-.enterloop
-	inc a
-	ld [hli], a
-	ld [hli], a
-	dec a
 	dec c
-	jr nz, .continueloop
+	jr nz, .loop2
+	ret
+	
+.FillTop:
+	ld c, SCREEN_WIDTH - 3
+	ld a, MAP_NAME_SIGN_START + 2
+.loop3
+	ld [hli], a
+	dec c
+	jr nz, .loop3
+	ret
+	
+.FillMiddle2:
+	ld c, SCREEN_WIDTH - 3
+	ld a, MAP_NAME_SIGN_START + 13
+.loop4
+	ld [hli], a
+	dec c
+	jr nz, .loop4
 	ret

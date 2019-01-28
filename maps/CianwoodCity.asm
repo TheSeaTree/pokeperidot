@@ -5,12 +5,8 @@
 	const CIANWOODCITY_ROCK1
 	const CIANWOODCITY_ROCK2
 	const CIANWOODCITY_ROCK3
-	const CIANWOODCITY_ROCK4
-	const CIANWOODCITY_ROCK5
-	const CIANWOODCITY_ROCK6
-	const CIANWOODCITY_POKEFAN_F
-	const CIANWOODCITY_EUSINE
-	const CIANWOODCITY_SUICUNE
+	const CIANWOODCITY_BURGLAR1
+	const CIANWOODCITY_BURGLAR2
 
 CianwoodCity_MapScripts:
 	db 2 ; scene scripts
@@ -21,6 +17,7 @@ CianwoodCity_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndSuicune
 
 .DummyScene0:
+	disappear CIANWOODCITY_BURGLAR2
 	end
 
 .DummyScene1:
@@ -28,86 +25,24 @@ CianwoodCity_MapScripts:
 
 .FlyPointAndSuicune:
 	setflag ENGINE_FLYPOINT_CIANWOOD
-	setevent EVENT_EUSINE_IN_BURNED_TOWER
-	checkevent EVENT_FOUGHT_EUSINE
-	iffalse .Done
-	disappear CIANWOODCITY_EUSINE
-.Done:
 	return
-
-CianwoodCitySuicuneAndEusine:
-	turnobject PLAYER, UP
-	showemote EMOTE_SHOCK, PLAYER, 15
-	pause 15
-	playsound SFX_WARP_FROM
-	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneApproachMovement
-	turnobject PLAYER, DOWN
-	pause 15
-	playsound SFX_WARP_FROM
-	applymovement CIANWOODCITY_SUICUNE, CianwoodCitySuicuneDepartMovement
-	disappear CIANWOODCITY_SUICUNE
-	pause 10
-	setscene SCENE_CIANWOODCITY_NOTHING
-	clearevent EVENT_SAW_SUICUNE_ON_ROUTE_42
-	setmapscene ROUTE_42, SCENE_ROUTE42_SUICUNE
-	checkevent EVENT_FOUGHT_EUSINE
-	iftrue .Done
-	setevent EVENT_FOUGHT_EUSINE
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
-	appear CIANWOODCITY_EUSINE
-	applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineApproachMovement
-	opentext
-	writetext EusineSuicuneText
-	waitbutton
-	closetext
-	winlosstext EusineBeatenText, 0
-	setlasttalked CIANWOODCITY_EUSINE
-	loadtrainer MYSTICALMAN, EUSINE
-	startbattle
-	dontrestartmapmusic
-	reloadmapafterbattle
-	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
-	opentext
-	writetext EusineAfterText
-	waitbutton
-	closetext
-	applymovement CIANWOODCITY_EUSINE, CianwoodCityEusineDepartMovement
-	disappear CIANWOODCITY_EUSINE
-	pause 20
-	special FadeOutMusic
-	playmapmusic
-	pause 10
-.Done:
+	
+CianwoodCityBurglar:
+	playsound SFX_EXIT_BUILDING
+	appear CIANWOODCITY_BURGLAR2
+	applymovement CIANWOODCITY_BURGLAR2, CianwoodBurglarExitBuilding
+	applymovement PLAYER, CianwoodShovedBack
+	playsound SFX_TACKLE
+	waitsfx
+	showemote EMOTE_SHOCK, CIANWOODCITY_BURGLAR2, 15
+	applymovement CIANWOODCITY_BURGLAR2, CianwoodBurglarRunAway
+;	setevent EVENT_BURGLAR_IN_CIANWOOD
+	setscene SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	disappear CIANWOODCITY_BURGLAR2
 	end
 
-CianwoodCityChucksWife:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_HM02_FLY
-	iftrue .GotFly
-	writetext ChucksWifeEasierToFlyText
-	buttonsound
-	checkevent EVENT_BEAT_CHUCK
-	iftrue .BeatChuck
-	writetext ChucksWifeBeatChuckText
-	waitbutton
-	closetext
-	end
-
-.BeatChuck:
-	writetext ChucksWifeGiveHMText
-	buttonsound
-	verbosegiveitem HM_FLY
-	iffalse .Done
-	setevent EVENT_GOT_HM02_FLY
-	writetext ChucksWifeFlySpeechText
-	buttonsound
-.GotFly:
-	writetext ChucksWifeChubbyText
-	waitbutton
-.Done:
-	closetext
-	end
+CianwoodCityLookout:
+	jumptextfaceplayer CianwoodLookoutText
 
 CianwoodCityYoungster:
 	jumptextfaceplayer CianwoodCityYoungsterText
@@ -115,12 +50,8 @@ CianwoodCityYoungster:
 CianwoodCityPokefanM:
 	jumptextfaceplayer CianwoodCityPokefanMText
 
-CianwoodCityLass:
+CianwoodCityLass:	
 	jumptextfaceplayer CianwoodCityLassText
-
-CianwoodCityUnusedScript:
-; unreferenced
-	jumptextfaceplayer CianwoodCityUnusedText
 
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
@@ -142,44 +73,47 @@ CianwoodPokecenterSign:
 
 CianwoodCityRock:
 	jumpstd smashrock
-
-CianwoodCityHiddenRevive:
-	hiddenitem REVIVE, EVENT_CIANWOOD_CITY_HIDDEN_REVIVE
-
-CianwoodCityHiddenMaxEther:
-	hiddenitem MAX_ETHER, EVENT_CIANWOOD_CITY_HIDDEN_MAX_ETHER
-
-CianwoodCitySuicuneApproachMovement:
-	set_sliding
-	fast_jump_step DOWN
-	fast_jump_step DOWN
-	fast_jump_step RIGHT
-	remove_sliding
+	
+CianwoodBurglarRunAway:
+	big_step RIGHT
+	big_step RIGHT
+	big_step RIGHT
+	fix_facing
+	jump_step LEFT
+	step_sleep 8
+	step_sleep 8
+	remove_fixed_facing
+	step RIGHT
+	step RIGHT
+;	step_sleep 8
+;	turn_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+	big_step UP
+;	big_step UP
+	step_end
+	
+CianwoodBurglarExitBuilding:
+	big_step DOWN
 	step_end
 
-CianwoodCitySuicuneDepartMovement:
-	set_sliding
-	fast_jump_step RIGHT
-	fast_jump_step UP
-	fast_jump_step RIGHT
-	fast_jump_step RIGHT
-	remove_sliding
+CianwoodShovedBack:
+	turn_step UP
+	fix_facing
+	big_step DOWN
+	remove_fixed_facing
 	step_end
 
-CianwoodCityEusineApproachMovement:
-	step UP
-	step UP
-	step UP
-	step UP
-	step_end
-
-CianwoodCityEusineDepartMovement:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step_end
-
+CianwoodLookoutText:
+	text "Scram, kid!"
+	
+	para "There's no reason"
+	line "for you to be"
+	cont "snooping around up"
+	cont "here."
+	done
+	
 ChucksWifeEasierToFlyText:
 	text "You crossed the"
 	line "sea to get here?"
@@ -382,38 +316,34 @@ CianwoodPokeSeerSignText:
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 9 ; warp events
 	warp_event 17, 41, MANIAS_HOUSE, 1
-	warp_event  8, 43, CIANWOOD_GYM, 1
-	warp_event 23, 43, CIANWOOD_POKECENTER_1F, 1
-	warp_event 15, 47, CIANWOOD_PHARMACY, 1
+	warp_event 20, 15, GOLDENROD_GYM, 1
+	warp_event 19, 21, CIANWOOD_POKECENTER_1F, 1
+	warp_event 11, 19, CIANWOOD_MART, 1
 	warp_event  9, 31, CIANWOOD_PHOTO_STUDIO, 1
-	warp_event 15, 37, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
-	warp_event  5, 17, POKE_SEERS_HOUSE, 1
+	warp_event  5, 29, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
+	warp_event  9,  5, POKE_SEERS_HOUSE, 1
+	warp_event  6, 41, PALEROCK_MOUNTAIN_3F, 2
+	warp_event 18,  7, CIANWOOD_CHURCH, 1
 
 	db 1 ; coord events
-	coord_event 11, 16, SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE, CianwoodCitySuicuneAndEusine
-
-	db 8 ; bg events
+	coord_event 11, 20, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
+	
+	db 6 ; bg events
 	bg_event 20, 34, BGEVENT_READ, CianwoodCitySign
 	bg_event  7, 45, BGEVENT_READ, CianwoodGymSign
 	bg_event 24, 43, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 19, 47, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  8, 32, BGEVENT_READ, CianwoodPhotoStudioSign
 	bg_event  8, 24, BGEVENT_READ, CianwoodPokeSeerSign
-	bg_event  4, 19, BGEVENT_ITEM, CianwoodCityHiddenRevive
-	bg_event  5, 29, BGEVENT_ITEM, CianwoodCityHiddenMaxEther
 
-	db 12 ; object events
+	db 8 ; object events
 	object_event 21, 37, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityYoungster, -1
-	object_event 17, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
+	object_event 18, 33, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityPokefanM, -1
 	object_event 14, 42, SPRITE_LASS, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityLass, -1
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  4, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  5, 29, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event  4, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 10, 46, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityChucksWife, -1
-	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CIANWOOD_CITY_EUSINE
-	object_event 10, 14, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SAW_SUICUNE_AT_CIANWOOD_CITY
+	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
+	object_event 16, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityLookout, EVENT_EXPLAINED_BURGLAR
+	object_event 11, 19, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to

@@ -124,10 +124,10 @@ DrawPlayerPartyIconHUDBorder:
 	jr PlaceHUDBorderTiles
 
 .tiles
-	db $73 ; right side
+	db $6d ; right side
 	db $5c ; bottom right
 	db $6f ; bottom left
-	db $76 ; bottom side
+	db $70 ; bottom side
 .tiles_end
 
 DrawEnemyHUDBorder:
@@ -137,7 +137,7 @@ DrawEnemyHUDBorder:
 	call CopyBytes
 	hlcoord 1, 2
 	ld de, 1 ; start on left
-	call PlaceHUDBorderTiles
+	call PlaceEnemyHUDBorderTiles
 	ld a, [wBattleMode]
 	dec a
 	ret nz
@@ -145,12 +145,12 @@ DrawEnemyHUDBorder:
 	dec a
 	call CheckCaughtMon
 	ret z
-	hlcoord 1, 1
+	hlcoord 1, 2
 	ld [hl], $5d
 	ret
 
 .tiles
-	db $6d ; left side
+	db $7f ; left side
 	db $74 ; bottom left
 	db $78 ; bottom right
 	db $76 ; bottom side
@@ -164,6 +164,25 @@ PlaceHUDBorderTiles:
 	ld a, [wTrainerHUDTiles + 1]
 	ld [hl], a
 	ld b, 8
+.loop
+	add hl, de
+	ld a, [wTrainerHUDTiles + 3]
+	ld [hl], a
+	dec b
+	jr nz, .loop
+	add hl, de
+	ld a, [wTrainerHUDTiles + 2]
+	ld [hl], a
+	ret
+	
+PlaceEnemyHUDBorderTiles:
+	ld a, [wTrainerHUDTiles + 0]
+	ld [hl], a
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	ld a, [wTrainerHUDTiles + 1]
+	ld [hl], a
+	ld b, 3
 .loop
 	add hl, de
 	ld a, [wTrainerHUDTiles + 3]

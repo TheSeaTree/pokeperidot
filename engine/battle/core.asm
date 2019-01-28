@@ -1025,7 +1025,17 @@ ResidualDamage:
 	xor a
 	ld [wNumHits], a
 	call Call_PlayBattleAnim_OnlyIfVisible
+	
+	ld a, BATTLE_VARS_STATUS
+	call GetBattleVar
+	and 1 << BRN
+	jr nz, .burn_damage_amount
 	call GetEighthMaxHP
+	jr .got_damage_amount
+.burn_damage_amount
+	; Burn does 1/16 damage as of Gen VII
+	call GetSixteenthMaxHP
+.got_damage_amount
 	ld de, wPlayerToxicCount
 	ldh a, [hBattleTurn]
 	and a
@@ -3560,15 +3570,6 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld bc, wTempMonSpecies
 	farcall CheckFaintedFrzSlp
 	jr c, .skip_cry
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-	hlcoord 12, 0
-	ld d, $0
-	ld e, ANIM_MON_SLOW
-	predef AnimateFrontpic
-	jr .skip_cry
-
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
@@ -4721,7 +4722,7 @@ DrawEnemyHUD:
 	ld [wCurPartySpecies], a
 	call GetBaseData
 	ld de, wEnemyMonNick
-	hlcoord 1, 0
+	hlcoord 1, 1
 	call ret_3e138
 	call PlaceString
 	ld h, b
@@ -4751,10 +4752,10 @@ DrawEnemyHUD:
 	ld a, "♀"
 
 .got_gender
-	hlcoord 9, 1
+	hlcoord 9, 3
 	ld [hl], a
 
-	hlcoord 6, 1
+	hlcoord 6, 3
 	push af
 	push hl
 	ld de, wEnemyMonStatus
@@ -4763,7 +4764,7 @@ DrawEnemyHUD:
 	pop bc
 	jr nz, .skip_level
 	ld a, b
-	cp " "
+	cp ""
 	jr nz, .print_level
 	dec hl
 .print_level
@@ -5258,6 +5259,25 @@ BattleMonEntrance:
 	ld [wMenuCursorY], a
 	ret
 
+TeleportMonEntrance:
+	ld c, 50
+	call DelayFrames
+
+	hlcoord 9, 7
+	lb bc, 5, 11
+	call ClearBox
+
+	ld a, [wCurPartyMon]
+	ld [wCurBattleMon], a
+	call AddBattleParticipant
+	call InitBattleMon
+	xor a ; FALSE
+	call SendOutPlayerMon
+	call EmptyBattleTextBox
+	call LoadTileMapToTempTileMap
+	call SetPlayerTurn
+	jp SpikesDamage
+	
 PassedBattleMonEntrance:
 	ld c, 50
 	call DelayFrames
@@ -5689,6 +5709,7 @@ MoveInfoBox:
 
 .Disabled:
 	db "Disabled!@"
+	
 .Type:
 	db "TYPE/@"
 
@@ -5750,6 +5771,7 @@ CheckPlayerHasUsableMoves:
 .done
 	; Bug: this will result in a move with PP Up confusing the game.
 	and a ; should be "and PP_MASK"
+	and PP_MASK
 	ret nz
 
 .force_struggle
@@ -6189,12 +6211,6 @@ LoadEnemyMon:
 
 ; Moreover, due to the check not being translated to feet+inches, all Magikarp
 ; smaller than 4'0" may be caught by the filter, a lot more than intended.
-	ld a, [wMapGroup]
-	cp GROUP_LAKE_OF_RAGE
-	jr z, .Happiness
-	ld a, [wMapNumber]
-	cp MAP_LAKE_OF_RAGE
-	jr z, .Happiness
 ; 40% chance of not flooring
 	call Random
 	cp 40 percent - 2
@@ -7000,13 +7016,13 @@ GiveExperiencePoints:
 	jp z, .skip_stats
 
 ; give stat exp
-	ld hl, MON_STAT_EXP + 1
+;	ld hl, MON_STAT_EXP + 1
 	add hl, bc
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonBaseStats - 1
 	push bc
-	ld c, NUM_EXP_STATS
+;	ld c, NUM_EXP_STATS
 .loop1
 	inc hl
 	ld a, [de]
@@ -7053,6 +7069,13 @@ GiveExperiencePoints:
 	inc de
 	dec c
 	jr nz, .loop1
+	pop bc
+	ld hl, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp MAX_LEVEL
+	jp nc, .skip_stats
+	push bc
 	xor a
 	ldh [hMultiplicand + 0], a
 	ldh [hMultiplicand + 1], a
@@ -7350,10 +7373,30 @@ GiveExperiencePoints:
 	ld c, PARTY_LENGTH
 	ld d, 0
 .count_loop
+	push bc
+	push de
+	ld a, [wPartyCount]
+	cp c
+	jr c, .no_mon
+	ld a, c
+	dec a
+	ld hl, wPartyMon1Level
+	call GetPartyLocation
+	ld a, [hl]
+.no_mon
+	cp MAX_LEVEL
+	pop de
+	pop bc
+	jr nz, .gains_exp
+	srl b
+	ld a, d
+	jr .no_exp
+.gains_exp
 	xor a
 	srl b
 	adc d
 	ld d, a
+.no_exp
 	dec c
 	jr nz, .count_loop
 	cp 2
@@ -7910,7 +7953,7 @@ PlaceExpBar:
 	sub $8
 	jr c, .next
 	ld b, a
-	ld a, $6a ; full bar
+	ld a, $72 ; full bar
 	ld [hld], a
 	dec c
 	jr z, .finish
@@ -7923,11 +7966,11 @@ PlaceExpBar:
 	jr .skip
 
 .loop2
-	ld a, $62 ; empty bar
+	ld a, $70 ; empty bar
 
 .skip
 	ld [hld], a
-	ld a, $62 ; empty bar
+	ld a, $70 ; empty bar
 	dec c
 	jr nz, .loop2
 
@@ -9082,17 +9125,6 @@ BattleStartMessage:
 .not_shiny
 	farcall CheckSleepingTreeMon
 	jr c, .skip_cry
-
-	farcall CheckBattleScene
-	jr c, .cry_no_anim
-
-	hlcoord 12, 0
-	ld d, $0
-	ld e, ANIM_MON_NORMAL
-	predef AnimateFrontpic
-	jr .skip_cry ; cry is played during the animation
-
-.cry_no_anim
 	ld a, $f
 	ld [wCryTracks], a
 	ld a, [wTempEnemyMonSpecies]
