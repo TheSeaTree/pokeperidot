@@ -3084,10 +3084,12 @@ YanmaEvosAttacks:
 	db 1, TACKLE
 	db 1, FORESIGHT
 	db 6, QUICK_ATTACK
-	db 11, DOUBLE_TEAM
+	db 11, PROTECT
 	db 14, SONICBOOM
-	db 17, PROTECT
-	db 22, SUPERSONIC
+	db 17, DOUBLE_TEAM
+	db 20, STRUGGLE_BUG
+	db 25, GUST
+	db 28, SUPERSONIC
 	db 30, PURSUIT
 	db 33, ANCIENTPOWER
 	db 38, HYPNOSIS
@@ -3498,8 +3500,8 @@ RemoraidEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 11, LOCK_ON
+	db 20, AURORA_BEAM
 	db 22, PSYBEAM
-	db 22, AURORA_BEAM
 	db 22, BUBBLEBEAM
 	db 33, FOCUS_ENERGY
 	db 44, ICE_BEAM

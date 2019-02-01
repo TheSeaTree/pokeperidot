@@ -133,11 +133,16 @@ Route34MovementData_DayCareManWalksBackInside:
 	slow_step UP
 	step_end
 	
+GoldenrodHiddenSilverLeaf:
+	hiddenitem SILVER_LEAF, EVENT_GOLDENROD_HIDDEN_SILVER_LEAF	
+
+GoldenrodHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_GOLDENROD_HIDDEN_RARE_CANDY
+	
 GoldenrodCityPokecenterSign:
 	jumpstd pokecentersign
 	
 DayCareSign:
-	giveegg CUBONE, 5
 	jumptext DayCareSignText
 	
 GoldenrodCityMartSign:
@@ -248,10 +253,12 @@ GoldenrodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 12, 8, -1, GoldenrodSetupGym
 
-	db 3 ; bg events
+	db 5 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
 	bg_event 22, 25, BGEVENT_READ, GoldenrodCityMartSign
 	bg_event 20, 15, BGEVENT_READ, GoldenrodCityPokecenterSign
+	bg_event  1, 22, BGEVENT_ITEM, GoldenrodHiddenSilverLeaf
+	bg_event 21,  8, BGEVENT_ITEM, GoldenrodHiddenRareCandy
 	
 	db 4 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34

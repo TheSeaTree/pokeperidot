@@ -72,7 +72,7 @@ ReturnFromMapSetupScript::
 	ret z
 	cp UNDERGROUND_PATH
 	ret z
-	cp INDIGO_PLATEAU
+	cp DIGLETTS_CAVE
 	ret z
 	ld a, 1
 	and a

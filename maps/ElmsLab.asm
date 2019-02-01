@@ -321,6 +321,20 @@ ElmsAideScript:
 
 ElmsLabLass:
 	jumptextfaceplayer ElmsLabLassText
+	
+ElmsLabBugCatcher:
+	opentext
+	writetext ElmsLabBugCatcherText1
+	waitbutton
+	faceplayer
+	writetext ElmsLabBugCatcherText2
+	waitbutton
+	turnobject LAST_TALKED, UP
+	closetext
+	end
+	
+ElmsLabGameboyKid:
+	jumptextfaceplayer ElmsLabGameboyKidText
 
 ElmsLabBookshelf:
 	jumpstd difficultbookshelf
@@ -910,6 +924,33 @@ ElmsLabLassText:
 	para "My big sister runs"
 	line "it!"
 	done
+	
+ElmsLabBugCatcherText1:
+	text "Hmm..."
+	
+	para "It says here that"
+	line "SHIFUR is weak to"
+	cont "FIRE and FIGHTING-"
+	cont "type moves."
+	done
+	
+ElmsLabBugCatcherText2:
+	text "Have you ever seen"
+	line "one? It looks"
+	cont "really cool!"
+	done
+	
+ElmsLabGameboyKidText:
+	text "This is amazing!"
+	
+	para "They got every"
+	line "character I could"
+	cont "ever want in this"
+	cont "game. Even the"
+	cont "ones that nobody"
+	cont "thought would ever"
+	cont "happen!"
+	done
 
 ElmsLab_MapEvents:
 	db 0, 0 ; filler
@@ -945,6 +986,6 @@ ElmsLab_MapEvents:
 	object_event  0,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  1,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	object_event  2,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ChikoritaPokeBallScript, EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	object_event  7,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  8, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsLabLass, -1
-	object_event  8,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  7,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElmsLabGameboyKid, -1
+	object_event  8, 10, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsLabLass, -1
+	object_event  8,  4, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsLabBugCatcher, -1

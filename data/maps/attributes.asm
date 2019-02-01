@@ -109,7 +109,11 @@ ENDM
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, 0
 
-	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, 0
+	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
+	connection north, PaintersForest, PAINTERS_FOREST, 5
+	
+	map_attributes PaintersForest, PAINTERS_FOREST, $05, SOUTH
+	connection south, EcruteakCity, ECRUTEAK_CITY, -5
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $71, 0
 
@@ -302,4 +306,7 @@ ENDM
 	map_attributes AzaleaTradeHouse, AZALEA_TRADE_HOUSE, $00, 0
 	map_attributes AzaleaBerryHouse, AZALEA_BERRY_HOUSE, $00, 0
 	map_attributes VioletMoveTutor, VIOLET_MOVE_TUTOR, $00, 0
+	map_attributes VioletWeatherHouse, VIOLET_WEATHER_HOUSE, $00, 0
+	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
+	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
 	

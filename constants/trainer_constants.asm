@@ -133,6 +133,7 @@ KRIS EQU __enum__
 	const JANINE1
 
 	trainerclass COOLTRAINERM ; 1b
+	const LEON
 
 	trainerclass COOLTRAINERF ; 1c
 	const REGGIE
@@ -141,9 +142,13 @@ KRIS EQU __enum__
 	trainerclass BEAUTY ; 1d
 	const LILY
 	const BLAZE
+	const JILL
+	const TRACEY
 	
 	trainerclass POKEMANIAC ; 1e
 	const PETER
+	const SCOTT
+	const DYLAN
 
 	trainerclass GRUNTM ; 1f
 
@@ -184,6 +189,8 @@ KRIS EQU __enum__
 	const ROLAND
 	
 	trainerclass SUPER_NERD ; 29
+	const SHANE
+	const STEVEN
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA

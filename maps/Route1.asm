@@ -37,6 +37,136 @@ TrainerFisherMarshall:
 	closetext
 	end
 
+TrainerSuperNerdShane:
+	trainer SUPER_NERD, SHANE, EVENT_BEAT_SUPER_NERD_SHANE, SuperNerdShaneText, SuperNerdShaneWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdShaneAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerSuperNerdSteven:
+	trainer SUPER_NERD, STEVEN, EVENT_BEAT_SUPER_NERD_STEVEN, SuperNerdStevenText, SuperNerdStevenWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdStevenAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPokemaniacScott:
+	trainer POKEMANIAC, SCOTT, EVENT_BEAT_POKEMANIAC_SCOTT, PokemaniacScottText, PokemaniacScottWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokemaniacScottAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPokemaniacDylan:
+	trainer POKEMANIAC, DYLAN, EVENT_BEAT_POKEMANIAC_DYLAN, PokemaniacDylanText, PokemaniacDylanWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokemaniacDylanAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerBeautyJill:
+	trainer BEAUTY, JILL, EVENT_BEAT_BEAUTY_JILL, BeautyJillText, BeautyJillWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyJillAfterText
+	waitbutton
+	closetext
+	end	
+	
+TrainerBeautyTracey:
+	trainer BEAUTY, TRACEY, EVENT_BEAT_BEAUTY_TRACEY, BeautyTraceyText, BeautyTraceyWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyTraceyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerCooltrainerMLeon:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_COOLTRAINERM_LEON
+	iftrue .FightDone
+	checkevent EVENT_BEAT_FISHER_LEO
+	iffalse .Explain	
+	checkevent EVENT_BEAT_FISHER_MARSHALL
+	iffalse .Explain
+	checkevent EVENT_BEAT_SUPER_NERD_SHANE
+	iffalse .Explain
+	checkevent EVENT_BEAT_SUPER_NERD_STEVEN
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEMANIAC_SCOTT
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEMANIAC_DYLAN
+	iffalse .Explain
+	checkevent EVENT_BEAT_BEAUTY_JILL
+	iffalse .Explain	
+	checkevent EVENT_BEAT_BEAUTY_TRACEY
+	iffalse .Explain
+	writetext LeonGoodJob
+	waitbutton
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext LeonChallengeText
+	waitbutton
+	closetext
+	winlosstext CooltrainerLeonWin, CooltrainerLeonLoss
+	loadtrainer COOLTRAINERM, LEON
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_COOLTRAINERM_LEON
+	jump .FightDone
+	
+.FightDone
+	checkevent EVENT_GOT_TM_HEADBUTT
+	iftrue .Headbutt
+	opentext
+	verbosegiveitem TM_HEADBUTT
+	setevent EVENT_GOT_TM_HEADBUTT
+	closetext
+	done
+	
+.Headbutt
+	writetext AlreadyGotHeadbutt
+	waitbutton
+	closetext
+	end
+	
+.Explain
+	checkevent ROUTE_1_TALKED_TO_LEON
+	iftrue .Waiting
+	writetext LeonExplaination
+	setevent ROUTE_1_TALKED_TO_LEON
+	waitbutton
+	closetext
+	end
+	
+.Waiting
+	writetext LeonMoreToGo
+	waitbutton
+	closetext
+	end
+
 Route1Sign:
 	jumptext Route1SignText
 
@@ -73,7 +203,150 @@ FisherMarshallWinText:
 FisherMarshallAfterText:
 	text "I lost."
 	done
+	
+SuperNerdShaneText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+SuperNerdShaneWinText:
+	text "I lost."
+	done
+	
+SuperNerdShaneAfterText:
+	text "I lost."
+	done	
 
+SuperNerdStevenText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+SuperNerdStevenWinText:
+	text "I lost."
+	done
+	
+SuperNerdStevenAfterText:
+	text "I lost."
+	done
+
+PokemaniacScottText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+PokemaniacScottWinText:
+	text "I lost."
+	done
+	
+PokemaniacScottAfterText:
+	text "I lost."
+	done
+	
+PokemaniacDylanText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+PokemaniacDylanWinText:
+	text "I lost."
+	done
+	
+PokemaniacDylanAfterText:
+	text "I lost."
+	done
+	
+BeautyJillText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+BeautyJillWinText:
+	text "I lost."
+	done
+	
+BeautyJillAfterText:
+	text "I lost."
+	done
+
+BeautyTraceyText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+BeautyTraceyWinText:
+	text "I lost."
+	done
+	
+BeautyTraceyAfterText:
+	text "I lost."
+	done
+	
+LeonGoodJob:
+	text "So you beat every"
+	line "trainer on this"
+	cont "route, huh?"
+	done
+	
+LeonChallengeText:
+	text "Don't think I was"
+	line "going to let you"
+	cont "have all the fun."
+	done
+
+CooltrainerLeonWin:
+	text "It's nice to"
+	line "finally see"
+	cont "defeat. Good job,"
+	cont "<PLAYER>."
+	done
+
+CooltrainerLeonLoss:
+	text "I expected more"
+	line "from you. Perhaps"
+	cont "I should find"
+	cont "somewhere else to"
+	cont "train."
+	done
+	
+LeonExplaination:
+	text "Hey, kid. I never"
+	line "thought SCOTT or"
+	cont "STEVEN would let"
+	cont "any new trainers"
+	cont "over here."
+	
+	para "I've already won"
+	line "against them so"
+	cont "many times, it's"
+	cont "become boring."
+	
+	para "If you can prove"
+	line "you're at least"
+	cont "better than all of"
+	cont "the trainers on"
+	cont "this route, I'll"
+	cont "reward you."
+	done
+	
+LeonMoreToGo:
+	text "It doesn't look"
+	line "like you have"
+	cont "defeated everyone"
+	cont "on ROUTE 1."
+	done
+
+AlreadyGotHeadbutt:
+	text "That TM contains"
+	line "HEADBUTT."
+	
+	para "Try using it on"
+	line "some of these"
+	cont "small trees. You"
+	cont "might knock a"
+	cont "#MON out of it."
+	done
+	
 Route1SignText:
 	text "ROUTE 1"
 
@@ -96,14 +369,16 @@ Route1_MapEvents:
 	db 1 ; bg events
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
 
-	db 9 ; object events
+	db 12 ; object events
 	object_event  19, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  28, 9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerCooltrainerfQuinn, -1
-	object_event   9,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event   4,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  13, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  16,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event   9,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSuperNerdSteven, -1
+	object_event   4,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBeautyTracey, -1
+	object_event  13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSuperNerdShane, -1
+	object_event  13, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacDylan, -1
+	object_event  16,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacScott, -1
+	object_event   0,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBeautyJill, -1
+	object_event  19,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerMLeon, -1
 	object_event  40, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherMarshall, -1
 	object_event  62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
 	object_event  57, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1

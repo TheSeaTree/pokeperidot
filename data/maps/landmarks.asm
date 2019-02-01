@@ -28,6 +28,7 @@ Landmarks:
 	landmark  52,  76, Route9Name
 	landmark  52,  68, IlexForestName
 	landmark  52,  52, EcruteakCityName
+	landmark  52,  60, PaintersForestName
 	landmark 108,  68, Route10Name
 	landmark  76,  52, NationalParkName
 	landmark  84,  36, OlivineCityName
@@ -53,6 +54,7 @@ VioletCityName:      db "RIDGE¯VILLAGE@"
 AzaleaTownName:      db "PECTINIA¯CITY@"
 GoldenrodCityName:   db "FAVIA¯TOWN@"
 EcruteakCityName:    db "STAGHORN¯TOWN@"
+PaintersForestName:  db "PAINTER'S¯FOREST@"
 OlivineCityName:     db "CYNARIA¯CITY@"
 CianwoodCityName:    db "HELIO¯TOWN@"
 MahoganyTownName:    db "MAHOGANY¯TOWN@"

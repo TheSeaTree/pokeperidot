@@ -71,6 +71,8 @@ ENDM
 	map_const ECRUTEAK_GYM,                                 5,  9 ;  7
 	map_const ECRUTEAK_CITY,                               20, 15 ;  9
 	map_const ECRUTEAK_FOREST_GATE,                         6,  4 ; 10
+	map_const PAINTERS_FOREST,                              7,  7
+	map_const PAINTERS_HOUSE,                               4,  4
 
 	newgroup                                                      ;  5
 
@@ -128,6 +130,8 @@ ENDM
 	map_const VIOLET_POKECENTER_1F,                         5,  4 ; 10
 	map_const VIOLET_GYM_B1,							   17, 17 ; 18
 	map_const VIOLET_MOVE_TUTOR,                            4,  4
+	map_const VIOLET_WEATHER_HOUSE,                         4,  4
+	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
 
 	newgroup                                                      ; 11
 

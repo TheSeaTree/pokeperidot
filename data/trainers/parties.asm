@@ -368,9 +368,9 @@ YoungsterGroup:
 	
 	;YOUNGSTER (2)
 	db "BEN@", TRAINERTYPE_NORMAL
-	db 12, EKANS
-	db 13, SENTRET
-	db 14, SNUBBULL
+	db 14, EKANS
+	db 16, SENTRET
+	db 17, SNUBBULL
 	db -1 ; end
 	
 SchoolboyGroup:
@@ -473,13 +473,17 @@ CooltrainerFGroup:
 	db -1 
 	
 CooltrainerMGroup:
+	; COOLTRAINER_M (1)
+	db "SCOTT@", TRAINERTYPE_MOVES
+	db 5, TOTODILE, HEADBUTT, NO_MOVE, NO_MOVE, NO_MOVE
+	db -1 
 
 BeautyGroup:
 	; BEAUTY (1)
 	db "LILY@", TRAINERTYPE_NORMAL
-	db 12, ODDISH
-	db 13, SUNFLORA
-	db 16, BAYLEEF
+	db 14, ODDISH
+	db 15, SUNFLORA
+	db 17, BAYLEEF
 	db -1 ; end
 	
 	; BEAUTY (2)
@@ -488,6 +492,18 @@ BeautyGroup:
 	db 23, SANDSHREW,  ROCK_SMASH, ROLLOUT, BULLDOZE, SAND_ATTACK
 	db -1 ; end
 
+	; BEAUTY (3)
+	db "JILL@", TRAINERTYPE_MOVES
+	db 22, TEDDIURSA,  ROCK_SMASH, FAINT_ATTACK, LEER, FURY_SWIPES
+	db 23, SANDSHREW,  ROCK_SMASH, ROLLOUT, BULLDOZE, SAND_ATTACK
+	db -1 ; end
+	
+	; BEAUTY (4)
+	db "TRACEY@", TRAINERTYPE_MOVES
+	db 22, TEDDIURSA,  ROCK_SMASH, FAINT_ATTACK, LEER, FURY_SWIPES
+	db 23, SANDSHREW,  ROCK_SMASH, ROLLOUT, BULLDOZE, SAND_ATTACK
+	db -1 ; end
+	
 PokemaniacGroup:
 	; POKEMANIAC (1)
 	db "PETER@", TRAINERTYPE_NORMAL
@@ -495,6 +511,18 @@ PokemaniacGroup:
 	db 25, NYANELL
 	db -1
 
+	; POKEMANIAC (1)
+	db "SCOTT@", TRAINERTYPE_NORMAL
+	db 25, UMBREON
+	db 25, NYANELL
+	db -1
+	
+	; POKEMANIAC (1)
+	db "DYLAN@", TRAINERTYPE_NORMAL
+	db 25, UMBREON
+	db 25, NYANELL
+	db -1
+	
 GruntMGroup:
 
 GentlemanGroup:
@@ -552,8 +580,8 @@ FisherGroup:
 	
 	; FISHER (3)
 	db "LEO@", TRAINERTYPE_NORMAL
-	db 21, GOLDEEN
-	db 22, REMORAID
+	db 20, GOLDEEN
+	db 20, REMORAID
 	db -1
 	
 	; FISHER (4)
@@ -621,7 +649,16 @@ SailorGroup:
 	db -1
 
 SuperNerdGroup:
+	; SUPER_NERD (1)
+	db "SHANE@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db -1
 
+	; SUPER_NERD (1)
+	db "STEVEN@", TRAINERTYPE_NORMAL
+	db 18, POLIWAG
+	db -1
+	
 Rival2Group:
 	; RIVAL2 (1)
 	db "?@", TRAINERTYPE_MOVES
@@ -867,12 +904,12 @@ JugglerGroup:
 BlackbeltGroup:
 	; BLACKBELT_T (1)
 	db "BILLY@", TRAINERTYPE_MOVES
-	db 12, MACHOP,	ROCK_SMASH, LEER, FOCUS_ENERGY, LOW_KICK
+	db 13, MACHOP,	ROCK_SMASH, LEER, FOCUS_ENERGY, LOW_KICK
 	db -1 ; end
 	
 	; BLACKBELT_T (2)
 	db "JIMMY@", TRAINERTYPE_MOVES
-	db 12, MACHOP,	ROCK_SMASH, LEER, FOCUS_ENERGY, LOW_KICK
+	db 13, MACHOP,	ROCK_SMASH, LEER, FOCUS_ENERGY, LOW_KICK
 	db -1 ; end
 	
 	; BLACKBELT_T (3)

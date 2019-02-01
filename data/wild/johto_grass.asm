@@ -5,29 +5,29 @@ JohtoGrassWildMons:
 	map_id UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db  9, GEODUDE
-	db  8, SANDSHREW
-	db  9, ZUBAT
-	db  9, CUBONE
+	db 11, GEODUDE
 	db  9, SANDSHREW
+	db 10, ZUBAT
+	db 10, CUBONE
+	db 11, SANDSHREW
 	db 10, PARAS
-	db 12, PARAS
+	db 13, PARAS
 	; day
-	db  9, GEODUDE
-	db  8, SANDSHREW
-	db  9, ZUBAT
-	db  9, CUBONE
+	db 11, GEODUDE
 	db  9, SANDSHREW
+	db 10, ZUBAT
+	db 10, CUBONE
+	db 11, SANDSHREW
 	db 10, PARAS
-	db 12, PARAS
+	db 13, PARAS
 	; nite
-	db  9, GEODUDE
-	db  8, SANDSHREW
-	db  9, ZUBAT
-	db  9, CUBONE
+	db 11, GEODUDE
 	db  9, SANDSHREW
+	db 10, ZUBAT
+	db 10, CUBONE
+	db 11, SANDSHREW
 	db 10, PARAS
-	db 12, PARAS
+	db 13, PARAS
 
 	map_id UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -89,24 +89,24 @@ JohtoGrassWildMons:
 	db 18, BEEDRILL
 	db 18, SKIPLOOM
 	db 20, SKIPLOOM
-	db 19, GLOOM
-	db 18, WEEPINBELL
+	db 19, WEEPINBELL
+	db 18, GLOOM
 	db 20, SCYTHER
 	db 20, SCYTHER
 	; day
 	db 18, BEEDRILL
-	db 18, GLOOM
-	db 20, GLOOM
-	db 19, SKIPLOOM
 	db 18, WEEPINBELL
+	db 20, WEEPINBELL
+	db 19, SKIPLOOM
+	db 18, GLOOM
 	db 20, SCYTHER
 	db 20, SCYTHER
 	; nite
 	db 18, BEEDRILL
-	db 18, WEEPINBELL
-	db 20, WEEPINBELL
+	db 18, GLOOM
+	db 20, GLOOM
 	db 19, BEEDRILL
-	db 18, SKIPLOOM
+	db 18, WEEPINBELL
 	db 20, SCYTHER
 	db 20, SCYTHER
 
@@ -114,25 +114,25 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, JIGGLYPUFF
-	db 13, SMEARGLE
 	db 14, NATU
-	db 16, NATU
+	db 13, MAREEP
+	db 16, STANTLER
 	db 16, FARFETCH_D
 	db 17, FARFETCH_D
 	db 17, FARFETCH_D
 	; day
 	db 14, JIGGLYPUFF
-	db 13, SMEARGLE
 	db 14, NATU
+	db 13, MAREEP
 	db 16, NATU
-	db 16, FARFETCH_D
+	db 16, STANTLER
 	db 17, FARFETCH_D
 	db 17, FARFETCH_D
 	; nite
 	db 13, JIGGLYPUFF
-	db 14, GASTLY
 	db 14, MURKROW
-	db 16, MURKROW
+	db 14, GASTLY
+	db 16, STANTLER
 	db 16, FARFETCH_D
 	db 17, FARFETCH_D
 	db 17, FARFETCH_D
@@ -434,33 +434,6 @@ JohtoGrassWildMons:
 	db 13, SHUCKLE
 	db 15, SHUCKLE
 
-	map_id ROUTE_7
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
-	; morn
-	db 17, MEOWTH
-	db 17, SPEAROW
-	db 18, SNUBBULL
-	db 18, JIGGLYPUFF
-	db 18, BEEDRILL
-	db 16, ABRA
-	db 16, ABRA
-	; day
-	db 17, MEOWTH
-	db 17, SPEAROW
-	db 18, SNUBBULL
-	db 18, JIGGLYPUFF
-	db 18, BEEDRILL
-	db 16, ABRA
-	db 16, ABRA
-	; nite
-	db 17, MEOWTH
-	db 17, MURKROW
-	db 18, HOUNDOUR
-	db 18, JIGGLYPUFF
-	db 18, ARIADOS
-	db 16, ABRA
-	db 16, ABRA
-
 	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -542,4 +515,31 @@ JohtoGrassWildMons:
 	db 16, NIDORINA
 	db 16, NIDORINA
 
+	map_id PAINTERS_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 12, SMEARGLE
+	db 14, SMEARGLE
+	db 13, SMEARGLE
+	db 14, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	; day
+	db 12, SMEARGLE
+	db 14, SMEARGLE
+	db 13, SMEARGLE
+	db 14, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	; nite
+	db 12, SMEARGLE
+	db 14, SMEARGLE
+	db 13, SMEARGLE
+	db 14, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	db 16, SMEARGLE
+	
 	db -1 ; end

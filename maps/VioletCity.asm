@@ -85,6 +85,12 @@ VioletCityRivalBattleScript:
 	setevent EVENT_BEAT_RIVAL_1
 	end	
 	
+VioletCityFisher2:
+	jumptextfaceplayer VioletCityFisher2Text
+	
+VioletCityYoungster:
+	jumptextfaceplayer VioletCityYoungsterText
+	
 VioletCitySign:
 	jumptext VioletCitySignText
 
@@ -166,7 +172,32 @@ VioletCityRivalLossText:
 	text "…Humph! I knew"
 	line "you were lying."
 	done
-
+	
+VioletCityFisher2Text:
+	text "ARGH!"
+	
+	para "This stupid OLD"
+	line "ROD I have won't"
+	cont "catch any #MON!"
+	
+	para "There's a guy on"
+	line "ROUTE 5 that is"
+	cont "giving away a GOOD"
+	cont "ROD, but he will"
+	cont "only give it to"
+	cont "someone with a"
+	cont "WAVE BADGE."
+	done
+	
+VioletCityYoungsterText:
+	text "I visited the NAME"
+	line "RATER, but he"
+	cont "wouldn't change"
+	cont "the name of a"
+	cont "#MON I got in a"
+	cont "trade."
+	done
+	
 VioletCitySignText:
 	text "RIDGE VILLAGE"
 
@@ -193,11 +224,13 @@ EarlsPokemonAcademySignText:
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 6 ; warp events
 	warp_event 21, 11, VIOLET_MART, 2
 	warp_event 40,  9, VIOLET_GYM, 1
 	warp_event  9,  9, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 15, VIOLET_MOVE_TUTOR, 1
+	warp_event  3, 13, GOLDENROD_NAME_RATER, 1
+	warp_event 15,  5, VIOLET_WEATHER_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event 40, 10, -1, VioletCityRivalBattleScene1
@@ -209,11 +242,12 @@ VioletCity_MapEvents:
 	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
 	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 24, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 21, 19, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  5, 18, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 21, 22, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
+	object_event  6, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
 	object_event  1, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
-	object_event 1, 1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
+	object_event  1, 1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
+	object_event  5, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AzaleaTownRepel, EVENT_VIOLET_CITY_SILVER_LEAF

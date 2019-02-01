@@ -58,6 +58,7 @@ INCLUDE "maps/AzaleaApartmentLeft.asm"
 SECTION "Map Scripts 6", ROMX
 
 INCLUDE "maps/Route8.asm"
+INCLUDE "maps/Route8SilkScarfHouse.asm"
 INCLUDE "maps/MahoganyMart1F.asm"
 INCLUDE "maps/IlexForest.asm"
 INCLUDE "maps/AzaleaGymSpeechHouse.asm"
@@ -219,6 +220,8 @@ SECTION "Map Scripts 22", ROMX
 INCLUDE "maps/EcruteakCity.asm"
 INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/Route12.asm"
+INCLUDE "maps/PaintersForest.asm"
+INCLUDE "maps/PaintersHouse.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -229,6 +232,7 @@ INCLUDE "maps/OlivineCity.asm"
 INCLUDE "maps/Route15.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/VioletMoveTutor.asm"
+INCLUDE "maps/VioletWeatherHouse.asm"
 
 
 SECTION "Map Scripts 24", ROMX

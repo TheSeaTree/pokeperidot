@@ -24,6 +24,7 @@
 	const ROUTE_9           ; 41
 	const ILEX_FOREST       ; 0e
 	const ECRUTEAK_CITY     ; 16
+	const PAINTERS_FOREST
 	const ROUTE_10          ; 43
 	const NATIONAL_PARK     ; 13
 	const OLIVINE_CITY      ; 1b

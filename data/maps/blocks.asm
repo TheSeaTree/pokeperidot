@@ -59,6 +59,8 @@ AzaleaEvolutionHouse_Blocks:
 AzaleaGymSpeechHouse_Blocks:
 AzaleaBerryHouse_Blocks:
 VioletMoveTutor_Blocks:
+VioletWeatherHouse_Blocks:
+Route8SilkScarfHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 CherrygroveInn_Blocks:
@@ -191,6 +193,7 @@ EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
 ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
+PaintersHouse_Blocks:
 	INCBIN "maps/House2.blk"
 
 UnionCaveB1F_Blocks:
@@ -471,4 +474,7 @@ AzaleaApartmentLeft_Blocks:
 	
 AzaleaApartmentRight_Blocks:
 	INCBIN "maps/AzaleaApartmentRight.blk"
+	
+PaintersForest_Blocks:
+	INCBIN "maps/PaintersForest.blk"
 	

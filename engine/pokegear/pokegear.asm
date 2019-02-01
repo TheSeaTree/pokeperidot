@@ -110,10 +110,43 @@ PokeGear:
 	ret
 
 Pokegear_LoadGFX:
+	call ClearVBank1
+	ld hl, TownMapGFX
+	ld de, vTiles2
+	ld a, BANK(TownMapGFX)
+	call FarDecompress
+	ld hl, PokegearGFX
+	ld de, vTiles2 tile $30
+	ld a, BANK(PokegearGFX)
+	call FarDecompress
+	ld hl, PokegearSpritesGFX
+	ld de, vTiles0
+	ld a, BANK(PokegearSpritesGFX)
+	call Decompress
+	ld a, [wMapGroup]
+	ld b, a
+	ld a, [wMapNumber]
+	ld c, a
+	call GetWorldMapLocation
+	farcall GetPlayerIcon
+	push de
+	ld h, d
+	ld l, e
+	ld a, b
+	; standing sprite
+	push af
+	ld de, vTiles0 tile $10
+	ld bc, 4 tiles
+	call FarCopyBytes
+	pop af
+	pop hl
+	; walking sprite
+	ld de, 12 tiles
+	add hl, de
+	ld de, vTiles0 tile $14
+	ld bc, 4 tiles
+	call FarCopyBytes
 	ret
-
-FastShipGFX:
-INCBIN "gfx/pokegear/fast_ship.2bpp"
 
 InitPokegearModeIndicatorArrow:
 	depixel 4, 2, 4, 0
@@ -466,19 +499,19 @@ Pokegear_UpdateClock:
 	ld b, a
 	ldh a, [hMinutes]
 	ld c, a
-	decoord 6, 7
+	decoord 6, 8
 	farcall PrintHoursMins
-;	ld hl, .DayText
-;	bccoord 6, 6
-;	call PlaceHLTextAtBC
+	ld hl, .DayText
+	bccoord 6, 6
+	call PlaceHLTextAtBC
 	ret
 
 	db "ごぜん@"
 	db "ごご@"
 
 .DayText:
-	text_jump UnknownText_0x1c5821
-	db "@"
+	text_far UnknownText_0x1c5821
+	text_end
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
@@ -515,7 +548,7 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	ld d, BATTLE_TOWER
+	ld d, INDIGO_PLATEAU
 	ld e, NEW_BARK_TOWN
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast
@@ -675,15 +708,6 @@ PokegearMap_UpdateCursorPosition:
 	ret
 
 TownMap_GetKantoLandmarkLimits:
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
-	jr z, .not_hof
-	ld d, BATTLE_TOWER
-	ret
-
-.not_hof
-	ld d, BATTLE_TOWER
-	ld e, VICTORY_ROAD
 	ret
 
 PokegearRadio_Init:
@@ -878,13 +902,13 @@ PokegearPhone_MakePhoneCall:
 
 .dotdotdot
 	;
-	text_jump UnknownText_0x1c5824
-	db "@"
+	text_far UnknownText_0x1c5824
+	text_end
 
 .OutOfServiceArea:
 	; You're out of the service area.
-	text_jump UnknownText_0x1c5827
-	db "@"
+	text_far UnknownText_0x1c5827
+	text_end
 
 PokegearPhone_FinishPhoneCall:
 	ldh a, [hJoyPressed]
@@ -1295,18 +1319,18 @@ Pokegear_LoadTilemapRLE:
 
 PokegearText_WhomToCall:
 	; Whom do you want to call?
-	text_jump UnknownText_0x1c5847
-	db "@"
+	text_far UnknownText_0x1c5847
+	text_end
 
 PokegearText_PressAnyButtonToExit:
 	; Press any button to exit.
-	text_jump UnknownText_0x1c5862
-	db "@"
+	text_far UnknownText_0x1c5862
+	text_end
 
 PokegearText_DeleteStoredNumber:
 	; Delete this stored phone number?
-	text_jump UnknownText_0x1c587d
-	db "@"
+	text_far UnknownText_0x1c587d
+	text_end
 
 PokegearSpritesGFX:
 INCBIN "gfx/pokegear/pokegear_sprites.2bpp.lz"
@@ -2209,6 +2233,8 @@ FlyMap:
 	call GetWorldMapLocation
 .CheckRegion:
 ; The first 46 locations are part of Johto. The rest are in Kanto.
+	cp KANTO_LANDMARK
+	jr nc, .KantoFlyMap
 .JohtoFlyMap:
 ; Note that .NoKanto should be modified in tandem with this branch
 	push af
@@ -2217,7 +2243,7 @@ FlyMap:
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
-; ..and end at Pokemon League.
+; ..and end at Silver Cave.
 	ld a, FLY_INDIGO
 	ld [wEndFlypoint], a
 ; Fill out the map
@@ -2225,6 +2251,22 @@ FlyMap:
 	call .MapHud
 	pop af
 	call TownMapPlayerIcon
+	ret
+
+.KantoFlyMap:
+; The event that there are no flypoints enabled in a map is not
+; accounted for. As a result, if you attempt to select a flypoint
+; when there are none enabled, the game will crash. Additionally,
+; the flypoint selection has a default starting point that
+; can be flown to even if none are enabled.
+; To prevent both of these things from happening when the player
+; enters Kanto, fly access is restricted until Indigo Plateau is
+; visited and its flypoint enabled.
+	push af
+	ld c, SPAWN_INDIGO
+	call HasVisitedSpawn
+	and a
+	jr z, .NoKanto
 	ret
 
 .NoKanto:
@@ -2235,7 +2277,7 @@ FlyMap:
 	ld [wTownMapPlayerIconLandmark], a
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
-; ..and end at Pokemon League
+; ..and end at Silver Cave
 	ld a, FLY_INDIGO
 	ld [wEndFlypoint], a
 	call FillJohtoMap
@@ -2517,7 +2559,7 @@ Pokedex_GetArea:
 	ld a, [wTownMapPlayerIconLandmark]
 	farcall GetPlayerIcon
 	ret
-
+	
 TownMapBGUpdate:
 ; Update BG Map tiles and attributes
 
