@@ -4,8 +4,6 @@
 	const ROUTE3_HIKER2
 	const ROUTE3_HIKER3
 	const ROUTE3_GUIDE
-	const ROUTE3_ROCK1
-	const ROUTE3_ROCK2
 	
 Route3_MapScripts:
 	db 0 ; scene scripts
@@ -20,9 +18,6 @@ AerodactylAndRepels:
 	giveitem ULTRA_BALL, 99
 	closetext
 	end
-
-Route3Rock:
-	jumpstd smashrock
 	
 TrainerPicnickerCindy:
 	trainer PICNICKER, CINDY, EVENT_BEAT_PICNICKER_CINDY, PicnickerCindyText, PicnickerCindyWinText, 0, .Script
@@ -121,6 +116,50 @@ Route3ClefableScript:
 	waitbutton
 	closetext
 	end
+	
+Route3MoveTutor:
+	faceplayer
+	opentext
+	writetext Route3TutorText
+	waitbutton
+	checkitem SILVER_LEAF
+	iffalse .NoLeaf
+	writetext Route3TutorTeach
+	yesorno
+	iftrue .Growth
+	jump .Refused
+	
+.Growth
+	writetext Route3TutorWhichOne
+	buttonsound
+	writebyte GROWTH
+	special MoveTutor
+	ifequal $0, .TeachMove
+	jump .Refused
+	
+.TeachMove
+	takeitem SILVER_LEAF
+	writetext Route3TutorThankYou
+	waitbutton
+	turnobject LAST_TALKED, RIGHT
+	closetext
+	end
+	
+.Refused
+	writetext Route3TutorRefused
+	waitbutton
+	closetext
+	end
+	
+.NoLeaf
+	writetext Route3TutorExplainSilverLeaf
+	waitbutton
+	turnobject LAST_TALKED, DOWN
+	closetext
+	end
+	
+Route3SilverLeaf:
+	hiddenitem SILVER_LEAF, EVENT_ROUTE_3_HIDDEN_SILVER_LEAF
 	
 Route3TrainerTipsSign:
 	jumptext Route3TrainerTipsSignText
@@ -227,6 +266,54 @@ CamperRalphWinText:
 CamperRalphAfterText:
 	text "I lost."
 	done
+	
+Route3TutorText:
+	text "Howdy, stranger!"
+	
+	para "I'm a MOVE TUTOR."
+	
+	para "For the price of a"
+	line "SILVER LEAF, I can"
+	cont "teach one of your"
+	cont "#MON a move"
+	cont "called GROWTH."
+	done
+	
+Route3TutorTeach:
+	text "Would you like to"
+	line "teach your #MON"
+	cont "GROWTH?"
+	done
+
+Route3TutorRefused:
+	text "I understand."
+
+	para "It can be hard to"
+	line "come by a SILVER"
+	cont "LEAF."
+	done
+
+Route3TutorExplainSilverLeaf:
+	text "When you find a"
+	line "SILVER LEAF, feel"
+	cont "free to find me"
+	cont "again. You'll know"
+	cont "where I'll be."
+	done
+	
+Route3TutorWhichOne:
+	text "Which #MON"
+	line "should I tutor?"
+	done
+	
+Route3TutorThankYou:
+	text "Thanks a bunch!"
+	
+	para "Come see me again"
+	line "if you find"
+	cont "another SILVER"
+	cont "LEAF."
+	done
 
 Route3TrainerTipsSignText:
 	text "TRAINER TIPS"
@@ -307,18 +394,18 @@ Route3_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 43, 35, BGEVENT_READ, Route3TrainerTipsSign
+	bg_event 10, 37, BGEVENT_ITEM, Route3SilverLeaf
 
-	db 10 ; object events
+	db 9 ; object events
 	object_event 52, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerCindy, -1
 	object_event 50, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNate, -1
 	object_event 21, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerEarl, -1
 	object_event 32, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerGrant, -1
 	object_event 12,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerWarren, -1
 	object_event  5, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRalph, -1
-	object_event 15,  9, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3Rock, -1
-	object_event 16,  8, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3Rock, -1
 	object_event  6, 31, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3HealerScript, -1
 	object_event  7, 31, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3ClefableScript, -1
+	object_event 16, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route3MoveTutor, -1
 	

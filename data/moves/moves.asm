@@ -47,7 +47,7 @@ Moves: ; 41afb
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,   100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,    85, 20,   0
-	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   120, FIRE,     100, 15,  50
+	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   120, FIRE,     100, 15,  10
 	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,   100, 10,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,   100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,   100, 30,   0
@@ -148,7 +148,7 @@ Moves: ; 41afb
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING, 100, 10,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 20,   0
-	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,   100, 30,   0
+	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,    55, 40,   0
 	move BARRAGE,      EFFECT_MULTI_HIT,          30, GRASS,     95, 10,   5

@@ -2601,7 +2601,7 @@ HoothootEvosAttacks:
 	db 7, PECK
 	db 10, CONFUSION
 	db 16, PSYBEAM
-	db 22, PSYCHIC
+	db 23, PSYCHIC
 	db 25, DOUBLE_EDGE
 	db 28, REFLECT
 	db 31, RAZOR_WIND
@@ -2619,9 +2619,10 @@ NoctowlEvosAttacks:
 	db 7, PECK
 	db 10, CONFUSION
 	db 16, PSYBEAM
-	db 23, PSYCHIC
-	db 27, DOUBLE_EDGE
-	db 31, REFLECT
+	db 20, WING_ATTACK
+	db 27, PSYCHIC
+	db 31, DOUBLE_EDGE
+	db 33, REFLECT
 	db 35, RAZOR_WIND
 	db 43, RECOVER
 	db 47, MOONBLAST
@@ -2672,8 +2673,8 @@ SpinarakEvosAttacks:
 	db 5, ABSORB
 	db 12, SCARY_FACE
 	db 15, NIGHT_SHADE
-	db 22, FURY_SWIPES
-	db 29, BUG_BUZZ
+	db 23, MEGA_DRAIN
+	db 29, LEECH_LIFE
 	db 33, AGILITY
 	db 36, PIN_MISSILE
 	db 40, PSYCHIC_M
@@ -2688,8 +2689,8 @@ AriadosEvosAttacks:
 	db 5, ABSORB
 	db 12, SCARY_FACE
 	db 15, NIGHT_SHADE
-	db 23, FURY_SWIPES
-	db 32, BUG_BUZZ
+	db 24, MEGA_DRAIN
+	db 32, LEECH_LIFE
 	db 37, AGILITY
 	db 41, PIN_MISSILE
 	db 46, PSYCHIC_M

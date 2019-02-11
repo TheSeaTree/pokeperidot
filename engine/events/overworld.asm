@@ -1375,11 +1375,15 @@ AskRockSmashScript:
 	opentext
 	writetext UnknownText_0xcf77
 	yesorno
+	iffalse .end
 	jump RockSmashScript
 	closetext
 	end
 .no
 	jumptext UnknownText_0xcf72
+.end
+	closetext
+	end
 
 UnknownText_0xcf72:
 	; Maybe a #MON can break this.

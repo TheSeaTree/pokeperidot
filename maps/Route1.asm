@@ -4,16 +4,23 @@
 	const ROUTE1_FRUIT_TREE
 
 Route1_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_DEFAULT
+	scene_script .DummyScene1 ; SCENE_ROUTE_1_NOTHING
 
 	db 0 ; callbacks
 
-TrainerCooltrainerfQuinn:
-	opentext
-	writetext CooltrainerfQuinnAfterBattleText
-	waitbutton
-	closetext
+.DummyScene0:
 	end
+
+.DummyScene1:
+	end
+	
+Route1LedgeGirl:
+	jumptextfaceplayer LedgeDescription
+	
+Route1Lass:	
+	jumptextfaceplayer Route1LassText
 	
 TrainerFisherLeo:
 	trainer FISHER, LEO, EVENT_BEAT_FISHER_LEO, FisherLeoText, FisherLeoWinText, 0, .Script
@@ -36,7 +43,12 @@ TrainerFisherMarshall:
 	waitbutton
 	closetext
 	end
-
+	
+MoveSuperNerds:
+	setevent EVENT_MOVED_NERDS
+	setscene SCENE_ROUTE_1_NOTHING
+	end
+	
 TrainerSuperNerdShane:
 	trainer SUPER_NERD, SHANE, EVENT_BEAT_SUPER_NERD_SHANE, SuperNerdShaneText, SuperNerdShaneWinText, 0, .Script
 
@@ -137,22 +149,20 @@ TrainerCooltrainerMLeon:
 	setevent EVENT_BEAT_COOLTRAINERM_LEON
 	jump .FightDone
 	
-.FightDone
+.FightDone:
+	opentext
 	checkevent EVENT_GOT_TM_HEADBUTT
 	iftrue .Headbutt
-	opentext
 	verbosegiveitem TM_HEADBUTT
 	setevent EVENT_GOT_TM_HEADBUTT
-	closetext
-	done
 	
-.Headbutt
+.Headbutt:
 	writetext AlreadyGotHeadbutt
 	waitbutton
 	closetext
 	end
 	
-.Explain
+.Explain:
 	checkevent ROUTE_1_TALKED_TO_LEON
 	iftrue .Waiting
 	writetext LeonExplaination
@@ -161,7 +171,7 @@ TrainerCooltrainerMLeon:
 	closetext
 	end
 	
-.Waiting
+.Waiting:
 	writetext LeonMoreToGo
 	waitbutton
 	closetext
@@ -173,9 +183,24 @@ Route1Sign:
 Route1FruitTree:
 	fruittree FRUITTREE_ROUTE_1
 
-CooltrainerfQuinnAfterBattleText:
-	text "I have nothing to"
-	line "say right now."
+LedgeDescription:
+	text "You can jump down"
+	line "from ledges like"
+	cont "this one."
+	
+	para "I would show you,"
+	line "but it's too scary"
+	cont "for me!"
+	done
+	
+Route1LassText:
+	text "You may not be"
+	line "able to reach some"
+	cont "areas right away."
+	
+	para "Come back later,"
+	line "you never know"
+	cont "what you may find!"
 	done
 	
 FisherLeoText:
@@ -289,7 +314,9 @@ LeonGoodJob:
 	done
 	
 LeonChallengeText:
-	text "Don't think I was"
+	text "Not quite."
+	
+	para "Don't think I was"
 	line "going to let you"
 	cont "have all the fun."
 	done
@@ -364,21 +391,22 @@ Route1_MapEvents:
 	warp_event  61,  5, ROUTE_1_GOLDENROD_GATE, 3
 	warp_event  39,  7, CHARCOAL_KILN, 1
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event 14, 18, SCENE_DEFAULT, MoveSuperNerds
 
 	db 1 ; bg events
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
 
 	db 12 ; object events
-	object_event  19, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  28, 9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, TrainerCooltrainerfQuinn, -1
-	object_event   9,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSuperNerdSteven, -1
-	object_event   4,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBeautyTracey, -1
-	object_event  13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSuperNerdShane, -1
-	object_event  13, 10, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacDylan, -1
-	object_event  16,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerPokemaniacScott, -1
-	object_event   0,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBeautyJill, -1
-	object_event  19,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerMLeon, -1
+	object_event  18, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Lass, -1
+	object_event  28,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route1LedgeGirl, -1
+	object_event   7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdSteven, -1
+	object_event   4,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyTracey, -1
+	object_event   9, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdShane, -1
+	object_event  14,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacDylan, -1
+	object_event   4, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacScott, -1
+	object_event   0,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBeautyJill, -1
+	object_event  19,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerMLeon, -1
 	object_event  40, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherMarshall, -1
 	object_event  62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
 	object_event  57, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1

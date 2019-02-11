@@ -146,7 +146,7 @@ KRIS EQU __enum__
 	const TRACEY
 	
 	trainerclass POKEMANIAC ; 1e
-	const PETER
+	const CHARLIE
 	const SCOTT
 	const DYLAN
 
@@ -166,6 +166,7 @@ KRIS EQU __enum__
 	const LIAM
 	const EDDIE
 	const OWEN
+	const LONNIE
 
 	trainerclass FISHER ; 25
 	const BRADY
@@ -191,6 +192,7 @@ KRIS EQU __enum__
 	trainerclass SUPER_NERD ; 29
 	const SHANE
 	const STEVEN
+	const PETER
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -238,6 +240,7 @@ KRIS EQU __enum__
 	const BLAINE1
 
 	trainerclass BURGLAR ; 2f
+	const LAMAAR
 	
 	trainerclass FIREBREATHER ; 30
 	const BRIAN

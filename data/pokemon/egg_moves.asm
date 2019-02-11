@@ -327,6 +327,7 @@ OnixEggMoves:
 
 DrowzeeEggMoves:
 	db BARRIER
+	db RECOVER
 	db -1 ; end
 
 KrabbyEggMoves:

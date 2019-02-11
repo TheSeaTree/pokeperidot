@@ -37,4 +37,5 @@ MapScenes::
 	scene_var RADIO_TOWER_5F,                              wRadioTower5FSceneID
 	scene_var MAHOGANY_MART_1F,                            wMahoganyMart1FSceneID
 	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
+	scene_var ROUTE_1,                                     wRoute1SceneID
 	db -1

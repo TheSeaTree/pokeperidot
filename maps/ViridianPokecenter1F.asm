@@ -13,20 +13,10 @@ ViridianPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 ViridianPokecenter1FCooltrainerMScript:
-	faceplayer
-	opentext
-	checkevent EVENT_BLUE_IN_CINNABAR
-	iftrue .BlueReturned
-	writetext ViridianPokecenter1FCooltrainerMText
-	waitbutton
-	closetext
-	end
-
-.BlueReturned:
-	writetext ViridianPokecenter1FCooltrainerMText_BlueReturned
-	waitbutton
-	closetext
-	end
+;	loadwildmon VENOMOTH, 70
+;	startbattle
+;	reloadmapafterbattle
+	jumptextfaceplayer ViridianPokecenter1FCooltrainerMText_BlueReturned
 
 ViridianPokecenter1FCooltrainerFScript:
 	faceplayer
@@ -38,8 +28,11 @@ ViridianPokecenter1FCooltrainerFScript:
 	end
 
 ViridianPokecenter1FBugCatcherScript:
+;	opentext
+;	givepoke VENOMOTH, 70
+;	closetext
+;	end
 	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
-
 
 ViridianPokecenter1FCooltrainerMText:
 	text "Where in the world"
@@ -88,6 +81,6 @@ ViridianPokecenter1F_MapEvents:
 
 	db 4 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FNurseScript, -1
-	object_event  9,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
+	object_event  9,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 	object_event  3,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, EVENT_GOT_A_POKEMON_FROM_ELM
 	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1

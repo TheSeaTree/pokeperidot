@@ -52,7 +52,7 @@ GoldenrodGym_MapScripts:
 	clearevent EVENT_BEAT_GUITARIST_IVAN
 	clearevent EVENT_BEAT_GUITARIST_CONRAD
 	clearevent GOLDENROD_GYM_DOOR_5
-	clearevent EVENT_BEAT_POKEMANIAC_PETER
+	clearevent EVENT_BEAT_POKEMANIAC_CHARLIE
 .end
 	return
 
@@ -377,41 +377,41 @@ TrainerGuitaristBobby:
 	
 ; End Mosh Pit
 	
-PeterExplainsGatesLeft:
-	checkevent EVENT_BEAT_POKEMANIAC_PETER
+CharlieExplainsGatesLeft:
+	checkevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	iftrue .End
 	showemote EMOTE_SHOCK, GOLDENRODGYM_SUPER_NERD, 15
 	turnobject GOLDENRODGYM_SUPER_NERD, LEFT
 	turnobject PLAYER, RIGHT
-	jump TrainerPokemaniacPeter
+	jump TrainerPokemaniacCharlie
 	
 .End
 	end
 
-PeterExplainsGatesRight:
-	checkevent EVENT_BEAT_POKEMANIAC_PETER
+CharlieExplainsGatesRight:
+	checkevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	iftrue .End
 	showemote EMOTE_SHOCK, GOLDENRODGYM_SUPER_NERD, 15
 	turnobject GOLDENRODGYM_SUPER_NERD, RIGHT
 	turnobject PLAYER, LEFT
-	jump TrainerPokemaniacPeter
+	jump TrainerPokemaniacCharlie
 	
 .End
 	end
 
-TrainerPokemaniacPeter:
+TrainerPokemaniacCharlie:
 	faceplayer
 	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	opentext
-	writetext PokemaniacPeterText
-	winlosstext PokemaniacPeterWinText, PeterYouAreUnworthy
-	loadtrainer POKEMANIAC, PETER
+	writetext PokemaniacCharlieText
+	winlosstext PokemaniacCharlieWinText, CharlieYouAreUnworthy
+	loadtrainer POKEMANIAC, CHARLIE
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_POKEMANIAC_PETER
+	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	faceplayer
 	opentext
-	writetext PeterExplainsGates
+	writetext CharlieExplainsGates
 	waitbutton
 	closetext
 	turnobject GOLDENRODGYM_SUPER_NERD, DOWN
@@ -662,7 +662,7 @@ WrongGuitaristText:
 	para "Now we battle!"
 	done
 	
-PokemaniacPeterText:
+PokemaniacCharlieText:
 	text "I am your last"
 	line "obstacle."
 	
@@ -671,19 +671,19 @@ PokemaniacPeterText:
 	cont "select a portal."
 	done
 	
-PokemaniacPeterWinText:
+PokemaniacCharlieWinText:
 	text "Ah! You are worthy"
 	line "to move on and"
 	cont "face the leader!"
 	done
 	
-PeterYouAreUnworthy:
+CharlieYouAreUnworthy:
 	text "You…"
 	
 	para "…Are unworthy."
 	done
 	
-PeterExplainsGates:
+CharlieExplainsGates:
 	text "And so it has come"
 	line "to this."
 	
@@ -719,8 +719,8 @@ GoldenrodGym_MapEvents:
 	warp_event  4, 35, GOLDENROD_GYM, 2
 
 	db 2 ; coord events
-	coord_event 17, 5, -1, PeterExplainsGatesLeft
-	coord_event 19, 5, -1, PeterExplainsGatesRight
+	coord_event 17, 5, -1, CharlieExplainsGatesLeft
+	coord_event 19, 5, -1, CharlieExplainsGatesRight
 
 	db 4 ; bg events
 	bg_event 21, 37, BGEVENT_READ, GoldenrodGymStatue
@@ -737,7 +737,7 @@ GoldenrodGym_MapEvents:
 	object_event 26, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristLee, -1
 	object_event  4, 15, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBikerJerry, -1
 	object_event  8, 16, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristBobby, -1
-	object_event 18,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 3, TrainerPokemaniacPeter, -1
+	object_event 18,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 3, TrainerPokemaniacCharlie, -1
 	object_event  7, 13, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristMarcel, -1 ; Dupe
 	object_event  3, 12, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristIvan, -1 ; Dupe
 	object_event  2, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristConrad, -1 ; Dupe

@@ -43,8 +43,8 @@ TrainerBeautyBlaze:
 DiglettsCaveBoulder:
 	jumpstd strengthboulder	
 	
-DiglettsCaveHiddenMaxRevive:
-	hiddenitem MAX_REVIVE, EVENT_DIGLETTS_CAVE_HIDDEN_MAX_REVIVE
+DiglettsCaveHiddenEverstone:
+	hiddenitem EVERSTONE, EVENT_DIGLETTS_CAVE_HIDDEN_EVERSTONE
 	
 Route3BlackBelt:
 	itemball BLACKBELT
@@ -68,11 +68,10 @@ DiglettsCave_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  6, 11, BGEVENT_ITEM, DiglettsCaveHiddenMaxRevive
+	bg_event  20,  7, BGEVENT_ITEM, DiglettsCaveHiddenEverstone
 
 	db 5 ; object events
 	object_event 13, 6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltAxel, -1
 	object_event 2, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAdam, -1
 	object_event 15, 15, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerBeautyBlaze, -1
-	object_event 15,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveBoulder, -1
 	object_event 11, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route3BlackBelt, EVENT_ROUTE_3_BLACKBELT

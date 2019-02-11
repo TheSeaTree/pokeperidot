@@ -101,7 +101,7 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 64
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 65
 	tilecoll WALL, WALL, WALL, WALL ; 66
-	tilecoll WALL, WALL, WALL, WALL ; 67
+	tilecoll FLOOR, CUT_TREE, HEADBUTT_TREE, HEADBUTT_TREE ; 67
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 68
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 69
 	tilecoll WALL, UP_WALL, WALL, FLOOR ; 6a

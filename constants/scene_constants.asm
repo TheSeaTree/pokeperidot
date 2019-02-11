@@ -15,10 +15,9 @@ SCENE_FINISHED EQU 1
 	const SCENE_POKECENTER2F_LEAVE_MOBILE_TRADE_ROOM  ; 4
 	const SCENE_POKECENTER2F_LEAVE_MOBILE_BATTLE_ROOM ; 5
 
-; wPowerPlantSceneID
-	const_def
-	const SCENE_POWERPLANT_NOTHING               ; 0
-	const SCENE_POWERPLANT_GUARD_GETS_PHONE_CALL ; 1
+; wRoute1SceneID
+	const_def 1
+	const SCENE_ROUTE_1_NOTHING             ; 1
 
 ; wCeruleanGymSceneID
 	const_def

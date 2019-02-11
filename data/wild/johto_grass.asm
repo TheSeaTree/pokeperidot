@@ -492,25 +492,25 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 12, PIDGEY
-	db 14, STANTLER
 	db 13, JIGGLYPUFF
 	db 14, MR__MIME
+	db 14, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
 	; day
 	db 12, PIDGEY
-	db 14, STANTLER
 	db 13, JIGGLYPUFF
 	db 14, MR__MIME
+	db 14, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
 	; nite
 	db 12, MURKROW
-	db 14, STANTLER
 	db 13, JIGGLYPUFF
 	db 14, GASTLY
+	db 14, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA

@@ -2537,7 +2537,7 @@ wPokecenter2FSceneID::                            db ; d972
 wTradeCenterSceneID::                             db ; d973
 wColosseumSceneID::                               db ; d974
 wTimeCapsuleSceneID::                             db ; d975
-wPowerPlantSceneID::                              db ; d976
+wRoute1SceneID::                                  db ; d976
 wCeruleanGymSceneID::                             db ; d977
 wRoute25SceneID::                                 db ; d978
 wTrainerHouseB1FSceneID::                         db ; d979

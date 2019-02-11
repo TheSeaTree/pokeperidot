@@ -146,35 +146,6 @@ IndigoPlateauPokecenter1FClerkScript:
 IndigoPlateauPokecenter1FCooltrainerMScript:
 	jumptextfaceplayer IndigoPlateauPokecenter1FCooltrainerMText
 
-TeleportGuyScript:
-	faceplayer
-	opentext
-	writetext TeleportGuyText1
-	yesorno
-	iffalse .No
-	writetext TeleportGuyYesText
-	waitbutton
-	closetext
-	playsound SFX_WARP_TO
-	special FadeOutPalettes
-	waitsfx
-	warp NEW_BARK_TOWN, 13, 6
-	end
-
-.No:
-	writetext TeleportGuyNoText
-	waitbutton
-	closetext
-	end
-
-AbraScript:
-	opentext
-	writetext AbraText
-	cry ABRA
-	waitbutton
-	closetext
-	end
-
 PlateauRivalMovement1:
 	step UP
 	step UP
@@ -265,41 +236,6 @@ PlateauRivalLoseText:
 	line "the CHAMPION!"
 	done
 
-TeleportGuyText1:
-	text "Ah! You're chal-"
-	line "lenging the ELITE"
-
-	para "FOUR? Are you sure"
-	line "you're ready?"
-
-	para "If you need to"
-	line "train some more,"
-
-	para "my ABRA can help"
-	line "you."
-
-	para "It can TELEPORT"
-	line "you home."
-
-	para "Would you like to"
-	line "go home now?"
-	done
-
-TeleportGuyYesText:
-	text "OK, OK. Picture"
-	line "your house in your"
-	cont "mind…"
-	done
-
-TeleportGuyNoText:
-	text "OK, OK. The best"
-	line "of luck to you!"
-	done
-
-AbraText:
-	text "ABRA: Aabra…"
-	done
-
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -315,10 +251,8 @@ IndigoPlateauPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 4 ; object events
 	object_event  3,  7, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FNurseScript, -1
 	object_event 11,  7, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FClerkScript, -1
 	object_event 11, 11, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, IndigoPlateauPokecenter1FCooltrainerMScript, -1
 	object_event 16,  9, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_INDIGO_PLATEAU_POKECENTER_RIVAL
-	object_event  1,  9, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TeleportGuyScript, EVENT_TELEPORT_GUY
-	object_event  0,  9, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, AbraScript, EVENT_TELEPORT_GUY

@@ -8,7 +8,35 @@ ElmsHouse_MapScripts:
 	db 0 ; callbacks
 
 ElmsWife:
-	jumptextfaceplayer ElmsWifeText
+	faceplayer
+	opentext
+	checkmoney YOUR_MONEY, 200
+	ifequal HAVE_LESS, .NoMoney
+
+.Normal
+	writetext ElmsWifeText
+	waitbutton
+	closetext
+	end
+	
+.NoMoney
+	checkitem POKE_BALL
+	iftrue .Normal
+	checkitem GREAT_BALL
+	iftrue .Normal
+	checkitem ULTRA_BALL
+	iftrue .Normal
+	writetext CantAffordBalls
+	waitbutton
+	writetext GiftPokeballs
+	playsound SFX_ITEM
+	pause 10
+	giveitem POKE_BALL, 6
+	waitbutton
+	writetext GiftPokeballsPutAway
+	waitbutton
+	closetext
+	end
 
 ElmsSon:
 	jumptextfaceplayer ElmsSonText
@@ -31,6 +59,25 @@ ElmsWifeText:
 
 	para "research, he even"
 	line "forgets to eat."
+	done
+	
+CantAffordBalls:
+	text "Oh, you don't have"
+	line "enough money to"
+	cont "buy a #BALL?"
+	
+	para "Here, let us help."
+	done
+
+GiftPokeballs:
+	text "<PLAYER> got"
+	line "6 #BALLs!"
+	done
+	
+GiftPokeballsPutAway:
+	text "<PLAYER> put the"
+	line "#BALLs in"
+	cont "the BALL POCKET."
 	done
 
 ElmsSonText:

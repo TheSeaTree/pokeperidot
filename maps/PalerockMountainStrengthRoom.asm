@@ -56,12 +56,13 @@ ItLooksStuck:
 	
 HM04Text:
 	text "<PLAYER> got"
-	line "HM04!"
+	line "TM24!"
+	line "TM24!"
 	done
 	
 HM04PutAwayText:
 	text "<PLAYER> put the"
-	line "HM04 in"
+	line "TM24 in"
 	cont "the TM POCKET."
 	done
 

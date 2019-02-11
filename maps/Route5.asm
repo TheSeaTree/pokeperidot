@@ -72,6 +72,17 @@ TrainerLassElizabeth:
 	closetext
 	end
 	
+TrainerBugCatcherLonnie:
+	trainer BUG_CATCHER, LONNIE, EVENT_BEAT_BUG_CATCHER_LONNIE, Route5TrainerText, Route5WinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext Route5WinText
+	waitbutton
+	closetext
+	end
+
 TrainerBugCatcherOwen:
 	trainer BUG_CATCHER, OWEN, EVENT_BEAT_BUG_CATCHER_OWEN, Route5TrainerText, Route5WinText, 0, .Script
 
@@ -125,6 +136,8 @@ TrainerCooltrainerFAnya:
 	checkevent EVENT_BEAT_LASS_HOLLY
 	iffalse .Explain	
 	checkevent EVENT_BEAT_BUG_CATCHER_OWEN
+	iffalse .Explain
+	checkevent EVENT_BEAT_BUG_CATCHER_LONNIE
 	iffalse .Explain
 	checkevent EVENT_BEAT_SCHOOLBOY_GUS
 	iffalse .Explain
@@ -304,9 +317,9 @@ Route5_MapEvents:
 	object_event 8,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyLily, -1
 	object_event 23,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerJess, -1
 	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperJames, -1
-	object_event 20, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherEddie, -1
+	object_event 20, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherLonnie, -1
 	object_event 30, 25, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherOwen, -1
-	object_event 39, 23, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassHolly, -1
+	object_event 39, 23, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassHolly, -1
 	object_event 37, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyGus, -1
 	object_event 36, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFAnya, -1
 	object_event 37, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5FruitTree, -1
