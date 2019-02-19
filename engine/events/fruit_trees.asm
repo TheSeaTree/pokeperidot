@@ -32,6 +32,41 @@ FruitTreeScript::
 .end
 	closetext
 	end
+	
+ItemBushScript::
+	callasm GetCurTreeFruit
+	opentext
+	copybytetovar wCurFruit
+	itemtotext USE_SCRIPT_VAR, MEM_BUFFER_0
+	writetext ItemBushText
+	buttonsound
+	callasm TryResetFruitTrees
+	callasm CheckFruitTree
+	iffalse .fruit
+	writetext NothingHereText
+	waitbutton
+	jump .end
+
+.fruit
+	writetext HeyItsFruitText
+	copybytetovar wCurFruit
+	giveitem ITEM_FROM_MEM
+	iffalse .packisfull
+	buttonsound
+	writetext ObtainedFruitText
+	callasm PickedFruitTree
+	specialsound
+	itemnotify
+	jump .end
+
+.packisfull
+	buttonsound
+	writetext FruitPackIsFullText
+	waitbutton
+
+.end
+	closetext
+	end
 
 GetCurTreeFruit:
 	ld a, [wCurFruitTree]
@@ -100,6 +135,10 @@ FruitBearingTreeText:
 	text_far _FruitBearingTreeText
 	text_end
 
+ItemBushText:
+	text_far _ItemBushText
+	text_end
+	
 HeyItsFruitText:
 	text_far _HeyItsFruitText
 	text_end

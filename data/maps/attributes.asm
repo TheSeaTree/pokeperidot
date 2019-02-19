@@ -303,10 +303,11 @@ ENDM
 	map_attributes AzaleaApartmentRight, AZALEA_APARTMENT_RIGHT, $00, 0
 	map_attributes AzaleaGymSpeechHouse, AZALEA_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes AzaleaEvolutionHouse, AZALEA_EVOLUTION_HOUSE, $00, 0
-	map_attributes AzaleaTradeHouse, AZALEA_TRADE_HOUSE, $00, 0
+	map_attributes AzaleaBikeHouse, AZALEA_BIKE_HOUSE, $00, 0
 	map_attributes AzaleaBerryHouse, AZALEA_BERRY_HOUSE, $00, 0
 	map_attributes VioletMoveTutor, VIOLET_MOVE_TUTOR, $00, 0
 	map_attributes VioletWeatherHouse, VIOLET_WEATHER_HOUSE, $00, 0
+	map_attributes VioletTradeHouse, VIOLET_TRADE_HOUSE, $00, 0
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
 	

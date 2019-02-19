@@ -106,7 +106,7 @@ ENDM
 	map_const AZALEA_APARTMENT_RIGHT,                       6,  4
 	map_const AZALEA_GYM_SPEECH_HOUSE,                      4,  4
 	map_const AZALEA_EVOLUTION_HOUSE,                       4,  4
-	map_const AZALEA_TRADE_HOUSE,                           4,  4
+	map_const AZALEA_BIKE_HOUSE,                            4,  4
 	map_const AZALEA_BERRY_HOUSE,                           4,  4
 	map_const ROUTE_4_FOREST_GATE,                          5,  4
 	map_const ROUTE_4_AZALEA_GATE,                          5,  4
@@ -131,6 +131,7 @@ ENDM
 	map_const VIOLET_GYM_B1,							   17, 17 ; 18
 	map_const VIOLET_MOVE_TUTOR,                            4,  4
 	map_const VIOLET_WEATHER_HOUSE,                         4,  4
+	map_const VIOLET_TRADE_HOUSE,                         4,  4
 	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
 
 	newgroup                                                      ; 11

@@ -967,6 +967,12 @@ fruittree: MACRO
 	db \1 ; tree_id
 ENDM
 
+	enum itembush_command ; $9b
+itembush: MACRO
+	db itembush_command
+	db \1 ; tree_id
+ENDM
+
 	enum specialphonecall_command ; $9c
 specialphonecall: MACRO
 	db specialphonecall_command

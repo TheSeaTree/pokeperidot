@@ -63,7 +63,7 @@ INCLUDE "maps/MahoganyMart1F.asm"
 INCLUDE "maps/IlexForest.asm"
 INCLUDE "maps/AzaleaGymSpeechHouse.asm"
 INCLUDE "maps/AzaleaEvolutionHouse.asm"
-INCLUDE "maps/AzaleaTradeHouse.asm"
+INCLUDE "maps/AzaleaBikeHouse.asm"
 INCLUDE "maps/AzaleaBerryHouse.asm"
 
 
@@ -233,6 +233,7 @@ INCLUDE "maps/Route15.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/VioletMoveTutor.asm"
 INCLUDE "maps/VioletWeatherHouse.asm"
+INCLUDE "maps/VioletTradeHouse.asm"
 
 
 SECTION "Map Scripts 24", ROMX

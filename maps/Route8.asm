@@ -67,8 +67,8 @@ Route8UndergroundPathSign:
 Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
 	
-Route8MoonStone:
-	itemball MOON_STONE
+Route8SunStone:
+	itemball SUN_STONE
 	
 Route8RareCandy:
 	itemball RARE_CANDY
@@ -166,7 +166,7 @@ Route8_MapEvents:
 
 	db 13 ; object events
 	object_event 20, 45, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
-	object_event  4, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8MoonStone, EVENT_ROUTE_8_MOON_STONE
+	object_event  4, 48, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8SunStone, EVENT_ROUTE_8_SUN_STONE
 	object_event 10, 69, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8RareCandy, EVENT_ROUTE_8_RARE_CANDY
 	object_event  8, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8Revive, EVENT_ROUTE_8_REVIVE
 	object_event 24, 21, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerKait, -1 

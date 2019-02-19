@@ -3510,7 +3510,7 @@ RemoraidEvosAttacks:
 	db 0 ; no more level-up moves
 
 OctilleryEvosAttacks:
-	db EVOLVE_ITEM, METAL_COAT, OCTANK
+	db EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, OCTANK
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 11, TACKLE

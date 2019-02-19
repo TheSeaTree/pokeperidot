@@ -2,6 +2,11 @@ _FruitBearingTreeText::
 	text "It's a fruit-"
 	line "bearing tree."
 	done
+	
+_ItemBushText::
+	text "There might be"
+	line "something here…"
+	done
 
 _HeyItsFruitText::
 	text "Hey! It's a"

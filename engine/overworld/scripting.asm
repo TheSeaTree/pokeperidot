@@ -221,6 +221,7 @@ endc
 	dw Script_hangup                     ; 99
 	dw Script_describedecoration         ; 9a
 	dw Script_fruittree                  ; 9b
+	dw Script_itembush                  ; 9b
 	dw Script_specialphonecall           ; 9c
 	dw Script_checkphonecall             ; 9d
 	dw Script_verbosegiveitem            ; 9e
@@ -737,6 +738,16 @@ Script_fruittree:
 	ld [wCurFruitTree], a
 	ld b, BANK(FruitTreeScript)
 	ld hl, FruitTreeScript
+	jp ScriptJump
+	
+Script_itembush:
+; script command 0x9b
+; parameters: tree_id
+
+	call GetScriptByte
+	ld [wCurFruitTree], a
+	ld b, BANK(FruitTreeScript)
+	ld hl, ItemBushScript
 	jp ScriptJump
 
 Script_swarm:

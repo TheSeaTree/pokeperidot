@@ -10,9 +10,9 @@
 	const AZALEATOWN_SILVER
 	const AZALEATOWN_TEACHER2
 	const AZALEATOWN_GYM_GUY
-	const AZALEATOWN_POKE_BALL
 	const AZALEATOWN_YOUNGSTER3
 	const AZALEATOWN_FRUIT_TREE
+	const AZALEATOWN_BURGLAR
 
 AzaleaTown_MapScripts:
 	db 3 ; scene scripts
@@ -129,6 +129,43 @@ AzaleaGymConfirm:
 	setevent EVENT_GYM_EXPLAINATION
 	setmapscene VIOLET_GYM, SCENE_FINISHED
 	end	
+	
+AzaleaBurglar:
+	faceplayer
+	opentext
+	checkevent EVENT_AZALEA_BIKE_THIEF
+	iffalse .GetLost
+	writetext AzaleaBurglarText
+	waitbutton
+	winlosstext AzaleaBurglarWinText, -1
+	loadtrainer BURGLAR, LAMAAR
+	startbattle
+	reloadmapafterbattle
+	jump .AfterBattle
+	
+.GetLost
+	writetext AzaleaBurglarGetLost
+	waitbutton
+	closetext
+	end
+	
+.AfterBattle
+	opentext
+	writetext AzaleaBurglarAfterText
+	waitbutton
+	verbosegiveitem BICYCLE
+	closetext
+	checkcode VAR_FACING
+	ifequal DOWN, .FacingDown
+	applymovement AZALEATOWN_BURGLAR, BurglarExitLeft
+.Leave
+	disappear AZALEATOWN_BURGLAR
+	setevent EVENT_AZALEA_RETURNED_BIKE
+	end
+	
+.FacingDown
+	applymovement AZALEATOWN_BURGLAR, BurglarExitLeft2
+	jump .Leave
 	
 AzaleaTownLeaveGym:
 	applymovement PLAYER, AzaleaTownLeaveGymMovement
@@ -321,7 +358,27 @@ AzaleaEnterGym:
 AzaleaTownLeaveGymMovement:
 	step DOWN
 	step_end
+	
+BurglarExitLeft:
+	big_step UP
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	step_end
 
+BurglarExitLeft2:
+	big_step LEFT
+	big_step UP
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	big_step LEFT
+	step_end
+	
 AzaleaTownRivalWait:
 	text "Hey you!"
 	done
@@ -470,6 +527,42 @@ AzaleaAskEnterText:
 	line "enter the GYM?"
 	done
 	
+AzaleaBurglarText:
+	text "Yeah, I stole a"
+	line "BICYCLE, what"
+	cont "about it?"
+	
+	para "You want me to"
+	line "just give it back"
+	cont "to you?"
+	
+	para "No chance! You'll"
+	line "need to battle me"
+	cont "for it!"
+	done
+	
+AzaleaBurglarWinText:
+	text "What? How could a"
+	line "kid beat me like"
+	cont "that?"
+	done
+	
+AzaleaBurglarAfterText:
+	text "Just take the"
+	line "BICYCLE, kid. This"
+	cont "is humiliating"
+	cont "enough."
+	done
+	
+AzaleaBurglarGetLost:
+	text "What am I doing"
+	line "out here?"
+	
+	para "That's none of"
+	line "your business! Get"
+	cont "out of here!"
+	done
+	
 AzaleaVendingText:
 	text "A vending machine!"
 	line "Here's the menu."
@@ -528,7 +621,7 @@ AzaleaTown_MapEvents:
 	warp_event 14, 19, AZALEA_APARTMENT_RIGHT, 1
 	warp_event 19, 19, AZALEA_APARTMENT_LEFT, 1
 	warp_event 11, 25, AZALEA_GYM_SPEECH_HOUSE, 1
-	warp_event 17, 25, AZALEA_TRADE_HOUSE, 1
+	warp_event 17, 25, AZALEA_BIKE_HOUSE, 1
 	warp_event 37, 11, AZALEA_EVOLUTION_HOUSE, 1
 	warp_event 51, 25, AZALEA_BERRY_HOUSE, 1
 
@@ -559,4 +652,4 @@ AzaleaTown_MapEvents:
 	object_event 40, 18, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaGymConfirm, EVENT_GYM_EXPLAINATION
 	object_event 13, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungster3Script, -1
 	object_event 49, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaBerryTree, -1
-	object_event 33, 37, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaBerryTree, -1
+	object_event 33, 37, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaBurglar, EVENT_AZALEA_RETURNED_BIKE

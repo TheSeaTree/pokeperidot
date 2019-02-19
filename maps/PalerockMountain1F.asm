@@ -95,8 +95,8 @@ Palerock1PokeBall:
 Palerock1Repel:
 	itemball REPEL
 	
-Palerock1GreatBall:
-	itemball GREAT_BALL, 3
+Palerock1MoonStone:
+	itemball MOON_STONE
 	
 Palerock1SodaPop:
 	itemball SODA_POP
@@ -228,7 +228,7 @@ PalerockMountain1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 14 ; object events
+	db 15 ; object events
 	object_event   9, 21, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
 	object_event  23, 21, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
 	object_event  4, 12, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
@@ -240,7 +240,7 @@ PalerockMountain1F_MapEvents:
 	object_event 11,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerHikerJacob, -1
 	object_event 31,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerHikerGeorge, -1
 	object_event  5, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Palerock1FRocker, EVENT_SAVED_PALEROCK_ROCKER
-	object_event  8, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1GreatBall, EVENT_PALEROCK_1_GREAT_BALL
+	object_event  8, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1MoonStone, EVENT_PALEROCK_1_MOON_STONE
 	object_event  9, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1Repel, EVENT_PALEROCK_1_REPEL
 	object_event 29, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1PokeBall, EVENT_PALEROCK_1_POKE_BALL
 	object_event  7, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1SodaPop, EVENT_PALEROCK_1_SODA_POP

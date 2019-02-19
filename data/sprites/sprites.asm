@@ -112,4 +112,5 @@ OverworldSprites:
 	overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
 	overworld_sprite AmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BookSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite BushSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	

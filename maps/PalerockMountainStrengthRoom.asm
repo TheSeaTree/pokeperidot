@@ -13,7 +13,7 @@ PalerockMountainStrengthRoomBall:
 	iffalse .No
 	writetext HM04Text
 	playsound SFX_GET_TM
-	pause 10
+	waitsfx
 	waitbutton
 	disappear PALEROCKSTRENGTHROOM_BALL
 	giveitem TM_STRENGTH
@@ -22,8 +22,6 @@ PalerockMountainStrengthRoomBall:
 	closetext
 	earthquake 30
 	playsound SFX_STRENGTH
-	playsound SFX_EMBER
-	pause 30
 	turnobject PLAYER, DOWN
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_GOT_TM_STRENGTH

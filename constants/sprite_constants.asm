@@ -108,6 +108,7 @@
 	const SPRITE_PROFESSOR
 	const SPRITE_AMBER
 	const SPRITE_BOOK
+	const SPRITE_BUSH
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

@@ -224,13 +224,14 @@ EarlsPokemonAcademySignText:
 VioletCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 7 ; warp events
 	warp_event 21, 11, VIOLET_MART, 2
 	warp_event 40,  9, VIOLET_GYM, 1
 	warp_event  9,  9, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 15, VIOLET_MOVE_TUTOR, 1
 	warp_event  3, 13, GOLDENROD_NAME_RATER, 1
 	warp_event 15,  5, VIOLET_WEATHER_HOUSE, 1
+	warp_event  1, 17, VIOLET_TRADE_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event 40, 10, -1, VioletCityRivalBattleScene1

@@ -42,6 +42,8 @@ ReturnFromMapSetupScript::
 	ld [wLandmarkSignTimer], a
 	call LoadMapNameSignGFX
 	call InitMapNameFrame
+	farcall LoadSignPals
+	farcall ApplyPals
 	farcall HDMATransfer_OnlyTopFourRows
 	ret
 
@@ -166,7 +168,7 @@ InitMapSignAttrMap:
 	inc b
 	inc c
 	inc c
-	ld a, PAL_BG_ROOF | PRIORITY
+	ld a, PAL_BG_TEXT | PRIORITY
 .loop
 	push bc
 	push hl

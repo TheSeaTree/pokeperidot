@@ -249,6 +249,7 @@ MainMenu_PrintCurrentTimeAndDay:
 	ret z
 	call CheckRTCStatus
 	and $80
+	jp nz, .PlaceTimeNotSetBox
 	call UpdateTime
 	ld b, a
 	decoord 6, 16
@@ -264,8 +265,18 @@ MainMenu_PrintCurrentTimeAndDay:
 ; unused
 	db "min.@"
 
-.PrintTimeNotSet:
-	hlcoord 1, 14
+.PlaceTimeNotSetBox:
+	hlcoord 3, 15
+	lb bc, 1, 12
+	call TextBox
+	hlcoord 3, 15
+	ld b, 1
+	ld c, 12
+;	jp TextBoxPalette
+;	jp z, .PrintTimeNotSet
+;	
+;.PrintTimeNotSet:
+	hlcoord 4, 16
 	ld de, .TimeNotSet
 	call PlaceString
 	ret

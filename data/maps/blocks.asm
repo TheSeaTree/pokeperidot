@@ -54,12 +54,13 @@ PlayersNeighborsHouse_Blocks:
 MrPsychicsHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
 GuideGentsHouse_Blocks:
-AzaleaTradeHouse_Blocks:
+AzaleaBikeHouse_Blocks:
 AzaleaEvolutionHouse_Blocks:
 AzaleaGymSpeechHouse_Blocks:
 AzaleaBerryHouse_Blocks:
 VioletMoveTutor_Blocks:
 VioletWeatherHouse_Blocks:
+VioletTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
 	INCBIN "maps/House1.blk"
 

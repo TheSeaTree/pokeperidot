@@ -1309,6 +1309,71 @@ endr
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	ret
+	
+LoadSignPals::
+	farcall LoadSpecialMapPalette
+	jr c, .got_pals
+
+	; Which palette group is based on whether we're outside or inside
+	ld a, [wEnvironment]
+	and 7
+	ld e, a
+	ld d, 0
+	ld hl, EnvironmentColorsPointers
+	add hl, de
+	add hl, de
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	; Switch to palettes WRAM bank
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+	ld hl, Palette_TextBG7
+	ld b, 8
+.outer_loop
+	ld a, [de] ; lookup index for TilesetBGPalette
+	push de
+	push hl
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, TilesetBGPalette
+	add hl, de
+	ld e, l
+	ld d, h
+	pop hl
+	ld c, 1 palettes
+.inner_loop
+	ld a, [de]
+	inc de
+	ld [hli], a
+	dec c
+	jr nz, .inner_loop
+	pop de
+	inc de
+	dec b
+	jr nz, .outer_loop
+	pop af
+	ldh [rSVBK], a
+
+.got_pals
+	ld a, [wMapGroup]
+	ld l, a
+	ld h, 0
+	add hl, hl
+	add hl, hl
+	add hl, hl
+	ld de, RoofPals
+	add hl, de
+	ld de, wBGPals1 palette PAL_BG_TEXT color 1
+	ld bc, 4
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ret
 
 INCLUDE "data/maps/environment_colors.asm"
 
