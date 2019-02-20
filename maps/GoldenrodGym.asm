@@ -126,8 +126,8 @@ DoorGuard1:
 	writetext DoorGuard1Challenge
 	waitbutton
 	closetext
-	winlosstext GuitaristAllenWinText, 0
-	loadtrainer GUITARIST, ALLEN
+	winlosstext BurglarAllenWinText, 0
+	loadtrainer BURGLAR, ALLEN
 	startbattle
 	reloadmapafterbattle
 	setevent GOLDENROD_GYM_DOOR_1
@@ -135,7 +135,7 @@ DoorGuard1:
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
-	setevent EVENT_BEAT_GUITARIST_ALLEN
+	setevent EVENT_BEAT_BURGLAR_ALLEN
 	end
 	
 .Opened
@@ -517,10 +517,7 @@ DoorGuard1TextQuestion:
 	
 	para "I am the only one"
 	line "who can open it!"
-	
-	para "Of course I can"
-	line "open it for you."
-	
+
 	para "…For a price."
 	
 	para "I'll let you past"
@@ -556,7 +553,7 @@ Door2or3AlreadyOpen:
 	line "that was opened."
 	done
 	
-GuitaristAllenWinText:
+BurglarAllenWinText:
 	text "I lost."
 	done
 
@@ -645,7 +642,8 @@ GuitaristJoelText:
 	line "you pretty bad,"
 	cont "didn't he?"
 	
-	para "Now you need to battle me!"
+	para "Now you need to"
+	line "battle me!"
 	done
 	
 GuitaristJoelWinText:
@@ -730,7 +728,7 @@ GoldenrodGym_MapEvents:
 
 	db 12 ; object events
 	object_event  5, 34, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event 22, 33, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
+	object_event 22, 33, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
 	object_event 12, 23, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristJoel, -1
 	object_event 12, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristTrevor, -1
 	object_event 20, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristAndy, -1

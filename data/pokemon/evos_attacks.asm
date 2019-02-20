@@ -486,8 +486,8 @@ NidorinaEvosAttacks:
 	db 13, POISON_STING
 	db 20, FURY_SWIPES
 	db 23, DOUBLE_KICK
-	db 43, CRUNCH
-	db 58, SLUDGE_BOMB
+	db 36, CRUNCH
+	db 43, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
 NidoqueenEvosAttacks:
@@ -525,8 +525,8 @@ NidorinoEvosAttacks:
 	db 13, POISON_STING
 	db 20, FURY_ATTACK
 	db 23, HORN_ATTACK
-	db 43, SLUDGE_BOMB
-	db 58, HORN_DRILL
+	db 36, SLUDGE_BOMB
+	db 43, HORN_DRILL
 	db 0 ; no more level-up moves
 
 NidokingEvosAttacks:

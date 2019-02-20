@@ -211,7 +211,6 @@ KRIS EQU __enum__
 	const XAVIER
 	const TREVOR
 	const JOEL
-	const ALLEN
 	const ANDY
 	const LEE
 	const MARCEL
@@ -240,6 +239,7 @@ KRIS EQU __enum__
 	const BLAINE1
 
 	trainerclass BURGLAR ; 2f
+	const ALLEN
 	const LAMAAR
 	
 	trainerclass FIREBREATHER ; 30

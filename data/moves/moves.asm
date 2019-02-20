@@ -32,7 +32,7 @@ Moves: ; 41afb
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,   100, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,    95, 15,   0
 	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,    75, 20,   0
-	move STRUGGLE_BUG, EFFECT_ATTACK_DOWN_HIT,    50, BUG,      100, 20, 100
+	move STRUGGLE_BUG, EFFECT_ATTACK_DOWN_HIT,    50, BUG,      100, 20,  20
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
