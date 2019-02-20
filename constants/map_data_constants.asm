@@ -69,21 +69,18 @@ const_value = -1
 	const SPAWN_N_A
 	const SPAWN_HOME
 	const SPAWN_DEBUG
-; kanto
-	const SPAWN_INDIGO
 ; johto
 	const SPAWN_NEW_BARK
 	const SPAWN_CHERRYGROVE
-	const SPAWN_VIOLET
-	const SPAWN_UNION_CAVE
 	const SPAWN_AZALEA
-	const SPAWN_CIANWOOD
+	const SPAWN_VIOLET
 	const SPAWN_GOLDENROD
-	const SPAWN_OLIVINE
+	const SPAWN_CIANWOOD
 	const SPAWN_ECRUTEAK
+	const SPAWN_OLIVINE
 	const SPAWN_MAHOGANY
-	const SPAWN_LAKE_OF_RAGE
 	const SPAWN_BLACKTHORN
+	const SPAWN_INDIGO
 	const SPAWN_MT_SILVER
 NUM_SPAWNS EQU const_value
 

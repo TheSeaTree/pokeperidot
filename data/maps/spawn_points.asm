@@ -12,12 +12,12 @@ SpawnPoints:
 
 	spawn NEW_BARK_TOWN,              21, 12
 	spawn CHERRYGROVE_CITY,           24, 16
-	spawn VIOLET_CITY,                 9, 10
 	spawn AZALEA_TOWN,                49,  8
-	spawn CIANWOOD_CITY,              19, 22
+	spawn VIOLET_CITY,                 9, 10
 	spawn GOLDENROD_CITY,             19, 16
-	spawn OLIVINE_CITY,               13, 22
+	spawn CIANWOOD_CITY,              19, 22
 	spawn ECRUTEAK_CITY,               9, 20
+	spawn OLIVINE_CITY,               13, 22
 	spawn MAHOGANY_TOWN,              15, 14
 	spawn BLACKTHORN_CITY,            21, 30
 	spawn SILVER_CAVE_OUTSIDE,        23, 20

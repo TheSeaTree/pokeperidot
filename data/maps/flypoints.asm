@@ -9,12 +9,12 @@ Flypoints:
 ; Johto
 	flypoint NEW_BARK,     NEW_BARK_TOWN
 	flypoint CHERRYGROVE,  CHERRYGROVE_CITY
-	flypoint VIOLET,       VIOLET_CITY
 	flypoint AZALEA,       AZALEA_TOWN
+	flypoint VIOLET,       VIOLET_CITY
 	flypoint GOLDENROD,    GOLDENROD_CITY
+	flypoint CIANWOOD,     CIANWOOD_CITY
 	flypoint ECRUTEAK,     ECRUTEAK_CITY
 	flypoint OLIVINE,      OLIVINE_CITY
-	flypoint CIANWOOD,     CIANWOOD_CITY
 	flypoint MAHOGANY,     MAHOGANY_TOWN
 	flypoint BLACKTHORN,   BLACKTHORN_CITY
 

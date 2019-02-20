@@ -77,14 +77,13 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
 	engine_flag wVisitedSpawns, SPAWN_NEW_BARK
 	engine_flag wVisitedSpawns, SPAWN_CHERRYGROVE
-	engine_flag wVisitedSpawns, SPAWN_VIOLET
 	engine_flag wVisitedSpawns, SPAWN_AZALEA
-	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
+	engine_flag wVisitedSpawns, SPAWN_VIOLET
 	engine_flag wVisitedSpawns, SPAWN_GOLDENROD
-	engine_flag wVisitedSpawns, SPAWN_OLIVINE
+	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
 	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK ; $48
+	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
-	engine_flag wVisitedSpawns, SPAWN_LAKE_OF_RAGE
 	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
 	engine_flag wVisitedSpawns, SPAWN_MT_SILVER
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused

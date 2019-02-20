@@ -45,7 +45,7 @@ Landmarks:
 	landmark  16, 128, Route19Name
 	landmark  16, 128, Route20Name
 	landmark  140, 36, VictoryRoadName
-	landmark  140,  28, IndigoPlateauName
+	landmark  140, 28, IndigoPlateauName
 	landmark  16, 128, BattleTowerName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
