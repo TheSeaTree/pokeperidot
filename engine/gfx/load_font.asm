@@ -54,13 +54,13 @@ _LoadFontsBattleExtra::
 LoadFrame:
 	ld a, [wTextBoxFrame]
 	maskbits NUM_FRAMES
-	ld bc, 6 * LEN_1BPP_TILE
+	ld bc, 10 * LEN_1BPP_TILE
 	ld hl, Frames
 	call AddNTimes
 	ld d, h
 	ld e, l
 	ld hl, vTiles0 tile "┌" ; $ba
-	lb bc, BANK(Frames), 6 ; "┌" to "┘"
+	lb bc, BANK(Frames), 10 ; "┌" to "┘"
 	call Get1bpp_2
 	ld hl, vTiles2 tile " " ; $7f
 	ld de, TextBoxSpaceGFX

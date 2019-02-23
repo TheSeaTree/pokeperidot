@@ -161,7 +161,7 @@ SpecialsPointers::
 	add_special PokeSeer
 	add_special BuenasPassword
 	add_special BuenaPrize
-	add_special GiveDratini
+	add_special GiftMonMoves
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
 	add_special MonCheck
@@ -182,4 +182,3 @@ SpecialsPointers::
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
 	add_special DummySpecial_c224 ; $a8
-	add_special GiveKangaskhan

@@ -56,7 +56,7 @@ _DepositPKMN:
 	call BillsPC_BoxName
 	ld de, PCString_ChooseaPKMN
 	call BillsPC_PlaceString
-	ld a, $5
+	ld a, $6
 	ld [wBillsPC_NumMonsOnScreen], a
 	call BillsPC_RefreshTextboxes
 	call PCMonInfo
@@ -227,7 +227,7 @@ BillsPCDepositFuncCancel:
 
 BillsPCDepositMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 9, 4, SCREEN_WIDTH - 1, 13
+	menu_coords 9, 3, SCREEN_WIDTH - 1, 12
 	dw .MenuData
 	db 1 ; default option
 
@@ -314,7 +314,7 @@ _WithdrawPKMN:
 	call BillsPC_BoxName
 	ld de, PCString_ChooseaPKMN
 	call BillsPC_PlaceString
-	ld a, $5
+	ld a, $6
 	ld [wBillsPC_NumMonsOnScreen], a
 	call BillsPC_RefreshTextboxes
 	call PCMonInfo
@@ -480,7 +480,7 @@ BillsPC_Withdraw:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 9, 4, SCREEN_WIDTH - 1, 13
+	menu_coords 9, 3, SCREEN_WIDTH - 1, 12
 	dw .MenuData
 	db 1 ; default option
 
@@ -548,13 +548,14 @@ _MovePKMNWithoutMail:
 	dw BillsPC_EndJumptableLoop
 
 .Init:
+
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
 	call CopyBoxmonSpecies
 	ld de, PCString_ChooseaPKMN
 	call BillsPC_PlaceString
-	ld a, 5
+	ld a, 6
 	ld [wBillsPC_NumMonsOnScreen], a
 	call BillsPC_RefreshTextboxes
 	call BillsPC_MoveMonWOMail_BoxNameAndArrows
@@ -565,6 +566,7 @@ _MovePKMNWithoutMail:
 	call BillsPC_ApplyPalettes
 	call WaitBGMap
 	call BillsPC_UpdateSelectionCursor
+	call BillsPC_MoveMonWOMail_BoxNameAndArrows
 	call BillsPC_IncrementJumptableIndex
 	ret
 
@@ -581,9 +583,11 @@ _MovePKMNWithoutMail:
 	and a
 	ret z
 	call BillsPC_UpdateSelectionCursor
+	call BillsPC_MoveMonWOMail_BoxNameAndArrows
 	xor a
 	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
+	call BillsPC_MoveMonWOMail_BoxNameAndArrows
 	call PCMonInfo
 	ld a, $1
 	ldh [hBGMapMode], a
@@ -707,7 +711,7 @@ _MovePKMNWithoutMail:
 	call CopyBoxmonSpecies
 	ld de, PCString_MoveToWhere
 	call BillsPC_PlaceString
-	ld a, $5
+	ld a, $6
 	ld [wBillsPC_NumMonsOnScreen], a
 	call BillsPC_RefreshTextboxes
 	call BillsPC_MoveMonWOMail_BoxNameAndArrows
@@ -718,6 +722,11 @@ _MovePKMNWithoutMail:
 	ret
 
 .Joypad2:
+;	hlcoord 8, 2
+;	lb bc,  1, 1
+;	call ClearBox
+	hlcoord 8, 2
+	ld [hl], $5e
 	ld hl, hJoyPressed
 	ld a, [hl]
 	and B_BUTTON
@@ -733,6 +742,8 @@ _MovePKMNWithoutMail:
 	xor a
 	ldh [hBGMapMode], a
 	call BillsPC_RefreshTextboxes
+	hlcoord 8, 2
+	ld [hl], $5e
 	ld a, $1
 	ldh [hBGMapMode], a
 	call DelayFrame
@@ -740,6 +751,13 @@ _MovePKMNWithoutMail:
 	ret
 
 .dpad_2
+	hlcoord 8, 3
+	ld [hl], "┘"
+	hlcoord 8, 4
+	lb bc,  7, 1
+	call ClearBox
+	hlcoord 8, 11
+	ld [hl], "┐"
 	xor a
 	ld [wBillsPC_CursorPosition], a
 	ld [wBillsPC_ScrollPosition], a
@@ -971,15 +989,23 @@ BillsPC_PlaceString:
 
 BillsPC_MoveMonWOMail_BoxNameAndArrows:
 	call BillsPC_BoxName
-	hlcoord 8, 1
+	hlcoord 0, 2
 	ld [hl], $5f
-	hlcoord 19, 1
+	hlcoord 8, 2
 	ld [hl], $5e
+	hlcoord 8, 3
+	ld [hl], "♦"
+	hlcoord 8, 11
+	ld [hl], "♦"
+	hlcoord 0, 3
+	ld [hl], "♣"
+	hlcoord 8, 1
+	ld [hl], "♦"
 	ret
 
 BillsPC_BoxName:
-	hlcoord 8, 0
-	lb bc, 1, 10
+	hlcoord 0, 1
+	lb bc, 1, 7
 	call TextBox
 
 	ld a, [wBillsPC_LoadedBox]
@@ -1003,12 +1029,12 @@ BillsPC_BoxName:
 .party
 	ld de, .PartyPKMN
 .print
-	hlcoord 10, 1
+	hlcoord 1, 2
 	call PlaceString
 	ret
 
 .PartyPKMN:
-	db "PARTY <PK><MN>@"
+	db "PARTY@"
 
 PCMonInfo:
 ; Display a monster's pic and
@@ -1021,9 +1047,21 @@ PCMonInfo:
 ; Example: Species, level, gender,
 ; whether it's holding an item.
 
-	hlcoord 0, 0
-	lb bc, 15, 8
+	hlcoord 0, 12
+	lb bc,  3, 8
 	call ClearBox
+
+	hlcoord 0, 3
+	lb bc,  7, 7
+	call TextBox
+	hlcoord 8, 3
+	ld [hl], "♦"
+	hlcoord 8, 11
+	ld [hl], "♦"
+	hlcoord 0, 3
+	ld [hl], "♣"
+	hlcoord 8, 1
+	ld [hl], "♦"
 
 	hlcoord 8, 14
 	lb bc, 1, 3
@@ -1062,6 +1100,7 @@ PCMonInfo:
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
+	call BillsPC_PlaceShinyIcon
 	call GetBaseData
 	ld de, vTiles2 tile $00
 	predef GetMonFrontpic
@@ -1217,14 +1256,18 @@ BillsPC_LoadMonStats:
 	ret
 
 BillsPC_RefreshTextboxes:
-	hlcoord 8, 2
-	lb bc, 10, 10
+	hlcoord 8, 0
+	lb bc, 12, 10
 	call TextBox
+	hlcoord 8, 3
+	ld [hl], "♦"
+	hlcoord 8, 11
+	ld [hl], "♦"
+	hlcoord 0, 3
+	ld [hl], "♣"
+	hlcoord 8, 1
+	ld [hl], "♦"
 
-	hlcoord 8, 2
-	ld [hl], "└"
-	hlcoord 19, 2
-	ld [hl], "┘"
 
 	ld a, [wBillsPC_ScrollPosition]
 	ld e, a
@@ -1235,7 +1278,7 @@ BillsPC_RefreshTextboxes:
 	add hl, de
 	ld e, l
 	ld d, h
-	hlcoord 9, 4
+	hlcoord 9, 2
 	ld a, [wBillsPC_NumMonsOnScreen]
 .loop
 	push af
@@ -1480,30 +1523,30 @@ endr
 	jr .loop
 
 .OAM:
-	dsprite 4, 6, 10, 0, $00, 0
-	dsprite 4, 6, 11, 0, $00, 0
-	dsprite 4, 6, 12, 0, $00, 0
-	dsprite 4, 6, 13, 0, $00, 0
-	dsprite 4, 6, 14, 0, $00, 0
-	dsprite 4, 6, 15, 0, $00, 0
-	dsprite 4, 6, 16, 0, $00, 0
-	dsprite 4, 6, 17, 0, $00, 0
-	dsprite 4, 6, 18, 0, $00, 0
-	dsprite 4, 6, 18, 7, $00, 0
-	dsprite 7, 1, 10, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 11, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 12, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 13, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 14, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 15, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 16, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 17, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 18, 0, $00, 0 | Y_FLIP
-	dsprite 7, 1, 18, 7, $00, 0 | Y_FLIP
-	dsprite 5, 6,  9, 6, $01, 0
-	dsprite 6, 1,  9, 6, $01, 0 | Y_FLIP
-	dsprite 5, 6, 19, 1, $01, 0 | X_FLIP
-	dsprite 6, 1, 19, 1, $01, 0 | X_FLIP | Y_FLIP
+	dsprite 2, 6, 10, 0, $00, 0
+	dsprite 2, 6, 11, 0, $00, 0
+	dsprite 2, 6, 12, 0, $00, 0
+	dsprite 2, 6, 13, 0, $00, 0
+	dsprite 2, 6, 14, 0, $00, 0
+	dsprite 2, 6, 15, 0, $00, 0
+	dsprite 2, 6, 16, 0, $00, 0
+	dsprite 2, 6, 17, 0, $00, 0
+	dsprite 2, 6, 18, 0, $00, 0
+	dsprite 2, 6, 18, 7, $00, 0
+	dsprite 5, 1, 10, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 11, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 12, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 13, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 14, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 15, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 16, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 17, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 18, 0, $00, 0 | Y_FLIP
+	dsprite 5, 1, 18, 7, $00, 0 | Y_FLIP
+	dsprite 3, 6,  9, 6, $01, 0
+	dsprite 4, 1,  9, 6, $01, 0 | Y_FLIP
+	dsprite 3, 6, 19, 1, $01, 0 | X_FLIP
+	dsprite 4, 1, 19, 1, $01, 0 | X_FLIP | Y_FLIP
 	db -1
 
 BillsPC_UpdateInsertCursor:
@@ -1528,16 +1571,16 @@ endr
 	jr .loop
 
 .OAM:
-	dsprite 4, 7, 10, 0, $06, 0
-	dsprite 5, 3, 11, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 12, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 13, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 14, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 15, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 16, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 17, 0, $00, 0 | Y_FLIP
-	dsprite 5, 3, 18, 0, $00, 0 | Y_FLIP
-	dsprite 4, 7, 19, 0, $07, 0
+	dsprite 2, 7, 10, 0, $06, 0  | Y_FLIP
+	dsprite 2, 3, 11, 0, $00, 0 
+	dsprite 2, 3, 12, 0, $00, 0 
+	dsprite 2, 3, 13, 0, $00, 0 
+	dsprite 2, 3, 14, 0, $00, 0 
+	dsprite 2, 3, 15, 0, $00, 0 
+	dsprite 2, 3, 16, 0, $00, 0 
+	dsprite 2, 3, 17, 0, $00, 0 
+	dsprite 2, 3, 18, 0, $00, 0 
+	dsprite 2, 7, 19, 0, $07, 0  | Y_FLIP
 	db -1
 
 Unreferenced_BillsPC_FillBox:
@@ -1683,6 +1726,7 @@ StatsScreenDPad:
 	ld [wCurSpecies], a
 	ld hl, wTempMonDVs
 	predef GetUnownLetter
+	call BillsPC_PlaceShinyIcon
 	call GetBaseData
 	call BillsPC_CopyMon
 .pressed_a_b_right_left
@@ -1691,6 +1735,14 @@ StatsScreenDPad:
 .did_nothing
 	xor a
 	ld [wMenuJoypad], a
+	ret
+	
+BillsPC_PlaceShinyIcon:
+	ld bc, wTempMonDVs
+	farcall CheckShininess
+	ret nc
+	hlcoord  7, 12
+	ld [hl], "*"
 	ret
 
 BillsPC_CopyMon:
@@ -1782,11 +1834,14 @@ DepositPokemon:
 	farcall RemoveMonFromPartyOrBox
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
-	hlcoord 0, 0
-	lb bc, 15, 8
+	hlcoord 1, 4
+	lb bc,  7, 7
 	call ClearBox
 	hlcoord 8, 14
 	lb bc, 1, 3
+	call ClearBox
+	hlcoord 0, 12
+	lb bc, 3, 8
 	call ClearBox
 	hlcoord 0, 15
 	lb bc, 1, 18
@@ -1837,11 +1892,14 @@ TryWithdrawPokemon:
 	farcall RemoveMonFromPartyOrBox
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
-	hlcoord 0, 0
-	lb bc, 15, 8
+	hlcoord 1, 4
+	lb bc,  7, 7
 	call ClearBox
 	hlcoord 8, 14
 	lb bc, 1, 3
+	call ClearBox
+	hlcoord 0, 12
+	lb bc, 3, 8
 	call ClearBox
 	hlcoord 0, 15
 	lb bc, 1, 18

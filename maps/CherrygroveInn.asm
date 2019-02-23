@@ -38,6 +38,15 @@ CherrygroveInnLass:
 	jumptextfaceplayer CherrygroveInnLassText
 
 CherrygroveInnFisher:
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	opentext
+	givepoke KANGASKHAN, 15
+	special GiftMonMoves
+	closetext
+	end
+	
+.PartyFull
 	jumptextfaceplayer CherrygroveInnFisherText
 	
 CherrygroveInnBed:

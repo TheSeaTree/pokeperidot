@@ -41,7 +41,7 @@ CianwoodCityBurglar:
 CianwoodCityLookout:
 ;	opentext
 ;	givepoke KANGASKHAN, 15
-;	special GiveKangaskhan
+;	special GiftMonMoves
 ;	closetext
 ;	end
 	jumptextfaceplayer CianwoodLookoutText

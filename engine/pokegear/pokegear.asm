@@ -691,7 +691,7 @@ PokegearMap_UpdateLandmarkName:
 	pop de
 	farcall TownMap_ConvertLineBreakCharacters
 	hlcoord 8, 0
-	ld [hl], $34
+	ld [hl], $1f
 	ret
 
 PokegearMap_UpdateCursorPosition:
@@ -2003,10 +2003,10 @@ _FlyMap:
 	ldh [hBGMapMode], a
 	farcall ClearSpriteAnims
 	call LoadTownMapGFX
-	ld de, FlyMapLabelBorderGFX
-	ld hl, vTiles2 tile $30
-	lb bc, BANK(FlyMapLabelBorderGFX), 6
-	call Request1bpp
+;	ld de, FlyMapLabelBorderGFX
+;	ld hl, vTiles2 tile $60
+;	lb bc, BANK(FlyMapLabelBorderGFX), 6
+;	call Request1bpp
 	call FlyMap
 	call ret_91c8f
 	ld b, SCGB_POKEGEAR_PALS
@@ -2106,14 +2106,14 @@ TownMapBubble:
 
 ; Top-left corner
 	hlcoord 1, 0
-	ld a, $30
+	ld a, $1d
 	ld [hli], a
 ; Top row
 	ld bc, 16
 	ld a, " "
 	call ByteFill
 ; Top-right corner
-	ld a, $31
+	ld a, $1e
 	ld [hl], a
 	hlcoord 1, 1
 
@@ -2122,17 +2122,11 @@ TownMapBubble:
 	ld a, " "
 	call ByteFill
 
-; Bottom-left corner
-	hlcoord 1, 2
-	ld a, $32
-	ld [hli], a
 ; Bottom row
-	ld bc, 16
+	hlcoord 1, 2
+	ld bc, 18
 	ld a, " "
 	call ByteFill
-; Bottom-right corner
-	ld a, $33
-	ld [hl], a
 
 ; Print "Where?"
 	hlcoord 2, 0
@@ -2141,8 +2135,8 @@ TownMapBubble:
 ; Print the name of the default flypoint
 	call .Name
 ; Up/down arrows
-	hlcoord 18, 1
-	ld [hl], $34
+	hlcoord 1, 1
+	ld [hl], $1f
 	ret
 
 .Where:
@@ -2731,7 +2725,7 @@ TownMapPlayerIcon:
 LoadTownMapGFX:
 	ld hl, TownMapGFX
 	ld de, vTiles2
-	lb bc, BANK(TownMapGFX), 48
+	lb bc, BANK(TownMapGFX), 96
 	call DecompressRequest2bpp
 	ret
 

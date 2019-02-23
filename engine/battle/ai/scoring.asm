@@ -3097,7 +3097,7 @@ AI_Status:
 	cp EFFECT_SLEEP
 	jr z, .typeimmunity
 	cp EFFECT_PARALYZE
-	jr z, .typeimmunity
+	jr z, .electricimmunity
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -3105,6 +3105,14 @@ AI_Status:
 
 	jr .typeimmunity
 
+.electricimmunity
+	ld a, [wBattleMonType1]
+	cp ELECTRIC
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp ELECTRIC
+	jr z, .immune
+	
 .poisonimmunity
 	ld a, [wBattleMonType1]
 	cp POISON

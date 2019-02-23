@@ -92,9 +92,9 @@ CharmanderEvosAttacks:
 	db 7, EMBER
 	db 10, SMOKESCREEN
 	db 16, RAGE
-	db 19, SCARY_FACE
-	db 25, DRAGON_RAGE
-	db 28, FIRE_PUNCH
+	db 20, FIRE_PUNCH
+	db 25, SCARY_FACE
+	db 28, DRAGON_RAGE
 	db 34, CUT
 	db 37, FLAMETHROWER
 	db 43, FIRE_SPIN
@@ -110,9 +110,9 @@ CharmeleonEvosAttacks:
 	db 7, EMBER
 	db 10, SMOKESCREEN
 	db 17, RAGE
-	db 21, SCARY_FACE
-	db 28, DRAGON_RAGE
-	db 32, FIRE_PUNCH
+	db 23, FIRE_PUNCH
+	db 28, SCARY_FACE
+	db 31, DRAGON_RAGE
 	db 39, CUT
 	db 43, FLAMETHROWER
 	db 50, FIRE_SPIN
@@ -128,9 +128,9 @@ CharizardEvosAttacks:
 	db 7, EMBER
 	db 10, SMOKESCREEN
 	db 17, RAGE
-	db 21, SCARY_FACE
-	db 28, DRAGON_RAGE
-	db 32, FIRE_PUNCH
+	db 23, FIRE_PUNCH
+	db 28, SCARY_FACE
+	db 32, DRAGON_RAGE
 	db 36, WING_ATTACK
 	db 41, CUT
 	db 47, FLAMETHROWER

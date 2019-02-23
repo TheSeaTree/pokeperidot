@@ -1,4 +1,4 @@
-GiveKangaskhan:
+GiftMonMoves:
 
 	ld a, [wScriptVar]
 	cp $2
@@ -14,7 +14,10 @@ GiveKangaskhan:
 ; start at the end of the party and search backwards for a Dratini
 	ld a, [hl]
 	cp KANGASKHAN
-	jr z, .GiveMoveset
+	jr z, .GiveMoveset1
+	ld a, [hl]
+	cp SKARMORY
+	jr z, .GiveMoveset2
 	ld a, l
 	sub e
 	ld l, a
@@ -25,10 +28,22 @@ GiveKangaskhan:
 	jr nz, .CheckForMon
 	ret
 
-.GiveMoveset:
+.GiveMoveset1:
 	push hl
 	ld a, [wScriptVar]
-	ld hl, .Movesets
+	ld hl, .Moveset1
+	call AddNTimes
+
+	; get address of mon's first move
+	pop de
+	inc de
+	inc de
+	jr .GiveMoves
+	
+.GiveMoveset2:
+	push hl
+	ld a, [wScriptVar]
+	ld hl, .Moveset2
 	call AddNTimes
 
 	; get address of mon's first move
@@ -64,11 +79,18 @@ GiveKangaskhan:
 	inc hl
 	jr .GiveMoves
 
-.Movesets:
+.Moveset1:
 	db HEADBUTT
 	db COUNTER
 	db FORESIGHT
 	db MILK_DRINK
+	db 0
+	
+.Moveset2:
+	db FLY
+	db SKY_ATTACK
+	db DRAGON_DANCE
+	db RECOVER
 	db 0
 
 .GetNthPartyMon:

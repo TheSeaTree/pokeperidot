@@ -427,7 +427,7 @@ GoldenrodGymStatue:
 	
 GoldenrodCantLeave:
 	checkflag ENGINE_FOGBADGE
-	iffalse .Leave
+	iftrue .Leave
 	jumpstd cantleavegym
 	end
 
