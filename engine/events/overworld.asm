@@ -608,6 +608,7 @@ FlyFunction:
 	call DelayFrame
 	call ReplaceKrisSprite
 	farcall LoadOverworldFont
+	farcall LoadMapNameSignGFX
 	ret
 
 WaterfallFunction:

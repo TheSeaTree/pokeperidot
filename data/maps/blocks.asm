@@ -274,8 +274,8 @@ Route16_Blocks:
 Route18_Blocks:
 	INCBIN "maps/Route18.blk"
 
-Route7Underground_Blocks:
-	INCBIN "maps/Route7Underground.blk"
+Route6Underground_Blocks:
+	INCBIN "maps/Route6Underground.blk"
 
 GoldenrodUndergroundSwitchRoomEntrances_Blocks:
 	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.blk"

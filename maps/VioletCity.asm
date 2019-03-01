@@ -20,7 +20,7 @@ VioletCity_MapScripts:
 VioletCityRivalBattleScene1:
 	checkevent EVENT_BEAT_RIVAL_1
 	iftrue .skip
-	moveobject VIOLETCITY_SILVER, 35, 10
+	moveobject VIOLETCITY_SILVER, 33, 8
 	opentext
 	writetext VioletCityRivalWait
 	waitbutton
@@ -104,8 +104,11 @@ VioletCityMartSign:
 	jumpstd martsign
 
 VioletCityFruitTree:
-	fruittree FRUITTREE_VIOLET_CITY
+	fruittree FRUITTREE_VIOLET_CITY_1
 
+VioletCityItemBush:
+	itembush FRUITTREE_VIOLET_CITY_2
+	
 VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
 	
@@ -225,30 +228,30 @@ VioletCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 21, 11, VIOLET_MART, 2
-	warp_event 40,  9, VIOLET_GYM, 1
-	warp_event  9,  9, VIOLET_POKECENTER_1F, 1
-	warp_event 15, 15, VIOLET_MOVE_TUTOR, 1
-	warp_event  3, 13, GOLDENROD_NAME_RATER, 1
-	warp_event 15,  5, VIOLET_WEATHER_HOUSE, 1
-	warp_event  1, 17, VIOLET_TRADE_HOUSE, 1
+	warp_event 21,  9, VIOLET_MART, 2
+	warp_event 38,  7, VIOLET_GYM, 1
+	warp_event  9,  7, VIOLET_POKECENTER_1F, 1
+	warp_event 15, 13, VIOLET_MOVE_TUTOR, 1
+	warp_event  3, 11, GOLDENROD_NAME_RATER, 1
+	warp_event 15,  3, VIOLET_WEATHER_HOUSE, 1
+	warp_event  1, 15, VIOLET_TRADE_HOUSE, 1
 
 	db 1 ; coord events
-	coord_event 40, 10, -1, VioletCityRivalBattleScene1
+	coord_event 38, 8, -1, VioletCityRivalBattleScene1
 
 	db 5 ; bg events
-	bg_event  9, 15, BGEVENT_READ, VioletCitySign
-	bg_event 16, 16, BGEVENT_READ, VioletTutorSign
-	bg_event 32, 25, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 10, 17, BGEVENT_READ, VioletCityMartSign
-	bg_event 37, 14, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event  8, 13, BGEVENT_READ, VioletCitySign
+	bg_event 16, 14, BGEVENT_READ, VioletTutorSign
+	bg_event 10,  7, BGEVENT_READ, VioletCityPokecenterSign
+	bg_event 22,  9, BGEVENT_READ, VioletCityMartSign
+	bg_event  5,  7, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
 	db 8 ; object events
-	object_event 13, 17, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 28, 28, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 24, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 21, 22, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
-	object_event  6, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
-	object_event  1, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
+	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 18,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 21, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
+	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
+	object_event  1, 18, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
 	object_event  1, 1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
-	object_event  5, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, AzaleaTownRepel, EVENT_VIOLET_CITY_SILVER_LEAF
+	object_event  5, 9, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityItemBush, -1

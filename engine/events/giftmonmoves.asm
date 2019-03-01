@@ -16,7 +16,7 @@ GiftMonMoves:
 	cp KANGASKHAN
 	jr z, .GiveMoveset1
 	ld a, [hl]
-	cp SKARMORY
+	cp TOTODILE
 	jr z, .GiveMoveset2
 	ld a, l
 	sub e
@@ -87,10 +87,10 @@ GiftMonMoves:
 	db 0
 	
 .Moveset2:
-	db FLY
-	db SKY_ATTACK
-	db DRAGON_DANCE
-	db RECOVER
+	db ANCIENTPOWER
+	db AQUA_JET
+	db BITE
+	db ICE_PUNCH
 	db 0
 
 .GetNthPartyMon:

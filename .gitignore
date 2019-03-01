@@ -19,6 +19,7 @@
 *.rtc
 *.cht
 *.png
+*.cmap
 
 # rgbds extras
 *.map

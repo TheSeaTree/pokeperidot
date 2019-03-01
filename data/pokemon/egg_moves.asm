@@ -95,6 +95,7 @@ NidoranFEggMoves:
 	db FOCUS_ENERGY
 	db AMNESIA
 	db COUNTER
+	db PECK
 	db -1 ; end
 
 NidoranMEggMoves:
@@ -104,6 +105,7 @@ NidoranMEggMoves:
 	db CONFUSION
 	db AMNESIA
 	db COUNTER
+	db BITE
 	db -1 ; end
 
 VulpixEggMoves:

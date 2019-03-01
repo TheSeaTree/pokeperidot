@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	
 
-Route7Underground_MapScripts:
+Route6Underground_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
@@ -69,17 +69,17 @@ SodaMan:
 	closetext
 	end
 	
-Route7UndergroundNerd:
-	jumptextfaceplayer Route7UndergroundNerdText
+Route6UndergroundNerd:
+	jumptextfaceplayer Route6UndergroundNerdText
 
-Route7UndergroundLass:
-	jumptextfaceplayer Route7UndergroundLassText
+Route6UndergroundLass:
+	jumptextfaceplayer Route6UndergroundLassText
 	
-Route7UndergroundOfficer1:
-	jumptextfaceplayer Route7UndergroundOfficer1Text
+Route6UndergroundOfficer1:
+	jumptextfaceplayer Route6UndergroundOfficer1Text
 
-Route7UndergroundOfficer2:
-	jumptextfaceplayer Route7UndergroundOfficer2Text
+Route6UndergroundOfficer2:
+	jumptextfaceplayer Route6UndergroundOfficer2Text
 	
 BuySodaText:
 	text "Hey, kid. I got"
@@ -131,7 +131,7 @@ BuyAgainText:
 	para "How about it?"
 	done
 	
-Route7UndergroundNerdText:
+Route6UndergroundNerdText:
 	text "That guy over"
 	line "there at the table"
 	cont "is selling SODA"
@@ -145,7 +145,7 @@ Route7UndergroundNerdText:
 	para "He's really smart!"
 	done
 	
-Route7UndergroundLassText:
+Route6UndergroundLassText:
 	text "This tunnel is"
 	line "mostly underwater."
 	cont "It was built for"
@@ -153,13 +153,13 @@ Route7UndergroundLassText:
 	cont "use SURF."
 	done
 	
-Route7UndergroundOfficer1Text:
+Route6UndergroundOfficer1Text:
 	text "This tunnel will"
 	line "take you to ROUTE"
 	cont "8."
 	done
 
-Route7UndergroundOfficer2Text:
+Route6UndergroundOfficer2Text:
 	text "You're working on"
 	line "a #DEX? That's"
 
@@ -167,16 +167,16 @@ Route7UndergroundOfficer2Text:
 	line "Don't give up!"
 	done
 
-Route7Underground_MapEvents:
+Route6Underground_MapEvents:
 	db 0, 0 ; filler
 
 	db 8 ; warp events
-	warp_event 31, 19, ROUTE_7, 1
-	warp_event 32, 19, ROUTE_7, 1
-	warp_event 32, 15, ROUTE_7_UNDERGROUND, 4
-	warp_event 31,  4, ROUTE_7_UNDERGROUND, 3
-	warp_event  3, 10, ROUTE_7_UNDERGROUND, 6
-	warp_event 18, 15, ROUTE_7_UNDERGROUND, 5
+	warp_event 31, 19, ROUTE_6, 1
+	warp_event 32, 19, ROUTE_6, 1
+	warp_event 32, 15, ROUTE_6_UNDERGROUND, 4
+	warp_event 31,  4, ROUTE_6_UNDERGROUND, 3
+	warp_event  3, 10, ROUTE_6_UNDERGROUND, 6
+	warp_event 18, 15, ROUTE_6_UNDERGROUND, 5
 	warp_event 17, 19, ROUTE_8, 1
 	warp_event 18, 19, ROUTE_8, 1
 
@@ -187,7 +187,7 @@ Route7Underground_MapEvents:
 	db 6 ; object events
 	object_event  1,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Mikey, -1
 	object_event 16,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SodaMan, -1
-	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route7UndergroundNerd, -1
-	object_event  4,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route7UndergroundLass, -1
-	object_event 27,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route7UndergroundOfficer1, -1
-	object_event  0,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route7UndergroundOfficer2, -1
+	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6UndergroundNerd, -1
+	object_event  4,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundLass, -1
+	object_event 27,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficer1, -1
+	object_event  0,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficer2, -1

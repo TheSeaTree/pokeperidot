@@ -121,17 +121,17 @@ ENDM
 
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     28, 13 ;  1
-	map_const ROUTE_6,                                     24, 11 ;  1
-	map_const ROUTE_7,                                     28, 14 ;  1
+	map_const ROUTE_6,                                     28, 13 ;  1
+	map_const ROUTE_7,                                     21, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
-	map_const VIOLET_CITY,                                 28, 13 ;  5
+	map_const VIOLET_CITY,                                 27, 12 ;  5
 	map_const VIOLET_MART,                                  6,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  4 ;  7
 	map_const VIOLET_POKECENTER_1F,                         5,  4 ; 10
 	map_const VIOLET_GYM_B1,							   17, 17 ; 18
 	map_const VIOLET_MOVE_TUTOR,                            4,  4
 	map_const VIOLET_WEATHER_HOUSE,                         4,  4
-	map_const VIOLET_TRADE_HOUSE,                         4,  4
+	map_const VIOLET_TRADE_HOUSE,                           4,  4
 	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
 
 	newgroup                                                      ; 11
@@ -209,7 +209,7 @@ ENDM
 
 	newgroup                                                      ; 21
 
-	map_const ROUTE_7_UNDERGROUND,                         18, 10 ; 53
+	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    10, 45 ;  3
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23

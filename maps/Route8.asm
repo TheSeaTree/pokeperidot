@@ -152,7 +152,7 @@ Route8_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event 31, 21, ROUTE_7_UNDERGROUND, 7
+	warp_event 31, 21, ROUTE_6_UNDERGROUND, 7
 	warp_event  4, 58, ROUTE_8_GOLDENROD_GATE, 3
 	warp_event  4, 59, ROUTE_8_GOLDENROD_GATE, 4
 	warp_event 33, 50, ROUTE_8_ROUTE_10_GATE, 1

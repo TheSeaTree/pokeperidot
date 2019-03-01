@@ -152,18 +152,28 @@ TrainerCooltrainerFAnya:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_COOLTRAINERF_ANYA
+	opentext
 	jump .FightDone
 	
 .FightDone
 	checkevent GOT_TOTODILE
 	iftrue .Totodile
-	opentext
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
 	writetext AnyaGaveTotodile
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke TOTODILE, 10
+	special GiftMonMoves
 	setevent GOT_TOTODILE
-	done
+	closetext
+	end
+	
+.PartyFull
+	writetext AnyaNotEnoughRoom
+	waitbutton
+	closetext
+	end
 	
 .Totodile
 	writetext AlreadyGotTotodile
@@ -277,6 +287,13 @@ AnyaGaveTotodile:
 	line "received TOTODILE!"
 	done
 
+AnyaNotEnoughRoom:
+	text "You will need to"
+	line "free up a space in"
+	cont "your party if you"
+	cont "want my gift."
+	done
+	
 AlreadyGotTotodile:
 	text "My, my! You really"
 	line "are a special kind"

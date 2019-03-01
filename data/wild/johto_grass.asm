@@ -332,7 +332,7 @@ JohtoGrassWildMons:
 	db 18, ZUBAT
 	db 19, CUBONE
 	db 20, DUNSPARCE
-	db 19, CUBONE
+	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, WOBBUFFET
@@ -340,7 +340,7 @@ JohtoGrassWildMons:
 	db 18, ZUBAT
 	db 19, CUBONE
 	db 20, DUNSPARCE
-	db 19, CUBONE
+	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, WOBBUFFET
@@ -348,7 +348,7 @@ JohtoGrassWildMons:
 	db 18, ZUBAT
 	db 19, CUBONE
 	db 20, DUNSPARCE
-	db 19, CUBONE
+	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, WOBBUFFET

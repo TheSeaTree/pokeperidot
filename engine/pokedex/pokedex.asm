@@ -501,6 +501,8 @@ DexEntryScreen_MenuActionJumptable:
 	ret
 
 Pokedex_RedisplayDexEntry:
+	call Pokedex_LoadGFX
+	call Pokedex_LoadAnyFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexEntry

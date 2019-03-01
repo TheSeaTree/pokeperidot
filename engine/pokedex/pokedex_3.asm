@@ -1,12 +1,12 @@
 LoadSGBPokedexGFX:
 	ld hl, SGBPokedexGFX_LZ
-	ld de, vTiles2 tile $31
+	ld de, vTiles2 tile $60
 	call Decompress
 	ret
 
 LoadSGBPokedexGFX2:
 	ld hl, SGBPokedexGFX_LZ
-	ld de, vTiles2 tile $31
+	ld de, vTiles2 tile $60
 	lb bc, BANK(SGBPokedexGFX_LZ), 58
 	call DecompressRequest2bpp
 	ret

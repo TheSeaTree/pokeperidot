@@ -219,6 +219,7 @@ VioletGroupSprites:
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
+	db SPRITE_BUSH
 	db 0 ; end
 	
 GoldenrodGroupSprites:

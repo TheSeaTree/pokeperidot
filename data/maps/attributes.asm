@@ -98,7 +98,7 @@ ENDM
 	connection east, Route2, ROUTE_2, 7
 
 	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH
-	connection north, Route6, ROUTE_6,   0
+	connection north, Route6, ROUTE_6,  -7
 	connection south, Route5, ROUTE_5, -11
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
@@ -136,7 +136,7 @@ ENDM
 
 	map_attributes Route7, ROUTE_7, $35, WEST | EAST
 	connection west, Route8, ROUTE_8, 2
-	connection east, Route6, ROUTE_6, 2
+	connection east, Route6, ROUTE_6, 1
 
 	map_attributes Route15, ROUTE_15, $0f, 0
 
@@ -151,8 +151,8 @@ ENDM
 	map_attributes Route11, ROUTE_11, $0f, 0
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
-	connection south, VioletCity, VIOLET_CITY, 0
-	connection west, Route7, ROUTE_7, -2
+	connection south, VioletCity, VIOLET_CITY, 7
+	connection west, Route7, ROUTE_7, -1
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 11
@@ -183,7 +183,7 @@ ENDM
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
 	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $00, 0
 	map_attributes IlexForest, ILEX_FOREST, $05, 0
-	map_attributes Route7Underground, ROUTE_7_UNDERGROUND, $00, 0
+	map_attributes Route6Underground, ROUTE_6_UNDERGROUND, $00, 0
 	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
 	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
 	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
