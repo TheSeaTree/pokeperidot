@@ -62,19 +62,19 @@ _OptionsMenu:
 
 StringOptions:
 	db "TEXT SPEED<LF>"
-	db "        :<LF>"
+	db "         :<LF>"
 	db "BATTLE SCENE<LF>"
-	db "        :<LF>"
+	db "         :<LF>"
 	db "BATTLE STYLE<LF>"
-	db "        :<LF>"
+	db "         :<LF>"
 	db "SOUND<LF>"
-	db "        :<LF>"
-	db "PRINT<LF>"
-	db "        :<LF>"
+	db "         :<LF>"
+	db "RUNNING SHOES<LF>"
+	db "         :<LF>"
 	db "CLOCK VIEW<LF>"
-	db "        :<LF>"
+	db "         :<LF>"
 	db "FRAME<LF>"
-	db "        :TYPE<LF>"
+	db "         :TYPE<LF>"
 	db "DONE@"
 
 GetOptionPointer:
@@ -94,7 +94,7 @@ GetOptionPointer:
 	dw Options_BattleScene
 	dw Options_BattleStyle
 	dw Options_Sound
-	dw Options_Print
+	dw Options_Shoes
 	dw Options_MenuAccount
 	dw Options_Frame
 	dw Options_Cancel
@@ -146,7 +146,7 @@ Options_TextSpeed:
 	ld e, [hl]
 	inc hl
 	ld d, [hl]
-	hlcoord 11, 3
+	hlcoord 12, 3
 	call PlaceString
 	and a
 	ret
@@ -216,7 +216,7 @@ Options_BattleScene:
 	ld de, .Off
 
 .Display:
-	hlcoord 11, 5
+	hlcoord 12, 5
 	call PlaceString
 	and a
 	ret
@@ -254,7 +254,7 @@ Options_BattleStyle:
 	ld de, .Set
 
 .Display:
-	hlcoord 11, 7
+	hlcoord 12, 7
 	call PlaceString
 	and a
 	ret
@@ -299,7 +299,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 11, 9
+	hlcoord 12, 9
 	call PlaceString
 	and a
 	ret
@@ -314,100 +314,43 @@ Options_Sound:
 	const OPT_PRINT_DARKER   ; 3
 	const OPT_PRINT_DARKEST  ; 4
 
-Options_Print:
-	call GetPrinterSetting
+Options_Shoes:
+	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	ld a, c
-	cp OPT_PRINT_DARKEST
-	jr c, .Increase
-	ld c, OPT_PRINT_LIGHTEST - 1
-
-.Increase:
-	inc c
-	ld a, e
-	jr .Save
+	bit RUNNING_SHOES, [hl]
+	jr nz, .ToggleOff
+	jr .ToggleOn
 
 .LeftPressed:
-	ld a, c
-	and a
-	jr nz, .Decrease
-	ld c, OPT_PRINT_DARKEST + 1
-
-.Decrease:
-	dec c
-	ld a, d
-
-.Save:
-	ld b, a
-	ld [wGBPrinter], a
+	bit RUNNING_SHOES, [hl]
+	jr z, .ToggleOn
+	jr .ToggleOff
 
 .NonePressed:
-	ld b, $0
-	ld hl, .Strings
-	add hl, bc
-	add hl, bc
-	ld e, [hl]
-	inc hl
-	ld d, [hl]
-	hlcoord 11, 11
+	bit RUNNING_SHOES, [hl]
+	jr nz, .ToggleOn
+
+.ToggleOff:
+	res RUNNING_SHOES, [hl]
+	ld de, .Off
+	jr .Display
+
+.ToggleOn:
+	set RUNNING_SHOES, [hl]
+	ld de, .On
+
+.Display:
+	hlcoord 12, 11
 	call PlaceString
 	and a
 	ret
 
-.Strings:
-; entries correspond to OPT_PRINT_* constants
-	dw .Lightest
-	dw .Lighter
-	dw .Normal
-	dw .Darker
-	dw .Darkest
-
-.Lightest: db "LIGHTEST@"
-.Lighter:  db "LIGHTER @"
-.Normal:   db "NORMAL  @"
-.Darker:   db "DARKER  @"
-.Darkest:  db "DARKEST @"
-
-GetPrinterSetting:
-; converts GBPRINTER_* value in a to OPT_PRINT_* value in c,
-; with previous/next GBPRINTER_* values in d/e
-	ld a, [wGBPrinter]
-	and a
-	jr z, .IsLightest
-	cp GBPRINTER_LIGHTER
-	jr z, .IsLight
-	cp GBPRINTER_DARKER
-	jr z, .IsDark
-	cp GBPRINTER_DARKEST
-	jr z, .IsDarkest
-	; none of the above
-	ld c, OPT_PRINT_NORMAL
-	lb de, GBPRINTER_LIGHTER, GBPRINTER_DARKER
-	ret
-
-.IsLightest:
-	ld c, OPT_PRINT_LIGHTEST
-	lb de, GBPRINTER_DARKEST, GBPRINTER_LIGHTER
-	ret
-
-.IsLight:
-	ld c, OPT_PRINT_LIGHTER
-	lb de, GBPRINTER_LIGHTEST, GBPRINTER_NORMAL
-	ret
-
-.IsDark:
-	ld c, OPT_PRINT_DARKER
-	lb de, GBPRINTER_NORMAL, GBPRINTER_DARKEST
-	ret
-
-.IsDarkest:
-	ld c, OPT_PRINT_DARKEST
-	lb de, GBPRINTER_DARKER, GBPRINTER_LIGHTEST
-	ret
+.Off: db "NORMAL@"
+.On:  db "INVERT@"
 
 Options_MenuAccount:
 	ld hl, wOptions2
@@ -439,7 +382,7 @@ Options_MenuAccount:
 	ld de, .On
 
 .Display:
-	hlcoord 11, 13
+	hlcoord 12, 13
 	call PlaceString
 	and a
 	ret
@@ -471,7 +414,7 @@ Options_Frame:
 	ld [hl], a
 UpdateFrame:
 	ld a, [wTextBoxFrame]
-	hlcoord 16, 15 ; where on the screen the number is drawn
+	hlcoord 17, 15 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
 	call LoadFontsExtra
