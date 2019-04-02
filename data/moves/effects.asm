@@ -2276,12 +2276,12 @@ Growth:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
+	growthattack
 	lowersub
 	statupanim
 	statupmessage
 	statupfailtext
-	growth
+	growthspecial
 	raisesub
 	statupmessage
 	statupfailtext

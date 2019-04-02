@@ -129,7 +129,8 @@ BattleCommandPointers:
 	dw BattleCommand_SpecialDefenseUp2
 	dw BattleCommand_AccuracyUp2
 	dw BattleCommand_EvasionUp2
-	dw BattleCommand_Growth
+	dw BattleCommand_GrowthAttack
+	dw BattleCommand_GrowthSpecial
 	dw BattleCommand_AttackDown
 	dw BattleCommand_DefenseDown
 	dw BattleCommand_SpeedDown

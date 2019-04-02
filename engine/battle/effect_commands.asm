@@ -4168,8 +4168,22 @@ BattleCommand_EvasionUp2:
 	ld b, $10 | EVASION
 	jr BattleCommand_StatUp
 	
-BattleCommand_Growth:
-; growth
+BattleCommand_GrowthAttack:
+; growthattack
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .Sunny
+	ld b, ATTACK
+	jr BattleCommand_StatUp
+	ret
+	
+.Sunny
+	ld b, $10 | ATTACK
+	jr BattleCommand_StatUp
+	ret
+	
+BattleCommand_GrowthSpecial:
+; growthspecial
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	jr z, .Sunny
