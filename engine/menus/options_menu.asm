@@ -67,11 +67,11 @@ StringOptions:
 	db "         :<LF>"
 	db "BATTLE STYLE<LF>"
 	db "         :<LF>"
-	db "SOUND<LF>"
-	db "         :<LF>"
-	db "RUNNING SHOES<LF>"
+	db "RUN BEHAVIOR<LF>"
 	db "         :<LF>"
 	db "CLOCK VIEW<LF>"
+	db "         :<LF>"
+	db "SOUND<LF>"
 	db "         :<LF>"
 	db "FRAME<LF>"
 	db "         :TYPE<LF>"
@@ -93,9 +93,9 @@ GetOptionPointer:
 	dw Options_TextSpeed
 	dw Options_BattleScene
 	dw Options_BattleStyle
-	dw Options_Sound
 	dw Options_Shoes
-	dw Options_MenuAccount
+	dw Options_Clock
+	dw Options_Sound
 	dw Options_Frame
 	dw Options_Cancel
 
@@ -299,7 +299,7 @@ Options_Sound:
 	ld de, .Stereo
 
 .Display:
-	hlcoord 12, 9
+	hlcoord 12, 13
 	call PlaceString
 	and a
 	ret
@@ -344,7 +344,7 @@ Options_Shoes:
 	ld de, .On
 
 .Display:
-	hlcoord 12, 11
+	hlcoord 12, 9
 	call PlaceString
 	and a
 	ret
@@ -352,7 +352,7 @@ Options_Shoes:
 .Off: db "NORMAL@"
 .On:  db "INVERT@"
 
-Options_MenuAccount:
+Options_Clock:
 	ld hl, wOptions2
 	ldh a, [hJoyPressed]
 	bit D_LEFT_F, a
@@ -382,7 +382,7 @@ Options_MenuAccount:
 	ld de, .On
 
 .Display:
-	hlcoord 12, 13
+	hlcoord 12, 11
 	call PlaceString
 	and a
 	ret
