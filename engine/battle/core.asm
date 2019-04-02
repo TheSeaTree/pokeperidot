@@ -4623,22 +4623,20 @@ CheckDanger:
 	jr z, .no_danger
 	ld a, [wBattleLowHealthAlarm]
 	and a
-	jr nz, .done
+	ret nz
 	ld a, [wPlayerHPPal]
 	cp HP_RED
 	jr z, .danger
 
 .no_danger
 	ld hl, wLowHealthAlarm
-	res DANGER_ON_F, [hl]
-	jr .done
+    ld [hl], $00
+    ret
 
 .danger
 	ld hl, wLowHealthAlarm
-	set DANGER_ON_F, [hl]
-
-.done
-	ret
+    set 7, [hl]
+    ret
 
 PrintPlayerHUD:
 	ld de, wBattleMonNick
@@ -5697,6 +5695,14 @@ MoveInfoBox:
 	ld [wStringBuffer1], a
 	call .PrintPP
 
+	hlcoord 0, 12
+	ld [hl], "♣"
+	hlcoord 4, 12
+	ld [hl], "♥"
+	hlcoord 10, 12
+	ld [hl], "♠"
+	hlcoord 4, 17
+	ld [hl], "♠"
 	hlcoord 1, 9
 	ld de, .Type
 	call PlaceString
