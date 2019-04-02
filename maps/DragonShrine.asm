@@ -369,7 +369,7 @@ DragonShrineClairWalkInMovement:
 
 DragonShrineClairBigStepLeftMovement:
 	fix_facing
-	big_step LEFT
+	run_step LEFT
 	step_end
 
 DragonShrineClairSlowStepLeftMovement:

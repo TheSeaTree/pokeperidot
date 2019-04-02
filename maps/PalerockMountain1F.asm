@@ -113,16 +113,16 @@ Palerock1RockerMovement1:
 	
 Palerock1PlayerMovement:
 	fix_facing
-	big_step LEFT
+	run_step LEFT
 	remove_fixed_facing
 	step_end
 
 Palerock1RockerMovement2:
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step UP
-	big_step UP
+	run_step UP
+	run_step UP
+	run_step RIGHT
+	run_step UP
+	run_step UP
 	step_end
 	
 HikerJoseText:

@@ -131,18 +131,18 @@ CherrygroveCityRock:
 	jumpstd smashrock	
 	
 MovementData_FisherApproachTop:
-	big_step UP
-	big_step UP
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
+	run_step UP
+	run_step UP
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
 	step_end
 	
 MovementData_FisherApproachBottom:
-	big_step UP
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
+	run_step UP
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
 	step_end
 	
 MovementData_FisherLeaveTop:

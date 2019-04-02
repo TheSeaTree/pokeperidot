@@ -344,11 +344,11 @@ AzaleaTownRivalBattleApproachMovement1:
 AzaleaTownRivalBattleExitMovement:
 	step LEFT
 	step LEFT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
 	step_end
 	
 AzaleaEnterGym:
@@ -360,23 +360,23 @@ AzaleaTownLeaveGymMovement:
 	step_end
 	
 BurglarExitLeft:
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
+	run_step UP
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
 	step_end
 
 BurglarExitLeft2:
-	big_step LEFT
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
+	run_step LEFT
+	run_step UP
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
 	step_end
 	
 AzaleaTownRivalWait:

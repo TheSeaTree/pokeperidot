@@ -24,6 +24,30 @@ CianwoodCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CIANWOOD
 	return
 	
+ShoesGuy:
+	faceplayer
+	opentext
+	writetext ShoesGuyText
+	setflag ENGINE_POKEGEAR
+	buttonsound
+	closetext
+	end
+	
+ShoesGuyText:
+	text "You must have come"
+	line "a long way on your"
+	cont "adventure, those"
+	cont "shoes look all"
+	cont "worn out."
+	
+	para "You should take"
+	line "this pair of"
+	cont "RUNNING SHOES."
+	
+	para "It's OK, they"
+	cont "don't fit me."
+	done
+	
 CianwoodCityBurglar:
 	playsound SFX_EXIT_BUILDING
 	appear CIANWOODCITY_BURGLAR2
@@ -68,9 +92,9 @@ CianwoodCityRock:
 	jumpstd smashrock
 	
 CianwoodBurglarRunAway:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
 	fix_facing
 	jump_step LEFT
 	step_sleep 8
@@ -78,23 +102,23 @@ CianwoodBurglarRunAway:
 	remove_fixed_facing
 	step RIGHT
 	step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
 	step_end
 	
 CianwoodBurglarExitBuilding:
-	big_step DOWN
+	run_step DOWN
 	step_end
 
 CianwoodShovedBack:
 	turn_step UP
 	fix_facing
-	big_step DOWN
+	run_step DOWN
 	remove_fixed_facing
 	step_end
-
+	
 CianwoodLookoutText:
 	text "Scram, kid!"
 	

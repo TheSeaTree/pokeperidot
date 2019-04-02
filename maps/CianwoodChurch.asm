@@ -119,59 +119,59 @@ Sage2Movement2:
 	step_end
 	
 Burglar3Approach:
-	big_step LEFT
-	big_step LEFT
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step UP
+	run_step UP
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
 	step_end
 	
 Burglar2Approach:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
 	step_end
 	
 BurglarRetreat:
-	big_step RIGHT
-	big_step RIGHT
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
-	big_step DOWN
+	run_step RIGHT
+	run_step RIGHT
+	run_step DOWN
+	run_step DOWN
+	run_step DOWN
+	run_step DOWN
+	run_step DOWN
+	run_step DOWN
 	step_end
 	
 Burglar1Approach:
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step LEFT
+	run_step LEFT
 	step_end
 	
 Burglar4Approach:
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step UP
-	big_step LEFT
-	big_step LEFT
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step UP
+	run_step LEFT
+	run_step LEFT
 	step_end
 	
 Sage2Approach:

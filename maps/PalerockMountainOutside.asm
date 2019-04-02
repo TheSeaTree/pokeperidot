@@ -71,7 +71,7 @@ PalerockOutsidePushAway:
 	
 PalerockOutsidePlayerMovement:
 	fix_facing
-	big_step LEFT
+	run_step LEFT
 	remove_fixed_facing
 	step_end
 	

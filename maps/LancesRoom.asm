@@ -149,9 +149,9 @@ MovementData_ApproachLanceFromRight:
 	step_end
 
 LancesRoomMovementData_MaryRushesIn:
-	big_step UP
-	big_step UP
-	big_step UP
+	run_step UP
+	run_step UP
+	run_step UP
 	turn_head DOWN
 	step_end
 
@@ -166,7 +166,7 @@ LancesRoomMovementData_MaryYieldsToOak:
 	step_end
 
 LancesRoomMovementData_MaryInterviewChampion:
-	big_step UP
+	run_step UP
 	turn_head RIGHT
 	step_end
 
@@ -191,16 +191,16 @@ LancesRoomMovementData_MaryTriesToFollow:
 	step_end
 
 LancesRoomMovementData_MaryRunsBackAndForth:
-	big_step RIGHT
-	big_step RIGHT
-	big_step LEFT
-	big_step LEFT
-	big_step LEFT
-	big_step RIGHT
-	big_step RIGHT
-	big_step RIGHT
-	big_step LEFT
-	big_step LEFT
+	run_step RIGHT
+	run_step RIGHT
+	run_step LEFT
+	run_step LEFT
+	run_step LEFT
+	run_step RIGHT
+	run_step RIGHT
+	run_step RIGHT
+	run_step LEFT
+	run_step LEFT
 	turn_head UP
 	step_end
 

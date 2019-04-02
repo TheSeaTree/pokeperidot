@@ -383,25 +383,25 @@ AideWalksLeft2:
 
 ElmJumpUpMovement:
 	fix_facing
-	big_step UP
+	run_step UP
 	remove_fixed_facing
 	step_end
 
 ElmJumpDownMovement:
 	fix_facing
-	big_step DOWN
+	run_step DOWN
 	remove_fixed_facing
 	step_end
 
 ElmJumpLeftMovement:
 	fix_facing
-	big_step LEFT
+	run_step LEFT
 	remove_fixed_facing
 	step_end
 
 ElmJumpRightMovement:
 	fix_facing
-	big_step RIGHT
+	run_step RIGHT
 	remove_fixed_facing
 	step_end
 
