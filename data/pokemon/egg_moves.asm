@@ -655,6 +655,7 @@ NatuEggMoves:
 	db STEEL_WING
 	db RECOVER
 	db FUTURE_SIGHT
+	db RAPID_SPIN
 	db -1 ; end
 
 MareepEggMoves:
@@ -917,6 +918,7 @@ StantlerEggMoves:
 	db DISABLE
 	db BITE
 	db WILD_CHARGE
+	db FLARE_BLITZ
 	db CONFUSION
 	db THRASH
 	db DOUBLE_KICK

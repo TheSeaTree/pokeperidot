@@ -1146,6 +1146,7 @@ GravelerEvosAttacks:
 	db 16, ROCK_THROW
 	db 22, BULLDOZE
 	db 24, EXPLOSION
+	db 32, RAPID_SPIN
 	db 40, EARTHQUAKE
 	db 50, DOUBLE_EDGE
 	db 0 ; no more level-up moves
@@ -1158,6 +1159,7 @@ GolemEvosAttacks:
 	db 16, ROCK_THROW
 	db 22, BULLDOZE
 	db 24, EXPLOSION
+	db 32, RAPID_SPIN
 	db 40, EARTHQUAKE
 	db 50, DOUBLE_EDGE
 	db 60, IRON_HEAD
@@ -1571,6 +1573,7 @@ VoltorbEvosAttacks:
 	db 20, SWIFT
 	db 26, EXPLOSION
 	db 29, LIGHT_SCREEN
+	db 32, RAPID_SPIN
 	db 37, THUNDERBOLT
 	db 46, IRON_HEAD
 	db 48, MIRROR_COAT
@@ -1586,6 +1589,7 @@ ElectrodeEvosAttacks:
 	db 20, SWIFT
 	db 26, EXPLOSION
 	db 29, LIGHT_SCREEN
+	db 32, RAPID_SPIN
 	db 41, THUNDERBOLT
 	db 54, IRON_HEAD
 	db 58, MIRROR_COAT
@@ -2630,7 +2634,7 @@ NoctowlEvosAttacks:
 	db 0 ; no more level-up moves
 
 CubboltEvosAttacks: ; Little Tiger
-	db EVOLVE_LEVEL, 35, ELECTIGER
+	db EVOLVE_LEVEL, 33, ELECTIGER
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
@@ -2790,7 +2794,7 @@ IgglybuffEvosAttacks:
 	db 0 ; no more level-up moves
 
 ShifurEvosAttacks: ; Shifur
-	db EVOLVE_LEVEL, 30, SNOWMAD
+	db EVOLVE_LEVEL, 28, SNOWMAD
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER

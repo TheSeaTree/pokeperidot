@@ -5,7 +5,7 @@
 
 	db ICE, DARK ; type
 	db 75 ; catch rate
-	db 114 ; base exp
+	db 124 ; base exp
 	db NO_ITEM, NO_ITEM ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
@@ -13,7 +13,7 @@
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/snowmad/front.dimensions"
 	db 0, 0, 0, 0 ; padding
-	db GROWTH_FAST ; growth rate
+	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_GROUND, EGG_FAIRY ; egg groups
 
 	; tm/hm learnset
