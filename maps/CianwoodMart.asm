@@ -22,7 +22,6 @@ CianwoodMartClerkScript:
 	setevent EVENT_EXPLAINED_BURGLAR
 	writetext CianwooMartRobbed
 	waitbutton
-;	closetext
 	jump .LowStock
 	end
 	

@@ -63,6 +63,10 @@ ENDM
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           22, 15 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91
+	map_const CIANWOOD_CAVE_1F,                             7,  6
+	map_const CIANWOOD_CAVE_B1F,                           20, 15
+	map_const CIANWOOD_CAVE_B2F,                           21, 17
+	map_const OVERLOOK_MAZE,                               29, 19
 
 	newgroup                                                      ;  4
 
@@ -145,6 +149,18 @@ ENDM
 	map_const GOLDENROD_FLOWER_SHOP,                        4,  4 ;  8
 	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
+	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
+	map_const GOLDENROD_POKECENTER_1F,                      5,  4 ; 20
+	map_const ROUTE_8_GOLDENROD_GATE,                       5,  4 ; 21
+	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 22
+	map_const DAY_CARE,                                     4,  4 ; 24
+	map_const ROUTE_1_GOLDENROD_GATE,                       5,  4 ; 13
+	map_const GOLDENROD_MART,                               6,  4
+	map_const ROUTE_11,                                    19, 14
+	map_const ROUTE_11_GOLDENROD_GATE,                      5,  4
+
+	newgroup                                                      ; 12
+
 	map_const GOLDENROD_DEPT_STORE_1F,                      8,  4 ; 11
 	map_const GOLDENROD_DEPT_STORE_2F,                      8,  4 ; 12
 	map_const GOLDENROD_DEPT_STORE_3F,                      8,  4 ; 13
@@ -153,18 +169,7 @@ ENDM
 	map_const GOLDENROD_DEPT_STORE_6F,                      8,  4 ; 16
 	map_const GOLDENROD_DEPT_STORE_ELEVATOR,                2,  2 ; 17
 	map_const GOLDENROD_DEPT_STORE_ROOF,                    8,  4 ; 18
-	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
-	map_const GOLDENROD_POKECENTER_1F,                      5,  4 ; 20
-	map_const ROUTE_8_GOLDENROD_GATE,                       5,  4 ; 21
-	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 22
-	map_const DAY_CARE,                                     4,  4 ; 24
-	map_const ROUTE_1_GOLDENROD_GATE,                       5,  4 ; 13
-	map_const GOLDENROD_MART,                               6,  4
-
-	newgroup                                                      ; 12
-
-	map_const ROUTE_11,                                    20,  9 ;  2
-	map_const ROUTE_6_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
+	map_const ROUTE_6_SURFERS_HOUSE,                        4,  4 ; 13
 
 	newgroup                                                      ; 13
 
@@ -237,7 +242,7 @@ ENDM
 	newgroup                                                      ; 24
 
 	map_const ROUTE_1,                                     33, 17 ;  1
-	map_const NEW_BARK_TOWN,                               14, 11 ;  4
+	map_const NEW_BARK_TOWN,                               14, 10 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7

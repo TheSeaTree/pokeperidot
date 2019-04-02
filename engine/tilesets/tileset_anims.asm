@@ -222,19 +222,9 @@ TilesetIcePathAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetTowerAnim:
-	dw TowerPillarTilePointer9,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer10, AnimateTowerPillarTile
-	dw TowerPillarTilePointer7,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer8,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer5,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer6,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer3,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer4,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer1,  AnimateTowerPillarTile
-	dw TowerPillarTilePointer2,  AnimateTowerPillarTile
+	dw NULL, AnimateRightFireTile
+	dw NULL, AnimateLeftFireTile
 	dw NULL,  StandingTileFrame
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
@@ -436,6 +426,52 @@ AnimateFountain:
 .frame3 INCBIN "gfx/tilesets/fountain/3.2bpp"
 .frame4 INCBIN "gfx/tilesets/fountain/4.2bpp"
 .frame5 INCBIN "gfx/tilesets/fountain/5.2bpp"
+
+AnimateLeftFireTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	and %10
+	srl a
+	inc a
+	inc a
+	and %01
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, LeftFireTileFrames
+	add hl, de
+	ld sp, hl
+	ld hl, vTiles2 tile $24
+	jp WriteTile
+	
+LeftFireTileFrames:
+	INCBIN "gfx/tilesets/fire/left_1.2bpp"
+	INCBIN "gfx/tilesets/fire/left_2.2bpp"
+	
+AnimateRightFireTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	and %10
+	srl a
+	inc a
+	inc a
+	and %01
+	swap a
+	ld e, a
+	ld d, 0
+	ld hl, RightFireTileFrames
+	add hl, de
+	ld sp, hl
+	ld hl, vTiles2 tile $25
+	jp WriteTile
+
+RightFireTileFrames:
+	INCBIN "gfx/tilesets/fire/right_1.2bpp"
+	INCBIN "gfx/tilesets/fire/right_2.2bpp"
 
 AnimateWaterTile:
 ; Draw a water tile for the current frame in VRAM tile at de.

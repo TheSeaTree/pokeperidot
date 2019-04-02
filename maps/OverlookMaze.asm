@@ -1,16 +1,14 @@
 	const_def 2 ; object constants
 
-Route11_MapScripts:
+OverlookMaze_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route11_MapEvents:
+OverlookMaze_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  23, 23, ROUTE_11_GOLDENROD_GATE, 1
-	warp_event  24, 23, ROUTE_11_GOLDENROD_GATE, 2
+	db 0 ; warp events
 	
 	db 0 ; coord events
 

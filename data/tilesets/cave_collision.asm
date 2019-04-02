@@ -62,8 +62,8 @@
 	tilecoll WATER, WATER, WATER, WATER ; 3d
 	tilecoll WATER, WATER, WATER, WATER ; 3e
 	tilecoll FLOOR, FLOOR, PIT, FLOOR ; 3f
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 40
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 41
+	tilecoll FLOOR, UP_WALL, FLOOR, FLOOR ; 40
+	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; 41
 	tilecoll WALL, WALL, WALL, WALL ; 42
 	tilecoll WALL, WALL, WALL, WALL ; 43
 	tilecoll WALL, WALL, WALL, WALL ; 44

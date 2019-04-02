@@ -1738,10 +1738,14 @@ StatsScreenDPad:
 	ret
 	
 BillsPC_PlaceShinyIcon:
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	cp EGG
+	ret z
 	ld bc, wTempMonDVs
 	farcall CheckShininess
 	ret nc
-	hlcoord  7, 12
+	hlcoord  6, 12
 	ld [hl], "*"
 	ret
 
@@ -1931,8 +1935,8 @@ TryWithdrawPokemon:
 	ret
 
 ReleasePKMN_ByePKMN:
-	hlcoord 0, 0
-	lb bc, 15, 8
+	hlcoord 1, 4
+	lb bc,  7, 7
 	call ClearBox
 	hlcoord 8, 14
 	lb bc, 1, 3

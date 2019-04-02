@@ -119,8 +119,9 @@ Route6UndergroundPathSignText:
 Route6_MapEvents:
 	db 0, 0 ; filler
 
-	db 1; warp events
+	db 2; warp events
 	warp_event  3, 19, ROUTE_6_UNDERGROUND, 1
+	warp_event 29,  9, ROUTE_6_SURFERS_HOUSE, 1
 
 	db 0 ; coord events
 

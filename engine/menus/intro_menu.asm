@@ -334,6 +334,7 @@ Continue:
 	farcall _LoadData
 	call LoadStandardMenuHeader
 	call DisplaySaveInfoOnContinue
+	farcall MainMenu_PrintCurrentTimeAndDay
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld c, 20
@@ -476,12 +477,12 @@ DisplaySaveInfoOnContinue:
 	call CheckRTCStatus
 	and %10000000
 	jr z, .clock_ok
-	lb de, 4, 8
+	lb de, 4, 0
 	call DisplayContinueDataWithRTCError
 	ret
 
 .clock_ok
-	lb de, 4, 8
+	lb de, 4, 0
 	call DisplayNormalContinueData
 	ret
 

@@ -7,111 +7,111 @@ Route5_MapScripts:
 	db 0 ; callbacks
 
 TrainerBugCatcherEddie:
-	trainer BUG_CATCHER, EDDIE, EVENT_BEAT_BUG_CATCHER_EDDIE, Route5TrainerText, Route5WinText, 0, .Script
+	trainer BUG_CATCHER, EDDIE, EVENT_BEAT_BUG_CATCHER_EDDIE, BugCatcherEddieText, BugCatcherEddieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext BugCatcherEddieAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerBeautyLily:
-	trainer BEAUTY, LILY, EVENT_BEAT_BEAUTY_LILY, Route5TrainerText, Route5WinText, 0, .Script
+	trainer BEAUTY, LILY, EVENT_BEAT_BEAUTY_LILY, BeautyLilyText, BeautyLilyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext BeautyLilyAfterText
 	waitbutton
 	closetext
 	end		
 
 TrainerCamperJames:
-	trainer CAMPER, JAMES, EVENT_BEAT_CAMPER_JAMES, Route5TrainerText, Route5WinText, 0, .Script
+	trainer CAMPER, JAMES, EVENT_BEAT_CAMPER_JAMES, CamperJamesText, CamperJamesWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext CamperJamesAfterText
 	waitbutton
 	closetext
 	end	
 
 TrainerPicnickerJess:
-	trainer PICNICKER, JESS, EVENT_BEAT_PICNICKER_JESS, Route5TrainerText, Route5WinText, 0, .Script
+	trainer PICNICKER, JESS, EVENT_BEAT_PICNICKER_JESS, PicnickerJessText, PicnickerJessWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext PicnickerJessAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerYoungsterBen:
-	trainer YOUNGSTER, BEN, EVENT_BEAT_YOUNGSTER_BEN, Route5TrainerText, Route5WinText, 0, .Script
+	trainer YOUNGSTER, BEN, EVENT_BEAT_YOUNGSTER_BEN, YoungsterBenText, YoungsterBenWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext YoungsterBenAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerLassElizabeth:
-	trainer LASS, ELIZABETH, EVENT_BEAT_LASS_ELIZABETH, Route5TrainerText, Route5WinText, 0, .Script
+	trainer LASS, ELIZABETH, EVENT_BEAT_LASS_ELIZABETH, LassElizabethText, LassElizabethWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext LassElizabethAfterText
 	waitbutton
 	closetext
 	end
 	
 TrainerBugCatcherLonnie:
-	trainer BUG_CATCHER, LONNIE, EVENT_BEAT_BUG_CATCHER_LONNIE, Route5TrainerText, Route5WinText, 0, .Script
+	trainer BUG_CATCHER, LONNIE, EVENT_BEAT_BUG_CATCHER_LONNIE, BugCatcherLonnieText, BugCatcherLonnieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext BugCatcherLonnieAfterText
 	waitbutton
 	closetext
 	end
 
 TrainerBugCatcherOwen:
-	trainer BUG_CATCHER, OWEN, EVENT_BEAT_BUG_CATCHER_OWEN, Route5TrainerText, Route5WinText, 0, .Script
+	trainer BUG_CATCHER, OWEN, EVENT_BEAT_BUG_CATCHER_OWEN, BugCatcherOwenText, BugCatcherOwenWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext BugCatcherOwenAfterText
 	waitbutton
 	closetext
 	end
 	
 TrainerLassHolly:
-	trainer LASS, HOLLY, EVENT_BEAT_LASS_HOLLY, Route5TrainerText, Route5WinText, 0, .Script
+	trainer LASS, HOLLY, EVENT_BEAT_LASS_HOLLY, LassHollyText, LassHollyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext LassHollyAfterText
 	waitbutton
 	closetext
 	end
 	
 TrainerSchoolboyGus:
-	trainer SCHOOLBOY, GUS, EVENT_BEAT_SCHOOLBOY_GUS, Route5TrainerText, Route5WinText, 0, .Script
+	trainer SCHOOLBOY, GUS, EVENT_BEAT_SCHOOLBOY_GUS, SchoolboyGusText, SchoolboyGusWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route5WinText
+	writetext SchoolboyGusAfterText
 	waitbutton
 	closetext
 	end
@@ -199,19 +199,179 @@ TrainerCooltrainerFAnya:
 Route5FruitTree:
 	fruittree FRUITTREE_ROUTE_5
 	
-Route5UndergroundPathSign:
-	jumptext Route5UndergroundPathSignText
+LassElizabethText:
+	text "You just made it"
+	line "to this route too?"
+	
+	para "Hehe! Show me what"
+	line "you found!"
+	done
+	
+LassElizabethWinText:
+	text "Where did you come"
+	line "from? Your team is"
+	cont "strong!"
+	done
+	
+LassElizabethAfterText:
+	text "You can find some"
+	line "really strong"
+	cont "#MON if you"
+	cont "explore!"
+	done
+	
+CamperJamesText:
+	text "My #MON changed"
+	line "shape after a"
+	cont "battle!"
+	done
+	
+CamperJamesWinText:
+	text "Darn, I thought"
+	line "this new form"
+	cont "would be strong."
+	done
+	
+CamperJamesAfterText:
+	text "Not every #MON"
+	line "will evolve with"
+	cont "battles."
+	done
+	
+PicnickerJessText:
+	text "It's good to have"
+	line "a well-rounded"
+	cont "group of #MON!"
+	done
+	
+PicnickerJessWinText:
+	text "Ah! I didn't think"
+	line "of that weakness!"
+	done
+	
+PicnickerJessAfterText:
+	text "Every #MON will"
+	line "have some kind of"
+	cont "weakness. Nothing"
+	cont "is perfect."
+	done
 
-HouseForSaleSign:
-	jumptext HouseForSaleSignText
+YoungsterBenText:
+	text "Hey! You scared"
+	line "away that #MON!"
+	done
+	
+YoungsterBenWinText:
+	text "I was trying to"
+	line "take a picture of"
+	cont "a SLOWPOKE!"
+	done
+	
+YoungsterBenAfterText:
+	text "I hope I can find"
+	line "another SLOWPOKE"
+	cont "to photograph."
+	done
+	
+BeautyLilyText:	
+	text "Flower #MON are so"
+	line "pretty!"
+	done
+	
+BeautyLilyWinText:
+	text "Don't you think my"
+	line "#MON are cute?"
+	done
 
-Route5TrainerText:
-	text "I am a"
-	line "#MON trainer!"
-	done	
+BeautyLilyAfterText:
+	text "I love the smell"
+	line "of these flowers"
+	cont "combined with the"
+	cont "ocean breeze!"
+	done
+	
+BugCatcherEddieText:
+	text "Buzz buzz!"
+	done
 
-Route5WinText:
-	text "I lost."
+BugCatcherEddieWinText:
+	text "Buzzzzz? Buzz…"
+	done
+	
+BugCatcherEddieAfterText:
+	text "Ahem… Sorry."
+	
+	para "I can get carried"
+	line "away."
+	done
+
+BugCatcherLonnieText:
+	text "BUG #MON grow"
+	line "quickly!"
+	done
+
+BugCatcherLonnieWinText:
+	text "My #MON haven't"
+	line "grown fast enough."
+	done
+	
+BugCatcherLonnieAfterText:
+	text "This won't stop me"
+	line "from training BUG"
+	cont "#MON!"
+	done
+	
+BugCatcherOwenText:
+	text "GUS told me not to"
+	line "let anyone bug him"
+	cont "on his date."
+	done
+	
+BugCatcherOwenWinText:
+	text "GUS isn't going to"
+	line "like this…"
+	done
+
+BugCatcherOwenAfterText:
+	text "Maybe if you beat"
+	line "him too he won't"
+	cont "be as mad at me."
+	done
+	
+LassHollyText:
+	text "I'm on a date"
+	line "right now!"
+	done
+	
+LassHollyWinText:
+	text "To be honest, it's"
+	line "not going well."
+	done
+	
+LassHollyAfterText:	
+	text "I told GUS that I"
+	line "would hang out if"
+	cont "he would give me"
+	cont "a berry."
+	done
+	
+SchoolboyGusText:
+	text "I found this GOLD"
+	line "BERRY tree all on"
+	cont "my own!"
+	done
+	
+SchoolboyGusWinText:
+	text "You won fair and"
+	line "square. Take a"
+	cont "GOLD BERRY."
+	done
+
+SchoolboyGusAfterText:
+	text "GOLD BERRIES are"
+	line "very rare."
+	
+	para "Girls love them."
 	done
 	
 AnyaExplaination:
@@ -301,31 +461,15 @@ AlreadyGotTotodile:
 	cont "beaten me."
 	done
 
-Route5UndergroundPathSignText:
-	text "UNDERGROUND PATH"
-
-	para "CERULEAN CITY -"
-	line "VERMILION CITY"
-	done
-
-HouseForSaleSignText:
-	text "What's this?"
-
-	para "House for Sale…"
-	line "Nobody lives here."
-	done
-
 Route5_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 1 ; warp events
 	warp_event 43, 13, ROUTE_5_SUPER_ROD_HOUSE, 1
-	warp_event 25, 3, ROUTE_5_SUPER_ROD_HOUSE, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 17, 17, BGEVENT_READ, Route5UndergroundPathSign
+	db 0 ; bg events
 
 	db 12 ; object events
 	object_event 4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherEddie, -1

@@ -26,10 +26,7 @@ UnknownText_0x1c40e6::
 	prompt
 
 UnknownText_0x1c411c::
-	text "Set with the"
-	line "Control Pad."
-
-	para "Confirm: A Button"
+	text "Confirm: A Button"
 	line "Cancel:  B Button"
 	done
 

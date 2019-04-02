@@ -14,14 +14,12 @@ VioletPokecenterNurse:
 
 VioletPokecenter1FGameboyKidScript:
 	jumptextfaceplayer VioletPokecenter1FGameboyKidText
-	end
 
 VioletPokecenter1FGentlemanScript:
 	jumptextfaceplayer VioletPokecenter1FGentlemanText
 
 VioletPokecenter1FYoungsterScript:
 	jumptextfaceplayer VioletPokecenter1FYoungsterText
-	end
 
 UnknownText_0x6972d:
 	text "I've been thinking"

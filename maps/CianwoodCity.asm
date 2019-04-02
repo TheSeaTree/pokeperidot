@@ -295,7 +295,7 @@ CianwoodPokeSeerSignText:
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event 17, 41, MANIAS_HOUSE, 1
 	warp_event 20, 15, GOLDENROD_GYM, 1
 	warp_event 19, 21, CIANWOOD_POKECENTER_1F, 1
@@ -305,6 +305,7 @@ CianwoodCity_MapEvents:
 	warp_event  9,  5, POKE_SEERS_HOUSE, 1
 	warp_event  6, 41, PALEROCK_MOUNTAIN_3F, 2
 	warp_event 18,  7, CIANWOOD_CHURCH, 1
+	warp_event  8,  3, CIANWOOD_CAVE_1F, 1
 
 	db 1 ; coord events
 	coord_event 11, 20, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
@@ -321,5 +322,5 @@ CianwoodCity_MapEvents:
 	object_event  8, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
-	object_event 16, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CianwoodCityLookout, EVENT_EXPLAINED_BURGLAR
-	object_event 11, 19, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to
+	object_event 16, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLookout, EVENT_EXPLAINED_BURGLAR
+	object_event 11, 19, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to

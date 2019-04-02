@@ -97,6 +97,10 @@ DayCareLadyScript:
 	end
 
 DayCareBookshelf:
+;	opentext
+;	special GiveOddEgg
+;	closetext
+;	end
 	jumpstd difficultbookshelf
 
 Text_GrampsLookingForYou:
@@ -189,9 +193,10 @@ DayCare_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event  0,  1, BGEVENT_READ, DayCareBookshelf
 	bg_event  1,  1, BGEVENT_READ, DayCareBookshelf
+	bg_event  7,  3, BGEVENT_READ, DayCareBookshelf
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Inside, EVENT_DAY_CARE_MAN_IN_DAY_CARE

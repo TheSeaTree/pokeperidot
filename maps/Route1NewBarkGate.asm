@@ -38,8 +38,8 @@ Route1NewBarkGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, NEW_BARK_TOWN, 6
-	warp_event  5,  0, NEW_BARK_TOWN, 7
+	warp_event  4,  0, NEW_BARK_TOWN, 5
+	warp_event  5,  0, NEW_BARK_TOWN, 6
 	warp_event  4,  7, ROUTE_1, 1
 	warp_event  5,  7, ROUTE_1, 1
 

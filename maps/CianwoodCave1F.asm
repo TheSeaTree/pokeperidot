@@ -1,17 +1,17 @@
 	const_def 2 ; object constants
 
-Route11_MapScripts:
+CianwoodCave1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route11_MapEvents:
+CianwoodCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  23, 23, ROUTE_11_GOLDENROD_GATE, 1
-	warp_event  24, 23, ROUTE_11_GOLDENROD_GATE, 2
-	
+	warp_event  3,  9, CIANWOOD_CITY, 10
+	warp_event 11,  3, CIANWOOD_CAVE_B1F, 1
+
 	db 0 ; coord events
 
 	db 0 ; bg events

@@ -13,8 +13,8 @@ GoldenrodGym_MapScripts:
 	db 0 ; scene scripts
 
 	db 2 ; callbacks
-	callback MAPCALLBACK_TILES, .GoldenrodDoorCallback
 	callback MAPCALLBACK_NEWMAP, .PrepareGym
+	callback MAPCALLBACK_TILES, .GoldenrodDoorCallback
 	
 .GoldenrodDoorCallback
 	checkevent GOLDENROD_GYM_DOOR_1
@@ -69,6 +69,17 @@ GoldenrodGymWhitneyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
+	setevent GOLDENROD_GYM_DOOR_1
+	setevent GOLDENROD_GYM_DOOR_2
+	setevent GOLDENROD_GYM_DOOR_3
+	setevent EVENT_BEAT_GUITARIST_JOEL
+	setevent EVENT_BEAT_GUITARIST_TREVOR	
+	setevent EVENT_BEAT_BIKER_JERRY
+	setevent EVENT_BEAT_GUITARIST_MARCEL
+	setevent EVENT_BEAT_GUITARIST_IVAN
+	setevent EVENT_BEAT_GUITARIST_CONRAD
+	setevent GOLDENROD_GYM_DOOR_5
+	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	opentext
 	writetext PlayerReceivedPlainBadgeText
 	playsound SFX_GET_BADGE
@@ -77,6 +88,8 @@ GoldenrodGymWhitneyScript:
 	checkcode VAR_BADGES
 .FightDone:
 	opentext
+	checkevent EVENT_GOT_TM_SWAGGER
+	iftrue .GotSwagger
 	writetext WhitneyPlainBadgeText
 	buttonsound
 	verbosegiveitem TM_SWAGGER
@@ -728,7 +741,7 @@ GoldenrodGym_MapEvents:
 
 	db 12 ; object events
 	object_event  5, 34, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event 22, 33, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
+	object_event 22, 33, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
 	object_event 12, 23, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristJoel, -1
 	object_event 12, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristTrevor, -1
 	object_event 20, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristAndy, -1

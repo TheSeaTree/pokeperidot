@@ -62,6 +62,7 @@ VioletMoveTutor_Blocks:
 VioletWeatherHouse_Blocks:
 VioletTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
+Route6SurfersHouse_Blocks:
 	INCBIN "maps/House1.blk"
 
 CherrygroveInn_Blocks:
@@ -80,6 +81,7 @@ Route40BattleTowerGate_Blocks:
 Route1CherrygroveGate_Blocks:
 Route1NewBarkGate_Blocks:
 Route1GoldenrodGate_Blocks:
+Route11GoldenrodGate_Blocks:
 	INCBIN "maps/NorthSouthGate.blk"
 
 Route4_Blocks:
@@ -211,7 +213,6 @@ NationalParkBugContest_Blocks:
 	INCBIN "maps/NationalPark.blk"
 
 Route5UndergroundPathEntrance_Blocks:
-Route6UndergroundPathEntrance_Blocks:
 	INCBIN "maps/UndergroundPathEntrance.blk"
 
 KurtsHouse_Blocks:
@@ -478,4 +479,16 @@ AzaleaApartmentRight_Blocks:
 	
 PaintersForest_Blocks:
 	INCBIN "maps/PaintersForest.blk"
+	
+CianwoodCave1F_Blocks:
+	INCBIN "maps/CianwoodCave1F.blk"
+
+CianwoodCaveB1F_Blocks:
+	INCBIN "maps/CianwoodCaveB1F.blk"
+
+CianwoodCaveB2F_Blocks:
+	INCBIN "maps/CianwoodCaveB2F.blk"
+	
+OverlookMaze_Blocks:
+	INCBIN "maps/OverlookMaze.blk"
 	

@@ -15,6 +15,10 @@ _InterpretBattleMenu::
 	rst FarCall
 
 	call Draw2DMenu
+	hlcoord 8, 12
+	ld [hl], "♥"
+	hlcoord 8, 17
+	ld [hl], "♠"
 	farcall MobileTextBorder
 	call UpdateSprites
 	call ApplyTilemap

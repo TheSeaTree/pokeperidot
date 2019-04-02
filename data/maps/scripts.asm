@@ -34,6 +34,9 @@ INCLUDE "maps/RadioTower1F.asm"
 INCLUDE "maps/RadioTower2F.asm"
 INCLUDE "maps/RadioTower3F.asm"
 INCLUDE "maps/RadioTower4F.asm"
+INCLUDE "maps/CianwoodCave1F.asm"
+INCLUDE "maps/CianwoodCaveB1F.asm"
+INCLUDE "maps/CianwoodCaveB2F.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -94,6 +97,7 @@ INCLUDE "maps/PlayersNeighborsHouse.asm"
 INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route1NewBarkGate.asm"
 INCLUDE "maps/Route1GoldenrodGate.asm"
+INCLUDE "maps/Route11GoldenrodGate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -171,7 +175,7 @@ SECTION "Map Scripts 17", ROMX
 
 INCLUDE "maps/MahoganyTown.asm"
 INCLUDE "maps/Route3AzaleaGate.asm"
-INCLUDE "maps/Route6UndergroundPathEntrance.asm"
+INCLUDE "maps/Route6SurfersHouse.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
@@ -273,3 +277,4 @@ INCLUDE "maps/HiddenPowerCave.asm"
 INCLUDE "maps/Factory1F.asm"
 INCLUDE "maps/FactoryB1.asm"
 INCLUDE "maps/FactoryBack.asm"
+INCLUDE "maps/OverlookMaze.asm"

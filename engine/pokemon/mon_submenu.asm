@@ -71,6 +71,10 @@ MonMenuLoop:
 	ret
 
 PopulateMonMenu:
+	hlcoord 6, 14
+	ld [hl], "♦"
+	hlcoord 6, 17
+	ld [hl], "♠"
 	call MenuBoxCoord2Tile
 	ld bc, 2 * SCREEN_WIDTH + 2
 	add hl, bc
@@ -252,6 +256,10 @@ BattleMonMenu:
 	call MenuBox
 	call UpdateSprites
 	call PlaceVerticalMenuItems
+	hlcoord 11, 14
+	ld [hl], "♦"
+	hlcoord 11, 17
+	ld [hl], "♠"
 	call WaitBGMap
 	call CopyMenuData
 	ld a, [wMenuDataFlags]

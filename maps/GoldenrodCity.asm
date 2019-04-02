@@ -239,7 +239,7 @@ GoldenrodCityRivalLossText:
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event 19, 15, GOLDENROD_POKECENTER_1F, 1
 	warp_event 21, 25, GOLDENROD_MART, 1
 	warp_event 12,  7, CIANWOOD_GYM, 1 ;	warp_event 12,  7, GOLDENROD_GYM, 1
@@ -249,6 +249,7 @@ GoldenrodCity_MapEvents:
 	warp_event 28, 29, ROUTE_1_GOLDENROD_GATE, 2
 	warp_event 25, 18, ROUTE_8_GOLDENROD_GATE, 1
 	warp_event 25, 19, ROUTE_8_GOLDENROD_GATE, 2
+	warp_event  5,  5, ROUTE_11_GOLDENROD_GATE, 3
 
 	db 1 ; coord events
 	coord_event 12, 8, -1, GoldenrodSetupGym

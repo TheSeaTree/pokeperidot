@@ -1,7 +1,7 @@
 TreeMons:
 ; entries correspond to TREEMON_SET_* constants
-	dw TreeMonSet_City
 	dw TreeMonSet_Canyon
+	dw TreeMonSet_City
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
 	dw TreeMonSet_Kanto

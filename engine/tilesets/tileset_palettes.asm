@@ -12,6 +12,8 @@ LoadSpecialMapPalette:
 	jr z, .radio_tower
 	cp TILESET_MANSION
 	jr z, .mansion_mobile
+	cp TILESET_TOWER
+	jr z, .tower
 	jr .do_nothing
 
 .pokecom_2f
@@ -30,6 +32,11 @@ LoadSpecialMapPalette:
 	cp INDOOR ; Hall of Fame
 	jr z, .do_nothing
 	call LoadIcePathPalette
+	scf
+	ret
+	
+.tower
+	call LoadTowerPalette
 	scf
 	ret
 
@@ -95,6 +102,17 @@ LoadHousePalette:
 
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
+
+LoadTowerPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, TowerPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+TowerPalette:
+INCLUDE "gfx/tilesets/tower.pal"
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)

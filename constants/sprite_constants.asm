@@ -109,6 +109,8 @@
 	const SPRITE_AMBER
 	const SPRITE_BOOK
 	const SPRITE_BUSH
+	const SPRITE_SWIMMER_GUY_LAND
+	const SPRITE_SWIMMER_GIRL_LAND
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

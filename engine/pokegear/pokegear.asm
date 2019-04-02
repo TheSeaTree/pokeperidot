@@ -1808,11 +1808,11 @@ _TownMap:
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_UP
-	jr nz, .pressed_up
+	jr nz, .pressed_down
 
 	ld a, [hl]
 	and D_DOWN
-	jr nz, .pressed_down
+	jr nz, .pressed_up
 .loop2
 	push de
 	farcall PlaySpriteAnimations
@@ -2062,10 +2062,10 @@ FlyMapScroll:
 	ld hl, hJoyLast
 	ld a, [hl]
 	and D_UP
-	jr nz, .ScrollNext
+	jr nz, .ScrollPrev
 	ld a, [hl]
 	and D_DOWN
-	jr nz, .ScrollPrev
+	jr nz, .ScrollNext
 	ret
 
 .ScrollNext:

@@ -49,8 +49,8 @@ NewBarkForestGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, ILEX_FOREST, 1
 	warp_event  0,  5, ILEX_FOREST, 2
-	warp_event  9,  4, NEW_BARK_TOWN, 8
-	warp_event  9,  5, NEW_BARK_TOWN, 9
+	warp_event  9,  4, NEW_BARK_TOWN, 7
+	warp_event  9,  5, NEW_BARK_TOWN, 8
 
 	db 0 ; coord events
 

@@ -18,14 +18,11 @@ endr
 	ret
 
 .WrapAroundTimes:
-	dw wBuffer4
-	db 7, 4
-
 	dw wBuffer5
-	db 24, 12
+	db 24, 2
 
 	dw wBuffer6
-	db 60, 15
+	db 60, 5
 
 RestartClock:
 ; If we're here, we had an RTC overflow.
@@ -36,9 +33,6 @@ RestartClock:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call LoadStandardMenuHeader
-	call ClearTileMap
-;	ld hl, .Text_SetWithControlPad
-;	call PrintText
 	call .SetClock
 	call ExitMenu
 	pop bc
@@ -58,15 +52,15 @@ RestartClock:
 	text_end
 
 .SetClock:
-	farcall InitClock
-;	ld a, 1
-;	ld [wBuffer1], a ; which digit
-;	ld [wBuffer2], a
-;	ld a, 8
-;	ld [wBuffer3], a
+;	farcall InitClock
+	ld a, 1
+	ld [wBuffer1], a ; which digit
+	ld [wBuffer2], a
+	ld a, 10
+	ld [wBuffer3], a
 	call UpdateTime
-	call GetWeekday
-	ld [wBuffer4], a
+;	call GetWeekday
+;	ld [wBuffer4], a
 	ldh a, [hHours]
 	ld [wBuffer5], a
 	ldh a, [hMinutes]
@@ -82,7 +76,7 @@ RestartClock:
 ;	call PrintText
 ;	call YesNoBox
 ;	jr c, .cancel
-	ld a, [wBuffer4]
+;	ld a, [wBuffer4]
 	ld [wStringBuffer2], a
 	ld a, [wBuffer5]
 	ld [wStringBuffer2 + 1], a
@@ -171,35 +165,40 @@ RestartClock:
 	ld hl, wBuffer1
 	dec [hl]
 	jr nz, .done_scroll
-	ld [hl], $3
+	ld [hl], $2
 	jr .done_scroll
 
 .pressed_right
 	ld hl, wBuffer1
 	inc [hl]
 	ld a, [hl]
-	cp $4
+	cp $2
 	jr c, .done_scroll
-	ld [hl], $1
+	ld [hl], $2
 
 .done_scroll
 	xor a
 	ret
 
 .PrintTime:
-	hlcoord 0, 5
-	ld b, 5
-	ld c, 18
+	hlcoord 0, 8
+	ld b, 3
+	ld c, 8
 	call TextBox
-	decoord 11, 8
-	ld a, [wBuffer4]
-	ld b, a
-	farcall PrintDayOfWeek
+	decoord 11, 10
+	hlcoord 0, 12
+	ld [hl], "♣"
+	hlcoord 9, 12
+	ld [hl], "♠"
+	hlcoord 4, 8
+	ld [hl], "♠"
+	hlcoord 9, 9
+	ld [hl], "♣"
 	ld a, [wBuffer5]
 	ld b, a
 	ld a, [wBuffer6]
 	ld c, a
-	decoord 1, 8
+	decoord 1, 10
 	farcall PrintHoursMins
 	ld a, [wBuffer2]
 	lb de, " ", " "

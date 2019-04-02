@@ -148,7 +148,7 @@ ENDM
 
 	map_attributes Route12, ROUTE_12, $43, 0
 
-	map_attributes Route11, ROUTE_11, $0f, 0
+	map_attributes Route11, ROUTE_11, $05, 0
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 7
@@ -236,7 +236,7 @@ ENDM
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes Route3AzaleaGate, ROUTE_3_AZALEA_GATE, $00, 0
-	map_attributes Route6UndergroundPathEntrance, ROUTE_6_UNDERGROUND_PATH_ENTRANCE, $00, 0
+	map_attributes Route6SurfersHouse, ROUTE_6_SURFERS_HOUSE, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
 	map_attributes KogasRoom, KOGAS_ROOM, $00, 0
@@ -310,4 +310,8 @@ ENDM
 	map_attributes VioletTradeHouse, VIOLET_TRADE_HOUSE, $00, 0
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
-	
+	map_attributes Route11GoldenrodGate, ROUTE_11_GOLDENROD_GATE, $00, 0	
+	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $09, 0
+	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
+	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
+	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0

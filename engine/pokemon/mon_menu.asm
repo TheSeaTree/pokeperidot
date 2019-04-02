@@ -136,7 +136,6 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_SURF,       MonMenu_Surf
 	dbw MONMENUITEM_STRENGTH,   MonMenu_Strength
 	dbw MONMENUITEM_FLASH,      MonMenu_Flash
-	dbw MONMENUITEM_WHIRLPOOL,  MonMenu_Whirlpool
 	dbw MONMENUITEM_DIG,        MonMenu_Dig
 	dbw MONMENUITEM_TELEPORT,   MonMenu_Teleport
 	dbw MONMENUITEM_SOFTBOILED, MonMenu_Softboiled_MilkDrink
@@ -1231,9 +1230,9 @@ PlaceMoveData:
 	ret
 
 String_MoveType_Top:
-	db "┌─────┐@"
+	db "♣─────┐@"
 String_MoveType_Bottom:
-	db "│TYPE/└@"
+	db "│TYPE/└────────────♦@"
 String_MoveAtk:
 	db "ATK/@"
 String_MoveNoPower:
@@ -1269,7 +1268,7 @@ Function132da:
 	ret
 
 .legal
-	hlcoord 16, 0
+	hlcoord 1, 0
 	ld [hl], "◀"
 	ret
 

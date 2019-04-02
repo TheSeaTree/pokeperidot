@@ -241,6 +241,12 @@ KRIS EQU __enum__
 	trainerclass BURGLAR ; 2f
 	const ALLEN
 	const LAMAAR
+	const AVERY
+	const MARCUS
+	const HARVEY
+	const MANUEL
+	const SHAWN
+	const DUKE
 	
 	trainerclass FIREBREATHER ; 30
 	const BRIAN
@@ -276,6 +282,9 @@ KRIS EQU __enum__
 	trainerclass EXECUTIVEF ; 37
 
 	trainerclass SAGE ; 38
+	const ABBOT
+	const CALEB
+	const LO
 
 	trainerclass MEDIUM ; 39
 	
