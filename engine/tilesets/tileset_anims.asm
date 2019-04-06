@@ -432,11 +432,11 @@ AnimateLeftFireTile:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	and %10
+	and %110
 	srl a
 	inc a
 	inc a
-	and %01
+	and %011
 	swap a
 	ld e, a
 	ld d, 0
@@ -449,18 +449,18 @@ AnimateLeftFireTile:
 LeftFireTileFrames:
 	INCBIN "gfx/tilesets/fire/left_1.2bpp"
 	INCBIN "gfx/tilesets/fire/left_2.2bpp"
+	INCBIN "gfx/tilesets/fire/right_3.2bpp"
+	INCBIN "gfx/tilesets/fire/right_4.2bpp"
 	
 AnimateRightFireTile:
 	ld hl, sp+0
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	and %10
-	srl a
-	inc a
-	inc a
-	and %01
-	swap a
+	and %110
+	add a
+	add a
+	add a
 	ld e, a
 	ld d, 0
 	ld hl, RightFireTileFrames
@@ -472,6 +472,8 @@ AnimateRightFireTile:
 RightFireTileFrames:
 	INCBIN "gfx/tilesets/fire/right_1.2bpp"
 	INCBIN "gfx/tilesets/fire/right_2.2bpp"
+	INCBIN "gfx/tilesets/fire/left_4.2bpp"
+	INCBIN "gfx/tilesets/fire/left_3.2bpp"
 
 AnimateWaterTile:
 ; Draw a water tile for the current frame in VRAM tile at de.
