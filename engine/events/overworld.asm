@@ -1621,6 +1621,8 @@ BikeFunction:
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	jr z, .GetOnBike
+	cp PLAYER_RUN
+	jr z, .GetOnBike
 	cp PLAYER_BIKE
 	jr z, .GetOffBike
 	jr .CannotUseBike

@@ -72,6 +72,7 @@ VioletGymB1FalknerScript:
 	writetext FalknerTMMudSlapText
 	waitbutton
 	closetext
+	setmapscene VIOLET_CITY, SCENE_VIOLETCITY_RUNNING_SHOES
 	end
 .GotFuryCutter:
 	writetext FalknerTMMudSlapText

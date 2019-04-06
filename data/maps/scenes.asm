@@ -38,4 +38,5 @@ MapScenes::
 	scene_var MAHOGANY_MART_1F,                            wMahoganyMart1FSceneID
 	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
 	scene_var ROUTE_1,                                     wRoute1SceneID
+	scene_var VIOLET_CITY,								   wVioletCitySceneID
 	db -1

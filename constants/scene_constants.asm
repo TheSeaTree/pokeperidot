@@ -79,6 +79,7 @@ SCENE_FINISHED EQU 1
 	const_def
 	const SCENE_VIOLETCITY_NOTHING              ; 0
 	const SCENE_VIOLETCITY_DEFEATED_RIVAL       ; 1	
+	const SCENE_VIOLETCITY_RUNNING_SHOES
 	
 ; wAzaleaTownSceneID
 	const_def

@@ -6,20 +6,34 @@
 	const VIOLETCITY_YOUNGSTER
 	const VIOLETCITY_FRUIT_TREE
 	const VIOLETCITY_SILVER
+	const VIOLETCITY_BUSH
+	const VIOLETCITY_SHOEMAN
 
 VioletCity_MapScripts:
-	db 0 ; scene scripts
+	db 3 ; scene scripts
+	scene_script .DummyScene0
+	scene_script .DummyScene1
+	scene_script .ShoesScene
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
+.DummyScene0:
+	end
+	
+.DummyScene1:
+	end
+	
+.ShoesScene:
+	moveobject VIOLETCITY_SHOEMAN, 36, 9
+	appear VIOLETCITY_SHOEMAN
+	end
+	
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_VIOLET
 	return
 
 VioletCityRivalBattleScene1:
-	checkevent EVENT_BEAT_RIVAL_1
-	iftrue .skip
 	moveobject VIOLETCITY_SILVER, 33, 8
 	opentext
 	writetext VioletCityRivalWait
@@ -32,9 +46,6 @@ VioletCityRivalBattleScene1:
 	appear VIOLETCITY_SILVER
 	applymovement VIOLETCITY_SILVER, VioletCityRivalBattleApproachMovement1
 	jump VioletCityRivalBattleScript
-	
-.skip:
-	end
 
 VioletCityRivalBattleScript:
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -83,7 +94,38 @@ VioletCityRivalBattleScript:
 	waitsfx
 	playmapmusic
 	setevent EVENT_BEAT_RIVAL_1
+	setscene SCENE_VIOLETCITY_DEFEATED_RIVAL
 	end	
+	
+VioletCityShoeGuy:
+	turnobject VIOLETCITY_SHOEMAN, UP
+	showemote EMOTE_SHOCK, VIOLETCITY_SHOEMAN, 15
+	opentext
+	writetext ShoeGuyText1
+	waitbutton
+	closetext
+	applymovement VIOLETCITY_SHOEMAN, ShoeGuyApproach
+	turnobject PLAYER, LEFT
+	opentext
+	writetext ShoeGuyText2
+	waitbutton
+	writetext PlayerReceivedRunningShoes
+	playsound SFX_KEY_ITEM
+	setflag ENGINE_RUNNING_SHOES
+	buttonsound
+	writetext ShoeguyExplain
+	yesorno
+	iffalse .ExplainedShoes
+	writetext ExplainRunningShoes
+	waitbutton
+.ExplainedShoes
+	writetext RunningShoesCaution
+	waitbutton
+	closetext
+	applymovement VIOLETCITY_SHOEMAN, ShoeGuyLeave
+	disappear VIOLETCITY_SHOEMAN
+	setscene SCENE_VIOLETCITY_DEFEATED_RIVAL
+	end
 	
 VioletCityFisher2:
 	jumptextfaceplayer VioletCityFisher2Text
@@ -120,6 +162,18 @@ VioletCityRivalBattleApproachMovement1:
 	step_end
 
 VioletCityRivalBattleExitMovement:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step_end
+	
+ShoeGuyApproach:
+	step UP
+	step RIGHT
+	step_end
+	
+ShoeGuyLeave:
 	step LEFT
 	step LEFT
 	step LEFT
@@ -174,6 +228,86 @@ VioletCityRivalAfterText:
 VioletCityRivalLossText:
 	text "…Humph! I knew"
 	line "you were lying."
+	done
+	
+ShoeGuyText1:
+	text "Hey, trainer! Can"
+	line "I have a moment?"
+	done
+	
+ShoeGuyText2:
+	text "You just defeated"
+	line "that gym, right?"
+	
+	para "Congrats!"
+	
+	para "Where are you"
+	line "from, kid?"
+	
+	para "…"
+	
+	para "ELKHORN TOWN, eh?"
+	
+	para "That's quite a"
+	line "long way to come"
+	cont "on foot."
+	
+	para "Hey, this might"
+	line "sound weird, but I"
+	cont "have a new pair of"
+	cont "RUNNING SHOES that"
+	cont "don't fit me."
+	
+	para "You could use them"
+	line "more than I could."
+	done
+	
+PlayerReceivedRunningShoes:
+	text "<PLAYER> got the"
+	line "RUNNING SHOES!"
+	done
+	
+ShoeguyExplain:
+	text "Would you like me"
+	line "to explain how"
+	cont "those shoes work?"
+	done
+	
+ExplainRunningShoes:
+	text "With those shoes,"
+	line "you will be able"
+	cont "to move faster as"
+	cont "long as you hold"
+	cont "the B button."
+	
+	para "If you'd rather"
+	line "run everywhere,"
+	cont "you can change the"
+	cont "running behavior"
+	cont "in the OPTIONS."
+	
+	para "When you set that"
+	line "to INVERT, hold B"
+	cont "to walk at a"
+	cont "normal pace."
+	done
+	
+RunningShoesCaution:
+	text "Be careful. Moving"
+	line "fast will alert"
+	cont "trainers and wild"
+	cont "#MON!"
+	
+	para "Anyway…"
+	
+	para "I'm sure you have"
+	line "more important"
+	cont "things to do than"
+	cont "listen to me blab"
+	cont "all day."
+	
+	para "Good luck,"
+	line "trainer!"
 	done
 	
 VioletCityFisher2Text:
@@ -236,8 +370,9 @@ VioletCity_MapEvents:
 	warp_event 15,  3, VIOLET_WEATHER_HOUSE, 1
 	warp_event  1, 15, VIOLET_TRADE_HOUSE, 1
 
-	db 1 ; coord events
-	coord_event 38, 8, -1, VioletCityRivalBattleScene1
+	db 2 ; coord events
+	coord_event 38, 8, SCENE_VIOLETCITY_NOTHING, VioletCityRivalBattleScene1
+	coord_event 38, 8, SCENE_VIOLETCITY_RUNNING_SHOES, VioletCityShoeGuy
 
 	db 5 ; bg events
 	bg_event  8, 13, BGEVENT_READ, VioletCitySign
@@ -246,12 +381,13 @@ VioletCity_MapEvents:
 	bg_event 22,  9, BGEVENT_READ, VioletCityMartSign
 	bg_event  5,  7, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 18,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
 	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
 	object_event  1, 18, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
-	object_event  1, 1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
-	object_event  5, 9, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityItemBush, -1
+	object_event  1,  1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
+	object_event  5,  9, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityItemBush, -1
+	object_event  1,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

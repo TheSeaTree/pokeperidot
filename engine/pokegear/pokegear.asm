@@ -1456,42 +1456,21 @@ RadioChannels:
 	jp LoadStation_OaksPokemonTalk
 
 .PokemonMusic:
-	call .InJohto
-	jr nc, .NoSignal
 	jp LoadStation_PokemonMusic
 
 .LuckyChannel:
-	call .InJohto
-	jr nc, .NoSignal
 	jp LoadStation_LuckyChannel
 
 .BuenasPassword:
-	call .InJohto
-	jr nc, .NoSignal
 	jp LoadStation_BuenasPassword
 
 .PlacesAndPeople:
-	call .InJohto
-	jr c, .NoSignal
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_EXPN_CARD_F, a
-	jr z, .NoSignal
 	jp LoadStation_PlacesAndPeople
 
 .LetsAllSing:
-	call .InJohto
-	jr c, .NoSignal
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_EXPN_CARD_F, a
-	jr z, .NoSignal
 	jp LoadStation_LetsAllSing
 
 .PokeFluteRadio:
-	call .InJohto
-	jr c, .NoSignal
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_EXPN_CARD_F, a
-	jr z, .NoSignal
 	jp LoadStation_PokeFluteRadio
 
 .EvolutionRadio:

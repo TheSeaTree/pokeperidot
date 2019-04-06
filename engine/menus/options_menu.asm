@@ -321,26 +321,26 @@ Options_Shoes:
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit RUNNING_SHOES, [hl]
+	bit SHOE_TOGGLE, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit RUNNING_SHOES, [hl]
+	bit SHOE_TOGGLE, [hl]
 	jr z, .ToggleOn
 	jr .ToggleOff
 
 .NonePressed:
-	bit RUNNING_SHOES, [hl]
+	bit SHOE_TOGGLE, [hl]
 	jr nz, .ToggleOn
 
 .ToggleOff:
-	res RUNNING_SHOES, [hl]
+	res SHOE_TOGGLE, [hl]
 	ld de, .Off
 	jr .Display
 
 .ToggleOn:
-	set RUNNING_SHOES, [hl]
+	set SHOE_TOGGLE, [hl]
 	ld de, .On
 
 .Display:

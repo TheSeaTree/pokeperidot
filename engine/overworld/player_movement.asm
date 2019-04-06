@@ -43,6 +43,8 @@ DoPlayerMovement::
 	jr z, .Normal
 	cp PLAYER_SKATE
 	jr z, .Ice
+	cp PLAYER_RUN
+	jr z, .Normal
 
 .Normal:
 	call .CheckForced
@@ -256,25 +258,18 @@ DoPlayerMovement::
 	ret
 
 .TryStep:
-; Surfing actually calls .TrySurf directly instead of passing through here.
-	ld a, [wPlayerState]
-	cp PLAYER_SURF
-	jr z, .TrySurf
-	cp PLAYER_SURF_PIKA
-	jr z, .TrySurf
-
 	call .CheckLandPerms
-	jr c, .bump
+	jp c, .bump
 
 	call .CheckNPC
 	and a
-	jr z, .bump
+	jp z, .bump
 	cp 2
-	jr z, .bump
+	jp z, .bump
 
 	ld a, [wPlayerStandingTile]
 	call CheckIceTile
-	jr nc, .ice
+	jp nc, .ice
 
 ; Downhill riding is slower when not moving down.
 	call .BikeCheck
@@ -300,22 +295,27 @@ DoPlayerMovement::
 	ret
 
 .walk
+	ld hl, wPokegearFlags
+	bit RUNNING_SHOES_F, [hl]
+	jr z, .holdwalk
 	ld a, [wOptions2]
-	and 1 << RUNNING_SHOES
+	and 1 << SHOE_TOGGLE
 	jr nz, .run
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
 .holdwalk
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	jr nz, .walkanim
 	ld a, STEP_WALK
 	call .DoStep
 	scf
 	ret
-
-.ice
-	ld a, STEP_ICE
-	call .DoStep
-	scf
+.walkanim
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
 	ret
 
 .run
@@ -323,6 +323,9 @@ DoPlayerMovement::
 	and B_BUTTON
 	jr nz, .holdwalk
 .holdrun
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	jr z, .runanim
 	ld a, STEP_RUN
 	call .DoStep
 	push af
@@ -330,6 +333,17 @@ DoPlayerMovement::
 	cp STANDING
 	call nz, CheckTrainerRun
 	pop af
+	scf
+	ret
+.runanim
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+
+.ice
+	ld a, STEP_ICE
+	call .DoStep
 	scf
 	ret
 

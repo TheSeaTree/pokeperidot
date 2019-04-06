@@ -115,4 +115,5 @@ OverworldSprites:
 	overworld_sprite BushSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite SwimmerGuyLandSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SwimmerGirlLandSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	
+	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
