@@ -102,10 +102,10 @@ JohtoGrassWildMons:
 	db 20, SCYTHER
 	db 20, SCYTHER
 	; nite
-	db 18, BEEDRILL
+	db 18, VENONAT
 	db 18, GLOOM
 	db 20, GLOOM
-	db 19, BEEDRILL
+	db 19, VENONAT
 	db 18, WEEPINBELL
 	db 20, SCYTHER
 	db 20, SCYTHER
@@ -142,27 +142,28 @@ JohtoGrassWildMons:
 	; morn
 	db 7, SENTRET
 	db 8, MEOWTH
-	db 7, VENONAT
-	db 8, NIDORAN_F
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
+	db 7, NIDORAN_F
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
 	; day
 	db 7, SENTRET
 	db 8, MEOWTH
-	db 7, VENONAT
-	db 8, NIDORAN_F
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
+	db 7, NIDORAN_F
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
 	; nite
 	db 7, SENTRET
 	db 8, RINRING
 	db 7, VENONAT
-	db 8, NIDORAN_F
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
-	db 8, NIDORAN_M
+	db 7, NIDORAN_F
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
+	db 7, NIDORAN_M
 
 	map_id ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -194,27 +195,27 @@ JohtoGrassWildMons:
 	map_id DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	db 4, MACHOP
-	db 5, MACHOP
-	db 6, MACHOP
-	db 8, MACHOP
-	db 9, MACHOP
+	db  4, MACHOP
+	db  5, MACHOP
+	db  6, MACHOP
+	db  8, MACHOP
+	db  9, MACHOP
 	db 11, MACHOP
 	db 11, MACHOP
 	; day
-	db 4, MACHOP
-	db 5, MACHOP
-	db 6, MACHOP
-	db 8, MACHOP
-	db 9, MACHOP
+	db  4, MACHOP
+	db  5, MACHOP
+	db  6, MACHOP
+	db  8, MACHOP
+	db  9, MACHOP
 	db 11, MACHOP
 	db 11, MACHOP
 	; nite
-	db 4, MACHOP
-	db 5, MACHOP
-	db 6, MACHOP
-	db 8, MACHOP
-	db 9, MACHOP
+	db  4, MACHOP
+	db  5, MACHOP
+	db  6, MACHOP
+	db  8, MACHOP
+	db  9, MACHOP
 	db 11, MACHOP
 	db 11, MACHOP
 	
