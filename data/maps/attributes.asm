@@ -90,7 +90,8 @@ endc
 endc
 ENDM
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, SOUTH
+	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, NORTH | SOUTH
+	connection north, Route11, ROUTE_11, 2
 	connection south, Route1, ROUTE_1, -1
 
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, SOUTH | EAST
@@ -148,7 +149,8 @@ ENDM
 
 	map_attributes Route12, ROUTE_12, $43, 0
 
-	map_attributes Route11, ROUTE_11, $05, 0
+	map_attributes Route11, ROUTE_11, $05, SOUTH
+	connection south, NewBarkTown, NEW_BARK_TOWN, -2
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 7

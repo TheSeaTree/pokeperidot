@@ -126,7 +126,7 @@ ENDM
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     28, 13 ;  1
 	map_const ROUTE_6,                                     28, 13 ;  1
-	map_const ROUTE_7,                                     21, 14 ;  1
+	map_const ROUTE_7,                                     20, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const VIOLET_CITY,                                 27, 12 ;  5
 	map_const VIOLET_MART,                                  6,  4 ;  6
@@ -156,7 +156,7 @@ ENDM
 	map_const DAY_CARE,                                     4,  4 ; 24
 	map_const ROUTE_1_GOLDENROD_GATE,                       5,  4 ; 13
 	map_const GOLDENROD_MART,                               6,  4
-	map_const ROUTE_11,                                    19, 14
+	map_const ROUTE_11,                                    32, 16
 	map_const ROUTE_11_GOLDENROD_GATE,                      5,  4
 
 	newgroup                                                      ; 12

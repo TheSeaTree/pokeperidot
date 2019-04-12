@@ -195,7 +195,7 @@ TryWildEncounter::
 .EncounterRate:
 	call GetMapEncounterRate
 	call ApplyMusicEffectOnEncounterRate
-	call ApplyCleanseTagEffectOnEncounterRate
+;	call ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	cp b
 	ret
@@ -384,7 +384,6 @@ LoadWildMonDataPointer:
 _GrassWildmonLookup:
 	ld hl, JohtoGrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
-	call _SwarmWildmonCheck
 	ret c
 	ld hl, JohtoGrassWildMons
 	ld de, JohtoGrassWildMons
@@ -395,7 +394,6 @@ _GrassWildmonLookup:
 _WaterWildmonLookup:
 	ld hl, JohtoWaterWildMons
 	ld bc, WATER_WILDDATA_LENGTH
-	call _SwarmWildmonCheck
 	ret c
 	ld hl, JohtoWaterWildMons
 	ld de, JohtoWaterWildMons
@@ -409,45 +407,6 @@ _JohtoWildmonCheck:
 	ret z
 	ld h, d
 	ld l, e
-	ret
-
-_SwarmWildmonCheck:
-	call CopyCurrMapDE
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_DUNSPARCE_SWARM_F, [hl]
-	pop hl
-	jr z, .CheckYanma
-	ld a, [wDunsparceMapGroup]
-	cp d
-	jr nz, .CheckYanma
-	ld a, [wDunsparceMapNumber]
-	cp e
-	jr nz, .CheckYanma
-	call LookUpWildmonsForMapDE
-	jr nc, _NoSwarmWildmon
-	scf
-	ret
-
-.CheckYanma:
-	push hl
-	ld hl, wSwarmFlags
-	bit SWARMFLAGS_YANMA_SWARM_F, [hl]
-	pop hl
-	jr z, _NoSwarmWildmon
-	ld a, [wYanmaMapGroup]
-	cp d
-	jr nz, _NoSwarmWildmon
-	ld a, [wYanmaMapNumber]
-	cp e
-	jr nz, _NoSwarmWildmon
-	call LookUpWildmonsForMapDE
-	jr nc, _NoSwarmWildmon
-	scf
-	ret
-
-_NoSwarmWildmon:
-	and a
 	ret
 
 _NormalWildmonOK:
@@ -961,7 +920,3 @@ RandomPhoneMon:
 
 INCLUDE "data/wild/johto_grass.asm"
 INCLUDE "data/wild/johto_water.asm"
-;INCLUDE "data/wild/kanto_grass.asm"
-;INCLUDE "data/wild/kanto_water.asm"
-;INCLUDE "data/wild/swarm_grass.asm"
-;INCLUDE "data/wild/swarm_water.asm"

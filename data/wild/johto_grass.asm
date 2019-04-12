@@ -163,7 +163,6 @@ JohtoGrassWildMons:
 	db 7, NIDORAN_M
 	db 7, NIDORAN_M
 	db 7, NIDORAN_M
-	db 7, NIDORAN_M
 
 	map_id ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -225,26 +224,26 @@ JohtoGrassWildMons:
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, DIGLETT
 	db 18, GEODUDE
-	db 19, DUNSPARCE
-	db 20, DUNSPARCE
+	db 17, CUBONE
+	db 18, CUBONE
 	; day
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, DIGLETT
 	db 18, GEODUDE
-	db 19, DUNSPARCE
-	db 20, DUNSPARCE
+	db 17, CUBONE
+	db 18, CUBONE
 	; nite
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, DIGLETT
 	db 18, GEODUDE
-	db 19, DUNSPARCE
-	db 20, DUNSPARCE
+	db 17, CUBONE
+	db 18, CUBONE
 	
 	map_id PALEROCK_MOUNTAIN_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -252,7 +251,7 @@ JohtoGrassWildMons:
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, GLIGAR
 	db 18, GEODUDE
 	db 19, CLEFAIRY
 	db 20, CLEFAIRY
@@ -260,7 +259,7 @@ JohtoGrassWildMons:
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, GLIGAR
 	db 18, GEODUDE
 	db 19, CLEFAIRY
 	db 20, CLEFAIRY
@@ -268,7 +267,7 @@ JohtoGrassWildMons:
 	db 19, DIGLETT
 	db 18, ZUBAT
 	db 19, GEODUDE
-	db 17, CUBONE
+	db 17, GLIGAR
 	db 18, GEODUDE
 	db 19, CLEFAIRY
 	db 20, CLEFAIRY
@@ -362,24 +361,24 @@ JohtoGrassWildMons:
 	db 14, GEODUDE
 	db 14, CUBONE
 	db 15, GEODUDE
-	db 16, KANGASKHAN
-	db 17, KANGASKHAN
+	db 15, RHYHORN
+	db 15, RHYHORN
 	; day
 	db 14, DIGLETT
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, CUBONE
 	db 15, GEODUDE
-	db 16, KANGASKHAN
-	db 17, KANGASKHAN
+	db 15, RHYHORN
+	db 15, RHYHORN
 	; nite
 	db 14, DIGLETT
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, CUBONE
 	db 15, GEODUDE
-	db 16, KANGASKHAN
-	db 17, KANGASKHAN
+	db 15, RHYHORN
+	db 15, RHYHORN
 	
 	map_id PALEROCK_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -407,6 +406,33 @@ JohtoGrassWildMons:
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, WOBBUFFET
+	
+	map_id CIANWOOD_CITY
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 18, TEDDIURSA
+	db 19, MANKEY
+	db 16, GLIGAR
+	db 19, GLIGAR
+	db 17, GREMINI
+	db 16, MISDREAVUS
+	db 16, MISDREAVUS
+	; day
+	db 18, TEDDIURSA
+	db 19, MANKEY
+	db 16, GLIGAR
+	db 19, GLIGAR
+	db 17, GREMINI
+	db 16, MISDREAVUS
+	db 16, MISDREAVUS
+	; nite
+	db 18, TEDDIURSA
+	db 19, MANKEY
+	db 16, GLIGAR
+	db 19, GLIGAR
+	db 17, CLEFAIRY
+	db 16, MISDREAVUS
+	db 16, MISDREAVUS
 
 	map_id CIANWOOD_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
