@@ -14,28 +14,30 @@ GoldenrodPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
 GoldenrodPokecenter1FGameboyKidScript:
-	opentext
-	givepoke GYARADOS, 20
-	writetext GoldenrodPokecenter1FGameboyKidText
-	closetext
-	end
+;	opentext
+;	givepoke GYARADOS, 20
+	jumptextfaceplayer GoldenrodPokecenter1FGameboyKidText
+;	closetext
+;	end
 	
 GoldenrodPokecenter1FLassScript:
-	writebyte GYARADOS
-	special FindPartyMonThatSpecies
-	iffalse .no
-	writebyte DREAD_STORM
-	opentext
-	special MoveTutor
-	closetext
-	end
-	
-.no
+;	writebyte GYARADOS
+;	special FindPartyMonThatSpecies
+;	iffalse .no
+;	writebyte DREAD_STORM
+;	opentext
+;	special MoveTutor
+;	closetext
+;	end
+;	
+;.no
 	jumptextfaceplayer GoldenrodPokecenter1FLassText
 
 
 
 GoldenrodPokecenter1FPokefanF:
+	faceplayer
+	opentext
 	writetext UnknownText_0x624e9
 	waitbutton
 	closetext

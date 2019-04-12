@@ -2641,15 +2641,12 @@ PlayerAttackDamage:
 
 .lightball
 ; Note: Returns player special attack at hl in hl.
-	call LightBallBoost
-	call PaintbrushBoost
+	call SpecialItemBoost
 	jr .done
 
 .thickclub
 ; Note: Returns player attack at hl in hl.
-	call ThickClubBoost
-	call PaintbrushBoost
-	call LightBallBoost
+	call AttackItemBoost
 
 .done
 	call TruncateHL_BC
@@ -2753,46 +2750,62 @@ CheckDamageStatsCritical:
 	pop hl
 	ret
 
-ThickClubBoost:
+AttackItemBoost:
 ; Return in hl the stat value at hl.
 
 ; If the attacking monster is Cubone or Marowak and
 ; it's holding a Thick Club, double it.
 	push bc
 	push de
-	ld b, CUBONE
-	ld c, MAROWAK
-	ld d, THICK_CLUB
-	call SpeciesItemBoost
-	pop de
-	pop bc
-	ret
-
-PaintbrushBoost:
-; Return in hl the stat value at hl.
-
-; If the attacking monster is Smeargle and it's
-; holding a Paintbrush, double it.
-	push bc
-	push de
-	ld b, SMEARGLE
-	ld c, SMEARGLE
+	push hl
+	ld a, MON_SPECIES
+	call UserPartyAttr
+	ld a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr z, .checksmeargle
+	ld a, [wTempEnemyMonSpecies]
+.checksmeargle:
+	pop hl
+	cp SMEARGLE
+	lb bc, SMEARGLE, SMEARGLE
 	ld d, PAINTBRUSH
+	jr z, .ok
+	lb bc, CUBONE, MAROWAK
+	ld d, THICK_CLUB
+	jr z, .ok
+	lb bc, PIKACHU, RAICHU
+	ld d, LIGHT_BALL
+.ok
 	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret
-	
-LightBallBoost:
+
+SpecialItemBoost:
 ; Return in hl the stat value at hl.
 
-; If the attacking monster is Pikachu and it's
-; holding a Light Ball, double it.
+; If the attacking monster is Cubone or Marowak and
+; it's holding a Thick Club, double it.
 	push bc
 	push de
-	ld b, PIKACHU
-	ld c, RAICHU
+	push hl
+	ld a, MON_SPECIES
+	call UserPartyAttr
+	ld a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr z, .checksmeargle
+	ld a, [wTempEnemyMonSpecies]
+.checksmeargle:
+	pop hl
+	cp SMEARGLE
+	lb bc, SMEARGLE, SMEARGLE
+	ld d, PAINTBRUSH
+	jr z, .ok
+	lb bc, PIKACHU, RAICHU
 	ld d, LIGHT_BALL
+.ok
 	call SpeciesItemBoost
 	pop de
 	pop bc
@@ -2910,14 +2923,11 @@ EnemyAttackDamage:
 	ld hl, wEnemySpAtk
 
 .lightball
-	call LightBallBoost
-	call PaintbrushBoost
+	call SpecialItemBoost
 	jr .done
 
 .thickclub
-	call ThickClubBoost
-	call LightBallBoost
-	call PaintbrushBoost
+	call AttackItemBoost
 
 .done
 	call TruncateHL_BC
