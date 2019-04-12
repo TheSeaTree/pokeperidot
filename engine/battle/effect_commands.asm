@@ -2642,11 +2642,14 @@ PlayerAttackDamage:
 .lightball
 ; Note: Returns player special attack at hl in hl.
 	call LightBallBoost
+	call PaintbrushBoost
 	jr .done
 
 .thickclub
 ; Note: Returns player attack at hl in hl.
 	call ThickClubBoost
+	call PaintbrushBoost
+	call LightBallBoost
 
 .done
 	call TruncateHL_BC
@@ -2765,6 +2768,21 @@ ThickClubBoost:
 	pop bc
 	ret
 
+PaintbrushBoost:
+; Return in hl the stat value at hl.
+
+; If the attacking monster is Smeargle and it's
+; holding a Paintbrush, double it.
+	push bc
+	push de
+	ld b, SMEARGLE
+	ld c, SMEARGLE
+	ld d, PAINTBRUSH
+	call SpeciesItemBoost
+	pop de
+	pop bc
+	ret
+	
 LightBallBoost:
 ; Return in hl the stat value at hl.
 
@@ -2893,10 +2911,13 @@ EnemyAttackDamage:
 
 .lightball
 	call LightBallBoost
+	call PaintbrushBoost
 	jr .done
 
 .thickclub
 	call ThickClubBoost
+	call LightBallBoost
+	call PaintbrushBoost
 
 .done
 	call TruncateHL_BC

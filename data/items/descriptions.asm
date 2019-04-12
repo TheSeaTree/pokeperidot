@@ -161,7 +161,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw TeruSama21Desc
+	dw PaintbrushDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -878,8 +878,9 @@ FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
 
-TeruSama21Desc:
-	db   "?@"
+PaintbrushDesc:
+	db   "A wet PAINTBRUSH."
+	next "(HOLD)@"
 
 LightBallDesc:
 	db   "An odd, electrical"
