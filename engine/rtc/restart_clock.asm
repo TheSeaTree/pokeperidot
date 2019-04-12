@@ -52,15 +52,12 @@ RestartClock:
 	text_end
 
 .SetClock:
-;	farcall InitClock
 	ld a, 1
 	ld [wBuffer1], a ; which digit
 	ld [wBuffer2], a
 	ld a, 10
 	ld [wBuffer3], a
 	call UpdateTime
-;	call GetWeekday
-;	ld [wBuffer4], a
 	ldh a, [hHours]
 	ld [wBuffer5], a
 	ldh a, [hMinutes]
@@ -72,11 +69,6 @@ RestartClock:
 	and a
 	ret nz
 	call .PrintTime
-;	ld hl, .Text_IsThisOK
-;	call PrintText
-;	call YesNoBox
-;	jr c, .cancel
-;	ld a, [wBuffer4]
 	ld [wStringBuffer2], a
 	ld a, [wBuffer5]
 	ld [wStringBuffer2 + 1], a
@@ -85,9 +77,9 @@ RestartClock:
 	xor a
 	ld [wStringBuffer2 + 3], a
 	call InitTime
-;	call .PrintTime
 	ld hl, .Text_ClockReset
 	call PrintText
+	farcall _SaveGameData
 	call WaitPressAorB_BlinkCursor
 	xor a
 	ret
@@ -95,11 +87,6 @@ RestartClock:
 .cancel
 	ld a, $1
 	ret
-
-.Text_IsThisOK:
-	; Is this OK?
-	text_far UnknownText_0x1c415b
-	text_end
 
 .Text_ClockReset:
 	; The clock has been reset.
@@ -210,13 +197,6 @@ RestartClock:
 	ld [wBuffer2], a
 	ret
 
-.unreferenced
-; unused
-	ld a, [wBuffer3]
-	ld b, a
-	call Coord2Tile
-	ret
-
 .PlaceChars:
 	push de
 	call RestartClock_GetWraparoundTime
@@ -230,11 +210,3 @@ RestartClock:
 	add hl, bc
 	ld [hl], e
 	ret
-
-UnreferencedString_HourJP:
-; unused
-	db "じ@" ; HR
-
-UnreferencedString_MinuteJP:
-; unused
-	db "ふん@" ; MIN

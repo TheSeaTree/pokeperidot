@@ -12,33 +12,6 @@ _MainMenu:
 ; unused
 	ret
 
-PrintDayOfWeek:
-	push de
-	ld hl, .Days
-	ld a, b
-	call GetNthString
-	ld d, h
-	ld e, l
-	pop hl
-	call PlaceString
-	ld h, b
-	ld l, c
-	ld de, .Day
-	call PlaceString
-	ret
-
-.Days:
-	db "@"
-	db "@"
-	db "@"
-	db "@"
-	db "@"
-	db "@"
-	db "@"
-
-.Day:
-	db "@"
-
 NewGame_ClearTileMapEtc:
 	xor a
 	ldh [hMapAnims], a
@@ -1080,7 +1053,7 @@ StartTitleScreen:
 	
 	ld a, NATU
 	call PlayMonCry
-	call WaitSFX
+;	call WaitSFX
 
 	ld hl, rLCDC
 	res rLCDC_SPRITE_SIZE, [hl] ; 8x8

@@ -272,10 +272,6 @@ MainMenu_PrintCurrentTimeAndDay:
 	hlcoord 3, 15
 	ld b, 1
 	ld c, 12
-;	jp TextBoxPalette
-;	jp z, .PrintTimeNotSet
-;	
-;.PrintTimeNotSet:
 	hlcoord 4, 16
 	ld de, .TimeNotSet
 	call PlaceString
@@ -288,32 +284,6 @@ MainMenu_PrintCurrentTimeAndDay:
 	; Clock time unknown
 	text_far UnknownText_0x1c5182
 	text_end
-
-.PlaceCurrentDay:
-	push de
-	ld hl, .Days
-	ld a, b
-	call GetNthString
-	ld d, h
-	ld e, l
-	pop hl
-	call PlaceString
-	ld h, b
-	ld l, c
-	ld de, .Day
-	call PlaceString
-	ret
-
-.Days:
-	db "SUN@"
-	db "MON@"
-	db "TUES@"
-	db "WEDNES@"
-	db "THURS@"
-	db "FRI@"
-	db "SATUR@"
-.Day:
-	db "DAY@"
 
 Function49ed0:
 	xor a
