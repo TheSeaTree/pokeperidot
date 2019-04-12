@@ -157,7 +157,7 @@ NewBarkTown_MapEvents:
 
 	db 8 ; warp events
 	warp_event 21,  9, PLAYERS_HOUSE_1F, 1
-	warp_event 15,  3, PLAYERS_NEIGHBORS_HOUSE, 1
+	warp_event 15,  5, PLAYERS_NEIGHBORS_HOUSE, 1
 	warp_event 18, 15, ELMS_HOUSE, 1
 	warp_event  9, 11, VIRIDIAN_POKECENTER_1F, 1
 	warp_event 21, 19, ROUTE_1_NEW_BARK_GATE, 1

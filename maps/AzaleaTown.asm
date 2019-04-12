@@ -201,7 +201,7 @@ AzaleaTownTutorScript:
 	closetext
 	end
 
-AzaleaTownTeacherScript	:
+AzaleaTownTeacherScript:
 	jumptextfaceplayer AzaleaTownTeacherText
 
 AzaleaTownTeacher2Script:
