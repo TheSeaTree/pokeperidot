@@ -25,6 +25,11 @@ BattleCommand_Thief:
 	ld d, a
 	farcall ItemIsMail
 	ret c
+	
+	ld [wNamedObjectIndexBuffer], a
+	ld d, a
+	call ItemIsValuable
+	ret c
 
 	ld a, [wEffectFailed]
 	and a
@@ -72,6 +77,11 @@ BattleCommand_Thief:
 	ld d, a
 	farcall ItemIsMail
 	ret c
+	
+	ld [wNamedObjectIndexBuffer], a
+	ld d, a
+	call ItemIsValuable
+	ret c
 
 	ld a, [wEffectFailed]
 	and a
@@ -110,3 +120,11 @@ BattleCommand_Thief:
 	ld e, l
 	ld hl, wEnemyMonItem
 	ret
+
+ItemIsValuable:
+	ld a, d
+	ld hl, ValuableItems
+	ld de, 1
+	jp IsInArray
+
+INCLUDE "data/items/valuable_items.asm"
