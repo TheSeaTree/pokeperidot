@@ -160,7 +160,7 @@ ItemNames::
 	db "LEVEL BALL@"
 	db "LURE BALL@"
 	db "FAST BALL@"
-	db "PAINTBRUSH@"
+	db "PALETTE@"
 	db "LIGHT BALL@"
 	db "FRIEND BALL@"
 	db "MOON BALL@"

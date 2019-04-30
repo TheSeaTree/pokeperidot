@@ -161,7 +161,7 @@ ItemDescriptions:
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
-	dw PaintbrushDesc
+	dw PaletteDesc
 	dw LightBallDesc
 	dw FriendBallDesc
 	dw MoonBallDesc
@@ -878,9 +878,9 @@ FastBallDesc:
 	db   "A BALL for catch-"
 	next "ing fast #MON.@"
 
-PaintbrushDesc:
-	db   "A wet PAINTBRUSH."
-	next "(HOLD)@"
+PaletteDesc:
+	db   "A small board cov-"
+	next "ered with paint.@"
 
 LightBallDesc:
 	db   "An odd, electrical"
