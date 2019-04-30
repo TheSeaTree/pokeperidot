@@ -335,7 +335,7 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	; day
 	db 18, ZUBAT
 	db 19, CUBONE
@@ -343,7 +343,7 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	; nite
 	db 18, ZUBAT
 	db 19, CUBONE
@@ -351,7 +351,7 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	
 	map_id PALEROCK_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -389,7 +389,7 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	; day
 	db 18, ZUBAT
 	db 19, CUBONE
@@ -397,7 +397,7 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	; nite
 	db 18, ZUBAT
 	db 19, CUBONE
@@ -405,37 +405,37 @@ JohtoGrassWildMons:
 	db 19, ONIX
 	db 20, MISDREAVUS
 	db 20, ONIX
-	db 21, WOBBUFFET
+	db 21, MISDREAVUS
 	
 	map_id CIANWOOD_CITY
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, TEDDIURSA
 	db 19, MANKEY
 	db 16, GLIGAR
 	db 19, GLIGAR
 	db 17, GREMINI
-	db 16, MISDREAVUS
-	db 16, MISDREAVUS
+	db 16, KOFFING
+	db 16, KOFFING
 	; day
 	db 18, TEDDIURSA
 	db 19, MANKEY
 	db 16, GLIGAR
 	db 19, GLIGAR
 	db 17, GREMINI
-	db 16, MISDREAVUS
-	db 16, MISDREAVUS
+	db 16, KOFFING
+	db 16, KOFFING
 	; nite
 	db 18, TEDDIURSA
 	db 19, MANKEY
 	db 16, GLIGAR
 	db 19, GLIGAR
 	db 17, CLEFAIRY
-	db 16, MISDREAVUS
-	db 16, MISDREAVUS
+	db 16, GASTLY
+	db 16, GASTLY
 
 	map_id CIANWOOD_CAVE_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, SHIFUR
 	db 18, SWINUB
@@ -462,58 +462,58 @@ JohtoGrassWildMons:
 	db 21, SMOOCHUM
 	
 	map_id CIANWOOD_CAVE_B1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT
 	db 19, KOFFING
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 	; day
 	db 18, ZUBAT
 	db 19, KOFFING
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 	; nite
 	db 18, ZUBAT
 	db 19, KOFFING
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 	
 	map_id CIANWOOD_CAVE_B2F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT
 	db 19, GASTLY
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 	; day
 	db 18, ZUBAT
 	db 19, GASTLY
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 	; nite
 	db 18, ZUBAT
 	db 19, GASTLY
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
-	db 20, WOBBUFFET
-	db 21, WOBBUFFET
+	db 20, DUNSPARCE
+	db 21, DUNSPARCE
 
 	map_id ROUTE_4
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
