@@ -428,6 +428,7 @@ HorseaEggMoves:
 	db DRAGON_RAGE
 	db OUTRAGE
 	db HYDRO_PUMP
+	db POISON_STING
 	db -1 ; end
 
 GoldeenEggMoves:
@@ -587,6 +588,7 @@ CubboltEggMoves:
 	db THRASH
 	db FLARE_BLITZ
 	db WILD_CHARGE
+	db SING
 	db -1 ; end
 
 SpinarakEggMoves:
@@ -863,6 +865,7 @@ RemoraidEggMoves:
 	db SCREECH
 	db FLAIL
 	db RECOVER
+	db POISON_STING
 	db -1 ; end
 
 DelibirdEggMoves:
@@ -874,6 +877,7 @@ DelibirdEggMoves:
 	db DESTINY_BOND
 	db SPIKES
 	db COUNTER
+	db SING
 	db -1 ; end
 
 MantineEggMoves:
