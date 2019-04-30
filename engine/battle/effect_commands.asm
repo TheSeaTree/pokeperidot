@@ -1258,11 +1258,11 @@ BattleCommand_Stab:
 	pop de
 	pop hl
 
-	push de
-	push bc
-	farcall DoBadgeTypeBoosts
-	pop bc
-	pop de
+;	push de
+;	push bc
+;	farcall DoBadgeTypeBoosts
+;	pop bc
+;	pop de
 
 	ld a, [wCurType]
 	cp b
@@ -2769,7 +2769,7 @@ AttackItemBoost:
 	pop hl
 	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
-	ld d, PAINTBRUSH
+	ld d, PALETTE
 	jr z, .ok
 	lb bc, CUBONE, MAROWAK
 	ld d, THICK_CLUB
@@ -2801,7 +2801,7 @@ SpecialItemBoost:
 	pop hl
 	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
-	ld d, PAINTBRUSH
+	ld d, PALETTE
 	jr z, .ok
 	lb bc, PIKACHU, RAICHU
 	ld d, LIGHT_BALL
