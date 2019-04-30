@@ -23,14 +23,16 @@ ShowPlayerMonsRemaining:
 	ld a, 12 * 8
 	ld hl, wPlaceBallsX
 	ld [hli], a
-	ld [hl], a
+	ld [hl], 11 * 8
 	ld a, 8
 	ld [wPlaceBallsDirection], a
 	ld hl, wVirtualOAMSprite00
 	jp LoadTrainerHudOAM
 
 ShowOTTrainerMonsRemaining:
-	call DrawEnemyHUDBorder
+	call DrawEnemyHUDBorder2
+	hlcoord 2, 2
+	ld [hl], $7a
 	ld hl, wOTPartyMon1HP
 	ld de, wOTPartyCount
 	call StageBallTilesData
@@ -111,7 +113,7 @@ DrawPlayerHUDBorder:
 	db $73 ; right side
 	db $77 ; bottom right
 	db $6f ; bottom left
-	db $76 ; bottom side
+	db $79 ; bottom side
 .tiles_end
 
 DrawPlayerPartyIconHUDBorder:
@@ -119,7 +121,7 @@ DrawPlayerPartyIconHUDBorder:
 	ld de, wTrainerHUDTiles
 	ld bc, .tiles_end - .tiles
 	call CopyBytes
-	hlcoord 18, 10
+	hlcoord 17, 9
 	ld de, -1 ; start on right
 	jr PlaceHUDBorderTiles
 
@@ -127,7 +129,7 @@ DrawPlayerPartyIconHUDBorder:
 	db $6d ; right side
 	db $5c ; bottom right
 	db $6f ; bottom left
-	db $70 ; bottom side
+	db $79 ; bottom side
 .tiles_end
 
 DrawEnemyHUDBorder:
@@ -151,6 +153,22 @@ DrawEnemyHUDBorder:
 
 .tiles
 	db $7f ; left side
+	db $75 ; bottom left
+	db $78 ; bottom right
+	db $76 ; bottom side
+.tiles_end
+
+DrawEnemyHUDBorder2:
+	ld hl, .tiles
+	ld de, wTrainerHUDTiles
+	ld bc, .tiles_end - .tiles
+	call CopyBytes
+	hlcoord 2, 2
+	ld de, 1 ; start on left
+	jr PlaceHUDBorderTiles
+
+.tiles
+	db $7f ; left side
 	db $74 ; bottom left
 	db $78 ; bottom right
 	db $76 ; bottom side
@@ -163,7 +181,7 @@ PlaceHUDBorderTiles:
 	add hl, bc
 	ld a, [wTrainerHUDTiles + 1]
 	ld [hl], a
-	ld b, 8
+	ld b, 6
 .loop
 	add hl, de
 	ld a, [wTrainerHUDTiles + 3]

@@ -86,7 +86,7 @@ LoadHPBar:
 	call Get1bpp_2
 	ld de, HPExpBarBorderGFX
 	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
+	lb bc, BANK(HPExpBarBorderGFX), 9
 	call Get1bpp_2
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $55

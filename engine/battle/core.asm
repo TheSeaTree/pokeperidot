@@ -4605,6 +4605,8 @@ DrawPlayerHUD:
 	ld d, h
 	ld e, l
 
+	hlcoord  9, 11
+	ld [hl], $df
 	hlcoord 10, 11
 	ld a, [wTempMonLevel]
 	ld b, a
@@ -6882,7 +6884,7 @@ Unreferenced_LoadHPExpBarGFX:
 	call Get1bpp
 	ld de, HPExpBarBorderGFX
 	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 6
+	lb bc, BANK(HPExpBarBorderGFX), 9
 	call Get1bpp
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $55
