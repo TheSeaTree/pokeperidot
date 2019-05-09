@@ -274,16 +274,6 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl:
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
-TilesetBetaWordRoomMeta:
-INCBIN "data/tilesets/beta_word_room_metatiles.bin"
-
-TilesetBetaWordRoomColl:
-TilesetHoOhWordRoomColl:
-TilesetKabutoWordRoomColl:
-TilesetOmanyteWordRoomColl:
-TilesetAerodactylWordRoomColl:
-INCLUDE "data/tilesets/beta_word_room_collision.asm"
-
 
 SECTION "Tileset Data 7", ROMX
 
@@ -299,11 +289,6 @@ TilesetDarkCaveColl:
 INCLUDE "data/tilesets/cave_collision.asm"
 
 TilesetRuinsOfAlphGFX:
-TilesetBetaWordRoomGFX:
-TilesetHoOhWordRoomGFX:
-TilesetKabutoWordRoomGFX:
-TilesetOmanyteWordRoomGFX:
-TilesetAerodactylWordRoomGFX:
 INCBIN "gfx/tilesets/ruins_of_alph.2bpp.lz"
 
 TilesetRuinsOfAlphMeta:
@@ -315,17 +300,6 @@ INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 
 SECTION "Tileset Data 8", ROMX
 
-TilesetHoOhWordRoomMeta:
-INCBIN "data/tilesets/ho_oh_word_room_metatiles.bin"
-
-TilesetKabutoWordRoomMeta:
-INCBIN "data/tilesets/kabuto_word_room_metatiles.bin"
-
-TilesetOmanyteWordRoomMeta:
-INCBIN "data/tilesets/omanyte_word_room_metatiles.bin"
-
-TilesetAerodactylWordRoomMeta:
-INCBIN "data/tilesets/aerodactyl_word_room_metatiles.bin"
 
 TilesetJohtoCityGFX:
 INCBIN "gfx/tilesets/johto_city.2bpp.lz"
@@ -355,3 +329,110 @@ INCBIN "data/tilesets/facility_metatiles.bin"
 
 TilesetFacilityColl:
 INCLUDE "data/tilesets/facility_collision.asm"
+
+
+SECTION "Tileset Data 9", ROMX
+
+Tileset0Attr:
+TilesetJohtoAttr:
+INCBIN "data/tilesets/johto_attributes.bin"
+
+TilesetJohtoModernAttr:
+INCBIN "data/tilesets/johto_modern_attributes.bin"
+
+TilesetKantoAttr:
+INCBIN "data/tilesets/kanto_attributes.bin"
+
+TilesetHouseAttr:
+INCBIN "data/tilesets/house_attributes.bin"
+
+TilesetPlayersHouseAttr:
+INCBIN "data/tilesets/players_house_attributes.bin"
+
+TilesetPokecenterAttr:
+INCBIN "data/tilesets/pokecenter_attributes.bin"
+
+TilesetGateAttr:
+INCBIN "data/tilesets/gate_attributes.bin"
+
+TilesetPortAttr:
+INCBIN "data/tilesets/port_attributes.bin"
+
+TilesetLabAttr:
+INCBIN "data/tilesets/lab_attributes.bin"
+
+
+SECTION "Tileset Data 10", ROMX
+
+TilesetFacilityAttr:
+INCBIN "data/tilesets/facility_attributes.bin"
+
+TilesetMartAttr:
+INCBIN "data/tilesets/mart_attributes.bin"
+
+TilesetMansionAttr:
+INCBIN "data/tilesets/mansion_attributes.bin"
+
+TilesetGameCornerAttr:
+INCBIN "data/tilesets/game_corner_attributes.bin"
+
+TilesetEliteFourRoomAttr:
+INCBIN "data/tilesets/elite_four_room_attributes.bin"
+
+TilesetTraditionalHouseAttr:
+INCBIN "data/tilesets/traditional_house_attributes.bin"
+
+TilesetTrainStationAttr:
+INCBIN "data/tilesets/train_station_attributes.bin"
+
+TilesetChampionsRoomAttr:
+INCBIN "data/tilesets/champions_room_attributes.bin"
+
+TilesetLighthouseAttr:
+INCBIN "data/tilesets/lighthouse_attributes.bin"
+
+TilesetPlayersRoomAttr:
+INCBIN "data/tilesets/players_room_attributes.bin"
+
+TilesetPokeComCenterAttr:
+INCBIN "data/tilesets/pokecom_center_attributes.bin"
+
+TilesetBattleTowerAttr:
+INCBIN "data/tilesets/battle_tower_attributes.bin"
+
+TilesetTowerAttr:
+INCBIN "data/tilesets/tower_attributes.bin"
+
+
+SECTION "Tileset Data 11", ROMX
+
+TilesetCaveAttr:
+TilesetDarkCaveAttr:
+INCBIN "data/tilesets/cave_attributes.bin"
+
+TilesetParkAttr:
+INCBIN "data/tilesets/park_attributes.bin"
+
+TilesetRuinsOfAlphAttr:
+INCBIN "data/tilesets/ruins_of_alph_attributes.bin"
+
+TilesetRadioTowerAttr:
+INCBIN "data/tilesets/radio_tower_attributes.bin"
+
+TilesetUndergroundAttr:
+INCBIN "data/tilesets/underground_attributes.bin"
+
+TilesetIcePathAttr:
+INCBIN "data/tilesets/ice_path_attributes.bin"
+
+TilesetForestAttr:
+INCBIN "data/tilesets/forest_attributes.bin"
+
+TilesetJohtoCityAttr:
+INCBIN "data/tilesets/johto_city_attributes.bin"
+
+TilesetMountainAttr:
+INCBIN "data/tilesets/mountain_attributes.bin"
+
+TilesetBattleTowerOutsideAttr:
+INCBIN "data/tilesets/battle_tower_outside_attributes.bin"

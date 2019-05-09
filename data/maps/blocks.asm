@@ -1,25 +1,25 @@
 SECTION "Map Blocks 1", ROMX
 
 Route2_Blocks:
-	INCBIN "maps/Route2.blk"
+	INCBIN "maps/Route2.ablk"
 
 Route11_Blocks:
-	INCBIN "maps/Route11.blk"
+	INCBIN "maps/Route11.ablk"
 
 Route15_Blocks:
-	INCBIN "maps/Route15.blk"
+	INCBIN "maps/Route15.ablk"
 
 Route10South_Blocks:
-	INCBIN "maps/Route10South.blk"
+	INCBIN "maps/Route10South.ablk"
 
 Pokecenter2F_Blocks:
-	INCBIN "maps/Pokecenter2F.blk"
+	INCBIN "maps/Pokecenter2F.ablk"
 
 Route3_Blocks:
-	INCBIN "maps/Route3.blk"
+	INCBIN "maps/Route3.ablk"
 
 Route12_Blocks:
-	INCBIN "maps/Route12.blk"
+	INCBIN "maps/Route12.ablk"
 
 OlivineTimsHouse_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
@@ -63,13 +63,13 @@ VioletWeatherHouse_Blocks:
 VioletTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
-	INCBIN "maps/House1.blk"
+	INCBIN "maps/House1.ablk"
 
 CherrygroveInn_Blocks:
-	INCBIN "maps/CherrygroveInn.blk"
+	INCBIN "maps/CherrygroveInn.ablk"
 	
 CherrygroveGymSpeechHouse_Blocks:
-	INCBIN "maps/House3.blk"
+	INCBIN "maps/House3.ablk"
 
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
@@ -82,19 +82,19 @@ Route1CherrygroveGate_Blocks:
 Route1NewBarkGate_Blocks:
 Route1GoldenrodGate_Blocks:
 Route11GoldenrodGate_Blocks:
-	INCBIN "maps/NorthSouthGate.blk"
+	INCBIN "maps/NorthSouthGate.ablk"
 
 Route4_Blocks:
-	INCBIN "maps/Route4.blk"
+	INCBIN "maps/Route4.ablk"
 
 Route13_Blocks:
-	INCBIN "maps/Route13.blk"
+	INCBIN "maps/Route13.ablk"
 	
 Route17_Blocks:
-	INCBIN "maps/Route17.blk"
+	INCBIN "maps/Route17.ablk"
 
 PlayersHouse1F_Blocks:
-	INCBIN "maps/PlayersHouse1F.blk"
+	INCBIN "maps/PlayersHouse1F.ablk"
 
 Route38EcruteakGate_Blocks:
 Route42EcruteakGate_Blocks:
@@ -110,19 +110,19 @@ Route8GoldenrodGate_Blocks:
 Route4ForestGate_Blocks:
 Route4AzaleaGate_Blocks:
 Route2Gate_Blocks:
-	INCBIN "maps/EastWestGate.blk"
+	INCBIN "maps/EastWestGate.ablk"
 
 ElmsLab_Blocks:
-	INCBIN "maps/ElmsLab.blk"
+	INCBIN "maps/ElmsLab.ablk"
 
 Route9_Blocks:
-	INCBIN "maps/Route9.blk"
+	INCBIN "maps/Route9.ablk"
 
 
 SECTION "Map Blocks 2", ROMX
 
 Route14_Blocks:
-	INCBIN "maps/Route14.blk"
+	INCBIN "maps/Route14.ablk"
 
 OlivineMart_Blocks:
 EcruteakMart_Blocks:
@@ -137,10 +137,10 @@ SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 CianwoodMart_Blocks:
 GoldenrodMart_Blocks:
-	INCBIN "maps/Mart.blk"
+	INCBIN "maps/Mart.ablk"
 
 Route10North_Blocks:
-	INCBIN "maps/Route10North.blk"
+	INCBIN "maps/Route10North.ablk"
 
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
@@ -161,35 +161,35 @@ CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
-	INCBIN "maps/Pokecenter1F.blk"
+	INCBIN "maps/Pokecenter1F.ablk"
 
 GoldenrodDeptStore1F_Blocks:
-	INCBIN "maps/DeptStore1F.blk"
+	INCBIN "maps/DeptStore1F.ablk"
 
 GoldenrodDeptStore2F_Blocks:
-	INCBIN "maps/DeptStore2F.blk"
+	INCBIN "maps/DeptStore2F.ablk"
 
 GoldenrodDeptStore3F_Blocks:
-	INCBIN "maps/DeptStore3F.blk"
+	INCBIN "maps/DeptStore3F.ablk"
 
 GoldenrodDeptStore4F_Blocks:
-	INCBIN "maps/DeptStore4F.blk"
+	INCBIN "maps/DeptStore4F.ablk"
 
 GoldenrodDeptStore5F_Blocks:
-	INCBIN "maps/DeptStore5F.blk"
+	INCBIN "maps/DeptStore5F.ablk"
 
 GoldenrodDeptStore6F_Blocks:
-	INCBIN "maps/DeptStore6F.blk"
+	INCBIN "maps/DeptStore6F.ablk"
 
 GoldenrodDeptStoreElevator_Blocks:
-	INCBIN "maps/DeptStoreElevator.blk"
+	INCBIN "maps/DeptStoreElevator.ablk"
 
 Colosseum_Blocks:
-	INCBIN "maps/Colosseum.blk"
+	INCBIN "maps/Colosseum.ablk"
 
 TradeCenter_Blocks:
 TimeCapsule_Blocks:
-	INCBIN "maps/TradeCenter.blk"
+	INCBIN "maps/TradeCenter.ablk"
 
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
@@ -197,298 +197,298 @@ VioletNicknameSpeechHouse_Blocks:
 ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
-	INCBIN "maps/House2.blk"
+	INCBIN "maps/House2.ablk"
 
 UnionCaveB1F_Blocks:
-	INCBIN "maps/UnionCaveB1F.blk"
+	INCBIN "maps/UnionCaveB1F.ablk"
 
 UnionCaveB2F_Blocks:
-	INCBIN "maps/UnionCaveB2F.blk"
+	INCBIN "maps/UnionCaveB2F.ablk"
 
 UnionCave1F_Blocks:
-	INCBIN "maps/UnionCave1F.blk"
+	INCBIN "maps/UnionCave1F.ablk"
 
 NationalPark_Blocks:
 NationalParkBugContest_Blocks:
-	INCBIN "maps/NationalPark.blk"
+	INCBIN "maps/NationalPark.ablk"
 
 Route5UndergroundPathEntrance_Blocks:
-	INCBIN "maps/UndergroundPathEntrance.blk"
+	INCBIN "maps/UndergroundPathEntrance.ablk"
 
 KurtsHouse_Blocks:
-	INCBIN "maps/KurtsHouse.blk"
+	INCBIN "maps/KurtsHouse.ablk"
 
 GoldenrodMagnetTrainStation_Blocks:
-	INCBIN "maps/GoldenrodMagnetTrainStation.blk"
+	INCBIN "maps/GoldenrodMagnetTrainStation.ablk"
 
 RadioTower1F_Blocks:
-	INCBIN "maps/RadioTower1F.blk"
+	INCBIN "maps/RadioTower1F.ablk"
 
 RadioTower2F_Blocks:
-	INCBIN "maps/RadioTower2F.blk"
+	INCBIN "maps/RadioTower2F.ablk"
 
 RadioTower3F_Blocks:
-	INCBIN "maps/RadioTower3F.blk"
+	INCBIN "maps/RadioTower3F.ablk"
 
 RadioTower4F_Blocks:
-	INCBIN "maps/RadioTower4F.blk"
+	INCBIN "maps/RadioTower4F.ablk"
 
 RadioTower5F_Blocks:
-	INCBIN "maps/RadioTower5F.blk"
+	INCBIN "maps/RadioTower5F.ablk"
 
 CherrygroveCity_Blocks:
-	INCBIN "maps/CherrygroveCity.blk"
+	INCBIN "maps/CherrygroveCity.ablk"
 
 AzaleaTown_Blocks:
-	INCBIN "maps/AzaleaTown.blk"
+	INCBIN "maps/AzaleaTown.ablk"
 
 CianwoodCity_Blocks:
-	INCBIN "maps/CianwoodCity.blk"
+	INCBIN "maps/CianwoodCity.ablk"
 
 GoldenrodCity_Blocks:
-	INCBIN "maps/GoldenrodCity.blk"
+	INCBIN "maps/GoldenrodCity.ablk"
 
 OlivineCity_Blocks:
-	INCBIN "maps/OlivineCity.blk"
+	INCBIN "maps/OlivineCity.ablk"
 
 EcruteakCity_Blocks:
-	INCBIN "maps/EcruteakCity.blk"
+	INCBIN "maps/EcruteakCity.ablk"
 
 MahoganyTown_Blocks:
-	INCBIN "maps/MahoganyTown.blk"
+	INCBIN "maps/MahoganyTown.ablk"
 
 BlackthornCity_Blocks:
-	INCBIN "maps/BlackthornCity.blk"
+	INCBIN "maps/BlackthornCity.ablk"
 
 SilverCaveOutside_Blocks:
-	INCBIN "maps/SilverCaveOutside.blk"
+	INCBIN "maps/SilverCaveOutside.ablk"
 
 Route7_Blocks:
-	INCBIN "maps/Route7.blk"
+	INCBIN "maps/Route7.ablk"
 	
 Route30_Blocks:
-	INCBIN "maps/Route30.blk"
+	INCBIN "maps/Route30.ablk"
 
 Route16_Blocks:
-	INCBIN "maps/Route16.blk"
+	INCBIN "maps/Route16.ablk"
 
 Route18_Blocks:
-	INCBIN "maps/Route18.blk"
+	INCBIN "maps/Route18.ablk"
 
 Route6Underground_Blocks:
-	INCBIN "maps/Route6Underground.blk"
+	INCBIN "maps/Route6Underground.ablk"
 
 GoldenrodUndergroundSwitchRoomEntrances_Blocks:
-	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.blk"
+	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.ablk"
 
 GoldenrodUndergroundWarehouse_Blocks:
-	INCBIN "maps/GoldenrodUndergroundWarehouse.blk"
+	INCBIN "maps/GoldenrodUndergroundWarehouse.ablk"
 
 MountMortar1FOutside_Blocks:
-	INCBIN "maps/MountMortar1FOutside.blk"
+	INCBIN "maps/MountMortar1FOutside.ablk"
 
 MountMortar1FInside_Blocks:
-	INCBIN "maps/MountMortar1FInside.blk"
+	INCBIN "maps/MountMortar1FInside.ablk"
 
 MountMortar2FInside_Blocks:
-	INCBIN "maps/MountMortar2FInside.blk"
+	INCBIN "maps/MountMortar2FInside.ablk"
 
 MountMortarB1F_Blocks:
-	INCBIN "maps/MountMortarB1F.blk"
+	INCBIN "maps/MountMortarB1F.ablk"
 
 SilverCaveRoom1_Blocks:
-	INCBIN "maps/SilverCaveRoom1.blk"
+	INCBIN "maps/SilverCaveRoom1.ablk"
 
 SilverCaveRoom2_Blocks:
-	INCBIN "maps/SilverCaveRoom2.blk"
+	INCBIN "maps/SilverCaveRoom2.ablk"
 
 SilverCaveRoom3_Blocks:
-	INCBIN "maps/SilverCaveRoom3.blk"
+	INCBIN "maps/SilverCaveRoom3.ablk"
 
 MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
-	INCBIN "maps/GiftShop.blk"
+	INCBIN "maps/GiftShop.ablk"
 
 IndigoPlateauPokecenter1F_Blocks:
-	INCBIN "maps/IndigoPlateauPokecenter1F.blk"
+	INCBIN "maps/IndigoPlateauPokecenter1F.ablk"
 
 WillsRoom_Blocks:
-	INCBIN "maps/WillsRoom.blk"
+	INCBIN "maps/WillsRoom.ablk"
 
 KogasRoom_Blocks:
-	INCBIN "maps/KogasRoom.blk"
+	INCBIN "maps/KogasRoom.ablk"
 
 BrunosRoom_Blocks:
-	INCBIN "maps/BrunosRoom.blk"
+	INCBIN "maps/BrunosRoom.ablk"
 
 KarensRoom_Blocks:
-	INCBIN "maps/KarensRoom.blk"
+	INCBIN "maps/KarensRoom.ablk"
 
 AzaleaGym_Blocks:
-	INCBIN "maps/AzaleaGym.blk"
+	INCBIN "maps/AzaleaGym.ablk"
 
 GoldenrodGym_Blocks:
-	INCBIN "maps/GoldenrodGym.blk"
+	INCBIN "maps/GoldenrodGym.ablk"
 
 EcruteakGym_Blocks:
-	INCBIN "maps/EcruteakGym.blk"
+	INCBIN "maps/EcruteakGym.ablk"
 
 MahoganyGym_Blocks:
-	INCBIN "maps/MahoganyGym.blk"
+	INCBIN "maps/MahoganyGym.ablk"
 
 OlivineGym_Blocks:
-	INCBIN "maps/OlivineGym.blk"
+	INCBIN "maps/OlivineGym.ablk"
 
 CianwoodGym_Blocks:
-	INCBIN "maps/CianwoodGym.blk"
+	INCBIN "maps/CianwoodGym.ablk"
 
 BlackthornGym1F_Blocks:
-	INCBIN "maps/BlackthornGym1F.blk"
+	INCBIN "maps/BlackthornGym1F.ablk"
 
 BlackthornGym2F_Blocks:
-	INCBIN "maps/BlackthornGym2F.blk"
+	INCBIN "maps/BlackthornGym2F.ablk"
 
 
 SECTION "Map Blocks 3", ROMX
 
 IlexForest_Blocks:
-	INCBIN "maps/IlexForest.blk"
+	INCBIN "maps/IlexForest.ablk"
 
 GoldenrodBikeShop_Blocks:
-	INCBIN "maps/GoldenrodBikeShop.blk"
+	INCBIN "maps/GoldenrodBikeShop.ablk"
 
 GoldenrodGameCorner_Blocks:
-	INCBIN "maps/GoldenrodGameCorner.blk"
+	INCBIN "maps/GoldenrodGameCorner.ablk"
 
 PlayersHouse2F_Blocks:
-	INCBIN "maps/PlayersHouse2F.blk"
+	INCBIN "maps/PlayersHouse2F.ablk"
 
 SilverCaveItemRooms_Blocks:
-	INCBIN "maps/SilverCaveItemRooms.blk"
+	INCBIN "maps/SilverCaveItemRooms.ablk"
 
 DayCare_Blocks:
-	INCBIN "maps/DayCare.blk"
+	INCBIN "maps/DayCare.ablk"
 
 SoulHouse_Blocks:
-	INCBIN "maps/SoulHouse.blk"
+	INCBIN "maps/SoulHouse.ablk"
 
 PalerockCave1F_Blocks:
-	INCBIN "maps/PalerockCave1F.blk"
+	INCBIN "maps/PalerockCave1F.ablk"
 
 PalerockCaveB1F_Blocks:
-	INCBIN "maps/PalerockCaveB1F.blk"
+	INCBIN "maps/PalerockCaveB1F.ablk"
 
 DiglettsCave_Blocks:
-	INCBIN "maps/DiglettsCave.blk"
+	INCBIN "maps/DiglettsCave.ablk"
 
 MountMoon_Blocks:
-	INCBIN "maps/MountMoon.blk"
+	INCBIN "maps/MountMoon.ablk"
 
 VictoryRoadGate_Blocks:
-	INCBIN "maps/VictoryRoadGate.blk"
+	INCBIN "maps/VictoryRoadGate.ablk"
 
 UndergroundPath_Blocks:
-	INCBIN "maps/UndergroundPath.blk"
+	INCBIN "maps/UndergroundPath.ablk"
 
 VictoryRoad_Blocks:
-	INCBIN "maps/VictoryRoad.blk"
+	INCBIN "maps/VictoryRoad.ablk"
 
 LancesRoom_Blocks:
-	INCBIN "maps/LancesRoom.blk"
+	INCBIN "maps/LancesRoom.ablk"
 
 HallOfFame_Blocks:
-	INCBIN "maps/HallOfFame.blk"
+	INCBIN "maps/HallOfFame.ablk"
 
 GoldenrodFlowerShop_Blocks:
-	INCBIN "maps/GoldenrodFlowerShop.blk"
+	INCBIN "maps/GoldenrodFlowerShop.ablk"
 
 GoldenrodDeptStoreRoof_Blocks:
-	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+	INCBIN "maps/GoldenrodDeptStoreRoof.ablk"
 
 NewBarkTown_Blocks:
-	INCBIN "maps/NewBarkTown.blk"
+	INCBIN "maps/NewBarkTown.ablk"
 	
 Route1_Blocks:
-	INCBIN "maps/Route1.blk"
+	INCBIN "maps/Route1.ablk"
 
 VioletGym_Blocks:
-	INCBIN "maps/VioletGym.blk"
+	INCBIN "maps/VioletGym.ablk"
 	
 VioletCity_Blocks:
-	INCBIN "maps/VioletCity.blk"
+	INCBIN "maps/VioletCity.ablk"
 	
 Route5_Blocks:
-	INCBIN "maps/Route5.blk"
+	INCBIN "maps/Route5.ablk"
 
 Route6_Blocks:
-	INCBIN "maps/Route6.blk"
+	INCBIN "maps/Route6.ablk"
 	
 CianwoodChurch_Blocks:
-	INCBIN "maps/CianwoodChurch.blk"
+	INCBIN "maps/CianwoodChurch.ablk"
 	
 SECTION "Map Blocks 4", ROMX
 
 VioletGymB1_Blocks:
-	INCBIN "maps/VioletGymB1.blk"
+	INCBIN "maps/VioletGymB1.ablk"
 	
 PalerockMountain1F_Blocks:
-	INCBIN "maps/PalerockMountain1F.blk"
+	INCBIN "maps/PalerockMountain1F.ablk"
 	
 PalerockMountain2F_Blocks:
-	INCBIN "maps/PalerockMountain2F.blk"	
+	INCBIN "maps/PalerockMountain2F.ablk"	
 
 PalerockMountain3F_Blocks:
-	INCBIN "maps/PalerockMountain3F.blk"
+	INCBIN "maps/PalerockMountain3F.ablk"
 	
 PalerockMountainOutside_Blocks:
-	INCBIN "maps/PalerockMountainOutside.blk"
+	INCBIN "maps/PalerockMountainOutside.ablk"
 
 PalerockMountainB1_Blocks:
-	INCBIN "maps/PalerockMountainB1.blk"
+	INCBIN "maps/PalerockMountainB1.ablk"
 	
 PalerockMountainStrengthRoom_Blocks:
-	INCBIN "maps/PalerockMountainStrengthRoom.blk"
+	INCBIN "maps/PalerockMountainStrengthRoom.ablk"
 	
 Route9ForestGate_Blocks:
 EcruteakForestGate_Blocks:
-	INCBIN "maps/Route9ForestGate.blk"
+	INCBIN "maps/Route9ForestGate.ablk"
 	
 Route8_Blocks:
-	INCBIN "maps/Route8.blk"
+	INCBIN "maps/Route8.ablk"
 
 EastForest_Blocks:
-	INCBIN "maps/EastForest.blk"	
+	INCBIN "maps/EastForest.ablk"	
 
 HiddenPowerCave_Blocks:
-	INCBIN "maps/SmallCave.blk"
+	INCBIN "maps/SmallCave.ablk"
 	
 Factory1F_Blocks:
-	INCBIN "maps/Factory1F.blk"
+	INCBIN "maps/Factory1F.ablk"
 	
 FactoryB1_Blocks:
-	INCBIN "maps/FactoryB1.blk"
+	INCBIN "maps/FactoryB1.ablk"
 	
 FactoryBack_Blocks:
-	INCBIN "maps/FactoryBack.blk"
+	INCBIN "maps/FactoryBack.ablk"
 	
 AzaleaApartmentLeft_Blocks:
-	INCBIN "maps/AzaleaApartmentLeft.blk"
+	INCBIN "maps/AzaleaApartmentLeft.ablk"
 	
 AzaleaApartmentRight_Blocks:
-	INCBIN "maps/AzaleaApartmentRight.blk"
+	INCBIN "maps/AzaleaApartmentRight.ablk"
 	
 PaintersForest_Blocks:
-	INCBIN "maps/PaintersForest.blk"
+	INCBIN "maps/PaintersForest.ablk"
 	
 CianwoodCave1F_Blocks:
-	INCBIN "maps/CianwoodCave1F.blk"
+	INCBIN "maps/CianwoodCave1F.ablk"
 
 CianwoodCaveB1F_Blocks:
-	INCBIN "maps/CianwoodCaveB1F.blk"
+	INCBIN "maps/CianwoodCaveB1F.ablk"
 
 CianwoodCaveB2F_Blocks:
-	INCBIN "maps/CianwoodCaveB2F.blk"
+	INCBIN "maps/CianwoodCaveB2F.ablk"
 	
 OverlookMaze_Blocks:
-	INCBIN "maps/OverlookMaze.blk"
+	INCBIN "maps/OverlookMaze.ablk"
 	
