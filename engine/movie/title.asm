@@ -38,7 +38,7 @@ _TitleScreen:
 
 ; line 0 (copyright)
 	hlbgcoord 0, 0, vBGMap1
-	ld bc, BG_MAP_WIDTH
+	ld bc, 7
 	ld a, 7 ; palette
 	call ByteFill
 
@@ -49,7 +49,7 @@ _TitleScreen:
 ; lines 3-4
 	hlbgcoord 0, 3
 	ld bc, 2 * BG_MAP_WIDTH
-	ld a, 2
+	ld a, 3
 	call ByteFill
 ; line 5
 	hlbgcoord 0, 5
@@ -79,8 +79,28 @@ _TitleScreen:
 	call ByteFill
 
 ; Suicune gfx
-	hlbgcoord 0, 12
-	ld bc, 6 * BG_MAP_WIDTH ; the rest of the screen
+	hlbgcoord 0, 11
+	ld bc, 8 * BG_MAP_WIDTH ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 11, 11
+	ld bc, 3 ; the rest of the screen
+	ld a, 2 | VRAM_BANK_1
+	call ByteFill
+	
+	hlbgcoord 9, 12
+	ld bc, 2 ; the rest of the screen
+	ld a, 0 | VRAM_BANK_1
+	call ByteFill
+	
+	hlbgcoord 11, 12
+	ld bc, 8 * BG_MAP_WIDTH ; the rest of the screen
+	ld a, 2 | VRAM_BANK_1
+	call ByteFill
+
+	hlbgcoord 8, 16
+	ld bc, 8 * BG_MAP_WIDTH ; the rest of the screen
 	ld a, 0 | VRAM_BANK_1
 	call ByteFill
 
@@ -112,8 +132,8 @@ _TitleScreen:
 	call DrawTitleGraphic
 
 ; Draw copyright text
-	hlbgcoord 3, 0, vBGMap1
-	lb bc, 1, 13
+	hlbgcoord 13, 0, vBGMap1
+	lb bc, 1, 7
 	ld d, $c
 	ld e, $10
 	call DrawTitleGraphic
@@ -218,42 +238,11 @@ _TitleScreen:
 	ret
 
 SuicuneFrameIterator:
-	ld hl, wSuicuneFrame
-	ld a, [hl]
-	ld c, a
-	inc [hl]
-
-; Only do this once every eight frames
-	and %111
-	ret nz
-
-	ld a, c
-	and %11000
-	sla a
-	swap a
-	ld e, a
-	ld d, $0
-	ld hl, .Frames
-	add hl, de
-	ld d, [hl]
-	xor a
-	ldh [hBGMapMode], a
-	call LoadSuicuneFrame
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld a, $3
-	ldh [hBGMapThird], a
 	ret
 
-.Frames:
-	db $00 ; vTiles3 tile $80
-	db $00 ; vTiles3 tile $88
-	db $00 ; vTiles5 tile $00
-	db $00 ; vTiles5 tile $08
-
 LoadSuicuneFrame:
-	hlcoord 6, 12
-	ld b, 6
+	hlcoord 6, 11
+	ld b, 8
 .bgrows
 	ld c, 8
 .col

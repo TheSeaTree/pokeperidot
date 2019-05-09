@@ -18,10 +18,10 @@ Copyright_GFPresents:
 	call SetPalettes
 	ld c, 10
 	call DelayFrames
-	callfar Copyright
-	call WaitBGMap
-	ld c, 100
-	call DelayFrames
+;	callfar Copyright
+;	call WaitBGMap
+;	ld c, 100
+;	call DelayFrames
 	call ClearTileMap
 	farcall GBCOnlyScreen
 	call .GetGFLogoGFX

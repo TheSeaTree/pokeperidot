@@ -264,7 +264,7 @@ InitializeNPCNames:
 	call CopyBytes
 	ret
 
-.Rival:  db "???@"
+.Rival:  db "MIKE@"
 .Red:    db "RED@"
 .Green:  db "GREEN@"
 .Mom:    db "MOM@"
@@ -1155,7 +1155,7 @@ TitleScreenEntrance:
 ; Lay out a base (all lines scrolling together).
 	ld e, a
 	ld hl, wLYOverrides
-	ld bc, 8 * 10 ; logo height
+	ld bc, 8 * 9 ; logo height
 	call ByteFill
 
 ; Reversed signage for every other line's position.
@@ -1164,7 +1164,7 @@ TitleScreenEntrance:
 	xor $ff
 	inc a
 
-	ld b, 8 * 10 / 2 ; logo height / 2
+	ld b, 8 * 9 / 2 ; logo height / 2
 	ld hl, wLYOverrides + 1
 .loop
 	ld [hli], a
