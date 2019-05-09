@@ -175,17 +175,7 @@ MovementData_YoungsterLeave:
 	step RIGHT
 	step RIGHT
 	step DOWN
-	step_end
-
-CherrygroveCity_ScientistWalksToYou:
-	step DOWN
-	turn_head RIGHT
-	step_end
-	
-CherrygroveCity_ScientistWalksBack:
-	step UP
-	turn_head DOWN
-	step_end
+	step_resume
 	
 CherrygroveCantGo:
 	text "Wait! You can't"
