@@ -567,7 +567,7 @@ DayCare_InitBreeding:
 	set DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 .loop
 	call Random
-	cp 150
+	cp 75 ; Steps to generate egg?
 	jr c, .loop
 	ld [wStepsToEgg], a
 	jp .UselessJump
