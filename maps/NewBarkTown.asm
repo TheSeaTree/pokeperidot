@@ -3,7 +3,6 @@
 	const NEWBARKTOWN_FISHER1
 	const NEWBARKTOWN_FISHER2
 	const NEWBARKTOWN_BUG_CATCHER
-	const NEWBARKTOWN_GRANNY
 
 NewBarkTown_MapScripts:
 	db 2 ; scene scripts

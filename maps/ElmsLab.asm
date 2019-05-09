@@ -53,8 +53,6 @@ ElmsLab_MapScripts:
 	jump .MustSayYes
 
 .ElmGetsEmail:
-	writetext ElmText_Accepted
-	waitbutton
 	writetext ElmText_ChooseAPokemon
 	waitbutton
 	setscene SCENE_ELMSLAB_CANT_LEAVE
@@ -64,19 +62,15 @@ ElmsLab_MapScripts:
 ProfElmScript:
 	faceplayer
 	opentext
-;	checkevent EVENT_GOT_SS_TICKET_FROM_ELM
-;	iftrue ElmCheckMasterBall
-;	checkevent EVENT_BEAT_ELITE_FOUR
-;	iftrue ElmGiveTicketScript
-;ElmCheckMasterBall:
-;	checkevent EVENT_GOT_MASTER_BALL_FROM_ELM
-;	iftrue ElmCheckEverstone
-;	checkflag ENGINE_RISINGBADGE
-;	iftrue ElmGiveMasterBallScript
-;ElmCheckEverstone:
-;	checkevent EVENT_GOT_EVERSTONE_FROM_ELM
-;	iftrue ElmScript_CallYou
+	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	iffalse ChooseAPokemon
 	writetext ElmDescribesMrPokemonText
+	waitbutton
+	closetext
+	end
+	
+ChooseAPokemon
+	writetext ElmText_ChooseAPokemon
 	waitbutton
 	closetext
 	end
@@ -308,6 +302,8 @@ ElmsAideScript:
 	opentext
 	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
 	iffalse .ElmsAideNoMon
+	checkitem POKE_BALL
+	iffalse .ElmsAideNoMon
 	writetext AideText_AlwaysBusy
 	waitbutton
 	closetext
@@ -456,14 +452,6 @@ ElmText_Intro:
 	cont "#MON trainer?"
 	done
 
-ElmText_Accepted:
-	text "Splendid!"
-
-	para "Come over here to"
-	line "the table und"
-	cont "choose a partner!"
-	done
-
 ElmText_Refused:
 	text "Don't lie."
 	
@@ -498,7 +486,9 @@ ElmText_MissionFromMrPokemon:
 	done
 
 ElmText_ChooseAPokemon:
-	text "You can select any"
+	text "Splendid!"
+
+	para "You can select any"
 	line "one of the"
 
 	para "#MON contained"
