@@ -5,8 +5,6 @@ CheckWarpCollision::
 	jr z, .warp
 	cp COLL_PIT_68
 	jr z, .warp
-	cp COLL_GYM_DOOR
-	jr z, .warp
 	and $f0
 	cp HI_NYBBLE_WARPS
 	jr z, .warp
@@ -37,7 +35,7 @@ CheckDirectionalWarp::
 	ret
 
 CheckWarpFacingDown:
-	ld de, 1
+	ld de, 2
 	ld hl, .blocks
 	ld a, [wPlayerStandingTile]
 	call IsInArray
@@ -45,7 +43,6 @@ CheckWarpFacingDown:
 
 .blocks
 	db COLL_DOOR
-	db COLL_GYM_DOOR
 	db COLL_STAIRCASE
 	db COLL_STAIRCASE_73
 	db COLL_CAVE
@@ -95,8 +92,6 @@ GetWarpSFX::
 	ld a, [wPlayerStandingTile]
 	ld de, SFX_ENTER_DOOR
 	cp COLL_DOOR
-	ret z
-	cp COLL_GYM_DOOR
 	ret z
 	ld de, SFX_WARP_TO
 	cp COLL_WARP_PANEL

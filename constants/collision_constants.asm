@@ -72,7 +72,7 @@ COLL_DOOR_75           EQU $75 ; unused
 COLL_WARP_CARPET_LEFT  EQU $76
 COLL_WARP_77           EQU $77 ; unused
 COLL_WARP_CARPET_UP    EQU $78
-COLL_GYM_DOOR          EQU $79 ; unused
+COLL_DOOR_79           EQU $79 ; unused
 COLL_STAIRCASE         EQU $7a
 COLL_CAVE              EQU $7b
 COLL_WARP_PANEL        EQU $7c

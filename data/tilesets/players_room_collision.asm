@@ -1,6 +1,6 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
 	tilecoll WALL, WALL, WALL, WALL ; 01
-	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 02
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 02
 	tilecoll WALL, WALL, TV, BOOKSHELF ; 03
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 04
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 05
@@ -29,13 +29,13 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1c
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1d
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 1e
-	tilecoll TOWN_MAP, STAIRCASE, FLOOR, FLOOR ; 1f
+	tilecoll TOWN_MAP, DOOR, FLOOR, FLOOR ; 1f
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 20
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 21
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 22
-	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 23
-	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 24
-	tilecoll WALL, STAIRCASE, FLOOR, FLOOR ; 25
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 23
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 24
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 25
 	tilecoll FF, FF, FF, FF ; 26
 	tilecoll FF, FF, FF, FF ; 27
 	tilecoll FF, FF, FF, FF ; 28

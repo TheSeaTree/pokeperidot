@@ -205,7 +205,7 @@ DoPlayerMovement::
 	ld a, c
 	cp COLL_DOOR
 	jr z, .down
-	cp COLL_GYM_DOOR
+	cp COLL_DOOR_79
 	jr z, .down
 	cp COLL_STAIRCASE
 	jr z, .down
@@ -307,16 +307,16 @@ DoPlayerMovement::
 .holdwalk
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
-	jr nz, .walkanim
+;	jr nz, .walkanim
 	ld a, STEP_WALK
 	call .DoStep
 	scf
 	ret
-.walkanim
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
+;.walkanim
+;	ld a, PLAYER_NORMAL
+;	ld [wPlayerState], a
+;	call ReplaceKrisSprite
+;	ret
 
 .run
 	ld a, [wCurInput]
@@ -325,7 +325,7 @@ DoPlayerMovement::
 .holdrun
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
-	jr z, .runanim
+;	jr z, .runanim
 	ld a, STEP_RUN
 	call .DoStep
 	push af
@@ -335,11 +335,11 @@ DoPlayerMovement::
 	pop af
 	scf
 	ret
-.runanim
-	ld a, PLAYER_RUN
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
+;.runanim
+;	ld a, PLAYER_RUN
+;	ld [wPlayerState], a
+;	call ReplaceKrisSprite
+;	ret
 
 .ice
 	ld a, STEP_ICE
