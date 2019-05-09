@@ -1,6 +1,6 @@
 	db CONCHER ; 106
 
-	db  70, 45,  85,  50,  95, 180
+	db  70,  45,  85,  50,  95, 180
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, ICE ; type

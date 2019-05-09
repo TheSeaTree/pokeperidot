@@ -1,6 +1,6 @@
 	db SNOWMAD ; 176
 
-	db  65,  100,  85,  105,  90, 60
+	db  65,  100,  85, 105,  90, 60
 	;   hp  atk  def  spd  sat  sdf
 
 	db ICE, DARK ; type
