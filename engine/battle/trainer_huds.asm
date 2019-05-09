@@ -19,8 +19,8 @@ ShowPlayerMonsRemaining:
 	ld hl, wPartyMon1HP
 	ld de, wPartyCount
 	call StageBallTilesData
-	; ldpixel wPlaceBallsX, 12, 12
-	ld a, 12 * 8
+;	ldpixel wPlaceBallsX, 12, 12
+	ld a, 95
 	ld hl, wPlaceBallsX
 	ld [hli], a
 	ld [hl], 11 * 8
@@ -110,10 +110,10 @@ DrawPlayerHUDBorder:
 	jr PlaceHUDBorderTiles
 
 .tiles
-	db $73 ; right side
-	db $77 ; bottom right
-	db $6f ; bottom left
-	db $79 ; bottom side
+	db $73 | X_FLIP; right side
+	db $77 | X_FLIP; bottom right
+	db $79 | X_FLIP; bottom left
+	db $76 | X_FLIP; bottom side
 .tiles_end
 
 DrawPlayerPartyIconHUDBorder:
@@ -128,8 +128,8 @@ DrawPlayerPartyIconHUDBorder:
 .tiles
 	db $6d ; right side
 	db $5c ; bottom right
-	db $6f ; bottom left
-	db $79 ; bottom side
+	db $79 ; bottom left
+	db $76 ; bottom side
 .tiles_end
 
 DrawEnemyHUDBorder:
