@@ -17,6 +17,8 @@ INCLUDE "data/tilesets/kanto_collision.asm"
 
 Tileset0GFX:
 TilesetJohtoGFX:
+TilesetJohtoCityGFX:
+TilesetMountainGFX:
 INCBIN "gfx/tilesets/johto.2bpp.lz"
 
 Tileset0Meta:
@@ -301,17 +303,11 @@ INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 SECTION "Tileset Data 8", ROMX
 
 
-TilesetJohtoCityGFX:
-INCBIN "gfx/tilesets/johto_city.2bpp.lz"
-
 TilesetJohtoCityMeta:
 INCBIN "data/tilesets/johto_city_metatiles.bin"
 
 TilesetJohtoCityColl:
 INCLUDE "data/tilesets/johto_city_collision.asm"
-
-TilesetMountainGFX:
-INCBIN "gfx/tilesets/mountain.2bpp.lz"
 
 TilesetMountainMeta:
 INCBIN "data/tilesets/mountain_metatiles.bin"

@@ -14,6 +14,8 @@ LoadSpecialMapPalette:
 	jr z, .mansion_mobile
 	cp TILESET_TOWER
 	jr z, .tower
+	cp TILESET_MOUNTAIN
+	jr z, .mountain
 	jr .do_nothing
 
 .pokecom_2f
@@ -54,6 +56,10 @@ LoadSpecialMapPalette:
 	call LoadMansionPalette
 	scf
 	ret
+	
+.mountain
+	ld hl, MountainPalette
+	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
 	and a
@@ -153,3 +159,18 @@ LoadMansionPalette:
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
+
+MountainPalette:
+INCLUDE "gfx/tilesets/mountain.pal"
+
+LoadEightTimeOfDayBGPalettes:
+    ld a, [wTimeOfDayPal]
+    and 3
+    ld bc, 8 palettes
+    call AddNTimes
+    ld a, $5
+    ld de, wBGPals1
+    ld bc, 8 palettes
+    call FarCopyWRAM
+    scf
+    ret

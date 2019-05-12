@@ -5,7 +5,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
 	tilecoll WALL, WALL, WALL, WALL ; 05
 	tilecoll LADDER, LADDER, LADDER, LADDER ; 06
-	tilecoll WHIRLPOOL, BUOY, WATER, BUOY ; 07
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 07
 	tilecoll WALL, WALL, WALL, WALL ; 08
 	tilecoll WALL, WALL, WALL, WALL ; 09
 	tilecoll WALL, WALL, WALL, WALL ; 0a
@@ -150,4 +150,3 @@
 	tilecoll WALL, WALL, WALL, WALL ; 95
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 96
 	tilecoll HOP_DOWN_RIGHT, WALL, WALL, WALL ; 97
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 98

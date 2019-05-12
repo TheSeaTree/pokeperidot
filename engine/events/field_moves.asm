@@ -92,7 +92,7 @@ HideHeadbuttTree:
 	ld h, [hl]
 	ld l, a
 
-	ld a, $5
+	ld a, $25
 	ld [hli], a
 	ld [hld], a
 	ld bc, SCREEN_WIDTH
