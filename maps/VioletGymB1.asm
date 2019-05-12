@@ -11,21 +11,21 @@ VioletGymB1_MapScripts:
 .Sand:
 	checkevent EVENT_BEAT_SWIMMERM_VINNY
 	iffalse .skip1
+	changeblock 14, 16, $11
 	changeblock 14, 18, $11
-	changeblock 14, 20, $11
 .skip1
 	checkevent EVENT_BEAT_SWIMMERM_JIMMY
 	iffalse .skip2
-	changeblock 24, 12, $11
+	changeblock 24, 10, $11
 .skip2
 	checkevent EVENT_BEAT_SWIMMERF_VIVIAN
 	iffalse .skip3
-	changeblock 10, 12, $11
-	changeblock  8, 12, $11
+	changeblock 10, 10, $11
+	changeblock  8, 10, $11
 .skip3
 	checkevent EVENT_BEAT_SWIMMERM_RONNIE
 	iffalse .skip4
-	changeblock 18, 10, $11
+	changeblock 18,  6, $11
 	changeblock 18,  8, $11
 .skip4
 	return
@@ -104,8 +104,8 @@ VioletGymB1TriggerScript1:
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 30
+	changeblock 14, 16, $11
 	changeblock 14, 18, $11
-	changeblock 14, 20, $11
 	reloadmappart
 	waitsfx
 	end
@@ -136,7 +136,7 @@ VioletGymB1TriggerScript2:
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
-	changeblock 24, 12, $11
+	changeblock 24, 10, $11
 	reloadmappart
 	waitsfx
 	end
@@ -167,8 +167,8 @@ VioletGymB1TriggerScript3:
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
-	changeblock 10, 12, $11
-	changeblock  8, 12, $11
+	changeblock 10, 10, $11
+	changeblock  8, 10, $11
 	reloadmappart
 	waitsfx
 	end	
@@ -199,8 +199,8 @@ VioletGymB1TriggerScript4:
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
+	changeblock 18,  6, $11
 	changeblock 18,  8, $11
-	changeblock 18, 10, $11
 	reloadmappart
 	waitsfx
 	end	
@@ -355,18 +355,18 @@ VioletGymB1_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 19, 27, VIOLET_GYM, 3
+	warp_event 19, 25, VIOLET_GYM, 3
 
 	db 2 ; coord events
-	coord_event 16, 26, -1, VioletCantLeave
-	coord_event 17, 26, -1, VioletCantLeave
+	coord_event 16, 24, -1, VioletCantLeave
+	coord_event 17, 24, -1, VioletCantLeave
 
 	db 0 ; bg events
 
 	db 6 ; object events
 	object_event 19,  3, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1FalknerScript, -1
-	object_event 13, 23, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript1, -1 ;Vinny
-	object_event 16, 14, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
-	object_event 28, 16, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian
-	object_event  3, 11, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript4, -1 ;Ronnie
+	object_event 13, 21, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript1, -1 ;Vinny
+	object_event 16, 12, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
+	object_event 28, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian
+	object_event  3,  9, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript4, -1 ;Ronnie
 	

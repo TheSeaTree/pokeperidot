@@ -319,8 +319,8 @@ CianwoodChurch_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6, 17, CIANWOOD_CITY, 9
-	warp_event  7, 17, CIANWOOD_CITY, 9
+	warp_event  6, 21, CIANWOOD_CITY, 9
+	warp_event  7, 21, CIANWOOD_CITY, 9
 	warp_event  1,  3, CIANWOOD_CAVE_B1F, 4
 
 	db 0 ; coord events
