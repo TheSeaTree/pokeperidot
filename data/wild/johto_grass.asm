@@ -356,26 +356,26 @@ JohtoGrassWildMons:
 	map_id PALEROCK_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, DIGLETT
+	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
-	db 14, CUBONE
+	db 14, GASTLY
 	db 15, GEODUDE
 	db 15, RHYHORN
 	db 15, RHYHORN
 	; day
-	db 14, DIGLETT
+	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
-	db 14, CUBONE
+	db 14, GASTLY
 	db 15, GEODUDE
 	db 15, RHYHORN
 	db 15, RHYHORN
 	; nite
-	db 14, DIGLETT
+	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
-	db 14, CUBONE
+	db 14, DROWZEE
 	db 15, GEODUDE
 	db 15, RHYHORN
 	db 15, RHYHORN
@@ -383,29 +383,29 @@ JohtoGrassWildMons:
 	map_id PALEROCK_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, ZUBAT
-	db 19, CUBONE
-	db 20, DUNSPARCE
-	db 19, ONIX
-	db 20, MISDREAVUS
-	db 20, ONIX
-	db 21, MISDREAVUS
+	db 16, ZUBAT
+	db 17, CUBONE
+	db 17, DIGLETT
+	db 15, ONIX
+	db 15, RHYHORN
+	db 15, ONIX
+	db 16, RHYHORN
 	; day
-	db 18, ZUBAT
-	db 19, CUBONE
-	db 20, DUNSPARCE
-	db 19, ONIX
-	db 20, MISDREAVUS
-	db 20, ONIX
-	db 21, MISDREAVUS
+	db 16, ZUBAT
+	db 17, CUBONE
+	db 17, DIGLETT
+	db 15, ONIX
+	db 15, RHYHORN
+	db 15, ONIX
+	db 16, RHYHORN
 	; nite
-	db 18, ZUBAT
-	db 19, CUBONE
-	db 20, DUNSPARCE
-	db 19, ONIX
-	db 20, MISDREAVUS
-	db 20, ONIX
-	db 21, MISDREAVUS
+	db 16, ZUBAT
+	db 17, CUBONE
+	db 17, DIGLETT
+	db 15, ONIX
+	db 15, RHYHORN
+	db 15, ONIX
+	db 16, RHYHORN
 	
 	map_id CIANWOOD_CITY
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -457,7 +457,7 @@ JohtoGrassWildMons:
 	db 18, SWINUB
 	db 20, DELIBIRD
 	db 17, SWINUB
-	db 19, CLEFAIRY
+	db 19, GREMINI
 	db 18, SMOOCHUM
 	db 21, SMOOCHUM
 	
@@ -465,7 +465,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT
-	db 19, KOFFING
+	db 19, GASTLY
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
@@ -473,7 +473,7 @@ JohtoGrassWildMons:
 	db 21, DUNSPARCE
 	; day
 	db 18, ZUBAT
-	db 19, KOFFING
+	db 19, GASTLY
 	db 20, DUNSPARCE
 	db 19, GEODUDE
 	db 20, DIGLETT
