@@ -42,6 +42,9 @@ GetTMHMItemMove:
 	ret
 
 AskTeachTMHM:
+	call WaitSFX
+	ld de, SFX_CHOOSE_PC_OPTION
+	call PlaySFX
 	ld hl, wOptions
 	ld a, [hl]
 	push af
@@ -63,7 +66,7 @@ AskTeachTMHM:
 	call PrintText
 	ld hl, Text_ItContained
 	call PrintText
-;	call YesNoBox
+	call YesNoBox
 .NotTMHM:
 	pop bc
 	ld a, b

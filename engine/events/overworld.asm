@@ -133,9 +133,16 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
+	ld de, ENGINE_PLAINBADGE
+	call CheckBadge
+	jr c, .nocutbadge
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
+	ret
+
+.nocutbadge
+	ld a, $80
 	ret
 
 .nothingtocut
@@ -1758,6 +1765,10 @@ GotOffTheBikeText:
 TryCutOW::
 	ld d, CUT
 	call CheckPartyMove
+	jr c, .cant_cut
+
+	ld de, ENGINE_PLAINBADGE
+	call CheckEngineFlag
 	jr c, .cant_cut
 
 	ld a, BANK(AskCutScript)

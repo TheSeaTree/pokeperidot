@@ -166,7 +166,12 @@ UnknownText_0x1c0396::
 	line "@"
 	text_from_ram wStringBuffer2
 	text "."
-	prompt
+
+	para "Teach @"
+	text_ram wStringBuffer2
+	text_start
+	line "to a #MON?"
+	done
 
 UnknownText_0x1c03c2::
 	text_from_ram wStringBuffer2
