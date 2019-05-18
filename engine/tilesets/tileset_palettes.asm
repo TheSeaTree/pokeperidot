@@ -16,6 +16,8 @@ LoadSpecialMapPalette:
 	jr z, .tower
 	cp TILESET_MOUNTAIN
 	jr z, .mountain
+	cp 	TILESET_CAVE
+	jr z, .cave
 	jr .do_nothing
 
 .pokecom_2f
@@ -59,6 +61,10 @@ LoadSpecialMapPalette:
 	
 .mountain
 	ld hl, MountainPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.cave
+	ld hl, CavePalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
@@ -162,6 +168,9 @@ INCLUDE "gfx/tilesets/mansion_2.pal"
 
 MountainPalette:
 INCLUDE "gfx/tilesets/mountain.pal"
+
+CavePalette:
+INCLUDE "gfx/tilesets/cave.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]
