@@ -12,7 +12,6 @@ Tilesets::
 ; entries correspond to TILESET_* constants
 	tileset Tileset0
 	tileset TilesetJohto
-	tileset TilesetJohtoModern
 	tileset TilesetKanto
 	tileset TilesetBattleTowerOutside
 	tileset TilesetHouse
@@ -41,6 +40,5 @@ Tilesets::
 	tileset TilesetUnderground
 	tileset TilesetIcePath
 	tileset TilesetDarkCave
-	tileset TilesetForest
 	tileset TilesetJohtoCity
 	tileset TilesetMountain

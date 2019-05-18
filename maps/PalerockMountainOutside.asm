@@ -67,7 +67,7 @@ TrainerGuitaristBrendon:
 	
 PalerockOutsidePushAway:
 	turn_step LEFT
-	step_end
+	step_resume
 	
 PalerockOutsidePlayerMovement:
 	fix_facing

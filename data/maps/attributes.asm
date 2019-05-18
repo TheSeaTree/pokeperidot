@@ -104,7 +104,7 @@ ENDM
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
 
-	map_attributes CianwoodCity, CIANWOOD_CITY, $71, 0
+	map_attributes CianwoodCity, CIANWOOD_CITY, $9D, 0
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
 
@@ -285,7 +285,7 @@ ENDM
 	map_attributes VioletGymB1, VIOLET_GYM_B1, $0A, 0
 	map_attributes PalerockMountain1F, PALEROCK_MOUNTAIN_1F, $09, 0
 	map_attributes PalerockMountain2F, PALEROCK_MOUNTAIN_2F, $09, 0
-	map_attributes PalerockMountain3F, PALEROCK_MOUNTAIN_3F, $09, 0
+	map_attributes PalerockMountain3F, PALEROCK_MOUNTAIN_3F, $6D, 0
 	map_attributes PalerockMountainOutside, PALEROCK_MOUNTAIN_OUTSIDE, $09, 0
 	map_attributes PalerockMountainB1, PALEROCK_MOUNTAIN_B1, $09, 0
 	map_attributes PalerockMountainStrengthRoom, PALEROCK_MOUNTAIN_STRENGTH_ROOM, $09, 0
@@ -313,7 +313,7 @@ ENDM
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
 	map_attributes Route11GoldenrodGate, ROUTE_11_GOLDENROD_GATE, $00, 0	
-	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $09, 0
+	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $6D, 0
 	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
 	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0

@@ -49,7 +49,7 @@ ENDM
 	map_const RADIO_TOWER_4F,                               9,  4 ; 20
 	map_const RADIO_TOWER_5F,                               9,  4 ; 21
 	map_const UNION_CAVE_1F,                               23, 10 ; 37
-	map_const UNION_CAVE_B1F,                              11,  7 ; 38
+	map_const UNION_CAVE_B1F,                              19, 16 ; 38
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
 	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
 	map_const ILEX_FOREST,                                 37, 24 ; 52
@@ -224,7 +224,7 @@ ENDM
 
 	newgroup                                                      ; 22
 
-	map_const CIANWOOD_CITY,                               17, 25 ;  3
+	map_const CIANWOOD_CITY,                               17, 23 ;  3
 	map_const MANIAS_HOUSE,                                 4,  4 ;  4
 	map_const CIANWOOD_GYM,                                16, 20 ;  5
 	map_const CIANWOOD_POKECENTER_1F,                       5,  4 ;  6
@@ -271,7 +271,7 @@ ENDM
 	newgroup													  ; 27
 	
 	map_const PALEROCK_MOUNTAIN_1F,  					   18, 14 ;  1
-	map_const PALEROCK_MOUNTAIN_2F,  					   16, 11 ;  2
+	map_const PALEROCK_MOUNTAIN_2F,  					   15, 11 ;  2
 	map_const PALEROCK_MOUNTAIN_3F,  					    9,  9 ;  3
 	map_const PALEROCK_MOUNTAIN_OUTSIDE,				   18, 13 ;  4
 	map_const PALEROCK_MOUNTAIN_B1,						   17, 12 ;  5

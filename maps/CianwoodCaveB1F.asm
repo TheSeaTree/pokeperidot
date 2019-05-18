@@ -30,6 +30,10 @@ CianwoodCaveHikerText:
 	para "I tried to stop"
 	line "them, but there"
 	cont "were too many!"
+	
+	para "All of my #MON"
+	line "got their items"
+	cont "stolen!"
 	done
 	
 BurglarAveryText:
@@ -67,6 +71,6 @@ CianwoodCaveB1F_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  19, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
-	object_event  31, 7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, TrainerBurglarAvery, EVENT_CLEARED_CHURCH
-	object_event   4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCaveHiker, -1
+	object_event  19, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB1FBoulder, -1
+	object_event  31, 7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarAvery, EVENT_CLEARED_CHURCH
+	object_event   4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCaveHiker, EVENT_CLEARED_CHURCH

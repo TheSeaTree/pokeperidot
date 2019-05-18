@@ -10,10 +10,14 @@ CianwoodMart_MapScripts:
 
 CianwoodMartClerkScript:
 	opentext
+	checkevent EVENT_CLEARED_CHURCH
+	iftrue .ChurchCleared
 	checkevent EVENT_EXPLAINED_BURGLAR
 	iftrue .LowStock
 	checkevent EVENT_BURGLAR_IN_CIANWOOD
 	iftrue .Robbery
+	
+.ChurchCleared
 	pokemart MARTTYPE_STANDARD, MART_CIANWOOD
 	closetext
 	end
@@ -101,5 +105,5 @@ CianwoodMart_MapEvents:
 
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMartClerkScript, -1
-	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMartCooltrainerMScript, EVENT_BURGLAR_IN_CIANWOOD
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodMartYoungsterScript, EVENT_BURGLAR_IN_CIANWOOD
+	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodMartCooltrainerMScript, EVENT_CIANWOOD_FLY_GUY
+	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodMartYoungsterScript, EVENT_CIANWOOD_FLY_GUY

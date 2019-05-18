@@ -1395,7 +1395,7 @@ Skyfall:
 	ld [hl], OBJECT_ACTION_00
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 32
+	ld [hl], 16
 	call IncrementObjectStructField1c
 .Step:
 	ld hl, OBJECT_STEP_DURATION
@@ -1413,7 +1413,7 @@ Skyfall:
 	ld [hl], 0
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 32
+	ld [hl], 16
 	call IncrementObjectStructField1c
 .Fall:
 	ld hl, OBJECT_1F

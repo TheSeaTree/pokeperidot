@@ -7,6 +7,31 @@ Route9_MapScripts:
 
 Route9Sign:
 	jumptext Route9SignText
+	
+RainDanceLady:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM_RAIN_DANCE
+	iftrue .RainDance
+	writetext RainDanceLadyText
+	yesorno
+	iffalse .No
+	writetext TMRainDanceGift
+	buttonsound
+	verbosegiveitem TM_RAIN_DANCE
+	setevent EVENT_GOT_TM_RAIN_DANCE
+	
+.RainDance:
+	writetext TMRainDanceExplaination
+	buttonsound
+	closetext
+	end
+	
+.No:
+	writetext RainDanceLadyDecline
+	buttonsound
+	closetext
+	end
 
 Route9HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_9_HIDDEN_ETHER
@@ -14,6 +39,45 @@ Route9HiddenEther:
 Route9SignText:
 	text "ILEX FOREST"
 	line "Rest house ahead."
+	done
+	
+RainDanceLadyText:
+	text "I love a nice"
+	line "rainy day, they"
+	cont "are so relaxing!"
+	
+	para "Don't you love"
+	line "them too?"
+	done
+	
+TMRainDanceGift:
+	text "I'm so glad to"
+	line "have someone agree"
+	cont "with me!"
+	
+	para "Here, I have some-"
+	line "thing you'd like"
+	cont "to have!"
+	done
+	
+RainDanceLadyDecline:
+	text "Oh, you don't?"
+	
+	para "You looked like"
+	line "someone who would…"
+	done
+	
+TMRainDanceExplaination:
+	text "That TM will let"
+	line "your #MON use"
+	cont "the move RAIN"
+	cont "DANCE!"
+	
+	para "I don't have any"
+	line "#MON of my own,"
+	cont "so you can make"
+	cont "better use of it"
+	cont "than I could."
 	done
 
 Route9_MapEvents:
@@ -29,4 +93,6 @@ Route9_MapEvents:
 	bg_event 28,  6, BGEVENT_READ, Route9Sign
 	bg_event 21,  5, BGEVENT_ITEM, Route9HiddenEther
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 18,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RainDanceLady, -1
+	

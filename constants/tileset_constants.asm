@@ -1,7 +1,6 @@
 ; Tilesets indexes (see data/tilesets.asm)
 	const_def 1
 	const TILESET_JOHTO                ; 01
-	const TILESET_JOHTO_MODERN         ; 02
 	const TILESET_KANTO                ; 03
 	const TILESET_BATTLE_TOWER_OUTSIDE ; 04
 	const TILESET_HOUSE                ; 05
@@ -30,7 +29,6 @@
 	const TILESET_UNDERGROUND          ; 1c
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_DARK_CAVE            ; 1e
-	const TILESET_FOREST               ; 1f
 	const TILESET_JOHTO_CITY		   ; 25
 	const TILESET_MOUNTAIN             ; 26
 

@@ -34,7 +34,6 @@ _AnimateTileset::
 	jp hl
 
 Tileset0Anim:
-TilesetJohtoModernAnim:
 TilesetKantoAnim:
 TilesetJohtoCityAnim:
 TilesetMountainAnim:
@@ -60,20 +59,6 @@ TilesetParkAnim:
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
-	dw NULL,  StandingTileFrame8
-	dw NULL,  DoneTileAnimation
-
-TilesetForestAnim:
-	dw NULL,  ForestTreeLeftAnimation
-	dw NULL,  ForestTreeRightAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  ForestTreeLeftAnimation2
-	dw NULL,  ForestTreeRightAnimation2
-	dw NULL,  AnimateFlowerTile
-	dw vTiles2 tile $14, AnimateWaterTile
-	dw NULL,  AnimateWaterPalette
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
@@ -189,6 +174,13 @@ TilesetDarkCaveAnim:
 	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileFromBuffer
 	dw NULL,  FlickeringCaveEntrancePalette
+	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetIcePathAnim:
@@ -711,7 +703,7 @@ LavaBubbleAnim1:
 	ld hl, LavaBubbleFrames
 	add hl, de
 	ld sp, hl
-	ld hl, vTiles2 tile $5b
+	ld hl, vTiles2 tile $42
 	jp WriteTile
 
 LavaBubbleAnim2:
@@ -729,7 +721,7 @@ LavaBubbleAnim2:
 	ld hl, LavaBubbleFrames
 	add hl, de
 	ld sp, hl
-	ld hl, vTiles2 tile $38
+	ld hl, vTiles2 tile $52
 	jp WriteTile
 
 LavaBubbleFrames:

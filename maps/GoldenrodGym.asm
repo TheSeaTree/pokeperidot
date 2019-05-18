@@ -88,6 +88,7 @@ GoldenrodGymWhitneyScript:
 	checkcode VAR_BADGES
 .FightDone:
 	opentext
+	special HealParty
 	checkevent EVENT_GOT_TM_SWAGGER
 	iftrue .GotSwagger
 	writetext WhitneyPlainBadgeText

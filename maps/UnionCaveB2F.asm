@@ -35,12 +35,6 @@ UnionCaveLapras:
 	reloadmapafterbattle
 	end
 
-UnionCaveB2FElixer:
-	itemball ELIXER
-
-UnionCaveB2FHyperPotion:
-	itemball HYPER_POTION
-
 CooltrainermNickSeenText:
 	text "There are two"
 	line "kinds of people."
@@ -77,7 +71,5 @@ UnionCaveB2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	object_event 16,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FElixer, EVENT_UNION_CAVE_B2F_ELIXER
-	object_event 12, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB2FHyperPotion, EVENT_UNION_CAVE_B2F_HYPER_POTION
+	db 1 ; object events
 	object_event 11, 31, SPRITE_SURF, SPRITEMOVEDATA_SWIM_WANDER, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, UnionCaveLapras, EVENT_UNION_CAVE_B2F_LAPRAS

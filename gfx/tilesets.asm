@@ -134,9 +134,6 @@ INCBIN "data/tilesets/train_station_metatiles.bin"
 TilesetTrainStationColl:
 INCLUDE "data/tilesets/train_station_collision.asm"
 
-TilesetForestMeta:
-INCBIN "data/tilesets/forest_metatiles.bin"
-
 
 SECTION "Tileset Data 4", ROMX
 
@@ -215,15 +212,8 @@ INCBIN "data/tilesets/gate_metatiles.bin"
 TilesetGateColl:
 INCLUDE "data/tilesets/gate_collision.asm"
 
-TilesetJohtoModernGFX:
 TilesetBattleTowerOutsideGFX:
 INCBIN "gfx/tilesets/johto_modern.2bpp.lz"
-
-TilesetJohtoModernMeta:
-INCBIN "data/tilesets/johto_modern_metatiles.bin"
-
-TilesetJohtoModernColl:
-INCLUDE "data/tilesets/johto_modern_collision.asm"
 
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
@@ -236,9 +226,6 @@ INCLUDE "data/tilesets/traditional_house_collision.asm"
 
 
 SECTION "Tileset Data 6", ROMX
-
-TilesetForestGFX:
-INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetChampionsRoomGFX:
 INCBIN "gfx/tilesets/champions_room.2bpp.lz"
@@ -266,9 +253,6 @@ INCBIN "data/tilesets/lighthouse_metatiles.bin"
 
 TilesetLighthouseColl:
 INCLUDE "data/tilesets/lighthouse_collision.asm"
-
-TilesetForestColl:
-INCLUDE "data/tilesets/forest_collision.asm"
 
 TilesetBattleTowerOutsideMeta:
 INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
@@ -332,9 +316,6 @@ SECTION "Tileset Data 9", ROMX
 Tileset0Attr:
 TilesetJohtoAttr:
 INCBIN "data/tilesets/johto_attributes.bin"
-
-TilesetJohtoModernAttr:
-INCBIN "data/tilesets/johto_modern_attributes.bin"
 
 TilesetKantoAttr:
 INCBIN "data/tilesets/kanto_attributes.bin"
@@ -420,9 +401,6 @@ INCBIN "data/tilesets/underground_attributes.bin"
 
 TilesetIcePathAttr:
 INCBIN "data/tilesets/ice_path_attributes.bin"
-
-TilesetForestAttr:
-INCBIN "data/tilesets/forest_attributes.bin"
 
 TilesetJohtoCityAttr:
 INCBIN "data/tilesets/johto_city_attributes.bin"

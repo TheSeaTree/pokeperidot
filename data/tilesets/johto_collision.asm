@@ -154,3 +154,17 @@
 	tilecoll UP_WALL, FLOOR, FLOOR, FLOOR ; 99
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 9a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9c
+	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 9d
+	tilecoll HOP_DOWN_RIGHT, WALL, WALL, WALL ; 9e
+	tilecoll FLOOR, FLOOR, WALL, WALL ; 9f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
+	tilecoll WALL, FLOOR, WALL, FLOOR ; a1
+	tilecoll WALL, FLOOR, WALL, WALL ; a2
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; a3
+	tilecoll FLOOR, WALL, FLOOR, WALL ; a4
+	tilecoll WALL, WALL, FLOOR, WALL ; a5
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; a6
+	tilecoll FLOOR, FLOOR, WALL, WALL ; a7
+	tilecoll WALL, WALL, FLOOR, FLOOR ; a8
+	tilecoll WALL, WALL, FLOOR, WALL ; a9

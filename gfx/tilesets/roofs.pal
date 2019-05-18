@@ -3,8 +3,8 @@
 	RGB 21,21,21, 11,11,11 ; nite
 
 ; group 1 (Olivine)
-	RGB 14,17,31, 07,11,15 ; morn/day
-	RGB 09,09,17, 05,07,13 ; nite
+	RGB 15,10,31, 07,05,15 ; morn/day
+	RGB 06,05,17, 02,02,08 ; nite
 
 ; group 2 (Mahogany)
 	RGB 12,19,00, 06,10,00 ; morn/day
@@ -87,8 +87,8 @@
 	RGB 12,13,09, 09,12,03 ; nite
 
 ; group 22 (Cianwood)
-	RGB 15,10,31, 07,05,15 ; morn/day
-	RGB 06,05,17, 02,02,08 ; nite
+	RGB 14,17,31, 07,11,15 ; morn/day
+	RGB 09,09,17, 05,07,13 ; nite
 
 ; group 23 (Viridian)
 	RGB 21,31,07, 13,25,04 ; morn/day

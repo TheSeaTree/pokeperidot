@@ -254,6 +254,7 @@ CianwoodGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_PHARMACIST
 	; 9 of max 9 walking sprites
+	db SPRITE_BOULDER
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
