@@ -128,6 +128,7 @@ KRIS EQU __enum__
 	const AMANDA
 	const STEPHANIE
 	const HOLLY
+	const VICKY
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -149,6 +150,7 @@ KRIS EQU __enum__
 	const CHARLIE
 	const SCOTT
 	const DYLAN
+	const TRENT
 
 	trainerclass GRUNTM ; 1f
 
