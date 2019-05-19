@@ -423,8 +423,8 @@ CianwoodGym_MapEvents:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event  3, 15, BGEVENT_READ, CianwoodGymStatue
-	bg_event  6, 15, BGEVENT_READ, CianwoodGymStatue
+	bg_event 14, 37, BGEVENT_READ, CianwoodGymStatue
+	bg_event 17, 37, BGEVENT_READ, CianwoodGymStatue
 	bg_event 15, 40, BGEVENT_DOWN, CianwoodCantLeave
 	bg_event 16, 40, BGEVENT_DOWN, CianwoodCantLeave
 
