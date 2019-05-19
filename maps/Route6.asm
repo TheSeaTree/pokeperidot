@@ -126,7 +126,7 @@ Route6_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 4, 18, BGEVENT_READ, Route6UndergroundPathSign
+	bg_event  4, 20, BGEVENT_READ, Route6UndergroundPathSign
 
 	db 11 ; object events
 	object_event 21, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorCalvin, -1

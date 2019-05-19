@@ -753,4 +753,3 @@ GoldenrodGym_MapEvents:
 	object_event  7, 13, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristMarcel, -1 ; Dupe
 	object_event  3, 12, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristIvan, -1 ; Dupe
 	object_event  2, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristConrad, -1 ; Dupe
-	

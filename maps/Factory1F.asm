@@ -1,4 +1,7 @@
 	const_def 2 ; object constants
+	const FACTORY1F_BOULDER1
+	const FACTORY1F_BOULDER2
+	const FACTORY1F_ITEM_BALL
 
 Factory1F_MapScripts:
 	db 0 ; scene scripts
@@ -26,6 +29,6 @@ Factory1F_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  16, 6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Factory1FBoulder, -1
-	object_event  17, 7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Factory1FBoulder, -1
-	object_event  18,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryBasementKey, EVENT_RECEIVED_BASEMENT_KEY
+	object_event 16,  6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Factory1FBoulder, -1
+	object_event 17,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Factory1FBoulder, -1
+	object_event 18,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryBasementKey, EVENT_RECEIVED_BASEMENT_KEY

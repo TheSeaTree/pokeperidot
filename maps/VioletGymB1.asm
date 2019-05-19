@@ -363,10 +363,9 @@ VioletGymB1_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event 19,  3, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1FalknerScript, -1
 	object_event 13, 21, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript1, -1 ;Vinny
 	object_event 16, 12, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
 	object_event 28, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian
 	object_event  3,  9, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript4, -1 ;Ronnie
-	
