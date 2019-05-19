@@ -12,7 +12,6 @@ Tilesets::
 ; entries correspond to TILESET_* constants
 	tileset Tileset0
 	tileset TilesetJohto
-	tileset TilesetKanto
 	tileset TilesetBattleTowerOutside
 	tileset TilesetHouse
 	tileset TilesetPlayersHouse

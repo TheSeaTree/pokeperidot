@@ -6,15 +6,6 @@ ENDM
 
 SECTION "Tileset Data 1", ROMX
 
-TilesetKantoGFX:
-INCBIN "gfx/tilesets/kanto.2bpp.lz"
-
-TilesetKantoMeta:
-INCBIN "data/tilesets/kanto_metatiles.bin"
-
-TilesetKantoColl:
-INCLUDE "data/tilesets/kanto_collision.asm"
-
 Tileset0GFX:
 TilesetJohtoGFX:
 TilesetJohtoCityGFX:
@@ -316,9 +307,6 @@ SECTION "Tileset Data 9", ROMX
 Tileset0Attr:
 TilesetJohtoAttr:
 INCBIN "data/tilesets/johto_attributes.bin"
-
-TilesetKantoAttr:
-INCBIN "data/tilesets/kanto_attributes.bin"
 
 TilesetHouseAttr:
 INCBIN "data/tilesets/house_attributes.bin"

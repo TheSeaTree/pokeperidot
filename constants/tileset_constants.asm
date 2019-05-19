@@ -1,7 +1,6 @@
 ; Tilesets indexes (see data/tilesets.asm)
 	const_def 1
 	const TILESET_JOHTO                ; 01
-	const TILESET_KANTO                ; 03
 	const TILESET_BATTLE_TOWER_OUTSIDE ; 04
 	const TILESET_HOUSE                ; 05
 	const TILESET_PLAYERS_HOUSE        ; 06
