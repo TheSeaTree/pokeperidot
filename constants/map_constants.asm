@@ -224,7 +224,7 @@ ENDM
 
 	newgroup                                                      ; 22
 
-	map_const CIANWOOD_CITY,                               17, 23 ;  3
+	map_const CIANWOOD_CITY,                               18, 23 ;  3
 	map_const MANIAS_HOUSE,                                 4,  4 ;  4
 	map_const CIANWOOD_GYM,                                16, 20 ;  5
 	map_const CIANWOOD_POKECENTER_1F,                       5,  4 ;  6
