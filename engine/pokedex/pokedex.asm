@@ -420,17 +420,15 @@ Pokedex_ReinitDexEntryScreen:
 	ret
 
 DexEntryScreen_ArrowCursorData:
-	db D_RIGHT | D_LEFT, 4
-	dwcoord 1, 17  ; PAGE
-	dwcoord 6, 17  ; AREA
-	dwcoord 11, 17 ; CRY
-	dwcoord 15, 17 ; PRNT
+	db D_RIGHT | D_LEFT, 3
+	dwcoord 3, 17  ; PAGE
+	dwcoord 8, 17  ; AREA
+	dwcoord 13, 17 ; CRY
 
 DexEntryScreen_MenuActionJumptable:
 	dw Pokedex_Page
 	dw .Area
 	dw .Cry
-	dw .Print
 
 .Area:
 	call Pokedex_BlackOutBG
@@ -470,34 +468,6 @@ DexEntryScreen_MenuActionJumptable:
 	ld e, c
 	ld d, b
 	call PlayCry
-	ret
-
-.Print:
-	call Pokedex_ApplyPrintPals
-	xor a
-	ldh [hSCX], a
-	ld a, [wPrevDexEntryBackup]
-	push af
-	ld a, [wPrevDexEntryJumptableIndex]
-	push af
-	ld a, [wJumptableIndex]
-	push af
-	farcall PrintDexEntry
-	pop af
-	ld [wJumptableIndex], a
-	pop af
-	ld [wPrevDexEntryJumptableIndex], a
-	pop af
-	ld [wPrevDexEntryBackup], a
-	call ClearBGPalettes
-	call DisableLCD
-	call Pokedex_LoadInvertedFont
-	call Pokedex_RedisplayDexEntry
-	call EnableLCD
-	call WaitBGMap
-	ld a, POKEDEX_SCX
-	ldh [hSCX], a
-	call Pokedex_ApplyUsualPals
 	ret
 
 Pokedex_RedisplayDexEntry:
@@ -1152,17 +1122,19 @@ Pokedex_DrawDexEntryScreenBG:
 	ld bc, 19
 	ld a, $61
 	call ByteFill
-	hlcoord 1, 17
-	ld bc, 18
+	hlcoord 2, 17
+	ld bc, 16
 	ld a, " "
 	call ByteFill
+	hlcoord 18, 17
+	ld [hl], $3c
 	hlcoord 9, 7
 	ld de, .Height
 	call Pokedex_PlaceString
 	hlcoord 9, 9
 	ld de, .Weight
 	call Pokedex_PlaceString
-	hlcoord 0, 17
+	hlcoord 2, 17
 	ld de, .MenuItems
 	call Pokedex_PlaceString
 	call Pokedex_PlaceFrontpicTopLeftCorner
@@ -1175,7 +1147,7 @@ Pokedex_DrawDexEntryScreenBG:
 .Weight:
 	db "WT   ???lb", -1 ; WT   ???lb
 .MenuItems:
-	db $3b, " PAGE AREA CRY PRNT", -1
+	db $3b, " PAGE AREA CRY", -1
 
 Pokedex_DrawOptionScreenBG:
 	call Pokedex_FillBackgroundColor2
