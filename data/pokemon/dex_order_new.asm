@@ -224,7 +224,7 @@ NewPokedexOrder:
 	db RHYDON
 	db SLUGMA
 	db MAGCARGO
-	db SNEASEL
+	db TUNGTYED
 	db PORYGON
 	db PORYGON2
 	db CHANSEY

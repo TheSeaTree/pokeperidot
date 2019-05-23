@@ -214,7 +214,7 @@ PokedexDataPointerTable:
 	dw ScizorPokedexEntry
 	dw ShucklePokedexEntry
 	dw HeracrossPokedexEntry
-	dw SneaselPokedexEntry
+	dw TungtyedPokedexEntry
 	dw TeddiursaPokedexEntry
 	dw UrsaringPokedexEntry
 	dw SlugmaPokedexEntry

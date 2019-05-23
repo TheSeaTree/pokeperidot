@@ -433,8 +433,8 @@ PokemonPicPointers::
 	dba ShuckleBackpic
 	dba HeracrossFrontpic
 	dba HeracrossBackpic
-	dba SneaselFrontpic
-	dba SneaselBackpic
+	dba TungtyedFrontpic
+	dba TungtyedBackpic
 	dba TeddiursaFrontpic
 	dba TeddiursaBackpic
 	dba UrsaringFrontpic

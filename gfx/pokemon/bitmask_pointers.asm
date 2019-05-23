@@ -213,7 +213,7 @@ BitmasksPointers:
 	dw ScizorBitmasks
 	dw ShuckleBitmasks
 	dw HeracrossBitmasks
-	dw SneaselBitmasks
+	dw TungtyedBitmasks
 	dw TeddiursaBitmasks
 	dw UrsaringBitmasks
 	dw SlugmaBitmasks

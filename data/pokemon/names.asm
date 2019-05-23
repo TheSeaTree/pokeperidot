@@ -213,7 +213,7 @@ PokemonNames::
 	db "SCIZOR@@@@"
 	db "SHUCKLE@@@"
 	db "HERACROSS@"
-	db "SNEASEL@@@"
+	db "TUNGTYED@@"
 	db "TEDDIURSA@"
 	db "URSARING@@"
 	db "SLUGMA@@@@"

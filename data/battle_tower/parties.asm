@@ -237,7 +237,7 @@ BattleTowerMons1:
 	bigdw 30 ; SDef
 	db "RAPURASU@@@"
 
-	db SNEASEL
+	db SNOWMAD
 	db GOLD_BERRY
 	db CUT, FAINT_ATTACK, SURF, BLIZZARD
 	dw 0 ; OT ID
@@ -5256,7 +5256,7 @@ BattleTowerMons10:
 	bigdw 263 ; SDef
 	db "MUUMA@@@@@@"
 
-	db SNEASEL
+	db SNOWMAD
 	db SCOPE_LENS
 	db CUT, BLIZZARD, DREAM_EATER, FAINT_ATTACK
 	dw 0 ; OT ID

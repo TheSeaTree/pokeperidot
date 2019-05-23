@@ -8,9 +8,6 @@ SECTION "Egg Moves", ROMX
 ; Sweet Scent and Steel Wing were redundant since they're TMs, and
 ; Charm and Lovely Kiss were unobtainable.
 
-; Staryu's egg moves were removed in Crystal, because Staryu is genderless
-; and can only breed with Ditto.
-
 INCLUDE "data/pokemon/egg_move_pointers.asm"
 
 BulbasaurEggMoves:
@@ -473,6 +470,7 @@ LaprasEggMoves:
 	db ANCIENTPOWER
 	db FISSURE
 	db OUTRAGE
+	db SOLARBEAM
 	db -1 ; end
 
 EeveeEggMoves:
@@ -817,9 +815,6 @@ HeracrossEggMoves:
 	db DOUBLE_EDGE
 	db SEISMIC_TOSS
 	db MEGAHORN
-	db -1 ; end
-
-SneaselEggMoves:
 	db -1 ; end
 
 TeddiursaEggMoves:

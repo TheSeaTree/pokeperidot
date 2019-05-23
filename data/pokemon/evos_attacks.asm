@@ -1685,7 +1685,7 @@ SearionEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
-	db 0 ; no more evolutions
+	db EVOLVE_LEVEL, 33, TUNGTYED
 	db 1, LICK
 	db 5, SUPERSONIC
 	db 9, DEFENSE_CURL
@@ -3381,19 +3381,20 @@ HeracrossEvosAttacks:
 	db 54, MEGAHORN
 	db 0 ; no more level-up moves
 
-SneaselEvosAttacks:
+TungtyedEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SCRATCH
-	db 1, LEER
-	db 9, QUICK_ATTACK
-	db 17, SCREECH
-	db 25, FAINT_ATTACK
-	db 33, FURY_SWIPES
-	db 41, AGILITY
-	db 49, CUT
-if _CRYSTAL
-	db 65, METAL_CLAW
-endc
+	db 1, LICK
+	db 5, SUPERSONIC
+	db 9, DEFENSE_CURL
+	db 13, BITE
+	db 17, WRAP
+	db 21, HEADBUTT
+	db 25, DISABLE
+	db 29, BODY_SLAM
+	db 33, ROLLOUT
+	db 45, REST
+	db 49, SCREECH
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 TeddiursaEvosAttacks:

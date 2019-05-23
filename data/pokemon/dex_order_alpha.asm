@@ -205,7 +205,7 @@ AlphabeticalPokedexOrder:
 	db SLUGMA
 	db SMEARGLE
 	db SMOOCHUM
-	db SNEASEL
+	db TUNGTYED
 	db SNORLAX
 	db SNOWMAD
 	db SNUBBULL

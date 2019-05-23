@@ -234,7 +234,7 @@ JOHTO_POKEMON EQU const_value
 	const SCIZOR     ; d4
 	const SHUCKLE    ; d5
 	const HERACROSS  ; d6
-	const SNEASEL    ; d7
+	const TUNGTYED   ; d7
 	const TEDDIURSA  ; d8
 	const URSARING   ; d9
 	const SLUGMA     ; da

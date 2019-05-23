@@ -89,24 +89,24 @@ JohtoGrassWildMons:
 	db 18, BEEDRILL
 	db 18, SKIPLOOM
 	db 20, SKIPLOOM
-	db 19, WEEPINBELL
 	db 18, GLOOM
+	db 19, TANGELA
 	db 20, SCYTHER
 	db 20, SCYTHER
 	; day
 	db 18, BEEDRILL
 	db 18, WEEPINBELL
 	db 20, WEEPINBELL
-	db 19, SKIPLOOM
-	db 18, GLOOM
+	db 18, SKIPLOOM
+	db 18, TANGELA
 	db 20, SCYTHER
 	db 20, SCYTHER
 	; nite
 	db 18, VENONAT
 	db 18, GLOOM
 	db 20, GLOOM
-	db 19, VENONAT
 	db 18, WEEPINBELL
+	db 19, TANGELA
 	db 20, SCYTHER
 	db 20, SCYTHER
 
@@ -626,29 +626,29 @@ JohtoGrassWildMons:
 	map_id ROUTE_9
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, RINRING
-	db 15, SPEAROW
-	db 15, NYANELL
-	db 15, FEAROW
-	db 15, FEAROW
-	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, HOPPIP
+	db 21, EKANS
+	db 21, SKIPLOOM
+	db 18, SPEAROW
+	db 18, VULPIX
+	db 18, VULPIX
+	db 20, VULPIX
 	; day
-	db 15, RINRING
-	db 15, SPEAROW
-	db 15, NYANELL
-	db 15, FEAROW
-	db 15, FEAROW
-	db 18, MAROWAK
-	db 18, MAROWAK
+	db 18, BELLSPROUT
+	db 21, EKANS
+	db 21, WEEPINBELL
+	db 18, SPEAROW
+	db 18, VULPIX
+	db 18, VULPIX
+	db 20, VULPIX
 	; nite
-	db 15, RINRING
-	db 15, VENONAT
-	db 15, NYANELL
-	db 15, VENOMOTH
-	db 15, ZUBAT
-	db 18, NYANELL
-	db 18, NYANELL
+	db 18, ODDISH
+	db 21, EKANS
+	db 21, GLOOM
+	db 18, ZUBAT
+	db 18, VULPIX
+	db 18, VULPIX
+	db 20, VULPIX
 
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -676,6 +676,60 @@ JohtoGrassWildMons:
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
+	
+	map_id ROUTE_11
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 13, HOPPIP
+	db 14, NATU
+	db 16, HOPPIP
+	db 12, BUTTERFREE
+	db 12, ABRA
+	db 13, BUTTERFREE
+	db 16, BUTTERFREE
+	; day
+	db 13, BELLSPROUT
+	db 14, NATU
+	db 16, BELLSPROUT
+	db 12, BUTTERFREE
+	db 12, ABRA
+	db 13, BUTTERFREE
+	db 16, BUTTERFREE
+	; nite
+	db 13, ODDISH
+	db 14, NATU
+	db 16, ODDISH
+	db 12, BUTTERFREE
+	db 12, ABRA
+	db 13, BUTTERFREE
+	db 16, BUTTERFREE
+	
+	map_id ROUTE_13
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, GIRAFARIG
+	db 16, LICKITUNG
+	db 12, SLUGMA
+	db 13, SLUGMA
+	db 16, SLUGMA
+	; day
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, GIRAFARIG
+	db 16, LICKITUNG
+	db 12, SLUGMA
+	db 13, SLUGMA
+	db 16, SLUGMA
+	; nite
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, GIRAFARIG
+	db 16, LICKITUNG
+	db 12, SLUGMA
+	db 13, SLUGMA
+	db 16, SLUGMA
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
