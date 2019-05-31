@@ -13,6 +13,7 @@ Flypoints:
 	flypoint VIOLET,       VIOLET_CITY
 	flypoint GOLDENROD,    GOLDENROD_CITY
 	flypoint CIANWOOD,     CIANWOOD_CITY
+	flypoint ROUTE_9,      ROUTE_9
 	flypoint ECRUTEAK,     ECRUTEAK_CITY
 	flypoint OLIVINE,      OLIVINE_CITY
 	flypoint MAHOGANY,     MAHOGANY_TOWN

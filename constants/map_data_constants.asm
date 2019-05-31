@@ -76,6 +76,7 @@ const_value = -1
 	const SPAWN_VIOLET
 	const SPAWN_GOLDENROD
 	const SPAWN_CIANWOOD
+	const SPAWN_ROUTE_9
 	const SPAWN_ECRUTEAK
 	const SPAWN_OLIVINE
 	const SPAWN_MAHOGANY
