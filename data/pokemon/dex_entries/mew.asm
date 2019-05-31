@@ -1,4 +1,4 @@
-	db "NEW SPECIE@" ; species name
+	db "NEW SPECIES@" ; species name
 	dw 104, 90 ; height, weight
 
 	db   "Because it can"

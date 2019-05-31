@@ -27,10 +27,10 @@ PokemonNames::
 	db "RAICHU@@@@"
 	db "SANDSHREW@"
 	db "SANDSLASH@"
-	db "NIDORAN@@@" ;female
+	db "NIDORAN♀@@" ;female
 	db "NIDORINA@@"
 	db "NIDOQUEEN@"
-	db "NIDORAN@@@" ;male
+	db "NIDORAN♂@@" ;male
 	db "NIDORINO@@"
 	db "NIDOKING@@"
 	db "CLEFAIRY@@"
