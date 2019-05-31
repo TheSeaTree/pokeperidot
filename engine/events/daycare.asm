@@ -622,11 +622,25 @@ DayCare_InitBreeding:
 	ld a, [wCurPartySpecies]
 	cp NIDORAN_F
 	jr nz, .GotEggSpecies
+	cp NIDORINA
+	jr z, .NidoranFamilyMother
+	cp NIDOQUEEN
+	jr z, .NidoranFamilyMother
+	cp MILTANK
+	jr z, .TaurosOrMiltank
+.NidoranFamilyMother
 	call Random
 	cp 50 percent + 1
 	ld a, NIDORAN_F
 	jr c, .GotEggSpecies
 	ld a, NIDORAN_M
+	jr c, .GotEggSpecies
+.TaurosOrMiltank
+	call Random
+	cp 50 percent + 1
+	ld a, MILTANK
+	jr c, .GotEggSpecies
+	ld a, TAUROS
 .GotEggSpecies:
 	ld [wCurPartySpecies], a
 	ld [wCurSpecies], a
