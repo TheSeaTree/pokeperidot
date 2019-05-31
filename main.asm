@@ -677,6 +677,12 @@ INCLUDE "engine/events/battle_tower/load_trainer.asm"
 INCLUDE "engine/events/odd_egg.asm"
 
 
+SECTION "Type Icons", ROMX
+
+Footprints:
+INCLUDE "gfx/footprints.asm"
+
+
 SECTION "Mobile Stadium 2", ROMX
 
 if DEF(_CRYSTAL11)

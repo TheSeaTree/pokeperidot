@@ -48,6 +48,3 @@ INCBIN "gfx/mobile/phone_tiles.2bpp"
 
 MapEntryFrameGFX:
 INCBIN "gfx/frames/map_entry_sign.2bpp"
-
-Footprints:
-INCLUDE "gfx/footprints.asm"
