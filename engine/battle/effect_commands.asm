@@ -4873,9 +4873,6 @@ CalcPlayerStats:
 	ld a, 5
 	call CalcBattleStats
 
-	ld hl, BadgeStatBoosts
-	call CallBattleCore
-
 	call BattleCommand_SwitchTurn
 
 	ld hl, ApplyPrzEffectOnSpeed
@@ -5430,27 +5427,6 @@ BattleCommand_EndLoop:
 	ld [wBattleScriptBufferAddress], a
 	ret
 
-BattleCommand_FakeOut:
-	ld a, [wAttackMissed]
-	and a
-	ret nz
-
-	call CheckSubstituteOpp
-	jr nz, .fail
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVar
-	and 1 << FRZ | SLP
-	jr nz, .fail
-
-	call CheckOpponentWentFirst
-	jr z, FlinchTarget
-
-.fail
-	ld a, 1
-	ld [wAttackMissed], a
-	ret
-
 BattleCommand_FlinchTarget:
 	call CheckSubstituteOpp
 	ret nz
@@ -5786,6 +5762,10 @@ BattleCommand_Recoil:
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
 .got_hp
+	ld b, a
+	cp STRUGGLE
+	jp z, .StruggleRecoil
+
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
@@ -5794,15 +5774,10 @@ BattleCommand_Recoil:
 	ld b, a
 	ld a, [wCurDamage + 1]
 	ld c, a
-	srl b
-	rr c
-	srl b
-	rr c
-	ld a, b
-	or c
-	jr nz, .min_damage
-	inc c
+	call HalveBC
+	call HalveBC
 .min_damage
+	call FloorBC
 	ld a, [hli]
 	ld [wBuffer2], a
 	ld a, [hl]
@@ -5838,6 +5813,15 @@ BattleCommand_Recoil:
 	ld [wWhichHPBar], a
 	predef AnimateHPBar
 	call RefreshBattleHuds
+	ld hl, RecoilText
+	jp StdBattleTextBox
+	
+.StruggleRecoil
+	ld hl, GetQuarterMaxHP
+	call CallBattleCore
+	ld hl, SubtractHPFromUser
+	call CallBattleCore
+	call UpdateUserInParty
 	ld hl, RecoilText
 	jp StdBattleTextBox
 

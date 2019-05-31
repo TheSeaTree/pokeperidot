@@ -200,6 +200,16 @@ GetWeekday::
 	jr nc, .mod
 	add 7
 	ret
+	
+HalveBC::
+	srl b
+	rr c
+FloorBC::
+	ld a, c
+	or b
+	ret nz
+	inc c
+	ret
 
 INCLUDE "home/pokedex_flags.asm"
 INCLUDE "home/names.asm"
