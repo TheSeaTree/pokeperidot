@@ -171,6 +171,8 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
+	call HandleStatBoostingHeldItems
+	call HandleWeatherItem
 	call HandleBerserkGene
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
@@ -340,6 +342,100 @@ CheckFaint_EnemyThenPlayer:
 
 .BattleIsOver:
 	scf
+	ret
+
+HandleWeatherItem:
+	ldh a, [hSerialConnectionStatus]
+	cp USING_EXTERNAL_CLOCK
+	jr z, .player_1
+	call .DoPlayer
+	jp .DoEnemy
+
+.player_1
+	call .DoEnemy
+	jp .DoPlayer
+
+.DoPlayer:
+	call GetPartymonItem
+	ld a, $0
+	jp .HandleItem
+
+.DoEnemy:
+	call GetOTPartymonItem
+	ld a, $1
+.HandleItem:
+	ldh [hBattleTurn], a
+	ld d, h
+	ld e, l
+	push de
+	push bc
+	ld a, [bc]
+	ld b, a
+	callfar GetItemHeldEffect
+	ld hl, HeldWeatherItems
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .finish
+	inc hl
+	inc hl
+	cp b
+	jr nz, .loop
+	pop bc
+	ld a, [bc]
+	ld [wNamedObjectIndexBuffer], a
+	push bc
+	dec hl
+	dec hl
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, BANK(BattleCommand_AttackUp)
+	rst FarCall
+	pop bc
+	pop de
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	xor a
+	ld [bc], a
+	ld [de], a
+	call GetItemName
+	ld hl, BattleText_UsersStringBuffer1Activated
+	call StdBattleTextBox
+	ld a, [wBattleWeather]
+	cp WEATHER_RAIN
+	jr z, .RainAnim
+	cp WEATHER_SUN
+	jr z, .SunAnim
+	cp WEATHER_SANDSTORM
+	jr z, .SandstormAnim
+	ret
+
+.finish
+	pop bc
+	pop de
+	ret
+	
+.RainAnim
+	ld de, RAIN_DANCE
+	call Call_PlayBattleAnim
+	ld hl, DownpourText
+	jp StdBattleTextBox
+	ret
+	
+.SunAnim
+	ld de, SUNNY_DAY
+	call Call_PlayBattleAnim
+	ld hl, SunGotBrightText
+	jp StdBattleTextBox
+	ret
+	
+.SandstormAnim
+	ld de, SANDSTORM
+	call Call_PlayBattleAnim
+	ld hl, SandstormBrewedText
+	jp StdBattleTextBox
 	ret
 
 HandleBerserkGene:
@@ -1696,6 +1792,7 @@ HandleWeather:
 	dec [hl]
 	jr z, .ended
 
+	call HandleWeatherItem
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
@@ -3892,7 +3989,6 @@ InitBattleMon:
 	ld bc, PARTYMON_STRUCT_LENGTH - MON_ATK
 	call CopyBytes
 	call ApplyStatusEffectOnPlayerStats
-	call BadgeStatBoosts
 	ret
 
 BattleCheckPlayerShininess:
@@ -5646,11 +5742,39 @@ MoveInfoBox:
 	xor a
 	ldh [hBGMapMode], a
 
-	hlcoord 0, 8
-	ld b, 3
-	ld c, 9
+	hlcoord 0, 9
+	ld b, 2
+	ld c, 8
 	call TextBox
 	call MobileTextBorder
+	
+	hlcoord 1, 12
+	lb bc, 5, 3
+	call ClearBox
+
+	hlcoord 0, 12
+	ld [hl], "♣"
+	hlcoord 1, 12
+	ld [hl], "─"
+	hlcoord 2, 12
+	ld [hl], "─"
+	hlcoord 3, 12
+	ld [hl], "─"
+	hlcoord 4, 12
+	ld [hl], "♥"
+	hlcoord 9, 12
+	ld [hl], "♠"
+	hlcoord 4, 17
+	ld [hl], "♠"
+	hlcoord 2, 10
+	ld de, .Type
+	call PlaceString
+	hlcoord 1, 13
+	ld de, .BP
+	call PlaceString
+	hlcoord 1, 15
+	ld de, .PP
+	call PlaceString
 
 	ld a, [wPlayerDisableCount]
 	and a
@@ -5663,10 +5787,16 @@ MoveInfoBox:
 	cp b
 	jr nz, .not_disabled
 
-	hlcoord 1, 10
+	hlcoord 1, 14
+	ld de, String_MoveNoBasePower
+	call PlaceString
+	hlcoord 1, 16
+	ld de, String_MoveNoBasePower
+	call PlaceString
+	hlcoord 1, 11
 	ld de, .Disabled
 	call PlaceString
-	jr .done
+	jp .done
 
 .not_disabled
 	ld hl, wMenuCursorY
@@ -5696,44 +5826,32 @@ MoveInfoBox:
 	and PP_MASK
 	ld [wStringBuffer1], a
 	call .PrintPP
-
-	hlcoord 0, 12
-	ld [hl], "♣"
-	hlcoord 4, 12
-	ld [hl], "♥"
-	hlcoord 10, 12
-	ld [hl], "♠"
-	hlcoord 4, 17
-	ld [hl], "♠"
-	hlcoord 1, 9
-	ld de, .Type
-	call PlaceString
-
-	hlcoord 7, 11
-	ld [hl], "/"
+	call .PrintBP
 
 	callfar UpdateMoveData
 	ld a, [wPlayerMoveStruct + MOVE_ANIM]
 	ld b, a
-	hlcoord 2, 10
+	hlcoord 1, 11
 	predef PrintMoveType
 
 .done
 	ret
 
 .Disabled:
-	db "Disabled!@"
+	db "DISABLED@"
 	
 .Type:
 	db "TYPE/@"
+	
+.BP:
+	db "BP/@"
+	
+.PP:
+	db "PP/@"
 
 .PrintPP:
-	hlcoord 5, 11
-	ld a, [wLinkMode] ; What's the point of this check?
-	cp LINK_MOBILE
-	jr c, .ok
-	hlcoord 5, 11
-.ok
+	hlcoord 2, 16
+
 	push hl
 	ld de, wStringBuffer1
 	lb bc, 1, 2
@@ -5741,12 +5859,43 @@ MoveInfoBox:
 	pop hl
 	inc hl
 	inc hl
-	ld [hl], "/"
-	inc hl
-	ld de, wNamedObjectIndexBuffer
-	lb bc, 1, 2
+;	hlcoord 1, 16
+;	ld [hl], "/"
+;	inc hl
+;	ld de, wNamedObjectIndexBuffer
+;	lb bc, 1, 2
+;	call PrintNum
+	ret
+	
+.PrintBP:
+	callfar UpdateMoveData
+	xor a
+	ldh [hBGMapMode], a
+	ld a, [wCurSpecies]
+	ld b, a
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_POWER
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	hlcoord 1, 14
+	cp 2
+	jr c, .no_power
+	ld [wDeciramBuffer], a
+	ld de, wDeciramBuffer
+	lb bc, 1, 3
 	call PrintNum
 	ret
+
+.no_power
+	ld de, String_MoveNoBasePower
+	call PlaceString
+	ret
+	
+String_MoveNoBasePower:
+	db "---@"
 
 CheckPlayerHasUsableMoves:
 	ld a, STRUGGLE
@@ -6780,64 +6929,6 @@ ApplyStatLevelMultiplier:
 
 INCLUDE "data/battle/stat_multipliers_2.asm"
 
-BadgeStatBoosts:
-; Raise the stats of the battle mon in wBattleMon
-; depending on which badges have been obtained.
-
-; Every other badge boosts a stat, starting from the first.
-
-; 	ZephyrBadge:  Attack
-; 	PlainBadge:   Speed
-; 	MineralBadge: Defense
-; 	GlacierBadge: Special Attack
-; 	RisingBadge:  Special Defense
-
-; The boosted stats are in order, except PlainBadge and MineralBadge's boosts are swapped.
-
-	ld a, [wLinkMode]
-	and a
-	ret nz
-
-	ld a, [wInBattleTowerBattle]
-	and a
-	ret nz
-
-	ld a, [wJohtoBadges]
-
-; Swap badges 3 (PlainBadge) and 5 (MineralBadge).
-	ld d, a
-	and (1 << PLAINBADGE)
-	add a
-	add a
-	ld b, a
-	ld a, d
-	and (1 << MINERALBADGE)
-	rrca
-	rrca
-	ld c, a
-	ld a, d
-	and ((1 << ZEPHYRBADGE) | (1 << HIVEBADGE) | (1 << FOGBADGE) | (1 << STORMBADGE) | (1 << GLACIERBADGE) | (1 << RISINGBADGE))
-	or b
-	or c
-	ld b, a
-
-	ld hl, wBattleMonAttack
-	ld c, 4
-.CheckBadge:
-	ld a, b
-	srl b
-	call c, BoostStat
-	inc hl
-	inc hl
-; Check every other badge.
-	srl b
-	dec c
-	jr nz, .CheckBadge
-; And the last one (RisingBadge) too.
-	srl a
-	call c, BoostStat
-	ret
-
 BoostStat:
 ; Raise stat at hl by 1/8.
 
@@ -7297,7 +7388,6 @@ GiveExperiencePoints:
 	ld [wApplyStatLevelMultipliersToEnemy], a
 	call ApplyStatLevelMultiplierOnAllStats
 	callfar ApplyStatusEffectOnPlayerStats
-	callfar BadgeStatBoosts
 	callfar UpdatePlayerHUD
 	call EmptyBattleTextBox
 	call LoadTileMapToTempTileMap

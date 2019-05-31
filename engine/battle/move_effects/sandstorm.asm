@@ -16,3 +16,10 @@ BattleCommand_StartSandstorm:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
+	
+BattleCommand_ItemSandstorm:
+	ld a, WEATHER_SANDSTORM
+	ld [wBattleWeather], a
+	ld a, 5
+	ld [wWeatherCount], a
+	ret

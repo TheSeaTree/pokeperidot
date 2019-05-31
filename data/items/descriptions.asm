@@ -49,7 +49,7 @@ ItemDescriptions:
 	dw SodaPopDesc
 	dw LemonadeDesc
 	dw XAttackDesc
-	dw HelixFossilDesc
+	dw XSpecialDefenseDesc
 	dw XDefendDesc
 	dw XSpeedDesc
 	dw XSpecialDesc
@@ -89,7 +89,7 @@ ItemDescriptions:
 	dw BigMushroomDesc
 	dw SilverPowderDesc
 	dw BluApricornDesc
-	dw TeruSama6Desc
+	dw DampRockDesc
 	dw AmuletCoinDesc
 	dw YlwApricornDesc
 	dw GrnApricornDesc
@@ -99,7 +99,7 @@ ItemDescriptions:
 	dw WhtApricornDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
-	dw TeruSama7Desc
+	dw HelixFossilDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
@@ -134,8 +134,8 @@ ItemDescriptions:
 	dw StarPieceDesc
 	dw BasementKeyDesc
 	dw PassDesc
-	dw TeruSama9Desc
-	dw TeruSama10Desc
+	dw HeatRockDesc
+	dw SmoothRockDesc
 	dw TeruSama11Desc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
@@ -450,23 +450,23 @@ LemonadeDesc:
 
 XAttackDesc:
 	db   "Raises ATTACK."
-	next "(1 BTL)@"
+	next "(HOLD)@"
 
-HelixFossilDesc:
-	db   "Ancient fossil"
-	next "of a #MON.@"
+XSpecialDefenseDesc:
+	db	 "Raises SPECIAL"
+	next "DEFENSE. (HOLD)@"
 
 XDefendDesc:
 	db   "Raises DEFENSE."
-	next "(1 BTL)@"
+	next "(HOLD)@"
 
 XSpeedDesc:
 	db   "Raises SPEED."
-	next "(1 BTL)@"
+	next "(HOLD)@"
 
 XSpecialDesc:
 	db   "Raises SPECIAL"
-	next "ATTACK. (1 BTL)@"
+	next "ATTACK. (HOLD)@"
 
 CoinCaseDesc:
 	db   "Holds up to 9,999"
@@ -609,8 +609,9 @@ SilverPowderDesc:
 BluApricornDesc:
 	db   "A blue APRICORN.@"
 
-TeruSama6Desc:
-	db   "?@"
+DampRockDesc:
+	db	 "Summons a"
+	next "downpour. (HOLD)@"
 
 AmuletCoinDesc:
 	db   "Doubles monetary"
@@ -645,8 +646,9 @@ BlkApricornDesc:
 	db   "A black APRICORN."
 	next "@"
 
-TeruSama7Desc:
-	db   "?@"
+HelixFossilDesc:
+	db   "Ancient fossil"
+	next "of a #MON.@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."
@@ -782,11 +784,13 @@ PassDesc:
 	db   "A ticket for the"
 	next "MAGNET TRAIN.@"
 
-TeruSama9Desc:
-	db   "?@"
+HeatRockDesc:
+	db   "Summons harsh"
+	next "sunlight. (HOLD)@"
 
-TeruSama10Desc:
-	db   "?@"
+SmoothRockDesc:
+	db   "Summons a"
+	next "sandstorm. (HOLD)@"
 
 TeruSama11Desc:
 	db   "?@"

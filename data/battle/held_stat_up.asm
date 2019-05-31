@@ -7,3 +7,9 @@ HeldStatUpItems:
 	dbw HELD_ACCURACY_UP,   BattleCommand_AccuracyUp
 	dbw HELD_EVASION_UP,    BattleCommand_EvasionUp
 	db -1 ; end
+
+HeldWeatherItems:
+	dbw HELD_SET_RAIN,		BattleCommand_ItemRain
+	dbw HELD_SET_SUN,       BattleCommand_ItemSun
+	dbw HELD_SET_SAND, 		BattleCommand_ItemSandstorm
+	db -1
