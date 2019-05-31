@@ -91,7 +91,7 @@ endc
 ENDM
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, NORTH | SOUTH
-	connection north, Route11, ROUTE_11, 2
+	connection north, Route11, ROUTE_11, 4
 	connection south, Route1, ROUTE_1, -1
 
 	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, SOUTH | EAST
@@ -143,14 +143,20 @@ ENDM
 
 	map_attributes Route18, ROUTE_18, $43, 0
 	
-	map_attributes Route14, ROUTE_14, $43, 0
+	map_attributes Route14, ROUTE_14, $05, SOUTH
+	connection south, Route13, ROUTE_13, 0
 
-	map_attributes Route13, ROUTE_13, $43, 0
+	map_attributes Route13, ROUTE_13, $05, NORTH | SOUTH
+	connection north, Route14, ROUTE_14, 0
+	connection south, Route12, ROUTE_12, -5
 
-	map_attributes Route12, ROUTE_12, $43, 0
+	map_attributes Route12, ROUTE_12, $05, NORTH | SOUTH
+	connection north, Route13, ROUTE_13,  5
+	connection south, Route11, ROUTE_11, 18
 
-	map_attributes Route11, ROUTE_11, $05, SOUTH
-	connection south, NewBarkTown, NEW_BARK_TOWN, -2
+	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
+	connection north, Route12, ROUTE_12, -18
+	connection south, NewBarkTown, NEW_BARK_TOWN, -4
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 7
@@ -317,3 +323,4 @@ ENDM
 	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
 	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
+	map_attributes LostLand, LOST_LAND, $05, 0

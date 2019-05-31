@@ -5,6 +5,7 @@
 	const ROOF_AZALEA    ; 2
 	const ROOF_OLIVINE   ; 3
 	const ROOF_GOLDENROD ; 4
+	const ROOF_SNOWY     ; 5
 
 MapGroupRoofs:
 ; entries correspond to map groups
@@ -19,7 +20,7 @@ MapGroupRoofs:
 	db -1             ;  7
 	db ROOF_GOLDENROD ;  8 (Azalea)
 	db ROOF_AZALEA    ;  9 (Lake of Rage)
-	db ROOF_AZALEA    ; 10 (Violet)
+	db ROOF_OLIVINE   ; 10 (Violet)
 	db ROOF_AZALEA    ; 11 (Goldenrod)
 	db -1             ; 12
 	db -1             ; 13
@@ -31,9 +32,9 @@ MapGroupRoofs:
 	db ROOF_NEW_BARK  ; 19 (Silver Cave)
 	db -1             ; 20
 	db -1             ; 21
-	db ROOF_OLIVINE   ; 22 (Cianwood)
+	db ROOF_SNOWY   ; 22 (Cianwood)
 	db -1             ; 23
-	db ROOF_OLIVINE   ; 24 (New Bark)
+	db ROOF_AZALEA    ; 24 (New Bark)
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Cherrygrove)
 
@@ -44,3 +45,4 @@ INCBIN "gfx/tilesets/roofs/violet.2bpp"
 INCBIN "gfx/tilesets/roofs/azalea.2bpp"
 INCBIN "gfx/tilesets/roofs/olivine.2bpp"
 INCBIN "gfx/tilesets/roofs/goldenrod.2bpp"
+INCBIN "gfx/tilesets/roofs/snowy.2bpp"

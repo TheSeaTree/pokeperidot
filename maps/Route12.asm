@@ -8,7 +8,9 @@ Route12_MapScripts:
 Route12_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event  4, 12, ECRUTEAK_CITY, 6
+	warp_event  4, 13, ECRUTEAK_CITY, 7
 
 	db 0 ; coord events
 

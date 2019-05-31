@@ -52,7 +52,6 @@ ENDM
 	map_const UNION_CAVE_B1F,                              19, 16 ; 38
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
 	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
-	map_const ILEX_FOREST,                                 37, 24 ; 52
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
 	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
@@ -67,6 +66,7 @@ ENDM
 	map_const CIANWOOD_CAVE_B1F,                           20, 15
 	map_const CIANWOOD_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
+	map_const LOST_LAND,		                           29,  20
 
 	newgroup                                                      ;  4
 
@@ -89,12 +89,7 @@ ENDM
 
 	newgroup                                                      ;  6
 
-
 	newgroup                                                      ;  7
-
-	map_const ROUTE_9,                                     19, 13 ; 13
-	map_const ROUTE_10_NORTH,                              16, 14 ; 14
-	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 
 	newgroup                                                      ;  8
 
@@ -126,8 +121,9 @@ ENDM
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     28, 13 ;  1
 	map_const ROUTE_6,                                     28, 13 ;  1
-	map_const ROUTE_7,                                     20, 14 ;  1
+	map_const ROUTE_7,                                     21, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
+	map_const ROUTE_10_NORTH,                              16, 14 ; 14
 	map_const VIOLET_CITY,                                 27, 12 ;  5
 	map_const VIOLET_MART,                                  6,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  4 ;  7
@@ -172,7 +168,7 @@ ENDM
 	map_const ROUTE_6_SURFERS_HOUSE,                        4,  4 ; 13
 
 	newgroup                                                      ; 13
-
+	
 	newgroup                                                      ; 14
 
 	newgroup                                                      ; 15
@@ -189,14 +185,17 @@ ENDM
 
 	newgroup                                                      ; 17
 
-	map_const ROUTE_13,                                    30,  9 ;  1
-	map_const ROUTE_14,                                    10, 18 ;  2
-	map_const ROUTE_15,                                    20,  9 ;  3
-	map_const ROUTE_18,                                    10,  9 ;  4
+	map_const ILEX_FOREST,                                 37, 24 ; 52
+	map_const ROUTE_9,                                     19, 13 ; 13
+	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 
 	newgroup                                                      ; 18
 
-	map_const ROUTE_12,                                    10, 27 ;  2
+	map_const ROUTE_12,                                    35, 11 ;  2
+	map_const ROUTE_13,                                    21, 16 ;  1
+	map_const ROUTE_14,                                    23, 14 ;  2
+	map_const ROUTE_15,                                    20,  9 ;  3
+	map_const ROUTE_18,                                    10,  9 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14
@@ -242,7 +241,7 @@ ENDM
 	newgroup                                                      ; 24
 
 	map_const ROUTE_1,                                     33, 17 ;  1
-	map_const NEW_BARK_TOWN,                               14, 10 ;  4
+	map_const NEW_BARK_TOWN,                               14, 11 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7

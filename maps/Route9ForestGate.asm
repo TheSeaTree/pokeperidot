@@ -35,6 +35,12 @@ Route9ForestGateTeacherScript:
 	writetext Route9ForestGateKeepAtItText
 	waitbutton
 	closetext
+	checkflag ENGINE_FLYPOINT_ROUTE_9
+	iffalse .SetFlypoint
+	end
+	
+.SetFlypoint
+	setflag ENGINE_FLYPOINT_ROUTE_9
 	end
 	
 Route9ForestGateOfficerText:

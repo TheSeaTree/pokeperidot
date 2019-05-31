@@ -33,6 +33,18 @@ ViridianPokecenter1FBugCatcherScript:
 ;	closetext
 ;	end
 	jumptextfaceplayer ViridianPokecenter1FBugCatcherText
+	
+Pokecenter1FOfficerScript:
+	faceplayer
+	opentext
+	random X_ATTACK - X_SP_ATK +1
+	addvar X_ATTACK
+	itemtotext $0, $1
+	giveitem ITEM_FROM_MEM
+	itemnotify
+	waitbutton
+	closetext
+	end
 
 ViridianPokecenter1FCooltrainerMText:
 	text "Where in the world"
@@ -68,6 +80,7 @@ ViridianPokecenter1FBugCatcherText:
 	line "come a GYM LEADER."
 	done
 
+
 ViridianPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -84,3 +97,4 @@ ViridianPokecenter1F_MapEvents:
 	object_event  9,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerMScript, -1
 	object_event  3,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FCooltrainerFScript, EVENT_GOT_A_POKEMON_FROM_ELM
 	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ViridianPokecenter1FBugCatcherScript, -1
+;	object_event  4,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Pokecenter1FOfficerScript, -1

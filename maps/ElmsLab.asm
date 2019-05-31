@@ -214,36 +214,6 @@ LookAtElmPokeBallScript:
 	closetext
 	end
 
-ElmAideHasEggScript:
-	writetext ElmAideHasEggText
-	waitbutton
-	closetext
-	end
-
-ElmWaitingEggHatchScript:
-	writetext ElmWaitingEggHatchText
-	waitbutton
-	closetext
-	end
-
-ElmGiveEverstoneScript:
-	writetext ElmGiveEverstoneText1
-	buttonsound
-	verbosegiveitem EVERSTONE
-	iffalse ElmScript_NoRoomForEverstone
-	writetext ElmGiveEverstoneText2
-	waitbutton
-	closetext
-	setevent EVENT_GOT_EVERSTONE_FROM_ELM
-	end
-
-ElmScript_CallYou:
-	writetext ElmText_CallYou
-	waitbutton
-ElmScript_NoRoomForEverstone:
-	closetext
-	end
-
 ElmGiveMasterBallScript:
 	writetext ElmGiveMasterBallText1
 	buttonsound
@@ -337,6 +307,13 @@ ElmsLabBookshelf:
 	
 ElmsLabBook:
 	jumptext ElmsLabBookText
+	
+ElmsLabShifurBook:
+	refreshscreen
+	pokepic SHIFUR
+	waitbutton
+	closepokepic
+	jumptext ElmsLabPictureBook
 
 ElmsLab_WalkUpToElmMovement:
 	step UP
@@ -432,14 +409,14 @@ AfterChikoritaMovement:
 
 ElmText_Intro:
 	text "ELM: <PLAY_G>!"
-	line "Hallo!"
+	line "Hello!"
 
-	para "Ve've been set up"
-	line "all day vaiting"
+	para "We've been set up"
+	line "all day waiting"
 	cont "for you."
 
 	para "I bet you simply"
-	line "can't vait to"
+	line "can't wait to"
 	cont "choose a #MON!"
 
 	para "So!"
@@ -461,23 +438,6 @@ ElmText_Refused:
 	
 	para "So vhat do"
 	line "you say?"
-	done
-
-ElmText_ResearchAmbitions:
-	text "Just in case, you"
-	line "should take my "
-	cont "#GEAR number"
-	cont "as well…"
-	done
-
-ElmText_GotAnEmail:
-	text "Oh, hey! I got an"
-	line "e-mail!"
-
-	para "<……><……><……>"
-	line "Hm… Uh-huh…"
-
-	para "Okay…"
 	done
 
 ElmText_MissionFromMrPokemon:
@@ -560,25 +520,9 @@ ElmDirectionsText1:
 	cont "a #MON."
 	done
 
-ElmDirectionsText2:
-	text "If your #MON is"
-	line "hurt, you should"
-
-	para "heal it with this"
-	line "machine."
-
-	para "Feel free to use"
-	line "it anytime."
-	done
-
 ElmDirectionsText3:
 	text "Best of luck on"
 	line "your adventure!"
-	done
-
-GotElmsNumberText:
-	text "<PLAYER> got ELM's"
-	line "phone number."
 	done
 
 ElmDescribesMrPokemonText:
@@ -605,103 +549,6 @@ ElmPokeBallText:
 	text "It contains a"
 	line "#MON caught by"
 	cont "PROF.ELM."
-	done
-
-ElmStudyingEggText:
-	text "ELM: Don't give"
-	line "up! I'll call if"
-
-	para "I learn anything"
-	line "about that EGG!"
-	done
-
-ElmAideHasEggText:
-	text "ELM: <PLAY_G>?"
-	line "Didn't you meet my"
-	cont "assistant?"
-
-	para "He should have met"
-	line "you with the EGG"
-
-	para "at VIOLET CITY's"
-	line "#MON CENTER."
-
-	para "You must have just"
-	line "missed him. Try to"
-	cont "catch him there."
-	done
-
-ElmWaitingEggHatchText:
-	text "ELM: Hey, has that"
-	line "EGG changed any?"
-	done
-
-ElmThoughtEggHatchedText:
-	text "<PLAY_G>? I thought"
-	line "the EGG hatched."
-
-	para "Where is the"
-	line "#MON?"
-	done
-
-ShowElmTogepiText1:
-	text "ELM: <PLAY_G>, you"
-	line "look great!"
-	done
-
-ShowElmTogepiText2:
-	text "What?"
-	line "That #MON!?!"
-	done
-
-ShowElmTogepiText3:
-	text "The EGG hatched!"
-	line "So, #MON are"
-	cont "born from EGGS…"
-
-	para "No, perhaps not"
-	line "all #MON are."
-
-	para "Wow, there's still"
-	line "a lot of research"
-	cont "to be done."
-	done
-
-ElmGiveEverstoneText1:
-	text "Thanks, <PLAY_G>!"
-	line "You're helping"
-
-	para "unravel #MON"
-	line "mysteries for us!"
-
-	para "I want you to have"
-	line "this as a token of"
-	cont "our appreciation."
-	done
-
-ElmGiveEverstoneText2:
-	text "That's an"
-	line "EVERSTONE."
-
-	para "Some species of"
-	line "#MON evolve"
-
-	para "when they grow to"
-	line "certain levels."
-
-	para "A #MON holding"
-	line "the EVERSTONE"
-	cont "won't evolve."
-
-	para "Give it to a #-"
-	line "MON you don't want"
-	cont "to evolve."
-	done
-
-ElmText_CallYou:
-	text "ELM: <PLAY_G>, I'll"
-	line "call you if any-"
-	cont "thing comes up."
 	done
 
 ElmGiveMasterBallText1:
@@ -905,6 +752,12 @@ ElmsLabBookText:
 	cont "#MON."
 	done
 	
+ElmsLabPictureBook:
+	text "This looks like"
+	line "a newly-discovered"
+	cont "#MON!"
+	done
+	
 ElmsLabLassText:
 	text "If your #MON"
 	line "get hurt, you"
@@ -967,11 +820,11 @@ ElmsLab_MapEvents:
 	bg_event  7,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  8,  7, BGEVENT_READ, ElmsLabBookshelf
 	bg_event  9,  7, BGEVENT_READ, ElmsLabBookshelf
-	bg_event  8,  3, BGEVENT_READ, ElmsLabBook
+	bg_event  8,  3, BGEVENT_READ, ElmsLabShifurBook
 	bg_event  8,  9, BGEVENT_READ, ElmsLabBook
 
 	db 8 ; object events
-	object_event  3,  6, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
+	object_event  3,  6, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ProfElmScript, -1
 	object_event  2, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElmsAideScript, EVENT_ELMS_AIDE_IN_LAB
 	object_event  0,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CyndaquilPokeBallScript, EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	object_event  1,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TotodilePokeBallScript, EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB

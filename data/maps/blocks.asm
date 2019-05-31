@@ -492,3 +492,5 @@ CianwoodCaveB2F_Blocks:
 OverlookMaze_Blocks:
 	INCBIN "maps/OverlookMaze.ablk"
 	
+LostLand_Blocks:
+	INCBIN "maps/LostLand.ablk"

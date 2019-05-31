@@ -15,3 +15,4 @@ BillsFamilysHouse_MapEvents:
 	db 0 ; bg events
 
 	db 0 ; object events
+	

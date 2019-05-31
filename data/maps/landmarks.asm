@@ -7,46 +7,47 @@ ENDM
 Landmarks:
 ; entries correspond to constants/landmark_constants.asm
 	dbbw       0,   0, SpecialMapName
-	landmark  68,  68, NewBarkTownName
-	landmark  68,  86, Route1Name
-	landmark  68, 100, CherrygroveCityName
-	landmark  68, 108, Route30Name
-	landmark  76, 108, Route2Name
-	landmark 100, 116, AzaleaTownName
-	landmark 100, 100, Route3Name
-	landmark 116, 100, Route4Name
-	landmark 124,  84, Route5Name
-	landmark 132,  68, VioletCityName
-	landmark 132,  60, Route6Name
-	landmark 122,  60, Route7Name
-	landmark 108,  76, UndergroundName
-	landmark 100,  68, Route8Name
-	landmark  84,  68, GoldenrodCityName
-	landmark 100,  92, DiglettsCaveName
-	landmark 100,  84, CianwoodCityName
-	landmark  60, 100, UnionCaveName
-	landmark  52,  76, Route9Name
-	landmark  52,  68, IlexForestName
-	landmark  52,  52, EcruteakCityName
+	landmark  68,  84, NewBarkTownName
+	landmark  68,  96, Route1Name
+	landmark  68, 108, CherrygroveCityName
+	landmark  84, 116, Route2Name
+	landmark 100, 124, AzaleaTownName
+	landmark 108, 116, Route3Name
+	landmark 124, 100, Route4Name
+	landmark 128,  92, Route5Name
+	landmark 132,  84, VioletCityName
+	landmark 128,  76, Route6Name
+	landmark 114,  68, Route7Name
+	landmark 100,  80, Route8Name
+	landmark  84,  84, GoldenrodCityName
+	landmark 108,  84, Route10Name
+	landmark 100, 108, DiglettsCaveName
+	landmark 100, 100, CianwoodCityName
+	landmark  60, 108, UnionCaveName
+	landmark  52,  92, Route9Name
+	landmark  52,  84, IlexForestName
+	landmark  52,  68, EcruteakCityName
 	landmark  52,  60, PaintersForestName
-	landmark 108,  68, Route10Name
-	landmark  76,  52, NationalParkName
-	landmark  84,  36, OlivineCityName
-	landmark  28,  68, MahoganyTownName
-	landmark  36, 108, BlackthornCityName
-	landmark  84,  52, Route11Name
-	landmark  64,  52, Route12Name
-	landmark  28,  44, Route13Name
-	landmark  28,  82, Route14Name
+	landmark  76,  76, Route11Name
+	landmark  64,  68, Route12Name
+	landmark  68,  58, Route13Name
+	landmark  68,  44, Route14Name
+	landmark  60,  36, NationalParkName
+	landmark  84,  44, OlivineCityName
+	landmark  52,  44, MahoganyTownName
+	landmark  34,  43, BlackthornCityName
 	landmark  36,  96, Route15Name
-	landmark  16, 128, Route16Name
-	landmark  16, 128, Route17Name
-	landmark  16, 128, Route18Name
-	landmark  16, 128, Route19Name
-	landmark  16, 128, Route20Name
-	landmark  140, 36, VictoryRoadName
-	landmark  140, 28, IndigoPlateauName
-	landmark  16, 128, BattleTowerName
+	landmark  44,  44, Route16Name
+	landmark  35,  60, Route17Name
+	landmark  32,  76, Route18Name
+	landmark  96,  44, Route19Name
+	landmark 114,  36, Route20Name
+	landmark  68, 116, Route30Name ;Oasis
+	landmark 116,  60, LostLandName
+	landmark 140, 36, VictoryRoadName
+	landmark 140, 28, IndigoPlateauName
+	landmark   0,  0, UndergroundName
+	landmark  20, 20, BattleTowerName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
 CherrygroveCityName: db "PAVONA¯VILLAGE@"
@@ -114,5 +115,6 @@ ViridianForestName:  db "VIRIDIAN¯FOREST@"
 DiglettsCaveName:    db "DIGLETT'S¯CAVE@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
+LostLandName:		 db "LOST LAND@"
 BattleTowerName:     db "BATTLE¯TOWER@"
 SpecialMapName:      db "SPECIAL@"

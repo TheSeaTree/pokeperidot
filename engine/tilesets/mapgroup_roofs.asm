@@ -11,7 +11,13 @@ LoadMapGroupRoof::
 	ld bc, 9 tiles
 	call AddNTimes
 	ld de, vTiles2 tile $00
-	ld bc, 9 tiles
+	ld bc, 3 tiles
+	call CopyBytes
+	ld de, vTiles2 tile $10
+	ld bc, 3 tiles
+	call CopyBytes
+	ld de, vTiles2 tile $20
+	ld bc, 3 tiles
 	call CopyBytes
 	ret
 

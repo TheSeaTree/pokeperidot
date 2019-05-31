@@ -37,7 +37,6 @@ CharcoalKilnBoss:
 	end
 
 CharcoalKilnOddish:
-	faceplayer
 	opentext
 	writetext OddishText
 	cry ODDISH

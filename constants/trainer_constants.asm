@@ -120,6 +120,7 @@ KRIS EQU __enum__
 	trainerclass BIRD_KEEPER ; 18
 	const PHIL
 	const ALEX
+	const ELLIS
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -298,8 +299,11 @@ KRIS EQU __enum__
 	const TEST
 	
 	trainerclass TWINS ; 3d
+	const FAYEANDMAE1
+	const FAYEANDMAE2
 	
 	trainerclass POKEFANF ; 3e
+	const ELANE
 	
 	trainerclass RED ; 3f
 	const RED1
