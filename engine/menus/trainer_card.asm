@@ -305,7 +305,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	db $29, $2a, $2b, $2c, $2d, -1
 
 TrainerCard_Page2_3_InitObjectsAndStrings:
-	hlcoord 2, 8
+	hlcoord 12, 8
 	ld de, .BadgesTilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 2, 10
