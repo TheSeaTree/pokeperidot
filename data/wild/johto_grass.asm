@@ -9,7 +9,7 @@ JohtoGrassWildMons:
 	db  9, SANDSHREW
 	db 10, ZUBAT
 	db 10, CUBONE
-	db 11, SANDSHREW
+	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS
 	; day
@@ -17,7 +17,7 @@ JohtoGrassWildMons:
 	db  9, SANDSHREW
 	db 10, ZUBAT
 	db 10, CUBONE
-	db 11, SANDSHREW
+	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS
 	; nite
@@ -25,7 +25,7 @@ JohtoGrassWildMons:
 	db  9, SANDSHREW
 	db 10, ZUBAT
 	db 10, CUBONE
-	db 11, SANDSHREW
+	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS
 
@@ -84,7 +84,7 @@ JohtoGrassWildMons:
 	db 23, ONIX
 
 	map_id ILEX_FOREST
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, BEEDRILL
 	db 18, SKIPLOOM
@@ -629,7 +629,7 @@ JohtoGrassWildMons:
 	db 18, HOPPIP
 	db 21, EKANS
 	db 21, SKIPLOOM
-	db 18, SPEAROW
+	db 18, PHANPY
 	db 18, VULPIX
 	db 18, VULPIX
 	db 20, VULPIX
@@ -637,7 +637,7 @@ JohtoGrassWildMons:
 	db 18, BELLSPROUT
 	db 21, EKANS
 	db 21, WEEPINBELL
-	db 18, SPEAROW
+	db 18, PHANPY
 	db 18, VULPIX
 	db 18, VULPIX
 	db 20, VULPIX
@@ -645,7 +645,7 @@ JohtoGrassWildMons:
 	db 18, ODDISH
 	db 21, EKANS
 	db 21, GLOOM
-	db 18, ZUBAT
+	db 18, PHANPY
 	db 18, VULPIX
 	db 18, VULPIX
 	db 20, VULPIX
@@ -709,27 +709,54 @@ JohtoGrassWildMons:
 	; morn
 	db 13, DODUO
 	db 14, PONYTA
-	db 12, GIRAFARIG
 	db 16, LICKITUNG
 	db 12, SLUGMA
+	db 12, MARILL
 	db 13, SLUGMA
 	db 16, SLUGMA
 	; day
 	db 13, DODUO
 	db 14, PONYTA
-	db 12, GIRAFARIG
 	db 16, LICKITUNG
 	db 12, SLUGMA
+	db 12, MARILL
 	db 13, SLUGMA
 	db 16, SLUGMA
 	; nite
 	db 13, DODUO
 	db 14, PONYTA
-	db 12, GIRAFARIG
 	db 16, LICKITUNG
 	db 12, SLUGMA
+	db 12, MARILL
 	db 13, SLUGMA
 	db 16, SLUGMA
+	
+	map_id ROUTE_14
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, GIRAFARIG
+	db 12, TANGELA
+	db 16, LICKITUNG
+	db 13, TANGELA
+	db 16, TANGELA
+	; day
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, GIRAFARIG
+	db 12, TANGELA
+	db 16, LICKITUNG
+	db 13, TANGELA
+	db 16, TANGELA
+	; nite
+	db 13, DODUO
+	db 14, PONYTA
+	db 12, STANTLER
+	db 12, TANGELA
+	db 16, LICKITUNG
+	db 13, TANGELA
+	db 16, TANGELA
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
