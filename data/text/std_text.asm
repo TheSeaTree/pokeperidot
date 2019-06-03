@@ -388,6 +388,12 @@ CantLeaveGymText:
 	line "a GYM challenge!"
 	done
 	
+MailboxText:
+	text "I shouldn't go"
+	line "through other"
+	cont "people's mail!"
+	done
+	
 GymFirstTimeText:
 	text "You will be unable"
 	line "to leave this GYM"

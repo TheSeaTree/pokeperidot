@@ -3,6 +3,7 @@
 	enum_start
 	enum pokecenternurse
 	enum cantleavegym
+	enum mailbox
 	enum difficultbookshelf
 	enum picturebookshelf
 	enum magazinebookshelf

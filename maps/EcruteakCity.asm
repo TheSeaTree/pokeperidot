@@ -1,42 +1,50 @@
 	const_def 2 ; object constants
-	const ECRUTEAKCITY_GRAMPS1
-	const ECRUTEAKCITY_GRAMPS2
-	const ECRUTEAKCITY_LASS1
-	const ECRUTEAKCITY_LASS2
-	const ECRUTEAKCITY_FISHER
-	const ECRUTEAKCITY_YOUNGSTER
-	const ECRUTEAKCITY_GRAMPS3
+	const ECRUTEAKCITY_GYM_GUY
+	const ECRUTEAKCITY_FRUIT_TREE
 
 EcruteakCity_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .ResetGym	 ; SCENE_GYMRESET
+	scene_script .DummyScene ; SCENE_DONE
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	
+.DummyScene:
+	end
+
+.ResetGym:
+	checkevent EVENT_ECRUTEAK_GYM_INTRO
+	iffalse .end
+	random 4
+	ifequal 0, .Spawn1
+	ifequal 1, .Spawn2
+	ifequal 2, .Spawn3
+	ifequal 3, .Spawn4
+	return
+	
+.Spawn1
+	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_MON_1
+	end
+
+.Spawn2
+	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_MON_2
+	end
+
+.Spawn3
+	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_MON_3
+	end
+	
+.Spawn4
+	setmapscene ECRUTEAK_GYM, SCENE_ECRUTEAKGYM_MON_4
+	end
+	
+.end
+	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
 	return
-
-EcruteakCityGramps1Script:
-	jumptextfaceplayer EcruteakCityGramps1Text
-
-EcruteakCityGramps2Script:
-	jumptextfaceplayer EcruteakCityGramps2Text
-
-EcruteakCityGramps3Script:
-	jumptextfaceplayer EcruteakCityGramps3Text
-
-EcruteakCityLass1Script:
-	jumptextfaceplayer EcruteakCityLass1Text
-
-EcruteakCityLass2Script:
-	jumptextfaceplayer EcruteakCityLass2Text
-
-EcruteakCityFisherScript:
-	jumptextfaceplayer EcruteakCityFisherText
-
-EcruteakCityYoungsterScript:
-	jumptextfaceplayer EcruteakCityYoungsterText
 
 EcruteakCityFruitTree:
 	fruittree ECRUTEAK_CITY
@@ -46,6 +54,9 @@ EcruteakCitySign:
 
 EcruteakDanceTheaterSign:
 	jumptext EcruteakDanceTheaterSignText
+
+EcruteakMailbox:
+	jumpstd mailbox
 
 EcruteakCityPokecenterSign:
 	jumpstd pokecentersign
@@ -200,24 +211,19 @@ EcruteakCity_MapEvents:
 	warp_event  9, 19, ECRUTEAK_POKECENTER_1F, 1
 	warp_event 25,  7, ECRUTEAK_MART, 2
 	warp_event  8, 11, ECRUTEAK_GYM, 1
-	warp_event 33,  8, ROUTE_12, 1
-	warp_event 33,  9, ROUTE_12, 2
+	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
+	warp_event 33,  9, ROUTE_12_ECRUTEAK_GATE, 2
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 6 ; bg events
 	bg_event 18, 22, BGEVENT_READ, EcruteakCitySign
 	bg_event 16, 14, BGEVENT_READ, EcruteakDanceTheaterSign
 	bg_event 10, 19, BGEVENT_READ, EcruteakCityPokecenterSign
 	bg_event 26,  7, BGEVENT_READ, EcruteakCityMartSign
+	bg_event 25, 15, BGEVENT_UP,   EcruteakMailbox
+	bg_event 21, 19, BGEVENT_UP,   EcruteakMailbox
 
-	db 8 ; object events
-	object_event 18, 15, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps1Script, -1
-	object_event 20, 21, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps2Script, -1
-	object_event 21, 29, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass1Script, -1
-	object_event  3,  9, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass2Script, -1
-	object_event  9, 22, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisherScript, -1
-	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCityYoungsterScript, -1
-	object_event  5,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, -1
-	object_event 27, 19, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityGramps3Script, -1
+	db 2 ; object events
+	object_event  8, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_ACCESS
 	object_event 32,  0, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1

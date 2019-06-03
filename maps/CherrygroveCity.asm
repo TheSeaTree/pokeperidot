@@ -122,7 +122,7 @@ GuideGentsHouseSign:
 	jumptext GuideGentsHouseSignText
 	
 CherrygroveMailbox:
-	jumptext CherrygroveMailboxText
+	jumpstd mailbox
 	
 CherrygroveInnSign:
 	jumptext CherrygroveInnSignText
@@ -334,12 +334,6 @@ CherrygroveCitySignText:
 
 GuideGentsHouseSignText:
 	text "ELM #MON LAB"
-	done
-
-CherrygroveMailboxText:
-	text "I shouldn't go"
-	line "through other"
-	cont "people's mail!"
 	done
 	
 CherrygroveInnSignText:

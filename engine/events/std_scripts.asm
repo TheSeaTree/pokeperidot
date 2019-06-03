@@ -2,6 +2,7 @@ StdScripts::
 ; entries correspond to constants/std_constants.asm
 	dba PokecenterNurseScript
 	dba CantLeaveGymScript
+	dba StrangersMailbox
 	dba DifficultBookshelfScript
 	dba PictureBookshelfScript
 	dba MagazineBookshelfScript
@@ -177,6 +178,9 @@ CantLeaveGymScript:
 GymTurnBackMovement:
 	step UP
 	step_end
+	
+StrangersMailbox:
+	farjumptext MailboxText
 	
 DifficultBookshelfScript:
 	farjumptext DifficultBookshelfText
@@ -475,6 +479,9 @@ InitializeEventsScript:
 	setevent EVENT_BOULDER_IN_PALEROCK_2A
 	setevent EVENT_BOULDER_IN_PALEROCK_2B
 	setevent EVENT_BOULDER_IN_PALEROCK_B
+	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_1 ; Top Right
+	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_2 ; Top Left
+	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_3 ; Bottom Right
 	return
 
 AskNumber1MScript:
