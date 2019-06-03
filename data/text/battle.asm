@@ -34,6 +34,13 @@ WildCelebiAppearedText:
 	text_start
 	line "appeared!"
 	prompt
+	
+WildBossAppearedText:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text_start
+	line "attacked!"
+	prompt
 
 WantsToBattleText::
 	text "<ENEMY>"
@@ -164,6 +171,13 @@ BattleText_EnemyMonFainted:
 	text_ram wEnemyMonNick
 	text_start
 	line "fainted!"
+	prompt
+	
+BattleText_EnemyMonRanAway:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text_start
+	line "was defeated!"
 	prompt
 
 GotMoneyForWinningText:

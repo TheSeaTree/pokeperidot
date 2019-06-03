@@ -197,6 +197,9 @@ PokeBallEffect:
 	ld a, [wBattleMode]
 	dec a
 	jp nz, UseBallInTrainerBattle
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, UseBallInBossBattle
 
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
@@ -2110,6 +2113,9 @@ XAccuracyEffect:
 	jp UseItemText
 
 PokeDollEffect:
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, CantUseItemMessage
 	ld a, [wBattleMode]
 	dec a
 	jr nz, .asm_f4a6
@@ -2624,6 +2630,22 @@ UseBallInTrainerBattle:
 	call PrintText
 	jr UseDisposableItem
 
+UseBallInBossBattle:
+	call ReturnToBattle_UseBall
+	ld de, ANIM_THROW_POKE_BALL
+	ld a, e
+	ld [wFXAnimID], a
+	ld a, d
+	ld [wFXAnimID + 1], a
+	xor a
+	ld [wBattleAnimParam], a
+	ldh [hBattleTurn], a
+	ld [wNumHits], a
+	predef PlayBattleAnim
+	ld hl, SmackedTheBallText
+	call PrintText
+	jr UseDisposableItem
+
 WontHaveAnyEffect_NotUsedMessage:
 	ld hl, WontHaveAnyEffectText
 	call PrintText
@@ -2703,6 +2725,11 @@ WontHaveAnyEffectText:
 BlockedTheBallText:
 	; The trainer blocked the BALL!
 	text_far UnknownText_0x1c5dd0
+	text_end
+	
+SmackedTheBallText:
+	;It smacked the BALL away!
+	text_far Text_SmackedTheBall
 	text_end
 
 DontBeAThiefText:

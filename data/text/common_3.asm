@@ -1357,6 +1357,12 @@ UnknownText_0x1c5dd0::
 	line "blocked the BALL!"
 	prompt
 
+Text_SmackedTheBall::
+	text_ram wEnemyMonNick
+	text " smacked" 
+	line "the BALL away!"
+	prompt
+
 UnknownText_0x1c5def::
 	text "Don't be a thief!"
 	prompt

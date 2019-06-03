@@ -2373,7 +2373,14 @@ FaintEnemyPokemon:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, .BossBattle
 	ld hl, BattleText_EnemyMonFainted
+	jp StdBattleTextBox
+	
+.BossBattle
+	ld hl, BattleText_EnemyMonRanAway
 	jp StdBattleTextBox
 
 CheckEnemyTrainerDefeated:
@@ -3778,6 +3785,8 @@ TryToRunAwayFromBattle:
 	cp BATTLETYPE_SHINY
 	jp z, .cant_escape
 	cp BATTLETYPE_SUICUNE
+	jp z, .cant_escape
+	cp BATTLETYPE_BOSS
 	jp z, .cant_escape
 
 	ld a, [wLinkMode]
@@ -6176,6 +6185,10 @@ LoadEnemyMon:
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItem1]
 	jr z, .UpdateItem
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	ld a, [wBaseItem2]
+	jr z, .UpdateItem
 
 ; Failing that, it's all up to chance
 ;  Effective chances:
@@ -6279,12 +6292,21 @@ LoadEnemyMon:
 ; Forced shiny battle type
 ; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY
-	jr nz, .GenerateDVs
+	jr nz, .CheckBoss
 
 	ld b, ATKDEFDV_SHINY ; $ea
 	ld c, SPDSPCDV_SHINY ; $aa
 	jr .UpdateDVs
 
+.CheckBoss:
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jr nz, .GenerateDVs
+
+	ld b, ATKDEFDV_BOSS ; $ea
+	ld c, SPDSPCDV_BOSS ; $aa
+	jr .UpdateDVs
+	
 .GenerateDVs:
 ; Generate new random DVs
 	call BattleRandom
@@ -9250,6 +9272,9 @@ BattleStartMessage:
 	jr z, .PlaceBattleStartText
 	ld hl, WildCelebiAppearedText
 	cp BATTLETYPE_CELEBI
+	jr z, .PlaceBattleStartText
+	ld hl, WildBossAppearedText
+	cp BATTLETYPE_BOSS
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 
