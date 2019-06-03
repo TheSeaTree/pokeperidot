@@ -140,6 +140,7 @@ AzaleaCantLeave:
 	applymovement PLAYER, AzaleaLeaveGym
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
+	wait 4
 	warpfacing DOWN, AZALEA_TOWN, 40, 17
 	end
 	

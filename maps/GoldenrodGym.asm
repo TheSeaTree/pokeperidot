@@ -453,9 +453,8 @@ GoldenrodCantLeave:
 	applymovement PLAYER, GoldenrodLeaveGym
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
-;	waitsfx
+	wait 4
 	warpfacing DOWN, CIANWOOD_CITY, 20, 15
-;	special LoadMapPalettes
 	end
 	
 GoldenrodLeaveGym:

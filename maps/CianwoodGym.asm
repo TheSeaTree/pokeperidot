@@ -165,6 +165,7 @@ CianwoodCantLeave:
 	applymovement PLAYER, CianwoodLeaveGym
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
+	wait 4
 	warpfacing DOWN, GOLDENROD_CITY, 12, 7
 	end
 	
