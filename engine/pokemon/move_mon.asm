@@ -227,7 +227,12 @@ rept NUM_MOVES
 endr
 
 	; Initialize happiness.
+	ld a, [wMonType]
+	and $f
 	ld a, BASE_HAPPINESS
+	jr z, .got_happiness
+	ld a, $ff ; max happiness for enemy trainers
+.got_happiness
 	ld [de], a
 	inc de
 
