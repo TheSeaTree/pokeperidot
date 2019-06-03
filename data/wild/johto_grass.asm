@@ -704,6 +704,33 @@ JohtoGrassWildMons:
 	db 13, BUTTERFREE
 	db 16, BUTTERFREE
 	
+	map_id ROUTE_12
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 18, WEEPINBELL
+	db 20, GROWLITHE
+	db 20, PIDGEOTTO
+	db 20, SUNKERN
+	db 19, KADABRA
+	db 18, EEVEE
+	db 20, EEVEE
+	; day
+	db 18, WEEPINBELL
+	db 20, GROWLITHE
+	db 20, PIDGEOTTO
+	db 20, SUNKERN
+	db 19, KADABRA
+	db 18, EEVEE
+	db 20, EEVEE
+	; nite
+	db 18, WEEPINBELL
+	db 20, HOUNDOUR
+	db 20, NOCTOWL
+	db 20, SPINARAK
+	db 19, KADABRA
+	db 18, EEVEE
+	db 20, EEVEE
+
 	map_id ROUTE_13
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
