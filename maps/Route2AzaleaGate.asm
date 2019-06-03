@@ -8,12 +8,12 @@ Route2AzaleaGate_MapScripts:
 	db 0 ; callbacks
 
 Route2AzaleaGateOfficerScript:
-	loadwildmon GYARADOS, 5
-	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
-	startbattle
-	reloadmapafterbattle
-	end
-;	jumptextfaceplayer Route2AzaleaGateOfficerText
+;	loadwildmon GYARADOS, 5
+;	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
+;	startbattle
+;	reloadmapafterbattle
+;	end
+	jumptextfaceplayer Route2AzaleaGateOfficerText
 
 Route2AzaleaGateCooltrainerFScript:
 	jumptextfaceplayer Route2AzaleaGateCooltrainerFText
