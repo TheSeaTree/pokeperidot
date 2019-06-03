@@ -2008,6 +2008,7 @@ PinsirEvosAttacks:
 	db 8, SEISMIC_TOSS
 	db 11, HARDEN
 	db 18, VITAL_THROW
+	db 22, DIG
 	db 26, ROCK_SMASH
 	db 29, BUG_BUZZ
 	db 33, SUBMISSION
