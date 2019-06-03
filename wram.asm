@@ -2567,7 +2567,7 @@ wOlivineCitySceneID::                             db ; d994
 wRoute34SceneID::                                 db ; d995
 wVioletGymSceneID::
 wRoute34IlexForestGateSceneID::                   db ; d996
-wEcruteakTinTowerEntranceSceneID::                db ; d997
+wEcruteakCitySceneID::				              db ; d997
 wWiseTriosRoomSceneID::                           db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a

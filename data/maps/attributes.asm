@@ -148,10 +148,10 @@ ENDM
 
 	map_attributes Route13, ROUTE_13, $05, NORTH | SOUTH
 	connection north, Route14, ROUTE_14, 0
-	connection south, Route12, ROUTE_12, -5
+	connection south, Route12, ROUTE_12, -4
 
 	map_attributes Route12, ROUTE_12, $05, NORTH | SOUTH
-	connection north, Route13, ROUTE_13,  5
+	connection north, Route13, ROUTE_13,  4
 	connection south, Route11, ROUTE_11, 18
 
 	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
@@ -324,3 +324,7 @@ ENDM
 	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
 	map_attributes LostLand, LOST_LAND, $05, 0
+	map_attributes Route12EcruteakGate, ROUTE_12_ECRUTEAK_GATE, $00, 0
+	map_attributes Route12Shelter, ROUTE_12_SHELTER, $00, 0
+	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0
+	map_attributes Route14CaveB1F, ROUTE_14_CAVE_B1F, $09, 0

@@ -177,6 +177,7 @@ EcruteakGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_SILVER
 	; 9 of max 9 walking sprites
+	db SPRITE_GYM_GUY
 	db SPRITE_WEIRD_TREE ; variable sprite: becomes SPRITE_SUDOWOODO and SPRITE_TWIN
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE

@@ -116,7 +116,8 @@ Route14TutorThankYou:
 Route14_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event  24,  7, ROUTE_14_CAVE_1F, 1
 
 	db 0 ; coord events
 

@@ -238,7 +238,10 @@ INCLUDE "maps/Route9.asm"
 INCLUDE "maps/VioletMoveTutor.asm"
 INCLUDE "maps/VioletWeatherHouse.asm"
 INCLUDE "maps/VioletTradeHouse.asm"
-
+INCLUDE "maps/Route12EcruteakGate.asm"
+INCLUDE "maps/Route12Shelter.asm"
+INCLUDE "maps/Route14Cave1F.asm"
+INCLUDE "maps/Route14CaveB1F.asm"
 
 SECTION "Map Scripts 24", ROMX
 

@@ -63,6 +63,7 @@ VioletWeatherHouse_Blocks:
 VioletTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
+Route12Shelter_Blocks:
 	INCBIN "maps/House1.ablk"
 
 CherrygroveInn_Blocks:
@@ -110,6 +111,7 @@ Route8GoldenrodGate_Blocks:
 Route4ForestGate_Blocks:
 Route4AzaleaGate_Blocks:
 Route2Gate_Blocks:
+Route12EcruteakGate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
 
 ElmsLab_Blocks:
@@ -494,3 +496,9 @@ OverlookMaze_Blocks:
 	
 LostLand_Blocks:
 	INCBIN "maps/LostLand.ablk"
+	
+Route14Cave1F_Blocks:
+	INCBIN "maps/Route14Cave1F.ablk"	
+
+Route14CaveB1F_Blocks:
+	INCBIN "maps/Route14CaveB1F.ablk"

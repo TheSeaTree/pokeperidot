@@ -29,7 +29,6 @@ MapScenes::
 	scene_var AZALEA_GYM,                                  wRoute34SceneID ; unused
 	scene_var VIOLET_GYM,                                  wVioletGymSceneID
 	scene_var ECRUTEAK_POKECENTER_1F,                      wEcruteakPokecenter1FSceneID
-	scene_var ECRUTEAK_GYM,                                wEcruteakGymSceneID
 	scene_var MAHOGANY_TOWN,                               wMahoganyTownSceneID
 	scene_var CIANWOOD_CITY,                               wCianwoodCitySceneID
 	scene_var PALEROCK_MOUNTAIN_3F,                        wBattleTowerOutsideSceneID ; unused
@@ -39,4 +38,6 @@ MapScenes::
 	scene_var VICTORY_ROAD,                                wVictoryRoadSceneID
 	scene_var ROUTE_1,                                     wRoute1SceneID
 	scene_var VIOLET_CITY,								   wVioletCitySceneID
+	scene_var ECRUTEAK_GYM,                                wEcruteakGymSceneID
+	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
 	db -1

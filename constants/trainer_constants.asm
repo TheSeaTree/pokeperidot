@@ -275,12 +275,16 @@ KRIS EQU __enum__
 	const JAMIE
 	const CINDY
 	const JESS
+	const TERRY
+	const BRITTANY
 
 	trainerclass CAMPER ; 36
 	const NICHOLAS
 	const JAMES
 	const RALPH
 	const NATE
+	const JEFF
+	const GREG
 
 	trainerclass EXECUTIVEF ; 37
 
@@ -294,6 +298,7 @@ KRIS EQU __enum__
 	trainerclass BOARDER ; 3a
 	
 	trainerclass POKEFANM ; 3b
+	const LESTER
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const TEST

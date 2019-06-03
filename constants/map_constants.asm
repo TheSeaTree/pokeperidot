@@ -72,11 +72,12 @@ ENDM
 
 	map_const ECRUTEAK_POKECENTER_1F,                       5,  4 ;  3
 	map_const ECRUTEAK_MART,                                6,  4 ;  6
-	map_const ECRUTEAK_GYM,                                 5,  9 ;  7
+	map_const ECRUTEAK_GYM,                                11, 13 ;  7
 	map_const ECRUTEAK_CITY,                               20, 15 ;  9
 	map_const ECRUTEAK_FOREST_GATE,                         6,  4 ; 10
 	map_const PAINTERS_FOREST,                              7,  7
 	map_const PAINTERS_HOUSE,                               4,  4
+	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
 
 	newgroup                                                      ;  5
 
@@ -192,8 +193,11 @@ ENDM
 	newgroup                                                      ; 18
 
 	map_const ROUTE_12,                                    35, 11 ;  2
+	map_const ROUTE_12_SHELTER,								4,  4
 	map_const ROUTE_13,                                    21, 16 ;  1
 	map_const ROUTE_14,                                    23, 14 ;  2
+	map_const ROUTE_14_CAVE_1F,							   10, 11
+	map_const ROUTE_14_CAVE_B1F,								9,  8
 	map_const ROUTE_15,                                    20,  9 ;  3
 	map_const ROUTE_18,                                    10,  9 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
