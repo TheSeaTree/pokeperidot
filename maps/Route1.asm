@@ -182,6 +182,9 @@ Route1Sign:
 
 Route1FruitTree:
 	fruittree FRUITTREE_ROUTE_1
+	
+Route1TMPlayRough:
+	itemball TM_PLAY_ROUGH
 
 LedgeDescription:
 	text "You can jump down"
@@ -397,7 +400,7 @@ Route1_MapEvents:
 	db 1 ; bg events
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event  18, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Lass, -1
 	object_event  28,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route1LedgeGirl, -1
 	object_event   7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdSteven, -1
@@ -410,3 +413,4 @@ Route1_MapEvents:
 	object_event  40, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherMarshall, -1
 	object_event  62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
 	object_event  57, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1
+	object_event 50,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route1TMPlayRough, EVENT_GOT_TM_PLAY_ROUGH

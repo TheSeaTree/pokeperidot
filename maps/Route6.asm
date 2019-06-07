@@ -72,6 +72,9 @@ TrainerSailorRoland:
 	closetext
 	end
 	
+Route6TMWaterfall:
+	itemball TM_WATERFALL
+	
 Route6Rock:
 	jumpstd smashrock
 	
@@ -128,7 +131,7 @@ Route6_MapEvents:
 	db 1 ; bg events
 	bg_event  4, 20, BGEVENT_READ, Route6UndergroundPathSign
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event 21, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorCalvin, -1
 	object_event 52, 17, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerFisherNelson, -1
 	object_event 32,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerFisherBrady, -1
@@ -140,4 +143,5 @@ Route6_MapEvents:
 	object_event  6, 18, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
 	object_event  3, 15, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
 	object_event  0, 21, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
+	object_event 12,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route6TMWaterfall, EVENT_GOT_TM_WATERFALL
 	

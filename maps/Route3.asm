@@ -161,6 +161,9 @@ Route3MoveTutor:
 Route3SilverLeaf:
 	hiddenitem SILVER_LEAF, EVENT_ROUTE_3_HIDDEN_SILVER_LEAF
 	
+Route3TMRockSlide:
+	itemball TM_ROCK_SLIDE
+	
 Route3TrainerTipsSign:
 	jumptext Route3TrainerTipsSignText
 	
@@ -398,7 +401,7 @@ Route3_MapEvents:
 	bg_event 43, 35, BGEVENT_READ, Route3TrainerTipsSign
 	bg_event 10, 37, BGEVENT_ITEM, Route3SilverLeaf
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event 52, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerCindy, -1
 	object_event 50, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNate, -1
 	object_event 21, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerEarl, -1
@@ -408,4 +411,5 @@ Route3_MapEvents:
 	object_event  6, 31, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3HealerScript, -1
 	object_event  7, 31, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3ClefableScript, -1
 	object_event 16, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route3MoveTutor, -1
+	object_event  0,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route3TMRockSlide, EVENT_GOT_TM_ROCK_SLIDE
 	

@@ -401,6 +401,13 @@ SchoolboyGroup:
 	db 23, DROWZEE, GOLD_BERRY
 	db -1
 	
+	; SCHOOLBOY (4)
+	db "MARTIN@", TRAINERTYPE_MOVES
+	db 26, MR__MIME,	REFLECT, LIGHT_SCREEN, ENCORE, PSYBEAM
+	db 26, XATU,		RECOVER, ANCIENTPOWER, CONFUSION, RAZOR_WIND
+	db 27, SMEARGLE,	KARATE_CHOP, FAINT_ATTACK, SLEEP_POWDER, GROWL
+	db -1
+	
 BirdKeeperGroup:
 	; BIRD_KEEPER (1)
 	db "PHIL@", TRAINERTYPE_MOVES
@@ -419,6 +426,14 @@ BirdKeeperGroup:
 	db 30, PIDGEOTTO,	NO_ITEM
 	db 27, FARFETCH_D,	STICK
 	db -1 ; end
+	
+	; BIRD_KEEPER (4)
+	db "ROY@", TRAINERTYPE_NORMAL
+	db 27, DODUO
+	db 27, FEAROW
+	db 27, FEAROW
+	db 30, DODRIO
+	db -1
 	
 LassGroup:
 	; LASS (1)
@@ -505,6 +520,11 @@ CooltrainerMGroup:
 	db 23, SANDSLASH, HEADBUTT, BULLDOZE, POISON_STING, SAND_ATTACK
 	db 24, HYPNO, HEADBUTT, CONFUSION, POISON_GAS, CALM_MIND
 	db -1 
+	
+	; COOLTRAINER_M (2)
+	db "LUCAS@", TRAINERTYPE_NORMAL
+	db 36, TYPHLOSION
+	db -1
 
 BeautyGroup:
 	; BEAUTY (1)
@@ -535,6 +555,14 @@ BeautyGroup:
 	db 23, PIKACHU
 	db 23, MARILL
 	db -1 ; end
+	
+	; BEAUTY (5)
+	db "REBECCA@", TRAINERTYPE_NORMAL
+	db 26, MEOWTH
+	db 28, EEVEE
+	db 26, AZUMARILL
+	db 27, WIGGLYTUFF
+	db -1
 	
 PokemaniacGroup:
 	; POKEMANIAC (1)
@@ -568,6 +596,15 @@ PokemaniacGroup:
 	db 27, CUBONE
 	db 28, KANGASKHAN
 	db -1
+	
+	; MOKEMANIAC (5)
+	db "TYLER@", TRAINERTYPE_NORMAL
+	db 27, CUBONE
+	db 28, RHYHORN
+	db 28, IVYSAUR
+	db 28, MAROWAK
+	db 29, LICKITUNG
+	db -1
 
 GruntMGroup:
 
@@ -581,6 +618,13 @@ TeacherGroup:
 	db 23, RINRING
 	db 23, FEAROW
 	db 23, ARBOK
+	db -1
+	
+	; TEACHER (2)
+	db "CAMILLA@", TRAINERTYPE_MOVES
+	db 28, RINRING, 	HEAL_BELL, FAINT_ATTACK, SCREECH, FURY_SWIPES
+	db 24, HOUNDOOM, 	FAINT_ATTACK, BITE, FIRE_SPIN, SMOG
+	db 27, SMEARGLE, 	HEADBUTT, BITE, QUICK_ATTACK, TAIL_WHIP
 	db -1
 
 SabrinaGroup:
@@ -615,6 +659,11 @@ BugCatcherGroup:
 	db 23, PINSIR
 	db 24, ARIADOS
 	db 24, PARASECT
+	db -1
+
+	; BUG_CATCHER (5)
+	db "GREG@", TRAINERTYPE_NORMAL
+	db 28, HERACROSS
 	db -1
 	
 FisherGroup:
@@ -938,6 +987,14 @@ BikerGroup:
 	db 21, GASTLY
 	db 21, DROWZEE
 	db -1
+	
+	; BIKER (3)
+	db "JESSE@", TRAINERTYPE_NORMAL
+	db 27, KOFFING
+	db 28, KOFFING
+	db 27, SLUGMA
+	db 30, CHARMELEON
+	db -1
 
 BlaineGroup:
 	; BLAINE (1)
@@ -1011,6 +1068,13 @@ FirebreatherGroup:
 	db 19, MR__MIME
 	db 21, HOUNDOUR
 	db -1
+
+	; FIREBREATHER (3)
+	db "WAYNE@", TRAINERTYPE_NORMAL
+	db 28, SLUGMA
+	db 28, PONYTA
+	db 29, MAGBY
+	db -1
 	
 JugglerGroup:
 	; JUGGLER (1)
@@ -1052,16 +1116,23 @@ PsychicGroup:
 	db 21, DROWZEE
 	db -1
 	
-	; PSYCHIC_T (3)
+	; PSYCHIC_T (2)
 	db "CHRISTIAN@", TRAINERTYPE_NORMAL
 	db 18, CLEFAIRY
 	db 20, CLEFABLE
 	db -1
 	
-	; PSYCHIC_T (2)
+	; PSYCHIC_T (3)
 	db "DAMIEN@", TRAINERTYPE_NORMAL
 	db 16, KADABRA
 	db 21, STARYU
+	db -1
+	
+	; PSYCHIC_T (4)
+	db "SOLOMON@", TRAINERTYPE_NORMAL
+	db 26, HYPNO
+	db 28, GIRAFARIG
+	db 25, KADABRA
 	db -1
 	
 PicnickerGroup:
@@ -1093,6 +1164,14 @@ PicnickerGroup:
 	db "BRITTANY@", TRAINERTYPE_NORMAL
 	db 27, TANGELA
 	db 27, TANGELA
+	db -1
+	
+	; PICNICKER (6)
+	db "LESLIE@", TRAINERTYPE_NORMAL
+	db 25, PONYTA
+	db 26, CLEFABLE
+	db 26, FURRET
+	db 27, SUNFLORA
 	db -1
 
 CamperGroup:
@@ -1128,8 +1207,10 @@ CamperGroup:
 	db -1
 	
 	; CAMPER (6)
-	db "GREG@", TRAINERTYPE_NORMAL
-	db 28, HERACROSS
+	db "RUSTY@", TRAINERTYPE_NORMAL
+	db 25, STANTLER
+	db 25, BEEDRILL
+	db 27, QUILAVA
 	db -1
 
 ExecutiveFGroup:
@@ -1163,6 +1244,13 @@ PokefanMGroup:
 	; POKEFANM (1)
 	db "LESTER@", TRAINERTYPE_ITEM
 	db 27, SCYTHER,		BERRY
+	db -1
+	
+	; POKEFANM (2)
+	db "DOUG@", TRAINERTYPE_ITEM
+	db 27, PONYTA, 		BERRY
+	db 27, STANTLER,	BERRY
+	db 29, ESPEON,		BERRY
 	db -1
 
 KimonoGirlGroup:

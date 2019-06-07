@@ -90,8 +90,6 @@ NUM_TMS = const_value - TM01
 	add_hm SURF         ; f5
 NUM_HMS = const_value - HM01
 
-	add_mt DREAD_STORM
-	add_mt SKETCH
 	add_mt SWEET_KISS
 	add_mt LOVELY_KISS
 	add_mt DRAIN_KISS
@@ -104,5 +102,7 @@ NUM_HMS = const_value - HM01
 	add_mt NIGHTMARE
 	add_mt DREAM_EATER
 	add_mt BUBBLEBEAM
+	add_mt DREAD_STORM
+	add_mt SKETCH
 
 NUM_TM_HM_TUTOR = __enum__ + -1

@@ -18,6 +18,12 @@ GiftMonMoves:
 	ld a, [hl]
 	cp TOTODILE
 	jr z, .GiveMoveset2
+	ld a, [hl]
+	cp CYNDAQUIL
+	jr z, .GiveMoveset3
+	ld a, [hl]
+	cp CHIKORITA
+	jr z, .GiveMoveset4
 	ld a, l
 	sub e
 	ld l, a
@@ -44,6 +50,28 @@ GiftMonMoves:
 	push hl
 	ld a, [wScriptVar]
 	ld hl, .Moveset2
+	call AddNTimes
+
+	; get address of mon's first move
+	pop de
+	inc de
+	inc de
+
+.GiveMoveset3:
+	push hl
+	ld a, [wScriptVar]
+	ld hl, .Moveset3
+	call AddNTimes
+
+	; get address of mon's first move
+	pop de
+	inc de
+	inc de
+
+.GiveMoveset4:
+	push hl
+	ld a, [wScriptVar]
+	ld hl, .Moveset4
 	call AddNTimes
 
 	; get address of mon's first move
@@ -87,10 +115,24 @@ GiftMonMoves:
 	db 0
 	
 .Moveset2:
-	db ANCIENTPOWER
 	db AQUA_JET
-	db BITE
 	db ICE_PUNCH
+	db BITE
+	db ANCIENTPOWER
+	db 0
+	
+.Moveset3:
+	db FLAME_WHEEL
+	db WILD_CHARGE
+	db SUBMISSION
+	db ROLLOUT
+	db 0
+	
+.Moveset4:
+	db GIGA_DRAIN
+	db HEAL_BELL
+	db LEECH_SEED
+	db ANCIENTPOWER
 	db 0
 
 .GetNthPartyMon:

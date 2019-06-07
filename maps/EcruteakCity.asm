@@ -48,6 +48,9 @@ EcruteakCity_MapScripts:
 
 EcruteakCityFruitTree:
 	fruittree ECRUTEAK_CITY
+	
+EcruteakCityEndure:
+	itemball TM_ENDURE
 
 EcruteakCitySign:
 	jumptext EcruteakCitySignText
@@ -205,7 +208,7 @@ BurnedTowerSignText:
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 15, 25, ECRUTEAK_FOREST_GATE, 4
 	warp_event 16, 25, ECRUTEAK_FOREST_GATE, 3
 	warp_event  9, 19, ECRUTEAK_POKECENTER_1F, 1
@@ -213,6 +216,7 @@ EcruteakCity_MapEvents:
 	warp_event  8, 11, ECRUTEAK_GYM, 1
 	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
 	warp_event 33,  9, ROUTE_12_ECRUTEAK_GATE, 2
+	warp_event  1,  7, ECRUTEAK_THIEF_HOUSE, 1
 
 	db 0 ; coord events
 
@@ -224,6 +228,7 @@ EcruteakCity_MapEvents:
 	bg_event 25, 15, BGEVENT_UP,   EcruteakMailbox
 	bg_event 21, 19, BGEVENT_UP,   EcruteakMailbox
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  8, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_ACCESS
-	object_event 32,  0, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
+	object_event  0,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
+	object_event  32, 0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE

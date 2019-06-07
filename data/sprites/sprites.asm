@@ -117,3 +117,4 @@ OverworldSprites:
 	overworld_sprite SwimmerGirlLandSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite PoseySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN

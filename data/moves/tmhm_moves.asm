@@ -65,8 +65,6 @@ TMHMMoves:
 ; HMs
 	db SURF
 ; Move tutor
-	db DREAD_STORM
-	db SKETCH
 	db SWEET_KISS
 	db LOVELY_KISS
 	db DRAIN_KISS
@@ -79,4 +77,6 @@ TMHMMoves:
 	db NIGHTMARE
 	db DREAM_EATER
 	db BUBBLEBEAM
+	db DREAD_STORM
+	db SKETCH
 	db 0 ; end

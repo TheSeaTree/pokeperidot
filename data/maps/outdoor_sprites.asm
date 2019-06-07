@@ -105,10 +105,29 @@ CeladonGroupSprites:
 ; Route12 and Route13 are connected
 ; Route8, Route12, Route10South, LavenderTown
 LavenderGroupSprites:
+	db SPRITE_POKEFAN_M
+	db SPRITE_BUENA	
+	db SPRITE_YOUNGSTER
+	db SPRITE_FISHER
+	db SPRITE_TEACHER
+	db SPRITE_SUPER_NERD
+	db SPRITE_BIKER
+	db SPRITE_SWIMMER_GIRL_LAND
+	db SPRITE_LASS
+	; 9 of max 9 walking sprites
+	db SPRITE_TWIN
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_GYM_GUY
+	db SPRITE_ROCK
+	db SPRITE_KIMONO_GIRL
+	db SPRITE_POKE_BALL
+	db SPRITE_FRUIT_TREE
+	db 0 ; end
+	
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
 	db SPRITE_POKEFAN_M
-	db SPRITE_GRAMPS
+	db SPRITE_BUENA
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
 	db SPRITE_TEACHER
@@ -118,6 +137,7 @@ FuchsiaGroupSprites:
 	db SPRITE_LASS
 	; 8 of max 9 walking sprites
 	db SPRITE_TWIN
+	db SPRITE_ROCK
 	db SPRITE_KIMONO_GIRL
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
