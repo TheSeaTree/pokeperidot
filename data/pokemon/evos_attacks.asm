@@ -312,6 +312,7 @@ RinringEvosAttacks:
 	db 14, FURY_SWIPES
 	db 17, SCREECH
 	db 22, FAINT_ATTACK
+	db 27, HEAL_BELL
 	db 33, CUT
 	db 38, NASTY_PLOT
 	db 41, CRUNCH
@@ -325,6 +326,7 @@ NyanellEvosAttacks:
 	db 14, FURY_SWIPES
 	db 17, SCREECH
 	db 22, FAINT_ATTACK
+	db 27, HEAL_BELL
 	db 33, CUT
 	db 38, NASTY_PLOT
 	db 41, CRUNCH
