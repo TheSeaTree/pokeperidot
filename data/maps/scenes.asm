@@ -40,4 +40,5 @@ MapScenes::
 	scene_var VIOLET_CITY,								   wVioletCitySceneID
 	scene_var ECRUTEAK_GYM,                                wEcruteakGymSceneID
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
+	scene_var ROUTE_12_SHELTER,							   wRoute12ShelterSceneID
 	db -1

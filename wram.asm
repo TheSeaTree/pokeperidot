@@ -2410,7 +2410,7 @@ wObjectStructsEnd:: ; d6de
 
 wCmdQueue:: ds CMDQUEUE_CAPACITY * CMDQUEUE_ENTRY_SIZE
 
-	ds 40
+	ds 6
 
 wMapObjects:: ; d71e
 wPlayerObject:: map_object wPlayer
@@ -2429,6 +2429,8 @@ wMap12Object::  map_object wMap12
 wMap13Object::  map_object wMap13
 wMap14Object::  map_object wMap14
 wMap15Object::  map_object wMap15
+wMap16Object::  map_object wMap16
+wMap17Object::  map_object wMap17
 wMapObjectsEnd::
 
 wObjectMasks:: ds NUM_OBJECTS ; d81e
@@ -2568,7 +2570,7 @@ wRoute34SceneID::                                 db ; d995
 wVioletGymSceneID::
 wRoute34IlexForestGateSceneID::                   db ; d996
 wEcruteakCitySceneID::				              db ; d997
-wWiseTriosRoomSceneID::                           db ; d998
+wRoute12ShelterSceneID::                          db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a
 wMahoganyTownSceneID::                            db ; d99b

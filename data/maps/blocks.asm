@@ -64,6 +64,7 @@ VioletTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
 Route12Shelter_Blocks:
+EcruteakThiefHouse_Blocks:
 	INCBIN "maps/House1.ablk"
 
 CherrygroveInn_Blocks:
@@ -496,9 +497,9 @@ OverlookMaze_Blocks:
 	
 LostLand_Blocks:
 	INCBIN "maps/LostLand.ablk"
-	
-Route14Cave1F_Blocks:
-	INCBIN "maps/Route14Cave1F.ablk"	
 
-Route14CaveB1F_Blocks:
-	INCBIN "maps/Route14CaveB1F.ablk"
+Route14Cave1F_Blocks:
+	INCBIN "maps/Route14Cave1F.ablk"
+	
+Route14Cave2F_Blocks:
+	INCBIN "maps/Route14Cave2F.ablk"	

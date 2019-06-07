@@ -226,6 +226,7 @@ INCLUDE "maps/BlackthornCity.asm"
 INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PaintersForest.asm"
 INCLUDE "maps/PaintersHouse.asm"
+INCLUDE "maps/EcruteakThiefHouse.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -241,7 +242,7 @@ INCLUDE "maps/VioletTradeHouse.asm"
 INCLUDE "maps/Route12EcruteakGate.asm"
 INCLUDE "maps/Route12Shelter.asm"
 INCLUDE "maps/Route14Cave1F.asm"
-INCLUDE "maps/Route14CaveB1F.asm"
+INCLUDE "maps/Route14Cave2F.asm"
 
 SECTION "Map Scripts 24", ROMX
 

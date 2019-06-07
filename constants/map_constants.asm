@@ -31,7 +31,7 @@ ENDM
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
 	map_const OLIVINE_GYM,                                  5,  8 ;  2
 	map_const OLIVINE_MART,                                 6,  4 ;  8
-	map_const OLIVINE_CITY,                                20, 18 ; 14
+	map_const OLIVINE_CITY,                                24, 18 ; 14
 
 	newgroup                                                      ;  2
 
@@ -78,6 +78,7 @@ ENDM
 	map_const PAINTERS_FOREST,                              7,  7
 	map_const PAINTERS_HOUSE,                               4,  4
 	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
+	map_const ECRUTEAK_THIEF_HOUSE,							4,  4
 
 	newgroup                                                      ;  5
 
@@ -196,8 +197,8 @@ ENDM
 	map_const ROUTE_12_SHELTER,								4,  4
 	map_const ROUTE_13,                                    21, 16 ;  1
 	map_const ROUTE_14,                                    23, 14 ;  2
-	map_const ROUTE_14_CAVE_1F,							   10, 11
-	map_const ROUTE_14_CAVE_B1F,								9,  8
+	map_const ROUTE_14_CAVE_1F, 							9, 11
+	map_const ROUTE_14_CAVE_2F,							   10, 10
 	map_const ROUTE_15,                                    20,  9 ;  3
 	map_const ROUTE_18,                                    10,  9 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3

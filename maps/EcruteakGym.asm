@@ -31,7 +31,7 @@ EcruteakGym_MapScripts:
 	clearevent EVENT_ECRUTEAK_GYM_MON_3
 	clearevent EVENT_ECRUTEAK_GYM_MON_4
 	clearflag EVENT_BEAT_CAMPER_JEFF
-	clearflag EVENT_BEAT_CAMPER_GREG
+	clearflag EVENT_BEAT_BUG_CATCHER_GREG
 	clearflag EVENT_BEAT_PICNICKER_TERRY
 	clearflag EVENT_BEAT_PICNICKER_BRITTANY
 	clearflag EVENT_BEAT_POKEFANM_LESTER
@@ -177,13 +177,13 @@ TrainerCamperJeff:
 	closetext
 	end
 	
-TrainerCamperGreg:
-	trainer CAMPER, GREG, EVENT_BEAT_CAMPER_GREG, CamperGregText, CamperGregWinText, 0, .AfterScript
+TrainerBugCatcherGreg:
+	trainer BUG_CATCHER, GREG, EVENT_BEAT_BUG_CATCHER_GREG, BugCatcherGregText, BugCatcherGregWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext CamperGregAfterText
+	writetext BugCatcherGregAfterText
 	waitbutton
 	closetext
 	end
@@ -318,16 +318,16 @@ CamperJeffAfterText:
 	text "I lost."
 	done
 	
-CamperGregText:
+BugCatcherGregText:
 	text "I am a"
 	line "#MON trainer."
 	done
 
-CamperGregWinText:
+BugCatcherGregWinText:
 	text "I lost."
 	done
 
-CamperGregAfterText:
+BugCatcherGregAfterText:
 	text "I lost."
 	done	
 
@@ -390,11 +390,11 @@ EcruteakGym_MapEvents:
 	bg_event 11, 22, BGEVENT_DOWN, EcruteakCantLeave
 
 	db 8 ; object events
-	object_event 11,  3, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakGymLeader, -1
-	object_event 10, 17, SPRITE_ERIKA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_INTRO
+	object_event 11,  3, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakGymLeader, -1
+	object_event 10, 17, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_INTRO
 	object_event 12, 19, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 13, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperJeff, -1
 	object_event  6, 14, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerTerry, -1
 	object_event  5,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanMLester, -1
-	object_event 18,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerCamperGreg, -1
+	object_event 18,  8, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBugCatcherGreg, -1
 	object_event 11, 10, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerBrittany, -1

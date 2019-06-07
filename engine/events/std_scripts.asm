@@ -479,9 +479,10 @@ InitializeEventsScript:
 	setevent EVENT_BOULDER_IN_PALEROCK_2A
 	setevent EVENT_BOULDER_IN_PALEROCK_2B
 	setevent EVENT_BOULDER_IN_PALEROCK_B
-	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_1 ; Top Right
-	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_2 ; Top Left
-	setevent EVENT_ROUTE_14_CAVE_B1F_BOULDER_3 ; Bottom Right
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1 ; Top Right
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2 ; Top Left
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3 ; Bottom Right
+	setevent EVENT_HIDE_SHELTER_MAROWAK
 	return
 
 AskNumber1MScript:
