@@ -154,3 +154,7 @@ FruitPackIsFullText:
 NothingHereText:
 	text_far _NothingHereText
 	text_end
+	
+NevermindText:
+	text_far _NevermindText
+	text_end
