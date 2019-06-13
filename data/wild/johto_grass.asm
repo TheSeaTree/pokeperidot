@@ -765,7 +765,7 @@ JohtoGrassWildMons:
 	db 24, PONYTA
 	db 22, GIRAFARIG
 	db 23, TANGELA
-	db 26, LICKITUNG
+	db 24, PHANPY
 	db 23, TANGELA
 	db 26, TANGELA
 	; day
@@ -773,7 +773,7 @@ JohtoGrassWildMons:
 	db 24, PONYTA
 	db 22, GIRAFARIG
 	db 23, TANGELA
-	db 26, LICKITUNG
+	db 24, PHANPY
 	db 23, TANGELA
 	db 26, TANGELA
 	; nite
@@ -781,9 +781,63 @@ JohtoGrassWildMons:
 	db 24, PONYTA
 	db 22, STANTLER
 	db 23, TANGELA
-	db 26, LICKITUNG
+	db 24, PHANPY
 	db 23, TANGELA
-	db 26, TANGELA
+	db 26, TANGELA	
+	
+;	map_id ROUTE_14_CAVE_1F
+;	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+;	; morn
+;	db 24, CUBONE
+;	db 24, CUBONE
+;	db 22, CUBONE
+;	db 23, CUBONE
+;	db 24, CUBONE
+;	db 23, CUBONE
+;	db 26, KANGASKHAN
+;	; day
+;	db 24, CUBONE
+;	db 24, CUBONE
+;	db 22, CUBONE
+;	db 23, CUBONE
+;	db 24, CUBONE
+;	db 23, CUBONE
+;	db 26, KANGASKHAN
+;	; nite
+;	db 24, CUBONE
+;	db 24, CUBONE
+;	db 22, CUBONE
+;	db 23, CUBONE
+;	db 24, CUBONE
+;	db 23, CUBONE
+;	db 26, KANGASKHAN
+	
+	map_id ROUTE_14_CAVE_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, CUBONE
+	db 24, CUBONE
+	db 22, CUBONE
+	db 23, CUBONE
+	db 24, CUBONE
+	db 23, CUBONE
+	db 26, KANGASKHAN
+	; day
+	db 24, CUBONE
+	db 24, CUBONE
+	db 22, CUBONE
+	db 23, CUBONE
+	db 24, CUBONE
+	db 23, CUBONE
+	db 26, KANGASKHAN
+	; nite
+	db 24, CUBONE
+	db 24, CUBONE
+	db 22, CUBONE
+	db 23, CUBONE
+	db 24, CUBONE
+	db 23, CUBONE
+	db 26, KANGASKHAN
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
