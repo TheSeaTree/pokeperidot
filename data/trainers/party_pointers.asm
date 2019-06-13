@@ -23,7 +23,7 @@ TrainerGroups:
 	dw LtSurgeGroup
 	dw ScientistGroup
 	dw ErikaGroup
-	dw YoungsterGroup
+	dw LadGroup
 	dw SchoolboyGroup
 	dw BirdKeeperGroup
 	dw LassGroup

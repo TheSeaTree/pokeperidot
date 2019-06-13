@@ -23,7 +23,7 @@ BTTrainerClassGenders:
 	db MALE   ; LT_SURGE
 	db MALE   ; SCIENTIST
 	db FEMALE ; ERIKA
-	db MALE   ; YOUNGSTER
+	db MALE   ; LAD
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BIRD_KEEPER
 	db FEMALE ; LASS

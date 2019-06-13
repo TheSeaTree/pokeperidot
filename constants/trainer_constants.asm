@@ -107,9 +107,10 @@ KRIS EQU __enum__
 	trainerclass ERIKA ; 15
 	const ERIKA1
 
-	trainerclass YOUNGSTER ; 16
+	trainerclass LAD ; 16
 	const JACK
 	const BEN
+	const TRISTAN
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -132,6 +133,7 @@ KRIS EQU __enum__
 	const STEPHANIE
 	const HOLLY
 	const VICKY
+	const GINGER
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -166,7 +168,7 @@ KRIS EQU __enum__
 	
 	trainerclass TEACHER ; 22
 	const ANDREA
-	const CAMILLA
+	const SHARON
 	
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -177,6 +179,7 @@ KRIS EQU __enum__
 	const OWEN
 	const LONNIE
 	const GREG
+	const CARLOS
 
 	trainerclass FISHER ; 25
 	const BRADY
@@ -280,6 +283,7 @@ KRIS EQU __enum__
 	const CHRISTIAN
 	const DAMIEN
 	const SOLOMON
+	const WES
 	
 	trainerclass PICNICKER ; 35
 	const JAMIE
@@ -318,6 +322,8 @@ KRIS EQU __enum__
 	trainerclass TWINS ; 3d
 	const FAYEANDMAE1
 	const FAYEANDMAE2
+	const LEAHANDMIA1
+	const LEAHANDMIA2
 	
 	trainerclass POKEFANF ; 3e
 	const ELANE

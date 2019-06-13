@@ -50,13 +50,13 @@ TrainerPicnickerJess:
 	closetext
 	end	
 	
-TrainerYoungsterBen:
-	trainer YOUNGSTER, BEN, EVENT_BEAT_YOUNGSTER_BEN, YoungsterBenText, YoungsterBenWinText, 0, .Script
+TrainerLadBen:
+	trainer LAD, BEN, EVENT_BEAT_LAD_BEN, LadBenText, LadBenWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterBenAfterText
+	writetext LadBenAfterText
 	waitbutton
 	closetext
 	end	
@@ -129,7 +129,7 @@ TrainerCooltrainerFAnya:
 	iffalse .Explain
 	checkevent EVENT_BEAT_PICNICKER_JESS
 	iffalse .Explain
-	checkevent EVENT_BEAT_YOUNGSTER_BEN
+	checkevent EVENT_BEAT_LAD_BEN
 	iffalse .Explain
 	checkevent EVENT_BEAT_LASS_ELIZABETH
 	iffalse .Explain
@@ -256,18 +256,18 @@ PicnickerJessAfterText:
 	cont "is perfect."
 	done
 
-YoungsterBenText:
+LadBenText:
 	text "Hey! You scared"
 	line "away that #MON!"
 	done
 	
-YoungsterBenWinText:
+LadBenWinText:
 	text "I was trying to"
 	line "take a picture of"
 	cont "a SLOWPOKE!"
 	done
 	
-YoungsterBenAfterText:
+LadBenAfterText:
 	text "I hope I can find"
 	line "another SLOWPOKE"
 	cont "to photograph."
@@ -474,7 +474,7 @@ Route5_MapEvents:
 	db 12 ; object events
 	object_event 4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherEddie, -1
 	object_event 15, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PINK, OBJECTTYPE_TRAINER, 2, TrainerLassElizabeth, -1
-	object_event 16,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerYoungsterBen, -1
+	object_event 16,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLadBen, -1
 	object_event 8,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyLily, -1
 	object_event 23,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerJess, -1
 	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperJames, -1

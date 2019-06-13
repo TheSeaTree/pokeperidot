@@ -127,10 +127,10 @@ TrainerClassAttributes:
 	dw AI_BASIC | AI_SETUP | AI_SMART | AI_AGGRESSIVE | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
-; Youngster
+; Lad
 	db NO_ITEM, NO_ITEM ; items
-	db 4 ; base reward
-	dw AI_BASIC | AI_STATUS
+	db 6 ; base reward
+	dw AI_BASIC | AI_STATUS | AI_AGGRESSIVE | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Schoolboy
@@ -148,7 +148,7 @@ TrainerClassAttributes:
 ; Lass
 	db NO_ITEM, NO_ITEM ; items
 	db 6 ; base reward
-	dw AI_BASIC | AI_CAUTIOUS | AI_STATUS
+	dw AI_BASIC | AI_STATUS | AI_AGGRESSIVE | AI_RISKY
 	dw CONTEXT_USE | SWITCH_OFTEN
 
 ; Janine

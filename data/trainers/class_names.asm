@@ -21,7 +21,7 @@ TrainerClassNames::
 	db "LEADER@"
 	db "SCIENTIST@"
 	db "LEADER@"
-	db "YOUNGSTER@"
+	db "LAD@"
 	db "SCHOOLBOY@"
 	db "BIRD KEEPER@"
 	db "LASS@"

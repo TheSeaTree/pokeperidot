@@ -8,7 +8,7 @@ BattleTowerTrainers:
 	db "NICKEL@@@@", SCIENTIST
 	db "OLSON@@@@@", POKEFANM
 	db "ZABOROWSKI", LASS
-	db "WRIGHT@@@@", YOUNGSTER
+	db "WRIGHT@@@@", LAD
 	db "ALEXANDER@", HIKER
 	db "KAWAKAMI@@", TEACHER
 	db "BICKETT@@@", POKEFANM
@@ -49,7 +49,7 @@ BattleTowerTrainers:
 	db "HATCHER@@@", GENTLEMAN
 	db "JACKSON@@@", POKEFANF
 	db "KAHN@@@@@@", POKEMANIAC
-	db "LEONG@@@@@", YOUNGSTER
+	db "LEONG@@@@@", LAD
 	db "MARINO@@@@", TEACHER
 	db "NEWMAN@@@@", SAILOR
 	db "NGUYEN@@@@", BLACKBELT_T
@@ -63,7 +63,7 @@ BattleTowerTrainers:
 	db "VAN DYKE@@", SKIER
 	db "WALKER@@@@", SCHOOLBOY
 	db "MEYER@@@@@", SWIMMERF
-	db "JOHNSON@@@", YOUNGSTER
+	db "JOHNSON@@@", LAD
 	db "ADAMS@@@@@", GUITARIST
 	db "SMITH@@@@@", BUG_CATCHER
 	db "TAJIRI@@@@", BUG_CATCHER

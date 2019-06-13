@@ -6,20 +6,86 @@ Route14_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+	
+TrainerLadTristan:
+	trainer LAD, TRISTAN, EVENT_BEAT_LAD_TRISTAN, LadTristanText, LadTristanWinText, 0, .AfterScript
 
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext LadTristanAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerTwinLeah:
+	trainer TWINS, LEAHANDMIA1, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinLeahText, TwinLeahWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext TwinLeahAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerTwinMia:
+	trainer TWINS, LEAHANDMIA2, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinMiaText, TwinMiaWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext TwinMiaAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerBugCatcherCarlos:
+	trainer BUG_CATCHER, CARLOS, EVENT_BEAT_BUG_CATCHER_CARLOS, BugCatcherCarlosText, BugCatcherCarlosWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BugCatcherCarlosAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerLassGinger:
+	trainer LASS, GINGER, EVENT_BEAT_LASS_GINGER, LassGingerText, LassGingerWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext LassGingerAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPsychicWes:
+	trainer PSYCHIC_T, WES, EVENT_BEAT_PSYCHIC_WES, PsychicWesText, PsychicWesWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext PsychicWesAfterText
+	waitbutton
+	closetext
+	end
+	
 Route14MoveTutor:
-	applymovement ROUTE_14_ODDISH, Route14TutorDance
+	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	opentext
 	writetext Route14TutorText
 	waitbutton
-	applymovement ROUTE_14_ODDISH, Route14TutorDance
+	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	writetext Route14TutorDanceText
 	waitbutton
 	checkitem GOLD_LEAF
 	iffalse .NoLeaf
-	applymovement ROUTE_14_ODDISH, Route14TutorDance
+	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	writetext Route14TutorTeach
 	yesorno
@@ -38,7 +104,7 @@ Route14MoveTutor:
 	takeitem SILVER_LEAF
 	writetext Route14TutorThankYou
 	waitbutton
-	applymovement ROUTE_14_ODDISH, Route14TutorDance
+	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	applymovement PLAYER, Route14TutorDance
 	closetext
@@ -60,6 +126,12 @@ Route14MoveTutor:
 Route14CaveGuard:
 	jumptextfaceplayer Route14CaveGuardText
 	
+Route14UltraBall:
+	itemball ULTRA_BALL
+	
+Route14Nugget:
+	itemball NUGGET
+	
 Route14TutorDance:
 	turn_head DOWN
 	turn_head LEFT
@@ -75,6 +147,101 @@ Route14TutorDance:
 	turn_head RIGHT
 	turn_head DOWN
 	step_end
+	
+LadTristanText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+LadTristanWinText:
+	text "I lost."
+	done
+	
+LadTristanAfterText:
+	text "I lost."
+	done
+
+TwinLeahText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+TwinLeahWinText:
+	text "I lost."
+	done
+	
+TwinLeahAfterText:
+	text "I lost."
+	done
+
+TwinMiaText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+TwinMiaWinText:
+	text "I lost."
+	done
+	
+TwinMiaAfterText:
+	text "I lost."
+	done
+	
+LassGingerText:
+	text "My #MON have"
+	line "all become so"
+	cont "unique!"
+	done
+	
+LassGingerWinText:
+	text "I lost."
+	done
+	
+LassGingerAfterText:
+	text "I lost."
+	done
+	
+BugCatcherCarlosText:
+	text "Some people think"
+	line "BUG-type #MON"
+	cont "are weak."
+	done
+	
+BugCatcherCarlosWinText:
+	text "Oh no!"
+	line "They were right!"
+	done
+	
+PsychicWesText:
+	text "I have trained my"
+	line "mind over many"
+	cont "years to reach"
+	cont "this level!"
+	done
+	
+PsychicWesWinText:
+	text "My #MON's minds"
+	line "were not strong"
+	cont "enough."
+	done
+	
+PsychicWesAfterText:
+	text "I will train my"
+	line "#MON as strict"
+	cont "as I train myself."
+	
+	para "Then we will be"
+	line "unstoppable!"
+	done
+	
+BugCatcherCarlosAfterText:
+	text "I traveled all the"
+	line "way out here to"
+	cont "show people my BUG"
+	cont "#MON."
+	
+	para "…They didn't care."
+	done
 	
 Route14TutorText:
 	text "Hello there."
@@ -133,22 +300,41 @@ Route14TutorThankYou:
 	done
 	
 Route14CaveGuardText:
-	text "I'm sorry, I can't"
-	line "let you into this"
-	cont "cave right now."
+	text "Groan…"
+	
+	para "A #MON in there"
+	line "clobbered me and"
+	cont "my team!"
+
+	para "If I can't take it"
+	line "on, there's no way"
+	cont "some kid could."
+	
+	para "… … …"
+	line "Ouch!"
 	done
 
 Route14_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 3 ; warp events
 	warp_event  24,  7, ROUTE_14_CAVE_1F, 5
+	warp_event  39, 10, ROUTE_14_OLIVINE_GATE, 1
+	warp_event  39, 11, ROUTE_14_OLIVINE_GATE, 2
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event 10,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
+	db 10 ; object events
+	object_event 10,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
 	object_event 24,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_12_LEADER
+	object_event 26, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
+	object_event 27, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMia, -1
+	object_event 23, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherCarlos, -1
+	object_event 25, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassGinger, -1
+	object_event 37, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicWes, -1
+	object_event 21, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLadTristan, -1
+	object_event 31,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_14_ULTRA_BALL
+	object_event 10, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_14_NUGGET
 	

@@ -71,13 +71,13 @@ TrainerBirdKeeperPhillip:
 	closetext
 	end
 	
-TrainerYoungsterJack:
-	trainer YOUNGSTER, JACK, EVENT_BEAT_YOUNGSTER_JACK, YoungsterJackText, YoungsterJackWinText, 0, .Script
+TrainerLadJack:
+	trainer LAD, JACK, EVENT_BEAT_LAD_JACK, LadJackText, LadJackWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext YoungsterJackAfterText
+	writetext LadJackAfterText
 	waitbutton
 	closetext
 	end
@@ -229,18 +229,18 @@ BirdKeeperPhilAfterText:
 	cont "to the east."
 	done
 	
-YoungsterJackText:
+LadJackText:
 	text "My big brother"
 	line "let me borrow"
 	cont "his #MON!"
 	done
 	
-YoungsterJackWinText:
+LadJackWinText:
 	text "He told me these"
 	line "were strong…"
 	done
 	
-YoungsterJackAfterText:
+LadJackAfterText:
 	text "I will just have"
 	line "to explore other"
 	cont "routes to find my"
@@ -328,7 +328,7 @@ Route2_MapEvents:
 	object_event 10, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherLiam, -1
 	object_event  5, 19, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassNicole, -1
 	object_event 20, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperPhillip, -1
-	object_event 28, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerYoungsterJack, -1
+	object_event 28, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLadJack, -1
 	object_event 35, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Potion1, EVENT_ROUTE_2_POKE_BALL
 	object_event 11,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2PokeBall, EVENT_ROUTE_2_POTION1
 	object_event 18, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route2Potion2, EVENT_ROUTE_2_POTION2

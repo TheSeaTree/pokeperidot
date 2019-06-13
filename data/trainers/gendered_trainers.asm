@@ -2,7 +2,7 @@
 
 MaleTrainers:
 	db BURGLAR
-	db YOUNGSTER
+	db LAD
 	db SCHOOLBOY
 	db BIRD_KEEPER
 	db POKEMANIAC
