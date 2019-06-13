@@ -353,6 +353,7 @@ CuboneEggMoves:
 	db SCREECH
 	db SKULL_BASH
 	db PERISH_SONG
+	db FALSE_SWIPE
 	db -1 ; end
 
 SearionEggMoves:

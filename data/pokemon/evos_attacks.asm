@@ -1634,7 +1634,7 @@ CuboneEvosAttacks:
 	db 17, FOCUS_ENERGY
 	db 21, BONEMERANG
 	db 23, RAGE
-	db 27, FALSE_SWIPE
+	db 27, ROCK_THROW
 	db 31, THRASH
 	db 37, EARTHQUAKE
 	db 43, DOUBLE_EDGE
@@ -1642,15 +1642,9 @@ CuboneEvosAttacks:
 
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GROWL
-	db 3, TAIL_WHIP
-	db 7, BONE_CLUB
-	db 11, HEADBUTT
-	db 13, LEER
-	db 17, FOCUS_ENERGY
-	db 21, BONEMERANG
-	db 23, RAGE
-	db 27, FALSE_SWIPE
+	db 1, ROCK_THROW
+	db 1, BONEMERANG
+	db 1, LEER
 	db 33, THRASH
 	db 43, EARTHQUAKE
 	db 53, DOUBLE_EDGE

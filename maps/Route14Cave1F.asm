@@ -62,7 +62,11 @@ Route14Cave1FMarowakScript:
 	
 .Position1:
 	faceplayer
+	opentext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
+	waitbutton
+	closetext
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
 	iftrue .Position1_Continue
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
@@ -101,7 +105,11 @@ Route14Cave1FMarowakScript:
 	
 .Position2:
 	faceplayer
+	opentext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
+	waitbutton
+	closetext
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
 	iffalse .Position2_DeadEnd
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
@@ -140,7 +148,11 @@ Route14Cave1FMarowakScript:
 
 .Position3:
 	faceplayer
+	opentext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
+	waitbutton
+	closetext
 	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos3
 	moveobject ROUTE_14_CAVE_1F_MAROWAK, 2, 7
 	loadvar wFarfetchdPosition, 4
@@ -148,7 +160,11 @@ Route14Cave1FMarowakScript:
 	
 .Position4:
 	faceplayer
+	opentext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
+	waitbutton
+	closetext
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
 	iffalse .Position4_Up
 	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos4
@@ -164,7 +180,11 @@ Route14Cave1FMarowakScript:
 	
 .Position5:
 	faceplayer
+	opentext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
+	waitbutton
+	closetext
 	scall .CheckFacing
 	ifequal DOWN, .Position5_Down	
 	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos5
@@ -183,9 +203,11 @@ Route14Cave1FMarowakScript:
 	opentext
 	writetext MarowakCorneredText
 	waitbutton
-	closetext
+	writetext Route14Cave1FMarowakText
 	cry MAROWAK
-	loadwildmon MAROWAK, 3
+	waitbutton
+	closetext
+	loadwildmon MAROWAK, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -193,7 +215,6 @@ Route14Cave1FMarowakScript:
 	writetext Route14TeacherApproachText
 	waitbutton
 	closetext
-	turnobject PLAYER, DOWN
 	moveobject ROUTE_14_CAVE_1F_TEACHER, 12, 10
 	appear ROUTE_14_CAVE_1F_TEACHER
 	applymovement ROUTE_14_CAVE_1F_TEACHER, Route14Cave1FTeacherApproach
@@ -218,18 +239,12 @@ Route14Cave1FMarowakScript:
 	writetext Route14Cave1FTeacherLetsGoText
 	waitbutton
 	closetext
-	turnobject ROUTE_14_CAVE_1F_TEACHER, LEFT
-	opentext
-	writetext Route14Cave1FTeacherComeAlong
-	waitbutton
-	closetext
-	setmapscene ROUTE_12_SHELTER, SCENE_ROUTE12SHELTER_MAROWAK
+	follow ROUTE_14_CAVE_1F_TEACHER, ROUTE_14_CAVE_1F_MAROWAK
+	applymovement ROUTE_14_CAVE_1F_TEACHER, Route14Cave1FTeacherLeave
+	disappear ROUTE_14_CAVE_1F_MAROWAK
+	disappear ROUTE_14_CAVE_1F_TEACHER
 	clearevent EVENT_HIDE_SHELTER_MAROWAK
-	special FadeOutPalettes
-	playsound SFX_EXIT_BUILDING
-	wait 4
-	warpfacing UP, ROUTE_12_SHELTER, 2, 5
-;	setevent EVENT_ROUTE_14_CAVE_MAROWAK
+	setevent EVENT_ROUTE_14_CAVE_MAROWAK
 	end
 	
 .CheckFacing:
@@ -238,6 +253,17 @@ Route14Cave1FMarowakScript:
 
 Route14Cave1FBoulder:
 	jumptext Route14Cave1FWontBudge
+	
+Route14CaveReset:
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
+	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3
+	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_1
+	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_2
+	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_3
+	clearevent EVENT_HEARD_ROUTE_12_LEADER
+	loadvar wFarfetchdPosition, 1
+	end
 	
 MarowakPos1:
 	run_step UP
@@ -397,11 +423,28 @@ Route14Cave1FTeacherApproach:
 Route14Cave1FPlayerStepAside:
 	step LEFT
 	turn_head RIGHT
+	step_end
+	
+Route14Cave1FTeacherLeave:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step RIGHT
+	step UP
 	step_resume
 
 Route14Cave1FTeacherApproach2:
 	step UP
 	step_resume
+	
+Route14Cave1FMarowakText:
+	text "MAROWAK: Kyarugoo!"
+	done
 	
 Route14Cave1FWontBudge:
 	text "It won't budge!"
@@ -427,8 +470,8 @@ Route14Cave1FTeacherBattle:
 	line "were just in a"
 	cont "battle."
 	
-	para "Was it with"
-	line "<PLAYER>?"
+	para "Was it with this"
+	line "trainer?"
 	done
 	
 Route14Cave1FTeacherThankPlayer:
@@ -473,7 +516,8 @@ Route14Cave1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event  9, 19, BGEVENT_READ, Route14CaveReset
 
 	db 5 ; object events
 	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_ROUTE_14_CAVE_1F_BOULDER_1

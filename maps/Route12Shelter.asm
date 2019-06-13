@@ -1,35 +1,58 @@
 	const_def 2 ; object constants
+	const ROUTE12SHELTER_HELPER
+	const ROUTE12SHELTER_LEADER
+	const ROUTE12SHELTER_KANGASKHAN
+	const ROUTE12SHELTER_MAROWAK
 
 Route12Shelter_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene ; SCENE_ROUTE12SHELTER_DEFAULT
-	scene_script .DummyScene ; SCENE_ROUTE12SHELTER_MAROWAK
+	db 0 ; scene scripts
 
 	db 0 ; callbacks
 	
-.DummyScene:
+.MarowakScene:
+	turnobject ROUTE12SHELTER_LEADER, DOWN
+	opentext
+	writetext Route12LeaderMarowakText
+	waitbutton
+	closetext
+	turnobject ROUTE12SHELTER_KANGASKHAN, LEFT
+	turnobject PLAYER, RIGHT
+	turnobject ROUTE12SHELTER_MAROWAK, LEFT
+	turnobject ROUTE12SHELTER_KANGASKHAN, RIGHT
+	opentext
+	writetext KangaskhanText
+	waitbutton
+	closetext
+	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksToDoor
+	opentext
+	writetext MarowakWavesGoodbye
+	waitbutton
+	closetext
+	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksOut
+	disappear ROUTE12SHELTER_MAROWAK
 	end
 	
-Route12Leader:
+Route12ShelterAssistant:
 	faceplayer
 	opentext
 	checkevent EVENT_HEARD_ROUTE_12_LEADER
 	iftrue .HeardIntro
-	writetext Route12LeaderIntro
+	writetext Route12AssistantIntro
 	yesorno
 	iffalse .No
 .Yes
 	setevent EVENT_HEARD_ROUTE_12_LEADER
-	writetext Route12LeaderYes
-	waitbutton
+	writetext Route12AssistantYes
+	buttonsound
 .HeardIntro
-	writetext Route12LeaderAfter
+	writetext Route12AssistantAfter
 	waitbutton
 	closetext
+	turnobject LAST_TALKED, LEFT
 	end
 
 .No
-	writetext Route12LeaderNo
+	writetext Route12AssistantNo
 	yesorno
 	iftrue .Yes
 	iffalse .No
@@ -37,15 +60,41 @@ Route12Leader:
 	
 Route12ShelterKangaskhan:
 	faceplayer
+	opentext
+	writetext Route12KangaskhanText
 	cry KANGASKHAN
-	waitsfx
+	waitbutton
+	checkevent EVENT_ROUTE_14_CAVE_MAROWAK
+	iftrue .end
+	writetext Route12KangaskhanUpset
+	waitbutton
+.end
+	closetext
 	end
+
+; Leader is already out looking, the assistant tells you about it. After defeating Marowak, the leader finds you in the cave and invites you back with her & Marowak(don't teleport back?). At the shelter, Marowak tells Kangaskhan it needs to go out on its own and leaves. Leader explains that it can't be easy for a parent to let go of its child, but needs to return to the gym. After getting her badge, Kangaskhan will see you as worthy and ask to go with you, as she no longer has a child to care for. Kangaskhan will have a special moveset.
+
+MarowakWalksToDoor:
+	step DOWN
+	step LEFT
+	step DOWN
+	turn_step UP
+	step_resume
+
+MarowakWalksOut:
+	turn_step DOWN
+	step_resume
 	
-; Leader and/or teacher explains why Kangaskhan seems so distraught. The Cubone it was raising ran away shortly after evolving. The player will need to find it on Route 13/14, then have a boss encounter with it. Afterwards, the teacher will come find the Marowak and all 3 characters will return back to the shelter. Kangaskhan will "talk" with the Marowak and come to the understanding that Marowak is mature enough to no longer need its foster parent. Thankful for your help, and no longer needing to stay at the shelter with no young to take care of, Kangaskhan will offer to join your party. Kangaskhan will know the moves Headbutt, Counter, Foresight, and Milk Drink. The leader will return to the gym and the player will now be able to challenge it.
+LeaderWalksOut:
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step DOWN
+	turn_step DOWN
+	step_resume
 
-; Leader must stay behind to comfort the Kangaskhan, and the Teacher cannot go up ahead because she is not a trainer. This leaves only the player to go on ahead. The leader mentions a cave up ahead on Route 14, and that would be a good starting point. Marowak are shy creatures, and will not initiate a battle unless they absolutely have to.
-
-Route12LeaderIntro:
+Route12AssistantIntro:
 	text "Oh, this is"
 	line "terrible!"
 	
@@ -59,24 +108,17 @@ Route12LeaderIntro:
 	cont "and KANGASKHAN has"
 	cont "been in shambles."
 	
-	para "CUBONE have no"
-	line "mother, so"
-	cont "KANGASKHAN's"
-	cont "motherly instinct"
-	cont "took over."
+	para "She has taken care"
+	line "of CUBONE ever"
+	cont "since it came out"
+	cont "of an egg."
 	
-	para "I would go out and"
-	line "find MAROWAK on my"
-	cont "own, but I need to"
-	cont "stay here and com-"
-	cont "fort KANGASKHAN."
-	
-	para "The volunteer at"
-	line "this shelter isn't"
-	cont "a trainer, so it"
-	cont "would be too"
-	cont "dangerous for her"
-	cont "to go alone."
+	para "If I were a"
+	line "trainer, I would"
+	cont "help POSEY look,"
+	cont "but I need to stay"
+	cont "here and comfort"
+	cont "KANGASKHAN."
 	
 	para "…You look like a"
 	line "trainer."
@@ -86,7 +128,7 @@ Route12LeaderIntro:
 	cont "find MAROWAK?"
 	done
 	
-Route12LeaderYes:
+Route12AssistantYes:
 	text "Oh, thank you so"
 	line "very much!"
 	
@@ -99,21 +141,84 @@ Route12LeaderYes:
 	cont "there."
 	done
 	
-Route12LeaderAfter:
+Route12AssistantAfter:
 	text "MAROWAK are timid"
 	line "creatures. They"
 	cont "will not attack"
 	cont "unless they are"
 	cont "given no other"
 	cont "choice."
+	
+	para "Please be"
+	line "careful!"
 	done
 	
-Route12LeaderNo:
+Route12AssistantNo:
 	text "…What? You won't"
 	line "help?"
 	
 	para "Please reconsider."
-	line "For me?"
+	line "…For me?"
+	done
+	
+Route12LeaderMarowakText:
+	text "I didn't get a"
+	line "chance to thank"
+	cont "you back there!"
+	
+	para "KANGASKHAN thanks"
+	line "you too!"
+	done
+	
+KangaskhanText:
+	text "KANGASKHAN nods in"
+	line "agreement to"
+	cont "MAROWAK's request."
+	done
+	
+MarowakWavesGoodbye:
+	text "MAROWAK waves "
+	line "goodbye to"
+	cont "KANGASKHAN."
+	done
+	
+Route12LeaderExplaination:
+	text "It can't be easy"
+	line "for KANGASKHAN to"
+	cont "say goodbye like"
+	cont "that."
+	
+	para "But that is part"
+	line "of being a parent,"
+	cont "MAROWAK needed to"
+	cont "go out on its own."
+	
+	para "I just wish he"
+	line "would have let us"
+	cont "know about it"
+	cont "first."
+	
+	para "Now that this"
+	line "problem was taken"
+	cont "care of, I must"
+	cont "get back to my"
+	cont "duties as a GYM"
+	cont "leader."
+	
+	para "I await your"
+	line "challenge in the"
+	cont "future, trainer."
+	done
+	
+Route12KangaskhanText:
+	text "KANGASKHAN:"
+	line "Baru-ba!"
+	done
+	
+Route12KangaskhanUpset:
+	text "KANGASKHAN seems"
+	line "to be upset over"
+	cont "something."
 	done
 
 Route12Shelter_MapEvents:
@@ -128,7 +233,7 @@ Route12Shelter_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, -1
-	object_event  2,  4, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12Leader, -1
-	object_event  4,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, -1
-	object_event  5,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_SHELTER_MAROWAK
+	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12ShelterAssistant, -1
+	object_event  2,  4, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_SHELTER_MAROWAK
+	object_event  3,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, -1
+	object_event  4,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_SHELTER_MAROWAK
