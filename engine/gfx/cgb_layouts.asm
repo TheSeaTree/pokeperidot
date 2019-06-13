@@ -127,6 +127,10 @@ _CGB_FinishBattleScreenLayout:
 	call FillBoxCGB
 	hlcoord 0, 0, wAttrMap
 	lb bc, 4, 10
+	ld a, PAL_BATTLE_BG_ENEMY
+	call FillBoxCGB
+	hlcoord 2, 2, wAttrMap
+	lb bc, 1, 8
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
 	hlcoord 10, 7, wAttrMap
@@ -134,7 +138,7 @@ _CGB_FinishBattleScreenLayout:
 	ld a, PAL_BATTLE_BG_PLAYER_HP
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrMap
-	lb bc, 1, 9
+	lb bc, 1, 8
 	ld a, PAL_BATTLE_BG_EXP
 	call FillBoxCGB
 	hlcoord 0, 12, wAttrMap
