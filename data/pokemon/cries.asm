@@ -169,8 +169,8 @@ PokemonCries::
 	mon_cry CRY_SENTRET,     $06b,  $102 ; FURRET
 	mon_cry CRY_HOOTHOOT,    $091,  $0d8 ; HOOTHOOT
 	mon_cry CRY_HOOTHOOT,    $000,  $1a0 ; NOCTOWL
-	mon_cry CRY_ENTEI,       $08a,  $0b8 ; Tiger1
-	mon_cry CRY_ENTEI,       $099,  $140 ; Tiger2
+	mon_cry CRY_ENTEI,       $08d,  $0b8 ; Tiger1
+	mon_cry CRY_ENTEI,       $06a,  $0b8 ; Tiger2
 	mon_cry CRY_SPINARAK,    $011,  $200 ; SPINARAK
 	mon_cry CRY_SPINARAK,   -$0ae,  $1e2 ; ARIADOS
 	mon_cry CRY_SQUIRTLE,   -$010,  $140 ; CROBAT
