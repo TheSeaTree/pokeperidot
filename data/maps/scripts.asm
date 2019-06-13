@@ -139,6 +139,7 @@ INCLUDE "maps/CianwoodPhotoStudio.asm"
 INCLUDE "maps/CianwoodLugiaSpeechHouse.asm"
 INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/CianwoodChurch.asm"
+INCLUDE "maps/Route14OlivineGate.asm"
 
 
 SECTION "Map Scripts 13", ROMX
