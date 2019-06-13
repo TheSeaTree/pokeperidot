@@ -652,6 +652,11 @@ UnknownText_0x1c0cc6::
 	text_from_ram wStringBuffer2
 	db "@@"
 
+Text_RoseDrastically::
+	interpret_data
+	text "<SCROLL>rose drastically!"
+	prompt
+
 UnknownText_0x1c0cd0::
 	interpret_data
 	text "<SCROLL>sharply rose!"

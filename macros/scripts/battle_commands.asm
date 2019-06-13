@@ -64,7 +64,7 @@ ENDM
 	command charge                  ; 39
 	command checkcharge             ; 3a
 	command traptarget              ; 3b
-	command effect0x3c              ; 3c
+	command dragondance             ; 3c
 	command rampage                 ; 3d
 	command checkrampage            ; 3e
 	command constantdamage          ; 3f
@@ -97,7 +97,7 @@ ENDM
 	command endure                  ; 5a
 	command checkcurl               ; 5b
 	command rolloutpower            ; 5c
-	command effect0x5d              ; 5d
+	command calmmind                ; 5d
 	command furycutter              ; 5e
 	command attract                 ; 5f
 	command happinesspower          ; 60
@@ -154,6 +154,7 @@ ENDM
 	command statdownanim            ; 91
 	command statupanim              ; 92
 	command switchturn              ; 93
+	command sharpen
 	command bellydrum               ; 95
 	command psychup                 ; 96
 	command rage                    ; 97
@@ -181,6 +182,9 @@ ENDM
 	command supereffectivelooptext  ; ad
 	command startloop               ; ae
 	command curl                    ; af
+	command bulkup
+	command cosmicpower
+	command quiverdance
 
 	enum_start $fe
 	command endturn                 ; fe

@@ -188,11 +188,7 @@ AttackUp:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
-	lowersub
-	statupanim
-	raisesub
-	statupmessage
+	sharpen
 	statupfailtext
 	endmove
 
@@ -2068,14 +2064,10 @@ CalmMind:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup
 	lowersub
 	statupanim
-	statupmessage
-	statupfailtext
-	specialdefenseup
+	calmmind
 	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	
@@ -2083,14 +2075,10 @@ BulkUp:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
 	lowersub
 	statupanim
-	statupmessage
-	statupfailtext
-	defenseup
+	bulkup
 	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	
@@ -2098,14 +2086,10 @@ DragonDance:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
 	lowersub
 	statupanim
-	statupmessage
-	statupfailtext
-	speedup
+	dragondance
 	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 
@@ -2113,18 +2097,10 @@ QuiverDance:
 	checkobedience
 	usedmovetext
 	doturn
-	specialattackup
 	lowersub
 	statupanim
-	statupmessage
-	statupfailtext
-	specialdefenseup
+	quiverdance
 	raisesub
-	statupmessage
-	statupfailtext
-	speedup
-	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	
@@ -2132,14 +2108,10 @@ CosmicPower:
 	checkobedience
 	usedmovetext
 	doturn
-	defenseup
 	lowersub
 	statupanim
-	statupmessage
-	statupfailtext
-	specialdefenseup
+	cosmicpower
 	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	

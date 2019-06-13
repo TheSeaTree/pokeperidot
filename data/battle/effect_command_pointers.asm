@@ -63,7 +63,7 @@ BattleCommandPointers:
 	dw BattleCommand_Charge
 	dw BattleCommand_CheckCharge
 	dw BattleCommand_TrapTarget
-	dw BattleCommand3c
+	dw BattleCommand_DragonDance
 	dw BattleCommand_Rampage
 	dw BattleCommand_CheckRampage
 	dw BattleCommand_ConstantDamage
@@ -96,7 +96,7 @@ BattleCommandPointers:
 	dw BattleCommand_Endure
 	dw BattleCommand_CheckCurl
 	dw BattleCommand_RolloutPower
-	dw BattleCommand5d
+	dw BattleCommand_CalmMind
 	dw BattleCommand_FuryCutter
 	dw BattleCommand_Attract
 	dw BattleCommand_HappinessPower
@@ -153,6 +153,7 @@ BattleCommandPointers:
 	dw BattleCommand_StatDownAnim
 	dw BattleCommand_StatUpAnim
 	dw BattleCommand_SwitchTurn
+	dw BattleCommand_Sharpen
 	dw BattleCommand_BellyDrum
 	dw BattleCommand_PsychUp
 	dw BattleCommand_Rage
@@ -180,3 +181,6 @@ BattleCommandPointers:
 	dw BattleCommand_SuperEffectiveLoopText
 	dw BattleCommand_StartLoop
 	dw BattleCommand_Curl
+	dw BattleCommand_BulkUp
+	dw BattleCommand_CosmicPower
+	dw BattleCommand_QuiverDance
