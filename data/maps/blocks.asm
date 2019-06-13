@@ -113,6 +113,7 @@ Route4ForestGate_Blocks:
 Route4AzaleaGate_Blocks:
 Route2Gate_Blocks:
 Route12EcruteakGate_Blocks:
+Route14OlivineGate_Blocks:
 	INCBIN "maps/EastWestGate.ablk"
 
 ElmsLab_Blocks:

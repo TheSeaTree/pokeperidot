@@ -289,7 +289,10 @@ OlivineCityBattleTowerSignText_NotYetOpen:
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 3 ; warp events
+	warp_event  4, 14, ROUTE_14_OLIVINE_GATE, 3
+	warp_event  4, 15, ROUTE_14_OLIVINE_GATE, 4
+	warp_event 17,  5, MAHOGANY_TOWN, 1
 
 	db 2 ; coord events
 	coord_event 13, 16, SCENE_DEFAULT, OlivineCityRivalSceneTop

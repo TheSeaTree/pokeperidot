@@ -116,6 +116,7 @@ LavenderGroupSprites:
 	db SPRITE_LASS
 	; 9 of max 9 walking sprites
 	db SPRITE_TWIN
+	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_GYM_GUY
 	db SPRITE_ROCK

@@ -116,7 +116,7 @@ ENDM
 	map_attributes PaintersForest, PAINTERS_FOREST, $05, SOUTH
 	connection south, EcruteakCity, ECRUTEAK_CITY, -5
 
-	map_attributes MahoganyTown, MAHOGANY_TOWN, $71, 0
+	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
 
 	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, 0
 
@@ -329,3 +329,4 @@ ENDM
 	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0
 	map_attributes Route14Cave2F, ROUTE_14_CAVE_2F, $09, 0
 	map_attributes EcruteakThiefHouse, ECRUTEAK_THIEF_HOUSE, $00, 0
+	map_attributes Route14OlivineGate, ROUTE_14_OLIVINE_GATE, $00, 0

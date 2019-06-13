@@ -21,10 +21,15 @@ MahoganyTown_MapScripts:
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 25, 33, OLIVINE_CITY, 3
+	warp_event 26, 33, OLIVINE_CITY, 3
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 3 ; object events
+	object_event 30, 19, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 28, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 27, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

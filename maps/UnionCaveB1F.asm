@@ -9,8 +9,8 @@ UnionCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 35, 23, UNION_CAVE_1F, 2
-	warp_event 23, 23, UNION_CAVE_1F, 3
+	warp_event 37, 23, UNION_CAVE_1F, 2
+	warp_event 25, 23, UNION_CAVE_1F, 3
 
 	db 0 ; coord events
 
