@@ -2148,13 +2148,13 @@ PorygonEvosAttacks:
 	db 1, CONVERSION2
 	db 1, TACKLE
 	db 1, CONVERSION
-	db 1, SHARPEN
 	db 7, PSYBEAM
 	db 12, AGILITY
 	db 18, RECOVER
+	db 23, TRI_ATTACK
+	db 34, SHARPEN
 	db 40, THUNDERBOLT
 	db 45, LOCK_ON
-	db 50, TRI_ATTACK
 	db 62, ZAP_CANNON
 	db 0 ; no more level-up moves
 
@@ -3620,13 +3620,13 @@ Porygon2EvosAttacks:
 	db 1, CONVERSION2
 	db 1, TACKLE
 	db 1, CONVERSION
-	db 9, AGILITY
-	db 12, PSYBEAM
-	db 20, RECOVER
-	db 24, DEFENSE_CURL
-	db 32, LOCK_ON
-	db 36, TRI_ATTACK
-	db 44, ZAP_CANNON
+	db 7, PSYBEAM
+	db 12, AGILITY
+	db 18, RECOVER
+	db 23, TRI_ATTACK
+	db 40, THUNDERBOLT
+	db 45, LOCK_ON
+	db 62, ZAP_CANNON
 	db 0 ; no more level-up moves
 
 StantlerEvosAttacks:

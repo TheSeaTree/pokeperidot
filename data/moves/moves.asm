@@ -170,7 +170,7 @@ Moves: ; 41afb
 	move REST,         EFFECT_HEAL,                0, PSYCHIC,  100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         90, ROCK,      95, 10,  10
 	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC,  100, 20,   0
-	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,   100, 30,   0
+	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,   100, 10,   0
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,   100, 30,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,   100, 10,  20
 	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   100, ELECTRIC, 100, 15,  10
