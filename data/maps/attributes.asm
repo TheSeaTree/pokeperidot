@@ -330,3 +330,7 @@ ENDM
 	map_attributes Route14Cave2F, ROUTE_14_CAVE_2F, $09, 0
 	map_attributes EcruteakThiefHouse, ECRUTEAK_THIEF_HOUSE, $00, 0
 	map_attributes Route14OlivineGate, ROUTE_14_OLIVINE_GATE, $00, 0
+	map_attributes PowerPlant1F, POWER_PLANT_1F, $00, 0
+	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
+	map_attributes PowerPlant1FB, POWER_PLANT_1F_B, $00, 0
+	map_attributes PowerPlant2FB, POWER_PLANT_2F_B, $00, 0

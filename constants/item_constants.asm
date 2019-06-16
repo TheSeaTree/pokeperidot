@@ -152,9 +152,9 @@
 	const DRAGON_FANG  ; 90
 	const ITEM_91      ; 91
 	const LEFTOVERS    ; 92
-	const ITEM_93      ; 93
-	const ITEM_94      ; 94
-	const ITEM_95      ; 95
+	const GEN_KEY      ; 93
+	const OFFICE_KEY   ; 94
+	const ADMIN_KEY    ; 95
 	const MYSTERYBERRY ; 96
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98

@@ -65,7 +65,7 @@ Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
 Route12Shelter_Blocks:
 EcruteakThiefHouse_Blocks:
-	INCBIN "maps/House1.ablk"
+	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
 	INCBIN "maps/CherrygroveInn.ablk"
@@ -84,7 +84,7 @@ Route1CherrygroveGate_Blocks:
 Route1NewBarkGate_Blocks:
 Route1GoldenrodGate_Blocks:
 Route11GoldenrodGate_Blocks:
-	INCBIN "maps/NorthSouthGate.ablk"
+	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route4_Blocks:
 	INCBIN "maps/Route4.ablk"
@@ -114,7 +114,7 @@ Route4AzaleaGate_Blocks:
 Route2Gate_Blocks:
 Route12EcruteakGate_Blocks:
 Route14OlivineGate_Blocks:
-	INCBIN "maps/EastWestGate.ablk"
+	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 ElmsLab_Blocks:
 	INCBIN "maps/ElmsLab.ablk"
@@ -141,7 +141,7 @@ SaffronMart_Blocks:
 CherrygroveMart_Blocks:
 CianwoodMart_Blocks:
 GoldenrodMart_Blocks:
-	INCBIN "maps/Mart.ablk"
+	INCBIN "maps/Mart.6x4.mart.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
@@ -165,7 +165,7 @@ CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
-	INCBIN "maps/Pokecenter1F.ablk"
+	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
 GoldenrodDeptStore1F_Blocks:
 	INCBIN "maps/DeptStore1F.ablk"
@@ -201,7 +201,7 @@ VioletNicknameSpeechHouse_Blocks:
 ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
-	INCBIN "maps/House2.ablk"
+	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:
 	INCBIN "maps/UnionCaveB1F.ablk"
@@ -504,3 +504,11 @@ Route14Cave1F_Blocks:
 	
 Route14Cave2F_Blocks:
 	INCBIN "maps/Route14Cave2F.ablk"	
+
+PowerPlant1F_Blocks:
+PowerPlant1FB_Blocks:
+	INCBIN "maps/PowerPlant1F.ablk"
+
+PowerPlant2F_Blocks:
+PowerPlant2FB_Blocks:
+	INCBIN "maps/PowerPlant2F.ablk"

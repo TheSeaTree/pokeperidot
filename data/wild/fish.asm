@@ -16,7 +16,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Remoraid_Swarm_Old,   .Remoraid_Swarm_Good,   .Remoraid_Swarm_Super
 	fishgroup 50 percent + 1, .Gyarados_Old,         .Gyarados_Good,         .Gyarados_Super
 	fishgroup 50 percent + 1, .Dratini_2_Old,        .Dratini_2_Good,        .Dratini_2_Super
-	fishgroup 50 percent + 1, .WhirlIslands_Old,     .WhirlIslands_Good,     .WhirlIslands_Super
+	fishgroup 50 percent + 1, .Grimer_Old,     		 .Grimer_Good,     		 .Grimer_Super
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
 	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
@@ -156,20 +156,20 @@ FishGroups:
 	db  90 percent + 1, MAGIKARP,   10
 	db 100 percent,     DRAGONAIR,  10
 
-.WhirlIslands_Old:
-	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     KRABBY,     10
-.WhirlIslands_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     KRABBY,     20
-	db  90 percent + 1, KRABBY,     20
+.Grimer_Old:
+	db  70 percent + 1, GRIMER,   10
+	db  85 percent + 1, GRIMER,   10
+	db 100 percent,     GRIMER,     10
+.Grimer_Good:
+	db  35 percent,     GRIMER,   20
+	db  70 percent,     GRIMER,     20
+	db  90 percent + 1, GRIMER,     20
 	db 100 percent,     time_group 18
-.WhirlIslands_Super:
-	db  40 percent,     KRABBY,     40
+.Grimer_Super:
+	db  40 percent,     GRIMER,     40
 	db  70 percent,     time_group 19
-	db  90 percent + 1, KINGLER,    40
-	db 100 percent,     SEADRA,     40
+	db  90 percent + 1, GRIMER,    40
+	db 100 percent,     GRIMER,     40
 
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:

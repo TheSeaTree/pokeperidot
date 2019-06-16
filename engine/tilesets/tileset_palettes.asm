@@ -18,6 +18,8 @@ LoadSpecialMapPalette:
 	jr z, .mountain
 	cp 	TILESET_CAVE
 	jr z, .cave
+	cp  TILESET_FACILITY
+	jr z, .facility
 	jr .do_nothing
 
 .pokecom_2f
@@ -65,6 +67,10 @@ LoadSpecialMapPalette:
 	
 .cave
 	ld hl, CavePalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.facility
+	ld hl, FacilityPalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
@@ -171,6 +177,9 @@ INCLUDE "gfx/tilesets/mountain.pal"
 
 CavePalette:
 INCLUDE "gfx/tilesets/cave.pal"
+
+FacilityPalette:
+INCLUDE "gfx/tilesets/facility.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

@@ -24,7 +24,10 @@ SECTION "Map Scripts 2", ROMX
 INCLUDE "maps/UnionCave1F.asm"
 INCLUDE "maps/UnionCaveB1F.asm"
 INCLUDE "maps/UnionCaveB2F.asm"
-
+INCLUDE "maps/PowerPlant1F.asm"
+INCLUDE "maps/PowerPlant2F.asm"
+INCLUDE "maps/PowerPlant1FB.asm"
+INCLUDE "maps/PowerPlant2FB.asm"
 
 SECTION "Map Scripts 3", ROMX
 

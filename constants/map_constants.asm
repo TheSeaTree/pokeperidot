@@ -116,6 +116,10 @@ ENDM
 	map_const FACTORY_1F,                                  11, 11
 	map_const FACTORY_B1,                                   6,  8
 	map_const FACTORY_BACK,                                 5,  8
+	map_const POWER_PLANT_1F,							   16, 11
+	map_const POWER_PLANT_2F,							   16,  8
+	map_const POWER_PLANT_1F_B,							   16, 11
+	map_const POWER_PLANT_2F_B,							   16,  8
 
 	newgroup                                                      ;  9
 

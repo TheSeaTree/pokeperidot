@@ -17,15 +17,31 @@ MahoganyTown_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	return
+	
+PowerPlantDoor:
+	checkitem GREAT_BALL
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	iffalse .Lights
+	warpfacing UP, POWER_PLANT_1F, 5, 21
+	end
+	
+.Lights
+	warpfacing UP, POWER_PLANT_1F_B, 5, 21
+	end
 
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 25, 33, OLIVINE_CITY, 3
 	warp_event 26, 33, OLIVINE_CITY, 3
+	warp_event  4,  3, MAHOGANY_TOWN, 3
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event  4,  3, -1, PowerPlantDoor
 
 	db 0 ; bg events
 

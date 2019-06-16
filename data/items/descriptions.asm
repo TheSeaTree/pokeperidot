@@ -146,9 +146,9 @@ ItemDescriptions:
 	dw DragonFangDesc
 	dw TeruSama14Desc
 	dw LeftoversDesc
-	dw TeruSama15Desc
-	dw TeruSama16Desc
-	dw TeruSama17Desc
+	dw GenKeyDesc
+	dw OfficeKeyDesc
+	dw AdminKeyDesc
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
@@ -828,14 +828,17 @@ LeftoversDesc:
 	db   "Restores HP during"
 	next "battle. (HOLD)@"
 
-TeruSama15Desc:
-	db   "?@"
+GenKeyDesc:
+	db   "POWER PLANT"
+	next "GENERATOR access.@"
 
-TeruSama16Desc:
-	db   "?@"
+OfficeKeyDesc:
+	db   "POWER PLANT"
+	next "OFFICE access.@"
 
-TeruSama17Desc:
-	db   "?@"
+AdminKeyDesc:
+	db   "POWER PLANT"
+	next "ADMIN access.@"
 
 MysteryBerryDesc:
 	db   "A self-restore"
