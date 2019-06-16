@@ -5775,14 +5775,22 @@ MoveInfoBox:
 	ld [hl], "♠"
 	hlcoord 4, 17
 	ld [hl], "♠"
+	hlcoord 1, 13
+	ld [hl], $5e	
+	hlcoord 2, 13
+	ld [hl], $5f
+	hlcoord 1, 15
+	ld [hl], $5f
+	hlcoord 2, 15
+	ld [hl], $5f
 	hlcoord 2, 10
 	ld de, .Type
 	call PlaceString
-	hlcoord 1, 13
-	ld de, .BP
+	hlcoord 3, 13
+	ld [hl], "/"
 	call PlaceString
-	hlcoord 1, 15
-	ld de, .PP
+	hlcoord 3, 15
+	ld [hl], "/"
 	call PlaceString
 
 	ld a, [wPlayerDisableCount]
@@ -5851,12 +5859,6 @@ MoveInfoBox:
 	
 .Type:
 	db "TYPE/@"
-	
-.BP:
-	db "BP/@"
-	
-.PP:
-	db "PP/@"
 
 .PrintPP:
 	hlcoord 2, 16
