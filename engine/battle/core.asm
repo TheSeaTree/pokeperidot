@@ -5049,6 +5049,10 @@ BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
+	
+	ld a, [wBattleMode] ; Can't use items in a trainer battle.
+	dec a
+	jp nz, .NoItemsInTrainerBattle
 
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -5098,6 +5102,11 @@ BattleMenu_Pack:
 
 .ItemsCantBeUsed:
 	ld hl, BattleText_ItemsCantBeUsedHere
+	call StdBattleTextBox
+	jp BattleMenu
+	
+.NoItemsInTrainerBattle:
+	ld hl, BattleText_NoItemsInTrainerBattle
 	call StdBattleTextBox
 	jp BattleMenu
 

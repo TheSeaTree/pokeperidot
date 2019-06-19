@@ -320,6 +320,12 @@ BattleText_ItemsCantBeUsedHere:
 	text "Items can't be"
 	line "used here."
 	prompt
+	
+BattleText_NoItemsInTrainerBattle:
+	text "Items can't be"
+	line "used in trainer"
+	cont "battles!"
+	prompt
 
 BattleText_MonIsAlreadyOut:
 	text_ram wBattleMonNick
