@@ -240,14 +240,14 @@ KakunaEvosAttacks:
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FURY_ATTACK
-	db 10, TWINEEDLE
 	db 11, FURY_ATTACK
 	db 14, RAGE
 	db 17, PURSUIT
 	db 20, FOCUS_ENERGY
 	db 23, SLUDGE
-	db 28, AGILITY
-	db 32, PIN_MISSILE
+	db 26, PIN_MISSILE
+	db 29, AGILITY
+	db 32, TWINEEDLE
 	db 35, SLUDGE_BOMB
 	db 38, OUTRAGE
 	db 44, BUG_BUZZ
