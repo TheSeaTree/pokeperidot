@@ -72,8 +72,6 @@ Route12ShelterKangaskhan:
 	closetext
 	end
 
-; Leader is already out looking, the assistant tells you about it. After defeating Marowak, the leader finds you in the cave and invites you back with her & Marowak(don't teleport back?). At the shelter, Marowak tells Kangaskhan it needs to go out on its own and leaves. Leader explains that it can't be easy for a parent to let go of its child, but needs to return to the gym. After getting her badge, Kangaskhan will see you as worthy and ask to go with you, as she no longer has a child to care for. Kangaskhan will have a special moveset.
-
 MarowakWalksToDoor:
 	step DOWN
 	step LEFT
