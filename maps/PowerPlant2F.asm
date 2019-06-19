@@ -13,7 +13,6 @@
 	const POWERPLANT2F_ITEMBALL5
 	const POWERPLANT2F_ITEMBALL6
 	const POWERPLANT2F_ITEMBALL7
-	const POWERPLANT2F_ITEMBALL8
 
 PowerPlant2F_MapScripts:
 	db 0 ; scene scripts
@@ -30,6 +29,8 @@ PowerPlant2F_MapScripts:
 
 .Office:
 	changeblock  22, 10, $07 ; open shutter
+	checkevent EVENT_USED_ADMIN_KEY
+	iftrue .Admin
 	return
 
 .Admin:
@@ -37,60 +38,42 @@ PowerPlant2F_MapScripts:
 	return
 	
 PowerPlant2FGrimer1:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER1
 	setevent POWER_PLANT_2F_GRIMER_1
 	end
 
 PowerPlant2FGrimer2:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER2
 	setevent POWER_PLANT_2F_GRIMER_2
 	end
 
 PowerPlant2FGrimer3:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER3
 	setevent POWER_PLANT_2F_GRIMER_3
 	end
 
 PowerPlant2FGrimer4:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER4
 	setevent POWER_PLANT_2F_GRIMER_4
 	end
 
 PowerPlant2FGrimer5:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER5
 	setevent POWER_PLANT_2F_GRIMER_5
 	end
 
 PowerPlant2FGrimer6:
-	cry GRIMER
-	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+	scall PowerPlant2FGrimerBattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER6
 	setevent POWER_PLANT_2F_GRIMER_6
@@ -99,11 +82,23 @@ PowerPlant2FGrimer6:
 PowerPlant2FGrimer7:
 	cry GRIMER
 	loadwildmon GRIMER, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
 	disappear POWERPLANT2F_GRIMER7
 	setevent POWER_PLANT_2F_GRIMER_7
+	end
+	
+PowerPlant2FGrimerBattle:
+	opentext
+	writetext PowerPlant1FGrimerText
+	cry GRIMER
+	waitbutton
+	closetext
+	setlasttalked -1
+	loadwildmon GRIMER, 3
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
 	end
 	
 PowerPlantOfficeDoor:
@@ -224,6 +219,10 @@ PowerPlant2FUsedKeyText:
 	text "The door is"
 	line "already open."
 	done
+	
+PowerPlant2FGrimerText:
+	text "GRIMER: Blblbl!"
+	done
 
 PowerPlant2F_MapEvents:
 	db 0, 0 ; filler
@@ -249,12 +248,11 @@ PowerPlant2F_MapEvents:
 	object_event 21, 13, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer4, POWER_PLANT_2F_GRIMER_4
 	object_event  6,  6, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer5, POWER_PLANT_2F_GRIMER_5
 	object_event 11,  1, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer6, POWER_PLANT_2F_GRIMER_6
-	object_event  3, 10, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer7, POWER_PLANT_2F_GRIMER_7
+	object_event 18,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer7, POWER_PLANT_2F_GRIMER_7
 	object_event 15, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
 	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  9,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
+	object_event 10,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
 	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 18,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
 	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
 	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantGeneratorKey, EVENT_POWER_PLANT_GEN_KEY

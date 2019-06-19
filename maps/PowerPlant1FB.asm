@@ -3,7 +3,18 @@
 PowerPlant1FB_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .CardKeyShutterCallback
+
+.CardKeyShutterCallback:
+	checkevent EVENT_USED_GEN_KEY
+	iftrue .Change
+	return
+
+.Change:
+	changeblock  4,  8, $07 ; open shutter
+	return
+
 
 PowerPlant1FB_MapEvents:
 	db 0, 0 ; filler

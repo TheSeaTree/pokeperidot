@@ -35,6 +35,7 @@ Landmarks:
 	landmark  60,  36, NationalParkName
 	landmark  84,  44, OlivineCityName
 	landmark  52,  44, MahoganyTownName
+	landmark  52,  44, PowerPlantName
 	landmark  34,  43, BlackthornCityName
 	landmark  36,  96, Route15Name
 	landmark  44,  44, Route16Name

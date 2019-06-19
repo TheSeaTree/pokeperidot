@@ -299,7 +299,8 @@ MahoganyGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
-	; 8 of max 9 walking sprites
+	; 9 of max 9 walking sprites
+	db SPRITE_SCIENTIST
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE

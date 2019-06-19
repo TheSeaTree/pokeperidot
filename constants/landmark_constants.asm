@@ -31,6 +31,7 @@
 	const NATIONAL_PARK     ; 13
 	const OLIVINE_CITY      ; 1b
 	const MAHOGANY_TOWN     ; 24
+	const POWER_PLANT
 	const BLACKTHORN_CITY   ; 29
 	const ROUTE_15          ; 4d
 	const ROUTE_16          ; 4e

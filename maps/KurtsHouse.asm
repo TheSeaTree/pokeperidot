@@ -74,16 +74,6 @@ Kurt1:
 .GotLureBall:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .WaitForApricorns
-	checkevent EVENT_GAVE_KURT_RED_APRICORN
-	iftrue .GiveLevelBall
-	checkevent EVENT_GAVE_KURT_BLU_APRICORN
-	iftrue .GiveLureBall
-	checkevent EVENT_GAVE_KURT_YLW_APRICORN
-	iftrue .GiveMoonBall
-	checkevent EVENT_GAVE_KURT_GRN_APRICORN
-	iftrue .GiveFriendBall
-	checkevent EVENT_GAVE_KURT_WHT_APRICORN
-	iftrue .GiveFastBall
 	checkevent EVENT_GAVE_KURT_BLK_APRICORN
 	iftrue .GiveHeavyBall
 	checkevent EVENT_GAVE_KURT_PNK_APRICORN
@@ -98,16 +88,6 @@ Kurt1:
 	writetext UnknownText_0x18e6c9
 	waitbutton
 .CheckApricorns:
-	checkitem RED_APRICORN
-	iftrue .AskApricorn
-	checkitem BLU_APRICORN
-	iftrue .AskApricorn
-	checkitem YLW_APRICORN
-	iftrue .AskApricorn
-	checkitem GRN_APRICORN
-	iftrue .AskApricorn
-	checkitem WHT_APRICORN
-	iftrue .AskApricorn
 	checkitem BLK_APRICORN
 	iftrue .AskApricorn
 	checkitem PNK_APRICORN
@@ -131,33 +111,8 @@ Kurt1:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	special SelectApricornForKurt
 	ifequal FALSE, .Cancel
-	ifequal BLU_APRICORN, .Blu
-	ifequal YLW_APRICORN, .Ylw
-	ifequal GRN_APRICORN, .Grn
-	ifequal WHT_APRICORN, .Wht
-	ifequal BLK_APRICORN, .Blk
 	ifequal PNK_APRICORN, .Pnk
-; .Red
-	setevent EVENT_GAVE_KURT_RED_APRICORN
-	jump .GaveKurtApricorns
-
-.Blu:
-	setevent EVENT_GAVE_KURT_BLU_APRICORN
-	jump .GaveKurtApricorns
-
-.Ylw:
-	setevent EVENT_GAVE_KURT_YLW_APRICORN
-	jump .GaveKurtApricorns
-
-.Grn:
-	setevent EVENT_GAVE_KURT_GRN_APRICORN
-	jump .GaveKurtApricorns
-
-.Wht:
-	setevent EVENT_GAVE_KURT_WHT_APRICORN
-	jump .GaveKurtApricorns
-
-.Blk:
+;.Blk:
 	setevent EVENT_GAVE_KURT_BLK_APRICORN
 	jump .GaveKurtApricorns
 
@@ -188,56 +143,6 @@ Kurt1:
 .NoRoomForBall:
 	closetext
 	end
-
-.GiveLevelBall:
-	checkflag ENGINE_KURT_MAKING_BALLS
-	iftrue KurtMakingBallsScript
-	writetext UnknownText_0x18e7fb
-	buttonsound
-	verbosegiveitem2 LEVEL_BALL, VAR_KURT_APRICORNS
-	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_RED_APRICORN
-	jump ._ThatTurnedOutGreat
-
-.GiveLureBall:
-	checkflag ENGINE_KURT_MAKING_BALLS
-	iftrue KurtMakingBallsScript
-	writetext UnknownText_0x18e7fb
-	buttonsound
-	verbosegiveitem2 LURE_BALL, VAR_KURT_APRICORNS
-	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_BLU_APRICORN
-	jump ._ThatTurnedOutGreat
-
-.GiveMoonBall:
-	checkflag ENGINE_KURT_MAKING_BALLS
-	iftrue KurtMakingBallsScript
-	writetext UnknownText_0x18e7fb
-	buttonsound
-	verbosegiveitem2 MOON_BALL, VAR_KURT_APRICORNS
-	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_YLW_APRICORN
-	jump ._ThatTurnedOutGreat
-
-.GiveFriendBall:
-	checkflag ENGINE_KURT_MAKING_BALLS
-	iftrue KurtMakingBallsScript
-	writetext UnknownText_0x18e7fb
-	buttonsound
-	verbosegiveitem2 FRIEND_BALL, VAR_KURT_APRICORNS
-	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_GRN_APRICORN
-	jump ._ThatTurnedOutGreat
-
-.GiveFastBall:
-	checkflag ENGINE_KURT_MAKING_BALLS
-	iftrue KurtMakingBallsScript
-	writetext UnknownText_0x18e7fb
-	buttonsound
-	verbosegiveitem2 FAST_BALL, VAR_KURT_APRICORNS
-	iffalse .NoRoomForBall
-	clearevent EVENT_GAVE_KURT_WHT_APRICORN
-	jump ._ThatTurnedOutGreat
 
 .GiveHeavyBall:
 	checkflag ENGINE_KURT_MAKING_BALLS

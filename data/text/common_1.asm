@@ -38,7 +38,7 @@ _NevermindText::
 	done
 
 UnknownText_0x1bc06b::
-	text "Which APRICORN"
+	text "Which VITAMIN"
 	line "should I use?"
 	done
 

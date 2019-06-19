@@ -19,18 +19,115 @@ MahoganyTown_MapScripts:
 	return
 	
 PowerPlantDoor:
-	checkitem GREAT_BALL
+	checkevent POWER_PLANT_1F_MUK
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	special FadeOutMusic
 	waitsfx
-	iffalse .Lights
+	iftrue .Lights
 	warpfacing UP, POWER_PLANT_1F, 5, 21
 	end
 	
 .Lights
 	warpfacing UP, POWER_PLANT_1F_B, 5, 21
 	end
+
+MahoganyTownVendingMachine:
+	opentext
+	writetext MahoganyVendingText
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .FreshWater
+	ifequal 2, .PokeDoll
+	ifequal 3, .NES
+	closetext
+	end
+
+.FreshWater:
+	checkmoney YOUR_MONEY, 350
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem FRESH_WATER
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 350
+	itemtotext FRESH_WATER, MEM_BUFFER_0
+	jump .VendItem
+	
+.PokeDoll:
+	checkmoney YOUR_MONEY, 1000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem POKE_DOLL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 1000
+	itemtotext POKE_DOLL, MEM_BUFFER_0
+	jump .VendItem
+
+.NES:
+	checkmoney YOUR_MONEY, 1000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem POKE_DOLL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 1000
+	itemtotext POKE_DOLL, MEM_BUFFER_0
+	jump .VendItem
+	
+.VendItem:
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext MahoganyClangText
+	buttonsound
+	itemnotify
+	jump .Start
+
+.NotEnoughMoney:
+	writetext MahoganyVendingNoMoneyText
+	waitbutton
+	jump .Start
+
+.NotEnoughSpace:
+	writetext MahoganyVendingNoSpaceText
+	waitbutton
+	jump .Start
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "FRESH WATER ¥350@"
+	db "POKE DOLL  ¥1000@"
+	db "NES       ¥10000@"
+	db "CANCEL@"
+
+MahoganyVendingText:
+	text "A vending machine!"
+	line "Here's the menu."
+	done
+
+MahoganyClangText:
+	text "Clang!"
+
+	para "@"
+	text_from_ram wStringBuffer3
+	text_start
+	line "popped out."
+	done
+	
+MahoganyVendingNoMoneyText:
+	text "Oops, not enough"
+	line "money…"
+	done
+
+MahoganyVendingNoSpaceText:
+	text "There's no more"
+	line "room for stuff…"
+	done
 
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
@@ -43,9 +140,11 @@ MahoganyTown_MapEvents:
 	db 1 ; coord events
 	coord_event  4,  3, -1, PowerPlantDoor
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 26, 21, BGEVENT_UP, MahoganyTownVendingMachine
 
-	db 3 ; object events
-	object_event 30, 19, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 4 ; object events
+	object_event 30, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 28, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 27, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 31, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

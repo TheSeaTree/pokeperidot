@@ -829,16 +829,16 @@ LeftoversDesc:
 	next "battle. (HOLD)@"
 
 GenKeyDesc:
-	db   "POWER PLANT"
-	next "GENERATOR access.@"
+	db   "A red key labeled"
+	next "'GENERATOR'.@"
 
 OfficeKeyDesc:
-	db   "POWER PLANT"
-	next "OFFICE access.@"
+	db   "A yellow key"
+	next "labeled 'OFFICE'.@"
 
 AdminKeyDesc:
-	db   "POWER PLANT"
-	next "ADMIN access.@"
+	db   "A blue key labeled"
+	next "'ADMIN'.@"
 
 MysteryBerryDesc:
 	db   "A self-restore"

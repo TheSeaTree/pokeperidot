@@ -866,4 +866,31 @@ JohtoGrassWildMons:
 	db 16, SMEARGLE
 	db 16, SMEARGLE
 	
+	map_id MAHOGANY_TOWN
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 22, ELEKID
+	db 22, ELEKID
+	db 21, MAGNEMITE
+	db 20, MAGNEMITE
+	db 22, PIKACHU
+	db 23, KOFFING
+	db 23, KOFFING
+	; day
+	db 22, ELEKID
+	db 22, ELEKID
+	db 21, MAGNEMITE
+	db 20, MAGNEMITE
+	db 22, PIKACHU
+	db 23, KOFFING
+	db 23, KOFFING
+	; nite
+	db 22, ELEKID
+	db 22, ELEKID
+	db 21, MAGNEMITE
+	db 20, MAGNEMITE
+	db 22, PIKACHU
+	db 23, KOFFING
+	db 23, KOFFING
+	
 	db -1 ; end
