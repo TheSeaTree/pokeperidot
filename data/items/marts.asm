@@ -155,11 +155,7 @@ MartEcruteak:
 	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db BURN_HEAL
-	db ICE_HEAL
+	db FULL_HEAL
 	db REVIVE
 	db -1 ; end
 
