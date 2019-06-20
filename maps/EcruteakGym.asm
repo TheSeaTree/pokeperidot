@@ -24,7 +24,7 @@ EcruteakGym_MapScripts:
 	end
 
 .PrepareGym:
-	checkevent EVENT_BEAT_PRYCE
+	checkflag ENGINE_STORMBADGE
 	iftrue .end
 	clearevent EVENT_ECRUTEAK_GYM_MON_1
 	clearevent EVENT_ECRUTEAK_GYM_MON_2
@@ -79,16 +79,49 @@ EcruteakGymIntroLeft:
 	
 EcruteakGymLeader:
 	faceplayer
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .FightDone
 	checkscene
 	ifequal SCENE_ECRUTEAKGYM_DONE, .Battle
 	jumptext WillNotBattle
 	end
 	
 .Battle
+	opentext
+	writetext PoseyChallengeText
+	waitbutton
+	winlosstext PoseyWinText, 0
+	loadtrainer ERIKA, ERIKA1
+	startbattle
+	reloadmapafterbattle
 	setmapscene ECRUTEAK_CITY, SCENE_ECRUTEAKCITY_DONE
+	setevent EVENT_BEAT_CAMPER_JEFF
+	setevent EVENT_BEAT_BUG_CATCHER_GREG
+	setevent EVENT_BEAT_PICNICKER_TERRY
+	setevent EVENT_BEAT_PICNICKER_BRITTANY
+	setevent EVENT_BEAT_POKEFANM_LESTER
+	opentext
+	writetext PlayerReceivedRootBadgeText
+	playsound SFX_GET_BADGE
+	waitsfx
 	setflag ENGINE_STORMBADGE
 	setevent EVENT_BEAT_PRYCE
-	jumptext ThisIsOurBattle
+.FightDone:
+	opentext
+	special HealParty
+	checkevent EVENT_GOT_TM_SOLARBEAM
+	iftrue .GotSolarbeam
+	writetext PoseyRootBadgeText
+	buttonsound
+	verbosegiveitem TM_SOLARBEAM
+	iffalse .NoRoomForSolarbeam
+	setevent EVENT_GOT_TM_SOLARBEAM
+
+.GotSolarbeam:
+	writetext PoseySolarbeamText
+	waitbutton
+.NoRoomForSolarbeam:
+	closetext
 	end
 	
 EcruteakCantLeave:
@@ -112,7 +145,7 @@ EcruteakCantLeave:
 EcruteakGymBossMon1:
 	cry TANGELA
 	waitsfx
-	loadwildmon TANGELA, 5
+	loadwildmon TANGELA, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -123,9 +156,9 @@ EcruteakGymBossMon1:
 	end
 	
 EcruteakGymBossMon2:
-	cry GLOOM
+	cry VILEPLUME
 	waitsfx
-	loadwildmon GLOOM, 5
+	loadwildmon VILEPLUME, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -136,9 +169,9 @@ EcruteakGymBossMon2:
 	end
 	
 EcruteakGymBossMon3:
-	cry SKIPLOOM
+	cry JUMPLUFF
 	waitsfx
-	loadwildmon SKIPLOOM, 5
+	loadwildmon JUMPLUFF, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -149,9 +182,9 @@ EcruteakGymBossMon3:
 	end
 	
 EcruteakGymBossMon4:
-	cry WEEPINBELL
+	cry VICTREEBEL
 	waitsfx
-	loadwildmon WEEPINBELL, 5
+	loadwildmon VICTREEBEL, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -240,53 +273,61 @@ EcruteakLeaveGym:
 	step_end
 	
 EcruteakgymIntroText:
-	text "Ah, you have come"
-	line "to challenge my"
-	cont "GYM?"
 	
-	para "Very well."
+	text "Ah, there you are!"
 	
-	para "…But there is"
-	line "one issue."
+	para "Thank you once"
+	line "again for MAROWAK!"
 	
-	para "My GYM is home to"
-	line "wild #MON look-"
-	cont "ing for shelter."
+	para "Now, before I will"
+	line "accept your"
+	cont "challenge, I must"
+	cont "let you know some-"
+	cont "thing."
 	
-	para "I would hate for"
-	line "there to be any"
-	cont "distractions"
+	para "My GYM is an"
+	line "extension to my"
+	cont "shelter on ROUTE"
+	cont "12."
+	
+	para "There are some"
+	line "wild #MON here"
+	cont "right now."
+	
+	para "They should go"
+	line "back outside if"
+	cont "they are defeated"
+	cont "in battle."
+	
+	para "I'm sorry if this"
+	line "is inconvenient"
+	cont "for you."
+	
+	para "I would just hate"
+	line "for there to be"
+	cont "any distractions"
 	cont "during our battle."
 	
-	para "There are 4 that I"
-	line "know are here"
-	cont "right now. Battle"
-	cont "them and they"
-	cont "should go back"
-	cont "outside."
+	para "There are 4"
+	line "#MON that I"
+	cont "know are here at"
+	cont "the moment."
 	
 	para "When they are all"
 	line "gone, you may"
 	cont "challenge me."
 	
-	para "… … …"
+	para "Good luck finding"
+	line "them all!"
 	
-	para "Oh! I almost"
-	line "forgot!"
-	
-	para "None of these"
-	line "#MON want"
-	cont "trainers. They"
-	cont "will block any"
-	cont "BALL you throw at"
-	cont "them."
-	
-	para "I hope to see you"
-	line "again soon."
+	para "See you soon!"
 	done
 	
 YouDidIt:
-	text "It has been done."
+	text "POSEY: You got rid"
+	line "of all the #MON"
+	cont "in here! Now we"
+	cont "may battle!"
 	done
 	
 WillNotBattle:	
@@ -294,9 +335,54 @@ WillNotBattle:
 	line "you yet."
 	done
 	
-ThisIsOurBattle:
-	text "Our battle will go"
-	line "here."
+PoseyChallengeText:
+	text "I may not look"
+	line "like it, but I"
+	cont "love a good"
+	cont "battle!"
+	
+	para "I hope you will"
+	line "show me a great"
+	cont "one!"
+	done
+	
+PoseyWinText:
+	text "How wonderful!"
+	
+	para "That was one of"
+	line "the best battles I"
+	cont "have had in ages!"
+	
+	para "You have earned"
+	line "my ROOTBADGE!"
+	done
+	
+PoseyRootBadgeText:
+	text "That's not all,"
+	line "please take this"
+	cont "TM as well."
+	done
+
+PoseySolarbeamText:
+	text "That TM contains"
+	line "SOLARBEAM."
+	
+	para "It takes a while"
+	line "to build strength,"
+	cont "but you don't want"
+	cont "to be on the"
+	cont "receiving end of"
+	cont "it when it's ready"
+	cont "to go!"
+	
+	para "If it's sunny, it"
+	line "won't even need to"
+	cont "be charged!"
+	done
+
+PlayerReceivedRootBadgeText:
+	text "<PLAYER> received"
+	line "ROOTBADGE."
 	done
 	
 EcruteakGymHaveBadge:
@@ -379,7 +465,7 @@ EcruteakGym_MapEvents:
 
 	db 6 ; coord events
 	coord_event 13, 15, SCENE_ECRUTEAKGYM_MON_1, EcruteakGymBossMon1
-	coord_event 18, 10, SCENE_ECRUTEAKGYM_MON_2, EcruteakGymBossMon2
+	coord_event 15, 10, SCENE_ECRUTEAKGYM_MON_2, EcruteakGymBossMon2
 	coord_event  9,  9, SCENE_ECRUTEAKGYM_MON_3, EcruteakGymBossMon3
 	coord_event  6, 12, SCENE_ECRUTEAKGYM_MON_4, EcruteakGymBossMon4
 	coord_event 10, 18, SCENE_ECRUTEAKGYM_INTRO, EcruteakGymIntroLeft
