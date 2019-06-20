@@ -321,9 +321,9 @@ BattleText_ItemsCantBeUsedHere:
 	line "used here."
 	prompt
 	
-BattleText_NoItemsInTrainerBattle:
+BattleText_NoItemsInLeaderBattle:
 	text "Items can't be"
-	line "used in trainer"
+	line "used in LEADER"
 	cont "battles!"
 	prompt
 
@@ -916,13 +916,13 @@ ItFailedText:
 	prompt
 
 DidntAffect1Text:
-	text "It didn't affect"
-	line "<TARGET>!"
+	text "<TARGET> was"
+	line "unaffected!"
 	prompt
 
 DidntAffect2Text:
-	text "It didn't affect"
-	line "<TARGET>!"
+	text "<TARGET> was"
+	line "unaffected!"
 	prompt
 
 HPIsFullText:

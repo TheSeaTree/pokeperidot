@@ -5050,9 +5050,8 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 	
-	ld a, [wBattleMode] ; Can't use items in a trainer battle.
-	dec a
-	jp nz, .NoItemsInTrainerBattle
+	call IsGymLeader
+	jp c, .NoItemsInLeaderBattle
 
 	ld a, [wInBattleTowerBattle]
 	and a
@@ -5105,8 +5104,8 @@ BattleMenu_Pack:
 	call StdBattleTextBox
 	jp BattleMenu
 	
-.NoItemsInTrainerBattle:
-	ld hl, BattleText_NoItemsInTrainerBattle
+.NoItemsInLeaderBattle:
+	ld hl, BattleText_NoItemsInLeaderBattle
 	call StdBattleTextBox
 	jp BattleMenu
 
