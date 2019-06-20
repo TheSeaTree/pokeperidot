@@ -9,7 +9,7 @@ GymLeaders:
 	db WHITNEY
 	db BUGSY
 	db MORTY
-	db PRYCE
+	db ERIKA
 	db JASMINE
 	db CHUCK
 	db CLAIR
@@ -24,7 +24,7 @@ KantoGymLeaders:
 	db BROCK
 	db MISTY
 	db LT_SURGE
-	db ERIKA
+	db PRYCE
 	db JANINE
 	db SABRINA
 	db BLAINE
