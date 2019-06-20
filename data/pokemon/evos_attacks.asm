@@ -3011,6 +3011,7 @@ SkiploomEvosAttacks:
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
+	db 0 ; no more evolutions
 	db 1, SPLASH
 	db 1, ABSORB
 	db 4, SYNTHESIS
