@@ -295,7 +295,7 @@ Script_TimeCapsuleClosed:
 LinkReceptionistScript_TimeCapsule:
 	checkevent EVENT_MET_BILL
 	iftrue Script_TimeCapsuleClosed
-	checkflag ENGINE_TIME_CAPSULE
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue Script_TimeCapsuleClosed
 	special SetBitsForTimeCapsuleRequest
 	faceplayer

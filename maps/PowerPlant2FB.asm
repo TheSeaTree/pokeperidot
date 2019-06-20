@@ -25,6 +25,7 @@ PowerPlant2FB_MapScripts:
 
 XItemMan:
 	faceplayer
+	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .WaitForApricorns
 	checkevent EVENT_GAVE_KURT_PROTEIN
@@ -101,7 +102,7 @@ XItemMan:
 
 .GaveKurtApricorns:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	setflag ENGINE_KURT_MAKING_BALLS
+	setflag ENGINE_VITAMIN_TIMER
 .WaitForApricorns:
 	writetext PowerPlantComeBackTomorrow
 	waitbutton
@@ -125,7 +126,7 @@ XItemMan:
 	end
 
 .GiveXAttack:
-	checkflag ENGINE_KURT_MAKING_BALLS
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue PowerPlantWorkingOnItScript
 	writetext XItemGiftText
 	buttonsound
@@ -135,7 +136,7 @@ XItemMan:
 	jump ._ThatTurnedOutGreat
 
 .GiveXDefend:
-	checkflag ENGINE_KURT_MAKING_BALLS
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue PowerPlantWorkingOnItScript
 	writetext XItemGiftText
 	buttonsound
@@ -145,7 +146,7 @@ XItemMan:
 	jump ._ThatTurnedOutGreat
 
 .GiveXSpAtk:
-	checkflag ENGINE_KURT_MAKING_BALLS
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue PowerPlantWorkingOnItScript
 	writetext XItemGiftText
 	buttonsound
@@ -155,7 +156,7 @@ XItemMan:
 	jump ._ThatTurnedOutGreat
 
 .GiveXSpDef:
-	checkflag ENGINE_KURT_MAKING_BALLS
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue PowerPlantWorkingOnItScript
 	writetext XItemGiftText
 	buttonsound
@@ -165,7 +166,7 @@ XItemMan:
 	jump ._ThatTurnedOutGreat
 
 .GiveXSpeed:
-	checkflag ENGINE_KURT_MAKING_BALLS
+	checkflag ENGINE_VITAMIN_TIMER
 	iftrue PowerPlantWorkingOnItScript
 	writetext XItemGiftText
 	buttonsound
