@@ -240,7 +240,7 @@ PokemonCries::
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
 	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
-	mon_cry CRY_AIPOM,       $02c,  $108 ; TYROGUE
+	mon_cry CRY_GOLEM,       $000,  $1f0 ; TANGELA
 	mon_cry CRY_HOOTHOOT,    $130,  $1a0 ; GREMINI
 	mon_cry CRY_MARILL,      $068,  $100 ; SMOOCHUM
 	mon_cry CRY_SUNFLORA,   -$2d8,  $0b4 ; ELEKID
