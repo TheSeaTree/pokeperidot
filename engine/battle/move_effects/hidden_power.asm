@@ -1,39 +1,8 @@
 BattleCommand_HiddenPower:
-; Override Hidden Power's type and power based on the user's DVs.
+; hiddenpower
 
-	ld hl, wBattleMonDVs
-	ld a, [hBattleTurn]
+	ld a, [wAttackMissed]
 	and a
-	jr z, .got_dvs
-	ld hl, wEnemyMonDVs
-.got_dvs
-
-; Type:
-
-	; Def & 3
-	ld a, [hl]
-	and %0011
-	ld b, a
-
-	; + (Atk & 3) << 2
-	ld a, [hl]
-	and %0011 << 4
-	swap a
-	add a
-	add a
-	or b
-
-; Skip Normal
-	inc a
-
-; Overwrite the current move type.
-	push af
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVarAddr
-	pop af
-	ld [hl], a
-
-; Get the rest of the damage formula variables
-; based on the new type.
-	farcall BattleCommand_DamageStats ; damagestats]
+	ret nz
+	farcall HiddenPowerDamage
 	ret
