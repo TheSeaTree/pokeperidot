@@ -425,14 +425,10 @@ DoPlayerMovement::
 	db FACE_UP | FACE_LEFT    ; COLL_HOP_UP_LEFT
 
 .CheckWarp:
-; Bug: Since no case is made for STANDING here, it will check
-; [.edgewarps + $ff]. This resolves to $3e at $8035a.
-; This causes wd041 to be nonzero when standing on tile $3e,
-; making bumps silent.
 
 	ld a, [wWalkingDirection]
-	; cp STANDING
-	; jr z, .not_warp
+	cp STANDING
+	jr z, .not_warp
 	ld e, a
 	ld d, 0
 	ld hl, .EdgeWarps
