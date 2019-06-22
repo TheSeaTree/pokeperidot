@@ -1782,7 +1782,7 @@ ChanseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
-	db EVOLVE_LEVEL, 31, TANGROWTH
+	db EVOLVE_LEVEL, 33, TANGROWTH
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 4, SLEEP_POWDER
@@ -1794,7 +1794,7 @@ TangelaEvosAttacks:
 	db 23, MEGA_DRAIN
 	db 27, PURSUIT
 	db 30, STUN_SPORE
-	db 31, ANCIENTPOWER
+	db 33, ANCIENTPOWER
 	db 43, BODY_SLAM
 	db 0 ; no more level-up moves
 
