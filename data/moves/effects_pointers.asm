@@ -37,7 +37,7 @@ MoveEffectsPointers:
 	dw PayDay
 	dw LightScreen
 	dw TriAttack
-	dw NormalHit
+	dw MultiHit ; Bonemerang
 	dw OHKOHit
 	dw RazorWind
 	dw SuperFang

@@ -166,7 +166,7 @@ Moves: ; 41afb
 	move CRABHAMMER,   EFFECT_FLINCH_HIT,        120, WATER,     85, 10,  30
 	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,   100,  5,   0
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,    80, 15,   0
-	move BONEMERANG,   EFFECT_DOUBLE_HIT,         50, GROUND,    90, 10,   0
+	move BONEMERANG,   EFFECT_BONEMERANG,         50, GROUND,    90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC,  100, 10,   0
 	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         90, ROCK,      95, 10,  10
 	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC,  100, 20,   0
