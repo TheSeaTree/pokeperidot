@@ -240,6 +240,7 @@ VioletGroupSprites:
 	db SPRITE_SAILOR
 	db SPRITE_BUENA
 	; 9 of max 9 walking sprites
+	db SPRITE_POKEFAN_M
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
@@ -269,6 +270,23 @@ GoldenrodGroupSprites:
 ; OlivineCity and Route40 are connected
 OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
+	db SPRITE_SILVER ; variable sprite: becomes SPRITE_SILVER and SPRITE_SWIMMER_GUY
+	db SPRITE_POKEFAN_M
+	db SPRITE_LASS
+	db SPRITE_BUENA
+	db SPRITE_SWIMMER_GIRL
+	db SPRITE_SAILOR
+	db SPRITE_POKEFAN_F
+	db SPRITE_SUPER_NERD
+	db SPRITE_PHARMACIST
+	; 9 of max 9 walking sprites
+	db SPRITE_BOULDER
+	db SPRITE_TAUROS
+	db SPRITE_FRUIT_TREE
+	db SPRITE_ROCK
+	db SPRITE_STANDING_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
+	db SPRITE_SUICUNE
+	db 0 ; end
 CianwoodGroupSprites:
 ; Route40, Route41, CianwoodCity, BattleTowerOutside
 	db SPRITE_OLIVINE_RIVAL ; variable sprite: becomes SPRITE_SILVER and SPRITE_SWIMMER_GUY
