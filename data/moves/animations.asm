@@ -4044,19 +4044,13 @@ BattleAnim_PainSplit:
 	
 BattleAnim_DragonDance:
 	anim_1gfx ANIM_GFX_FIRE
-	anim_bgeffect ANIM_BG_06, $0, $2, $0
-	anim_call BattleAnim_TargetObj_2Row
-	anim_sound 0, 0, SFX_TAIL_WHIP
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-	anim_bgeffect ANIM_BG_26, $0, $1, $0
 .loop
 	anim_sound 0, 0, SFX_EMBER
-	anim_obj ANIM_OBJ_SACRED_FIRE, 48, 104, $0
-	anim_wait 16
-	anim_loop 4, .loop
-	anim_wait 32
-	anim_incbgeffect ANIM_BG_26
-	anim_call BattleAnim_ShowMon_0
+	anim_obj ANIM_OBJ_DRAGON_DANCE, 48, 104, $0
+	anim_wait 6
+	anim_loop 8, .loop
+	anim_wait 96
 	anim_ret
 
 BattleAnim_FlareBlitz:
