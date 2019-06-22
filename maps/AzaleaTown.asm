@@ -186,20 +186,6 @@ AzaleaTownHoundourScript:
 	waitbutton
 	closetext
 	end
-	
-AzaleaTownTutorScript:
-	opentext
-	writebyte GYARADOS
-	special FindPartyMonThatSpecies
-	iffalse .No
-	writebyte DREAD_STORM
-	special MoveTutor
-	closetext
-	end
-
-.No
-	closetext
-	end
 
 AzaleaTownTeacherScript:
 	jumptextfaceplayer AzaleaTownTeacherText
