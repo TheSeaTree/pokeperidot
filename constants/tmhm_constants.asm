@@ -102,7 +102,7 @@ NUM_HMS = const_value - HM01
 	add_mt NIGHTMARE
 	add_mt DREAM_EATER
 	add_mt BUBBLEBEAM
-	add_mt DREAD_STORM
+	add_mt DIG
 	add_mt SKETCH
 
 NUM_TM_HM_TUTOR = __enum__ + -1

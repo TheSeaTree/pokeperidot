@@ -289,7 +289,7 @@ add_mt: MACRO
 	enum \1_TMNUM
 ENDM
 
-	add_mt DREAD_STORM
+	add_mt DIG
 	add_mt SKETCH
 	add_mt SWEET_KISS
 	add_mt LOVELY_KISS

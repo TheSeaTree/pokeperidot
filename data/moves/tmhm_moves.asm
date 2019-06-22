@@ -77,6 +77,6 @@ TMHMMoves:
 	db NIGHTMARE
 	db DREAM_EATER
 	db BUBBLEBEAM
-	db DREAD_STORM
+	db DIG
 	db SKETCH
 	db 0 ; end
