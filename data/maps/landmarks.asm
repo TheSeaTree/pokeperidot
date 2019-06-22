@@ -45,10 +45,10 @@ Landmarks:
 	landmark 114,  36, Route20Name
 	landmark  68, 116, Route30Name ;Oasis
 	landmark 116,  60, LostLandName
-	landmark 140, 36, VictoryRoadName
-	landmark 140, 28, IndigoPlateauName
-	landmark   0,  0, UndergroundName
-	landmark  20, 20, BattleTowerName
+	landmark 140,  36, VictoryRoadName
+	landmark 140,  28, IndigoPlateauName
+	landmark   0,   0, UndergroundName
+	landmark  20,  20, BattleTowerName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
 CherrygroveCityName: db "PAVONA¯VILLAGE@"
@@ -57,9 +57,9 @@ AzaleaTownName:      db "PECTINIA¯CITY@"
 GoldenrodCityName:   db "FAVIA¯TOWN@"
 EcruteakCityName:    db "STAGHORN¯TOWN@"
 PaintersForestName:  db "PAINTER'S¯FOREST@"
-OlivineCityName:     db "CYNARIA¯CITY@"
+OlivineCityName:     db "CYNARIA¯COAST@"
 CianwoodCityName:    db "HELIO¯TOWN@"
-MahoganyTownName:    db "MAHOGANY¯TOWN@"
+MahoganyTownName:    db "CYNARIA¯CITY@"
 BlackthornCityName:  db "BLACKTHORN¯CITY@"
 LakeOfRageName:      db "LAKE OF¯RAGE@"
 SilverCaveName:      db "SILVER CAVE@"
