@@ -103,6 +103,8 @@ KRIS EQU __enum__
 	trainerclass SCIENTIST ; 14
 	const ADRIAN
 	const MELVIN
+	const ANDRE
+	const SETH
 
 	trainerclass ERIKA ; 15
 	const ERIKA1

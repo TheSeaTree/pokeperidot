@@ -36,13 +36,15 @@ ENDM
 
 	newgroup                                                      ;  2
 
-	map_const MAHOGANY_GYM,                                 5,  9 ;  2
+	map_const MAHOGANY_GYM,                                13, 16 ;  2
 	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  3
-	map_const MAHOGANY_TOWN,                               26, 19 ;  7
+	map_const MAHOGANY_TOWN,                               23, 19 ;  7
 	map_const POWER_PLANT_1F,							   16, 11
 	map_const POWER_PLANT_2F,							   16,  8
 	map_const POWER_PLANT_1F_B,							   16, 11
 	map_const POWER_PLANT_2F_B,							   16,  8
+	map_const MAHOGANY_GATE,							    5,  4
+	map_const MAHOGANY_MAGNET_TRAIN_STATION,               10,  9 ;  7
 
 	newgroup                                                      ;  3
 

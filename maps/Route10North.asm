@@ -6,75 +6,54 @@ Route10North_MapScripts:
 
 	db 0 ; callbacks
 	
-Route10MoveTutor:
-	checkevent EVENT_GAVE_DIG_TUTOR_WATER
-	iftrue .GaveWater
+Route10DigGuy:
+	checkevent EVENT_GOT_TM_DIG
+	iftrue .GotDig
 	opentext
-	writetext Route10TutorText
+	writetext Route10DigGuyText
 	waitbutton
 	closetext
 	wait 5
 	showemote EMOTE_SHOCK, ROUTE_10_TUTOR, 15
 	faceplayer
 	opentext
-	writetext Route10TutorNoticeText
+	writetext Route10DigGuyNoticeText
 	waitbutton
 	checkitem FRESH_WATER
 	iffalse .NoWater
-	writetext Route10TutorGiveWaterText
+	writetext Route10DigGuyGiveWaterText
 	yesorno
 	iffalse .RefuseWater
 
 	playsound SFX_FULL_HEAL
 	writetext PlayerGiveWaterText
 	takeitem FRESH_WATER
-	setevent EVENT_GAVE_DIG_TUTOR_WATER
 	waitsfx
 	waitbutton
 	closetext
 	opentext
-	writetext Route10TutorGaveWaterText
+	writetext Route10DigGuyGaveWaterText
 	waitbutton
-	writetext Route10TutorExplainDig
+	verbosegiveitem TM_DIG
+	setevent EVENT_GOT_TM_DIG
+.ExplainDig
+	writetext Route10DigGuyExplainDig
 	waitbutton
-	closetext
-.GaveWater
-	faceplayer
-	opentext
-	writetext Route10TutorTeachDig
-	yesorno
-	iftrue .Dig
-	jump .Refused
-	
-.Dig
-	writetext Route10TutorWhichOne
-	buttonsound
-	writebyte DIG
-	special MoveTutor
-	ifequal $0, .TeachMove
-	jump .Refused
-	
-.TeachMove
-	writetext Route10TutorAfterTeaching
-	waitbutton
-	closetext
-	end
-	
-.Refused
-	writetext Route10TutorRefused
-	waitbutton
-	closetext
-	turnobject ROUTE_10_TUTOR, LEFT
-	end
-	
+	jump .NoWater
+
 .RefuseWater
-	writetext Route10TutorDenyWaterText
+	writetext Route10DigGuyDenyWaterText
 	waitbutton
 	
 .NoWater
 	closetext
 	turnobject ROUTE_10_TUTOR, LEFT
 	end
+
+.GotDig
+	faceplayer
+	opentext
+	jump .ExplainDig
 
 PowerPlantSign:
 	jumptext PowerPlantSignText
@@ -83,14 +62,14 @@ PowerPlantSignText:
 	text "PALEROCK CAVERN"
 	done
 	
-Route10TutorText:
+Route10DigGuyText:
 	text "Huff…"
 	line "Puff…"
 	
 	para "…"
 	done
 	
-Route10TutorNoticeText:
+Route10DigGuyNoticeText:
 	text "Oh… Hello…"
 	
 	para "I'm sorry, please"
@@ -110,14 +89,14 @@ Route10TutorNoticeText:
 	cont "a water right now…"
 	done
 	
-Route10TutorGiveWaterText:
+Route10DigGuyGiveWaterText:
 	text "Would you mind if"
 	line "I took that FRESH"
 	cont "WATER? I could"
 	cont "really use it…"
 	done
 	
-Route10TutorDenyWaterText:
+Route10DigGuyDenyWaterText:
 	text "Aw, come on kid."
 	
 	para "Can't you see I"
@@ -130,7 +109,7 @@ PlayerGiveWaterText:
 	cont "of FRESH WATER."
 	done
 	
-Route10TutorGaveWaterText:
+Route10DigGuyGaveWaterText:
 	text "Oh, thank you so"
 	line "much!"
 	
@@ -140,21 +119,20 @@ Route10TutorGaveWaterText:
 	para "That really hit"
 	line "the spot! I feel"
 	cont "much better now!"
-	done
 	
-Route10TutorExplainDig:
-	text "After taking that"
-	line "break, I feel"
-	cont "ready to teach my"
-	cont "special move once"
-	cont "again."
+	para "Here, let me give"
+	line "something back for"
+	cont "your generosity."
 	
 	para "None of my #MON"
 	line "have been able to"
-	cont "learn it, but"
-	cont "maybe yours could."
+	cont "use this anyway,"
+	cont "maybe yours could."	
+	done
 	
-	para "It's called DIG."
+Route10DigGuyExplainDig:
+	text "That move is "
+	line "called DIG."
 	
 	para "Your #MON will"
 	line "burrow underground"
@@ -181,18 +159,18 @@ Route10TutorExplainDig:
 	cont "trouble."
 	done
 	
-Route10TutorTeachDig:
+Route10DigGuyTeachDig:
 	text "So do you want me"
 	line "to teach DIG to"
 	cont "your #MON?"
 	done
 	
-Route10TutorWhichOne:
+Route10DigGuyWhichOne:
 	text "Which #MON"
 	line "am I tutoring?"
 	done
 	
-Route10TutorAfterTeaching:
+Route10DigGuyAfterTeaching:
 	text "I hope that move"
 	line "will help you out"
 	cont "there."
@@ -202,7 +180,7 @@ Route10TutorAfterTeaching:
 	cont "ton."
 	done
 	
-Route10TutorRefused:
+Route10DigGuyRefused:
 	text "I'm not tutoring"
 	line "anything? Alright."
 	
@@ -224,4 +202,4 @@ Route10North_MapEvents:
 	bg_event 24, 14, BGEVENT_READ, PowerPlantSign
 
 	db 1 ; object events
-	object_event 14, 21, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route10MoveTutor, -1
+	object_event 14, 21, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route10DigGuy, -1

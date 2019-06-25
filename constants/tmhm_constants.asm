@@ -46,7 +46,7 @@ ENDM
 	add_tm HYPER_BEAM
 	add_tm THUNDER_WAVE
 	add_tm LEECH_LIFE
-	add_tm ICY_WIND
+	add_tm DIG
 	add_tm STRENGTH
 	add_tm RETURN
 	add_tm REFLECT
@@ -102,7 +102,7 @@ NUM_HMS = const_value - HM01
 	add_mt NIGHTMARE
 	add_mt DREAM_EATER
 	add_mt BUBBLEBEAM
-	add_mt DIG
+	add_mt ICY_WIND
 	add_mt SKETCH
 
 NUM_TM_HM_TUTOR = __enum__ + -1
