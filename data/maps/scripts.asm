@@ -28,6 +28,7 @@ INCLUDE "maps/PowerPlant1F.asm"
 INCLUDE "maps/PowerPlant2F.asm"
 INCLUDE "maps/PowerPlant1FB.asm"
 INCLUDE "maps/PowerPlant2FB.asm"
+INCLUDE "maps/MahoganyMagnetTrainStation.asm"
 
 SECTION "Map Scripts 3", ROMX
 
@@ -79,6 +80,7 @@ INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
 INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/NewBarkForestGate.asm"
 INCLUDE "maps/Route8Route10Gate.asm"
+INCLUDE "maps/MahoganyGate.asm"
 
 
 SECTION "Map Scripts 8", ROMX

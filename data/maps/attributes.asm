@@ -334,3 +334,5 @@ ENDM
 	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
 	map_attributes PowerPlant1FB, POWER_PLANT_1F_B, $00, 0
 	map_attributes PowerPlant2FB, POWER_PLANT_2F_B, $00, 0
+	map_attributes MahoganyGate, MAHOGANY_GATE, $00, 0
+	map_attributes MahoganyMagnetTrainStation, MAHOGANY_MAGNET_TRAIN_STATION, $00, 0

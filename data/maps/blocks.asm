@@ -84,6 +84,7 @@ Route1CherrygroveGate_Blocks:
 Route1NewBarkGate_Blocks:
 Route1GoldenrodGate_Blocks:
 Route11GoldenrodGate_Blocks:
+MahoganyGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route4_Blocks:
@@ -224,6 +225,9 @@ KurtsHouse_Blocks:
 
 GoldenrodMagnetTrainStation_Blocks:
 	INCBIN "maps/GoldenrodMagnetTrainStation.ablk"
+
+MahoganyMagnetTrainStation_Blocks:
+	INCBIN "maps/MahoganyMagnetTrainStation.ablk"
 
 RadioTower1F_Blocks:
 	INCBIN "maps/RadioTower1F.ablk"

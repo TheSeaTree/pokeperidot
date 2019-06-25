@@ -4,7 +4,7 @@
 	const SAFFRONMAGNETTRAINSTATION_TEACHER
 	const SAFFRONMAGNETTRAINSTATION_LASS
 
-SaffronMagnetTrainStation_MapScripts:
+MahoganyMagnetTrainStation_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
 
@@ -213,12 +213,12 @@ SaffronMagnetTrainStationLassText:
 	line "TRAIN have PASSES."
 	done
 
-SaffronMagnetTrainStation_MapEvents:
+MahoganyMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  8, 17, SAFFRON_CITY, 6
-	warp_event  9, 17, SAFFRON_CITY, 6
+	warp_event  8, 17, MAHOGANY_TOWN, 5
+	warp_event  9, 17, MAHOGANY_TOWN, 5
 	warp_event  6,  5, GOLDENROD_MAGNET_TRAIN_STATION, 4
 	warp_event 11,  5, GOLDENROD_MAGNET_TRAIN_STATION, 3
 

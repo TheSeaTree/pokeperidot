@@ -128,23 +128,34 @@ MahoganyVendingNoSpaceText:
 	text "There's no more"
 	line "room for stuff…"
 	done
+	
+;EVENT_EXPLAINED_POWER_PLANT
+;	"Sorry, kid. The SUBWAY is out of commission for the time being. The POWER PLANT isn't producing enough electricity to run the thing. It's ruining this city's economy! We rely on our tourism to stay afloat, and not many people are coming up around here without our SUBWAY system."
+;	"I sent a crew up to check it out, but they were overrun by a group of wild GRIMER that made a nest there. They must be mucking up all the turbines."
+;	"If you think you can clear out those GRIMER, be my guest, but you're going to need a way to get across the lake behind the GYM to reach the POWER PLANT. You're not much of a swimmer, are you?"
+;	"I know! I have a friend down by the coast who owes me a favor. Go find him and he'll give you something to cross the water."
+;	"Now that you have the HM for SURF, you can access the POWER PLANT."
 
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
-	warp_event 25, 33, OLIVINE_CITY, 3
-	warp_event 26, 33, OLIVINE_CITY, 3
-	warp_event  4,  3, MAHOGANY_TOWN, 3
+	db 6 ; warp events
+	warp_event 23, 33, MAHOGANY_GATE, 1
+	warp_event 24, 33, MAHOGANY_GATE, 2
+	warp_event  2,  3, MAHOGANY_TOWN, 3
+	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
+	warp_event 10, 19, MAHOGANY_MAGNET_TRAIN_STATION, 1
+	warp_event 24, 13, MAHOGANY_GYM, 1
 
 	db 1 ; coord events
-	coord_event  4,  3, -1, PowerPlantDoor
+	coord_event  2,  3, -1, PowerPlantDoor
 
 	db 1 ; bg events
-	bg_event 26, 21, BGEVENT_UP, MahoganyTownVendingMachine
+	bg_event 24, 21, BGEVENT_UP, MahoganyTownVendingMachine
 
-	db 4 ; object events
-	object_event 30, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 28, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 27, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 31, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 5 ; object events
+	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 26, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 25, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 29, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 10, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

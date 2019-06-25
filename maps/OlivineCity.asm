@@ -284,7 +284,7 @@ OlivineCity_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 14, ROUTE_14_OLIVINE_GATE, 3
 	warp_event  4, 15, ROUTE_14_OLIVINE_GATE, 4
-	warp_event 17,  5, MAHOGANY_TOWN, 1
+	warp_event 17,  5, MAHOGANY_GATE, 3
 
 	db 1 ; coord events
 	coord_event 17,  6, SCENE_DEFAULT, OlivineCityRivalSceneTop
@@ -295,11 +295,12 @@ OlivineCity_MapEvents:
 	bg_event  7, 15, BGEVENT_READ, OlivineGymSign
 	bg_event 23, 31, BGEVENT_READ, OlivineLighthouseSign
 	bg_event 21, 31, BGEVENT_READ, OlivineCityBattleTowerSign
-	bg_event 14, 13, BGEVENT_READ, OlivineCityPokecenterSign
+	bg_event 25, 31, BGEVENT_READ, OlivineCityPokecenterSign
 	bg_event 24, 31, BGEVENT_READ, OlivineCityMartSign
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event 12, 24, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
 	object_event 20, 17, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 17,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
+	object_event 36, 20, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Icy Wind tutor
