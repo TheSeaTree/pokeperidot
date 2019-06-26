@@ -157,6 +157,11 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ret
 
 BattleTurn:
+	ldh a, [hInMenu]
+	push af
+	ld a, 1
+	ldh [hInMenu], a
+
 .loop
 	call Stubbed_Function3c1bf
 	call CheckContestBattleOver
@@ -228,6 +233,8 @@ BattleTurn:
 	jp .loop
 
 .quit
+	pop af
+	ldh [hInMenu], a
 	ret
 
 Stubbed_Function3c1bf:
@@ -4292,11 +4299,13 @@ PursuitSwitch:
 	ld [wCryTracks], a
 	ld a, [wBattleMonSpecies]
 	call PlayStereoCry
+	ld a, [wCurBattleMon]
+	push af
 	ld a, [wLastPlayerMon]
-	ld c, a
-	ld hl, wBattleParticipantsNotFainted
-	ld b, RESET_FLAG
-	predef SmallFarFlagAction
+	ld [wCurBattleMon], a
+	call PlayerMonFaintHappinessMod
+	pop af
+	ld [wCurBattleMon], a
 	call PlayerMonFaintedAnimation
 	ld hl, BattleText_MonFainted
 	jr .done_fainted
@@ -5951,8 +5960,6 @@ CheckPlayerHasUsableMoves:
 	jr .loop
 
 .done
-	; Bug: this will result in a move with PP Up confusing the game.
-	and a ; should be "and PP_MASK"
 	and PP_MASK
 	ret nz
 
