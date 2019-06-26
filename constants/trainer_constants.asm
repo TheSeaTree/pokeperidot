@@ -104,6 +104,8 @@ KRIS EQU __enum__
 	const ADRIAN
 	const MELVIN
 	const ANDRE
+	const KURT
+	const DAVID
 	const SETH
 
 	trainerclass ERIKA ; 15
