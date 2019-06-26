@@ -505,7 +505,7 @@ CheckEnemyTurn:
 	ld hl, HurtItselfText
 	call StdBattleTextBox
 	call HitSelfInConfusion
-	call ConfusionDamageCalc
+	call BattleCommand_DamageCalc
 	call BattleCommand_LowerSub
 	xor a
 	ld [wNumHits], a
@@ -607,7 +607,7 @@ HitConfusion:
 	ld [wCriticalHit], a
 
 	call HitSelfInConfusion
-	call ConfusionDamageCalc
+	call BattleCommand_DamageCalc
 	call BattleCommand_LowerSub
 
 	xor a
@@ -1411,9 +1411,17 @@ BattleCheckTypeMatchup:
 	jr z, CheckTypeMatchup
 	ld hl, wBattleMonType1
 CheckTypeMatchup:
+; There is an incorrect assumption about this function made in the AI related code: when
+; the AI calls CheckTypeMatchup (not BattleCheckTypeMatchup), it assumes that placing the
+; offensive type in a will make this function do the right thing. Since a is overwritten,
+; this assumption is incorrect. A simple fix would be to load the move type for the
+; current move into a in BattleCheckTypeMatchup, before falling through, which is
+; consistent with how the rest of the code assumes this code works like.
 	push hl
 	push de
 	push bc
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
 	ld d, a
 	ld b, [hl]
 	inc hl
@@ -1869,11 +1877,9 @@ BattleCommand_EffectChance:
 	ld hl, wEnemyMoveStruct + MOVE_CHANCE
 .got_move_chance
 
-	ld a, [hl]
-	sub 100 percent
-	; If chance was 100%, RNG won't be called (carry not set)
-	; Thus chance will be subtracted from 0, guaranteeing a carry
-	call c, BattleRandom
+	; BUG: 1/256 chance to fail even for a 100% effect chance,
+	; since carry is not set if BattleRandom == [hl] == 255
+	call BattleRandom
 	cp [hl]
 	pop hl
 	ret c
@@ -2694,6 +2700,9 @@ TruncateHL_BC:
 	inc l
 
 .finish
+	ld a, [wLinkMode]
+	cp LINK_COLOSSEUM
+	jr z, .done
 ; If we go back to the loop point,
 ; it's the same as doing this exact
 ; same check twice.
@@ -2701,6 +2710,7 @@ TruncateHL_BC:
 	or b
 	jr nz, .loop
 
+.done
 	ld b, l
 	ret
 
@@ -2984,8 +2994,6 @@ HitSelfInConfusion:
 	ld d, 40
 	pop af
 	ld e, a
-	ld a, TRUE
-	ldh [hIsConfusionDamage], a
 	ret
 
 BattleCommand_DamageCalc:
@@ -3021,11 +3029,6 @@ BattleCommand_DamageCalc:
 	ret z
 
 .skip_zero_damage_check
-	xor a ; Not confusion damage
-	ldh [hIsConfusionDamage], a
-	; fallthrough
-
-ConfusionDamageCalc:
 ; Minimum defense value is 1.
 	ld a, c
 	and a
@@ -3080,12 +3083,6 @@ ConfusionDamageCalc:
 	call Divide
 
 ; Item boosts
-
-; Item boosts don't apply to confusion damage
-	ldh a, [hIsConfusionDamage]
-	and a
-	jr nz, .DoneItem
-
 	call GetUserItem
 
 	ld a, b
@@ -6681,6 +6678,7 @@ INCLUDE "engine/battle/move_effects/future_sight.asm"
 INCLUDE "engine/battle/move_effects/thunder.asm"
 
 CheckHiddenOpponent:
+; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.
 	xor a
 	ret
 

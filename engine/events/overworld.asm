@@ -410,7 +410,9 @@ UsedSurfScript:
 
 	special ReplaceKrisSprite
 	special PlayMapMusic
+; step into the water (slow_step DIR, step_resume)
 	special SurfStartStep
+	applymovement PLAYER, wMovementBuffer
 	end
 
 .empty_fn

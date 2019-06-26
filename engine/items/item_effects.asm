@@ -215,8 +215,8 @@ PokeBallEffect:
 .room_in_party
 	xor a
 	ld [wWildMon], a
-	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	ld a, [wCurItem]
+	cp PARK_BALL
 	call nz, ReturnToBattle_UseBall
 
 	ld hl, wOptions
@@ -349,7 +349,7 @@ PokeBallEffect:
 	ld d, a
 	push de
 	ld a, [wBattleMonItem]
-	ld b, a
+	; ld b, a
 	farcall GetItemHeldEffect
 	ld a, b
 	cp HELD_CATCH_CHANCE
