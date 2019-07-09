@@ -707,136 +707,188 @@ JohtoGrassWildMons:
 	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, SKIPLOOM
-	db 20, GROWLITHE
-	db 20, PIDGEOTTO
-	db 20, SUNKERN
-	db 19, KADABRA
-	db 18, EEVEE
-	db 20, EEVEE
+	db 23, SKIPLOOM
+	db 25, GROWLITHE
+	db 25, PIDGEOTTO
+	db 25, SUNKERN
+	db 24, KADABRA
+	db 23, EEVEE
+	db 25, EEVEE
 	; day
-	db 18, WEEPINBELL
-	db 20, GROWLITHE
-	db 20, PIDGEOTTO
-	db 20, SUNKERN
-	db 19, KADABRA
-	db 18, EEVEE
-	db 20, EEVEE
+	db 23, WEEPINBELL
+	db 25, GROWLITHE
+	db 25, PIDGEOTTO
+	db 25, SUNKERN
+	db 24, KADABRA
+	db 23, EEVEE
+	db 25, EEVEE
 	; nite
-	db 18, GLOOM
-	db 20, HOUNDOUR
-	db 20, NOCTOWL
-	db 20, SPINARAK
-	db 19, KADABRA
-	db 18, EEVEE
-	db 20, EEVEE
+	db 23, GLOOM
+	db 25, HOUNDOUR
+	db 25, NOCTOWL
+	db 25, SPINARAK
+	db 24, KADABRA
+	db 23, EEVEE
+	db 25, EEVEE
 
 	map_id ROUTE_13
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 23, DODUO
-	db 24, PONYTA
-	db 22, LICKITUNG
-	db 23, SLUGMA
-	db 23, MARILL
-	db 23, SLUGMA
+	db 27, DODUO
+	db 29, PONYTA
+	db 25, LICKITUNG
+	db 26, SLUGMA
+	db 26, MARILL
 	db 25, SLUGMA
+	db 27, SLUGMA
 	; day
-	db 23, DODUO
-	db 24, PONYTA
-	db 22, LICKITUNG
-	db 23, SLUGMA
-	db 23, MARILL
-	db 23, SLUGMA
+	db 27, DODUO
+	db 29, PONYTA
+	db 25, LICKITUNG
+	db 26, SLUGMA
+	db 26, MARILL
 	db 25, SLUGMA
+	db 27, SLUGMA
 	; nite
-	db 23, DODUO
-	db 24, PONYTA
-	db 22, LICKITUNG
-	db 23, SLUGMA
-	db 23, MARILL
-	db 23, SLUGMA
+	db 27, DODUO
+	db 29, PONYTA
+	db 25, LICKITUNG
+	db 26, SLUGMA
+	db 26, MARILL
 	db 25, SLUGMA
+	db 27, SLUGMA
 	
 	map_id ROUTE_14
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 24, DODUO
-	db 24, PONYTA
-	db 22, GIRAFARIG
-	db 23, TANGELA
-	db 24, PHANPY
-	db 23, TANGELA
+	db 27, DODUO
+	db 29, PONYTA
+	db 26, GIRAFARIG
+	db 24, TANGELA
+	db 27, PHANPY
 	db 26, TANGELA
+	db 27, TANGELA
 	; day
-	db 24, DODUO
-	db 24, PONYTA
-	db 22, GIRAFARIG
-	db 23, TANGELA
-	db 24, PHANPY
-	db 23, TANGELA
+	db 27, DODUO
+	db 29, PONYTA
+	db 26, GIRAFARIG
+	db 24, TANGELA
+	db 27, PHANPY
 	db 26, TANGELA
+	db 27, TANGELA
 	; nite
-	db 24, DODUO
-	db 24, PONYTA
-	db 22, STANTLER
-	db 23, TANGELA
-	db 24, PHANPY
-	db 23, TANGELA
-	db 26, TANGELA	
+	db 27, DODUO
+	db 29, PONYTA
+	db 26, STANTLER
+	db 24, TANGELA
+	db 27, PHANPY
+	db 26, TANGELA
+	db 27, TANGELA	
 
 	map_id PAINTERS_FOREST
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, SMEARGLE
-	db 14, SMEARGLE
-	db 13, SMEARGLE
-	db 14, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
 	; day
-	db 12, SMEARGLE
-	db 14, SMEARGLE
-	db 13, SMEARGLE
-	db 14, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
 	; nite
-	db 12, SMEARGLE
-	db 14, SMEARGLE
-	db 13, SMEARGLE
-	db 14, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
-	db 16, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
+	db 30, SMEARGLE
 	
 	map_id MAHOGANY_TOWN
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 22, ELEKID
-	db 22, ELEKID
-	db 21, MAGNEMITE
-	db 20, MAGNEMITE
-	db 22, PIKACHU
-	db 23, KOFFING
-	db 23, KOFFING
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, VOLTORB
+	db 30, VOLTORB
 	; day
-	db 22, ELEKID
-	db 22, ELEKID
-	db 21, MAGNEMITE
-	db 20, MAGNEMITE
-	db 22, PIKACHU
-	db 23, KOFFING
-	db 23, KOFFING
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, VOLTORB
+	db 30, VOLTORB
 	; nite
-	db 22, ELEKID
-	db 22, ELEKID
-	db 21, MAGNEMITE
-	db 20, MAGNEMITE
-	db 22, PIKACHU
-	db 23, KOFFING
-	db 23, KOFFING
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, KOFFING
+	db 30, KOFFING
 	
+	map_id POWER_PLANT_1F
+	db 3 percent, 3 percent, 3 percent
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, VOLTORB
+	db 30, VOLTORB
+	; day
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, VOLTORB
+	db 30, VOLTORB
+	; nite
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, PIKACHU
+	db 30, VOLTORB
+	db 30, VOLTORB
+	
+	map_id POWER_PLANT_2F
+	db 3 percent, 3 percent, 3 percent
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, KOFFING
+	db 30, KOFFING
+	db 30, KOFFING
+	; day
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, KOFFING
+	db 30, KOFFING
+	db 30, KOFFING
+	; nite
+	db 27, ELEKID
+	db 27, ELEKID
+	db 27, MAGNEMITE
+	db 28, MAGNEMITE
+	db 26, KOFFING
+	db 30, KOFFING
+	db 30, KOFFING
+
 	db -1 ; end
