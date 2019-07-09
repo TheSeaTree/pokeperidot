@@ -1,7 +1,7 @@
 TMHMMoves:
 ; entries correspond to *_TMNUM enums (see constants/item_constants.asm)
 ; TMs
-	db CALM_MIND
+		db CALM_MIND
 	db BULK_UP
 	db HIDDEN_POWER
 	db ROAR
@@ -71,12 +71,11 @@ TMHMMoves:
 	db PETAL_DANCE
 	db BODY_SLAM
 	db DRAIN_PUNCH
-	db DESTINY_BOND
 	db HEAL_BELL
 	db GROWTH
+	db BUBBLEBEAM
+	db ICY_WIND
 	db NIGHTMARE
 	db DREAM_EATER
-	db BUBBLEBEAM
-	db DIG
 	db SKETCH
 	db 0 ; end

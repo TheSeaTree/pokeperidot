@@ -56,6 +56,7 @@ RinringEggMoves:
 	db FLAME_WHEEL
 	db COUNTER
 	db REVERSAL
+	db DESTINY_BOND
 	db -1 ; end
 
 SpearowEggMoves:
@@ -149,7 +150,6 @@ VenonatEggMoves:
 	db BATON_PASS
 	db SCREECH
 	db GIGA_DRAIN
-	db BUG_BUZZ
 	db -1 ; end
 
 DiglettEggMoves:
@@ -228,6 +228,7 @@ TentacoolEggMoves:
 	db RAPID_SPIN
 	db HAZE
 	db BUBBLE
+	db DESTINY_BOND
 	db -1 ; end
 
 GeodudeEggMoves:
@@ -295,6 +296,7 @@ GrimerEggMoves:
 	db SCARY_FACE
 	db PURSUIT
 	db MOONBLAST
+	db DESTINY_BOND
 	db -1 ; end
 
 ShellderEggMoves:
@@ -327,6 +329,7 @@ OnixEggMoves:
 DrowzeeEggMoves:
 	db BARRIER
 	db RECOVER
+	db DESTINY_BOND
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -445,7 +448,6 @@ ScytherEggMoves:
 	db BATON_PASS
 	db RAZOR_WIND
 	db REVERSAL
-	db BUG_BUZZ
 	db STRUGGLE_BUG
 	db GUILLOTINE
 	db STEEL_WING
@@ -455,7 +457,6 @@ PinsirEggMoves:
 	db FURY_ATTACK
 	db FLAIL
 	db QUICK_ATTACK
-	db BUG_BUZZ
 	db RAZOR_WIND
 	db FOCUS_ENERGY
 	db -1 ; end
@@ -476,6 +477,7 @@ LaprasEggMoves:
 EeveeEggMoves:
 	db FLAIL
 	db CHARM
+	db DESTINY_BOND
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -655,6 +657,7 @@ NatuEggMoves:
 	db RECOVER
 	db FUTURE_SIGHT
 	db RAPID_SPIN
+	db DESTINY_BOND
 	db -1 ; end
 
 MareepEggMoves:
@@ -708,7 +711,6 @@ YanmaEggMoves:
 	db WHIRLWIND
 	db REVERSAL
 	db LEECH_LIFE
-	db BUG_BUZZ
 	db FAINT_ATTACK
 	db DOUBLE_EDGE
 	db PURSUIT
@@ -747,6 +749,7 @@ GirafarigEggMoves:
 	db MIRROR_COAT
 	db RAZOR_WIND
 	db MEAN_LOOK
+	db DESTINY_BOND
 	db -1 ; end
 
 PinecoEggMoves:

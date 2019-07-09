@@ -96,13 +96,12 @@ NUM_HMS = const_value - HM01
 	add_mt PETAL_DANCE
 	add_mt BODY_SLAM
 	add_mt DRAIN_PUNCH
-	add_mt DESTINY_BOND
 	add_mt HEAL_BELL
 	add_mt GROWTH
-	add_mt NIGHTMARE
-	add_mt DREAM_EATER
 	add_mt BUBBLEBEAM
 	add_mt ICY_WIND
+	add_mt NIGHTMARE
+	add_mt DREAM_EATER
 	add_mt SKETCH
 
 NUM_TM_HM_TUTOR = __enum__ + -1
