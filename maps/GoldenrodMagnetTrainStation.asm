@@ -14,7 +14,7 @@ GoldenrodMagnetTrainStation_MapScripts:
 GoldenrodMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .MagnetTrainToSaffron
 	writetext UnknownText_0x55160
 	waitbutton
@@ -74,13 +74,13 @@ MovementData_0x55146:
 	step UP
 	step RIGHT
 	turn_head LEFT
-	step_end
+	step_resume
 
 MovementData_0x5514b:
 	step LEFT
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 MovementData_0x5514f:
 	step UP
@@ -91,9 +91,12 @@ MovementData_0x5514f:
 	step LEFT
 	step UP
 	step UP
-	step_end
+	hide_person
+	step_resume
 
 MovementData_0x55158:
+	show_person
+	step DOWN
 	step LEFT
 	step LEFT
 	step DOWN
@@ -101,7 +104,7 @@ MovementData_0x55158:
 	step DOWN
 	step DOWN
 	turn_head UP
-	step_end
+	step_resume
 
 UnknownText_0x55160:
 	text "The train hasn't"
@@ -169,10 +172,10 @@ GoldenrodMagnetTrainStation_MapEvents:
 	warp_event  8, 17, AZALEA_TOWN, 2
 	warp_event  9, 17, AZALEA_TOWN, 2
 	warp_event  6,  5, MAHOGANY_MAGNET_TRAIN_STATION, 4
-	warp_event 11,  5, MAHOGANY_MAGNET_TRAIN_STATION, 3
+	warp_event 10,  5, MAHOGANY_MAGNET_TRAIN_STATION, 3
 
 	db 1 ; coord events
-	coord_event 11,  6, SCENE_DEFAULT, Script_ArriveFromSaffron
+	coord_event 11,  5, SCENE_DEFAULT, Script_ArriveFromSaffron
 
 	db 0 ; bg events
 

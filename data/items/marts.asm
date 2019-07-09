@@ -15,6 +15,7 @@ Marts:
 	dw MartEcruteak
 	dw MartMahogany1
 	dw MartMahogany2
+	dw MartMahogany3
 	dw MartBlackthorn
 	dw MartGoldenrod
 	dw MartPewter
@@ -160,25 +161,32 @@ MartEcruteak:
 	db -1 ; end
 
 MartMahogany1:
-	db 4 ; # items
-	db TINYMUSHROOM
-	db SLOWPOKETAIL
-	db POKE_BALL
-	db POTION
-	db -1 ; end
-
-MartMahogany2:
-	db 9 ; # items
-	db RAGECANDYBAR
+	db 8 ; # items
 	db GREAT_BALL
+	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
 	db SUPER_REPEL
 	db REVIVE
-	db FLOWER_MAIL
 	db -1 ; end
+
+MartMahogany2:
+	db 3 ; # items
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THUNDERPUNCH
+	db -1 ; end
+	
+MartMahogany3:
+	db 5
+	db HP_UP
+	db PROTEIN
+	db IRON
+	db CALCIUM
+	db CARBOS
+	db -1
 
 MartBlackthorn:
 	db 9 ; # items

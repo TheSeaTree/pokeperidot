@@ -16,7 +16,7 @@ MahoganyMagnetTrainStation_MapScripts:
 SaffronMagnetTrainStationOfficerScript:
 	faceplayer
 	opentext
-	checkevent EVENT_RESTORED_POWER_TO_KANTO
+	checkevent EVENT_RETURNED_MACHINE_PART
 	iftrue .MagnetTrainToGoldenrod
 	writetext UnknownText_0x18a8a9
 	waitbutton
@@ -95,13 +95,13 @@ MovementData_0x18a88f:
 	step UP
 	step RIGHT
 	turn_head LEFT
-	step_end
+	step_resume
 
 MovementData_0x18a894:
 	step LEFT
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 MovementData_0x18a898:
 	step UP
@@ -112,9 +112,12 @@ MovementData_0x18a898:
 	step LEFT
 	step UP
 	step UP
-	step_end
+	hide_person
+	step_resume
 
 MovementData_0x18a8a1:
+	show_person
+	step DOWN
 	step LEFT
 	step LEFT
 	step DOWN
@@ -122,7 +125,7 @@ MovementData_0x18a8a1:
 	step DOWN
 	step DOWN
 	turn_head UP
-	step_end
+	step_resume
 
 UnknownText_0x18a8a9:
 	text "I'm sorry, but the"
@@ -220,10 +223,10 @@ MahoganyMagnetTrainStation_MapEvents:
 	warp_event  8, 17, MAHOGANY_TOWN, 5
 	warp_event  9, 17, MAHOGANY_TOWN, 5
 	warp_event  6,  5, GOLDENROD_MAGNET_TRAIN_STATION, 4
-	warp_event 11,  5, GOLDENROD_MAGNET_TRAIN_STATION, 3
+	warp_event 10,  5, GOLDENROD_MAGNET_TRAIN_STATION, 3
 
 	db 1 ; coord events
-	coord_event 11,  6, SCENE_DEFAULT, Script_ArriveFromGoldenrod
+	coord_event 11,  5, -1, Script_ArriveFromGoldenrod
 
 	db 0 ; bg events
 

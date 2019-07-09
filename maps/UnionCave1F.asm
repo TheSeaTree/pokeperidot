@@ -1,10 +1,14 @@
 	const_def 2 ; object constants
 	const UNIONCAVE1F_POKE_BALL1
+	const UNIONCAVE1F_LASS
 	const UNIONCAVE1F_ROCK1
 	const UNIONCAVE1F_ROCK2
 	const UNIONCAVE1F_ROCK3
 	const UNIONCAVE1F_BOULDER1
 	const UNIONCAVE1F_BOULDER2
+	const UNIONCAVE1F_POKEB_ALL2
+	const UNIONCAVE1F_SUPERNERD
+	const UNIONCAVE1F_RIVAL
 
 UnionCave1F_MapScripts:
 	db 0 ; scene scripts
@@ -33,6 +37,81 @@ TrainerPokemaniacTrent:
 	closetext
 	end		
 	
+UnionCaveRivalScene:
+	special FadeOutMusic
+	opentext
+	writetext UnionCaveRivalText
+	waitbutton
+	closetext
+	playsound SFX_FULL_HEAL
+	waitsfx
+	showemote EMOTE_QUESTION, UNIONCAVE1F_RIVAL, 15
+	faceplayer
+	opentext
+	writetext UnionCaveRivalText2
+	waitbutton
+	playmusic MUSIC_RIVAL_ENCOUNTER
+	writetext UnionCaveRivalChallengeText
+	waitbutton
+	closetext
+	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	iftrue .Totodile
+	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	iftrue .Chikorita
+	winlosstext UnionCaveRivalWinText, UnionCaveRivalLossText
+	setlasttalked UNIONCAVE1F_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_TOTODILE
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .AfterBattle
+
+.Totodile:
+	winlosstext UnionCaveRivalWinText, UnionCaveRivalLossText
+	setlasttalked UNIONCAVE1F_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_CHIKORITA
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .AfterBattle
+
+.Chikorita:
+	winlosstext UnionCaveRivalWinText, UnionCaveRivalLossText
+	setlasttalked UNIONCAVE1F_RIVAL
+	loadtrainer RIVAL1, RIVAL1_3_CYNDAQUIL
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	jump .AfterBattle
+
+.AfterBattle:
+	playmusic MUSIC_RIVAL_AFTER
+	opentext
+	writetext UnionCaveRivalAfterText
+	waitbutton
+	closetext
+	applymovement UNIONCAVE1F_RIVAL, UnionCaveRivalLeave
+;	disappear UNIONCAVE1F_RIVAL
+	setevent EVENT_RIVAL_UNION_CAVE
+	playmapmusic
+	end
+	
+UnionCaveForemanScript:
+	jumptextfaceplayer UnionCaveCollapseText
+	
+UnionCaveCones:
+;	turnobject UNIONCAVE1F_POKEFAN, LEFT
+	opentext
+	writetext UnionCaveConeText1
+	waitbutton
+	closetext
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext UnionCaveConeText2
+	waitbutton
+	closetext
+	end
+	
 UnionCave1FGreatBall:
 	itemball GREAT_BALL
 
@@ -47,6 +126,11 @@ UnionCave1FBoulder:
 
 UnionCave1FHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_UNION_CAVE_1F_HIDDEN_RARE_CANDY
+	
+UnionCaveRivalLeave:
+	step_dig 32
+	hide_object
+	step_resume
 	
 PokemaniacTrentText:
 	text "I am a"
@@ -73,6 +157,76 @@ LassVickyWinText:
 LassVickyAfterText:
 	text "I lost."
 	done
+	
+UnionCaveRivalText:
+	text "This should be a"
+	line "good place to heal"
+	cont "up."
+	done
+	
+UnionCaveRivalText2:
+	text "You again?"
+	
+	para "Look, kid. You may"
+	line "have beaten me"
+	cont "outside of that"
+	cont "GYM, but I have"	
+	cont "gotten a lot"
+	cont "stronger since"
+	cont "then!"
+	done
+	
+UnionCaveRivalChallengeText:
+	text "My party is"
+	line "healed up and"
+	cont "ready to test"
+	cont "their might!"
+	done
+	
+UnionCaveRivalWinText:
+	text "I must have just"
+	line "gotten some bad"
+	cont "POTIONS."
+	
+	para "If my team was at"
+	line "full strength, you"
+	cont "would not have"
+	cont "stood a chance!"
+	done
+	
+UnionCaveRivalLossText:
+	text "Just as I thought."
+	
+	para "That last time was"
+	line "a fluke."
+	done
+	
+UnionCaveRivalAfterText:
+	text "…"
+	done
+	
+UnionCaveCollapseText:
+	text "Part of the cave"
+	line "collapsed up"
+	cont "ahead!"
+	
+	para "I'm sorry kid, but"
+	line "it will take a"
+	cont "while before it's"
+	cont "safe for trainers"
+	cont "once again."
+	done
+	
+UnionCaveConeText1:
+	text "Hey kid!"
+	done
+	
+UnionCaveConeText2:
+	text "Don't touch those!"
+	
+	para "It's dangerous up"
+	line "ahead."
+	done
 
 UnionCave1F_MapEvents:
 	db 0, 0 ; filler
@@ -88,7 +242,7 @@ UnionCave1F_MapEvents:
 	db 1 ; bg events
 	bg_event  5,  6, BGEVENT_ITEM, UnionCave1FHiddenRareCandy
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event 41,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
 	object_event 41,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassVicky, -1
 	object_event 38,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCave1FRock, -1
@@ -98,4 +252,5 @@ UnionCave1F_MapEvents:
 	object_event 36,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCave1FBoulder, -1
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FWaterStone, EVENT_UNION_CAVE_1F_WATER_STONE
 	object_event  2,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPokemaniacTrent, -1
+	object_event 10,  6, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, UnionCaveRivalScene, EVENT_RIVAL_UNION_CAVE
 	

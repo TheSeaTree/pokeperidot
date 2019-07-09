@@ -50,6 +50,7 @@ INCLUDE "maps/GoldenrodPokecenter1F.asm"
 INCLUDE "maps/Route8GoldenrodGate.asm"
 INCLUDE "maps/IlexForestAzaleaGate.asm"
 INCLUDE "maps/DayCare.asm"
+INCLUDE "maps/OlivineSurfHouse.asm"
 
 
 SECTION "Map Scripts 5", ROMX
@@ -192,7 +193,7 @@ SECTION "Map Scripts 18", ROMX
 INCLUDE "maps/BlackthornGym1F.asm"
 INCLUDE "maps/BlackthornGym2F.asm"
 INCLUDE "maps/BlackthornDragonSpeechHouse.asm"
-INCLUDE "maps/BlackthornEmysHouse.asm"
+INCLUDE "maps/MahoganyEmysHouse.asm"
 INCLUDE "maps/BlackthornMart.asm"
 INCLUDE "maps/BlackthornPokecenter1F.asm"
 INCLUDE "maps/MoveDeletersHouse.asm"

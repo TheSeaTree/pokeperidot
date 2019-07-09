@@ -8,8 +8,9 @@
 MahoganyGym_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .CheckTrainers
+	callback MAPCALLBACK_TILES, .Cables
 
 .CheckTrainers:
 	checkevent EVENT_BEAT_SCIENTIST_ANDRE
@@ -29,6 +30,91 @@ MahoganyGym_MapScripts:
 	moveobject MAHOGANYGYM_SCIENTIST4, 15,  8
 .skip4
 	return
+	
+.Cables
+	checkevent EVENT_MAHOGANY_GYM_SWITCH_1
+	iffalse .skipcables1
+	changeblock  4, 14, $67
+	changeblock  6, 14, $5e
+	changeblock  8, 14, $4d
+	changeblock  2, 18, $69
+	changeblock  4, 20, $60
+	changeblock  4, 22, $62
+	changeblock  6, 22, $65
+	changeblock  8, 22, $61
+	changeblock 10, 22, $64
+	changeblock 10, 20, $60
+	changeblock 10, 18, $50	
+	changeblock 10, 16, $60
+	changeblock 14, 18, $67
+	changeblock 16, 20, $4e
+	changeblock 18, 20, $5e
+	changeblock 20, 20, $4d
+	changeblock 22, 20, $6c
+	changeblock 22, 16, $4c
+	changeblock 22, 14, $6d
+	changeblock 22, 10, $60
+	changeblock 22,  8, $6b
+.skipcables1
+	checkevent EVENT_MAHOGANY_GYM_SWITCH_3
+	iffalse .skipcables2
+	changeblock  4, 14, $67
+	changeblock  6, 14, $5e
+	changeblock  8, 14, $4d
+	changeblock 10, 14, $4d
+	changeblock 14, 18, $67
+	changeblock 16, 20, $4e
+	changeblock 18, 20, $5e
+	changeblock 20, 20, $4d
+	changeblock 22, 20, $6d
+	changeblock 12,  6, $6b
+	changeblock 12,  8, $50
+	changeblock 12, 10, $64
+	changeblock 12, 14, $62
+	changeblock 14, 14, $61
+.skipcables2
+	return
+	
+ElectricGymLeader:
+	faceplayer
+	checkevent EVENT_BEAT_CHUCK
+	iftrue .FightDone
+	opentext
+	writetext ElectricLeaderChallengeText
+	waitbutton
+	winlosstext ElectricLeaderWinText, 0
+	loadtrainer CHUCK, CHUCK1
+	startbattle
+	reloadmapafterbattle
+	setmapscene ECRUTEAK_CITY, SCENE_ECRUTEAKCITY_DONE
+	setevent EVENT_BEAT_SCIENTIST_ANDRE
+	setevent EVENT_BEAT_SCIENTIST_KURT
+	setevent EVENT_BEAT_SCIENTIST_DAVID
+	setevent EVENT_BEAT_SCIENTIST_SETH
+	clearevent EVENT_MAHOGANY_GYM_SWITCH_4
+	opentext
+	writetext PlayerReceivedCogBadgeText
+	playsound SFX_GET_BADGE
+	waitsfx
+	setflag ENGINE_MINERALBADGE
+	setevent EVENT_BEAT_CHUCK
+.FightDone:
+	opentext
+	special HealParty
+	checkevent EVENT_GOT_TM_THUNDERBOLT
+	iftrue .GotThunderbolt
+	writetext CogBadgeText
+	buttonsound
+	verbosegiveitem TM_THUNDERBOLT
+	iffalse .NoRoomForThunderbolt
+	setevent EVENT_GOT_TM_THUNDERBOLT
+
+.GotThunderbolt:
+	writetext ThunderboltTMText
+	waitbutton
+.NoRoomForThunderbolt:
+	closetext
+	end
 
 MahoganyGymPod1:
 	opentext
@@ -447,6 +533,7 @@ MahoganyGymPodSwitch1:
 	writetext MahoganyGymPodAsk
 	yesorno
 	iffalse .No
+	writetext MahoganyGymPodWhoWouldnt
 	playsound SFX_ZAP_CANNON
 	waitsfx
 	changeblock  4, 14, $67
@@ -491,6 +578,7 @@ MahoganyGymPodSwitch2:
 	writetext MahoganyGymPodAsk
 	yesorno
 	iffalse .No
+	writetext MahoganyGymPodWhoWouldnt
 	playsound SFX_ZAP_CANNON
 	waitsfx
 	changeblock  2, 18, $67
@@ -533,6 +621,7 @@ MahoganyGymPodSwitch3:
 	writetext MahoganyGymPodAsk
 	yesorno
 	iffalse .No
+	writetext MahoganyGymPodWhoWouldnt
 	playsound SFX_ZAP_CANNON
 	waitsfx
 	changeblock 18,  8, $67
@@ -569,6 +658,7 @@ MahoganyGymPodSwitch4:
 	writetext MahoganyGymPodAsk
 	yesorno
 	iffalse .No
+	writetext MahoganyGymPodWhoWouldnt
 	playsound SFX_ZAP_CANNON
 	waitsfx
 	changeblock 12,  6, $6a
@@ -621,6 +711,34 @@ ScientistDavid:
 
 ScientistSeth:
 	jumptextfaceplayer ScientistSethAfterText
+	
+MahoganyGymDoor:
+	checkflag ENGINE_MINERALBADGE
+	iftrue .Leave
+	jumpstd cantleavegym
+	end
+
+.Leave
+	opentext
+	writetext MahoganyGymHaveBadge
+	waitbutton
+	closetext
+	applymovement PLAYER, MahoganyLeaveGym
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	wait 4
+	warpfacing DOWN, MAHOGANY_TOWN, 24, 13
+	end
+	
+MahoganyLeaveGym:
+	turn_step DOWN
+	step_end
+	
+MahoganyGymHaveBadge:
+	text "<PLAYER> used"
+	line "the COGBADGE to"
+	cont "unlock the door!"
+	done
 
 StepIntoPod:
 	step UP
@@ -642,7 +760,7 @@ TrainerStepBack:
 	remove_fixed_facing
 	step_resume
 	
-TrainerStepRight
+TrainerStepRight:
 	step RIGHT
 	turn_head DOWN
 	step_resume
@@ -993,6 +1111,10 @@ MahoganyGymPodAsk:
 	para "Flip it?"
 	done
 	
+MahoganyGymPodWhoWouldnt:
+	text "Who wouldn't?"
+	done
+	
 MahoganyGymSwitchActive:
 	text "The switch has"
 	line "already been"
@@ -1000,7 +1122,8 @@ MahoganyGymSwitchActive:
 	done
 	
 AskUsePod:
-	text "Open the pod door?"
+	text "Open the pod door"
+	line "and enter?"
 	done
 	
 MahoganyGymPodDoorSealed:
@@ -1011,6 +1134,79 @@ MahoganyGymPodDoorSealed:
 PodOverloadText:
 	text "The pod's power"
 	line "overloaded."
+	done
+	
+ElectricLeaderChallengeText:
+	text "Ah, a challenger!"
+	
+	para "How do you like my"
+	line "telepods? Quite"
+	cont "genius, yeah?"
+	
+	para "I designed them"
+	line "myself. Such"
+	cont "ingenuity has made"
+	cont "me the perfect fit"
+	cont "for this GYM's"
+	cont "leader!"
+	
+	para "I have already"
+	line "shown my mastery"
+	cont "of machine. Now"
+	cont "you will see my"
+	cont "mastery of #MON"
+	cont "battles!"
+	done
+	
+ElectricLeaderWinText:
+	text "It saddens me to"
+	line "be outsmarted, but"
+	cont "at the same time I"
+	cont "am glad for it to"
+	cont "happen."
+	
+	para "Competition is"
+	line "necessary in the"
+	cont "progression of"
+	cont "technology. This"
+	cont "will push me to"
+	cont "further perfect"
+	cont "science of #MON"
+	cont "battles."
+	
+	para "You have won my"
+	line "BADGE, trainer."
+	
+	para "Take it, and"
+	line "continue your"
+	cont "journey."
+	done
+
+PlayerReceivedCogBadgeText	
+	text "<PLAYER> received"
+	line "COGBADGE."
+	done
+
+CogBadgeText:
+	text "Defeating me in"
+	line "battle has earned"
+	cont "you my signature"
+	cont "TM as well."
+	done
+	
+ThunderboltTMText:
+	text "That TM is"
+	line "THUNDERBOLT."
+	
+	para "As you saw in our"
+	line "battle, its raw"
+	cont "power is nothing"
+	cont "to scoff at."
+	
+	para "Leaving your foe"
+	line "paralyzed opens up"
+	cont "many opportunities"
+	cont "in battle."
 	done
 	
 ScientistAndreText:
@@ -1086,13 +1282,12 @@ ScientistSethAfterText:
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 1 ; warp events
 	warp_event 12, 31, MAHOGANY_TOWN, 6
-	warp_event 13, 31, MAHOGANY_TOWN, 6
 
 	db 0 ; coord events
 
-	db 14 ; bg events
+	db 16 ; bg events
 	bg_event 13, 19, BGEVENT_UP, MahoganyGymPod1
 	bg_event 24, 15, BGEVENT_UP, MahoganyGymPod2
 	bg_event 19, 15, BGEVENT_UP, MahoganyGymPod3
@@ -1107,10 +1302,12 @@ MahoganyGym_MapEvents:
 	bg_event 22,  5, BGEVENT_UP, MahoganyGymPodSwitch2
 	bg_event 10,  5, BGEVENT_UP, MahoganyGymPodSwitch3
 	bg_event 20, 19, BGEVENT_UP, MahoganyGymPodSwitch4
+	bg_event 12, 32, BGEVENT_READ, MahoganyGymDoor
+	bg_event 13, 32, BGEVENT_READ, MahoganyGymDoor
 
 	db 5 ; object events
-	object_event  5,  1, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Leader
-	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5,  1, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
+	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistAndre, -1
+	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistKurt, -1
+	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistDavid, -1
+	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistSeth, -1

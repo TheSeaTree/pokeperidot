@@ -9,8 +9,8 @@ Route14OlivineGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  0,  4, ROUTE_14, 1
-	warp_event  0,  5, ROUTE_14, 2
+	warp_event  0,  4, ROUTE_14, 2
+	warp_event  0,  5, ROUTE_14, 3
 	warp_event  9,  4, OLIVINE_CITY, 1
 	warp_event  9,  5, OLIVINE_CITY, 2
 

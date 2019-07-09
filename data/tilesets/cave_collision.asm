@@ -97,7 +97,7 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 60
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 61
 	tilecoll FLOOR, WALL, WALL, WALL ; 62
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 63
+	tilecoll BUTTON, WALL, FLOOR, FLOOR ; 63
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 64
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 65
 	tilecoll HEADBUTT_TREE, WALL, WALL, WALL ; 66

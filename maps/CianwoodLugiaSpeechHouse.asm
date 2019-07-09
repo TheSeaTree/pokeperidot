@@ -19,7 +19,6 @@ CianwoodLugiaSpeechHouseTeacherScript:
 	waitbutton
 	verbosegiveitem TM_FLY
 	setevent EVENT_GOT_TM_FLY
-	buttonsound
 
 .GotFly:
 	writetext GotFlyText
@@ -120,7 +119,7 @@ CianwoodFlyHouseTeacherSaved:
 	cont "hands on."
 
 	para "I know we can"
-	cont "trust it with you."
+	line "trust it with you."
 	done
 	
 GotFlyText:

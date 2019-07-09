@@ -81,7 +81,7 @@ PowerPlant2FGrimer6:
 
 PowerPlant2FGrimer7:
 	cry GRIMER
-	loadwildmon GRIMER, 3
+	loadwildmon GRIMER, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
 	reloadmapafterbattle
@@ -96,7 +96,7 @@ PowerPlant2FGrimerBattle:
 	waitbutton
 	closetext
 	setlasttalked -1
-	loadwildmon GRIMER, 3
+	loadwildmon GRIMER, 28
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	end
@@ -181,6 +181,24 @@ PowerPlantAdminLockedDoor:
 	
 PowerPlantGeneratorKey:
 	itemball GEN_KEY
+	
+IronHeadTM:
+	itemball TM_IRON_HEAD
+	
+PowerPlantThunderstone:
+	itemball THUNDERSTONE
+	
+PowerPlantUltraBall:
+	itemball ULTRA_BALL
+	
+PowerPlantMagnet:
+	itemball MAGNET
+	
+PowerPlantElixer:
+	itemball ELIXER
+	
+PowerPlantFullHeal:
+	itemball FULL_HEAL
 
 OfficeKeySlotText:
 	text "It looks like an"
@@ -249,10 +267,10 @@ PowerPlant2F_MapEvents:
 	object_event  6,  6, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer5, POWER_PLANT_2F_GRIMER_5
 	object_event 11,  1, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer6, POWER_PLANT_2F_GRIMER_6
 	object_event 18,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGrimer7, POWER_PLANT_2F_GRIMER_7
-	object_event 15, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 10,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
+	object_event 15, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantUltraBall, EVENT_POWER_PLANT_ULTRA_BALL
+	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantThunderstone, EVENT_POWER_PLANT_THUNDERSTONE
+	object_event 10,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, IronHeadTM, EVENT_GOT_TM_IRON_HEAD
+	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantFullHeal, EVENT_POWER_PLANT_FULL_HEAL
+	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantMagnet, EVENT_POWER_PLANT_MAGNET
+	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantElixer, EVENT_POWER_PLANT_ELIXER
 	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantGeneratorKey, EVENT_POWER_PLANT_GEN_KEY

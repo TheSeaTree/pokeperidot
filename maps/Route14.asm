@@ -123,6 +123,33 @@ Route14MoveTutor:
 	closetext
 	end
 	
+BlackGlassesGuy:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_BLACKGLASSES
+	iftrue .GotGlasses
+	writetext Route14BlackGlassesGuy
+	checkevent EVENT_GOT_TM_SUNNY_DAY
+	iftrue .GiveGlasses
+	waitbutton
+	closetext
+	end
+	
+.GiveGlasses:
+	writetext Route14GiveBlackGlasses
+	waitbutton
+	verbosegiveitem BLACKGLASSES
+	waitbutton
+	closetext
+	setevent EVENT_GOT_BLACKGLASSES
+	end
+	
+.GotGlasses:
+	writetext Route14ExplainBlackGlasses
+	waitbutton
+	closetext
+	end
+	
 Route14CaveGuard:
 	jumptextfaceplayer Route14CaveGuardText
 	
@@ -313,6 +340,38 @@ Route14CaveGuardText:
 	para "… … …"
 	line "Ouch!"
 	done
+	
+Route14BlackGlassesGuy:
+	text "You like these"
+	line "glasses I have on?"
+	
+	para "Thanks, I wear"
+	line "them to protect my"
+	cont "eyes from the sun-"
+	cont "light."
+	done
+
+Route14GiveBlackGlasses:
+	text "The sun seems a"
+	line "lot brighter with"
+	cont "you around."
+
+	para "Here, I have an"
+	line "extra pair."
+	done
+
+Route14ExplainBlackGlasses:
+	text "Those glasses"
+	line "aren't just for"
+	cont "looking cool, they"
+	cont "also boost DARK-"
+	cont "type moves."
+	
+	para "You might want to"
+	line "use them yourself"
+	cont "when SUNNY DAY is"
+	cont "active."
+	done
 
 Route14_MapEvents:
 	db 0, 0 ; filler
@@ -326,7 +385,7 @@ Route14_MapEvents:
 
 	db 0 ; bg events
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 10,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
 	object_event 24,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_12_LEADER
 	object_event 26, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
@@ -335,6 +394,7 @@ Route14_MapEvents:
 	object_event 25, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassGinger, -1
 	object_event 37, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicWes, -1
 	object_event 21, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLadTristan, -1
+	object_event  5,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, BlackGlassesGuy, -1
 	object_event 31,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_14_ULTRA_BALL
 	object_event 10, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_14_NUGGET
 	

@@ -9,7 +9,7 @@ MagnetTrain:
 
 .ToGoldenrod:
 	ld a, -1 ; backwards
-	lb bc, -$40, -$50
+	lb bc, -$40, -$60
 	lb de, (11 * 8) + (11 * 8 + 4), $60
 
 .continue
@@ -327,7 +327,7 @@ MagnetTrain_Jumptable:
 	add hl, bc
 	ld [hl], $0
 	call .Next
-	ld a, $80
+	ld a, $90
 	ld [wMagnetTrainWaitCounter], a
 	ret
 
@@ -350,7 +350,7 @@ MagnetTrain_Jumptable:
 
 .PrepareToHoldTrain:
 	call .Next
-	ld a, $80
+	ld a, $90
 	ld [wMagnetTrainWaitCounter], a
 	ret
 

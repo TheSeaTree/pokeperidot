@@ -59,12 +59,26 @@ BikerJesse:
 	waitbutton
 	closetext
 	end
+	
+TrainerSwimmerAngie
+	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMER_ANGIE, SwimmerAngieText, SwimmerAngieWinText, 0, .AfterScript
+	
+.AfterScript
+	endifjustbattled
+	opentext
+	writetext SwimmerAngieAfterText
+	waitbutton
+	closetext
+	end
 
 Route13SharpBeak:
 	itemball SHARP_BEAK
 
-Route13FruitTree:
-	fruittree FRUITTREE_ROUTE_13
+Route13FruitTree1:
+	fruittree FRUITTREE_ROUTE_13_1
+
+Route13FruitTree2:
+	fruittree FRUITTREE_ROUTE_13_2
 	
 Route13Rock:
 	jumpstd smashrock
@@ -137,6 +151,26 @@ BikerJesseAfterText:
 	line "leave smoke. That"
 	cont "is what I live by!"
 	done
+	
+SwimmerAngieText:
+	text "You creep! Can't"
+	line "you see I'm"
+	cont "changing into my"
+	cont "swimsuit?"
+	done
+	
+SwimmerAngieWinText:
+	text "Just because you"
+	line "won, it doesn't"
+	cont "mean you can still"
+	cont "look!"
+	done
+
+SwimmerAngieAfterText:
+	text "What are you still"
+	line "doing here?"
+	cont "Get lost!"
+	done
 
 Route13_MapEvents:
 	db 0, 0 ; filler
@@ -154,11 +188,11 @@ Route13_MapEvents:
 	object_event 30,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherWayne, -1
 	object_event 23,  6, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, BikerJesse, -1
 	object_event 23, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13Rock, -1
-	object_event 36,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13Rock, -1
-	object_event 37,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13Rock, -1
-	object_event 31, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13FruitTree, -1
-	object_event  6, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13FruitTree, -1
-	object_event 11, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 34,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13Rock, -1
+	object_event 35,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13Rock, -1
+	object_event 31, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13FruitTree1, -1
+	object_event  6, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route13FruitTree2, -1
+	object_event 11, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerAngie, -1
 	object_event 11, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 20, 18, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  3, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

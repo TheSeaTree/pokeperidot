@@ -9,32 +9,94 @@ Route12Shelter_MapScripts:
 
 	db 0 ; callbacks
 	
-.MarowakScene:
-	turnobject ROUTE12SHELTER_LEADER, DOWN
+LeaderMarowakScene:
+	faceplayer
 	opentext
 	writetext Route12LeaderMarowakText
 	waitbutton
 	closetext
 	turnobject ROUTE12SHELTER_KANGASKHAN, LEFT
+	checkcode VAR_FACING
+	ifequal DOWN, .FacingDown
+	ifequal RIGHT, .FacingRight
+.continue
+	faceplayer
 	turnobject PLAYER, RIGHT
+	opentext
+	writetext Route12KangaskhanText
+	cry KANGASKHAN
+	waitbutton
+	closetext
 	turnobject ROUTE12SHELTER_MAROWAK, LEFT
+	opentext
+	writetext Route12MarowakText
+	cry MAROWAK
+	waitbutton
+	closetext
 	turnobject ROUTE12SHELTER_KANGASKHAN, RIGHT
 	opentext
-	writetext KangaskhanText
+	writetext MarowakSomethingToSay
+	waitbutton
+	closetext
+	opentext
+	writetext Route12KangaskhanText
+	writebyte KANGASKHAN
+	special PlaySlowCry
+	waitbutton
+	writetext Route12KangaskhanDisappointed
+	waitbutton
+	closetext
+	turnobject PLAYER, UP
+	opentext
+	writetext MarowakExplainsText
+	waitbutton
+	closetext
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext KangaskhanAgreesText
 	waitbutton
 	closetext
 	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksToDoor
+	turnobject ROUTE12SHELTER_KANGASKHAN, DOWN
+	turnobject PLAYER, DOWN
+	writebyte MAROWAK
+	special PlaySlowCry
 	opentext
 	writetext MarowakWavesGoodbye
 	waitbutton
 	closetext
 	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksOut
+	playsound SFX_EXIT_BUILDING
 	disappear ROUTE12SHELTER_MAROWAK
+	waitsfx
+	turnobject PLAYER, UP
+	opentext
+	writetext Route12LeaderExplaination
+	waitbutton
+	closetext
+	applymovement ROUTE12SHELTER_LEADER, LeaderWalksOut
+	playsound SFX_EXIT_BUILDING
+	disappear ROUTE12SHELTER_LEADER
+	waitsfx
+	setevent EVENT_HIDE_SHELTER_MAROWAK
+	setevent EVENT_ECRUTEAK_GYM_ACCESS
 	end
+	
+.FacingDown
+	applymovement PLAYER, Route12ShelterPlayerFacingDown
+	jump .continue
+
+.FacingRight
+	applymovement PLAYER, Route12ShelterPlayerFacingRight
+	jump .continue	
 	
 Route12ShelterAssistant:
 	faceplayer
 	opentext
+	checkevent EVENT_HIDE_SHELTER_MAROWAK
+	iffalse .Rescued
+	checkevent EVENT_ECRUTEAK_GYM_ACCESS
+	iftrue .MissMarowak
 	checkevent EVENT_HEARD_ROUTE_12_LEADER
 	iftrue .HeardIntro
 	writetext Route12AssistantIntro
@@ -58,6 +120,18 @@ Route12ShelterAssistant:
 	iffalse .No
 	end
 	
+.Rescued
+	writetext Route12AssistantBack
+	waitbutton
+	closetext
+	end
+	
+.MissMarowak
+	writetext Route12AssistantMarowakGone
+	waitbutton
+	closetext
+	end
+	
 Route12ShelterKangaskhan:
 	faceplayer
 	opentext
@@ -69,6 +143,15 @@ Route12ShelterKangaskhan:
 	writetext Route12KangaskhanUpset
 	waitbutton
 .end
+	closetext
+	end
+	
+Route12ShelterMarowak:
+	faceplayer
+	opentext
+	writetext Route12MarowakText
+	cry MAROWAK
+	waitbutton
 	closetext
 	end
 
@@ -91,6 +174,18 @@ LeaderWalksOut:
 	step DOWN
 	turn_step DOWN
 	step_resume
+
+Route12ShelterPlayerFacingDown:
+	step LEFT
+	step DOWN
+	step DOWN
+	step RIGHT
+	step_end
+	
+Route12ShelterPlayerFacingRight:
+	step DOWN
+	step RIGHT
+	step_end
 
 Route12AssistantIntro:
 	text "Oh, this is"
@@ -134,9 +229,10 @@ Route12AssistantYes:
 	line "ROUTE 14 where"
 	cont "MAROWAK would love"
 	cont "to play when it"
-	cont "young. You could"
-	cont "start by looking"
-	cont "there."
+	cont "was young."
+	
+	para "You could start by"
+	cont "looking there."
 	done
 	
 Route12AssistantAfter:
@@ -159,16 +255,48 @@ Route12AssistantNo:
 	line "…For me?"
 	done
 	
+Route12AssistantBack:
+	text "Thank you so much"
+	line "for finding"
+	cont "MAROWAK for us!"
+	done
+	
+Route12AssistantMarowakGone:
+	text "I'm going to miss"
+	line "that #MON, but"
+	cont "it was time for"
+	cont "MAROWAK to go live"
+	cont "out in the wild."
+	done
+	
 Route12LeaderMarowakText:
 	text "I didn't get a"
 	line "chance to thank"
 	cont "you back there!"
 	
-	para "KANGASKHAN thanks"
-	line "you too!"
+	para "It was so selfless"
+	line "of you to help out"
+	cont "MAROWAK like that."
+	
+	para "KANGASKHAN would"
+	line "like to thank you"
+	cont "too!"
 	done
 	
-KangaskhanText:
+MarowakExplainsText:
+	text "MAROWAK says he"
+	line "wants to go out on"
+	cont "his own now"
+	
+	para "He thinks he no"
+	line "longer needs a"
+	cont "guardian, and is"
+	cont "mature enough to"
+	cont "handle himself in"
+	cont "the wild."
+	done
+	
+KangaskhanAgreesText:
 	text "KANGASKHAN nods in"
 	line "agreement to"
 	cont "MAROWAK's request."
@@ -194,23 +322,54 @@ Route12LeaderExplaination:
 	para "I just wish he"
 	line "would have let us"
 	cont "know about it"
-	cont "first."
+	cont "first to save us"
+	cont "the worry."
 	
-	para "Now that this"
-	line "problem was taken"
-	cont "care of, I must"
-	cont "get back to my"
-	cont "duties as a GYM"
+	para "I trust MAROWAK"
+	line "will be okay out"
+	cont "in the wild."
+	
+	para "KANGASKHAN must be"
+	line "hurting, but at"
+	cont "at least she has"
+	cont "my assistant to"
+	cont "keep her company."
+	
+	para "I must get back to"
+	line "my duties as a GYM"
 	cont "leader."
 	
-	para "I await your"
-	line "challenge in the"
-	cont "future, trainer."
+	para "I don't want to"
+	line "think about how"
+	cont "many trainers were"
+	cont "turned away in my"
+	cont "absence."
+	
+	para "Until your"
+	line "challenge,"
+	cont "take care."
 	done
 	
 Route12KangaskhanText:
 	text "KANGASKHAN:"
 	line "Baru-ba!"
+	done
+	
+Route12MarowakText:
+	text "MAROWAK: Kyarugoo!"
+	done
+	
+Route12KangaskhanDisappointed:
+	text "KANGASKHAN has"
+	line "a disappointed"
+	cont "tone in its voice."
+	done
+	
+MarowakSomethingToSay:
+	text "It looks like"
+	line "MAROWAK has"
+	cont "something to tell"
+	cont "KANGASKHAN."
 	done
 	
 Route12KangaskhanUpset:
@@ -232,6 +391,6 @@ Route12Shelter_MapEvents:
 
 	db 4 ; object events
 	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12ShelterAssistant, -1
-	object_event  2,  4, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_SHELTER_MAROWAK
+	object_event  2,  4, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LeaderMarowakScene, EVENT_HIDE_SHELTER_MAROWAK
 	object_event  3,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, -1
-	object_event  4,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_SHELTER_MAROWAK
+	object_event  4,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterMarowak, EVENT_HIDE_SHELTER_MAROWAK

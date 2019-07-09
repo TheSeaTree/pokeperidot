@@ -80,7 +80,7 @@ PalerockMountain2F_MapEvents:
 	warp_event  21,  9, PALEROCK_MOUNTAIN_OUTSIDE, 2
 	warp_event  19,  5, PALEROCK_MOUNTAIN_3F, 1
 	warp_event  11,  8, PALEROCK_MOUNTAIN_3F, 3
-	warp_event  12, 16, PALEROCK_MOUNTAIN_3F, 3
+	warp_event 12, 16, PALEROCK_MOUNTAIN_2F, 1
 
 	db 0 ; coord events
 

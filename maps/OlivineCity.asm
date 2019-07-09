@@ -96,6 +96,45 @@ OlivineCityStandingYoungsterScript:
 	waitbutton
 	closetext
 	end
+	
+OlivineCityMoveTutor:
+	faceplayer
+	opentext
+	writetext OlivineCityTutorText
+	waitbutton
+	checkitem SILVER_LEAF
+	iffalse .NoLeaf
+	writetext OlivineCityTutorTeach
+	yesorno
+	iftrue .IcyWind
+	jump .Refused
+	
+.IcyWind
+	writetext OlivineCityTutorWhichOne
+	buttonsound
+	writebyte ICY_WIND
+	special MoveTutor
+	ifequal $0, .TeachMove
+	jump .Refused
+	
+.TeachMove
+	takeitem SILVER_LEAF
+	writetext OlivineCityTutorThankYou
+	waitbutton
+	closetext
+	end
+	
+.Refused
+	writetext OlivineCityTutorRefused
+	waitbutton
+	closetext
+	end
+	
+.NoLeaf
+	writetext OlivineCityTutorExplainGoldLeaf
+	waitbutton
+	closetext
+	end
 
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
@@ -115,8 +154,8 @@ OlivineLighthouseSign:
 OlivineCityBattleTowerSign:
 	jumptext OlivineCityBattleTowerSignText
 
-OlivineCityPokecenterSign:
-	jumpstd pokecentersign
+OlivineCitySurfHouseSign:
+	jumptext OlivineSurfHouseSignText
 
 OlivineCityMartSign:
 	jumpstd martsign
@@ -277,14 +316,71 @@ OlivineCityBattleTowerSignText_NotYetOpen:
 ; unused; originally shown when the Battle Tower was closed
 	text "BATTLE TOWER AHEAD"
 	done
+	
+OlivineCityTutorText:
+	text "Brr…"
+	
+	para "The w-water is so"
+	line "c-c-cold today."
+	
+	para "I c-could teach"
+	line "your P-P-#MON"
+	cont "how c-cold it is"
+	cont "in exchange for a"
+	cont "SILVER LEAF."
+	done
+
+OlivineCityTutorTeach:
+	text "Would you like to"
+	line "t-teach ICY WIND"
+	cont "to your P-#MON?"
+	done
+
+OlivineCityTutorWhichOne:
+	text "Which #MON"
+	line "should I t-tutor?"
+	done
+
+OlivineCityTutorThankYou:
+	text "Th-thank y-you!"
+	
+	para "I r-really should"
+	line "have asked for a"
+	cont "blanket instead."
+	
+	para "I'm sh-shivering!"
+	done
+
+OlivineCityTutorRefused:
+	text "Well, c-could you"
+	line "g-get me something"
+	cont "warmer to wear"
+	cont "instead?"
+	done
+
+OlivineCityTutorExplainGoldLeaf:
+	text "S-sorry…"
+
+	para "I c-can't t-teach"
+	line "this move without"
+	cont "a S-SILVER LEAF."
+	done
+	
+OlivineSurfHouseSignText:
+	text "CYNARIA COAST"
+	line "SURF HOUSE"
+	
+	para "Members only."
+	done
 
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event  4, 14, ROUTE_14_OLIVINE_GATE, 3
 	warp_event  4, 15, ROUTE_14_OLIVINE_GATE, 4
 	warp_event 17,  5, MAHOGANY_GATE, 3
+	warp_event 23, 11, OLIVINE_SURF_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event 17,  6, SCENE_DEFAULT, OlivineCityRivalSceneTop
@@ -292,10 +388,10 @@ OlivineCity_MapEvents:
 	db 7 ; bg events
 	bg_event 18, 14, BGEVENT_READ, OlivineCitySign
 	bg_event 22, 31, BGEVENT_READ, OlivineCityPortSign
-	bg_event  7, 15, BGEVENT_READ, OlivineGymSign
+	bg_event 25, 31, BGEVENT_READ, OlivineGymSign
 	bg_event 23, 31, BGEVENT_READ, OlivineLighthouseSign
 	bg_event 21, 31, BGEVENT_READ, OlivineCityBattleTowerSign
-	bg_event 25, 31, BGEVENT_READ, OlivineCityPokecenterSign
+	bg_event 22, 12, BGEVENT_READ, OlivineCitySurfHouseSign
 	bg_event 24, 31, BGEVENT_READ, OlivineCityMartSign
 
 	db 5 ; object events
@@ -303,4 +399,4 @@ OlivineCity_MapEvents:
 	object_event 20, 17, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
 	object_event 17, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 17,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
-	object_event 36, 20, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Icy Wind tutor
+	object_event 36, 20, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMoveTutor, -1 ; Icy Wind tutor

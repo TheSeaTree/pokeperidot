@@ -124,6 +124,9 @@ DoorGuard1:
 	checkmoney YOUR_MONEY, 2000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 2000
+	writetext DoorGuard1ThankYou
+	waitbutton
+	closetext
 	setevent GOLDENROD_GYM_DOOR_1
 	changeblock  22 , 32, $4F ; open door
 	playsound SFX_ENTER_DOOR
@@ -542,15 +545,15 @@ DoorGuard1ThankYou:
 	
 	para "You can go now."
 	done
-	
+
 GoldenrodNotEnough:
 	text "Not enough cash?"
 	done
 	
 DoorGuard1Challenge:
-	text "I guess a battle"
-	line "will suffice if"
-	cont "you can't pay."
+	text "If you can't pay,"
+	line "then a battle will"
+	cont "suffice."
 	done
 	
 GuitaristAndyAfterText:

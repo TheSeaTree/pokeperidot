@@ -53,7 +53,7 @@ PowerPlant1FGrimerBattle:
 	waitbutton
 	closetext
 	setlasttalked -1
-	loadwildmon GRIMER, 3
+	loadwildmon GRIMER, 28
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	end
@@ -64,12 +64,51 @@ PowerPlant1FMuk:
 	cry MUK
 	waitbutton
 	closetext
-	loadwildmon MUK, 3
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	loadwildmon MUK, 35
+	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
 	disappear POWERPLANT1F_MUK
-	setevent POWER_PLANT_1F_MUK
+	checkcode VAR_FACING
+	ifequal UP, .FacingUp
+	ifequal LEFT, .FacingLeft
+	moveobject POWERPLANT1F_ADMIN, 14, 2
+	appear POWERPLANT1F_ADMIN
+	applymovement POWERPLANT1F_ADMIN, PowerPlantAdminMovement1
+	opentext 
+	writetext PowerPlant1FAfterText
+	waitbutton
+	closetext
+	applymovement PLAYER, PowerPlantApproachAdmin
+	jump .Continue
+.FacingUp:
+	moveobject POWERPLANT1F_ADMIN, 15, 2
+	appear POWERPLANT1F_ADMIN
+	applymovement POWERPLANT1F_ADMIN, PowerPlantAdminMovement2
+	opentext 
+	writetext PowerPlant1FAfterText
+	waitbutton
+	closetext
+	turnobject PLAYER, LEFT
+	jump .Continue
+.FacingLeft:
+	moveobject POWERPLANT1F_ADMIN, 16, 2
+	appear POWERPLANT1F_ADMIN
+	applymovement POWERPLANT1F_ADMIN, PowerPlantAdminMovement3
+	opentext 
+	writetext PowerPlant1FAfterText
+	waitbutton
+	closetext
+	applymovement PLAYER, PowerPlantBehindMuk
+.Continue:
+	opentext 
+	writetext PowerPlant1FAfterText2
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing RIGHT, POWER_PLANT_1F_B, 5, 20
 	end
 	
 PowerPlantGeneratorDoor:
@@ -88,7 +127,6 @@ PowerPlantGeneratorDoor:
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
-;	takeitem GEN_KEY
 	end
 
 .used
@@ -116,6 +154,46 @@ PowerPlantOfficeKey:
 	
 PowerPlantAdminKey:
 	itemball ADMIN_KEY
+	
+PowerPlantMetalCoat:
+	itemball METAL_COAT
+	
+PowerPlantHyperPotion:
+	itemball HYPER_POTION
+	
+PowerPlantPPUp:
+	itemball PP_UP
+	
+PowerPlantAdminMovement1:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_resume	
+
+PowerPlantAdminMovement2:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_resume
+	
+PowerPlantAdminMovement3:
+	step RIGHT
+	step RIGHT
+	step_resume
+	
+PowerPlantApproachAdmin:
+	step DOWN
+	turn_step LEFT
+	step_resume
+	
+PowerPlantBehindMuk:
+	step LEFT
+	step LEFT
+	step DOWN
+	turn_step LEFT
+	step_resume
 	
 GeneratorKeySlotText:
 	text "It looks like a"
@@ -150,8 +228,10 @@ PowerPlant1FAfterText:
 	text "Wow! You were able"
 	line "to clean up this"
 	cont "place nicely."
+	done
 	
-	para "After the crew I"
+PowerPlant1FAfterText2:
+	text "After the crew I"
 	line "hired failed, I"
 	cont "never thought a"
 	cont "child could handle"
@@ -159,11 +239,13 @@ PowerPlant1FAfterText:
 	
 	para "I should reward"
 	line "you for this, but"
-	cont "let's go outside"
-	cont "first. This place"
-	cont "gives me the"
-	cont "creeps when it's"
-	cont "dark like this."
+	cont "let's get the"
+	cont "lights on first."
+	
+	para "This place gives"
+	line "me the creeps when"
+	cont "it's dark like"
+	cont "this."
 	done
 
 PowerPlant1F_MapEvents:
@@ -186,10 +268,10 @@ PowerPlant1F_MapEvents:
 	object_event 10,  7, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant1FGrimer1, POWER_PLANT_1F_GRIMER_1
 	object_event 29, 17, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant1FGrimer2, POWER_PLANT_1F_GRIMER_2
 	object_event 15, 19, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant1FGrimer3, POWER_PLANT_1F_GRIMER_3
-	object_event 20,  1, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMuk, POWER_PLANT_1F_MUK
-	object_event  0, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
+	object_event 20,  1, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMuk, -1
+	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantHyperPotion, EVENT_POWER_PLANT_HYPER_POTION
+	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantMetalCoat, EVENT_POWER_PLANT_METAL_COAT
+	object_event  0, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantPPUp, EVENT_POWER_PLANT_PP_UP
 	object_event 19, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantAdminKey, EVENT_POWER_PLANT_ADMIN_KEY
 	object_event 30, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantOfficeKey, EVENT_POWER_PLANT_OFFICE_KEY
-	object_event 31,  0, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 31,  0, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

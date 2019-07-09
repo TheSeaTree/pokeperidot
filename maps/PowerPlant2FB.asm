@@ -7,19 +7,7 @@ PowerPlant2FB_MapScripts:
 	callback MAPCALLBACK_TILES, .CardKeyShutterCallback
 
 .CardKeyShutterCallback:
-	checkevent EVENT_USED_OFFICE_KEY
-	iftrue .Office
-	checkevent EVENT_USED_ADMIN_KEY
-	iftrue .Admin
-	return
-
-.Office:
 	changeblock  22, 10, $07 ; open shutter
-	checkevent EVENT_USED_ADMIN_KEY
-	iftrue .Admin
-	return
-
-.Admin:
 	changeblock   6, 10, $07 ; open shutter
 	return
 
@@ -182,6 +170,49 @@ PowerPlantWorkingOnItScript:
 	closetext
 	turnobject LAST_TALKED, UP
 	end
+	
+IronHeadTMSalesman:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM_IRON_HEAD
+	iftrue .GotIronHead
+	checkevent EVENT_POWER_PLANT_BOUGHT_IRON_HEAD
+	iftrue .GotIronHead
+	writetext IronHeadTMSalesmanText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .End
+	checkmoney YOUR_MONEY, 4800
+	ifequal HAVE_LESS, .NotEnoughMoney
+	verbosegiveitem TM_IRON_HEAD
+;	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 4800
+.GotIronHead
+	writetext ExplainIronHeadText
+	waitbutton
+	jump .End
+.NotEnoughMoney
+	writetext IronHeadTMNotEnoughMoney
+	waitbutton
+.End
+	turnobject LAST_TALKED, RIGHT
+	closetext
+	end
+	
+PowerPlantBThunderstone:
+	itemball THUNDERSTONE
+	
+PowerPlantBUltraBall:
+	itemball ULTRA_BALL
+	
+PowerPlantBMagnet:
+	itemball MAGNET
+	
+PowerPlantBElixer:
+	itemball ELIXER
+	
+PowerPlantBFullHeal:
+	itemball FULL_HEAL
 
 StudyingVitaminsText:
 	text "Before this plant"
@@ -253,6 +284,58 @@ TurnedOutGreatText:
 	cont "make you more of"
 	cont "those items."
 	done
+	
+IronHeadTMSalesmanText:
+	text "I have been"
+	line "researching how to"
+	cont "make a new TM."
+	
+	para "I have been able"
+	line "to successfully"
+	cont "create one copy,"
+	cont "but I am not a"
+	cont "trainer myself to"
+	cont "use it."
+	
+	para "Would you like to"
+	line "test it? You must"
+	cont "understand I can't"
+	cont "give you this TM"
+	cont "for free."
+	
+	para "Would you like to"
+	line "buy this TM for"
+	cont "¥4800?"
+	done
+	
+IronHeadTMNotEnoughMoney:
+	text "Sorry, I really"
+	line "can't do this for"
+	cont "free. The R&D was"
+	cont "too expensive."
+	done
+	
+GotIronHeadTMText:
+	text "Hey kid, did you"
+	line "see what happened"
+	cont "to my TM?"
+	
+	para "I left it right on"
+	line "my desk, but now"
+	cont "it's gone."
+	
+ExplainIronHeadText:
+	text "Thank you for"
+	line "helping test my"
+	cont "TM."
+
+	para "IRON HEAD is a"
+	line "powerful STEEL-"
+	cont "type move."
+	
+	para "It may cause the"
+	line "target to flinch."
+	done
 
 PowerPlant2FB_MapEvents:
 	db 0, 0 ; filler
@@ -266,13 +349,12 @@ PowerPlant2FB_MapEvents:
 	db 0 ; bg events
 
 	db 13 ; object events
-	object_event 15, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  9,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 18,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
-	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1 ; Some Item
+	object_event 15, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBUltraBall, EVENT_POWER_PLANT_ULTRA_BALL
+	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBThunderstone, EVENT_POWER_PLANT_THUNDERSTONE
+	object_event  9,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, IronHeadTMSalesman, -1
+	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBFullHeal, EVENT_POWER_PLANT_FULL_HEAL
+	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMagnet, EVENT_POWER_PLANT_MAGNET
+	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBElixer, EVENT_POWER_PLANT_ELIXER
 	object_event 24,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 28,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 20, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, XItemMan, -1

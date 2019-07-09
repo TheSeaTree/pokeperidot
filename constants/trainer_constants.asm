@@ -199,6 +199,7 @@ KRIS EQU __enum__
 	trainerclass SWIMMERF ; 27
 	const VIVIAN
 	const KAIT
+	const ANGIE
 	
 	trainerclass SAILOR ; 28
 	const CALVIN
@@ -259,7 +260,7 @@ KRIS EQU __enum__
 	trainerclass BURGLAR ; 2f
 	const ALLEN
 	const LAMAAR
-	const AVERY
+	const KEN
 	const MARCUS
 	const HARVEY
 	const MANUEL

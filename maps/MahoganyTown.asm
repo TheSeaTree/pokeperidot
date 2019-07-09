@@ -1,25 +1,23 @@
 	const_def 2 ; object constants
+	const MAHOGANYTOWN_MERCHANT1
+	const MAHOGANYTOWN_CLERK
+	const MAHOGANYTOWN_MERCHANT2
+	const MAHOGANYTOWN_MERCHANT3
+	const MAHOGANYTOWN_LASS
+	const MAHOGANYTOWN_ADMIN1
 
 MahoganyTown_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
-
-.DummyScene0:
-	end
-
-.DummyScene1:
-	end
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	return
 	
 PowerPlantDoor:
-	checkevent POWER_PLANT_1F_MUK
+	checkevent EVENT_POWER_PLANT_1F_MUK
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	special FadeOutMusic
@@ -105,6 +103,66 @@ MahoganyTownVendingMachine:
 	db "NES       ¥10000@"
 	db "CANCEL@"
 
+MahoganyMartGuy:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+
+MahoganyPunchGuy:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+	
+MahoganyVitaminGuy:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_3
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+	
+MahoganyTownPowerPlantGuy:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_HM_SURF
+	iftrue .GotSurf
+	checkevent EVENT_EXPLAINED_POWER_PLANT
+	iftrue .ExplainedPlant
+	writetext MahoganyPowerPlantGuyIntroText
+	yesorno
+	iffalse .No
+.Yes
+	setevent EVENT_EXPLAINED_POWER_PLANT
+.ExplainedPlant
+	writetext MahoganyPowerPlantGuyAgree
+	waitbutton
+	closetext
+	end
+	
+.GotSurf
+	writetext MahoganyPowerPlantGotSurf
+	waitbutton
+	closetext
+	end
+	
+.No
+	writetext MahoganyPowerPlantGuyComeBack
+	yesorno
+	iftrue .Yes
+	iffalse .No
+
+MahoganyTownLass:
+	jumptextfaceplayer MahoganyTownLassText
+	
+MahoganyTownFruitTree:
+	fruittree FRUITTREE_MAHOGANY_TOWN
+
 MahoganyVendingText:
 	text "A vending machine!"
 	line "Here's the menu."
@@ -128,24 +186,116 @@ MahoganyVendingNoSpaceText:
 	text "There's no more"
 	line "room for stuff…"
 	done
-	
-;EVENT_EXPLAINED_POWER_PLANT
-;	"Sorry, kid. The SUBWAY is out of commission for the time being. The POWER PLANT isn't producing enough electricity to run the thing. It's ruining this city's economy! We rely on our tourism to stay afloat, and not many people are coming up around here without our SUBWAY system."
-;	"I sent a crew up to check it out, but they were overrun by a group of wild GRIMER that made a nest there. They must be mucking up all the turbines."
-;	"If you think you can clear out those GRIMER, be my guest, but you're going to need a way to get across the lake behind the GYM to reach the POWER PLANT. You're not much of a swimmer, are you?"
-;	"I know! I have a friend down by the coast who owes me a favor. Go find him and he'll give you something to cross the water."
-;	"Now that you have the HM for SURF, you can access the POWER PLANT."
 
+MahoganyPowerPlantGuyIntroText:
+	text "Sorry, kid."
+	
+	para "The SUBWAY is out"
+	line "of commission for"
+	cont "the time being."
+	
+	para "The POWER PLANT is"
+	line "not producing"
+	cont "enough electricity"
+	cont "to run the thing."
+	
+	para "This city relies"
+	line "on tourism to make"
+	cont "the majority of"
+	cont "its money. With no"
+	cont "SUBWAY, this city"
+	cont "is not accessible"
+	cont "enough for non-"
+	cont "trainers."
+	
+	para "I sent a crew up"
+	line "to the POWER PLANT"
+	cont "to check it out,"
+	cont "but they were not"
+	cont "able to deal with"
+	cont "the wild GRIMER"
+	cont "nesting there."
+	
+	para "They must be muck-"
+	line "ing up all the"
+	cont "turbines."
+	
+	para "It's a lot to ask,"
+	line "but would you take"
+	cont "care of them?"
+	done
+	
+MahoganyPowerPlantGuyComeBack:
+	text "What do you mean"
+	line "you won't?"
+	
+	para "Our economy is on"
+	line "the line!"
+	done
+	
+MahoganyPowerPlantGuyAgree:
+	text "You will need a"
+	line "way to get across"
+	cont "the lake behind"
+	cont "the GYM, and you"
+	cont "don't look like"
+	cont "much of a swimmer."
+	
+	para "I have a buddy"
+	line "down on the shore."
+	
+	para "He's not too kind"
+	line "to outsiders, but"
+	cont "he owes me a favor"
+	cont "so I'll let him"
+	cont "know you are"
+	cont "coming."
+	
+	para "He can get you"
+	line "something to cross"
+	cont "the water."
+	done
+	
+MahoganyPowerPlantGotSurf:
+	text "Now that you have"
+	line "the HM for SURF,"
+	cont "you can cross the"
+	cont "water and clean up"
+	cont "the POWER PLANT."
+	done
+	
+MahoganyTownLassText:
+	text "With the merchants"
+	line "all trying to sell"
+	cont "items to the"
+	cont "tourists staying"
+	cont "at the hotel, this"
+	cont "city's #MART"
+	cont "owner sold his"
+	cont "shop to join them."
+	
+	para "He couldn't beat"
+	line "the competition"
+	cont "otherwise."
+	done
+	
+MahoganyTownStockChangesText:
+	text "My stock changes"
+	line "daily!"
+	done
+	
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 8 ; warp events
 	warp_event 23, 33, MAHOGANY_GATE, 1
 	warp_event 24, 33, MAHOGANY_GATE, 2
 	warp_event  2,  3, MAHOGANY_TOWN, 3
 	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
 	warp_event 10, 19, MAHOGANY_MAGNET_TRAIN_STATION, 1
 	warp_event 24, 13, MAHOGANY_GYM, 1
+	warp_event 35, 19, EMYS_HOUSE, 1
+	warp_event 37,  9, MOVE_DELETERS_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
@@ -153,9 +303,11 @@ MahoganyTown_MapEvents:
 	db 1 ; bg events
 	bg_event 24, 21, BGEVENT_UP, MahoganyTownVendingMachine
 
-	db 5 ; object events
+	db 7 ; object events
 	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 26, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 25, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 29, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 10, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 26, 17, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMartGuy, -1
+	object_event 25, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPunchGuy, -1
+	object_event 29, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyVitaminGuy, -1
+	object_event 26, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
+	object_event 10, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownPowerPlantGuy, EVENT_POWER_PLANT_1F_MUK
+	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

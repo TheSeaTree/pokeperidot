@@ -162,8 +162,8 @@ CheckCounterTile::
 CheckPitTile::
 	cp COLL_PIT
 	ret z
-	cp COLL_PIT_68
-	ret
+	cp COLL_BUTTON
+	ret z
 
 CheckIceTile::
 	cp COLL_ICE

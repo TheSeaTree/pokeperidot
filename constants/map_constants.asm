@@ -33,6 +33,7 @@ ENDM
 	map_const OLIVINE_MART,                                 6,  4 ;  8
 	map_const OLIVINE_CITY,                                24, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
+	map_const OLIVINE_SURF_HOUSE,							4,  4
 
 	newgroup                                                      ;  2
 
@@ -45,6 +46,8 @@ ENDM
 	map_const POWER_PLANT_2F_B,							   16,  8
 	map_const MAHOGANY_GATE,							    5,  4
 	map_const MAHOGANY_MAGNET_TRAIN_STATION,               10,  9 ;  7
+	map_const EMYS_HOUSE,									4,  4
+	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 
 	newgroup                                                      ;  3
 
@@ -93,7 +96,6 @@ ENDM
 	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
-	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const BLACKTHORN_CITY,                             20, 18 ; 10
 
 	newgroup                                                      ;  6
@@ -206,7 +208,7 @@ ENDM
 	map_const ROUTE_14,                                    23, 14 ;  2
 	map_const ROUTE_14_CAVE_1F, 							9, 11
 	map_const ROUTE_14_CAVE_2F,							   10, 10
-	map_const ROUTE_15,                                    20,  9 ;  3
+	map_const ROUTE_15,                                    20, 19 ;  3
 	map_const ROUTE_18,                                    10,  9 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
@@ -227,7 +229,7 @@ ENDM
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
 	map_const ROUTE_16,                                    24, 14 ;  2
-	map_const ROUTE_17,                                    10, 45 ;  3
+	map_const ROUTE_17,                                    20, 21 ;  3
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
 	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25

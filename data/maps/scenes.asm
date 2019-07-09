@@ -29,7 +29,7 @@ MapScenes::
 	scene_var AZALEA_GYM,                                  wRoute34SceneID ; unused
 	scene_var VIOLET_GYM,                                  wVioletGymSceneID
 	scene_var ECRUTEAK_POKECENTER_1F,                      wEcruteakPokecenter1FSceneID
-	scene_var MAHOGANY_TOWN,                               wMahoganyTownSceneID
+	scene_var POWER_PLANT_1F_B,                            wMahoganyTownSceneID
 	scene_var CIANWOOD_CITY,                               wCianwoodCitySceneID
 	scene_var PALEROCK_MOUNTAIN_3F,                        wBattleTowerOutsideSceneID ; unused
 	scene_var MOUNT_MOON,                                  wMountMoonSceneID

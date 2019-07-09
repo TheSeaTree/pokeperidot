@@ -108,7 +108,8 @@ ENDM
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
 
-	map_attributes OlivineCity, OLIVINE_CITY, $35, 0
+	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
+	connection east, Route15, ROUTE_15, 3
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
 	connection north, PaintersForest, PAINTERS_FOREST, 5
@@ -131,15 +132,21 @@ ENDM
 	map_attributes Route1, ROUTE_1, $05, NORTH
 	connection north, NewBarkTown, NEW_BARK_TOWN, 1
 
-	map_attributes Route17, ROUTE_17, $43, 0
+	map_attributes Route17, ROUTE_17, $71, WEST
+	connection west, Route15, ROUTE_15, -5
 
-	map_attributes Route16, ROUTE_16, $35, 0
+	map_attributes Route16, ROUTE_16, $35, NORTH | SOUTH
+	connection north, Route15, ROUTE_15, -2
+	connection south, Route8, ROUTE_8, -6
 
 	map_attributes Route7, ROUTE_7, $35, WEST | EAST
 	connection west, Route8, ROUTE_8, 2
 	connection east, Route6, ROUTE_6, 1
 
-	map_attributes Route15, ROUTE_15, $0f, 0
+	map_attributes Route15, ROUTE_15, $35, SOUTH | WEST | EAST
+	connection south, Route16, ROUTE_16, 2
+	connection west, OlivineCity, OLIVINE_CITY, -3
+	connection east, Route17, ROUTE_17, 5
 
 	map_attributes Route18, ROUTE_18, $43, 0
 	
@@ -323,7 +330,7 @@ ENDM
 	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
 	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
-	map_attributes LostLand, LOST_LAND, $05, 0
+	map_attributes LostLand, LOST_LAND, $20, 0
 	map_attributes Route12EcruteakGate, ROUTE_12_ECRUTEAK_GATE, $00, 0
 	map_attributes Route12Shelter, ROUTE_12_SHELTER, $00, 0
 	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0
@@ -336,3 +343,5 @@ ENDM
 	map_attributes PowerPlant2FB, POWER_PLANT_2F_B, $00, 0
 	map_attributes MahoganyGate, MAHOGANY_GATE, $00, 0
 	map_attributes MahoganyMagnetTrainStation, MAHOGANY_MAGNET_TRAIN_STATION, $00, 0
+	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
+	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0

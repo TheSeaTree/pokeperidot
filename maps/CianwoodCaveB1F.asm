@@ -5,13 +5,13 @@ CianwoodCaveB1F_MapScripts:
 
 	db 0 ; callbacks
 	
-TrainerBurglarAvery:
-	trainer BURGLAR, AVERY, EVENT_BEAT_BURGLAR_AVERY, BurglarAveryText, BurglarAveryWinText, 0, .Script
+TrainerBurglarKen:
+	trainer BURGLAR, KEN, EVENT_BEAT_BURGLAR_KEN, BurglarKenText, BurglarKenWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BurglarAveryAfterText
+	writetext BurglarKenAfterText
 	waitbutton
 	closetext
 	end	
@@ -36,7 +36,7 @@ CianwoodCaveHikerText:
 	cont "stolen!"
 	done
 	
-BurglarAveryText:
+BurglarKenText:
 	text "Those idiots let a"
 	line "kid all the way up"
 	cont "here?"
@@ -45,13 +45,13 @@ BurglarAveryText:
 	line "further!"
 	done
 	
-BurglarAveryWinText:
+BurglarKenWinText:
 	text "The boss said this"
 	line "was gonna be an"
 	cont "easy job."
 	done
 
-BurglarAveryAfterText:
+BurglarKenAfterText:
 	text "This place wasn't"
 	line "supposed to have"
 	cont "anyone to stop us!"
@@ -72,5 +72,5 @@ CianwoodCaveB1F_MapEvents:
 
 	db 3 ; object events
 	object_event  19, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB1FBoulder, -1
-	object_event  31, 7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarAvery, EVENT_CLEARED_CHURCH
+	object_event  31, 7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarKen, EVENT_CLEARED_CHURCH
 	object_event   4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCaveHiker, EVENT_CLEARED_CHURCH

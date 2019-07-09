@@ -27,7 +27,7 @@ OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
 MahoganyRedGyaradosSpeechHouse_Blocks:
 BlackthornDragonSpeechHouse_Blocks:
-BlackthornEmysHouse_Blocks:
+MahoganyEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
@@ -202,6 +202,7 @@ VioletNicknameSpeechHouse_Blocks:
 ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
+OlivineSurfHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:

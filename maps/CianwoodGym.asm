@@ -14,7 +14,7 @@ CianwoodGymChuckScript:
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_WHITNEY
-	iftrue .FightDone
+	iftrue .AlreadyGotTM
 	writetext ChuckIntroText1
 	waitbutton
 	closetext
@@ -30,8 +30,6 @@ CianwoodGymChuckScript:
 	setflag ENGINE_PLAINBADGE
 	checkcode VAR_BADGES
 .FightDone:
-	checkevent EVENT_GOT_TM_TELEPORT
-	iftrue .AlreadyGotTM
 	setevent EVENT_BEAT_SCIENTIST_ADRIAN
 	setevent EVENT_BEAT_PSYCHIC_PARKER
 	setevent EVENT_BEAT_PSYCHIC_CHRISTIAN
