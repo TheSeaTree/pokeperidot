@@ -1097,9 +1097,9 @@ TentacoolEvosAttacks:
 	db 1, POISON_STING
 	db 4, SUPERSONIC
 	db 7, TACKLE
-	db 10, ACID
+	db 10, WRAP
 	db 16, BUBBLEBEAM
-	db 19, WRAP
+	db 19, ACID
 	db 28, BARRIER
 	db 31, SLUDGE_BOMB
 	db 37, SCREECH
@@ -1111,9 +1111,9 @@ TentacruelEvosAttacks:
 	db 1, POISON_STING
 	db 4, SUPERSONIC
 	db 7, TACKLE
-	db 10, ACID
+	db 10, WRAP
 	db 16, BUBBLEBEAM
-	db 19, WRAP
+	db 19, ACID
 	db 28, BARRIER
 	db 32, SLUDGE_BOMB
 	db 40, SCREECH
@@ -2726,7 +2726,7 @@ ChinchouEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, BUBBLEBEAM
 	db 23, SPARK
-	db 28, BUG_BUZZ
+	db 28, PSYBEAM
 	db 31, FLAIL
 	db 34, THUNDERBOLT
 	db 39, DOUBLE_EDGE
@@ -2744,7 +2744,7 @@ LanturnEvosAttacks:
 	db 20, BUBBLEBEAM
 	db 23, SPARK
 	db 27, RECOVER
-	db 29, BUG_BUZZ
+	db 29, PSYBEAM
 	db 33, FLAIL
 	db 37, THUNDERBOLT
 	db 43, DOUBLE_EDGE
@@ -2860,7 +2860,7 @@ MareepEvosAttacks:
 	db 18, DOUBLE_EDGE
 	db 25, CONFUSE_RAY
 	db 32, THUNDERBOLT
-	db 39, BUG_BUZZ
+	db 39, PSYBEAM
 	db 43, LIGHT_SCREEN
 	db 46, THUNDER
 	db 0 ; no more level-up moves
@@ -2876,7 +2876,7 @@ FlaaffyEvosAttacks:
 	db 20, DOUBLE_EDGE
 	db 29, CONFUSE_RAY
 	db 38, THUNDERBOLT
-	db 47, BUG_BUZZ
+	db 47, PSYBEAM
 	db 52, LIGHT_SCREEN
 	db 56, THUNDER
 	db 0 ; no more level-up moves
@@ -2892,7 +2892,7 @@ AmpharosEvosAttacks:
 	db 29, CONFUSE_RAY
 	db 30, THUNDERPUNCH
 	db 40, THUNDERBOLT
-	db 51, BUG_BUZZ
+	db 51, PSYBEAM
 	db 57, LIGHT_SCREEN
 	db 62, THUNDER
 	db 65, DRAGONBREATH
