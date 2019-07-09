@@ -76,8 +76,10 @@ AlphabeticalPokedexOrder:
 	db GOLBAT
 	db GOLDEEN
 	db GOLEM
+	db TANGROWTH
 	db GRANBULL
 	db GRAVELER
+	db GREMINI
 	db GRIMER
 	db GROWLITHE
 	db GYARADOS
@@ -205,7 +207,6 @@ AlphabeticalPokedexOrder:
 	db SLUGMA
 	db SMEARGLE
 	db SMOOCHUM
-	db TUNGTYED
 	db SNORLAX
 	db SNOWMAD
 	db SNUBBULL
@@ -222,13 +223,12 @@ AlphabeticalPokedexOrder:
 	db SUNKERN
 	db SWINUB
 	db TANGELA
-	db TANGROWTH
 	db TAUROS
 	db TEDDIURSA
 	db TENTACOOL
 	db TENTACRUEL
-	db GREMINI
 	db TOTODILE
+	db TUNGTYED
 	db TYPHLOSION
 	db TYRANITAR
 	db UMBREON
