@@ -916,13 +916,13 @@ ItFailedText:
 	prompt
 
 DidntAffect1Text:
-	text "<TARGET> was"
-	line "unaffected!"
+	text "<TARGET>"
+	line "was unaffected!"
 	prompt
 
 DidntAffect2Text:
-	text "<TARGET> was"
-	line "unaffected!"
+	text "<TARGET>"
+	line "was unaffected!"
 	prompt
 
 HPIsFullText:
