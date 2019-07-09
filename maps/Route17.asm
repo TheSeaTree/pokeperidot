@@ -3,13 +3,7 @@
 Route17_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .AlwaysOnBike
-
-.AlwaysOnBike:
-	setflag ENGINE_ALWAYS_ON_BIKE
-	setflag ENGINE_DOWNHILL
-	return
+	db 0 ; callbacks
 
 Route17_MapEvents:
 	db 0, 0 ; filler

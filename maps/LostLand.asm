@@ -5,6 +5,23 @@ LostLand_MapScripts:
 
 	db 0 ; callbacks
 
+LostLandAerodactyl:
+	opentext
+	writetext LostLandAerodactylText
+	cry AERODACTYL
+	waitbutton
+	closetext
+	loadwildmon AERODACTYL, 35
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	end
+
+LostLandAerodactylText:
+	text "AERODACTYL:"
+	line "Scree-ee!"
+	done
+
 LostLand_MapEvents:
 	db 0, 0 ; filler
 
@@ -18,4 +35,4 @@ LostLand_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  29,  9, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  29,  9, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, -1
