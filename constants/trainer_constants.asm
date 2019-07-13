@@ -147,7 +147,6 @@ KRIS EQU __enum__
 	const LUCAS
 
 	trainerclass COOLTRAINERF ; 1c
-	const REGGIE
 	const ANYA
 	
 	trainerclass BEAUTY ; 1d
@@ -156,6 +155,7 @@ KRIS EQU __enum__
 	const JILL
 	const TRACEY
 	const REBECCA
+	const REGGIE
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -163,6 +163,7 @@ KRIS EQU __enum__
 	const DYLAN
 	const TRENT
 	const TYLER
+	const DEXTER
 
 	trainerclass GRUNTM ; 1f
 
@@ -211,6 +212,7 @@ KRIS EQU __enum__
 	const SHANE
 	const STEVEN
 	const PETER
+	const PAT
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -248,6 +250,7 @@ KRIS EQU __enum__
 	const RAY
 	const OMAR
 	const DEAN
+	const CARTER
 	
 	trainerclass BIKER ; 2d
 	const JERRY
@@ -271,6 +274,7 @@ KRIS EQU __enum__
 	const BRIAN
 	const ROBIN
 	const WAYNE
+	const DREW
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT

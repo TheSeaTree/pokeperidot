@@ -45,12 +45,14 @@ UnionCaveRivalScene:
 	closetext
 	playsound SFX_FULL_HEAL
 	waitsfx
+	opentext
+	writetext UnionCaveRivalMuchBetterText
+	waitbutton
+	closetext
 	showemote EMOTE_QUESTION, UNIONCAVE1F_RIVAL, 15
 	faceplayer
-	opentext
-	writetext UnionCaveRivalText2
-	waitbutton
 	playmusic MUSIC_RIVAL_ENCOUNTER
+	opentext
 	writetext UnionCaveRivalChallengeText
 	waitbutton
 	closetext
@@ -91,7 +93,9 @@ UnionCaveRivalScene:
 	waitbutton
 	closetext
 	applymovement UNIONCAVE1F_RIVAL, UnionCaveRivalLeave
-;	disappear UNIONCAVE1F_RIVAL
+	playsound SFX_WARP_FROM
+	waitsfx
+	disappear UNIONCAVE1F_RIVAL
 	setevent EVENT_RIVAL_UNION_CAVE
 	playmapmusic
 	end
@@ -128,8 +132,7 @@ UnionCave1FHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_UNION_CAVE_1F_HIDDEN_RARE_CANDY
 	
 UnionCaveRivalLeave:
-	step_dig 32
-	hide_object
+	teleport_from
 	step_resume
 	
 PokemaniacTrentText:
@@ -164,7 +167,12 @@ UnionCaveRivalText:
 	cont "up."
 	done
 	
-UnionCaveRivalText2:
+UnionCaveRivalMuchBetterText:
+	text "There."
+	line "Much better."
+	done
+	
+UnionCaveRivalChallengeText:
 	text "You again?"
 	
 	para "Look, kid. You may"
@@ -174,10 +182,10 @@ UnionCaveRivalText2:
 	cont "gotten a lot"
 	cont "stronger since"
 	cont "then!"
-	done
 	
-UnionCaveRivalChallengeText:
-	text "My party is"
+	para "Prepare yourself!"
+	
+	para "My party is"
 	line "healed up and"
 	cont "ready to test"
 	cont "their might!"
@@ -186,7 +194,7 @@ UnionCaveRivalChallengeText:
 UnionCaveRivalWinText:
 	text "I must have just"
 	line "gotten some bad"
-	cont "POTIONS."
+	cont "POTIONs."
 	
 	para "If my team was at"
 	line "full strength, you"

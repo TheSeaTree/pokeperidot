@@ -43,6 +43,50 @@ UnionCaveB1FBulldozeGuy:
 	waitbutton
 	closetext
 	end
+	
+TrainerFirebreatherDrew:
+	trainer FIREBREATHER, DREW, EVENT_BEAT_FIREBREATHER_DREW, FirebreatherDrewText, FirebreatherDrewWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext FirebreatherDrewAfterText
+	waitbutton
+	closetext
+	end		
+
+TrainerPokemaniacDexter:
+	trainer POKEMANIAC, DEXTER, EVENT_BEAT_POKEMANIAC_DEXTER, PokemaniacDexterText, PokemaniacDexterWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokemaniacDexterAfterText
+	waitbutton
+	closetext
+	end		
+
+TrainerSuperNerdPat:
+	trainer SUPER_NERD, PAT, EVENT_BEAT_SUPER_NERD_PAT, SuperNerdPatText, SuperNerdPatWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SuperNerdPatAfterText
+	waitbutton
+	closetext
+	end		
+
+TrainerHikerCarter:
+	trainer HIKER, CARTER, EVENT_BEAT_HIKER_CARTER, HikerCarterText, HikerCarterWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HikerCarterAfterText
+	waitbutton
+	closetext
+	end		
 
 BulldozeGuyLookingForDiglett:
 	text "Augh…"
@@ -107,6 +151,58 @@ BulldozeGuyNo:
 	line "on this tunnel."
 	done
 	
+FirebreatherDrewText:
+	text "I am a"
+	line "#MON trainer."
+	done
+	
+FirebreatherDrewWinText:
+	text "I lost."
+	done
+	
+FirebreatherDrewAfterText:
+	text "I lost."
+	done
+	
+PokemaniacDexterText:
+	text "I am a"
+	line "#MON trainer."
+	done
+	
+PokemaniacDexterWinText:
+	text "I lost."
+	done
+	
+PokemaniacDexterAfterText:
+	text "I lost."
+	done
+	
+SuperNerdPatText:
+	text "I am a"
+	line "#MON trainer."
+	done
+	
+SuperNerdPatWinText:
+	text "I lost."
+	done
+	
+SuperNerdPatAfterText:
+	text "I lost."
+	done
+	
+HikerCarterText:
+	text "I am a"
+	line "#MON trainer."
+	done
+	
+HikerCarterWinText:
+	text "I lost."
+	done
+	
+HikerCarterAfterText:
+	text "I lost."
+	done
+	
 UnionCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -118,13 +214,11 @@ UnionCaveB1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 7 ; object events
 	object_event 32,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBulldozeGuy, -1
-	object_event 22, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, ObjectEvent, -1 ; Trainer
-	object_event 35, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, ObjectEvent, -1 ; Trainer
-	object_event  4, 21, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, ObjectEvent, -1 ; Trainer
-	object_event 17, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, ObjectEvent, -1 ; Trainer
-	object_event 12,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 2, ObjectEvent, -1 ; Trainer
-	object_event 17,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, ObjectEvent, -1 ; Trainer, Foreman
-	object_event 19, 21, SPRITE_POKEBALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item
-	object_event  6,  9, SPRITE_POKEBALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item
+	object_event 16, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherDrew, -1
+	object_event 35, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacDexter, -1
+	object_event 18, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdPat, -1
+	object_event 17,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerHikerCarter, -1
+	object_event 19, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item

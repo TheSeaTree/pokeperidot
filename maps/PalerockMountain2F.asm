@@ -42,27 +42,27 @@ PalerockMountain2F_MapScripts:
 PalerockMountain2FBoulder:
 	jumpstd strengthboulder
 	
-TrainerCooltrainerFReggie:
-	trainer COOLTRAINERF, REGGIE, EVENT_BEAT_COOLTRAINERF_REGGIE, CooltrainerFReggieText, CooltrainerFReggieWinText, 0, .Script
+TrainerBeautyReggie:
+	trainer BEAUTY, REGGIE, EVENT_BEAT_BEAUTY_REGGIE, BeautyReggieText, BeautyReggieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext CooltrainerFReggieAfterText
+	writetext BeautyReggieAfterText
 	waitbutton
 	closetext
 	end	
 	
-CooltrainerFReggieText:
+BeautyReggieText:
 	text "I am a"
 	line "#MON trainer!"
 	done
 	
-CooltrainerFReggieWinText:
+BeautyReggieWinText:
 	text "I lost."
 	done
 	
-CooltrainerFReggieAfterText:
+BeautyReggieAfterText:
 	text "I lost."
 	done
 	
@@ -89,5 +89,5 @@ PalerockMountain2F_MapEvents:
 	db 3 ; object events
 	object_event  10,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain2FBoulder, EVENT_BOULDER_IN_PALEROCK_2A
 	object_event 12, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOULDER_IN_PALEROCK_2B
-	object_event  3, 11, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerCooltrainerFReggie, -1
+	object_event  3, 11, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyReggie, -1
 	
