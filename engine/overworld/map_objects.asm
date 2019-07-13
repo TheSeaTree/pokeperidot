@@ -1251,7 +1251,6 @@ TeleportFrom:
 	dec [hl]
 	ret nz
 	call IncrementObjectStructField1c
-	ret
 
 .InitSpinRise:
 	ld hl, OBJECT_STEP_FRAME
@@ -1259,10 +1258,10 @@ TeleportFrom:
 	ld [hl], 0
 	ld hl, OBJECT_1F
 	add hl, bc
-	ld [hl], $20
+	ld [hl], $10
 	ld hl, OBJECT_STEP_DURATION
 	add hl, bc
-	ld [hl], 32
+	ld [hl], 16
 	ld hl, OBJECT_FLAGS2
 	add hl, bc
 	res OVERHEAD_F, [hl]
