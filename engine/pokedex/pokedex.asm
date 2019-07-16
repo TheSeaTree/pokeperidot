@@ -1070,7 +1070,7 @@ Pokedex_DrawMainScreenBG:
 	hlcoord 5, 15
 	lb bc, 1, 3
 	call PrintNum
-	hlcoord 1, 17
+	hlcoord 2, 17
 	ld de, String_SELECT_OPTION
 	call Pokedex_PlaceString
 	hlcoord 8, 1
@@ -1097,10 +1097,10 @@ String_SEEN:
 String_OWN:
 	db "OWN", -1
 String_SELECT_OPTION:
-	db $3b, $48, $49, $4a, $44, $45, $46, $47 ; SELECT > OPTION
+	db $3b, $41, $42, $43, $44, $45, $46 ; SELECT > OPTION
 	; fallthrough
 String_START_SEARCH:
-	db $3c, $3b, $41, $42, $43, $4b, $4c, $4d, $4e, $3c, -1 ; START > SEARCH
+	db $6b, $32, $3b, $48, $49, $4a, $4b, $4c, $4d, $6c, -1 ; START > SEARCH
 
 Pokedex_DrawDexEntryScreenBG:
 	call Pokedex_FillBackgroundColor2
