@@ -211,7 +211,7 @@ OlivineCityRivalText:
 	line "my way is."
 	
 	para "If you won't get"
-	cont "out of the way,"
+	line "out of the way,"
 	cont "I'll move you"
 	cont "myself!"
 	done
