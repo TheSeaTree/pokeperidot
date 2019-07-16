@@ -780,9 +780,7 @@ DiglettEvosAttacks:
 
 DugtrioEvosAttacks:
 	db 0 ; no more evolutions
-if _CRYSTAL
 	db 1, TRI_ATTACK
-endc
 	db 1, SAND_ATTACK
 	db 1, SCRATCH
 	db 4, GROWL
@@ -1402,9 +1400,7 @@ CloysterEvosAttacks:
 	db 1, AURORA_BEAM
 	db 1, PROTECT
 	db 13, SPIKE_CANNON
-if _CRYSTAL
 	db 28, SPIKES
-endc
 	db 50, BLIZZARD
 	db 0 ; no more level-up moves
 
@@ -1657,9 +1653,7 @@ HitmonleeEvosAttacks: ; Crownster
 	db 1, AURORA_BEAM
 	db 1, PROTECT
 	db 13, SPIKE_CANNON
-if _CRYSTAL
 	db 28, SPIKES
-endc
 	db 50, BLIZZARD
 	db 0 ; no more level-up moves
 
@@ -1682,6 +1676,7 @@ SearionEvosAttacks:
 
 LickitungEvosAttacks:
 	db EVOLVE_LEVEL, 33, TUNGTYED
+	db 0 ; no more evolutions
 	db 1, LICK
 	db 5, SUPERSONIC
 	db 9, DEFENSE_CURL
@@ -3328,9 +3323,7 @@ GranbullEvosAttacks:
 
 QwilfishEvosAttacks:
 	db 0 ; no more evolutions
-if _CRYSTAL
 	db 1, SPIKES
-endc
 	db 1, TACKLE
 	db 1, POISON_STING
 	db 10, HARDEN
@@ -3460,9 +3453,7 @@ SwinubEvosAttacks:
 	db 28, DOUBLE_EDGE
 	db 37, MIST
 	db 46, BLIZZARD
-if _CRYSTAL
 	db 55, AMNESIA
-endc
 	db 0 ; no more level-up moves
 
 PiloswineEvosAttacks:
@@ -3476,9 +3467,7 @@ PiloswineEvosAttacks:
 	db 33, FURY_ATTACK
 	db 42, MIST
 	db 56, BLIZZARD
-if _CRYSTAL
 	db 70, AMNESIA
-endc
 	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
@@ -3787,17 +3776,10 @@ SuicuneEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BITE
 	db 1, LEER
-if _CRYSTAL
 	db 11, BUBBLEBEAM
 	db 21, RAIN_DANCE
 	db 31, GUST
 	db 41, AURORA_BEAM
-else
-	db 11, WATER_GUN
-	db 21, ROAR
-	db 31, GUST
-	db 41, BUBBLEBEAM
-endc
 	db 51, MIST
 	db 61, MIRROR_COAT
 	db 71, HYDRO_PUMP
