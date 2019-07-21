@@ -1665,8 +1665,8 @@ SearionEvosAttacks:
 	db 1, GROWL
 	db 19, ENCORE
 	db 21, FLAME_WHEEL
-	db 24, BUBBLEBEAM
-	db 28, BUBBLE
+	db 24, BUBBLE
+	db 28, BUBBLEBEAM
 	db 33, DOUBLESLAP
 	db 44, FLAMETHROWER
 	db 49, HYDRO_PUMP
@@ -2780,7 +2780,7 @@ IgglybuffEvosAttacks:
 	db 11, MIMIC
 	db 0 ; no more level-up moves
 
-ShifurEvosAttacks: ; Shifur
+ShifurEvosAttacks:
 	db EVOLVE_LEVEL, 28, SNOWMAD
 	db 0 ; no more evolutions
 	db 1, SCRATCH
@@ -2798,7 +2798,7 @@ ShifurEvosAttacks: ; Shifur
 	db 47, EXTREMESPEED
 	db 0 ; no more level-up moves
 
-SnowmadEvosAttacks: ; Snowmad
+SnowmadEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, LEER
@@ -3632,7 +3632,7 @@ StantlerEvosAttacks:
 
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SKETCH
+	db  1, SKETCH
 	db 11, SKETCH
 	db 21, SKETCH
 	db 31, SKETCH
