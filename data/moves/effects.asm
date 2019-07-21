@@ -2249,3 +2249,35 @@ Growth:
 	statupfailtext
 	endmove
 	
+SleepPowder:
+	checkobedience
+	usedmovetext
+	doturn
+	checkgrasstype
+	checkhit
+	checksafeguard
+	sleeptarget
+	endmove
+
+PoisonPowder:
+	checkobedience
+	usedmovetext
+	doturn
+	checkgrasstype
+	checkhit
+	stab
+	checksafeguard
+	poison
+	endmove
+
+StunSpore:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checkgrasstype
+	checksafeguard
+	paralyze
+	endmove
+	

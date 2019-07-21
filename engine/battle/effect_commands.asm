@@ -4152,6 +4152,29 @@ CheckIfTargetIsElectricType:
 	ld a, [de]
 	cp ELECTRIC
 	ret
+	
+BattleCommand_CheckGrassType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+
+	ld a, [de]
+	cp GRASS
+	jr z, .targetisgrass
+	inc de
+	ld a, [de]
+	cp GRASS
+	jr z, .targetisgrass
+	ret
+	
+.targetisgrass
+	call AnimateFailedMove
+	ld hl, DoesntAffectText
+	call StdBattleTextBox
+	jp EndMoveEffect
 
 BattleCommand_AttackUp:
 ; attackup

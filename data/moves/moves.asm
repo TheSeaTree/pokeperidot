@@ -88,9 +88,9 @@ Moves: ; 41afb
 	move GROWTH,       EFFECT_GROWTH,              0, GRASS,    100, 40,   0
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,     95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,    100, 10,   0
-	move POISONPOWDER, EFFECT_POISON,              0, POISON,    75, 35,   0
-	move STUN_SPORE,   EFFECT_PARALYZE,            0, GRASS,     75, 30,   0
-	move SLEEP_POWDER, EFFECT_SLEEP,               0, GRASS,     75, 15,   0
+	move POISONPOWDER, EFFECT_POISONPOWDER,        0, POISON,    75, 35,   0
+	move STUN_SPORE,   EFFECT_STUN_SPORE,          0, GRASS,     75, 30,   0
+	move SLEEP_POWDER, EFFECT_SLEEP_POWDER,        0, GRASS,     75, 15,   0
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, GRASS,    100, 10,   0
 	move STRING_SHOT,  EFFECT_SPEED_DOWN,          0, BUG,       95, 40,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,   100, 10,   0
@@ -118,7 +118,7 @@ Moves: ; 41afb
 	move DOUBLE_TEAM,  EFFECT_EVASION_UP,          0, NORMAL,   100, 15,   0
 	move RECOVER,      EFFECT_HEAL,                0, NORMAL,   100, 20,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,   100, 30,   0
-	move MINIMIZE,     EFFECT_EVASION_UP,          0, NORMAL,   100, 20,   0
+	move MINIMIZE,     EFFECT_EVASION_UP_2,        0, NORMAL,   100, 20,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,    100, 10,   0
 	move CONVERSIONZ,  EFFECT_CONVERSIONZ,         0, NORMAL,   100,  1,   0
@@ -143,7 +143,7 @@ Moves: ; 41afb
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,   100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,   100, 15,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, WATER,    100, 15,   0
-	move QUIVER_DANCE, EFFECT_QUIVER_DANCE,        0, BUG,      100, 35,   0
+	move QUIVER_DANCE, EFFECT_QUIVER_DANCE,        0, BUG,      100, 15,   0
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC,  100, 20,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING, 100, 10,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
@@ -158,7 +158,7 @@ Moves: ; 41afb
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
-	move SPORE,        EFFECT_SLEEP,               0, GRASS,    100, 15,   0
+	move SPORE,        EFFECT_SLEEP_POWDER,        0, GRASS,    100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
 	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,   100, 40,   0

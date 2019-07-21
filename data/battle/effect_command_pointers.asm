@@ -184,3 +184,4 @@ BattleCommandPointers:
 	dw BattleCommand_BulkUp
 	dw BattleCommand_CosmicPower
 	dw BattleCommand_QuiverDance
+	dw BattleCommand_CheckGrassType

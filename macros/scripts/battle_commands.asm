@@ -185,6 +185,7 @@ ENDM
 	command bulkup
 	command cosmicpower
 	command quiverdance
+	command checkgrasstype
 
 	enum_start $fe
 	command endturn                 ; fe

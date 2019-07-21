@@ -168,3 +168,6 @@ MoveEffectsPointers:
 	dw ConversionZ
 	dw Coil
 	dw Growth
+	dw SleepPowder
+	dw PoisonPowder
+	dw StunSpore
