@@ -23,7 +23,7 @@ MapGroupRoofs:
 	db ROOF_OLIVINE   ; 10 (Violet)
 	db ROOF_AZALEA    ; 11 (Goldenrod)
 	db -1             ; 12
-	db -1             ; 13
+	db ROOF_AZALEA    ; 13
 	db -1             ; 14
 	db -1             ; 15
 	db -1             ; 16

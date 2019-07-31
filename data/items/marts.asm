@@ -151,7 +151,7 @@ MartOlivine:
 	db -1 ; end
 
 MartEcruteak:
-	db 10 ; # items
+	db 6 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db POTION

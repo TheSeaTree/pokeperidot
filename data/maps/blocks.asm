@@ -65,6 +65,7 @@ Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
 Route12Shelter_Blocks:
 EcruteakThiefHouse_Blocks:
+EcruteakFriendBallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -84,6 +85,7 @@ Route1CherrygroveGate_Blocks:
 Route1NewBarkGate_Blocks:
 Route1GoldenrodGate_Blocks:
 Route11GoldenrodGate_Blocks:
+Route11Route12Gate_Blocks:
 MahoganyGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
@@ -281,8 +283,11 @@ Route30_Blocks:
 Route16_Blocks:
 	INCBIN "maps/Route16.ablk"
 
-Route18_Blocks:
-	INCBIN "maps/Route18.ablk"
+Route18South_Blocks:
+	INCBIN "maps/Route18South.ablk"
+	
+Route18North_Blocks:	
+	INCBIN "maps/Route18North.ablk"
 
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"

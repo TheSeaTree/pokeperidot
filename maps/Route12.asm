@@ -169,10 +169,12 @@ SchoolboyMartinAfterText:
 Route12_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event  4, 12, ROUTE_12_ECRUTEAK_GATE, 3
 	warp_event  4, 13, ROUTE_12_ECRUTEAK_GATE, 4
 	warp_event 49,  5, ROUTE_12_SHELTER, 1
+	warp_event 57, 21, ROUTE_11_ROUTE_12_GATE, 3
+	warp_event 58, 21, ROUTE_11_ROUTE_12_GATE, 4
 
 	db 0 ; coord events
 
@@ -187,5 +189,5 @@ Route12_MapEvents:
 	object_event 37,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherSharon, -1
 	object_event 34,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMartin, -1
 	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_12_FIRE_STONE
+	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_12_FIRE_STONE
 	object_event 12, -3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -1,11 +1,11 @@
 	const_def 2 ; object constants
 
-Route18_MapScripts:
+Route18North_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route18_MapEvents:
+Route18North_MapEvents:
 	db 0, 0 ; filler
 
 	db 0 ; warp events

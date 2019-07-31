@@ -34,6 +34,9 @@ ENDM
 	map_const OLIVINE_CITY,                                24, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
 	map_const OLIVINE_SURF_HOUSE,							4,  4
+	map_const ROUTE_15,                                    20, 19 ;  3
+	map_const ROUTE_16,                                    24, 14 ;  2
+	map_const ROUTE_17,                                    20, 21 ;  3
 
 	newgroup                                                      ;  2
 
@@ -89,6 +92,7 @@ ENDM
 	map_const PAINTERS_HOUSE,                               4,  4
 	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
 	map_const ECRUTEAK_THIEF_HOUSE,							4,  4
+	map_const FRIEND_BALL_HOUSE,							4,  4
 
 	newgroup                                                      ;  5
 
@@ -163,8 +167,8 @@ ENDM
 	map_const DAY_CARE,                                     4,  4 ; 24
 	map_const ROUTE_1_GOLDENROD_GATE,                       5,  4 ; 13
 	map_const GOLDENROD_MART,                               6,  4
-	map_const ROUTE_11,                                    32, 16
 	map_const ROUTE_11_GOLDENROD_GATE,                      5,  4
+	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4
 
 	newgroup                                                      ; 12
 
@@ -179,7 +183,8 @@ ENDM
 	map_const ROUTE_6_SURFERS_HOUSE,                        4,  4 ; 13
 
 	newgroup                                                      ; 13
-	
+	map_const ROUTE_11,                                    32, 16	
+
 	newgroup                                                      ; 14
 
 	newgroup                                                      ; 15
@@ -204,12 +209,12 @@ ENDM
 
 	map_const ROUTE_12,                                    35, 11 ;  2
 	map_const ROUTE_12_SHELTER,								4,  4
-	map_const ROUTE_13,                                    21, 16 ;  1
-	map_const ROUTE_14,                                    23, 14 ;  2
+	map_const ROUTE_13,                                    29, 16 ;  1
+	map_const ROUTE_14,                                    31, 14 ;  2
 	map_const ROUTE_14_CAVE_1F, 							9, 11
 	map_const ROUTE_14_CAVE_2F,							   10, 10
-	map_const ROUTE_15,                                    20, 19 ;  3
-	map_const ROUTE_18,                                    10,  9 ;  4
+	map_const ROUTE_18_NORTH,                               8,  8 ;  4
+	map_const ROUTE_18_SOUTH,                               8, 10 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14
@@ -228,8 +233,6 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const ROUTE_16,                                    24, 14 ;  2
-	map_const ROUTE_17,                                    20, 21 ;  3
 	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
 	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25

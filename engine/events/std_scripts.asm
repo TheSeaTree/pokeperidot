@@ -483,6 +483,7 @@ InitializeEventsScript:
 	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2 ; Top Left
 	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3 ; Bottom Right
 	setevent EVENT_HIDE_SHELTER_MAROWAK
+	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SILVER
 	return
 
 AskNumber1MScript:

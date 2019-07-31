@@ -51,8 +51,8 @@
 	RGB 06,09,07, 04,05,06 ; nite
 
 ; group 13 (Pallet)
-	RGB 27,28,31, 17,19,22 ; morn/day
-	RGB 14,14,18, 10,09,13 ; nite
+	RGB 25,25,00, 20,17,08 ; morn/day
+	RGB 12,12,00, 10,09,05 ; nite
 
 ; group 14 (Pewter)
 	RGB 22,20,10, 17,14,03 ; morn/day

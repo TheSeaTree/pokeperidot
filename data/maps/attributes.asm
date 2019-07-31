@@ -148,17 +148,19 @@ ENDM
 	connection west, OlivineCity, OLIVINE_CITY, -3
 	connection east, Route17, ROUTE_17, 5
 
-	map_attributes Route18, ROUTE_18, $43, 0
+	map_attributes Route18South, ROUTE_18_SOUTH, $05, 0
+	
+	map_attributes Route18North, ROUTE_18_NORTH, $05, 0
 	
 	map_attributes Route14, ROUTE_14, $05, SOUTH
 	connection south, Route13, ROUTE_13, 0
 
 	map_attributes Route13, ROUTE_13, $05, NORTH | SOUTH
 	connection north, Route14, ROUTE_14, 0
-	connection south, Route12, ROUTE_12, -3
+	connection south, Route12, ROUTE_12, 5
 
 	map_attributes Route12, ROUTE_12, $05, NORTH | SOUTH
-	connection north, Route13, ROUTE_13,  3
+	connection north, Route13, ROUTE_13,  -5
 	connection south, Route11, ROUTE_11, 18
 
 	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
@@ -326,6 +328,7 @@ ENDM
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
 	map_attributes Route11GoldenrodGate, ROUTE_11_GOLDENROD_GATE, $00, 0	
+	map_attributes Route11Route12Gate, ROUTE_11_ROUTE_12_GATE, $00, 0	
 	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $6D, 0
 	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
 	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
@@ -345,3 +348,4 @@ ENDM
 	map_attributes MahoganyMagnetTrainStation, MAHOGANY_MAGNET_TRAIN_STATION, $00, 0
 	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
 	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0
+	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0

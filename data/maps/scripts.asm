@@ -104,6 +104,7 @@ INCLUDE "maps/ElmsHouse.asm"
 INCLUDE "maps/Route1NewBarkGate.asm"
 INCLUDE "maps/Route1GoldenrodGate.asm"
 INCLUDE "maps/Route11GoldenrodGate.asm"
+INCLUDE "maps/Route11Route12Gate.asm"
 
 
 SECTION "Map Scripts 10", ROMX
@@ -234,6 +235,7 @@ INCLUDE "maps/Route12.asm"
 INCLUDE "maps/PaintersForest.asm"
 INCLUDE "maps/PaintersHouse.asm"
 INCLUDE "maps/EcruteakThiefHouse.asm"
+INCLUDE "maps/EcruteakFriendBallHouse.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -255,7 +257,8 @@ SECTION "Map Scripts 24", ROMX
 
 INCLUDE "maps/Route2.asm"
 INCLUDE "maps/Route1.asm"
-INCLUDE "maps/Route18.asm"
+INCLUDE "maps/Route18North.asm"
+INCLUDE "maps/Route18South.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route7.asm"

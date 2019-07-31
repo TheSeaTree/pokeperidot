@@ -35,6 +35,21 @@ OutdoorSprites:
 ; Route2 and PewterCity are connected
 ; PalletTown and Route21 are connected
 PalletGroupSprites:
+	db SPRITE_TEACHER
+	db SPRITE_FISHER
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_BUENA
+	db SPRITE_BUG_CATCHER
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_SUPER_NERD
+	; limit of 9 walking sprites
+	db SPRITE_POKE_BALL
+	db SPRITE_ROCK
+	db SPRITE_FRUIT_TREE
+	db 0 ; end
+
 ; Route1, PalletTown
 PewterGroupSprites:
 ; Route3, PewterCity
@@ -118,6 +133,7 @@ LavenderGroupSprites:
 	db SPRITE_TWIN
 	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_M
+	db SPRITE_PHARMACIST
 	db SPRITE_GYM_GUY
 	db SPRITE_ROCK
 	db SPRITE_KIMONO_GIRL
@@ -233,7 +249,7 @@ VioletGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
-	db SPRITE_SILVER
+	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_LASS
@@ -270,22 +286,21 @@ GoldenrodGroupSprites:
 ; OlivineCity and Route40 are connected
 OlivineGroupSprites:
 ; Route38, Route39, OlivineCity
-	db SPRITE_SILVER ; variable sprite: becomes SPRITE_SILVER and SPRITE_SWIMMER_GUY
-	db SPRITE_POKEFAN_M
-	db SPRITE_LASS
-	db SPRITE_BUENA
-	db SPRITE_SWIMMER_GIRL
-	db SPRITE_SAILOR
-	db SPRITE_POKEFAN_F
 	db SPRITE_SUPER_NERD
-	db SPRITE_PHARMACIST
+	db SPRITE_YOUNGSTER
+	db SPRITE_BUG_CATCHER
+	db SPRITE_SILVER
+	db SPRITE_FISHER
+	db SPRITE_LASS
+	db SPRITE_SAILOR
+	db SPRITE_SWIMMER_GUY
+	db SPRITE_SWIMMER_GIRL
 	; 9 of max 9 walking sprites
-	db SPRITE_SWIMMER_GIRL_LAND
+	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_BOULDER
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
-	db SPRITE_STANDING_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
 	db SPRITE_SUICUNE
 	db 0 ; end
 CianwoodGroupSprites:
