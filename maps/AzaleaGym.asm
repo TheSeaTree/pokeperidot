@@ -34,15 +34,14 @@ AzaleaGymBugsyScript:
 	writetext BugsyText_INeverLose
 	waitbutton
 	closetext
-	checkcode VAR_BADGES
-	ifgreater 0, .Team2
 	winlosstext BugsyText_ResearchIncomplete, 0
+	checkflag ENGINE_FLYPOINT_VIOLET
+	iftrue .Team2
 	loadtrainer BUGSY, BUGSY1
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team2:
-	winlosstext BugsyText_ResearchIncomplete, 0
 	loadtrainer BUGSY, BUGSY2
 	startbattle
 	reloadmapafterbattle

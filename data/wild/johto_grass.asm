@@ -766,24 +766,24 @@ JohtoGrassWildMons:
 	db 26, GIRAFARIG
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, TANGELA
-	db 27, TANGELA
+	db 26, SUDOWOODO
+	db 27, SUDOWOODO
 	; day
 	db 27, DODUO
 	db 29, PONYTA
 	db 26, GIRAFARIG
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, TANGELA
-	db 27, TANGELA
+	db 26, SUDOWOODO
+	db 27, SUDOWOODO
 	; nite
 	db 27, DODUO
 	db 29, PONYTA
 	db 26, STANTLER
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, TANGELA
-	db 27, TANGELA	
+	db 26, SUDOWOODO
+	db 27, SUDOWOODO
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite

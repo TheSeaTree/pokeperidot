@@ -90,10 +90,20 @@ EcruteakGymLeader:
 	opentext
 	writetext PoseyChallengeText
 	waitbutton
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .Team2
 	winlosstext PoseyWinText, 0
 	loadtrainer ERIKA, ERIKA1
 	startbattle
 	reloadmapafterbattle
+	jump .After
+.Team2:
+	winlosstext PoseyWinText, 0
+	loadtrainer ERIKA, ERIKA2
+	startbattle
+	reloadmapafterbattle
+
+.After:
 	setmapscene ECRUTEAK_CITY, SCENE_ECRUTEAKCITY_DONE
 	setevent EVENT_BEAT_CAMPER_JEFF
 	setevent EVENT_BEAT_BUG_CATCHER_GREG

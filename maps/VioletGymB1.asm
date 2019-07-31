@@ -38,19 +38,39 @@ VioletGymB1FalknerScript:
 	writetext FalknerIntroText
 	waitbutton
 	closetext
-	checkcode VAR_BADGES
-	ifgreater 2, .Team2
 	winlosstext FalknerWinLossText, 0
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .Team5
+	checkflag ENGINE_FLYPOINT_ECRUTEAK
+	iftrue .Team4
+	checkflag ENGINE_FLYPOINT_CIANWOOD
+	iftrue .Team3
+	checkflag ENGINE_FLYPOINT_GOLDENROD
+	iftrue .Team2
+	ifgreater 2, .Team2
 	loadtrainer FALKNER, FALKNER1
 	startbattle
 	reloadmapafterbattle
 	jump .After
-.Team2
-	winlosstext BugsyText_ResearchIncomplete, 0
+.Team2:
 	loadtrainer FALKNER, FALKNER2
 	startbattle
 	reloadmapafterbattle
 	jump .After
+.Team3:
+	loadtrainer FALKNER, FALKNER3
+	startbattle
+	reloadmapafterbattle
+	jump .After
+.Team4:
+	loadtrainer FALKNER, FALKNER4
+	startbattle
+	reloadmapafterbattle
+	jump .After
+.Team5:
+	loadtrainer FALKNER, FALKNER5
+	startbattle
+	reloadmapafterbattle
 	
 .After:
 	setevent EVENT_BEAT_FALKNER

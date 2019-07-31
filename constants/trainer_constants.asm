@@ -28,6 +28,9 @@ KRIS EQU __enum__
 	trainerclass FALKNER ; 1
 	const FALKNER1
 	const FALKNER2
+	const FALKNER3
+	const FALKNER4
+	const FALKNER5
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
@@ -35,10 +38,11 @@ KRIS EQU __enum__
 	trainerclass BUGSY ; 3
 	const BUGSY1
 	const BUGSY2
-	const BUGSY3
 	
 	trainerclass MORTY ; 4
 	const MORTY1
+	const MORTY2
+	const MORTY3
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
@@ -110,11 +114,13 @@ KRIS EQU __enum__
 
 	trainerclass ERIKA ; 15
 	const ERIKA1
+	const ERIKA2
 
 	trainerclass LAD ; 16
 	const JACK
 	const BEN
 	const TRISTAN
+	const DEVIN
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -191,6 +197,7 @@ KRIS EQU __enum__
 	const NELSON
 	const LEO
 	const MARSHALL
+	const DERRICK
 	
 	trainerclass SWIMMERM ; 26
 	const VINNY
@@ -324,6 +331,7 @@ KRIS EQU __enum__
 	trainerclass POKEFANM ; 3b
 	const LESTER
 	const DOUG
+	const RICHARD
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const TEST
