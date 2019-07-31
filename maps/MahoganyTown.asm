@@ -156,12 +156,33 @@ MahoganyTownPowerPlantGuy:
 	yesorno
 	iftrue .Yes
 	iffalse .No
+	
+MahoganyGymEvent:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, MahoganyGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, MAHOGANY_GYM, 12, 31
+	end	
+.no
+	closetext
+	end
 
 MahoganyTownLass:
 	jumptextfaceplayer MahoganyTownLassText
 	
 MahoganyTownFruitTree:
 	fruittree FRUITTREE_MAHOGANY_TOWN
+
+MahoganyGymMovement:
+	step UP
+	step_resume
 
 MahoganyVendingText:
 	text "A vending machine!"
@@ -287,21 +308,21 @@ MahoganyTownStockChangesText:
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 7 ; warp events
 	warp_event 23, 33, MAHOGANY_GATE, 1
 	warp_event 24, 33, MAHOGANY_GATE, 2
 	warp_event  2,  3, MAHOGANY_TOWN, 3
 	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
 	warp_event 10, 19, MAHOGANY_MAGNET_TRAIN_STATION, 1
-	warp_event 24, 13, MAHOGANY_GYM, 1
 	warp_event 35, 19, EMYS_HOUSE, 1
 	warp_event 37,  9, MOVE_DELETERS_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 24, 21, BGEVENT_UP, MahoganyTownVendingMachine
+	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 
 	db 7 ; object events
 	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

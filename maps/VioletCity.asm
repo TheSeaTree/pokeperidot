@@ -95,6 +95,8 @@ VioletCityRivalBattleScript:
 	playmapmusic
 	setevent EVENT_BEAT_RIVAL_1
 	setscene SCENE_VIOLETCITY_DEFEATED_RIVAL
+	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
+	special LoadUsedSpritesGFX
 	end	
 	
 VioletCityShoeGuy:
@@ -127,6 +129,23 @@ VioletCityShoeGuy:
 	setscene SCENE_VIOLETCITY_DEFEATED_RIVAL
 	end
 	
+VioletGymEvent:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, VioletGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, VIOLET_GYM,  4, 7
+	end	
+.no
+	closetext
+	end	
+	
 VioletCityFisher2:
 	jumptextfaceplayer VioletCityFisher2Text
 	
@@ -154,6 +173,10 @@ VioletCityItemBush:
 VioletCityHiddenHyperPotion:
 	hiddenitem HYPER_POTION, EVENT_VIOLET_CITY_HIDDEN_HYPER_POTION
 	
+VioletGymMovement:
+	step UP
+	step_resume
+
 VioletCityRivalBattleApproachMovement1:
 	step RIGHT
 	step RIGHT
@@ -374,12 +397,13 @@ VioletCity_MapEvents:
 	coord_event 38, 8, SCENE_VIOLETCITY_NOTHING, VioletCityRivalBattleScene1
 	coord_event 38, 8, SCENE_VIOLETCITY_RUNNING_SHOES, VioletCityShoeGuy
 
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event  8, 13, BGEVENT_READ, VioletCitySign
 	bg_event 16, 14, BGEVENT_READ, VioletTutorSign
 	bg_event 10,  7, BGEVENT_READ, VioletCityPokecenterSign
 	bg_event 22,  9, BGEVENT_READ, VioletCityMartSign
 	bg_event  5,  7, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 
 	db 9 ; object events
 	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

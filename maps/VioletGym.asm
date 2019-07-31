@@ -156,8 +156,8 @@ VioletGym_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event  3, 13, BGEVENT_READ, VioletGymStatue
-	bg_event  6, 13, BGEVENT_READ, VioletGymStatue
+	bg_event  2,  5, BGEVENT_READ, VioletGymStatue
+	bg_event  7,  5, BGEVENT_READ, VioletGymStatue
 
 	db 1 ; object events
 	object_event   6,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1

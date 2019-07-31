@@ -122,6 +122,23 @@ GoldenrodLassScript:
 	closetext
 	end	
 	
+GoldenrodGymEvent:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, GoldenrodGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, CIANWOOD_GYM, 15, 39
+	end	
+.no
+	closetext
+	end
+	
 Route34MovementData_PlayerMoves:
 	step DOWN
 	turn_head UP
@@ -147,7 +164,10 @@ DayCareSign:
 	
 GoldenrodCityMartSign:
 	jumpstd martsign
-	end
+	
+GoldenrodGymMovement:
+	step UP
+	step_resume
 	
 GoldenrodCityRivalBattleApproachMovement1:
 	step UP
@@ -242,7 +262,7 @@ GoldenrodCity_MapEvents:
 	db 10 ; warp events
 	warp_event 19, 15, GOLDENROD_POKECENTER_1F, 1
 	warp_event 21, 25, GOLDENROD_MART, 1
-	warp_event 12,  7, CIANWOOD_GYM, 1 ;	warp_event 12,  7, GOLDENROD_GYM, 1
+	warp_event 13,  6, CIANWOOD_GYM, 1 ;	warp_event 12,  7, GOLDENROD_GYM, 1
 	warp_event  9, 17, DAY_CARE, 1
 	warp_event 14, 21, GOLDENROD_HAPPINESS_RATER, 1
 	warp_event 27, 29, ROUTE_1_GOLDENROD_GATE, 1
@@ -254,12 +274,13 @@ GoldenrodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 12, 8, -1, GoldenrodSetupGym
 
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
 	bg_event 22, 25, BGEVENT_READ, GoldenrodCityMartSign
 	bg_event 20, 15, BGEVENT_READ, GoldenrodCityPokecenterSign
 	bg_event  1, 22, BGEVENT_ITEM, GoldenrodHiddenSilverLeaf
 	bg_event 21,  8, BGEVENT_ITEM, GoldenrodHiddenRareCandy
+	bg_event 12,  7, BGEVENT_UP,   GoldenrodGymEvent
 	
 	db 4 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34

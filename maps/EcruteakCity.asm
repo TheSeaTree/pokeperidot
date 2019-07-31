@@ -45,6 +45,23 @@ EcruteakCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
 	return
+	
+EnterGymEvent:
+	opentext
+	writetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, EcruteakGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, ECRUTEAK_GYM, 10, 21
+	end	
+.no
+	closetext
+	end
 
 EcruteakCityFruitTree:
 	fruittree ECRUTEAK_CITY
@@ -66,6 +83,10 @@ EcruteakCityPokecenterSign:
 
 EcruteakCityMartSign:
 	jumpstd martsign
+
+EcruteakGymMovement:
+	step UP
+	step_resume
 
 EcruteakCityGramps1Text:
 	text "ECRUTEAK used to"
@@ -204,6 +225,15 @@ BurnedTowerSignText:
 	para "Please stay away,"
 	line "as it is unsafe."
 	done
+	
+AskEnterGymText:
+	text "You will be unable"
+	line "to leave this GYM"
+	cont "without its BADGE."
+	
+	para "Would you like to"
+	line "enter?"
+	done
 
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
@@ -212,21 +242,22 @@ EcruteakCity_MapEvents:
 	warp_event 15, 25, ECRUTEAK_FOREST_GATE, 4
 	warp_event 16, 25, ECRUTEAK_FOREST_GATE, 3
 	warp_event  9, 19, ECRUTEAK_POKECENTER_1F, 1
-	warp_event 25,  7, ECRUTEAK_MART, 2
-	warp_event  8, 11, ECRUTEAK_GYM, 1
+	warp_event 25,  9, ECRUTEAK_MART, 1
 	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
 	warp_event 33,  9, ROUTE_12_ECRUTEAK_GATE, 2
 	warp_event  1,  7, ECRUTEAK_THIEF_HOUSE, 1
+	warp_event 27, 15, FRIEND_BALL_HOUSE, 1
 
 	db 0 ; coord events
 
-	db 6 ; bg events
+	db 7 ; bg events
 	bg_event 18, 22, BGEVENT_READ, EcruteakCitySign
 	bg_event 16, 14, BGEVENT_READ, EcruteakDanceTheaterSign
 	bg_event 10, 19, BGEVENT_READ, EcruteakCityPokecenterSign
-	bg_event 26,  7, BGEVENT_READ, EcruteakCityMartSign
+	bg_event 26,  9, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 25, 15, BGEVENT_UP,   EcruteakMailbox
 	bg_event 21, 19, BGEVENT_UP,   EcruteakMailbox
+	bg_event  8, 11, BGEVENT_UP,   EnterGymEvent
 
 	db 3 ; object events
 	object_event  8, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_ACCESS

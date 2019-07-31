@@ -192,7 +192,7 @@ CheckStandingOnEntrance::
 	ld a, [wPlayerStandingTile]
 	cp COLL_DOOR
 	ret z
-	cp COLL_DOOR_79
+	cp COLL_GYM_DOOR
 	ret z
 	cp COLL_STAIRCASE
 	ret z

@@ -103,6 +103,8 @@ AzaleaTownRivalBattleScript:
 	waitsfx
 	playmapmusic
 	setevent EVENT_BEAT_RIVAL_1
+	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
+	special LoadUsedSpritesGFX
 	end
 	
 AzaleaGymConfirm:
@@ -123,7 +125,7 @@ AzaleaGymConfirm:
 
 .Enter
 	closetext
-	applymovement AZALEATOWN_GYM_GUY, AzaleaEnterGym
+	applymovement AZALEATOWN_GYM_GUY, AzaleaGymMovement
 	playsound SFX_ENTER_DOOR
 	disappear AZALEATOWN_GYM_GUY
 	setevent EVENT_GYM_EXPLAINATION
@@ -167,8 +169,21 @@ AzaleaBurglar:
 	applymovement AZALEATOWN_BURGLAR, BurglarExitLeft2
 	jump .Leave
 	
-AzaleaTownLeaveGym:
-	applymovement PLAYER, AzaleaTownLeaveGymMovement
+AzaleaGymEvent:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, AzaleaGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, AZALEA_GYM,  8, 19
+	end	
+.no
+	closetext
 	end
 
 AzaleaTownGrowlitheScript:
@@ -337,7 +352,7 @@ AzaleaTownRivalBattleExitMovement:
 	run_step UP
 	step_end
 	
-AzaleaEnterGym:
+AzaleaGymMovement:
 	step UP
 	step_end
 	
@@ -594,11 +609,11 @@ SentNESHome:
 AzaleaTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 15 ; warp events
+	db 14 ; warp events
 	warp_event 49,  7, AZALEA_POKECENTER_1F, 1
 	warp_event 24,  9, GOLDENROD_MAGNET_TRAIN_STATION, 1
 	warp_event 31, 11, AZALEA_MART, 2
-	warp_event 40, 17, AZALEA_GYM, 1
+	warp_event 51, 25, AZALEA_BERRY_HOUSE, 1
 	warp_event 43,  5, ROUTE_3_AZALEA_GATE, 3
 	warp_event  4, 26, ROUTE_2_AZALEA_GATE, 3
 	warp_event  4, 27, ROUTE_2_AZALEA_GATE, 4
@@ -609,13 +624,11 @@ AzaleaTown_MapEvents:
 	warp_event 11, 25, AZALEA_GYM_SPEECH_HOUSE, 1
 	warp_event 17, 25, AZALEA_BIKE_HOUSE, 1
 	warp_event 37, 11, AZALEA_EVOLUTION_HOUSE, 1
-	warp_event 51, 25, AZALEA_BERRY_HOUSE, 1
 
-	db 2 ; coord events
+	db 1 ; coord events
 	coord_event 40, 18, -1, AzaleaTownRivalBattleScene1
-	coord_event 40, 17, -1, AzaleaTownLeaveGym
 
-	db 7 ; bg events
+	db 8 ; bg events
 	bg_event 17, 21, BGEVENT_READ, AzaleaTownSign
 	bg_event 50,  7, BGEVENT_READ, AzaleaTownPokecenterSign
 	bg_event 32, 11, BGEVENT_READ, AzaleaTownMartSign
@@ -623,6 +636,7 @@ AzaleaTown_MapEvents:
 	bg_event 40, 10, BGEVENT_ITEM, AzaleaTownHiddenGreatBall
 	bg_event 11, 33, BGEVENT_ITEM, AzaleaTownHiddenEther
 	bg_event 34, 11, BGEVENT_READ, AzaleaTownVendingMachine
+	bg_event 40, 17, BGEVENT_UP,   AzaleaGymEvent
 
 	db 14 ; object events
 	object_event 29, 19, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1

@@ -109,6 +109,23 @@ CianwoodCityMoveTutor:
 	turnobject LAST_TALKED, DOWN
 	closetext
 	end
+	
+CianwoodGymEvent:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, CianwoodGymMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, GOLDENROD_GYM, 22, 39
+	end	
+.no
+	closetext
+	end
 
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
@@ -133,6 +150,10 @@ CianwoodCityRock:
 	
 CianwoodCityBoulder:
 	jumpstd strengthboulder
+	
+CianwoodGymMovement:
+	step UP
+	step_end
 	
 CianwoodBurglarRunAway:
 	run_step LEFT
@@ -352,7 +373,7 @@ CianwoodCity_MapEvents:
 
 	db 10 ; warp events
 	warp_event  9, 31, MANIAS_HOUSE, 1
-	warp_event 20, 15, GOLDENROD_GYM, 1
+	warp_event 21, 14, GOLDENROD_GYM, 1
 	warp_event 11, 19, CIANWOOD_POKECENTER_1F, 1
 	warp_event 19, 21, CIANWOOD_MART, 1
 	warp_event  9,  5, CIANWOOD_PHOTO_STUDIO, 1
@@ -365,11 +386,12 @@ CianwoodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 19, 22, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
 	
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 16, 22, BGEVENT_READ, CianwoodCitySign
 	bg_event 12, 19, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 20, 21, BGEVENT_READ, CianwoodPharmacySign
 	bg_event  7, 27, BGEVENT_READ, CianwoodPokeSeerSign
+	bg_event 20, 15, BGEVENT_UP,   CianwoodGymEvent
 
 	db 5 ; object events
 	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1

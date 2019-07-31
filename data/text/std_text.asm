@@ -401,8 +401,3 @@ GymFirstTimeText:
 	cont "the leader or"
 	cont "white out."
 	done
-
-AskEnterGymText:
-	text "Would you like to"
-	line "enter the GYM?"
-	done

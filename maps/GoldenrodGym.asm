@@ -65,9 +65,26 @@ GoldenrodGymWhitneyScript:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
+	checkflag ENGINE_FLYPOINT_OLIVINE
+	iftrue .Team3
+	checkflag ENGINE_FLYPOINT_ECRUTEAK
+	iftrue .Team2
 	loadtrainer MORTY, MORTY1
 	startbattle
 	reloadmapafterbattle
+	jump .After
+.Team2:
+	loadtrainer MORTY, MORTY2
+	startbattle
+	reloadmapafterbattle
+	jump .After
+
+.Team3:
+	loadtrainer MORTY, MORTY3
+	startbattle
+	reloadmapafterbattle	
+
+.After:
 	setevent EVENT_BEAT_MORTY
 	setevent GOLDENROD_GYM_DOOR_1
 	setevent GOLDENROD_GYM_DOOR_2
