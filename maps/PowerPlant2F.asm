@@ -80,7 +80,12 @@ PowerPlant2FGrimer6:
 	end
 
 PowerPlant2FGrimer7:
+	opentext
+	writetext PowerPlant1FGrimerText
 	cry GRIMER
+	waitbutton
+	closetext
+	setlasttalked -1
 	loadwildmon GRIMER, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 	startbattle
