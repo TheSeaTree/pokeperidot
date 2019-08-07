@@ -61,13 +61,13 @@ MenuData_0x24f56:
 	dba Function24f7c
 
 Strings24f5f:
-	db "サファりボール×　　@" ; "SAFARI BALL×  @"
-	db "エサをなげる@" ; "THROW BAIT"
-	db "いしをなげる@" ; "THROW ROCK"
-	db "にげる@" ; "RUN"
+	db "THROW ROCK@" ; "THROW ROCK"
+	db "BAIT@" ; "THROW BAIT"
+	db "BALL×　　@" ; "SAFARI BALL×  @"
+	db "RUN@" ; "RUN"
 
 Function24f7c:
-	hlcoord 17, 13
+	hlcoord 10, 16
 	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum

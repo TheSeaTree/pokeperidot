@@ -371,6 +371,16 @@ BattleText_StringBuffer1GrewToLevel:
 
 	text_end ; unused
 
+BattleText_ThrewRock:
+	text "<PLAYER> threw a"
+	line "rock."
+	prompt
+
+BattleText_ThrewBait:
+	text "<PLAYER> tossed"
+	line "some bait."
+	prompt
+
 BattleText_WildMonIsEating:
 	text "Wild @"
 	text_ram wEnemyMonNick

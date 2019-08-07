@@ -144,9 +144,9 @@ Unreferenced_Function24b8f:
 	db "ボール　　　こ@"
 
 StartMenu_DrawBugContestStatusBox:
-	hlcoord 0, 0
-	ld b, 5
-	ld c, 17
+	hlcoord 0, 3
+	ld b, 1
+	ld c, 8
 	call TextBox
 	ret
 
@@ -156,32 +156,23 @@ StartMenu_PrintBugContestStatus:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call StartMenu_DrawBugContestStatusBox
-	hlcoord 1, 5
+	hlcoord 1, 4
 	ld de, .Balls_EN
 	call PlaceString
-	hlcoord 8, 5
+	hlcoord 7, 4
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum
-	hlcoord 1, 1
-	ld de, .CAUGHT
-	call PlaceString
 	ld a, [wContestMon]
 	and a
-	ld de, .None
 	jr z, .no_contest_mon
 	ld [wNamedObjectIndexBuffer], a
 	call GetPokemonName
 
 .no_contest_mon
-	hlcoord 8, 1
-	call PlaceString
 	ld a, [wContestMon]
 	and a
 	jr z, .skip_level
-	hlcoord 1, 3
-	ld de, .LEVEL
-	call PlaceString
 	ld a, [wContestMonLevel]
 	ld h, b
 	ld l, c

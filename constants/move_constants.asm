@@ -288,6 +288,9 @@ NUM_ATTACKS EQU const_value + -1
 	const ANIM_WOBBLE            ; 113
 	const ANIM_SHAKE             ; 114
 	const ANIM_HIT_CONFUSION     ; 115
+; safari anims
+	const ANIM_THROW_ROCK
+	const ANIM_THROW_BAIT
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def

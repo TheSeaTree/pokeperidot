@@ -523,8 +523,6 @@ PokeBallEffect:
 
 .skip_pokedex
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jp z, .catch_bug_contest_mon
 	cp BATTLETYPE_CELEBI
 	jr nz, .not_celebi
 	ld hl, wBattleResult
@@ -665,10 +663,6 @@ PokeBallEffect:
 
 	call RotateThreePalettesRight
 	call LoadStandardFont
-	jr .return_from_capture
-
-.catch_bug_contest_mon
-	farcall BugContest_SetCaughtContestMon
 	jr .return_from_capture
 
 .FinishTutorial:

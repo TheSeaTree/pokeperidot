@@ -175,7 +175,7 @@ ItemNames::
 	db "GOLD BERRY@"
 	db "SQUIRTBOTTLE@"
 	db "TERU-SAMA@"
-	db "PARK BALL@"
+	db "SAFARI BALL@"
 	db "RAINBOW WING@"
 	db "TERU-SAMA@"
 	db "BRICK PIECE@"

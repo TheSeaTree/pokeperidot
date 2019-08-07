@@ -55,8 +55,9 @@ DoBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jp z, .tutorial_debug
-	cp BATTLETYPE_TUTORIAL
-	jp z, .tutorial_debug
+	jp z, BattleMenu
+	cp BATTLETYPE_CONTEST
+	jp z, SafariBattleTurn
 	xor a
 	ld [wCurPartyMon], a
 .loop2
@@ -111,7 +112,7 @@ DoBattle:
 
 .not_linked_2
 	jp BattleTurn
-
+	
 .tutorial_debug
 	jp BattleMenu
 
@@ -254,6 +255,29 @@ Stubbed_Function3c1bf:
 .finish
 	call CloseSRAM
 	ret
+
+SafariBattleTurn:
+.loop
+	call CheckContestBattleOver
+	ret c
+	
+	call BattleMenu
+	ret c
+	
+	ld a, [wBattleEnded]
+	and a
+	ret nz
+	
+	call HandleSafariAngerEatingStatus
+	
+	call CheckSafariMonRan
+	ret c
+	
+	ld a, [wBattleEnded]
+	and a
+	ret nz
+	
+	jr .loop
 
 HandleBetweenTurnEffects:
 	ldh a, [hSerialConnectionStatus]
@@ -4987,7 +5011,7 @@ BattleMenu:
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jr z, .ok
-	cp BATTLETYPE_TUTORIAL
+	cp BATTLETYPE_CONTEST
 	jr z, .ok
 	call EmptyBattleTextBox
 	call UpdateBattleHuds
@@ -4999,7 +5023,7 @@ BattleMenu:
 	ld a, [wBattleType]
 	cp BATTLETYPE_CONTEST
 	jr nz, .not_contest
-	farcall ContestBattleMenu
+	farcall SafariBattleMenu
 	jr .next
 .not_contest
 
@@ -5027,11 +5051,84 @@ BattleMenu:
 	jr .loop
 
 BattleMenu_Fight:
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, BattleMenu_Rock
 	xor a
 	ld [wNumFleeAttempts], a
 	call Call_LoadTempTileMapToTileMap
 	and a
 	ret
+
+BattleMenu_Rock:
+	ld hl, BattleText_ThrewRock
+	call StdBattleTextBox
+	ld hl, wEnemyMonCatchRate
+	ld a, [hl]
+	add a ; double catch rate
+	jr nc, .noCarry
+	ld a, $FF
+.noCarry
+	ld [hl], a
+	ld de, ANIM_THROW_ROCK
+	call Call_PlayBattleAnim
+	ld hl, wSafariMonAngerCount
+	ld de, wSafariMonEating
+	; fallthrough to BaitRockCommon
+
+BaitRockCommon:
+	xor a
+	ld [de], a ; zero the Eating counter (rock) or the Anger counter (bait)
+.randomLoop ; loop until a number less than 5 is generated
+	call BattleRandom
+	and a, 7
+	cp 5
+	jr nc, .randomLoop
+	inc a ; increment the random number, giving a range from 1 to 5 inclusive
+	ld b, a
+	ld a, [hl]
+	add b ; increase Eating or Anger counter appropriately
+	jr nc, .noCarry
+	ld a, $FF
+.noCarry
+	ld [hl], a
+	and a
+	ret
+
+CheckSafariMonRan:
+; Wildmon always runs when you are out of Safari Balls
+	ld a, [wParkBallsRemaining]
+	and a
+	jp z, WildFled_EnemyFled_LinkBattleCanceled
+; otherwise, check its speed, bait, and rock factors
+; this probably could stand to be cleaned up or rewritten later
+; it is basically taken directly from Gen 1
+	ld a, [wEnemyMonSpeed + 1]
+	add a
+	ld b, a ; init b (which is later compared with random value) to (enemy speed % 256) * 2
+	jp c, WildFled_EnemyFled_LinkBattleCanceled ; if (enemy speed % 256) > 127, the enemy runs
+	ld a, [wSafariMonEating]
+	and a ; is bait factor 0?
+	jr z, .checkEscapeFactor
+; bait factor is not 0
+; divide b by 4 (making the mon less likely to run)
+	srl b
+	srl b
+.checkEscapeFactor
+	ld a, [wSafariMonAngerCount]
+	and a ; is escape factor 0?
+	jr z, .compareWithRandomValue
+; escape factor is not 0
+; multiply b by 2 (making the mon more likely to run)
+	sla b
+	jr nc, .compareWithRandomValue
+; cap b at 255
+	ld b, $ff
+.compareWithRandomValue
+	call BattleRandom
+	cp b
+	ret nc
+	jp WildFled_EnemyFled_LinkBattleCanceled ; if b was greater than the random value, the enemy runs
 
 LoadBattleMenu2:
 	call IsMobileBattle
@@ -5073,8 +5170,6 @@ BattleMenu_Pack:
 	call LoadStandardMenuHeader
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .tutorial
 	cp BATTLETYPE_CONTEST
 	jr z, .contest
 
@@ -5082,13 +5177,6 @@ BattleMenu_Pack:
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
 	jr z, .didnt_use_item
-	jr .got_item
-
-.tutorial
-	farcall TutorialPack
-	ld a, POKE_BALL
-	ld [wCurItem], a
-	call DoItemEffect
 	jr .got_item
 
 .contest
@@ -5138,7 +5226,7 @@ BattleMenu_Pack:
 	call _LoadBattleFontsHPBar
 	call ClearSprites
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
+	cp BATTLETYPE_CONTEST
 	jr z, .tutorial2
 	call GetBattleMonBackpic
 
@@ -5147,7 +5235,11 @@ BattleMenu_Pack:
 	ld a, $1
 	ld [wMenuCursorY], a
 	call ExitMenu
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, .skipThis
 	call UpdateBattleHUDs
+.skipThis
 	call WaitBGMap
 	call LoadTileMapToTempTileMap
 	call ClearWindowData
@@ -5167,6 +5259,9 @@ BattleMenu_Pack:
 	ret
 
 BattleMenu_PKMN:
+	ld a, [wBattleType]
+	cp BATTLETYPE_CONTEST
+	jr z, BattleMenu_Bait
 	call LoadStandardMenuHeader
 BattleMenuPKMN_ReturnFromStats:
 	call ExitMenu
@@ -5224,6 +5319,17 @@ BattleMenuPKMN_Loop:
 .mobile
 	farcall MobileBattleMonMenu
 	ret
+
+BattleMenu_Bait:
+	ld hl, BattleText_ThrewBait
+	call StdBattleTextBox
+	ld hl, wEnemyMonCatchRate
+	srl [hl] ; halve catch rate
+	ld de, ANIM_THROW_BAIT
+	call Call_PlayBattleAnim
+	ld hl, wSafariMonEating
+	ld de, wSafariMonAngerCount
+	jp BaitRockCommon
 
 Battle_StatsScreen:
 	call DisableLCD
@@ -7011,20 +7117,6 @@ _LoadHPBar:
 	callfar LoadHPBar
 	ret
 
-Unreferenced_LoadHPExpBarGFX:
-	ld de, EnemyHPBarBorderGFX
-	ld hl, vTiles2 tile $6c
-	lb bc, BANK(EnemyHPBarBorderGFX), 4
-	call Get1bpp
-	ld de, HPExpBarBorderGFX
-	ld hl, vTiles2 tile $73
-	lb bc, BANK(HPExpBarBorderGFX), 9
-	call Get1bpp
-	ld de, ExpBarGFX
-	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 8
-	jp Get2bpp
-
 EmptyBattleTextBox:
 	ld hl, .empty
 	jp BattleTextBox
@@ -7946,16 +8038,11 @@ TextJump_GoodComeBack:
 	text_jump Text_GoodComeBack
 	db "@"
 
-Unreferenced_TextJump_ComeBack:
-; this function doesn't seem to be used
-	ld hl, TextJump_ComeBack
-	ret
-
 TextJump_ComeBack:
 	text_jump Text_ComeBack
 	db "@"
 
-Unreferenced_HandleSafariAngerEatingStatus:
+HandleSafariAngerEatingStatus:
 	ld hl, wSafariMonEating
 	ld a, [hl]
 	and a
@@ -8212,10 +8299,6 @@ StartBattle:
 	scf
 	ret
 
-Unreferenced_DoBattle:
-	call DoBattle
-	ret
-
 BattleIntro:
 	farcall StubbedTrainerRankings_Battles ; mobile
 	call LoadTrainerOrWildMonPic
@@ -8383,57 +8466,6 @@ InitEnemyWildmon:
 	hlcoord 12, 0
 	lb bc, 7, 7
 	predef PlaceGraphic
-	ret
-
-Unreferenced_Function3f662:
-	ld hl, wEnemyMonMoves
-	ld de, wListMoves_MoveIndicesBuffer
-	ld b, NUM_MOVES
-.loop
-	ld a, [de]
-	inc de
-	ld [hli], a
-	and a
-	jr z, .clearpp
-
-	push bc
-	push hl
-
-	push hl
-	dec a
-	ld hl, Moves + MOVE_PP
-	ld bc, MOVE_LENGTH
-	call AddNTimes
-	ld a, BANK(Moves)
-	call GetFarByte
-	pop hl
-
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	ld [hl], a
-
-	pop hl
-	pop bc
-
-	dec b
-	jr nz, .loop
-	ret
-
-.clear
-	xor a
-	ld [hli], a
-
-.clearpp
-	push bc
-	push hl
-	ld bc, wEnemyMonPP - (wEnemyMonMoves + 1)
-	add hl, bc
-	xor a
-	ld [hl], a
-	pop hl
-	pop bc
-	dec b
-	jr nz, .clear
 	ret
 
 ExitBattle:
@@ -9152,13 +9184,6 @@ InitBattleDisplay:
 
 GetTrainerBackpic:
 ; Load the player character's backpic (6x6) into VRAM starting from vTiles2 tile $31.
-
-; Special exception for Dude.
-	ld b, BANK(DudeBackpic)
-	ld hl, DudeBackpic
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jr z, .Decompress
 
 ; What gender are we?
 	ld a, [wPlayerSpriteSetupFlags]

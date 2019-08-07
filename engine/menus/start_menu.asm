@@ -163,7 +163,7 @@ StartMenu::
 
 .ContestMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 10, 2, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 10, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default selection
 
@@ -306,9 +306,9 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_pack
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	jr nz, .no_pack
+;	ld hl, wStatusFlags2
+;	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+;	jr nz, .no_pack
 	ld a, STARTMENUITEM_PACK
 	call .AppendMenuList
 .no_pack
@@ -328,8 +328,8 @@ endr
 	jr nz, .no_save
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	ld a, STARTMENUITEM_QUIT
-	jr nz, .write
+;	ld a, STARTMENUITEM_QUIT
+	jr nz, .no_save
 	ld a, STARTMENUITEM_SAVE
 .write
 	call .AppendMenuList

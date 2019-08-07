@@ -279,6 +279,8 @@ BattleAnimations::
 	dw BattleAnim_Wobble
 	dw BattleAnim_Shake
 	dw BattleAnim_HitConfusion
+	dw BattleAnim_ThrowRock
+	dw BattleAnim_ThrowBait
 
 BattleAnim_0:
 BattleAnim_MirrorMove:
@@ -404,6 +406,23 @@ BattleAnim_ThrowPokeBall:
 	anim_obj ANIM_OBJ_BALL_POOF, 136, 64, $10
 	anim_wait 2
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $0, $0
+	anim_wait 32
+	anim_ret
+
+BattleAnim_ThrowRock:
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_KINESIS
+	anim_obj ANIM_OBJ_SAFARI_ROCK, 64, 92, $20
+	anim_wait 20
+	anim_sound 0, 1, SFX_PECK
+	anim_obj ANIM_OBJ_01, 112, 40, $0
+	anim_wait 32
+	anim_ret
+	
+BattleAnim_ThrowBait:
+	anim_1gfx ANIM_GFX_BUBBLE
+	anim_sound 0, 0, SFX_KINESIS
+	anim_obj ANIM_OBJ_SAFARI_BAIT, 64, 88, $6c
 	anim_wait 32
 	anim_ret
 
