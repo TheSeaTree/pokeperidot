@@ -32,7 +32,7 @@ Landmarks:
 	landmark  64,  68, Route12Name
 	landmark  68,  58, Route13Name
 	landmark  68,  44, Route14Name
-	landmark  60,  36, NationalParkName
+	landmark  60,  36, SafariZoneName
 	landmark  84,  44, OlivineCityName
 	landmark  52,  44, MahoganyTownName
 	landmark  52,  44, PowerPlantName

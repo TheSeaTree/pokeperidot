@@ -103,6 +103,9 @@ ENDM
 	map_const BLACKTHORN_CITY,                             20, 18 ; 10
 
 	newgroup                                                      ;  6
+	
+	map_const SAFARI_ZONE_GATE,								4,  4
+	map_const SAFARI_ZONE_AREA_1,						   19,  17
 
 	newgroup                                                      ;  7
 
@@ -213,8 +216,7 @@ ENDM
 	map_const ROUTE_14,                                    31, 14 ;  2
 	map_const ROUTE_14_CAVE_1F, 							9, 11
 	map_const ROUTE_14_CAVE_2F,							   10, 10
-	map_const ROUTE_18_NORTH,                               8,  8 ;  4
-	map_const ROUTE_18_SOUTH,                               8, 10 ;  4
+	map_const ROUTE_18,                                    18, 20 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14

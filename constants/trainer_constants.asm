@@ -144,6 +144,7 @@ KRIS EQU __enum__
 	const HOLLY
 	const VICKY
 	const GINGER
+	const KELLY
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -180,6 +181,7 @@ KRIS EQU __enum__
 	trainerclass TEACHER ; 22
 	const ANDREA
 	const SHARON
+	const LISA
 	
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -218,8 +220,8 @@ KRIS EQU __enum__
 	trainerclass SUPER_NERD ; 29
 	const SHANE
 	const STEVEN
-	const PETER
 	const PAT
+	const SANDY
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA

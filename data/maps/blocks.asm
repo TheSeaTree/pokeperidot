@@ -282,12 +282,9 @@ Route30_Blocks:
 
 Route16_Blocks:
 	INCBIN "maps/Route16.ablk"
-
-Route18South_Blocks:
-	INCBIN "maps/Route18South.ablk"
 	
-Route18North_Blocks:	
-	INCBIN "maps/Route18North.ablk"
+Route18_Blocks:	
+	INCBIN "maps/Route18.ablk"
 
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"
@@ -522,3 +519,9 @@ PowerPlant1FB_Blocks:
 PowerPlant2F_Blocks:
 PowerPlant2FB_Blocks:
 	INCBIN "maps/PowerPlant2F.ablk"
+
+SafariZoneGate_Blocks:
+	INCBIN "maps/SafariZoneGate.ablk"
+
+SafariZoneArea1_Blocks:
+	INCBIN "maps/SafariZoneArea1.ablk"

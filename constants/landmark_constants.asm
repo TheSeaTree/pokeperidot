@@ -28,7 +28,7 @@
 	const ROUTE_12          ; 4a
 	const ROUTE_13          ; 4b
 	const ROUTE_14          ; 4c
-	const NATIONAL_PARK     ; 13
+	const SAFARI_ZONE       ; 13
 	const OLIVINE_CITY      ; 1b
 	const MAHOGANY_TOWN     ; 24
 	const POWER_PLANT

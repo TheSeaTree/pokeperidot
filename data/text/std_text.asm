@@ -210,19 +210,13 @@ MartSignText:
 	para "#MON MART"
 	done
 
-ContestResults_ReadyToJudgeText:
-	text "We will now judge"
-	line "the #MON you've"
-	cont "caught."
-
-	para "<……>"
-	line "<……>"
-
-	para "We have chosen the"
-	line "winners!"
-
-	para "Are you ready for"
-	line "this?"
+SafariZone_LeavingText:
+	text "I hope you had"
+	line "good luck on your"
+	cont "SAFARI game."
+	
+	para "Try again any time"
+	line "you like."
 	done
 
 ContestResults_PlayerWonAPrizeText:

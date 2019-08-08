@@ -243,7 +243,8 @@ EcruteakCity_MapEvents:
 	warp_event 16, 25, ECRUTEAK_FOREST_GATE, 3
 	warp_event  9, 19, ECRUTEAK_POKECENTER_1F, 1
 	warp_event 25,  9, ECRUTEAK_MART, 1
-	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
+	warp_event 33,  8, SAFARI_ZONE_GATE, 1
+;	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
 	warp_event 33,  9, ROUTE_12_ECRUTEAK_GATE, 2
 	warp_event  1,  7, ECRUTEAK_THIEF_HOUSE, 1
 	warp_event 27, 15, FRIEND_BALL_HOUSE, 1

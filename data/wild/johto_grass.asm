@@ -785,6 +785,33 @@ JohtoGrassWildMons:
 	db 26, SUDOWOODO
 	db 27, SUDOWOODO
 
+	map_id ROUTE_18
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, FLAAFFY
+	db 29, FLAAFFY
+	db 26, PONYTA
+	db 24, MILTANK
+	db 27, TAUROS
+	db 26, TAUROS
+	db 27, TAUROS
+	; day
+	db 27, FLAAFFY
+	db 29, FLAAFFY
+	db 26, PONYTA
+	db 24, MILTANK
+	db 27, TAUROS
+	db 26, TAUROS
+	db 27, TAUROS
+	; nite
+	db 27, FLAAFFY
+	db 29, FLAAFFY
+	db 26, PONYTA
+	db 24, MILTANK
+	db 27, TAUROS
+	db 26, TAUROS
+	db 27, TAUROS
+
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
@@ -889,6 +916,32 @@ JohtoGrassWildMons:
 	db 28, MAGNEMITE
 	db 26, KOFFING
 	db 30, KOFFING
-	db 30, KOFFING
+	db 30, KOFFING	
+
+	map_id SAFARI_ZONE_AREA_1
+	db 10 percent, 10 percent, 10 percent
+	db 27, NIDORINO
+	db 27, NIDORINA
+	db 27, SUDOWOODO
+	db 28, EEVEE
+	db 26, LARVITAR
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; day
+	db 27, NIDORINO
+	db 27, NIDORINA
+	db 27, SUDOWOODO
+	db 26, VENOMOTH
+	db 28, EEVEE
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; nite
+	db 27, NIDORINO
+	db 27, NIDORINA
+	db 27, SUDOWOODO
+	db 26, VENOMOTH
+	db 28, EEVEE
+	db 30, CHANSEY
+	db 30, CHANSEY
 
 	db -1 ; end

@@ -51,7 +51,8 @@ INCLUDE "maps/Route8GoldenrodGate.asm"
 INCLUDE "maps/IlexForestAzaleaGate.asm"
 INCLUDE "maps/DayCare.asm"
 INCLUDE "maps/OlivineSurfHouse.asm"
-
+INCLUDE "maps/SafariZoneGate.asm"
+INCLUDE "maps/SafariZoneArea1.asm"
 
 SECTION "Map Scripts 5", ROMX
 
@@ -257,8 +258,7 @@ SECTION "Map Scripts 24", ROMX
 
 INCLUDE "maps/Route2.asm"
 INCLUDE "maps/Route1.asm"
-INCLUDE "maps/Route18North.asm"
-INCLUDE "maps/Route18South.asm"
+INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route7.asm"

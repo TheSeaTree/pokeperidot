@@ -4,7 +4,7 @@ Route12EcruteakGate_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
+	
 Route12EcruteakGate_MapEvents:
 	db 0, 0 ; filler
 

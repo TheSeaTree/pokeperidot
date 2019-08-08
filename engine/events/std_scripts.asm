@@ -323,146 +323,18 @@ RadioTowerRocketsScript:
 
 BugContestResultsWarpScript:
 	special ClearBGPalettes
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	warp SAFARI_ZONE_GATE, 5, 0
 	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
 
 BugContestResultsScript:
 	clearflag ENGINE_BUG_CONTEST_TIMER
-	clearevent EVENT_WARPED_FROM_ROUTE_35_NATIONAL_PARK_GATE
-	clearevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	clearevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	clearevent EVENT_CONTEST_OFFICER_HAS_BERRY
 	opentext
-	farwritetext ContestResults_ReadyToJudgeText
+	farwritetext SafariZone_LeavingText
 	waitbutton
-	special BugContestJudging
-	vartomem MEM_BUFFER_0
-	ifequal 1, BugContestResults_FirstPlace
-	ifequal 2, BugContestResults_SecondPlace
-	ifequal 3, BugContestResults_ThirdPlace
-	farwritetext ContestResults_ConsolationPrizeText
-	buttonsound
-	waitsfx
-	verbosegiveitem BERRY
-	iffalse BugContestResults_NoRoomForBerry
-
-BugContestResults_DidNotWin:
-	farwritetext ContestResults_DidNotWinText
-	buttonsound
-	jump BugContestResults_FinishUp
-
-BugContestResults_ReturnAfterWinnersPrize:
-	farwritetext ContestResults_JoinUsNextTimeText
-	buttonsound
-
-BugContestResults_FinishUp:
-	checkevent EVENT_LEFT_MONS_WITH_CONTEST_OFFICER
-	iffalse BugContestResults_DidNotLeaveMons
-	farwritetext ContestResults_ReturnPartyText
-	waitbutton
-	special ContestReturnMons
-BugContestResults_DidNotLeaveMons:
-	special CheckPartyFullAfterContest
-	ifequal BUGCONTEST_CAUGHT_MON, BugContestResults_CleanUp
-	ifequal BUGCONTEST_NO_CATCH, BugContestResults_CleanUp
-	; BUGCONTEST_BOXED_MON
-	farwritetext ContestResults_PartyFullText
-	waitbutton
-BugContestResults_CleanUp:
 	closetext
-	special PlayMapMusic
-	end
-
-BugContestResults_FirstPlace:
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	itemtotext SUN_STONE, MEM_BUFFER_1
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem SUN_STONE
-	iffalse BugContestResults_NoRoomForSunStone
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_SecondPlace:
-	itemtotext EVERSTONE, MEM_BUFFER_1
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem EVERSTONE
-	iffalse BugContestResults_NoRoomForEverstone
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_ThirdPlace:
-	itemtotext GOLD_BERRY, MEM_BUFFER_1
-	farwritetext ContestResults_PlayerWonAPrizeText
-	waitbutton
-	verbosegiveitem GOLD_BERRY
-	iffalse BugContestResults_NoRoomForGoldBerry
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_NoRoomForSunStone:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_SUN_STONE
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_NoRoomForEverstone:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_EVERSTONE
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_NoRoomForGoldBerry:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_GOLD_BERRY
-	jump BugContestResults_ReturnAfterWinnersPrize
-
-BugContestResults_NoRoomForBerry:
-	farwritetext BugContestPrizeNoRoomText
-	buttonsound
-	setevent EVENT_CONTEST_OFFICER_HAS_BERRY
-	jump BugContestResults_DidNotWin
-
-BugContestResults_CopyContestantsToResults:
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_1A
-	iftrue .skip1
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_1B
-.skip1
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_2A
-	iftrue .skip2
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_2B
-.skip2
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_3A
-	iftrue .skip3
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_3B
-.skip3
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_4A
-	iftrue .skip4
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_4B
-.skip4
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_5A
-	iftrue .skip5
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_5B
-.skip5
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_6A
-	iftrue .skip6
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_6B
-.skip6
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_7A
-	iftrue .skip7
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_7B
-.skip7
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_8A
-	iftrue .skip8
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_8B
-.skip8
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_9A
-	iftrue .skip9
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_9B
-.skip9
-	checkevent EVENT_BUG_CATCHING_CONTESTANT_10A
-	iftrue .skip10
-	clearevent EVENT_BUG_CATCHING_CONTESTANT_10B
-.skip10
+	applymovement PLAYER, Movement_SafariZone_Leave
 	end
 
 InitializeEventsScript:
@@ -1565,7 +1437,11 @@ HappinessCheckScript:
 	end
 
 Movement_ContestResults_WalkAfterWarp:
-	step RIGHT
 	step DOWN
-	turn_head UP
+	step DOWN
+	turn_head RIGHT
+	step_resume
+
+Movement_SafariZone_Leave:
+	step DOWN
 	step_resume

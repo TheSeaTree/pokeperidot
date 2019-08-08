@@ -38,6 +38,5 @@ Tilesets::
 	tileset TilesetRadioTower
 	tileset TilesetUnderground
 	tileset TilesetIcePath
-	tileset TilesetDarkCave
 	tileset TilesetJohtoCity
 	tileset TilesetMountain

@@ -27,7 +27,6 @@
 	const TILESET_RADIO_TOWER          ; 1b
 	const TILESET_UNDERGROUND          ; 1c
 	const TILESET_ICE_PATH             ; 1d
-	const TILESET_DARK_CAVE            ; 1e
 	const TILESET_JOHTO_CITY		   ; 25
 	const TILESET_MOUNTAIN             ; 26
 

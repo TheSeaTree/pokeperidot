@@ -471,11 +471,11 @@ LadGroup:
 	db 31, DONPHAN
 	db -1 ; end
 
-	; LAD (3)
+	; LAD (4)
 	db "DEVIN@", TRAINERTYPE_NORMAL
-	db 29, AZUMARILL
-	db 29, PIDGEOTTO
-	db 31, DONPHAN
+	db 30, AZUMARILL
+	db 30, PIDGEOTTO
+	db 32, DONPHAN
 	db -1 ; end
 	
 SchoolboyGroup:
@@ -501,7 +501,7 @@ SchoolboyGroup:
 	db 23, DROWZEE, GOLD_BERRY
 	db -1
 	
-	; SCHOOLBOY (4)
+	; SCHOOLBOY (5)
 	db "MARTIN@", TRAINERTYPE_MOVES
 	db 26, MR__MIME,	REFLECT, LIGHT_SCREEN, ENCORE, PSYBEAM
 	db 26, XATU,		RECOVER, ANCIENTPOWER, CONFUSION, RAZOR_WIND
@@ -591,6 +591,12 @@ LassGroup:
 	db 30, JOLTEON
 	db -1
 	
+	; LASS (9)
+	db "KELLY@", TRAINERTYPE_NORMAL
+	db 35, GRANBULL
+	db 35, HYPNO
+	db -1
+	
 JanineGroup:
 	; JANINE (1)
 	db "JANINE@", TRAINERTYPE_MOVES
@@ -624,7 +630,9 @@ CooltrainerMGroup:
 	; COOLTRAINER_M (2)
 	db "LUCAS@", TRAINERTYPE_NORMAL
 	db 36, FURRET
-	db 36, AMPHAROS
+	db 35, PILOSWINE
+	db 34, TAUROS
+	db 35, AMPHAROS
 	db 36, TYPHLOSION
 	db -1
 
@@ -742,6 +750,13 @@ TeacherGroup:
 	db 24, HOUNDOOM, 	FAINT_ATTACK, BITE, FIRE_SPIN, SMOG
 	db 27, SMEARGLE, 	HEADBUTT, BITE, QUICK_ATTACK, TAIL_WHIP
 	db -1
+	
+	; TEACHER (3)
+	db "LISA@", TRAINERTYPE_NORMAL
+	db 34, PONYTA
+	db 34, PERSIAN
+	db 36, MILTANK
+	db -1
 
 SabrinaGroup:
 	; SABRINA (1)
@@ -821,8 +836,8 @@ FisherGroup:
 
 	; FISHER (4)
 	db "DERRICK@", TRAINERTYPE_NORMAL
-	db 30, SLOWPOKE
-	db 30, POLIWHIRL
+	db 32, SLOWPOKE
+	db 32, POLIWHIRL
 	db 33, SEAKING
 	db 33, SLOWPOKE
 	db -1
@@ -858,10 +873,10 @@ SwimmerFGroup:
 	
 	; SWIMMERF (3)
 	db "ANGIE@", TRAINERTYPE_NORMAL
-	db 34, SHELLDER
-	db 34, GOLDEEN
+	db 33, SHELLDER
+	db 33, GOLDEEN
 	db 34, AZUMARILL
-	db 35, CLOYSTER
+	db 33, CLOYSTER
 	db -1
 
 SailorGroup:
@@ -907,12 +922,19 @@ SuperNerdGroup:
 	db -1
 	
 	; SUPER_NERD (3)
-	db "PETER@", TRAINERTYPE_NORMAL
+	db "PAT@", TRAINERTYPE_NORMAL
 	db 30, MUK
 	db 30, WEEZING
 	db 30, ELECTRODE
 	db 30, SEAKING
 	db 32, PORYGON
+	db -1
+	
+	; SUPER_NERD (4)
+	db "SANDY@", TRAINERTYPE_NORMAL
+	db 34, DRAGONAIR
+	db 36, HOUNDOOM
+	db 34, ALAKAZAM
 	db -1
 	
 Rival2Group:
@@ -1422,10 +1444,10 @@ PokefanMGroup:
 
 	; POKEFANM (2)
 	db "RICHARD@", TRAINERTYPE_ITEM
-	db 27, WEEPINBELL,	BERRY
-	db 30, SUDOWOODO,   BERRY
+	db 30, WEEPINBELL,	BERRY
+	db 31, SUDOWOODO,   BERRY
 	db 32, TANGELA,		BERRY
-	db 33, TANGROWTH,   BERRY
+	db 34, TANGROWTH,   BERRY
 	db -1
 
 KimonoGirlGroup:

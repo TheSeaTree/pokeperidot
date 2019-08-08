@@ -147,10 +147,8 @@ ENDM
 	connection south, Route16, ROUTE_16, 2
 	connection west, OlivineCity, OLIVINE_CITY, -3
 	connection east, Route17, ROUTE_17, 5
-
-	map_attributes Route18South, ROUTE_18_SOUTH, $05, 0
 	
-	map_attributes Route18North, ROUTE_18_NORTH, $05, 0
+	map_attributes Route18, ROUTE_18, $13, 0
 	
 	map_attributes Route14, ROUTE_14, $05, SOUTH
 	connection south, Route13, ROUTE_13, 0
@@ -187,6 +185,10 @@ ENDM
 	map_attributes Route10North, ROUTE_10_NORTH, $05, 0
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, 0
+	
+	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, 0 ; NORTH | EAST
+;	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+;	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
@@ -349,3 +351,4 @@ ENDM
 	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
 	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0
 	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
+	map_attributes SafariZoneGate, SAFARI_ZONE_GATE, $00, 0

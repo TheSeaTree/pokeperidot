@@ -73,6 +73,39 @@ TrainerPsychicWes:
 	closetext
 	end
 	
+TrainerLassKelly:
+	trainer LASS, KELLY, EVENT_BEAT_LASS_KELLY, LassKellyText, LassKellyWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext LassKellyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerTeacherLisa:
+	trainer TEACHER, LISA, EVENT_BEAT_TEACHER_LISA, TeacherLisaText, TeacherLisaWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext TeacherLisaAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerSuperNerdSandy:
+	trainer SUPER_NERD, SANDY, EVENT_BEAT_SUPER_NERD_SANDY, SuperNerdSandyText, SuperNerdSandyWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext SuperNerdSandyAfterText
+	waitbutton
+	closetext
+	end
+	
 Route14MoveTutor:
 	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
@@ -269,7 +302,65 @@ BugCatcherCarlosAfterText:
 	
 	para "…They didn't care."
 	done
+
+LassKellyText:
+	text "I skipped class to"
+	line "be out here."
+	done
 	
+LassKellyWinText:
+	text "Don't tell on me!"
+	done
+	
+LassKellyAfterText:
+	text "Sometimes you just"
+	line "need to take a"
+	cont "break to relieve"
+	cont "some stress."
+	done
+	
+TeacherLisaText:
+	text "Normally I don't"
+	line "encourage battles"
+	cont "around students."
+	
+	para "Today is my day"
+	line "off, though."
+	done
+	
+TeacherLisaWinText:
+	text "Thankfully none of"
+	line "my students were"
+	cont "around to see my"
+	cont "loss."
+	done
+	
+TeacherLisaAfterText:
+	text "Respect is key in"
+	line "running a class-"
+	cont "room."
+	done
+	
+SuperNerdSandyText:
+	text "Ha! Sneak attack!"
+	
+	para "Roll with dis-"
+	line "advantage!"
+	done
+	
+SuperNerdSandyWinText:
+	text "I needed my"
+	line "saving throw!"
+	done
+	
+SuperNerdSandyAfterText:
+	text "That was a fun"
+	line "encounter. I will"
+	cont "reference it the"
+	cont "next time I run a"
+	cont "campaign."
+	done
+
 Route14TutorText:
 	text "Hello there."
 	
@@ -377,16 +468,17 @@ Route14ExplainBlackGlasses:
 Route14_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event 40,  7, ROUTE_14_CAVE_1F, 5
 	warp_event 55, 10, ROUTE_14_OLIVINE_GATE, 1
 	warp_event 55, 11, ROUTE_14_OLIVINE_GATE, 2
+	warp_event 17,  5, ROUTE_18, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 11 ; object events
+	db 14 ; object events
 	object_event 26,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
 	object_event 40,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_12_LEADER
 	object_event 42, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
@@ -398,4 +490,7 @@ Route14_MapEvents:
 	object_event 20,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, BlackGlassesGuy, -1
 	object_event 47,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_14_ULTRA_BALL
 	object_event 26, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_14_NUGGET
+	object_event 12, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassKelly, -1
+	object_event 14, 12, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherLisa, -1
+	object_event  6, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdSandy, -1
 	

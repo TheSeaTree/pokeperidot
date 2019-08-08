@@ -39,10 +39,10 @@ FishGroups:
 .Ocean_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     TENTACOOL,  10
+	db 100 percent,     SMOLA,      10
 .Ocean_Good:
 	db  35 percent,     SHELLDER,   12
-	db  70 percent,     TENTACOOL,  13
+	db  70 percent,     SMOLA,	    13
 	db  90 percent + 1, SHELLDER,   13
 	db 100 percent,     time_group 2
 .Ocean_Super:
@@ -87,13 +87,13 @@ FishGroups:
 	db 100 percent,     MAGIKARP,   10
 .Dratini_Good:
 	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     MAGIKARP,   20
-	db  90 percent + 1, MAGIKARP,   20
+	db  70 percent,     GYARADOS,   20
+	db  90 percent + 1, DRATINI,    20
 	db 100 percent,     time_group 8
 .Dratini_Super:
 	db  40 percent,     MAGIKARP,   40
 	db  70 percent,     time_group 9
-	db  90 percent + 1, MAGIKARP,   40
+	db  90 percent + 1, GYARADOS,   40
 	db 100 percent,     DRAGONAIR,  40
 
 .Qwilfish_Swarm_Old:

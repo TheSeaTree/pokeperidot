@@ -1,14 +1,16 @@
 	const_def 2 ; object constants
 
-Route18North_MapScripts:
+SafariZoneArea1_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route18North_MapEvents:
+SafariZoneArea1_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 16, 29, SAFARI_ZONE_GATE, 3
+	warp_event 17, 29, SAFARI_ZONE_GATE, 3
 
 	db 0 ; coord events
 

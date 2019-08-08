@@ -1250,14 +1250,24 @@ UnknownText_0x1bd2bc::
 	done
 
 UnknownText_0x1bd2ca::
-	text "ANNOUNCER: BEEEP!"
+	text "ANNOUNCER: DING"
+	line "DONG!"
 
 	para "Time's up!"
+	
+	para "Please return any"
+	line "SAFARI BALLs you"
+	cont "still have to the"
+	cont "main gate."
 	done
 
 UnknownText_0x1bd2e7::
-	text "ANNOUNCER: The"
-	line "Contest is over!"
+	text "ANNOUNCER: You are"
+	line "out of SAFARI"
+	cont "BALLS."
+	
+	para "Please return to"
+	line "the main gate."
 	done
 
 UnknownText_0x1bd308::
