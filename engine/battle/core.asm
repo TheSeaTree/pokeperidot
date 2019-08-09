@@ -9323,11 +9323,15 @@ BattleStartMessage:
 	cp BATTLETYPE_BOSS
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
+	cp BATTLETYPE_CONTEST
+	jr z, .SkipStartingHUD
+	ld hl, WildPokemonAppearedText
 
 .PlaceBattleStartText:
 	push hl
 	farcall BattleStart_TrainerHuds
 	pop hl
+.SkipStartingHUD
 	call StdBattleTextBox
 
 	call IsMobileBattle2

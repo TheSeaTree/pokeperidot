@@ -23,8 +23,8 @@
 	RGB 03,04,08, 00,00,00 ; nite
 
 ; group 6 (Cinnabar)
-	RGB 21,31,07, 13,25,04 ; morn/day
-	RGB 09,14,08, 06,10,04 ; nite
+	RGB 15,20,01, 09,13,00 ; morn/day
+	RGB 08,13,19, 00,11,13 ; nite
 
 ; group 7 (Cerulean)
 	RGB 17,27,31, 05,15,31 ; morn/day

@@ -1537,6 +1537,10 @@ Script_GotABite:
 	callasm PutTheRodAway
 	closetext
 	randomwildmon
+	checkflag ENGINE_BUG_CONTEST_TIMER
+	iffalse .not_in_bug_contest
+	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
+.not_in_bug_contest
 	startbattle
 	reloadmapafterbattle
 	end

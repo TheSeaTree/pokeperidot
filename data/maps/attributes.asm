@@ -186,9 +186,13 @@ ENDM
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, 0
 	
-	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, 0 ; NORTH | EAST
+	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, EAST
 ;	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
-;	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
+	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
+
+	map_attributes SafariZoneArea2, SAFARI_ZONE_AREA_2, $00, WEST
+;	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+	connection west, SafariZoneArea1, SAFARI_ZONE_AREA_1, 0
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0

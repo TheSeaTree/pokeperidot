@@ -195,8 +195,16 @@ JohtoWaterWildMons:
 	db 26, POLIWHIRL
 	
 	map_id SAFARI_ZONE_AREA_1
-	db 4 percent
+	db 6 percent
 	db 26, SEEL
+	db 26, POLIWHIRL
+	db 26, POLIWHIRL
+	db 26, LAPRAS
+	db 26, LAPRAS
+	
+	map_id SAFARI_ZONE_AREA_2
+	db 6 percent
+	db 26, KINGLER
 	db 26, POLIWHIRL
 	db 26, POLIWHIRL
 	db 26, LAPRAS

@@ -117,25 +117,25 @@ JohtoGrassWildMons:
 	db 14, NATU
 	db 13, MAREEP
 	db 16, STANTLER
-	db 16, FARFETCH_D
-	db 17, FARFETCH_D
-	db 17, FARFETCH_D
+	db 16, PIDGEY
+	db 17, PIDGEY
+	db 17, PIDGEY
 	; day
 	db 14, JIGGLYPUFF
 	db 14, NATU
 	db 13, MAREEP
 	db 16, NATU
 	db 16, STANTLER
-	db 17, FARFETCH_D
-	db 17, FARFETCH_D
+	db 17, PIDGEY
+	db 17, PIDGEY
 	; nite
 	db 13, JIGGLYPUFF
 	db 14, MURKROW
 	db 14, GASTLY
 	db 16, STANTLER
-	db 16, FARFETCH_D
-	db 17, FARFETCH_D
-	db 17, FARFETCH_D
+	db 16, HOOTHOOT
+	db 17, HOOTHOOT
+	db 17, HOOTHOOT
 
 	map_id ROUTE_2
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -922,26 +922,52 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent
 	db 27, NIDORINO
 	db 27, NIDORINA
-	db 27, SUDOWOODO
-	db 28, EEVEE
-	db 26, LARVITAR
+	db 26, VENOMOTH
+	db 28, FARFETCH_D
+	db 27, SUNFLORA
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; day
 	db 27, NIDORINO
 	db 27, NIDORINA
-	db 27, SUDOWOODO
 	db 26, VENOMOTH
-	db 28, EEVEE
+	db 28, FARFETCH_D
+	db 27, SUNFLORA
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; nite
 	db 27, NIDORINO
 	db 27, NIDORINA
-	db 27, SUDOWOODO
 	db 26, VENOMOTH
-	db 28, EEVEE
+	db 28, FARFETCH_D
+	db 27, SUNFLORA
 	db 30, CHANSEY
 	db 30, CHANSEY
+
+	map_id SAFARI_ZONE_AREA_2
+	db 10 percent, 10 percent, 10 percent
+	db 27, MACHOKE
+	db 27, SUDOWOODO
+	db 27, RHYHORN
+	db 26, CLEFABLE
+	db 28, RHYHORN
+	db 25, LARVITAR
+	db 25, LARVITAR
+	; day
+	db 27, MACHOKE
+	db 27, SUDOWOODO
+	db 27, RHYHORN
+	db 26, CLEFABLE
+	db 28, RHYHORN
+	db 25, LARVITAR
+	db 25, LARVITAR
+	; nite
+	db 27, MACHOKE
+	db 27, SUDOWOODO
+	db 27, RHYHORN
+	db 26, CLEFABLE
+	db 28, RHYHORN
+	db 25, LARVITAR
+	db 25, LARVITAR
 
 	db -1 ; end

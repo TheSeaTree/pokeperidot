@@ -53,6 +53,7 @@ INCLUDE "maps/DayCare.asm"
 INCLUDE "maps/OlivineSurfHouse.asm"
 INCLUDE "maps/SafariZoneGate.asm"
 INCLUDE "maps/SafariZoneArea1.asm"
+INCLUDE "maps/SafariZoneArea2.asm"
 
 SECTION "Map Scripts 5", ROMX
 

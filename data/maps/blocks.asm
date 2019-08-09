@@ -525,3 +525,6 @@ SafariZoneGate_Blocks:
 
 SafariZoneArea1_Blocks:
 	INCBIN "maps/SafariZoneArea1.ablk"
+
+SafariZoneArea2_Blocks:
+	INCBIN "maps/SafariZoneArea2.ablk"
