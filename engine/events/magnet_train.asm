@@ -225,8 +225,8 @@ MagnetTrainBGTiles:
 	db $11, $11 ; track
 	db $11, $11 ; track
 	db $32, $32 ; track
-	db $33, $33 ; track
-	db $3e, $3e ; dotted line
+	db $3e, $3e ; track
+	db $33, $33 ; dotted line
 	db $3e, $3e ; floor
 	db $3e, $3e ; floor
 	db $3e, $3e ; floor
