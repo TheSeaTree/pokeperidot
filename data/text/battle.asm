@@ -374,12 +374,12 @@ BattleText_StringBuffer1GrewToLevel:
 BattleText_ThrewRock:
 	text "<PLAYER> threw a"
 	line "rock."
-	prompt
+	done
 
 BattleText_ThrewBait:
 	text "<PLAYER> tossed"
 	line "some bait."
-	prompt
+	done
 
 BattleText_WildMonIsEating:
 	text "Wild @"
@@ -1119,12 +1119,6 @@ ForesawAttackText:
 	text "<USER>"
 	line "foresaw an attack!"
 	prompt
-
-BeatUpAttackText:
-	text_ram wStringBuffer1
-	text "'s"
-	line "attack!"
-	done
 
 RefusedGiftText:
 	text "<TARGET>"

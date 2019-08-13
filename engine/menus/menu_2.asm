@@ -144,7 +144,7 @@ Unreferenced_Function24b8f:
 	db "ボール　　　こ@"
 
 StartMenu_DrawBugContestStatusBox:
-	hlcoord 0, 3
+	hlcoord 10, 0
 	ld b, 1
 	ld c, 8
 	call TextBox
@@ -156,10 +156,10 @@ StartMenu_PrintBugContestStatus:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call StartMenu_DrawBugContestStatusBox
-	hlcoord 1, 4
+	hlcoord 11, 1
 	ld de, .Balls_EN
 	call PlaceString
-	hlcoord 7, 4
+	hlcoord 17, 1
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum

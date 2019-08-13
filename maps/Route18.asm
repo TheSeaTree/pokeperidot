@@ -11,7 +11,7 @@ Route18_MapEvents:
 	db 3 ; warp events
 	warp_event 28, 35, ROUTE_14, 4
 	warp_event 27, 35, ROUTE_14, 4
-	warp_event 27,  3, SAFARI_ZONE_GATE, 1
+	warp_event 27,  3, SAFARI_ZONE_GATE_1F, 1
 
 	db 0 ; coord events
 

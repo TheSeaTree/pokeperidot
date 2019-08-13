@@ -920,54 +920,106 @@ JohtoGrassWildMons:
 
 	map_id SAFARI_ZONE_AREA_1
 	db 10 percent, 10 percent, 10 percent
-	db 27, NIDORINO
 	db 27, NIDORINA
+	db 27, NIDORINO
 	db 26, VENOMOTH
-	db 28, FARFETCH_D
-	db 27, SUNFLORA
+	db 28, DODRIO
+	db 27, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; day
-	db 27, NIDORINO
 	db 27, NIDORINA
+	db 27, NIDORINO
+	db 28, DODRIO
 	db 26, VENOMOTH
-	db 28, FARFETCH_D
-	db 27, SUNFLORA
+	db 27, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; nite
-	db 27, NIDORINO
 	db 27, NIDORINA
+	db 27, NIDORINO
+	db 28, DODRIO
 	db 26, VENOMOTH
-	db 28, FARFETCH_D
-	db 27, SUNFLORA
+	db 27, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 
 	map_id SAFARI_ZONE_AREA_2
 	db 10 percent, 10 percent, 10 percent
 	db 27, MACHOKE
-	db 27, SUDOWOODO
 	db 27, RHYHORN
 	db 26, CLEFABLE
-	db 28, RHYHORN
+	db 27, KANGASKHAN
+	db 28, SUNFLORA
 	db 25, LARVITAR
 	db 25, LARVITAR
 	; day
 	db 27, MACHOKE
-	db 27, SUDOWOODO
 	db 27, RHYHORN
 	db 26, CLEFABLE
-	db 28, RHYHORN
+	db 27, KANGASKHAN
+	db 28, SUNFLORA
 	db 25, LARVITAR
 	db 25, LARVITAR
 	; nite
 	db 27, MACHOKE
-	db 27, SUDOWOODO
 	db 27, RHYHORN
 	db 26, CLEFABLE
-	db 28, RHYHORN
+	db 27, KANGASKHAN
+	db 28, SUNFLORA
 	db 25, LARVITAR
 	db 25, LARVITAR
+
+	map_id SAFARI_ZONE_AREA_3
+	db 10 percent, 10 percent, 10 percent
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, PINSIR
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; day
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, PINSIR
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; nite
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, PINSIR
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
+
+	map_id SAFARI_ZONE_AREA_4
+	db 10 percent, 10 percent, 10 percent
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, SCYTHER
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; day
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, SCYTHER
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
+	; nite
+	db 28, FARFETCH_D
+	db 27, VENOMOTH
+	db 27, SUDOWOODO
+	db 27, SCYTHER
+	db 26, EXEGGUTOR
+	db 30, CHANSEY
+	db 30, CHANSEY
 
 	db -1 ; end

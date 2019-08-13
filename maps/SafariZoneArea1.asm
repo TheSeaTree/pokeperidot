@@ -17,8 +17,8 @@ SafariZoneArea1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 16, 29, SAFARI_ZONE_GATE, 3
-	warp_event 17, 29, SAFARI_ZONE_GATE, 3
+	warp_event 16, 29, SAFARI_ZONE_GATE_1F, 3
+	warp_event 17, 29, SAFARI_ZONE_GATE_1F, 3
 
 	db 0 ; coord events
 

@@ -322,19 +322,19 @@ RadioTowerRocketsScript:
 	end
 
 BugContestResultsWarpScript:
-	special ClearBGPalettes
+	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
-	warp SAFARI_ZONE_GATE, 5, 0
-	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
+	warp SAFARI_ZONE_GATE_1F, 8, 0
+;	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
 
 BugContestResultsScript:
-	clearflag ENGINE_BUG_CONTEST_TIMER
-	opentext
-	farwritetext SafariZone_LeavingText
-	waitbutton
-	closetext
-	applymovement PLAYER, Movement_SafariZone_Leave
+;	clearflag ENGINE_BUG_CONTEST_TIMER
+;	opentext
+;	farwritetext SafariZone_LeavingText
+;	waitbutton
+;	closetext
+;	applymovement PLAYER, Movement_SafariZone_Leave
 	end
 
 InitializeEventsScript:

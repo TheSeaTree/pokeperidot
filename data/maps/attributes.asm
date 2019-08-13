@@ -186,13 +186,21 @@ ENDM
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, 0
 	
-	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, EAST
-;	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, NORTH | EAST
+	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 6
 	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 
-	map_attributes SafariZoneArea2, SAFARI_ZONE_AREA_2, $00, WEST
-;	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+	map_attributes SafariZoneArea2, SAFARI_ZONE_AREA_2, $00, NORTH | WEST
+	connection north, SafariZoneArea4, SAFARI_ZONE_AREA_4, 0
 	connection west, SafariZoneArea1, SAFARI_ZONE_AREA_1, 0
+	
+	map_attributes SafariZoneArea3, SAFARI_ZONE_AREA_3, $00, SOUTH | EAST
+	connection south, SafariZoneArea1, SAFARI_ZONE_AREA_1, -6
+	connection east, SafariZoneArea4, SAFARI_ZONE_AREA_4, 0
+
+	map_attributes SafariZoneArea4, SAFARI_ZONE_AREA_4, $00, SOUTH | WEST
+	connection south, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
+	connection west, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
@@ -355,4 +363,5 @@ ENDM
 	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
 	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0
 	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
-	map_attributes SafariZoneGate, SAFARI_ZONE_GATE, $00, 0
+	map_attributes SafariZoneGate1F, SAFARI_ZONE_GATE_1F, $00, 0
+	map_attributes SafariZoneGate2F, SAFARI_ZONE_GATE_2F, $00, 0

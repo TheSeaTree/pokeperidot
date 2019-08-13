@@ -104,9 +104,12 @@ ENDM
 
 	newgroup                                                      ;  6
 	
-	map_const SAFARI_ZONE_GATE,								4,  4
+	map_const SAFARI_ZONE_GATE_1F,							5,   4
+	map_const SAFARI_ZONE_GATE_2F,  						4,   4
 	map_const SAFARI_ZONE_AREA_1,						   19,  17
 	map_const SAFARI_ZONE_AREA_2,						   17,  14
+	map_const SAFARI_ZONE_AREA_3,						   13,  15
+	map_const SAFARI_ZONE_AREA_4,						   17,  15
 
 	newgroup                                                      ;  7
 

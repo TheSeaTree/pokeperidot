@@ -520,11 +520,20 @@ PowerPlant2F_Blocks:
 PowerPlant2FB_Blocks:
 	INCBIN "maps/PowerPlant2F.ablk"
 
-SafariZoneGate_Blocks:
-	INCBIN "maps/SafariZoneGate.ablk"
+SafariZoneGate1F_Blocks:
+	INCBIN "maps/SafariZoneGate1F.ablk"
+
+SafariZoneGate2F_Blocks:
+	INCBIN "maps/SafariZoneGate2F.ablk"
 
 SafariZoneArea1_Blocks:
 	INCBIN "maps/SafariZoneArea1.ablk"
 
 SafariZoneArea2_Blocks:
 	INCBIN "maps/SafariZoneArea2.ablk"
+
+SafariZoneArea3_Blocks:
+	INCBIN "maps/SafariZoneArea3.ablk"
+
+SafariZoneArea4_Blocks:
+	INCBIN "maps/SafariZoneArea4.ablk"
