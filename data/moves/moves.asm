@@ -132,7 +132,7 @@ Moves: ; 41afb
 	move METRONOME,    EFFECT_METRONOME,           0, NORMAL,   100, 10,   0
 	move MIRROR_MOVE,  EFFECT_MIRROR_MOVE,         0, FLYING,   100, 20,   0
 	move COSMIC_POWER, EFFECT_COSMIC_POWER,        0, PSYCHIC,  100, 10,   0
-	move EGG_BOMB,     EFFECT_BURN_HIT,          100, GRASS,     75, 10,  30
+	move EGG_BOMB,     EFFECT_BURN_HIT,          100, GRASS,     85, 10,  30
 	move LICK,         EFFECT_PARALYZE_HIT,       30, GHOST,    100, 30,  30
 	move SMOG,         EFFECT_POISON_HIT,         30, POISON,    70, 20,  40
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,   100, 20,  30

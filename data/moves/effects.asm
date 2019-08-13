@@ -2020,33 +2020,6 @@ Teleport:
 	teleport
 	endmove
 
-BeatUp:
-	checkobedience
-	usedmovetext
-	movedelay
-	doturn
-	startloop
-	lowersub
-	checkhit
-	critical
-	beatup
-	damagecalc
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	endloop
-	beatupfailtext
-	raisesub
-	kingsrock
-	endmove
-
 DefenseCurl:
 	checkobedience
 	usedmovetext
@@ -2065,7 +2038,6 @@ CalmMind:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
 	calmmind
 	raisesub
 	statupfailtext
@@ -2076,7 +2048,6 @@ BulkUp:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
 	bulkup
 	raisesub
 	statupfailtext
@@ -2087,10 +2058,8 @@ DragonDance:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
 	dragondance
 	raisesub
-	statupfailtext
 	endmove
 
 QuiverDance:
@@ -2098,7 +2067,6 @@ QuiverDance:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
 	quiverdance
 	raisesub
 	statupfailtext
@@ -2109,7 +2077,6 @@ CosmicPower:
 	usedmovetext
 	doturn
 	lowersub
-	statupanim
 	cosmicpower
 	raisesub
 	statupfailtext

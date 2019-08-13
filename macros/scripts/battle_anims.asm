@@ -152,11 +152,6 @@ anim_clearobjs: MACRO
 	db anim_clearobjs_command
 ENDM
 
-	enum anim_beatup_command ; $e6
-anim_beatup: MACRO
-	db anim_beatup_command
-ENDM
-
 	enum anim_0xe7_command ; $e7
 anim_0xe7: MACRO
 	db anim_0xe7_command
