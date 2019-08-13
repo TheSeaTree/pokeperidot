@@ -36,15 +36,5 @@ pokecrystal.txt
 # swap files for gedit
 *~
 
-*.dimensions
-*.gbcpal
-*.2bpp
-*.1bpp
-*.lz
-*.pal
-*.animated.tilemap
-gfx/pokemon/*/bitmask.asm
-gfx/pokemon/*/frames.asm
-!gfx/pokemon/*/shiny.pal
 engine/phone/phone_gossip.asm
 engine/phone/phone_scripts.asm
