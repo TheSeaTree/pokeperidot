@@ -1392,34 +1392,6 @@ HealBell:
 	healbell
 	endmove
 
-TripleKick:
-	checkobedience
-	usedmovetext
-	doturn
-	startloop
-	lowersub
-	checkhit
-	critical
-	damagestats
-	damagecalc
-	triplekick
-	stab
-	damagevariation
-	clearmissdamage
-	moveanimnosub
-	failuretext
-	applydamage
-	criticaltext
-	cleartext
-	supereffectivelooptext
-	checkfaint
-	buildopponentrage
-	kickcounter
-	endloop
-	raisesub
-	kingsrock
-	endmove
-
 Thief:
 	checkobedience
 	usedmovetext
@@ -1687,28 +1659,6 @@ SacredFire:
 	checkfaint
 	buildopponentrage
 	burntarget
-	endmove
-
-Magnitude:
-	checkobedience
-	usedmovetext
-	doturn
-	critical
-	damagestats
-	getmagnitude
-	damagecalc
-	stab
-	damagevariation
-	checkhit
-	doubleundergrounddamage
-	moveanim
-	failuretext
-	applydamage
-	criticaltext
-	supereffectivetext
-	checkfaint
-	buildopponentrage
-	kingsrock
 	endmove
 
 BatonPass:
@@ -2186,18 +2136,9 @@ Coil:
 	checkobedience
 	usedmovetext
 	doturn
-	attackup
 	lowersub
-	statupanim
-	statupmessage
-	statupfailtext
-	defenseup
+	coil
 	raisesub
-	statupmessage
-	statupfailtext
-	accuracyup
-	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	
@@ -2205,14 +2146,9 @@ Growth:
 	checkobedience
 	usedmovetext
 	doturn
-	growthattack
 	lowersub
-	statupanim
-	statupmessage
-	statupfailtext
-	growthspecial
+	growth
 	raisesub
-	statupmessage
 	statupfailtext
 	endmove
 	

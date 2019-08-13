@@ -104,7 +104,6 @@ MoveEffectsPointers:
 	dw FalseSwipe
 	dw HealBell
 	dw NormalHit
-	dw TripleKick
 	dw Thief
 	dw MeanLook
 	dw Nightmare
@@ -126,7 +125,6 @@ MoveEffectsPointers:
 	dw Frustration
 	dw Safeguard
 	dw SacredFire
-	dw Magnitude
 	dw BatonPass
 	dw Pursuit
 	dw RapidSpin

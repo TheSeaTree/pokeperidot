@@ -81,8 +81,6 @@ BattleCommandPointers:
 	dw BattleCommand_FalseSwipe
 	dw BattleCommand_HealBell
 	dw BattleCommand_HeldFlinch
-	dw BattleCommand_TripleKick
-	dw BattleCommand_KickCounter
 	dw BattleCommand_Thief
 	dw BattleCommand_ArenaTrap
 	dw BattleCommand_Nightmare
@@ -105,7 +103,6 @@ BattleCommandPointers:
 	dw BattleCommand_FrustrationPower
 	dw BattleCommand_Safeguard
 	dw BattleCommand_CheckSafeguard
-	dw BattleCommand_GetMagnitude
 	dw BattleCommand_BatonPass
 	dw BattleCommand_Pursuit
 	dw BattleCommand_ClearHazards
@@ -183,3 +180,5 @@ BattleCommandPointers:
 	dw BattleCommand_CosmicPower
 	dw BattleCommand_QuiverDance
 	dw BattleCommand_CheckGrassType
+	dw BattleCommand_Coil
+	dw BattleCommand_Growth

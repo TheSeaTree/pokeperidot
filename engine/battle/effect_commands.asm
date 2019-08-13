@@ -1214,8 +1214,6 @@ INCLUDE "data/moves/critical_hit_moves.asm"
 
 INCLUDE "data/battle/critical_hit_chances.asm"
 
-INCLUDE "engine/battle/move_effects/triple_kick.asm"
-
 BattleCommand_Stab:
 ; STAB = Same Type Attack Bonus
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1674,8 +1672,8 @@ BattleCommand_CheckHit:
 	ret
 
 .LockOn:
-; Return nz if we are locked-on and aren't trying to use Earthquake,
-; Fissure or Magnitude on a monster that is flying.
+; Return nz if we are locked-on and aren't trying to use Earthquake or
+; Fissure on a monster that is flying.
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_LOCK_ON, [hl]
@@ -1993,12 +1991,9 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
-	cp EFFECT_TRIPLE_KICK
-	jr z, .triplekick
 	xor a
 	ld [wKickCounter], a
 
-.triplekick
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld e, a
@@ -2450,9 +2445,7 @@ BattleCommand_CheckFaint:
 	cp EFFECT_BONEMERANG
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .multiple_hit_raise_sub
-	cp EFFECT_TRIPLE_KICK
-	jr z, .multiple_hit_raise_sub
+	jr nz, .finish
 
 .multiple_hit_raise_sub
 	call BattleCommand_RaiseSub
@@ -3257,9 +3250,6 @@ BattleCommand_ConstantDamage:
 	cp EFFECT_PSYWAVE
 	jr z, .psywave
 
-	cp EFFECT_SUPER_FANG
-	jr z, .super_fang
-
 	cp EFFECT_REVERSAL
 	jr z, .reversal
 
@@ -3282,29 +3272,6 @@ BattleCommand_ConstantDamage:
 	jr nc, .psywave_loop
 	ld b, a
 	ld a, 0
-	jr .got_power
-
-.super_fang
-	ld hl, wEnemyMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_hp
-	ld hl, wBattleMonHP
-.got_hp
-	ld a, [hli]
-	srl a
-	ld b, a
-	ld a, [hl]
-	rr a
-	push af
-	ld a, b
-	pop bc
-	and a
-	jr nz, .got_power
-	or b
-	ld a, 0
-	jr nz, .got_power
-	ld b, 1
 	jr .got_power
 
 .got_power
@@ -3633,8 +3600,6 @@ DoSubstituteDamage:
 	cp EFFECT_BONEMERANG
 	jr z, .ok
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .ok
-	cp EFFECT_TRIPLE_KICK
 	jr z, .ok
 	xor a
 	ld [hl], a
@@ -4253,7 +4218,7 @@ BattleCommand_GrowthAttack:
 	ld b, $10 | ATTACK
 	jr BattleCommand_StatUp
 	ret
-	
+
 BattleCommand_GrowthSpecial:
 ; growthspecial
 	ld a, [wBattleWeather]
@@ -5368,19 +5333,7 @@ BattleCommand_EndLoop:
 	ld a, 1
 	jr z, .double_hit
 	ld a, [hl]
-	cp EFFECT_TRIPLE_KICK
-	jr nz, .not_triple_kick
-.reject_triple_kick_sample
-	call BattleRandom
-	and $3
-	jr z, .reject_triple_kick_sample
-	dec a
-	jr nz, .double_hit
-	ld a, 1
-	ld [bc], a
-	jr .done_loop
 
-.not_triple_kick
 	call BattleRandom
 	and $3
 	cp 2
@@ -5417,9 +5370,12 @@ BattleCommand_EndLoop:
 .got_hit_n_times_text
 
 	push bc
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
 	call StdBattleTextBox
+
+	pop bc
+	xor a
+	ld [bc], a
+	ret
 
 .loop_back_to_critical
 	ld a, [wBattleScriptBufferAddress + 1]
@@ -5644,9 +5600,6 @@ BattleCommand_Charge:
 	text_asm
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-	cp RAZOR_WIND
-	ld hl, .RazorWind
-	jr z, .done
 
 	cp SOLARBEAM
 	ld hl, .Solarbeam
@@ -5669,11 +5622,6 @@ BattleCommand_Charge:
 
 .done
 	ret
-
-.RazorWind:
-; 'made a whirlwind!'
-	text_far UnknownText_0x1c0d12
-	text_end
 
 .Solarbeam:
 ; 'took in sunlight!'
@@ -6514,8 +6462,6 @@ BattleCommand_CheckSafeguard:
 	call StdBattleTextBox
 	jp EndMoveEffect
 
-INCLUDE "engine/battle/move_effects/magnitude.asm"
-
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
@@ -6638,6 +6584,10 @@ INCLUDE "engine/battle/move_effects/dragon_dance.asm"
 INCLUDE "engine/battle/move_effects/quiver_dance.asm"
 
 INCLUDE "engine/battle/move_effects/cosmic_power.asm"
+
+INCLUDE "engine/battle/move_effects/coil.asm"
+
+INCLUDE "engine/battle/move_effects/growth.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
 

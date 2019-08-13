@@ -82,8 +82,6 @@ ENDM
 	command falseswipe              ; 4b
 	command healbell                ; 4c
 	command kingsrock               ; 4d
-	command triplekick              ; 4e
-	command kickcounter             ; 4f
 	command thief                   ; 50
 	command arenatrap               ; 51
 	command nightmare               ; 52
@@ -106,7 +104,6 @@ ENDM
 	command frustrationpower        ; 63
 	command safeguard               ; 64
 	command checksafeguard          ; 65
-	command getmagnitude            ; 66
 	command batonpass               ; 67
 	command pursuit                 ; 68
 	command clearhazards            ; 69
@@ -184,6 +181,8 @@ ENDM
 	command cosmicpower
 	command quiverdance
 	command checkgrasstype
+	command coil
+	command growth
 
 	enum_start $fe
 	command endturn                 ; fe
