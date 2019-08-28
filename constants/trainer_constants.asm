@@ -163,6 +163,8 @@ KRIS EQU __enum__
 	const TRACEY
 	const REBECCA
 	const REGGIE
+	const MARIE1
+	const MARIE2
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
