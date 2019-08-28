@@ -3096,6 +3096,12 @@ AI_Status:
 	jr z, .typeimmunity
 	cp EFFECT_PARALYZE
 	jr z, .electricimmunity
+	cp EFFECT_SLEEP_POWDER
+	jr z, .grassimmunity
+	cp EFFECT_STUN_SPORE
+	jr z, .grassimmunity
+	cp EFFECT_POISONPOWDER
+	jr z, .grasspoisonimmunity
 
 	ld a, [wEnemyMoveStruct + MOVE_POWER]
 	and a
@@ -3110,6 +3116,15 @@ AI_Status:
 	ld a, [wBattleMonType2]
 	cp ELECTRIC
 	jr z, .immune
+	jr .typeimmunity
+	
+.grasspoisonimmunity
+	ld a, [wBattleMonType1]
+	cp GRASS
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp GRASS
+	jr z, .immune
 	
 .poisonimmunity
 	ld a, [wBattleMonType1]
@@ -3117,6 +3132,15 @@ AI_Status:
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp POISON
+	jr z, .immune
+	jr .typeimmunity
+
+.grassimmunity
+	ld a, [wBattleMonType1]
+	cp GRASS
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp GRASS
 	jr z, .immune
 
 .typeimmunity
@@ -3132,11 +3156,11 @@ AI_Status:
 
 	ld a, [wTypeMatchup]
 	and a
-	jr nz, .checkmove
+	jp nz, .checkmove
 
 .immune
 	call AIDiscourageMove
-	jr .checkmove
+	jp .checkmove
 
 
 AI_Risky:
@@ -3212,9 +3236,13 @@ AI_None:
 	ret
 
 AIDiscourageMove:
+	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
+	cp EFFECT_BONEMERANG
+	jr z, .skip
 	ld a, [hl]
 	add 10
 	ld [hl], a
+.skip
 	ret
 
 AIGetEnemyMove:
