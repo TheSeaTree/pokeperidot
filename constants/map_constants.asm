@@ -100,7 +100,7 @@ ENDM
 	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
-	map_const BLACKTHORN_CITY,                             20, 18 ; 10
+	map_const BLACKTHORN_CITY,                             23, 14 ; 10
 
 	newgroup                                                      ;  6
 	
@@ -112,6 +112,9 @@ ENDM
 	map_const SAFARI_ZONE_AREA_4,						   17,  15
 
 	newgroup                                                      ;  7
+	
+	map_const ROUTE_18,                                    18, 20 ;  4
+	map_const CARNATION_TOWN,        					   17, 12
 
 	newgroup                                                      ;  8
 
@@ -220,7 +223,6 @@ ENDM
 	map_const ROUTE_14,                                    31, 14 ;  2
 	map_const ROUTE_14_CAVE_1F, 							9, 11
 	map_const ROUTE_14_CAVE_2F,							   10, 10
-	map_const ROUTE_18,                                    18, 20 ;  4
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14

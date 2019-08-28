@@ -119,7 +119,7 @@ ENDM
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $71, 0
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $05, 0
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
@@ -365,3 +365,4 @@ ENDM
 	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
 	map_attributes SafariZoneGate1F, SAFARI_ZONE_GATE_1F, $00, 0
 	map_attributes SafariZoneGate2F, SAFARI_ZONE_GATE_2F, $00, 0
+	map_attributes CarnationTown, CARNATION_TOWN, $20, 0

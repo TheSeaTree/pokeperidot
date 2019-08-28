@@ -72,6 +72,16 @@ CinnabarGroupSprites:
 
 ; CeruleanCity and Route5 are connected
 CeruleanGroupSprites:
+	db SPRITE_LASS
+	db SPRITE_TEACHER
+	db SPRITE_GRAMPS
+	db SPRITE_FISHER
+	; limie 3 of 9 walking sprites
+	db SPRITE_TAUROS
+	db SPRITE_FRUIT_TREE
+	db SPRITE_POKE_BALL
+	db 0
+
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
 SaffronGroupSprites:
 ; Route5, SaffronCity

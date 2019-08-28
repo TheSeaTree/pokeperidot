@@ -36,6 +36,7 @@ Landmarks:
 	landmark  84,  44, OlivineCityName
 	landmark  52,  44, MahoganyTownName
 	landmark  52,  44, PowerPlantName
+	landmark  42,  42, CarnationTownName
 	landmark  34,  43, BlackthornCityName
 	landmark  36,  96, Route15Name
 	landmark  44,  44, Route16Name
@@ -60,6 +61,7 @@ PaintersForestName:  db "PAINTER'S¯FOREST@"
 OlivineCityName:     db "CYNARIA¯COAST@"
 CianwoodCityName:    db "HELIO¯TOWN@"
 MahoganyTownName:    db "CYNARIA¯CITY@"
+CarnationTownName:   db "CARNATION¯TOWN@"
 BlackthornCityName:  db "BLACKTHORN¯CITY@"
 LakeOfRageName:      db "LAKE OF¯RAGE@"
 SilverCaveName:      db "SILVER CAVE@"

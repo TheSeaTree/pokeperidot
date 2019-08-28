@@ -257,6 +257,7 @@ INCLUDE "maps/Route12EcruteakGate.asm"
 INCLUDE "maps/Route12Shelter.asm"
 INCLUDE "maps/Route14Cave1F.asm"
 INCLUDE "maps/Route14Cave2F.asm"
+INCLUDE "maps/CarnationTown.asm"
 
 SECTION "Map Scripts 24", ROMX
 

@@ -20,6 +20,7 @@ SpawnPoints:
 	spawn ECRUTEAK_CITY,               9, 20
 	spawn OLIVINE_CITY,               13, 22
 	spawn MAHOGANY_TOWN,              27, 30
-	spawn BLACKTHORN_CITY,            21, 30
+	spawn CARNATION_TOWN,             19,  6
+	spawn BLACKTHORN_CITY,            33, 18
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
 	spawn N_A,                        -1, -1

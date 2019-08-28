@@ -85,6 +85,7 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK ; $48
 	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
+	engine_flag wVisitedSpawns, SPAWN_CARNATION
 	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
 	engine_flag wVisitedSpawns, SPAWN_MT_SILVER
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused

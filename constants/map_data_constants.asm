@@ -80,6 +80,7 @@ const_value = -1
 	const SPAWN_ECRUTEAK
 	const SPAWN_OLIVINE
 	const SPAWN_MAHOGANY
+	const SPAWN_CARNATION
 	const SPAWN_BLACKTHORN
 	const SPAWN_INDIGO
 	const SPAWN_MT_SILVER

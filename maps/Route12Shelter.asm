@@ -7,7 +7,18 @@
 Route12Shelter_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .AssistantLocation
+	
+.AssistantLocation:
+	checkevent EVENT_GOT_SPECIAL_KANGASKHAN
+	iftrue .end
+	checkevent EVENT_KANGASKHAN_EVENT_EXPLAINED
+	iffalse .end
+	turnobject ROUTE12SHELTER_HELPER, DOWN
+	moveobject ROUTE12SHELTER_HELPER, 4, 5
+.end
+	return
 	
 LeaderMarowakScene:
 	faceplayer
@@ -93,6 +104,10 @@ LeaderMarowakScene:
 Route12ShelterAssistant:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_SPECIAL_KANGASKHAN
+	iftrue Route12ShelterKangaskhan.GotKangaskhan
+	checkevent EVENT_KANGASKHAN_EVENT_EXPLAINED
+	iftrue Route12ShelterKangaskhan.AskTakeKangaskhan
 	checkevent EVENT_HIDE_SHELTER_MAROWAK
 	iffalse .Rescued
 	checkevent EVENT_ECRUTEAK_GYM_ACCESS
@@ -132,12 +147,22 @@ Route12ShelterAssistant:
 	closetext
 	end
 	
+.ThankYou
+	writetext Route12TakeGoodCare
+	waitbutton
+	closetext
+	end
+	
 Route12ShelterKangaskhan:
 	faceplayer
 	opentext
 	writetext Route12KangaskhanText
 	cry KANGASKHAN
 	waitbutton
+	checkevent EVENT_KANGASKHAN_EVENT_EXPLAINED
+	iftrue .end
+	checkevent EVENT_BEAT_PRYCE
+	iftrue .KangaskhanGift
 	checkevent EVENT_ROUTE_14_CAVE_MAROWAK
 	iftrue .end
 	writetext Route12KangaskhanUpset
@@ -146,6 +171,101 @@ Route12ShelterKangaskhan:
 	closetext
 	end
 	
+.KangaskhanGift:
+	writetext KangaskhanNoticesBadge
+	waitbutton
+	closetext
+	showemote EMOTE_QUESTION, ROUTE12SHELTER_HELPER, 15
+	turnobject ROUTE12SHELTER_HELPER, DOWN
+	opentext
+	writetext Route12ShelterWhatsTheMatter
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	ifequal UP, .FacingUp
+	ifequal RIGHT, .FacingRight
+	turnobject PLAYER, RIGHT
+	applymovement PLAYER, Route12ShelterPlayerLeft
+	jump .ContinueKangaskhanGift
+	
+.FacingUp
+	applymovement PLAYER, Route12ShelterPlayerUp
+	jump .ContinueKangaskhanGift
+	
+.FacingRight
+	applymovement PLAYER, Route12ShelterPlayerRight
+	
+.ContinueKangaskhanGift
+	opentext
+	writetext Route12AssistantGotRootBadge
+	waitbutton
+	closetext
+	applymovement ROUTE12SHELTER_KANGASKHAN, Route12KangaskhanStomp
+	turnobject ROUTE12SHELTER_KANGASKHAN, RIGHT
+	cry KANGASKHAN
+	opentext
+	writetext Route12KangaskhanWantsSomething
+	waitbutton
+	closetext
+	applymovement PLAYER, Route12PlayerOutOfWay
+	applymovement ROUTE12SHELTER_HELPER, Route12AssistantWalkToKangaskhan
+	turnobject PLAYER, LEFT
+	opentext
+	writetext Route12AssistantTalkToKangaskhan
+	waitbutton
+	closetext
+	applymovement PLAYER, Route12PlayerWalkToAssistant
+	turnobject ROUTE12SHELTER_HELPER, DOWN
+	opentext
+	writetext Route12AssistantExplainKangaskhan
+	waitbutton
+	setevent EVENT_KANGASKHAN_EVENT_EXPLAINED
+.AskTakeKangaskhan
+	writetext Route12AssistantOfferKangaskhan
+	yesorno
+	iffalse .Decline
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	closetext
+	checkcode VAR_FACING
+	ifequal LEFT, .GiftFacingLeft
+	applymovement PLAYER, Route12PlayerWalkToAssistant
+	jump .GiveKangaskhan
+.GiftFacingLeft
+	applymovement PLAYER, Route12PlayerWalkToKangaskhanLeft
+	
+.GiveKangaskhan
+	turnobject ROUTE12SHELTER_KANGASKHAN, DOWN
+	opentext
+	writetext PlayerReceivedKangaskhan
+	playsound SFX_CAUGHT_MON
+	disappear ROUTE12SHELTER_KANGASKHAN
+	waitsfx
+	givepoke KANGASKHAN, 32
+	special GiftMonMoves
+	setevent EVENT_GOT_SPECIAL_KANGASKHAN
+	closetext
+	applymovement PLAYER, Route12PlayerAfterKangaskhan
+	turnobject ROUTE12SHELTER_HELPER, LEFT
+	opentext
+.GotKangaskhan
+	writetext Route12TakeGoodCare
+	waitbutton
+	closetext
+	end
+	
+.PartyFull
+	writetext Route12NotEnoughRoom
+	waitbutton
+	closetext
+	end
+	
+.Decline
+	writetext Route12KangaskhanDecline
+	waitbutton
+	closetext
+	end
+
 Route12ShelterMarowak:
 	faceplayer
 	opentext
@@ -186,6 +306,65 @@ Route12ShelterPlayerFacingRight:
 	step DOWN
 	step RIGHT
 	step_end
+	
+Route12ShelterPlayerLeft:
+	step RIGHT
+	turn_head UP
+	step_resume
+	
+Route12ShelterPlayerRight:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step UP
+	step_resume
+
+Route12ShelterPlayerUp:
+	step RIGHT
+	step RIGHT
+	step UP
+	step_resume
+	
+Route12PlayerOutOfWay:
+	fix_facing
+	step DOWN
+	remove_fixed_facing
+	step_end
+	
+Route12AssistantWalkToKangaskhan:
+	step DOWN
+	step LEFT
+	step_resume
+	
+Route12PlayerWalkToAssistant:
+	step LEFT
+	turn_head UP
+	step_resume
+	
+Route12PlayerWalkToKangaskhanDown:
+	step RIGHT
+	step DOWN
+	step LEFT
+	step LEFT
+	step_resume
+	
+Route12PlayerWalkToKangaskhanLeft:
+	step DOWN
+	step LEFT
+	step LEFT
+	turn_head UP
+	step_resume
+	
+Route12PlayerAfterKangaskhan:
+	step UP
+	turn_head RIGHT
+	step_resume
+	
+Route12KangaskhanStomp:
+	turn_step RIGHT
+	turn_step RIGHT
+	step_resume
 
 Route12AssistantIntro:
 	text "Oh, this is"
@@ -377,6 +556,120 @@ Route12KangaskhanUpset:
 	line "to be upset over"
 	cont "something."
 	done
+	
+KangaskhanNoticesBadge:
+	text "…KANGASKHAN"
+	line "is investigating"
+	cont "your jacket."
+	done
+	
+Route12ShelterWhatsTheMatter:
+	text "Is there something"
+	line "the matter?"
+	done
+	
+Route12AssistantGotRootBadge:
+	text "Oh? You got the"
+	line "ROOTBADGE from"
+	cont "POSEY?"
+	
+	para "I think KANGASKHAN"
+	line "could smell"
+	cont "POSEY's scent on"
+	cont "your badge-"
+	done
+	
+Route12KangaskhanWantsSomething:
+	text "Excuse me for a"
+	line "moment, I think"
+	cont "KANGASKHAN would"
+	cont "like to tell me"
+	cont "something."
+	
+	para "POSEY has been"
+	line "teaching me how to"
+	cont "understand what a"
+	cont "#MON is saying."
+	done
+	
+Route12AssistantTalkToKangaskhan:
+	text "Hm…"
+	
+	para "I see…"
+	
+	para "I'll let him know"
+	line "for you!"
+	done
+	
+Route12AssistantExplainKangaskhan:
+	text "KANGASKHAN would"
+	line "like to come along"
+	cont "with you on your"
+	cont "journey."
+	
+	para "There must be too"
+	line "many memories of"
+	cont "MAROWAK here."
+	
+	para "Going along on"
+	line "your adventure"
+	cont "would allow her to"
+	cont "take her mind off"
+	cont "of that situation."
+	
+	para "You have already"
+	line "shown to her that"
+	cont "you are a kind"
+	cont "and compassionate"
+	cont "person."
+	
+	para "Your ROOTBADGE"
+	line "shows that you are"
+	cont "also a strong"
+	cont "trainer."
+	done
+	
+Route12AssistantOfferKangaskhan:
+	text "What do you say?"
+	
+	para "Will you add"
+	line "KANGASKHAN to your"
+	cont "party?"
+	done
+	
+PlayerReceivedKangaskhan:
+	text "<PLAYER> received"
+	line "KANGASKHAN!"
+	done
+	
+Route12TakeGoodCare:
+	text "You had better"
+	line "take good care of"
+	cont "her!"
+	
+	para "I am trusting you!"
+	done
+	
+Route12NotEnoughRoom:
+	text "You will need to"
+	line "deposit something"
+	cont "into the PC before"
+	cont "KANGASKHAN can go"
+	cont "along with you."
+	done
+	
+Route12KangaskhanDecline:
+	text "…What?"
+	
+	para "After all you have"
+	line "done for her, this"
+	cont "is where you draw"
+	cont "the line?"
+	
+	para "KANGASKHAN and I"
+	line "must have mis-"
+	cont "judged you."
+	done
 
 Route12Shelter_MapEvents:
 	db 0, 0 ; filler
@@ -392,5 +685,5 @@ Route12Shelter_MapEvents:
 	db 4 ; object events
 	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12ShelterAssistant, -1
 	object_event  2,  4, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LeaderMarowakScene, EVENT_HIDE_SHELTER_MAROWAK
-	object_event  3,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, -1
+	object_event  3,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterKangaskhan, EVENT_GOT_SPECIAL_KANGASKHAN
 	object_event  4,  5, SPRITE_MONSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route12ShelterMarowak, EVENT_HIDE_SHELTER_MAROWAK

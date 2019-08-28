@@ -537,3 +537,6 @@ SafariZoneArea3_Blocks:
 
 SafariZoneArea4_Blocks:
 	INCBIN "maps/SafariZoneArea4.ablk"
+
+CarnationTown_Blocks:
+	INCBIN "maps/CarnationTown.ablk"
