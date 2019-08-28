@@ -15,13 +15,19 @@ SafariReceptionistScript:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .ExplainBalls
-	ifequal 2, .ExplainRocks
-	ifequal 3, .ExplainBait
+	ifequal 1, .ExplainZone
+	ifequal 2, .ExplainBalls
+	ifequal 3, .ExplainRocks
+	ifequal 4, .ExplainBait
 	writetext SafariZoneReceptionistCancel
 	waitbutton
 	closetext
 	end
+	
+.ExplainZone:
+	writetext ExplainSafariZoneText
+	waitbutton
+	jump .AnythingElse
 	
 .ExplainBalls:
 	writetext SafariZoneBallText
@@ -29,12 +35,12 @@ SafariReceptionistScript:
 	jump .AnythingElse
 
 .ExplainBait:
-	writetext SafariZoneBaitRockText
+	writetext SafariZoneBaitText
 	waitbutton
 	jump .AnythingElse
 	
 .ExplainRocks:
-	writetext SafariZoneBaitRockText
+	writetext SafariZoneRockText
 	waitbutton
 	
 .AnythingElse
@@ -43,13 +49,14 @@ SafariReceptionistScript:
 	
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 11, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 8
+	menu_coords 11, 0, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 7
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 5 ; items
+	db "SAFARI@"
 	db "BALLS@"
 	db "ROCKS@"
 	db "BAIT@"
@@ -142,22 +149,82 @@ SafariZoneReceptionistText:
 	line "you?"
 	done
 	
-SafariZoneBallText:
-	text "Safari Ball text."
+ExplainSafariZoneText:
+	text "This is the SAFARI"
+	line "ZONE, a sort of"
+	cont "wildlife sanctuary"
+	cont "for #MON."
+	
+	para "Trainers are not"
+	line "permitted to"
+	cont "battle any wild"
+	cont "#MON inhabiting"
+	cont "the park, and must"
+	cont "use our special"
+	cont "#BALLs to"
+	cont "capture them."
+	
+	para "Sometimes you may"
+	line "find a rare"
+	cont "#MON that can't"
+	cont "be found anywhere"
+	cont "else in this"
+	cont "region!"
 	done
 	
-SafariZoneBaitRockText:
-	text "Rocks make guys"
-	line "easier to catch."
+SafariZoneBallText:
+	text "Here in the SAFARI"
+	line "ZONE, participants"
+	cont "are only allowed"
+	cont "to use SAFARI"
+	cont "BALLs that we"
+	cont "provide."
 	
-	para "Bait makes them"
-	line "harder."
+	para "These function"
+	line "slightly better"
+	cont "than normal"
+	cont "#BALLs."
+	
+	para "All participants"
+	line "must return any"
+	cont "unused SAFARI"
+	cont "BALLs when"
+	cont "returning to the"
+	cont "gate."
+	done
+	
+SafariZoneRockText:
+	text "Throwing a ROCK at"
+	line "a #MON won't"
+	cont "hurt it, but will"
+	cont "make the #MON"
+	cont "angry."
+	
+	para "An angered #MON"
+	line "will be easier to"
+	cont "catch, but much"
+	cont "more likely to"
+	cont "flee."
+	done
+
+SafariZoneBaitText:
+	text "Included with your"
+	line "SAFARI BALLs is a"
+	cont "special BAIT for"
+	cont "keeping #MON"
+	cont "from running."
+	
+	para "They will be less"
+	line "likely to flee"
+	cont "while they are"
+	cont "eating, but won't"
+	cont "be as easy to"
+	cont "capture."
 	done
 	
 SafariZoneAnythingElseText:
-	text "Is there anything"
-	line "else you want to"
-	cont "know?"
+	text "Would you like to"
+	line "know more?"
 	done
 	
 SafariZoneReceptionistCancel:

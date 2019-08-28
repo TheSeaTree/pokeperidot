@@ -7,21 +7,64 @@ SafariZoneGate2F_MapScripts:
 
 	db 0 ; callbacks
 
-SafariZoneBinoculars:
-	random 4
-	ifequal 0, .Chansey
-	ifequal 1, .Dodrio
-	ifequal 2, .Nothing
-	ifequal 3, .Nothing
-	
-.Nothing
+SafariZoneBinoculars1:
+	random 12
+	ifequal 0, .Venomoth
+	ifequal 1, .Venomoth
+	ifequal 2, .Dodrio
+	ifequal 3, .Dodrio
+	ifequal 4, .NidorinoNidorina
+	ifequal 5, .NidorinoNidorina
+	ifequal 6, .Bellossom
+	ifequal 7, .Chansey
 	jumptext SafariZoneBinocularsNothing
+
+.Venomoth
+	jumptext SafariZoneBinocularsVenomoth
 
 .Dodrio
 	jumptext SafariZoneBinocularsDodrio
+	
+.Bellossom
+	jumptext SafariZoneBinocularsBellossom
 
 .Chansey
 	jumptext SafariZoneBinocularsChansey
+	
+.NidorinoNidorina
+	jumptext SafariZoneBinocularsNidorinoNidorina
+
+SafariZoneBinoculars2:
+	random 12
+	ifequal 0, .Machoke
+	ifequal 1, .Machoke
+	ifequal 2, .Rhyhorn
+	ifequal 3, .Rhyhorn
+	ifequal 4, .Kangaskhan
+	ifequal 5, .Clefable
+	ifequal 6, .Clefable
+	ifequal 7, .Sunflora
+	jumptext SafariZoneBinocularsNothing
+	
+.Machoke
+	jumptext SafariZoneBinocularsMachoke
+	
+.Rhyhorn
+	jumptext SafariZoneBinocularsRhyhorn	
+
+.Kangaskhan
+	jumptext SafariZoneBinocularsKangaskhan
+	
+.Clefable
+	jumptext SafariZoneBinocularsClefable
+	
+.Sunflora
+	checktime NITE
+	iftrue .Nite
+	jumptext SafariZoneBinocularsSunfloraDay
+	
+.Nite
+	jumptext SafariZoneBinocularsSunfloraNight
 	
 SafariZoneGateLass:
 	faceplayer
@@ -50,7 +93,9 @@ SafariZoneBinocularsNothing:
 	done
 	
 SafariZoneBinocularsChansey:
-	text "There's a CHANSEY"
+	text "Woah!"
+	
+	para "There's a CHANSEY"
 	line "outside!"
 	
 	para "It seems to be"
@@ -66,13 +111,39 @@ SafariZoneBinocularsDodrio:
 	cont "along very well."
 	done
 	
+SafariZoneBinocularsNidorinoNidorina:
+	text "A NIDORINA and"
+	line "NIDORINO are"
+	cont "having a battle!"
+	done
+	
+SafariZoneBinocularsVenomoth:
+	text "Oh, a VENOMOTH!"
+	
+	para "The dust coming"
+	line "from its wings"
+	cont "shimmers like"
+	cont "glitter."
+	done
+	
+SafariZoneBinocularsBellossom:
+	text "There's a group of"
+	line "BELLOSSOM outside!"
+	
+	para "They're dancing in"
+	line "sync perfectly."
+	done
+	
 SafariZoneGateLassText:
 	text "I like to watch"
 	line "all of the cute"
 	cont "#MON outside!"
+	
+	para "Sometimes I see a"
+	line "really rare one!"
 	done
 	
-SafariZoneMachokeText:
+SafariZoneBinocularsMachoke:
 	text "…Did that MACHOKE"
 	line "just throw a"
 	cont "#BALL?"
@@ -81,6 +152,51 @@ SafariZoneMachokeText:
 	
 	para "Oh! It was a"
 	line "VOLTORB…?"
+	done
+	
+SafariZoneBinocularsRhyhorn:
+	text "A stampeding"
+	line "RHYHORN is chasing"
+	cont "a trainer away!"
+	done
+	
+SafariZoneBinocularsKangaskhan:
+	text "A KANGASKHAN is"
+	line "babying a LARVITAR"
+	cont "it found."
+	
+	para "…LARVITAR seems to"
+	line "want none of it."
+	done
+	
+SafariZoneBinocularsClefable:
+	text "CLEFABLE are"
+	line "wagging their"
+	cont "fingers in unison."
+	
+	para "Oh…?"
+	
+	para "………"
+	
+	para "One of them used"
+	line "EXPLOSION…"
+	done
+
+SafariZoneBinocularsSunfloraDay:
+	text "Wow, that SUNFLORA"
+	line "seems to be very"
+	cont "happy soaking up"
+	cont "sunlight!"
+	done
+	
+SafariZoneBinocularsSunfloraNight:
+	text "Is that a"
+	line "SUNFLORA?"
+	
+	para "…It doesn't seem"
+	line "to be moving at"
+	cont "all now that the"
+	cont "sun has set."
 	done
 
 SafariZoneGate2F_MapEvents:
@@ -91,9 +207,10 @@ SafariZoneGate2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  2,  2, BGEVENT_UP, SafariZoneBinoculars
+	db 2 ; bg events
+	bg_event  2,  2, BGEVENT_UP, SafariZoneBinoculars1
+	bg_event  6,  2, BGEVENT_UP, SafariZoneBinoculars2
 
 	db 2 ; object events
-	object_event  5,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneGateLass, -1
+	object_event  1,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariZoneGateLass, -1
 	object_event  6,  4, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Raphael, -1
