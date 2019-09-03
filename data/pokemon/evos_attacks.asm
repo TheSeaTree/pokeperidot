@@ -474,8 +474,8 @@ NidoranFEvosAttacks:
 	db 13, POISON_STING
 	db 19, FURY_SWIPES
 	db 21, DOUBLE_KICK
-	db 37, CRUNCH
-	db 45, SLUDGE_BOMB
+	db 34, CRUNCH
+	db 43, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
 NidorinaEvosAttacks:
@@ -489,7 +489,7 @@ NidorinaEvosAttacks:
 	db 20, FURY_SWIPES
 	db 23, DOUBLE_KICK
 	db 36, CRUNCH
-	db 43, SLUDGE_BOMB
+	db 45, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
 NidoqueenEvosAttacks:
@@ -3533,6 +3533,7 @@ SkarmoryEvosAttacks:
 	db 13, SAND_ATTACK
 	db 19, SWIFT
 	db 25, AGILITY
+	db 30, SPIKES
 	db 37, FURY_ATTACK
 	db 49, STEEL_WING
 	db 0 ; no more level-up moves

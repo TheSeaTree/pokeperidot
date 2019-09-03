@@ -84,6 +84,7 @@ SandshrewEggMoves:
 	db COUNTER
 	db RAPID_SPIN
 	db METAL_CLAW
+	db SPIKES
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -890,7 +891,6 @@ SkarmoryEggMoves:
 	db PURSUIT
 	db WHIRLWIND
 	db SKY_ATTACK
-	db SPIKES
 	db -1 ; end
 
 HoundourEggMoves:
