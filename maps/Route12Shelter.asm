@@ -363,7 +363,9 @@ Route12PlayerAfterKangaskhan:
 	
 Route12KangaskhanStomp:
 	turn_step RIGHT
+	step_sleep 8
 	turn_step RIGHT
+	step_sleep 8
 	step_resume
 
 Route12AssistantIntro:
@@ -564,14 +566,18 @@ KangaskhanNoticesBadge:
 	done
 	
 Route12ShelterWhatsTheMatter:
-	text "Is there something"
-	line "the matter?"
+	text "Huh? Is someone"
+	line "there?"
 	done
 	
 Route12AssistantGotRootBadge:
-	text "Oh? You got the"
+	text "Oh, <PLAYER>!"
+	line "How nice to see"
+	cont "you again!"
+	
+	para "I see you got the"
 	line "ROOTBADGE from"
-	cont "POSEY?"
+	cont "POSEY."
 	
 	para "I think KANGASKHAN"
 	line "could smell"

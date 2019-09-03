@@ -308,8 +308,8 @@ SafariZoneGate1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  7, ROUTE_18, 3
-	warp_event  5,  7, ROUTE_18, 3
+	warp_event  4,  7, CARNATION_ZOO, 3
+	warp_event  5,  7, CARNATION_ZOO, 3
 	warp_event  8,  0, SAFARI_ZONE_GATE_1F, 3
 	warp_event  0,  7, SAFARI_ZONE_GATE_2F, 1
 

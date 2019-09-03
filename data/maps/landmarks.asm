@@ -37,6 +37,7 @@ Landmarks:
 	landmark  52,  44, MahoganyTownName
 	landmark  52,  44, PowerPlantName
 	landmark  42,  42, CarnationTownName
+	landmark  42,  42, CarnationZooName
 	landmark  34,  43, BlackthornCityName
 	landmark  36,  96, Route15Name
 	landmark  44,  44, Route16Name
@@ -110,6 +111,7 @@ Route18Name:         db "ROUTE 18@"
 Route19Name:         db "ROUTE 19@"
 Route20Name:         db "ROUTE 20@"
 Route30Name:	     db "PAVONA¯OASIS@"
+CarnationZooName:    db "CARNATION¯ZOO@"
 DarkCaveName:        db "DARK CAVE@"
 IlexForestName:      db "WEST¯FOREST@"
 BurnedTowerName:     db "BURNED¯TOWER@"

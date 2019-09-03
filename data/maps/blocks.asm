@@ -66,6 +66,7 @@ Route6SurfersHouse_Blocks:
 Route12Shelter_Blocks:
 EcruteakThiefHouse_Blocks:
 EcruteakFriendBallHouse_Blocks:
+CarnationWobbuffetHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -168,6 +169,7 @@ CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
+CarnationPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
 GoldenrodDeptStore1F_Blocks:
@@ -540,3 +542,9 @@ SafariZoneArea4_Blocks:
 
 CarnationTown_Blocks:
 	INCBIN "maps/CarnationTown.ablk"
+	
+CarnationZoo_Blocks:
+	INCBIN "maps/CarnationZoo.ablk"
+	
+Route19_Blocks:
+	INCBIN "maps/Route19.ablk"

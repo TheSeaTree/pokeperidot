@@ -201,6 +201,12 @@ ENDM
 	map_attributes SafariZoneArea4, SAFARI_ZONE_AREA_4, $00, SOUTH | WEST
 	connection south, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 	connection west, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+	
+	map_attributes CarnationTown, CARNATION_TOWN, $20, SOUTH
+	connection south, Route19, ROUTE_19, -16
+	
+	map_attributes Route19, ROUTE_19, $20, NORTH
+	connection north, CarnationTown, CARNATION_TOWN, 16
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
@@ -365,4 +371,6 @@ ENDM
 	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
 	map_attributes SafariZoneGate1F, SAFARI_ZONE_GATE_1F, $00, 0
 	map_attributes SafariZoneGate2F, SAFARI_ZONE_GATE_2F, $00, 0
-	map_attributes CarnationTown, CARNATION_TOWN, $20, 0
+	map_attributes CarnationPokecenter1F, CARNATION_POKECENTER_1F, $00, 0
+	map_attributes CarnationWobbuffetHouse, WOBBUFFET_HOUSE, $00, 0
+	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0

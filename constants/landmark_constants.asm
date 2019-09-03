@@ -33,6 +33,7 @@
 	const MAHOGANY_TOWN     ; 24
 	const POWER_PLANT
 	const CARNATION_TOWN
+	const CARNATION_ZOO
 	const BLACKTHORN_CITY   ; 29
 	const ROUTE_15          ; 4d
 	const ROUTE_16          ; 4e

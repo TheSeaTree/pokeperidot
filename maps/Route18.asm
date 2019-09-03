@@ -174,10 +174,9 @@ Route18DaughterAfterText:
 Route18_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
-	warp_event 28, 35, ROUTE_14, 4
+	db 4 ; warp events
 	warp_event 27, 35, ROUTE_14, 4
-	warp_event 27,  3, SAFARI_ZONE_GATE_1F, 1
+	warp_event 28, 35, ROUTE_14, 4
 	warp_event  4, 18, CARNATION_TOWN, 1
 	warp_event  4, 19, CARNATION_TOWN, 2
 

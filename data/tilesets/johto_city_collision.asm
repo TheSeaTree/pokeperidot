@@ -13,7 +13,7 @@
 	tilecoll FLOOR, FLOOR, WALL, WARP_CARPET_DOWN ; 0c
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL ; 0d
 	tilecoll FLOOR, WARP_CARPET_RIGHT, FLOOR, WARP_CARPET_RIGHT ; 0e
-	tilecoll WALL, WALL, WALL, WALL ; 0f
+	tilecoll WALL, WALL, DOOR, WALL ; 0f
 	tilecoll WALL, WALL, WALL, WALL ; 10
 	tilecoll WALL, WALL, WALL, WALL ; 11
 	tilecoll WALL, WALL, WALL, WALL ; 12
@@ -146,3 +146,26 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; 91
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 92
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 93
+	tilecoll WALL, WALL, WALL, WATER ; 94
+	tilecoll WALL, WALL, WATER, WALL ; 95
+	tilecoll WALL, WALL, WATER, WATER ; 96
+	tilecoll WATER, WATER, WALL, WALL ; 97
+	tilecoll WALL, WATER, WALL, WALL ; 98
+	tilecoll WATER, WALL, WALL, WALL ; 99
+	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, WALL, WALL ; 9a
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9c
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9f
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a0
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a1
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a5
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a6
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a7
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a8
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a9
+	tilecoll FLOOR, WALL, FLOOR, WALL ; aa

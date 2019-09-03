@@ -29,7 +29,7 @@ ENDM
 	newgroup                                                      ;  1
 
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
-	map_const OLIVINE_GYM,                                  5,  8 ;  2
+	map_const OLIVINE_GYM,                                  5,  6 ;  2
 	map_const OLIVINE_MART,                                 6,  4 ;  8
 	map_const OLIVINE_CITY,                                24, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
@@ -110,11 +110,15 @@ ENDM
 	map_const SAFARI_ZONE_AREA_2,						   17,  14
 	map_const SAFARI_ZONE_AREA_3,						   13,  15
 	map_const SAFARI_ZONE_AREA_4,						   17,  15
+	map_const CARNATION_ZOO,							   18, 13
 
 	newgroup                                                      ;  7
 	
 	map_const ROUTE_18,                                    18, 20 ;  4
-	map_const CARNATION_TOWN,        					   17, 12
+	map_const CARNATION_TOWN,        					   17, 10
+	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1
+	map_const WOBBUFFET_HOUSE,   							4,  4
+	map_const ROUTE_19,									   30, 15
 
 	newgroup                                                      ;  8
 

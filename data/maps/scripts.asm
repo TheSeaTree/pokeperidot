@@ -241,6 +241,10 @@ INCLUDE "maps/PaintersForest.asm"
 INCLUDE "maps/PaintersHouse.asm"
 INCLUDE "maps/EcruteakThiefHouse.asm"
 INCLUDE "maps/EcruteakFriendBallHouse.asm"
+INCLUDE "maps/CarnationWobbuffetHouse.asm"
+INCLUDE "maps/CarnationPokecenter1F.asm"
+INCLUDE "maps/CarnationZoo.asm"
+INCLUDE "maps/Route19.asm"
 
 
 SECTION "Map Scripts 23", ROMX
