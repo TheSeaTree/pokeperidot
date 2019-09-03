@@ -6,11 +6,17 @@ AIChooseMove:
 	ld a, [wBattleMode]
 	dec a
 	ret z
+	ld a, [wBattleMode]
+	cp BATTLETYPE_BOSS
+	jp z, .TrainerOrBoss
+	cp BATTLETYPE_SUICUNE
+	jp z, .TrainerOrBoss
 
 	ld a, [wLinkMode]
 	and a
 	ret nz
 
+.TrainerOrBoss
 ; No use picking a move if there's no choice.
 	farcall CheckEnemyLockedIn
 	ret nz

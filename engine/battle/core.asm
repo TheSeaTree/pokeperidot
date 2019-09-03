@@ -8851,6 +8851,8 @@ GetRoamMonMapGroup:
 	cp b
 	ld hl, wRoamMon2MapGroup
 	ret z
+	ld a, [wRoamMon3Species]
+	cp b
 	ld hl, wRoamMon3MapGroup
 	ret
 
@@ -8865,6 +8867,8 @@ GetRoamMonMapNumber:
 	cp b
 	ld hl, wRoamMon2MapNumber
 	ret z
+	ld a, [wRoamMon3Species]
+	cp b
 	ld hl, wRoamMon3MapNumber
 	ret
 
@@ -8880,6 +8884,8 @@ GetRoamMonHP:
 	cp b
 	ld hl, wRoamMon2HP
 	ret z
+	ld a, [wRoamMon3Species]
+	cp b
 	ld hl, wRoamMon3HP
 	ret
 
@@ -8895,6 +8901,8 @@ GetRoamMonDVs:
 	cp b
 	ld hl, wRoamMon2DVs
 	ret z
+	ld a, [wRoamMon3Species]
+	cp b
 	ld hl, wRoamMon3DVs
 	ret
 

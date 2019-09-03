@@ -36,10 +36,10 @@ WildCelebiAppearedText:
 	prompt
 	
 WildBossAppearedText:
-	text "Wild @"
+	text "@"
 	text_ram wEnemyMonNick
 	text_start
-	line "attacked!"
+	line "challenges you!"
 	prompt
 
 WantsToBattleText::

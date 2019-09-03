@@ -43,6 +43,7 @@ FindNest:
 	call .FindWater
 	call .RoamMon1
 	call .RoamMon2
+	call .RoamMon3
 	ret
 
 .kanto
@@ -166,6 +167,22 @@ FindNest:
 	ld a, [wRoamMon2MapGroup]
 	ld b, a
 	ld a, [wRoamMon2MapNumber]
+	ld c, a
+	call .AppendNest
+	ret nc
+	ld [de], a
+	inc de
+	ret
+
+.RoamMon3:
+	ld a, [wRoamMon3Species]
+	ld b, a
+	ld a, [wNamedObjectIndexBuffer]
+	cp b
+	ret nz
+	ld a, [wRoamMon3MapGroup]
+	ld b, a
+	ld a, [wRoamMon3MapNumber]
 	ld c, a
 	call .AppendNest
 	ret nc
@@ -456,11 +473,14 @@ InitRoamMons:
 	ld [wRoamMon1Species], a
 	ld a, ENTEI
 	ld [wRoamMon2Species], a
+	ld a, SUICUNE
+	ld [wRoamMon3Species], a
 
 ; level
 	ld a, 40
 	ld [wRoamMon1Level], a
 	ld [wRoamMon2Level], a
+	ld [wRoamMon3Level], a
 
 ; raikou starting map
 	ld a, GROUP_ROUTE_4
@@ -473,11 +493,18 @@ InitRoamMons:
 	ld [wRoamMon2MapGroup], a
 	ld a, MAP_ROUTE_3
 	ld [wRoamMon2MapNumber], a
+	
+; suicune starting map
+	ld a, GROUP_ROUTE_12
+	ld [wRoamMon3MapGroup], a
+	ld a, MAP_ROUTE_12
+	ld [wRoamMon3MapNumber], a
 
 ; hp
 	xor a ; generate new stats
 	ld [wRoamMon1HP], a
 	ld [wRoamMon2HP], a
+	ld [wRoamMon3HP], a
 
 	ret
 
