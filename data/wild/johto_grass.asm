@@ -766,24 +766,24 @@ JohtoGrassWildMons:
 	db 26, GIRAFARIG
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, SUDOWOODO
-	db 27, SUDOWOODO
+	db 26, YANMA
+	db 27, YANMA
 	; day
 	db 27, DODUO
 	db 29, PONYTA
 	db 26, GIRAFARIG
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, SUDOWOODO
-	db 27, SUDOWOODO
+	db 26, YANMA
+	db 27, YANMA
 	; nite
 	db 27, DODUO
 	db 29, PONYTA
 	db 26, STANTLER
 	db 24, TANGELA
 	db 27, PHANPY
-	db 26, SUDOWOODO
-	db 27, SUDOWOODO
+	db 26, YANMA
+	db 27, YANMA
 
 	map_id ROUTE_18
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
