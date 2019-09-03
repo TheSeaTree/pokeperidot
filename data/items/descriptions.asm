@@ -55,7 +55,7 @@ ItemDescriptions:
 	dw XSpecialDesc
 	dw CoinCaseDesc
 	dw ItemfinderDesc
-	dw TeruSama5Desc
+	dw PokeFluteDesc
 	dw ExpShareDesc
 	dw OldRodDesc
 	dw GoodRodDesc
@@ -438,7 +438,7 @@ DomeFossilDesc:
 
 FreshWaterDesc:
 	db   "Restores #MON"
-	next "HP by 50.@"
+	next "HP by 30.@"
 
 SodaPopDesc:
 	db   "Restores #MON"
@@ -476,8 +476,9 @@ ItemfinderDesc:
 	db   "Checks for unseen"
 	next "items in the area.@"
 
-TeruSama5Desc:
-	db   "?@"
+PokeFluteDesc:
+	db   "Wakes any sleeping"
+	next "#MON.@"
 
 ExpShareDesc:
 	db   "Shares battle EXP."
@@ -703,8 +704,8 @@ SpellTagDesc:
 	next "type moves. (HOLD)@"
 
 RageCandyBarDesc:
-	db   "Restores #MON"
-	next "HP by 20.@"
+	db   "Eliminates all"
+	next "status problems.@"
 
 GSBallDesc:
 	db   "The mysterious"
@@ -934,14 +935,15 @@ BerryDesc:
 
 GoldBerryDesc:
 	db   "A self-restore"
-	next "item. (30HP, HOLD)@"
+	next " item.(80HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
 TeruSama23Desc:
-	db   "?@"
+	db   "A self-resore"
+	next "item. (50HP, HOLD)@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"

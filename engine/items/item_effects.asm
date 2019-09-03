@@ -126,7 +126,7 @@ ItemEffects:
 	dw NoEffect            ; BIG_PEARL
 	dw NoEffect            ; EVERSTONE
 	dw NoEffect            ; SPELL_TAG
-	dw RestoreHPEffect     ; RAGECANDYBAR
+	dw StatusHealingEffect ; RAGECANDYBAR
 	dw NoEffect            ; GS_BALL
 	dw BlueCardEffect      ; BLUE_CARD
 	dw NoEffect            ; MIRACLE_SEED
@@ -188,7 +188,7 @@ ItemEffects:
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw NoEffect            ; SQUIRTBOTTLE
-	dw NoEffect            ; ITEM_B0
+	dw RestoreHPEffect     ; SILVER_BERRY
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; ITEM_B3
