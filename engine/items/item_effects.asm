@@ -2175,68 +2175,22 @@ XItemEffect:
 INCLUDE "data/items/x_stats.asm"
 
 PokeFluteEffect:
-	ld a, [wBattleMode]
-	and a
-	jr nz, .dummy
-.dummy
-
-	xor a
-	ld [wd002], a
-
-	ld b, $ff ^ SLP
-
-	ld hl, wPartyMon1Status
-	call .CureSleep
-
-	ld a, [wBattleMode]
-	cp WILD_BATTLE
-	jr z, .skip_otrainer
-	ld hl, wOTPartyMon1Status
-	call .CureSleep
-.skip_otrainer
-
-	ld hl, wBattleMonStatus
-	ld a, [hl]
-	and b
-	ld [hl], a
-	ld hl, wEnemyMonStatus
-	ld a, [hl]
-	and b
-	ld [hl], a
-
-	ld a, [wd002]
-	and a
-	ld hl, .CatchyTune
-	jp z, PrintText
-	ld hl, .PlayedTheFlute
-	call PrintText
-
-	ld a, [wLowHealthAlarm]
-	and 1 << DANGER_ON_F
-	jr nz, .dummy2
-.dummy2
-	ld hl, .AllSleepingMonWokeUp
-	jp PrintText
-
-.CureSleep:
-	ld de, PARTYMON_STRUCT_LENGTH
-	ld c, PARTY_LENGTH
-
-.loop
-	ld a, [hl]
-	push af
-	and SLP
-	jr z, .not_asleep
-	ld a, 1
-	ld [wd002], a
-.not_asleep
-	pop af
-	and b
-	ld [hl], a
-	add hl, de
-	dec c
-	jr nz, .loop
+	; Poke Flute can only be used outside of battle.
+	ld hl, .PokefluteScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
 	ret
+
+.PokefluteScript:
+	opentext
+	farwritetext UnknownText_0x1c5c44
+	playsound SFX_POKEFLUTE
+	waitsfx
+	buttonsound
+	farwritetext UnknownText_0x1c5bf9
+	closetext
+	end
 
 .CatchyTune:
 	; Played the # FLUTE. Now, that's a catchy tune!
@@ -2256,15 +2210,9 @@ PokeFluteEffect:
 	and a
 	jr nz, .battle
 
-	push de
-	ld de, SFX_POKEFLUTE
-	call WaitPlaySFX
-	call WaitSFX
-	pop de
-
 .battle
 	jp PokeFluteTerminatorCharacter
-
+	
 BlueCardEffect:
 	ld hl, .bluecardtext
 	jp MenuTextBoxWaitButton
