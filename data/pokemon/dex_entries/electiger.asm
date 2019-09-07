@@ -1,10 +1,10 @@
 	db "TIGER@" ; species name
 	dw 407, 780 ; height, weight
 
-	db   "In the daytime"
-	next "when it gets warm,"
-	next "it curls up inside"
+	db   "Due to their"
+	next "natural rivalry"
+	next "with the popular"
 
-	page "a big leaf and"
-	next "drifts off into"
-	next "a deep slumber.@"
+	page "PIKACHU, they were"
+	next "driven out of many"
+	next "regions.@"

@@ -1,10 +1,10 @@
 	db "VINE@" ; species name
 	dw 607, 2835 ; height, weight
 
-	db   "It ensnares prey" 
-	next "by extending arms"
-	next "made of vines."
-
-	page "Losing arms to"
-	next "predators does"
-	next "not trouble it.@"
+	db	 "It is said that"
+	next "eye contact with"
+	next "GORGROWTH will"
+	
+	para "cause permanent"
+	next "paralysis. There"
+	next "is no known cure.@"
