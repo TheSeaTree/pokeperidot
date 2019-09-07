@@ -1254,10 +1254,7 @@ Text_RepelUsedEarlierIsStillInEffect::
 	prompt
 
 UnknownText_0x1c5bf9::
-	text "Played the #"
-	line "FLUTE."
-
-	para "Now, that's a"
+	text "Now, that's a"
 	line "catchy tune!"
 	prompt
 
@@ -1269,7 +1266,7 @@ UnknownText_0x1c5c28::
 UnknownText_0x1c5c44::
 	text "<PLAYER> played the"
 	line "# FLUTE.@"
-	text_waitbutton
+;	text_waitbutton
 	text_end
 
 	text_end ; unused
