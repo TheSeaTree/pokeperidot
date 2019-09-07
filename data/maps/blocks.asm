@@ -548,3 +548,6 @@ CarnationZoo_Blocks:
 	
 Route19_Blocks:
 	INCBIN "maps/Route19.ablk"
+
+Route20_Blocks:
+	INCBIN "maps/Route20.ablk"

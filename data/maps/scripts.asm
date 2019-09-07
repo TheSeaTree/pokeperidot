@@ -245,6 +245,7 @@ INCLUDE "maps/CarnationWobbuffetHouse.asm"
 INCLUDE "maps/CarnationPokecenter1F.asm"
 INCLUDE "maps/CarnationZoo.asm"
 INCLUDE "maps/Route19.asm"
+INCLUDE "maps/Route20.asm"
 
 
 SECTION "Map Scripts 23", ROMX

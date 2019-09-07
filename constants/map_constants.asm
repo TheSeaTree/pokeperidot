@@ -101,6 +101,7 @@ ENDM
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
 	map_const BLACKTHORN_CITY,                             23, 14 ; 10
+	map_const ROUTE_20,                                    29, 22
 
 	newgroup                                                      ;  6
 	

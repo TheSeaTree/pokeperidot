@@ -14,7 +14,7 @@ BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 39, 13, CARNATION_TOWN, 3
+	warp_event 39, 13, ROUTE_20, 1
 
 	db 0 ; coord events
 
