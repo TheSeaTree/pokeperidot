@@ -75,6 +75,9 @@ Route12FireStone:
 	itemball FIRE_STONE
 
 Route12ShelterSign:
+;	writebyte VENUSAUR
+;	special CheckOwnedMon
+;	iffalse .novenusaur
 	jumptext ShelterSignText
 	
 ShelterSignText:

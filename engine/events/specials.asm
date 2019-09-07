@@ -44,6 +44,13 @@ UnusedSetSeenMon:
 	dec a
 	call SetSeenMon
 	ret
+	
+CheckOwnedMon:
+	ld a, [wScriptVar]
+	dec a
+	call CheckSeenMon
+	jr z, FoundNone
+	jr FoundOne
 
 FindPartyMonAboveLevel:
 	ld a, [wScriptVar]

@@ -44,7 +44,7 @@ TrainerBugCatcherLiam:
 .Script:
 	endifjustbattled
 	opentext
-	writetext BugCatcherLiamText
+	writetext BugCatcherLiamAfterText
 	waitbutton
 	closetext
 	end

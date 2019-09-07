@@ -415,8 +415,11 @@ CamperJeffAfterText:
 	done
 	
 BugCatcherGregText:
-	text "I am a"
-	line "#MON trainer."
+	text "What's creepy,"
+	line "crawly, and scares"
+	cont "my sister?"
+	
+	para "My #MON!"
 	done
 
 BugCatcherGregWinText:
