@@ -1790,6 +1790,7 @@ TangelaEvosAttacks:
 	db 27, PURSUIT
 	db 30, STUN_SPORE
 	db 33, ANCIENTPOWER
+	db 36, GIGA_DRAIN
 	db 43, BODY_SLAM
 	db 0 ; no more level-up moves
 
@@ -3658,7 +3659,8 @@ TangrowthEvosAttacks:
 	db 27, PURSUIT
 	db 30, STUN_SPORE
 	db 31, ANCIENTPOWER
-	db 43, BODY_SLAM
+	db 38, GIGA_DRAIN
+	db 45, GLARE
 	db 0 ; no more level-up moves
 
 GreminiEvosAttacks:
