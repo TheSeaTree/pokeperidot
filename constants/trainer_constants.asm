@@ -121,6 +121,7 @@ KRIS EQU __enum__
 	const BEN
 	const TRISTAN
 	const DEVIN
+	const RICKY
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -165,6 +166,7 @@ KRIS EQU __enum__
 	const REGGIE
 	const MARIE1
 	const MARIE2
+	const BRIANNA
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -202,6 +204,7 @@ KRIS EQU __enum__
 	const LEO
 	const MARSHALL
 	const DERRICK
+	const FISHER_TRAINER
 	
 	trainerclass SWIMMERM ; 26
 	const VINNY
@@ -312,6 +315,7 @@ KRIS EQU __enum__
 	const TERRY
 	const BRITTANY
 	const LESLIE
+	const TAMMY
 
 	trainerclass CAMPER ; 36
 	const NICHOLAS
@@ -348,6 +352,7 @@ KRIS EQU __enum__
 	
 	trainerclass POKEFANF ; 3e
 	const ELANE
+	const MARCI
 	
 	trainerclass RED ; 3f
 	const RED1

@@ -19,6 +19,61 @@ Route18_MapScripts:
 
 	db 0 ; callbacks
 
+TrainerBirdKeeperRicky:
+	trainer BIRD_KEEPER, RICKY, EVENT_BEAT_BIRD_KEEPER_RICKY, BirdKeeperRickyText, BirdKeeperRickyWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BirdKeeperRickyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanFMarci:
+	trainer POKEFANF, MARCI, EVENT_BEAT_POKEFANF_MARCI, PokefanFMarciText, PokefanFMarciWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokefanFMarciAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyBrianna:
+	trainer BEAUTY, BRIANNA, EVENT_BEAT_BEAUTY_BRIANNA, BeautyBriannaText, BeautyBriannaWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyBriannaAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPicnickerTammy:
+	trainer PICNICKER, TAMMY, EVENT_BEAT_PICNICKER_TAMMY, PicnickerTammyText, PicnickerTammyWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext PicnickerTammyAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerFisherFisher:
+	trainer FISHER, FISHER_TRAINER, EVENT_BEAT_FISHER_FISHER, FisherFisherText, FisherFisherWinText, 0, .AfterScript
+	
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext FisherFisherAfterText
+	waitbutton
+	closetext
+	end
+
 TrainerMarieScript:
 	faceplayer
 	opentext
@@ -80,6 +135,100 @@ Route18LeafStone:
 Route18MaxRepel:
 	itemball MAX_REPEL
 	
+BirdKeeperRickyText:
+	text "Going around the"
+	line "world finding new"
+	cont "bird #MON."
+	
+	para "That's the life!"
+	done
+	
+BirdKeeperRickyWinText:
+	text "Prepare for a"
+	line "crash landing!"
+	done
+	
+BirdKeeperRickyAfterText:
+	text "My loss is no"
+	line "matter. I will"
+	cont "find even better"
+	cont "bird #MON"
+	cont "somewhere else!"
+	done
+	
+PokefanFMarciText:
+	text "My children are"
+	line "#MON trainers"
+	cont "just like their"
+	cont "mother!"
+	done
+	
+PokefanFMarciWinText:
+	text "It seems like time"
+	line "for a new generat-"
+	cont "ion of trainers."
+	done
+	
+PokefanFMarciAfterText:
+	text "I taught my"
+	line "daughter how to"
+	cont "evolve #MON"
+	cont "using a stone!"
+	done
+	
+BeautyBriannaText:
+	text "I love to take my"
+	line "pet #MON for"
+	cont "walks out here."
+	done
+	
+BeautyBriannaWinText:
+	text "That's okay,"
+	line "babies. Mommy will"
+	cont "carry you home!"
+	done
+	
+BeautyBriannaAfterText:
+	text "This farm is so"
+	line "cozy!"
+	done
+	
+PicnickerTammyText:
+	text "My mom taught me"
+	line "how to evolve my"
+	cont "#MON!"
+	done
+	
+PicnickerTammyWinText:
+	text "Wah! Why didn't"
+	line "they get stronger!"
+	done
+	
+PicnickerTammyAfterText:
+	text "I don't get it."
+	line "All of my #MON"
+	cont "are fully evolved."
+	done
+	
+FisherFisherText:
+	text "Hey, that's my"
+	line "item!"
+	
+	para "I saw it first!"
+	done
+	
+FisherFisherWinText:
+	text "Okay, okay."
+	line "You can take it."
+	done
+
+FisherFisherAfterText:
+	text "My parents must"
+	line "PSYCHIC-types to"
+	cont "choose my name the"
+	cont "way they did."
+	done
+
 Route18MiltankText:
 	text "MILTANK: Moo!"
 	done
@@ -186,11 +335,11 @@ Route18_MapEvents:
 	bg_event 20, 19, BGEVENT_ITEM, Route18UltraBall
 
 	db 14 ; object events 
-	object_event 24, 25, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
-	object_event 22, 22, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
-	object_event 14, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
-	object_event 17, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
-	object_event 11, 25, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
+	object_event 25, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperRicky, -1
+	object_event 22, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanFMarci, -1
+	object_event 10, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBrianna, -1
+	object_event 16, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTammy, -1
+	object_event 11, 25, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherFisher, -1
 	object_event 20,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
 	object_event 14,  7, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
 	object_event 16, 33, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieScript, EVENT_MARIE_GONE_HOME
