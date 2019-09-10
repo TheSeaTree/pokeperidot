@@ -3,7 +3,7 @@
 	const CARNATIONZOO_LAPRAS
 	const CARNATIONZOO_MACHOKE
 	const CARNATIONZOO_RHYHORN
-	const CARNATIONZOO_VENOMOTH
+	const CARNATIONZOO_SUDOWOODO
 	const CARNATIONZOO_CHILD
 	const CARNATIONZOO_MOTHER
 	const CARNATIONZOO_SWIMMER
@@ -15,8 +15,14 @@ CarnationZoo_MapScripts:
 
 	db 0 ; callbacks
 	
+CarnationZooSwimmer:
+	jumptextfaceplayer CarnationZooSwimmerText
+	
 CarnationZooBlackBelt:
 	jumptextfaceplayer CarnationZooBlackBeltText
+	
+CarnationZooYoungster:
+	jumptextfaceplayer CarnationZooYoungsterText
 	
 CarnationZooMotherSon:
 	applymovement CARNATIONZOO_CHILD, CarnationZooChildStomp
@@ -78,15 +84,17 @@ ScytherSign:
 	special UnusedSetSeenMon
 	jumptext ScytherSignText
 
-VenomothSign:
-	refreshscreen
-	pokepic VENOMOTH
-	cry VENOMOTH
+SudowoodoSign:
+	opentext
+	writetext SudowoodoSignText
+	waitbutton
+	closetext
+	playsound SFX_SANDSTORM
+	applymovement CARNATIONZOO_SUDOWOODO, SudowoodoShakeMovement
 	waitsfx
-	closepokepic
-	writebyte VENOMOTH
-	special UnusedSetSeenMon
-	jumptext VenomothSignText
+	cry SUDOWOODO
+	waitsfx
+	jumptext SudowoodoAfterText
 
 RhyhornSign:
 	refreshscreen
@@ -179,6 +187,21 @@ CarnationZooChildStomp:
 	step_sleep 8
 	step_resume
 	
+SudowoodoShakeMovement:
+	tree_shake
+	step_resume
+	
+CarnationZooSwimmerText:
+	text "One day I hope to"
+	line "ride around the"
+	cont "world on the back"
+	cont "of my very own"
+	cont "LAPRAS."
+	
+	para "Sigh…"
+	line "Someday…"
+	done
+
 CarnationZooBlackBeltText:
 	text "You know, I used"
 	line "to be a SUPER NERD"
@@ -191,6 +214,17 @@ CarnationZooBlackBeltText:
 	cont "here."
 	done
 	
+CarnationZooYoungsterText:
+	text "This zoo is cool"
+	line "and all, but I"
+	cont "prefer to get up"
+	cont "close and personal"
+	cont "with #MON."
+	
+	para "Unfortunately, I'm"
+	line "out of money…"
+	done
+
 CarnationZooChildText:
 	text "Mommy, Mommy!"
 	line "Can you catch me a"
@@ -262,6 +296,11 @@ ZooVendingNoSpaceText:
 
 LaprasSignText:
 	text "It's LAPRAS!"
+	
+	para "It says LAPRAS are"
+	line "intelligent enough"
+	cont "to understand"
+	cont "human speech."
 	done
 
 MachokeSignText:
@@ -269,11 +308,23 @@ MachokeSignText:
 	done
 
 ScytherSignText:
-	text "It's SCYTHER!"
+	text "SCYTHER is showing"
+	line "off for the child."
 	done
 
-VenomothSignText:
-	text "It's VENOMOTH!"
+SudowoodoSignText:
+	text "Wait a second…"
+	
+	para "This isn't a"
+	line "#MON…"
+	done
+	
+SudowoodoAfterText:
+	text "Oh, it says this"
+	line "is a SUDOWOODO."
+	
+	para "They oftentimes"
+	line "mimic trees."
 	done
 
 RhyhornSignText:
@@ -300,7 +351,7 @@ CarnationZoo_MapEvents:
 	bg_event 16, 15, BGEVENT_READ, LaprasSign
 	bg_event  7, 15, BGEVENT_READ, MachokeSign
 	bg_event 21, 19, BGEVENT_READ, ScytherSign
-	bg_event  3, 21, BGEVENT_READ, VenomothSign
+	bg_event  3, 21, BGEVENT_READ, SudowoodoSign
 	bg_event 13, 21, BGEVENT_READ, RhyhornSign
 	bg_event  6,  9, BGEVENT_UP, CarnationZooVendingMachine
 	bg_event 19, 19, BGEVENT_UP, CarnationZooVendingMachine
@@ -310,10 +361,10 @@ CarnationZoo_MapEvents:
 	object_event 15, 14, SPRITE_LAPRAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6, 14, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 12, 19, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  5, 20, SPRITE_BUTTERFREE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4, 19, SPRITE_SUDOWOODO, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 23, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CarnationZooMotherSon, -1
 	object_event 24, 20, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CarnationZooMotherSon, -1
-	object_event 14, 16, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 14, 16, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CarnationZooSwimmer, -1
 	object_event  3, 14, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CarnationZooBlackBelt, -1
-	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CarnationZooYoungster, -1
 	
