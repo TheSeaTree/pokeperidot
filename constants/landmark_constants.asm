@@ -41,6 +41,7 @@
 	const ROUTE_18          ; 50
 	const ROUTE_19          ; 52
 	const ROUTE_20          ; 53
+	const ORCHID_CITY
 	const ROUTE_30          ; 04
 	const LOST_LAND
 	const VICTORY_ROAD      ; 58

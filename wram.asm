@@ -2584,7 +2584,7 @@ wBattleTowerOutsideSceneID::                      db ; d9a2
 wRoute43GateSceneID::                             db ; d9a3
 wMountMoonSceneID::                               db ; d9a4
 wSproutTower3FSceneID::                           db ; d9a5
-wTinTower1FSceneID::                              db ; d9a6
+wLostLandSceneID::                                db ; d9a6
 wBurnedTower1FSceneID::                           db ; d9a7
 wBurnedTowerB1FSceneID::                          db ; d9a8
 wRadioTower5FSceneID::                            db ; d9a9

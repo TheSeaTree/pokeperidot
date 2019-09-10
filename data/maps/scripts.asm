@@ -166,6 +166,7 @@ INCLUDE "maps/HallOfFame.asm"
 
 
 SECTION "Map Scripts 14", ROMX
+INCLUDE "maps/LostLand.asm"
 
 
 SECTION "Map Scripts 15", ROMX
@@ -173,6 +174,7 @@ SECTION "Map Scripts 15", ROMX
 INCLUDE "maps/Route5UndergroundPathEntrance.asm"
 INCLUDE "maps/Route1CherrygroveGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
+INCLUDE "maps/OrchidCity.asm"
 
 
 SECTION "Map Scripts 16", ROMX
@@ -302,4 +304,3 @@ INCLUDE "maps/Factory1F.asm"
 INCLUDE "maps/FactoryB1.asm"
 INCLUDE "maps/FactoryBack.asm"
 INCLUDE "maps/OverlookMaze.asm"
-INCLUDE "maps/LostLand.asm"

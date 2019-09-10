@@ -82,8 +82,8 @@ const_value = -1
 	const SPAWN_MAHOGANY
 	const SPAWN_CARNATION
 	const SPAWN_BLACKTHORN
+	const SPAWN_ORCHID
 	const SPAWN_INDIGO
-	const SPAWN_MT_SILVER
 NUM_SPAWNS EQU const_value
 
 ; outdoor sprite limits (see engine/overworld/overworld.asm)

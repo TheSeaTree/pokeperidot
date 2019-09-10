@@ -38,9 +38,11 @@ TilesetKantoAnim:
 TilesetJohtoCityAnim:
 TilesetMountainAnim:
 	dw vTiles2 tile $49, AnimateWaterTile
+	dw NULL,  LavaBubbleAnim2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateFlowerTile
@@ -717,7 +719,7 @@ LavaBubbleAnim1:
 	ld hl, LavaBubbleFrames
 	add hl, de
 	ld sp, hl
-	ld hl, vTiles2 tile $42
+	ld hl, vTiles2 tile $07
 	jp WriteTile
 
 LavaBubbleAnim2:
@@ -735,7 +737,7 @@ LavaBubbleAnim2:
 	ld hl, LavaBubbleFrames
 	add hl, de
 	ld sp, hl
-	ld hl, vTiles2 tile $52
+	ld hl, vTiles2 tile $08
 	jp WriteTile
 
 LavaBubbleFrames:

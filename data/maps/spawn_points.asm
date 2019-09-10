@@ -22,5 +22,6 @@ SpawnPoints:
 	spawn MAHOGANY_TOWN,              27, 30
 	spawn CARNATION_TOWN,             19,  6
 	spawn BLACKTHORN_CITY,            33, 18
+	spawn ORCHID_CITY,                23, 26
 	spawn SILVER_CAVE_OUTSIDE,        23, 20
 	spawn N_A,                        -1, -1

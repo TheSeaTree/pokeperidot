@@ -203,14 +203,16 @@ ENDM
 	connection west, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
 	
 	map_attributes CarnationTown, CARNATION_TOWN, $20, SOUTH
-	connection south, Route19, ROUTE_19, -16
+	connection south, Route19, ROUTE_19, -15
 	
-	map_attributes Route19, ROUTE_19, $20, NORTH | SOUTH
-	connection north, CarnationTown, CARNATION_TOWN, 16
-	connection south, Route20, ROUTE_20, 1
+	map_attributes Route19, ROUTE_19, $05, NORTH | SOUTH
+	connection north, CarnationTown, CARNATION_TOWN, 15
+	connection south, Route20, ROUTE_20, 0
 	
 	map_attributes Route20, ROUTE_20, $05, NORTH
-	connection north, Route19, ROUTE_19, -1
+	connection north, Route19, ROUTE_19, 0
+	
+	map_attributes OrchidCity, ORCHID_CITY, $45, 0
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0

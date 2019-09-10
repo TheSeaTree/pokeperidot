@@ -551,3 +551,6 @@ Route19_Blocks:
 
 Route20_Blocks:
 	INCBIN "maps/Route20.ablk"
+	
+OrchidCity_Blocks:
+	INCBIN "maps/OrchidCity.ablk"

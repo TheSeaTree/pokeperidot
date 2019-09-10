@@ -110,6 +110,33 @@ JohtoGrassWildMons:
 	db 20, SCYTHER
 	db 20, SCYTHER
 
+	map_id EAST_FOREST
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, BEEDRILL
+	db 27, SKIPLOOM
+	db 28, PIKACHU
+	db 27, SKIPLOOM
+	db 27, GIRAFARIG
+	db 26, PINSIR
+	db 30, PINSIR
+	; day
+	db 27, BEEDRILL
+	db 27, WEEPINBELL
+	db 28, PIKACHU
+	db 27, WEEPINBELL
+	db 27, GIRAFARIG
+	db 26, PINSIR
+	db 30, PINSIR
+	; nite
+	db 27, VENONAT
+	db 27, GLOOM
+	db 28, PIKACHU
+	db 27, GLOOM
+	db 27, HYPNO
+	db 26, PINSIR
+	db 30, PINSIR
+
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -811,6 +838,60 @@ JohtoGrassWildMons:
 	db 27, TAUROS
 	db 26, TAUROS
 	db 27, TAUROS
+
+	map_id ROUTE_19
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 28, BEEDRILL
+	db 28, BUTTERFREE
+	db 26, FEAROW
+	db 26, PARASECT
+	db 27, FEAROW
+	db 28, MANKEY
+	db 30, MANKEY
+	; day
+	db 28, BEEDRILL
+	db 28, BUTTERFREE
+	db 26, FEAROW
+	db 26, PARASECT
+	db 27, FEAROW
+	db 28, MANKEY
+	db 30, MANKEY
+	; nite
+	db 28, BEEDRILL
+	db 28, BUTTERFREE
+	db 26, FEAROW
+	db 26, PARASECT
+	db 27, FEAROW
+	db 28, JIGGLYPUFF
+	db 30, JIGGLYPUFF
+
+	map_id ROUTE_20
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, FEAROW
+	db 28, DONPHAN
+	db 27, GLIGAR
+	db 28, SHUCKLE
+	db 28, FEAROW
+	db 29, PRIMEAPE
+	db 30, PRIMEAPE
+	; day
+	db 27, FEAROW
+	db 28, DONPHAN
+	db 27, GLIGAR
+	db 28, SHUCKLE
+	db 28, FEAROW
+	db 29, PRIMEAPE
+	db 30, PRIMEAPE
+	; nite
+	db 27, FEAROW
+	db 28, DONPHAN
+	db 27, GLIGAR
+	db 28, SHUCKLE
+	db 28, FEAROW
+	db 29, TEDDIURSA
+	db 30, TEDDIURSA
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite

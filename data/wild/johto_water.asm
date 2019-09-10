@@ -209,5 +209,13 @@ JohtoWaterWildMons:
 	db 26, POLIWHIRL
 	db 26, LAPRAS
 	db 26, LAPRAS
+	
+	map_id LOST_LAND
+	db 3 percent
+	db 26, OMANYTE
+	db 26, KABUTO
+	db 26, KABUTO
+	db 26, KABUTO
+	db 26, KABUTO
 
 	db -1 ; end

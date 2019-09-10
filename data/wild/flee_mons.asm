@@ -5,6 +5,8 @@ SometimesFleeMons:
 	db -1
 
 OftenFleeMons:
+	db OMANYTE
+	db KABUTO
 	db -1
 
 AlwaysFleeMons:

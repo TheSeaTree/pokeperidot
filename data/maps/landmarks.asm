@@ -45,6 +45,7 @@ Landmarks:
 	landmark  32,  76, Route18Name
 	landmark  96,  44, Route19Name
 	landmark 114,  36, Route20Name
+	landmark 114,  46, OrchidCityName
 	landmark  68, 116, Route30Name ;Oasis
 	landmark 116,  60, LostLandName
 	landmark 140,  36, VictoryRoadName
@@ -64,6 +65,7 @@ CianwoodCityName:    db "HELIO¯TOWN@"
 MahoganyTownName:    db "CYNARIA¯CITY@"
 CarnationTownName:   db "CARNATION¯TOWN@"
 BlackthornCityName:  db "BLACKTHORN¯CITY@"
+OrchidCityName:      db "ORCHID¯CITY@"
 LakeOfRageName:      db "LAKE OF¯RAGE@"
 SilverCaveName:      db "SILVER CAVE@"
 SproutTowerName:     db "SPROUT¯TOWER@"

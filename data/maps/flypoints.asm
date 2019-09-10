@@ -19,6 +19,7 @@ Flypoints:
 	flypoint MAHOGANY,     MAHOGANY_TOWN
 	flypoint CARNATION,	   CARNATION_TOWN
 	flypoint BLACKTHORN,   BLACKTHORN_CITY
+	flypoint ORCHID,       ORCHID_CITY
 
 ; Kanto
 KANTO_FLYPOINT EQU const_value

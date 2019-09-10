@@ -65,14 +65,13 @@ CinnabarGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_POKEFAN_M
 	; limit of 9 walking sprites
-	db SPRITE_BUG_CATCHER
 	db SPRITE_SWIMMER_GIRL_LAND
 	db SPRITE_BLACK_BELT
-	db SPRITE_TAUROS
 	db SPRITE_PARAS
 	db SPRITE_LAPRAS
 	db SPRITE_MACHOP
-	db SPRITE_BUTTERFREE
+	db SPRITE_SUDOWOODO
+	db SPRITE_TAUROS
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
@@ -81,20 +80,19 @@ CinnabarGroupSprites:
 ; CeruleanCity and Route5 are connected
 CeruleanGroupSprites:
 	db SPRITE_LASS
+	db SPRITE_BUENA
+	db SPRITE_POKEFAN_F
+	db SPRITE_YOUNGSTER
 	db SPRITE_TEACHER
 	db SPRITE_GRAMPS
 	db SPRITE_FISHER
 	db SPRITE_BUG_CATCHER
 	db SPRITE_SWIMMER_GIRL_LAND
-	; limie 3 of 9 walking sprites
+	; limit 9 of 9 walking sprites
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
-	db SPRITE_PARAS
-	db SPRITE_LAPRAS
-	db SPRITE_MACHOP
-	db SPRITE_RHYDON
-	db SPRITE_BUTTERFREE
+	db SPRITE_BIG_SNORLAX
 	db 0
 
 ; Route4, Route9, Route10North, Route24, Route25, CeruleanCity

@@ -373,7 +373,7 @@ CianwoodCity_MapEvents:
 
 	db 10 ; warp events
 	warp_event  9, 31, MANIAS_HOUSE, 1
-	warp_event 21, 14, GOLDENROD_GYM, 1
+	warp_event 20, 15, GOLDENROD_GYM, 1
 	warp_event 11, 19, CIANWOOD_POKECENTER_1F, 1
 	warp_event 19, 21, CIANWOOD_MART, 1
 	warp_event  9,  5, CIANWOOD_PHOTO_STUDIO, 1
