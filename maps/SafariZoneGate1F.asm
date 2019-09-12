@@ -68,10 +68,10 @@ SafariGuardScript:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .decline
-	checkmoney YOUR_MONEY, 1000
+	checkmoney YOUR_MONEY, 2000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
-	takemoney YOUR_MONEY, 1000
+	takemoney YOUR_MONEY, 2000
 	waitsfx
 	special PlaceMoneyTopRight
 	writetext ExplainSafariBalls
@@ -113,7 +113,6 @@ LeaveSafariZone:
 	writetext SafariGoodHaulText
 	waitbutton
 	closetext
-	clearflag ENGINE_BUG_CONTEST_TIMER
 	end
 	
 SafariEnter:
@@ -241,10 +240,10 @@ SafariZoneWelcomeText:
 	line "participate in our"
 	cont "SAFARI game?"
 	
-	para "You will have 20"
+	para "You will have 10"
 	line "minutes to capture"
 	cont "any #MON in the"
-	cont "park for ¥1000"
+	cont "park for ¥2000"
 	done
 
 ExplainSafariBalls:
@@ -269,7 +268,7 @@ ExplainSafariBalls:
 	
 PlayerReceivedSafariBalls:
 	text "<PLAYER> received"
-	line "30 SAFARI BALLs."
+	line "20 SAFARI BALLs."
 	done
 	
 SafariZoneYes:
@@ -308,7 +307,7 @@ SafariZoneGate1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  7, CARNATION_ZOO, 3
+	warp_event  4,  7, CARNATION_ZOO, 2
 	warp_event  5,  7, CARNATION_ZOO, 3
 	warp_event  8,  0, SAFARI_ZONE_GATE_1F, 3
 	warp_event  0,  7, SAFARI_ZONE_GATE_2F, 1

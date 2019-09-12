@@ -1,7 +1,7 @@
 GiveParkBalls:
 	xor a
 	ld [wContestMon], a
-	ld a, 30
+	ld a, 20
 	ld [wParkBallsRemaining], a
 	farcall StartBugContestTimer
 	ret
@@ -20,6 +20,7 @@ BugCatchingContestOverScript::
 	opentext
 	writetext BugCatchingContestText_BeeepTimesUp
 	waitbutton
+	clearflag ENGINE_BUG_CONTEST_TIMER
 	jump BugCatchingContestReturnToGateScript
 
 BugCatchingContestOutOfBallsScript:
