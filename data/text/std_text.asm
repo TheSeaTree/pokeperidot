@@ -377,6 +377,15 @@ RegisteredNumber2Text:
 	text "'s number."
 	done
 	
+AskEnterGymText:
+	text "You will be unable"
+	line "to leave this GYM"
+	cont "without its BADGE."
+	
+	para "Would you like to"
+	line "enter?"
+	done
+	
 CantLeaveGymText:
 	text "You can't abandon"
 	line "a GYM challenge!"

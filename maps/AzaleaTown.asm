@@ -170,20 +170,14 @@ AzaleaBurglar:
 	jump .Leave
 	
 AzaleaGymEvent:
-	opentext
-	farwritetext AskEnterGymText
-	yesorno
+	scall AzaleaGymEntrance
 	iffalse .no
-	closetext
-	applymovement PLAYER, AzaleaGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
 	warpfacing UP, AZALEA_GYM,  8, 19
-	end	
 .no
-	closetext
+	end	
+
+AzaleaGymEntrance:
+	jumpstd gymdoor
 	end
 
 AzaleaTownGrowlitheScript:

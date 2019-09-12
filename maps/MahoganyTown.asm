@@ -158,20 +158,14 @@ MahoganyTownPowerPlantGuy:
 	iffalse .No
 	
 MahoganyGymEvent:
-	opentext
-	farwritetext AskEnterGymText
-	yesorno
+	scall MahoganyGymEntrance
 	iffalse .no
-	closetext
-	applymovement PLAYER, MahoganyGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
 	warpfacing UP, MAHOGANY_GYM, 12, 31
-	end	
 .no
-	closetext
+	end	
+	
+MahoganyGymEntrance:
+	jumpstd gymdoor
 	end
 
 MahoganyTownLass:

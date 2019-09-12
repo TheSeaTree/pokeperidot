@@ -712,7 +712,7 @@ ScientistDavid:
 ScientistSeth:
 	jumptextfaceplayer ScientistSethAfterText
 	
-MahoganyGymDoor:
+MahoganyGymExit:
 	checkflag ENGINE_MINERALBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
@@ -1302,8 +1302,8 @@ MahoganyGym_MapEvents:
 	bg_event 22,  5, BGEVENT_UP, MahoganyGymPodSwitch2
 	bg_event 10,  5, BGEVENT_UP, MahoganyGymPodSwitch3
 	bg_event 20, 19, BGEVENT_UP, MahoganyGymPodSwitch4
-	bg_event 12, 32, BGEVENT_READ, MahoganyGymDoor
-	bg_event 13, 32, BGEVENT_READ, MahoganyGymDoor
+	bg_event 12, 32, BGEVENT_READ, MahoganyGymExit
+	bg_event 13, 32, BGEVENT_READ, MahoganyGymExit
 
 	db 5 ; object events
 	object_event  5,  1, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader

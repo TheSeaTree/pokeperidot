@@ -123,20 +123,14 @@ GoldenrodLassScript:
 	end	
 	
 GoldenrodGymEvent:
-	opentext
-	farwritetext AskEnterGymText
-	yesorno
+	scall GoldenrodGymEntrance
 	iffalse .no
-	closetext
-	applymovement PLAYER, GoldenrodGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
 	warpfacing UP, CIANWOOD_GYM, 15, 39
-	end	
 .no
-	closetext
+	end
+	
+GoldenrodGymEntrance:
+	jumpstd gymdoor
 	end
 	
 Route34MovementData_PlayerMoves:

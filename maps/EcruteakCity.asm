@@ -47,20 +47,13 @@ EcruteakCity_MapScripts:
 	return
 	
 EnterGymEvent:
-	opentext
-	writetext AskEnterGymText
-	yesorno
-	iffalse .no
-	closetext
-	applymovement PLAYER, EcruteakGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
+	scall EcruteakGymEntrance
 	warpfacing UP, ECRUTEAK_GYM, 10, 21
-	end	
 .no
-	closetext
+	end
+	
+EcruteakGymEntrance:
+	jumpstd gymdoor
 	end
 
 EcruteakCityFruitTree:
@@ -224,15 +217,6 @@ BurnedTowerSignText:
 
 	para "Please stay away,"
 	line "as it is unsafe."
-	done
-	
-AskEnterGymText:
-	text "You will be unable"
-	line "to leave this GYM"
-	cont "without its BADGE."
-	
-	para "Would you like to"
-	line "enter?"
 	done
 
 EcruteakCity_MapEvents:

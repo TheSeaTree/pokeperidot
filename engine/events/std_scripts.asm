@@ -1,6 +1,7 @@
 StdScripts::
 ; entries correspond to constants/std_constants.asm
 	dba PokecenterNurseScript
+	dba GymDoorScript
 	dba CantLeaveGymScript
 	dba StrangersMailbox
 	dba DifficultBookshelfScript
@@ -166,6 +167,23 @@ PokecenterNurseScript:
 CenterTurnDown:
 	turn_step DOWN
 	step_end
+	
+GymDoorScript:
+	opentext
+	farwritetext AskEnterGymText
+	yesorno
+	iffalse .no
+	closetext
+	applymovement PLAYER, GymTurnBackMovement
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	end
+	
+.no
+	closetext
+	end
 	
 CantLeaveGymScript:
 	opentext

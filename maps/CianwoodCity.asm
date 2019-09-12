@@ -111,20 +111,13 @@ CianwoodCityMoveTutor:
 	end
 	
 CianwoodGymEvent:
-	opentext
-	farwritetext AskEnterGymText
-	yesorno
-	iffalse .no
-	closetext
-	applymovement PLAYER, CianwoodGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
+	scall CianwoodGymEntrance
 	warpfacing UP, GOLDENROD_GYM, 22, 39
-	end	
 .no
-	closetext
+	end
+	
+CianwoodGymEntrance:
+	jumpstd gymdoor
 	end
 
 CianwoodCitySign:

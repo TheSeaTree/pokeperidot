@@ -2,6 +2,7 @@
 ; also used in TileCollisionStdScripts (see data/events/collision_stdscripts.asm)
 	enum_start
 	enum pokecenternurse
+	enum gymdoor
 	enum cantleavegym
 	enum mailbox
 	enum difficultbookshelf

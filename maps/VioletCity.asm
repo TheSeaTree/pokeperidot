@@ -130,21 +130,15 @@ VioletCityShoeGuy:
 	end
 	
 VioletGymEvent:
-	opentext
-	farwritetext AskEnterGymText
-	yesorno
+	scall VioletGymEntrance
 	iffalse .no
-	closetext
-	applymovement PLAYER, VioletGymMovement
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	special FadeOutMusic
-	waitsfx
 	warpfacing UP, VIOLET_GYM,  4, 7
-	end	
 .no
-	closetext
 	end	
+	
+VioletGymEntrance:
+	jumpstd gymdoor
+	end
 	
 VioletCityFisher2:
 	jumptextfaceplayer VioletCityFisher2Text
