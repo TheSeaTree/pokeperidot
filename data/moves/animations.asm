@@ -2676,7 +2676,7 @@ BattleAnim_DreamEater:
 	anim_ret
 
 BattleAnim_DrainPunch:
-	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_BUBBLE
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_06, 136, 56, $0
@@ -2685,9 +2685,16 @@ BattleAnim_DrainPunch:
 	anim_obj ANIM_OBJ_06, 136, 56, $0
 	anim_wait 6
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_call BattleAnim_LeechLife_branch_cbab3
-	anim_wait 128
-	anim_wait 48
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
+	anim_wait 6
+	anim_wait 32
+	anim_ret
 	anim_ret
 	
 BattleAnim_LeechLife:
@@ -4597,16 +4604,14 @@ BattleAnim_MirrorCoat:
 BattleAnim_NastyPlot:
 	anim_1gfx ANIM_GFX_STATUS
 	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_NIGHT_SHADE, $0, $0, $8
-	anim_sound 0, 0, SFX_PSYBEAM
-	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $0
-	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $10
-	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $20
-	anim_obj ANIM_OBJ_PSYCH_UP, 44, 88, $30
-	anim_wait 64
-	anim_incbgeffect ANIM_BG_1A
-	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_sound 0, 0, SFX_LICK
+	anim_obj ANIM_OBJ_AMNESIA, 64, 80, $2
 	anim_wait 16
+	anim_obj ANIM_OBJ_AMNESIA, 68, 80, $1
+	anim_wait 16
+	anim_obj ANIM_OBJ_AMNESIA, 72, 80, $0
+	anim_wait 64
 	anim_ret
 
 BattleAnim_PsychUp:
