@@ -28,6 +28,12 @@ Route20SnorlaxEvent:
 	closetext
 	end
 
+Route20FruitTree1:
+	fruittree FRUITTREE_ROUTE_20_1
+
+Route20FruitTree2:
+	fruittree FRUITTREE_ROUTE_20_2
+
 SnorlaxSleepingText:
 	text "This #MON is"
 	line "sound asleep."
@@ -62,5 +68,12 @@ Route20_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 8 ; object events
 	object_event 28, 16, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20SnorlaxEvent, -1
+	object_event 56, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
+	object_event 50, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
+	object_event 49, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
+	object_event 22, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
+	object_event 43, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree1, -1
+	object_event  6, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree2, -1
+	object_event 25, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1
