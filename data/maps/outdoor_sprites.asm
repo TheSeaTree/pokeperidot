@@ -391,6 +391,7 @@ BlackthornGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_BLACK_BELT
 	db SPRITE_COOLTRAINER_F
+	db SPRITE_BIKER
 	; 8 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
