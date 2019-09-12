@@ -1066,6 +1066,7 @@ BellsproutEvosAttacks:
 
 WeepinbellEvosAttacks:
 	db EVOLVE_ITEM, LEAF_STONE, VICTREEBEL
+	db EVOLVE_ITEM, SUN_STONE, MANDRABEL
 	db 0 ; no more evolutions
 	db 1, VINE_WHIP
 	db 6, GROWTH
@@ -1265,6 +1266,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
+	db EVOLVE_HAPPINESS, TR_MORNDAY, SIRFETCH_D
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FURY_CUTTER
@@ -2747,31 +2749,34 @@ LanturnEvosAttacks:
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-PichuEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, PIKACHU
+SirfetchDEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, THUNDERSHOCK
-	db 1, CHARM
-	db 5, TAIL_WHIP
-	db 10, SWEET_KISS
-	db 13, NASTY_PLOT
-	db 18, THUNDER_WAVE
+	db 1, PECK
+	db 1, FURY_CUTTER
+	db 1, LEER
+	db 7, FURY_ATTACK
+	db 9, WING_ATTACK
+	db 19, CUT
+	db 25, SWORDS_DANCE
+	db 31, AGILITY
+	db 38, RAZOR_WIND
+	db 45, FALSE_SWIPE
+	db 50, HURRICANE
+	db 55, SKY_ATTACK
 	db 0 ; no more level-up moves
 
-CleffaEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, CLEFAIRY
+MandrabelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, POUND
-	db 1, CHARM
-	db 4, ENCORE
-	db 7, SING
-	db 10, SWEET_KISS
-	db 13, MIMIC
-	db 16, RAZOR_LEAF
+	db 1, VINE_WHIP
+	db 1, SLEEP_POWDER
+	db 1, SWEET_SCENT
+	db 1, RAZOR_LEAF
+	db 32, DRAIN_KISS
+	db 44, PETAL_DANCE
+	db 50, MOONBLAST
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
 	db 0 ; no more evolutions
 	db 1, SING
 	db 1, CHARM

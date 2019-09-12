@@ -191,8 +191,8 @@ JOHTO_POKEMON EQU const_value
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const PICHU      ; ac
-	const CLEFFA     ; ad
+	const SIRFETCH_D ; ac
+	const MANDRABEL  ; ad
 	const IGGLYBUFF  ; ae
 	const SHIFUR     ; af
 	const SNOWMAD    ; b0

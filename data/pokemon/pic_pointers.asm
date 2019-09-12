@@ -344,10 +344,10 @@ PokemonPicPointers::
 	dba ChinchouBackpic
 	dba LanturnFrontpic
 	dba LanturnBackpic
-	dba PichuFrontpic
-	dba PichuBackpic
-	dba CleffaFrontpic
-	dba CleffaBackpic
+	dba SirfetchDFrontpic
+	dba SirfetchDBackpic
+	dba MandrabelFrontpic
+	dba MandrabelBackpic
 	dba IgglybuffFrontpic
 	dba IgglybuffBackpic
 	dba ShifurFrontpic

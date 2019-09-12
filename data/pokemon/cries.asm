@@ -176,8 +176,8 @@ PokemonCries::
 	mon_cry CRY_SQUIRTLE,   -$010,  $140 ; CROBAT
 	mon_cry CRY_CYNDAQUIL,   $3c9,  $140 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   $2d0,  $110 ; LANTURN
-	mon_cry CRY_PICHU,       $000,  $140 ; PICHU
-	mon_cry CRY_CLEFFA,      $061,  $091 ; CLEFFA
+	mon_cry CRY_SPEAROW,     $0c9,  $081 ; SIRFETCH_D
+	mon_cry CRY_WEEPINBELL,  $066,  $0a0 ; MANDRABEL
 	mon_cry CRY_CHIKORITA,   $0e8,  $0e8 ; IGGLYBUFF
 	mon_cry CRY_CLEFAIRY,    $061,  $0af ; SHIFUR
 	mon_cry CRY_WEEDLE,     -$067,  $100 ; SNOWMAD

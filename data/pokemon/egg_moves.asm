@@ -78,6 +78,15 @@ EkansEggMoves:
 	db DRAGON_DANCE
 	db IRON_TAIL
 	db -1 ; end
+	
+PikachuEggMoves:
+	db REVERSAL
+	db BIDE
+	db PRESENT
+	db ENCORE
+	db DOUBLESLAP
+	db FLAIL
+	db -1 ; end
 
 SandshrewEggMoves:
 	db FLAIL
@@ -106,6 +115,14 @@ NidoranMEggMoves:
 	db COUNTER
 	db BITE
 	db -1 ; end
+	
+ClefairyEggMoves:
+	db PRESENT
+	db METRONOME
+	db AMNESIA
+	db BELLY_DRUM
+	db MIMIC
+	db -1 ; end
 
 VulpixEggMoves:
 	db FAINT_ATTACK
@@ -115,6 +132,14 @@ VulpixEggMoves:
 	db DISABLE
 	db FLARE_BLITZ
 	db ENCORE
+	db -1 ; end
+	
+JigglypuffEggMoves:
+	db PERISH_SONG
+	db PRESENT
+	db FAINT_ATTACK
+	db MEAN_LOOK
+	db EXPLOSION
 	db -1 ; end
 
 ZubatEggMoves:
@@ -610,31 +635,6 @@ ChinchouEggMoves:
 	db AMNESIA
 	db PSYBEAM
 	db AGILITY
-	db -1 ; end
-
-PichuEggMoves:
-	db REVERSAL
-	db BIDE
-	db PRESENT
-	db ENCORE
-	db DOUBLESLAP
-	db FLAIL
-	db -1 ; end
-
-CleffaEggMoves:
-	db PRESENT
-	db METRONOME
-	db AMNESIA
-	db BELLY_DRUM
-	db MIMIC
-	db -1 ; end
-
-IgglybuffEggMoves:
-	db PERISH_SONG
-	db PRESENT
-	db FAINT_ATTACK
-	db MEAN_LOOK
-	db EXPLOSION
 	db -1 ; end
 
 ShifurEggMoves:

@@ -5,7 +5,7 @@ ENDM
 
 OddEggProbabilities:
 prob_total = 0
-; Pichu
+; Sirfetch'd
 	prob 8
 	prob 1
 ; Cleffa
@@ -27,7 +27,7 @@ prob_total = 0
 OddEggs:
 
 OddEgg1:
-	db PICHU
+	db SIRFETCH_D
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 02048 ; OT ID
@@ -54,7 +54,7 @@ OddEgg1:
 	db "EGG@@@@@@@@"
 OddEgg1End:
 
-	db PICHU
+	db SIRFETCH_D
 	db NO_ITEM
 	db THUNDERSHOCK, CHARM, DIZZY_PUNCH, 0
 	dw 00256 ; OT ID
@@ -80,7 +80,7 @@ OddEgg1End:
 	bigdw 9 ; SDef
 	db "EGG@@@@@@@@"
 
-	db CLEFFA
+	db MANDRABEL
 	db NO_ITEM
 	db POUND, CHARM, DIZZY_PUNCH, 0
 	dw 04096 ; OT ID
@@ -106,7 +106,7 @@ OddEgg1End:
 	bigdw 10 ; SDef
 	db "EGG@@@@@@@@"
 
-	db CLEFFA
+	db MANDRABEL
 	db NO_ITEM
 	db POUND, CHARM, DIZZY_PUNCH, 0
 	dw 00768 ; OT ID

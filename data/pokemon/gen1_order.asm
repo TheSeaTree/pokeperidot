@@ -210,8 +210,8 @@ Pokered_MonIndices:
 	db CROBAT
 	db CHINCHOU
 	db LANTURN
-	db PICHU
-	db CLEFFA
+	db SIRFETCH_D
+	db MANDRABEL
 	db IGGLYBUFF
 	db SHIFUR
 	db SNOWMAD

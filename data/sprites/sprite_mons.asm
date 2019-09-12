@@ -10,7 +10,7 @@ SpriteMons:
 	db ZUBAT
 	db MAGIKARP
 	db SQUIRTLE
-	db CLEFFA
+	db CLEFAIRY
 	db BUTTERFREE
 	db DIGLETT
 	db POLIWAG

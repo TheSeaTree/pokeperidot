@@ -391,8 +391,8 @@ INCBIN "gfx/types/poison.1bpp",      secondary_type ;Ariados
 INCBIN "gfx/types/poison.1bpp",      primary_type ;Crobat
 INCBIN "gfx/types/water.1bpp",       primary_type ;Chinchou
 INCBIN "gfx/types/water.1bpp",       primary_type ;Lanturn
-INCBIN "gfx/types/electric.1bpp",    primary_type ;Pichu
-INCBIN "gfx/types/fairy.1bpp",       primary_type ;Cleffa
+INCBIN "gfx/types/normal.1bpp",      primary_type ;Sirfetch'd
+INCBIN "gfx/types/grass.1bpp",       primary_type ;Mandrabel
 INCBIN "gfx/types/normal.1bpp",      primary_type ;Igglybuff
 INCBIN "gfx/types/ice.1bpp",         primary_type ;Shifur
 INCBIN "gfx/types/ice.1bpp",         primary_type ;Snowmad
@@ -400,8 +400,8 @@ INCBIN "gfx/types/ice.1bpp",         primary_type ;Snowmad
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Crobat
 INCBIN "gfx/types/electric.1bpp",    secondary_type ;Chinchou
 INCBIN "gfx/types/electric.1bpp",    secondary_type ;Lanturn
-INCBIN "gfx/types/none.1bpp",        secondary_type ;Pichu
-INCBIN "gfx/types/none.1bpp",        secondary_type ;Cleffa
+INCBIN "gfx/types/flying.1bpp",      secondary_type ;Sirfetch'd
+INCBIN "gfx/types/fairy.1bpp",       secondary_type ;Mandrabel
 INCBIN "gfx/types/fairy.1bpp",       secondary_type ;Igglybuff
 INCBIN "gfx/types/normal.1bpp",      secondary_type ;Shifur
 INCBIN "gfx/types/dark.1bpp",        secondary_type ;Snowmad

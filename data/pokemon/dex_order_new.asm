@@ -74,7 +74,7 @@ NewPokedexOrder:
 	db CUBONE
 	db MAROWAK
 	db KANGASKHAN
-	db CLEFFA
+	db MANDRABEL
 	db CLEFAIRY
 	db CLEFABLE
 	db GLIGAR
@@ -118,7 +118,6 @@ NewPokedexOrder:
 	db PIDGEY
 	db PIDGEOTTO
 	db PIDGEOT
-	db PICHU
 	db PIKACHU
 	db RAICHU
 	db CUBBOLT
@@ -137,6 +136,7 @@ NewPokedexOrder:
 	db RHYHORN
 	db RHYDON
 	db FARFETCH_D
+	db SIRFETCH_D
 	db NATU
 	db XATU
 	db MAREEP

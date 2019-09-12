@@ -172,8 +172,8 @@ EvosAttacksPointers::
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw PichuEvosAttacks
-	dw CleffaEvosAttacks
+	dw SirfetchDEvosAttacks
+	dw MandrabelEvosAttacks
 	dw IgglybuffEvosAttacks
 	dw ShifurEvosAttacks
 	dw SnowmadEvosAttacks

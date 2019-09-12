@@ -30,7 +30,7 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db CLEFFA
+	db MANDRABEL
 	db CLOYSTER
 	db CONCHER
 	db CORSOLA
@@ -159,7 +159,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PICHU
 	db PIDGEOT
 	db PIDGEOTTO
 	db PIDGEY
@@ -199,6 +198,7 @@ AlphabeticalPokedexOrder:
 	db SHELLDER
 	db SHIFUR
 	db SHUCKLE
+	db SIRFETCH_D
 	db SKARMORY
 	db SKIPLOOM
 	db SLOWBRO

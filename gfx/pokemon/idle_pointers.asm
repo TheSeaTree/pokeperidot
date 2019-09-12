@@ -170,8 +170,8 @@ AnimationIdlePointers:
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw PichuAnimationIdle
-	dw CleffaAnimationIdle
+	dw SirfetchDAnimationIdle
+	dw MandrabelAnimationIdle
 	dw IgglybuffAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
