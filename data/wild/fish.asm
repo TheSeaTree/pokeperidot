@@ -86,9 +86,9 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     MAGIKARP,   10
 .Dratini_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     GYARADOS,   20
-	db  90 percent + 1, DRATINI,    20
+	db  35 percent,     MAGIKARP,   32
+	db  70 percent,     GYARADOS,   30
+	db  90 percent + 1, DRATINI,    28
 	db 100 percent,     time_group 8
 .Dratini_Super:
 	db  40 percent,     MAGIKARP,   40

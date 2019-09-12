@@ -193,29 +193,29 @@ JohtoWaterWildMons:
 	db 26, QUAGSIRE
 	db 26, GRIMER
 	db 26, POLIWHIRL
-	
+
 	map_id SAFARI_ZONE_AREA_1
 	db 6 percent
-	db 26, SEEL
-	db 26, POLIWHIRL
-	db 26, POLIWHIRL
-	db 26, LAPRAS
-	db 26, LAPRAS
+	db 33, SEEL
+	db 30, POLIWHIRL
+	db 30, POLIWHIRL
+	db 31, LAPRAS
+	db 33, LAPRAS
 	
 	map_id SAFARI_ZONE_AREA_2
 	db 6 percent
-	db 26, KINGLER
-	db 26, POLIWHIRL
-	db 26, POLIWHIRL
-	db 26, LAPRAS
-	db 26, LAPRAS
+	db 33, KINGLER
+	db 30, POLIWHIRL
+	db 30, POLIWHIRL
+	db 31, LAPRAS
+	db 33, LAPRAS
 	
 	map_id LOST_LAND
 	db 3 percent
-	db 26, OMANYTE
-	db 26, KABUTO
-	db 26, KABUTO
-	db 26, KABUTO
-	db 26, KABUTO
+	db 35, OMANYTE
+	db 35, KABUTO
+	db 35, KABUTO
+	db 35, KABUTO
+	db 35, KABUTO
 
 	db -1 ; end

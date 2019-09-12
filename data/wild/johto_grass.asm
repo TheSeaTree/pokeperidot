@@ -817,81 +817,81 @@ JohtoGrassWildMons:
 	; morn
 	db 27, FLAAFFY
 	db 29, FLAAFFY
-	db 26, PONYTA
-	db 24, MILTANK
-	db 27, TAUROS
-	db 26, TAUROS
-	db 27, TAUROS
+	db 31, PONYTA
+	db 32, MILTANK
+	db 32, TAUROS
+	db 32, TAUROS
+	db 32, TAUROS
 	; day
-	db 27, FLAAFFY
-	db 29, FLAAFFY
-	db 26, PONYTA
-	db 24, MILTANK
-	db 27, TAUROS
-	db 26, TAUROS
-	db 27, TAUROS
+	db 30, FLAAFFY
+	db 30, FLAAFFY
+	db 31, PONYTA
+	db 32, MILTANK
+	db 32, TAUROS
+	db 32, TAUROS
+	db 32, TAUROS
 	; nite
-	db 27, FLAAFFY
-	db 29, FLAAFFY
-	db 26, PONYTA
-	db 24, MILTANK
-	db 27, TAUROS
-	db 26, TAUROS
-	db 27, TAUROS
+	db 30, FLAAFFY
+	db 30, FLAAFFY
+	db 31, PONYTA
+	db 32, MILTANK
+	db 32, TAUROS
+	db 32, TAUROS
+	db 32, TAUROS
 
 	map_id ROUTE_19
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 28, BEEDRILL
-	db 28, BUTTERFREE
-	db 26, FEAROW
-	db 26, PARASECT
-	db 27, FEAROW
-	db 28, MANKEY
-	db 30, MANKEY
+	db 32, BEEDRILL
+	db 32, BUTTERFREE
+	db 31, FEAROW
+	db 32, PARASECT
+	db 31, FEAROW
+	db 32, MANKEY
+	db 33, MANKEY
 	; day
-	db 28, BEEDRILL
-	db 28, BUTTERFREE
-	db 26, FEAROW
-	db 26, PARASECT
-	db 27, FEAROW
-	db 28, MANKEY
-	db 30, MANKEY
+	db 32, BEEDRILL
+	db 32, BUTTERFREE
+	db 31, FEAROW
+	db 32, PARASECT
+	db 31, FEAROW
+	db 32, MANKEY
+	db 33, MANKEY
 	; nite
-	db 28, BEEDRILL
-	db 28, BUTTERFREE
-	db 26, FEAROW
-	db 26, PARASECT
-	db 27, FEAROW
-	db 28, JIGGLYPUFF
-	db 30, JIGGLYPUFF
+	db 32, BEEDRILL
+	db 32, BUTTERFREE
+	db 31, FEAROW
+	db 32, PARASECT
+	db 31, FEAROW
+	db 32, JIGGLYPUFF
+	db 33, JIGGLYPUFF
 
 	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, FEAROW
-	db 28, DONPHAN
-	db 27, GLIGAR
-	db 28, SHUCKLE
-	db 28, FEAROW
-	db 29, PRIMEAPE
-	db 30, PRIMEAPE
+	db 31, FEAROW
+	db 32, DONPHAN
+	db 31, GLIGAR
+	db 32, SHUCKLE
+	db 32, FEAROW
+	db 33, PRIMEAPE
+	db 34, PRIMEAPE
 	; day
-	db 27, FEAROW
-	db 28, DONPHAN
-	db 27, GLIGAR
-	db 28, SHUCKLE
-	db 28, FEAROW
-	db 29, PRIMEAPE
-	db 30, PRIMEAPE
+	db 31, FEAROW
+	db 32, DONPHAN
+	db 31, GLIGAR
+	db 32, SHUCKLE
+	db 32, FEAROW
+	db 33, PRIMEAPE
+	db 34, PRIMEAPE
 	; nite
-	db 27, FEAROW
-	db 28, DONPHAN
-	db 27, GLIGAR
-	db 28, SHUCKLE
-	db 28, FEAROW
-	db 29, TEDDIURSA
-	db 30, TEDDIURSA
+	db 31, FEAROW
+	db 32, DONPHAN
+	db 31, GLIGAR
+	db 32, SHUCKLE
+	db 32, FEAROW
+	db 33, TEDDIURSA
+	db 34, TEDDIURSA
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite
@@ -1001,105 +1001,105 @@ JohtoGrassWildMons:
 
 	map_id SAFARI_ZONE_AREA_1
 	db 10 percent, 10 percent, 10 percent
-	db 27, NIDORINA
-	db 27, NIDORINO
-	db 26, VENOMOTH
-	db 28, DODRIO
-	db 27, BELLOSSOM
+	db 33, NIDORINA
+	db 33, NIDORINO
+	db 32, VENOMOTH
+	db 32, DODRIO
+	db 34, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; day
-	db 27, NIDORINA
-	db 27, NIDORINO
-	db 28, DODRIO
-	db 26, VENOMOTH
-	db 27, BELLOSSOM
+	db 33, NIDORINA
+	db 33, NIDORINO
+	db 32, DODRIO
+	db 32, VENOMOTH
+	db 34, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; nite
-	db 27, NIDORINA
-	db 27, NIDORINO
-	db 28, DODRIO
-	db 26, VENOMOTH
-	db 27, BELLOSSOM
+	db 33, NIDORINA
+	db 33, NIDORINO
+	db 32, DODRIO
+	db 32, VENOMOTH
+	db 34, BELLOSSOM
 	db 30, CHANSEY
 	db 30, CHANSEY
 
 	map_id SAFARI_ZONE_AREA_2
 	db 10 percent, 10 percent, 10 percent
-	db 27, MACHOKE
-	db 27, RHYHORN
-	db 26, CLEFABLE
-	db 27, KANGASKHAN
-	db 28, SUNFLORA
-	db 25, LARVITAR
-	db 25, LARVITAR
+	db 34, MACHOKE
+	db 32, RHYHORN
+	db 33, CLEFABLE
+	db 32, KANGASKHAN
+	db 34, SUNFLORA
+	db 28, LARVITAR
+	db 28, LARVITAR
 	; day
-	db 27, MACHOKE
-	db 27, RHYHORN
-	db 26, CLEFABLE
-	db 27, KANGASKHAN
-	db 28, SUNFLORA
-	db 25, LARVITAR
-	db 25, LARVITAR
+	db 34, MACHOKE
+	db 32, RHYHORN
+	db 33, CLEFABLE
+	db 32, KANGASKHAN
+	db 34, SUNFLORA
+	db 28, LARVITAR
+	db 28, LARVITAR
 	; nite
-	db 27, MACHOKE
-	db 27, RHYHORN
-	db 26, CLEFABLE
-	db 27, KANGASKHAN
-	db 28, SUNFLORA
-	db 25, LARVITAR
-	db 25, LARVITAR
+	db 34, MACHOKE
+	db 32, RHYHORN
+	db 33, CLEFABLE
+	db 32, KANGASKHAN
+	db 34, SUNFLORA
+	db 28, LARVITAR
+	db 28, LARVITAR
 
 	map_id SAFARI_ZONE_AREA_3
 	db 10 percent, 10 percent, 10 percent
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, PINSIR
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, PINSIR
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; day
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, PINSIR
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, PINSIR
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; nite
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, PINSIR
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, PINSIR
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 
 	map_id SAFARI_ZONE_AREA_4
 	db 10 percent, 10 percent, 10 percent
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, SCYTHER
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, SCYTHER
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; day
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, SCYTHER
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, SCYTHER
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 	; nite
-	db 28, FARFETCH_D
-	db 27, VENOMOTH
-	db 27, SUDOWOODO
-	db 27, SCYTHER
-	db 26, EXEGGUTOR
+	db 35, FARFETCH_D
+	db 32, VENOMOTH
+	db 34, SUDOWOODO
+	db 34, SCYTHER
+	db 33, EXEGGUTOR
 	db 30, CHANSEY
 	db 30, CHANSEY
 
