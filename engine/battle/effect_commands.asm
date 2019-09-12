@@ -1156,13 +1156,24 @@ BattleCommand_Critical:
 
 .Farfetchd:
 	cp FARFETCH_D
+	jr nz, .Sirfetchd
+	ld a, [hl]
+	cp STICK
+	jr nz, .FocusEnergy
+
+; +2 critical level
+	ld c, 3
+	jr .Tally
+
+.Sirfetchd:
+	cp SIRFETCH_D
 	jr nz, .FocusEnergy
 	ld a, [hl]
 	cp STICK
 	jr nz, .FocusEnergy
 
 ; +2 critical level
-	ld c, 2
+	ld c, 3
 	jr .Tally
 
 .FocusEnergy:
@@ -5609,10 +5620,6 @@ BattleCommand_Charge:
 	ld hl, .SkullBash
 	jr z, .done
 
-	cp SKY_ATTACK
-	ld hl, .SkyAttack
-	jr z, .done
-
 	cp FLY
 	ld hl, .Fly
 	jr z, .done
@@ -5631,11 +5638,6 @@ BattleCommand_Charge:
 .SkullBash:
 ; 'lowered its head!'
 	text_far UnknownText_0x1c0d3a
-	text_end
-
-.SkyAttack:
-; 'is glowing!'
-	text_far UnknownText_0x1c0d4e
 	text_end
 
 .Fly:
