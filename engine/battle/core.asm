@@ -4652,6 +4652,10 @@ HandleStatBoostingHeldItems:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	xor a
+	ld [hl], a
+	ld [wAttackMissed], a
+	ld [wEffectFailed], a
 	ld a, BANK(BattleCommand_AttackUp)
 	rst FarCall
 	pop bc
