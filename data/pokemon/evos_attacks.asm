@@ -1920,8 +1920,8 @@ MrMimeEvosAttacks:
 	db 22, REFLECT
 	db 25, PSYBEAM
 	db 29, SUBSTITUTE
-	db 39, PSYCHIC
-	db 43, MOONBLAST
+	db 39, MOONBLAST
+	db 43, PSYCHIC_M
 	db 46, BATON_PASS
 	db 50, SAFEGUARD
 	db 0 ; no more level-up moves
@@ -2595,7 +2595,7 @@ HoothootEvosAttacks:
 	db 7, PECK
 	db 10, CONFUSION
 	db 16, PSYBEAM
-	db 23, PSYCHIC
+	db 23, PSYCHIC_M
 	db 25, DOUBLE_EDGE
 	db 28, REFLECT
 	db 31, RAZOR_WIND
@@ -2614,7 +2614,7 @@ NoctowlEvosAttacks:
 	db 10, CONFUSION
 	db 16, PSYBEAM
 	db 20, WING_ATTACK
-	db 27, PSYCHIC
+	db 27, PSYCHIC_M
 	db 31, DOUBLE_EDGE
 	db 33, REFLECT
 	db 35, RAZOR_WIND
