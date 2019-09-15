@@ -11,6 +11,6 @@ BattleCommand_StartRain:
 BattleCommand_ItemRain:
 	ld a, WEATHER_RAIN
 	ld [wBattleWeather], a
-	ld a, 5
+	ld a, 3
 	ld [wWeatherCount], a
 	ret

@@ -11,6 +11,6 @@ BattleCommand_StartSun:
 BattleCommand_ItemSun:
 	ld a, WEATHER_SUN
 	ld [wBattleWeather], a
-	ld a, 5
+	ld a, 3
 	ld [wWeatherCount], a
 	ret

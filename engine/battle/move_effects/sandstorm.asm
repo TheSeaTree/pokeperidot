@@ -20,6 +20,6 @@ BattleCommand_StartSandstorm:
 BattleCommand_ItemSandstorm:
 	ld a, WEATHER_SANDSTORM
 	ld [wBattleWeather], a
-	ld a, 5
+	ld a, 3
 	ld [wWeatherCount], a
 	ret
