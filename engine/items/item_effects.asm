@@ -45,7 +45,7 @@ ItemEffects:
 	dw NoEffect            ; LUCKY_PUNCH
 	dw VitaminEffect       ; CALCIUM
 	dw RareCandyEffect     ; RARE_CANDY
-	dw XAccuracyEffect     ; X_ACCURACY
+	dw NoEffect            ; X_ACCURACY
 	dw EvoStoneEffect      ; LEAF_STONE
 	dw NoEffect            ; METAL_POWDER
 	dw NoEffect            ; NUGGET
@@ -61,11 +61,11 @@ ItemEffects:
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
 	dw RestoreHPEffect     ; LEMONADE
-	dw XItemEffect         ; X_ATTACK
-	dw NoEffect            ; ITEM_32
-	dw XItemEffect         ; X_DEFEND
-	dw XItemEffect         ; X_SPEED
-	dw XItemEffect         ; X_SP_ATK
+	dw NoEffect            ; X_ATTACK
+	dw NoEffect            ; X_SP_DEF
+	dw NoEffect            ; X_DEFEND
+	dw NoEffect            ; X_SPEED
+	dw NoEffect            ; X_SP_ATK
 	dw CoinCaseEffect      ; COIN_CASE
 	dw ItemfinderEffect    ; ITEMFINDER
 	dw PokeFluteEffect     ; POKE_FLUTE
@@ -2304,8 +2304,6 @@ RestorePPEffect:
 
 	ld a, [hl]
 	cp SKETCH
-	jr z, .CantUsePPUpOnSketch
-	cp CONVERSIONZ
 	jr z, .CantUsePPUpOnSketch
 
 	ld bc, MON_PP - MON_MOVES
