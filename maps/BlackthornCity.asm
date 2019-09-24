@@ -10,11 +10,31 @@ BlackthornCity_MapScripts:
 	setflag ENGINE_FLYPOINT_BLACKTHORN
 	return
 	
+BlackthornFisherScript:
+	jumptextfaceplayer BlackthornFisherText
+	
+BlackthornGymEvent:
+	scall BlackthornGymEntrance
+	iffalse .no
+	warpfacing UP, OLIVINE_GYM,  4, 11
+.no
+	end	
+	
+BlackthornGymEntrance:
+	jumpstd gymdoor
+	end
+	
 BlackthornCitySign:
 	jumptext BlackthornCitySignText
+
+BlackthornCityGoAwaySign:
+	jumptext BlackthornCityGoAwaySignText
 	
 BlackthornCityGymSign:
 	jumptext BlackthornCityGymSignText
+
+FluteMasterSign:
+	jumptext FluteMasterText
 	
 BlackthornCityPokecenterSign:
 	jumpstd pokecentersign
@@ -24,6 +44,18 @@ BlackthornCityMartSign:
 
 BlackthornCityMailbox:
 	jumpstd mailbox
+	
+BlackthornFisherText:
+	text "Hey, check out"
+	line "the sign the FLUTE"
+	cont "MASTER put up now."
+	
+	para "He already moved"
+	line "so far away from"
+	cont "the rest of the"
+	cont "town. What could"
+	cont "he be working on?"
+	done
 	
 BlackthornBikerText:
 	text "VROOM!"
@@ -42,6 +74,17 @@ BlackthornBikerText:
 	line "BADABADABADABADA!"
 	done
 	
+BlackthornCityGoAwaySignText:
+	text "TRAINER TIPS-"
+	
+	para "GO AWAY!"
+	done
+	
+FluteMasterText:
+	text "FLUTE MASTER's"
+	line "HOUSE"
+	done
+	
 BlackthornCitySignText:
 	text "ACROPORA CITY"
 	done
@@ -56,21 +99,26 @@ BlackthornCityGymSignText:
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 5 ; warp events
 	warp_event 39, 13, ROUTE_20, 1
 	warp_event 33, 17, BLACKTHORN_POKECENTER_1F, 1
 	warp_event 19, 21, BLACKTHORN_MART, 1
+	warp_event 27, 21, BLACKTHORN_REST_TALK_HOUSE, 1
+	warp_event 53, 17, FLUTE_MASTER_HOUSE, 1
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 10 ; bg events
 	bg_event 34, 17, BGEVENT_READ, BlackthornCityPokecenterSign
 	bg_event 20, 21, BGEVENT_READ, BlackthornCityMartSign
-	bg_event  9, 25, BGEVENT_UP, BlackthornCityMailbox
-	bg_event 33, 23, BGEVENT_UP, BlackthornCityMailbox
-	bg_event 25, 21, BGEVENT_UP, BlackthornCityMailbox
+	bg_event  9, 25, BGEVENT_UP,   BlackthornCityMailbox
+	bg_event 33, 23, BGEVENT_UP,   BlackthornCityMailbox
+	bg_event 25, 21, BGEVENT_UP,   BlackthornCityMailbox
 	bg_event 36, 17, BGEVENT_READ, BlackthornCitySign
+	bg_event 46, 23, BGEVENT_READ, BlackthornCityGoAwaySign
+	bg_event 52, 18, BGEVENT_READ, FluteMasterSign
+	bg_event 20,  7, BGEVENT_UP,   BlackthornGymEvent
 	bg_event 11, 15, BGEVENT_READ, BlackthornCityGymSign
 
 	db 1 ; object events
-	object_event  0,  0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
+	object_event 44, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, BlackthornFisherScript, -1

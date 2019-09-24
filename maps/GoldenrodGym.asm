@@ -564,12 +564,14 @@ DoorGuard1ThankYou:
 	done
 
 GoldenrodNotEnough:
-	text "Not enough cash?"
+	text "Looks like you"
+	line "don't have enough"
+	cont "cash, stranger."
 	done
 	
 DoorGuard1Challenge:
 	text "If you can't pay,"
-	line "then a battle will"
+	line "a battle will"
 	cont "suffice."
 	done
 	

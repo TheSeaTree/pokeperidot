@@ -121,7 +121,7 @@ KRIS EQU __enum__
 	const BEN
 	const TRISTAN
 	const DEVIN
-	const RICKY
+	const JULES
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -135,6 +135,7 @@ KRIS EQU __enum__
 	const ALEX
 	const ELLIS
 	const ROY
+	const RICKY
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -167,6 +168,7 @@ KRIS EQU __enum__
 	const MARIE1
 	const MARIE2
 	const BRIANNA
+	const DIANE
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -197,6 +199,7 @@ KRIS EQU __enum__
 	const LONNIE
 	const GREG
 	const CARLOS
+	const TROY
 
 	trainerclass FISHER ; 25
 	const BRADY
@@ -227,6 +230,7 @@ KRIS EQU __enum__
 	const STEVEN
 	const PAT
 	const SANDY
+	const HAL
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -270,6 +274,7 @@ KRIS EQU __enum__
 	const JERRY
 	const JARED
 	const JESSE
+	const MORTON
 	
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -283,6 +288,7 @@ KRIS EQU __enum__
 	const MANUEL
 	const SHAWN
 	const DUKE
+	const HARRIS
 	
 	trainerclass FIREBREATHER ; 30
 	const BRIAN
@@ -292,6 +298,7 @@ KRIS EQU __enum__
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
+	const BLAIR
 	
 	trainerclass BLACKBELT_T ; 32
 	const BILLY

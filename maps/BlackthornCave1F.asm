@@ -1,11 +1,11 @@
 	const_def 2 ; object constants
 
-Route15FuchsiaGate_MapScripts:
+BlackthornCave1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route15FuchsiaGate_MapEvents:
+BlackthornCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 0 ; warp events

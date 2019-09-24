@@ -42,4 +42,5 @@ MapScenes::
 	scene_var ECRUTEAK_CITY,                               wEcruteakCitySceneID
 	scene_var ROUTE_12_SHELTER,							   wRoute12ShelterSceneID
 	scene_var LOST_LAND,								   wLostLandSceneID
+	scene_var FLUTE_MASTER_HOUSE,						   wFluteMasterHouseSceneID
 	db -1

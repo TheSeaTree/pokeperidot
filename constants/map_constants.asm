@@ -73,7 +73,7 @@ ENDM
 	map_const MOUNT_MOON,                                  15,  9 ; 85
 	map_const UNDERGROUND_PATH,                             3, 14 ; 86
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
-	map_const PALEROCK_CAVE_B1F,                           22, 15 ; 88
+	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const CIANWOOD_CAVE_1F,                             7,  6
 	map_const CIANWOOD_CAVE_B1F,                           20, 15
@@ -86,7 +86,7 @@ ENDM
 	map_const ECRUTEAK_POKECENTER_1F,                       5,  4 ;  3
 	map_const ECRUTEAK_MART,                                6,  4 ;  6
 	map_const ECRUTEAK_GYM,                                11, 13 ;  7
-	map_const ECRUTEAK_CITY,                               20, 15 ;  9
+	map_const ECRUTEAK_CITY,                               22, 15 ;  9
 	map_const ECRUTEAK_FOREST_GATE,                         6,  4 ; 10
 	map_const PAINTERS_FOREST,                              7,  7
 	map_const PAINTERS_HOUSE,                               4,  4
@@ -96,11 +96,16 @@ ENDM
 
 	newgroup                                                      ;  5
 
-	map_const BLACKTHORN_GYM_1F,                            5,  9 ;  1
+	map_const BLACKTHORN_GYM_1F,                            8, 12 ;  1
 	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
-	map_const BLACKTHORN_CITY,                             23, 14 ; 10
+	map_const BLACKTHORN_CITY,                             32, 16 ; 10
+	map_const ROUTE_21,									   27, 10
+	map_const ROUTE_21_ECRUTEAK_GATE,						5,  4
+	map_const BLACKTHORN_REST_TALK_HOUSE,                   4,  4
+	map_const FLUTE_MASTER_HOUSE,                           4,  4
+	map_const BLACKTHORN_CAVE_1F,                          19, 11
 
 	newgroup                                                      ;  6
 	
@@ -246,7 +251,6 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const ROUTE_16_FUCHSIA_SPEECH_HOUSE,                4,  4 ; 23
 	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25
 	map_const ROUTE_8_ROUTE_10_GATE,                       5,  4 ; 26

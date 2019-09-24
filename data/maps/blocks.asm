@@ -44,7 +44,6 @@ BillsBrothersHouse_Blocks:
 LavenderSpeechHouse_Blocks:
 LavenderNameRater_Blocks:
 Route5SuperRodHouse_Blocks:
-Route16FuchsiaSpeechHouse_Blocks:
 ManiasHouse_Blocks:
 CianwoodPhotoStudio_Blocks:
 CianwoodLugiaSpeechHouse_Blocks:
@@ -67,6 +66,7 @@ Route12Shelter_Blocks:
 EcruteakThiefHouse_Blocks:
 EcruteakFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
+FluteMasterHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -118,6 +118,7 @@ Route4AzaleaGate_Blocks:
 Route2Gate_Blocks:
 Route12EcruteakGate_Blocks:
 Route14OlivineGate_Blocks:
+Route21EcruteakGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 ElmsLab_Blocks:
@@ -207,6 +208,7 @@ ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:
+BlackthornRestTalkHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:
@@ -554,3 +556,9 @@ Route20_Blocks:
 	
 OrchidCity_Blocks:
 	INCBIN "maps/OrchidCity.ablk"
+
+Route21_Blocks:
+	INCBIN "maps/Route21.ablk"	
+
+BlackthornCave1F_Blocks:
+	INCBIN "maps/BlackthornCave1F.ablk"

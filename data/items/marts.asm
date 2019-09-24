@@ -13,6 +13,7 @@ Marts:
 	dw MartGoldenrod5F
 	dw MartOlivine
 	dw MartEcruteak
+	dw MartEcruteakTM
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartMahogany3
@@ -159,6 +160,13 @@ MartEcruteak:
 	db FULL_HEAL
 	db REVIVE
 	db -1 ; end
+	
+MartEcruteakTM:
+	db 3
+	db TM_REFLECT
+	db TM_LIGHT_SCREEN
+	db TM_SAFEGUARD
+	db -1
 
 MartMahogany1:
 	db 8 ; # items

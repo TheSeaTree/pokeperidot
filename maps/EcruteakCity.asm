@@ -48,6 +48,7 @@ EcruteakCity_MapScripts:
 	
 EnterGymEvent:
 	scall EcruteakGymEntrance
+	iffalse .no
 	warpfacing UP, ECRUTEAK_GYM, 10, 21
 .no
 	end
@@ -55,6 +56,12 @@ EnterGymEvent:
 EcruteakGymEntrance:
 	jumpstd gymdoor
 	end
+	
+EcruteakCityLass:
+	jumptextfaceplayer EcruteakCityLassText
+	
+EcruteakGymGuy:
+	jumptextfaceplayer EcruteakGymLeaderAwayText
 
 EcruteakCityFruitTree:
 	fruittree ECRUTEAK_CITY
@@ -80,6 +87,36 @@ EcruteakCityMartSign:
 EcruteakGymMovement:
 	step UP
 	step_resume
+	
+EcruteakCityLassText:
+	text "No fair!"
+	
+	para "I wanted to visit"
+	line "my friend in"
+	cont "ACROPORA CITY, but"
+	cont "there is a ledge"
+	cont "blocking the way."
+	done
+	
+EcruteakGymLeaderAwayText:
+	text "Are you looking to"
+	line "challenge the GYM"
+	cont "LEADER of this"
+	cont "town?"
+	
+	para "I'm sorry, but she"
+	line "isn't in at the"
+	cont "moment, she had"
+	cont "to leave for an"
+	cont "emergency."
+	
+	para "Maybe you could"
+	line "try paying a visit"
+	cont "to her #MON"
+	cont "shelter, it's"
+	cont "right on ROUTE 12,"
+	cont "you can't miss it!"
+	done
 
 EcruteakCityGramps1Text:
 	text "ECRUTEAK used to"
@@ -222,28 +259,31 @@ BurnedTowerSignText:
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
-	warp_event 15, 25, ECRUTEAK_FOREST_GATE, 4
-	warp_event 16, 25, ECRUTEAK_FOREST_GATE, 3
-	warp_event  9, 19, ECRUTEAK_POKECENTER_1F, 1
-	warp_event 25,  9, ECRUTEAK_MART, 1
-	warp_event 33,  8, ROUTE_12_ECRUTEAK_GATE, 1
-	warp_event 33,  9, ROUTE_12_ECRUTEAK_GATE, 2
-	warp_event  1,  7, ECRUTEAK_THIEF_HOUSE, 1
-	warp_event 27, 15, FRIEND_BALL_HOUSE, 1
+	db 10 ; warp events
+	warp_event 19, 25, ECRUTEAK_FOREST_GATE, 4
+	warp_event 20, 25, ECRUTEAK_FOREST_GATE, 3
+	warp_event 13, 19, ECRUTEAK_POKECENTER_1F, 1
+	warp_event 29,  9, ECRUTEAK_MART, 1
+	warp_event 37,  8, ROUTE_12_ECRUTEAK_GATE, 1
+	warp_event 37,  9, ROUTE_12_ECRUTEAK_GATE, 2
+	warp_event  5,  7, ECRUTEAK_THIEF_HOUSE, 1
+	warp_event 31, 15, FRIEND_BALL_HOUSE, 1
+	warp_event  4, 22, ROUTE_21_ECRUTEAK_GATE, 3
+	warp_event  4, 23, ROUTE_21_ECRUTEAK_GATE, 4
 
 	db 0 ; coord events
 
 	db 7 ; bg events
-	bg_event 18, 22, BGEVENT_READ, EcruteakCitySign
-	bg_event 16, 14, BGEVENT_READ, EcruteakDanceTheaterSign
-	bg_event 10, 19, BGEVENT_READ, EcruteakCityPokecenterSign
-	bg_event 26,  9, BGEVENT_READ, EcruteakCityMartSign
-	bg_event 25, 15, BGEVENT_UP,   EcruteakMailbox
-	bg_event 21, 19, BGEVENT_UP,   EcruteakMailbox
-	bg_event  8, 11, BGEVENT_UP,   EnterGymEvent
+	bg_event 22, 22, BGEVENT_READ, EcruteakCitySign
+	bg_event 20, 14, BGEVENT_READ, EcruteakDanceTheaterSign
+	bg_event 14, 19, BGEVENT_READ, EcruteakCityPokecenterSign
+	bg_event 30,  9, BGEVENT_READ, EcruteakCityMartSign
+	bg_event 29, 15, BGEVENT_UP,   EcruteakMailbox
+	bg_event 25, 19, BGEVENT_UP,   EcruteakMailbox
+	bg_event 12, 11, BGEVENT_UP,   EnterGymEvent
 
-	db 3 ; object events
-	object_event  8, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_ACCESS
-	object_event  0,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
-	object_event  32, 0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE
+	db 4 ; object events
+	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, -1
+	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuy, EVENT_ECRUTEAK_GYM_ACCESS
+	object_event  2,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
+	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE

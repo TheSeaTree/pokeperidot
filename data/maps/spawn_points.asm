@@ -17,7 +17,7 @@ SpawnPoints:
 	spawn GOLDENROD_CITY,             19, 16
 	spawn CIANWOOD_CITY,              11, 20
 	spawn ROUTE_9,                    26,  6
-	spawn ECRUTEAK_CITY,               9, 20
+	spawn ECRUTEAK_CITY,              13, 20
 	spawn OLIVINE_CITY,               13, 22
 	spawn MAHOGANY_TOWN,              27, 30
 	spawn CARNATION_TOWN,             19,  6

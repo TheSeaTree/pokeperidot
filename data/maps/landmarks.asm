@@ -10,6 +10,7 @@ Landmarks:
 	landmark  68,  84, NewBarkTownName
 	landmark  68,  96, Route1Name
 	landmark  68, 108, CherrygroveCityName
+	landmark  68, 116, Route30Name ;Oasis
 	landmark  84, 116, Route2Name
 	landmark 100, 124, AzaleaTownName
 	landmark 108, 116, Route3Name
@@ -17,10 +18,9 @@ Landmarks:
 	landmark 128,  92, Route5Name
 	landmark 132,  84, VioletCityName
 	landmark 128,  76, Route6Name
-	landmark 114,  68, Route7Name
-	landmark 100,  80, Route8Name
+	landmark 100,  80, Route7Name ; ROUTE_8
 	landmark  84,  84, GoldenrodCityName
-	landmark 108,  84, Route10Name
+	landmark 108,  84, Route8Name ; ROUTE_10_NORTH
 	landmark 100, 108, DiglettsCaveName
 	landmark 100, 100, CianwoodCityName
 	landmark  60, 108, UnionCaveName
@@ -31,22 +31,21 @@ Landmarks:
 	landmark  76,  76, Route11Name
 	landmark  64,  68, Route12Name
 	landmark  68,  58, Route13Name
-	landmark  68,  44, Route14Name
-	landmark  60,  36, SafariZoneName
+	landmark  72,  44, Route14Name
 	landmark  84,  44, OlivineCityName
-	landmark  52,  44, MahoganyTownName
-	landmark  52,  44, PowerPlantName
-	landmark  42,  42, CarnationTownName
-	landmark  42,  42, CarnationZooName
-	landmark  34,  43, BlackthornCityName
-	landmark  36,  96, Route15Name
-	landmark  44,  44, Route16Name
-	landmark  35,  60, Route17Name
-	landmark  32,  76, Route18Name
-	landmark  96,  44, Route19Name
-	landmark 114,  36, Route20Name
-	landmark 114,  46, OrchidCityName
-	landmark  68, 116, Route30Name ;Oasis
+	landmark  84,  36, MahoganyTownName
+	landmark  64,  36, Route15Name ; ROUTE_18
+	landmark  52,  36, CarnationTownName
+	landmark  44,  36, SafariZoneName
+	landmark  44,  44, Route16Name ; ROUTE_19
+	landmark  36,  52, Route17Name ; ROUTE_20
+	landmark  36,  60, BlackthornCityName
+	landmark  42,  68, Route18Name ; ROUTE_21
+	landmark  20,  52, OrchidCityName
+	landmark  96,  44, Route19Name ; ROUTE_15
+	landmark 100,  58, Route20Name ; ROUTE_16
+	landmark 114,  36, Route21Name ; ROUTE_17
+	landmark 114,  68, Route22Name ; ROUTE_7
 	landmark 116,  60, LostLandName
 	landmark 140,  36, VictoryRoadName
 	landmark 140,  28, IndigoPlateauName
@@ -112,6 +111,8 @@ Route17Name:         db "ROUTE 17@"
 Route18Name:         db "ROUTE 18@"
 Route19Name:         db "ROUTE 19@"
 Route20Name:         db "ROUTE 20@"
+Route21Name:         db "ROUTE 21@"
+Route22Name:         db "ROUTE 22@"
 Route30Name:	     db "PAVONA¯OASIS@"
 CarnationZooName:    db "CARNATION¯ZOO@"
 DarkCaveName:        db "DARK CAVE@"

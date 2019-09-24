@@ -135,14 +135,21 @@ MahoganyTownPowerPlantGuy:
 	checkevent EVENT_EXPLAINED_POWER_PLANT
 	iftrue .ExplainedPlant
 	writetext MahoganyPowerPlantGuyIntroText
+	waitbutton
+	setevent EVENT_EXPLAINED_POWER_PLANT
+	checkcode VAR_BADGES
+	ifless 6, .NotEnoughBadges
+	writetext MahoganyPowerPlantGuyAskText
 	yesorno
 	iffalse .No
-.Yes
-	setevent EVENT_EXPLAINED_POWER_PLANT
+
 .ExplainedPlant
+	checkcode VAR_BADGES
+	ifless 6, .NotEnoughBadges
 	writetext MahoganyPowerPlantGuyAgree
 	waitbutton
 	closetext
+	setevent EVENT_UNLOCKED_SURF
 	end
 	
 .GotSurf
@@ -154,8 +161,14 @@ MahoganyTownPowerPlantGuy:
 .No
 	writetext MahoganyPowerPlantGuyComeBack
 	yesorno
-	iftrue .Yes
+	iftrue .ExplainedPlant
 	iffalse .No
+	
+.NotEnoughBadges
+	writetext MahoganyPowerPlantNotEnoughBadges
+	waitbutton
+	closetext
+	end
 	
 MahoganyGymEvent:
 	scall MahoganyGymEntrance
@@ -234,7 +247,9 @@ MahoganyPowerPlantGuyIntroText:
 	para "They must be muck-"
 	line "ing up all the"
 	cont "turbines."
+	done
 	
+MahoganyPowerPlantGuyAskText:
 	para "It's a lot to ask,"
 	line "but would you take"
 	cont "care of them?"
@@ -277,6 +292,23 @@ MahoganyPowerPlantGotSurf:
 	cont "you can cross the"
 	cont "water and clean up"
 	cont "the POWER PLANT."
+	done
+	
+MahoganyPowerPlantNotEnoughBadges:
+	text "I don't know any"
+	line "trainers strong"
+	cont "enough for this"
+	cont "task!"
+	
+	para "There was one"
+	line "trainer I asked,"
+	cont "but he refused."
+	
+	para "He said it wasn't"
+	line "his problem."
+	
+	para "Oh, what will I"
+	line "do?"
 	done
 	
 MahoganyTownLassText:

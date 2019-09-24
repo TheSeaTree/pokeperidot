@@ -112,6 +112,7 @@ CianwoodCityMoveTutor:
 	
 CianwoodGymEvent:
 	scall CianwoodGymEntrance
+	iffalse .no
 	warpfacing UP, GOLDENROD_GYM, 22, 39
 .no
 	end

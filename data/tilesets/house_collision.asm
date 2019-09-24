@@ -6,7 +6,7 @@
 	tilecoll WALL, WINDOW, FLOOR, FLOOR ; 05
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 06
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 07
-	tilecoll WALL, WINDOW, FLOOR, FLOOR ; 08
+	tilecoll WINDOW, WALL, FLOOR, TV ; 08
 	tilecoll WALL, WALL, FLOOR, BOOKSHELF ; 09
 	tilecoll WALL, WALL, WALL, WALL ; 0a
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WARP_CARPET_DOWN ; 0b
@@ -28,7 +28,7 @@
 	tilecoll WARP_CARPET_LEFT, FLOOR, FLOOR, FLOOR ; 1b
 	tilecoll WALL, WALL, FLOOR, PC ; 1c
 	tilecoll WALL, WALL, FLOOR, RADIO ; 1d
-	tilecoll WALL, TOWN_MAP, TV, FLOOR ; 1e
+	tilecoll WALL, WALL, TV, FLOOR ; 1e
 	tilecoll WALL, WALL, WALL, WALL ; 1f
 	tilecoll WALL, WALL, WALL, WALL ; 20
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 21

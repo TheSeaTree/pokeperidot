@@ -119,7 +119,11 @@ ENDM
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $05, 0
+	map_attributes BlackthornCity, BLACKTHORN_CITY, $05, SOUTH
+	connection south, Route21, ROUTE_21, 11
+	
+	map_attributes Route21, ROUTE_21, $05, NORTH
+	connection north, BlackthornCity, BLACKTHORN_CITY, -11
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
@@ -293,7 +297,6 @@ ENDM
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes Route16FuchsiaSpeechHouse, ROUTE_16_FUCHSIA_SPEECH_HOUSE, $00, 0
 	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
 	map_attributes NewBarkForestGate, NEW_BARK_FOREST_GATE, $00, 0
 	map_attributes Route8Route10Gate, ROUTE_8_ROUTE_10_GATE, $00, 0
@@ -380,3 +383,8 @@ ENDM
 	map_attributes CarnationPokecenter1F, CARNATION_POKECENTER_1F, $00, 0
 	map_attributes CarnationWobbuffetHouse, WOBBUFFET_HOUSE, $00, 0
 	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0
+	map_attributes Route21EcruteakGate, ROUTE_21_ECRUTEAK_GATE, $00, 0
+	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
+	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
+	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
+	

@@ -117,11 +117,6 @@ ElectricGymLeader:
 	end
 
 MahoganyGymPod1:
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
-	closetext
 	checkevent EVENT_BEAT_SCIENTIST_ANDRE
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST1, 13, 19
@@ -142,6 +137,11 @@ MahoganyGymPod1:
 	setevent EVENT_BEAT_SCIENTIST_ANDRE
 	end
 .NoBattle
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
 	wait 8
@@ -207,11 +207,6 @@ MahoganyGymPod2:
 	end
 
 MahoganyGymPod3:
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
-	closetext
 	checkevent EVENT_BEAT_SCIENTIST_KURT
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST2, 19, 15
@@ -232,6 +227,11 @@ MahoganyGymPod3:
 	setevent EVENT_BEAT_SCIENTIST_KURT
 	end
 .NoBattle
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
 	wait 8
@@ -294,11 +294,6 @@ MahoganyGymPod4:
 MahoganyGymPod5:
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_1
 	iffalse PodDoorSealed
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
-	closetext
 	checkevent EVENT_BEAT_SCIENTIST_DAVID
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST3, 1, 19
@@ -319,6 +314,11 @@ MahoganyGymPod5:
 	setevent EVENT_BEAT_SCIENTIST_DAVID
 	end
 .NoBattle
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
 	wait 8
@@ -400,11 +400,6 @@ MahoganyGymPod7:
 MahoganyGymPod8:
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_3
 	iffalse PodDoorSealed
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
-	closetext
 	checkevent EVENT_BEAT_SCIENTIST_SETH
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST4, 14, 7
@@ -425,6 +420,11 @@ MahoganyGymPod8:
 	setevent EVENT_BEAT_SCIENTIST_SETH
 	end
 .NoBattle
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
 	wait 8

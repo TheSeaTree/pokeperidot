@@ -29,6 +29,8 @@ INCLUDE "maps/PowerPlant2F.asm"
 INCLUDE "maps/PowerPlant1FB.asm"
 INCLUDE "maps/PowerPlant2FB.asm"
 INCLUDE "maps/MahoganyMagnetTrainStation.asm"
+INCLUDE "maps/BlackthornRestTalkHouse.asm"
+INCLUDE "maps/BlackthornCave1F.asm"
 
 SECTION "Map Scripts 3", ROMX
 
@@ -41,6 +43,7 @@ INCLUDE "maps/RadioTower4F.asm"
 INCLUDE "maps/CianwoodCave1F.asm"
 INCLUDE "maps/CianwoodCaveB1F.asm"
 INCLUDE "maps/CianwoodCaveB2F.asm"
+INCLUDE "maps/FluteMasterHouse.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -82,7 +85,6 @@ INCLUDE "maps/AzaleaBerryHouse.asm"
 
 SECTION "Map Scripts 7", ROMX
 
-INCLUDE "maps/Route16FuchsiaSpeechHouse.asm"
 INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/NewBarkForestGate.asm"
 INCLUDE "maps/Route8Route10Gate.asm"
@@ -184,6 +186,7 @@ INCLUDE "maps/CharcoalKiln.asm"
 INCLUDE "maps/AzaleaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/AzaleaGym.asm"
+INCLUDE "maps/Route21.asm"
 
 
 SECTION "Map Scripts 17", ROMX
@@ -248,7 +251,7 @@ INCLUDE "maps/CarnationPokecenter1F.asm"
 INCLUDE "maps/CarnationZoo.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
-
+INCLUDE "maps/Route21EcruteakGate.asm"
 
 SECTION "Map Scripts 23", ROMX
 

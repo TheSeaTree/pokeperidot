@@ -3,6 +3,17 @@ Route20_MapScripts:
 
 	db 0 ; callbacks
 	
+TrainerLadJules:
+	trainer LAD, JULES, EVENT_BEAT_LAD_JULES, LadJulesText, LadJulesWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext LadJulesAfterText
+	waitbutton
+	closetext
+	end
+	
 Route20SnorlaxEvent:
 	opentext
 	writetext SnorlaxSleepingText
@@ -56,6 +67,18 @@ UseFluteText:
 	line "# FLUTE?"
 	done
 	
+LadJulesText:
+	text "I am a"
+	line "#MON trainer!"
+	done
+	
+LadJulesWinText:
+	text "I lost."
+	done
+	
+LadJulesAfterText:
+	text "I lost."
+	done
 
 Route20_MapEvents:
 	db 0, 0 ; filler
@@ -73,7 +96,7 @@ Route20_MapEvents:
 	object_event 56, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
 	object_event 50, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
 	object_event 49, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
-	object_event 22, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, ObjectEvent, -1
+	object_event 22, 27, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLadJules, -1
 	object_event 43, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree1, -1
 	object_event  6, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree2, -1
 	object_event 25, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1

@@ -13,7 +13,7 @@ OlivineSurfGuy:
 	opentext
 	checkevent EVENT_GOT_HM_SURF
 	iftrue .GotSurf
-	checkevent EVENT_EXPLAINED_POWER_PLANT
+	checkevent EVENT_UNLOCKED_SURF
 	iffalse .Hostile
 	writetext OlivineSurfGuyGiveSurf
 	waitbutton

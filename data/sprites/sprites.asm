@@ -119,3 +119,5 @@ OverworldSprites:
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PoseySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite CannonballSpriteGFX, 8, WALKING_SPRITE, PAL_OW_SILVER
+	overworld_sprite ExplosionSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

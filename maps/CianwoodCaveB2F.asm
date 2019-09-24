@@ -41,6 +41,9 @@ TrainerSageLo:
 	closetext
 	end	
 	
+TMRockSlideEvent:
+	itemball TM_ROCK_SLIDE
+	
 BurglarDukeText:
 	text "Hehe! We're going"
 	line "to make so much"
@@ -90,10 +93,11 @@ CianwoodCaveB2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  11,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  26, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  34, 15, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  36, 29, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBurglarDuke, EVENT_CLEARED_CHURCH
 	object_event  22, 28, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageCaleb, EVENT_CLEARED_CHURCH
 	object_event  15, 26, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageLo, EVENT_CLEARED_CHURCH
+	object_event  6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, TMRockSlideEvent, EVENT_GOT_TM_ROCK_SLIDE

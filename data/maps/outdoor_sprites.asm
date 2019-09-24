@@ -84,11 +84,14 @@ CeruleanGroupSprites:
 	db SPRITE_POKEFAN_F
 	db SPRITE_YOUNGSTER
 	db SPRITE_TEACHER
-	db SPRITE_GRAMPS
-	db SPRITE_FISHER
 	db SPRITE_BUG_CATCHER
-	db SPRITE_SWIMMER_GIRL_LAND
+	db SPRITE_SUPER_NERD
+	db SPRITE_FISHER
+	db SPRITE_BIKER
 	; limit 9 of 9 walking sprites
+	db SPRITE_SWIMMER_GIRL_LAND
+	db SPRITE_OFFICER
+	db SPRITE_GRAMPS
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
@@ -383,7 +386,7 @@ LakeOfRageGroupSprites:
 
 BlackthornGroupSprites:
 ; Route45, Route46, BlackthornCity
-	db SPRITE_GRAMPS
+	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_SUPER_NERD
@@ -392,7 +395,7 @@ BlackthornGroupSprites:
 	db SPRITE_BLACK_BELT
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_BIKER
-	; 8 of max 9 walking sprites
+	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_BIG_SNORLAX

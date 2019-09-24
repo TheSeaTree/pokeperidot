@@ -1103,4 +1103,30 @@ JohtoGrassWildMons:
 	db 30, CHANSEY
 	db 30, CHANSEY
 
+	map_id BLACKTHORN_CITY
+	db 8 percent, 8 percent, 8 percent
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	; day
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	; nite
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+
 	db -1 ; end
