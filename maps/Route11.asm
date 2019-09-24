@@ -5,6 +5,9 @@ Route11_MapScripts:
 
 	db 0 ; callbacks
 
+Route11TMGigaDrain:
+	itemball TM_GIGA_DRAIN
+
 Route11_MapEvents:
 	db 0, 0 ; filler
 
@@ -17,4 +20,5 @@ Route11_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
