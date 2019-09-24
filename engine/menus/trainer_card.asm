@@ -270,7 +270,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 2, 10
 	ld de, .Dex_PlayTime
 	call PlaceString
-	hlcoord 10, 15
+	hlcoord 10, 16
 	ld de, .Badges
 	call PlaceString
 	ld hl, wPokedexCaught
@@ -280,6 +280,10 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 15, 10
 	lb bc, 1, 3
 	call PrintNum
+	hlcoord 5, 16
+	ld de, wCoins
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 4
+	call PrintNum
 	call TrainerCard_Page1_PrintGameTime
 	hlcoord 2, 8
 	ld de, .StatusTilemap
@@ -288,13 +292,15 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	bit STATUSFLAGS_POKEDEX_F, a
 	ret nz
 	hlcoord 1, 9
-	lb bc, 2, 17
+	lb bc, 5, 17
 	call ClearBox
 	ret
 
 .Dex_PlayTime:
 	db   "#DEX"
-	next "PLAY TIME@"
+	next "PLAY TIME"
+	next ""
+	next "BP@"
 
 	db "@" ; unused
 
@@ -451,6 +457,17 @@ TrainerCard_Page1_PrintGameTime:
 	ld a, [hl]
 	xor " " ^ $2e ; alternate between space and small colon ($2e) tiles
 	ld [hl], a
+	ret
+	
+TrainerCard_Page1_PrintTotalBP:
+	hlcoord 11, 12
+	ld de, wCoins
+	lb bc, 2, 4
+	call PrintNum
+	inc hl
+	ld de, wGameTimeMinutes
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
+	call PrintNum
 	ret
 
 TrainerCard_Page2_3_AnimateBadges:
