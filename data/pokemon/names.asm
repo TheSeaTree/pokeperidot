@@ -172,7 +172,7 @@ PokemonNames::
 	db "LANTURN@@@"
 	db "MALLAR'KEY"
 	db "MANDRABEL@"
-	db "IGGLYBUFF@"
+	db "CURSTRAW@@"
 	db "SHIFUR@@@@"
 	db "SNOWMAD@@@"
 	db "NATU@@@@@@"

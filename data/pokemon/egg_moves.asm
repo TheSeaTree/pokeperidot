@@ -94,6 +94,7 @@ SandshrewEggMoves:
 	db RAPID_SPIN
 	db METAL_CLAW
 	db SPIKES
+	db X_SCISSOR
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -150,6 +151,7 @@ ZubatEggMoves:
 	db WHIRLWIND
 	db HYPNOSIS
 	db STEEL_WING
+	db X_SCISSOR
 	db -1 ; end
 
 OddishEggMoves:
@@ -364,6 +366,7 @@ KrabbyEggMoves:
 	db FLAIL
 	db ANCIENTPOWER
 	db AGILITY
+	db X_SCISSOR
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -474,7 +477,7 @@ ScytherEggMoves:
 	db BATON_PASS
 	db RAZOR_WIND
 	db REVERSAL
-	db STRUGGLE_BUG
+	db SILVER_WIND
 	db GUILLOTINE
 	db STEEL_WING
 	db -1 ; end
@@ -623,9 +626,9 @@ SpinarakEggMoves:
 	db BATON_PASS
 	db PURSUIT
 	db BUG_BUZZ
-	db STRUGGLE_BUG
 	db TWINEEDLE
 	db MEGAHORN
+	db X_SCISSOR
 	db -1 ; end
 
 ChinchouEggMoves:
@@ -636,6 +639,15 @@ ChinchouEggMoves:
 	db PSYBEAM
 	db AGILITY
 	db -1 ; end
+
+CurstrawEggMoves:
+	db SPITE
+	db PAIN_SPLIT
+	db DISABLE
+	db MEAN_LOOK
+	db HAZE
+	db PSYWAVE
+	db -1
 
 ShifurEggMoves:
 	db PRESENT
@@ -891,6 +903,7 @@ SkarmoryEggMoves:
 	db PURSUIT
 	db WHIRLWIND
 	db SKY_ATTACK
+	db X_SCISSOR
 	db -1 ; end
 
 HoundourEggMoves:

@@ -214,7 +214,7 @@ ButterfreeEvosAttacks:
 	db 13, STUN_SPORE
 	db 13, SLEEP_POWDER
 	db 17, PSYBEAM
-	db 19, STRUGGLE_BUG
+	db 19, SILVER_WIND
 	db 23, SUPERSONIC
 	db 25, SAFEGUARD
 	db 29, WHIRLWIND
@@ -706,7 +706,7 @@ ParasEvosAttacks:
 	db 25, LEECH_LIFE
 	db 33, GROWTH
 	db 38, GIGA_DRAIN
-	db 43, BUG_BUZZ
+	db 43, X_SCISSOR
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
@@ -723,7 +723,7 @@ ParasectEvosAttacks:
 	db 29, LEECH_LIFE
 	db 37, GROWTH
 	db 44, GIGA_DRAIN
-	db 51, BUG_BUZZ
+	db 51, X_SCISSOR
 	db 0 ; no more level-up moves
 
 VenonatEvosAttacks:
@@ -732,6 +732,7 @@ VenonatEvosAttacks:
 	db 1, TACKLE
 	db 1, DISABLE
 	db 1, FORESIGHT
+	db 1, SILVER_WIND
 	db 5, SUPERSONIC
 	db 11, CONFUSION
 	db 13, POISONPOWDER
@@ -1939,7 +1940,7 @@ ScytherEvosAttacks:
 	db 29, CUT
 	db 33, RAZOR_WIND
 	db 37, DOUBLE_TEAM
-	db 41, BUG_BUZZ
+	db 41, X_SCISSOR
 	db 57, SWORDS_DANCE
 	db 0 ; no more level-up moves
 
@@ -2004,7 +2005,7 @@ PinsirEvosAttacks:
 	db 18, VITAL_THROW
 	db 22, DIG
 	db 26, ROCK_SMASH
-	db 29, BUG_BUZZ
+	db 29, X_SCISSOR
 	db 33, SUBMISSION
 	db 40, SWORDS_DANCE
 	db 50, GUILLOTINE
@@ -2200,7 +2201,7 @@ KabutoEvosAttacks:
 	db 21, SAND_ATTACK
 	db 26, ENDURE
 	db 31, BUBBLEBEAM
-	db 36, MEGA_DRAIN
+	db 36, X_SCISSOR
 	db 41, ROCK_SLIDE
 	db 46, ANCIENTPOWER
 	db 0 ; no more level-up moves
@@ -2778,12 +2779,10 @@ MandrabelEvosAttacks:
 
 IgglybuffEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SING
-	db 1, CHARM
-	db 3, DEFENSE_CURL
-	db 5, POUND
-	db 9, SWEET_KISS
-	db 11, MIMIC
+	db 1, CURSE
+	db 1, DESTINY_BOND
+	db 1, SCREECH
+	db 1, PERISH_SONG
 	db 0 ; no more level-up moves
 
 ShifurEvosAttacks:
@@ -3085,7 +3084,7 @@ YanmaEvosAttacks:
 	db 11, PROTECT
 	db 14, SONICBOOM
 	db 17, DOUBLE_TEAM
-	db 20, STRUGGLE_BUG
+	db 20, SILVER_WIND
 	db 25, GUST
 	db 28, SUPERSONIC
 	db 30, PURSUIT
@@ -3283,6 +3282,7 @@ GligarEvosAttacks:
 	db 20, QUICK_ATTACK
 	db 28, FAINT_ATTACK
 	db 36, CUT
+	db 40, X_SCISSOR
 	db 44, SCREECH
 	db 52, GUILLOTINE
 	db 0 ; no more level-up moves
@@ -3350,6 +3350,7 @@ ScizorEvosAttacks:
 	db 24, AGILITY
 	db 30, METAL_CLAW
 	db 36, CUT
+	db 41, X_SCISSOR
 	db 42, SWORDS_DANCE
 	db 48, DOUBLE_TEAM
 	db 0 ; no more level-up moves
