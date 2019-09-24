@@ -161,8 +161,21 @@ Route3MoveTutor:
 Route3SilverLeaf:
 	hiddenitem SILVER_LEAF, EVENT_ROUTE_3_HIDDEN_SILVER_LEAF
 	
-Route3TMRockSlide:
-	itemball TM_ROCK_SLIDE
+Route3AttractGirl:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_TM_ATTRACT
+	iftrue .GotAttract
+	writetext Route3AttractGirlText
+	waitbutton
+	verbosegiveitem TM_ATTRACT
+	setevent EVENT_GOT_TM_ATTRACT
+	
+.GotAttract
+	writetext Route3ExplainAttract
+	waitbutton
+	closetext
+	end
 	
 Route3TrainerTipsSign:
 	jumptext Route3TrainerTipsSignText
@@ -380,6 +393,41 @@ Route3ClefableText:
 	text "CLEFABLE: Pippi!"
 	done
 	
+Route3AttractGirlText:
+	text "…Snivel, hic…"
+
+	para "I can't believe my"
+	line "boyfriend would"
+	cont "stand me up like"
+	cont "this."
+
+	para "He said to meet"
+	line "him here for a"
+	cont "date, but never"
+	cont "showed up."
+
+	para "I even got him a"
+	line "present!"
+
+	para "If he won't appre-"
+	line "ciate me, then you"
+	cont "can take it"
+	cont "instead!"
+	done
+	
+Route3ExplainAttract:
+	text "That move will"
+	line "make your #MON"
+	cont "irresistible to"
+	cont "#MON of the"
+	cont "opposite gender."
+	
+	para "It won't work on"
+	line "people, but it's"
+	cont "sweet of you to"
+	cont "try."
+	done
+	
 Route3_MapEvents:
 	db 0, 0 ; filler
 
@@ -411,5 +459,5 @@ Route3_MapEvents:
 	object_event  6, 31, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3HealerScript, -1
 	object_event  7, 31, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3ClefableScript, -1
 	object_event 16, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route3MoveTutor, -1
-	object_event  0,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route3TMRockSlide, EVENT_GOT_TM_ROCK_SLIDE
+	object_event  0,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3AttractGirl, -1
 	
