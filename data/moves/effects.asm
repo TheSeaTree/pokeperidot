@@ -2124,14 +2124,6 @@ Hurricane:
 	confusetarget
 	endmove
 	
-ConversionZ:
-	checkobedience
-	usedmovetext
-	doturn
-	conversion
-	allstatsup
-	endmove
-	
 Coil:
 	checkobedience
 	usedmovetext

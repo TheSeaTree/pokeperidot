@@ -162,7 +162,6 @@ MoveEffectsPointers:
 	dw BurnRecoilHit
 	dw ParaRecoilHit
 	dw Hurricane
-	dw ConversionZ
 	dw Coil
 	dw Growth
 	dw SleepPowder

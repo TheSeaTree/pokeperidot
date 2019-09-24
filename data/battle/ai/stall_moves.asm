@@ -19,7 +19,6 @@ StallMoves:
 	db MIMIC
 	db SCREECH
 	db HARDEN
-	db CONVERSIONZ
 	db DEFENSE_CURL
 	db BARRIER
 	db LIGHT_SCREEN

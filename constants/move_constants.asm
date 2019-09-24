@@ -26,7 +26,7 @@
 	const WHIRLWIND    ; 12
 	const FLY          ; 13
 	const BIND         ; 14
-	const STRUGGLE_BUG ; 15
+	const SILVER_WIND  ; 15
 	const VINE_WHIP    ; 16
 	const ICICLE_SPEAR ; 17
 	const DOUBLE_KICK  ; 18
@@ -115,7 +115,7 @@
 	const MINIMIZE     ; 6b
 	const SMOKESCREEN  ; 6c
 	const CONFUSE_RAY  ; 6d
-	const CONVERSIONZ  ; 6e
+	const X_SCISSOR    ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
 	const LIGHT_SCREEN ; 71

@@ -32,7 +32,7 @@ Moves: ; 41afb
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,   100, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,    95, 15,   0
 	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,    75, 20,   0
-	move STRUGGLE_BUG, EFFECT_ATTACK_DOWN_HIT,    50, BUG,      100, 20,  20
+	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,      100,  5,  10
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
@@ -121,7 +121,7 @@ Moves: ; 41afb
 	move MINIMIZE,     EFFECT_EVASION_UP_2,        0, NORMAL,   100, 20,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,    100, 10,   0
-	move CONVERSIONZ,  EFFECT_CONVERSIONZ,         0, NORMAL,   100,  1,   0
+	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,      100, 15,   0
 	move DEFENSE_CURL, EFFECT_DEFENSE_CURL,        0, NORMAL,   100, 40,   0
 	move BARRIER,      EFFECT_DEFENSE_UP_2,        0, PSYCHIC,  100, 30,   0
 	move LIGHT_SCREEN, EFFECT_LIGHT_SCREEN,        0, PSYCHIC,  100, 30,   0

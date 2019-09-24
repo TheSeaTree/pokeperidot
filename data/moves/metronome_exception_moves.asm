@@ -13,5 +13,4 @@ MetronomeExcepts:
 	db DESTINY_BOND
 	db SLEEP_TALK
 	db THIEF
-	db CONVERSIONZ
 	db -1

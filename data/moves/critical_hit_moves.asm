@@ -6,4 +6,5 @@ CriticalHitMoves:
 	db CUT
 	db AEROBLAST
 	db CROSS_CHOP
+	db X_SCISSOR
 	db -1

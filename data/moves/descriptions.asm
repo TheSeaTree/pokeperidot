@@ -20,7 +20,7 @@ MoveDescriptions::
 	dw WhirlwindDescription
 	dw FlyDescription
 	dw BindDescription
-	dw InfestationDescription
+	dw SilverWindDescription
 	dw VineWhipDescription
 	dw IcicleSpearDescription
 	dw DoubleKickDescription
@@ -109,7 +109,7 @@ MoveDescriptions::
 	dw MinimizeDescription
 	dw SmokescreenDescription
 	dw ConfuseRayDescription
-	dw ConversionZDescription
+	dw XScissorDescription
 	dw DefenseCurlDescription
 	dw BarrierDescription
 	dw LightScreenDescription
@@ -266,7 +266,13 @@ PoundDescription:
 	db   "Pounds with fore-"
 	next "legs or tail.@"
 
+XScissorDescription:
+RazorLeafDescription:
 KarateChopDescription:
+CrabhammerDescription:
+AeroblastDescription:
+CrossChopDescription:
+RazorWindDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
@@ -306,10 +312,6 @@ GuillotineDescription:
 	db   "A one-hit KO,"
 	next "pincer attack.@"
 
-RazorWindDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
-
 SwordsDanceDescription:
 	db   "A dance that in-"
 	next "creases ATTACK.@"
@@ -337,10 +339,6 @@ FlyDescription:
 BindDescription:
 	db   "Binds the target"
 	next "for 2-5 turns.@"
-
-InfestationDescription:
-	db   "May lower target's"
-	next "ATTACK.@"
 
 VineWhipDescription:
 	db   "Whips the foe with"
@@ -552,10 +550,6 @@ GrowthDescription:
 	db   "Raises the SPCL."
 	next "ATK rating.@"
 
-RazorLeafDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
-
 SolarbeamDescription:
 	db   "1st turn: Prepare"
 	next "2nd turn: Attack@"
@@ -692,10 +686,6 @@ SmokescreenDescription:
 ConfuseRayDescription:
 	db   "A move that causes"
 	next "confusion.@"
-
-ConversionZDescription:
-	db   "Change user's type"
-	next "and boosts stats.@"
 
 DefenseCurlDescription:
 	db   "Heightens the"
@@ -861,10 +851,6 @@ AcidArmorDescription:
 	db   "Sharply raises the"
 	next "user's DEFENSE.@"
 
-CrabhammerDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
-
 ExplosionDescription:
 	db   "Very powerful but"
 	next "makes user faint.@"
@@ -960,10 +946,6 @@ FlailDescription:
 Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
-
-AeroblastDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
 
 CottonSporeDescription:
 	db   "Sharply reduces"
@@ -1206,10 +1188,6 @@ HiddenPowerDescription:
 	db   "The power varies"
 	next "with the #MON.@"
 
-CrossChopDescription:
-	db   "Has a high criti-"
-	next "cal hit ratio.@"
-
 TwisterDescription:
 	db   "Whips up a tornado"
 	next "to attack.@"
@@ -1238,6 +1216,7 @@ ExtremespeedDescription:
 	db   "A powerful first-"
 	next "strike move.@"
 
+SilverWindDescription:
 AncientpowerDescription:
 	db   "An attack that may"
 	next "raise all stats.@"
