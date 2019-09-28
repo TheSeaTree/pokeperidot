@@ -1180,7 +1180,7 @@ VitaminEffect:
 
 	add hl, bc
 	ld a, [hl]
-	cp 100
+	cp 250
 	jr nc, NoEffectMessage
 
 	add 10
