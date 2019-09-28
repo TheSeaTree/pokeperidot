@@ -61,9 +61,10 @@ AzaleaApartmentLeftPikachuText:
 AzaleaApartmentLeft_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  2,  7, AZALEA_TOWN, 11
 	warp_event  3,  7, AZALEA_TOWN, 11
+	warp_event  6,  0, AZALEA_APARTMENT_LEFT_2F,  1
 
 	db 0 ; coord events
 
@@ -71,6 +72,6 @@ AzaleaApartmentLeft_MapEvents:
 
 	db 4 ; object events
 	object_event  2,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGuard1Script, -1
-	object_event  6,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGuard2Script, -1
-	object_event  7,  3, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGameboyKidScript, -1
-	object_event  8,  3, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftPikachu, -1
+	object_event  6,  1, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGuard2Script, EVENT_AZALEA_RETURNED_BIKE
+	object_event  7,  3, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGameboyKidScript, EVENT_AZALEA_RETURNED_BIKE
+	object_event  8,  3, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftPikachu, EVENT_AZALEA_RETURNED_BIKE

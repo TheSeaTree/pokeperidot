@@ -334,7 +334,7 @@ MahoganyTownStockChangesText:
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 23, 33, MAHOGANY_GATE, 1
 	warp_event 24, 33, MAHOGANY_GATE, 2
 	warp_event  2,  3, MAHOGANY_TOWN, 3
@@ -342,6 +342,7 @@ MahoganyTown_MapEvents:
 	warp_event 10, 19, MAHOGANY_MAGNET_TRAIN_STATION, 1
 	warp_event 35, 19, EMYS_HOUSE, 1
 	warp_event 37,  9, MOVE_DELETERS_HOUSE, 1
+	warp_event 19, 29, SUBSTITUTE_HOUSE, 1
 
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor

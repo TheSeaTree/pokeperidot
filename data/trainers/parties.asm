@@ -1364,6 +1364,19 @@ BlackbeltGroup:
 	db 19, MACHOP
 	db 20, MANKEY
 	db -1
+	
+	; BLACKBELT_T (5)
+	db "JUN@", TRAINERTYPE_NORMAL
+	db 37, ONIX
+	db 37, MACHOKE
+	db 37, PRIMEAPE
+	db -1
+	
+	; BLACKBELT_T (6)
+	db "TAKEO@", TRAINERTYPE_NORMAL
+	db 40, POLIWRATH
+	db 40, MACHAMP
+	db -1
 
 ExecutiveMGroup:
 

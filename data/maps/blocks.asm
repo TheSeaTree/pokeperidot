@@ -67,6 +67,7 @@ EcruteakThiefHouse_Blocks:
 EcruteakFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
 FluteMasterHouse_Blocks:
+MahoganySubstituteHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -562,3 +563,15 @@ Route21_Blocks:
 
 BlackthornCave1F_Blocks:
 	INCBIN "maps/BlackthornCave1F.ablk"
+
+AzaleaApartmentLeft2F_Blocks:
+	INCBIN "maps/AzaleaApartmentLeft2F.ablk"
+	
+AzaleaApartmentRight2F_Blocks:
+	INCBIN "maps/AzaleaApartmentRight2F.ablk"
+
+AzaleaApartmentLeft3F_Blocks:
+	INCBIN "maps/AzaleaApartmentLeft3F.ablk"
+	
+AzaleaApartmentRight3F_Blocks:
+	INCBIN "maps/AzaleaApartmentRight3F.ablk"

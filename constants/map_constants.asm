@@ -51,6 +51,7 @@ ENDM
 	map_const MAHOGANY_MAGNET_TRAIN_STATION,               10,  9 ;  7
 	map_const EMYS_HOUSE,									4,  4
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
+	map_const SUBSTITUTE_HOUSE,                             4,  4 ;  7
 
 	newgroup                                                      ;  3
 
@@ -137,7 +138,11 @@ ENDM
 	map_const AZALEA_GYM,                                   9, 10 ;  5
 	map_const AZALEA_TOWN,                                 30, 20 ;  7
 	map_const AZALEA_APARTMENT_LEFT,                        6,  4
+	map_const AZALEA_APARTMENT_LEFT_2F,                     6,  4
+	map_const AZALEA_APARTMENT_LEFT_3F,                     6,  4
 	map_const AZALEA_APARTMENT_RIGHT,                       6,  4
+	map_const AZALEA_APARTMENT_RIGHT_2F,                    6,  4
+	map_const AZALEA_APARTMENT_RIGHT_3F,                    6,  4
 	map_const AZALEA_GYM_SPEECH_HOUSE,                      4,  4
 	map_const AZALEA_EVOLUTION_HOUSE,                       4,  4
 	map_const AZALEA_BIKE_HOUSE,                            4,  4
@@ -211,7 +216,7 @@ ENDM
 
 	newgroup                                                      ; 16
 
-	map_const INDIGO_PLATEAU_POKECENTER_1F,                 9,  7 ;  2
+	map_const INDIGO_PLATEAU_POKECENTER_1F,                 8,  4 ;  2
 	map_const WILLS_ROOM,                                   5,  9 ;  3
 	map_const KOGAS_ROOM,                                   5,  9 ;  4
 	map_const BRUNOS_ROOM,                                  5,  9 ;  5

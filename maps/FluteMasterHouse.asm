@@ -68,6 +68,7 @@ FluteMasterHouse_MapScripts:
 
 FluteMaster:
 	jumptextfaceplayer FluteMasterAfter
+	; Heal Bell tutor after defeating the lair.
 	
 ComplicatedSheetMusic:
 	jumptext ComplicatedSheetMusicText
@@ -204,6 +205,49 @@ FluteMasterAfter:
 	para "If you can get it"
 	line "back, you can keep"
 	cont "it."
+	done
+	
+FluteMasterTutor:
+	text "Brilliant job"
+	line "defeating those"
+	cont "crooks!"
+	
+	para "In return for your"
+	line "help, I want to"
+	cont "teach my new song"
+	cont "to one of your"
+	cont "#MON."
+	
+	para "Sorry, but I will"
+	line "require a SILVER"
+	cont "LEAF in return."
+	done
+	
+HealBellTutorTeach:
+	text "Would you like to"
+	line "teach your #MON"
+	cont "HEAL BELL?"
+	done
+	
+HealBellTutorWhichOne:
+	text "Ah, wonderful!"
+	
+	para "Which #MON will"
+	line "I be tutoring?"
+	done
+	
+HealBellTutorRefused:
+	text "Pity, you must not"
+	line "have a #MON"
+	cont "that can learn my"
+	cont "special song."
+	done
+	
+HealBellTutorExplainSilverLeaf:
+	text "I'm sorry, but"
+	line "I need something"
+	cont "in return for my"
+	cont "service."
 	done
 	
 ComplicatedSheetMusicText:

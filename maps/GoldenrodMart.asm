@@ -14,6 +14,12 @@ GoldenrodMartClerkScript:
 	closetext
 	end
 
+GoldenrodMartTMClerkScript:
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_TM
+	closetext
+	end
+
 GoldenrodMartSuperNerdScript:
 	jumptextfaceplayer GoldenrodMartSuperNerdText
 
@@ -54,7 +60,8 @@ GoldenrodMart_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMartClerkScript, -1
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodMartTMClerkScript, -1
 	object_event  5,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodMartSuperNerdScript, -1
 	object_event  6,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMartGrannyScript, -1

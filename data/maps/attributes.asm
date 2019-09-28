@@ -387,4 +387,9 @@ ENDM
 	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
 	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
+	map_attributes AzaleaApartmentLeft2F, AZALEA_APARTMENT_LEFT_2F, $00, 0
+	map_attributes AzaleaApartmentRight2F, AZALEA_APARTMENT_RIGHT_2F, $00, 0
+	map_attributes AzaleaApartmentLeft3F, AZALEA_APARTMENT_LEFT_3F, $00, 0
+	map_attributes AzaleaApartmentRight3F, AZALEA_APARTMENT_RIGHT_3F, $00, 0
+	map_attributes MahoganySubstituteHouse, SUBSTITUTE_HOUSE, $00, 0
 	

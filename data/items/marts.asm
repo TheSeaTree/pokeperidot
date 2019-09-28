@@ -19,6 +19,7 @@ Marts:
 	dw MartMahogany3
 	dw MartBlackthorn
 	dw MartGoldenrod
+	dw MartGoldenrodTM
 	dw MartPewter
 	dw MartCerulean
 	dw MartLavender
@@ -33,6 +34,7 @@ Marts:
 	dw MartSaffron
 	dw MartMtMoon
 	dw MartIndigoPlateau
+	dw MartIndigoPlateauTM
 	dw MartUnderground
 .End
 
@@ -220,6 +222,13 @@ MartGoldenrod:
 	db ETHER
 	db -1 ; end
 	
+MartGoldenrodTM:
+	db 3
+	db TM_PROTECT
+	db TM_ENDURE
+	db TM_PSYCH_UP
+	db -1
+	
 MartPewter:
 	db 7 ; # items
 	db GREAT_BALL
@@ -372,6 +381,14 @@ MartIndigoPlateau:
 	db REVIVE
 	db FULL_HEAL
 	db -1 ; end
+	
+MartIndigoPlateauTM:
+	db 4
+	db FIRE_BLAST
+	db BLIZZARD
+	db THUNDER
+	db HURRICANE
+	db -1
 
 MartUnderground:
 	db 4 ; # items

@@ -305,6 +305,8 @@ KRIS EQU __enum__
 	const JIMMY
 	const AXEL
 	const CLINT
+	const JUN
+	const TAKEO
 
 	trainerclass EXECUTIVEM ; 33
 

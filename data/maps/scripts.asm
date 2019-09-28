@@ -68,7 +68,11 @@ INCLUDE "maps/VioletMart.asm"
 INCLUDE "maps/VioletGym.asm"
 INCLUDE "maps/VioletPokecenter1F.asm"
 INCLUDE "maps/AzaleaApartmentRight.asm"
+INCLUDE "maps/AzaleaApartmentRight2F.asm"
+INCLUDE "maps/AzaleaApartmentRight3F.asm"
 INCLUDE "maps/AzaleaApartmentLeft.asm"
+INCLUDE "maps/AzaleaApartmentLeft2F.asm"
+INCLUDE "maps/AzaleaApartmentLeft3F.asm"
 
 
 SECTION "Map Scripts 6", ROMX
@@ -230,11 +234,14 @@ SECTION "Map Scripts 20", ROMX
 
 INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route30.asm"
+INCLUDE "maps/Route7.asm"
+INCLUDE "maps/MahoganySubstituteHouse.asm"
 
 
 SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/CianwoodCity.asm"
+INCLUDE "maps/Route4.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -276,13 +283,11 @@ INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
-INCLUDE "maps/Route7.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route3.asm"
-INCLUDE "maps/Route4.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 
