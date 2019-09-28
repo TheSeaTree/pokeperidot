@@ -25,8 +25,8 @@ ENDM
 	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER
 ; gfx/pokegear/pokegear.png
 	townmappals OCEAN,    OCEAN,    OCEAN,    MOUNTAIN, MOUNTAIN, MOUNTAIN, POI,      BORDER
-	townmappals OCEAN,    OCEAN,    OCEAN,    BORDER,   BORDER,   MOUNTAIN, BORDER,   BORDER
-	townmappals OCEAN,    OCEAN,    OCEAN,     CITY,     CITY,    MOUNTAIN,     CITY,     CITY
+	townmappals OCEAN,    OCEAN,    OCEAN,    MOUNTAIN, BORDER,   MOUNTAIN, BORDER,   BORDER
+	townmappals OCEAN,    OCEAN,    OCEAN,    EARTH,    CITY,     MOUNTAIN, CITY,     CITY
 	townmappals CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     CITY,     BORDER
-	townmappals OCEAN,    OCEAN,    OCEAN,     CITY,     CITY,     CITY,     CITY,     CITY
+	townmappals OCEAN,    OCEAN,    OCEAN,    CITY,     CITY,     CITY,     CITY,     CITY
 	townmappals BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER,   BORDER
