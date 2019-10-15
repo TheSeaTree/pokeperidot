@@ -396,6 +396,7 @@ SearionEggMoves:
 	db FLAME_WHEEL
 	db FLARE_BLITZ
 	db EXPLOSION
+	db EGG_BOMB
 	db -1 ; end
 	
 LickitungEggMoves:
