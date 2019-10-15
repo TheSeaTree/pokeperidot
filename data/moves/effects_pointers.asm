@@ -122,7 +122,6 @@ MoveEffectsPointers:
 	dw Attract
 	dw Return
 	dw Present
-	dw Frustration
 	dw Safeguard
 	dw SacredFire
 	dw BatonPass

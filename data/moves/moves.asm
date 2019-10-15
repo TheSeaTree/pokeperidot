@@ -161,7 +161,7 @@ Moves: ; 41afb
 	move SPORE,        EFFECT_SLEEP_POWDER,        0, GRASS,    100, 15,   0
 	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
-	move SPLASH,       EFFECT_SPLASH,              0, NORMAL,   100, 40,   0
+	move SPLASH,       EFFECT_SPLASH,              0, WATER,    100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,   100, 40,   0
 	move CRABHAMMER,   EFFECT_FLINCH_HIT,        120, WATER,     85, 10,  30
 	move EXPLOSION,    EFFECT_SELFDESTRUCT,      250, NORMAL,   100,  5,   0
@@ -229,7 +229,7 @@ Moves: ; 41afb
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, NORMAL,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,   100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, NORMAL,    90, 15,   0
-	move FRUSTRATION,  EFFECT_FRUSTRATION,         1, NORMAL,   100, 20,   0
+	move FRUSTRATION,  EFFECT_SPLASH,              0, NORMAL,   100, 40,   0
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,   100, 25,   0
 	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, NORMAL,   100, 20,   0
 	move SACRED_FIRE,  EFFECT_SACRED_FIRE,       100, FIRE,      95,  5,  50
