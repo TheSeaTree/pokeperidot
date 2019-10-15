@@ -5858,6 +5858,8 @@ BattleCommand_FinishConfusingTarget:
 	jr z, .got_effect
 	cp EFFECT_SWAGGER
 	jr z, .got_effect
+	cp EFFECT_HURRICANE
+	jr z, .got_effect
 	call AnimateCurrentMove
 
 .got_effect
@@ -6429,8 +6431,6 @@ INCLUDE "engine/battle/move_effects/attract.asm"
 INCLUDE "engine/battle/move_effects/return.asm"
 
 INCLUDE "engine/battle/move_effects/present.asm"
-
-INCLUDE "engine/battle/move_effects/frustration.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
 
