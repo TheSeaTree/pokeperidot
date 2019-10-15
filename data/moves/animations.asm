@@ -4535,7 +4535,7 @@ BattleAnim_Twister:
 	anim_ret
 
 BattleAnim_Hurricane:
-	anim_3gfx ANIM_GFX_WATER, ANIM_GFX_WIND, ANIM_GFX_HIT
+	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_WIND
 	anim_bgp $f8
 	anim_obp0 $7c
 	anim_sound 0, 1, SFX_RAIN_DANCE
@@ -4549,7 +4549,7 @@ BattleAnim_Hurricane:
 	anim_sound 0, 1, SFX_RAZOR_WIND
 	anim_obj ANIM_OBJ_GUST, 136, 72, $0
 	anim_wait 6
-	anim_loop 9, .loop
+	anim_loop 6, .loop
 	anim_obj ANIM_OBJ_01, 144, 64, $18
 	anim_wait 8
 	anim_obj ANIM_OBJ_01, 128, 32, $18
