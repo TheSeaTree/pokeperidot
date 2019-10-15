@@ -89,7 +89,7 @@ SageScript:
 	waitbutton
 	closetext
 	winlosstext Sage1WinText, -1
-	loadtrainer SAGE, ABBOT
+	loadtrainer EXECUTIVEM, ABBOT
 	startbattle
 	reloadmapafterbattle
 	opentext

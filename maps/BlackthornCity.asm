@@ -99,12 +99,14 @@ BlackthornCityGymSignText:
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 7 ; warp events
 	warp_event 39, 13, ROUTE_20, 1
 	warp_event 33, 17, BLACKTHORN_POKECENTER_1F, 1
 	warp_event 19, 21, BLACKTHORN_MART, 1
 	warp_event 27, 21, BLACKTHORN_REST_TALK_HOUSE, 1
 	warp_event 53, 17, FLUTE_MASTER_HOUSE, 1
+	warp_event 12, 13, BLACKTHORN_CAVE_1F, 1
+	warp_event 28,  5, BLACKTHORN_CAVE_1F, 6
 
 	db 0 ; coord events
 

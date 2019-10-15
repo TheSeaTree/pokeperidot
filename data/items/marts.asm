@@ -18,6 +18,7 @@ Marts:
 	dw MartMahogany2
 	dw MartMahogany3
 	dw MartBlackthorn
+	dw MartBlackthornTM
 	dw MartGoldenrod
 	dw MartGoldenrodTM
 	dw MartPewter
@@ -199,7 +200,7 @@ MartMahogany3:
 	db -1
 
 MartBlackthorn:
-	db 9 ; # items
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -207,9 +208,14 @@ MartBlackthorn:
 	db FULL_HEAL
 	db REVIVE
 	db MAX_REPEL
-	db X_DEFEND
-	db X_ATTACK
 	db -1 ; end
+	
+MartBlackthornTM:
+	db 3
+	db TM_PSYCHIC_M
+	db TM_CRUNCH
+	db TM_SHADOW_BALL
+	db -1
 
 MartGoldenrod:
 	db 6 ; # items

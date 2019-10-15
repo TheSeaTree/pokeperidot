@@ -333,7 +333,7 @@ TrainerClassAttributes:
 
 ; Sage
 	db NO_ITEM, NO_ITEM ; items
-	db 8 ; base reward
+	db 12 ; base reward
 	dw AI_BASIC | AI_SETUP | AI_TYPES | AI_CAUTIOUS | AI_STATUS | AI_RISKY
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 

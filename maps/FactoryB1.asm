@@ -37,9 +37,6 @@ FactoryBasementDoor:
 .used
 	writetext UsedTheKeyText
 	waitbutton
-	closetext
-	end
-	
 .nope
 	closetext
 	end

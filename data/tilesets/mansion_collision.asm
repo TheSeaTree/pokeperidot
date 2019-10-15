@@ -108,3 +108,5 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 6b
 	tilecoll WALL, WALL, BOOKSHELF, TV ; 6c
 	tilecoll WALL, WALL, FLOOR, WALL ; 6d
+	tilecoll WALL, WALL, RIGHT_WALL, LEFT_WALL ; 6e
+	tilecoll WALL, WALL, BOOKSHELF, FLOOR ; 6f

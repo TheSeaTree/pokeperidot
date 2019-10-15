@@ -269,12 +269,22 @@ KRIS EQU __enum__
 	const OMAR
 	const DEAN
 	const CARTER
+	const ZEKE
+	const VINCENT
+	const MARK
+	const GERALD
+	const DENNIS
+	const RODGER
 	
 	trainerclass BIKER ; 2d
 	const JERRY
 	const JARED
 	const JESSE
 	const MORTON
+	const FLYNN
+	const BRANDON
+	const RYAN
+	const BAM
 	
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -289,6 +299,7 @@ KRIS EQU __enum__
 	const SHAWN
 	const DUKE
 	const HARRIS
+	const DUKE2
 	
 	trainerclass FIREBREATHER ; 30
 	const BRIAN
@@ -309,6 +320,8 @@ KRIS EQU __enum__
 	const TAKEO
 
 	trainerclass EXECUTIVEM ; 33
+	const ABBOT
+	const ABBOT2
 
 	trainerclass PSYCHIC_T ; 34
 	const PARKER
@@ -337,9 +350,10 @@ KRIS EQU __enum__
 	trainerclass EXECUTIVEF ; 37
 
 	trainerclass SAGE ; 38
-	const ABBOT
 	const CALEB
 	const LO
+	const CALEB2
+	const LO2
 
 	trainerclass MEDIUM ; 39
 	

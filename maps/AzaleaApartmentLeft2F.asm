@@ -34,6 +34,9 @@ AzaleaApartmentLeft2FGameboyKid:
 	
 AzaleaApartmentLeft2FMother:
 	jumptextfaceplayer AzaleaApartmentLeft2FMotherText
+	
+AzaleaApartmentLeft2FSuperNerd:
+	jumptextfaceplayer AzaleaApartmentLeft2FSuperNerdText
 
 AzaleaApartmentLeft2FPikachu:
 	opentext
@@ -41,8 +44,7 @@ AzaleaApartmentLeft2FPikachu:
 	cry PIKACHU
 	waitbutton
 	closetext
-	end
-	
+	end	
 
 AzaleaApartmentLeft2FPikachuText:
 	text "PIKACHU: Chu!"
@@ -60,6 +62,16 @@ AzaleaApartmentLeft2FMotherText:
 	cont "self into trouble"
 	cont "like some other"
 	cont "boys."
+	done
+	
+AzaleaApartmentLeft2FSuperNerdText:
+	text "Ugh! Coding is so"
+	line "tedious."
+	
+	para "If I wasn't being"
+	line "paid to work from"
+	cont "home, I wouldn't"
+	cont "do this."
 	done
 	
 AzaleaApartmentLeft2FGameboyKidText:
@@ -114,7 +126,8 @@ AzaleaApartmentLeft2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  1,  2, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeft2FGameboyKid, -1
 	object_event  2,  2, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeft2FPikachu, -1
 	object_event  2,  7, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeft2FMother, -1
+	object_event  7,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeft2FSuperNerd, -1

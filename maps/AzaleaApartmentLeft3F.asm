@@ -11,10 +11,15 @@ MysteryGiftGirl:
 	checkflag ENGINE_DAILY_MYSTERY_GIFT
 	iftrue .NoGift
 	writetext MysterGiftText
-	waitbutton
-	random LEMONADE - ULTRA_BALL + 1
-	addvar ULTRA_BALL
+	yesorno
+	iffalse .Decline
+;	special PrepMysteryGiftItem
+	random LEMONADE - MOON_STONE + 1
+	addvar MOON_STONE
 	verbosegiveitem ITEM_FROM_MEM
+;	playsound SFX_QUIT_SLOTS
+;	waitsfx
+;	special GetMysteryGiftItem
 	iffalse .NoRoom
 	writetext MysteryGiftReceivedText
 	waitbutton
@@ -36,15 +41,23 @@ MysteryGiftGirl:
 	closetext
 	turnobject LAST_TALKED, DOWN
 	end
+	
+.Decline
+	writetext DeclineMysteryGiftText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
 
 MysterGiftText:
 	text "MYSTERY GIFT!"
 	line "MYSTERY GIFT!"
 	
-	para "Let's share a"
-	line "MYSTERY GIFT!"
+	para "Do you want to"
+	line "share a MYSTERY"
+	cont "GIFT!"
 	done
-	
+
 MysterGiftNoRoom:
 	text "I guess too many"
 	line "people shared with"
@@ -70,25 +83,12 @@ NoMysteryGiftText:
 	line "to share again"
 	cont "tomorrow."
 	done
-
-AzaleaApartmentLeft3FGirlText:
-	text "My DOLLY likes to"
-	line "lay on the bed"
-	cont "when I watch TV."
 	
-	para "MOMMY doesn't"
-	line "believe me, but"
-	cont "sometimes DOLLY"
-	cont "will even move"
-	cont "on its own late"
-	cont "at night."
-	done
+DeclineMysteryGiftText:
+	text "Oh..."
 	
-AzaleaApartmentLeft3FMotherText:
-	text "Children have such"
-	line "vivid imagina-"
-	cont "tions, don't you"
-	cont "agree?"
+	para "Some other time,"
+	line "okay?"
 	done
 
 AzaleaApartmentLeft3F_MapEvents:
@@ -101,8 +101,5 @@ AzaleaApartmentLeft3F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
-	object_event  5,  1, SPRITE_GAMEBOY_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MysteryGiftGirl, -1
-	object_event  7,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6,  7, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 11,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 1 ; object events
+	object_event  7,  5, SPRITE_GAMEBOY_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MysteryGiftGirl, -1

@@ -31,6 +31,9 @@ INCLUDE "maps/PowerPlant2FB.asm"
 INCLUDE "maps/MahoganyMagnetTrainStation.asm"
 INCLUDE "maps/BlackthornRestTalkHouse.asm"
 INCLUDE "maps/BlackthornCave1F.asm"
+INCLUDE "maps/BlackthornCave2F.asm"
+INCLUDE "maps/BlackthornCaveB1F.asm"
+
 
 SECTION "Map Scripts 3", ROMX
 
@@ -44,6 +47,9 @@ INCLUDE "maps/CianwoodCave1F.asm"
 INCLUDE "maps/CianwoodCaveB1F.asm"
 INCLUDE "maps/CianwoodCaveB2F.asm"
 INCLUDE "maps/FluteMasterHouse.asm"
+INCLUDE "maps/BurglarHideout1F.asm"
+INCLUDE "maps/BurglarHideoutB1F.asm"
+INCLUDE "maps/BurglarHideoutB2F.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -93,6 +99,9 @@ INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/NewBarkForestGate.asm"
 INCLUDE "maps/Route8Route10Gate.asm"
 INCLUDE "maps/MahoganyGate.asm"
+INCLUDE "maps/MahoganyApartment1F.asm"
+INCLUDE "maps/MahoganyApartment2F.asm"
+INCLUDE "maps/MahoganyApartment3F.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -181,6 +190,7 @@ INCLUDE "maps/Route5UndergroundPathEntrance.asm"
 INCLUDE "maps/Route1CherrygroveGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
 INCLUDE "maps/OrchidCity.asm"
+INCLUDE "maps/OrchidDragonbreathHouse.asm"
 
 
 SECTION "Map Scripts 16", ROMX
@@ -228,6 +238,7 @@ INCLUDE "maps/GoldenrodCity.asm"
 INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
 INCLUDE "maps/MahoganyGym.asm"
 INCLUDE "maps/MahoganyPokecenter1F.asm"
+INCLUDE "maps/IlexForestSwordsDanceHouse.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -242,6 +253,7 @@ SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/CianwoodCity.asm"
 INCLUDE "maps/Route4.asm"
+INCLUDE "maps/EastForest.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -304,7 +316,6 @@ INCLUDE "maps/PalerockMountainB1.asm"
 INCLUDE "maps/PalerockMountainStrengthRoom.asm"
 INCLUDE "maps/Route9ForestGate.asm"
 INCLUDE "maps/EcruteakForestGate.asm"
-INCLUDE "maps/EastForest.asm"
 INCLUDE "maps/Route4ForestGate.asm"
 INCLUDE "maps/Route4AzaleaGate.asm"
 INCLUDE "maps/HiddenPowerCave.asm"

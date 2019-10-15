@@ -387,9 +387,18 @@ ENDM
 	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
 	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
+	map_attributes BlackthornCave2F, BLACKTHORN_CAVE_2F, $09, 0
+	map_attributes BlackthornCaveB1F, BLACKTHORN_CAVE_B1F, $09, 0
 	map_attributes AzaleaApartmentLeft2F, AZALEA_APARTMENT_LEFT_2F, $00, 0
 	map_attributes AzaleaApartmentRight2F, AZALEA_APARTMENT_RIGHT_2F, $00, 0
 	map_attributes AzaleaApartmentLeft3F, AZALEA_APARTMENT_LEFT_3F, $00, 0
 	map_attributes AzaleaApartmentRight3F, AZALEA_APARTMENT_RIGHT_3F, $00, 0
 	map_attributes MahoganySubstituteHouse, SUBSTITUTE_HOUSE, $00, 0
-	
+	map_attributes MahoganyApartment1F, MAHOGANY_APARTMENT_1F, $00, 0
+	map_attributes MahoganyApartment2F, MAHOGANY_APARTMENT_2F, $00, 0
+	map_attributes MahoganyApartment3F, MAHOGANY_APARTMENT_3F, $00, 0
+	map_attributes OrchidDragonbreathHouse, DRAGONBREATH_HOUSE, $00, 0
+	map_attributes IlexForestSwordsDanceHouse, SWORDS_DANCE_HOUSE, $00, 0
+	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
+	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
+	map_attributes BurglarHideoutB2F, BURGLAR_HIDEOUT_B2F, $00, 0

@@ -11,6 +11,12 @@ BlackthornMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_BLACKTHORN
 	closetext
 	end
+	
+BlackthornMartTMClerkScript
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_BLACKTHORN_TM
+	closetext
+	end
 
 BlackthornMart_MapEvents:
 	db 0, 0 ; filler
@@ -23,5 +29,6 @@ BlackthornMart_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornMartClerkScript, -1
+	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BlackthornMartTMClerkScript, -1

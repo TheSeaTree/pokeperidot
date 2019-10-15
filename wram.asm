@@ -2596,7 +2596,7 @@ wRuinsOfAlphOmanyteChamberSceneID::               db ; d9ae
 wRuinsOfAlphAerodactylChamberSceneID::            db ; d9af
 wRuinsOfAlphInnerChamberSceneID::                 db ; d9b0
 wMahoganyMart1FSceneID::                          db ; d9b1
-wTeamRocketBaseB1FSceneID::                       db ; d9b2
+wBurglarHideoutB1FSceneID::                       db ; d9b2
 wTeamRocketBaseB2FSceneID::                       db ; d9b3
 wTeamRocketBaseB3FSceneID::                       db ; d9b4
 wGoldenrodUndergroundSwitchRoomEntrancesSceneID:: db ; d9b5

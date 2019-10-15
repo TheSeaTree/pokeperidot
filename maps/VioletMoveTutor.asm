@@ -105,7 +105,7 @@ VioletTutorTeach:
 	para "What move should I"
 	line "teach?"
 	done
-	
+
 VioletTutorRefused:
 	text "Come back whenever"
 	line "you like."

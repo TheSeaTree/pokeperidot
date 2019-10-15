@@ -56,7 +56,7 @@ BurglarKenAfterText:
 	line "supposed to have"
 	cont "anyone to stop us!"
 	done
-	
+
 CianwoodCaveB1F_MapEvents:
 	db 0, 0 ; filler
 

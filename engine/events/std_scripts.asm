@@ -19,10 +19,10 @@ StdScripts::
 	dba TrashCanScript
 	dba StrengthBoulderScript
 	dba SmashRockScript
+	dba SmashWallScript
+	dba SmashWallBrokenScript
 	dba PokecenterSignScript
 	dba MartSignScript
-	dba GoldenrodRocketsScript
-	dba RadioTowerRocketsScript
 	dba ElevatorButtonScript
 	dba DayToTextScript
 	dba BugContestResultsWarpScript
@@ -274,6 +274,35 @@ StrengthBoulderScript:
 
 SmashRockScript:
 	farjump AskRockSmashScript
+	
+SmashWallScript:
+	callasm HasRockSmash
+	ifequal 1, .no
+
+	opentext
+	farwritetext SmashWallText
+	waitbutton
+	farwritetext UnknownText_0xcf77
+	yesorno
+	iffalse .end
+	callasm GetPartyNick
+	farwritetext UnknownText_0xcf58
+	closetext
+	special WaitSFX
+	playsound SFX_STRENGTH
+	earthquake 84
+	end
+
+.no
+	farjumptext UnknownText_0xcf72
+.end
+	closetext
+	end
+	
+SmashWallBrokenScript:
+	farjumptext SmashWallBrokenText
+	closetext
+	end
 
 PokecenterSignScript:
 	farjumptext PokecenterSignText
@@ -323,21 +352,6 @@ DayToTextScript:
 	db "FRIDAY@"
 .SaturdayText:
 	db "SATURDAY@"
-
-GoldenrodRocketsScript:
-	clearevent EVENT_GOLDENROD_CITY_ROCKET_TAKEOVER
-	end
-
-RadioTowerRocketsScript:
-	setflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	setevent EVENT_GOLDENROD_CITY_CIVILIANS
-	setevent EVENT_RADIO_TOWER_BLACKBELT_BLOCKS_STAIRS
-	clearevent EVENT_RADIO_TOWER_ROCKET_TAKEOVER
-	clearevent EVENT_USED_THE_CARD_KEY_IN_THE_RADIO_TOWER
-	setevent EVENT_MAHOGANY_TOWN_POKEFAN_M_BLOCKS_EAST
-	specialphonecall SPECIALCALL_WEIRDBROADCAST
-	setmapscene MAHOGANY_TOWN, SCENE_FINISHED
-	end
 
 BugContestResultsWarpScript:
 	special FadeOutPalettes

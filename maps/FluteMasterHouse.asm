@@ -26,6 +26,7 @@ FluteMasterHouse_MapScripts:
 	applymovement FLUTE_BURGLAR, FluteBurglarEntrance
 	applymovement PLAYER, PlayerPushedMovement
 	waitsfx
+	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
 	writetext FluteBurglarIntro
 	waitbutton
@@ -35,7 +36,6 @@ FluteMasterHouse_MapScripts:
 	opentext
 	writetext FluteBurglarShockText
 	waitbutton
-	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext FluteBurglarChallengeText
 	waitbutton
 	closetext
@@ -43,6 +43,7 @@ FluteMasterHouse_MapScripts:
 	loadtrainer BURGLAR, HARRIS
 	startbattle
 	reloadmapafterbattle
+	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
 	writetext FluteBurglarAfterText
 	waitbutton
@@ -51,6 +52,7 @@ FluteMasterHouse_MapScripts:
 	applymovement FLUTE_BURGLAR, FluteBurglarExit
 	disappear FLUTE_BURGLAR
 	waitsfx
+	special RestartMapMusic
 	applymovement FLUTE_MASTER, FluteMasterApproach
 	opentext
 	writetext FluteMasterExplain

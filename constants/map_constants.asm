@@ -52,6 +52,9 @@ ENDM
 	map_const EMYS_HOUSE,									4,  4
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const SUBSTITUTE_HOUSE,                             4,  4 ;  7
+	map_const MAHOGANY_APARTMENT_1F,                        6,  4
+	map_const MAHOGANY_APARTMENT_2F,                        6,  4
+	map_const MAHOGANY_APARTMENT_3F,                        6,  4
 
 	newgroup                                                      ;  3
 
@@ -81,6 +84,13 @@ ENDM
 	map_const CIANWOOD_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
 	map_const LOST_LAND,		                           29,  20
+	map_const EAST_FOREST,                                 30, 15
+	map_const FACTORY_1F,                                  11, 11
+	map_const FACTORY_B1,                                   6,  8
+	map_const FACTORY_BACK,                                 5,  8
+	map_const BURGLAR_HIDEOUT_1F,							6,  5
+	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
+	map_const BURGLAR_HIDEOUT_B2F,						   18, 16
 
 	newgroup                                                      ;  4
 
@@ -107,6 +117,8 @@ ENDM
 	map_const BLACKTHORN_REST_TALK_HOUSE,                   4,  4
 	map_const FLUTE_MASTER_HOUSE,                           4,  4
 	map_const BLACKTHORN_CAVE_1F,                          19, 11
+	map_const BLACKTHORN_CAVE_2F,                          10,  7
+	map_const BLACKTHORN_CAVE_B1F,                         18, 14
 
 	newgroup                                                      ;  6
 	
@@ -149,10 +161,6 @@ ENDM
 	map_const AZALEA_BERRY_HOUSE,                           4,  4
 	map_const ROUTE_4_FOREST_GATE,                          5,  4
 	map_const ROUTE_4_AZALEA_GATE,                          5,  4
-	map_const EAST_FOREST,                                 30, 15
-	map_const FACTORY_1F,                                  11, 11
-	map_const FACTORY_B1,                                   6,  8
-	map_const FACTORY_BACK,                                 5,  8
 
 	newgroup                                                      ;  9
 
@@ -227,6 +235,7 @@ ENDM
 	newgroup                                                      ; 17
 
 	map_const ILEX_FOREST,                                 37, 24 ; 52
+	map_const SWORDS_DANCE_HOUSE,							4,  4
 	map_const ROUTE_9,                                     19, 13 ; 13
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 
@@ -277,6 +286,7 @@ ENDM
 	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
+	map_const DRAGONBREATH_HOUSE,                           4,  4
 
 	newgroup                                                      ; 24
 

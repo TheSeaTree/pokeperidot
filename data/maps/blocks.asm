@@ -68,6 +68,7 @@ EcruteakFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
 FluteMasterHouse_Blocks:
 MahoganySubstituteHouse_Blocks:
+OrchidDragonbreathHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -210,6 +211,7 @@ GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:
 BlackthornRestTalkHouse_Blocks:
+IlexForestSwordsDanceHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:
@@ -488,6 +490,7 @@ FactoryBack_Blocks:
 	INCBIN "maps/FactoryBack.ablk"
 	
 AzaleaApartmentLeft_Blocks:
+MahoganyApartment1F_Blocks:
 	INCBIN "maps/AzaleaApartmentLeft.ablk"
 	
 AzaleaApartmentRight_Blocks:
@@ -564,7 +567,14 @@ Route21_Blocks:
 BlackthornCave1F_Blocks:
 	INCBIN "maps/BlackthornCave1F.ablk"
 
+BlackthornCave2F_Blocks:
+	INCBIN "maps/BlackthornCave2F.ablk"
+
+BlackthornCaveB1F_Blocks:
+	INCBIN "maps/BlackthornCaveB1F.ablk"
+
 AzaleaApartmentLeft2F_Blocks:
+MahoganyApartment2F_Blocks:
 	INCBIN "maps/AzaleaApartmentLeft2F.ablk"
 	
 AzaleaApartmentRight2F_Blocks:
@@ -572,6 +582,18 @@ AzaleaApartmentRight2F_Blocks:
 
 AzaleaApartmentLeft3F_Blocks:
 	INCBIN "maps/AzaleaApartmentLeft3F.ablk"
+
+MahoganyApartment3F_Blocks:
+	INCBIN "maps/MahoganyApartment3F.ablk"
 	
 AzaleaApartmentRight3F_Blocks:
 	INCBIN "maps/AzaleaApartmentRight3F.ablk"
+
+BurglarHideout1F_Blocks:
+	INCBIN "maps/BurglarHideout1F.ablk"
+
+BurglarHideoutB1F_Blocks:
+	INCBIN "maps/BurglarHideoutB1F.ablk"
+
+BurglarHideoutB2F_Blocks:
+	INCBIN "maps/BurglarHideoutB2F.ablk"

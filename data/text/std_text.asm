@@ -404,3 +404,16 @@ GymFirstTimeText:
 	cont "the leader or"
 	cont "white out."
 	done
+	
+SmashWallText:
+	text "This wall is"
+	line "cracked."
+
+	para "Maybe a #MON"
+	line "can break through."
+	done
+	
+SmashWallBrokenText:
+	text "An opening was"
+	line "created."
+	done

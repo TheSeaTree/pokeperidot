@@ -50,7 +50,7 @@ TrainerClassNames::
 	db "FIREBREATHER@"
 	db "JUGGLER@"
 	db "BLACKBELT@"
-	db "ROCKET@"
+	db "FATHER@"
 	db "PSYCHIC@"
 	db "PICNICKER@"
 	db "CAMPER@"

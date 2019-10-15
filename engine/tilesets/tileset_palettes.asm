@@ -1,4 +1,7 @@
 LoadSpecialMapPalette:
+	ld a, [wCurLandmark]
+	cp ORCHID_CITY
+	jr z, .do_nothing
 	ld a, [wMapTileset]
 	cp TILESET_POKECOM_CENTER
 	jr z, .pokecom_2f
@@ -63,7 +66,7 @@ LoadSpecialMapPalette:
 	
 .mountain
 	ld hl, MountainPalette
-	jp LoadSixTimeOfDayBGPalettes
+	jp LoadEightTimeOfDayBGPalettes
 	
 .cave
 	ld hl, CavePalette
