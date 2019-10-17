@@ -21,7 +21,7 @@ VioletMoveTutor:
 	ifequal 3, .DrainKiss
 	jump .Refused
 	end
-	
+
 .SweetKiss	
 	writebyte SWEET_KISS
 	special MoveTutor
@@ -42,7 +42,7 @@ VioletMoveTutor:
 	
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 8
+	menu_coords 0, 0, 15, 7
 	dw .MenuData
 	db 1 ; default option
 

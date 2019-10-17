@@ -106,3 +106,5 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; 69
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 6a
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 6b
+	tilecoll WALL, WALL, WALL, WALL ; 6c
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 6d
