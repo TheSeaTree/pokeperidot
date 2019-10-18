@@ -1,9 +1,16 @@
 	const_def 2 ; object constants
-	const ROUTE3_LASS
+	const ROUTE3_LASS1
+	const ROUTE3_YOUNGSTER1
 	const ROUTE3_HIKER1
-	const ROUTE3_HIKER2
+	const ROUTE3_GRANT
 	const ROUTE3_HIKER3
-	const ROUTE3_GUIDE
+	const ROUTE3_YOUNGSTER2
+	const ROUTE3_NURSE
+	const ROUTE3_CLEFAIRY
+	const ROUTE3_HIKER4
+	const ROUTE3_LASS2
+	const ROUTE3_OMANYTE
+	const ROUTE3_KABUTO
 	
 Route3_MapScripts:
 	db 0 ; scene scripts
@@ -56,12 +63,20 @@ TrainerHikerGrant:
 	trainer HIKER, GRANT, EVENT_BEAT_HIKER_GRANT, HikerGrantText, HikerGrantWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+;	endifjustbattled
 	opentext
+	checkevent EVENT_TAKE_FOSSIL
+	iftrue .gotfossil
 	writetext HikerGrantAfterText
 	waitbutton
 	closetext
 	end	
+
+.gotfossil
+	writetext HikerGrantFossilTakenText
+	waitbutton
+	closetext
+	end
 	
 TrainerHikerWarren:
 	trainer HIKER, WARREN, EVENT_BEAT_HIKER_WARREN, HikerWarrenText, HikerWarrenWinText, 0, .Script
@@ -177,8 +192,83 @@ Route3AttractGirl:
 	closetext
 	end
 	
+PickupHelixFossilEvent:
+	opentext
+	writetext TryTakeFossil
+	yesorno
+	iffalse .no
+	verbosegiveitem HELIX_FOSSIL
+	iffalse .noroom
+	closetext
+	disappear ROUTE3_OMANYTE
+	applymovement ROUTE3_GRANT, HikerGrantTakeDomeFossil
+	opentext
+	writetext HikerGrantSelectFossilText
+	waitbutton
+	writetext HikerGrantPickUpHelixFossil
+	playsound SFX_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	turnobject ROUTE3_GRANT, DOWN
+	disappear ROUTE3_KABUTO
+	setevent EVENT_TAKE_FOSSIL
+	end
+
+.noroom
+	writetext NoRoomForFossil
+	waitbutton
+.no
+	closetext
+	end
+	
+PickupDomeFossilEvent:
+	opentext
+	writetext TryTakeFossil
+	yesorno
+	iffalse .no
+	verbosegiveitem DOME_FOSSIL
+	iffalse .noroom
+	closetext
+	disappear ROUTE3_KABUTO
+	applymovement ROUTE3_GRANT, HikerGrantTakeHelixFossil
+	opentext
+	writetext HikerGrantSelectFossilText
+	waitbutton
+	writetext HikerGrantPickUpHelixFossil
+	playsound SFX_ITEM
+	waitsfx
+	waitbutton
+	closetext
+	turnobject ROUTE3_GRANT, RIGHT
+	disappear ROUTE3_OMANYTE
+	setevent EVENT_TAKE_FOSSIL
+	end
+
+.noroom
+	writetext NoRoomForFossil
+	waitbutton
+.no
+	closetext
+	end
+	
 Route3TrainerTipsSign:
 	jumptext Route3TrainerTipsSignText
+	
+HikerGrantTakeHelixFossil:
+	step DOWN
+	step DOWN
+	step DOWN
+	turn_head RIGHT
+	step_resume
+
+HikerGrantTakeDomeFossil:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step DOWN
+	turn_head DOWN
+	step_end
 	
 PicnickerCindyText:
 	text "My mom doesn't let"
@@ -243,10 +333,42 @@ HikerGrantWinText:
 	done
 	
 HikerGrantAfterText:
-	text "I'm always on the"
-	line "lookout for"
-	cont "fossils of ancient"
-	cont "#MON!"
+	text "These are the"
+	line "remains of ancient"
+	cont "#MON that have"
+	cont "been extinct for"
+	cont "centuries."
+	
+	para "Since you beat me"
+	line "fair and square,"
+	cont "you can take one"
+	cont "of them."
+	done
+	
+HikerGrantSelectFossilText:
+	text "I'll pick up this"
+	line "other FOSSIL, just"
+	cont "in case another"
+	cont "child comes down"
+	cont "here to disturb my"
+	cont "work."
+	done
+	
+HikerGrantPickUpHelixFossil:
+	text "GRANT received"
+	line "HELIX FOSSIL."
+	done
+	
+HikerGrantPickUpDomeFossil:
+	text "GRANT received"
+	line "DOME FOSSIL."
+	done
+	
+HikerGrantFossilTakenText:
+	text "I hope to one day"
+	line "learn what #MON"
+	cont "lived like in the"
+	cont "past."
 	done
 	
 HikerWarrenText:
@@ -428,6 +550,20 @@ Route3ExplainAttract:
 	cont "try."
 	done
 	
+TryTakeFossil:
+	text "This looks like"
+	line "the remains of an"
+	cont "ancient #MON."
+	
+	para "Would you like to"
+	line "pick it up?"
+	done
+	
+Route3NoRoomForFossil:
+	text "There's no room in"
+	line "the BAG for it…"
+	done
+	
 Route3_MapEvents:
 	db 0, 0 ; filler
 
@@ -449,15 +585,17 @@ Route3_MapEvents:
 	bg_event 43, 35, BGEVENT_READ, Route3TrainerTipsSign
 	bg_event 10, 37, BGEVENT_ITEM, Route3SilverLeaf
 
-	db 10 ; object events
+	db 12 ; object events
 	object_event 52, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerCindy, -1
 	object_event 50, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNate, -1
 	object_event 21, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerEarl, -1
-	object_event 32, 17, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerGrant, -1
+	object_event 30, 16, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerHikerGrant, -1
 	object_event 12,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerWarren, -1
 	object_event  5, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperRalph, -1
 	object_event  6, 31, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3HealerScript, -1
 	object_event  7, 31, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3ClefableScript, -1
 	object_event 16, 37, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route3MoveTutor, -1
 	object_event  0,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3AttractGirl, -1
+	object_event 31, 19, SPRITE_OMANYTE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PickupHelixFossilEvent, EVENT_TAKE_FOSSIL
+	object_event 32, 19, SPRITE_SHELLDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PickupDomeFossilEvent, EVENT_TAKE_FOSSIL
 	

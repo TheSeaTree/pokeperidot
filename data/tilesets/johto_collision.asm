@@ -172,3 +172,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; ab
 	tilecoll WALL, WALL, WALL, WALL ; ac
 	tilecoll WALL, WALL, WALL, WALL ; ad
+	tilecoll WALL, WALL, FLOOR, FLOOR ; ae

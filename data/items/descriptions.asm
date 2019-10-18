@@ -353,8 +353,8 @@ WaterStoneDesc:
 	next "kinds of #MON.@"
 
 OldAmberDesc:
-	db   "Ancient fossil"
-	next "of a #MON.@"
+	db   "The remains of an"
+	next "ancient #MON.@"
 
 HPUpDesc:
 	db   "Raises the HP of"
@@ -433,8 +433,8 @@ DireHitDesc:
 	next "ratio. (1 BTL)@"
 
 DomeFossilDesc:
-	db   "Ancient fossil"
-	next "of a #MON.@"
+	db   "The remains of an"
+	next "ancient #MON.@"
 
 FreshWaterDesc:
 	db   "Restores #MON"
@@ -648,8 +648,8 @@ BlkApricornDesc:
 	next "@"
 
 HelixFossilDesc:
-	db   "Ancient fossil"
-	next "of a #MON.@"
+	db   "The remains of an"
+	next "ancient #MON.@"
 
 PnkApricornDesc:
 	db   "A pink APRICORN."

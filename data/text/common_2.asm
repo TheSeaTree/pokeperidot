@@ -605,9 +605,8 @@ UnknownText_0x1c0bd8::
 	prompt
 
 UnknownText_0x1c0bee::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "This can't be"
+	line "used right now!"
 	prompt
 
 Text_YouDontHaveAMon::
