@@ -348,7 +348,7 @@ CianwoodGroupSprites:
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
-	db SPRITE_STANDING_YOUNGSTER ; non-walking version of SPRITE_YOUNGSTER
+	db SPRITE_POKE_BALL
 	db SPRITE_SUICUNE
 	db 0 ; end
 

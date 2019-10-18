@@ -38,40 +38,48 @@ MahoganyTownVendingMachine:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .FreshWater
-	ifequal 2, .PokeDoll
-	ifequal 3, .NES
+	ifequal 1, .SodaPop
+	ifequal 2, .RageCandyBar
+	ifequal 3, .SNES
 	closetext
 	end
 
-.FreshWater:
-	checkmoney YOUR_MONEY, 350
+.SodaPop:
+	checkmoney YOUR_MONEY, 400
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRESH_WATER
+	giveitem SODA_POP
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 350
-	itemtotext FRESH_WATER, MEM_BUFFER_0
+	takemoney YOUR_MONEY, 400
+	itemtotext SODA_POP, MEM_BUFFER_0
 	jump .VendItem
 	
-.PokeDoll:
-	checkmoney YOUR_MONEY, 1000
+.RageCandyBar:
+	checkmoney YOUR_MONEY, 800
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem POKE_DOLL
+	giveitem RAGECANDYBAR
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 1000
-	itemtotext POKE_DOLL, MEM_BUFFER_0
+	takemoney YOUR_MONEY, 800
+	itemtotext RAGECANDYBAR, MEM_BUFFER_0
 	jump .VendItem
 
-.NES:
-	checkmoney YOUR_MONEY, 1000
+.SNES:
+	checkmoney YOUR_MONEY, 15000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem POKE_DOLL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 1000
-	itemtotext POKE_DOLL, MEM_BUFFER_0
-	jump .VendItem
+	checkevent EVENT_DECO_SNES
+	iftrue .AlreadyHave
+	takemoney YOUR_MONEY, 15000
+	special PlaceMoneyTopRight
+	setevent EVENT_DECO_SNES
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext MahoganyClangTextSNES
+	buttonsound
+	writetext SentSNESHome
+	buttonsound
+	jump .Start
 	
 .VendItem:
+	special PlaceMoneyTopRight
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext MahoganyClangText
@@ -88,6 +96,11 @@ MahoganyTownVendingMachine:
 	writetext MahoganyVendingNoSpaceText
 	waitbutton
 	jump .Start
+	
+.AlreadyHave:
+	writetext MahoganyVendingAlreadyHaveText
+	waitbutton
+	jump .Start
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
@@ -98,9 +111,9 @@ MahoganyTownVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FRESH WATER ¥350@"
-	db "POKE DOLL  ¥1000@"
-	db "NES       ¥10000@"
+	db "SODA POP     ¥400@"
+	db "RAGECANDYBAR ¥800@"
+	db "SUPER NES  ¥15000@"
 	db "CANCEL@"
 
 MahoganyMartGuy:
@@ -123,6 +136,14 @@ MahoganyVitaminGuy:
 	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_3
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+	
+MahoganyBoostGuy:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_4
 	closetext
 	turnobject LAST_TALKED, DOWN
 	end
@@ -213,6 +234,24 @@ MahoganyVendingNoMoneyText:
 MahoganyVendingNoSpaceText:
 	text "There's no more"
 	line "room for stuff…"
+	done
+	
+MahoganyVendingAlreadyHaveText:
+	text "You already have"
+	line "a SUPER NES."
+	done
+	
+MahoganyClangTextSNES:
+	text "Clang!"
+	
+	para "The SUPER NES"
+	line "popped out."
+	done
+	
+SentSNESHome:
+	text "The SUPER NES was"
+	line "send to <PLAYER>'s"
+	cont "home."
 	done
 
 MahoganyPowerPlantGuyIntroText:
@@ -353,7 +392,7 @@ MahoganyTown_MapEvents:
 	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 
 	db 7 ; object events
-	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyBoostGuy, -1
 	object_event 26, 17, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMartGuy, -1
 	object_event 25, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPunchGuy, -1
 	object_event 29, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyVitaminGuy, -1

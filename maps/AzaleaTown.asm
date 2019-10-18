@@ -276,6 +276,7 @@ AzaleaTownVendingMachine:
 	checkevent EVENT_DECO_FAMICOM
 	iftrue .AlreadyHave
 	takemoney YOUR_MONEY, 10000
+	special PlaceMoneyTopRight
 	setevent EVENT_DECO_FAMICOM
 	pause 10
 	playsound SFX_ENTER_DOOR
@@ -286,6 +287,7 @@ AzaleaTownVendingMachine:
 	jump .Start
 	
 .VendItem:
+	special PlaceMoneyTopRight
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext AzaleaClangText
@@ -317,9 +319,9 @@ AzaleaTownVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "FRESH WATER ¥350@"
-	db "POKE DOLL  ¥1000@"
-	db "NES       ¥10000@"
+	db "FRESH WATER  ¥350@"
+	db "POKE DOLL   ¥1000@"
+	db "NES        ¥10000@"
 	db "CANCEL@"
 
 AzaleaBerryTree:

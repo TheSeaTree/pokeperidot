@@ -150,6 +150,9 @@ CianwoodCityRock:
 CianwoodCityBoulder:
 	jumpstd strengthboulder
 	
+CianwoodCityFruitTree:
+	fruittree FRUITTREE_CIANWOOD_CITY
+	
 CianwoodGymMovement:
 	step UP
 	step_end
@@ -392,10 +395,11 @@ CianwoodCity_MapEvents:
 	bg_event  7, 27, BGEVENT_READ, CianwoodPokeSeerSign
 	bg_event 20, 15, BGEVENT_UP,   CianwoodGymEvent
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 21,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityBoulder, -1
 	object_event 16, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLookout, EVENT_EXPLAINED_BURGLAR
 	object_event 19, 21, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to
 	object_event 26, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityMoveTutor, -1
 	object_event 27, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, CianwoodCityTMIceBeam, EVENT_GOT_TM_ICE_BEAM
+	object_event 15, 38, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityFruitTree, -1

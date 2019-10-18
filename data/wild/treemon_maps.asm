@@ -21,6 +21,17 @@ TreeMonMaps:
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
 	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
 	treemon_map GOLDENROD_CITY,            TREEMON_SET_CITY
+	treemon_map CIANWOOD_CITY,             TREEMON_SET_CITY
+	treemon_map ROUTE_12,                  TREEMON_SET_ROUTE
+	treemon_map ROUTE_13,                  TREEMON_SET_ROUTE
+	treemon_map ROUTE_14,                  TREEMON_SET_ROUTE
+	treemon_map MAHOGANY_TOWN,             TREEMON_SET_CITY
+	treemon_map ROUTE_18,                  TREEMON_SET_ROUTE
+	treemon_map CARNATION_TOWN,            TREEMON_SET_TOWN
+	treemon_map ROUTE_19,                  TREEMON_SET_ROUTE
+	treemon_map ROUTE_20,                  TREEMON_SET_ROUTE
+	treemon_map BLACKTHORN_CITY,           TREEMON_SET_TOWN
+	treemon_map ROUTE_21,                  TREEMON_SET_ROUTE
 	db -1
 
 RockMonMaps:

@@ -17,6 +17,7 @@ Marts:
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartMahogany3
+	dw MartMahogany4
 	dw MartBlackthorn
 	dw MartBlackthornTM
 	dw MartGoldenrod
@@ -197,6 +198,13 @@ MartMahogany3:
 	db IRON
 	db CALCIUM
 	db CARBOS
+	db -1
+	
+MartMahogany4:
+	db 3
+	db CHARCOAL
+	db MYSTIC_WATER
+	db MIRACLE_SEED
 	db -1
 
 MartBlackthorn:

@@ -148,10 +148,11 @@ CarnationZooVendingMachine:
 	jump .VendItem
 	
 .VendItem:
-	pause 10
 	special PlaceMoneyTopRight
+	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext ZooClangText
+	special PlaceMoneyTopRight
 	buttonsound
 	itemnotify
 	jump .Start
