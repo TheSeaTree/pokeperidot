@@ -104,6 +104,7 @@ ENDM
 	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
 	map_const ECRUTEAK_THIEF_HOUSE,							4,  4
 	map_const FRIEND_BALL_HOUSE,							4,  4
+	map_const RICHARDS_HOUSE,		    					4,  4
 
 	newgroup                                                      ;  5
 

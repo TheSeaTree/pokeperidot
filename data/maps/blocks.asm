@@ -69,6 +69,7 @@ CarnationWobbuffetHouse_Blocks:
 FluteMasterHouse_Blocks:
 MahoganySubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
+EcruteakRichardsHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:

@@ -402,3 +402,4 @@ ENDM
 	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
 	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
 	map_attributes BurglarHideoutB2F, BURGLAR_HIDEOUT_B2F, $00, 0
+	map_attributes EcruteakRichardsHouse, RICHARDS_HOUSE, $00, 0

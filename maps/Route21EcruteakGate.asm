@@ -11,8 +11,8 @@ Route21EcruteakGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, ROUTE_21, 1
 	warp_event  0,  5, ROUTE_21, 2
-	warp_event  9,  4, ECRUTEAK_CITY, 9
-	warp_event  9,  5, ECRUTEAK_CITY, 10
+	warp_event  9,  4, ECRUTEAK_CITY, 10
+	warp_event  9,  5, ECRUTEAK_CITY, 11
 
 	db 0 ; coord events
 

@@ -229,6 +229,7 @@ INCLUDE "maps/CherrygroveGymSpeechHouse.asm"
 INCLUDE "maps/GuideGentsHouse.asm"
 INCLUDE "maps/CherrygroveInn.asm"
 INCLUDE "maps/Route2AzaleaGate.asm"
+INCLUDE "maps/EcruteakRichardsHouse.asm"
 
 
 SECTION "Map Scripts 19", ROMX
