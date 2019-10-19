@@ -1109,25 +1109,17 @@ UnknownText_0x1c1462::
 	done
 
 UnknownText_0x1c1474::
-	text "BILL's PC"
-	line "accessed."
-
-	para "#MON Storage"
-	line "System opened."
+	text "#MON Storage"
+	line "System accessed."
 	prompt
 
 UnknownText_0x1c14a4::
-	text "Accessed own PC."
-
-	para "Item Storage"
-	line "System opened."
+	text "Item Storage"
+	line "System accessed."
 	prompt
 
 UnknownText_0x1c14d2::
-	text "PROF.OAK's PC"
-	line "accessed."
-
-	para "#DEX Rating"
+	text "#DEX Rating"
 	line "System opened."
 	prompt
 
