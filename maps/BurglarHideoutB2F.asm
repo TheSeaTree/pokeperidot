@@ -51,10 +51,36 @@ TrainerBurglarDuke2:
 	writetext BurglarDuke2AfterText
 	waitbutton
 	closetext
-	end		
+	end
 	
-GiveCardKey:
+BurglarHideoutB2FScientist:
+	faceplayer
+	opentext
+	checkevent EVENT_CLEARED_BURGLAR_HIDEOUT
+	iftrue .HideoutOccupied
+	checkevent EVENT_GOT_MASTER_BALL
+	iftrue .GotMasterBall
+	writetext BurglarHideoutB2FScientistText
+	waitbutton
+	closetext
+	
+.HideoutOccupied
+	writetext BurglarHideoutB2FScientistRewardText
+	waitbutton
+	verbosegiveitem MASTER_BALL
+	waitbutton
+	setevent EVENT_GOT_MASTER_BALL
+.GotMasterBall
+	writetext BurglarHideoutB2FScientistAfterText
+	waitbutton
+	closetext
+	end
+	
+HideoutCardKey:
 	itemball CARD_KEY
+	
+BurglarHideoutB2FNugget:
+	itemball NUGGET
 	
 BurglarDuke2Text:
 	text "You again?"
@@ -75,6 +101,46 @@ BurglarDuke2AfterText:
 	
 	para "I have failed"
 	done
+	
+BurglarHideoutB2FScientistText:
+	text "You're not one of"
+	line "them, are you?"
+	
+	para "I'm being held"
+	line "here against my"
+	cont "will, but managed"
+	cont "to sneak away and"
+	cont "hide here."
+	
+	para "I managed to swipe"
+	line "a valuable item"
+	cont "from the BURGLARs."
+	
+	para "If you can take"
+	line "care of them, it's"
+	cont "yours."
+	done
+
+BurglarHideoutB2FScientistRewardText:
+	text "Is everyone gone?"
+	
+	para "Phew!"
+	line "What a relief!"
+	
+	para "As promised, here"
+	line "is the item I"
+	cont "promised you."
+	done
+
+BurglarHideoutB2FScientistAfterText:
+	text "The MASTER BALL"
+	line "can capture any"
+	cont "#MON instantly!"
+	
+	para "Those crooks"
+	line "probably wanted to"
+	cont "use it on SNORLAX."
+	done
 
 BurglarHideoutB2F_MapEvents:
 	db 0, 0 ; filler
@@ -88,7 +154,8 @@ BurglarHideoutB2F_MapEvents:
 	db 1 ; bg events
 	bg_event 26, 14, BGEVENT_UP, BurglarHideoutB2FDoor
 
-	db 2 ; object events
-	object_event 28, 24, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBurglarDuke2, -1
-	object_event  9, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 30, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_ITEMBALL, 0, GiveCardKey, -1
+	db 4 ; object events
+	object_event 28, 24, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBurglarDuke2, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event  9, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB2FScientist, -1
+	object_event 30, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, HideoutCardKey, EVENT_GOT_CARD_KEY
+	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurglarHideoutB2FNugget, EVENT_HIDEOUT_NUGGET

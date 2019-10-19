@@ -3240,26 +3240,25 @@ PinecoEvosAttacks:
 	db 1, TACKLE
 	db 1, PROTECT
 	db 8, EXPLOSION
-	db 15, DOUBLE_EDGE
-	db 22, RAPID_SPIN
-	db 29, BIDE
-	db 36, EXPLOSION
-	db 43, SPIKES
-	db 50, DOUBLE_EDGE
+	db 12, DOUBLE_EDGE
+	db 17, RAPID_SPIN
+	db 20, BIDE
+	db 28, SPIKES
+	db 34, EXPLOSION
+	db 39, IRON_HEAD
 	db 0 ; no more level-up moves
 
 ForretressEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, PROTECT
-	db 1, EXPLOSION
 	db 8, EXPLOSION
-	db 15, DOUBLE_EDGE
-	db 22, RAPID_SPIN
-	db 29, BIDE
-	db 39, EXPLOSION
-	db 49, SPIKES
-	db 59, DOUBLE_EDGE
+	db 12, DOUBLE_EDGE
+	db 17, RAPID_SPIN
+	db 20, BIDE
+	db 28, SPIKES
+	db 36, EXPLOSION
+	db 42, IRON_HEAD
 	db 0 ; no more level-up moves
 
 DunsparceEvosAttacks:

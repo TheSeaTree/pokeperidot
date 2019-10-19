@@ -214,18 +214,6 @@ LookAtElmPokeBallScript:
 	closetext
 	end
 
-ElmGiveMasterBallScript:
-	writetext ElmGiveMasterBallText1
-	buttonsound
-	verbosegiveitem MASTER_BALL
-	iffalse .notdone
-	setevent EVENT_GOT_MASTER_BALL_FROM_ELM
-	writetext ElmGiveMasterBallText2
-	waitbutton
-.notdone
-	closetext
-	end
-
 ElmGiveTicketScript:
 	writetext ElmGiveTicketText1
 	buttonsound
@@ -551,39 +539,6 @@ ElmPokeBallText:
 	text "It contains a"
 	line "#MON caught by"
 	cont "PROF.ELM."
-	done
-
-ElmGiveMasterBallText1:
-	text "ELM: Hi, <PLAY_G>!"
-	line "Thanks to you, my"
-
-	para "research is going"
-	line "great!"
-
-	para "Take this as a"
-	line "token of my"
-	cont "appreciation."
-	done
-
-ElmGiveMasterBallText2:
-	text "The MASTER BALL is"
-	line "the best!"
-
-	para "It's the ultimate"
-	line "BALL! It'll catch"
-
-	para "any #MON with-"
-	line "out fail."
-
-	para "It's given only to"
-	line "recognized #MON"
-	cont "researchers."
-
-	para "I think you can"
-	line "make much better"
-
-	para "use of it than I"
-	line "can, <PLAY_G>!"
 	done
 
 ElmGiveTicketText1:
