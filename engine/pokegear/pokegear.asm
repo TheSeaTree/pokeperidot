@@ -196,6 +196,8 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
+	cp LOST_LAND
+	jr z, .LostLand
 	cp SPECIAL_MAP
 	jr nz, .LoadLandmark
 	ld a, [wBackupMapGroup]
@@ -205,6 +207,12 @@ TownMap_InitCursorAndPlayerIconPositions:
 	call GetWorldMapLocation
 .LoadLandmark:
 	ld [wPokegearMapPlayerIconLandmark], a
+	ld [wPokegearMapCursorLandmark], a
+	ret
+
+.LostLand:
+	ld [wPokegearMapPlayerIconLandmark], a
+	ld a, NEW_BARK_TOWN
 	ld [wPokegearMapCursorLandmark], a
 	ret
 
@@ -302,6 +310,8 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp LOST_LAND
+	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -515,6 +525,8 @@ Pokegear_UpdateClock:
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp LOST_LAND
+	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
 .johto
@@ -708,6 +720,8 @@ PokegearMap_UpdateCursorPosition:
 	ret
 
 TownMap_GetKantoLandmarkLimits:
+	ld d, LOST_LAND
+	ld e, LOST_LAND
 	ret
 
 PokegearRadio_Init:
@@ -1493,6 +1507,8 @@ RadioChannels:
 
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
+	cp LOST_LAND
+	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -1967,7 +1983,7 @@ PokegearMap:
 
 .kanto
 	call LoadTownMapGFX
-	call FillKantoMap
+	call FillJohtoMap
 	ret
 
 _FlyMap:
@@ -2101,10 +2117,25 @@ TownMapBubble:
 	ld a, " "
 	call ByteFill
 
-; Bottom row
+; Bottom-left corner
+	hlcoord 0, 2
+	ld a, $2c
+	ld [hli], a
 	hlcoord 1, 2
-	ld bc, 18
+	ld a, $2d
+	ld [hli], a
+; Bottom row
+	hlcoord 2, 2
+	ld bc, 16
 	ld a, " "
+	call ByteFill
+; Bottom-right corner
+	hlcoord 18, 2
+	ld a, $2e
+	ld [hli], a
+	hlcoord 19, 2
+	ld a, $2f
+	ld [hli], a
 	call ByteFill
 
 ; Print "Where?"
@@ -2289,7 +2320,7 @@ Pokedex_GetArea:
 	ld c, 4
 	call Request2bpp
 	call LoadTownMapGFX
-	call FillKantoMap
+	call FillJohtoMap
 	call .PlaceString_MonsNest
 	call TownMapPals
 	hlbgcoord 0, 0, vBGMap1
@@ -2504,6 +2535,8 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
+	cp LOST_LAND
+	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
 .kanto
@@ -2563,11 +2596,6 @@ TownMapBGUpdate:
 
 FillJohtoMap:
 	ld de, JohtoMap
-	jr FillTownMap
-
-FillKantoMap:
-	ld de, KantoMap
-FillTownMap:
 	hlcoord 0, 0
 .loop
 	ld a, [de]
@@ -2711,9 +2739,6 @@ LoadTownMapGFX:
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"
 
-KantoMap:
-INCBIN "gfx/pokegear/kanto.bin"
-
 PokedexNestIconGFX:
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"
 FlyMapLabelBorderGFX:
@@ -2737,7 +2762,7 @@ Unreferenced_Function92311:
 	ld hl, vTiles2 tile $30
 	lb bc, BANK(FlyMapLabelBorderGFX), 6
 	call Request1bpp
-	call FillKantoMap
+	call FillJohtoMap
 	call TownMapBubble
 	call TownMapPals
 	hlbgcoord 0, 0, vBGMap1
@@ -2829,7 +2854,7 @@ Unreferenced_Function92311:
 	ld a, [wTownMapPlayerIconLandmark]
 	cp KANTO_FLYPOINT
 	jr c, .johto
-	call FillKantoMap
+	call FillJohtoMap
 	xor a
 	ld b, $9c
 	jr .finish

@@ -108,7 +108,6 @@ SECTION "Map Scripts 8", ROMX
 
 INCLUDE "maps/DiglettsCave.asm"
 INCLUDE "maps/MountMoon.asm"
-INCLUDE "maps/UndergroundPath.asm"
 INCLUDE "maps/PalerockCave1F.asm"
 INCLUDE "maps/PalerockCaveB1F.asm"
 INCLUDE "maps/VictoryRoad.asm"

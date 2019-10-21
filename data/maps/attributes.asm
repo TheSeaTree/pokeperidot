@@ -242,7 +242,6 @@ ENDM
 	map_attributes MahoganyPokecenter1F, MAHOGANY_POKECENTER_1F, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes MountMoon, MOUNT_MOON, $09, 0
-	map_attributes UndergroundPath, UNDERGROUND_PATH, $00, 0
 	map_attributes PalerockCave1F, PALEROCK_CAVE_1F, $09, 0
 	map_attributes PalerockCaveB1F, PALEROCK_CAVE_B1F, $09, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0

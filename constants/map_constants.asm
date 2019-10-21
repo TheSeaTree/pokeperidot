@@ -75,7 +75,6 @@ ENDM
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const DIGLETTS_CAVE,                               13,  9 ; 84
 	map_const MOUNT_MOON,                                  15,  9 ; 85
-	map_const UNDERGROUND_PATH,                             3, 14 ; 86
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91

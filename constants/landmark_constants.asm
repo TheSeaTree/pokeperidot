@@ -42,13 +42,13 @@
 	const ROUTE_16          ; 4e
 	const ROUTE_17          ; 4f
 	const ROUTE_7           ; 3f
-	const LOST_LAND
 	const VICTORY_ROAD      ; 58
 	const INDIGO_PLATEAU    ; 5a
-	const UNDERGROUND_PATH  ; 3b
 	const BATTLE_TOWER      ; 1d
 	
 KANTO_LANDMARK EQU const_value
+
+	const LOST_LAND
 
 ; used in CaughtData
 GIFT_LOCATION  EQU $7e

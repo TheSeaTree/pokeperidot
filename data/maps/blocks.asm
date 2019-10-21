@@ -406,9 +406,6 @@ MountMoon_Blocks:
 VictoryRoadGate_Blocks:
 	INCBIN "maps/VictoryRoadGate.ablk"
 
-UndergroundPath_Blocks:
-	INCBIN "maps/UndergroundPath.ablk"
-
 VictoryRoad_Blocks:
 	INCBIN "maps/VictoryRoad.ablk"
 

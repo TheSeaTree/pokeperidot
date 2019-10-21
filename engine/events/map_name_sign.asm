@@ -67,8 +67,6 @@ ReturnFromMapSetupScript::
 	ret z
 	cp SPECIAL_MAP
 	ret z
-	cp UNDERGROUND_PATH
-	ret z
 	cp DIGLETTS_CAVE
 	ret z
 	ld a, 1

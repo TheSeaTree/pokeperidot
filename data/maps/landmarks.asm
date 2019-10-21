@@ -46,11 +46,10 @@ Landmarks:
 	landmark 100,  58, Route20Name ; ROUTE_16
 	landmark 114,  36, Route21Name ; ROUTE_17
 	landmark 114,  68, Route22Name ; ROUTE_7
-	landmark 116,  60, LostLandName
 	landmark 140,  36, VictoryRoadName
 	landmark 140,  28, IndigoPlateauName
-	landmark   0,   0, UndergroundName
 	landmark  20,  20, BattleTowerName
+	landmark  -8,  -8, LostLandName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
 CherrygroveCityName: db "PAVONA¯VILLAGE@"
