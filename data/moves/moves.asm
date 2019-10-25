@@ -174,7 +174,7 @@ Moves: ; 41afb
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,   100, 30,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,   100, 10,  20
 	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   100, ELECTRIC, 100, 15,  10
-	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,   100,  5,  30
+	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,    80,  5,  30
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,   100, 10,   0
 	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,   100,  1,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,   100,  1,   0
