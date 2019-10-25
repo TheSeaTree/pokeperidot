@@ -196,6 +196,7 @@ ViridianGroupSprites:
 ; Route2, Route22, ViridianCity
 ; Route29 and CherrygroveCity are connected
 NewBarkGroupSprites:
+CherrygroveGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -206,27 +207,12 @@ NewBarkGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
+	db SPRITE_SUICUNE
 	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-CherrygroveGroupSprites:
-; Route30, Route31, CherrygroveCity
-	db SPRITE_TEACHER
-	db SPRITE_FISHER
-	db SPRITE_YOUNGSTER
-	db SPRITE_LASS
-	db SPRITE_GRAMPS
-	db SPRITE_BUG_CATCHER
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_SUPER_NERD
-	; limit of 9 walking sprites
-	db SPRITE_POKE_BALL
-	db SPRITE_ROCK
-	db SPRITE_FRUIT_TREE
-	db 0 ; end
 
 ; Route37 and EcruteakCity are connected
 EcruteakGroupSprites:

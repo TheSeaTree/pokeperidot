@@ -154,24 +154,22 @@ NewBarkTownElmsHouseSignText:
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
-	warp_event 21, 11, PLAYERS_HOUSE_1F, 1
-	warp_event 15,  7, PLAYERS_NEIGHBORS_HOUSE, 1
-	warp_event 18, 17, ELMS_HOUSE, 1
-	warp_event  9, 13, VIRIDIAN_POKECENTER_1F, 1
-	warp_event 21, 21, ROUTE_1_NEW_BARK_GATE, 1
-	warp_event 22, 21, ROUTE_1_NEW_BARK_GATE, 2
-	warp_event  4,  8, NEW_BARK_FOREST_GATE, 3
-	warp_event  4,  9, NEW_BARK_FOREST_GATE, 4
+	db 6 ; warp events
+	warp_event 17, 11, PLAYERS_HOUSE_1F, 1
+	warp_event 11,  7, PLAYERS_NEIGHBORS_HOUSE, 1
+	warp_event 14, 17, ELMS_HOUSE, 1
+	warp_event  5, 11, VIRIDIAN_POKECENTER_1F, 1
+	warp_event 17, 21, ROUTE_1_NEW_BARK_GATE, 1
+	warp_event 18, 21, ROUTE_1_NEW_BARK_GATE, 2
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 14, 12, BGEVENT_READ, NewBarkTownSign
-	bg_event 19, 11, BGEVENT_UP, NewBarkTownPlayersHouseSign
+	bg_event 10, 12, BGEVENT_READ, NewBarkTownSign
+	bg_event 15, 11, BGEVENT_UP, NewBarkTownPlayersHouseSign
 
 	db 4 ; object events
-	object_event 13,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event 11, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownRightNerdScript, EVENT_MOVED_NERDS
-	object_event 10, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownLeftNerdScript, EVENT_MOVED_NERDS
-	object_event  8, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownYoungsterScript, -1
+	object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
+	object_event  7, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownRightNerdScript, EVENT_MOVED_NERDS
+	object_event  6, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, NewBarkTownLeftNerdScript, EVENT_MOVED_NERDS
+	object_event  4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownYoungsterScript, -1

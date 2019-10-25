@@ -464,37 +464,65 @@ LookUpWildmonsForMapDE:
 	pop hl
 	scf
 	ret
-
-InitRoamMons:
+	
+InitRoamArticuno:
 ; initialize wRoamMon structs
 
 ; species
-	ld a, RAIKOU
+	ld a, ARTICUNO
 	ld [wRoamMon1Species], a
-	ld a, ENTEI
-	ld [wRoamMon2Species], a
-	ld a, SUICUNE
-	ld [wRoamMon3Species], a
 
 ; level
 	ld a, 40
 	ld [wRoamMon1Level], a
-	ld [wRoamMon2Level], a
-	ld [wRoamMon3Level], a
 
-; raikou starting map
+; articuno starting map
 	ld a, GROUP_ROUTE_4
 	ld [wRoamMon1MapGroup], a
 	ld a, MAP_ROUTE_4
 	ld [wRoamMon1MapNumber], a
 
-; entei starting map
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon1HP], a
+
+	ret
+	
+InitRoamZapdos:
+; initialize wRoamMon structs
+
+; species
+	ld a, ZAPDOS
+	ld [wRoamMon2Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon2Level], a
+
+; zapdos starting map
 	ld a, GROUP_ROUTE_3
 	ld [wRoamMon2MapGroup], a
 	ld a, MAP_ROUTE_3
 	ld [wRoamMon2MapNumber], a
+
+; hp
+	xor a ; generate new stats
+	ld [wRoamMon2HP], a
+
+	ret
 	
-; suicune starting map
+InitRoamMoltres:
+; initialize wRoamMon structs
+
+; species
+	ld a, MOLTRES
+	ld [wRoamMon3Species], a
+
+; level
+	ld a, 40
+	ld [wRoamMon3Level], a
+
+; moltres starting map
 	ld a, GROUP_ROUTE_12
 	ld [wRoamMon3MapGroup], a
 	ld a, MAP_ROUTE_12
@@ -502,8 +530,6 @@ InitRoamMons:
 
 ; hp
 	xor a ; generate new stats
-	ld [wRoamMon1HP], a
-	ld [wRoamMon2HP], a
 	ld [wRoamMon3HP], a
 
 	ret
@@ -558,7 +584,7 @@ CheckEncounterRoamMon:
 UpdateRoamMons:
 	ld a, [wRoamMon1MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipRaikou
+	jr z, .SkipArticuno
 	ld b, a
 	ld a, [wRoamMon1MapNumber]
 	ld c, a
@@ -568,10 +594,10 @@ UpdateRoamMons:
 	ld a, c
 	ld [wRoamMon1MapNumber], a
 
-.SkipRaikou:
+.SkipArticuno:
 	ld a, [wRoamMon2MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipEntei
+	jr z, .SkipZapdos
 	ld b, a
 	ld a, [wRoamMon2MapNumber]
 	ld c, a
@@ -581,7 +607,7 @@ UpdateRoamMons:
 	ld a, c
 	ld [wRoamMon2MapNumber], a
 
-.SkipEntei:
+.SkipZapdos:
 	ld a, [wRoamMon3MapGroup]
 	cp GROUP_N_A
 	jr z, .Finished

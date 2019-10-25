@@ -179,8 +179,8 @@ EcruteakForestGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 3, 7, ILEX_FOREST, 5
-	warp_event 4, 7, ILEX_FOREST, 5
+	warp_event 3, 7, ILEX_FOREST, 3
+	warp_event 4, 7, ILEX_FOREST, 3
 	warp_event 2, 0, ECRUTEAK_CITY, 1
 	warp_event 3, 0, ECRUTEAK_CITY, 2
 

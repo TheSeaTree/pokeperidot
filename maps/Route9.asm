@@ -83,9 +83,10 @@ TMRainDanceExplaination:
 Route9_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 30, 17, UNION_CAVE_1F, 4
 	warp_event 26,  5, ROUTE_9_FOREST_GATE, 1
+	warp_event  6,  9, ROUTE_9_CAVE_1F, 1
 
 	db 0 ; coord events
 

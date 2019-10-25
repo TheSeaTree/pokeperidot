@@ -595,3 +595,21 @@ BurglarHideoutB1F_Blocks:
 
 BurglarHideoutB2F_Blocks:
 	INCBIN "maps/BurglarHideoutB2F.ablk"
+
+RaikouLair_Blocks:
+	INCBIN "maps/RaikouLair.ablk"
+	
+EnteiLair_Blocks:
+	INCBIN "maps/EnteiLair.ablk"
+
+SuicuneLair_Blocks:
+	INCBIN "maps/SuicuneLair.ablk"
+
+Route30Cave1F_Blocks:
+	INCBIN "maps/Route30Cave1F.ablk"
+
+Route30CaveB1F_Blocks:
+	INCBIN "maps/Route30CaveB1F.ablk"
+
+Route9Cave1F_Blocks:
+	INCBIN "maps/Route9Cave1F.ablk"

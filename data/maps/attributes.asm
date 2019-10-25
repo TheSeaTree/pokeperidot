@@ -91,11 +91,11 @@ endc
 ENDM
 
 	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, NORTH | SOUTH
-	connection north, Route11, ROUTE_11, 4
-	connection south, Route1, ROUTE_1, -1
+	connection north, Route11, ROUTE_11, 2
+	connection south, Route1, ROUTE_1, -3
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, SOUTH | EAST
-	connection south, Route30, ROUTE_30, 0
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, WEST | EAST
+	connection west, Route30, ROUTE_30, -1
 	connection east, Route2, ROUTE_2, 7
 
 	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH
@@ -127,14 +127,22 @@ ENDM
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
-	map_attributes Route30, ROUTE_30, $05, NORTH
-	connection north, CherrygroveCity, CHERRYGROVE_CITY, 0
+	map_attributes Route30, ROUTE_30, $05, NORTH | EAST
+	connection north, Route9, ROUTE_9, 0
+	connection east, CherrygroveCity, CHERRYGROVE_CITY, 1
+	
+	map_attributes Route9, ROUTE_9, $20, SOUTH | WEST
+	connection south, Route30, ROUTE_30, 0
+	connection west, SuicuneLair, SUICUNE_LAIR, 4
+	
+	map_attributes SuicuneLair, SUICUNE_LAIR, $20, EAST
+	connection east, Route9, ROUTE_9, -4
 
 	map_attributes Route2, ROUTE_2, $05, WEST
 	connection west, CherrygroveCity, CHERRYGROVE_CITY, -7
 
 	map_attributes Route1, ROUTE_1, $05, NORTH
-	connection north, NewBarkTown, NEW_BARK_TOWN, 1
+	connection north, NewBarkTown, NEW_BARK_TOWN, 3
 
 	map_attributes Route17, ROUTE_17, $71, WEST
 	connection west, Route15, ROUTE_15, -5
@@ -167,7 +175,7 @@ ENDM
 
 	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, -18
-	connection south, NewBarkTown, NEW_BARK_TOWN, -4
+	connection south, NewBarkTown, NEW_BARK_TOWN, -2
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 7
@@ -332,7 +340,6 @@ ENDM
 	map_attributes PalerockMountainOutside, PALEROCK_MOUNTAIN_OUTSIDE, $09, 0
 	map_attributes PalerockMountainB1, PALEROCK_MOUNTAIN_B1, $09, 0
 	map_attributes PalerockMountainStrengthRoom, PALEROCK_MOUNTAIN_STRENGTH_ROOM, $09, 0
-	map_attributes Route9, ROUTE_9, $2c, 0
 	map_attributes Route9ForestGate, ROUTE_9_FOREST_GATE, $00, 0
 	map_attributes EcruteakForestGate, ECRUTEAK_FOREST_GATE, $00, 0
 	map_attributes Route8GoldenrodGate, ROUTE_8_GOLDENROD_GATE, $00, 0
@@ -402,3 +409,8 @@ ENDM
 	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
 	map_attributes BurglarHideoutB2F, BURGLAR_HIDEOUT_B2F, $00, 0
 	map_attributes EcruteakRichardsHouse, RICHARDS_HOUSE, $00, 0
+	map_attributes RaikouLair, RAIKOU_LAIR, $00, 0
+	map_attributes EnteiLair, ENTEI_LAIR, $09, 0
+	map_attributes Route30Cave1F, ROUTE_30_CAVE_1F, $09, 0
+	map_attributes Route30CaveB1F, ROUTE_30_CAVE_B1F, $09, 0
+	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0

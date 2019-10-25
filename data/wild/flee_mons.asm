@@ -10,7 +10,7 @@ OftenFleeMons:
 	db -1
 
 AlwaysFleeMons:
-	db RAIKOU
-	db ENTEI
-	db SUICUNE
+	db ARTICUNO
+	db ZAPDOS
+	db MOLTRES
 	db -1

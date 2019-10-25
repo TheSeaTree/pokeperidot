@@ -111,6 +111,9 @@ INCLUDE "maps/MountMoon.asm"
 INCLUDE "maps/PalerockCave1F.asm"
 INCLUDE "maps/PalerockCaveB1F.asm"
 INCLUDE "maps/VictoryRoad.asm"
+INCLUDE "maps/Route30Cave1F.asm"
+INCLUDE "maps/Route30CaveB1F.asm"
+INCLUDE "maps/Route9Cave1F.asm"
 
 
 SECTION "Map Scripts 9", ROMX
@@ -254,6 +257,9 @@ SECTION "Map Scripts 21", ROMX
 INCLUDE "maps/CianwoodCity.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/EastForest.asm"
+INCLUDE "maps/RaikouLair.asm"
+INCLUDE "maps/EnteiLair.asm"
+INCLUDE "maps/SuicuneLair.asm"
 
 
 SECTION "Map Scripts 22", ROMX

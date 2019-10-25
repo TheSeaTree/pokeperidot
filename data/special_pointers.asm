@@ -116,7 +116,9 @@ SpecialsPointers::
 	add_special GameboyCheck
 	add_special TrainerHouse
 	add_special PhotoStudio ; $68
-	add_special InitRoamMons
+	add_special InitRoamArticuno
+	add_special InitRoamZapdos
+	add_special InitRoamMoltres
 	add_special FadeOutMusic
 	add_special Diploma
 	add_special PrintDiploma

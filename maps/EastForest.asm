@@ -154,7 +154,7 @@ EastForest_MapEvents:
 	warp_event  4,  7, ROUTE_4_FOREST_GATE, 4
 	warp_event 50,  9, FACTORY_1F, 1
 	warp_event 51,  5, FACTORY_BACK, 3
-	warp_event 52,  5, FACTORY_BACK, 3
+	warp_event 55,  1, RAIKOU_LAIR, 1
 
 	db 0 ; coord events
 

@@ -55,6 +55,9 @@ ENDM
 	map_const MAHOGANY_APARTMENT_1F,                        6,  4
 	map_const MAHOGANY_APARTMENT_2F,                        6,  4
 	map_const MAHOGANY_APARTMENT_3F,                        6,  4
+	map_const ROUTE_30_CAVE_1F,								8,  7
+	map_const ROUTE_30_CAVE_B1F,						   13, 18
+	map_const ROUTE_9_CAVE_1F,								6,  5
 
 	newgroup                                                      ;  3
 
@@ -83,10 +86,6 @@ ENDM
 	map_const CIANWOOD_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
 	map_const LOST_LAND,		                           29,  20
-	map_const EAST_FOREST,                                 30, 15
-	map_const FACTORY_1F,                                  11, 11
-	map_const FACTORY_B1,                                   6,  8
-	map_const FACTORY_BACK,                                 5,  8
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 16
@@ -164,6 +163,12 @@ ENDM
 
 	newgroup                                                      ;  9
 
+	map_const EAST_FOREST,                                 30, 15
+	map_const FACTORY_1F,                                  11, 11
+	map_const FACTORY_B1,                                   6,  8
+	map_const FACTORY_BACK,                                 5,  8
+	map_const RAIKOU_LAIR,									5,  3
+
 	newgroup                                                      ; 10
 
 	map_const ROUTE_4,                                     25, 24 ; 12
@@ -234,9 +239,8 @@ ENDM
 
 	newgroup                                                      ; 17
 
-	map_const ILEX_FOREST,                                 37, 24 ; 52
+	map_const ILEX_FOREST,                                 32, 24 ; 52
 	map_const SWORDS_DANCE_HOUSE,							4,  4
-	map_const ROUTE_9,                                     19, 13 ; 13
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 
 	newgroup                                                      ; 18
@@ -287,11 +291,12 @@ ENDM
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
 	map_const DRAGONBREATH_HOUSE,                           4,  4
+	map_const ENTEI_LAIR,									7,  5
 
 	newgroup                                                      ; 24
 
 	map_const ROUTE_1,                                     33, 17 ;  1
-	map_const NEW_BARK_TOWN,                               14, 11 ;  4
+	map_const NEW_BARK_TOWN,                               12, 11 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
@@ -306,16 +311,18 @@ ENDM
 
 	newgroup                                                      ; 26
 
-	map_const ROUTE_30,                                    21, 11 ;  1
+	map_const ROUTE_30,                                    18, 18 ;  1
 	map_const ROUTE_1_CHERRYGROVE_GATE,                     5,  4 ; 14
 	map_const ROUTE_2,                                     23, 20 ;  1
-	map_const CHERRYGROVE_CITY,                            17, 14 ;  3
+	map_const CHERRYGROVE_CITY,                            17, 16 ;  3
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  5
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  6
 	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  7
 	map_const CHERRYGROVE_INN,                              5,  4 ;  8
 	map_const ROUTE_2_AZALEA_GATE,                          5,  4 ; 11
+	map_const ROUTE_9,                                     20, 13 ; 13
+	map_const SUICUNE_LAIR,	    							7,  3
 
 	newgroup													  ; 27
 	
