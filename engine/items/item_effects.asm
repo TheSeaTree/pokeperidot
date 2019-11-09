@@ -555,6 +555,10 @@ PokeBallEffect:
 	ld [hl], a
 
 .SkipPartyMonFriendBall:
+	ld a, [wOptions2]
+	and 1 << NICKNAME_TOGGLE
+	jp nz, .return_from_capture
+
 	ld hl, Text_AskNicknameNewlyCaughtMon
 	call PrintText
 
@@ -614,6 +618,10 @@ PokeBallEffect:
 	ld [sBoxMon1Happiness], a
 .SkipBoxMonFriendBall:
 	call CloseSRAM
+
+	ld a, [wOptions2]
+	and 1 << NICKNAME_TOGGLE
+	jr nz, .SkipBoxMonNickname
 
 	ld hl, Text_AskNicknameNewlyCaughtMon
 	call PrintText

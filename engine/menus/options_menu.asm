@@ -67,7 +67,7 @@ StringOptions:
 	db "         :<LF>"
 	db "BATTLE STYLE<LF>"
 	db "         :<LF>"
-	db "RUN BEHAVIOR<LF>"
+	db "GIVE NICKNAMES<LF>"
 	db "         :<LF>"
 	db "CLOCK VIEW<LF>"
 	db "         :<LF>"
@@ -321,26 +321,26 @@ Options_Shoes:
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	bit SHOE_TOGGLE, [hl]
+	bit NICKNAME_TOGGLE, [hl]
 	jr nz, .ToggleOff
 	jr .ToggleOn
 
 .LeftPressed:
-	bit SHOE_TOGGLE, [hl]
+	bit NICKNAME_TOGGLE, [hl]
 	jr z, .ToggleOn
 	jr .ToggleOff
 
 .NonePressed:
-	bit SHOE_TOGGLE, [hl]
+	bit NICKNAME_TOGGLE, [hl]
 	jr nz, .ToggleOn
 
 .ToggleOff:
-	res SHOE_TOGGLE, [hl]
+	res NICKNAME_TOGGLE, [hl]
 	ld de, .Off
 	jr .Display
 
 .ToggleOn:
-	set SHOE_TOGGLE, [hl]
+	set NICKNAME_TOGGLE, [hl]
 	ld de, .On
 
 .Display:
@@ -349,8 +349,8 @@ Options_Shoes:
 	and a
 	ret
 
-.Off: db "NORMAL@"
-.On:  db "INVERT@"
+.Off: db "ON @"
+.On:  db "OFF@"
 
 Options_Clock:
 	ld hl, wOptions2

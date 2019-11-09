@@ -1736,7 +1736,7 @@ GivePoke::
 	ld [hl], LOW(RANDY_OT_ID)
 	pop bc
 	farcall SetGiftPartyMonCaughtData
-	jr .skip_nickname
+	jr .no_nickname
 
 .send_to_box
 	ld a, BANK(sBoxMonOT)
@@ -1760,7 +1760,7 @@ GivePoke::
 	ld [hl], a
 	call CloseSRAM
 	farcall SetGiftBoxMonCaughtData
-	jr .skip_nickname
+	jr .no_nickname
 
 .wildmon
 	pop de
@@ -1776,12 +1776,20 @@ GivePoke::
 .party
 	farcall SetCaughtData
 .set_caught_data
+	ld a, [wOptions2]
+	and 1 << NICKNAME_TOGGLE
+	jr nz, .skip_nickname
+
 	farcall GiveANickname_YesNo
 	pop de
-	jr c, .skip_nickname
+	jr c, .no_nickname
 	call InitNickname
-
+	jr .no_nickname
+	
 .skip_nickname
+	pop de
+
+.no_nickname
 	pop bc
 	pop de
 	ld a, b

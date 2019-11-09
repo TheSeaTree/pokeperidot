@@ -280,10 +280,17 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 15, 10
 	lb bc, 1, 3
 	call PrintNum
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_HAVE_BATTLE_PASS_F, [hl]
+	jr z, .NoBattlePass
+	hlcoord 2, 16
+	ld de, .Total_BP
+	call PlaceString
 	hlcoord 5, 16
 	ld de, wCoins
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 4
 	call PrintNum
+.NoBattlePass
 	call TrainerCard_Page1_PrintGameTime
 	hlcoord 2, 8
 	ld de, .StatusTilemap
@@ -300,9 +307,12 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	db   "#DEX"
 	next "PLAY TIME"
 	next ""
-	next "BP@"
+;	next "BP@"
 
 	db "@" ; unused
+	
+.Total_BP:
+	db "BP@"
 
 .Badges:
 	db "  BADGES▶@"

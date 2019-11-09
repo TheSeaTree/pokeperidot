@@ -318,6 +318,11 @@ HatchEggs:
 	call AddNTimes
 	ld d, h
 	ld e, l
+	
+	ld a, [wOptions2]
+	and 1 << NICKNAME_TOGGLE
+	jr nz, .nonickname
+
 	push de
 	ld hl, .Text_NicknameHatchling
 	call PrintText

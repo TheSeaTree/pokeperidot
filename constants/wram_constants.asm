@@ -64,7 +64,7 @@ GBPRINTER_DARKEST  EQU $7f
 ; wOptions2:: ; cfd1
 	const_def
 	const MENU_ACCOUNT ; 0
-	const SHOE_TOGGLE
+	const NICKNAME_TOGGLE
 
 ; wWalkingDirection:: ; d043
 	const_def -1
@@ -192,7 +192,7 @@ NUM_OBJECTS   EQU 18
 	const STATUSFLAGS2_BUG_CONTEST_TIMER_F      ; 2
 	const STATUSFLAGS2_UNUSED_3_F               ; 3
 	const STATUSFLAGS2_BIKE_SHOP_CALL_F         ; 4
-	const STATUSFLAGS2_UNUSED_5_F               ; 5
+	const STATUSFLAGS2_HAVE_BATTLE_PASS_F       ; 5
 	const STATUSFLAGS2_REACHED_GOLDENROD_F      ; 6
 	const STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F    ; 7
 

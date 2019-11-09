@@ -298,9 +298,6 @@ DoPlayerMovement::
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
 	jr z, .holdwalk
-	ld a, [wOptions2]
-	and 1 << SHOE_TOGGLE
-	jr nz, .run
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
