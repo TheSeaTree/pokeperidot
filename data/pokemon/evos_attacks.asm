@@ -3761,7 +3761,7 @@ RaikouEvosAttacks:
 	db 8, BITE
 	db 22, QUICK_ATTACK
 	db 29, SPARK
-	db 36, ROAR
+	db 32, ROAR
 	db 36, REFLECT
 	db 43, CRUNCH
 	db 54, CALM_MIND
@@ -3776,7 +3776,7 @@ EnteiEvosAttacks:
 	db 8, BITE
 	db 22, FLAME_WHEEL
 	db 29, HEADBUTT
-	db 36, ROAR
+	db 32, ROAR
 	db 36, FLAMETHROWER
 	db 43, SWAGGER
 	db 54, CALM_MIND
@@ -3791,7 +3791,7 @@ SuicuneEvosAttacks:
 	db 8, BITE
 	db 22, BUBBLEBEAM
 	db 29, AURORA_BEAM
-	db 36, ROAR
+	db 32, ROAR
 	db 36, MIST
 	db 43, MIRROR_COAT
 	db 54, CALM_MIND
