@@ -87,7 +87,7 @@ TrainerMarieScript:
 	writetext Route18DaughterChallengeText
 	waitbutton
 	closetext
-	winlosstext Route18DaughterWinText, -1
+	winlosstext Route18DaughterWinText, 0
     loadtrainer BEAUTY, MARIE1
 	startbattle
 	reloadmapafterbattle

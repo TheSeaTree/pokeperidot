@@ -139,7 +139,7 @@ AzaleaBurglar:
 	iffalse .GetLost
 	writetext AzaleaBurglarText
 	waitbutton
-	winlosstext AzaleaBurglarWinText, -1
+	winlosstext AzaleaBurglarWinText, 0
 	loadtrainer BURGLAR, LAMAAR
 	startbattle
 	reloadmapafterbattle

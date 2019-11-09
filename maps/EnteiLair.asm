@@ -9,7 +9,7 @@ EnteiLair_MapScripts:
 Entei:
 	cry ENTEI
 	waitsfx
-	loadwildmon ENTEI, 35
+	loadwildmon ENTEI, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_SUICUNE
 	startbattle
 	reloadmapafterbattle

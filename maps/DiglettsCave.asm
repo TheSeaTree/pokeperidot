@@ -5,7 +5,15 @@
 DiglettsCave_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
+	iffalse .skip
+	changeblock 18, 2, $13
+.skip
+	return
 	
 TrainerBlackbeltAxel:
 	trainer BLACKBELT_T, AXEL, EVENT_BEAT_BLACKBELT_AXEL, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
@@ -40,44 +48,22 @@ TrainerBeautyBlaze:
 	closetext
 	end	
 	
-DrainPunchTutor:
-	faceplayer
-	opentext
-	writetext DrainPunchTutorText
-	waitbutton
-	checkitem GOLD_LEAF
-	iffalse .NoLeaf
-	writetext DrainPunchTutorTeach
-	yesorno
-	iftrue .DrainPunch
-	jump .Refused
-	
-.DrainPunch
-	writetext DrainPunchTutorWhichOne
-	buttonsound
-	writebyte DRAIN_PUNCH
-	special MoveTutor
-	ifequal $0, .TeachMove
-	jump .Refused
-	
-.TeachMove
-	takeitem GOLD_LEAF
-	writetext DrainPunchTutorThankYou
-	waitbutton
-	closetext
+DrainPunchChamberBreakableWallScript:
+	checkevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
+	iftrue .AlreadyBroken
+	scall DrainPunchChamberSmashWall
+	iffalse .No
+	changeblock 18, 2, $13
+	reloadmappart
+	setevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
+.No
 	end
+
+.AlreadyBroken:
+	jumpstd smashwallbroken
 	
-.Refused
-	writetext DrainPunchTutorRefused
-	waitbutton
-	closetext
-	end
-	
-.NoLeaf
-	writetext DrainPunchTutorExplainGoldLeaf
-	waitbutton
-	closetext
-	end
+DrainPunchChamberSmashWall:
+	jumpstd smashwall
 
 DiglettsCaveBoulder:
 	jumpstd strengthboulder	
@@ -97,70 +83,23 @@ Route3CaveWinText:
 	text "I lost."
 	done
 	
-DrainPunchTutorText:
-	text "HI-YAH!"
-	
-	para "Our master may"
-	line "have trusted you"
-	cont "with ROCK SMASH,"
-	cont "but I have an even"
-	cont "better technique."
-	
-	para "Bring me a GOLD"
-	line "LEAF and I will"
-	cont "teach it to your"
-	cont "#MON."
-	done
-	
-DrainPunchTutorTeach:
-	text "Would you like to"
-	line "teach your #MON"
-	cont "DRAIN PUNCH?"
-	done
-	
-DrainPunchTutorWhichOne:
-	text "Which #MON will"
-	line "I tutor?"
-	done
-	
-DrainPunchTutorThankYou:
-	text "HOO HAH!"
-	
-	para "Your #MON looks"
-	line "stronger already!"
-	done
-	
-DrainPunchTutorRefused:
-	text "WHAT?"
-	
-	para "You dare show"
-	line "disrespect to my"
-	cont "special move?"
-	done
-	
-DrainPunchTutorExplainGoldLeaf:
-	text "I refuse to teach"
-	line "anything without"
-	cont "the proper"
-	cont "payment."
-	done
-	
 DiglettsCave_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event 21,  11, ROUTE_3, 3
 	warp_event  3,  13, ROUTE_3, 4
+	warp_event 19,   3, DRAIN_PUNCH_CHAMBER, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  20,  7, BGEVENT_ITEM, DiglettsCaveHiddenEverstone
+	db 2 ; bg events
+	bg_event 20,  7, BGEVENT_ITEM, DiglettsCaveHiddenEverstone
+	bg_event 19,  3, BGEVENT_UP, DrainPunchChamberBreakableWallScript
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event 13,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltAxel, -1
 	object_event  8, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAdam, -1
 	object_event 14, 14, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBeautyBlaze, -1
 	object_event 11, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route3BlackBelt, EVENT_ROUTE_3_BLACKBELT
 	object_event  6, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveBoulder, -1
-	object_event 19,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DrainPunchTutor, -1

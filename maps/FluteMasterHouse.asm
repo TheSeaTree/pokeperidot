@@ -39,7 +39,7 @@ FluteMasterHouse_MapScripts:
 	writetext FluteBurglarChallengeText
 	waitbutton
 	closetext
-	winlosstext FluteBurglarWinText, -1
+	winlosstext FluteBurglarWinText, 0
 	loadtrainer BURGLAR, HARRIS
 	startbattle
 	reloadmapafterbattle

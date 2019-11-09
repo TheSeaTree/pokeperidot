@@ -196,8 +196,8 @@
 	const MUSIC_MAIL   ; bc
 	const MIRAGE_MAIL  ; bd
 	const ITEM_BE      ; be
-	const ITEM_C3       ; c3
-	const ITEM_DC       ; dc
+	const ITEM_C3      ; c3
+	const ITEM_DC      ; dc
 
 add_tm: MACRO
 if !DEF(TM01)

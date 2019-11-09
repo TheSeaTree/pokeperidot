@@ -195,15 +195,3 @@ LoadEightTimeOfDayBGPalettes:
     call FarCopyWRAM
     scf
     ret
-
-LoadSixTimeOfDayBGPalettes:
-    ld a, [wTimeOfDayPal]
-    and 3
-    ld bc, 6 palettes
-    call AddNTimes
-    ld a, $5
-    ld de, wBGPals1
-    ld bc, 6 palettes
-    call FarCopyWRAM
-    scf
-    ret

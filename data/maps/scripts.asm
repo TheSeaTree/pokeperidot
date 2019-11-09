@@ -114,6 +114,7 @@ INCLUDE "maps/VictoryRoad.asm"
 INCLUDE "maps/Route30Cave1F.asm"
 INCLUDE "maps/Route30CaveB1F.asm"
 INCLUDE "maps/Route9Cave1F.asm"
+INCLUDE "maps/DrainPunchChamber.asm"
 
 
 SECTION "Map Scripts 9", ROMX
@@ -203,6 +204,7 @@ INCLUDE "maps/AzaleaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/AzaleaGym.asm"
 INCLUDE "maps/Route21.asm"
+INCLUDE "maps/Route22.asm"
 
 
 SECTION "Map Scripts 17", ROMX
@@ -260,6 +262,7 @@ INCLUDE "maps/EastForest.asm"
 INCLUDE "maps/RaikouLair.asm"
 INCLUDE "maps/EnteiLair.asm"
 INCLUDE "maps/SuicuneLair.asm"
+INCLUDE "maps/Route9ForestGate.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -320,7 +323,6 @@ INCLUDE "maps/PalerockMountain3F.asm"
 INCLUDE "maps/PalerockMountainOutside.asm"
 INCLUDE "maps/PalerockMountainB1.asm"
 INCLUDE "maps/PalerockMountainStrengthRoom.asm"
-INCLUDE "maps/Route9ForestGate.asm"
 INCLUDE "maps/EcruteakForestGate.asm"
 INCLUDE "maps/Route4ForestGate.asm"
 INCLUDE "maps/Route4AzaleaGate.asm"

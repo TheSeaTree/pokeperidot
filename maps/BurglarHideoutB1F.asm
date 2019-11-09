@@ -45,7 +45,7 @@ BurglarHideoutAbbotScene:
 	writetext SageAbbotChallenge
 	waitbutton
 	closetext
-	winlosstext SageAbbotWinText, -1
+	winlosstext SageAbbotWinText, 0
 	loadtrainer EXECUTIVEM, ABBOT2
 	startbattle
 	reloadmapafterbattle
@@ -126,6 +126,11 @@ BurglarHideoutB1FScientist:
 	closetext
 	turnobject BURGLARHIDEOUTB1F_SCIENTIST, UP
 	scall PlaySecurityAlarm
+	faceplayer
+	opentext 
+	writetext BurglarHideoutB1FScientistWarning
+	waitbutton
+	closetext
 	checkcode VAR_FACING
 	ifequal UP, .FacingUp
 	applymovement BURGLARHIDEOUTB1F_SCIENTIST, ScientistCallsGuardsRight
@@ -153,7 +158,7 @@ BurglarHideoutB1FScientist:
 	writetext BikerGuard1ChallengeText
 	waitbutton
 	closetext
-	winlosstext BikerGuard1WinText, -1
+	winlosstext BikerGuard1WinText, 0
 	loadtrainer BIKER, BRANDON
 	startbattle
 	reloadmapafterbattle
@@ -163,7 +168,7 @@ BurglarHideoutB1FScientist:
 	writetext BikerGuard2ChallengeText
 	waitbutton
 	closetext
-	winlosstext BikerGuard2WinText, -1
+	winlosstext BikerGuard2WinText, 0
 	loadtrainer BIKER, RYAN
 	startbattle
 	reloadmapafterbattle
@@ -173,7 +178,7 @@ BurglarHideoutB1FScientist:
 	writetext BikerGuard3ChallengeText
 	waitbutton
 	closetext
-	winlosstext BikerGuard3WinText, -1
+	winlosstext BikerGuard3WinText, 0
 	loadtrainer BIKER, BAM
 	startbattle
 	reloadmapafterbattle
@@ -216,8 +221,8 @@ TrainerSageLo2:
 SmashWall:
 	jumpstd smashwall
 	
-Route21TMNastyPlot:
-	itemball TM_NASTY_PLOT
+BurglarHideoutPokeFlute:
+	itemball POKE_FLUTE
 	
 ScientistCallsGuardsUp:
 	run_step LEFT
@@ -357,8 +362,10 @@ BurglarHideoutB1FScientistNoticeText:
 	para "You're the kid"
 	line "who beat the boss"
 	cont "up at HELIO TOWN!"
+	done
 	
-	para "You made a big"
+BurglarHideoutB1FScientistWarning:
+	text "You made a big"
 	line "mistake coming"
 	cont "here alone, kid!"
 	done
@@ -510,4 +517,4 @@ BurglarHideoutB1F_MapEvents:
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS
-	object_event  6, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route21TMNastyPlot, EVENT_GOT_TM_NASTY_PLOT
+	object_event  6, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurglarHideoutPokeFlute, EVENT_HIDEOUT_POKE_FLUTE

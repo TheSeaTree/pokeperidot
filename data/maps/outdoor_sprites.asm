@@ -208,6 +208,7 @@ CherrygroveGroupSprites:
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
 	db SPRITE_SUICUNE
+	db SPRITE_BUSH
 	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE

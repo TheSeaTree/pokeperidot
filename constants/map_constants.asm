@@ -77,6 +77,7 @@ ENDM
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
 	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const DIGLETTS_CAVE,                               13,  9 ; 84
+	map_const DRAIN_PUNCH_CHAMBER,							5,  4
 	map_const MOUNT_MOON,                                  15,  9 ; 85
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
@@ -88,7 +89,7 @@ ENDM
 	map_const LOST_LAND,		                           29,  20
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
-	map_const BURGLAR_HIDEOUT_B2F,						   18, 16
+	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
 
 	newgroup                                                      ;  4
 
@@ -292,6 +293,7 @@ ENDM
 	map_const ORCHID_CITY,                                 19, 17
 	map_const DRAGONBREATH_HOUSE,                           4,  4
 	map_const ENTEI_LAIR,									7,  5
+	map_const ROUTE_22,									   19,  8
 
 	newgroup                                                      ; 24
 

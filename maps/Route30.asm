@@ -5,6 +5,12 @@ Route30_MapScripts:
 
 	db 0 ; callbacks
 
+Route30ItemBush:
+	itembush FRUITTREE_ROUTE_30
+
+Route30Brightpowder:
+	itemball BRIGHTPOWDER
+
 Route30_MapEvents:
 	db 0, 0 ; filler
 
@@ -15,4 +21,6 @@ Route30_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event  9, 34, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30ItemBush, -1
+	object_event 30, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Brightpowder, EVENT_ROUTE_30_BRIGHTPOWDER

@@ -28,7 +28,7 @@ SageScript:
 	writetext Burglar1Text
 	waitbutton
 	closetext
-	winlosstext Burglar1WinText, -1
+	winlosstext Burglar1WinText, 0
 	loadtrainer BURGLAR, MARCUS
 	startbattle
 	reloadmapafterbattle
@@ -40,7 +40,7 @@ SageScript:
 	writetext Burglar2Text
 	waitbutton
 	closetext
-	winlosstext Burglar2WinText, -1
+	winlosstext Burglar2WinText, 0
 	loadtrainer BURGLAR, HARVEY
 	startbattle
 	reloadmapafterbattle
@@ -52,7 +52,7 @@ SageScript:
 	writetext Burglar3Text
 	waitbutton
 	closetext
-	winlosstext Burglar3WinText, -1
+	winlosstext Burglar3WinText, 0
 	loadtrainer BURGLAR, MANUEL
 	startbattle
 	reloadmapafterbattle
@@ -64,7 +64,7 @@ SageScript:
 	writetext Burglar4Text
 	waitbutton
 	closetext
-	winlosstext Burglar4WinText, -1
+	winlosstext Burglar4WinText, 0
 	loadtrainer BURGLAR, SHAWN
 	startbattle
 	reloadmapafterbattle
@@ -88,7 +88,7 @@ SageScript:
 	writetext Sage1Text
 	waitbutton
 	closetext
-	winlosstext Sage1WinText, -1
+	winlosstext Sage1WinText, 0
 	loadtrainer EXECUTIVEM, ABBOT
 	startbattle
 	reloadmapafterbattle

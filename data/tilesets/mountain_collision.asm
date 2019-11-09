@@ -154,3 +154,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 99
 	tilecoll WALL, WALL, WALL, WALL ; 9a
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 9b
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 9c
+	tilecoll WALL, WALL, WALL, WALL ; 9d
+	tilecoll TALL_GRASS, TALL_GRASS, TALL_GRASS, TALL_GRASS ; 9e
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9f

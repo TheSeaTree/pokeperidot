@@ -613,3 +613,9 @@ Route30CaveB1F_Blocks:
 
 Route9Cave1F_Blocks:
 	INCBIN "maps/Route9Cave1F.ablk"
+
+DrainPunchChamber_Blocks:
+	INCBIN "maps/DrainPunchChamber.ablk"
+
+Route22_Blocks:
+	INCBIN "maps/Route22.ablk"

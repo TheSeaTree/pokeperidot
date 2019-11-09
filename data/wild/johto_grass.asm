@@ -137,6 +137,60 @@ JohtoGrassWildMons:
 	db 26, PINSIR
 	db 30, PINSIR
 
+	map_id FACTORY_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 27, MAGNEMITE
+	db 29, VOLTORB
+	db 28, PIKACHU
+	db 31, VOLTORB
+	db 30, MAGNETON
+	db 30, PIKACHU
+	db 32, PIKACHU
+	; day
+	db 27, MAGNEMITE
+	db 29, VOLTORB
+	db 28, PIKACHU
+	db 31, VOLTORB
+	db 30, MAGNETON
+	db 30, PIKACHU
+	db 32, PIKACHU
+	; nite
+	db 27, MAGNEMITE
+	db 29, VOLTORB
+	db 28, PIKACHU
+	db 31, VOLTORB
+	db 30, MAGNETON
+	db 30, PIKACHU
+	db 32, PIKACHU
+
+	map_id FACTORY_BACK
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 30, DITTO
+	db 30, DITTO
+	db 29, MAGNEMITE
+	db  5, PORYGON
+	db 30, MAGNETON
+	db 30, PORYGON
+	db 32, PORYGON
+	; day
+	db 30, DITTO
+	db 30, DITTO
+	db 29, MAGNEMITE
+	db  5, PORYGON
+	db 30, MAGNETON
+	db 30, PORYGON
+	db 32, PORYGON
+	; nite
+	db 30, DITTO
+	db 30, DITTO
+	db 29, MAGNEMITE
+	db  5, PORYGON
+	db 30, MAGNETON
+	db 30, PORYGON
+	db 32, PORYGON
+
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

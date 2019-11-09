@@ -165,12 +165,12 @@ LostLand_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  8, 31, ROUTE_12, 3 ;Entrance
+	warp_event  8, 31, ROUTE_16, 1 ;Entrance
 	warp_event 44,  9, CHARCOAL_KILN, 1 ;Puzzle Chamber
 	warp_event  6, 11, CHARCOAL_KILN, 1 ;Unown Chamber, Change the block here to a cave entrance when the Unown are unlocked.
 
-	db 1 ; coord events
-	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist
+	db 0 ; coord events
+;	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist
 
 	db 0 ; bg events
 
