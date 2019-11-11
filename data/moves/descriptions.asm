@@ -1152,8 +1152,8 @@ PursuitDescription:
 	next "switching #MON.@"
 
 RapidSpinDescription:
-	db   "A high-speed"
-	next "spinning attack.@"
+	db   "Removes SPIKES and"
+	next "boosts SPEED.@"
 
 SweetScentDescription:
 	db   "Reduces the foe's"

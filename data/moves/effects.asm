@@ -1678,6 +1678,7 @@ RapidSpin:
 	stab
 	damagevariation
 	checkhit
+	effectchance
 	moveanim
 	failuretext
 	applydamage
@@ -1686,6 +1687,8 @@ RapidSpin:
 	clearhazards
 	checkfaint
 	buildopponentrage
+	speedup
+	statupmessage
 	kingsrock
 	endmove
 
@@ -2154,4 +2157,3 @@ StunSpore:
 	checksafeguard
 	paralyze
 	endmove
-	
