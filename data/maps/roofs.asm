@@ -33,7 +33,7 @@ MapGroupRoofs:
 	db -1             ; 20
 	db -1             ; 21
 	db ROOF_SNOWY     ; 22 (Cianwood)
-	db -1             ; 23
+	db -1             ; 23 (Orchid)
 	db ROOF_AZALEA    ; 24 (New Bark)
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Cherrygrove)

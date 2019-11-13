@@ -1,7 +1,7 @@
 LoadSpecialMapPalette:
-	ld a, [wCurLandmark]
-	cp ORCHID_CITY
-	jr z, .do_nothing
+	ld a, [wMapGroup]
+	cp GROUP_ORCHID_CITY
+	jr z, .volcano
 	ld a, [wMapTileset]
 	cp TILESET_POKECOM_CENTER
 	jr z, .pokecom_2f
@@ -66,6 +66,10 @@ LoadSpecialMapPalette:
 	
 .mountain
 	ld hl, MountainPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.volcano
+	ld hl, VolcanoPalette
 	jp LoadEightTimeOfDayBGPalettes
 	
 .cave
@@ -177,6 +181,9 @@ INCLUDE "gfx/tilesets/mansion_2.pal"
 
 MountainPalette:
 INCLUDE "gfx/tilesets/mountain.pal"
+
+VolcanoPalette:
+INCLUDE "gfx/tilesets/volcano.pal"
 
 CavePalette:
 INCLUDE "gfx/tilesets/cave.pal"

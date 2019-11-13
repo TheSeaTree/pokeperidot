@@ -37,6 +37,7 @@
 	const ROUTE_20          ; 53
 	const BLACKTHORN_CITY   ; 29
 	const ROUTE_21          ; 53
+	const ROUTE_22          ; 53
 	const ORCHID_CITY
 	const ROUTE_15          ; 4d
 	const ROUTE_16          ; 4e

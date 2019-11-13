@@ -41,11 +41,12 @@ Landmarks:
 	landmark  36,  52, Route17Name ; ROUTE_20
 	landmark  36,  60, BlackthornCityName
 	landmark  42,  68, Route18Name ; ROUTE_21
+	landmark  20,  52, Route19Name ; ROUTE_22
 	landmark  20,  52, OrchidCityName
-	landmark  96,  44, Route19Name ; ROUTE_15
-	landmark 100,  58, Route20Name ; ROUTE_16
-	landmark 114,  36, Route21Name ; ROUTE_17
-	landmark 114,  68, Route22Name ; ROUTE_7
+	landmark  96,  44, Route20Name ; ROUTE_15
+	landmark 100,  58, Route21Name ; ROUTE_16
+	landmark 114,  36, Route22Name ; ROUTE_17
+	landmark 114,  68, Route23Name ; ROUTE_7
 	landmark 140,  36, VictoryRoadName
 	landmark 140,  28, IndigoPlateauName
 	landmark  20,  20, BattleTowerName
@@ -112,6 +113,7 @@ Route19Name:         db "ROUTE 19@"
 Route20Name:         db "ROUTE 20@"
 Route21Name:         db "ROUTE 21@"
 Route22Name:         db "ROUTE 22@"
+Route23Name:         db "ROUTE 23@"
 Route30Name:	     db "PAVONA¯OASIS@"
 CarnationZooName:    db "CARNATION¯ZOO@"
 DarkCaveName:        db "DARK CAVE@"
