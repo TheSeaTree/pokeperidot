@@ -166,3 +166,4 @@ MoveEffectsPointers:
 	dw SleepPowder
 	dw PoisonPowder
 	dw StunSpore
+	dw UTurn

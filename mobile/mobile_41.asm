@@ -372,15 +372,6 @@ StubbedTrainerRankings_LinkBattles:
 	ld hl, sTrainerRankingLinkBattles
 	jr StubbedTrainerRankings_Increment3Byte
 
-StubbedTrainerRankings_Splash:
-	ret
-	; Only counts if it’s the player’s turn
-	ldh a, [hBattleTurn]
-	and a
-	ret nz
-	ld hl, sTrainerRankingSplash
-	jr StubbedTrainerRankings_Increment3Byte
-
 StubbedTrainerRankings_TreeEncounters:
 	ret
 	ld hl, sTrainerRankingTreeEncounters

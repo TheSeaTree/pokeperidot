@@ -110,6 +110,8 @@ BattleCommand_Teleport:
 	ld a, [wCurBattleMon]
 	ld c, a
 .random_loop_trainer_playeristarget
+
+.PlayerUTurn:
 ; Transition into switchmon menu
 	call LoadStandardMenuHeader
 	farcall SetUpBattlePartyMenu_NoLoop
@@ -154,6 +156,7 @@ BattleCommand_Teleport:
 	ld b, a
 	ld a, [wCurOTMon]
 	ld c, a
+
 ; select a random enemy mon to switch to
 .random_loop_trainer
 	call BattleRandom

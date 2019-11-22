@@ -220,6 +220,7 @@ ButterfreeEvosAttacks:
 	db 29, WHIRLWIND
 	db 31, QUIVER_DANCE
 	db 35, BUG_BUZZ
+	db 40, U_TURN
 	db 43, RAZOR_WIND
 	db 0 ; no more level-up moves
 
@@ -250,6 +251,7 @@ BeedrillEvosAttacks:
 	db 32, TWINEEDLE
 	db 35, SLUDGE_BOMB
 	db 38, OUTRAGE
+	db 40, U_TURN
 	db 44, BUG_BUZZ
 	db 0 ; no more level-up moves
 
@@ -622,6 +624,7 @@ ZubatEvosAttacks:
 	db 11, BITE
 	db 13, WING_ATTACK
 	db 17, CONFUSE_RAY
+	db 19, U_TURN
 	db 23, SWIFT
 	db 25, SLUDGE
 	db 29, MEAN_LOOK
@@ -639,6 +642,7 @@ GolbatEvosAttacks:
 	db 11, BITE
 	db 13, WING_ATTACK
 	db 17, CONFUSE_RAY
+	db 19, U_TURN
 	db 24, SWIFT
 	db 27, SLUDGE
 	db 32, MEAN_LOOK
@@ -870,7 +874,8 @@ MankeyEvosAttacks:
 	db 15, SEISMIC_TOSS
 	db 19, SWAGGER
 	db 22, FAINT_ATTACK
-	db 29, SCREECH
+	db 26, SCREECH
+	db 29, U_TURN
 	db 33, CROSS_CHOP
 	db 40, THRASH
 	db 36, SUBMISSION
@@ -889,7 +894,8 @@ PrimeapeEvosAttacks:
 	db 15, SEISMIC_TOSS
 	db 19, SWAGGER
 	db 22, FAINT_ATTACK
-	db 30, SCREECH
+	db 26, SCREECH
+	db 30, U_TURN
 	db 35, CROSS_CHOP
 	db 41, SUBMISSION
 	db 47, THRASH
@@ -1937,7 +1943,7 @@ ScytherEvosAttacks:
 	db 13, FALSE_SWIPE
 	db 21, AGILITY
 	db 25, WING_ATTACK
-	db 29, CUT
+	db 29, U_TURN
 	db 33, RAZOR_WIND
 	db 37, DOUBLE_TEAM
 	db 41, X_SCISSOR
@@ -2267,6 +2273,7 @@ ArticunoEvosAttacks:
 	db 25, AGILITY
 	db 37, MIND_READER
 	db 49, ICE_BEAM
+	db 55, U_TURN
 	db 61, REFLECT
 	db 73, BLIZZARD
 	db 92, HURRICANE
@@ -2280,6 +2287,7 @@ ZapdosEvosAttacks:
 	db 25, AGILITY
 	db 37, PROTECT
 	db 49, DRILL_PECK
+	db 55, U_TURN
 	db 61, LIGHT_SCREEN
 	db 73, THUNDER
 	db 92, HURRICANE
@@ -2293,6 +2301,7 @@ MoltresEvosAttacks:
 	db 25, AGILITY
 	db 37, ENDURE
 	db 49, FLAMETHROWER
+	db 55, U_TURN
 	db 61, SAFEGUARD
 	db 73, SKY_ATTACK
 	db 92, HURRICANE
@@ -2382,10 +2391,11 @@ MewEvosAttacks:
 	db 10, METRONOME
 	db 30, PSYCHIC_M
 	db 40, BARRIER
-	db 50, ANCIENTPOWER
-	db 60, AMNESIA
-	db 70, BATON_PASS
-	db 80, NASTY_PLOT
+	db 50, U_TURN
+	db 60, ANCIENTPOWER
+	db 70, AMNESIA
+	db 80, BATON_PASS
+	db 90, NASTY_PLOT
 	db 0 ; no more level-up moves
 
 ChikoritaEvosAttacks:
@@ -2703,6 +2713,7 @@ CrobatEvosAttacks:
 	db 11, BITE
 	db 13, WING_ATTACK
 	db 17, CONFUSE_RAY
+	db 19, U_TURN
 	db 19, RAZOR_WIND
 	db 24, SWIFT
 	db 27, SLUDGE
@@ -2986,6 +2997,7 @@ HoppipEvosAttacks:
 	db 22, LEECH_SEED
 	db 25, MEGA_DRAIN
 	db 28, GUST
+	db 32, U_TURN
 	db 37, GIGA_DRAIN
 	db 40, RAZOR_WIND
 	db 0 ; no more level-up moves
@@ -3006,6 +3018,7 @@ SkiploomEvosAttacks:
 	db 24, LEECH_SEED
 	db 28, MEGA_DRAIN
 	db 32, GUST
+	db 38, U_TURN
 	db 44, GIGA_DRAIN
 	db 48, RAZOR_WIND
 	db 0 ; no more level-up moves
@@ -3025,6 +3038,7 @@ JumpluffEvosAttacks:
 	db 24, LEECH_SEED
 	db 29, MEGA_DRAIN
 	db 34, GUST
+	db 40, U_TURN
 	db 49, GIGA_DRAIN
 	db 54, RAZOR_WIND
 	db 0 ; no more level-up moves
@@ -3089,6 +3103,7 @@ YanmaEvosAttacks:
 	db 28, SUPERSONIC
 	db 30, PURSUIT
 	db 33, ANCIENTPOWER
+	db 35, U_TURN
 	db 38, HYPNOSIS
 	db 43, WING_ATTACK
 	db 46, SCREECH
@@ -3280,6 +3295,7 @@ GligarEvosAttacks:
 	db 13, HARDEN
 	db 20, QUICK_ATTACK
 	db 28, FAINT_ATTACK
+	db 30, U_TURN
 	db 36, CUT
 	db 40, X_SCISSOR
 	db 44, SCREECH
@@ -3348,7 +3364,7 @@ ScizorEvosAttacks:
 	db 18, FALSE_SWIPE
 	db 24, AGILITY
 	db 30, METAL_CLAW
-	db 36, CUT
+	db 36, U_TURN
 	db 41, X_SCISSOR
 	db 42, SWORDS_DANCE
 	db 48, DOUBLE_TEAM
@@ -3669,17 +3685,18 @@ TangrowthEvosAttacks:
 	db 0 ; no more level-up moves
 
 GreminiEvosAttacks:
-	db 0 ; no more evolutions
-	db 1, DOUBLE_TEAM
-	db 1, POUND
-	db 5, DISABLE
-	db 9, FORESIGHT
+	db  0 ; no more evolutions
+	db  1, DOUBLE_TEAM
+	db  1, POUND
+	db  5, DISABLE
+	db  9, FORESIGHT
 	db 14, LICK
 	db 17, CONFUSE_RAY
 	db 20, MEAN_LOOK
 	db 23, FAINT_ATTACK
 	db 27, PURSUIT
 	db 30, CURSE
+	db 36, RECOVER
 	db 40, SHADOW_BALL
 	db 46, DESTINY_BOND
 	db 0 ; no more level-up moves
@@ -3887,6 +3904,7 @@ CelebiEvosAttacks:
 	db 30, FUTURE_SIGHT
 	db 40, BATON_PASS
 	db 50, PERISH_SONG
+	db 60, U_TURN
 	db 0 ; no more level-up moves
 	
 OctankEvosAttacks:

@@ -945,6 +945,18 @@ TeleportOutText:
 	line "teleported away!"
 	prompt
 	
+UTurnOutPlayerText:
+	text "<USER>"
+	line "returned to"
+	cont "<PLAYER>"
+	prompt
+	
+UTurnOutEnemyText:
+	text "<USER>"
+	line "returned to"
+	cont "<ENEMY>"
+	prompt	
+	
 TeleportInText:
 	text "<USER>"
 	line "took its place!"

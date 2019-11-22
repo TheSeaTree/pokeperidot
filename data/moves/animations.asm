@@ -218,7 +218,7 @@ BattleAnimations::
 	dw BattleAnim_HealBell
 	dw BattleAnim_Return
 	dw BattleAnim_Present
-	dw BattleAnim_Frustration
+	dw BattleAnim_UTurn
 	dw BattleAnim_Safeguard
 	dw BattleAnim_PainSplit
 	dw BattleAnim_SacredFire
@@ -281,6 +281,7 @@ BattleAnimations::
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_ThrowRock
 	dw BattleAnim_ThrowBait
+	dw BattleAnim_ShowMon
 
 BattleAnim_0:
 BattleAnim_MirrorMove:
@@ -424,6 +425,10 @@ BattleAnim_ThrowBait:
 	anim_sound 0, 0, SFX_KINESIS
 	anim_obj ANIM_OBJ_SAFARI_BAIT, 64, 88, $6c
 	anim_wait 32
+	anim_ret
+
+BattleAnim_ShowMon:
+	anim_call BattleAnim_ShowMon_1
 	anim_ret
 
 BattleAnim_SendOutMon:
@@ -4018,27 +4023,15 @@ BattleAnim_Present:
 	anim_wait 128
 	anim_ret
 
-BattleAnim_Frustration:
-	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 0, SFX_KINESIS_2
-	anim_obj ANIM_OBJ_ANGER, 72, 80, $0
-	anim_wait 40
+BattleAnim_UTurn:
 	anim_1gfx ANIM_GFX_HIT
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_26, $0, $1, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, 120, 48, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, 152, 48, $0
-	anim_wait 8
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, 136, 48, $0
-	anim_wait 8
+	anim_sound 0, 1, SFX_POUND
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 16
 	anim_incbgeffect ANIM_BG_26
 	anim_wait 1
-	anim_call BattleAnim_ShowMon_0
+	anim_bgeffect ANIM_BG_27, $0, $1, $0
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Safeguard:

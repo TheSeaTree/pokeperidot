@@ -181,3 +181,4 @@ BattleCommandPointers:
 	dw BattleCommand_CheckGrassType
 	dw BattleCommand_Coil
 	dw BattleCommand_Growth
+	dw BattleCommand_UTurn

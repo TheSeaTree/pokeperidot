@@ -182,6 +182,7 @@ ENDM
 	command checkgrasstype
 	command coil
 	command growth
+	command uturn
 
 	enum_start $fe
 	command endturn                 ; fe

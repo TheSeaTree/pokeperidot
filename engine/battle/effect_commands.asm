@@ -6464,6 +6464,9 @@ BattleCommand_CheckSafeguard:
 	call StdBattleTextBox
 	jp EndMoveEffect
 
+
+INCLUDE "engine/battle/move_effects/uturn.asm"
+
 INCLUDE "engine/battle/move_effects/baton_pass.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
@@ -6566,6 +6569,13 @@ BattleCommand_TimeBasedHealContinue:
 	dw GetQuarterMaxHP
 	dw GetHalfMaxHP
 	dw GetMaxHP
+	
+CantRaiseStats:
+	ld b, ABILITY + 1
+	call GetStatName
+	call AnimateFailedMove
+	ld hl, WontRiseAnymoreText
+	jp StdBattleTextBox
 
 INCLUDE "engine/battle/move_effects/hidden_power.asm"
 

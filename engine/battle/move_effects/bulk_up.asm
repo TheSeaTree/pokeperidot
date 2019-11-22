@@ -33,9 +33,6 @@ BattleCommand_BulkUp:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-
-	ld b, ABILITY + 1
-	call GetStatName
-	call AnimateFailedMove
-	ld hl, WontRiseAnymoreText
-	jp StdBattleTextBox
+	call CantRaiseStats
+	ret
+	

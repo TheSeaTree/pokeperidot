@@ -216,7 +216,7 @@ MoveNames::
 	db "HEAL BELL@"
 	db "RETURN@"
 	db "PRESENT@"
-	db "FRUSTRATION@"
+	db "U-TURN@"
 	db "SAFEGUARD@"
 	db "PAIN SPLIT@"
 	db "SACRED FIRE@"

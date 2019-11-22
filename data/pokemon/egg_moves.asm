@@ -43,6 +43,7 @@ PidgeyEggMoves:
 	db STEEL_WING
 	db SKY_ATTACK
 	db SING
+	db U_TURN
 	db -1 ; end
 
 RinringEggMoves:
@@ -57,6 +58,7 @@ RinringEggMoves:
 	db COUNTER
 	db REVERSAL
 	db DESTINY_BOND
+	db U_TURN
 	db -1 ; end
 
 SpearowEggMoves:
@@ -69,6 +71,7 @@ SpearowEggMoves:
 	db WHIRLWIND
 	db STEEL_WING
 	db RAZOR_WIND
+	db U_TURN
 	db -1 ; end
 
 EkansEggMoves:
@@ -178,6 +181,7 @@ VenonatEggMoves:
 	db BATON_PASS
 	db SCREECH
 	db GIGA_DRAIN
+	db U_TURN
 	db -1 ; end
 
 DiglettEggMoves:
@@ -200,6 +204,7 @@ MeowthEggMoves:
 	db FLAME_WHEEL
 	db COUNTER
 	db REVERSAL
+	db U_TURN
 	db -1 ; end
 
 SMolaEggMoves:
@@ -293,6 +298,7 @@ FarfetchDEggMoves:
 	db MUD_SLAP
 	db RECOVER
 	db EXPLOSION
+	db U_TURN
 	db -1 ; end
 
 DoduoEggMoves:
@@ -598,6 +604,7 @@ SentretEggMoves:
 	db FOCUS_ENERGY
 	db REVERSAL
 	db IRON_TAIL
+	db U_TURN
 	db -1 ; end
 
 HoothootEggMoves:
@@ -672,6 +679,7 @@ NatuEggMoves:
 	db FUTURE_SIGHT
 	db RAPID_SPIN
 	db DESTINY_BOND
+	db U_TURN
 	db -1 ; end
 
 MareepEggMoves:
@@ -719,6 +727,7 @@ AipomEggMoves:
 	db AGILITY
 	db SPITE
 	db DOUBLESLAP
+	db U_TURN
 	db -1 ; end
 
 YanmaEggMoves:
@@ -794,6 +803,7 @@ GligarEggMoves:
 	db AGILITY
 	db BATON_PASS
 	db DOUBLE_EDGE
+	db U_TURN
 	db -1 ; end
 
 SnubbullEggMoves:
@@ -942,7 +952,6 @@ StantlerEggMoves:
 	db -1 ; end
 
 GreminiEggMoves:
-	db RECOVER
 	db DISABLE
 	db FORESIGHT
 	db PURSUIT

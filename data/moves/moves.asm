@@ -229,7 +229,7 @@ Moves: ; 41afb
 	move HEAL_BELL,    EFFECT_HEAL_BELL,           0, NORMAL,   100,  5,   0
 	move RETURN,       EFFECT_RETURN,              1, NORMAL,   100, 20,   0
 	move PRESENT,      EFFECT_PRESENT,             1, NORMAL,    90, 15,   0
-	move FRUSTRATION,  EFFECT_SPLASH,              0, NORMAL,   100, 40,   0
+	move U_TURN, 	   EFFECT_U_TURN,             70, BUG, 	    100, 20,   0
 	move SAFEGUARD,    EFFECT_SAFEGUARD,           0, NORMAL,   100, 25,   0
 	move PAIN_SPLIT,   EFFECT_PAIN_SPLIT,          0, NORMAL,   100, 20,   0
 	move SACRED_FIRE,  EFFECT_SACRED_FIRE,       100, FIRE,      95,  5,  50
@@ -240,7 +240,7 @@ Moves: ; 41afb
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, NORMAL,   100, 40,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,   100,  5,   0
 	move PURSUIT,      EFFECT_PURSUIT,            40, DARK,     100, 20,   0
-	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         20, NORMAL,   100, 40, 100
+	move RAPID_SPIN,   EFFECT_RAPID_SPIN,         50, NORMAL,   100, 40, 100
 	move SWEET_SCENT,  EFFECT_EVASION_DOWN,        0, NORMAL,   100, 20,   0
 	move IRON_TAIL,    EFFECT_DEFENSE_DOWN_HIT,  100, STEEL,     75, 15,  30
 	move METAL_CLAW,   EFFECT_ATTACK_UP_HIT,      50, STEEL,     95, 35,  10

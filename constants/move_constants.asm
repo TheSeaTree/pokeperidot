@@ -223,7 +223,7 @@
 	const HEAL_BELL    ; d7
 	const RETURN       ; d8
 	const PRESENT      ; d9
-	const FRUSTRATION  ; da
+	const U_TURN       ; da
 	const SAFEGUARD    ; db
 	const PAIN_SPLIT   ; dc
 	const SACRED_FIRE  ; dd
@@ -291,6 +291,8 @@ NUM_ATTACKS EQU const_value + -1
 ; safari anims
 	const ANIM_THROW_ROCK
 	const ANIM_THROW_BAIT
+; u-turn anims
+	const ANIM_SHOW_MON
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def
