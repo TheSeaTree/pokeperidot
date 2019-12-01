@@ -6,7 +6,7 @@
 	db WATER, FIRE ; type
 	db 45 ; catch rate
 	db 88 ; base exp
-	db NO_ITEM, NO_ITEM ; items
+	db NO_ITEM, CHARCOAL ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
