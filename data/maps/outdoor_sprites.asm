@@ -385,6 +385,7 @@ BlackthornGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_BIKER
 	; 9 of max 9 walking sprites
+	db SPRITE_PHARMACIST
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db SPRITE_BIG_SNORLAX

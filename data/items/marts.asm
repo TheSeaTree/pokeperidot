@@ -1,7 +1,6 @@
 Marts:
 ; entries correspond to MART_* constants
-	dw MartCherrygrove
-	dw MartCherrygroveDex
+	dw MartOrchid
 	dw MartViolet
 	dw MartAzalea
 	dw MartCianwood
@@ -40,17 +39,8 @@ Marts:
 	dw MartUnderground
 .End
 
-MartCherrygrove:
+MartOrchid:
 	db 4 ; # items
-	db POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
-	db -1 ; end
-
-MartCherrygroveDex:
-	db 5 ; # items
-	db POKE_BALL
 	db POTION
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -208,12 +198,14 @@ MartMahogany4:
 	db -1
 
 MartBlackthorn:
-	db 7 ; # items
+	db 9 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
 	db MAX_POTION
 	db FULL_HEAL
+	db ETHER
+	db MAX_ETHER
 	db REVIVE
 	db MAX_REPEL
 	db -1 ; end

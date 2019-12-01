@@ -29,7 +29,6 @@ ENDM
 	newgroup                                                      ;  1
 
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
-	map_const OLIVINE_GYM,                                  5,  6 ;  2
 	map_const OLIVINE_MART,                                 6,  4 ;  8
 	map_const OLIVINE_CITY,                                24, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
@@ -107,8 +106,7 @@ ENDM
 
 	newgroup                                                      ;  5
 
-	map_const BLACKTHORN_GYM_1F,                            8, 12 ;  1
-	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
+	map_const OLIVINE_GYM,                                  5,  6 ;  2
 	map_const BLACKTHORN_MART,                              6,  4 ;  5
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
 	map_const BLACKTHORN_CITY,                             32, 16 ; 10
@@ -288,9 +286,12 @@ ENDM
 
 	newgroup                                                      ; 23
 
-	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
+	map_const BLACKTHORN_GYM_1F,                            8, 12 ;  1
+	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
+	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
+	map_const ORCHID_MART,                                  6,  4 ;  4
 	map_const DRAGONBREATH_HOUSE,                           4,  4
 	map_const ENTEI_LAIR,									7,  5
 	map_const ROUTE_22,									   19,  8
@@ -299,6 +300,7 @@ ENDM
 
 	map_const ROUTE_1,                                     33, 17 ;  1
 	map_const NEW_BARK_TOWN,                               12, 11 ;  4
+	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
@@ -317,7 +319,6 @@ ENDM
 	map_const ROUTE_1_CHERRYGROVE_GATE,                     5,  4 ; 14
 	map_const ROUTE_2,                                     23, 20 ;  1
 	map_const CHERRYGROVE_CITY,                            17, 16 ;  3
-	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  5
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  6
 	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  7

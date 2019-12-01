@@ -332,7 +332,7 @@ ENDM
 	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route1CherrygroveGate, ROUTE_1_CHERRYGROVE_GATE, $00, 0
 	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
-	map_attributes CherrygroveMart, CHERRYGROVE_MART, $00, 0
+	map_attributes OrchidMart, ORCHID_MART, $00, 0
 	map_attributes CherrygrovePokecenter1F, CHERRYGROVE_POKECENTER_1F, $00, 0
 	map_attributes CherrygroveGymSpeechHouse, CHERRYGROVE_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes GuideGentsHouse, GUIDE_GENTS_HOUSE, $00, 0
@@ -420,3 +420,4 @@ ENDM
 	map_attributes Route30CaveB1F, ROUTE_30_CAVE_B1F, $09, 0
 	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0
 	map_attributes DrainPunchChamber, DRAIN_PUNCH_CHAMBER, $09, 0
+	map_attributes OrchidPokecenter1F, ORCHID_POKECENTER_1F, $00, 0

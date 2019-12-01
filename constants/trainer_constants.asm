@@ -74,6 +74,7 @@ KRIS EQU __enum__
 	const RIVAL1_5_TOTODILE
 
 	trainerclass POKEMON_PROF ; a
+	const TEST
 
 	trainerclass WILL ; b
 	const WILL1
@@ -154,9 +155,11 @@ KRIS EQU __enum__
 	trainerclass COOLTRAINERM ; 1b
 	const LEON
 	const LUCAS
+	const BRUCE
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
+	const ASHLEY
 	
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -271,10 +274,6 @@ KRIS EQU __enum__
 	const CARTER
 	const ZEKE
 	const VINCENT
-	const MARK
-	const GERALD
-	const DENNIS
-	const RODGER
 	
 	trainerclass BIKER ; 2d
 	const JERRY
@@ -285,6 +284,8 @@ KRIS EQU __enum__
 	const BRANDON
 	const RYAN
 	const BAM
+	const CHASE
+	const LARS
 	
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -363,9 +364,9 @@ KRIS EQU __enum__
 	const LESTER
 	const DOUG
 	const RICHARD
+	const GERALD
 	
 	trainerclass KIMONO_GIRL ; 3c
-	const TEST
 	
 	trainerclass TWINS ; 3d
 	const FAYEANDMAE1

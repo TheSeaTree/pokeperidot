@@ -16,8 +16,8 @@ TrainerHikerVincent:
 	closetext
 	end	
 	
-TrainerHikerMark:
-	trainer HIKER, MARK, EVENT_BEAT_HIKER_MARK, BlackthornCave2FTrainerText, BlackthornCave2FTrainerWinText, 0, .Script
+TrainerHikerZeke:
+	trainer HIKER, ZEKE, EVENT_BEAT_HIKER_ZEKE, BlackthornCave2FTrainerText, BlackthornCave2FTrainerWinText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -26,6 +26,17 @@ TrainerHikerMark:
 	waitbutton
 	closetext
 	end	
+	
+TrainerPokefanMGerald:
+	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, BlackthornCaveB1FTrainerText, BlackthornCaveB1FTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BlackthornCaveB1FTrainerAfterText
+	waitbutton
+	closetext
+	end
 	
 BlackthornCave2FBoulder:
 	jumpstd strengthboulder
@@ -54,7 +65,8 @@ BlackthornCave2F_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	object_event  5,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerHikerVincent, -1
-	object_event 11,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerHikerMark, -1
+	db 4 ; object events
+	object_event  5,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerHikerVincent, -1
+	object_event 14,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanMGerald, -1
+	object_event 11,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerHikerZeke, -1
 	object_event 16,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornCave2FBoulder, -1

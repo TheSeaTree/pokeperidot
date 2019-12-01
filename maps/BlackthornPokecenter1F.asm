@@ -9,18 +9,21 @@ BlackthornPokecenter1F_MapScripts:
 CreepyLady:
 ;	checkcoins 1
 ;	ifequal HAVE_MORE, .skip
-;	faceplayer
-	opentext
-	givepoke KABUTO, 100
-	closetext
+	faceplayer
+;	opentext
+;	givepoke MEW, 80
+;	givepoke MEW, 80
+;	closetext
 ;	givecoins 9999
 ;	giveitem MASTER_BALL
 ;	giveitem MEGAVITAMIN
 ;	giveitem RARE_CANDY
-;	loadwildmon CLEFAIRY, 5
-;	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
-;	startbattle
-;	reloadmapafterbattle
+	loadwildmon SUICUNE, 100
+	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
+;	winlosstext CoinText, CoinText
+;	loadtrainer POKEMON_PROF, TEST
+	startbattle
+	reloadmapafterbattle
 	end
 	
 .skip
@@ -44,7 +47,7 @@ BlackthornPokecenter1F_MapEvents:
 
 	db 3 ; warp events
 	warp_event  3,  7, BLACKTHORN_CITY, 2
-	warp_event  4,  7, BURGLAR_HIDEOUT_B2F, 2
+	warp_event  4,  7, ORCHID_CITY, 1
 ;	warp_event  4,  7, BLACKTHORN_CITY, 2
 	warp_event  0,  7, POKECENTER_2F, 1	
 

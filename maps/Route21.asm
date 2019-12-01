@@ -1,7 +1,10 @@
 	const_def 2 ; object constants
-	const ROUTE21_BIKER
+	const ROUTE21_BIKER1
+	const ROUTE21_BIKER2
 	const ROUTE21_BURGLAR1
 	const ROUTE21_BURGLAR2
+	const ROUTE21_BURGLAR3
+	const ROUTE21_BIKER3
 
 Route21_MapScripts:
 	db 0 ; scene scripts
@@ -11,7 +14,7 @@ Route21_MapScripts:
 Route21Biker:
 	jumptext Route21BikerText
 	
-Route21Burglar:
+Route21Burglars:
 	turnobject ROUTE21_BURGLAR1, LEFT
 	opentext
 	writetext Route21Burglar1Text
@@ -22,7 +25,37 @@ Route21Burglar:
 	writetext Route21Burglar2Text
 	waitbutton
 	closetext
-	done
+	end
+	
+Route21Burglars2:
+	opentext
+	writetext Route21Burglar3Text
+	waitbutton
+	closetext
+	opentext
+	writetext Route21Biker2Text
+	waitbutton
+	closetext
+	opentext
+	writetext Route21Burglar3BeginStoryText
+	waitbutton
+	closetext
+	opentext
+	writetext Route21Biker2ConcernedText
+	waitbutton
+	closetext
+	opentext 
+	writetext Route21Burglar3ConfideText
+	wait 4
+	closetext
+	faceplayer
+	opentext
+	writetext Route21Burglar3NoticeText
+	waitbutton
+	closetext
+	turnobject ROUTE21_BURGLAR3, DOWN
+	turnobject ROUTE21_BIKER3, UP
+	end
 	
 TrainerBikerFlynn:
 	trainer BIKER, FLYNN, EVENT_BEAT_BIKER_FLYNN, BikerFlynnText, BikerFlynnWinText, 0, .Script
@@ -34,7 +67,7 @@ TrainerBikerFlynn:
 	waitbutton
 	closetext
 	end	
-	
+
 Route21BikerText:
 	text "Bet you'd like to"
 	line "check out the path"
@@ -65,6 +98,47 @@ Route21Burglar2Text:
 	cont "of the deal while"
 	cont "we scope this"
 	cont "place out."
+	done
+	
+Route21Burglar3Text:
+	text "You ever wonder"
+	line "why we're here?"
+	done
+	
+Route21Biker2Text:
+	text "What do you mean?"
+	
+	para "We're guards."
+	
+	para "We make sure this"
+	line "road is blocked."
+	done
+	
+Route21Burglar3BeginStoryText:
+	text "Yeah, but is that"
+	line "it? There could be"
+	cont "so much more…"
+	
+	para "Frankly, it's a"
+	line "but dull…"
+	done
+	
+Route21Biker2ConcernedText:
+	text "You feeling okay,"
+	line "man? You're not"
+	cont "usually like this."
+	done
+	
+Route21Burglar3ConfideText:
+	text "Yeah, it's just I"
+	line "worry sometimes"
+	cont "that we're only N-"
+	done
+	
+Route21Burglar3NoticeText:
+	text "Hey! Quit eaves-"
+	line "dropping! This is"
+	cont "a personal matter!"
 	done
 	
 BikerFlynnText:
@@ -103,8 +177,10 @@ Route21_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
 	object_event 31, 11, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21Biker, EVENT_FLUTE_HIDEOUT_OPEN
 	object_event 18, 16, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerFlynn, EVENT_CLEARED_BURGLAR_HIDEOUT
-	object_event 34,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglar, EVENT_CLEARED_CHURCH
-	object_event 35,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglar, EVENT_CLEARED_CHURCH
+	object_event 34,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars, EVENT_CLEARED_CHURCH
+	object_event 33,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars, EVENT_CLEARED_CHURCH
+	object_event 38,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars2, EVENT_FLUTE_HIDEOUT_OPEN
+	object_event 38,  4, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21Burglars2, EVENT_FLUTE_HIDEOUT_OPEN

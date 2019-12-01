@@ -146,7 +146,7 @@ PewterMart_Blocks:
 FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 SaffronMart_Blocks:
-CherrygroveMart_Blocks:
+OrchidMart_Blocks:
 CianwoodMart_Blocks:
 GoldenrodMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
@@ -174,6 +174,7 @@ ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CherrygrovePokecenter1F_Blocks:
 CarnationPokecenter1F_Blocks:
+OrchidPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
 GoldenrodDeptStore1F_Blocks:

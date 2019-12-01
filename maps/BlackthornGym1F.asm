@@ -161,7 +161,7 @@ BlackthornGym1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 7, 21, ROUTE_20, 1
+	warp_event 7, 21, ORCHID_CITY, 4
 
 	db 0 ; coord events
 

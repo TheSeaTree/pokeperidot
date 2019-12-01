@@ -1,7 +1,13 @@
 LoadSpecialMapPalette:
 	ld a, [wMapGroup]
 	cp GROUP_ORCHID_CITY
+	jr nz, .continue
+	ld a, [wMapNumber]
+	cp MAP_ORCHID_CITY
 	jr z, .volcano
+	cp MAP_ROUTE_22
+	jr z, .volcano
+.continue
 	ld a, [wMapTileset]
 	cp TILESET_POKECOM_CENTER
 	jr z, .pokecom_2f

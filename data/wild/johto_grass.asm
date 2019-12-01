@@ -1183,4 +1183,30 @@ JohtoGrassWildMons:
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
 
+	map_id BLACKTHORN_CAVE_B1F
+	db 2 percent, 2 percent, 2 percent
+	db 35, GRAVELER
+	db 35, GRAVELER
+	db 35, ONIX
+	db 35, GOLBAT
+	db 35, GOLBAT
+	db 35, RHYHORN
+	db 35, RHYHORN
+	; day
+	db 35, GRAVELER
+	db 35, GRAVELER
+	db 35, ONIX
+	db 35, GOLBAT
+	db 35, GOLBAT
+	db 35, RHYHORN
+	db 35, RHYHORN
+	; nite
+	db 35, GRAVELER
+	db 35, GRAVELER
+	db 35, ONIX
+	db 35, GOLBAT
+	db 35, GOLBAT
+	db 35, RHYHORN
+	db 35, RHYHORN
+
 	db -1 ; end

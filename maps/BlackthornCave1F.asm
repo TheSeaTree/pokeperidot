@@ -5,8 +5,8 @@ BlackthornCave1F_MapScripts:
 
 	db 0 ; callbacks
 	
-TrainerHikerZeke:
-	trainer HIKER, ZEKE, EVENT_BEAT_HIKER_ZEKE, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
+TrainerCooltrainerMBruce:
+	trainer COOLTRAINERM, BRUCE, EVENT_BEAT_COOLTRAINERM_BRUCE, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -16,8 +16,8 @@ TrainerHikerZeke:
 	closetext
 	end
 
-TrainerHikerRodger:
-	trainer HIKER, RODGER, EVENT_BEAT_HIKER_RODGER, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
+TrainerCooltrainerFAshley:
+	trainer COOLTRAINERF, ASHLEY, EVENT_BEAT_COOLTRAINERF_ASHLEY, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -61,7 +61,7 @@ BlackthornCave1F_MapEvents:
 
 	db 5 ; object events
 	object_event 14, 17, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  8,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 14, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerHikerZeke, -1
-	object_event 27,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerHikerRodger, -1
+	object_event  8,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_JASMINE
+	object_event 14, 15, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerMBruce, -1
+	object_event 27,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFAshley, -1
 	object_event 24,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BlackthornCave1FBoulder, -1
