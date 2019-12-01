@@ -16,7 +16,7 @@ Moves: ; 41afb
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         70, FIGHTING, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, FAIRY,     85, 10,   0
 	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,    85, 15,   0
-	move DREAD_STORM,  EFFECT_RAMPAGE,           120, FLYING,   100, 10,   0
+	move DREAD_STORM,  EFFECT_SPEED_UP_HIT,       85, FLYING,    95,  5,  30
 	move PAY_DAY,      EFFECT_PAY_DAY,            60, NORMAL,   100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,     100, 15,  10
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,      100, 15,  10

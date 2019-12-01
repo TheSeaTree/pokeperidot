@@ -803,7 +803,6 @@ GligarEggMoves:
 	db AGILITY
 	db BATON_PASS
 	db DOUBLE_EDGE
-	db U_TURN
 	db -1 ; end
 
 SnubbullEggMoves:
