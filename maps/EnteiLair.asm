@@ -10,7 +10,7 @@ Entei:
 	cry ENTEI
 	waitsfx
 	loadwildmon ENTEI, 30
-	writecode VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear ENTEILAIR_ENTEI

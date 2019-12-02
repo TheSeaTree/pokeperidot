@@ -14,7 +14,7 @@ Suicune:
 	waitbutton
 	closetext
 	loadwildmon SUICUNE, 30
-	writecode VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear SUICUNELAIR_SUICUNE

@@ -14,7 +14,7 @@ Raikou:
 	waitbutton
 	closetext
 	loadwildmon RAIKOU, 30
-	writecode VAR_BATTLETYPE, BATTLETYPE_SUICUNE
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear RAIKOULAIR_RAIKOU

@@ -3819,7 +3819,7 @@ TryToRunAwayFromBattle:
 	jp z, .cant_escape
 	cp BATTLETYPE_SHINY
 	jp z, .cant_escape
-	cp BATTLETYPE_SUICUNE
+	cp BATTLETYPE_LEGENDARY
 	jp z, .cant_escape
 	cp BATTLETYPE_BOSS
 	jp z, .cant_escape
@@ -6316,7 +6316,8 @@ LoadEnemyMon:
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItem1]
 	jr z, .UpdateItem
-	cp BATTLETYPE_SUICUNE
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
 	ld a, [wBaseItem1]
 	jr z, .UpdateItem
 	ld a, [wBattleType]

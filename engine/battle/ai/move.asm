@@ -9,7 +9,7 @@ AIChooseMove:
 	ld a, [wBattleMode]
 	cp BATTLETYPE_BOSS
 	jp z, .TrainerOrBoss
-	cp BATTLETYPE_SUICUNE
+	cp BATTLETYPE_LEGENDARY
 	jp z, .TrainerOrBoss
 
 	ld a, [wLinkMode]

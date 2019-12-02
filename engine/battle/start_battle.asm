@@ -42,7 +42,7 @@ PlayBattleMusic:
 	call MaxVolume
 
 	ld a, [wBattleType]
-	cp BATTLETYPE_SUICUNE
+	cp BATTLETYPE_LEGENDARY
 	ld de, MUSIC_SUICUNE_BATTLE
 	jp z, .done
 	cp BATTLETYPE_ROAMING

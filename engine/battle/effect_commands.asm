@@ -4739,11 +4739,6 @@ BattleCommand_AllStatsUp:
 	call BattleCommand_DefenseUp
 	call BattleCommand_StatUpMessage
 
-; Speed
-	call ResetMiss
-	call BattleCommand_SpeedUp
-	call BattleCommand_StatUpMessage
-
 ; Special Attack
 	call ResetMiss
 	call BattleCommand_SpecialAttackUp
@@ -4752,6 +4747,11 @@ BattleCommand_AllStatsUp:
 ; Special Defense
 	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
+	call BattleCommand_StatUpMessage
+
+; Speed
+	call ResetMiss
+	call BattleCommand_SpeedUp
 	jp   BattleCommand_StatUpMessage
 
 ResetMiss:
@@ -5072,7 +5072,7 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_CELEBI
 	jp z, .fail
-	cp BATTLETYPE_SUICUNE
+	cp BATTLETYPE_LEGENDARY
 	jp z, .fail
 	cp BATTLETYPE_BOSS
 	jp z, .fail
