@@ -284,7 +284,7 @@ VioletGroupSprites:
 GoldenrodGroupSprites:
 ; Route34, GoldenrodCity
 	db SPRITE_GRAMPS
-	db SPRITE_SILVER
+	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
 	db SPRITE_POKEFAN_M
 	db SPRITE_COOLTRAINER_F

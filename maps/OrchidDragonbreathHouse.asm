@@ -54,4 +54,4 @@ OrchidDragonbreathHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, OrchidDragonbreathHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidDragonbreathTMGuy, -1
+	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OrchidDragonbreathTMGuy, -1

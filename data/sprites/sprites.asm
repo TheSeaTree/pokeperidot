@@ -110,7 +110,7 @@ OverworldSprites:
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ConeSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PINK
+	overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite AmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BookSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BushSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
@@ -119,5 +119,6 @@ OverworldSprites:
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PoseySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite PsychicLeaderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite CannonballSpriteGFX, 8, WALKING_SPRITE, PAL_OW_SILVER
 	overworld_sprite ExplosionSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
