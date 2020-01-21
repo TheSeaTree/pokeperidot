@@ -15,7 +15,7 @@ Moves: ; 41afb
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         70, FIGHTING, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, FAIRY,     85, 10,   0
-	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,    85, 15,   0
+	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,   100, 15,   0
 	move DREAD_STORM,  EFFECT_SPEED_UP_HIT,       85, FLYING,    95,  5,  30
 	move PAY_DAY,      EFFECT_PAY_DAY,            60, NORMAL,   100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,     100, 15,  10
@@ -36,7 +36,7 @@ Moves: ; 41afb
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
-	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,    75,  5,   0
+	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,    75,  5,   0 ; Replace
 	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING, 100, 20,   0
 	move COIL,         EFFECT_COIL,                0, POISON,   100, 20,   0
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,   100, 15,   0
@@ -159,7 +159,7 @@ Moves: ; 41afb
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
 	move SPORE,        EFFECT_SLEEP_POWDER,        0, GRASS,    100, 15,   0
-	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
+	move FLASH,        EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0 ; Replace
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
 	move SPLASH,       EFFECT_SPLASH,              0, WATER,    100, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,   100, 40,   0
@@ -222,7 +222,7 @@ Moves: ; 41afb
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC, 100, 20,  30
 	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        20, BUG,       95, 20,   0
-	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     70, STEEL,    100, 25,  10
+	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,    100, 25,  10
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, NORMAL,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, NORMAL,   100, 15,   0
 	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,   100, 10,   0
@@ -250,7 +250,7 @@ Moves: ; 41afb
 	move MOONLIGHT,    EFFECT_MOONLIGHT,           0, DARK,     100,  5,   0
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       70, CURSE_T,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,  80,  5,   0
-	move TWISTER,      EFFECT_TWISTER,            40, DRAGON,   100, 20,  20
+	move TWISTER,      EFFECT_TWISTER,            60, DRAGON,   100, 20,  20
 	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,     90,  5,   0
 	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,      90,  5,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,     100, 15,  20

@@ -15,6 +15,9 @@ BulbasaurEggMoves:
 	db RAZOR_WIND
 	db PETAL_DANCE
 	db AGILITY
+	db CHARM
+	db LIGHT_SCREEN
+	db SAFEGUARD
 	db -1 ; end
 
 CharmanderEggMoves:
@@ -144,6 +147,7 @@ JigglypuffEggMoves:
 	db FAINT_ATTACK
 	db MEAN_LOOK
 	db EXPLOSION
+	db PAIN_SPLIT
 	db -1 ; end
 
 ZubatEggMoves:
@@ -271,7 +275,6 @@ GeodudeEggMoves:
 	db -1 ; end
 
 PonytaEggMoves:
-	db FLAME_WHEEL
 	db THRASH
 	db DOUBLE_KICK
 	db HYPNOSIS
@@ -319,6 +322,7 @@ SeelEggMoves:
 	db ENCORE
 	db HORN_DRILL
 	db IRON_TAIL
+	db LIGHT_SCREEN
 	db -1 ; end
 
 GrimerEggMoves:
@@ -403,12 +407,12 @@ SearionEggMoves:
 	db FLARE_BLITZ
 	db EXPLOSION
 	db EGG_BOMB
+	db BARRAGE
 	db -1 ; end
 	
 LickitungEggMoves:
 	db BELLY_DRUM
 	db SNORE
-	db AMNESIA
 	db CALM_MIND
 	db THRASH
 	db OUTRAGE
@@ -465,6 +469,7 @@ HorseaEggMoves:
 	db OUTRAGE
 	db HYDRO_PUMP
 	db POISON_STING
+	db PIN_MISSILE
 	db -1 ; end
 
 GoldeenEggMoves:
@@ -514,6 +519,7 @@ EeveeEggMoves:
 	db FLAIL
 	db CHARM
 	db DESTINY_BOND
+	db MIST
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -546,7 +552,6 @@ AerodactylEggMoves:
 SnorlaxEggMoves:
 	db LICK
 	db CHARM
-	db DOUBLE_EDGE
 	db FISSURE
 	db ROAR
 	db PURSUIT
@@ -571,6 +576,7 @@ ChikoritaEggMoves:
 	db ANCIENTPOWER
 	db FLAIL
 	db PRESENT
+	db GROWTH
 	db -1 ; end
 
 CyndaquilEggMoves:
@@ -616,8 +622,6 @@ HoothootEggMoves:
 	db SKY_ATTACK
 	db AGILITY
 	db NIGHT_SHADE
-	db MEAN_LOOK
-	db HYPNOSIS
 	db -1 ; end
 
 CubboltEggMoves:
@@ -729,6 +733,14 @@ AipomEggMoves:
 	db DOUBLESLAP
 	db U_TURN
 	db -1 ; end
+	
+SunkernEggMoves:
+	db BIDE
+	db ENCORE
+	db SING
+	db SYNTHESIS
+	db SWEET_SCENT
+	db -1 ; end
 
 YanmaEggMoves:
 	db WHIRLWIND
@@ -755,6 +767,7 @@ MurkrowEggMoves:
 	db WING_ATTACK
 	db SKY_ATTACK
 	db CONFUSE_RAY
+	db SPIKES
 	db -1 ; end
 
 MisdreavusEggMoves:
@@ -906,6 +919,7 @@ MantineEggMoves:
 	db HAZE
 	db MIRROR_COAT
 	db AMNESIA
+	db DOUBLE_EDGE
 	db -1 ; end
 
 SkarmoryEggMoves:
@@ -924,17 +938,19 @@ HoundourEggMoves:
 	db SPITE
 	db REVERSAL
 	db DESTINY_BOND
+	db BONEMERANG
 	db -1 ; end
 
 PhanpyEggMoves:
 	db FOCUS_ENERGY
 	db ANCIENTPOWER
-	db WATER_GUN
 	db ROLLOUT
 	db COUNTER
 	db FISSURE
 	db DOUBLE_EDGE
 	db MUD_SLAP
+	db FLARE_BLITZ
+	db IRON_HEAD
 	db -1 ; end
 
 StantlerEggMoves:
