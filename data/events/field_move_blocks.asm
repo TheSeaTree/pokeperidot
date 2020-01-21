@@ -1,9 +1,10 @@
 CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_JOHTO,        .johto
-	dbw TILESET_PARK,         .park
 	dbw TILESET_MOUNTAIN,     .mountain
 	dbw TILESET_JOHTO_CITY,   .johto_city
+	dbw TILESET_FACILITY,	  .facility
+	dbw TILESET_CAVE,		  .cave
 	db -1 ; end
 
 .johto:
@@ -26,24 +27,29 @@ CutTreeBlockPointers:
 	db $67, $3e, 0 ; tree
 	db -1 ; end
 
-.park:
-; facing block, replacement block, animation
-	db $13, $03, 1 ; grass
-	db $03, $04, 1 ; grass
-	db -1 ; end
-	
 .mountain:
 ; facing block, replacement block, animation
 	db $03, $02, 1 ; grass
-	db $5b, $3c, 0 ; tree
-	db $5f, $3d, 0 ; tree
-	db $63, $3f, 0 ; tree
-	db $67, $3e, 0 ; tree
+	db $06, $4d, 0 ; smash wall
+	db $8c, $7c, 0 ; tree
+	db $90, $7c, 0 ; tree
+	db $91, $7f, 0 ; tree
+	db $8d, $7e, 0 ; tree
+	db $83, $87, 1 ; grass
+	db $9e, $9f, 1 ; grass
 	db -1 ; end
 	
 .johto_city
 	db $03, $02, 1 ; grass
 	db $67, $3b, 0 ; tree
+	db -1
+
+.facility
+	db $30, $62, 0 ; smash wall
+	db -1
+
+.cave
+	db $88, $13, 0 ; smash wall
 	db -1
 
 WhirlpoolBlockPointers:

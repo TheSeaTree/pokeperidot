@@ -9,7 +9,7 @@ Route22_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 29,  5, ROUTE_22, 1
+	warp_event 29,  5, BLACKTHORN_CITY, 1
 
 	db 0 ; coord events
 

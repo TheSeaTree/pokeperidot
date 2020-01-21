@@ -293,6 +293,8 @@ ENDM
 	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
 	map_const ORCHID_MART,                                  6,  4 ;  4
 	map_const DRAGONBREATH_HOUSE,                           4,  4
+	map_const ENTEI_CAVE_1F,								9,  8
+	map_const ENTEI_CAVE_B1F,							   22, 17
 	map_const ENTEI_LAIR,									7,  5
 	map_const ROUTE_22,									   19,  8
 

@@ -187,6 +187,12 @@ CheckWaterfallTile::
 	ret z
 	cp COLL_CURRENT_DOWN
 	ret
+	
+CheckWallSmashTile::
+	cp COLL_SMASH_WALL
+	ret z
+	cp COLL_SMASH_WALL_B5
+	ret
 
 CheckStandingOnEntrance::
 	ld a, [wPlayerStandingTile]

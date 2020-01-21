@@ -58,15 +58,15 @@ GoldenrodHappinessRaterTeacherScript:
 	end
 
 GoldenrodHappinessRaterPokefanMScript:
-	checkevent EVENT_GOT_EXP_SHARE
+	checkevent EVENT_GOT_TM_RETURN
 	iftrue .gotit
 	faceplayer
 	opentext
-	writetext GoldenrodHappinessRaterGiveExpShare
+	writetext GoldenrodHappinessRaterGiveTMReturn
 	waitbutton
-	verbosegiveitem EXP_SHARE
+	verbosegiveitem TM_RETURN
 	waitbutton
-	setevent EVENT_GOT_EXP_SHARE
+	setevent EVENT_GOT_TM_RETURN
 	writetext GoldenrodHappinessRaterPokefanMText
 	waitbutton
 	turnobject LAST_TALKED, LEFT
@@ -147,24 +147,31 @@ GoldenrodHappinessRaterYoungsterText:
 	done
 
 GoldenrodHappinessRaterPokefanMText:
-	text "That right there"
-	line "is an EXP. SHARE."
+	text "That TM will teach"
+	line "the move RETURN."
 	
-	para "Give it to a"
-	line "#MON and it'll"
-	cont "grow stronger"
-	cont "without needing to"
-	cont "leave its BALL."
+	para "It may not seem"
+	line "like much now, but"
+	cont "it will pack quite"
+	cont "a wallop if your"
+	cont "#MON is happy"
+	cont "with you."
 	done
 	
-GoldenrodHappinessRaterGiveExpShare:
-	text "When I use an item"
-	line "on my #MON, it"
-	cont "acts really glad!"
+GoldenrodHappinessRaterGiveTMReturn:
+	text "It can be very"
+	line "rewarding to make"
+	cont "your #MON happy"
+	cont "to be with you."
 	
-	para "You should try"
-	line "giving an item to"
-	cont "your #MON too!"
+	para "It can be very"
+	line "rewarding to talk"
+	cont "to the right"
+	cont "people as well."
+	
+	para "I have just the"
+	line "reward for you"
+	cont "right here!"
 	done
 
 GoldenrodHappinessRater_MapEvents:

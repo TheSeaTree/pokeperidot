@@ -73,21 +73,6 @@ BurglarHideoutAbbotScene:
 	special FadeInQuickly
 	end
 	
-	
-BreakableWallScript:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .AlreadyBroken
-	scall SmashWall
-	iffalse .No
-	changeblock 4, 0, $44
-	reloadmappart
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-.No
-	end
-
-.AlreadyBroken:
-	jumpstd smashwallbroken
-	
 BurglarHideoutB1FDoor:
 	opentext
 	checkevent EVENT_HIDEOUT_SAID_PASSWORD
@@ -330,10 +315,7 @@ TrainerSageLo2:
 	waitbutton
 	closetext
 	end		
-	
-SmashWall:
-	jumpstd smashwall
-	
+
 BurglarHideoutPokeFlute:
 	itemball POKE_FLUTE
 	
@@ -744,8 +726,7 @@ BurglarHideoutB1F_MapEvents:
 	coord_event  4, 16, SCENE_DEFAULT, BurglarHideoutRivalScript
 	coord_event  5, 23, SCENE_BURGLARHIDEOUTB1F_RIVAL, BurglarHideoutAbbotScene
 
-	db 3 ; bg events
-	bg_event  5,  2, BGEVENT_UP, BreakableWallScript
+	db 2 ; bg events
 	bg_event 16, 11, BGEVENT_UP, BurglarHideoutB1FDoor
 	bg_event 26, 17, BGEVENT_UP, BurglarHideoutB1FComputer
 

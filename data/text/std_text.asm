@@ -406,14 +406,15 @@ GymFirstTimeText:
 	done
 	
 SmashWallText:
-	text "This wall is"
-	line "cracked."
+	text "This wall looks"
+	line "weak."
 
 	para "Maybe a #MON"
-	line "can break through."
+	line "could smash it."
 	done
 	
 SmashWallBrokenText:
-	text "An opening was"
-	line "created."
-	done
+	text_from_ram wStringBuffer2
+	text " created"
+	line "an opening."
+	prompt

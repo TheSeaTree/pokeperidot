@@ -1083,8 +1083,15 @@ TryTileCollisionEvent::
 	jr c, .done
 
 	call CheckCutTreeTile
-	jr nz, .whirlpool
+	jr nz, .smashwall
 	farcall TryCutOW
+	jr .done
+
+.smashwall
+	ld a, [wEngineBuffer1]
+	call CheckWallSmashTile
+	jr nz, .whirlpool
+	farcall TrySmashWallOW
 	jr .done
 
 .whirlpool

@@ -3,7 +3,20 @@
 OrchidCity_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_ORCHID
+	return
+	
+.SmashWall:
+	checkevent EVENT_ENTEI_CAVE_OPEN
+	iffalse .skip
+	changeblock 18, 22, $4D
+.skip
+	return
 
 OrchidGymEvent:
 	scall OrchidGymEntrance
@@ -31,11 +44,12 @@ OrchidCityTeacherText:
 OrchidCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event 23, 25, ORCHID_POKECENTER_1F, 1
 	warp_event  5, 15, DRAGONBREATH_HOUSE, 1
 	warp_event 13,  5, ORCHID_MART, 1
 	warp_event 26,  7, BLACKTHORN_GYM_1F, 1
+	warp_event 19, 23, ENTEI_CAVE_1F, 1
 	
 	db 0 ; coord events
 

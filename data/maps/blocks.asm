@@ -620,3 +620,9 @@ DrainPunchChamber_Blocks:
 
 Route22_Blocks:
 	INCBIN "maps/Route22.ablk"
+
+EnteiCave1F_Blocks:
+	INCBIN "maps/EnteiCave1F.ablk"
+
+EnteiCaveB1F_Blocks:
+	INCBIN "maps/EnteiCaveB1F.ablk"

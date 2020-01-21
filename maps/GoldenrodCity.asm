@@ -122,6 +122,9 @@ GoldenrodLassScript:
 	closetext
 	end	
 	
+GoldenrodLadScript:
+	jumptextfaceplayer GoldenrodLadText
+	
 GoldenrodGymEvent:
 	scall GoldenrodGymEntrance
 	iffalse .no
@@ -191,6 +194,22 @@ GoldenrodLassText:
 	line "can make new"
 	cont "friends."
 	done
+	
+GoldenrodLadText:
+	text "The leader of this"
+	line "GYM really gives"
+	cont "me the creeps."
+	
+	para "She hardly ever"
+	line "leaves, and is"
+	cont "always wearing"
+	cont "a hood to hide her"
+	cont "face."
+	
+	para "…At least I think"
+	line "it's a woman under"
+	cont "those robes."
+	done
 
 DayCareSignText:
 	text "DAY-CARE"
@@ -198,57 +217,6 @@ DayCareSignText:
 	para "LET US RAISE YOUR"
 	line "#MON FOR YOU!"
 	done
-	
-GoldenrodCityRivalWait:
-	text "Hey you!"
-	done
-	
-GoldenrodCityRivalBeforeText:
-	text "Where do you think"
-	line "you're going?"
-
-	para "I already had an"
-	line "appointment with"
-	cont "the gym leader!"
-
-	para "What's that?"
-
-	para "You just started"
-	line "your journey as a"
-	cont "#MON trainer?"
-	
-	para "And you think"
-	line "you're good enough"
-	cont "to even set foot"
-	cont "in a gym?"
-	
-	para "Don't make"
-	line "me laugh!"
-	
-	para "You think you're"
-	line "so good?"
-	
-	para "Get through me"
-	line "first!"
-	done
-
-GoldenrodCityRivalWinText:
-	text "Argh!"
-
-	para "Fine. You can"
-	line "challenge this gym"
-	cont "before me."
-	done
-
-GoldenrodCityRivalAfterText:
-	text "…"
-	done
-
-GoldenrodCityRivalLossText:
-	text "…Humph! I knew"
-	line "you were lying."
-	done
-	
 
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
@@ -276,8 +244,9 @@ GoldenrodCity_MapEvents:
 	bg_event 21,  8, BGEVENT_ITEM, GoldenrodHiddenRareCandy
 	bg_event 12,  7, BGEVENT_UP,   GoldenrodGymEvent
 	
-	db 4 ; object events
+	db 5 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event  6, 14, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event  4, 15, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
 	object_event  6, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodLassScript, -1
+	object_event 11, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodLadScript, -1

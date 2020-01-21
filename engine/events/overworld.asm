@@ -1390,6 +1390,61 @@ AskRockSmashScript:
 .end
 	closetext
 	end
+	
+AskWallSmashScript:
+	opentext
+	farwritetext SmashWallText
+	waitbutton
+	farwritetext UnknownText_0xcf77
+	yesorno
+	iffalse .end
+	callasm .CheckMap
+	iftrue Script_SmashWall
+.end
+	closetext
+	end
+
+.CheckMap:
+	xor a
+	ld [wScriptVar], a
+	call CheckMapForSomethingToCut
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+Script_SmashWall:
+	callasm GetPartyNick
+	writetext UnknownText_0xcf58
+	special WaitSFX
+	playsound SFX_STRENGTH
+	earthquake 84
+	reloadmappart
+	callasm DoSmashWall
+	wait 2
+	opentext
+	callasm GetPartyNick
+	farwritetext SmashWallBrokenText
+	closetext
+	end
+	
+DoSmashWall:
+	ld hl, wBuffer3 ; OverworldMapTile
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	ld a, [wBuffer5] ; ReplacementTile
+	ld [hl], a
+	xor a
+	ldh [hBGMapMode], a
+	call OverworldTextModeSwitch
+	call UpdateSprites
+	call BufferScreen
+	call GetMovementPermissions
+	call UpdateSprites
+	call DelayFrame
+	call LoadStandardFont
+	ret
 
 UnknownText_0xcf72:
 	; Maybe a #MON can break this.
@@ -1806,13 +1861,38 @@ AskCutScript:
 	ld [wScriptVar], a
 	ret
 
+TrySmashWallOW::
+	ld d, ROCK_SMASH
+	call CheckPartyMove
+	jr c, .cant_cut
+
+	ld a, BANK(AskWallSmashScript)
+	ld hl, AskWallSmashScript
+	call CallScript
+	scf
+	ret
+
+.cant_cut
+	ld a, BANK(CantBreakScript)
+	ld hl, CantBreakScript
+	call CallScript
+	scf
+	ret
+
 UnknownText_0xd1c8:
 	text_jump UnknownText_0x1c09dd
 	db "@"
 
 CantCutScript:
 	jumptext UnknownText_0xd1d0
+	
+CantBreakScript:
+	jumptext BrokenWallText
 
 UnknownText_0xd1d0:
 	text_jump UnknownText_0x1c0a05
+	db "@"
+	
+BrokenWallText::
+	text_jump SmashWallText
 	db "@"

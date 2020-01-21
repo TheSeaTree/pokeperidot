@@ -421,3 +421,5 @@ ENDM
 	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0
 	map_attributes DrainPunchChamber, DRAIN_PUNCH_CHAMBER, $09, 0
 	map_attributes OrchidPokecenter1F, ORCHID_POKECENTER_1F, $00, 0
+	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
+	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $09, 0

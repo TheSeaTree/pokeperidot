@@ -3,7 +3,12 @@
 DrainPunchChamber_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .OpenCave
+	
+.OpenCave
+	setevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
+	return
 	
 DrainPunchTutor:
 	faceplayer

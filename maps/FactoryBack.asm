@@ -4,23 +4,6 @@ FactoryBack_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
-FactoryBreakableWallScript:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .AlreadyBroken
-	scall FactorySmashWall
-	iffalse .No
-	changeblock 6, 0, $62
-	reloadmappart
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-.No
-	end
-
-.AlreadyBroken:
-	jumpstd smashwallbroken
-	
-FactorySmashWall:
-	jumpstd smashwall
 
 FactoryBack_MapEvents:
 	db 0, 0 ; filler
@@ -32,8 +15,7 @@ FactoryBack_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  7,  0, BGEVENT_UP, FactoryBreakableWallScript
+	db 0 ; bg events
 
 	db 0 ; object events
 	

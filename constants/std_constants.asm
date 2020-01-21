@@ -20,8 +20,6 @@
 	enum trashcan
 	enum strengthboulder
 	enum smashrock
-	enum smashwall
-	enum smashwallbroken
 	enum pokecentersign
 	enum martsign
 	enum elevatorbutton

@@ -47,23 +47,6 @@ TrainerBeautyBlaze:
 	waitbutton
 	closetext
 	end	
-	
-DrainPunchChamberBreakableWallScript:
-	checkevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
-	iftrue .AlreadyBroken
-	scall DrainPunchChamberSmashWall
-	iffalse .No
-	changeblock 18, 2, $13
-	reloadmappart
-	setevent EVENT_DRAIN_PUNCH_CHAMBER_OPEN
-.No
-	end
-
-.AlreadyBroken:
-	jumpstd smashwallbroken
-	
-DrainPunchChamberSmashWall:
-	jumpstd smashwall
 
 DiglettsCaveBoulder:
 	jumpstd strengthboulder	
@@ -93,9 +76,8 @@ DiglettsCave_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 1 ; bg events
 	bg_event 20,  7, BGEVENT_ITEM, DiglettsCaveHiddenEverstone
-	bg_event 19,  3, BGEVENT_UP, DrainPunchChamberBreakableWallScript
 
 	db 5 ; object events
 	object_event 13,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltAxel, -1

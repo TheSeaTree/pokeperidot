@@ -195,6 +195,8 @@ INCLUDE "maps/Route1CherrygroveGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
 INCLUDE "maps/OrchidCity.asm"
 INCLUDE "maps/OrchidDragonbreathHouse.asm"
+INCLUDE "maps/EnteiCave1F.asm"
+INCLUDE "maps/EnteiCaveB1F.asm"
 
 
 SECTION "Map Scripts 16", ROMX

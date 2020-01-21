@@ -19,8 +19,6 @@ StdScripts::
 	dba TrashCanScript
 	dba StrengthBoulderScript
 	dba SmashRockScript
-	dba SmashWallScript
-	dba SmashWallBrokenScript
 	dba PokecenterSignScript
 	dba MartSignScript
 	dba ElevatorButtonScript
@@ -180,7 +178,7 @@ GymDoorScript:
 	special FadeOutMusic
 	waitsfx
 	end
-	
+
 .no
 	closetext
 	end
@@ -274,35 +272,6 @@ StrengthBoulderScript:
 
 SmashRockScript:
 	farjump AskRockSmashScript
-	
-SmashWallScript:
-	callasm HasRockSmash
-	ifequal 1, .no
-
-	opentext
-	farwritetext SmashWallText
-	waitbutton
-	farwritetext UnknownText_0xcf77
-	yesorno
-	iffalse .end
-	callasm GetPartyNick
-	farwritetext UnknownText_0xcf58
-	closetext
-	special WaitSFX
-	playsound SFX_STRENGTH
-	earthquake 84
-	end
-
-.no
-	farjumptext UnknownText_0xcf72
-.end
-	closetext
-	end
-	
-SmashWallBrokenScript:
-	farjumptext SmashWallBrokenText
-	closetext
-	end
 
 PokecenterSignScript:
 	farjumptext PokecenterSignText

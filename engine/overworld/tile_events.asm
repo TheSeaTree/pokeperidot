@@ -84,6 +84,8 @@ CheckCutCollision:
 	db COLL_TALL_GRASS
 	db COLL_LONG_GRASS
 	db COLL_LONG_GRASS_1C
+	db COLL_SMASH_WALL
+	db COLL_SMASH_WALL_B5
 	db -1
 
 GetWarpSFX::
