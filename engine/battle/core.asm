@@ -179,6 +179,7 @@ BattleTurn:
 
 	call HandleStatBoostingHeldItems
 	call HandleWeatherItem
+	call HandleLegendaryStatBoost
 	call HandleBerserkGene
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
@@ -544,6 +545,45 @@ HandleBerserkGene:
 	call SwitchTurnCore
 	ld hl, BecameConfusedText
 	jp StdBattleTextBox
+	
+HandleLegendaryStatBoost:
+	call SetEnemyTurn
+	ld de, wOTPartyMon1Item
+	ld a, [wCurOTMon]
+	ld b, a
+
+	push de
+	push bc
+	callfar GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	sub LEGENDS_AURA
+	pop bc
+	pop de
+	ret nz
+
+	ld [hl], a
+
+	call GetPartyLocation
+;	xor a
+;	ld [hl], a
+	call GetBattleVarAddr
+	push af
+;	call GetBattleVarAddr
+	push hl
+	push af
+	pop hl
+	ld [hl], a
+	ld de, FOCUS_ENERGY
+	call Call_PlayBattleAnim
+	ld hl, BattleText_LegendaryAura
+	call StdBattleTextBox
+	pop af
+	xor a
+	ld [hl], a
+	farcall BattleCommand_LegendaryStatsBoost
+	pop af
+	ret
 
 EnemyTriesToFlee:
 	ld a, [wLinkMode]

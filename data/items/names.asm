@@ -151,7 +151,7 @@ ItemNames::
 	db "MYSTERYBERRY@"
 	db "DRAGON SCALE@"
 	db "BERSERK GENE@"
-	db "TERU-SAMA@"
+	db "LEGENDS AURA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "SACRED ASH@"

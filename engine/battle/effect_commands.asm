@@ -4753,6 +4753,25 @@ BattleCommand_AllStatsUp:
 	call ResetMiss
 	call BattleCommand_SpeedUp
 	jp   BattleCommand_StatUpMessage
+	
+BattleCommand_LegendaryStatsBoost:
+; allstatsup
+
+; Attack
+	call BattleCommand_AttackUp
+
+; Defense
+	call BattleCommand_DefenseUp
+
+; Special Attack
+	call BattleCommand_SpecialAttackUp
+
+; Special Defense
+	call BattleCommand_SpecialDefenseUp
+
+; Speed
+	call BattleCommand_SpeedUp
+	ret
 
 ResetMiss:
 	xor a

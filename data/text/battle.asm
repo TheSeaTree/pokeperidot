@@ -315,6 +315,15 @@ BattleText_UsersStringBuffer1Activated:
 	text_start
 	cont "activated!"
 	prompt
+	
+BattleText_LegendaryAura:
+	text_ram wEnemyMonNick
+	text " is"
+	line "surrounded by a"
+	cont "powerful aura!"
+	
+	para "Its stats went up!"
+	prompt
 
 BattleText_ItemsCantBeUsedHere:
 	text "Items can't be"
