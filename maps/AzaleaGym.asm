@@ -90,12 +90,12 @@ TrainerBlackBeltBilly:
 	end
 
 TrainerBlackBeltJimmy:
-	trainer BLACKBELT_T, JIMMY, EVENT_BEAT_BLACKBELT_JIMMY, BlackBeltBillyText, BlackBeltBillyWinText, 0, .AfterScript
+	trainer BLACKBELT_T, JIMMY, EVENT_BEAT_BLACKBELT_JIMMY, BlackBeltJimmyText, BlackBeltJimmyWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BlackBeltBillyAfterText
+	writetext BlackBeltJimmyAfterText
 	waitbutton
 	closetext
 	end

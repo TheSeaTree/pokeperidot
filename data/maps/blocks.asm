@@ -618,11 +618,17 @@ Route9Cave1F_Blocks:
 DrainPunchChamber_Blocks:
 	INCBIN "maps/DrainPunchChamber.ablk"
 
-Route22_Blocks:
-	INCBIN "maps/Route22.ablk"
+Route22North_Blocks:
+	INCBIN "maps/Route22North.ablk"
 
-EnteiCave1F_Blocks:
-	INCBIN "maps/EnteiCave1F.ablk"
+Route22South_Blocks:
+	INCBIN "maps/Route22South.ablk"
 
-EnteiCaveB1F_Blocks:
-	INCBIN "maps/EnteiCaveB1F.ablk"
+Route22Cave1F_Blocks:
+	INCBIN "maps/Route22Cave1F.ablk"
+
+Route22CaveB1F_Blocks:
+	INCBIN "maps/Route22CaveB1F.ablk"
+
+Route22CaveB2F_Blocks:
+	INCBIN "maps/Route22CaveB2F.ablk"

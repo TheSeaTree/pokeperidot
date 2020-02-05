@@ -11,7 +11,7 @@ CreepyLady:
 ;	ifequal HAVE_MORE, .skip
 	faceplayer
 ;	opentext
-;	givepoke MEW, 80
+	givepoke RAICHU, 100
 ;	givepoke MEW, 80
 ;	closetext
 ;	givecoins 9999
@@ -19,7 +19,7 @@ CreepyLady:
 ;	giveitem MEGAVITAMIN
 ;	giveitem RARE_CANDY
 	loadwildmon SUICUNE, 100
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 ;	winlosstext CoinText, CoinText
 ;	loadtrainer POKEMON_PROF, TEST
 	startbattle

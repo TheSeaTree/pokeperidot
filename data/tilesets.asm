@@ -40,3 +40,4 @@ Tilesets::
 	tileset TilesetIcePath
 	tileset TilesetJohtoCity
 	tileset TilesetMountain
+	tileset TilesetVolcano

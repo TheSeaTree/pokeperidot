@@ -1208,5 +1208,59 @@ JohtoGrassWildMons:
 	db 35, GOLBAT
 	db 35, RHYHORN
 	db 35, RHYHORN
+	
+	map_id ROUTE_22_NORTH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
+	; day
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
+	; nite
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
+	
+	map_id ROUTE_22_SOUTH
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
+	; day
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
+	; nite
+	db 36, SLUGMA
+	db 36, MAGMAR
+	db 37, GRAVELER
+	db 37, SLUGMA
+	db 39, MAGCARGO
+	db 38, MAROWAK
+	db 38, MAROWAK
 
 	db -1 ; end

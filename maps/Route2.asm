@@ -273,7 +273,6 @@ SchoolboyJohnnyAfterText:
 	text "I lost."
 	done
 	
-	
 SchoolboyDannyText:
 	text "I am a"
 	line "#MON trainer!"

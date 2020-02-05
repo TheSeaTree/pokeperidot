@@ -195,8 +195,9 @@ INCLUDE "maps/Route1CherrygroveGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
 INCLUDE "maps/OrchidCity.asm"
 INCLUDE "maps/OrchidDragonbreathHouse.asm"
-INCLUDE "maps/EnteiCave1F.asm"
-INCLUDE "maps/EnteiCaveB1F.asm"
+INCLUDE "maps/Route22Cave1F.asm"
+INCLUDE "maps/Route22CaveB1F.asm"
+INCLUDE "maps/Route22CaveB2F.asm"
 
 
 SECTION "Map Scripts 16", ROMX
@@ -207,7 +208,8 @@ INCLUDE "maps/AzaleaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/AzaleaGym.asm"
 INCLUDE "maps/Route21.asm"
-INCLUDE "maps/Route22.asm"
+INCLUDE "maps/Route22North.asm"
+INCLUDE "maps/Route22South.asm"
 
 
 SECTION "Map Scripts 17", ROMX

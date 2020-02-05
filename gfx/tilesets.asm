@@ -10,6 +10,7 @@ Tileset0GFX:
 TilesetJohtoGFX:
 TilesetJohtoCityGFX:
 TilesetMountainGFX:
+TilesetVolcanoGFX:
 INCBIN "gfx/tilesets/johto.2bpp.lz"
 
 Tileset0Meta:
@@ -276,8 +277,15 @@ INCLUDE "data/tilesets/johto_city_collision.asm"
 TilesetMountainMeta:
 INCBIN "data/tilesets/mountain_metatiles.bin"
 
-TilesetMountainColl
+TilesetVolcanoMeta:
+INCBIN "data/tilesets/volcano_metatiles.bin"
+
+TilesetMountainColl:
 INCLUDE "data/tilesets/mountain_collision.asm"
+
+TilesetVolcanoColl:
+INCLUDE "data/tilesets/volcano_collision.asm"
+
 
 SECTION "Tileset Data 9", ROMX
 
@@ -314,6 +322,10 @@ INCBIN "data/tilesets/port_attributes.bin"
 
 TilesetLabAttr:
 INCBIN "data/tilesets/lab_attributes.bin"
+
+TilesetIcePathAttr:
+INCBIN "data/tilesets/ice_path_attributes.bin"
+
 
 
 SECTION "Tileset Data 10", ROMX
@@ -375,13 +387,11 @@ INCBIN "data/tilesets/radio_tower_attributes.bin"
 TilesetUndergroundAttr:
 INCBIN "data/tilesets/underground_attributes.bin"
 
-TilesetIcePathAttr:
-INCBIN "data/tilesets/ice_path_attributes.bin"
-
 TilesetJohtoCityAttr:
 INCBIN "data/tilesets/johto_city_attributes.bin"
 
 TilesetMountainAttr:
+TilesetVolcanoAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
 
 TilesetBattleTowerOutsideAttr:

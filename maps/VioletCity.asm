@@ -384,7 +384,7 @@ VioletCity_MapEvents:
 	warp_event  9,  7, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 13, VIOLET_MOVE_TUTOR, 1
 	warp_event  3, 11, GOLDENROD_NAME_RATER, 1
-	warp_event 15,  3, VIOLET_WEATHER_HOUSE, 1
+	warp_event 17,  3, VIOLET_WEATHER_HOUSE, 1
 	warp_event  1, 15, VIOLET_TRADE_HOUSE, 1
 
 	db 2 ; coord events
@@ -396,12 +396,12 @@ VioletCity_MapEvents:
 	bg_event 16, 14, BGEVENT_READ, VioletTutorSign
 	bg_event 10,  7, BGEVENT_READ, VioletCityPokecenterSign
 	bg_event 22,  9, BGEVENT_READ, VioletCityMartSign
-	bg_event  5,  7, BGEVENT_ITEM, VioletCityHiddenHyperPotion
+	bg_event 19,  1, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 
 	db 9 ; object events
 	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 18,  5, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 16,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
 	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1

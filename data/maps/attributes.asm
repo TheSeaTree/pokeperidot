@@ -225,11 +225,10 @@ ENDM
 	connection north, Route19, ROUTE_19, 0
 	
 	map_attributes OrchidCity, ORCHID_CITY, $45, SOUTH
-	connection south, Route22, ROUTE_22, 4
+	connection south, Route22North, ROUTE_22_NORTH, 4
 	
-	map_attributes Route22, ROUTE_22, $45, NORTH
+	map_attributes Route22North, ROUTE_22_NORTH, $45, NORTH
 	connection north, OrchidCity, ORCHID_CITY, -4
-	
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
@@ -421,5 +420,7 @@ ENDM
 	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0
 	map_attributes DrainPunchChamber, DRAIN_PUNCH_CHAMBER, $09, 0
 	map_attributes OrchidPokecenter1F, ORCHID_POKECENTER_1F, $00, 0
-	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
-	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $09, 0
+	map_attributes Route22Cave1F, ROUTE_22_CAVE_1F, $09, 0
+	map_attributes Route22CaveB1F, ROUTE_22_CAVE_B1F, $09, 0
+	map_attributes Route22CaveB2F, ROUTE_22_CAVE_B2F, $09, 0
+	map_attributes Route22South, ROUTE_22_SOUTH, $45, 0

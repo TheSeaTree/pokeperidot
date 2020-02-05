@@ -53,7 +53,7 @@ BlackthornCave1F_MapEvents:
 	warp_event  9, 11, BLACKTHORN_CAVE_B1F, 1
 	warp_event 19,  5, BLACKTHORN_CAVE_B1F, 2
 	warp_event 31, 11, BLACKTHORN_CITY, 7
-	warp_event  5,  5, ROUTE_22, 1
+	warp_event  5,  5, ROUTE_22_CAVE_1F, 5
 
 	db 0 ; coord events
 

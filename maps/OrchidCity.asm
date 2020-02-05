@@ -49,7 +49,7 @@ OrchidCity_MapEvents:
 	warp_event  5, 15, DRAGONBREATH_HOUSE, 1
 	warp_event 13,  5, ORCHID_MART, 1
 	warp_event 26,  7, BLACKTHORN_GYM_1F, 1
-	warp_event 19, 23, ENTEI_CAVE_1F, 1
+	warp_event 19, 23, ENTEI_LAIR, 1
 	
 	db 0 ; coord events
 

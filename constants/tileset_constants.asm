@@ -29,6 +29,7 @@
 	const TILESET_ICE_PATH             ; 1d
 	const TILESET_JOHTO_CITY		   ; 25
 	const TILESET_MOUNTAIN             ; 26
+	const TILESET_VOLCANO              ; 27
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)
