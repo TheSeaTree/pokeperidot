@@ -224,10 +224,10 @@ ENDM
 	map_attributes Route20, ROUTE_20, $05, NORTH
 	connection north, Route19, ROUTE_19, 0
 	
-	map_attributes OrchidCity, ORCHID_CITY, $45, SOUTH
+	map_attributes OrchidCity, ORCHID_CITY, $35, SOUTH
 	connection south, Route22North, ROUTE_22_NORTH, 4
 	
-	map_attributes Route22North, ROUTE_22_NORTH, $45, NORTH
+	map_attributes Route22North, ROUTE_22_NORTH, $35, NORTH
 	connection north, OrchidCity, ORCHID_CITY, -4
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
@@ -423,4 +423,4 @@ ENDM
 	map_attributes Route22Cave1F, ROUTE_22_CAVE_1F, $09, 0
 	map_attributes Route22CaveB1F, ROUTE_22_CAVE_B1F, $09, 0
 	map_attributes Route22CaveB2F, ROUTE_22_CAVE_B2F, $09, 0
-	map_attributes Route22South, ROUTE_22_SOUTH, $45, 0
+	map_attributes Route22South, ROUTE_22_SOUTH, $35, 0

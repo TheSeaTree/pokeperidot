@@ -2,7 +2,7 @@ CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_JOHTO,        .johto
 	dbw TILESET_MOUNTAIN,     .mountain
-	dbw TILESET_VOLCANO,      .mountain
+	dbw TILESET_VOLCANO,      .volcano
 	dbw TILESET_JOHTO_CITY,   .johto_city
 	dbw TILESET_FACILITY,	  .facility
 	dbw TILESET_CAVE,		  .cave
@@ -38,6 +38,11 @@ CutTreeBlockPointers:
 	db $8d, $7e, 0 ; tree
 	db $83, $87, 1 ; grass
 	db $9e, $9f, 1 ; grass
+	db -1 ; end
+	
+.volcano
+	db $03, $02, 1 ; grass
+	db $06, $3d, 0 ; smash wall
 	db -1 ; end
 	
 .johto_city

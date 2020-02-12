@@ -326,6 +326,9 @@ INCBIN "data/tilesets/lab_attributes.bin"
 TilesetIcePathAttr:
 INCBIN "data/tilesets/ice_path_attributes.bin"
 
+TilesetVolcanoAttr:
+INCBIN "data/tilesets/volcano_attributes.bin"
+
 
 
 SECTION "Tileset Data 10", ROMX
@@ -391,7 +394,6 @@ TilesetJohtoCityAttr:
 INCBIN "data/tilesets/johto_city_attributes.bin"
 
 TilesetMountainAttr:
-TilesetVolcanoAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
 
 TilesetBattleTowerOutsideAttr:
