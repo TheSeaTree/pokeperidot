@@ -183,6 +183,7 @@ ENDM
 	command coil
 	command growth
 	command uturn
+	command burn
 
 	enum_start $fe
 	command endturn                 ; fe

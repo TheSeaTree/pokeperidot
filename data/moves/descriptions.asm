@@ -147,7 +147,7 @@ MoveDescriptions::
 	dw BubbleDescription
 	dw DizzyPunchDescription
 	dw SporeDescription
-	dw FlashDescription
+	dw WillOWispDescription
 	dw PsywaveDescription
 	dw SplashDescription
 	dw AcidArmorDescription
@@ -835,9 +835,9 @@ SporeDescription:
 	db   "A move that"
 	next "induces sleep.@"
 
-FlashDescription:
-	db   "Blinds the foe to"
-	next "reduce accuracy.@"
+WillOWispDescription:
+	db   "Inflicts BURN with"
+	next "a sinister flame.@"
 
 PsywaveDescription:
 	db   "An attack with"

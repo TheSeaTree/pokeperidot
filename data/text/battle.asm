@@ -992,6 +992,11 @@ AlreadyParalyzedText:
 	line "already paralyzed!"
 	prompt
 
+AlreadyBurnedText:
+	text "<TARGET>'s"
+	line "already burned!"
+	prompt
+
 ProtectedByText:
 	text "<TARGET>'s"
 	line "protected by"

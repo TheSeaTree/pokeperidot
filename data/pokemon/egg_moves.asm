@@ -233,6 +233,7 @@ GrowlitheEggMoves:
 	db FIRE_SPIN
 	db WILD_CHARGE
 	db MORNING_SUN
+	db WILL_O_WISP
 	db -1 ; end
 
 PoliwagEggMoves:
@@ -283,6 +284,7 @@ PonytaEggMoves:
 	db HORN_DRILL
 	db MORNING_SUN
 	db LOW_KICK
+	db WILL_O_WISP
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -425,6 +427,7 @@ KoffingEggMoves:
 	db DESTINY_BOND
 	db PAIN_SPLIT
 	db RECOVER
+	db WILL_O_WISP
 	db -1 ; end
 
 RhyhornEggMoves:
@@ -590,6 +593,7 @@ CyndaquilEggMoves:
 	db DOUBLE_EDGE
 	db DOUBLE_KICK
 	db PRESENT
+	db WILL_O_WISP
 	db -1 ; end
 
 TotodileEggMoves:
@@ -773,6 +777,7 @@ MurkrowEggMoves:
 MisdreavusEggMoves:
 	db SCREECH
 	db DESTINY_BOND
+	db WILL_O_WISP
 	db -1 ; end
 
 GirafarigEggMoves:
@@ -868,7 +873,7 @@ TeddiursaEggMoves:
 
 SlugmaEggMoves:
 	db ACID_ARMOR
-	db SMOKESCREEN
+	db PAIN_SPLIT
 	db -1 ; end
 
 SwinubEggMoves:
@@ -919,7 +924,7 @@ MantineEggMoves:
 	db HAZE
 	db MIRROR_COAT
 	db AMNESIA
-	db DOUBLE_EDGE
+	db BARRAGE
 	db -1 ; end
 
 SkarmoryEggMoves:
@@ -939,6 +944,7 @@ HoundourEggMoves:
 	db REVERSAL
 	db DESTINY_BOND
 	db BONEMERANG
+	db WILL_O_WISP
 	db -1 ; end
 
 PhanpyEggMoves:
@@ -993,6 +999,7 @@ MagbyEggMoves:
 	db SCREECH
 	db CROSS_CHOP
 	db DYNAMICPUNCH
+	db SLUDGE
 	db -1 ; end
 
 MiltankEggMoves:

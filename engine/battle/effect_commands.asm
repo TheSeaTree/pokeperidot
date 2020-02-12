@@ -3242,136 +3242,11 @@ INCLUDE "data/types/type_boost_items.asm"
 BattleCommand_ConstantDamage:
 ; constantdamage
 
-	ld hl, wBattleMonLevel
-	ldh a, [hBattleTurn]
+	ld a, [wAttackMissed]
 	and a
-	jr z, .got_turn
-	ld hl, wEnemyMonLevel
-
-.got_turn
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_LEVEL_DAMAGE
-	ld b, [hl]
-	ld a, 0
-	jr z, .got_power
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_PSYWAVE
-	jr z, .psywave
-
-	cp EFFECT_REVERSAL
-	jr z, .reversal
-
-	ld a, BATTLE_VARS_MOVE_POWER
-	call GetBattleVar
-	ld b, a
-	ld a, $0
-	jr .got_power
-
-.psywave
-	ld a, b
-	srl a
-	add b
-	ld b, a
-.psywave_loop
-	call BattleRandom
-	and a
-	jr z, .psywave_loop
-	cp b
-	jr nc, .psywave_loop
-	ld b, a
-	ld a, 0
-	jr .got_power
-
-.got_power
-	ld hl, wCurDamage
-	ld [hli], a
-	ld [hl], b
+	ret nz
+	farcall ConstantDamage
 	ret
-
-.reversal
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .reversal_got_hp
-	ld hl, wEnemyMonHP
-.reversal_got_hp
-	xor a
-	ldh [hDividend], a
-	ldh [hMultiplicand + 0], a
-	ld a, [hli]
-	ldh [hMultiplicand + 1], a
-	ld a, [hli]
-	ldh [hMultiplicand + 2], a
-	ld a, 48
-	ldh [hMultiplier], a
-	call Multiply
-	ld a, [hli]
-	ld b, a
-	ld a, [hl]
-	ldh [hDivisor], a
-	ld a, b
-	and a
-	jr z, .skip_to_divide
-
-	ldh a, [hProduct + 4]
-	srl b
-	rr a
-	srl b
-	rr a
-	ldh [hDivisor], a
-	ldh a, [hProduct + 2]
-	ld b, a
-	srl b
-	ldh a, [hProduct + 3]
-	rr a
-	srl b
-	rr a
-	ldh [hDividend + 3], a
-	ld a, b
-	ldh [hDividend + 2], a
-
-.skip_to_divide
-	ld b, 4
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld b, a
-	ld hl, FlailReversalPower
-
-.reversal_loop
-	ld a, [hli]
-	cp b
-	jr nc, .break_loop
-	inc hl
-	jr .reversal_loop
-
-.break_loop
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr nz, .notPlayersTurn
-
-	ld hl, wPlayerMoveStructPower
-	ld [hl], a
-	push hl
-	call PlayerAttackDamage
-	jr .notEnemysTurn
-
-.notPlayersTurn
-	ld hl, wEnemyMoveStructPower
-	ld [hl], a
-	push hl
-	call EnemyAttackDamage
-
-.notEnemysTurn
-	call BattleCommand_DamageCalc
-	pop hl
-	ld [hl], 1
-	ret
-
-INCLUDE "data/moves/flail_reversal_power.asm"
 
 INCLUDE "engine/battle/move_effects/counter.asm"
 
@@ -4121,6 +3996,22 @@ CheckIfTargetIsElectricType:
 	ret z
 	ld a, [de]
 	cp ELECTRIC
+	ret
+	
+	
+CheckIfTargetIsFireType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp FIRE
+	ret z
+	ld a, [de]
+	cp FIRE
 	ret
 	
 BattleCommand_CheckGrassType:
@@ -5969,6 +5860,69 @@ BattleCommand_Paralyze:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
+	
+BattleCommand_Burn:
+; burn
+
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVar
+	bit BRN, a
+	jr nz, .burned
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
+	call CheckIfTargetIsFireType
+	jr z, .didnt_affect
+	call GetOpponentItem
+	ld a, b
+	cp HELD_PREVENT_BURN
+	jr nz, .no_item_protection
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	call AnimateFailedMove
+	ld hl, ProtectedByText
+	jp StdBattleTextBox
+
+.no_item_protection
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	and a
+	jr nz, .failed
+	ld a, [wAttackMissed]
+	and a
+	jr nz, .failed
+	call CheckSubstituteOpp
+	jr nz, .failed
+	ld c, 30
+	call DelayFrames
+	call AnimateCurrentMove
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set BRN, [hl]
+	call UpdateOpponentInParty
+	ld hl, ApplyBrnEffectOnAttack
+	call CallBattleCore
+	ld de, ANIM_BRN
+	call PlayOpponentBattleAnim
+	call UpdateBattleHuds
+	call PrintBurn
+	ld hl, UseHeldStatusHealingItem
+	jp CallBattleCore
+
+.burned
+	call AnimateFailedMove
+	ld hl, AlreadyBurnedText
+	jp StdBattleTextBox
+
+.failed
+	jp PrintDidntAffect2
+
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect
 
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
@@ -6310,6 +6264,10 @@ PrintDidntAffect2:
 PrintParalyze:
 ; 'paralyzed! maybe it can't attack!'
 	ld hl, ParalyzedText
+	jp StdBattleTextBox
+	
+PrintBurn:
+	ld hl, WasBurnedText
 	jp StdBattleTextBox
 
 CheckSubstituteOpp:

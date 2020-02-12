@@ -146,7 +146,7 @@ MoveNames::
 	db "BUBBLE@"
 	db "DIZZY PUNCH@"
 	db "SPORE@"
-	db "FLASH@"
+	db "WILL-O-WISP@"
 	db "PSYWAVE@"
 	db "SPLASH@"
 	db "ACID ARMOR@"

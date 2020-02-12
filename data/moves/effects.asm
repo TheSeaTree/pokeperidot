@@ -2178,3 +2178,13 @@ UTurn:
 	buildopponentrage
 	kingsrock
 	endmove	
+
+DoBurn:
+	checkobedience
+	usedmovetext
+	doturn
+	stab
+	checkhit
+	checksafeguard
+	burn
+	endmove

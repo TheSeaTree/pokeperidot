@@ -182,3 +182,4 @@ BattleCommandPointers:
 	dw BattleCommand_Coil
 	dw BattleCommand_Growth
 	dw BattleCommand_UTurn
+	dw BattleCommand_Burn

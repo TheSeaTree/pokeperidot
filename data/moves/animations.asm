@@ -148,7 +148,7 @@ BattleAnimations::
 	dw BattleAnim_Bubble
 	dw BattleAnim_DizzyPunch
 	dw BattleAnim_Spore
-	dw BattleAnim_Flash
+	dw BattleAnim_WillOWisp
 	dw BattleAnim_Psywave
 	dw BattleAnim_Splash
 	dw BattleAnim_AcidArmor
@@ -2517,27 +2517,16 @@ BattleAnim_Guillotine:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_Flash:
-	anim_1gfx ANIM_GFX_SPEED
-	anim_sound 0, 1, SFX_FLASH
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $6, $20
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $0
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $8
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $10
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $18
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $20
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $28
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $30
-	anim_wait 4
-	anim_obj ANIM_OBJ_FLASH, 136, 56, $38
-	anim_wait 32
+BattleAnim_WillOWisp:
+	anim_1gfx ANIM_GFX_FIRE
+	anim_bgp $1b
+.loop
+	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_WILL_O_WISP, 44, 80, $2
+	anim_wait 8
+	anim_loop 5, .loop
+	anim_wait 128
+	anim_wait 64
 	anim_ret
 
 BattleAnim_Substitute:
