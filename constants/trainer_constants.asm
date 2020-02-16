@@ -31,30 +31,37 @@ KRIS EQU __enum__
 	const FALKNER3
 	const FALKNER4
 	const FALKNER5
+	const FALKNER6 ; Postgame
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
+	const WHITNEY2 ; Postgame
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
 	const BUGSY2
+	const BUGSY3 ; Postgame
 	
 	trainerclass MORTY ; 4
 	const MORTY1
 	const MORTY2
 	const MORTY3
+	const MORTY4 ; Postgame
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
+	const JASMINE2 ; Postgame
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
+	const CHUCK2 ; Postgame
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const CLAIR2 ; Postgame
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -116,6 +123,7 @@ KRIS EQU __enum__
 	trainerclass ERIKA ; 15
 	const ERIKA1
 	const ERIKA2
+	const ERIKA3 ; Postgame
 
 	trainerclass LAD ; 16
 	const JACK
