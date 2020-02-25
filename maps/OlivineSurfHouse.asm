@@ -73,11 +73,10 @@ OlivineSurfGuyGiveSurf:
 	cont "moving in on our"
 	cont "turf."
 	
-	para "The ADMIN of the"
-	line "POWER PLANT told"
-	cont "me all about the"
-	cont "little errand he"
-	cont "has you on."
+	para "JOEL told me all"
+	line "about the little"
+	cont "errand he has you"
+	cont "on."
 	
 	para "You need to cross"
 	line "a body of water,"
@@ -99,10 +98,9 @@ OlivineSurfGuyExplain:
 	cont "across most bodies"
 	cont "of water."
 	
-	para "The POWER PLANT's"
-	line "ADMIN is an old"
-	cont "friend of mine, we"
-	cont "go way back."
+	para "JOEL is an old pal"
+	line "of mine. We go way"
+	cont "back together."
 	
 	para "As far as I care,"
 	line "if he says you're"

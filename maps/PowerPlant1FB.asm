@@ -19,7 +19,7 @@ PowerPlant1FB_MapScripts:
 	callback MAPCALLBACK_TILES, .CardKeyShutterCallback
 
 .DummyScene0:
-	priorityjump PowerPlantPassEvent
+	priorityjump PowerPlantItemfinderEvent
 	end
 
 .DummyScene1:
@@ -240,13 +240,13 @@ ResurrectOldAmber:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	jump FossilResurrectionGuy.NotDone
 
-PowerPlantPassEvent:
+PowerPlantItemfinderEvent:
 	pause 8
 	opentext
 	writetext MahoganyTownPowerPlantCompleted
 	buttonsound
-	verbosegiveitem PASS
-	writetext MahoganyTownPowerPlantAfterPass
+	verbosegiveitem ITEMFINDER
+	writetext MahoganyTownPowerPlantAfterItemfinder
 	buttonsound
 	setscene SCENE_FINISHED
 	setevent EVENT_POWER_PLANT_1F_MUK
@@ -257,7 +257,7 @@ PowerPlantPassEvent:
 	end
 
 PowerPlantAdmin:
-	jumptextfaceplayer MahoganyTownPowerPlantAfterPass
+	jumptextfaceplayer MahoganyTownPowerPlantAfterItemfinder
 
 PowerPlantBMetalCoat:
 	itemball METAL_COAT
@@ -282,34 +282,29 @@ MahoganyTownPowerPlantCompleted:
 	line "better!"
 	
 	para "Here is the reward"
-	line "I promised inside."
+	line "I promised you."
 	
-	para "It's a PASS to"
-	line "ride the SUBWAY to"
-	cont "PECTINIA CITY."
+	para "It's an"
+	line "ITEMFINDER!"
 	done
-	
-MahoganyTownPowerPlantAfterPass:
-	text "I have so much"
-	line "work to catch up"
-	cont "on now, that I"
-	cont "doubt I will find"
-	cont "the time for a"
-	cont "vacation any time"
-	cont "soon."
-	
-	para "You helped the"
-	line "city so much"
-	cont "that you deserve"
-	cont "to use the TRAIN"
-	cont "as often as you"
-	cont "would like."
-	
-	para "Now if you don't"
-	line "mind, I have lots"
-	cont "of work ahead of"
-	cont "me."
-	
+
+MahoganyTownPowerPlantAfterItemfinder:
+	text "This tool can"
+	line "detect any hidden"
+	cont "items that are"
+	cont "nearby."
+
+	para "It's very handy"
+	line "for trainers who"
+	cont "aren't good at"
+	cont "finding secrets"
+	cont "on their own."
+
+	para "I'm sorry to cut"
+	line "this short, but I"
+	cont "have so much work"
+	cont "to catch up on."
+
 	para "You're welcome to"
 	line "visit me in my"
 	cont "office now that"

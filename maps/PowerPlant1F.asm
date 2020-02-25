@@ -227,15 +227,25 @@ PowerPlant1FMukText:
 PowerPlant1FAfterText:
 	text "Wow! You were able"
 	line "to clean up this"
-	cont "place nicely."
+	cont "place nicely!"
 	done
 	
 PowerPlant1FAfterText2:
-	text "After the crew I"
-	line "hired failed, I"
-	cont "never thought a"
-	cont "child could handle"
+	text "Pardon my lack of"
+	line "introduction. I'm"
+	cont "the ADMIN of this"
+	cont "POWER PLANT."
+	
+	para "I never thought a"
+	line "child could handle"
 	cont "those GRIMER."
+	
+	para "JOEL told me that"
+	line "a kid came here"
+	cont "alone to clean the"
+	cont "place up."
+	
+	para "I'm impressed!"
 	
 	para "I should reward"
 	line "you for this, but"

@@ -177,25 +177,25 @@ CarnationPokecenter1F_Blocks:
 OrchidPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
-GoldenrodDeptStore1F_Blocks:
+MahoganyDeptStore1F_Blocks:
 	INCBIN "maps/DeptStore1F.ablk"
 
-GoldenrodDeptStore2F_Blocks:
+MahoganyDeptStore2F_Blocks:
 	INCBIN "maps/DeptStore2F.ablk"
 
-GoldenrodDeptStore3F_Blocks:
+MahoganyDeptStore3F_Blocks:
 	INCBIN "maps/DeptStore3F.ablk"
 
-GoldenrodDeptStore4F_Blocks:
+MahoganyDeptStore4F_Blocks:
 	INCBIN "maps/DeptStore4F.ablk"
 
-GoldenrodDeptStore5F_Blocks:
+MahoganyDeptStore5F_Blocks:
 	INCBIN "maps/DeptStore5F.ablk"
 
-GoldenrodDeptStore6F_Blocks:
+MahoganyDeptStore6F_Blocks:
 	INCBIN "maps/DeptStore6F.ablk"
 
-GoldenrodDeptStoreElevator_Blocks:
+MahoganyDeptStoreElevator_Blocks:
 	INCBIN "maps/DeptStoreElevator.ablk"
 
 Colosseum_Blocks:
@@ -419,8 +419,8 @@ HallOfFame_Blocks:
 GoldenrodFlowerShop_Blocks:
 	INCBIN "maps/GoldenrodFlowerShop.ablk"
 
-GoldenrodDeptStoreRoof_Blocks:
-	INCBIN "maps/GoldenrodDeptStoreRoof.ablk"
+MahoganyDeptStoreRoof_Blocks:
+	INCBIN "maps/MahoganyDeptStoreRoof.ablk"
 
 NewBarkTown_Blocks:
 	INCBIN "maps/NewBarkTown.ablk"

@@ -29,145 +29,27 @@ PowerPlantDoor:
 .Lights
 	warpfacing UP, POWER_PLANT_1F_B, 5, 21
 	end
-
-MahoganyTownVendingMachine:
-	opentext
-	writetext MahoganyVendingText
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .SodaPop
-	ifequal 2, .RageCandyBar
-	ifequal 3, .SNES
-	closetext
-	end
-
-.SodaPop:
-	checkmoney YOUR_MONEY, 400
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem SODA_POP
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 400
-	itemtotext SODA_POP, MEM_BUFFER_0
-	jump .VendItem
 	
-.RageCandyBar:
-	checkmoney YOUR_MONEY, 800
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem RAGECANDYBAR
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 800
-	itemtotext RAGECANDYBAR, MEM_BUFFER_0
-	jump .VendItem
-
-.SNES:
-	checkmoney YOUR_MONEY, 15000
-	ifequal HAVE_LESS, .NotEnoughMoney
-	checkevent EVENT_DECO_SNES
-	iftrue .AlreadyHave
-	takemoney YOUR_MONEY, 15000
-	special PlaceMoneyTopRight
-	setevent EVENT_DECO_SNES
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext MahoganyClangTextSNES
-	buttonsound
-	writetext SentSNESHome
-	buttonsound
-	jump .Start
-	
-.VendItem:
-	special PlaceMoneyTopRight
-	pause 10
-	playsound SFX_ENTER_DOOR
-	writetext MahoganyClangText
-	buttonsound
-	itemnotify
-	jump .Start
-
-.NotEnoughMoney:
-	writetext MahoganyVendingNoMoneyText
-	waitbutton
-	jump .Start
-
-.NotEnoughSpace:
-	writetext MahoganyVendingNoSpaceText
-	waitbutton
-	jump .Start
-	
-.AlreadyHave:
-	writetext MahoganyVendingAlreadyHaveText
-	waitbutton
-	jump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "SODA POP     ¥400@"
-	db "RAGECANDYBAR ¥800@"
-	db "SUPER NES  ¥15000@"
-	db "CANCEL@"
-
-MahoganyMartGuy:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_1
-	closetext
-	turnobject LAST_TALKED, DOWN
-	end
-
-MahoganyPunchGuy:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_2
-	closetext
-	turnobject LAST_TALKED, DOWN
-	end
-	
-MahoganyVitaminGuy:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_3
-	closetext
-	turnobject LAST_TALKED, DOWN
-	end
-	
-MahoganyBoostGuy:
-	faceplayer
-	opentext
-	pokemart MARTTYPE_STANDARD, MART_MAHOGANY_4
-	closetext
-	turnobject LAST_TALKED, DOWN
-	end
-	
-MahoganyTownPowerPlantGuy:
+MahoganyGymLeader:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_HM_SURF
 	iftrue .GotSurf
 	checkevent EVENT_EXPLAINED_POWER_PLANT
 	iftrue .ExplainedPlant
-	writetext MahoganyPowerPlantGuyIntroText
+	writetext MahoganyGymLeaderIntroText
 	waitbutton
 	setevent EVENT_EXPLAINED_POWER_PLANT
 	checkcode VAR_BADGES
 	ifless 6, .NotEnoughBadges
-	writetext MahoganyPowerPlantGuyAskText
+	writetext MahoganyGymLeaderAskText
 	yesorno
 	iffalse .No
 
 .ExplainedPlant
 	checkcode VAR_BADGES
 	ifless 6, .NotEnoughBadges
-	writetext MahoganyPowerPlantGuyAgree
+	writetext MahoganyGymLeaderAgree
 	waitbutton
 	closetext
 	setevent EVENT_UNLOCKED_SURF
@@ -180,7 +62,7 @@ MahoganyTownPowerPlantGuy:
 	end
 	
 .No
-	writetext MahoganyPowerPlantGuyComeBack
+	writetext MahoganyGymLeaderComeBack
 	yesorno
 	iftrue .ExplainedPlant
 	iffalse .No
@@ -212,97 +94,59 @@ MahoganyGymMovement:
 	step UP
 	step_resume
 
-MahoganyVendingText:
-	text "A vending machine!"
-	line "Here's the menu."
-	done
+MahoganyGymLeaderIntroText:
+	text "JOEL: Sorry, kid."
+	
+	para "If you're here for" 
+	line "a GYM challenge,"
+	cont "you're going to be"
+	cont "disappointed."
+	
+	para "Something is wrong"
+	line "with the POWER"
+	cont "PLANT. It's not"
+	cont "producing enough"
+	cont "electricity to run"
+	cont "the GYM."
+	
+	para "Without power, I"
+	line "can't accept any"
+	cont "challenges."
 
-MahoganyClangText:
-	text "Clang!"
-
-	para "@"
-	text_from_ram wStringBuffer3
-	text_start
-	line "popped out."
-	done
-	
-MahoganyVendingNoMoneyText:
-	text "Oops, not enough"
-	line "money…"
-	done
-
-MahoganyVendingNoSpaceText:
-	text "There's no more"
-	line "room for stuff…"
-	done
-	
-MahoganyVendingAlreadyHaveText:
-	text "You already have"
-	line "a SUPER NES."
-	done
-	
-MahoganyClangTextSNES:
-	text "Clang!"
-	
-	para "The SUPER NES"
-	line "popped out."
-	done
-	
-SentSNESHome:
-	text "The SUPER NES was"
-	line "send to <PLAYER>'s"
-	cont "home."
-	done
-
-MahoganyPowerPlantGuyIntroText:
-	text "Sorry, kid."
-	
-	para "The SUBWAY is out"
-	line "of commission for"
-	cont "the time being."
-	
-	para "The POWER PLANT is"
-	line "not producing"
-	cont "enough electricity"
-	cont "to run the thing."
-	
-	para "This city relies"
-	line "on tourism to make"
-	cont "the majority of"
-	cont "its money. With no"
-	cont "SUBWAY, this city"
-	cont "is not accessible"
-	cont "enough for non-"
-	cont "trainers."
-	
-	para "I sent a crew up"
-	line "to the POWER PLANT"
-	cont "to check it out,"
+	para "I sent a crew to"
+	line "check out what's"
+	cont "going on up there,"
 	cont "but they were not"
 	cont "able to deal with"
 	cont "the wild GRIMER"
 	cont "nesting there."
 	
-	para "They must be muck-"
-	line "ing up all the"
+	para "Those #MON must"
+	line "be mucking up the"
 	cont "turbines."
 	done
 	
-MahoganyPowerPlantGuyAskText:
-	para "It's a lot to ask,"
+MahoganyGymLeaderAskText:
+	text "It's a lot to ask,"
 	line "but would you take"
 	cont "care of them?"
 	done
 	
-MahoganyPowerPlantGuyComeBack:
+MahoganyGymLeaderComeBack:
 	text "What do you mean"
-	line "you won't?"
+	line "you won't do it?"
 	
-	para "Our economy is on"
-	line "the line!"
+	para "I know it's a lot"
+	line "to ask, but I need"
+	cont "to stay here and"
+	cont "keep an eye on the"
+	cont "GYM."
+	
+	para "Help a guy out,"
+	line "here? Please?"
 	done
 	
-MahoganyPowerPlantGuyAgree:
+MahoganyGymLeaderAgree:
 	text "You will need a"
 	line "way to get across"
 	cont "the lake behind"
@@ -316,15 +160,14 @@ MahoganyPowerPlantGuyAgree:
 	para "He's not too kind"
 	line "to outsiders, but"
 	cont "he owes me a favor"
-	cont "so I'll let him"
-	cont "know you are"
-	cont "coming."
+	cont "so I'll give him"
+	cont "a call."
 	
 	para "He can get you"
 	line "something to cross"
 	cont "the water."
 	done
-	
+
 MahoganyPowerPlantGotSurf:
 	text "Now that you have"
 	line "the HM for SURF,"
@@ -378,24 +221,19 @@ MahoganyTown_MapEvents:
 	warp_event 24, 33, MAHOGANY_GATE, 2
 	warp_event  2,  3, MAHOGANY_TOWN, 3
 	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
-	warp_event 10, 19, MAHOGANY_MAGNET_TRAIN_STATION, 1
-	warp_event 35, 19, EMYS_HOUSE, 1
-	warp_event 37,  9, MOVE_DELETERS_HOUSE, 1
+	warp_event 10, 21, MAHOGANY_DEPT_STORE_1F, 1
+	warp_event 31, 19, EMYS_HOUSE, 1
+	warp_event 35,  9, MOVE_DELETERS_HOUSE, 1
 	warp_event 19, 29, SUBSTITUTE_HOUSE, 1
 	warp_event 21, 21, MAHOGANY_APARTMENT_1F, 1
 
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
 
-	db 2 ; bg events
-	bg_event 24, 21, BGEVENT_UP, MahoganyTownVendingMachine
+	db 1 ; bg events
 	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 
-	db 7 ; object events
-	object_event 28, 21, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyBoostGuy, -1
-	object_event 26, 17, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyMartGuy, -1
-	object_event 25, 20, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyPunchGuy, -1
-	object_event 29, 18, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyVitaminGuy, -1
+	db 3 ; object events
 	object_event 26, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
-	object_event 10, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownPowerPlantGuy, EVENT_POWER_PLANT_1F_MUK
+	object_event 24, 14, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
 	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

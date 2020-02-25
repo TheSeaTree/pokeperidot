@@ -1,12 +1,12 @@
 	const_def 2 ; object constants
-	const GOLDENRODDEPTSTORE5F_CLERK
-	const GOLDENRODDEPTSTORE5F_LASS
-	const GOLDENRODDEPTSTORE5F_MIKE
-	const GOLDENRODDEPTSTORE5F_POKEFAN_M
-	const GOLDENRODDEPTSTORE5F_CARRIE
-	const GOLDENRODDEPTSTORE5F_RECEPTIONIST
+	const MAHOGANYDEPTSTORE5F_CLERK
+	const MAHOGANYDEPTSTORE5F_LASS
+	const MAHOGANYDEPTSTORE5F_MIKE
+	const MAHOGANYDEPTSTORE5F_POKEFAN_M
+	const MAHOGANYDEPTSTORE5F_CARRIE
+	const MAHOGANYDEPTSTORE5F_RECEPTIONIST
 
-GoldenrodDeptStore5F_MapScripts:
+MahoganyDeptStore5F_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -15,21 +15,21 @@ GoldenrodDeptStore5F_MapScripts:
 .CheckIfSunday:
 	checkcode VAR_WEEKDAY
 	ifequal SUNDAY, .yes
-	disappear GOLDENRODDEPTSTORE5F_RECEPTIONIST
+	disappear MAHOGANYDEPTSTORE5F_RECEPTIONIST
 	return
 
 .yes
-	appear GOLDENRODDEPTSTORE5F_RECEPTIONIST
+	appear MAHOGANYDEPTSTORE5F_RECEPTIONIST
 	return
 
-GoldenrodDeptStore5FClerkScript:
+MahoganyDeptStore5FClerkScript:
 	faceplayer
 	opentext
 	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F
 	closetext
 	end
 
-GoldenrodDeptStore5FReceptionistScript:
+MahoganyDeptStore5FReceptionistScript:
 	faceplayer
 	opentext
 	checkcode VAR_WEEKDAY
@@ -67,7 +67,7 @@ GoldenrodDeptStore5FReceptionistScript:
 	end
 
 .AlreadyGotTM:
-	writetext GoldenrodDeptStore5FAlreadyGotTMText
+	writetext MahoganyDeptStore5FAlreadyGotTMText
 	waitbutton
 	closetext
 	end
@@ -96,16 +96,16 @@ Carrie:
 	closetext
 	end
 
-GoldenrodDeptStore5FLassScript:
-	jumptextfaceplayer GoldenrodDeptStore5FLassText
+MahoganyDeptStore5FLassScript:
+	jumptextfaceplayer MahoganyDeptStore5FLassText
 
-GoldenrodDeptStore5FPokefanMScript:
-	jumptextfaceplayer GoldenrodDeptStore5FPokefanMText
+MahoganyDeptStore5FPokefanMScript:
+	jumptextfaceplayer MahoganyDeptStore5FPokefanMText
 
-GoldenrodDeptStore5FDirectory:
-	jumptext GoldenrodDeptStore5FDirectoryText
+MahoganyDeptStore5FDirectory:
+	jumptext MahoganyDeptStore5FDirectoryText
 
-GoldenrodDeptStore5FElevatorButton:
+MahoganyDeptStore5FElevatorButton:
 	jumpstd elevatorbutton
 
 UnknownText_0x56143:
@@ -143,7 +143,7 @@ UnknownText_0x56202:
 	line "your #MON."
 	done
 
-GoldenrodDeptStore5FAlreadyGotTMText:
+MahoganyDeptStore5FAlreadyGotTMText:
 	text "Oh, you already"
 	line "have this TM…"
 	done
@@ -162,7 +162,7 @@ UnknownText_0x56279:
 	cont "Game Boy Color."
 	done
 
-GoldenrodDeptStore5FLassText:
+MahoganyDeptStore5FLassText:
 	text "On Sundays, a lady"
 	line "comes to check out"
 	cont "#MON."
@@ -171,7 +171,7 @@ GoldenrodDeptStore5FLassText:
 	line "away TMs!"
 	done
 
-GoldenrodDeptStore5FPokefanMText:
+MahoganyDeptStore5FPokefanMText:
 	text "You can't rename a"
 	line "#MON you get in"
 	cont "a trade."
@@ -183,30 +183,30 @@ GoldenrodDeptStore5FPokefanMText:
 	line "feelings for it."
 	done
 
-GoldenrodDeptStore5FDirectoryText:
+MahoganyDeptStore5FDirectoryText:
 	text "Customize Your"
 	line "#MON"
 
 	para "5F TM CORNER"
 	done
 
-GoldenrodDeptStore5F_MapEvents:
+MahoganyDeptStore5F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 12,  0, GOLDENROD_DEPT_STORE_4F, 1
-	warp_event 15,  0, GOLDENROD_DEPT_STORE_6F, 1
-	warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1
+	warp_event 12,  0, MAHOGANY_DEPT_STORE_4F, 1
+	warp_event 15,  0, MAHOGANY_DEPT_STORE_6F, 1
+	warp_event  2,  0, MAHOGANY_DEPT_STORE_ELEVATOR, 1
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore5FDirectory
-	bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore5FElevatorButton
+	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore5FDirectory
+	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore5FElevatorButton
 
 	db 5 ; object events
-	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FClerkScript, -1
-	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FLassScript, -1
-	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FPokefanMScript, -1
+	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FClerkScript, -1
+	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FLassScript, -1
+	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FPokefanMScript, -1
 	object_event  9,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Carrie, -1
-	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY
+	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

@@ -1,14 +1,14 @@
 	const_def 2 ; object constants
-	const GOLDENRODDEPTSTOREROOF_CLERK
-	const GOLDENRODDEPTSTOREROOF_POKEFAN_F
-	const GOLDENRODDEPTSTOREROOF_FISHER
-	const GOLDENRODDEPTSTOREROOF_TWIN
-	const GOLDENRODDEPTSTOREROOF_SUPER_NERD
-	const GOLDENRODDEPTSTOREROOF_POKEFAN_M
-	const GOLDENRODDEPTSTOREROOF_TEACHER
-	const GOLDENRODDEPTSTOREROOF_BUG_CATCHER
+	const MAHOGANYDEPTSTOREROOF_CLERK
+	const MAHOGANYDEPTSTOREROOF_POKEFAN_F
+	const MAHOGANYDEPTSTOREROOF_FISHER
+	const MAHOGANYDEPTSTOREROOF_TWIN
+	const MAHOGANYDEPTSTOREROOF_SUPER_NERD
+	const MAHOGANYDEPTSTOREROOF_POKEFAN_M
+	const MAHOGANYDEPTSTOREROOF_TEACHER
+	const MAHOGANYDEPTSTOREROOF_BUG_CATCHER
 
-GoldenrodDeptStoreRoof_MapScripts:
+MahoganyDeptStoreRoof_MapScripts:
 	db 0 ; scene scripts
 
 	db 2 ; callbacks
@@ -37,48 +37,48 @@ GoldenrodDeptStoreRoof_MapScripts:
 	setevent EVENT_GOLDENROD_SALE_ON
 	return
 
-GoldenrodDeptStoreRoofClerkScript:
+MahoganyDeptStoreRoofClerkScript:
 	opentext
 	pokemart MARTTYPE_ROOFTOP, 0
 	closetext
 	end
 
-GoldenrodDeptStoreRoofPokefanFScript:
-	jumptextfaceplayer GoldenrodDeptStoreRoofPokefanFText
+MahoganyDeptStoreRoofPokefanFScript:
+	jumptextfaceplayer MahoganyDeptStoreRoofPokefanFText
 
-GoldenrodDeptStoreRoofFisherScript:
+MahoganyDeptStoreRoofFisherScript:
 	faceplayer
 	opentext
-	writetext GoldenrodDeptStoreRoofFisherText
+	writetext MahoganyDeptStoreRoofFisherText
 	waitbutton
 	closetext
-	turnobject GOLDENRODDEPTSTOREROOF_FISHER, UP
+	turnobject MAHOGANYDEPTSTOREROOF_FISHER, UP
 	end
 
-GoldenrodDeptStoreRoofTwinScript:
-	jumptextfaceplayer GoldenrodDeptStoreRoofTwinText
+MahoganyDeptStoreRoofTwinScript:
+	jumptextfaceplayer MahoganyDeptStoreRoofTwinText
 
-GoldenrodDeptStoreRoofSuperNerdScript:
+MahoganyDeptStoreRoofSuperNerdScript:
 	opentext
-	writetext GoldenrodDeptStoreRoofSuperNerdOhWowText
+	writetext MahoganyDeptStoreRoofSuperNerdOhWowText
 	waitbutton
 	closetext
-	turnobject GOLDENRODDEPTSTOREROOF_SUPER_NERD, UP
+	turnobject MAHOGANYDEPTSTOREROOF_SUPER_NERD, UP
 	opentext
-	writetext GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText
+	writetext MahoganyDeptStoreRoofSuperNerdQuitBotheringMeText
 	waitbutton
 	closetext
-	turnobject GOLDENRODDEPTSTOREROOF_SUPER_NERD, RIGHT
+	turnobject MAHOGANYDEPTSTOREROOF_SUPER_NERD, RIGHT
 	end
 
-GoldenrodDeptStoreRoofPokefanMScript:
-	jumptextfaceplayer GoldenrodDeptStoreRoofPokefanMText
+MahoganyDeptStoreRoofPokefanMScript:
+	jumptextfaceplayer MahoganyDeptStoreRoofPokefanMText
 
-GoldenrodDeptStoreRoofTeacherScript:
-	jumptextfaceplayer GoldenrodDeptStoreRoofTeacherText
+MahoganyDeptStoreRoofTeacherScript:
+	jumptextfaceplayer MahoganyDeptStoreRoofTeacherText
 
-GoldenrodDeptStoreRoofBugCatcherScript:
-	jumptextfaceplayer GoldenrodDeptStoreRoofBugCatcherText
+MahoganyDeptStoreRoofBugCatcherScript:
+	jumptextfaceplayer MahoganyDeptStoreRoofBugCatcherText
 
 Binoculars1:
 	jumptext Binoculars1Text
@@ -92,7 +92,7 @@ Binoculars3:
 PokeDollVendingMachine:
 	jumptext PokeDollVendingMachineText
 
-GoldenrodDeptStoreRoofPokefanFText:
+MahoganyDeptStoreRoofPokefanFText:
 	text "Whew, I'm tired."
 
 	para "I sometimes come"
@@ -102,7 +102,7 @@ GoldenrodDeptStoreRoofPokefanFText:
 	line "from shopping."
 	done
 
-GoldenrodDeptStoreRoofFisherText:
+MahoganyDeptStoreRoofFisherText:
 	text "Pardon? Who says"
 	line "an adult can't get"
 	cont "into this?"
@@ -114,22 +114,22 @@ GoldenrodDeptStoreRoofFisherText:
 	line "dolls!"
 	done
 
-GoldenrodDeptStoreRoofTwinText:
+MahoganyDeptStoreRoofTwinText:
 	text "They have bargain"
 	line "sales here every"
 	cont "so often."
 	done
 
-GoldenrodDeptStoreRoofSuperNerdOhWowText:
+MahoganyDeptStoreRoofSuperNerdOhWowText:
 	text "Oh, wow!"
 	done
 
-GoldenrodDeptStoreRoofSuperNerdQuitBotheringMeText:
+MahoganyDeptStoreRoofSuperNerdQuitBotheringMeText:
 	text "Will you quit"
 	line "bothering me?"
 	done
 
-GoldenrodDeptStoreRoofPokefanMText:
+MahoganyDeptStoreRoofPokefanMText:
 	text "There's something"
 	line "I really want, but"
 
@@ -141,7 +141,7 @@ GoldenrodDeptStoreRoofPokefanMText:
 	cont "I've collected…"
 	done
 
-GoldenrodDeptStoreRoofTeacherText:
+MahoganyDeptStoreRoofTeacherText:
 	text "Oh, everything is"
 	line "so cheap!"
 
@@ -149,7 +149,7 @@ GoldenrodDeptStoreRoofTeacherText:
 	line "my PACK's crammed!"
 	done
 
-GoldenrodDeptStoreRoofBugCatcherText:
+MahoganyDeptStoreRoofBugCatcherText:
 	text "My #MON always"
 	line "get paralyzed or"
 
@@ -209,11 +209,11 @@ PokeDollVendingMachineText:
 	line "empty…"
 	done
 
-GoldenrodDeptStoreRoof_MapEvents:
+MahoganyDeptStoreRoof_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 13,  1, GOLDENROD_DEPT_STORE_6F, 3
+	warp_event 13,  1, MAHOGANY_DEPT_STORE_6F, 3
 
 	db 0 ; coord events
 
@@ -224,11 +224,11 @@ GoldenrodDeptStoreRoof_MapEvents:
 	bg_event  3,  0, BGEVENT_UP, PokeDollVendingMachine
 
 	db 8 ; object events
-	object_event  1,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofClerkScript, EVENT_GOLDENROD_SALE_OFF
-	object_event 10,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanFScript, -1
-	object_event  2,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofFisherScript, -1
-	object_event  3,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTwinScript, EVENT_GOLDENROD_SALE_ON
-	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofSuperNerdScript, EVENT_GOLDENROD_SALE_ON
-	object_event  7,  0, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofPokefanMScript, EVENT_GOLDENROD_SALE_OFF
-	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofTeacherScript, EVENT_GOLDENROD_SALE_OFF
-	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStoreRoofBugCatcherScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  1,  4, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofClerkScript, EVENT_GOLDENROD_SALE_OFF
+	object_event 10,  3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofPokefanFScript, -1
+	object_event  2,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofFisherScript, -1
+	object_event  3,  4, SPRITE_TWIN, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofTwinScript, EVENT_GOLDENROD_SALE_ON
+	object_event 14,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofSuperNerdScript, EVENT_GOLDENROD_SALE_ON
+	object_event  7,  0, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofPokefanMScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofTeacherScript, EVENT_GOLDENROD_SALE_OFF
+	object_event  1,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofBugCatcherScript, EVENT_GOLDENROD_SALE_OFF

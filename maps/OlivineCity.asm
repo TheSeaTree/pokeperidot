@@ -194,7 +194,7 @@ OlivineCityRivalText:
 
 	para "I'm only coming"
 	line "down this way"
-	cont "because the SUBWAY"
+	cont "because the GYM"
 	cont "isn't open right"
 	cont "now."
 	
@@ -204,10 +204,13 @@ OlivineCityRivalText:
 	cont "enough energy."
 	
 	para "It's not my"
-	line "problem."
+	line "problem, I can"
+	cont "get other badges"
+	cont "elsewhere."
 	
 	para "But you being in"
-	line "my way is."
+	line "the way is my"
+	cont "problem."
 	
 	para "If you won't get"
 	line "out of the way,"

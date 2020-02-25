@@ -281,14 +281,14 @@ ENDM
 	map_attributes GoldenrodFlowerShop, GOLDENROD_FLOWER_SHOP, $00, 0
 	map_attributes GoldenrodPPSpeechHouse, GOLDENROD_PP_SPEECH_HOUSE, $00, 0
 	map_attributes GoldenrodNameRater, GOLDENROD_NAME_RATER, $00, 0
-	map_attributes GoldenrodDeptStore1F, GOLDENROD_DEPT_STORE_1F, $00, 0
-	map_attributes GoldenrodDeptStore2F, GOLDENROD_DEPT_STORE_2F, $00, 0
-	map_attributes GoldenrodDeptStore3F, GOLDENROD_DEPT_STORE_3F, $00, 0
-	map_attributes GoldenrodDeptStore4F, GOLDENROD_DEPT_STORE_4F, $00, 0
-	map_attributes GoldenrodDeptStore5F, GOLDENROD_DEPT_STORE_5F, $00, 0
-	map_attributes GoldenrodDeptStore6F, GOLDENROD_DEPT_STORE_6F, $00, 0
-	map_attributes GoldenrodDeptStoreElevator, GOLDENROD_DEPT_STORE_ELEVATOR, $00, 0
-	map_attributes GoldenrodDeptStoreRoof, GOLDENROD_DEPT_STORE_ROOF, $24, 0
+	map_attributes MahoganyDeptStore1F, MAHOGANY_DEPT_STORE_1F, $00, 0
+	map_attributes MahoganyDeptStore2F, MAHOGANY_DEPT_STORE_2F, $00, 0
+	map_attributes MahoganyDeptStore3F, MAHOGANY_DEPT_STORE_3F, $00, 0
+	map_attributes MahoganyDeptStore4F, MAHOGANY_DEPT_STORE_4F, $00, 0
+	map_attributes MahoganyDeptStore5F, MAHOGANY_DEPT_STORE_5F, $00, 0
+	map_attributes MahoganyDeptStore6F, MAHOGANY_DEPT_STORE_6F, $00, 0
+	map_attributes MahoganyDeptStoreElevator, MAHOGANY_DEPT_STORE_ELEVATOR, $00, 0
+	map_attributes MahoganyDeptStoreRoof, MAHOGANY_DEPT_STORE_ROOF, $24, 0
 	map_attributes GoldenrodGameCorner, GOLDENROD_GAME_CORNER, $00, 0
 	map_attributes GoldenrodPokecenter1F, GOLDENROD_POKECENTER_1F, $00, 0
 	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0

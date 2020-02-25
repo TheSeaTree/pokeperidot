@@ -41,7 +41,7 @@ ENDM
 
 	map_const MAHOGANY_GYM,                                13, 16 ;  2
 	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  3
-	map_const MAHOGANY_TOWN,                               23, 19 ;  7
+	map_const MAHOGANY_TOWN,                               21, 19 ;  7
 	map_const POWER_PLANT_1F,							   16, 11
 	map_const POWER_PLANT_2F,							   16,  8
 	map_const POWER_PLANT_1F_B,							   16, 11
@@ -209,14 +209,14 @@ ENDM
 
 	newgroup                                                      ; 12
 
-	map_const GOLDENROD_DEPT_STORE_1F,                      8,  4 ; 11
-	map_const GOLDENROD_DEPT_STORE_2F,                      8,  4 ; 12
-	map_const GOLDENROD_DEPT_STORE_3F,                      8,  4 ; 13
-	map_const GOLDENROD_DEPT_STORE_4F,                      8,  4 ; 14
-	map_const GOLDENROD_DEPT_STORE_5F,                      8,  4 ; 15
-	map_const GOLDENROD_DEPT_STORE_6F,                      8,  4 ; 16
-	map_const GOLDENROD_DEPT_STORE_ELEVATOR,                2,  2 ; 17
-	map_const GOLDENROD_DEPT_STORE_ROOF,                    8,  4 ; 18
+	map_const MAHOGANY_DEPT_STORE_1F,                      8,  4 ; 11
+	map_const MAHOGANY_DEPT_STORE_2F,                      8,  4 ; 12
+	map_const MAHOGANY_DEPT_STORE_3F,                      8,  4 ; 13
+	map_const MAHOGANY_DEPT_STORE_4F,                      8,  4 ; 14
+	map_const MAHOGANY_DEPT_STORE_5F,                      8,  4 ; 15
+	map_const MAHOGANY_DEPT_STORE_6F,                      8,  4 ; 16
+	map_const MAHOGANY_DEPT_STORE_ELEVATOR,                2,  2 ; 17
+	map_const MAHOGANY_DEPT_STORE_ROOF,                    8,  4 ; 18
 	map_const ROUTE_6_SURFERS_HOUSE,                        4,  4 ; 13
 
 	newgroup                                                      ; 13

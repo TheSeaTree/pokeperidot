@@ -1,15 +1,15 @@
 	const_def 2 ; object constants
-	const GOLDENRODDEPTSTORE6F_LASS
-	const GOLDENRODDEPTSTORE6F_SUPER_NERD
+	const MAHOGANYDEPTSTORE6F_LASS
+	const MAHOGANYDEPTSTORE6F_SUPER_NERD
 
-GoldenrodDeptStore6F_MapScripts:
+MahoganyDeptStore6F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-GoldenrodVendingMachine:
+MahoganyVendingMachine:
 	opentext
-	writetext GoldenrodVendingText
+	writetext MahoganyVendingText
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MenuHeader
@@ -51,18 +51,18 @@ GoldenrodVendingMachine:
 .VendItem:
 	pause 10
 	playsound SFX_ENTER_DOOR
-	writetext GoldenrodClangText
+	writetext MahoganyClangText
 	buttonsound
 	itemnotify
 	jump .Start
 
 .NotEnoughMoney:
-	writetext GoldenrodVendingNoMoneyText
+	writetext MahoganyVendingNoMoneyText
 	waitbutton
 	jump .Start
 
 .NotEnoughSpace:
-	writetext GoldenrodVendingNoSpaceText
+	writetext MahoganyVendingNoSpaceText
 	waitbutton
 	jump .Start
 
@@ -80,24 +80,24 @@ GoldenrodVendingMachine:
 	db "LEMONADE     ¥350@"
 	db "CANCEL@"
 
-GoldenrodDeptStore6FLassScript:
-	jumptextfaceplayer GoldenrodDeptStore6FLassText
+MahoganyDeptStore6FLassScript:
+	jumptextfaceplayer MahoganyDeptStore6FLassText
 
-GoldenrodDeptStore6FSuperNerdScript:
-	jumptextfaceplayer GoldenrodDeptStore6FSuperNerdText
+MahoganyDeptStore6FSuperNerdScript:
+	jumptextfaceplayer MahoganyDeptStore6FSuperNerdText
 
-GoldenrodDeptStore6FDirectory:
-	jumptext GoldenrodDeptStore6FDirectoryText
+MahoganyDeptStore6FDirectory:
+	jumptext MahoganyDeptStore6FDirectoryText
 
-GoldenrodDeptStore6FElevatorButton:
+MahoganyDeptStore6FElevatorButton:
 	jumpstd elevatorbutton
 
-GoldenrodVendingText:
+MahoganyVendingText:
 	text "A vending machine!"
 	line "Here's the menu."
 	done
 
-GoldenrodClangText:
+MahoganyClangText:
 	text "Clang! A can of"
 	line "@"
 	text_ram wStringBuffer3
@@ -105,17 +105,17 @@ GoldenrodClangText:
 	cont "popped out!"
 	done
 
-GoldenrodVendingNoMoneyText:
+MahoganyVendingNoMoneyText:
 	text "Oops, not enough"
 	line "money."
 	done
 
-GoldenrodVendingNoSpaceText:
+MahoganyVendingNoSpaceText:
 	text "There's no more"
 	line "room for stuff."
 	done
 
-GoldenrodDeptStore6FLassText:
+MahoganyDeptStore6FLassText:
 	text "Do you listen to"
 	line "LUCKY CHANNEL?"
 
@@ -129,7 +129,7 @@ GoldenrodDeptStore6FLassText:
 	line "numbers."
 	done
 
-GoldenrodDeptStore6FSuperNerdText:
+MahoganyDeptStore6FSuperNerdText:
 	text "If you're tired,"
 	line "try the vending"
 	cont "machine's drinks."
@@ -138,31 +138,31 @@ GoldenrodDeptStore6FSuperNerdText:
 	line "love them too."
 	done
 
-GoldenrodDeptStore6FDirectoryText:
+MahoganyDeptStore6FDirectoryText:
 	text "Take a Break from"
 	line "Shopping!"
 
 	para "6F TRANQUIL SQUARE"
 	done
 
-GoldenrodDeptStore6F_MapEvents:
+MahoganyDeptStore6F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 15,  0, GOLDENROD_DEPT_STORE_5F, 2
-	warp_event  2,  0, GOLDENROD_DEPT_STORE_ELEVATOR, 1
-	warp_event 13,  0, GOLDENROD_DEPT_STORE_ROOF, 1
+	warp_event 15,  0, MAHOGANY_DEPT_STORE_5F, 2
+	warp_event  2,  0, MAHOGANY_DEPT_STORE_ELEVATOR, 1
+	warp_event 13,  0, MAHOGANY_DEPT_STORE_ROOF, 1
 
 	db 0 ; coord events
 
 	db 6 ; bg events
-	bg_event 14,  0, BGEVENT_READ, GoldenrodDeptStore6FDirectory
-	bg_event  3,  0, BGEVENT_READ, GoldenrodDeptStore6FElevatorButton
-	bg_event  8,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event  9,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event 10,  1, BGEVENT_UP, GoldenrodVendingMachine
-	bg_event 11,  1, BGEVENT_UP, GoldenrodVendingMachine
+	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore6FDirectory
+	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore6FElevatorButton
+	bg_event  8,  1, BGEVENT_UP, MahoganyVendingMachine
+	bg_event  9,  1, BGEVENT_UP, MahoganyVendingMachine
+	bg_event 10,  1, BGEVENT_UP, MahoganyVendingMachine
+	bg_event 11,  1, BGEVENT_UP, MahoganyVendingMachine
 
 	db 2 ; object events
-	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FLassScript, -1
-	object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, GoldenrodDeptStore6FSuperNerdScript, -1
+	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FLassScript, -1
+	object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FSuperNerdScript, -1
