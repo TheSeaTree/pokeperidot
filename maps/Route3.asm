@@ -582,7 +582,7 @@ Route3_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 43, 35, BGEVENT_READ, Route3TrainerTipsSign
+	bg_event 42, 35, BGEVENT_READ, Route3TrainerTipsSign
 	bg_event 10, 37, BGEVENT_ITEM, Route3SilverLeaf
 
 	db 12 ; object events
