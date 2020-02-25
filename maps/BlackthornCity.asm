@@ -16,8 +16,7 @@ BlackthornFisherScript:
 BlackthornGymEvent:
 	scall BlackthornGymEntrance
 	iffalse .no
-	warpfacing RIGHT, RAIKOU_LAIR,  6, 3
-;	warpfacing UP, OLIVINE_GYM,  4, 11
+	warpfacing UP, OLIVINE_GYM,  4, 11
 .no
 	end	
 	
