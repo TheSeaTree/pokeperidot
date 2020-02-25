@@ -170,3 +170,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; a9
 	tilecoll FLOOR, WALL, FLOOR, WALL ; aa
 	tilecoll FLOOR, FLOOR, HEADBUTT_TREE, FLOOR ; ab
+	tilecoll WALL, WALL, DOOR, WALL ; ac
