@@ -8,7 +8,7 @@ BTTrainerClassGenders:
 	db MALE   ; MORTY
 	db MALE   ; PRYCE
 	db FEMALE ; JASMINE
-	db MALE   ; CHUCK
+	db MALE   ; JOEL
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
 	db MALE   ; POKEMON_PROF
@@ -22,7 +22,7 @@ BTTrainerClassGenders:
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
 	db MALE   ; SCIENTIST
-	db FEMALE ; ERIKA
+	db FEMALE ; POSEY
 	db MALE   ; LAD
 	db MALE   ; SCHOOLBOY
 	db MALE   ; BIRD_KEEPER

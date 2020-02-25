@@ -79,7 +79,7 @@ EcruteakGymIntroLeft:
 	
 EcruteakGymLeader:
 	faceplayer
-	checkevent EVENT_BEAT_PRYCE
+	checkevent EVENT_BEAT_POSEY
 	iftrue .FightDone
 	checkscene
 	ifequal SCENE_ECRUTEAKGYM_DONE, .Battle
@@ -93,13 +93,13 @@ EcruteakGymLeader:
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .Team2
 	winlosstext PoseyWinText, 0
-	loadtrainer ERIKA, ERIKA1
+	loadtrainer POSEY, POSEY1
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team2:
 	winlosstext PoseyWinText, 0
-	loadtrainer ERIKA, ERIKA2
+	loadtrainer POSEY, POSEY2
 	startbattle
 	reloadmapafterbattle
 
@@ -115,7 +115,7 @@ EcruteakGymLeader:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_STORMBADGE
-	setevent EVENT_BEAT_PRYCE
+	setevent EVENT_BEAT_POSEY
 .FightDone:
 	opentext
 	special HealParty

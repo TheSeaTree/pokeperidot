@@ -77,13 +77,13 @@ MahoganyGym_MapScripts:
 	
 ElectricGymLeader:
 	faceplayer
-	checkevent EVENT_BEAT_CHUCK
+	checkevent EVENT_BEAT_JOEL
 	iftrue .FightDone
 	opentext
 	writetext ElectricLeaderChallengeText
 	waitbutton
 	winlosstext ElectricLeaderWinText, 0
-	loadtrainer CHUCK, CHUCK1
+	loadtrainer JOEL, JOEL1
 	startbattle
 	reloadmapafterbattle
 	setmapscene ECRUTEAK_CITY, SCENE_ECRUTEAKCITY_DONE
@@ -97,7 +97,7 @@ ElectricGymLeader:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_MINERALBADGE
-	setevent EVENT_BEAT_CHUCK
+	setevent EVENT_BEAT_JOEL
 .FightDone:
 	opentext
 	special HealParty

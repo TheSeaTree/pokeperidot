@@ -55,9 +55,9 @@ KRIS EQU __enum__
 	const JASMINE1
 	const JASMINE2 ; Postgame
 
-	trainerclass CHUCK ; 7
-	const CHUCK1
-	const CHUCK2 ; Postgame
+	trainerclass JOEL ; 7
+	const JOEL1
+	const JOEL2 ; Postgame
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
@@ -120,10 +120,10 @@ KRIS EQU __enum__
 	const DAVID
 	const SETH
 
-	trainerclass ERIKA ; 15
-	const ERIKA1
-	const ERIKA2
-	const ERIKA3 ; Postgame
+	trainerclass POSEY ; 15
+	const POSEY1
+	const POSEY2
+	const POSEY3 ; Postgame
 
 	trainerclass LAD ; 16
 	const JACK
@@ -259,7 +259,7 @@ KRIS EQU __enum__
 	const ANTHONY
 	const XAVIER
 	const TREVOR
-	const JOEL
+	const COLIN
 	const ANDY
 	const LEE
 	const MARCEL

@@ -9,9 +9,9 @@ GymLeaders:
 	db WHITNEY
 	db BUGSY
 	db MORTY
-	db ERIKA
+	db POSEY
 	db JASMINE
-	db CHUCK
+	db JOEL
 	db CLAIR
 	db WILL
 	db BRUNO

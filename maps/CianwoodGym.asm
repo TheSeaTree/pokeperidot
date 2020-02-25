@@ -142,11 +142,11 @@ CianwoodGymGuyScript:
 	end
 	
 CianwoodGymStatue:
-	checkflag ENGINE_STORMBADGE
+	checkflag ENGINE_PLAINBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext CHUCK, CHUCK1, MEM_BUFFER_1
+	trainertotext JOEL, JOEL1, MEM_BUFFER_1
 	jumpstd gymstatue2
 	
 CianwoodCantLeave:

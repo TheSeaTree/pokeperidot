@@ -45,7 +45,7 @@ GoldenrodGym_MapScripts:
 	clearevent GOLDENROD_GYM_DOOR_1
 	clearevent GOLDENROD_GYM_DOOR_2
 	clearevent GOLDENROD_GYM_DOOR_3
-	clearevent EVENT_BEAT_GUITARIST_JOEL
+	clearevent EVENT_BEAT_GUITARIST_COLIN
 	clearevent EVENT_BEAT_GUITARIST_TREVOR	
 	clearevent EVENT_BEAT_BIKER_JERRY
 	clearevent EVENT_BEAT_GUITARIST_MARCEL
@@ -89,7 +89,7 @@ GoldenrodGymWhitneyScript:
 	setevent GOLDENROD_GYM_DOOR_1
 	setevent GOLDENROD_GYM_DOOR_2
 	setevent GOLDENROD_GYM_DOOR_3
-	setevent EVENT_BEAT_GUITARIST_JOEL
+	setevent EVENT_BEAT_GUITARIST_COLIN
 	setevent EVENT_BEAT_GUITARIST_TREVOR	
 	setevent EVENT_BEAT_BIKER_JERRY
 	setevent EVENT_BEAT_GUITARIST_MARCEL
@@ -266,8 +266,8 @@ TrainerGuitaristLee:
 	closetext
 	end
 
-TrainerGuitaristJoel:
-	trainer GUITARIST, JOEL, EVENT_BEAT_GUITARIST_JOEL, GuitaristJoelText, GuitaristJoelWinText, 0, .Script
+TrainerGuitaristColin:
+	trainer GUITARIST, COLIN, EVENT_BEAT_GUITARIST_COLIN, GuitaristColinText, GuitaristColinWinText, 0, .Script
 
 .Script:
 	setevent GOLDENROD_GYM_DOOR_4
@@ -277,7 +277,7 @@ TrainerGuitaristJoel:
 	waitsfx
 	endifjustbattled
 	opentext
-	writetext GuitaristJoelAfterText
+	writetext GuitaristColinAfterText
 	waitbutton
 	closetext
 	end	
@@ -672,7 +672,7 @@ DoorGuard3Text:
 	cont "out too much."
 	done
 	
-GuitaristJoelText:
+GuitaristColinText:
 	text "My pal ANDY fooled"
 	line "you pretty bad,"
 	cont "didn't he?"
@@ -681,11 +681,11 @@ GuitaristJoelText:
 	line "battle me!"
 	done
 	
-GuitaristJoelWinText:
+GuitaristColinWinText:
 	text "I lost."
 	done
 	
-GuitaristJoelAfterText:
+GuitaristColinAfterText:
 	text "I lost."
 	done
 	
@@ -764,7 +764,7 @@ GoldenrodGym_MapEvents:
 	db 12 ; object events
 	object_event  5, 34, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
 	object_event 22, 33, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
-	object_event 12, 23, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristJoel, -1
+	object_event 12, 23, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristColin, -1
 	object_event 12, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristTrevor, -1
 	object_event 20, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristAndy, -1
 	object_event 26, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristLee, -1

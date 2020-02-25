@@ -8,7 +8,7 @@ TrainerGroups:
 	dw MortyGroup
 	dw PryceGroup
 	dw JasmineGroup
-	dw ChuckGroup
+	dw JoelGroup
 	dw ClairGroup
 	dw Rival1Group
 	dw PokemonProfGroup
@@ -22,7 +22,7 @@ TrainerGroups:
 	dw MistyGroup
 	dw LtSurgeGroup
 	dw ScientistGroup
-	dw ErikaGroup
+	dw PoseyGroup
 	dw LadGroup
 	dw SchoolboyGroup
 	dw BirdKeeperGroup
