@@ -298,6 +298,9 @@ DoPlayerMovement::
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
 	jr z, .holdwalk
+	call GetMapEnvironment
+	cp INDOOR
+	jr z, .holdwalk
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
