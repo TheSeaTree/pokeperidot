@@ -2520,13 +2520,14 @@ BattleAnim_Guillotine:
 BattleAnim_WillOWisp:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgp $1b
-.loop
 	anim_sound 6, 2, SFX_SLUDGE_BOMB
+	anim_obj ANIM_OBJ_WILL_O_WISP_BIG, 44, 80, $2
+	anim_wait 4
+.loop
 	anim_obj ANIM_OBJ_WILL_O_WISP, 44, 80, $2
-	anim_wait 8
-	anim_loop 5, .loop
-	anim_wait 128
-	anim_wait 64
+	anim_wait 4
+	anim_loop 3, .loop
+	anim_wait 184
 	anim_ret
 
 BattleAnim_Substitute:
