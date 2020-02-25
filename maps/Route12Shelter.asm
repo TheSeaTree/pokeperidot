@@ -161,7 +161,7 @@ Route12ShelterKangaskhan:
 	waitbutton
 	checkevent EVENT_KANGASKHAN_EVENT_EXPLAINED
 	iftrue .end
-	checkevent EVENT_BEAT_PRYCE
+	checkevent EVENT_BEAT_POSEY
 	iftrue .KangaskhanGift
 	checkevent EVENT_ROUTE_14_CAVE_MAROWAK
 	iftrue .end
