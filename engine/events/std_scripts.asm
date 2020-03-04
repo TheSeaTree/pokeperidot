@@ -53,6 +53,7 @@ StdScripts::
 	dba PCScript
 	dba GameCornerCoinVendorScript
 	dba HappinessCheckScript
+	dba LightUpRoomScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -1435,6 +1436,14 @@ HappinessCheckScript:
 .Unhappy:
 	farwritetext HappinessText1
 	waitbutton
+	closetext
+	end
+	
+LightUpRoomScript:
+	opentext
+	reloadmappart
+	special UpdateTimePals
+	callasm BlindingFlash
 	closetext
 	end
 

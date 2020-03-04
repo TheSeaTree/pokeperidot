@@ -23,6 +23,8 @@ LoadSpecialMapPalette:
 	jr z, .cave
 	cp  TILESET_FACILITY
 	jr z, .facility
+	cp  TILESET_LIGHTHOUSE
+	jr z, .lighthouse
 	jr .do_nothing
 
 .pokecom_2f
@@ -78,6 +80,10 @@ LoadSpecialMapPalette:
 	
 .facility
 	ld hl, FacilityPalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.lighthouse
+	ld hl, LighthousePalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
@@ -190,6 +196,9 @@ INCLUDE "gfx/tilesets/cave.pal"
 
 FacilityPalette:
 INCLUDE "gfx/tilesets/facility.pal"
+
+LighthousePalette:
+INCLUDE "gfx/tilesets/lighthouse.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

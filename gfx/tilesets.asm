@@ -39,6 +39,9 @@ INCBIN "data/tilesets/players_room_metatiles.bin"
 TilesetPlayersRoomColl:
 INCLUDE "data/tilesets/players_room_collision.asm"
 
+TilesetLighthouseAttr:
+INCBIN "data/tilesets/lighthouse_attributes.bin"
+
 
 SECTION "Tileset Data 2", ROMX
 
@@ -356,9 +359,6 @@ INCBIN "data/tilesets/train_station_attributes.bin"
 
 TilesetChampionsRoomAttr:
 INCBIN "data/tilesets/champions_room_attributes.bin"
-
-TilesetLighthouseAttr:
-INCBIN "data/tilesets/lighthouse_attributes.bin"
 
 TilesetPlayersRoomAttr:
 INCBIN "data/tilesets/players_room_attributes.bin"

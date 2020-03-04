@@ -292,7 +292,7 @@ OWFlash:
 	jr c, .useflash
 	ld a, [wTimeOfDayPalset]
 	cp %11111111 ; 3, 3, 3, 3
-	jr nz, .notadarkcave
+	jr z, .notadarkcave
 .useflash
 	call UseFlash
 	ld a, $81

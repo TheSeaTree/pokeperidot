@@ -1,13 +1,6 @@
 	const_def 2 ; object constants
 	const GOLDENRODGYM_WHITNEY
-	const GOLDENRODGYM_ROCKER1
-	const GOLDENRODGYM_ROCKER2
-	const GOLDENRODGYM_ROCKER3
-	const GOLDENRODGYM_ROCKER4
-	const GOLDENRODGYM_ROCKER5
-	const GOLDENRODGYM_BIKER
-	const GOLDENRODGYM_ROCKER6
-	const GOLDENRODGYM_SUPER_NERD
+	const GOLDENRODGYM_BURGLAR
 
 GoldenrodGym_MapScripts:
 	db 0 ; scene scripts
@@ -17,42 +10,11 @@ GoldenrodGym_MapScripts:
 	callback MAPCALLBACK_TILES, .GoldenrodDoorCallback
 	
 .GoldenrodDoorCallback
-	checkevent GOLDENROD_GYM_DOOR_1
-	iffalse .skip1
-	changeblock  22 , 32, $4F ; open door
-.skip1
-	checkevent GOLDENROD_GYM_DOOR_2
-	iffalse .skip2
-	changeblock  26 , 26, $4F ; open door
-.skip2
-	checkevent GOLDENROD_GYM_DOOR_3
-	iffalse .skip3
-	changeblock  18 , 26, $4F ; open door
-.skip3
-	checkevent GOLDENROD_GYM_DOOR_4
-	iffalse .skip4
-	changeblock  18 , 20, $4F ; open door
-.skip4
-	checkevent GOLDENROD_GYM_DOOR_5
-	iffalse .skip5
-	changeblock  6 , 10, $4F ; open door
-.skip5
 	return
 	
 .PrepareGym
 	checkflag ENGINE_FOGBADGE
 	iftrue .end
-	clearevent GOLDENROD_GYM_DOOR_1
-	clearevent GOLDENROD_GYM_DOOR_2
-	clearevent GOLDENROD_GYM_DOOR_3
-	clearevent EVENT_BEAT_GUITARIST_COLIN
-	clearevent EVENT_BEAT_GUITARIST_TREVOR	
-	clearevent EVENT_BEAT_BIKER_JERRY
-	clearevent EVENT_BEAT_GUITARIST_MARCEL
-	clearevent EVENT_BEAT_GUITARIST_IVAN
-	clearevent EVENT_BEAT_GUITARIST_CONRAD
-	clearevent GOLDENROD_GYM_DOOR_5
-	clearevent EVENT_BEAT_POKEMANIAC_CHARLIE
 .end
 	return
 
@@ -133,7 +95,7 @@ DoorGuard1:
 	writetext DoorGuard1TextBefore
 	waitbutton
 	closetext
-	showemote EMOTE_QUESTION, GOLDENRODGYM_ROCKER1, 15
+	showemote EMOTE_QUESTION, GOLDENRODGYM_BURGLAR, 15
 	opentext
 	writetext DoorGuard1TextQuestion
 	yesorno
@@ -145,7 +107,7 @@ DoorGuard1:
 	waitbutton
 	closetext
 	setevent GOLDENROD_GYM_DOOR_1
-	changeblock  22 , 32, $4F ; open door
+	changeblock  8 , 8, $4F ; open door
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
@@ -165,7 +127,7 @@ DoorGuard1:
 	startbattle
 	reloadmapafterbattle
 	setevent GOLDENROD_GYM_DOOR_1
-	changeblock  22 , 32, $4F ; open door
+	changeblock  8 , 8, $4F ; open door
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
@@ -177,279 +139,6 @@ DoorGuard1:
 	waitbutton
 	closetext
 	end	
-	
-; Door Set 2
-	
-TrainerGuitaristAndy:
-	faceplayer
-	checkevent GOLDENROD_GYM_DOOR_2
-	iftrue .Door2
-	checkevent GOLDENROD_GYM_DOOR_3
-	iftrue .FightDone
-	opentext
-	writetext GuitaristAndyText
-	waitbutton
-	yesorno
-	iffalse .End
-	writetext DoorGuard2BeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, ANDY
-	startbattle
-	reloadmapafterbattle
-	setevent GOLDENROD_GYM_DOOR_3
-	changeblock  18 , 26, $4F ; open door
-	playsound SFX_ENTER_DOOR
-	reloadmappart
-	waitsfx
-	end
-	
-.Door2
-	opentext
-	writetext Door2or3AlreadyOpen
-	waitbutton
-	closetext
-	end
-	
-.FightDone
-	opentext
-	writetext Door2OpenedText
-	waitbutton
-	closetext
-	end
-	
-.End
-	closetext
-	end
-	
-TrainerGuitaristLee:
-	faceplayer
-	checkevent GOLDENROD_GYM_DOOR_3
-	iftrue .Door3
-	checkevent GOLDENROD_GYM_DOOR_2
-	iftrue .FightDone
-	opentext
-	writetext GuitaristLeeText
-	waitbutton
-	yesorno
-	iffalse .End
-	writetext DoorGuard2BeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, LEE
-	startbattle
-	reloadmapafterbattle
-	setevent GOLDENROD_GYM_DOOR_2
-	changeblock  26 , 26, $4F ; open door
-	playsound SFX_ENTER_DOOR
-	reloadmappart
-	waitsfx
-	end
-	
-.Door3
-	opentext
-	writetext Door2or3AlreadyOpen
-	waitbutton
-	closetext
-	end
-	
-.FightDone
-	opentext
-	writetext Door2OpenedText
-	waitbutton
-	closetext
-	end
-	
-.End
-	closetext
-	end
-
-TrainerGuitaristColin:
-	trainer GUITARIST, COLIN, EVENT_BEAT_GUITARIST_COLIN, GuitaristColinText, GuitaristColinWinText, 0, .Script
-
-.Script:
-	setevent GOLDENROD_GYM_DOOR_4
-	changeblock  18 , 20, $4F ; open door
-	playsound SFX_ENTER_DOOR
-	reloadmappart
-	waitsfx
-	endifjustbattled
-	opentext
-	writetext GuitaristColinAfterText
-	waitbutton
-	closetext
-	end	
-	
-; Mosh Pit	
-
-TrainerGuitaristTrevor:
-	trainer GUITARIST, TREVOR, EVENT_BEAT_GUITARIST_TREVOR, GuitaristTrevorText, GuitaristTrevorWinText, 0, .Script
-
-.Script:
-	endifjustbattled
-	opentext
-	writetext DoorGuard3Text
-	waitbutton
-	closetext
-	end	
-	
-TrainerBikerJerry:
-	faceplayer
-	checkevent EVENT_BEAT_BIKER_JERRY
-	iftrue .FightDone
-	opentext
-	writetext WhitneyBeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer BIKER, JERRY
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_BIKER_JERRY
-	end
-
-.FightDone
-	opentext
-	writetext GuitaristAndyAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerGuitaristMarcel:
-	faceplayer
-	checkevent EVENT_BEAT_GUITARIST_MARCEL
-	iftrue .FightDone
-	opentext
-	writetext WrongGuitaristText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, MARCEL
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_GUITARIST_MARCEL
-	end
-
-.FightDone
-	opentext
-	writetext GuitaristAndyAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerGuitaristIvan:
-	faceplayer
-	checkevent EVENT_BEAT_GUITARIST_IVAN
-	iftrue .FightDone
-	opentext
-	writetext WrongGuitaristText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, IVAN
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_GUITARIST_IVAN
-	end
-
-.FightDone
-	opentext
-	writetext GuitaristAndyAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerGuitaristConrad:
-	faceplayer
-	checkevent EVENT_BEAT_GUITARIST_CONRAD
-	iftrue .FightDone
-	opentext
-	writetext WrongGuitaristText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, CONRAD
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_GUITARIST_CONRAD
-	end
-
-.FightDone
-	opentext
-	writetext GuitaristAndyAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerGuitaristBobby:
-	faceplayer
-	checkevent GOLDENROD_GYM_DOOR_5
-	iftrue .FightDone
-	opentext
-	writetext WhitneyBeforeText
-	waitbutton
-	closetext
-	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	loadtrainer GUITARIST, BOBBY
-	startbattle
-	reloadmapafterbattle
-	setevent GOLDENROD_GYM_DOOR_5
-	changeblock  6 , 10, $4F ; open door
-	playsound SFX_ENTER_DOOR
-	reloadmappart
-	waitsfx
-	end
-
-.FightDone
-	opentext
-	writetext GuitaristAndyAfterText
-	waitbutton
-	closetext
-	end	
-	
-; End Mosh Pit
-	
-CharlieExplainsGatesLeft:
-	checkevent EVENT_BEAT_POKEMANIAC_CHARLIE
-	iftrue .End
-	showemote EMOTE_SHOCK, GOLDENRODGYM_SUPER_NERD, 15
-	turnobject GOLDENRODGYM_SUPER_NERD, LEFT
-	turnobject PLAYER, RIGHT
-	jump TrainerPokemaniacCharlie
-	
-.End
-	end
-
-CharlieExplainsGatesRight:
-	checkevent EVENT_BEAT_POKEMANIAC_CHARLIE
-	iftrue .End
-	showemote EMOTE_SHOCK, GOLDENRODGYM_SUPER_NERD, 15
-	turnobject GOLDENRODGYM_SUPER_NERD, RIGHT
-	turnobject PLAYER, LEFT
-	jump TrainerPokemaniacCharlie
-	
-.End
-	end
-
-TrainerPokemaniacCharlie:
-	faceplayer
-	playmusic MUSIC_POKEMANIAC_ENCOUNTER
-	opentext
-	writetext PokemaniacCharlieText
-	winlosstext PokemaniacCharlieWinText, CharlieYouAreUnworthy
-	loadtrainer POKEMANIAC, CHARLIE
-	startbattle
-	reloadmapafterbattle
-	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
-	faceplayer
-	opentext
-	writetext CharlieExplainsGates
-	waitbutton
-	closetext
-	turnobject GOLDENRODGYM_SUPER_NERD, DOWN
-	end
 
 GoldenrodGymStatue:
 	checkflag ENGINE_FOGBADGE
@@ -458,7 +147,7 @@ GoldenrodGymStatue:
 .Beaten:
 	trainertotext MORTY, MORTY1, MEM_BUFFER_1
 	jumpstd gymstatue2
-	
+
 GoldenrodCantLeave:
 	checkflag ENGINE_FOGBADGE
 	iftrue .Leave
@@ -743,34 +432,20 @@ CharlieExplainsGates:
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
-	warp_event 22, 39, CIANWOOD_CITY, 2
-	warp_event 23, 39, CIANWOOD_CITY, 2
-	warp_event 17,  4, CIANWOOD_CITY, 2
-	warp_event  5, 36, CIANWOOD_CITY, 2
-	warp_event 19,  4, GOLDENROD_GYM, 6
-	warp_event  4, 35, GOLDENROD_GYM, 2
+	db 4 ; warp events
+	warp_event  5,  1, GOLDENROD_GYM, 4 ; GOLDENROD_GYM_NORTH_ROOM, 1
+	warp_event 12,  1, GOLDENROD_GYM, 3 ; GOLDENROD_GYM_NORTH_ROOM, 2
+	warp_event  1,  5, GOLDENROD_GYM, 2 ; GOLDENROD_GYM_WEST_ROOM, 1
+	warp_event 16,  5, GOLDENROD_GYM, 1 ; GOLDENROD_GYM_EAST_ROOM, 1
 
-	db 2 ; coord events
-	coord_event 17, 5, -1, CharlieExplainsGatesLeft
-	coord_event 19, 5, -1, CharlieExplainsGatesRight
+	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event 21, 37, BGEVENT_READ, GoldenrodGymStatue
-	bg_event 24, 37, BGEVENT_READ, GoldenrodGymStatue
-	bg_event 22, 40, BGEVENT_DOWN, GoldenrodCantLeave
-	bg_event 23, 40, BGEVENT_DOWN, GoldenrodCantLeave
+	bg_event  7, 13, BGEVENT_READ, GoldenrodGymStatue
+	bg_event 10, 13, BGEVENT_READ, GoldenrodGymStatue
+	bg_event  8, 16, BGEVENT_DOWN, GoldenrodCantLeave
+	bg_event  9, 16, BGEVENT_DOWN, GoldenrodCantLeave
 
-	db 12 ; object events
-	object_event  5, 34, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event 22, 33, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
-	object_event 12, 23, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristColin, -1
-	object_event 12, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristTrevor, -1
-	object_event 20, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristAndy, -1
-	object_event 26, 27, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristLee, -1
-	object_event  4, 15, SPRITE_BIKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerBikerJerry, -1
-	object_event  8, 16, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristBobby, -1
-	object_event 18,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 3, TrainerPokemaniacCharlie, -1
-	object_event  7, 13, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristMarcel, -1 ; Dupe
-	object_event  3, 12, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristIvan, -1 ; Dupe
-	object_event  2, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerGuitaristConrad, -1 ; Dupe
+	db 2 ; object events
+	object_event  9,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
+	object_event  8,  9, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
