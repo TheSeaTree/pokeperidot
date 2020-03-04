@@ -18,34 +18,34 @@ TrainerSailorCalvin:
 	end
 	
 TrainerFisherBrady:
-	trainer FISHER, BRADY, EVENT_BEAT_FISHER_BRADY, SailorCalvinText, SailorCalvinWinText, 0, .Script
+	trainer FISHER, BRADY, EVENT_BEAT_FISHER_BRADY, FisherBradyText, FisherBradyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorCalvinAfterText
+	writetext FisherBradyAfterText
 	waitbutton
 	closetext
 	end	
 
 TrainerFisherNelson:
-	trainer FISHER, NELSON, EVENT_BEAT_FISHER_NELSON, SailorCalvinText, SailorCalvinWinText, 0, .Script
+	trainer FISHER, NELSON, EVENT_BEAT_FISHER_NELSON, FisherNelsonText, FisherNelsonWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorCalvinAfterText
+	writetext FisherNelsonAfterText
 	waitbutton
 	closetext
 	end
 	
 TrainerSailorJeremy:
-	trainer SAILOR, JEREMY, EVENT_BEAT_SAILOR_JEREMY, SailorCalvinText, SailorCalvinWinText, 0, .Script
+	trainer SAILOR, JEREMY, EVENT_BEAT_SAILOR_JEREMY, SailorJeremyText, SailorJeremyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorCalvinAfterText
+	writetext SailorJeremyAfterText
 	waitbutton
 	closetext
 	end
@@ -62,12 +62,12 @@ TrainerSailorMiles:
 	end
 	
 TrainerSailorRoland:
-	trainer SAILOR, ROLAND, EVENT_BEAT_SAILOR_ROLAND, SailorCalvinText, SailorCalvinWinText, 0, .Script
+	trainer SAILOR, ROLAND, EVENT_BEAT_SAILOR_ROLAND, SailorRolandText, SailorRolandWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext SailorCalvinAfterText
+	writetext SailorRolandAfterText
 	waitbutton
 	closetext
 	end
@@ -82,16 +82,123 @@ Route6UndergroundPathSign:
 	jumptext Route6UndergroundPathSignText
 
 SailorCalvinText:
-	text "I am a"
-	line "#MON trainer."
+	text "Ahoy there, mate!"
+	line "Fancy you for a"
+	cont "battle?"
 	done
 	
 SailorCalvinWinText:
-	text "I lost."
+	text "Arrgh! Ye bested"
+	line "me, matie!"
 	done
 	
 SailorCalvinAfterText:
-	text "I lost."
+	text "…Cough, cough!"
+	
+	para "I can't keep up"
+	line "that ridiculous"
+	cont "pirate voice all"
+	cont "day."
+	done
+	
+FisherNelsonText:
+	text "I made quite a"
+	line "haul today."
+	
+	para "Let me see how"
+	line "these #MON"
+	cont "battle!"
+	done
+	
+FisherNelsonWinText:
+	text "This is a terrible"
+	line "fishing spot!"
+	done
+	
+FisherNelsonAfterText:
+	text "I don't have the"
+	line "time anymore to"
+	cont "train my #MON."
+	
+	para "I want them to be"
+	line "good as soon as I"
+	cont "catch them!"
+	done
+	
+FisherBradyText:
+	text "It's been a slow"
+	line "day. Entertain me"
+	cont "for a while?"
+	done
+	
+FisherBradyWinText:
+	text "Good battle! You"
+	line "really had me."
+	done
+	
+FisherBradyAfterText:
+	text "Fishing is unpred-"
+	line "ictable. Sometimes"
+	cont "you catch nothinng"
+	cont "while other times"
+	cont "you can't go a"
+	cont "minute without a"
+	cont "#MON tugging on"
+	cont "the line."
+	
+	para "That's what I love"
+	line "about it!"
+	done
+	
+SailorJeremyText:
+	text "MACHOP and I own"
+	line "our own ship!"
+	
+	para "It is the greatest"
+	line "vessel on the sea!"
+	done
+	
+SailorJeremyWinText:
+	text "Show more respect"
+	line "to a captain!"
+	done
+	
+SailorJeremyAfterText:
+	text "What? You kids"
+	line "just ride on the"
+	cont "backs of your"
+	cont "#MON?"
+	
+	para "That's absolutely"
+	line "absurd!"
+	done
+	
+SailorRolandText:
+	text "I've travelled far"
+	line "and wide across"
+	cont "the sea in search"
+	cont "of #MON."
+	
+	para "I'll show you my"
+	line "collection."
+	done
+	
+SailorRolandWinText:
+	text "You need to show"
+	line "me where you got"
+	cont "such powerful"
+	cont "#MON from."
+	done
+	
+SailorRolandAfterText:
+	text "I wish I could"
+	line "afford to travel"
+	cont "like you, kid."
+	
+	para "Being stuck near"
+	line "the ocean really"
+	cont "limits the #MON"
+	cont "I am able to find."
 	done
 	
 SailorMilesText:

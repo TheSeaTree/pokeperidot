@@ -94,8 +94,12 @@ CamperRustyText:
 	done
 	
 PicnickerLeslieText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hi…"
+	line "um…"
+	
+	para "Battle me!"
+	
+	para "…Please?"
 	done
 	
 BeautyRebeccaText:
@@ -123,7 +127,8 @@ CamperRustyWinText:
 	done
 
 PicnickerLeslieWinText:
-	text "I lost."
+	text "I was too nervous"
+	line "to win…"
 	done
 
 BeautyRebeccaWinText:
@@ -149,7 +154,13 @@ CamperRustyAfterText:
 	done
 
 PicnickerLeslieAfterText:
-	text "I lost."
+	text "I thought the way"
+	line "you battled was"
+	cont "kind of cute…"
+	
+	para "……………"
+
+	para "…I'm sorry!"
 	done
 
 BeautyRebeccaAfterText:

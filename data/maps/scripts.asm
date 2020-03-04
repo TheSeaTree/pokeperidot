@@ -257,6 +257,7 @@ INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route30.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/MahoganySubstituteHouse.asm"
+INCLUDE "maps/Route5.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -268,6 +269,7 @@ INCLUDE "maps/RaikouLair.asm"
 INCLUDE "maps/EnteiLair.asm"
 INCLUDE "maps/SuicuneLair.asm"
 INCLUDE "maps/Route9ForestGate.asm"
+INCLUDE "maps/SilverCavePokecenter1F.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -286,6 +288,7 @@ INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
 INCLUDE "maps/Route21EcruteakGate.asm"
 
+
 SECTION "Map Scripts 23", ROMX
 
 INCLUDE "maps/NewBarkTown.asm"
@@ -302,6 +305,7 @@ INCLUDE "maps/Route14Cave1F.asm"
 INCLUDE "maps/Route14Cave2F.asm"
 INCLUDE "maps/CarnationTown.asm"
 
+
 SECTION "Map Scripts 24", ROMX
 
 INCLUDE "maps/Route2.asm"
@@ -312,10 +316,9 @@ INCLUDE "maps/Route16.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
-INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route10South.asm"
-INCLUDE "maps/SilverCavePokecenter1F.asm"
+
 
 SECTION "Map Scripts 25", ROMX
 

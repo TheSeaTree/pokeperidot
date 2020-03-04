@@ -31,37 +31,37 @@ KRIS EQU __enum__
 	const FALKNER3
 	const FALKNER4
 	const FALKNER5
-	const FALKNER6 ; Postgame
+	const FALKNER_REMATCH
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
-	const WHITNEY2 ; Postgame
+	const WHITNEY_REMATCH
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
 	const BUGSY2
-	const BUGSY3 ; Postgame
+	const BUGSY_REMATCH
 	
 	trainerclass MORTY ; 4
 	const MORTY1
 	const MORTY2
 	const MORTY3
-	const MORTY4 ; Postgame
+	const MORTY_REMATCH
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
-	const JASMINE2 ; Postgame
+	const JASMINE_REMATCH
 
 	trainerclass JOEL ; 7
 	const JOEL1
-	const JOEL2 ; Postgame
+	const JOEL_REMATCH
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
-	const CLAIR2 ; Postgame
+	const CLAIR_REMATCH
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -123,7 +123,7 @@ KRIS EQU __enum__
 	trainerclass POSEY ; 15
 	const POSEY1
 	const POSEY2
-	const POSEY3 ; Postgame
+	const POSEY_REMATCH
 
 	trainerclass LAD ; 16
 	const JACK
@@ -145,6 +145,7 @@ KRIS EQU __enum__
 	const ELLIS
 	const ROY
 	const RICKY
+	const HUGH
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -315,6 +316,7 @@ KRIS EQU __enum__
 	const ROBIN
 	const WAYNE
 	const DREW
+	const RUBIN
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
@@ -338,6 +340,7 @@ KRIS EQU __enum__
 	const DAMIEN
 	const SOLOMON
 	const WES
+	const FREDDIE
 	
 	trainerclass PICNICKER ; 35
 	const JAMIE

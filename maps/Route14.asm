@@ -209,16 +209,21 @@ Route14TutorDance:
 	step_end
 	
 LadTristanText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I saw a really"
+	line "rare #MON enter"
+	cont "the cave!"
 	done
 	
 LadTristanWinText:
-	text "I lost."
+	text "That was the first"
+	line "time I ever lost…"
 	done
 	
 LadTristanAfterText:
-	text "I lost."
+	text "If I catch some"
+	line "rare #MON my-"
+	cont "self, I won't lose"
+	cont "ever again."
 	done
 
 TwinLeahText:
@@ -254,11 +259,19 @@ LassGingerText:
 	done
 	
 LassGingerWinText:
-	text "I lost."
+	text "My team wasn't"
+	line "diverse enough."
 	done
 	
 LassGingerAfterText:
-	text "I lost."
+	text "I was always told"
+	line "that training a"
+	cont "diverse team was"
+	cont "important."
+	
+	para "Even if they have"
+	line "the same starting"
+	cont "point!"
 	done
 	
 BugCatcherCarlosText:
@@ -419,7 +432,7 @@ Route14TutorThankYou:
 	
 Route14CaveGuardText:
 	text "Groan…"
-	
+
 	para "A #MON in there"
 	line "clobbered me and"
 	cont "my team!"

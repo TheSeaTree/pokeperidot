@@ -393,16 +393,22 @@ HikerWarrenAfterText:
 	done
 	
 CamperRalphText:
-	text "I am a #MON"
-	line "trainer."
+	text "Hey! Don't try and"
+	line "sneak up on my"
+	cont "camp like that!"
 	done
 	
 CamperRalphWinText:
-	text "I lost."
+	text "Fine, you can stay"
+	line "here too."
 	done
 
 CamperRalphAfterText:
-	text "I lost."
+	text "I think I picked"
+	line "the best spot on"
+	cont "ROUTE 3. The view"
+	cont "of the lake is"
+	cont "wonderful."
 	done
 	
 Route3TutorText:

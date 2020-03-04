@@ -80,68 +80,99 @@ Route8Rock:
 	jumpstd smashrock	
 	
 SwimmerKaitText:
-	text "I am a"
-	line "#MON trainer."
+	text "Nothing beats a"
+	line "#MON battle as"
+	cont "warmup before"
+	cont "swimming."
 	done
 
 SwimmerKaitWinText:
-	text "I lost."
+	text "I could still beat"
+	line "you at swimming!"
 	done
 	
 SwimmerKaitAfterText:
-	text "I lost."
+	text "I can swim a mile"
+	line "in 5 minutes!"
 	done
 	
 BirdkeeperAlexText:
-	text "I am a"
-	line "#MON trainer."
+	text "Day or night, my"
+	line "#MON are always"
+	cont "ready to go!"
 	done
 
 BirdkeeperAlexWinText:
-	text "I lost."
+	text "No! They must have"
+	line "been jet-lagged!"
 	done
 	
 BirdkeeperAlexAfterText:
-	text "I lost."
+	text "If you came later,"
+	line "my #MON would"
+	cont "have had a better"
+	cont "chance!"
 	done
 	
 FirebreatherBrianText:
-	text "I am a"
-	line "#MON trainer."
+	text "Augh…"
+	line "WHOOSH!"
 	done
 	
 FirebreatherBrianWinText:
-	text "I lost."
+	text "My, that was"
+	line "concerning."
 	done
 	
 FirebreatherBrianAfterText:
-	text "I lost."
+	text "I'm feeling a lot"
+	line "better after our"
+	cont "battle."
+	
+	para "I just had a case"
+	line "of indigestion."
 	done
 	
 LassStephanieText:
-	text "I am a"
-	line "#MON trainer."
+	text "Cute, round, and"
+	line "cuddly."
+	
+	para "That is all I want"
+	line "from my #MON!"
 	done
 
 LassStephanieWinText:
-	text "I lost."
+	text "Humph!"
+	
+	para "No fair!"
 	done
 	
 LassStephanieAfterText:
-	text "I lost."
+	text "You're nothing"
+	line "like the #MON"
+	cont "I train."
+	
+	para "But your #MON"
+	line "seem to love you"
+	cont "anyway."
 	done
 	
 JugglerRobertText:
-	text "I am a"
-	line "#MON trainer."
+	text "Gaze at my mastery"
+	line "of gravity!"
 	done
 	
 JugglerRobertWinText:
-	text "I lost."
+	text "No! You made me"
+	line "drop my BALLs!"
 	done
 	
 JugglerRobertAfterText:
-	text "I lost."
+	text "…Okay, fine."
+	
+	para "I had my #MON"
+	line "do the juggling"
+	cont "for me…"
 	done
 	
 Route8UndergroundPathSignText:
