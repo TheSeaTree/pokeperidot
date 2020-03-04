@@ -12,4 +12,5 @@ SunnyDayMoves:
 	db MOONLIGHT
 	db SYNTHESIS
 	db GROWTH
+	db SOLARBEAM
 	db -1 ; end

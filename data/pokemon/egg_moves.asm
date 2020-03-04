@@ -319,6 +319,7 @@ FarfetchDEggMoves:
 	db U_TURN
 	db REVERSAL
 	db BATON_PASS
+	db WATER_GUN
 	db -1 ; end
 
 DoduoEggMoves:

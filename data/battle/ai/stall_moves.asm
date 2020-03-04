@@ -36,4 +36,5 @@ StallMoves:
 	db CONVERSION
 	db SUBSTITUTE
 	db COIL
+	db WILL_O_WISP
 	db -1 ; end

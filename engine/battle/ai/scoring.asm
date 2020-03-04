@@ -385,6 +385,7 @@ AI_Smart:
 	dbw EFFECT_SOLARBEAM,        AI_Smart_Solarbeam
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
+	dbw EFFECT_BURN,             AI_Smart_Burn
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -958,6 +959,7 @@ AI_Smart_Moonlight:
 	ret
 
 AI_Smart_Toxic:
+AI_Smart_Burn:
 AI_Smart_LeechSeed:
 ; Discourage this move if player's HP is below 50%.
 
@@ -3096,6 +3098,8 @@ AI_Status:
 	jr z, .typeimmunity
 	cp EFFECT_PARALYZE
 	jr z, .electricimmunity
+	cp EFFECT_BURN
+	jr z, .fireimmunity
 	cp EFFECT_SLEEP_POWDER
 	jr z, .grassimmunity
 	cp EFFECT_STUN_SPORE
@@ -3115,6 +3119,15 @@ AI_Status:
 	jr z, .immune
 	ld a, [wBattleMonType2]
 	cp ELECTRIC
+	jr z, .immune
+	jr .typeimmunity
+	
+.fireimmunity
+	ld a, [wBattleMonType1]
+	cp FIRE
+	jr z, .immune
+	ld a, [wBattleMonType2]
+	cp FIRE
 	jr z, .immune
 	jr .typeimmunity
 	

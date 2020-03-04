@@ -168,11 +168,11 @@ Moves: ; 41afb
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,    80, 15,   0
 	move BONEMERANG,   EFFECT_BONEMERANG,         50, GROUND,    90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC,  100, 10,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         90, ROCK,      95, 10,  10
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,      95, 10,  10
 	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC,  100, 20,   0
 	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,   100, 10,   0
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,   100, 30,   0
-	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         80, NORMAL,   100, 10,  20
+	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         85, NORMAL,   100, 10,  20
 	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   100, ELECTRIC, 100, 15,  10
 	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,    80,  5,  30
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,   100, 10,   0
