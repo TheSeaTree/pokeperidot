@@ -18,7 +18,6 @@ BlindingFlash:
 	ld b, SCGB_MAPPALS
 	call GetSGBLayout
 	farcall LoadOW_BGPal7
-;	farcall FadeInPalettes
 	ret
 
 ShakeHeadbuttTree:

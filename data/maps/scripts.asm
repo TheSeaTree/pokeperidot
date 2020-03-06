@@ -33,6 +33,9 @@ INCLUDE "maps/BlackthornRestTalkHouse.asm"
 INCLUDE "maps/BlackthornCave1F.asm"
 INCLUDE "maps/BlackthornCave2F.asm"
 INCLUDE "maps/BlackthornCaveB1F.asm"
+INCLUDE "maps/GoldenrodGymNorthChamber.asm"
+INCLUDE "maps/GoldenrodGymEastChamber.asm"
+INCLUDE "maps/GoldenrodGymWestChamber.asm"
 
 
 SECTION "Map Scripts 3", ROMX

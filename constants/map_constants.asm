@@ -189,7 +189,7 @@ ENDM
 	newgroup                                                      ; 11
 
 	map_const GOLDENROD_CITY,                              18, 17 ;  2
-	map_const GOLDENROD_GYM,                                9,  8 ;  3
+	map_const CIANWOOD_GYM,                                16, 20 ;  5
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
@@ -276,13 +276,16 @@ ENDM
 
 	map_const CIANWOOD_CITY,                               18, 23 ;  3
 	map_const MANIAS_HOUSE,                                 4,  4 ;  4
-	map_const CIANWOOD_GYM,                                16, 20 ;  5
 	map_const CIANWOOD_POKECENTER_1F,                       5,  4 ;  6
 	map_const CIANWOOD_MART,                                6,  4 ;  7
 	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ;  8
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
 	map_const POKE_SEERS_HOUSE,                             4,  4 ; 10
 	map_const CIANWOOD_CHURCH,                              7, 11
+	map_const GOLDENROD_GYM,                                9,  8 ;  3
+	map_const GOLDENROD_GYM_NORTH_CHAMBER,                  9, 10 ;  3
+	map_const GOLDENROD_GYM_EAST_CHAMBER,                   8, 10 ;  3
+	map_const GOLDENROD_GYM_WEST_CHAMBER,                   8, 10 ;  3
 
 	newgroup                                                      ; 23
 

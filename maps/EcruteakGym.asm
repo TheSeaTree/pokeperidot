@@ -26,15 +26,7 @@ EcruteakGym_MapScripts:
 .PrepareGym:
 	checkflag ENGINE_STORMBADGE
 	iftrue .end
-	clearevent EVENT_ECRUTEAK_GYM_MON_1
-	clearevent EVENT_ECRUTEAK_GYM_MON_2
-	clearevent EVENT_ECRUTEAK_GYM_MON_3
-	clearevent EVENT_ECRUTEAK_GYM_MON_4
-	clearflag EVENT_BEAT_CAMPER_JEFF
-	clearflag EVENT_BEAT_BUG_CATCHER_GREG
-	clearflag EVENT_BEAT_PICNICKER_TERRY
-	clearflag EVENT_BEAT_PICNICKER_BRITTANY
-	clearflag EVENT_BEAT_POKEFANM_LESTER
+	setscene SCENE_ECRUTEAKGYM_INTRO
 .end
 	end
 	

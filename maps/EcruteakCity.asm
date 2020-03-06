@@ -45,10 +45,22 @@ EcruteakCity_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ECRUTEAK
 	return
-	
-EnterGymEvent:
+
+EcruteakGymEvent:
+	checkflag ENGINE_STORMBADGE
+	iftrue .havebadge
+	clearevent EVENT_ECRUTEAK_GYM_MON_1
+	clearevent EVENT_ECRUTEAK_GYM_MON_2
+	clearevent EVENT_ECRUTEAK_GYM_MON_3
+	clearevent EVENT_ECRUTEAK_GYM_MON_4
+	clearflag EVENT_BEAT_CAMPER_JEFF
+	clearflag EVENT_BEAT_BUG_CATCHER_GREG
+	clearflag EVENT_BEAT_PICNICKER_TERRY
+	clearflag EVENT_BEAT_PICNICKER_BRITTANY
+	clearflag EVENT_BEAT_POKEFANM_LESTER
 	scall EcruteakGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, ECRUTEAK_GYM, 10, 21
 .no
 	end
@@ -281,7 +293,7 @@ EcruteakCity_MapEvents:
 	bg_event 30,  9, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 29, 15, BGEVENT_UP,   EcruteakMailbox
 	bg_event 25, 19, BGEVENT_UP,   EcruteakMailbox
-	bg_event 12, 11, BGEVENT_UP,   EnterGymEvent
+	bg_event 12, 11, BGEVENT_UP,   EcruteakGymEvent
 
 	db 4 ; object events
 	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, -1

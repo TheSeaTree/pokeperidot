@@ -65,11 +65,6 @@ CianwoodCityBurglar:
 	end
 
 CianwoodCityLookout:
-;	opentext
-;	givepoke KANGASKHAN, 15
-;	special GiftMonMoves
-;	closetext
-;	end
 	jumptextfaceplayer CianwoodLookoutText
 
 CianwoodCityMoveTutor:
@@ -111,10 +106,27 @@ CianwoodCityMoveTutor:
 	turnobject LAST_TALKED, DOWN
 	closetext
 	end
-	
+
 CianwoodGymEvent:
+	checkflag ENGINE_FOGBADGE
+	iftrue .havebadge
+	clearevent GOLDENROD_GYM_DOOR_1
+	clearevent EVENT_BEAT_GUITARIST_ANDY
+	clearevent EVENT_BEAT_GUITARIST_LEE
+	clearevent EVENT_BEAT_GUITARIST_COLIN
+	clearevent EVENT_BEAT_GUITARIST_TREVOR
+	clearevent EVENT_BEAT_BIKER_JERRY
+	clearevent EVENT_BEAT_GUITARIST_MARCEL
+	clearevent EVENT_BEAT_GUITARIST_IVAN
+	clearevent EVENT_BEAT_GUITARIST_CONRAD
+	clearevent EVENT_BEAT_GUITARIST_BOBBY
+	clearevent EVENT_BEAT_POKEMANIAC_CHARLIE
+	clearevent GOLDENROD_LEADER_DOOR_1
+	clearevent GOLDENROD_LEADER_DOOR_2
+	clearevent GOLDENROD_LEADER_DOOR_3
 	scall CianwoodGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, GOLDENROD_GYM, 8, 15
 .no
 	end

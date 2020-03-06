@@ -6,8 +6,7 @@ VioletGym_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .PrepareGym
+	db 0 ; callbacks
 	
 .DummyScene0:
 	showemote EMOTE_SHOCK, VIOLETGYM_GYM_GUY, 15
@@ -36,16 +35,6 @@ VioletGym_MapScripts:
 	
 .DummyScene1:
 	end
-	
-.PrepareGym
-	checkflag ENGINE_HIVEBADGE
-	iftrue .end
-	clearevent EVENT_BEAT_SWIMMERM_VINNY
-	clearevent EVENT_BEAT_SWIMMERM_JIMMY
-	clearevent EVENT_BEAT_SWIMMERF_VIVIAN
-	clearevent EVENT_BEAT_SWIMMERM_RONNIE
-.end
-	return
 
 VioletGymGuyScript:
 	faceplayer
@@ -70,6 +59,24 @@ VioletGymStatue:
 .Beaten:
 	trainertotext FALKNER, FALKNER1, MEM_BUFFER_1
 	jumpstd gymstatue2
+	
+VioletCantLeave:
+	checkflag ENGINE_HIVEBADGE
+	iftrue .Leave
+	jumpstd cantleavegym
+	end
+
+.Leave
+	opentext
+	writetext VioletGymHaveBadge
+	waitbutton
+	closetext
+	applymovement PLAYER, VioletLeaveGym
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	wait 4
+	warpfacing DOWN, MAHOGANY_TOWN, 38,  7
+	end
 	
 VioletLeaveGym:
 	turn_step DOWN
@@ -144,20 +151,26 @@ VioletGymGoodLuck:
 	line "challenge,"
 	cont "trainer!"
 	done
+	
+VioletGymHaveBadge:
+	text "<PLAYER> used"
+	line "the WAVEBADGE to"
+	cont "unlock the door!"
+	done
 
 VioletGym_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
-	warp_event  4,  7, VIOLET_CITY, 2
-	warp_event  5,  7, VIOLET_CITY, 2
+	db 1 ; warp events
 	warp_event  5,  3, VIOLET_GYM_B1, 1
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 4 ; bg events
 	bg_event  2,  5, BGEVENT_READ, VioletGymStatue
 	bg_event  7,  5, BGEVENT_READ, VioletGymStatue
+	bg_event  4,  8, BGEVENT_READ, VioletCantLeave
+	bg_event  5,  8, BGEVENT_READ, VioletCantLeave
 
 	db 1 ; object events
 	object_event   6,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VioletGymGuyScript, -1

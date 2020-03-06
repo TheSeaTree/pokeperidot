@@ -130,8 +130,15 @@ VioletCityShoeGuy:
 	end
 	
 VioletGymEvent:
+	checkflag ENGINE_HIVEBADGE
+	iftrue .havebadge
+	clearevent EVENT_BEAT_SWIMMERM_VINNY
+	clearevent EVENT_BEAT_SWIMMERM_JIMMY
+	clearevent EVENT_BEAT_SWIMMERF_VIVIAN
+	clearevent EVENT_BEAT_SWIMMERM_RONNIE
 	scall VioletGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, VIOLET_GYM,  4, 7
 .no
 	end	
@@ -380,7 +387,7 @@ VioletCity_MapEvents:
 
 	db 7 ; warp events
 	warp_event 21,  9, VIOLET_MART, 2
-	warp_event 38,  7, VIOLET_GYM, 1
+	warp_event 37, 15, VIOLET_CITY, 2
 	warp_event  9,  7, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 13, VIOLET_MOVE_TUTOR, 1
 	warp_event  3, 11, GOLDENROD_NAME_RATER, 1

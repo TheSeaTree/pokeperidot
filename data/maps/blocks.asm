@@ -350,6 +350,15 @@ AzaleaGym_Blocks:
 GoldenrodGym_Blocks:
 	INCBIN "maps/GoldenrodGym.ablk"
 
+GoldenrodGymNorthChamber_Blocks:
+	INCBIN "maps/GoldenrodGymNorthChamber.ablk"
+
+GoldenrodGymEastChamber_Blocks:
+	INCBIN "maps/GoldenrodGymEastChamber.ablk"
+
+GoldenrodGymWestChamber_Blocks:
+	INCBIN "maps/GoldenrodGymWestChamber.ablk"
+
 EcruteakGym_Blocks:
 	INCBIN "maps/EcruteakGym.ablk"
 

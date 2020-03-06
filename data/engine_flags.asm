@@ -26,6 +26,7 @@ EngineFlags:
 
 	engine_flag wStatusFlags, STATUSFLAGS_POKEDEX_F
 	engine_flag wStatusFlags, STATUSFLAGS_UNOWN_DEX_F
+	engine_flag wStatusFlags, STATUSFLAGS_FLASH_F
 	engine_flag wStatusFlags, STATUSFLAGS_CAUGHT_POKERUS_F
 	engine_flag wStatusFlags, STATUSFLAGS_ROCKET_SIGNAL_F
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F

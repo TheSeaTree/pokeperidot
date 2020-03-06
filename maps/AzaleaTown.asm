@@ -168,10 +168,15 @@ AzaleaBurglar:
 .FacingDown
 	applymovement AZALEATOWN_BURGLAR, BurglarExitLeft2
 	jump .Leave
-	
+
 AzaleaGymEvent:
+	checkflag ENGINE_ZEPHYRBADGE
+	iftrue .havebadge
+	clearevent EVENT_BEAT_BLACKBELT_BILLY
+	clearevent EVENT_BEAT_BLACKBELT_JIMMY
 	scall AzaleaGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, AZALEA_GYM,  8, 19
 .no
 	end	

@@ -74,8 +74,19 @@ MahoganyGymLeader:
 	end
 	
 MahoganyGymEvent:
+	checkflag ENGINE_MINERALBADGE
+	iftrue .havebadge
+	clearevent EVENT_BEAT_SCIENTIST_ANDRE
+	clearevent EVENT_BEAT_SCIENTIST_KURT
+	clearevent EVENT_BEAT_SCIENTIST_DAVID
+	clearevent EVENT_BEAT_SCIENTIST_SETH
+	clearevent EVENT_MAHOGANY_GYM_SWITCH_1
+	clearevent EVENT_MAHOGANY_GYM_SWITCH_2
+	clearevent EVENT_MAHOGANY_GYM_SWITCH_3
+	clearevent EVENT_MAHOGANY_GYM_SWITCH_4
 	scall MahoganyGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, MAHOGANY_GYM, 12, 31
 .no
 	end	

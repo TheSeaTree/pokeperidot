@@ -9,22 +9,13 @@ AzaleaGym_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .PrepareGym
+	db 0 ; callbacks
 	
 .DummyScene0:
 	end
 	
 .DummyScene1:
 	end
-	
-.PrepareGym
-	checkflag ENGINE_ZEPHYRBADGE
-	iftrue .end
-	clearevent EVENT_BEAT_BLACKBELT_BILLY
-	clearevent EVENT_BEAT_BLACKBELT_JIMMY
-.end
-	return
 	
 AzaleaGymBugsyScript:
 	faceplayer

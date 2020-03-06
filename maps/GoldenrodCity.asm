@@ -58,18 +58,6 @@ GoldenrodCity_MapScripts:
 	setevent EVENT_DAY_CARE_MON_2
 	return
 	
-GoldenrodSetupGym:
-	checkflag ENGINE_PLAINBADGE
-	iftrue .end
-	clearevent EVENT_BEAT_SCIENTIST_ADRIAN
-	clearevent EVENT_BEAT_PSYCHIC_PARKER
-	clearevent EVENT_BEAT_PSYCHIC_CHRISTIAN
-	clearevent EVENT_BEAT_PSYCHIC_DAMIEN
-	clearevent EVENT_BEAT_SCIENTIST_MELVIN
-	clearevent EVENT_BEAT_GUITARIST_XAVIER
-.end
-	end
-	
 DayCareManScript_Outside:
 	faceplayer
 	opentext
@@ -126,8 +114,17 @@ GoldenrodLadScript:
 	jumptextfaceplayer GoldenrodLadText
 	
 GoldenrodGymEvent:
+	checkflag ENGINE_PLAINBADGE
+	iftrue .havebadge
+	clearevent EVENT_BEAT_SCIENTIST_ADRIAN
+	clearevent EVENT_BEAT_PSYCHIC_PARKER
+	clearevent EVENT_BEAT_PSYCHIC_CHRISTIAN
+	clearevent EVENT_BEAT_PSYCHIC_DAMIEN
+	clearevent EVENT_BEAT_SCIENTIST_MELVIN
+	clearevent EVENT_BEAT_GUITARIST_XAVIER
 	scall GoldenrodGymEntrance
 	iffalse .no
+.havebadge
 	warpfacing UP, CIANWOOD_GYM, 15, 39
 .no
 	end
@@ -233,8 +230,7 @@ GoldenrodCity_MapEvents:
 	warp_event 25, 19, ROUTE_8_GOLDENROD_GATE, 2
 	warp_event  5,  5, ROUTE_11_GOLDENROD_GATE, 3
 
-	db 1 ; coord events
-	coord_event 12, 8, -1, GoldenrodSetupGym
+	db 0 ; coord events
 
 	db 6 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign

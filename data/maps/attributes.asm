@@ -424,3 +424,6 @@ ENDM
 	map_attributes Route22CaveB1F, ROUTE_22_CAVE_B1F, $09, 0
 	map_attributes Route22CaveB2F, ROUTE_22_CAVE_B2F, $09, 0
 	map_attributes Route22South, ROUTE_22_SOUTH, $35, 0
+	map_attributes GoldenrodGymNorthChamber, GOLDENROD_GYM_NORTH_CHAMBER, $00, 0
+	map_attributes GoldenrodGymEastChamber, GOLDENROD_GYM_EAST_CHAMBER, $00, 0
+	map_attributes GoldenrodGymWestChamber, GOLDENROD_GYM_WEST_CHAMBER, $00, 0

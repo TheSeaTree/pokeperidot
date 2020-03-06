@@ -189,7 +189,7 @@ CantLeaveGymScript:
 	farwritetext CantLeaveGymText
 	waitbutton
 	closetext
-	applymovement PLAYER, GymTurnBackMovement
+;	applymovement PLAYER, GymTurnBackMovement
 	end
 	
 GymTurnBackMovement:
@@ -1440,11 +1440,9 @@ HappinessCheckScript:
 	end
 	
 LightUpRoomScript:
-	opentext
 	reloadmappart
 	special UpdateTimePals
 	callasm BlindingFlash
-	closetext
 	end
 
 Movement_ContestResults_WalkAfterWarp:

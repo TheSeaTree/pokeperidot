@@ -6,16 +6,25 @@ GoldenrodGym_MapScripts:
 	db 0 ; scene scripts
 
 	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .PrepareGym
+	callback MAPCALLBACK_NEWMAP, .ClearFlash
 	callback MAPCALLBACK_TILES, .GoldenrodDoorCallback
 	
 .GoldenrodDoorCallback
+	checkevent GOLDENROD_GYM_DOOR_1
+	iffalse .incomplete
+	changeblock  8 , 8, $4F
+	checkevent GOLDENROD_LEADER_DOOR_1
+	iffalse .incomplete
+	checkevent GOLDENROD_LEADER_DOOR_2
+	iffalse .incomplete
+	checkevent GOLDENROD_LEADER_DOOR_3
+	iffalse .incomplete
+	changeblock 8, 4, $27
+.incomplete
 	return
-	
-.PrepareGym
-	checkflag ENGINE_FOGBADGE
-	iftrue .end
-.end
+
+.ClearFlash
+	clearflag ENGINE_FLASH
 	return
 
 GoldenrodGymWhitneyScript:
@@ -49,15 +58,15 @@ GoldenrodGymWhitneyScript:
 .After:
 	setevent EVENT_BEAT_MORTY
 	setevent GOLDENROD_GYM_DOOR_1
-	setevent GOLDENROD_GYM_DOOR_2
-	setevent GOLDENROD_GYM_DOOR_3
+	setevent EVENT_BEAT_GUITARIST_ANDY
+	setevent EVENT_BEAT_GUITARIST_LEE
 	setevent EVENT_BEAT_GUITARIST_COLIN
-	setevent EVENT_BEAT_GUITARIST_TREVOR	
+	setevent EVENT_BEAT_GUITARIST_TREVOR
 	setevent EVENT_BEAT_BIKER_JERRY
 	setevent EVENT_BEAT_GUITARIST_MARCEL
 	setevent EVENT_BEAT_GUITARIST_IVAN
 	setevent EVENT_BEAT_GUITARIST_CONRAD
-	setevent GOLDENROD_GYM_DOOR_5
+	setevent EVENT_BEAT_GUITARIST_BOBBY
 	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	opentext
 	writetext PlayerReceivedPlainBadgeText
@@ -87,7 +96,7 @@ GoldenrodGymWhitneyScript:
 	closetext
 	end
 	
-DoorGuard1:
+GoldenrodGymDoorGuard:
 	faceplayer
 	opentext
 	checkevent GOLDENROD_GYM_DOOR_1
@@ -282,20 +291,19 @@ BurglarAllenWinText:
 	done
 
 Door1OpenedText:
-	text "Up ahead are two"
-	line "doors to choose"
-	cont "from."
+	text "The trainers in"
+	line "this GYM dwell in"
+	cont "total darkness."
 	
-	para "One trainer is"
-	line "lying. The other"
-	cont "tells half-truths."
+	para "They really hate"
+	line "when anyone dist-"
+	cont "urbs them."
 	
-	para "Which one is"
-	line "which?"
-	
-	para "What fun would it"
-	line "be if I told you?"
-	cont "Ehehehe."
+	para "Prepare for some"
+	line "tough battles if"
+	cont "you're going to"
+	cont "turn the lights"
+	cont "on."
 	done
 	
 Door2OpenedText:
@@ -433,10 +441,10 @@ GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  5,  1, GOLDENROD_GYM, 4 ; GOLDENROD_GYM_NORTH_ROOM, 1
-	warp_event 12,  1, GOLDENROD_GYM, 3 ; GOLDENROD_GYM_NORTH_ROOM, 2
-	warp_event  1,  5, GOLDENROD_GYM, 2 ; GOLDENROD_GYM_WEST_ROOM, 1
-	warp_event 16,  5, GOLDENROD_GYM, 1 ; GOLDENROD_GYM_EAST_ROOM, 1
+	warp_event  5,  1, GOLDENROD_GYM_NORTH_CHAMBER, 1
+	warp_event 12,  1, GOLDENROD_GYM_NORTH_CHAMBER, 2
+	warp_event  1,  5, GOLDENROD_GYM_WEST_CHAMBER, 1
+	warp_event 16,  5, GOLDENROD_GYM_EAST_CHAMBER, 1
 
 	db 0 ; coord events
 
@@ -448,4 +456,4 @@ GoldenrodGym_MapEvents:
 
 	db 2 ; object events
 	object_event  9,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event  8,  9, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, DoorGuard1, -1
+	object_event  8,  9, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymDoorGuard, -1

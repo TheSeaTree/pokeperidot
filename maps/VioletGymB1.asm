@@ -238,24 +238,6 @@ VioletGymB1BarrierScript:
 	closetext
 	end
 	
-VioletCantLeave:
-	checkflag ENGINE_HIVEBADGE
-	iftrue .End
-	checkcode VAR_FACING
-	ifequal DOWN, .CantLeaveGym
-	end
-	
-.CantLeaveGym
-	jumpstd cantleavegym
-	end
-	
-.End
-	end
-
-VioletStepUp:
-	step UP
-	step_end
-	
 FalknerIntroText:
 	text "I'm FALKNER, the"
 	line "VIOLET #MON"
@@ -375,11 +357,9 @@ VioletGymB1_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 19, 25, VIOLET_GYM, 3
+	warp_event 19, 25, VIOLET_GYM, 1
 
-	db 2 ; coord events
-	coord_event 16, 24, -1, VioletCantLeave
-	coord_event 17, 24, -1, VioletCantLeave
+	db 0 ; coord events
 
 	db 0 ; bg events
 
