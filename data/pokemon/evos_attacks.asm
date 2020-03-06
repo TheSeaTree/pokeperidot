@@ -1690,14 +1690,14 @@ MarowakEvosAttacks:
 	db 53, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
-HitmonleeEvosAttacks: ; Crownster
+HitmonleeEvosAttacks: ; Concher
 	db 0 ; no more evolutions
 	db 1, HARDEN
 	db 1, SUPERSONIC
 	db 1, AURORA_BEAM
 	db 1, PROTECT
-	db 13, SPIKE_CANNON
-	db 28, SPIKES
+	db 13, BITE
+	db 28, CRUNCH
 	db 50, BLIZZARD
 	db 0 ; no more level-up moves
 
@@ -2851,7 +2851,7 @@ MandrabelEvosAttacks:
 	db 50, MOONBLAST
 	db 0 ; no more level-up moves
 
-IgglybuffEvosAttacks:
+IgglybuffEvosAttacks: ; Curstraw
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, DESTINY_BOND
@@ -3500,6 +3500,7 @@ TungtyedEvosAttacks:
 	db 25, DISABLE
 	db 29, BODY_SLAM
 	db 33, ROLLOUT
+	db 36, FUTURE_SIGHT
 	db 40, AMNESIA
 	db 47, REST
 	db 51, SCREECH
