@@ -1,10 +1,10 @@
-	db "SHARP CLAW@" ; species name
-	dw 211, 620 ; height, weight
+	db "LICKING@" ; species name
+	dw 507, 3086 ; height, weight
 
-	db   "This cunning"
-	next "#MON hides"
-	next "under the cover"
+	db   "Its tongue never"
+	next "stops growing."
+	next "People seek the"
 
-	page "of darkness,"
-	next "waiting to attack"
-	next "its prey.@"
+	page "eldest TUNGTYED"
+	next "to learn their"
+	next "fortune.@"

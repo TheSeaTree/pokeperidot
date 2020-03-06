@@ -6,4 +6,5 @@
 	next "ships in place"
 	
 	para "with its powerful"
-	next "bite and its tail.@"
+	next "bite and heavy."
+	next "tail.@"

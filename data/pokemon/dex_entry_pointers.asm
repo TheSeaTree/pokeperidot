@@ -173,7 +173,7 @@ PokedexDataPointerTable:
 	dw LanturnPokedexEntry
 	dw SirfetchDPokedexEntry
 	dw MandrabelPokedexEntry
-	dw IgglybuffPokedexEntry
+	dw CurstrawPokedexEntry
 	dw ShifurPokedexEntry
 	dw SnowmadPokedexEntry
 	dw NatuPokedexEntry

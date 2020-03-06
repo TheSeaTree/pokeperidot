@@ -1,10 +1,10 @@
 	db "KITTEN@" ; species name
 	dw 100, 80 ; height, weight
 
-	db   "This #MON's"
-	next "impressive vital-"
-	next "ity allows it to"
+	db   "This #MON is"
+	next "often seen as an"
+	next "omen. The sound of"
 
-	page "live anywhere. It"
-	next "also multiplies"
-	next "very quickly.@"
+	page "its bell has been"
+	next "likened to a"
+	next "funeral toll.@"

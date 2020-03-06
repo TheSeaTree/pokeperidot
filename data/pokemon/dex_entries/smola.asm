@@ -1,10 +1,10 @@
 	db "HALF FISH@" ; species name
 	dw 207, 80 ; height, weight
 
-	db   "The only time it"
-	next "can use its psy-"
-	next "chic power is when"
+	db   "Despite their"
+	next "docile nature,"
+	next "S'MOLA close to"
 
-	page "its sleeping brain"
-	next "cells happen to"
-	next "wake.@"
+	page "evolution will act"
+	next "aggressively"
+	next "toward people.@"

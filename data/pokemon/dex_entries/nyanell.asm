@@ -1,10 +1,10 @@
 	db "CAT@" ; species name
 	dw 204, 410 ; height, weight
 
-	db   "The webs on its"
-	next "hind legs enable"
-	next "it to cross"
+	db   "NYANELL are rare-"
+	next "ly kept as pets."
+	next "Many believe that"
 
-	page "rivers. It search-"
-	next "es wide areas for"
-	next "food.@"
+	page "crossing paths"
+	next "with one will"
+	next "bring bad luck.@"

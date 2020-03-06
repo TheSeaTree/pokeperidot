@@ -1,10 +1,10 @@
 	db "JET@" ; species name
 	dw 211, 630 ; height, weight
 
-	db   "Its instinct is to"
-	next "bury itself in"
-	next "holes. It often"
+	db   "OCTANK can survive"
+	next "on land for days"
+	next "using water stored"
 
-	page "steals the nesting"
-	next "holes of others to"
-	next "sleep in them.@"
+	page "in its pot."
+	next "The pot is value-"
+	next "able to poachers.@"

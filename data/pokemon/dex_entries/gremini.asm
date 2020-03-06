@@ -1,10 +1,10 @@
-	db "OWL@" ; species name
+	db "CONJOINED@" ; species name
 	dw 211, 638 ; height, weight
 
-	db   "After doing a"
-	next "handstand to"
-	next "throw off the"
+	db   "It is unknown if"
+	next "GREMINI have one"
+	next "soul or two. They"
 
-	page "opponent's timing,"
-	next "it presents its"
-	next "fancy kick moves.@"
+	page "always share a"
+	next "mischievous perso-"
+	next "nality.@"
