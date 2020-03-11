@@ -65,6 +65,9 @@ TrainerGuitaristBrendon:
 	closetext
 	end	
 	
+PalerockOutsideHiker:
+	jumptextfaceplayer PalerockOutsideHikerText
+	
 PalerockOutsidePushAway:
 	turn_step LEFT
 	step_resume
@@ -140,6 +143,17 @@ GuitaristBrendonAfterText:
 	text "I lost."
 	done
 	
+PalerockOutsideHikerText:
+	text "I took a break to"
+	line "catch my breath."
+	
+	para "It's amazing how"
+	line "high up we are."
+	
+	para "I'm glad I'm not"
+	line "afraid of heights!"
+	done
+	
 PalerockMountainOutside_MapEvents:
 	db 0, 0 ; filler
 	
@@ -152,10 +166,11 @@ PalerockMountainOutside_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event 21, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristTomas, -1
 	object_event 22, 19, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristPaul, -1
 	object_event 26,  9, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristFredrik, -1
 	object_event 25, 16, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristBrendon, -1
 	object_event 15, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PalerockOutsideRocker, EVENT_SAVED_PALEROCK_ROCKER
+	object_event  4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PalerockOutsideHiker, -1
 	

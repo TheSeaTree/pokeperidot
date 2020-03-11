@@ -153,3 +153,5 @@
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 98
 	tilecoll WALL, WALL, WALL, WALL ; 99
 	tilecoll WALL, WALL, WALL, WALL ; 9a
+	tilecoll BUTTON, WALL, FLOOR, WALL ; 9b
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 9c

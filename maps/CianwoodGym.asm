@@ -46,8 +46,8 @@ CianwoodGymChuckScript:
 	waitbutton
 	closetext
 	special HealParty
-	changeblock 14 , 38, $50
-	changeblock 16 , 38, $51
+	changeblock 14 , 34, $40
+	changeblock 16 , 34, $40
 	end
 
 .AlreadyGotTM:
@@ -178,27 +178,32 @@ CianwoodGymHaveBadge:
 	done
 
 ChuckIntroText1:
-	text "WAHAHAH!"
+	text "Ah, you have dis-"
+	line "covered the path"
+	cont "through my laby-"
+	cont "rinth of tele-"
+	cont "porters."
 
-	para "So you've come"
-	line "this far!"
-
-	para "Let me tell you,"
-	line "I'm tough!"
-
-	para "My #MON will"
-	line "crush stones and"
-	cont "shatter bones!"
-
-	para "Watch this!"
+	para "You have not yet"
+	line "proven your worth."
+	
+	para "To claim my BADGE,"
+	line "defeat me in"
+	cont "battle!"
 	done
 
 ChuckLossText:
-	text "Wha? Huh?"
-	line "I lost?"
-
-	para "How about that!"
-	line "You're worthy of"
+	text "Miraculous!"
+	
+	para "Never have I seen"
+	line "such a masterful"
+	cont "command over"
+	cont "#MON."
+	
+	para "I, CELESTE,"
+	line "leader of the"
+	cont "FAVIA GYM, bestow"
+	cont "upon you the"
 	cont "MYSTICBADGE!"
 	done
 
@@ -208,31 +213,25 @@ GetStormBadgeText:
 	done
 
 ChuckExplainBadgeText:
-	text "MYSTICBADGE makes"
-	line "all #MON up to"
+	text "The MYSTICBADGE"
+	line "will allow use of"
+	cont "the move CUT while"
+	cont "out of battle."
 
-	para "L70 obey, even"
-	line "traded ones."
-
-	para "It also lets your"
-	line "#MON use FLY"
-
-	para "when you're not in"
-	line "a battle."
-
-	para "Here, take this"
-	line "too!"
+	para "Here, you have"
+	line "earned this as"
+	cont "well."
 	done
 
 ChuckExplainTMText:
-	text "That is DYNAMIC-"
-	line "PUNCH."
+	text "That is TELEPORT."
 
-	para "It doesn't always"
-	line "hit, but when it"
-
-	para "does, it causes"
-	line "confusion!"
+	para "As you observed,"
+	line "it will allow the"
+	cont "user to retreat,"
+	cont "and ensure its"
+	cont "replacement enter"
+	cont "safely."
 	done
 
 ChuckAfterText:

@@ -2870,7 +2870,6 @@ ShifurEvosAttacks:
 	db 16, FURY_SWIPES
 	db 20, AGILITY
 	db 22, METAL_CLAW
-	db 25, CONFUSE_RAY
 	db 28, AURORA_BEAM
 	db 32, SCREECH
 	db 35, CUT
@@ -2888,7 +2887,6 @@ SnowmadEvosAttacks:
 	db 16, FURY_SWIPES
 	db 20, AGILITY
 	db 22, METAL_CLAW
-	db 25, CONFUSE_RAY
 	db 28, AURORA_BEAM
 	db 30, FAINT_ATTACK
 	db 33, SCREECH

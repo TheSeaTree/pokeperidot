@@ -10,7 +10,7 @@ SpawnPoints:
 	spawn PLAYERS_HOUSE_2F,            3,  3
 	spawn VIRIDIAN_POKECENTER_1F,      5,  3
 
-	spawn NEW_BARK_TOWN,              21, 12
+	spawn NEW_BARK_TOWN,              17, 12
 	spawn CHERRYGROVE_CITY,           15, 22
 	spawn AZALEA_TOWN,                49,  8
 	spawn VIOLET_CITY,                 9,  8

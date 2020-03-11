@@ -110,20 +110,8 @@ AzaleaTownRivalBattleScript:
 AzaleaGymConfirm:
 	faceplayer
 	opentext
-	checkcode VAR_BADGES
-	ifgreater 0, .ConfirmText
 	writetext AzaleaGymFirstTimeText
 	waitbutton
-	jump .ConfirmText
-	
-.ConfirmText
-	writetext AzaleaAskEnterText
-	yesorno
-	iftrue .Enter
-	closetext
-	end
-
-.Enter
 	closetext
 	applymovement AZALEATOWN_GYM_GUY, AzaleaGymMovement
 	playsound SFX_ENTER_DOOR
@@ -517,11 +505,24 @@ AzaleaTownSignText:
 	done
 
 AzaleaGymFirstTimeText:
-	text "You will be unable"
-	line "to leave this GYM"
-	cont "until you defeat"
-	cont "the leader or"
-	cont "white out."
+	text "Sorry, I was just"
+	line "on break. Are you"
+	cont "the next"
+	cont "challenger?"
+	
+	para "It doesn't look"
+	line "like you have any"
+	cont "badges, so you"
+	cont "must be a newbie."
+	
+	para "Anyway, you should"
+	line "make sure your"
+	cont "#MON are all"
+	cont "healed up before"
+	cont "entering the GYM."
+	
+	para "I'll see you in-"
+	line "side, trainer!"
 	done
 	
 AzaleaAskEnterText:

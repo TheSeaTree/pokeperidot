@@ -209,7 +209,7 @@ Moves: ; 41afb
 	move PERISH_SONG,  EFFECT_PERISH_SONG,         0, NORMAL,   100,  5,   0
 	move ICY_WIND,     EFFECT_SPEED_DOWN_HIT,     55, ICE,       95, 15, 100
 	move PLAY_ROUGH,   EFFECT_ATTACK_DOWN_HIT,    90, FAIRY,     90, 10,  10
-	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,    95, FAIRY,    100, 15,  30
+	move MOONBLAST,    EFFECT_SP_ATK_DOWN_HIT,    90, FAIRY,    100, 15,  30
 	move LOCK_ON,      EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move OUTRAGE,      EFFECT_RAMPAGE,           120, DRAGON,   100, 10,   0
 	move SANDSTORM,    EFFECT_SANDSTORM,           0, ROCK,     100, 10,   0
@@ -236,7 +236,7 @@ Moves: ; 41afb
 	move BULLDOZE,     EFFECT_SPEED_DOWN_HIT,     60, GROUND,   100, 20, 100
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,  50,  5, 100
 	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,       85, 10,   0
-	move DRAGONBREATH, EFFECT_PARALYZE_HIT,       85, DRAGON,   100, 20,  10
+	move DRAGONBREATH, EFFECT_PARALYZE_HIT,       90, DRAGON,   100, 20,  10
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, NORMAL,   100, 40,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,   100,  5,   0
 	move PURSUIT,      EFFECT_PURSUIT,            40, DARK,     100, 20,   0

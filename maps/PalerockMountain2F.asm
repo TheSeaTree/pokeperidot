@@ -6,8 +6,9 @@
 PalerockMountain2F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_CMDQUEUE, .SetUpStoneTable
+	callback MAPCALLBACK_TILES, .Stairs
 
 .SetUpStoneTable:
 	writecmdqueue .CommandQueue
@@ -30,6 +31,11 @@ PalerockMountain2F_MapScripts:
 	earthquake 10
 	playsound SFX_STRENGTH
 	pause 10
+	refreshscreen $86
+	changeblock 12, 16, $63 ; open door
+	changeblock 16, 10, $61 ; open door
+	reloadmappart
+	closetext
 	opentext
 	writetext DoorOpenedText
 	waitbutton
@@ -38,6 +44,14 @@ PalerockMountain2F_MapScripts:
 	setevent EVENT_BOULDER_IN_PALEROCK_3B
 	disappear PALEROCK2F_BOULDER1
 	end
+	
+.Stairs:
+	checkevent EVENT_BOULDER_IN_PALEROCK_3B
+	iffalse .skip
+	changeblock 12, 16, $9B ; open door
+	changeblock 16, 10, $61 ; open door
+.skip
+	return
 
 PalerockMountain2FBoulder:
 	jumpstd strengthboulder
@@ -67,8 +81,7 @@ BeautyReggieAfterText:
 	done
 	
 DoorOpenedText:
-	text "A door opened"
-	line "somewhere."
+	text "A door opened up!"
 	done
 	
 PalerockMountain2F_MapEvents:

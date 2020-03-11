@@ -441,19 +441,19 @@ GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  5,  1, GOLDENROD_GYM_NORTH_CHAMBER, 1
-	warp_event 12,  1, GOLDENROD_GYM_NORTH_CHAMBER, 2
-	warp_event  1,  5, GOLDENROD_GYM_WEST_CHAMBER, 1
-	warp_event 16,  5, GOLDENROD_GYM_EAST_CHAMBER, 1
+	warp_event  5,  3, GOLDENROD_GYM_NORTH_CHAMBER, 1
+	warp_event 12,  3, GOLDENROD_GYM_NORTH_CHAMBER, 2
+	warp_event  1,  7, GOLDENROD_GYM_WEST_CHAMBER, 1
+	warp_event 16,  7, GOLDENROD_GYM_EAST_CHAMBER, 1
 
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event  7, 13, BGEVENT_READ, GoldenrodGymStatue
-	bg_event 10, 13, BGEVENT_READ, GoldenrodGymStatue
-	bg_event  8, 16, BGEVENT_DOWN, GoldenrodCantLeave
-	bg_event  9, 16, BGEVENT_DOWN, GoldenrodCantLeave
+	bg_event  7, 15, BGEVENT_READ, GoldenrodGymStatue
+	bg_event 10, 15, BGEVENT_READ, GoldenrodGymStatue
+	bg_event  8, 18, BGEVENT_DOWN, GoldenrodCantLeave
+	bg_event  9, 18, BGEVENT_DOWN, GoldenrodCantLeave
 
 	db 2 ; object events
-	object_event  9,  1, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
-	object_event  8,  9, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymDoorGuard, -1
+	object_event  9,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
+	object_event  8, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymDoorGuard, -1

@@ -127,7 +127,7 @@ CianwoodGymEvent:
 	scall CianwoodGymEntrance
 	iffalse .no
 .havebadge
-	warpfacing UP, GOLDENROD_GYM, 8, 15
+	warpfacing UP, GOLDENROD_GYM, 8, 17
 .no
 	end
 	

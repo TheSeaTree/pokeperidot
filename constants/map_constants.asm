@@ -282,7 +282,7 @@ ENDM
 	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
 	map_const POKE_SEERS_HOUSE,                             4,  4 ; 10
 	map_const CIANWOOD_CHURCH,                              7, 11
-	map_const GOLDENROD_GYM,                                9,  8 ;  3
+	map_const GOLDENROD_GYM,                                9,  9 ;  3
 	map_const GOLDENROD_GYM_NORTH_CHAMBER,                  9, 10 ;  3
 	map_const GOLDENROD_GYM_EAST_CHAMBER,                   8, 10 ;  3
 	map_const GOLDENROD_GYM_WEST_CHAMBER,                   8, 10 ;  3
