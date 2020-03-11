@@ -13,13 +13,10 @@ MysteryGiftGirl:
 	writetext MysterGiftText
 	yesorno
 	iffalse .Decline
-	random 4
-	ifequal 0, .RandomItemBank1
-	ifequal 1, .RandomItemBank2
-	ifequal 2, .RandomItemBank3
-	ifequal 3, .RandomItemBank4
-	verbosegiveitem SILVER_LEAF
-.continue
+	writetext MysteryGiftLinkUp
+	playsound SFX_MOVE_DELETED
+	waitsfx
+	scall FindMysteryGiftItem
 	iffalse .NoRoom
 	writetext MysteryGiftReceivedText
 	waitbutton
@@ -27,7 +24,7 @@ MysteryGiftGirl:
 	closetext
 	turnobject LAST_TALKED, DOWN
 	end
-	
+
 .NoRoom
 	writetext MysterGiftNoRoom
 	waitbutton
@@ -49,29 +46,9 @@ MysteryGiftGirl:
 	turnobject LAST_TALKED, DOWN
 	end
 	
-.RandomItemBank1:
-	random X_SP_ATK - MOON_STONE + 1
-	addvar MOON_STONE
-	verbosegiveitem ITEM_FROM_MEM
-	jump .continue
-
-.RandomItemBank2:
-	random POKE_BALL - ULTRA_BALL + 1
-	addvar ULTRA_BALL
-	verbosegiveitem ITEM_FROM_MEM
-	jump .continue
-
-.RandomItemBank3:
-	random ELIXER - PP_UP + 1
-	addvar PP_UP
-	verbosegiveitem ITEM_FROM_MEM
-	jump .continue
-	
-.RandomItemBank4:
-	random MINT_BERRY - MOOMOO_MILK + 1
-	addvar MOOMOO_MILK
-	verbosegiveitem ITEM_FROM_MEM
-	jump .continue
+FindMysteryGiftItem:
+	jumpstd mysterygiftgirl
+	end
 
 MysterGiftText:
 	text "MYSTERY GIFT!"
@@ -79,7 +56,12 @@ MysterGiftText:
 	
 	para "Do you want to"
 	line "share a MYSTERY"
-	cont "GIFT!"
+	cont "GIFT?"
+	done
+	
+MysteryGiftLinkUp:
+	text "Okay! Just link up"
+	line "with me for a sec!"
 	done
 
 MysterGiftNoRoom:

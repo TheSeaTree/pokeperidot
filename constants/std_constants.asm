@@ -54,4 +54,5 @@
 	enum pcscript
 	enum gamecornercoinvendor
 	enum happinesschecknpc
+	enum mysterygiftgirl
 	enum lightuproom

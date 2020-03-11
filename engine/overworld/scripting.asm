@@ -537,7 +537,7 @@ GiveItemScript:
 	end
 
 ReceivedItemText:
-	text_far UnknownText_0x1c4719
+	text_far GiveItemText
 	text_end
 
 Script_verbosegiveitem2:

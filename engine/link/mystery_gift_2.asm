@@ -122,15 +122,6 @@ PrepMysteryGiftDataToSend:
 	ret
 
 MysteryGiftGetItemHeldEffect:
-	ld a, c
-	cp MysteryGiftItems.End - MysteryGiftItems
-	jr nc, MysteryGiftFallbackItem
-	ld hl, MysteryGiftItems
-	ld b, 0
-	add hl, bc
-	ld c, [hl]
-	ret
-
 MysteryGiftGetDecoration:
 	ld a, c
 	cp MysteryGiftDecos.End - MysteryGiftDecos
@@ -144,7 +135,5 @@ MysteryGiftGetDecoration:
 MysteryGiftFallbackItem:
 	ld c, DECO_POLKADOT_BED ; GREAT_BALL
 	ret
-
-INCLUDE "data/items/mystery_gift_items.asm"
 
 INCLUDE "data/decorations/mystery_gift_decos.asm"

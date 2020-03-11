@@ -53,6 +53,7 @@ StdScripts::
 	dba PCScript
 	dba GameCornerCoinVendorScript
 	dba HappinessCheckScript
+	dba MysteryGiftGirl
 	dba LightUpRoomScript
 
 PokecenterNurseScript:
@@ -1437,6 +1438,11 @@ HappinessCheckScript:
 	farwritetext HappinessText1
 	waitbutton
 	closetext
+	end
+	
+MysteryGiftGirl:
+	callasm MysteryGiftNPC
+	verbosegiveitem ITEM_FROM_MEM
 	end
 	
 LightUpRoomScript:

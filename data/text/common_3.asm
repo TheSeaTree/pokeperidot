@@ -243,7 +243,7 @@ UnknownText_0x1c4706::
 	text "Coordinates event"
 	done
 
-UnknownText_0x1c4719::
+GiveItemText::
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer4

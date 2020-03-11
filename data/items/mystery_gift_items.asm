@@ -1,3 +1,42 @@
 MysteryGiftItems:
-	db RARE_CANDY
+	db 8, BERRY
+	db 8, PRZCUREBERRY
+	db 8, MINT_BERRY
+	db 8, ICE_BERRY
+	db 8, BURNT_BERRY
+	db 8, PSNCUREBERRY
+	db 8, MIRACLEBERRY
+	db 8, GOLD_BERRY
+	db 8, REVIVE
+	db 8, GREAT_BALL
+	db 8, SUPER_REPEL
+	db 8, MAX_REPEL
+	db 8, ELIXER
+	db 8, ETHER
+	db 8, WATER_STONE
+	db 8, LEAF_STONE
+	db 8, FIRE_STONE
+	db 8, THUNDERSTONE
+	db 8, MOON_STONE
+	db 8, MAX_ETHER
+	db 8, REVIVE
+	db 8, KINGS_ROCK
+	db 8, SLOWPOKETAIL
+	db 8, MOOMOO_MILK
+	db 8, SILVER_LEAF
+	db 8, GOLD_LEAF
+	db 4, X_DEFEND
+	db 4, X_ATTACK
+	db 4, X_SP_ATK
+	db 4, X_SP_DEF
+	db 4, X_ACCURACY
+	db 1, HP_UP
+	db 1, CARBOS
+	db 1, CALCIUM
+	db 1, PROTEIN
+	db 1, IRON
+	db 1, PP_UP
+	db 1, X_SPEED
+	db 1, RARE_CANDY
+	db -1
 .End

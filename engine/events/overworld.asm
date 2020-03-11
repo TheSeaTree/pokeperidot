@@ -1359,11 +1359,19 @@ RockSmashScript:
 
 	callasm RockMonEncounter
 	copybytetovar wTempWildMonSpecies
-	iffalse .done
+	iffalse .item
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
-.done
+	end
+
+.item
+	callasm RockItemEncounter
+	iffalse .no_item
+	opentext
+	verbosegiveitem ITEM_FROM_MEM
+	closetext
+.no_item
 	end
 
 MovementData_0xcf55:
