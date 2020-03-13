@@ -1,9 +1,7 @@
 	const_def 2 ; object constants
 	const MAHOGANYDEPTSTORE5F_CLERK
 	const MAHOGANYDEPTSTORE5F_LASS
-	const MAHOGANYDEPTSTORE5F_MIKE
 	const MAHOGANYDEPTSTORE5F_POKEFAN_M
-	const MAHOGANYDEPTSTORE5F_CARRIE
 	const MAHOGANYDEPTSTORE5F_RECEPTIONIST
 
 MahoganyDeptStore5F_MapScripts:
@@ -76,23 +74,6 @@ MahoganyDeptStore5FReceptionistScript:
 	writetext UnknownText_0x56202
 	waitbutton
 .Done:
-	closetext
-	end
-
-Carrie:
-	faceplayer
-	opentext
-	special GameboyCheck
-	ifnotequal GBCHECK_CGB, .NotGBC ; This is a dummy check from Gold/Silver
-	writetext UnknownText_0x56241
-	waitbutton
-	closetext
-	special UnlockMysteryGift
-	end
-
-.NotGBC:
-	writetext UnknownText_0x56279
-	waitbutton
 	closetext
 	end
 
@@ -204,9 +185,8 @@ MahoganyDeptStore5F_MapEvents:
 	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore5FDirectory
 	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore5FElevatorButton
 
-	db 5 ; object events
+	db 4 ; object events
 	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FClerkScript, -1
 	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FLassScript, -1
 	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FPokefanMScript, -1
-	object_event  9,  1, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Carrie, -1
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

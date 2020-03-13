@@ -258,7 +258,6 @@ DoMysteryGiftIfDayHasPassed:
 	ld hl, wBuffer1
 	call InitOneDayCountdown
 	call CloseSRAM
-	farcall Function1050c8
 
 .not_timed_out
 	ld a, BANK(sMysteryGiftTimer)

@@ -26,9 +26,6 @@ SpecialsPointers::
 	add_special Colosseum
 	add_special TimeCapsule
 	add_special CableClubCheckWhichChris ; $10
-	add_special CheckMysteryGift
-	add_special GetMysteryGiftItem
-	add_special UnlockMysteryGift
 
 ; Map events
 	add_special BugContestJudging

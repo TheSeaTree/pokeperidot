@@ -133,52 +133,6 @@ PlayersHousePC:
 	ld [wScriptVar], a
 	ret
 
-CheckMysteryGift:
-	ld a, BANK(sMysteryGiftItem)
-	call GetSRAMBank
-	ld a, [sMysteryGiftItem]
-	and a
-	jr z, .no
-	inc a
-
-.no
-	ld [wScriptVar], a
-	call CloseSRAM
-	ret
-
-GetMysteryGiftItem:
-	ld a, BANK(sMysteryGiftItem)
-	call GetSRAMBank
-	ld a, [sMysteryGiftItem]
-	ld [wCurItem], a
-	ld a, 1
-	ld [wItemQuantityChangeBuffer], a
-	ld hl, wNumItems
-	call ReceiveItem
-	jr nc, .no_room
-	xor a
-	ld [sMysteryGiftItem], a
-	call CloseSRAM
-	ld a, [wCurItem]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ld hl, .ReceiveItemText
-	call PrintText
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
-
-.no_room
-	call CloseSRAM
-	xor a
-	ld [wScriptVar], a
-	ret
-
-.ReceiveItemText:
-	; received item
-	text_far UnknownText_0x1bd3be
-	text_end
-
 BugContestJudging:
 	farcall _BugContestJudging
 	ld a, b

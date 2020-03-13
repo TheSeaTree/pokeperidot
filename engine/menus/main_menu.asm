@@ -44,7 +44,6 @@ MainMenu:
 	db "CONTINUE@"
 	db "NEW GAME@"
 	db "OPTION@"
-	db "MYSTERY GIFT@"
 	db "MOBILE@"
 	db "MOBILE STADIUM@"
 
@@ -52,14 +51,12 @@ MainMenu:
 	dw MainMenu_Continue
 	dw MainMenu_NewGame
 	dw MainMenu_Options
-	dw MainMenu_MysteryGift
 	dw MainMenu_Mobile
 	dw MainMenu_MobileStudium
 
 CONTINUE       EQU 0
 NEW_GAME       EQU 1
 OPTION         EQU 2
-MYSTERY_GIFT   EQU 3
 MOBILE         EQU 4
 MOBILE_STUDIUM EQU 5
 
@@ -83,7 +80,6 @@ MobileMysteryMenu:
 	db CONTINUE
 	db NEW_GAME
 	db OPTION
-	db MYSTERY_GIFT
 	db MOBILE
 	db -1
 
@@ -109,7 +105,6 @@ MysteryMobileStudiumMenu:
 	db CONTINUE
 	db NEW_GAME
 	db OPTION
-	db MYSTERY_GIFT
 	db MOBILE
 	db MOBILE_STUDIUM
 	db -1
@@ -119,7 +114,6 @@ MysteryMenu:
 	db CONTINUE
 	db NEW_GAME
 	db OPTION
-	db MYSTERY_GIFT
 	db -1
 
 MysteryStudiumMenu:
@@ -127,7 +121,6 @@ MysteryStudiumMenu:
 	db CONTINUE
 	db NEW_GAME
 	db OPTION
-	db MYSTERY_GIFT
 	db MOBILE_STUDIUM
 	db -1
 
@@ -304,8 +297,4 @@ MainMenu_Options:
 
 MainMenu_Continue:
 	farcall Continue
-	ret
-
-MainMenu_MysteryGift:
-	farcall MysteryGift
 	ret
