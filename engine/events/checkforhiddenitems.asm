@@ -104,13 +104,17 @@ endr
 	
 .RockItems:
 	db 1, MAX_REVIVE
-	db 2, THICK_CLUB
-	db 4, KINGS_ROCK
-	db 4, NUGGET
+	db 1, OLD_AMBER
+	db 2, NUGGET
+	db 4, THICK_CLUB
 	db 6, STAR_PIECE
+	db 8, FIRE_STONE
+	db 8, WATER_STONE
+	db 8, LEAF_STONE
+	db 8, THUNDERSTONE
+	db 8, MOON_STONE
+	db 8, SUN_STONE
 	db 12, BIG_PEARL
-	db 18, ETHER
-	db 48, PEARL
-	db 64, BRICK_PIECE
+	db 48, BRICK_PIECE
 	db 48, NO_ITEM
 	db -1

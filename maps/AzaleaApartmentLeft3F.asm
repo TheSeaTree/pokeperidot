@@ -16,11 +16,15 @@ MysteryGiftGirl:
 	writetext MysteryGiftLinkUp
 	playsound SFX_MOVE_DELETED
 	waitsfx
+	setflag ENGINE_DAILY_MYSTERY_GIFT
+	scall FindMysteryGiftItem
+	iffalse .NoRoom
+	scall FindMysteryGiftItem
+	iffalse .NoRoom
 	scall FindMysteryGiftItem
 	iffalse .NoRoom
 	writetext MysteryGiftReceivedText
 	waitbutton
-	setflag ENGINE_DAILY_MYSTERY_GIFT
 	closetext
 	turnobject LAST_TALKED, DOWN
 	end
@@ -71,11 +75,10 @@ MysterGiftNoRoom:
 	done
 	
 MysteryGiftReceivedText:
-	text "Wow, I got a"
-	line "really cool item!"
+	text "Wow, I got really"
+	line "cool items today!"
 	cont "I hope you got"
-	cont "something good"
-	cont "too!"
+	cont "something good!"
 	
 	para "Let's do this"
 	line "again tomorrow!"
