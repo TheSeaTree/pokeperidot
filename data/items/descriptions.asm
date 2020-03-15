@@ -136,7 +136,7 @@ ItemDescriptions:
 	dw PassDesc
 	dw HeatRockDesc
 	dw SmoothRockDesc
-	dw TeruSama11Desc
+	dw PowerHerbDesc
 	dw CharcoalDesc
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
@@ -793,9 +793,10 @@ SmoothRockDesc:
 	db   "Summons a"
 	next "sandstorm. (HOLD)@"
 
-TeruSama11Desc:
-	db   "?@"
-
+PowerHerbDesc:
+	db 	 "Skips charging"
+	next "turn. (HOLD)@"
+	
 CharcoalDesc:
 	db   "Powers up fire-"
 	next "type moves. (HOLD)@"

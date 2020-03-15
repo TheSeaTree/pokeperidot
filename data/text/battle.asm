@@ -674,6 +674,12 @@ RageBuildingText:
 	text "<USER>'s"
 	line "RAGE is building!"
 	prompt
+	
+PowerHerbText:
+	text "<USER>'s"
+	line "POWER HERB charged"
+	cont "its attack!"
+	prompt
 
 GotAnEncoreText:
 	text "<TARGET>"
@@ -713,6 +719,7 @@ SpiteEffectText:
 	text_decimal wDeciramBuffer, 1, 1
 	text "!"
 	prompt
+	
 
 BellChimedText:
 	text "A bell chimed!"

@@ -217,7 +217,7 @@ ENDM
 	dict "<GREEN>",   PrintGreensName
 	dict "#",         PlacePOKe
 	dict "<PC>",      PCChar
-	dict "<ROCKET>",  RocketChar
+	dict "<S_BASH>",  SkullBashChar
 	dict "<TM>",      TMChar
 	dict "<TRAINER>", TrainerChar
 	dict "<KOUGEKI>", PlaceKougeki
@@ -297,18 +297,18 @@ PrintRivalName:  print_name wRivalName
 PrintRedsName:   print_name wRedsName
 PrintGreensName: print_name wGreensName
 
-TrainerChar:  print_name TrainerCharText
-TMChar:       print_name TMCharText
-PCChar:       print_name PCCharText
-RocketChar:   print_name RocketCharText
-PlacePOKe:    print_name PlacePOKeText
-PlaceKougeki: print_name KougekiText
-SixDotsChar:  print_name SixDotsCharText
-PlacePKMN:    print_name PlacePKMNText
-PlacePOKE:    print_name PlacePOKEText
-PlaceJPRoute: print_name PlaceJPRouteText
-PlaceWatashi: print_name PlaceWatashiText
-PlaceKokoWa:  print_name PlaceKokoWaText
+TrainerChar:  	print_name TrainerCharText
+TMChar:       	print_name TMCharText
+PCChar:       	print_name PCCharText
+SkullBashChar:  print_name SkullBashCharText
+PlacePOKe:    	print_name PlacePOKeText
+PlaceKougeki: 	print_name KougekiText
+SixDotsChar:  	print_name SixDotsCharText
+PlacePKMN:    	print_name PlacePKMNText
+PlacePOKE:    	print_name PlacePOKEText
+PlaceJPRoute: 	print_name PlaceJPRouteText
+PlaceWatashi: 	print_name PlaceWatashiText
+PlaceKokoWa:  	print_name PlaceKokoWaText
 
 PlaceMoveTargetsName::
 	ldh a, [hBattleTurn]
@@ -387,17 +387,17 @@ PlaceCommandCharacter::
 	pop de
 	jp NextChar
 
-TMCharText::      db "TM@"
-TrainerCharText:: db "TRAINER@"
-PCCharText::      db "PC@"
-RocketCharText::  db "ROCKET@"
-PlacePOKeText::   db "POKé@"
-KougekiText::     db "こうげき@"
-SixDotsCharText:: db "……@"
-EnemyText::       db "Enemy @"
-PlacePKMNText::   db "<PK><MN>@"
-PlacePOKEText::   db "<PO><KE>@"
-String_Space::    db " @"
+TMCharText::      	db "TM@"
+TrainerCharText:: 	db "TRAINER@"
+PCCharText::      	db "PC@"
+SkullBashCharText:: db "SKULL BASH@"
+PlacePOKeText::   	db "POKé@"
+KougekiText::     	db "こうげき@"
+SixDotsCharText:: 	db "……@"
+EnemyText::       	db "Enemy @"
+PlacePKMNText::   	db "<PK><MN>@"
+PlacePOKEText::   	db "<PO><KE>@"
+String_Space::    	db " @"
 ; These strings have been dummied out.
 PlaceJPRouteText::
 PlaceWatashiText::

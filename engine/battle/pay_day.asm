@@ -1,5 +1,4 @@
-BattleCommand_PayDay:
-; payday
+PayDayEffect:
 
 	xor a
 	ld hl, wStringBuffer1

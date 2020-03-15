@@ -4719,6 +4719,41 @@ HandleStatBoostingHeldItems:
 
 INCLUDE "data/battle/held_stat_up.asm"
 
+ConsumeUserItem:
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .playersturn
+
+;enemysturn	
+	call .enemyitem
+	xor a
+	ld [hl], a
+	ld [de], a
+	ret
+
+.playersturn
+	call .playeritem
+	xor a
+	ld [hl], a
+	ld [de], a
+	ret
+
+.playeritem
+	ld a, 1
+	call BattlePartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wBattleMonItem
+	ret
+	
+.enemyitem
+	ld a, 1
+	call OTPartyAttr
+	ld d, h
+	ld e, l
+	ld hl, wEnemyMonItem
+	ret
+
 GetPartymonItem:
 	ld hl, wPartyMon1Item
 	ld a, [wCurBattleMon]

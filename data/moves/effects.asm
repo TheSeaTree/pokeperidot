@@ -1793,9 +1793,6 @@ SkullBash:
 	checkfaint
 	buildopponentrage
 	kingsrock
-	endturn
-	defenseup
-	statupmessage
 	endmove
 
 Twister:

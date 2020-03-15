@@ -19,13 +19,8 @@ BattleCommand_Thief:
 	and a
 	ret z
 
-; Can't steal mail.
+; Can't steal valuables.
 
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
-	ret c
-	
 	ld [wNamedObjectIndexBuffer], a
 	ld d, a
 	call ItemIsValuable
@@ -71,13 +66,8 @@ BattleCommand_Thief:
 	and a
 	ret z
 
-; Can't steal mail!
+; Can't steal valuables!
 
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	farcall ItemIsMail
-	ret c
-	
 	ld [wNamedObjectIndexBuffer], a
 	ld d, a
 	call ItemIsValuable

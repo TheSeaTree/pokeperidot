@@ -1673,10 +1673,23 @@ BattleAnim_Softboiled:
 	anim_incbgeffect ANIM_BG_18
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
+	
+BattleAnim_SkullBash_branch_c9fb5:
+	anim_1gfx ANIM_GFX_REFLECT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_WITHDRAW, $0, $1, $50
+	anim_wait 48
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_WITHDRAW, 48, 88, $0
+	anim_wait 48
+	anim_incobj 2
+	anim_wait 1
+	anim_incbgeffect ANIM_BG_WITHDRAW
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
 
 BattleAnim_FocusEnergy:
 BattleAnim_RazorWind_branch_c9fb5:
-BattleAnim_SkullBash_branch_c9fb5:
 BattleAnim_SkyAttack_branch_c9fb5:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row

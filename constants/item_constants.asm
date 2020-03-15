@@ -95,7 +95,7 @@
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
 	const BLU_APRICORN ; 59
-	const DAMP_ROCK    ; 5a
+	const DAMP_CHARM   ; 5a
 	const AMULET_COIN  ; 5b
 	const YLW_APRICORN ; 5c
 	const GRN_APRICORN ; 5d
@@ -140,9 +140,9 @@
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
 	const PASS         ; 86
-	const HEAT_ROCK    ; 87
-	const SMOOTH_ROCK  ; 88
-	const ITEM_89      ; 89
+	const HEAT_CHARM   ; 87
+	const COARSE_CHARM ; 88
+	const POWER_HERB   ; 89
 	const CHARCOAL     ; 8a
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c

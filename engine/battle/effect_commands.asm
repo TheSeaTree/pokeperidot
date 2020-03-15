@@ -85,7 +85,7 @@ DoMove:
 
 ; endturn_command (-2) is used to terminate branches without ending the read cycle.
 	cp endturn_command
-	ret nc
+	jr nc, .powerherb
 
 ; The rest of the commands (01-af) are read from BattleCommandPointers.
 	push bc
@@ -106,6 +106,12 @@ DoMove:
 
 .DoMoveEffectCommand:
 	jp hl
+	
+.powerherb
+	push af
+	call CheckPowerHerb
+	pop af
+	ret
 
 CheckTurn:
 BattleCommand_CheckTurn:
@@ -3247,6 +3253,15 @@ BattleCommand_ConstantDamage:
 	ret nz
 	farcall ConstantDamage
 	ret
+	
+BattleCommand_PayDay:
+; payday
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall PayDayEffect
+	ret
 
 INCLUDE "engine/battle/move_effects/counter.asm"
 
@@ -5513,7 +5528,16 @@ BattleCommand_Charge:
 	call GetBattleVar
 	cp EFFECT_SKULL_BASH
 	ld b, endturn_command
-	jp z, SkipToBattleCommand
+	jp z, ._SkullBash
+	jp EndMoveEffect
+	
+._SkullBash:
+	call BattleCommand_DefenseUp
+	call BattleCommand_StatUpMessage
+	ld hl, wStringBuffer2
+	ld [hl], "<S_BASH>"
+	inc hl
+	ld [hl], "@"
 	jp EndMoveEffect
 
 .UsedText:
@@ -6021,7 +6045,7 @@ INCLUDE "engine/battle/move_effects/splash.asm"
 
 INCLUDE "engine/battle/move_effects/disable.asm"
 
-INCLUDE "engine/battle/move_effects/pay_day.asm"
+;INCLUDE "engine/battle/move_effects/pay_day.asm"
 
 INCLUDE "engine/battle/move_effects/conversion.asm"
 
@@ -6305,6 +6329,32 @@ CheckUserMove:
 	ld a, 1
 	and a
 	ret
+
+CheckPowerHerb:
+	call GetUserItem
+	ld a, b
+	cp HELD_POWER_HERB
+	ret nz
+
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	bit SUBSTATUS_CHARGED, a
+	ret z
+	
+	farcall ConsumeUserItem
+
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr nz, .skipanim
+	ld de, RECOVER
+	farcall Call_PlayBattleAnim
+
+.skipanim
+	ld hl, PowerHerbText
+	call StdBattleTextBox
+	call CheckUserIsCharging
+	ld a, 2
 
 ResetTurn:
 	ld hl, wPlayerCharging

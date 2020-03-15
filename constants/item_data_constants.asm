@@ -60,7 +60,7 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_SET_SUN
 	const HELD_SET_SAND
 	const HELD_RESTORE_PP
-	const HELD_7
+	const HELD_POWER_HERB
 	const HELD_CLEANSE_TAG
 
 	const_def 10
