@@ -134,8 +134,6 @@ EvolveAfterBattle_MasterLoop:
 	
 	xor a
 	ld [wTempMonItem], a
-	ld a, [hli]
-	cp TR_ANYTIME
 	jp z, .proceed
 
 .trade

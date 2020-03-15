@@ -22,7 +22,7 @@ EvoTypeSizes::
 	db 2 ; EVOLVE_ITEM
 	db 2 ; EVOLVE_TRADE
 	db 2 ; EVOLVE_HAPPINESS
-	db 3 ; EVOLVE_HOLD
+	db 2 ; EVOLVE_HOLD
 
 
 EvosAttacks::
@@ -959,7 +959,7 @@ PoliwagEvosAttacks:
 
 PoliwhirlEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, POLIWRATH
-	db EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, POLITOED
+	db EVOLVE_HOLD, KINGS_ROCK, POLITOED
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 8, HYPNOSIS
@@ -1222,7 +1222,7 @@ RapidashEvosAttacks:
 
 SlowpokeEvosAttacks:
 	db EVOLVE_LEVEL, 37, SLOWBRO
-	db EVOLVE_HOLD, KINGS_ROCK, TR_ANYTIME, SLOWKING
+	db EVOLVE_HOLD, KINGS_ROCK, SLOWKING
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, TACKLE
@@ -1410,7 +1410,7 @@ MukEvosAttacks:
 
 ShellderEvosAttacks:
 	db EVOLVE_ITEM, WATER_STONE, CLOYSTER
-	db EVOLVE_HOLD, SLOWPOKETAIL, TR_ANYTIME, CONCHER
+	db EVOLVE_HOLD, SLOWPOKETAIL, CONCHER
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, WATER_GUN
@@ -1495,7 +1495,7 @@ GengarEvosAttacks:
 	db 0 ; no more level-up moves
 
 OnixEvosAttacks:
-	db EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, STEELIX
+	db EVOLVE_HOLD, METAL_COAT, STEELIX
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
@@ -1878,7 +1878,7 @@ HorseaEvosAttacks:
 	db 0 ; no more level-up moves
 
 SeadraEvosAttacks:
-	db EVOLVE_HOLD, DRAGON_SCALE, TR_ANYTIME, KINGDRA
+	db EVOLVE_HOLD, DRAGON_SCALE, KINGDRA
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, QUICK_ATTACK
@@ -1977,7 +1977,7 @@ MrMimeEvosAttacks:
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
-	db EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, SCIZOR
+	db EVOLVE_HOLD, METAL_COAT, SCIZOR
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
@@ -2193,7 +2193,7 @@ FlareonEvosAttacks:
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
-	db EVOLVE_HOLD, UP_GRADE, TR_ANYTIME, PORYGON2
+	db EVOLVE_HOLD, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
 	db 1, CONVERSION2
 	db 1, TACKLE
@@ -3637,7 +3637,7 @@ RemoraidEvosAttacks:
 	db 0 ; no more level-up moves
 
 OctilleryEvosAttacks:
-	db EVOLVE_HOLD, METAL_COAT, TR_ANYTIME, OCTANK
+	db EVOLVE_HOLD, METAL_COAT, OCTANK
 	db 0 ; no more evolutions
 	db 1, WATER_GUN
 	db 11, TACKLE
