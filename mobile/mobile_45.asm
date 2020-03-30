@@ -6612,10 +6612,6 @@ Unknown_117356:
 
 SECTION "Mobile Stadium", ROMX
 
-GiveOddEgg:
-	farcall _GiveOddEgg
-	ret
-
 Function11765d:
 	ldh a, [hInMenu]
 	push af

@@ -97,10 +97,6 @@ DayCareLadyScript:
 	end
 
 DayCareBookshelf:
-;	opentext
-;	special GiveOddEgg
-;	closetext
-;	end
 	jumpstd difficultbookshelf
 
 Text_GrampsLookingForYou:

@@ -113,9 +113,9 @@ ROMX $26
 ROMX $27
 	"Map Scripts 12"
 ROMX $28
-	"Phone Scripts 1"
+	"bank28"
 ROMX $29
-	"Phone Text"
+	"bank29"
 ROMX $2a
 	"Map Blocks 1"
 ROMX $2b
@@ -127,7 +127,7 @@ ROMX $2d
 ROMX $2e
 	"bank2E"
 ROMX $2f
-	"Phone Scripts 2"
+	"Event Scripts"
 ROMX $30
 	"Sprites 1"
 ROMX $31

@@ -138,7 +138,6 @@ SpecialsPointers::
 	add_special LoadOpponentTrainerAndPokemonWithOTSprite
 	add_special Function11ba38
 	add_special CheckForBattleTowerRules
-	add_special GiveOddEgg
 	add_special Reset ; bank 0
 	add_special Function1011f1
 	add_special Function101220 ; $80
