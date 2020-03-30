@@ -354,6 +354,7 @@ SECTION "Event Scripts", ROMX
 
 INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
+INCLUDE "engine/phone/phone_scripts.asm"
 
 
 SECTION "bank32", ROMX

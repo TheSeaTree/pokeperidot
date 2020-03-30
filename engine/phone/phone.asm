@@ -424,7 +424,6 @@ Script_ReceivePhoneCall:
 	callasm RingTwice_StartCall
 	ptcall wPhoneScriptPointer
 	waitbutton
-	callasm HangUp
 	closetext
 	callasm InitCallReceiveDelay
 	end
@@ -447,6 +446,7 @@ UnknownScript_0x90261:
 	jp LoadCallerScript
 
 RingTwice_StartCall:
+	call .Ring
 	call .Ring
 	call .Ring
 	farcall StubbedTrainerRankings_PhoneCalls
@@ -559,7 +559,7 @@ HangUp_BoopOff:
 
 Phone_StartRinging:
 	call WaitSFX
-	ld de, SFX_CALL
+	ld de, SFX_WRONG
 	call PlaySFX
 	call Phone_CallerTextbox
 	call UpdateSprites
@@ -567,8 +567,6 @@ Phone_StartRinging:
 	ret
 
 HangUp_Wait20Frames:
-	jr Phone_Wait20Frames
-
 Phone_Wait20Frames:
 	ld c, 20
 	call DelayFrames
@@ -579,19 +577,21 @@ Function90363:
 	push bc
 	call Phone_CallerTextbox
 	hlcoord 1, 1
-	ld [hl], "☎"
+	ld [hl], "<CAUTION>"
 	inc hl
 	inc hl
 	ld d, h
 	ld e, l
+	hlcoord 13, 1
+	ld [hl], "<CAUTION>"
 	pop bc
 	call Function90380
 	ret
 
 Phone_CallerTextbox:
 	hlcoord 0, 0
-	ld b, 2
-	ld c, SCREEN_WIDTH - 2
+	ld b, 1
+	ld c, 13
 	call TextBox
 	ret
 

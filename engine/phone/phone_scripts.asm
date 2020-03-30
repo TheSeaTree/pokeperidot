@@ -32,12 +32,6 @@ MomPhoneLandmark:
 	jump MomSavingMoney
 
 MomPhonePalette1:
-	checkcode VAR_MAPGROUP
-	ifequal GROUP_NEW_BARK_TOWN, .newbark
-	ifequal GROUP_CHERRYGROVE_CITY, .cherrygrove
-	ifequal GROUP_VIOLET_CITY, .violet
-	ifequal GROUP_AZALEA_TOWN, .azalea
-	ifequal GROUP_GOLDENROD_CITY, .goldenrod
 	farwritetext MomPhoneGenericAreaText
 	buttonsound
 	jump MomSavingMoney
@@ -51,16 +45,6 @@ MomPhonePalette1:
 	farwritetext MomPhoneCherrygroveText
 	buttonsound
 	jump MomSavingMoney
-
-.violet
-	landmarktotext SPROUT_TOWER, MEM_BUFFER_1
-	jump MomPhoneLandmark
-.azalea
-	landmarktotext SLOWPOKE_WELL, MEM_BUFFER_1
-	jump MomPhoneLandmark
-.goldenrod
-	landmarktotext RADIO_TOWER, MEM_BUFFER_1
-	jump MomPhoneLandmark
 
 MomPhonePalette2:
 	farwritetext MomOtherAreaText
@@ -149,57 +133,7 @@ MomPhoneLectureScript:
 
 ; Bill
 
-BillPhoneScript1:
-	checktime DAY
-	iftrue .daygreet
-	checktime NITE
-	iftrue .nitegreet
-	farwritetext BillPhoneMornGreetingText
-	buttonsound
-	jump .main
-
-.daygreet
-	farwritetext BillPhoneDayGreetingText
-	buttonsound
-	jump .main
-
-.nitegreet
-	farwritetext BillPhoneNiteGreetingText
-	buttonsound
-	jump .main
-
-.main
-	farwritetext BillPhoneGenericText
-	buttonsound
-	checkcode VAR_BOXSPACE
-	vartomem MEM_BUFFER_0
-	ifequal 0, .full
-	ifless PARTY_LENGTH, .nearlyfull
-	farwritetext BillPhoneNotFullText
-	end
-
-.nearlyfull
-	farwritetext BillPhoneNearlyFullText
-	end
-
-.full
-	farwritetext BillPhoneFullText
-	end
-
-BillPhoneScript2:
+PCBoxFullScript:
 	farwritetext BillPhoneNewlyFullText
-	waitbutton
-	end
-
-; Elm
-
-ElmPhoneScript1:
-	checkcode VAR_SPECIALPHONECALL
-	farwritetext ElmPhoneStartText
-	end
-
-ElmPhoneScript2:
-	checkcode VAR_SPECIALPHONECALL
-	farwritetext ElmPhoneUnusedText
-	specialphonecall SPECIALCALL_NONE
+;	waitbutton
 	end

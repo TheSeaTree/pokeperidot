@@ -127,6 +127,7 @@
 	charmap "♣",         $c2
 	charmap "♠",         $c3
 
+	charmap "<CAUTION>", $ca
 	charmap "<TRADEID>", $cb
 	charmap "<TRADENO>", $cc
 	charmap "*",         $cd

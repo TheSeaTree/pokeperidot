@@ -81,21 +81,18 @@ BillPhoneFullText:
 	done
 
 BillPhoneNewlyFullText:
-	text "Hi, <PLAY_G>?"
-	line "It's me, BILL!"
-
-	para "Thanks for using"
-	line "my STORAGE SYSTEM."
-
-	para "That last #MON"
-	line "you sent filled"
-	cont "your BOX up."
-
-	para "You'll have to"
-	line "switch BOXES if"
-
-	para "you want to catch"
-	line "more #MON."
-
-	para "Bye now!"
+	text "Your current"
+	line "#MON STORAGE"
+	cont "BOX is now full."
+	
+	para "You will be unable"
+	line "to catch any new"
+	cont "#MON until the"
+	cont "BOX is changed."
+	
+	para "Please visit the"
+	line "nearest PC to"
+	cont "change the active"
+	cont "STORAGE BOX as"
+	cont "soon as possible."
 	done

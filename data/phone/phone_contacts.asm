@@ -9,4 +9,7 @@ phone: MACRO
 ENDM
 
 PhoneContacts:
+	phone TRAINER_NONE, PHONE_00,              N_A,                       0,       UnusedPhoneScript,        0,       UnusedPhoneScript
+	phone TRAINER_NONE, PHONECONTACT_MOM,      PLAYERS_HOUSE_1F,          ANYTIME, MomPhoneScript,     0,       UnusedPhoneScript
+	phone TRAINER_NONE, PHONECONTACT_BILL,     N_A,                       ANYTIME, PCBoxFullScript,    0,       PCBoxFullScript
 ; entries correspond to PHONE_* constants
