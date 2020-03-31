@@ -303,21 +303,10 @@ ExplainRunningShoes:
 	cont "to move faster as"
 	cont "long as you hold"
 	cont "the B button."
-	
-	para "If you'd rather"
-	line "run everywhere,"
-	cont "you can change the"
-	cont "running behavior"
-	cont "in the OPTIONS."
-	
-	para "When you set that"
-	line "to INVERT, hold B"
-	cont "to walk at a"
-	cont "normal pace."
 	done
 	
 RunningShoesCaution:
-	text "Be careful. Moving"
+	text "Be careful! Moving"
 	line "fast will alert"
 	cont "trainers and wild"
 	cont "#MON!"
