@@ -299,7 +299,7 @@ ENDM
 	map_const ENTEI_LAIR,									7,  5
 	map_const ROUTE_22_CAVE_1F,							   14, 14
 	map_const ROUTE_22_CAVE_B1F,						   23, 17
-	map_const ROUTE_22_CAVE_B2F,						   20, 24
+	map_const ROUTE_22_CAVE_B2F,						   21, 24
 	map_const ROUTE_22_NORTH,							   19,  8
 	map_const ROUTE_22_SOUTH,							   20, 19
 

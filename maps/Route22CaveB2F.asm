@@ -10,11 +10,11 @@ Route22CaveB2F_MapEvents:
 
 	db 6 ; warp events
 	warp_event 13, 21, ROUTE_22_CAVE_B1F, 2
-	warp_event 13,  5, ROUTE_22_CAVE_B1F, 3
-	warp_event 19, 15, ROUTE_22_CAVE_B1F, 4
-	warp_event 27,  7, ROUTE_22_CAVE_B1F, 5
-	warp_event 23, 19, ROUTE_22_CAVE_B1F, 7
-	warp_event 27, 15, ROUTE_22_CAVE_B1F, 8
+	warp_event 19,  5, ROUTE_22_CAVE_B1F, 3
+	warp_event 21, 19, ROUTE_22_CAVE_B1F, 4
+	warp_event 27,  9, ROUTE_22_CAVE_B1F, 5
+	warp_event 29, 21, ROUTE_22_CAVE_B1F, 7
+	warp_event 31, 15, ROUTE_22_CAVE_B1F, 8
 
 	db 0 ; coord events
 

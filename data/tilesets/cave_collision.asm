@@ -147,7 +147,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 92
 	tilecoll WALL, WALL, WALL, WALL ; 93
 	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; 94
-	tilecoll FLOOR, WALL, FLOOR, LADDER ; 95
+	tilecoll FLOOR, FLOOR, WALL, LADDER ; 95
 	tilecoll WALL, WALL, WALL, WALL ; 96
 	tilecoll WALL, WALL, WALL, WALL ; 97
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 98
@@ -155,3 +155,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; 9a
 	tilecoll BUTTON, WALL, FLOOR, WALL ; 9b
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 9c
+	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 9d
