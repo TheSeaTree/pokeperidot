@@ -17,7 +17,7 @@ Moves: ; 41afb
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, FAIRY,     85, 10,   0
 	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,   100, 15,   0
 	move DREAD_STORM,  EFFECT_SPEED_UP_HIT,       85, FLYING,    95,  5,  30
-	move PAY_DAY,      EFFECT_PAY_DAY,            60, NORMAL,   100, 20,   0
+	move PAY_DAY,      EFFECT_PAY_DAY,            75, NORMAL,   100, 20,   0
 	move FIRE_PUNCH,   EFFECT_BURN_HIT,           75, FIRE,     100, 15,  10
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,      100, 15,  10
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC, 100, 15,  10
@@ -265,4 +265,4 @@ Moves: ; 41afb
 	move DRAIN_KISS,   EFFECT_LEECH_HIT,          40, FAIRY,    100, 15,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     100, 20,   0
 	move HURRICANE,    EFFECT_HURRICANE,         110, FLYING,    70,  5,  30
-	move BUG_BUZZ,     EFFECT_DEFENSE_DOWN_HIT,   90, BUG,      100, 10,  10
+	move SIGNAL_BEAM,  EFFECT_CONFUSE_HIT,        75, BUG,      100, 15,  20

@@ -219,7 +219,7 @@ ButterfreeEvosAttacks:
 	db 25, SAFEGUARD
 	db 29, WHIRLWIND
 	db 31, QUIVER_DANCE
-	db 35, BUG_BUZZ
+	db 35, SIGNAL_BEAM
 	db 40, U_TURN
 	db 43, RAZOR_WIND
 	db 0 ; no more level-up moves
@@ -755,7 +755,7 @@ VenonatEvosAttacks:
 	db 13, POISONPOWDER
 	db 17, PSYBEAM
 	db 23, STUN_SPORE
-	db 25, BUG_BUZZ
+	db 25, SIGNAL_BEAM
 	db 29, SLEEP_POWDER
 	db 35, LEECH_LIFE
 	db 41, SLUDGE_BOMB
@@ -773,7 +773,7 @@ VenomothEvosAttacks:
 	db 13, POISONPOWDER
 	db 17, PSYBEAM
 	db 23, STUN_SPORE
-	db 25, BUG_BUZZ
+	db 25, SIGNAL_BEAM
 	db 29, SLEEP_POWDER
 	db 37, LEECH_LIFE
 	db 47, SLUDGE_BOMB
@@ -1369,6 +1369,7 @@ DewgongEvosAttacks:
 	db 27, AURORA_BEAM
 	db 34, HORN_DRILL
 	db 39, DOUBLE_EDGE
+	db 42, SIGNAL_BEAM
 	db 55, ICE_BEAM
 	db 61, SAFEGUARD
 	db 0 ; no more level-up moves
@@ -2202,6 +2203,7 @@ PorygonEvosAttacks:
 	db 12, AGILITY
 	db 18, RECOVER
 	db 23, TRI_ATTACK
+	db 29, SIGNAL_BEAM
 	db 34, SHARPEN
 	db 40, THUNDERBOLT
 	db 45, LOCK_ON
@@ -2799,6 +2801,7 @@ ChinchouEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, BUBBLEBEAM
 	db 23, SPARK
+	db 25, SIGNAL_BEAM
 	db 28, PSYBEAM
 	db 31, FLAIL
 	db 34, THUNDERBOLT
@@ -2816,6 +2819,7 @@ LanturnEvosAttacks:
 	db 17, CONFUSE_RAY
 	db 20, BUBBLEBEAM
 	db 23, SPARK
+	db 25, SIGNAL_BEAM
 	db 27, RECOVER
 	db 29, PSYBEAM
 	db 33, FLAIL
@@ -2938,6 +2942,7 @@ MareepEvosAttacks:
 	db 15, SPARK
 	db 18, DOUBLE_EDGE
 	db 25, CONFUSE_RAY
+	db 29, SIGNAL_BEAM
 	db 32, THUNDERBOLT
 	db 39, PSYBEAM
 	db 43, LIGHT_SCREEN
@@ -2955,6 +2960,7 @@ FlaaffyEvosAttacks:
 	db 16, SPARK
 	db 20, DOUBLE_EDGE
 	db 29, CONFUSE_RAY
+	db 33, SIGNAL_BEAM
 	db 38, THUNDERBOLT
 	db 47, PSYBEAM
 	db 52, LIGHT_SCREEN
@@ -2972,6 +2978,7 @@ AmpharosEvosAttacks:
 	db 20, DOUBLE_EDGE
 	db 29, CONFUSE_RAY
 	db 30, THUNDERPUNCH
+	db 35, SIGNAL_BEAM
 	db 40, THUNDERBOLT
 	db 51, PSYBEAM
 	db 57, LIGHT_SCREEN
@@ -3184,7 +3191,7 @@ YanmaEvosAttacks:
 	db 38, HYPNOSIS
 	db 43, WING_ATTACK
 	db 46, SCREECH
-	db 49, BUG_BUZZ
+	db 49, SIGNAL_BEAM
 	db 54, RAZOR_WIND
 	db 0 ; no more level-up moves
 
@@ -3626,31 +3633,38 @@ CorsolaEvosAttacks:
 RemoraidEvosAttacks:
 	db EVOLVE_LEVEL, 25, OCTILLERY
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 11, LOCK_ON
-	db 20, AURORA_BEAM
-	db 22, PSYBEAM
-	db 22, BUBBLEBEAM
-	db 33, FOCUS_ENERGY
-	db 44, ICE_BEAM
-	db 55, HYPER_BEAM
+	db  1, WATER_GUN
+	db  4, AQUA_JET
+	db  8, FOCUS_ENERGY
+	db 12, PSYBEAM
+	db 16, AURORA_BEAM
+	db 20, BUBBLEBEAM
+	db 24, LOCK_ON
+	db 28, BARRAGE
+	db 30, SIGNAL_BEAM
+	db 32, ICE_BEAM
+	db 36, HYDRO_PUMP
+	db 44, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 OctilleryEvosAttacks:
 	db EVOLVE_HOLD, METAL_COAT, OCTANK
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 11, TACKLE
-	db 22, PSYBEAM
-	db 22, AURORA_BEAM
-	db 22, BUBBLEBEAM
+	db  1, WATER_GUN
+	db  4, AQUA_JET
+	db  8, FOCUS_ENERGY
+	db 12, PSYBEAM
+	db 16, AURORA_BEAM
+	db 20, BUBBLEBEAM
+	db 24, LOCK_ON
 	db 25, OCTAZOOKA
 	db 25, WRAP
-	db 38, FOCUS_ENERGY
-	db 54, ICE_BEAM
-	db 56, LOCK_ON
+	db 30, BARRAGE
+	db 34, SIGNAL_BEAM
+	db 36, ICE_BEAM
+	db 42, HYDRO_PUMP
+	db 54, HYPER_BEAM
 	db 58, ZAP_CANNON
-	db 63, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 DelibirdEvosAttacks:
@@ -3663,6 +3677,7 @@ MantineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, BUBBLE
+	db 1, SIGNAL_BEAM
 	db 3, SUPERSONIC
 	db 7, BUBBLEBEAM
 	db 11, CONFUSE_RAY
@@ -3777,6 +3792,7 @@ Porygon2EvosAttacks:
 	db 12, AGILITY
 	db 18, RECOVER
 	db 23, TRI_ATTACK
+	db 29, SIGNAL_BEAM
 	db 40, THUNDERBOLT
 	db 45, LOCK_ON
 	db 50, HYPER_BEAM
@@ -4060,15 +4076,20 @@ CelebiEvosAttacks:
 	
 OctankEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, WATER_GUN
-	db 11, TACKLE
-	db 22, PSYBEAM
-	db 22, AURORA_BEAM
-	db 22, BUBBLEBEAM
+	db  1, WATER_GUN
+	db  4, AQUA_JET
+	db  8, FOCUS_ENERGY
+	db 12, PSYBEAM
+	db 16, AURORA_BEAM
+	db 20, BUBBLEBEAM
+	db 24, LOCK_ON
 	db 25, OCTAZOOKA
-	db 38, FOCUS_ENERGY
-	db 46, BARRAGE
-	db 54, ICE_BEAM
+	db 25, WRAP
+	db 30, BARRAGE
+	db 34, SIGNAL_BEAM
+	db 36, ICE_BEAM
+	db 40, IRON_HEAD
+	db 42, HYDRO_PUMP
+	db 54, HYPER_BEAM
 	db 58, ZAP_CANNON
-	db 63, HYPER_BEAM
 	db 0 ; no more level-up moves

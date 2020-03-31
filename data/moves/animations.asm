@@ -254,7 +254,7 @@ BattleAnimations::
 	dw BattleAnim_DrainKiss
 	dw BattleAnim_NastyPlot
 	dw BattleAnim_Hurricane
-	dw BattleAnim_BugBuzz
+	dw BattleAnim_SignalBeam
 	dw BattleAnim_SweetScent2
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -2645,22 +2645,15 @@ BattleAnim_TriAttack:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_BugBuzz:
-	anim_1gfx ANIM_GFX_NOISE
-	anim_bgp $1b
-	anim_bgeffect ANIM_BG_07, $0, $0, $0
-	anim_sound 6, 2, SFX_PSYBEAM
+BattleAnim_SignalBeam:
+	anim_1gfx ANIM_GFX_ICE
 .loop
-	anim_call BattleAnim_Roar_branch_cbbbc
-	anim_wait 16
-	anim_loop 3, .loop
-	anim_wait 16
-	anim_if_param_equal $0, .done
-	anim_bgeffect ANIM_BG_27, $0, $0, $0
+	anim_sound 0, 0, SFX_SHINE
+	anim_obj ANIM_OBJ_SIGNAL_BEAM, 64, 92, $4
+	anim_wait 4
+	anim_loop 10, .loop
 	anim_wait 64
-.done
 	anim_ret
-
 
 BattleAnim_Psybeam:
 	anim_1gfx ANIM_GFX_PSYCHIC

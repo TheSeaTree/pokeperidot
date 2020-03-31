@@ -225,6 +225,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_SAFARI_BAIT
 	const ANIM_OBJ_WILL_O_WISP
 	const ANIM_OBJ_WILL_O_WISP_BIG
+	const ANIM_OBJ_SIGNAL_BEAM
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def

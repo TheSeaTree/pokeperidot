@@ -259,7 +259,7 @@
 	const DRAIN_KISS   ; fb
 	const NASTY_PLOT   ; fc
 	const HURRICANE	   ; fd
-	const BUG_BUZZ     ; fe
+	const SIGNAL_BEAM  ; fe
 NUM_ATTACKS EQU const_value + -1
 
 

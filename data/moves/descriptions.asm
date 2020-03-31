@@ -495,6 +495,7 @@ BlizzardDescription:
 	next "freeze the foe.@"
 
 PsybeamDescription:
+BugBuzzDescription:
 	db   "An attack that may"
 	next "confuse the foe.@"
 
@@ -1159,7 +1160,6 @@ SweetScentDescription:
 	db   "Reduces the foe's"
 	next "evasiveness.@"
 
-BugBuzzDescription:
 IronTailDescription:
 	db   "An attack that may"
 	next "reduce DEFENSE.@"

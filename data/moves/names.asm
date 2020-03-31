@@ -252,5 +252,5 @@ MoveNames::
 	db "DRAIN KISS@"
 	db "NASTY PLOT@"
 	db "HURRICANE@"
-	db "BUG BUZZ@"
+	db "SIGNAL BEAM@"
 	

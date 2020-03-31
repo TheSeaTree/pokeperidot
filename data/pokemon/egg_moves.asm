@@ -39,6 +39,7 @@ SquirtleEggMoves:
 	db FLAIL
 	db DRAGONBREATH
 	db RECOVER
+	db SIGNAL_BEAM
 	db -1 ; end
 
 PidgeyEggMoves:
@@ -65,6 +66,7 @@ RinringEggMoves:
 	db DESTINY_BOND
 	db U_TURN
 	db BATON_PASS
+	db PAY_DAY
 	db -1 ; end
 
 SpearowEggMoves:
@@ -78,6 +80,7 @@ SpearowEggMoves:
 	db STEEL_WING
 	db RAZOR_WIND
 	db U_TURN
+	db PAY_DAY
 	db -1 ; end
 
 EkansEggMoves:
@@ -95,6 +98,8 @@ PikachuEggMoves:
 	db ENCORE
 	db DOUBLESLAP
 	db FLAIL
+	db SIGNAL_BEAM
+	db PAY_DAY
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -134,6 +139,7 @@ ClefairyEggMoves:
 	db AMNESIA
 	db BELLY_DRUM
 	db MIMIC
+	db SIGNAL_BEAM
 	db -1 ; end
 
 VulpixEggMoves:
@@ -237,6 +243,7 @@ MankeyEggMoves:
 	db REVERSAL
 	db ENCORE	
 	db SCARY_FACE
+	db PAY_DAY
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -297,6 +304,7 @@ PonytaEggMoves:
 	db MORNING_SUN
 	db LOW_KICK
 	db WILL_O_WISP
+	db PAY_DAY
 	db -1 ; end
 
 SlowpokeEggMoves:
@@ -304,6 +312,7 @@ SlowpokeEggMoves:
 	db FUTURE_SIGHT
 	db HYDRO_PUMP
 	db NASTY_PLOT
+	db PAY_DAY
 	db -1 ; end
 
 FarfetchDEggMoves:
@@ -320,6 +329,7 @@ FarfetchDEggMoves:
 	db REVERSAL
 	db BATON_PASS
 	db WATER_GUN
+	db PAY_DAY
 	db -1 ; end
 
 DoduoEggMoves:
@@ -341,6 +351,7 @@ SeelEggMoves:
 	db HORN_DRILL
 	db IRON_TAIL
 	db LIGHT_SCREEN
+	db PAY_DAY
 	db -1 ; end
 
 GrimerEggMoves:
@@ -455,6 +466,7 @@ RhyhornEggMoves:
 	db PURSUIT
 	db COUNTER
 	db IRON_TAIL
+	db PAY_DAY
 	db -1 ; end
 
 ChanseyEggMoves:
@@ -490,12 +502,14 @@ HorseaEggMoves:
 	db OUTRAGE
 	db POISON_STING
 	db PIN_MISSILE
+	db SIGNAL_BEAM
 	db -1 ; end
 
 GoldeenEggMoves:
 	db PSYBEAM
 	db HAZE
 	db HYDRO_PUMP
+	db SIGNAL_BEAM
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -533,6 +547,7 @@ LaprasEggMoves:
 	db SOLARBEAM
 	db RECOVER
 	db CHARM
+	db SIGNAL_BEAM
 	db -1 ; end
 
 EeveeEggMoves:
@@ -542,6 +557,7 @@ EeveeEggMoves:
 	db MIST
 	db PAY_DAY
 	db MIMIC
+	db SIGNAL_BEAM
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -580,6 +596,7 @@ SnorlaxEggMoves:
 	db PURSUIT
 	db COUNTER
 	db ENCORE
+	db PAY_DAY
 	db -1 ; end
 
 DratiniEggMoves:
@@ -638,6 +655,8 @@ SentretEggMoves:
 	db REVERSAL
 	db IRON_TAIL
 	db U_TURN
+	db EXTREMESPEED
+	db BELLY_DRUM
 	db -1 ; end
 
 HoothootEggMoves:
@@ -658,6 +677,7 @@ CubboltEggMoves:
 	db WILD_CHARGE
 	db SING
 	db ENDURE
+	db SIGNAL_BEAM
 	db -1 ; end
 
 SpinarakEggMoves:
@@ -666,7 +686,7 @@ SpinarakEggMoves:
 	db SONICBOOM
 	db BATON_PASS
 	db PURSUIT
-	db BUG_BUZZ
+	db SIGNAL_BEAM
 	db TWINEEDLE
 	db MEGAHORN
 	db X_SCISSOR
@@ -754,6 +774,7 @@ HoppipEggMoves:
 	db DOUBLE_EDGE
 	db AMNESIA
 	db AGILITY
+	db PAY_DAY
 	db -1 ; end
 
 AipomEggMoves:
@@ -819,6 +840,7 @@ GirafarigEggMoves:
 	db RAZOR_WIND
 	db MEAN_LOOK
 	db DESTINY_BOND
+	db SIGNAL_BEAM
 	db -1 ; end
 
 PinecoEggMoves:
@@ -829,7 +851,7 @@ PinecoEggMoves:
 	db DOUBLE_EDGE
 	db SPIKES
 	db REVERSAL
-	db BUG_BUZZ
+	db SIGNAL_BEAM
 	db -1 ; end
 
 DunsparceEggMoves:
@@ -873,6 +895,7 @@ QwilfishEggMoves:
 	db SUPERSONIC
 	db AQUA_JET
 	db SCARY_FACE
+	db SIGNAL_BEAM
 	db -1 ; end
 
 ShuckleEggMoves:
@@ -954,6 +977,8 @@ DelibirdEggMoves:
 	db SING
 	db SKY_ATTACK
 	db BODY_SLAM
+	db SIGNAL_BEAM
+	db PAY_DAY
 	db -1 ; end
 
 MantineEggMoves:
@@ -1010,6 +1035,7 @@ StantlerEggMoves:
 	db DOUBLE_KICK
 	db MEGAHORN
 	db RAGE
+	db SIGNAL_BEAM
 	db -1 ; end
 
 GreminiEggMoves:
