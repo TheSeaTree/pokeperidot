@@ -173,23 +173,14 @@ UnusedTilesetAnim_fc1af:
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
 	dw vTiles2 tile $14, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $14, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $40, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  LavaBubbleAnim2
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -201,23 +192,14 @@ TilesetDarkCaveAnim:
 
 TilesetIcePathAnim:
 	dw vTiles2 tile $35, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $35, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  AnimateWaterPalette
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $31, WriteTileToBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw wTileAnimBuffer, ScrollTileDown
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw vTiles2 tile $31, WriteTileFromBuffer
-	dw NULL,  FlickeringCaveEntrancePalette
 	dw NULL,  DoneTileAnimation
 
 TilesetTowerAnim:
@@ -971,46 +953,6 @@ AnimateWaterPalette:
 	ldh [rBGPD], a
 
 .end
-	pop af
-	ldh [rSVBK], a
-	ret
-
-FlickeringCaveEntrancePalette:
-; No palette changes on DMG.
-	ldh a, [hCGB]
-	and a
-	ret z
-; We don't want to mess with non-standard palettes.
-	ldh a, [rBGP]
-	cp %11100100
-	ret nz
-; We only want to be here if we're in a dark cave.
-	ld a, [wTimeOfDayPalset]
-	cp %11111111 ; 3,3,3,3
-	ret nz
-
-	ldh a, [rSVBK]
-	push af
-	ld a, BANK(wBGPals1)
-	ldh [rSVBK], a
-; Ready for BGPD input...
-	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW
-	ldh [rBGPI], a
-	ldh a, [hVBlankCounter]
-	and %10
-	jr nz, .bit1set
-	ld hl, wBGPals1 palette PAL_BG_YELLOW
-	jr .okay
-
-.bit1set
-	ld hl, wBGPals1 palette PAL_BG_YELLOW color 1
-
-.okay
-	ld a, [hli]
-	ldh [rBGPD], a
-	ld a, [hli]
-	ldh [rBGPD], a
-
 	pop af
 	ldh [rSVBK], a
 	ret
