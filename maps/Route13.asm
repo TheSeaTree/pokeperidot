@@ -297,7 +297,7 @@ FisherDerrickWinText:
 
 FisherDerrickAfterText:
 	text "I should go visit"
-	line "CYNARIA COAST if" 
+	line "CYNARA COAST if" 
 	cont "I want some really"
 	cont "strong #MON."
 	done

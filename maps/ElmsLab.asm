@@ -302,7 +302,7 @@ ElmsLabShifurBook:
 	waitbutton
 	closepokepic
 	writebyte SHIFUR
-	special UnusedSetSeenMon
+	special SetSeenMon
 	jumptext ElmsLabPictureBook
 
 ElmsLab_WalkUpToElmMovement:

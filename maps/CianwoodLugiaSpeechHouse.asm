@@ -19,6 +19,7 @@ CianwoodLugiaSpeechHouseTeacherScript:
 	waitbutton
 	verbosegiveitem TM_FLY
 	setevent EVENT_GOT_TM_FLY
+	clearevent EVENT_HIDE_TELEPORT_GUY
 
 .GotFly:
 	writetext GotFlyText

@@ -47,6 +47,7 @@ SpecialsPointers::
 	add_special NameRival
 	add_special SetDayOfWeek
 	add_special OverworldTownMap
+	add_special OverworldFlyMap
 	add_special UnownPrinter
 	add_special MapRadio ; $28
 	add_special UnownPuzzle
@@ -66,7 +67,7 @@ SpecialsPointers::
 	add_special UpdateSprites ; bank 0
 	add_special ReplaceKrisSprite ; $38 ; bank 0
 	add_special GameCornerPrizeMonCheckDex
-	add_special UnusedSetSeenMon
+	add_special SetSeenMon
 	add_special WaitSFX ; bank 0
 	add_special PlayMapMusic ; bank 0
 	add_special RestartMapMusic ; bank 0

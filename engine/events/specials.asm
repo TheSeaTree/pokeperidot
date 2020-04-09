@@ -39,10 +39,10 @@ GameCornerPrizeMonCheckDex:
 	call ExitAllMenus
 	ret
 
-UnusedSetSeenMon:
+SetSeenMon:
 	ld a, [wScriptVar]
 	dec a
-	call SetSeenMon
+	call _SetSeenMon
 	ret
 	
 CheckOwnedMon:
@@ -110,6 +110,12 @@ NameRater:
 OverworldTownMap:
 	call FadeToMenu
 	farcall _TownMap
+	call ExitAllMenus
+	ret
+
+OverworldFlyMap:
+	call FadeToMenu
+	farcall TeleportGuyFunction
 	call ExitAllMenus
 	ret
 

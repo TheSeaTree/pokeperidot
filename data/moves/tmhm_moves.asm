@@ -77,5 +77,4 @@ TMHMMoves:
 	db ICY_WIND
 	db NIGHTMARE
 	db DREAM_EATER
-	db SKETCH
 	db 0 ; end

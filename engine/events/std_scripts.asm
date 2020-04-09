@@ -35,6 +35,7 @@ StdScripts::
 	dba HappinessCheckScript
 	dba MysteryGiftGirl
 	dba LightUpRoomScript
+	dba TeleportGuyScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -338,6 +339,7 @@ InitializeEventsScript:
 	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2 ; Top Left
 	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3 ; Bottom Right
 	setevent EVENT_HIDE_SHELTER_MAROWAK
+	setevent EVENT_HIDE_TELEPORT_GUY
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SILVER
 	variablesprite SPRITE_SUBSTITUTE_GUY, SPRITE_MONSTER
 	return
@@ -487,6 +489,52 @@ LightUpRoomScript:
 	reloadmappart
 	special UpdateTimePals
 	callasm BlindingFlash
+	end
+	
+TeleportGuyScript:
+	opentext
+	checkevent EVENT_TELEPORT_GUY_INTRODUCED
+	iftrue .alreadymet
+	farwritetext TeleportGuyIntroductionText
+	setevent EVENT_TELEPORT_GUY_INTRODUCED
+.alreadymet
+	farwritetext TeleportGuyAskText
+	yesorno
+	iffalse .decline
+	closetext
+	special OverworldFlyMap
+	farwritetext TeleportGuyAcceptText
+	closetext
+	playsound SFX_WARP_TO
+	applymovement PLAYER, .TeleportOut
+	pause 8
+	farscall Script_AbortBugContest
+	special WarpToSpawnPoint
+	callasm DelayLoadingNewSprites
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	newloadmap MAPSETUP_FLY
+	playsound SFX_WARP_FROM
+	applymovement PLAYER, .TeleportIn
+	callasm .ReturnFromFly
+	end
+
+.ReturnFromFly:
+	farcall LoadOverworldFont
+	farcall LoadMapNameSignGFX
+	ret
+	
+.TeleportOut:
+	teleport_from
+	step_resume
+	
+.TeleportIn:
+	show_object
+	teleport_to
+	step_resume
+	
+.decline
+	farwritetext TeleportGuyDeclineText
+	closetext
 	end
 
 Movement_ContestResults_WalkAfterWarp:

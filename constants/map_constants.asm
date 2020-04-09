@@ -36,6 +36,7 @@ ENDM
 	map_const ROUTE_15,                                    20, 19 ;  3
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    20, 21 ;  3
+	map_const LUGIA_LAIR,                                  13, 12 ;  3
 
 	newgroup                                                      ;  2
 
@@ -113,6 +114,7 @@ ENDM
 	map_const ROUTE_21,									   27, 10
 	map_const ROUTE_21_ECRUTEAK_GATE,						5,  4
 	map_const BLACKTHORN_REST_TALK_HOUSE,                   4,  4
+	map_const BLACKTHORN_LASS_HOUSE,                        4,  4
 	map_const FLUTE_MASTER_HOUSE,                           4,  4
 	map_const BLACKTHORN_CAVE_1F,                          19, 11
 	map_const BLACKTHORN_CAVE_2F,                          10,  7
@@ -261,7 +263,7 @@ ENDM
 
 	newgroup                                                      ; 20
 
-	map_const POKECENTER_2F,                                8,  4 ;  1
+	map_const POKECENTER_2F,                                6,  4 ;  1
 	map_const TRADE_CENTER,                                 5,  4 ;  2
 	map_const COLOSSEUM,                                    5,  4 ;  3
 
@@ -302,6 +304,7 @@ ENDM
 	map_const ROUTE_22_CAVE_B2F,						   21, 24
 	map_const ROUTE_22_NORTH,							   19,  8
 	map_const ROUTE_22_SOUTH,							   20, 19
+	map_const ROUTE_22_HIDDEN_CAVE,						    5,  7
 
 	newgroup                                                      ; 24
 

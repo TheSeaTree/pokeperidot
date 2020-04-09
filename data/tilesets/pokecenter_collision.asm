@@ -6,7 +6,7 @@
 	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 05
 	tilecoll WALL, COUNTER, FLOOR, FLOOR ; 06
 	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 07
-	tilecoll WALL, WALL, PC, FLOOR ; 08
+	tilecoll WALL, TOWN_MAP, PC, FLOOR ; 08
 	tilecoll WALL, WALL, FLOOR, WALL ; 09
 	tilecoll WALL, DOOR, FLOOR, FLOOR ; 0a
 	tilecoll WALL, WALL, WALL, WALL ; 0b

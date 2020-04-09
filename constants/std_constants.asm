@@ -36,3 +36,4 @@
 	enum happinesschecknpc
 	enum mysterygiftgirl
 	enum lightuproom
+	enum teleportguy

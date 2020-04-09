@@ -176,26 +176,9 @@ HomepageText:
 	line "updated…"
 	done
 
-; not used
-	text "#MON RADIO!"
-
-	para "Call in with your"
-	line "requests now!"
-	done
-
 TrashCanText:
 	text "There's nothing in"
 	line "here…"
-	done
-
-; not used
-	text "A #MON may be"
-	line "able to move this."
-	done
-
-; not used
-	text "Maybe a #MON"
-	line "can break this."
 	done
 
 PokecenterSignText:
@@ -219,53 +202,11 @@ SafariZone_LeavingText:
 	line "you like."
 	done
 
-ContestResults_PlayerWonAPrizeText:
-	text "<PLAYER>, the No.@"
-	text_ram wStringBuffer3
-	text_start
-	line "finisher, wins"
-	cont "@"
-	text_ram wStringBuffer4
-	text "!"
-	done
-
 ReceivedItemText:
 	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer4
 	text "."
-	done
-
-ContestResults_JoinUsNextTimeText:
-	text "Please join us for"
-	line "the next Contest!"
-	done
-
-ContestResults_ConsolationPrizeText:
-	text "Everyone else gets"
-	line "a BERRY as a con-"
-	cont "solation prize!"
-	done
-
-ContestResults_DidNotWinText:
-	text "We hope you do"
-	line "better next time."
-	done
-
-ContestResults_ReturnPartyText:
-	text "We'll return the"
-	line "#MON we kept"
-
-	para "for you."
-	line "Here you go!"
-	done
-
-ContestResults_PartyFullText:
-	text "Your party's full,"
-	line "so the #MON was"
-
-	para "sent to your BOX"
-	line "in BILL's PC."
 	done
 
 GymStatue_CityGymText:
@@ -330,17 +271,6 @@ CoinVendor_CancelText:
 	line "Come again!"
 	done
 
-BugContestPrizeNoRoomText:
-	text "Oh? Your PACK is"
-	line "full."
-
-	para "We'll keep this"
-	line "for you today, so"
-
-	para "come back when you"
-	line "make room for it."
-	done
-
 HappinessText3:
 	text "Wow! You and your"
 	line "#MON are really"
@@ -361,20 +291,6 @@ HappinessText1:
 
 	para "If you aren't"
 	line "nice, it'll pout."
-	done
-
-RegisteredNumber1Text:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
-	done
-
-RegisteredNumber2Text:
-	text "<PLAYER> registered"
-	line "@"
-	text_ram wStringBuffer3
-	text "'s number."
 	done
 	
 AskEnterGymText:
@@ -414,7 +330,38 @@ SmashWallText:
 	done
 	
 SmashWallBrokenText:
-	text_from_ram wStringBuffer2
-	text " created"
-	line "an opening."
+	text "An opening was"
+	line "created."
+	prompt
+	
+TeleportGuyIntroductionText:
+	text "Hello there."
+	
+	para "My ALAKAZAM can"
+	line "teleport you to"
+	cont "any place you have"
+	cont "visited before."
+	
+	para "If you can tell me"
+	line "where a place is,"
+	cont "I can have my"
+	cont "ALAKAZAM take you"
+	cont "there instantly."
+	prompt
+	
+TeleportGuyAskText:
+	text "Would you like to"
+	line "use my ALAKAZAM's"
+	cont "TELEPORT ability?"
+	done
+
+TeleportGuyAcceptText:
+	text "OK, OK. Picture"
+	line "your destination"
+	cont "in your mind…"
+	prompt
+
+TeleportGuyDeclineText:
+	text "OK, OK. The best"
+	line "of luck to you!"
 	prompt

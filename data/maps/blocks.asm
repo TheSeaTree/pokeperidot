@@ -70,6 +70,7 @@ FluteMasterHouse_Blocks:
 MahoganySubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
 EcruteakRichardsHouse_Blocks:
+BlackthornLassHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -452,6 +453,9 @@ Route6_Blocks:
 CianwoodChurch_Blocks:
 	INCBIN "maps/CianwoodChurch.ablk"
 	
+LugiaLair_Blocks:
+	INCBIN "maps/LugiaLair.ablk"
+	
 SECTION "Map Blocks 4", ROMX
 
 VioletGymB1_Blocks:
@@ -641,3 +645,6 @@ Route22CaveB1F_Blocks:
 
 Route22CaveB2F_Blocks:
 	INCBIN "maps/Route22CaveB2F.ablk"
+
+Route22HiddenCave_Blocks:
+	INCBIN "maps/HiddenCave.5x7.cave.ablk"

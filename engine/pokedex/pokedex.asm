@@ -2499,10 +2499,8 @@ _NewPokedexEntry:
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_DrawFootprint
 	hlcoord 0, 17
-	ld [hl], $3b
-	inc hl
 	ld bc, 19
-	ld a, " "
+	ld a, $32
 	call ByteFill
 	farcall DisplayDexEntry
 	call EnableLCD

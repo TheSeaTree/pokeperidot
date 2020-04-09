@@ -288,8 +288,8 @@ StartTrainerBattle_Flash:
 
 .DoFlashAnimation:
 	ld a, [wTimeOfDayPalset]
-	cp %11111111 ; dark cave
-	jr z, .done
+;	cp %11111111 ; dark cave
+;	jr z, .done
 	ld hl, wcf64
 	ld a, [hl]
 	inc [hl]
@@ -670,12 +670,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 
 .cgb
 	ld hl, .daypals
-	ld a, [wTimeOfDayPal]
-	maskbits NUM_DAYTIMES
-	cp DARKNESS_F
-	jr nz, .daytime
-	ld hl, .nightpals
-.daytime
 	ldh a, [rSVBK]
 	push af
 	ld a, BANK(wBGPals1)
@@ -722,9 +716,6 @@ StartTrainerBattle_LoadPokeBallGraphics:
 
 .daypals
 INCLUDE "gfx/overworld/trainer_battle_day.pal"
-
-.nightpals
-INCLUDE "gfx/overworld/trainer_battle_nite.pal"
 
 .loadpokeballgfx
 	ld a, [wOtherTrainerClass]

@@ -165,10 +165,14 @@ KRIS EQU __enum__
 	const LEON
 	const LUCAS
 	const BRUCE
+	const JORDAN
+	const TODD
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
 	const ASHLEY
+	const EVE
+	const FAITH
 	
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -283,6 +287,7 @@ KRIS EQU __enum__
 	const CARTER
 	const ZEKE
 	const VINCENT
+	const ISAIAH
 	
 	trainerclass BIKER ; 2d
 	const JERRY
@@ -317,6 +322,8 @@ KRIS EQU __enum__
 	const WAYNE
 	const DREW
 	const RUBIN
+	const LOUIS
+	const ROGER
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
@@ -329,6 +336,7 @@ KRIS EQU __enum__
 	const CLINT
 	const JUN
 	const TAKEO
+	const RIKU
 
 	trainerclass EXECUTIVEM ; 33
 	const ABBOT

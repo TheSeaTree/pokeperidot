@@ -15,7 +15,6 @@ Flypoints:
 	flypoint CIANWOOD,     CIANWOOD_CITY
 	flypoint ROUTE_9,      ROUTE_9
 	flypoint ECRUTEAK,     ECRUTEAK_CITY
-	flypoint OLIVINE,      OLIVINE_CITY
 	flypoint MAHOGANY,     MAHOGANY_TOWN
 	flypoint CARNATION,	   CARNATION_TOWN
 	flypoint BLACKTHORN,   BLACKTHORN_CITY

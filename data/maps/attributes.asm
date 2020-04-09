@@ -395,6 +395,7 @@ ENDM
 	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0
 	map_attributes Route21EcruteakGate, ROUTE_21_ECRUTEAK_GATE, $00, 0
 	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
+	map_attributes BlackthornLassHouse, BLACKTHORN_LASS_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
 	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
 	map_attributes BlackthornCave2F, BLACKTHORN_CAVE_2F, $09, 0
@@ -427,3 +428,5 @@ ENDM
 	map_attributes GoldenrodGymNorthChamber, GOLDENROD_GYM_NORTH_CHAMBER, $00, 0
 	map_attributes GoldenrodGymEastChamber, GOLDENROD_GYM_EAST_CHAMBER, $00, 0
 	map_attributes GoldenrodGymWestChamber, GOLDENROD_GYM_WEST_CHAMBER, $00, 0
+	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
+	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0

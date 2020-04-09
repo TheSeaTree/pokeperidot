@@ -61,7 +61,7 @@ LaprasSign:
 	waitsfx
 	closepokepic
 	writebyte LAPRAS
-	special UnusedSetSeenMon
+	special SetSeenMon
 	jumptext LaprasSignText
 
 MachokeSign:
@@ -71,7 +71,7 @@ MachokeSign:
 	waitsfx
 	closepokepic
 	writebyte MACHOKE
-	special UnusedSetSeenMon
+	special SetSeenMon
 	jumptext MachokeSignText
 
 ScytherSign:
@@ -81,7 +81,7 @@ ScytherSign:
 	waitsfx
 	closepokepic
 	writebyte SCYTHER
-	special UnusedSetSeenMon
+	special SetSeenMon
 	jumptext ScytherSignText
 
 SudowoodoSign:
@@ -103,7 +103,7 @@ RhyhornSign:
 	waitsfx
 	closepokepic
 	writebyte RHYHORN
-	special UnusedSetSeenMon
+	special SetSeenMon
 	jumptext RhyhornSignText
 	
 CarnationZooVendingMachine:

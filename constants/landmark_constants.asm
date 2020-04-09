@@ -11,6 +11,7 @@
 	const AZALEA_TOWN       ; 0c
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
+	const VIRIDIAN_FOREST   ; 0e
 	const ROUTE_5           ; 3a
 	const VIOLET_CITY       ; 06
 	const ROUTE_6           ; 3c

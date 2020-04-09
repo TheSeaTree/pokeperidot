@@ -413,7 +413,7 @@ Route12AssistantYes:
 	cont "was young."
 	
 	para "You could start by"
-	cont "looking there."
+	line "looking there."
 	done
 	
 Route12AssistantAfter:

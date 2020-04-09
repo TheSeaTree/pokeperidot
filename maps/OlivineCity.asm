@@ -9,8 +9,7 @@ OlivineCity_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	db 0 ; callbacks
 
 .DummyScene0:
 	disappear OLIVINECITY_OLIVINE_RIVAL
@@ -18,10 +17,6 @@ OlivineCity_MapScripts:
 
 .DummyScene1:
 	end
-
-.FlyPoint:
-	setflag ENGINE_FLYPOINT_OLIVINE
-	return
 
 OlivineCityRivalSceneTop:
 	special FadeOutMusic
@@ -369,7 +364,7 @@ OlivineCityTutorExplainGoldLeaf:
 	done
 	
 OlivineSurfHouseSignText:
-	text "CYNARIA COAST"
+	text "CYNARA COAST"
 	line "SURF HOUSE"
 	
 	para "Members only."

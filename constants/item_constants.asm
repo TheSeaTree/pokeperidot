@@ -301,7 +301,6 @@ ENDM
 	add_mt ICY_WIND
 	add_mt NIGHTMARE
 	add_mt DREAM_EATER
-	add_mt SKETCH
 NUM_TM_HM_TUTOR = __enum__ + -1
 
 	const ITEM_FA       ; fa

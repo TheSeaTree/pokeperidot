@@ -318,7 +318,7 @@ MaxPotionDesc:
 
 HyperPotionDesc:
 	db   "Restores #MON"
-	next "HP by 200.@"
+	next "HP by 150.@"
 
 SuperPotionDesc:
 	db   "Restores #MON"

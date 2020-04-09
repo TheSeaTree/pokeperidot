@@ -7,7 +7,7 @@ SetSeenAndCaughtMon::
 	pop af
 	; fallthrough
 
-SetSeenMon::
+_SetSeenMon::
 	ld c, a
 	ld hl, wPokedexSeen
 	ld b, SET_FLAG

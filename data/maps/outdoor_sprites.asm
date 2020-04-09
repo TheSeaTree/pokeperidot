@@ -192,9 +192,6 @@ IndigoGroupSprites:
 	; 0 of max 9 walking sprites
 	db 0 ; end
 
-ViridianGroupSprites:
-; Route2, Route22, ViridianCity
-; Route29 and CherrygroveCity are connected
 NewBarkGroupSprites:
 CherrygroveGroupSprites:
 	db SPRITE_TEACHER
@@ -213,7 +210,24 @@ CherrygroveGroupSprites:
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
-
+	
+ViridianGroupSprites:
+	db SPRITE_TEACHER
+	db SPRITE_FISHER
+	db SPRITE_YOUNGSTER
+	db SPRITE_LASS
+	db SPRITE_BUENA
+	db SPRITE_BLACK_BELT
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_COOLTRAINER_M
+	db SPRITE_SUPER_NERD
+	; limit of 9 walking sprites
+	db SPRITE_NURSE
+	db SPRITE_CLEFAIRY
+	db SPRITE_POKE_BALL
+	db SPRITE_ROCK
+	db SPRITE_FRUIT_TREE
+	db 0 ; end
 
 ; Route37 and EcruteakCity are connected
 EcruteakGroupSprites:
@@ -229,10 +243,10 @@ EcruteakGroupSprites:
 	db SPRITE_SILVER
 	; 9 of max 9 walking sprites
 	db SPRITE_GYM_GUY
+	db SPRITE_MOLTRES
 	db SPRITE_WEIRD_TREE ; variable sprite: becomes SPRITE_SUDOWOODO and SPRITE_TWIN
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
-	db SPRITE_SUICUNE
 	db 0 ; end
 
 AzaleaGroupSprites:
@@ -317,8 +331,8 @@ OlivineGroupSprites:
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
-	db SPRITE_SUICUNE
 	db 0 ; end
+
 CianwoodGroupSprites:
 ; Route40, Route41, CianwoodCity, BattleTowerOutside
 	db SPRITE_OLIVINE_RIVAL ; variable sprite: becomes SPRITE_SILVER and SPRITE_SWIMMER_GUY
@@ -336,7 +350,6 @@ CianwoodGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
-	db SPRITE_SUICUNE
 	db 0 ; end
 
 MahoganyGroupSprites:
@@ -354,7 +367,6 @@ MahoganyGroupSprites:
 	db SPRITE_SURGE
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
-	db SPRITE_SUICUNE
 	db 0 ; end
 
 LakeOfRageGroupSprites:

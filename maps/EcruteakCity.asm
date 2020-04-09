@@ -106,8 +106,9 @@ EcruteakCityLassText:
 	para "I wanted to visit"
 	line "my friend in"
 	cont "ACROPORA CITY, but"
-	cont "there is a ledge"
-	cont "blocking the way."
+	cont "there are some"
+	cont "shady men blocking"
+	cont "the path."
 	done
 	
 EcruteakGymLeaderAwayText:
@@ -296,7 +297,7 @@ EcruteakCity_MapEvents:
 	bg_event 12, 11, BGEVENT_UP,   EcruteakGymEvent
 
 	db 4 ; object events
-	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, -1
+	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, EVENT_FLUTE_HIDEOUT_OPEN
 	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuy, EVENT_ECRUTEAK_GYM_ACCESS
 	object_event  2,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
 	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE

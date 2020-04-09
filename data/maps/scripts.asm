@@ -94,6 +94,8 @@ INCLUDE "maps/AzaleaGymSpeechHouse.asm"
 INCLUDE "maps/AzaleaEvolutionHouse.asm"
 INCLUDE "maps/AzaleaBikeHouse.asm"
 INCLUDE "maps/AzaleaBerryHouse.asm"
+INCLUDE "maps/BlackthornLassHouse.asm"
+INCLUDE "maps/LugiaLair.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -321,6 +323,7 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route10South.asm"
+INCLUDE "maps/Route22HiddenCave.asm"
 
 
 SECTION "Map Scripts 25", ROMX

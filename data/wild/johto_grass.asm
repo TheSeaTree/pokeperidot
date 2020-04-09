@@ -1209,6 +1209,84 @@ JohtoGrassWildMons:
 	db 35, RHYHORN
 	db 35, RHYHORN
 	
+	map_id ROUTE_22_CAVE_1F
+	db 4 percent, 4 percent, 4 percent
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 39, SLUGMA
+	db 39, SLUGMA
+	db 38, GOLBAT
+	db 41, GOLBAT
+	db 42, GOLBAT
+	; day
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 39, SLUGMA
+	db 39, SLUGMA
+	db 38, GOLBAT
+	db 41, GOLBAT
+	db 42, GOLBAT
+	; nite
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 39, SLUGMA
+	db 39, SLUGMA
+	db 38, GOLBAT
+	db 41, GOLBAT
+	db 42, GOLBAT
+	
+	map_id ROUTE_22_CAVE_B1F
+	db 4 percent, 4 percent, 4 percent
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 40, ONIX
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, RHYHORN
+	db 41, RHYHORN
+	; day
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 40, ONIX
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, RHYHORN
+	db 41, RHYHORN
+	; nite
+	db 38, GRAVELER
+	db 38, GRAVELER
+	db 40, ONIX
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, RHYHORN
+	db 41, RHYHORN
+	
+	map_id ROUTE_22_CAVE_B2F
+	db 4 percent, 4 percent, 4 percent
+	db 38, MAGCARGO
+	db 38, MAGCARGO
+	db 40, GRAVELER
+	db 39, MAGMAR
+	db 39, MAGMAR
+	db 40, RHYDON
+	db 41, RHYDON
+	; day
+	db 38, MAGCARGO
+	db 38, MAGCARGO
+	db 40, GRAVELER
+	db 39, MAGMAR
+	db 39, MAGMAR
+	db 40, RHYDON
+	db 41, RHYDON
+	; nite
+	db 38, MAGCARGO
+	db 38, MAGCARGO
+	db 40, GRAVELER
+	db 39, MAGMAR
+	db 39, MAGMAR
+	db 40, RHYDON
+	db 41, RHYDON
+	
 	map_id ROUTE_22_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

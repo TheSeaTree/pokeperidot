@@ -16,6 +16,7 @@ BlackthornFisherScript:
 BlackthornGymEvent:
 	scall BlackthornGymEntrance
 	iffalse .no
+;	warpfacing UP, ROUTE_22_CAVE_B1F,  34, 12
 	warpfacing UP, OLIVINE_GYM,  4, 11
 .no
 	end	
@@ -99,7 +100,7 @@ BlackthornCityGymSignText:
 BlackthornCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 39, 13, ROUTE_20, 1
 	warp_event 33, 17, BLACKTHORN_POKECENTER_1F, 1
 	warp_event 19, 21, BLACKTHORN_MART, 1
@@ -107,6 +108,7 @@ BlackthornCity_MapEvents:
 	warp_event 53, 17, FLUTE_MASTER_HOUSE, 1
 	warp_event 12, 13, BLACKTHORN_CAVE_1F, 1
 	warp_event 28,  5, BLACKTHORN_CAVE_1F, 6
+	warp_event 35, 23, BLACKTHORN_LASS_HOUSE, 1
 
 	db 0 ; coord events
 
