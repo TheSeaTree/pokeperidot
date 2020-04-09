@@ -1730,7 +1730,7 @@ LickitungEvosAttacks:
 	db 21, HEADBUTT
 	db 25, DISABLE
 	db 29, BODY_SLAM
-	db 33, ROLLOUT
+	db 33, PSYBEAM
 	db 37, AMNESIA
 	db 45, REST
 	db 49, SCREECH
@@ -3393,14 +3393,24 @@ GligarEvosAttacks:
 SteelixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, SCREECH
-	db 10, BIND
+	db 1, HARDEN
+	db 1, BIND
+	db 4, CURSE
 	db 14, ROCK_THROW
-	db 23, HARDEN
-	db 27, RAGE
-	db 36, SANDSTORM
-	db 40, BODY_SLAM
-	db 49, CRUNCH
+	db 17, COIL
+	db 20, RAGE
+	db 23, SPIKES
+	db 27, IRON_HEAD
+	db 29, BULLDOZE
+	db 32, DRAGONBREATH
+	db 35, IRON_HEAD
+	db 38, SCREECH
+	db 41, ROCK_SLIDE
+	db 44, DIG
+	db 47, IRON_TAIL
+	db 50, EARTHQUAKE
+	db 52, DOUBLE_EDGE
+	db 55, SANDSTORM
 	db 0 ; no more level-up moves
 
 SnubbullEvosAttacks:
@@ -3504,9 +3514,10 @@ TungtyedEvosAttacks:
 	db 21, HEADBUTT
 	db 25, DISABLE
 	db 29, BODY_SLAM
-	db 33, ROLLOUT
+	db 33, PSYBEAM
 	db 36, FUTURE_SIGHT
 	db 40, AMNESIA
+	db 44, PSYCHIC_M
 	db 47, REST
 	db 51, SCREECH
 	db 60, EXPLOSION

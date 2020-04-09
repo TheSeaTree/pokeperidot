@@ -176,7 +176,7 @@ MonMenuIcons:
 	db ICON_ODDISH      ; MANDRABEL
 	db ICON_GHOST       ; CURSTRAW
 	db ICON_CLEFAIRY    ; TOGEPI
-	db ICON_CLEFAIRY    ; TOGETIC
+	db ICON_MONSTER     ; TOGETIC
 	db ICON_BIRD        ; NATU
 	db ICON_BIRD        ; XATU
 	db ICON_FOX         ; MAREEP

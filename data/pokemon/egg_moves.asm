@@ -457,6 +457,7 @@ KoffingEggMoves:
 	db PAIN_SPLIT
 	db RECOVER
 	db WILL_O_WISP
+	db AMNESIA
 	db -1 ; end
 
 RhyhornEggMoves:
