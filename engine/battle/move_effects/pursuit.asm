@@ -12,9 +12,6 @@ BattleCommand_Pursuit:
 	and a
 	ret z
 
-	ld a, 1
-	ld [wBattleAnimParam], a 
-
 	ld hl, wCurDamage + 1
 	sla [hl]
 	dec hl

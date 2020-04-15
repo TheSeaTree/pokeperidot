@@ -417,7 +417,6 @@ INCLUDE "engine/events/magikarp.asm"
 INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/constant_damage_moves.asm"
 INCLUDE "engine/battle/pay_day.asm"
-INCLUDE "engine/battle/false_swipe.asm"
 INCLUDE "engine/battle/misc.asm"
 
 

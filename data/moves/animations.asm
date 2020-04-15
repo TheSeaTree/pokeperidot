@@ -4190,7 +4190,7 @@ BattleAnim_Encore:
 	anim_ret
 
 BattleAnim_Pursuit:
-	anim_2gfx ANIM_GFX_PURSUIT, ANIM_GFX_HIT
+	anim_1gfx ANIM_GFX_HIT
 	anim_if_param_equal $1, BattleAnim_Pursuit_branch_cb62b
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_01, 136, 56, $0
@@ -4198,13 +4198,12 @@ BattleAnim_Pursuit:
 	anim_ret
 
 BattleAnim_Pursuit_branch_cb62b:
-	anim_sound 0, 0, SFX_BALL_POOF
-	anim_bgeffect ANIM_BG_RETURN_MON, $0, $0, $0
-	anim_wait 32
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $0, $0
+	anim_wait 4
 	anim_call BattleAnim_UserObj_1Row
-	anim_obj ANIM_OBJ_PURSUIT, 132, 64, $0
+	anim_obj ANIM_OBJ_AD, 132, 64, $0
 	anim_wait 64
-	anim_obj ANIM_OBJ_GRAB, 132, 64, $1
+	anim_obj ANIM_OBJ_AD, 132, 64, $1
 	anim_sound 0, 1, SFX_BALL_POOF
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $0, $0
 	anim_wait 64

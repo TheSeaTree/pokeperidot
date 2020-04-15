@@ -89,7 +89,6 @@ BurnHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrost
 	checkfaint
 	buildopponentrage
 	burntarget
