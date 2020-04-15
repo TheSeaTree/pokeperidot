@@ -2000,6 +2000,8 @@ BattleCommand_MoveAnimNoSub:
 	call GetBattleVar
 	cp EFFECT_MULTI_HIT
 	jr z, .alternate_anim
+	cp EFFECT_PURSUIT
+	jr z, .pursuit
 	cp EFFECT_CONVERSION
 	jr z, .alternate_anim
 	cp EFFECT_DOUBLE_HIT
@@ -2011,6 +2013,7 @@ BattleCommand_MoveAnimNoSub:
 	xor a
 	ld [wKickCounter], a
 
+.pursuit
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld e, a
@@ -3263,6 +3266,13 @@ BattleCommand_PayDay:
 	farcall PayDayEffect
 	ret
 
+BattleCommand_FalseSwipe:
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall FalseSwipeEffect
+	ret
+
 INCLUDE "engine/battle/move_effects/counter.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
@@ -3308,8 +3318,6 @@ INCLUDE "engine/battle/move_effects/sleep_talk.asm"
 INCLUDE "engine/battle/move_effects/destiny_bond.asm"
 
 INCLUDE "engine/battle/move_effects/spite.asm"
-
-INCLUDE "engine/battle/move_effects/false_swipe.asm"
 
 INCLUDE "engine/battle/move_effects/heal_bell.asm"
 

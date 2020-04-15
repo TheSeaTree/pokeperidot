@@ -204,7 +204,8 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_OBJ_AA
 	const ANIM_OBJ_AB
 	const ANIM_OBJ_MEAN_LOOK
-	const ANIM_OBJ_AD
+	const ANIM_OBJ_PURSUIT
+	const ANIM_OBJ_GRAB
 	const ANIM_OBJ_AE
 	const ANIM_OBJ_RAIN
 	const ANIM_OBJ_B0
@@ -816,6 +817,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const ANIM_GFX_AEROBLAST
 	const ANIM_GFX_PLAYERHEAD
 	const ANIM_GFX_ENEMYFEET
+	const ANIM_GFX_PURSUIT
 
 ; battle_bg_effect struct members (see macros/wram.asm)
 	const_def
