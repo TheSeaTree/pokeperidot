@@ -30,7 +30,7 @@ UnusedTitleScreen:
 	call CopyBytes
 
 	ld hl, UnusedTitleBG_Tilemap
-	debgcoord 0, 0
+	debgcoord 0, 1
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
 .copy
 	ld a, 0
@@ -65,7 +65,7 @@ UnusedTitleScreen:
 	ld a, BANK(wBGPals1)
 	ldh [rSVBK], a
 
-	ld hl, UnusedTitleBG_Palettes
+	ld hl, TitleScreenPalettes
 	ld de, wBGPals1
 	ld bc, 8 palettes
 	call CopyBytes
@@ -75,7 +75,7 @@ UnusedTitleScreen:
 	ld bc, 8 palettes
 	call CopyBytes
 
-	ld hl, UnusedTitleBG_Palettes
+	ld hl, TitleScreenPalettes
 	ld de, wBGPals2
 	ld bc, 8 palettes
 	call CopyBytes
@@ -97,73 +97,64 @@ UnusedTitleScreen:
 	ret
 
 UnusedTitleBG_GFX:
-INCBIN "gfx/title/old_bg.2bpp"
+INCBIN "gfx/title/title_bg.2bpp"
 
 UnusedTitleBG_Tilemap:
 ; 32x32 (alternating tiles and attributes)
-INCBIN "gfx/title/old_bg.tilemap"
+INCBIN "gfx/title/title_bg.tilemap"
 
 UnusedTitleBG_Palettes:
-INCLUDE "gfx/title/old_bg.pal"
+INCLUDE "gfx/title/title.pal"
 
 UnusedTitleFG_GFX:
 INCBIN "gfx/title/old_fg.2bpp"
 
 UnusedTitleFG_Palettes:
-INCLUDE "gfx/title/old_fg.pal"
+INCLUDE "gfx/title/title_fg.pal"
 
 UnusedTitleFG_OAM:
-	dsprite  3,  0,  7,  0, $00, 1
-	dsprite  3,  0,  8,  0, $02, 1
-	dsprite  3,  0,  9,  0, $04, 1
-	dsprite  3,  0, 10,  0, $06, 1
-	dsprite  3,  0, 11,  0, $08, 1
-	dsprite  3,  0, 12,  0, $0a, 1
-	dsprite  3,  0, 13,  0, $0c, 1
-	dsprite  3,  0, 14,  0, $0e, 1
-	dsprite  5,  0,  7,  0, $10, 0
-	dsprite  5,  0,  8,  0, $12, 0
-	dsprite  5,  0,  9,  0, $14, 0
-	dsprite  5,  0, 10,  0, $16, 0
-	dsprite  5,  0, 11,  0, $18, 0
-	dsprite  5,  0, 12,  0, $1a, 0
-	dsprite  5,  0, 13,  0, $1c, 0
-	dsprite  5,  0, 14,  0, $1e, 0
-	dsprite  7,  0,  7,  0, $20, 0
-	dsprite  7,  0,  8,  0, $22, 0
-	dsprite  7,  0,  9,  0, $24, 0
-	dsprite  7,  0, 10,  0, $26, 0
-	dsprite  7,  0, 11,  0, $28, 0
-	dsprite  7,  0, 12,  0, $2a, 0
-	dsprite  7,  0, 13,  0, $2c, 0
-	dsprite  7,  0, 14,  0, $2e, 0
-	dsprite  9,  0,  7,  0, $30, 2
-	dsprite  9,  0,  8,  0, $32, 2
-	dsprite  9,  0,  9,  0, $34, 2
-	dsprite  9,  0, 10,  0, $36, 2
-	dsprite  9,  0, 11,  0, $38, 2
-	dsprite  9,  0, 12,  0, $3a, 2
-	dsprite  9,  0, 13,  0, $3c, 2
-	dsprite  9,  0, 14,  0, $3e, 2
-	dsprite 11,  0,  7,  0, $40, 1
-	dsprite 11,  0,  8,  0, $42, 1
-	dsprite 11,  0,  9,  0, $44, 1
-	dsprite 11,  0, 10,  0, $46, 1
-	dsprite 11,  0, 11,  0, $48, 1
-	dsprite 11,  0, 12,  0, $4a, 1
-	dsprite 11,  0, 13,  0, $4c, 1
-	dsprite 11,  0, 14,  0, $4e, 1
-
-Function10ed51:
-	call _TitleScreen
-.loop
-	call JoyTextDelay
-	ldh a, [hJoyLast]
-	ld b, a
-	and 1
-	jr nz, .done
-	call SuicuneFrameIterator
-	call DelayFrame
-	jr .loop
-.done
-	ret
+; Row 1
+	dsprite 10,  0,  7,  0, $00, 2
+	dsprite 10,  0,  8,  0, $02, 2
+	dsprite 10,  0,  9,  0, $04, 2
+	dsprite 10,  0, 10,  0, $06, 0
+	dsprite 10,  0, 11,  0, $08, 0
+	dsprite 10,  0, 12,  0, $0a, 2
+	dsprite 10,  0, 13,  0, $0c, 2
+	dsprite 10,  0, 14,  0, $0e, 2
+; Row 2
+	dsprite 12,  0,  7,  0, $10, 2
+	dsprite 12,  0,  8,  0, $12, 2
+	dsprite 12,  0,  9,  0, $14, 2
+	dsprite 12,  0, 10,  0, $16, 1
+	dsprite 12,  0, 11,  0, $18, 1
+	dsprite 12,  0, 12,  0, $1a, 5
+	dsprite 12,  0, 13,  0, $1c, 5
+	dsprite 12,  0, 14,  0, $1e, 6
+; Row 3
+	dsprite 14,  0,  7,  0, $20, 2
+	dsprite 14,  0,  8,  0, $22, 2
+	dsprite 14,  0,  9,  0, $24, 2
+	dsprite 14,  0, 10,  0, $26, 3
+	dsprite 14,  0, 11,  0, $28, 3
+	dsprite 14,  0, 12,  0, $2a, 4
+	dsprite 14,  0, 13,  0, $2c, 6
+	dsprite 14,  0, 14,  0, $2e, 6
+; Row 4
+	dsprite 16,  0,  7,  0, $30, 0
+	dsprite 16,  0,  8,  0, $32, 0
+	dsprite 16,  0,  9,  0, $34, 0
+	dsprite 16,  0, 10,  0, $36, 0
+	dsprite 16,  0, 11,  0, $38, 0
+	dsprite 16,  0, 12,  0, $3a, 0
+	dsprite 16,  0, 13,  0, $3c, 0
+	dsprite 16,  0, 14,  0, $3e, 0
+; Row 5
+	dsprite 18,  0, 13,  0, $40, 7
+	dsprite 18,  0, 14,  0, $42, 7
+	dsprite 18,  0, 15,  0, $44, 7
+	dsprite 18,  0, 16,  0, $46, 7
+	dsprite 18,  0, 17,  0, $48, 7
+	dsprite 18,  0, 18,  0, $4a, 7
+	dsprite 18,  0, 19,  0, $4c, 7
+	dsprite 18,  0, 20,  0, $4e, 7

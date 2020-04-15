@@ -1086,7 +1086,7 @@ StartTitleScreen:
 	dw ResetClock
 
 .TitleScreen:
-	farcall _TitleScreen
+	farcall UnusedTitleScreen
 	ret
 
 RunTitleScreen:
