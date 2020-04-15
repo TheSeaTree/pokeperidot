@@ -13,8 +13,8 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
 	db MUSIC_HIKER_ENCOUNTER       ; pokemon_prof
-	db MUSIC_HIKER_ENCOUNTER       ; will
 	db MUSIC_HIKER_ENCOUNTER       ; cal
+	db MUSIC_HIKER_ENCOUNTER       ; will
 	db MUSIC_OFFICER_ENCOUNTER     ; bruno
 	db MUSIC_HIKER_ENCOUNTER       ; karen
 	db MUSIC_HIKER_ENCOUNTER       ; koga

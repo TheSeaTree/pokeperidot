@@ -83,13 +83,13 @@ KRIS EQU __enum__
 	trainerclass POKEMON_PROF ; a
 	const TEST
 
-	trainerclass WILL ; b
-	const WILL1
-
 	trainerclass CAL ; c
 	const CAL1
 	const CAL2
 	const CAL3
+
+	trainerclass WILL ; b
+	const WILL1
 
 	trainerclass BRUNO ; d
 	const BRUNO1

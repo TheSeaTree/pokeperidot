@@ -12,8 +12,8 @@ TrainerGroups:
 	dw ClairGroup
 	dw Rival1Group
 	dw PokemonProfGroup
-	dw WillGroup
 	dw PKMNTrainerGroup
+	dw WillGroup
 	dw BrunoGroup
 	dw KarenGroup
 	dw KogaGroup

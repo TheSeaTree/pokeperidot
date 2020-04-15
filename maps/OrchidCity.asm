@@ -21,7 +21,7 @@ OrchidCity_MapScripts:
 OrchidGymEvent:
 	scall OrchidGymEntrance
 	iffalse .no
-	warpfacing UP, BLACKTHORN_GYM_1F, 7, 21
+	warpfacing UP, BLACKTHORN_GYM_1F, 8, 25
 .no
 	end
 	

@@ -116,8 +116,7 @@
 	const SPRITE_KRIS_RUN
 	const SPRITE_POSEY
 	const SPRITE_PSYCHIC_LEADER
-	const SPRITE_CANNONBALL
-	const SPRITE_EXPLOSION
+	const SPRITE_ABBOT
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

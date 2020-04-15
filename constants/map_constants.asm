@@ -293,8 +293,8 @@ ENDM
 
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
-	map_const BLACKTHORN_GYM_1F,                            8, 12 ;  1
-	map_const BLACKTHORN_GYM_2F,                            5,  9 ;  2
+	map_const BLACKTHORN_GYM_1F,                           10, 13 ;  1
+	map_const BLACKTHORN_GYM_2F,                           11,  9 ;  2
 	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
 	map_const ORCHID_MART,                                  6,  4 ;  4
 	map_const DRAGONBREATH_HOUSE,                           4,  4

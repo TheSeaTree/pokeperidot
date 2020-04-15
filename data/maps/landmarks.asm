@@ -15,6 +15,7 @@ Landmarks:
 	landmark 100, 124, AzaleaTownName
 	landmark 108, 116, Route3Name
 	landmark 124, 100, Route4Name
+	landmark 124, 100, ViridianForestName
 	landmark 128,  92, Route5Name
 	landmark 132,  84, VioletCityName
 	landmark 128,  76, Route6Name
@@ -59,9 +60,9 @@ AzaleaTownName:      db "PECTINIA¯CITY@"
 GoldenrodCityName:   db "FAVIA¯TOWN@"
 EcruteakCityName:    db "STAGHORN¯TOWN@"
 PaintersForestName:  db "PAINTER'S¯FOREST@"
-OlivineCityName:     db "CYNARIA¯COAST@"
-CianwoodCityName:    db "HELIO¯TOWN@"
-MahoganyTownName:    db "CYNARIA¯CITY@"
+OlivineCityName:     db "RUGOSA¯COAST@"
+CianwoodCityName:    db "HEPATICA¯TOWN@"
+MahoganyTownName:    db "RUGOSA¯CITY@"
 CarnationTownName:   db "CARNATION¯TOWN@"
 BlackthornCityName:  db "ACROPORA¯CITY@"
 OrchidCityName:      db "ORCHID¯CITY@"
@@ -117,10 +118,10 @@ Route23Name:         db "ROUTE 23@"
 Route30Name:	     db "PAVONA¯OASIS@"
 CarnationZooName:    db "CARNATION¯ZOO@"
 DarkCaveName:        db "DARK CAVE@"
-IlexForestName:      db "WEST¯FOREST@"
+IlexForestName:      db "OCCIDENT¯FOREST@"
 BurnedTowerName:     db "BURNED¯TOWER@"
 FastShipName:        db "FAST SHIP@"
-ViridianForestName:  db "VIRIDIAN¯FOREST@"
+ViridianForestName:  db "ORIENTEM¯FOREST@"
 DiglettsCaveName:    db "DIGLETT'S¯CAVE@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
