@@ -1,6 +1,6 @@
 NAMINGSCREEN_CURSOR     EQU $7e
 
-NAMINGSCREEN_BORDER     EQUS "\"┌\"" ; $ba
+NAMINGSCREEN_BORDER     EQUS "\"■\"" ; $d7
 NAMINGSCREEN_MIDDLELINE EQUS "\"→\"" ; $eb
 NAMINGSCREEN_UNDERLINE  EQUS "\"☎\"" ; $d9
 
@@ -45,7 +45,7 @@ NamingScreen:
 
 .SetUpNamingScreen:
 	call ClearBGPalettes
-	ld b, SCGB_NAME_SCREEN
+	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	call DisableLCD
 	call LoadNamingScreenGFX
@@ -257,49 +257,11 @@ NamingScreen_IsTargetBox:
 	ret
 
 NamingScreen_InitText:
-	call WaitTop	
+	call WaitTop
 	hlcoord 0, 0
-	ld bc, 20
+	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	ld a, NAMINGSCREEN_BORDER
 	call ByteFill
-	hlcoord 0, 7
-	ld bc, 20
-	ld a, NAMINGSCREEN_BORDER
-	call ByteFill
-	hlcoord 0, 15
-	ld bc, 20
-	ld a, NAMINGSCREEN_BORDER
-	call ByteFill
-	hlcoord 0, 17
-	ld bc, 20
-	ld a, NAMINGSCREEN_BORDER
-	call ByteFill
-	hlcoord 0, 1
-	ld bc, 120
-	ld a, $bd
-	call ByteFill
-	hlcoord 0, 8
-	ld bc, 140
-	ld a, $bd
-	call ByteFill
-
-	hlcoord  0,  0
-	ld [hl], $bb
-	hlcoord 19,  0
-	ld [hl], $bc
-	hlcoord  0, 17
-	ld [hl], $be
-	hlcoord 19, 17
-	ld [hl], $bf
-	hlcoord  0,  7
-	ld [hl], $c2
-	hlcoord 19,  7
-	ld [hl], $c1
-	hlcoord  0, 15
-	ld [hl], $c2
-	hlcoord 19, 15
-	ld [hl], $c1
-
 	hlcoord 1, 1
 	lb bc, 6, 18
 	call NamingScreen_IsTargetBox
@@ -891,7 +853,7 @@ LoadNamingScreenGFX:
 
 	ld de, vTiles0 tile NAMINGSCREEN_BORDER
 	ld hl, NamingScreenGFX_Border
-	ld bc, 10 tiles
+	ld bc, 1 tiles
 	ld a, BANK(NamingScreenGFX_Border)
 	call FarCopyBytes
 
