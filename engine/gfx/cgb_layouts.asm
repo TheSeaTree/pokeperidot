@@ -43,7 +43,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_PartyMenu
 	dw _CGB_Evolution
 	dw _CGB_GSTitleScreen
-	dw _CGB0d
+	dw _CGB_NameScreen
 	dw _CGB_MoveList
 	dw _CGB_BetaPikachuMinigame
 	dw _CGB_PokedexSearchOption
@@ -599,9 +599,23 @@ _CGB_GSTitleScreen:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB0d:
-	ld hl, PalPacket_Diploma + 1
-	call CopyFourPalettes
+_CGB_NameScreen:
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .male
+
+	ld hl, NameScreenFemalePalettes
+	jr .got_gender
+
+.male
+	ld hl, NameScreenMalePalettes
+
+.got_gender
+	ld de, wBGPals1
+	ld bc, 10 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	call ApplyPals
 	call WipeAttrMap
 	call ApplyAttrMap
 	ret

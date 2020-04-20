@@ -1395,6 +1395,12 @@ INCLUDE "gfx/tilesets/roofs.pal"
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
 
+NameScreenMalePalettes:
+INCLUDE "gfx/naming_screen/namescreenmale.pal"
+
+NameScreenFemalePalettes:
+INCLUDE "gfx/naming_screen/namescreenfemale.pal"
+
 PartyMenuOBPals:
 INCLUDE "gfx/stats/party_menu_ob.pal"
 
