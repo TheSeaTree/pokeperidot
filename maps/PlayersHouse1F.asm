@@ -346,8 +346,8 @@ NeighborGivesPotion1:
 	done
 
 NeighborGivesPotion2:
-	text "I got you a small"
-	line "gift to help out"
+	text "I got you some-"
+	line "thing to help out"
 	cont "on the start of"
 	cont "your adventure!"
 	done
@@ -358,7 +358,7 @@ NeighborGivesPotion3:
 	cont "journey."
 	
 	para "I was but a little"
-	line "girl at the time."
+	line "girl at the time…"
 	done
 	
 NeighborGivesTownMap:

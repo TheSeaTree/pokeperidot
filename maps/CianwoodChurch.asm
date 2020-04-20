@@ -72,8 +72,8 @@ SageScript:
 	disappear CIANWOODCHURCH_BURGLAR4
 	applymovement CIANWOODCHURCH_SAGE2, Sage2Approach
 	special HealParty
-	pause 30
-	special FadeInQuickly
+	playsound SFX_FULL_HEAL
+	waitsfx
 	opentext
 	writetext Sage2AfterText
 	waitbutton
@@ -81,9 +81,14 @@ SageScript:
 	follow CIANWOODCHURCH_SAGE2, PLAYER
 	applymovement CIANWOODCHURCH_SAGE2, Sage2ApproachAltar
 	stopfollow
+	faceplayer
+	opentext
+	writetext Sage2GoAheadText
+	waitbutton
+	closetext
 	turnobject CIANWOODCHURCH_SAGE2, DOWN
-	applymovement CIANWOODCHURCH_SAGE1, Sage1Talk
 	applymovement PLAYER, PlayerApproachSage
+	turnobject CIANWOODCHURCH_SAGE1, LEFT
 	opentext
 	writetext Sage1Text
 	waitbutton
@@ -110,7 +115,11 @@ CianwoodChurchRevive:
 	itemball REVIVE
 	
 CianwoodChurchBoxes:
-	jumptext CianwoodChurchStolenGoods
+	random 2
+	ifequal 1, .box1
+	jumptext CianwoodChurchStolenGoods1
+.box1:
+	jumptext CianwoodChurchStolenGoods2
 	
 Sage2Movement:
 	step RIGHT
@@ -196,7 +205,7 @@ Sage2ApproachAltar:
 	step UP
 	step UP
 	step UP
-	step UP
+	step RIGHT
 	step_end
 	
 Sage1Talk:
@@ -207,6 +216,8 @@ Sage1Talk:
 	step_end
 	
 PlayerApproachSage:
+	step UP
+	step UP
 	step RIGHT
 	step_end
 
@@ -246,8 +257,13 @@ Sage2WinText:
 	done
 	
 Sage2AfterText:
-	text "Well, he is"
-	line "waiting…"
+	text "Come…"
+	line "He is waiting…"
+	done
+	
+Sage2GoAheadText:
+	text "Do not waste the"
+	line "FATHER's time…"
 	done
 
 Sage1Text:
@@ -317,9 +333,14 @@ Burglar4WinText:
 	cont "then!"
 	done
 	
-CianwoodChurchStolenGoods:
+CianwoodChurchStolenGoods1:
 	text "It's the stolen"
 	line "items!"
+	done
+	
+CianwoodChurchStolenGoods2:
+	text "There's tons of"
+	line "stolen goods!"
 	done
 
 CianwoodChurch_MapEvents:
@@ -336,8 +357,8 @@ CianwoodChurch_MapEvents:
 	bg_event  2, 17, BGEVENT_READ, CianwoodChurchBoxes
 	bg_event  3, 16, BGEVENT_READ, CianwoodChurchBoxes
 	bg_event 10, 16, BGEVENT_READ, CianwoodChurchBoxes
-	bg_event 10, 17, BGEVENT_READ, CianwoodChurchBoxes
-	bg_event 11, 16, BGEVENT_READ, CianwoodChurchBoxes
+	bg_event  9, 18, BGEVENT_READ, CianwoodChurchBoxes
+	bg_event  9, 17, BGEVENT_READ, CianwoodChurchBoxes
 	bg_event 12, 17, BGEVENT_READ, CianwoodChurchBoxes
 	bg_event 12, 13, BGEVENT_READ, CianwoodChurchBoxes
 	bg_event 13, 13, BGEVENT_READ, CianwoodChurchBoxes
@@ -362,10 +383,10 @@ CianwoodChurch_MapEvents:
 	bg_event 11,  6, BGEVENT_READ, CianwoodChurchBoxes
 
 	db 7 ; object events
-	object_event  7, 0, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
+	object_event  7, 0, SPRITE_ABBOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
 	object_event  6, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
 	object_event  7, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
 	object_event  9,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
 	object_event  1, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
-	object_event  4, 6, SPRITE_ABBOT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SageScript, EVENT_CLEARED_CHURCH
+	object_event  4, 6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SageScript, EVENT_CLEARED_CHURCH
 	object_event  3, 3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodChurchRevive, EVENT_CIANWOOD_CHURCH_REVIVE

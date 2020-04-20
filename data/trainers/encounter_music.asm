@@ -12,6 +12,7 @@ TrainerEncounterMusic::
 	db MUSIC_OFFICER_ENCOUNTER     ; chuck
 	db MUSIC_BEAUTY_ENCOUNTER      ; clair
 	db MUSIC_RIVAL_ENCOUNTER       ; rival1
+	db MUSIC_RIVAL_ENCOUNTER       ; fangirl
 	db MUSIC_HIKER_ENCOUNTER       ; pokemon_prof
 	db MUSIC_HIKER_ENCOUNTER       ; cal
 	db MUSIC_HIKER_ENCOUNTER       ; will

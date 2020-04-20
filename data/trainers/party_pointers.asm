@@ -11,6 +11,7 @@ TrainerGroups:
 	dw JoelGroup
 	dw ClairGroup
 	dw Rival1Group
+	dw FangirlGroup
 	dw PokemonProfGroup
 	dw PKMNTrainerGroup
 	dw WillGroup

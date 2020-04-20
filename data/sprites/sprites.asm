@@ -121,3 +121,4 @@ OverworldSprites:
 	overworld_sprite PoseySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PsychicLeaderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite AbbotSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite FangirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN

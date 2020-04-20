@@ -10,16 +10,17 @@ GoldenrodGym_MapScripts:
 	callback MAPCALLBACK_TILES, .GoldenrodDoorCallback
 	
 .GoldenrodDoorCallback
+	checkevent GOLDENROD_LEADER_DOOR_1
+	iffalse .firstdoor
+	checkevent GOLDENROD_LEADER_DOOR_2
+	iffalse .firstdoor
+	checkevent GOLDENROD_LEADER_DOOR_3
+	iffalse .firstdoor
+	changeblock 8, 6, $0c
+.firstdoor
 	checkevent GOLDENROD_GYM_DOOR_1
 	iffalse .incomplete
-	changeblock  8 , 8, $4F
-	checkevent GOLDENROD_LEADER_DOOR_1
-	iffalse .incomplete
-	checkevent GOLDENROD_LEADER_DOOR_2
-	iffalse .incomplete
-	checkevent GOLDENROD_LEADER_DOOR_3
-	iffalse .incomplete
-	changeblock 8, 4, $27
+	changeblock  8 , 10, $4F
 .incomplete
 	return
 
@@ -116,7 +117,7 @@ GoldenrodGymDoorGuard:
 	waitbutton
 	closetext
 	setevent GOLDENROD_GYM_DOOR_1
-	changeblock  8 , 8, $4F ; open door
+	changeblock  8 , 10, $4F
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
@@ -136,7 +137,7 @@ GoldenrodGymDoorGuard:
 	startbattle
 	reloadmapafterbattle
 	setevent GOLDENROD_GYM_DOOR_1
-	changeblock  8 , 8, $4F ; open door
+	changeblock  8 , 10, $4F
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx

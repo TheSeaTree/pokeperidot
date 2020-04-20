@@ -80,6 +80,9 @@ KRIS EQU __enum__
 	const RIVAL1_5_CYNDAQUIL
 	const RIVAL1_5_TOTODILE
 
+	trainerclass FANGIRL
+	const EMILY1
+
 	trainerclass POKEMON_PROF ; a
 	const TEST
 

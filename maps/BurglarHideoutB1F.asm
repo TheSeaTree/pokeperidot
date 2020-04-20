@@ -42,7 +42,7 @@ BurglarHideoutAbbotScene:
 	applymovement BURGLARHIDEOUTB1F_SAGE3, SageBlockPlayer
 	turnobject PLAYER, UP
 	showemote EMOTE_QUESTION, PLAYER, 15
-	applymovement BURGLARHIDEOUTB1F_LEADER, AbbotApproachPlayer
+	applymovement PLAYER, PlayerApproachAbbot
 	opentext
 	writetext SageAbbotGreeting
 	waitbutton
@@ -387,11 +387,12 @@ SageBlockPlayer:
 	step DOWN
 	step_end
 	
-AbbotApproachPlayer:
-	step LEFT
-	step UP
-	step UP
-	step UP
+PlayerApproachAbbot:
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	turn_head RIGHT
 	step_resume
 
 HideoutRivalStepDown:

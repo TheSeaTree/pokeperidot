@@ -11,6 +11,7 @@ BTTrainerClassGenders:
 	db MALE   ; JOEL
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
+	db FEMALE ; FANGIRL
 	db MALE   ; POKEMON_PROF
 	db MALE   ; CAL
 	db MALE   ; WILL

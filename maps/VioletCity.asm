@@ -8,6 +8,7 @@
 	const VIOLETCITY_SILVER
 	const VIOLETCITY_BUSH
 	const VIOLETCITY_SHOEMAN
+	const VIOLETCITY_FANGIRL
 
 VioletCity_MapScripts:
 	db 3 ; scene scripts
@@ -92,12 +93,31 @@ VioletCityRivalBattleScript:
 	applymovement VIOLETCITY_SILVER, VioletCityRivalBattleExitMovement
 	disappear VIOLETCITY_SILVER
 	waitsfx
-	playmapmusic
 	setevent EVENT_BEAT_RIVAL_1
 	setscene SCENE_VIOLETCITY_DEFEATED_RIVAL
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
 	special LoadUsedSpritesGFX
-	end	
+	playsound SFX_EXIT_BUILDING
+	moveobject VIOLETCITY_FANGIRL, 38, 7
+	appear VIOLETCITY_FANGIRL
+	applymovement PLAYER, VioletPlayerStepRight
+	applymovement VIOLETCITY_FANGIRL, VioletFangirlStepDown
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	opentext
+	writetext VioletFangirlIntroductionText
+	waitbutton
+.RivalNameLoop
+	special NameRival
+	writetext VioletFangirlConfirmRivalName
+	yesorno
+	iffalse .RivalNameLoop
+	writetext VioletFangirlLeaveText
+	waitbutton
+	closetext
+	applymovement VIOLETCITY_FANGIRL, VioletCityRivalBattleExitMovement
+	disappear VIOLETCITY_FANGIRL
+	playmapmusic
+	end
 	
 VioletCityShoeGuy:
 	turnobject VIOLETCITY_SHOEMAN, UP
@@ -192,6 +212,18 @@ VioletCityRivalBattleExitMovement:
 	step LEFT
 	step_end
 	
+VioletFangirlStepDown:
+	step DOWN
+	turn_head RIGHT
+	step_end
+	
+VioletPlayerStepRight:
+	turn_head LEFT
+	fix_facing
+	step RIGHT
+	remove_fixed_facing
+	step_end
+	
 ShoeGuyApproach:
 	step UP
 	step RIGHT
@@ -252,6 +284,47 @@ VioletCityRivalAfterText:
 VioletCityRivalLossText:
 	text "…Humph! I knew"
 	line "you were lying."
+	done
+	
+VioletFangirlIntroductionText:
+	text "Hey! That battle"
+	line "was great! I was"
+	cont "able to catch the"
+	cont "end of it after I"
+	cont "finished up my GYM"
+	cont "challenge here."
+	
+	para "By the way, what's"
+	line "your name?"
+	
+	para "<……><……><……>"
+	
+	para "<PLAYER>? It's"
+	line "a pleasure to meet"
+	cont "you! I'm EMILY!"
+	
+	para "Your opponent was"
+	line "so quick to leave."
+	cont "Did you catch his"
+	cont "name?"
+	done
+	
+VioletFangirlConfirmRivalName:
+	text "<RIVAL>?"
+	line "Did I hear that"
+	cont "right?"
+	done
+	
+VioletFangirlLeaveText:
+	text "Thanks! I'll try"
+	line "and catch up with"
+	cont "him! You two have"
+	cont "a lot of promise"
+	cont "as trainers."
+	
+	para "I'm going to have"
+	line "my eye on you,"
+	cont "<PLAYER>!"
 	done
 	
 ShoeGuyText1:
@@ -395,13 +468,14 @@ VioletCity_MapEvents:
 	bg_event 19,  1, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 16,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 21, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
 	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
 	object_event  1, 18, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1
-	object_event  1,  1, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
+	object_event  1,  1, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_1
 	object_event  5,  9, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityItemBush, -1
 	object_event  1,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

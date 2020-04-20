@@ -26,6 +26,7 @@ CianwoodGymChuckScript:
 	opentext
 	writetext GetStormBadgeText
 	playsound SFX_GET_BADGE
+	setmapscene GOLDENROD_CITY, SCENE_FINISHED
 	waitsfx
 	setflag ENGINE_PLAINBADGE
 	checkcode VAR_BADGES

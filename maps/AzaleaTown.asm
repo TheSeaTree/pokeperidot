@@ -13,6 +13,7 @@
 	const AZALEATOWN_YOUNGSTER3
 	const AZALEATOWN_FRUIT_TREE
 	const AZALEATOWN_BURGLAR
+	const AZALEATOWN_FANGIRL
 
 AzaleaTown_MapScripts:
 	db 3 ; scene scripts
@@ -101,10 +102,29 @@ AzaleaTownRivalBattleScript:
 	applymovement AZALEATOWN_SILVER, AzaleaTownRivalBattleExitMovement
 	disappear AZALEATOWN_SILVER
 	waitsfx
-	playmapmusic
 	setevent EVENT_BEAT_RIVAL_1
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
 	special LoadUsedSpritesGFX
+	playsound SFX_EXIT_BUILDING
+	moveobject AZALEATOWN_FANGIRL, 40, 17
+	appear AZALEATOWN_FANGIRL
+	applymovement PLAYER, AzaleaPlayerStepRight
+	applymovement AZALEATOWN_FANGIRL, AzaleaFangirlStepDown
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	opentext
+	writetext AzaleaFangirlIntroductionText
+	waitbutton
+.RivalNameLoop
+	special NameRival
+	writetext AzaleaFangirlConfirmRivalName
+	yesorno
+	iffalse .RivalNameLoop
+	writetext AzaleaFangirlLeaveText
+	waitbutton
+	closetext
+	applymovement AZALEATOWN_FANGIRL, AzaleaFangirlLeave
+	disappear AZALEATOWN_FANGIRL
+	playmapmusic
 	end
 	
 AzaleaGymConfirm:
@@ -331,6 +351,9 @@ AzaleaTownRivalBattleApproachMovement1:
 	step RIGHT
 	step_end
 
+AzaleaFangirlLeave:
+	step LEFT
+;fallthrough
 AzaleaTownRivalBattleExitMovement:
 	step LEFT
 	step LEFT
@@ -339,6 +362,18 @@ AzaleaTownRivalBattleExitMovement:
 	run_step UP
 	run_step UP
 	run_step UP
+	step_end
+	
+AzaleaFangirlStepDown:
+	step DOWN
+	turn_head RIGHT
+	step_end
+	
+AzaleaPlayerStepRight:
+	turn_head LEFT
+	fix_facing
+	step RIGHT
+	remove_fixed_facing
 	step_end
 	
 AzaleaGymMovement:
@@ -417,6 +452,47 @@ AzaleaTownRivalAfterText:
 AzaleaTownRivalLossText:
 	text "…Humph! I knew"
 	line "you were lying."
+	done
+	
+AzaleaFangirlIntroductionText:
+	text "Hey! That battle"
+	line "was great! I was"
+	cont "able to catch the"
+	cont "end of it after I"
+	cont "finished up my GYM"
+	cont "challenge here."
+	
+	para "By the way, what's"
+	line "your name?"
+	
+	para "<……><……><……>"
+	
+	para "<PLAYER>? It's"
+	line "a pleasure to meet"
+	cont "you! I'm EMILY!"
+	
+	para "Your opponent was"
+	line "so quick to leave,"
+	cont "did you catch his"
+	cont "name too?"
+	done
+	
+AzaleaFangirlConfirmRivalName:
+	text "<RIVAL>?"
+	line "Did I hear that"
+	cont "right?"
+	done
+	
+AzaleaFangirlLeaveText:
+	text "Thanks! I'll try"
+	line "and catch up with"
+	cont "him! You two have"
+	cont "a lot of promise"
+	cont "as trainers."
+	
+	para "I'm going to have"
+	line "my eye on you,"
+	cont "<PLAYER>!"
 	done
 	
 AzaleaTownTeacherText:
@@ -640,7 +716,7 @@ AzaleaTown_MapEvents:
 	bg_event 34, 11, BGEVENT_READ, AzaleaTownVendingMachine
 	bg_event 40, 17, BGEVENT_UP,   AzaleaGymEvent
 
-	db 14 ; object events
+	db 15 ; object events
 	object_event 29, 19, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1
 	object_event 31, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
 	object_event 32, 16, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrowlitheScript, -1
@@ -655,3 +731,4 @@ AzaleaTown_MapEvents:
 	object_event 13, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungster3Script, -1
 	object_event 49, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaBerryTree, -1
 	object_event 33, 37, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaBurglar, EVENT_AZALEA_RETURNED_BIKE
+	object_event 0, 0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

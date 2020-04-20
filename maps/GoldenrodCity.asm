@@ -3,7 +3,8 @@
 	const ROUTE34_DAY_CARE_MON_1
 	const ROUTE34_DAY_CARE_MON_2
 	const GOLDENROD_LASS
-	const GOLDENRODCITY_SILVER
+	const GOLDENROD_YOUNGSTER
+	const GOLDENROD_FANGIRL
 
 GoldenrodCity_MapScripts:
 	db 2 ; scene scripts
@@ -144,6 +145,48 @@ Route34MovementData_DayCareManWalksBackInside:
 	slow_step UP
 	step_end
 	
+GoldenrodFangirlScene:
+	special FadeOutMusic
+	playsound SFX_EXIT_BUILDING
+	moveobject GOLDENROD_FANGIRL, 21, 25
+	appear GOLDENROD_FANGIRL
+	checkcode VAR_YCOORD
+	ifequal 27, .South
+	applymovement GOLDENROD_FANGIRL, GoldenrodFangirlStepDownNorth
+	jump .Next
+.South
+	applymovement GOLDENROD_FANGIRL, GoldenrodFangirlStepDownSouth
+.Next
+	opentext
+	writetext GoldenrodFangirlStopPlayerText
+	waitbutton
+	closetext
+	turnobject PLAYER, LEFT
+	showemote EMOTE_QUESTION, PLAYER, 15
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	applymovement GOLDENROD_FANGIRL, GoldenrodFangirlApproachPlayer
+	opentext
+	writetext GoldenrodFangirlText
+	waitbutton
+	closetext
+	winlosstext GoldenrodFangirlLossText, GoldenrodFangirlWinText
+	setlasttalked GOLDENROD_FANGIRL
+	loadtrainer FANGIRL, EMILY1
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+.AfterBattle
+	opentext
+	writetext GoldenrodFangirlAfterText
+	waitbutton
+	closetext
+	applymovement GOLDENROD_FANGIRL, GoldenrodFangirlLeave
+	disappear GOLDENROD_FANGIRL
+	setscene SCENE_DEFAULT
+	playmapmusic
+	end
+	
 GoldenrodHiddenSilverLeaf:
 	hiddenitem SILVER_LEAF, EVENT_GOLDENROD_HIDDEN_SILVER_LEAF	
 
@@ -163,23 +206,24 @@ GoldenrodGymMovement:
 	step UP
 	step_resume
 	
-GoldenrodCityRivalBattleApproachMovement1:
-	step UP
-	step UP
-	step UP
-	step UP
-	step UP
-	step LEFT
-	step LEFT
-	step_end
+GoldenrodFangirlStepDownSouth:
+	step DOWN
+GoldenrodFangirlStepDownNorth:
+	step DOWN
+	turn_step RIGHT
+	step_resume
 
-GoldenrodCityRivalBattleExitMovement:
+GoldenrodFangirlApproachPlayer:
 	step RIGHT
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
+	step RIGHT
+	step_end
+	
+GoldenrodFangirlLeave:
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 	
 GoldenrodLassText:
@@ -214,6 +258,78 @@ DayCareSignText:
 	para "LET US RAISE YOUR"
 	line "#MON FOR YOU!"
 	done
+	
+GoldenrodFangirlStopPlayerText:
+	text "Hey! <PLAYER>!"
+	line "Wait up!"
+	done
+	
+GoldenrodFangirlText:
+	text "I caught up with"
+	line "<RIVAL> earlier!"
+	
+	para "He wouldn't say"
+	line "what was bugging"
+	cont "him so much after"
+	cont "your battle with"
+	cont "him, but he seemed"
+	cont "determined to get"
+	cont "stronger."
+	
+	para "I challenged him"
+	line "to a battle!"
+	cont "It was fun!"
+	
+	para "Even though he"
+	line "won, I feel that I"
+	cont "learned a lot from"
+	cont "that battle."
+	
+	para "You already chall-"
+	line "enged the GYM in"
+	cont "this town, right?"
+	
+	para "<……><……><……>"
+	
+	para "No way! You just"
+	line "won a MYSTICBADGE?"
+	
+	para "C'mon! You gotta"
+	line "let me show you"
+	cont "what I've learned!"
+	
+	para "Let's have a"
+	line "battle!"
+	done
+	
+GoldenrodFangirlWinText:
+	text "Yay! My studying"
+	line "has paid off!"
+	done
+
+GoldenrodFangirlLossText:
+	text "Hm… I see…"
+	
+	para "I think I know"
+	line "what I need to"
+	cont "work on some more."
+	done
+
+GoldenrodFangirlAfterText:
+	text "Y'know, there is"
+	line "a man on ROUTE 1"
+	cont "that gives out a"
+	cont "prize to winners"
+	cont "the MYSTICBADGE."
+	
+	para "You should check"
+	line "it out. In the"
+	cont "meantime, it's"
+	cont "my turn to take"
+	cont "on CELESTE."
+	
+	para "Wish me luck!"
+	done
 
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
@@ -230,7 +346,9 @@ GoldenrodCity_MapEvents:
 	warp_event 25, 19, ROUTE_8_GOLDENROD_GATE, 2
 	warp_event  5,  5, ROUTE_11_GOLDENROD_GATE, 3
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 24, 26, SCENE_FINISHED, GoldenrodFangirlScene
+	coord_event 24, 27, SCENE_FINISHED, GoldenrodFangirlScene
 
 	db 6 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
@@ -240,9 +358,10 @@ GoldenrodCity_MapEvents:
 	bg_event 21,  8, BGEVENT_ITEM, GoldenrodHiddenRareCandy
 	bg_event 12,  7, BGEVENT_UP,   GoldenrodGymEvent
 	
-	db 5 ; object events
+	db 6 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event  6, 14, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event  4, 15, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
 	object_event  6, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodLassScript, -1
 	object_event 11, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodLadScript, -1
+	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

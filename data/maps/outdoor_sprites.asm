@@ -251,7 +251,7 @@ EcruteakGroupSprites:
 
 AzaleaGroupSprites:
 ; Route33, AzaleaTown
-	db SPRITE_GRAMPS
+	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
 	db SPRITE_TEACHER
@@ -260,7 +260,7 @@ AzaleaGroupSprites:
 	db SPRITE_ROCKER
 	db SPRITE_GYM_GUY
 	db SPRITE_PHARMACIST
-	; 8 of max 9 walking sprites
+	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_GROWLITHE
 	db SPRITE_KURT_OUTSIDE ; non-walking version of SPRITE_KURT
@@ -275,15 +275,16 @@ AzaleaGroupSprites:
 
 VioletGroupSprites:
 	db SPRITE_SUPER_NERD
+	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
 	db SPRITE_OLIVINE_RIVAL
-	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
 	db SPRITE_LASS
 	db SPRITE_SAILOR
 	db SPRITE_BUENA
 	; 9 of max 9 walking sprites
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_POKEFAN_M
 	db SPRITE_SWIMMER_GUY_LAND
 	db SPRITE_BLACK_BELT
@@ -305,7 +306,7 @@ GoldenrodGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
-	db SPRITE_BUENA
+	db SPRITE_FANGIRL
 	; 9 of max 9 walking sprites
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
