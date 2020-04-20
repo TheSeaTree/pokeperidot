@@ -258,7 +258,7 @@ InitializeNPCNames:
 	call CopyBytes
 	ret
 
-.Rival:  db "MIKE@"
+.Rival:  db "SOME KID@"
 .Red:    db "RED@"
 .Green:  db "GREEN@"
 .Mom:    db "MOM@"
@@ -1038,14 +1038,15 @@ StartTitleScreen:
 	call RunTitleScreen
 	jr nc, .loop
 
-	call ClearSprites
 	call ClearBGPalettes
+	call ClearSprites
+
+	ld a, NATU
+	call PlayMonCry
 
 	pop af
 	ldh [rSVBK], a
 	
-	ld a, NATU
-	call PlayMonCry
 ;	call WaitSFX
 
 	ld hl, rLCDC
@@ -1094,7 +1095,6 @@ RunTitleScreen:
 	bit 7, a
 	jr nz, .done_title
 	call TitleScreenScene
-	farcall SuicuneFrameIterator
 	call DelayFrame
 	and a
 	ret

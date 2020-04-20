@@ -3,6 +3,9 @@ UnusedTitleScreen:
 	call ClearTileMap
 	call DisableLCD
 
+	ld de, MUSIC_NONE
+	call PlayMusic
+
 ; Turn BG Map update off
 	xor a
 	ldh [hBGMapMode], a
@@ -58,7 +61,92 @@ UnusedTitleScreen:
 	set rLCDC_SPRITE_SIZE, a
 	ldh [rLCDC], a
 
-	call DelayFrame
+;	call DelayFrame
+
+	ld de, SFX_INTRO_WHOOSH
+	call PlaySFX
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld hl, TitleScreenBlack_Palettes
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call CopyBytes
+	
+	ld hl, UnusedTitleFG_Palettes
+	ld de, wOBPals1
+	ld bc, 8 palettes
+	call CopyBytes
+
+	ld hl, TitleScreenBlack_Palettes
+	ld de, wBGPals2
+	ld bc, 8 palettes
+	call CopyBytes
+	
+	ld hl, UnusedTitleFG_Palettes
+	ld de, wOBPals2
+	ld bc, 8 palettes
+	call CopyBytes
+
+	pop af
+	ldh [rSVBK], a
+
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	
+	ld c, 10
+	call DelayFrames
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld hl, TitleScreenStep2_Palettes
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call CopyBytes
+
+	ld hl, TitleScreenStep2_Palettes
+	ld de, wBGPals2
+	ld bc, 8 palettes
+	call CopyBytes
+
+	pop af
+	ldh [rSVBK], a
+
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	
+	ld c, 5
+	call DelayFrames
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld hl, TitleScreenStep3_Palettes
+	ld de, wBGPals1
+	ld bc, 8 palettes
+	call CopyBytes
+
+	ld hl, TitleScreenStep3_Palettes
+	ld de, wBGPals2
+	ld bc, 8 palettes
+	call CopyBytes
+
+	pop af
+	ldh [rSVBK], a
+
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	
+	ld c, 5
+	call DelayFrames
 
 	ldh a, [rSVBK]
 	push af
@@ -70,18 +158,8 @@ UnusedTitleScreen:
 	ld bc, 8 palettes
 	call CopyBytes
 
-	ld hl, UnusedTitleFG_Palettes
-	ld de, wOBPals1
-	ld bc, 8 palettes
-	call CopyBytes
-
 	ld hl, TitleScreenPalettes
 	ld de, wBGPals2
-	ld bc, 8 palettes
-	call CopyBytes
-
-	ld hl, UnusedTitleFG_Palettes
-	ld de, wOBPals2
 	ld bc, 8 palettes
 	call CopyBytes
 
@@ -90,7 +168,9 @@ UnusedTitleScreen:
 
 	ld a, $1
 	ldh [hCGBPalUpdate], a
-
+	
+	call WaitSFX
+	
 	ld de, MUSIC_TITLE
 	call PlayMusic
 
@@ -111,6 +191,18 @@ INCBIN "gfx/title/old_fg.2bpp"
 
 UnusedTitleFG_Palettes:
 INCLUDE "gfx/title/title_fg.pal"
+
+TitleScreenBlack_Palettes:
+INCLUDE "gfx/title/title_black.pal"
+
+TitleScreenStep2_Palettes:
+INCLUDE "gfx/title/title_step_2.pal"
+
+TitleScreenStep3_Palettes:
+INCLUDE "gfx/title/title_step_3.pal"
+
+GS_FG_Palettes:
+INCLUDE "gfx/title/unused_gs_fg.pal"
 
 UnusedTitleFG_OAM:
 ; Row 1

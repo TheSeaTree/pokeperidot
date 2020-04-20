@@ -1502,7 +1502,7 @@ _OakText4a::
 	
 _OakText4b::
 	text "Give life to our"
-	line "beautiful oceans."
+	line "vast oceans."
 	db "@@"
 	
 _OakText4c::
@@ -1530,5 +1530,5 @@ _OakText5::
 	cont "mystery to us."
 
 	para "That brings me to"
-	line "my next question."
+	line "my next question…"
 	prompt

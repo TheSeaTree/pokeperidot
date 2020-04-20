@@ -237,9 +237,6 @@ _TitleScreen:
 
 	ret
 
-SuicuneFrameIterator:
-	ret
-
 LoadSuicuneFrame:
 	hlcoord 6, 11
 	ld b, 8
