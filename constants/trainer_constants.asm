@@ -82,6 +82,7 @@ KRIS EQU __enum__
 
 	trainerclass FANGIRL
 	const EMILY1
+	const EMILY2 ; Safari Zone Encounter
 
 	trainerclass POKEMON_PROF ; a
 	const TEST

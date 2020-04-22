@@ -1321,7 +1321,6 @@ DoduoEvosAttacks:
 	db 31, TRI_ATTACK
 	db 36, SWORDS_DANCE
 	db 40, HI_JUMP_KICK
-	db 21, TRI_ATTACK
 	db 43, DRILL_PECK
 	db 50, THRASH
 	db 0 ; no more level-up moves
@@ -3769,28 +3768,35 @@ KingdraEvosAttacks:
 PhanpyEvosAttacks:
 	db EVOLVE_LEVEL, 25, DONPHAN
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 9, DEFENSE_CURL
-	db 14, WATER_GUN
-	db 17, FLAIL
-	db 25, DOUBLE_EDGE
-	db 33, ROLLOUT
-	db 41, ENDURE
-	db 49, DOUBLE_EDGE
+	db  1, TACKLE
+	db  1, GROWL
+	db  1, DEFENSE_CURL
+	db  1, MUD_SLAP
+	db  6, FLAIL
+	db 10, ROLLOUT
+	db 15, BULLDOZE
+	db 19, ENDURE
+	db 24, BODY_SLAM
+	db 28, CHARM
+	db 33, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 DonphanEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, HORN_ATTACK
-	db 1, GROWL
-	db 9, DEFENSE_CURL
-	db 14, WATER_GUN
-	db 17, FLAIL
-	db 25, FURY_ATTACK
-	db 33, ROLLOUT
-	db 41, RAPID_SPIN
-	db 49, EARTHQUAKE
+	db  1, TACKLE
+	db  1, GROWL
+	db  1, DEFENSE_CURL
+	db  1, MUD_SLAP
+	db  6, FLAIL
+	db 10, ROLLOUT
+	db 15, BULLDOZE
+	db 19, ENDURE
+	db 24, BODY_SLAM
+	db 25, RAPID_SPIN
+	db 30, SANDSTORM
+	db 37, SCARY_FACE
+	db 43, EARTHQUAKE
+	db 50, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
