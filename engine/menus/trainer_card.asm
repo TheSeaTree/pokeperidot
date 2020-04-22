@@ -52,6 +52,12 @@ TrainerCard:
 	ld a, BANK(CardRightCornerGFX)
 	call FarCopyBytes
 
+	ld hl, CardBorderGFX
+	ld de, vTiles0 tile $ba
+	ld bc, 8 tiles
+	ld a, BANK(CardBorderGFX)
+	call FarCopyBytes
+
 	ld hl, CardStatusGFX
 	ld de, vTiles2 tile $29
 	ld bc, 86 tiles
@@ -237,6 +243,7 @@ TrainerCard_PrintTopHalfOfCard:
 	hlcoord 7, 2
 	ld de, wPlayerName
 	call PlaceString
+
 	hlcoord 5, 4
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
@@ -292,7 +299,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	call PrintNum
 .NoBattlePass
 	call TrainerCard_Page1_PrintGameTime
-	hlcoord 2, 8
+	hlcoord 0, 8
 	ld de, .StatusTilemap
 	call TrainerCardSetup_PlaceTilemapString
 	ld a, [wStatusFlags]
@@ -318,10 +325,10 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	db "  BADGES▶@"
 
 .StatusTilemap:
-	db $29, $2a, $2b, $2c, $2d, -1
+	db  "♥─", $29, $2a, $2b, $2c, $2d, "────────────♦", -1
 
 TrainerCard_Page2_3_InitObjectsAndStrings:
-	hlcoord 12, 8
+	hlcoord 0, 8
 	ld de, .BadgesTilemap
 	call TrainerCardSetup_PlaceTilemapString
 	hlcoord 2, 10
@@ -351,7 +358,7 @@ endr
 	ret
 
 .BadgesTilemap:
-	db $79, $7a, $7b, $7c, $7d, -1 ; "BADGES"
+	db  "♥───────────", $79, $7a, $7b, $7c, $7d, "──♦", -1 ; "BADGES"
 
 TrainerCardSetup_PlaceTilemapString:
 .loop
@@ -365,12 +372,12 @@ TrainerCardSetup_PlaceTilemapString:
 TrainerCard_InitBorder:
 	ld e, SCREEN_WIDTH
 .loop1
-	ld a, $23
+	ld a, $bb
 	ld [hli], a
 	dec e
 	jr nz, .loop1
 
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 	ld e, SCREEN_HEIGHT - 1
 	ld a, " "
@@ -381,10 +388,10 @@ TrainerCard_InitBorder:
 
 	ld a, $1c
 	ld [hli], a
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 .loop3
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 
 	ld e, SCREEN_HEIGHT
@@ -394,12 +401,12 @@ TrainerCard_InitBorder:
 	dec e
 	jr nz, .loop4
 
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 	dec d
 	jr nz, .loop3
 
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 	ld a, $24
 	ld [hli], a
@@ -410,15 +417,36 @@ TrainerCard_InitBorder:
 	ld [hli], a
 	dec e
 	jr nz, .loop5
-	ld a, $23
+	ld a, $bd
 	ld [hli], a
 	ld e, SCREEN_WIDTH
 .loop6
-	ld a, $23
+	ld a, $bb
 	ld [hli], a
 	dec e
 	jr nz, .loop6
+	
+	hlcoord 0, 0
+	ld de, .TopRow
+	call PlaceString
+	
+	hlcoord 0, 8
+	ld de, .MiddleRight
+	call PlaceString
+
+	hlcoord 0, 17
+	ld de, .BottomRow
+	call PlaceString
 	ret
+	
+.TopRow:
+	db   "┌──────────────────┐@"
+	
+.MiddleRight:
+	db   "♥──────────────────♦@"
+
+.BottomRow:
+	db   "└──────────────────┘@"
 
 TrainerCard_Page2_3_PlaceLeadersFaces:
 	push de
@@ -638,3 +666,4 @@ BadgeGFX:   INCBIN "gfx/trainer_card/badges.2bpp"
 BadgeGFX2:  INCBIN "gfx/trainer_card/badges.2bpp"
 
 CardRightCornerGFX: INCBIN "gfx/trainer_card/card_right_corner.2bpp"
+CardBorderGFX: INCBIN "gfx/trainer_card/card_border.2bpp"
