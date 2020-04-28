@@ -62,10 +62,6 @@ LoadMenuMonIcon:
 	push hl
 	push bc
 	ld d, a
-	callfar ItemIsMail
-	pop bc
-	pop hl
-	jr c, .not_mail
 	ld a, $06
 	jr .got_tile
 .not_mail
@@ -136,10 +132,6 @@ PartyMenu_InitAnimatedMonIcon:
 	push hl
 	push bc
 	ld d, a
-	callfar ItemIsMail
-	pop bc
-	pop hl
-	jr c, .mail
 	ld a, SPRITE_ANIM_FRAMESET_PARTY_MON_WITH_ITEM
 	jr .okay
 

@@ -28,8 +28,8 @@ MahoganyDeptStore1FElevatorButton:
 	jumpstd elevatorbutton
 
 MahoganyDeptStore1FReceptionistText:
-	text "Welcome to GOLDEN-"
-	line "ROD DEPT.STORE."
+	text "Welcome to the"
+	line "RUGOSA DEPT.STORE."
 	done
 
 MahoganyDeptStore1FGentlemanText:
@@ -69,7 +69,7 @@ MahoganyDeptStore1FDirectoryText:
 
 	para "4F MEDICINE BOX"
 
-	para "5F TM CORNER"
+	para "5F ACCESSORIES"
 
 	para "6F TRANQUIL SQUARE"
 

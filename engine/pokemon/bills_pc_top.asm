@@ -84,15 +84,15 @@ _BillsPC:
 .strings
 	db "WITHDRAW <PK><MN>@"
 	db "DEPOSIT <PK><MN>@"
+	db "MOVE <PK><MN>@"
 	db "CHANGE BOX@"
-	db "MOVE <PK><MN> W/O MAIL@"
-	db "SEE YA!@"
+	db "LOG OFF@"
 
 .Jumptable:
 	dw BillsPC_WithdrawMenu
 	dw BillsPC_DepositMenu
-	dw BillsPC_ChangeBoxMenu
 	dw BillsPC_MovePKMNMenu
+	dw BillsPC_ChangeBoxMenu
 	dw BillsPC_SeeYa
 
 .items

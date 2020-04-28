@@ -1,79 +1,25 @@
 	const_def 2 ; object constants
-	const MAHOGANYDEPTSTORE5F_CLERK
+	const MAHOGANYDEPTSTORE5F_CLERK1
+	const MAHOGANYDEPTSTORE5F_CLERK2
 	const MAHOGANYDEPTSTORE5F_LASS
 	const MAHOGANYDEPTSTORE5F_POKEFAN_M
-	const MAHOGANYDEPTSTORE5F_RECEPTIONIST
 
 MahoganyDeptStore5F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .CheckIfSunday
+	db 0 ; callbacks
 
-.CheckIfSunday:
-	checkcode VAR_WEEKDAY
-	ifequal SUNDAY, .yes
-	disappear MAHOGANYDEPTSTORE5F_RECEPTIONIST
-	return
-
-.yes
-	appear MAHOGANYDEPTSTORE5F_RECEPTIONIST
-	return
-
-MahoganyDeptStore5FClerkScript:
+MahoganyDeptStore5FEvolutionClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_1
 	closetext
 	end
 
-MahoganyDeptStore5FReceptionistScript:
+MahoganyDeptStore5FBoostClerkScript:
 	faceplayer
 	opentext
-	checkcode VAR_WEEKDAY
-	ifnotequal SUNDAY, .EventIsOver
-	checkflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
-	iftrue .EventIsOver
-	special GetFirstPokemonHappiness
-	writetext UnknownText_0x56143
-	buttonsound
-	ifgreater 150 - 1, .VeryHappy
-	ifgreater 50 - 1, .SomewhatHappy
-	jump .NotVeryHappy
-
-.VeryHappy:
-	writetext UnknownText_0x5615a
-	buttonsound
-	checkitem TM_RETURN
-	iftrue .AlreadyGotTM
-	verbosegiveitem TM_RETURN
-	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
-	closetext
-	end
-
-.SomewhatHappy:
-	writetext UnknownText_0x561a6
-	waitbutton
-	closetext
-	end
-
-.NotVeryHappy:
-	writetext UnknownText_0x561d8
-	buttonsound
-	setflag ENGINE_GOLDENROD_DEPT_STORE_TM27_RETURN
-	closetext
-	end
-
-.AlreadyGotTM:
-	writetext MahoganyDeptStore5FAlreadyGotTMText
-	waitbutton
-	closetext
-	end
-
-.EventIsOver:
-	writetext UnknownText_0x56202
-	waitbutton
-.Done:
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_5F_2
 	closetext
 	end
 
@@ -88,41 +34,6 @@ MahoganyDeptStore5FDirectory:
 
 MahoganyDeptStore5FElevatorButton:
 	jumpstd elevatorbutton
-
-UnknownText_0x56143:
-	text "Hello. Oh, your"
-	line "#MON…"
-	done
-
-UnknownText_0x5615a:
-	text "It's very attached"
-	line "to you."
-
-	para "This move should"
-	line "be perfect for a"
-	cont "pair like you."
-	done
-
-UnknownText_0x561a6:
-	text "It's adorable!"
-
-	para "You should teach"
-	line "it good TM moves."
-	done
-
-UnknownText_0x561d8:
-	text "It looks evil. How"
-	line "about this TM for"
-	cont "it?"
-	done
-
-UnknownText_0x56202:
-	text "There are sure to"
-	line "be TMs that are"
-
-	para "just perfect for"
-	line "your #MON."
-	done
 
 MahoganyDeptStore5FAlreadyGotTMText:
 	text "Oh, you already"
@@ -144,12 +55,10 @@ UnknownText_0x56279:
 	done
 
 MahoganyDeptStore5FLassText:
-	text "On Sundays, a lady"
-	line "comes to check out"
-	cont "#MON."
-
-	para "She even gives"
-	line "away TMs!"
+	text "I gave my #MON"
+	line "an item I bought"
+	cont "from here and it"
+	cont "evolved!"
 	done
 
 MahoganyDeptStore5FPokefanMText:
@@ -186,7 +95,7 @@ MahoganyDeptStore5F_MapEvents:
 	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore5FElevatorButton
 
 	db 4 ; object events
-	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FClerkScript, -1
+	object_event  8,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FEvolutionClerkScript, -1
+	object_event  7,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FBoostClerkScript, -1
 	object_event  3,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FLassScript, -1
 	object_event 13,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FPokefanMScript, -1
-	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore5FReceptionistScript, EVENT_GOLDENROD_DEPT_STORE_5F_HAPPINESS_EVENT_LADY

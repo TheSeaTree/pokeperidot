@@ -94,7 +94,7 @@ MartGoldenrod2F1:
 	db -1 ; end
 
 MartGoldenrod2F2:
-	db 8 ; # items
+	db 7 ; # items
 	db POKE_BALL
 	db GREAT_BALL
 	db ESCAPE_ROPE
@@ -102,7 +102,6 @@ MartGoldenrod2F2:
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartGoldenrod3F:
@@ -127,13 +126,25 @@ MartGoldenrod4F:
 
 MartGoldenrod5F:
 	db 3 ; # items
-	db TM_THUNDERPUNCH
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
+	db KINGS_ROCK
+	db DRAGON_SCALE
+	db SLOWPOKETAIL
 	db -1 ; end
+	
+MartGoldenrod5F2:
+	db 8 ; # items
+	db SILVERPOWDER
+	db MAGNET
+	db SHARP_BEAK
+	db NEVERMELTICE
+	db POISON_BARB
+	db TWISTEDSPOON
+	db HARD_STONE
+	db METAL_COAT
+	db -1
 
 MartOlivine:
-	db 9 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -142,7 +153,6 @@ MartOlivine:
 	db AWAKENING
 	db ICE_HEAL
 	db SUPER_REPEL
-	db SURF_MAIL
 	db -1 ; end
 
 MartEcruteak:
@@ -247,7 +257,7 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 9 ; # items
+	db 8 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -256,7 +266,6 @@ MartCerulean:
 	db X_DEFEND
 	db X_ATTACK
 	db DIRE_HIT
-	db SURF_MAIL
 	db -1 ; end
 
 MartLavender:
@@ -272,7 +281,7 @@ MartLavender:
 	db -1 ; end
 
 MartVermilion:
-	db 8 ; # items
+	db 7 ; # items
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
@@ -280,7 +289,6 @@ MartVermilion:
 	db PARLYZ_HEAL
 	db AWAKENING
 	db BURN_HEAL
-	db LITEBLUEMAIL
 	db -1 ; end
 
 MartCeladon2F1:
@@ -318,10 +326,8 @@ MartCeladon3F:
 	db -1 ; end
 
 MartCeladon4F:
-	db 3 ; # items
+	db 1 ; # items
 	db POKE_DOLL
-	db LOVELY_MAIL
-	db SURF_MAIL
 	db -1 ; end
 
 MartCeladon5F1:
@@ -345,18 +351,17 @@ MartCeladon5F2:
 	db -1 ; end
 
 MartFuchsia:
-	db 7 ; # items
+	db 6 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
 	db MAX_REPEL
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartSaffron:
-	db 8 ; # items
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db HYPER_POTION
@@ -364,17 +369,15 @@ MartSaffron:
 	db FULL_HEAL
 	db X_ATTACK
 	db X_DEFEND
-	db FLOWER_MAIL
 	db -1 ; end
 
 MartMtMoon:
-	db 6 ; # items
+	db 5 ; # items
 	db POKE_DOLL
 	db FRESH_WATER
 	db SODA_POP
 	db LEMONADE
 	db REPEL
-	db PORTRAITMAIL
 	db -1 ; end
 
 MartIndigoPlateau:

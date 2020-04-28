@@ -2366,18 +2366,18 @@ GetBoxName:
 	ret
 
 BillsPC_PrintBoxCountAndCapacity:
-	hlcoord 11, 7
-	lb bc, 5, 7
+	hlcoord 0, 0
+	lb bc, 2, 18
 	call TextBox
 	ld a, [wMenuSelection]
 	cp -1
 	ret z
-	hlcoord 12, 9
+	hlcoord 1, 2
 	ld de, .Pokemon
 	call PlaceString
 	call GetBoxCount
 	ld [wDeciramBuffer], a
-	hlcoord 13, 11
+	hlcoord 13, 2
 	ld de, wDeciramBuffer
 	lb bc, 1, 2
 	call PrintNum
@@ -2386,7 +2386,7 @@ BillsPC_PrintBoxCountAndCapacity:
 	ret
 
 .Pokemon:
-	db "#MON@"
+	db "#MON:@"
 
 .out_of_20
 	; db "/20@"
@@ -2453,17 +2453,17 @@ GetBoxCount:
 	dba sBox14
 
 BillsPC_PrintBoxName:
-	hlcoord 0, 0
-	ld b, 2
-	ld c, 18
+	hlcoord 11, 7
+	ld b, 5
+	ld c, 7
 	call TextBox
-	hlcoord 1, 2
+	hlcoord 12, 8
 	ld de, .Current
 	call PlaceString
 	ld a, [wCurBox]
 	and $f
 	call GetBoxName
-	hlcoord 11, 2
+	hlcoord 12, 10
 	call PlaceString
 	ret
 
@@ -2481,22 +2481,6 @@ BillsPC_ChangeBoxSubmenu:
 	jr z, .Switch
 	cp $2
 	jr z, .Name
-	cp $3
-	jr z, .Print
-	and a
-	ret
-
-.Print:
-	call GetBoxCount
-	and a
-	jr z, .EmptyBox
-	ld e, l
-	ld d, h
-	ld a, [wMenuSelection]
-	dec a
-	ld c, a
-	farcall PrintPCBox
-	call BillsPC_ClearTilemap
 	and a
 	ret
 
@@ -2541,16 +2525,15 @@ BillsPC_ChangeBoxSubmenu:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 11, 4, SCREEN_WIDTH - 1, 13
+	menu_coords 11, 6, SCREEN_WIDTH - 1, 13
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
-	db 4 ; items
+	db 3 ; items
 	db "SWITCH@"
 	db "NAME@"
-	db "PRINT@"
 	db "QUIT@"
 
 BillsPC_PlaceChooseABoxString:

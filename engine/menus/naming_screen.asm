@@ -174,6 +174,20 @@ NamingScreen:
 	hlcoord 5, 2
 	ld de, .BoxNameString
 	call PlaceString
+	
+	hlcoord 0, 5
+	ld bc, 20
+	ld a, NAMINGSCREEN_BORDER
+	call ByteFill
+	hlcoord  0,  5
+	ld [hl], $c2
+	hlcoord 19,  5
+	ld [hl], $c1
+	hlcoord  0,  7
+	ld [hl], $bd
+	hlcoord 19,  7
+	ld [hl], $bd
+	
 	call .StoreBoxIconParams
 	ret
 
