@@ -1475,8 +1475,8 @@ _OakText1::
 
 	para "My name is OAK."
 
-	para "People call me the"
-	line "#MON PROF."
+	para "I study #MON as"
+	line "a profession."
 	prompt
 
 _OakText2::
