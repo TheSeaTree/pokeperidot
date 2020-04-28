@@ -95,6 +95,14 @@ DoPlayerMovement::
 	ret
 
 .NotMoving:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .NotMovingCont
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	
+.NotMovingCont:
 	ld a, [wWalkingDirection]
 	cp STANDING
 	jr z, .Standing
@@ -272,6 +280,8 @@ DoPlayerMovement::
 	jp nc, .ice
 
 ; Downhill riding is slower when not moving down.
+	call .RunCheck
+	jr z, .walk
 	call .BikeCheck
 	jr nz, .walk
 
@@ -766,6 +776,43 @@ ENDM
 	cp PLAYER_BIKE
 	ret z
 	cp PLAYER_SKATE
+	ret
+	
+.RunCheck:
+	
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	jr nz, .running
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	ret nz
+	ld a, [wWalkingDirection]
+	cp STANDING
+	ret z
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+.running
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	ret nz
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .runningstand
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	ret z
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret
+.runningstand
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
 	ret
 
 .CheckWalkable:
