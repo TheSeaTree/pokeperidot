@@ -46,12 +46,6 @@ TrainerCard:
 
 	farcall GetCardPic
 
-	ld hl, CardRightCornerGFX
-	ld de, vTiles2 tile $1c
-	ld bc, 1 tiles
-	ld a, BANK(CardRightCornerGFX)
-	call FarCopyBytes
-
 	ld hl, CardBorderGFX
 	ld de, vTiles0 tile $ba
 	ld bc, 8 tiles
@@ -386,7 +380,7 @@ TrainerCard_InitBorder:
 	dec e
 	jr nz, .loop2
 
-	ld a, $1c
+	ld a, $23
 	ld [hli], a
 	ld a, $bd
 	ld [hli], a
@@ -665,5 +659,4 @@ LeaderGFX2: INCBIN "gfx/trainer_card/leaders.2bpp"
 BadgeGFX:   INCBIN "gfx/trainer_card/badges.2bpp"
 BadgeGFX2:  INCBIN "gfx/trainer_card/badges.2bpp"
 
-CardRightCornerGFX: INCBIN "gfx/trainer_card/card_right_corner.2bpp"
 CardBorderGFX: INCBIN "gfx/trainer_card/card_border.2bpp"
