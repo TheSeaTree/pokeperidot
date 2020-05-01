@@ -1,7 +1,7 @@
 TMHMMoves:
 ; entries correspond to *_TMNUM enums (see constants/item_constants.asm)
 ; TMs
-		db CALM_MIND
+	db CALM_MIND
 	db BULK_UP
 	db HIDDEN_POWER
 	db ROAR

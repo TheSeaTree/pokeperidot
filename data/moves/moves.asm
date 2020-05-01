@@ -141,7 +141,7 @@ Moves: ; 41afb
 	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,    100, 15,   0
 	move AQUA_JET,     EFFECT_PRIORITY_HIT,       40, WATER,    100, 20,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,   100, 20,   0
-	move SKULL_BASH,   EFFECT_SKULL_BASH,        100, NORMAL,   100, 15,   0
+	move SKULL_BASH,   EFFECT_SKULL_BASH,        130, NORMAL,   100, 15,   0
 	move SPIKE_CANNON, EFFECT_MULTI_HIT,          20, WATER,    100, 15,   0
 	move QUIVER_DANCE, EFFECT_QUIVER_DANCE,        0, BUG,      100, 15,   0
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC,  100, 20,   0

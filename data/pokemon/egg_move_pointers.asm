@@ -14,7 +14,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw PidgeyEggMoves
+	dw PsyduckEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
 	dw RinringEggMoves
@@ -250,4 +250,5 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
+	dw FerrogonEggMoves
 	dw NoEggMoves
