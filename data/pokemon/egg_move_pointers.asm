@@ -250,5 +250,5 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw NoEggMoves
-	dw FerrogonEggMoves
+	dw FerrodonEggMoves
 	dw NoEggMoves
