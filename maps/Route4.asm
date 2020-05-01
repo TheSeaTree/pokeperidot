@@ -68,7 +68,7 @@ Route4_MapEvents:
 
 	db 2 ; bg events
 	bg_event  3,  7, BGEVENT_READ, MtMoonSquareSign
-	bg_event 10,  3, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 20, 23, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	db 1 ; object events
 	object_event 17,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerLassMelissa, -1
