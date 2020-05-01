@@ -30,13 +30,14 @@ AlphabeticalPokedexOrder:
 	db CHINCHOU
 	db CLEFABLE
 	db CLEFAIRY
-	db MANDRABEL
 	db CLOYSTER
 	db CONCHER
 	db CORSOLA
 	db CROBAT
 	db CROCONAW
+	db CUBBOLT
 	db CUBONE
+	db IGGLYBUFF ; Curstraw
 	db CYNDAQUIL
 	db DELIBIRD
 	db DEWGONG
@@ -54,6 +55,7 @@ AlphabeticalPokedexOrder:
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ
+	db ELECTIGER
 	db ELECTRODE
 	db ELEKID
 	db ENTEI
@@ -63,6 +65,7 @@ AlphabeticalPokedexOrder:
 	db FARFETCH_D
 	db FEAROW
 	db FERALIGATR
+	db FERRODON
 	db FLAAFFY
 	db FLAREON
 	db FORRETRESS
@@ -75,6 +78,7 @@ AlphabeticalPokedexOrder:
 	db GLOOM
 	db GOLBAT
 	db GOLDEEN
+	db GOLDUCK
 	db GOLEM
 	db TANGROWTH
 	db GRANBULL
@@ -92,7 +96,6 @@ AlphabeticalPokedexOrder:
 	db HOUNDOOM
 	db HOUNDOUR
 	db HYPNO
-	db IGGLYBUFF
 	db IVYSAUR
 	db JIGGLYPUFF
 	db JOLTEON
@@ -110,8 +113,6 @@ AlphabeticalPokedexOrder:
 	db LANTURN
 	db LAPRAS
 	db LARVITAR
-	db ELECTIGER
-	db CUBBOLT
 	db LICKITUNG
 	db LUGIA
 	db MACHAMP
@@ -123,6 +124,8 @@ AlphabeticalPokedexOrder:
 	db MAGMAR
 	db MAGNEMITE
 	db MAGNETON
+	db SIRFETCH_D
+	db MANDRABEL
 	db MANKEY
 	db MANTINE
 	db MAREEP
@@ -159,9 +162,6 @@ AlphabeticalPokedexOrder:
 	db PARASECT
 	db PERSIAN
 	db PHANPY
-	db PIDGEOT
-	db PIDGEOTTO
-	db PIDGEY
 	db PIKACHU
 	db PILOSWINE
 	db PINECO
@@ -174,6 +174,7 @@ AlphabeticalPokedexOrder:
 	db PORYGON
 	db PORYGON2
 	db PRIMEAPE
+	db PSYDUCK
 	db PUPITAR
 	db QUAGSIRE
 	db QUILAVA
@@ -198,8 +199,8 @@ AlphabeticalPokedexOrder:
 	db SHELLDER
 	db SHIFUR
 	db SHUCKLE
-	db SIRFETCH_D
 	db SKARMORY
+	db SKELEGON
 	db SKIPLOOM
 	db SLOWBRO
 	db SLOWKING

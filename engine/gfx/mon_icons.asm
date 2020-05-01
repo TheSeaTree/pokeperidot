@@ -59,8 +59,6 @@ LoadMenuMonIcon:
 	ld a, [hl]
 	and a
 	jr z, .no_item
-	push hl
-	push bc
 	ld d, a
 	ld a, $06
 	jr .got_tile
@@ -129,8 +127,6 @@ PartyMenu_InitAnimatedMonIcon:
 	ld a, [hl]
 	and a
 	ret z
-	push hl
-	push bc
 	ld d, a
 	ld a, SPRITE_ANIM_FRAMESET_PARTY_MON_WITH_ITEM
 	jr .okay

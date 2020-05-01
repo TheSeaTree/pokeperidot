@@ -15,9 +15,9 @@ PokedexDataPointerTable:
 	dw WeedlePokedexEntry
 	dw KakunaPokedexEntry
 	dw BeedrillPokedexEntry
-	dw PidgeyPokedexEntry
-	dw PidgeottoPokedexEntry
-	dw PidgeotPokedexEntry
+	dw PsyduckPokedexEntry
+	dw GolduckPokedexEntry
+	dw SkelegonPokedexEntry
 	dw RinringPokedexEntry
 	dw NyanellPokedexEntry
 	dw SpearowPokedexEntry
@@ -252,3 +252,4 @@ PokedexDataPointerTable:
 	dw HoOhPokedexEntry
 	dw CelebiPokedexEntry
 	dw OctankPokedexEntry
+	dw FerrodonPokedexEntry

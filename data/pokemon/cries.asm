@@ -20,9 +20,9 @@ PokemonCries::
 	mon_cry CRY_WEEDLE,      $0ee,  $081 ; WEEDLE
 	mon_cry CRY_BLASTOISE,   $0ff,  $081 ; KAKUNA
 	mon_cry CRY_BLASTOISE,   $060,  $100 ; BEEDRILL
-	mon_cry CRY_PIDGEY,      $0df,  $084 ; PIDGEY
-	mon_cry CRY_PIDGEOTTO,   $028,  $140 ; PIDGEOTTO
-	mon_cry CRY_PIDGEOTTO,   $011,  $17f ; PIDGEOT
+	mon_cry CRY_PSYDUCK,     $020,  $0e0 ; PSYDUCK
+	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 ; GOLDUCK
+	mon_cry CRY_RAIKOU,     -$100,  $180 ; SKELEGON
 	mon_cry CRY_AIPOM,       $0bc,  $0f0 ; RINRING
 	mon_cry CRY_AIPOM,       $078,  $0f0 ; NYANELL
 	mon_cry CRY_SPEAROW,     $000,  $100 ; SPEAROW
@@ -256,7 +256,7 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
-	mon_cry CRY_TOTODILE,    $000,  $140 ; OCTILLERY
-	mon_cry CRY_NIDORAN_M,      0,     0 ; 253
+	mon_cry CRY_TOTODILE,    $000,  $140 ; OCTANK
+	mon_cry CRY_DUNSPARCE,   $000,  $0d0 ; FERRODON
 	mon_cry CRY_NIDORAN_M,      0,     0 ; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 ; 255

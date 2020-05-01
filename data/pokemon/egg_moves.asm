@@ -42,14 +42,25 @@ SquirtleEggMoves:
 	db SIGNAL_BEAM
 	db -1 ; end
 
-PidgeyEggMoves:
-	db PURSUIT
-	db FAINT_ATTACK
+PsyduckEggMoves:
+	db HAZE
+	db CONFUSE_RAY
+	db CROSS_CHOP
+	db ENCORE
+	db FUTURE_SIGHT
 	db FORESIGHT
-	db STEEL_WING
-	db SKY_ATTACK
-	db SING
-	db U_TURN
+	db HYPNOSIS
+	db PSYBEAM
+	db TRI_ATTACK
+	db ENCORE
+	db SKULL_BASH
+	db EXTREMESPEED
+	db SEISMIC_TOSS
+	db PAY_DAY
+	db RAGE
+	db BIDE
+	db DYNAMICPUNCH
+	db IRON_TAIL
 	db -1 ; end
 
 RinringEggMoves:
@@ -121,6 +132,7 @@ NidoranFEggMoves:
 	db AMNESIA
 	db COUNTER
 	db PECK
+	db SKULL_BASH
 	db -1 ; end
 
 NidoranMEggMoves:
@@ -467,6 +479,7 @@ RhyhornEggMoves:
 	db PURSUIT
 	db COUNTER
 	db IRON_TAIL
+	db SKULL_BASH
 	db PAY_DAY
 	db -1 ; end
 
@@ -511,6 +524,7 @@ GoldeenEggMoves:
 	db HAZE
 	db HYDRO_PUMP
 	db SIGNAL_BEAM
+	db SKULL_BASH
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -559,6 +573,7 @@ EeveeEggMoves:
 	db PAY_DAY
 	db MIMIC
 	db SIGNAL_BEAM
+	db SKULL_BASH
 	db -1 ; end
 
 OmanyteEggMoves:
@@ -1089,6 +1104,20 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db IRON_TAIL
 	db -1 ; end
+	
+FerrodonEggMoves:
+	db FOCUS_ENERGY
+	db MUD_SLAP
+	db COUNTER
+	db RAGE
+	db DOUBLE_EDGE
+	db DEFENSE_CURL
+	db ROLLOUT
+	db THRASH
+	db FLAIL
+	db SKULL_BASH
+	db ANCIENTPOWER
+	db -1
 
 NoEggMoves:
 	db -1 ; end

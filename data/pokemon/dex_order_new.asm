@@ -115,9 +115,9 @@ NewPokedexOrder:
 	db TENTACRUEL
 	db SPINARAK
 	db ARIADOS
-	db PIDGEY
-	db PIDGEOTTO
-	db PIDGEOT
+	db PSYDUCK
+	db GOLDUCK
+	db SKELEGON
 	db PIKACHU
 	db RAICHU
 	db CUBBOLT
@@ -133,8 +133,7 @@ NewPokedexOrder:
 	db WIGGLYTUFF
 	db STANTLER
 	db MR__MIME
-	db RHYHORN
-	db RHYDON
+	db FERRODON
 	db FARFETCH_D
 	db SIRFETCH_D
 	db NATU
@@ -205,6 +204,8 @@ NewPokedexOrder:
 	db ANCOR
 	db DITTO
 	db SUDOWOODO
+	db RHYHORN
+	db RHYDON
 	db TAUROS
 	db MILTANK
 	db MAGBY

@@ -198,17 +198,17 @@ JohtoGrassWildMons:
 	db 14, NATU
 	db 13, MAREEP
 	db 16, STANTLER
-	db 16, PIDGEY
-	db 17, PIDGEY
-	db 17, PIDGEY
+	db 16, FARFETCH_D
+	db 17, FARFETCH_D
+	db 17, FARFETCH_D
 	; day
 	db 14, JIGGLYPUFF
 	db 14, NATU
 	db 13, MAREEP
 	db 16, NATU
 	db 16, STANTLER
-	db 17, PIDGEY
-	db 17, PIDGEY
+	db 17, FARFETCH_D
+	db 17, FARFETCH_D
 	; nite
 	db 13, JIGGLYPUFF
 	db 14, MURKROW
@@ -442,24 +442,24 @@ JohtoGrassWildMons:
 	db 14, GEODUDE
 	db 14, GASTLY
 	db 15, GEODUDE
-	db 15, RHYHORN
-	db 15, RHYHORN
+	db 15, FERRODON
+	db 15, FERRODON
 	; day
 	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, GASTLY
 	db 15, GEODUDE
-	db 15, RHYHORN
-	db 15, RHYHORN
+	db 15, FERRODON
+	db 15, FERRODON
 	; nite
 	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, DROWZEE
 	db 15, GEODUDE
-	db 15, RHYHORN
-	db 15, RHYHORN
+	db 15, FERRODON
+	db 15, FERRODON
 	
 	map_id PALEROCK_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -468,25 +468,25 @@ JohtoGrassWildMons:
 	db 17, CUBONE
 	db 17, DIGLETT
 	db 15, ONIX
-	db 15, RHYHORN
+	db 15, FERRODON
 	db 15, ONIX
-	db 16, RHYHORN
+	db 16, FERRODON
 	; day
 	db 16, ZUBAT
 	db 17, CUBONE
 	db 17, DIGLETT
 	db 15, ONIX
-	db 15, RHYHORN
+	db 15, FERRODON
 	db 15, ONIX
-	db 16, RHYHORN
+	db 16, FERRODON
 	; nite
 	db 16, ZUBAT
 	db 17, CUBONE
 	db 17, DIGLETT
 	db 15, ONIX
-	db 15, RHYHORN
+	db 15, FERRODON
 	db 15, ONIX
-	db 16, RHYHORN
+	db 16, FERRODON
 	
 	map_id CIANWOOD_CITY
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -631,24 +631,24 @@ JohtoGrassWildMons:
 	db 12, SPEAROW
 	db 11, SUNKERN
 	db 13, SUNKERN
-	db 10, SLOWPOKE
-	db 14, SLOWPOKE
+	db 12, PSYDUCK
+	db 14, PSYDUCK
 	; day
 	db 13, SNUBBULL
 	db 12, SPEAROW
 	db 12, SPEAROW
 	db 12, ODDISH
 	db 13, ODDISH
-	db 10, SLOWPOKE
-	db 14, SLOWPOKE
+	db 12, PSYDUCK
+	db 14, PSYDUCK
 	; nite
 	db 13, SNUBBULL
 	db 12, HOOTHOOT
 	db 14, HOOTHOOT
 	db 12, ODDISH
 	db 13, ODDISH
-	db 10, SLOWPOKE
-	db 14, SLOWPOKE
+	db 12, PSYDUCK
+	db 14, PSYDUCK
 
 	map_id ROUTE_6
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -680,7 +680,7 @@ JohtoGrassWildMons:
 	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, PIDGEY
+	db 12, SPEAROW
 	db 14, CUBBOLT
 	db 13, JIGGLYPUFF
 	db 14, DROWZEE
@@ -688,7 +688,7 @@ JohtoGrassWildMons:
 	db 16, MR__MIME
 	db 17, MR__MIME
 	; day
-	db 12, PIDGEY
+	db 12, SPEAROW
 	db 14, CUBBOLT
 	db 13, JIGGLYPUFF
 	db 14, DROWZEE
@@ -734,7 +734,7 @@ JohtoGrassWildMons:
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, PIDGEY
+	db 12, SPEAROW
 	db 13, JIGGLYPUFF
 	db 14, MR__MIME
 	db 14, PIKACHU
@@ -742,7 +742,7 @@ JohtoGrassWildMons:
 	db 16, NIDORINA
 	db 16, NIDORINA
 	; day
-	db 12, PIDGEY
+	db 12, SPEAROW
 	db 13, JIGGLYPUFF
 	db 14, MR__MIME
 	db 14, PIKACHU
@@ -763,7 +763,7 @@ JohtoGrassWildMons:
 	; morn
 	db 13, HOPPIP
 	db 14, NATU
-	db 16, HOPPIP
+	db 16, PSYDUCK
 	db 12, BUTTERFREE
 	db 12, ABRA
 	db 13, BUTTERFREE
@@ -771,7 +771,7 @@ JohtoGrassWildMons:
 	; day
 	db 13, BELLSPROUT
 	db 14, NATU
-	db 16, BELLSPROUT
+	db 16, PSYDUCK
 	db 12, BUTTERFREE
 	db 12, ABRA
 	db 13, BUTTERFREE
@@ -779,7 +779,7 @@ JohtoGrassWildMons:
 	; nite
 	db 13, ODDISH
 	db 14, NATU
-	db 16, ODDISH
+	db 16, PSYDUCK
 	db 12, BUTTERFREE
 	db 12, ABRA
 	db 13, BUTTERFREE
@@ -790,7 +790,7 @@ JohtoGrassWildMons:
 	; morn
 	db 23, SKIPLOOM
 	db 25, GROWLITHE
-	db 25, PIDGEOTTO
+	db 25, SPEAROW
 	db 25, SUNKERN
 	db 24, KADABRA
 	db 23, EEVEE
@@ -798,7 +798,7 @@ JohtoGrassWildMons:
 	; day
 	db 23, WEEPINBELL
 	db 25, GROWLITHE
-	db 25, PIDGEOTTO
+	db 25, SPEAROW
 	db 25, SUNKERN
 	db 24, KADABRA
 	db 23, EEVEE

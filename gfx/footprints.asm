@@ -35,7 +35,7 @@ INCBIN "gfx/types/bug.1bpp", primary_type ;Butterfree
 INCBIN "gfx/types/bug.1bpp",     primary_type ;Weedle
 INCBIN "gfx/types/bug.1bpp",     primary_type ;Kakuna
 INCBIN "gfx/types/bug.1bpp",   primary_type ;Beedrill
-INCBIN "gfx/types/normal.1bpp",     primary_type ;Pidgey
+INCBIN "gfx/types/water.1bpp",     primary_type ;Psyduck
 ; 009-016 second type
 INCBIN "gfx/types/none.1bpp",  secondary_type ;Blastoise
 INCBIN "gfx/types/none.1bpp",   secondary_type ;Caterpie
@@ -44,10 +44,10 @@ INCBIN "gfx/types/flying.1bpp", secondary_type ;Butterfree
 INCBIN "gfx/types/poison.1bpp",     secondary_type ;Weedle
 INCBIN "gfx/types/poison.1bpp",     secondary_type ;Kakuna
 INCBIN "gfx/types/poison.1bpp",   secondary_type ;Beedrill
-INCBIN "gfx/types/flying.1bpp",     secondary_type ;Pidgey
+INCBIN "gfx/types/none.1bpp",     secondary_type ;Psyduck
 ; 017-024 first type
-INCBIN "gfx/types/normal.1bpp",  primary_type ;Pidgeotto
-INCBIN "gfx/types/normal.1bpp",    primary_type ;Pidgeot
+INCBIN "gfx/types/water.1bpp",  primary_type ;Golduck
+INCBIN "gfx/types/rock.1bpp",    primary_type ;Skelegon
 INCBIN "gfx/types/dark.1bpp",    primary_type ;Rinring
 INCBIN "gfx/types/dark.1bpp",   primary_type ;Nyanell
 INCBIN "gfx/types/normal.1bpp",    primary_type ;Spearow
@@ -55,8 +55,8 @@ INCBIN "gfx/types/normal.1bpp",     primary_type ;Fearow
 INCBIN "gfx/types/poison.1bpp",      primary_type ;Ekans
 INCBIN "gfx/types/poison.1bpp",      primary_type ;Arbok
 ; 017-024 second type
-INCBIN "gfx/types/flying.1bpp",  secondary_type ;Pidgeotto
-INCBIN "gfx/types/flying.1bpp",    secondary_type ;Pidgeot
+INCBIN "gfx/types/none.1bpp",  secondary_type ;Golduck
+INCBIN "gfx/types/ghost.1bpp",    secondary_type ;Skelegon
 INCBIN "gfx/types/none.1bpp",    secondary_type ;Rinring
 INCBIN "gfx/types/none.1bpp",   secondary_type ;Nyanell
 INCBIN "gfx/types/flying.1bpp",    secondary_type ;Spearow

@@ -34,7 +34,7 @@ Pokered_MonIndices:
 	db GROWLITHE
 	db ONIX
 	db FEAROW
-	db PIDGEY
+	db PSYDUCK
 	db SLOWPOKE
 	db KADABRA
 	db GRAVELER
@@ -148,8 +148,8 @@ Pokered_MonIndices:
 	db HAUNTER
 	db ABRA
 	db ALAKAZAM
-	db PIDGEOTTO
-	db PIDGEOT
+	db GOLDUCK
+	db SKELEGON
 	db STARMIE
 	db BULBASAUR
 	db VENUSAUR

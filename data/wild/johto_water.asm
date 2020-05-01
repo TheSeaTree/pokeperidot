@@ -30,14 +30,14 @@ JohtoWaterWildMons:
 	db 2 percent ; encounter rate
 	db 26, GOLDEEN
 	db 24, POLIWAG
-	db 24, POLIWAG
+	db 25, PSYDUCK
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 
 	map_id ROUTE_30
 	db 6 percent ; encounter rate
 	db 26, GOLDEEN
-	db 14, POLIWAG
+	db 25, PSYDUCK
 	db 24, POLIWAG
 	db 24, POLIWAG
 	db 25, POLIWHIRL
@@ -122,6 +122,14 @@ JohtoWaterWildMons:
 	db 24, SMOLA
 	db 26, SEARION
 	
+	map_id ROUTE_9
+	db 4 percent ; encounter rate
+	db 26, GOLDEEN
+	db 25, PSYDUCK
+	db 24, POLIWAG
+	db 24, POLIWAG
+	db 25, POLIWHIRL
+	
 	map_id ECRUTEAK_CITY
 	db 2 percent ; encounter rate
 	db 24, POLIWHIRL
@@ -148,7 +156,7 @@ JohtoWaterWildMons:
 	
 	map_id ROUTE_11
 	db 4 percent ; encounter rate
-	db 25, QUAGSIRE
+	db 25, PSYDUCK
 	db 26, GOLDEEN
 	db 24, AZUMARILL
 	db 24, AZUMARILL

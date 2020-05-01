@@ -16,9 +16,9 @@ EvosAttacksPointers::
 	dw WeedleEvosAttacks
 	dw KakunaEvosAttacks
 	dw BeedrillEvosAttacks
-	dw PidgeyEvosAttacks
-	dw PidgeottoEvosAttacks
-	dw PidgeotEvosAttacks
+	dw PsyduckEvosAttacks
+	dw GolduckEvosAttacks
+	dw SkelegonEvosAttacks
 	dw RinringEvosAttacks
 	dw NyanellEvosAttacks
 	dw SpearowEvosAttacks
@@ -253,3 +253,4 @@ EvosAttacksPointers::
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
 	dw OctankEvosAttacks
+	dw FerrodonEvosAttacks

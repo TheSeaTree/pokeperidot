@@ -16,9 +16,9 @@ MonMenuIcons:
 	db ICON_CATERPILLAR ; WEEDLE
 	db ICON_CATERPILLAR ; KAKUNA
 	db ICON_BUG         ; BEEDRILL
-	db ICON_BIRD        ; PIDGEY
-	db ICON_BIRD        ; PIDGEOTTO
-	db ICON_BIRD        ; PIDGEOT
+	db ICON_MONSTER     ; PSYDUCK
+	db ICON_MONSTER     ; GOLDUCK
+	db ICON_MONSTER     ; SKELEGON
 	db ICON_FOX         ; RATTATA
 	db ICON_FOX         ; RATICATE
 	db ICON_BIRD        ; SPEAROW
@@ -253,4 +253,5 @@ MonMenuIcons:
 	db ICON_HO_OH       ; HO_OH
 	db ICON_HUMANSHAPE  ; CELEBI
 	db ICON_JELLYFISH   ; OCTANK
+	db ICON_SERPENT     ; FERRODON
 	db ICON_EGG         ; EGG

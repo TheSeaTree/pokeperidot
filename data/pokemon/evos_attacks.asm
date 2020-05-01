@@ -255,58 +255,63 @@ BeedrillEvosAttacks:
 	db 44, X_SCISSOR
 	db 0 ; no more level-up moves
 
-PidgeyEvosAttacks:
-	db EVOLVE_LEVEL, 18, PIDGEOTTO
+PsyduckEvosAttacks:
+	db EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 13, QUICK_ATTACK
-	db 17, WHIRLWIND
-	db 21, TWISTER
-	db 29, AGILITY
-	db 33, WING_ATTACK
-	db 45, MIRROR_MOVE
-	db 49, RAZOR_WIND
-	db 53, HURRICANE
-	db 65, EXTREMESPEED
+	db 1, SCRATCH
+	db 4, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, CONFUSION
+	db 13, FURY_SWIPES
+	db 16, AQUA_JET
+	db 19, DISABLE
+	db 22, SCREECH
+	db 25, SIGNAL_BEAM
+	db 28, WATERFALL
+	db 31, AGILITY
+	db 34, PSYCH_UP
+	db 37, AMNESIA
+	db 40, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-PidgeottoEvosAttacks:
-	db EVOLVE_LEVEL, 36, PIDGEOT
+GolduckEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 13, QUICK_ATTACK
-	db 17, WHIRLWIND
-	db 51, TWISTER
-	db 32, AGILITY
-	db 37, WING_ATTACK
-	db 52, MIRROR_MOVE
-	db 57, RAZOR_WIND
-	db 62, HURRICANE
-	db 68, EXTREMESPEED
+	db 1, SCRATCH
+	db 4, TAIL_WHIP
+	db 7, WATER_GUN
+	db 10, CONFUSION
+	db 13, FURY_SWIPES
+	db 16, AQUA_JET
+	db 19, DISABLE
+	db 22, SCREECH
+	db 25, SIGNAL_BEAM
+	db 28, WATERFALL
+	db 31, AGILITY
+	db 36, PSYCH_UP
+	db 41, AMNESIA
+	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-PidgeotEvosAttacks:
+SkelegonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, SAND_ATTACK
-	db 1, GUST
-	db 5, SAND_ATTACK
-	db 9, GUST
-	db 17, WHIRLWIND
-	db 21, TWISTER
-	db 29, AGILITY
-	db 33, WING_ATTACK
-	db 56, MIRROR_MOVE
-	db 62, RAZOR_WIND
-	db 68, HURRICANE
-	db 72, EXTREMESPEED
-	db 0 ; no more level-up moves
+	db 1, RAGE
+	db 1, HARDEN
+	db 1, LEER
+	db 5, ROCK_THROW
+	db 9, BITE
+	db 12, SCARY_FACE
+	db 15, ANCIENTPOWER
+	db 18, BULLDOZE
+	db 21, SCREECH
+	db 24, CURSE
+	db 27, CRUNCH
+	db 33, EARTHQUAKE
+	db 37, ROCK_SLIDE
+	db 42, THRASH
+	db 47, SANDSTORM
+	db 53, RAZOR_WIND
+	db 57, HYPER_BEAM
+	db 0 ; no more level-up moves130
 
 RinringEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_NITE, NYANELL
@@ -870,6 +875,7 @@ AncorEvosAttacks:
 	db 29, SCARY_FACE
 	db 34, IRON_TAIL
 	db 40, CRUNCH
+	db 48, SKULL_BASH
 	db 51, DOUBLE_EDGE
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -3368,11 +3374,16 @@ DunsparceEvosAttacks:
 	db 1, RAGE
 	db 5, DEFENSE_CURL
 	db 13, GLARE
-	db 18, SPITE
-	db 26, PURSUIT
-	db 30, SCREECH
-	db 34, COIL
-	db 38, DOUBLE_EDGE
+	db 16, ANCIENTPOWER
+	db 18, BODY_SLAM
+	db 21, BULLDOZE
+	db 26, DOUBLE_EDGE
+	db 28, COIL
+	db 31, DIG
+	db 36, SKULL_BASH
+	db 41, RAZOR_WIND
+	db 46, ENDURE
+	db 48, FLAIL
 	db 0 ; no more level-up moves
 
 GligarEvosAttacks:
@@ -4110,3 +4121,24 @@ OctankEvosAttacks:
 	db 54, HYPER_BEAM
 	db 58, ZAP_CANNON
 	db 0 ; no more level-up moves
+	
+FerrodonEvosAttacks:
+	db  0 ; no more evolutions
+	db  1, TACKLE
+	db  1, TAIL_WHIP
+	db  1, HARDEN
+	db  5, BONE_CLUB
+	db  6, BITE
+	db  9, METAL_CLAW
+	db 13, SCARY_FACE
+	db 18, DRAGON_RAGE
+	db 21, BODY_SLAM
+	db 25, ROAR
+	db 27, IRON_HEAD
+	db 31, DIG
+	db 35, DRAGONBREATH
+	db 40, COIL
+	db 45, IRON_TAIL
+	db 49, OUTRAGE
+	db 55, FISSURE
+	db  0 ; no more level-up moves

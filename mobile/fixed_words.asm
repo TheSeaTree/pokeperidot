@@ -2967,11 +2967,6 @@ EZChat_GetSeenPokemonByKana:
 	ld [wcd2e], a
 	ld [hl], a
 
-	ld a, LOW(EZChat_SortedPokemon)
-	ld [wcd2f], a
-	ld a, HIGH(EZChat_SortedPokemon)
-	ld [wcd30], a
-
 	ld a, LOW($c6a8)
 	ld [wcd31], a
 	ld a, HIGH($c6a8)
@@ -3233,8 +3228,6 @@ EZChat_GetCategoryWordsByKana:
 	pop af
 	ldh [rSVBK], a
 	ret
-
-INCLUDE "data/pokemon/ezchat_order.asm"
 
 GFX_11d67e:
 INCBIN "gfx/pokedex/select_start.2bpp"

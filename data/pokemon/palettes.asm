@@ -38,12 +38,12 @@ INCLUDE "gfx/pokemon/kakuna/normal.pal"
 INCLUDE "gfx/pokemon/kakuna/shiny.pal"
 INCLUDE "gfx/pokemon/beedrill/normal.pal"
 INCLUDE "gfx/pokemon/beedrill/shiny.pal"
-INCLUDE "gfx/pokemon/pidgey/normal.pal"
-INCLUDE "gfx/pokemon/pidgey/shiny.pal"
-INCLUDE "gfx/pokemon/pidgeotto/normal.pal"
-INCLUDE "gfx/pokemon/pidgeotto/shiny.pal"
-INCLUDE "gfx/pokemon/pidgeot/normal.pal"
-INCLUDE "gfx/pokemon/pidgeot/shiny.pal"
+INCLUDE "gfx/pokemon/psyduck/normal.pal"
+INCLUDE "gfx/pokemon/psyduck/shiny.pal"
+INCLUDE "gfx/pokemon/golduck/normal.pal"
+INCLUDE "gfx/pokemon/golduck/shiny.pal"
+INCLUDE "gfx/pokemon/skelegon/normal.pal"
+INCLUDE "gfx/pokemon/skelegon/shiny.pal"
 INCLUDE "gfx/pokemon/rinring/normal.pal"
 INCLUDE "gfx/pokemon/rinring/shiny.pal"
 INCLUDE "gfx/pokemon/nyanell/normal.pal"
@@ -512,16 +512,11 @@ INCLUDE "gfx/pokemon/celebi/normal.pal"
 INCLUDE "gfx/pokemon/celebi/shiny.pal"
 INCLUDE "gfx/pokemon/octank/normal.pal"
 INCLUDE "gfx/pokemon/octank/shiny.pal"
+INCLUDE "gfx/pokemon/ferrodon/normal.pal"
+INCLUDE "gfx/pokemon/ferrodon/shiny.pal"
 
 INCLUDE "gfx/pokemon/egg/normal.pal"
 INCLUDE "gfx/pokemon/egg/shiny.pal"
-
-; 254
-	RGB 30, 26, 11
-	RGB 23, 16, 00
-; 254 shiny
-	RGB 30, 26, 11
-	RGB 23, 16, 00
 
 ; 255
 	RGB 23, 23, 23

@@ -32,12 +32,12 @@ PokemonPicPointers::
 	dba KakunaBackpic
 	dba BeedrillFrontpic
 	dba BeedrillBackpic
-	dba PidgeyFrontpic
-	dba PidgeyBackpic
-	dba PidgeottoFrontpic
-	dba PidgeottoBackpic
-	dba PidgeotFrontpic
-	dba PidgeotBackpic
+	dba PsyduckFrontpic
+	dba PsyduckBackpic
+	dba GolduckFrontpic
+	dba GolduckBackpic
+	dba SkelegonFrontpic
+	dba SkelegonBackpic
 	dba RinringFrontpic
 	dba RinringBackpic
 	dba NyanellFrontpic
@@ -509,5 +509,7 @@ PokemonPicPointers::
 	dba CelebiBackpic
 	dba OctankFrontpic
 	dba OctankBackpic
+	dba FerrodonFrontpic
+	dba FerrodonBackpic
 	dba EggPic
-	dbw -1, -1 ; unused
+;	dbw -1, -1 ; unused

@@ -1,0 +1,21 @@
+	db SKELEGON ; 142
+
+	db  90, 110,  85,  75,  85,  70
+	;   hp  atk  def  spd  sat  sdf
+
+	db ROCK, GHOST ; type
+	db 45 ; catch rate
+	db 202 ; base exp
+	db NO_ITEM, NO_ITEM ; items
+	db GENDER_UNKNOWN ; gender ratio
+	db 100 ; unknown 1
+	db 35 ; step cycles to hatch
+	db 5 ; unknown 2
+	INCBIN "gfx/pokemon/skelegon/front.dimensions"
+	db 0, 0, 0, 0 ; padding
+	db GROWTH_SLOW ; growth rate
+	dn EGG_MINERAL, EGG_DRAGON ; egg groups
+
+	; tm/hm learnset
+	tmhm BULLDOZE, BULK_UP, CRUNCH, CURSE, CUT, DOUBLE_TEAM, DRAGONBREATH, DRAGON_DANCE, EARTHQUAKE, ENDURE, FIRE_BLAST, FLAMETHROWER, HEADBUTT, HIDDEN_POWER, HYPER_BEAM, IRON_HEAD, PROTECT, PSYCHIC_M, RAIN_DANCE, REST, RETURN, ROAR, ROCK_SLIDE, ROCK_SMASH, SANDSTORM, SHADOW_BALL, SLEEP_TALK, STRENGTH, SUBMISSION, SUBSTITUTE, SUNNY_DAY, SWAGGER, SWORDS_DANCE, TELEPORT, THIEF, THUNDER, THUNDERBOLT, THUNDER_WAVE, TOXIC, NIGHTMARE, DREAM_EATER, BUBBLEBEAM, DIG
+	; end

@@ -1171,8 +1171,8 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "NEW #DEX MODE"
-	next "OLD #DEX MODE"
+	db   "REGIONAL MODE"
+	next "NATIONAL MODE"
 	next "A to Z MODE"
 	db   "@"
 
@@ -1700,11 +1700,11 @@ Pokedex_DisplayModeDescription:
 
 .NewMode:
 	db   "<PK><MN> are listed by"
-	next "evolution type.@"
+	next "evolution order.@"
 
 .OldMode:
 	db   "<PK><MN> are listed by"
-	next "official type.@"
+	next "discovery order.@"
 
 .ABCMode:
 	db   "<PK><MN> are listed"

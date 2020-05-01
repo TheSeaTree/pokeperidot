@@ -10,13 +10,9 @@
 ; - PokemonPalettes (see data/pokemon/palettes.asm)
 ; - PokedexDataPointerTable (see data/pokemon/dex_entry_pointers.asm)
 ; - AlphabeticalPokedexOrder (see data/pokemon/dex_order_alpha.asm)
-; - EZChat_SortedPokemon (see data/pokemon/ezchat_order.asm)
 ; - NewPokedexOrder (see data/pokemon/dex_order_new.asm)
 ; - Pokered_MonIndices (see data/pokemon/gen1_order.asm)
-; - AnimationPointers (see gfx/pokemon/anim_pointers.asm)
 ; - AnimationIdlePointers (see gfx/pokemon/idle_pointers.asm)
-; - BitmasksPointers (see gfx/pokemon/bitmask_pointers.asm)
-; - FramesPointers (see gfx/pokemon/frame_pointers.asm)
 ; - Footprints (see gfx/footprints.asm)
 	const_def 1
 	const BULBASAUR  ; 01
@@ -34,9 +30,9 @@
 	const WEEDLE     ; 0d
 	const KAKUNA     ; 0e
 	const BEEDRILL   ; 0f
-	const PIDGEY     ; 10
-	const PIDGEOTTO  ; 11
-	const PIDGEOT    ; 12
+	const PSYDUCK    ; 10
+	const GOLDUCK    ; 11
+	const SKELEGON   ; 12
 	const RINRING    ; 13
 	const NYANELL    ; 14
 	const SPEAROW    ; 15
@@ -272,9 +268,9 @@ JOHTO_POKEMON EQU const_value
 	const HO_OH      ; fa
 	const CELEBI     ; fb
 	const OCTANK     ; fc
+	const FERRODON   ; fe
 NUM_POKEMON EQU const_value + -1
 	const EGG        ; fd
-	const MON_FE     ; fe
 
 ; Unown forms
 ; indexes for:
