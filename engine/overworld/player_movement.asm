@@ -779,10 +779,15 @@ ENDM
 	ret
 	
 .RunCheck:
-	
+	ld hl, wPokegearFlags
+	bit RUNNING_SHOES_F, [hl]
+	ret z
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	jr nz, .running
+	call GetMapEnvironment
+	cp INDOOR
+	ret z
 	ld a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
