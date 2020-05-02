@@ -141,6 +141,9 @@ TownMapSceneLeft:
 	opentext
 	writetext NeighborGivesPotion2
 	waitbutton
+	verbosegiveitem POCKET_WATCH
+	writetext NeighborGivesPocketWatch
+	waitbutton
 	verbosegiveitem TOWN_MAP
 	writetext NeighborGivesTownMap
 	waitbutton
@@ -352,14 +355,24 @@ NeighborGivesPotion2:
 	cont "your adventure!"
 	done
 	
-NeighborGivesPotion3:
-	text "It was so long ago"
-	line "I began my own"
-	cont "journey."
+NeighborGivesPocketWatch:
+	text "That POCKET WATCH"
+	line "will tell you the"
+	cont "time whenever you"
+	cont "want. Be sure to"
+	cont "adjust it for DST."
 	
-	para "I was but a little"
-	line "girl at the time…"
-	done
+	para "That watch has"
+	line "been passed down"
+	cont "over generations."
+	
+	para "I have no grand-"
+	line "children, so I am"
+	cont "passing this watch"
+	cont "down to you."
+	
+	para "I want you to have"
+	line "this too."
 	
 NeighborGivesTownMap:
 	text "A traveler should"
@@ -368,6 +381,15 @@ NeighborGivesTownMap:
 	para "You never know"
 	line "when it will be"
 	cont "useful."
+	done
+	
+NeighborGivesPotion3:
+	text "It was so long ago"
+	line "I began my own"
+	cont "journey."
+	
+	para "I was but a little"
+	line "girl at the time…"
 	done
 	
 NeighborGivesPotion4:

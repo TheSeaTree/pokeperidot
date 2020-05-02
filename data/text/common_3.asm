@@ -1470,25 +1470,25 @@ UnknownText_0x1c5ff1::
 	done
 
 UnknownText_0x1c6000::
-	text "Do you want to"
-	line "switch to Daylight"
-	cont "Saving Time?"
+	text "Set the clock for-"
+	line "ward one hour?"
 	done
 
 UnknownText_0x1c6030::
-	text "I set the clock"
-	line "forward by one"
+	text "The clock has been"
+	line "set forward by one"
 	cont "hour."
 	prompt
 
 UnknownText_0x1c6056::
-	text "Is Daylight Saving"
-	line "Time over?"
+	text "Set the clock"
+	line "back one hour?"
 	done
 
 UnknownText_0x1c6075::
-	text "I put the clock"
-	line "back one hour."
+	text "The clock has been"
+	line "set back by one"
+	cont "hour."
 	prompt
 
 UnknownText_0x1c6095::
@@ -1500,10 +1500,6 @@ UnknownText_0x1c6095::
 	done
 
 UnknownText_0x1c60d1::
-	text "I lost the in-"
-	line "struction booklet"
-	cont "for the #GEAR."
-
-	para "Come back again in"
-	line "a while."
+	text "The time can't be"
+	line "changed right now."
 	prompt

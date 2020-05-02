@@ -119,7 +119,7 @@ ItemDescriptions:
 	dw MiracleSeedDesc
 	dw ThickClubDesc
 	dw FocusBandDesc
-	dw TeruSama8Desc
+	dw PocketWatchDesc
 	dw EnergyPowderDesc
 	dw EnergyRootDesc
 	dw HealPowderDesc
@@ -727,8 +727,9 @@ FocusBandDesc:
 	db   "May prevent faint-"
 	next "ing. (HOLD)@"
 
-TeruSama8Desc:
-	db   "?@"
+PocketWatchDesc:
+	db   "Adjust the clock"
+	next "for DST.@"
 
 EnergyPowderDesc:
 	db   "Restores #MON"
@@ -937,7 +938,7 @@ BerryDesc:
 
 GoldBerryDesc:
 	db   "A self-restore"
-	next " item.(80HP, HOLD)@"
+	next "item.(1/4HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"

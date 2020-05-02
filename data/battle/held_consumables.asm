@@ -21,4 +21,5 @@ ConsumableEffects:
 	db HELD_ESCAPE
 	db HELD_CRITICAL_UP
 	db HELD_POWER_HERB
+	db HELD_HEAL_HALF_HP
 	db -1

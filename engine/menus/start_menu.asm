@@ -364,6 +364,11 @@ endr
 	jp ._DrawMenuAccount
 
 .PrintMenuAccount:
+	ld a, POCKET_WATCH
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	ret nc
 	call .IsMenuAccountOn
 	ret z
 	call ._DrawMenuAccount
@@ -385,6 +390,11 @@ endr
 	ret
 
 ._DrawMenuAccount:
+	ld a, POCKET_WATCH
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	ret nc
 	call .IsMenuAccountOn
 	ret z
 	hlcoord 0, 0

@@ -1966,6 +1966,11 @@ SubtractHPFromUser:
 	call SubtractHP
 	jp UpdateHPBarBattleHuds
 
+AddHPToUser:
+; Subtract HP from mon
+	call AddHP
+	jp UpdateHPBarBattleHuds
+
 SubtractHP:
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
@@ -1977,6 +1982,37 @@ SubtractHP:
 	ld a, [hl]
 	ld [wBuffer3], a
 	sub c
+	ld [hld], a
+	ld [wBuffer5], a
+	ld a, [hl]
+	ld [wBuffer4], a
+	sbc b
+	ld [hl], a
+	ld [wBuffer6], a
+	ret nc
+
+	ld a, [wBuffer3]
+	ld c, a
+	ld a, [wBuffer4]
+	ld b, a
+	xor a
+	ld [hli], a
+	ld [hl], a
+	ld [wBuffer5], a
+	ld [wBuffer6], a
+	ret
+
+AddHP:
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld hl, wEnemyMonHP
+.ok
+	inc hl
+	ld a, [hl]
+	ld [wBuffer3], a
+	add c
 	ld [hld], a
 	ld [wBuffer5], a
 	ld a, [hl]
@@ -2110,7 +2146,7 @@ CheckUserHasEnoughHP:
 	sbc [hl]
 	ret
 
-RestoreHP
+RestoreHP:
 	ld hl, wEnemyMonMaxHP
 	ldh a, [hBattleTurn]
 	and a
@@ -4420,22 +4456,77 @@ HandleHealingItems:
 	jr z, .player_1
 	call SetPlayerTurn
 	call HandleHPHealingItem
+	call HandleHalfHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
 	call SetEnemyTurn
 	call HandleHPHealingItem
+	call HandleHalfHPHealingItem
 	call UseHeldStatusHealingItem
 	jp UseConfusionHealingItem
 
 .player_1
 	call SetEnemyTurn
 	call HandleHPHealingItem
+	call HandleHalfHPHealingItem
 	call UseHeldStatusHealingItem
 	call UseConfusionHealingItem
 	call SetPlayerTurn
 	call HandleHPHealingItem
+	call HandleHalfHPHealingItem
 	call UseHeldStatusHealingItem
 	jp UseConfusionHealingItem
+
+HandleHalfHPHealingItem:
+	callfar GetOpponentItem
+	ld a, b
+	cp HELD_HEAL_HALF_HP
+	ret nz
+	ld de, wEnemyMonHP + 1
+	ld hl, wEnemyMonMaxHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .go
+	ld de, wBattleMonHP + 1
+	ld hl, wBattleMonMaxHP
+
+.go
+; If, and only if, Pokemon's HP is less than half max, use the item.
+; Store current HP in Buffer 3/4
+	push bc
+	ld a, [de]
+	ld [wBuffer3], a
+	add a
+	ld c, a
+	dec de
+	ld a, [de]
+	inc de
+	ld [wBuffer4], a
+	adc a
+	ld b, a
+	ld a, b
+	cp [hl]
+	ld a, c
+	pop bc
+	jr z, .equal
+	jr c, .less
+	ret
+
+.equal
+	inc hl
+	cp [hl]
+	dec hl
+	ret nc
+
+.less
+	call ItemRecoveryAnim
+
+	call SwitchTurnCore
+	call GetQuarterMaxHP
+	call AddHPToUser
+	call SwitchTurnCore
+	
+	jp UseOpponentItem
 
 HandleHPHealingItem:
 	callfar GetOpponentItem

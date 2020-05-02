@@ -132,7 +132,7 @@ ItemEffects:
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
 	dw NoEffect            ; FOCUS_BAND
-	dw NoEffect            ; ITEM_78
+	dw PocketWatchEffect   ; POCKET_WATCH
 	dw EnergypowderEffect  ; ENERGYPOWDER
 	dw EnergyRootEffect    ; ENERGY_ROOT
 	dw HealPowderEffect    ; HEAL_POWDER
@@ -1140,6 +1140,10 @@ TownMapEffect:
 
 BicycleEffect:
 	farcall BikeFunction
+	ret
+	
+PocketWatchEffect:
+	farcall DSTChecks
 	ret
 
 EvoStoneEffect:
