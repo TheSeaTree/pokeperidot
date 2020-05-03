@@ -175,7 +175,7 @@ ItemDescriptions:
 	dw BerryDesc
 	dw GoldBerryDesc
 	dw SquirtBottleDesc
-	dw TeruSama23Desc
+	dw SilverBerryDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
 	dw TeruSama24Desc
@@ -934,19 +934,19 @@ UpGradeDesc:
 
 BerryDesc:
 	db   "A self-restore"
-	next "item. (10HP, HOLD)@"
+	next "item.(10HP, HOLD)@"
 
 GoldBerryDesc:
 	db   "A self-restore"
-	next "item.(1/4HP, HOLD)@"
+	next "item.(1/2HP, HOLD)@"
 
 SquirtBottleDesc:
 	db   "A bottle used for"
 	next "watering plants.@"
 
-TeruSama23Desc:
+SilverBerryDesc:
 	db   "A self-resore"
-	next "item. (50HP, HOLD)@"
+	next "item.(1/4HP, HOLD)@"
 
 ParkBallDesc:
 	db   "The Bug-Catching"
