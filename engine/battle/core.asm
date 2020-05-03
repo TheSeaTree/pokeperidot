@@ -1966,11 +1966,6 @@ SubtractHPFromUser:
 	call SubtractHP
 	jp UpdateHPBarBattleHuds
 
-AddHPToUser:
-; Subtract HP from mon
-	call AddHP
-	jp UpdateHPBarBattleHuds
-
 SubtractHP:
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
@@ -1982,37 +1977,6 @@ SubtractHP:
 	ld a, [hl]
 	ld [wBuffer3], a
 	sub c
-	ld [hld], a
-	ld [wBuffer5], a
-	ld a, [hl]
-	ld [wBuffer4], a
-	sbc b
-	ld [hl], a
-	ld [wBuffer6], a
-	ret nc
-
-	ld a, [wBuffer3]
-	ld c, a
-	ld a, [wBuffer4]
-	ld b, a
-	xor a
-	ld [hli], a
-	ld [hl], a
-	ld [wBuffer5], a
-	ld [wBuffer6], a
-	ret
-
-AddHP:
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	inc hl
-	ld a, [hl]
-	ld [wBuffer3], a
-	add c
 	ld [hld], a
 	ld [wBuffer5], a
 	ld a, [hl]
@@ -4480,7 +4444,7 @@ HandleHealingItems:
 HandleHalfHPHealingItem:
 	callfar GetOpponentItem
 	ld a, b
-	cp HELD_HEAL_HALF_HP
+	cp HELD_HEAL_PERCENTAGE
 	ret nz
 	ld de, wEnemyMonHP + 1
 	ld hl, wEnemyMonMaxHP
@@ -4520,12 +4484,11 @@ HandleHalfHPHealingItem:
 
 .less
 	call ItemRecoveryAnim
-
+	
 	call SwitchTurnCore
 	call GetQuarterMaxHP
-	call AddHPToUser
 	call SwitchTurnCore
-	
+	call RestoreHP
 	jp UseOpponentItem
 
 HandleHPHealingItem:
