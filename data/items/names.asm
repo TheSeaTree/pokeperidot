@@ -143,7 +143,7 @@ ItemNames::
 	db "TERU-SAMA@"
 	db "METAL COAT@"
 	db "DRAGON FANG@"
-	db "TERU-SAMA@"
+	db "FOCUS SASH@"
 	db "LEFTOVERS@"
 	db "GEN. KEY@"
 	db "OFFICE KEY@"

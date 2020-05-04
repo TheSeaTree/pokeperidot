@@ -1163,22 +1163,17 @@ BattleCommand_Critical:
 .Farfetchd:
 	cp FARFETCH_D
 	jr nz, .Sirfetchd
-	ld a, [hl]
-	cp STICK
-	jr nz, .FocusEnergy
-
-; +2 critical level
-	ld c, 3
-	jr .Tally
+	jr .checkstick
 
 .Sirfetchd:
 	cp SIRFETCH_D
 	jr nz, .FocusEnergy
+.checkstick
 	ld a, [hl]
 	cp STICK
 	jr nz, .FocusEnergy
 
-; +2 critical level
+; +3 critical level
 	ld c, 3
 	jr .Tally
 
@@ -2155,13 +2150,35 @@ BattleCommand_ApplyDamage:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
-	jr z, .focus_band
+	jr z, .focus_sash
 
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
 	ld b, 1
 	jr .damage
+
+.focus_sash
+; Focus Sash does not activate if holder does not have max HP.
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	inc hl
+	inc hl
+	ld a, [hli]
+	ld b, a
+	ld a, [hli]
+	ld c, a
+	ld a, [hli]
+	cp b
+	jr nz, .focus_band
+	ld a, [hl]
+	cp c
+	jr nz, .focus_band
+	
+	call GetOpponentItem
+	ld a, b
+	cp HELD_FOCUS_SASH
+	jp z, .activate
 
 .focus_band
 	call GetOpponentItem
@@ -2170,6 +2187,7 @@ BattleCommand_ApplyDamage:
 	ld b, 0
 	jr nz, .damage
 
+.activate
 	call BattleRandom
 	cp c
 	jr nc, .damage
@@ -2203,10 +2221,12 @@ BattleCommand_ApplyDamage:
 	jp StdBattleTextBox
 
 .focus_band_text
+	farcall ItemRecoveryAnim
 	call GetOpponentItem
 	ld a, [hl]
 	ld [wNamedObjectIndexBuffer], a
 	call GetItemName
+	callfar ConsumeHeldItem
 	ld hl, HungOnText
 	jp StdBattleTextBox
 
@@ -2239,7 +2259,7 @@ BattleCommand_ApplyDamage:
 	ld [de], a
 	inc de
 	ld [de], a
-	ret
+	ret	
 
 GetFailureResultText:
 	ld hl, DoesntAffectText

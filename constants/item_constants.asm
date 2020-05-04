@@ -150,7 +150,7 @@
 	const ITEM_8E      ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
-	const ITEM_91      ; 91
+	const FOCUS_SASH   ; 91
 	const LEFTOVERS    ; 92
 	const GEN_KEY      ; 93
 	const OFFICE_KEY   ; 94

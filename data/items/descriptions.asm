@@ -144,7 +144,7 @@ ItemDescriptions:
 	dw TeruSama13Desc
 	dw MetalCoatDesc
 	dw DragonFangDesc
-	dw TeruSama14Desc
+	dw FocusSashDesc
 	dw LeftoversDesc
 	dw GenKeyDesc
 	dw OfficeKeyDesc
@@ -824,8 +824,9 @@ DragonFangDesc:
 	db   "Powers up dragon-"
 	next "type moves. (HOLD)@"
 
-TeruSama14Desc:
-	db   "?@"
+FocusSashDesc:
+	db   "Prevents fainting"
+	next "at full HP.(1 BTL)@"
 
 LeftoversDesc:
 	db   "Restores HP during"
