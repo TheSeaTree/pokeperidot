@@ -4522,6 +4522,7 @@ HandleQuarterHPHealingItem:
 	inc de
 	ld [wBuffer4], a
 	adc a
+	adc a
 	ld b, a
 	ld a, b
 	cp [hl]
