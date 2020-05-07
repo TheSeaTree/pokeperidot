@@ -27,7 +27,7 @@ MahoganyApartment3FGirl:
 	playsound SFX_CAUGHT_MON
 	disappear MAHOGANYAPARTMENT3F_DOLL
 	waitsfx
-	givepoke IGGLYBUFF, 32
+	givepoke CURSTRAW, 32
 	setevent EVENT_GOT_CURSTRAW
 	
 .GotCurstraw

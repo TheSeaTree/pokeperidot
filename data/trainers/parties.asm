@@ -365,7 +365,7 @@ FangirlGroup:
 	db "EMILY@", TRAINERTYPE_ITEM
 	db 20, FLAAFFY, 	NO_ITEM
 	db 20, PHANPY, 		NO_ITEM
-	db 20, FEAROW,   	NO_ITEM
+	db 20, FARFETCH_D, 	NO_ITEM
 	db 20, NYANELL,		NO_ITEM
 	db 22, CLEFAIRY,	PINK_BOW
 	db -1
@@ -381,9 +381,9 @@ FangirlGroup:
 
 PokemonProfGroup:
 	; TEST (1)
-	db "@", TRAINERTYPE_MOVES
-	db 80, XATU,       SPIKES, NO_MOVE, NO_MOVE, NO_MOVE
-	db 80, XATU,       SPIKES, NO_MOVE, NO_MOVE, NO_MOVE
+	db "@", TRAINERTYPE_ITEM_MOVES
+	db 28, MEW, BRICK_PIECE,       U_TURN, NO_MOVE, NO_MOVE, NO_MOVE
+	db 28, CELEBI, BRICK_PIECE,    U_TURN, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1
 
 PKMNTrainerGroup:
@@ -1774,6 +1774,10 @@ SageGroup:
 	db -1
 
 MediumGroup:
+	; MEDIUM (1)
+	db "ANNABEL@", TRAINERTYPE_ITEM_MOVES
+	db 45, CURSTRAW,	LEGENDS_AURA,	CURSE, LEECH_LIFE, PROTECT, SHADOW_BALL
+	db -1
 
 BoarderGroup:
 

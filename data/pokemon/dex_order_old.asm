@@ -133,7 +133,8 @@ NewPokedexOrder:
 	db WIGGLYTUFF
 	db STANTLER
 	db MR__MIME
-	db FERRODON
+	db RHYHORN
+	db RHYDON
 	db FARFETCH_D
 	db SIRFETCH_D
 	db NATU
@@ -204,8 +205,6 @@ NewPokedexOrder:
 	db ANCOR
 	db DITTO
 	db SUDOWOODO
-	db RHYHORN
-	db RHYDON
 	db TAUROS
 	db MILTANK
 	db MAGBY
@@ -254,3 +253,4 @@ NewPokedexOrder:
 	db MEWTWO
 	db MEW
 	db CELEBI
+	db FERRODON

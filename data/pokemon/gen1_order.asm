@@ -212,7 +212,7 @@ Pokered_MonIndices:
 	db LANTURN
 	db SIRFETCH_D
 	db MANDRABEL
-	db IGGLYBUFF
+	db CURSTRAW
 	db SHIFUR
 	db SNOWMAD
 	db NATU

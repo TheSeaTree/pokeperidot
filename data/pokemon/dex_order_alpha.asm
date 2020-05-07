@@ -37,7 +37,7 @@ AlphabeticalPokedexOrder:
 	db CROCONAW
 	db CUBBOLT
 	db CUBONE
-	db IGGLYBUFF ; Curstraw
+	db CURSTRAW
 	db CYNDAQUIL
 	db DELIBIRD
 	db DEWGONG

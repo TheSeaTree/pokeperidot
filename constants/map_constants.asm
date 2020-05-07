@@ -219,10 +219,11 @@ ENDM
 	map_const MAHOGANY_DEPT_STORE_6F,                      8,  4 ; 16
 	map_const MAHOGANY_DEPT_STORE_ELEVATOR,                2,  2 ; 17
 	map_const MAHOGANY_DEPT_STORE_ROOF,                    8,  4 ; 18
-	map_const ROUTE_6_SURFERS_HOUSE,                        4,  4 ; 13
+	map_const ROUTE_6_SURFERS_HOUSE,                       4,  4 ; 13
 
 	newgroup                                                      ; 13
 	map_const ROUTE_11,                                    32, 16	
+	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
 
 	newgroup                                                      ; 14
 

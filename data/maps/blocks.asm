@@ -215,6 +215,7 @@ PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:
 BlackthornRestTalkHouse_Blocks:
 IlexForestSwordsDanceHouse_Blocks:
+Route11CurseHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:

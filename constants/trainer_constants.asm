@@ -380,6 +380,7 @@ KRIS EQU __enum__
 	const LO2
 
 	trainerclass MEDIUM ; 39
+	const ANNABELLE
 	
 	trainerclass BOARDER ; 3a
 	

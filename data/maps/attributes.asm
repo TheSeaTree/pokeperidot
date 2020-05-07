@@ -430,3 +430,4 @@ ENDM
 	map_attributes GoldenrodGymWestChamber, GOLDENROD_GYM_WEST_CHAMBER, $00, 0
 	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
 	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0
+	map_attributes Route11CurseHouse, ROUTE_11_CURSE_HOUSE, $00, 0

@@ -189,7 +189,7 @@ JOHTO_POKEMON EQU const_value
 	const LANTURN    ; ab
 	const SIRFETCH_D ; ac
 	const MANDRABEL  ; ad
-	const IGGLYBUFF  ; ae
+	const CURSTRAW   ; ae
 	const SHIFUR     ; af
 	const SNOWMAD    ; b0
 	const NATU       ; b1

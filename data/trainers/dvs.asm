@@ -58,7 +58,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; CAMPER
 	dn  7, 14, 10,  8 ; EXECUTIVEF
 	dn  9,  8,  8,  8 ; SAGE
-	dn  7,  8,  8,  8 ; MEDIUM
+	dn 14, 14, 14, 15 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
 	dn  9,  8,  8,  8 ; POKEFANM
 	dn  6,  8,  8, 10 ; KIMONO_GIRL

@@ -191,7 +191,7 @@ INCLUDE "maps/HallOfFame.asm"
 
 SECTION "Map Scripts 14", ROMX
 INCLUDE "maps/LostLand.asm"
-
+INCLUDE "maps/Route11CurseHouse.asm"
 
 SECTION "Map Scripts 15", ROMX
 

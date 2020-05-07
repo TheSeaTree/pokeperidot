@@ -1,4 +1,4 @@
-	db IGGLYBUFF ; 174
+	db CURSTRAW ; 174
 
 	db  55,  90,  80,  96,  50,  105
 	;   hp  atk  def  spd  sat  sdf
