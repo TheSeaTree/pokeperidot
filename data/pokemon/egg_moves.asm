@@ -110,6 +110,7 @@ PikachuEggMoves:
 	db DOUBLESLAP
 	db FLAIL
 	db SIGNAL_BEAM
+	db EXTREMESPEED
 	db PAY_DAY
 	db -1 ; end
 
