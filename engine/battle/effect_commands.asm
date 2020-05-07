@@ -1749,6 +1749,8 @@ BattleCommand_CheckHit:
 	ret z
 	cp THUNDER
 	ret z
+	cp HURRICANE
+	ret z
 	cp TWISTER
 	ret
 
@@ -1765,9 +1767,12 @@ BattleCommand_CheckHit:
 ; Return z if the current move always hits in rain, and it is raining.
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
+	cp EFFECT_HURRICANE
+	jr z, .continue
 	cp EFFECT_THUNDER
 	ret nz
 
+.continue
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
 	ret
