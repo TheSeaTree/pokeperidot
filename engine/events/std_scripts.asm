@@ -340,6 +340,7 @@ InitializeEventsScript:
 	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3 ; Bottom Right
 	setevent EVENT_HIDE_SHELTER_MAROWAK
 	setevent EVENT_HIDE_TELEPORT_GUY
+	setevent EVENT_GOT_TM_CURSE
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SILVER
 	variablesprite SPRITE_SUBSTITUTE_GUY, SPRITE_MONSTER
 	return
