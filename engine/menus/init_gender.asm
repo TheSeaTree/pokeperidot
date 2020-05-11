@@ -82,9 +82,9 @@ InitGenderScreen:
 
 LoadGenderScreenPal:
 	ld hl, .Palette
-	ld de, wBGPals1
-	ld bc, 1 palettes
-	ld a, BANK(wBGPals1)
+	ld de, wOBPals1
+	ld bc, 2 palettes
+	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	farcall ApplyPals
 	ret

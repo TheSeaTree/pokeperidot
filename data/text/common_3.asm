@@ -3,21 +3,25 @@ _OakText6::
 	prompt
 
 _OakText7::
-	text "<PLAYER>, are you"
-	line "ready?"
+	text "<PLAYER>, is it?"
+	
+	para "………"
+	
+	para "Oh, right!"
+	
+	para "You're meant to be"
+	line "starting your jou-"
+	cont "rney with #MON"
+	cont "today. You must be"
+	cont "excited!"
 
-	para "Your very own"
-	line "#MON story is"
-	cont "about to unfold."
-
-	para "You'll face fun"
-	line "times and tough"
-	cont "challenges."
-
-	para "A world of dreams"
-	line "and adventures"
-	cont "with #MON"
-	cont "awaits!"
+	para "I'll be expecting"
+	line "you to stop by my"
+	cont "lab to select your"
+	cont "#MON partner!"
+	
+	para "See you soon,"
+	line "<PLAYER>!"
 	done
 
 UnknownText_0x1c40e6::
@@ -244,7 +248,7 @@ UnknownText_0x1c4706::
 	done
 
 GiveItemText::
-	text "<PLAYER> received"
+	text "<PLAYER> received a"
 	line "@"
 	text_ram wStringBuffer4
 	text "."

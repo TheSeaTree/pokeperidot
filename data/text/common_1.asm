@@ -176,10 +176,11 @@ UnknownText_0x1bc308::
 	done
 
 UnknownText_0x1bc31b::
-	text "Is @@"
+	text "It's @@"
 
 UnknownText_0x1bc323::
-	text "?"
+	text ","
+	line "correct?"
 	done
 
 UnknownText_0x1bc369::

@@ -634,8 +634,6 @@ OakSpeech:
 
 	ld hl, OakText2
 	call PrintText
-	ld hl, OakText4	
-	call PrintText
 	call RotateThreePalettesRight
 	call ClearTileMap
 	
@@ -750,10 +748,6 @@ OakText2:
 
 OakText3:
 	text_jump _OakText3
-	db "@"
-
-OakText4:
-	text_jump _OakText4
 	db "@"
 	
 OakText4a:

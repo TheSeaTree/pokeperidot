@@ -109,7 +109,7 @@ InitClock:
 	call YesNoBox
 	jr nc, .MinutesAreSet
 	call .ClearScreen
-	jr .HourIsSet
+	jp .loop
 
 .MinutesAreSet:
 	call InitTimeOfDay
@@ -194,32 +194,6 @@ DisplayHourOClock:
 	ld de, String_oclock
 	call PlaceString
 	pop hl
-	ret
-
-UnreferencedFunction907f1:
-	ld h, d
-	ld l, e
-	push hl
-	call DisplayHourOClock
-	pop de
-	inc de
-	inc de
-	ld a, ":"
-	ld [de], a
-	inc de
-	push de
-	ld hl, 3
-	add hl, de
-	ld a, [de]
-	inc de
-	ld [hli], a
-	ld a, [de]
-	ld [hl], a
-	pop hl
-	call DisplayMinutesWithMinString
-	inc hl
-	inc hl
-	inc hl
 	ret
 
 SetMinutes:
@@ -321,10 +295,18 @@ String_min:
 
 Text_WhoaMins:
 	; Whoa!@ @
-;	text_jump UnknownText_0x1bc31b
+	text_jump UnknownText_0x1bc31b
+;	start_asm
+;	hlcoord 1, 14
+;	call DisplayMinutesWithMinString
 	start_asm
-	hlcoord 1, 14
-	call DisplayMinutesWithMinString
+;	call UpdateTime
+	ld a, [wInitHourBuffer]
+	ld b, a
+	ld a, [wInitMinuteBuffer]
+	ld c, a
+	decoord 5, 14
+	farcall PrintHoursMins
 	ld hl, .QuestionMark
 	ret
 

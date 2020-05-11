@@ -1470,30 +1470,28 @@ UnknownText_0x1c1cf3::
 	done
 
 _OakText1::
-	text "Welcome to the"
-	line "world of #MON!"
+	text "Hello there!"
 
-	para "My name is OAK."
+	para "My name is MAPLE."
+	line "I am a PROFESSOR."
 
-	para "I study #MON as"
-	line "a profession."
+	para "My life's work has"
+	line "been dedicated to"
+	cont "studying #MON."
+	
+	para "What are #MON,"
+	line "you ask?"
 	prompt
 
 _OakText2::
-	text "This world is in-"
-	line "habited by crea-"
-	cont "tures that we call"
-	cont "#MON.@@"
+	text "#MON are magni-"
+	line "ficent creatues"
+	cont "that live all"
+	cont "around us!@@"
 
 _OakText3::
 	text_waitbutton
 	db "@@"
-
-_OakText4::
-	text "#MON can be"
-	line "found anywhere and"
-	cont "everywhere!"
-	prompt
 	
 _OakText4a::
 	text "They fill our"
@@ -1529,6 +1527,6 @@ _OakText5::
 	line "world is still a"
 	cont "mystery to us."
 
-	para "That brings me to"
+	para "This brings me to"
 	line "my next question…"
 	prompt

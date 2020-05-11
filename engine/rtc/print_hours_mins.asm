@@ -36,7 +36,7 @@ PrintHoursMins:
 	pop de
 	pop hl
 	ld [hl], " "
-	lb bc, 1, 2
+	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum
 	ld [hl], ":"
 	inc hl
