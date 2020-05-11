@@ -187,7 +187,19 @@ GoldenrodGymHaveBadge:
 	done
 	
 WhitneyBeforeText:
-	text "Hi! I'm WHITNEY!"
+	text "I am…"
+	
+	para "…The dweller in"
+	line "darkness."
+	
+	para "Have you come"
+	line "seeking a battle?"
+	
+	para "Let me help you to"
+	line "see, trainer…"
+	
+	para "The might of my"
+	line "grim #MON!"
 	done
 
 WhitneyShouldntBeSoSeriousText:
@@ -273,15 +285,7 @@ DoorGuard1Challenge:
 	line "a battle will"
 	cont "suffice."
 	done
-	
-GuitaristAndyAfterText:
-	text "I lost."
-	done
 
-GuitaristLeeAfterText:
-	text "I lost."
-	done
-	
 Door2or3AlreadyOpen:
 	text "Use the other door"
 	line "that was opened."
@@ -324,119 +328,6 @@ DoorGuard2Text:
 	cont "where we currently"
 	cont "are standing."
 	done
-	
-GuitaristAndyText:
-	text "You didn't hear it"
-	line "from me, but the"
-	cont "leader's room is"
-	cont "to the left of"
-	cont "here."
-	
-	para "Should I open the"
-	line "door for you?"
-	done
-	
-DoorGuard2BeforeText:
-	text "Fine, but only if"
-	line "you can beat me!"
-	done
-	
-GuitaristLeeText:
-	text "This door may be"
-	line "the wrong way."
-	
-	para "Want me to open"
-	line "it anyway?"
-	done
-	
-GuitaristTrevorText:
-	text "I am a #MON"
-	line "trainer."
-	done
-	
-GuitaristTrevorWinText:
-	text "I lost."
-	done
-
-DoorGuard3Text:
-	text "In this next room,"
-	line "your challenge is"
-	cont "to find the odd"
-	cont "one out."
-	
-	para "Remember, he is"
-	line "one of us. He will"
-	cont "not be standing"
-	cont "out too much."
-	done
-	
-GuitaristColinText:
-	text "My pal ANDY fooled"
-	line "you pretty bad,"
-	cont "didn't he?"
-	
-	para "Now you need to"
-	line "battle me!"
-	done
-	
-GuitaristColinWinText:
-	text "I lost."
-	done
-	
-GuitaristColinAfterText:
-	text "I lost."
-	done
-	
-WrongGuitaristText:
-	text "Wrong choice!"
-	
-	para "Now we battle!"
-	done
-	
-PokemaniacCharlieText:
-	text "I am your last"
-	line "obstacle."
-	
-	para "Defeat me, and I"
-	line "will allow you to"
-	cont "select a portal."
-	done
-	
-PokemaniacCharlieWinText:
-	text "Ah! You are worthy"
-	line "to move on and"
-	cont "face the leader!"
-	done
-	
-CharlieYouAreUnworthy:
-	text "You…"
-	
-	para "…Are unworthy."
-	done
-	
-CharlieExplainsGates:
-	text "And so it has come"
-	line "to this."
-	
-	para "Two portals await."
-	
-	para "One gate will lead"
-	line "you to your goal."
-	
-	para "The Gym Leader."
-	
-	para "One gate will"
-	line "bring your"
-	cont "challenge to a"
-	cont "pause."
-	
-	para "Ejecting you from"
-	line "this gym."
-	
-	para "This finale"
-	line "decision is yours"
-	cont "alone."
-	done
 
 GoldenrodGym_MapEvents:
 	db 0, 0 ; filler
@@ -456,5 +347,5 @@ GoldenrodGym_MapEvents:
 	bg_event  9, 18, BGEVENT_DOWN, GoldenrodCantLeave
 
 	db 2 ; object events
-	object_event  9,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
+	object_event  9,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
 	object_event  8, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymDoorGuard, -1

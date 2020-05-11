@@ -18,7 +18,7 @@ MapScenes::
 	scene_var LANCES_ROOM,                                 wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                                wHallOfFameSceneID
 	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID
-	scene_var ELMS_LAB,                                    wElmsLabSceneID
+	scene_var MAPLES_LAB,                                  wMaplesLabSceneID
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
 	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID
 	scene_var AZALEA_TOWN,                                 wAzaleaTownSceneID

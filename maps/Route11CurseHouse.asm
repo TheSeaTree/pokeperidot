@@ -10,7 +10,7 @@ Route11CurseHouse_MapScripts:
 
 .Medium:
 	writebyte CURSTRAW
-	special FindPartyMonThatSpecies
+	special FindPartyMonThatSpeciesYourTrainerID
 	iffalse .NoAppear
 	return
 
@@ -19,9 +19,11 @@ Route11CurseHouse_MapScripts:
 	return
 	
 TrainerMediumAnnabel:
-	faceplayer
 	opentext
 	writetext MediumAnnabelleText
+	waitbutton
+	faceplayer
+	writetext MediumAnnabelleChallengeText
 	waitbutton
 	closetext
 	winlosstext MediumAnnabelleWinText, 0
@@ -39,6 +41,7 @@ TrainerMediumAnnabel:
 	setevent EVENT_HIDE_MEDIUM_ANNABELLE
 	moveobject ROUTE11CURSEHOUSE_ITEMBALL, 3, 3
 	appear ROUTE11CURSEHOUSE_ITEMBALL
+	wait 8
 	special FadeInQuickly
 	end
 	
@@ -46,9 +49,15 @@ TMCurse:
 	itemball TM_CURSE
 	
 MediumAnnabelleText:
-	text "You have…"
+	text "You possess…"
 	
-	para "Its twin…"
+	para "………………"
+
+	para "………………"
+	done
+	
+MediumAnnabelleChallengeText:
+	text "Its twin…"
 	done
 	
 MediumAnnabelleWinText:

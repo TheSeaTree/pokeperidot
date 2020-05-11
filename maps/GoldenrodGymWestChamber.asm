@@ -15,7 +15,7 @@ TrainerBikerJerry:
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodWestRoomPlaceholderText
+	writetext BikerJerryAfterText
 	waitbutton
 	closetext
 	end	
@@ -70,6 +70,20 @@ GoldenrodGymWestChamberLeaderSwitch:
 	
 GoldenrodWestRoomPlaceholderText:
 	text "?"
+	done
+	
+BikerJerryAfterText:
+	text "Some of the guys"
+	line "like to joke that"
+	cont "the leader here is"
+	cont "not even human."
+	
+	para "He spends so much"
+	line "time locked up in"
+	cont "his chamber alone."
+	
+	para "…I hope the guys"
+	line "are only joking."
 	done
 
 GoldenrodGymWestChamber_MapEvents:

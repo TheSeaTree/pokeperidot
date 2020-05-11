@@ -200,7 +200,7 @@ GetWeekday::
 	jr nc, .mod
 	add 7
 	ret
-	
+
 HalveBC::
 	srl b
 	rr c

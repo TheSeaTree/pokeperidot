@@ -124,7 +124,7 @@ INCLUDE "maps/DrainPunchChamber.asm"
 
 SECTION "Map Scripts 9", ROMX
 
-INCLUDE "maps/ElmsLab.asm"
+INCLUDE "maps/MaplesLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"

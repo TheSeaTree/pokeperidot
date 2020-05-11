@@ -125,8 +125,8 @@ Route14OlivineGate_Blocks:
 Route21EcruteakGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
-ElmsLab_Blocks:
-	INCBIN "maps/ElmsLab.ablk"
+MaplesLab_Blocks:
+	INCBIN "maps/MaplesLab.ablk"
 
 Route9_Blocks:
 	INCBIN "maps/Route9.ablk"

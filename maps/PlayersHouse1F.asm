@@ -32,7 +32,7 @@ MeetMomScript:
 	jump .After
 	
 .After
-	writetext HurryUpElmIsWaitingText
+	writetext HurryUpMapleIsWaitingText
 	yesorno
 	iffalse .Directions
 	writetext MomGoodLuck
@@ -44,7 +44,7 @@ MeetMomScript:
 	end
 	
 .Directions
-	writetext ElmsLabDirections
+	writetext MaplesLabDirections
 	waitbutton
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	closetext
@@ -60,9 +60,9 @@ MomScript:
 	iftrue .FirstTimeBanking
 	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
 	iftrue .BankOfMom
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iftrue .GotAPokemon
-	writetext HurryUpElmIsWaitingText
+	writetext HurryUpMapleIsWaitingText
 	yesorno
 	iffalse .Directions
 	writetext MomGoodLuck
@@ -72,14 +72,14 @@ MomScript:
 	end
 	
 .Directions
-	writetext ElmsLabDirections
+	writetext MaplesLabDirections
 	waitbutton
 	closetext
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
 
 .GotAPokemon:
-	writetext SoWhatWasProfElmsErrandText
+	writetext SoWhatWasProfMaplesErrandText
 	waitbutton
 	closetext
 	end
@@ -138,26 +138,7 @@ TownMapSceneLeft:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_QUESTION, PLAYER, 15
 	applymovement PLAYERSHOUSE1F_GRANNY, GrannyWalksToPlayerLeft
-	opentext
-	writetext NeighborGivesPotion2
-	waitbutton
-	verbosegiveitem POCKET_WATCH
-	writetext NeighborGivesPocketWatch
-	waitbutton
-	verbosegiveitem TOWN_MAP
-	writetext NeighborGivesTownMap
-	waitbutton
-	closetext
-	applymovement PLAYERSHOUSE1F_GRANNY, GrannyLeftTurn
-	opentext
-	writetext NeighborGivesPotion3
-	waitbutton
-	closetext
-	applymovement PLAYERSHOUSE1F_GRANNY, GrannyRightTurn
-	opentext
-	writetext NeighborGivesPotion4
-	waitbutton
-	closetext
+	scall TownMapPocketWatchScript
 	applymovement PLAYER, MovementData_MoveForGranny
 	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave1
 	setscene SCENE_FINISHED
@@ -179,8 +160,22 @@ TownMapSceneRight:
 	turnobject PLAYER, LEFT
 	showemote EMOTE_QUESTION, PLAYER, 15
 	applymovement PLAYERSHOUSE1F_GRANNY, GrannyWalksToPlayerRight
+	scall TownMapPocketWatchScript
+	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave2
+	setscene SCENE_FINISHED
+	playsound SFX_ENTER_DOOR
+	disappear PLAYERSHOUSE1F_GRANNY
+	waitsfx
+	special RestartMapMusic
+	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	end
+	
+TownMapPocketWatchScript:
 	opentext
 	writetext NeighborGivesPotion2
+	waitbutton
+	verbosegiveitem POCKET_WATCH
+	writetext NeighborGivesPocketWatch
 	waitbutton
 	verbosegiveitem TOWN_MAP
 	writetext NeighborGivesTownMap
@@ -196,13 +191,6 @@ TownMapSceneRight:
 	writetext NeighborGivesPotion4
 	waitbutton
 	closetext
-	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave2
-	setscene SCENE_FINISHED
-	playsound SFX_ENTER_DOOR
-	disappear PLAYERSHOUSE1F_GRANNY
-	waitsfx
-	special RestartMapMusic
-	setevent EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	end
 
 TVScript:
@@ -278,16 +266,16 @@ GirlText:
 	line "for you!"
 	done
 	
-HurryUpElmIsWaitingText:
-	text "Go pay PROF. ELM a"
-	line "visit, she will be"
-	cont "expecting you."
+HurryUpMapleIsWaitingText:
+	text "Go pay PROF. MAPLE"
+	line "a visit. She will"
+	cont "be expecting you."
 
 	para "Do you remember"
 	line "where her lab is?"
 	done
 	
-ElmsLabDirections:	
+MaplesLabDirections:	
 	text "Her lab is in"
 	line "PAVONA VILLAGE,"
 	cont "right at the other"
@@ -304,7 +292,7 @@ MomGoodLuck:
 	line "good luck!"
 	done
 
-SoWhatWasProfElmsErrandText:
+SoWhatWasProfMaplesErrandText:
 	text "You chose a"
 	line "#MON already?"
 	
@@ -373,6 +361,7 @@ NeighborGivesPocketWatch:
 	
 	para "I want you to have"
 	line "this too."
+	done
 	
 NeighborGivesTownMap:
 	text "A traveler should"

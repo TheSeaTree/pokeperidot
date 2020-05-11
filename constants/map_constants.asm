@@ -312,7 +312,7 @@ ENDM
 	map_const ROUTE_1,                                     33, 17 ;  1
 	map_const NEW_BARK_TOWN,                               12, 11 ;  4
 	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
-	map_const ELMS_LAB,                                     5,  6 ;  5
+	map_const MAPLES_LAB,                                   5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
 	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  8

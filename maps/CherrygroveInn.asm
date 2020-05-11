@@ -9,7 +9,7 @@ CherrygroveInn_MapScripts:
 CherrygroveInnNurse:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iffalse .CherrygroveInnNoMons
 	writetext CherrygroveInnNurseText
 	waitbutton

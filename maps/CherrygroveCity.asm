@@ -196,7 +196,7 @@ CherrygroveIrresponsible:
 CherrygroveYoungsterChallenge:
 	text "Hey! Did you just"
 	line "get a #MON from"
-	cont "ELM's lab?"
+	cont "MAPLE's lab?"
 	
 	para "That's so cool!"
 	done
@@ -333,7 +333,7 @@ CherrygroveCitySignText:
 	done
 
 GuideGentsHouseSignText:
-	text "ELM #MON LAB"
+	text "MAPLE #MON LAB"
 	done
 	
 CherrygroveInnSignText:
@@ -349,7 +349,7 @@ CherrygroveCity_MapEvents:
 	db 6 ; warp events
 	warp_event 25, 23, CHERRYGROVE_GYM_SPEECH_HOUSE, 1
 	warp_event 15, 11, ROUTE_1_CHERRYGROVE_GATE, 3
-	warp_event 24, 15, ELMS_LAB, 1
+	warp_event 24, 15, MAPLES_LAB, 1
 	warp_event  6, 13, UNION_CAVE_1F, 1
 	warp_event  4,  3, HIDDEN_POWER_CAVE, 1
 	warp_event 15, 21, CHERRYGROVE_INN, 1

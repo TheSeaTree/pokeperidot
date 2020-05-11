@@ -26,9 +26,7 @@ NewBarkTown_MapScripts:
 NewBarkTownTeacherScript:
 	faceplayer
 	opentext
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .CallMom
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
+	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iftrue .MonIsAdorable
 	writetext Text_GearIsImpressive
 	waitbutton
@@ -37,12 +35,6 @@ NewBarkTownTeacherScript:
 
 .MonIsAdorable:
 	writetext Text_YourMonIsAdorable
-	waitbutton
-	closetext
-	end
-
-.CallMom:
-	writetext Text_CallMomOnGear
 	waitbutton
 	closetext
 	end
@@ -61,9 +53,6 @@ NewBarkTownSign:
 
 NewBarkTownPlayersHouseSign:
 	jumptext NewBarkTownPlayersHouseSignText
-
-NewBarkTownElmsLabSign:
-	jumptext NewBarkTownElmsLabSignText
 
 NewBarkTownElmsHouseSign:
 	jumptext NewBarkTownElmsHouseSignText
@@ -141,10 +130,6 @@ NewBarkTownSignText:
 
 NewBarkTownPlayersHouseSignText:
 	text "<PLAYER>'s House"
-	done
-
-NewBarkTownElmsLabSignText:
-	text "ELM #MON LAB"
 	done
 
 NewBarkTownElmsHouseSignText:

@@ -54,9 +54,9 @@ VioletCityRivalBattleScript:
 	writetext VioletCityRivalBeforeText
 	waitbutton
 	closetext
-	checkevent EVENT_GOT_TOTODILE_FROM_ELM
+	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
 	iftrue .Totodile
-	checkevent EVENT_GOT_CHIKORITA_FROM_ELM
+	checkevent EVENT_GOT_BULBASAUR_FROM_MAPLE
 	iftrue .Chikorita
 	winlosstext VioletCityRivalWinText, VioletCityRivalLossText
 	setlasttalked VIOLETCITY_SILVER

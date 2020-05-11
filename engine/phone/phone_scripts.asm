@@ -5,26 +5,7 @@ UnusedPhoneScript:
 ; Mom
 
 MomPhoneScript:
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .bcec5
-	checkevent EVENT_DUDE_TALKED_TO_YOU
-	iftrue MomPhoneLectureScript
-	checkevent EVENT_GAVE_MYSTERY_EGG_TO_ELM
-	iftrue MomPhoneNoGymQuestScript
-	checkevent EVENT_GOT_A_POKEMON_FROM_ELM
-	iftrue MomPhoneNoPokedexScript
 	jump MomPhoneNoPokemonScript
-
-.bcec5
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	iftrue MomPhoneHangUpScript
-	farwritetext MomPhoneGreetingText
-	buttonsound
-	mapnametotext MEM_BUFFER_0
-	checkcode VAR_ROOFPALETTE
-	ifequal 1, MomPhonePalette1
-	ifequal 2, MomPhonePalette2
-	jump MomPhoneOther
 
 MomPhoneLandmark:
 	farwritetext MomPhoneLandmarkText

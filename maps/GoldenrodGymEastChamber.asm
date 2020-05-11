@@ -20,12 +20,12 @@ TrainerGuitaristAndy:
 	end	
 	
 TrainerGuitaristLee:
-	trainer GUITARIST, LEE, EVENT_BEAT_GUITARIST_LEE, GoldenrodEastRoomPlaceholderText, GoldenrodEastRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, LEE, EVENT_BEAT_GUITARIST_LEE, GuitaristLeeText, GuitaristLeeWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodEastRoomPlaceholderText
+	writetext GuitaristLeeAfterText
 	waitbutton
 	closetext
 	end	
@@ -69,6 +69,26 @@ GoldenrodGymEastChamberLeaderSwitch:
 
 GoldenrodEastRoomPlaceholderText:
 	text "?"
+	done
+	
+GuitaristLeeText:
+	text "Dude, some warning"
+	line "before turning on"
+	cont "the lights would"
+	cont "have been nice!"
+	done
+	
+GuitaristLeeWinText:
+	text "My eyes haven't"
+	line "adjusted yet!"
+	done
+
+GuitaristLeeAfterText:
+	text "I like heavy music"
+	line "and all, but the"
+	cont "leader? He just"
+	cont "freaks me out,"
+	cont "man."
 	done
 
 GoldenrodGymEastChamber_MapEvents:
