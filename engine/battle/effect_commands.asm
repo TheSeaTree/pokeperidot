@@ -2309,20 +2309,20 @@ endr
 	dec hl
 	ld [hli], a
 	or b
-	jr nz, .do_at_least_1_damage
+	jr nz, .jump_kick_recoil
 	inc a
 	ld [hl], a
-.do_at_least_1_damage
+.jump_kick_recoil
+
+; High Jump Kick reduces HP by 50% on a miss.
 	ld hl, CrashedText
 	call StdBattleTextBox
-	ld a, $1
-	ld [wKickCounter], a
+
 	call LoadMoveAnim
-	ld c, TRUE
-	ldh a, [hBattleTurn]
-	and a
-	jp nz, DoEnemyDamage
-	jp DoPlayerDamage
+	
+	callfar GetHalfMaxHP
+	callfar SubtractHPFromUser
+	jp UpdateUserInParty
 
 FailText_CheckOpponentProtect:
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
