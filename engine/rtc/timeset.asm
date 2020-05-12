@@ -306,7 +306,7 @@ Text_WhoaMins:
 	ld a, [wInitMinuteBuffer]
 	ld c, a
 	decoord 5, 14
-	farcall PrintHoursMins
+	farcall PrintHoursMinsRightAlign
 	ld hl, .QuestionMark
 	ret
 
