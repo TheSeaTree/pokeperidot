@@ -12,7 +12,7 @@ BTTrainerClassGenders:
 	db FEMALE ; CLAIR
 	db MALE   ; RIVAL1
 	db FEMALE ; FANGIRL
-	db MALE   ; POKEMON_PROF
+	db FEMALE ; PROFESSOR
 	db MALE   ; CAL
 	db MALE   ; WILL
 	db MALE   ; BRUNO

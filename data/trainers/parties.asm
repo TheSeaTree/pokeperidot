@@ -382,7 +382,6 @@ FangirlGroup:
 PokemonProfGroup:
 	; TEST (1)
 	db "@", TRAINERTYPE_ITEM_MOVES
-	db 28, MEW, BRICK_PIECE,       TELEPORT, NO_MOVE, NO_MOVE, NO_MOVE
 	db 52, XATU, GOLD_BERRY,       DRAGON_RAGE, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1
 

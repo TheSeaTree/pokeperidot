@@ -19,7 +19,7 @@ PnP_HiddenPeople_BeatE4:
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1
-	db POKEMON_PROF
+	db PROFESSOR
 	db CAL
 	db RIVAL2
 	db RED

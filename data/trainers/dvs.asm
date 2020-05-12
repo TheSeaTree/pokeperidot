@@ -11,7 +11,7 @@ TrainerClassDVs:
 	dn 15, 15, 15, 14 ; CLAIR
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn 13, 13, 13, 13 ; FANGIRL
-	dn 14, 14, 14, 14 ; POKEMON_PROF
+	dn 14, 14, 14, 14 ; PROFESSOR
 	dn 13, 12, 13, 13 ; CAL
 	dn 14, 14, 15, 14 ; WILL
 	dn 14, 14, 15, 14 ; BRUNO
