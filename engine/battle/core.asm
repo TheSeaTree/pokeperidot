@@ -4482,41 +4482,49 @@ HandleHalfHPHealingItem:
 	jp UseOpponentItem
 	
 HandleQuarterHPHealingItem:
-	callfar GetOpponentItem
+	callfar GetUserItem
 	ld a, b
 	cp HELD_GOLD_BERRY
 	ret nz
-	ld de, wEnemyMonHP + 1
-	ld hl, wEnemyMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .go
-	ld de, wBattleMonHP + 1
-	ld hl, wBattleMonMaxHP
 
 .go
 ; If, and only if, Pokemon's HP is less than 1/4 max, use the item.
-; Store current HP in Buffer 3/4
-
-	call CheckHolderQuarterHP
-	jr z, .equal
-	jr c, .less
-	ret
-
-.equal
-	inc hl
-	cp [hl]
-	dec hl
+	call GetQuarterMaxHP
+	call CompareHP
 	ret nc
-
-.less
-	call ItemRecoveryAnim
 	
-	call SwitchTurnCore
+	
 	call GetHalfMaxHP
 	call SwitchTurnCore
+	call ItemRecoveryAnim
 	call RestoreHP
-	jp UseOpponentItem
+	callfar GetOpponentItem
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld hl, RecoveredUsingText
+	call StdBattleTextBox
+	
+; Consume item.
+
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .do_partymon
+	call GetOTPartymonItem
+	xor a
+	ld [bc], a
+	ld a, [wBattleMode]
+	dec a
+	ret z
+	ld [hl], $0
+	ret
+
+.do_partymon
+	call GetPartymonItem
+	xor a
+	ld [bc], a
+	ld [hl], a
+	ret
 
 HandleHPHealingItem:
 	callfar GetOpponentItem
@@ -4607,27 +4615,6 @@ CheckHolderHalfHP:
 	ld a, [de]
 	inc de
 	ld [wBuffer4], a
-	adc a
-	ld b, a
-	ld a, b
-	cp [hl]
-	ld a, c
-	pop bc
-	ret
-	
-CheckHolderQuarterHP:
-	push bc
-	ld a, [de]
-	ld [wBuffer3], a
-	add a
-	add a
-	ld c, a
-	dec de
-	ld a, [de]
-	ld a, [de]
-	inc de
-	ld [wBuffer4], a
-	adc a
 	adc a
 	ld b, a
 	ld a, b

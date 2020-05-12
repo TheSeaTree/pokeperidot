@@ -115,6 +115,24 @@ UpdateBattleHuds::
 	farcall UpdatePlayerHUD
 	farcall UpdateEnemyHUD
 	ret
+	
+CompareHP::
+; return c if HP<bc, z if HP=bc, nc+nz if HP>bc
+	push hl
+	ld hl, wBattleMonHP
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_hp
+	ld hl, wEnemyMonHP
+.got_hp
+	ld a, [hli]
+	sub b
+	jr nz, .ok
+	ld a, [hl]
+	sub c
+.ok
+	pop hl
+	ret
 
 INCLUDE "home/battle_vars.asm"
 
