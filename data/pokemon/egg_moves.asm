@@ -26,7 +26,7 @@ CharmanderEggMoves:
 	db ANCIENTPOWER
 	db BITE
 	db OUTRAGE
-	db DREAD_STORM
+	db DIVE_BOMB
 	db METAL_CLAW
 	db -1 ; end
 
@@ -91,6 +91,7 @@ SpearowEggMoves:
 	db STEEL_WING
 	db RAZOR_WIND
 	db U_TURN
+	db DIVE_BOMB
 	db PAY_DAY
 	db -1 ; end
 
@@ -600,7 +601,7 @@ AerodactylEggMoves:
 	db WHIRLWIND
 	db PURSUIT
 	db FORESIGHT
-	db DREAD_STORM
+	db DIVE_BOMB
 	db STEEL_WING
 	db DRAGON_RAGE
 	db -1 ; end
@@ -626,7 +627,7 @@ DratiniEggMoves:
 	db IRON_TAIL
 	db FIRE_SPIN
 	db HYDRO_PUMP
-	db DREAD_STORM
+	db DIVE_BOMB
 	db -1 ; end
 
 ChikoritaEggMoves:

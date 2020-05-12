@@ -4,7 +4,7 @@ MoveDescriptions::
 	dw KarateChopDescription
 	dw DoubleslapDescription
 	dw CometPunchDescription
-	dw DreadStormDescription
+	dw DiveBombDescription
 	dw PayDayDescription
 	dw FirePunchDescription
 	dw IcePunchDescription
@@ -400,7 +400,6 @@ FlareBlitzDescription:
 	db   "Hurts the user."
 	next "May burn.@"
 
-DreadStormDescription:
 ThrashDescription:
 	db   "Works 2-3 turns"
 	next "and confuses user.@"
@@ -788,6 +787,7 @@ SoftboiledDescription:
 	db   "Restores HP by 1/2"
 	next "the user's max HP.@"
 
+DiveBombDescription:
 HiJumpKickDescription:
 	db   "May miss and hurt"
 	next "the user.@"
