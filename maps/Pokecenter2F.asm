@@ -55,6 +55,8 @@ LinkReceptionistScript_Trade:
 	writetext Text_TradeReceptionistIntro
 	yesorno
 	iffalse .Cancel
+	checkcode VAR_PARTYCOUNT
+	ifless 2, .NotEnough
 	special SetBitsForLinkTradeRequest
 	writetext Text_PleaseWait
 	special WaitForLinkedFriend
@@ -108,12 +110,19 @@ LinkReceptionistScript_Trade:
 .Cancel:
 	closetext
 	end
+	
+.NotEnough:
+	writetext Text_TradeReceptionistNotEnoughPokemon
+	closetext
+	end
 
 LinkReceptionistScript_Battle:
 	opentext
 	writetext Text_BattleReceptionistIntro
 	yesorno
 	iffalse .Cancel
+	checkcode VAR_PARTYCOUNT
+	ifequal 0, .NoPokemon
 	special SetBitsForBattleRequest
 	writetext Text_PleaseWait
 	special WaitForLinkedFriend
@@ -165,6 +174,11 @@ LinkReceptionistScript_Battle:
 .AbortLink:
 	special WaitForOtherPlayerToExit
 .Cancel:
+	closetext
+	end
+	
+.NoPokemon:
+	writetext Text_BattleReceptionistNoPokemon
 	closetext
 	end
 
@@ -435,6 +449,31 @@ Text_TradeReceptionistIntro:
 	para "Would you like to"
 	line "trade?"
 	done
+	
+Text_TradeReceptionistNotEnoughPokemon:
+	text "…Oh, I'm sorry!"
+	
+	para "All trainers must"
+	line "have at least 2"
+	cont "#MON to enter"
+	cont "the TRADE CENTER."
+	
+	para "Please do return"
+	line "if you capture"
+	cont "more #MON!"
+	prompt
+	
+Text_BattleReceptionistNoPokemon:
+	text "We cannot allow"
+	line "you into the CABLE"
+	cont "CLUB COLOSSEUM if"
+	cont "you do not have a"
+	cont "#MON."
+	
+	para "Please return if"
+	line "you obtain a"
+	cont "#MON."
+	prompt
 
 Text_FriendNotReady:
 	text "Your friend is not"
@@ -579,7 +618,7 @@ Pokecenter2F_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
+	bg_event 11,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
 	db 4 ; object events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Trade, -1

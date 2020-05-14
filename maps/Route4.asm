@@ -16,10 +16,7 @@ TrainerLassMelissa:
 	writetext LassMelissaWinText
 	waitbutton
 	closetext
-	end	
-
-MtMoonSquareSign:
-	jumptext MtMoonSquareSignText
+	end
 
 Route4HPUp:
 	itemball HP_UP
@@ -46,13 +43,6 @@ LassMelissaAfterText:
 	cont "you."
 	done
 
-MtMoonSquareSignText:
-	text "MT.MOON SQUARE"
-
-	para "Just go up the"
-	line "stairs."
-	done
-
 Route4_MapEvents:
 	db 0, 0 ; filler
 
@@ -66,8 +56,7 @@ Route4_MapEvents:
 	
 	db 0 ; coord events
 
-	db 2 ; bg events
-	bg_event  3,  7, BGEVENT_READ, MtMoonSquareSign
+	db 1 ; bg events
 	bg_event 20, 23, BGEVENT_ITEM, Route4HiddenUltraBall
 
 	db 1 ; object events

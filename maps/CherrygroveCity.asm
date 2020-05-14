@@ -244,6 +244,9 @@ SchoolboyTimmyAfterText:
 	text "Someday my #MON"
 	line "will be as strong"
 	cont "as yours!"
+	
+	para "Until then, I will"
+	line "train every day!"
 	done
 	
 SilverCherrygroveWinText:

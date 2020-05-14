@@ -206,10 +206,12 @@ TradeCenter_Blocks:
 TimeCapsule_Blocks:
 	INCBIN "maps/TradeCenter.ablk"
 
+ElmsHouse_Blocks:
+	INCBIN "maps/ElmsHouse.ablk"
+
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
-ElmsHouse_Blocks:
 GoldenrodHappinessRater_Blocks:
 PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:

@@ -8,26 +8,30 @@ Route2AzaleaGate_MapScripts:
 	db 0 ; callbacks
 
 Route2AzaleaGateOfficerScript:
-;	loadwildmon GYARADOS, 5
-;	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
-;	startbattle
-;	reloadmapafterbattle
-;	end
 	jumptextfaceplayer Route2AzaleaGateOfficerText
 
 Route2AzaleaGateCooltrainerFScript:
 	jumptextfaceplayer Route2AzaleaGateCooltrainerFText
 
 Route2AzaleaGateOfficerText:
-	text "Hi there!"
-	line "Did you visit"
-	cont "SPROUT TOWER?"
+	text "Up ahead is"
+	cont "PECTINIA CITY."
+
+	para "The GYM there is"
+	line "quite friendly to"
+	cont "new trainers."
 	done
 
 Route2AzaleaGateCooltrainerFText:
-	text "I came too far"
-	line "out. I'd better"
-	cont "phone home!"
+	text "It's amazing how"
+	line "much PECTINIA CITY"
+	cont "has changed in a"
+	cont "short amount of"
+	cont "time." 
+	
+	para "You might say it"
+	line "evolved like a"
+	cont "#MON!"
 	done
 
 Route2AzaleaGate_MapEvents:

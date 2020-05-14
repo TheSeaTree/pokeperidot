@@ -45,22 +45,23 @@ CherrygroveGymSpeechHouseConsole:
 	jumptext CherrygroveGymSApeechHouseConsoleText
 
 CherrygroveGymSpeechHousePokefanMText:
-	text "I really regret"
-	line "buying those games"
-	cont "for my son."
-
-	para "All he does is sit"
-	line "around all day"
-	cont "playing them."
+	text "My daughter just"
+	line "wants to hang out"
+	cont "at the INN."
+	
+	para "She hardly spends"
+	line "any time at home"
+	cont "anymore."
 	done
 	
 CherrygroveGymSpeechHousePokefanFText:
-	text "My husband can be"
-	line "such a grouch."
+	text "A child can't stay"
+	line "at home forever."
 	
-	para "Just let the kid"
-	line "have fun while he"
-	cont "can!"
+	para "My husband has a"
+	line "hard time coming"
+	cont "to terms with this"
+	cont "fact."
 	done
 
 CherrygroveGymSpeechHouseBugCatcherText:
@@ -92,10 +93,10 @@ CherrygroveGymSpeechHouse_MapEvents:
 	db 4 ; bg events
 	bg_event  6,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
 	bg_event  7,  1, BGEVENT_READ, CherrygroveGymSpeechHouseBookshelf
-	bg_event  3,  1, BGEVENT_READ, CherrygroveGymSpeechHouseDrawers
-	bg_event  2,  2, BGEVENT_READ, CherrygroveGymSpeechHouseConsole
+	bg_event  1,  1, BGEVENT_READ, CherrygroveGymSpeechHouseDrawers
+	bg_event  0,  2, BGEVENT_READ, CherrygroveGymSpeechHouseConsole
 
 	db 3 ; object events
 	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHousePokefanMScript, -1
 	object_event  2,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, PAL_NPC_RED, CherrygroveGymSpeechHousePokefanFScript, -1
-	object_event  2,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseBugCatcherScript, -1
+	object_event  0,  3, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CherrygroveGymSpeechHouseBugCatcherScript, -1

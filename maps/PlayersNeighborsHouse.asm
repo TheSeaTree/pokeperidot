@@ -7,9 +7,6 @@ PlayersNeighborsHouse_MapScripts:
 
 	db 0 ; callbacks
 
-PlayersNeighborsDaughterScript:
-	jumptextfaceplayer PlayersNeighborsDaughterText
-
 PlayersNeighborScript:
 	jumptextfaceplayer PlayersNeighborText
 
@@ -44,36 +41,11 @@ PlayersNeighborsHouseRadioScript:
 	closetext
 	end
 
-PlayersNeighborsDaughterText:
-	text "PIKACHU is an"
-	line "evolved #MON."
-
-	para "I was amazed by"
-	line "PROF.ELM's find-"
-	cont "ings."
-
-	para "He's so famous for"
-	line "his research on"
-	cont "#MON evolution."
-
-	para "…sigh…"
-
-	para "I wish I could be"
-	line "a researcher like"
-	cont "him…"
-	done
-
 PlayersNeighborText:
-	text "My daughter is"
-	line "adamant about"
-
-	para "becoming PROF."
-	line "ELM's assistant."
-
-	para "She really loves"
-	line "#MON!"
-
-	para "But then, so do I!"
+	text "This lakeside pro-"
+	line "perty lets me see"
+	cont "so many WATER-type"
+	cont "#MON!"
 	done
 
 PlayerNeighborRadioText1:
@@ -111,4 +83,4 @@ PlayersNeighborsHouse_MapEvents:
 	bg_event  7,  1, BGEVENT_READ, PlayersNeighborsHouseRadioScript
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PlayersNeighborsDaughterScript, -1
+	object_event  2,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PlayersNeighborScript, -1

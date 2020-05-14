@@ -268,8 +268,8 @@ TrainerCard_PrintTopHalfOfCard:
 	db $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $25, $26, -1 ; ____________>
 
 TrainerCard_Page1_PrintDexCaught_GameTime:
-	hlcoord 2, 10
-	ld de, .Dex_PlayTime
+	hlcoord 2, 12
+	ld de, .Dex
 	call PlaceString
 	hlcoord 10, 16
 	ld de, .Badges
@@ -278,7 +278,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	ld b, wEndPokedexCaught - wPokedexCaught
 	call CountSetBits
 	ld de, wNumSetBits
-	hlcoord 15, 10
+	hlcoord 15, 12
 	lb bc, 1, 3
 	call PrintNum
 	ld hl, wStatusFlags2
@@ -304,13 +304,8 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	call ClearBox
 	ret
 
-.Dex_PlayTime:
-	db   "#DEX"
-	next "PLAY TIME"
-	next ""
-;	next "BP@"
-
-	db "@" ; unused
+.Dex:
+	db   "#DEX@"
 	
 .Total_BP:
 	db "BP@"
@@ -474,7 +469,10 @@ TrainerCard_Page2_3_PlaceLeadersFaces:
 	ret
 
 TrainerCard_Page1_PrintGameTime:
-	hlcoord 11, 12
+	hlcoord 2, 10
+	ld de, .PlayTime
+	call PlaceString
+	hlcoord 11, 10
 	ld de, wGameTimeHours
 	lb bc, 2, 4
 	call PrintNum
@@ -485,11 +483,14 @@ TrainerCard_Page1_PrintGameTime:
 	ldh a, [hVBlankCounter]
 	and $1f
 	ret nz
-	hlcoord 15, 12
+	hlcoord 15, 10
 	ld a, [hl]
 	xor " " ^ $2e ; alternate between space and small colon ($2e) tiles
 	ld [hl], a
 	ret
+	
+.PlayTime
+	db "PLAY TIME@"
 	
 TrainerCard_Page1_PrintTotalBP:
 	hlcoord 11, 12

@@ -19,7 +19,8 @@ MaplesLab_MapScripts:
 	scene_script .DummyScene4 ; SCENE_MAPLESLAB_UNUSED
 	scene_script .DummyScene5 ; SCENE_MAPLESLAB_AIDE_GIVES_POTION
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .WateredPlant
 
 .MeetMaple:
 	priorityjump .WalkUpToMaple
@@ -59,6 +60,15 @@ MaplesLab_MapScripts:
 	setscene SCENE_MAPLESLAB_CANT_LEAVE
 	closetext
 	end
+	
+.WateredPlant:
+	checkevent EVENT_GOT_TM_CUT
+	iftrue .WaterPlant
+	return
+	
+.WaterPlant:
+	changeblock 8, 0, $3f
+	return
 
 ProfMapleScript:
 	faceplayer
@@ -295,6 +305,14 @@ MaplesLabGameboyKid:
 
 MaplesLabBookshelf:
 	jumpstd difficultbookshelf
+
+MaplesLabPlant:
+	checkevent EVENT_GOT_TM_CUT
+	iftrue .WateredPlant
+	jumptext MaplesLabPlantText
+	
+.WateredPlant:
+	jumptext MaplesLabWateredPlantText
 	
 MaplesLabBook:
 	jumptext MaplesLabBookText
@@ -546,7 +564,7 @@ AideText_WaitUp:
 AideText_GivePokedex:
 	text "PROF. MAPLE forgot"
 	line "to give you this!"
-	done
+	prompt
 
 AideText_AlwaysBusy:
 	text "A #DEX is one"
@@ -662,6 +680,23 @@ MaplesLabBookText:
 	cont "#MON."
 	done
 	
+MaplesLabPlantText:
+	text "This plant doesn't"
+	line "look too good."
+	
+	para "Did someone forget"
+	line "to water it?"
+	done
+	
+MaplesLabWateredPlantText:
+	text "This plant must be"
+	line "getting lots of"
+	cont "attention."
+	
+	para "It looks so"
+	line "lively!"
+	done
+	
 MaplesLabPictureBook:
 	text "This looks like"
 	line "a newly-discovered"
@@ -718,7 +753,7 @@ MaplesLab_MapEvents:
 	coord_event  4, 11, SCENE_MAPLESLAB_AIDE_GIVES_POTION, AideScript_WalkPotion1
 	coord_event  5, 11, SCENE_MAPLESLAB_AIDE_GIVES_POTION, AideScript_WalkPotion2
 
-	db 13 ; bg events
+	db 14 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  1,  1, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  2,  1, BGEVENT_READ, MaplesLabBookshelf
@@ -732,6 +767,7 @@ MaplesLab_MapEvents:
 	bg_event  9,  7, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  8,  3, BGEVENT_READ, MaplesLabShifurBook
 	bg_event  8,  9, BGEVENT_READ, MaplesLabBook
+	bg_event  9,  1, BGEVENT_READ, MaplesLabPlant
 
 	db 8 ; object events
 	object_event  3,  6, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ProfMapleScript, -1

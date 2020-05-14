@@ -10,11 +10,19 @@ ElmsHouse_MapScripts:
 ElmsWife:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	iffalse .NoPokemon
 	checkmoney YOUR_MONEY, 200
 	ifequal HAVE_LESS, .NoMoney
 
 .Normal
 	writetext ElmsWifeText
+	waitbutton
+	closetext
+	end
+	
+.NoPokemon:
+	writetext ElmsWifeNoPokemonText
 	waitbutton
 	closetext
 	end
@@ -41,24 +49,30 @@ ElmsWife:
 ElmsSon:
 	jumptextfaceplayer ElmsSonText
 
-ElmsHouseRadio:
-	jumpstd radio2
+ElmsHouseLicense:
+	jumptext ElmsHouseLicenseText
 
 ElmsHouseBookshelf:
 	jumpstd difficultbookshelf
 
 ElmsWifeText:
-	text "Hi, <PLAY_G>! My"
-	line "husband's always"
+	text "Hi, <PLAYER>!"
 
-	para "so busy--I hope"
-	line "he's OK."
-
-	para "When he's caught"
-	line "up in his #MON"
-
-	para "research, he even"
-	line "forgets to eat."
+	para "You must be busy"
+	line "as a trainer, but"
+	cont "it is great you"
+	cont "find the time to"
+	cont "come visit us!"
+	done
+	
+ElmsWifeNoPokemonText:
+	text "Hi, <PLAYER>!"
+	
+	para "I know I said you"
+	line "could visit at any"
+	cont "time, but don't"
+	cont "you want to get a"
+	cont "#MON?"
 	done
 	
 CantAffordBalls:
@@ -81,13 +95,18 @@ GiftPokeballsPutAway:
 	done
 
 ElmsSonText:
-	text "When I grow up,"
-	line "I'm going to help"
-	cont "my dad!"
+	text "When I was just a"
+	line "lad, I ran my own"
+	cont "#MON GYM."
+	
+	para "My specialty was"
+	line "the NORMAL type!"
+	done
 
-	para "I'm going to be a"
-	line "great #MON"
-	cont "professor!"
+ElmsHouseLicenseText:
+	text "It looks like an"
+	line "old license for a"
+	cont "#MON GYM."
 	done
 
 ElmsHouseLabFoodText:
@@ -137,10 +156,11 @@ ElmsHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event  6,  1, BGEVENT_READ, ElmsHouseBookshelf
+	bg_event  7,  1, BGEVENT_READ, ElmsHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, ElmsHouseBookshelf
-	bg_event  7,  1, BGEVENT_READ, ElmsHouseRadio
+	bg_event  5,  0, BGEVENT_READ, ElmsHouseLicense
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElmsWife, -1
