@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
-	const AZALEAGYM_BUGSY
-	const AZALEAGYM_BLACKBELT1
-	const AZALEAGYM_BLACKBELT2
+	const AZALEAGYM_MURPHY
+	const AZALEAGYM_OFFICER1
+	const AZALEAGYM_OFFICER2
 	const AZALEAGYM_GYM_GUY
 
 AzaleaGym_MapScripts:
@@ -17,29 +17,29 @@ AzaleaGym_MapScripts:
 .DummyScene1:
 	end
 	
-AzaleaGymBugsyScript:
+AzaleaGymMurphyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_BUGSY
+	checkevent EVENT_BEAT_MURPHY
 	iftrue .FightDone
-	writetext BugsyText_INeverLose
+	writetext MurphyText_INeverLose
 	waitbutton
 	closetext
-	winlosstext BugsyText_ResearchIncomplete, 0
+	winlosstext MurphyText_ResearchIncomplete, 0
 	checkflag ENGINE_FLYPOINT_VIOLET
 	iftrue .Team2
-	loadtrainer BUGSY, BUGSY1
+	loadtrainer MURPHY, MURPHY1
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team2:
-	loadtrainer BUGSY, BUGSY2
+	loadtrainer MURPHY, MURPHY2
 	startbattle
 	reloadmapafterbattle
 	jump .After
 
 .After:
-	setevent EVENT_BEAT_BUGSY
+	setevent EVENT_BEAT_MURPHY
 	special HealParty
 	opentext
 	writetext Text_ReceivedHiveBadge
@@ -50,50 +50,62 @@ AzaleaGymBugsyScript:
 .FightDone:
 	checkevent EVENT_GOT_TM_ROCK_SMASH
 	iftrue .GotFuryCutter
-	setevent EVENT_BEAT_BLACKBELT_BILLY
-	setevent EVENT_BEAT_BLACKBELT_JIMMY
-	writetext BugsyText_HiveBadgeSpeech
+	setevent EVENT_BEAT_OFFICER_BILLY
+	setevent EVENT_BEAT_OFFICER_JIMMY
+	setevent EVENT_BEAT_OFFICER_GORDON
+	writetext MurphyText_HiveBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_ROCK_SMASH
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM_ROCK_SMASH
 	setmapscene VIOLET_CITY, SCENE_FINISHED
-	writetext BugsyText_FuryCutterSpeech
+	writetext MurphyText_FuryCutterSpeech
 	waitbutton
 	closetext
 	end
 .GotFuryCutter:
-	writetext BugsyText_BugMonsAreDeep
+	writetext MurphyText_BugMonsAreDeep
 	waitbutton
 .NoRoomForFuryCutter:
 	closetext
 	end
 
-TrainerBlackBeltBilly:
-	trainer BLACKBELT_T, BILLY, EVENT_BEAT_BLACKBELT_BILLY, BlackBeltBillyText, BlackBeltBillyWinText, 0, .AfterScript
+TrainerOfficerBilly:
+	trainer OFFICER, BILLY, EVENT_BEAT_OFFICER_BILLY, OfficerBillyText, OfficerBillyWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BlackBeltBillyAfterText
+	writetext OfficerBillyAfterText
 	waitbutton
 	closetext
 	end
 
-TrainerBlackBeltJimmy:
-	trainer BLACKBELT_T, JIMMY, EVENT_BEAT_BLACKBELT_JIMMY, BlackBeltJimmyText, BlackBeltJimmyWinText, 0, .AfterScript
+TrainerOfficerJimmy:
+	trainer OFFICER, JIMMY, EVENT_BEAT_OFFICER_JIMMY, OfficerJimmyText, OfficerJimmyWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BlackBeltJimmyAfterText
+	writetext OfficerJimmyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerOfficerGordon:
+	trainer OFFICER, GORDON, EVENT_BEAT_OFFICER_GORDON, OfficerGordonText, OfficerGordonWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext OfficerGordonAfterText
 	waitbutton
 	closetext
 	end
 
 AzaleaGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_BUGSY
+	checkevent EVENT_BEAT_MURPHY
 	iftrue .AzaleaGymGuyWinScript
 	opentext
 	writetext AzaleaGymGuyText
@@ -113,7 +125,7 @@ AzaleaGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext BUGSY, BUGSY1, MEM_BUFFER_1
+	trainertotext MURPHY, MURPHY1, MEM_BUFFER_1
 	jumpstd gymstatue2
 	
 AzaleaCantLeave:
@@ -133,6 +145,9 @@ AzaleaCantLeave:
 	wait 4
 	warpfacing DOWN, AZALEA_TOWN, 40, 17
 	end
+	
+AzaleaLockedDoor:
+	jumptext AzaleaLockedDoorText
 	
 AzaleaLeaveGym:
 	turn_step DOWN
@@ -154,96 +169,69 @@ AzaleaGymWalkFromPlayer:
 	turn_step DOWN
 	step_end
 
-AzaleaGymGreeting:
-	text "Greetings,"
-	line "challenger!"
-	done
-
 AzaleaGymHaveBadge:
 	text "<PLAYER> used"
 	line "the FISTBADGE to"
 	cont "unlock the door!"
 	done
 	
-AzaleaExplainGyms:	
-	text "You should know"
-	line "before you enter"
-	cont "that you cannot"
-	cont "exit a gym"
-	cont "unless you win"
-	cont "a BADGE or white"
-	cont "out."
+MurphyText_INeverLose:
+	text "Welcome, trainer!"
+	line "My name is MURPHY."
 	
-	para "Would you like a"
-	line "chance to stock up"
-	cont "on items before"
-	cont "taking on this"
-	cont "challenge?"
-	done
+	para "Since before you"
+	line "were born, I have"
+	cont "been the strong"
+	cont "arm of the law in"
+	cont "this city!"
 	
-AzaleaGymGoodLuck:
-	text "Good luck on your"
-	line "challenge,"
-	cont "trainer!"
-	done
+	para "My FIGHTING-type"
+	line "#MON have been"
+	cont "trained under the"
+	cont "same discipline I"
+	cont "had at the academy"
+	cont "so many years ago."
 	
-BugsyText_INeverLose:
-	text "I'm BUGSY!"
-	line "I never lose when"
-
-	para "it comes to bug"
-	line "#MON."
-
-	para "My research is"
-	line "going to make me"
-
-	para "the authority on"
-	line "bug #MON!"
-
-	para "Let me demonstrate"
-	line "what I've learned"
-	cont "from my studies."
+	para "My #MON do not"
+	line "only stop crime in"
+	cont "this city."
+	
+	para "They will also put"
+	line "a stop to your GYM"
+	cont "CHALLENGE!"
 	done
 
-BugsyText_ResearchIncomplete:
-	text "Whoa, amazing!"
-	line "You're an expert"
-	cont "on #MON!"
-
-	para "My research isn't"
-	line "complete yet."
-
-	para "OK, you win. Take"
-	line "this BADGE."
+MurphyText_ResearchIncomplete:
+	text "I must be getting"
+	line "too old for this…"
+	
+	para "Heh! I'm only"
+	line "kidding!"
+	
+	para "Congratulations to"
+	line "you, trainer!"
+	
+	para "You have earned my"
+	line "badge, fair and"
+	cont "square." 
 	done
 
 Text_ReceivedHiveBadge:
 	text "<PLAYER> received"
-	line "HIVEBADGE."
+	line "FISTBADGE."
 	done
 
-BugsyText_HiveBadgeSpeech:
-	text "Do you know the"
-	line "benefits of HIVE-"
-	cont "BADGE?"
-
-	para "If you have it,"
-	line "#MON up to L30"
-
-	para "will obey you,"
-	line "even traded ones."
-
-	para "#MON that know"
-	line "CUT will be able"
-
-	para "to use it outside"
-	line "of battle too."
-
-	para "Here, I also want"
-	line "you to have this."
+MurphyText_HiveBadgeSpeech:
+	text "Of course, you do"
+	line "not only win a"
+	cont "BADGE from defeat-"
+	cont "ing a GYM LEADER."
+	
+	para "You have also won"
+	line "my special TM."
 	done
 
-BugsyText_FuryCutterSpeech:
+MurphyText_FuryCutterSpeech:
 	text "TM08 contains"
 	line "ROCK SMASH."
 
@@ -253,8 +241,9 @@ BugsyText_FuryCutterSpeech:
 	cont "DEFENSE."
 	
 	para "It hits hard, and"
-	line "can let you hit"
-	cont "even harder!"
+	line "will hit even"
+	cont "harder on subsequ-"
+	cont "quent strikes!"
 	
 	para "You can also use"
 	line "ROCK SMASH to"
@@ -262,70 +251,99 @@ BugsyText_FuryCutterSpeech:
 	cont "in your path!"
 	done
 
-BugsyText_BugMonsAreDeep:
-	text "Bug #MON are"
-	line "deep. There are"
+MurphyText_BugMonsAreDeep:
+	text "My #MON have"
+	line "sworn to uphold"
+	cont "justice."
+	
+	para "They put these"
+	line "criminals behind"
+	cont "bars, and keep"
+	cont "these streets"
+	cont "clean."
+	done
 
-	para "many mysteries to"
-	line "be explored."
-
-	para "Study your favor-"
-	line "ites thoroughly."
-	done
-
-BlackBeltBillyText:
-	text "I started training"
-	line "in this gym"
-	cont "because of my"
-	cont "older brother."
+OfficerBillyText:
+	text "Freeze!"
+	
+	para "Put your #BALLs"
+	line "where I can see"
+	cont "them!"
 	done
 	
-BlackBeltBillyWinText:
-	text "Oh no!"
+OfficerBillyWinText:
+	text "Stop resisting!"
 	done
 	
-BlackBeltBillyAfterText:
-	text "I hope my girl"
-	line "won't hear "
-	cont "about this…"
+OfficerBillyAfterText:
+	text "It's my job to try"
+	line "and stop any chal-"
+	cont "lengers from"
+	cont "reaching the"
+	cont "LEADER."
 	done
 	
-BlackBeltJimmyText:
-	text "My little brother"
-	line "and I have been"
-	cont "training here for"
-	cont "years!"
+OfficerJimmyText:
+	text ""
 	done
 	
-BlackBeltJimmyWinText:
-	text "That was tougher"
-	line "than I thought it"
-	cont "would be."
+OfficerJimmyWinText:
+	text "You've given me a"
+	line "run for my money,"
+	cont "kid."
 	done
 	
-BlackBeltJimmyAfterText:
-	text "You're pretty good"
-	line "at this, kid."
+OfficerJimmyAfterText:
+	text "MURPHY's #MON"
+	line "are too good at"
+	cont "their jobs."
+	
+	para "It's pretty calm"
+	line "in this city as a"
+	cont "result."
+	done
+	
+OfficerGordonText:
+	text "Thought you were"
+	line "being clever by"
+	cont "sneaking around?"
+	done
+	
+OfficerGordonWinText:
+	text "No way!"
+	
+	para "Outsmarted by a"
+	line "child!"
+	done
+	
+OfficerGordonAfterText:
+	text "Move along,"
+	line "there's nothing to"
+	cont "see here."
 	done
 	
 AzaleaGymGuyText:
 	text "Yo, challenger!"
 
-	para "BUGSY's young, but"
-	line "his knowledge of"
+	para "MURPHY's been at"
+	line "this for a long"
+	cont "time."
 
-	para "bug #MON is for"
-	line "real."
+	para "His FIGHTING-type"
+	line "#MON will pumm-"
+	cont "el you into submi-"
+	cont "ssion if you"
+	cont "aren't prepared."
 
 	para "It's going to be"
 	line "tough without my"
 	cont "advice."
 
-	para "Let's see… Bug"
-	line "#MON don't like"
-	cont "fire."
+	para "PSYCHIC-types will"
+	line "give you a great"
+	cont "advantage."
 
-	para "Flying-type moves"
+	para "FLYING-type moves"
 	line "are super-effec-"
 	cont "tive too."
 	done
@@ -333,32 +351,48 @@ AzaleaGymGuyText:
 AzaleaGymGuyWinText:
 	text "Well done! That"
 	line "was a great clash"
-
-	para "of talented young"
-	line "trainers."
-
-	para "With people like"
-	line "you, the future of"
-	cont "#MON is bright!"
+	cont "between talented"
+	cont "trainers!"
+	
+	para "It's not often"
+	line "someone your age"
+	cont "gives MURPHY such"
+	cont "a challenge."
+	done
+	
+AzaleaLockedDoorText:
+	text "It's locked."
+	
+	para "Probably for a"
+	line "good reason."
 	done
 
 AzaleaGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  8, 19, AZALEA_TOWN, 5
-	warp_event  9, 19, AZALEA_TOWN, 5
+	warp_event  8, 17, AZALEA_TOWN, 5
+	warp_event  9, 17, AZALEA_TOWN, 5
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 8 ; bg events
 	bg_event  7, 15, BGEVENT_READ, AzaleaGymStatue
 	bg_event 10, 15, BGEVENT_READ, AzaleaGymStatue
-	bg_event  8, 20, BGEVENT_DOWN, AzaleaCantLeave
-	bg_event  9, 20, BGEVENT_DOWN, AzaleaCantLeave
+	bg_event  8, 18, BGEVENT_DOWN, AzaleaCantLeave
+	bg_event  9, 18, BGEVENT_DOWN, AzaleaCantLeave
+	bg_event 15,  3, BGEVENT_UP,   AzaleaLockedDoor
+	bg_event  2,  3, BGEVENT_UP,   AzaleaLockedDoor
+	bg_event  6,  3, BGEVENT_UP,   AzaleaLockedDoor
+	bg_event 11,  3, BGEVENT_UP,   AzaleaLockedDoor
 
-	db 4 ; object events
-	object_event  9,  3, SPRITE_BUGSY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaGymBugsyScript, -1
-	object_event  7, 11, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerBlackBeltBilly, -1
-	object_event 10,  7, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackBeltJimmy, -1
-	object_event 11, 17, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuyScript, -1
+	db 9 ; object events
+	object_event  9,  3, SPRITE_BUGSY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymMurphyScript, -1
+	object_event 10, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOfficerBilly, -1
+	object_event  6,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOfficerJimmy, -1
+	object_event 13,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerOfficerGordon, -1
+	object_event 11, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaGymGuyScript, -1
+	object_event 11,  1, SPRITE_BIKER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 16,  2, SPRITE_BIKER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  2, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5,  1, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -180,12 +180,13 @@ AzaleaBurglar:
 AzaleaGymEvent:
 	checkflag ENGINE_ZEPHYRBADGE
 	iftrue .havebadge
-	clearevent EVENT_BEAT_BLACKBELT_BILLY
-	clearevent EVENT_BEAT_BLACKBELT_JIMMY
+	clearevent EVENT_BEAT_OFFICER_BILLY
+	clearevent EVENT_BEAT_OFFICER_JIMMY
+	clearevent EVENT_BEAT_OFFICER_GORDON
 	scall AzaleaGymEntrance
 	iffalse .no
 .havebadge
-	warpfacing UP, AZALEA_GYM,  8, 19
+	warpfacing UP, AZALEA_GYM,  8, 17
 .no
 	end	
 

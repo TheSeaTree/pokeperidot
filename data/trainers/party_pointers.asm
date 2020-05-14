@@ -4,7 +4,7 @@ TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	dw FalknerGroup
 	dw WhitneyGroup
-	dw BugsyGroup
+	dw MurphyGroup
 	dw MortyGroup
 	dw PryceGroup
 	dw JasmineGroup

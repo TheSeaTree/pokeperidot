@@ -147,7 +147,7 @@ ENDM
 	map_const CHARCOAL_KILN,                                4,  4 ;  2
 	map_const AZALEA_MART,                                  6,  4 ;  3
 	map_const KURTS_HOUSE,                                  8,  4 ;  4
-	map_const AZALEA_GYM,                                   9, 10 ;  5
+	map_const AZALEA_GYM,                                   9,  9 ;  5
 	map_const AZALEA_TOWN,                                 30, 20 ;  7
 	map_const AZALEA_APARTMENT_LEFT,                        6,  4
 	map_const AZALEA_APARTMENT_LEFT_2F,                     6,  4

@@ -37,10 +37,10 @@ KRIS EQU __enum__
 	const WHITNEY1
 	const WHITNEY_REMATCH
 
-	trainerclass BUGSY ; 3
-	const BUGSY1
-	const BUGSY2
-	const BUGSY_REMATCH
+	trainerclass MURPHY ; 3
+	const MURPHY1
+	const MURPHY2
+	const MURPHYY_REMATCH
 	
 	trainerclass MORTY ; 4
 	const MORTY1
@@ -334,8 +334,6 @@ KRIS EQU __enum__
 	const BLAIR
 	
 	trainerclass BLACKBELT_T ; 32
-	const BILLY
-	const JIMMY
 	const AXEL
 	const CLINT
 	const JUN
@@ -409,6 +407,9 @@ KRIS EQU __enum__
 	const BLUE1
 
 	trainerclass OFFICER ; 41
+	const BILLY
+	const JIMMY
+	const GORDON
 	
 	trainerclass GRUNTF ; 42
 
