@@ -318,7 +318,7 @@ Route2_MapEvents:
 	db 0 ; coord events
 	
 	db 2 ; bg events
-	bg_event  5, 5, BGEVENT_READ, Route2Sign
+	bg_event  4,  5, BGEVENT_READ, Route2Sign
 	bg_event 18, 30, BGEVENT_READ, Route2TrainerTips
 
 	db 15 ; object events

@@ -11,9 +11,13 @@ Route4AzaleaGateOfficerScript:
 	jumptextfaceplayer Route4AzaleaGateOfficerText
 
 Route4AzaleaGateOfficerText:
-	text "Hi there!"
-	line "Did you visit"
-	cont "SPROUT TOWER?"
+	text "I hope you can"
+	line "swim, kid."
+	
+	para "Otherwise there is"
+	line "no point going to"
+	cont "ROUTE 4 through"
+	cont "this gate."
 	done
 
 Route4AzaleaGate_MapEvents:

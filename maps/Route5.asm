@@ -195,6 +195,9 @@ TrainerCooltrainerFAnya:
 	waitbutton
 	closetext
 	end
+	
+Route5FishingGuruSign:
+	jumptext Route5FishingGuruSignText
 
 Route5FruitTree:
 	fruittree FRUITTREE_ROUTE_5
@@ -374,6 +377,11 @@ SchoolboyGusAfterText:
 	para "Girls love them."
 	done
 	
+Route5FishingGuruSignText:
+	text "FISHING GURU's"
+	line "house."
+	done
+	
 AnyaExplaination:
 	text "Hey trainer, you"
 	line "look new here."
@@ -469,7 +477,8 @@ Route5_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 41, 13, BGEVENT_READ, Route5FishingGuruSign
 
 	db 12 ; object events
 	object_event 4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherEddie, -1

@@ -284,7 +284,10 @@ OfficerBillyAfterText:
 	done
 	
 OfficerJimmyText:
-	text ""
+	text "Hey, a trainer!"
+	
+	para "Let's battle to"
+	line "pass the time."
 	done
 	
 OfficerJimmyWinText:

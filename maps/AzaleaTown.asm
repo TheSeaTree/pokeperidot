@@ -13,6 +13,7 @@
 	const AZALEATOWN_YOUNGSTER3
 	const AZALEATOWN_FRUIT_TREE
 	const AZALEATOWN_BURGLAR
+	const AZALEATOWN_GENTLEMAN
 	const AZALEATOWN_FANGIRL
 
 AzaleaTown_MapScripts:
@@ -38,8 +39,6 @@ AzaleaTown_MapScripts:
 	return
 	
 AzaleaTownRivalBattleScene1:
-	checkevent EVENT_BEAT_RIVAL_1
-	iftrue .skip
 	moveobject AZALEATOWN_SILVER, 36, 13
 	opentext
 	writetext AzaleaTownRivalWait
@@ -51,10 +50,6 @@ AzaleaTownRivalBattleScene1:
 	pause 15
 	appear AZALEATOWN_SILVER
 	applymovement AZALEATOWN_SILVER, AzaleaTownRivalBattleApproachMovement1
-	jump AzaleaTownRivalBattleScript
-	
-.skip:
-	end
 
 AzaleaTownRivalBattleScript:
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -103,6 +98,7 @@ AzaleaTownRivalBattleScript:
 	disappear AZALEATOWN_SILVER
 	waitsfx
 	setevent EVENT_BEAT_RIVAL_1
+	setscene SCENE_AZALEATOWN_DEFEATED_RIVAL
 	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
 	special LoadUsedSpritesGFX
 	playsound SFX_EXIT_BUILDING
@@ -230,9 +226,21 @@ AzaleaTownPokefanMScript:
 
 AzaleaTownRockerScript:
 	jumptextfaceplayer AzaleaTownRockerText
+	
+AzaleaTrainBlock:
+	jumptextfaceplayer AzaleaTownGentlemanText
 
 AzaleaTownSign:
 	jumptext AzaleaTownSignText
+
+AzaleaApartmentsSign:
+	jumptext AzaleaApartmentsSignText
+
+AzaleaSquareSign:
+	jumptext AzaleaSquareSignText
+	
+AzaleaTrainStationSign:
+	jumptext AzaleaTrainStationSignText
 
 AzaleaTownPokecenterSign:
 	jumpstd pokecentersign
@@ -565,6 +573,16 @@ AzaleaTownRockerText:
 	cont "in the trees."
 	done
 
+AzaleaTownGentlemanText:
+	text "The SUBWAY is not"
+	line "running at this"
+	cont "time."
+	
+	para "We apologize for"
+	line "any inconvenience"
+	cont "this may cause."
+	done
+
 AzaleaTownGrowlitheText:
 	text "GROWLITHE: Bark!"
 	done
@@ -574,11 +592,26 @@ AzaleaTownHoundourText:
 	done
 	
 AzaleaTownSignText:
-	text "AZALEA TOWN"
-	line "Where People and"
-
-	para "#MON Live in"
-	line "Happy Harmony"
+	text "PECTINIA CITY"
+	
+	para "The big city with"
+	line "small town values."
+	done
+	
+AzaleaApartmentsSignText:
+	text "PECTINIA APARTMENT"
+	line "COMPLEX"
+	done
+	
+AzaleaSquareSignText:
+	text "PECTINIA SQUARE"
+	
+	para "Where your #MON"
+	line "may roam free."
+	done
+	
+AzaleaTrainStationSignText:
+	text "PECTINIA SUBWAY"
 	done
 
 AzaleaGymFirstTimeText:
@@ -705,10 +738,13 @@ AzaleaTown_MapEvents:
 	warp_event 37, 11, AZALEA_EVOLUTION_HOUSE, 1
 
 	db 1 ; coord events
-	coord_event 40, 18, -1, AzaleaTownRivalBattleScene1
+	coord_event 40, 18, SCENE_AZALEATOWN_NOTHING, AzaleaTownRivalBattleScene1
 
-	db 8 ; bg events
-	bg_event 17, 21, BGEVENT_READ, AzaleaTownSign
+	db 11 ; bg events
+	bg_event  6, 25, BGEVENT_READ, AzaleaTownSign
+	bg_event  6, 25, BGEVENT_READ, AzaleaApartmentsSign
+	bg_event 29, 23, BGEVENT_READ, AzaleaSquareSign
+	bg_event 23, 11, BGEVENT_READ, AzaleaTrainStationSign
 	bg_event 50,  7, BGEVENT_READ, AzaleaTownPokecenterSign
 	bg_event 32, 11, BGEVENT_READ, AzaleaTownMartSign
 	bg_event 16, 18, BGEVENT_ITEM, AzaleaTownHiddenFullHeal
@@ -717,7 +753,7 @@ AzaleaTown_MapEvents:
 	bg_event 34, 11, BGEVENT_READ, AzaleaTownVendingMachine
 	bg_event 40, 17, BGEVENT_UP,   AzaleaGymEvent
 
-	db 15 ; object events
+	db 16 ; object events
 	object_event 29, 19, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownTeacherScript, -1
 	object_event 31, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungsterScript, -1
 	object_event 32, 16, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaTownGrowlitheScript, -1
@@ -732,4 +768,5 @@ AzaleaTown_MapEvents:
 	object_event 13, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaTownYoungster3Script, -1
 	object_event 49, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaBerryTree, -1
 	object_event 33, 37, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaBurglar, EVENT_AZALEA_RETURNED_BIKE
+	object_event 24, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AzaleaTrainBlock, -1
 	object_event 0, 0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

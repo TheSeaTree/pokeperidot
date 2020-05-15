@@ -35,12 +35,7 @@ CianwoodMartClerkScript:
 	end
 
 CianwoodMartCooltrainerMScript:
-	faceplayer
-	opentext
-	writetext CianwoodMartCooltrainerMText_PokeBallsInStock
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer CianwoodMartCooltrainerMText
 
 CianwoodMartYoungsterScript:
 	jumptextfaceplayer CianwoodMartYoungsterText
@@ -58,46 +53,35 @@ CianwooMartRobbed:
 	line "hurt, but I lost a"
 	cont "lot of my stock."
 	done
-	
-;	para "I don't have much"
-;	line "to offer."
-;	done
-	
+
 CianwoodMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
-
-	para "When will they get"
-	line "more of them?"
-	done
-
-CianwoodMartCooltrainerMText_PokeBallsInStock:
-	text "# BALLS are in"
-	line "stock! Now I can"
-	cont "catch #MON!"
+	text "It's a good thing"
+	line "nobody was in the"
+	cont "MART when the"
+	cont "BURGLAR was here."
+	
+	para "You beat him and"
+	line "his gang all on"
+	cont "your own?"
+	
+	para "Yeah right!"
 	done
 
 CianwoodMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
-
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	text "Wow, this place"
+	line "was robbed?"
+	
+	para "I've never heard"
+	line "of that happening"
+	cont "before!"
 	done
 
 CianwoodMart_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CIANWOOD_CITY, 4
-	warp_event  3,  7, CIANWOOD_CITY, 4
+	warp_event  2,  7, CIANWOOD_CITY, 2
+	warp_event  3,  7, CIANWOOD_CITY, 2
 
 	db 0 ; coord events
 

@@ -54,6 +54,9 @@ FindMysteryGiftItem:
 	jumpstd mysterygiftgirl
 	end
 
+AzaleaApartmentLeft3FSuperNerd:
+	jumptextfaceplayer AzaleaApartmentLeft3FSuperNerdText
+
 MysterGiftText:
 	text "MYSTERY GIFT!"
 	line "MYSTERY GIFT!"
@@ -99,6 +102,17 @@ DeclineMysteryGiftText:
 	para "Some other time,"
 	line "okay?"
 	done
+	
+AzaleaApartmentLeft3FSuperNerdText:
+	text "I make a habit of"
+	line "trading items with"
+	cont "MYSTERY GIFT every"
+	cont "day."
+	
+	para "Sometimes I get"
+	line "some really cool"
+	cont "items."
+	done
 
 AzaleaApartmentLeft3F_MapEvents:
 	db 0, 0 ; filler
@@ -110,5 +124,6 @@ AzaleaApartmentLeft3F_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  7,  5, SPRITE_GAMEBOY_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MysteryGiftGirl, -1
+	object_event  0,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeft3FSuperNerd, -1

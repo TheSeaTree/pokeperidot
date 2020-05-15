@@ -263,13 +263,12 @@ AzaleaGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_FRUIT_TREE
 	db SPRITE_GROWLITHE
-	db SPRITE_KURT_OUTSIDE ; non-walking version of SPRITE_KURT
 	db SPRITE_ROCK
 	db SPRITE_SHELLDER
 	db SPRITE_OMANYTE
 	db SPRITE_NURSE
 	db SPRITE_CLEFAIRY
-	db SPRITE_AMBER
+	db SPRITE_GENTLEMAN
 	db SPRITE_POKE_BALL
 	db 0 ; end
 

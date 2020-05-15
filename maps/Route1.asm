@@ -179,6 +179,9 @@ TrainerCooltrainerMLeon:
 
 Route1Sign:
 	jumptext Route1SignText
+	
+Route1HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_1_HIDDEN_POWER_HERB
 
 Route1FruitTree:
 	fruittree FRUITTREE_ROUTE_1
@@ -397,8 +400,9 @@ Route1_MapEvents:
 	db 1 ; coord events
 	coord_event 14, 18, SCENE_DEFAULT, MoveSuperNerds
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
+	bg_event   4,  5, BGEVENT_READ, Route1HiddenPowerHerb
 
 	db 13 ; object events
 	object_event  18, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Lass, -1

@@ -16,16 +16,6 @@ GoldenrodPokecenter1FBugCatcherScript:
 	jumptextfaceplayer GoldenrodPokecenter1FBugCatcherText
 	
 GoldenrodPokecenter1FLassScript:
-;	writebyte GYARADOS
-;	special FindPartyMonThatSpecies
-;	iffalse .no
-;	writebyte DREAD_STORM
-;	opentext
-;	special MoveTutor
-;	closetext
-;	end
-;	
-;.no
 	jumptextfaceplayer GoldenrodPokecenter1FLassText
 
 GoldenrodPokecenter1FPokefanF:

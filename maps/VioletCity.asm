@@ -167,6 +167,15 @@ VioletGymEntrance:
 	jumpstd gymdoor
 	end
 	
+VioletCitySuperNerd:
+	jumptextfaceplayer VioletCitySuperNerdText
+	
+VioletCityLass:
+	jumptextfaceplayer VioletCityLassText
+	
+VioletCityFisher1:
+	jumptextfaceplayer VioletCityFisher1Text
+
 VioletCityFisher2:
 	jumptextfaceplayer VioletCityFisher2Text
 	
@@ -396,6 +405,37 @@ RunningShoesCaution:
 	line "trainer!"
 	done
 	
+VioletCitySuperNerdText:
+	text "I tried to battle"
+	line "LEADER CECIL with"
+	cont "only GRASS-type"
+	cont "#MON."
+
+	para "I can tell you"
+	line "that didn't turn"
+	cont "out well for me"
+	cont "one bit."
+	done
+	
+VioletCityLassText:
+	text "Ah! The smell of"
+	line "the ocean breeze"
+	cont "is so soothing!"
+	
+	para "I don't live here,"
+	line "but I might need"
+	cont "to move."
+	done
+	
+VioletCityFisher1Text:
+	text "I love to fish!"
+	
+	para "The ocean hides so"
+	line "many cool #MON"
+	cont "you can't find"
+	cont "anywhere else."
+	done
+
 VioletCityFisher2Text:
 	text "ARGH!"
 	
@@ -469,9 +509,9 @@ VioletCity_MapEvents:
 	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 
 	db 10 ; object events
-	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 16,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 12, 18, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityFisher1, -1
+	object_event 16,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityLass, -1
+	object_event 22, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_GREEN,OBJECTTYPE_SCRIPT, 0, VioletCitySuperNerd, -1
 	object_event 21, 20, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFisher2, -1
 	object_event  6, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletCityYoungster, -1
 	object_event  1, 18, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VioletCityFruitTree, -1

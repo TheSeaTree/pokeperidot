@@ -1,27 +1,18 @@
 	const_def 2 ; object constants
-	const ROUTE2GATE_SCIENTIST
+	const ROUTE2GATE_OFFICER
 
 Route2Gate_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route2GateScientistScript:
-	jumptextfaceplayer Route2GateScientistText
-
-Route2GateScientistText:
-	text "Are you <PLAY_G>?"
-
-	para "I work as PROF."
-	line "OAK's AIDE."
-
-	para "I had no idea that"
-	line "you were out here."
-
-	para "PROF.OAK's LAB is"
-	line "nearby in PALLET"
-	cont "TOWN."
-	done
+Colton:
+	faceplayer
+	opentext
+	trade NPC_TRADE_COLTON
+	waitbutton
+	closetext
+	end
 
 Route2Gate_MapEvents:
 	db 0, 0 ; filler
@@ -37,4 +28,4 @@ Route2Gate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  6,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route2GateScientistScript, -1
+	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Colton, -1

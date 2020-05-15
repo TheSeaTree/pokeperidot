@@ -104,8 +104,8 @@ endr
 	
 .RockItems:
 	db 1, MAX_REVIVE
-	db 1, OLD_AMBER
-	db 2, NUGGET
+	db 1, NUGGET
+	db 2, STARDUST
 	db 4, THICK_CLUB
 	db 6, STAR_PIECE
 	db 8, FIRE_STONE

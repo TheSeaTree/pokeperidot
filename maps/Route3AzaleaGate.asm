@@ -11,48 +11,18 @@ Route3AzaleaGate_MapScripts:
 	end
 
 Route6SaffronGuardScript:
-	faceplayer
-	opentext
-	checkevent EVENT_RETURNED_MACHINE_PART
-	iftrue .ReturnedPart
-	writetext Route6SaffronGuardWelcomeText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer Route3AzaleaGuardText
 
-.ReturnedPart:
-	writetext Route6SaffronGuardMagnetTrainText
-	waitbutton
-	closetext
-	end
-
-Route6SaffronGuardWelcomeText:
-	text "Welcome to SAFFRON"
-	line "CITY, home of the"
-	cont "MAGNET TRAIN!"
-
-	para "…That's what I'd"
-	line "normally say, but"
-
-	para "the MAGNET TRAIN"
-	line "isn't running now."
-
-	para "It's not getting"
-	line "any electricity"
-
-	para "because there's"
-	line "something wrong"
-
-	para "with the POWER"
-	line "PLANT."
-	done
-
-Route6SaffronGuardMagnetTrainText:
-	text "The MAGNET TRAIN"
-	line "is the most famous"
-
-	para "thing about SAF-"
-	line "FRON."
+Route3AzaleaGuardText:
+	text "There is a huge"
+	line "mountain on ROUTE"
+	cont "3 that attracts"
+	cont "all sorts of"
+	cont "trainers."
+	
+	para "But you won't be"
+	line "able to reach it"
+	cont "from this path."
 	done
 
 Route3AzaleaGate_MapEvents:

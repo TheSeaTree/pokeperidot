@@ -26,30 +26,6 @@ CianwoodCity_MapScripts:
 	setflag ENGINE_FLYPOINT_CIANWOOD
 	return
 	
-ShoesGuy:
-	faceplayer
-	opentext
-	writetext ShoesGuyText
-	setflag ENGINE_POKEGEAR
-	buttonsound
-	closetext
-	end
-	
-ShoesGuyText:
-	text "You must have come"
-	line "a long way on your"
-	cont "adventure, those"
-	cont "shoes look all"
-	cont "worn out."
-	
-	para "You should take"
-	line "this pair of"
-	cont "RUNNING SHOES."
-	
-	para "It's OK, they"
-	cont "don't fit me."
-	done
-	
 CianwoodCityBurglar:
 	playsound SFX_EXIT_BUILDING
 	appear CIANWOODCITY_BURGLAR2
@@ -385,12 +361,9 @@ CianwoodPokeSeerSignText:
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 10 ; warp events
-	warp_event  9, 31, MANIAS_HOUSE, 1
-	warp_event 20, 15, GOLDENROD_GYM, 1
+	db 8 ; warp events
 	warp_event 11, 19, CIANWOOD_POKECENTER_1F, 1
 	warp_event 19, 21, CIANWOOD_MART, 1
-	warp_event  9,  5, CIANWOOD_PHOTO_STUDIO, 1
 	warp_event  5, 31, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
 	warp_event 27, 23, POKE_SEERS_HOUSE, 1
 	warp_event  4, 21, PALEROCK_MOUNTAIN_3F, 2
@@ -400,11 +373,10 @@ CianwoodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 19, 22, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
 	
-	db 5 ; bg events
+	db 4 ; bg events
 	bg_event 16, 22, BGEVENT_READ, CianwoodCitySign
 	bg_event 12, 19, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 20, 21, BGEVENT_READ, CianwoodPharmacySign
-	bg_event  7, 27, BGEVENT_READ, CianwoodPokeSeerSign
 	bg_event 20, 15, BGEVENT_UP,   CianwoodGymEvent
 
 	db 7 ; object events

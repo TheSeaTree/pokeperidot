@@ -27,18 +27,14 @@ GoldenrodMartGrannyScript:
 	jumptextfaceplayer GoldenrodMartGrannyText
 
 GoldenrodMartSuperNerdText:
-	text "My EEVEE evolved"
-	line "into an ESPEON."
-
-	para "But my friend's"
-	line "EEVEE turned into"
-	cont "an UMBREON."
-
-	para "I wonder why? We"
-	line "both were raising"
-
-	para "our EEVEE in the"
-	line "same way…"
+	text "When my #MON"
+	line "used HEADBUTT on a"
+	cont "tree, a RINRING"
+	cont "fell out!"
+	
+	para "I wonder what it"
+	line "was doing up in"
+	cont "that tree."
 	done
 
 GoldenrodMartGrannyText:

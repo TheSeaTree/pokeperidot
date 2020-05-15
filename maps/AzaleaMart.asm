@@ -21,29 +21,21 @@ AzaleaMartBugCatcherScript:
 	jumptextfaceplayer AzaleaMartBugCatcherText
 
 AzaleaMartCooltrainerMText:
-	text "When you first"
-	line "catch a #MON,"
-	cont "it may be weak."
-
-	para "But it will even-"
-	line "tually grow to be"
-	cont "strong."
-
-	para "It's important to"
-	line "treat #MON with"
-	cont "love."
+	text "I need some more"
+	line "POTIONs before I"
+	cont "try to take on the"
+	cont "GYM here again."
 	done
 
 AzaleaMartBugCatcherText:
-	text "#MON can hold"
-	line "items like POTION"
-	cont "and ANTIDOTE."
-
-	para "But they don't"
-	line "appear to know how"
-
-	para "to use manmade"
-	line "items."
+	text "A #MON holding"
+	line "a BERRY may eat it"
+	cont "in battle."
+	
+	para "It saves you the"
+	line "time of getting a"
+	cont "POTION from out of"
+	cont "your PACK."
 	done
 
 AzaleaMart_MapEvents:

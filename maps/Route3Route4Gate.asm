@@ -10,11 +10,10 @@ Route3Route4GateOfficerScript:
 	jumptextfaceplayer Route3Route4GateOfficerText
 
 Route3Route4GateOfficerText:
-	text "Have you been to"
-	line "LAVENDER TOWN?"
-
-	para "There's a tall"
-	line "RADIO TOWER there."
+	text "Up ahead is ROUTE"
+	line "4. I hope you can"
+	cont "enjoy the calming"
+	cont "view of the lake."
 	done
 
 Route3Route4Gate_MapEvents:

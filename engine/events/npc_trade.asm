@@ -409,26 +409,31 @@ TradeTexts:
 	dw TradeIntroText2
 	dw TradeIntroText3
 	dw TradeIntroText4
+	dw TradeIntroText5
 ; TRADE_DIALOG_CANCEL
 	dw TradeCancelText1
 	dw TradeCancelText2
 	dw TradeCancelText3
 	dw TradeCancelText4
+	dw TradeCancelText5
 ; TRADE_DIALOG_WRONG
 	dw TradeWrongText1
 	dw TradeWrongText2
 	dw TradeWrongText3
 	dw TradeWrongText4
+	dw TradeWrongText5
 ; TRADE_DIALOG_COMPLETE
 	dw TradeCompleteText1
 	dw TradeCompleteText2
 	dw TradeCompleteText3
 	dw TradeCompleteText4
+	dw TradeCompleteText5
 ; TRADE_DIALOG_AFTER
 	dw TradeAfterText1
 	dw TradeAfterText2
 	dw TradeAfterText3
 	dw TradeAfterText4
+	dw TradeAfterText5
 
 ConnectLinkCableText:
 	; OK, connect the Game Link Cable.
@@ -467,6 +472,7 @@ TradeWrongText1:
 	text_end
 
 TradeCompleteText1:
+TradeCompleteText5:
 	; Yay! I got myself @ ! Thanks!
 	text_far UnknownText_0x1bd4d2
 	text_end
@@ -484,6 +490,7 @@ TradeIntroText3:
 
 TradeCancelText2:
 TradeCancelText3:
+TradeCancelText5:
 	; You don't have one either? Gee, that's really disappointing…
 	text_far UnknownText_0x1bd565
 	text_end
@@ -500,6 +507,7 @@ TradeCompleteText2:
 	text_end
 
 TradeAfterText2:
+TradeAfterText5:
 	; Hi! The @ you traded me is doing great!
 	text_far UnknownText_0x1bd5f4
 	text_end
@@ -515,6 +523,7 @@ TradeCancelText4:
 	text_end
 
 TradeWrongText4:
+TradeWrongText5:
 	; That's not @ . Please trade with me if you get one.
 	text_far UnknownText_0x1bd696
 	text_end
@@ -537,4 +546,9 @@ TradeCompleteText3:
 TradeAfterText3:
 	; Trading is so odd… I still have a lot to learn about it.
 	text_far UnknownText_0x1bd745
+	text_end
+
+TradeIntroText5:
+	; I collect #MON. Do you have @ ? Want to trade it for my @ ?
+	text_far TradeText_Intro5
 	text_end

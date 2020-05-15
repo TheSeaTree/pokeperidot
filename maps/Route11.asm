@@ -43,12 +43,6 @@ Route11MoveTutor:
 	waitbutton
 	closetext
 	end
-	
-CurseSetup:
-	earthquake 2
-	givepoke CURSTRAW, 15
-	setevent EVENT_GOT_TM_CURSE
-	end
 
 Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
@@ -123,8 +117,7 @@ Route11_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 51,  21, BGEVENT_READ, CurseSetup
+	db 0 ; bg events
 
 	db 2 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1

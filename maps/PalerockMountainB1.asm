@@ -7,15 +7,39 @@
 	const PALEROCKB1_BOULDER6
 	const PALEROCKB1_BOULDER7
 	const PALEROCKB1_BOULDER8
+	const PALEROCKB1_ITEMBALL1
+	const PALEROCKB1_ITEMBALL2
+	const PALEROCKB1_ITEMBALL3
 	
 PalerockMountainB1_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .ItemBalls
+
+.ItemBalls:
+	checkevent EVENT_BOULDER_IN_PALEROCK_B
+	iftrue .NoItems
+	return
+
+.NoItems:
+	disappear PALEROCKB1_ITEMBALL1
+	disappear PALEROCKB1_ITEMBALL2
+	disappear PALEROCKB1_ITEMBALL3
+	return
 
 PalerockB1Hiker:
 	faceplayer
 	jumptext PalerockB1HikerText
+	
+PalerockMountainB1FFireStone:
+	itemball FIRE_STONE
+
+PalerockMountainB1FStardust:
+	itemball STARDUST
+
+PalerockMountainB1FRevive:
+	itemball REVIVE
 	
 PalerockMountainB1Boulder:
 	jumpstd strengthboulder
@@ -48,7 +72,7 @@ PalerockMountainB1_MapEvents:
 
 	db 0 ; bg events
 
-	db 8 ; object events
+	db 11 ; object events
 	object_event   3,  4, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainB1Boulder, -1
 	object_event   9, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainB1Boulder, -1
 	object_event   8,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainB1Boulder, EVENT_BOULDER_IN_PALEROCK_B
@@ -57,4 +81,7 @@ PalerockMountainB1_MapEvents:
 	object_event  14, 11, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainB1Boulder, EVENT_BOULDER_IN_PALEROCK_B
 	object_event  17,  6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainB1Boulder, EVENT_BOULDER_IN_PALEROCK_B
 	object_event  5,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockB1Hiker, EVENT_BOULDER_IN_PALEROCK_B
+	object_event 15, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainB1FFireStone, EVENT_PALEROCK_MOUNTAIN_B1F_FIRE_STONE
+	object_event  6, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainB1FStardust, EVENT_PALEROCK_MOUNTAIN_B1F_STARDUST
+	object_event  2,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainB1FRevive, EVENT_PALEROCK_MOUNTAIN_B1F_REVIVE
 	

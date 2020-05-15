@@ -89,7 +89,7 @@ PalerockMountain3F_MapEvents:
 
 	db 3 ; warp events
 	warp_event  13, 11, PALEROCK_MOUNTAIN_2F, 4
-	warp_event  13,  3, CIANWOOD_CITY, 8
+	warp_event  13,  3, CIANWOOD_CITY, 5
 	warp_event   4, 14, PALEROCK_MOUNTAIN_2F, 5
 
 	db 0 ; coord events

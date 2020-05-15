@@ -14,7 +14,6 @@ MysteryGiftItems:
 	db 8, ELIXER
 	db 8, ETHER
 	db 8, MAX_ETHER
-	db 8, REVIVE
 	db 8, MOOMOO_MILK
 	db 8, HEAVY_BALL
 	db 8, LEVEL_BALL
@@ -24,6 +23,8 @@ MysteryGiftItems:
 	db 8, MOON_BALL
 	db 6, SILVER_LEAF
 	db 6, GOLD_LEAF
+	db 4, FOCUS_SASH
+	db 4, POWER_HERB
 	db 4, WATER_STONE
 	db 4, LEAF_STONE
 	db 4, FIRE_STONE

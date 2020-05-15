@@ -1503,6 +1503,19 @@ UnknownText_0x1bd745::
 	para "I still have a lot"
 	line "to learn about it."
 	done
+	
+TradeText_Intro5::
+	text "I've always wanted"
+	line "a pink DITTO!"
+	
+	para "Unfortunately, the"
+	line "one I caught was"
+	cont "blue."
+	
+	para "Would you like to"
+	line "trade a pink DITTO"
+	cont "for my blue one?"
+	done
 
 UnknownText_0x1bd77f::
 	text "Wow, that's a cute"

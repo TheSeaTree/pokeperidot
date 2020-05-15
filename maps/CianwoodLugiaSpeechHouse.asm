@@ -142,8 +142,8 @@ CianwoodLugiaSpeechHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, CIANWOOD_CITY, 6
-	warp_event  3,  7, CIANWOOD_CITY, 6
+	warp_event  2,  7, CIANWOOD_CITY, 3
+	warp_event  3,  7, CIANWOOD_CITY, 3
 
 	db 0 ; coord events
 

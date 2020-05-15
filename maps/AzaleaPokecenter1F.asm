@@ -26,9 +26,9 @@ AzaleaPokecenter1FPokefanF:
 	jumptextfaceplayer AzaleaPokecenter1FPokefanFText
 	
 AzaleaPokecenter1FGentlemanText:
-	text "#MON CENTERs are"
-	line "free to use for"
-	cont "all trainers."
+	text "#MON CENTERs"
+	line "are free to use"
+	cont "for all trainers."
 	
 	para "They are funded by"
 	line "trainers who fail"

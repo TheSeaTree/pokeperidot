@@ -15,7 +15,7 @@ Route2AzaleaGateCooltrainerFScript:
 
 Route2AzaleaGateOfficerText:
 	text "Up ahead is"
-	cont "PECTINIA CITY."
+	line "PECTINIA CITY."
 
 	para "The GYM there is"
 	line "quite friendly to"
