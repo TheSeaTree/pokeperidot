@@ -6,7 +6,6 @@ MysteryGiftItems:
 	db 8, BURNT_BERRY
 	db 8, PSNCUREBERRY
 	db 8, MIRACLEBERRY
-	db 8, SILVER_BERRY
 	db 8, REVIVE
 	db 8, GREAT_BALL
 	db 8, SUPER_REPEL
@@ -23,6 +22,7 @@ MysteryGiftItems:
 	db 8, MOON_BALL
 	db 6, SILVER_LEAF
 	db 6, GOLD_LEAF
+	db 6, SILVER_BERRY
 	db 4, FOCUS_SASH
 	db 4, POWER_HERB
 	db 4, WATER_STONE
@@ -38,6 +38,7 @@ MysteryGiftItems:
 	db 4, X_SP_ATK
 	db 4, X_SP_DEF
 	db 2, X_ACCURACY
+	db 2, GOLD_BERRY
 	db 1, HP_UP
 	db 1, CARBOS
 	db 1, CALCIUM
