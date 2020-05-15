@@ -1344,6 +1344,28 @@ Pack_InitGFX:
 	hlcoord 5, 1
 	lb bc, 11, 15
 	call ClearBox
+
+; Left/Right Borders
+	hlcoord 0, 1
+	ld a, $26
+	ld de, SCREEN_WIDTH
+	ld c, SCREEN_HEIGHT - 7
+.next_row1
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .next_row1
+
+	hlcoord 4, 1
+	ld a, $25
+	ld de, SCREEN_WIDTH
+	ld c, SCREEN_HEIGHT - 7
+.next_row2
+	ld [hl], a
+	add hl, de
+	dec c
+	jr nz, .next_row2
+
 ; ◀▶ POCKET       ▼▲ ITEMS
 	hlcoord 0, 0
 	ld a, $28
@@ -1420,9 +1442,9 @@ DrawPocketName:
 	db $15, $16, $17, $18, $19 ; Balls
 	db $02, $05, $05, $05, $03 ; bottom border
 ; KEY_ITEM_POCKET
-	db $00, $04, $04, $04, $01 ; top border
-	db $0b, $0c, $0d, $0e, $0f ; Key Items
-	db $02, $05, $05, $05, $03 ; bottom border
+	db $00, $20, $21, $04, $01 ; top border
+	db $15, $0c, $0d, $0e, $19 ; Key Items
+	db $02, $1c, $1d, $1e, $03 ; bottom border
 ; TM_HM_POCKET
 	db $00, $04, $04, $04, $01 ; top border
 	db $10, $11, $12, $13, $14 ; TM/HM
