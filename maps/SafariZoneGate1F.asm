@@ -100,7 +100,7 @@ SafariGuardScript:
 .NotEnoughMoney:
 	writetext SafariZoneNoMoneyText
 
-.StepAway	
+.StepAway:
 	waitbutton
 	closetext
 	end
