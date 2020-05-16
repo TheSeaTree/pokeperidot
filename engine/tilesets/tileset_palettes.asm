@@ -25,6 +25,8 @@ LoadSpecialMapPalette:
 	jr z, .facility
 	cp  TILESET_LIGHTHOUSE
 	jr z, .lighthouse
+	cp  TILESET_PORT
+	jr z, .port
 	jr .do_nothing
 
 .pokecom_2f
@@ -63,6 +65,11 @@ LoadSpecialMapPalette:
 
 .mansion_mobile
 	call LoadMansionPalette
+	scf
+	ret
+	
+.port
+	call LoadPortPalette
 	scf
 	ret
 	
@@ -158,6 +165,17 @@ INCLUDE "gfx/tilesets/radio_tower.pal"
 
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"
+
+LoadPortPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PortPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+PortPalette:
+INCLUDE "gfx/tilesets/port.pal"
 
 LoadMansionPalette:
 	ld a, BANK(wBGPals1)

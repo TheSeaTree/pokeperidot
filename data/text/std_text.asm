@@ -154,6 +154,11 @@ MerchandiseShelfText:
 	text "Lots of #MON"
 	line "merchandise!"
 	done
+	
+GymGeyserText:
+	text "It's impossible to"
+	line "pass!"
+	done
 
 TownMapText:
 	text "It's the TOWN MAP."

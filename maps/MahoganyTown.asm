@@ -86,13 +86,21 @@ MahoganyGymEvent:
 	clearevent EVENT_MAHOGANY_GYM_SWITCH_4
 	scall MahoganyGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, MAHOGANY_GYM, 12, 31
 .no
 	end	
+
+.havebadge
+	scall MahoganyEnterGym
+	jump .warp
 	
 MahoganyGymEntrance:
 	jumpstd gymdoor
+	end
+	
+MahoganyEnterGym:
+	jumpstd entergym
 	end
 
 MahoganyTownLass:

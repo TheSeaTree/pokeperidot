@@ -11,22 +11,19 @@ VioletGymB1_MapScripts:
 .Sand:
 	checkevent EVENT_BEAT_SWIMMERM_VINNY
 	iffalse .skip1
-	changeblock 14, 16, $11
-	changeblock 14, 18, $11
+	changeblock 14, 16, $21
 .skip1
 	checkevent EVENT_BEAT_SWIMMERM_JIMMY
 	iffalse .skip2
-	changeblock 24, 10, $11
+	changeblock 30, 16, $21
 .skip2
 	checkevent EVENT_BEAT_SWIMMERF_VIVIAN
 	iffalse .skip3
-	changeblock 10, 10, $11
-	changeblock  8, 10, $11
+	changeblock  6, 10, $21
 .skip3
 	checkevent EVENT_BEAT_SWIMMERM_RONNIE
 	iffalse .skip4
-	changeblock 18,  6, $11
-	changeblock 18,  8, $11
+	changeblock 18,  6, $21
 .skip4
 	return
 
@@ -109,29 +106,30 @@ VioletGymB1TriggerScript1:
 	opentext
 	checkevent EVENT_BEAT_SWIMMERM_VINNY
 	iftrue .true
+	writetext SwimmerVinnyText
+	waitbutton
 	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext VioletGymChallenge
+	writetext SwimmerVinnyChallengeText
 	waitbutton
 	closetext
-	winlosstext VioletGymWin, 0
+	winlosstext SwimmerVinnyWinText, 0
 	loadtrainer SWIMMERM, VINNY
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SWIMMERM_VINNY
 	opentext
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerVinnyConfirmText
 	waitbutton
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 30
-	changeblock 14, 16, $11
-	changeblock 14, 18, $11
+	changeblock 14, 16, $21
 	reloadmappart
 	waitsfx
 	end
 	
 .true
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerVinnyAfterText
 	waitbutton
 	closetext
 	end
@@ -142,27 +140,27 @@ VioletGymB1TriggerScript2:
 	checkevent EVENT_BEAT_SWIMMERM_JIMMY
 	iftrue .true
 	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext VioletGymChallenge
+	writetext SwimmerJimmyText
 	waitbutton
 	closetext
-	winlosstext VioletGymWin, 0
+	winlosstext SwimmerJimmyWinText, 0
 	loadtrainer SWIMMERM, JIMMY1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SWIMMERM_JIMMY
 	opentext
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerJimmyConfirmText
 	waitbutton
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
-	changeblock 24, 10, $11
+	changeblock 30, 16, $21
 	reloadmappart
 	waitsfx
 	end
 	
 .true
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerJimmyAfterText
 	waitbutton
 	closetext
 	end
@@ -173,28 +171,27 @@ VioletGymB1TriggerScript3:
 	checkevent EVENT_BEAT_SWIMMERF_VIVIAN
 	iftrue .true
 	playmusic MUSIC_BEAUTY_ENCOUNTER
-	writetext VioletGymChallenge
+	writetext SwimmerVivianText
 	waitbutton
 	closetext
-	winlosstext VioletGymWin, 0
+	winlosstext SwimmerVivianWinText, 0
 	loadtrainer SWIMMERF, VIVIAN
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SWIMMERF_VIVIAN
 	opentext
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerVivianConfirmText
 	waitbutton
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
-	changeblock 10, 10, $11
-	changeblock  8, 10, $11
+	changeblock  6, 10, $21
 	reloadmappart
 	waitsfx
 	end	
 	
 .true
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerVivianAfterText
 	waitbutton
 	closetext
 	end
@@ -205,152 +202,218 @@ VioletGymB1TriggerScript4:
 	checkevent EVENT_BEAT_SWIMMERM_RONNIE
 	iftrue .true
 	playmusic MUSIC_HIKER_ENCOUNTER
-	writetext VioletGymChallenge
+	writetext SwimmerRonnieText
 	waitbutton
 	closetext
-	winlosstext VioletGymWin, 0
+	winlosstext SwimmerRonnieWinText, 0
 	loadtrainer SWIMMERM, RONNIE
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SWIMMERM_RONNIE
 	opentext
-	writetext VioletGymBarrierConfirm
+	writetext SwimmerRonnieConfirmText
 	waitbutton
 	closetext
 	playsound SFX_HYDRO_PUMP
 	earthquake 40
-	changeblock 18,  6, $11
-	changeblock 18,  8, $11
+	changeblock 18,  6, $21
 	reloadmappart
 	waitsfx
 	end	
 	
 .true
-	writetext VioletGymBarrierConfirm
-	waitbutton
-	closetext
-	end
-
-VioletGymB1BarrierScript:
-	opentext
-	writetext VioletGymB1Barrier
+	writetext SwimmerRonnieAfterText
 	waitbutton
 	closetext
 	end
 	
 FalknerIntroText:
-	text "I'm FALKNER, the"
-	line "VIOLET #MON"
-	cont "Gym leader!"
+	text "I am CECIL, the"
+	line "GYM LEADER of"
+	cont "RIDGE VILLAGE!"
 
-	para "People say you can"
-	line "clip flying-type"
+	para "You have been down"
+	line "in this gym long"
+	cont "enough to notice I"
+	cont "train WATER-type"
+	cont "#MON."
 
-	para "#MON's wings"
-	line "with a jolt of"
-	cont "electricity…"
-
-	para "I won't allow such"
-	line "insults to bird"
-	cont "#MON!"
-
-	para "I'll show you the"
-	line "real power of the"
-
-	para "magnificent bird"
-	line "#MON!"
+	para "I won't waste your"
+	line "time with talk."
+	
+	para "Let us dive right"
+	line "into battle!"
 	done
 
 FalknerWinLossText:
-	text "…Darn! My dad's"
-	line "cherished bird"
-	cont "#MON…"
+	text "Oh, what has"
+	line "become of me?"
 
-	para "All right."
-	line "Take this."
-
-	para "It's the official"
-	line "#MON LEAGUE"
-	cont "ZEPHYRBADGE."
+	para "You put up a great"
+	line "fight, trainer."
+	
+	para "And with that, you"
+	line "have earned a new"
+	cont "BADGE!"
 	done
 
 ReceivedZephyrBadgeText:
 	text "<PLAYER> received"
-	line "ZEPHYRBADGE."
+	line "WAVEBADGE."
 	done
 
 FalknerZephyrBadgeText:
-	text "ZEPHYRBADGE"
-	line "raises the attack"
-	cont "power of #MON."
-
-	para "It also enables"
-	line "#MON to use"
-
-	para "FLASH, if they"
-	line "have it, anytime."
-
-	para "Here--take this"
+	text "Here--take this"
 	line "too."
 	done
 
 FalknerTMMudSlapText:
-	text "By using a TM, a"
-	line "#MON will"
+	text "TM45 contains"
+	line "WHIRLPOOL."
 
-	para "instantly learn a"
-	line "new move."
+	para "An enemy trapped"
+	line "by this move will"
+	cont "be unable to flee."
 
-	para "Think before you"
-	line "act--a TM can be"
-	cont "used only once."
+	para "That #MON will"
+	line "also take damage"
+	cont "each turn."
 
-	para "TM31 contains"
-	line "MUD-SLAP."
-
-	para "It reduces the"
-	line "enemy's accuracy"
-
-	para "while it causes"
-	line "damage."
-
-	para "In other words, it"
-	line "is both defensive"
-	cont "and offensive."
+	para "I trust you will"
+	line "be able to use it"
+	cont "well!"
 	done
 
 FalknerFightDoneText:
-	text "There are #MON"
-	line "Gyms in cities and"
-	cont "towns ahead."
-
-	para "You should test"
-	line "your skills at"
-	cont "these Gyms."
-
-	para "I'm going to train"
-	line "harder to become"
-
-	para "the greatest bird"
-	line "master!"
+	text "I sank like a rock"
+	line "in our battle."
+	
+	para "I assure you, that"
+	line "will not happen in"
+	cont "the future!"
 	done
 	
-VioletGymChallenge:
-	text "I am a"
-	line "#MON trainer!"
-	done
-
-VioletGymWin:
-	text "I lost."
-	done
-
-VioletGymBarrierConfirm:
-	text "CLICK!"
+SwimmerVinnyText:
+	text "Welcome to the"
+	line "RIDGE GYM!"
+	
+	para "Did you notice the"
+	line "geysers blocking"
+	cont "your path?"
 	done
 	
-VioletGymB1Barrier:
-	text "No!"
-	line "You cannot pass!"
+SwimmerVinnyChallengeText:
+	text "I can turn them"
+	line "off for you, but"
+	cont "you need to beat"
+	cont "me in a battle!"
+	done
+	
+SwimmerVinnyWinText:
+	text "Gah! You cracked"
+	line "our shell!"
+	done
+	
+SwimmerVinnyConfirmText:
+	text "Now that you've"
+	line "won, I will turn"
+	cont "off the geyser for"
+	cont "you."
+	done
+	
+SwimmerVinnyAfterText:
+	text "There will be many"
+	line "more trainers you"
+	cont "will need to"
+	cont "defeat before the"
+	cont "LEADER will accept"
+	cont "your challenge."
+	done
+	
+SwimmerJimmyText:
+	text "Are you caught in"
+	line "the middle of two"
+	cont "geysers?"
+	
+	para "I can do something"
+	line "about that!"
+	done
+	
+SwimmerJimmyWinText:
+	text "You have left me"
+	line "breathless!"
+	done
+	
+SwimmerJimmyConfirmText:
+	text "Alright, time to"
+	line "move on."
+	
+	para "CLICK!"
+	done
+	
+SwimmerJimmyAfterText:
+	text "You can't rely on"
+	line "just one #MON"
+	cont "to carry you"
+	cont "through a GYM."
+
+	para "You need variety."
+	done
+	
+SwimmerVivianText:
+	text "Don't go easy on"
+	line "me just because"
+	cont "I'm a woman!"
+	done
+	
+SwimmerVivianWinText:
+	text "I saw a rainbow"
+	line "during our battle!"
+	done
+	
+SwimmerVivianConfirmText:
+	text "One more trainer"
+	line "to go."
+	
+	para "Do you think you"
+	line "are ready?"
+	done
+	
+SwimmerVivianAfterText:
+	text "You came close to"
+	line "making me cry"
+	cont "after our battle."
+	done
+
+SwimmerRonnieText:
+	text "You know the drill"
+	line "by now."
+
+	para "If you can defeat"
+	cont "me, I will clear"
+	cont "the path to LEADER"
+	cont "CECIL."
+	done
+	
+SwimmerRonnieWinText:
+	text "You've left me"
+	line "starstruck!"
+	done
+	
+SwimmerRonnieConfirmText:
+	text "I was the last in"
+	line "line on your way"
+	cont "to the LEADER."
+	
+	para "Go on, CECIL is"
+	line "waiting."
+	done
+	
+SwimmerRonnieAfterText:
+	text "What's the holdup?"
+	
+	para "Go, challenge the"
+	line "GYM LEADER."
 	done
 	
 VioletGymB1_MapEvents:
@@ -366,6 +429,6 @@ VioletGymB1_MapEvents:
 	db 5 ; object events
 	object_event 19,  3, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1FalknerScript, -1
 	object_event 13, 21, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript1, -1 ;Vinny
-	object_event 16, 12, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
-	object_event 28, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian
-	object_event  3,  9, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript4, -1 ;Ronnie
+	object_event 17, 13, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
+	object_event 31, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian
+	object_event  7,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript4, -1 ;Ronnie

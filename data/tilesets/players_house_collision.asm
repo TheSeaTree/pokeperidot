@@ -42,7 +42,7 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 29
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2a
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 2b
-	tilecoll WALL, FLOOR, FLOOR, WALL ; 2c
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2c
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 2d
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 2e
 	tilecoll STAIRCASE, WALL, FLOOR, FLOOR ; 2f

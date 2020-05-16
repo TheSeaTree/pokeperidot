@@ -2,6 +2,7 @@ StdScripts::
 ; entries correspond to constants/std_constants.asm
 	dba PokecenterNurseScript
 	dba GymDoorScript
+	dba EnterGymDoorScript
 	dba CantLeaveGymScript
 	dba StrangersMailbox
 	dba DifficultBookshelfScript
@@ -10,6 +11,7 @@ StdScripts::
 	dba TeamRocketOathScript
 	dba IncenseBurnerScript
 	dba MerchandiseShelfScript
+	dba GymGeyserScript
 	dba TownMapScript
 	dba WindowScript
 	dba TVScript
@@ -155,15 +157,18 @@ GymDoorScript:
 	yesorno
 	iffalse .no
 	closetext
+	jump EnterGymDoorScript
+
+.no
+	closetext
+	end
+	
+EnterGymDoorScript:
 	applymovement PLAYER, GymTurnBackMovement
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	special FadeOutMusic
 	waitsfx
-	end
-
-.no
-	closetext
 	end
 	
 CantLeaveGymScript:
@@ -198,6 +203,9 @@ IncenseBurnerScript:
 
 MerchandiseShelfScript:
 	farjumptext MerchandiseShelfText
+	
+GymGeyserScript:
+	farjumptext GymGeyserText
 
 TownMapScript:
 	opentext

@@ -193,6 +193,7 @@ SECTION "Map Scripts 14", ROMX
 INCLUDE "maps/LostLand.asm"
 INCLUDE "maps/Route11CurseHouse.asm"
 
+
 SECTION "Map Scripts 15", ROMX
 
 INCLUDE "maps/Route5UndergroundPathEntrance.asm"
@@ -219,6 +220,7 @@ INCLUDE "maps/Route22South.asm"
 
 SECTION "Map Scripts 17", ROMX
 
+INCLUDE "maps/VioletGymB1.asm"
 INCLUDE "maps/MahoganyTown.asm"
 INCLUDE "maps/Route3AzaleaGate.asm"
 INCLUDE "maps/Route6SurfersHouse.asm"
@@ -330,7 +332,6 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
-INCLUDE "maps/VioletGymB1.asm"
 INCLUDE "maps/PalerockMountain1F.asm"
 INCLUDE "maps/PalerockMountain2F.asm"
 INCLUDE "maps/PalerockMountain3F.asm"

@@ -3,6 +3,7 @@
 	enum_start
 	enum pokecenternurse
 	enum gymdoor
+	enum entergym
 	enum cantleavegym
 	enum mailbox
 	enum difficultbookshelf
@@ -11,6 +12,7 @@
 	enum teamrocketoath
 	enum incenseburner
 	enum merchandiseshelf
+	enum gymgeyser
 	enum townmap
 	enum window
 	enum tv

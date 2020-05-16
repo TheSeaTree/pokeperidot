@@ -75,7 +75,7 @@ VioletCantLeave:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	wait 4
-	warpfacing DOWN, MAHOGANY_TOWN, 38,  7
+	warpfacing DOWN, VIOLET_CITY, 38,  7
 	end
 	
 VioletLeaveGym:

@@ -125,13 +125,21 @@ GoldenrodGymEvent:
 	clearevent EVENT_BEAT_GUITARIST_XAVIER
 	scall GoldenrodGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, CIANWOOD_GYM, 15, 39
 .no
 	end
+
+.havebadge
+	scall GoldenrodEnterGym
+	jump .warp
 	
 GoldenrodGymEntrance:
 	jumpstd gymdoor
+	end
+	
+GoldenrodEnterGym
+	jumpstd entergym
 	end
 	
 Route34MovementData_PlayerMoves:

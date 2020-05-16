@@ -58,7 +58,6 @@ CheckGrassCollision::
 	ret
 
 .blocks
-	db COLL_CUT_08
 	db COLL_TALL_GRASS
 	db COLL_LONG_GRASS
 	db COLL_CUT_28

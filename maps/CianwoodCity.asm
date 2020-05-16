@@ -102,13 +102,21 @@ CianwoodGymEvent:
 	clearevent GOLDENROD_LEADER_DOOR_3
 	scall CianwoodGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, GOLDENROD_GYM, 8, 17
 .no
 	end
 	
+.havebadge
+	scall CianwoodEnterGym
+	jump .warp
+	
 CianwoodGymEntrance:
 	jumpstd gymdoor
+	end
+	
+CianwoodEnterGym:
+	jumpstd entergym
 	end
 	
 CianwoodCityTMIceBeam:
@@ -361,7 +369,7 @@ CianwoodPokeSeerSignText:
 CianwoodCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 7 ; warp events
 	warp_event 11, 19, CIANWOOD_POKECENTER_1F, 1
 	warp_event 19, 21, CIANWOOD_MART, 1
 	warp_event  5, 31, CIANWOOD_LUGIA_SPEECH_HOUSE, 1

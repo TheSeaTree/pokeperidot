@@ -60,13 +60,21 @@ EcruteakGymEvent:
 	clearflag EVENT_BEAT_POKEFANM_LESTER
 	scall EcruteakGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, ECRUTEAK_GYM, 10, 21
 .no
 	end
+
+.havebadge
+	scall EcruteakEnterGym
+	jump .warp
 	
 EcruteakGymEntrance:
 	jumpstd gymdoor
+	end
+	
+EcruteakEnterGym
+	jumpstd entergym
 	end
 	
 EcruteakCityLass:

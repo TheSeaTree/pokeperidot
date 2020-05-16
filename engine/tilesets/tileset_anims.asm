@@ -117,16 +117,22 @@ UnusedTilesetAnim_fc103:
 
 TilesetPortAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-;	dw NULL,  AnimateWaterPalette
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw NULL, AnimateLeftGeyserTile
+	dw NULL, AnimateRightGeyserTile
+	dw NULL, AnimateLeftGeyserTile2
+	dw NULL, AnimateRightGeyserTile2
+	dw NULL, AnimateLeftGeyserTile3
+	dw NULL, AnimateRightGeyserTile3
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateWaterPalette	
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
@@ -469,6 +475,150 @@ RightFireTileFrames:
 	INCBIN "gfx/tilesets/fire/right_2.2bpp"
 	INCBIN "gfx/tilesets/fire/left_4.2bpp"
 	INCBIN "gfx/tilesets/fire/left_3.2bpp"
+	
+AnimateLeftGeyserTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(LeftGeyserTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(LeftGeyserTileFrames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $23
+	jp WriteTile
+	
+LeftGeyserTileFrames:
+	INCBIN "gfx/tilesets/geyser/left_1.2bpp"
+	INCBIN "gfx/tilesets/geyser/left_2.2bpp"
+
+AnimateLeftGeyserTile2:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(LeftGeyserTile2Frames)
+	ld l, a
+	ld a, 0
+	adc HIGH(LeftGeyserTile2Frames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $33
+	jp WriteTile
+	
+LeftGeyserTile2Frames:
+	INCBIN "gfx/tilesets/geyser/left_3.2bpp"
+	INCBIN "gfx/tilesets/geyser/left_4.2bpp"
+
+AnimateLeftGeyserTile3:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(LeftGeyserTile3Frames)
+	ld l, a
+	ld a, 0
+	adc HIGH(LeftGeyserTile3Frames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $43
+	jp WriteTile
+	
+LeftGeyserTile3Frames:
+	INCBIN "gfx/tilesets/geyser/left_5.2bpp"
+	INCBIN "gfx/tilesets/geyser/left_6.2bpp"
+
+AnimateRightGeyserTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(RightGeyserTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(RightGeyserTileFrames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $24
+	jp WriteTile
+	
+RightGeyserTileFrames:
+	INCBIN "gfx/tilesets/geyser/right_1.2bpp"
+	INCBIN "gfx/tilesets/geyser/right_2.2bpp"
+
+AnimateRightGeyserTile2:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(RightGeyserTile2Frames)
+	ld l, a
+	ld a, 0
+	adc HIGH(RightGeyserTile2Frames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $34
+	jp WriteTile
+	
+RightGeyserTile2Frames:
+	INCBIN "gfx/tilesets/geyser/right_3.2bpp"
+	INCBIN "gfx/tilesets/geyser/right_4.2bpp"
+
+AnimateRightGeyserTile3:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(RightGeyserTile3Frames)
+	ld l, a
+	ld a, 0
+	adc HIGH(RightGeyserTile3Frames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $44
+	jp WriteTile
+	
+RightGeyserTile3Frames:
+	INCBIN "gfx/tilesets/geyser/right_5.2bpp"
+	INCBIN "gfx/tilesets/geyser/right_6.2bpp"
 
 AnimateWaterTile:
 ; Draw a water tile for the current frame in VRAM tile at de.

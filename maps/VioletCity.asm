@@ -158,13 +158,21 @@ VioletGymEvent:
 	clearevent EVENT_BEAT_SWIMMERM_RONNIE
 	scall VioletGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, VIOLET_GYM,  4, 7
 .no
 	end	
 	
+.havebadge
+	scall VioletEnterGym
+	jump .warp
+	
 VioletGymEntrance:
 	jumpstd gymdoor
+	end
+	
+VioletEnterGym:
+	jumpstd entergym
 	end
 	
 VioletCitySuperNerd:

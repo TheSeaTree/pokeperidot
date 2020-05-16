@@ -182,7 +182,7 @@ ENDM
 	map_const VIOLET_MART,                                  6,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  4 ;  7
 	map_const VIOLET_POKECENTER_1F,                         5,  4 ; 10
-	map_const VIOLET_GYM_B1,							   17, 16 ; 18
+	map_const VIOLET_GYM_B1,							   18, 16 ; 18
 	map_const VIOLET_MOVE_TUTOR,                            4,  4
 	map_const VIOLET_WEATHER_HOUSE,                         4,  4
 	map_const VIOLET_TRADE_HOUSE,                           4,  4

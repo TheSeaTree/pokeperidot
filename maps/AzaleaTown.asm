@@ -181,13 +181,21 @@ AzaleaGymEvent:
 	clearevent EVENT_BEAT_OFFICER_GORDON
 	scall AzaleaGymEntrance
 	iffalse .no
-.havebadge
+.warp
 	warpfacing UP, AZALEA_GYM,  8, 17
 .no
 	end	
 
+.havebadge
+	scall AzaleaEnterGym
+	jump .warp
+
 AzaleaGymEntrance:
 	jumpstd gymdoor
+	end
+	
+AzaleaEnterGym:
+	jumpstd entergym
 	end
 
 AzaleaTownGrowlitheScript:
