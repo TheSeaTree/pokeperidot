@@ -158,35 +158,6 @@ Route10DigGuyExplainDig:
 	cont "your legs the"
 	cont "trouble."
 	done
-	
-Route10DigGuyTeachDig:
-	text "So do you want me"
-	line "to teach DIG to"
-	cont "your #MON?"
-	done
-	
-Route10DigGuyWhichOne:
-	text "Which #MON"
-	line "am I tutoring?"
-	done
-	
-Route10DigGuyAfterTeaching:
-	text "I hope that move"
-	line "will help you out"
-	cont "there."
-	
-	para "I know it would"
-	line "have helped me a"
-	cont "ton."
-	done
-	
-Route10DigGuyRefused:
-	text "I'm not tutoring"
-	line "anything? Alright."
-	
-	para "Come back some"
-	line "other time."
-	done
 
 Route10North_MapEvents:
 	db 0, 0 ; filler
