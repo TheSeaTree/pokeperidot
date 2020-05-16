@@ -359,19 +359,19 @@ LassHollyAfterText:
 	done
 	
 SchoolboyGusText:
-	text "I found this GOLD"
-	line "BERRY tree all on"
-	cont "my own!"
+	text "I discovered this"
+	line "SILVER BERRY tree"
+	cont "all on my own!"
 	done
 	
 SchoolboyGusWinText:
 	text "You won fair and"
 	line "square. Take a"
-	cont "GOLD BERRY."
+	cont "SILVER BERRY."
 	done
 
 SchoolboyGusAfterText:
-	text "GOLD BERRIES are"
+	text "SILVER BERRIES are"
 	line "very rare."
 	
 	para "Girls love them."
