@@ -4,6 +4,14 @@ CianwoodCaveB1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_NEVERMELTICE_CHAMBER_OPEN
+	iffalse .skip
+	changeblock 18, 0, $13
+.skip
+	return
 	
 TrainerBurglarKen:
 	trainer BURGLAR, KEN, EVENT_BEAT_BURGLAR_KEN, BurglarKenText, BurglarKenWinText, 0, .Script
@@ -18,6 +26,9 @@ TrainerBurglarKen:
 
 CianwoodCaveHiker:
 	jumptextfaceplayer CianwoodCaveHikerText
+	
+CianwoodCaveB1FPPUp:
+	itemball PP_UP
 	
 CianwoodCaveB1FBoulder:
 	jumpstd strengthboulder
@@ -60,17 +71,19 @@ BurglarKenAfterText:
 CianwoodCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event  9,  3, CIANWOOD_CAVE_1F, 2
 	warp_event 15,  5, CIANWOOD_CAVE_B2F, 1
 	warp_event 31, 25, CIANWOOD_CAVE_B2F, 2
 	warp_event 35,  5, CIANWOOD_CHURCH, 3
+	warp_event 19,  1, NEVERMELTICE_CHAMBER, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  19, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB1FBoulder, -1
 	object_event  31, 7, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarKen, EVENT_CLEARED_CHURCH
 	object_event   4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodCaveHiker, EVENT_CLEARED_CHURCH
+	object_event 13, 22, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodCaveB1FPPUp, CIANWOOD_CAVE_B1F_PP_UP

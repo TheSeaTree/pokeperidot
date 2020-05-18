@@ -18,7 +18,13 @@ VioletPokecenter1FYoungsterScript:
 	jumptextfaceplayer VioletPokecenter1FYoungsterText
 
 VioletPokecenter1FGentlemanText:
-	text ""
+	text "It does my heart"
+	line "good to see new"
+	cont "faces around here."
+	
+	para "I know that a love"
+	line "of #MON will"
+	cont "never fade away!"
 	done
 
 VioletPokecenter1FYoungsterText:

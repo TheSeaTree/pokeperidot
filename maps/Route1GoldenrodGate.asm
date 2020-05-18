@@ -8,30 +8,27 @@ Route1GoldenrodGate_MapScripts:
 	db 0 ; callbacks
 
 Route1GoldenrodOfficerScript:
-	jumptextfaceplayer Route1NewBarkGateOfficerText
+	jumptextfaceplayer Route1GoldenrodOfficerText
 
 Route1GoldenrodYoungsterScript:
-	jumptextfaceplayer Route1NewBarkGateYoungsterText
+	jumptextfaceplayer Route1GoldenrodYoungsterText
 
 Route1GoldenrodOfficerText:
-	text "You can't climb"
-	line "ledges."
-
-	para "But you can jump"
-	line "down from them to"
-	cont "take a shortcut."
+	text "Have you ever seen"
+	line "a #MON EGG?"
+	
+	para "Nobody knows where"
+	line "they come from."
+	
+	para "I have my own the-"
+	line "ories, though."
 	done
 
 Route1GoldenrodYoungsterText:
-	text "Different kinds of"
-	line "#MON appear"
-	cont "past here."
-
-	para "If you want to"
-	line "catch them all,"
-
-	para "you have to look"
-	line "everywhere."
+	text "I was so close to"
+	line "catching a NATU,"
+	cont "but then it used"
+	cont "TELEPORT…"
 	done
 
 Route1GoldenrodGate_MapEvents:

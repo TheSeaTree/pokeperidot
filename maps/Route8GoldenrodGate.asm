@@ -41,8 +41,10 @@ Route8GoldenrodGateScientistScript:
 
 Route8GoldenrodGateOfficerText:
 	text "Hi there!"
-	line "Did you visit"
-	cont "SPROUT TOWER?"
+	
+	para "Are you planning"
+	line "to visit the DAY"
+	cont "CARE?"
 	done
 
 Route8GoldenrodGateScientistText:

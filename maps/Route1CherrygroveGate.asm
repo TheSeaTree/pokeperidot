@@ -10,12 +10,12 @@ Route1CherrygroveGateOfficerScript:
 	jumptextfaceplayer Route1CherrygroveGateOfficerText
 
 Route1CherrygroveGateOfficerText:
-	text "You're from JOHTO,"
-	line "aren't you?"
+	text "You must be from"
+	line "ELKHORN TOWN."
 
-	para "How do you like"
-	line "KANTO? It's nice,"
-	cont "don't you agree?"
+	para "You're tarting out"
+	line "on a big adven-"
+	cont "ture, aren't you?"
 	done
 
 Route1CherrygroveGate_MapEvents:

@@ -110,11 +110,10 @@ VioletGymGuyText:
 	para "You believe?"
 	line "Then listen."
 
-	para "The grass-type is"
-	line "weak against the"
-
-	para "flying-type. Keep"
-	line "this in mind."
+	para "WATER-types do"
+	line "not like GRASS one"
+	cont "bit. Keep this in"
+	cont "mind."
 	done
 
 VioletGymGuyWinText:

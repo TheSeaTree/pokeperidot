@@ -68,16 +68,22 @@ TrainerBeautyReggie:
 	end	
 	
 BeautyReggieText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I'm both brawn and"
+	line "beauty!"
 	done
 	
 BeautyReggieWinText:
-	text "I lost."
+	text "What a workout!"
 	done
 	
 BeautyReggieAfterText:
-	text "I lost."
+	text "Cute and strong"
+	line "things are my fav-"
+	cont "orite."
+
+	para "So you can hang"
+	line "around here for a"
+	cont "while if you want."
 	done
 	
 DoorOpenedText:

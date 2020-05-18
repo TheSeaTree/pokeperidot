@@ -212,7 +212,7 @@ LassNicoleAfterText:
 	para "They must sleep"
 	line "during the day."
 	done
-	
+
 BirdKeeperPhilText:
 	text "I flew here using"
 	line "my bird #MON!"
@@ -248,42 +248,58 @@ LadJackAfterText:
 	done
 	
 TeacherAndreaText:
-	text "I am a"
-	line "#MON trainer!"
+	text "One of my students"
+	line "has run off alone!"
 	done
 	
 TeacherAndreaWinText:
-	text "I lost."
+	text "Can you help me"
+	line "find him?"
 	done
 	
 TeacherAndreaAfterText:
-	text "I lost."
+	text "My students always"
+	line "say they like me."
+	
+	para "I don't know why"
+	line "one would run off."
 	done
 	
 SchoolboyJohnnyText:
-	text "I am a"
-	line "#MON trainer!"
+	text "My classmate went"
+	line "off alone to find"
+	cont "rare items."
 	done
 
 SchoolboyJohnnyWinText:
-	text "I lost."
+	text "I should have"
+	line "joined him!"
 	done
 	
 SchoolboyJohnnyAfterText:
-	text "I lost."
+	text "He promised to"
+	line "share with me if"
+	cont "I didn't snitch on"
+	cont "him."
 	done
 	
 SchoolboyDannyText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I'm hiding!"
+	
+	para "Don't tell anyone!"
 	done
 
 SchoolboyDannyWinText:
-	text "I lost."
+	text "I wanted to find"
+	line "some items around"
+	cont "here."
 	done
 	
 SchoolboyDannyAfterText:
-	text "I lost."
+	text "I can't find any-"
+	line "thing! Can you"
+	cont "help me find my"
+	cont "teacher now?"
 	done
 	
 Route2SignText:

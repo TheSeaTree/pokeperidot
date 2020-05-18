@@ -47,6 +47,9 @@ Route11MoveTutor:
 Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
 	
+Route11Sign:
+	jumptext Route11SignText
+	
 Route11TutorText:
 	text "Blub, blub, blub."
 
@@ -105,6 +108,10 @@ Route11TutorExplainSilverLeaf:
 	cont "LEAF, you can come"
 	cont "back here."
 	done
+	
+Route11SignText:
+	text "ROUTE 11"
+	done
 
 Route11_MapEvents:
 	db 0, 0 ; filler
@@ -117,7 +124,8 @@ Route11_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 32, 23, BGEVENT_READ, Route11Sign
 
 	db 2 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1

@@ -203,14 +203,12 @@ WhitneyBeforeText:
 	done
 
 WhitneyShouldntBeSoSeriousText:
-	text "Sob…"
-
-	para "…Waaaaaaah!"
-	line "You're mean!"
-
-	para "You shouldn't be"
-	line "so serious! You…"
-	cont "you child, you!"
+	text "Your might has"
+	line "exceeded my expec-"
+	cont "tations."
+	
+	para "Take my badge and"
+	line "leave this place."
 	done
 
 PlayerReceivedPlainBadgeText:
@@ -219,8 +217,7 @@ PlayerReceivedPlainBadgeText:
 	done
 
 WhitneyPlainBadgeText:
-	text "Oh, you can have"
-	line "this too!"
+	text "My TM as well."
 	done
 
 WhitneySwaggerText:
@@ -229,17 +226,22 @@ WhitneySwaggerText:
 	para "It will boost a"
 	line "#MON's ATTACK."
 	
-	para "Then hopefully"
-	line "hit themselves"
-	cont "hard."
+	para "Then leave it"
+	line "helpless as it"
+	cont "strikes itself."
+	
+	para "Devious, yes?"
+	line "Just how I like"
+	cont "it!"
 	done
 
 WhitneyGoodCryText:
-	text "Ah, that was a"
-	line "good cry!"
-
-	para "Come for a visit"
-	line "again! Bye-bye!"
+	text "Move on, trainer."
+	
+	para "You have already"
+	line "won. What else is"
+	cont "there for you to"
+	cont "take from me."
 	done
 	
 DoorGuard1TextBefore:
@@ -292,7 +294,9 @@ Door2or3AlreadyOpen:
 	done
 	
 BurglarAllenWinText:
-	text "I lost."
+	text "Why couldn't you"
+	line "just give me the"
+	cont "money?"
 	done
 
 Door1OpenedText:
@@ -310,7 +314,7 @@ Door1OpenedText:
 	cont "turn the lights"
 	cont "on."
 	done
-	
+
 Door2OpenedText:
 	text "What else do you"
 	line "want? The door is"

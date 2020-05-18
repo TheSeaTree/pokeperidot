@@ -68,11 +68,13 @@ MartAzalea:
 	db -1 ; end
 
 MartCianwood:
-	db 5 ; # items
+	db 7 ; # items
+	db GREAT_BALL
 	db POTION
 	db SUPER_POTION
 	db HYPER_POTION
 	db FULL_HEAL
+	db ETHER
 	db REVIVE
 	db -1 ; end
 	
@@ -228,9 +230,10 @@ MartBlackthornTM:
 	db -1
 
 MartGoldenrod:
-	db 6 ; # items
+	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
+	db POTION
 	db SUPER_POTION
 	db REPEL
 	db ANTIDOTE

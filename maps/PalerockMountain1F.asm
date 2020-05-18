@@ -147,42 +147,57 @@ HikerJoseAfterText:
 	done
 	
 HikerJayText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Is this your first"
+	line "time climbing a"
+	cont "mountain?"
 	done
 
 HikerJayWinText:
-	text "I lost."
+	text "Right back down to"
+	line "the bottom I go!"
 	done
 
 HikerJayAfterText:
-	text "I lost."
+	text "I travel the world"
+	line "in search of the"
+	cont "highest peaks to"
+	cont "conquer."
 	done
 	
 HikerJacobText:
-	text "I am a"
-	line "#MON trainer!"
+	text "My #MON likes"
+	line "dark places, so we"
+	cont "train inside."
 	done
 	
 HikerJacobWinText:
-	text "I lost."
+	text "Oh no! We've been"
+	line "exposed!"
 	done
 	
 HikerJacobAfterText:
-	text "I lost."
+	text "Some people say"
+	line "DUNSPARCE can fly,"
+	cont "but I have never"
+	cont "seen it happen my-"
+	cont "self."
 	done
 	
 HikerGeorgeText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Here I am!"
 	done
 	
 HikerGeorgeWinText:
-	text "I lost."
+	text "You rocked us like"
+	line "a hurricane!"
 	done
 	
 HikerGeorgeAfterText:
-	text "I lost."
+	text "I'm here all day."
+	
+	para "The only thing I"
+	line "have is my music"
+	cont "and my #MON."
 	done
 	
 Palerock1RockerText:

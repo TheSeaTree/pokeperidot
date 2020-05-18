@@ -649,5 +649,6 @@ Route22CaveB1F_Blocks:
 Route22CaveB2F_Blocks:
 	INCBIN "maps/Route22CaveB2F.ablk"
 
+NevermelticeChamber_Blocks:
 Route22HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"

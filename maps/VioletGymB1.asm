@@ -197,8 +197,8 @@ VioletGymB1TriggerScript3:
 	end
 	
 VioletGymB1TriggerScript4:
-	opentext
 	faceplayer
+	opentext
 	checkevent EVENT_BEAT_SWIMMERM_RONNIE
 	iftrue .true
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -281,7 +281,7 @@ FalknerTMMudSlapText:
 
 	para "I trust you will"
 	line "be able to use it"
-	cont "well!"
+	cont "effectively!"
 	done
 
 FalknerFightDoneText:
@@ -390,7 +390,7 @@ SwimmerRonnieText:
 	line "by now."
 
 	para "If you can defeat"
-	cont "me, I will clear"
+	line "me, I will clear"
 	cont "the path to LEADER"
 	cont "CECIL."
 	done

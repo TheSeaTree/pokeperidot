@@ -9,49 +9,49 @@ PalerockCaveB1F_MapScripts:
 	db 0 ; callbacks
 	
 TrainerHikerOmar:
-	trainer HIKER, OMAR, EVENT_BEAT_HIKER_OMAR, PalerockCaveTrainerText, PalerockCaveTrainerWinText, 0, .Script
+	trainer HIKER, OMAR, EVENT_BEAT_HIKER_OMAR, HikerOmarText, HikerOmarWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PalerockCaveTrainerAfterText
+	writetext HikerOmarAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerHikerDean:
-	trainer HIKER, DEAN, EVENT_BEAT_HIKER_DEAN, PalerockCaveTrainerText, PalerockCaveTrainerWinText, 0, .Script
+	trainer HIKER, DEAN, EVENT_BEAT_HIKER_DEAN, HikerDeanText, HikerDeanWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PalerockCaveTrainerAfterText
+	writetext HikerDeanAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerBlackbeltClint:
-	trainer BLACKBELT_T, CLINT, EVENT_BEAT_BLACKBELT_CLINT, PalerockCaveTrainerText, PalerockCaveTrainerWinText, 0, .Script
+	trainer BLACKBELT_T, CLINT, EVENT_BEAT_BLACKBELT_CLINT, BlackbeltClintText, BlackbeltClintWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PalerockCaveTrainerAfterText
+	writetext BlackbeltClintAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerFirebreatherRobin:
-	trainer FIREBREATHER, ROBIN, EVENT_BEAT_FIREBREATHER_ROBIN, PalerockCaveTrainerText, PalerockCaveTrainerWinText, 0, .Script
+	trainer FIREBREATHER, ROBIN, EVENT_BEAT_FIREBREATHER_ROBIN, FirebreatherRobinText, FirebreatherRobinWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PalerockCaveTrainerAfterText
+	writetext FirebeatherRobinAfterText
 	waitbutton
 	closetext
 	end	
-	
+
 TrainerBikerJared:
 	trainer BIKER, JARED, EVENT_BEAT_BIKER_JARED, BikerJaredText, BikerJaredWinText, 0, .Script
 
@@ -90,17 +90,89 @@ BikerJaredAfterText:
 	cont "because I want to."
 	done
 	
-PalerockCaveTrainerText:
-	text "I am a"
-	line "#MON trainer!"
-	done
-
-PalerockCaveTrainerWinText:
-	text "I lost."
+FirebreatherRobinText:
+	text "Are you having"
+	line "trouble seeing?"
+	
+	para "Let me light"
+	line "you up!"
 	done
 	
-PalerockCaveTrainerAfterText:
-	text "I lost."
+FirebreatherRobinWinText:
+	text "Hey! Where'd you"
+	line "go?"
+	done
+	
+FirebeatherRobinAfterText:
+	text "My #MON were"
+	line "my only source of"
+	cont "light."
+	done
+	
+HikerOmarText:
+	text "It's so calm and"
+	line "cool down here."
+	
+	para "Let's change that."
+	done
+	
+HikerOmarWinText:
+	text "I want to go back"
+	line "to how it was now!"
+	done
+	
+HikerOmarAfterText:
+	text "I much prefer the"
+	line "quiet if it means"
+	cont "I don't need to"
+	cont "lose a #MON"
+	cont "battle."
+	done
+	
+HikerDeanText:
+	text "You walked all the"
+	line "way around the"
+	cont "coastline to get"
+	cont "here?"
+	done
+
+HikerDeanWinText:
+	text "My hiking skills"
+	line "have been shown up"
+	cont "by a kid!"
+	done
+
+HikerDeanAfterText:
+	text "My motto is to"
+	line "always work smart-"
+	cont "er, not harder."
+	
+	para "Efficiency is key"
+	line "to a good hike."
+	done
+	
+BlackbeltClintText:
+	text "I'd like to see"
+	line "you try and break"
+	cont "through me!"
+	done
+	
+BlackbeltClintWinText:
+	text "Ah! No!"
+	
+	para "My secret tech-"
+	line "nique!"
+	done
+
+BlackbeltClintAfterText:
+	text "A FOCUS SASH will"
+	line "allow your #MON"
+	cont "to endure any one"
+	cont "hit at full HP."
+	
+	para "Be careful, if it"
+	line "breaks you cannot"
+	cont "use it again."
 	done
 
 PalerockCaveB1F_MapEvents:

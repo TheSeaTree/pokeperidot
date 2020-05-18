@@ -10,12 +10,12 @@ Landmarks:
 	landmark  68,  84, NewBarkTownName
 	landmark  68,  96, Route1Name
 	landmark  68, 108, CherrygroveCityName
-	landmark  68, 116, Route30Name ;Oasis
+	landmark  60, 108, Route30Name ;Oasis
 	landmark  84, 116, Route2Name
 	landmark 100, 124, AzaleaTownName
 	landmark 108, 116, Route3Name
 	landmark 124, 100, Route4Name
-	landmark 124, 100, ViridianForestName
+	landmark 132, 108, ViridianForestName
 	landmark 128,  92, Route5Name
 	landmark 132,  84, VioletCityName
 	landmark 128,  76, Route6Name
@@ -42,15 +42,15 @@ Landmarks:
 	landmark  36,  52, Route17Name ; ROUTE_20
 	landmark  36,  60, BlackthornCityName
 	landmark  42,  68, Route18Name ; ROUTE_21
-	landmark  20,  52, Route19Name ; ROUTE_22
+	landmark  26,  60, Route19Name ; ROUTE_22
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, Route20Name ; ROUTE_15
 	landmark 100,  58, Route21Name ; ROUTE_16
-	landmark 114,  36, Route22Name ; ROUTE_17
+	landmark 114,  44, Route22Name ; ROUTE_17
 	landmark 114,  68, Route23Name ; ROUTE_7
-	landmark 140,  36, VictoryRoadName
-	landmark 140,  28, IndigoPlateauName
-	landmark  20,  20, BattleTowerName
+	landmark 132,  36, VictoryRoadName
+	landmark 132,  28, IndigoPlateauName
+	landmark  20,  28, BattleTowerName
 	landmark  -8,  -8, LostLandName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
@@ -122,7 +122,7 @@ IlexForestName:      db "OCCIDENT¯FOREST@"
 BurnedTowerName:     db "BURNED¯TOWER@"
 FastShipName:        db "FAST SHIP@"
 ViridianForestName:  db "ORIENTEM¯FOREST@"
-DiglettsCaveName:    db "DIGLETT'S¯CAVE@"
+DiglettsCaveName:    db "MACHOP'S¯DEN@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
 LostLandName:		 db "LOST LAND@"

@@ -194,25 +194,25 @@ JohtoGrassWildMons:
 	map_id ROUTE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 14, JIGGLYPUFF
-	db 14, NATU
-	db 13, MAREEP
+	db 15, JIGGLYPUFF
+	db 16, NATU
+	db 15, MAREEP
 	db 16, STANTLER
 	db 16, FARFETCH_D
 	db 17, FARFETCH_D
 	db 17, FARFETCH_D
 	; day
-	db 14, JIGGLYPUFF
-	db 14, NATU
-	db 13, MAREEP
+	db 15, JIGGLYPUFF
+	db 16, NATU
+	db 15, MAREEP
 	db 16, NATU
 	db 16, STANTLER
 	db 17, FARFETCH_D
 	db 17, FARFETCH_D
 	; nite
-	db 13, JIGGLYPUFF
-	db 14, MURKROW
-	db 14, GASTLY
+	db 15, JIGGLYPUFF
+	db 16, MURKROW
+	db 15, GASTLY
 	db 16, STANTLER
 	db 16, HOOTHOOT
 	db 17, HOOTHOOT
@@ -680,26 +680,26 @@ JohtoGrassWildMons:
 	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, SPEAROW
+	db 16, SPEAROW
 	db 14, CUBBOLT
-	db 13, JIGGLYPUFF
-	db 14, DROWZEE
+	db 15, JIGGLYPUFF
+	db 16, DROWZEE
 	db 16, MR__MIME
 	db 16, MR__MIME
 	db 17, MR__MIME
 	; day
-	db 12, SPEAROW
+	db 16, SPEAROW
 	db 14, CUBBOLT
-	db 13, JIGGLYPUFF
-	db 14, DROWZEE
+	db 15, JIGGLYPUFF
+	db 16, DROWZEE
 	db 16, MR__MIME
 	db 16, MR__MIME
 	db 17, MR__MIME
 	; nite
-	db 12, MURKROW
+	db 16, MURKROW
 	db 14, CUBBOLT
-	db 13, JIGGLYPUFF
-	db 14, GASTLY
+	db 15, JIGGLYPUFF
+	db 16, GASTLY
 	db 16, MR__MIME
 	db 16, MR__MIME
 	db 17, MR__MIME
@@ -734,26 +734,26 @@ JohtoGrassWildMons:
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 12, SPEAROW
-	db 13, JIGGLYPUFF
+	db 16, SPEAROW
+	db 17, JIGGLYPUFF
 	db 14, MR__MIME
-	db 14, PIKACHU
+	db 16, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
 	; day
-	db 12, SPEAROW
-	db 13, JIGGLYPUFF
+	db 16, SPEAROW
+	db 17, JIGGLYPUFF
 	db 14, MR__MIME
-	db 14, PIKACHU
+	db 16, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
 	; nite
-	db 12, MURKROW
-	db 13, JIGGLYPUFF
+	db 16, MURKROW
+	db 17, JIGGLYPUFF
 	db 14, GASTLY
-	db 14, PIKACHU
+	db 16, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
@@ -761,28 +761,28 @@ JohtoGrassWildMons:
 	map_id ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 13, HOPPIP
-	db 14, NATU
+	db 15, HOPPIP
+	db 16, NATU
 	db 16, PSYDUCK
-	db 12, BUTTERFREE
-	db 12, ABRA
 	db 13, BUTTERFREE
+	db 14, ABRA
+	db 15, BUTTERFREE
 	db 16, BUTTERFREE
 	; day
-	db 13, BELLSPROUT
+	db 15, BELLSPROUT
 	db 14, NATU
 	db 16, PSYDUCK
-	db 12, BUTTERFREE
-	db 12, ABRA
 	db 13, BUTTERFREE
+	db 14, ABRA
+	db 15, BUTTERFREE
 	db 16, BUTTERFREE
 	; nite
-	db 13, ODDISH
-	db 14, NATU
+	db 15, ODDISH
+	db 16, NATU
 	db 16, PSYDUCK
-	db 12, BUTTERFREE
-	db 12, ABRA
 	db 13, BUTTERFREE
+	db 14, ABRA
+	db 15, BUTTERFREE
 	db 16, BUTTERFREE
 	
 	map_id ROUTE_12

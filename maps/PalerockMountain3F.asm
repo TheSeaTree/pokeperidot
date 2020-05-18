@@ -61,22 +61,21 @@ PalerockMountain3FBoulder:
 	jumpstd strengthboulder
 	
 GuitaristAnthonyText:
-	text "Don't be so"
-	line "uptight. I'll take"
-	cont "you on an amazing"
-	cont "flight."
-	done
-	
-GuitaristAnthonyWinText:
-	text "Hey dude, that's"
-	line "so uncool!"
-	done
-	
-GuitaristAnthonyAfterText:
 	text "I can sense the"
 	line "hope flowing"
 	cont "through your"
 	cont "veins."
+	done
+	
+GuitaristAnthonyWinText:
+	text "Hey dude, that"
+	line "wasn't cool!"
+	done
+	
+GuitaristAnthonyAfterText:
+	text "No need to be so"
+	line "uptight, that was"
+	cont "a fun battle!"
 	done
 
 Palerock3FBoulderFellText:

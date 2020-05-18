@@ -10,7 +10,7 @@ GoldenrodGymWestChamber_MapScripts:
 
 
 TrainerBikerJerry:
-	trainer BIKER, JERRY, EVENT_BEAT_BIKER_JERRY, GoldenrodWestRoomPlaceholderText, GoldenrodWestRoomPlaceholderText, 0, .Script
+	trainer BIKER, JERRY, EVENT_BEAT_BIKER_JERRY, BikerJerryText, BikerJerryWinText, 0, .Script
 
 .Script:
 	endifjustbattled
@@ -21,29 +21,30 @@ TrainerBikerJerry:
 	end	
 	
 TrainerGuitaristConrad:
-	trainer GUITARIST, CONRAD, EVENT_BEAT_GUITARIST_CONRAD, GoldenrodWestRoomPlaceholderText, GoldenrodWestRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, CONRAD, EVENT_BEAT_GUITARIST_CONRAD, GuitaristConradText, GuitaristConradWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodWestRoomPlaceholderText
+	writetext GuitaristConradAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerGuitaristBobby:
-	trainer GUITARIST, BOBBY, EVENT_BEAT_GUITARIST_BOBBY, GoldenrodWestRoomPlaceholderText, GoldenrodWestRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, BOBBY, EVENT_BEAT_GUITARIST_BOBBY, GuitaristBobbyText, GuitaristBobbyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodWestRoomPlaceholderText
+	writetext GuitaristBobbyAfterText
 	waitbutton
 	closetext
 	end	
 
 GoldenrodGymWestChamberLightsOn:
 	opentext
+	writetext GoldenrodGymWestChamberLightsOnText
 	yesorno
 	iffalse .no
 	scall WestChamberLightsOnSTD
@@ -64,12 +65,61 @@ WestChamberLightsOnSTD:
 	
 GoldenrodGymWestChamberLeaderSwitch:
 	opentext
+	writetext GoldenrodGymWestChamberLeaderSwitchText
+	yesorno
+	iffalse .no
 	setevent GOLDENROD_LEADER_DOOR_3
+.no
 	closetext
 	end
+
+GuitaristConradText:
+	text "You have entered"
+	line "a real house of"
+	cont "pain by turning on"
+	cont "those lights!"
+	done
 	
-GoldenrodWestRoomPlaceholderText:
-	text "?"
+GuitaristConradWinText:
+	text "My #MON have"
+	line "all fallen."
+	done
+	
+GuitaristConradAfterText:
+	text "I will get my"
+	line "vengeance someday!"
+	done
+	
+GuitaristBobbyText:
+	text "Get ready."
+	
+	para "My #MON are"
+	line "going to wreck"
+	cont "you!"
+	done
+	
+GuitaristBobbyWinText:
+	text "You made me break"
+	line "a string!"
+	done
+	
+GuitaristBobbyAfterText:
+	text "Defeat is a bitter"
+	line "pill to swallow,"
+	cont "but we all need to"
+	cont "take it sometimes."
+	done
+	
+BikerJerryText:
+	text "Loud bikes, and"
+	line "loud music! That"
+	cont "is what I live"
+	cont "for!"
+	done
+	
+BikerJerryWinText:
+	text "What did you say?"
+	line "speak up!"
 	done
 	
 BikerJerryAfterText:
@@ -84,6 +134,21 @@ BikerJerryAfterText:
 	
 	para "…I hope the guys"
 	line "are only joking."
+	done
+	
+GoldenrodGymWestChamberLightsOnText:
+	text "This must be a"
+	line "switch to turn on"
+	cont "the lights."
+	
+	para "Flip it?"
+	done
+	
+GoldenrodGymWestChamberLeaderSwitchText:
+	text "It's labeled as"
+	line "LEADER SWITCH 3."
+	
+	para "Flip it?"
 	done
 
 GoldenrodGymWestChamber_MapEvents:

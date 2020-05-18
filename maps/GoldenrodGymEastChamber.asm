@@ -43,6 +43,7 @@ TrainerGuitaristColin:
 	
 GoldenrodGymEastChamberLightsOn:
 	opentext
+	writetext GoldenrodGymEastChamberLightsOnText
 	yesorno
 	iffalse .no
 	scall EastChamberLightsOnSTD
@@ -63,7 +64,11 @@ EastChamberLightsOnSTD:
 	
 GoldenrodGymEastChamberLeaderSwitch:
 	opentext
+	writetext GoldenrodGymEastChamberLeaderSwitchText
+	yesorno
+	iffalse .no
 	setevent GOLDENROD_LEADER_DOOR_1
+.no
 	closetext
 	end
 
@@ -89,6 +94,21 @@ GuitaristLeeAfterText:
 	cont "leader? He just"
 	cont "freaks me out,"
 	cont "man."
+	done
+
+GoldenrodGymEastChamberLightsOnText:
+	text "This must be a"
+	line "switch to turn on"
+	cont "the lights."
+
+	para "Flip it?"
+	done
+
+GoldenrodGymEastChamberLeaderSwitchText:
+	text "It's labeled as"
+	line "LEADER SWITCH 1."
+	
+	para "Flip it?"
 	done
 
 GoldenrodGymEastChamber_MapEvents:

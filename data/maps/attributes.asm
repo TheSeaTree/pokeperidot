@@ -104,7 +104,7 @@ ENDM
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
 
-	map_attributes CianwoodCity, CIANWOOD_CITY, $9D, 0
+	map_attributes CianwoodCity, CIANWOOD_CITY, $35, 0
 
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
 
@@ -312,7 +312,7 @@ ENDM
 	map_attributes NewBarkForestGate, NEW_BARK_FOREST_GATE, $00, 0
 	map_attributes Route8Route10Gate, ROUTE_8_ROUTE_10_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
-	map_attributes CianwoodGym, CIANWOOD_GYM, $00, 0
+	map_attributes CianwoodGym, CIANWOOD_GYM, $79, 0
 	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0
 	map_attributes CianwoodMart, CIANWOOD_MART, $00, 0
 	map_attributes CianwoodPhotoStudio, CIANWOOD_PHOTO_STUDIO, $00, 0
@@ -431,3 +431,4 @@ ENDM
 	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
 	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0
 	map_attributes Route11CurseHouse, ROUTE_11_CURSE_HOUSE, $00, 0
+	map_attributes NevermelticeChamber, NEVERMELTICE_CHAMBER, $09, 0

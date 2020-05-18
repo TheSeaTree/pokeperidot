@@ -92,55 +92,74 @@ SorryLittleDude:
 	done
 	
 GuitaristTomasText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Come on!"
+	
+	para "Let's have a mosh"
+	line "pit!"
 	done
 
 GuitaristTomasWinText:
-	text "I lost."
+	text "My #MON could"
+	line "not handle the"
+	cont "beating."
 	done
 	
 GuitaristTomasAfterText:
-	text "I lost."
+	text "Not bad for a kid."
+	
+	para "As far as I care,"
+	line "you can stick"
+	cont "around."
 	done
 	
 GuitaristPaulText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Don't you dare"
+	line "sleep on my"
+	cont "#MON!"
 	done
 
 GuitaristPaulWinText:
-	text "I lost."
+	text "I may have a panic"
+	line "attack!"
 	done
 	
 GuitaristPaulAfterText:
-	text "I lost."
+	text "Was that all just"
+	line "a bad dream?"
 	done
 
 GuitaristFredrikText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I am ready to rip"
+	line "through your team"
+	cont "effortlessly!"
 	done
 
 GuitaristFredrikWinText:
-	text "I lost."
+	text "What a slaughter!"
 	done
 	
 GuitaristFredrikAfterText:
-	text "I lost."
+	text "My #MON just"
+	line "wants to THRASH"
+	cont "madly."
 	done
 	
 GuitaristBrendonText:
-	text "I am a"
-	line "#MON trainer!"
+	text "My #MON will"
+	line "come down on you"
+	cont "like a hammer!"
 	done
 
 GuitaristBrendonWinText:
-	text "I lost."
+	text "I was doing so"
+	line "well, but I blew"
+	cont "that last part!"
 	done
 	
 GuitaristBrendonAfterText:
-	text "I lost."
+	text "This is the reason"
+	line "why I can't be in"
+	cont "a one-guitar band."
 	done
 	
 PalerockOutsideHikerText:

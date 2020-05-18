@@ -84,6 +84,7 @@ ENDM
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const CIANWOOD_CAVE_1F,                             7,  6
 	map_const CIANWOOD_CAVE_B1F,                           20, 15
+	map_const NEVERMELTICE_CHAMBER,                         5,  7
 	map_const CIANWOOD_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
 	map_const LOST_LAND,		                           29,  20
@@ -191,7 +192,7 @@ ENDM
 	newgroup                                                      ; 11
 
 	map_const GOLDENROD_CITY,                              18, 17 ;  2
-	map_const CIANWOOD_GYM,                                16, 20 ;  5
+	map_const CIANWOOD_GYM,                                16, 22 ;  5
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6

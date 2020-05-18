@@ -10,8 +10,9 @@ Route8Route10GateOfficerScript:
 	jumptextfaceplayer Route8Route10GateOfficerText
 
 Route8Route10GateOfficerText:
-	text "CYCLING ROAD"
-	line "Uphill Starts Here"
+	text "PALEROCK CAVE will"
+	line "take you back to"
+	cont "ROUTE 3."
 	done
 
 Route8Route10Gate_MapEvents:

@@ -16,34 +16,34 @@ DiglettsCave_MapScripts:
 	return
 	
 TrainerBlackbeltAxel:
-	trainer BLACKBELT_T, AXEL, EVENT_BEAT_BLACKBELT_AXEL, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
+	trainer BLACKBELT_T, AXEL, EVENT_BEAT_BLACKBELT_AXEL, BlackbeltAxelText, BlackbeltAxelWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route3CaveWinText
+	writetext BlackbeltAzelAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerHikerAdam:
-	trainer HIKER, ADAM, EVENT_BEAT_HIKER_ADAM, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
+	trainer HIKER, ADAM, EVENT_BEAT_HIKER_ADAM, HikerAdamText, HikerAdamWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route3CaveWinText
+	writetext HikerAdamAfterText
 	waitbutton
 	closetext
 	end	
 
 TrainerBeautyBlaze:
-	trainer BEAUTY, BLAZE, EVENT_BEAT_BEAUTY_BLAZE, Route3CaveTrainerText, Route3CaveWinText, 0, .Script
+	trainer BEAUTY, BLAZE, EVENT_BEAT_BEAUTY_BLAZE, BeautyBlazeText, BeautyBlazeWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext Route3CaveWinText
+	writetext BeautyBlazeAfterText
 	waitbutton
 	closetext
 	end	
@@ -57,13 +57,67 @@ DiglettsCaveHiddenEverstone:
 Route3BlackBelt:
 	itemball BLACKBELT
 
-Route3CaveTrainerText:
-	text "I am a"
-	line "#MON trainer!"
+BeautyBlazeText:
+	text "Are you good"
+	line "enough to win our"
+	cont "BLACKBELT?"
 	done
 	
-Route3CaveWinText:
-	text "I lost."
+BeautyBlazeWinText:
+	text "My, my! You are"
+	line "good at this!"
+	done
+	
+BeautyBlazeAfterText:
+	text "A BLACKBELT will"
+	line "make any FIGHTING-"
+	cont "type move more"
+	cont "powerful. Even if"
+	cont "the holder is not"
+	cont "FIGHTING-type."
+	done
+	
+BlackbeltAxelText:
+	text "We've all trained"
+	line "with MURPHY, and"
+	cont "have learned his"
+	cont "his special move."
+	done
+
+BlackbeltAxelWinText:
+	text "I have failed my"
+	line "FIGHTING #MON."
+	done
+	
+BlackbeltAzelAfterText:
+	text "There is one more"
+	line "trainer to defeat"
+	cont "before you win our"
+	cont "prize."
+	done
+	
+HikerAdamText:
+	text "Welcome to the"
+	line "MACHOP's DEN."
+	
+	para "If you can defeat"
+	line "us all, you will"
+	cont "win a prize."
+	done
+
+HikerAdamWinText:
+	text "My ROCK-type has"
+	line "been smashed!"
+	done
+
+HikerAdamAfterText:
+	text "I used to be a cop"
+	line "for PECTINIA CITY."
+	
+	para "MURPHY trained me"
+	line "himself, but that"
+	cont "life wasn't for"
+	cont "me."
 	done
 	
 DiglettsCave_MapEvents:

@@ -10,12 +10,13 @@ Route11GoldenrodGateOfficerScript:
 	jumptextfaceplayer Route11GoldenrodGateOfficerText
 
 Route11GoldenrodGateOfficerText:
-	text "You're from JOHTO,"
-	line "aren't you?"
+	text "There are rumors"
+	line "of a haunted house"
+	cont "on ROUTE 11."
 
-	para "How do you like"
-	line "KANTO? It's nice,"
-	cont "don't you agree?"
+	para "You don't believe"
+	line "in any of that"
+	cont "nonsense, do you?"
 	done
 
 Route11GoldenrodGate_MapEvents:

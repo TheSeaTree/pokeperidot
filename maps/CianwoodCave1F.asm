@@ -9,7 +9,7 @@ CianwoodCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  3,  9, CIANWOOD_CITY, 8
+	warp_event  3,  9, CIANWOOD_CITY, 7
 	warp_event 11,  3, CIANWOOD_CAVE_B1F, 1
 
 	db 0 ; coord events

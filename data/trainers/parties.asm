@@ -1021,7 +1021,7 @@ FisherGroup:
 	db 20, GOLDEEN
 	db 20, REMORAID
 	db -1
-	
+
 	; FISHER (4)
 	db "MARSHALL@", TRAINERTYPE_NORMAL
 	db 21, SLOWPOKE
@@ -1554,10 +1554,10 @@ BlackbeltGroup:
 	db -1 ; end
 	
 	; BLACKBELT_T (2)
-	db "CLINT@", TRAINERTYPE_NORMAL
-	db 19, GEODUDE
-	db 19, MACHOP
-	db 20, MANKEY
+	db "CLINT@", TRAINERTYPE_ITEM
+	db 19, GEODUDE,		NO_ITEM
+	db 19, MACHOP,		NO_ITEM
+	db 20, MANKEY,		FOCUS_SASH
 	db -1
 	
 	; BLACKBELT_T (3)

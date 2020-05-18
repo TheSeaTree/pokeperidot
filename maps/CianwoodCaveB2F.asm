@@ -44,6 +44,18 @@ TrainerSageLo:
 TMRockSlideEvent:
 	itemball TM_ROCK_SLIDE
 	
+CianwoodCaveB2FRareCandy:
+	itemball RARE_CANDY
+
+CianwoodCaveB2FRevive:
+	itemball REVIVE
+
+CianwoodCaveB2FSuperPotion:
+	itemball SUPER_POTION
+	
+CianwoodCaveB2FHiddenUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_CIANWOOD_CAVE_B2F_HIDDEN_ULTRA_BALL
+	
 BurglarDukeText:
 	text "Hehe! We're going"
 	line "to make so much"
@@ -51,35 +63,60 @@ BurglarDukeText:
 	done
 
 BurglarDukeWinText:
-	text "?"
+	text "Blown away so"
+	line "quickly!"
 	done
 
 BurglarDukeAfterText:
-	text "?"
+	text "There are more im-"
+	line "portant things in"
+	cont "life than winning."
+	
+	para "Like money!"
 	done
 
 SageCalebText:
-	text "?"
+	text "End of the line,"
+	line "kid!"
 	done
 
 SageCalebWinText:
-	text "?"
+	text "You'll pay for"
+	line "that!"
 	done
 
 SageCalebAfterText:
-	text "?"
+	text "Our leader takes"
+	line "this stuff pretty"
+	cont "seriously, but I"
+	cont "only play along"
+	cont "because it pays"
+	cont "well."
 	done
 
 SageLoText:
-	text "?"
+	text "This path was sup-"
+	line "posed to be a"
+	cont "secret!"
+	
+	para "How did you find"
+	line "it?"
 	done
 
 SageLoWinText:
-	text "?"
+	text "You are no ordina-"
+	line "ry kid!"
 	done
 
 SageLoAfterText:
-	text "?"
+	text "The boss said this"
+	line "would be an easy"
+	cont "job. Nobody comes"
+	cont "up this mountain,"
+	cont "he said."
+	
+	para "Well so much for"
+	line "that!"
 	done
 
 CianwoodCaveB2F_MapEvents:
@@ -91,13 +128,17 @@ CianwoodCaveB2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 5, 8, BGEVENT_ITEM, CianwoodCaveB2FHiddenUltraBall
 
-	db 7 ; object events
+	db 10 ; object events
 	object_event  11,  3, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  26, 24, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  34, 15, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCaveB2FBoulder, -1
 	object_event  36, 29, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerBurglarDuke, EVENT_CLEARED_CHURCH
 	object_event  22, 28, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSageCaleb, EVENT_CLEARED_CHURCH
 	object_event  15, 26, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSageLo, EVENT_CLEARED_CHURCH
-	object_event  6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, TMRockSlideEvent, EVENT_GOT_TM_ROCK_SLIDE
+	object_event   6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, TMRockSlideEvent, EVENT_GOT_TM_ROCK_SLIDE
+	object_event  21, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodCaveB2FRareCandy, EVENT_CIANWOOD_CAVE_B2F_RARE_CANDY
+	object_event   5,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodCaveB2FRevive, EVENT_CIANWOOD_CAVE_B2F_REVIVE
+	object_event 22, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodCaveB2FSuperPotion, EVENT_CIANWOOD_CAVE_B2F_SUPER_POTION

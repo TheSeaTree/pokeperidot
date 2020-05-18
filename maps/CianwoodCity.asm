@@ -326,10 +326,10 @@ CianwoodCityTutorThankYou:
 	done
 
 CianwoodCitySignText:
-	text "CIANWOOD CITY"
+	text "HEPATICA TOWN"
 
-	para "A Port Surrounded"
-	line "by Rough Seas"
+	para "The quiet town on"
+	line "top of the world."
 	done
 
 CianwoodGymSignText:

@@ -210,107 +210,185 @@ Route1LassText:
 	done
 	
 FisherLeoText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Fishin' up #MON"
+	line "all day is what I"
+	cont "love to do!"
+	
+	para "Fishin' up #MON"
+	line "just to battle"
+	cont "with you!"
 	done
 	
 FisherLeoWinText:
-	text "I lost."
+	text "I am done!"
+	line "But that was fun!"
 	done
 	
 FisherLeoAfterText:
-	text "I lost."
+	text "I'm not rhymin'"
+	line "deliberately!"
+	
+	para "These are the"
+	line "only words comin'"
+	cont "to me!"
 	done
 	
 FisherMarshallText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Argh! Another dup-"
+	line "licate!"
+	
+	para "Hey! Help me take"
+	line "my mind off this"
+	cont "terrible luck!"
 	done
 	
 FisherMarshallWinText:
-	text "I lost."
+	text "This would be dif-"
+	line "ferent if I could"
+	cont "find what I'm look-"
+	cont "ing for!"
 	done
 	
 FisherMarshallAfterText:
-	text "I lost."
+	text "I am far too stub-"
+	line "born to stop until"
+	cont "I see another"
+	cont "GYARADOS."
+	
+	para "It happened once,"
+	line "it will happen"
+	cont "again!"
 	done
 	
 SuperNerdShaneText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hey! You're not a"
+	line "regular here!"
+	
+	para "How did you get"
+	line "in?"
 	done
 	
 SuperNerdShaneWinText:
-	text "I lost."
+	text "I don't care that"
+	line "you won! We keep"
+	cont "this place exclus-"
+	cont "ive for a reason!"
 	done
 	
 SuperNerdShaneAfterText:
-	text "I lost."
+	text "You used CUT to"
+	line "sneak in? That's"
+	cont "honestly pretty"
+	cont "clever."
+
+	para "For a dork."
 	done	
 
 SuperNerdStevenText:
-	text "I am a"
-	line "#MON trainer!"
+	text "You're the kid"
+	line "from ELKHORN TOWN!"
+	
+	para "That means you are"
+	line "new. This will be"
+	cont "easy!"
 	done
 	
 SuperNerdStevenWinText:
-	text "I lost."
+	text "What? How?"
+	
+	para "I have more exper-"
+	line "ience than you!"
 	done
 	
 SuperNerdStevenAfterText:
-	text "I lost."
+	text "Tch… Whatever."
+	
+	para "I was just going"
+	line "easy on you…"
 	done
 
 PokemaniacScottText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Did you sneak in?"
+	
+	para "Oh, man. SHANE is"
+	line "gonna be mad!"
 	done
 	
 PokemaniacScottWinText:
-	text "I lost."
+	text "No worries, they"
+	line "will handle you"
+	cont "with ease!"
 	done
 	
 PokemaniacScottAfterText:
-	text "I lost."
+	text "We keep this path"
+	line "blocked so no"
+	cont "newbie trainers"
+	cont "cramp our styles!"
 	done
 	
 PokemaniacDylanText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I will defend the"
+	line "honor of JILL and"
+	cont "TRACEY!"
 	done
 	
 PokemaniacDylanWinText:
-	text "I lost."
+	text "Keep it down!"
+	
+	para "I don't want the"
+	line "girls to notice!"
 	done
 	
 PokemaniacDylanAfterText:
-	text "I lost."
+	text "I only come here"
+	line "to admire the"
+	cont "beautiful girls."
+	
+	para "#MON battles"
+	line "are secondary."
 	done
 	
 BeautyJillText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hey, guess what my"
+	line "favorite color is!"
 	done
 	
 BeautyJillWinText:
-	text "I lost."
+	text "Could you guess?"
+	
+	para "Well, could you?"
 	done
 	
 BeautyJillAfterText:
-	text "I lost."
+	text "Pink, round, and"
+	line "huggable."
+	
+	para "Those are all the"
+	line "qualities of a"
+	cont "good #MON."
 	done
 
 BeautyTraceyText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Oh, you're a"
+	line "fresh face!"
+	
+	para "Show me what"
+	line "#MON you have!"
 	done
 	
 BeautyTraceyWinText:
-	text "I lost."
+	text "Where did you find"
+	line "those?"
 	done
 	
 BeautyTraceyAfterText:
-	text "I lost."
+	text "Y'know, it's nice"
+	line "to battle someone"
+	cont "and not be hit on."
+	
+	para "I think that makes"
+	line "you pretty cool."
 	done
 	
 LeonGoodJob:

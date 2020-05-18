@@ -55,6 +55,7 @@ TrainerGuitaristIvan:
 	
 GoldenrodGymNorthChamberLightsOn:
 	opentext
+	writetext GoldenrodGymNorthChamberLightsOnText
 	yesorno
 	iffalse .no
 	scall NorthChamberLightsOnSTD
@@ -77,12 +78,31 @@ NorthChamberLightsOnSTD:
 	
 GoldenrodGymNorthChamberLeaderSwitch:
 	opentext
+	writetext GoldenrodGymNorthChamberLeaderSwitchText
+	yesorno
+	iffalse .no
 	setevent GOLDENROD_LEADER_DOOR_2
+.no
 	closetext
 	end
 
 GoldenrodNorthRoomPlaceholderText:
 	text "?"
+	done
+	
+GoldenrodGymNorthChamberLightsOnText:
+	text "This must be a"
+	line "switch to turn on"
+	cont "the lights."
+
+	para "Flip it?"
+	done
+	
+GoldenrodGymNorthChamberLeaderSwitchText:
+	text "It's labeled as"
+	line "LEADER SWITCH 2."
+	
+	para "Flip it?"
 	done
 
 GoldenrodGymNorthChamber_MapEvents:

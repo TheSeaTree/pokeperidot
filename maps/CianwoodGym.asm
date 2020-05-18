@@ -42,7 +42,6 @@ CianwoodGymChuckScript:
 	verbosegiveitem TM_TELEPORT
 	iffalse .BagFull
 	setevent EVENT_GOT_TM_TELEPORT
-	buttonsound
 	writetext ChuckExplainTMText
 	waitbutton
 	closetext
@@ -147,7 +146,7 @@ CianwoodGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext JOEL, JOEL1, MEM_BUFFER_1
+	trainertotext WHITNEY, WHITNEY1, MEM_BUFFER_1
 	jumpstd gymstatue2
 	
 CianwoodCantLeave:
@@ -236,15 +235,14 @@ ChuckExplainTMText:
 	done
 
 ChuckAfterText:
-	text "WAHAHAH! I enjoyed"
-	line "battling you!"
-
-	para "But a loss is a"
-	line "loss!"
-
-	para "From now on, I'm"
-	line "going to train 24"
-	cont "hours a day!"
+	text "I will use our"
+	line "battle as inspira-"
+	cont "tion."
+	
+	para "I assure you, the"
+	line "outcome will not"
+	cont "be the same next"
+	cont "time."
 	done
 	
 ScientistAdrianText:
@@ -347,10 +345,10 @@ PsychicDamienAfterText:
 	done
 	
 GuitaristXavierText:
-	text "I thought this gym"
-	line "would help me in"
-	cont "writing some new"
-	cont "material."
+	text "I've been having"
+	line "writer's block, so"
+	cont "I came to this gym"
+	cont "for inspriation."
 	done
 	
 GuitaristXavierWinText:
@@ -370,19 +368,34 @@ CianwoodGymGuyText:
 	text "Yo! CHAMP in"
 	line "making!"
 
-	para "This GYM is home"
-	line "to normal-type"
-	cont "#MON trainers."
-
-	para "I recommend you"
-	line "use fighting-type"
-	cont "#MON."
+	para "This GYM is a real"
+	line "trip, right?"
+	
+	para "Well the fact that"
+	line "we're in space"
+	cont "isn't the only un-"
+	cont "usual thing about"
+	cont "this GYM."
+	
+	para "The leader CELESTE"
+	line "specializes in two"
+	cont "types of #MON,"
+	cont "PSYCHIC and FAIRY-"
+	cont "types."
+	
+	para "You're gonna need"
+	line "a well-balanced"
+	cont "team to make it in"
+	cont "this GYM."
 	done
 
 CianwoodGymGuyWinText:
-	text "You won? Great! I"
-	line "was busy admiring"
-	cont "the ladies here."
+	text "Good job on your"
+	line "victory!"
+	
+	para "I have never seen"
+	line "CELESTE smile"
+	cont "before."
 	done
 
 CianwoodGym_MapEvents:

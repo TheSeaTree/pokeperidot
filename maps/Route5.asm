@@ -267,18 +267,18 @@ LadBenText:
 LadBenWinText:
 	text "I was trying to"
 	line "take a picture of"
-	cont "a SLOWPOKE!"
+	cont "a PSYDUCK!"
 	done
 	
 LadBenAfterText:
 	text "I hope I can find"
-	line "another SLOWPOKE"
+	line "another PSYDUCK"
 	cont "to photograph."
 	done
 	
 BeautyLilyText:	
-	text "Flower #MON are so"
-	line "pretty!"
+	text "Flower #MON are"
+	line "so pretty!"
 	done
 	
 BeautyLilyWinText:

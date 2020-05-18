@@ -138,7 +138,7 @@ Moves: ; 41afb
 	move SLUDGE,       EFFECT_POISON_HIT,         65, POISON,   100, 20,  30
 	move BONE_CLUB,    EFFECT_FLINCH_HIT,         65, GROUND,    90, 20,  10
 	move FIRE_BLAST,   EFFECT_BURN_HIT,          120, FIRE,      85,  5,  10
-	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,    100, 15,   0
+	move WATERFALL,    EFFECT_FLINCH_HIT,         80, WATER,    100, 15,  20
 	move AQUA_JET,     EFFECT_PRIORITY_HIT,       40, WATER,    100, 20,   0
 	move SWIFT,        EFFECT_ALWAYS_HIT,         60, NORMAL,   100, 20,   0
 	move SKULL_BASH,   EFFECT_SKULL_BASH,        130, NORMAL,   100, 15,   0
