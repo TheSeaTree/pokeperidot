@@ -24,6 +24,8 @@ Copyright_GFPresents:
 	call DelayFrames
 	call ClearTileMap
 	farcall GBCOnlyScreen
+; Skip Gamefeak animation
+	jr .finish
 	call .GetGFLogoGFX
 .joy_loop
 	call JoyTextDelay
