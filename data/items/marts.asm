@@ -236,7 +236,7 @@ MartGoldenrod:
 	db POTION
 	db SUPER_POTION
 	db REPEL
-	db ANTIDOTE
+	db AWAKENING
 	db PARLYZ_HEAL
 	db ETHER
 	db -1 ; end

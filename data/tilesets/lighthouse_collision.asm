@@ -122,3 +122,4 @@
 	tilecoll WALL, WALL, WALL, WARP_PANEL ; 79
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 7a
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 7b
+	tilecoll WALL, FLOOR, WALL, WALL ; 7c

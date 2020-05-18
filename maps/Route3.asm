@@ -252,6 +252,9 @@ PickupDomeFossilEvent:
 	closetext
 	end
 	
+Route3FruitTree:
+	fruittree FRUITTREE_ROUTE_3
+	
 Route3TrainerTipsSign:
 	jumptext Route3TrainerTipsSignText
 	
@@ -604,4 +607,5 @@ Route3_MapEvents:
 	object_event  0,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route3AttractGirl, -1
 	object_event 31, 19, SPRITE_OMANYTE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PickupHelixFossilEvent, EVENT_TAKE_FOSSIL
 	object_event 32, 19, SPRITE_SHELLDER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PickupDomeFossilEvent, EVENT_TAKE_FOSSIL
+	object_event 52,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route3FruitTree, -1
 	

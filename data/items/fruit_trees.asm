@@ -1,5 +1,5 @@
 FruitTreeItems:
-; entries correspond to FRUITTREE_* constants
+; entries correspond to FRUITTREE_* constants (see constants/script_constants.asm)
 	db BERRY        ; ROUTE_29
 	db GOLD_LEAF    ; ROUTE_30
 	db BERRY        ; ROUTE_38
@@ -18,7 +18,7 @@ FruitTreeItems:
 	db BURNT_BERRY  ; ROUTE_44
 	db PRZCUREBERRY ; ROUTE_20_1
 	db MIRACLEBERRY ; ROUTE_20_2
-	db BLK_APRICORN ; ROUTE_37_3
+	db MYSTERYBERRY ; ROUTE_3
 	db BERRY        ; AZALEA_TOWN
 	db PRZCUREBERRY ; MAHOGANY_TOWN
 	db MIRACLEBERRY ; ROUTE_13_1

@@ -9,12 +9,12 @@ GoldenrodGymEastChamber_MapScripts:
 	db 0 ; callbacks
 
 TrainerGuitaristAndy:
-	trainer GUITARIST, ANDY, EVENT_BEAT_GUITARIST_ANDY, GoldenrodEastRoomPlaceholderText, GoldenrodEastRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, ANDY, EVENT_BEAT_GUITARIST_ANDY, GuitaristAndyText, GuitaristAndyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodEastRoomPlaceholderText
+	writetext GuitaristAndyAfterText
 	waitbutton
 	closetext
 	end	
@@ -31,12 +31,12 @@ TrainerGuitaristLee:
 	end	
 
 TrainerGuitaristColin:
-	trainer GUITARIST, COLIN, EVENT_BEAT_GUITARIST_COLIN, GoldenrodEastRoomPlaceholderText, GoldenrodEastRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, COLIN, EVENT_BEAT_GUITARIST_COLIN, GuitaristColinText, GuitaristColinWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodEastRoomPlaceholderText
+	writetext GuitaristColinAfterText
 	waitbutton
 	closetext
 	end	
@@ -76,6 +76,23 @@ GoldenrodEastRoomPlaceholderText:
 	text "?"
 	done
 	
+GuitaristAndyText:
+	text "I feel on top of"
+	line "the world in this"
+	cont "gym!"
+	done
+	
+GuitaristAndyWinText:
+	text "I'm falling to the"
+	line "ground!"
+	done
+	
+GuitaristAndyAfterText:
+	text "I have no choice"
+	line "but to get back"
+	cont "up and try again."
+	done
+	
 GuitaristLeeText:
 	text "Dude, some warning"
 	line "before turning on"
@@ -94,6 +111,26 @@ GuitaristLeeAfterText:
 	cont "leader? He just"
 	cont "freaks me out,"
 	cont "man."
+	done
+	
+GuitaristColinText:
+	text "You can see my"
+	line "face."
+	
+	para "That means it's"
+	line "time for you to"
+	cont "lose."
+	done
+	
+GuitaristColinWinText:
+	text "I was helpless!"
+	done
+	
+GuitaristColinAfterText:
+	text "Am I evil?"
+	
+	para "I don't even use"
+	line "a DARK-type."
 	done
 
 GoldenrodGymEastChamberLightsOnText:

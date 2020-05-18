@@ -10,45 +10,45 @@ GoldenrodGymNorthChamber_MapScripts:
 	db 0 ; callbacks
 	
 TrainerGuitaristTrevor:
-	trainer GUITARIST, TREVOR, EVENT_BEAT_GUITARIST_TREVOR, GoldenrodNorthRoomPlaceholderText, GoldenrodNorthRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, TREVOR, EVENT_BEAT_GUITARIST_TREVOR, GuitaristTrevorText, GuitaristTrevorWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodNorthRoomPlaceholderText
+	writetext GuitaristTrevorAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerPokemaniacCharlie:
-	trainer POKEMANIAC, CHARLIE, EVENT_BEAT_POKEMANIAC_CHARLIE, GoldenrodNorthRoomPlaceholderText, GoldenrodNorthRoomPlaceholderText, 0, .Script
+	trainer POKEMANIAC, CHARLIE, EVENT_BEAT_POKEMANIAC_CHARLIE, PokemaniacCharlieText, PokemaniacCharlieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodNorthRoomPlaceholderText
+	writetext PokemaniaCharlieAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerGuitaristMarcel:
-	trainer GUITARIST, MARCEL, EVENT_BEAT_GUITARIST_MARCEL, GoldenrodNorthRoomPlaceholderText, GoldenrodNorthRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, MARCEL, EVENT_BEAT_GUITARIST_MARCEL, GuitaristMarcelText, GuitaristMarcelWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodNorthRoomPlaceholderText
+	writetext GuitaristMarcelAfterText
 	waitbutton
 	closetext
 	end
 	
 TrainerGuitaristIvan:
-	trainer GUITARIST, IVAN, EVENT_BEAT_GUITARIST_IVAN, GoldenrodNorthRoomPlaceholderText, GoldenrodNorthRoomPlaceholderText, 0, .Script
+	trainer GUITARIST, IVAN, EVENT_BEAT_GUITARIST_IVAN, GuitaristIvanText, GuitaristIvanWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext GoldenrodNorthRoomPlaceholderText
+	writetext GuitaristIvanAfterText
 	waitbutton
 	closetext
 	end	
@@ -86,10 +86,86 @@ GoldenrodGymNorthChamberLeaderSwitch:
 	closetext
 	end
 
-GoldenrodNorthRoomPlaceholderText:
-	text "?"
+PokemaniacCharlieText:
+	text "What are you hop-"
+	line "ing to find, young"
+	cont "trainer?"
+	
+	para "A battle, perhaps?"
 	done
 	
+PokemaniacCharlieWinText:
+	text "The bond with my"
+	line "#MON remains"
+	cont "unbroken."
+	done
+	
+PokemaniaCharlieAfterText:
+	text "You show great"
+	line "courage revealing"
+	cont "all of these trai-"
+	cont "ners."
+	done
+	
+GuitaristMarcelText:
+	text "You cannot run!"
+	
+	para "The damage has"
+	line "been done, and you"
+	cont "must pay!"
+	done
+	
+GuitaristMarcelWinText:
+	text "My dreams of"
+	line "victory have"
+	cont "dissolved."
+	done
+	
+GuitaristMarcelAfterText:
+	text "I go my many"
+	line "names."
+	
+	para "Pseudonyms are"
+	line "just a part of the"
+	cont "rock star life."
+	done
+	
+GuitaristTrevorText:
+	text "You dare show us"
+	line "the light?"
+	done
+	
+GuitaristTrevorWinText:
+	text "I'm blacking out!"
+	done
+	
+GuitaristTrevorAfterText:
+	text "This GYM is dark"
+	line "for a reason!"
+	done
+	
+GuitaristIvanText:
+	text "You're not one of"
+	line "us!"
+	
+	para "Get out of here,"
+	line "you poser!"
+	done
+
+GuitaristIvanWinText:
+	text "What? Was I the"
+	line "poser all along?"
+	done
+
+GuitaristIvanAfterText:
+	text "Appearances are"
+	line "everything in this"
+	cont "scene."
+	
+	para "Fit in, or get"
+	line "out!"
+	done
+
 GoldenrodGymNorthChamberLightsOnText:
 	text "This must be a"
 	line "switch to turn on"
