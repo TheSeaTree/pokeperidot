@@ -86,7 +86,7 @@ SpearowEggMoves:
 	db SCARY_FACE
 	db QUICK_ATTACK
 	db TRI_ATTACK
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db WHIRLWIND
 	db STEEL_WING
 	db RAZOR_WIND
@@ -353,7 +353,7 @@ DoduoEggMoves:
 	db FAINT_ATTACK
 	db FLAIL
 	db MIRROR_MOVE
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db -1 ; end
 
 SeelEggMoves:
@@ -683,7 +683,7 @@ HoothootEggMoves:
 	db FAINT_ATTACK
 	db WING_ATTACK
 	db WHIRLWIND
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db AGILITY
 	db NIGHT_SHADE
 	db FUTURE_SIGHT
@@ -837,7 +837,7 @@ MurkrowEggMoves:
 	db QUICK_ATTACK
 	db MIRROR_MOVE
 	db WING_ATTACK
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db CONFUSE_RAY
 	db -1 ; end
 
@@ -993,7 +993,7 @@ DelibirdEggMoves:
 	db SPIKES
 	db COUNTER
 	db SING
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db BODY_SLAM
 	db SIGNAL_BEAM
 	db PAY_DAY
@@ -1012,7 +1012,7 @@ SkarmoryEggMoves:
 	db DRILL_PECK
 	db PURSUIT
 	db WHIRLWIND
-	db SKY_ATTACK
+	db BRAVE_BIRD
 	db X_SCISSOR
 	db -1 ; end
 

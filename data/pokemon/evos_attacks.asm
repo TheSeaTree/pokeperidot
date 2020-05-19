@@ -1311,7 +1311,7 @@ FarfetchDEvosAttacks:
 	db 25, SWORDS_DANCE
 	db 31, AGILITY
 	db 45, FALSE_SWIPE
-	db 55, SKY_ATTACK
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 DoduoEvosAttacks:
@@ -2334,7 +2334,7 @@ ArticunoEvosAttacks:
 	db 50, U_TURN
 	db 61, REFLECT
 	db 65, BLIZZARD
-	db 73, SKY_ATTACK
+	db 73, BRAVE_BIRD
 	db 92, HURRICANE
 	db 0 ; no more level-up moves
 
@@ -2351,7 +2351,7 @@ ZapdosEvosAttacks:
 	db 50, U_TURN
 	db 61, LIGHT_SCREEN
 	db 65, THUNDER
-	db 73, SKY_ATTACK
+	db 73, BRAVE_BIRD
 	db 92, HURRICANE
 	db 0 ; no more level-up moves
 
@@ -2368,7 +2368,7 @@ MoltresEvosAttacks:
 	db 50, U_TURN
 	db 61, SAFEGUARD
 	db 65, FIRE_BLAST
-	db 73, SKY_ATTACK
+	db 73, BRAVE_BIRD
 	db 92, HURRICANE
 	db 0 ; no more level-up moves
 
@@ -2846,7 +2846,7 @@ SirfetchDEvosAttacks:
 	db 38, RAZOR_WIND
 	db 45, FALSE_SWIPE
 	db 50, HURRICANE
-	db 55, SKY_ATTACK
+	db 55, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 MandrabelEvosAttacks:
@@ -3724,7 +3724,7 @@ SkarmoryEvosAttacks:
 	db 31, AGILITY
 	db 34, STEEL_WING
 	db 39, RAZOR_WIND
-	db 45, SKY_ATTACK
+	db 45, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:
@@ -4077,7 +4077,7 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SACRED_FIRE
 	db 11, SAFEGUARD
-	db 15, SKY_ATTACK
+	db 15, BRAVE_BIRD
 	db 22, GUST
 	db 33, RECOVER
 	db 44, FIRE_BLAST
