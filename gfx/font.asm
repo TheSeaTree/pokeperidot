@@ -34,7 +34,7 @@ INCBIN "gfx/pokegear/town_map.2bpp.lz"
 UnusedWeekdayKanjiGFX: ; unused kanji
 INCBIN "gfx/font/unused_weekday_kanji.2bpp"
 
-UnusedBoldFontGFX: ; unused bold letters + unown chars
+BoldFontGFX: ; used for the opening screen
 INCBIN "gfx/font/unused_bold_font.1bpp"
 
 TextBoxSpaceGFX:

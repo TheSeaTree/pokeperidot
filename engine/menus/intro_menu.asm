@@ -1360,9 +1360,9 @@ Unreferenced_Function639b:
 Copyright:
 	call ClearTileMap
 ;	call LoadFontsExtra
-	ld de, Font
+	ld de, BoldFontGFX
 	ld hl, vTiles1
-	lb bc, BANK(Font), $80
+	lb bc, BANK(BoldFontGFX), $80
 	call Get1bpp
 	hlcoord 1, 7
 	ld de, CopyrightString
@@ -1371,7 +1371,7 @@ Copyright:
 CopyrightString:
 	db   "  PRODUCED BY OR"
 	next "UNDER LICENSE FROM"
-	next "  NOBODY AT ALL.@"
+	next " NOBODY OFFICIAL)@"
 
 GameInit::
 	farcall TryLoadSaveData
