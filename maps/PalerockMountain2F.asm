@@ -48,7 +48,7 @@ PalerockMountain2F_MapScripts:
 .Stairs:
 	checkevent EVENT_BOULDER_IN_PALEROCK_3B
 	iffalse .skip
-	changeblock 12, 16, $9B ; open door
+	changeblock 12, 16, $63 ; open door
 	changeblock 16, 10, $61 ; open door
 .skip
 	return

@@ -121,11 +121,11 @@ Text_GetLostKid2:
 	done
 
 NewBarkTownSignText:
-	text "NEW BARK TOWN"
+	text "ELKHORN TOWN"
 
-	para "The Town Where the"
-	line "Winds of a New"
-	cont "Beginning Blow"
+	para "The first tip of"
+	line "your branching"
+	cont "path."
 	done
 
 NewBarkTownPlayersHouseSignText:

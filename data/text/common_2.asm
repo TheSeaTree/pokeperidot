@@ -1145,7 +1145,7 @@ _OakPCText3::
 	text_from_ram wStringBuffer4
 	text " #MON owned"
 
-	para "PROF.OAK's"
+	para "PROF. MAPLE's"
 	line "Rating:"
 	done
 

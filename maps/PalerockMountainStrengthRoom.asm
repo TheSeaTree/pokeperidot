@@ -26,6 +26,9 @@ PalerockMountainStrengthRoomBall:
 	showemote EMOTE_SHOCK, PLAYER, 15
 	setevent EVENT_GOT_TM_STRENGTH
 	clearevent EVENT_BOULDER_IN_PALEROCK_B
+	clearevent EVENT_PALEROCK_MOUNTAIN_B1F_FIRE_STONE
+	clearevent EVENT_PALEROCK_MOUNTAIN_B1F_STARDUST
+	clearevent EVENT_PALEROCK_MOUNTAIN_B1F_REVIVE
 	opentext
 	writetext CrashingDownText
 	waitbutton

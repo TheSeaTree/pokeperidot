@@ -207,6 +207,9 @@ GoldenrodCityPokecenterSign:
 DayCareSign:
 	jumptext DayCareSignText
 	
+GoldenrodCitySign:
+	jumptext GoldenrodCitySignText
+	
 GoldenrodCityMartSign:
 	jumpstd martsign
 	
@@ -338,6 +341,13 @@ GoldenrodFangirlAfterText:
 	
 	para "Wish me luck!"
 	done
+	
+GoldenrodCitySignText:
+	text "FAVIA TOWN"
+	
+	para "Your friendly far-"
+	line "away neighbors."
+	done
 
 GoldenrodCity_MapEvents:
 	db 0, 0 ; filler
@@ -358,8 +368,9 @@ GoldenrodCity_MapEvents:
 	coord_event 24, 26, SCENE_FINISHED, GoldenrodFangirlScene
 	coord_event 24, 27, SCENE_FINISHED, GoldenrodFangirlScene
 
-	db 6 ; bg events
+	db 7 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
+	bg_event 10, 18, BGEVENT_READ, GoldenrodCitySign
 	bg_event 22, 25, BGEVENT_READ, GoldenrodCityMartSign
 	bg_event 20, 15, BGEVENT_READ, GoldenrodCityPokecenterSign
 	bg_event  1, 22, BGEVENT_ITEM, GoldenrodHiddenSilverLeaf

@@ -242,7 +242,7 @@ Route12ShelterKangaskhan:
 	disappear ROUTE12SHELTER_KANGASKHAN
 	waitsfx
 	givepoke KANGASKHAN, 32
-	special GiftMonMoves
+	special KangaskhanGiftMon
 	setevent EVENT_GOT_SPECIAL_KANGASKHAN
 	closetext
 	applymovement PLAYER, Route12PlayerAfterKangaskhan

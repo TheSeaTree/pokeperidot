@@ -164,7 +164,7 @@ TrainerCooltrainerFAnya:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke TOTODILE, 10
-	special GiftMonMoves
+	special TotodileGiftMon
 	setevent GOT_TOTODILE
 	closetext
 	end
@@ -195,6 +195,9 @@ TrainerCooltrainerFAnya:
 	waitbutton
 	closetext
 	end
+	
+Route5Sign:
+	jumptext Route5SignText
 	
 Route5FishingGuruSign:
 	jumptext Route5FishingGuruSignText
@@ -377,6 +380,13 @@ SchoolboyGusAfterText:
 	para "Girls love them."
 	done
 	
+Route5SignText:
+	text "ROUTE 5"
+
+	para "RIDGE VILLAGE"
+	line "ahead."
+	done
+	
 Route5FishingGuruSignText:
 	text "FISHING GURU's"
 	line "house."
@@ -477,7 +487,8 @@ Route5_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
+	bg_event  7, 21, BGEVENT_READ, Route5Sign
 	bg_event 41, 13, BGEVENT_READ, Route5FishingGuruSign
 
 	db 12 ; object events

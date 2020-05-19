@@ -461,8 +461,8 @@ AlreadyGotHeadbutt:
 Route1SignText:
 	text "ROUTE 1"
 
-	para "NEW BARK TOWN -"
-	line "CHERRYGROVE CITY"
+	para "ELKHORN TOWN -"
+	line "PAVONA VILLAGE"
 	done
 
 Route1_MapEvents:

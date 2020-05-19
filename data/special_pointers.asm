@@ -161,7 +161,10 @@ SpecialsPointers::
 	add_special PokeSeer
 	add_special BuenasPassword
 	add_special BuenaPrize
-	add_special GiftMonMoves
+	add_special KangaskhanGiftMon
+	add_special TotodileGiftMon
+	add_special CyndaquilGiftMon
+	add_special ChikoritaGiftMon
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
 	add_special MonCheck

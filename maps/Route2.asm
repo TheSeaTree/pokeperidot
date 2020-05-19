@@ -305,8 +305,8 @@ SchoolboyDannyAfterText:
 Route2SignText:
 	text "ROUTE 2"
 
-	para "CHERRYGROVE CITY -"
-	line "VIOLET CITY"
+	para "PAVONA VILLAGE -"
+	line "PECTINIA CITY"
 	done
 
 Route2TrainerTipsText:

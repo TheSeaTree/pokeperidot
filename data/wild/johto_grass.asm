@@ -275,29 +275,29 @@ JohtoGrassWildMons:
 	map_id DIGLETTS_CAVE
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
-	db  4, MACHOP
-	db  5, MACHOP
-	db  6, MACHOP
-	db  8, MACHOP
-	db  9, MACHOP
-	db 11, MACHOP
-	db 11, MACHOP
+	db 14, MACHOP
+	db 15, MACHOP
+	db 16, MACHOP
+	db 18, MACHOP
+	db 19, MACHOP
+	db 21, MACHOP
+	db 21, MACHOP
 	; day
-	db  4, MACHOP
-	db  5, MACHOP
-	db  6, MACHOP
-	db  8, MACHOP
-	db  9, MACHOP
-	db 11, MACHOP
-	db 11, MACHOP
+	db 14, MACHOP
+	db 15, MACHOP
+	db 16, MACHOP
+	db 18, MACHOP
+	db 19, MACHOP
+	db 21, MACHOP
+	db 21, MACHOP
 	; nite
-	db  4, MACHOP
-	db  5, MACHOP
-	db  6, MACHOP
-	db  8, MACHOP
-	db  9, MACHOP
-	db 11, MACHOP
-	db 11, MACHOP
+	db 14, MACHOP
+	db 15, MACHOP
+	db 16, MACHOP
+	db 18, MACHOP
+	db 19, MACHOP
+	db 21, MACHOP
+	db 21, MACHOP
 	
 	map_id PALEROCK_MOUNTAIN_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
@@ -442,24 +442,24 @@ JohtoGrassWildMons:
 	db 14, GEODUDE
 	db 14, GASTLY
 	db 15, GEODUDE
-	db 15, FERRODON
-	db 15, FERRODON
+	db 15, DIGLETT
+	db 15, DIGLETT
 	; day
 	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, GASTLY
 	db 15, GEODUDE
-	db 15, FERRODON
-	db 15, FERRODON
+	db 15, DIGLETT
+	db 15, DIGLETT
 	; nite
 	db 14, CUBONE
 	db 14, ZUBAT
 	db 14, GEODUDE
 	db 14, DROWZEE
 	db 15, GEODUDE
-	db 15, FERRODON
-	db 15, FERRODON
+	db 15, DIGLETT
+	db 15, DIGLETT
 	
 	map_id PALEROCK_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

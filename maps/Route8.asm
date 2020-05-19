@@ -176,7 +176,10 @@ JugglerRobertAfterText:
 	done
 	
 Route8UndergroundPathSignText:
-	text "Underground."
+	text "UNDERGROUND PATH"
+	
+	para "ROUTE 7-"
+	line "ROUTE 6"
 	done
 
 Route8_MapEvents:

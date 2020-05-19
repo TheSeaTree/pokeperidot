@@ -150,7 +150,7 @@ TrainerCooltrainerMLucas:
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke CYNDAQUIL, 10
-	special GiftMonMoves
+	special CyndaquilGiftMon
 	setevent GOT_CYNDAQUIL
 	closetext
 	end

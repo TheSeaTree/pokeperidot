@@ -14,19 +14,7 @@
 PalerockMountainB1_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .ItemBalls
-
-.ItemBalls:
-	checkevent EVENT_BOULDER_IN_PALEROCK_B
-	iftrue .NoItems
-	return
-
-.NoItems:
-	disappear PALEROCKB1_ITEMBALL1
-	disappear PALEROCKB1_ITEMBALL2
-	disappear PALEROCKB1_ITEMBALL3
-	return
+	db 0 ; callbacks
 
 PalerockB1Hiker:
 	faceplayer

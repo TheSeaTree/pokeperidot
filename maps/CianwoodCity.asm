@@ -125,14 +125,11 @@ CianwoodCityTMIceBeam:
 CianwoodCitySign:
 	jumptext CianwoodCitySignText
 
-CianwoodGymSign:
-	jumptext CianwoodGymSignText
+CianwoodChurchSign:
+	jumptext CianwoodChurchSignText
 
 CianwoodPharmacySign:
-	jumptext CianwoodPharmacySignText
-
-CianwoodPhotoStudioSign:
-	jumptext CianwoodPhotoStudioSignText
+	jumpstd martsign
 
 CianwoodPokeSeerSign:
 	jumptext CianwoodPokeSeerSignText
@@ -331,15 +328,10 @@ CianwoodCitySignText:
 	para "The quiet town on"
 	line "top of the world."
 	done
-
-CianwoodGymSignText:
-	text "CIANWOOD CITY"
-	line "#MON GYM"
-
-	para "LEADER: CHUCK"
-
-	para "His Roaring Fists"
-	line "Do the Talking"
+	
+CianwoodChurchSignText:
+	text "No tresspassing"
+	line "beyond this point!"
 	done
 
 CianwoodPharmacySignText:
@@ -383,6 +375,7 @@ CianwoodCity_MapEvents:
 	
 	db 4 ; bg events
 	bg_event 16, 22, BGEVENT_READ, CianwoodCitySign
+	bg_event 14,  9, BGEVENT_READ, CianwoodChurchSign
 	bg_event 12, 19, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 20, 21, BGEVENT_READ, CianwoodPharmacySign
 	bg_event 20, 15, BGEVENT_UP,   CianwoodGymEvent
