@@ -9,7 +9,7 @@ RGBFIX := rgbfix
 RGBGFX := rgbgfx
 RGBLINK := rgblink
 
-roms := pokeuntitled.gbc pokeuntitled11.gbc
+roms := pokeperidot.gbc pokeperidot11.gbc
 
 crystal_obj := \
 audio.o \
@@ -39,8 +39,8 @@ crystal11_obj := $(crystal_obj:.o=11.o)
 .SECONDARY:
 
 all: crystal
-crystal: pokeuntitled.gbc
-crystal11: pokeuntitled11.gbc
+crystal: pokeperidot.gbc
+crystal11: pokeperidot11.gbc
 
 clean:
 	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
@@ -76,12 +76,12 @@ $(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 endif
 
 
-pokeuntitled.gbc: $(crystal_obj) pokecrystal.link
+pokeperidot.gbc: $(crystal_obj) pokecrystal.link
 	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_PERIDOT $@
 	tools/sort_symfile.sh pokecrystal.sym
 
-pokeuntitled11.gbc: $(crystal11_obj) pokecrystal.link
+pokeperidot11.gbc: $(crystal11_obj) pokecrystal.link
 	$(RGBLINK) -n pokecrystal11.sym -m pokecrystal11.map -l pokecrystal.link -o $@ $(crystal11_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_PERIDOT $@
 	tools/sort_symfile.sh pokecrystal11.sym
