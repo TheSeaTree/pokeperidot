@@ -28,9 +28,14 @@ VioletGym_MapScripts:
 	applymovement VIOLETGYM_GYM_GUY, VioletGymWalkFromPlayer
 	end
 .deny
+	writetext VioletGymLeaveText
+	waitbutton
 	closetext
 	applymovement PLAYER, VioletLeaveGym
-	warpfacing DOWN, VIOLET_CITY, 40, 9
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	wait 4
+	warpfacing DOWN, VIOLET_CITY, 38,  7
 	end
 	
 .DummyScene1:
@@ -94,7 +99,7 @@ VioletGymWalkFromPlayer:
 	step RIGHT
 	step UP
 	turn_step DOWN
-	step_end
+	step_resume
 	
 VioletGymGuyText:
 	text "Hey! I'm no train-"
@@ -133,16 +138,21 @@ VioletExplainGyms:
 	text "You should know"
 	line "before you enter"
 	cont "that you cannot"
-	cont "exit a gym"
-	cont "unless you win"
-	cont "a BADGE or white"
-	cont "out."
+	cont "exit a gym unless"
+	cont "you win its BADGE"
+	cont "or white out."
 	
 	para "Would you like a"
 	line "chance to stock up"
 	cont "on items before"
 	cont "taking on this"
 	cont "challenge?"
+	done
+	
+VioletGymLeaveText:
+	text "Okay! Come back"
+	line "whenever you are"
+	cont "ready!"
 	done
 	
 VioletGymGoodLuck:
