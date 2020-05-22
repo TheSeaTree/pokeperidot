@@ -389,7 +389,7 @@ PrintTradeText:
 	push af
 	call GetTradeMonNames
 	pop af
-	ld bc, 2 * 4
+	ld bc, 2 * 5
 	ld hl, TradeTexts
 	call AddNTimes
 	ld a, [wcf64]

@@ -1507,7 +1507,7 @@ UnknownText_0x1bd745::
 TradeText_Intro5::
 	text "I've always wanted"
 	line "a pink DITTO!"
-	
+
 	para "Unfortunately, the"
 	line "one I caught was"
 	cont "blue."
