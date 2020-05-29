@@ -8,18 +8,13 @@
 
 CianwoodCity_MapScripts:
 	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_CIANWOODCITY_NOTHING
-	scene_script .DummyScene1 ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
+	scene_script .DummyScene ; SCENE_CIANWOODCITY_NOTHING
+	scene_script .DummyScene ; SCENE_CIANWOODCITY_SUICUNE_AND_EUSINE
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 
-.DummyScene0:
-	disappear CIANWOODCITY_BURGLAR2
-	end
-
-.DummyScene1:
-	disappear CIANWOODCITY_BURGLAR2
+.DummyScene:
 	end
 
 .FlyPoint:
@@ -28,6 +23,7 @@ CianwoodCity_MapScripts:
 	
 CianwoodCityBurglar:
 	playsound SFX_EXIT_BUILDING
+	moveobject CIANWOODCITY_BURGLAR2, 19, 21
 	appear CIANWOODCITY_BURGLAR2
 	applymovement CIANWOODCITY_BURGLAR2, CianwoodBurglarExitBuilding
 	applymovement PLAYER, CianwoodShovedBack
@@ -373,7 +369,7 @@ CianwoodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 19, 22, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
 	
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 16, 22, BGEVENT_READ, CianwoodCitySign
 	bg_event 14,  9, BGEVENT_READ, CianwoodChurchSign
 	bg_event 12, 19, BGEVENT_READ, CianwoodPokecenterSign
@@ -384,7 +380,7 @@ CianwoodCity_MapEvents:
 	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1
 	object_event 21,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityBoulder, -1
 	object_event 16, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CianwoodCityLookout, EVENT_EXPLAINED_BURGLAR
-	object_event 19, 21, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to
+	object_event  0,  0, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BURGLAR_IN_CIANWOOD ; burglar, runs away when talked to
 	object_event 26, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CianwoodCityMoveTutor, -1
 	object_event 27, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, CianwoodCityTMIceBeam, EVENT_GOT_TM_ICE_BEAM
 	object_event 15, 38, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityFruitTree, -1
