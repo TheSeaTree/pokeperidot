@@ -5,7 +5,7 @@ BattleAnimations::
 	dw BattleAnim_KarateChop
 	dw BattleAnim_Doubleslap
 	dw BattleAnim_CometPunch
-	dw BattleAnim_DreadStorm
+	dw BattleAnim_DiveBomb
 	dw BattleAnim_PayDay
 	dw BattleAnim_FirePunch
 	dw BattleAnim_IcePunch
@@ -2740,31 +2740,17 @@ BattleAnim_Glare:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_DreadStorm:
-	anim_1gfx ANIM_GFX_WATER
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect ANIM_BG_30, $0, $0, $0
-	anim_bgp $f8
-	anim_obp0 $7c
-	anim_sound 0, 1, SFX_RAIN_DANCE
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $0
+BattleAnim_DiveBomb:
+	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_06, $0, $1, $0
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_sound 0, 0, SFX_OUTRAGE
+	anim_call BattleAnim_DiveBomb_Branch_cbb12
+	anim_wait 32
+	anim_call BattleAnim_OutrageHit
 	anim_wait 16
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $1
-	anim_wait 16
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
-	anim_wait 64
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $10
-	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 3
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_00, 128, 48, $0
-	anim_wait 6
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_00, 144, 48, $0
-	anim_wait 3
-	anim_call BattleAnim_ShowMon_0
-	anim_ret	
-
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_ret
 
 BattleAnim_PlayRough:
 BattleAnim_Thrash:
@@ -3696,6 +3682,7 @@ BattleAnim_Outrage:
 	anim_wait 72
 	anim_incbgeffect ANIM_BG_1A
 	anim_call BattleAnim_ShowMon_0
+BattleAnim_OutrageHit:
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_sound 0, 1, SFX_MOVE_PUZZLE_PIECE
 	anim_obj ANIM_OBJ_00, 120, 72, $0
@@ -4765,6 +4752,7 @@ BattleAnim_ScaryFace_branch_cbadc:
 BattleAnim_Fly_branch_cbb12:
 BattleAnim_Teleport_branch_cbb12:
 	anim_sound 0, 0, SFX_WARP_TO
+BattleAnim_DiveBomb_Branch_cbb12:
 	anim_obj ANIM_OBJ_44, 44, 108, $0
 	anim_obj ANIM_OBJ_44, 44, 100, $0
 	anim_obj ANIM_OBJ_44, 44, 92, $0
