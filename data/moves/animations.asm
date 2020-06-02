@@ -2458,15 +2458,13 @@ BattleAnim_Swift:
 	anim_ret
 
 BattleAnim_Crabhammer:
-	anim_1gfx ANIM_GFX_HIT
+	anim_1gfx ANIM_GFX_CLAW
 	anim_bgeffect ANIM_BG_1F, $40, $2, $0
-	anim_wait 48
+	anim_wait 32
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-.loop
-	anim_sound 0, 1, SFX_MEGA_PUNCH
-	anim_obj ANIM_OBJ_00, 136, 56, $0
-	anim_wait 12
-	anim_loop 3, .loop
+	anim_sound 0, 1, SFX_STRENGTH
+	anim_obj ANIM_OBJ_CRAB_CLAW, 120, 48, $30
+	anim_wait 64
 	anim_ret
 
 BattleAnim_SkullBash:
