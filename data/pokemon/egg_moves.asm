@@ -345,7 +345,6 @@ FarfetchDEggMoves:
 	db BATON_PASS
 	db WATER_GUN
 	db PAY_DAY
-	db SING
 	db -1 ; end
 
 DoduoEggMoves:
@@ -695,6 +694,7 @@ CubboltEggMoves:
 	db THRASH
 	db FLARE_BLITZ
 	db WILD_CHARGE
+	db SING
 	db ENDURE
 	db SIGNAL_BEAM
 	db -1 ; end
@@ -809,6 +809,7 @@ AipomEggMoves:
 SunkernEggMoves:
 	db BIDE
 	db ENCORE
+	db SING
 	db SYNTHESIS
 	db SWEET_SCENT
 	db -1 ; end
