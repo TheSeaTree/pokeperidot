@@ -1357,6 +1357,7 @@ SeelEvosAttacks:
 	db 13, ENCORE
 	db 21, REST
 	db 27, AURORA_BEAM
+	db 31, AQUA_JET
 	db 35, SING
 	db 37, DOUBLE_EDGE
 	db 47, ICE_BEAM
@@ -1372,6 +1373,7 @@ DewgongEvosAttacks:
 	db 13, ENCORE
 	db 21, REST
 	db 27, AURORA_BEAM
+	db 31, AQUA_JET
 	db 34, HORN_DRILL
 	db 39, DOUBLE_EDGE
 	db 42, SIGNAL_BEAM
@@ -1718,6 +1720,7 @@ SearionEvosAttacks:
 	db 24, BUBBLE
 	db 28, BUBBLEBEAM
 	db 33, DOUBLESLAP
+	db 36, AQUA_JET
 	db 44, FLAMETHROWER
 	db 49, HYDRO_PUMP
 	db 56, FIRE_BLAST
@@ -2260,6 +2263,7 @@ KabutoEvosAttacks:
 	db 11, LEER
 	db 16, DIG
 	db 21, SAND_ATTACK
+	db 24, AQUA_JET
 	db 26, ENDURE
 	db 31, BUBBLEBEAM
 	db 36, X_SCISSOR
@@ -2275,6 +2279,7 @@ KabutopsEvosAttacks:
 	db 11, LEER
 	db 16, DIG
 	db 21, SAND_ATTACK
+	db 24, AQUA_JET
 	db 26, ENDURE
 	db 31, BUBBLEBEAM
 	db 36, MEGA_DRAIN
@@ -3079,11 +3084,11 @@ HoppipEvosAttacks:
 	db 19, RAZOR_LEAF
 	db 22, LEECH_SEED
 	db 25, MEGA_DRAIN
-	db 28, GUST
+	db 28, RAZOR_WIND
 	db 32, U_TURN
 	db 35, BATON_PASS
 	db 37, GIGA_DRAIN
-	db 40, RAZOR_WIND
+	db 40, HURRICANE
 	db 0 ; no more level-up moves
 
 SkiploomEvosAttacks:
@@ -3101,11 +3106,11 @@ SkiploomEvosAttacks:
 	db 20, RAZOR_LEAF
 	db 24, LEECH_SEED
 	db 28, MEGA_DRAIN
-	db 32, GUST
+	db 32, RAZOR_WIND
 	db 38, U_TURN
 	db 40, BATON_PASS
 	db 44, GIGA_DRAIN
-	db 48, RAZOR_WIND
+	db 48, HURRICANE
 	db 0 ; no more level-up moves
 
 JumpluffEvosAttacks:
@@ -3122,11 +3127,11 @@ JumpluffEvosAttacks:
 	db 20, RAZOR_LEAF
 	db 24, LEECH_SEED
 	db 29, MEGA_DRAIN
-	db 34, GUST
+	db 34, RAZOR_WIND
 	db 40, U_TURN
 	db 46, BATON_PASS
 	db 49, GIGA_DRAIN
-	db 54, RAZOR_WIND
+	db 54, HURRICANE
 	db 0 ; no more level-up moves
 
 AipomEvosAttacks:

@@ -31,6 +31,7 @@ CharmanderEggMoves:
 	db -1 ; end
 
 SquirtleEggMoves:
+	db AQUA_JET
 	db MIRROR_COAT
 	db HAZE
 	db MIST
