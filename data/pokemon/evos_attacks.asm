@@ -2846,6 +2846,7 @@ SirfetchDEvosAttacks:
 	db 7, FURY_ATTACK
 	db 9, WING_ATTACK
 	db 19, CUT
+	db 22, SING
 	db 25, SWORDS_DANCE
 	db 31, AGILITY
 	db 38, RAZOR_WIND
