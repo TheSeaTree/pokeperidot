@@ -2485,6 +2485,8 @@ BattleCommand_CheckFaint:
 	cp EFFECT_BONEMERANG
 	jr z, .multiple_hit_raise_sub
 	cp EFFECT_POISON_MULTI_HIT
+	jr z, .multiple_hit_raise_sub
+	cp EFFECT_HYPER_BEAM_RECHARGE
 	jr nz, .finish
 
 .multiple_hit_raise_sub
@@ -6017,14 +6019,11 @@ INCLUDE "engine/battle/move_effects/substitute.asm"
 
 BattleCommand_RechargeNextTurn:
 ; rechargenextturn
-	call BattleCommand_CheckFaint
-	jr c, .skip
+	farcall BattleCommand_CheckFaint
+	ret c
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	set SUBSTATUS_RECHARGE, [hl]
-	ret
-
-.skip
 	ret
 
 EndRechargeOpp:
