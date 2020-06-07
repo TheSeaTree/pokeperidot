@@ -118,6 +118,8 @@
 	const SPRITE_PSYCHIC_LEADER
 	const SPRITE_ABBOT
 	const SPRITE_FANGIRL
+	const SPRITE_FOOD
+	const SPRITE_CHEF
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

@@ -80,7 +80,7 @@ EcruteakEnterGym
 EcruteakCityLass:
 	jumptextfaceplayer EcruteakCityLassText
 	
-EcruteakGymGuy:
+EcruteakGymGuyOutside:
 	jumptextfaceplayer EcruteakGymLeaderAwayText
 
 EcruteakCityFruitTree:
@@ -139,142 +139,17 @@ EcruteakGymLeaderAwayText:
 	cont "you can't miss it!"
 	done
 
-EcruteakCityGramps1Text:
-	text "ECRUTEAK used to"
-	line "have two towers:"
-
-	para "one each in the"
-	line "east and west."
-	done
-
-EcruteakCityGramps2Text:
-	text "Ah, child."
-	line "Have you learned"
-
-	para "to dance like the"
-	line "KIMONO GIRLS?"
-
-	para "If you go to their"
-	line "DANCE THEATER, an"
-
-	para "odd old man will"
-	line "give you something"
-	cont "nice, I hear."
-	done
-
-EcruteakCityLass1Text:
-	text "I'm going to prac-"
-	line "tice at the DANCE"
-
-	para "THEATER. Care to"
-	line "join me?"
-	done
-
-EcruteakCityLass2Text:
-	text "The tower that"
-	line "used to be here…"
-
-	para "My grandma told me"
-	line "it used to be much"
-	cont "taller."
-	done
-
-EcruteakCityLass2Text_ReleasedBeasts:
-	text "Three big #MON"
-	line "ran off in differ-"
-	cont "ent directions."
-	cont "What were they?"
-	done
-
-EcruteakCityFisherText:
-	text "I heard a rumor"
-	line "about OLIVINE"
-	cont "LIGHTHOUSE."
-
-	para "The #MON that"
-	line "serves as the"
-
-	para "beacon fell ill."
-	line "Sounds like they"
-	cont "are in trouble."
-	done
-
-EcruteakCityYoungsterText:
-	text "I hear #MON are"
-	line "rampaging at the"
-
-	para "LAKE OF RAGE. I'd"
-	line "like to see that."
-	done
-
-EcruteakCityGramps3Text:
-	text "In the distant"
-	line "past…"
-
-	para "This tower burned"
-	line "in a fire. Three"
-
-	para "nameless #MON"
-	line "perished in it."
-
-	para "A rainbow-colored"
-	line "#MON descended"
-
-	para "from the sky and"
-	line "resurrected them…"
-
-	para "It's a legend that"
-	line "has been passed"
-
-	para "down by ECRUTEAK"
-	line "GYM LEADERS."
-
-	para "Me?"
-
-	para "I was a trainer"
-	line "way back when."
-	cont "Hohoho!"
-	done
-
 EcruteakCitySignText:
-	text "ECRUTEAK CITY"
-	line "A Historical City"
+	text "STAGHORN TOWN"
 
-	para "Where the Past"
-	line "Meets the Present"
-	done
-
-TinTowerSignText:
-	text "TIN TOWER"
-
-	para "A legendary #-"
-	line "MON is said to"
-	cont "roost here."
-	done
-
-EcruteakGymSignText:
-	text "ECRUTEAK CITY"
-	line "#MON GYM"
-	cont "LEADER: MORTY"
-
-	para "The Mystic Seer of"
-	line "the Future"
+	para "The link between"
+	line "nature and civili-"
+	cont "zation."
 	done
 
 EcruteakDanceTheaterSignText:
 	text "ECRUTEAK DANCE"
 	line "THEATER"
-	done
-
-BurnedTowerSignText:
-	text "BURNED TOWER"
-
-	para "It was destroyed"
-	line "by a mysterious"
-	cont "fire."
-
-	para "Please stay away,"
-	line "as it is unsafe."
 	done
 
 EcruteakCity_MapEvents:
@@ -306,6 +181,6 @@ EcruteakCity_MapEvents:
 
 	db 4 ; object events
 	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, EVENT_FLUTE_HIDEOUT_OPEN
-	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuy, EVENT_ECRUTEAK_GYM_ACCESS
+	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuyOutside, EVENT_ECRUTEAK_GYM_ACCESS
 	object_event  2,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
 	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE

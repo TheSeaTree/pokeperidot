@@ -142,6 +142,9 @@ CianwoodCityBoulder:
 CianwoodCityFruitTree:
 	fruittree FRUITTREE_CIANWOOD_CITY
 	
+CianwoodCityHiddenWaterStone:
+	hiddenitem WATER_STONE, EVENT_CIANWOOD_CITY_HIDDEN_WATER_STONE
+	
 CianwoodGymMovement:
 	step UP
 	step_end
@@ -369,12 +372,13 @@ CianwoodCity_MapEvents:
 	db 1 ; coord events
 	coord_event 19, 22, SCENE_CIANWOODCITY_NOTHING, CianwoodCityBurglar
 	
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event 16, 22, BGEVENT_READ, CianwoodCitySign
 	bg_event 14,  9, BGEVENT_READ, CianwoodChurchSign
 	bg_event 12, 19, BGEVENT_READ, CianwoodPokecenterSign
 	bg_event 20, 21, BGEVENT_READ, CianwoodPharmacySign
 	bg_event 20, 15, BGEVENT_UP,   CianwoodGymEvent
+	bg_event  5, 10, BGEVENT_ITEM, CianwoodCityHiddenWaterStone
 
 	db 7 ; object events
 	object_event  9, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodCityRock, -1

@@ -750,7 +750,7 @@ AzaleaTown_MapEvents:
 
 	db 11 ; bg events
 	bg_event  6, 25, BGEVENT_READ, AzaleaTownSign
-	bg_event  6, 25, BGEVENT_READ, AzaleaApartmentsSign
+	bg_event 17, 19, BGEVENT_READ, AzaleaApartmentsSign
 	bg_event 29, 23, BGEVENT_READ, AzaleaSquareSign
 	bg_event 23, 11, BGEVENT_READ, AzaleaTrainStationSign
 	bg_event 50,  7, BGEVENT_READ, AzaleaTownPokecenterSign

@@ -199,8 +199,8 @@ VioletTutorSign:
 VioletCityPokecenterSign:
 	jumpstd pokecentersign
 
-VioletCityMartSign:
-	jumpstd martsign
+VioletCityCafeSign:
+	jumptext VioletCafeSignText
 
 VioletCityFruitTree:
 	fruittree FRUITTREE_VIOLET_CITY_1
@@ -475,6 +475,10 @@ VioletCitySignText:
 	para "Admire the"
 	line "sea's majesty."
 	done
+	
+VioletCafeSignText:
+	text "RIDGE CAFE"
+	done
 
 VioletTutorSignText:
 	text "MOVE TUTOR"
@@ -496,7 +500,7 @@ VioletCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 21,  9, VIOLET_MART, 2
+	warp_event 21,  9, VIOLET_CAFE, 2
 	warp_event 37, 15, VIOLET_CITY, 2
 	warp_event  9,  7, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 13, VIOLET_MOVE_TUTOR, 1
@@ -512,7 +516,7 @@ VioletCity_MapEvents:
 	bg_event  8, 13, BGEVENT_READ, VioletCitySign
 	bg_event 16, 14, BGEVENT_READ, VioletTutorSign
 	bg_event 10,  7, BGEVENT_READ, VioletCityPokecenterSign
-	bg_event 22,  9, BGEVENT_READ, VioletCityMartSign
+	bg_event 20, 10, BGEVENT_READ, VioletCityCafeSign
 	bg_event 19,  1, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 

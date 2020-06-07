@@ -205,7 +205,7 @@ PickupHelixFossilEvent:
 	opentext
 	writetext HikerGrantSelectFossilText
 	waitbutton
-	writetext HikerGrantPickUpHelixFossil
+	writetext HikerGrantPickUpDomeFossil
 	playsound SFX_ITEM
 	waitsfx
 	waitbutton

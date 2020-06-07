@@ -142,7 +142,6 @@ EcruteakMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
 AzaleaMart_Blocks:
-VioletMart_Blocks:
 PewterMart_Blocks:
 FuchsiaMart_Blocks:
 LavenderMart_Blocks:
@@ -151,6 +150,9 @@ OrchidMart_Blocks:
 CianwoodMart_Blocks:
 GoldenrodMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
+	
+VioletCafe_Blocks:
+	INCBIN "maps/VioletCafe.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"

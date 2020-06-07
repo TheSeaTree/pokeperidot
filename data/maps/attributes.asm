@@ -270,7 +270,7 @@ ENDM
 	map_attributes AzaleaMart, AZALEA_MART, $00, 0
 	map_attributes KurtsHouse, KURTS_HOUSE, $00, 0
 	map_attributes AzaleaGym, AZALEA_GYM, $00, 0
-	map_attributes VioletMart, VIOLET_MART, $00, 0
+	map_attributes VioletCafe, VIOLET_CAFE, $00, 0
 	map_attributes VioletGym, VIOLET_GYM, $00, 0
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes GoldenrodGym, GOLDENROD_GYM, $00, 0

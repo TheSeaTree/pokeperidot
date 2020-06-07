@@ -116,13 +116,12 @@ EcruteakGymLeader:
 	writetext PoseyRootBadgeText
 	buttonsound
 	verbosegiveitem TM_SOLARBEAM
-	iffalse .NoRoomForSolarbeam
 	setevent EVENT_GOT_TM_SOLARBEAM
-
-.GotSolarbeam:
 	writetext PoseySolarbeamText
 	waitbutton
-.NoRoomForSolarbeam:
+.GotSolarbeam:
+	writetext PoseyAfterText
+	waitbutton
 	closetext
 	end
 	
@@ -141,7 +140,7 @@ EcruteakCantLeave:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	wait 4
-	warpfacing DOWN, ECRUTEAK_CITY, 8, 11
+	warpfacing DOWN, ECRUTEAK_CITY, 12, 11
 	end
 	
 EcruteakGymBossMon1:
@@ -256,6 +255,17 @@ TrainerPokefanMLester:
 	closetext
 	end
 	
+EcruteakGymGuy:
+	jumptextfaceplayer EcruteakGymGuyText
+	
+EcruteakGymStatue:
+	checkflag ENGINE_STORMBADGE
+	iftrue .Beaten
+	jumpstd gymstatue1
+.Beaten:
+	trainertotext POSEY, POSEY1, MEM_BUFFER_1
+	jumpstd gymstatue2
+	
 EcruteakGymLeaderApproach:
 	step DOWN
 	turn_head RIGHT
@@ -275,7 +285,6 @@ EcruteakLeaveGym:
 	step_end
 	
 EcruteakgymIntroText:
-	
 	text "Ah, there you are!"
 	
 	para "Thank you once"
@@ -328,45 +337,54 @@ EcruteakgymIntroText:
 YouDidIt:
 	text "POSEY: You got rid"
 	line "of all the #MON"
-	cont "in here! Now we"
-	cont "may battle!"
+	cont "in here!"
+	
+	para "Come find me and"
+	line "we can have that"
+	cont "battle you wanted!"
 	done
 	
 WillNotBattle:	
-	text "I will not battle"
-	line "you yet."
+	text "I can't battle you"
+	line "yet. There are"
+	cont "still wild #MON"
+	cont "in the gym!"
 	done
 	
 PoseyChallengeText:
-	text "I may not look"
-	line "like it, but I"
-	cont "love a good"
+	text "I usually oppose"
+	line "violence, but my"
+	cont "#MON are happy"
+	cont "to have a good"
 	cont "battle!"
 	
-	para "I hope you will"
-	line "show me a great"
+	para "I trust you will"
+	line "show them a great"
 	cont "one!"
 	done
 	
 PoseyWinText:
-	text "How wonderful!"
-	
-	para "That was one of"
-	line "the best battles I"
-	cont "have had in ages!"
-	
+	text "That was a wonder-"
+	line "ful battle!"
+
+	para "A balance between"
+	line "skill and respect"
+	cont "is important to a"
+	cont "trainer. You have"
+	cont "displayed both!"
+
 	para "You have earned"
 	line "my ROOTBADGE!"
 	done
 	
 PoseyRootBadgeText:
-	text "That's not all,"
-	line "please take this"
-	cont "TM as well."
+	text "Please take my"
+	cont "special technique"
+	cont "as well!"
 	done
 
 PoseySolarbeamText:
-	text "That TM contains"
+	text "TM56 contains"
 	line "SOLARBEAM."
 	
 	para "It takes a while"
@@ -380,6 +398,20 @@ PoseySolarbeamText:
 	para "If it's sunny, it"
 	line "won't even need to"
 	cont "be charged!"
+	done
+	
+PoseyAfterText:
+	text "You have battled"
+	line "so well, but I can"
+	cont "feel the love and"
+	cont "care you have for"
+	cont "your #MON."
+	
+	para "I know that will"
+	line "continue to grow"
+	cont "stronger. I'll be"
+	cont "rooting for you,"
+	cont "<PLAYER>!"
 	done
 
 PlayerReceivedRootBadgeText:
@@ -460,6 +492,33 @@ PokefanMLesterWinText:
 PokefanMLesterAfterText:
 	text "I lost."
 	done
+	
+EcruteakGymGuyText:
+	text "Yo! Champ in the"
+	line "making!"
+	
+	para "POSEY is back from"
+	line "her emergency, so"
+	cont "she is accepting"
+	cont "challenges once"
+	cont "again!"
+	
+	para "Her specialty is"
+	line "in #MON at one"
+	cont "with nature."
+	
+	para "FIRE and FLYING-"
+	line "type #MON are"
+	cont "greatly effective"
+	cont "in here!"
+	
+	para "You can't go wrong"
+	line "with some ROCK or"
+	cont "ICE moves, either!"
+	
+	para "Good luck out"
+	line "there!"
+	done
 
 EcruteakGym_MapEvents:
 	db 0, 0 ; filler
@@ -476,14 +535,16 @@ EcruteakGym_MapEvents:
 	coord_event 10, 18, SCENE_ECRUTEAKGYM_INTRO, EcruteakGymIntroLeft
 	coord_event 11, 18, SCENE_ECRUTEAKGYM_INTRO, EcruteakGymIntroRight
 
-	db 2 ; bg events
+	db 4 ; bg events
+	bg_event  9, 18, BGEVENT_READ, EcruteakGymStatue
+	bg_event 12, 18, BGEVENT_READ, EcruteakGymStatue
 	bg_event 10, 22, BGEVENT_DOWN, EcruteakCantLeave
 	bg_event 11, 22, BGEVENT_DOWN, EcruteakCantLeave
 
 	db 8 ; object events
 	object_event 11,  3, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakGymLeader, -1
 	object_event 10, 17, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ECRUTEAK_GYM_INTRO
-	object_event 12, 19, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 13, 19, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuy, -1
 	object_event 13, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperJeff, -1
 	object_event  6, 14, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerPicnickerTerry, -1
 	object_event  5,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanMLester, -1

@@ -180,7 +180,7 @@ ENDM
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const ROUTE_10_NORTH,                              16, 14 ; 14
 	map_const VIOLET_CITY,                                 27, 12 ;  5
-	map_const VIOLET_MART,                                  6,  4 ;  6
+	map_const VIOLET_CAFE,                                  7,  4 ;  6
 	map_const VIOLET_GYM,                                   5,  4 ;  7
 	map_const VIOLET_POKECENTER_1F,                         5,  4 ; 10
 	map_const VIOLET_GYM_B1,							   18, 16 ; 18

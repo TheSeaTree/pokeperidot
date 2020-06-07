@@ -20,36 +20,28 @@ SodaMan:
 	opentext
 	checkflag EVENT_ROUTE_7_BOUGHT_SODA
 	iftrue .BuyAgain
-	writetext BuySodaText
+	writetext GiveSodaText
 	waitbutton
 	verbosegiveitem SODA_POP
 	setflag EVENT_ROUTE_7_BOUGHT_SODA
-	turnobject LAST_TALKED, RIGHT
-	closetext
-	end
+	writetext AfterGiveSodaText
+	jump .EndSodaGuy
 	
 .refused
 	writetext RefusedSodaText
-	waitbutton
-	turnobject LAST_TALKED, RIGHT
-	closetext
-	end
+	jump .EndSodaGuy
 	
 .NotEnoughMoney:
 	writetext SodaNoMoneyText
-	waitbutton
-	turnobject LAST_TALKED, RIGHT
-	closetext
-	end	
+	jump .EndSodaGuy
 
 .NotEnoughSpace:
 	writetext SodaNoSpaceText
-	waitbutton
-	turnobject LAST_TALKED, RIGHT
-	closetext
-	end
+	jump .EndSodaGuy
 	
 .BuyAgain
+	checkflag ENGINE_SODA_POP_GUY
+	iftrue .AlreadyBought
 	writetext BuyAgainText
 	special PlaceMoneyTopRight
 	yesorno
@@ -62,11 +54,17 @@ SodaMan:
 	itemtotext SODA_POP, MEM_BUFFER_0
 	writetext BoughtSoda
 	playsound SFX_ITEM
-	waitsfx
+	buttonsound
+	itemnotify
 	writetext BoughtSodaAfter
+	jump .EndSodaGuy
+	
+.AlreadyBought:
+	writetext BoughtSodaTodayText
+.EndSodaGuy:
 	waitbutton
-	turnobject LAST_TALKED, RIGHT
 	closetext
+	turnobject LAST_TALKED, RIGHT
 	end
 	
 Route6UndergroundNerd:
@@ -81,7 +79,7 @@ Route6UndergroundOfficer1:
 Route6UndergroundOfficer2:
 	jumptextfaceplayer Route6UndergroundOfficer2Text
 	
-BuySodaText:
+GiveSodaText:
 	text "Hey, kid. I got"
 	line "something you"
 	cont "might want."
@@ -90,8 +88,14 @@ BuySodaText:
 	line "On the house."
 	done
 	
+AfterGiveSodaText:
+	text "Hehe! Thanks!"
+	
+	para "Tell your friends!"
+	done
+	
 RefusedSodaText:
-	text "Come on, kid."
+	text "You sure, kid?"
 	
 	para "Your #MON look"
 	line "mighty thirsty…"
@@ -117,7 +121,7 @@ BoughtSoda:
 BoughtSodaAfter:
 	text "Alright, little"
 	line "dude! You really"
-	cont "helped me out."
+	cont "helped me out!"
 	done
 	
 BuyAgainText:
@@ -129,6 +133,15 @@ BuyAgainText:
 	line "run you ¥3600."
 	
 	para "How about it?"
+	done
+	
+BoughtSodaTodayText:
+	text "I'm fresh out of"
+	line "stock for today."
+	
+	para "Try coming back"
+	line "tomorrow. I'll"
+	cont "hook you up."
 	done
 	
 Route6UndergroundNerdText:

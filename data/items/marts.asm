@@ -48,13 +48,10 @@ MartOrchid:
 	db -1 ; end
 
 MartViolet:
-	db 6 ; # items
-	db POKE_BALL
-	db GREAT_BALL
-	db POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
+	db 3 ; # items
+	db FRESH_WATER
+	db LEMONADE
+	db SWEET_TEA
 	db -1 ; end
 
 MartAzalea:

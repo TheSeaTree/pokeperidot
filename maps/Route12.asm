@@ -75,9 +75,6 @@ Route12FireStone:
 	itemball FIRE_STONE
 
 Route12ShelterSign:
-;	writebyte VENUSAUR
-;	special CheckOwnedMon
-;	iffalse .novenusaur
 	jumptext ShelterSignText
 	
 ShelterSignText:
@@ -89,10 +86,13 @@ ShelterSignText:
 	done
 	
 CamperRustyText:
-	text "I am a"
-	line "#MON trainer!"
-	done
+	text "There is so much"
+	line "to explore!"
 	
+	para "Let's explore each"
+	line "other's #MON!"
+	done
+
 PicnickerLeslieText:
 	text "Hi…"
 	line "um…"
@@ -103,13 +103,16 @@ PicnickerLeslieText:
 	done
 	
 BeautyRebeccaText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Focus on the"
+	line "battle. Not on me."
 	done
 	
 PsychicSolomonText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Want to see a"
+	line "magic trick?"
+	
+	para "I can make your"
+	line "POTIONs disappear!"
 	done
 	
 TeacherSharonText:
@@ -123,7 +126,8 @@ SchoolboyMartinText:
 	done
 	
 CamperRustyWinText:
-	text "I lost."
+	text "I took a wrong"
+	line "turn somewhere!"
 	done
 
 PicnickerLeslieWinText:
@@ -132,11 +136,15 @@ PicnickerLeslieWinText:
 	done
 
 BeautyRebeccaWinText:
-	text "I lost."
+	text "Hmph!"
+	
+	para "Everyone else gets"
+	line "distracted by me!"
 	done
 
 PsychicSolomonWinText:
-	text "I lost."
+	text "You tried your"
+	line "best, partners."
 	done
 
 TeacherSharonWinText:
@@ -150,7 +158,13 @@ SchoolboyMartinWinText:
 	done
 
 CamperRustyAfterText:
-	text "I lost."
+	text "I really need to"
+	line "take a rest after"
+	cont "that battle."
+	
+	para "I won't be able to"
+	line "move from this"
+	cont "spot until then!"
 	done
 
 PicnickerLeslieAfterText:
@@ -164,11 +178,21 @@ PicnickerLeslieAfterText:
 	done
 
 BeautyRebeccaAfterText:
-	text "I lost."
+	text "Oh, so now you"
+	line "want to admire me?"
+	
+	para "Wasn't your win"
+	line "enough?"
 	done
 
 PsychicSolomonAfterText:
-	text "I lost."
+	text "My #MON have"
+	line "taught me some"
+	cont "real neat tricks."
+	
+	para "I feel bad for"
+	line "losing a battle"
+	cont "with them."
 	done
 
 TeacherSharonAfterText:
