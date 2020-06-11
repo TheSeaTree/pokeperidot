@@ -1356,9 +1356,8 @@ UnknownText_0x1c1adf::
 	prompt
 
 UnknownText_0x1c1b03::
-	text "OAK: <PLAYER>!"
-	line "This isn't the"
-	cont "time to use that!"
+	text "This isn't the"
+	line "time to use that!"
 	done
 
 UnknownText_0x1c1b2c::
