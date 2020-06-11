@@ -311,22 +311,18 @@ DoPlayerMovement::
 	call GetMapEnvironment
 	cp INDOOR
 	jr z, .holdwalk
+	cp DUNGEON
+	jr z, .holdwalk
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
 .holdwalk
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
-;	jr nz, .walkanim
 	ld a, STEP_WALK
 	call .DoStep
 	scf
 	ret
-;.walkanim
-;	ld a, PLAYER_NORMAL
-;	ld [wPlayerState], a
-;	call ReplaceKrisSprite
-;	ret
 
 .run
 	ld a, [wCurInput]
@@ -335,7 +331,6 @@ DoPlayerMovement::
 .holdrun
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
-;	jr z, .runanim
 	ld a, STEP_RUN
 	call .DoStep
 	push af
@@ -345,11 +340,6 @@ DoPlayerMovement::
 	pop af
 	scf
 	ret
-;.runanim
-;	ld a, PLAYER_RUN
-;	ld [wPlayerState], a
-;	call ReplaceKrisSprite
-;	ret
 
 .ice
 	ld a, STEP_ICE
@@ -788,6 +778,8 @@ ENDM
 	call GetMapEnvironment
 	cp INDOOR
 	ret z
+	cp DUNGEON
+	ret z
 	ld a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
@@ -800,6 +792,11 @@ ENDM
 	call ReplaceKrisSprite
 	ret
 .running
+	call GetMapEnvironment
+	cp INDOOR
+	jp z, .runningstand
+	cp DUNGEON
+	jp z, .runningstand
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
 	ret nz
@@ -810,10 +807,6 @@ ENDM
 	and B_BUTTON
 	cp B_BUTTON
 	ret z
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
 .runningstand
 	ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
