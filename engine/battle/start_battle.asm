@@ -48,7 +48,7 @@ PlayBattleMusic:
 	cp BATTLETYPE_ROAMING
 	jp z, .done
 	cp BATTLETYPE_BOSS
-	ld de, MUSIC_KANTO_TRAINER_BATTLE
+	ld de, MUSIC_JOHTO_GYM_LEADER_BATTLE
 	jp z, .done
 
 	; Are we fighting a trainer?

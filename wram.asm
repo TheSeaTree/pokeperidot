@@ -2590,10 +2590,10 @@ wBurnedTowerB1FSceneID::                          db ; d9a8
 wRadioTower5FSceneID::                            db ; d9a9
 wRuinsOfAlphOutsideSceneID::                      db ; d9aa
 wRuinsOfAlphResearchCenterSceneID::               db ; d9ab
-wRuinsOfAlphHoOhChamberSceneID::                  db ; d9ac
-wRuinsOfAlphKabutoChamberSceneID::                db ; d9ad
-wRuinsOfAlphOmanyteChamberSceneID::               db ; d9ae
-wRuinsOfAlphAerodactylChamberSceneID::            db ; d9af
+wUnownChamberAGSceneID::               			  db ; d9ac
+wUnownChamberHNSceneID::               			  db ; d9ad
+wUnownChamberOUSceneID::               			  db ; d9ae
+wUnownChamberVZSceneID::            			  db ; d9af
 wRuinsOfAlphInnerChamberSceneID::                 db ; d9b0
 wMahoganyMart1FSceneID::                          db ; d9b1
 wBurglarHideoutB1FSceneID::                       db ; d9b2

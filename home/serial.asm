@@ -274,7 +274,7 @@ Serial_ExchangeLinkMenuSelection::
 
 Serial_PrintWaitingTextAndSyncAndExchangeNybble::
 	call LoadTileMapToTempTileMap
-	callfar PlaceWaitingText
+	callfar PlaceWaitingText2
 	call WaitLinkTransfer
 	jp Call_LoadTempTileMapToTileMap
 

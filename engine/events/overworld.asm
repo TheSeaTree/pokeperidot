@@ -286,10 +286,6 @@ OWFlash:
 
 .CheckUseFlash:
 ; Flash
-	push hl
-	farcall SpecialAerodactylChamber
-	pop hl
-	jr c, .useflash
 	ld a, [wTimeOfDayPalset]
 	cp %11111111 ; 3, 3, 3, 3
 	jr z, .notadarkcave
@@ -408,6 +404,8 @@ UsedSurfScript:
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
 
+	writebyte (PAL_NPC_BLUE << 4)
+	special SetPlayerPalette
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	special SurfStartStep
@@ -815,7 +813,6 @@ dig_incave
 	ret
 
 .escaperope
-	farcall SpecialKabutoChamber
 	ld hl, .UsedEscapeRopeScript
 	call QueueScript
 	ld a, $81
@@ -1523,6 +1520,10 @@ FishFunction:
 	dw .FishNoFish
 
 .TryFish:
+	push hl
+	farcall SpecialUnownFishing
+	pop hl
+	jr c, .FishNoFish
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .fail

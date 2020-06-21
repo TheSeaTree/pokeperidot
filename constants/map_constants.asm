@@ -33,6 +33,7 @@ ENDM
 	map_const OLIVINE_CITY,                                24, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
 	map_const OLIVINE_SURF_HOUSE,							4,  4
+	map_const COASTAL_LAB,									5,  4
 	map_const ROUTE_15,                                    20, 19 ;  3
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    20, 21 ;  3
@@ -139,6 +140,7 @@ ENDM
 	map_const WOBBUFFET_HOUSE,   							4,  4
 	map_const ROUTE_19,									   27, 12
 	map_const ROUTE_20,                                    31, 22
+	map_const HEAVY_BALL_HOUSE,                             4,  4 ; 13
 
 	newgroup                                                      ;  8
 
@@ -174,7 +176,7 @@ ENDM
 	newgroup                                                      ; 10
 
 	map_const ROUTE_4,                                     25, 24 ; 12
-	map_const ROUTE_5,                                     28, 13 ;  1
+	map_const ROUTE_5,                                     27, 13 ;  1
 	map_const ROUTE_6,                                     28, 13 ;  1
 	map_const ROUTE_7,                                     21, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
@@ -348,4 +350,8 @@ ENDM
 	map_const PALEROCK_MOUNTAIN_B1,						   17, 12 ;  5
 	map_const PALEROCK_MOUNTAIN_STRENGTH_ROOM,		        5,  4 ;  6
 	map_const HIDDEN_POWER_CAVE,                            6,  5
+	map_const UNOWN_CHAMBER_AG,                             6,  7 ; 52
+	map_const UNOWN_CHAMBER_HN,                             6,  7 ; 52
+	map_const UNOWN_CHAMBER_OU,                             6,  7 ; 52
+	map_const UNOWN_CHAMBER_VZ,                             6,  7 ; 52
 	

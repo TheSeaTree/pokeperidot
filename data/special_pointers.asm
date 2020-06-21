@@ -145,7 +145,6 @@ SpecialsPointers::
 	add_special Function101225
 	add_special Function101231
 	add_special MoveTutor
-	add_special OmanyteChamber
 	add_special Function11c1ab
 	add_special BattleTowerAction
 	add_special DisplayUnownWords
@@ -154,7 +153,7 @@ SpecialsPointers::
 	add_special Function17d2ce
 	add_special BattleTowerMobileError
 	add_special AskMobileOrCable
-	add_special HoOhChamber
+	add_special EnteiChamber
 	add_special Function102142
 	add_special CelebiShrineEvent
 	add_special CheckCaughtCelebi ; $90

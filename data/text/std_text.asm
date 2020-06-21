@@ -72,11 +72,6 @@ NurseGoodbyeText:
 	line "careful."
 	done
 
-; not used
-	text "We hope to see you"
-	line "again."
-	done
-
 NursePokerusText:
 	text "Your #MON"
 	line "appear to be"
@@ -158,6 +153,20 @@ MerchandiseShelfText:
 GymGeyserText:
 	text "It's impossible to"
 	line "pass!"
+	done
+	
+UnownWallText:
+	text "These symbols look"
+	line "like letters."	
+	
+	para "What could they"
+	line "mean?"
+	done
+	
+OldStatueText:
+	text "It's a replica of"
+	line "an ancient #-"
+	cont "MON."
 	done
 
 TownMapText:

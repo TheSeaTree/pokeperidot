@@ -104,6 +104,9 @@ COLL_UP_WALL           EQU $b2
 COLL_DOWN_WALL         EQU $b3 ; unused
 COLL_SMASH_WALL		   EQU $b4
 COLL_SMASH_WALL_B5	   EQU $b5
+COLL_UNOWN			   EQU $b6
+COLL_OLD_STATUE		   EQU $b7
+COLL_UNOWN_X		   EQU $b8
 COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles

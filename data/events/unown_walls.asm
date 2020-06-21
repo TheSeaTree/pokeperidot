@@ -18,29 +18,35 @@ endr
 ENDM
 
 UnownWalls:
-; UNOWNWORDS_ESCAPE
+; UNOWNWORDS_STATUE
 	; db      $08, $44, $04, $00, $2e, $08, -1
-	unownwall "E", "S", "C", "A", "P", "E"
-; UNOWNWORDS_LIGHT
-	; db      $26, $20, $0c, $0e, $46, -1
-	unownwall "L", "I", "G", "H", "T"
-; UNOWNWORDS_WATER
-	; db      $4c, $00, $46, $08, $42, -1
-	unownwall "W", "A", "T", "E", "R"
-; UNOWNWORDS_HO_OH
+	unownwall "S", "T", "A", "T", "U", "E"
+; UNOWNWORDS_FISH
 	; db      $0e, $2c, $64, $2c, $0e, -1
-	unownwall "H", "O", "-", "O", "H"
+	unownwall "F", "I", "S", "H"
+; UNOWNWORDS_CLOCK
+	; db      $26, $20, $0c, $0e, $46, -1
+	unownwall "C", "L", "O", "C", "K"
+; UNOWNWORDS_FRIENDS
+	; db      $4c, $00, $46, $08, $42, -1
+	unownwall "F", "R", "I", "E", "N", "D", "S"
+; UNOWNWORDS_VOLCANO
+	; db      $0e, $2c, $64, $2c, $0e, -1
+	unownwall "V", "O", "L", "C", "A", "N", "O"
 
 MenuHeaders_UnownWalls:
-; UNOWNWORDS_ESCAPE
+; UNOWNWORDS_STATUE
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 3, 4, 16, 9
-; UNOWNWORDS_LIGHT
+; UNOWNWORDS_FISH
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 5, 4, 14, 9
+; UNOWNWORDS_CLOCK
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 4, 4, 15, 9
-; UNOWNWORDS_WATER
+; UNOWNWORDS_FRIENDS
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
-; UNOWNWORDS_HO_OH
+	menu_coords 2, 4, 17, 9
+; UNOWNWORDS_VOLCANO
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 4, 4, 15, 9
+	menu_coords 2, 4, 17, 9

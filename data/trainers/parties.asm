@@ -382,7 +382,7 @@ FangirlGroup:
 PokemonProfGroup:
 	; TEST (1)
 	db "@", TRAINERTYPE_ITEM_MOVES
-	db 52, XATU, GOLD_BERRY,       DRAGON_RAGE, NO_MOVE, NO_MOVE, NO_MOVE
+	db 52, XATU, GOLD_BERRY,       HYPER_BEAM, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1
 
 PKMNTrainerGroup:
@@ -1124,12 +1124,12 @@ SuperNerdGroup:
 	db -1
 	
 	; SUPER_NERD (3)
-	db "PAT@", TRAINERTYPE_NORMAL
-	db 30, MUK
-	db 30, WEEZING
-	db 30, ELECTRODE
-	db 30, SEAKING
-	db 32, PORYGON
+	db "PAT@", TRAINERTYPE_ITEM
+	db 33, MUK,			FOCUS_BAND
+	db 33, WEEZING,		FOCUS_BAND
+	db 33, ELECTRODE,	FOCUS_BAND
+	db 33, SEAKING,		FOCUS_BAND
+	db 35, PORYGON,		FOCUS_BAND
 	db -1
 	
 	; SUPER_NERD (4)
@@ -1318,9 +1318,10 @@ HikerGroup:
 	
 	; HIKER (12)
 	db "CARTER@", TRAINERTYPE_NORMAL
-	db 23, GEODUDE
-	db 23, GOLBAT
-	db 25, SANDSHREW
+	db 23, GRAVELER
+	db 33, GOLBAT
+	db 34, SANDSLASH
+	db 35, GOLEM
 	db -1
 	
 	; HIKER (13)
@@ -1503,9 +1504,10 @@ FirebreatherGroup:
 	db 28, PONYTA
 	db 29, MAGBY
 	db -1
-	
+
 	; FIREBREATHER (4)
 	db "DREW@", TRAINERTYPE_NORMAL
+	db 23, ZUBAT
 	db 23, KOFFING
 	db 23, MAGBY
 	db -1

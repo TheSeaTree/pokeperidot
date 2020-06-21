@@ -100,7 +100,7 @@ ENDM
 
 	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH
 	connection north, Route6, ROUTE_6,  -7
-	connection south, Route5, ROUTE_5, -11
+	connection south, Route5, ROUTE_5, -9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
 
@@ -182,13 +182,13 @@ ENDM
 	connection west, Route7, ROUTE_7, -1
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
-	connection north, VioletCity, VIOLET_CITY, 11
-	connection south, Route4, ROUTE_4, -6
+	connection north, VioletCity, VIOLET_CITY, 9
+	connection south, Route4, ROUTE_4, -8
 
 	map_attributes Route3, ROUTE_3, $05, 0
 
 	map_attributes Route4, ROUTE_4, $05, NORTH
-	connection north, Route5, ROUTE_5, 6
+	connection north, Route5, ROUTE_5, 8
 
 	map_attributes Route8, ROUTE_8, $05, NORTH | EAST
 	connection north, Route16, ROUTE_16, 6
@@ -432,3 +432,9 @@ ENDM
 	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0
 	map_attributes Route11CurseHouse, ROUTE_11_CURSE_HOUSE, $00, 0
 	map_attributes NevermelticeChamber, NEVERMELTICE_CHAMBER, $09, 0
+	map_attributes Route20HeavyBallHouse, HEAVY_BALL_HOUSE, $00, 0
+	map_attributes UnownChamberAG, UNOWN_CHAMBER_AG, $00, 0
+	map_attributes UnownChamberHN, UNOWN_CHAMBER_HN, $00, 0
+	map_attributes UnownChamberOU, UNOWN_CHAMBER_OU, $00, 0
+	map_attributes UnownChamberVZ, UNOWN_CHAMBER_VZ, $00, 0
+	map_attributes CoastalLab, COASTAL_LAB, $00, 0

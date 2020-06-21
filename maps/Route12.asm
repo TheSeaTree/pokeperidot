@@ -70,6 +70,12 @@ TrainerSchoolboyMartin:
 	waitbutton
 	closetext
 	end
+	
+Route12FruitTree:
+	fruittree FRUITTREE_ROUTE_12_1
+
+Route12ItemBush:
+	itembush FRUITTREE_ROUTE_12_2
 
 Route12FireStone:
 	itemball FIRE_STONE
@@ -103,8 +109,11 @@ PicnickerLeslieText:
 	done
 	
 BeautyRebeccaText:
-	text "Focus on the"
-	line "battle. Not on me."
+	text "Hey there, cutie!"
+	
+	para "If you let me win,"
+	line "I might give you"
+	cont "something nice."
 	done
 	
 PsychicSolomonText:
@@ -136,10 +145,9 @@ PicnickerLeslieWinText:
 	done
 
 BeautyRebeccaWinText:
-	text "Hmph!"
-	
-	para "Everyone else gets"
-	line "distracted by me!"
+	text "Hmph! You had your"
+	line "chance, and you"
+	cont "blew it!"
 	done
 
 PsychicSolomonWinText:
@@ -178,11 +186,8 @@ PicnickerLeslieAfterText:
 	done
 
 BeautyRebeccaAfterText:
-	text "Oh, so now you"
-	line "want to admire me?"
-	
-	para "Wasn't your win"
-	line "enough?"
+	text "Wipe that smirk"
+	line "off your face!"
 	done
 
 PsychicSolomonAfterText:
@@ -219,13 +224,14 @@ Route12_MapEvents:
 	db 1 ; bg events
 	bg_event 48,  6, BGEVENT_READ, Route12ShelterSign
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event 16, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperRusty, -1
 	object_event 17,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerLeslie, -1
 	object_event 34, 14, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyRebecca, -1
 	object_event 39, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicSolomon, -1
 	object_event 37,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherSharon, -1
 	object_event 34,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMartin, -1
-	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree, -1
+	object_event 65,  8, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12ItemBush, -1
 	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_12_FIRE_STONE
 	object_event 12, -3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

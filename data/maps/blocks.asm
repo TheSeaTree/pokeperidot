@@ -71,6 +71,7 @@ MahoganySubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
 EcruteakRichardsHouse_Blocks:
 BlackthornLassHouse_Blocks:
+Route20HeavyBallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -127,6 +128,9 @@ Route21EcruteakGate_Blocks:
 
 MaplesLab_Blocks:
 	INCBIN "maps/MaplesLab.ablk"
+	
+CoastalLab_Blocks:
+	INCBIN "maps/CoastalLab.ablk"
 
 Route9_Blocks:
 	INCBIN "maps/Route9.ablk"
@@ -654,3 +658,9 @@ Route22CaveB2F_Blocks:
 NevermelticeChamber_Blocks:
 Route22HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
+
+UnownChamberAG_Blocks:
+UnownChamberHN_Blocks:
+UnownChamberOU_Blocks:
+UnownChamberVZ_Blocks:
+	INCBIN "maps/UnownChamber.6x7.ruins_of_alph.ablk"

@@ -13,6 +13,8 @@
 	enum incenseburner
 	enum merchandiseshelf
 	enum gymgeyser
+	enum strangesymbols
+	enum oldstatue
 	enum townmap
 	enum window
 	enum tv

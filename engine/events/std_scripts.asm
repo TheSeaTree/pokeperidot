@@ -12,6 +12,8 @@ StdScripts::
 	dba IncenseBurnerScript
 	dba MerchandiseShelfScript
 	dba GymGeyserScript
+	dba UnownWallScript
+	dba OldStatueScript
 	dba TownMapScript
 	dba WindowScript
 	dba TVScript
@@ -206,6 +208,12 @@ MerchandiseShelfScript:
 	
 GymGeyserScript:
 	farjumptext GymGeyserText
+	
+UnownWallScript:
+	farjumptext UnownWallText
+
+OldStatueScript:
+	farjumptext OldStatueText
 
 TownMapScript:
 	opentext

@@ -140,29 +140,47 @@ UnionCaveRivalLeave:
 	step_resume
 	
 PokemaniacTrentText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hey!"
+	
+	para "I wanted that"
+	line "item!"
 	done
 	
 PokemaniacTrentWinText:
-	text "I lost."
+	text "No fair!"
+	
+	para "You caught me off-"
+	line "guard!"
 	done
 	
 PokemaniacTrentAfterText:
-	text "I lost."
+	text "What was it?"
+	
+	para "A WATER STONE?"
+	
+	para "………"
+	
+	para "Oh, I didnd't need"
+	line "that after all."
 	done	
 	
 LassVickyText:
-	text "I am a"
-	line "#MON trainer!"
+	text "You'd be surprised"
+	line "at how many cute"
+	cont "#MON live in"
+	cont "caves like this!"
 	done
 	
 LassVickyWinText:
-	text "I lost."
+	text "Ooh! I like your"
+	line "#MON too!"
 	done
 	
 LassVickyAfterText:
-	text "I lost."
+	text "I like to find"
+	line "beauty where most"
+	cont "people wouldn't"
+	cont "think to look."
 	done
 	
 UnionCaveRivalText:

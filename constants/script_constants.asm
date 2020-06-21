@@ -182,8 +182,8 @@ EMOTE_FROM_MEM EQU -1
 	const FRUITTREE_ROUTE_45      ; 0c
 	const FRUITTREE_ROUTE_36      ; 0d
 	const FRUITTREE_ROUTE_26      ; 0e
-	const FRUITTREE_ROUTE_39      ; 0f
-	const FRUITTREE_ROUTE_44      ; 10
+	const FRUITTREE_ROUTE_12_1    ; 0f
+	const FRUITTREE_ROUTE_12_2    ; 10
 	const FRUITTREE_ROUTE_20_1    ; 11
 	const FRUITTREE_ROUTE_20_2    ; 12
 	const FRUITTREE_ROUTE_3	      ; 13
@@ -268,10 +268,11 @@ NUM_UNOWN_PUZZLES EQU const_value
 ; DisplayUnownWords writebyte arguments
 ; UnownWalls and MenuHeaders_UnownWalls indexes (see data/events/unown_walls.asm)
 	const_def
-	const UNOWNWORDS_ESCAPE ; 0
-	const UNOWNWORDS_LIGHT  ; 1
-	const UNOWNWORDS_WATER  ; 2
-	const UNOWNWORDS_HO_OH  ; 3
+	const UNOWNWORDS_STATUE  ; 0
+	const UNOWNWORDS_FISH    ; 1
+	const UNOWNWORDS_CLOCK   ; 2
+	const UNOWNWORDS_FRIENDS ; 3
+	const UNOWNWORDS_VOLCANO ; 4
 
 ; MoveTutor writebyte arguments
 	const_def 1

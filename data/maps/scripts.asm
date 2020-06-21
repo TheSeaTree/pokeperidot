@@ -125,6 +125,7 @@ INCLUDE "maps/DrainPunchChamber.asm"
 SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/MaplesLab.asm"
+INCLUDE "maps/CoastalLab.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
@@ -193,6 +194,10 @@ SECTION "Map Scripts 14", ROMX
 INCLUDE "maps/LostLand.asm"
 INCLUDE "maps/Route11CurseHouse.asm"
 INCLUDE "maps/NevermelticeChamber.asm"
+INCLUDE "maps/UnownChamberAG.asm"
+INCLUDE "maps/UnownChamberHN.asm"
+INCLUDE "maps/UnownChamberOU.asm"
+INCLUDE "maps/UnownChamberVZ.asm"
 
 
 SECTION "Map Scripts 15", ROMX
@@ -228,7 +233,6 @@ INCLUDE "maps/Route6SurfersHouse.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
-
 
 SECTION "Map Scripts 18", ROMX
 
@@ -294,6 +298,7 @@ INCLUDE "maps/CarnationPokecenter1F.asm"
 INCLUDE "maps/CarnationZoo.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
+INCLUDE "maps/Route20HeavyBallHouse.asm"
 INCLUDE "maps/Route21EcruteakGate.asm"
 
 

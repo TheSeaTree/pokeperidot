@@ -26,6 +26,7 @@ CutTreeBlockPointers:
 	db $5f, $3d, 0 ; tree
 	db $63, $3f, 0 ; tree
 	db $67, $3e, 0 ; tree
+	db $b0, $73, 0 ; smash wall
 	db -1 ; end
 
 .mountain:

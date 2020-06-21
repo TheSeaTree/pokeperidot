@@ -86,7 +86,22 @@ TrainerHikerCarter:
 	writetext HikerCarterAfterText
 	waitbutton
 	closetext
-	end		
+	end	
+	
+UnionCaveTiredHiker:
+	jumptextfaceplayer UnionCaveTiredHikerText
+	
+UnionCaveB1FFocusBand:
+	itemball FOCUS_BAND
+	
+UnionCaveB1FMoonStone:
+	itemball MOON_STONE
+	
+UnionCaveB1FHiddenRevive:
+	hiddenitem REVIVE, EVENT_UNION_CAVE_B1F_HIDDEN_REVIVE
+	
+UnionCaveB1FHiddenDragonScale:
+	hiddenitem DRAGON_SCALE, EVENT_UNION_CAVE_B1F_HIDDEN_DRAGON_SCALE
 
 BulldozeGuyLookingForDiglett:
 	text "Augh…"
@@ -151,56 +166,102 @@ BulldozeGuyNo:
 	line "on this tunnel."
 	done
 	
+UnionCaveTiredHikerText:
+	text "You want a battle?"
+	
+	para "I'm sorry, I don't"
+	line "train #MON."
+	
+	para "I just like to ex-"
+	line "plore."
+	
+	para "Sometimes I find"
+	line "hidden areas."
+	done
+	
 FirebreatherDrewText:
-	text "I am a"
-	line "#MON trainer."
+	text "Hey you!"
+	
+	para "Don't think you"
+	line "can sneak past my"
+	cont "perfect hearing!"
 	done
 	
 FirebreatherDrewWinText:
-	text "I lost."
+	text "The echo in here"
+	line "messed with my"
+	cont "senses!"
 	done
 	
 FirebreatherDrewAfterText:
-	text "I lost."
+	text "I can't see a"
+	line "thing with these"
+	cont "glasses on."
+	
+	para "But they look"
+	line "totally rad!"
 	done
 	
 PokemaniacDexterText:
-	text "I am a"
-	line "#MON trainer."
+	text "My #MON are"
+	line "like my family!"
 	done
 	
 PokemaniacDexterWinText:
-	text "I lost."
+	text "Win as a family,"
+	line "lose as a family."
 	done
 	
 PokemaniacDexterAfterText:
-	text "I lost."
+	text "KANGASKHAN takes"
+	line "care of us all."
 	done
 	
 SuperNerdPatText:
-	text "I am a"
-	line "#MON trainer."
+	text "My concentration"
+	line "is unmatched."
+	
+	para "I have taught this"
+	line "to my #MON."
 	done
 	
 SuperNerdPatWinText:
-	text "I lost."
+	text "I lost all FOCUS!"
 	done
 	
 SuperNerdPatAfterText:
-	text "I lost."
+	text "I heard that some"
+	line "trainers far away"
+	cont "have taught their"
+	cont "#MON to ENDURE"
+	cont "hits without the"
+	cont "use of a move or"
+	cont "item."
+	
+	para "It sounds like a"
+	line "lot of nonsense to"
+	cont "me!"
 	done
 	
 HikerCarterText:
-	text "I am a"
-	line "#MON trainer."
+	text "Hey you!"
+	
+	para "Quit slacking and"
+	line "pick up a shovel!"
 	done
 	
 HikerCarterWinText:
-	text "I lost."
+	text "Oh! You're not one"
+	line "of mine!"
 	done
 	
 HikerCarterAfterText:
-	text "I lost."
+	text "I have no room for"
+	line "slackers in my"
+	cont "crew!"
+	
+	para "We have a job to"
+	line "do!"
 	done
 	
 UnionCaveB1F_MapEvents:
@@ -212,13 +273,16 @@ UnionCaveB1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 22, 19, BGEVENT_ITEM, UnionCaveB1FHiddenRevive
+	bg_event 22, 20, BGEVENT_ITEM, UnionCaveB1FHiddenDragonScale
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 32,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBulldozeGuy, -1
 	object_event 16, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherDrew, -1
 	object_event 35, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacDexter, -1
 	object_event 18, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdPat, -1
 	object_event 17,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerHikerCarter, -1
-	object_event 19, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Item
+	object_event  7, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCaveTiredHiker, -1
+	object_event 19, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FFocusBand, EVENT_UNION_CAVE_B1F_FOCUS_BAND
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FMoonStone, EVENT_UNION_CAVE_B1F_MOON_STONE

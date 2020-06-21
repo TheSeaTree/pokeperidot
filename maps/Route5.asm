@@ -4,7 +4,15 @@
 Route5_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_UNOWN_CHAMBER_AG_OPEN
+	iffalse .skip
+	changeblock 46, 10, $73
+.skip
+	return
 
 TrainerBugCatcherEddie:
 	trainer BUG_CATCHER, EDDIE, EVENT_BEAT_BUG_CATCHER_EDDIE, BugCatcherEddieText, BugCatcherEddieWinText, 0, .Script
@@ -204,6 +212,9 @@ Route5FishingGuruSign:
 
 Route5FruitTree:
 	fruittree FRUITTREE_ROUTE_5
+	
+Route5Rock:
+	jumpstd smashrock
 	
 LassElizabethText:
 	text "You just made it"
@@ -482,26 +493,30 @@ AlreadyGotTotodile:
 Route5_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event 43, 13, ROUTE_5_SUPER_ROD_HOUSE, 1
+	db 2 ; warp events
+	warp_event 39, 13, ROUTE_5_SUPER_ROD_HOUSE, 1
+	warp_event 46, 11, UNOWN_CHAMBER_AG, 1
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event  7, 21, BGEVENT_READ, Route5Sign
-	bg_event 41, 13, BGEVENT_READ, Route5FishingGuruSign
+	bg_event  3, 21, BGEVENT_READ, Route5Sign
+	bg_event 37, 13, BGEVENT_READ, Route5FishingGuruSign
 
-	db 12 ; object events
-	object_event 4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherEddie, -1
-	object_event 15, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassElizabeth, -1
-	object_event 16,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLadBen, -1
-	object_event 8,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyLily, -1
-	object_event 23,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerJess, -1
-	object_event 18, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperJames, -1
-	object_event 20, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherLonnie, -1
-	object_event 30, 25, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherOwen, -1
-	object_event 39, 23, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassHolly, -1
-	object_event 37, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyGus, -1
-	object_event 36, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFAnya, -1
-	object_event 37, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5FruitTree, -1
+	db 15 ; object events
+	object_event  0, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBugCatcherEddie, -1
+	object_event 11, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassElizabeth, -1
+	object_event 12,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerLadBen, -1
+	object_event  4,  7, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBeautyLily, -1
+	object_event 19,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerJess, -1
+	object_event 14, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperJames, -1
+	object_event 16, 23, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherLonnie, -1
+	object_event 26, 25, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherOwen, -1
+	object_event 35, 23, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassHolly, -1
+	object_event 33, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerSchoolboyGus, -1
+	object_event 32, 12, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFAnya, -1
+	object_event 33, 23, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5FruitTree, -1
+	object_event 46, 15, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5Rock, -1
+	object_event 47, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5Rock, -1
+	object_event 44, 12, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route5Rock, -1
 	

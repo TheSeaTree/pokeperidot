@@ -862,6 +862,7 @@ ENDM
 	ld [wPlayerState], a
 	call ReplaceKrisSprite ; UpdateSprites
 	pop bc
+	farcall SpawnPlayer
 	ret
 
 CheckStandingOnIce::

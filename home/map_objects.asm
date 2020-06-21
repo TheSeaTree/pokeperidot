@@ -153,6 +153,18 @@ CheckHeadbuttTreeTile::
 	cp COLL_HEADBUTT_TREE_1D
 	ret
 
+CheckUnownStatueTile::
+	cp COLL_OLD_STATUE
+	ret z
+	cp COLL_HEADBUTT_TREE_1D
+	ret
+
+CheckUnownXTile::
+	cp COLL_UNOWN_X
+	ret z
+	cp COLL_HEADBUTT_TREE_1D
+	ret
+
 CheckCounterTile::
 	cp COLL_COUNTER
 	ret z

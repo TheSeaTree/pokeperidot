@@ -12,7 +12,7 @@ CianwoodCaveB1F_MapScripts:
 	changeblock 18, 0, $13
 .skip
 	return
-	
+
 TrainerBurglarKen:
 	trainer BURGLAR, KEN, EVENT_BEAT_BURGLAR_KEN, BurglarKenText, BurglarKenWinText, 0, .Script
 

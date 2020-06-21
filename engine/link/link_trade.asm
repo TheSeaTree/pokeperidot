@@ -133,10 +133,6 @@ LinkComms_LoadPleaseWaitTextboxBorderGFX:
 	call Get2bpp
 	ret
 
-LoadTradeRoomBGPals:
-	farcall _LoadTradeRoomBGPals
-	ret
-
 Function16d6ae:
 	call Function16d42e
 	ld hl, Tilemap_CableTradeBorderTop

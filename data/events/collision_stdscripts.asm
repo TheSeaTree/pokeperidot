@@ -11,4 +11,7 @@ TileCollisionStdScripts:
 	dbw COLL_WINDOW,         window
 	dbw COLL_INCENSE_BURNER, incenseburner
 	dbw COLL_GEYSER,		 gymgeyser
+	dbw COLL_UNOWN,			 strangesymbols
+	dbw COLL_OLD_STATUE,	 oldstatue
+	dbw COLL_UNOWN_X,		 strangesymbols
 	db -1 ; end

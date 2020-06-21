@@ -44,4 +44,7 @@ MapScenes::
 	scene_var LOST_LAND,								   wLostLandSceneID
 	scene_var FLUTE_MASTER_HOUSE,						   wFluteMasterHouseSceneID
 	scene_var BURGLAR_HIDEOUT_B1F,						   wBurglarHideoutB1FSceneID
+	scene_var UNOWN_CHAMBER_HN,							   wUnownChamberHNSceneID
+	scene_var UNOWN_CHAMBER_OU,							   wUnownChamberOUSceneID
+	scene_var UNOWN_CHAMBER_VZ,							   wUnownChamberVZSceneID
 	db -1

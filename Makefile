@@ -11,7 +11,7 @@ RGBLINK := rgblink
 
 roms := pokeperidot.gbc pokeperidot11.gbc
 
-crystal_obj := \
+peridot_obj := \
 audio.o \
 home.o \
 main.o \
@@ -27,23 +27,23 @@ gfx/pics.o \
 gfx/sprites.o \
 lib/mobile/main.o
 
-crystal11_obj := $(crystal_obj:.o=11.o)
+peridot11_obj := $(peridot_obj:.o=11.o)
 
 
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all crystal crystal11 clean compare tools
+.PHONY: all peridot peridot11 clean compare tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: crystal
-crystal: pokeperidot.gbc
-crystal11: pokeperidot11.gbc
+all: peridot
+peridot: pokeperidot.gbc
+peridot11: pokeperidot11.gbc
 
 clean:
-	rm -f $(roms) $(crystal_obj) $(crystal11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	rm -f $(roms) $(peridot_obj) $(peridot11_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
 	$(MAKE) clean -C tools/
 
 compare: $(roms)
@@ -53,8 +53,8 @@ tools:
 	$(MAKE) -C tools/
 
 
-$(crystal_obj):   RGBASMFLAGS = -D _CRYSTAL
-$(crystal11_obj): RGBASMFLAGS = -D _CRYSTAL -D _CRYSTAL11
+$(peridot_obj):   RGBASMFLAGS = -D _PERIDOT
+$(peridot11_obj): RGBASMFLAGS = -D _PERIDOT -D _PERIDOT11
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -70,21 +70,21 @@ ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
 
 $(info $(shell $(MAKE) -C tools))
 
-$(foreach obj, $(crystal11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
-$(foreach obj, $(crystal_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
+$(foreach obj, $(peridot11_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
+$(foreach obj, $(peridot_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
 
 
-pokeperidot.gbc: $(crystal_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal.sym -m pokecrystal.map -l pokecrystal.link -o $@ $(crystal_obj)
+pokeperidot.gbc: $(peridot_obj) pokeperidot.link
+	$(RGBLINK) -n pokeperidot.sym -m pokeperidot.map -l pokeperidot.link -o $@ $(peridot_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_PERIDOT $@
-	tools/sort_symfile.sh pokecrystal.sym
+	tools/sort_symfile.sh pokeperidot.sym
 
-pokeperidot11.gbc: $(crystal11_obj) pokecrystal.link
-	$(RGBLINK) -n pokecrystal11.sym -m pokecrystal11.map -l pokecrystal.link -o $@ $(crystal11_obj)
+pokeperidot11.gbc: $(peridot11_obj) pokeperidot.link
+	$(RGBLINK) -n pokeperidot11.sym -m pokeperidot11.map -l pokeperidot.link -o $@ $(peridot11_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_PERIDOT $@
-	tools/sort_symfile.sh pokecrystal11.sym
+	tools/sort_symfile.sh pokeperidot11.sym
 
 
 # For files that the compressor can't match, there will be a .lz file suffixed with the md5 hash of the correct uncompressed file.

@@ -1,5 +1,4 @@
 KangaskhanGiftMon:
-
 	ld a, [wScriptVar]
 	cp $2
 	ret nc
@@ -69,27 +68,6 @@ KangaskhanGiftMon:
 	db COUNTER
 	db FORESIGHT
 	db MILK_DRINK
-	db 0
-	
-.Moveset2:
-	db AQUA_JET
-	db ICE_PUNCH
-	db BITE
-	db ANCIENTPOWER
-	db 0
-	
-.Moveset3:
-	db FLAME_WHEEL
-	db WILD_CHARGE
-	db SUBMISSION
-	db ROLLOUT
-	db 0
-	
-.Moveset4:
-	db GIGA_DRAIN
-	db HEAL_BELL
-	db LEECH_SEED
-	db ANCIENTPOWER
 	db 0
 
 .GetNthPartyMon:
@@ -190,20 +168,6 @@ TotodileGiftMon:
 	db BITE
 	db ANCIENTPOWER
 	db 0
-	
-.Moveset3:
-	db FLAME_WHEEL
-	db WILD_CHARGE
-	db SUBMISSION
-	db ROLLOUT
-	db 0
-	
-.Moveset4:
-	db GIGA_DRAIN
-	db HEAL_BELL
-	db LEECH_SEED
-	db ANCIENTPOWER
-	db 0
 
 .GetNthPartyMon:
 ; inputs:
@@ -232,7 +196,6 @@ TotodileGiftMon:
 	ret
 	
 CyndaquilGiftMon:
-
 	ld a, [wScriptVar]
 	cp $2
 	ret nc
@@ -302,13 +265,6 @@ CyndaquilGiftMon:
 	db WILD_CHARGE
 	db SUBMISSION
 	db ROLLOUT
-	db 0
-	
-.Moveset4:
-	db GIGA_DRAIN
-	db HEAL_BELL
-	db LEECH_SEED
-	db ANCIENTPOWER
 	db 0
 
 .GetNthPartyMon:

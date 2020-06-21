@@ -174,4 +174,4 @@
 	tilecoll WALL, WALL, WALL, WALL ; ad
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ae
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; af
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b0
+	tilecoll FLOOR, FLOOR, SMASH_WALL, WALL ; b0

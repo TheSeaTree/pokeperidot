@@ -3,7 +3,15 @@
 Route13_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_UNOWN_CHAMBER_OU_OPEN
+	iffalse .skip
+	changeblock  2, 24, $73
+.skip
+	return
 	
 TrainerPokefanMDoug:
 	trainer POKEFANM, DOUG, EVENT_BEAT_POKEFANM_DOUG, PokefanMDougText, PokefanMDougWinText, 0, .AfterScript
@@ -435,7 +443,8 @@ AlreadyGotCyndaquil:
 Route13_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 1 ; warp events
+	warp_event  2, 25, UNOWN_CHAMBER_OU, 1
 
 	db 0 ; coord events
 

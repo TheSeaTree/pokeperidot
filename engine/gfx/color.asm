@@ -1395,6 +1395,9 @@ INCLUDE "gfx/tilesets/roofs.pal"
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
 
+LinkBattlePalettes:
+INCLUDE "gfx/battle/linkbattle.pal"
+
 NameScreenMalePalettes:
 INCLUDE "gfx/naming_screen/namescreenmale.pal"
 

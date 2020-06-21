@@ -1341,4 +1341,112 @@ JohtoGrassWildMons:
 	db 38, MAROWAK
 	db 38, MAROWAK
 
+	map_id UNOWN_CHAMBER_AG
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; day
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; nite
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+
+	map_id UNOWN_CHAMBER_HN
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; day
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; nite
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+
+	map_id UNOWN_CHAMBER_OU
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; day
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; nite
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+
+	map_id UNOWN_CHAMBER_VZ
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; day
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	; nite
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+	db 40, UNOWN
+
 	db -1 ; end

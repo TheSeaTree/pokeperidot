@@ -32,6 +32,9 @@ RainDanceLady:
 	buttonsound
 	closetext
 	end
+	
+Route9LegendaryGuy:
+	jumptextfaceplayer Route9LegendaryGuyText
 
 Route9HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_9_HIDDEN_ETHER
@@ -79,6 +82,25 @@ TMRainDanceExplaination:
 	cont "better use of it"
 	cont "than I could."
 	done
+	
+Route9LegendaryGuyText:
+	text "There's a lot of"
+	line "rumors about a"
+	cont "group of super"
+	cont "rare #MON."
+	
+	para "I believe in them,"
+	line "but most people"
+	cont "find it difficult."
+	
+	para "It's said they"
+	line "used to roam far-"
+	cont "away lands. With a"
+	cont "kind of swiftness"
+	cont "that leaves them a"
+	cont "blur to the naked"
+	cont "eye."
+	done
 
 Route9_MapEvents:
 	db 0, 0 ; filler
@@ -94,6 +116,7 @@ Route9_MapEvents:
 	bg_event 28,  6, BGEVENT_READ, Route9Sign
 	bg_event 21,  5, BGEVENT_ITEM, Route9HiddenEther
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event 18,  6, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RainDanceLady, -1
+	object_event 18, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route9LegendaryGuy, -1
 	

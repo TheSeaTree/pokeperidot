@@ -7,7 +7,15 @@
 IlexForest_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_UNOWN_CHAMBER_HN_OPEN
+	iffalse .skip
+	changeblock 14, 34, $73
+.skip
+	return
 	
 TrainerHikerRay:
 	trainer HIKER, RAY, EVENT_BEAT_HIKER_RAY, HikerRayText, HikerRayWinText, 0, .Script
@@ -209,11 +217,12 @@ TwinMaeAfterText:
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event 49, 43, ROUTE_9_FOREST_GATE, 3
 	warp_event 50, 43, ROUTE_9_FOREST_GATE, 4
 	warp_event 22,  5, ECRUTEAK_FOREST_GATE, 1
 	warp_event  3,  7, SWORDS_DANCE_HOUSE, 1
+	warp_event 14, 35, UNOWN_CHAMBER_HN, 1
 
 	db 0 ; coord events
 

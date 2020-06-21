@@ -1,16 +1,16 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
-	tilecoll WALL, WALL, WALL, FLOOR ; 01
-	tilecoll WALL, WALL, FLOOR, WALL ; 02
+	tilecoll WALL, WALL, OLD_STATUE, FLOOR ; 01
+	tilecoll WALL, WALL, FLOOR, OLD_STATUE ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 03
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 04
-	tilecoll WALL, WALL, WALL, FLOOR ; 05
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 06
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 07
-	tilecoll WALL, WALL, FLOOR, WALL ; 08
-	tilecoll WALL, FLOOR, WALL, WALL ; 09
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 0a
-	tilecoll FLOOR, FLOOR, WALL, WALL ; 0b
-	tilecoll FLOOR, WALL, WALL, WALL ; 0c
+	tilecoll WALL, UNOWN, WALL, FLOOR ; 05
+	tilecoll UNOWN, UNOWN, FLOOR, FLOOR ; 06
+	tilecoll UNOWN, UNOWN, FLOOR, FLOOR ; 07
+	tilecoll UNOWN, WALL, FLOOR, WALL ; 08
+	tilecoll WALL, FLOOR, WALL, UNOWN ; 09
+	tilecoll FLOOR, FLOOR, UNOWN, UNOWN ; 0a
+	tilecoll FLOOR, FLOOR, UNOWN, UNOWN ; 0b
+	tilecoll FLOOR, WALL, UNOWN, WALL ; 0c
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 0d
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 0e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 0f
@@ -18,47 +18,47 @@
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 11
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 12
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 13
-	tilecoll WALL, FLOOR, WALL, WALL ; 14
+	tilecoll WALL, FLOOR, WALL, UNOWN ; 14
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 15
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 16
-	tilecoll FLOOR, WALL, WALL, WALL ; 17
-	tilecoll WALL, WALL, WALL, PIT ; 18
-	tilecoll WALL, WALL, PIT, WALL ; 19
+	tilecoll FLOOR, WALL, UNOWN, WALL ; 17
+	tilecoll WALL, WALL, OLD_STATUE, PIT ; 18
+	tilecoll WALL, WALL, PIT, OLD_STATUE ; 19
 	tilecoll FLOOR, FLOOR, LADDER, FLOOR ; 1a
-	tilecoll WALL, FLOOR, WALL, FLOOR ; 1b
-	tilecoll FLOOR, WALL, FLOOR, WALL ; 1c
+	tilecoll WALL, FLOOR, OLD_STATUE, FLOOR ; 1b
+	tilecoll FLOOR, WALL, FLOOR, OLD_STATUE ; 1c
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 1d
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 1e
-	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 1f
-	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 20
+	tilecoll OLD_STATUE, FLOOR, FLOOR, FLOOR ; 1f
+	tilecoll FLOOR, OLD_STATUE, FLOOR, FLOOR ; 20
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 21
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 22
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 23
-	tilecoll WALL, WALL, WALL, WALL ; 24
-	tilecoll WALL, WALL, WALL, WALL ; 25
-	tilecoll WALL, WALL, WALL, WALL ; 26
-	tilecoll WALL, WALL, WALL, WALL ; 27
-	tilecoll WALL, WALL, WALL, WALL ; 28
+	tilecoll WALL, UNOWN, FLOOR, FLOOR ; 24
+	tilecoll UNOWN, WALL, FLOOR, FLOOR ; 25
+	tilecoll WALL, WALL, WALL, UNOWN ; 26
+	tilecoll UNOWN, UNOWN, WALL, WALL ; 27
+	tilecoll WALL, WALL, UNOWN_X, WALL ; 28
 	tilecoll WALL, WALL, WALL, WALL ; 29
-	tilecoll WALL, WALL, WALL, WALL ; 2a
-	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, WALL ; 2b
-	tilecoll FLOOR, FLOOR, WALL, WARP_CARPET_DOWN ; 2c
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 2d
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 2e
+	tilecoll UNOWN, UNOWN, WALL, WALL ; 2a
+	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, UNOWN ; 2b
+	tilecoll FLOOR, FLOOR, UNOWN, WARP_CARPET_DOWN ; 2c
+	tilecoll WALL, WALL, UNOWN, UNOWN ; 2d
+	tilecoll WALL, WALL, UNOWN, UNOWN ; 2e
 	tilecoll FLOOR, FLOOR, FLOOR, PIT ; 2f
-	tilecoll CAVE, WALL, FLOOR, FLOOR ; 30
+	tilecoll CAVE, UNOWN, FLOOR, FLOOR ; 30
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 31
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 32
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 33
-	tilecoll WALL, WALL, WALL, PIT ; 34
-	tilecoll WALL, WALL, PIT, WALL ; 35
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 36
-	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 37
-	tilecoll FLOOR, FLOOR, GRASS_4A, FLOOR ; 38
-	tilecoll FLOOR, FLOOR, GRASS_4B, FLOOR ; 39
-	tilecoll FLOOR, FLOOR, CUT_28, FLOOR ; 3a
-	tilecoll FLOOR, FLOOR, WATER, FLOOR ; 3b
-	tilecoll 64, FLOOR, WATERFALL_UP, FLOOR ; 3c
-	tilecoll 65, FLOOR, WATERFALL, FLOOR ; 3d
-	tilecoll WATERFALL_UP, FLOOR, WARP_CARPET_DOWN, FLOOR ; 3e
-	tilecoll WATERFALL, FLOOR, DOOR, FLOOR ; 3f
+	tilecoll WALL, UNOWN, OLD_STATUE, PIT ; 34
+	tilecoll UNOWN, WALL, PIT, OLD_STATUE ; 35
+	tilecoll WALL, UNOWN, OLD_STATUE, FLOOR ; 36
+	tilecoll UNOWN, WALL, FLOOR, OLD_STATUE ; 37
+	tilecoll WALL, FLOOR, UNOWN, UNOWN ; 38
+	tilecoll FLOOR, WALL, UNOWN, UNOWN ; 39
+	tilecoll OLD_STATUE, UNOWN, FLOOR, FLOOR ; 3a
+	tilecoll UNOWN, OLD_STATUE, FLOOR, FLOOR ; 3b
+	tilecoll WALL, FLOOR, UNOWN, UNOWN ; 3c
+	tilecoll FLOOR, WALL, UNOWN, UNOWN ; 3d
+	tilecoll WALL, WALL, WALL, UNOWN ; 3e
+	tilecoll WALL, WALL, UNOWN, WALL ; 3f

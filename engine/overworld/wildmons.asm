@@ -211,8 +211,8 @@ TryWildEncounter::
 
 .EncounterRate:
 	call GetMapEncounterRate
-	call ApplyMusicEffectOnEncounterRate
-;	call ApplyCleanseTagEffectOnEncounterRate
+;	call ApplyMusicEffectOnEncounterRate
+	call ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	cp b
 	ret
