@@ -42,10 +42,10 @@ AzaleaGymMurphyScript:
 	setevent EVENT_BEAT_MURPHY
 	special HealParty
 	opentext
-	writetext Text_ReceivedHiveBadge
+	writetext Text_ReceivedFistBadge
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_ZEPHYRBADGE
+	setflag ENGINE_FISTBADGE
 	checkcode VAR_BADGES
 .FightDone:
 	checkevent EVENT_GOT_TM_ROCK_SMASH
@@ -53,7 +53,7 @@ AzaleaGymMurphyScript:
 	setevent EVENT_BEAT_OFFICER_BILLY
 	setevent EVENT_BEAT_OFFICER_JIMMY
 	setevent EVENT_BEAT_OFFICER_GORDON
-	writetext MurphyText_HiveBadgeSpeech
+	writetext MurphyText_FistBadgeSpeech
 	buttonsound
 	verbosegiveitem TM_ROCK_SMASH
 	iffalse .NoRoomForFuryCutter
@@ -121,7 +121,7 @@ AzaleaGymGuyScript:
 	end
 
 AzaleaGymStatue:
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_FISTBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
@@ -129,7 +129,7 @@ AzaleaGymStatue:
 	jumpstd gymstatue2
 	
 AzaleaCantLeave:
-	checkflag ENGINE_ZEPHYRBADGE
+	checkflag ENGINE_FISTBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end
@@ -216,12 +216,12 @@ MurphyText_ResearchIncomplete:
 	cont "square." 
 	done
 
-Text_ReceivedHiveBadge:
+Text_ReceivedFistBadge:
 	text "<PLAYER> received"
 	line "FISTBADGE."
 	done
 
-MurphyText_HiveBadgeSpeech:
+MurphyText_FistBadgeSpeech:
 	text "Of course, you do"
 	line "not only win a"
 	cont "BADGE from defeat-"
@@ -390,7 +390,7 @@ AzaleaGym_MapEvents:
 	bg_event 11,  3, BGEVENT_UP,   AzaleaLockedDoor
 
 	db 9 ; object events
-	object_event  9,  3, SPRITE_BUGSY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymMurphyScript, -1
+	object_event  9,  3, SPRITE_MURPHY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaGymMurphyScript, -1
 	object_event 10, 10, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOfficerBilly, -1
 	object_event  6,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerOfficerJimmy, -1
 	object_event 13,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerOfficerGordon, -1

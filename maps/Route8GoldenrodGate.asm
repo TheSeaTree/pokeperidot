@@ -17,7 +17,7 @@ Route8GoldenrodGateScientistScript:
 	iftrue .gotit
 	writetext Route8GoldenrodGateScientistText
 	waitbutton
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_MYSTICBADGE
 	iffalse .nobadge
 	writetext Route8GoldenrodGateScientistGiftText
 	waitbutton

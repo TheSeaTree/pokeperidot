@@ -5,10 +5,10 @@
 ; accounted for prior to the list check.
 
 GymLeaders:
-	db FALKNER
-	db WHITNEY
+	db CECIL
+	db CELESTE
 	db MURPHY
-	db MORTY
+	db DUANE
 	db POSEY
 	db JASMINE
 	db JOEL

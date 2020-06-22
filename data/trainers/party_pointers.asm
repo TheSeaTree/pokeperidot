@@ -2,10 +2,10 @@
 
 TrainerGroups:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
-	dw FalknerGroup
-	dw WhitneyGroup
+	dw CecilGroup
+	dw CelesteGroup
 	dw MurphyGroup
-	dw MortyGroup
+	dw DuaneGroup
 	dw PryceGroup
 	dw JasmineGroup
 	dw JoelGroup

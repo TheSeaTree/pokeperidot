@@ -14,7 +14,7 @@ Route5SuperRodHouseFishingGuruScript:
 	writetext OfferSuperRodText
 	yesorno
 	iffalse .Refused
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_WAVEBADGE
 	iffalse .DontHaveHiveBadge
 	writetext GiveSuperRodText
 	buttonsound

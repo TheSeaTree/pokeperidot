@@ -115,7 +115,7 @@ GoldenrodLadScript:
 	jumptextfaceplayer GoldenrodLadText
 	
 GoldenrodGymEvent:
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_MYSTICBADGE
 	iftrue .havebadge
 	clearevent EVENT_BEAT_SCIENTIST_ADRIAN
 	clearevent EVENT_BEAT_PSYCHIC_PARKER

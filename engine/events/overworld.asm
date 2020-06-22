@@ -133,7 +133,7 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MYSTICBADGE
 	call CheckBadge
 	jr c, .nocutbadge
 	call CheckMapForSomethingToCut
@@ -972,17 +972,7 @@ StrengthFunction:
 	ret
 
 .TryStrength:
-; Strength
-;	ld de, ENGINE_PLAINBADGE
-;	call CheckBadge
-;	jr c, .Failed
 	jr .UseStrength
-
-.Unreferenced_AlreadyUsing:
-	ld hl, .JumpText
-	call MenuTextBoxBackup
-	ld a, $80
-	ret
 
 .JumpText:
 	text_jump UnknownText_0x1c0751
@@ -1072,10 +1062,6 @@ TryStrengthOW:
 	ld d, STRENGTH
 	call CheckPartyMove
 	jr c, .nope
-
-;	ld de, ENGINE_PLAINBADGE
-;	call CheckEngineFlag
-;	jr c, .nope
 
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_STRENGTH_ACTIVE_F, [hl]
@@ -1856,7 +1842,7 @@ TryCutOW::
 	call CheckPartyMove
 	jr c, .cant_cut
 
-	ld de, ENGINE_PLAINBADGE
+	ld de, ENGINE_MYSTICBADGE
 	call CheckEngineFlag
 	jr c, .cant_cut
 

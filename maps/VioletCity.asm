@@ -150,7 +150,7 @@ VioletCityShoeGuy:
 	end
 	
 VioletGymEvent:
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_WAVEBADGE
 	iftrue .havebadge
 	clearevent EVENT_BEAT_SWIMMERM_VINNY
 	clearevent EVENT_BEAT_SWIMMERM_JIMMY

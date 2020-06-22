@@ -174,7 +174,7 @@ AzaleaBurglar:
 	jump .Leave
 
 AzaleaGymEvent:
-	checkflag ENGINE_ZEPHYRBADGE
+	checkflag ENGINE_FISTBADGE
 	iftrue .havebadge
 	clearevent EVENT_BEAT_OFFICER_BILLY
 	clearevent EVENT_BEAT_OFFICER_JIMMY

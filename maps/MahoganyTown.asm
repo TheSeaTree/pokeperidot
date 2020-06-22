@@ -74,7 +74,7 @@ MahoganyGymLeader:
 	end
 	
 MahoganyGymEvent:
-	checkflag ENGINE_MINERALBADGE
+	checkflag ENGINE_COGBADGE
 	iftrue .havebadge
 	clearevent EVENT_BEAT_SCIENTIST_ANDRE
 	clearevent EVENT_BEAT_SCIENTIST_KURT
@@ -254,5 +254,5 @@ MahoganyTown_MapEvents:
 
 	db 3 ; object events
 	object_event 26, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
-	object_event 24, 14, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
+	object_event 24, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
 	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

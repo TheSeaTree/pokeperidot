@@ -25,28 +25,28 @@ CHRIS EQU __enum__
 	const PHONECONTACT_BUENA
 
 KRIS EQU __enum__
-	trainerclass FALKNER ; 1
-	const FALKNER1
-	const FALKNER2
-	const FALKNER3
-	const FALKNER4
-	const FALKNER5
-	const FALKNER_REMATCH
+	trainerclass CECIL ; 1
+	const CECIL1
+	const CECIL2
+	const CECIL3
+	const CECIL4
+	const CECIL5
+	const CECIL_REMATCH
 
-	trainerclass WHITNEY ; 2
-	const WHITNEY1
-	const WHITNEY_REMATCH
+	trainerclass CELESTE ; 2
+	const CELESTE1
+	const CELESTE_REMATCH
 
 	trainerclass MURPHY ; 3
 	const MURPHY1
 	const MURPHY2
 	const MURPHYY_REMATCH
 	
-	trainerclass MORTY ; 4
-	const MORTY1
-	const MORTY2
-	const MORTY3
-	const MORTY_REMATCH
+	trainerclass DUANE ; 4
+	const DUANE1
+	const DUANE2
+	const DUANE3
+	const DUANE_REMATCH
 
 	trainerclass PRYCE ; 5
 	const PRYCE1

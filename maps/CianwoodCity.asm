@@ -80,7 +80,7 @@ CianwoodCityMoveTutor:
 	end
 
 CianwoodGymEvent:
-	checkflag ENGINE_FOGBADGE
+	checkflag ENGINE_SKULLBADGE
 	iftrue .havebadge
 	clearevent GOLDENROD_GYM_DOOR_1
 	clearevent EVENT_BEAT_GUITARIST_ANDY

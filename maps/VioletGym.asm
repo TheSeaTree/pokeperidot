@@ -44,7 +44,7 @@ VioletGym_MapScripts:
 VioletGymGuyScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_CECIL
 	iftrue .VioletGymGuyWinScript
 	writetext VioletGymGuyText
 	waitbutton
@@ -58,15 +58,15 @@ VioletGymGuyScript:
 	end
 
 VioletGymStatue:
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_WAVEBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext FALKNER, FALKNER1, MEM_BUFFER_1
+	trainertotext CECIL, CECIL1, MEM_BUFFER_1
 	jumpstd gymstatue2
 	
 VioletCantLeave:
-	checkflag ENGINE_HIVEBADGE
+	checkflag ENGINE_WAVEBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end

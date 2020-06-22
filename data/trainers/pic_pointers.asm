@@ -2,13 +2,13 @@
 
 TrainerPicPointers::
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
-	dba FalknerPic
-	dba WhitneyPic
-	dba BugsyPic
-	dba MortyPic
+	dba CecilPic
+	dba CelestePic
+	dba MurphyPic
+	dba DuanePic
 	dba PrycePic
 	dba JasminePic
-	dba ChuckPic
+	dba JoelPic
 	dba ClairPic
 	dba Rival1Pic
 	dba FangirlPic
@@ -23,7 +23,7 @@ TrainerPicPointers::
 	dba MistyPic
 	dba LtSurgePic
 	dba ScientistPic
-	dba ErikaPic
+	dba PoseyPic
 	dba YoungsterPic
 	dba SchoolboyPic
 	dba BirdKeeperPic

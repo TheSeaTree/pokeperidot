@@ -47,7 +47,7 @@ EcruteakCity_MapScripts:
 	return
 
 EcruteakGymEvent:
-	checkflag ENGINE_STORMBADGE
+	checkflag ENGINE_ROOTBADGE
 	iftrue .havebadge
 	clearevent EVENT_ECRUTEAK_GYM_MON_1
 	clearevent EVENT_ECRUTEAK_GYM_MON_2

@@ -7,19 +7,6 @@ BlackthornCaveB1F_MapScripts:
 
 BlackthornCaveB1FBoulder:
 	jumpstd strengthboulder
-	
-BlackthornCaveB1FTrainerText:
-	text "I am a"
-	line "#MON trainer!"
-	done
-	
-BlackthornCaveB1FTrainerWinText:
-	text "I lost."
-	done
-	
-BlackthornCaveB1FTrainerAfterText:
-	text "I lost."
-	done
 
 BlackthornCaveB1F_MapEvents:
 	db 0, 0 ; filler

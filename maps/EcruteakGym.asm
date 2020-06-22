@@ -24,7 +24,7 @@ EcruteakGym_MapScripts:
 	end
 
 .PrepareGym:
-	checkflag ENGINE_STORMBADGE
+	checkflag ENGINE_ROOTBADGE
 	iftrue .end
 	setscene SCENE_ECRUTEAKGYM_INTRO
 .end
@@ -106,7 +106,7 @@ EcruteakGymLeader:
 	writetext PlayerReceivedRootBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_STORMBADGE
+	setflag ENGINE_ROOTBADGE
 	setevent EVENT_BEAT_POSEY
 .FightDone:
 	opentext
@@ -126,7 +126,7 @@ EcruteakGymLeader:
 	end
 	
 EcruteakCantLeave:
-	checkflag ENGINE_STORMBADGE
+	checkflag ENGINE_ROOTBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end
@@ -259,7 +259,7 @@ EcruteakGymGuy:
 	jumptextfaceplayer EcruteakGymGuyText
 	
 EcruteakGymStatue:
-	checkflag ENGINE_STORMBADGE
+	checkflag ENGINE_ROOTBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:

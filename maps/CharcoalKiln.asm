@@ -11,7 +11,7 @@ CharcoalKiln_MapScripts:
 CharcoalKilnBoss:
 	faceplayer
 	opentext
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_MYSTICBADGE
 	iffalse .NoBadge
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .GotCut

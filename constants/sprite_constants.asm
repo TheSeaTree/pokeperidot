@@ -20,10 +20,10 @@
 	const SPRITE_DAISY ; 0f
 	const SPRITE_ELM ; 10
 	const SPRITE_WILL ; 11
-	const SPRITE_FALKNER ; 12
+	const SPRITE_CECIL ; 12
 	const SPRITE_WHITNEY ; 13
-	const SPRITE_BUGSY ; 14
-	const SPRITE_MORTY ; 15
+	const SPRITE_MURPHY ; 14
+	const SPRITE_DUANE ; 15
 	const SPRITE_CHUCK ; 16
 	const SPRITE_JASMINE ; 17
 	const SPRITE_PRYCE ; 18
@@ -115,11 +115,12 @@
 	const SPRITE_CHRIS_RUN
 	const SPRITE_KRIS_RUN
 	const SPRITE_POSEY
-	const SPRITE_PSYCHIC_LEADER
+	const SPRITE_CELESTE
 	const SPRITE_ABBOT
 	const SPRITE_FANGIRL
 	const SPRITE_FOOD
 	const SPRITE_CHEF
+	const SPRITE_JOEL
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

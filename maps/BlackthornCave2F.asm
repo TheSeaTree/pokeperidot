@@ -28,12 +28,12 @@ TrainerHikerZeke:
 	end	
 	
 TrainerPokefanMGerald:
-	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, BlackthornCaveB1FTrainerText, BlackthornCaveB1FTrainerWinText, 0, .Script
+	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, BlackthornCave2FTrainerText, BlackthornCave2FTrainerWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackthornCaveB1FTrainerAfterText
+	writetext BlackthornCave2FTrainerAfterText
 	waitbutton
 	closetext
 	end

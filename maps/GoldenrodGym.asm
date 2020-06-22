@@ -30,7 +30,7 @@ GoldenrodGym_MapScripts:
 
 GoldenrodGymWhitneyScript:
 	faceplayer
-	checkevent EVENT_BEAT_MORTY
+	checkevent EVENT_BEAT_DUANE
 	iftrue .FightDone
 	opentext
 	writetext WhitneyBeforeText
@@ -41,23 +41,23 @@ GoldenrodGymWhitneyScript:
 	iftrue .Team3
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .Team2
-	loadtrainer MORTY, MORTY1
+	loadtrainer DUANE, DUANE1
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team2:
-	loadtrainer MORTY, MORTY2
+	loadtrainer DUANE, DUANE2
 	startbattle
 	reloadmapafterbattle
 	jump .After
 
 .Team3:
-	loadtrainer MORTY, MORTY3
+	loadtrainer DUANE, DUANE3
 	startbattle
 	reloadmapafterbattle	
 
 .After:
-	setevent EVENT_BEAT_MORTY
+	setevent EVENT_BEAT_DUANE
 	setevent GOLDENROD_GYM_DOOR_1
 	setevent EVENT_BEAT_GUITARIST_ANDY
 	setevent EVENT_BEAT_GUITARIST_LEE
@@ -70,17 +70,17 @@ GoldenrodGymWhitneyScript:
 	setevent EVENT_BEAT_GUITARIST_BOBBY
 	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
 	opentext
-	writetext PlayerReceivedPlainBadgeText
+	writetext PlayerReceivedSkullBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_FOGBADGE
+	setflag ENGINE_SKULLBADGE
 	checkcode VAR_BADGES
 .FightDone:
 	opentext
 	special HealParty
 	checkevent EVENT_GOT_TM_SWAGGER
 	iftrue .GotSwagger
-	writetext WhitneyPlainBadgeText
+	writetext DuaneSkullBadgeText
 	buttonsound
 	verbosegiveitem TM_SWAGGER
 	iffalse .NoRoomForSwagger
@@ -151,15 +151,15 @@ GoldenrodGymDoorGuard:
 	end	
 
 GoldenrodGymStatue:
-	checkflag ENGINE_FOGBADGE
+	checkflag ENGINE_SKULLBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext MORTY, MORTY1, MEM_BUFFER_1
+	trainertotext DUANE, DUANE1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 GoldenrodCantLeave:
-	checkflag ENGINE_FOGBADGE
+	checkflag ENGINE_SKULLBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end
@@ -211,12 +211,12 @@ WhitneyShouldntBeSoSeriousText:
 	line "leave this place."
 	done
 
-PlayerReceivedPlainBadgeText:
+PlayerReceivedSkullBadgeText:
 	text "<PLAYER> received"
 	line "SKULLBADGE."
 	done
 
-WhitneyPlainBadgeText:
+DuaneSkullBadgeText:
 	text "My TM as well."
 	done
 
@@ -351,5 +351,5 @@ GoldenrodGym_MapEvents:
 	bg_event  9, 18, BGEVENT_DOWN, GoldenrodCantLeave
 
 	db 2 ; object events
-	object_event  9,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
+	object_event  9,  3, SPRITE_DUANE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, GoldenrodGymWhitneyScript, -1
 	object_event  8, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodGymDoorGuard, -1

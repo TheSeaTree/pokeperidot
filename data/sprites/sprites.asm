@@ -24,10 +24,10 @@ OverworldSprites:
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ElmSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite WillSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
-	overworld_sprite FalknerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CecilSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite WhitneySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite BugsySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite MortySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite MurphySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
+	overworld_sprite DuaneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChuckSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite JasmineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PryceSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
@@ -119,8 +119,9 @@ OverworldSprites:
 	overworld_sprite ChrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite KrisRunSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PoseySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite PsychicLeaderSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite CelesteSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite AbbotSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite FangirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite FoodSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChefSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
+	overworld_sprite JoelSpriteGFX, 4, WALKING_SPRITE, PAL_OW_BROWN

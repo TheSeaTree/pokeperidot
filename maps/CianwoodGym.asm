@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const CIANWOODGYM_CHUCK
+	const CIANWOODGYM_CELESTE
 
 CianwoodGym_MapScripts:
 	db 0 ; scene scripts
@@ -10,25 +10,25 @@ CianwoodGym_MapScripts:
 ;.PrepareGym
 ;return
 
-CianwoodGymChuckScript:
+CianwoodGymCelesteScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_WHITNEY
+	checkevent EVENT_BEAT_CELESTE
 	iftrue .AlreadyGotTM
-	writetext ChuckIntroText1
+	writetext CelesteIntroText1
 	waitbutton
 	closetext
-	winlosstext ChuckLossText, 0
-	loadtrainer WHITNEY, WHITNEY1
+	winlosstext CelesteLossText, 0
+	loadtrainer CELESTE, CELESTE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_WHITNEY
+	setevent EVENT_BEAT_CELESTE
 	opentext
-	writetext GetStormBadgeText
+	writetext GetMysticBadgeText
 	playsound SFX_GET_BADGE
 	setmapscene GOLDENROD_CITY, SCENE_FINISHED
 	waitsfx
-	setflag ENGINE_PLAINBADGE
+	setflag ENGINE_MYSTICBADGE
 	checkcode VAR_BADGES
 .FightDone:
 	setevent EVENT_BEAT_SCIENTIST_ADRIAN
@@ -37,12 +37,12 @@ CianwoodGymChuckScript:
 	setevent EVENT_BEAT_PSYCHIC_DAMIEN
 	setevent EVENT_BEAT_SCIENTIST_MELVIN
 	setevent EVENT_BEAT_GUITARIST_XAVIER
-	writetext ChuckExplainBadgeText
+	writetext CelesteExplainBadgeText
 	buttonsound
 	verbosegiveitem TM_TELEPORT
 	iffalse .BagFull
 	setevent EVENT_GOT_TM_TELEPORT
-	writetext ChuckExplainTMText
+	writetext CelesteExplainTMText
 	waitbutton
 	closetext
 	special HealParty
@@ -51,7 +51,7 @@ CianwoodGymChuckScript:
 	end
 
 .AlreadyGotTM:
-	writetext ChuckAfterText
+	writetext CelesteAfterText
 	waitbutton
 .BagFull:
 	closetext
@@ -126,7 +126,7 @@ TrainerGuitaristXavier:
 	
 CianwoodGymGuyScript:
 	faceplayer
-	checkevent EVENT_BEAT_WHITNEY
+	checkevent EVENT_BEAT_CELESTE
 	iftrue .CianwoodGymGuyWinScript
 	opentext
 	writetext CianwoodGymGuyText
@@ -142,15 +142,15 @@ CianwoodGymGuyScript:
 	end
 	
 CianwoodGymStatue:
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_MYSTICBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext WHITNEY, WHITNEY1, MEM_BUFFER_1
+	trainertotext CELESTE, CELESTE1, MEM_BUFFER_1
 	jumpstd gymstatue2
 	
 CianwoodCantLeave:
-	checkflag ENGINE_PLAINBADGE
+	checkflag ENGINE_MYSTICBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end
@@ -177,7 +177,7 @@ CianwoodGymHaveBadge:
 	cont "unlock the door!"
 	done
 
-ChuckIntroText1:
+CelesteIntroText1:
 	text "Ah, you have dis-"
 	line "covered the path"
 	cont "through my laby-"
@@ -192,7 +192,7 @@ ChuckIntroText1:
 	cont "battle!"
 	done
 
-ChuckLossText:
+CelesteLossText:
 	text "Miraculous!"
 	
 	para "Never have I seen"
@@ -207,12 +207,12 @@ ChuckLossText:
 	cont "MYSTICBADGE!"
 	done
 
-GetStormBadgeText:
+GetMysticBadgeText:
 	text "<PLAYER> received"
 	line "MYSTICBADGE."
 	done
 
-ChuckExplainBadgeText:
+CelesteExplainBadgeText:
 	text "The MYSTICBADGE"
 	line "will allow use of"
 	cont "the move CUT while"
@@ -223,7 +223,7 @@ ChuckExplainBadgeText:
 	cont "well."
 	done
 
-ChuckExplainTMText:
+CelesteExplainTMText:
 	text "That is TELEPORT."
 
 	para "As you observed,"
@@ -234,7 +234,7 @@ ChuckExplainTMText:
 	cont "safely."
 	done
 
-ChuckAfterText:
+CelesteAfterText:
 	text "I will use our"
 	line "battle as inspira-"
 	cont "tion."
@@ -441,7 +441,7 @@ CianwoodGym_MapEvents:
 	bg_event 16, 40, BGEVENT_DOWN, CianwoodCantLeave
 
 	db 8 ; object events
-	object_event 16, 15, SPRITE_PSYCHIC_LEADER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymChuckScript, -1
+	object_event 16, 15, SPRITE_CELESTE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CianwoodGymCelesteScript, -1
 	object_event 18, 37, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CianwoodGymGuyScript, -1
 	object_event 25, 22, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerScientistAdrian, -1
 	object_event  1, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerScientistMelvin, -1

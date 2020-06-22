@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const VIOLET_GYM_B1_FALKNER
+	const VIOLET_GYM_B1_CECIL
 	const VIOLET_GYM_B1_BEAUTY
 
 VioletGymB1_MapScripts:
@@ -27,15 +27,15 @@ VioletGymB1_MapScripts:
 .skip4
 	return
 
-VioletGymB1FalknerScript:
+VioletGymB1CecilScript:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_FALKNER
+	checkevent EVENT_BEAT_CECIL
 	iftrue .FightDone
-	writetext FalknerIntroText
+	writetext CecilIntroText
 	waitbutton
 	closetext
-	winlosstext FalknerWinLossText, 0
+	winlosstext CecilWinLossText, 0
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .Team5
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
@@ -45,59 +45,57 @@ VioletGymB1FalknerScript:
 	checkflag ENGINE_FLYPOINT_GOLDENROD
 	iftrue .Team2
 	ifgreater 2, .Team2
-	loadtrainer FALKNER, FALKNER1
+	loadtrainer CECIL, CECIL1
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team2:
-	loadtrainer FALKNER, FALKNER2
+	loadtrainer CECIL, CECIL2
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team3:
-	loadtrainer FALKNER, FALKNER3
+	loadtrainer CECIL, CECIL3
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team4:
-	loadtrainer FALKNER, FALKNER4
+	loadtrainer CECIL, CECIL4
 	startbattle
 	reloadmapafterbattle
 	jump .After
 .Team5:
-	loadtrainer FALKNER, FALKNER5
+	loadtrainer CECIL, CECIL5
 	startbattle
 	reloadmapafterbattle
 	
 .After:
-	setevent EVENT_BEAT_FALKNER
+	setevent EVENT_BEAT_CECIL
 	special HealParty
 	opentext
-	writetext ReceivedZephyrBadgeText
+	writetext ReceivedWaveBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_HIVEBADGE
+	setflag ENGINE_WAVEBADGE
 	checkcode VAR_BADGES
 .FightDone:
 	checkevent EVENT_GOT_TM_WHIRLPOOL
 	iftrue .SpeechAfterTM
-	writetext FalknerZephyrBadgeText
+	writetext CecilWaveBadgeText
 	buttonsound
 	verbosegiveitem TM_WHIRLPOOL
-	iffalse .NoRoomForMudSlap
+	iffalse .NoRoomForWhirlpool
 	setevent EVENT_GOT_TM_WHIRLPOOL
-	writetext FalknerTMMudSlapText
+	writetext CecilTMWhirlpoolText
 	waitbutton
 	closetext
 	setmapscene VIOLET_CITY, SCENE_VIOLETCITY_RUNNING_SHOES
 	end
-.GotFuryCutter:
-	writetext FalknerTMMudSlapText
-	waitbutton
+
 .SpeechAfterTM:
-	writetext FalknerFightDoneText
+	writetext CecilFightDoneText
 	waitbutton
-.NoRoomForMudSlap:
+.NoRoomForWhirlpool:
 	closetext
 	end
 	
@@ -227,7 +225,7 @@ VioletGymB1TriggerScript4:
 	closetext
 	end
 	
-FalknerIntroText:
+CecilIntroText:
 	text "I am CECIL, the"
 	line "GYM LEADER of"
 	cont "RIDGE VILLAGE!"
@@ -245,7 +243,7 @@ FalknerIntroText:
 	line "into battle!"
 	done
 
-FalknerWinLossText:
+CecilWinLossText:
 	text "Oh, what has"
 	line "become of me?"
 
@@ -257,17 +255,17 @@ FalknerWinLossText:
 	cont "BADGE!"
 	done
 
-ReceivedZephyrBadgeText:
+ReceivedWaveBadgeText:
 	text "<PLAYER> received"
 	line "WAVEBADGE."
 	done
 
-FalknerZephyrBadgeText:
+CecilWaveBadgeText:
 	text "Here--take this"
 	line "too."
 	done
 
-FalknerTMMudSlapText:
+CecilTMWhirlpoolText:
 	text "TM45 contains"
 	line "WHIRLPOOL."
 
@@ -284,7 +282,7 @@ FalknerTMMudSlapText:
 	cont "effectively!"
 	done
 
-FalknerFightDoneText:
+CecilFightDoneText:
 	text "I sank like a rock"
 	line "in our battle."
 	
@@ -427,7 +425,7 @@ VioletGymB1_MapEvents:
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event 19,  3, SPRITE_FALKNER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1FalknerScript, -1
+	object_event 19,  3, SPRITE_CECIL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1CecilScript, -1
 	object_event 13, 21, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript1, -1 ;Vinny
 	object_event 17, 13, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript2, -1 ;Jimmy
 	object_event 31, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VioletGymB1TriggerScript3, -1 ;Vivian

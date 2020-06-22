@@ -96,7 +96,7 @@ ElectricGymLeader:
 	writetext PlayerReceivedCogBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
-	setflag ENGINE_MINERALBADGE
+	setflag ENGINE_COGBADGE
 	setevent EVENT_BEAT_JOEL
 .FightDone:
 	opentext
@@ -148,7 +148,7 @@ MahoganyGymPod1:
 	playsound SFX_AEROBLAST
 	waitsfx
 	playsound SFX_THUNDER
-	checkflag ENGINE_MINERALBADGE
+	checkflag ENGINE_COGBADGE
 	iftrue .Badge
 	applymovement PLAYER, Pod1Movement
 	waitsfx
@@ -497,7 +497,7 @@ MahoganyGymPod9:
 	end
 
 MahoganyGymPod10:
-	checkflag ENGINE_MINERALBADGE
+	checkflag ENGINE_COGBADGE
 	iffalse PodDoorSealed
 	opentext
 	writetext AskUsePod
@@ -713,7 +713,7 @@ ScientistSeth:
 	jumptextfaceplayer ScientistSethAfterText
 	
 MahoganyGymExit:
-	checkflag ENGINE_MINERALBADGE
+	checkflag ENGINE_COGBADGE
 	iftrue .Leave
 	jumpstd cantleavegym
 	end
@@ -1306,7 +1306,7 @@ MahoganyGym_MapEvents:
 	bg_event 13, 32, BGEVENT_READ, MahoganyGymExit
 
 	db 5 ; object events
-	object_event  5,  1, SPRITE_SURGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
+	object_event  5,  1, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistAndre, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistKurt, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistDavid, -1
