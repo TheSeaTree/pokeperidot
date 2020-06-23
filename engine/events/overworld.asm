@@ -548,6 +548,9 @@ FlyFunction:
 
 .TryFly:
 ; Fly
+	ld de, ENGINE_BUG_CONTEST_TIMER
+	call CheckEngineFlag
+	jr nc, .indoors
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .outdoors
@@ -596,7 +599,7 @@ FlyFunction:
 	callasm HideSprites
 	special UpdateTimePals
 	callasm FlyFromAnim
-	farscall Script_AbortBugContest
+;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
@@ -775,6 +778,9 @@ dig_incave
 	dw .FailDig
 
 .CheckCanDig:
+	ld de, ENGINE_BUG_CONTEST_TIMER
+	call CheckEngineFlag
+	jr nc, .fail
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .incave
@@ -862,7 +868,7 @@ dig_incave
 	closetext
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .DigOut
-	farscall Script_AbortBugContest
+;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_DOOR
@@ -896,6 +902,9 @@ TeleportFunction:
 	dw .FailTeleport
 
 .TryTeleport:
+	ld de, ENGINE_BUG_CONTEST_TIMER
+	call CheckEngineFlag
+	jr nc, .nope
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .CheckIfSpawnPoint
@@ -949,7 +958,7 @@ TeleportFunction:
 	closetext
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .TeleportFrom
-	farscall Script_AbortBugContest
+;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_TELEPORT

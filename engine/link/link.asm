@@ -233,7 +233,7 @@ Gen2ToGen2LinkComms:
 	ld bc, wTrademons - wLink_c608
 	call Serial_ExchangeBytes
 	ld a, [wLinkMode]
-	cp LINK_TRADECENTER
+	cp LINK_TRADE_PERIDOT
 	jr nz, .not_trading
 	ld hl, wc9f4
 	ld de, wcb84
@@ -284,7 +284,7 @@ Gen2ToGen2LinkComms:
 	dec c
 	jr nz, .loop1
 	ld a, [wLinkMode]
-	cp LINK_TRADECENTER
+	cp LINK_TRADE_PERIDOT
 	jp nz, .skip_mail
 	ld hl, wcb84
 .loop2
@@ -417,7 +417,7 @@ Gen2ToGen2LinkComms:
 	ld c, 66
 	call z, DelayFrames
 	ld a, [wLinkMode]
-	cp LINK_COLOSSEUM
+	cp LINK_BATTLE_PERIDOT
 	jr nz, .ready_to_trade
 	ld a, CAL
 	ld [wOtherTrainerClass], a
@@ -826,7 +826,7 @@ Link_PrepPartyData_Gen2:
 
 ; Okay, we did all that.  Now, are we in the trade center?
 	ld a, [wLinkMode]
-	cp LINK_TRADECENTER
+	cp LINK_TRADE_PERIDOT
 	ret nz
 
 ; Fill 5 bytes at wc9f4 with $20
@@ -2144,13 +2144,13 @@ WaitForOtherPlayerToExit:
 	ret
 
 SetBitsForLinkTradeRequest:
-	ld a, LINK_TRADECENTER - 1
+	ld a, LINK_TRADE_PERIDOT - 1
 	ld [wPlayerLinkAction], a
 	ld [wChosenCableClubRoom], a
 	ret
 
 SetBitsForBattleRequest:
-	ld a, LINK_COLOSSEUM - 1
+	ld a, LINK_BATTLE_PERIDOT - 1
 	ld [wPlayerLinkAction], a
 	ld [wChosenCableClubRoom], a
 	ret
@@ -2424,7 +2424,7 @@ TimeCapsule:
 	ret
 
 TradeCenter:
-	ld a, LINK_TRADECENTER
+	ld a, LINK_TRADE_PERIDOT
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
 	callfar LinkCommunications
@@ -2434,7 +2434,7 @@ TradeCenter:
 	ret
 
 Colosseum:
-	ld a, LINK_COLOSSEUM
+	ld a, LINK_BATTLE_PERIDOT
 	ld [wLinkMode], a
 	call DisableSpriteUpdates
 	callfar LinkCommunications

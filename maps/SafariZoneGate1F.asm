@@ -7,7 +7,6 @@ SafariZoneGate1F_MapScripts:
 
 	db 0 ; callbacks
 	
-	
 SafariReceptionistScript:
 	opentext
 	writetext SafariZoneReceptionistText
@@ -106,6 +105,7 @@ SafariGuardScript:
 	end
 
 LeaveSafariZone:
+	clearflag ENGINE_BUG_CONTEST_TIMER
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariExit
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardExit

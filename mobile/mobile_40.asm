@@ -1743,7 +1743,6 @@ Function100b7a:
 	ld a, [wMenuData_2DMenuItemStringsBank]
 	rst FarCall
 	farcall Draw2DMenu
-	farcall MobileTextBorder
 	call UpdateSprites
 	call ApplyTilemap
 	farcall Init2DMenuCursorPosition

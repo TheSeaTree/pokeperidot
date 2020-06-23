@@ -479,7 +479,7 @@ MonMailAction:
 	ld a, [wLinkMode]
 	cp LINK_TIMECAPSULE
 	jr z, .read
-	cp LINK_TRADECENTER
+	cp LINK_TRADE_PERIDOT
 	jr z, .read
 
 ; Show the READ/TAKE/QUIT menu.

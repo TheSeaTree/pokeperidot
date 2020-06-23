@@ -5,6 +5,8 @@
 	const LINK_TRADECENTER ; 2
 	const LINK_COLOSSEUM   ; 3
 	const LINK_MOBILE      ; 4
+	const LINK_TRADE_PERIDOT      ; 5
+	const LINK_BATTLE_PERIDOT      ; 5
 
 ; hSerialReceive high nybbles
 SERIAL_TIMECAPSULE EQU $60

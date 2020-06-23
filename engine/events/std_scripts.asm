@@ -526,7 +526,7 @@ TeleportGuyScript:
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .TeleportOut
 	pause 8
-	farscall Script_AbortBugContest
+;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL

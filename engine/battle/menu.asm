@@ -10,7 +10,6 @@ LoadBattleMenu:
 	ret
 
 SafariBattleMenu:
-; untranslated
 	ld hl, MenuHeader_0x24f4e
 	call LoadMenuHeader
 	jr Function24f19
@@ -61,13 +60,13 @@ MenuData_0x24f56:
 	dba Function24f7c
 
 Strings24f5f:
-	db "THROW ROCK@" ; "THROW ROCK"
-	db "BAIT@" ; "THROW BAIT"
-	db "BALL×　　@" ; "SAFARI BALL×  @"
-	db "RUN@" ; "RUN"
+	db "BALL×　　@"
+	db "BAIT@"
+	db "THROW ROCK@"
+	db "RUN@"
 
 Function24f7c:
-	hlcoord 10, 16
+	hlcoord 7, 14
 	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 2
 	call PrintNum

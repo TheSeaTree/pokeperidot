@@ -5196,7 +5196,7 @@ BattleMenu:
 	cp BATTLETYPE_CONTEST
 	jr nz, .not_contest
 	farcall SafariBattleMenu
-	jr .next
+	jr .safarimenu
 .not_contest
 
 	; Auto input: choose "ITEM"
@@ -5208,7 +5208,6 @@ BattleMenu:
 	call LoadBattleMenu2
 	ret c
 
-.next
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, [wBattleMenuCursorBuffer]
@@ -5216,6 +5215,20 @@ BattleMenu:
 	jp z, BattleMenu_Fight
 	cp $3
 	jp z, BattleMenu_Pack
+	cp $2
+	jp z, BattleMenu_PKMN
+	cp $4
+	jp z, BattleMenu_Run
+	jr .loop
+
+.safarimenu
+	ld a, $1
+	ldh [hBGMapMode], a
+	ld a, [wBattleMenuCursorBuffer]
+	cp $1
+	jp z, BattleMenu_Pack
+	cp $3
+	jp z, BattleMenu_Fight
 	cp $2
 	jp z, BattleMenu_PKMN
 	cp $4
@@ -6054,7 +6067,6 @@ MoveInfoBox:
 	ld b, 2
 	ld c, 8
 	call TextBox
-	call MobileTextBorder
 	
 	hlcoord 1, 12
 	lb bc, 5, 3
@@ -9299,7 +9311,6 @@ InitBattleDisplay:
 	ld b, 4
 	ld c, 18
 	call TextBox
-	farcall MobileTextBorder
 	hlcoord 1, 5
 	lb bc, 3, 7
 	call ClearBox
