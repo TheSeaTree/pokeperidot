@@ -124,4 +124,4 @@ OverworldSprites:
 	overworld_sprite FangirlSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite FoodSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChefSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
-	overworld_sprite JoelSpriteGFX, 4, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite JoelSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN

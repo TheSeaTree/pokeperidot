@@ -650,7 +650,7 @@ _CGB_TrainerCard:
 	ld a, CECIL ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CECIL
+	ld a, CLAIR
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, CELESTE
@@ -701,7 +701,7 @@ _CGB_TrainerCard:
 	call FillBoxCGB
 	hlcoord 6, 11, wAttrMap
 	lb bc, 2, 4
-	ld a, $2 ; bugsy
+	ld a, $1 ; bugsy
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrMap
 	lb bc, 2, 4
@@ -723,27 +723,17 @@ _CGB_TrainerCard:
 	lb bc, 2, 4
 	ld a, $7 ; pryce
 	call FillBoxCGB
-	; clair uses kris's palette
-	ld a, [wPlayerGender]
-	and a
-	push af
-	jr z, .got_gender3
 	hlcoord 14, 14, wAttrMap
 	lb bc, 2, 4
-	ld a, $1
+	ld a, $2 ; clair
 	call FillBoxCGB
-.got_gender3
-	pop af
-	ld c, $0
-	jr nz, .got_gender4
-	inc c
 .got_gender4
 	ld a, c
 	hlcoord 18, 1, wAttrMap
 	ld [hl], a
 	call ApplyAttrMap
 	call ApplyPals
-	ld a, $1
+	ld a, $3
 	ldh [hCGBPalUpdate], a
 	ret
 
