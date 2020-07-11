@@ -145,7 +145,7 @@ SpecialsPointers::
 	add_special Function101225
 	add_special Function101231
 	add_special MoveTutor
-	add_special Function11c1ab
+	add_special SpecialMoveRelearner
 	add_special BattleTowerAction
 	add_special DisplayUnownWords
 	add_special Menu_ChallengeExplanationCancel ; $88

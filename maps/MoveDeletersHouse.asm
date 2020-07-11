@@ -13,6 +13,14 @@ MoveDeleter:
 	waitbutton
 	closetext
 	end
+	
+MoveReminder:
+	faceplayer
+	opentext
+	special SpecialMoveRelearner
+	waitbutton
+	closetext
+	end
 
 MoveDeletersHouseBookshelf:
 	jumpstd difficultbookshelf

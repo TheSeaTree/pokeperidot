@@ -1506,3 +1506,71 @@ UnknownText_0x1c60d1::
 	text "The time can't be"
 	line "changed right now."
 	prompt
+	
+MoveReminderIntroText::
+	text "People call me the"
+	line "MOVE MANIAC."
+
+	para "I know every move"
+	line "a #MON learns!"
+
+	para "I can remind your"
+	line "#MON how to use"
+	cont "a forgotten move"
+	cont "if you trade me a"
+	cont "BRICK PIECE."
+	done
+
+MoveReminderPromptText::
+	text "Do you want me to"
+	line "teach one of your"
+	cont "#MON a move?"
+	done
+
+MoveReminderWhichMonText::
+	text "Alright! Which one"
+	line "am I tutoring?"
+	done
+
+MoveReminderWhichMoveText::
+	text "Which move should"
+	line "it remember?"
+	done
+
+MoveReminderNoGoldLeafText::
+	text "You don't have a"
+	line "BRICK PIECE to"
+	cont "give to me? That's"
+	cont "a shame…"
+
+	para "I hear you can get"
+	line "them from SMASHING"
+	cont "ROCKs sometimes."
+	done
+
+MoveReminderEggText::
+	text "Huh? EGGs can't"
+	line "use moves…"
+	done
+
+MoveReminderNoMonText::
+	text "That's not a"
+	line "#MON."
+	done
+
+MoveReminderNoMovesText::
+	text "That #MON does"
+	line "not learn any more"
+	cont "moves."
+	
+	para "Sorry…"
+	done
+
+MoveReminderCancelText::
+	text "If you want to"
+	line "teach your #MON"
+	cont "more moves, come"
+	cont "back with a BRICK"
+	cont "PIECE."
+	done
+

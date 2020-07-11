@@ -1488,16 +1488,8 @@ RadioChannels:
 	jp LoadStation_PokeFluteRadio
 
 .EvolutionRadio:
-; This station airs in the Lake of Rage area when Team Rocket is still in Mahogany.
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_ROCKET_SIGNAL_F, a
-	jr z, .NoSignal
-	ld a, [wPokegearMapPlayerIconLandmark]
-	cp MAHOGANY_TOWN
-	jr z, .ok
-.ok
-	jp LoadStation_EvolutionRadio
-
+	; Unused
+	
 .NoSignal:
 	call NoRadioStation
 	ret

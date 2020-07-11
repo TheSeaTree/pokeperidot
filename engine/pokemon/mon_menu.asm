@@ -1193,12 +1193,11 @@ PlaceMoveData:
 	hlcoord 0, 11
 	ld de, String_MoveType_Bottom
 	call PlaceString
+
 	hlcoord 13, 12
-	ld [hl], $40
-	hlcoord 14, 12
-	ld [hl], $3e
-	hlcoord 15, 12
-	ld [hl], "/"
+	ld de, .BP
+	call PlaceString
+
 	call PlaceString
 	ld a, [wCurSpecies]
 	ld b, a
@@ -1218,11 +1217,47 @@ PlaceMoveData:
 	ld de, wDeciramBuffer
 	lb bc, 1, 3
 	call PrintNum
-	jr .description
+	jr .accuracy
 
 .no_power
 	ld de, String_MoveNoPower
 	call PlaceString
+	
+.accuracy
+	hlcoord 12, 13
+	ld de, .ACC
+	call PlaceString
+
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_ACC
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld a, [wCurSpecies]
+	dec a
+	ld hl, Moves + MOVE_ACC
+	ld bc, MOVE_LENGTH
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	; display accuracy out of 100
+	ld [hMultiplicand], a
+	ld a, 100
+	ld [hMultiplier], a
+	call Multiply
+	ld a, [hProduct]
+	; don't increase a for 0% moves
+	and a
+	jr z, .no_inc
+	inc a
+.no_inc
+	hlcoord 16, 13
+	ld [wDeciramBuffer], a
+	ld de, wDeciramBuffer
+	lb bc, 1, 3
+	call PrintNum
 
 .description
 	hlcoord 1, 14
@@ -1230,6 +1265,12 @@ PlaceMoveData:
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
+	
+.BP
+	db "<BOLD_B><BOLD_P>/@"
+	
+.ACC
+	db "<BOLD_A><BOLD_C><BOLD_C>/@"
 
 String_MoveType_Top:
 	db "♣─────┐@"

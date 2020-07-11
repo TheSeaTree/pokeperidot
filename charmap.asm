@@ -127,6 +127,10 @@
 	charmap "♣",         $c2
 	charmap "♠",         $c3
 
+	charmap "<BOLD_A>",  $c6
+	charmap "<BOLD_C>",  $c7
+	charmap "<BOLD_B>",  $c8
+	charmap "<BOLD_P>",  $c9
 	charmap "<CAUTION>", $ca
 	charmap "<TRADEID>", $cb
 	charmap "<TRADENO>", $cc
