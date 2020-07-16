@@ -62,6 +62,7 @@ PsyduckEggMoves:
 	db BIDE
 	db DYNAMICPUNCH
 	db IRON_TAIL
+	db U_TURN
 	db -1 ; end
 
 RinringEggMoves:
@@ -275,6 +276,7 @@ PoliwagEggMoves:
 	db HAZE
 	db MIND_READER
 	db ENCORE
+	db SCREECH
 	db -1 ; end
 
 AbraEggMoves:
@@ -301,6 +303,7 @@ TentacoolEggMoves:
 	db HAZE
 	db BUBBLE
 	db DESTINY_BOND
+	db ACID_ARMOR
 	db -1 ; end
 
 GeodudeEggMoves:
@@ -508,6 +511,7 @@ KangaskhanEggMoves:
 	db COUNTER
 	db DOUBLE_EDGE
 	db MILK_DRINK
+	db HYDRO_PUMP
 	db -1 ; end
 
 HorseaEggMoves:
@@ -520,6 +524,7 @@ HorseaEggMoves:
 	db POISON_STING
 	db PIN_MISSILE
 	db SIGNAL_BEAM
+	db U_TURN
 	db -1 ; end
 
 GoldeenEggMoves:
@@ -528,6 +533,7 @@ GoldeenEggMoves:
 	db HYDRO_PUMP
 	db SIGNAL_BEAM
 	db SKULL_BASH
+	db U_TURN
 	db -1 ; end
 
 MrMimeEggMoves:
@@ -577,6 +583,7 @@ EeveeEggMoves:
 	db MIMIC
 	db SIGNAL_BEAM
 	db SKULL_BASH
+	db FUTURE_SIGHT
 	db -1 ; end
 
 OmanyteEggMoves:

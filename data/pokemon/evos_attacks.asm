@@ -621,6 +621,7 @@ JigglypuffEvosAttacks:
 	db 34, BODY_SLAM
 	db 39, DOUBLE_EDGE
 	db 44, PERISH_SONG
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 WigglytuffEvosAttacks:
@@ -2082,6 +2083,7 @@ TaurosEvosAttacks:
 	db 24, BITE
 	db 29, HEADBUTT
 	db 35, DOUBLE_EDGE
+	db 43, MEGAHORN
 	db 48, SWAGGER
 	db 55, THRASH
 	db 71, HYPER_BEAM
@@ -2134,6 +2136,10 @@ LaprasEvosAttacks:
 DittoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TRANSFORM
+	db 1, ROCK_SMASH
+	db 1, FLY
+	db 1, TOXIC
+	db 1, DIG
 	db 0 ; no more level-up moves
 
 EeveeEvosAttacks:
@@ -3067,7 +3073,7 @@ PolitoedEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
 	db 27, SWAGGER
-	DB 37, PERISH_SONG
+	db 37, PERISH_SONG
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:
@@ -3723,6 +3729,7 @@ SkarmoryEvosAttacks:
 	db 1, PECK
 	db 6, SAND_ATTACK
 	db 9, METAL_CLAW
+	db 15, WING_ATTACK
 	db 17, FURY_ATTACK
 	db 23, SWIFT
 	db 26, DRILL_PECK
