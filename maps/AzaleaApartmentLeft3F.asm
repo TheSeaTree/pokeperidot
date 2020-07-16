@@ -13,10 +13,15 @@ MysteryGiftGirl:
 	writetext MysterGiftText
 	yesorno
 	iffalse .Decline
+	setflag ENGINE_DAILY_MYSTERY_GIFT
+	writetext MysteryGift_SaveGame
+	yesorno
+	iffalse .Decline
+	special TryQuickSave
+	iffalse .Decline
 	writetext MysteryGiftLinkUp
 	playsound SFX_MOVE_DELETED
 	waitsfx
-	setflag ENGINE_DAILY_MYSTERY_GIFT
 	scall FindMysteryGiftItem
 	iffalse .NoRoom
 	scall FindMysteryGiftItem
@@ -44,6 +49,7 @@ MysteryGiftGirl:
 	end
 	
 .Decline
+	clearflag ENGINE_DAILY_MYSTERY_GIFT
 	writetext DeclineMysteryGiftText
 	waitbutton
 	closetext
@@ -66,9 +72,15 @@ MysterGiftText:
 	cont "GIFT?"
 	done
 	
+MysteryGift_SaveGame:
+	text "You need to save"
+	line "your game before"
+	cont "we share, 'kay?"
+	done
+	
 MysteryGiftLinkUp:
-	text "Okay! Just link up"
-	line "with me for a sec!"
+	text "Okay! Let's link"
+	line "up for a sec!"
 	done
 
 MysterGiftNoRoom:

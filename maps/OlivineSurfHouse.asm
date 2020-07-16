@@ -13,8 +13,8 @@ OlivineSurfGuy:
 	opentext
 	checkevent EVENT_GOT_HM_SURF
 	iftrue .GotSurf
-	checkevent EVENT_UNLOCKED_SURF
-	iffalse .Hostile
+	checkcode VAR_BADGES
+	ifless 6, .Hostile
 	writetext OlivineSurfGuyGiveSurf
 	waitbutton
 	verbosegiveitem HM_SURF

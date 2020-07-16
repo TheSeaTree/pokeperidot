@@ -130,7 +130,10 @@ MaplesLab_Blocks:
 	INCBIN "maps/MaplesLab.ablk"
 	
 CoastalLab_Blocks:
-	INCBIN "maps/CoastalLab.ablk"
+	INCBIN "maps/CoastalLab.ablk"	
+
+OlivinePort_Blocks:
+	INCBIN "maps/OlivinePort.ablk"
 
 Route9_Blocks:
 	INCBIN "maps/Route9.ablk"

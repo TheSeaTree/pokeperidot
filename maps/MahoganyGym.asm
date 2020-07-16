@@ -1219,7 +1219,8 @@ ScientistAndreText:
 	done
 	
 ScientistAndreWinText:
-	text "I lost."
+	text "Okay. Now you may"
+	line "enter."
 	done
 
 ScientistAndreAfterText:
@@ -1232,29 +1233,52 @@ ScientistAndreAfterText:
 	done
 	
 ScientistKurtText:
-	text "I am a"
-	line "#MON trainer."
+	text "It's amazing how"
+	line "these pods work."
+	
+	para "I'll tell you how"
+	line "they work if you"
+	cont "can beat me."
 	done
 	
 ScientistKurtWinText:
-	text "I lost."
+	text "You've fried my"
+	line "circuts!"
 	done
 	
 ScientistKurtAfterText:
-	text "I lost."
+	text "These pods are"
+	line "actually quite"
+	cont "genius! The person"
+	cont "inside is convert-"
+	cont "ed into electrons"
+	cont "and is launched"
+	cont "through the cables"
+	cont "at a frightening"
+	cont "speed!"
+	
+	para "………"
+	
+	para "You're not under-"
+	line "standing any of"
+	cont "this, are you?"
 	done
 	
 ScientistDavidText:
-	text "I am a"
-	line "#MON trainer."
+	text "Do not look direc-"
+	line "tly at my #MON!"
 	done
 
 ScientistDavidWinText:
-	text "I lost."
+	text "That's lights out"
+	line "for me!"
 	done
 
 ScientistDavidAfterText:
-	text "I lost."
+	text "The idea that some"
+	line "#MON can radiate"
+	cont "light fascinates"
+	cont "me greatly."
 	done
 	
 ScientistSethText:

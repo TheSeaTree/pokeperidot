@@ -34,6 +34,7 @@ ENDM
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
+	map_const OLIVINE_PORT,                                10,  9 ; 14
 	map_const ROUTE_15,                                    20, 19 ;  3
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    20, 21 ;  3

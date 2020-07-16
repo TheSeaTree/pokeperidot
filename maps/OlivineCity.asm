@@ -368,28 +368,29 @@ OlivineSurfHouseSignText:
 OlivineCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event  4, 14, ROUTE_14_OLIVINE_GATE, 3
 	warp_event  4, 15, ROUTE_14_OLIVINE_GATE, 4
 	warp_event 17,  5, MAHOGANY_GATE, 3
 	warp_event 13, 17, OLIVINE_SURF_HOUSE, 1
 	warp_event 10, 11, COASTAL_LAB, 1
+	warp_event 30, 11, OLIVINE_PORT, 1
 
 	db 1 ; coord events
 	coord_event 17,  6, SCENE_DEFAULT, OlivineCityRivalSceneTop
 
 	db 7 ; bg events
-	bg_event 18, 14, BGEVENT_READ, OlivineCitySign
-	bg_event 22, 31, BGEVENT_READ, OlivineCityPortSign
-	bg_event 25, 31, BGEVENT_READ, OlivineLabSign
+	bg_event 18, 12, BGEVENT_READ, OlivineCitySign
+	bg_event 28, 12, BGEVENT_READ, OlivineCityPortSign
+	bg_event  7, 11, BGEVENT_READ, OlivineLabSign
 	bg_event 23, 31, BGEVENT_READ, OlivineLighthouseSign
 	bg_event 21, 31, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 12, 18, BGEVENT_READ, OlivineCitySurfHouseSign
 	bg_event 24, 31, BGEVENT_READ, OlivineCityMartSign
 
 	db 5 ; object events
-	object_event 12, 24, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
-	object_event 20, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
-	object_event 17, 25, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	object_event 11, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
+	object_event 23, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
+	object_event 35, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
 	object_event 17,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
-	object_event 35, 20, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMoveTutor, -1 ; Icy Wind tutor
+	object_event 28, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMoveTutor, -1 ; Icy Wind tutor

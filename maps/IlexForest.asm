@@ -81,7 +81,75 @@ TrainerTwinMae:
 	writetext TwinMaeAfterText
 	waitbutton
 	closetext
-	end	
+	end
+	
+TrainerCooltrainerFSasha:
+	faceplayer
+	opentext
+	checkevent EVENT_BEAT_COOLTRAINER_SASHA
+	iftrue .FightDone
+	checkevent EVENT_BEAT_LASS_AMANDA
+	iffalse .Explain
+	checkevent EVENT_BEAT_BIRD_KEEPER_ELLIS
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEFANF_ELANE
+	iffalse .Explain
+	checkevent EVENT_BEAT_TWINS_FAYE_AND_MAE
+	iffalse .Explain
+	writetext SashaYouDidIt
+	waitbutton
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext SashaChallengeText
+	waitbutton
+	closetext
+	winlosstext CooltrainerSashaWin, CooltrainerSashaLoss
+	loadtrainer COOLTRAINERF, SASHA
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_COOLTRAINER_SASHA
+	opentext
+	jump .FightDone
+	
+.FightDone
+	checkevent GOT_CHIKORITA
+	iftrue .Chikorita
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	writetext SashaGaveChikorita
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke CHIKORITA, 10
+	special ChikoritaGiftMon
+	setevent GOT_CHIKORITA
+	closetext
+	end
+	
+.PartyFull
+	writetext SashaNotEnoughRoom
+	waitbutton
+	closetext
+	end
+	
+.Chikorita
+	writetext AlreadyGotChikorita
+	waitbutton
+	closetext
+	end
+	
+.Explain
+	checkevent ILEX_FOREST_TALKED_TO_SASHA
+	iftrue .Waiting
+	writetext SashaExplaination
+	setevent ILEX_FOREST_TALKED_TO_SASHA
+	waitbutton
+	closetext
+	end
+	
+.Waiting
+	writetext SashaMoreToGo
+	waitbutton
+	closetext
+	end
 
 IlexForestHardStone:
 	itemball HARD_STONE
@@ -213,6 +281,103 @@ TwinMaeAfterText:
 	text "MAE: My #MON"
 	line "was just sleepy!"
 	done
+	
+SashaExplaination:
+	text "Greetings to you,"
+	line "trainer."
+	
+	para "You may call me"
+	line "SASHA. I am some-"
+	cont "what of a role"
+	cont "model to the"
+	cont "trainers here."
+	
+	para "I have promised"
+	line "one of my prized"
+	cont "#MON as a rew-"
+	cont "ard to anyone who"
+	cont "can beat me in a"
+	cont "battle."
+	
+	para "But I refuse to"
+	line "battle anyone who"
+	cont "can't prove them-"
+	cont "selves."
+	
+	para "If you can defeat"
+	line "every trainer in"
+	cont "the forest, I will"
+	cont "gladly accept your"
+	cont "challenge and"
+	cont "chance at my rare"
+	cont "#MON."
+	done
+	
+SashaMoreToGo:
+	text "Have you won a"
+	line "battle against all"
+	cont "of the trainers in"
+	cont "this forest?"
+	
+	para "No? I will not"
+	line "battle you until"
+	cont "then."
+	done
+	
+SashaYouDidIt:
+	text "You won a battle"
+	line "against everyone"
+	cont "in this forest?"
+	
+	para "That was quick!"
+	done
+	
+SashaChallengeText:
+	text "Please, show me"
+	line "the strategy you"
+	cont "used against the"
+	cont "other trainers!"
+	done
+	
+CooltrainerSashaWin:
+	text "Oh no! That was my"
+	line "first ever loss!"
+	
+	para "You must teach me"
+	line "your style of"
+	cont "battle!"
+	done
+	
+CooltrainerSashaLoss:
+	text "You put up a good"
+	line "fight, but you are"
+	cont "not as good as I"
+	cont "hoped. Go get your"
+	cont "#MON some help."
+	done
+	
+SashaGaveChikorita:
+	text "<PLAYER>"
+	line "received"
+	cont "CHIKORITA!"
+	done
+	
+SashaNotEnoughRoom:
+	text "Please make some"
+	line "room in your party"
+	cont "for my gift."
+	done
+	
+AlreadyGotChikorita:
+	text "Please take good"
+	line "care of the"
+	cont "CHIKORITA I gave"
+	cont "you."
+	
+	para "I have no doubt"
+	line "you will train it"
+	cont "to be strong."
+	done
 
 IlexForest_MapEvents:
 	db 0, 0 ; filler
@@ -231,9 +396,9 @@ IlexForest_MapEvents:
 	bg_event 37,  5, BGEVENT_ITEM, IlexForestHiddenEther
 	bg_event 16, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 14, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHardStone, EVENT_ILEX_FOREST_HARD_STONE
-	object_event 54,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
+	object_event 46,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
 	object_event 16, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 57, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSuperPotion, EVENT_ILEX_FOREST_SUPER_POTION
 	object_event 18, 38, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerRay, -1
@@ -242,3 +407,4 @@ IlexForest_MapEvents:
 	object_event 40, 23, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
 	object_event 36, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
 	object_event 37, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
+	object_event 53,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFSasha, -1

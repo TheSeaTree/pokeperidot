@@ -84,6 +84,10 @@ EcruteakGymLeader:
 	waitbutton
 	checkflag ENGINE_FLYPOINT_OLIVINE
 	iftrue .Team2
+	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	iftrue .Team3
+	checkflag ENGINE_FLYPOINT_ORCHID
+	iftrue .Team4
 	winlosstext PoseyWinText, 0
 	loadtrainer POSEY, POSEY1
 	startbattle
@@ -92,6 +96,18 @@ EcruteakGymLeader:
 .Team2:
 	winlosstext PoseyWinText, 0
 	loadtrainer POSEY, POSEY2
+	startbattle
+	reloadmapafterbattle
+	jump .After
+.Team3:
+	winlosstext PoseyWinText, 0
+	loadtrainer POSEY, POSEY3
+	startbattle
+	reloadmapafterbattle
+	jump .After
+.Team4:
+	winlosstext PoseyWinText, 0
+	loadtrainer POSEY, POSEY4
 	startbattle
 	reloadmapafterbattle
 
@@ -464,7 +480,11 @@ PicnickerTerryWinText:
 	done
 
 PicnickerTerryAfterText:
-	text "I lost."
+	text "Eek!"
+	
+	para "I felt something"
+	line "brush up against"
+	cont "my leg!"
 	done
 
 PicnickerBrittanyText:

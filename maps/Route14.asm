@@ -227,29 +227,62 @@ LadTristanAfterText:
 	done
 
 TwinLeahText:
-	text "I am a"
-	line "#MON trainer!"
+	text "LEAH: We may be"
+	line "little,"
+	
+	para "MIA: But we have"
+	cont "strong #MON!"
 	done
 	
 TwinLeahWinText:
-	text "I lost."
+	text "MIA: I told you we"
+	line "should have led"
+	cont "with my #MON,"
+	cont "LEAH!"
+	
+	para "LEAH: Sorry!"
 	done
 	
 TwinLeahAfterText:
-	text "I lost."
+	text "LEAH: Wouldn't it"
+	line "have been neat if"
+	cont "we could have a"
+	cont "two-on-two battle?"
+	
+	para "MIA: LEAH, you"
+	line "know those are"
+	cont "against the rules!"
 	done
 
 TwinMiaText:
-	text "I am a"
-	line "#MON trainer!"
+	text "MIA: My sister and"
+	line "I can read each"
+	cont "others' mind."
+	
+	para "LEAH: Yeah! So you"
+	line "had better watch"
+	cont "out!"
 	done
 	
 TwinMiaWinText:
-	text "I lost."
+	text "LEAH: Cheer up,"
+	line "MIA. We'll win"
+	cont "the next one."
+	
+	para "MIA: For sure!"
 	done
 	
 TwinMiaAfterText:
-	text "I lost."
+	text "MIA: Not only do"
+	line "LEAH and I have a"
+	cont "special bond, but"
+	cont "our #MON know"
+	cont "what we're think-"
+	cont "ing too."
+	
+	para "LEAH: It's like"
+	line "all of our minds"
+	cont "are synced up!"
 	done
 	
 LassGingerText:

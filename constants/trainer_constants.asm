@@ -24,7 +24,6 @@ CHRIS EQU __enum__
 	const PHONECONTACT_ELM
 	const PHONECONTACT_BUENA
 
-KRIS EQU __enum__
 	trainerclass CECIL ; 1
 	const CECIL1
 	const CECIL2
@@ -127,6 +126,8 @@ KRIS EQU __enum__
 	trainerclass POSEY ; 15
 	const POSEY1
 	const POSEY2
+	const POSEY3
+	const POSEY4
 	const POSEY_REMATCH
 
 	trainerclass LAD ; 16
@@ -174,6 +175,7 @@ KRIS EQU __enum__
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
+	const SASHA
 	const ASHLEY
 	const EVE
 	const FAITH
@@ -416,4 +418,5 @@ KRIS EQU __enum__
 	trainerclass MYSTICALMAN ; 43
 	const EUSINE
 
+KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

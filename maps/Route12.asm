@@ -125,13 +125,17 @@ PsychicSolomonText:
 	done
 	
 TeacherSharonText:
-	text "I am a"
-	line "#MON trainer!"
+	text "I am giving my"
+	line "students first-"
+	cont "hand battling exp-"
+	cont "erience."
 	done
 	
 SchoolboyMartinText:
-	text "I am a"
-	line "#MON trainer!"
+	text "My assignment for"
+	line "today is to win a"
+	cont "battle against any"
+	cont "trainer I see!"
 	done
 	
 CamperRustyWinText:
@@ -156,13 +160,14 @@ PsychicSolomonWinText:
 	done
 
 TeacherSharonWinText:
-	text "Don't you dare"
-	line "harm any of my"
-	cont "students!"
+	text "I may need you to"
+	line "become my teaching"
+	cont "aide."
 	done
 
 SchoolboyMartinWinText:
-	text "I lost."
+	text "This will affect"
+	line "my marks for sure!"
 	done
 
 CamperRustyAfterText:
@@ -201,11 +206,18 @@ PsychicSolomonAfterText:
 	done
 
 TeacherSharonAfterText:
-	text "I lost."
+	text "Not everything can"
+	line "be taught in a"
+	cont "classroom."
 	done
 
 SchoolboyMartinAfterText:
-	text "I lost."
+	text "Ms. SHARON is the"
+	line "best! None of my"
+	cont "other TEACHERs"
+	cont "let us take field"
+	cont "trips to battle"
+	cont "real trainers."
 	done
 
 

@@ -203,55 +203,88 @@ Route13Rock:
 	jumpstd smashrock
 	
 PokefanMDougText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Do you cook for"
+	line "your #MON?"
 	done
 	
 PokefanMDougWinText:
-	text "I lost."
+	text "The BERRIES were"
+	line "just a snack."
 	done
 	
 PokefanMDougAfterText:
-	text "I lost."
+	text "I'm kinda hungry"
+	line "myself."
+	
+	para "It's been so long"
+	line "since I've been"
+	cont "able to afford"
+	cont "any real food."
 	done
 	
 FirebreatherWayneText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Stand clear!"
+	
+	para "I don't want any-"
+	line "one to get burned!"
 	done
 	
 FirebreatherWayneWinText:
-	text "I lost."
+	text "All of that"
+	line "practice, it was"
+	cont "all for naught!"
 	done
 	
 FirebreatherWayneAfterText:
-	text "I lost."
+	text "I like to practice"
+	line "my technique on"
+	cont "this hill."
+	
+	para "There is no grass"
+	line "to accidentally"
+	cont "set on fire."
 	done
 	
 PokemaniacTylerText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Can you match my"
+	line "team's variety?"
 	done
 	
 PokemaniacTylerWinText:
-	text "I lost."
+	text "That was my last"
+	line "#MON?"
+	
+	para "Impossible!"
 	done
 	
 PokemaniacTylerAfterText:
-	text "I lost."
+	text "I have so many"
+	line "#MON, but I"
+	cont "need more."
+	
+	para "I need all of"
+	line "them!"
 	done
 
 BirdKeeperRoyText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Are you a travel-"
+	line "er?"
+	
+	para "Me too! Do you"
+	line "have any exotic"
+	cont "#MON?"
 	done
 	
 BirdKeeperRoyWinText:
-	text "I lost."
+	text "My head was in the"
+	line "clouds."
 	done
 	
 BirdKeeperRoyAfterText:
-	text "I lost."
+	text "Nothing compares"
+	line "to the rush I get"
+	cont "seeing this whole"
+	cont "region from above."
 	done
 	
 BikerJesseText:
@@ -305,7 +338,7 @@ FisherDerrickWinText:
 
 FisherDerrickAfterText:
 	text "I should go visit"
-	line "CYNARA COAST if" 
+	line "RUGOSA COAST if" 
 	cont "I want some really"
 	cont "strong #MON."
 	done

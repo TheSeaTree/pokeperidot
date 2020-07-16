@@ -126,6 +126,7 @@ SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/MaplesLab.asm"
 INCLUDE "maps/CoastalLab.asm"
+INCLUDE "maps/OlivinePort.asm"
 INCLUDE "maps/PlayersHouse1F.asm"
 INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
@@ -270,6 +271,7 @@ INCLUDE "maps/Route30.asm"
 INCLUDE "maps/Route7.asm"
 INCLUDE "maps/MahoganySubstituteHouse.asm"
 INCLUDE "maps/Route5.asm"
+INCLUDE "maps/Route14.asm"
 
 
 SECTION "Map Scripts 21", ROMX
@@ -326,7 +328,6 @@ INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/Route17.asm"
 INCLUDE "maps/Route16.asm"
-INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route3.asm"

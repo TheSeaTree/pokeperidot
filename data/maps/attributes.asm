@@ -438,3 +438,4 @@ ENDM
 	map_attributes UnownChamberOU, UNOWN_CHAMBER_OU, $00, 0
 	map_attributes UnownChamberVZ, UNOWN_CHAMBER_VZ, $00, 0
 	map_attributes CoastalLab, COASTAL_LAB, $00, 0
+	map_attributes OlivinePort, OLIVINE_PORT, $00, 0

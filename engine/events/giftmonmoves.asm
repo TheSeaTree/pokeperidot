@@ -361,7 +361,7 @@ ChikoritaGiftMon:
 
 .Moveset:
 	db GIGA_DRAIN
-	db HEAL_BELL
+	db GROWTH
 	db LEECH_SEED
 	db ANCIENTPOWER
 	db 0
