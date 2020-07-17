@@ -36,7 +36,7 @@ Moves: ; 41afb
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
-	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, NORMAL,    75,  5,   0 ; Replace
+	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, CURSE_T,  100,  5,   0 ; Replace
 	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING, 100, 20,   0
 	move COIL,         EFFECT_COIL,                0, POISON,   100, 20,   0
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,   100, 15,   0
@@ -251,8 +251,8 @@ Moves: ; 41afb
 	move HIDDEN_POWER, EFFECT_HIDDEN_POWER,       70, CURSE_T,  100, 15,   0
 	move CROSS_CHOP,   EFFECT_NORMAL_HIT,        100, FIGHTING,  80,  5,   0
 	move TWISTER,      EFFECT_TWISTER,            60, DRAGON,   100, 20,  20
-	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,     90,  5,   0
-	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,      90,  5,   0
+	move RAIN_DANCE,   EFFECT_RAIN_DANCE,          0, WATER,    100,  5,   0
+	move SUNNY_DAY,    EFFECT_SUNNY_DAY,           0, FIRE,     100,  5,   0
 	move CRUNCH,       EFFECT_DEFENSE_DOWN_HIT,   80, DARK,     100, 15,  20
 	move MIRROR_COAT,  EFFECT_MIRROR_COAT,         1, PSYCHIC,  100, 20,   0
 	move PSYCH_UP,     EFFECT_PSYCH_UP,            0, NORMAL,   100, 10,   0
