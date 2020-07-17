@@ -118,3 +118,32 @@ endr
 	db 48, BRICK_PIECE
 	db 48, NO_ITEM
 	db -1
+
+
+TreeItemEncounter:
+	ld hl, .TreeItems
+	call Random
+.loop
+	sub [hl]
+	jr c, .ok
+rept 2
+	inc hl
+endr
+	jr .loop
+.ok
+	ld a, [hli]
+	cp $ff
+	ld a, NO_ITEM
+	jr z, .done
+	ld a, [hli]
+.done
+	ld [wScriptVar], a
+	ret
+	
+.TreeItems:
+	db   8, REVIVAL_HERB
+	db  16, SILVER_LEAF
+	db  16, GOLD_LEAF
+	db  16, POWER_HERB
+	db 114, NO_ITEM
+	db -1
