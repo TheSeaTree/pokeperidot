@@ -11,7 +11,7 @@ EastForestMoveTutor:
 	writetext EastForestTutorText
 	yesorno
 	iffalse .Refused
-	checkitem SILVER_LEAF
+	checkitem GOLD_LEAF
 	iffalse .NoLeaf
 	writetext EastForestTutorTeach
 	loadmenu .MenuHeader
@@ -47,7 +47,7 @@ EastForestMoveTutor:
 	db "DREAM EATER@"
 
 .TeachMove
-	takeitem SILVER_LEAF
+	takeitem GOLD_LEAF
 	writetext EastForestTutorThankYou
 	waitbutton
 	closetext
@@ -60,10 +60,10 @@ EastForestMoveTutor:
 	end
 	
 .NoLeaf
-	writetext EastForestTutorExplainSilverLeaf
+	writetext EastForestTutorExplainGoldLeaf
 	waitbutton
 	closetext
-	giveitem SILVER_LEAF
+	giveitem GOLD_LEAF
 	end
 
 EastForestHypnoScript:
@@ -86,11 +86,11 @@ EastForestTutorText:
 	para "All fun comes at a"
 	line "cost, though."
 	
-	para "One SILVER LEAF"
+	para "One GOLD LEAF"
 	line "each. Deal?"
 	done
 	
-EastForestTutorExplainSilverLeaf:
+EastForestTutorExplainGoldLeaf:
 	text "No payment?"
 	
 	para "I hope you don't"
