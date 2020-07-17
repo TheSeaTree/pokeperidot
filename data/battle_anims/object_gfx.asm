@@ -50,3 +50,4 @@ AnimObjGFX:
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx 10, AnimObjPursuitGFX
 	anim_obj_gfx 15, AnimObjClawGFX
+	anim_obj_gfx  2, AnimObjUnownGFX

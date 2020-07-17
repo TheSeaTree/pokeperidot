@@ -2136,10 +2136,6 @@ LaprasEvosAttacks:
 DittoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TRANSFORM
-	db 1, ROCK_SMASH
-	db 1, FLY
-	db 1, TOXIC
-	db 1, DIG
 	db 0 ; no more level-up moves
 
 EeveeEvosAttacks:

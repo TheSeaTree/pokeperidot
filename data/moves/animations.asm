@@ -789,18 +789,37 @@ BattleAnim_HiJumpKick_branch_c971e:
 	anim_ret
 
 BattleAnim_MegaKick:
-	anim_1gfx ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_1F, $40, $2, $0
-	anim_wait 67
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_1gfx ANIM_GFX_UNOWN
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_1A, $0, $1, $20
+	anim_bgeffect ANIM_BG_07, $0, $2, $0
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $0
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $8
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $10
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $18
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $20
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $28
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $30
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $38
 .loop
-	anim_sound 0, 1, SFX_MEGA_KICK
-	anim_obj ANIM_OBJ_07, 136, 56, $0
-	anim_obj ANIM_OBJ_00, 136, 56, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_07, 136, 56, $0
-	anim_wait 6
-	anim_loop 3, .loop
+	anim_sound 0, 4, SFX_SWORDS_DANCE
+	anim_wait 8
+	anim_loop 6, .loop
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
+	anim_wait 1
+	anim_incobj  2
+	anim_incobj  3
+	anim_incobj  4
+	anim_incobj  5
+	anim_incobj  6
+	anim_incobj  7
+	anim_incobj  8
+	anim_incobj  9
+	anim_wait 16
+	anim_1gfx ANIM_GFX_EXPLOSION
+	anim_call BattleAnim_Dynamicpunch_branch_cbb8f
+	anim_wait 32
 	anim_ret
 
 BattleAnim_HyperFang:
@@ -4044,7 +4063,7 @@ BattleAnim_PainSplit:
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
 	anim_ret
-	
+
 BattleAnim_DragonDance:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
