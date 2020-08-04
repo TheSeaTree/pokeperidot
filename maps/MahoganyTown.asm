@@ -132,8 +132,8 @@ MahoganyTownOfficerScript:
 
 .FacingUp
 	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerFacingUpMovement
-	end	
-	
+	end
+
 MahoganyTownGrimerBattle:
 	opentext
 	writetext MahoganyTownGrimerText
@@ -152,6 +152,12 @@ MahoganyTownLass:
 	
 MahoganyMoveManagersHouse:
 	jumptext MoveManagersHouseText
+	
+MahoganyPowerPlantSign:
+	jumptext MahoganyPowerPlantSignText
+	
+MahoganyTownMetalPowder:
+	itemball METAL_POWDER
 	
 MahoganyTownFruitTree:
 	fruittree FRUITTREE_MAHOGANY_TOWN
@@ -322,10 +328,14 @@ MoveManagersHouseText:
 	line "house."
 	done
 	
+MahoganyPowerPlantSignText:
+	text "POWER PLANT"
+	done
+	
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event 23, 33, MAHOGANY_GATE, 1
 	warp_event 24, 33, MAHOGANY_GATE, 2
 	warp_event  2,  3, MAHOGANY_TOWN, 3
@@ -333,18 +343,20 @@ MahoganyTown_MapEvents:
 	warp_event 10, 21, MAHOGANY_DEPT_STORE_1F, 1
 	warp_event 31, 19, EMYS_HOUSE, 1
 	warp_event 35,  9, MOVE_DELETERS_HOUSE, 1
-	warp_event 19, 29, SUBSTITUTE_HOUSE, 1
+	warp_event 11, 29, SUBSTITUTE_HOUSE, 1
 	warp_event 21, 21, MAHOGANY_APARTMENT_1F, 1
+	warp_event 19, 29, MAHOGANY_CAFE, 1
 
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 	bg_event 33,  9, BGEVENT_UP, MahoganyMoveManagersHouse
+	bg_event  4,  5, BGEVENT_UP, MahoganyPowerPlantSign
 
-	db 9 ; object events
-	object_event 26, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
+	db 10 ; object events
+	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
 	object_event 24, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
 	object_event 25,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, -1
 	object_event 24,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, -1
@@ -352,4 +364,5 @@ MahoganyTown_MapEvents:
 	object_event 23,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 23,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, -1
 	object_event 22,  9, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, -1
+	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, MahoganyTownMetalPowder, EVENT_MAHOGANY_TOWN_METAL_POWDER
 	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

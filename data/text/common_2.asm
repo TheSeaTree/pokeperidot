@@ -868,7 +868,7 @@ UnknownText_0x1c0fdd::
 Text_WasSentToBillsPC::
 	text_from_ram wStringBuffer1
 	text " was"
-	line "sent to BILL's PC."
+	line "sent to the PC."
 	prompt
 
 UnknownText_0x1c1006::
@@ -877,7 +877,8 @@ UnknownText_0x1c1006::
 	prompt
 
 UnknownText_0x1c1024::
-	text "What?"
+	text "What do you want"
+	line "to do?"
 	done
 
 UnknownText_0x1c102b::
@@ -1105,7 +1106,8 @@ UnknownText_0x1c144d::
 	prompt
 
 UnknownText_0x1c1462::
-	text "Access whose PC?"
+	text "Access which"
+	line "program?"
 	done
 
 UnknownText_0x1c1474::

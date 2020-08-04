@@ -5,6 +5,21 @@ MahoganyGate_MapScripts:
 
 	db 0 ; callbacks
 
+MahoganyGateOfficerScript:
+	jumptext MahoganyGateOfficerText
+	
+MahoganyGateOfficerText:
+	text "RUGOSA CITY is"
+	line "ahead."
+	
+	para "The city attracts"
+	line "a lot of tourism"
+	cont "from people who"
+	cont "want to meet"
+	cont "future #MON"
+	cont "LEAGUE CHAMPIONS."
+	done
+
 MahoganyGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -18,4 +33,5 @@ MahoganyGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGateOfficerScript, -1

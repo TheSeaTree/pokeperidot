@@ -439,3 +439,5 @@ ENDM
 	map_attributes UnownChamberVZ, UNOWN_CHAMBER_VZ, $00, 0
 	map_attributes CoastalLab, COASTAL_LAB, $00, 0
 	map_attributes OlivinePort, OLIVINE_PORT, $00, 0
+	map_attributes Route11CleanseTagHouse, ROUTE_11_CLEANSE_TAG_HOUSE, $00, 0
+	map_attributes MahoganyCafe, MAHOGANY_CAFE, $00, 0

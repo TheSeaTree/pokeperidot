@@ -442,16 +442,29 @@ EcruteakGymHaveBadge:
 	done
 	
 CamperJeffText:
-	text "I am a"
-	line "#MON trainer."
+	text "POSEY has brought"
+	line "the fun of camping"
+	cont "indoors!"
 	done	
 	
 CamperJeffWinText:
-	text "I lost."
+	text "She even copies"
+	line "the parts that"
+	cont "aren't fun."
+	
+	para "Like losing to"
+	line "strangers!"
 	done
 
 CamperJeffAfterText:
-	text "I lost."
+	text "I like to come to"
+	line "this GYM when it"
+	cont "is raining out."
+	
+	para "POSEY has really"
+	line "captured the true"
+	cont "essense of the"
+	cont "outdoors."
 	done
 	
 BugCatcherGregText:
@@ -463,28 +476,40 @@ BugCatcherGregText:
 	done
 
 BugCatcherGregWinText:
-	text "I lost."
+	text "Quick! Hide in the"
+	line "grass where he"
+	cont "can't get you!"
 	done
 
 BugCatcherGregAfterText:
-	text "I lost."
+	text "My #MON are"
+	line "more scared of you"
+	cont "than you are them!"
 	done	
 
 PicnickerTerryText:
-	text "I am a"
-	line "#MON trainer."
-	done
-
-PicnickerTerryWinText:
-	text "I lost."
-	done
-
-PicnickerTerryAfterText:
 	text "Eek!"
 	
 	para "I felt something"
 	line "brush up against"
 	cont "my leg!"
+	done
+
+PicnickerTerryWinText:
+	text "Redo! I was"
+	line "distracted by the"
+	cont "grass!"
+	done
+
+PicnickerTerryAfterText:
+	text "The #MON hiding"
+	line "in the grass tend"
+	cont "to avoid trainers."
+	
+	para "I bet you could"
+	line "find them all with"
+	cont "no trainer seeing"
+	cont "you."
 	done
 
 PicnickerBrittanyText:

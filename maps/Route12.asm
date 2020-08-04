@@ -82,7 +82,7 @@ Route12FireStone:
 
 Route12ShelterSign:
 	jumptext ShelterSignText
-	
+
 ShelterSignText:
 	text "#MON SHELTER-"
 	

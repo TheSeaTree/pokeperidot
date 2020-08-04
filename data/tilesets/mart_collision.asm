@@ -80,3 +80,5 @@
 	tilecoll WALL, RIGHT_WALL, WALL, FLOOR ; 4f
 	tilecoll WALL, WALL, WALL, COUNTER ; 50
 	tilecoll FLOOR, WALL, LEFT_WALL, WALL ; 51
+	tilecoll LEFT_WALL, WALL, FLOOR, WALL ; 52
+	tilecoll WALL, RIGHT_WALL, WALL, FLOOR ; 53

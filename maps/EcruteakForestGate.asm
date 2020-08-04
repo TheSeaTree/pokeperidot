@@ -94,6 +94,9 @@ EcruteakForestGateBerryVendor:
 	db "PSNCUREBERRY ¥650@"
 	db "CANCEL@"
 
+EcruteakForestGateOfficerScript:
+	jumptext EcruteakForestGateOfficerText
+
 EcruteakForestGateTeacher:
 	jumptextfaceplayer EcruteakForestGateTeacherText
 
@@ -162,8 +165,18 @@ BerryVendorComeBack:
 	line "soon."
 	done
 	
+EcruteakForestGateOfficerText:
+	text "You must be going"
+	line "to STAGHORN TOWN."
+	
+	para "Or perhaps you are"
+	line "going to visit the"
+	cont "#MON SHELTER on"
+	cont "ROUTE 12."
+	done
+	
 EcruteakForestGateTeacherText:
-	text "The berries that"
+	text "The BERRIES that"
 	line "lady behind the"
 	cont "counter is selling"
 	cont "are kind of"
@@ -188,6 +201,7 @@ EcruteakForestGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
+	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakForestGateOfficerScript, -1
 	object_event  8,  2, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakForestGateBerryVendor, -1
 	object_event  8,  6, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakForestGateTeacher, -1

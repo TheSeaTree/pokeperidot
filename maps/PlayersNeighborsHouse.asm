@@ -14,31 +14,18 @@ PlayersNeighborsHouseBookshelfScript:
 	jumpstd magazinebookshelf
 
 PlayersNeighborsHouseRadioScript:
-	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
-	iftrue .NormalRadio
-	checkevent EVENT_LISTENED_TO_INITIAL_RADIO
-	iftrue .AbbreviatedRadio
-	playmusic MUSIC_POKEMON_TALK
 	opentext
 	writetext PlayerNeighborRadioText1
-	pause 45
+	waitbutton
+	playmusic MUSIC_POKEMON_TALK
+	playmusic MUSIC_GAME_CORNER
 	writetext PlayerNeighborRadioText2
-	pause 45
+	waitbutton
 	writetext PlayerNeighborRadioText3
-	pause 45
+	waitbutton
 	musicfadeout MUSIC_NEW_BARK_TOWN, 16
-	writetext PlayerNeighborRadioText4
-	pause 45
 	closetext
-	setevent EVENT_LISTENED_TO_INITIAL_RADIO
 	end
-.NormalRadio:
-	jumpstd radio1
-.AbbreviatedRadio:
-	opentext
-	writetext PlayerNeighborRadioText4
-	pause 45
-	closetext
 	end
 
 PlayersNeighborText:
@@ -49,24 +36,22 @@ PlayersNeighborText:
 	done
 
 PlayerNeighborRadioText1:
-	text "PROF.OAK'S #MON"
-	line "TALK! Please tune"
-	cont "in next time!"
+	text "It's a RADIO."
+	
+	para "Let's see what's"
+	line "on…"
 	done
 
 PlayerNeighborRadioText2:
-	text "#MON CHANNEL!"
+	text "Oh, this station"
+	line "sounds nice."
 	done
 
 PlayerNeighborRadioText3:
-	text "This is DJ MARY,"
-	line "your co-host!"
+	text "Okay, that's"
+	line "enough."
 	done
 
-PlayerNeighborRadioText4:
-	text "#MON!"
-	line "#MON CHANNEL…"
-	done
 
 PlayersNeighborsHouse_MapEvents:
 	db 0, 0 ; filler

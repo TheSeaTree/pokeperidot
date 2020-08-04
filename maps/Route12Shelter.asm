@@ -211,7 +211,13 @@ Route12ShelterKangaskhan:
 	applymovement ROUTE12SHELTER_HELPER, Route12AssistantWalkToKangaskhan
 	turnobject PLAYER, LEFT
 	opentext
-	writetext Route12AssistantTalkToKangaskhan
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Girl
+	writetext Route12AssistantTalkToKangaskhanMale
+	jump .continue
+.Girl
+	writetext Route12AssistantTalkToKangaskhanFemale
+.continue
 	waitbutton
 	closetext
 	applymovement PLAYER, Route12PlayerWalkToAssistant
@@ -598,12 +604,21 @@ Route12KangaskhanWantsSomething:
 	cont "#MON is saying."
 	done
 	
-Route12AssistantTalkToKangaskhan:
+Route12AssistantTalkToKangaskhanMale:
 	text "Hm…"
 	
 	para "I see…"
 	
 	para "I'll let him know"
+	line "for you!"
+	done
+	
+Route12AssistantTalkToKangaskhanFemale:
+	text "Hm…"
+	
+	para "I see…"
+	
+	para "I'll let her know"
 	line "for you!"
 	done
 	

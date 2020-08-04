@@ -72,6 +72,7 @@ OrchidDragonbreathHouse_Blocks:
 EcruteakRichardsHouse_Blocks:
 BlackthornLassHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
+Route11CleanseTagHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -160,6 +161,9 @@ GoldenrodMart_Blocks:
 	
 VioletCafe_Blocks:
 	INCBIN "maps/VioletCafe.ablk"
+	
+MahoganyCafe_Blocks:
+	INCBIN "maps/MahoganyCafe.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"

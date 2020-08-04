@@ -5,6 +5,52 @@ Route12EcruteakGate_MapScripts:
 
 	db 0 ; callbacks
 	
+Route12EcruteakGateOfficerScript:
+	opentext
+	checkevent EVENT_ECRUTEAK_GYM_ACCESS
+	iftrue .After
+	writetext Route12EcruteakGateOfficerText
+	waitbutton
+	end
+.After
+	writetext Route12EcruteakGateOfficerAfterText
+	waitbutton
+	end
+	
+Route12EcruteakGateYoungsterScript:
+	jumptextfaceplayer Route12EcruteakGateYoungsterText
+	
+Route12EcruteakGateOfficerText:
+	text "You look like a"
+	line "trainer. Were you"
+	cont "looking for LEADER"
+	cont "POSEY?"
+	
+	para "She passed by here"
+	line "not long ago."
+	
+	para "Likely visiting"
+	line "the SHELTER she"
+	cont "runs on ROUTE 12."
+	
+	para "Just keep going in"
+	line "this direction,"
+	cont "and you'll be"
+	cont "there in no time!"
+	done
+	
+Route12EcruteakGateOfficerAfterText:
+	text "The STAGHORN GYM"
+	line "has reopened to"
+	cont "challengers!"
+	done
+	
+Route12EcruteakGateYoungsterText:
+	text "Some day I hope to"
+	line "care for #MON"
+	cont "just like POSEY!"
+	done
+	
 Route12EcruteakGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -18,4 +64,6 @@ Route12EcruteakGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route12EcruteakGateOfficerScript, -1
+	object_event  4,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route12EcruteakGateYoungsterScript, -1

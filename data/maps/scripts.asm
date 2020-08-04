@@ -194,6 +194,7 @@ INCLUDE "maps/HallOfFame.asm"
 SECTION "Map Scripts 14", ROMX
 INCLUDE "maps/LostLand.asm"
 INCLUDE "maps/Route11CurseHouse.asm"
+INCLUDE "maps/Route11CleanseTagHouse.asm"
 INCLUDE "maps/NevermelticeChamber.asm"
 INCLUDE "maps/UnownChamberAG.asm"
 INCLUDE "maps/UnownChamberHN.asm"
@@ -223,7 +224,7 @@ INCLUDE "maps/AzaleaGym.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22North.asm"
 INCLUDE "maps/Route22South.asm"
-
+INCLUDE "maps/MahoganyCafe.asm"
 
 SECTION "Map Scripts 17", ROMX
 

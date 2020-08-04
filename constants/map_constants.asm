@@ -30,7 +30,7 @@ ENDM
 
 	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
 	map_const OLIVINE_MART,                                 6,  4 ;  8
-	map_const OLIVINE_CITY,                                24, 17 ; 14
+	map_const OLIVINE_CITY,                                23, 17 ; 14
 	map_const ROUTE_14_OLIVINE_GATE,						5,  4
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
@@ -57,6 +57,7 @@ ENDM
 	map_const MAHOGANY_APARTMENT_1F,                        6,  4
 	map_const MAHOGANY_APARTMENT_2F,                        6,  4
 	map_const MAHOGANY_APARTMENT_3F,                        6,  4
+	map_const MAHOGANY_CAFE,                                7,  4 ;  6
 	map_const ROUTE_30_CAVE_1F,								8,  7
 	map_const ROUTE_30_CAVE_B1F,						   13, 18
 	map_const ROUTE_9_CAVE_1F,								6,  5
@@ -228,6 +229,7 @@ ENDM
 	newgroup                                                      ; 13
 	map_const ROUTE_11,                                    32, 16	
 	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
+	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
 
 	newgroup                                                      ; 14
 

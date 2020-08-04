@@ -5,6 +5,13 @@ Route11Route12Gate_MapScripts:
 
 	db 0 ; callbacks
 
+Route11Route12GateOfficerScript:
+	jumptextfaceplayer Route11Route12GateOfficerText
+	
+Route11Route12GateOfficerText:
+	text ""
+	done
+
 Route11Route12Gate_MapEvents:
 	db 0, 0 ; filler
 
@@ -18,4 +25,5 @@ Route11Route12Gate_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11Route12GateOfficerScript, -1

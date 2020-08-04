@@ -44,6 +44,9 @@ Route11MoveTutor:
 	closetext
 	end
 
+Route11SpellTag:
+	itemball SPELL_TAG
+
 Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
 	
@@ -116,17 +119,19 @@ Route11SignText:
 Route11_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event 29, 27, ROUTE_11_GOLDENROD_GATE, 1
 	warp_event 30, 27, ROUTE_11_GOLDENROD_GATE, 2
 	warp_event 21,  3, ROUTE_11_ROUTE_12_GATE, 1
 	warp_event 51, 21, ROUTE_11_CURSE_HOUSE, 1
+	warp_event  9, 11, ROUTE_11_CLEANSE_TAG_HOUSE, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
 	bg_event 32, 23, BGEVENT_READ, Route11Sign
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1
 	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
+	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_11_SPELL_TAG

@@ -72,6 +72,46 @@ FluteMaster:
 	jumptextfaceplayer FluteMasterAfter
 	; Heal Bell tutor after defeating the lair.
 	
+HealBellMoveTutor:
+	faceplayer
+	opentext
+	writetext FluteMasterTutor
+	waitbutton
+	checkitem GOLD_LEAF
+	iffalse .NoLeaf
+	writetext HealBellTutorTeach
+	yesorno
+	iftrue .HealBell
+	jump .Refused
+	
+.HealBell
+	writetext HealBellTutorWhichOne
+	buttonsound
+	writebyte HEAL_BELL
+	special MoveTutor
+	ifequal $0, .TeachMove
+	jump .Refused
+	
+.TeachMove
+	takeitem GOLD_LEAF
+	writetext HealBellTutorThankYou
+	waitbutton
+	closetext
+	end
+	
+.Refused
+	writetext HealBellTutorRefused
+	waitbutton
+	closetext
+	end
+	
+.NoLeaf
+	writetext HealBellTutorExplainGoldLeaf
+	waitbutton
+	turnobject LAST_TALKED, RIGHT
+	closetext
+	end
+	
 ComplicatedSheetMusic:
 	jumptext ComplicatedSheetMusicText
 	
@@ -201,27 +241,26 @@ FluteMasterExplain:
 	
 FluteMasterAfter:
 	text "That # FLUTE"
-	line "is more trouble"
-	cont "than it's worth."
-	
-	para "If you can get it"
-	line "back, you can keep"
-	cont "it."
+	line "has caused so much"
+	cont "trouble."
+
+	para "I'm not sure if I"
+	line "still want it."
 	done
 	
 FluteMasterTutor:
 	text "Brilliant job"
 	line "defeating those"
 	cont "crooks!"
-	
+
 	para "In return for your"
 	line "help, I want to"
 	cont "teach my new song"
 	cont "to one of your"
 	cont "#MON."
-	
+
 	para "Sorry, but I will"
-	line "require a SILVER"
+	line "require a GOLD"
 	cont "LEAF in return."
 	done
 	
@@ -238,6 +277,14 @@ HealBellTutorWhichOne:
 	line "I be tutoring?"
 	done
 	
+HealBellTutorThankYou:
+	text "Thank you."
+	
+	para "Your #MON will"
+	line "see the magic that"
+	cont "music can create."
+	done
+	
 HealBellTutorRefused:
 	text "Pity, you must not"
 	line "have a #MON"
@@ -245,7 +292,7 @@ HealBellTutorRefused:
 	cont "special song."
 	done
 	
-HealBellTutorExplainSilverLeaf:
+HealBellTutorExplainGoldLeaf:
 	text "I'm sorry, but"
 	line "I need something"
 	cont "in return for my"

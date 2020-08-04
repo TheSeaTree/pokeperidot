@@ -374,15 +374,15 @@ OlivineCity_MapEvents:
 	warp_event 17,  5, MAHOGANY_GATE, 3
 	warp_event 13, 17, OLIVINE_SURF_HOUSE, 1
 	warp_event 10, 11, COASTAL_LAB, 1
-	warp_event 30, 11, OLIVINE_PORT, 1
+	warp_event 28, 11, OLIVINE_PORT, 1
 
 	db 1 ; coord events
 	coord_event 17,  6, SCENE_DEFAULT, OlivineCityRivalSceneTop
 
 	db 7 ; bg events
-	bg_event 18, 12, BGEVENT_READ, OlivineCitySign
-	bg_event 28, 12, BGEVENT_READ, OlivineCityPortSign
-	bg_event  7, 11, BGEVENT_READ, OlivineLabSign
+	bg_event 18, 14, BGEVENT_READ, OlivineCitySign
+	bg_event 26, 12, BGEVENT_READ, OlivineCityPortSign
+	bg_event  8, 12, BGEVENT_READ, OlivineLabSign
 	bg_event 23, 31, BGEVENT_READ, OlivineLighthouseSign
 	bg_event 21, 31, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 12, 18, BGEVENT_READ, OlivineCitySurfHouseSign

@@ -104,21 +104,7 @@ UnionCaveRivalScene:
 	end
 	
 UnionCaveForemanScript:
-	jumptextfaceplayer UnionCaveCollapseText
-	
-UnionCaveCones:
-	showemote EMOTE_SHOCK, UNIONCAVE1F_POKEFAN, 15
-	turnobject UNIONCAVE1F_POKEFAN, LEFT
-	opentext
-	writetext UnionCaveConeText1
-	waitbutton
-	closetext
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext UnionCaveConeText2
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer UnionCaveAllClearText
 	
 UnionCave1FGreatBall:
 	itemball GREAT_BALL
@@ -235,27 +221,13 @@ UnionCaveRivalAfterText:
 	text "…"
 	done
 	
-UnionCaveCollapseText:
-	text "Part of the cave"
-	line "collapsed up"
-	cont "ahead!"
+UnionCaveAllClearText:
+	text "The cave up ahead"
+	line "seems to be all"
+	cont "clear now."
 	
-	para "I'm sorry kid, but"
-	line "it will take a"
-	cont "while before it's"
-	cont "safe for trainers"
-	cont "once again."
-	done
-	
-UnionCaveConeText1:
-	text "Hey kid!"
-	done
-	
-UnionCaveConeText2:
-	text "Don't touch those!"
-	
-	para "It's dangerous up"
-	line "ahead."
+	para "You should still"
+	line "be careful!"
 	done
 
 UnionCave1F_MapEvents:
@@ -272,7 +244,7 @@ UnionCave1F_MapEvents:
 	db 1 ; bg events
 	bg_event  5,  6, BGEVENT_ITEM, UnionCave1FHiddenRareCandy
 
-	db 13 ; object events
+	db 11 ; object events
 	object_event 41,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FGreatBall, EVENT_UNION_CAVE_1F_GREAT_BALL
 	object_event 41,  3, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerLassVicky, -1
 	object_event 38,  5, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCave1FRock, -1
@@ -283,7 +255,5 @@ UnionCave1F_MapEvents:
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCave1FWaterStone, EVENT_UNION_CAVE_1F_WATER_STONE
 	object_event  2,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerPokemaniacTrent, -1
 	object_event 10,  6, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, UnionCaveRivalScene, EVENT_RIVAL_UNION_CAVE
-	object_event 38, 11, SPRITE_CONE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, UnionCaveCones, -1
-	object_event 39, 11, SPRITE_CONE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, UnionCaveCones, -1
 	object_event 40, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveForemanScript, -1
 	
