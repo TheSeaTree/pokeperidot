@@ -141,7 +141,7 @@ ItemDescriptions:
 	dw BerryJuiceDesc
 	dw ScopeLensDesc
 	dw SweetTeaDesc
-	dw TeruSama13Desc
+	dw FangFossilDesc
 	dw MetalCoatDesc
 	dw DragonFangDesc
 	dw FocusSashDesc
@@ -814,8 +814,9 @@ SweetTeaDesc:
 	db   "Restores PP of one"
 	next "move by 10.@"
 
-TeruSama13Desc:
-	db   "?@"
+FangFossilDesc:
+	db   "The remains of an"
+	next "ancient #MON.@"
 
 MetalCoatDesc:
 	db   "Powers up steel-"

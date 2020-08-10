@@ -45,6 +45,8 @@ FossilResurrectionGuy:
 	checkitem DOME_FOSSIL
 	iftrue .AskRevive
 	checkitem OLD_AMBER
+	iftrue .AskRevive
+	checkitem FANG_FOSSIL
 	iffalse .NoFossils
 .AskRevive
 	writetext AskMultipleFossilText
@@ -52,6 +54,7 @@ FossilResurrectionGuy:
 	ifequal HELIX_FOSSIL, ResurrectHelixFossil
 	ifequal DOME_FOSSIL, ResurrectDomeFossil
 	ifequal OLD_AMBER, ResurrectOldAmber
+	ifequal FANG_FOSSIL, ResurrectFangFossil
 .maybe_later
 	writetext MaybeLaterText
 	jump .end
@@ -61,23 +64,52 @@ FossilResurrectionGuy:
 	iftrue .NotDone
 	writetext PowerPlantFossilGuyWaiting
 	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
 	checkevent EVENT_GAVE_DOME_FOSSIL
 	iftrue .GiveKabuto
 	checkevent EVENT_GAVE_OLD_AMBER
 	iftrue .GiveAerodactyl	
 
+;.GiveOmanyte
+	pokenamemem OMANYTE, MEM_BUFFER_0
+	writetext GiveRevivedFossilText
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	pokenamemem OMANYTE, MEM_BUFFER_0
+	writetext ReceiveRevivedFossilText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
 	givepoke OMANYTE, 30
 	clearevent EVENT_GAVE_HELIX_FOSSIL
 	jump .DoneFossil
 
 .GiveKabuto
+	pokenamemem KABUTO, MEM_BUFFER_0
+	writetext GiveRevivedFossilText
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	pokenamemem KABUTO, MEM_BUFFER_0
+	writetext ReceiveRevivedFossilText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
 	givepoke KABUTO, 30
 	clearevent EVENT_GAVE_DOME_FOSSIL
 	jump .DoneFossil
 	
 .GiveAerodactyl
+	pokenamemem OMANYTE, MEM_BUFFER_0
+	writetext GiveRevivedFossilText
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	pokenamemem AERODACTYL, MEM_BUFFER_0
+	writetext ReceiveRevivedFossilText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
 	givepoke AERODACTYL, 40
 	clearevent EVENT_GAVE_OLD_AMBER
 .DoneFossil
@@ -126,6 +158,12 @@ ResurrectOldAmber:
 	setevent EVENT_GAVE_OLD_AMBER
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	jump FossilResurrectionGuy.NotDone
+
+ResurrectFangFossil:
+	loadwildmon SKELEGON, 50
+	startbattle
+	reloadmapafterbattle
+	end
 
 PowerPlantItemfinderEvent:
 	pause 8
@@ -280,14 +318,29 @@ PowerPlantFossilGuyWorking:
 PowerPlantFossilGuyWaiting:
 	text "There you are!"
 	
-	para "My test was a"
-	line "success!"
-	
-	para "I resurrected your"
-	line "FOSSIL into a"
-	cont "living #MON!"
+	para "My experiment was"
+	line "a success!"
 	done
+
+GiveRevivedFossilText:
+	text "I resurrected your"
+	line "FOSSIL into a"
+	cont "living @"
+	text_ram wStringBuffer3
+	text "!"
 	
+	para "Isn't that amazi-"
+	line "ng? I'm sure you"
+	cont "will want it now."
+	done
+
+ReceiveRevivedFossilText:
+	text "<PLAYER> received"
+	line "@"
+	text_ram wStringBuffer3
+	text "!"
+	done
+
 NoRoomForFossil:
 	text "…But you have no"
 	line "room to take this"
