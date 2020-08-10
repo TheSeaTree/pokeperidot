@@ -31,8 +31,7 @@ XItemMan:
 	opentext
 	writetext StudyingVitaminsText
 	waitbutton
-;	closetext
-	giveitem PROTEIN, 5
+	closetext
 
 .CheckVitamins:
 	checkitem PROTEIN

@@ -41,83 +41,21 @@ FossilResurrectionGuy:
 	writetext PowerPlantFossilGuyIntroText
 	waitbutton
 	checkitem HELIX_FOSSIL
-	iftrue .own_helix
+	iftrue .AskRevive
 	checkitem DOME_FOSSIL
-	iftrue .own_dome
+	iftrue .AskRevive
 	checkitem OLD_AMBER
-	iftrue .ask_old_amber
-	writetext NoFossilsText
-	waitbutton
-	closetext
-	end
-
-.own_helix
-	checkitem DOME_FOSSIL
-	iftrue .own_helix_and_dome
-	checkitem OLD_AMBER
-	iftrue .ask_helix_amber
-	writetext AskHelixFossilText
-	yesorno
-	iftrue ResurrectHelixFossil
-	jump .maybe_later
-
-.own_dome
-	checkitem OLD_AMBER
-	iftrue .ask_dome_amber
-	writetext AskDomeFossilText
-	yesorno
-	iftrue ResurrectDomeFossil
-	jump .maybe_later
-
-.own_helix_and_dome
+	iffalse .NoFossils
+.AskRevive
 	writetext AskMultipleFossilText
-	checkitem OLD_AMBER
-	iftrue .ask_helix_dome_amber
-	loadmenu HelixDomeMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal 1, ResurrectHelixFossil
-	ifequal 2, ResurrectDomeFossil
-	jump .maybe_later
-
-.ask_old_amber
-	writetext AskOldAmberText
-	yesorno
-	iftrue ResurrectOldAmber
-	jump .maybe_later
-
-.ask_helix_amber
-	writetext AskMultipleFossilText
-	loadmenu HelixAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal 1, ResurrectHelixFossil
-	ifequal 2, ResurrectOldAmber
-	jump .maybe_later
-
-.ask_dome_amber
-	writetext AskMultipleFossilText
-	loadmenu DomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal 1, ResurrectDomeFossil
-	ifequal 2, ResurrectOldAmber
-	jump .maybe_later
-
-.ask_helix_dome_amber
-	loadmenu HelixDomeAmberMenuDataHeader
-	verticalmenu
-	closewindow
-	ifequal 1, ResurrectHelixFossil
-	ifequal 2, ResurrectDomeFossil
-	ifequal 3, ResurrectOldAmber
+	special SelectFossilsMenu
+	ifequal HELIX_FOSSIL, ResurrectHelixFossil
+	ifequal DOME_FOSSIL, ResurrectDomeFossil
+	ifequal OLD_AMBER, ResurrectOldAmber
 .maybe_later
 	writetext MaybeLaterText
-	waitbutton
-	closetext
-	turnobject LAST_TALKED, UP
-	end
-	
+	jump .end
+
 .WaitingFossil
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .NotDone
@@ -144,75 +82,24 @@ FossilResurrectionGuy:
 	clearevent EVENT_GAVE_OLD_AMBER
 .DoneFossil
 	writetext PowerPlantFossilGuyThanks
-	waitbutton
-	closetext
-	turnobject LAST_TALKED, UP
-	end
+	jump .end
 	
 .NotDone
 	writetext PowerPlantFossilGuyWorking
+	jump .end
+	
+.NoRoom
+	writetext NoRoomForFossil
+	jump .end
+	
+.NoFossils
+	writetext NoFossilsText
+.end
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
 	end
 	
-.NoRoom
-	writetext NoRoomForFossil
-	waitbutton
-	closetext
-	turnobject LAST_TALKED, UP
-	end
-
-HelixDomeMenuDataHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 5
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db STATICMENU_CURSOR ; flags
-	db 2 ; items
-	db "HELIX FOSSIL@"
-	db "DOME FOSSIL@"
-
-HelixAmberMenuDataHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 5
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db STATICMENU_CURSOR ; flags
-	db 2 ; items
-	db "HELIX FOSSIL@"
-	db "OLD AMBER@"
-
-DomeAmberMenuDataHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 5
-	dw .MenuData2
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db STATICMENU_CURSOR ; flags
-	db 2 ; items
-	db "DOME FOSSIL@"
-	db "OLD AMBER@"
-
-HelixDomeAmberMenuDataHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 15, 7
-	dw .MenuData2
-	db 1 ; default option
-
-.MenuData2:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "HELIX FOSSIL@"
-	db "DOME FOSSIL@"
-	db "OLD AMBER@"
-
 ResurrectHelixFossil:
 	writetext AskHelixFossilText
 	yesorno
@@ -369,7 +256,7 @@ AskMultipleFossilText:
 	
 MaybeLaterText:
 	text "Do you still want"
-	line "to hold onto that"
+	line "to hold onto your"
 	cont "FOSSIL?"
 	
 	para "No problem. If you"
