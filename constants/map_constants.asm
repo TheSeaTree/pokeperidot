@@ -108,6 +108,8 @@ ENDM
 	map_const ECRUTEAK_THIEF_HOUSE,							4,  4
 	map_const FRIEND_BALL_HOUSE,							4,  4
 	map_const RICHARDS_HOUSE,		    					4,  4
+	map_const EMILYS_HOUSE_1F,                              5,  4 ;  6
+	map_const EMILYS_HOUSE_2F,                              4,  3 ;  7
 
 	newgroup                                                      ;  5
 

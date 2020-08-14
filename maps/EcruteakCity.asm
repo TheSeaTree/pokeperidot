@@ -80,6 +80,12 @@ EcruteakEnterGym
 EcruteakCityLass:
 	jumptextfaceplayer EcruteakCityLassText
 	
+EcruteakCitySuperNerd:
+	jumptextfaceplayer EcruteakCitySuperNerdText
+	
+EcruteakCityFisher:
+	jumptextfaceplayer EcruteakCityFisherText
+	
 EcruteakGymGuyOutside:
 	jumptextfaceplayer EcruteakGymLeaderAwayText
 
@@ -92,8 +98,8 @@ EcruteakCityEndure:
 EcruteakCitySign:
 	jumptext EcruteakCitySignText
 
-EcruteakDanceTheaterSign:
-	jumptext EcruteakDanceTheaterSignText
+EcruteakEmilysHouseSign:
+	jumptext EcruteakEmilysHouseSignText
 
 EcruteakMailbox:
 	jumpstd mailbox
@@ -117,6 +123,26 @@ EcruteakCityLassText:
 	cont "there are some"
 	cont "shady men blocking"
 	cont "the path."
+	done
+	
+EcruteakCitySuperNerdText:
+	text "AAAH-CHOO!"
+	
+	para "Please excuse me."
+	
+	para "All of the flowers"
+	line "are triggering my"
+	cont "allergies."
+	done
+	
+EcruteakCityFisherText:
+	text "Every one of these"
+	line "flowers were"
+	cont "planted by POSEY,"
+	cont "the GYM LEADER."
+	
+	para "Her #MON helped"
+	line "pollinate them."
 	done
 	
 EcruteakGymLeaderAwayText:
@@ -147,15 +173,14 @@ EcruteakCitySignText:
 	cont "zation."
 	done
 
-EcruteakDanceTheaterSignText:
-	text "ECRUTEAK DANCE"
-	line "THEATER"
+EcruteakEmilysHouseSignText:
+	text "EMILY'S HOUSE"
 	done
 
 EcruteakCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 11 ; warp events
+	db 12 ; warp events
 	warp_event 19, 25, ECRUTEAK_FOREST_GATE, 4
 	warp_event 20, 25, ECRUTEAK_FOREST_GATE, 3
 	warp_event 13, 19, ECRUTEAK_POKECENTER_1F, 1
@@ -167,20 +192,23 @@ EcruteakCity_MapEvents:
 	warp_event 27, 19, RICHARDS_HOUSE, 1
 	warp_event  4, 22, ROUTE_21_ECRUTEAK_GATE, 3
 	warp_event  4, 23, ROUTE_21_ECRUTEAK_GATE, 4
+	warp_event 21, 13, EMILYS_HOUSE_1F, 1
 
 	db 0 ; coord events
 
 	db 7 ; bg events
 	bg_event 22, 22, BGEVENT_READ, EcruteakCitySign
-	bg_event 20, 14, BGEVENT_READ, EcruteakDanceTheaterSign
+	bg_event 20, 14, BGEVENT_READ, EcruteakEmilysHouseSign
 	bg_event 14, 19, BGEVENT_READ, EcruteakCityPokecenterSign
 	bg_event 30,  9, BGEVENT_READ, EcruteakCityMartSign
 	bg_event 29, 15, BGEVENT_UP,   EcruteakMailbox
 	bg_event 25, 19, BGEVENT_UP,   EcruteakMailbox
 	bg_event 12, 11, BGEVENT_UP,   EcruteakGymEvent
 
-	db 4 ; object events
+	db 6 ; object events
 	object_event  7, 21, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityLass, EVENT_FLUTE_HIDEOUT_OPEN
+	object_event 21, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, EcruteakCitySuperNerd, -1
+	object_event 34, 11, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakCityFisher, -1
 	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakGymGuyOutside, EVENT_ECRUTEAK_GYM_ACCESS
 	object_event  2,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakCityFruitTree, -1
 	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, EcruteakCityEndure, EVENT_GOT_TM_ENDURE

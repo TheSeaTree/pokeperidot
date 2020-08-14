@@ -81,7 +81,8 @@ CHRIS EQU __enum__
 
 	trainerclass FANGIRL
 	const EMILY1
-	const EMILY2 ; Safari Zone Encounter
+	const EMILY2 ; House Encounter
+	const EMILY3 ; Safari Zone Encounter
 
 	trainerclass PROFESSOR ; a
 	const TEST

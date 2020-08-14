@@ -9,6 +9,7 @@
 	const POWERPLANT1FB_SCIENTIST4
 	const POWERPLANT1FB_SCIENTIST5
 	const POWERPLANT1FB_SCIENTIST6
+	const POWERPLANT1FB_SKELEGON
 
 PowerPlant1FB_MapScripts:
 	db 2 ; scene scripts
@@ -46,15 +47,15 @@ FossilResurrectionGuy:
 	iftrue .AskRevive
 	checkitem OLD_AMBER
 	iftrue .AskRevive
-	checkitem FANG_FOSSIL
+	checkitem SABRE_FOSSIL
 	iffalse .NoFossils
 .AskRevive
-	writetext AskMultipleFossilText
+	writetext FossilMenuText
 	special SelectFossilsMenu
 	ifequal HELIX_FOSSIL, ResurrectHelixFossil
 	ifequal DOME_FOSSIL, ResurrectDomeFossil
 	ifequal OLD_AMBER, ResurrectOldAmber
-	ifequal FANG_FOSSIL, ResurrectFangFossil
+	ifequal SABRE_FOSSIL, ResurrectSabreFossil
 .maybe_later
 	writetext MaybeLaterText
 	jump .end
@@ -133,7 +134,10 @@ FossilResurrectionGuy:
 	end
 	
 ResurrectHelixFossil:
-	writetext AskHelixFossilText
+	itemtotext HELIX_FOSSIL, MEM_BUFFER_0
+	writetext IdentifyFossilText
+	waitbutton
+	writetext AskResurrectFossilText
 	yesorno
 	iffalse FossilResurrectionGuy.maybe_later
 	takeitem HELIX_FOSSIL
@@ -142,7 +146,10 @@ ResurrectHelixFossil:
 	jump FossilResurrectionGuy.NotDone
 	
 ResurrectDomeFossil:
-	writetext AskDomeFossilText
+	itemtotext DOME_FOSSIL, MEM_BUFFER_0
+	writetext IdentifyFossilText
+	waitbutton
+	writetext AskResurrectFossilText
 	yesorno
 	iffalse FossilResurrectionGuy.maybe_later
 	takeitem DOME_FOSSIL
@@ -151,7 +158,10 @@ ResurrectDomeFossil:
 	jump FossilResurrectionGuy.NotDone
 	
 ResurrectOldAmber:
-	writetext AskOldAmberText
+	itemtotext OLD_AMBER, MEM_BUFFER_0
+	writetext IdentifyOldAmberText
+	waitbutton
+	writetext AskResurrectFossilText
 	yesorno
 	iffalse FossilResurrectionGuy.maybe_later
 	takeitem OLD_AMBER
@@ -159,10 +169,43 @@ ResurrectOldAmber:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	jump FossilResurrectionGuy.NotDone
 
-ResurrectFangFossil:
-	loadwildmon SKELEGON, 50
+ResurrectSabreFossil:
+	itemtotext SABRE_FOSSIL, MEM_BUFFER_0
+	writetext IdentifyFossilText
+	waitbutton
+	writetext AskResurrectFossilText
+	yesorno
+	writetext SabreFossilResurrectionText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
+	playsound SFX_TRANSACTION
+	playsound SFX_TRANSACTION
+	waitsfx
+	opentext
+	writetext SabreFossilExaminationText
+	waitbutton
+	closetext
+	showemote EMOTE_QUESTION, POWERPLANT1FB_SCIENTIST2, 15
+	playsound SFX_TRANSACTION
+	playsound SFX_TRANSACTION
+	waitsfx
+	opentext
+	writetext SabreFossilAlarmText
+	waitbutton
+	writetext SkelegonCryText
+	cry SKELEGON
+	waitsfx
+	loadwildmon SKELEGON, 5
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
+	faceplayer
+	opentext
+	writetext SabreFossilAfterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
 	end
 
 PowerPlantItemfinderEvent:
@@ -255,34 +298,25 @@ NoFossilsText:
 	cont "my entire life!"
 	done
 	
-AskHelixFossilText:
-	text "Oh, you have a"
-	line "HELIX FOSSIL?"
-	
-	para "Would you like me"
-	line "to try and revive"
-	cont "it into a #MON?"
-	done
-	
-AskDomeFossilText:
-	text "Oh, you have a"
-	line "DOME FOSSIL?"
-	
-	para "Would you like me"
-	line "to try and revive"
-	cont "it into a #MON?"
-	done
-	
-AskOldAmberText:
+IdentifyOldAmberText:
 	text "Oh, you have an"
 	line "OLD AMBER?"
+	done
 	
-	para "Would you like me"
+IdentifyFossilText:
+	text "Oh, you have a"
+	line "@"
+	text_ram wStringBuffer3
+	text "?"
+	done
+	
+AskResurrectFossilText:
+	text "Would you like me"
 	line "to try and revive"
 	cont "it into a #MON?"
 	done
 	
-AskMultipleFossilText:
+FossilMenuText:
 	text "Do you have any"
 	line "FOSSILS you could"
 	cont "give to me?"
@@ -301,7 +335,7 @@ MaybeLaterText:
 	line "change your mind,"
 	cont "come see me."
 	done
-	
+
 PowerPlantFossilGuyWorking:
 	text "This kind of thing"
 	line "can take a while."
@@ -313,6 +347,64 @@ PowerPlantFossilGuyWorking:
 	
 	para "I'll be done when"
 	line "you get back."
+	done
+	
+SabreFossilResurrectionText:
+	text "Okay, let me just"
+	line "get this into the"
+	cont "machine to examine"
+	cont "it…"
+	done
+	
+SabreFossilExaminationText:
+	text "Hm…"
+	
+	para "I've never seen a"
+	line "fossil quite like"
+	cont "this one before…"
+	done
+	
+SabreFossilAlarmText:
+	text "…Something's not"
+	line "right here-"
+	done
+
+SkelegonCryText:
+	text "Gwaaah!"
+	done
+	
+SabreFossilAfterText:
+	text "Woah!"
+	
+	para "It looked like a"
+	line "GHOST #MON was"
+	cont "inhabiting that"
+	cont "FOSSIL!"
+	
+	para "It must not have"
+	line "liked being put"
+	cont "into the machine."
+	
+	para "Thank you for"
+	line "that!"
+	
+	para "If you weren't here"
+	line "to stop it, I"
+	cont "would have been a"
+	cont "goner!"
+	
+	para "While that was a"
+	line "frightening exper-"
+	cont "ience, I will not"
+	cont "allow it to deter"
+	cont "my research!"
+	
+	para "I will continue to"
+	line "accept FOSSILs,"
+	cont "but you need to"
+	cont "promise to stop"
+	cont "any that become"
+	cont "rampant!"
 	done
 	
 PowerPlantFossilGuyWaiting:
@@ -361,6 +453,7 @@ PowerPlantFossilGuyThanks:
 	cont "research!"
 	done
 
+
 PowerPlant1FB_MapEvents:
 	db 0, 0 ; filler
 
@@ -374,7 +467,7 @@ PowerPlant1FB_MapEvents:
 
 	db 0 ; bg events
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RETURNED_MACHINE_PART
 	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBHyperPotion, EVENT_POWER_PLANT_HYPER_POTION
 	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMetalCoat, EVENT_POWER_PLANT_METAL_COAT
@@ -385,3 +478,4 @@ PowerPlant1FB_MapEvents:
 	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 31,  0, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

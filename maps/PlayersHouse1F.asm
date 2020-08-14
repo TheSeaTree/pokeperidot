@@ -418,13 +418,14 @@ FridgeText:
 
 TVText:
 	text "There's a movie on"
-	line "TV: Stars dot the"
+	line "TV: A car exploded"
+	cont "into a flash of"
+	cont "light, leaving a"
+	cont "trail of fire!"
 
-	para "sky as two boys"
-	line "ride on a train…"
-
-	para "I'd better get"
-	line "rolling too!"
+	para "I should make like"
+	line "a tree and get out"
+	cont "of here!"
 	done
 
 PlayersHouse1F_MapEvents:

@@ -80,8 +80,8 @@ MahoganyDeptStore1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  7,  7, GOLDENROD_CITY, 9
-	warp_event  8,  7, GOLDENROD_CITY, 9
+	warp_event  7,  7, MAHOGANY_TOWN, 5
+	warp_event  8,  7, MAHOGANY_TOWN, 5
 	warp_event 15,  0, MAHOGANY_DEPT_STORE_2F, 2
 	warp_event  2,  0, MAHOGANY_DEPT_STORE_ELEVATOR, 1
 

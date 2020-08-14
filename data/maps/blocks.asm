@@ -106,6 +106,7 @@ Route17_Blocks:
 	INCBIN "maps/Route17.ablk"
 
 PlayersHouse1F_Blocks:
+EmilysHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
 
 Route38EcruteakGate_Blocks:
@@ -407,6 +408,7 @@ GoldenrodGameCorner_Blocks:
 	INCBIN "maps/GoldenrodGameCorner.ablk"
 
 PlayersHouse2F_Blocks:
+EmilysHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.ablk"
 
 SilverCaveItemRooms_Blocks:

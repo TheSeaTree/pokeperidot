@@ -236,8 +236,8 @@ MahoganyCafe_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  5,  7, MAHOGANY_TOWN, 10
 	warp_event  4,  7, MAHOGANY_TOWN, 10
+	warp_event  5,  7, MAHOGANY_TOWN, 10
 
 	db 0 ; coord events
 

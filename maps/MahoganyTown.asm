@@ -12,25 +12,27 @@
 MahoganyTown_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_TILES, .PowerPlant
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	return
 	
-PowerPlantDoor:
+.PowerPlant:
 	checkevent EVENT_POWER_PLANT_1F_MUK
+	iffalse .skip
+	changeblock 2, 2, $ae
+.skip
+	return
+	
+PowerPlantDoor:
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	special FadeOutMusic
 	waitsfx
-	iftrue .Lights
 	warpfacing UP, POWER_PLANT_1F, 5, 21
-	end
-	
-.Lights
-	warpfacing UP, POWER_PLANT_1F_B, 5, 21
 	end
 	
 MahoganyGymLeader:
@@ -338,7 +340,7 @@ MahoganyTown_MapEvents:
 	db 10 ; warp events
 	warp_event 23, 33, MAHOGANY_GATE, 1
 	warp_event 24, 33, MAHOGANY_GATE, 2
-	warp_event  2,  3, MAHOGANY_TOWN, 3
+	warp_event  2,  3, POWER_PLANT_1F_B, 1
 	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
 	warp_event 10, 21, MAHOGANY_DEPT_STORE_1F, 1
 	warp_event 31, 19, EMYS_HOUSE, 1

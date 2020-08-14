@@ -147,7 +147,7 @@
 	const BERRY_JUICE  ; 8b
 	const SCOPE_LENS   ; 8c
 	const SWEET_TEA    ; 8d
-	const FANG_FOSSIL  ; 8e
+	const SABRE_FOSSIL ; 8e
 	const METAL_COAT   ; 8f
 	const DRAGON_FANG  ; 90
 	const FOCUS_SASH   ; 91

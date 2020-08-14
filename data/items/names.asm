@@ -140,7 +140,7 @@ ItemNames::
 	db "BERRY JUICE@"
 	db "SCOPE LENS@"
 	db "SWEET TEA@"
-	db "FANG FOSSIL@"
+	db "SABRE FOSSIL@"
 	db "METAL COAT@"
 	db "DRAGON FANG@"
 	db "FOCUS SASH@"

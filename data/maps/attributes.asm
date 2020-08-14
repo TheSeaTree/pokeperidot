@@ -112,10 +112,10 @@ ENDM
 	connection east, Route15, ROUTE_15, 3
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
-	connection north, PaintersForest, PAINTERS_FOREST, 5
+	connection north, PaintersForest, PAINTERS_FOREST, 7
 	
 	map_attributes PaintersForest, PAINTERS_FOREST, $05, SOUTH
-	connection south, EcruteakCity, ECRUTEAK_CITY, -5
+	connection south, EcruteakCity, ECRUTEAK_CITY, -7
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
 
@@ -441,3 +441,5 @@ ENDM
 	map_attributes OlivinePort, OLIVINE_PORT, $00, 0
 	map_attributes Route11CleanseTagHouse, ROUTE_11_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes MahoganyCafe, MAHOGANY_CAFE, $00, 0
+	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
+	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0

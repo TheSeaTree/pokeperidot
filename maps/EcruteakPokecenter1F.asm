@@ -23,35 +23,33 @@ EcruteakPokecenter1FNurseScript:
 EcruteakPokecenter1FCooltrainerFScript:
 	jumptextfaceplayer EcruteakPokecenter1FCooltrainerFText
 
-EcruteakPokecenter1FGymGuyScript:
-	jumptextfaceplayer EcruteakPokecenter1FGymGuyText
+EcruteakPokecenter1FPokefanMScript:
+	jumptextfaceplayer EcruteakPokecenter1FPokefanMText
 
 EcruteakPokecenter1FPokefanMText:
-	text "The way the KIMONO"
-	line "GIRLS dance is"
-
-	para "marvelous. Just"
-	line "like the way they"
-	cont "use their #MON."
+	text "Going through a"
+	line "forest with only"
+	cont "ROCK-type #MON"
+	cont "was a tough job."
+	
+	para "I made it through"
+	line "by the skin of my"
+	cont "teeth."
+	
+	para "I think I deserve"
+	line "to rest here for a"
+	cont "while."
 	done
 
 EcruteakPokecenter1FCooltrainerFText:
-	text "MORTY, the GYM"
-	line "LEADER, is soooo"
-	cont "cool."
-
-	para "His #MON are"
-	line "really tough too."
-	done
-
-EcruteakPokecenter1FGymGuyText:
-	text "LAKE OF RAGE…"
-
-	para "The appearance of"
-	line "a GYARADOS swarm…"
-
-	para "I smell a conspir-"
-	line "acy. I know it!"
+	text "Did you know that"
+	line "GYM LEADERs have"
+	cont "lots of #MON?"
+	
+	para "They select a team"
+	line "that is best suit-"
+	cont "ed to their chall-"
+	cont "enger."
 	done
 
 EcruteakPokecenter1F_MapEvents:
@@ -69,4 +67,4 @@ EcruteakPokecenter1F_MapEvents:
 	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FNurseScript, -1
 	object_event  1,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FCooltrainerFScript, -1
-	object_event  7,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FGymGuyScript, -1
+	object_event  9,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, EcruteakPokecenter1FPokefanMScript, -1
