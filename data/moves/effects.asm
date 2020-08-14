@@ -2103,7 +2103,7 @@ Hurricane:
 	buildopponentrage
 	confusetarget
 	endmove
-	
+
 Coil:
 	checkobedience
 	usedmovetext

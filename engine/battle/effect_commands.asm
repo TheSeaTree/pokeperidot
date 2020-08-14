@@ -4044,8 +4044,7 @@ CheckIfTargetIsElectricType:
 	ld a, [de]
 	cp ELECTRIC
 	ret
-	
-	
+
 CheckIfTargetIsFireType:
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]

@@ -9513,6 +9513,9 @@ BattleStartMessage:
 	ld hl, WildBossAppearedText
 	cp BATTLETYPE_BOSS
 	jr z, .PlaceBattleStartText
+	ld hl, WildBossAppearedText
+	cp BATTLETYPE_TRAP
+	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 	cp BATTLETYPE_CONTEST
 	jr z, .SkipStartingHUD

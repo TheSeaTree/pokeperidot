@@ -109,7 +109,6 @@ BattleCommand_Teleport:
 	ld b, a
 	ld a, [wCurBattleMon]
 	ld c, a
-.random_loop_trainer_playeristarget
 
 .PlayerUTurn:
 ; Transition into switchmon menu
