@@ -7,7 +7,8 @@ Marts:
 	dw MartCianwoodRobbed
 	dw MartGoldenrod2F1
 	dw MartGoldenrod2F2
-	dw MartGoldenrod3F
+	dw MartGoldenrod3F1
+	dw MartGoldenrod3F2
 	dw MartGoldenrod4F
 	dw MartGoldenrod5F
 	dw MartOlivine
@@ -16,7 +17,6 @@ Marts:
 	dw MartMahogany1
 	dw MartMahogany2
 	dw MartMahogany3
-	dw MartMahogany4
 	dw MartBlackthorn
 	dw MartBlackthornTM
 	dw MartGoldenrod
@@ -94,24 +94,27 @@ MartGoldenrod2F1:
 
 MartGoldenrod2F2:
 	db 7 ; # items
-	db POKE_BALL
 	db GREAT_BALL
+	db ULTRA_BALL
 	db ESCAPE_ROPE
-	db REPEL
+	db SUPER_REPEL
 	db REVIVE
 	db FULL_HEAL
 	db POKE_DOLL
 	db -1 ; end
 
-MartGoldenrod3F:
-	db 7 ; # items
-	db X_SPEED
-	db X_SP_ATK
-	db X_DEFEND
-	db X_ATTACK
-	db DIRE_HIT
-	db GUARD_SPEC
-	db X_ACCURACY
+MartGoldenrod3F1:
+	db 3 ; # items
+	db TM_FIRE_PUNCH
+	db TM_ICE_PUNCH
+	db TM_THUNDERPUNCH
+	db -1 ; end
+
+MartGoldenrod3F2:
+	db 3 ; # items
+	db CHARCOAL
+	db MYSTIC_WATER
+	db MIRACLE_SEED
 	db -1 ; end
 
 MartGoldenrod4F:
@@ -129,7 +132,7 @@ MartGoldenrod5F:
 	db DRAGON_SCALE
 	db SLOWPOKETAIL
 	db -1 ; end
-	
+
 MartGoldenrod5F2:
 	db 8 ; # items
 	db SILVERPOWDER
@@ -197,13 +200,6 @@ MartMahogany3:
 	db IRON
 	db CALCIUM
 	db CARBOS
-	db -1
-	
-MartMahogany4:
-	db 3
-	db CHARCOAL
-	db MYSTIC_WATER
-	db MIRACLE_SEED
 	db -1
 
 MartBlackthorn:

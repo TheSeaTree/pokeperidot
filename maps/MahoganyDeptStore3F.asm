@@ -1,5 +1,6 @@
 	const_def 2 ; object constants
-	const MAHOGANYDEPTSTORE3F_CLERK
+	const MAHOGANYDEPTSTORE3F_CLERK1
+	const MAHOGANYDEPTSTORE3F_CLERK2
 	const MAHOGANYDEPTSTORE3F_SUPER_NERD
 	const MAHOGANYDEPTSTORE3F_ROCKER
 
@@ -8,10 +9,17 @@ MahoganyDeptStore3F_MapScripts:
 
 	db 0 ; callbacks
 
+MahoganyDeptStore3FTMClerkScript:
+	faceplayer
+	opentext
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F_1
+	closetext
+	end
+
 MahoganyDeptStore3FClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F
+	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F_1
 	closetext
 	end
 
@@ -68,7 +76,8 @@ MahoganyDeptStore3F_MapEvents:
 	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore3FDirectory
 	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore3FElevatorButton
 
-	db 3 ; object events
-	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FClerkScript, -1
+	db 4 ; object events
+	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FTMClerkScript, -1
+	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FClerkScript, -1
 	object_event 12,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FSuperNerdScript, -1
 	object_event  2,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FRockerScript, -1

@@ -121,6 +121,7 @@ __enum__ = 0
 	deco  GEODUDE_DOLL
 	deco  MACHOP_DOLL
 	deco  TENTACOOL_DOLL
+	deco  SHIFUR_DOLL
 NUM_NON_TROPHY_DECOS = __enum__
 	deco  GOLD_TROPHY_DOLL
 	deco  SILVER_TROPHY_DOLL

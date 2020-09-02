@@ -40,3 +40,4 @@ IconPointers:
 	dw SudowoodoIcon
 	dw BigmonIcon
 	dw OmanyteIcon
+	dw ShifurIcon

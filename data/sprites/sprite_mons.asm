@@ -36,4 +36,5 @@ SpriteMons:
 	db LUGIA
 	db HO_OH
 	db OMANYTE
+	db SHIFUR
 	
