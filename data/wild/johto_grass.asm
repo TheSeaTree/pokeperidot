@@ -32,26 +32,26 @@ JohtoGrassWildMons:
 	map_id UNION_CAVE_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 15, GEODUDE
+	db 18, GEODUDE
 	db 17, SANDSHREW
-	db 16, ZUBAT
-	db 17, CUBONE
+	db 19, ZUBAT
+	db 19, CUBONE
 	db 19, SANDSHREW
 	db 18, KANGASKHAN
 	db 20, KANGASKHAN
 	; day
-	db 15, GEODUDE
+	db 18, GEODUDE
 	db 17, SANDSHREW
-	db 16, ZUBAT
-	db 17, CUBONE
+	db 19, ZUBAT
+	db 19, CUBONE
 	db 19, SANDSHREW
 	db 18, KANGASKHAN
 	db 20, KANGASKHAN
 	; nite
-	db 15, GEODUDE
+	db 18, GEODUDE
 	db 17, SANDSHREW
-	db 16, ZUBAT
-	db 17, CUBONE
+	db 19, ZUBAT
+	db 19, CUBONE
 	db 19, SANDSHREW
 	db 18, KANGASKHAN
 	db 20, KANGASKHAN
