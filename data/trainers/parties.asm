@@ -1682,7 +1682,7 @@ PsychicGroup:
 	db -1
 	
 PicnickerGroup:
-	; PICKNICKER (1)
+	; PICNICKER (1)
 	db "JAMIE@", TRAINERTYPE_NORMAL
 	db 9, NIDORAN_F
 	db -1 ; end
@@ -1692,7 +1692,7 @@ PicnickerGroup:
 	db 12, TEDDIURSA
 	db 12, TEDDIURSA
 	db -1 ; end
-	
+
 	; PICNICKER (3)
 	db "JESS@", TRAINERTYPE_NORMAL
 	db 12, SPEAROW
@@ -1700,7 +1700,7 @@ PicnickerGroup:
 	db 16, NIDORINA
 	db -1 ; end
 	
-	; PICKNICKER (4)
+	; PICNICKER (4)
 	db "TERRY@", TRAINERTYPE_NORMAL
 	db 29, GLOOM
 	db 29, JUMPLUFF
@@ -1708,7 +1708,7 @@ PicnickerGroup:
 	db 32, JUMPLUFF
 	db -1
 	
-	; PICKNICKER (5)
+	; PICNICKER (5)
 	db "BRITTANY@", TRAINERTYPE_NORMAL
 	db 28, TANGELA
 	db 29, WEEPINBELL

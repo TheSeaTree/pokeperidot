@@ -2477,7 +2477,7 @@ ChikoritaEvosAttacks:
 	db 1, GROWL
 	db 6, RAZOR_LEAF
 	db 9, POISONPOWDER
-	db 12, SYNTHESIS
+	db 13, SYNTHESIS
 	db 17, REFLECT
 	db 20, MEGA_DRAIN
 	db 28, SWEET_SCENT
@@ -2495,7 +2495,7 @@ BayleefEvosAttacks:
 	db 1, GROWL
 	db 6, RAZOR_LEAF
 	db 9, POISONPOWDER
-	db 12, SYNTHESIS
+	db 13, SYNTHESIS
 	db 17, REFLECT
 	db 22, MEGA_DRAIN
 	db 32, SWEET_SCENT
@@ -2512,7 +2512,7 @@ MeganiumEvosAttacks:
 	db 1, GROWL
 	db 6, RAZOR_LEAF
 	db 9, POISONPOWDER
-	db 12, SYNTHESIS
+	db 13, SYNTHESIS
 	db 17, REFLECT
 	db 22, MEGA_DRAIN
 	db 32, PETAL_DANCE
