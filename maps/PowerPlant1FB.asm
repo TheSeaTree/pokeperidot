@@ -193,10 +193,13 @@ ResurrectSabreFossil:
 	opentext
 	writetext SabreFossilAlarmText
 	waitbutton
+	closetext
+	special FadeBlackQuickly
+	opentext
 	writetext SkelegonCryText
 	cry SKELEGON
 	waitsfx
-	loadwildmon SKELEGON, 5
+	loadwildmon SKELEGON, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
@@ -226,6 +229,21 @@ PowerPlantItemfinderEvent:
 
 PowerPlantAdmin:
 	jumptextfaceplayer MahoganyTownPowerPlantAfterItemfinder
+	
+PowerPlant1FBreakGuyScript:
+	jumptextfaceplayer PowerPlant1FBreakGuyText
+	
+PowerPlant1FNamelessScript:
+	jumptextfaceplayer PowerPlant1FNamelessText
+	
+PowerPlant1FHardWorkerScript:
+	jumptextfaceplayer PowerPlant1FHardWorkerText
+	
+PowerPlant1FMonitorScript:
+	jumptextfaceplayer PowerPlant1FMonitorText
+
+PowerPlant1FWaterCoolingGuy:
+	jumptextfaceplayer PowerPlant1FWaterCoolingGuyText
 
 PowerPlantBMetalCoat:
 	itemball METAL_COAT
@@ -452,6 +470,66 @@ PowerPlantFossilGuyThanks:
 	cont "given me for my"
 	cont "research!"
 	done
+	
+PowerPlant1FBreakGuyText:
+	text "Welcome to the"
+	line "POWER PLANT!"
+	
+	para "Apologies, I can't"
+	line "help you. I'm on"
+	cont "break right now."
+	
+	para "It's important to"
+	line "get some time away"
+	cont "from the screen"
+	cont "every once in a"
+	cont "while."
+	done
+	
+PowerPlant1FNamelessText:
+	text "The guy at the"
+	line "next desk over is"
+	cont "a real workaholic!"
+	
+	para "I ask him to lunch"
+	line "every now & then,"
+	cont "but he refuses to"
+	cont "leave his desk."
+	
+	para "It can't be"
+	line "healthy for him."
+	done
+	
+PowerPlant1FHardWorkerText:
+	text "Please, leave me"
+	line "be. I am working"
+	cont "on an important"
+	cont "project right now,"
+	cont "and must focus."
+	done
+	
+PowerPlant1FMonitorText:
+	text "I monitor the gen-"
+	line "erator's activity"
+	cont "from this PC."
+	
+	para "I'm also closest"
+	cont "to the door just"
+	cont "in case anything"
+	cont "goes wrong."
+	done
+	
+PowerPlant1FWaterCoolingGuyText:
+	text "The generators run"
+	line "so hot that we"
+	cont "needed to submerge"
+	cont "them in water to"
+	cont "keep cool."
+	
+	para "GRIMER must have"
+	line "been attracted to"
+	cont "the warm water."
+	done
 
 
 PowerPlant1FB_MapEvents:
@@ -468,14 +546,14 @@ PowerPlant1FB_MapEvents:
 	db 0 ; bg events
 
 	db 11 ; object events
-	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RETURNED_MACHINE_PART
+	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantAdmin, EVENT_RETURNED_MACHINE_PART
 	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBHyperPotion, EVENT_POWER_PLANT_HYPER_POTION
 	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMetalCoat, EVENT_POWER_PLANT_METAL_COAT
 	object_event  0, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBPPUp, EVENT_POWER_PLANT_PP_UP
-	object_event  7, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  7, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FBreakGuyScript, -1
 	object_event 16,  9, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FossilResurrectionGuy, -1 ; Fossil Guy
-	object_event 24, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 24, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FNamelessScript, -1
+	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FHardWorkerScript, -1
+	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMonitorScript, -1
+	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FWaterCoolingGuy, -1
 	object_event 31,  0, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

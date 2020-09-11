@@ -1,17 +1,29 @@
 RooftopSaleMart1:
-	db 5
-	dbw POKE_BALL,     150
-	dbw GREAT_BALL,    500
-	dbw SUPER_POTION,  500
-	dbw FULL_HEAL,     500
-	dbw REVIVE,       1200
+	db 6
+	dbw SUN_STONE,		2400
+	dbw FIRE_STONE,		2400
+	dbw SILVERPOWDER,	 500
+	dbw PINK_BOW,     	 500
+	dbw SHARP_BEAK,		 500
+	dbw KINGS_ROCK,     5000
 	db -1
 
 RooftopSaleMart2:
-	db 5
-	dbw HYPER_POTION, 1000
-	dbw FULL_RESTORE, 2000
-	dbw FULL_HEAL,     500
-	dbw ULTRA_BALL,   1000
-	dbw PROTEIN,      7800
+	db 6
+	dbw LEAF_STONE,		2400
+	dbw THUNDERSTONE,	2400
+	dbw MAGNET,			 500
+	dbw TWISTEDSPOON,	 500
+	dbw POISON_BARB,	 500
+	dbw DRAGON_SCALE,   5000
+	db -1
+
+RooftopSaleMart3:
+	db 6
+	dbw MOON_STONE,		2400
+	dbw WATER_STONE,	2400
+	dbw HARD_STONE,		 500
+	dbw NEVERMELTICE,	 500
+	dbw METAL_COAT,     2000
+	dbw SLOWPOKETAIL,   5000
 	db -1

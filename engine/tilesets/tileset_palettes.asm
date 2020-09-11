@@ -27,6 +27,8 @@ LoadSpecialMapPalette:
 	jr z, .lighthouse
 	cp  TILESET_PORT
 	jr z, .port
+	cp  TILESET_ROOF
+	jr z, .roof
 	jr .do_nothing
 
 .pokecom_2f
@@ -91,6 +93,10 @@ LoadSpecialMapPalette:
 	
 .lighthouse
 	ld hl, LighthousePalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.roof
+	ld hl, RoofPalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
@@ -217,6 +223,9 @@ INCLUDE "gfx/tilesets/facility.pal"
 
 LighthousePalette:
 INCLUDE "gfx/tilesets/lighthouse.pal"
+
+RoofPalette:
+INCLUDE "gfx/tilesets/roof.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

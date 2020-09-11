@@ -184,7 +184,6 @@ IronHeadTMSalesman:
 	checkmoney YOUR_MONEY, 4800
 	ifequal HAVE_LESS, .NotEnoughMoney
 	verbosegiveitem TM_IRON_HEAD
-;	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 4800
 .GotIronHead
 	writetext ExplainIronHeadText
@@ -197,6 +196,21 @@ IronHeadTMSalesman:
 	turnobject LAST_TALKED, RIGHT
 	closetext
 	end
+	
+PowerPlant2FSparklingResidueScript:
+	jumptextfaceplayer PowerPlant2FSparklingResidueText
+
+PowerPlant2FCornerOfficeScript:
+	jumptextfaceplayer PowerPlant2FCornerOfficeText
+	
+PowerPlant2FNoTimeScript:
+	jumptextfaceplayer PowerPlant2FNoTimeText
+	
+PowerPlant2FGoofOffScript:
+	jumptextfaceplayer PowerPlant2FGoofOffText
+	
+PowerPlant2FAdminScript:
+	jumptextfaceplayer PowerPlant2FAdminText
 	
 PowerPlantBThunderstone:
 	itemball THUNDERSTONE
@@ -214,11 +228,8 @@ PowerPlantBFullHeal:
 	itemball FULL_HEAL
 
 StudyingVitaminsText:
-	text "Before this plant"
-	line "was repurposed for"
-	cont "the SUBWAY, I was"
-	cont "researching the"
-	cont "effects of"
+	text "I am researching"
+	line "the effects of"
 	cont "VITAMINs on"
 	cont "#MON."
 	
@@ -232,14 +243,8 @@ StudyingVitaminsText:
 	done
 	
 MakeItemsFromVitaminsText:
-	text "I believe I can"
-	line "turn them into"
-	cont "items which will"
-	cont "boost a #MON's"
-	cont "stats in battle!"
-
-	para "Bring me any"
-	line "VITAMINs and I'll"
+	text "Bring me any"
+	line "VITAMIN and I'll"
 	cont "see what I can do"
 	cont "with them."
 	done
@@ -335,6 +340,72 @@ ExplainIronHeadText:
 	para "It may cause the"
 	line "target to flinch."
 	done
+	
+PowerPlant2FSparklingResidueText:
+	text "I noticed a green"
+	line "residue all over"
+	cont "my work space."
+	
+	para "It seems to spark-"
+	cont "le in the light."
+	
+	para "But it also has a"
+	line "terrible stench…"
+	done
+	
+PowerPlant2FCornerOfficeText:
+	text "Hehe! I love my"
+	line "corner office!"
+	
+	para "I can play all"
+	line "sorts of PC games"
+	cont "and nobody will"
+	cont "ever bother me!"
+	done
+	
+PowerPlant2FNoTimeText:
+	text "I have no time to"
+	line "work on a pet pro-"
+	cont "ject like the guy"
+	cont "behind me."
+	
+	para "It's a real shame,"
+	line "too. I need to"
+	cont "flex my creative"
+	cont "muscles!"
+	done
+	
+PowerPlant2FGoofOffText:
+	text "The worst part"
+	line "about having my"
+	cont "desk to close to"
+	cont "the ADMIN's office"
+	cont "is that I can"
+	cont "never get away"
+	cont "with goofing off!"
+	done
+
+PowerPlant2FAdminText:
+	text "Ah!"
+	line "Hello <PLAYER>!"
+
+	para "Operations have"
+	line "been quite smooth"
+	cont "ever since we re-"
+	cont "opened!"
+	
+	para "How is the ITEM-"
+	line "FINDER treating"
+	cont "you?"
+	
+	para "It is just one of"
+	line "our many side"
+	cont "projects."
+	
+	para "We hope to produce"
+	line "even more products"
+	cont "in the future."
+	done
 
 PowerPlant2FB_MapEvents:
 	db 0, 0 ; filler
@@ -354,9 +425,9 @@ PowerPlant2FB_MapEvents:
 	object_event  1, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBFullHeal, EVENT_POWER_PLANT_FULL_HEAL
 	object_event 30, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMagnet, EVENT_POWER_PLANT_MAGNET
 	object_event 26,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBElixer, EVENT_POWER_PLANT_ELIXER
-	object_event 24,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 28,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 24,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant2FSparklingResidueScript, -1
+	object_event 28,  3, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant2FCornerOfficeScript, -1
 	object_event 20, 15, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, XItemMan, -1
-	object_event 16, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 14,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6, 15, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 16, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant2FNoTimeScript, -1
+	object_event 14,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant2FGoofOffScript, -1
+	object_event  6, 15, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant2FAdminScript, -1

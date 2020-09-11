@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	const MAHOGANYDEPTSTORE3F_CLERK1
 	const MAHOGANYDEPTSTORE3F_CLERK2
-	const MAHOGANYDEPTSTORE3F_SUPER_NERD
+	const MAHOGANYDEPTSTORE3F_BLACK_BELT
 	const MAHOGANYDEPTSTORE3F_ROCKER
 
 MahoganyDeptStore3F_MapScripts:
@@ -12,19 +12,19 @@ MahoganyDeptStore3F_MapScripts:
 MahoganyDeptStore3FTMClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F_1
+	pokemart MARTTYPE_STANDARD, MART_DEPT_STORE_3F_1
 	closetext
 	end
 
 MahoganyDeptStore3FClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_3F_1
+	pokemart MARTTYPE_STANDARD, MART_DEPT_STORE_3F_2
 	closetext
 	end
 
-MahoganyDeptStore3FSuperNerdScript:
-	jumptextfaceplayer MahoganyDeptStore3FSuperNerdText
+MahoganyDeptStore3FBlackbeltScript:
+	jumptextfaceplayer MahoganyDeptStore3FBlackbeltText
 
 MahoganyDeptStore3FRockerScript:
 	jumptextfaceplayer MahoganyDeptStore3FRockerText
@@ -35,23 +35,26 @@ MahoganyDeptStore3FDirectory:
 MahoganyDeptStore3FElevatorButton:
 	jumpstd elevatorbutton
 
-MahoganyDeptStore3FSuperNerdText:
-	text "I, I, I'm really"
-	line "impatient!"
-
-	para "I use X SPEED in"
-	line "battle to speed up"
-	cont "my #MON."
+MahoganyDeptStore3FBlackbeltText:
+	text "Hi-yah!"
+	
+	para "This shop made me"
+	line "broke, but now all"
+	cont "of my #MON are"
+	cont "punching fiends!"
+	
+	para "You don't wanna"
+	line "mess with me!"
 	done
 
 MahoganyDeptStore3FRockerText:
-	text "Hey! When you bat-"
-	line "tle, do you use X"
-	cont "SPECIAL?"
-
-	para "It's awesome. It"
-	line "really jacks up"
-	cont "SPECIAL ATTACK!"
+	text "Have you given"
+	line "your #MON an"
+	cont "item to hold?"
+	
+	para "I hear the ones"
+	line "sold here are very"
+	cont "powerful!"
 	done
 
 MahoganyDeptStore3FDirectoryText:
@@ -79,5 +82,5 @@ MahoganyDeptStore3F_MapEvents:
 	db 4 ; object events
 	object_event  6,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FTMClerkScript, -1
 	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FClerkScript, -1
-	object_event 12,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FSuperNerdScript, -1
-	object_event  2,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FRockerScript, -1
+	object_event  4,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FBlackbeltScript, -1
+	object_event 11,  5, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore3FRockerScript, -1

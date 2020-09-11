@@ -5,18 +5,15 @@ Marts:
 	dw MartAzalea
 	dw MartCianwood
 	dw MartCianwoodRobbed
-	dw MartGoldenrod2F1
-	dw MartGoldenrod2F2
-	dw MartGoldenrod3F1
-	dw MartGoldenrod3F2
-	dw MartGoldenrod4F
-	dw MartGoldenrod5F
+	dw MartDeptStore2F1
+	dw MartDeptStore2F2
+	dw MartDeptStore3F1
+	dw MartDeptStore3F2
+	dw MartDeptStore4F
 	dw MartOlivine
 	dw MartEcruteak
 	dw MartEcruteakTM
-	dw MartMahogany1
-	dw MartMahogany2
-	dw MartMahogany3
+	dw MartMahogany
 	dw MartBlackthorn
 	dw MartBlackthornTM
 	dw MartGoldenrod
@@ -81,7 +78,7 @@ MartCianwoodRobbed:
 	db ANTIDOTE
 	db -1
 
-MartGoldenrod2F1:
+MartDeptStore2F1:
 	db 7 ; # items
 	db POTION
 	db SUPER_POTION
@@ -92,7 +89,7 @@ MartGoldenrod2F1:
 	db ICE_HEAL
 	db -1 ; end
 
-MartGoldenrod2F2:
+MartDeptStore2F2:
 	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
@@ -103,21 +100,21 @@ MartGoldenrod2F2:
 	db POKE_DOLL
 	db -1 ; end
 
-MartGoldenrod3F1:
+MartDeptStore3F1:
 	db 3 ; # items
 	db TM_FIRE_PUNCH
 	db TM_ICE_PUNCH
 	db TM_THUNDERPUNCH
 	db -1 ; end
 
-MartGoldenrod3F2:
+MartDeptStore3F2:
 	db 3 ; # items
 	db CHARCOAL
 	db MYSTIC_WATER
 	db MIRACLE_SEED
 	db -1 ; end
 
-MartGoldenrod4F:
+MartDeptStore4F:
 	db 5 ; # items
 	db PROTEIN
 	db IRON
@@ -126,14 +123,14 @@ MartGoldenrod4F:
 	db HP_UP
 	db -1 ; end
 
-MartGoldenrod5F:
+MartDeptStore5F:
 	db 3 ; # items
 	db KINGS_ROCK
 	db DRAGON_SCALE
 	db SLOWPOKETAIL
 	db -1 ; end
 
-MartGoldenrod5F2:
+MartDeptStore5F2:
 	db 8 ; # items
 	db SILVERPOWDER
 	db MAGNET
@@ -174,33 +171,13 @@ MartEcruteakTM:
 	db TM_SAFEGUARD
 	db -1
 
-MartMahogany1:
-	db 8 ; # items
-	db GREAT_BALL
-	db ULTRA_BALL
-	db SUPER_POTION
-	db HYPER_POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db SUPER_REPEL
-	db REVIVE
+MartMahogany:
+	db 4 ; # items
+	db FRESH_WATER
+	db BERRY_JUICE
+	db SODA_POP
+	db SWEET_TEA
 	db -1 ; end
-
-MartMahogany2:
-	db 3 ; # items
-	db TM_FIRE_PUNCH
-	db TM_ICE_PUNCH
-	db TM_THUNDERPUNCH
-	db -1 ; end
-	
-MartMahogany3:
-	db 5
-	db HP_UP
-	db PROTEIN
-	db IRON
-	db CALCIUM
-	db CARBOS
-	db -1
 
 MartBlackthorn:
 	db 9 ; # items

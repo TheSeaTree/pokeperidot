@@ -75,17 +75,24 @@ Pharmacist:
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
 	ld de, RooftopSaleMart1
-	ld hl, wStatusFlags
-	bit STATUSFLAGS_HALL_OF_FAME_F, [hl]
-	jr z, .ok
+	ld a, [wTimeOfDay]
+	cp DAY_F
+	jr c, .ok
+
 	ld b, BANK(RooftopSaleMart2)
 	ld de, RooftopSaleMart2
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr c, .ok
+
+	ld b, BANK(RooftopSaleMart3)
+	ld de, RooftopSaleMart3
 
 .ok
 	call LoadMartPointer
 	call ReadMart
 	call LoadStandardMenuHeader
-	ld hl, Text_Mart_HowMayIHelpYou
+	ld hl, Text_Mart_RooftopIntro
 	call MartTextBox
 	call BuyMenu
 	ld hl, Text_Mart_ComeAgain
@@ -875,6 +882,10 @@ Text_Mart_ICanPayThisMuch:
 Text_Mart_HowMayIHelpYou:
 	; Welcome! How may I help you?
 	text_jump UnknownText_0x1c4f62
+	db "@"
+	
+Text_Mart_RooftopIntro:
+	text_jump Rooftop_HowMayIHelpYouText
 	db "@"
 
 MenuHeader_BuySell:

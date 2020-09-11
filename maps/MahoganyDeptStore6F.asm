@@ -86,6 +86,12 @@ MahoganyDeptStore6FLassScript:
 MahoganyDeptStore6FSuperNerdScript:
 	jumptextfaceplayer MahoganyDeptStore6FSuperNerdText
 
+MahoganyDeptStore6FPokefanMScript:
+	jumptextfaceplayer MahoganyDeptStore6FPokefanMText
+	
+MahoganyDeptStore6FTeacherScript:
+	jumptextfaceplayer MahoganyDeptStore6FTeacherText
+
 MahoganyDeptStore6FDirectory:
 	jumptext MahoganyDeptStore6FDirectoryText
 
@@ -116,26 +122,48 @@ MahoganyVendingNoSpaceText:
 	done
 
 MahoganyDeptStore6FLassText:
-	text "Do you listen to"
-	line "LUCKY CHANNEL?"
-
-	para "If you want to"
-	line "win, trade #MON"
-
-	para "with as many peo-"
-	line "ple as possible to"
-
-	para "get different ID"
-	line "numbers."
+	text "Hm…"
+	
+	para "There are so many"
+	line "drinks to choose"
+	cont "from. I can't pick"
+	cont "one!"
 	done
 
 MahoganyDeptStore6FSuperNerdText:
-	text "If you're tired,"
-	line "try the vending"
-	cont "machine's drinks."
-
-	para "Your #MON will"
-	line "love them too."
+	text "There are no shops"
+	line "on this floor."
+	
+	para "It's nice to have"
+	line "a quiet place to"
+	cont "relax here."
+	done
+	
+MahoganyDeptStore6FPokefanMText:
+	text "I really needed a"
+	line "drink from the"
+	cont "vending machine."
+	
+	para "While they are"
+	line "meant for people,"
+	cont "#MON love them" 
+	cont "too."
+	
+	para "A nice cold SODA"
+	line "POP is just enough"
+	cont "to get me back on"
+	cont "my feet!"
+	done
+	
+MahoganyDeptStore6FTeacherText:
+	text "Could you please"
+	line "keep your voice"
+	cont "down in here?"
+	
+	para "People come here"
+	line "to get away from"
+	cont "the rowdiness of"
+	cont "the city."
 	done
 
 MahoganyDeptStore6FDirectoryText:
@@ -155,14 +183,15 @@ MahoganyDeptStore6F_MapEvents:
 
 	db 0 ; coord events
 
-	db 6 ; bg events
+	db 5 ; bg events
 	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore6FDirectory
 	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore6FElevatorButton
 	bg_event  8,  1, BGEVENT_UP, MahoganyVendingMachine
 	bg_event  9,  1, BGEVENT_UP, MahoganyVendingMachine
-	bg_event 10,  1, BGEVENT_UP, MahoganyVendingMachine
 	bg_event 11,  1, BGEVENT_UP, MahoganyVendingMachine
 
-	db 2 ; object events
-	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FLassScript, -1
-	object_event  8,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FSuperNerdScript, -1
+	db 4 ; object events
+	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FLassScript, -1
+	object_event  5,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FPokefanMScript, -1
+	object_event 13,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FSuperNerdScript, -1
+	object_event  3,  6, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FTeacherScript, -1

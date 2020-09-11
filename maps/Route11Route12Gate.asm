@@ -9,7 +9,11 @@ Route11Route12GateOfficerScript:
 	jumptextfaceplayer Route11Route12GateOfficerText
 	
 Route11Route12GateOfficerText:
-	text ""
+	text "I don't see a lot"
+	line "of trainers pass"
+	cont "through here."
+	
+	para "I wonder why…"
 	done
 
 Route11Route12Gate_MapEvents:

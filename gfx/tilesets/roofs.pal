@@ -54,9 +54,9 @@
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 14 (Pewter)
-	RGB 22,20,10, 17,14,03 ; morn/day
-	RGB 11,11,05, 10,09,07 ; nite
+; group 14 (Pewter/Dept Store Roof)
+	RGB 15,31,31, 05,17,31 ; morn/day
+	RGB 11,11,19, 00,00,05 ; nite
 
 ; group 15 (Mount Moon Square)
 	RGB 14,17,31, 07,11,15 ; morn/day

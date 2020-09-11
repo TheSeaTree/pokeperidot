@@ -16,6 +16,9 @@ CarnationKidScript:
 CarnationLassScript:
 	jumptextfaceplayer CarnationLassText
 	
+CarnationFloristSign:
+	jumptext CarnationFloristSignText
+	
 CarnationPokecenterSign:
 	jumpstd pokecentersign
 	
@@ -40,6 +43,14 @@ CarnationLassText:
 	line "it. This town is"
 	cont "perfect for me."
 	done
+	
+CarnationFloristSignText:
+	text "CARNATION FLORIST"
+	
+	para "Decorate your home"
+	line "with our lovely"
+	cont "plants."
+	done
 
 CarnationTown_MapEvents:
 	db 0, 0 ; filler
@@ -51,16 +62,16 @@ CarnationTown_MapEvents:
 	warp_event  4, 11, CARNATION_ZOO, 2
 	warp_event 11, 13, WOBBUFFET_HOUSE, 1
 	warp_event 19,  5, CARNATION_POKECENTER_1F, 1
-	warp_event 13,  7, WOBBUFFET_HOUSE, 1
+	warp_event 13,  7, CARNATION_FLOWER_SHOP, 1
 
 	db 0 ; coord events
 
 	db 3 ; bg events
 	bg_event  9, 13, BGEVENT_UP, CarnationMailbox
-	bg_event 11,  7, BGEVENT_UP, CarnationMailbox
+	bg_event 12,  8, BGEVENT_UP, CarnationFloristSign
 	bg_event 20,  5, BGEVENT_READ, CarnationPokecenterSign
 
 	db 2 ; object events
 	object_event 19, 12, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationKidScript, -1
-	object_event 11,  9, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationLassScript, -1
+	object_event  9,  9, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationLassScript, -1
 	

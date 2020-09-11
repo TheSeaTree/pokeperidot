@@ -40,4 +40,5 @@ RockMonMaps:
 	treemon_map ROUTE_6,           		   TREEMON_SET_KANTO
 	treemon_map ROUTE_7,           		   TREEMON_SET_KANTO
 	treemon_map ROUTE_8,           		   TREEMON_SET_KANTO
+	treemon_map OLIVINE_CITY,      		   TREEMON_SET_KANTO
 	db -1

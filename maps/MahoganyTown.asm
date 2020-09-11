@@ -1,5 +1,9 @@
 	const_def 2 ; object constants
 	const MAHOGANYTOWN_LASS
+	const MAHOGANYTOWN_YOUNGSTER
+	const MAHOGANYTOWN_FISHER
+	const MAHOGANYTOWN_SAILOR
+	const MAHOGANYTOWN_COOLTRAINER
 	const MAHOGANYTOWN_JOEL
 	const MAHOGANYTOWN_OFFICER1
 	const MAHOGANYTOWN_OFFICER2
@@ -7,14 +11,16 @@
 	const MAHOGANYTOWN_RHYDON2
 	const MAHOGANYTOWN_GRIMER1
 	const MAHOGANYTOWN_GRIMER2
+	const MAHOGANYTOWN_ITEMBALL
 	const MAHOGANYTOWN_FRUIT_TREE
 
 MahoganyTown_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
+	db 3 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_TILES, .PowerPlant
+	callback MAPCALLBACK_OBJECTS, .MoveOfficer
 
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
@@ -25,6 +31,13 @@ MahoganyTown_MapScripts:
 	iffalse .skip
 	changeblock 2, 2, $ae
 .skip
+	return
+	
+.MoveOfficer:
+	checkevent EVENT_MAHOGANY_OFFICER_WITHDRAW
+	iffalse .skip2
+	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
+.skip2
 	return
 	
 PowerPlantDoor:
@@ -111,6 +124,10 @@ MahoganyEnterGym:
 MahoganyTownOfficerScript:
 	faceplayer
 	opentext
+	checkevent EVENT_MAHOGANY_GRIMER
+	iftrue .Opening
+	checkevent EVENT_MAHOGANY_OFFICER_WITHDRAW
+	iftrue .Waiting
 	checkevent EVENT_BACKUP_REQUESTED
 	iffalse .Backup
 	writetext MahoganyTownOfficerBeforeText
@@ -123,9 +140,14 @@ MahoganyTownOfficerScript:
 	writetext MahoganyTownOfficerBackupText
 	waitbutton
 	closetext
+	turnobject MAHOGANYTOWN_OFFICER1, LEFT
+	opentext
+	writetext MahoganyTownOfficerReturnText
+	waitbutton
+	closetext
 	playsound SFX_BALL_POOF
-	waitsfx
 	disappear MAHOGANYTOWN_RHYDON1
+	waitsfx
 	checkcode VAR_FACING
 	ifequal UP, .FacingUp
 	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerFacingLeftMovement
@@ -135,6 +157,25 @@ MahoganyTownOfficerScript:
 .FacingUp
 	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerFacingUpMovement
 	end
+	
+.Waiting
+	writetext MahoganyTownOfficerWaitingText
+	waitbutton
+	closetext
+	
+.Opening
+	writetext MahoganyTownOfficerOpeningText
+	waitbutton
+	closetext
+	end
+	
+MahoganyTownOfficer2Script:
+	checkevent EVENT_BACKUP_REQUESTED
+	iffalse .Backup
+	jumptextfaceplayer MahoganyTownOfficerBeforeText
+	
+.Backup
+	jumptext MahoganyTownOfficer2Text
 
 MahoganyTownGrimerBattle:
 	opentext
@@ -143,14 +184,65 @@ MahoganyTownGrimerBattle:
 	waitbutton
 	closetext
 	setlasttalked -1
-	loadwildmon GRIMER, 28
+	loadwildmon GRIMER, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
+	moveobject MAHOGANYTOWN_OFFICER1, 25, 8
+	turnobject MAHOGANYTOWN_OFFICER1, LEFT
+	disappear MAHOGANYTOWN_GRIMER1
+	setevent EVENT_MAHOGANY_GRIMER
+	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerToPlayerMovement
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext MahoganyTownOfficerOpeningText
+	waitbutton
+	writetext MahoganyTownOfficerHealText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playsound SFX_FULL_HEAL
+	special HealParty
+	waitsfx
+	special FadeInQuickly
+	end
+
+MahoganyTownOfficersPokemon:
+	opentext
+	writetext MahoganyTownRhydonText
+	cry RHYDON
+	waitbutton
+	writetext MahoganyTownOfficersPokemon
+	waitbutton
+	closetext
+	end
+
+MahoganyTownGrimer2Battle:
+	opentext
+	writetext MahoganyTownGrimerText
+	cry GRIMER
+	waitbutton
+	writetext MahoganyTownGrimerInBattleText
+	waitbutton
+	closetext
 	end
 
 MahoganyTownLass:
 	jumptextfaceplayer MahoganyTownLassText
+
+MahoganyTownYoungster:
+	jumptextfaceplayer MahoganyTownYoungsterText
+	
+MahoganyTownFisher:
+	jumptextfaceplayer MahoganyTownFisherText
+	
+MahoganyTownSailor:
+	jumptextfaceplayer MahoganyTownSailorText
+	
+MahoganyTownCooltrainerM:
+	jumptextfaceplayer MahoganyTownCooltrainerMText
 	
 MahoganyMoveManagersHouse:
 	jumptext MoveManagersHouseText
@@ -170,12 +262,15 @@ MahoganyGymMovement:
 	
 MahoganyOfficerFacingLeftMovement:
 	step DOWN
-	turn_step UP
 	step_resume
 	
-MahoganyOfficerFacingUpMovement
+MahoganyOfficerFacingUpMovement:
 	step RIGHT
 	turn_step LEFT
+	step_resume
+	
+MahoganyOfficerToPlayerMovement:
+	step LEFT
 	step_resume
 
 MahoganyGymLeaderIntroText:
@@ -185,7 +280,7 @@ MahoganyGymLeaderIntroText:
 	line "a GYM challenge,"
 	cont "you're going to be"
 	cont "disappointed."
-	
+
 	para "Something is wrong"
 	line "with the POWER"
 	cont "PLANT. It's not"
@@ -198,12 +293,11 @@ MahoganyGymLeaderIntroText:
 	cont "challenges."
 
 	para "I sent a crew to"
-	line "check out what's"
-	cont "going on up there,"
-	cont "but they were not"
-	cont "able to deal with"
-	cont "the wild GRIMER"
-	cont "nesting there."
+	line "check it out, but"
+	cont "can can barely"
+	cont "deal with the wild"
+	cont "GRIMER nesting"
+	cont "there."
 	
 	para "Those #MON must"
 	line "be mucking up the"
@@ -231,25 +325,18 @@ MahoganyGymLeaderComeBack:
 	done
 	
 MahoganyGymLeaderAgree:
-	text "You will need a"
-	line "way to get across"
-	cont "the lake behind"
-	cont "the GYM, and you"
-	cont "don't look like"
-	cont "much of a swimmer."
+	text "You can find a"
+	line "path to the POWER"
+	cont "PLANT behind this"
+	cont "GYM."
 	
-	para "I have a buddy"
-	line "down on the shore."
-	
-	para "He's not too kind"
-	line "to outsiders, but"
-	cont "he owes me a favor"
-	cont "so I'll give him"
-	cont "a call."
-	
-	para "He can get you"
-	line "something to cross"
-	cont "the water."
+	para "I would help out"
+	line "myself, but I need"
+	cont "to stay here and"
+	cont "let challengers"
+	cont "know I am not"
+	cont "accepting challen-"
+	cont "gers right now."
 	done
 
 MahoganyPowerPlantGotSurf:
@@ -288,7 +375,7 @@ MahoganyTownOfficerBackupText:
 	text "Are you the backup"
 	line "JOEL was sending?"
 	
-	para "We can't hold back"
+	para "I can't hold back"
 	line "the GRIMER, there's"
 	cont "too many!"
 	
@@ -296,8 +383,45 @@ MahoganyTownOfficerBackupText:
 	line "here, will ya?"
 	done
 	
+MahoganyTownOfficerReturnText:
+	text "RHYDON, Return!"
+	done
+	
+MahoganyTownOfficerWaitingText:
+	text "What are you wait-"
+	line "ing for?"
+	
+	para "The GRIMER is"
+	line "right there!"
+	done
+	
+MahoganyTownOfficer2Text:
+	text "Quick, my partner"
+	line "needs help!"
+	
+	para "I have this GRIMER"
+	line "under control!"
+	done
+	
 MahoganyTownGrimerText:
 	text "GRIMER: Blblbl!"
+	done
+	
+MahoganyTownRhydonText:
+	text "RHYDON: Gugooh!"
+	done
+	
+MahoganyTownGrimerInBattleText:
+	text "This GRIMER is in"
+	line "battle with the"
+	cont "OFFICER's #MON."
+	done
+	
+MahoganyTownOfficersPokemonText:
+	text "The OFFICER's"
+	line "#MON is locked"
+	cont "in battle with the"
+	cont "GRIMER."
 	done
 	
 MahoganyTownOfficerOpeningText:
@@ -310,19 +434,75 @@ MahoganyTownOfficerOpeningText:
 	cont "your back here."
 	done
 	
-MahoganyTownLassText:
-	text "With the merchants"
-	line "all trying to sell"
-	cont "items to the"
-	cont "tourists staying"
-	cont "at the hotel, this"
-	cont "city's #MART"
-	cont "owner sold his"
-	cont "shop to join them."
+MahoganyTownOfficerHealText:
+	text "Let me heal your"
+	line "#MON too."
 	
-	para "He couldn't beat"
-	line "the competition"
-	cont "otherwise."
+	para "I have plenty of"
+	line "POTIONs to share."
+	done
+	
+MahoganyTownLassText:
+	text "It is way too exp-"
+	line "ensive to live in"
+	cont "this city."
+	
+	para "I just visit from"
+	line "STAGHORN TOWN to"
+	cont "go shopping and"
+	cont "get something to"
+	cont "eat!"
+	done
+	
+MahoganyTownYoungsterText:
+	text "Did you know that"
+	line "#MON were alive"
+	cont "even before people"
+	cont "existed?"
+	
+	para "I'm not kidding!"
+	line "Sometimes scient-"
+	cont "ists even find old"
+	cont "FOSSILs of those"
+	cont "#MON."
+	
+	para "Wouldn't it be wild"
+	line "if those #MON"
+	cont "could be brought"
+	cont "back to life?"
+	done
+	
+MahoganyTownFisherText:
+	text "Augh…"
+	
+	para "I definitely ate"
+	line "too much. I feel"
+	cont "sick…"
+	
+	para "But it was so"
+	line "good…"
+	done
+	
+MahoganyTownSailorText:
+	text "Hey! Don't you dare"
+	line "touch my truck. I"
+	cont "just paid it off!"
+	
+	para "If the paint job"
+	line "gets scratched up,"
+	cont "I will be livid!"
+	done
+	
+MahoganyTownCooltrainerMText:
+	text "I paid a visit to"
+	line "the MOVE REMINDER"
+	cont "earlier."
+	
+	para "I can't hope to"
+	line "take on the #-"
+	cont "MON LEAGUE without"
+	cont "the best moveset"
+	cont "possible!"
 	done
 	
 MoveManagersHouseText:
@@ -357,14 +537,18 @@ MahoganyTown_MapEvents:
 	bg_event 33,  9, BGEVENT_UP, MahoganyMoveManagersHouse
 	bg_event  4,  5, BGEVENT_UP, MahoganyPowerPlantSign
 
-	db 10 ; object events
+	db 14 ; object events
 	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
+	object_event  6, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownYoungster, -1
+	object_event 21, 30, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisher, -1
+	object_event  7, 19, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyTownSailor, -1
+	object_event 34, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownCooltrainerM, -1
 	object_event 24, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
-	object_event 25,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, -1
-	object_event 24,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, -1
-	object_event 24,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 23,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 23,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, -1
-	object_event 22,  9, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, -1
+	object_event 25,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, EVENT_POWER_PLANT_1F_MUK
+	object_event 24,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficer2Script, EVENT_POWER_PLANT_1F_MUK
+	object_event 24,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_MAHOGANY_OFFICER_WITHDRAW
+	object_event 23,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_POWER_PLANT_1F_MUK
+	object_event 23,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, EVENT_MAHOGANY_GRIMER
+	object_event 22,  9, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimer2Battle, EVENT_POWER_PLANT_1F_MUK
 	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, MahoganyTownMetalPowder, EVENT_MAHOGANY_TOWN_METAL_POWDER
 	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

@@ -641,6 +641,12 @@ UnknownText_0x1c4f62::
 	line "help you?"
 	done
 
+Rooftop_HowMayIHelpYouText::
+	text "Have you come to"
+	line "browse my select-"
+	cont "ion of items?"
+	done
+
 UnknownText_0x1c4f80::
 	text "Here you are."
 	line "Thank you!"

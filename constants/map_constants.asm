@@ -203,7 +203,7 @@ ENDM
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
 	map_const GOLDENROD_MAGNET_TRAIN_STATION,              10,  9 ;  7
-	map_const GOLDENROD_FLOWER_SHOP,                        4,  4 ;  8
+	map_const CARNATION_FLOWER_SHOP,                        4,  4 ;  8
 	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
 	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
@@ -225,7 +225,6 @@ ENDM
 	map_const MAHOGANY_DEPT_STORE_5F,                      8,  4 ; 15
 	map_const MAHOGANY_DEPT_STORE_6F,                      8,  4 ; 16
 	map_const MAHOGANY_DEPT_STORE_ELEVATOR,                2,  2 ; 17
-	map_const MAHOGANY_DEPT_STORE_ROOF,                    8,  4 ; 18
 	map_const ROUTE_6_SURFERS_HOUSE,                       4,  4 ; 13
 
 	newgroup                                                      ; 13
@@ -234,6 +233,7 @@ ENDM
 	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
 
 	newgroup                                                      ; 14
+	map_const MAHOGANY_DEPT_STORE_ROOF,                   12,  8 ; 18
 
 	newgroup                                                      ; 15
 

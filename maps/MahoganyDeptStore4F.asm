@@ -1,8 +1,7 @@
 	const_def 2 ; object constants
 	const MAHOGANYDEPTSTORE4F_CLERK
 	const MAHOGANYDEPTSTORE4F_COOLTRAINER_M
-	const MAHOGANYDEPTSTORE4F_BUG_CATCHER
-	const MAHOGANYDEPTSTORE4F_GAMEBOY_KID
+	const MAHOGANYDEPTSTORE4F_SUPER_NERD
 
 MahoganyDeptStore4F_MapScripts:
 	db 0 ; scene scripts
@@ -12,24 +11,18 @@ MahoganyDeptStore4F_MapScripts:
 MahoganyDeptStore4FClerkScript:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_4F
+	pokemart MARTTYPE_STANDARD, MART_DEPT_STORE_4F
 	closetext
 	end
 
 MahoganyDeptStore4FCooltrainerMScript:
 	jumptextfaceplayer MahoganyDeptStore4FCooltrainerMText
 
-MahoganyDeptStore4FBugCatcherScript:
-	jumptextfaceplayer MahoganyDeptStore4FBugCatcherText
+MahoganyDeptStore4FSuperNerdScript:
+	jumptextfaceplayer MahoganyDeptStore4FSuperNerdText
 
-MahoganyDeptStore4FGameboyKidScript:
-	faceplayer
-	opentext
-	writetext MahoganyDeptStore4FGameboyKidText
-	waitbutton
-	closetext
-	turnobject MAHOGANYDEPTSTORE4F_GAMEBOY_KID, DOWN
-	end
+MahoganyDeptStore4FTwinScript:
+	jumptextfaceplayer MahoganyDeptStore4FTwinText
 
 MahoganyDeptStore4FDirectory:
 	jumptext MahoganyDeptStore4FDirectoryText
@@ -38,34 +31,38 @@ MahoganyDeptStore4FElevatorButton:
 	jumpstd elevatorbutton
 
 MahoganyDeptStore4FCooltrainerMText:
-	text "Hey. I love strong"
-	line "#MON."
-
-	para "I feed them PRO-"
-	line "TEIN to crank up"
-	cont "their ATTACK."
+	text "Hey! What gives?"
+	
+	para "I spent all of"
+	line "this money on"
+	cont "VITAMINs, and they"
+	cont "barely did a thing"
+	cont "for my #MON!"
 	done
 
-MahoganyDeptStore4FBugCatcherText:
-	text "IRON adds to your"
-	line "#MON's DEFENSE."
+MahoganyDeptStore4FSuperNerdText:
+	text "I feed my #MON"
+	line "VITAMINS all the"
+	cont "time!"
+	
+	para "It may not be app-"
+	line "arant right away,"
+	cont "but the stat boost"
+	cont "they give is huge"
+	cont "your #MON"
+	cont "levels up!"
 	done
-
-MahoganyDeptStore4FGameboyKidText:
-	text "Some #MON"
-	line "evolve only by"
-
-	para "being traded via a"
-	line "Game Link cable."
-
-	para "I know of four:"
-	line "MACHOKE, KADABRA,"
-
-	para "HAUNTER and, um,"
-	line "GRAVELER."
-
-	para "I heard there are"
-	line "others too."
+	
+MahoganyDeptStore4FTwinText:
+	text "I heard about a"
+	line "man in this city"
+	cont "that will change"
+	cont "VITAMINs into some"
+	cont "cool battle items!"
+	
+	para "I think he works"
+	line "at the POWER"
+	cont "PLANT."
 	done
 
 MahoganyDeptStore4FDirectoryText:
@@ -91,6 +88,6 @@ MahoganyDeptStore4F_MapEvents:
 
 	db 4 ; object events
 	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FClerkScript, -1
-	object_event 11,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FCooltrainerMScript, -1
-	object_event  7,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FBugCatcherScript, -1
-	object_event  5,  1, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FGameboyKidScript, -1
+	object_event 11,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FCooltrainerMScript, -1
+	object_event  7,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FSuperNerdScript, -1
+	object_event  2,  6, SPRITE_TWIN, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore4FTwinScript, -1

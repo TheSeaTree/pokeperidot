@@ -43,15 +43,24 @@ Route11MoveTutor:
 	waitbutton
 	closetext
 	end
+	
+Route11CooltrainerFScript:
+	jumptextfaceplayer Route11CooltrainerFText
 
 Route11SpellTag:
 	itemball SPELL_TAG
 
+Route11LeafStone:
+	itemball LEAF_STONE
+
 Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
 	
-Route11Sign:
-	jumptext Route11SignText
+Route11GoldenrodSign:
+	jumptext Route11GoldenrodSignText
+
+Route11Route12Sign:
+	jumptext Route11Route12SignText
 	
 Route11TutorText:
 	text "Blub, blub, blub."
@@ -112,8 +121,25 @@ Route11TutorExplainSilverLeaf:
 	cont "back here."
 	done
 	
-Route11SignText:
-	text "ROUTE 11"
+Route11CooltrainerFText:
+	text "Rumor has it that"
+	line "an evil spirit"
+	cont "dwells on this"
+	cont "ROUTE."
+	
+	para "But the only other"
+	line "person I've seen"
+	cont "is a nice old man."
+	done
+	
+Route11GoldenrodSignText:
+	text "ROUTE 11 -"
+	line "FAVIA TOWN"
+	done
+	
+Route11Route12SignText:
+	text "ROUTE 11 -"
+	line "ROUTE 12"
 	done
 
 Route11_MapEvents:
@@ -128,10 +154,13 @@ Route11_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 32, 23, BGEVENT_READ, Route11Sign
+	db 2 ; bg events
+	bg_event 32, 23, BGEVENT_READ, Route11GoldenrodSign
+	bg_event 18,  9, BGEVENT_READ, Route11Route12Sign
 
-	db 3 ; object events
+	db 5 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1
+	object_event 23, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route11CooltrainerFScript, -1
 	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
 	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_11_SPELL_TAG
+	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11LeafStone, EVENT_ROUTE_11_LEAF_STONE

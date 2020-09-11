@@ -193,25 +193,25 @@ OrchidPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
 MahoganyDeptStore1F_Blocks:
-	INCBIN "maps/DeptStore1F.ablk"
+	INCBIN "maps/DeptStore1F.8x4.mart.ablk"
 
 MahoganyDeptStore2F_Blocks:
-	INCBIN "maps/DeptStore2F.ablk"
+	INCBIN "maps/DeptStore2F.8x4.mart.ablk"
 
 MahoganyDeptStore3F_Blocks:
-	INCBIN "maps/DeptStore3F.ablk"
+	INCBIN "maps/DeptStore3F.8x4.mart.ablk"
 
 MahoganyDeptStore4F_Blocks:
-	INCBIN "maps/DeptStore4F.ablk"
+	INCBIN "maps/DeptStore4F.8x4.mart.ablk"
 
 MahoganyDeptStore5F_Blocks:
-	INCBIN "maps/DeptStore5F.ablk"
+	INCBIN "maps/DeptStore5F.8x4.mart.ablk"
 
 MahoganyDeptStore6F_Blocks:
-	INCBIN "maps/DeptStore6F.ablk"
+	INCBIN "maps/DeptStore6F.8x4.mart.ablk"
 
 MahoganyDeptStoreElevator_Blocks:
-	INCBIN "maps/DeptStoreElevator.ablk"
+	INCBIN "maps/DeptStoreElevator.2x2.mart.ablk"
 
 Colosseum_Blocks:
 	INCBIN "maps/Colosseum.ablk"
@@ -444,8 +444,8 @@ LancesRoom_Blocks:
 HallOfFame_Blocks:
 	INCBIN "maps/HallOfFame.ablk"
 
-GoldenrodFlowerShop_Blocks:
-	INCBIN "maps/GoldenrodFlowerShop.ablk"
+CarnationFlowerShop_Blocks:
+	INCBIN "maps/CarnationFlowerShop.ablk"
 
 MahoganyDeptStoreRoof_Blocks:
 	INCBIN "maps/MahoganyDeptStoreRoof.ablk"

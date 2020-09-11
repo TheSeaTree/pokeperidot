@@ -41,3 +41,4 @@ Tilesets::
 	tileset TilesetJohtoCity
 	tileset TilesetMountain
 	tileset TilesetVolcano
+	tileset TilesetRoof

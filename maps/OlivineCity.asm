@@ -1,8 +1,17 @@
 	const_def 2 ; object constants
 	const OLIVINECITY_SAILOR1
-	const OLIVINECITY_STANDING_YOUNGSTER
+	const OLIVINECITY_YOUNGSTER
+	const OLIVINECITY_BEAUTY
 	const OLIVINECITY_SAILOR2
+	const OLIVINECITY_MACHOKE
 	const OLIVINECITY_OLIVINE_RIVAL
+	const OLIVINECITY_TUTOR
+	const OLIVINECITY_ITEMBALL
+	const OLIVINECITY_ROCK1
+	const OLIVINECITY_ROCK2
+	const OLIVINECITY_ROCK3
+	const OLIVINECITY_ROCK4
+	const OLIVINECITY_ROCK5
 
 OlivineCity_MapScripts:
 	db 2 ; scene scripts
@@ -76,20 +85,10 @@ OlivineCitySailor1Script:
 	jumptextfaceplayer OlivineCitySailor1Text
 
 OlivineCityStandingYoungsterScript:
-	faceplayer
-	opentext
-	random 2
-	ifequal 0, .FiftyFifty
-	writetext OlivineCityStandingYoungsterPokegearText
-	waitbutton
-	closetext
-	end
-
-.FiftyFifty:
-	writetext OlivineCityStandingYoungsterPokedexText
-	waitbutton
-	closetext
-	end
+	jumptextfaceplayer OlivineCityYoungsterText
+	
+OlivineCityBeautyScript:
+	jumptextfaceplayer OlivineCityBeautyText
 	
 OlivineCityMoveTutor:
 	faceplayer
@@ -133,6 +132,23 @@ OlivineCityMoveTutor:
 OlivineCitySailor2Script:
 	jumptextfaceplayer OlivineCitySailor2Text
 
+OlivineCityMachokeScript:
+	opentext
+	writetext OlivineMachokeText
+	cry MACHOKE
+	waitbutton
+	closetext
+	end
+
+OlivineCityStarPiece:
+	itemball STAR_PIECE
+
+OlivineCityHiddenCarbos:
+	hiddenitem CARBOS, EVENT_OLIVINE_CITY_HIDDEN_CARBOS
+
+OlivineCitySmashRock:
+	jumpstd smashrock
+
 OlivineCitySign:
 	jumptext OlivineCitySignText
 
@@ -142,17 +158,8 @@ OlivineCityPortSign:
 OlivineLabSign:
 	jumptext OlivineLabSignText
 
-OlivineLighthouseSign:
-	jumptext OlivineLighthouseSignText
-
-OlivineCityBattleTowerSign:
-	jumptext OlivineCityBattleTowerSignText
-
 OlivineCitySurfHouseSign:
 	jumptext OlivineSurfHouseSignText
-
-OlivineCityMartSign:
-	jumpstd martsign
 
 MovementData_0x1a88d2:
 	step DOWN
@@ -234,81 +241,73 @@ OlivineCityRivalAfterText:
 	done
 
 OlivineCitySailor1Text:
-	text "Dark roads are"
-	line "dangerous at"
-	cont "night."
-
-	para "But in the pitch-"
-	line "black of night,"
-
-	para "the sea is even"
-	line "more treacherous!"
-
-	para "Without the beacon"
-	line "of the LIGHTHOUSE"
-
-	para "to guide it, no"
-	line "ship can sail."
+	text "I really needed a"
+	line "break."
+	
+	para "Do me a favor,"
+	line "kid."
+	
+	para "Become the best"
+	line "trainer you can be"
+	cont "so you don't have"
+	cont "to lug around"
+	cont "cargo every day."
 	done
 
-OlivineCityStandingYoungsterPokegearText:
-	text "That thing you"
-	line "have--it's a #-"
-	cont "GEAR, right? Wow,"
-	cont "that's cool."
+OlivineCityYoungsterText:
+	text "I wanted to visit"
+	line "the beach to get"
+	cont "away from all of"
+	cont "the trainers."
+	
+	para "It's so much more"
+	line "calm here."
 	done
-
-OlivineCityStandingYoungsterPokedexText:
-	text "Wow, you have a"
-	line "#DEX!"
-
-	para "That is just so"
-	line "awesome."
+	
+OlivineCityBeautyText:
+	text "Did PROF. MAPLE"
+	line "give you a #-"
+	cont "DEX?"
+	
+	para "Her dad gave me"
+	line "mine when I bec-"
+	cont "ame a trainer!"
 	done
 
 OlivineCitySailor2Text:
-	text "The sea is sweet!"
-
-	para "Sunsets on the sea"
-	line "are marvelous!"
-
-	para "Sing with me! "
-	line "Yo-ho! Blow the"
-	cont "man down!…"
+	text "I love the sea!"
+	
+	para "But I like to get"
+	line "my feet on solid"
+	cont "ground to train"
+	cont "and get stronger!"
+	
+	para "MACHOKE and I like"
+	line "to break up any"
+	cont "rocks that wash"
+	cont "up on shore."
+	done
+	
+OlivineMachokeText:
+	text "MACHOKE: Guooh"
+	line "gogogoh!"
 	done
 
 OlivineCitySignText:
-	text "OLIVINE CITY"
+	text "RUGOSA COAST"
 
-	para "The Port Closest"
-	line "to Foreign Lands"
+	para "The Port of"
+	line "Champions"
 	done
 
 OlivineCityPortSignText:
-	text "OLIVINE PORT"
-	line "FAST SHIP PIER"
+	text "RUGOSA PORT"
 	done
 
 OlivineLabSignText:
 	text "MAPLE #MON LAB"
 	done
 
-OlivineLighthouseSignText:
-	text "OLIVINE LIGHTHOUSE"
-	line "Also known as the"
-	cont "GLITTER LIGHTHOUSE"
-	done
-
-OlivineCityBattleTowerSignText:
-	text "BATTLE TOWER AHEAD"
-	line "Opening Now!"
-	done
-
-OlivineCityBattleTowerSignText_NotYetOpen:
-; unused; originally shown when the Battle Tower was closed
-	text "BATTLE TOWER AHEAD"
-	done
-	
 OlivineCityTutorText:
 	text "Brr…"
 	
@@ -379,18 +378,24 @@ OlivineCity_MapEvents:
 	db 1 ; coord events
 	coord_event 17,  6, SCENE_DEFAULT, OlivineCityRivalSceneTop
 
-	db 7 ; bg events
+	db 5 ; bg events
 	bg_event 18, 14, BGEVENT_READ, OlivineCitySign
 	bg_event 26, 12, BGEVENT_READ, OlivineCityPortSign
 	bg_event  8, 12, BGEVENT_READ, OlivineLabSign
-	bg_event 23, 31, BGEVENT_READ, OlivineLighthouseSign
-	bg_event 21, 31, BGEVENT_READ, OlivineCityBattleTowerSign
 	bg_event 12, 18, BGEVENT_READ, OlivineCitySurfHouseSign
-	bg_event 24, 31, BGEVENT_READ, OlivineCityMartSign
+	bg_event 11, 27, BGEVENT_ITEM, OlivineCityHiddenCarbos
 
-	db 5 ; object events
-	object_event 11, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
-	object_event 23, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
-	object_event 35, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	db 13 ; object events
+	object_event 22, 11, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1
+	object_event 21, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OlivineCityStandingYoungsterScript, -1
+	object_event 15, 12, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, OlivineCityBeautyScript, -1
+	object_event 14, 22, SPRITE_SAILOR, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor2Script, -1
+	object_event 13, 22, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMachokeScript, -1
 	object_event 17,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
-	object_event 28, 28, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMoveTutor, -1 ; Icy Wind tutor
+	object_event 25, 24, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityMoveTutor, -1 ; Icy Wind tutor
+	object_event  6, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCityStarPiece, EVENT_OLIVINE_CITY_STAR_PIECE
+	object_event 15, 24, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySmashRock, -1
+	object_event 12, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySmashRock, -1
+	object_event 11, 23, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySmashRock, -1
+	object_event  9, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySmashRock, -1
+	object_event  8, 26, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySmashRock, -1

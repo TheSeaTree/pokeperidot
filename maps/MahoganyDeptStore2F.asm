@@ -13,19 +13,19 @@ MahoganyDeptStore2F_MapScripts:
 MahoganyDeptStore2FClerk1Script:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_1
+	pokemart MARTTYPE_STANDARD, MART_DEPT_STORE_2F_1
 	closetext
 	end
 
 MahoganyDeptStore2FClerk2Script:
 	faceplayer
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_GOLDENROD_2F_2
+	pokemart MARTTYPE_STANDARD, MART_DEPT_STORE_2F_2
 	closetext
 	end
 
-MahoganyDeptStore2FYoungsterScript:
-	jumptextfaceplayer MahoganyDeptStore2FYoungsterText
+MahoganyDeptStore2FTeacherScript:
+	jumptextfaceplayer MahoganyDeptStore2FTeacherText
 
 MahoganyDeptStore2FCooltrainerFScript:
 	jumptextfaceplayer MahoganyDeptStore2FCooltrainerFText
@@ -39,55 +39,37 @@ MahoganyDeptStore2FDirectory:
 MahoganyDeptStore2FElevatorButton:
 	jumpstd elevatorbutton
 
-MahoganyDeptStore2FUnusedText1:
-; unused
-	text "We intend to sell"
-	line "items for #MON"
-	cont "to hold."
-
-	para "This is a free"
-	line "gift. Have a #-"
-	cont "MON hold it."
-	done
-
-MahoganyDeptStore2FUnusedText2:
-; unused
-	text "By giving #MON"
-	line "items to hold, I"
-
-	para "bet trainers will"
-	line "develop new battle"
-	cont "techniques."
-	done
-
-MahoganyDeptStore2FYoungsterText:
-	text "#GEAR can store"
-	line "up to ten phone"
-	cont "numbers."
-
-	para "It's hard to de-"
-	line "cide which numbers"
-	cont "to keep."
+MahoganyDeptStore2FTeacherText:
+	text "There's such a big"
+	line "selection. I don't"
+	cont "know what to buy!"
 	done
 
 MahoganyDeptStore2FCooltrainerFText:
-	text "I got my ABRA at"
-	line "the GAME CORNER."
+	text "This DEPT.STORE is"
+	line "huge. but it is"
+	cont "really lacking in"
+	cont "specialty items."
 
-	para "Now it's my best"
-	line "partner."
+	para "I guess I'll just"
+	line "have to go else-"
+	cont "where for those."
 	done
 
 MahoganyDeptStore2FGentlemanText:
-	text "This DEPT.STORE"
-	line "makes me realize"
+	text "Can you believe"
+	line "this building used"
+	cont "to be a TRAIN"
+	cont "STATION?"
 
-	para "that GOLDENROD is"
-	line "a big city."
+	para "The POWER PLANT"
+	line "ADMIN decided a"
+	cont "DEPT.STORE would"
+	cont "use up much less"
+	cont "energy."
 
-	para "The selection here"
-	line "is unmatched any-"
-	cont "where else."
+	para "Most trainers just"
+	line "FLY here, anyway."
 	done
 
 MahoganyDeptStore2FDirectoryText:
@@ -115,6 +97,6 @@ MahoganyDeptStore2F_MapEvents:
 	db 5 ; object events
 	object_event 13,  5, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FClerk1Script, -1
 	object_event 13,  6, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FClerk2Script, -1
-	object_event  9,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FYoungsterScript, -1
+	object_event  9,  6, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FTeacherScript, -1
 	object_event  6,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FCooltrainerFScript, -1
 	object_event  2,  6, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore2FGentlemanScript, -1

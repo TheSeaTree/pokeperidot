@@ -33,29 +33,36 @@ MahoganyDeptStore1FReceptionistText:
 	done
 
 MahoganyDeptStore1FGentlemanText:
-	text "The DEPT.STORE"
-	line "has a decent se-"
-	cont "lection."
-
-	para "But some items"
-	line "are only available"
-
-	para "as GAME CORNER"
-	line "prizes."
+	text "The three siblings"
+	line "who sell items on"
+	cont "the ROOFTOP work"
+	cont "in shifts."
+	
+	para "You'll need to"
+	line "visit at different"
+	cont "times of day if"
+	cont "want to see each"
+	cont "of them."
 	done
 
 MahoganyDeptStore1FPokefanFText:
-	text "I'm raring to shop"
-	line "again today!"
+	text "I love to shop!"
+	
+	para "The sheer size of"
+	line "this store can be"
+	cont "intimidating to"
+	cont "some, but I see it"
+	cont "as a challenge!"
 	done
 
 MahoganyDeptStore1FBugCatcherText:
-	text "Mom's good at"
-	line "bargain hunting."
-
-	para "She always buys"
-	line "stuff at lower"
-	cont "prices."
+	text "Mom takes me out"
+	line "shopping all the"
+	cont "time."
+	
+	para "She always gets me"
+	line "a present for"
+	cont "coming along!"
 	done
 
 MahoganyDeptStore1FDirectoryText:
@@ -69,7 +76,7 @@ MahoganyDeptStore1FDirectoryText:
 
 	para "4F MEDICINE BOX"
 
-	para "5F ACCESSORIES"
+	para "5F DECORATIONS"
 
 	para "6F TRANQUIL SQUARE"
 

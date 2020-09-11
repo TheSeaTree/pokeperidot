@@ -53,6 +53,19 @@ PalletGroupSprites:
 ; Route1, PalletTown
 PewterGroupSprites:
 ; Route3, PewterCity
+	db SPRITE_BUG_CATCHER
+	db SPRITE_SCIENTIST
+	db SPRITE_SUPER_NERD
+	db SPRITE_CLERK
+	db SPRITE_YOUNGSTER
+	db SPRITE_POKEFAN_F
+	db SPRITE_LASS
+	db SPRITE_ROCKER
+	db SPRITE_COOLTRAINER_F
+	; limit 9 of 9 walking sprites
+	db SPRITE_FISHER
+	db 0 ; end
+
 CinnabarGroupSprites:
 ; Route19, Route20, Route21, CinnabarIsland
 	db SPRITE_TEACHER
@@ -331,6 +344,7 @@ OlivineGroupSprites:
 	db SPRITE_BOULDER
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
+	db SPRITE_MACHOP
 	db SPRITE_ROCK
 	db 0 ; end
 

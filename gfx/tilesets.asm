@@ -42,6 +42,9 @@ INCLUDE "data/tilesets/players_room_collision.asm"
 TilesetLighthouseAttr:
 INCBIN "data/tilesets/lighthouse_attributes.bin"
 
+TilesetGameCornerColl:
+INCLUDE "data/tilesets/game_corner_collision.asm"
+
 
 SECTION "Tileset Data 2", ROMX
 
@@ -117,8 +120,6 @@ INCBIN "gfx/tilesets/game_corner.2bpp.lz"
 TilesetGameCornerMeta:
 INCBIN "data/tilesets/game_corner_metatiles.bin"
 
-TilesetGameCornerColl:
-INCLUDE "data/tilesets/game_corner_collision.asm"
 
 TilesetTrainStationGFX:
 INCBIN "gfx/tilesets/train_station.2bpp.lz"
@@ -288,6 +289,18 @@ INCLUDE "data/tilesets/mountain_collision.asm"
 
 TilesetVolcanoColl:
 INCLUDE "data/tilesets/volcano_collision.asm"
+
+TilesetRoofGFX:
+INCBIN "gfx/tilesets/roof.2bpp.lz"
+
+TilesetRoofMeta:
+INCBIN "data/tilesets/roof_metatiles.bin"
+
+TilesetRoofAttr:
+INCBIN "data/tilesets/roof_attributes.bin"
+
+TilesetRoofColl:
+INCLUDE "data/tilesets/roof_collision.asm"
 
 
 SECTION "Tileset Data 9", ROMX

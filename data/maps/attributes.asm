@@ -278,7 +278,7 @@ ENDM
 	map_attributes GoldenrodHappinessRater, GOLDENROD_HAPPINESS_RATER, $00, 0
 	map_attributes BillsFamilysHouse, BILLS_FAMILYS_HOUSE, $00, 0
 	map_attributes GoldenrodMagnetTrainStation, GOLDENROD_MAGNET_TRAIN_STATION, $00, 0
-	map_attributes GoldenrodFlowerShop, GOLDENROD_FLOWER_SHOP, $00, 0
+	map_attributes CarnationFlowerShop, CARNATION_FLOWER_SHOP, $00, 0
 	map_attributes GoldenrodPPSpeechHouse, GOLDENROD_PP_SPEECH_HOUSE, $00, 0
 	map_attributes GoldenrodNameRater, GOLDENROD_NAME_RATER, $00, 0
 	map_attributes MahoganyDeptStore1F, MAHOGANY_DEPT_STORE_1F, $00, 0

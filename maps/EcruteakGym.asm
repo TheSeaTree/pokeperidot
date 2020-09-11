@@ -513,29 +513,37 @@ PicnickerTerryAfterText:
 	done
 
 PicnickerBrittanyText:
-	text "I am a"
-	line "#MON trainer."
+	text "Let me rope you"
+	line "into a battle!"
 	done
 
 PicnickerBrittanyWinText:
-	text "I lost."
+	text "Aw! You tripped up"
+	line "all of my #MON!"
 	done
 
 PicnickerBrittanyAfterText:
-	text "I lost."
+	text "I couldn't help"
+	line "the puns. I just"
+	cont "love vines! Hehe!"
 	done
 
 PokefanMLesterText:
-	text "I am a"
-	line "#MON trainer."
+	text "As a kid, I was a"
+	line "BUG CATCHER!"
 	done
 	
 PokefanMLesterWinText:
-	text "I lost."
+	text "Careful! My part-"
+	line "ners are very del-"
+	cont "icate!"
 	done
 	
 PokefanMLesterAfterText:
-	text "I lost."
+	text "Some day I will"
+	line "show the world"
+	cont "how strong a BUG-"
+	cont "type can be!"
 	done
 	
 EcruteakGymGuyText:
