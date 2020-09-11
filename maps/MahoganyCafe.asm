@@ -6,11 +6,18 @@
 MahoganyCafe_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .Tiles
+	
+.Tiles:
+	changeblock   6, 4, $3e
+	changeblock  10, 6, $41
+	changeblock  12, 6, $3f
+	return
 
 MahoganyCafeClerkScript:
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_VIOLET
+	pokemart MARTTYPE_DRINKS, MART_MAHOGANY
 	closetext
 	end
 
@@ -22,20 +29,11 @@ MahoganyCafeVendingMachine:
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
-	ifequal 1, .PokeBall
-	ifequal 2, .GreatBall
+	ifequal 1, .GreatBall
+	ifequal 2, .EnergyPowder
 	ifequal 3, .RageCandyBar
 	closetext
 	end
-
-.PokeBall:
-	checkmoney YOUR_MONEY, 200
-	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem POKE_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 200
-	itemtotext POKE_BALL, MEM_BUFFER_0
-	jump .VendItem
 	
 .GreatBall:
 	checkmoney YOUR_MONEY, 600
@@ -44,6 +42,15 @@ MahoganyCafeVendingMachine:
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 600
 	itemtotext GREAT_BALL, MEM_BUFFER_0
+	jump .VendItem
+	
+.EnergyPowder:
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem ENERGYPOWDER
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 500
+	itemtotext ENERGYPOWDER, MEM_BUFFER_0
 	jump .VendItem
 
 .RageCandyBar:
@@ -85,16 +92,16 @@ MahoganyCafeVendingMachine:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "POKE BALL    ¥200@"
 	db "GREAT BALL   ¥600@"
+	db "ENERGYPOWDER ¥500@"
 	db "RAGECANDYBAR ¥800@"
 	db "CANCEL@"
 
-MahoganyCafeFisher:
-	jumptextfaceplayer MahoganyCafeFisherText
+MahoganyCafeCooltrainerM:
+	jumptextfaceplayer MahoganyCafeCooltrainerMText
 
-MahoganyCafeLass:
-	jumptextfaceplayer MahoganyCafeLassText
+MahoganyCafeBeauty:
+	jumptextfaceplayer MahoganyCafeBeautyText
 
 MahoganyCafeYoungster:
 	jumptextfaceplayer MahoganyCafeYoungsterText
@@ -102,8 +109,8 @@ MahoganyCafeYoungster:
 MahoganyCafeSailor:
 	jumptextfaceplayer MahoganyCafeSailorText
 	
-MahoganyCafeGramps:
-	jumptextfaceplayer MahoganyCafeGrampsText
+MahoganyCafeScientist:
+	jumptextfaceplayer MahoganyCafeScientistText
 	
 MahoganyCafeChef:
 	jumptextfaceplayer MahoganyCafeChefText
@@ -142,83 +149,69 @@ MahoganyCafeVendingNoSpaceText:
 	line "room for stuff…"
 	done
 
-MahoganyCafeGrannyText:
-	text "It is important to"
-	line "treat your #MON"
-	cont "with respect."
-	
-	para "It will never grow"
-	line "to love you if you"
-	cont "keep sending it"
-	cont "out into battles"
-	cont "it can't win!"
-	done
-
-MahoganyCafeTwinText:
-	text "I'm not a trainer."
-	
-	para "I just like coming"
-	line "here to look at"
-	cont "all of the #MON"
-	cont "merchandise."
-	done
-	
 MahoganyCafeSailorText:
-	text "Mmm-mm!"
-	
-	para "I love the food"
-	line "here! It's just"
-	cont "like my mom used"
-	cont "to make!"
+	text "This place can be"
+	line "quite busy some-"
+	cont "times, but the"
+	cont "food they serve is"
+	cont "worth the wait!"
 	done
 	
-MahoganyCafeGrampsText:
-	text "I have been coming"
-	line "to this place ever"
-	cont "since it opened."
+MahoganyCafeScientistText:
+	text "These drinks taste"
+	line "much better than"
+	cont "the ones sold in"
+	cont "the POWER PLANT's"
+	cont "machines."
 	
-	para "I can't help but"
-	line "admire the beauti-"
-	cont "ful waitress!"
+	para "It must be the"
+	line "glass bottles."
 	done
 	
 MahoganyCafeChefText:
-	text "Are you a trainer?"
-	line "I'm sorry, but we"
-	cont "only serve food to"
-	cont "people here."
+	text "You are welcome to"
+	line "visit the bar, but"
+	cont "this establishment"
+	cont "only serves food"
+	cont "to people."
 	
-	para "If you'd like, you"
-	line "can get something"
-	cont "for your #MON"
-	cont "at the bar."
+	para "#MON must stay"
+	line "inside a BALL at"
+	cont "all times."
 	done
 	
-MahoganyCafeFisherText:
-	text "I always look for-"
-	line "ward to the SWEET"
-	cont "TEA served here."
+MahoganyCafeCooltrainerMText:
+	text "I make sure to buy"
+	line "a few extra drinks"
+	cont "every time I come"
+	cont "here."
 	
-	para "It really keeps me"
-	line "going when I'm out"
-	cont "at sea!"
+	para "I give them to my"
+	line "#MON as treats!"
 	done
 	
-MahoganyCafeLassText:
-	text "Do you mind? I am"
-	line "trying to enjoy a"
-	cont "meal with my"
-	cont "boyfriend."
+MahoganyCafeBeautyText:
+	text "My boyfriend likes"
+	line "to take me here,"
+	cont "but it's always"
+	cont "busy."
+	
+	para "I don't want to"
+	line "wait so long when"
+	cont "I'm this hungry!"
 	done
 	
 MahoganyCafeYoungsterText:
-	text "I need to stop"
-	line "taking my girl-"
-	cont "friend out to eat."
+	text "This is my favor-"
+	line "ite place to sit."
 	
-	para "She can eat so"
-	line "much, it is a real"
-	cont "pain in my wallet!"
+	para "I can see everyone"
+	line "who enters while I"
+	cont "eat."
+
+	para "It's fun to see all"
+	line "the different kinds"
+	cont "of tourists!"
 	done
 
 MahoganyCafeFridgeText:
@@ -247,12 +240,12 @@ MahoganyCafe_MapEvents:
 	bg_event 13,  1, BGEVENT_READ, MahoganyCafeFridge
 	bg_event  6,  1, BGEVENT_READ, MahoganyCafeTrash
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event  9,  1, SPRITE_CHEF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeChef, -1
 	object_event  0,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeClerkScript, -1
-	object_event  2,  1, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeGramps, -1
-	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeFisher, -1
-	object_event 13,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeYoungster, -1
-	object_event 10,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyCafeLass, -1
+	object_event  2,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyCafeScientist, -1
+	object_event  2,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyCafeCooltrainerM, -1
+	object_event  9,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyCafeBeauty, -1
+	object_event 13,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyCafeYoungster, -1
 	object_event 12,  7, SPRITE_FOOD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyCafeSailor, -1
+	object_event  6,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyCafeSailor, -1

@@ -5,6 +5,32 @@ MahoganyApartment1F_MapScripts:
 
 	db 0 ; callbacks
 	
+MahoganyApartmentReceptionistScript:
+	jumptextfaceplayer MahoganyApartmentReceptionistText
+	
+MahoganyApartmentYoungsterScript:
+	jumptextfaceplayer MahoganyApartmentYoungsterText
+
+MahoganyApartmentReceptionistText:
+	text "Welcome to the"
+	line "RUGOSA HOTEL."
+	
+	para "Unfortunately, we"
+	line "have no vacancies"
+	cont "at the moment."
+	done
+
+MahoganyApartmentYoungsterText:
+	text "This couch is more"
+	line "comfortable than"
+	cont "the one up in my"
+	cont "room. I could sit"
+	cont "here all day!"
+	
+	para "You're welcome to"
+	line "join me."
+	done
+	
 MahoganyApartment1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -17,5 +43,6 @@ MahoganyApartment1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
-;	object_event  2,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AzaleaApartmentLeftGuard1Script, -1
+	db 2 ; object events
+	object_event  2,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyApartmentReceptionistScript, -1
+	object_event 10,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyApartmentYoungsterScript, -1

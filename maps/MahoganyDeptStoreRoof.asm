@@ -122,12 +122,12 @@ MahoganyDeptStoreRoofYoungsterScript:
 	writetext MahoganyDeptStoreRoofYoungsterOhWowText
 	waitbutton
 	closetext
-	turnobject MAHOGANYDEPTSTOREROOF_SUPER_NERD, UP
+	turnobject MAHOGANYDEPTSTOREROOF_YOUNGSTER, UP
 	opentext
 	writetext MahoganyDeptStoreRoofYoungsterQuitBotheringMeText
 	waitbutton
 	closetext
-	turnobject MAHOGANYDEPTSTOREROOF_SUPER_NERD, RIGHT
+	turnobject MAHOGANYDEPTSTOREROOF_YOUNGSTER, RIGHT
 	end
 
 MahoganyDeptStoreRoofSuperNerdScript:
@@ -326,13 +326,13 @@ MahoganyDeptStoreRoof_MapEvents:
 	bg_event  7,  4, BGEVENT_UP, PokeDollVendingMachine
 
 	db 10 ; object events
-	object_event  9,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofMorningClerkScript, -1
+	object_event  9,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, MORN, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofMorningClerkScript, -1
 	object_event  5,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofScientistScript, -1
 	object_event 10,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 2, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofSuperNerdScript, -1
-	object_event 10, 10, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofDayClerkScript, -1
+	object_event 10, 10, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofDayClerkScript, -1
 	object_event 18, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofYoungsterScript, -1
 	object_event 14,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofPokefanFScript, -1
-	object_event  6,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofNightClerkScript, -1
+	object_event  6,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, NITE, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofNightClerkScript, -1
 	object_event 13,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 1, 0, -1, NITE, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofLassScript, -1
 	object_event 17,  9, SPRITE_ROCKER, SPRITEMOVEDATA_WANDER, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofRockerScript, -1
 	object_event  6,  5, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofFisherScript, -1

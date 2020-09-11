@@ -161,10 +161,8 @@ GoldenrodMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
 	
 VioletCafe_Blocks:
-	INCBIN "maps/VioletCafe.ablk"
-	
 MahoganyCafe_Blocks:
-	INCBIN "maps/MahoganyCafe.ablk"
+	INCBIN "maps/VioletCafe.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"

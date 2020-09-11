@@ -7,9 +7,9 @@ MahoganyDeptStore6F_MapScripts:
 
 	db 0 ; callbacks
 
-MahoganyVendingMachine:
+MahoganyDeptStoreVendingMachine:
 	opentext
-	writetext MahoganyVendingText
+	writetext MahoganyDeptStoreVendingText
 .Start:
 	special PlaceMoneyTopRight
 	loadmenu .MenuHeader
@@ -51,18 +51,18 @@ MahoganyVendingMachine:
 .VendItem:
 	pause 10
 	playsound SFX_ENTER_DOOR
-	writetext MahoganyClangText
+	writetext MahoganyDeptStoreClangText
 	buttonsound
 	itemnotify
 	jump .Start
 
 .NotEnoughMoney:
-	writetext MahoganyVendingNoMoneyText
+	writetext MahoganyDeptStoreVendingNoMoneyText
 	waitbutton
 	jump .Start
 
 .NotEnoughSpace:
-	writetext MahoganyVendingNoSpaceText
+	writetext MahoganyDeptStoreVendingNoSpaceText
 	waitbutton
 	jump .Start
 
@@ -98,12 +98,12 @@ MahoganyDeptStore6FDirectory:
 MahoganyDeptStore6FElevatorButton:
 	jumpstd elevatorbutton
 
-MahoganyVendingText:
+MahoganyDeptStoreVendingText:
 	text "A vending machine!"
 	line "Here's the menu."
 	done
 
-MahoganyClangText:
+MahoganyDeptStoreClangText:
 	text "Clang! A can of"
 	line "@"
 	text_ram wStringBuffer3
@@ -111,12 +111,12 @@ MahoganyClangText:
 	cont "popped out!"
 	done
 
-MahoganyVendingNoMoneyText:
+MahoganyDeptStoreVendingNoMoneyText:
 	text "Oops, not enough"
 	line "money."
 	done
 
-MahoganyVendingNoSpaceText:
+MahoganyDeptStoreVendingNoSpaceText:
 	text "There's no more"
 	line "room for stuff."
 	done
@@ -186,9 +186,9 @@ MahoganyDeptStore6F_MapEvents:
 	db 5 ; bg events
 	bg_event 14,  0, BGEVENT_READ, MahoganyDeptStore6FDirectory
 	bg_event  3,  0, BGEVENT_READ, MahoganyDeptStore6FElevatorButton
-	bg_event  8,  1, BGEVENT_UP, MahoganyVendingMachine
-	bg_event  9,  1, BGEVENT_UP, MahoganyVendingMachine
-	bg_event 11,  1, BGEVENT_UP, MahoganyVendingMachine
+	bg_event  8,  1, BGEVENT_UP, MahoganyDeptStoreVendingMachine
+	bg_event  9,  1, BGEVENT_UP, MahoganyDeptStoreVendingMachine
+	bg_event 11,  1, BGEVENT_UP, MahoganyDeptStoreVendingMachine
 
 	db 4 ; object events
 	object_event 10,  2, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStore6FLassScript, -1

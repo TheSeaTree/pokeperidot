@@ -2,6 +2,7 @@
 	const MAHOGANYTOWN_LASS
 	const MAHOGANYTOWN_YOUNGSTER
 	const MAHOGANYTOWN_FISHER
+	const MAHOGANYTOWN_TWIN
 	const MAHOGANYTOWN_SAILOR
 	const MAHOGANYTOWN_COOLTRAINER
 	const MAHOGANYTOWN_JOEL
@@ -228,6 +229,95 @@ MahoganyTownGrimer2Battle:
 	waitbutton
 	closetext
 	end
+	
+MahoganyVendingMachine:
+	opentext
+	writetext MahoganyVendingText
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Magikarp
+	ifequal 2, .Poliwag
+	ifequal 3, .Starmie
+	closetext
+	end
+	
+.Magikarp:
+	checkmoney YOUR_MONEY, 700
+	ifequal HAVE_LESS, .NotEnoughMoney
+	checkevent EVENT_DECO_MAGIKARP_DOLL
+	iftrue .AlreadyHave
+	takemoney YOUR_MONEY, 700
+	special PlaceMoneyTopRight
+	setevent EVENT_DECO_MAGIKARP_DOLL
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext MahoganyClangTextMagikarpDoll
+	special PlaceMoneyTopRight
+	buttonsound
+	writetext SentMagikarpDollHome
+	buttonsound
+	end
+	
+.Poliwag:
+	checkmoney YOUR_MONEY, 1200
+	ifequal HAVE_LESS, .NotEnoughMoney
+	checkevent EVENT_DECO_POLIWAG_DOLL
+	iftrue .AlreadyHave
+	takemoney YOUR_MONEY, 1200
+	special PlaceMoneyTopRight
+	setevent EVENT_DECO_POLIWAG_DOLL
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext MahoganyClangTextPoliwagDoll
+	special PlaceMoneyTopRight
+	buttonsound
+	writetext SentPoliwagDollHome
+	buttonsound
+	end
+
+.Starmie:
+	checkmoney YOUR_MONEY, 1200
+	ifequal HAVE_LESS, .NotEnoughMoney
+	checkevent EVENT_DECO_STARMIE_DOLL
+	iftrue .AlreadyHave
+	takemoney YOUR_MONEY, 1200
+	special PlaceMoneyTopRight
+	setevent EVENT_DECO_STARMIE_DOLL
+	pause 10
+	playsound SFX_ENTER_DOOR
+	writetext MahoganyClangTextStarmieDoll
+	special PlaceMoneyTopRight
+	buttonsound
+	writetext SentStarmieDollHome
+	buttonsound
+	end
+
+.NotEnoughMoney:
+	writetext MahoganyVendingNoMoneyText
+	waitbutton
+	jump .Start
+	
+.AlreadyHave:
+	writetext MahoganyVendingAlreadyHaveText
+	waitbutton
+	jump .Start
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "MAGIKARP    ¥4500@"
+	db "POLIWAG     ¥5000@"
+	db "STARMIE     ¥6000@"
+	db "CANCEL@"
 
 MahoganyTownLass:
 	jumptextfaceplayer MahoganyTownLassText
@@ -238,6 +328,9 @@ MahoganyTownYoungster:
 MahoganyTownFisher:
 	jumptextfaceplayer MahoganyTownFisherText
 	
+MahoganyTownTwin:
+	jumptextfaceplayer MahoganyTownTwinText
+	
 MahoganyTownSailor:
 	jumptextfaceplayer MahoganyTownSailorText
 	
@@ -246,6 +339,12 @@ MahoganyTownCooltrainerM:
 	
 MahoganyMoveManagersHouse:
 	jumptext MoveManagersHouseText
+	
+MahoganyTownSign:
+	jumptext MahoganyTownSignText
+	
+MahoganyDeptStoreSign:
+	jumptext MahoganyDeptStoreSignText
 	
 MahoganyPowerPlantSign:
 	jumptext MahoganyPowerPlantSignText
@@ -441,6 +540,73 @@ MahoganyTownOfficerHealText:
 	para "I have plenty of"
 	line "POTIONs to share."
 	done
+
+MahoganyVendingText:
+	text "A vending machine!"
+	line "It sells DOLLs."
+	done
+
+MahoganyClangText:
+	text "Clang!"
+
+	para "@"
+	text_from_ram wStringBuffer3
+	text_start
+	line "popped out."
+	done
+	
+MahoganyAnythingElseText:
+	text "Anything else?"
+	done
+	
+MahoganyVendingNoMoneyText:
+	text "Oops, not enough"
+	line "money…"
+	done
+
+MahoganyVendingAlreadyHaveText:
+	text "You already have"
+	line "that DOLL."
+	done
+	
+MahoganyClangTextMagikarpDoll:
+	text "Clang!"
+
+	para "The MAGIKARP DOLL"
+	line "popped out."
+	done
+	
+SentMagikarpDollHome:
+	text "The MAGIKARP DOLL"
+	line "was sent to"
+	cont "<PLAYER>'s home."
+	done
+	
+MahoganyClangTextPoliwagDoll:
+	text "Clang!"
+
+	para "The POLIWAG DOLL"
+	line "popped out."
+	done
+	
+SentPoliwagDollHome:
+	text "The POLIWAG DOLL"
+	line "was sent to"
+	cont "<PLAYER>'s home."
+	done
+	
+MahoganyClangTextStarmieDoll:
+	text "Clang!"
+
+	para "The STARMIE DOLL"
+	line "popped out."
+	done
+	
+SentStarmieDollHome:
+	text "The STARMIE DOLL"
+	line "was sent to"
+	cont "<PLAYER>'s home."
+	done
 	
 MahoganyTownLassText:
 	text "It is way too exp-"
@@ -483,6 +649,15 @@ MahoganyTownFisherText:
 	line "good…"
 	done
 	
+MahoganyTownTwinText:
+	text "I want to collect"
+	line "all the dolls!"
+	
+	para "I'll save up my"
+	line "allowance for"
+	cont "them!"
+	done
+	
 MahoganyTownSailorText:
 	text "Hey! Don't you dare"
 	line "touch my truck. I"
@@ -503,6 +678,18 @@ MahoganyTownCooltrainerMText:
 	cont "MON LEAGUE without"
 	cont "the best moveset"
 	cont "possible!"
+	done
+	
+MahoganyTownSignText:
+	text "RUGOSA CITY"
+	
+	para "The shining beacon"
+	line "of technology and"
+	cont "industry!"
+	done
+	
+MahoganyDeptStoreSignText:
+	text "RUGOSA DEPT.STORE"
 	done
 	
 MoveManagersHouseText:
@@ -532,15 +719,19 @@ MahoganyTown_MapEvents:
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
 
-	db 3 ; bg events
+	db 6 ; bg events
+	bg_event 24, 29, BGEVENT_UP, MahoganyTownSign
+	bg_event 11, 21, BGEVENT_UP, MahoganyDeptStoreSign
 	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 	bg_event 33,  9, BGEVENT_UP, MahoganyMoveManagersHouse
 	bg_event  4,  5, BGEVENT_UP, MahoganyPowerPlantSign
+	bg_event 22, 29, BGEVENT_UP, MahoganyVendingMachine
 
-	db 14 ; object events
+	db 15 ; object events
 	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
 	object_event  6, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownYoungster, -1
-	object_event 21, 30, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisher, -1
+	object_event 19, 31, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisher, -1
+	object_event 23, 30, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownTwin, -1
 	object_event  7, 19, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyTownSailor, -1
 	object_event 34, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownCooltrainerM, -1
 	object_event 24, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK

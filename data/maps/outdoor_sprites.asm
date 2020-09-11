@@ -380,6 +380,7 @@ MahoganyGroupSprites:
 	db SPRITE_OFFICER
 	; 9 of max 9 walking sprites
 	db SPRITE_SCIENTIST
+	db SPRITE_TWIN
 	db SPRITE_GRIMER
 	db SPRITE_MONSTER
 	db SPRITE_FRUIT_TREE

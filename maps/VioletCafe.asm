@@ -10,7 +10,7 @@ VioletCafe_MapScripts:
 
 VioletCafeClerkScript:
 	opentext
-	pokemart MARTTYPE_STANDARD, MART_VIOLET
+	pokemart MARTTYPE_DRINKS, MART_VIOLET
 	closetext
 	end
 

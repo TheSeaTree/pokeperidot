@@ -646,7 +646,14 @@ Rooftop_HowMayIHelpYouText::
 	line "browse my select-"
 	cont "ion of items?"
 	done
-
+	
+Drinks_HowMayIHelpYouText::
+	text "Welcome! Take a"
+	line "seat and let me"
+	cont "know what you'd"
+	cont "like to drink."
+	done
+	
 UnknownText_0x1c4f80::
 	text "Here you are."
 	line "Thank you!"

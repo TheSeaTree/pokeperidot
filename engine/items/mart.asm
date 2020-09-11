@@ -22,6 +22,8 @@ OpenMartDialog::
 	dw BargainShop
 	dw Pharmacist
 	dw RooftopSale
+	dw Robbed
+	dw Drinks
 
 MartDialog:
 	ld a, 0
@@ -69,6 +71,26 @@ Pharmacist:
 	call MartTextBox
 	call BuyMenu
 	ld hl, Text_Pharmacist_ComeAgain
+	call MartTextBox
+	ret
+
+Robbed:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_Pharmacist_Intro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_Pharmacist_ComeAgain
+	call MartTextBox
+	ret
+
+Drinks:
+	call FarReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_Mart_DrinksIntro
+	call MartTextBox
+	call BuyMenu
+	ld hl, Text_BargainShop_ComeAgain
 	call MartTextBox
 	ret
 
@@ -439,6 +461,8 @@ GetMartDialogGroup:
 	dwb .BargainShopPointers, 1
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 2
+	dwb .PharmacyPointers, 0
+	dwb .StandardMartPointers, 0
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -886,6 +910,10 @@ Text_Mart_HowMayIHelpYou:
 	
 Text_Mart_RooftopIntro:
 	text_jump Rooftop_HowMayIHelpYouText
+	db "@"
+	
+Text_Mart_DrinksIntro:
+	text_jump Drinks_HowMayIHelpYouText
 	db "@"
 
 MenuHeader_BuySell:

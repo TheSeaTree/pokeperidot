@@ -1,4 +1,5 @@
 	const_def 2 ; object constants
+	const MAHOGANYAPARTMENT3F_POKEFANM
 	const MAHOGANYAPARTMENT3F_GIRL
 	const MAHOGANYAPARTMENT3F_DOLL
 	const MAHOGANYAPARTMENT3F_MOM
@@ -50,6 +51,9 @@ MahoganyApartment3FMother:
 	
 .GotCurstraw
 	jumptextfaceplayer MahoganyApartment3FMotherAfter
+	
+MahoganyApartment3FPokefanM:
+	jumptextfaceplayer MahoganyApartment3FPokefanMText
 
 MahoganyApartment3FGirlText:
 	text "Sometimes at night"
@@ -114,6 +118,22 @@ MahoganyApartment3FMotherAfter:
 	line "telling the truth"
 	cont "after all."
 	done
+	
+MahoganyApartment3FPokefanMText:
+	text "I know it's rude to"
+	line "say, but I have a"
+	cont "weird feeling"
+	cont "about the family"
+	cont "that moved in next"
+	cont "door."
+	
+	para "Don't get me wrong,"
+	line "they are very nice"
+	cont "people. It's just…"
+	
+	para "A feeling,"
+	line "I suppose?"
+	done
 
 MahoganyApartment3F_MapEvents:
 	db 0, 0 ; filler
@@ -125,7 +145,8 @@ MahoganyApartment3F_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 4 ; object events
+	object_event  2,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyApartment3FPokefanM, -1
 	object_event  7,  7, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyApartment3FGirl, -1
 	object_event  6,  7, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_GOT_CURSTRAW
 	object_event 11,  5, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyApartment3FMother, -1
