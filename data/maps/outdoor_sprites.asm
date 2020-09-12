@@ -344,8 +344,10 @@ OlivineGroupSprites:
 	db SPRITE_BOULDER
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
+	db SPRITE_BUENA
 	db SPRITE_MACHOP
 	db SPRITE_ROCK
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 CianwoodGroupSprites:

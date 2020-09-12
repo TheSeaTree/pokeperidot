@@ -1,4 +1,4 @@
-	const_def 2 ; object constants
+gam	const_def 2 ; object constants
 
 MahoganyGate_MapScripts:
 	db 0 ; scene scripts
@@ -34,4 +34,4 @@ MahoganyGate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGateOfficerScript, -1
+	object_event  0,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGateOfficerScript, -1

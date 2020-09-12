@@ -26,7 +26,7 @@ MahoganyTown_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_MAHOGANY
 	return
-	
+
 .PowerPlant:
 	checkevent EVENT_POWER_PLANT_1F_MUK
 	iffalse .skip
@@ -153,6 +153,7 @@ MahoganyTownOfficerScript:
 	ifequal UP, .FacingUp
 	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerFacingLeftMovement
 	turnobject MAHOGANYTOWN_OFFICER1, UP
+	setevent EVENT_MAHOGANY_OFFICER_WITHDRAW
 	end
 
 .FacingUp
@@ -188,11 +189,13 @@ MahoganyTownGrimerBattle:
 	loadwildmon GRIMER, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
-	reloadmapafterbattle
-	moveobject MAHOGANYTOWN_OFFICER1, 25, 8
-	turnobject MAHOGANYTOWN_OFFICER1, LEFT
 	disappear MAHOGANYTOWN_GRIMER1
+	disappear MAHOGANYTOWN_OFFICER1
+	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
+	appear MAHOGANYTOWN_OFFICER1
+	reloadmapafterbattle
 	setevent EVENT_MAHOGANY_GRIMER
+;	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
 	applymovement MAHOGANYTOWN_OFFICER1, MahoganyOfficerToPlayerMovement
 	turnobject PLAYER, RIGHT
 	opentext

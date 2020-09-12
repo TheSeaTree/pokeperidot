@@ -73,6 +73,37 @@ MahoganyGym_MapScripts:
 	changeblock 12, 14, $62
 	changeblock 14, 14, $61
 .skipcables2
+	checkevent EVENT_MAHOGANY_GYM_SWITCH_4
+	iffalse .skipcables3
+	changeblock 12,  6, $6a
+	changeblock 12,  8, $4e
+	changeblock 12, 10, $52
+	changeblock 12, 14, $50
+	changeblock 14, 14, $4d
+	changeblock 16, 14, $5e
+	changeblock 18, 14, $66
+	changeblock 22, 14, $6c
+	changeblock 22, 16, $4c
+	changeblock 22, 20, $6c
+	changeblock 20, 20, $4d
+	changeblock 18, 20, $5e
+	changeblock 16, 20, $4e
+	changeblock 14, 18, $67
+	changeblock 12, 18, $68
+	changeblock 10, 18, $62
+	changeblock 10, 16, $60
+	changeblock 10, 14, $63
+	changeblock 12, 14, $50
+	changeblock 10, 10, $61
+	changeblock  8, 10, $65
+	changeblock  6, 10, $61
+	changeblock  4, 10, $62
+	changeblock  4,  8, $60
+	changeblock  2,  6, $69
+	changeblock  4, 14, $67
+	changeblock  6, 14, $5e
+	changeblock  8, 14, $4d
+.skipcables3
 	return
 	
 ElectricGymLeader:
@@ -86,7 +117,6 @@ ElectricGymLeader:
 	loadtrainer JOEL, JOEL1
 	startbattle
 	reloadmapafterbattle
-	setmapscene ECRUTEAK_CITY, SCENE_ECRUTEAKCITY_DONE
 	setevent EVENT_BEAT_SCIENTIST_ANDRE
 	setevent EVENT_BEAT_SCIENTIST_KURT
 	setevent EVENT_BEAT_SCIENTIST_DAVID
@@ -108,7 +138,6 @@ ElectricGymLeader:
 	verbosegiveitem TM_THUNDERBOLT
 	iffalse .NoRoomForThunderbolt
 	setevent EVENT_GOT_TM_THUNDERBOLT
-
 .GotThunderbolt:
 	writetext ThunderboltTMText
 	waitbutton
@@ -117,6 +146,11 @@ ElectricGymLeader:
 	end
 
 MahoganyGymPod1:
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	checkevent EVENT_BEAT_SCIENTIST_ANDRE
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST1, 13, 19
@@ -137,10 +171,6 @@ MahoganyGymPod1:
 	setevent EVENT_BEAT_SCIENTIST_ANDRE
 	end
 .NoBattle
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
 	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
@@ -207,6 +237,11 @@ MahoganyGymPod2:
 	end
 
 MahoganyGymPod3:
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	checkevent EVENT_BEAT_SCIENTIST_KURT
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST2, 19, 15
@@ -227,10 +262,6 @@ MahoganyGymPod3:
 	setevent EVENT_BEAT_SCIENTIST_KURT
 	end
 .NoBattle
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
 	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
@@ -294,6 +325,11 @@ MahoganyGymPod4:
 MahoganyGymPod5:
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_1
 	iffalse PodDoorSealed
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	checkevent EVENT_BEAT_SCIENTIST_DAVID
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST3, 1, 19
@@ -314,10 +350,6 @@ MahoganyGymPod5:
 	setevent EVENT_BEAT_SCIENTIST_DAVID
 	end
 .NoBattle
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
 	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
@@ -400,6 +432,11 @@ MahoganyGymPod7:
 MahoganyGymPod8:
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_3
 	iffalse PodDoorSealed
+	opentext
+	writetext AskUsePod
+	yesorno
+	iffalse .No
+	closetext
 	checkevent EVENT_BEAT_SCIENTIST_SETH
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST4, 14, 7
@@ -420,10 +457,6 @@ MahoganyGymPod8:
 	setevent EVENT_BEAT_SCIENTIST_SETH
 	end
 .NoBattle
-	opentext
-	writetext AskUsePod
-	yesorno
-	iffalse .No
 	closetext
 	applymovement PLAYER, StepIntoPod
 	playsound SFX_ENTER_DOOR
@@ -1125,7 +1158,7 @@ AskUsePod:
 	text "Open the pod door"
 	line "and enter?"
 	done
-	
+
 MahoganyGymPodDoorSealed:
 	text "The pod door is"
 	line "sealed tight."
@@ -1230,6 +1263,9 @@ ScientistAndreAfterText:
 	cont "multiple objects"
 	cont "enter a pod at the"
 	cont "same time."
+	
+	para "The results could"
+	line "be disastrous!"
 	done
 	
 ScientistKurtText:
