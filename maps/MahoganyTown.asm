@@ -52,32 +52,20 @@ PowerPlantDoor:
 MahoganyGymLeader:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_HM_SURF
-	iftrue .GotSurf
 	checkevent EVENT_EXPLAINED_POWER_PLANT
 	iftrue .ExplainedPlant
 	writetext MahoganyGymLeaderIntroText
 	waitbutton
 	setevent EVENT_EXPLAINED_POWER_PLANT
-	checkcode VAR_BADGES
-	ifless 6, .NotEnoughBadges
 	writetext MahoganyGymLeaderAskText
 	yesorno
 	iffalse .No
 
 .ExplainedPlant
-	checkcode VAR_BADGES
-	ifless 6, .NotEnoughBadges
 	writetext MahoganyGymLeaderAgree
 	waitbutton
 	closetext
 	setevent EVENT_BACKUP_REQUESTED
-	end
-	
-.GotSurf
-	writetext MahoganyPowerPlantGotSurf
-	waitbutton
-	closetext
 	end
 	
 .No
@@ -85,12 +73,6 @@ MahoganyGymLeader:
 	yesorno
 	iftrue .ExplainedPlant
 	iffalse .No
-	
-.NotEnoughBadges
-	writetext MahoganyPowerPlantNotEnoughBadges
-	waitbutton
-	closetext
-	end
 	
 MahoganyGymEvent:
 	checkflag ENGINE_COGBADGE
@@ -130,7 +112,7 @@ MahoganyTownOfficerScript:
 	checkevent EVENT_MAHOGANY_OFFICER_WITHDRAW
 	iftrue .Waiting
 	checkevent EVENT_BACKUP_REQUESTED
-	iffalse .Backup
+	iftrue .Backup
 	writetext MahoganyTownOfficerBeforeText
 	waitbutton
 	closetext
@@ -173,7 +155,7 @@ MahoganyTownOfficerScript:
 	
 MahoganyTownOfficer2Script:
 	checkevent EVENT_BACKUP_REQUESTED
-	iffalse .Backup
+	iftrue .Backup
 	jumptextfaceplayer MahoganyTownOfficerBeforeText
 	
 .Backup
@@ -396,20 +378,26 @@ MahoganyGymLeaderIntroText:
 
 	para "I sent a crew to"
 	line "check it out, but"
-	cont "can can barely"
-	cont "deal with the wild"
-	cont "GRIMER nesting"
-	cont "there."
+	cont "they can can"
+	cont "barely deal with"
+	cont "the wild GRIMER"
+	cont "nesting there."
 	
 	para "Those #MON must"
 	line "be mucking up the"
 	cont "turbines."
+	
+	para "I even asked a"
+	line "young trainer like"
+	cont "you to assist, but"
+	cont "he refused!"
 	done
 	
 MahoganyGymLeaderAskText:
-	text "It's a lot to ask,"
-	line "but would you take"
-	cont "care of them?"
+	text "I know it's a lot"
+	line "to ask, but could"
+	cont "you go assist the"
+	cont "OFFICERs?"
 	done
 	
 MahoganyGymLeaderComeBack:
@@ -439,31 +427,6 @@ MahoganyGymLeaderAgree:
 	cont "know I am not"
 	cont "accepting challen-"
 	cont "gers right now."
-	done
-
-MahoganyPowerPlantGotSurf:
-	text "Now that you have"
-	line "the HM for SURF,"
-	cont "you can cross the"
-	cont "water and clean up"
-	cont "the POWER PLANT."
-	done
-	
-MahoganyPowerPlantNotEnoughBadges:
-	text "I don't know any"
-	line "trainers strong"
-	cont "enough for this"
-	cont "task!"
-	
-	para "There was one"
-	line "trainer I asked,"
-	cont "but he refused."
-	
-	para "He said it wasn't"
-	line "his problem."
-	
-	para "Oh, what will I"
-	line "do?"
 	done
 	
 MahoganyTownOfficerBeforeText:
