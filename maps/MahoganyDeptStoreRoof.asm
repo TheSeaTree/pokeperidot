@@ -34,8 +34,8 @@ MahoganyDeptStoreRoof_MapScripts:
 	changeblock   0, 2, $1e
 	changeblock   2, 2, $1e
 	changeblock   4, 2, $1e
-	changeblock   6, 2, $1d
-	changeblock   8, 2, $1e
+	changeblock   6, 2, $1e
+	changeblock   8, 2, $1d
 	changeblock  10, 2, $1e
 	changeblock  12, 2, $1e
 	changeblock  14, 2, $1e
@@ -326,9 +326,9 @@ MahoganyDeptStoreRoof_MapEvents:
 	bg_event  7,  4, BGEVENT_UP, PokeDollVendingMachine
 
 	db 10 ; object events
-	object_event  9,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, MORN, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofMorningClerkScript, -1
+	object_event  9,  6, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, MORN, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofMorningClerkScript, -1
 	object_event  5,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofScientistScript, -1
-	object_event 10,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 2, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofSuperNerdScript, -1
+	object_event 12,  8, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 2, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofSuperNerdScript, -1
 	object_event 10, 10, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, DAY, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofDayClerkScript, -1
 	object_event 18, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofYoungsterScript, -1
 	object_event 14,  6, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyDeptStoreRoofPokefanFScript, -1

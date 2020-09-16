@@ -134,8 +134,9 @@ TeacherSharonText:
 SchoolboyMartinText:
 	text "My assignment for"
 	line "today is to win a"
-	cont "battle against any"
-	cont "trainer I see!"
+	cont "battle against the"
+	cont "first trainer I"
+	cont "see!"
 	done
 	
 CamperRustyWinText:

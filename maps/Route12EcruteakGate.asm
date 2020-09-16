@@ -11,10 +11,12 @@ Route12EcruteakGateOfficerScript:
 	iftrue .After
 	writetext Route12EcruteakGateOfficerText
 	waitbutton
+	closetext
 	end
 .After
 	writetext Route12EcruteakGateOfficerAfterText
 	waitbutton
+	closetext
 	end
 	
 Route12EcruteakGateYoungsterScript:

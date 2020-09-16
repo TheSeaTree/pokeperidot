@@ -102,7 +102,7 @@ ENDM
 	map_const ECRUTEAK_GYM,                                11, 13 ;  7
 	map_const ECRUTEAK_CITY,                               22, 15 ;  9
 	map_const ECRUTEAK_FOREST_GATE,                         6,  4 ; 10
-	map_const PAINTERS_FOREST,                              7,  7
+	map_const PAINTERS_FOREST,                              7,  9
 	map_const PAINTERS_HOUSE,                               4,  4
 	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
 	map_const ECRUTEAK_THIEF_HOUSE,							4,  4

@@ -231,7 +231,7 @@ TwinLeahText:
 	line "little,"
 	
 	para "MIA: But we have"
-	cont "strong #MON!"
+	line "strong #MON!"
 	done
 	
 TwinLeahWinText:

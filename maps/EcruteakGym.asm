@@ -395,7 +395,7 @@ PoseyWinText:
 	
 PoseyRootBadgeText:
 	text "Please take my"
-	cont "special technique"
+	line "special technique"
 	cont "as well!"
 	done
 

@@ -39,6 +39,8 @@ Emily:
 	waitbutton
 
 .Battle
+	writetext EmilyChallengeText
+	waitbutton
 	winlosstext EmilyWinText, -1
 	setlasttalked EMILYSHOUSE2F_EMILY
 	loadtrainer FANGIRL, EMILY2
@@ -148,12 +150,14 @@ EmilyWelcomeText:
 EmilyAskBattleText:
 	text "All healed up?"
 	line "Good!"
+	done
 	
-	para "Don't go easy on"
+EmilyChallengeText:
+	text "Don't go easy on"
 	line "me, <PLAYER>!"
 	
 	para "Because I won't"
-	line "either!"
+	line "do the same!"
 	done
 
 EmilyDeclineText:
