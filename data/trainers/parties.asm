@@ -1719,7 +1719,7 @@ PicnickerGroup:
 	; PICNICKER (6)
 	db "LESLIE@", TRAINERTYPE_NORMAL
 	db 25, PONYTA
-	db 26, CLEFABLE
+	db 26, CLEFAIRY
 	db 26, FURRET
 	db 27, SUNFLORA
 	db -1
