@@ -21,7 +21,12 @@ Route12Shelter_MapScripts:
 	return
 	
 LeaderMarowakScene:
+	opentext
+	writetext Route12LeaderIntroText
+	waitbutton
+	closetext
 	faceplayer
+	showemote EMOTE_SHOCK, ROUTE12SHELTER_LEADER, 15
 	opentext
 	writetext Route12LeaderMarowakText
 	waitbutton
@@ -32,28 +37,38 @@ LeaderMarowakScene:
 	ifequal RIGHT, .FacingRight
 .continue
 	faceplayer
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext Route12KangaskhanText
+	applymovement ROUTE12SHELTER_KANGASKHAN, MarowakAttentionMovement
 	cry KANGASKHAN
+	showemote EMOTE_QUESTION, PLAYER, 15
+	opentext
+	writetext Route12KangaskhanThanksText
 	waitbutton
 	closetext
+	turnobject PLAYER, RIGHT
+	showemote EMOTE_HEART, ROUTE12SHELTER_KANGASKHAN, 15
+	applymovement ROUTE12SHELTER_KANGASKHAN, MarowakAttentionMovement
+	cry KANGASKHAN
+	wait 6
 	turnobject ROUTE12SHELTER_MAROWAK, LEFT
-	opentext
-	writetext Route12MarowakText
+	showemote EMOTE_SHOCK, ROUTE12SHELTER_MAROWAK, 15
+	applymovement ROUTE12SHELTER_MAROWAK, MarowakAttentionMovement
 	cry MAROWAK
+	turnobject ROUTE12SHELTER_MAROWAK, LEFT
+	wait 6
+	opentext
+	writetext MarowakAttentionText
 	waitbutton
 	closetext
+	turnobject PLAYER, RIGHT
+	special FadeOutMusic
 	turnobject ROUTE12SHELTER_KANGASKHAN, RIGHT
+	applymovement ROUTE12SHELTER_MAROWAK, MarowakAttentionMovement
+	cry MAROWAK
+	wait 6
+	showemote EMOTE_SAD, ROUTE12SHELTER_KANGASKHAN, 15	
+	cry KANGASKHAN
+	waitsfx
 	opentext
-	writetext MarowakSomethingToSay
-	waitbutton
-	closetext
-	opentext
-	writetext Route12KangaskhanText
-	writebyte KANGASKHAN
-	special PlaySlowCry
-	waitbutton
 	writetext Route12KangaskhanDisappointed
 	waitbutton
 	closetext
@@ -63,22 +78,32 @@ LeaderMarowakScene:
 	waitbutton
 	closetext
 	turnobject PLAYER, RIGHT
+	showemote EMOTE_SAD, ROUTE12SHELTER_KANGASKHAN, 15
+	cry KANGASKHAN
+	waitsfx
 	opentext
 	writetext KangaskhanAgreesText
 	waitbutton
 	closetext
+	playmusic MUSIC_POST_CREDITS
 	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksToDoor
 	turnobject ROUTE12SHELTER_KANGASKHAN, DOWN
 	turnobject PLAYER, DOWN
-	writebyte MAROWAK
-	special PlaySlowCry
+	showemote EMOTE_HEART, ROUTE12SHELTER_MAROWAK, 30
+	cry MAROWAK
+	waitsfx
 	opentext
 	writetext MarowakWavesGoodbye
 	waitbutton
 	closetext
+	turnobject ROUTE12SHELTER_MAROWAK, DOWN
+	showemote EMOTE_SAD, ROUTE12SHELTER_MAROWAK, 15
 	applymovement ROUTE12SHELTER_MAROWAK, MarowakWalksOut
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE12SHELTER_MAROWAK
+	waitsfx
+	showemote EMOTE_SAD, ROUTE12SHELTER_KANGASKHAN, 15
+	cry KANGASKHAN
 	waitsfx
 	turnobject PLAYER, UP
 	opentext
@@ -86,11 +111,13 @@ LeaderMarowakScene:
 	waitbutton
 	closetext
 	applymovement ROUTE12SHELTER_LEADER, LeaderWalksOut
+	special FadeOutMusic
 	playsound SFX_EXIT_BUILDING
 	disappear ROUTE12SHELTER_LEADER
 	waitsfx
 	setevent EVENT_HIDE_SHELTER_MAROWAK
 	setevent EVENT_ECRUTEAK_GYM_ACCESS
+	special RestartMapMusic
 	end
 	
 .FacingDown
@@ -170,7 +197,7 @@ Route12ShelterKangaskhan:
 .end
 	closetext
 	end
-	
+
 .KangaskhanGift:
 	writetext KangaskhanNoticesBadge
 	waitbutton
@@ -374,6 +401,13 @@ Route12KangaskhanStomp:
 	step_sleep 8
 	step_resume
 
+MarowakAttentionMovement:
+	turn_step LEFT
+	step_sleep 8
+	turn_step LEFT
+	step_sleep 8
+	step_end
+
 Route12AssistantIntro:
 	text "Oh, this is"
 	line "terrible!"
@@ -447,52 +481,72 @@ Route12AssistantBack:
 	line "for finding"
 	cont "MAROWAK for us!"
 	done
-	
+
 Route12AssistantMarowakGone:
 	text "I'm going to miss"
 	line "that #MON, but"
 	cont "it was time for"
 	cont "MAROWAK to go live"
 	cont "out in the wild."
+	done	
+
+Route12LeaderIntroText:
+	text "Hello and welcome"
+	line "to the #MON"
+	cont "SHEL-"
 	done
-	
+
 Route12LeaderMarowakText:
-	text "I didn't get a"
+	text "Oh!"
+	
+	para "You're the trainer"
+	line "I met earlier when"
+	cont "we found MAROWAK!"
+	
+	para "I didn't get a"
 	line "chance to thank"
-	cont "you back there!"
+	cont "you then!"
 	
 	para "It was so selfless"
 	line "of you to help out"
 	cont "MAROWAK like that."
+	done
 	
-	para "KANGASKHAN would"
+Route12KangaskhanThanksText:
+	text "KANGASKHAN would"
 	line "like to thank you"
-	cont "too!"
+	cont "too, it seems!"
+	done
+	
+MarowakAttentionText:
+	text "MAROWAK is trying"
+	line "to get KANGASKHAN's"
+	cont "attention."
 	done
 	
 MarowakExplainsText:
-	text "MAROWAK says he"
-	line "wants to go out on"
-	cont "his own now"
+	text "………"
 	
-	para "He thinks he no"
-	line "longer needs a"
-	cont "guardian, and is"
-	cont "mature enough to"
-	cont "handle himself in"
-	cont "the wild."
+	para "It seems like"
+	line "MAROWAK is trying"
+	cont "to tell KANGASKHAN"
+	cont "that he wants to"
+	cont "live on his own,"
+	cont "in the wild."
 	done
 	
 KangaskhanAgreesText:
-	text "KANGASKHAN nods in"
-	line "agreement to"
-	cont "MAROWAK's request."
+	text "KANGASKHAN nods"
+	line "her head slowly."
 	done
-	
+
 MarowakWavesGoodbye:
-	text "MAROWAK waves "
+	text "MAROWAK waves"
 	line "goodbye to"
 	cont "KANGASKHAN."
+	
+	para "He looks to be ho-"
+	line "lding back tears…"
 	done
 	
 Route12LeaderExplaination:
@@ -502,7 +556,7 @@ Route12LeaderExplaination:
 	cont "that."
 	
 	para "But that is part"
-	line "of being a parent,"
+	line "of being a parent."
 	cont "MAROWAK needed to"
 	cont "go out on its own."
 	
@@ -519,12 +573,13 @@ Route12LeaderExplaination:
 	para "KANGASKHAN must be"
 	line "hurting, but at"
 	cont "at least she has"
-	cont "my assistant to"
-	cont "keep her company."
+	cont "us to console her."
 	
-	para "I must get back to"
+	para "Now then."
+	
+	para "I must return to"
 	line "my duties as a GYM"
-	cont "leader."
+	cont "LEADER."
 	
 	para "I don't want to"
 	line "think about how"
@@ -532,9 +587,9 @@ Route12LeaderExplaination:
 	cont "turned away in my"
 	cont "absence."
 	
-	para "Until your"
-	line "challenge,"
-	cont "take care."
+	para "Take care! I await"
+	line "your challenge in"
+	cont "the future."
 	done
 	
 Route12KangaskhanText:
@@ -545,18 +600,11 @@ Route12KangaskhanText:
 Route12MarowakText:
 	text "MAROWAK: Kyarugoo!"
 	done
-	
+
 Route12KangaskhanDisappointed:
 	text "KANGASKHAN has"
 	line "a disappointed"
-	cont "tone in its voice."
-	done
-	
-MarowakSomethingToSay:
-	text "It looks like"
-	line "MAROWAK has"
-	cont "something to tell"
-	cont "KANGASKHAN."
+	cont "tone in her voice."
 	done
 	
 Route12KangaskhanUpset:
