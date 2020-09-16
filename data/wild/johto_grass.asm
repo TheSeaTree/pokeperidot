@@ -86,29 +86,29 @@ JohtoGrassWildMons:
 	map_id ILEX_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, BEEDRILL
-	db 18, SKIPLOOM
+	db 21, BEEDRILL
 	db 20, SKIPLOOM
-	db 18, GLOOM
-	db 19, TANGELA
-	db 20, SCYTHER
-	db 20, SCYTHER
-	; day
-	db 18, BEEDRILL
-	db 18, WEEPINBELL
-	db 20, WEEPINBELL
-	db 18, SKIPLOOM
-	db 18, TANGELA
-	db 20, SCYTHER
-	db 20, SCYTHER
-	; nite
-	db 18, VENONAT
-	db 18, GLOOM
+	db 22, SKIPLOOM
 	db 20, GLOOM
-	db 18, WEEPINBELL
-	db 19, TANGELA
+	db 21, TANGELA
 	db 20, SCYTHER
+	db 22, SCYTHER
+	; day
+	db 21, BEEDRILL
+	db 20, WEEPINBELL
+	db 22, WEEPINBELL
+	db 20, SKIPLOOM
+	db 21, TANGELA
 	db 20, SCYTHER
+	db 22, SCYTHER
+	; nite
+	db 21, VENONAT
+	db 20, GLOOM
+	db 22, GLOOM
+	db 20, WEEPINBELL
+	db 21, TANGELA
+	db 20, SCYTHER
+	db 22, SCYTHER
 
 	map_id EAST_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
@@ -707,29 +707,29 @@ JohtoGrassWildMons:
 	map_id ROUTE_9
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 18, HOPPIP
+	db 20, HOPPIP
 	db 21, EKANS
 	db 21, SKIPLOOM
-	db 18, PHANPY
-	db 18, VULPIX
-	db 18, VULPIX
+	db 20, PHANPY
+	db 19, VULPIX
 	db 20, VULPIX
+	db 23, VULPIX
 	; day
-	db 18, BELLSPROUT
+	db 20, BELLSPROUT
 	db 21, EKANS
 	db 21, WEEPINBELL
-	db 18, PHANPY
-	db 18, VULPIX
-	db 18, VULPIX
+	db 20, PHANPY
+	db 19, VULPIX
 	db 20, VULPIX
+	db 23, VULPIX
 	; nite
-	db 18, ODDISH
+	db 20, ODDISH
 	db 21, EKANS
 	db 21, GLOOM
-	db 18, PHANPY
-	db 18, VULPIX
-	db 18, VULPIX
+	db 20, PHANPY
+	db 19, VULPIX
 	db 20, VULPIX
+	db 23, VULPIX
 
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
