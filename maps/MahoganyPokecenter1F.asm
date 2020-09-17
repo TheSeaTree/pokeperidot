@@ -35,7 +35,7 @@ MahoganyPokecenter1FPokefanMText:
 
 MahoganyPokecenter1FYoungsterText:
 	text "Wow! Thanks for"
-	cont "all of these tips."
+	line "all of these tips."
 	
 	para "There's no way I"
 	line "will lose to him"
@@ -60,7 +60,7 @@ MahoganyPokecenter1F_MapEvents:
 
 	db 3 ; warp events
 	warp_event  3,  7, MAHOGANY_TOWN, 4
-	warp_event  4,  7, WILLS_ROOM, 1
+	warp_event  4,  7, MAHOGANY_TOWN, 4
 	warp_event  0,  7, POKECENTER_2F, 1
 
 	db 0 ; coord events

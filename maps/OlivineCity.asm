@@ -143,8 +143,8 @@ OlivineCityMachokeScript:
 OlivineCityStarPiece:
 	itemball STAR_PIECE
 
-OlivineCityHiddenCarbos:
-	hiddenitem CARBOS, EVENT_OLIVINE_CITY_HIDDEN_CARBOS
+OlivineCityHiddenMaxRevive:
+	hiddenitem MAX_REVIVE, EVENT_OLIVINE_CITY_HIDDEN_MAX_REVIVE
 
 OlivineCitySmashRock:
 	jumpstd smashrock
@@ -383,7 +383,7 @@ OlivineCity_MapEvents:
 	bg_event 26, 12, BGEVENT_READ, OlivineCityPortSign
 	bg_event  8, 12, BGEVENT_READ, OlivineLabSign
 	bg_event 12, 18, BGEVENT_READ, OlivineCitySurfHouseSign
-	bg_event 11, 27, BGEVENT_ITEM, OlivineCityHiddenCarbos
+	bg_event 11, 27, BGEVENT_ITEM, OlivineCityHiddenMaxRevive
 
 	db 13 ; object events
 	object_event 22, 11, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OlivineCitySailor1Script, -1

@@ -664,6 +664,7 @@ Route22CaveB2F_Blocks:
 
 NevermelticeChamber_Blocks:
 Route22HiddenCave_Blocks:
+Route4HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
 UnownChamberAG_Blocks:

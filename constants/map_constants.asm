@@ -194,6 +194,7 @@ ENDM
 	map_const VIOLET_WEATHER_HOUSE,                         4,  4
 	map_const VIOLET_TRADE_HOUSE,                           4,  4
 	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
+	map_const ROUTE_4_HIDDEN_CAVE,                          5,  7
 
 	newgroup                                                      ; 11
 

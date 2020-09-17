@@ -49,6 +49,7 @@ CutTreeBlockPointers:
 .johto_city
 	db $03, $02, 1 ; grass
 	db $67, $3b, 0 ; tree
+	db $64, $35, 0 ; tree
 	db -1
 
 .facility

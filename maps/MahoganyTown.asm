@@ -339,6 +339,21 @@ MahoganyTownMetalPowder:
 	
 MahoganyTownFruitTree:
 	fruittree FRUITTREE_MAHOGANY_TOWN
+	
+MahoganyHiddenProtien:
+	hiddenitem PROTEIN, EVENT_MAHOGANY_HIDDEN_PROTEIN
+
+MahoganyHiddenCarbos:
+	hiddenitem CARBOS, EVENT_MAHOGANY_HIDDEN_CARBOS
+
+MahoganyHiddenHPUp:
+	hiddenitem HP_UP, EVENT_MAHOGANY_HIDDEN_HP_UP
+
+MahoganyHiddenCalcium:
+	hiddenitem CALCIUM, EVENT_MAHOGANY_HIDDEN_CALCIUM
+
+MahoganyHiddenIron:
+	hiddenitem IRON, EVENT_MAHOGANY_HIDDEN_IRON
 
 MahoganyGymMovement:
 	step UP
@@ -685,13 +700,18 @@ MahoganyTown_MapEvents:
 	db 1 ; coord events
 	coord_event  2,  3, -1, PowerPlantDoor
 
-	db 6 ; bg events
+	db 11 ; bg events
 	bg_event 24, 29, BGEVENT_UP, MahoganyTownSign
 	bg_event 11, 21, BGEVENT_UP, MahoganyDeptStoreSign
 	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
 	bg_event 33,  9, BGEVENT_UP, MahoganyMoveManagersHouse
 	bg_event  4,  5, BGEVENT_UP, MahoganyPowerPlantSign
 	bg_event 22, 29, BGEVENT_UP, MahoganyVendingMachine
+	bg_event 19, 16, BGEVENT_ITEM, MahoganyHiddenProtien
+	bg_event 23, 27, BGEVENT_ITEM, MahoganyHiddenCarbos
+	bg_event  4, 23, BGEVENT_ITEM, MahoganyHiddenHPUp
+	bg_event 29, 18, BGEVENT_ITEM, MahoganyHiddenCalcium
+	bg_event 14, 28, BGEVENT_ITEM, MahoganyHiddenIron
 
 	db 15 ; object events
 	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1

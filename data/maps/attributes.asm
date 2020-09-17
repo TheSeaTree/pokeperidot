@@ -443,3 +443,4 @@ ENDM
 	map_attributes MahoganyCafe, MAHOGANY_CAFE, $00, 0
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
+	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0

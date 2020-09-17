@@ -56,6 +56,9 @@ Route11LeafStone:
 Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
 	
+Route11HiddenRevivalHerb:
+	hiddenitem REVIVAL_HERB, EVENT_ROUTE_11_HIDDEN_REVIVAL_HERB
+	
 Route11GoldenrodSign:
 	jumptext Route11GoldenrodSignText
 
@@ -154,9 +157,10 @@ Route11_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 32, 23, BGEVENT_READ, Route11GoldenrodSign
 	bg_event 18,  9, BGEVENT_READ, Route11Route12Sign
+	bg_event  3,  5, BGEVENT_ITEM, Route11HiddenRevivalHerb
 
 	db 5 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1

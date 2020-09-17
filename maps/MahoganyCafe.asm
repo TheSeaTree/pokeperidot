@@ -118,6 +118,9 @@ MahoganyCafeChef:
 MahoganyCafeFridge:
 	jumptext MahoganyCafeFridgeText
 
+MahoganyCafeLeftovers:
+	hiddenitem LEFTOVERS, EVENT_MAHOGANY_HIDDEN_LEFTOVERS
+
 MahoganyCafeTrash:
 	jumptext MahoganyCafeTrashText
 	
@@ -234,10 +237,11 @@ MahoganyCafe_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 11,  1, BGEVENT_UP, MahoganyCafeVendingMachine
 	bg_event 12,  1, BGEVENT_READ, MahoganyCafeFridge
 	bg_event 13,  1, BGEVENT_READ, MahoganyCafeFridge
+	bg_event  6,  1, BGEVENT_ITEM, MahoganyCafeLeftovers
 	bg_event  6,  1, BGEVENT_READ, MahoganyCafeTrash
 
 	db 9 ; object events

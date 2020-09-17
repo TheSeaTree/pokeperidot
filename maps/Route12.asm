@@ -79,6 +79,12 @@ Route12ItemBush:
 
 Route12FireStone:
 	itemball FIRE_STONE
+	
+Route12HiddenFreshWater:
+	hiddenitem FRESH_WATER, EVENT_ROUTE_12_HIDDEN_FRESH_WATER
+	
+Route12HiddenSuperRepel:
+	hiddenitem SUPER_REPEL, EVENT_ROUTE_12_HIDDEN_SUPER_REPEL
 
 Route12ShelterSign:
 	jumptext ShelterSignText
@@ -234,8 +240,10 @@ Route12_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 3 ; bg events
 	bg_event 48,  6, BGEVENT_READ, Route12ShelterSign
+	bg_event 54, 21, BGEVENT_ITEM, Route12HiddenFreshWater
+	bg_event 25,  5, BGEVENT_ITEM, Route12HiddenSuperRepel
 
 	db 10 ; object events
 	object_event 16, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperRusty, -1

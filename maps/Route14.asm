@@ -192,6 +192,15 @@ Route14UltraBall:
 Route14Nugget:
 	itemball NUGGET
 	
+Route14HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_14_HIDDEN_POWER_HERB
+	
+Route14HiddenEnergyRoot:
+	hiddenitem ENERGY_ROOT, EVENT_ROUTE_14_HIDDEN_ENERGY_ROOT
+	
+Route14HiddenMaxEther:
+	hiddenitem MAX_ETHER, EVENT_ROUTE_14_HIDDEN_MAX_ETHER
+	
 Route14TutorDance:
 	turn_head DOWN
 	turn_head LEFT
@@ -522,7 +531,10 @@ Route14_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 3 ; bg events
+	bg_event 54, 23, BGEVENT_ITEM, Route14HiddenPowerHerb
+	bg_event 49, 17, BGEVENT_ITEM, Route14HiddenEnergyRoot
+	bg_event 34, 13, BGEVENT_ITEM, Route14HiddenMaxEther
 
 	db 14 ; object events
 	object_event 26,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1

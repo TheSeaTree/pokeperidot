@@ -150,6 +150,7 @@ INCLUDE "maps/MountMortar2FInside.asm"
 INCLUDE "maps/MountMortarB1F.asm"
 INCLUDE "maps/Route3Route4Gate.asm"
 INCLUDE "maps/Route5SuperRodHouse.asm"
+INCLUDE "maps/Route4HiddenCave.asm"
 
 
 SECTION "Map Scripts 11", ROMX
