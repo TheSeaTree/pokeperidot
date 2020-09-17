@@ -130,10 +130,6 @@ ElectricGymLeader:
 	setevent EVENT_BEAT_JOEL
 .FightDone:
 	opentext
-	checkevent EVENT_MAPLE_MESSAGE_DELIVERED
-	iftrue .AfterMessage
-	checkevent EVENT_SHOWED_MAPLE_COGBADGE
-	iftrue .SisterMessage
 	checkevent EVENT_GOT_TM_THUNDERBOLT
 	iftrue .AfterMessage
 	special HealParty
@@ -147,13 +143,6 @@ ElectricGymLeader:
 	writetext JoelAfterMessageText
 	waitbutton
 	closetext
-	end
-
-.SisterMessage:
-	writetext JoelSisterText
-	waitbutton
-	closetext
-	setevent EVENT_MAPLE_MESSAGE_DELIVERED
 	end
 
 MahoganyGymPod1:
@@ -1259,38 +1248,6 @@ ThunderboltTMText:
 	line "paralyzed opens up"
 	cont "many opportunities"
 	cont "in battle."
-	done
-	
-JoelSisterText:
-	text "Hey, <PLAYER>!"
-	
-	para "You spoke to PROF."
-	line "MAPLE recently?"
-	
-	para "I had no idea you"
-	line "knew my sister!"
-	
-	para "<……><……><……>"
-	
-	para "I understand."
-
-	para "My sister is fresh"
-	line "out of school, and"
-	cont "opening her own"
-	cont "LAB right away is"
-	cont "a hefty task."
-
-	para "Thanks for letting"
-	line "me know."
-
-	para "I should try and"
-	line "reach out to her"
-	cont "myself."
-
-	para "I can just get so"
-	line "obsessed sometimes"
-	cont "when I create a"
-	cont "new gadget."
 	done
 	
 JoelAfterMessageText:

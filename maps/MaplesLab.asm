@@ -611,10 +611,6 @@ MapleDefeatedBrotherText:
 	line "the chance to see"
 	cont "my brother often…"
 	
-	para "If you find time,"
-	line "could you let him"
-	cont "know I said hi?"
-	
 	para "Work here has been"
 	line "so hectic that I"
 	cont "can hardly come"
@@ -659,7 +655,7 @@ MapleAfterBadgeText:
 	cont "for those when"
 	cont "selecting a team!"
 	done
-	
+
 MapleAfterCogbadgeText:
 	text "<PLAYER>! Hello!"
 	
