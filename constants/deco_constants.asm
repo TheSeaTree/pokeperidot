@@ -35,6 +35,8 @@ const_value = 1
 	const YELLOW_CARPET
 	const GREEN_CARPET
 	const DESERTPLANT
+	const ISLANDPLANT
+	const THIRSTYPLANT
 
 ; DoDecorationAction2.DecoActions indexes (see engine/overworld/decorations.asm)
 const_value = 1
@@ -122,8 +124,13 @@ __enum__ = 0
 	deco  GEODUDE_DOLL
 	deco  MACHOP_DOLL
 	deco  TENTACOOL_DOLL
+	
+; Custom Decorations
 	deco  SHIFUR_DOLL
 	deco  DESERTPLANT
+	deco  ISLANDPLANT
+	deco  THIRSTYPLANT
+	deco  TANGELA_POSTER
 	deco  MEW_POSTER
 NUM_NON_TROPHY_DECOS = __enum__
 	deco  GOLD_TROPHY_DOLL

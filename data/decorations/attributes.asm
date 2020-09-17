@@ -60,6 +60,9 @@ DecorationAttributes:
 	decoration DECO_DOLL,    TENTACOOL,      SET_UP_DOLL,       EVENT_DECO_TENTACOOL_DOLL,       SPRITE_TENTACOOL
 	decoration DECO_DOLL,    SHIFUR,         SET_UP_DOLL,       EVENT_DECO_SHIFUR_DOLL,    		 SPRITE_SHIFUR
 	decoration DECO_PLANT,   DESERTPLANT,    SET_UP_PLANT,      EVENT_DECO_PLANT_5,              $28
-	decoration DECO_POSTER,  MEW,            SET_UP_POSTER,     EVENT_DECO_POSTER_4,             $27
+	decoration DECO_PLANT,   ISLANDPLANT,    SET_UP_PLANT,      EVENT_DECO_PLANT_6,              $2a
+	decoration DECO_PLANT,   THIRSTYPLANT,   SET_UP_PLANT,      EVENT_DECO_PLANT_7,              $2b
+	decoration DECO_POSTER,  TANGELA,        SET_UP_POSTER,     EVENT_DECO_POSTER_4,             $29
+	decoration DECO_POSTER,  MEW,            SET_UP_POSTER,     EVENT_DECO_POSTER_5,             $27
 	decoration DECO_PLANT,   GOLD_TROPHY,    SET_UP_DOLL,       EVENT_DECO_GOLD_TROPHY,          SPRITE_GOLD_TROPHY
 	decoration DECO_PLANT,   SILVER_TROPHY,  SET_UP_DOLL,       EVENT_DECO_SILVER_TROPHY,        SPRITE_SILVER_TROPHY

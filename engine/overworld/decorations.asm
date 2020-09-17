@@ -239,6 +239,8 @@ FindOwnedPlants:
 	db DECO_TROPICPLANT ; d
 	db DECO_JUMBOPLANT ; e
 	db DECO_DESERTPLANT ; e
+	db DECO_ISLANDPLANT ; e
+	db DECO_THIRSTYPLANT ; e
 	db -1
 
 DecoPosterMenu:
@@ -257,6 +259,7 @@ FindOwnedPosters:
 	db DECO_PIKACHU_POSTER ; 11
 	db DECO_CLEFAIRY_POSTER ; 12
 	db DECO_JIGGLYPUFF_POSTER ; 13
+	db DECO_TANGELA_POSTER
 	db DECO_MEW_POSTER
 	db -1
 
@@ -1004,6 +1007,8 @@ DecorationDesc_PosterPointers:
 	dbw DECO_PIKACHU_POSTER, DecorationDesc_PikachuPoster
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
 	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_JigglypuffPoster
+	dbw DECO_TANGELA_POSTER, DecorationDesc_TangelaPoster
+	dbw DECO_MEW_POSTER, DecorationDesc_MewPoster
 	db -1
 
 DecorationDesc_TownMapPoster:
@@ -1041,6 +1046,20 @@ DecorationDesc_JigglypuffPoster:
 .JigglypuffPosterText:
 	; It's a poster of a cute JIGGLYPUFF.
 	text_far UnknownText_0x1bc5b3
+	text_end
+	
+DecorationDesc_TangelaPoster:
+	jumptext .TangelaPosterText
+	
+.TangelaPosterText:
+	text_far PosterText_TangelaPoster
+	text_end
+	
+DecorationDesc_MewPoster:
+	jumptext .MewPosterText
+	
+.MewPosterText
+	text_far PosterText_MewPoster
 	text_end
 
 DecorationDesc_NullPoster:

@@ -310,6 +310,16 @@ UnknownText_0x1bc5b3::
 	text "It's a poster of a"
 	line "cute JIGGLYPUFF."
 	done
+	
+PosterText_TangelaPoster::
+	text "It's a poster of a"
+	line "cute TANGELA."
+	done
+
+PosterText_MewPoster::
+	text "It's a poster of a"
+	line "cute MEW."
+	done
 
 UnknownText_0x1bc5d7::
 	text "It's an adorable"

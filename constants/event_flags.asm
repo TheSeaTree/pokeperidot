@@ -612,10 +612,10 @@
 ; My Decorations
 	const EVENT_DECO_SHIFUR_DOLL
 	const EVENT_DECO_PLANT_5
+	const EVENT_DECO_PLANT_6
+	const EVENT_DECO_PLANT_7
 	const EVENT_DECO_POSTER_4
-	const EVENT_26B
-	const EVENT_26C
-	const EVENT_26E
+	const EVENT_DECO_POSTER_5
 	const EVENT_270
 	const EVENT_272
 	const EVENT_274

@@ -27,3 +27,5 @@ DecorationNames:
 	db "YELLOW@"
 	db "GREEN@"
 	db "DESERTPLANT@"
+	db "ISLANDPLANT@"
+	db "THIRSTYPLANT@"
