@@ -611,10 +611,9 @@
 	const EVENT_GAVE_KURT_PNK_APRICORN
 ; My Decorations
 	const EVENT_DECO_SHIFUR_DOLL
-	const EVENT_262
-	const EVENT_264
-; Phone Events
-	const EVENT_KENJI_ON_BREAK
+	const EVENT_DECO_PLANT_5
+	const EVENT_DECO_POSTER_4
+	const EVENT_26B
 	const EVENT_26C
 	const EVENT_26E
 	const EVENT_270

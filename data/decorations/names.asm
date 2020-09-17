@@ -26,3 +26,4 @@ DecorationNames:
 	db "BLUE@"
 	db "YELLOW@"
 	db "GREEN@"
+	db "DESERTPLANT@"

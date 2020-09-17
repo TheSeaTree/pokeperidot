@@ -145,39 +145,4 @@ UnknownScript_0xa09de:
 	jump PhoneScript_HangupText_Male
 
 UnknownScript_0xa09e6:
-	farwritetext UnknownText_0x648dc
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-KenjiAnswerPhoneScript:
-	checkcode VAR_KENJI_BREAK
-	ifequal 2, .Training
-	ifequal 1, .OnBreak
-	farwritetext UnknownText_0x66e17
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-.Training:
-	farwritetext UnknownText_0x66e67
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-.OnBreak:
-	checktime MORN
-	iftrue .Morning
-	checktime NITE
-	iftrue .Night
-	setevent EVENT_KENJI_ON_BREAK
-	farwritetext KenjiBreakText
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-.Morning:
-	farwritetext UnknownText_0x66ed3
-	buttonsound
-	jump PhoneScript_HangupText_Male
-
-.Night:
-	farwritetext UnknownText_0x66f52
-	buttonsound
-	jump PhoneScript_HangupText_Male
+	end

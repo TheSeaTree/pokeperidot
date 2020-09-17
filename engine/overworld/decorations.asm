@@ -238,6 +238,7 @@ FindOwnedPlants:
 	db DECO_MAGNAPLANT ; c
 	db DECO_TROPICPLANT ; d
 	db DECO_JUMBOPLANT ; e
+	db DECO_DESERTPLANT ; e
 	db -1
 
 DecoPosterMenu:
@@ -256,6 +257,7 @@ FindOwnedPosters:
 	db DECO_PIKACHU_POSTER ; 11
 	db DECO_CLEFAIRY_POSTER ; 12
 	db DECO_JIGGLYPUFF_POSTER ; 13
+	db DECO_MEW_POSTER
 	db -1
 
 DecoConsoleMenu:
