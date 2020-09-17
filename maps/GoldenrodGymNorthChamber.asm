@@ -77,14 +77,21 @@ NorthChamberLightsOnSTD:
 	end
 	
 GoldenrodGymNorthChamberLeaderSwitch:
+	checkevent GOLDENROD_LEADER_DOOR_2
+	iftrue .flipped
 	opentext
 	writetext GoldenrodGymNorthChamberLeaderSwitchText
 	yesorno
 	iffalse .no
+	playsound SFX_ENTER_DOOR
+	waitsfx
 	setevent GOLDENROD_LEADER_DOOR_2
 .no
 	closetext
 	end
+	
+.flipped
+	jumptext GoldenrodGymNorthChamberLeaderSwitchStuckText
 
 PokemaniacCharlieText:
 	text "What are you hop-"
@@ -179,6 +186,11 @@ GoldenrodGymNorthChamberLeaderSwitchText:
 	line "LEADER SWITCH 2."
 	
 	para "Flip it?"
+	done
+	
+GoldenrodGymNorthChamberLeaderSwitchStuckText:
+	text "The switch won't"
+	line "budge anymore!"
 	done
 
 GoldenrodGymNorthChamber_MapEvents:

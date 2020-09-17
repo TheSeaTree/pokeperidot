@@ -37,7 +37,7 @@ GoldenrodGymWhitneyScript:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	checkflag ENGINE_FLYPOINT_OLIVINE
+	checkflag ENGINE_FLYPOINT_MAHOGANY
 	iftrue .Team3
 	checkflag ENGINE_FLYPOINT_ECRUTEAK
 	iftrue .Team2

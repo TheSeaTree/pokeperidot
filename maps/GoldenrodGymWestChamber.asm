@@ -64,14 +64,21 @@ WestChamberLightsOnSTD:
 	end
 	
 GoldenrodGymWestChamberLeaderSwitch:
+	checkevent GOLDENROD_LEADER_DOOR_3
+	iftrue .flipped
 	opentext
 	writetext GoldenrodGymWestChamberLeaderSwitchText
 	yesorno
 	iffalse .no
+	playsound SFX_ENTER_DOOR
+	waitsfx
 	setevent GOLDENROD_LEADER_DOOR_3
 .no
 	closetext
 	end
+	
+.flipped
+	jumptext GoldenrodGymWestChamberLeaderSwitchStuckText
 
 GuitaristConradText:
 	text "You have entered"
@@ -149,6 +156,11 @@ GoldenrodGymWestChamberLeaderSwitchText:
 	line "LEADER SWITCH 3."
 	
 	para "Flip it?"
+	done
+	
+GoldenrodGymWestChamberLeaderSwitchStuckText:
+	text "The switch won't"
+	line "budge anymore!"
 	done
 
 GoldenrodGymWestChamber_MapEvents:
