@@ -73,13 +73,46 @@ MaplesLab_MapScripts:
 ProfMapleScript:
 	faceplayer
 	opentext
+	checkevent EVENT_SHOWED_MAPLE_COGBADGE
+	iftrue .AfterCogBadge
+	checkflag ENGINE_COGBADGE
+	iftrue .DefeatedBrother
+	checkevent EVENT_BACKUP_REQUESTED
+	iftrue .MetBrother
+	checkcode VAR_BADGES
+	ifgreater 0, .AfterFirstBadge
 	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iffalse ChooseAPokemon
 	writetext MapleDescribesLeagueText
 	waitbutton
 	closetext
 	end
+
+.MetBrother
+	writetext MapleMetBrotherText
+	waitbutton
+	closetext
+	end
+
+.DefeatedBrother
+	writetext MapleDefeatedBrotherText
+	waitbutton
+	closetext
+	setevent EVENT_SHOWED_MAPLE_COGBADGE
+	end
 	
+.AfterFirstBadge:
+	writetext MapleAfterBadgeText
+	waitbutton
+	closetext
+	end
+	
+.AfterCogBadge:
+	writetext MapleAfterCogbadgeText
+	waitbutton
+	closetext
+	end
+
 ChooseAPokemon
 	writetext MapleText_ChooseAPokemon
 	waitbutton
@@ -534,6 +567,112 @@ MapleDescribesLeagueText:
 	cont "CITY. Check your"
 	cont "TOWN MAP if you"
 	cont "get lost!"
+	done
+	
+MapleMetBrotherText:
+	text "Hello, <PLAYER>!"
+	
+	para "How is your adven-"
+	line "ture coming along?"
+	
+	para "You came back from"
+	line "RUGOSA CITY?"
+	
+	para "You know, my bro-"
+	line "ther runs the GYM"
+	cont "there."
+	
+	para "<……><……><……>"
+	
+	para "Oh my! I see!"
+	
+	para "If JOEL is asking"
+	line "for your help, you"
+	cont "must be shaping up"
+	cont "to be quite the"
+	cont "#MON TRAINER!"
+	done
+	
+MapleDefeatedBrotherText:
+	text "Yes, <PLAYER>?"
+	line "Is there something"
+	cont "you would like to"
+	cont "tell me?"
+	
+	para "<……><……><……>"
+	
+	para "Wow! You took on"
+	line "JOEL's GYM CHALLE-"
+	cont "NGE? And you won?"
+	
+	para "That's marvelous!"
+	
+	para "Sadly, I don't get"
+	line "the chance to see"
+	cont "my brother often…"
+	
+	para "If you find time,"
+	line "could you let him"
+	cont "know I said hi?"
+	
+	para "Work here has been"
+	line "so hectic that I"
+	cont "can hardly come"
+	cont "home to visit…"
+	
+	para "<……><……><……>"
+	
+	para "I shouldn't ruin"
+	line "your mood!"
+	
+	para "I am proud of you"
+	line "for earning the"
+	cont "COGBADGE! I could"
+	cont "never defeat JOEL"
+	cont "myself, truth be"
+	cont "told."
+	
+	para "I would wish you"
+	line "luck on the rest"
+	cont "of your journey,"
+	cont "but you don't need"
+	cont "it! You will reach"
+	cont "the #MON LEAGUE"
+	cont "in no time!"
+	done
+	
+MapleAfterBadgeText:
+	text "Hello, <PLAYER>!"
+	
+	para "How is the #MON"
+	line "I gave you doing?"
+	
+	para "If you want to be"
+	line "a truly successful"
+	cont "TRAINER, you need"
+	cont "to use a variety"
+	cont "of #MON."
+	
+	para "Every #MON has"
+	line "its weaknesses,"
+	cont "you must account"
+	cont "for those when"
+	cont "selecting a team!"
+	done
+	
+MapleAfterCogbadgeText:
+	text "<PLAYER>! Hello!"
+	
+	para "I'm happy you have"
+	line "time to stop by"
+	cont "and see us here-"
+	cont "I know I hardly"
+	cont "have time to do"
+	cont "the same."
+	
+	para "Some day I will"
+	line "become organized,"
+	cont "I promise! Ha!"
 	done
 
 MaplePokeBallText:

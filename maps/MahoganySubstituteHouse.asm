@@ -77,7 +77,8 @@ SubstituteGuyText:
 	cont "to create a doll"
 	cont "to absorb hits for"
 	cont "it."
-	cont "The doll can even"
+	
+	para "The doll can even"
 	cont "block status con-"
 	cont "ditions!"
 	

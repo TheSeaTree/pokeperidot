@@ -130,19 +130,30 @@ ElectricGymLeader:
 	setevent EVENT_BEAT_JOEL
 .FightDone:
 	opentext
-	special HealParty
+	checkevent EVENT_MAPLE_MESSAGE_DELIVERED
+	iftrue .AfterMessage
+	checkevent EVENT_SHOWED_MAPLE_COGBADGE
+	iftrue .SisterMessage
 	checkevent EVENT_GOT_TM_THUNDERBOLT
-	iftrue .GotThunderbolt
+	iftrue .AfterMessage
+	special HealParty
 	writetext CogBadgeText
 	buttonsound
 	verbosegiveitem TM_THUNDERBOLT
-	iffalse .NoRoomForThunderbolt
 	setevent EVENT_GOT_TM_THUNDERBOLT
-.GotThunderbolt:
 	writetext ThunderboltTMText
 	waitbutton
-.NoRoomForThunderbolt:
+.AfterMessage:
+	writetext JoelAfterMessageText
+	waitbutton
 	closetext
+	end
+
+.SisterMessage:
+	writetext JoelSisterText
+	waitbutton
+	closetext
+	setevent EVENT_MAPLE_MESSAGE_DELIVERED
 	end
 
 MahoganyGymPod1:
@@ -155,6 +166,7 @@ MahoganyGymPod1:
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST1, 13, 19
 	appear MAHOGANYGYM_SCIENTIST1
+	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST1, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -246,6 +258,7 @@ MahoganyGymPod3:
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST2, 19, 15
 	appear MAHOGANYGYM_SCIENTIST2
+	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST2, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -334,6 +347,7 @@ MahoganyGymPod5:
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST3, 1, 19
 	appear MAHOGANYGYM_SCIENTIST3
+	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST3, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -441,6 +455,7 @@ MahoganyGymPod8:
 	iftrue .NoBattle
 	moveobject MAHOGANYGYM_SCIENTIST4, 14, 7
 	appear MAHOGANYGYM_SCIENTIST4
+	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST4, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
 	playmusic MUSIC_HIKER_ENCOUNTER
@@ -1170,7 +1185,11 @@ PodOverloadText:
 	done
 	
 ElectricLeaderChallengeText:
-	text "Ah, a challenger!"
+	text "Hello again! You"
+	line "were the kid who"
+	cont "helped clean up"
+	cont "the POWER PLANT,"
+	cont "correct?"
 	
 	para "How do you like my"
 	line "telepods? Quite"
@@ -1190,7 +1209,7 @@ ElectricLeaderChallengeText:
 	cont "mastery of #MON"
 	cont "battles!"
 	done
-	
+
 ElectricLeaderWinText:
 	text "It saddens me to"
 	line "be outsmarted, but"
@@ -1240,6 +1259,49 @@ ThunderboltTMText:
 	line "paralyzed opens up"
 	cont "many opportunities"
 	cont "in battle."
+	done
+	
+JoelSisterText:
+	text "Hey, <PLAYER>!"
+	
+	para "You spoke to PROF."
+	line "MAPLE recently?"
+	
+	para "I had no idea you"
+	line "knew my sister!"
+	
+	para "<……><……><……>"
+	
+	para "I understand."
+
+	para "My sister is fresh"
+	line "out of school, and"
+	cont "opening her own"
+	cont "LAB right away is"
+	cont "a hefty task."
+
+	para "Thanks for letting"
+	line "me know."
+
+	para "I should try and"
+	line "reach out to her"
+	cont "myself."
+
+	para "I can just get so"
+	line "obsessed sometimes"
+	cont "when I create a"
+	cont "new gadget."
+	done
+	
+JoelAfterMessageText:
+	text "The march of prog-"
+	line "ress knows no end!"
+	
+	para "I will always push"
+	line "myself to become a"
+	cont "better #MON"
+	cont "TRAINER and inven-"
+	cont "tor!"
 	done
 	
 ScientistAndreText:
@@ -1366,7 +1428,7 @@ MahoganyGym_MapEvents:
 	bg_event 13, 32, BGEVENT_READ, MahoganyGymExit
 
 	db 5 ; object events
-	object_event  5,  1, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
+	object_event  5,  1, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistAndre, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistKurt, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistDavid, -1

@@ -555,7 +555,7 @@ CoastalLab_MapEvents:
 	bg_event  6,  1, BGEVENT_UP, CoastalLabUnownBook
 
 	db 6 ; object events
-	object_event  0,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrScript, -1
+	object_event  0,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrScript, -1
 	object_event  7,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrAideScript, -1
 	object_event  -3, -3, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CoastalLabPokeBall, EVENT_BULBASAUR_POKEBALL_IN_MAPLES_LAB

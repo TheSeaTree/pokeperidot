@@ -80,6 +80,9 @@ MahoganyApartment3FGirlAfter:
 	line "this new DOLLY so"
 	cont "much more than the"
 	cont "old one already!"
+	
+	para "It's so much more"
+	line "cuddly!"
 	done
 	
 MahoganyApartment3FPartyFull:
