@@ -393,7 +393,7 @@ INCBIN "gfx/types/water.1bpp",       primary_type ;Chinchou
 INCBIN "gfx/types/water.1bpp",       primary_type ;Lanturn
 INCBIN "gfx/types/normal.1bpp",      primary_type ;Sirfetch'd
 INCBIN "gfx/types/grass.1bpp",       primary_type ;Mandrabel
-INCBIN "gfx/types/normal.1bpp",      primary_type ;Igglybuff
+INCBIN "gfx/types/ghost.1bpp",       primary_type ;Curstraw
 INCBIN "gfx/types/ice.1bpp",         primary_type ;Shifur
 INCBIN "gfx/types/ice.1bpp",         primary_type ;Snowmad
 ; 169-176 second type
@@ -402,7 +402,7 @@ INCBIN "gfx/types/electric.1bpp",    secondary_type ;Chinchou
 INCBIN "gfx/types/electric.1bpp",    secondary_type ;Lanturn
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Sirfetch'd
 INCBIN "gfx/types/fairy.1bpp",       secondary_type ;Mandrabel
-INCBIN "gfx/types/fairy.1bpp",       secondary_type ;Igglybuff
+INCBIN "gfx/types/normal.1bpp",      secondary_type ;Curstraw
 INCBIN "gfx/types/normal.1bpp",      secondary_type ;Shifur
 INCBIN "gfx/types/dark.1bpp",        secondary_type ;Snowmad
 ; 177-184 first type
