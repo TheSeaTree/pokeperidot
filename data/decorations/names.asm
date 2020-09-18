@@ -29,3 +29,4 @@ DecorationNames:
 	db "DESERTPLANT@"
 	db "ISLANDPLANT@"
 	db "THIRSTYPLANT@"
+	db "MYTHIC POSTER@"

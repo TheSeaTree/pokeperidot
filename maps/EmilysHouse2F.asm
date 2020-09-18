@@ -10,7 +10,7 @@ EmilysHouse2F_MapScripts:
 	callback MAPCALLBACK_TILES, .InitializeRoom
 
 .InitializeRoom:
-	changeblock  0,  0, $26
+	changeblock  0,  0, $2c
 	changeblock  0,  4, $1c
 	changeblock  6,  0, $1f
 	changeblock  6,  4, $22

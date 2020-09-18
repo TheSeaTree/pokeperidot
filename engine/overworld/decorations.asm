@@ -260,7 +260,8 @@ FindOwnedPosters:
 	db DECO_CLEFAIRY_POSTER ; 12
 	db DECO_JIGGLYPUFF_POSTER ; 13
 	db DECO_TANGELA_POSTER
-	db DECO_MEW_POSTER
+	db DECO_SHUCKLE_POSTER
+	db DECO_MYTHIC_POSTER
 	db -1
 
 DecoConsoleMenu:
@@ -1008,7 +1009,8 @@ DecorationDesc_PosterPointers:
 	dbw DECO_CLEFAIRY_POSTER, DecorationDesc_ClefairyPoster
 	dbw DECO_JIGGLYPUFF_POSTER, DecorationDesc_JigglypuffPoster
 	dbw DECO_TANGELA_POSTER, DecorationDesc_TangelaPoster
-	dbw DECO_MEW_POSTER, DecorationDesc_MewPoster
+	dbw DECO_SHUCKLE_POSTER, DecorationDesc_ShucklePoster
+	dbw DECO_MYTHIC_POSTER, DecorationDesc_MewPoster
 	db -1
 
 DecorationDesc_TownMapPoster:
@@ -1050,9 +1052,16 @@ DecorationDesc_JigglypuffPoster:
 	
 DecorationDesc_TangelaPoster:
 	jumptext .TangelaPosterText
-	
+
 .TangelaPosterText:
 	text_far PosterText_TangelaPoster
+	text_end
+	
+DecorationDesc_ShucklePoster:
+	jumptext .ShucklePosterText
+	
+.ShucklePosterText
+	text_far PosterText_ShucklePoster
 	text_end
 	
 DecorationDesc_MewPoster:

@@ -316,9 +316,15 @@ PosterText_TangelaPoster::
 	line "cute TANGELA."
 	done
 
-PosterText_MewPoster::
+PosterText_ShucklePoster::
 	text "It's a poster of a"
-	line "cute MEW."
+	line "cute SHUCKLE."
+	done
+
+PosterText_MewPoster::
+	text "…I wonder what"
+	line "#MON this one"
+	cont "is supposed to be."
 	done
 
 UnknownText_0x1bc5d7::

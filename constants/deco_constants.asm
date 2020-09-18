@@ -37,6 +37,7 @@ const_value = 1
 	const DESERTPLANT
 	const ISLANDPLANT
 	const THIRSTYPLANT
+	const MYTHIC_POSTER
 
 ; DoDecorationAction2.DecoActions indexes (see engine/overworld/decorations.asm)
 const_value = 1
@@ -131,7 +132,8 @@ __enum__ = 0
 	deco  ISLANDPLANT
 	deco  THIRSTYPLANT
 	deco  TANGELA_POSTER
-	deco  MEW_POSTER
+	deco  SHUCKLE_POSTER
+	deco  MYTHIC_POSTER
 NUM_NON_TROPHY_DECOS = __enum__
 	deco  GOLD_TROPHY_DOLL
 	deco  SILVER_TROPHY_DOLL
