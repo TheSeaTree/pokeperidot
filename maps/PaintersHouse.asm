@@ -8,6 +8,10 @@ PaintersHouse_MapScripts:
 Painter:
 	faceplayer
 	opentext
+	checkevent EVENT_DECO_POSTER_6
+	iftrue .HaveMewPoster
+	checkflag ENGINE_DAILY_PAINTING
+	iftrue .AlreadyBoughtToday
 	checkevent EVENT_MET_PAINTER
 	iftrue .AlreadyMet
 	writetext PainterIntroText
@@ -18,125 +22,122 @@ Painter:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Girl
 	writetext PainterHaveSmeargleMaleText
-	jump .Continue
+	jump .Start
 .Girl
 	writetext PainterHaveSmeargleFemaleText
-.Continue
-	waitbutton
-	writetext PainterSellingPaintingsText
-	waitbutton
 .Start
 	writetext WhichPaintingText
 .BuyAnother
 	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .Pikachu
-	ifequal 2, .Clefairy
-	ifequal 3, .Jigglypuff
+	yesorno
+	iffalse .Goodbye
+	checkmoney YOUR_MONEY, 15000
+	ifequal HAVE_LESS, .NotEnoughMoney
+.Roll
+	random 5
+	ifequal 0, .Pikachu
+	ifequal 1, .Clefairy
+	ifequal 2, .Jigglypuff
+	ifequal 3, .Tangela
+	ifequal 4, .Shuckle
+
 .Goodbye
 	writetext PainterGoodbyeText
 	waitbutton
 	closetext
+	turnobject LAST_TALKED, RIGHT
 	setevent EVENT_MET_PAINTER
 	end
 	
 .Pikachu
-	pokenamemem PIKACHU, MEM_BUFFER_0
-	writetext PainterConfirmText
-	yesorno
-	iffalse .SomethingElse
-	checkmoney YOUR_MONEY, 15000
-	ifequal HAVE_LESS, .NotEnoughMoney
 	checkevent EVENT_DECO_POSTER_1
-	iftrue .AlreadyHave
-	takemoney YOUR_MONEY, 15000
-	special PlaceMoneyTopRight
+	iftrue .Roll
 	setevent EVENT_DECO_POSTER_1
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
-	jump .Confirm
+	pokenamemem PIKACHU, MEM_BUFFER_0
+	jump .BuyPoster
 
 .Clefairy
-	pokenamemem CLEFAIRY, MEM_BUFFER_0
-	writetext PainterConfirmText
-	yesorno
-	iffalse .SomethingElse
-	checkmoney YOUR_MONEY, 15000
-	ifequal HAVE_LESS, .NotEnoughMoney
 	checkevent EVENT_DECO_POSTER_2
-	iftrue .AlreadyHave
-	takemoney YOUR_MONEY, 15000
-	special PlaceMoneyTopRight
+	iftrue .Roll
 	setevent EVENT_DECO_POSTER_2
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
-	jump .Confirm
+	pokenamemem CLEFAIRY, MEM_BUFFER_0
+	jump .BuyPoster
 
 .Jigglypuff
-	pokenamemem JIGGLYPUFF, MEM_BUFFER_0
-	writetext PainterConfirmText
-	yesorno
-	iffalse .SomethingElse
-	checkmoney YOUR_MONEY, 15000
-	ifequal HAVE_LESS, .NotEnoughMoney
 	checkevent EVENT_DECO_POSTER_3
-	iftrue .AlreadyHave
+	iftrue .Roll
+	setevent EVENT_DECO_POSTER_3
+	pokenamemem JIGGLYPUFF, MEM_BUFFER_0
+	jump .BuyPoster
+	
+.Tangela
+	checkevent EVENT_DECO_POSTER_4
+	iftrue .Roll
+	setevent EVENT_DECO_POSTER_4
+	pokenamemem TANGELA, MEM_BUFFER_0
+	jump .BuyPoster
+	
+.Shuckle
+	checkevent EVENT_DECO_POSTER_5
+	iftrue .Roll
+	setevent EVENT_DECO_POSTER_5
+	pokenamemem SHUCKLE, MEM_BUFFER_0
+
+.BuyPoster
+	writetext PainterConfirmText
 	takemoney YOUR_MONEY, 15000
 	special PlaceMoneyTopRight
-	setevent EVENT_DECO_POSTER_3
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
-	jump .Confirm
-	
-.Confirm
 	writetext PainterShippedToHomeText
 	waitbutton
-	jump .AnythingElse
+	setevent EVENT_MET_PAINTER
+	setflag ENGINE_DAILY_PAINTING
+.AlreadyBoughtToday:
+	writetext PainterComeBackTomorrowText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, RIGHT
+	end
 	
 .NotEnoughMoney:
 	writetext PainterNotEnoughMoneyText
 	waitbutton
-	jump .AnythingElse
-	
-.AlreadyHave:
-	writetext PainterAlreadyHaveText
-	waitbutton
-	
-.AnythingElse:
-	writetext PainterAnythingElseText
-	waitbutton
-	jump .BuyAnother
-
-.SomethingElse:
-	writetext PainterSomethingElseText
-	waitbutton
-	jump .BuyAnother
+	closetext
+	end
 
 .AlreadyMet:
 	writetext PainterAlreadyMetText
 	waitbutton
-	jump .Start
-	
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
-	dw .MenuData
-	db 1 ; default option
+	checkevent EVENT_DECO_POSTER_1
+	iffalse .Start
+	checkevent EVENT_DECO_POSTER_2
+	iffalse .Start
+	checkevent EVENT_DECO_POSTER_3
+	iffalse .Start
+	checkevent EVENT_DECO_POSTER_4
+	iffalse .Start
+	checkevent EVENT_DECO_POSTER_5
+	iffalse .Start
 
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 4 ; items
-	db "PIKACHU    ¥15000@"
-	db "CLEFAIRY   ¥15000@"
-	db "JIGGLYPUFF ¥15000@"
-	db "CANCEL@"
+	writetext GiveMewPosterText
+	waitbutton
+	setevent EVENT_DECO_POSTER_6
+	writetext PainterShippedToHomeText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, RIGHT
+	end
 
-.NoSmeargle
+.HaveMewPoster:
+	writetext HaveMewPosterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, RIGHT
+	end
+
+.NoSmeargle:
 	writetext PainterNoSmeargleText
 	waitbutton
 	closetext
@@ -156,9 +157,12 @@ PainterAlreadyMetText:
 	line "young art connois-"
 	cont "seur. Welcome!"
 	
-	para "Have you come to"
-	line "browse through my"
-	cont "art once more?"
+	para "I'm actually work-"
+	line "ing on a a master-"
+	cont "piece as we speak."
+	
+	para "And it is just"
+	line "about… Finished!"
 	done
 
 PainterHaveSmeargleMaleText:
@@ -172,14 +176,6 @@ PainterHaveSmeargleFemaleText:
 	text "You seem to be a"
 	line "lady of impeccable"
 	cont "taste in the arts."
-	done
-	
-PainterSellingPaintingsText:
-	text "Would you care to"
-	line "buy any of my por-"
-	cont "traits? They would"
-	cont "look lovely hang-"
-	cont "ing in your home."
 	done
 
 PainterNoSmeargleText:
@@ -196,7 +192,7 @@ PainterNoSmeargleText:
 	done
 
 PainterGoodbyeText:
-	text "Nothing today?"
+	text "Not today?"
 	
 	para "Well if you find"
 	line "yourself around"
@@ -205,18 +201,24 @@ PainterGoodbyeText:
 	cont "welcome to pay me"
 	cont "a visit."
 	done
-	
+
 WhichPaintingText:
-	text "Which PAINTING"
-	line "would you like?"
+	text "Would you like to"
+	line "purchase my work?"
+	
+	para "It can be yours"
+	line "for ¥15000. How"
+	cont "does that sound?"
 	done
 
 PainterConfirmText:
-	text "You would like the"
-	line "PAINTING of a"
+	text "Excellent!"
+	
+	para "Here you are. A"
+	line "PAINTING of a fine"
 	cont "@"
 	text_ram wStringBuffer3
-	text "?"
+	text "!"
 	done
 	
 PainterShippedToHomeText:
@@ -229,27 +231,59 @@ PainterShippedToHomeText:
 	cont "home, okay?"
 	done
 	
+PainterComeBackTomorrowText:
+	text "That is all I have"
+	line "done today."
+	
+	para "Come back tomorrow"
+	line "and I will have a"
+	cont "new portrait"
+	cont "finished for sure!"	
+	done
+	
 PainterNotEnoughMoneyText:
-	text "I think that one"
+	text "I think my works"
 	line "might be outside"
 	cont "of your budget…"
+
+	para "Sorry, but I can't"
+	line "give these away"
+	cont "for free."
 	done
 	
-PainterAlreadyHaveText:
-	text "I believe I alrea-"
-	line "dy sold you one of"
-	cont "those. No need for"
-	cont "another, right?"
+GiveMewPosterText:
+	text "This #MON came"
+	line "to me in a dream"
+	cont "last night."
+	
+	para "I couldn't help but"
+	line "recreate what I"
+	cont "saw in this dream."
+	
+	para "I'm not even sure"
+	line "if it's a real"
+	cont "#MON either."
+	
+	para "I could never sell"
+	line "this piece. Please"
+	cont "take it, for free."	
 	done
 
-PainterSomethingElseText:
-	text "Did something else"
-	line "catch your eye?"
-	done
+HaveMewPosterText:
+	text "I'm afraid to say"
+	line "that I don't think"
+	cont "I could ever top"
+	cont "the MYTHIC POSTER"
+	cont "I painted. I feel"
+	cont "I must retire for"
+	cont "the time being…"
 	
-PainterAnythingElseText:
-	text "Does anything else"
-	line "catch your eye?"
+	para "But who knows?"
+	
+	para "Maybe a new #-"
+	line "MON will spark my"
+	cont "creativity once"
+	cont "more!"
 	done
 
 PaintersHouse_MapEvents:
