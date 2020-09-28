@@ -722,7 +722,7 @@ OakSpeech:
 	farcall InitGender
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_RotatePalettesLeftFrontpic
 
