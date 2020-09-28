@@ -11,6 +11,8 @@ OlivineSurfHouse_MapScripts:
 OlivineSurfGuy:
 	faceplayer
 	opentext
+	jump .Hostile
+	; Surf is unobtainable in Demo 2
 	checkevent EVENT_GOT_HM_SURF
 	iftrue .GotSurf
 	checkcode VAR_BADGES
