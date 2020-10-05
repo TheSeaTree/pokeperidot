@@ -1264,7 +1264,6 @@ TryWildEncounter_BugContest:
 	ld b, 20 percent
 
 .ok
-	farcall ApplyMusicEffectOnEncounterRate
 	farcall ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	ldh a, [hRandomAdd]
