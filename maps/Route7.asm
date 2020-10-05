@@ -116,7 +116,9 @@ TMSandstormExplaination:
 Route7_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 34,  9, ROUTE_7_CAVE_1F, 1
+	warp_event 26,  5, ROUTE_7_CAVE_1F, 2
 	
 	db 0 ; coord events
 
@@ -125,5 +127,5 @@ Route7_MapEvents:
 	db 4 ; object events
 	object_event 11, 18, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltJun, -1
 	object_event  8, 23, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltTakeo, -1
-	object_event 35, 15, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
+	object_event 23,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
 	object_event 13, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route7SoftSand, EVENT_ROUTE_7_SOFT_SAND

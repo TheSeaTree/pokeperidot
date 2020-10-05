@@ -73,7 +73,7 @@ OlivinePortSailorAdmireText:
 	line "real beaut'?"
 	
 	para "I ain't never seen"
-	cont "nothing like her"
+	line "nothing like her"
 	cont "docked in this"
 	cont "port before."
 	done

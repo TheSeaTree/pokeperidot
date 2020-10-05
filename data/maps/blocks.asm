@@ -301,6 +301,12 @@ SilverCaveOutside_Blocks:
 
 Route7_Blocks:
 	INCBIN "maps/Route7.ablk"
+
+Route7Cave1F_Blocks:
+	INCBIN "maps/Route7Cave1F.ablk"
+
+Route7CaveB1F_Blocks:
+	INCBIN "maps/Route7CaveB1F.ablk"
 	
 Route30_Blocks:
 	INCBIN "maps/Route30.ablk"
@@ -665,6 +671,7 @@ Route22CaveB2F_Blocks:
 NevermelticeChamber_Blocks:
 Route22HiddenCave_Blocks:
 Route4HiddenCave_Blocks:
+KinglersDen_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
 UnownChamberAG_Blocks:

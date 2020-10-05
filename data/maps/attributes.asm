@@ -109,7 +109,7 @@ ENDM
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
-	connection east, Route15, ROUTE_15, 3
+	connection east, Route15, ROUTE_15, 5
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
 	connection north, PaintersForest, PAINTERS_FOREST, 7
@@ -145,7 +145,7 @@ ENDM
 	connection north, NewBarkTown, NEW_BARK_TOWN, 3
 
 	map_attributes Route17, ROUTE_17, $71, WEST
-	connection west, Route15, ROUTE_15, -5
+	connection west, Route15, ROUTE_15, -7
 
 	map_attributes Route16, ROUTE_16, $35, NORTH | SOUTH
 	connection north, Route15, ROUTE_15, -2
@@ -153,12 +153,12 @@ ENDM
 
 	map_attributes Route7, ROUTE_7, $35, WEST | EAST
 	connection west, Route8, ROUTE_8, 2
-	connection east, Route6, ROUTE_6, 1
+	connection east, Route6, ROUTE_6, 0
 
 	map_attributes Route15, ROUTE_15, $35, SOUTH | WEST | EAST
 	connection south, Route16, ROUTE_16, 2
-	connection west, OlivineCity, OLIVINE_CITY, -3
-	connection east, Route17, ROUTE_17, 5
+	connection west, OlivineCity, OLIVINE_CITY, -5
+	connection east, Route17, ROUTE_17, 7
 	
 	map_attributes Route18, ROUTE_18, $13, 0
 	
@@ -179,7 +179,7 @@ ENDM
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 7
-	connection west, Route7, ROUTE_7, -1
+	connection west, Route7, ROUTE_7, 0
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 9
@@ -444,3 +444,6 @@ ENDM
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0
+	map_attributes Route7Cave1F, ROUTE_7_CAVE_1F, $09, 0
+	map_attributes Route7CaveB1F, ROUTE_7_CAVE_B1F, $09, 0
+	map_attributes KinglersDen, KINGLERS_DEN, $09, 0

@@ -342,12 +342,13 @@ OlivineGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_OLIVINE_RIVAL
 	db SPRITE_BOULDER
-	db SPRITE_TAUROS
+	db SPRITE_BLACK_BELT
 	db SPRITE_FRUIT_TREE
 	db SPRITE_BUENA
 	db SPRITE_MACHOP
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
+	db SPRITE_SWIMMER_GUY_LAND
 	db 0 ; end
 
 CianwoodGroupSprites:

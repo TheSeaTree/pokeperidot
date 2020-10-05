@@ -35,7 +35,7 @@ ENDM
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const OLIVINE_PORT,                                10,  9 ; 14
-	map_const ROUTE_15,                                    20, 19 ;  3
+	map_const ROUTE_15,                                    20, 17 ;  3
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    20, 21 ;  3
 	map_const LUGIA_LAIR,                                  13, 12 ;  3
@@ -94,6 +94,9 @@ ENDM
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
+	map_const ROUTE_7_CAVE_1F,							   13, 10
+	map_const ROUTE_7_CAVE_B1F,							   21, 19
+	map_const KINGLERS_DEN,							        5,  7
 
 	newgroup                                                      ;  4
 
@@ -181,7 +184,7 @@ ENDM
 
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     27, 13 ;  1
-	map_const ROUTE_6,                                     28, 13 ;  1
+	map_const ROUTE_6,                                     34, 14 ;  1
 	map_const ROUTE_7,                                     21, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const ROUTE_10_NORTH,                              16, 14 ; 14
