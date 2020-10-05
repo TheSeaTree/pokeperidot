@@ -62,6 +62,18 @@ CheckBadge:
 	; is required.
 	text_jump _BadgeRequiredText
 	db "@"
+	
+CantUseFieldMove:
+	ld hl, .TMRequiredText
+	call MenuTextBoxBackup ; push text to queue
+	ld a, $80
+	ret
+	
+.TMRequiredText:
+	; Sorry! A new ITEM
+	; is required.
+	text_jump _TMRequiredText
+	db "@"
 
 CheckPartyMove:
 ; Check if a monster in your party has move d.
@@ -648,8 +660,12 @@ WaterfallFunction:
 
 .TryWaterfall:
 ; Waterfall
-	ld a, $80
-	ret c
+	ld a, TM_WATERFALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
+
 	call CheckMapCanWaterfall
 	jr c, .failed
 	ld hl, Script_WaterfallFromMenu
@@ -686,7 +702,7 @@ Script_UsedWaterfall:
 	writetext .Text_UsedWaterfall
 	waitbutton
 	closetext
-	playsound SFX_BUBBLEBEAM
+	playsound SFX_SURF
 .loop
 	applymovement PLAYER, .WaterfallStep
 	callasm .CheckContinueWaterfall
@@ -705,7 +721,7 @@ Script_UsedWaterfall:
 	ret
 
 .WaterfallStep:
-	turn_waterfall UP
+	slow_step UP
 	step_resume
 
 .Text_UsedWaterfall:
@@ -714,6 +730,12 @@ Script_UsedWaterfall:
 	db "@"
 
 TryWaterfallOW::
+	ld a, TM_WATERFALL
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .failed
+
 	ld d, WATERFALL
 	call CheckPartyMove
 	jr c, .failed
@@ -981,6 +1003,12 @@ StrengthFunction:
 	ret
 
 .TryStrength:
+	ld a, TM_STRENGTH
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
+
 	jr .UseStrength
 
 .JumpText:
@@ -1068,6 +1096,12 @@ UnknownText_0xcd73:
 	db "@"
 
 TryStrengthOW:
+	ld a, TM_STRENGTH
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .nope
+
 	ld d, STRENGTH
 	call CheckPartyMove
 	jr c, .nope
@@ -1328,6 +1362,10 @@ RockSmashFunction:
 	ret
 
 TryRockSmashFromMenu:
+	ld de, ENGINE_FISTBADGE
+	call CheckBadge
+	jr c, .no_badge
+
 	call GetFacingObject
 	jr c, .no_rock
 	ld a, d
@@ -1341,6 +1379,7 @@ TryRockSmashFromMenu:
 
 .no_rock
 	call FieldMoveFailed
+.no_badge
 	ld a, $80
 	ret
 
@@ -1409,6 +1448,9 @@ AskRockSmashScript:
 	callasm HasRockSmash
 	ifequal 1, .no
 
+	checkflag ENGINE_FISTBADGE
+	iffalse .no
+
 	opentext
 	writetext UnknownText_0xcf77
 	yesorno
@@ -1426,6 +1468,10 @@ AskWallSmashScript:
 	opentext
 	farwritetext SmashWallText
 	waitbutton
+
+	checkflag ENGINE_FISTBADGE
+	iffalse .end
+
 	farwritetext UnknownText_0xcf77
 	yesorno
 	iffalse .end
@@ -1899,7 +1945,7 @@ AskCutScript:
 TrySmashWallOW::
 	ld d, ROCK_SMASH
 	call CheckPartyMove
-	jr c, .cant_cut
+	jr c, .cant_smash
 
 	ld a, BANK(AskWallSmashScript)
 	ld hl, AskWallSmashScript
@@ -1907,7 +1953,7 @@ TrySmashWallOW::
 	scf
 	ret
 
-.cant_cut
+.cant_smash
 	ld a, BANK(CantBreakScript)
 	ld hl, CantBreakScript
 	call CallScript

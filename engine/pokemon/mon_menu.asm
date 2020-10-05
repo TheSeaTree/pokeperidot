@@ -136,6 +136,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_SURF,       MonMenu_Surf
 	dbw MONMENUITEM_STRENGTH,   MonMenu_Strength
 	dbw MONMENUITEM_DIG,        MonMenu_Dig
+	dbw MONMENUITEM_WATERFALL,  MonMenu_Waterfall
 	dbw MONMENUITEM_TELEPORT,   MonMenu_Teleport
 	dbw MONMENUITEM_SOFTBOILED, MonMenu_Softboiled_MilkDrink
 	dbw MONMENUITEM_MILKDRINK,  MonMenu_Softboiled_MilkDrink

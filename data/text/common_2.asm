@@ -286,6 +286,11 @@ _BadgeRequiredText::
 	line "is required."
 	prompt
 
+_TMRequiredText::
+	text "Sorry! A new TM"
+	line "is required."
+	prompt
+
 UnknownText_0x1c05c8::
 	text "Can't use that"
 	line "here."
