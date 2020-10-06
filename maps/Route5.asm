@@ -166,6 +166,8 @@ TrainerCooltrainerFAnya:
 .FightDone
 	checkevent GOT_TOTODILE
 	iftrue .Totodile
+	writetext AnyaAfterBattleText
+	waitbutton
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
 	writetext AnyaGaveTotodile
@@ -471,9 +473,14 @@ CooltrainerAnyaLoss:
 	line "promise, kid."
 	done
 	
+AnyaAfterBattleText:
+	text "Enjoy your reward,"
+	line "trainer."
+	done
+	
 AnyaGaveTotodile:
-	text "<PLAYER>"
-	line "received TOTODILE!"
+	text "<PLAYER> received"
+	line "TOTODILE!"
 	done
 
 AnyaNotEnoughRoom:

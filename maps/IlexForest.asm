@@ -113,6 +113,8 @@ TrainerCooltrainerFSasha:
 .FightDone
 	checkevent GOT_CHIKORITA
 	iftrue .Chikorita
+	writetext SashaAfterBattleText
+	waitbutton
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
 	writetext SashaGaveChikorita
@@ -354,10 +356,18 @@ CooltrainerSashaLoss:
 	cont "#MON some help."
 	done
 	
+SashaAfterBattleText:
+	text "Wow! That was a"
+	line "great battle!"
+	
+	para "As promised, you"
+	line "may have my rare"
+	cont "#MON."
+	done
+	
 SashaGaveChikorita:
-	text "<PLAYER>"
-	line "received"
-	cont "CHIKORITA!"
+	text "<PLAYER> received"
+	line "CHIKORITA!"
 	done
 	
 SashaNotEnoughRoom:

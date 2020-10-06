@@ -152,9 +152,11 @@ TrainerCooltrainerMLucas:
 .FightDone
 	checkevent GOT_CYNDAQUIL
 	iftrue .Cyndaquil
+	writetext LucasAfterBattleText
+	waitbutton
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
-	writetext LucasGaveTotodile
+	writetext LucasGaveCyndaquil
 	playsound SFX_CAUGHT_MON
 	waitsfx
 	givepoke CYNDAQUIL, 10
@@ -449,10 +451,19 @@ CooltrainerLucasLoss:
 	line "do you think I am?"
 	done
 	
-LucasGaveTotodile:
-	text "<PLAYER>"
-	line "received"
-	cont "CYNDAQUIL!"
+LucasAfterBattleText:
+	text "I've never lost a"
+	line "battle before, so"
+	cont "I'm not sure what"
+	cont "to say here."
+	
+	para "…So just take my"
+	line "CYNDAQUIL, okay?"
+	done
+	
+LucasGaveCyndaquil:
+	text "<PLAYER> received"
+	line "CYNDAQUIL!"
 	done
 	
 LucasNotEnoughRoom:
