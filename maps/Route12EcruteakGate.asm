@@ -13,6 +13,7 @@ Route12EcruteakGateOfficerScript:
 	waitbutton
 	closetext
 	end
+
 .After
 	writetext Route12EcruteakGateOfficerAfterText
 	waitbutton

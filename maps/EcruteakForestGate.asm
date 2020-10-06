@@ -172,7 +172,7 @@ EcruteakForestGateOfficerText:
 	para "Or perhaps you are"
 	line "going to visit the"
 	cont "#MON SHELTER on"
-	cont "ROUTE 12."
+	cont "ROUTE 12?"
 	done
 	
 EcruteakForestGateTeacherText:
