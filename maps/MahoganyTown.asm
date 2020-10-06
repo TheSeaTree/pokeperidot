@@ -199,8 +199,8 @@ MahoganyTownOfficersPokemon:
 	opentext
 	writetext MahoganyTownRhydonText
 	cry RHYDON
-	waitbutton
-	writetext MahoganyTownOfficersPokemon
+	waitsfx
+	writetext MahoganyTownOfficersPokemonText
 	waitbutton
 	closetext
 	end
@@ -209,7 +209,7 @@ MahoganyTownGrimer2Battle:
 	opentext
 	writetext MahoganyTownGrimerText
 	cry GRIMER
-	waitbutton
+	waitsfx
 	writetext MahoganyTownGrimerInBattleText
 	waitbutton
 	closetext
@@ -424,7 +424,7 @@ MahoganyGymLeaderComeBack:
 	cont "to stay here and"
 	cont "keep an eye on the"
 	cont "GYM."
-	
+
 	para "Help a guy out,"
 	line "here? Please?"
 	done
@@ -443,7 +443,7 @@ MahoganyGymLeaderAgree:
 	cont "accepting challen-"
 	cont "gers right now."
 	done
-	
+
 MahoganyTownOfficerBeforeText:
 	text "Everything's under"
 	line "control here."

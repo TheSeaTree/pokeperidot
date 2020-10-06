@@ -193,8 +193,9 @@ FuchsiaGroupSprites:
 	db SPRITE_BIKER
 	db SPRITE_POKEFAN_F
 	db SPRITE_LASS
-	; 8 of max 9 walking sprites
+	; 9 of max 9 walking sprites
 	db SPRITE_TWIN
+	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCK
 	db SPRITE_KIMONO_GIRL
 	db SPRITE_POKE_BALL

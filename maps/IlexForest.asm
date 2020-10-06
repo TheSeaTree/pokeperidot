@@ -82,7 +82,7 @@ TrainerTwinMae:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerCooltrainerFSasha:
 	faceplayer
 	opentext
@@ -121,17 +121,15 @@ TrainerCooltrainerFSasha:
 	givepoke CHIKORITA, 10
 	special ChikoritaGiftMon
 	setevent GOT_CHIKORITA
+	
+.Chikorita
+	writetext AlreadyGotChikorita
+	waitbutton
 	closetext
 	end
 	
 .PartyFull
 	writetext SashaNotEnoughRoom
-	waitbutton
-	closetext
-	end
-	
-.Chikorita
-	writetext AlreadyGotChikorita
 	waitbutton
 	closetext
 	end
@@ -407,4 +405,4 @@ IlexForest_MapEvents:
 	object_event 40, 23, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
 	object_event 36, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
 	object_event 37, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
-	object_event 53,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFSasha, -1
+	object_event 53,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFSasha, -1
