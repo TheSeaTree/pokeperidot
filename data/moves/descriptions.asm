@@ -164,7 +164,7 @@ MoveDescriptions::
 	dw WildChargeDescription
 	dw GunkShotDescription
 	dw SubstituteDescription
-	dw StruggleDescription
+	dw StoneEdgeDescription
 	dw SketchDescription
 	dw BulletPunchDescription
 	dw ThiefDescription
@@ -254,7 +254,7 @@ MoveDescriptions::
 	dw NastyPlotDescription
 	dw HurricaneDescription
 	dw BugBuzzDescription
-	dw MoveFFDescription
+	dw StruggleDescription
 	dw Move00Description
 
 
@@ -273,6 +273,7 @@ CrabhammerDescription:
 AeroblastDescription:
 CrossChopDescription:
 RazorWindDescription:
+StoneEdgeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 

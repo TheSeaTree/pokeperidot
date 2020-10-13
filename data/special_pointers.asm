@@ -20,7 +20,6 @@ SpecialsPointers::
 	add_special WaitForOtherPlayerToExit ; $8
 	add_special SetBitsForBattleRequest
 	add_special SetBitsForTimeCapsuleRequest
-	add_special CheckTimeCapsuleCompatibility
 	add_special EnterTimeCapsule
 	add_special TradeCenter
 	add_special Colosseum

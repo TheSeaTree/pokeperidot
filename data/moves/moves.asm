@@ -176,7 +176,7 @@ Moves: ; 41afb
 	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   100, ELECTRIC, 100, 15,  10
 	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,    80,  5,  30
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,   100, 10,   0
-	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,   100,  1,   0
+	move STONE_EDGE,   EFFECT_NORMAL_HIT,        110, ROCK,      80,  5,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,   100,  1,   0
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,    100, 30,   0
 	move THIEF,        EFFECT_THIEF,              60, DARK,     100, 10, 100
@@ -266,3 +266,4 @@ Moves: ; 41afb
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     100, 20,   0
 	move HURRICANE,    EFFECT_HURRICANE,         110, FLYING,    70,  5,  30
 	move SIGNAL_BEAM,  EFFECT_CONFUSE_HIT,        75, BUG,      100, 15,  20
+	move STRUGGLE,     EFFECT_RECOIL_HIT,         50, NORMAL,   100,  1,   0

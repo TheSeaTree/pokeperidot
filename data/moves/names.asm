@@ -163,7 +163,7 @@ MoveNames::
 	db "WILD CHARGE@"
 	db "GUNK SHOT@"
 	db "SUBSTITUTE@"
-	db "STRUGGLE@"
+	db "STONE EDGE@"
 	db "SKETCH@"
 	db "BULLET PUNCH@"
 	db "THIEF@"
@@ -253,4 +253,5 @@ MoveNames::
 	db "NASTY PLOT@"
 	db "HURRICANE@"
 	db "SIGNAL BEAM@"
+	db "STRUGGLE@"
 	

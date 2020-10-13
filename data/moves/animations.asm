@@ -165,7 +165,7 @@ BattleAnimations::
 	dw BattleAnim_WildCharge
 	dw BattleAnim_GunkShot
 	dw BattleAnim_Substitute
-	dw BattleAnim_Struggle
+	dw BattleAnim_StoneEdge
 	dw BattleAnim_Sketch
 	dw BattleAnim_BulletPunch
 	dw BattleAnim_Thief
@@ -255,6 +255,7 @@ BattleAnimations::
 	dw BattleAnim_NastyPlot
 	dw BattleAnim_Hurricane
 	dw BattleAnim_SignalBeam
+	dw BattleAnim_Struggle
 	dw BattleAnim_SweetScent2
 ; $100
 	dw BattleAnim_ThrowPokeBall
@@ -4641,6 +4642,35 @@ BattleAnim_Extremespeed:
 	anim_obj ANIM_OBJ_3A, 152, 40, $0
 	anim_wait 32
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_StoneEdge:
+	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 64, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_00, 116, 56, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 148, 64, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_00, 148, 56, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 124, 72, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_00, 124, 48, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 140, 72, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_00, 140, 48, $0
+	anim_wait 8
+	anim_sound 0, 0, SFX_STRENGTH
+	anim_obj ANIM_OBJ_ANCIENTPOWER, 132, 80, $30
+	anim_wait 4
+	anim_obj ANIM_OBJ_00, 132, 40, $0
 	anim_wait 16
 	anim_ret
 

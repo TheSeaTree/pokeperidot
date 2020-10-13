@@ -311,6 +311,7 @@ SkelegonEvosAttacks:
 	db 47, SANDSTORM
 	db 53, RAZOR_WIND
 	db 57, HYPER_BEAM
+	db 60, STONE_EDGE
 	db 0 ; no more level-up moves130
 
 RinringEvosAttacks:
@@ -878,6 +879,7 @@ AncorEvosAttacks:
 	db 40, CRUNCH
 	db 48, SKULL_BASH
 	db 51, DOUBLE_EDGE
+	db 55, STONE_EDGE
 	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1039,8 +1041,9 @@ MachopEvosAttacks:
 	db 33, DRAIN_PUNCH
 	db 37, BULK_UP
 	db 39, CROSS_CHOP
-	db 43, SCARY_FACE
-	db 39, SUBMISSION
+	db 41, SCARY_FACE
+	db 44, STONE_EDGE
+	db 49, SUBMISSION
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
@@ -1057,7 +1060,8 @@ MachokeEvosAttacks:
 	db 37, DRAIN_PUNCH
 	db 43, BULK_UP
 	db 47, CROSS_CHOP
-	db 53, SCARY_FACE
+	db 50, SCARY_FACE
+	db 53, STONE_EDGE
 	db 57, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -1074,7 +1078,8 @@ MachampEvosAttacks:
 	db 37, DRAIN_PUNCH
 	db 43, BULK_UP
 	db 47, CROSS_CHOP
-	db 53, SCARY_FACE
+	db 50, SCARY_FACE
+	db 53, STONE_EDGE
 	db 57, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -1163,6 +1168,7 @@ GeodudeEvosAttacks:
 	db 31, SANDSTORM
 	db 34, EARTHQUAKE
 	db 40, DOUBLE_EDGE
+	db 42, STONE_EDGE
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
@@ -1178,6 +1184,7 @@ GravelerEvosAttacks:
 	db 36, SANDSTORM
 	db 40, EARTHQUAKE
 	db 50, DOUBLE_EDGE
+	db 54, STONE_EDGE
 	db 0 ; no more level-up moves
 
 GolemEvosAttacks:
@@ -1192,6 +1199,7 @@ GolemEvosAttacks:
 	db 36, SANDSTORM
 	db 40, EARTHQUAKE
 	db 50, DOUBLE_EDGE
+	db 54, STONE_EDGE
 	db 60, IRON_HEAD
 	db 0 ; no more level-up moves
 
@@ -1523,6 +1531,7 @@ OnixEvosAttacks:
 	db 37, DIG
 	db 40, IRON_TAIL
 	db 43, EARTHQUAKE
+	db 46, STONE_EDGE
 	db 49, DOUBLE_EDGE
 	db 52, SANDSTORM
 	db 0 ; no more level-up moves
@@ -1792,6 +1801,7 @@ RhyhornEvosAttacks:
 	db 21, BULLDOZE
 	db 29, ROCK_SLIDE
 	db 37, DOUBLE_EDGE
+	db 41, STONE_EDGE
 	db 45, EARTHQUAKE
 	db 49, MEGAHORN
 	db 53, HORN_DRILL
@@ -1808,6 +1818,7 @@ RhydonEvosAttacks:
 	db 21, BULLDOZE
 	db 29, ROCK_SLIDE
 	db 37, DOUBLE_EDGE
+	db 41, STONE_EDGE
 	db 48, EARTHQUAKE
 	db 55, MEGAHORN
 	db 62, HORN_DRILL
@@ -2243,6 +2254,7 @@ OmastarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
+	db 1, STONE_EDGE
 	db 7, BITE
 	db 10, WATER_GUN
 	db 16, ROLLOUT
@@ -2277,6 +2289,7 @@ KabutopsEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, HARDEN
+	db 1, STONE_EDGE
 	db 6, ABSORB
 	db 11, LEER
 	db 16, DIG
@@ -2302,10 +2315,11 @@ AerodactylEvosAttacks:
 	db 25, ANCIENTPOWER
 	db 33, CRUNCH
 	db 41, DOUBLE_EDGE
-	db 49, RAZOR_WIND
+	db 46, ROCK_SLIDE
+	db 52, RAZOR_WIND
 	db 57, IRON_HEAD
 	db 65, HYPER_BEAM
-	db 73, ROCK_SLIDE
+	db 73, STONE_EDGE
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
@@ -3059,6 +3073,7 @@ SudowoodoEvosAttacks:
 	db 33, ROCK_SLIDE
 	db 36, COUNTER
 	db 43, DOUBLE_EDGE
+	db 47, STONE_EDGE
 	db 50, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -3425,6 +3440,7 @@ SteelixEvosAttacks:
 	db 38, SCREECH
 	db 41, ROCK_SLIDE
 	db 44, DIG
+	db 45, STONE_EDGE
 	db 47, IRON_TAIL
 	db 50, EARTHQUAKE
 	db 52, DOUBLE_EDGE
@@ -3500,13 +3516,18 @@ ScizorEvosAttacks:
 
 ShuckleEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, HARDEN
-	db 9, WRAP
-	db 14, ENCORE
-	db 23, SAFEGUARD
-	db 28, BIDE
-	db 37, REST
+	db  1, STRING_SHOT
+	db  1, HARDEN
+	db  1, BIDE
+	db  1, ROLLOUT
+	db  5, ENCORE
+	db  9, WRAP
+	db 16, SAFEGUARD
+	db 20, REST
+	db 23, ROCK_THROW
+	db 28, ACID_ARMOR
+	db 34, ROCK_SLIDE
+	db 45, STONE_EDGE
 	db 0 ; no more level-up moves
 
 HeracrossEvosAttacks:
@@ -3604,6 +3625,7 @@ MagcargoEvosAttacks:
 	db 38, ROLLOUT
 	db 43, BODY_SLAM
 	db 47, RECOVER
+	db 50, STONE_EDGE
 	db 54, FIRE_BLAST
 	db 58, EARTHQUAKE
 	db 0 ; no more level-up moves
@@ -3657,6 +3679,7 @@ CorsolaEvosAttacks:
 	db 41, MIRROR_COAT
 	db 47, EARTHQUAKE
 	db 50, HYDRO_PUMP
+	db 50, STONE_EDGE
 	db 0 ; no more level-up moves
 
 RemoraidEvosAttacks:
@@ -3799,6 +3822,7 @@ PhanpyEvosAttacks:
 	db 24, BODY_SLAM
 	db 28, CHARM
 	db 33, DOUBLE_EDGE
+	db 40, STONE_EDGE
 	db 0 ; no more level-up moves
 
 DonphanEvosAttacks:
@@ -3816,6 +3840,7 @@ DonphanEvosAttacks:
 	db 30, SANDSTORM
 	db 37, SCARY_FACE
 	db 43, EARTHQUAKE
+	db 48, STONE_EDGE
 	db 50, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -4032,6 +4057,7 @@ LarvitarEvosAttacks:
 	db 37, ROCK_SLIDE
 	db 41, CRUNCH
 	db 46, EARTHQUAKE
+	db 50, STONE_EDGE
 	db 55, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -4049,6 +4075,7 @@ PupitarEvosAttacks:
 	db 41, ROCK_SLIDE
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
+	db 60, STONE_EDGE
 	db 67, HYPER_BEAM
 	db 0 ; no more level-up moves
 
@@ -4065,6 +4092,7 @@ TyranitarEvosAttacks:
 	db 41, ROCK_SLIDE
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
+	db 63, STONE_EDGE
 	db 73, HYPER_BEAM
 	db 0 ; no more level-up moves
 

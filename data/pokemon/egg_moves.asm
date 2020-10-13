@@ -126,6 +126,7 @@ SandshrewEggMoves:
 	db X_SCISSOR
 	db AMNESIA
 	db AGILITY
+	db STONE_EDGE
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -137,6 +138,7 @@ NidoranFEggMoves:
 	db COUNTER
 	db PECK
 	db SKULL_BASH
+	db STONE_EDGE
 	db -1 ; end
 
 NidoranMEggMoves:
@@ -147,6 +149,7 @@ NidoranMEggMoves:
 	db AMNESIA
 	db COUNTER
 	db BITE
+	db STONE_EDGE
 	db -1 ; end
 	
 ClefairyEggMoves:
@@ -227,6 +230,7 @@ DiglettEggMoves:
 	db PURSUIT
 	db EXPLOSION
 	db THRASH
+	db STONE_EDGE
 	db -1 ; end
 
 MeowthEggMoves:
@@ -260,6 +264,7 @@ MankeyEggMoves:
 	db ENCORE	
 	db SCARY_FACE
 	db PAY_DAY
+	db STONE_EDGE
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -382,6 +387,7 @@ GrimerEggMoves:
 	db PURSUIT
 	db MOONBLAST
 	db DESTINY_BOND
+	db STONE_EDGE
 	db -1 ; end
 
 ShellderEggMoves:
@@ -444,6 +450,7 @@ CuboneEggMoves:
 	db SKULL_BASH
 	db PERISH_SONG
 	db FALSE_SWIPE
+	db STONE_EDGE
 	db -1 ; end
 
 SearionEggMoves:
@@ -559,6 +566,7 @@ PinsirEggMoves:
 	db RAZOR_WIND
 	db FOCUS_ENERGY
 	db REVERSAL
+	db STONE_EDGE
 	db -1 ; end
 
 LaprasEggMoves:
@@ -635,6 +643,7 @@ DratiniEggMoves:
 	db IRON_TAIL
 	db FIRE_SPIN
 	db HYDRO_PUMP
+	db STONE_EDGE
 	db DIVE_BOMB
 	db -1 ; end
 
@@ -899,6 +908,7 @@ GligarEggMoves:
 	db AGILITY
 	db BATON_PASS
 	db DOUBLE_EDGE
+	db STONE_EDGE
 	db -1 ; end
 
 SnubbullEggMoves:
@@ -910,6 +920,7 @@ SnubbullEggMoves:
 	db WILD_CHARGE
 	db DOUBLE_EDGE
 	db MIMIC
+	db STONE_EDGE
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -939,6 +950,7 @@ HeracrossEggMoves:
 	db SEISMIC_TOSS
 	db MEGAHORN
 	db SPIKES
+	db STONE_EDGE
 	db -1 ; end
 
 TeddiursaEggMoves:
@@ -950,6 +962,7 @@ TeddiursaEggMoves:
 	db METAL_CLAW
 	db CROSS_CHOP
 	db BELLY_DRUM
+	db STONE_EDGE
 	db -1 ; end
 
 SlugmaEggMoves:
@@ -957,6 +970,7 @@ SlugmaEggMoves:
 	db PAIN_SPLIT
 	db FIRE_SPIN
 	db EXPLOSION
+	db STONE_EDGE
 	db -1 ; end
 
 SwinubEggMoves:
@@ -966,6 +980,7 @@ SwinubEggMoves:
 	db ICICLE_SPEAR
 	db FISSURE
 	db SPIKES
+	db STONE_EDGE
 	db -1 ; end
 
 CorsolaEggMoves:
@@ -1125,6 +1140,7 @@ FerrodonEggMoves:
 	db FLAIL
 	db SKULL_BASH
 	db ANCIENTPOWER
+	db STONE_EDGE
 	db -1
 
 NoEggMoves:

@@ -4346,7 +4346,7 @@ PursuitSwitch:
 
 	ld a, BATTLE_VARS_MOVE
 	call GetBattleVarAddr
-	ld a, $ff
+	xor a ; NO_MOVE
 	ld [hl], a
 
 	pop af

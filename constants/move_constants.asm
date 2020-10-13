@@ -170,7 +170,7 @@
 	const WILD_CHARGE  ; a2
 	const GUNK_SHOT    ; a3
 	const SUBSTITUTE   ; a4
-	const STRUGGLE     ; a5
+	const STONE_EDGE   ; a5
 	const SKETCH       ; a6
 	const BULLET_PUNCH ; a7
 	const THIEF        ; a8
@@ -260,6 +260,7 @@
 	const NASTY_PLOT   ; fc
 	const HURRICANE	   ; fd
 	const SIGNAL_BEAM  ; fe
+	const STRUGGLE     ; ff
 NUM_ATTACKS EQU const_value + -1
 
 
