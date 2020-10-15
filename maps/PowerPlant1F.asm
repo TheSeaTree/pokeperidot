@@ -263,7 +263,7 @@ PowerPlant1F_MapEvents:
 
 	db 4 ; warp events
 	warp_event  5, 21, MAHOGANY_TOWN, 3
-	warp_event  6, 21, MAHOGANY_TOWN, 3
+	warp_event  6, 21, MAHOGANY_TOWN, 11
 	warp_event 25, 20, POWER_PLANT_2F, 1
 	warp_event  3, 10, POWER_PLANT_2F, 2
 

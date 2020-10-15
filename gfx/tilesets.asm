@@ -8,7 +8,6 @@ SECTION "Tileset Data 1", ROMX
 
 Tileset0GFX:
 TilesetJohtoGFX:
-TilesetJohtoCityGFX:
 TilesetMountainGFX:
 TilesetVolcanoGFX:
 INCBIN "gfx/tilesets/johto.2bpp.lz"
@@ -200,7 +199,11 @@ TilesetGateColl:
 INCLUDE "data/tilesets/gate_collision.asm"
 
 TilesetBattleTowerOutsideGFX:
-INCBIN "gfx/tilesets/johto_modern.2bpp.lz"
+TilesetJohtoCityGFX:
+INCBIN "gfx/tilesets/johto_city.2bpp.lz"
+
+TilesetForestGFX:
+INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
@@ -275,8 +278,14 @@ SECTION "Tileset Data 8", ROMX
 TilesetJohtoCityMeta:
 INCBIN "data/tilesets/johto_city_metatiles.bin"
 
+TilesetForestMeta:
+INCBIN "data/tilesets/forest_metatiles.bin"
+
 TilesetJohtoCityColl:
 INCLUDE "data/tilesets/johto_city_collision.asm"
+
+TilesetForestColl:
+INCLUDE "data/tilesets/forest_collision.asm"
 
 TilesetMountainMeta:
 INCBIN "data/tilesets/mountain_metatiles.bin"
@@ -385,6 +394,8 @@ INCBIN "data/tilesets/battle_tower_attributes.bin"
 TilesetTowerAttr:
 INCBIN "data/tilesets/tower_attributes.bin"
 
+TilesetBattleTowerOutsideAttr:
+INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
 
 SECTION "Tileset Data 11", ROMX
 
@@ -406,8 +417,8 @@ INCBIN "data/tilesets/underground_attributes.bin"
 TilesetJohtoCityAttr:
 INCBIN "data/tilesets/johto_city_attributes.bin"
 
+TilesetForestAttr:
+INCBIN "data/tilesets/forest_attributes.bin"
+
 TilesetMountainAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
-
-TilesetBattleTowerOutsideAttr:
-INCBIN "data/tilesets/battle_tower_outside_attributes.bin"

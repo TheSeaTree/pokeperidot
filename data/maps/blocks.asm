@@ -73,6 +73,7 @@ EcruteakRichardsHouse_Blocks:
 BlackthornLassHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
 Route11CleanseTagHouse_Blocks:
+VioletMagikarpHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -230,6 +231,7 @@ OlivineSurfHouse_Blocks:
 BlackthornRestTalkHouse_Blocks:
 IlexForestSwordsDanceHouse_Blocks:
 Route11CurseHouse_Blocks:
+Route18Farmhouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:
@@ -316,6 +318,9 @@ Route16_Blocks:
 	
 Route18_Blocks:	
 	INCBIN "maps/Route18.ablk"
+
+Route18Barn_Blocks:	
+	INCBIN "maps/Route18Barn.ablk"
 
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"
@@ -430,6 +435,9 @@ PalerockCave1F_Blocks:
 PalerockCaveB1F_Blocks:
 	INCBIN "maps/PalerockCaveB1F.ablk"
 
+PalerockCaveB2F_Blocks:
+	INCBIN "maps/PalerockCaveB2F.ablk"
+
 DiglettsCave_Blocks:
 	INCBIN "maps/DiglettsCave.ablk"
 
@@ -497,6 +505,15 @@ PalerockMountainOutside_Blocks:
 
 PalerockMountainB1_Blocks:
 	INCBIN "maps/PalerockMountainB1.ablk"
+
+PalerockMountainB2_Blocks:
+	INCBIN "maps/PalerockMountainB2.ablk"
+
+PalerockMountainB3_Blocks:
+	INCBIN "maps/PalerockMountainB3.ablk"
+
+PalerockMountainWaterfallChamber_Blocks:
+	INCBIN "maps/PalerockMountainWaterfallChamber.ablk"
 	
 PalerockMountainStrengthRoom_Blocks:
 	INCBIN "maps/PalerockMountainStrengthRoom.ablk"
@@ -672,6 +689,7 @@ NevermelticeChamber_Blocks:
 Route22HiddenCave_Blocks:
 Route4HiddenCave_Blocks:
 KinglersDen_Blocks:
+Route8HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
 UnownChamberAG_Blocks:

@@ -2574,7 +2574,7 @@ wRoute12ShelterSceneID::                          db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a
 wMahoganyTownSceneID::                            db ; d99b
-wRoute42SceneID::                                 db ; d99c
+wRoute18FarmhouseSceneID::                        db ; d99c
 wCianwoodCitySceneID::                            db ; d99d
 wBattleTower1FSceneID::                           db ; d99e
 wBattleTowerBattleRoomSceneID::                   db ; d99f

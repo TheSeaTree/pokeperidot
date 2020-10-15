@@ -35,16 +35,18 @@ ENDM
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const OLIVINE_PORT,                                10,  9 ; 14
+	map_const ROUTE_7,                                     21, 14 ;  1
+	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const ROUTE_15,                                    20, 17 ;  3
 	map_const ROUTE_16,                                    24, 14 ;  2
 	map_const ROUTE_17,                                    20, 21 ;  3
-	map_const LUGIA_LAIR,                                  13, 12 ;  3
+	map_const LUGIA_LAIR,                                  14, 12 ;  3
 
 	newgroup                                                      ;  2
 
 	map_const MAHOGANY_GYM,                                13, 16 ;  2
 	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  3
-	map_const MAHOGANY_TOWN,                               21, 19 ;  7
+	map_const MAHOGANY_TOWN,                               23, 19 ;  7
 	map_const POWER_PLANT_1F,							   16, 11
 	map_const POWER_PLANT_2F,							   16,  8
 	map_const POWER_PLANT_1F_B,							   16, 11
@@ -84,6 +86,7 @@ ENDM
 	map_const MOUNT_MOON,                                  15,  9 ; 85
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
+	map_const PALEROCK_CAVE_B2F,                            6,  4 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const CIANWOOD_CAVE_1F,                             7,  6
 	map_const CIANWOOD_CAVE_B1F,                           20, 15
@@ -142,6 +145,8 @@ ENDM
 	newgroup                                                      ;  7
 	
 	map_const ROUTE_18,                                    18, 20 ;  4
+	map_const ROUTE_18_BARN,                                7,  3 ;  4
+	map_const ROUTE_18_FARMHOUSE,                           4,  4 ;  4
 	map_const CARNATION_TOWN,        					   17, 10
 	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1
 	map_const WOBBUFFET_HOUSE,   							4,  4
@@ -185,8 +190,6 @@ ENDM
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     27, 13 ;  1
 	map_const ROUTE_6,                                     34, 14 ;  1
-	map_const ROUTE_7,                                     21, 14 ;  1
-	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const ROUTE_10_NORTH,                              16, 14 ; 14
 	map_const VIOLET_CITY,                                 27, 12 ;  5
 	map_const VIOLET_CAFE,                                  7,  4 ;  6
@@ -196,8 +199,10 @@ ENDM
 	map_const VIOLET_MOVE_TUTOR,                            4,  4
 	map_const VIOLET_WEATHER_HOUSE,                         4,  4
 	map_const VIOLET_TRADE_HOUSE,                           4,  4
+	map_const VIOLET_MAGIKARP_HOUSE,                        4,  4 ; 13
 	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
 	map_const ROUTE_4_HIDDEN_CAVE,                          5,  7
+	map_const ROUTE_8_HIDDEN_CAVE,                          5,  7
 
 	newgroup                                                      ; 11
 
@@ -357,6 +362,9 @@ ENDM
 	map_const PALEROCK_MOUNTAIN_3F,  					    9,  9 ;  3
 	map_const PALEROCK_MOUNTAIN_OUTSIDE,				   18, 13 ;  4
 	map_const PALEROCK_MOUNTAIN_B1,						   17, 12 ;  5
+	map_const PALEROCK_MOUNTAIN_B2,						    6, 11 ;  5
+	map_const PALEROCK_MOUNTAIN_B3,						   22, 16 ;  5
+	map_const PALEROCK_MOUNTAIN_WATERFALL_CHAMBER,	       15, 13 ;  6
 	map_const PALEROCK_MOUNTAIN_STRENGTH_ROOM,		        5,  4 ;  6
 	map_const HIDDEN_POWER_CAVE,                            6,  5
 	map_const UNOWN_CHAMBER_AG,                             6,  7 ; 52

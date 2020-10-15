@@ -19,7 +19,7 @@ Factory1F_MapEvents:
 
 	db 5 ; warp events
 	warp_event 16, 21, EAST_FOREST, 3
-	warp_event 17, 21, EAST_FOREST, 3
+	warp_event 17, 21, EAST_FOREST, 4
 	warp_event  5, 16, FACTORY_B1, 1
 	warp_event  3,  4, FACTORY_B1, 2
 	warp_event 11,  0, FACTORY_BACK, 1

@@ -501,7 +501,7 @@ VioletCity_MapEvents:
 
 	db 7 ; warp events
 	warp_event 21,  9, VIOLET_CAFE, 2
-	warp_event 37, 15, VIOLET_CITY, 2
+	warp_event 37, 15, VIOLET_MAGIKARP_HOUSE, 1
 	warp_event  9,  7, VIOLET_POKECENTER_1F, 1
 	warp_event 15, 13, VIOLET_MOVE_TUTOR, 1
 	warp_event  3, 11, GOLDENROD_NAME_RATER, 1

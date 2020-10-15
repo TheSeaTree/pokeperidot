@@ -84,9 +84,6 @@ GoldenrodHappinessRaterYoungsterScript:
 HappinessRatersHouseBookshelf:
 	jumpstd difficultbookshelf
 
-HappinessRatersHouseRadio:
-	jumpstd radio2
-
 GoldenrodHappinessRaterTeacherText:
 	text "If you treat your"
 	line "#MON nicely,"
@@ -183,10 +180,9 @@ GoldenrodHappinessRater_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  6,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
-	bg_event  2,  1, BGEVENT_READ, HappinessRatersHouseRadio
 
 	db 3 ; object events
 	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, GoldenrodHappinessRaterTeacherScript, -1

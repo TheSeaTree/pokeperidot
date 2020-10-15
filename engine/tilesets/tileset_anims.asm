@@ -36,6 +36,7 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetKantoAnim:
 TilesetJohtoCityAnim:
+TilesetForestAnim:
 TilesetMountainAnim:
 	dw vTiles2 tile $49, AnimateWaterTile
 	dw NULL,  LavaBubbleAnim2

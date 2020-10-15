@@ -11,7 +11,7 @@ FactoryBack_MapEvents:
 	db 3 ; warp events
 	warp_event  3, 15, FACTORY_1F, 5
 	warp_event  4, 15, FACTORY_1F, 5
-	warp_event  7,  0, EAST_FOREST, 4
+	warp_event  7,  0, EAST_FOREST, 5
 
 	db 0 ; coord events
 

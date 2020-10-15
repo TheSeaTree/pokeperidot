@@ -42,3 +42,4 @@ Tilesets::
 	tileset TilesetMountain
 	tileset TilesetVolcano
 	tileset TilesetRoof
+	tileset TilesetForest

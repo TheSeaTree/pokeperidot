@@ -47,9 +47,6 @@ CharcoalKilnOddish:
 CharcoalKilnBookshelf:
 	jumpstd magazinebookshelf
 
-CharcoalKilnRadio:
-	jumpstd radio2
-
 CharcoalKilnBossText1:
 	text "Ah, a fresh face!"
 	
@@ -125,10 +122,9 @@ CharcoalKiln_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, CharcoalKilnBookshelf
 	bg_event  1,  1, BGEVENT_READ, CharcoalKilnBookshelf
-	bg_event  7,  1, BGEVENT_READ, CharcoalKilnRadio
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CharcoalKilnBoss, -1

@@ -52,7 +52,7 @@ Lugia:
 	end
 	
 .BossLugia:
-	loadwildmon LUGIA, 30
+	loadwildmon LUGIA, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle

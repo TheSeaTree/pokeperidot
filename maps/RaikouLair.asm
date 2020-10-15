@@ -29,8 +29,8 @@ RaikouLair_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4,  5, EAST_FOREST, 5
-	warp_event  5,  5, EAST_FOREST, 5
+	warp_event  4,  5, EAST_FOREST, 6
+	warp_event  5,  5, EAST_FOREST, 6
 
 	db 0 ; coord events
 

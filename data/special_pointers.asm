@@ -164,6 +164,7 @@ SpecialsPointers::
 	add_special TotodileGiftMon
 	add_special CyndaquilGiftMon
 	add_special ChikoritaGiftMon
+	add_special MagikarpGiftMon
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
 	add_special MonCheck

@@ -178,11 +178,12 @@ BlackbeltClintAfterText:
 PalerockCaveB1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event 29,  5, PALEROCK_CAVE_1F, 3
 	warp_event 37, 11, PALEROCK_CAVE_1F, 4
 	warp_event 27, 21, PALEROCK_CAVE_1F, 5
 	warp_event 33, 25, PALEROCK_CAVE_1F, 6
+	warp_event  7,  3, PALEROCK_CAVE_B2F, 2
 
 	db 0 ; coord events
 

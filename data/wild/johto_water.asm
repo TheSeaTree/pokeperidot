@@ -108,11 +108,11 @@ JohtoWaterWildMons:
 	
 	map_id ROUTE_7
 	db 4 percent ; encounter rate
-	db 24, HORSEA
-	db 24, TENTACOOL
-	db 24, QWILFISH
-	db 25, CHINCHOU
-	db 25, CHINCHOU
+	db 34, SEADRA
+	db 34, TENTACRUEL
+	db 34, QWILFISH
+	db 35, CHINCHOU
+	db 33, LANTURN
 	
 	map_id ROUTE_8
 	db 4 percent ; encounter rate
@@ -188,11 +188,11 @@ JohtoWaterWildMons:
 	
 	map_id OLIVINE_CITY
 	db 4 percent
-	db 24, SEEL
-	db 24, SLOWPOKE
-	db 24, SLOWPOKE
-	db 25, SEARION
-	db 26, SEARION
+	db 33, SEEL
+	db 34, TENTACOOL
+	db 32, TENTACRUEL
+	db 33, SEARION
+	db 36, SEARION
 	
 	map_id MAHOGANY_TOWN
 	db 4 percent

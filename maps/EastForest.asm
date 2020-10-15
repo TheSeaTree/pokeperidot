@@ -76,6 +76,12 @@ EastForestHypnoScript:
 	waitbutton
 	closetext
 	end
+	
+EastForestPowerPlantSign:
+	jumptext EastForestPowerPlantSignText
+	
+EastForestPowerPlantFence:
+	jumptext EastForestPowerPlantFenceText
 
 EastForestTutorText:
 	text "I can teach your"
@@ -146,19 +152,39 @@ EastForestHypnoAfterText:
 	para "It's mesmerizing…"
 	done
 	
+EastForestPowerPlantSignText:
+	text "No tr…  pas…  g!"
+	
+	para "…This sign is too"
+	line "weathered to make"
+	cont "out. It must be"
+	cont "very old."
+	done
+	
+EastForestPowerPlantFenceText:
+	text "Something must"
+	line "have torn this"
+	cont "fence open."
+	
+	para "…But what?"
+	done
+
 EastForest_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event  4,  6, ROUTE_4_FOREST_GATE, 3
 	warp_event  4,  7, ROUTE_4_FOREST_GATE, 4
-	warp_event 50,  9, FACTORY_1F, 1
-	warp_event 51,  5, FACTORY_BACK, 3
+	warp_event 50, 10, FACTORY_1F, 1
+	warp_event 51, 10, FACTORY_1F, 2
+	warp_event 52,  4, FACTORY_BACK, 3
 	warp_event 55,  1, RAIKOU_LAIR, 1
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 47, 14, BGEVENT_UP, EastForestPowerPlantSign
+	bg_event 45, 13, BGEVENT_READ, EastForestPowerPlantFence
 
 	db 2 ; object events
 	object_event 12, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestMoveTutor, -1

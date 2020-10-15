@@ -19,9 +19,6 @@ GoldenrodPPSpeechHouseBookshelf2:
 GoldenrodPPSpeechHouseBookshelf1:
 	jumpstd magazinebookshelf
 
-GoldenrodPPSpeechHouseRadio:
-	jumpstd radio2
-
 GoldenrodPPSpeechHouseFisherText:
 	text "Once while I was"
 	line "battling, my"
@@ -58,10 +55,9 @@ GoldenrodPPSpeechHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 2 ; bg events
 	bg_event  0,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf1
 	bg_event  1,  1, BGEVENT_READ, GoldenrodPPSpeechHouseBookshelf2
-	bg_event  7,  1, BGEVENT_READ, GoldenrodPPSpeechHouseRadio
 
 	db 2 ; object events
 	object_event  2,  4, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, GoldenrodPPSpeechHouseFisherScript, -1

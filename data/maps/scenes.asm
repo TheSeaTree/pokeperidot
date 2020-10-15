@@ -47,4 +47,5 @@ MapScenes::
 	scene_var UNOWN_CHAMBER_HN,							   wUnownChamberHNSceneID
 	scene_var UNOWN_CHAMBER_OU,							   wUnownChamberOUSceneID
 	scene_var UNOWN_CHAMBER_VZ,							   wUnownChamberVZSceneID
+	scene_var ROUTE_18_FARMHOUSE,						   wRoute18FarmhouseSceneID
 	db -1

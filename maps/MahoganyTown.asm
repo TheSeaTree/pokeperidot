@@ -30,7 +30,7 @@ MahoganyTown_MapScripts:
 .PowerPlant:
 	checkevent EVENT_POWER_PLANT_1F_MUK
 	iffalse .skip
-	changeblock 2, 2, $ae
+	changeblock 6, 4, $ae
 .skip
 	return
 	
@@ -41,12 +41,20 @@ MahoganyTown_MapScripts:
 .skip2
 	return
 	
-PowerPlantDoor:
+PowerPlantDoorLeft:
 	playsound SFX_ENTER_DOOR
 	special FadeOutPalettes
 	special FadeOutMusic
 	waitsfx
 	warpfacing UP, POWER_PLANT_1F, 5, 21
+	end
+
+PowerPlantDoorRight:
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	special FadeOutMusic
+	waitsfx
+	warpfacing UP, POWER_PLANT_1F, 6, 21
 	end
 	
 MahoganyGymLeader:
@@ -679,53 +687,56 @@ MoveManagersHouseText:
 	done
 	
 MahoganyPowerPlantSignText:
-	text "POWER PLANT"
+	text "RUGOSA CITY"
+	line "POWER PLANT"
 	done
 
 MahoganyTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 10 ; warp events
-	warp_event 23, 33, MAHOGANY_GATE, 1
-	warp_event 24, 33, MAHOGANY_GATE, 2
-	warp_event  2,  3, POWER_PLANT_1F_B, 1
-	warp_event 27, 29, MAHOGANY_POKECENTER_1F, 1
-	warp_event 10, 21, MAHOGANY_DEPT_STORE_1F, 1
-	warp_event 31, 19, EMYS_HOUSE, 1
-	warp_event 35,  9, MOVE_DELETERS_HOUSE, 1
-	warp_event 11, 29, SUBSTITUTE_HOUSE, 1
-	warp_event 21, 21, MAHOGANY_APARTMENT_1F, 1
-	warp_event 19, 29, MAHOGANY_CAFE, 1
+	db 11 ; warp events
+	warp_event 27, 33, MAHOGANY_GATE, 1
+	warp_event 28, 33, MAHOGANY_GATE, 2
+	warp_event  6,  4, POWER_PLANT_1F_B, 1
+	warp_event 31, 29, MAHOGANY_POKECENTER_1F, 1
+	warp_event 14, 21, MAHOGANY_DEPT_STORE_1F, 1
+	warp_event 35, 19, EMYS_HOUSE, 1
+	warp_event 39,  9, MOVE_DELETERS_HOUSE, 1
+	warp_event 15, 29, SUBSTITUTE_HOUSE, 1
+	warp_event 25, 21, MAHOGANY_APARTMENT_1F, 1
+	warp_event 23, 29, MAHOGANY_CAFE, 1
+	warp_event  7,  4, POWER_PLANT_1F_B, 2
 
-	db 1 ; coord events
-	coord_event  2,  3, -1, PowerPlantDoor
+	db 2 ; coord events
+	coord_event  6,  4, -1, PowerPlantDoorLeft
+	coord_event  7,  4, -1, PowerPlantDoorRight
 
 	db 11 ; bg events
-	bg_event 24, 29, BGEVENT_UP, MahoganyTownSign
-	bg_event 11, 21, BGEVENT_UP, MahoganyDeptStoreSign
-	bg_event 24, 13, BGEVENT_UP, MahoganyGymEvent
-	bg_event 33,  9, BGEVENT_UP, MahoganyMoveManagersHouse
-	bg_event  4,  5, BGEVENT_UP, MahoganyPowerPlantSign
-	bg_event 22, 29, BGEVENT_UP, MahoganyVendingMachine
-	bg_event 19, 16, BGEVENT_ITEM, MahoganyHiddenProtien
-	bg_event 23, 27, BGEVENT_ITEM, MahoganyHiddenCarbos
-	bg_event  4, 23, BGEVENT_ITEM, MahoganyHiddenHPUp
-	bg_event 29, 18, BGEVENT_ITEM, MahoganyHiddenCalcium
-	bg_event 14, 28, BGEVENT_ITEM, MahoganyHiddenIron
+	bg_event 28, 29, BGEVENT_UP, MahoganyTownSign
+	bg_event 15, 21, BGEVENT_UP, MahoganyDeptStoreSign
+	bg_event 28, 13, BGEVENT_UP, MahoganyGymEvent
+	bg_event 37,  9, BGEVENT_UP, MahoganyMoveManagersHouse
+	bg_event  8,  5, BGEVENT_UP, MahoganyPowerPlantSign
+	bg_event 26, 29, BGEVENT_UP, MahoganyVendingMachine
+	bg_event 23, 16, BGEVENT_ITEM, MahoganyHiddenProtien
+	bg_event 27, 27, BGEVENT_ITEM, MahoganyHiddenCarbos
+	bg_event  8, 23, BGEVENT_ITEM, MahoganyHiddenHPUp
+	bg_event 33, 18, BGEVENT_ITEM, MahoganyHiddenCalcium
+	bg_event 18, 28, BGEVENT_ITEM, MahoganyHiddenIron
 
 	db 15 ; object events
-	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
-	object_event  6, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownYoungster, -1
-	object_event 19, 31, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisher, -1
-	object_event 23, 30, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownTwin, -1
-	object_event  7, 19, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyTownSailor, -1
-	object_event 34, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownCooltrainerM, -1
-	object_event 24, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
-	object_event 25,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, EVENT_POWER_PLANT_1F_MUK
-	object_event 24,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficer2Script, EVENT_POWER_PLANT_1F_MUK
-	object_event 24,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_MAHOGANY_OFFICER_WITHDRAW
-	object_event 23,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_POWER_PLANT_1F_MUK
-	object_event 23,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, EVENT_MAHOGANY_GRIMER
-	object_event 22,  9, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimer2Battle, EVENT_POWER_PLANT_1F_MUK
-	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, MahoganyTownMetalPowder, EVENT_MAHOGANY_TOWN_METAL_POWDER
-	object_event 22,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1
+	object_event 28, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownLass, -1
+	object_event 10, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownYoungster, -1
+	object_event 23, 31, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownFisher, -1
+	object_event 27, 30, SPRITE_TWIN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MahoganyTownTwin, -1
+	object_event 11, 19, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MahoganyTownSailor, -1
+	object_event 38, 22, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownCooltrainerM, -1
+	object_event 28, 14, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGymLeader, EVENT_POWER_PLANT_1F_MUK
+	object_event 29,  8, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficerScript, EVENT_POWER_PLANT_1F_MUK
+	object_event 28,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficer2Script, EVENT_POWER_PLANT_1F_MUK
+	object_event 28,  8, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_MAHOGANY_OFFICER_WITHDRAW
+	object_event 27,  9, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, MahoganyTownOfficersPokemon, EVENT_POWER_PLANT_1F_MUK
+	object_event 27,  8, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimerBattle, EVENT_MAHOGANY_GRIMER
+	object_event 26,  9, SPRITE_GRIMER, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, MahoganyTownGrimer2Battle, EVENT_POWER_PLANT_1F_MUK
+	object_event 21, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, MahoganyTownMetalPowder, EVENT_MAHOGANY_TOWN_METAL_POWDER
+	object_event 26,  2, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MahoganyTownFruitTree, -1

@@ -447,3 +447,11 @@ ENDM
 	map_attributes Route7Cave1F, ROUTE_7_CAVE_1F, $09, 0
 	map_attributes Route7CaveB1F, ROUTE_7_CAVE_B1F, $09, 0
 	map_attributes KinglersDen, KINGLERS_DEN, $09, 0
+	map_attributes Route8HiddenCave, ROUTE_8_HIDDEN_CAVE, $09, 0
+	map_attributes PalerockMountainB2, PALEROCK_MOUNTAIN_B2, $09, 0
+	map_attributes PalerockCaveB2F, PALEROCK_CAVE_B2F, $09, 0
+	map_attributes PalerockMountainB3, PALEROCK_MOUNTAIN_B3, $09, 0
+	map_attributes PalerockMountainWaterfallChamber, PALEROCK_MOUNTAIN_WATERFALL_CHAMBER, $09, 0
+	map_attributes Route18Barn, ROUTE_18_BARN, $00, 0
+	map_attributes Route18Farmhouse, ROUTE_18_FARMHOUSE, $00, 0
+	map_attributes VioletMagikarpHouse, VIOLET_MAGIKARP_HOUSE, $00, 0

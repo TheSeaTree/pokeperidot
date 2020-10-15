@@ -102,6 +102,7 @@ TrainerMarieScript:
 	disappear ROUTE18_MARIE1
 	disappear ROUTE18_BESSIE1
 	disappear ROUTE18_GRAMPS
+	setmapscene ROUTE_18_FARMHOUSE, SCENE_FINISHED
 	special FadeInQuickly
 	end
 	
@@ -126,8 +127,14 @@ Route18MiltankScript:
 	closetext
 	end
 	
-Route18UltraBall:
+Route18FarmSign:
+	jumptext Route18FarmSignText
+	
+Route18HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_18_HIDDEN_ULTRA_BALL
+	
+Route18HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_18_HIDDEN_POWER_HERB
 
 Route18LeafStone:
 	itemball LEAF_STONE
@@ -271,7 +278,7 @@ Route18DaughterText:
 	cont "world with #MON"
 	cont "that I caught!"
 	done
-	
+
 Route18DaughterNoticeBadges:
 	text "Those things you"
 	line "have pinned to"
@@ -319,20 +326,30 @@ Route18DaughterAfterText:
 	para "When I do, we will"
 	line "battle again!"
 	done
+	
+Route18FarmSignText:
+	text "MOOMOO FARMS"
+	
+	para "Fresh milk daily!"
+	done
 
 Route18_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 6 ; warp events
 	warp_event 27, 35, ROUTE_14, 4
 	warp_event 28, 35, ROUTE_14, 4
 	warp_event  4, 18, CARNATION_TOWN, 1
 	warp_event  4, 19, CARNATION_TOWN, 2
+	warp_event 27,  3, ROUTE_18_BARN, 1
+	warp_event 31,  3, ROUTE_18_FARMHOUSE, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 20, 19, BGEVENT_ITEM, Route18UltraBall
+	db 3 ; bg events
+	bg_event 23,  9, BGEVENT_READ, Route18FarmSign
+	bg_event 20, 19, BGEVENT_ITEM, Route18HiddenUltraBall
+	bg_event 19,  8, BGEVENT_ITEM, Route18HiddenPowerHerb
 
 	db 14 ; object events 
 	object_event 25, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperRicky, -1
