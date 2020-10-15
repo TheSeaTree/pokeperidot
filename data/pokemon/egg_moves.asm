@@ -569,6 +569,10 @@ PinsirEggMoves:
 	db STONE_EDGE
 	db -1 ; end
 
+MagikarpEggMoves:
+	db DIVE_BOMB
+	db -1
+
 LaprasEggMoves:
 	db AURORA_BEAM
 	db FORESIGHT

@@ -166,9 +166,6 @@ BitterMerchantScript:
 
 BargainMerchantScript:
 	opentext
-	checkflag ENGINE_GOLDENROD_UNDERGROUND_MERCHANT_CLOSED
-	iftrue GoldenrodUndergroundScript_ShopClosed
-	checkcode VAR_WEEKDAY
 	ifequal MONDAY, .CheckMorn
 	jump GoldenrodUndergroundScript_ShopClosed
 

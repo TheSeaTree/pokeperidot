@@ -9,6 +9,8 @@ VioletMagikarpHouse_MapScripts:
 CheckHappyMon1:
 	faceplayer
 	opentext
+	checkevent EVENT_GURU_SELLING_MAGIKARP
+	iftrue .SellingMagikarp
 	checkevent EVENT_GOT_MAGIKARP
 	iftrue .GotMagikarp
 	checkevent EVENT_QUALIFIED_FOR_MAGIKARP
@@ -37,7 +39,7 @@ CheckHappyMon1:
 	ifless  50 - 1, .UnhappyMagikarp
 	writetext MagikarpGuruHaveMagikarpText
 	waitbutton
-	
+
 	writetext MagikarpGuruGiveMagikarpText
 	waitbutton
 	checkcode VAR_PARTYCOUNT
@@ -54,8 +56,10 @@ CheckHappyMon1:
 	writetext MagikarpGuruAfterText
 	waitbutton
 	closetext
+	setflag ENGINE_DIVE_BOMB_MAGIKARP
+	setevent EVENT_GURU_SELLING_MAGIKARP
 	end
-	
+
 .PartyFull
 	setevent EVENT_QUALIFIED_FOR_MAGIKARP
 	writetext MagikarpGuruFullParty
@@ -98,6 +102,49 @@ CheckHappyMon1:
 	closetext
 	end
 	
+.SellingMagikarp
+	checkflag ENGINE_DIVE_BOMB_MAGIKARP
+	iftrue .SoldToday
+	writetext MagikarpGuruSellingMoreText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Decline
+	checkmoney YOUR_MONEY, 1000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoomEgg
+	takemoney YOUR_MONEY, 1000
+	special PlaceMoneyTopRight
+	farwritetext UnknownText_0x1bdfa5
+	playsound SFX_GET_EGG_FROM_DAY_CARE_LADY
+	waitsfx
+	giveegg MAGIKARP, 5
+	special MagikarpGiftMon
+	setflag ENGINE_DIVE_BOMB_MAGIKARP
+.SoldToday
+	writetext SoldMagikarpTodayText
+	waitbutton
+	closetext
+	end
+	
+.Decline
+	writetext MagikarpEggDeclineText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney
+	writetext MagikarpEggNotEnoughMoneyText
+	waitbutton
+	closetext
+	end
+	
+.NoRoomEgg
+	writetext MagikarpEggNoRoomText
+	waitbutton
+	closetext
+	end
+
 MagikarpGuruIntroText:
 	text "Have you ever come"
 	line "across a #MON"
@@ -240,17 +287,77 @@ MagikarpGuruFullPartyAfterText:
 	
 MagikarpGuruAfterText:
 	text "I trust you will"
-	line "take good care of"
-	cont "that MAGIKARP."
+	line "cherish MAGIKARP"
+	cont "as much as I did."
 	
-	para "Its special move,"
-	line "DIVE BOMB, can"
-	cont "even be passed"
-	cont "down through EGGs!"
+	para "It knows a special"
+	line "move that MAGIKARP"
+	cont "can't learn in the"
+	cont "wild normally."
 	
-	para "Maybe you could"
-	line "teach it to other"
-	cont "#MON this way…"
+	para "I have many gener-"
+	line "ations of MAGIKARP"
+	cont "that know the move"
+	cont "DIVE BOMB."
+	
+	para "It can only be le-"
+	line "arned by MAGIKARP"
+	cont "in an EGG."
+	
+	para "If you would like"
+	line "more I should have"
+	cont "EGGs for sale tom-"
+	cont "morrow."
+	done
+	
+MagikarpGuruSellingMoreText:
+	text "Hey there!"
+	
+	para "Have you come to"
+	line "buy a MAGIKARP"
+	cont "EGG?"
+	
+	para "I can only get so"
+	line "many EGGs in one"
+	cont "day, so I can only"
+	cont "sell you one."
+	
+	para "Would you like an"
+	line "EGG for ¥1000?"
+	done
+	
+SoldMagikarpTodayText:
+	text "I don't have enough"
+	line "EGGs to sell you"
+	cont "another, but I"
+	cont "will have more to-"
+	cont "morrow."
+	done
+	
+MagikarpEggDeclineText:
+	text "That's okay. I"
+	line "can keep this one"
+	cont "to the side if you"
+	cont "want me to."
+	done
+
+MagikarpEggNotEnoughMoneyText:
+	text "Sorry, you don't"
+	line "have enough money."
+	
+	para "This process is"
+	line "expensive, and I"
+	cont "am already cutting"
+	cont "you a deal for be-"
+	cont "ing such a big"
+	cont "MAGIKARP fan."
+	done
+	
+MagikarpEggNoRoomText:
+	text "You'll need a free"
+	line "spot in your party"
+	cont "if you want to"
+	cont "carry an EGG."
 	done
 
 VioletMagikarpHouse_MapEvents:

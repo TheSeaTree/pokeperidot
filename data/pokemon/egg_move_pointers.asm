@@ -127,7 +127,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw PinsirEggMoves
 	dw NoEggMoves
-	dw NoEggMoves
+	dw MagikarpEggMoves
 	dw NoEggMoves
 	dw LaprasEggMoves
 	dw NoEggMoves
