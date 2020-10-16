@@ -4647,6 +4647,7 @@ BattleAnim_Extremespeed:
 
 BattleAnim_StoneEdge:
 	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_1F, $c0, $1, $0
 	anim_sound 0, 0, SFX_STRENGTH
 	anim_obj ANIM_OBJ_ANCIENTPOWER, 116, 64, $30
 	anim_wait 4
