@@ -38,7 +38,7 @@ RockMonMaps:
 	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_ROCK
 	treemon_map ROUTE_3,                   TREEMON_SET_ROCK
 	treemon_map ROUTE_6,           		   TREEMON_SET_KANTO
-	treemon_map ROUTE_7,           		   TREEMON_SET_KANTO
+	treemon_map SEA_ROUTE_4,       		   TREEMON_SET_KANTO
 	treemon_map ROUTE_8,           		   TREEMON_SET_KANTO
 	treemon_map OLIVINE_CITY,      		   TREEMON_SET_KANTO
 	db -1

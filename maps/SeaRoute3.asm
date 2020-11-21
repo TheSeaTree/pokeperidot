@@ -1,11 +1,11 @@
 	const_def 2 ; object constants
 
-Route17_MapScripts:
+SeaRoute3_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route17_MapEvents:
+SeaRoute3_MapEvents:
 	db 0, 0 ; filler
 
 	db 0 ; warp events

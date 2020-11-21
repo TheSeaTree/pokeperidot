@@ -1,22 +1,20 @@
 	const_def 2 ; object constants
-	const VIOLET_MAGIKARP_GUY
+	const VIOLET_MAGIKARP_GUY1
+	const VIOLET_MAGIKARP_GUY2
 
 VioletMagikarpHouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-CheckHappyMon1:
+CheckMagikarp:
 	faceplayer
 	opentext
-	checkevent EVENT_GURU_SELLING_MAGIKARP
-	iftrue .SellingMagikarp
-	checkevent EVENT_GOT_MAGIKARP
-	iftrue .GotMagikarp
-	checkevent EVENT_QUALIFIED_FOR_MAGIKARP
-	iftrue .Qualified
+	checkevent EVENT_DIVE_BOMB_MAGIKARP
+	iftrue .DiveBombUnlocked
 	writetext MagikarpGuruIntroText
-	waitbutton
+	yesorno
+	iffalse .Decline
 
 	writebyte MAGIKARP
 	special FindPartyMonThatSpecies
@@ -39,32 +37,11 @@ CheckHappyMon1:
 	ifless  50 - 1, .UnhappyMagikarp
 	writetext MagikarpGuruHaveMagikarpText
 	waitbutton
-
-	writetext MagikarpGuruGiveMagikarpText
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .PartyFull
-.GiftMagikarp
-	writetext GiftMagikarpText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	givepoke MAGIKARP, 35
-	special MagikarpGiftMon
-	setevent EVENT_GOT_MAGIKARP
-
-.GotMagikarp
+.DiveBombUnlocked
 	writetext MagikarpGuruAfterText
 	waitbutton
 	closetext
-	setflag ENGINE_DIVE_BOMB_MAGIKARP
-	setevent EVENT_GURU_SELLING_MAGIKARP
-	end
-
-.PartyFull
-	setevent EVENT_QUALIFIED_FOR_MAGIKARP
-	writetext MagikarpGuruFullParty
-	waitbutton
-	closetext
+	setevent EVENT_DIVE_BOMB_MAGIKARP
 	end
 
 .NoMagikarp
@@ -92,18 +69,16 @@ CheckHappyMon1:
 	warpfacing DOWN, VIOLET_CITY, 37, 15
 	end
 	
-.Qualified
-	writetext MagikarpGuruCheckPartyText
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifless PARTY_LENGTH, .GiftMagikarp
-	writetext MagikarpGuruFullPartyAfterText
+.Decline
+	writetext DoNotShowMagikarpText
 	waitbutton
 	closetext
 	end
 	
-.SellingMagikarp
-	checkflag ENGINE_DIVE_BOMB_MAGIKARP
+BuyMagikarp:
+	faceplayer
+	opentext
+	checkflag ENGINE_BOUGHT_MAGIKARP_TODAY
 	iftrue .SoldToday
 	writetext MagikarpGuruSellingMoreText
 	special PlaceMoneyTopRight
@@ -119,8 +94,13 @@ CheckHappyMon1:
 	playsound SFX_GET_EGG_FROM_DAY_CARE_LADY
 	waitsfx
 	giveegg MAGIKARP, 5
+	checkevent EVENT_DIVE_BOMB_MAGIKARP
+	iffalse .NormalEgg
 	special MagikarpGiftMon
-	setflag ENGINE_DIVE_BOMB_MAGIKARP
+	writetext SpecialMagikarpEggText
+	waitbutton
+.NormalEgg
+	setflag ENGINE_BOUGHT_MAGIKARP_TODAY
 .SoldToday
 	writetext SoldMagikarpTodayText
 	waitbutton
@@ -156,8 +136,8 @@ MagikarpGuruIntroText:
 	cont "ical question!"
 	
 	para "Would you happen"
-	line "to have a MAGIKARP"
-	cont "to show me?"
+	line "to be a MAGIKARP"
+	cont "fan too?"
 	done
 	
 MagikapGuruShowMagikarpMaleText:
@@ -178,21 +158,6 @@ MagikarpGuruHaveMagikarpText:
 	cont "share such a powe-"
 	cont "rful bond with"
 	cont "your MAGIKARP!"
-	done
-	
-MagikarpGuruGiveMagikarpText:
-	text "I want you to have"
-	line "something."
-	
-	para "It's a MAGIKARP"
-	line "that I taught a"
-	cont "very rare move to!"
-
-	para "Nobody else knows"
-	line "about this move,"
-	cont "so let's keep it"
-	cont "betweem MAGIKARP"
-	cont "enthusiasts, okay?"
 	done
 
 GiftMagikarpText:
@@ -253,61 +218,37 @@ MagikarpGuruUnhappyText:
 	line "my home now!"
 	done
 	
-MagikarpGuruCheckPartyText:
-	text "Hello, fellow"
-	line "MAGIKARP lover!"
+DoNotShowMagikarpText:
+	text "No…?"
 	
-	para "You have made room"
-	line "for my gift, yes?"
+	para "Maybe some day you"
+	line "may learn how to"
+	cont "truly appreciate"
+	cont "MAGIKARP."
 	done
 
-MagikarpGuruFullParty:
-	text "Does your PARTY"
-	line "have enough space"
-	cont "for my gift?"
-	
-	para "Surely a true mas-"
-	line "ter of MAGIKARP"
-	cont "would not want to"
-	cont "simply leave this"
-	cont "in a PC BOX."
-	done
-	
-MagikarpGuruFullPartyAfterText:
-	text "Still no room?"
-	
-	para "What are you wait-"
-	line "ing for?"
-	
-	para "You can't find a"
-	line "MAGIKARP like this"
-	cont "anywhere else, I"
-	cont "promise you."
-	done
-	
 MagikarpGuruAfterText:
-	text "I trust you will"
-	line "cherish MAGIKARP"
-	cont "as much as I did."
+	text "You are the only"
+	line "person I know who"
+	cont "is a true MAGIKARP"
+	cont "fan like my bro-"
+	cont "ther and I."
 	
-	para "It knows a special"
-	line "move that MAGIKARP"
-	cont "can't learn in the"
-	cont "wild normally."
+	para "Go talk to my bro-"
+	line "ther. We have been"
+	cont "experimenting with"
+	cont "teaching MAGIKARP"
+	cont "how to use a new"
+	cont "move through our"
+	cont "EGGs."
 	
-	para "I have many gener-"
-	line "ations of MAGIKARP"
-	cont "that know the move"
-	cont "DIVE BOMB."
+	para "It's a brand-new"
+	line "move that only"
+	cont "our MAGIKARP know!"
 	
-	para "It can only be le-"
-	line "arned by MAGIKARP"
-	cont "in an EGG."
-	
-	para "If you would like"
-	line "more I should have"
-	cont "EGGs for sale tom-"
-	cont "morrow."
+	para "Maybe some other"
+	line "#MON could"
+	cont "learn it too…"
 	done
 	
 MagikarpGuruSellingMoreText:
@@ -324,6 +265,19 @@ MagikarpGuruSellingMoreText:
 	
 	para "Would you like an"
 	line "EGG for ¥1000?"
+	done
+	
+SpecialMagikarpEggText:
+	text "That MAGIKARP will"
+	line "know our special"
+	cont "move, DIVE BOMB!"
+	
+	para "We don't sell those"
+	line "EGGs to just any-"
+	cont "one, it's just"
+	cont "thanks for being a"
+	cont "true believer in"
+	cont "MAGIKARP."
 	done
 	
 SoldMagikarpTodayText:
@@ -343,16 +297,10 @@ MagikarpEggDeclineText:
 
 MagikarpEggNotEnoughMoneyText:
 	text "Sorry, you don't"
-	line "have enough money."
-	
-	para "This process is"
-	line "expensive, and I"
-	cont "am already cutting"
-	cont "you a deal for be-"
-	cont "ing such a big"
-	cont "MAGIKARP fan."
+	line "have enough money"
+	cont "for an EGG."
 	done
-	
+
 MagikarpEggNoRoomText:
 	text "You'll need a free"
 	line "spot in your party"
@@ -371,5 +319,6 @@ VioletMagikarpHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CheckHappyMon1, -1
+	db 2 ; object events
+	object_event  2,  4, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CheckMagikarp, -1
+	object_event  5,  3, SPRITE_FISHING_GURU, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BuyMagikarp, -1

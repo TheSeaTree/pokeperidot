@@ -8,7 +8,7 @@ MapScenes::
 	scene_var POKECENTER_2F,                               wPokecenter2FSceneID
 	scene_var TRADE_CENTER,                                wTradeCenterSceneID
 	scene_var COLOSSEUM,                                   wColosseumSceneID
-	scene_var ROUTE_16_GATE,                               wRoute16GateSceneID
+	scene_var SEA_ROUTE_2,                                 wRoute16GateSceneID
 	scene_var ROUTE_8_ROUTE_10_GATE,                       wRoute17Route18GateSceneID
 	scene_var INDIGO_PLATEAU_POKECENTER_1F,                wIndigoPlateauPokecenter1FSceneID
 	scene_var WILLS_ROOM,                                  wWillsRoomSceneID

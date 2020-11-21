@@ -127,9 +127,6 @@ CianwoodChurchSign:
 CianwoodPharmacySign:
 	jumpstd martsign
 
-CianwoodPokeSeerSign:
-	jumptext CianwoodPokeSeerSignText
-
 CianwoodPokecenterSign:
 	jumpstd pokecentersign
 
@@ -183,91 +180,6 @@ CianwoodLookoutText:
 	line "for you to be"
 	cont "snooping around up"
 	cont "here."
-	done
-	
-ChucksWifeEasierToFlyText:
-	text "You crossed the"
-	line "sea to get here?"
-
-	para "That must have"
-	line "been hard."
-
-	para "It would be much"
-	line "easier if your"
-
-	para "#MON knew how"
-	line "to FLY…"
-	done
-
-ChucksWifeBeatChuckText:
-	text "But you can't use"
-	line "FLY without this"
-	cont "city's GYM BADGE."
-
-	para "If you beat the"
-	line "GYM LEADER here,"
-	cont "come see me."
-
-	para "I'll have a nice"
-	line "gift for you."
-	done
-
-ChucksWifeGiveHMText:
-	text "That's CIANWOOD's"
-	line "GYM BADGE!"
-
-	para "Then you should"
-	line "take this HM."
-	done
-
-ChucksWifeFlySpeechText:
-	text "Teach FLY to your"
-	line "#MON."
-
-	para "You will be able"
-	line "to FLY instantly"
-
-	para "to anywhere you "
-	line "have visited."
-	done
-
-ChucksWifeChubbyText:
-	text "My husband lost to"
-	line "you, so he needs"
-	cont "to train harder."
-
-	para "That's good, since"
-	line "he was getting a"
-	cont "little chubby."
-	done
-
-CianwoodCityYoungsterText:
-	text "If you use FLY,"
-	line "you can get back"
-
-	para "to OLIVINE in-"
-	line "stantly."
-	done
-
-CianwoodCityPokefanMText:
-	text "Boulders to the"
-	line "north of town can"
-	cont "be crushed."
-
-	para "They may be hiding"
-	line "something."
-
-	para "Your #MON could"
-	line "use ROCK SMASH to"
-	cont "break them."
-	done
-
-CianwoodCityLassText:
-	text "CHUCK, the GYM"
-	line "LEADER, spars with"
-
-	para "his fighting #-"
-	line "MON."
 	done
 
 CianwoodCityTutorText:
@@ -344,14 +256,6 @@ CianwoodPharmacySignText:
 	line "Medicinal Queries"
 	done
 
-CianwoodPhotoStudioSignText:
-	text "CIANWOOD CITY"
-	line "PHOTO STUDIO"
-
-	para "Take a Snapshot as"
-	line "a Keepsake!"
-	done
-
 CianwoodPokeSeerSignText:
 	text "THE # SEER"
 	line "AHEAD"
@@ -363,8 +267,8 @@ CianwoodCity_MapEvents:
 	db 7 ; warp events
 	warp_event 11, 19, CIANWOOD_POKECENTER_1F, 1
 	warp_event 19, 21, CIANWOOD_MART, 1
-	warp_event  5, 31, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
-	warp_event 27, 23, POKE_SEERS_HOUSE, 1
+	warp_event 27, 23, CIANWOOD_LUGIA_SPEECH_HOUSE, 1
+	warp_event  5, 31, POKE_SEERS_HOUSE, 1
 	warp_event  4, 21, PALEROCK_MOUNTAIN_3F, 2
 	warp_event 18,  7, CIANWOOD_CHURCH, 1
 	warp_event  8,  3, CIANWOOD_CAVE_1F, 1

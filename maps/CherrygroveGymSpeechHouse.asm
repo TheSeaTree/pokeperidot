@@ -53,7 +53,7 @@ CherrygroveGymSpeechHousePokefanMText:
 	line "any time at home"
 	cont "anymore."
 	done
-	
+
 CherrygroveGymSpeechHousePokefanFText:
 	text "A child can't stay"
 	line "at home forever."

@@ -106,7 +106,7 @@ JohtoWaterWildMons:
 	db 24, REMORAID
 	db 26, SEARION
 	
-	map_id ROUTE_7
+	map_id SEA_ROUTE_4
 	db 4 percent ; encounter rate
 	db 34, SEADRA
 	db 34, TENTACRUEL

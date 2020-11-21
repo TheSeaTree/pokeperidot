@@ -231,22 +231,31 @@ CHRIS EQU __enum__
 	const MARSHALL
 	const DERRICK
 	const FISHER_TRAINER
+	const STAN
+	const CODY
+	const RUSSEL
 	
 	trainerclass SWIMMERM ; 26
 	const VINNY
 	const JIMMY1
 	const RONNIE
+	const HARLEY
+	const HERBERT
 	
 	trainerclass SWIMMERF ; 27
 	const VIVIAN
 	const KAIT
 	const ANGIE
+	const LAURIE
+	const SANDRA
+	const BRETT
 	
 	trainerclass SAILOR ; 28
 	const CALVIN
 	const JEREMY
 	const MILES
 	const ROLAND
+	const TUCKER
 	
 	trainerclass SUPER_NERD ; 29
 	const SHANE

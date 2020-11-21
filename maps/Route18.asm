@@ -110,6 +110,41 @@ TrainerMarieScript:
 	closetext
 	end
 	
+TrainerMarieAfterScript:
+	checkevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+	iftrue .AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	jumptextfaceplayer TrainerMarieBackHomeText
+	
+.Postgame
+	opentext
+	faceplayer
+	writetext TrainerMariePostgameChallengeText
+	yesorno
+	iffalse .Decline
+	writetext TrainerMariePostgameAcceptText
+	waitbutton
+	closetext
+	winlosstext TrainerMariePostgameWinText, 0
+    loadtrainer BEAUTY, MARIE2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+.AfterBattle
+	opentext
+	faceplayer
+	writetext Route18DaughterAfterText
+	waitbutton
+	closetext
+	end
+
+.Decline
+	writetext TrainerMariePostgameDeclineText
+	waitbutton
+	closetext
+	end
+	
 MariesGrandfatherScript:
 	faceplayer
 	opentext
@@ -327,6 +362,71 @@ Route18DaughterAfterText:
 	line "battle again!"
 	done
 	
+TrainerMarieBackHomeText:
+	text "Heya, <PLAYER>!"
+	
+	para "I've put my dreams"
+	line "of being a #MON"
+	cont "trainer on hold"
+	cont "for a while, but I"
+	cont "promise we will"
+	cont "battle again!"
+	done
+	
+TrainerMariePostgameChallengeText:
+	text "Oh! <PLAYER>!"
+	
+	para "I saw on the TV"
+	line "that you and your"
+	cont "#MON became the"
+	cont "CHAMPION!"
+	
+	para "You know, grandpa"
+	line "has allowed me to"
+	cont "train some with"
+	cont "BESSIE!"
+	
+	para "Can I show you"
+	line "what I've learned?"
+	done
+	
+TrainerMariePostgameAcceptText:
+	text "Yipee!"
+	
+	para "I won't waste your"
+	line "time, I promise!"
+	done
+	
+TrainerMariePostgameWinText:
+	text "Gah! I'm not quite"
+	line "there yet!"
+	
+	para "Good battle!"
+	done
+
+TrainerMariePostgameAfterText:
+	text "I don't feel bad"
+	line "about losing to a"
+	cont "CHAMPION, not one"
+	cont "bit!"
+	
+	para "The fact I stood"
+	line "any chance gives"
+	cont "me so much hope!"
+	done
+
+TrainerMariePostgameDeclineText:
+	text "…Oh, I see."
+	
+	para "You must be so"
+	line "busy these days."
+	
+	para "If you find the"
+	line "time for me, I"
+	cont "would love to show"
+	cont "you my #MON!"
+	done
+
 Route18FarmSignText:
 	text "MOOMOO FARMS"
 	
@@ -361,7 +461,7 @@ Route18_MapEvents:
 	object_event 14,  7, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
 	object_event 16, 33, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieScript, EVENT_MARIE_GONE_HOME
 	object_event 15, 33, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, EVENT_MARIE_GONE_HOME
-	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Runaway Daughter After
+	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieAfterScript, -1 ; Runaway Daughter After
 	object_event 11,  5, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1 ; Her Miltank After
 	object_event 24,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MariesGrandfatherScript, EVENT_MARIE_GONE_HOME
 	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18LeafStone, EVENT_ROUTE_18_LEAF_STONE

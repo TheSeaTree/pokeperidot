@@ -201,6 +201,9 @@ VioletCityPokecenterSign:
 
 VioletCityCafeSign:
 	jumptext VioletCafeSignText
+	
+VioletCityMagikarpBrosSign:
+	jumptext VioletCityMagikarpBrosSignText
 
 VioletCityFruitTree:
 	fruittree FRUITTREE_VIOLET_CITY_1
@@ -479,6 +482,14 @@ VioletCitySignText:
 VioletCafeSignText:
 	text "RIDGE CAFE"
 	done
+	
+VioletCityMagikarpBrosSignText:
+	text "MAGIKARP BROS."
+	
+	para "Selling fresh"
+	line "MAGIKARP EGGs"
+	cont "daily!"
+	done
 
 VioletTutorSignText:
 	text "MOVE TUTOR"
@@ -512,11 +523,12 @@ VioletCity_MapEvents:
 	coord_event 38, 8, SCENE_VIOLETCITY_NOTHING, VioletCityRivalBattleScene1
 	coord_event 38, 8, SCENE_VIOLETCITY_RUNNING_SHOES, VioletCityShoeGuy
 
-	db 6 ; bg events
+	db 7 ; bg events
 	bg_event  8, 13, BGEVENT_READ, VioletCitySign
 	bg_event 16, 14, BGEVENT_READ, VioletTutorSign
 	bg_event 10,  7, BGEVENT_READ, VioletCityPokecenterSign
 	bg_event 20, 10, BGEVENT_READ, VioletCityCafeSign
+	bg_event 36, 16, BGEVENT_READ, VioletCityMagikarpBrosSign
 	bg_event 19,  1, BGEVENT_ITEM, VioletCityHiddenHyperPotion
 	bg_event 38,  7, BGEVENT_UP, VioletGymEvent
 

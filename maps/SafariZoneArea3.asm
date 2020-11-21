@@ -27,4 +27,4 @@ SafariZoneArea3_MapEvents:
 	bg_event  7, 25, BGEVENT_READ, SafariZoneArea3Sign
 
 	db 1 ; object events
-	object_event 19,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, SafariZoneTMSubmission, EVENT_GOT_TM_SUBMISSION
+	object_event 19,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, SafariZoneTMSubmission, EVENT_GOT_TM_SUBMISSION

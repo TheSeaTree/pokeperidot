@@ -1,13 +1,14 @@
-Route16_MapScripts:
+	const_def 2 ; object constants
+
+SeaRoute5_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-Route16_MapEvents:
+SeaRoute5_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event 32,  7, LOST_LAND, 1
+	db 0 ; warp events
 
 	db 0 ; coord events
 

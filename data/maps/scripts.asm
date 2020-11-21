@@ -69,6 +69,8 @@ INCLUDE "maps/SafariZoneArea1.asm"
 INCLUDE "maps/SafariZoneArea2.asm"
 INCLUDE "maps/SafariZoneArea3.asm"
 INCLUDE "maps/SafariZoneArea4.asm"
+INCLUDE "maps/SafariZoneArea1RestHouse.asm"
+INCLUDE "maps/SafariZoneArea4RestHouse.asm"
 
 SECTION "Map Scripts 5", ROMX
 
@@ -100,7 +102,6 @@ INCLUDE "maps/LugiaLair.asm"
 
 SECTION "Map Scripts 7", ROMX
 
-INCLUDE "maps/Route16Gate.asm"
 INCLUDE "maps/NewBarkForestGate.asm"
 INCLUDE "maps/Route8Route10Gate.asm"
 INCLUDE "maps/MahoganyGate.asm"
@@ -275,7 +276,7 @@ SECTION "Map Scripts 20", ROMX
 
 INCLUDE "maps/CherrygroveCity.asm"
 INCLUDE "maps/Route30.asm"
-INCLUDE "maps/Route7.asm"
+INCLUDE "maps/SeaRoute4.asm"
 INCLUDE "maps/Route7Cave1F.asm"
 INCLUDE "maps/Route7CaveB1F.asm"
 INCLUDE "maps/KinglersDen.asm"
@@ -294,6 +295,8 @@ INCLUDE "maps/EnteiLair.asm"
 INCLUDE "maps/SuicuneLair.asm"
 INCLUDE "maps/Route9ForestGate.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
+INCLUDE "maps/Route18Barn.asm"
+INCLUDE "maps/Route18Farmhouse.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -319,7 +322,7 @@ SECTION "Map Scripts 23", ROMX
 INCLUDE "maps/NewBarkTown.asm"
 INCLUDE "maps/VioletCity.asm"
 INCLUDE "maps/OlivineCity.asm"
-INCLUDE "maps/Route15.asm"
+INCLUDE "maps/SeaRoute1.asm"
 INCLUDE "maps/Route9.asm"
 INCLUDE "maps/VioletMoveTutor.asm"
 INCLUDE "maps/VioletWeatherHouse.asm"
@@ -336,15 +339,15 @@ SECTION "Map Scripts 24", ROMX
 INCLUDE "maps/Route2.asm"
 INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route18.asm"
-INCLUDE "maps/Route17.asm"
-INCLUDE "maps/Route16.asm"
+INCLUDE "maps/SeaRoute2.asm"
+INCLUDE "maps/SeaRoute3.asm"
+INCLUDE "maps/SeaRoute5.asm"
+INCLUDE "maps/SeaRoute6.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/Route22HiddenCave.asm"
-INCLUDE "maps/Route18Barn.asm"
-INCLUDE "maps/Route18Farmhouse.asm"
 
 
 SECTION "Map Scripts 25", ROMX

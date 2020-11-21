@@ -6,8 +6,8 @@ Route2_Blocks:
 Route11_Blocks:
 	INCBIN "maps/Route11.ablk"
 
-Route15_Blocks:
-	INCBIN "maps/Route15.ablk"
+SeaRoute1_Blocks:
+	INCBIN "maps/SeaRoute1.ablk"
 
 Route10South_Blocks:
 	INCBIN "maps/Route10South.ablk"
@@ -103,8 +103,14 @@ Route4_Blocks:
 Route13_Blocks:
 	INCBIN "maps/Route13.ablk"
 	
-Route17_Blocks:
-	INCBIN "maps/Route17.ablk"
+SeaRoute3_Blocks:
+	INCBIN "maps/SeaRoute3.ablk"
+
+SeaRoute5_Blocks:
+	INCBIN "maps/SeaRoute5.ablk"
+
+SeaRoute6_Blocks:
+	INCBIN "maps/SeaRoute6.ablk"
 
 PlayersHouse1F_Blocks:
 EmilysHouse1F_Blocks:
@@ -115,7 +121,6 @@ Route42EcruteakGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
 IlexForestAzaleaGate_Blocks:
 Route15FuchsiaGate_Blocks:
-Route16Gate_Blocks:
 Route8Route10Gate_Blocks:
 NewBarkForestGate_Blocks:
 Route2AzaleaGate_Blocks:
@@ -301,8 +306,8 @@ BlackthornCity_Blocks:
 SilverCaveOutside_Blocks:
 	INCBIN "maps/SilverCaveOutside.ablk"
 
-Route7_Blocks:
-	INCBIN "maps/Route7.ablk"
+SeaRoute4_Blocks:
+	INCBIN "maps/SeaRoute4.ablk"
 
 Route7Cave1F_Blocks:
 	INCBIN "maps/Route7Cave1F.ablk"
@@ -313,8 +318,8 @@ Route7CaveB1F_Blocks:
 Route30_Blocks:
 	INCBIN "maps/Route30.ablk"
 
-Route16_Blocks:
-	INCBIN "maps/Route16.ablk"
+SeaRoute2_Blocks:
+	INCBIN "maps/SeaRoute2.ablk"
 	
 Route18_Blocks:	
 	INCBIN "maps/Route18.ablk"
@@ -596,6 +601,10 @@ SafariZoneArea3_Blocks:
 
 SafariZoneArea4_Blocks:
 	INCBIN "maps/SafariZoneArea4.ablk"
+
+SafariZoneArea1RestHouse_Blocks:
+SafariZoneArea4RestHouse_Blocks:
+	INCBIN "maps/SafariZoneRestHouse.5x4.players_house.ablk"
 
 CarnationTown_Blocks:
 	INCBIN "maps/CarnationTown.ablk"

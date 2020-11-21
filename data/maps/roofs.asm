@@ -16,7 +16,7 @@ MapGroupRoofs:
 	db -1             ;  3
 	db ROOF_VIOLET    ;  4 (Ecruteak)
 	db ROOF_AZALEA    ;  5 (Blackthorn)
-	db -1             ;  6
+	db ROOF_AZALEA    ;  6 (Safari)
 	db -1             ;  7
 	db ROOF_GOLDENROD ;  8 (Azalea)
 	db ROOF_AZALEA    ;  9 (Lake of Rage)

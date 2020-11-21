@@ -24,7 +24,7 @@ LostLandAerodactyl:
 	cry AERODACTYL
 	waitbutton
 	closetext
-	loadwildmon AERODACTYL, 35
+	loadwildmon AERODACTYL, 45
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
@@ -127,7 +127,7 @@ LostLandScientist2Text:
 	cont "revive AERODACTYL."
 	
 	para "They were thought"
-	cont "to have been"
+	line "to have been"
 	cont "extinct for"
 	cont "centuries. Nobody"
 	cont "has ever seen one"
@@ -165,7 +165,7 @@ LostLand_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  8, 31, ROUTE_16, 1 ;Entrance
+	warp_event  8, 31, SEA_ROUTE_2, 1 ;Entrance
 	warp_event 44,  9, CHARCOAL_KILN, 1 ;Puzzle Chamber
 	warp_event  6, 11, CHARCOAL_KILN, 1 ;Unown Chamber, Change the block here to a cave entrance when the Unown are unlocked.
 

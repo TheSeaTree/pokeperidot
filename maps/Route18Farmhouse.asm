@@ -19,13 +19,13 @@ Route18Farmhouse_MapScripts:
 	disappear ROUTE18FARMHOUSE_GRAMPS
 .Done
 	end
-	
+
 Route18FarmhouseMother:
 	faceplayer
 	opentext
 	checkevent EVENT_MARIE_GONE_HOME
 	iftrue .SellMilk
-;	writetext Route18FarmhouseMotherMarieNotHomeText
+	writetext Route18FarmhouseMotherMarieNotHomeText
 	waitbutton
 	closetext
 	end
@@ -107,6 +107,38 @@ Route18FarmhouseMother:
 	db "12 BOTTLES  ¥11400@"
 	db "CANCEL@"
 	
+Route18FarmhouseFather:
+	checkevent EVENT_MARIE_GONE_HOME
+	iffalse .NotHome
+	jumptextfaceplayer Route18FarmhouseFatherHomeText 
+	
+.NotHome
+	jumptextfaceplayer Route18FarmhouseFatherAwayText
+
+Route18FarmhouseGrandpa:
+	jumptextfaceplayer Route18FarmhouseGrandpaText
+	
+Route18FarmhouseMotherMarieNotHomeText:
+	text "Howdy! Are you lo-"
+	line "okin' to buy some"
+	cont "of our famous MOO-"
+	cont "MOO MILK?"
+	
+	para "If you are, I'm"
+	line "sorry to tell you"
+	cont "that we're fresh"
+	cont "out right now."
+	
+	para "My daughter took"
+	line "our best MILTANK,"
+	cont "so we're short on"
+	cont "supply right now."
+	
+	para "Maybe you could"
+	line "try coming back"
+	cont "later."
+	done
+	
 BuyMilkText:
 	text "Howdy! Care to buy"
 	line "some of our world-"
@@ -168,6 +200,49 @@ BuyMilkNoSpaceText:
 	cont "here?"
 	done
 	
+Route18FarmhouseFatherHomeText:
+	text "I can't help but"
+	line "feel a bit of"
+	cont "pride in MARIE."
+	
+	para "I used to be quite"
+	line "the trainer myself"
+	cont "in the past."
+	
+	para "Maybe she wants to"
+	line "take after he old"
+	cont "man."
+	done
+	
+Route18FarmhouseFatherAwayText:
+	text "I can't be upset"
+	line "with my daughter."
+	
+	para "I know that I was"
+	line "bored of small"
+	cont "town life when I"
+	cont "was her age."
+	
+	para "I was able to get"
+	line "it out of my"
+	cont "system."
+	done
+	
+Route18FarmhouseGrandpaText:
+	text "This FARM has been"
+	line "passed down for"
+	cont "generations."
+	
+	para "My grandpappy left"
+	line "it to me, and some"
+	cont "day I will leave"
+	cont "it to my girls."
+	
+	para "…But that ain't"
+	line "happenin' for a"
+	cont "long time! Ehehe!"
+	done
+	
 Route18Farmhouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -180,6 +255,6 @@ Route18Farmhouse_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events 
-	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  2,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18FarmhouseFather, -1
 	object_event  5,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18FarmhouseMother, -1
-	object_event  4,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route18FarmhouseGrandpa, -1

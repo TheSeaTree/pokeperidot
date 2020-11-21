@@ -29,28 +29,30 @@ Landmarks:
 	landmark  52,  84, IlexForestName
 	landmark  52,  68, EcruteakCityName
 	landmark  52,  60, PaintersForestName
-	landmark  76,  76, Route11Name
-	landmark  64,  68, Route12Name
-	landmark  68,  58, Route13Name
-	landmark  72,  44, Route14Name
+	landmark  76,  76, Route10Name
+	landmark  64,  68, Route11Name
+	landmark  68,  58, Route12Name
+	landmark  72,  44, Route13Name
 	landmark  84,  44, OlivineCityName
 	landmark  84,  36, MahoganyTownName
-	landmark  64,  36, Route15Name ; ROUTE_18
+	landmark  64,  36, Route14Name ; ROUTE_18
 	landmark  52,  36, CarnationTownName
 	landmark  44,  36, SafariZoneName
-	landmark  44,  44, Route16Name ; ROUTE_19
-	landmark  36,  52, Route17Name ; ROUTE_20
+	landmark  44,  44, Route15Name ; ROUTE_19
+	landmark  36,  52, Route16Name ; ROUTE_20
 	landmark  36,  60, BlackthornCityName
-	landmark  42,  68, Route18Name ; ROUTE_21
-	landmark  26,  60, Route19Name ; ROUTE_22
+	landmark  42,  68, Route17Name ; ROUTE_21
+	landmark  26,  60, Route18Name ; ROUTE_22
 	landmark  20,  52, OrchidCityName
-	landmark  96,  44, Route20Name ; ROUTE_15
-	landmark 100,  58, Route21Name ; ROUTE_16
-	landmark 114,  44, Route22Name ; ROUTE_17
-	landmark 114,  68, Route23Name ; ROUTE_7
-	landmark 132,  36, VictoryRoadName
-	landmark 132,  28, IndigoPlateauName
-	landmark  20,  28, BattleTowerName
+	landmark  96,  44, SeaRoute1Name
+	landmark 100,  58, SeaRoute2Name
+	landmark 116,  44, SeaRoute3Name
+	landmark 116,  68, SeaRoute4Name
+	landmark 132,  60, SeaRoute5Name
+	landmark 132,  44, SeaRoute6Name
+	landmark 140,  36, VictoryRoadName
+	landmark 140,  28, IndigoPlateauName
+;	landmark  20,  28, BattleTowerName
 	landmark  -8,  -8, LostLandName
 
 NewBarkTownName:     db "ELKHORN¯TOWN@"
@@ -82,7 +84,7 @@ MtMortarName:        db "MT.MORTAR@"
 DragonsDenName:      db "DRAGON'S¯DEN@"
 IcePathName:         db "ICE PATH@"
 NotApplicableName:   db "N/A@" ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
-IndigoPlateauName:   db "INDIGO¯PLATEAU@"
+IndigoPlateauName:   db "#MON¯LEAGUE@"
 VictoryRoadName:     db "VICTORY¯ROAD@"
 MtMoonName:          db "MT.MOON@"
 RockTunnelName:      db "ROCK TUNNEL@"
@@ -111,10 +113,12 @@ Route16Name:         db "ROUTE 16@"
 Route17Name:         db "ROUTE 17@"
 Route18Name:         db "ROUTE 18@"
 Route19Name:         db "ROUTE 19@"
-Route20Name:         db "ROUTE 20@"
-Route21Name:         db "ROUTE 21@"
-Route22Name:         db "ROUTE 22@"
-Route23Name:         db "ROUTE 23@"
+SeaRoute1Name:       db "SEA ROUTE 1@"
+SeaRoute2Name:       db "SEA ROUTE 2@"
+SeaRoute3Name:       db "SEA ROUTE 3@"
+SeaRoute4Name:       db "SEA ROUTE 4@"
+SeaRoute5Name:       db "SEA ROUTE 5@"
+SeaRoute6Name:       db "SEA ROUTE 6@"
 Route30Name:	     db "PAVONA¯OASIS@"
 CarnationZooName:    db "CARNATION¯ZOO@"
 DarkCaveName:        db "DARK CAVE@"

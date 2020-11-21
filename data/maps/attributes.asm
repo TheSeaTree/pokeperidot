@@ -109,7 +109,7 @@ ENDM
 	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
-	connection east, Route15, ROUTE_15, 5
+	connection east, SeaRoute1, SEA_ROUTE_1, 5
 
 	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
 	connection north, PaintersForest, PAINTERS_FOREST, 7
@@ -144,21 +144,22 @@ ENDM
 	map_attributes Route1, ROUTE_1, $05, NORTH
 	connection north, NewBarkTown, NEW_BARK_TOWN, 3
 
-	map_attributes Route17, ROUTE_17, $71, WEST
-	connection west, Route15, ROUTE_15, -7
+	map_attributes SeaRoute3, SEA_ROUTE_3, $71, WEST | EAST
+	connection west, SeaRoute1, SEA_ROUTE_1, -1
+	connection east, SeaRoute6, SEA_ROUTE_6, -5
 
-	map_attributes Route16, ROUTE_16, $35, NORTH | SOUTH
-	connection north, Route15, ROUTE_15, -2
+	map_attributes SeaRoute2, SEA_ROUTE_2, $35, NORTH | SOUTH
+	connection north, SeaRoute1, SEA_ROUTE_1, -2
 	connection south, Route8, ROUTE_8, -6
 
-	map_attributes Route7, ROUTE_7, $35, WEST | EAST
+	map_attributes SeaRoute4, SEA_ROUTE_4, $35, WEST | EAST
 	connection west, Route8, ROUTE_8, 2
 	connection east, Route6, ROUTE_6, 0
 
-	map_attributes Route15, ROUTE_15, $35, SOUTH | WEST | EAST
-	connection south, Route16, ROUTE_16, 2
+	map_attributes SeaRoute1, SEA_ROUTE_1, $35, SOUTH | WEST | EAST
+	connection south, SeaRoute2, SEA_ROUTE_2, 2
 	connection west, OlivineCity, OLIVINE_CITY, -5
-	connection east, Route17, ROUTE_17, 7
+	connection east, SeaRoute3, SEA_ROUTE_3, 1
 	
 	map_attributes Route18, ROUTE_18, $13, 0
 	
@@ -177,9 +178,18 @@ ENDM
 	connection north, Route12, ROUTE_12, -18
 	connection south, NewBarkTown, NEW_BARK_TOWN, -2
 
-	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
+	map_attributes Route6, ROUTE_6, $35, NORTH | SOUTH | WEST
+	connection north, SeaRoute5, SEA_ROUTE_5, -1
 	connection south, VioletCity, VIOLET_CITY, 7
-	connection west, Route7, ROUTE_7, 0
+	connection west, SeaRoute4, SEA_ROUTE_4, 0
+	
+	map_attributes SeaRoute5, SEA_ROUTE_5, $35, NORTH | SOUTH
+	connection north, SeaRoute6, SEA_ROUTE_6, 4
+	connection south, Route6, ROUTE_6, 1
+
+	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST
+	connection south, SeaRoute5, SEA_ROUTE_5, -4
+	connection west, SeaRoute3, SEA_ROUTE_3, 5
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 9
@@ -191,8 +201,8 @@ ENDM
 	connection north, Route5, ROUTE_5, 8
 
 	map_attributes Route8, ROUTE_8, $05, NORTH | EAST
-	connection north, Route16, ROUTE_16, 6
-	connection east, Route7, ROUTE_7, -2
+	connection north, SeaRoute2, SEA_ROUTE_2, 6
+	connection east, SeaRoute4, SEA_ROUTE_4, -2
 
 	map_attributes Route10North, ROUTE_10_NORTH, $05, 0
 
@@ -308,7 +318,6 @@ ENDM
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes Route16Gate, ROUTE_16_GATE, $00, 0
 	map_attributes NewBarkForestGate, NEW_BARK_FOREST_GATE, $00, 0
 	map_attributes Route8Route10Gate, ROUTE_8_ROUTE_10_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
@@ -455,3 +464,5 @@ ENDM
 	map_attributes Route18Barn, ROUTE_18_BARN, $00, 0
 	map_attributes Route18Farmhouse, ROUTE_18_FARMHOUSE, $00, 0
 	map_attributes VioletMagikarpHouse, VIOLET_MAGIKARP_HOUSE, $00, 0
+	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
+	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0

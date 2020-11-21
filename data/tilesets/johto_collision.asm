@@ -175,3 +175,4 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ae
 	tilecoll HOP_DOWN, FLOOR, WALL, FLOOR ; af
 	tilecoll FLOOR, FLOOR, SMASH_WALL, WALL ; b0
+	tilecoll FLOOR, FLOOR, WALL, WALL ; b1

@@ -113,56 +113,83 @@ JohtoGrassWildMons:
 	map_id EAST_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, BEEDRILL
-	db 27, SKIPLOOM
-	db 28, PIKACHU
-	db 27, SKIPLOOM
-	db 27, GIRAFARIG
-	db 26, PINSIR
-	db 30, PINSIR
+	db 35, BEEDRILL
+	db 33, SKIPLOOM
+	db 32, PIKACHU
+	db 31, HYPNO
+	db 34, DITTO
+	db 31, PINSIR
+	db 33, PINSIR
 	; day
-	db 27, BEEDRILL
-	db 27, WEEPINBELL
-	db 28, PIKACHU
-	db 27, WEEPINBELL
-	db 27, GIRAFARIG
-	db 26, PINSIR
-	db 30, PINSIR
+	db 35, BEEDRILL
+	db 33, WEEPINBELL
+	db 32, PIKACHU
+	db 31, HYPNO
+	db 34, DITTO
+	db 31, PINSIR
+	db 33, PINSIR
 	; nite
-	db 27, VENONAT
-	db 27, GLOOM
-	db 28, PIKACHU
-	db 27, GLOOM
-	db 27, HYPNO
-	db 26, PINSIR
-	db 30, PINSIR
+	db 33, VENOMOTH
+	db 33, GLOOM
+	db 32, PIKACHU
+	db 31, HYPNO
+	db 34, DITTO
+	db 31, PINSIR
+	db 33, PINSIR
 
 	map_id FACTORY_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
-	db 27, MAGNEMITE
-	db 29, VOLTORB
-	db 28, PIKACHU
-	db 31, VOLTORB
-	db 30, MAGNETON
+	db 29, MAGNEMITE
+	db 32, VOLTORB
 	db 30, PIKACHU
-	db 32, PIKACHU
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 30, PIKACHU
+	db 35, PIKACHU
 	; day
-	db 27, MAGNEMITE
-	db 29, VOLTORB
-	db 28, PIKACHU
-	db 31, VOLTORB
-	db 30, MAGNETON
+	db 29, MAGNEMITE
+	db 32, VOLTORB
 	db 30, PIKACHU
-	db 32, PIKACHU
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 30, PIKACHU
+	db 35, PIKACHU
 	; nite
-	db 27, MAGNEMITE
-	db 29, VOLTORB
-	db 28, PIKACHU
-	db 31, VOLTORB
-	db 30, MAGNETON
+	db 29, MAGNEMITE
+	db 32, VOLTORB
 	db 30, PIKACHU
-	db 32, PIKACHU
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 30, PIKACHU
+	db 35, PIKACHU
+
+	map_id FACTORY_B1
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 29, MAGNEMITE
+	db 32, VOLTORB
+	db 32, GRIMER
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 32, GRIMER
+	db 34, ELECTRODE
+	; day
+	db 29, MAGNEMITE
+	db 32, VOLTORB
+	db 32, GRIMER
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 32, GRIMER
+	db 34, ELECTRODE
+	; nite
+	db 29, MAGNEMITE
+	db 32, VOLTORB
+	db 32, GRIMER
+	db 31, VOLTORB
+	db 32, MAGNETON
+	db 32, GRIMER
+	db 34, ELECTRODE
 
 	map_id FACTORY_BACK
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite

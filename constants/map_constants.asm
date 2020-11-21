@@ -35,11 +35,13 @@ ENDM
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const OLIVINE_PORT,                                10,  9 ; 14
-	map_const ROUTE_7,                                     21, 14 ;  1
+	map_const SEA_ROUTE_4,                                 21, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
-	map_const ROUTE_15,                                    20, 17 ;  3
-	map_const ROUTE_16,                                    24, 14 ;  2
-	map_const ROUTE_17,                                    20, 21 ;  3
+	map_const SEA_ROUTE_1,                                 20, 17 ;  3
+	map_const SEA_ROUTE_2,                                 24, 14 ;  2
+	map_const SEA_ROUTE_3,                                 20, 19 ;  3
+	map_const SEA_ROUTE_5,                                 22, 14 ;  3
+	map_const SEA_ROUTE_6,                                 19, 19 ;  3
 	map_const LUGIA_LAIR,                                  14, 12 ;  3
 
 	newgroup                                                      ;  2
@@ -134,12 +136,14 @@ ENDM
 
 	newgroup                                                      ;  6
 	
-	map_const SAFARI_ZONE_GATE_1F,							5,   4
-	map_const SAFARI_ZONE_GATE_2F,  						4,   4
-	map_const SAFARI_ZONE_AREA_1,						   19,  17
-	map_const SAFARI_ZONE_AREA_2,						   17,  14
-	map_const SAFARI_ZONE_AREA_3,						   13,  15
-	map_const SAFARI_ZONE_AREA_4,						   17,  15
+	map_const SAFARI_ZONE_GATE_1F,							5,  4
+	map_const SAFARI_ZONE_GATE_2F,  						4,  4
+	map_const SAFARI_ZONE_AREA_1,						   19, 17
+	map_const SAFARI_ZONE_AREA_2,						   17, 14
+	map_const SAFARI_ZONE_AREA_3,						   13, 15
+	map_const SAFARI_ZONE_AREA_4,						   17, 15
+	map_const SAFARI_ZONE_AREA_1_REST_HOUSE,				5,  4
+	map_const SAFARI_ZONE_AREA_4_REST_HOUSE,				5,  4
 	map_const CARNATION_ZOO,							   18, 13
 
 	newgroup                                                      ;  7
@@ -288,7 +292,6 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const ROUTE_16_GATE,                                5,  4 ; 24
 	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25
 	map_const ROUTE_8_ROUTE_10_GATE,                       5,  4 ; 26
 
