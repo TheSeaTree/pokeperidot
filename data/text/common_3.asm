@@ -488,18 +488,15 @@ UnknownText_0x1c4c08::
 	done
 
 UnknownText_0x1c4c28::
-	text "Hello, dear."
+	text "Hiya!"
 
 	para "I sell inexpensive"
 	line "herbal medicine."
 
 	para "They're good, but"
-	line "a trifle bitter."
-
-	para "Your #MON may"
-	line "not like them."
-
-	para "Hehehehe…"
+	line "Your #MON may"
+	cont "not like their"
+	cont "bitterness."
 	done
 
 UnknownText_0x1c4ca3::
@@ -517,30 +514,26 @@ UnknownText_0x1c4cae::
 	done
 
 UnknownText_0x1c4cce::
-	text "Thank you, dear."
-	line "Hehehehe…"
+	text "Thanks a lot!"
 	done
 
 UnknownText_0x1c4cea::
 	text "Oh? Your PACK is"
-	line "full, dear."
+	line "full."
 	done
 
 UnknownText_0x1c4d08::
-	text "Hehehe… You don't"
-	line "have the money."
+	text "You can't afford"
+	line "that right now."
 	done
 
 UnknownText_0x1c4d2a::
-	text "Come again, dear."
-	line "Hehehehe…"
+	text "Take care and come"
+	line "again!"
 	done
 
 UnknownText_0x1c4d47::
-	text "Hiya! Care to see"
-	line "some bargains?"
-
-	para "I sell rare items"
+	text "I sell rare items"
 	line "that nobody else"
 
 	para "carries--but only"
@@ -1293,6 +1286,27 @@ UnknownText_0x1c5c5e::
 	line "@"
 	text_decimal wBlueCardBalance, 1, 2
 	text " points."
+	done
+	
+AncientTomeRead_Text::
+	text "<PLAYER> read"
+	line "aloud from the"
+	cont "ANCIENT TOME…"
+	done
+	
+AncientTomeNothingHappened_Text::
+	text "…But nothing"
+	line "happened."
+	done
+
+AncientTomeGlowing_Text::
+	text "The ANCIENT TOME"
+	line "is glowing!"
+	done
+
+AncientTomeUnownReact_Text::
+	text "Your UNOWN seems"
+	line "quite pleased!"
 	done
 
 UnknownText_0x1c5c7b::

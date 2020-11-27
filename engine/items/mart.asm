@@ -730,7 +730,7 @@ Text_HerbShop_ComeAgain:
 	db "@"
 
 Text_BargainShop_Intro:
-	; Hiya! Care to see some bargains? I sell rare items that nobody else carries--but only one of each item.
+	; I sell rare items that nobody else carries--but only one of each item.
 	text_jump UnknownText_0x1c4d47
 	db "@"
 

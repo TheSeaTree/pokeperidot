@@ -160,7 +160,7 @@ BitterMerchantScript:
 	jump GoldenrodUndergroundScript_ShopClosed
 
 .Open:
-	pokemart MARTTYPE_BITTER, MART_UNDERGROUND
+	pokemart MARTTYPE_HERBS, MART_UNDERGROUND
 	closetext
 	end
 
