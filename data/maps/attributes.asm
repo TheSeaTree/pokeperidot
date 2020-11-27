@@ -466,3 +466,4 @@ ENDM
 	map_attributes VioletMagikarpHouse, VIOLET_MAGIKARP_HOUSE, $00, 0
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0
+	map_attributes Route11HiddenCave, ROUTE_11_HIDDEN_CAVE, $09, 0

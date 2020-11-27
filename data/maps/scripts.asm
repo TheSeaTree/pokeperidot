@@ -75,6 +75,7 @@ INCLUDE "maps/SafariZoneArea4RestHouse.asm"
 SECTION "Map Scripts 5", ROMX
 
 INCLUDE "maps/Route11.asm"
+INCLUDE "maps/Route11HiddenCave.asm"
 INCLUDE "maps/VioletCafe.asm"
 INCLUDE "maps/VioletGym.asm"
 INCLUDE "maps/VioletPokecenter1F.asm"

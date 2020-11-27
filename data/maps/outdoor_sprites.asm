@@ -45,6 +45,7 @@ PalletGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
+	db SPRITE_POKEFAN_M
 	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE

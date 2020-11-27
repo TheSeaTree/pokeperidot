@@ -396,7 +396,6 @@ ArbokEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, WRAP
 	db 1, LEER
-	db 1, POISON_STING
 	db 1, BITE
 	db 4, POISON_STING
 	db 9, BITE
@@ -1506,7 +1505,8 @@ GengarEvosAttacks:
 	db 25, NASTY_PLOT
 	db 30, WILL_O_WISP
 	db 33, SHADOW_BALL
-	db 39, DREAM_EATER
+	db 39, DRAIN_PUNCH
+	db 46, DREAM_EATER
 	db 50, DESTINY_BOND
 	db 61, NIGHTMARE
 	db 0 ; no more level-up moves

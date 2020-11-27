@@ -244,6 +244,7 @@ ENDM
 	map_const ROUTE_11,                                    32, 16	
 	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
 	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
+	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 14
 	map_const MAHOGANY_DEPT_STORE_ROOF,                   12,  8 ; 18
