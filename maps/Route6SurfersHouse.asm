@@ -94,15 +94,15 @@ Route6LureBallGuy:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 2, SCREEN_WIDTH - 10, TEXTBOX_Y - 2
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "1      ¥800@"
-	db "10    ¥8000@"
+	db "1   ¥800@"
+	db "10 ¥8000@"
 	db "CANCEL@"
 
 LureBallGuyIntro:

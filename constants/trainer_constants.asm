@@ -137,6 +137,7 @@ CHRIS EQU __enum__
 	const TRISTAN
 	const DEVIN
 	const JULES
+	const LAWRENCE
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -152,6 +153,7 @@ CHRIS EQU __enum__
 	const ROY
 	const RICKY
 	const HUGH
+	const RILEY
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -163,6 +165,7 @@ CHRIS EQU __enum__
 	const VICKY
 	const GINGER
 	const KELLY
+	const DANNI
 
 	trainerclass JANINE ; 1a
 	const JANINE1
@@ -233,14 +236,15 @@ CHRIS EQU __enum__
 	const FISHER_TRAINER
 	const STAN
 	const CODY
-	const RUSSEL
 	
 	trainerclass SWIMMERM ; 26
 	const VINNY
 	const JIMMY1
 	const RONNIE
 	const HARLEY
-	const HERBERT
+	const RUSSEL
+	const HAROLD
+	const SAUL
 	
 	trainerclass SWIMMERF ; 27
 	const VIVIAN
@@ -401,6 +405,7 @@ CHRIS EQU __enum__
 	const GERALD
 	
 	trainerclass KIMONO_GIRL ; 3c
+	const ANRI
 	
 	trainerclass TWINS ; 3d
 	const FAYEANDMAE1

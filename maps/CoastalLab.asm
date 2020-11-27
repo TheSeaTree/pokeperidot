@@ -337,6 +337,30 @@ ProfessorMapleSrAdieAfterUpgradeText2:
 	cont "#MON!"
 	done
 	
+ProfessorMapleSrAideAllUnownText:
+	text "Oh my! Have you"
+	cont "done it? You have!"
+	
+	para "You have cataloged"
+	line "every UNOWN form!"
+	
+	para "I know I can trust"
+	line "you with this now-"
+	
+	para "It's an ancient"
+	line "book written in"
+	cont "UNOWN characters."
+	
+	para "I have recently"
+	line  "finished translat-"
+	cont "ing it."
+	
+	para "You seem to have"
+	line "more experience"
+	cont "with UNOWN than I,"
+	cont "so please take it."
+	done
+	
 CoastalLabDifficultBooksText:
 	text "There are so many"
 	line "difficult books"

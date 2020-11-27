@@ -63,6 +63,7 @@ PsyduckEggMoves:
 	db DYNAMICPUNCH
 	db IRON_TAIL
 	db U_TURN
+	db PETAL_DANCE
 	db -1 ; end
 
 RinringEggMoves:
@@ -80,6 +81,7 @@ RinringEggMoves:
 	db U_TURN
 	db BATON_PASS
 	db PAY_DAY
+	db PETAL_DANCE
 	db -1 ; end
 
 SpearowEggMoves:
@@ -104,7 +106,7 @@ EkansEggMoves:
 	db DRAGON_DANCE
 	db IRON_TAIL
 	db -1 ; end
-	
+
 PikachuEggMoves:
 	db REVERSAL
 	db BIDE
@@ -115,6 +117,7 @@ PikachuEggMoves:
 	db SIGNAL_BEAM
 	db EXTREMESPEED
 	db PAY_DAY
+	db PETAL_DANCE
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -159,6 +162,7 @@ ClefairyEggMoves:
 	db BELLY_DRUM
 	db MIMIC
 	db SIGNAL_BEAM
+	db PETAL_DANCE
 	db -1 ; end
 
 VulpixEggMoves:
@@ -182,6 +186,7 @@ JigglypuffEggMoves:
 	db BATON_PASS
 	db DRAIN_KISS
 	db SCREECH
+	db PETAL_DANCE
 	db -1 ; end
 
 ZubatEggMoves:
@@ -245,6 +250,7 @@ MeowthEggMoves:
 	db COUNTER
 	db REVERSAL
 	db U_TURN
+	db PETAL_DANCE
 	db -1 ; end
 
 SMolaEggMoves:
@@ -1093,6 +1099,7 @@ GreminiEggMoves:
 	
 SmoochumEggMoves:
 	db RECOVER
+	db PETAL_DANCE
 	db -1 ; end
 
 ElekidEggMoves:

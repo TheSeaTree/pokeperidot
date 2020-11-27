@@ -354,8 +354,8 @@ DoubleKickDescription:
 	next "attack.@"
 
 MegaKickDescription:
-	db   "A powerful kicking"
-	next "attack.@"
+	db   "The power of many"
+	next "restored.@"
 
 BulkUpDescription:
 	db   "Raises ATTACK"

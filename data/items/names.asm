@@ -152,7 +152,7 @@ ItemNames::
 	db "DRAGON SCALE@"
 	db "BERSERK GENE@"
 	db "LEGENDS AURA@"
-	db "TERU-SAMA@"
+	db "ANCIENT TOME@"
 	db "TERU-SAMA@"
 	db "SACRED ASH@"
 	db "HEAVY BALL@"

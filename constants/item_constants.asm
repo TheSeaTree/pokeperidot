@@ -159,7 +159,7 @@
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
 	const LEGENDS_AURA ; 99
-	const ITEM_9A      ; 9a
+	const ANCIENT_TOME ; 9a
 	const ITEM_9B      ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
@@ -292,7 +292,7 @@ ENDM
 	add_mt SWEET_KISS
 	add_mt LOVELY_KISS
 	add_mt DRAIN_KISS
-	add_mt PETAL_DANCE
+	add_mt MEGA_KICK
 	add_mt BODY_SLAM
 	add_mt DRAIN_PUNCH
 	add_mt HEAL_BELL

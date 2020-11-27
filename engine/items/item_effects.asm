@@ -165,8 +165,8 @@ ItemEffects:
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
+	dw NoEffect            ; LEGENDS_AURA
+	dw AncientTomeEffect   ; ANCIENT_TOME
 	dw NoEffect            ; ITEM_9B
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
@@ -2225,6 +2225,43 @@ PokeFluteEffect:
 .battle
 	jp PokeFluteTerminatorCharacter
 	
+AncientTomeEffect:
+	; Ancient Tome can only be used outside of battle.
+	ld hl, .AncientTomeScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	ret
+
+.AncientTomeScript:
+	opentext
+	farwritetext AncientTomeRead_Text
+	waitbutton
+	writebyte UNOWN
+	special FindPartyMonThatSpecies
+	iffalse .NoUnown
+	farwritetext AncientTomeGlowing_Text
+	waitbutton
+	playsound SFX_WARP_TO
+	writebyte MEGA_KICK
+	special MoveTutor
+	ifequal $0, .TaughtMove
+	closetext
+	end
+	
+.TaughtMove
+	farwritetext AncientTomeUnownReact_Text
+	cry UNOWN
+	waitbutton
+	closetext
+	end
+
+.NoUnown
+	farwritetext AncientTomeNothingHappened_Text
+	waitbutton
+	closetext
+	end
+
 BlueCardEffect:
 	ld hl, .bluecardtext
 	jp MenuTextBoxWaitButton

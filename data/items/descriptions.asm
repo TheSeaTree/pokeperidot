@@ -153,7 +153,7 @@ ItemDescriptions:
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
 	dw LegendsAuraDesc
-	dw TeruSama19Desc
+	dw AncientTomeDesc
 	dw TeruSama20Desc
 	dw SacredAshDesc
 	dw HeavyBallDesc
@@ -862,8 +862,9 @@ LegendsAuraDesc:
 	db   "You should not"
 	next "have this item!@"
 
-TeruSama19Desc:
-	db   "?@"
+AncientTomeDesc:
+	db   "An old book with a"
+	next "powerful aura.@"
 
 TeruSama20Desc:
 	db   "?@"
