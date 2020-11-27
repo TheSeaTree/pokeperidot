@@ -106,17 +106,65 @@ JohtoWaterWildMons:
 	db 24, REMORAID
 	db 26, SEARION
 	
+	map_id OLIVINE_CITY
+	db 4 percent
+	db 33, SEEL
+	db 32, GOLDEEN
+	db 34, SEAKING
+	db 33, SEARION
+	db 36, SEARION
+	
+	map_id SEA_ROUTE_1
+	db 4 percent ; encounter rate
+	db 33, SEEL
+	db 34, TENTACOOL
+	db 32, TENTACRUEL
+	db 33, SEARION
+	db 36, SEARION
+
+	map_id SEA_ROUTE_2
+	db 4 percent ; encounter rate
+	db 34, CORSOLA
+	db 34, SHELLDER
+	db 34, QWILFISH
+	db 35, CHINCHOU
+	db 33, LANTURN
+
+	map_id SEA_ROUTE_3
+	db 4 percent ; encounter rate
+	db 34, TENTACRUEL
+	db 35, OCTILLERY
+	db 34, MANTINE
+	db 34, QWILFISH
+	db 33, DEWGONG
+	
 	map_id SEA_ROUTE_4
+	db 4 percent ; encounter rate
+	db 34, CORSOLA
+	db 34, DEWGONG
+	db 34, ANCOR
+	db 34, LANTURN
+	db 34, LANTURN
+	
+	map_id SEA_ROUTE_5
 	db 4 percent ; encounter rate
 	db 34, SEADRA
 	db 34, TENTACRUEL
 	db 34, QWILFISH
-	db 35, CHINCHOU
-	db 33, LANTURN
+	db 35, SMOLA
+	db 33, ANCOR
+	
+	map_id SEA_ROUTE_6
+	db 4 percent ; encounter rate
+	db 34, MANTINE
+	db 34, TENTACRUEL
+	db 34, KINGLER
+	db 35, SHELLDER
+	db 33, SHELLDER
 	
 	map_id ROUTE_8
 	db 4 percent ; encounter rate
-	db 24, TENTACOOL
+	db 24, CORSOLA
 	db 24, SEEL
 	db 25, REMORAID
 	db 24, SMOLA
@@ -185,14 +233,6 @@ JohtoWaterWildMons:
 	db 24, AZUMARILL
 	db 24, AZUMARILL
 	db 25, POLIWHIRL
-	
-	map_id OLIVINE_CITY
-	db 4 percent
-	db 33, SEEL
-	db 34, TENTACOOL
-	db 32, TENTACRUEL
-	db 33, SEARION
-	db 36, SEARION
 	
 	map_id MAHOGANY_TOWN
 	db 4 percent

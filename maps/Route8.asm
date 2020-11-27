@@ -70,6 +70,17 @@ TrainerJugglerRobert:
 	closetext
 	end
 	
+TrainerLassDanni:
+	trainer LASS, DANNI, EVENT_BEAT_LASS_DANNI, LassDanniText, LassDanniWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassDanniAfterText
+	waitbutton
+	closetext
+	end
+
 Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
 
@@ -84,6 +95,9 @@ Route8RareCandy:
 
 Route8Revive:
 	itemball REVIVE
+	
+Route8DampCharm:
+	itemball DAMP_CHARM
 	
 Route8Rock:
 	jumpstd smashrock	
@@ -166,6 +180,27 @@ LassStephanieAfterText:
 	cont "anyway."
 	done
 	
+LassDanniText:
+	text "I just got done"
+	line "changing back into"
+	cont "my clothes after a"
+	cont "swim."
+	
+	para "Oh, a battle?"
+	line "Sure!"
+	done
+
+LassDanniWinText:
+	text "…I'm just tired"
+	line "after swimming!"
+	done
+
+LassDanniAfterText:
+	text "I learned to swim"
+	line "so that I could"
+	cont "find new #MON."
+	done
+	
 JugglerRobertText:
 	text "Gaze at my mastery"
 	line "of gravity!"
@@ -208,16 +243,18 @@ Route8_MapEvents:
 	db 1 ; bg events
 	bg_event 30, 22, BGEVENT_READ, Route8UndergroundPathSign
 
-	db 13 ; object events
+	db 15 ; object events
 	object_event 20, 45, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
 	object_event  4, 46, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8SunStone, EVENT_ROUTE_8_SUN_STONE
 	object_event 10, 69, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8RareCandy, EVENT_ROUTE_8_RARE_CANDY
 	object_event 12, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8Revive, EVENT_ROUTE_8_REVIVE
+	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8DampCharm, EVENT_ROUTE_8_DAMP_CHARM
 	object_event 24, 21, SPRITE_OLIVINE_RIVAL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerKait, -1
 	object_event 18, 35, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAlex, -1
 	object_event 17, 53, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBrian, -1
 	object_event  9, 58, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerLassStephanie, -1
 	object_event 27, 50, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerJugglerRobert, -1
+	object_event 10, 13, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerLassDanni, -1
 	object_event 29, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1
 	object_event 20, 21, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1
 	object_event 25, 19, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8Rock, -1

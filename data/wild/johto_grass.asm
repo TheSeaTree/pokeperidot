@@ -703,6 +703,60 @@ JohtoGrassWildMons:
 	db 14, KRABBY
 	db 13, SHUCKLE
 	db 15, SHUCKLE
+	
+	map_id SEA_ROUTE_3
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, SLOWPOKE
+	db 34, SHUCKLE
+	db 35, SLOWPOKE
+	db 34, SHUCKLE
+	db 37, SLOWBRO
+	db 36, HOPPIP
+	db 37, HOPPIP
+	; day
+	db 34, SLOWPOKE
+	db 34, SHUCKLE
+	db 35, SLOWPOKE
+	db 34, SHUCKLE
+	db 37, SLOWBRO
+	db 36, ODDISH
+	db 37, ODDISH
+	; nite
+	db 34, SLOWPOKE
+	db 34, SHUCKLE
+	db 35, SLOWPOKE
+	db 34, SHUCKLE
+	db 37, SLOWBRO
+	db 36, ODDISH
+	db 37, ODDISH
+
+	map_id SEA_ROUTE_6
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, SEARION
+	db 34, KRABBY
+	db 35, SEARION
+	db 34, KRABBY
+	db 36, KINGLER
+	db 36, PSYDUCK
+	db 37, PSYDUCK
+	; day
+	db 34, SEARION
+	db 34, KRABBY
+	db 35, SEARION
+	db 34, KRABBY
+	db 36, KINGLER
+	db 36, PSYDUCK
+	db 37, PSYDUCK
+	; nite
+	db 34, SEARION
+	db 34, KRABBY
+	db 35, SEARION
+	db 34, KRABBY
+	db 36, KINGLER
+	db 36, PSYDUCK
+	db 37, PSYDUCK
 
 	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -805,7 +859,7 @@ JohtoGrassWildMons:
 	db 16, BUTTERFREE
 	; nite
 	db 15, ODDISH
-	db 16, NATU
+	db 16, HOOTHOOT
 	db 16, PSYDUCK
 	db 13, BUTTERFREE
 	db 14, ABRA

@@ -92,10 +92,7 @@ OlivineSurfGuyGiveSurf:
 	done
 	
 OlivineSurfGuyExplain:
-	text "That HM contains"
-	line "the move SURF."
-	
-	para "It will let your"
+	text "SURF will let your"
 	line "#MON carry you"
 	cont "across most bodies"
 	cont "of water."
@@ -109,9 +106,14 @@ OlivineSurfGuyExplain:
 	cont "alright, you must"
 	cont "be alright."
 	
-	para "Don't go making me"
-	line "regret giving you"
-	cont "that move."
+	para "While you can go"
+	line "explore the ocean,"
+	cont "you won't find any"
+	cont "GYMs out there."
+	
+	para "Head back east if"
+	line "you want to coll-"
+	cont "ect more badges."
 	done
 	
 OlivineSurfHouseFisher1:
