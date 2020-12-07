@@ -107,8 +107,6 @@ TrainerSuperNerdSandy:
 	end
 	
 Route14MoveTutor:
-	opentext
-	jump .Start
 	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	opentext
