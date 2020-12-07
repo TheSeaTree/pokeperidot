@@ -294,7 +294,6 @@ MahoganyDeptStore5FGiveDoll:
 	checkevent EVENT_DECO_SHIFUR_DOLL
 	iftrue .AlreadyHave
 	setevent EVENT_DECO_SHIFUR_DOLL
-	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
 .AlreadyHave
 	warpfacing UP, PLAYERS_HOUSE_2F, 3, 3
 	end

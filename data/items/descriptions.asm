@@ -154,7 +154,7 @@ ItemDescriptions:
 	dw BerserkGeneDesc
 	dw LegendsAuraDesc
 	dw AncientTomeDesc
-	dw TeruSama20Desc
+	dw DollCapsuleDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
 	dw FlowerMailDesc
@@ -866,8 +866,9 @@ AncientTomeDesc:
 	db   "An old book with a"
 	next "powerful aura.@"
 
-TeruSama20Desc:
-	db   "?@"
+DollCapsuleDesc:
+	db   "Contains a random"
+	next "#MON DOLL.@"
 
 SacredAshDesc:
 	db   "Fully revives all"

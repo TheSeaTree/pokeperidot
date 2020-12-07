@@ -153,7 +153,7 @@ ItemNames::
 	db "BERSERK GENE@"
 	db "LEGENDS AURA@"
 	db "ANCIENT TOME@"
-	db "TERU-SAMA@"
+	db "DOLL CAPSULE@"
 	db "SACRED ASH@"
 	db "HEAVY BALL@"
 	db "FLOWER MAIL@"

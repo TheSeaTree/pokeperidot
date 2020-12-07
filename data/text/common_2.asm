@@ -578,6 +578,39 @@ UnknownText_0x1c0b65::
 	text "<PLAYER>'s #MON"
 	line "were all healed!"
 	done
+	
+DollCapsule_OpenText::
+	text "@"
+	text_ram wPlayerName
+	text " opened the"
+	line "capsule…"
+	prompt
+	
+DollCapsule_GenericText::
+	text "It contained a"
+	line "@"
+	text_ram wStringBuffer3
+	text " DOLL!"
+	done
+	
+DollCapsule_OddishText::
+	text "It contained an"
+	line "@"
+	text_ram wStringBuffer3
+	text " DOLL!"
+	done
+	
+DollCapsule_SurfPikachuText::
+	text "It contained a"
+	line "SURF PIKACHU DOLL!"
+	done
+
+DollCapsule_SentHomeText::
+	text "@"
+	text_ram wPlayerName
+	text " sent the"
+	line "doll home."
+	prompt
 
 Text_AnEGGCantHoldAnItem::
 	text "An EGG can't hold"

@@ -167,7 +167,7 @@ ItemEffects:
 	dw NoEffect            ; BERSERK_GENE
 	dw NoEffect            ; LEGENDS_AURA
 	dw AncientTomeEffect   ; ANCIENT_TOME
-	dw NoEffect            ; ITEM_9B
+	dw DollCapsuleEffect   ; DOLL_CAPSULE
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -2259,6 +2259,101 @@ AncientTomeEffect:
 .NoUnown
 	farwritetext AncientTomeNothingHappened_Text
 	waitbutton
+	closetext
+	end
+
+DollCapsuleEffect:
+	; Ancient Tome can only be used outside of battle.
+	ld hl, .AncientTomeScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	call UseDisposableItem
+	ret
+
+.AncientTomeScript:
+;	opentext 
+	farwritetext DollCapsule_OpenText
+
+	random  50
+	ifequal  0, .SurfPikachu
+	ifless   3, .Gengar
+	ifless   6, .Diglett
+	ifless   9, .Shellder
+	ifless  12, .Grimer
+	ifless  15, .Oddish
+	ifless  20, .Geodude
+	ifless  25, .Machop
+	ifless  30, .Voltorb
+	ifless  40, .Tentacool
+
+.Weedle:
+	setevent EVENT_DECO_WEEDLE_DOLL
+	pokenamemem WEEDLE, MEM_BUFFER_0
+	jump .Continue
+
+.Gengar:
+	setevent EVENT_DECO_GENGAR_DOLL
+	pokenamemem GENGAR, MEM_BUFFER_0
+	jump .Continue
+	
+.Diglett:
+	setevent EVENT_DECO_DIGLETT_DOLL
+	pokenamemem DIGLETT, MEM_BUFFER_0
+	jump .Continue
+
+.Shellder:
+	setevent EVENT_DECO_SHELLDER_DOLL
+	pokenamemem SHELLDER, MEM_BUFFER_0
+	jump .Continue
+
+.Grimer:
+	setevent EVENT_DECO_GRIMER_DOLL
+	pokenamemem GRIMER, MEM_BUFFER_0
+	jump .Continue
+
+.Geodude:
+	setevent EVENT_DECO_GEODUDE_DOLL
+	pokenamemem GEODUDE, MEM_BUFFER_0
+	jump .Continue
+
+.Machop:
+	setevent EVENT_DECO_MACHOP_DOLL
+	pokenamemem MACHOP, MEM_BUFFER_0
+	jump .Continue
+
+.Voltorb:
+	setevent EVENT_DECO_VOLTORB_DOLL
+	pokenamemem VOLTORB, MEM_BUFFER_0
+	jump .Continue
+
+.Tentacool:
+	setevent EVENT_DECO_TENTACOOL_DOLL
+	pokenamemem TENTACOOL, MEM_BUFFER_0
+
+.Continue:
+	farwritetext DollCapsule_GenericText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	jump .SentHome
+
+.Oddish:
+	setevent EVENT_DECO_ODDISH_DOLL
+	pokenamemem ODDISH, MEM_BUFFER_0
+	farwritetext DollCapsule_OddishText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	jump .SentHome
+
+.SurfPikachu:
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
+	farwritetext DollCapsule_SurfPikachuText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	waitsfx
+
+.SentHome:
+	farwritetext DollCapsule_SentHomeText
 	closetext
 	end
 

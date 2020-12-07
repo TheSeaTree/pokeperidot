@@ -160,7 +160,7 @@
 	const BERSERK_GENE ; 98
 	const LEGENDS_AURA ; 99
 	const ANCIENT_TOME ; 9a
-	const ITEM_9B      ; 9b
+	const DOLL_CAPSULE ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
 	const FLOWER_MAIL  ; 9e
