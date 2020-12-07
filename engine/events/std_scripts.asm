@@ -11,6 +11,7 @@ StdScripts::
 	dba TeamRocketOathScript
 	dba IncenseBurnerScript
 	dba MerchandiseShelfScript
+	dba CapsuleMachineScript
 	dba GymGeyserScript
 	dba UnownWallScript
 	dba OldStatueScript
@@ -554,6 +555,51 @@ TeleportGuyScript:
 	farwritetext TeleportGuyDeclineText
 	closetext
 	end
+	
+	
+CapsuleMachineScript:
+	opentext
+	farwritetext CapsuleMachineText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .End
+.Again
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem DOLL_CAPSULE
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 500
+	special PlaceMoneyTopRight
+	farwritetext CapsuleMachineUsedText1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	farwritetext CapsuleMachineUsedText1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	farwritetext CapsuleMachineUsedText2
+	playsound SFX_BALL_POOF
+	waitbutton
+
+	itemtotext DOLL_CAPSULE, MEM_BUFFER_1
+	farwritetext GiveItemText
+	playsound SFX_ITEM
+	pause 60
+	itemnotify
+	farwritetext CapsuleMachineAgainText
+	yesorno
+	iftrue .Again	
+.End
+	closetext
+	end
+	
+.NotEnoughMoney:
+	farwritetext UnknownText_0x1bdebc
+	jump .End
+	
+.NotEnoughSpace:
+	farwritetext UnknownText_0x1c4fb7
+	waitbutton
+	jump .End
 
 Movement_ContestResults_WalkAfterWarp:
 	step DOWN

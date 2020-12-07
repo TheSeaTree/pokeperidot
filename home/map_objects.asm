@@ -168,7 +168,7 @@ CheckUnownXTile::
 CheckCounterTile::
 	cp COLL_COUNTER
 	ret z
-	cp COLL_COUNTER_98
+	cp COLL_CAPSULE_MACHINE
 	ret
 
 CheckPitTile::

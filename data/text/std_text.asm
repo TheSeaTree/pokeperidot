@@ -150,6 +150,31 @@ MerchandiseShelfText:
 	line "merchandise!"
 	done
 	
+CapsuleMachineText:
+	text "It's a vending"
+	line "machine that sells"
+	cont "#MON DOLLs!"
+	
+	para "Just pay ¥500 and"
+	line "turn the crank."
+	
+	para "Would you like to"
+	line "buy one?"
+	done
+	
+CapsuleMachineUsedText1:
+	text "Gacha…"
+	done
+
+CapsuleMachineUsedText2:	
+	text "Pon!"
+	done
+	
+CapsuleMachineAgainText:
+	text "Would you like to"
+	line "buy another?"
+	done
+	
 GymGeyserText:
 	text "It's impossible to"
 	line "pass!"

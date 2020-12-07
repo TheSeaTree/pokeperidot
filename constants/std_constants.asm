@@ -12,6 +12,7 @@
 	enum teamrocketoath
 	enum incenseburner
 	enum merchandiseshelf
+	enum capsulemachine
 	enum gymgeyser
 	enum strangesymbols
 	enum oldstatue

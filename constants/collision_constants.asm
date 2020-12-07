@@ -86,7 +86,7 @@ COLL_RADIO             EQU $94
 COLL_TOWN_MAP          EQU $95
 COLL_MART_SHELF        EQU $96
 COLL_TV                EQU $97
-COLL_COUNTER_98        EQU $98 ; unused
+COLL_CAPSULE_MACHINE   EQU $98 ; unused
 COLL_9C                EQU $9c ; garbage
 COLL_WINDOW            EQU $9d
 COLL_INCENSE_BURNER    EQU $9f
