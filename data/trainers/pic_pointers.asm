@@ -14,10 +14,10 @@ TrainerPicPointers::
 	dba FangirlPic
 	dba PokemonProfPic
 	dba CalPic
-	dba WillPic
-	dba BrunoPic
-	dba KarenPic
-	dba KogaPic
+	dba OrvillePic
+	dba ReganPic
+	dba AmberPic
+	dba BredePic
 	dba ChampionPic
 	dba BrockPic
 	dba MistyPic

@@ -66,7 +66,7 @@ KangaskhanFrontpic:  INCBIN "gfx/pokemon/kangaskhan/front.animated.2bpp.lz"
 RhydonFrontpic:      INCBIN "gfx/pokemon/rhydon/front.animated.2bpp.lz"
 AncorFrontpic:       INCBIN "gfx/pokemon/ancor/front.animated.2bpp.lz"
 RhyhornFrontpic:     INCBIN "gfx/pokemon/rhyhorn/front.animated.2bpp.lz"
-SkelegonFrontpic:     INCBIN "gfx/pokemon/skelegon/front.animated.2bpp.lz"
+SkelegonFrontpic:    INCBIN "gfx/pokemon/skelegon/front.animated.2bpp.lz"
 SlowbroFrontpic:     INCBIN "gfx/pokemon/slowbro/front.animated.2bpp.lz"
 ButterfreeFrontpic:  INCBIN "gfx/pokemon/butterfree/front.animated.2bpp.lz"
 WeezingFrontpic:     INCBIN "gfx/pokemon/weezing/front.animated.2bpp.lz"
@@ -713,11 +713,15 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 
 SECTION "Pics 19", ROMX
-OctankFrontpic:   INCBIN "gfx/pokemon/octank/front.animated.2bpp.lz"
-OctankBackpic:    INCBIN "gfx/pokemon/octank/back.2bpp.lz"
-FangirlPic:       INCBIN "gfx/trainers/fangirl.2bpp.lz"
-FerrodonFrontpic: INCBIN "gfx/pokemon/ferrodon/front.animated.2bpp.lz"
-FerrodonBackpic:  INCBIN "gfx/pokemon/ferrodon/back.2bpp.lz"
+OctankFrontpic:   	 INCBIN "gfx/pokemon/octank/front.animated.2bpp.lz"
+OctankBackpic:    	 INCBIN "gfx/pokemon/octank/back.2bpp.lz"
+FangirlPic:       	 INCBIN "gfx/trainers/fangirl.2bpp.lz"
+FerrodonFrontpic: 	 INCBIN "gfx/pokemon/ferrodon/front.animated.2bpp.lz"
+FerrodonBackpic:  	 INCBIN "gfx/pokemon/ferrodon/back.2bpp.lz"
+AmberPic:		  	 INCBIN "gfx/trainers/amber.2bpp.lz"
+OrvillePic:		  	 INCBIN "gfx/trainers/orville.2bpp.lz"
+ReganPic:		  	 INCBIN "gfx/trainers/regan.2bpp.lz"
+BredePic:		  	 INCBIN "gfx/trainers/brede.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

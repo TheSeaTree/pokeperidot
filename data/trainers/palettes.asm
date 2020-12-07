@@ -19,10 +19,10 @@ INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/fangirl.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-INCBIN "gfx/trainers/will.gbcpal", middle_colors
-INCBIN "gfx/trainers/bruno.gbcpal", middle_colors
-INCBIN "gfx/trainers/karen.gbcpal", middle_colors
-INCBIN "gfx/trainers/koga.gbcpal", middle_colors
+INCBIN "gfx/trainers/orville.gbcpal", middle_colors
+INCBIN "gfx/trainers/regan.gbcpal", middle_colors
+INCBIN "gfx/trainers/amber.gbcpal", middle_colors
+INCBIN "gfx/trainers/brede.gbcpal", middle_colors
 INCBIN "gfx/trainers/champion.gbcpal", middle_colors
 INCBIN "gfx/trainers/brock.gbcpal", middle_colors
 INCBIN "gfx/trainers/misty.gbcpal", middle_colors
