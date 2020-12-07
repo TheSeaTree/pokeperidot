@@ -299,6 +299,7 @@ MachopEggMoves:
 	db ENCORE
 	db BULLET_PUNCH
 	db REVERSAL
+	db METRONOME
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -381,6 +382,7 @@ SeelEggMoves:
 	db IRON_TAIL
 	db LIGHT_SCREEN
 	db PAY_DAY
+	db ICICLE_SPEAR
 	db -1 ; end
 
 GrimerEggMoves:
@@ -429,6 +431,7 @@ DrowzeeEggMoves:
 	db RECOVER
 	db DESTINY_BOND
 	db DRAIN_KISS
+	db METRONOME
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -553,6 +556,7 @@ MrMimeEggMoves:
 	db FUTURE_SIGHT
 	db HYPNOSIS
 	db MIMIC
+	db METRONOME
 	db -1 ; end
 
 ScytherEggMoves:
@@ -1028,6 +1032,7 @@ DelibirdEggMoves:
 	db BODY_SLAM
 	db SIGNAL_BEAM
 	db PAY_DAY
+	db ICICLE_SPEAR
 	db -1 ; end
 
 MantineEggMoves:
@@ -1099,7 +1104,9 @@ GreminiEggMoves:
 	
 SmoochumEggMoves:
 	db RECOVER
+	db ICICLE_SPEAR
 	db PETAL_DANCE
+	db METRONOME
 	db -1 ; end
 
 ElekidEggMoves:
@@ -1108,6 +1115,7 @@ ElekidEggMoves:
 	db CROSS_CHOP
 	db DYNAMICPUNCH
 	db FLAMETHROWER
+	db METRONOME
 	db -1 ; end
 
 MagbyEggMoves:
@@ -1118,6 +1126,7 @@ MagbyEggMoves:
 	db DYNAMICPUNCH
 	db SLUDGE
 	db THUNDERBOLT
+	db METRONOME
 	db -1 ; end
 
 MiltankEggMoves:

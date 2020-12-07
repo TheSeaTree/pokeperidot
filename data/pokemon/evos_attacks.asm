@@ -1017,6 +1017,7 @@ AlakazamEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TELEPORT
 	db 1, CONFUSION
+	db 1, METRONOME
 	db 16, CONFUSION
 	db 18, DISABLE
 	db 21, PSYBEAM
@@ -2325,6 +2326,7 @@ AerodactylEvosAttacks:
 SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, METRONOME
 	db 4, DEFENSE_CURL
 	db 9, AMNESIA
 	db 12, LICK
