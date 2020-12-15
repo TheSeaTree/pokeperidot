@@ -127,50 +127,6 @@ SampleKenjiBreakCountdown:
 	ld [wKenjiBreakTimer], a
 	ret
 
-StartBugContestTimer:
-	ld a, BUG_CONTEST_MINUTES
-	ld [wBugContestMinsRemaining], a
-	ld a, BUG_CONTEST_SECONDS
-	ld [wBugContestSecsRemaining], a
-	call UpdateTime
-	ld hl, wBugContestStartTime
-	call CopyDayHourMinSecToHL
-	ret
-
-CheckBugContestTimer::
-	ld hl, wBugContestStartTime
-	call CalcSecsMinsHoursDaysSince
-	ld a, [wDaysSince]
-	and a
-	jr nz, .timed_out
-	ld a, [wHoursSince]
-	and a
-	jr nz, .timed_out
-	ld a, [wSecondsSince]
-	ld b, a
-	ld a, [wBugContestSecsRemaining]
-	sub b
-	jr nc, .okay
-	add 60
-
-.okay
-	ld [wBugContestSecsRemaining], a
-	ld a, [wMinutesSince]
-	ld b, a
-	ld a, [wBugContestMinsRemaining]
-	sbc b
-	ld [wBugContestMinsRemaining], a
-	jr c, .timed_out
-	and a
-	ret
-
-.timed_out
-	xor a
-	ld [wBugContestMinsRemaining], a
-	ld [wBugContestSecsRemaining], a
-	scf
-	ret
-
 InitializeStartDay:
 	call UpdateTime
 	ld hl, wTimerEventStartDay

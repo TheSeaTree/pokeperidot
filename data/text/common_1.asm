@@ -1267,8 +1267,7 @@ UnknownText_0x1bd2bc::
 	done
 
 UnknownText_0x1bd2ca::
-	text "ANNOUNCER: DING"
-	line "DONG!"
+	text "PA: DING DONG!"
 
 	para "Time's up!"
 	

@@ -67,10 +67,10 @@ SafariGuardScript:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .decline
-	checkmoney YOUR_MONEY, 2000
+	checkmoney YOUR_MONEY, 500
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
-	takemoney YOUR_MONEY, 2000
+	takemoney YOUR_MONEY, 500
 	waitsfx
 	special PlaceMoneyTopRight
 	writetext ExplainSafariBalls
@@ -239,11 +239,10 @@ SafariZoneWelcomeText:
 	para "Would you like to"
 	line "participate in our"
 	cont "SAFARI game?"
-	
-	para "You will have 10"
-	line "minutes to capture"
-	cont "any #MON in the"
-	cont "park for ¥2000"
+
+	para "For ¥500, you can"
+	line "catch any #MON"
+	cont "in the park."
 	done
 
 ExplainSafariBalls:
@@ -268,7 +267,7 @@ ExplainSafariBalls:
 	
 PlayerReceivedSafariBalls:
 	text "<PLAYER> received"
-	line "20 SAFARI BALLs."
+	line "30 SAFARI BALLs."
 	done
 	
 SafariZoneYes:

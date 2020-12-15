@@ -145,7 +145,7 @@ Unreferenced_Function24b8f:
 
 StartMenu_DrawBugContestStatusBox:
 	hlcoord 10, 0
-	ld b, 1
+	ld b, 2
 	ld c, 8
 	call TextBox
 	ret
@@ -156,18 +156,20 @@ StartMenu_PrintBugContestStatus:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call StartMenu_DrawBugContestStatusBox
-	hlcoord 11, 1
+	hlcoord 11, 2
 	ld de, .Balls_EN
 	call PlaceString
-	hlcoord 17, 1
+	hlcoord 15, 1
+	ld de, .Steps
+	call PlaceString
+	hlcoord 17, 2
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum
-	ld a, [wContestMon]
-	and a
-	jr z, .no_contest_mon
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
+	hlcoord 12, 1
+	ld de, wSafariStepsRemaining
+	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	call PrintNum
 
 .no_contest_mon
 	ld a, [wContestMon]
@@ -184,17 +186,11 @@ StartMenu_PrintBugContestStatus:
 	pop af
 	ld [wOptions], a
 	ret
-
-.Balls_JP:
-	db "ボール　　　こ@"
-.CAUGHT:
-	db "CAUGHT@"
+	
 .Balls_EN:
 	db "BALLS:@"
-.None:
-	db "None@"
-.LEVEL:
-	db "LEVEL@"
+.Steps:
+	db "/250@"
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.

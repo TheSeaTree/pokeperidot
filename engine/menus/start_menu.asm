@@ -7,7 +7,6 @@
 	const STARTMENUITEM_SAVE     ; 4
 	const STARTMENUITEM_OPTION   ; 5
 	const STARTMENUITEM_EXIT     ; 6
-;	const STARTMENUITEM_POKEGEAR ; 7
 	const STARTMENUITEM_QUIT     ; 8
 
 StartMenu::
@@ -163,7 +162,7 @@ StartMenu::
 
 .ContestMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 10, 3, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 10, 4, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default selection
 
@@ -176,15 +175,14 @@ StartMenu::
 
 .Items:
 ; entries correspond to STARTMENUITEM_* constants
-	dw StartMenu_Pokedex,  .PokedexString,  .PokedexDesc
-	dw StartMenu_Pokemon,  .PartyString,    .PartyDesc
-	dw StartMenu_Pack,     .PackString,     .PackDesc
-	dw StartMenu_Status,   .StatusString,   .StatusDesc
-	dw StartMenu_Save,     .SaveString,     .SaveDesc
-	dw StartMenu_Option,   .OptionString,   .OptionDesc
+	dw StartMenu_Pokedex,  .PokedexString,  .ExitDesc
+	dw StartMenu_Pokemon,  .PartyString,    .ExitDesc
+	dw StartMenu_Pack,     .PackString,     .ExitDesc
+	dw StartMenu_Status,   .StatusString,   .ExitDesc
+	dw StartMenu_Save,     .SaveString,     .ExitDesc
+	dw StartMenu_Option,   .OptionString,   .ExitDesc
 	dw StartMenu_Exit,     .ExitString,     .ExitDesc
-;	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
-	dw StartMenu_Quit,     .QuitString,     .QuitDesc
+	dw StartMenu_Quit,     .QuitString,     .ExitDesc
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
@@ -193,44 +191,11 @@ StartMenu::
 .SaveString:     db "SAVE@"
 .OptionString:   db "OPTION@"
 .ExitString:     db "EXIT@"
-.PokegearString: db "<POKE>GEAR@"
 .QuitString:     db "QUIT@"
-
-.PokedexDesc:
-	db   "#MON"
-	next "database@"
-
-.PartyDesc:
-	db   "Party <PKMN>"
-	next "status@"
-
-.PackDesc:
-	db   "Contains"
-	next "items@"
-
-.PokegearDesc:
-	db   "Trainer's"
-	next "key device@"
-
-.StatusDesc:
-	db   "Your own"
-	next "status@"
-
-.SaveDesc:
-	db   "Save your"
-	next "progress@"
-
-.OptionDesc:
-	db   "Change"
-	next "settings@"
 
 .ExitDesc:
 	db   "Close this"
 	next "menu@"
-
-.QuitDesc:
-	db   "Quit and"
-	next "be judged.@"
 
 .OpenMenu:
 	ld a, [wMenuSelection]
@@ -428,7 +393,6 @@ endr
 
 StartMenu_Exit:
 ; Exit the menu.
-
 	ld a, 1
 	ret
 

@@ -452,8 +452,6 @@ CheckTimeEvents:
 	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
 	jr z, .do_daily
 
-	farcall CheckBugContestTimer
-	jr c, .end_bug_contest
 	xor a
 	ret
 
@@ -465,18 +463,6 @@ CheckTimeEvents:
 
 .nothing
 	xor a
-	ret
-
-.end_bug_contest
-	ld a, BANK(BugCatchingContestOverScript)
-	ld hl, BugCatchingContestOverScript
-	call CallScript
-	scf
-	ret
-
-.unused
-	ld a, 8
-	scf
 	ret
 
 OWPlayerInput:
@@ -859,9 +845,8 @@ CountStep:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .done
-
-	; If there is a special phone call, don't count the step.
-	farcall CheckSpecialPhoneCall
+	
+	call DoSafariStep
 	jr c, .doscript
 
 	; If Repel wore off, don't count the step.
@@ -947,6 +932,29 @@ DoRepelStep:
 .got_script
 	call CallScript
 	scf
+	ret
+	
+DoSafariStep:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr nz, .NoCall
+
+	ld a, [wSafariStepsRemaining]
+	and a
+	ret z
+
+	dec a
+	ld [wSafariStepsRemaining], a
+	ret nz
+
+	ld a, BANK(BugCatchingContestOverScript)
+	ld hl, BugCatchingContestOverScript
+	call CallScript
+	scf
+	ret
+	
+.NoCall
+	xor a
 	ret
 
 DoPlayerEvent:
