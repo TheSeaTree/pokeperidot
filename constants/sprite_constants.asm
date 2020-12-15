@@ -107,7 +107,7 @@
 	const SPRITE_STANDING_YOUNGSTER ; 66
 	const SPRITE_CONE
 	const SPRITE_PROFESSOR
-	const SPRITE_AMBER
+	const SPRITE_OLD_AMBER
 	const SPRITE_BOOK
 	const SPRITE_BUSH
 	const SPRITE_SWIMMER_GUY_LAND
@@ -121,6 +121,10 @@
 	const SPRITE_FOOD
 	const SPRITE_CHEF
 	const SPRITE_JOEL
+	const SPRITE_REGAN
+	const SPRITE_BREDE
+	const SPRITE_AMBER
+	const SPRITE_ORVILLE
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

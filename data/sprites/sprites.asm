@@ -111,7 +111,7 @@ OverworldSprites:
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ConeSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite AmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
+	overworld_sprite OldAmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BookSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite BushSpriteGFX, 4, STILL_SPRITE, PAL_OW_TREE
 	overworld_sprite SwimmerGuyLandSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
@@ -125,3 +125,7 @@ OverworldSprites:
 	overworld_sprite FoodSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
 	overworld_sprite ChefSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite JoelSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite ReganSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite BredeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite AmberSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite OrvilleSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
