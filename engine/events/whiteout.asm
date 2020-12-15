@@ -12,11 +12,11 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
-	checkflag ENGINE_BUG_CONTEST_TIMER
+	checkflag ENGINE_SAFARI_ZONE
 	iftrue .bug_contest
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearflag ENGINE_SAFARI_ZONE
 	special WarpToSpawnPoint
 	newloadmap MAPSETUP_WARP
 	endall

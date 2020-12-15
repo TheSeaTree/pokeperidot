@@ -449,7 +449,7 @@ CheckTimeEvents:
 	jr nz, .nothing
 
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	jr z, .do_daily
 
 	xor a
@@ -936,8 +936,12 @@ DoRepelStep:
 	
 DoSafariStep:
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	bit STATUSFLAGS2_SAFARI_REST_HOUSE_F, [hl]
 	jr nz, .NoCall
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr z, .NoCall
 
 	ld a, [wSafariStepsRemaining]
 	and a
@@ -1040,7 +1044,7 @@ INCLUDE "engine/overworld/scripting.asm"
 WarpToSpawnPoint::
 	ld hl, wStatusFlags2
 	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
-	res STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	ret
 
 RunMemScript::
@@ -1147,7 +1151,7 @@ RandomEncounter::
 	call CanUseSweetScent
 	jr nc, .nope
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	jr nz, .bug_contest
 	farcall TryWildEncounter
 	jr nz, .nope

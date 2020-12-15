@@ -3,7 +3,12 @@
 SafariZoneArea1_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .ClearRestHouse
+	
+.ClearRestHouse:
+	clearflag ENGINE_SAFARI_REST_HOUSE
+	return
 
 SafariZoneArea1Sign:
 	jumptext SafariZoneArea1SignText

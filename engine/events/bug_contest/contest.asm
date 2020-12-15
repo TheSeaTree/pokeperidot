@@ -21,7 +21,7 @@ BugCatchingContestOverScript::
 	opentext
 	writetext BugCatchingContestText_BeeepTimesUp
 	waitbutton
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearflag ENGINE_SAFARI_ZONE
 	jump BugCatchingContestReturnToGateScript
 
 BugCatchingContestOutOfBallsScript:

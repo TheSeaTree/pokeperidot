@@ -87,7 +87,7 @@ SafariGuardScript:
 	special FadeOutPalettes
 	waitsfx
 	special GiveParkBalls
-	setflag ENGINE_BUG_CONTEST_TIMER
+	setflag ENGINE_SAFARI_ZONE
 	special HealParty
 	warpfacing UP, SAFARI_ZONE_AREA_1, 16, 29
 	end
@@ -105,7 +105,7 @@ SafariGuardScript:
 	end
 
 LeaveSafariZone:
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	clearflag ENGINE_SAFARI_ZONE
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariExit
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardExit

@@ -560,7 +560,7 @@ FlyFunction:
 
 .TryFly:
 ; Fly
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_ZONE
 	call CheckEngineFlag
 	jr nc, .indoors
 	call GetMapEnvironment
@@ -800,7 +800,7 @@ dig_incave
 	dw .FailDig
 
 .CheckCanDig:
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_ZONE
 	call CheckEngineFlag
 	jr nc, .fail
 	call GetMapEnvironment
@@ -924,7 +924,7 @@ TeleportFunction:
 	dw .FailTeleport
 
 .TryTeleport:
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_ZONE
 	call CheckEngineFlag
 	jr nc, .nope
 	call GetMapEnvironment
@@ -1673,7 +1673,7 @@ Script_GotABite:
 	callasm PutTheRodAway
 	closetext
 	randomwildmon
-	checkflag ENGINE_BUG_CONTEST_TIMER
+	checkflag ENGINE_SAFARI_ZONE
 	iffalse .not_in_bug_contest
 	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
 .not_in_bug_contest
