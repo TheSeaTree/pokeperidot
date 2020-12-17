@@ -1285,6 +1285,8 @@ LoadMapPals:
 	ld a, [wEnvironment]
 	cp TOWN
 	jr z, .outside
+	cp ENVIRONMENT_5
+	jr z, .outside
 	cp ROUTE
 	ret nz
 .outside

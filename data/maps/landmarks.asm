@@ -50,6 +50,7 @@ Landmarks:
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
 	landmark 132,  44, SeaRoute6Name
+	landmark 140,  40, Route19Name ; ROUTE_23
 	landmark 140,  36, VictoryRoadName
 	landmark 140,  28, IndigoPlateauName
 ;	landmark  20,  28, BattleTowerName

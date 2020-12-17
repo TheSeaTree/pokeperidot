@@ -46,6 +46,7 @@
 	const SEA_ROUTE_4       ; 3f
 	const SEA_ROUTE_5       ; 3f
 	const SEA_ROUTE_6       ; 3f
+	const ROUTE_19       	; 3f
 	const VICTORY_ROAD      ; 58
 	const INDIGO_PLATEAU    ; 5a
 ;	const BATTLE_TOWER      ; 1d

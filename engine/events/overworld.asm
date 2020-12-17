@@ -806,8 +806,8 @@ dig_incave
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .incave
-;	cp DUNGEON
-;	jr z, .incave
+	cp ENVIRONMENT_5
+	jr z, .incave
 .fail
 	ld a, $2
 	ret
@@ -1828,6 +1828,8 @@ BikeFunction:
 	cp CAVE
 	jr z, .ok
 	cp GATE
+	jr z, .ok
+	cp ENVIRONMENT_5
 	jr z, .ok
 	jr .nope
 

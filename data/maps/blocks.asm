@@ -74,6 +74,7 @@ BlackthornLassHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
 Route11CleanseTagHouse_Blocks:
 VioletMagikarpHouse_Blocks:
+Route6WaterfallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
 CherrygroveInn_Blocks:
@@ -95,6 +96,7 @@ Route1GoldenrodGate_Blocks:
 Route11GoldenrodGate_Blocks:
 Route11Route12Gate_Blocks:
 MahoganyGate_Blocks:
+Route6Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route4_Blocks:
@@ -488,6 +490,18 @@ Route6_Blocks:
 CianwoodChurch_Blocks:
 	INCBIN "maps/CianwoodChurch.ablk"
 	
+LugiaCave1F_Blocks:
+	INCBIN "maps/LugiaCave1F.ablk"
+
+LugiaCaveB1F_Blocks:
+	INCBIN "maps/LugiaCaveB1F.ablk"
+
+LugiaCaveB2F_Blocks:
+	INCBIN "maps/LugiaCaveB2F.ablk"
+
+LugiaCaveGateChamber_Blocks:
+	INCBIN "maps/LugiaCaveGateChamber.ablk"
+
 LugiaLair_Blocks:
 	INCBIN "maps/LugiaLair.ablk"
 	
@@ -684,6 +698,9 @@ Route22North_Blocks:
 
 Route22South_Blocks:
 	INCBIN "maps/Route22South.ablk"
+	
+Route23_Blocks:
+	INCBIN "maps/Route23.ablk"
 
 Route22Cave1F_Blocks:
 	INCBIN "maps/Route22Cave1F.ablk"

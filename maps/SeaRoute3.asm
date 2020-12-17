@@ -38,6 +38,12 @@ TrainerSwimmerSaul:
 	closetext
 	end
 
+SeaRoute3MaxPotion:
+	itemball MAX_POTION
+	
+SeaRoute3Elixer:
+	itemball ELIXER
+
 SeaRoute3SmokeBall:
 	itemball SMOKE_BALL
 
@@ -115,9 +121,11 @@ SeaRoute3_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
-	object_event 21,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBirdKeeperRiley, -1
+	db 7 ; object events
+	object_event 22,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperRiley, -1
 	object_event 21, 25, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSwimmerHarold, -1
 	object_event 32, 15, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerSwimmerSaul, -1
-	object_event 17, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute3SmokeBall, EVENT_SEA_ROUTE_3_SMOKE_BALL
+	object_event 27,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute3MaxPotion, EVENT_SEA_ROUTE_3_MAX_POTION
+	object_event 17, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute3Elixer, EVENT_SEA_ROUTE_3_ELIXER
+	object_event 21, 34, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute3SmokeBall, EVENT_SEA_ROUTE_3_SMOKE_BALL
 	object_event 24,  3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SeaRoute3FruitTree, -1

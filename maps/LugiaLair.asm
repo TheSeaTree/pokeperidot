@@ -77,12 +77,11 @@ LugiaLair_MapEvents:
 	db 0, 0 ; filler
 
 	db  1 ; warp events
-	warp_event 13, 13, BLACKTHORN_CITY, 7
+	warp_event 13, 13, LUGIA_CAVE_GATE_CHAMBER, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 13, 15, BGEVENT_READ, GiftBirds
+	db 0 ; bg events
 
 	db 1 ; object events
 	object_event 13,  6, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_FOUGHT_LUGIA

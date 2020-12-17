@@ -35,14 +35,14 @@ ENDM
 	map_const OLIVINE_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const OLIVINE_PORT,                                10,  9 ; 14
-	map_const SEA_ROUTE_4,                                 21, 14 ;  1
+	map_const SEA_ROUTE_4,                                 17, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const SEA_ROUTE_1,                                 20, 17 ;  3
 	map_const SEA_ROUTE_2,                                 24, 14 ;  2
 	map_const SEA_ROUTE_3,                                 20, 19 ;  3
-	map_const SEA_ROUTE_5,                                 22, 14 ;  3
+	map_const SEA_ROUTE_5,                                 22, 17 ;  3
 	map_const SEA_ROUTE_6,                                 19, 19 ;  3
-	map_const LUGIA_LAIR,                                  14, 12 ;  3
+	map_const ROUTE_6_GATE,                                 5,  4 ;  3
 
 	newgroup                                                      ;  2
 
@@ -193,7 +193,7 @@ ENDM
 
 	map_const ROUTE_4,                                     25, 24 ; 12
 	map_const ROUTE_5,                                     27, 13 ;  1
-	map_const ROUTE_6,                                     34, 14 ;  1
+	map_const ROUTE_6,                                     37, 16 ;  1
 	map_const ROUTE_10_NORTH,                              16, 14 ; 14
 	map_const VIOLET_CITY,                                 27, 12 ;  5
 	map_const VIOLET_CAFE,                                  7,  4 ;  6
@@ -239,6 +239,7 @@ ENDM
 	map_const MAHOGANY_DEPT_STORE_6F,                      8,  4 ; 16
 	map_const MAHOGANY_DEPT_STORE_ELEVATOR,                2,  2 ; 17
 	map_const ROUTE_6_SURFERS_HOUSE,                       4,  4 ; 13
+	map_const ROUTE_6_WATERFALL_HOUSE,                     4,  4 ; 13
 
 	newgroup                                                      ; 13
 	map_const ROUTE_11,                                    32, 16	
@@ -294,7 +295,12 @@ ENDM
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
 	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25
-	map_const ROUTE_8_ROUTE_10_GATE,                       5,  4 ; 26
+	map_const ROUTE_8_ROUTE_10_GATE,                        5,  4 ; 26
+	map_const LUGIA_CAVE_1F,                                5,  4 ;  3
+	map_const LUGIA_CAVE_B1F,                              16, 13 ;  3
+	map_const LUGIA_CAVE_B2F,                              22, 16 ;  3
+	map_const LUGIA_CAVE_GATE_CHAMBER,                      6,  9 ;  3
+	map_const LUGIA_LAIR,                                  14, 12 ;  3
 
 	newgroup                                                      ; 22
 
@@ -344,6 +350,7 @@ ENDM
 
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
+	map_const ROUTE_23,					                   18, 18 ; 15
 
 	newgroup                                                      ; 26
 

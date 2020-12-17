@@ -83,8 +83,8 @@
 	RGB 21,21,21, 11,11,11 ; nite
 
 ; group 21 (Celadon)
-	RGB 19,31,15, 31,22,02 ; morn/day
-	RGB 12,13,09, 09,12,03 ; nite
+	RGB 07,07,12, 04,03,18 ; nite
+	RGB 07,07,12, 04,03,18 ; nite
 
 ; group 22 (Cianwood)
 	RGB 14,17,31, 07,11,15 ; morn/day

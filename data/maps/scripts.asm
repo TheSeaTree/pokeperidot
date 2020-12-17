@@ -99,6 +99,10 @@ INCLUDE "maps/AzaleaBikeHouse.asm"
 INCLUDE "maps/AzaleaBerryHouse.asm"
 INCLUDE "maps/BlackthornLassHouse.asm"
 INCLUDE "maps/LugiaLair.asm"
+INCLUDE "maps/LugiaCave1F.asm"
+INCLUDE "maps/LugiaCaveB1F.asm"
+INCLUDE "maps/LugiaCaveB2F.asm"
+INCLUDE "maps/LugiaCaveGateChamber.asm"
 
 
 SECTION "Map Scripts 7", ROMX
@@ -231,6 +235,7 @@ INCLUDE "maps/AzaleaGym.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route22North.asm"
 INCLUDE "maps/Route22South.asm"
+INCLUDE "maps/Route23.asm"
 INCLUDE "maps/MahoganyCafe.asm"
 
 SECTION "Map Scripts 17", ROMX
@@ -239,6 +244,7 @@ INCLUDE "maps/VioletGymB1.asm"
 INCLUDE "maps/MahoganyTown.asm"
 INCLUDE "maps/Route3AzaleaGate.asm"
 INCLUDE "maps/Route6SurfersHouse.asm"
+INCLUDE "maps/Route6WaterfallHouse.asm"
 INCLUDE "maps/VioletMagikarpHouse.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
@@ -284,6 +290,7 @@ INCLUDE "maps/KinglersDen.asm"
 INCLUDE "maps/MahoganySubstituteHouse.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route14.asm"
+INCLUDE "maps/Route6Gate.asm"
 
 
 SECTION "Map Scripts 21", ROMX

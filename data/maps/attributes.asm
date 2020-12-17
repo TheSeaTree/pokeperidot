@@ -99,7 +99,7 @@ ENDM
 	connection east, Route2, ROUTE_2, 7
 
 	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH
-	connection north, Route6, ROUTE_6,  -7
+	connection north, Route6, ROUTE_6,  -11
 	connection south, Route5, ROUTE_5, -9
 
 	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
@@ -154,7 +154,7 @@ ENDM
 
 	map_attributes SeaRoute4, SEA_ROUTE_4, $35, WEST | EAST
 	connection west, Route8, ROUTE_8, 2
-	connection east, Route6, ROUTE_6, 0
+	connection east, Route6, ROUTE_6, -2
 
 	map_attributes SeaRoute1, SEA_ROUTE_1, $35, SOUTH | WEST | EAST
 	connection south, SeaRoute2, SEA_ROUTE_2, 2
@@ -178,18 +178,20 @@ ENDM
 	connection north, Route12, ROUTE_12, -18
 	connection south, NewBarkTown, NEW_BARK_TOWN, -2
 
-	map_attributes Route6, ROUTE_6, $35, NORTH | SOUTH | WEST
-	connection north, SeaRoute5, SEA_ROUTE_5, -1
-	connection south, VioletCity, VIOLET_CITY, 7
-	connection west, SeaRoute4, SEA_ROUTE_4, 0
+	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
+	connection south, VioletCity, VIOLET_CITY, 11
+	connection west, SeaRoute4, SEA_ROUTE_4, 2
 	
-	map_attributes SeaRoute5, SEA_ROUTE_5, $35, NORTH | SOUTH
+	map_attributes SeaRoute5, SEA_ROUTE_5, $35, NORTH
 	connection north, SeaRoute6, SEA_ROUTE_6, 4
-	connection south, Route6, ROUTE_6, 1
 
-	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST
+	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST | EAST 
 	connection south, SeaRoute5, SEA_ROUTE_5, -4
 	connection west, SeaRoute3, SEA_ROUTE_3, 5
+	connection east, Route23, ROUTE_23, -3
+
+	map_attributes Route23, ROUTE_23, $05, WEST
+	connection west, SeaRoute6, SEA_ROUTE_6, 3
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 9
@@ -467,3 +469,9 @@ ENDM
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0
 	map_attributes Route11HiddenCave, ROUTE_11_HIDDEN_CAVE, $09, 0
+	map_attributes Route6Gate, ROUTE_6_GATE, $00, 0
+	map_attributes Route6WaterfallHouse, ROUTE_6_WATERFALL_HOUSE, $00, 0
+	map_attributes LugiaCave1F, LUGIA_CAVE_1F, $09, 0
+	map_attributes LugiaCaveB1F, LUGIA_CAVE_B1F, $09, 0
+	map_attributes LugiaCaveB2F, LUGIA_CAVE_B2F, $09, 0
+	map_attributes LugiaCaveGateChamber, LUGIA_CAVE_GATE_CHAMBER, $09, 0

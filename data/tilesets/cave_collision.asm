@@ -77,7 +77,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 4c
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 4d
 	tilecoll FLOOR, WALL, WALL, WALL ; 4e
-	tilecoll WALL, WALL, WALL, WALL ; 4f
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 4f
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, FLOOR, WALL ; 50
 	tilecoll FLOOR, FLOOR, WALL, WALL ; 51
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 52
@@ -156,3 +156,9 @@
 	tilecoll BUTTON, WALL, FLOOR, WALL ; 9b
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 9c
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 9d
+	tilecoll WALL, WALL, WALL, WALL ; 9e
+	tilecoll FLOOR, FLOOR, BUTTON, FLOOR ; 9f
+	tilecoll WALL, FLOOR, WALL, FLOOR ; a0
+	tilecoll FLOOR, WALL, FLOOR, WALL ; a1
+	tilecoll WALL, WALL, WALL, WALL ; a2
+	tilecoll WALL, WALL, WALL, WALL ; a3

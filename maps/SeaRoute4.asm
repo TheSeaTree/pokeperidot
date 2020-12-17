@@ -27,21 +27,8 @@ TrainerBlackbeltTakeo:
 	closetext
 	end
 	
-SandstormGuy:
-	faceplayer
-	opentext
-	checkevent EVENT_GOT_TM_SANDSTORM
-	iftrue .Sandstorm
-	writetext SandstormGuyText
-	buttonsound
-	verbosegiveitem TM_SANDSTORM
-	setevent EVENT_GOT_TM_SANDSTORM
-	
-.Sandstorm:
-	writetext TMSandstormExplaination
-	buttonsound
-	closetext
-	end
+SeaRoute4CaveGuy:
+	jumptextfaceplayer SeaRoute4CaveGuyText
 	
 SeaRoute4SoftSand:
 	itemball SOFT_SAND
@@ -85,39 +72,25 @@ BlackbeltTakeoAfterText:
 	line "friend. He gets"
 	cont "really into this."
 	done
-
-SandstormGuyText:
-	text "When the wind"
-	line "picks up out here,"
-	cont "sand will get all"
-	cont "over the place."
 	
-	para "Wanna see what I"
-	line "mean? Take this."
-	done
+SeaRoute4CaveGuyText:
+	text "I need to build up"
+	line "my strength."
 	
-TMSandstormExplaination:
-	text "That TM is for"
-	line "SANDSTORM."
+	para "There is a huge"
+	line "WATERFALL deep in"
+	cont "this cave."
 	
-	para "It will whip sand"
-	line "around, and hurt"
-	cont "any #MON that"
-	cont "aren't GROUND,"
-	cont "STEEL, or ROCK."
-	
-	para "I should catch"
-	line "some of those if"
-	cont "I'm going to stand"
-	cont "around out here"
-	cont "all day."
+	para "Some #MON might"
+	line "be able to swim up"
+	cont "it, but that's"
+	cont "cheating!"
 	done
 
 SeaRoute4_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event 34,  9, ROUTE_7_CAVE_1F, 1
+	db 1 ; warp events
 	warp_event 26,  5, ROUTE_7_CAVE_1F, 2
 	
 	db 0 ; coord events
@@ -127,6 +100,6 @@ SeaRoute4_MapEvents:
 	db 5 ; object events
 	object_event 11, 18, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltJun, -1
 	object_event  8, 23, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltTakeo, -1
-	object_event 23,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
+	object_event 24,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeaRoute4CaveGuy, -1
 	object_event 13, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute4SoftSand, EVENT_SEA_ROUTE_4_SOFT_SAND
 	object_event 45, 17, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

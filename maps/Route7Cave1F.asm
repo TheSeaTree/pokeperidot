@@ -9,8 +9,8 @@ Route7Cave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 15, 17, SEA_ROUTE_4, 1
-	warp_event  7, 11, SEA_ROUTE_4, 2
+	warp_event 15, 17, ROUTE_6, 5
+	warp_event  7, 11, SEA_ROUTE_4, 1
 	warp_event  9,  7, ROUTE_7_CAVE_B1F, 1
 	warp_event 19,  3, ROUTE_7_CAVE_B1F, 2
 	
