@@ -60,6 +60,27 @@ LugiaCaveB1F_MapScripts:
 LugiaCaveB1FBoulder:
 	jumpstd strengthboulder
 	
+LugiaCaveB1FMaxRepel:
+	itemball MAX_REPEL
+	
+LugiaCaveB1FQuickClaw:
+	itemball QUICK_CLAW
+	
+LugiaCaveB1FPPUp:
+	itemball PP_UP
+	
+LugiaCaveB1FHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_LUGIA_CAVE_B1F_HIDDEN_RARE_CANDY
+
+LugiaCaveB1FHiddenXAttack:
+	hiddenitem X_ATTACK, EVENT_LUGIA_CAVE_B1F_HIDDEN_X_ATTACK
+	
+LugiaCaveB1FHiddenUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_LUGIA_CAVE_B1F_HIDDEN_ULTRA_BALL
+	
+LugiaCaveB1FHiddenBigPearl:
+	hiddenitem BIG_PEARL, EVENT_LUGIA_CAVE_B1F_HIDDEN_BIG_PEARL
+
 LugiaCaveB1FBoulderFellText:
 	text "The boulder fell"
 	line "through!"
@@ -78,9 +99,13 @@ LugiaCaveB1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	bg_event 17, 14, BGEVENT_ITEM, LugiaCaveB1FHiddenRareCandy
+	bg_event 13,  7, BGEVENT_ITEM, LugiaCaveB1FHiddenXAttack
+	bg_event 21, 11, BGEVENT_ITEM, LugiaCaveB1FHiddenUltraBall
+	bg_event  5, 18, BGEVENT_ITEM, LugiaCaveB1FHiddenBigPearl
 
-	db 9 ; object events
+	db 12 ; object events
 	object_event  9,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, EVENT_LUGIA_CAVE_B1F_BOULDER_1
 	object_event 24, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, EVENT_LUGIA_CAVE_B1F_BOULDER_2
 	object_event 26,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, EVENT_LUGIA_CAVE_B1F_BOULDER_3
@@ -90,3 +115,6 @@ LugiaCaveB1F_MapEvents:
 	object_event  7, 13, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, -1
 	object_event  6, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, -1
 	object_event 23, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB1FBoulder, -1
+	object_event 15, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, 0, 0, 0, OBJECTTYPE_ITEMBALL, 0, LugiaCaveB1FMaxRepel, EVENT_LUGIA_CAVE_B1F_MAX_REPEL
+	object_event 28, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, 0, 0, 0, OBJECTTYPE_ITEMBALL, 0, LugiaCaveB1FQuickClaw, EVENT_LUGIA_CAVE_B1F_QUICK_CLAW
+	object_event  3, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, 0, 0, 0, OBJECTTYPE_ITEMBALL, 0, LugiaCaveB1FPPUp, EVENT_LUGIA_CAVE_B1F_PP_UP

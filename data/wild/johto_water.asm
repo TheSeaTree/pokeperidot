@@ -113,7 +113,7 @@ JohtoWaterWildMons:
 	db 34, SEAKING
 	db 33, SEARION
 	db 36, SEARION
-	
+
 	map_id SEA_ROUTE_1
 	db 4 percent ; encounter rate
 	db 33, SEEL
@@ -233,6 +233,22 @@ JohtoWaterWildMons:
 	db 24, AZUMARILL
 	db 24, AZUMARILL
 	db 25, POLIWHIRL
+	
+	map_id LUGIA_CAVE_B1F
+	db 4 percent ; encounter rate
+	db 33, SEEL
+	db 36, SHELLDER
+	db 34, SEADRA
+	db 35, SEADRA
+	db 34, STARMIE
+	
+	map_id LUGIA_CAVE_B2F
+	db 4 percent ; encounter rate
+	db 34, DEWGONG
+	db 36, SHELLDER
+	db 34, LANTURN
+	db 35, LANTURN
+	db 34, STARMIE
 	
 	map_id MAHOGANY_TOWN
 	db 4 percent

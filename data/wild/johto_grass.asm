@@ -1421,113 +1421,194 @@ JohtoGrassWildMons:
 	db 39, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
+	
+	map_id LUGIA_CAVE_1F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, SLOWPOKE
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	; day
+	db 35, SLOWPOKE
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	; nite
+	db 35, SLOWPOKE
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	
+	map_id LUGIA_CAVE_B1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, SWINUB
+	db 34, GRAVELER
+	db 35, KINGLER
+	db 37, SLOWBRO
+	db 37, KINGLER
+	db 35, SLOWKING
+	db 35, SLOWKING
+	; day
+	db 34, SWINUB
+	db 34, GRAVELER
+	db 35, KINGLER
+	db 37, SLOWBRO
+	db 37, KINGLER
+	db 35, SLOWKING
+	db 35, SLOWKING
+	; nite
+	db 34, SWINUB
+	db 34, GRAVELER
+	db 35, KINGLER
+	db 37, SLOWBRO
+	db 37, KINGLER
+	db 35, SLOWKING
+	db 35, SLOWKING
+	
+	map_id LUGIA_CAVE_B2F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, GOLBAT
+	db 34, JYNX
+	db 35, PILOSWINE
+	db 37, SLOWBRO
+	db 37, PILOSWINE
+	db 35, SLOWKING
+	db 35, SLOWKING
+	; day
+	db 34, GOLBAT
+	db 34, JYNX
+	db 35, PILOSWINE
+	db 37, SLOWBRO
+	db 37, PILOSWINE
+	db 35, SLOWKING
+	db 35, SLOWKING
+	; nite
+	db 34, GOLBAT
+	db 34, JYNX
+	db 35, PILOSWINE
+	db 37, SLOWBRO
+	db 37, PILOSWINE
+	db 35, SLOWKING
+	db 35, SLOWKING
 
 	map_id UNOWN_CHAMBER_AG
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
 	; day
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
 	; nite
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
+	db 28, UNOWN
 
 	map_id UNOWN_CHAMBER_HN
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
 	; day
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
 	; nite
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
+	db 32, UNOWN
 
 	map_id UNOWN_CHAMBER_OU
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
 	; day
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
 	; nite
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
+	db 38, UNOWN
 
 	map_id UNOWN_CHAMBER_VZ
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
 	; day
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
 	; nite
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
-	db 40, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
+	db 42, UNOWN
 
 	db -1 ; end

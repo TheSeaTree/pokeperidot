@@ -10,7 +10,7 @@ LugiaLair_MapScripts:
 .SpawnRealLugia:
 	writebyte LUGIA
 	special CheckOwnedMon
-	iffalse .end
+	iftrue .end
 	writebyte ARTICUNO
 	special CheckOwnedMon
 	iffalse .end
@@ -62,7 +62,7 @@ Lugia:
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
 	end
-	
+
 GiftBirds:
 	givepoke ARTICUNO, 50
 	givepoke ZAPDOS, 50

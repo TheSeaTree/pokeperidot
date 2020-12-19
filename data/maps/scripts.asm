@@ -277,6 +277,7 @@ INCLUDE "maps/MahoganyRedGyaradosSpeechHouse.asm"
 INCLUDE "maps/MahoganyGym.asm"
 INCLUDE "maps/MahoganyPokecenter1F.asm"
 INCLUDE "maps/IlexForestSwordsDanceHouse.asm"
+INCLUDE "maps/SeaRoute5.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -340,6 +341,7 @@ INCLUDE "maps/Route12Shelter.asm"
 INCLUDE "maps/Route14Cave1F.asm"
 INCLUDE "maps/Route14Cave2F.asm"
 INCLUDE "maps/CarnationTown.asm"
+INCLUDE "maps/CarnationZooGate.asm"
 
 
 SECTION "Map Scripts 24", ROMX
@@ -349,7 +351,6 @@ INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/SeaRoute2.asm"
 INCLUDE "maps/SeaRoute3.asm"
-INCLUDE "maps/SeaRoute5.asm"
 INCLUDE "maps/SeaRoute6.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"

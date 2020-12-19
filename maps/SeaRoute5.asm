@@ -1,11 +1,22 @@
 	const_def 2 ; object constants
-
+	const SEAROUTE5_SWIMMER_GUY
+	const SEAROUTE5_LASS1
+	const SEAROUTE5_LASS2
+	
 SeaRoute5_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
+	db 3 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .LugiaGirl
 	callback MAPCALLBACK_NEWMAP, .SetEvents
 	callback MAPCALLBACK_TILES, .SmashWall
+	
+.LugiaGirl
+	checkevent EVENT_FOUGHT_LUGIA
+	iffalse .done
+	moveobject SEAROUTE5_LASS2, 6, 13
+	appear SEAROUTE5_LASS2
+	return
 	
 .SetEvents
 	checkevent EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN
@@ -16,14 +27,13 @@ SeaRoute5_MapScripts:
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_4
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_5
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_6
-.done
 	return
 	
 .SmashWall:
 	checkevent EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN
-	iffalse .skip
+	iffalse .done
 	changeblock  4, 10, $73
-.skip
+.done
 	return
 
 SandstormGuy:
@@ -41,6 +51,9 @@ SandstormGuy:
 	buttonsound
 	closetext
 	end
+	
+SeaRoute5LugiaGirl:
+	jumptextfaceplayer SeaRoute5LugiaGirlText
 
 SandstormGuyText:
 	text "When the wind"
@@ -68,6 +81,31 @@ TMSandstormExplaination:
 	cont "around out here"
 	cont "all day."
 	done
+	
+SeaRoute5LugiaGirlText:
+	text "You'll never beli"
+	line "ieve what I saw"
+	cont "just now!"
+	
+	para "Right after the"
+	line "big SILVER #MON"
+	cont "emerged from the"
+	cont "water, three other"
+	cont "BIRD #MON were"
+	cont "flying around!"
+	
+	para "I've never seen"
+	line "anything like them"
+	cont "before!"
+	
+	para "Maybe PROF. MAPLE"
+	line "would know what"
+	cont "they were."
+	
+	para "You can find his"
+	line "LAB on RUGOSA"
+	cont "COAST."
+	done
 
 SeaRoute5_MapEvents:
 	db 0, 0 ; filler
@@ -81,6 +119,7 @@ SeaRoute5_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event 30,  6, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
-	object_event 12, 30, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 12, 30, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOUGHT_LUGIA
+	object_event 43,  0, SPRITE_BUENA, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, SeaRoute5LugiaGirl, -1

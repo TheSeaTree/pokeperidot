@@ -65,6 +65,21 @@ LugiaCaveB2F_MapScripts:
 	closetext
 	end
 	
+LugiaCaveB2FFullRestore:
+	itemball FULL_RESTORE
+	
+LugiaCaveB2FHiddenCoarseCharm:
+	hiddenitem COARSE_CHARM, EVENT_LUGIA_CAVE_B2F_HIDDEN_COARSE_CHARM
+
+LugiaCaveB2FHiddenFocusSash:
+	hiddenitem FOCUS_SASH, EVENT_LUGIA_CAVE_B2F_HIDDEN_FOCUS_SASH
+	
+LugiaCaveB2FHiddenStardust:
+	hiddenitem STARDUST, EVENT_LUGIA_CAVE_B2F_HIDDEN_STARDUST
+	
+LugiaCaveB2FHiddenXAccuracy:
+	hiddenitem X_ACCURACY, EVENT_LUGIA_CAVE_B2F_HIDDEN_X_ACCURACY
+	
 LugiaCaveB2FBoulder:
 	jumpstd strengthboulder
 
@@ -97,12 +112,17 @@ LugiaCaveB2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 4 ; bg events
+	bg_event 16, 19, BGEVENT_ITEM, LugiaCaveB2FHiddenCoarseCharm
+	bg_event 11, 16, BGEVENT_ITEM, LugiaCaveB2FHiddenFocusSash
+	bg_event  7, 24, BGEVENT_ITEM, LugiaCaveB2FHiddenStardust
+	bg_event 38, 27, BGEVENT_ITEM, LugiaCaveB2FHiddenXAccuracy
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_1
 	object_event 30, 21, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_2
 	object_event 24, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_3
 	object_event 10, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_4
 	object_event 24, 19, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_5
 	object_event 28, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, 0, 0, 0, OBJECTTYPE_SCRIPT, 0, LugiaCaveB2FBoulder, EVENT_LUGIA_CAVE_B2F_BOULDER_6
+	object_event 39, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, 0, 0, 0, OBJECTTYPE_ITEMBALL, 0, LugiaCaveB2FFullRestore, EVENT_LUGIA_CAVE_B2F_FULL_RESTORE
