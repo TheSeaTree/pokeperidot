@@ -1257,10 +1257,14 @@ UnknownText_0x1c5bac::
 	line "on this #MON."
 	prompt
 
-Text_RepelUsedEarlierIsStillInEffect::
-	text "The REPEL used"
-	line "earlier is still"
-	cont "in effect."
+Text_RepelUsedEarlierIsStillInEffect::	
+	text "There is a REPEL"
+	line "still in effect."
+
+	para "Steps remaining:"
+	line "@"
+	text_decimal wRepelEffect, 1, 3
+	text "."
 	prompt
 
 UnknownText_0x1c5bf9::
