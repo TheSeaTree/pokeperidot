@@ -475,3 +475,4 @@ ENDM
 	map_attributes LugiaCaveB1F, LUGIA_CAVE_B1F, $09, 0
 	map_attributes LugiaCaveB2F, LUGIA_CAVE_B2F, $09, 0
 	map_attributes LugiaCaveGateChamber, LUGIA_CAVE_GATE_CHAMBER, $09, 0
+	map_attributes CarnationZooGate, CARNATION_ZOO_GATE, $00, 0

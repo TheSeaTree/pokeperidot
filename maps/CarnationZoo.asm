@@ -341,8 +341,8 @@ CarnationZoo_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 29, 14, CARNATION_TOWN, 3
-	warp_event 29, 15, CARNATION_TOWN, 4
+	warp_event 29, 14, CARNATION_ZOO_GATE, 1
+	warp_event 29, 15, CARNATION_ZOO_GATE, 2
 	warp_event 12,  5, SAFARI_ZONE_GATE_1F, 1
 
 	db 0 ; coord events

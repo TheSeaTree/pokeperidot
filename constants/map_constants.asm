@@ -152,6 +152,7 @@ ENDM
 	map_const ROUTE_18_BARN,                                7,  3 ;  4
 	map_const ROUTE_18_FARMHOUSE,                           4,  4 ;  4
 	map_const CARNATION_TOWN,        					   17, 10
+	map_const CARNATION_ZOO_GATE,        				    5,  4
 	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1
 	map_const WOBBUFFET_HOUSE,   							4,  4
 	map_const ROUTE_19,									   27, 12

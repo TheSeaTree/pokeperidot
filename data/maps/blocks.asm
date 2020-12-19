@@ -134,6 +134,7 @@ Route2Gate_Blocks:
 Route12EcruteakGate_Blocks:
 Route14OlivineGate_Blocks:
 Route21EcruteakGate_Blocks:
+CarnationZooGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 MaplesLab_Blocks:
