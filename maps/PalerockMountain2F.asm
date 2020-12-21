@@ -26,7 +26,7 @@ PalerockMountain2F_MapScripts:
 	moveobject PALEROCK2F_BOULDER2, 12, 16
 	appear PALEROCK2F_BOULDER2
 	jump .Press
-	
+
 .Press:
 	earthquake 10
 	playsound SFX_STRENGTH

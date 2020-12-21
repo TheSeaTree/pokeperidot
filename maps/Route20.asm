@@ -94,6 +94,12 @@ Route20SnorlaxEvent:
 	closetext
 	end
 
+Route20Sign:
+	jumptext Route20SignText
+
+Route20TrainerTipSign:
+	jumptext Route20TrainerTipSignText
+
 Route20PoisonBarb:
 	itemball POISON_BARB
 
@@ -245,6 +251,24 @@ SnorlaxReturnedHomeText:
 	para "It looked quite"
 	line "grumpy…"
 	done
+	
+Route20SignText:
+	text "ROUTE 16"
+	
+	para "ORCHID CITY"
+	line "ahead."
+	done
+
+Route20TrainerTipSignText:
+	text "TRAINER TIPS"
+	
+	para "Be aware of any"
+	line "food dropped on"
+	cont "the ground."
+	
+	para "It may attract"
+	line "wild #MON."
+	done
 
 Route20_MapEvents:
 	db 0, 0 ; filler
@@ -256,7 +280,9 @@ Route20_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 11, 32, BGEVENT_READ, Route20Sign
+	bg_event 43, 25, BGEVENT_READ, Route20TrainerTipSign
 
 	db 9 ; object events
 	object_event 28, 16, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20SnorlaxEvent, EVENT_FOUGHT_SNORLAX

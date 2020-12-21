@@ -58,6 +58,9 @@ TrainerBeautyDiane:
 	closetext
 	end
 
+Route19Sign:
+	jumptext Route19SignText
+
 Route19TMSludgeBomb:
 	itemball TM_SLUDGE_BOMB
 	
@@ -175,6 +178,13 @@ BeautyDianeAfterText:
 	line "I can't get enough!"
 	done
 
+Route19SignText:
+	text "ROUTE 15"
+	
+	para "CARNATION TOWN -"
+	line "ROUTE 16"
+	done
+
 Route19_MapEvents:
 	db 0, 0 ; filler
 
@@ -182,7 +192,8 @@ Route19_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
+	bg_event 37, 13, BGEVENT_READ, Route19Sign
 	bg_event  8,  5, BGEVENT_ITEM, Route19BigMushroom
 	bg_event 49, 16, BGEVENT_ITEM, Route19Stick
 

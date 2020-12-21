@@ -44,7 +44,7 @@ Route11CaveGengar:
 
 Route11CaveXSpAtk:
 	itemball X_SP_ATK
-	
+
 Route11CaveGengarText:
 	text "GENGAR: Hehehe!"
 	done
