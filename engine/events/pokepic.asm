@@ -1,7 +1,8 @@
 Pokepic::
-	ld hl, PokepicMenuHeader
-	call CopyMenuHeader
-	call MenuBox
+	hlcoord 6, 4
+	ld b, 7
+	ld c, 7
+	call TextBox
 	call UpdateSprites
 	call ApplyTilemap
 	ld b, SCGB_POKEPIC
@@ -19,7 +20,7 @@ Pokepic::
 	ld a, [wMenuBorderLeftCoord]
 	inc a
 	ld c, a
-	call Coord2Tile
+	hlcoord 7, 5
 	ld a, $80
 	ldh [hGraphicStartTile], a
 	lb bc, 7, 7
