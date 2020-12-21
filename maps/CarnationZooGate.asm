@@ -17,8 +17,8 @@ CarnationZooGateOfficerText:
 	cont "SAFARI ZONE."
 	
 	para "You can catch rare"
-	line "#MON that can't be"
-	cont "found anywhere"
+	line "#MON that can't"
+	cont "be found anywhere"
 	cont "else."
 	done
 
