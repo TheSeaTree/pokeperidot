@@ -271,29 +271,15 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_pack
-;	ld hl, wStatusFlags2
-;	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
-;	jr nz, .no_pack
+
 	ld a, STARTMENUITEM_PACK
 	call .AppendMenuList
 .no_pack
-
-	ld hl, wPokegearFlags
-	bit POKEGEAR_OBTAINED_F, [hl]
-	jr z, .no_pokegear
-;	ld a, STARTMENUITEM_POKEGEAR
-;	call .AppendMenuList
-.no_pokegear
-
 	ld a, STARTMENUITEM_STATUS
 	call .AppendMenuList
 
 	ld a, [wLinkMode]
 	and a
-	jr nz, .no_save
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
-;	ld a, STARTMENUITEM_QUIT
 	jr nz, .no_save
 	ld a, STARTMENUITEM_SAVE
 .write
@@ -302,8 +288,14 @@ endr
 
 	ld a, STARTMENUITEM_OPTION
 	call .AppendMenuList
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr nz, .no_exit
+
 	ld a, STARTMENUITEM_EXIT
 	call .AppendMenuList
+.no_exit
 	ld a, c
 	ld [wMenuItemsList], a
 	ret
@@ -365,10 +357,7 @@ endr
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call TextBox
-	hlcoord 0, 0
-	ld b, 1
-	ld c, 8
-	jp TextBoxPalette
+	ret
 
 .IsMenuAccountOn:
 	ld a, [wOptions2]
