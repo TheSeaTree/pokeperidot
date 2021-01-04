@@ -7,6 +7,7 @@
 	const MARTTYPE_ROOFTOP
 	const MARTTYPE_ROBBED
 	const MARTTYPE_DRINKS
+	const MARTTYPE_SUBWAY
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def

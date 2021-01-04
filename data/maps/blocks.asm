@@ -21,6 +21,12 @@ Route3_Blocks:
 Route12_Blocks:
 	INCBIN "maps/Route12.ablk"
 
+BattleSubwayTrain_Blocks:
+	INCBIN "maps/BattleSubwayTrain.ablk"
+
+BattleSubwayPlatform_Blocks:
+	INCBIN "maps/BattleSubwayPlatform.ablk"
+
 OlivineTimsHouse_Blocks:
 OlivinePunishmentSpeechHouse_Blocks:
 OlivineGoodRodHouse_Blocks:

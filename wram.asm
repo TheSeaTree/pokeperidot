@@ -859,13 +859,8 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
-if DEF(_CRYSTAL11)
 wPokedexStatus:: db
-wPokedexDataEnd::
-else
-wPokedexDataEnd:: ds 1
-endc
-	ds 2
+wPokedexDataEnd:: ds 2
 
 NEXTU ; c6d0
 ; mobile data
@@ -1347,12 +1342,7 @@ wCreditsLYOverride:: db
 NEXTU ; cf64
 ; pokedex
 wPrevDexEntryJumptableIndex:: db
-if DEF(_CRYSTAL11)
 wPrevDexEntryBackup:: db
-else
-wPrevDexEntryBackup::
-wPokedexStatus:: db
-endc
 
 NEXTU ; cf64
 ; pokegear
@@ -1637,6 +1627,16 @@ wMartItem7BCD:: ds 3
 wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
+wMartItem11BCD:: ds 3
+wMartItem12BCD:: ds 3
+wMartItem13BCD:: ds 3
+wMartItem14BCD:: ds 3
+wMartItem15BCD:: ds 3
+wMartItem16BCD:: ds 3
+wMartItem17BCD:: ds 3
+wMartItem18BCD:: ds 3
+wMartItem19BCD:: ds 3
+wMartItem20BCD:: ds 3
 
 NEXTU ; d002
 ; town map data
@@ -1910,7 +1910,7 @@ wUsingItemWithSelect:: db ; d0ef
 
 UNION ; d0f0
 ; mart data
-wCurMart:: ds 16
+wCurMart:: ds 22
 wCurMartEnd::
 
 NEXTU ; d0f0
@@ -2576,10 +2576,10 @@ wEcruteakGymSceneID::                             db ; d99a
 wMahoganyTownSceneID::                            db ; d99b
 wRoute18FarmhouseSceneID::                        db ; d99c
 wCianwoodCitySceneID::                            db ; d99d
-wBattleTower1FSceneID::                           db ; d99e
-wBattleTowerBattleRoomSceneID::                   db ; d99f
+wBattleSubwayInsideSceneID::                      db ; d99e
+wBattleSubwayTrainSceneID::                       db ; d99f
 wBattleTowerElevatorSceneID::                     db ; d9a0
-wBattleTowerHallwaySceneID::                      db ; d9a1
+wBattleSubwayPlatformSceneID::                    db ; d9a1
 wBattleTowerOutsideSceneID::                      db ; d9a2
 wRoute43GateSceneID::                             db ; d9a3
 wMountMoonSceneID::                               db ; d9a4

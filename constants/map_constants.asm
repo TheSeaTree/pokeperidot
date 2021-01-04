@@ -37,7 +37,7 @@ ENDM
 	map_const OLIVINE_PORT,                                10,  9 ; 14
 	map_const SEA_ROUTE_4,                                 17, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
-	map_const SEA_ROUTE_1,                                 20, 17 ;  3
+	map_const SEA_ROUTE_1,                                 21, 17 ;  3
 	map_const SEA_ROUTE_2,                                 24, 14 ;  2
 	map_const SEA_ROUTE_3,                                 20, 19 ;  3
 	map_const SEA_ROUTE_5,                                 22, 17 ;  3
@@ -351,7 +351,9 @@ ENDM
 
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
-	map_const ROUTE_23,					                   18, 18 ; 15
+	map_const ROUTE_23,					                   19, 35 ; 15
+	map_const BATTLE_SUBWAY_TRAIN,							4,  3
+	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 
 	newgroup                                                      ; 26
 

@@ -292,6 +292,8 @@ INCLUDE "maps/MahoganySubstituteHouse.asm"
 INCLUDE "maps/Route5.asm"
 INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route6Gate.asm"
+INCLUDE "maps/BattleSubwayTrain.asm"
+INCLUDE "maps/BattleSubwayPlatform.asm"
 
 
 SECTION "Map Scripts 21", ROMX

@@ -8,7 +8,10 @@ Route23_MapScripts:
 Route23_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 3 ; warp events
+	warp_event 30,  9, ROUTE_23, 1
+	warp_event 16, 19, ROUTE_23, 2
+	warp_event 15,  5, ROUTE_23, 3
 
 	db 0 ; coord events
 

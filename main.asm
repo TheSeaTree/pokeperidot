@@ -628,8 +628,4 @@ INCLUDE "gfx/footprints.asm"
 
 SECTION "Mobile Stadium 2", ROMX
 
-if DEF(_CRYSTAL11)
 INCBIN "mobile/stadium/stadium2_2.bin"
-else
-INCBIN "mobile/stadium/stadium2_1.bin"
-endc

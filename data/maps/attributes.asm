@@ -149,7 +149,7 @@ ENDM
 	connection east, SeaRoute6, SEA_ROUTE_6, -5
 
 	map_attributes SeaRoute2, SEA_ROUTE_2, $35, NORTH | SOUTH
-	connection north, SeaRoute1, SEA_ROUTE_1, -2
+	connection north, SeaRoute1, SEA_ROUTE_1, -3
 	connection south, Route8, ROUTE_8, -6
 
 	map_attributes SeaRoute4, SEA_ROUTE_4, $35, WEST | EAST
@@ -157,7 +157,7 @@ ENDM
 	connection east, Route6, ROUTE_6, -2
 
 	map_attributes SeaRoute1, SEA_ROUTE_1, $35, SOUTH | WEST | EAST
-	connection south, SeaRoute2, SEA_ROUTE_2, 2
+	connection south, SeaRoute2, SEA_ROUTE_2, 3
 	connection west, OlivineCity, OLIVINE_CITY, -5
 	connection east, SeaRoute3, SEA_ROUTE_3, 1
 	
@@ -188,10 +188,10 @@ ENDM
 	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST | EAST 
 	connection south, SeaRoute5, SEA_ROUTE_5, -4
 	connection west, SeaRoute3, SEA_ROUTE_3, 5
-	connection east, Route23, ROUTE_23, -3
+	connection east, Route23, ROUTE_23, -20
 
 	map_attributes Route23, ROUTE_23, $05, WEST
-	connection west, SeaRoute6, SEA_ROUTE_6, 3
+	connection west, SeaRoute6, SEA_ROUTE_6, 20
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, VioletCity, VIOLET_CITY, 9
@@ -476,3 +476,5 @@ ENDM
 	map_attributes LugiaCaveB2F, LUGIA_CAVE_B2F, $09, 0
 	map_attributes LugiaCaveGateChamber, LUGIA_CAVE_GATE_CHAMBER, $09, 0
 	map_attributes CarnationZooGate, CARNATION_ZOO_GATE, $00, 0
+	map_attributes BattleSubwayTrain, BATTLE_SUBWAY_TRAIN, $00, 0
+	map_attributes BattleSubwayPlatform, BATTLE_SUBWAY_PLATFORM, $00, 0

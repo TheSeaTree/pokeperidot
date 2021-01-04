@@ -531,6 +531,27 @@ UnknownText_0x1c4d2a::
 	text "Take care and come"
 	line "again!"
 	done
+	
+Subway_TradeBPText::
+	text "You may exchange"
+	line "your BP for prizes"
+	cont "here."
+	done
+
+Subway_CostsThisMuch_Text::
+	text_decimal wItemQuantityChangeBuffer, 1, 2
+	text " @"
+	text_ram wStringBuffer2
+	text "(S)"
+	line "will be @"
+	text_decimal hMoneyTemp, 3, 6
+	text " BP."
+	done
+
+Subway_InsufficientFunds_Text::
+	text "You do not have"
+	line "enough BP."
+	done
 
 UnknownText_0x1c4d47::
 	text "I sell rare items"

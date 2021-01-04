@@ -168,6 +168,9 @@ INCBIN "data/tilesets/underground_metatiles.bin"
 TilesetUndergroundColl:
 INCLUDE "data/tilesets/underground_collision.asm"
 
+TilesetGateGFX:
+INCBIN "gfx/tilesets/gate.2bpp.lz"
+
 
 SECTION "Tileset Data 5", ROMX
 
@@ -188,9 +191,6 @@ INCBIN "data/tilesets/battle_tower_metatiles.bin"
 
 TilesetBattleTowerColl:
 INCLUDE "data/tilesets/battle_tower_collision.asm"
-
-TilesetGateGFX:
-INCBIN "gfx/tilesets/gate.2bpp.lz"
 
 TilesetGateMeta:
 INCBIN "data/tilesets/gate_metatiles.bin"

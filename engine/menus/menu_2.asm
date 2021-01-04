@@ -66,11 +66,11 @@ MenuHeader_0x24b1d:
 
 DisplayCoinCaseBalance:
 	; Place a text box of size 1x7 at 11, 0.
-	hlcoord 11, 0
-	ld b, 1
-	ld c, 7
-	call TextBox
 	hlcoord 12, 0
+	ld b, 1
+	ld c, 6
+	call TextBox
+	hlcoord 17, 1
 	ld de, CoinString
 	call PlaceString
 	hlcoord 17, 1
@@ -106,7 +106,7 @@ DisplayMoneyAndCoinBalance:
 MoneyString:
 	db "MONEY@"
 CoinString:
-	db "BP@"
+	db $c8, $c9
 ShowMoney_TerminatorString:
 	db "@"
 
