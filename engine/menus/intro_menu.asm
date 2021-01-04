@@ -729,6 +729,11 @@ OakSpeech:
 	ld hl, OakText6
 	call PrintText
 	call NamePlayer
+	
+	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call SetPalettes
+
 	ld hl, OakText7
 	call PrintText
 	ret
