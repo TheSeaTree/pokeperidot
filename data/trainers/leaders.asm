@@ -12,7 +12,7 @@ GymLeaders:
 	db POSEY
 	db JASMINE
 	db JOEL
-	db CLAIR
+	db ENYA
 	db WILL
 	db BRUNO
 	db KAREN

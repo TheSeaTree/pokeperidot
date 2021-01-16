@@ -48,6 +48,7 @@ MapScenes::
 	scene_var UNOWN_CHAMBER_OU,							   wUnownChamberOUSceneID
 	scene_var UNOWN_CHAMBER_VZ,							   wUnownChamberVZSceneID
 	scene_var ROUTE_18_FARMHOUSE,						   wRoute18FarmhouseSceneID
+	scene_var ORCHID_GYM_1F,						   	   wOrchidGym1FSceneID
 	scene_var BATTLE_SUBWAY_TRAIN,                    	   wBattleSubwayTrainSceneID
 	scene_var BATTLE_SUBWAY_PLATFORM,                      wBattleSubwayPlatformSceneID
 	db -1

@@ -1286,6 +1286,14 @@ UnknownText_0x1bd2e7::
 	line "the main gate."
 	done
 
+FireGymPassOutText::
+	text "The heat is too"
+	line "much to bear."
+	
+	para "<PLAYER> passed"
+	line "out…"
+	done
+
 UnknownText_0x1bd308::
 	text "REPEL's effect"
 	line "wore off."

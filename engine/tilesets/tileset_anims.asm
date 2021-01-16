@@ -139,6 +139,7 @@ TilesetPortAnim:
 
 TilesetEliteFourRoomAnim:
 	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WallCandleTileAnim
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -233,7 +234,6 @@ TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:
-TilesetGateAnim:
 TilesetLabAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
@@ -258,6 +258,20 @@ TilesetRoofAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+	
+TilesetGateAnim:
+	dw vTiles2 tile $22, ScrollTileUp
+	dw vTiles2 tile $23, ScrollTileDown
+	dw vTiles2 tile $32, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $1e, AnimateFountain
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateYellowPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 TilesetFacilityAnim:
@@ -501,6 +515,30 @@ AnimateLeftGeyserTile:
 LeftGeyserTileFrames:
 	INCBIN "gfx/tilesets/geyser/left_1.2bpp"
 	INCBIN "gfx/tilesets/geyser/left_2.2bpp"
+
+WallCandleTileAnim:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(WallCandleTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(WallCandleTileFrames)
+	ld h, a
+
+.asm_fc47d
+	ld sp, hl
+	ld hl, vTiles2 tile $0f
+	jp WriteTile
+	
+WallCandleTileFrames:
+	INCBIN "gfx/tilesets/candle/2.2bpp"
+	INCBIN "gfx/tilesets/candle/1.2bpp"
 
 AnimateLeftGeyserTile2:
 	ld hl, sp+0
@@ -1099,6 +1137,60 @@ AnimateWaterPalette:
 
 .color2
 	ld hl, wBGPals1 palette PAL_BG_WATER color 2
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+
+.end
+	pop af
+	ldh [rSVBK], a
+	ret
+	
+AnimateYellowPalette:
+; Transition between color values 0-2 for color 0 in palette 4.
+
+; Only update on even frames.
+	ld a, [wTileAnimationTimer]
+	ld l, a
+	and 1 ; odd
+	ret nz
+
+; Ready for BGPD input...
+
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW
+	ldh [rBGPI], a
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+; Update color 0 in order 0 1 2 1
+	ld a, l
+	and %110 ; frames 0 2 4 6
+	jr z, .color0
+	cp %100 ; frame 4
+	jr z, .color2
+
+.color1
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 1
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+	jr .end
+
+.color0
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 0
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+	jr .end
+
+.color2
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 2
 	ld a, [hli]
 	ldh [rBGPD], a
 	ld a, [hli]

@@ -28,8 +28,8 @@ StdScripts::
 	dba MartSignScript
 	dba ElevatorButtonScript
 	dba DayToTextScript
+	dba FireGymWarpScript
 	dba BugContestResultsWarpScript
-	dba BugContestResultsScript
 	dba InitializeEventsScript
 	dba GymStatue1Script
 	dba GymStatue2Script
@@ -322,12 +322,23 @@ DayToTextScript:
 .SaturdayText:
 	db "SATURDAY@"
 
+FireGymWarpScript::
+	opentext
+	farwritetext FireGymPassOutText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	playsound SFX_EXIT_BUILDING
+	waitsfx
+	warpfacing RIGHT, ORCHID_GYM_1F, 7, 5
+	setmapscene ORCHID_GYM_1F, SCENE_FINISHED
+	end
+
 BugContestResultsWarpScript:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	warp SAFARI_ZONE_GATE_1F, 8, 0
-BugContestResultsScript:
 	end
 
 InitializeEventsScript:

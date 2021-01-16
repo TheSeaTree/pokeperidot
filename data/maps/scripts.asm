@@ -252,8 +252,9 @@ INCLUDE "maps/Colosseum.asm"
 
 SECTION "Map Scripts 18", ROMX
 
-INCLUDE "maps/BlackthornGym1F.asm"
-INCLUDE "maps/BlackthornGym2F.asm"
+INCLUDE "maps/OrchidGym1F.asm"
+INCLUDE "maps/OrchidGymB1F.asm"
+INCLUDE "maps/OrchidGymLeaderRoom.asm"
 INCLUDE "maps/BlackthornDragonSpeechHouse.asm"
 INCLUDE "maps/MahoganyEmysHouse.asm"
 INCLUDE "maps/BlackthornMart.asm"

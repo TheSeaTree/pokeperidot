@@ -8,7 +8,7 @@ TrainerClassDVs:
 	dn 10, 10, 10, 10 ; PRYCE
 	dn 10, 10, 10, 10 ; JASMINE
 	dn 10, 10, 10, 10 ; JOEL
-	dn 15, 15, 15, 14 ; CLAIR
+	dn 14, 14, 14, 14 ; ENYA
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  7, 13, 13, 13 ; FANGIRL
 	dn 14, 14, 14, 14 ; PROFESSOR

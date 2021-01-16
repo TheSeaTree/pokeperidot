@@ -113,13 +113,6 @@ INCBIN "data/tilesets/mart_metatiles.bin"
 TilesetMartColl:
 INCLUDE "data/tilesets/mart_collision.asm"
 
-TilesetGameCornerGFX:
-INCBIN "gfx/tilesets/game_corner.2bpp.lz"
-
-TilesetGameCornerMeta:
-INCBIN "data/tilesets/game_corner_metatiles.bin"
-
-
 TilesetTrainStationGFX:
 INCBIN "gfx/tilesets/train_station.2bpp.lz"
 
@@ -128,6 +121,10 @@ INCBIN "data/tilesets/train_station_metatiles.bin"
 
 TilesetTrainStationColl:
 INCLUDE "data/tilesets/train_station_collision.asm"
+
+TilesetGateAttr:
+INCBIN "data/tilesets/gate_attributes.bin"
+
 
 
 SECTION "Tileset Data 4", ROMX
@@ -167,9 +164,6 @@ INCBIN "data/tilesets/underground_metatiles.bin"
 
 TilesetUndergroundColl:
 INCLUDE "data/tilesets/underground_collision.asm"
-
-TilesetGateGFX:
-INCBIN "gfx/tilesets/gate.2bpp.lz"
 
 
 SECTION "Tileset Data 5", ROMX
@@ -250,6 +244,9 @@ INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
 TilesetBattleTowerOutsideColl:
 INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
 
+TilesetGateGFX:
+INCBIN "gfx/tilesets/gate.2bpp.lz"
+
 
 SECTION "Tileset Data 7", ROMX
 
@@ -312,6 +309,12 @@ TilesetRoofColl:
 INCLUDE "data/tilesets/roof_collision.asm"
 
 
+TilesetGameCornerGFX:
+INCBIN "gfx/tilesets/game_corner.2bpp.lz"
+
+TilesetGameCornerMeta:
+INCBIN "data/tilesets/game_corner_metatiles.bin"
+
 SECTION "Tileset Data 9", ROMX
 
 TilesetFacilityGFX:
@@ -339,9 +342,6 @@ INCBIN "data/tilesets/players_house_attributes.bin"
 TilesetPokecenterAttr:
 INCBIN "data/tilesets/pokecenter_attributes.bin"
 
-TilesetGateAttr:
-INCBIN "data/tilesets/gate_attributes.bin"
-
 TilesetPortAttr:
 INCBIN "data/tilesets/port_attributes.bin"
 
@@ -353,7 +353,6 @@ INCBIN "data/tilesets/ice_path_attributes.bin"
 
 TilesetVolcanoAttr:
 INCBIN "data/tilesets/volcano_attributes.bin"
-
 
 
 SECTION "Tileset Data 10", ROMX

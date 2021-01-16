@@ -2585,7 +2585,7 @@ wRoute43GateSceneID::                             db ; d9a3
 wMountMoonSceneID::                               db ; d9a4
 wFluteMasterHouseSceneID::                        db ; d9a5
 wLostLandSceneID::                                db ; d9a6
-wBurnedTower1FSceneID::                           db ; d9a7
+wOrchidGym1FSceneID::                             db ; d9a7
 wBurnedTowerB1FSceneID::                          db ; d9a8
 wRadioTower5FSceneID::                            db ; d9a9
 wRuinsOfAlphOutsideSceneID::                      db ; d9aa
@@ -2749,7 +2749,7 @@ wHappinessStepCount:: db
 wSafariStepsRemaining:: db
 wParkBallsRemaining::
 wSafariBallsRemaining:: db ; dc79
-wSafariTimeRemaining:: dw ; dc7a
+wFireGymStepsRemaining:: dw ; dc7a
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86

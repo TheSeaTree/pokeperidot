@@ -9,7 +9,7 @@ TrainerGroups:
 	dw PryceGroup
 	dw JasmineGroup
 	dw JoelGroup
-	dw ClairGroup
+	dw EnyaGroup
 	dw Rival1Group
 	dw FangirlGroup
 	dw PokemonProfGroup

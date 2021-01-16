@@ -216,7 +216,7 @@ ENDM
 	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
 	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
-	map_const GOLDENROD_MAGNET_TRAIN_STATION,              10,  9 ;  7
+	map_const GOLDENROD_MAGNET_TRAIN_STATION,              13, 10 ;  7
 	map_const CARNATION_FLOWER_SHOP,                        4,  4 ;  8
 	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
@@ -322,8 +322,9 @@ ENDM
 
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
-	map_const BLACKTHORN_GYM_1F,                           10, 13 ;  1
-	map_const BLACKTHORN_GYM_2F,                           11,  9 ;  2
+	map_const ORCHID_GYM_1F,		      	                7,  4 ;  2
+	map_const ORCHID_GYM_B1F,        	                   10, 14 ;  1
+	map_const ORCHID_GYM_LEADER_ROOM,                      	7,  8 ;  2
 	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
 	map_const ORCHID_MART,                                  6,  4 ;  4
 	map_const DRAGONBREATH_HOUSE,                           4,  4

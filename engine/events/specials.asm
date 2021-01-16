@@ -398,3 +398,9 @@ TrainerHouse:
 SpecialMoveRelearner:
 	farcall MoveRelearner
 	ret
+
+SetFireGymSteps:
+	xor a
+	ld a, 50
+	ld [wFireGymStepsRemaining], a
+	ret

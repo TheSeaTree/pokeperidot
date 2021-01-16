@@ -32,6 +32,7 @@ SpecialsPointers::
 	add_special ContestDropOffMons
 	add_special ContestReturnMons
 	add_special GiveParkBalls ; $18
+	add_special SetFireGymSteps
 	add_special CheckMagikarpLength
 	add_special MagikarpHouseSign
 	add_special HealParty ; this is both a special and a predef

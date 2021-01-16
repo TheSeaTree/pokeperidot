@@ -19,14 +19,32 @@ OrchidCity_MapScripts:
 	return
 
 OrchidGymEvent:
+	checkflag ENGINE_RISINGBADGE
+	iftrue .havebadge
+	clearevent EVENT_BEAT_FIREBREATHER_KENNY
+	clearevent EVENT_BEAT_FIREBREATHER_AIDEN
+	clearevent EVENT_BEAT_JUGGLER_URI
+	clearevent EVENT_BEAT_JUGGLER_KAI
+	clearevent EVENT_BEAT_BIKER_DANTE
+	clearevent EVENT_BEAT_COOLTRAINERF_KARI
+	clearevent EVENT_BEAT_COOLTRAINERM_TORY
 	scall OrchidGymEntrance
 	iffalse .no
-	warpfacing UP, BLACKTHORN_GYM_1F, 8, 25
+.warp
+	warpfacing UP, ORCHID_GYM_1F, 6, 7
 .no
 	end
 	
+.havebadge
+	scall OrchidEnterGym
+	jump .warp
+	
 OrchidGymEntrance:
 	jumpstd gymdoor
+	end
+
+OrchidEnterGym:
+	jumpstd entergym
 	end
 
 OrchidCityTeacher:
@@ -48,7 +66,7 @@ OrchidCity_MapEvents:
 	warp_event 23, 25, ORCHID_POKECENTER_1F, 1
 	warp_event  5, 15, DRAGONBREATH_HOUSE, 1
 	warp_event 13,  5, ORCHID_MART, 1
-	warp_event 26,  7, BLACKTHORN_GYM_1F, 1
+	warp_event 26,  7, ORCHID_GYM_1F, 1
 	warp_event 19, 23, ENTEI_LAIR, 1
 	
 	db 0 ; coord events

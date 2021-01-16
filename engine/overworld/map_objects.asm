@@ -2079,6 +2079,17 @@ ShakeGrass:
 .GrassObject
 	db $00, PAL_OW_TREE, SPRITEMOVEDATA_GRASS
 
+ShakeVolcanoGrass:
+	push bc
+	ld de, .VolcanoGrassObject
+	call CopyTempObjectData
+	call InitTempObject
+	pop bc
+	ret
+
+.VolcanoGrassObject
+	db $00, PAL_OW_SILVER, SPRITEMOVEDATA_GRASS
+
 ShakeScreen:
 	push bc
 	push af

@@ -848,6 +848,9 @@ CountStep:
 	
 	call DoSafariStep
 	jr c, .doscript
+	
+	call DoFireGymStep
+	jr c, .doscript
 
 	; If Repel wore off, don't count the step.
 	call DoRepelStep
@@ -953,6 +956,33 @@ DoSafariStep:
 
 	ld a, BANK(BugCatchingContestOverScript)
 	ld hl, BugCatchingContestOverScript
+	call CallScript
+	scf
+	ret
+	
+.NoCall
+	xor a
+	ret
+
+DoFireGymStep:
+	ld a, [wMapGroup]
+	cp GROUP_ORCHID_GYM_B1F
+	jr nz, .NoCall
+
+	ld a, [wMapNumber]
+	cp MAP_ORCHID_GYM_B1F
+	jr nz, .NoCall
+
+	ld a, [wFireGymStepsRemaining]
+	and a
+	ret z
+
+	dec a
+	ld [wFireGymStepsRemaining], a
+	ret nz
+
+	ld a, BANK(FireGymWarpScript)
+	ld hl, FireGymWarpScript
 	call CallScript
 	scf
 	ret

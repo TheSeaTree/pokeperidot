@@ -412,11 +412,14 @@ OlivineGym_Blocks:
 CianwoodGym_Blocks:
 	INCBIN "maps/CianwoodGym.ablk"
 
-BlackthornGym1F_Blocks:
-	INCBIN "maps/BlackthornGym1F.ablk"
+OrchidGym1F_Blocks:
+	INCBIN "maps/OrchidGym1F.ablk"
 
-BlackthornGym2F_Blocks:
-	INCBIN "maps/BlackthornGym2F.ablk"
+OrchidGymB1F_Blocks:
+	INCBIN "maps/OrchidGymB1F.ablk"
+
+OrchidGymLeaderRoom_Blocks:
+	INCBIN "maps/OrchidGymLeaderRoom.ablk"
 
 
 SECTION "Map Blocks 3", ROMX

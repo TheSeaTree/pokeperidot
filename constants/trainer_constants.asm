@@ -58,9 +58,9 @@ CHRIS EQU __enum__
 	const JOEL1
 	const JOEL_REMATCH
 
-	trainerclass CLAIR ; 8
-	const CLAIR1
-	const CLAIR_REMATCH
+	trainerclass ENYA ; 8
+	const ENYA1
+	const ENYA_REMATCH
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -176,6 +176,7 @@ CHRIS EQU __enum__
 	const BRUCE
 	const JORDAN
 	const TODD
+	const TORY
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
@@ -183,6 +184,7 @@ CHRIS EQU __enum__
 	const ASHLEY
 	const EVE
 	const FAITH
+	const KARI
 	
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -245,7 +247,8 @@ CHRIS EQU __enum__
 	const RUSSEL
 	const HAROLD
 	const SAUL
-	
+	const GLENN
+
 	trainerclass SWIMMERF ; 27
 	const VIVIAN
 	const KAIT
@@ -253,6 +256,7 @@ CHRIS EQU __enum__
 	const LAURIE
 	const SANDRA
 	const BRETT
+	const MIRANDA
 	
 	trainerclass SAILOR ; 28
 	const CALVIN
@@ -320,6 +324,7 @@ CHRIS EQU __enum__
 	const BAM
 	const CHASE
 	const LARS
+	const DANTE
 	
 	trainerclass BLAINE ; 2e
 	const BLAINE1
@@ -344,10 +349,14 @@ CHRIS EQU __enum__
 	const RUBIN
 	const LOUIS
 	const ROGER
+	const KENNY
+	const AIDEN
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
 	const BLAIR
+	const URI
+	const KAI
 	
 	trainerclass BLACKBELT_T ; 32
 	const AXEL

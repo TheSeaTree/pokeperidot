@@ -27,8 +27,12 @@ LoadSpecialMapPalette:
 	jr z, .lighthouse
 	cp  TILESET_PORT
 	jr z, .port
+	cp  TILESET_GATE
+	jr z, .gate
 	cp  TILESET_ROOF
 	jr z, .roof
+	cp  TILESET_ELITE_FOUR_ROOM
+	jr z, .elitefourroom
 	jr .do_nothing
 
 .pokecom_2f
@@ -74,6 +78,11 @@ LoadSpecialMapPalette:
 	call LoadPortPalette
 	scf
 	ret
+
+.gate
+	call LoadGatePalette
+	scf
+	ret
 	
 .mountain
 	ld hl, MountainPalette
@@ -97,6 +106,10 @@ LoadSpecialMapPalette:
 
 .roof
 	ld hl, RoofPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.elitefourroom
+	ld hl, EliteFourRoomPalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
@@ -183,6 +196,17 @@ LoadPortPalette:
 PortPalette:
 INCLUDE "gfx/tilesets/port.pal"
 
+LoadGatePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GatePalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+GatePalette:
+INCLUDE "gfx/tilesets/gate.pal"
+
 LoadMansionPalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
@@ -226,6 +250,9 @@ INCLUDE "gfx/tilesets/lighthouse.pal"
 
 RoofPalette:
 INCLUDE "gfx/tilesets/roof.pal"
+
+EliteFourRoomPalette:
+INCLUDE "gfx/tilesets/elite_four_room.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

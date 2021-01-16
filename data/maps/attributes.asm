@@ -272,8 +272,9 @@ ENDM
 	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
 	map_attributes EcruteakMart, ECRUTEAK_MART, $00, 0
 	map_attributes EcruteakGym, ECRUTEAK_GYM, $00, 0
-	map_attributes BlackthornGym1F, BLACKTHORN_GYM_1F, $00, 0
-	map_attributes BlackthornGym2F, BLACKTHORN_GYM_2F, $00, 0
+	map_attributes OrchidGym1F, ORCHID_GYM_1F, $00, 0
+	map_attributes OrchidGymB1F, ORCHID_GYM_B1F, $01, 0
+	map_attributes OrchidGymLeaderRoom, ORCHID_GYM_LEADER_ROOM, $00, 0
 	map_attributes BlackthornMart, BLACKTHORN_MART, $00, 0
 	map_attributes BlackthornPokecenter1F, BLACKTHORN_POKECENTER_1F, $00, 0
 	map_attributes MoveDeletersHouse, MOVE_DELETERS_HOUSE, $00, 0

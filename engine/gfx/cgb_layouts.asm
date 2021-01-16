@@ -650,7 +650,7 @@ _CGB_TrainerCard:
 	ld a, CECIL ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CLAIR
+	ld a, ENYA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, CELESTE

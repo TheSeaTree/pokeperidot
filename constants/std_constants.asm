@@ -29,8 +29,8 @@
 	enum martsign
 	enum elevatorbutton
 	enum daytotext
+	enum firegymwarp
 	enum bugcontestresultswarp
-	enum bugcontestresults
 	enum initializeevents
 	enum gymstatue1
 	enum gymstatue2
