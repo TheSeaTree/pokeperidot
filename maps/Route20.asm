@@ -132,16 +132,24 @@ UseFluteText:
 	done
 
 LadJulesText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hey! Let me show"
+	line "you the new #-"
+	cont "MON I just caught!"
 	done
 	
 LadJulesWinText:
-	text "I lost."
+	text "I needed more"
+	line "#MON…"
 	done
 	
 LadJulesAfterText:
-	text "I lost."
+	text "I'm sure there are"
+	line "more #MON to"
+	cont "catch here."
+	
+	para "I'm going to keep"
+	line "looking in the"
+	cont "grass."
 	done
 	
 BirdKeeperHughText:

@@ -6,23 +6,23 @@ BlackthornCave1F_MapScripts:
 	db 0 ; callbacks
 	
 TrainerCooltrainerMBruce:
-	trainer COOLTRAINERM, BRUCE, EVENT_BEAT_COOLTRAINERM_BRUCE, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
+	trainer COOLTRAINERM, BRUCE, EVENT_BEAT_COOLTRAINERM_BRUCE, CooltrainerMBruceText, CooltrainerMBruceWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackthornCave1FTrainerAfterText
+	writetext CooltrainerMBruceAfterText
 	waitbutton
 	closetext
 	end
 
 TrainerCooltrainerFAshley:
-	trainer COOLTRAINERF, ASHLEY, EVENT_BEAT_COOLTRAINERF_ASHLEY, BlackthornCave1FTrainerText, BlackthornCave1FTrainerWinText, 0, .Script
+	trainer COOLTRAINERF, ASHLEY, EVENT_BEAT_COOLTRAINERF_ASHLEY, CooltrainerFAshleyText, CooltrainerFAshleyWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BlackthornCave1FTrainerAfterText
+	writetext CooltrainerFAshleyAfterText
 	waitbutton
 	closetext
 	end	
@@ -30,17 +30,52 @@ TrainerCooltrainerFAshley:
 BlackthornCave1FBoulder:
 	jumpstd strengthboulder
 	
-BlackthornCave1FTrainerText:
-	text "I am a"
-	line "#MON trainer!"
+CooltrainerMBruceText:
+	text "Yo, kid!"
+	
+	para "Let's go!"
+	done
+
+CooltrainerMBruceWinText:
+	text "Your #MON are"
+	line "pretty groovy."
+	done
+
+CooltrainerMBruceAfterText:
+	text "I'm not going to"
+	line "take my loss lying"
+	cont "down."
+	
+	para "I'm going to train"
+	line "even more with my"
+	cont "#MON!"
+	
+	para "…Eventually."
 	done
 	
-BlackthornCave1FTrainerWinText:
-	text "I lost."
-	done
+CooltrainerFAshleyText:
+	text "Are you ready to"
+	line "battle GRANT?"
 	
-BlackthornCave1FTrainerAfterText:
-	text "I lost."
+	para "Let's see."
+	done
+
+CooltrainerFAshleyWinText:
+	text "I'm showing my age."
+	
+	para "I would have never"
+	line "lost to a kid when"
+	cont "I was younger."
+	done
+
+CooltrainerFAshleyAfterText:
+	text "I was your last"
+	line "obstacle on the"
+	cont "way to the GYM."
+	
+	para "You'd better not"
+	line "lose to ALAN now,"
+	cont "or I'll be upset!"
 	done
 
 BlackthornCave1F_MapEvents:
