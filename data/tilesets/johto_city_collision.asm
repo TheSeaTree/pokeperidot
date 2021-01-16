@@ -32,7 +32,7 @@
 	tilecoll WALL, WALL, WALL, WALL ; 1f
 	tilecoll WALL, WALL, DOOR, WALL ; 20
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 21
-	tilecoll WALL, WALL, WALK_DOWN, WALL ; 22
+	tilecoll WALL, WALL, DOOR, WALL ; 22
 	tilecoll WALL, WALL, WALL, WALL ; 23
 	tilecoll WALL, WALL, WALL, WALL ; 24
 	tilecoll WALL, WALL, WALL, WALL ; 25
