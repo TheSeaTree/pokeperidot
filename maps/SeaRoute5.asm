@@ -1,5 +1,7 @@
 	const_def 2 ; object constants
+	const SEAROUTE5_SWIMMER_GIRL
 	const SEAROUTE5_SWIMMER_GUY
+	const SEAROUTE5_SWIMMER_GUY_LAND
 	const SEAROUTE5_LASS1
 	const SEAROUTE5_LASS2
 	
@@ -35,6 +37,28 @@ SeaRoute5_MapScripts:
 	changeblock  4, 10, $73
 .done
 	return
+	
+TrainerSwimmerMiranda:
+	trainer SWIMMERF, MIRANDA, EVENT_BEAT_SWIMMERF_MIRANDA, SwimmerMirandaText, SwimmerMirandaWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmerMirandaAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerSwimmerGlenn:
+	trainer SWIMMERM, GLENN, EVENT_BEAT_SWIMMERM_GLENN, SwimmerGlennText, SwimmerGlennWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext SwimmerGlennAfterText
+	waitbutton
+	closetext
+	end
 
 SandstormGuy:
 	faceplayer
@@ -54,6 +78,50 @@ SandstormGuy:
 	
 SeaRoute5LugiaGirl:
 	jumptextfaceplayer SeaRoute5LugiaGirlText
+
+SwimmerGlennText:
+	text "Careful, kid!"
+	
+	para "You might get"
+	line "swept under by"
+	cont "my #MON!"
+	done
+
+SwimmerGlennWinText:
+	text "To the ocean floor"
+	line "with me…"
+	done
+
+SwimmerGlennAfterText:
+	text "…Cough, cough!"
+	
+	para "Don't drink the"
+	line "sea water, kid!"
+	
+	para "I just got a"
+	line "mouthfull…"
+	done
+	
+SwimmerMirandaText:
+	text "You're riding on a"
+	line "cute #MON!"
+	
+	para "Is it any good at"
+	line "battling?"
+	done
+
+SwimmerMirandaWinText:
+	text "Hey! You could've"
+	line "gone easy on me!"
+	done
+
+SwimmerMirandaAfterText:
+	text "I've been swimming"
+	line "for a long time."
+	
+	para "I've earned this"
+	line "break!"
+	done
 
 SandstormGuyText:
 	text "When the wind"
@@ -119,7 +187,9 @@ SeaRoute5_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
-	object_event 30,  6, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
+	db 5 ; object events
+	object_event 17,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerMiranda, -1
+	object_event 22, 22, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerGlenn, -1
+	object_event 32, 12, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
 	object_event 12, 30, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOUGHT_LUGIA
 	object_event 43,  0, SPRITE_BUENA, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, SeaRoute5LugiaGirl, -1

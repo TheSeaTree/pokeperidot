@@ -137,7 +137,7 @@ JohtoWaterWildMons:
 	db 34, MANTINE
 	db 34, QWILFISH
 	db 33, DEWGONG
-	
+
 	map_id SEA_ROUTE_4
 	db 4 percent ; encounter rate
 	db 34, CORSOLA
@@ -145,7 +145,7 @@ JohtoWaterWildMons:
 	db 34, ANCOR
 	db 34, LANTURN
 	db 34, LANTURN
-	
+
 	map_id SEA_ROUTE_5
 	db 4 percent ; encounter rate
 	db 34, SEADRA
@@ -153,7 +153,7 @@ JohtoWaterWildMons:
 	db 34, QWILFISH
 	db 35, SMOLA
 	db 33, ANCOR
-	
+
 	map_id SEA_ROUTE_6
 	db 4 percent ; encounter rate
 	db 34, MANTINE
