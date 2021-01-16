@@ -31,6 +31,8 @@ HidePlayerSprite:
 Script_BoardTrain:
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerBoardsTrain
 	jump Script_BattleRoomLoop
+	
+; Try calling SavePlayerData when ending the challenge. See if it breaks anything. If so, try and get the current wCoins amount to write to the save file so that BP isn't lost when quitting out.
 
 Script_BattleRoom:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerWalksIn
@@ -51,10 +53,6 @@ Script_BattleRoomLoop:
 	playsound SFX_FULL_HEAL
 	waitsfx
 	opentext
-	writetext Text_Got1BP
-	givecoins 1
-;	playsound SFX_GOT_SAFARI_BALLS
-	waitsfx
 	writetext Text_NextUpOpponentNo
 	yesorno
 	iffalse Script_DontBattleNextOpponent
@@ -78,32 +76,6 @@ Script_DontBattleNextOpponent:
 	waitsfx
 	special FadeOutPalettes
 	special Reset
-Script_DontSaveAndEndTheSession:
-	writetext Text_CancelYourBattleRoomChallenge
-	yesorno
-	iffalse Script_ContinueAndBattleNextOpponent
-	writebyte BATTLETOWERACTION_CHALLENGECANCELED
-	special BattleTowerAction
-	writebyte BATTLETOWERACTION_06
-	special BattleTowerAction
-	closetext
-	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
-	special FadeOutPalettes
-	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
-	opentext
-	jump Script_BattleTowerHopeToServeYouAgain
-
-Script_FailedBattleTowerChallenge:
-	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
-	pause 60
-	special BattleTowerFade
-	writebyte BATTLETOWERACTION_CHALLENGECANCELED
-	special BattleTowerAction
-	opentext
-	writetext Text_ThanksForVisiting
-	waitbutton
-	closetext
-	end
 
 Script_BeatenAllTrainers:
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
@@ -118,10 +90,11 @@ Text_Got1BP:
 BattleSubwayTrain_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event  1,  5, BATTLE_SUBWAY_PLATFORM, 3
 	warp_event  7,  3, BATTLE_SUBWAY_TRAIN, 3
 	warp_event  0,  3, BATTLE_SUBWAY_TRAIN, 2
+	warp_event  6,  5, BATTLE_SUBWAY_PLATFORM, 3
 
 	db 0 ; coord events
 

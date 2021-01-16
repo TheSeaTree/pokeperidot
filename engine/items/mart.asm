@@ -24,7 +24,7 @@ OpenMartDialog::
 	dw RooftopSale
 	dw Robbed
 	dw Drinks
-	dw Subway
+	dw BPShop
 
 MartDialog:
 	ld a, 0
@@ -95,9 +95,18 @@ Drinks:
 	call MartTextBox
 	ret
 	
-Subway:
-	ld b, BANK(SubwayShopData)
-	ld de, SubwayShopData
+BPShop:
+	ld b, BANK(BattleSubwayStatShopData)
+	ld de, BattleSubwayStatShopData
+	; Hard coded. Selects a different mart inventory depending on what tile the player stands on.
+	ld a, [wXCoord]
+	cp 7
+	jr c, .ok
+
+	ld b, BANK(BattleSubwayBattleShopData)
+	ld de, BattleSubwayBattleShopData
+	
+.ok
 	call LoadMartPointer
 	call ReadMart
 	call LoadStandardMenuHeader

@@ -21,6 +21,7 @@ BattleSubwayPlatform_MapScripts:
 	ifequal $2, .priorityjump1
 	ifequal $3, .SkipEverything
 	ifequal $4, .SkipEverything
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	opentext
 	writetext Text_WeveBeenWaitingForYou
 	waitbutton
@@ -39,19 +40,15 @@ BattleSubwayPlatform_MapScripts:
 .Scene1:
 	end
 
-BattleSubwayPrizeGirl:
+BattleSubwayPrizeGirl1:
 	opentext
 	pokemart MARTTYPE_SUBWAY, 0
 	closetext
 	end
 	
-BattleSubwayPointGirl:
+BattleSubwayPrizeGirl2:
 	opentext
-	special DisplayCoinCaseBalance
-	writetext Text_PlayerGotFive
-	givecoins 30
-	special DisplayCoinCaseBalance
-	waitbutton
+	pokemart MARTTYPE_SUBWAY, 0
 	closetext
 	end
 	
@@ -154,11 +151,29 @@ Script_BattleTowerSkipExplanation:
 	writebyte BATTLETOWERACTION_SET_EXPLANATION_READ
 	special BattleTowerAction
 	jump Script_Menu_ChallengeExplanationCancel
+	
+
+Script_DontSaveAndEndTheSession:
+	writetext Text_CancelYourBattleRoomChallenge
+	yesorno
+	iffalse Script_ContinueAndBattleNextOpponent
+	writebyte BATTLETOWERACTION_CHALLENGECANCELED
+	special BattleTowerAction
+	writebyte BATTLETOWERACTION_06
+	special BattleTowerAction
+	closetext
+	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain2
+	special FadeOutPalettes
+Script_BattleTowerChallengeEnded:
+	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
+	opentext
 
 Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, DOWN
 	checkcode VAR_FACING
 	ifequal UP, .StepAway
 	end
@@ -188,6 +203,7 @@ Script_MobileError:
 	end
 
 BattleTower_LeftWithoutSaving:
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	opentext
 	writetext Text_BattleTower_LeftWithoutSaving
 	waitbutton
@@ -207,14 +223,27 @@ Script_BeatenAllTrainers2:
 	writebyte BATTLETOWERACTION_1C
 	special BattleTowerAction
 	appear BATTLESUBWAYPLATFORM_OFFICER1
-	givecoins 10
+	givecoins 20
 	opentext
-	writetext Text_PlayerGotFive
+	writetext Text_PlayerGot20BP
 	writebyte BATTLETOWERACTION_1D
 	special BattleTowerAction
 	setscene SCENE_FINISHED
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
 	jump Script_BattleTowerHopeToServeYouAgain
+
+Script_FailedBattleTowerChallenge:
+	pause 60
+	special BattleTowerFade
+	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
+	writebyte BATTLETOWERACTION_CHALLENGECANCELED
+	special BattleTowerAction
+	opentext
+	writetext Text_ThanksForVisiting
+	waitbutton
+	closetext
+	end
 
 MovementData_BattleTower1FWalkToElevator:
 	step RIGHT
@@ -315,6 +344,14 @@ MovementData_BattleSubwayTrainPlayerLeavesTrain:
 	step DOWN
 	step_end
 	
+MovementData_BattleSubwayTrainPlayerLeavesTrain2:
+	step LEFT
+	step DOWN
+	step DOWN
+	step DOWN
+	step DOWN
+	step_end
+	
 MovementData_BattleSubwayTrainPlayerBoardsTrain:
 	step UP
 	step UP
@@ -356,73 +393,11 @@ Text_BattleTowerWelcomesYou:
 	done
 
 Text_WantToGoIntoABattleRoom:
-	text "Want to go into a"
-	line "BATTLE ROOM?"
+	text "Board a train?"
 	done
 
 Text_RightThisWayToYourBattleRoom:
-	text "Right this way to"
-	line "your BATTLE ROOM."
-	done
-
-Text_BattleTowerIntroduction_1:
-	text "BATTLE TOWER is a"
-	line "facility made for"
-	cont "#MON battles."
-
-	para "Countless #MON"
-	line "trainers gather"
-
-	para "from all over to"
-	line "hold battles in"
-
-	para "specially designed"
-	line "BATTLE ROOMS."
-
-	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
-
-	para "Each ROOM holds"
-	line "seven trainers."
-
-	para "If you defeat the"
-	line "seven in a ROOM,"
-
-	para "and you have a"
-	line "good record, you"
-
-	para "could become the"
-	line "ROOM's LEADER."
-
-	para "All LEADERS will"
-	line "be recorded in the"
-
-	para "HONOR ROLL for"
-	line "posterity."
-
-	para "You may challenge"
-	line "in up to five"
-
-	para "BATTLE ROOMS each"
-	line "day."
-
-	para "However, you may"
-	line "battle only once a"
-
-	para "day in any given"
-	line "ROOM."
-
-	para "To interrupt a"
-	line "session, you must"
-
-	para "SAVE. If not, you"
-	line "won't be able to"
-
-	para "resume your ROOM"
-	line "challenge."
-
-	para ""
+	text "All aboard!"
 	done
 
 Text_BattleTowerIntroduction_2:
@@ -461,133 +436,48 @@ Text_BattleTowerIntroduction_2:
 	para ""
 	done
 
-Text_ReceivedAListOfLeadersOnTheHonorRoll:
-	text "Received a list of"
-	line "LEADERS on the"
-	cont "HONOR ROLL."
-
-	para ""
-	done
-
-Text_PleaseConfirmOnThisMonitor:
-	text "Please confirm on"
-	line "this monitor."
-	done
-
 Text_ThanksForVisiting:
 	text "Thanks for"
 	line "visiting!"
-	done
-
-Text_BeatenAllTheTrainers_Mobile:
-	text "Congratulations!"
-
-	para "You've beaten all"
-	line "the trainers!"
-
-	para "Your feat may be"
-	line "worth registering,"
-
-	para "<PLAYER>. With your"
-	line "results, you may"
-
-	para "be chosen as a"
-	line "ROOM LEADER."
-
-	para ""
+	
+	para "Better luck next"
+	line "time."
 	done
 
 Text_CongratulationsYouveBeatenAllTheTrainers:
 	text "Congratulations!"
 
 	para "You've beaten all"
-	line "the trainers!"
+	line "the trainers in"
+	cont "this set!"
 
-	para "Follow me for your"
-	line "prize."
+	para "Please follow me"
+	line "for your prize."
 	done
 
-Text_AskRegisterRecord_Mobile:
-	text "Would you like to"
-	line "register your"
-
-	para "record with the"
-	line "CENTER?"
-	done
-
-Text_PlayerGotFive:
-	text "<PLAYER> got 10"
+Text_PlayerGot20BP:
+	text "<PLAYER> got 20"
 	line "BP!@"
 	sound_item
 	text_waitbutton
 	db "@"
-
-Text_YourRegistrationIsComplete:
-	text "Your registration"
-	line "is complete."
-
-	para "Please come again!"
-	done
 
 Text_WeHopeToServeYouAgain:
 	text "We hope to serve"
 	line "you again."
 	done
 
-Text_PleaseStepThisWay:
-	text "Please step this"
-	line "way."
-	done
-
-Text_WouldYouLikeToHearAboutTheBattleTower:
-	text "Would you like to"
-	line "hear about the"
-	cont "BATTLE TOWER?"
-	done
-
-Text_CantBeRegistered:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered. OK?"
-	done
-
-Text_CantBeRegistered_PreviousRecordDeleted:
-	text "Your record from"
-	line "the previous"
-
-	para "BATTLE ROOM can't"
-	line "be registered."
-
-	para "Also, the existing"
-	line "record will be"
-	cont "deleted. OK?"
-	done
-
-Text_CheckTheLeaderHonorRoll:
-	text "Check the LEADER"
-	line "HONOR ROLL?"
-	done
-
 Text_BattleTower_LeftWithoutSaving:
 	text "Excuse me!"
-	line "You didn't SAVE"
-
-	para "before exiting"
-	line "the BATTLE ROOM."
+	
+	para "You didn't SAVE"
+	line "before exiting the"
+	cont "BATTLE TRAIN."
 
 	para "I'm awfully sorry,"
 	line "but your challenge"
-
-	para "will be declared"
+	cont "will be declared"
 	line "invalid."
-	done
-
-Text_YourMonWillBeHealedToFullHealth:
-	text "Your #MON will"
-	line "be healed to full"
-	cont "health."
 	done
 
 Text_NextUpOpponentNo:
@@ -597,20 +487,11 @@ Text_NextUpOpponentNo:
 	text ". Ready?"
 	done
 
-Text_SaveBeforeConnecting_Mobile:
-	text "Your session will"
-	line "be SAVED before"
-
-	para "connecting with"
-	line "the CENTER."
-	done
-
 Text_SaveBeforeEnteringBattleRoom:
-	text "Before entering"
-	line "the BATTLE ROOM,"
-
-	para "your progress will"
-	line "be saved."
+	text "Before boarding"
+	line "the BATTLE TRAIN,"
+	cont "your progress will"
+	line "be saved. Okay?"
 	done
 
 Text_SaveAndEndTheSession:
@@ -618,74 +499,18 @@ Text_SaveAndEndTheSession:
 	line "session?"
 	done
 
-Text_SaveBeforeReentry:
-	text "Your record will"
-	line "be SAVED before"
-
-	para "you go back into"
-	line "the previous ROOM."
-	done
-
 Text_CancelYourBattleRoomChallenge:
 	text "Cancel your BATTLE"
-	line "ROOM challenge?"
-	done
-
-Text_RegisterRecordOnFile_Mobile:
-	text "We have your"
-	line "previous record on"
-
-	para "file. Would you"
-	line "like to register"
-	cont "it at the CENTER?"
+	line "SUBWAY challenge?"
 	done
 
 Text_WeveBeenWaitingForYou:
 	text "We've been waiting"
-	line "for you. This way"
+	line "for you."
 
-	para "to a BATTLE ROOM,"
-	line "please."
-	done
-
-Text_FiveDayBattleLimit_Mobile:
-	text "You may enter only"
-	line "five BATTLE ROOMS"
-	cont "each day."
-
-	para "Please come back"
-	line "tomorrow."
-	done
-
-Text_TooMuchTimeElapsedNoRegister:
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your"
-	line "current record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
-	done
-
-; a dupe?
-Text_RegisterRecordTimedOut_Mobile:
-	text "Sorry, but it's"
-	line "not possible to"
-
-	para "register your most"
-	line "recent record at"
-
-	para "the CENTER because"
-	line "too much time has"
-
-	para "elapsed since the"
-	line "start of your"
-	cont "challenge."
+	para "You may board the"
+	line "BATTLE TRAIN from"
+	cont "here."
 	done
 
 Text_AMonLevelExceeds:
@@ -706,47 +531,6 @@ Text_MayNotEnterABattleRoomUnderL70:
 	line "is for L@"
 	deciram wScriptVar, 1, 3
 	text "."
-	done
-
-Text_BattleTowerYoungster:
-	text "Destroyed by the"
-	line "first opponent in"
-
-	para "no time at all…"
-	line "I'm no good…"
-	done
-
-Text_BattleTowerCooltrainerF:
-	text "There are lots of"
-	line "BATTLE ROOMS, but"
-
-	para "I'm going to win"
-	line "them all!"
-	done
-
-Text_BattleTowerGranny:
-	text "It's a grueling"
-	line "task, not being"
-
-	para "able to use items"
-	line "in battle."
-
-	para "Making your"
-	line "#MON hold items"
-
-	para "is the key to"
-	line "winning battles."
-	done
-
-Text_BattleTowerBugCatcher:
-	text "I'm trying to see"
-	line "how far I can go"
-
-	para "using just bug"
-	line "#MON."
-
-	para "Don't let there be"
-	line "any fire #MON…"
 	done
 
 Text_ReadBattleTowerRules:
@@ -778,7 +562,7 @@ BattleSubwayPlatform_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  2,  3, AZALEA_TOWN, 2
+	warp_event  2,  3, GOLDENROD_MAGNET_TRAIN_STATION, 3
 	warp_event 14,  5, BATTLE_SUBWAY_TRAIN, 1
 	warp_event 24,  5, BATTLE_SUBWAY_TRAIN, 1
 
@@ -791,7 +575,7 @@ BattleSubwayPlatform_MapEvents:
 	bg_event  5,  6, BGEVENT_READ, BattleSubwayRulesSign
 	
 	db 4 ; object events
-	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPointGirl, -1
-	object_event  6,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
+	object_event  6,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl1, -1
+	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl2, -1
 	object_event 10,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Script_Conductor, -1
 	object_event 23,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
