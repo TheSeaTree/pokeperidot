@@ -241,7 +241,7 @@ WhitneyGoodCryText:
 	para "You have already"
 	line "won. What else is"
 	cont "there for you to"
-	cont "take from me."
+	cont "take from me?"
 	done
 	
 DoorGuard1TextBefore:
