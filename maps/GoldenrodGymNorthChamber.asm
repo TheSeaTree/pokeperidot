@@ -207,7 +207,7 @@ GoldenrodGymNorthChamber_MapEvents:
 	bg_event  8,  3, BGEVENT_UP, GoldenrodGymNorthChamberLeaderSwitch
 
 	db 4 ; object events
-	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerGuitaristTrevor, -1
-	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerGuitaristMarcel, -1
-	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerGuitaristIvan, -1
-	object_event 0, -2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 0, TrainerPokemaniacCharlie, -1
+	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGuitaristTrevor, -1
+	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristMarcel, -1
+	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristIvan, -1
+	object_event 0, -2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacCharlie, -1
