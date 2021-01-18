@@ -5,9 +5,10 @@
 	const BATTLESUBWAYPLATFORM_OFFICER2
 
 BattleSubwayPlatform_MapScripts:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script .Scene0 ; SCENE_DEFAULT
 	scene_script .Scene1 ; SCENE_FINISHED
+	scene_script .Scene2 ; SCENE_BATTLESUBWAYPLATFORM_SUSPEND
 
 	db 0 ; callbacks
 
@@ -31,14 +32,33 @@ BattleSubwayPlatform_MapScripts:
 
 .priorityjump1
 	priorityjump BattleTower_LeftWithoutSaving
-	writebyte BATTLETOWERACTION_CHALLENGECANCELED
-	special BattleTowerAction
-	writebyte BATTLETOWERACTION_06
-	special BattleTowerAction
+;	writebyte BATTLETOWERACTION_CHALLENGECANCELED
+;	special BattleTowerAction
+;	writebyte BATTLETOWERACTION_06
+;	special BattleTowerAction
 .SkipEverything:
 	setscene SCENE_FINISHED
 .Scene1:
 	end
+	
+.Scene2:
+	setscene SCENE_DEFAULT
+	applymovement PLAYER, MovementData_BattleTowerNothing
+	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+
+	writebyte BATTLETOWERACTION_SAVELEVELGROUP ; save level group
+	special BattleTowerAction
+	writebyte BATTLETOWERACTION_SAVEOPTIONS ; choose reward
+	special BattleTowerAction
+	writebyte BATTLETOWERACTION_SAVE_AND_QUIT ; quicksave
+	special BattleTowerAction
+
+	special DoQuickSave
+	special Reset
+	end
+	
 
 BattleSubwayPrizeGirl1:
 	opentext
@@ -129,11 +149,21 @@ Script_ResumeBattleTowerChallenge:
 	closetext
 	writebyte BATTLETOWERACTION_LOADLEVELGROUP ; load choice of level group
 	special BattleTowerAction
+	musicfadeout MUSIC_NONE, 8
+	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
+	follow BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
+	applymovement BATTLESUBWAYPLATFORM_OFFICER2, MovementData_BattleTowerReEnterTrain
+	turnobject BATTLESUBWAYPLATFORM_OFFICER2, DOWN
+	writebyte BATTLETOWERACTION_0A
+	special BattleTowerAction
+	stopfollow
+	applymovement PLAYER, MovementData_BattleTowerHallwayPlayerEntersBattleRoom
+	warpcheck
+	end
+
 Script_WalkToBattleTowerElevator:
 	musicfadeout MUSIC_NONE, 8
 	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
-;	setmapscene BATTLE_TOWER_ELEVATOR, SCENE_DEFAULT
-;	setmapscene BATTLE_TOWER_HALLWAY, SCENE_DEFAULT
 	follow BATTLESUBWAYPLATFORM_OFFICER1, PLAYER
 	applymovement BATTLESUBWAYPLATFORM_OFFICER1, MovementData_BattleTower1FWalkToElevator
 	writebyte BATTLETOWERACTION_0A
@@ -203,10 +233,36 @@ Script_MobileError:
 	end
 
 BattleTower_LeftWithoutSaving:
-	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
+	checkcode VAR_XCOORD
+	ifgreater 11, BattleTower_LeftWithoutSaving2
+	setlasttalked BATTLESUBWAYPLATFORM_OFFICER1
+	faceplayer
 	opentext
 	writetext Text_BattleTower_LeftWithoutSaving
 	waitbutton
+	jump Script_BattleTowerHopeToServeYouAgain
+	
+
+BattleTower_LeftWithoutSaving2:
+	disappear BATTLESUBWAYPLATFORM_OFFICER1
+	setlasttalked BATTLESUBWAYPLATFORM_OFFICER2
+	faceplayer
+	opentext
+	writetext Text_BattleTower_LeftWithoutSaving
+	waitbutton
+	closetext
+	
+	follow BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
+	applymovement BATTLESUBWAYPLATFORM_OFFICER2, MovementData_BattleSubwayPlayerReturnsToPlatform
+	stopfollow
+	applymovement PLAYER, MovementData_BattleSubwayPlayerReturnsToPlatform2
+	appear BATTLESUBWAYPLATFORM_OFFICER1
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
+	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
+	opentext
+	disappear BATTLESUBWAYPLATFORM_OFFICER2
+
+	special DoQuickSave
 	jump Script_BattleTowerHopeToServeYouAgain
 
 Script_BeatenAllTrainers2:
@@ -223,6 +279,8 @@ Script_BeatenAllTrainers2:
 	writebyte BATTLETOWERACTION_1C
 	special BattleTowerAction
 	appear BATTLESUBWAYPLATFORM_OFFICER1
+	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
+	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
 	givecoins 20
 	opentext
 	writetext Text_PlayerGot20BP
@@ -261,6 +319,15 @@ MovementData_BattleTowerHallwayPlayerEntersBattleRoom:
 MovementData_BattleTowerElevatorExitElevator:
 	step DOWN
 	step_end
+	
+MovementData_BattleTowerNothing:
+	step_end
+
+MovementData_BattleTowerReEnterTrain:
+	step RIGHT
+	step RIGHT
+	turn_head DOWN
+	step_resume
 
 MovementData_BattleTowerHallwayWalkTo1020Room:
 	step RIGHT
@@ -380,7 +447,9 @@ MovementData_BattleSubwayPlayerReturnsToPlatform:
 MovementData_BattleSubwayPlayerReturnsToPlatform2:
 	step DOWN
 	step LEFT
-	turn_head UP
+	step LEFT
+	step UP
+	turn_head RIGHT
 	step_end
 	
 MovementData_StepAwayFromTrain:
@@ -477,7 +546,7 @@ Text_BattleTower_LeftWithoutSaving:
 	para "I'm awfully sorry,"
 	line "but your challenge"
 	cont "will be declared"
-	line "invalid."
+	cont "invalid."
 	done
 
 Text_NextUpOpponentNo:
@@ -491,7 +560,7 @@ Text_SaveBeforeEnteringBattleRoom:
 	text "Before boarding"
 	line "the BATTLE TRAIN,"
 	cont "your progress will"
-	line "be saved. Okay?"
+	cont "be saved. Okay?"
 	done
 
 Text_SaveAndEndTheSession:
@@ -561,10 +630,11 @@ Text_BattleTowerRules:
 BattleSubwayPlatform_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event  2,  3, GOLDENROD_MAGNET_TRAIN_STATION, 3
 	warp_event 14,  5, BATTLE_SUBWAY_TRAIN, 1
 	warp_event 24,  5, BATTLE_SUBWAY_TRAIN, 1
+	warp_event 22,  5, BATTLE_SUBWAY_TRAIN, 1
 
 	db 3 ; coord events
 	coord_event 24,  6, SCENE_FINISHED, Script_BeatenAllTrainers2

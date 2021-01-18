@@ -67,6 +67,13 @@ Link_SaveGame:
 .refused
 	ret
 
+Subway_SaveGame:
+	call PauseGameLogic
+	call _SavingDontTurnOffThePower
+	call ResumeGameLogic
+	and a
+	ret
+
 MoveMonWOMail_SaveGame:
 	call PauseGameLogic
 	push de

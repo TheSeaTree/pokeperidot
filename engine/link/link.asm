@@ -2306,6 +2306,10 @@ TryQuickSave:
 	ld [wChosenCableClubRoom], a
 	ret
 
+DoQuickSave:
+	farcall Subway_SaveGame
+	ret
+
 CheckBothSelectedSameRoom:
 	ld a, [wChosenCableClubRoom]
 	call Link_EnsureSync

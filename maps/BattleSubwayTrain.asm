@@ -53,6 +53,9 @@ Script_BattleRoomLoop:
 	playsound SFX_FULL_HEAL
 	waitsfx
 	opentext
+	writetext Text_Got1BP
+	waitbutton
+	givecoins 1
 	writetext Text_NextUpOpponentNo
 	yesorno
 	iffalse Script_DontBattleNextOpponent
@@ -66,17 +69,20 @@ Script_DontBattleNextOpponent:
 	writetext Text_SaveAndEndTheSession
 	yesorno
 	iffalse Script_DontSaveAndEndTheSession
+	closetext
+	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain2
+	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_BATTLESUBWAYPLATFORM_SUSPEND
+	
 	writebyte BATTLETOWERACTION_SAVELEVELGROUP ; save level group
 	special BattleTowerAction
 	writebyte BATTLETOWERACTION_SAVEOPTIONS ; choose reward
 	special BattleTowerAction
 	writebyte BATTLETOWERACTION_SAVE_AND_QUIT ; quicksave
 	special BattleTowerAction
-	playsound SFX_SAVE
-	waitsfx
-	special FadeOutPalettes
-	special Reset
-
+	
+	warpcheck
+	end
+	
 Script_BeatenAllTrainers:
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
@@ -94,7 +100,7 @@ BattleSubwayTrain_MapEvents:
 	warp_event  1,  5, BATTLE_SUBWAY_PLATFORM, 3
 	warp_event  7,  3, BATTLE_SUBWAY_TRAIN, 3
 	warp_event  0,  3, BATTLE_SUBWAY_TRAIN, 2
-	warp_event  6,  5, BATTLE_SUBWAY_PLATFORM, 3
+	warp_event  6,  5, BATTLE_SUBWAY_PLATFORM, 4
 
 	db 0 ; coord events
 

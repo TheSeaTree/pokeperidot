@@ -14,6 +14,7 @@ SpecialsPointers::
 	add_special WaitForLinkedFriend
 	add_special CheckLinkTimeout
 	add_special TryQuickSave
+	add_special DoQuickSave
 	add_special CheckBothSelectedSameRoom
 	add_special FailedLinkToPast
 	add_special CloseLink
