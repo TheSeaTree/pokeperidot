@@ -100,8 +100,8 @@ Route4_MapEvents:
 	warp_event  8,  13, ROUTE_3_ROUTE_4_GATE, 4
 	warp_event 43,  14, ROUTE_4_FOREST_GATE, 1
 	warp_event 43,  15, ROUTE_4_FOREST_GATE, 2
-	warp_event  4,  46, ROUTE_4_AZALEA_GATE, 3
-	warp_event  4,  47, ROUTE_4_AZALEA_GATE, 4
+	warp_event  4,  46, ROUTE_4_PECTINIA_GATE, 3
+	warp_event  4,  47, ROUTE_4_PECTINIA_GATE, 4
 	warp_event  6,  27, ROUTE_4_HIDDEN_CAVE, 1
 	
 	db 0 ; coord events

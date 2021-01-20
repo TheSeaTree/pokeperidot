@@ -70,11 +70,11 @@ const_value = -1
 	const SPAWN_HOME
 	const SPAWN_DEBUG
 ; johto
-	const SPAWN_NEW_BARK
-	const SPAWN_CHERRYGROVE
-	const SPAWN_AZALEA
+	const SPAWN_ELKHORN
+	const SPAWN_PAVONA
+	const SPAWN_PECTINIA
 	const SPAWN_VIOLET
-	const SPAWN_GOLDENROD
+	const SPAWN_FAVIA
 	const SPAWN_CIANWOOD
 	const SPAWN_ROUTE_9
 	const SPAWN_ECRUTEAK

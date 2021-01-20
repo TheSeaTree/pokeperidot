@@ -40,8 +40,6 @@ CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
 CharcoalKiln_Blocks:
-BillsFamilysHouse_Blocks:
-GoldenrodPPSpeechHouse_Blocks:
 GoldenrodNameRater_Blocks:
 BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
@@ -58,11 +56,10 @@ Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 MrPsychicsHouse_Blocks:
 Route5CleanseTagHouse_Blocks:
-GuideGentsHouse_Blocks:
-AzaleaBikeHouse_Blocks:
-AzaleaEvolutionHouse_Blocks:
-AzaleaGymSpeechHouse_Blocks:
-AzaleaBerryHouse_Blocks:
+PectiniaBikeHouse_Blocks:
+PectiniaEvolutionHouse_Blocks:
+PectiniaGymSpeechHouse_Blocks:
+PectiniaBerryHouse_Blocks:
 VioletMoveTutor_Blocks:
 VioletWeatherHouse_Blocks:
 VioletTradeHouse_Blocks:
@@ -83,23 +80,22 @@ VioletMagikarpHouse_Blocks:
 Route6WaterfallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
-CherrygroveInn_Blocks:
-	INCBIN "maps/CherrygroveInn.ablk"
+PavonaInn_Blocks:
+	INCBIN "maps/PavonaInn.ablk"
 	
-CherrygroveGymSpeechHouse_Blocks:
+PavonaGymSpeechHouse_Blocks:
 	INCBIN "maps/House3.ablk"
 
 Route19FuchsiaGate_Blocks:
 Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
-Route35GoldenrodGate_Blocks:
 Route36RuinsOfAlphGate_Blocks:
-Route3AzaleaGate_Blocks:
+Route3PectiniaGate_Blocks:
 Route40BattleTowerGate_Blocks:
-Route1CherrygroveGate_Blocks:
-Route1NewBarkGate_Blocks:
-Route1GoldenrodGate_Blocks:
-Route11GoldenrodGate_Blocks:
+Route1PavonaGate_Blocks:
+Route1ElkhornGate_Blocks:
+Route1FaviaGate_Blocks:
+Route11FaviaGate_Blocks:
 Route11Route12Gate_Blocks:
 MahoganyGate_Blocks:
 Route6Gate_Blocks:
@@ -127,15 +123,13 @@ EmilysHouse1F_Blocks:
 Route38EcruteakGate_Blocks:
 Route42EcruteakGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
-IlexForestAzaleaGate_Blocks:
 Route15FuchsiaGate_Blocks:
 Route8Route10Gate_Blocks:
-NewBarkForestGate_Blocks:
-Route2AzaleaGate_Blocks:
+Route2PectiniaGate_Blocks:
 Route3Route4Gate_Blocks:
-Route8GoldenrodGate_Blocks:
+Route8FaviaGate_Blocks:
 Route4ForestGate_Blocks:
-Route4AzaleaGate_Blocks:
+Route4PectiniaGate_Blocks:
 Route2Gate_Blocks:
 Route12EcruteakGate_Blocks:
 Route14OlivineGate_Blocks:
@@ -165,14 +159,14 @@ OlivineMart_Blocks:
 EcruteakMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
-AzaleaMart_Blocks:
+PectiniaMart_Blocks:
 PewterMart_Blocks:
 FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 SaffronMart_Blocks:
 OrchidMart_Blocks:
 CianwoodMart_Blocks:
-GoldenrodMart_Blocks:
+FaviaMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
 	
 VioletCafe_Blocks:
@@ -189,10 +183,10 @@ BlackthornPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
 Route10Pokecenter1F_Blocks:
-AzaleaPokecenter1F_Blocks:
+PectiniaPokecenter1F_Blocks:
 VioletPokecenter1F_Blocks:
 Route32Pokecenter1F_Blocks:
-GoldenrodPokecenter1F_Blocks:
+FaviaPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
@@ -200,7 +194,6 @@ SilverCavePokecenter1F_Blocks:
 CianwoodPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
-CherrygrovePokecenter1F_Blocks:
 CarnationPokecenter1F_Blocks:
 OrchidPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
@@ -239,7 +232,7 @@ ElmsHouse_Blocks:
 EcruteakLugiaSpeechHouse_Blocks:
 EcruteakItemfinderHouse_Blocks:
 VioletNicknameSpeechHouse_Blocks:
-GoldenrodHappinessRater_Blocks:
+FaviaHappinessRater_Blocks:
 PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:
 BlackthornRestTalkHouse_Blocks:
@@ -267,8 +260,8 @@ Route5UndergroundPathEntrance_Blocks:
 KurtsHouse_Blocks:
 	INCBIN "maps/KurtsHouse.ablk"
 
-GoldenrodMagnetTrainStation_Blocks:
-	INCBIN "maps/GoldenrodMagnetTrainStation.ablk"
+PectiniaTrainStation_Blocks:
+	INCBIN "maps/PectiniaTrainStation.ablk"
 
 MahoganyMagnetTrainStation_Blocks:
 	INCBIN "maps/MahoganyMagnetTrainStation.ablk"
@@ -288,17 +281,17 @@ RadioTower4F_Blocks:
 RadioTower5F_Blocks:
 	INCBIN "maps/RadioTower5F.ablk"
 
-CherrygroveCity_Blocks:
-	INCBIN "maps/CherrygroveCity.ablk"
+PavonaVillage_Blocks:
+	INCBIN "maps/PavonaVillage.ablk"
 
-AzaleaTown_Blocks:
-	INCBIN "maps/AzaleaTown.ablk"
+PectiniaCity_Blocks:
+	INCBIN "maps/PectiniaCity.ablk"
 
 CianwoodCity_Blocks:
 	INCBIN "maps/CianwoodCity.ablk"
 
-GoldenrodCity_Blocks:
-	INCBIN "maps/GoldenrodCity.ablk"
+FaviaTown_Blocks:
+	INCBIN "maps/FaviaTown.ablk"
 
 OlivineCity_Blocks:
 	INCBIN "maps/OlivineCity.ablk"
@@ -338,12 +331,6 @@ Route18Barn_Blocks:
 
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"
-
-GoldenrodUndergroundSwitchRoomEntrances_Blocks:
-	INCBIN "maps/GoldenrodUndergroundSwitchRoomEntrances.ablk"
-
-GoldenrodUndergroundWarehouse_Blocks:
-	INCBIN "maps/GoldenrodUndergroundWarehouse.ablk"
 
 MountMortar1FOutside_Blocks:
 	INCBIN "maps/MountMortar1FOutside.ablk"
@@ -385,8 +372,8 @@ BrunosRoom_Blocks:
 KarensRoom_Blocks:
 	INCBIN "maps/KarensRoom.ablk"
 
-AzaleaGym_Blocks:
-	INCBIN "maps/AzaleaGym.ablk"
+PectiniaGym_Blocks:
+	INCBIN "maps/PectiniaGym.ablk"
 
 GoldenrodGym_Blocks:
 	INCBIN "maps/GoldenrodGym.ablk"
@@ -409,8 +396,8 @@ MahoganyGym_Blocks:
 OlivineGym_Blocks:
 	INCBIN "maps/OlivineGym.ablk"
 
-CianwoodGym_Blocks:
-	INCBIN "maps/CianwoodGym.ablk"
+FaviaGym_Blocks:
+	INCBIN "maps/FaviaGym.ablk"
 
 OrchidGym1F_Blocks:
 	INCBIN "maps/OrchidGym1F.ablk"
@@ -426,12 +413,6 @@ SECTION "Map Blocks 3", ROMX
 
 IlexForest_Blocks:
 	INCBIN "maps/IlexForest.ablk"
-
-GoldenrodBikeShop_Blocks:
-	INCBIN "maps/GoldenrodBikeShop.ablk"
-
-GoldenrodGameCorner_Blocks:
-	INCBIN "maps/GoldenrodGameCorner.ablk"
 
 PlayersHouse2F_Blocks:
 EmilysHouse2F_Blocks:
@@ -479,8 +460,8 @@ CarnationFlowerShop_Blocks:
 MahoganyDeptStoreRoof_Blocks:
 	INCBIN "maps/MahoganyDeptStoreRoof.ablk"
 
-NewBarkTown_Blocks:
-	INCBIN "maps/NewBarkTown.ablk"
+ElkhornTown_Blocks:
+	INCBIN "maps/ElkhornTown.ablk"
 	
 Route1_Blocks:
 	INCBIN "maps/Route1.ablk"
@@ -569,12 +550,12 @@ FactoryB1_Blocks:
 FactoryBack_Blocks:
 	INCBIN "maps/FactoryBack.ablk"
 	
-AzaleaApartmentLeft_Blocks:
+PectiniaApartmentLeft_Blocks:
 MahoganyApartment1F_Blocks:
-	INCBIN "maps/AzaleaApartmentLeft.ablk"
+	INCBIN "maps/PectiniaApartmentLeft.ablk"
 	
-AzaleaApartmentRight_Blocks:
-	INCBIN "maps/AzaleaApartmentRight.ablk"
+PectiniaApartmentRight_Blocks:
+	INCBIN "maps/PectiniaApartmentRight.ablk"
 	
 PaintersForest_Blocks:
 	INCBIN "maps/PaintersForest.ablk"
@@ -657,21 +638,21 @@ BlackthornCave2F_Blocks:
 BlackthornCaveB1F_Blocks:
 	INCBIN "maps/BlackthornCaveB1F.ablk"
 
-AzaleaApartmentLeft2F_Blocks:
+PectiniaApartmentLeft2F_Blocks:
 MahoganyApartment2F_Blocks:
-	INCBIN "maps/AzaleaApartmentLeft2F.ablk"
+	INCBIN "maps/PectiniaApartmentLeft2F.ablk"
 	
-AzaleaApartmentRight2F_Blocks:
-	INCBIN "maps/AzaleaApartmentRight2F.ablk"
+PectiniaApartmentRight2F_Blocks:
+	INCBIN "maps/PectiniaApartmentRight2F.ablk"
 
-AzaleaApartmentLeft3F_Blocks:
-	INCBIN "maps/AzaleaApartmentLeft3F.ablk"
+PectiniaApartmentLeft3F_Blocks:
+	INCBIN "maps/PectiniaApartmentLeft3F.ablk"
 
 MahoganyApartment3F_Blocks:
 	INCBIN "maps/MahoganyApartment3F.ablk"
 	
-AzaleaApartmentRight3F_Blocks:
-	INCBIN "maps/AzaleaApartmentRight3F.ablk"
+PectiniaApartmentRight3F_Blocks:
+	INCBIN "maps/PectiniaApartmentRight3F.ablk"
 
 BurglarHideout1F_Blocks:
 	INCBIN "maps/BurglarHideout1F.ablk"

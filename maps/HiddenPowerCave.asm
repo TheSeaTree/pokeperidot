@@ -59,7 +59,7 @@ HiddenPowerCave_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  9,  7, CHERRYGROVE_CITY, 5
+	warp_event  9,  7, PAVONA_VILLAGE, 5
 
 	db 0 ; coord events
 

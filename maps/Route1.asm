@@ -469,10 +469,10 @@ Route1_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  23,  3, ROUTE_1_NEW_BARK_GATE, 3
-	warp_event   9, 29, ROUTE_1_CHERRYGROVE_GATE, 1
-	warp_event  10, 29, ROUTE_1_CHERRYGROVE_GATE, 2
-	warp_event  61,  5, ROUTE_1_GOLDENROD_GATE, 3
+	warp_event  23,  3, ROUTE_1_ELKHORN_GATE, 3
+	warp_event   9, 29, ROUTE_1_PAVONA_GATE, 1
+	warp_event  10, 29, ROUTE_1_PAVONA_GATE, 2
+	warp_event  61,  5, ROUTE_1_FAVIA_GATE, 3
 	warp_event  39,  7, CHARCOAL_KILN, 1
 
 	db 1 ; coord events

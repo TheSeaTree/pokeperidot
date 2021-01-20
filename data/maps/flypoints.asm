@@ -7,11 +7,11 @@ Flypoints:
 ; landmark, spawn point
 	const_def
 ; Johto
-	flypoint NEW_BARK,     NEW_BARK_TOWN
-	flypoint CHERRYGROVE,  CHERRYGROVE_CITY
-	flypoint AZALEA,       AZALEA_TOWN
+	flypoint ELKHORN,      ELKHORN_TOWN
+	flypoint PAVONA,  	   PAVONA_VILLAGE
+	flypoint PECTINIA,     PECTINIA_CITY
 	flypoint VIOLET,       VIOLET_CITY
-	flypoint GOLDENROD,    GOLDENROD_CITY
+	flypoint FAVIA,	       FAVIA_TOWN
 	flypoint CIANWOOD,     CIANWOOD_CITY
 	flypoint ROUTE_9,      ROUTE_9
 	flypoint ECRUTEAK,     ECRUTEAK_CITY

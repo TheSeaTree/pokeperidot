@@ -26,7 +26,7 @@ JohtoWaterWildMons:
 	db 20, QUAGSIRE
 	db 20, TENTACRUEL
 	
-	map_id NEW_BARK_TOWN
+	map_id ELKHORN_TOWN
 	db 2 percent ; encounter rate
 	db 26, GOLDEEN
 	db 24, POLIWAG
@@ -42,7 +42,7 @@ JohtoWaterWildMons:
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 
-	map_id CHERRYGROVE_CITY
+	map_id PAVONA_VILLAGE
 	db 2 percent ; encounter rate
 	db 26, GOLDEEN
 	db 24, POLIWAG

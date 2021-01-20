@@ -222,8 +222,8 @@ MahoganyMagnetTrainStation_MapEvents:
 	db 4 ; warp events
 	warp_event  8, 17, MAHOGANY_TOWN, 5
 	warp_event  9, 17, MAHOGANY_TOWN, 5
-	warp_event  6,  5, GOLDENROD_MAGNET_TRAIN_STATION, 4
-	warp_event 10,  5, GOLDENROD_MAGNET_TRAIN_STATION, 3
+	warp_event  6,  5, PECTINIA_TRAIN_STATION, 4
+	warp_event 10,  5, PECTINIA_TRAIN_STATION, 3
 
 	db 1 ; coord events
 	coord_event 11,  5, -1, Script_ArriveFromGoldenrod

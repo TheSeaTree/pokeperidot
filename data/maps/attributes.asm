@@ -90,11 +90,11 @@ endc
 endc
 ENDM
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, NORTH | SOUTH
+	map_attributes ElkhornTown, ELKHORN_TOWN, $05, NORTH | SOUTH
 	connection north, Route11, ROUTE_11, 2
 	connection south, Route1, ROUTE_1, -3
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $05, WEST | EAST
+	map_attributes PavonaVillage, PAVONA_VILLAGE, $05, WEST | EAST
 	connection west, Route30, ROUTE_30, -1
 	connection east, Route2, ROUTE_2, 7
 
@@ -102,11 +102,11 @@ ENDM
 	connection north, Route6, ROUTE_6,  -11
 	connection south, Route5, ROUTE_5, -9
 
-	map_attributes AzaleaTown, AZALEA_TOWN, $05, 0
+	map_attributes PectiniaCity, PECTINIA_CITY, $05, 0
 
 	map_attributes CianwoodCity, CIANWOOD_CITY, $35, 0
 
-	map_attributes GoldenrodCity, GOLDENROD_CITY, $05, 0
+	map_attributes FaviaTown, FAVIA_TOWN, $05, 0
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
 	connection east, SeaRoute1, SEA_ROUTE_1, 5
@@ -129,7 +129,7 @@ ENDM
 
 	map_attributes Route30, ROUTE_30, $05, NORTH | EAST
 	connection north, Route9, ROUTE_9, 0
-	connection east, CherrygroveCity, CHERRYGROVE_CITY, 1
+	connection east, PavonaVillage, PAVONA_VILLAGE, 1
 	
 	map_attributes Route9, ROUTE_9, $20, SOUTH | WEST
 	connection south, Route30, ROUTE_30, 0
@@ -139,10 +139,10 @@ ENDM
 	connection east, Route9, ROUTE_9, -4
 
 	map_attributes Route2, ROUTE_2, $05, WEST
-	connection west, CherrygroveCity, CHERRYGROVE_CITY, -7
+	connection west, PavonaVillage, PAVONA_VILLAGE, -7
 
 	map_attributes Route1, ROUTE_1, $05, NORTH
-	connection north, NewBarkTown, NEW_BARK_TOWN, 3
+	connection north, ElkhornTown, ELKHORN_TOWN, 3
 
 	map_attributes SeaRoute3, SEA_ROUTE_3, $71, WEST | EAST
 	connection west, SeaRoute1, SEA_ROUTE_1, -1
@@ -176,7 +176,7 @@ ENDM
 
 	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
 	connection north, Route12, ROUTE_12, -18
-	connection south, NewBarkTown, NEW_BARK_TOWN, -2
+	connection south, ElkhornTown, ELKHORN_TOWN, -2
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
 	connection south, VioletCity, VIOLET_CITY, 11
@@ -278,21 +278,18 @@ ENDM
 	map_attributes BlackthornMart, BLACKTHORN_MART, $00, 0
 	map_attributes BlackthornPokecenter1F, BLACKTHORN_POKECENTER_1F, $00, 0
 	map_attributes MoveDeletersHouse, MOVE_DELETERS_HOUSE, $00, 0
-	map_attributes AzaleaPokecenter1F, AZALEA_POKECENTER_1F, $00, 0
+	map_attributes PectiniaPokecenter1F, PECTINIA_POKECENTER_1F, $00, 0
 	map_attributes CharcoalKiln, CHARCOAL_KILN, $00, 0
-	map_attributes AzaleaMart, AZALEA_MART, $00, 0
+	map_attributes PectiniaMart, PECTINIA_MART, $00, 0
 	map_attributes KurtsHouse, KURTS_HOUSE, $00, 0
-	map_attributes AzaleaGym, AZALEA_GYM, $00, 0
+	map_attributes PectiniaGym, PECTINIA_GYM, $00, 0
 	map_attributes VioletCafe, VIOLET_CAFE, $00, 0
 	map_attributes VioletGym, VIOLET_GYM, $00, 0
 	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
 	map_attributes GoldenrodGym, GOLDENROD_GYM, $00, 0
-	map_attributes GoldenrodBikeShop, GOLDENROD_BIKE_SHOP, $00, 0
-	map_attributes GoldenrodHappinessRater, GOLDENROD_HAPPINESS_RATER, $00, 0
-	map_attributes BillsFamilysHouse, BILLS_FAMILYS_HOUSE, $00, 0
-	map_attributes GoldenrodMagnetTrainStation, GOLDENROD_MAGNET_TRAIN_STATION, $00, 0
+	map_attributes FaviaHappinessRater, FAVIA_HAPPINESS_RATER, $00, 0
+	map_attributes PectiniaTrainStation, PECTINIA_TRAIN_STATION, $00, 0
 	map_attributes CarnationFlowerShop, CARNATION_FLOWER_SHOP, $00, 0
-	map_attributes GoldenrodPPSpeechHouse, GOLDENROD_PP_SPEECH_HOUSE, $00, 0
 	map_attributes GoldenrodNameRater, GOLDENROD_NAME_RATER, $00, 0
 	map_attributes MahoganyDeptStore1F, MAHOGANY_DEPT_STORE_1F, $00, 0
 	map_attributes MahoganyDeptStore2F, MAHOGANY_DEPT_STORE_2F, $00, 0
@@ -302,11 +299,9 @@ ENDM
 	map_attributes MahoganyDeptStore6F, MAHOGANY_DEPT_STORE_6F, $00, 0
 	map_attributes MahoganyDeptStoreElevator, MAHOGANY_DEPT_STORE_ELEVATOR, $00, 0
 	map_attributes MahoganyDeptStoreRoof, MAHOGANY_DEPT_STORE_ROOF, $24, 0
-	map_attributes GoldenrodGameCorner, GOLDENROD_GAME_CORNER, $00, 0
-	map_attributes GoldenrodPokecenter1F, GOLDENROD_POKECENTER_1F, $00, 0
-	map_attributes IlexForestAzaleaGate, ILEX_FOREST_AZALEA_GATE, $00, 0
+	map_attributes FaviaPokecenter1F, FAVIA_POKECENTER_1F, $00, 0
 	map_attributes DayCare, DAY_CARE, $00, 0
-	map_attributes Route3AzaleaGate, ROUTE_3_AZALEA_GATE, $00, 0
+	map_attributes Route3PectiniaGate, ROUTE_3_PECTINIA_GATE, $00, 0
 	map_attributes Route6SurfersHouse, ROUTE_6_SURFERS_HOUSE, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
 	map_attributes WillsRoom, WILLS_ROOM, $00, 0
@@ -321,16 +316,15 @@ ENDM
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes NewBarkForestGate, NEW_BARK_FOREST_GATE, $00, 0
 	map_attributes Route8Route10Gate, ROUTE_8_ROUTE_10_GATE, $00, 0
 	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
-	map_attributes CianwoodGym, CIANWOOD_GYM, $79, 0
+	map_attributes FaviaGym, FAVIA_GYM, $79, 0
 	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0
 	map_attributes CianwoodMart, CIANWOOD_MART, $00, 0
 	map_attributes CianwoodPhotoStudio, CIANWOOD_PHOTO_STUDIO, $00, 0
 	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $00, 0
 	map_attributes PokeSeersHouse, POKE_SEERS_HOUSE, $00, 0
-	map_attributes GoldenrodMart, GOLDENROD_MART, $00, 0
+	map_attributes FaviaMart, FAVIA_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
 	map_attributes Route2Gate, ROUTE_2_GATE, $00, 0
 	map_attributes MaplesLab, MAPLES_LAB, $00, 0
@@ -338,17 +332,15 @@ ENDM
 	map_attributes PlayersHouse2F, PLAYERS_HOUSE_2F, $00, 0
 	map_attributes PlayersNeighborsHouse, PLAYERS_NEIGHBORS_HOUSE, $00, 0
 	map_attributes ElmsHouse, ELMS_HOUSE, $00, 0
-	map_attributes Route1NewBarkGate, ROUTE_1_NEW_BARK_GATE, $00, 0
-	map_attributes Route1GoldenrodGate, ROUTE_1_GOLDENROD_GATE, $00, 0
+	map_attributes Route1ElkhornGate, ROUTE_1_ELKHORN_GATE, $00, 0
+	map_attributes Route1FaviaGate, ROUTE_1_FAVIA_GATE, $00, 0
 	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
-	map_attributes Route1CherrygroveGate, ROUTE_1_CHERRYGROVE_GATE, $00, 0
+	map_attributes Route1PavonaGate, ROUTE_1_PAVONA_GATE, $00, 0
 	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes OrchidMart, ORCHID_MART, $00, 0
-	map_attributes CherrygrovePokecenter1F, CHERRYGROVE_POKECENTER_1F, $00, 0
-	map_attributes CherrygroveGymSpeechHouse, CHERRYGROVE_GYM_SPEECH_HOUSE, $00, 0
-	map_attributes GuideGentsHouse, GUIDE_GENTS_HOUSE, $00, 0
-	map_attributes CherrygroveInn, CHERRYGROVE_INN, $00, 0
-	map_attributes Route2AzaleaGate, ROUTE_2_AZALEA_GATE, $00, 0
+	map_attributes PavonaGymSpeechHouse, PAVONA_GYM_SPEECH_HOUSE, $00, 0
+	map_attributes PavonaInn, PAVONA_INN, $00, 0
+	map_attributes Route2PectiniaGate, ROUTE_2_PECTINIA_GATE, $00, 0
 	map_attributes VioletGymB1, VIOLET_GYM_B1, $0A, 0
 	map_attributes PalerockMountain1F, PALEROCK_MOUNTAIN_1F, $09, 0
 	map_attributes PalerockMountain2F, PALEROCK_MOUNTAIN_2F, $09, 0
@@ -358,27 +350,27 @@ ENDM
 	map_attributes PalerockMountainStrengthRoom, PALEROCK_MOUNTAIN_STRENGTH_ROOM, $09, 0
 	map_attributes Route9ForestGate, ROUTE_9_FOREST_GATE, $00, 0
 	map_attributes EcruteakForestGate, ECRUTEAK_FOREST_GATE, $00, 0
-	map_attributes Route8GoldenrodGate, ROUTE_8_GOLDENROD_GATE, $00, 0
+	map_attributes Route8FaviaGate, ROUTE_8_FAVIA_GATE, $00, 0
 	map_attributes EastForest, EAST_FOREST, $05, 0
 	map_attributes Route4ForestGate, ROUTE_4_FOREST_GATE, $00, 0
-	map_attributes Route4AzaleaGate, ROUTE_4_AZALEA_GATE, $00, 0
+	map_attributes Route4PectiniaGate, ROUTE_4_PECTINIA_GATE, $00, 0
 	map_attributes HiddenPowerCave, HIDDEN_POWER_CAVE, $09, 0
 	map_attributes Factory1F, FACTORY_1F, $00, 0
 	map_attributes FactoryB1, FACTORY_B1, $00, 0
 	map_attributes FactoryBack, FACTORY_BACK, $00, 0
 	map_attributes CianwoodChurch, CIANWOOD_CHURCH, $00, 0
-	map_attributes AzaleaApartmentLeft, AZALEA_APARTMENT_LEFT, $00, 0
-	map_attributes AzaleaApartmentRight, AZALEA_APARTMENT_RIGHT, $00, 0
-	map_attributes AzaleaGymSpeechHouse, AZALEA_GYM_SPEECH_HOUSE, $00, 0
-	map_attributes AzaleaEvolutionHouse, AZALEA_EVOLUTION_HOUSE, $00, 0
-	map_attributes AzaleaBikeHouse, AZALEA_BIKE_HOUSE, $00, 0
-	map_attributes AzaleaBerryHouse, AZALEA_BERRY_HOUSE, $00, 0
+	map_attributes PectiniaApartmentLeft, PECTINIA_APARTMENT_LEFT, $00, 0
+	map_attributes PectiniaApartmentRight, PECTINIA_APARTMENT_RIGHT, $00, 0
+	map_attributes PectiniaGymSpeechHouse, PECTINIA_GYM_SPEECH_HOUSE, $00, 0
+	map_attributes PectiniaEvolutionHouse, PECTINIA_EVOLUTION_HOUSE, $00, 0
+	map_attributes PectiniaBikeHouse, PECTINIA_BIKE_HOUSE, $00, 0
+	map_attributes PectiniaBerryHouse, PECTINIA_BERRY_HOUSE, $00, 0
 	map_attributes VioletMoveTutor, VIOLET_MOVE_TUTOR, $00, 0
 	map_attributes VioletWeatherHouse, VIOLET_WEATHER_HOUSE, $00, 0
 	map_attributes VioletTradeHouse, VIOLET_TRADE_HOUSE, $00, 0
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
-	map_attributes Route11GoldenrodGate, ROUTE_11_GOLDENROD_GATE, $00, 0	
+	map_attributes Route11FaviaGate, ROUTE_11_FAVIA_GATE, $00, 0	
 	map_attributes Route11Route12Gate, ROUTE_11_ROUTE_12_GATE, $00, 0	
 	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $6D, 0
 	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
@@ -412,10 +404,10 @@ ENDM
 	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
 	map_attributes BlackthornCave2F, BLACKTHORN_CAVE_2F, $09, 0
 	map_attributes BlackthornCaveB1F, BLACKTHORN_CAVE_B1F, $09, 0
-	map_attributes AzaleaApartmentLeft2F, AZALEA_APARTMENT_LEFT_2F, $00, 0
-	map_attributes AzaleaApartmentRight2F, AZALEA_APARTMENT_RIGHT_2F, $00, 0
-	map_attributes AzaleaApartmentLeft3F, AZALEA_APARTMENT_LEFT_3F, $00, 0
-	map_attributes AzaleaApartmentRight3F, AZALEA_APARTMENT_RIGHT_3F, $00, 0
+	map_attributes PectiniaApartmentLeft2F, PECTINIA_APARTMENT_LEFT_2F, $00, 0
+	map_attributes PectiniaApartmentRight2F, PECTINIA_APARTMENT_RIGHT_2F, $00, 0
+	map_attributes PectiniaApartmentLeft3F, PECTINIA_APARTMENT_LEFT_3F, $00, 0
+	map_attributes PectiniaApartmentRight3F, PECTINIA_APARTMENT_RIGHT_3F, $00, 0
 	map_attributes MahoganySubstituteHouse, SUBSTITUTE_HOUSE, $00, 0
 	map_attributes MahoganyApartment1F, MAHOGANY_APARTMENT_1F, $00, 0
 	map_attributes MahoganyApartment2F, MAHOGANY_APARTMENT_2F, $00, 0

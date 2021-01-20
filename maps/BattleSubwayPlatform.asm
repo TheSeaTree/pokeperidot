@@ -654,7 +654,7 @@ BattleSubwayPlatform_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  2,  3, GOLDENROD_MAGNET_TRAIN_STATION, 3
+	warp_event  2,  3, PECTINIA_TRAIN_STATION, 3
 	warp_event 14,  5, BATTLE_SUBWAY_TRAIN, 1
 	warp_event 24,  5, BATTLE_SUBWAY_TRAIN, 1
 	warp_event 22,  5, BATTLE_SUBWAY_TRAIN, 1

@@ -235,7 +235,7 @@ MapleAfterStarterScript:
 	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	setscene SCENE_MAPLESLAB_AIDE_GIVES_POTION
-	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL
+	setmapscene PAVONA_VILLAGE, SCENE_PAVONAVILLAGE_MEET_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_FINISHED
 	end
 
@@ -879,8 +879,8 @@ MaplesLab_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 11, CHERRYGROVE_CITY, 3
-	warp_event  5, 11, CHERRYGROVE_CITY, 3
+	warp_event  4, 11, PAVONA_VILLAGE, 3
+	warp_event  5, 11, PAVONA_VILLAGE, 3
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript

@@ -326,8 +326,8 @@ Route2_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  39, 32, ROUTE_2_AZALEA_GATE, 1
-	warp_event  39, 33, ROUTE_2_AZALEA_GATE, 2
+	warp_event  39, 32, ROUTE_2_PECTINIA_GATE, 1
+	warp_event  39, 33, ROUTE_2_PECTINIA_GATE, 2
 	warp_event  39,  2, ROUTE_2_GATE, 1
 	warp_event  39,  3, ROUTE_2_GATE, 2
 	

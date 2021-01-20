@@ -3,12 +3,12 @@
 
 ; Johto landmarks
 	const SPECIAL_MAP       ; 00
-	const NEW_BARK_TOWN     ; 01
+	const ELKHORN_TOWN      ; 01
 	const ROUTE_1           ; 30
-	const CHERRYGROVE_CITY  ; 03
+	const PAVONA_VILLAGE    ; 03
 	const ROUTE_30          ; 04
 	const ROUTE_2           ; 32
-	const AZALEA_TOWN       ; 0c
+	const PECTINIA_CITY       ; 0c
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
 	const VIRIDIAN_FOREST   ; 0e
@@ -16,7 +16,7 @@
 	const VIOLET_CITY       ; 06
 	const ROUTE_6           ; 3c
 	const ROUTE_7           ; 40
-	const GOLDENROD_CITY    ; 10
+	const FAVIA_TOWN    ; 10
 	const ROUTE_8           ; 43
 	const DIGLETTS_CAVE     ; 3e
 	const CIANWOOD_CITY     ; 21

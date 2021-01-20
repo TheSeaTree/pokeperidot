@@ -162,25 +162,25 @@ ENDM
 	newgroup                                                      ;  8
 
 	map_const ROUTE_3,                                     32, 22 ;  1
-	map_const ROUTE_3_AZALEA_GATE,                          5,  4 ; 12
-	map_const AZALEA_POKECENTER_1F,                         5,  4 ;  1
+	map_const ROUTE_3_PECTINIA_GATE,                          5,  4 ; 12
+	map_const PECTINIA_POKECENTER_1F,                         5,  4 ;  1
 	map_const CHARCOAL_KILN,                                4,  4 ;  2
-	map_const AZALEA_MART,                                  6,  4 ;  3
+	map_const PECTINIA_MART,                                  6,  4 ;  3
 	map_const KURTS_HOUSE,                                  8,  4 ;  4
-	map_const AZALEA_GYM,                                   9,  9 ;  5
-	map_const AZALEA_TOWN,                                 30, 20 ;  7
-	map_const AZALEA_APARTMENT_LEFT,                        6,  4
-	map_const AZALEA_APARTMENT_LEFT_2F,                     6,  4
-	map_const AZALEA_APARTMENT_LEFT_3F,                     6,  4
-	map_const AZALEA_APARTMENT_RIGHT,                       6,  4
-	map_const AZALEA_APARTMENT_RIGHT_2F,                    6,  4
-	map_const AZALEA_APARTMENT_RIGHT_3F,                    6,  4
-	map_const AZALEA_GYM_SPEECH_HOUSE,                      4,  4
-	map_const AZALEA_EVOLUTION_HOUSE,                       4,  4
-	map_const AZALEA_BIKE_HOUSE,                            4,  4
-	map_const AZALEA_BERRY_HOUSE,                           4,  4
+	map_const PECTINIA_GYM,                                   9,  9 ;  5
+	map_const PECTINIA_CITY,                                 30, 20 ;  7
+	map_const PECTINIA_APARTMENT_LEFT,                        6,  4
+	map_const PECTINIA_APARTMENT_LEFT_2F,                     6,  4
+	map_const PECTINIA_APARTMENT_LEFT_3F,                     6,  4
+	map_const PECTINIA_APARTMENT_RIGHT,                       6,  4
+	map_const PECTINIA_APARTMENT_RIGHT_2F,                    6,  4
+	map_const PECTINIA_APARTMENT_RIGHT_3F,                    6,  4
+	map_const PECTINIA_GYM_SPEECH_HOUSE,                      4,  4
+	map_const PECTINIA_EVOLUTION_HOUSE,                       4,  4
+	map_const PECTINIA_BIKE_HOUSE,                            4,  4
+	map_const PECTINIA_BERRY_HOUSE,                           4,  4
 	map_const ROUTE_4_FOREST_GATE,                          5,  4
-	map_const ROUTE_4_AZALEA_GATE,                          5,  4
+	map_const ROUTE_4_PECTINIA_GATE,                          5,  4
 
 	newgroup                                                      ;  9
 
@@ -211,23 +211,18 @@ ENDM
 
 	newgroup                                                      ; 11
 
-	map_const GOLDENROD_CITY,                              18, 17 ;  2
-	map_const CIANWOOD_GYM,                                16, 22 ;  5
-	map_const GOLDENROD_BIKE_SHOP,                          4,  4 ;  4
-	map_const GOLDENROD_HAPPINESS_RATER,                    4,  4 ;  5
-	map_const BILLS_FAMILYS_HOUSE,                          4,  4 ;  6
-	map_const GOLDENROD_MAGNET_TRAIN_STATION,               9,  9 ;  7
+	map_const FAVIA_TOWN,                              18, 17 ;  2
+	map_const FAVIA_GYM,                                16, 22 ;  5
+	map_const FAVIA_HAPPINESS_RATER,                    4,  4 ;  5
+	map_const PECTINIA_TRAIN_STATION,               9,  9 ;  7
 	map_const CARNATION_FLOWER_SHOP,                        4,  4 ;  8
-	map_const GOLDENROD_PP_SPEECH_HOUSE,                    4,  4 ;  9
 	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
-	map_const GOLDENROD_GAME_CORNER,                       10,  7 ; 19
-	map_const GOLDENROD_POKECENTER_1F,                      5,  4 ; 20
-	map_const ROUTE_8_GOLDENROD_GATE,                       5,  4 ; 21
-	map_const ILEX_FOREST_AZALEA_GATE,                      5,  4 ; 22
+	map_const FAVIA_POKECENTER_1F,                      5,  4 ; 20
+	map_const ROUTE_8_FAVIA_GATE,                       5,  4 ; 21
 	map_const DAY_CARE,                                     4,  4 ; 24
-	map_const ROUTE_1_GOLDENROD_GATE,                       5,  4 ; 13
-	map_const GOLDENROD_MART,                               6,  4
-	map_const ROUTE_11_GOLDENROD_GATE,                      5,  4
+	map_const ROUTE_1_FAVIA_GATE,                       5,  4 ; 13
+	map_const FAVIA_MART,                               6,  4
+	map_const ROUTE_11_FAVIA_GATE,                      5,  4
 	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4
 
 	newgroup                                                      ; 12
@@ -295,7 +290,6 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const NEW_BARK_FOREST_GATE,                         5,  4 ; 25
 	map_const ROUTE_8_ROUTE_10_GATE,                        5,  4 ; 26
 	map_const LUGIA_CAVE_1F,                                5,  4 ;  3
 	map_const LUGIA_CAVE_B1F,                              16, 13 ;  3
@@ -339,14 +333,14 @@ ENDM
 	newgroup                                                      ; 24
 
 	map_const ROUTE_1,                                     33, 17 ;  1
-	map_const NEW_BARK_TOWN,                               12, 11 ;  4
+	map_const ELKHORN_TOWN,                               12, 11 ;  4
 	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
 	map_const MAPLES_LAB,                                   5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
 	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  8
 	map_const ELMS_HOUSE,                                   4,  4 ;  9
-	map_const ROUTE_1_NEW_BARK_GATE,                        5,  4 ; 13
+	map_const ROUTE_1_ELKHORN_GATE,                        5,  4 ; 13
 
 	newgroup                                                      ; 25
 
@@ -359,14 +353,12 @@ ENDM
 	newgroup                                                      ; 26
 
 	map_const ROUTE_30,                                    18, 18 ;  1
-	map_const ROUTE_1_CHERRYGROVE_GATE,                     5,  4 ; 14
+	map_const ROUTE_1_PAVONA_GATE,                     5,  4 ; 14
 	map_const ROUTE_2,                                     23, 20 ;  1
-	map_const CHERRYGROVE_CITY,                            17, 16 ;  3
-	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  5
-	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  6
-	map_const GUIDE_GENTS_HOUSE,                            4,  4 ;  7
-	map_const CHERRYGROVE_INN,                              5,  4 ;  8
-	map_const ROUTE_2_AZALEA_GATE,                          5,  4 ; 11
+	map_const PAVONA_VILLAGE,                            17, 16 ;  3
+	map_const PAVONA_GYM_SPEECH_HOUSE,                 4,  4 ;  6
+	map_const PAVONA_INN,                              5,  4 ;  8
+	map_const ROUTE_2_PECTINIA_GATE,                          5,  4 ; 11
 	map_const ROUTE_9,                                     20, 13 ; 13
 	map_const SUICUNE_LAIR,	    							7,  3
 

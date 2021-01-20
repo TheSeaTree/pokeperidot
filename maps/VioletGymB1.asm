@@ -42,7 +42,7 @@ VioletGymB1CecilScript:
 	iftrue .Team4
 	checkflag ENGINE_FLYPOINT_CIANWOOD
 	iftrue .Team3
-	checkflag ENGINE_FLYPOINT_GOLDENROD
+	checkflag ENGINE_FLYPOINT_FAVIA
 	iftrue .Team2
 	ifgreater 2, .Team2
 	loadtrainer CECIL, CECIL1

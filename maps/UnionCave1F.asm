@@ -234,7 +234,7 @@ UnionCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 41, 15, CHERRYGROVE_CITY, 4
+	warp_event 41, 15, PAVONA_VILLAGE, 4
 	warp_event 27,  7, UNION_CAVE_B1F, 1
 	warp_event 17,  7, UNION_CAVE_B1F, 2
 	warp_event  5,  9, ROUTE_9, 1

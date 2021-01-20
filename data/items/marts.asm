@@ -2,7 +2,7 @@ Marts:
 ; entries correspond to MART_* constants
 	dw MartOrchid
 	dw MartViolet
-	dw MartAzalea
+	dw MartPectinia
 	dw MartCianwood
 	dw MartCianwoodRobbed
 	dw MartDeptStore2F1
@@ -16,8 +16,8 @@ Marts:
 	dw MartMahogany
 	dw MartBlackthorn
 	dw MartBlackthornTM
-	dw MartGoldenrod
-	dw MartGoldenrodTM
+	dw MartFavia
+	dw MartFaviaTM
 	dw MartPewter
 	dw MartCerulean
 	dw MartLavender
@@ -51,7 +51,7 @@ MartViolet:
 	db SWEET_TEA
 	db -1 ; end
 
-MartAzalea:
+MartPectinia:
 	db 6 ; # items
 	db POKE_BALL
 	db POTION
@@ -199,7 +199,7 @@ MartBlackthornTM:
 	db TM_SHADOW_BALL
 	db -1
 
-MartGoldenrod:
+MartFavia:
 	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
@@ -211,7 +211,7 @@ MartGoldenrod:
 	db ETHER
 	db -1 ; end
 	
-MartGoldenrodTM:
+MartFaviaTM:
 	db 3
 	db TM_PROTECT
 	db TM_ENDURE

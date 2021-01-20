@@ -4,11 +4,11 @@ treemon_map: MACRO
 ENDM
 
 TreeMonMaps:
-	treemon_map NEW_BARK_TOWN,             TREEMON_SET_TOWN
+	treemon_map ELKHORN_TOWN,              TREEMON_SET_TOWN
 	treemon_map ROUTE_1,                   TREEMON_SET_ROUTE
-	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_TOWN
+	treemon_map PAVONA_VILLAGE,            TREEMON_SET_TOWN
 	treemon_map ROUTE_2,                   TREEMON_SET_FOREST
-	treemon_map AZALEA_TOWN,               TREEMON_SET_CITY
+	treemon_map PECTINIA_CITY,             TREEMON_SET_CITY
 	treemon_map ROUTE_3,                   TREEMON_SET_ROUTE
 	treemon_map ROUTE_4,                   TREEMON_SET_LAKE
 	treemon_map EAST_FOREST,               TREEMON_SET_FOREST
@@ -20,7 +20,7 @@ TreeMonMaps:
 	treemon_map ROUTE_11,                  TREEMON_SET_ROUTE
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
 	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
-	treemon_map GOLDENROD_CITY,            TREEMON_SET_CITY
+	treemon_map FAVIA_TOWN,                TREEMON_SET_CITY
 	treemon_map CIANWOOD_CITY,             TREEMON_SET_CITY
 	treemon_map ROUTE_12,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_13,                  TREEMON_SET_ROUTE
@@ -35,7 +35,7 @@ TreeMonMaps:
 	db -1
 
 RockMonMaps:
-	treemon_map CHERRYGROVE_CITY,          TREEMON_SET_ROCK
+	treemon_map PAVONA_VILLAGE,            TREEMON_SET_ROCK
 	treemon_map ROUTE_3,                   TREEMON_SET_ROCK
 	treemon_map ROUTE_6,           		   TREEMON_SET_KANTO
 	treemon_map SEA_ROUTE_4,       		   TREEMON_SET_KANTO

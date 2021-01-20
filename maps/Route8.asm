@@ -231,8 +231,8 @@ Route8_MapEvents:
 
 	db 7 ; warp events
 	warp_event 31, 21, ROUTE_6_UNDERGROUND, 7
-	warp_event  4, 58, ROUTE_8_GOLDENROD_GATE, 3
-	warp_event  4, 59, ROUTE_8_GOLDENROD_GATE, 4
+	warp_event  4, 58, ROUTE_8_FAVIA_GATE, 3
+	warp_event  4, 59, ROUTE_8_FAVIA_GATE, 4
 	warp_event 33, 50, ROUTE_8_ROUTE_10_GATE, 1
 	warp_event 33, 51, ROUTE_8_ROUTE_10_GATE, 2
 	warp_event 15, 45, ROUTE_8_SILK_SCARF_HOUSE, 1

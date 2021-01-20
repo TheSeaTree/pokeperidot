@@ -17,16 +17,16 @@ MapScenes::
 	scene_var KARENS_ROOM,                                 wKarensRoomSceneID
 	scene_var LANCES_ROOM,                                 wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                                wHallOfFameSceneID
-	scene_var NEW_BARK_TOWN,                               wNewBarkTownSceneID
+	scene_var ELKHORN_TOWN,                                wNewBarkTownSceneID
 	scene_var MAPLES_LAB,                                  wMaplesLabSceneID
 	scene_var PLAYERS_HOUSE_1F,                            wPlayersHouse1FSceneID
-	scene_var CHERRYGROVE_CITY,                            wCherrygroveCitySceneID
-	scene_var AZALEA_TOWN,                                 wAzaleaTownSceneID
-	scene_var GOLDENROD_CITY,                              wGoldenrodGymSceneID
-	scene_var GOLDENROD_MAGNET_TRAIN_STATION,              wGoldenrodMagnetTrainStationSceneID
-	scene_var GOLDENROD_POKECENTER_1F,                     wGoldenrodPokecenter1FSceneID
+	scene_var PAVONA_VILLAGE,                              wCherrygroveCitySceneID
+	scene_var PECTINIA_CITY,                                 wAzaleaTownSceneID
+	scene_var FAVIA_TOWN,                              	   wGoldenrodGymSceneID
+	scene_var PECTINIA_TRAIN_STATION,              wGoldenrodMagnetTrainStationSceneID
+	scene_var FAVIA_POKECENTER_1F,                         wGoldenrodPokecenter1FSceneID
 	scene_var OLIVINE_CITY,                                wOlivineCitySceneID
-	scene_var AZALEA_GYM,                                  wRoute34SceneID ; unused
+	scene_var PECTINIA_GYM,                                  wRoute34SceneID ; unused
 	scene_var VIOLET_GYM,                                  wVioletGymSceneID
 	scene_var ECRUTEAK_POKECENTER_1F,                      wEcruteakPokecenter1FSceneID
 	scene_var POWER_PLANT_1F_B,                            wMahoganyTownSceneID
