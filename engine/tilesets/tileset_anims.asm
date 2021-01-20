@@ -263,14 +263,16 @@ TilesetRoofAnim:
 TilesetGateAnim:
 	dw vTiles2 tile $22, ScrollTileUp
 	dw vTiles2 tile $23, ScrollTileDown
+	dw vTiles2 tile $22, ScrollTileUp
+	dw vTiles2 tile $23, ScrollTileDown
 	dw vTiles2 tile $32, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw vTiles2 tile $1e, AnimateFountain
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateYellowPalette
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
