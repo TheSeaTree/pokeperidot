@@ -60,8 +60,8 @@ COLL_BRAKE_57          EQU $57 ; unused
 COLL_5B                EQU $5b ; garbage
 COLL_PIT               EQU $60
 COLL_VIRTUAL_BOY       EQU $61 ; garbage
-COLL_64                EQU $64 ; garbage
-COLL_65                EQU $65 ; garbage
+COLL_ESCALATOR_DOWN    EQU $64
+COLL_ESCALATOR_UP      EQU $65
 COLL_BUTTON            EQU $68 ; unused
 COLL_WARP_CARPET_DOWN  EQU $70
 COLL_DOOR              EQU $71

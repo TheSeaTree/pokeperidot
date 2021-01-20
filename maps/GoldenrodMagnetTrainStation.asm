@@ -68,6 +68,51 @@ Script_ArriveFromSaffron:
 
 GoldenrodMagnetTrainStationGentlemanScript:
 	jumptextfaceplayer GoldenrodMagnetTrainStationGentlemanText
+	
+Script_EscalatorUp:
+	applymovement PLAYER, EscalatorMovementUp
+	end
+	
+Script_EscalatorDown:
+	checkcode VAR_FACING
+	ifequal UP, .clearflag
+	setflag ENGINE_DOWNHILL
+	end
+	
+.clearflag
+	clearflag ENGINE_DOWNHILL
+	end
+	
+Script_EscalatorDown2:
+	checkcode VAR_FACING
+	ifequal UP, .setflag
+	clearflag ENGINE_DOWNHILL
+	end
+	
+.setflag
+	setflag ENGINE_DOWNHILL
+	end
+	
+Script_EscalatorWrongWay:
+	jumptext EscalatorWrongWayText
+	
+EscalatorMovementUp:
+	slow_slide_step UP
+	slow_slide_step UP
+	step_end
+	
+EscalatorMovementDown:
+	slow_slide_step DOWN
+	slow_slide_step DOWN
+	step_end
+	
+EscalatorMovementWrongWayDown:
+	step DOWN
+	step_end
+	
+EscalatorMovementWrongWayUp:
+	step UP
+	step_end
 
 MovementData_0x55146:
 	step UP
@@ -164,21 +209,27 @@ GoldenrodMagnetTrainStationGentlemanText:
 	line "JOHTO much closer"
 	cont "to KANTO."
 	done
+	
+EscalatorWrongWayText:
+	text "Please use the"
+	line "other escalator."
+	done
 
 GoldenrodMagnetTrainStation_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 3 ; warp events
 	warp_event  8, 17, AZALEA_TOWN, 2
 	warp_event  9, 17, AZALEA_TOWN, 2
-	warp_event  6,  5, MAHOGANY_MAGNET_TRAIN_STATION, 4
-	warp_event 10,  5, MAHOGANY_MAGNET_TRAIN_STATION, 3
+	warp_event  9,  8, BATTLE_SUBWAY_PLATFORM, 1
 
 	db 1 ; coord events
-	coord_event 11,  5, SCENE_DEFAULT, Script_ArriveFromSaffron
+	coord_event 18,  8, SCENE_DEFAULT, Script_ArriveFromSaffron
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 17,  6, BGEVENT_READ, Script_EscalatorWrongWay
+	bg_event 17,  5, BGEVENT_READ, Script_EscalatorWrongWay
 
 	db 2 ; object events
-	object_event  9,  9, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
-	object_event 11, 14, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
+	object_event  9,  5, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationOfficerScript, -1
+	object_event 10, 13, SPRITE_GENTLEMAN, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, GoldenrodMagnetTrainStationGentlemanScript, EVENT_GOLDENROD_TRAIN_STATION_GENTLEMAN
