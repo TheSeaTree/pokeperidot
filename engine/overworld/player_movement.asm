@@ -276,6 +276,14 @@ DoPlayerMovement::
 	jp z, .bump
 
 	ld a, [wPlayerStandingTile]
+	cp COLL_ESCALATOR_DOWN
+	jp z, .escalatordown
+
+	ld a, [wPlayerStandingTile]
+	cp COLL_ESCALATOR_UP
+	jp z, .escalatorup
+
+	ld a, [wPlayerStandingTile]
 	call CheckIceTile
 	jp nc, .ice
 
@@ -293,7 +301,7 @@ DoPlayerMovement::
 	cp DOWN
 	jr z, .fast
 
-	ld a, STEP_WALK
+	ld a, STEP_ICE
 	call .DoStep
 	scf
 	ret
@@ -343,6 +351,36 @@ DoPlayerMovement::
 
 .ice
 	ld a, STEP_ICE
+	call .DoStep
+	scf
+	ret
+	
+.escalatordown
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .slow
+
+	ld a, DOWN
+	ld [wWalkingDirection], a
+	jr .escalatorslide
+
+.escalatorup
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .slow
+
+	ld a, UP
+	ld [wWalkingDirection], a
+	
+.escalatorslide
+	ld a, STEP_SLIDE
+	call .DoStep
+	ld a, 5
+	scf
+	ret
+
+.slow
+	ld a, STEP_SLOW
 	call .DoStep
 	scf
 	ret
@@ -502,11 +540,12 @@ DoPlayerMovement::
 	dw .NormalStep
 	dw .FastStep
 	dw .JumpStep
-	dw .SlideStep
+	dw .IceStep
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .FinishFacing
 	dw .RunStep
+	dw .SlideStep
 
 .SlowStep:
 	slow_step DOWN
@@ -528,7 +567,7 @@ DoPlayerMovement::
 	jump_step UP
 	jump_step LEFT
 	jump_step RIGHT
-.SlideStep:
+.IceStep:
 	fast_slide_step DOWN
 	fast_slide_step UP
 	fast_slide_step LEFT
@@ -553,6 +592,11 @@ DoPlayerMovement::
 	run_step UP
 	run_step LEFT
 	run_step RIGHT
+.SlideStep
+	slide_step DOWN
+	slide_step UP
+	turn_head LEFT
+	turn_head RIGHT
 
 .StandInPlace:
 	ld a, 0
