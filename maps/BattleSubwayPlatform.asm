@@ -303,6 +303,12 @@ Script_FailedBattleTowerChallenge:
 	closetext
 	end
 
+BattleSubwayPlatformBugCatcherScript:
+	jumptextfaceplayer BattleSubwayPlatformBugCatcherText
+
+BattleSubwayPlatformPokefanFScript:
+	jumptextfaceplayer BattleSubwayPlatformPokefanFText
+
 MovementData_BattleTower1FWalkToElevator:
 	step RIGHT
 	step RIGHT
@@ -626,6 +632,23 @@ Text_BattleTowerRules:
 	para "level restrictions"
 	line "placed on them."
 	done
+	
+BattleSubwayPlatformBugCatcherText:
+	text "I am going to save"
+	line "up all the BP that"
+	cont "I earn for some-"
+	cont "thing good!"
+	done
+	
+BattleSubwayPlatformPokefanFText:
+	text "The BATTLE SUBWAY"
+	line "has lots of tough"
+	cont "competition."
+	
+	para "The trainers who"
+	line "ride it take batt-"
+	cont "les very serious."
+	done
 
 BattleSubwayPlatform_MapEvents:
 	db 0, 0 ; filler
@@ -644,8 +667,11 @@ BattleSubwayPlatform_MapEvents:
 	db 1 ; bg events
 	bg_event  5,  6, BGEVENT_READ, BattleSubwayRulesSign
 	
-	db 4 ; object events
+	db 7 ; object events
 	object_event  6,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl1, -1
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl2, -1
 	object_event 10,  7, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Script_Conductor, -1
 	object_event 23,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
+	object_event  1,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
+	object_event 15,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
