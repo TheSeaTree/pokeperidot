@@ -26,7 +26,7 @@ PectiniaGymMurphyScript:
 	waitbutton
 	closetext
 	winlosstext MurphyText_ResearchIncomplete, 0
-	checkflag ENGINE_FLYPOINT_VIOLET
+	checkflag ENGINE_FLYPOINT_RIDGE
 	iftrue .Team2
 	loadtrainer MURPHY, MURPHY1
 	startbattle
@@ -58,7 +58,7 @@ PectiniaGymMurphyScript:
 	verbosegiveitem TM_ROCK_SMASH
 	iffalse .NoRoomForFuryCutter
 	setevent EVENT_GOT_TM_ROCK_SMASH
-	setmapscene VIOLET_CITY, SCENE_FINISHED
+	setmapscene RIDGE_VILLAGE, SCENE_FINISHED
 	writetext MurphyText_FuryCutterSpeech
 	waitbutton
 	closetext

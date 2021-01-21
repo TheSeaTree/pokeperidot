@@ -40,7 +40,7 @@ CeruleanPoliceStation_Blocks:
 CeruleanTradeSpeechHouse_Blocks:
 BillsHouse_Blocks:
 CharcoalKiln_Blocks:
-GoldenrodNameRater_Blocks:
+NameRater_Blocks:
 BluesHouse_Blocks:
 PewterNidoranSpeechHouse_Blocks:
 PewterSnoozeSpeechHouse_Blocks:
@@ -48,9 +48,7 @@ BillsBrothersHouse_Blocks:
 LavenderSpeechHouse_Blocks:
 LavenderNameRater_Blocks:
 Route5SuperRodHouse_Blocks:
-ManiasHouse_Blocks:
-CianwoodPhotoStudio_Blocks:
-CianwoodLugiaSpeechHouse_Blocks:
+HepaticaLugiaSpeechHouse_Blocks:
 PokeSeersHouse_Blocks:
 Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
@@ -60,23 +58,23 @@ PectiniaBikeHouse_Blocks:
 PectiniaEvolutionHouse_Blocks:
 PectiniaGymSpeechHouse_Blocks:
 PectiniaBerryHouse_Blocks:
-VioletMoveTutor_Blocks:
-VioletWeatherHouse_Blocks:
-VioletTradeHouse_Blocks:
+RidgeMoveTutor_Blocks:
+RidgeWeatherHouse_Blocks:
+RidgeTradeHouse_Blocks:
 Route8SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
 Route12Shelter_Blocks:
-EcruteakThiefHouse_Blocks:
-EcruteakFriendBallHouse_Blocks:
+StaghornThiefHouse_Blocks:
+StaghornFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
 FluteMasterHouse_Blocks:
 MahoganySubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
-EcruteakRichardsHouse_Blocks:
+StaghornRichardsHouse_Blocks:
 BlackthornLassHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
 Route11CleanseTagHouse_Blocks:
-VioletMagikarpHouse_Blocks:
+RidgeMagikarpHouse_Blocks:
 Route6WaterfallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
 
@@ -120,8 +118,8 @@ PlayersHouse1F_Blocks:
 EmilysHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
 
-Route38EcruteakGate_Blocks:
-Route42EcruteakGate_Blocks:
+Route38StaghornGate_Blocks:
+Route42StaghornGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
 Route15FuchsiaGate_Blocks:
 Route8Route10Gate_Blocks:
@@ -131,9 +129,9 @@ Route8FaviaGate_Blocks:
 Route4ForestGate_Blocks:
 Route4PectiniaGate_Blocks:
 Route2Gate_Blocks:
-Route12EcruteakGate_Blocks:
+Route12StaghornGate_Blocks:
 Route14OlivineGate_Blocks:
-Route21EcruteakGate_Blocks:
+Route21StaghornGate_Blocks:
 CarnationZooGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
@@ -156,7 +154,7 @@ Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
 OlivineMart_Blocks:
-EcruteakMart_Blocks:
+StaghornMart_Blocks:
 BlackthornMart_Blocks:
 CeruleanMart_Blocks:
 PectiniaMart_Blocks:
@@ -165,33 +163,33 @@ FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 SaffronMart_Blocks:
 OrchidMart_Blocks:
-CianwoodMart_Blocks:
+HepaticaMart_Blocks:
 FaviaMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
 	
-VioletCafe_Blocks:
+RidgeCafe_Blocks:
 MahoganyCafe_Blocks:
-	INCBIN "maps/VioletCafe.ablk"
+	INCBIN "maps/RidgeCafe.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
 
 OlivinePokecenter1F_Blocks:
 MahoganyPokecenter1F_Blocks:
-EcruteakPokecenter1F_Blocks:
+StaghornPokecenter1F_Blocks:
 BlackthornPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
 Route10Pokecenter1F_Blocks:
 PectiniaPokecenter1F_Blocks:
-VioletPokecenter1F_Blocks:
+RidgePokecenter1F_Blocks:
 Route32Pokecenter1F_Blocks:
 FaviaPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
 SilverCavePokecenter1F_Blocks:
-CianwoodPokecenter1F_Blocks:
+HepaticaPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
 CarnationPokecenter1F_Blocks:
@@ -229,9 +227,8 @@ TimeCapsule_Blocks:
 ElmsHouse_Blocks:
 	INCBIN "maps/ElmsHouse.ablk"
 
-EcruteakLugiaSpeechHouse_Blocks:
-EcruteakItemfinderHouse_Blocks:
-VioletNicknameSpeechHouse_Blocks:
+StaghornLugiaSpeechHouse_Blocks:
+StaghornItemfinderHouse_Blocks:
 FaviaHappinessRater_Blocks:
 PaintersHouse_Blocks:
 OlivineSurfHouse_Blocks:
@@ -287,8 +284,8 @@ PavonaVillage_Blocks:
 PectiniaCity_Blocks:
 	INCBIN "maps/PectiniaCity.ablk"
 
-CianwoodCity_Blocks:
-	INCBIN "maps/CianwoodCity.ablk"
+HepaticaTown_Blocks:
+	INCBIN "maps/HepaticaTown.ablk"
 
 FaviaTown_Blocks:
 	INCBIN "maps/FaviaTown.ablk"
@@ -296,8 +293,8 @@ FaviaTown_Blocks:
 OlivineCity_Blocks:
 	INCBIN "maps/OlivineCity.ablk"
 
-EcruteakCity_Blocks:
-	INCBIN "maps/EcruteakCity.ablk"
+StaghornTown_Blocks:
+	INCBIN "maps/StaghornTown.ablk"
 
 MahoganyTown_Blocks:
 	INCBIN "maps/MahoganyTown.ablk"
@@ -375,20 +372,20 @@ KarensRoom_Blocks:
 PectiniaGym_Blocks:
 	INCBIN "maps/PectiniaGym.ablk"
 
-GoldenrodGym_Blocks:
-	INCBIN "maps/GoldenrodGym.ablk"
+HepaticaGym_Blocks:
+	INCBIN "maps/HepaticaGym.ablk"
 
-GoldenrodGymNorthChamber_Blocks:
-	INCBIN "maps/GoldenrodGymNorthChamber.ablk"
+HepaticaGymNorthChamber_Blocks:
+	INCBIN "maps/HepaticaGymNorthChamber.ablk"
 
-GoldenrodGymEastChamber_Blocks:
-	INCBIN "maps/GoldenrodGymEastChamber.ablk"
+HepaticaGymEastChamber_Blocks:
+	INCBIN "maps/HepaticaGymEastChamber.ablk"
 
-GoldenrodGymWestChamber_Blocks:
-	INCBIN "maps/GoldenrodGymWestChamber.ablk"
+HepaticaGymWestChamber_Blocks:
+	INCBIN "maps/HepaticaGymWestChamber.ablk"
 
-EcruteakGym_Blocks:
-	INCBIN "maps/EcruteakGym.ablk"
+StaghornGym_Blocks:
+	INCBIN "maps/StaghornGym.ablk"
 
 MahoganyGym_Blocks:
 	INCBIN "maps/MahoganyGym.ablk"
@@ -466,11 +463,11 @@ ElkhornTown_Blocks:
 Route1_Blocks:
 	INCBIN "maps/Route1.ablk"
 
-VioletGym_Blocks:
-	INCBIN "maps/VioletGym.ablk"
+RidgeGym_Blocks:
+	INCBIN "maps/RidgeGym.ablk"
 	
-VioletCity_Blocks:
-	INCBIN "maps/VioletCity.ablk"
+RidgeVillage_Blocks:
+	INCBIN "maps/RidgeVillage.ablk"
 	
 Route5_Blocks:
 	INCBIN "maps/Route5.ablk"
@@ -478,8 +475,8 @@ Route5_Blocks:
 Route6_Blocks:
 	INCBIN "maps/Route6.ablk"
 	
-CianwoodChurch_Blocks:
-	INCBIN "maps/CianwoodChurch.ablk"
+HepaticaChurch_Blocks:
+	INCBIN "maps/HepaticaChurch.ablk"
 	
 LugiaCave1F_Blocks:
 	INCBIN "maps/LugiaCave1F.ablk"
@@ -498,8 +495,8 @@ LugiaLair_Blocks:
 	
 SECTION "Map Blocks 4", ROMX
 
-VioletGymB1_Blocks:
-	INCBIN "maps/VioletGymB1.ablk"
+RidgeGymB1_Blocks:
+	INCBIN "maps/RidgeGymB1.ablk"
 	
 PalerockMountain1F_Blocks:
 	INCBIN "maps/PalerockMountain1F.ablk"
@@ -529,7 +526,7 @@ PalerockMountainStrengthRoom_Blocks:
 	INCBIN "maps/PalerockMountainStrengthRoom.ablk"
 	
 Route9ForestGate_Blocks:
-EcruteakForestGate_Blocks:
+StaghornForestGate_Blocks:
 	INCBIN "maps/Route9ForestGate.ablk"
 	
 Route8_Blocks:
@@ -560,14 +557,14 @@ PectiniaApartmentRight_Blocks:
 PaintersForest_Blocks:
 	INCBIN "maps/PaintersForest.ablk"
 	
-CianwoodCave1F_Blocks:
-	INCBIN "maps/CianwoodCave1F.ablk"
+HepaticaCave1F_Blocks:
+	INCBIN "maps/HepaticaCave1F.ablk"
 
-CianwoodCaveB1F_Blocks:
-	INCBIN "maps/CianwoodCaveB1F.ablk"
+HepaticaCaveB1F_Blocks:
+	INCBIN "maps/HepaticaCaveB1F.ablk"
 
-CianwoodCaveB2F_Blocks:
-	INCBIN "maps/CianwoodCaveB2F.ablk"
+HepaticaCaveB2F_Blocks:
+	INCBIN "maps/HepaticaCaveB2F.ablk"
 	
 OverlookMaze_Blocks:
 	INCBIN "maps/OverlookMaze.ablk"

@@ -10,11 +10,11 @@ Flypoints:
 	flypoint ELKHORN,      ELKHORN_TOWN
 	flypoint PAVONA,  	   PAVONA_VILLAGE
 	flypoint PECTINIA,     PECTINIA_CITY
-	flypoint VIOLET,       VIOLET_CITY
+	flypoint RIDGE,        RIDGE_VILLAGE
 	flypoint FAVIA,	       FAVIA_TOWN
-	flypoint CIANWOOD,     CIANWOOD_CITY
+	flypoint HEPATICA,     HEPATICA_TOWN
 	flypoint ROUTE_9,      ROUTE_9
-	flypoint ECRUTEAK,     ECRUTEAK_CITY
+	flypoint STAGHORN,     STAGHORN_TOWN
 	flypoint MAHOGANY,     MAHOGANY_TOWN
 	flypoint CARNATION,	   CARNATION_TOWN
 	flypoint BLACKTHORN,   BLACKTHORN_CITY

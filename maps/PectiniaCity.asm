@@ -133,7 +133,7 @@ PectiniaGymConfirm:
 	playsound SFX_ENTER_DOOR
 	disappear PECTINIACITY_GYM_GUY
 	setevent EVENT_GYM_EXPLAINATION
-	setmapscene VIOLET_GYM, SCENE_FINISHED
+	setmapscene RIDGE_GYM, SCENE_FINISHED
 	end	
 	
 PectiniaBurglar:

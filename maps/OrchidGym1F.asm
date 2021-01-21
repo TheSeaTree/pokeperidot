@@ -35,7 +35,7 @@ BlackthornCantLeave:
 	
 .Leave
 	opentext
-	writetext EcruteakGymHaveBadge
+	writetext BlackthornGymHaveBadge
 	waitbutton
 	closetext
 	applymovement PLAYER, BlackthornLeaveGym

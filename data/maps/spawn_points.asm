@@ -13,11 +13,11 @@ SpawnPoints:
 	spawn ELKHORN_TOWN,               17, 12
 	spawn PAVONA_VILLAGE,             15, 22
 	spawn PECTINIA_CITY,              49,  8
-	spawn VIOLET_CITY,                 9,  8
+	spawn RIDGE_VILLAGE,               9,  8
 	spawn FAVIA_TOWN,                 19, 16
-	spawn CIANWOOD_CITY,              11, 20
+	spawn HEPATICA_TOWN,              11, 20
 	spawn ROUTE_9,                    26,  6
-	spawn ECRUTEAK_CITY,              13, 20
+	spawn STAGHORN_TOWN,              13, 20
 	spawn OLIVINE_CITY,               13, 22
 	spawn MAHOGANY_TOWN,              31, 30
 	spawn CARNATION_TOWN,             19,  6

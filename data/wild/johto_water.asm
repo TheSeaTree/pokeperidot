@@ -90,7 +90,7 @@ JohtoWaterWildMons:
 	db 15, POLIWAG
 	db 20, POLIWHIRL
 
-	map_id VIOLET_CITY
+	map_id RIDGE_VILLAGE
 	db 2 percent ; encounter rate
 	db 20, POLIWAG
 	db 15, POLIWAG
@@ -178,7 +178,7 @@ JohtoWaterWildMons:
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 	
-	map_id ECRUTEAK_CITY
+	map_id STAGHORN_TOWN
 	db 2 percent ; encounter rate
 	db 24, POLIWHIRL
 	db 24, POLIWHIRL

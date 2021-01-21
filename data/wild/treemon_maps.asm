@@ -13,15 +13,15 @@ TreeMonMaps:
 	treemon_map ROUTE_4,                   TREEMON_SET_LAKE
 	treemon_map EAST_FOREST,               TREEMON_SET_FOREST
 	treemon_map ROUTE_5,                   TREEMON_SET_ROUTE
-	treemon_map VIOLET_CITY,               TREEMON_SET_TOWN
+	treemon_map RIDGE_VILLAGE,             TREEMON_SET_TOWN
 	treemon_map ROUTE_8,                   TREEMON_SET_FOREST
 	treemon_map ROUTE_10_NORTH,            TREEMON_SET_FOREST
 	treemon_map ROUTE_9,                   TREEMON_SET_ROUTE
 	treemon_map ROUTE_11,                  TREEMON_SET_ROUTE
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST
-	treemon_map ECRUTEAK_CITY,             TREEMON_SET_TOWN
+	treemon_map STAGHORN_TOWN,             TREEMON_SET_TOWN
 	treemon_map FAVIA_TOWN,                TREEMON_SET_CITY
-	treemon_map CIANWOOD_CITY,             TREEMON_SET_CITY
+	treemon_map HEPATICA_TOWN,             TREEMON_SET_CITY
 	treemon_map ROUTE_12,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_13,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_14,                  TREEMON_SET_ROUTE

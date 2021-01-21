@@ -8,22 +8,22 @@
 	const PAVONA_VILLAGE    ; 03
 	const ROUTE_30          ; 04
 	const ROUTE_2           ; 32
-	const PECTINIA_CITY       ; 0c
+	const PECTINIA_CITY     ; 0c
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
 	const VIRIDIAN_FOREST   ; 0e
 	const ROUTE_5           ; 3a
-	const VIOLET_CITY       ; 06
+	const RIDGE_VILLAGE     ; 06
 	const ROUTE_6           ; 3c
 	const ROUTE_7           ; 40
-	const FAVIA_TOWN    ; 10
+	const FAVIA_TOWN        ; 10
 	const ROUTE_8           ; 43
 	const DIGLETTS_CAVE     ; 3e
-	const CIANWOOD_CITY     ; 21
+	const HEPATICA_TOWN     ; 21
 	const UNION_CAVE        ; 0a
 	const ROUTE_9           ; 41
 	const ILEX_FOREST       ; 0e
-	const ECRUTEAK_CITY     ; 16
+	const STAGHORN_TOWN     ; 16
 	const PAINTERS_FOREST
 	const ROUTE_10          ; 49
 	const ROUTE_11          ; 4a

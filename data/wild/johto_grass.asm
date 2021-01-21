@@ -515,7 +515,7 @@ JohtoGrassWildMons:
 	db 15, ONIX
 	db 16, FERRODON
 	
-	map_id CIANWOOD_CITY
+	map_id HEPATICA_TOWN
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, TEDDIURSA
@@ -542,7 +542,7 @@ JohtoGrassWildMons:
 	db 16, GASTLY
 	db 16, GASTLY
 
-	map_id CIANWOOD_CAVE_1F
+	map_id HEPATICA_CAVE_1F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 19, SHIFUR
@@ -569,7 +569,7 @@ JohtoGrassWildMons:
 	db 18, SMOOCHUM
 	db 21, SMOOCHUM
 	
-	map_id CIANWOOD_CAVE_B1F
+	map_id HEPATICA_CAVE_B1F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT
@@ -596,7 +596,7 @@ JohtoGrassWildMons:
 	db 20, DUNSPARCE
 	db 21, DUNSPARCE
 	
-	map_id CIANWOOD_CAVE_B2F
+	map_id HEPATICA_CAVE_B2F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, ZUBAT

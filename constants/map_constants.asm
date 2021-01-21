@@ -90,10 +90,10 @@ ENDM
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
 	map_const PALEROCK_CAVE_B2F,                            6,  4 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91
-	map_const CIANWOOD_CAVE_1F,                             7,  6
-	map_const CIANWOOD_CAVE_B1F,                           20, 15
+	map_const HEPATICA_CAVE_1F,                             7,  6
+	map_const HEPATICA_CAVE_B1F,                           20, 15
 	map_const NEVERMELTICE_CHAMBER,                         5,  7
-	map_const CIANWOOD_CAVE_B2F,                           21, 17
+	map_const HEPATICA_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
 	map_const LOST_LAND,		                           29,  20
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
@@ -105,15 +105,15 @@ ENDM
 
 	newgroup                                                      ;  4
 
-	map_const ECRUTEAK_POKECENTER_1F,                       5,  4 ;  3
-	map_const ECRUTEAK_MART,                                6,  4 ;  6
-	map_const ECRUTEAK_GYM,                                11, 13 ;  7
-	map_const ECRUTEAK_CITY,                               22, 15 ;  9
-	map_const ECRUTEAK_FOREST_GATE,                         6,  4 ; 10
+	map_const STAGHORN_POKECENTER_1F,                       5,  4 ;  3
+	map_const STAGHORN_MART,                                6,  4 ;  6
+	map_const STAGHORN_GYM,                                11, 13 ;  7
+	map_const STAGHORN_TOWN,                               22, 15 ;  9
+	map_const STAGHORN_FOREST_GATE,                         6,  4 ; 10
 	map_const PAINTERS_FOREST,                              7,  9
 	map_const PAINTERS_HOUSE,                               4,  4
-	map_const ROUTE_12_ECRUTEAK_GATE,						5,  4
-	map_const ECRUTEAK_THIEF_HOUSE,							4,  4
+	map_const ROUTE_12_STAGHORN_GATE,						5,  4
+	map_const STAGHORN_THIEF_HOUSE,							4,  4
 	map_const FRIEND_BALL_HOUSE,							4,  4
 	map_const RICHARDS_HOUSE,		    					4,  4
 	map_const EMILYS_HOUSE_1F,                              5,  4 ;  6
@@ -126,7 +126,7 @@ ENDM
 	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
 	map_const BLACKTHORN_CITY,                             32, 16 ; 10
 	map_const ROUTE_21,									   27, 10
-	map_const ROUTE_21_ECRUTEAK_GATE,						5,  4
+	map_const ROUTE_21_STAGHORN_GATE,						5,  4
 	map_const BLACKTHORN_REST_TALK_HOUSE,                   4,  4
 	map_const BLACKTHORN_LASS_HOUSE,                        4,  4
 	map_const FLUTE_MASTER_HOUSE,                           4,  4
@@ -196,15 +196,15 @@ ENDM
 	map_const ROUTE_5,                                     27, 13 ;  1
 	map_const ROUTE_6,                                     37, 16 ;  1
 	map_const ROUTE_10_NORTH,                              16, 14 ; 14
-	map_const VIOLET_CITY,                                 27, 12 ;  5
-	map_const VIOLET_CAFE,                                  7,  4 ;  6
-	map_const VIOLET_GYM,                                   5,  4 ;  7
-	map_const VIOLET_POKECENTER_1F,                         5,  4 ; 10
-	map_const VIOLET_GYM_B1,							   18, 16 ; 18
-	map_const VIOLET_MOVE_TUTOR,                            4,  4
-	map_const VIOLET_WEATHER_HOUSE,                         4,  4
-	map_const VIOLET_TRADE_HOUSE,                           4,  4
-	map_const VIOLET_MAGIKARP_HOUSE,                        4,  4 ; 13
+	map_const RIDGE_VILLAGE,                                 27, 12 ;  5
+	map_const RIDGE_CAFE,                                  7,  4 ;  6
+	map_const RIDGE_GYM,                                   5,  4 ;  7
+	map_const RIDGE_POKECENTER_1F,                         5,  4 ; 10
+	map_const RIDGE_GYM_B1,							   18, 16 ; 18
+	map_const RIDGE_MOVE_TUTOR,                            4,  4
+	map_const RIDGE_WEATHER_HOUSE,                         4,  4
+	map_const RIDGE_TRADE_HOUSE,                           4,  4
+	map_const RIDGE_MAGIKARP_HOUSE,                        4,  4 ; 13
 	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
 	map_const ROUTE_4_HIDDEN_CAVE,                          5,  7
 	map_const ROUTE_8_HIDDEN_CAVE,                          5,  7
@@ -216,7 +216,7 @@ ENDM
 	map_const FAVIA_HAPPINESS_RATER,                    4,  4 ;  5
 	map_const PECTINIA_TRAIN_STATION,               9,  9 ;  7
 	map_const CARNATION_FLOWER_SHOP,                        4,  4 ;  8
-	map_const GOLDENROD_NAME_RATER,                         4,  4 ; 10
+	map_const NAME_RATER,                         4,  4 ; 10
 	map_const FAVIA_POKECENTER_1F,                      5,  4 ; 20
 	map_const ROUTE_8_FAVIA_GATE,                       5,  4 ; 21
 	map_const DAY_CARE,                                     4,  4 ; 24
@@ -299,18 +299,16 @@ ENDM
 
 	newgroup                                                      ; 22
 
-	map_const CIANWOOD_CITY,                               18, 23 ;  3
-	map_const MANIAS_HOUSE,                                 4,  4 ;  4
-	map_const CIANWOOD_POKECENTER_1F,                       5,  4 ;  6
-	map_const CIANWOOD_MART,                                6,  4 ;  7
-	map_const CIANWOOD_PHOTO_STUDIO,                        4,  4 ;  8
-	map_const CIANWOOD_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
+	map_const HEPATICA_TOWN,                               18, 23 ;  3
+	map_const HEPATICA_POKECENTER_1F,                       5,  4 ;  6
+	map_const HEPATICA_MART,                                6,  4 ;  7
+	map_const HEPATICA_LUGIA_SPEECH_HOUSE,                  4,  4 ;  9
 	map_const POKE_SEERS_HOUSE,                             4,  4 ; 10
-	map_const CIANWOOD_CHURCH,                              7, 11
-	map_const GOLDENROD_GYM,                                9,  9 ;  3
-	map_const GOLDENROD_GYM_NORTH_CHAMBER,                  9, 10 ;  3
-	map_const GOLDENROD_GYM_EAST_CHAMBER,                   8, 10 ;  3
-	map_const GOLDENROD_GYM_WEST_CHAMBER,                   8, 10 ;  3
+	map_const HEPATICA_CHURCH,                              7, 11
+	map_const HEPATICA_GYM,                                9,  9 ;  3
+	map_const HEPATICA_GYM_NORTH_CHAMBER,                  9, 10 ;  3
+	map_const HEPATICA_GYM_EAST_CHAMBER,                   8, 10 ;  3
+	map_const HEPATICA_GYM_WEST_CHAMBER,                   8, 10 ;  3
 
 	newgroup                                                      ; 23
 

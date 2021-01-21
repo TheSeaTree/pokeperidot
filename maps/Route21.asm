@@ -169,8 +169,8 @@ Route21_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 47,  2, ROUTE_21_ECRUTEAK_GATE, 1
-	warp_event 47,  3, ROUTE_21_ECRUTEAK_GATE, 2
+	warp_event 47,  2, ROUTE_21_STAGHORN_GATE, 1
+	warp_event 47,  3, ROUTE_21_STAGHORN_GATE, 2
 	warp_event 13, 15, BURGLAR_HIDEOUT_1F, 1
 
 	db 0 ; coord events

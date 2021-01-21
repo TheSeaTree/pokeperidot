@@ -98,24 +98,24 @@ ENDM
 	connection west, Route30, ROUTE_30, -1
 	connection east, Route2, ROUTE_2, 7
 
-	map_attributes VioletCity, VIOLET_CITY, $05, NORTH | SOUTH
+	map_attributes RidgeVillage, RIDGE_VILLAGE, $05, NORTH | SOUTH
 	connection north, Route6, ROUTE_6,  -11
 	connection south, Route5, ROUTE_5, -9
 
 	map_attributes PectiniaCity, PECTINIA_CITY, $05, 0
 
-	map_attributes CianwoodCity, CIANWOOD_CITY, $35, 0
+	map_attributes HepaticaTown, HEPATICA_TOWN, $35, 0
 
 	map_attributes FaviaTown, FAVIA_TOWN, $05, 0
 
 	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
 	connection east, SeaRoute1, SEA_ROUTE_1, 5
 
-	map_attributes EcruteakCity, ECRUTEAK_CITY, $05, NORTH
+	map_attributes StaghornTown, STAGHORN_TOWN, $05, NORTH
 	connection north, PaintersForest, PAINTERS_FOREST, 7
 	
 	map_attributes PaintersForest, PAINTERS_FOREST, $05, SOUTH
-	connection south, EcruteakCity, ECRUTEAK_CITY, -7
+	connection south, StaghornTown, STAGHORN_TOWN, -7
 
 	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
 
@@ -179,7 +179,7 @@ ENDM
 	connection south, ElkhornTown, ELKHORN_TOWN, -2
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
-	connection south, VioletCity, VIOLET_CITY, 11
+	connection south, RidgeVillage, RIDGE_VILLAGE, 11
 	connection west, SeaRoute4, SEA_ROUTE_4, 2
 	
 	map_attributes SeaRoute5, SEA_ROUTE_5, $35, NORTH
@@ -194,7 +194,7 @@ ENDM
 	connection west, SeaRoute6, SEA_ROUTE_6, 20
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
-	connection north, VioletCity, VIOLET_CITY, 9
+	connection north, RidgeVillage, RIDGE_VILLAGE, 9
 	connection south, Route4, ROUTE_4, -8
 
 	map_attributes Route3, ROUTE_3, $05, 0
@@ -269,9 +269,9 @@ ENDM
 	map_attributes PalerockCave1F, PALEROCK_CAVE_1F, $09, 0
 	map_attributes PalerockCaveB1F, PALEROCK_CAVE_B1F, $09, 0
 	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
-	map_attributes EcruteakPokecenter1F, ECRUTEAK_POKECENTER_1F, $00, 0
-	map_attributes EcruteakMart, ECRUTEAK_MART, $00, 0
-	map_attributes EcruteakGym, ECRUTEAK_GYM, $00, 0
+	map_attributes StaghornPokecenter1F, STAGHORN_POKECENTER_1F, $00, 0
+	map_attributes StaghornMart, STAGHORN_MART, $00, 0
+	map_attributes StaghornGym, STAGHORN_GYM, $00, 0
 	map_attributes OrchidGym1F, ORCHID_GYM_1F, $00, 0
 	map_attributes OrchidGymB1F, ORCHID_GYM_B1F, $01, 0
 	map_attributes OrchidGymLeaderRoom, ORCHID_GYM_LEADER_ROOM, $00, 0
@@ -283,14 +283,14 @@ ENDM
 	map_attributes PectiniaMart, PECTINIA_MART, $00, 0
 	map_attributes KurtsHouse, KURTS_HOUSE, $00, 0
 	map_attributes PectiniaGym, PECTINIA_GYM, $00, 0
-	map_attributes VioletCafe, VIOLET_CAFE, $00, 0
-	map_attributes VioletGym, VIOLET_GYM, $00, 0
-	map_attributes VioletPokecenter1F, VIOLET_POKECENTER_1F, $00, 0
-	map_attributes GoldenrodGym, GOLDENROD_GYM, $00, 0
+	map_attributes RidgeCafe, RIDGE_CAFE, $00, 0
+	map_attributes RidgeGym, RIDGE_GYM, $00, 0
+	map_attributes RidgePokecenter1F, RIDGE_POKECENTER_1F, $00, 0
+	map_attributes HepaticaGym, HEPATICA_GYM, $00, 0
 	map_attributes FaviaHappinessRater, FAVIA_HAPPINESS_RATER, $00, 0
 	map_attributes PectiniaTrainStation, PECTINIA_TRAIN_STATION, $00, 0
 	map_attributes CarnationFlowerShop, CARNATION_FLOWER_SHOP, $00, 0
-	map_attributes GoldenrodNameRater, GOLDENROD_NAME_RATER, $00, 0
+	map_attributes NameRater, NAME_RATER, $00, 0
 	map_attributes MahoganyDeptStore1F, MAHOGANY_DEPT_STORE_1F, $00, 0
 	map_attributes MahoganyDeptStore2F, MAHOGANY_DEPT_STORE_2F, $00, 0
 	map_attributes MahoganyDeptStore3F, MAHOGANY_DEPT_STORE_3F, $00, 0
@@ -317,12 +317,10 @@ ENDM
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
 	map_attributes Route8Route10Gate, ROUTE_8_ROUTE_10_GATE, $00, 0
-	map_attributes ManiasHouse, MANIAS_HOUSE, $00, 0
 	map_attributes FaviaGym, FAVIA_GYM, $79, 0
-	map_attributes CianwoodPokecenter1F, CIANWOOD_POKECENTER_1F, $00, 0
-	map_attributes CianwoodMart, CIANWOOD_MART, $00, 0
-	map_attributes CianwoodPhotoStudio, CIANWOOD_PHOTO_STUDIO, $00, 0
-	map_attributes CianwoodLugiaSpeechHouse, CIANWOOD_LUGIA_SPEECH_HOUSE, $00, 0
+	map_attributes HepaticaPokecenter1F, HEPATICA_POKECENTER_1F, $00, 0
+	map_attributes HepaticaMart, HEPATICA_MART, $00, 0
+	map_attributes HepaticaLugiaSpeechHouse, HEPATICA_LUGIA_SPEECH_HOUSE, $00, 0
 	map_attributes PokeSeersHouse, POKE_SEERS_HOUSE, $00, 0
 	map_attributes FaviaMart, FAVIA_MART, $00, 0
 	map_attributes ViridianPokecenter1F, VIRIDIAN_POKECENTER_1F, $00, 0
@@ -341,7 +339,7 @@ ENDM
 	map_attributes PavonaGymSpeechHouse, PAVONA_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes PavonaInn, PAVONA_INN, $00, 0
 	map_attributes Route2PectiniaGate, ROUTE_2_PECTINIA_GATE, $00, 0
-	map_attributes VioletGymB1, VIOLET_GYM_B1, $0A, 0
+	map_attributes RidgeGymB1, RIDGE_GYM_B1, $0A, 0
 	map_attributes PalerockMountain1F, PALEROCK_MOUNTAIN_1F, $09, 0
 	map_attributes PalerockMountain2F, PALEROCK_MOUNTAIN_2F, $09, 0
 	map_attributes PalerockMountain3F, PALEROCK_MOUNTAIN_3F, $6D, 0
@@ -349,7 +347,7 @@ ENDM
 	map_attributes PalerockMountainB1, PALEROCK_MOUNTAIN_B1, $09, 0
 	map_attributes PalerockMountainStrengthRoom, PALEROCK_MOUNTAIN_STRENGTH_ROOM, $09, 0
 	map_attributes Route9ForestGate, ROUTE_9_FOREST_GATE, $00, 0
-	map_attributes EcruteakForestGate, ECRUTEAK_FOREST_GATE, $00, 0
+	map_attributes StaghornForestGate, STAGHORN_FOREST_GATE, $00, 0
 	map_attributes Route8FaviaGate, ROUTE_8_FAVIA_GATE, $00, 0
 	map_attributes EastForest, EAST_FOREST, $05, 0
 	map_attributes Route4ForestGate, ROUTE_4_FOREST_GATE, $00, 0
@@ -358,30 +356,30 @@ ENDM
 	map_attributes Factory1F, FACTORY_1F, $00, 0
 	map_attributes FactoryB1, FACTORY_B1, $00, 0
 	map_attributes FactoryBack, FACTORY_BACK, $00, 0
-	map_attributes CianwoodChurch, CIANWOOD_CHURCH, $00, 0
+	map_attributes HepaticaChurch, HEPATICA_CHURCH, $00, 0
 	map_attributes PectiniaApartmentLeft, PECTINIA_APARTMENT_LEFT, $00, 0
 	map_attributes PectiniaApartmentRight, PECTINIA_APARTMENT_RIGHT, $00, 0
 	map_attributes PectiniaGymSpeechHouse, PECTINIA_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes PectiniaEvolutionHouse, PECTINIA_EVOLUTION_HOUSE, $00, 0
 	map_attributes PectiniaBikeHouse, PECTINIA_BIKE_HOUSE, $00, 0
 	map_attributes PectiniaBerryHouse, PECTINIA_BERRY_HOUSE, $00, 0
-	map_attributes VioletMoveTutor, VIOLET_MOVE_TUTOR, $00, 0
-	map_attributes VioletWeatherHouse, VIOLET_WEATHER_HOUSE, $00, 0
-	map_attributes VioletTradeHouse, VIOLET_TRADE_HOUSE, $00, 0
+	map_attributes RidgeMoveTutor, RIDGE_MOVE_TUTOR, $00, 0
+	map_attributes RidgeWeatherHouse, RIDGE_WEATHER_HOUSE, $00, 0
+	map_attributes RidgeTradeHouse, RIDGE_TRADE_HOUSE, $00, 0
 	map_attributes Route8SilkScarfHouse, ROUTE_8_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
 	map_attributes Route11FaviaGate, ROUTE_11_FAVIA_GATE, $00, 0	
 	map_attributes Route11Route12Gate, ROUTE_11_ROUTE_12_GATE, $00, 0	
-	map_attributes CianwoodCave1F, CIANWOOD_CAVE_1F, $6D, 0
-	map_attributes CianwoodCaveB1F, CIANWOOD_CAVE_B1F, $09, 0
-	map_attributes CianwoodCaveB2F, CIANWOOD_CAVE_B2F, $09, 0
+	map_attributes HepaticaCave1F, HEPATICA_CAVE_1F, $6D, 0
+	map_attributes HepaticaCaveB1F, HEPATICA_CAVE_B1F, $09, 0
+	map_attributes HepaticaCaveB2F, HEPATICA_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
 	map_attributes LostLand, LOST_LAND, $20, 0
-	map_attributes Route12EcruteakGate, ROUTE_12_ECRUTEAK_GATE, $00, 0
+	map_attributes Route12StaghornGate, ROUTE_12_STAGHORN_GATE, $00, 0
 	map_attributes Route12Shelter, ROUTE_12_SHELTER, $00, 0
 	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0
 	map_attributes Route14Cave2F, ROUTE_14_CAVE_2F, $09, 0
-	map_attributes EcruteakThiefHouse, ECRUTEAK_THIEF_HOUSE, $00, 0
+	map_attributes StaghornThiefHouse, STAGHORN_THIEF_HOUSE, $00, 0
 	map_attributes Route14OlivineGate, ROUTE_14_OLIVINE_GATE, $00, 0
 	map_attributes PowerPlant1F, POWER_PLANT_1F, $00, 0
 	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
@@ -391,13 +389,13 @@ ENDM
 	map_attributes MahoganyMagnetTrainStation, MAHOGANY_MAGNET_TRAIN_STATION, $00, 0
 	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
 	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0
-	map_attributes EcruteakFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
+	map_attributes StaghornFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
 	map_attributes SafariZoneGate1F, SAFARI_ZONE_GATE_1F, $00, 0
 	map_attributes SafariZoneGate2F, SAFARI_ZONE_GATE_2F, $00, 0
 	map_attributes CarnationPokecenter1F, CARNATION_POKECENTER_1F, $00, 0
 	map_attributes CarnationWobbuffetHouse, WOBBUFFET_HOUSE, $00, 0
 	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0
-	map_attributes Route21EcruteakGate, ROUTE_21_ECRUTEAK_GATE, $00, 0
+	map_attributes Route21StaghornGate, ROUTE_21_STAGHORN_GATE, $00, 0
 	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
 	map_attributes BlackthornLassHouse, BLACKTHORN_LASS_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
@@ -417,7 +415,7 @@ ENDM
 	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
 	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
 	map_attributes BurglarHideoutB2F, BURGLAR_HIDEOUT_B2F, $00, 0
-	map_attributes EcruteakRichardsHouse, RICHARDS_HOUSE, $00, 0
+	map_attributes StaghornRichardsHouse, RICHARDS_HOUSE, $00, 0
 	map_attributes RaikouLair, RAIKOU_LAIR, $00, 0
 	map_attributes EnteiLair, ENTEI_LAIR, $09, 0
 	map_attributes Route30Cave1F, ROUTE_30_CAVE_1F, $09, 0
@@ -429,9 +427,9 @@ ENDM
 	map_attributes Route22CaveB1F, ROUTE_22_CAVE_B1F, $09, 0
 	map_attributes Route22CaveB2F, ROUTE_22_CAVE_B2F, $09, 0
 	map_attributes Route22South, ROUTE_22_SOUTH, $35, 0
-	map_attributes GoldenrodGymNorthChamber, GOLDENROD_GYM_NORTH_CHAMBER, $00, 0
-	map_attributes GoldenrodGymEastChamber, GOLDENROD_GYM_EAST_CHAMBER, $00, 0
-	map_attributes GoldenrodGymWestChamber, GOLDENROD_GYM_WEST_CHAMBER, $00, 0
+	map_attributes HepaticaGymNorthChamber, HEPATICA_GYM_NORTH_CHAMBER, $00, 0
+	map_attributes HepaticaGymEastChamber, HEPATICA_GYM_EAST_CHAMBER, $00, 0
+	map_attributes HepaticaGymWestChamber, HEPATICA_GYM_WEST_CHAMBER, $00, 0
 	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
 	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0
 	map_attributes Route11CurseHouse, ROUTE_11_CURSE_HOUSE, $00, 0
@@ -458,7 +456,7 @@ ENDM
 	map_attributes PalerockMountainWaterfallChamber, PALEROCK_MOUNTAIN_WATERFALL_CHAMBER, $09, 0
 	map_attributes Route18Barn, ROUTE_18_BARN, $00, 0
 	map_attributes Route18Farmhouse, ROUTE_18_FARMHOUSE, $00, 0
-	map_attributes VioletMagikarpHouse, VIOLET_MAGIKARP_HOUSE, $00, 0
+	map_attributes RidgeMagikarpHouse, RIDGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0
 	map_attributes Route11HiddenCave, ROUTE_11_HIDDEN_CAVE, $09, 0

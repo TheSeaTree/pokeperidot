@@ -79,11 +79,11 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_ELKHORN
 	engine_flag wVisitedSpawns, SPAWN_PAVONA
 	engine_flag wVisitedSpawns, SPAWN_PECTINIA
-	engine_flag wVisitedSpawns, SPAWN_VIOLET
+	engine_flag wVisitedSpawns, SPAWN_RIDGE
 	engine_flag wVisitedSpawns, SPAWN_FAVIA
-	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
+	engine_flag wVisitedSpawns, SPAWN_HEPATICA
 	engine_flag wVisitedSpawns, SPAWN_ROUTE_9
-	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK ; $48
+	engine_flag wVisitedSpawns, SPAWN_STAGHORN ; $48
 	engine_flag wVisitedSpawns, SPAWN_OLIVINE
 	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
 	engine_flag wVisitedSpawns, SPAWN_CARNATION
