@@ -1055,7 +1055,7 @@ JohtoGrassWildMons:
 	db 30, SMEARGLE
 	db 30, SMEARGLE
 	
-	map_id MAHOGANY_TOWN
+	map_id RUGOSA_CITY
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, ELEKID
@@ -1238,7 +1238,7 @@ JohtoGrassWildMons:
 	db 30, CHANSEY
 	db 30, CHANSEY
 
-	map_id BLACKTHORN_CITY
+	map_id ACROPORA_CITY
 	db 8 percent, 8 percent, 8 percent
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
@@ -1264,7 +1264,7 @@ JohtoGrassWildMons:
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
 
-	map_id BLACKTHORN_CAVE_B1F
+	map_id ACROPORA_CAVE_B1F
 	db 2 percent, 2 percent, 2 percent
 	db 35, GRAVELER
 	db 35, GRAVELER

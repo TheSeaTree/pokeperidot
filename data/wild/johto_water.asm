@@ -106,7 +106,7 @@ JohtoWaterWildMons:
 	db 24, REMORAID
 	db 26, SEARION
 	
-	map_id OLIVINE_CITY
+	map_id RUGOSA_COAST
 	db 4 percent
 	db 33, SEEL
 	db 32, GOLDEEN
@@ -250,7 +250,7 @@ JohtoWaterWildMons:
 	db 35, LANTURN
 	db 34, STARMIE
 	
-	map_id MAHOGANY_TOWN
+	map_id RUGOSA_CITY
 	db 4 percent
 	db 26, POLIWHIRL
 	db 26, QUAGSIRE

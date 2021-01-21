@@ -25,12 +25,12 @@ TreeMonMaps:
 	treemon_map ROUTE_12,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_13,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_14,                  TREEMON_SET_ROUTE
-	treemon_map MAHOGANY_TOWN,             TREEMON_SET_CITY
+	treemon_map RUGOSA_CITY,               TREEMON_SET_CITY
 	treemon_map ROUTE_18,                  TREEMON_SET_ROUTE
 	treemon_map CARNATION_TOWN,            TREEMON_SET_TOWN
 	treemon_map ROUTE_19,                  TREEMON_SET_ROUTE
 	treemon_map ROUTE_20,                  TREEMON_SET_ROUTE
-	treemon_map BLACKTHORN_CITY,           TREEMON_SET_TOWN
+	treemon_map ACROPORA_CITY,             TREEMON_SET_TOWN
 	treemon_map ROUTE_21,                  TREEMON_SET_ROUTE
 	db -1
 
@@ -40,5 +40,5 @@ RockMonMaps:
 	treemon_map ROUTE_6,           		   TREEMON_SET_KANTO
 	treemon_map SEA_ROUTE_4,       		   TREEMON_SET_KANTO
 	treemon_map ROUTE_8,           		   TREEMON_SET_KANTO
-	treemon_map OLIVINE_CITY,      		   TREEMON_SET_KANTO
+	treemon_map RUGOSA_COAST,      		   TREEMON_SET_KANTO
 	db -1
