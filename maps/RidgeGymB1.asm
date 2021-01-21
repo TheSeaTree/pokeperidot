@@ -35,7 +35,7 @@ RidgeGymB1CecilScript:
 	waitbutton
 	closetext
 	winlosstext CecilWinLossText, 0
-	checkflag ENGINE_FLYPOINT_OLIVINE
+	checkflag ENGINE_FLYPOINT_RUGOSA
 	iftrue .Team5
 	checkflag ENGINE_FLYPOINT_STAGHORN
 	iftrue .Team4

@@ -27,13 +27,8 @@ BattleSubwayTrain_Blocks:
 BattleSubwayPlatform_Blocks:
 	INCBIN "maps/BattleSubwayPlatform.ablk"
 
-OlivineTimsHouse_Blocks:
-OlivinePunishmentSpeechHouse_Blocks:
-OlivineGoodRodHouse_Blocks:
 Route39Farmhouse_Blocks:
-MahoganyRedGyaradosSpeechHouse_Blocks:
-BlackthornDragonSpeechHouse_Blocks:
-MahoganyEmysHouse_Blocks:
+RugosaEmysHouse_Blocks:
 MoveDeletersHouse_Blocks:
 CeruleanGymBadgeSpeechHouse_Blocks:
 CeruleanPoliceStation_Blocks:
@@ -68,10 +63,10 @@ StaghornThiefHouse_Blocks:
 StaghornFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
 FluteMasterHouse_Blocks:
-MahoganySubstituteHouse_Blocks:
+RugosaSubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
 StaghornRichardsHouse_Blocks:
-BlackthornLassHouse_Blocks:
+AcroporaLassHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
 Route11CleanseTagHouse_Blocks:
 RidgeMagikarpHouse_Blocks:
@@ -85,7 +80,6 @@ PavonaGymSpeechHouse_Blocks:
 	INCBIN "maps/House3.ablk"
 
 Route19FuchsiaGate_Blocks:
-Route43MahoganyGate_Blocks:
 Route43Gate_Blocks:
 Route36RuinsOfAlphGate_Blocks:
 Route3PectiniaGate_Blocks:
@@ -95,7 +89,7 @@ Route1ElkhornGate_Blocks:
 Route1FaviaGate_Blocks:
 Route11FaviaGate_Blocks:
 Route11Route12Gate_Blocks:
-MahoganyGate_Blocks:
+RugosaGate_Blocks:
 Route6Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
@@ -130,7 +124,7 @@ Route4ForestGate_Blocks:
 Route4PectiniaGate_Blocks:
 Route2Gate_Blocks:
 Route12StaghornGate_Blocks:
-Route14OlivineGate_Blocks:
+Route14RugosaGate_Blocks:
 Route21StaghornGate_Blocks:
 CarnationZooGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
@@ -141,8 +135,8 @@ MaplesLab_Blocks:
 CoastalLab_Blocks:
 	INCBIN "maps/CoastalLab.ablk"	
 
-OlivinePort_Blocks:
-	INCBIN "maps/OlivinePort.ablk"
+RugosaPort_Blocks:
+	INCBIN "maps/RugosaPort.ablk"
 
 Route9_Blocks:
 	INCBIN "maps/Route9.ablk"
@@ -153,9 +147,8 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
-OlivineMart_Blocks:
 StaghornMart_Blocks:
-BlackthornMart_Blocks:
+AcroporaMart_Blocks:
 CeruleanMart_Blocks:
 PectiniaMart_Blocks:
 PewterMart_Blocks:
@@ -168,16 +161,15 @@ FaviaMart_Blocks:
 	INCBIN "maps/Mart.6x4.mart.ablk"
 	
 RidgeCafe_Blocks:
-MahoganyCafe_Blocks:
+RugosaCafe_Blocks:
 	INCBIN "maps/RidgeCafe.ablk"
 
 Route10North_Blocks:
 	INCBIN "maps/Route10North.ablk"
 
-OlivinePokecenter1F_Blocks:
-MahoganyPokecenter1F_Blocks:
+RugosaPokecenter1F_Blocks:
 StaghornPokecenter1F_Blocks:
-BlackthornPokecenter1F_Blocks:
+AcroporaPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
 Route10Pokecenter1F_Blocks:
@@ -196,25 +188,25 @@ CarnationPokecenter1F_Blocks:
 OrchidPokecenter1F_Blocks:
 	INCBIN "maps/Pokecenter1F.5x4.pokecenter.ablk"
 
-MahoganyDeptStore1F_Blocks:
+RugosaDeptStore1F_Blocks:
 	INCBIN "maps/DeptStore1F.8x4.mart.ablk"
 
-MahoganyDeptStore2F_Blocks:
+RugosaDeptStore2F_Blocks:
 	INCBIN "maps/DeptStore2F.8x4.mart.ablk"
 
-MahoganyDeptStore3F_Blocks:
+RugosaDeptStore3F_Blocks:
 	INCBIN "maps/DeptStore3F.8x4.mart.ablk"
 
-MahoganyDeptStore4F_Blocks:
+RugosaDeptStore4F_Blocks:
 	INCBIN "maps/DeptStore4F.8x4.mart.ablk"
 
-MahoganyDeptStore5F_Blocks:
+RugosaDeptStore5F_Blocks:
 	INCBIN "maps/DeptStore5F.8x4.mart.ablk"
 
-MahoganyDeptStore6F_Blocks:
+RugosaDeptStore6F_Blocks:
 	INCBIN "maps/DeptStore6F.8x4.mart.ablk"
 
-MahoganyDeptStoreElevator_Blocks:
+RugosaDeptStoreElevator_Blocks:
 	INCBIN "maps/DeptStoreElevator.2x2.mart.ablk"
 
 Colosseum_Blocks:
@@ -231,8 +223,8 @@ StaghornLugiaSpeechHouse_Blocks:
 StaghornItemfinderHouse_Blocks:
 FaviaHappinessRater_Blocks:
 PaintersHouse_Blocks:
-OlivineSurfHouse_Blocks:
-BlackthornRestTalkHouse_Blocks:
+RugosaSurfHouse_Blocks:
+AcroporaRestTalkHouse_Blocks:
 IlexForestSwordsDanceHouse_Blocks:
 Route11CurseHouse_Blocks:
 Route18Farmhouse_Blocks:
@@ -259,9 +251,6 @@ KurtsHouse_Blocks:
 
 PectiniaTrainStation_Blocks:
 	INCBIN "maps/PectiniaTrainStation.ablk"
-
-MahoganyMagnetTrainStation_Blocks:
-	INCBIN "maps/MahoganyMagnetTrainStation.ablk"
 
 RadioTower1F_Blocks:
 	INCBIN "maps/RadioTower1F.ablk"
@@ -290,17 +279,17 @@ HepaticaTown_Blocks:
 FaviaTown_Blocks:
 	INCBIN "maps/FaviaTown.ablk"
 
-OlivineCity_Blocks:
-	INCBIN "maps/OlivineCity.ablk"
+RugosaCoast_Blocks:
+	INCBIN "maps/RugosaCoast.ablk"
 
 StaghornTown_Blocks:
 	INCBIN "maps/StaghornTown.ablk"
 
-MahoganyTown_Blocks:
-	INCBIN "maps/MahoganyTown.ablk"
+RugosaCity_Blocks:
+	INCBIN "maps/RugosaCity.ablk"
 
-BlackthornCity_Blocks:
-	INCBIN "maps/BlackthornCity.ablk"
+AcroporaCity_Blocks:
+	INCBIN "maps/AcroporaCity.ablk"
 
 SilverCaveOutside_Blocks:
 	INCBIN "maps/SilverCaveOutside.ablk"
@@ -350,7 +339,6 @@ SilverCaveRoom2_Blocks:
 SilverCaveRoom3_Blocks:
 	INCBIN "maps/SilverCaveRoom3.ablk"
 
-MahoganyMart1F_Blocks:
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.ablk"
 
@@ -387,11 +375,11 @@ HepaticaGymWestChamber_Blocks:
 StaghornGym_Blocks:
 	INCBIN "maps/StaghornGym.ablk"
 
-MahoganyGym_Blocks:
-	INCBIN "maps/MahoganyGym.ablk"
+RugosaGym_Blocks:
+	INCBIN "maps/RugosaGym.ablk"
 
-OlivineGym_Blocks:
-	INCBIN "maps/OlivineGym.ablk"
+AcroporaGym_Blocks:
+	INCBIN "maps/AcroporaGym.ablk"
 
 FaviaGym_Blocks:
 	INCBIN "maps/FaviaGym.ablk"
@@ -454,8 +442,8 @@ HallOfFame_Blocks:
 CarnationFlowerShop_Blocks:
 	INCBIN "maps/CarnationFlowerShop.ablk"
 
-MahoganyDeptStoreRoof_Blocks:
-	INCBIN "maps/MahoganyDeptStoreRoof.ablk"
+RugosaDeptStoreRoof_Blocks:
+	INCBIN "maps/RugosaDeptStoreRoof.ablk"
 
 ElkhornTown_Blocks:
 	INCBIN "maps/ElkhornTown.ablk"
@@ -548,7 +536,7 @@ FactoryBack_Blocks:
 	INCBIN "maps/FactoryBack.ablk"
 	
 PectiniaApartmentLeft_Blocks:
-MahoganyApartment1F_Blocks:
+RugosaApartment1F_Blocks:
 	INCBIN "maps/PectiniaApartmentLeft.ablk"
 	
 PectiniaApartmentRight_Blocks:
@@ -626,17 +614,17 @@ OrchidCity_Blocks:
 Route21_Blocks:
 	INCBIN "maps/Route21.ablk"	
 
-BlackthornCave1F_Blocks:
-	INCBIN "maps/BlackthornCave1F.ablk"
+AcroporaCave1F_Blocks:
+	INCBIN "maps/AcroporaCave1F.ablk"
 
-BlackthornCave2F_Blocks:
-	INCBIN "maps/BlackthornCave2F.ablk"
+AcroporaCave2F_Blocks:
+	INCBIN "maps/AcroporaCave2F.ablk"
 
-BlackthornCaveB1F_Blocks:
-	INCBIN "maps/BlackthornCaveB1F.ablk"
+AcroporaCaveB1F_Blocks:
+	INCBIN "maps/AcroporaCaveB1F.ablk"
 
 PectiniaApartmentLeft2F_Blocks:
-MahoganyApartment2F_Blocks:
+RugosaApartment2F_Blocks:
 	INCBIN "maps/PectiniaApartmentLeft2F.ablk"
 	
 PectiniaApartmentRight2F_Blocks:
@@ -645,8 +633,8 @@ PectiniaApartmentRight2F_Blocks:
 PectiniaApartmentLeft3F_Blocks:
 	INCBIN "maps/PectiniaApartmentLeft3F.ablk"
 
-MahoganyApartment3F_Blocks:
-	INCBIN "maps/MahoganyApartment3F.ablk"
+RugosaApartment3F_Blocks:
+	INCBIN "maps/RugosaApartment3F.ablk"
 	
 PectiniaApartmentRight3F_Blocks:
 	INCBIN "maps/PectiniaApartmentRight3F.ablk"

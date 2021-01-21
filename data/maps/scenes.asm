@@ -25,7 +25,7 @@ MapScenes::
 	scene_var FAVIA_TOWN,                              	wGoldenrodGymSceneID
 	scene_var PECTINIA_TRAIN_STATION,                   wGoldenrodMagnetTrainStationSceneID
 	scene_var FAVIA_POKECENTER_1F,                      wGoldenrodPokecenter1FSceneID
-	scene_var OLIVINE_CITY,                             wOlivineCitySceneID
+	scene_var RUGOSA_COAST,                             wOlivineCitySceneID
 	scene_var PECTINIA_GYM,                             wRoute34SceneID ; unused
 	scene_var RIDGE_GYM,                                wVioletGymSceneID
 	scene_var STAGHORN_POKECENTER_1F,                   wEcruteakPokecenter1FSceneID
@@ -34,7 +34,7 @@ MapScenes::
 	scene_var PALEROCK_MOUNTAIN_3F,                     wBattleTowerOutsideSceneID ; unused
 	scene_var MOUNT_MOON,                               wMountMoonSceneID
 	scene_var RADIO_TOWER_5F,                           wRadioTower5FSceneID
-	scene_var MAHOGANY_MART_1F,                         wMahoganyMart1FSceneID
+	scene_var RUGOSA_CITY,                              wMahoganyMart1FSceneID ; unused
 	scene_var VICTORY_ROAD,                             wVictoryRoadSceneID
 	scene_var ROUTE_1,                                 	wRoute1SceneID
 	scene_var RIDGE_VILLAGE,							wVioletCitySceneID

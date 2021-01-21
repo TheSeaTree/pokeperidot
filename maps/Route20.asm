@@ -282,8 +282,8 @@ Route20_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  9, 39, BLACKTHORN_CITY, 1
-	warp_event 10, 39, BLACKTHORN_CITY, 1
+	warp_event  9, 39, ACROPORA_CITY, 1
+	warp_event 10, 39, ACROPORA_CITY, 1
 	warp_event 37,  5, HEAVY_BALL_HOUSE, 1
 
 	db 0 ; coord events

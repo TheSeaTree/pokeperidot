@@ -1,0 +1,127 @@
+	const_def 2 ; object constants
+
+AcroporaCity_MapScripts:
+	db 0 ; scene scripts
+
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	
+.FlyPoint:
+	setflag ENGINE_FLYPOINT_ACROPORA
+	return
+	
+AcroporaFisherScript:
+	jumptextfaceplayer AcroporaFisherText
+	
+AcroporaGymEvent:
+	scall AcroporaGymEntrance
+	iffalse .no
+	warpfacing UP, ACROPORA_GYM,  4, 11
+.no
+	end	
+	
+AcroporaGymEntrance:
+	jumpstd gymdoor
+	end
+	
+AcroporaCitySign:
+	jumptext AcroporaCitySignText
+
+AcroporaCityGoAwaySign:
+	jumptext AcroporaCityGoAwaySignText
+	
+AcroporaCityGymSign:
+	jumptext AcroporaCityGymSignText
+
+FluteMasterSign:
+	jumptext FluteMasterText
+	
+AcroporaCityPokecenterSign:
+	jumpstd pokecentersign
+
+AcroporaCityMartSign:
+	jumpstd martsign
+
+AcroporaCityMailbox:
+	jumpstd mailbox
+	
+AcroporaFisherText:
+	text "Hey, check out"
+	line "the sign the FLUTE"
+	cont "MASTER put up now."
+	
+	para "He already moved"
+	line "so far away from"
+	cont "the rest of the"
+	cont "town. What could"
+	cont "he be working on?"
+	done
+	
+AcroporaBikerText:
+	text "VROOM!"
+	
+	para "VROOM!"
+	line "VROOM!"
+	
+	para "BADABADABADABADA!"
+	
+	para "If this guy don't"
+	line "like our bikes'"
+	cont "music, he can just"
+	cont "GIT OUT!"
+	
+	para "VROOM!"
+	line "BADABADABADABADA!"
+	done
+	
+AcroporaCityGoAwaySignText:
+	text "TRAINER TIPS-"
+	
+	para "GO AWAY!"
+	done
+	
+FluteMasterText:
+	text "FLUTE MASTER's"
+	line "HOUSE"
+	done
+	
+AcroporaCitySignText:
+	text "ACROPORA CITY"
+	done
+	
+AcroporaCityGymSignText:
+	text "ACROPORA CAVE-"
+	
+	para "ACROPORA GYM"
+	line "access."
+	done
+
+AcroporaCity_MapEvents:
+	db 0, 0 ; filler
+
+	db 8 ; warp events
+	warp_event 39, 13, ROUTE_20, 1
+	warp_event 33, 17, ACROPORA_POKECENTER_1F, 1
+	warp_event 19, 21, ACROPORA_MART, 1
+	warp_event 27, 21, ACROPORA_REST_TALK_HOUSE, 1
+	warp_event 53, 17, FLUTE_MASTER_HOUSE, 1
+	warp_event 12, 13, ACROPORA_CAVE_1F, 1
+	warp_event 28,  5, ACROPORA_CAVE_1F, 6
+	warp_event 35, 23, ACROPORA_LASS_HOUSE, 1
+
+	db 0 ; coord events
+
+	db 10 ; bg events
+	bg_event 34, 17, BGEVENT_READ, AcroporaCityPokecenterSign
+	bg_event 20, 21, BGEVENT_READ, AcroporaCityMartSign
+	bg_event  9, 25, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 33, 23, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 25, 21, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 36, 17, BGEVENT_READ, AcroporaCitySign
+	bg_event 46, 23, BGEVENT_READ, AcroporaCityGoAwaySign
+	bg_event 52, 18, BGEVENT_READ, FluteMasterSign
+	bg_event 20,  7, BGEVENT_UP,   AcroporaGymEvent
+	bg_event 11, 15, BGEVENT_READ, AcroporaCityGymSign
+
+	db 1 ; object events
+	object_event 44, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1

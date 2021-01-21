@@ -15,9 +15,9 @@ Flypoints:
 	flypoint HEPATICA,     HEPATICA_TOWN
 	flypoint ROUTE_9,      ROUTE_9
 	flypoint STAGHORN,     STAGHORN_TOWN
-	flypoint MAHOGANY,     MAHOGANY_TOWN
+	flypoint RUGOSA,       RUGOSA_CITY
 	flypoint CARNATION,	   CARNATION_TOWN
-	flypoint BLACKTHORN,   BLACKTHORN_CITY
+	flypoint ACROPORA,     ACROPORA_CITY
 	flypoint ORCHID,       ORCHID_CITY
 
 ; Kanto

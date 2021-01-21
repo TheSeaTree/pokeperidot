@@ -29,14 +29,14 @@
 	const ROUTE_11          ; 4a
 	const ROUTE_12          ; 4b
 	const ROUTE_13          ; 4c
-	const OLIVINE_CITY      ; 1b
-	const MAHOGANY_TOWN     ; 24
+	const RUGOSA_COAST      ; 1b
+	const RUGOSA_CITY       ; 24
 	const ROUTE_14          ; 50
 	const CARNATION_TOWN
 	const SAFARI_ZONE       ; 13
 	const ROUTE_15          ; 52
 	const ROUTE_16          ; 53
-	const BLACKTHORN_CITY   ; 29
+	const ACROPORA_CITY     ; 29
 	const ROUTE_17          ; 53
 	const ROUTE_18          ; 53
 	const ORCHID_CITY

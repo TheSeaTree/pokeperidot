@@ -108,7 +108,7 @@ ENDM
 
 	map_attributes FaviaTown, FAVIA_TOWN, $05, 0
 
-	map_attributes OlivineCity, OLIVINE_CITY, $35, EAST
+	map_attributes RugosaCoast, RUGOSA_COAST, $35, EAST
 	connection east, SeaRoute1, SEA_ROUTE_1, 5
 
 	map_attributes StaghornTown, STAGHORN_TOWN, $05, NORTH
@@ -117,13 +117,13 @@ ENDM
 	map_attributes PaintersForest, PAINTERS_FOREST, $05, SOUTH
 	connection south, StaghornTown, STAGHORN_TOWN, -7
 
-	map_attributes MahoganyTown, MAHOGANY_TOWN, $05, 0
+	map_attributes RugosaCity, RUGOSA_CITY, $05, 0
 
-	map_attributes BlackthornCity, BLACKTHORN_CITY, $05, SOUTH
+	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH
 	connection south, Route21, ROUTE_21, 11
 	
 	map_attributes Route21, ROUTE_21, $05, NORTH
-	connection north, BlackthornCity, BLACKTHORN_CITY, -11
+	connection north, AcroporaCity, ACROPORA_CITY, -11
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
@@ -158,7 +158,7 @@ ENDM
 
 	map_attributes SeaRoute1, SEA_ROUTE_1, $35, SOUTH | WEST | EAST
 	connection south, SeaRoute2, SEA_ROUTE_2, 3
-	connection west, OlivineCity, OLIVINE_CITY, -5
+	connection west, RugosaCoast, RUGOSA_COAST, -5
 	connection east, SeaRoute3, SEA_ROUTE_3, 1
 	
 	map_attributes Route18, ROUTE_18, $13, 0
@@ -252,18 +252,15 @@ ENDM
 	map_attributes UnionCave1F, UNION_CAVE_1F, $09, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $09, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
-	map_attributes MahoganyMart1F, MAHOGANY_MART_1F, $00, 0
 	map_attributes IlexForest, ILEX_FOREST, $05, 0
 	map_attributes Route6Underground, ROUTE_6_UNDERGROUND, $00, 0
 	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
 	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
 	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
 	map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $09, 0
-	map_attributes OlivinePokecenter1F, OLIVINE_POKECENTER_1F, $00, 0
-	map_attributes OlivineGym, OLIVINE_GYM, $00, 0
-	map_attributes OlivineMart, OLIVINE_MART, $00, 0
-	map_attributes MahoganyGym, MAHOGANY_GYM, $00, 0
-	map_attributes MahoganyPokecenter1F, MAHOGANY_POKECENTER_1F, $00, 0
+	map_attributes AcroporaGym, ACROPORA_GYM, $00, 0
+	map_attributes RugosaGym, RUGOSA_GYM, $00, 0
+	map_attributes RugosaPokecenter1F, RUGOSA_POKECENTER_1F, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
 	map_attributes MountMoon, MOUNT_MOON, $09, 0
 	map_attributes PalerockCave1F, PALEROCK_CAVE_1F, $09, 0
@@ -275,8 +272,8 @@ ENDM
 	map_attributes OrchidGym1F, ORCHID_GYM_1F, $00, 0
 	map_attributes OrchidGymB1F, ORCHID_GYM_B1F, $01, 0
 	map_attributes OrchidGymLeaderRoom, ORCHID_GYM_LEADER_ROOM, $00, 0
-	map_attributes BlackthornMart, BLACKTHORN_MART, $00, 0
-	map_attributes BlackthornPokecenter1F, BLACKTHORN_POKECENTER_1F, $00, 0
+	map_attributes AcroporaMart, ACROPORA_MART, $00, 0
+	map_attributes AcroporaPokecenter1F, ACROPORA_POKECENTER_1F, $00, 0
 	map_attributes MoveDeletersHouse, MOVE_DELETERS_HOUSE, $00, 0
 	map_attributes PectiniaPokecenter1F, PECTINIA_POKECENTER_1F, $00, 0
 	map_attributes CharcoalKiln, CHARCOAL_KILN, $00, 0
@@ -291,14 +288,14 @@ ENDM
 	map_attributes PectiniaTrainStation, PECTINIA_TRAIN_STATION, $00, 0
 	map_attributes CarnationFlowerShop, CARNATION_FLOWER_SHOP, $00, 0
 	map_attributes NameRater, NAME_RATER, $00, 0
-	map_attributes MahoganyDeptStore1F, MAHOGANY_DEPT_STORE_1F, $00, 0
-	map_attributes MahoganyDeptStore2F, MAHOGANY_DEPT_STORE_2F, $00, 0
-	map_attributes MahoganyDeptStore3F, MAHOGANY_DEPT_STORE_3F, $00, 0
-	map_attributes MahoganyDeptStore4F, MAHOGANY_DEPT_STORE_4F, $00, 0
-	map_attributes MahoganyDeptStore5F, MAHOGANY_DEPT_STORE_5F, $00, 0
-	map_attributes MahoganyDeptStore6F, MAHOGANY_DEPT_STORE_6F, $00, 0
-	map_attributes MahoganyDeptStoreElevator, MAHOGANY_DEPT_STORE_ELEVATOR, $00, 0
-	map_attributes MahoganyDeptStoreRoof, MAHOGANY_DEPT_STORE_ROOF, $24, 0
+	map_attributes RugosaDeptStore1F, RUGOSA_DEPT_STORE_1F, $00, 0
+	map_attributes RugosaDeptStore2F, RUGOSA_DEPT_STORE_2F, $00, 0
+	map_attributes RugosaDeptStore3F, RUGOSA_DEPT_STORE_3F, $00, 0
+	map_attributes RugosaDeptStore4F, RUGOSA_DEPT_STORE_4F, $00, 0
+	map_attributes RugosaDeptStore5F, RUGOSA_DEPT_STORE_5F, $00, 0
+	map_attributes RugosaDeptStore6F, RUGOSA_DEPT_STORE_6F, $00, 0
+	map_attributes RugosaDeptStoreElevator, RUGOSA_DEPT_STORE_ELEVATOR, $00, 0
+	map_attributes RugosaDeptStoreRoof, RUGOSA_DEPT_STORE_ROOF, $24, 0
 	map_attributes FaviaPokecenter1F, FAVIA_POKECENTER_1F, $00, 0
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes Route3PectiniaGate, ROUTE_3_PECTINIA_GATE, $00, 0
@@ -380,15 +377,14 @@ ENDM
 	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0
 	map_attributes Route14Cave2F, ROUTE_14_CAVE_2F, $09, 0
 	map_attributes StaghornThiefHouse, STAGHORN_THIEF_HOUSE, $00, 0
-	map_attributes Route14OlivineGate, ROUTE_14_OLIVINE_GATE, $00, 0
+	map_attributes Route14RugosaGate, ROUTE_14_RUGOSA_GATE, $00, 0
 	map_attributes PowerPlant1F, POWER_PLANT_1F, $00, 0
 	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
 	map_attributes PowerPlant1FB, POWER_PLANT_1F_B, $00, 0
 	map_attributes PowerPlant2FB, POWER_PLANT_2F_B, $00, 0
-	map_attributes MahoganyGate, MAHOGANY_GATE, $00, 0
-	map_attributes MahoganyMagnetTrainStation, MAHOGANY_MAGNET_TRAIN_STATION, $00, 0
-	map_attributes OlivineSurfHouse, OLIVINE_SURF_HOUSE, $00, 0
-	map_attributes MahoganyEmysHouse, EMYS_HOUSE, $00, 0
+	map_attributes RugosaGate, RUGOSA_GATE, $00, 0
+	map_attributes RugosaSurfHouse, RUGOSA_SURF_HOUSE, $00, 0
+	map_attributes RugosaEmysHouse, EMYS_HOUSE, $00, 0
 	map_attributes StaghornFriendBallHouse, FRIEND_BALL_HOUSE, $00, 0
 	map_attributes SafariZoneGate1F, SAFARI_ZONE_GATE_1F, $00, 0
 	map_attributes SafariZoneGate2F, SAFARI_ZONE_GATE_2F, $00, 0
@@ -396,20 +392,20 @@ ENDM
 	map_attributes CarnationWobbuffetHouse, WOBBUFFET_HOUSE, $00, 0
 	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0
 	map_attributes Route21StaghornGate, ROUTE_21_STAGHORN_GATE, $00, 0
-	map_attributes BlackthornRestTalkHouse, BLACKTHORN_REST_TALK_HOUSE, $00, 0
-	map_attributes BlackthornLassHouse, BLACKTHORN_LASS_HOUSE, $00, 0
+	map_attributes AcroporaRestTalkHouse, ACROPORA_REST_TALK_HOUSE, $00, 0
+	map_attributes AcroporaLassHouse, ACROPORA_LASS_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
-	map_attributes BlackthornCave1F, BLACKTHORN_CAVE_1F, $09, 0
-	map_attributes BlackthornCave2F, BLACKTHORN_CAVE_2F, $09, 0
-	map_attributes BlackthornCaveB1F, BLACKTHORN_CAVE_B1F, $09, 0
+	map_attributes AcroporaCave1F, ACROPORA_CAVE_1F, $09, 0
+	map_attributes AcroporaCave2F, ACROPORA_CAVE_2F, $09, 0
+	map_attributes AcroporaCaveB1F, ACROPORA_CAVE_B1F, $09, 0
 	map_attributes PectiniaApartmentLeft2F, PECTINIA_APARTMENT_LEFT_2F, $00, 0
 	map_attributes PectiniaApartmentRight2F, PECTINIA_APARTMENT_RIGHT_2F, $00, 0
 	map_attributes PectiniaApartmentLeft3F, PECTINIA_APARTMENT_LEFT_3F, $00, 0
 	map_attributes PectiniaApartmentRight3F, PECTINIA_APARTMENT_RIGHT_3F, $00, 0
-	map_attributes MahoganySubstituteHouse, SUBSTITUTE_HOUSE, $00, 0
-	map_attributes MahoganyApartment1F, MAHOGANY_APARTMENT_1F, $00, 0
-	map_attributes MahoganyApartment2F, MAHOGANY_APARTMENT_2F, $00, 0
-	map_attributes MahoganyApartment3F, MAHOGANY_APARTMENT_3F, $00, 0
+	map_attributes RugosaSubstituteHouse, SUBSTITUTE_HOUSE, $00, 0
+	map_attributes RugosaApartment1F, RUGOSA_APARTMENT_1F, $00, 0
+	map_attributes RugosaApartment2F, RUGOSA_APARTMENT_2F, $00, 0
+	map_attributes RugosaApartment3F, RUGOSA_APARTMENT_3F, $00, 0
 	map_attributes OrchidDragonbreathHouse, DRAGONBREATH_HOUSE, $00, 0
 	map_attributes IlexForestSwordsDanceHouse, SWORDS_DANCE_HOUSE, $00, 0
 	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
@@ -440,9 +436,9 @@ ENDM
 	map_attributes UnownChamberOU, UNOWN_CHAMBER_OU, $00, 0
 	map_attributes UnownChamberVZ, UNOWN_CHAMBER_VZ, $00, 0
 	map_attributes CoastalLab, COASTAL_LAB, $00, 0
-	map_attributes OlivinePort, OLIVINE_PORT, $00, 0
+	map_attributes RugosaPort, RUGOSA_PORT, $00, 0
 	map_attributes Route11CleanseTagHouse, ROUTE_11_CLEANSE_TAG_HOUSE, $00, 0
-	map_attributes MahoganyCafe, MAHOGANY_CAFE, $00, 0
+	map_attributes RugosaCafe, RUGOSA_CAFE, $00, 0
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0

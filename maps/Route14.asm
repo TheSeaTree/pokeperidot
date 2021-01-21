@@ -656,8 +656,8 @@ Route14_MapEvents:
 
 	db 4 ; warp events
 	warp_event 40,  7, ROUTE_14_CAVE_1F, 5
-	warp_event 55, 10, ROUTE_14_OLIVINE_GATE, 1
-	warp_event 55, 11, ROUTE_14_OLIVINE_GATE, 2
+	warp_event 55, 10, ROUTE_14_RUGOSA_GATE, 1
+	warp_event 55, 11, ROUTE_14_RUGOSA_GATE, 2
 	warp_event 17,  5, ROUTE_18, 1
 
 	db 0 ; coord events

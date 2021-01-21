@@ -82,9 +82,9 @@ StaghornGymLeader:
 	opentext
 	writetext PoseyChallengeText
 	waitbutton
-	checkflag ENGINE_FLYPOINT_OLIVINE
+	checkflag ENGINE_FLYPOINT_RUGOSA
 	iftrue .Team2
-	checkflag ENGINE_FLYPOINT_BLACKTHORN
+	checkflag ENGINE_FLYPOINT_ACROPORA
 	iftrue .Team3
 	checkflag ENGINE_FLYPOINT_ORCHID
 	iftrue .Team4

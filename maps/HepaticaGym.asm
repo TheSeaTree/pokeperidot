@@ -37,7 +37,7 @@ HepaticaGymWhitneyScript:
 	waitbutton
 	closetext
 	winlosstext WhitneyShouldntBeSoSeriousText, 0
-	checkflag ENGINE_FLYPOINT_MAHOGANY
+	checkflag ENGINE_FLYPOINT_RUGOSA
 	iftrue .Team3
 	checkflag ENGINE_FLYPOINT_STAGHORN
 	iftrue .Team2

@@ -28,13 +28,11 @@ ENDM
 
 	newgroup                                                      ;  1
 
-	map_const OLIVINE_POKECENTER_1F,                        5,  4 ;  1
-	map_const OLIVINE_MART,                                 6,  4 ;  8
-	map_const OLIVINE_CITY,                                23, 17 ; 14
-	map_const ROUTE_14_OLIVINE_GATE,						5,  4
-	map_const OLIVINE_SURF_HOUSE,							4,  4
+	map_const RUGOSA_COAST,                                23, 17 ; 14
+	map_const ROUTE_14_RUGOSA_GATE,						5,  4
+	map_const RUGOSA_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
-	map_const OLIVINE_PORT,                                10,  9 ; 14
+	map_const RUGOSA_PORT,                                10,  9 ; 14
 	map_const SEA_ROUTE_4,                                 17, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const SEA_ROUTE_1,                                 21, 17 ;  3
@@ -46,22 +44,21 @@ ENDM
 
 	newgroup                                                      ;  2
 
-	map_const MAHOGANY_GYM,                                13, 16 ;  2
-	map_const MAHOGANY_POKECENTER_1F,                       5,  4 ;  3
-	map_const MAHOGANY_TOWN,                               23, 19 ;  7
+	map_const RUGOSA_GYM,                                13, 16 ;  2
+	map_const RUGOSA_POKECENTER_1F,                       5,  4 ;  3
+	map_const RUGOSA_CITY,                               23, 19 ;  7
 	map_const POWER_PLANT_1F,							   16, 11
 	map_const POWER_PLANT_2F,							   16,  8
 	map_const POWER_PLANT_1F_B,							   16, 11
 	map_const POWER_PLANT_2F_B,							   16,  8
-	map_const MAHOGANY_GATE,							    5,  4
-	map_const MAHOGANY_MAGNET_TRAIN_STATION,               10,  9 ;  7
+	map_const RUGOSA_GATE,							    5,  4
 	map_const EMYS_HOUSE,									4,  4
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const SUBSTITUTE_HOUSE,                             4,  4 ;  7
-	map_const MAHOGANY_APARTMENT_1F,                        6,  4
-	map_const MAHOGANY_APARTMENT_2F,                        6,  4
-	map_const MAHOGANY_APARTMENT_3F,                        6,  4
-	map_const MAHOGANY_CAFE,                                7,  4 ;  6
+	map_const RUGOSA_APARTMENT_1F,                        6,  4
+	map_const RUGOSA_APARTMENT_2F,                        6,  4
+	map_const RUGOSA_APARTMENT_3F,                        6,  4
+	map_const RUGOSA_CAFE,                                7,  4 ;  6
 	map_const ROUTE_30_CAVE_1F,								8,  7
 	map_const ROUTE_30_CAVE_B1F,						   13, 18
 	map_const ROUTE_9_CAVE_1F,								6,  5
@@ -78,7 +75,6 @@ ENDM
 	map_const UNION_CAVE_1F,                               23, 10 ; 37
 	map_const UNION_CAVE_B1F,                              20, 16 ; 38
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
-	map_const MAHOGANY_MART_1F,                             4,  4 ; 48
 	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
 	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
 	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
@@ -121,18 +117,18 @@ ENDM
 
 	newgroup                                                      ;  5
 
-	map_const OLIVINE_GYM,                                  5,  6 ;  2
-	map_const BLACKTHORN_MART,                              6,  4 ;  5
-	map_const BLACKTHORN_POKECENTER_1F,                     5,  4 ;  6
-	map_const BLACKTHORN_CITY,                             32, 16 ; 10
+	map_const ACROPORA_GYM,                                  5,  6 ;  2
+	map_const ACROPORA_MART,                              6,  4 ;  5
+	map_const ACROPORA_POKECENTER_1F,                     5,  4 ;  6
+	map_const ACROPORA_CITY,                             32, 16 ; 10
 	map_const ROUTE_21,									   27, 10
 	map_const ROUTE_21_STAGHORN_GATE,						5,  4
-	map_const BLACKTHORN_REST_TALK_HOUSE,                   4,  4
-	map_const BLACKTHORN_LASS_HOUSE,                        4,  4
+	map_const ACROPORA_REST_TALK_HOUSE,                   4,  4
+	map_const ACROPORA_LASS_HOUSE,                        4,  4
 	map_const FLUTE_MASTER_HOUSE,                           4,  4
-	map_const BLACKTHORN_CAVE_1F,                          19, 11
-	map_const BLACKTHORN_CAVE_2F,                          10,  7
-	map_const BLACKTHORN_CAVE_B1F,                         18, 14
+	map_const ACROPORA_CAVE_1F,                          19, 11
+	map_const ACROPORA_CAVE_2F,                          10,  7
+	map_const ACROPORA_CAVE_B1F,                         18, 14
 
 	newgroup                                                      ;  6
 	
@@ -227,13 +223,13 @@ ENDM
 
 	newgroup                                                      ; 12
 
-	map_const MAHOGANY_DEPT_STORE_1F,                      8,  4 ; 11
-	map_const MAHOGANY_DEPT_STORE_2F,                      8,  4 ; 12
-	map_const MAHOGANY_DEPT_STORE_3F,                      8,  4 ; 13
-	map_const MAHOGANY_DEPT_STORE_4F,                      8,  4 ; 14
-	map_const MAHOGANY_DEPT_STORE_5F,                      8,  4 ; 15
-	map_const MAHOGANY_DEPT_STORE_6F,                      8,  4 ; 16
-	map_const MAHOGANY_DEPT_STORE_ELEVATOR,                2,  2 ; 17
+	map_const RUGOSA_DEPT_STORE_1F,                      8,  4 ; 11
+	map_const RUGOSA_DEPT_STORE_2F,                      8,  4 ; 12
+	map_const RUGOSA_DEPT_STORE_3F,                      8,  4 ; 13
+	map_const RUGOSA_DEPT_STORE_4F,                      8,  4 ; 14
+	map_const RUGOSA_DEPT_STORE_5F,                      8,  4 ; 15
+	map_const RUGOSA_DEPT_STORE_6F,                      8,  4 ; 16
+	map_const RUGOSA_DEPT_STORE_ELEVATOR,                2,  2 ; 17
 	map_const ROUTE_6_SURFERS_HOUSE,                       4,  4 ; 13
 	map_const ROUTE_6_WATERFALL_HOUSE,                     4,  4 ; 13
 
@@ -244,7 +240,7 @@ ENDM
 	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 14
-	map_const MAHOGANY_DEPT_STORE_ROOF,                   12,  8 ; 18
+	map_const RUGOSA_DEPT_STORE_ROOF,                   12,  8 ; 18
 
 	newgroup                                                      ; 15
 
