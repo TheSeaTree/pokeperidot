@@ -704,15 +704,7 @@ NormalStep:
 	jr c, .skip_grass
 
 .shake_grass
-	ld a, [wMapTileset]
-	cp TILESET_VOLCANO
-	jr z, .volcano_grass
-
 	call ShakeGrass
-	jp .skip_grass
-
-.volcano_grass
-	call ShakeVolcanoGrass
 
 .skip_grass
 	ld hl, wCenteredObject

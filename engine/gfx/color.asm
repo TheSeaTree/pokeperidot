@@ -1272,10 +1272,23 @@ LoadMapPals:
 	ldh [rSVBK], a
 
 .got_pals
+	ld a, [wMapTileset]
+	cp TILESET_VOLCANO
+	jr z, .volcano
+	
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
 	ld hl, MapObjectPals
+	jr .got_pals_2
+	
+.volcano
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	ld hl, VolcanoObjectPals
+
+.got_pals_2
 	call AddNTimes
 	ld de, wOBPals1
 	ld bc, 8 palettes
@@ -1390,6 +1403,9 @@ INCLUDE "gfx/tilesets/bg_tiles.pal"
 
 MapObjectPals::
 INCLUDE "gfx/overworld/npc_sprites.pal"
+
+VolcanoObjectPals::
+INCLUDE "gfx/overworld/npc_sprites_volcano.pal"
 
 RoofPals:
 INCLUDE "gfx/tilesets/roofs.pal"
