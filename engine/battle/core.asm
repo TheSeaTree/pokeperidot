@@ -7440,13 +7440,13 @@ GiveExperiencePoints:
 	jp z, .skip_stats
 
 ; give stat exp
-	ld hl, MON_STAT_EXP + 1
+;	ld hl, MON_STAT_EXP + 1
 	add hl, bc
 	ld d, h
 	ld e, l
 	ld hl, wEnemyMonBaseStats - 1
 	push bc
-	ld c, NUM_EXP_STATS
+;	ld c, NUM_EXP_STATS
 .loop1
 	inc hl
 	ld a, [de]
