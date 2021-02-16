@@ -6,34 +6,34 @@ AcroporaCave2F_MapScripts:
 	db 0 ; callbacks
 	
 TrainerHikerVincent:
-	trainer HIKER, VINCENT, EVENT_BEAT_HIKER_VINCENT, AcroporaCave2FTrainerText, AcroporaCave2FTrainerWinText, 0, .Script
+	trainer HIKER, VINCENT, EVENT_BEAT_HIKER_VINCENT, HikerVincentText, HikerVincentWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext AcroporaCave2FTrainerAfterText
+	writetext HikerVincentAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerHikerZeke:
-	trainer HIKER, ZEKE, EVENT_BEAT_HIKER_ZEKE, AcroporaCave2FTrainerText, AcroporaCave2FTrainerWinText, 0, .Script
+	trainer HIKER, ZEKE, EVENT_BEAT_HIKER_ZEKE, HikerZekeText, HikerZekeWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext AcroporaCave2FTrainerAfterText
+	writetext HikerZekeAfterText
 	waitbutton
 	closetext
 	end	
 	
 TrainerPokefanMGerald:
-	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, AcroporaCave2FTrainerText, AcroporaCave2FTrainerWinText, 0, .Script
+	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, PokefanMGeraldText, PokefanMGeraldWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext AcroporaCave2FTrainerAfterText
+	writetext PokefanMGeraldAfterText
 	waitbutton
 	closetext
 	end
@@ -41,17 +41,75 @@ TrainerPokefanMGerald:
 AcroporaCave2FBoulder:
 	jumpstd strengthboulder
 	
-AcroporaCave2FTrainerText:
-	text "I am a"
-	line "#MON trainer!"
+HikerVincentText:
+	text "I train up here to"
+	line "avoid the wild"
+	cont "#MON in the"
+	cont "lower level."
+	done
+
+HikerVincentWinText:
+	text "At least I'm not"
+	line "in the dark."
+	done
+
+HikerVincentAfterText:	
+	text "I once stood guard"
+	line "in the basement."
+	
+	para "All of the wild"
+	line "#MON ambushes"
+	cont "left my team too"
+	cont "weak for trainers!"
+	done
+
+HikerZekeText:
+	text "A GYM challenge in"
+	line "a cave."
+	
+	para "I'm in my element!"
+	done
+
+HikerZekeWinText:
+	text "I was supposed to"
+	line "win! Do over!"
+	done
+
+HikerZekeAfterText:
+	text "I tell girls that"
+	line "I'm a GYM trainer."
+	
+	para "They just don't"
+	line "understand that"
+	cont "this cave is"
+	cont "pretty much a"
+	cont "legitimate gym!"
 	done
 	
-AcroporaCave2FTrainerWinText:
-	text "I lost."
+PokefanMGeraldText:
+	text "You stand no match"
+	line "against my duo of"
+	cont "trios!"
 	done
 	
-AcroporaCave2FTrainerAfterText:
-	text "I lost."
+PokefanMGeraldWinText:
+	text "Quality over"
+	line "quantity?"
+	
+	para "No, that's quitter"
+	line "talk!"
+	done
+
+PokefanMGeraldAfterText:
+	text "Someday my DIGLETT"
+	line "will grow strong"
+	cont "enough to evolve,"
+	cont "then you'll be in"
+	cont "for it!"
+	
+	para "There's no way you"
+	line "could handle 12"
+	cont "#MON at once!"
 	done
 
 AcroporaCave2F_MapEvents:

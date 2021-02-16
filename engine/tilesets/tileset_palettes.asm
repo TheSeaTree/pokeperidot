@@ -7,6 +7,8 @@ LoadSpecialMapPalette:
 	jr z, .battle_tower
 	cp TILESET_ICE_PATH
 	jr z, .ice_path
+	cp TILESET_CASTLE
+	jr z, .castle
 	cp TILESET_HOUSE
 	jr z, .house
 	cp TILESET_RADIO_TOWER
@@ -54,6 +56,11 @@ LoadSpecialMapPalette:
 	scf
 	ret
 	
+.castle
+	call LoadCastlePalette
+	scf
+	ret
+
 .tower
 	call LoadTowerPalette
 	scf
@@ -159,6 +166,17 @@ LoadHousePalette:
 
 HousePalette:
 INCLUDE "gfx/tilesets/house.pal"
+
+LoadCastlePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CastlePalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+CastlePalette:
+INCLUDE "gfx/tilesets/castle.pal"
 
 LoadTowerPalette:
 	ld a, BANK(wBGPals1)

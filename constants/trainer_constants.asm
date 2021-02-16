@@ -197,6 +197,7 @@ CHRIS EQU __enum__
 	const MARIE2
 	const BRIANNA
 	const DIANE
+	const CHELLE
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -436,6 +437,7 @@ CHRIS EQU __enum__
 	const BILLY
 	const JIMMY
 	const GORDON
+	const HARRY
 	
 	trainerclass GRUNTF ; 42
 

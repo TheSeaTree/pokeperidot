@@ -11,7 +11,6 @@
 	const TILESET_FACILITY             ; 0b
 	const TILESET_MART                 ; 0c
 	const TILESET_MANSION              ; 0d
-	const TILESET_GAME_CORNER          ; 0e
 	const TILESET_ELITE_FOUR_ROOM      ; 0f
 	const TILESET_TRADITIONAL_HOUSE    ; 10
 	const TILESET_TRAIN_STATION        ; 11
@@ -32,6 +31,7 @@
 	const TILESET_VOLCANO              ; 27
 	const TILESET_ROOF                 ; 28
 	const TILESET_FOREST               ; 29
+	const TILESET_CASTLE               ; 29
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

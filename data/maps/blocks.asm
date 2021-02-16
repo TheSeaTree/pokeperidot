@@ -91,6 +91,7 @@ Route11FaviaGate_Blocks:
 Route11Route12Gate_Blocks:
 RugosaGate_Blocks:
 Route6Gate_Blocks:
+Route14Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route4_Blocks:
@@ -251,6 +252,12 @@ KurtsHouse_Blocks:
 
 PectiniaTrainStation_Blocks:
 	INCBIN "maps/PectiniaTrainStation.ablk"
+
+PectiniaBedStore_Blocks:
+	INCBIN "maps/PectiniaBedStore.ablk"
+
+PectiniaDollStore_Blocks:
+	INCBIN "maps/PectiniaDollStore.ablk"
 
 RadioTower1F_Blocks:
 	INCBIN "maps/RadioTower1F.ablk"
@@ -700,3 +707,15 @@ UnownChamberHN_Blocks:
 UnownChamberOU_Blocks:
 UnownChamberVZ_Blocks:
 	INCBIN "maps/UnownChamber.6x7.ruins_of_alph.ablk"
+
+HoOhCastle1FCentralRoom_Blocks:
+	INCBIN "maps/HoOhCastle1FCentralRoom.ablk"
+	
+HoOhCastle1FSideRooms_Blocks:
+	INCBIN "maps/HoOhCastle1FSideRooms.ablk"
+
+HoOhCastle2F_Blocks:
+	INCBIN "maps/HoOhCastle2F.ablk"
+
+HoOhCastle3F_Blocks:
+	INCBIN "maps/HoOhCastle3F.ablk"

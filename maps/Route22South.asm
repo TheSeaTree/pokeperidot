@@ -78,15 +78,81 @@ Route22SouthSign:
 	jumptext Route22SouthSignText
 	
 BlackbeltRikuText:
+	text "You've met with"
+	line "too many cowards"
+	cont "on your way here."
+	
+	para "Prepare for my"
+	line "PHYSICAL might!"
+	done
+	
 BlackbeltRikuWinText:
+	text "I was just warming"
+	line "up!"
+	done
+	
 BlackbeltRikuAfterText:
+	text "The trainers here"
+	line "need to learn how"
+	cont "a real man fights."
+	
+	para "Those fancy breath"
+	line "moves won't do any-"
+	cont "thing when the"
+	cont "wind is knocked"
+	cont "out of you!"
+	done
+
 CooltrainerToddText:
+	text "There is no way to"
+	line "crack my #MON's"
+	cont "tough scales!"
+	done
+
 CooltrainerToddWinText:
+	text "But how?"
+	
+	para "The heat was meant"
+	line "to make my #MON"
+	cont "stronger!"
+	done
+
 CooltrainerToddAfterText:
+	text "I refuse to let a"
+	line "single loss dis-"
+	cont "courage me."
+	
+	para "I will just need"
+	line "to train twice as"
+	cont "hard!"
+	done
+
 CooltrainerFaithText:
+	text "Watch your step."
+	
+	para "My elegant team"
+	line "may blow you away!"
+	done
+
 CooltrainerFaithWinText:
+	text "Elegance and power."
+	
+	para "One is worthless"
+	line "without the other."
+	done
+
 CooltrainerFaithAfterText:
-	text " "
+	text "There is nothing"
+	line "quite like the"
+	cont "ferocity of a"
+	cont "volcano."
+	
+	para "The danger only"
+	line "makes me train"
+	cont "harder."
+	
+	para "My #MON always"
+	line "have FAITH!"
 	done
 
 Route22HealerText:

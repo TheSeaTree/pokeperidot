@@ -105,6 +105,12 @@ INCLUDE "maps/RugosaGate.asm"
 INCLUDE "maps/RugosaApartment1F.asm"
 INCLUDE "maps/RugosaApartment2F.asm"
 INCLUDE "maps/RugosaApartment3F.asm"
+INCLUDE "maps/PectiniaBedStore.asm"
+INCLUDE "maps/PectiniaDollStore.asm"
+INCLUDE "maps/HoOhCastle1FCentralRoom.asm"
+INCLUDE "maps/HoOhCastle1FSideRooms.asm"
+INCLUDE "maps/HoOhCastle2F.asm"
+INCLUDE "maps/HoOhCastle3F.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -174,6 +180,7 @@ INCLUDE "maps/HepaticaLugiaSpeechHouse.asm"
 INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/HepaticaChurch.asm"
 INCLUDE "maps/Route14RugosaGate.asm"
+INCLUDE "maps/Route14Gate.asm"
 
 
 SECTION "Map Scripts 13", ROMX

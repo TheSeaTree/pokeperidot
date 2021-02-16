@@ -24,7 +24,8 @@ OrchidDragonbreathHouseBookshelf:
 	jumpstd difficultbookshelf
 	
 OrchidDragonbreathTMGuyText:
-	text "Take this TM."
+	text "Take this TM,"
+	line "and use it well."
 	
 	para "It is one of the"
 	line "few moves that is"

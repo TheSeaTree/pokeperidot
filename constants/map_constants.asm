@@ -175,7 +175,7 @@ ENDM
 	map_const PECTINIA_EVOLUTION_HOUSE,                       4,  4
 	map_const PECTINIA_BIKE_HOUSE,                            4,  4
 	map_const PECTINIA_BERRY_HOUSE,                           4,  4
-	map_const ROUTE_4_FOREST_GATE,                          5,  4
+	map_const ROUTE_4_FOREST_GATE,                            5,  4
 	map_const ROUTE_4_PECTINIA_GATE,                          5,  4
 
 	newgroup                                                      ;  9
@@ -188,48 +188,50 @@ ENDM
 
 	newgroup                                                      ; 10
 
-	map_const ROUTE_4,                                     25, 24 ; 12
-	map_const ROUTE_5,                                     27, 13 ;  1
-	map_const ROUTE_6,                                     37, 16 ;  1
-	map_const ROUTE_10_NORTH,                              16, 14 ; 14
-	map_const RIDGE_VILLAGE,                                 27, 12 ;  5
+	map_const ROUTE_4,                                    25, 24 ; 12
+	map_const ROUTE_5,                                    27, 13 ;  1
+	map_const ROUTE_6,                                    37, 16 ;  1
+	map_const ROUTE_10_NORTH,                             16, 14 ; 14
+	map_const RIDGE_VILLAGE,                              27, 12 ;  5
 	map_const RIDGE_CAFE,                                  7,  4 ;  6
 	map_const RIDGE_GYM,                                   5,  4 ;  7
 	map_const RIDGE_POKECENTER_1F,                         5,  4 ; 10
-	map_const RIDGE_GYM_B1,							   18, 16 ; 18
+	map_const RIDGE_GYM_B1,							      18, 16 ; 18
 	map_const RIDGE_MOVE_TUTOR,                            4,  4
 	map_const RIDGE_WEATHER_HOUSE,                         4,  4
 	map_const RIDGE_TRADE_HOUSE,                           4,  4
 	map_const RIDGE_MAGIKARP_HOUSE,                        4,  4 ; 13
-	map_const ROUTE_8_SILK_SCARF_HOUSE,                     4,  4
-	map_const ROUTE_4_HIDDEN_CAVE,                          5,  7
-	map_const ROUTE_8_HIDDEN_CAVE,                          5,  7
+	map_const ROUTE_8_SILK_SCARF_HOUSE,                    4,  4
+	map_const ROUTE_4_HIDDEN_CAVE,                         5,  7
+	map_const ROUTE_8_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 11
 
 	map_const FAVIA_TOWN,                              18, 17 ;  2
-	map_const FAVIA_GYM,                                16, 22 ;  5
-	map_const FAVIA_HAPPINESS_RATER,                    4,  4 ;  5
-	map_const PECTINIA_TRAIN_STATION,               9,  9 ;  7
-	map_const CARNATION_FLOWER_SHOP,                        4,  4 ;  8
-	map_const NAME_RATER,                         4,  4 ; 10
-	map_const FAVIA_POKECENTER_1F,                      5,  4 ; 20
-	map_const ROUTE_8_FAVIA_GATE,                       5,  4 ; 21
-	map_const DAY_CARE,                                     4,  4 ; 24
-	map_const ROUTE_1_FAVIA_GATE,                       5,  4 ; 13
-	map_const FAVIA_MART,                               6,  4
-	map_const ROUTE_11_FAVIA_GATE,                      5,  4
-	map_const ROUTE_11_ROUTE_12_GATE,                       5,  4
+	map_const FAVIA_GYM,                                  16, 22 ;  5
+	map_const FAVIA_HAPPINESS_RATER,                       4,  4 ;  5
+	map_const PECTINIA_TRAIN_STATION,                      9,  9 ;  7
+	map_const CARNATION_FLOWER_SHOP,                       4,  4 ;  8
+	map_const NAME_RATER,                      		       4,  4 ; 10
+	map_const FAVIA_POKECENTER_1F,						   5,  4 ; 20
+	map_const ROUTE_8_FAVIA_GATE,                          5,  4 ; 21
+	map_const DAY_CARE,                                    4,  4 ; 24
+	map_const ROUTE_1_FAVIA_GATE,                          5,  4 ; 13
+	map_const FAVIA_MART,                                  6,  4
+	map_const ROUTE_11_FAVIA_GATE,                         5,  4
+	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
+	map_const PECTINIA_BED_STORE,                      6,  3
+	map_const PECTINIA_DOLL_STORE,                      5,  3
 
 	newgroup                                                      ; 12
 
-	map_const RUGOSA_DEPT_STORE_1F,                      8,  4 ; 11
-	map_const RUGOSA_DEPT_STORE_2F,                      8,  4 ; 12
-	map_const RUGOSA_DEPT_STORE_3F,                      8,  4 ; 13
-	map_const RUGOSA_DEPT_STORE_4F,                      8,  4 ; 14
-	map_const RUGOSA_DEPT_STORE_5F,                      8,  4 ; 15
-	map_const RUGOSA_DEPT_STORE_6F,                      8,  4 ; 16
-	map_const RUGOSA_DEPT_STORE_ELEVATOR,                2,  2 ; 17
+	map_const RUGOSA_DEPT_STORE_1F,                        8,  4 ; 11
+	map_const RUGOSA_DEPT_STORE_2F,                        8,  4 ; 12
+	map_const RUGOSA_DEPT_STORE_3F,                        8,  4 ; 13
+	map_const RUGOSA_DEPT_STORE_4F,                        8,  4 ; 14
+	map_const RUGOSA_DEPT_STORE_5F,                        8,  4 ; 15
+	map_const RUGOSA_DEPT_STORE_6F,                        8,  4 ; 16
+	map_const RUGOSA_DEPT_STORE_ELEVATOR,                  2,  2 ; 17
 	map_const ROUTE_6_SURFERS_HOUSE,                       4,  4 ; 13
 	map_const ROUTE_6_WATERFALL_HOUSE,                     4,  4 ; 13
 
@@ -240,7 +242,7 @@ ENDM
 	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 14
-	map_const RUGOSA_DEPT_STORE_ROOF,                   12,  8 ; 18
+	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
 
 	newgroup                                                      ; 15
 
@@ -266,6 +268,7 @@ ENDM
 	map_const ROUTE_12_SHELTER,								4,  4
 	map_const ROUTE_13,                                    29, 16 ;  1
 	map_const ROUTE_14,                                    31, 14 ;  2
+	map_const ROUTE_14_GATE,                                5,  4 ;  2
 	map_const ROUTE_14_CAVE_1F, 							9, 11
 	map_const ROUTE_14_CAVE_2F,							   10, 10
 	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
@@ -274,8 +277,8 @@ ENDM
 
 	newgroup                                                      ; 19
 
-	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  2
-	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  3
+	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  1
+	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  2
 
 	newgroup                                                      ; 20
 
@@ -292,6 +295,10 @@ ENDM
 	map_const LUGIA_CAVE_B2F,                              22, 16 ;  3
 	map_const LUGIA_CAVE_GATE_CHAMBER,                      6,  9 ;  3
 	map_const LUGIA_LAIR,                                  14, 12 ;  3
+	map_const HO_OH_CASTLE_1F_CENTER_ROOM,                 12, 18 ;  4
+	map_const HO_OH_CASTLE_1F_SIDE_ROOMS,                  15, 12 ;  5
+	map_const HO_OH_CASTLE_2F,                             19, 13 ;  6
+	map_const HO_OH_CASTLE_3F,                             18,  9 ;  7
 
 	newgroup                                                      ; 22
 

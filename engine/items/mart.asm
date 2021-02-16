@@ -94,13 +94,13 @@ Drinks:
 	ld hl, Text_BargainShop_ComeAgain
 	call MartTextBox
 	ret
-	
+
 BPShop:
 	ld b, BANK(BattleSubwayStatShopData)
 	ld de, BattleSubwayStatShopData
 	; Hard coded. Selects a different mart inventory depending on what tile the player stands on.
 	ld a, [wXCoord]
-	cp 7
+	cp 8
 	jr c, .ok
 
 	ld b, BANK(BattleSubwayBattleShopData)

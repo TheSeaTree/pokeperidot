@@ -138,6 +138,7 @@ TilesetPortAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetEliteFourRoomAnim:
+TilesetCastleAnim:
 	dw NULL,  LavaBubbleAnim2
 	dw NULL,  WallCandleTileAnim
 	dw NULL,  WaitTileAnimation
@@ -237,7 +238,6 @@ TilesetPokecenterAnim:
 TilesetLabAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
-TilesetGameCornerAnim:
 TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
 TilesetChampionsRoomAnim:

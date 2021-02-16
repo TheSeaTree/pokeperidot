@@ -103,7 +103,7 @@
 	tilecoll WALL, WALL, FLOOR, COUNTER ; 66
 	tilecoll FLOOR, COUNTER, FLOOR, FLOOR ; 67
 	tilecoll COUNTER, FLOOR, FLOOR, FLOOR ; 68
-	tilecoll WALL, WALL, FLOOR, FLOOR ; 69
+	tilecoll DOOR, WALL, FLOOR, FLOOR ; 69
 	tilecoll WALL, WALL, WALL, WALL ; 6a
 	tilecoll WALL, WALL, WALL, WALL ; 6b
 	tilecoll WALL, ESCALATOR_DOWN, WALL, ESCALATOR_DOWN ; 6c
@@ -111,3 +111,6 @@
 	tilecoll WALL, WALL, FLOOR, WALL ; 6e
 	tilecoll ESCALATOR_UP, WALL, ESCALATOR_UP, WALL ; 6f
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 70
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 71
+	tilecoll WALL, WALL, FLOOR, FLOOR ; 72
+	tilecoll WALL, DOOR, FLOOR, FLOOR ; 73

@@ -75,4 +75,4 @@ OrchidCity_MapEvents:
 	bg_event 26,  7, BGEVENT_UP, OrchidGymEvent
 
 	db 1 ; object events
-	object_event 29, 18, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidCityTeacher, -1
+	object_event 29, 18, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidCityTeacher, -1

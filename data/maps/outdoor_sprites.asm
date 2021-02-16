@@ -3,17 +3,17 @@
 
 OutdoorSprites:
 ; entries correspond to map groups
-	dw OlivineGroupSprites
-	dw MahoganyGroupSprites
+	dw OceanGroupSprites
+	dw RugosaGroupSprites
 	dw DungeonsGroupSprites
-	dw EcruteakGroupSprites
-	dw BlackthornGroupSprites
+	dw StaghornGroupSprites
+	dw AcroporaGroupSprites
 	dw CinnabarGroupSprites
 	dw CeruleanGroupSprites
-	dw AzaleaGroupSprites
+	dw PectiniaGroupSprites
 	dw LakeOfRageGroupSprites
-	dw VioletGroupSprites
-	dw GoldenrodGroupSprites
+	dw RidgeGroupSprites
+	dw FaviaGroupSprites
 	dw VermilionGroupSprites
 	dw PalletGroupSprites
 	dw PewterGroupSprites
@@ -28,7 +28,7 @@ OutdoorSprites:
 	dw ViridianGroupSprites
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
-	dw CherrygroveGroupSprites
+	dw PavonaGroupSprites
 	dw PalerockGroupSprites
 
 ; Route1 and ViridianCity are connected
@@ -209,7 +209,7 @@ IndigoGroupSprites:
 	db 0 ; end
 
 NewBarkGroupSprites:
-CherrygroveGroupSprites:
+PavonaGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -245,9 +245,9 @@ ViridianGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-; Route37 and EcruteakCity are connected
-EcruteakGroupSprites:
-; EcruteakCity
+; Route37 and StaghornCity are connected
+StaghornGroupSprites:
+; StaghornCity
 	db SPRITE_FISHER
 	db SPRITE_LASS
 	db SPRITE_OFFICER
@@ -265,8 +265,8 @@ EcruteakGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-AzaleaGroupSprites:
-; Route33, AzaleaTown
+PectiniaGroupSprites:
+; Route33, PectiniaTown
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
@@ -288,7 +288,7 @@ AzaleaGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-VioletGroupSprites:
+RidgeGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
@@ -309,8 +309,8 @@ VioletGroupSprites:
 	db SPRITE_BUSH
 	db 0 ; end
 	
-GoldenrodGroupSprites:
-; Route34, GoldenrodCity
+FaviaGroupSprites:
+; Route34, FaviaCity
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
@@ -327,9 +327,9 @@ GoldenrodGroupSprites:
 	db SPRITE_TEACHER
 	db 0 ; end
 
-; OlivineCity and Route40 are connected
-OlivineGroupSprites:
-; Route38, Route39, OlivineCity
+; OceanCity and Route40 are connected
+OceanGroupSprites:
+; Route38, Route39, OceanCity
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
@@ -370,8 +370,8 @@ CianwoodGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-MahoganyGroupSprites:
-; Route42, Route44, MahoganyTown
+RugosaGroupSprites:
+; Route42, Route44, RugosaTown
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -406,8 +406,8 @@ LakeOfRageGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-BlackthornGroupSprites:
-; Route45, Route46, BlackthornCity
+AcroporaGroupSprites:
+; Route45, Route46, AcroporaCity
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -449,7 +449,7 @@ DungeonsGroupSprites:
 	db 0 ; end
 
 FastShipGroupSprites:
-; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
+; OceanPort, VermilionPort, MountMoonSquare, TinTowerRoof
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
 	db SPRITE_SUPER_NERD

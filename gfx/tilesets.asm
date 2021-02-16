@@ -41,9 +41,6 @@ INCLUDE "data/tilesets/players_room_collision.asm"
 TilesetLighthouseAttr:
 INCBIN "data/tilesets/lighthouse_attributes.bin"
 
-TilesetGameCornerColl:
-INCLUDE "data/tilesets/game_corner_collision.asm"
-
 
 SECTION "Tileset Data 2", ROMX
 
@@ -125,6 +122,14 @@ INCLUDE "data/tilesets/train_station_collision.asm"
 TilesetGateAttr:
 INCBIN "data/tilesets/gate_attributes.bin"
 
+TilesetCastleGFX:
+INCBIN "gfx/tilesets/castle.2bpp.lz"
+
+TilesetCastleMeta:
+INCBIN "data/tilesets/castle_metatiles.bin"
+
+TilesetCastleColl:
+INCLUDE "data/tilesets/castle_collision.asm"
 
 
 SECTION "Tileset Data 4", ROMX
@@ -309,12 +314,6 @@ TilesetRoofColl:
 INCLUDE "data/tilesets/roof_collision.asm"
 
 
-TilesetGameCornerGFX:
-INCBIN "gfx/tilesets/game_corner.2bpp.lz"
-
-TilesetGameCornerMeta:
-INCBIN "data/tilesets/game_corner_metatiles.bin"
-
 SECTION "Tileset Data 9", ROMX
 
 TilesetFacilityGFX:
@@ -366,9 +365,6 @@ INCBIN "data/tilesets/mart_attributes.bin"
 TilesetMansionAttr:
 INCBIN "data/tilesets/mansion_attributes.bin"
 
-TilesetGameCornerAttr:
-INCBIN "data/tilesets/game_corner_attributes.bin"
-
 TilesetEliteFourRoomAttr:
 INCBIN "data/tilesets/elite_four_room_attributes.bin"
 
@@ -395,6 +391,10 @@ INCBIN "data/tilesets/tower_attributes.bin"
 
 TilesetBattleTowerOutsideAttr:
 INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
+
+TilesetCastleAttr:
+INCBIN "data/tilesets/castle_attributes.bin"
+
 
 SECTION "Tileset Data 11", ROMX
 
