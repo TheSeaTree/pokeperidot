@@ -11,8 +11,6 @@ RugosaSurfHouse_MapScripts:
 RugosaSurfGuy:
 	faceplayer
 	opentext
-	jump .Hostile
-	; Surf is unobtainable in Demo 2
 	checkevent EVENT_GOT_HM_SURF
 	iftrue .GotSurf
 	checkcode VAR_BADGES
@@ -66,29 +64,23 @@ RugosaSurfGuyText:
 	done
 
 RugosaSurfGuyGiveSurf:
-	text "Sorry for the"
-	line "hostility earlier,"
-	cont "little man."
+	text "Hey man, I thought"
+	line "I told you no-"
 	
-	para "We're not too fond"
-	line "of outsiders"
-	cont "moving in on our"
-	cont "turf."
+	para "…Hang on. You have"
+	line "how many badges?"
 	
-	para "JOEL told me all"
-	line "about the little"
-	cont "errand he has you"
-	cont "on."
+	para "6? That's more than"
+	line "me!"
 	
-	para "You need to cross"
-	line "a body of water,"
-	cont "and I know better"
-	cont "than anyone on how"
-	cont "to get that done."
-
-	para "Try taking this HM"
-	line "and teach it to"
-	cont "your #MON."
+	para "Sorry for the hos-"
+	line "tility, then."
+	
+	para "I still can't have"
+	line "you join the club,"
+	cont "but you can try"
+	cont "teaching your"
+	cont "#MON this HM."
 	done
 	
 RugosaSurfGuyExplain:
@@ -96,15 +88,6 @@ RugosaSurfGuyExplain:
 	line "#MON carry you"
 	cont "across most bodies"
 	cont "of water."
-	
-	para "JOEL is an old pal"
-	line "of mine. We go way"
-	cont "back together."
-	
-	para "As far as I care,"
-	line "if he says you're"
-	cont "alright, you must"
-	cont "be alright."
 	
 	para "While you can go"
 	line "explore the ocean,"
