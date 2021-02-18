@@ -100,11 +100,11 @@ JohtoWaterWildMons:
 	
 	map_id ROUTE_6
 	db 4 percent ; encounter rate
-	db 24, TENTACOOL
-	db 24, SEEL
-	db 25, SMOLA
-	db 24, REMORAID
-	db 26, SEARION
+	db 30, TENTACOOL
+	db 30, SEEL
+	db 31, SMOLA
+	db 30, REMORAID
+	db 21, SEARION
 	
 	map_id RUGOSA_COAST
 	db 4 percent
@@ -164,11 +164,11 @@ JohtoWaterWildMons:
 	
 	map_id ROUTE_8
 	db 4 percent ; encounter rate
-	db 24, CORSOLA
-	db 24, SEEL
-	db 25, REMORAID
-	db 24, SMOLA
-	db 26, SEARION
+	db 30, CORSOLA
+	db 30, SEEL
+	db 31, REMORAID
+	db 30, SMOLA
+	db 32, SEARION
 	
 	map_id ROUTE_9
 	db 4 percent ; encounter rate

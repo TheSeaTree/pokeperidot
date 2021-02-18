@@ -249,6 +249,7 @@ CHRIS EQU __enum__
 	const HAROLD
 	const SAUL
 	const GLENN
+	const WALKER
 
 	trainerclass SWIMMERF ; 27
 	const VIVIAN
@@ -258,6 +259,8 @@ CHRIS EQU __enum__
 	const SANDRA
 	const BRETT
 	const MIRANDA
+	const LAUREN
+	const KARLA
 	
 	trainerclass SAILOR ; 28
 	const CALVIN

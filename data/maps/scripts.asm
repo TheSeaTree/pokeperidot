@@ -267,6 +267,7 @@ INCLUDE "maps/RugosaGym.asm"
 INCLUDE "maps/RugosaPokecenter1F.asm"
 INCLUDE "maps/IlexForestSwordsDanceHouse.asm"
 INCLUDE "maps/SeaRoute5.asm"
+INCLUDE "maps/SeaRoute6.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -342,7 +343,6 @@ INCLUDE "maps/Route1.asm"
 INCLUDE "maps/Route18.asm"
 INCLUDE "maps/SeaRoute2.asm"
 INCLUDE "maps/SeaRoute3.asm"
-INCLUDE "maps/SeaRoute6.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route3.asm"

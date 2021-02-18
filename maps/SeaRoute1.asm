@@ -83,7 +83,7 @@ TrainerSwimmerRussel:
 	end
 
 TrainerSwimmerBrett:
-	trainer SWIMMERF, KAIT, EVENT_BEAT_SWIMMERF_KAIT, SwimmerBrettText, SwimmerBrettWinText, 0, .Script
+	trainer SWIMMERF, BRETT, EVENT_BEAT_SWIMMERF_BRETT, SwimmerBrettText, SwimmerBrettWinText, 0, .Script
 
 .Script:
 	endifjustbattled
