@@ -3,12 +3,7 @@
 LugiaCave1F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .OpenWall
-	
-.OpenWall:
-	setevent EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN
-	return
+	db 0 ; callbacks
 
 LugiaCave1F_MapEvents:
 	db 0, 0 ; filler
