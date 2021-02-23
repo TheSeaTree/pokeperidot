@@ -2809,9 +2809,6 @@ AttackItemBoost:
 	jr z, .ok
 	lb bc, CUBONE, MAROWAK
 	ld d, THICK_CLUB
-	jr z, .ok
-	lb bc, PIKACHU, RAICHU
-	ld d, LIGHT_BALL
 .ok
 	call SpeciesItemBoost
 	pop de
@@ -2839,13 +2836,24 @@ SpecialItemBoost:
 	lb bc, SMEARGLE, SMEARGLE
 	ld d, PALETTE
 	jr z, .ok
-	lb bc, PIKACHU, RAICHU
+	cp PIKACHU
+	lb bc, PIKACHU, PIKACHU
 	ld d, LIGHT_BALL
+	jr z, .ok
+	lb bc, RAICHU, RAICHU
+	ld d, LIGHT_BALL
+	call LightBallItemBoost
+	pop de
+	pop bc
+	ret
 .ok
 	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret
+
+.lightball
+	
 
 SpeciesItemBoost:
 ; Return in hl the stat value at hl.
@@ -2885,6 +2893,69 @@ SpeciesItemBoost:
 ; Double the stat
 	sla l
 	rl h
+
+	ld a, HIGH(MAX_STAT_VALUE)
+	cp h
+	jr c, .cap
+	ld a, LOW(MAX_STAT_VALUE)
+	cp l
+	ret nc
+
+.cap
+	ld h, HIGH(MAX_STAT_VALUE)
+	ld l, LOW(MAX_STAT_VALUE)
+	ret
+
+LightBallItemBoost:
+; Return in hl the stat value at hl.
+
+; If the attacking monster is species b or c and
+; it's holding item d, double it.
+
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+
+	push hl
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr z, .CompareSpecies
+	ld a, [wTempEnemyMonSpecies]
+.CompareSpecies:
+	pop hl
+
+	cp b
+	jr z, .GetItemHeldEffect
+	cp c
+	ret nz
+
+.GetItemHeldEffect:
+	push hl
+	call GetUserItem
+	ld a, [hl]
+	pop hl
+	cp d
+	ret nz
+
+; Multiply the stat by 1.5
+	ld a, l
+	srl a
+	add l
+	ld l, a
+	ret nc
+
+	srl h
+	ld a, h
+	and a
+	jr nz, .done
+	inc h
+.done
+	scf
+	rr l
 
 	ld a, HIGH(MAX_STAT_VALUE)
 	cp h
@@ -3304,32 +3375,6 @@ INCLUDE "engine/battle/move_effects/conversion2.asm"
 INCLUDE "engine/battle/move_effects/lock_on.asm"
 
 INCLUDE "engine/battle/move_effects/sketch.asm"
-
-BattleCommand_DefrostOpponent:
-; defrostopponent
-; Thaw the opponent if frozen, and
-; raise the user's Attack one stage.
-
-	call AnimateCurrentMove
-
-	ld a, BATTLE_VARS_STATUS_OPP
-	call GetBattleVarAddr
-	call Defrost
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVarAddr
-	ld a, [hl]
-	push hl
-	push af
-
-	ld a, EFFECT_ATTACK_UP
-	ld [hl], a
-	call BattleCommand_StatUp
-
-	pop af
-	pop hl
-	ld [hl], a
-	ret
 
 INCLUDE "engine/battle/move_effects/sleep_talk.asm"
 
@@ -3764,108 +3809,15 @@ PoisonOpponent:
 
 BattleCommand_DrainTarget:
 ; draintarget
-	call SapHealth
+	farcall SapHealth
 	ld hl, SuckedHealthText
 	jp StdBattleTextBox
 
 BattleCommand_EatDream:
 ; eatdream
-	call SapHealth
+	farcall SapHealth
 	ld hl, DreamEatenText
 	jp StdBattleTextBox
-
-SapHealth:
-	; Divide damage by 2, store it in hDividend
-	ld hl, wCurDamage
-	ld a, [hli]
-	srl a
-	ldh [hDividend], a
-	ld b, a
-	ld a, [hl]
-	rr a
-	ldh [hDividend + 1], a
-	or b
-	jr nz, .at_least_one
-	ld a, 1
-	ldh [hDividend + 1], a
-.at_least_one
-
-	ld hl, wBattleMonHP
-	ld de, wBattleMonMaxHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .battlemonhp
-	ld hl, wEnemyMonHP
-	ld de, wEnemyMonMaxHP
-.battlemonhp
-
-	; Store current HP in little endian wBuffer3/4
-	ld bc, wBuffer4
-	ld a, [hli]
-	ld [bc], a
-	ld a, [hl]
-	dec bc
-	ld [bc], a
-
-	; Store max HP in little endian wBuffer1/2
-	ld a, [de]
-	dec bc
-	ld [bc], a
-	inc de
-	ld a, [de]
-	dec bc
-	ld [bc], a
-
-	; Add hDividend to current HP and copy it to little endian wBuffer5/6
-	ldh a, [hDividend + 1]
-	ld b, [hl]
-	add b
-	ld [hld], a
-	ld [wBuffer5], a
-	ldh a, [hDividend]
-	ld b, [hl]
-	adc b
-	ld [hli], a
-	ld [wBuffer6], a
-	jr c, .max_hp
-
-	; Substract current HP from max HP (to see if we have more than max HP)
-	ld a, [hld]
-	ld b, a
-	ld a, [de]
-	dec de
-	sub b
-	ld a, [hli]
-	ld b, a
-	ld a, [de]
-	inc de
-	sbc b
-	jr nc, .finish
-
-.max_hp
-	; Load max HP into current HP and copy it to little endian wBuffer5/6
-	ld a, [de]
-	ld [hld], a
-	ld [wBuffer5], a
-	dec de
-	ld a, [de]
-	ld [hli], a
-	ld [wBuffer6], a
-	inc de
-
-.finish
-	ldh a, [hBattleTurn]
-	and a
-	hlcoord 10, 9
-	ld a, $1
-	jr z, .hp_bar
-	hlcoord 2, 2
-	xor a
-.hp_bar
-	ld [wWhichHPBar], a
-	predef AnimateHPBar
-	call RefreshBattleHuds
-	jp UpdateBattleMonInParty
 
 BattleCommand_BurnTarget:
 ; burntarget

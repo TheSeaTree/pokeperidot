@@ -74,7 +74,6 @@ BattleCommandPointers:
 	dw BattleCommand_Conversion2
 	dw BattleCommand_LockOn
 	dw BattleCommand_Sketch
-	dw BattleCommand_DefrostOpponent
 	dw BattleCommand_SleepTalk
 	dw BattleCommand_DestinyBond
 	dw BattleCommand_Spite

@@ -118,6 +118,7 @@ PikachuEggMoves:
 	db EXTREMESPEED
 	db PAY_DAY
 	db PETAL_DANCE
+	db SURF
 	db -1 ; end
 
 SandshrewEggMoves:

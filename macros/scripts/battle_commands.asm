@@ -75,7 +75,6 @@ ENDM
 	command conversion2             ; 44
 	command lockon                  ; 45
 	command sketch                  ; 46
-	command defrostopponent         ; 47
 	command sleeptalk               ; 48
 	command destinybond             ; 49
 	command spite                   ; 4a
