@@ -2850,10 +2850,7 @@ SpecialItemBoost:
 	call SpeciesItemBoost
 	pop de
 	pop bc
-	ret
-
-.lightball
-	
+	ret	
 
 SpeciesItemBoost:
 ; Return in hl the stat value at hl.
