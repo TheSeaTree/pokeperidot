@@ -2632,6 +2632,14 @@ PlayerAttackDamage:
 	jr nc, .special
 
 .physical
+	call CheckStatSwapItem
+	jr z, .continuespecial
+
+	ld a, [wBattleMonSpecies]
+	call CheckLightBuoy
+	jr z, .continuespecial
+
+.continuephysical
 	ld hl, wEnemyMonDefense
 	ld a, [hli]
 	ld b, a
@@ -2656,6 +2664,15 @@ PlayerAttackDamage:
 	jr .thickclub
 
 .special
+	call CheckStatSwapItem
+	jr z, .continuephysical
+
+.checklightbuoy
+	ld a, [wBattleMonSpecies]
+	call CheckLightBuoy
+	jr z, .continuephysical
+
+.continuespecial
 	ld hl, wEnemyMonSpclDef
 	ld a, [hli]
 	ld b, a
@@ -2696,6 +2713,20 @@ PlayerAttackDamage:
 
 	ld a, 1
 	and a
+	ret
+	
+CheckStatSwapItem:
+	call GetUserItem
+	ld a, b
+	cp HELD_STAT_SWAP
+	ret
+	
+CheckLightBuoy:
+	cp AZUMARILL
+	ret nz
+	call GetUserItem
+	ld a, b
+	cp HELD_LIGHT_BUOY
 	ret
 
 TruncateHL_BC:
@@ -2806,6 +2837,14 @@ AttackItemBoost:
 	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
 	ld d, PALETTE
+	jr z, .ok
+	cp MARILL
+	lb bc, MARILL, MARILL
+	ld d, LIGHT_BUOY
+	jr z, .ok
+	cp AZUMARILL
+	lb bc, AZUMARILL, AZUMARILL
+	ld d, LIGHT_BUOY
 	jr z, .ok
 	lb bc, CUBONE, MAROWAK
 	ld d, THICK_CLUB
@@ -2981,6 +3020,14 @@ EnemyAttackDamage:
 	jr nc, .Special
 
 .physical
+	call CheckStatSwapItem
+	jr z, .continuespecial
+	
+	ld a, [wEnemyMonSpecies]
+	call CheckLightBuoy
+	jr z, .continuephysical
+	
+.continuephysical
 	ld hl, wBattleMonDefense
 	ld a, [hli]
 	ld b, a
@@ -3005,6 +3052,14 @@ EnemyAttackDamage:
 	jr .thickclub
 
 .Special:
+	call CheckStatSwapItem
+	jr z, .continuephysical
+
+	ld a, [wEnemyMonSpecies]
+	call CheckLightBuoy
+	jr z, .continuephysical
+	
+.continuespecial
 	ld hl, wBattleMonSpclDef
 	ld a, [hli]
 	ld b, a
@@ -3596,18 +3651,6 @@ UpdateMoveData:
 BattleCommand_SleepTarget:
 ; sleeptarget
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_SLEEP
-	jr nz, .not_protected_by_item
-
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .fail
-
-.not_protected_by_item
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	ld d, h
@@ -3676,10 +3719,6 @@ BattleCommand_PoisonTarget:
 	ret z
 	call CheckIfTargetIsPoisonType
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -3715,17 +3754,6 @@ BattleCommand_Poison:
 	and 1 << PSN
 	jp nz, .failed
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_POISON
-	jr nz, .do_poison
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	ld hl, ProtectedByText
-	jr .failed
-
-.do_poison
 	ld hl, DidntAffect1Text
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVar
@@ -3832,10 +3860,6 @@ BattleCommand_BurnTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_BURN
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -3901,10 +3925,6 @@ BattleCommand_FreezeTarget:
 	ret z
 	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
 	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_FREEZE
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -3950,10 +3970,6 @@ BattleCommand_ParalyzeTarget:
 	and $7f
 	ret z
 	call CheckIfTargetIsElectricType
-	ret z
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -5696,10 +5712,6 @@ BattleCommand_Recoil:
 BattleCommand_ConfuseTarget:
 ; confusetarget
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	ret z
 	ld a, [wEffectFailed]
 	and a
 	ret nz
@@ -5716,18 +5728,6 @@ BattleCommand_ConfuseTarget:
 BattleCommand_Confuse:
 ; confuse
 
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_CONFUSE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextBox
-
-.no_item_protection
 	ld a, BATTLE_VARS_SUBSTATUS3_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CONFUSED, [hl]
@@ -5810,18 +5810,7 @@ BattleCommand_Paralyze:
 	jr z, .didnt_affect
 	call CheckIfTargetIsElectricType
 	jr z, .didnt_affect
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_PARALYZE
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextBox
 
-.no_item_protection
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
@@ -5871,18 +5860,7 @@ BattleCommand_Burn:
 	jr z, .didnt_affect
 	call CheckIfTargetIsFireType
 	jr z, .didnt_affect
-	call GetOpponentItem
-	ld a, b
-	cp HELD_PREVENT_BURN
-	jr nz, .no_item_protection
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	call GetItemName
-	call AnimateFailedMove
-	ld hl, ProtectedByText
-	jp StdBattleTextBox
 
-.no_item_protection
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a

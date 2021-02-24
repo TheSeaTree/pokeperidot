@@ -92,8 +92,8 @@ MAIL_STRUCT_LENGTH EQU $2f ; mailmsg struct
 	const HELD_FOCUS_SASH
 
 	const_def 40
-	const HELD_40
-	const HELD_41
+	const HELD_STAT_SWAP
+	const HELD_LIGHT_BUOY
 	const HELD_METAL_POWDER
 
 	const_def 50

@@ -152,12 +152,12 @@ ItemDescriptions:
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw LegendsAuraDesc
+	dw InvalidItemDesc
 	dw AncientTomeDesc
 	dw DollCapsuleDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
-	dw FlowerMailDesc
+	dw InvalidItemDesc
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
@@ -170,7 +170,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw LightBuoyDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
@@ -178,83 +178,83 @@ ItemDescriptions:
 	dw SilverBerryDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama24Desc
+	dw TrickMirrorDesc
 	dw BrickPieceDesc
-	dw SurfMailDesc
-	dw LiteBlueMailDesc
-	dw PortraitMailDesc
-	dw LovelyMailDesc
-	dw EonMailDesc
-	dw MorphMailDesc
-	dw BlueSkyMailDesc
-	dw MusicMailDesc
-	dw MewMailDesc
-	dw TeruSama25Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama29Desc
-	dw TeruSama30Desc
-	dw TeruSama31Desc
-	dw TeruSama32Desc
-	dw TeruSama33Desc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
 
 MasterBallDesc:
 	db   "The best BALL. It"
@@ -858,10 +858,6 @@ BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
 
-LegendsAuraDesc:
-	db   "You should not"
-	next "have this item!@"
-
 AncientTomeDesc:
 	db   "An old book with a"
 	next "powerful aura.@"
@@ -877,10 +873,6 @@ SacredAshDesc:
 HeavyBallDesc:
 	db   "A BALL for catch-"
 	next "ing heavy #MON.@"
-
-FlowerMailDesc:
-	db   "Flower-print MAIL."
-	next "(HOLD)@"
 
 LevelBallDesc:
 	db   "A BALL for lower-"
@@ -933,6 +925,10 @@ PolkadotBowDesc:
 TeruSama22Desc:
 	db   "?@"
 
+LightBuoyDesc:
+	db   "An odd orb. Floats"
+	next "on water. (HOLD)@"
+
 UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
@@ -961,72 +957,14 @@ RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
 
-TeruSama24Desc:
-	db   "?@"
+TrickMirrorDesc:
+	db "Swap PHYS. & SPCL."
+	next "types. (HOLD)@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"
 	next "tile.@"
 
-SurfMailDesc:
-	db   "LAPRAS-print MAIL."
-	next "(HOLD)@"
-
-LiteBlueMailDesc:
-	db   "DRATINI-print"
-	next "MAIL. (HOLD)@"
-
-PortraitMailDesc:
-	db   "MAIL featuring the"
-	next "holder's likeness.@"
-
-LovelyMailDesc:
-	db   "Heart-print MAIL."
-	next "(HOLD)@"
-
-EonMailDesc:
-	db   "EEVEE-print MAIL."
-	next "(HOLD)@"
-
-MorphMailDesc:
-	db   "DITTO-print MAIL."
-	next "(HOLD)@"
-
-BlueSkyMailDesc:
-	db   "Sky-print MAIL."
-	next "(HOLD)@"
-
-MusicMailDesc:
-	db   "NATU-print MAIL."
-	next "(HOLD)@"
-
-MewMailDesc:
-	db   "MEW-print MAIL."
-	next "(HOLD)@"
-
-TeruSama25Desc:
-	db   "?@"
-
-TeruSama26Desc:
-	db   "?@"
-
-TeruSama27Desc:
-	db   "?@"
-
-TeruSama28Desc:
-	db   "?@"
-
-TeruSama29Desc:
-	db   "?@"
-
-TeruSama30Desc:
-	db   "?@"
-
-TeruSama31Desc:
-	db   "?@"
-
-TeruSama32Desc:
-	db   "?@"
-
-TeruSama33Desc:
-	db   "?@"
+InvalidItemDesc:
+	db   "You should not"
+	next "have this item!@"

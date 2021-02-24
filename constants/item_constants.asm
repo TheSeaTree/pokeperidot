@@ -163,7 +163,7 @@
 	const DOLL_CAPSULE ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
-	const FLOWER_MAIL  ; 9e
+	const ITEM_9E      ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
@@ -176,7 +176,7 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const PINK_BOW     ; aa
-	const ITEM_AB      ; ab
+	const LIGHT_BUOY   ; ab
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
@@ -184,17 +184,17 @@
 	const SILVER_BERRY ; b0
 	const PARK_BALL    ; b1
 	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
+	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
-	const SURF_MAIL    ; b5
-	const LITEBLUEMAIL ; b6
-	const PORTRAITMAIL ; b7
-	const LOVELY_MAIL  ; b8
-	const EON_MAIL     ; b9
-	const MORPH_MAIL   ; ba
-	const BLUESKY_MAIL ; bb
-	const MUSIC_MAIL   ; bc
-	const MIRAGE_MAIL  ; bd
+	const ITEM_B5      ; b5
+	const ITEM_B6      ; b6
+	const ITEM_B7      ; b7
+	const ITEM_B8      ; b8
+	const ITEM_B9      ; b9
+	const ITEM_BA      ; ba
+	const ITEM_BB      ; bb
+	const ITEM_BC      ; bc
+	const ITEM_BD      ; bd
 	const ITEM_BE      ; be
 	const ITEM_C3      ; c3
 	const ITEM_DC      ; dc

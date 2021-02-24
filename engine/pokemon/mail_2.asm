@@ -111,16 +111,6 @@ ReadAnyMail:
 	ret
 
 MailGFXPointers:
-	dbw FLOWER_MAIL,  LoadFlowerMailGFX
-	dbw SURF_MAIL,    LoadSurfMailGFX
-	dbw LITEBLUEMAIL, LoadLiteBlueMailGFX
-	dbw PORTRAITMAIL, LoadPortraitMailGFX
-	dbw LOVELY_MAIL,  LoadLovelyMailGFX
-	dbw EON_MAIL,     LoadEonMailGFX
-	dbw MORPH_MAIL,   LoadMorphMailGFX
-	dbw BLUESKY_MAIL, LoadBlueSkyMailGFX
-	dbw MUSIC_MAIL,   LoadMusicMailGFX
-	dbw MIRAGE_MAIL,  LoadMirageMailGFX
 	db -1
 
 LoadSurfMailGFX:
