@@ -167,4 +167,5 @@ MoveEffectsPointers:
 	dw StunSpore
 	dw UTurn
 	dw DoBurn
+	dw NormalHit
 	dw Splash

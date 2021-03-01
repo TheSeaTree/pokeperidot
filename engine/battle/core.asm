@@ -989,7 +989,7 @@ CompareMovePriority:
 	ret
 
 GetMovePriority:
-; Return the priority (0-3) of move a.
+; Return the priority (0-4) of move a.
 
 	ld b, a
 
