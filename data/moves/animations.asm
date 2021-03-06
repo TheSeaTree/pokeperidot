@@ -2562,41 +2562,41 @@ BattleAnim_WillOWisp:
 	anim_ret
 
 BattleAnim_Substitute:
-	anim_sound 0, 0, SFX_SURF
 	anim_if_param_equal $3, BattleAnim_Substitute_branch_ca77c
 	anim_if_param_equal $2, BattleAnim_Substitute_branch_ca76e
 	anim_if_param_equal $1, BattleAnim_Substitute_branch_ca760
+	anim_sound 6, 2, SFX_THROW_BALL
 	anim_1gfx ANIM_GFX_SMOKE
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
-	anim_wait 48
+	anim_wait 32
 	anim_raisesub
 	anim_obj ANIM_OBJ_BALL_POOF, 48, 96, $0
 	anim_bgeffect ANIM_BG_ENTER_MON, $0, $1, $0
-	anim_wait 32
+	anim_wait 16
 	anim_ret
 
 BattleAnim_Substitute_branch_ca760:
+	anim_sound 0, 2, SFX_LICK
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
-	anim_wait 48
+	anim_wait 32
 	anim_dropsub
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Substitute_branch_ca76e:
+	anim_sound 0, 2, SFX_LICK
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
-	anim_wait 48
+	anim_wait 32
 	anim_raisesub
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Substitute_branch_ca77c:
+	anim_sound 0, 2, SFX_LICK
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_wait 48
+	anim_wait 32
 	anim_dropsub
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Minimize:
