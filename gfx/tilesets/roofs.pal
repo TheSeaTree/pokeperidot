@@ -19,8 +19,8 @@
 	RGB 15,07,02, 11,04,02 ; nite
 
 ; group 5 (Blackthorn)
-	RGB 11,10,16, 05,06,07 ; morn/day
-	RGB 03,04,08, 00,00,00 ; nite
+	RGB 22,16,08, 19,11,04 ; morn/day
+	RGB 12,08,10, 06,02,03 ; nite
 
 ; group 6 (Cinnabar)
 	RGB 15,20,01, 09,13,00 ; morn/day

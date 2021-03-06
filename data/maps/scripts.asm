@@ -314,6 +314,7 @@ INCLUDE "maps/CarnationPokecenter1F.asm"
 INCLUDE "maps/CarnationZoo.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
+INCLUDE "maps/Route20AcroporaGate.asm"
 INCLUDE "maps/Route20HeavyBallHouse.asm"
 INCLUDE "maps/Route21StaghornGate.asm"
 

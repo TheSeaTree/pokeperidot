@@ -65,7 +65,7 @@
 	tilecoll WALL, WALL, WALL, FLOOR ; 40
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 41
 	tilecoll WALL, WALL, FLOOR, WALL ; 42
-	tilecoll WATER, WATER, WATER, WATER ; 43
+	tilecoll FLOOR, FLOOR, FLOOR, HEADBUTT_TREE ; 43
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 44
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 45
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 46

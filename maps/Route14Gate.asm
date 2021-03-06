@@ -32,6 +32,8 @@ Route14GateOfficer1Script:
 	iffalse .NoRoom
 	writetext Route14GatePlayerGotItem
 	waitbutton
+	writetext Route14GatePlayerPutAway
+	waitbutton
 	closetext
 	setevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_14_GUARD
 	end
@@ -79,9 +81,9 @@ Route14GateOfficer2Script:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_HARRY
-	opentext
 	
 .FightDone
+	endifjustbattled
 	writetext Route14GateOfficer2AfterBattleText
 	waitbutton
 	closetext
@@ -137,10 +139,13 @@ Route14GateNoRoomText:
 	
 Route14GatePlayerGotItem:
 	text "<PLAYER> received"
-	line "3 RARE CANDY!"
+	line "3 RARE CANDY!@"
 	sound_item
+	db "@"
+	done
 	
-	para "<PLAYER> put the"
+Route14GatePlayerPutAway:
+	text "<PLAYER> put the"
 	line "RARE CANDY in the"
 	cont "ITEM POCKET."
 	done
@@ -183,7 +188,7 @@ Route14GateOfficer2AfterBattleText:
 	text "Hey, quit"
 	line "loitering!"
 	
-	text "I already lost my"
+	para "I already lost my"
 	line "staring contest,"
 	cont "and now a battle…"
 	done

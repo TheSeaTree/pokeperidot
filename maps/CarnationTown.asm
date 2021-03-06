@@ -25,6 +25,9 @@ CarnationTownSign:
 CarnationFloristSign:
 	jumptext CarnationFloristSignText
 	
+CarnationZooSign:
+	jumptext CarnationZooSignText
+	
 CarnationTownFruitTree:
 	fruittree FRUITTREE_CARNATION_TOWN
 
@@ -87,6 +90,11 @@ CarnationFloristSignText:
 	line "with our lovely"
 	cont "plants."
 	done
+	
+CarnationZooSignText:
+	text "CARNATION ZOO-"
+	line "SAFARI ZONE"
+	done
 
 CarnationTown_MapEvents:
 	db 0, 0 ; filler
@@ -98,14 +106,16 @@ CarnationTown_MapEvents:
 	warp_event  4, 11, CARNATION_ZOO_GATE, 4
 	warp_event 11, 13, WOBBUFFET_HOUSE, 1
 	warp_event 19,  5, CARNATION_POKECENTER_1F, 1
+;	warp_event 13,  7, HO_OH_CASTLE_1F_CENTER_ROOM, 1
 	warp_event 13,  7, CARNATION_FLOWER_SHOP, 1
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event 16, 10, BGEVENT_READ, CarnationTownSign
 	bg_event  9, 13, BGEVENT_UP, CarnationMailbox
 	bg_event 12,  8, BGEVENT_READ, CarnationFloristSign
+	bg_event  6,  9, BGEVENT_READ, CarnationZooSign
 	bg_event 20,  5, BGEVENT_READ, CarnationPokecenterSign
 
 	db 4 ; object events

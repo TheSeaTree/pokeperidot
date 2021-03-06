@@ -92,6 +92,7 @@ Route11Route12Gate_Blocks:
 RugosaGate_Blocks:
 Route6Gate_Blocks:
 Route14Gate_Blocks:
+Route20AcroporaGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route4_Blocks:

@@ -117,15 +117,16 @@ ENDM
 
 	newgroup                                                      ;  5
 
-	map_const ACROPORA_GYM,                                  5,  6 ;  2
+	map_const ACROPORA_GYM,                               5,  6 ;  2
 	map_const ACROPORA_MART,                              6,  4 ;  5
 	map_const ACROPORA_POKECENTER_1F,                     5,  4 ;  6
 	map_const ACROPORA_CITY,                             32, 16 ; 10
-	map_const ROUTE_21,									   27, 10
-	map_const ROUTE_21_STAGHORN_GATE,						5,  4
+	map_const ROUTE_20_ACROPORA_GATE,					  5,  4
+	map_const ROUTE_21,									 27, 10
+	map_const ROUTE_21_STAGHORN_GATE,					  5,  4
 	map_const ACROPORA_REST_TALK_HOUSE,                   4,  4
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
-	map_const FLUTE_MASTER_HOUSE,                           4,  4
+	map_const FLUTE_MASTER_HOUSE,                         4,  4
 	map_const ACROPORA_CAVE_1F,                          19, 11
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14

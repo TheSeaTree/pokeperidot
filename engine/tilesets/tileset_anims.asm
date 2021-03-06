@@ -52,6 +52,17 @@ TilesetMountainAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetOceanAnim:
+	dw vTiles2 tile $49, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $49, WriteTileFromBuffer
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetVolcanoAnim:
 	dw vTiles2 tile $49, AnimateWaterTile
 	dw NULL,  LavaBubbleAnim2

@@ -100,7 +100,7 @@ AcroporaCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 8 ; warp events
-	warp_event 39, 13, ROUTE_20, 1
+	warp_event 39, 13, ROUTE_20_ACROPORA_GATE, 3
 	warp_event 33, 17, ACROPORA_POKECENTER_1F, 1
 	warp_event 19, 21, ACROPORA_MART, 1
 	warp_event 27, 21, ACROPORA_REST_TALK_HOUSE, 1

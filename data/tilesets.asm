@@ -43,3 +43,4 @@ Tilesets::
 	tileset TilesetRoof
 	tileset TilesetForest
 	tileset TilesetCastle
+	tileset TilesetOcean

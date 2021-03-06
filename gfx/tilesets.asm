@@ -10,14 +10,17 @@ Tileset0GFX:
 TilesetJohtoGFX:
 TilesetMountainGFX:
 TilesetVolcanoGFX:
+TilesetOceanGFX:
 INCBIN "gfx/tilesets/johto.2bpp.lz"
 
 Tileset0Meta:
 TilesetJohtoMeta:
+TilesetOceanMeta:
 INCBIN "data/tilesets/johto_metatiles.bin"
 
 Tileset0Coll:
 TilesetJohtoColl:
+TilesetOceanColl:
 INCLUDE "data/tilesets/johto_collision.asm"
 
 TilesetIcePathGFX:
@@ -330,6 +333,7 @@ SECTION "Tileset Data 9", ROMX
 
 Tileset0Attr:
 TilesetJohtoAttr:
+TilesetOceanAttr:
 INCBIN "data/tilesets/johto_attributes.bin"
 
 TilesetHouseAttr:

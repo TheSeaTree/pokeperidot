@@ -61,7 +61,7 @@ TrainerSwimmerHarley:
 	end
 
 TrainerSwimmerSandra:
-	trainer SWIMMERF, KAIT, EVENT_BEAT_SWIMMERF_KAIT, SwimmerSandraText, SwimmerSandraWinText, 0, .Script
+	trainer SWIMMERF, SANDRA, EVENT_BEAT_SWIMMERF_SANDRA, SwimmerSandraText, SwimmerSandraWinText, 0, .Script
 
 .Script:
 	endifjustbattled

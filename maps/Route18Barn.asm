@@ -67,7 +67,7 @@ Route18BarnCooltrainerContinueText:
 	para "I was just wond-"
 	line "derin' where my"
 	cont "sister coulda'"
-	cont "gone."
+	cont "gotten off ta'."
 	
 	para "She took off with"
 	line "our family's best"
@@ -132,7 +132,7 @@ Route18Barn_MapEvents:
 	bg_event 20, 19, BGEVENT_ITEM, Route18BarnHiddenMoomooMilk
 
 	db 4 ; object events 
-	object_event  2,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
-	object_event  9,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
-	object_event 11,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
+	object_event  2,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18BarnMiltankScript, -1
+	object_event  9,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18BarnMiltankScript, -1
+	object_event 11,  1, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18BarnMiltankScript, -1
 	object_event  9,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route18BarnCooltrainerScript, -1

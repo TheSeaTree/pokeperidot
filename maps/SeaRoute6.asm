@@ -64,6 +64,7 @@ BeautyChelleText:
 	para "…A battle?"
 	
 	para "…Okay."
+	line "If you wanna lose."
 	done 
 
 BeautyChelleWinText:

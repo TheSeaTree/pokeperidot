@@ -32,6 +32,7 @@
 	const TILESET_ROOF                 ; 28
 	const TILESET_FOREST               ; 29
 	const TILESET_CASTLE               ; 29
+	const TILESET_OCEAN                ; 29
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)

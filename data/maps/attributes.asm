@@ -472,3 +472,4 @@ ENDM
 	map_attributes HoOhCastle1FSideRooms, HO_OH_CASTLE_1F_SIDE_ROOMS, $00, 0
 	map_attributes HoOhCastle2F, HO_OH_CASTLE_2F, $00, 0
 	map_attributes HoOhCastle3F, HO_OH_CASTLE_3F, $00, 0
+	map_attributes Route20AcroporaGate, ROUTE_20_ACROPORA_GATE, $00, 0

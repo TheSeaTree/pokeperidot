@@ -23,7 +23,7 @@ WobbuffetGuy:
 	writetext PlayerGotWobbuffet
 	playsound SFX_CAUGHT_MON
 	waitsfx
-	givepoke WOBBUFFET, 35
+	givepoke WOBBUFFET, 40
 	setevent EVENT_GOT_WOBBUFFET
 	closetext
 	end
@@ -60,7 +60,7 @@ WobbuffetOfferText:
 	line "this #MON is so"
 	cont "powerful that it"
 	cont "was banned in some"
-	cont "competition!"
+	cont "competitions!"
 	
 	para "Can you believe"
 	line "such a thing? A"
