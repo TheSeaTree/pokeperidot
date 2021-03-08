@@ -1693,26 +1693,6 @@ Unknown_100b0a:
 
 SECTION "bank40_2", ROMX
 
-Function100b12:
-	call Function100dd8
-	ret c
-	ld hl, BattleMenuHeader
-	ld a, BANK(BattleMenuHeader)
-	ld de, LoadMenuHeader
-	call FarCall_de
-	ld a, BANK(BattleMenuHeader)
-	ld [wMenuData_2DMenuItemStringsBank], a
-	ld a, [wBattleMenuCursorBuffer]
-	ld [wMenuCursorBuffer], a
-	call Function100e72
-	call Function100b45
-	farcall InitPartyMenuBGPal7
-	call Function100ed4
-	ld a, [wMenuCursorBuffer]
-	ld [wBattleMenuCursorBuffer], a
-	call ExitMenu
-	ret
-
 Function100b45:
 	call Function100b7a
 .loop

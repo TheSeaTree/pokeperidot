@@ -124,6 +124,11 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld [wBattleResult], a
 	ld a, [wLinkMode]
 	and a
+
+	call SwitchTurnCore
+	ld de, ANIM_ENEMY_FLED
+	call Call_PlayBattleAnim
+
 	ld hl, BattleText_WildFled
 	jr z, .print_text
 
@@ -277,7 +282,7 @@ SafariBattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
-	
+
 	jr .loop
 
 HandleBetweenTurnEffects:
@@ -5299,6 +5304,7 @@ CheckSafariMonRan:
 ; divide b by 4 (making the mon less likely to run)
 	srl b
 	srl b
+	ld hl, BattleText_WildMonIsEating
 .checkEscapeFactor
 	ld a, [wSafariMonAngerCount]
 	and a ; is escape factor 0?
@@ -5312,32 +5318,8 @@ CheckSafariMonRan:
 .compareWithRandomValue
 	call BattleRandom
 	cp b
-	ret nc
-	jp WildFled_EnemyFled_LinkBattleCanceled ; if b was greater than the random value, the enemy runs
-
-LoadBattleMenu2:
-	call IsMobileBattle
-	jr z, .mobile
-
-	farcall LoadBattleMenu
-	and a
-	ret
-
-.mobile
-	farcall Function100b12
-	ld a, [wcd2b]
-	and a
-	ret z
-
-	ld hl, wcd2a
-	bit 4, [hl]
-	jr nz, .error
-	ld hl, BattleText_LinkErrorBattleCanceled
-	call StdBattleTextBox
-	ld c, 60
-	call DelayFrames
-.error
-	scf
+	jp c, WildFled_EnemyFled_LinkBattleCanceled ; if b was greater than the random value, the enemy runs
+	ld hl, BattleText_WildMonIsAngry
 	ret
 
 BattleMenu_Pack:
@@ -8239,10 +8221,11 @@ HandleSafariAngerEatingStatus:
 	dec hl ; wSafariMonAngerCount
 	ld a, [hl]
 	and a
-	ret z
+	jr z, .idle
 	dec [hl]
 	ld hl, BattleText_WildMonIsAngry
 	jr nz, .finish
+.continueidle
 	push hl
 	ld a, [wEnemyMonSpecies]
 	ld [wCurSpecies], a
@@ -8256,6 +8239,15 @@ HandleSafariAngerEatingStatus:
 	call Call_LoadTempTileMapToTileMap
 	pop hl
 	jp StdBattleTextBox
+
+.idle
+	ld hl, BattleText_WildMonIsWatching
+	jr .continueidle
+	
+LoadBattleMenu2:
+	farcall LoadBattleMenu
+	and a
+	ret
 
 FillInExpBar:
 	push hl

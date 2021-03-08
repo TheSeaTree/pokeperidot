@@ -404,6 +404,13 @@ BattleText_WildMonIsAngry:
 	line "is angry!"
 	prompt
 
+BattleText_WildMonIsWatching:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text " is"
+	line "watching <PLAYER>."
+	prompt
+
 FastAsleepText:
 	text "<USER>"
 	line "is fast asleep!"

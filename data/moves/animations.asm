@@ -282,6 +282,7 @@ BattleAnimations::
 	dw BattleAnim_HitConfusion
 	dw BattleAnim_ThrowRock
 	dw BattleAnim_ThrowBait
+	dw BattleAnim_EnemyFled
 	dw BattleAnim_ShowMon
 
 BattleAnim_0:
@@ -4033,8 +4034,7 @@ BattleAnim_UTurn:
 	anim_obj ANIM_OBJ_00, 136, 48, $0
 	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
-;	anim_incbgeffect ANIM_BG_26
-;	anim_wait 1
+BattleAnim_EnemyFled:
 	anim_sound 0, 0, SFX_MEGA_PUNCH
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
 	anim_wait 32
