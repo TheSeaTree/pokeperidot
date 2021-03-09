@@ -273,15 +273,17 @@ SafariBattleTurn:
 	ld a, [wBattleEnded]
 	and a
 	ret nz
-	
-	call HandleSafariAngerEatingStatus
+
+	call HandleSafariAngerStatus
 	
 	call CheckSafariMonRan
 	ret c
-	
+
 	ld a, [wBattleEnded]
 	and a
 	ret nz
+
+	call HandleSafariEnemyTurn
 
 	jr .loop
 
@@ -8208,14 +8210,21 @@ TextJump_ComeBack:
 	text_jump Text_ComeBack
 	db "@"
 
-HandleSafariAngerEatingStatus:
+HandleSafariAngerStatus:
+	ld a, [wSafariMonAngerCount]
+	and a
+	ret z
+	ld hl, BattleText_WildMonIsAngry
+	jp StdBattleTextBox
+
+HandleSafariEnemyTurn:
 	ld hl, wSafariMonEating
 	ld a, [hl]
 	and a
 	jr z, .angry
 	dec [hl]
 	ld hl, BattleText_WildMonIsEating
-	jr .finish
+	jp StdBattleTextBox
 
 .angry
 	dec hl ; wSafariMonAngerCount
@@ -8223,8 +8232,7 @@ HandleSafariAngerEatingStatus:
 	and a
 	jr z, .idle
 	dec [hl]
-	ld hl, BattleText_WildMonIsAngry
-	jr nz, .finish
+	ret nz
 .continueidle
 	push hl
 	ld a, [wEnemyMonSpecies]
@@ -8233,15 +8241,11 @@ HandleSafariAngerEatingStatus:
 	ld a, [wBaseCatchRate]
 	ld [wEnemyMonCatchRate], a
 	pop hl
-
-.finish
-	push hl
-	call Call_LoadTempTileMapToTileMap
-	pop hl
-	jp StdBattleTextBox
+	ret
 
 .idle
 	ld hl, BattleText_WildMonIsWatching
+	jp StdBattleTextBox
 	jr .continueidle
 	
 LoadBattleMenu2:

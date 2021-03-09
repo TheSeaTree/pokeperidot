@@ -421,7 +421,7 @@ BattleAnim_ThrowRock:
 	anim_obj ANIM_OBJ_01, 112, 40, $0
 	anim_wait 32
 	anim_ret
-	
+
 BattleAnim_ThrowBait:
 	anim_1gfx ANIM_GFX_BUBBLE
 	anim_sound 0, 0, SFX_KINESIS
