@@ -947,11 +947,16 @@ DoSafariStep:
 	jr z, .NoCall
 
 	ld a, [wSafariStepsRemaining]
-	and a
-	ret z
+	ld b, a
+	ld a, [wSafariStepsRemaining + 1]
+	ld c, a
+	or b
 
-	dec a
+	dec bc
+	ld a, b
 	ld [wSafariStepsRemaining], a
+	ld a, c
+	ld [wSafariStepsRemaining + 1], a
 	ret nz
 
 	ld a, BANK(BugCatchingContestOverScript)

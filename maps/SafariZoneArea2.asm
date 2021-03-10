@@ -21,6 +21,6 @@ SafariZoneArea2_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  8, 22, BGEVENT_READ, SafariZoneArea2Sign
+	bg_event  6, 20, BGEVENT_READ, SafariZoneArea2Sign
 
 	db 0 ; object events

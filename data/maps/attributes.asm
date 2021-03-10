@@ -211,7 +211,7 @@ ENDM
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, 0
 	
 	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, NORTH | EAST
-	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 6
+	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 4
 	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 
 	map_attributes SafariZoneArea2, SAFARI_ZONE_AREA_2, $00, NORTH | WEST
@@ -219,7 +219,7 @@ ENDM
 	connection west, SafariZoneArea1, SAFARI_ZONE_AREA_1, 0
 	
 	map_attributes SafariZoneArea3, SAFARI_ZONE_AREA_3, $00, SOUTH | EAST
-	connection south, SafariZoneArea1, SAFARI_ZONE_AREA_1, -6
+	connection south, SafariZoneArea1, SAFARI_ZONE_AREA_1, -4
 	connection east, SafariZoneArea4, SAFARI_ZONE_AREA_4, 0
 
 	map_attributes SafariZoneArea4, SAFARI_ZONE_AREA_4, $00, SOUTH | WEST

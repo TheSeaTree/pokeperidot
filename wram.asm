@@ -2746,10 +2746,10 @@ wPoisonStepCount:: db ; dc74
 	ds 2
 wHappinessStepCount:: db
 
-wSafariStepsRemaining:: db
+wFireGymStepsRemaining:: db ; dc7a
 wParkBallsRemaining::
 wSafariBallsRemaining:: db ; dc79
-wFireGymStepsRemaining:: dw ; dc7a
+wSafariStepsRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86

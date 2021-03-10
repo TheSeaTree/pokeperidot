@@ -56,33 +56,6 @@ JohtoGrassWildMons:
 	db 18, KANGASKHAN
 	db 20, KANGASKHAN
 
-	map_id UNION_CAVE_B2F
-	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
-	; morn
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, ZUBAT
-	db 21, NYANELL
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
-	; day
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, ZUBAT
-	db 21, NYANELL
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
-	; nite
-	db 22, ZUBAT
-	db 22, GOLBAT
-	db 22, QUAGSIRE
-	db 21, NYANELL
-	db 20, GEODUDE
-	db 23, ONIX
-	db 23, ONIX
-
 	map_id ILEX_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
@@ -977,56 +950,56 @@ JohtoGrassWildMons:
 	map_id ROUTE_19
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 32, BEEDRILL
-	db 32, BUTTERFREE
-	db 31, FEAROW
-	db 32, PARASECT
-	db 31, FEAROW
-	db 32, MANKEY
-	db 33, MANKEY
+	db 35, BEEDRILL
+	db 35, BUTTERFREE
+	db 35, FEAROW
+	db 36, PARASECT
+	db 37, FEAROW
+	db 36, MANKEY
+	db 38, MANKEY
 	; day
-	db 32, BEEDRILL
-	db 32, BUTTERFREE
-	db 31, FEAROW
-	db 32, PARASECT
-	db 31, FEAROW
-	db 32, MANKEY
-	db 33, MANKEY
+	db 35, BEEDRILL
+	db 35, BUTTERFREE
+	db 35, FEAROW
+	db 36, PARASECT
+	db 37, FEAROW
+	db 36, MANKEY
+	db 38, MANKEY
 	; nite
-	db 32, BEEDRILL
-	db 32, BUTTERFREE
-	db 31, FEAROW
-	db 32, PARASECT
-	db 31, FEAROW
-	db 32, JIGGLYPUFF
-	db 33, JIGGLYPUFF
+	db 35, BEEDRILL
+	db 35, VENOMOTH
+	db 35, NOCTOWL
+	db 36, PARASECT
+	db 37, NOCTOWL
+	db 36, JIGGLYPUFF
+	db 38, JIGGLYPUFF
 
 	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 31, FEAROW
-	db 32, DONPHAN
-	db 31, GLIGAR
-	db 32, SHUCKLE
-	db 32, FEAROW
-	db 33, PRIMEAPE
-	db 34, PRIMEAPE
+	db 35, FEAROW
+	db 36, DONPHAN
+	db 35, GLIGAR
+	db 37, YANMA
+	db 36, SHUCKLE
+	db 36, PRIMEAPE
+	db 38, PRIMEAPE
 	; day
-	db 31, FEAROW
-	db 32, DONPHAN
-	db 31, GLIGAR
-	db 32, SHUCKLE
-	db 32, FEAROW
-	db 33, PRIMEAPE
-	db 34, PRIMEAPE
+	db 35, FEAROW
+	db 36, DONPHAN
+	db 35, GLIGAR
+	db 37, YANMA
+	db 36, SHUCKLE
+	db 36, PRIMEAPE
+	db 38, PRIMEAPE
 	; nite
-	db 31, FEAROW
-	db 32, DONPHAN
-	db 31, GLIGAR
-	db 32, SHUCKLE
-	db 32, FEAROW
-	db 33, TEDDIURSA
-	db 34, TEDDIURSA
+	db 35, NOCTOWL
+	db 36, DONPHAN
+	db 35, GLIGAR
+	db 37, ARIADOS
+	db 36, SHUCKLE
+	db 36, URSARING
+	db 38, URSARING
 
 	map_id PAINTERS_FOREST
 	db 10 percent, 10 percent, 5 percent ; encounter rates: morn/day/nite
@@ -1136,131 +1109,159 @@ JohtoGrassWildMons:
 
 	map_id SAFARI_ZONE_AREA_1
 	db 10 percent, 10 percent, 10 percent
-	db 33, NIDORINA
-	db 33, NIDORINO
-	db 32, VENOMOTH
-	db 32, DODRIO
-	db 34, BELLOSSOM
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 35, NIDORINA
+	db 35, NIDORINO
+	db 34, VENOMOTH
+	db 36, DODRIO
+	db 37, BELLOSSOM
+	db 36, CHANSEY
+	db 38, CHANSEY
 	; day
-	db 33, NIDORINA
-	db 33, NIDORINO
-	db 32, DODRIO
-	db 32, VENOMOTH
-	db 34, BELLOSSOM
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 35, NIDORINA
+	db 35, NIDORINO
+	db 34, VENOMOTH
+	db 36, DODRIO
+	db 37, BELLOSSOM
+	db 36, CHANSEY
+	db 38, CHANSEY
 	; nite
-	db 33, NIDORINA
-	db 33, NIDORINO
-	db 32, DODRIO
-	db 32, VENOMOTH
-	db 34, BELLOSSOM
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 35, NIDORINA
+	db 35, NIDORINO
+	db 34, VENOMOTH
+	db 36, DODRIO
+	db 37, BELLOSSOM
+	db 36, CHANSEY
+	db 38, CHANSEY
 
 	map_id SAFARI_ZONE_AREA_2
 	db 10 percent, 10 percent, 10 percent
-	db 34, MACHOKE
-	db 32, RHYHORN
-	db 33, CLEFABLE
-	db 32, KANGASKHAN
-	db 34, SUNFLORA
+	db 36, MACHOKE
+	db 35, RHYHORN
+	db 34, CLEFABLE
+	db 35, KANGASKHAN
+	db 37, SUNFLORA
 	db 28, LARVITAR
 	db 28, LARVITAR
 	; day
-	db 34, MACHOKE
-	db 32, RHYHORN
-	db 33, CLEFABLE
-	db 32, KANGASKHAN
-	db 34, SUNFLORA
+	db 36, MACHOKE
+	db 35, RHYHORN
+	db 34, CLEFABLE
+	db 35, KANGASKHAN
+	db 37, SUNFLORA
 	db 28, LARVITAR
 	db 28, LARVITAR
 	; nite
-	db 34, MACHOKE
-	db 32, RHYHORN
-	db 33, CLEFABLE
-	db 32, KANGASKHAN
-	db 34, SUNFLORA
+	db 36, MACHOKE
+	db 35, RHYHORN
+	db 34, CLEFABLE
+	db 35, KANGASKHAN
+	db 37, SUNFLORA
 	db 28, LARVITAR
 	db 28, LARVITAR
 
 	map_id SAFARI_ZONE_AREA_3
 	db 10 percent, 10 percent, 10 percent
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, PINSIR
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, PINSIR
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 	; day
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, PINSIR
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, PINSIR
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 	; nite
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, PINSIR
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, PINSIR
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 
 	map_id SAFARI_ZONE_AREA_4
 	db 10 percent, 10 percent, 10 percent
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, SCYTHER
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, SCYTHER
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 	; day
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, SCYTHER
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, SCYTHER
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 	; nite
-	db 35, FARFETCH_D
-	db 32, VENOMOTH
-	db 34, SUDOWOODO
-	db 34, SCYTHER
-	db 33, EXEGGUTOR
-	db 30, CHANSEY
-	db 30, CHANSEY
+	db 38, FARFETCH_D
+	db 35, VENOMOTH
+	db 36, SUDOWOODO
+	db 36, SCYTHER
+	db 37, EXEGGUTOR
+	db 36, CHANSEY
+	db 40, CHANSEY
 
 	map_id ACROPORA_CITY
-	db 8 percent, 8 percent, 8 percent
+	db 4 percent, 4 percent, 4 percent
+	; morn
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
-	db 35, CLEFAIRY
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
+	db 38, CLEFAIRY
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
 	; day
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
-	db 35, CLEFAIRY
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
-	db 35, JIGGLYPUFF
+	db 38, CLEFAIRY
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
 	; nite
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
+	db 38, CLEFAIRY
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+	db 38, JIGGLYPUFF
+
+	map_id ROUTE_21
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
+	; day
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
+	db 35, CLEFAIRY
+	db 35, JIGGLYPUFF
+	db 35, JIGGLYPUFF
+	; nite
+	db 35, GRANBULL
+	db 35, ARIADOS
+	db 38, NOCTOWL
+	db 38, NOCTOWL
+	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
 

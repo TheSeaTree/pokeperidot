@@ -259,20 +259,36 @@ JohtoWaterWildMons:
 	db 26, POLIWHIRL
 
 	map_id SAFARI_ZONE_AREA_1
-	db 6 percent
+	db 12 percent
 	db 33, SEEL
-	db 30, POLIWHIRL
-	db 30, POLIWHIRL
-	db 31, LAPRAS
+	db 36, POLIWHIRL
+	db 37, POLIWHIRL
 	db 33, LAPRAS
+	db 36, LAPRAS
 	
 	map_id SAFARI_ZONE_AREA_2
-	db 6 percent
+	db 12 percent
 	db 33, KINGLER
-	db 30, POLIWHIRL
-	db 30, POLIWHIRL
-	db 31, LAPRAS
-	db 33, LAPRAS
+	db 36, POLIWHIRL
+	db 37, POLIWHIRL
+	db 34, LAPRAS
+	db 36, LAPRAS
+	
+	map_id SAFARI_ZONE_AREA_3
+	db 12 percent
+	db 37, SEAKING
+	db 36, POLIWHIRL
+	db 37, POLIWHIRL
+	db 34, GOLDUCK
+	db 36, GOLDUCK
+
+	map_id SAFARI_ZONE_AREA_4
+	db 12 percent
+	db 37, SEAKING
+	db 36, POLIWHIRL
+	db 37, POLIWHIRL
+	db 34, AZUMARILL
+	db 36, AZUMARILL
 	
 	map_id LOST_LAND
 	db 3 percent

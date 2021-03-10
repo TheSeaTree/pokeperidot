@@ -22,7 +22,7 @@ SafariReceptionistScript:
 	waitbutton
 	closetext
 	end
-	
+
 .ExplainZone:
 	writetext ExplainSafariZoneText
 	waitbutton
@@ -81,15 +81,12 @@ SafariGuardScript:
 	writetext SafariZoneYes
 	waitbutton
 	closetext
-	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
-	applymovement PLAYER, SafariEnter
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	waitsfx
 	special GiveParkBalls
 	setflag ENGINE_SAFARI_ZONE
 	special HealParty
-	warpfacing UP, SAFARI_ZONE_AREA_1, 16, 29
+	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
+	applymovement PLAYER, SafariEnter
+	warpcheck
 	end
 
 .decline
@@ -308,7 +305,7 @@ SafariZoneGate1F_MapEvents:
 	db 4 ; warp events
 	warp_event  4,  7, CARNATION_ZOO, 3
 	warp_event  5,  7, CARNATION_ZOO, 3
-	warp_event  8,  0, SAFARI_ZONE_GATE_1F, 3
+	warp_event  8,  0, SAFARI_ZONE_AREA_1,  1
 	warp_event  0,  7, SAFARI_ZONE_GATE_2F, 1
 
 	db 1 ; coord events

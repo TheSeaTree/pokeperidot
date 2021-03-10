@@ -135,7 +135,7 @@ StartMenu_PrintBugContestStatus:
 	call PrintNum
 	hlcoord 12, 1
 	ld de, wSafariStepsRemaining
-	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
 	call PrintNum
 
 .no_contest_mon
@@ -157,7 +157,7 @@ StartMenu_PrintBugContestStatus:
 .Balls_EN:
 	db "BALLS:@"
 .Steps:
-	db "/250@"
+	db "/500@"
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.

@@ -1,10 +1,10 @@
 GiveParkBalls:
-	xor a
-	ld [wContestMon], a
 	ld a, 30
 	ld [wParkBallsRemaining], a
-	ld a, 250
+	ld a, 500 / $100
 	ld [wSafariStepsRemaining], a
+	ld a, 500 % $100
+	ld [wSafariStepsRemaining + 1], a
 	ret
 
 BugCatchingContestBattleScript::
