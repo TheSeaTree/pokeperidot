@@ -525,12 +525,18 @@ TeleportGuyScript:
 	iffalse .decline
 	closetext
 	special OverworldFlyMap
+.decline
+	farwritetext TeleportGuyDeclineText
+	closetext
+	end
+	
+DoTeleportScript:
+	opentext
 	farwritetext TeleportGuyAcceptText
 	closetext
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .TeleportOut
 	pause 8
-;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
@@ -553,11 +559,6 @@ TeleportGuyScript:
 	show_object
 	teleport_to
 	step_resume
-	
-.decline
-	farwritetext TeleportGuyDeclineText
-	closetext
-	end
 	
 	
 CapsuleMachineScript:

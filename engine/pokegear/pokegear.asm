@@ -2132,10 +2132,8 @@ _TeleportMap:
 	jr .loop
 
 .pressedB
-	ld de, SFX_WRONG
-	call PlaySFX
-	call WaitSFX
-	jr .loop
+	ld a, -1
+	jr .CancelMenu
 
 .pressedA
 	ld a, [wTownMapPlayerIconLandmark]
@@ -2158,6 +2156,18 @@ _TeleportMap:
 	ldh [hBGMapAddress + 1], a
 	ld a, [wTownMapPlayerIconLandmark]
 	ld e, a
+
+	ld a, BANK(DoTeleportScript)
+	ld hl, DoTeleportScript
+	call CallScript
+	scf
+	ret
+
+.CancelMenu:
+	ld [wTownMapPlayerIconLandmark], a
+	pop af
+	ldh [hInMenu], a
+	call ClearBGPalettes
 	ret
 
 TownMapBubble:
