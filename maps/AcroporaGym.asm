@@ -41,6 +41,14 @@ GroundGymLeader:
 	closetext
 	end
 	
+AcroporaGymStatue:
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .Beaten
+	jumpstd gymstatue1
+.Beaten:
+	trainertotext JASMINE, JASMINE1, MEM_BUFFER_1
+	jumpstd gymstatue2
+
 AcroporaCantLeave:
 	checkflag ENGINE_GLACIERBADGE
 	iftrue .Leave
@@ -135,9 +143,11 @@ AcroporaGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 4 ; bg events
 	bg_event  4, 12, BGEVENT_DOWN, AcroporaCantLeave
 	bg_event  5, 12, BGEVENT_DOWN, AcroporaCantLeave
+	bg_event  3,  9, BGEVENT_READ, AcroporaGymStatue
+	bg_event  6,  9, BGEVENT_READ, AcroporaGymStatue
 
 	db 1 ; object events
 	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GroundGymLeader, -1

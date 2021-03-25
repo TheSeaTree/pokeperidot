@@ -100,28 +100,29 @@ AcroporaCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 8 ; warp events
-	warp_event 39, 13, ROUTE_20_ACROPORA_GATE, 3
-	warp_event 33, 17, ACROPORA_POKECENTER_1F, 1
-	warp_event 19, 21, ACROPORA_MART, 1
-	warp_event 27, 21, ACROPORA_REST_TALK_HOUSE, 1
-	warp_event 53, 17, FLUTE_MASTER_HOUSE, 1
-	warp_event 12, 13, ACROPORA_CAVE_1F, 1
-	warp_event 28,  5, ACROPORA_CAVE_1F, 6
-	warp_event 35, 23, ACROPORA_LASS_HOUSE, 1
+	warp_event 33, 13, ROUTE_20_ACROPORA_GATE, 3
+	warp_event 27, 17, ACROPORA_POKECENTER_1F, 1
+	warp_event 13, 21, ACROPORA_MART, 1
+	warp_event 21, 21, ACROPORA_REST_TALK_HOUSE, 1
+	warp_event 47, 17, FLUTE_MASTER_HOUSE, 1
+	warp_event  6, 13, ACROPORA_CAVE_1F, 1
+	warp_event 22,  5, ACROPORA_CAVE_1F, 6
+	warp_event 29, 23, ACROPORA_LASS_HOUSE, 1
 
 	db 0 ; coord events
 
 	db 10 ; bg events
-	bg_event 34, 17, BGEVENT_READ, AcroporaCityPokecenterSign
-	bg_event 20, 21, BGEVENT_READ, AcroporaCityMartSign
-	bg_event  9, 25, BGEVENT_UP,   AcroporaCityMailbox
-	bg_event 33, 23, BGEVENT_UP,   AcroporaCityMailbox
-	bg_event 25, 21, BGEVENT_UP,   AcroporaCityMailbox
-	bg_event 36, 17, BGEVENT_READ, AcroporaCitySign
-	bg_event 46, 23, BGEVENT_READ, AcroporaCityGoAwaySign
-	bg_event 52, 18, BGEVENT_READ, FluteMasterSign
-	bg_event 20,  7, BGEVENT_UP,   AcroporaGymEvent
-	bg_event 11, 15, BGEVENT_READ, AcroporaCityGymSign
+	bg_event 28, 17, BGEVENT_READ, AcroporaCityPokecenterSign
+	bg_event 14, 21, BGEVENT_READ, AcroporaCityMartSign
+	bg_event  3, 25, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 27, 23, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 19, 21, BGEVENT_UP,   AcroporaCityMailbox
+	bg_event 30, 17, BGEVENT_READ, AcroporaCitySign
+	bg_event 40, 23, BGEVENT_READ, AcroporaCityGoAwaySign
+	bg_event 46, 18, BGEVENT_READ, FluteMasterSign
+	bg_event 14,  7, BGEVENT_UP,   AcroporaGymEvent
+	bg_event  5, 15, BGEVENT_READ, AcroporaCityGymSign
 
-	db 1 ; object events
-	object_event 44, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1
+	db 2 ; object events
+	object_event 38, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1
+	object_event -4, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
