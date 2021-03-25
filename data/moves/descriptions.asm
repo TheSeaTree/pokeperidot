@@ -1223,8 +1223,8 @@ AncientpowerDescription:
 	next "raise all stats.@"
 
 ShadowBallDescription:
-	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	db   "A GHOST attack that"
+	next "lowers SPCL.DEF.@"
 
 FutureSightDescription:
 	db   "An attack that"
