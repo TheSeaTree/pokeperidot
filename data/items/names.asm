@@ -156,7 +156,7 @@ ItemNames::
 	db "DOLL CAPSULE@"
 	db "SACRED ASH@"
 	db "HEAVY BALL@"
-	db "TERU-SAMA@"
+	db "SMALL KEY@"
 	db "LEVEL BALL@"
 	db "LURE BALL@"
 	db "FAST BALL@"

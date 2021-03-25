@@ -15,4 +15,5 @@ TileCollisionStdScripts:
 	dbw COLL_OLD_STATUE,	 	oldstatue
 	dbw COLL_UNOWN_X,		 	strangesymbols
 	dbw COLL_CAPSULE_MACHINE,	capsulemachine
+	dbw COLL_STOLEN_ITEMS,		stolenitemboxes
 	db -1 ; end

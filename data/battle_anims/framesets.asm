@@ -1274,5 +1274,5 @@ BattleAnimFrameData:
 	endanim
 
 .Frameset_ba:
-	frame BATTLEANIMOAMSET_D9,  8
+	frame BATTLEANIMOAMSET_14,  1
 	endanim

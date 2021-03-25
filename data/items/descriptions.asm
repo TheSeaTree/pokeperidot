@@ -157,7 +157,7 @@ ItemDescriptions:
 	dw DollCapsuleDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
-	dw InvalidItemDesc
+	dw SmallKeyDesc
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
@@ -873,6 +873,10 @@ SacredAshDesc:
 HeavyBallDesc:
 	db   "A BALL for catch-"
 	next "ing heavy #MON.@"
+
+SmallKeyDesc:
+	db	 "A small golden"
+	next "key. Sell low.@"
 
 LevelBallDesc:
 	db   "A BALL for lower-"

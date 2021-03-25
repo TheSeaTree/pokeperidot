@@ -175,6 +175,16 @@ CapsuleMachineAgainText:
 	line "buy another?"
 	done
 	
+StolenGoodsText1:
+	text "It's the stolen"
+	line "items!"
+	done
+
+StolenGoodsText2:
+	text "There's tons of"
+	line "stolen goods!"
+	done
+	
 GymGeyserText:
 	text "It's impossible to"
 	line "pass!"

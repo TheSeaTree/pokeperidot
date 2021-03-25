@@ -120,13 +120,14 @@ ENDM
 	map_const ACROPORA_GYM,                               5,  6 ;  2
 	map_const ACROPORA_MART,                              6,  4 ;  5
 	map_const ACROPORA_POKECENTER_1F,                     5,  4 ;  6
-	map_const ACROPORA_CITY,                             32, 16 ; 10
+	map_const ACROPORA_CITY,                             29, 16 ; 10
 	map_const ROUTE_20_ACROPORA_GATE,					  5,  4
 	map_const ROUTE_21,									 27, 10
 	map_const ROUTE_21_STAGHORN_GATE,					  5,  4
 	map_const ACROPORA_REST_TALK_HOUSE,                   4,  4
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
+	map_const ROUTE_24,									 17, 21
 	map_const ACROPORA_CAVE_1F,                          19, 11
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14
@@ -139,8 +140,14 @@ ENDM
 	map_const SAFARI_ZONE_AREA_2,						   20, 17
 	map_const SAFARI_ZONE_AREA_3,						   15, 15
 	map_const SAFARI_ZONE_AREA_4,						   17, 15
+	map_const SAFARI_ZONE_AREA_5,						   15, 13
+	map_const SAFARI_ZONE_AREA_6,						   12, 10
 	map_const SAFARI_ZONE_AREA_1_REST_HOUSE,				5,  4
+	map_const SAFARI_ZONE_AREA_2_REST_HOUSE,				5,  4
+	map_const SAFARI_ZONE_AREA_3_REST_HOUSE,				5,  4
 	map_const SAFARI_ZONE_AREA_4_REST_HOUSE,				5,  4
+	map_const SAFARI_ZONE_AREA_5_REST_HOUSE,				5,  4
+	map_const SAFARI_ZONE_AREA_6_REST_HOUSE,				5,  4
 	map_const CARNATION_ZOO,							   18, 13
 
 	newgroup                                                      ;  7
@@ -221,8 +228,8 @@ ENDM
 	map_const FAVIA_MART,                                  6,  4
 	map_const ROUTE_11_FAVIA_GATE,                         5,  4
 	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
-	map_const PECTINIA_BED_STORE,                      6,  3
-	map_const PECTINIA_DOLL_STORE,                      5,  3
+	map_const PECTINIA_BED_STORE,                    	   6,  3
+	map_const PECTINIA_DOLL_STORE,                         5,  3
 
 	newgroup                                                      ; 12
 
@@ -244,8 +251,10 @@ ENDM
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
+	map_const HO_OH_CASTLE_ROOF,                            7,  9 ; 18
 
 	newgroup                                                      ; 15
+	map_const ROUTE_25,									   17, 19
 
 	newgroup                                                      ; 16
 

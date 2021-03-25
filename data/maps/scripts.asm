@@ -52,19 +52,20 @@ INCLUDE "maps/BurglarHideoutB2F.asm"
 
 SECTION "Map Scripts 4", ROMX
 
-INCLUDE "maps/RadioTower5F.asm"
-INCLUDE "maps/FaviaPokecenter1F.asm"
-INCLUDE "maps/Route8FaviaGate.asm"
-INCLUDE "maps/DayCare.asm"
-INCLUDE "maps/RugosaSurfHouse.asm"
 INCLUDE "maps/SafariZoneGate1F.asm"
 INCLUDE "maps/SafariZoneGate2F.asm"
 INCLUDE "maps/SafariZoneArea1.asm"
 INCLUDE "maps/SafariZoneArea2.asm"
 INCLUDE "maps/SafariZoneArea3.asm"
 INCLUDE "maps/SafariZoneArea4.asm"
+INCLUDE "maps/SafariZoneArea5.asm"
+INCLUDE "maps/SafariZoneArea6.asm"
 INCLUDE "maps/SafariZoneArea1RestHouse.asm"
+INCLUDE "maps/SafariZoneArea2RestHouse.asm"
+INCLUDE "maps/SafariZoneArea3RestHouse.asm"
 INCLUDE "maps/SafariZoneArea4RestHouse.asm"
+INCLUDE "maps/SafariZoneArea5RestHouse.asm"
+INCLUDE "maps/SafariZoneArea6RestHouse.asm"
 
 SECTION "Map Scripts 5", ROMX
 
@@ -79,6 +80,11 @@ INCLUDE "maps/PectiniaApartmentRight3F.asm"
 INCLUDE "maps/PectiniaApartmentLeft.asm"
 INCLUDE "maps/PectiniaApartmentLeft2F.asm"
 INCLUDE "maps/PectiniaApartmentLeft3F.asm"
+INCLUDE "maps/RadioTower5F.asm"
+INCLUDE "maps/FaviaPokecenter1F.asm"
+INCLUDE "maps/Route8FaviaGate.asm"
+INCLUDE "maps/DayCare.asm"
+INCLUDE "maps/RugosaSurfHouse.asm"
 
 
 SECTION "Map Scripts 6", ROMX
@@ -111,6 +117,7 @@ INCLUDE "maps/HoOhCastle1FCentralRoom.asm"
 INCLUDE "maps/HoOhCastle1FSideRooms.asm"
 INCLUDE "maps/HoOhCastle2F.asm"
 INCLUDE "maps/HoOhCastle3F.asm"
+INCLUDE "maps/HoOhCastleRoof.asm"
 
 
 SECTION "Map Scripts 8", ROMX
@@ -225,6 +232,8 @@ INCLUDE "maps/PectiniaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/PectiniaGym.asm"
 INCLUDE "maps/Route21.asm"
+INCLUDE "maps/Route24.asm"
+INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route22North.asm"
 INCLUDE "maps/Route22South.asm"
 INCLUDE "maps/Route23.asm"

@@ -43,6 +43,8 @@ Landmarks:
 	landmark  36,  60, BlackthornCityName
 	landmark  42,  68, Route17Name ; ROUTE_21
 	landmark  26,  60, Route18Name ; ROUTE_22
+	landmark  26,  60, Route20Name ; ROUTE_24
+	landmark  26,  60, Route21Name ; ROUTE_25
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
@@ -114,6 +116,8 @@ Route16Name:         db "ROUTE 16@"
 Route17Name:         db "ROUTE 17@"
 Route18Name:         db "ROUTE 18@"
 Route19Name:         db "ROUTE 19@"
+Route20Name:         db "ROUTE 20@"
+Route21Name:         db "ROUTE 21@"
 SeaRoute1Name:       db "SEA ROUTE 1@"
 SeaRoute2Name:       db "SEA ROUTE 2@"
 SeaRoute3Name:       db "SEA ROUTE 3@"

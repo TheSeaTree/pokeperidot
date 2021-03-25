@@ -114,13 +114,6 @@ SageScript:
 HepaticaChurchRevive:
 	itemball REVIVE
 	
-HepaticaChurchBoxes:
-	random 2
-	ifequal 1, .box1
-	jumptext HepaticaChurchStolenGoods1
-.box1:
-	jumptext HepaticaChurchStolenGoods2
-	
 Sage2Movement:
 	step RIGHT
 	step UP
@@ -332,16 +325,6 @@ Burglar4WinText:
 	line "you in your place"
 	cont "then!"
 	done
-	
-HepaticaChurchStolenGoods1:
-	text "It's the stolen"
-	line "items!"
-	done
-	
-HepaticaChurchStolenGoods2:
-	text "There's tons of"
-	line "stolen goods!"
-	done
 
 HepaticaChurch_MapEvents:
 	db 0, 0 ; filler
@@ -353,34 +336,7 @@ HepaticaChurch_MapEvents:
 
 	db 0 ; coord events
 
-	db 27 ; bg events
-	bg_event  2, 17, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  3, 16, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 10, 16, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  9, 18, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  9, 17, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 12, 17, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 12, 13, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 13, 13, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 13, 12, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 13, 11, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 13, 10, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 11, 10, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 10, 10, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  1, 15, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  0, 14, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  0, 11, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  0, 10, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  1,  9, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  1,  8, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  1,  6, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  0,  5, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  3,  5, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  3,  4, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event  9,  6, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 10,  4, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 11,  5, BGEVENT_READ, HepaticaChurchBoxes
-	bg_event 11,  6, BGEVENT_READ, HepaticaChurchBoxes
+	db 0 ; bg events
 
 	db 7 ; object events
 	object_event  7, 0, SPRITE_ABBOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH

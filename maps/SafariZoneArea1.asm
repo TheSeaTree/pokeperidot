@@ -39,5 +39,12 @@ SafariZoneArea1_MapEvents:
 	bg_event 34, 28, BGEVENT_READ, SafariZoneArea1Sign
 	bg_event 16,  6, BGEVENT_READ, SafariZoneArea1Sign
 	bg_event 28, 30, BGEVENT_READ, SafariZoneArea1RestHouseSign
+;	bg_event 14,  2, BGEVENT_ITEM, SafariZoneArea1Hidden
+;	bg_event 24, 12, BGEVENT_ITEM, SafariZoneArea1Hidden
 
-	db 0 ; object events
+	db 5 ; object events
+	object_event 18, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 28, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 27,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 33, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -123,6 +123,8 @@ CHRIS EQU __enum__
 	const KURT
 	const DAVID
 	const SETH
+	const PETER
+	const MILTON
 
 	trainerclass POSEY ; 15
 	const POSEY1

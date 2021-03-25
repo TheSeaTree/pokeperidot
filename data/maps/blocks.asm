@@ -600,8 +600,18 @@ SafariZoneArea3_Blocks:
 SafariZoneArea4_Blocks:
 	INCBIN "maps/SafariZoneArea4.ablk"
 
+SafariZoneArea5_Blocks:
+	INCBIN "maps/SafariZoneArea5.ablk"
+
+SafariZoneArea6_Blocks:
+	INCBIN "maps/SafariZoneArea6.ablk"
+
 SafariZoneArea1RestHouse_Blocks:
+SafariZoneArea2RestHouse_Blocks:
+SafariZoneArea3RestHouse_Blocks:
 SafariZoneArea4RestHouse_Blocks:
+SafariZoneArea5RestHouse_Blocks:
+SafariZoneArea6RestHouse_Blocks:
 	INCBIN "maps/SafariZoneRestHouse.5x4.players_house.ablk"
 
 CarnationTown_Blocks:
@@ -621,6 +631,12 @@ OrchidCity_Blocks:
 
 Route21_Blocks:
 	INCBIN "maps/Route21.ablk"	
+
+Route24_Blocks:
+	INCBIN "maps/Route24.ablk"	
+
+Route25_Blocks:
+	INCBIN "maps/Route25.ablk"	
 
 AcroporaCave1F_Blocks:
 	INCBIN "maps/AcroporaCave1F.ablk"
@@ -720,3 +736,6 @@ HoOhCastle2F_Blocks:
 
 HoOhCastle3F_Blocks:
 	INCBIN "maps/HoOhCastle3F.ablk"
+
+HoOhCastleRoof_Blocks:
+	INCBIN "maps/HoOhCastleRoof.ablk"

@@ -24,7 +24,7 @@ BurglarHideout1FDoor:
 	waitbutton
 	checkitem CARD_KEY
 	iffalse .nope
-	farwritetext OpenDoorText
+	farwritetext UsedCardKeyText
 	waitbutton
 	closetext
 	setevent EVENT_USED_CARD_KEY_1F

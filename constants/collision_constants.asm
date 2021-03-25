@@ -11,7 +11,7 @@ COLL_01                EQU $01 ; garbage
 COLL_03                EQU $03 ; garbage
 COLL_04                EQU $04 ; garbage
 COLL_WALL              EQU $07
-COLL_GEYSER            EQU $08 ; unused
+COLL_GEYSER            EQU $08
 COLL_TALL_GRASS_10     EQU $10 ; unused
 COLL_CUT_TREE          EQU $12
 COLL_LONG_GRASS        EQU $14
@@ -107,6 +107,7 @@ COLL_SMASH_WALL_B5	   EQU $b5
 COLL_UNOWN			   EQU $b6
 COLL_OLD_STATUE		   EQU $b7
 COLL_UNOWN_X		   EQU $b8
+COLL_STOLEN_ITEMS	   EQU $b9
 COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles

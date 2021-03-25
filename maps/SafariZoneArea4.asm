@@ -3,10 +3,15 @@
 SafariZoneArea4_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .ClearRestHouse
+	
+.ClearRestHouse:
+	clearflag ENGINE_SAFARI_REST_HOUSE
+	return
 
-SafariZoneTMLeechLife:
-	itemball TM_LEECH_LIFE
+SafariZoneTMSubmission:
+	itemball TM_SUBMISSION
 
 SafariZoneArea4Sign:
 	jumptext SafariZoneArea4SignText
@@ -34,6 +39,9 @@ SafariZoneArea4_MapEvents:
 	db 2 ; bg events
 	bg_event  9, 21, BGEVENT_READ, SafariZoneArea4Sign
 	bg_event 16, 16, BGEVENT_READ, SafariZoneArea4RestHouseSign
+;	bg_event  1,  3, BGEVENT_ITEM, SafariZoneArea4Hidden
+;	bg_event 25, 27, BGEVENT_ITEM, SafariZoneArea4Hidden
 
-	db 1 ; object events
-	object_event 12,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, SafariZoneTMLeechLife, EVENT_GOT_TM_LEECH_LIFE
+	db 2 ; object events
+	object_event 12,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, SafariZoneTMSubmission, EVENT_GOT_TM_SUBMISSION
+	object_event  9,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

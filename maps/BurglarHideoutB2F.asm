@@ -52,7 +52,7 @@ BurglarHideoutB2FKeyDoor:
 	waitbutton
 	checkitem CARD_KEY
 	iffalse .nope
-	farwritetext OpenDoorText
+	writetext UsedCardKeyText
 	waitbutton
 	closetext
 	setevent EVENT_USED_CARD_KEY_B2F
@@ -227,6 +227,28 @@ TrainerSageCaleb2:
 	closetext
 	end
 	
+TrainerScientistPeter:
+	trainer SCIENTIST, PETER, EVENT_BEAT_SCIENTIST_PETER, ScientistPeterText, ScientistPeterWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ScientistPeterAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerScientistMilton:
+	trainer SCIENTIST, MILTON, EVENT_BEAT_SCIENTIST_MILTON, ScientistMiltonText, ScientistMiltonWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext ScientistMiltonAfterText
+	waitbutton
+	closetext
+	end
+	
 BurglarHideoutB2FScientist:
 	faceplayer
 	opentext
@@ -250,6 +272,12 @@ BurglarHideoutB2FScientist:
 	waitbutton
 	closetext
 	end
+	
+BurglarHideoutB2FComputer1:
+	jumptext BurglarHideoutB2FComputer1Text
+
+BurglarHideoutB2FComputer2:
+	jumptext BurglarHideoutB2FComputer2Text
 	
 HideoutCardKey:
 	itemball CARD_KEY
@@ -377,10 +405,74 @@ SageCaleb2AfterText:
 	para "Good!"
 	done
 	
-BurglarHideoutB2FScientistText:
-	text "You're not one of"
-	line "them, are you?"
+ScientistPeterText:
+	text "You found the"
+	line "password?"
 	
+	para "You're smarter"
+	line "than I expected."
+	done
+	
+ScientistPeterWinText:
+	text "According to my"
+	line "calculations, your"
+	cont "#MON can't take"
+	cont "on everyone here."
+	done
+	
+ScientistPeterAfterText:
+	text "I got a real sweet"
+	line "deal going on."
+	
+	para "Just gotta crunch"
+	line "some numbers and"
+	cont "collect my pay."
+	
+	para "Don't ruin this for"
+	line "me!"
+	done
+	
+ScientistMiltonText:
+	text "I'm done being"
+	line "pushed around!"
+	
+	para "ABBOT promised me"
+	line "money and power."
+	
+	para "You won't take"
+	line "that from me!"
+	done
+	
+ScientistMiltonWinText:
+	text "That was"
+	line "calculated!"
+	
+	para "I was simply meant"
+	line "to serve as a dis-"
+	cont "traction."
+	done
+	
+ScientistMiltonAfterText:
+	text "My job is simple."
+	
+	para "All I have to do"
+	line "is reroute ship-"
+	cont "ments of items so"
+	cont "that our guys can"
+	cont "rip them off and"
+	cont "bring the rare"
+	cont "ones back here."
+	
+	para "Do you know the"
+	line "going rate of a"
+	cont "MASTER BALL these"
+	cont "days? Hehe!"
+	done
+	
+BurglarHideoutB2FScientistText:
+	text "Wait, stop! I'm not"
+	line "against you!"
+
 	para "I'm being held"
 	line "here against my"
 	cont "will, but managed"
@@ -416,6 +508,27 @@ BurglarHideoutB2FScientistAfterText:
 	line "probably wanted to"
 	cont "use it on SNORLAX."
 	done
+	
+BurglarHideoutB2FComputer1Text:
+	text "It seems to be a"
+	line "shipping schedule"
+	cont "for stolen items."
+	done
+	
+BurglarHideoutB2FComputer2Text:
+	text "There is a spread-"
+	line "sheet keeping"
+	cont "track of inventory"
+	cont "on the screen."
+
+	para "It looks"
+	cont "complicated."
+	done
+	
+UsedCardKeyText:
+	text "<PLAYER> used"
+	line "the CARD KEY!"
+	done
 
 BurglarHideoutB2F_MapEvents:
 	db 0, 0 ; filler
@@ -426,7 +539,7 @@ BurglarHideoutB2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 10 ; bg events
 	bg_event 26, 12, BGEVENT_UP, BurglarHideoutB2FKeyDoor
 	bg_event  2,  9, BGEVENT_UP, BurglarHideoutB2FDoor1
 	bg_event 28,  3, BGEVENT_UP, BurglarHideoutB2FDoor2
@@ -434,12 +547,17 @@ BurglarHideoutB2F_MapEvents:
 	bg_event 11,  9, BGEVENT_UP, BurglarHideoutB2FDoor4
 	bg_event 18, 15, BGEVENT_UP, BurglarHideoutB2FDoor5
 	bg_event 34,  7, BGEVENT_ITEM, BurglarHideoutB2FHiddenFullRestore
+	bg_event 20,  3, BGEVENT_UP, BurglarHideoutB2FComputer1
+	bg_event  4,  1, BGEVENT_UP, BurglarHideoutB2FComputer1
+	bg_event 10,  1, BGEVENT_UP, BurglarHideoutB2FComputer2
 
-	db 8 ; object events
+	db 10 ; object events
 	object_event  7, 11, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBikerChase, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 26,  5, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBikerLars, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 30, 15, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuke2, EVENT_CLEARED_BURGLAR_HIDEOUT
-	object_event 21, 18, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerSageCaleb2, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event 21, 18, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSageCaleb2, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event 23, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistMilton, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event 10,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerScientistPeter, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event  9, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB2FScientist, -1
 	object_event 32, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, HideoutCardKey, EVENT_GOT_CARD_KEY
 	object_event 33, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurglarHideoutB2FNugget, EVENT_HIDEOUT_NUGGET

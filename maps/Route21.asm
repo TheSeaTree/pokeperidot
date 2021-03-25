@@ -143,6 +143,7 @@ Route21Burglar3NoticeText:
 	
 BikerFlynnText:
 	text "Hey you!"
+	line "Freeze!"
 	
 	para "I'm standing guard"
 	line "by this house for"
@@ -162,7 +163,7 @@ BikerFlynnAfterText:
 	
 	para "I will never say"
 	line "what I'm guarding"
-	cont "this house for."
+	cont "this house for!"
 	done
 
 Route21_MapEvents:

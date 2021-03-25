@@ -1211,6 +1211,58 @@ JohtoGrassWildMons:
 	db 36, CHANSEY
 	db 40, CHANSEY
 
+	map_id SAFARI_ZONE_AREA_5
+	db 10 percent, 10 percent, 10 percent
+	db 10, CHARMANDER
+	db 10, CYNDAQUIL
+	db 50, SNORLAX
+	db 10, CYNDAQUIL
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+	; day
+	db 10, CHARMANDER
+	db 10, CYNDAQUIL
+	db 50, SNORLAX
+	db 10, CYNDAQUIL
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+	; nite
+	db 10, CHARMANDER
+	db 10, CYNDAQUIL
+	db 50, SNORLAX
+	db 10, CYNDAQUIL
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+	db 10, CHARMANDER
+
+	map_id SAFARI_ZONE_AREA_6
+	db 10 percent, 10 percent, 10 percent
+	db 10, BULBASAUR
+	db 10, CHIKORITA
+	db 50, SNORLAX
+	db 10, CHIKORITA
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+	; day
+	db 10, BULBASAUR
+	db 10, CHIKORITA
+	db 50, SNORLAX
+	db 10, CHIKORITA
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+	; nite
+	db 10, BULBASAUR
+	db 10, CHIKORITA
+	db 50, SNORLAX
+	db 10, CHIKORITA
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+	db 10, BULBASAUR
+
 	map_id ACROPORA_CITY
 	db 4 percent, 4 percent, 4 percent
 	; morn
@@ -1267,29 +1319,29 @@ JohtoGrassWildMons:
 
 	map_id ACROPORA_CAVE_B1F
 	db 2 percent, 2 percent, 2 percent
-	db 35, GRAVELER
-	db 35, GRAVELER
-	db 35, ONIX
-	db 35, GOLBAT
-	db 35, GOLBAT
-	db 35, RHYHORN
-	db 35, RHYHORN
+	db 39, GRAVELER
+	db 38, GRAVELER
+	db 39, ONIX
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, RHYHORN
+	db 40, RHYHORN
 	; day
-	db 35, GRAVELER
-	db 35, GRAVELER
-	db 35, ONIX
-	db 35, GOLBAT
-	db 35, GOLBAT
-	db 35, RHYHORN
-	db 35, RHYHORN
+	db 39, GRAVELER
+	db 38, GRAVELER
+	db 39, ONIX
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, RHYHORN
+	db 40, RHYHORN
 	; nite
-	db 35, GRAVELER
-	db 35, GRAVELER
-	db 35, ONIX
-	db 35, GOLBAT
-	db 35, GOLBAT
-	db 35, RHYHORN
-	db 35, RHYHORN
+	db 39, GRAVELER
+	db 38, GRAVELER
+	db 39, ONIX
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, RHYHORN
+	db 40, RHYHORN
 	
 	map_id ROUTE_22_CAVE_1F
 	db 4 percent, 4 percent, 4 percent
@@ -1342,7 +1394,7 @@ JohtoGrassWildMons:
 	db 38, MAGMAR
 	db 40, RHYHORN
 	db 41, RHYHORN
-	
+
 	map_id ROUTE_22_CAVE_B2F
 	db 4 percent, 4 percent, 4 percent
 	db 38, MAGCARGO
@@ -1372,56 +1424,83 @@ JohtoGrassWildMons:
 	map_id ROUTE_22_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
 	; day
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
 	; nite
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
 	
 	map_id ROUTE_22_SOUTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
 	; day
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
 	; nite
-	db 36, SLUGMA
-	db 36, MAGMAR
-	db 37, GRAVELER
 	db 37, SLUGMA
-	db 39, MAGCARGO
+	db 38, MAGMAR
+	db 39, GRAVELER
+	db 39, SLUGMA
+	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
+	
+	map_id HO_OH_CASTLE_1F_CENTER_ROOM
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, MEOWTH
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; day
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, MEOWTH
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; nite
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, MEOWTH
+	db 35, MEOWTH
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
 	
 	map_id LUGIA_CAVE_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite

@@ -81,9 +81,9 @@ PlayBattleMusic:
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
 	ld de, MUSIC_ROCKET_BATTLE
-	cp GRUNTM
+	cp BURGLAR
 	jr z, .done
-	cp GRUNTF
+	cp SAGE
 	jr z, .done
 	cp EXECUTIVEM
 	jr z, .done

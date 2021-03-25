@@ -42,3 +42,4 @@
 	enum mysterygiftgirl
 	enum lightuproom
 	enum teleportguy
+	enum stolenitemboxes

@@ -163,7 +163,7 @@
 	const DOLL_CAPSULE ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
-	const ITEM_9E      ; 9e
+	const SMALL_KEY    ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1

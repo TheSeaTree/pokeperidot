@@ -119,11 +119,15 @@ ENDM
 
 	map_attributes RugosaCity, RUGOSA_CITY, $05, 0
 
-	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH
-	connection south, Route21, ROUTE_21, 11
+	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH | WEST
+	connection south, Route21, ROUTE_21, 8
+	connection west, Route24, ROUTE_24, 1
 	
 	map_attributes Route21, ROUTE_21, $05, NORTH
-	connection north, AcroporaCity, ACROPORA_CITY, -11
+	connection north, AcroporaCity, ACROPORA_CITY, -8
+
+	map_attributes Route24, ROUTE_24, $05, EAST
+	connection east, AcroporaCity, ACROPORA_CITY, -1
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
@@ -210,8 +214,9 @@ ENDM
 
 	map_attributes Route10South, ROUTE_10_SOUTH, $2c, 0
 	
-	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, NORTH | EAST
+	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, NORTH | WEST | EAST
 	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 4
+	connection west, SafariZoneArea5, SAFARI_ZONE_AREA_5, -1
 	connection east, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 
 	map_attributes SafariZoneArea2, SAFARI_ZONE_AREA_2, $00, NORTH | WEST
@@ -225,6 +230,13 @@ ENDM
 	map_attributes SafariZoneArea4, SAFARI_ZONE_AREA_4, $00, SOUTH | WEST
 	connection south, SafariZoneArea2, SAFARI_ZONE_AREA_2, 0
 	connection west, SafariZoneArea3, SAFARI_ZONE_AREA_3, 0
+
+	map_attributes SafariZoneArea5, SAFARI_ZONE_AREA_5, $00, NORTH | EAST
+	connection north, SafariZoneArea6, SAFARI_ZONE_AREA_6, -7
+	connection east, SafariZoneArea1, SAFARI_ZONE_AREA_1, 1
+	
+	map_attributes SafariZoneArea6, SAFARI_ZONE_AREA_6, $00, SOUTH
+	connection south, SafariZoneArea5, SAFARI_ZONE_AREA_5, 7
 	
 	map_attributes CarnationTown, CARNATION_TOWN, $20, SOUTH
 	connection south, Route19, ROUTE_19, -15
@@ -454,7 +466,11 @@ ENDM
 	map_attributes Route18Farmhouse, ROUTE_18_FARMHOUSE, $00, 0
 	map_attributes RidgeMagikarpHouse, RIDGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
+	map_attributes SafariZoneArea2RestHouse, SAFARI_ZONE_AREA_2_REST_HOUSE, $00, 0
+	map_attributes SafariZoneArea3RestHouse, SAFARI_ZONE_AREA_3_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0
+	map_attributes SafariZoneArea5RestHouse, SAFARI_ZONE_AREA_5_REST_HOUSE, $00, 0
+	map_attributes SafariZoneArea6RestHouse, SAFARI_ZONE_AREA_6_REST_HOUSE, $00, 0
 	map_attributes Route11HiddenCave, ROUTE_11_HIDDEN_CAVE, $09, 0
 	map_attributes Route6Gate, ROUTE_6_GATE, $00, 0
 	map_attributes Route6WaterfallHouse, ROUTE_6_WATERFALL_HOUSE, $00, 0
@@ -473,3 +489,5 @@ ENDM
 	map_attributes HoOhCastle2F, HO_OH_CASTLE_2F, $00, 0
 	map_attributes HoOhCastle3F, HO_OH_CASTLE_3F, $00, 0
 	map_attributes Route20AcroporaGate, ROUTE_20_ACROPORA_GATE, $00, 0
+	map_attributes Route25, ROUTE_25, $05, 0
+	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0

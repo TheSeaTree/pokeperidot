@@ -7,6 +7,7 @@ CutTreeBlockPointers:
 	dbw TILESET_FACILITY,	  .facility
 	dbw TILESET_CAVE,		  .cave
 	dbw TILESET_FOREST,		  .forest
+	dbw TILESET_PARK,		  .park
 	db -1 ; end
 
 .johto:
@@ -80,6 +81,19 @@ CutTreeBlockPointers:
 	db $22, $31, 0 ; tree
 	db $23, $30, 0 ; tree
 	db $5f, $66, 0 ; smash wall
+	db -1
+
+.park
+	db $03, $04, 1 ; grass
+	db $1f, $04, 1 ; grass
+	db $23, $04, 1 ; grass
+	db $27, $04, 1 ; grass
+	db $2b, $04, 1 ; grass
+	db $13, $03, 1 ; long grass
+	db $84, $2b, 1 ; long grass
+	db $85, $27, 1 ; long grass
+	db $86, $1f, 1 ; long grass
+	db $87, $23, 1 ; long grass
 	db -1
 
 WhirlpoolBlockPointers:

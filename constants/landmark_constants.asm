@@ -39,6 +39,8 @@
 	const ACROPORA_CITY     ; 29
 	const ROUTE_17          ; 53
 	const ROUTE_18          ; 53
+	const ROUTE_20          ; 53
+	const ROUTE_21          ; 53
 	const ORCHID_CITY
 	const SEA_ROUTE_1       ; 4d
 	const SEA_ROUTE_2       ; 4e

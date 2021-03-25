@@ -210,14 +210,14 @@ INCBIN "gfx/tilesets/forest.2bpp.lz"
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
 
-TilesetTraditionalHouseMeta:
-INCBIN "data/tilesets/traditional_house_metatiles.bin"
-
 TilesetTraditionalHouseColl:
 INCLUDE "data/tilesets/traditional_house_collision.asm"
 
 
 SECTION "Tileset Data 6", ROMX
+
+TilesetTraditionalHouseMeta:
+INCBIN "data/tilesets/traditional_house_metatiles.bin"
 
 TilesetChampionsRoomGFX:
 INCBIN "gfx/tilesets/champions_room.2bpp.lz"

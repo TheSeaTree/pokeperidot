@@ -65,6 +65,7 @@ PewterGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; limit 9 of 9 walking sprites
 	db SPRITE_FISHER
+	db SPRITE_HO_OH
 	db 0 ; end
 
 CinnabarGroupSprites:

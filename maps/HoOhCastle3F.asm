@@ -4,24 +4,36 @@ HoOhCastle3F_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .Pits
+	callback MAPCALLBACK_TILES, .Chest1
 	
-.Pits
+.Chest1
+	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_1
+	iffalse .Chest2
+	changeblock  16,  2, $44
+.Chest2
+	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_2
+	iffalse .Chest3
+	changeblock  10,  8, $44
+.Chest3
+	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_3
+	iffalse .Pit1
+	changeblock  13, 10, $44
+.Pit1
 	checkevent EVENT_HO_OH_CASTLE_3F_PIT_1
-	iffalse .Check2
-	changeblock  12, 4, $2c
-.Check2
+	iffalse .Pit2
+	changeblock  12, 4, $2e
+.Pit2
 	checkevent EVENT_HO_OH_CASTLE_3F_PIT_2
-	iffalse .Check3
+	iffalse .Pit3
 	changeblock  12, 6, $2d
-.Check3
+.Pit3
 	checkevent EVENT_HO_OH_CASTLE_3F_PIT_3
-	iffalse .Check4
+	iffalse .Pit4
 	changeblock  8, 10, $2d
-.Check4
+.Pit4
 	checkevent EVENT_HO_OH_CASTLE_3F_PIT_4
 	iffalse .Done
-	changeblock  10, 10, $2e
+	changeblock 10, 10, $2e
 .Done
 	return
 	
@@ -32,7 +44,7 @@ HoOhCastle3FBrittleFloor1:
 	earthquake 15
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_ENTER_DOOR
-	changeblock  12, 4, $2c
+	changeblock  12, 4, $2e
 	setevent EVENT_HO_OH_CASTLE_3F_PIT_1
 	jump HoOhCastleBrittleFloor
 
@@ -62,7 +74,7 @@ HoOhCastle3FBrittleFloor4:
 	earthquake 15
 	showemote EMOTE_SHOCK, PLAYER, 15
 	playsound SFX_ENTER_DOOR
-	changeblock  10, 10, $2e
+	changeblock 10, 10, $2e
 	setevent EVENT_HO_OH_CASTLE_3F_PIT_4
 
 HoOhCastleBrittleFloor:
@@ -75,6 +87,105 @@ HoOhCastleBrittleFloor:
 SkipHoOhCastle3FPit:
 	end
 	
+HoOhCastle3FTreasureChest1:
+	opentext
+	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_1
+	iftrue .opened
+	writetext HoOhCastleOpenChest
+	waitbutton
+	checkitem SMALL_KEY
+	iffalse .end
+	writetext HoOhCastleUseKey
+	yesorno
+	iffalse .end
+	playsound SFX_ENTER_DOOR
+	changeblock 16, 2, $44
+	reloadmappart
+	waitsfx
+	opentext
+	verbosegiveitem SUPER_REPEL
+	iffalse .end
+	setevent EVENT_HO_OH_CASTLE_3F_CHEST_1
+	takeitem SMALL_KEY
+.end
+	closetext
+	end
+
+.opened
+	writetext HoOhCastleEmptyChest
+	waitbutton
+	closetext
+	end
+	
+HoOhCastle3FTreasureChest2:
+	opentext
+	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_2
+	iftrue .opened
+	writetext HoOhCastleOpenChest
+	waitbutton
+	checkitem SMALL_KEY
+	iffalse .end
+	writetext HoOhCastleUseKey
+	yesorno
+	iffalse .end
+	playsound SFX_ENTER_DOOR
+	changeblock 10, 8, $44
+	reloadmappart
+	waitsfx
+	opentext
+	verbosegiveitem SUPER_REPEL
+	iffalse .end
+	setevent EVENT_HO_OH_CASTLE_3F_CHEST_2
+	takeitem SMALL_KEY
+.end
+	closetext
+	end
+
+.opened
+	writetext HoOhCastleEmptyChest
+	waitbutton
+	closetext
+	end
+	
+HoOhCastle3FTreasureChest3:
+	opentext
+	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_3
+	iftrue .opened
+	writetext HoOhCastleOpenChest
+	waitbutton
+	checkitem SMALL_KEY
+	iffalse .end
+	writetext HoOhCastleUseKey
+	yesorno
+	iffalse .end
+	playsound SFX_ENTER_DOOR
+	changeblock 16, 10, $44
+	reloadmappart
+	waitsfx
+	opentext
+	verbosegiveitem SUPER_REPEL
+	iffalse .end
+	setevent EVENT_HO_OH_CASTLE_3F_CHEST_3
+	takeitem SMALL_KEY
+.end
+	closetext
+	end
+
+.opened
+	writetext HoOhCastleEmptyChest
+	waitbutton
+	closetext
+	end
+	
+HoOhCastle3FHiddenSmallKey1:
+	hiddenitem SMALL_KEY, EVENT_HO_OH_CASTLE_3F_SMALL_KEY_1
+	
+HoOhCastle3FHiddenSmallKey2:
+	hiddenitem SMALL_KEY, EVENT_HO_OH_CASTLE_3F_SMALL_KEY_2
+	
+HoOhCastle3FHiddenSmallKey3:
+	hiddenitem SMALL_KEY, EVENT_HO_OH_CASTLE_3F_SMALL_KEY_3
+	
 CastleMovement_PlayerStartsToFall:
 	skyfall_top
 	step_end
@@ -82,14 +193,14 @@ CastleMovement_PlayerStartsToFall:
 HoOhCastle3F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
-	warp_event  3,  5, HO_OH_CASTLE_2F, 7
-	warp_event 32, 11, HO_OH_CASTLE_2F, 8
-	warp_event 12,  5, HO_OH_CASTLE_2F, 9 ; Pit
-	warp_event 13,  6, HO_OH_CASTLE_2F, 10 ; Pit
-	warp_event  9, 10, HO_OH_CASTLE_1F_SIDE_ROOMS, 12 ; Pit
-	warp_event 10, 11, HO_OH_CASTLE_1F_SIDE_ROOMS, 13 ; Pit
-;	warp_event 23,  9, HO_OH_LAIR, 1
+	db 7 ; warp events
+	warp_event  3,  5, HO_OH_CASTLE_2F, 6
+	warp_event 32, 11, HO_OH_CASTLE_2F, 7
+	warp_event 12,  5, HO_OH_CASTLE_2F, 8 ; Pit
+	warp_event 13,  6, HO_OH_CASTLE_2F, 9 ; Pit
+	warp_event  9, 10, HO_OH_CASTLE_1F_SIDE_ROOMS, 11 ; Pit
+	warp_event 10, 11, HO_OH_CASTLE_1F_SIDE_ROOMS, 12 ; Pit
+	warp_event 23,  9, HO_OH_CASTLE_ROOF, 1
 
 	db 4 ; coord events
 	coord_event 12,  5, -1, HoOhCastle3FBrittleFloor1
@@ -97,6 +208,12 @@ HoOhCastle3F_MapEvents:
 	coord_event  9, 10, -1, HoOhCastle3FBrittleFloor3
 	coord_event 10, 11, -1, HoOhCastle3FBrittleFloor4
 
-	db 0 ; bg events
+	db 6 ; bg events
+	bg_event 17,  2, BGEVENT_UP, HoOhCastle3FTreasureChest1
+	bg_event 11,  8, BGEVENT_UP, HoOhCastle3FTreasureChest2
+	bg_event 17, 10, BGEVENT_UP, HoOhCastle3FTreasureChest3
+	bg_event 15,  4, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey1
+	bg_event 24, 14, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey2
+	bg_event 12, 10, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey3
 
 	db 0 ; object events

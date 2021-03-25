@@ -41,6 +41,7 @@ StdScripts::
 	dba MysteryGiftGirl
 	dba LightUpRoomScript
 	dba TeleportGuyScript
+	dba StolenItemsBoxScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -336,6 +337,7 @@ FireGymWarpScript::
 
 BugContestResultsWarpScript:
 	special FadeOutPalettes
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	playsound SFX_EXIT_BUILDING
 	waitsfx
 	warp SAFARI_ZONE_GATE_1F, 8, 0
@@ -604,6 +606,13 @@ CapsuleMachineScript:
 	farwritetext UnknownText_0x1c4fb7
 	waitbutton
 	jump .End
+
+StolenItemsBoxScript:
+	random 2
+	ifequal 1, .box1
+	farjumptext StolenGoodsText1
+.box1:
+	farjumptext StolenGoodsText2
 
 Movement_ContestResults_WalkAfterWarp:
 	step DOWN

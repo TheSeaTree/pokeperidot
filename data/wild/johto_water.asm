@@ -289,6 +289,22 @@ JohtoWaterWildMons:
 	db 37, POLIWHIRL
 	db 34, AZUMARILL
 	db 36, AZUMARILL
+
+	map_id SAFARI_ZONE_AREA_5
+	db 12 percent
+	db 10, SQUIRTLE
+	db 10, TOTODILE
+	db 10, TOTODILE
+	db 10, TOTODILE
+	db 10, TOTODILE
+
+	map_id SAFARI_ZONE_AREA_6
+	db 12 percent
+	db 10, SQUIRTLE
+	db 10, TOTODILE
+	db 10, TOTODILE
+	db 10, TOTODILE
+	db 10, TOTODILE
 	
 	map_id LOST_LAND
 	db 3 percent

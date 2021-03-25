@@ -13,8 +13,8 @@ SafariZoneArea1RestHouse_MapScripts:
 SafariArea1RestHouseReceptionist:
 	jumptextfaceplayer SafariArea1RestHouseReceptionistText
 	
-SafariArea1RestHousePokefan:
-	jumptextfaceplayer SafariArea1RestHousePokefanText
+SafariArea1RestHouseCooltrainer
+	jumptextfaceplayer SafariArea1RestHouseCooltrainerText
 	
 SafariArea1RestHouseLass:
 	jumptextfaceplayer SafariArea1RestHouseLassText
@@ -28,17 +28,15 @@ SafariArea1RestHouseReceptionistText:
 	cont "like."
 	done
 	
-SafariArea1RestHousePokefanText:
-	text "WAHOO!"
-	line "I did it!"
+SafariArea1RestHouseCooltrainerText:
+	text "I've heard rumors"
+	line "of the SAFARI ZONE"
+	cont "getting an expan-"
+	cont "sion soon."
 	
-	para "I finally caught a"
-	line "CHANSEY all of my"
-	cont "own!"
-	
-	para "And it was green!"
-	line "I've never seen one"
-	cont "like that."
+	para "They must be get-"
+	line "ting new #MON"
+	cont "for the park."
 	done
 	
 SafariArea1RestHouseLassText:
@@ -65,4 +63,4 @@ SafariZoneArea1RestHouse_MapEvents:
 	db 3 ; object events
 	object_event  7,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SafariArea1RestHouseReceptionist, -1
 	object_event  4,  5, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SafariArea1RestHouseLass, -1
-	object_event  3,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariArea1RestHousePokefan, -1
+	object_event  3,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariArea1RestHouseCooltrainer, -1
