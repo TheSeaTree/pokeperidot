@@ -145,6 +145,11 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
+	; Cannot cut the grass in Staghorn Gym
+	ld a, [wMapMusic]
+	cp MUSIC_GYM
+	jr z, .nothingtocut
+
 	ld de, ENGINE_MYSTICBADGE
 	call CheckBadge
 	jr c, .nocutbadge
@@ -630,7 +635,6 @@ FlyFunction:
 	ret
 
 TeleportGuyFunction:
-	xor a
 	ldh [hMapAnims], a
 	call LoadStandardMenuHeader
 	call ClearSprites
@@ -892,7 +896,6 @@ dig_incave
 	applymovement PLAYER, .DigOut
 ;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_DOOR
 	playsound SFX_WARP_FROM
 	applymovement PLAYER, .DigReturn
