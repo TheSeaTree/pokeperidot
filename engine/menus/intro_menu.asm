@@ -177,10 +177,6 @@ endc
 
 	farcall InitDecorations
 
-	farcall DeletePartyMonMail
-
-	farcall DeleteMobileEventIndex
-
 	call ResetGameTime
 	ret
 
@@ -213,7 +209,7 @@ SetDefaultBoxNames:
 	ld [hli], a
 	ld [hl], "@"
 	pop hl
-	ld de, 9 ; Change to 7 (Box Name Length)
+	ld de, 7 ; Change to 7 (Box Name Length)
 	add hl, de
 	inc c
 	ld a, c
