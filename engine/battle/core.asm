@@ -5005,20 +5005,12 @@ PrintPlayerHUD:
 .got_gender_char
 	hlcoord 17, 8
 	ld [hl], a
-	hlcoord 14, 8
-	push af ; back up gender
-	push hl
+	hlcoord 11, 8
+
 	ld de, wBattleMonStatus
 	predef PlaceNonFaintStatus
-	pop hl
-	pop bc
-	ret nz
-	ld a, b
-	cp " "
-	jr nz, .copy_level ; male or female
-	dec hl ; genderless
 
-.copy_level
+	hlcoord 14, 8
 	ld a, [wBattleMonLevel]
 	ld [wTempMonLevel], a
 	jp PrintLevel
@@ -5082,23 +5074,21 @@ DrawEnemyHUD:
 	hlcoord 9, 3
 	ld [hl], a
 
-	hlcoord 6, 3
+	hlcoord 3, 3
 	push af
 	push hl
 	ld de, wEnemyMonStatus
 	predef PlaceNonFaintStatus
 	pop hl
 	pop bc
-	jr nz, .skip_level
-	ld a, b
-	cp ""
-	jr nz, .print_level
-	dec hl
+	jr z, .print_level
+	hlcoord 2, 3 ; draw a new endcap for enemy HUD
+	ld [hl], $7b
 .print_level
+	hlcoord 6, 3
 	ld a, [wEnemyMonLevel]
 	ld [wTempMonLevel], a
 	call PrintLevel
-.skip_level
 
 	ld hl, wEnemyMonHP
 	ld a, [hli]
