@@ -157,7 +157,7 @@ StartMenu_PrintBugContestStatus:
 .Balls_EN:
 	db "BALLS:@"
 .Steps:
-	db "/500@"
+	db "/300@"
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.

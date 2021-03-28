@@ -13,7 +13,7 @@ Script_Whiteout:
 	pause 40
 	special HealParty
 	checkflag ENGINE_SAFARI_ZONE
-	iftrue .bug_contest
+	iftrue .safari_zone
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
 	clearflag ENGINE_SAFARI_ZONE
@@ -21,8 +21,8 @@ Script_Whiteout:
 	newloadmap MAPSETUP_WARP
 	endall
 
-.bug_contest
-	jumpstd bugcontestresultswarp
+.safari_zone
+	jumpstd safarizonewarp
 
 .WhitedOutText:
 	; is out of useable #MON!  whited out!

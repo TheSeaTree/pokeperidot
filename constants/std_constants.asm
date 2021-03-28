@@ -30,7 +30,7 @@
 	enum elevatorbutton
 	enum daytotext
 	enum firegymwarp
-	enum bugcontestresultswarp
+	enum safarizonewarp
 	enum initializeevents
 	enum gymstatue1
 	enum gymstatue2

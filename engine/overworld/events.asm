@@ -953,14 +953,19 @@ DoSafariStep:
 	or b
 
 	dec bc
+	ld a, b   
+	or c   
+	jr z, .returntogate
+
 	ld a, b
 	ld [wSafariStepsRemaining], a
 	ld a, c
 	ld [wSafariStepsRemaining + 1], a
-	ret nz
+	ret
 
-	ld a, BANK(BugCatchingContestOverScript)
-	ld hl, BugCatchingContestOverScript
+.returntogate
+	ld a, BANK(SafariGameOverScript)
+	ld hl, SafariGameOverScript
 	call CallScript
 	scf
 	ret
@@ -1187,16 +1192,16 @@ RandomEncounter::
 	jr nc, .nope
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
-	jr nz, .bug_contest
+	jr nz, .safari_zone
 	farcall TryWildEncounter
 	jr nz, .nope
 	jr .ok
 
-.bug_contest
+.safari_zone
 	farcall TryWildEncounter
 	jr nz, .nope
-	ld a, BANK(BugCatchingContestBattleScript)
-	ld hl, BugCatchingContestBattleScript
+	ld a, BANK(SafariZoneEncounterScript)
+	ld hl, SafariZoneEncounterScript
 	jr .done
 
 .nope
@@ -1207,7 +1212,6 @@ RandomEncounter::
 .ok
 	ld a, BANK(WildBattleScript)
 	ld hl, WildBattleScript
-;	jr .done
 
 .done
 	call CallScript

@@ -1,13 +1,13 @@
-GiveParkBalls:
+InitializeSafariZone:
 	ld a, 30
 	ld [wParkBallsRemaining], a
-	ld a, 500 / $100
+	ld a, 300 / $100
 	ld [wSafariStepsRemaining], a
-	ld a, 500 % $100
+	ld a, 300 % $100
 	ld [wSafariStepsRemaining + 1], a
 	ret
 
-BugCatchingContestBattleScript::
+SafariZoneEncounterScript::
 	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
 	randomwildmon
 	startbattle
@@ -16,30 +16,31 @@ BugCatchingContestBattleScript::
 	iffalse BugCatchingContestOutOfBallsScript
 	end
 
-BugCatchingContestOverScript::
+SafariGameOverScript::
 	playsound SFX_ELEVATOR_END
 	opentext
-	writetext BugCatchingContestText_BeeepTimesUp
+	writetext SafariGameText_TimesUp
 	waitbutton
 	clearflag ENGINE_SAFARI_ZONE
-	jump BugCatchingContestReturnToGateScript
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	jump SafariZoneReturnToGateScript
 
 BugCatchingContestOutOfBallsScript:
 	playsound SFX_ELEVATOR_END
 	opentext
-	writetext BugCatchingContestText_ContestIsOver
+	writetext SafariGameText_OutOfBalls
 	waitbutton
 
-BugCatchingContestReturnToGateScript:
+SafariZoneReturnToGateScript:
 	closetext
-	jumpstd bugcontestresultswarp
+	jumpstd safarizonewarp
 
-BugCatchingContestText_BeeepTimesUp:
-	; ANNOUNCER: BEEEP! Time's up!
+SafariGameText_TimesUp:
+	; PA: DING DONG! Time's up!
 	text_far UnknownText_0x1bd2ca
 	text_end
 
-BugCatchingContestText_ContestIsOver:
-	; ANNOUNCER: The Contest is over!
+SafariGameText_OutOfBalls:
+	; PA: You are out of SAFARI BALLS.
 	text_far UnknownText_0x1bd2e7
 	text_end

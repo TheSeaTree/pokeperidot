@@ -81,7 +81,7 @@ SafariGuardScript:
 	writetext SafariZoneYes
 	waitbutton
 	closetext
-	special GiveParkBalls
+	special InitializeSafariZone
 	setflag ENGINE_SAFARI_ZONE
 	special HealParty
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
@@ -172,10 +172,9 @@ SafariZoneBallText:
 	text "Here in the SAFARI"
 	line "ZONE, participants"
 	cont "are only allowed"
-	cont "to use SAFARI"
-	cont "BALLs that we"
-	cont "provide."
-	
+	cont "to use our provi-"
+	cont "ded SAFARI BALLs."
+
 	para "These function"
 	line "slightly better"
 	cont "than normal"
@@ -209,15 +208,14 @@ SafariZoneBaitText:
 	cont "special BAIT for"
 	cont "keeping #MON"
 	cont "from running."
-	
-	para "They will be less"
-	line "likely to flee"
-	cont "while they are"
-	cont "eating, but won't"
-	cont "be as easy to"
+
+	para "An eating #MON"
+	line "will stay put for"
+	cont "longer, but will"
+	cont "not be as easy to"
 	cont "capture."
 	done
-	
+
 SafariZoneAnythingElseText:
 	text "Would you like to"
 	line "know more?"
@@ -233,13 +231,13 @@ SafariZoneWelcomeText:
 	text "Welcome to the"
 	line "SAFARI ZONE!"
 
-	para "Would you like to"
-	line "participate in our"
-	cont "SAFARI game?"
-
 	para "For ¥500, you can"
 	line "catch any #MON"
 	cont "in the park."
+
+	para "Would you like to"
+	line "participate in our"
+	cont "SAFARI game?"
 	done
 
 ExplainSafariBalls:

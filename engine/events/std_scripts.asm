@@ -29,7 +29,7 @@ StdScripts::
 	dba ElevatorButtonScript
 	dba DayToTextScript
 	dba FireGymWarpScript
-	dba BugContestResultsWarpScript
+	dba SafariZoneWarpScript
 	dba InitializeEventsScript
 	dba GymStatue1Script
 	dba GymStatue2Script
@@ -335,7 +335,7 @@ FireGymWarpScript::
 	setmapscene ORCHID_GYM_1F, SCENE_FINISHED
 	end
 
-BugContestResultsWarpScript:
+SafariZoneWarpScript:
 	special FadeOutPalettes
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	playsound SFX_EXIT_BUILDING

@@ -14,14 +14,14 @@ SweetScentFromMenu:
 	callasm SweetScentEncounter
 	iffalse SweetScentNothing
 	checkflag ENGINE_SAFARI_ZONE
-	iftrue .BugCatchingContest
+	iftrue .SafariZone
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
 	end
 
-.BugCatchingContest:
-	farjump BugCatchingContestBattleScript
+.SafariZone:
+	farjump SafariZoneEncounterScript
 
 SweetScentNothing:
 	writetext UnknownText_0x5072b

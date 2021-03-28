@@ -1269,7 +1269,8 @@ UnknownText_0x1bd2bc::
 UnknownText_0x1bd2ca::
 	text "PA: DING DONG!"
 
-	para "Time's up!"
+	para "Time's up, trainer"
+	line "<PLAYER>!"
 	
 	para "Please return any"
 	line "SAFARI BALLs you"
@@ -1278,9 +1279,8 @@ UnknownText_0x1bd2ca::
 	done
 
 UnknownText_0x1bd2e7::
-	text "ANNOUNCER: You are"
-	line "out of SAFARI"
-	cont "BALLS."
+	text "PA: You are out of"
+	line "SAFARI BALLs."
 	
 	para "Please return to"
 	line "the main gate."

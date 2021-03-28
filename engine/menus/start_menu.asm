@@ -7,7 +7,6 @@
 	const STARTMENUITEM_SAVE     ; 4
 	const STARTMENUITEM_OPTION   ; 5
 	const STARTMENUITEM_EXIT     ; 6
-	const STARTMENUITEM_QUIT     ; 8
 
 StartMenu::
 	call ClearWindowData
@@ -182,7 +181,6 @@ StartMenu::
 	dw StartMenu_Save,     .SaveString,     .ExitDesc
 	dw StartMenu_Option,   .OptionString,   .ExitDesc
 	dw StartMenu_Exit,     .ExitString,     .ExitDesc
-	dw StartMenu_Quit,     .QuitString,     .ExitDesc
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
@@ -191,7 +189,6 @@ StartMenu::
 .SaveString:     db "SAVE@"
 .OptionString:   db "OPTION@"
 .ExitString:     db "EXIT@"
-.QuitString:     db "QUIT@"
 
 .ExitDesc:
 	db   "Close this"
@@ -384,26 +381,6 @@ StartMenu_Exit:
 ; Exit the menu.
 	ld a, 1
 	ret
-
-StartMenu_Quit:
-; Retire from the bug catching contest.
-
-	ld hl, .EndTheContestText
-	call StartMenuYesNo
-	jr c, .DontEndContest
-	ld a, BANK(BugCatchingContestReturnToGateScript)
-	ld hl, BugCatchingContestReturnToGateScript
-	call FarQueueScript
-	ld a, 4
-	ret
-
-.DontEndContest:
-	ld a, 0
-	ret
-
-.EndTheContestText:
-	text_far UnknownText_0x1c1a6c
-	text_end
 
 StartMenu_Save:
 ; Save the game.
