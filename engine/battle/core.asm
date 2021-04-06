@@ -125,7 +125,7 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	ld a, [wLinkMode]
 	and a
 
-	call SwitchTurnCore
+	call SetEnemyTurn
 	ld de, ANIM_ENEMY_FLED
 	call Call_PlayBattleAnim
 

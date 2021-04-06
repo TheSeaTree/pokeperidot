@@ -64,6 +64,9 @@ LostLandScientist4:
 LostLandScientist5:
 	jumptextfaceplayer LostLandScientist5Text
 	
+LostLandScientist6:
+	jumptextfaceplayer LostLandScientist6Text
+	
 LostLandPlayerLeavesCave:
 	step DOWN
 	step_resume
@@ -161,6 +164,25 @@ LostLandScientist5Text:
 	cont "share with us?"
 	done
 
+LostLandScientist6Text:
+	text "My TOWN MAP gets"
+	line "all messed up when"
+	cont "we're here."
+	
+	para "The signal to the"
+	line "global positioning"
+	cont "satellite must be"
+	cont "too weak."
+	
+	para "…It's spooky think-"
+	line "ing about being"
+	cont "all alone."
+	
+	para "We're the only"
+	line "people who know"
+	cont "this place exists."
+	done
+
 LostLand_MapEvents:
 	db 0, 0 ; filler
 
@@ -174,10 +196,11 @@ LostLand_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  29,  9, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, -1
 	object_event 12, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientistAfter, -1
 	object_event 25, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist2, -1
 	object_event 31, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist3, -1
-	object_event 29, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist4, -1
+	object_event 48, 16, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist4, -1
 	object_event 42, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist5, -1
+	object_event 28, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist6, -1
