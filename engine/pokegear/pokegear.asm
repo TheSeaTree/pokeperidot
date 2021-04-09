@@ -1979,7 +1979,7 @@ PokegearMap:
 
 .kanto
 	call LoadTownMapGFX
-	call FillJohtoMap
+	call FillKantoMap
 	ret
 
 _FlyMap:
@@ -2670,6 +2670,11 @@ TownMapBGUpdate:
 
 FillJohtoMap:
 	ld de, JohtoMap
+	jr FillTownMap
+
+FillKantoMap:
+	ld de, KantoMap
+FillTownMap:
 	hlcoord 0, 0
 .loop
 	ld a, [de]
@@ -2812,6 +2817,9 @@ LoadTownMapGFX:
 
 JohtoMap:
 INCBIN "gfx/pokegear/johto.bin"
+
+KantoMap:
+INCBIN "gfx/pokegear/kanto.bin"
 
 PokedexNestIconGFX:
 INCBIN "gfx/pokegear/dexmap_nest_icon.2bpp"
