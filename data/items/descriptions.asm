@@ -796,7 +796,7 @@ SmoothRockDesc:
 
 PowerHerbDesc:
 	db 	 "Skips charging"
-	next "turn. (HOLD)@"
+	next "turn once. (HOLD)@"
 	
 CharcoalDesc:
 	db   "Powers up fire-"
