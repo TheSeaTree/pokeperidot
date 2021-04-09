@@ -1479,29 +1479,110 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
-	db 36, MEOWTH
+	db 36, VULPIX
 	db 35, MEOWTH
-	db 35, MEOWTH
+	db 37, MR__MIME
 	db 36, MEOWTH
 	db 35, EEVEE
 	db 37, EEVEE
 	; day
 	db 35, MEOWTH
-	db 36, MEOWTH
+	db 36, VULPIX
 	db 35, MEOWTH
-	db 35, MEOWTH
+	db 37, MR__MIME
 	db 36, MEOWTH
 	db 35, EEVEE
 	db 37, EEVEE
 	; nite
 	db 35, MEOWTH
-	db 36, MEOWTH
+	db 36, VULPIX
 	db 35, MEOWTH
-	db 35, MEOWTH
+	db 37, MR__MIME
 	db 36, MEOWTH
 	db 35, EEVEE
 	db 37, EEVEE
 	
+	map_id HO_OH_CASTLE_1F_SIDE_ROOMS
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 37, MR__MIME
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; day
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 37, MR__MIME
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; nite
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 37, MR__MIME
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	
+	map_id HO_OH_CASTLE_2F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, MEOWTH
+	db 37, VULPIX
+	db 35, MEOWTH
+	db 35, KADABRA
+	db 35, EEVEE
+	db 36, EEVEE
+	db 35, NINETALES
+	; day
+	db 35, MEOWTH
+	db 37, VULPIX
+	db 35, MEOWTH
+	db 35, KADABRA
+	db 35, EEVEE
+	db 36, EEVEE
+	db 35, NINETALES
+	; nite
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 35, KADABRA
+	db 35, EEVEE
+	db 36, EEVEE
+	db 35, NINETALES
+	
+	map_id HO_OH_CASTLE_3F
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 35, SKARMORY
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; day
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 35, SKARMORY
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+	; nite
+	db 35, MEOWTH
+	db 36, VULPIX
+	db 35, MEOWTH
+	db 35, SKARMORY
+	db 36, MEOWTH
+	db 35, EEVEE
+	db 37, EEVEE
+
 	map_id LUGIA_CAVE_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
