@@ -7,8 +7,11 @@ EnteiLair_MapScripts:
 	db 0 ; callbacks
 
 Entei:
+	opentext
+	writetext EnteiText
 	cry ENTEI
 	waitsfx
+	closetext
 	loadwildmon ENTEI, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
@@ -16,6 +19,10 @@ Entei:
 	disappear ENTEILAIR_ENTEI
 	setevent EVENT_HIDE_ENTEI
 	end
+	
+EnteiText:
+	text "Enteiiiii!"
+	done
 
 EnteiLair_MapEvents:
 	db 0, 0 ; filler
@@ -28,4 +35,4 @@ EnteiLair_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  7,  3, SPRITE_ENTEI, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Entei, EVENT_HIDE_ENTEI
+	object_event  7,  3, SPRITE_ENTEI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Entei, EVENT_HIDE_ENTEI

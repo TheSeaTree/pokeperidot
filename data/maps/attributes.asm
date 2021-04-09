@@ -491,3 +491,4 @@ ENDM
 	map_attributes Route20AcroporaGate, ROUTE_20_ACROPORA_GATE, $00, 0
 	map_attributes Route25, ROUTE_25, $05, 0
 	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0
+	map_attributes SeaRoute2Cave, SEA_ROUTE_2_CAVE, $09, 0

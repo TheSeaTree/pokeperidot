@@ -41,6 +41,10 @@
 	const ICON_BIGMON
 	const ICON_OMANYTE
 	const ICON_SHIFUR
+	const ICON_MEWTWO
+	const ICON_RAIKOU
+	const ICON_ENTEI
+	const ICON_SUICUNE
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
 	const_def

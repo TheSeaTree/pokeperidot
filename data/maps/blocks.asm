@@ -718,6 +718,9 @@ KinglersDen_Blocks:
 Route8HiddenCave_Blocks:
 Route11HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
+	
+SeaRoute2Cave_Blocks:
+	INCBIN "maps/SeaRoute2Cave.ablk"
 
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:

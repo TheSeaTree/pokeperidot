@@ -277,6 +277,7 @@ INCLUDE "maps/RugosaPokecenter1F.asm"
 INCLUDE "maps/IlexForestSwordsDanceHouse.asm"
 INCLUDE "maps/SeaRoute5.asm"
 INCLUDE "maps/SeaRoute6.asm"
+INCLUDE "maps/SeaRoute2Cave.asm"
 
 
 SECTION "Map Scripts 20", ROMX

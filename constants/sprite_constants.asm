@@ -101,9 +101,6 @@
 	const SPRITE_KRIS ; 60
 	const SPRITE_KRIS_BIKE ; 61
 	const SPRITE_KURT_OUTSIDE ; 62
-	const SPRITE_SUICUNE ; 63
-	const SPRITE_ENTEI ; 64
-	const SPRITE_RAIKOU ; 65
 	const SPRITE_STANDING_YOUNGSTER ; 66
 	const SPRITE_CONE
 	const SPRITE_PROFESSOR
@@ -166,6 +163,10 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 	const SPRITE_OMANYTE
 	const SPRITE_SHIFUR
+	const SPRITE_MEWTWO
+	const SPRITE_RAIKOU
+	const SPRITE_ENTEI
+	const SPRITE_SUICUNE
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0

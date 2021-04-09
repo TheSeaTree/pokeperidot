@@ -19,6 +19,7 @@
 	const FAVIA_TOWN        ; 10
 	const ROUTE_8           ; 43
 	const DIGLETTS_CAVE     ; 3e
+	const PALEROCK_MOUNTAIN
 	const HEPATICA_TOWN     ; 21
 	const UNION_CAVE        ; 0a
 	const ROUTE_9           ; 41
@@ -29,6 +30,7 @@
 	const ROUTE_11          ; 4a
 	const ROUTE_12          ; 4b
 	const ROUTE_13          ; 4c
+	const BONEYARD          ; 4c
 	const RUGOSA_COAST      ; 1b
 	const RUGOSA_CITY       ; 24
 	const ROUTE_14          ; 50

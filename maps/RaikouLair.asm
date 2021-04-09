@@ -11,7 +11,7 @@ Raikou:
 	writetext RaikouText
 	cry RAIKOU
 	waitsfx
-	waitbutton
+;	waitbutton
 	closetext
 	loadwildmon RAIKOU, 30
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
@@ -37,4 +37,4 @@ RaikouLair_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  2, SPRITE_RAIKOU, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Raikou, EVENT_HIDE_RAIKOU
+	object_event  5,  2, SPRITE_RAIKOU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Raikou, EVENT_HIDE_RAIKOU

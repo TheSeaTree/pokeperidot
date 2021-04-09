@@ -68,7 +68,11 @@ ReturnFromMapSetupScript::
 	ret z
 	cp SPECIAL_MAP
 	ret z
+	cp PALEROCK_MOUNTAIN
+	ret z
 	cp DIGLETTS_CAVE
+	ret z
+	cp BONEYARD
 	ret z
 	ld a, 1
 	and a

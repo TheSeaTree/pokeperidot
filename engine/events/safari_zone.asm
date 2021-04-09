@@ -5,6 +5,11 @@ InitializeSafariZone:
 	ld [wSafariStepsRemaining], a
 	ld a, 300 % $100
 	ld [wSafariStepsRemaining + 1], a
+	; Hide Area 5 & 6 encounters from the Pokedex
+	ld a, GROUP_SAFARI_ZONE_AREA_1
+	ld [wBackupMapGroup], a
+	ld a, MAP_SAFARI_ZONE_AREA_1
+	ld [wBackupMapNumber], a
 	ret
 
 SafariZoneEncounterScript::
