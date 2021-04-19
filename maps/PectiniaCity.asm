@@ -99,8 +99,6 @@ PectiniaCityRivalBattleScript:
 	waitsfx
 	setevent EVENT_BEAT_RIVAL_1
 	setscene SCENE_PECTINIACITY_DEFEATED_RIVAL
-	variablesprite SPRITE_OLIVINE_RIVAL, SPRITE_SWIMMER_GIRL_LAND
-	special LoadUsedSpritesGFX
 	playsound SFX_EXIT_BUILDING
 	moveobject PECTINIACITY_FANGIRL, 40, 17
 	appear PECTINIACITY_FANGIRL
