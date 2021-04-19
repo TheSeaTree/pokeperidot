@@ -194,7 +194,7 @@ FaviaFangirlScene:
 	setscene SCENE_DEFAULT
 	playmapmusic
 	end
-	
+
 FaviaHiddenSilverLeaf:
 	hiddenitem SILVER_LEAF, EVENT_GOLDENROD_HIDDEN_SILVER_LEAF	
 
@@ -370,7 +370,7 @@ FaviaTown_MapEvents:
 
 	db 7 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
-	bg_event 10, 18, BGEVENT_READ, FaviaTownSign
+	bg_event 15, 15, BGEVENT_READ, FaviaTownSign
 	bg_event 22, 25, BGEVENT_READ, FaviaTownMartSign
 	bg_event 20, 15, BGEVENT_READ, FaviaTownPokecenterSign
 	bg_event  1, 22, BGEVENT_ITEM, FaviaHiddenSilverLeaf

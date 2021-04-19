@@ -28,7 +28,7 @@ EmilysMomScript:
 	waitbutton
 	closetext
 	end
-	
+
 .GotItem:
 	writetext EmilysMomAfterText
 	waitbutton

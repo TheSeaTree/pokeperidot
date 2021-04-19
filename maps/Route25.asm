@@ -9,9 +9,9 @@ Route25_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  7, 29, HO_OH_CASTLE_1F_CENTER_ROOM, 1 ; Entei Cave
-	warp_event  6, 29, HO_OH_CASTLE_1F_CENTER_ROOM, 2 ; Hidden Cave
-	warp_event 25,  5, ROUTE_24, 3
+	warp_event 26, 13, HO_OH_CASTLE_1F_CENTER_ROOM, 1 ; Entei Cave
+	warp_event 27, 13, HO_OH_CASTLE_1F_CENTER_ROOM, 2 ; Hidden Cave
+	warp_event  9,  5, ROUTE_24, 3
 
 	db 0 ; coord events
 

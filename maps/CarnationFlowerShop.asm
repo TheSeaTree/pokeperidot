@@ -1,4 +1,6 @@
 	const_def 2 ; object constants
+	const FLOWERSHOP_OWNER
+	const FLOWERSHOP_SUDOWOODO
 
 CarnationFlowerShop_MapScripts:
 	db 0 ; scene scripts
@@ -8,6 +10,8 @@ CarnationFlowerShop_MapScripts:
 FlowerShopLady:
 	faceplayer
 	opentext
+	special GetFirstPokemonHappiness
+	ifless  50 - 1, .ThirstyPlant
 	writetext CarnationFlowerShopIntro
 .Page1
 	special PlaceMoneyTopRight
@@ -33,10 +37,10 @@ FlowerShopLady:
 	writetext CarnationFlowerShopGoodbye
 	waitbutton
 	closetext
+	turnobject LAST_TALKED, RIGHT
 	end
 	
 .Magna
-;	pokenamemem PIKACHU, MEM_BUFFER_0
 	writetext CarnationFlowerShopConfirm
 	yesorno
 	iffalse .SomethingElse
@@ -53,7 +57,6 @@ FlowerShopLady:
 	jump .Confirm
 
 .Tropic
-;	pokenamemem PIKACHU, MEM_BUFFER_0
 	writetext CarnationFlowerShopConfirm
 	yesorno
 	iffalse .SomethingElse
@@ -70,7 +73,6 @@ FlowerShopLady:
 	jump .Confirm
 
 .Jumbo
-;	pokenamemem PIKACHU, MEM_BUFFER_0
 	writetext CarnationFlowerShopConfirm
 	yesorno
 	iffalse .SomethingElse
@@ -87,7 +89,6 @@ FlowerShopLady:
 	jump .Confirm
 
 .Desert
-;	pokenamemem PIKACHU, MEM_BUFFER_0
 	writetext CarnationFlowerShopConfirm
 	yesorno
 	iffalse .SomethingElse
@@ -104,7 +105,6 @@ FlowerShopLady:
 	jump .Confirm
 
 .Island
-;	pokenamemem PIKACHU, MEM_BUFFER_0
 	writetext CarnationFlowerShopConfirm
 	yesorno
 	iffalse .SomethingElse
@@ -118,7 +118,6 @@ FlowerShopLady:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
-	jump .Confirm
 	
 .Confirm
 	writetext CarnationFlowerShopShippedToHome
@@ -166,22 +165,66 @@ FlowerShopLady:
 	db "PAGE 1@"
 	db "CANCEL@"
 	
-FlowerShopMagnaPlant:
-FlowerShopTropicPlant:
-FlowerShopJumboPlant:
-FlowerShopDesertPlant:
-FlowerShopIslandPlant:
+.ThirstyPlant:
+	checkevent EVENT_DECO_PLANT_7
+	iftrue .HaveThirstyPlant
+	writetext CarnationFlowerShopReceiveThirstyPlantText
+	waitbutton
+	writetext PlayerReceiveThirstyPlantText
+	setevent EVENT_DECO_PLANT_7
+	playsound SFX_WRONG
+	wait 8
+	writetext PlayerRecieveThirstyPlantAfterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, RIGHT
 	end
+	
+.HaveThirstyPlant:
+	writetext CarnationFlowerShopRefuseServiceText
+	waitbutton
+	closetext
+	end
+	
+FlowerShopSudowoodo:
+	opentext
+	writetext FlowerShopSudowoodoQuestionText
+	waitbutton
+	closetext
+	playsound SFX_SANDSTORM
+	applymovement FLOWERSHOP_SUDOWOODO, FlowerShopSudowoodoShakeMovement
+	waitsfx
+	opentext
+	writetext FlowerShopSudowoodoAfterText
+	waitbutton
+	closetext
+	end
+	
+FlowerShopMagnaPlant:
+	jumptext FlowerShopMagnaPlantText
+
+FlowerShopTropicPlant:
+	jumptext FlowerShopTropicPlantText
+
+FlowerShopJumboPlant:
+	jumptext FlowerShopJumboPlantText
+
+FlowerShopDesertPlant:
+	jumptext FlowerShopDesertPlantText
+
+FlowerShopIslandPlant:
+	jumptext FlowerShopIslandPlantText
+	
+FlowerShopSudowoodoShakeMovement:
+	tree_shake
+	step_resume
 
 CarnationFlowerShopIntro:
 	text "Welcome to my"
 	line "FLOWER SHOP."
 	
-;	para "Feel free to look"
-;	line "around and let me"
-;	cont "know if there is"
-;	cont "anything you would"
-;	cont "like to buy."
+	para "Do you want to buy"
+	line "one of my PLANTs?"
 	done
 
 CarnationFlowerShopConfirm:
@@ -218,6 +261,91 @@ CarnationFlowerShopSomethingElse:
 	text "Would you like to"
 	line "see any others?"
 	done
+	
+CarnationFlowerShopReceiveThirstyPlantText:
+	text "Welcome to my"
+	line "FLOWER SHOP."
+	
+	para "Do you want to buy"
+	line "one of-"
+
+	para "…My goodness."
+	line "…Your #MON!"
+	
+	para "I'm sorry, I can't"
+	line "in good faith sell"
+	cont "you any of my"
+	cont "PLANTS."
+	
+	para "The best I can do"
+	line "is this one, on"
+	cont "the house."
+	done
+	
+PlayerReceiveThirstyPlantText:
+	text "<PLAYER> received"
+	line "the THIRSTYPLANT."
+	done
+	
+PlayerRecieveThirstyPlantAfterText:
+	text "You are welcome to"
+	line "come back, but"
+	cont "please…"
+
+	para "Take better care"
+	line "of your #MON!"
+	done
+
+CarnationFlowerShopRefuseServiceText:
+	text "I'm terribly sorry,"
+	line "but your #MON…"
+	cont "It just…"
+
+	para "How can you take"
+	line "care of a PLANT if"
+	cont "you can't care for"
+	cont "your partners?"
+
+	para "I can't serve you"
+	line "right now."
+	done
+	
+FlowerShopSudowoodoQuestionText:
+	text "What kind of PLANT"
+	line "is this?"
+	done
+	
+FlowerShopSudowoodoAfterText:
+	text "Oh, it's not a"
+	line "PLANT after all."
+	
+	para "It's a #MON!"
+	done
+
+FlowerShopMagnaPlantText:
+	text "The tag says this"
+	line "is a MAGNAPLANT."
+	done
+
+FlowerShopTropicPlantText:
+	text "The tag says this"
+	line "is a TROPICPLANT."
+	done
+
+FlowerShopJumboPlantText:
+	text "The tag says this"
+	line "is a JUMBOPLANT."
+	done
+
+FlowerShopDesertPlantText:
+	text "The tag says this"
+	line "is a DESERTPLANT."
+	done
+
+FlowerShopIslandPlantText:
+	text "The tag says this"
+	line "is an ISLANDPLANT."
+	done
 
 CarnationFlowerShop_MapEvents:
 	db 0, 0 ; filler
@@ -229,11 +357,12 @@ CarnationFlowerShop_MapEvents:
 	db 0 ; coord events
 
 	db 5 ; bg events
-	bg_event  0,  2, BGEVENT_READ, FlowerShopMagnaPlant
+	bg_event  7,  4, BGEVENT_READ, FlowerShopMagnaPlant
 	bg_event  2,  1, BGEVENT_READ, FlowerShopTropicPlant
-	bg_event  7,  7, BGEVENT_READ, FlowerShopJumboPlant
+	bg_event  0,  2, BGEVENT_READ, FlowerShopJumboPlant
 	bg_event  5,  1, BGEVENT_READ, FlowerShopDesertPlant
-	bg_event  0, -1, BGEVENT_READ, FlowerShopIslandPlant
+	bg_event  0,  0, BGEVENT_READ, FlowerShopIslandPlant
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  3,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopLady, -1
+	object_event  4,  1, SPRITE_SUDOWOODO, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FlowerShopSudowoodo, -1

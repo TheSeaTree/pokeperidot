@@ -161,7 +161,7 @@ Route18MiltankScript:
 	waitbutton
 	closetext
 	end
-	
+
 Route18FarmSign:
 	jumptext Route18FarmSignText
 	
@@ -439,8 +439,8 @@ Route18_MapEvents:
 	db 6 ; warp events
 	warp_event 27, 35, ROUTE_14_GATE, 3
 	warp_event 28, 35, ROUTE_14_GATE, 4
-	warp_event  4, 18, CARNATION_TOWN, 1
-	warp_event  4, 19, CARNATION_TOWN, 2
+	warp_event  4, 18, ROUTE_18_CARNATION_GATE, 3
+	warp_event  4, 19, ROUTE_18_CARNATION_GATE, 4
 	warp_event 27,  3, ROUTE_18_BARN, 1
 	warp_event 31,  3, ROUTE_18_FARMHOUSE, 1
 

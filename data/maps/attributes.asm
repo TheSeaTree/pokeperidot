@@ -406,6 +406,7 @@ ENDM
 	map_attributes Route21StaghornGate, ROUTE_21_STAGHORN_GATE, $00, 0
 	map_attributes AcroporaRestTalkHouse, ACROPORA_REST_TALK_HOUSE, $00, 0
 	map_attributes AcroporaLassHouse, ACROPORA_LASS_HOUSE, $00, 0
+	map_attributes AcroporaCastleHouse, ACROPORA_CASTLE_HOUSE, $00, 0
 	map_attributes FluteMasterHouse, FLUTE_MASTER_HOUSE, $00, 0
 	map_attributes AcroporaCave1F, ACROPORA_CAVE_1F, $09, 0
 	map_attributes AcroporaCave2F, ACROPORA_CAVE_2F, $09, 0
@@ -464,6 +465,7 @@ ENDM
 	map_attributes PalerockMountainWaterfallChamber, PALEROCK_MOUNTAIN_WATERFALL_CHAMBER, $09, 0
 	map_attributes Route18Barn, ROUTE_18_BARN, $00, 0
 	map_attributes Route18Farmhouse, ROUTE_18_FARMHOUSE, $00, 0
+	map_attributes Route18CarnationGate, ROUTE_18_CARNATION_GATE, $00, 0
 	map_attributes RidgeMagikarpHouse, RIDGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea2RestHouse, SAFARI_ZONE_AREA_2_REST_HOUSE, $00, 0

@@ -99,7 +99,7 @@ AcroporaCityGymSignText:
 AcroporaCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 9 ; warp events
 	warp_event 33, 13, ROUTE_20_ACROPORA_GATE, 3
 	warp_event 27, 17, ACROPORA_POKECENTER_1F, 1
 	warp_event 13, 21, ACROPORA_MART, 1
@@ -108,6 +108,7 @@ AcroporaCity_MapEvents:
 	warp_event  6, 13, ACROPORA_CAVE_1F, 1
 	warp_event 22,  5, ACROPORA_CAVE_1F, 6
 	warp_event 29, 23, ACROPORA_LASS_HOUSE, 1
+	warp_event  5, 25, ACROPORA_CASTLE_HOUSE, 1
 
 	db 0 ; coord events
 
@@ -123,6 +124,10 @@ AcroporaCity_MapEvents:
 	bg_event 14,  7, BGEVENT_UP,   AcroporaGymEvent
 	bg_event  5, 15, BGEVENT_READ, AcroporaCityGymSign
 
-	db 2 ; object events
+	db 6 ; object events
 	object_event 38, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1
+	object_event  8, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
+	object_event 17, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
+	object_event 33, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
+	object_event 21, 18, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
 	object_event -4, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1

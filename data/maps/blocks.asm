@@ -67,6 +67,7 @@ RugosaSubstituteHouse_Blocks:
 OrchidDragonbreathHouse_Blocks:
 StaghornRichardsHouse_Blocks:
 AcroporaLassHouse_Blocks:
+AcroporaCastleHouse_Blocks:
 Route20HeavyBallHouse_Blocks:
 Route11CleanseTagHouse_Blocks:
 RidgeMagikarpHouse_Blocks:
@@ -128,6 +129,7 @@ Route2Gate_Blocks:
 Route12StaghornGate_Blocks:
 Route14RugosaGate_Blocks:
 Route21StaghornGate_Blocks:
+Route18CarnationGate_Blocks:
 CarnationZooGate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 

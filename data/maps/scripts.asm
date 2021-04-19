@@ -97,6 +97,7 @@ INCLUDE "maps/PectiniaEvolutionHouse.asm"
 INCLUDE "maps/PectiniaBikeHouse.asm"
 INCLUDE "maps/PectiniaBerryHouse.asm"
 INCLUDE "maps/AcroporaLassHouse.asm"
+INCLUDE "maps/AcroporaCastleHouse.asm"
 INCLUDE "maps/LugiaLair.asm"
 INCLUDE "maps/LugiaCave1F.asm"
 INCLUDE "maps/LugiaCaveB1F.asm"
@@ -308,6 +309,7 @@ INCLUDE "maps/Route9ForestGate.asm"
 INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route18Barn.asm"
 INCLUDE "maps/Route18Farmhouse.asm"
+INCLUDE "maps/Route18CarnationGate.asm"
 
 
 SECTION "Map Scripts 22", ROMX

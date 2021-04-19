@@ -5,40 +5,38 @@ AcroporaPokecenter1F_MapScripts:
 
 	db 0 ; callbacks
 
-CreepyLady:
-;	checkcoins 1
-;	ifequal HAVE_MORE, .skip
-	faceplayer
-;	opentext
-	givepoke RAICHU, 100
-;	givepoke MEW, 80
-;	closetext
-;	givecoins 9999
-;	giveitem MASTER_BALL
-;	giveitem MEGAVITAMIN
-;	giveitem RARE_CANDY
-	loadwildmon SUICUNE, 100
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
-;	winlosstext CoinText, CoinText
-;	loadtrainer POKEMON_PROF, TEST
-	startbattle
-	reloadmapafterbattle
-	end
-	
-.skip
-	opentext
-	writetext CoinText
-	special DisplayCoinCaseBalance
-	waitbutton
-	closetext
-	end
-	
-
 AcroporaPokecenter1FNurseScript:
 	jumpstd pokecenternurse
+	
+AcroporaPokecenter1FGramps:
+	jumptextfaceplayer AcroporaPokecenter1FGrampsText
+	
+AcroporaPokecenter1FPokefanF:
+	jumptextfaceplayer AcroporaPokecenter1FPokefanFText
+	
+AcroporaPokecenter1FGrampsText:
+	text "Did you know that"
+	line "we are at the foot"
+	cont "of a volcano?"
+	
+	para "Oh, don't worry!"
+	line "It's not active!"
+	
+	para "It hasn't erupted"
+	line "since before I was"
+	cont "born."
+	done
 
-CoinText:
-	text "Coins."
+AcroporaPokecenter1FPokefanFText:
+	text "Have you ever"
+	line "heard the FLUTE"
+	cont "MASTER's music?"
+	
+	para "You simply must!"
+	
+	para "The man is like a"
+	line "sorcerer, with a"
+	cont "FLUTE as his wand." 
 	done
 
 AcroporaPokecenter1F_MapEvents:
@@ -53,6 +51,7 @@ AcroporaPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcroporaPokecenter1FNurseScript, -1
-;	object_event  6,  5, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CreepyLady, -1
+	object_event  1,  4, SPRITE_GRAMPS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcroporaPokecenter1FGramps, -1
+	object_event  6,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcroporaPokecenter1FPokefanF, -1

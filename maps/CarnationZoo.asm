@@ -474,10 +474,11 @@ CarnationZooFangirlVisitedSafariText:
 	cont "badge."
 	
 	para "Have you been to"
-	line "the SAFARI ZONE"
-	cont "yet? I just caught"
-	cont "some great new"
-	cont "#MON there!"
+	line "the SAFARI ZONE?"
+	
+	para "I just caught some"
+	line "great new #MON"
+	cont "there!"
 	done
 	
 CarnationZooFangirlExplainSafariText:

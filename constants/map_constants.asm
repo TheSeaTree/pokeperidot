@@ -29,7 +29,7 @@ ENDM
 	newgroup                                                      ;  1
 
 	map_const RUGOSA_COAST,                                23, 17 ; 14
-	map_const ROUTE_14_RUGOSA_GATE,						5,  4
+	map_const ROUTE_14_RUGOSA_GATE,							5,  4
 	map_const RUGOSA_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const RUGOSA_PORT,                                10,  9 ; 14
@@ -127,6 +127,7 @@ ENDM
 	map_const ROUTE_21_STAGHORN_GATE,					  5,  4
 	map_const ACROPORA_REST_TALK_HOUSE,                   4,  4
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
+	map_const ACROPORA_CASTLE_HOUSE,                      4,  4
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
 	map_const ROUTE_24,									 17, 21
 	map_const ACROPORA_CAVE_1F,                          19, 11
@@ -156,6 +157,7 @@ ENDM
 	map_const ROUTE_18,                                    18, 20 ;  4
 	map_const ROUTE_18_BARN,                                7,  3 ;  4
 	map_const ROUTE_18_FARMHOUSE,                           4,  4 ;  4
+	map_const ROUTE_18_CARNATION_GATE,						5,  4
 	map_const CARNATION_TOWN,        					   17, 10
 	map_const CARNATION_ZOO_GATE,        				    5,  4
 	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1

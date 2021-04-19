@@ -79,7 +79,7 @@ SubstituteGuyText:
 	cont "it."
 	
 	para "The doll can even"
-	cont "block status con-"
+	line "block status con-"
 	cont "ditions!"
 	
 	para "Please, take one"

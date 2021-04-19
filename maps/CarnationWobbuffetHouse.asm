@@ -20,6 +20,8 @@ WobbuffetGuy:
 	ifequal PARTY_LENGTH, .PartyFull
 	takemoney YOUR_MONEY, 5000
 	special PlaceMoneyTopRight
+	writetext WobbuffetGuyThanksText
+	waitbutton
 	writetext PlayerGotWobbuffet
 	playsound SFX_CAUGHT_MON
 	waitsfx
@@ -116,6 +118,13 @@ WobbuffetNoRoomText:
 	cont "party."
 	done
 	
+WobbuffetGuyThanksText:
+	text "Oh wow!"
+	
+	para "I didn't think you"
+	line "would go for it!"
+	done
+	
 PlayerGotWobbuffet:
 	text "<PLAYER>"
 	line "bought WOBBUFFET!"
@@ -139,6 +148,9 @@ WobbuffetAfterText:
 	para "It doesn't even"
 	line "learn any attack-"
 	cont "ing moves!"
+	
+	para "Oh well."
+	line "No refunds!"
 	done
 
 CarnationWobbuffetHouse_MapEvents:
@@ -153,4 +165,4 @@ CarnationWobbuffetHouse_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event 2, 4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, WobbuffetGuy, -1
+	object_event 2, 4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, WobbuffetGuy, -1

@@ -95,8 +95,7 @@ GroundLeaderChallengeText:
 	
 	para "Now, trainer."
 	
-	para "I hope you have"
-	line "prepared yourself."
+	para "Get psyched!"
 	
 	para "We will make the"
 	line "foundation of this"

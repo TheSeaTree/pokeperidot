@@ -17,10 +17,51 @@ AcroporaLassHouse_MapScripts:
 	moveobject ACROPORALASSHOUSE_LASS1,  -4, -4
 	return
 
+AcroporaLassHouseLass1:
+	jumptextfaceplayer AcroporaLassHouseLass1Text
+
 AcroporaLassHouseLass2:
-	jumptextfaceplayer AcroporaLassHouseLass2Text
+	faceplayer
+	opentext
+	checkevent EVENT_FLUTE_HIDEOUT_OPEN
+	iffalse .BeforeHideout
+	writetext AcroporaLassHouseLass2AfterText
+	waitbutton
+	closetext
+	end
+
+.BeforeHideout
+	writetext AcroporaLassHouseLass2Text
+	waitbutton
+	closetext
+	end
+	
+AcroporaLassHouseLass1Text:
+	text "I heard that you"
+	line "beat the men who"
+	cont "were blocking the"
+	cont "way from STAGHORN"
+	cont "TOWN."
+	
+	para "My friend doesn't"
+	line "believe it, but"
+	cont "I do!"
+	
+	para "Thank you for"
+	line "doing that."
+	done
 	
 AcroporaLassHouseLass2Text:
+	text "I have a friend in"
+	line "STAGHORN TOWN that"
+	cont "is supposed to"
+	cont "come visit today."
+	
+	para "…I wonder what"
+	line "happened to her."
+	done
+
+AcroporaLassHouseLass2AfterText:
 	text "There were some"
 	line "shady men blocking"
 	cont "the path. They"
@@ -47,5 +88,5 @@ AcroporaLassHouse_MapEvents:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  2,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  2,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcroporaLassHouseLass1, -1
 	object_event  5,  4, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, AcroporaLassHouseLass2, -1

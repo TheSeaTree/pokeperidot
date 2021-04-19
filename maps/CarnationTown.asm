@@ -100,13 +100,12 @@ CarnationTown_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 27,  6, ROUTE_18, 3
-	warp_event 27,  7, ROUTE_18, 4
+	warp_event 27,  6, ROUTE_18_CARNATION_GATE, 1
+	warp_event 27,  7, ROUTE_18_CARNATION_GATE, 2
 	warp_event  4, 10, CARNATION_ZOO_GATE, 3
 	warp_event  4, 11, CARNATION_ZOO_GATE, 4
 	warp_event 11, 13, WOBBUFFET_HOUSE, 1
 	warp_event 19,  5, CARNATION_POKECENTER_1F, 1
-;	warp_event 13,  7, HO_OH_CASTLE_1F_CENTER_ROOM, 1
 	warp_event 13,  7, CARNATION_FLOWER_SHOP, 1
 
 	db 0 ; coord events
