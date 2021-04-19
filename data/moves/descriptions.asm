@@ -1223,7 +1223,7 @@ AncientpowerDescription:
 	next "raise all stats.@"
 
 ShadowBallDescription:
-	db   "A GHOST attack that"
+	db   "A GHOST move that"
 	next "lowers SPCL.DEF.@"
 
 FutureSightDescription:
