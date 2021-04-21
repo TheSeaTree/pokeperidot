@@ -263,7 +263,10 @@ Script_BeatenAllTrainers2:
 	disappear BATTLESUBWAYPLATFORM_OFFICER1
 	turnobject PLAYER, LEFT
 	opentext
+	checkflag ENGINE_BATTLE_SUBWAY_LEVELS
+	iffalse .FirstTime
 	writetext Text_CongratulationsYouveBeatenAllTheTrainers
+.Continue
 	waitbutton
 	closetext
 	follow BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
@@ -283,6 +286,11 @@ Script_BeatenAllTrainers2:
 	setscene SCENE_FINISHED
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
 	jump Script_BattleTowerHopeToServeYouAgain
+
+.FirstTime
+	setflag ENGINE_BATTLE_SUBWAY_LEVELS
+	writetext Text_CongratulationsYouveBeatenAllTheTrainersFirstTime
+	jump .Continue
 
 Script_FailedBattleTowerChallenge:
 	pause 60
@@ -512,6 +520,21 @@ Text_ThanksForVisiting:
 	
 	para "Better luck next"
 	line "time."
+	done
+
+Text_CongratulationsYouveBeatenAllTheTrainersFirstTime:
+	text "Congratulations!"
+
+	para "You've beaten all"
+	line "the trainers in"
+	cont "this set!"
+	
+	para "Now you may select"
+	line "more level groups"
+	cont "to challenge."
+
+	para "Please follow me"
+	line "for your prize."
 	done
 
 Text_CongratulationsYouveBeatenAllTheTrainers:

@@ -30,7 +30,7 @@ EngineFlags:
 	engine_flag wStatusFlags, STATUSFLAGS_CAUGHT_POKERUS_F
 	engine_flag wStatusFlags, STATUSFLAGS_ROCKET_SIGNAL_F
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F
-	engine_flag wStatusFlags, STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F
+	engine_flag wStatusFlags, STATUSFLAGS_BATTLE_SUBWAY_LEVELS_F
 
 	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_REST_HOUSE_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_GAME_F
