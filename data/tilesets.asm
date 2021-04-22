@@ -44,3 +44,4 @@ Tilesets::
 	tileset TilesetForest
 	tileset TilesetCastle
 	tileset TilesetOcean
+	tileset TilesetPokemonLeague

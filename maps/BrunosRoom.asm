@@ -1,46 +1,52 @@
 	const_def 2 ; object constants
 	const BRUNOSROOM_BRUNO
+	const BRUNOSROOM_CHRIS
+	const BRUNOSROOM_KRIS
 
 BrunosRoom_MapScripts:
 	db 2 ; scene scripts
 	scene_script .LockDoor ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINISHED
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .BrunosRoomDoors
+	db 0 ; callbacks
 
 .LockDoor:
-	priorityjump .BrunosDoorLocksBehindYou
+	disappear BRUNOSROOM_BRUNO
 	end
 
 .DummyScene:
 	end
 
-.BrunosRoomDoors:
-	checkevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
-	iffalse .KeepEntranceOpen
-	changeblock 4, 14, $2a ; wall
-.KeepEntranceOpen:
-	checkevent EVENT_BRUNOS_ROOM_EXIT_OPEN
-	iffalse .KeepExitClosed
-	changeblock 4, 2, $16 ; open door
-.KeepExitClosed:
-	return
-
-.BrunosDoorLocksBehindYou:
+ApproachRegan:
 	applymovement PLAYER, BrunosRoom_EnterMovement
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Girl
+	moveobject BRUNOSROOM_CHRIS, 5, 4
+	appear BRUNOSROOM_CHRIS
+	jump .ContinueBattle
+.Girl
+	moveobject BRUNOSROOM_KRIS, 5, 4
+	appear BRUNOSROOM_KRIS
+.ContinueBattle
+	applymovement PLAYER, E4StartBattle
+	
 	refreshscreen $86
-	playsound SFX_STRENGTH
-	earthquake 80
-	changeblock 4, 14, $2a ; wall
+	playsound SFX_ENTER_DOOR
+	changeblock 4, 2, $09 ; wall
+	changeblock 6, 2, $0a ; wall
+	changeblock 8, 2, $0b ; wall
+	changeblock 4, 4, $0d ; wall
+	changeblock 6, 4, $0e ; wall
+	changeblock 8, 4, $0f ; wall
 	reloadmappart
 	closetext
-	setscene SCENE_FINISHED
-	setevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
 	waitsfx
-	end
 
-BrunoScript_Battle:
+	appear BRUNOSROOM_BRUNO
+	applymovement BRUNOSROOM_BRUNO, ReganVanishingAct
+	setlasttalked BRUNOSROOM_BRUNO
+	setscene SCENE_FINISHED
+
 	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_BRUNO
@@ -57,10 +63,15 @@ BrunoScript_Battle:
 	writetext BrunoScript_BrunoDefeatText
 	waitbutton
 	closetext
-	playsound SFX_ENTER_DOOR
-	changeblock 4, 2, $16 ; open door
-	reloadmappart
-	closetext
+
+	applymovement BRUNOSROOM_BRUNO, ReganVanishingAct
+	disappear BRUNOSROOM_BRUNO
+	wait 8
+
+	applymovement PLAYER, E4AfterBattle
+	disappear BRUNOSROOM_CHRIS
+	disappear BRUNOSROOM_KRIS
+
 	setevent EVENT_BRUNOS_ROOM_EXIT_OPEN
 	waitsfx
 	end
@@ -70,12 +81,39 @@ BrunoScript_AfterBattle:
 	waitbutton
 	closetext
 	end
+	
+ReganVanishingAct:
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	step_end
+	
+E4StartBattle:
+	hide_person
+	step RIGHT
+	step_end
+	
+E4AfterBattle:
+	step LEFT
+	turn_head RIGHT
+	show_person
+	step_end
 
 BrunosRoom_EnterMovement:
 	step UP
 	step UP
 	step UP
-	step UP
+	step RIGHT
 	step_end
 
 BrunoScript_BrunoBeforeText:
@@ -125,15 +163,16 @@ BrunoScript_BrunoDefeatText:
 BrunosRoom_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event  4, 17, KOGAS_ROOM, 3
-	warp_event  5, 17, KOGAS_ROOM, 4
-	warp_event  4,  2, KARENS_ROOM, 1
-	warp_event  5,  2, KARENS_ROOM, 2
+	db 2 ; warp events
+	warp_event  4, 11, KARENS_ROOM, 1
+	warp_event  5, 11, KARENS_ROOM, 2
 
-	db 0 ; coord events
+	db 1 ; coord events
+	coord_event  4,  7, SCENE_DEFAULT, ApproachRegan
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  5,  7, SPRITE_BRUNO, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BrunoScript_Battle, -1
+	db 3 ; object events
+	object_event  8,  4, SPRITE_REGAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BrunoScript_AfterBattle, -1
+	object_event -5, -3, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event -5, -3, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

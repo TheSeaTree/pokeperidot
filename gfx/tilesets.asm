@@ -425,3 +425,18 @@ INCBIN "data/tilesets/forest_attributes.bin"
 
 TilesetMountainAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
+
+
+SECTION "Tileset Data 12", ROMX
+
+TilesetPokemonLeagueGFX:
+INCBIN "gfx/tilesets/pokemon_league.2bpp.lz"
+
+TilesetPokemonLeagueMeta:
+INCBIN "data/tilesets/pokemon_league_metatiles.bin"
+
+TilesetPokemonLeagueColl:
+INCLUDE "data/tilesets/pokemon_league_collision.asm"
+
+TilesetPokemonLeagueAttr:
+INCBIN "data/tilesets/pokemon_league_attributes.bin"

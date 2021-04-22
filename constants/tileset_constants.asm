@@ -31,8 +31,9 @@
 	const TILESET_VOLCANO              ; 27
 	const TILESET_ROOF                 ; 28
 	const TILESET_FOREST               ; 29
-	const TILESET_CASTLE               ; 29
-	const TILESET_OCEAN                ; 29
+	const TILESET_CASTLE               ; 2a
+	const TILESET_OCEAN                ; 2b
+	const TILESET_POKEMON_LEAGUE       ; 2c
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)
