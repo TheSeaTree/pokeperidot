@@ -1370,7 +1370,7 @@ Copyright:
 	ldh a, [rSC]
 	and %01111100
 	cp %01111100
-	jr nz, .not_vba
+	jr z, .skip_warning
 
 	ldh a, [rSVBK]
 	push af
@@ -1398,7 +1398,7 @@ Copyright:
 	call GetSGBLayout
 	call SetPalettes
 	
-.not_vba
+.skip_warning
 	hlcoord 1, 7
 	ld de, CopyrightString
 	jp PlaceString
