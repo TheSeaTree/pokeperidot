@@ -1360,11 +1360,45 @@ Unreferenced_Function639b:
 
 Copyright:
 	call ClearTileMap
-;	call LoadFontsExtra
 	ld de, BoldFontGFX
 	ld hl, vTiles1
 	lb bc, BANK(BoldFontGFX), $80
 	call Get1bpp
+	
+	xor a ; Display a warning screen on inaccurate emulators.
+	ldh [rSC], a
+	ldh a, [rSC]
+	and %01111100
+	cp %01111100
+	jr nz, .not_vba
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld hl, WarningScreen_Palettes
+	ld de, wBGPals2
+	ld bc, 1 palettes
+	call CopyBytes
+
+	pop af
+	ldh [rSVBK], a
+
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+
+	hlcoord 0, 0
+	ld de, VBAIntroString
+	call PlaceString
+	ld c, 255
+	call DelayFrames
+	call ClearTileMap
+	ld b, SCGB_GAMEFREAK_LOGO
+	call GetSGBLayout
+	call SetPalettes
+	
+.not_vba
 	hlcoord 1, 7
 	ld de, CopyrightString
 	jp PlaceString
@@ -1373,6 +1407,20 @@ CopyrightString:
 	db   "  PRODUCED BY OR"
 	next "UNDER LICENSE FROM"
 	next " NOBODY OFFICIAL)@"
+
+VBAIntroString:
+	db   "    : WARNING :"
+	next "THIS EMULATOR IS NOT"
+	next "    SUPPORTED BY"
+	next "  POK[MON PERIDOT)"
+	next "GLITCHES AND CRASHES"
+	next "     MAY OCCUR)"
+	next ""
+	next " GAMBATTE] mGBA] OR"
+	next "BGB ARE RECOMMENDED)@"
+	
+WarningScreen_Palettes:
+INCLUDE "gfx/title/warning_screen.pal"
 
 GameInit::
 	farcall TryLoadSaveData
