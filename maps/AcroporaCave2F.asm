@@ -27,13 +27,13 @@ TrainerHikerZeke:
 	closetext
 	end	
 	
-TrainerPokefanMGerald:
-	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, PokefanMGeraldText, PokefanMGeraldWinText, 0, .Script
+TrainerPokefanMDoug:
+	trainer POKEFANM, DOUG, EVENT_BEAT_POKEFANM_DOUG, PokefanMDougText, PokefanMDougWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokefanMGeraldAfterText
+	writetext PokefanMDougAfterText
 	waitbutton
 	closetext
 	end
@@ -86,13 +86,13 @@ HikerZekeAfterText:
 	cont "legitimate gym!"
 	done
 	
-PokefanMGeraldText:
+PokefanMDougText:
 	text "You stand no match"
 	line "against my duo of"
 	cont "trios!"
 	done
 	
-PokefanMGeraldWinText:
+PokefanMDougWinText:
 	text "Quality over"
 	line "quantity?"
 	
@@ -100,7 +100,7 @@ PokefanMGeraldWinText:
 	line "talk!"
 	done
 
-PokefanMGeraldAfterText:
+PokefanMDougAfterText:
 	text "Someday my DIGLETT"
 	line "will grow strong"
 	cont "enough to evolve,"
@@ -125,6 +125,6 @@ AcroporaCave2F_MapEvents:
 
 	db 4 ; object events
 	object_event  5,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerHikerVincent, -1
-	object_event 14,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanMGerald, -1
+	object_event 14,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerPokefanMDoug, -1
 	object_event 11,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerHikerZeke, -1
 	object_event 16,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AcroporaCave2FBoulder, -1

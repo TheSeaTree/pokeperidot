@@ -13,13 +13,13 @@ Route13_MapScripts:
 .skip
 	return
 	
-TrainerPokefanMDoug:
-	trainer POKEFANM, DOUG, EVENT_BEAT_POKEFANM_DOUG, PokefanMDougText, PokefanMDougWinText, 0, .AfterScript
+TrainerPokefanMGerald:
+	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, PokefanMGeraldText, PokefanMGeraldWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext PokefanMDougAfterText
+	writetext PokefanMGeraldAfterText
 	waitbutton
 	closetext
 	end
@@ -121,7 +121,7 @@ TrainerCooltrainerMLucas:
 	iffalse .Explain
 	checkevent EVENT_BEAT_POKEMANIAC_TYLER
 	iffalse .Explain
-	checkevent EVENT_BEAT_POKEFANM_DOUG
+	checkevent EVENT_BEAT_POKEFANM_GERALD
 	iffalse .Explain
 	checkevent EVENT_BEAT_BIRD_KEEPER_ROY
 	iffalse .Explain
@@ -204,17 +204,17 @@ Route13FruitTree2:
 Route13Rock:
 	jumpstd smashrock
 	
-PokefanMDougText:
+PokefanMGeraldText:
 	text "Do you cook for"
 	line "your #MON?"
 	done
 	
-PokefanMDougWinText:
+PokefanMGeraldWinText:
 	text "The BERRIES were"
 	line "just a snack."
 	done
 	
-PokefanMDougAfterText:
+PokefanMGeraldAfterText:
 	text "I'm kinda hungry"
 	line "myself."
 	
@@ -495,7 +495,7 @@ Route13_MapEvents:
 	db 0 ; bg events
 
 	db 16 ; object events
-	object_event 40, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPokefanMDoug, -1
+	object_event 40, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPokefanMGerald, -1
 	object_event 47, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacTyler, -1
 	object_event 50, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BirdKeeperRoy, -1
 	object_event 46,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherWayne, -1
