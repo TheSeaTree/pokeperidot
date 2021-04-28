@@ -1410,9 +1410,9 @@ CopyrightString:
 
 VBAIntroString:
 	db   "    : WARNING :"
-	next "THIS EMULATOR IS NOT"
-	next "    SUPPORTED BY"
-	next "  POK[MON PERIDOT)"
+	next "   POK[MON PERIDOT"
+	next "  DOES NOT SUPPORT"
+	next "   THIS EMULATOR)"
 	next "GLITCHES AND CRASHES"
 	next "     MAY OCCUR)"
 	next ""
