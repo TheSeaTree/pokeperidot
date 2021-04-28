@@ -122,6 +122,7 @@
 	const SPRITE_BREDE
 	const SPRITE_AMBER
 	const SPRITE_ORVILLE
+	const SPRITE_BOMB
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

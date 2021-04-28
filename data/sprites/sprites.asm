@@ -126,3 +126,4 @@ OverworldSprites:
 	overworld_sprite BredeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite AmberSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OrvilleSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BombSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED

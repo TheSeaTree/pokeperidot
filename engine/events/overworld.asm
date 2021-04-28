@@ -362,6 +362,9 @@ SurfFunction:
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
+	ld a, [wMapGroup]
+	cp GROUP_BREDES_ROOM
+	jr z, .cannotsurf
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .alreadyfail

@@ -92,17 +92,17 @@ CHRIS EQU __enum__
 	const CAL2
 	const CAL3
 
-	trainerclass WILL ; b
-	const WILL1
+	trainerclass ORVILLE ; b
+	const ORVILLE1
 
-	trainerclass BRUNO ; d
-	const BRUNO1
+	trainerclass REGAN ; d
+	const REGAN1
 
-	trainerclass KAREN ; e
-	const KAREN1
+	trainerclass AMBER ; e
+	const AMBER1
 
-	trainerclass KOGA ; f
-	const KOGA1
+	trainerclass BREDE ; f
+	const BREDE1
 
 	trainerclass CHAMPION ; 10
 	const LANCE
@@ -415,9 +415,9 @@ CHRIS EQU __enum__
 	
 	trainerclass POKEFANM ; 3b
 	const LESTER
-	const DOUG
-	const RICHARD
 	const GERALD
+	const RICHARD
+	const DOUG
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const ANRI

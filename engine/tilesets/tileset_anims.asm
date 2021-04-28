@@ -266,11 +266,24 @@ TilesetKabutoWordRoomAnim:
 TilesetOmanyteWordRoomAnim:
 TilesetAerodactylWordRoomAnim:
 TilesetRoofAnim:
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetPokemonLeagueAnim:
+	dw vTiles2 tile $57, AnimateTopLeftIceWaterTile
+	dw vTiles2 tile $58, AnimateTopRightIceWaterTile
+	dw vTiles2 tile $67, AnimateBottomLeftIceWaterTile
+	dw vTiles2 tile $68, AnimateBottomRightIceWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 	
 TilesetGateAnim:
@@ -709,6 +722,146 @@ AnimateWaterTile:
 
 WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+
+AnimateTopLeftIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopLeftIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopLeftIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopLeftIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/top_left.2bpp"
+
+AnimateTopRightIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopRightIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopRightIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopRightIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/top_right.2bpp"
+
+AnimateBottomLeftIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomLeftIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomLeftIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomLeftIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/bottom_left.2bpp"
+
+AnimateBottomRightIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomRightIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomRightIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomRightIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/bottom_right.2bpp"
 
 ForestTreeLeftAnimation:
 	ld hl, sp+0

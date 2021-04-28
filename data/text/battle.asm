@@ -336,6 +336,12 @@ BattleText_NoItemsInLeaderBattle:
 	cont "battles!"
 	prompt
 
+BattleText_NoItemsInLeagueBattle:
+	text "Items can't be"
+	line "used in LEAGUE"
+	cont "battles!"
+	prompt
+
 BattleText_MonIsAlreadyOut:
 	text_ram wBattleMonNick
 	text_start

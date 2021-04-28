@@ -18,26 +18,26 @@ IndigoPlateauPokecenter1F_MapScripts:
 	end
 
 .PrepareElite4:
-	setmapscene WILLS_ROOM, SCENE_DEFAULT
-	setmapscene KOGAS_ROOM, SCENE_DEFAULT
-	setmapscene BRUNOS_ROOM, SCENE_DEFAULT
-	setmapscene KARENS_ROOM, SCENE_DEFAULT
+	setmapscene ORVILLES_ROOM, SCENE_DEFAULT
+	setmapscene REGANS_ROOM, SCENE_DEFAULT
+	setmapscene BREDES_ROOM, SCENE_DEFAULT
+	setmapscene AMBERS_ROOM, SCENE_DEFAULT
 	setmapscene LANCES_ROOM, SCENE_DEFAULT
 	setmapscene HALL_OF_FAME, SCENE_DEFAULT
-	clearevent EVENT_WILLS_ROOM_ENTRANCE_CLOSED
-	clearevent EVENT_WILLS_ROOM_EXIT_OPEN
-	clearevent EVENT_KOGAS_ROOM_ENTRANCE_CLOSED
-	clearevent EVENT_KOGAS_ROOM_EXIT_OPEN
-	clearevent EVENT_BRUNOS_ROOM_ENTRANCE_CLOSED
-	clearevent EVENT_BRUNOS_ROOM_EXIT_OPEN
-	clearevent EVENT_KARENS_ROOM_ENTRANCE_CLOSED
-	clearevent EVENT_KARENS_ROOM_EXIT_OPEN
+	clearevent EVENT_ORVILLES_ROOM_ENTRANCE_CLOSED
+	clearevent EVENT_ORVILLES_ROOM_EXIT_OPEN
+	clearevent EVENT_REGANS_ROOM_ENTRANCE_CLOSED
+	clearevent EVENT_REGANS_ROOM_EXIT_OPEN
+	clearevent EVENT_BREDES_ROOM_ENTRANCE_CLOSED
+	clearevent EVENT_BREDES_ROOM_EXIT_OPEN
+	clearevent EVENT_AMBERS_ROOM_ENTRANCE_CLOSED
+	clearevent EVENT_AMBERS_ROOM_EXIT_OPEN
 	clearevent EVENT_LANCES_ROOM_ENTRANCE_CLOSED
 	clearevent EVENT_LANCES_ROOM_EXIT_OPEN
-	clearevent EVENT_BEAT_ELITE_4_WILL
-	clearevent EVENT_BEAT_ELITE_4_KOGA
-	clearevent EVENT_BEAT_ELITE_4_BRUNO
-	clearevent EVENT_BEAT_ELITE_4_KAREN
+	clearevent EVENT_BEAT_ELITE_4_ORVILLE
+	clearevent EVENT_BEAT_ELITE_4_REGAN
+	clearevent EVENT_BEAT_ELITE_4_BREDE
+	clearevent EVENT_BEAT_ELITE_4_AMBER
 	clearevent EVENT_BEAT_CHAMPION_LANCE
 	setevent EVENT_LANCES_ROOM_OAK_AND_MARY
 	return
@@ -246,11 +246,12 @@ PlateauRivalLoseText:
 IndigoPlateauPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
+	db 5 ; warp events
 	warp_event  7,  7, ROUTE_1, 1
 	warp_event  8,  7, ROUTE_1, 2
 	warp_event  0,  7, POKECENTER_2F, 1
-	warp_event  7,  0, WILLS_ROOM, 1
+	warp_event  7,  0, ORVILLES_ROOM, 1
+	warp_event  8,  0, ORVILLES_ROOM, 2
 
 	db 2 ; coord events
 	coord_event 14,  0, SCENE_DEFAULT, PlateauRivalBattle1

@@ -355,17 +355,17 @@ MountMoonGiftShop_Blocks:
 IndigoPlateauPokecenter1F_Blocks:
 	INCBIN "maps/IndigoPlateauPokecenter1F.ablk"
 
-WillsRoom_Blocks:
-	INCBIN "maps/WillsRoom.ablk"
+OrvillesRoom_Blocks:
+	INCBIN "maps/OrvillesRoom.ablk"
 
-KogasRoom_Blocks:
-	INCBIN "maps/KogasRoom.ablk"
+RegansRoom_Blocks:
+	INCBIN "maps/RegansRoom.ablk"
 
-BrunosRoom_Blocks:
-	INCBIN "maps/BrunosRoom.ablk"
+BredesRoom_Blocks:
+	INCBIN "maps/BredesRoom.ablk"
 
-KarensRoom_Blocks:
-	INCBIN "maps/KarensRoom.ablk"
+AmbersRoom_Blocks:
+	INCBIN "maps/AmbersRoom.ablk"
 
 PectiniaGym_Blocks:
 	INCBIN "maps/PectiniaGym.ablk"

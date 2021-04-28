@@ -194,10 +194,10 @@ INCLUDE "maps/Route14Gate.asm"
 SECTION "Map Scripts 13", ROMX
 
 INCLUDE "maps/IndigoPlateauPokecenter1F.asm"
-INCLUDE "maps/WillsRoom.asm"
-INCLUDE "maps/KogasRoom.asm"
-INCLUDE "maps/BrunosRoom.asm"
-INCLUDE "maps/KarensRoom.asm"
+INCLUDE "maps/OrvillesRoom.asm"
+INCLUDE "maps/RegansRoom.asm"
+INCLUDE "maps/BredesRoom.asm"
+INCLUDE "maps/AmbersRoom.asm"
 INCLUDE "maps/LancesRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
 

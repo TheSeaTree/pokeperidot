@@ -19,7 +19,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Grimer_Old,     		 .Grimer_Good,     		 .Grimer_Super
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
-	fishgroup 50 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
+	fishgroup  5 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
 
 .Shore_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -177,15 +177,17 @@ FishGroups:
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     TENTACOOL,  10
 .Qwilfish_NoSwarm_Good:
+	db  50 percent + 1, CLOYSTER,  40
+	db 100 percent,     CONCHER,   40
 .Qwilfish_Good:
 	db  35 percent,     MAGIKARP,   20
 	db  70 percent,     TENTACOOL,  20
 	db  90 percent + 1, TENTACOOL,  20
-	db 100 percent,     time_group 20
+	db 100 percent,     time_group  20
 .Qwilfish_NoSwarm_Super:
 .Qwilfish_Super:
 	db  40 percent,     TENTACOOL,  40
-	db  70 percent,     time_group 21
+	db  70 percent,     time_group  21
 	db  90 percent + 1, MAGIKARP,   40
 	db 100 percent,     QWILFISH,   40
 

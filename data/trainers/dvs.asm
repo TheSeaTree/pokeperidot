@@ -13,10 +13,10 @@ TrainerClassDVs:
 	dn  7, 13, 13, 13 ; FANGIRL
 	dn 14, 14, 14, 14 ; PROFESSOR
 	dn 13, 12, 13, 13 ; CAL
-	dn 14, 14, 15, 14 ; WILL
-	dn 14, 14, 15, 14 ; BRUNO
-	dn 14, 14, 15, 14 ; KAREN
-	dn 14, 14, 15, 14 ; KOGA
+	dn 14, 14, 15, 14 ; ORVILLE
+	dn  7, 14, 15, 15 ; REGAN
+	dn  7, 15, 15, 14 ; AMBER
+	dn 14, 14, 15, 14 ; BREDE
 	dn 14, 14, 15, 14 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY

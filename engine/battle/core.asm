@@ -330,6 +330,7 @@ HandleBetweenTurnEffects:
 	call HandleSafeguard
 	call HandleScreens
 	call HandleStatBoostingHeldItems
+	call HandleWeatherItem
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
@@ -2774,7 +2775,7 @@ PlayVictoryMusic:
 	ret
 
 IsKantoGymLeader:
-	ld hl, KantoGymLeaders
+	ld hl, EliteFour
 	jr IsGymLeaderCommon
 
 IsGymLeader:
@@ -5319,6 +5320,9 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 	
+	call IsKantoGymLeader
+	jp c, .NoItemsInLeagueBattle
+	
 	call IsGymLeader
 	jp c, .NoItemsInLeaderBattle
 
@@ -5361,6 +5365,11 @@ BattleMenu_Pack:
 
 .ItemsCantBeUsed:
 	ld hl, BattleText_ItemsCantBeUsedHere
+	call StdBattleTextBox
+	jp BattleMenu
+	
+.NoItemsInLeagueBattle:
+	ld hl, BattleText_NoItemsInLeagueBattle
 	call StdBattleTextBox
 	jp BattleMenu
 	

@@ -2544,10 +2544,10 @@ wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
 wIndigoPlateauPokecenter1FSceneID::               db ; d97e
-wWillsRoomSceneID::                               db ; d97f
-wKogasRoomSceneID::                               db ; d980
-wBrunosRoomSceneID::                              db ; d981
-wKarensRoomSceneID::                              db ; d982
+wOrvillesRoomSceneID::                            db ; d97f
+wRegansRoomSceneID::                              db ; d980
+wBredesRoomSceneID::                              db ; d981
+wAmbersRoomSceneID::                              db ; d982
 wLancesRoomSceneID::                              db ; d983
 wHallOfFameSceneID::                              db ; d984
 wCarnationZooSceneID::                            db ; d985

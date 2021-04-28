@@ -14,10 +14,10 @@ BTTrainerClassGenders:
 	db FEMALE ; FANGIRL
 	db FEMALE ; PROFESSOR
 	db MALE   ; CAL
-	db MALE   ; WILL
-	db MALE   ; BRUNO
-	db FEMALE ; KAREN
-	db MALE   ; KOGA
+	db MALE   ; ORVILLE
+	db FEMALE ; REGAN
+	db FEMALE ; AMBER
+	db MALE   ; BREDE
 	db MALE   ; CHAMPION
 	db MALE   ; BROCK
 	db FEMALE ; MISTY

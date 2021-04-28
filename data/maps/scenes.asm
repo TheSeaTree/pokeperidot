@@ -11,10 +11,10 @@ MapScenes::
 	scene_var SEA_ROUTE_2,                              wRoute16GateSceneID
 	scene_var ROUTE_8_ROUTE_10_GATE,                    wRoute17Route18GateSceneID
 	scene_var INDIGO_PLATEAU_POKECENTER_1F,             wIndigoPlateauPokecenter1FSceneID
-	scene_var WILLS_ROOM,                               wWillsRoomSceneID
-	scene_var KOGAS_ROOM,                               wKogasRoomSceneID
-	scene_var BRUNOS_ROOM,                              wBrunosRoomSceneID
-	scene_var KARENS_ROOM,                              wKarensRoomSceneID
+	scene_var ORVILLES_ROOM,                            wOrvillesRoomSceneID
+	scene_var REGANS_ROOM,                              wRegansRoomSceneID
+	scene_var BREDES_ROOM,                              wBredesRoomSceneID
+	scene_var AMBERS_ROOM,                              wAmbersRoomSceneID
 	scene_var LANCES_ROOM,                              wLancesRoomSceneID
 	scene_var HALL_OF_FAME,                             wHallOfFameSceneID
 	scene_var ELKHORN_TOWN,                             wNewBarkTownSceneID

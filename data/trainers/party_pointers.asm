@@ -14,10 +14,10 @@ TrainerGroups:
 	dw FangirlGroup
 	dw PokemonProfGroup
 	dw PKMNTrainerGroup
-	dw WillGroup
-	dw BrunoGroup
-	dw KarenGroup
-	dw KogaGroup
+	dw OrvilleGroup
+	dw ReganGroup
+	dw AmberGroup
+	dw BredeGroup
 	dw ChampionGroup
 	dw BrockGroup
 	dw MistyGroup

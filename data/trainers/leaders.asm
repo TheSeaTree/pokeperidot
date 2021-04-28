@@ -13,20 +13,12 @@ GymLeaders:
 	db JASMINE
 	db JOEL
 	db ENYA
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+; fallthrough
+EliteFour:
+	db ORVILLE
+	db REGAN
+	db BREDE
+	db AMBER
 	db CHAMPION
 	db RED
-; fallthrough
-KantoGymLeaders:
-	db BROCK
-	db MISTY
-	db LT_SURGE
-	db PRYCE
-	db JANINE
-	db SABRINA
-	db BLAINE
-	db BLUE
 	db -1

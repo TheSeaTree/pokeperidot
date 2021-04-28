@@ -313,10 +313,10 @@ ENDM
 	map_attributes Route3PectiniaGate, ROUTE_3_PECTINIA_GATE, $00, 0
 	map_attributes Route6SurfersHouse, ROUTE_6_SURFERS_HOUSE, $00, 0
 	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
-	map_attributes WillsRoom, WILLS_ROOM, $00, 0
-	map_attributes KogasRoom, KOGAS_ROOM, $00, 0
-	map_attributes BrunosRoom, BRUNOS_ROOM, $00, 0
-	map_attributes KarensRoom, KARENS_ROOM, $00, 0
+	map_attributes OrvillesRoom, ORVILLES_ROOM, $00, 0
+	map_attributes RegansRoom, REGANS_ROOM, $00, 0
+	map_attributes BredesRoom, BREDES_ROOM, $00, 0
+	map_attributes AmbersRoom, AMBERS_ROOM, $00, 0
 	map_attributes LancesRoom, LANCES_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes Route3Route4Gate, ROUTE_3_ROUTE_4_GATE, $00, 0

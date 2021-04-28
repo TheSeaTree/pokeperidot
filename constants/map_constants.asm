@@ -262,10 +262,10 @@ ENDM
 	newgroup                                                      ; 16
 
 	map_const INDIGO_PLATEAU_POKECENTER_1F,                 8,  4 ;  2
-	map_const WILLS_ROOM,                                   5,  9 ;  3
-	map_const KOGAS_ROOM,                                   5,  9 ;  4
-	map_const BRUNOS_ROOM,                                  7,  6 ;  5
-	map_const KARENS_ROOM,                                  5,  9 ;  6
+	map_const ORVILLES_ROOM,                                7, 10 ;  3
+	map_const REGANS_ROOM,                                  7, 10 ;  5
+	map_const BREDES_ROOM,                                  7, 10 ;  4
+	map_const AMBERS_ROOM,                                  7, 10 ;  6
 	map_const LANCES_ROOM,                                  5, 12 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
 
