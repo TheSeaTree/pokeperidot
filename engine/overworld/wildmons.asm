@@ -521,6 +521,10 @@ CheckEncounterRoamMon:
 ; Don't trigger an encounter if we're on water.
 	call CheckOnWater
 	jr z, .DontEncounterRoamMon
+; Don't trigger an encounter if the wishing well is active.
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
+	jr nz, .DontEncounterRoamMon
 ; Load the current map group and number to de
 	call CopyCurrMapDE
 ; Randomly select a beast.

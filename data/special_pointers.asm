@@ -123,6 +123,7 @@ SpecialsPointers::
 	add_special PrintDiploma
 	add_special CheckOwnedMon
 	add_special SelectFossilsMenu
+	add_special StartShinyEncounterTimer
 
 ; Crystal only
 	add_special Function11ac3e

@@ -82,6 +82,7 @@ SafariGuardScript:
 	waitbutton
 	closetext
 	special InitializeSafariZone
+	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
 	setflag ENGINE_SAFARI_ZONE
 	special HealParty
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter

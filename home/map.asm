@@ -2215,8 +2215,6 @@ GetMapMusic::
 	ld de, MAP_MUSIC
 	call GetMapField
 	ld a, c
-	cp MUSIC_MAHOGANY_MART
-	jr z, .mahoganymart
 	bit RADIO_TOWER_MUSIC_F, c
 	jr nz, .radiotower
 	farcall Function8b342
@@ -2240,13 +2238,6 @@ GetMapMusic::
 	and RADIO_TOWER_MUSIC - 1
 	ld e, a
 	ld d, 0
-	jr .done
-
-.mahoganymart
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F, a
-	jr z, .clearedmahogany
-	ld de, MUSIC_ROCKET_HIDEOUT
 	jr .done
 
 .clearedmahogany

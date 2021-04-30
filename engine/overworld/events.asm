@@ -449,9 +449,11 @@ CheckTimeEvents:
 	jr nz, .nothing
 
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
 	jr z, .do_daily
 
+	farcall CheckShinyEncounterTimer
+	jr c, .end_shiny_encounters
 	xor a
 	ret
 
@@ -464,6 +466,17 @@ CheckTimeEvents:
 .nothing
 	xor a
 	ret
+	
+.end_shiny_encounters
+	ld a, BANK(ShinyEncountersOverScript)
+	ld hl, ShinyEncountersOverScript
+	call CallScript
+	scf
+	ret
+	
+ShinyEncountersOverScript:
+	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
+	end
 
 OWPlayerInput:
 	call PlayerMovement
@@ -1084,7 +1097,6 @@ INCLUDE "engine/overworld/scripting.asm"
 WarpToSpawnPoint::
 	ld hl, wStatusFlags2
 	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
-	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	ret
 
 RunMemScript::
@@ -1191,11 +1203,20 @@ RandomEncounter::
 	call CanUseSweetScent
 	jr nc, .nope
 	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
+	jr nz, .forced_shiny
 	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	jr nz, .safari_zone
 	farcall TryWildEncounter
 	jr nz, .nope
 	jr .ok
+
+.forced_shiny
+	farcall TryWildEncounter
+	jr nz, .nope
+	ld a, BANK(ForcedShinyEncounterScript)
+	ld hl, ForcedShinyEncounterScript
+	jr .done
 
 .safari_zone
 	farcall TryWildEncounter
@@ -1218,6 +1239,8 @@ RandomEncounter::
 	scf
 	ret
 
+ForcedShinyEncounterScript:
+	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 WildBattleScript:
 	randomwildmon
 	startbattle
