@@ -812,7 +812,7 @@ ScopeLensDesc:
 
 SweetTeaDesc:
 	db   "Restores PP of one"
-	next "move by 10.@"
+	next "move by 5.@"
 
 SabreFossilDesc:
 	db   "The remains of an"
