@@ -2720,10 +2720,13 @@ CheckStatSwapItem:
 	ld a, b
 	cp HELD_STAT_SWAP
 	ret
-	
+
 CheckLightBuoy:
+	cp MARILL
+	jr z, .Marill
 	cp AZUMARILL
 	ret nz
+.Marill
 	call GetUserItem
 	ld a, b
 	cp HELD_LIGHT_BUOY
