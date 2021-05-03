@@ -55,7 +55,6 @@ AlphabeticalPokedexOrder:
 	db EEVEE
 	db EKANS
 	db ELECTABUZZ
-	db ELECTIGER
 	db ELECTRODE
 	db ELEKID
 	db ENTEI
@@ -180,6 +179,7 @@ AlphabeticalPokedexOrder:
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
+	db ELECTIGER
 	db RAIKOU
 	db RAPIDASH
 	db REMORAID
