@@ -108,13 +108,13 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp nz, .dont_evolve_3
-	jr .proceed
+	jp .proceed
 
 .happiness_daylight
 	ld a, [wTimeOfDay]
 	cp NITE_F
 	jp z, .dont_evolve_3
-	jr .proceed
+	jp .proceed
 	
 .hold
 	; Get current item
@@ -130,11 +130,8 @@ EvolveAfterBattle_MasterLoop:
 	; Check the item
 	ld a, [hli]
 	cp b
-	jp nz, .dont_evolve_2
-	
-	xor a
-	ld [wTempMonItem], a
-	jp z, .proceed
+	jp nz, .dont_evolve_3
+	jp .proceed
 
 .trade
 	ld a, [wLinkMode]
@@ -619,7 +616,15 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
+
 	inc hl
+	ld a, [wCurPartySpecies]	
+	cp [hl]	
+	jr z, .found_preevo	
+	inc hl	
+	ld a, [hl]	
+	and a	
+	jr nz, .loop2
 
 .no_evolve
 	inc c
