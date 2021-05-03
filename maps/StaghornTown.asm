@@ -90,8 +90,8 @@ StaghornGymGuyOutside:
 StaghornTownFruitTree:
 	fruittree STAGHORN_TOWN
 	
-StaghornTownEndure:
-	itemball TM_ENDURE
+StaghornTownSilverPowder:
+	itemball SILVERPOWDER
 
 StaghornTownSign:
 	jumptext StaghornTownSignText
@@ -209,4 +209,4 @@ StaghornTown_MapEvents:
 	object_event 34, 11, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, StaghornTownFisher, -1
 	object_event 12, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, StaghornGymGuyOutside, EVENT_ECRUTEAK_GYM_ACCESS
 	object_event  2,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, StaghornTownFruitTree, -1
-	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, StaghornTownEndure, EVENT_GOT_TM_ENDURE
+	object_event 36,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, StaghornTownSilverPowder, EVENT_STAGHORN_TOWN_SILVERPOWDER

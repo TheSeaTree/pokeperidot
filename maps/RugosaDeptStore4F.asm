@@ -48,9 +48,8 @@ RugosaDeptStore4FSuperNerdText:
 	para "It may not be app-"
 	line "arant right away,"
 	cont "but the stat boost"
-	cont "they give is huge"
-	cont "your #MON"
-	cont "levels up!"
+	cont "they give really"
+	cont "adds up over time."
 	done
 	
 RugosaDeptStore4FTwinText:
