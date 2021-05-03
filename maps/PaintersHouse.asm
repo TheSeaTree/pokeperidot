@@ -26,6 +26,7 @@ Painter:
 .Girl
 	writetext PainterHaveSmeargleFemaleText
 .Start
+	waitbutton
 	writetext WhichPaintingText
 .BuyAnother
 	special PlaceMoneyTopRight
@@ -109,7 +110,6 @@ Painter:
 
 .AlreadyMet:
 	writetext PainterAlreadyMetText
-	waitbutton
 	checkevent EVENT_DECO_POSTER_1
 	iffalse .Start
 	checkevent EVENT_DECO_POSTER_2
@@ -121,6 +121,7 @@ Painter:
 	checkevent EVENT_DECO_POSTER_5
 	iffalse .Start
 
+	waitbutton
 	writetext GiveMewPosterText
 	waitbutton
 	setevent EVENT_DECO_POSTER_6

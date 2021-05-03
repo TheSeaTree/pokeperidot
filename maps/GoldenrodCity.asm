@@ -370,7 +370,7 @@ GoldenrodCity_MapEvents:
 
 	db 7 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
-	bg_event 10, 18, BGEVENT_READ, GoldenrodCitySign
+	bg_event 15, 15, BGEVENT_READ, GoldenrodCitySign
 	bg_event 22, 25, BGEVENT_READ, GoldenrodCityMartSign
 	bg_event 20, 15, BGEVENT_READ, GoldenrodCityPokecenterSign
 	bg_event  1, 22, BGEVENT_ITEM, GoldenrodHiddenSilverLeaf

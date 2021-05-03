@@ -2470,6 +2470,10 @@ RestorePP:
 	cp MYSTERYBERRY
 	jr z, .restore_some
 
+	ld c, 5
+	cp SWEET_TEA
+	jr z, .restore_some
+
 	ld c, 10
 
 .restore_some

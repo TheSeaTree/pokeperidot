@@ -393,10 +393,10 @@ MahoganyGymLeaderIntroText:
 
 	para "I sent a crew to"
 	line "check it out, but"
-	cont "they can can"
-	cont "barely deal with"
-	cont "the wild GRIMER"
-	cont "nesting there."
+	cont "they can barely"
+	cont "deal with the"
+	cont "wild GRIMER nest-"
+	cont "ing there."
 	
 	para "Those #MON must"
 	line "be mucking up the"

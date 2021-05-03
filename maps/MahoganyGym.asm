@@ -781,7 +781,7 @@ StepIntoPod:
 	step UP
 	hide_person
 	step_end
-	
+
 StepOutPod:
 	show_person
 	step DOWN
@@ -1331,9 +1331,9 @@ ScientistDavidWinText:
 
 ScientistDavidAfterText:
 	text "The idea that some"
-	line "#MON can radiate"
-	cont "light fascinates"
-	cont "me greatly."
+	line "#MON can"
+	cont "radiate light fas-"
+	cont "cinates me!"
 	done
 	
 ScientistSethText:

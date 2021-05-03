@@ -871,7 +871,7 @@
 	const EVENT_37D
 	const EVENT_37E
 	const EVENT_37F
-	const EVENT_380
+	const EVENT_STAGHORN_TOWN_SILVERPOWDER
 	const EVENT_381
 	const EVENT_382
 	const EVENT_383

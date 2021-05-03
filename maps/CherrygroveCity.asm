@@ -92,12 +92,6 @@ CherrygroveYoungsterBattle:
 	
 CherrygroveTeacherScript:
 	jumptextfaceplayer CherrygroveTeacherText_HaveMapCard
-;	giveitem MASTER_BALL
-;	loadwildmon ELECTIGER, 100
-;	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
-;	startbattle
-;	reloadmapafterbattle
-;	end
 
 CherrygroveYoungsterScript:
 	faceplayer

@@ -377,7 +377,7 @@ CoastalLabArticunoBookText
 	para "ARTICUNO sightings"
 	line "have historically"
 	cont "been associated"
-	cont "with a terrbile"
+	cont "with a terrible"
 	cont "winter."
 	
 	para "Just the act of"

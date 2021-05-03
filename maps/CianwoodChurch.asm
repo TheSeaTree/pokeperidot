@@ -111,6 +111,19 @@ SageScript:
 	special FadeInQuickly
 	end
 	
+Burglar1:
+	jumptextfaceplayer Burglar1BeforeText
+
+Burglar2:
+	jumptextfaceplayer Burglar2BeforeText
+
+Burglar3:
+	jumptextfaceplayer Burglar3BeforeText
+
+Burglar4:
+	jumptextfaceplayer Burglar4BeforeText
+	
+	
 CianwoodChurchRevive:
 	itemball REVIVE
 	
@@ -286,6 +299,48 @@ Sage1AfterText:
 	text "Unworthy, indeed…"
 	done
 	
+Burglar1BeforeText:
+	text "How'd you get in"
+	line "here?"
+	
+	para "Ah, who cares."
+	line "All of the really"
+	cont "valuable stuff is"
+	cont "in the back."
+	done
+
+Burglar2BeforeText:
+	text "This is quite the"
+	line "haul, right?"
+	
+	para "Man, we have so"
+	line "much more in our"
+	cont "base on ROUTE 17."
+
+	para "But we have that"
+	line "place watched like"
+	cont "a FEAROW."
+	done
+
+Burglar3BeforeText:
+	text "A secret cave"
+	line "entrance?"
+	
+	para "That's ridiculous!"
+	
+	para "You watch too many"
+	line "movies, kid!"
+	done
+
+Burglar4BeforeText:
+	text "Don't try anything"
+	line "funny, you hear?"
+	
+	para "We'll give you"
+	line "such a walloping"
+	cont "if you do!"
+	done
+	
 Burglar1Text:
 	text "We are going to"
 	line "make a killing on"
@@ -384,9 +439,9 @@ CianwoodChurch_MapEvents:
 
 	db 7 ; object events
 	object_event  7, 0, SPRITE_ABBOT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
-	object_event  6, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
-	object_event  7, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
-	object_event  9,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
-	object_event  1, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_CHURCH
+	object_event  6, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Burglar1, EVENT_CLEARED_CHURCH
+	object_event  7, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Burglar2, EVENT_CLEARED_CHURCH
+	object_event  9,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Burglar3, EVENT_CLEARED_CHURCH
+	object_event  1, 10, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Burglar4, EVENT_CLEARED_CHURCH
 	object_event  4, 6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SageScript, EVENT_CLEARED_CHURCH
 	object_event  3, 3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, CianwoodChurchRevive, EVENT_CIANWOOD_CHURCH_REVIVE
