@@ -158,7 +158,7 @@ MahoganyGymPod1:
 	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST1, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
-	playmusic MUSIC_HIKER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	opentext
 	writetext ScientistAndreText
 	waitbutton
@@ -250,7 +250,7 @@ MahoganyGymPod3:
 	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST2, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
-	playmusic MUSIC_HIKER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	opentext
 	writetext ScientistKurtText
 	waitbutton
@@ -339,7 +339,7 @@ MahoganyGymPod5:
 	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST3, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
-	playmusic MUSIC_HIKER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	opentext
 	writetext ScientistDavidText
 	waitbutton
@@ -447,7 +447,7 @@ MahoganyGymPod8:
 	playsound SFX_EXIT_BUILDING
 	applymovement MAHOGANYGYM_SCIENTIST4, TrainerApproach
 	applymovement PLAYER, TrainerStepBack
-	playmusic MUSIC_HIKER_ENCOUNTER
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	opentext
 	writetext ScientistSethText
 	waitbutton
@@ -749,6 +749,17 @@ ScientistDavid:
 ScientistSeth:
 	jumptextfaceplayer ScientistSethAfterText
 	
+MahoganyGymGuy:
+	jumptextfaceplayer MahoganyGymGuyText
+	
+MahoganyGymStatue:
+	checkflag ENGINE_COGBADGE
+	iftrue .Beaten
+	jumpstd gymstatue1
+.Beaten:
+	trainertotext JOEL, JOEL1, MEM_BUFFER_1
+	jumpstd gymstatue2
+
 MahoganyGymExit:
 	checkflag ENGINE_COGBADGE
 	iftrue .Leave
@@ -1357,6 +1368,34 @@ ScientistSethAfterText:
 	para "I crave sugar for"
 	line "some reason."
 	done
+	
+MahoganyGymGuyText:
+	text "Hey, Champ-to-be!"
+	
+	para "You have to check"
+	line "out these tele-"
+	cont "porter pods! They"
+	cont "can send you clear"
+	cont "across the GYM in"
+	cont "an instant!"
+	
+	para "Careful entering"
+	line "one, the trainers"
+	cont "in this GYM might"
+	cont "give you a real"
+	cont "zap with their"
+	cont "#MON!"
+	
+	para "If you're having"
+	line "trouble, try to"
+	cont "get yourself some"
+	cont "GROUND #MON."
+	
+	para "Those will deal"
+	line "with ELECTRIC and"
+	cont "STEEL-type #MON"
+	cont "with ease!"
+	done
 
 MahoganyGym_MapEvents:
 	db 0, 0 ; filler
@@ -1366,7 +1405,7 @@ MahoganyGym_MapEvents:
 
 	db 0 ; coord events
 
-	db 16 ; bg events
+	db 18 ; bg events
 	bg_event 13, 19, BGEVENT_UP, MahoganyGymPod1
 	bg_event 24, 15, BGEVENT_UP, MahoganyGymPod2
 	bg_event 19, 15, BGEVENT_UP, MahoganyGymPod3
@@ -1383,10 +1422,13 @@ MahoganyGym_MapEvents:
 	bg_event 20, 19, BGEVENT_UP, MahoganyGymPodSwitch4
 	bg_event 12, 32, BGEVENT_READ, MahoganyGymExit
 	bg_event 13, 32, BGEVENT_READ, MahoganyGymExit
+	bg_event 11, 29, BGEVENT_READ, MahoganyGymStatue
+	bg_event 14, 29, BGEVENT_READ, MahoganyGymStatue
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  5,  1, SPRITE_JOEL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElectricGymLeader, -1 ; Leader
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistAndre, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistKurt, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistDavid, -1
 	object_event  0, 31, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ScientistSeth, -1
+	object_event 15, 29, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MahoganyGymGuy, -1	
