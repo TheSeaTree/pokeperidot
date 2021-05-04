@@ -32,6 +32,8 @@ MahoganyGym_MapScripts:
 	return
 	
 .Cables
+	checkevent EVENT_BEAT_JOEL
+	iftrue .beatgym
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_1
 	iffalse .skipcables1
 	changeblock  4, 14, $67
@@ -75,6 +77,7 @@ MahoganyGym_MapScripts:
 .skipcables2
 	checkevent EVENT_MAHOGANY_GYM_SWITCH_4
 	iffalse .skipcables3
+.beatgym
 	changeblock 12,  6, $6a
 	changeblock 12,  8, $4e
 	changeblock 12, 10, $52
