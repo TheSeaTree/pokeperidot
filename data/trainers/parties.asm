@@ -1506,7 +1506,7 @@ HikerGroup:
 	db 19, SANDSHREW
 	db 20, PARAS
 	db -1
-	
+
 	; HIKER (11)
 	db "DEAN@", TRAINERTYPE_NORMAL
 	db 17, CUBONE
@@ -1516,7 +1516,7 @@ HikerGroup:
 	
 	; HIKER (12)
 	db "CARTER@", TRAINERTYPE_NORMAL
-	db 23, GRAVELER
+	db 33, GRAVELER
 	db 33, GOLBAT
 	db 34, SANDSLASH
 	db 35, GOLEM
