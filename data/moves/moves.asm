@@ -81,7 +81,7 @@ Moves: ; 41afb
 	move LOW_KICK,     EFFECT_FLINCH_HIT,         50, FIGHTING,  90, 20,  30
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING, 100, 20,   0
-	move STRENGTH,     EFFECT_ATTACK_UP_HIT,      80, NORMAL,    95, 10,  20
+	move STRENGTH,     EFFECT_ATTACK_UP_HIT,      80, NORMAL,    95, 10,  30
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,    100, 20,   0
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          75, GRASS,    100, 10,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,     90, 10,   0
@@ -179,7 +179,7 @@ Moves: ; 41afb
 	move STONE_EDGE,   EFFECT_NORMAL_HIT,        110, ROCK,      80,  5,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,   100,  1,   0
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,    100, 30,   0
-	move THIEF,        EFFECT_THIEF,              60, DARK,     100, 10, 100
+	move THIEF,        EFFECT_THIEF,              60, DARK,     100, 20, 100
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,    100, 15,  30
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100, 15,   0
@@ -260,7 +260,7 @@ Moves: ; 41afb
 	move ANCIENTPOWER, EFFECT_ALL_UP_HIT,         60, ROCK,     100,  5,  10
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,    100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC,  100, 15,   0
-	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING, 100, 15,  30
+	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING, 100, 20,  30
 	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,     70, 15,   0
 	move DRAIN_KISS,   EFFECT_LEECH_HIT,          40, FAIRY,    100, 15,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     100, 20,   0
