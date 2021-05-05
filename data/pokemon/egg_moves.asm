@@ -579,6 +579,16 @@ PinsirEggMoves:
 	db REVERSAL
 	db STONE_EDGE
 	db -1 ; end
+	
+TaurosEggMoves:
+	db PRESENT
+	db REVERSAL
+	db FLAIL
+	db OUTRAGE
+	db BULK_UP
+	db FLARE_BLITZ
+	db WILD_CHARGE
+	db -1
 
 MagikarpEggMoves:
 	db DIVE_BOMB
