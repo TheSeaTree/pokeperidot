@@ -28,10 +28,8 @@ XItemMan:
 	iftrue .GiveXSpeed
 
 .Introduction:
-	opentext
 	writetext StudyingVitaminsText
 	waitbutton
-	closetext
 
 .CheckVitamins:
 	checkitem PROTEIN
@@ -163,7 +161,6 @@ XItemMan:
 	jump ._ThatTurnedOutGreat
 	
 PowerPlantWorkingOnItScript:
-	opentext
 	writetext PowerPlantComeBackTomorrow
 	waitbutton
 	closetext
@@ -347,7 +344,7 @@ PowerPlant2FSparklingResidueText:
 	cont "my work space."
 	
 	para "It seems to spark-"
-	cont "le in the light."
+	line "le in the light."
 	
 	para "But it also has a"
 	line "terrible stench…"
