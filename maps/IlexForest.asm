@@ -13,7 +13,7 @@ IlexForest_MapScripts:
 .SmashWall:
 	checkevent EVENT_UNOWN_CHAMBER_HN_OPEN
 	iffalse .skip
-	changeblock 14, 34, $73
+	changeblock 14, 34, $66
 .skip
 	return
 	
@@ -267,8 +267,8 @@ TwinsFayeAndMaeWinText:
 
 TwinFayeAfterText:
 	text "FAYE: I think my"
-	line "#MON was stronger"
-	cont "than MAE's."
+	line "#MON was stron-"
+	cont "ger than MAE's."
 	done
 
 TwinMaeText:

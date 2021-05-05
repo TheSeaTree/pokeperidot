@@ -46,7 +46,7 @@ RugosaDeptStore4FSuperNerdText:
 	cont "time!"
 	
 	para "It may not be app-"
-	line "arant right away,"
+	line "arent right away,"
 	cont "but the stat boost"
 	cont "they give really"
 	cont "adds up over time."

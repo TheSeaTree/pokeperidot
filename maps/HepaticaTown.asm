@@ -224,8 +224,8 @@ HepaticaTownTutorWhichOne:
 HepaticaTownTutorThankYou:
 	text "There we go!"
 	
-	para "Your #MON can now"
-	line "use BODY SLAM!"
+	para "Your #MON can"
+	line "now use BODY SLAM!"
 	
 	para "That move has a"
 	line "high chance to"

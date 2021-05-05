@@ -315,9 +315,10 @@ Burglar2BeforeText:
 	done
 
 Burglar3BeforeText:
-	text "A secret cave ent-"
-	line "rance? That's rid-"
-	cont "iculous!"
+	text "A secret cave"
+	line "entrance?"
+	
+	para "That's ridiculous!"
 	
 	para "You watch too many"
 	line "movies, kid!"
