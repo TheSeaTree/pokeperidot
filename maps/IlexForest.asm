@@ -265,8 +265,8 @@ TwinsFayeAndMaeWinText:
 
 TwinFayeAfterText:
 	text "FAYE: I think my"
-	line "#MON was stronger"
-	cont "than MAE's."
+	line "#MON was stron="
+	cont "ger than MAE's."
 	done
 
 TwinMaeText:
