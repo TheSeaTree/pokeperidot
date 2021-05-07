@@ -572,7 +572,7 @@ INCBIN "gfx/types/psychic.1bpp",     primary_type ;Lugia
 INCBIN "gfx/types/fire.1bpp",      	 primary_type ;Ho-Oh
 INCBIN "gfx/types/grass.1bpp",       primary_type ;Celebi
 INCBIN "gfx/types/water.1bpp",       primary_type ;Octank
-INCBIN "gfx/types/none.1bpp",        primary_type
+INCBIN "gfx/types/steel.1bpp",       primary_type ;Ferrodon
 INCBIN "gfx/types/none.1bpp",        primary_type
 INCBIN "gfx/types/none.1bpp",        primary_type
 INCBIN "gfx/types/none.1bpp",        primary_type
@@ -581,7 +581,7 @@ INCBIN "gfx/types/flying.1bpp",      secondary_type ;Lugia
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Ho-Oh
 INCBIN "gfx/types/psychic.1bpp",     secondary_type ;Celebi
 INCBIN "gfx/types/steel.1bpp",       secondary_type ;Octank
-INCBIN "gfx/types/none.1bpp",        secondary_type
+INCBIN "gfx/types/dragon.1bpp",      secondary_type	;Ferrodon
 INCBIN "gfx/types/none.1bpp",        secondary_type
 INCBIN "gfx/types/none.1bpp",        secondary_type
 INCBIN "gfx/types/none.1bpp",        secondary_type
