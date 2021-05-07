@@ -5,6 +5,6 @@
 	next "eye contact with"
 	next "GORGROWTH will"
 	
-	para "cause permanent"
+	page "cause permanent"
 	next "paralysis. There"
 	next "is no known cure.@"

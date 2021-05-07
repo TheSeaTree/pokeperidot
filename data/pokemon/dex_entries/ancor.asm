@@ -5,6 +5,6 @@
 	next "ANCOR will keep"
 	next "ships in place"
 	
-	para "with its powerful"
+	page "with its powerful"
 	next "bite and heavy."
 	next "tail.@"
