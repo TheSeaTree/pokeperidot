@@ -97,7 +97,6 @@ DayCareLadyScript:
 	end
 
 DayCareBookshelf:
-	givepoke VOLTORB, 20
 	jumpstd difficultbookshelf
 
 Text_GrampsLookingForYou:

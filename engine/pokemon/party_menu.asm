@@ -74,6 +74,7 @@ WritePartyMenuTilemap:
 	dw PlacePartyMonLevel
 	dw PlacePartyMonLevelAlt
 	dw PlacePartyMonStatus
+	dw PlacePartyMonStatusAlt
 	dw PlacePartyMonTMHMCompatibility
 	dw PlacePartyMonEvoStoneCompatibility
 	dw PlacePartyMonGender
@@ -277,7 +278,7 @@ PlacePartyMonStatus:
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 5, 2
+	hlcoord 4, 2
 .loop
 	push bc
 	push hl
@@ -302,6 +303,15 @@ PlacePartyMonStatus:
 	dec c
 	jr nz, .loop
 	ret
+	
+PlacePartyMonStatusAlt:
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld c, a
+	ld b, 0
+	hlcoord 5, 2
+	jr PlacePartyMonStatus.loop
 
 PlacePartyMonTMHMCompatibility:
 	ld a, [wPartyCount]
