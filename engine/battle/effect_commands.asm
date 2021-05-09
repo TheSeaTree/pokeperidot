@@ -3754,7 +3754,7 @@ BattleCommand_Poison:
 	call GetBattleVar
 	ld b, a
 	ld hl, AlreadyPoisonedText
-	and 1 << PSN
+	and 1 << PSN | 1 << TOX
 	jp nz, .failed
 
 	ld hl, DidntAffect1Text
@@ -3780,7 +3780,7 @@ BattleCommand_Poison:
 	set SUBSTATUS_TOXIC, [hl]
 	xor a
 	ld [de], a
-	call .apply_poison
+	call .apply_bad_poison
 
 	ld hl, BadlyPoisonedText
 	call StdBattleTextBox
@@ -3798,6 +3798,11 @@ BattleCommand_Poison:
 .apply_poison
 	call AnimateCurrentMove
 	call PoisonOpponent
+	jp RefreshBattleHuds
+	
+.apply_bad_poison
+	call AnimateCurrentMove
+	call BadlyPoisonOpponent
 	jp RefreshBattleHuds
 
 .check_toxic
@@ -3833,6 +3838,12 @@ PoisonOpponent:
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	set PSN, [hl]
+	jp UpdateOpponentInParty
+
+BadlyPoisonOpponent:
+	ld a, BATTLE_VARS_STATUS_OPP
+	call GetBattleVarAddr
+	set TOX, [hl]
 	jp UpdateOpponentInParty
 
 BattleCommand_DrainTarget:

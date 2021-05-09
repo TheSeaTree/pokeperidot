@@ -162,8 +162,9 @@ SLP EQU %111 ; 0-7 turns
 	const BRN
 	const FRZ
 	const PAR
+	const TOX
 
-ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
+ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | SLP
 
 ; wPlayerSubStatus1 or wEnemySubStatus1 bit flags
 	enum_start 7, -1

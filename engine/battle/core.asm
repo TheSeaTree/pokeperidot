@@ -1182,7 +1182,7 @@ ResidualDamage:
 
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	and 1 << PSN | 1 << BRN
+	and 1 << TOX | 1 << PSN | 1 << BRN
 	jr z, .did_psn_brn
 
 	ld hl, HurtByPoisonText
@@ -1218,9 +1218,9 @@ ResidualDamage:
 	ld de, wEnemyToxicCount
 .check_toxic
 
-	ld a, BATTLE_VARS_SUBSTATUS5
+	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
-	bit SUBSTATUS_TOXIC, a
+	bit TOX, a
 	jr z, .did_toxic
 	call GetSixteenthMaxHP
 	ld a, [de]

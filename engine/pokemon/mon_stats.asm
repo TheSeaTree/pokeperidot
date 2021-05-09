@@ -410,6 +410,9 @@ PlaceNonFaintStatus:
 	ld de, ParString
 	bit PAR, a
 	jr nz, .place
+	ld de, ToxString
+	bit TOX, a
+	jr nz, .place
 	ld de, SlpString
 	and SLP
 	jr z, .no_status
@@ -425,10 +428,10 @@ PlaceNonFaintStatus:
 
 SlpString: db "SLP@"
 PsnString: db "PSN@"
-ToxString: db "TOX@"
 BrnString: db "BRN@"
 FrzString: db "FRZ@"
 ParString: db "PAR@"
+ToxString: db "TOX@"
 
 ListMoves:
 ; List moves at hl, spaced every [wBuffer1] tiles.
