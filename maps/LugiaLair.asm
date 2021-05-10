@@ -62,12 +62,6 @@ Lugia:
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
 	end
-
-GiftBirds:
-	givepoke ARTICUNO, 50
-	givepoke ZAPDOS, 50
-	givepoke MOLTRES, 50
-	end
 	
 LugiaText:
 	text "Gyaaas!"
@@ -84,4 +78,4 @@ LugiaLair_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event 13,  6, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_FOUGHT_LUGIA
+	object_event 13,  7, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_FOUGHT_LUGIA

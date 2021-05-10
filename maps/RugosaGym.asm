@@ -1207,7 +1207,7 @@ ElectricLeaderChallengeText:
 	
 	para "I have already"
 	line "shown my mastery"
-	cont "of machine. Now"
+	cont "of machines. Now"
 	cont "you will see my"
 	cont "mastery of #MON"
 	cont "battles!"
@@ -1226,8 +1226,8 @@ ElectricLeaderWinText:
 	cont "technology. This"
 	cont "will push me to"
 	cont "further perfect"
-	cont "science of #MON"
-	cont "battles."
+	cont "the science of"
+	cont "#MON battles."
 	
 	para "You have won my"
 	line "BADGE, trainer."
