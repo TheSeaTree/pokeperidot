@@ -219,6 +219,7 @@ CHRIS EQU __enum__
 	const ANDREA
 	const SHARON
 	const LISA
+	const BEA
 	
 	trainerclass SABRINA ; 23
 	const SABRINA1

@@ -5,6 +5,17 @@ EastForest_MapScripts:
 
 	db 0 ; callbacks
 
+TrainerTeacherBea:
+	trainer TEACHER, BEA, EVENT_BEAT_TEACHER_BEA, TeacherBeaText, TeacherBeaWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext TeacherBeaWinText
+	waitbutton
+	closetext
+	end
+
 EastForestMoveTutor:
 	faceplayer
 	opentext
@@ -82,6 +93,30 @@ EastForestPowerPlantSign:
 	
 EastForestPowerPlantFence:
 	jumptext EastForestPowerPlantFenceText
+
+TeacherBeaText:
+	text "Yaaaaawn…"
+	
+	para "Gosh, I'm sorry."
+	
+	para "A battle? Okay."
+	done
+	
+TeacherBeaWinText:
+	text "Oh my, is our"
+	line "battle over…?"
+	done
+	
+TeacherBeaAfterText:
+	text "Normally I'm quite"
+	line "alert, but some-"
+	cont "thing about this"
+	cont "forest has gotten"
+	cont "me so sleepy…"
+	
+	para "I think my #MON"
+	line "feel it too."
+	done
 
 EastForestTutorText:
 	text "I can teach your"
@@ -186,6 +221,7 @@ EastForest_MapEvents:
 	bg_event 47, 14, BGEVENT_UP, EastForestPowerPlantSign
 	bg_event 45, 13, BGEVENT_READ, EastForestPowerPlantFence
 
-	db 2 ; object events
+	db 3 ; object events
+	object_event 16, 10, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherBea, -1
 	object_event 12, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestMoveTutor, -1
 	object_event 13, 18, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

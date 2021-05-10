@@ -573,7 +573,8 @@
 	const EVENT_239
 	const EVENT_23A
 	const EVENT_23B
-	const EVENT_23C
+; East Forest
+	const EVENT_BEAT_TEACHER_BEA
 ; Route 14 Gate
 	const EVENT_BEAT_OFFICER_HARRY
 ; Blackthorn Gym Trainers
