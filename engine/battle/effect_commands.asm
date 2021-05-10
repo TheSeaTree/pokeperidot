@@ -3677,10 +3677,6 @@ BattleCommand_SleepTarget:
 	jr nz, .fail
 
 	call AnimateCurrentMove
-	ld b, $7
-	ld a, [wInBattleTowerBattle]
-	and a
-	jr z, .random_loop
 	ld b, $3
 
 .random_loop
@@ -5660,13 +5656,12 @@ BattleCommand_Recoil:
 	jr z, .got_hp
 	ld hl, wEnemyMonMaxHP
 .got_hp
-	ld b, a
-	cp STRUGGLE
-	jp z, .StruggleRecoil
-
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
 	ld d, a
+	inc a
+	jp z, .StruggleRecoil
+
 ; get 1/4 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
 	ld b, a
@@ -5713,15 +5708,11 @@ BattleCommand_Recoil:
 	call RefreshBattleHuds
 	ld hl, RecoilText
 	jp StdBattleTextBox
-	
+
 .StruggleRecoil
-	ld hl, GetQuarterMaxHP
-	call CallBattleCore
-	ld hl, SubtractHPFromUser
-	call CallBattleCore
-	call UpdateUserInParty
-	ld hl, RecoilText
-	jp StdBattleTextBox
+	callfar GetQuarterMaxHP
+	callfar SubtractHPFromUser
+	jr .animate_hp_bar
 
 BattleCommand_ConfuseTarget:
 ; confusetarget

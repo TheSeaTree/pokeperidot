@@ -24,7 +24,7 @@ Moves: ; 41afb
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,   100, 30,   0
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,    30,  5,   0
-	move RAZOR_WIND,   EFFECT_NORMAL_HIT,         70, FLYING,   100, 10,   0
+	move RAZOR_WIND,   EFFECT_NORMAL_HIT,         70, FLYING,   100, 20,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,   100, 30,   0
 	move CUT,          EFFECT_NORMAL_HIT,         70, NORMAL,   100, 20,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,   100, 35,   0
@@ -47,7 +47,7 @@ Moves: ; 41afb
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,   100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,    85, 20,   0
-	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   120, FIRE,     100, 15,  10
+	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   100, FIRE,     100, 15,  10
 	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,   100, 10,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,   100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,   100, 30,   0
@@ -154,7 +154,7 @@ Moves: ; 41afb
 	move BARRAGE,      EFFECT_MULTI_HIT,          30, GRASS,     95, 10,   5
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,      100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,    75, 10,   0
-	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,   100, 15,   0
+	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        100, FLYING,   100, 15,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
