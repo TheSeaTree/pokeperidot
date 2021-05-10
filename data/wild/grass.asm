@@ -1,6 +1,6 @@
-; Johto Pokémon in grass
+; Pokémon in grass
 
-JohtoGrassWildMons:
+GrassWildMons:
 
 	map_id UNION_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

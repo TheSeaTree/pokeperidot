@@ -218,17 +218,17 @@ OaksPKMNTalk4:
 	; bc now contains the chosen map's group and number indices.
 	push bc
 
-	; Search the JohtoGrassWildMons array for the chosen map.
-	ld hl, JohtoGrassWildMons
+	; Search the GrassWildMons array for the chosen map.
+	ld hl, GrassWildMons
 .loop
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	cp -1
 	jr z, .overflow
 	inc hl
 	cp b
 	jr nz, .next
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	cp c
 	jr z, .done
@@ -265,7 +265,7 @@ endr
 	add hl, de
 	add hl, de
 	inc hl ; skip level
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	ld [wNamedObjectIndexBuffer], a
 	ld [wCurPartySpecies], a

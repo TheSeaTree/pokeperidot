@@ -1,6 +1,6 @@
-; Johto Pokémon in water
+; Pokémon in water
 
-JohtoWaterWildMons:
+WaterWildMons:
 
 	map_id UNION_CAVE_1F
 	db 2 percent ; encounter rate

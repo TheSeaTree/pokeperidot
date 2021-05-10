@@ -37,9 +37,9 @@ FindNest:
 	and a
 	jr nz, .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call .FindGrass
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	call .FindWater
 	call .RoamMon1
 	call .RoamMon2
@@ -48,9 +48,9 @@ FindNest:
 
 .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call .FindGrass
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	jp .FindWater
 
 .FindGrass:
@@ -380,26 +380,26 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	ret c
-	ld hl, JohtoGrassWildMons
-	ld de, JohtoGrassWildMons
-	call _JohtoWildmonCheck
+	ld hl, GrassWildMons
+	ld de, GrassWildMons
+	call _WildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
 _WaterWildmonLookup:
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	ld bc, WATER_WILDDATA_LENGTH
 	ret c
-	ld hl, JohtoWaterWildMons
-	ld de, JohtoWaterWildMons
-	call _JohtoWildmonCheck
+	ld hl, WaterWildMons
+	ld de, WaterWildMons
+	call _WildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
-_JohtoWildmonCheck:
+_WildmonCheck:
 	call IsInJohto
 	and a
 	ret z
@@ -766,11 +766,11 @@ RandomUnseenWildMon:
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .GetGrassmon
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call LookUpWildmonsForMapDE
 	jr nc, .done
 
@@ -838,11 +838,11 @@ RandomPhoneWildMon:
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .ok
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call LookUpWildmonsForMapDE
 
 .ok
@@ -956,5 +956,5 @@ RandomPhoneMon:
 	ld bc, MON_NAME_LENGTH
 	jp CopyBytes
 
-INCLUDE "data/wild/johto_grass.asm"
-INCLUDE "data/wild/johto_water.asm"
+INCLUDE "data/wild/grass.asm"
+INCLUDE "data/wild/water.asm"
