@@ -1,6 +1,6 @@
 	db CURSTRAW ; 174
 
-	db  55,  90,  80,  96,  50,  105
+	db  55,  90,  80,  50,  96,  105
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, NORMAL ; type
