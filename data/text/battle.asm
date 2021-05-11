@@ -54,11 +54,14 @@ BattleText_WildFled:
 	line "fled!"
 	prompt
 
-BattleText_EnemyFled:
-	text "Enemy @"
-	text_ram wEnemyMonNick
-	text_start
-	line "fled!"
+BattleText_EnemyForfeited:
+	text "<ENEMY> forfeited"
+	line "the battle!"
+	prompt
+
+BattleText_PlayerForefeited:
+	text "You forfeited"
+	line "the battle!"
 	prompt
 
 HurtByPoisonText:
@@ -977,13 +980,13 @@ TeleportOutText:
 UTurnOutPlayerText:
 	text "<USER>"
 	line "returned to"
-	cont "<PLAYER>"
+	cont "<PLAYER>."
 	prompt
 	
 UTurnOutEnemyText:
 	text "<USER>"
 	line "returned to"
-	cont "<ENEMY>"
+	cont "<ENEMY>."
 	prompt	
 	
 TeleportInText:
@@ -1186,4 +1189,9 @@ BattleText_LinkErrorBattleCanceled:
 BattleText_0x8188e:
 	text "There is no time"
 	line "left today!"
+	done
+	
+BattleText_AskForfeit:
+	text "Do you want to"
+	line "forfeit?"
 	done

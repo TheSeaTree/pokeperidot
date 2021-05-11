@@ -35,6 +35,7 @@ Colosseum_MapScripts:
 	return
 
 .PreparePokecenter2F:
+	special HealParty
 	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 	return
 

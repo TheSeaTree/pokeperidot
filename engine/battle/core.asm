@@ -122,20 +122,23 @@ WildFled_EnemyFled_LinkBattleCanceled:
 	and BATTLERESULT_BITMASK
 	add DRAW
 	ld [wBattleResult], a
-	ld a, [wLinkMode]
-	and a
 
 	call SetEnemyTurn
 	ld de, ANIM_ENEMY_FLED
 	call Call_PlayBattleAnim
 
+	ld a, [wLinkMode]
+	and a
+	jr nz, .linked_enemy_forfeit
+
 	ld hl, BattleText_WildFled
 	jr z, .print_text
 
+.linked_enemy_forfeit
 	ld a, [wBattleResult]
 	and BATTLERESULT_BITMASK
 	ld [wBattleResult], a ; WIN
-	ld hl, BattleText_EnemyFled
+	ld hl, BattleText_EnemyForfeited
 	call CheckMobileBattleError
 	jr nc, .print_text
 
@@ -462,21 +465,18 @@ HandleWeatherItem:
 	call Call_PlayBattleAnim
 	ld hl, DownpourText
 	jp StdBattleTextBox
-	ret
 	
 .SunAnim
 	ld de, SUNNY_DAY
 	call Call_PlayBattleAnim
 	ld hl, SunGotBrightText
 	jp StdBattleTextBox
-	ret
 	
 .SandstormAnim
 	ld de, SANDSTORM
 	call Call_PlayBattleAnim
 	ld hl, SandstormBrewedText
 	jp StdBattleTextBox
-	ret
 
 HandleBerserkGene:
 	ldh a, [hSerialConnectionStatus]
@@ -2083,25 +2083,6 @@ GetMaxHP:
 	ld a, [hl]
 	ld [wBuffer1], a
 	ld c, a
-	ret
-
-Unreferenced_GetHalfHP:
-	ld hl, wBattleMonHP
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wEnemyMonHP
-.ok
-	ld a, [hli]
-	ld b, a
-	ld a, [hli]
-	ld c, a
-	srl b
-	rr c
-	ld a, [hli]
-	ld [wBuffer2], a
-	ld a, [hl]
-	ld [wBuffer1], a
 	ret
 
 CheckUserHasEnoughHP:
@@ -3874,7 +3855,7 @@ TryToRunAwayFromBattle:
 
 	ld a, [wLinkMode]
 	and a
-	jp nz, .can_escape
+	jp nz, .link_escape
 
 	ld a, [wBattleMode]
 	dec a
@@ -3988,10 +3969,18 @@ TryToRunAwayFromBattle:
 	and a
 	ret
 
+.link_escape
+	ld hl, BattleText_AskForfeit
+	call StdBattleTextBox
+	lb bc, 14, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	dec a
+	jp nz, BattleMenu
 .can_escape
 	ld a, [wLinkMode]
 	and a
-	ld a, DRAW
+	ld a, WIN
 	jr z, .fled
 	call LoadTileMapToTempTileMap
 	xor a ; BATTLEPLAYERACTION_USEMOVE
@@ -4023,7 +4012,18 @@ TryToRunAwayFromBattle:
 	call WaitPlaySFX
 	pop de
 	call WaitSFX
+	ld a, [wLinkMode]
+	and a
+	jr nz, .linked_forfeit
 	ld hl, BattleText_GotAwaySafely
+	call StdBattleTextBox
+	call WaitSFX
+	call LoadTileMapToTempTileMap
+	scf
+	ret
+
+.linked_forfeit
+	ld hl, BattleText_PlayerForefeited
 	call StdBattleTextBox
 	call WaitSFX
 	call LoadTileMapToTempTileMap
@@ -6983,17 +6983,6 @@ CheckUnownLetter:
 	ret
 
 INCLUDE "data/wild/unlocked_unowns.asm"
-
-Unreferenced_SwapBattlerLevels:
-	push bc
-	ld a, [wBattleMonLevel]
-	ld b, a
-	ld a, [wEnemyMonLevel]
-	ld [wBattleMonLevel], a
-	ld a, b
-	ld [wEnemyMonLevel], a
-	pop bc
-	ret
 
 BattleWinSlideInEnemyTrainerFrontpic:
 	xor a
