@@ -59,7 +59,7 @@
 	RGB 11,11,19, 00,00,05 ; nite
 
 ; group 15 (Mount Moon Square)
-	RGB 31,31,07, 31,16,01 ; morn/day
+	RGB 31,28,12, 31,16,01 ; morn/day
 	RGB 16,14,18, 16,14,10 ; nite
 
 ; group 16 (Indigo)
