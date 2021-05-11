@@ -34,6 +34,6 @@ PartyMenuQualityPointers:
 	dw .Default   ; PARTYMENUACTION_MOBILE
 
 .Default:  partymenuqualities NICKNAMES, HP_BAR, HP_DIGITS, STATUS, LEVEL, GENDER_ICON
-.TMHM:     partymenuqualities NICKNAMES, TMHM_COMPAT,       STATUS_ALT, LEVEL_ALT
+.TMHM:     partymenuqualities NICKNAMES, TMHM_COMPAT,       STATUS, LEVEL, GENDER_ICON
 .EvoStone: partymenuqualities NICKNAMES, EVO_STONE_COMPAT,  STATUS_ALT, LEVEL_ALT
 .Gender:   partymenuqualities NICKNAMES, GENDER,            STATUS_ALT, LEVEL_ALT
