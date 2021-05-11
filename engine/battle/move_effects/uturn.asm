@@ -35,14 +35,9 @@ BattleCommand_UTurn:
 	ld hl, UTurnOutEnemyText
 	call StdBattleTextBox
 	
-	ld a, [wOTPartyCount]
-	ld b, a
-	ld a, [wCurOTMon]
-	ld c, a
-	
-	call BattleCommand_Teleport.random_loop_trainer
+	call BattleCommand_Teleport.enemy_uturn
 	ret
-	
+
 .LastMon:
 	ld de, ANIM_SHOW_MON
 	call FarPlayBattleAnimation

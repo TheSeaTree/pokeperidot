@@ -128,6 +128,8 @@ BattleCommand_Teleport:
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
+	call BatonPass_LinkPlayerSwitch
+	
 	ld hl, SwitchPlayerMon
 	call CallBattleCore
 
@@ -139,15 +141,17 @@ BattleCommand_Teleport:
 
 .enemyswitch
 	call FindAliveEnemyMons
-	jr c, .switch_fail
+	jp c, .switch_fail
 	call UpdateEnemyMonInParty
 	ld a, $1
 	ld [wKickCounter], a
 	call AnimateCurrentMove
 	ld hl, TeleportOutText
 	call StdBattleTextBox
+
+.enemy_uturn
 	hlcoord 1, 0
-	lb bc, 4, 10
+	lb bc, 7, 18
 	call ClearBox
 	ld c, 20
 	call DelayFrames
@@ -155,6 +159,24 @@ BattleCommand_Teleport:
 	ld b, a
 	ld a, [wCurOTMon]
 	ld c, a
+
+	ld a, BATTLE_VARS_SUBSTATUS4 ; Remove Substitute when switching.
+	call GetBattleVarAddr
+	res SUBSTATUS_SUBSTITUTE, [hl]
+	call BattleCommand_LowerSubNoAnim
+
+	ld a, [wLinkMode]
+	and a
+	jr z, .random_loop_trainer ; If not a link battle, pick a Pokemon randomly.
+	
+	call UpdateEnemyMonInParty
+	call BatonPass_LinkEnemySwitch
+	
+	xor a
+	ld [wEnemySwitchMonIndex], a
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	jr .link_switch
 
 ; select a random enemy mon to switch to
 .random_loop_trainer
@@ -177,9 +199,24 @@ BattleCommand_Teleport:
 	inc a
 	ld [wEnemySwitchMonIndex], a
 	callfar ForceEnemySwitch
-
 	ld hl, TeleportInText
 	call StdBattleTextBox
+	ld hl, SpikesDamage
+	jp CallBattleCore
+
+.link_switch
+	ld a, BATTLE_VARS_SUBSTATUS4
+	call GetBattleVarAddr
+	res SUBSTATUS_LEECH_SEED, [hl]
+
+	ld hl, BreakAttraction
+	jp CallBattleCore
+	ld hl, NewEnemyMonStatus
+	jp CallBattleCore
+	ld hl, ResetEnemyStatLevels
+	jp CallBattleCore
+	ld hl, ResetBattleParticipants
+	jp CallBattleCore
 
 	ld hl, SpikesDamage
 	jp CallBattleCore
