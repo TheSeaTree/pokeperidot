@@ -258,6 +258,9 @@ ENDM
 
 	newgroup                                                      ; 15
 	map_const ROUTE_25,									   23, 18
+	map_const FAST_SHIP_1F,								   11, 10
+	map_const FAST_SHIP_1F_ROOMS,						   12,  8
+	map_const FAST_SHIP_B1F,							   14,  7
 
 	newgroup                                                      ; 16
 

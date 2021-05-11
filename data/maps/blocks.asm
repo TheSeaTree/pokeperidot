@@ -723,6 +723,15 @@ Route11HiddenCave_Blocks:
 	
 SeaRoute2Cave_Blocks:
 	INCBIN "maps/SeaRoute2Cave.ablk"
+	
+FastShip1F_Blocks:
+	INCBIN "maps/FastShip1F.ablk"
+
+FastShip1FRooms_Blocks:
+	INCBIN "maps/FastShip1FRooms.ablk"
+
+FastShipB1F_Blocks:
+	INCBIN "maps/FastShipB1F.ablk"
 
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:

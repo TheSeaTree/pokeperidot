@@ -52,4 +52,7 @@ MapScenes::
 	scene_var ORCHID_GYM_1F,						   	wOrchidGym1FSceneID
 	scene_var BATTLE_SUBWAY_PLATFORM,                   wBattleSubwayPlatformSceneID
 	scene_var BATTLE_SUBWAY_TRAIN,                    	wBattleSubwayTrainSceneID
+	scene_var FAST_SHIP_1F,                    			wFastShip1FSceneID
+	scene_var FAST_SHIP_1F_ROOMS,                       wFastShip1FRoomsSceneID
+	scene_var FAST_SHIP_B1F,                    		wFastShipB1FSceneID
 	db -1

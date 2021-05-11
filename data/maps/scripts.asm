@@ -279,6 +279,9 @@ INCLUDE "maps/IlexForestSwordsDanceHouse.asm"
 INCLUDE "maps/SeaRoute5.asm"
 INCLUDE "maps/SeaRoute6.asm"
 INCLUDE "maps/SeaRoute2Cave.asm"
+INCLUDE "maps/FastShip1F.asm"
+INCLUDE "maps/FastShip1FRooms.asm"
+INCLUDE "maps/FastShipB1F.asm"
 
 
 SECTION "Map Scripts 20", ROMX
