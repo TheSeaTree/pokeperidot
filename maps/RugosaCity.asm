@@ -154,6 +154,7 @@ RugosaCityOfficerScript:
 	writetext RugosaCityOfficerWaitingText
 	waitbutton
 	closetext
+	end
 	
 .Opening
 	writetext RugosaCityOfficerOpeningText
@@ -233,7 +234,7 @@ RugosaVendingMachine:
 	closewindow
 	ifequal 1, .Magikarp
 	ifequal 2, .Poliwag
-	ifequal 3, .Starmie
+	ifequal 3, .Staryu
 	closetext
 	end
 	
@@ -252,6 +253,7 @@ RugosaVendingMachine:
 	buttonsound
 	writetext SentMagikarpDollHome
 	buttonsound
+	closetext
 	end
 	
 .Poliwag:
@@ -269,9 +271,10 @@ RugosaVendingMachine:
 	buttonsound
 	writetext SentPoliwagDollHome
 	buttonsound
+	closetext
 	end
 
-.Starmie:
+.Staryu:
 	checkmoney YOUR_MONEY, 1200
 	ifequal HAVE_LESS, .NotEnoughMoney
 	checkevent EVENT_DECO_STARMIE_DOLL
@@ -281,11 +284,12 @@ RugosaVendingMachine:
 	setevent EVENT_DECO_STARMIE_DOLL
 	pause 10
 	playsound SFX_ENTER_DOOR
-	writetext RugosaClangTextStarmieDoll
+	writetext RugosaClangTextStaryuDoll
 	special PlaceMoneyTopRight
 	buttonsound
-	writetext SentStarmieDollHome
+	writetext SentStaryuDollHome
 	buttonsound
+	closetext
 	end
 
 .NotEnoughMoney:
@@ -309,7 +313,7 @@ RugosaVendingMachine:
 	db 4 ; items
 	db "MAGIKARP    ¥4500@"
 	db "POLIWAG     ¥5000@"
-	db "STARMIE     ¥6000@"
+	db "STARYU      ¥6000@"
 	db "CANCEL@"
 
 RugosaCityLass:
@@ -584,15 +588,15 @@ SentPoliwagDollHome:
 	cont "<PLAYER>'s home."
 	done
 	
-RugosaClangTextStarmieDoll:
+RugosaClangTextStaryuDoll:
 	text "Clang!"
 
-	para "The STARMIE DOLL"
+	para "The STARYU DOLL"
 	line "popped out."
 	done
 	
-SentStarmieDollHome:
-	text "The STARMIE DOLL"
+SentStaryuDollHome:
+	text "The STARYU DOLL"
 	line "was sent to"
 	cont "<PLAYER>'s home."
 	done
@@ -696,7 +700,7 @@ RugosaCity_MapEvents:
 
 	db 11 ; warp events
 	warp_event 27, 33, RUGOSA_GATE, 1
-	warp_event 28, 33, RUGOSA_GATE, 2
+	warp_event 28, 33, ENTEI_CAVE_1F, 2
 	warp_event  6,  4, POWER_PLANT_1F_B, 1
 	warp_event 31, 29, RUGOSA_POKECENTER_1F, 1
 	warp_event 14, 21, RUGOSA_DEPT_STORE_1F, 1
