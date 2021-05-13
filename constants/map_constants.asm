@@ -346,6 +346,8 @@ ENDM
 	map_const ROUTE_22_NORTH,							   19,  8
 	map_const ROUTE_22_SOUTH,							   20, 19
 	map_const ROUTE_22_HIDDEN_CAVE,						    5,  7
+	map_const ENTEI_CAVE_1F,							   16, 18
+	map_const ENTEI_CAVE_B1F,							   15, 18
 
 	newgroup                                                      ; 24
 

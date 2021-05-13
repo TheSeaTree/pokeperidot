@@ -4,7 +4,15 @@
 Route22CaveB2F_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .OpenCave
+	
+.OpenCave:
+	checkevent EVENT_ENTEI_HIDDEN_CAVE_OPEN
+	iffalse .end
+	changeblock 8, 2, $13
+.end
+	return
 	
 TrainerFirebreatherRoger:
 	trainer FIREBREATHER, ROGER, EVENT_BEAT_FIREBREATHER_ROGER, FirebreatherRogerText, FirebreatherRogerWinText, 0, .AfterScript
@@ -163,13 +171,14 @@ RoarExplainText:
 Route22CaveB2F_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 7 ; warp events
 	warp_event 13, 21, ROUTE_22_CAVE_B1F, 2
 	warp_event 19,  5, ROUTE_22_CAVE_B1F, 3
 	warp_event 21, 19, ROUTE_22_CAVE_B1F, 4
 	warp_event 27,  9, ROUTE_22_CAVE_B1F, 5
 	warp_event 29, 21, ROUTE_22_CAVE_B1F, 7
 	warp_event 31, 15, ROUTE_22_CAVE_B1F, 8
+	warp_event  9,  3, ENTEI_CAVE_1F, 2
 
 	db 0 ; coord events
 

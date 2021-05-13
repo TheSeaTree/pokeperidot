@@ -497,3 +497,5 @@ ENDM
 	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0
 	map_attributes FastShip1FRooms, FAST_SHIP_1F_ROOMS, $00, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0
+	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
+	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $8c, 0

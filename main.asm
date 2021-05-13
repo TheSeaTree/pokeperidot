@@ -569,8 +569,6 @@ INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 PokegearGFX:
 INCBIN "gfx/pokegear/pokegear.2bpp.lz"
 
-INCLUDE "engine/pokemon/european_mail.asm"
-
 
 SECTION "Battle Tower Text", ROMX
 
@@ -585,6 +583,8 @@ INCLUDE "data/battle_tower/unknown.asm"
 SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
+
+INCLUDE "engine/pokemon/european_mail.asm"
 
 
 SECTION "Crystal Events", ROMX

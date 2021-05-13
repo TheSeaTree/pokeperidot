@@ -402,9 +402,6 @@ INCBIN "data/tilesets/castle_attributes.bin"
 
 SECTION "Tileset Data 11", ROMX
 
-TilesetCaveAttr:
-INCBIN "data/tilesets/cave_attributes.bin"
-
 TilesetParkAttr:
 INCBIN "data/tilesets/park_attributes.bin"
 
@@ -440,3 +437,6 @@ INCLUDE "data/tilesets/pokemon_league_collision.asm"
 
 TilesetPokemonLeagueAttr:
 INCBIN "data/tilesets/pokemon_league_attributes.bin"
+
+TilesetCaveAttr:
+INCBIN "data/tilesets/cave_attributes.bin"

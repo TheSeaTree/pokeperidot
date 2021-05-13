@@ -151,6 +151,12 @@ SECTION "Map Blocks 2", ROMX
 Route14_Blocks:
 	INCBIN "maps/Route14.ablk"
 
+EnteiCaveB1F_Blocks:
+	INCBIN "maps/EnteiCaveB1F.ablk"
+
+EnteiCave1F_Blocks:
+	INCBIN "maps/EnteiCave1F.ablk"
+
 StaghornMart_Blocks:
 AcroporaMart_Blocks:
 CeruleanMart_Blocks:

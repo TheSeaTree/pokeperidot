@@ -387,3 +387,7 @@ INCLUDE "maps/Factory1F.asm"
 INCLUDE "maps/FactoryB1.asm"
 INCLUDE "maps/FactoryBack.asm"
 INCLUDE "maps/OverlookMaze.asm"
+
+SECTION "Map Scripts 26", ROMX
+INCLUDE "maps/EnteiCave1F.asm"
+INCLUDE "maps/EnteiCaveB1F.asm"
