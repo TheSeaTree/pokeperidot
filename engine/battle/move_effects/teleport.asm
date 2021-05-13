@@ -151,7 +151,10 @@ BattleCommand_Teleport:
 
 .enemy_uturn
 	hlcoord 1, 0
-	lb bc, 7, 18
+	lb bc, 4, 10
+	call ClearBox
+	hlcoord 13, 0
+	lb bc, 7, 7
 	call ClearBox
 	ld c, 20
 	call DelayFrames
