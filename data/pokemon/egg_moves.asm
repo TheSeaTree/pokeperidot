@@ -734,7 +734,7 @@ HoothootEggMoves:
 CubboltEggMoves:
 	db THRASH
 	db FLARE_BLITZ
-	db WILD_CHARGE
+	db ZAP_CANNON
 	db ENDURE
 	db SIGNAL_BEAM
 	db -1 ; end

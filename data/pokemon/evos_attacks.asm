@@ -2739,8 +2739,7 @@ CubboltEvosAttacks: ; Little Tiger
 	db 33, DOUBLE_EDGE
 	db 36, THUNDERBOLT
 	db 39, CRUNCH
-	db 46, THUNDER
-	db 56, ZAP_CANNON
+	db 46, WILD_CHARGE
 	db 0 ; no more level-up moves
 
 ElectigerEvosAttacks: ; Big Tiger
@@ -2756,8 +2755,7 @@ ElectigerEvosAttacks: ; Big Tiger
 	db 33, DOUBLE_EDGE
 	db 38, THUNDERBOLT
 	db 42, CRUNCH
-	db 51, THUNDER
-	db 60, ZAP_CANNON
+	db 51, WILD_CHARGE
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:
