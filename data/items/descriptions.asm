@@ -180,7 +180,7 @@ ItemDescriptions:
 	dw RainbowWingDesc
 	dw TrickMirrorDesc
 	dw BrickPieceDesc
-	dw InvalidItemDesc
+	dw CrashHelmetDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -962,12 +962,16 @@ RainbowWingDesc:
 	next "of rainbow colors.@"
 
 TrickMirrorDesc:
-	db "Swap PHYS. & SPCL."
+	db   "Swap PHYS. & SPCL."
 	next "types. (HOLD)@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"
 	next "tile.@"
+	
+CrashHelmetDesc:
+	db	 "Halves most recoil"
+	next "damage. (HOLD)@"
 
 InvalidItemDesc:
 	db   "You should not"

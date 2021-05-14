@@ -179,7 +179,7 @@ ItemNames::
 	db "RAINBOW WING@"
 	db "TRICK MIRROR@"
 	db "BRICK PIECE@"
-	db "TERU-SAMA@"
+	db "CRASH HELMET@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

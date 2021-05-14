@@ -5661,6 +5661,14 @@ BattleCommand_Recoil:
 	ld d, a
 	inc a
 	jp z, .StruggleRecoil
+	
+; Crash Helmet held item reduces recoil damage.
+	push hl
+	call GetUserItem
+	ld a, b
+	cp HELD_CRASH_HELMET
+	pop hl
+	jr nz, .normal_recoil_damage
 
 ; get 1/4 damage or 1 HP, whichever is higher
 	ld a, [wCurDamage]
@@ -5669,6 +5677,16 @@ BattleCommand_Recoil:
 	ld c, a
 	call HalveBC
 	call HalveBC
+	jr .min_damage
+	
+.normal_recoil_damage
+; get 1/2 damage or 1 HP, whichever is higher
+	ld a, [wCurDamage]
+	ld b, a
+	ld a, [wCurDamage + 1]
+	ld c, a
+	call HalveBC
+
 .min_damage
 	call FloorBC
 	ld a, [hli]
@@ -5710,6 +5728,7 @@ BattleCommand_Recoil:
 	jp StdBattleTextBox
 
 .StruggleRecoil
+	; Struggle always deals 1/4 max HP to the user.
 	callfar GetQuarterMaxHP
 	callfar SubtractHPFromUser
 	jr .animate_hp_bar

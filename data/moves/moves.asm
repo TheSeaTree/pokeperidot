@@ -47,7 +47,7 @@ Moves: ; 41afb
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,   100, 15,  30
 	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,    85, 20,   0
-	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   100, FIRE,     100, 15,  10
+	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   120, FIRE,     100, 10,  10
 	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,   100, 10,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,   100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,   100, 30,   0
@@ -77,7 +77,7 @@ Moves: ; 41afb
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,    90,  5,   0
 	move PECK,         EFFECT_FLINCH_HIT,         40, FLYING,   100, 35,  10
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,   100, 20,   0
-	move SUBMISSION,   EFFECT_RECOIL_HIT,        120, FIGHTING,  85, 10,   0
+	move SUBMISSION,   EFFECT_RECOIL_HIT,        120, FIGHTING,  90,  5,   0
 	move LOW_KICK,     EFFECT_FLINCH_HIT,         50, FIGHTING,  90, 20,  30
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING, 100, 20,   0
@@ -154,7 +154,7 @@ Moves: ; 41afb
 	move BARRAGE,      EFFECT_MULTI_HIT,          30, GRASS,     95, 10,   5
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,      100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,    75, 10,   0
-	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        100, FLYING,   100, 15,   0
+	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,   100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
@@ -173,7 +173,7 @@ Moves: ; 41afb
 	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,   100, 10,   0
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,   100, 30,   0
 	move TRI_ATTACK,   EFFECT_TRI_ATTACK,         85, NORMAL,   100, 10,  20
-	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   100, ELECTRIC, 100, 15,  10
+	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   120, ELECTRIC, 100, 10,  10
 	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,    80,  5,  30
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,   100, 10,   0
 	move STONE_EDGE,   EFFECT_NORMAL_HIT,        110, ROCK,      80,  5,   0

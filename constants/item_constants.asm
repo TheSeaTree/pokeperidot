@@ -186,7 +186,7 @@
 	const RAINBOW_WING ; b2
 	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
-	const ITEM_B5      ; b5
+	const CRASH_HELMET ; b5
 	const ITEM_B6      ; b6
 	const ITEM_B7      ; b7
 	const ITEM_B8      ; b8
