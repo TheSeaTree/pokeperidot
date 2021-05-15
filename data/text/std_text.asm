@@ -185,6 +185,47 @@ StolenGoodsText2:
 	line "stolen goods!"
 	done
 	
+FountainIntroText:
+	text "It's a fountain"
+	line "with lots of coins"
+	cont "at the bottom."
+	
+	para "Would you like to"
+	line "throw some in too?"
+	done
+
+FountainNotEnoughMoneyText:
+	text "You do not have"
+	line "that much money to"
+	cont "give…"
+	done	
+
+FountainFirstMonHappyText:
+	text_ram wStringBuffer3
+	text "@ seems"
+	line "happier!"
+	done
+
+FountainCoinsSparkleText:
+	text "The coins shimmer"
+	line "the water."
+	done
+
+FountainTossed10Text:
+	text "<PLAYER> tossed in"
+	line "¥10."
+	done
+
+FountainTossed100Text:
+	text "<PLAYER> tossed in"
+	line "¥100."
+	done
+
+FountainTossed500Text:
+	text "<PLAYER> tossed in"
+	line "¥500."
+	done
+	
 GymGeyserText:
 	text "It's impossible to"
 	line "pass!"

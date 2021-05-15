@@ -42,6 +42,7 @@ StdScripts::
 	dba LightUpRoomScript
 	dba TeleportGuyScript
 	dba StolenItemsBoxScript
+	dba WishingFountainScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -613,6 +614,93 @@ StolenItemsBoxScript:
 	farjumptext StolenGoodsText1
 .box1:
 	farjumptext StolenGoodsText2
+	
+WishingFountainScript:
+; 1% chance to call StartShinyEncounterTimer, 49% chance to raise happiness by 1, 50% chance to do nothing.
+; Change the  random amount depending on how much money is spent(255, 100, 75).
+	opentext
+	farwritetext FountainIntroText
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .roll_10
+	ifequal 2, .roll_100
+	ifequal 3, .roll_500
+	closetext
+	end
+
+.roll_10
+	checkmoney YOUR_MONEY, 10
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed10Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 10
+	special PlaceMoneyTopRight
+	random 10
+	ifequal 0, .roll_100
+	closetext
+	end
+
+.roll_100
+	checkmoney YOUR_MONEY, 100
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed100Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 100
+	special PlaceMoneyTopRight
+	random 100
+	jump .results
+
+.roll_500
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed500Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 500
+	special PlaceMoneyTopRight
+	random 75
+.results
+	ifequal 0, .ShinyEncounters
+	ifless 50, .IncreaseHappiness
+	closetext
+	end
+
+.ShinyEncounters:
+	farwritetext FountainCoinsSparkleText
+	waitbutton
+	closetext
+	special StartShinyEncounterTimer
+	end
+.IncreaseHappiness:
+;	farwritetext FountainFirstMonHappyText
+;	waitbutton
+	special DaisysGrooming ; Make this automatically select the first Pokemon.
+	closetext
+	end
+
+.NotEnoughMoney:
+	farwritetext FountainNotEnoughMoneyText
+	waitbutton
+	closetext
+	end
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 13, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "¥10@"
+	db "¥100@"
+	db "¥500@"
 
 Movement_ContestResults_WalkAfterWarp:
 	step DOWN

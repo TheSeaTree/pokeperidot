@@ -16,4 +16,5 @@ TileCollisionStdScripts:
 	dbw COLL_UNOWN_X,		 	strangesymbols
 	dbw COLL_CAPSULE_MACHINE,	capsulemachine
 	dbw COLL_STOLEN_ITEMS,		stolenitemboxes
+	dbw COLL_FOUNTAIN,			wishingfountain
 	db -1 ; end

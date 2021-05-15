@@ -43,3 +43,4 @@
 	enum lightuproom
 	enum teleportguy
 	enum stolenitemboxes
+	enum wishingfountain

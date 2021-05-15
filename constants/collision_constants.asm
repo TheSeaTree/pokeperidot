@@ -78,7 +78,7 @@ COLL_CAVE              EQU $7b
 COLL_WARP_PANEL        EQU $7c
 COLL_DOOR_7D           EQU $7d ; unused
 COLL_WARP_CARPET_RIGHT EQU $7e
-COLL_WARP_7F           EQU $7f ; unused
+COLL_FOUNTAIN          EQU $7f
 COLL_COUNTER           EQU $90
 COLL_BOOKSHELF         EQU $91
 COLL_PC                EQU $93
