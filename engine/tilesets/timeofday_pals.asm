@@ -1,5 +1,8 @@
 DummyPredef35:
 DummyPredef36:
+DummyPredef2F:
+DummyPredef38:
+DummyPredef39:
 	ret
 
 UpdateTimeOfDayPal::

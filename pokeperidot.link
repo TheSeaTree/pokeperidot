@@ -136,9 +136,9 @@ ROMX $32
 	"bank32"
 ROMX $33
 	"Move Animations"
-	"Extra Songs 2"
 ROMX $36
 	"Font Inversed"
+	"Extra Songs 2"
 ROMX $37
 	"Tileset Data 6"
 ROMX $38

@@ -959,19 +959,58 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 
 	ldh a, [hBattleTurn]
 	and a
-	jr z, .player
+	jp z, .player
 
-	ld hl, MonsterSpriteGFX + 0 tiles
+	ld hl, SubstitutePic + 0 tiles
+	ld de, sScratch + (2 * 7 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 1 tiles
+	ld de, sScratch + (3 * 7 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 2 tiles
+	ld de, sScratch + (4 * 7 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 3 tiles
+	ld de, sScratch + (5 * 7 + 3) tiles
+	call .CopyTile
+
+	ld hl, SubstitutePic + 4 tiles
+	ld de, sScratch + (2 * 7 + 4) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 5 tiles
+	ld de, sScratch + (3 * 7 + 4) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 6 tiles
+	ld de, sScratch + (4 * 7 + 4) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 7 tiles
+	ld de, sScratch + (5 * 7 + 4) tiles
+	call .CopyTile
+
+	ld hl, SubstitutePic + 8 tiles
 	ld de, sScratch + (2 * 7 + 5) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 1 tiles
+	ld hl, SubstitutePic + 9 tiles
 	ld de, sScratch + (3 * 7 + 5) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 2 tiles
+	ld hl, SubstitutePic + 10 tiles
+	ld de, sScratch + (4 * 7 + 5) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 11 tiles
+	ld de, sScratch + (5 * 7 + 5) tiles
+	call .CopyTile
+	
+	ld hl, SubstitutePic + 12 tiles
 	ld de, sScratch + (2 * 7 + 6) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 3 tiles
+	ld hl, SubstitutePic + 13 tiles
 	ld de, sScratch + (3 * 7 + 6) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 14 tiles
+	ld de, sScratch + (4 * 7 + 6) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 15 tiles
+	ld de, sScratch + (5 * 7 + 6) tiles
 	call .CopyTile
 
 	ld hl, vTiles2 tile $00
@@ -981,17 +1020,43 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 	jr .done
 
 .player
-	ld hl, MonsterSpriteGFX + 4 tiles
+	ld hl, SubstitutePic + 16 tiles
+	ld de, sScratch + (1 * 6 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 17 tiles
+	ld de, sScratch + (2 * 6 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 18 tiles
+	ld de, sScratch + (3 * 6 + 3) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 19 tiles
+	ld de, sScratch + (4 * 6 + 3) tiles
+	call .CopyTile
+
+	ld hl, SubstitutePic + 20 tiles
+	ld de, sScratch + (1 * 6 + 4) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 21 tiles
 	ld de, sScratch + (2 * 6 + 4) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 5 tiles
+	ld hl, SubstitutePic + 22 tiles
 	ld de, sScratch + (3 * 6 + 4) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 6 tiles
+	ld hl, SubstitutePic + 23 tiles
+	ld de, sScratch + (4 * 6 + 4) tiles
+	call .CopyTile
+
+	ld hl, SubstitutePic + 24 tiles
+	ld de, sScratch + (1 * 6 + 5) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 25 tiles
 	ld de, sScratch + (2 * 6 + 5) tiles
 	call .CopyTile
-	ld hl, MonsterSpriteGFX + 7 tiles
+	ld hl, SubstitutePic + 26 tiles
 	ld de, sScratch + (3 * 6 + 5) tiles
+	call .CopyTile
+	ld hl, SubstitutePic + 27 tiles
+	ld de, sScratch + (4 * 6 + 5) tiles
 	call .CopyTile
 
 	ld hl, vTiles2 tile $31
@@ -1007,9 +1072,12 @@ GetSubstitutePic: ; used only for BANK(GetSubstitutePic)
 
 .CopyTile:
 	ld bc, 1 tiles
-	ld a, BANK(MonsterSpriteGFX)
+	ld a, BANK(SubstitutePic)
 	call FarCopyBytes
 	ret
+
+SubstitutePic:
+	INCBIN "gfx/battle/substitute.2bpp"
 
 BattleAnimCmd_MinimizeOpp:
 	ldh a, [rSVBK]
