@@ -53,7 +53,7 @@ SapHealth:
 	ld [wBuffer6], a
 	jr c, .max_hp
 
-	; Substract current HP from max HP (to see if we have more than max HP)
+	; Subtract current HP from max HP (to see if we have more than max HP)
 	ld a, [hld]
 	ld b, a
 	ld a, [de]
