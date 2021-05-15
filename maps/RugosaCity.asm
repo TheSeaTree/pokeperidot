@@ -346,6 +346,9 @@ RugosaDeptStoreSign:
 RugosaPowerPlantSign:
 	jumptext RugosaPowerPlantSignText
 	
+RugosaCityPokecenterSign:
+	jumpstd pokecentersign
+	
 RugosaCityMetalPowder:
 	itemball METAL_POWDER
 	
@@ -715,13 +718,14 @@ RugosaCity_MapEvents:
 	coord_event  6,  4, -1, PowerPlantDoorLeft
 	coord_event  7,  4, -1, PowerPlantDoorRight
 
-	db 11 ; bg events
+	db 12 ; bg events
 	bg_event 28, 29, BGEVENT_UP, RugosaCitySign
 	bg_event 15, 21, BGEVENT_UP, RugosaDeptStoreSign
 	bg_event 28, 13, BGEVENT_UP, RugosaGymEvent
-	bg_event 37,  9, BGEVENT_UP, RugosaMoveManagersHouse
 	bg_event  8,  5, BGEVENT_UP, RugosaPowerPlantSign
 	bg_event 26, 29, BGEVENT_UP, RugosaVendingMachine
+	bg_event 37,  9, BGEVENT_READ, RugosaMoveManagersHouse
+	bg_event 32, 29, BGEVENT_READ, RugosaCityPokecenterSign
 	bg_event 23, 16, BGEVENT_ITEM, RugosaHiddenProtien
 	bg_event 27, 27, BGEVENT_ITEM, RugosaHiddenCarbos
 	bg_event  8, 23, BGEVENT_ITEM, RugosaHiddenHPUp
