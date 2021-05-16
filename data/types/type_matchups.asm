@@ -127,3 +127,17 @@ TypeMatchups:
 	db FIGHTING,  GHOST,     NO_EFFECT
 
 	db -1 ; end
+
+BonemerangMatchups:
+; Bonemerang ignores Flying's immunity.
+
+	db GROUND,    FIRE,      SUPER_EFFECTIVE
+	db GROUND,    ELECTRIC,  SUPER_EFFECTIVE
+	db GROUND,    GRASS,     NOT_VERY_EFFECTIVE
+	db GROUND,    POISON,    SUPER_EFFECTIVE
+	db GROUND,    FLYING,    NOT_VERY_EFFECTIVE
+	db GROUND,    BUG,       NOT_VERY_EFFECTIVE
+	db GROUND,    ROCK,      SUPER_EFFECTIVE
+	db GROUND,    STEEL,     SUPER_EFFECTIVE
+
+	db -1 ; end

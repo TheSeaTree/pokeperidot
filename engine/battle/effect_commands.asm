@@ -1297,11 +1297,23 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
+	; Bonemerang ignores Flying's immunity to Ground.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BONEMERANG
+	jr z, .bonemerang
+
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
 	ld hl, TypeMatchups
-
+	jr .TypesLoop
+	
+.bonemerang
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVar
+	ld b, a
+	ld hl, BonemerangMatchups
 .TypesLoop:
 	ld a, [hli]
 
@@ -1339,10 +1351,7 @@ BattleCommand_Stab:
 	ld a, [hl]
 	and a
 	jr nz, .NotImmune
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BONEMERANG
-	jr z, .NotImmune
+
 	inc a
 	ld [wAttackMissed], a
 	xor a
@@ -1427,7 +1436,18 @@ CheckTypeMatchup:
 	ld c, [hl]
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
+
+	; Bonemerang ignores Flying's immunity to Ground.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BONEMERANG
+	jr z, .bonemerang
+
 	ld hl, TypeMatchups
+	jr .TypesLoop
+
+.bonemerang
+	ld hl, BonemerangMatchups
 .TypesLoop:
 	ld a, [hli]
 	cp -1
