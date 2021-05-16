@@ -4680,16 +4680,16 @@ BattleCommand_LegendaryStatsBoost:
 ; allstatsup
 
 ; Attack
-	call BattleCommand_AttackUp
+	call BattleCommand_AttackUp2
 
 ; Defense
-	call BattleCommand_DefenseUp
+	call BattleCommand_DefenseUp2
 
 ; Special Attack
-	call BattleCommand_SpecialAttackUp
+	call BattleCommand_SpecialAttackUp2
 
 ; Special Defense
-	call BattleCommand_SpecialDefenseUp
+	call BattleCommand_SpecialDefenseUp2
 
 ; Speed
 	jp BattleCommand_SpeedUp
