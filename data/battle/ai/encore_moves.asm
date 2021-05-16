@@ -32,5 +32,5 @@ EncoreMoves:
 	db COTTON_SPORE
 	db POWDER_SNOW
 	db COIL
-	db TELEPORT
+	db WILL_O_WISP
 	db -1 ; end

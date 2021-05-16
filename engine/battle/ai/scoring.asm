@@ -1651,7 +1651,7 @@ AI_Smart_Thief:
 AI_Smart_Conversion2:
 	ld a, [wLastPlayerMove]
 	and a
-	jr nz, .asm_38dc9
+	jr z, .asm_38dc9
 
 	push hl
 	dec a

@@ -175,8 +175,8 @@ AI_Redundant:
 	ret
 
 .FutureSight:
-	ld a, [wEnemyScreens]
-	bit 5, a
+	ld a, [wEnemyFutureSightCount]
+	and a
 	ret
 
 .Heal:
