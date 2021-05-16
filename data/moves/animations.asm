@@ -181,7 +181,7 @@ BattleAnimations::
 	dw BattleAnim_CottonSpore
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
-	dw BattleAnim_PowderSnow
+	dw BattleAnim_FreezeDry
 	dw BattleAnim_Protect
 	dw BattleAnim_MachPunch
 	dw BattleAnim_ScaryFace
@@ -3399,7 +3399,7 @@ BattleAnim_Spite:
 	anim_wait 96
 	anim_ret
 
-BattleAnim_PowderSnow:
+BattleAnim_FreezeDry:
 	anim_1gfx ANIM_GFX_ICE
 .loop
 	anim_sound 6, 2, SFX_SHINE
@@ -3411,11 +3411,14 @@ BattleAnim_PowderSnow:
 	anim_sound 6, 2, SFX_SHINE
 	anim_obj ANIM_OBJ_POWDER_SNOW, 64, 96, $23
 	anim_wait 2
-	anim_loop 2, .loop
 	anim_bgeffect ANIM_BG_WHITE_HUES, $0, $8, $0
-	anim_wait 40
-	anim_call BattleAnim_PowderSnow_branch_cbbdf
-	anim_wait 32
+	anim_wait 16
+	anim_obj ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
+	anim_wait 128
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 8
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 24
 	anim_ret
 
 BattleAnim_Protect:
@@ -4886,7 +4889,6 @@ BattleAnim_TriAttack_branch_cbbcc:
 	anim_ret
 
 BattleAnim_IcePunch_branch_cbbdf:
-BattleAnim_PowderSnow_branch_cbbdf:
 BattleAnim_TriAttack_branch_cbbdf:
 	anim_sound 0, 1, SFX_SHINE
 	anim_obj ANIM_OBJ_12, 128, 42, $0

@@ -1301,7 +1301,10 @@ BattleCommand_Stab:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_BONEMERANG
-	jr z, .bonemerang
+	jr z, .alternate
+	; Freeze-Dry is super-effective against Water.
+	cp EFFECT_FREEZE_DRY
+	jr z, .alternate
 
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
@@ -1309,11 +1312,11 @@ BattleCommand_Stab:
 	ld hl, TypeMatchups
 	jr .TypesLoop
 	
-.bonemerang
+.alternate
 	ld a, BATTLE_VARS_MOVE_TYPE
 	call GetBattleVar
 	ld b, a
-	ld hl, BonemerangMatchups
+	ld hl, AlternateMatchups
 .TypesLoop:
 	ld a, [hli]
 
@@ -1441,13 +1444,16 @@ CheckTypeMatchup:
 	ld a, BATTLE_VARS_MOVE_EFFECT
 	call GetBattleVar
 	cp EFFECT_BONEMERANG
-	jr z, .bonemerang
+	jr z, .alternate
+	; Freeze-Dry is super-effective against Water.
+	cp EFFECT_FREEZE_DRY
+	jr z, .alternate
 
 	ld hl, TypeMatchups
 	jr .TypesLoop
 
-.bonemerang
-	ld hl, BonemerangMatchups
+.alternate
+	ld hl, AlternateMatchups
 .TypesLoop:
 	ld a, [hli]
 	cp -1
@@ -4686,8 +4692,7 @@ BattleCommand_LegendaryStatsBoost:
 	call BattleCommand_SpecialDefenseUp
 
 ; Speed
-	call BattleCommand_SpeedUp
-	ret
+	jp BattleCommand_SpeedUp
 
 ResetMiss:
 	xor a

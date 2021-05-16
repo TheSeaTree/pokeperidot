@@ -419,6 +419,7 @@ INCLUDE "engine/battle/constant_damage_moves.asm"
 INCLUDE "engine/battle/pay_day.asm"
 INCLUDE "engine/battle/false_swipe.asm"
 INCLUDE "engine/battle/sap_health.asm"
+INCLUDE "engine/battle/check_gender.asm"
 INCLUDE "engine/battle/misc.asm"
 
 

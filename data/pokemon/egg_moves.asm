@@ -1002,10 +1002,10 @@ SwinubEggMoves:
 	db DOUBLE_EDGE
 	db BITE
 	db ANCIENTPOWER
-	db ICICLE_SPEAR
 	db FISSURE
 	db SPIKES
 	db STONE_EDGE
+	db FREEZE_DRY
 	db -1 ; end
 
 CorsolaEggMoves:
@@ -1044,6 +1044,7 @@ DelibirdEggMoves:
 	db SIGNAL_BEAM
 	db PAY_DAY
 	db ICICLE_SPEAR
+	db FREEZE_DRY
 	db -1 ; end
 
 MantineEggMoves:
@@ -1118,6 +1119,7 @@ SmoochumEggMoves:
 	db ICICLE_SPEAR
 	db PETAL_DANCE
 	db METRONOME
+	db FREEZE_DRY
 	db -1 ; end
 
 ElekidEggMoves:

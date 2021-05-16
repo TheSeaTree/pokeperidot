@@ -186,7 +186,7 @@
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
-	const POWDER_SNOW  ; b5
+	const FREEZE_DRY   ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8

@@ -1381,6 +1381,7 @@ DewgongEvosAttacks:
 	db 11, ICY_WIND
 	db 13, ENCORE
 	db 21, REST
+	db 25, FREEZE_DRY
 	db 27, AURORA_BEAM
 	db 31, AQUA_JET
 	db 34, HORN_DRILL
@@ -2019,10 +2020,10 @@ JynxEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, LICK
-	db 1, POWDER_SNOW
+	db 1, FREEZE_DRY
 	db 5, LICK
 	db 8, LOVELY_KISS
-	db 11, POWDER_SNOW
+	db 11, ICY_WIND
 	db 15, DOUBLESLAP
 	db 18, ICE_PUNCH
 	db 25, MEAN_LOOK
@@ -2141,6 +2142,7 @@ LaprasEvosAttacks:
 	db 27, PERISH_SONG
 	db 32, ICE_BEAM
 	db 35, HAZE
+	db 37, FREEZE_DRY
 	db 43, SAFEGUARD
 	db 47, HYDRO_PUMP
 	db 0 ; no more level-up moves
@@ -2347,7 +2349,7 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1,  GUST
-	db 1,  POWDER_SNOW
+	db 1,  FREEZE_DRY
 	db 13, MIST
 	db 25, AGILITY
 	db 30, AURORA_BEAM
@@ -2894,9 +2896,9 @@ ShifurEvosAttacks:
 	db EVOLVE_LEVEL, 28, SNOWMAD
 	db 0 ; no more evolutions
 	db 1, SCRATCH
+	db 1, FREEZE_DRY
 	db 1, LEER
 	db 8, QUICK_ATTACK
-	db 10, POWDER_SNOW
 	db 14, ICY_WIND
 	db 16, FURY_SWIPES
 	db 20, AGILITY
@@ -2911,9 +2913,9 @@ ShifurEvosAttacks:
 SnowmadEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
+	db 1, FREEZE_DRY
 	db 1, LEER
 	db 8, QUICK_ATTACK
-	db 10, POWDER_SNOW
 	db 14, ICY_WIND
 	db 16, FURY_SWIPES
 	db 20, AGILITY
@@ -3412,15 +3414,18 @@ DunsparceEvosAttacks:
 GligarEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 6, SAND_ATTACK
-	db 13, HARDEN
-	db 20, QUICK_ATTACK
-	db 28, FAINT_ATTACK
+	db 4, SAND_ATTACK
+	db 7, HARDEN
+	db 13, QUICK_ATTACK
+	db 16, FURY_CUTTER
+	db 19, FAINT_ATTACK
+	db 22, WING_ATTACK
+	db 27, CUT
 	db 30, U_TURN
-	db 36, CUT
+	db 35, SCREECH
 	db 40, X_SCISSOR
-	db 44, SCREECH
-	db 52, GUILLOTINE
+	db 50, SWORDS_DANCE
+	db 55, GUILLOTINE
 	db 0 ; no more level-up moves
 
 SteelixEvosAttacks:
@@ -3639,12 +3644,12 @@ SwinubEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, MUD_SLAP
-	db 5, POWDER_SNOW
+	db 5, ICY_WIND
 	db 10, FLAIL
 	db 15, AURORA_BEAM
 	db 20, MIST
 	db 25, ENDURE
-	db 30, ICY_WIND
+	db 30, ICICLE_SPEAR
 	db 35, AMNESIA
 	db 40, DOUBLE_EDGE
 	db 45, EARTHQUAKE
@@ -3655,12 +3660,12 @@ PiloswineEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, MUD_SLAP
-	db 5, POWDER_SNOW
+	db 5, ICY_WIND
 	db 10, FLAIL
 	db 15, AURORA_BEAM
 	db 20, MIST
 	db 25, ENDURE
-	db 30, ICY_WIND
+	db 30, ICICLE_SPEAR
 	db 37, AMNESIA
 	db 44, DOUBLE_EDGE
 	db 51, EARTHQUAKE
@@ -3936,7 +3941,7 @@ SmoochumEvosAttacks:
 	db 1, POUND
 	db 1, LICK
 	db 9, SWEET_KISS
-	db 13, POWDER_SNOW
+	db 13, ICY_WIND
 	db 21, CONFUSION
 	db 25, SING
 	db 33, MEAN_LOOK

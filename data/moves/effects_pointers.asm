@@ -78,7 +78,7 @@ MoveEffectsPointers:
 	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
-	dw Splash ; Unused
+	dw FreezeHit ; Freeze-Dry
 	dw Substitute
 	dw HyperBeam
 	dw Rage
