@@ -701,10 +701,10 @@ DefenseUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	defenseup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AttackUpHit:
@@ -723,10 +723,10 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	attackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AllUpHit:
@@ -745,9 +745,9 @@ AllUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
+	allstatsup
 	checkfaint
 	buildopponentrage
-	allstatsup
 	endmove
 
 PayDay:
@@ -1671,17 +1671,16 @@ RapidSpin:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
 	clearhazards
-	checkfaint
-	buildopponentrage
 	speedup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	kingsrock
 	endmove
 
@@ -2020,10 +2019,10 @@ SpeedUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	speedup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 	
 BurnRecoilHit:
