@@ -1,6 +1,10 @@
 BattleCommand_PsychUp:
 ; psychup
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jp z, .fail
+
 	ld hl, wEnemyStatLevels
 	ld de, wPlayerStatLevels
 	ldh a, [hBattleTurn]
@@ -23,6 +27,7 @@ BattleCommand_PsychUp:
 	dec b
 	jr nz, .loop
 	pop hl
+.fail
 	call AnimateFailedMove
 	jp PrintButItFailed
 

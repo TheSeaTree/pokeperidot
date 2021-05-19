@@ -4681,18 +4681,25 @@ BattleCommand_LegendaryStatsBoost:
 
 ; Attack
 	call BattleCommand_AttackUp2
+	call BattleCommand_AttackUp2
 
 ; Defense
+	call BattleCommand_DefenseUp2
+	call BattleCommand_DefenseUp2
 	call BattleCommand_DefenseUp2
 
 ; Special Attack
 	call BattleCommand_SpecialAttackUp2
+	call BattleCommand_SpecialAttackUp2
 
 ; Special Defense
 	call BattleCommand_SpecialDefenseUp2
+	call BattleCommand_SpecialDefenseUp2
+	call BattleCommand_SpecialDefenseUp2
 
 ; Speed
-	jp BattleCommand_SpeedUp
+	call BattleCommand_SpeedUp2
+	ret
 
 ResetMiss:
 	xor a
@@ -6038,6 +6045,10 @@ INCLUDE "engine/battle/move_effects/conversion.asm"
 BattleCommand_ResetStats:
 ; resetstats
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	jp z, .fail
+
 	ld a, 7 ; neutral
 	ld hl, wPlayerStatLevels
 	call .Fill
@@ -6067,6 +6078,10 @@ BattleCommand_ResetStats:
 	dec b
 	jr nz, .next
 	ret
+	
+.fail
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 BattleCommand_Heal:
 ; heal
