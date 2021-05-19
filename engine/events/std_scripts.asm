@@ -40,6 +40,7 @@ StdScripts::
 	dba HappinessCheckScript
 	dba MysteryGiftGirl
 	dba LightUpRoomScript
+	dba DarkenRoomScript
 	dba TeleportGuyScript
 	dba StolenItemsBoxScript
 	dba WishingFountainScript
@@ -514,6 +515,12 @@ LightUpRoomScript:
 	reloadmappart
 	special UpdateTimePals
 	callasm BlindingFlash
+	end
+	
+DarkenRoomScript:
+	reloadmappart
+	special UpdateTimePals
+	callasm TotalDarkness
 	end
 	
 TeleportGuyScript:

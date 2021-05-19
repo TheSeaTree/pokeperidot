@@ -20,6 +20,13 @@ BlindingFlash:
 	farcall LoadOW_BGPal7
 	ret
 
+TotalDarkness:
+	farcall FadeBlackQuickly
+	ld b, SCGB_DARKNESS
+	call GetSGBLayout
+	farcall LoadOW_BGPal7
+	ret
+
 ShakeHeadbuttTree:
 	farcall ClearSpriteAnims
 	ld de, CutGrassGFX

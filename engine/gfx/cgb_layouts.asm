@@ -60,6 +60,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
+	dw _CGB_Darkness
 	dw _CGB1e
 
 _CGB_BattleGrayscale:
@@ -584,12 +585,12 @@ _CGB_Evolution:
 _CGB_GSTitleScreen:
 	ld hl, UnusedGSTitleBGPals
 	ld de, wBGPals1
-	ld bc, 5 palettes
+	ld bc, 6 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-	ld hl, UnusedGSTitleOBPals
+	ld hl, UnusedGSTitleBGPals
 	ld de, wOBPals1
-	ld bc, 2 palettes
+	ld bc, 6 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	ld a, SCGB_DIPLOMA
@@ -987,3 +988,22 @@ _CGB_MysteryGift:
 
 .Palettes:
 INCLUDE "gfx/mystery_gift/mystery_gift.pal"
+
+_CGB_Darkness:
+	ld hl, DarknessPals
+	ld de, wBGPals1
+	ld bc, 6 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ld hl, DarknessPals
+	ld de, wOBPals1
+	ld bc, 6 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ld a, SCGB_DIPLOMA
+	ld [wSGBPredef], a
+	call ApplyPals
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	ret
+

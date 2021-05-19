@@ -1442,3 +1442,6 @@ INCLUDE "gfx/beta_poker/beta_poker.pal"
 
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
+
+DarknessPals:
+INCLUDE "gfx/tilesets/darkness.pal"

@@ -41,6 +41,7 @@
 	enum happinesschecknpc
 	enum mysterygiftgirl
 	enum lightuproom
+	enum darkenroom
 	enum teleportguy
 	enum stolenitemboxes
 	enum wishingfountain
