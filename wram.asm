@@ -2616,34 +2616,34 @@ wFastShip1FRoomsSceneID::                         db ; d9bc
 	ds 48
 
 ; fight counts
-wJackFightCount::    db ; d9f2
-wBeverlyFightCount:: db ; unused
-wHueyFightCount::    db
-wGavenFightCount::   db
-wBethFightCount::    db
-wJoseFightCount::    db
-wReenaFightCount::   db
-wJoeyFightCount::    db
-wWadeFightCount::    db
-wRalphFightCount::   db
-wLizFightCount::     db
-wAnthonyFightCount:: db
-wToddFightCount::    db
-wGinaFightCount::    db
-wIrwinFightCount::   db ; unused
-wArnieFightCount::   db
-wAlanFightCount::    db
-wDanaFightCount::    db
-wChadFightCount::    db
-wDerekFightCount::   db ; unused
-wTullyFightCount::   db
-wBrentFightCount::   db
-wTiffanyFightCount:: db
-wVanceFightCount::   db
-wWiltonFightCount::  db
-wKenjiFightCount::   db ; unused
-wParryFightCount::   db
-wErinFightCount::    db
+wMurphyFightCount::  	db ; d9f2
+wCecilFightCount::   	db
+wCelesteFightCount:: 	db
+wDuaneFightCount::   	db
+wPoseyFightCount::   	db
+wJoelFightCount::    	db
+wAlanFightCount::    	db
+wEnyaFightCount::    	db
+wEliteFourFightCount::	db
+wRalphFightCount::   	db ; unused
+wLizFightCount::     	db ; unused
+wAnthonyFightCount:: 	db ; unused
+wToddFightCount::    	db ; unused
+wGinaFightCount::    	db ; unused
+wIrwinFightCount::   	db ; unused
+wArnieFightCount::   	db ; unused
+wReenaFightCount::    	db ; unused
+wDanaFightCount::    	db ; unused
+wChadFightCount::    	db ; unused
+wDerekFightCount::   	db ; unused
+wTullyFightCount::   	db ; unused
+wBrentFightCount::   	db ; unused
+wTiffanyFightCount:: 	db ; unused
+wVanceFightCount::   	db ; unused
+wWiltonFightCount::  	db ; unused
+wKenjiFightCount::   	db ; unused
+wParryFightCount::   	db ; unused
+wErinFightCount::    	db ; unused
 ; da0e
 
 	ds 100
@@ -2710,7 +2710,8 @@ wDailyResetTimer:: dw ; dc1c
 wDailyFlags1:: db
 wDailyFlags2:: db
 wSwarmFlags:: db
-	ds 2
+wDailyFlags3:: db
+	ds 1
 wTimerEventStartDay:: db
 	ds 3
 

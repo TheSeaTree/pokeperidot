@@ -114,6 +114,15 @@ EngineFlags:
 	engine_flag wDailyFlags2, DAILYFLAGS2_MOVE_TUTOR_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
 
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_MURPHY
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_CECIL
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_CELESTE
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_DUANE
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_POSEY
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_JOEL
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_ALAN
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_ENYA
+
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F ; $60
 	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F
 
