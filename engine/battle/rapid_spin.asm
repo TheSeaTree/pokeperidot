@@ -1,4 +1,4 @@
-BattleCommand_ClearHazards:
+RapidSpinEffect:
 ; clearhazards
 
 	ld a, BATTLE_VARS_SUBSTATUS4

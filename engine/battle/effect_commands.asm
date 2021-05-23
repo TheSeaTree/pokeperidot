@@ -3414,12 +3414,21 @@ BattleCommand_PayDay:
 	ret
 
 BattleCommand_FalseSwipe:
-; payday
+; falseswipe
 
 	ld a, [wAttackMissed]
 	and a
 	ret nz
 	farcall FalseSwipeEffect
+	ret
+
+BattleCommand_ClearHazards:
+; clearhazards
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall RapidSpinEffect
 	ret
 
 INCLUDE "engine/battle/move_effects/counter.asm"
@@ -5683,7 +5692,7 @@ BattleCommand_Recoil:
 	ld d, a
 	inc a
 	jp z, .StruggleRecoil
-	
+
 ; Crash Helmet held item reduces recoil damage.
 	push hl
 	call GetUserItem
@@ -6499,7 +6508,7 @@ INCLUDE "engine/battle/move_effects/baton_pass.asm"
 
 INCLUDE "engine/battle/move_effects/pursuit.asm"
 
-INCLUDE "engine/battle/move_effects/rapid_spin.asm"
+
 
 BattleCommand_HealMorn:
 ; healmorn
