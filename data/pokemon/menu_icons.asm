@@ -19,8 +19,8 @@ MonMenuIcons:
 	db ICON_MONSTER     ; PSYDUCK
 	db ICON_MONSTER     ; GOLDUCK
 	db ICON_MONSTER     ; SKELEGON
-	db ICON_FOX         ; RATTATA
-	db ICON_FOX         ; RATICATE
+	db ICON_FOX         ; RINRING
+	db ICON_FOX         ; NYANELL
 	db ICON_BIRD        ; SPEAROW
 	db ICON_BIRD        ; FEAROW
 	db ICON_SERPENT     ; EKANS
@@ -54,8 +54,8 @@ MonMenuIcons:
 	db ICON_DIGLETT     ; DUGTRIO
 	db ICON_FOX         ; MEOWTH
 	db ICON_FOX         ; PERSIAN
-	db ICON_FISH        ; PSYDUCK
-	db ICON_FISH        ; GOLDUCK
+	db ICON_FISH        ; SMOLA
+	db ICON_FISH        ; ANCOR
 	db ICON_FIGHTER     ; MANKEY
 	db ICON_FIGHTER     ; PRIMEAPE
 	db ICON_FOX         ; GROWLITHE
@@ -236,8 +236,8 @@ MonMenuIcons:
 	db ICON_VOLTORB     ; PORYGON2
 	db ICON_EQUINE      ; STANTLER
 	db ICON_MONSTER     ; SMEARGLE
-	db ICON_ODDISH      ; TYROGUE
-	db ICON_BIRD        ; HITMONTOP
+	db ICON_ODDISH      ; GORGROWTH
+	db ICON_GHOST       ; GREMINI
 	db ICON_HUMANSHAPE  ; SMOOCHUM
 	db ICON_HUMANSHAPE  ; ELEKID
 	db ICON_HUMANSHAPE  ; MAGBY
