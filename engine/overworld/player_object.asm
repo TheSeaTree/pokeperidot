@@ -514,6 +514,13 @@ CopyTempObjectToObjectStruct:
 	ret
 
 TrainerWalkToPlayer:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .notrunning
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+.notrunning
 	ldh a, [hLastTalked]
 	call InitMovementBuffer
 	ld a, movement_step_sleep
