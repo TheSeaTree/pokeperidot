@@ -63,6 +63,7 @@ LeechHit:
 	damagevariation
 	checkhit
 	moveanim
+	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
