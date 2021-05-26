@@ -992,7 +992,7 @@ INCLUDE "gfx/mystery_gift/mystery_gift.pal"
 _CGB_Darkness:
 	ld hl, DarknessPals
 	ld de, wBGPals1
-	ld bc, 6 palettes
+	ld bc, 7 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	ld hl, DarknessPals
