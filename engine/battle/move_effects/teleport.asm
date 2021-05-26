@@ -113,6 +113,7 @@ BattleCommand_Teleport:
 .PlayerUTurn:
 ; Transition into switchmon menu
 	call LoadStandardMenuHeader
+	
 	farcall SetUpBattlePartyMenu_NoLoop
 
 	farcall ForcePickSwitchMonInBattle
@@ -122,14 +123,15 @@ BattleCommand_Teleport:
 	farcall _LoadBattleFontsHPBar
 	call CloseWindow
 	call ClearSprites
-	hlcoord 1, 0
-	lb bc, 4, 10
-	call ClearBox
+
+	ld hl, BlankText
+	call StdBattleTextBox
+
 	ld b, SCGB_BATTLE_COLORS
 	call GetSGBLayout
 	call SetPalettes
 	call BatonPass_LinkPlayerSwitch
-	
+
 	ld hl, SwitchPlayerMon
 	call CallBattleCore
 
@@ -170,7 +172,7 @@ BattleCommand_Teleport:
 
 	ld a, [wLinkMode]
 	and a
-	jr z, .random_loop_trainer ; If not a link battle, pick a Pokemon randomly.
+	jr z, .AI_trainer ; If not a link battle.
 	
 	call UpdateEnemyMonInParty
 	call BatonPass_LinkEnemySwitch
@@ -181,27 +183,15 @@ BattleCommand_Teleport:
 	call CallBattleCore
 	jr .link_switch
 
-; select a random enemy mon to switch to
-.random_loop_trainer
-	call BattleRandom
-	and $7
-	cp b
-	jr nc, .random_loop_trainer
-	cp c
-	jr z, .random_loop_trainer
-	push af
-	push bc
-	ld hl, wOTPartyMon1HP
-	call GetPartyLocation
-	ld a, [hli]
-	or [hl]
-	pop bc
-	pop de
-	jr z, .random_loop_trainer
-	ld a, d
-	inc a
+; select enemy mon to switch to
+.AI_trainer
+	xor a
 	ld [wEnemySwitchMonIndex], a
-	callfar ForceEnemySwitch
+	ld hl, EnemySwitch_SetMode
+	call CallBattleCore
+	ld hl, ResetBattleParticipants
+	call CallBattleCore
+
 	ld hl, TeleportInText
 	call StdBattleTextBox
 	ld hl, SpikesDamage
@@ -226,3 +216,8 @@ BattleCommand_Teleport:
 
 .switch_fail
 	jp .failed
+
+.ClearTextbox:
+	;
+	text_far UnknownText_0x1c0db8
+	text_end

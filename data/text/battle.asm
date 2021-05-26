@@ -994,6 +994,10 @@ TeleportInText:
 	line "took its place!"
 	prompt
 	
+BlankText:
+	text " "
+	done
+	
 DraggedOutText:
 	text "<USER>"
 	line "was dragged out!"
