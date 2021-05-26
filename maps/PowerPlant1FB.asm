@@ -9,7 +9,6 @@
 	const POWERPLANT1FB_SCIENTIST4
 	const POWERPLANT1FB_SCIENTIST5
 	const POWERPLANT1FB_SCIENTIST6
-	const POWERPLANT1FB_SKELEGON
 
 PowerPlant1FB_MapScripts:
 	db 2 ; scene scripts
@@ -28,6 +27,8 @@ PowerPlant1FB_MapScripts:
 
 .CardKeyShutterCallback:
 	changeblock  4,  8, $07 ; open shutter
+	changeblock  4, 16, $72 ; open shutter
+	changeblock  6, 16, $73 ; open shutter
 	return
 	
 FossilResurrectionGuy:
@@ -175,11 +176,12 @@ ResurrectSabreFossil:
 	waitbutton
 	writetext AskResurrectFossilText
 	yesorno
+	iffalse FossilResurrectionGuy.maybe_later
+	takeitem SABRE_FOSSIL
 	writetext SabreFossilResurrectionText
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
-	playsound SFX_TRANSACTION
 	playsound SFX_TRANSACTION
 	waitsfx
 	opentext
@@ -188,18 +190,21 @@ ResurrectSabreFossil:
 	closetext
 	showemote EMOTE_QUESTION, POWERPLANT1FB_SCIENTIST2, 15
 	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
 	playsound SFX_TRANSACTION
 	waitsfx
 	opentext
 	writetext SabreFossilAlarmText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	scall .PitchBlack
 	opentext
 	writetext SkelegonCryText
 	cry SKELEGON
 	waitsfx
-	loadwildmon SKELEGON, 50
+	loadwildmon SKELEGON, 45
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
@@ -209,6 +214,10 @@ ResurrectSabreFossil:
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
+	end
+
+.PitchBlack
+	jumpstd darkenroom
 	end
 
 PowerPlantItemfinderEvent:
@@ -545,7 +554,7 @@ PowerPlant1FB_MapEvents:
 
 	db 0 ; bg events
 
-	db 11 ; object events
+	db 10 ; object events
 	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantAdmin, EVENT_RETURNED_MACHINE_PART
 	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBHyperPotion, EVENT_POWER_PLANT_HYPER_POTION
 	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMetalCoat, EVENT_POWER_PLANT_METAL_COAT
@@ -556,4 +565,3 @@ PowerPlant1FB_MapEvents:
 	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FHardWorkerScript, -1
 	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMonitorScript, -1
 	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FWaterCoolingGuy, -1
-	object_event 31,  0, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
