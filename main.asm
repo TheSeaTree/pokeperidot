@@ -357,15 +357,15 @@ INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
 INCLUDE "engine/phone/phone_scripts.asm"
 
+TheEndGFX::
+INCBIN "gfx/credits/theend.2bpp"
+
 
 SECTION "bank32", ROMX
 
 INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
-
-TheEndGFX::
-INCBIN "gfx/credits/theend.2bpp"
 
 
 SECTION "Move Animations", ROMX

@@ -2863,6 +2863,10 @@ BattleAnim_SwordsDance:
 
 BattleAnim_AquaJet:
 	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
+	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_wait 16
 	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 64, 108, $20
 	anim_wait 8
@@ -2889,6 +2893,9 @@ BattleAnim_AquaJet:
 	anim_wait 8
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
 	anim_wait 16
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 1
 	anim_ret
 
 BattleAnim_BulletPunch:
@@ -4931,7 +4938,7 @@ BattleAnim_Toxic_branch_cbc35:
 	anim_sound 6, 2, SFX_BUBBLEBEAM
 	anim_obj ANIM_OBJ_19, 64, 92, $10
 	anim_wait 5
-	anim_loop 8, .loop
+	anim_loop 4, .loop
 	anim_ret
 
 BattleAnim_Harden_branch_cbc43:
