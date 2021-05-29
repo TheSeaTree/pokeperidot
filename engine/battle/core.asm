@@ -433,13 +433,13 @@ HandleWeatherItem:
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+	xor a
+	ld [hl], a
+	ld [wAttackMissed], a
 	ld a, BANK(BattleCommand_AttackUp)
 	rst FarCall
 	pop bc
 	pop de
-	ld a, [wFailedMessage]
-	and a
-	ret nz
 	xor a
 	ld [bc], a
 	ld [de], a
