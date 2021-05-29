@@ -13,7 +13,6 @@ OrchidGym1F_MapScripts:
 	turnobject ORCHIDGYM_GYM_GUY, LEFT
 	opentext
 	writetext BlackthornGymGuyFailureText
-	waitbutton
 	closetext
 	turnobject ORCHIDGYM_GYM_GUY, DOWN
 	setscene SCENE_DEFAULT
@@ -94,7 +93,7 @@ BlackthornGymGuyFailureText:
 	
 	para "You need to be"
 	line "more careful in"
-	cont "that extreme heat."
+	cont "that extreme heat!"
 	done
 
 BlackthornGymHaveBadge:

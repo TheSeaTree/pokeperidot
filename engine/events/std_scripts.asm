@@ -326,13 +326,23 @@ DayToTextScript:
 	db "SATURDAY@"
 
 FireGymWarpScript::
+	special FadeOutMusic
+	showemote EMOTE_SAD, PLAYER, 15
 	opentext
+	farwritetext FireGymUnbearableHeatText
+	waitbutton
+	playsound SFX_KINESIS
+	waitsfx
+	playsound SFX_FAINT
+	scall DarkenRoomScript
+	waitsfx
 	farwritetext FireGymPassOutText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
 	playsound SFX_EXIT_BUILDING
-	waitsfx
+	wait 8
+	playsound SFX_FULL_HEAL
+	wait 8
 	warpfacing RIGHT, ORCHID_GYM_1F, 7, 5
 	setmapscene ORCHID_GYM_1F, SCENE_FINISHED
 	end
@@ -516,13 +526,13 @@ LightUpRoomScript:
 	special UpdateTimePals
 	callasm BlindingFlash
 	end
-	
+
 DarkenRoomScript:
 	reloadmappart
 	special UpdateTimePals
 	callasm TotalDarkness
 	end
-	
+
 TeleportGuyScript:
 	opentext
 	checkevent EVENT_TELEPORT_GUY_INTRODUCED

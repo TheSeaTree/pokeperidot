@@ -92,9 +92,8 @@ FirebreatherAidenText:
 	
 	para "No?"
 	
-	para "Well I hope you're"
-	line "not too tired to"
-	cont "battle!"
+	para "I take that as an"
+	line "insult!"
 	done
 
 FirebreatherAidenWinText:

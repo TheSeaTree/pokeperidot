@@ -1286,11 +1286,13 @@ UnknownText_0x1bd2e7::
 	line "the main gate."
 	done
 
+FireGymUnbearableHeatText::
+	text "The heat became"
+	line "too much to bear…"
+	done
+
 FireGymPassOutText::
-	text "The heat is too"
-	line "much to bear."
-	
-	para "<PLAYER> passed"
+	text "<PLAYER> passed"
 	line "out…"
 	done
 
