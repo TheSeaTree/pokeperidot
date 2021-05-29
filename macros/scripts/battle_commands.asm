@@ -178,7 +178,6 @@ ENDM
 	command bulkup
 	command cosmicpower
 	command quiverdance
-	command checkgrasstype
 	command coil
 	command growth
 	command uturn

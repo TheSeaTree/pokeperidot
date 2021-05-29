@@ -3681,6 +3681,10 @@ BattleCommand_SleepTarget:
 	and SLP
 	ld hl, AlreadyAsleepText
 	jr nz, .fail
+	
+	ld a, [wTypeModifier]
+	and $7f
+	jr z, .didnt_affect
 
 	ld a, [wAttackMissed]
 	and a
@@ -3722,6 +3726,10 @@ BattleCommand_SleepTarget:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextBox
+	
+.didnt_affect
+	call AnimateFailedMove
+	jp PrintDoesntAffect
 
 BattleCommand_PoisonTarget:
 ; poisontarget
@@ -4054,29 +4062,6 @@ CheckIfTargetIsFireType:
 	cp FIRE
 	ret
 	
-BattleCommand_CheckGrassType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-
-	ld a, [de]
-	cp GRASS
-	jr z, .targetisgrass
-	inc de
-	ld a, [de]
-	cp GRASS
-	jr z, .targetisgrass
-	ret
-	
-.targetisgrass
-	call AnimateFailedMove
-	ld hl, DoesntAffectText
-	call StdBattleTextBox
-	jp EndMoveEffect
-
 BattleCommand_AttackUp:
 ; attackup
 	ld b, ATTACK

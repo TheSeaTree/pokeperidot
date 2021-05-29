@@ -88,9 +88,9 @@ Moves: ; 41afb
 	move GROWTH,       EFFECT_GROWTH,              0, GRASS,    100, 40,   0
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,     95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,    100, 10,   0
-	move POISONPOWDER, EFFECT_POISONPOWDER,        0, POISON,    75, 35,   0
-	move STUN_SPORE,   EFFECT_STUN_SPORE,          0, GRASS,     75, 30,   0
-	move SLEEP_POWDER, EFFECT_SLEEP_POWDER,        0, GRASS,     75, 15,   0
+	move POISONPOWDER, EFFECT_POISONPOWDER,   	   0, PSNPOWDER, 75, 35,   0
+	move STUN_SPORE,   EFFECT_STUN_SPORE,          0, POWDER,    75, 30,   0
+	move SLEEP_POWDER, EFFECT_SLEEP_POWDER,    	   0, POWDER,    75, 15,   0
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, GRASS,    100, 10,   0
 	move STRING_SHOT,  EFFECT_SPEED_DOWN,          0, BUG,       95, 40,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,   100, 10,   0
@@ -158,7 +158,7 @@ Moves: ; 41afb
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,   100, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
 	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
-	move SPORE,        EFFECT_SLEEP_POWDER,        0, GRASS,    100, 15,   0
+	move SPORE,        EFFECT_SLEEP_POWDER,        0, POWDER,   100, 15,   0
 	move WILL_O_WISP,  EFFECT_BURN,			       0, FIRE,      85, 15,   0
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
 	move SPLASH,       EFFECT_SPLASH,              0, WATER,    100, 40,   0
