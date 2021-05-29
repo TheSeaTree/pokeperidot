@@ -17,8 +17,8 @@ TypeNames:
 	dw Normal
 	dw Normal
 	dw Normal
-	dw Normal
-	dw Normal
+	dw Grass ; Powder
+	dw Poison ; Powder
 	dw CurseType
 	dw Fire
 	dw Water

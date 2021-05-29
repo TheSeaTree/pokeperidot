@@ -118,7 +118,10 @@ TypeMatchups:
 	db FAIRY,     DRAGON,    SUPER_EFFECTIVE
 	db FAIRY,     DARK,      SUPER_EFFECTIVE
 	db FAIRY,     STEEL,     NOT_VERY_EFFECTIVE
-	
+	db POWDER,    GRASS,     NO_EFFECT
+	db PSNPOWDER, GRASS,     NO_EFFECT
+	db PSNPOWDER, POISON,    NO_EFFECT
+	db PSNPOWDER, STEEL,     NO_EFFECT
 
 	db -2 ; end (with Foresight)
 
