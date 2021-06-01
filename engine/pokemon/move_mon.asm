@@ -1467,6 +1467,11 @@ CalcMonStatC:
 	pop de
 
 .no_stat_exp
+; Ignore DVs if in the Battle Subway
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
+	jr nz, .MaxDVs
+
 	srl c
 	pop hl
 	push bc
@@ -1509,29 +1514,75 @@ CalcMonStatC:
 	and 1
 	add b
 	pop bc
-	jr .GotDV
+	jp .GotDV
 
 .Attack:
 	ld a, [hl]
 	swap a
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Defense:
 	ld a, [hl]
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Speed:
 	inc hl
 	ld a, [hl]
 	swap a
 	and $f
-	jr .GotDV
+	jp .GotDV
 
 .Special:
 	inc hl
 	ld a, [hl]
+	and $f
+	jp .GotDV
+
+.MaxDVs:
+; Assume each stat has 15 DVs
+	srl c
+	pop hl
+	push bc
+	ld bc, MON_DVS - MON_HP_EXP + 1
+	add hl, bc
+	pop bc
+	ld a, c
+	cp STAT_ATK
+	jr z, .Max_Attack
+	cp STAT_DEF
+	jr z, .Max_Defense
+	cp STAT_SPD
+	jr z, .Max_Speed
+	cp STAT_SATK
+	jr z, .Max_Special
+	cp STAT_SDEF
+	jr z, .Max_Special
+;.Max_HP
+	ld a, 15
+	and $f
+	jr .GotDV
+
+.Max_Attack:
+	ld a, 15
+	and $f
+	jr .GotDV
+
+.Max_Defense:
+	ld a, 15
+	and $f
+	jr .GotDV
+
+.Max_Speed:
+	inc hl
+	ld a, 15
+	and $f
+	jr .GotDV
+
+.Max_Special:
+	inc hl
+	ld a, 15
 	and $f
 
 .GotDV:

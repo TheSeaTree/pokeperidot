@@ -6,7 +6,8 @@ BattleSubwayTrain_MapScripts:
 	scene_script .EnterBattleRoom ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .SetPartyDVs
 	callback MAPCALLBACK_OBJECTS, .SetTrainerSprite
 
 .EnterBattleRoom:
@@ -17,6 +18,10 @@ BattleSubwayTrain_MapScripts:
 .DummyScene:
 	priorityjump Script_BattleRoom
 	end
+	
+.SetPartyDVs:
+	special UpdatePartyStats
+	return
 	
 .SetTrainerSprite:
 	writebyte BATTLETOWERBATTLEROOM_YOUNGSTER

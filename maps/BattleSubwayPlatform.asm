@@ -135,6 +135,10 @@ Script_ChooseChallenge:
 	writetext Text_RightThisWayToYourBattleRoom
 	waitbutton
 	closetext
+	
+	setflag ENGINE_BATTLE_SUBWAY_ACTIVE
+	special UpdatePartyStats
+	
 	writebyte BATTLETOWERACTION_CHOOSEREWARD
 	special BattleTowerAction
 	jump Script_WalkToBattleTowerElevator
@@ -197,6 +201,11 @@ Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
+
+	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
+	special UpdatePartyStats
+	special HealParty
+
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, DOWN
 	checkcode VAR_FACING
 	ifequal UP, .StepAway

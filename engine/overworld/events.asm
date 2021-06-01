@@ -241,8 +241,6 @@ PlayerEvents:
 	and a
 	ret nz
 
-	call Dummy_CheckScriptFlags3Bit5 ; This is a waste of time
-
 	call CheckTrainerBattle_GetPlayerEvent
 	jr c, .ok
 
@@ -898,14 +896,11 @@ CountStep:
 	ld hl, wPoisonStepCount
 	ld a, [hl]
 	cp 4
-	jr c, .skip_poison
+	jr c, .done
 	ld [hl], 0
 
 	farcall DoPoisonStep
 	jr c, .doscript
-
-.skip_poison
-	farcall DoBikeStep
 
 .done
 	xor a
@@ -1348,72 +1343,6 @@ TryWildEncounter_BugContest:
 	ret
 
 INCLUDE "data/wild/bug_contest_mons.asm"
-
-DoBikeStep::
-	nop
-	nop
-	; If the bike shop owner doesn't have our number, or
-	; if we've already gotten the call, we don't have to
-	; be here.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	jr z, .NoCall
-
-	; If we're not on the bike, we don't have to be here.
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr nz, .NoCall
-
-	; If we're not in an area of phone service, we don't
-	; have to be here.
-	call GetMapPhoneService
-	and a
-	jr nz, .NoCall
-
-	; Check the bike step count and check whether we've
-	; taken 65536 of them yet.
-	ld hl, wBikeStep
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	cp 255
-	jr nz, .increment
-	ld a, e
-	cp 255
-	jr z, .dont_increment
-
-.increment
-	inc de
-	ld [hl], e
-	dec hl
-	ld [hl], d
-
-.dont_increment
-	; If we've taken at least 1024 steps, have the bike
-	;  shop owner try to call us.
-	ld a, d
-	cp HIGH(1024)
-	jr c, .NoCall
-
-	; If a call has already been queued, don't overwrite
-	; that call.
-	ld a, [wSpecialPhoneCallID]
-	and a
-	jr nz, .NoCall
-
-	; Queue the call.
-	ld a, SPECIALCALL_BIKESHOP
-	ld [wSpecialPhoneCallID], a
-	xor a
-	ld [wSpecialPhoneCallID + 1], a
-	ld hl, wStatusFlags2
-	res STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	scf
-	ret
-
-.NoCall:
-	xor a
-	ret
 
 ClearCmdQueue::
 	ld hl, wCmdQueue

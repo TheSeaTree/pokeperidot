@@ -1,4 +1,4 @@
-Unreferenced_CorrectPartyErrors:
+UpdatePartyStats:
 	ld hl, wPartyCount
 	ld a, [hl]
 	and a
@@ -105,7 +105,7 @@ Unreferenced_CorrectPartyErrors:
 	ld c, 0
 .loop3
 	push bc
-	call .GetLengthOfStringWith6CharCap
+	call .GetLengthOfStringWith11CharCap
 	push de
 	farcall CheckStringForErrors
 	pop hl
@@ -121,7 +121,7 @@ Unreferenced_CorrectPartyErrors:
 	pop bc
 	ld a, [hl]
 	cp EGG
-	ld hl, .TAMAGO
+	ld hl, .EGG
 	jr z, .got_nickname
 	ld [wNamedObjectIndexBuffer], a
 	call GetPokemonName
@@ -143,7 +143,7 @@ Unreferenced_CorrectPartyErrors:
 	ld c, 0
 .loop4
 	push bc
-	call .GetLengthOfStringWith6CharCap
+	call .GetLengthOfStringWith11CharCap
 	push de
 	farcall CheckStringForErrors
 	pop hl
@@ -197,13 +197,13 @@ Unreferenced_CorrectPartyErrors:
 	jr nz, .loop5
 	ret
 
-.TAMAGO:
-	db "タマゴ@@@"
+.EGG:
+	db "EGG@@@@@@@"
 
-.GetLengthOfStringWith6CharCap:
+.GetLengthOfStringWith11CharCap:
 	push de
 	ld c, 1
-	ld b, NAME_LENGTH_JAPANESE
+	ld b, NAME_LENGTH
 .search_loop
 	ld a, [de]
 	cp "@"
