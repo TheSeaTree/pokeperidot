@@ -1472,6 +1472,11 @@ CalcMonStatC:
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jr nz, .MaxDVs
 
+; Also during link battles.
+	ld a, [wLinkMode]
+	cp LINK_BATTLE_PERIDOT
+	jr z, .MaxDVs
+
 	srl c
 	pop hl
 	push bc

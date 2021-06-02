@@ -194,6 +194,8 @@ Script_LeftCableColosseum:
 	scall Script_WalkOutOfLinkBattleRoom
 	setscene SCENE_DEFAULT
 	setmapscene COLOSSEUM, SCENE_DEFAULT
+	special UpdatePartyStats
+	special HealParty
 	end
 
 Pokecenter2F_CheckGender:
@@ -487,7 +489,7 @@ Text_MustSaveGame:
 	done
 
 Text_PleaseWait:
-	text "Please wait."
+	text "Please wait…"
 	done
 
 Text_LinkTimedOut:
