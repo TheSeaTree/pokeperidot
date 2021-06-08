@@ -13,7 +13,7 @@ Raikou:
 	waitsfx
 ;	waitbutton
 	closetext
-	loadwildmon RAIKOU, 30
+	loadwildmon RAIKOU, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle

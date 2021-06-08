@@ -12,7 +12,7 @@ Entei:
 	cry ENTEI
 	waitsfx
 	closetext
-	loadwildmon ENTEI, 30
+	loadwildmon ENTEI, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle

@@ -13,7 +13,7 @@ Suicune:
 	waitsfx
 ;	waitbutton
 	closetext
-	loadwildmon SUICUNE, 30
+	loadwildmon SUICUNE, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
