@@ -23,6 +23,41 @@ Route11HiddenCave_MapScripts:
 	return
 
 Route11CaveGengar:
+	scall LightsOut
+	opentext
+	writetext Route11CaveGengarText
+	cry HAUNTER
+	waitbutton
+	closetext
+	loadwildmon HAUNTER, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	scall LightsOut
+;	reloadmapafterbattle
+	pause 4
+	opentext
+	writetext Route11CaveGengarText
+	cry HAUNTER
+	waitbutton
+	closetext
+	loadwildmon HAUNTER, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	scall LightsOut
+;	reloadmapafterbattle
+	pause 4
+	opentext
+	writetext Route11CaveGengarText
+	cry HAUNTER
+	waitbutton
+	closetext
+	loadwildmon HAUNTER, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	pause 4
+	scall LightsOn
+	special FadeInQuickly
 	opentext
 	writetext Route11CaveGengarText
 	cry GENGAR
@@ -40,6 +75,17 @@ Route11CaveGengar:
 	pause 4
 	special FadeInQuickly
 	setevent EVENT_ROUTE_11_CAVE_BEAT_GENGAR
+	end
+
+HaunterBattle:
+	
+
+LightsOut:
+	jumpstd darkenroom
+	end
+	
+LightsOn:
+	jumpstd lightuproom
 	end
 
 Route11CaveXSpAtk:
