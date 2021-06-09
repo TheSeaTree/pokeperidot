@@ -784,7 +784,7 @@ WasBurnedText:
 
 DefrostedOpponentText:
 	text "<TARGET>"
-	line "was defrosted!"
+	line "thawed out!"
 	prompt
 
 WasFrozenText:
@@ -1058,7 +1058,7 @@ StartedNightmareText:
 
 WasDefrostedText:
 	text "<USER>"
-	line "was defrosted!"
+	line "defrosted itself!"
 	prompt
 
 PutACurseText:

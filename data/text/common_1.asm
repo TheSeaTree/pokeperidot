@@ -76,7 +76,7 @@ UnknownText_0x1bc0ea::
 UnknownText_0x1bc101::
 	text_from_ram wStringBuffer1
 	text_start
-	line "was defrosted."
+	line "thawed out."
 	done
 
 UnknownText_0x1bc115::
