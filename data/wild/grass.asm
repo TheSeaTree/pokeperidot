@@ -1453,7 +1453,7 @@ GrassWildMons:
 	; morn
 	db 37, SLUGMA
 	db 38, MAGMAR
-	db 39, GRAVELER
+	db 39, DONPHAN
 	db 39, SLUGMA
 	db 38, MAGCARGO
 	db 38, MAROWAK
@@ -1461,7 +1461,7 @@ GrassWildMons:
 	; day
 	db 37, SLUGMA
 	db 38, MAGMAR
-	db 39, GRAVELER
+	db 39, DONPHAN
 	db 39, SLUGMA
 	db 38, MAGCARGO
 	db 38, MAROWAK
@@ -1469,7 +1469,7 @@ GrassWildMons:
 	; nite
 	db 37, SLUGMA
 	db 38, MAGMAR
-	db 39, GRAVELER
+	db 39, DONPHAN
 	db 39, SLUGMA
 	db 38, MAGCARGO
 	db 38, MAROWAK
