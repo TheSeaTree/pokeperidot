@@ -37,11 +37,16 @@ Marts:
 .End
 
 MartOrchid:
-	db 4 ; # items
-	db POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
+	db 9 ; # items
+	db GREAT_BALL
+	db ULTRA_BALL
+	db HYPER_POTION
+	db MAX_POTION
+	db FULL_HEAL
+	db ETHER
+	db MAX_ETHER
+	db REVIVE
+	db MAX_REPEL
 	db -1 ; end
 
 MartViolet:
