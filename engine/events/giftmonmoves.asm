@@ -1,14 +1,6 @@
 KangaskhanGiftMon:
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
-	ld bc, wPartyCount
-	ld a, [bc]
-	ld hl, MON_SPECIES
-	call .GetNthPartyMon
-	ld a, [bc]
-	ld c, a
-	ld de, PARTYMON_STRUCT_LENGTH
+	call CheckMon
+
 .CheckForMon:
 ; start at the end of the party and search backwards for a valid Pokemon
 	ld a, [hl]
@@ -70,7 +62,7 @@ KangaskhanGiftMon:
 	db MILK_DRINK
 	db 0
 
-.GetNthPartyMon:
+GetNthPartyMon:
 ; inputs:
 ; hl must be set to 0 before calling this function.
 ; a must be set to the number of Pokémon in the party.
@@ -97,17 +89,8 @@ KangaskhanGiftMon:
 	ret
 	
 TotodileGiftMon:
-
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
-	ld bc, wPartyCount
-	ld a, [bc]
-	ld hl, MON_SPECIES
-	call .GetNthPartyMon
-	ld a, [bc]
-	ld c, a
-	ld de, PARTYMON_STRUCT_LENGTH
+	call CheckMon
+	
 .CheckForMon:
 ; start at the end of the party and search backwards for a valid Pokemon
 	ld a, [hl]
@@ -169,43 +152,13 @@ TotodileGiftMon:
 	db ANCIENTPOWER
 	db 0
 
-.GetNthPartyMon:
-; inputs:
-; hl must be set to 0 before calling this function.
-; a must be set to the number of Pokémon in the party.
-
-; outputs:
-; returns the address of the last Pokémon in the party in hl.
-; sets carry if a is 0.
-
-	ld de, wPartyMon1
-	add hl, de
-	and a
-	jr z, .EmptyParty
-	dec a
-	ret z
-	ld de, PARTYMON_STRUCT_LENGTH
-.loop
-	add hl, de
-	dec a
-	jr nz, .loop
-	ret
-
 .EmptyParty:
 	scf
 	ret
 	
 CyndaquilGiftMon:
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
-	ld bc, wPartyCount
-	ld a, [bc]
-	ld hl, MON_SPECIES
-	call .GetNthPartyMon
-	ld a, [bc]
-	ld c, a
-	ld de, PARTYMON_STRUCT_LENGTH
+	call CheckMon
+	
 .CheckForMon:
 ; start at the end of the party and search backwards for a valid Pokemon
 	ld a, [hl]
@@ -267,44 +220,13 @@ CyndaquilGiftMon:
 	db ROLLOUT
 	db 0
 
-.GetNthPartyMon:
-; inputs:
-; hl must be set to 0 before calling this function.
-; a must be set to the number of Pokémon in the party.
-
-; outputs:
-; returns the address of the last Pokémon in the party in hl.
-; sets carry if a is 0.
-
-	ld de, wPartyMon1
-	add hl, de
-	and a
-	jr z, .EmptyParty
-	dec a
-	ret z
-	ld de, PARTYMON_STRUCT_LENGTH
-.loop
-	add hl, de
-	dec a
-	jr nz, .loop
-	ret
-
 .EmptyParty:
 	scf
 	ret
 	
 ChikoritaGiftMon:
+	call CheckMon
 
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
-	ld bc, wPartyCount
-	ld a, [bc]
-	ld hl, MON_SPECIES
-	call .GetNthPartyMon
-	ld a, [bc]
-	ld c, a
-	ld de, PARTYMON_STRUCT_LENGTH
 .CheckForMon:
 ; start at the end of the party and search backwards for a valid Pokemon
 	ld a, [hl]
@@ -366,43 +288,13 @@ ChikoritaGiftMon:
 	db ANCIENTPOWER
 	db 0
 
-.GetNthPartyMon:
-; inputs:
-; hl must be set to 0 before calling this function.
-; a must be set to the number of Pokémon in the party.
-
-; outputs:
-; returns the address of the last Pokémon in the party in hl.
-; sets carry if a is 0.
-
-	ld de, wPartyMon1
-	add hl, de
-	and a
-	jr z, .EmptyParty
-	dec a
-	ret z
-	ld de, PARTYMON_STRUCT_LENGTH
-.loop
-	add hl, de
-	dec a
-	jr nz, .loop
-	ret
-
 .EmptyParty:
 	scf
 	ret
 	
 MagikarpGiftMon:
-	ld a, [wScriptVar]
-	cp $2
-	ret nc
-	ld bc, wPartyCount
-	ld a, [bc]
-	ld hl, MON_SPECIES
-	call .GetNthPartyMon
-	ld a, [bc]
-	ld c, a
-	ld de, PARTYMON_STRUCT_LENGTH
+	call CheckMon
+	
 .CheckForMon:
 ; start at the end of the party and search backwards for a valid Pokemon
 	ld a, [hl]
@@ -464,28 +356,19 @@ MagikarpGiftMon:
 	db DIVE_BOMB
 	db 0
 
-.GetNthPartyMon:
-; inputs:
-; hl must be set to 0 before calling this function.
-; a must be set to the number of Pokémon in the party.
-
-; outputs:
-; returns the address of the last Pokémon in the party in hl.
-; sets carry if a is 0.
-
-	ld de, wPartyMon1
-	add hl, de
-	and a
-	jr z, .EmptyParty
-	dec a
-	ret z
-	ld de, PARTYMON_STRUCT_LENGTH
-.loop
-	add hl, de
-	dec a
-	jr nz, .loop
-	ret
-
 .EmptyParty:
 	scf
+	ret
+
+CheckMon:
+	ld a, [wScriptVar]
+	cp $2
+	ret nc
+	ld bc, wPartyCount
+	ld a, [bc]
+	ld hl, MON_SPECIES
+	call GetNthPartyMon
+	ld a, [bc]
+	ld c, a
+	ld de, PARTYMON_STRUCT_LENGTH
 	ret
