@@ -2612,8 +2612,9 @@ wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
 wFastShip1FRoomsSceneID::                         db ; d9bc
+wFastShipB1FCabinSceneID::                        db ; d9bc
 
-	ds 48
+	ds 47
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2
