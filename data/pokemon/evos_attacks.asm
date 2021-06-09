@@ -1536,6 +1536,7 @@ OnixEvosAttacks:
 	db 46, STONE_EDGE
 	db 49, DOUBLE_EDGE
 	db 52, SANDSTORM
+	db 58, SHARPEN
 	db 0 ; no more level-up moves
 
 DrowzeeEvosAttacks:
