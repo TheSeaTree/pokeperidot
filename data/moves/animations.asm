@@ -2862,11 +2862,19 @@ BattleAnim_SwordsDance:
 	anim_ret
 
 BattleAnim_AquaJet:
-	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_HIT
+	anim_3gfx ANIM_GFX_WATER, ANIM_GFX_HIT, ANIM_GFX_SPEED
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
-	anim_wait 8
+	anim_sound 0, 0, SFX_MENU
+	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
+	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1
+	anim_obj ANIM_OBJ_SPEED_LINE, 40, 88, $0
+	anim_obj ANIM_OBJ_SPEED_LINE, 48, 88, $80
+	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
+	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
+	anim_wait 12
+
 	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
-	anim_wait 16
+	anim_wait 32
 	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 64, 108, $20
 	anim_wait 8
@@ -2879,15 +2887,15 @@ BattleAnim_AquaJet:
 	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 96, 92, $20
 	anim_wait 8
-	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 106, 87, $20
 	anim_wait 8
-	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 116, 82, $20
 	anim_wait 8
-	anim_sound 0, 1, SFX_HYDRO_PUMP
+	anim_sound 0, 0, SFX_HYDRO_PUMP
 	anim_obj ANIM_OBJ_HYDRO_PUMP, 126, 77, $20
-	anim_wait 12
+	anim_wait 8
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 8
