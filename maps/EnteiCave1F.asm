@@ -26,8 +26,9 @@ EnteiCave1F_MapScripts:
 
 .StoneTable:
 	stonetable 4, ENTEI_CAVE_1F_BOULDER1, .Boulder1
-	stonetable 6, ENTEI_CAVE_1F_BOULDER2, .Boulder2
 	stonetable 5, ENTEI_CAVE_1F_BOULDER3, .Boulder3
+	stonetable 6, ENTEI_CAVE_1F_BOULDER2, .Boulder2
+	stonetable 6, ENTEI_CAVE_1F_BOULDER5, .Boulder5
 	stonetable 7, ENTEI_CAVE_1F_BOULDER4, .Boulder4
 	db -1 ; end
 	
@@ -48,8 +49,12 @@ EnteiCave1F_MapScripts:
 
 .Boulder4:
 	disappear ENTEI_CAVE_1F_BOULDER4
-	setevent EVENT_ENTEI_CAVE_1F_BOULDER_4
-	
+	setevent EVENT_ENTEI_CAVE_1F_BOULDER_4	
+	jump .Fall
+
+.Boulder5:
+	disappear ENTEI_CAVE_1F_BOULDER5
+	setevent EVENT_ENTEI_CAVE_1F_BOULDER_2
 .Fall:
 	pause 30
 	scall .FX
@@ -75,7 +80,7 @@ EnteiCave1FHiddenPPUp:
 	
 EnteiCave1FHiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ENTEI_CAVE_1F_HIDDEN_ULTRA_BALL
-	
+
 EnteiCave1FHiddenNugget:
 	hiddenitem NUGGET, EVENT_ENTEI_CAVE_1F_HIDDEN_NUGGET
 	
@@ -109,5 +114,5 @@ EnteiCave1F_MapEvents:
 	object_event 23, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, EVENT_ENTEI_CAVE_1F_BOULDER_2
 	object_event  8,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, EVENT_ENTEI_CAVE_1F_BOULDER_3
 	object_event  5, 18, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, EVENT_ENTEI_CAVE_1F_BOULDER_4
-	object_event 24, 15, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, -1
+	object_event 24, 15, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, EVENT_ENTEI_CAVE_1F_BOULDER_2
 	object_event  3, 14, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EnteiCave1FBoulder, -1

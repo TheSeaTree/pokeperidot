@@ -260,7 +260,8 @@ ENDM
 	map_const ROUTE_25,									   23, 18
 	map_const FAST_SHIP_1F,								   11, 10
 	map_const FAST_SHIP_1F_ROOMS,						   12,  8
-	map_const FAST_SHIP_B1F,							   14,  7
+	map_const FAST_SHIP_B1F,							   23,  7
+	map_const FAST_SHIP_B1F_CABIN,							5,  4
 
 	newgroup                                                      ; 16
 
@@ -339,13 +340,16 @@ ENDM
 	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
 	map_const ORCHID_MART,                                  6,  4 ;  4
 	map_const DRAGONBREATH_HOUSE,                           4,  4
+	map_const ORCHID_TEACHERS_HOUSE,                        5,  4
+	map_const ORCHID_GRANNYS_HOUSE,                        	4,  4
+	map_const ORCHID_BLACKBELTS_HOUSE,                     	8,  6
 	map_const ENTEI_LAIR,									7,  5
 	map_const ROUTE_22_CAVE_1F,							   14, 14
 	map_const ROUTE_22_CAVE_B1F,						   23, 17
 	map_const ROUTE_22_CAVE_B2F,						   21, 24
 	map_const ROUTE_22_NORTH,							   19,  8
 	map_const ROUTE_22_SOUTH,							   20, 19
-	map_const ROUTE_22_HIDDEN_CAVE,						    5,  7
+	map_const ROUTE_22_HIDDEN_CAVE,						    7,  8
 	map_const ENTEI_CAVE_1F,							   16, 18
 	map_const ENTEI_CAVE_B1F,							   15, 18
 

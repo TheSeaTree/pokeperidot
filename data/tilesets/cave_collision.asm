@@ -183,3 +183,8 @@
 	tilecoll WALL, UP_WALL, FLOOR, FLOOR ; b6
 	tilecoll UP_WALL, UP_WALL, WALL, FLOOR ; b7
 	tilecoll FLOOR, FLOOR, WARP_CARPET_DOWN, FLOOR ; b8
+	tilecoll FLOOR, FLOOR, WALL, LADDER ; b9
+	tilecoll FLOOR, WALL, FLOOR, PIT ; ba
+	tilecoll WALL, WALL, FLOOR, PIT ; bb
+	tilecoll WALL, WALL, FLOOR, FLOOR ; bc
+	tilecoll UP_WALL, UP_WALL, WALL, WALL ; bd

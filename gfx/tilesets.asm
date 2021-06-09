@@ -56,15 +56,6 @@ INCBIN "data/tilesets/pokecenter_metatiles.bin"
 TilesetPokecenterColl:
 INCLUDE "data/tilesets/pokecenter_collision.asm"
 
-TilesetPortGFX:
-INCBIN "gfx/tilesets/port.2bpp.lz"
-
-TilesetPortMeta:
-INCBIN "data/tilesets/port_metatiles.bin"
-
-TilesetPortColl:
-INCLUDE "data/tilesets/port_collision.asm"
-
 TilesetPlayersHouseGFX:
 INCBIN "gfx/tilesets/players_house.2bpp.lz"
 
@@ -86,14 +77,6 @@ INCLUDE "data/tilesets/mansion_collision.asm"
 
 SECTION "Tileset Data 3", ROMX
 
-TilesetTowerGFX:
-INCBIN "gfx/tilesets/tower.2bpp.lz"
-
-TilesetTowerMeta:
-INCBIN "data/tilesets/tower_metatiles.bin"
-
-TilesetTowerColl:
-INCLUDE "data/tilesets/tower_collision.asm"
 
 TilesetLabGFX:
 INCBIN "gfx/tilesets/lab.2bpp.lz"
@@ -345,9 +328,6 @@ INCBIN "data/tilesets/players_house_attributes.bin"
 TilesetPokecenterAttr:
 INCBIN "data/tilesets/pokecenter_attributes.bin"
 
-TilesetPortAttr:
-INCBIN "data/tilesets/port_attributes.bin"
-
 TilesetLabAttr:
 INCBIN "data/tilesets/lab_attributes.bin"
 
@@ -440,3 +420,24 @@ INCBIN "data/tilesets/pokemon_league_attributes.bin"
 
 TilesetCaveAttr:
 INCBIN "data/tilesets/cave_attributes.bin"
+
+TilesetPortGFX:
+INCBIN "gfx/tilesets/port.2bpp.lz"
+
+TilesetPortMeta:
+INCBIN "data/tilesets/port_metatiles.bin"
+
+TilesetPortColl:
+INCLUDE "data/tilesets/port_collision.asm"
+
+TilesetPortAttr:
+INCBIN "data/tilesets/port_attributes.bin"
+
+TilesetTowerGFX:
+INCBIN "gfx/tilesets/tower.2bpp.lz"
+
+TilesetTowerMeta:
+INCBIN "data/tilesets/tower_metatiles.bin"
+
+TilesetTowerColl:
+INCLUDE "data/tilesets/tower_collision.asm"

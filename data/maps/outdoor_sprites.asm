@@ -25,7 +25,7 @@ OutdoorSprites:
 	dw CableClubGroupSprites
 	dw CeladonGroupSprites
 	dw CianwoodGroupSprites
-	dw ViridianGroupSprites
+	dw OrchidGroupSprites
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw PavonaGroupSprites
@@ -228,9 +228,9 @@ PavonaGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 	
-ViridianGroupSprites:
+OrchidGroupSprites:
 	db SPRITE_TEACHER
-	db SPRITE_FISHER
+	db SPRITE_POKEFAN_M
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_BUENA

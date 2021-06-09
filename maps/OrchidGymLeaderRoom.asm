@@ -78,7 +78,7 @@ TrainerCooltrainerMTory:
 	
 EnyaIntroText:
 	text "Greetings, weary"
-	line "traveller."
+	line "traveler."
 	
 	para "My name is ENYA,"
 	line "leader of the"
@@ -96,34 +96,35 @@ EnyaIntroText:
 	para "Have you come in"
 	line "search of battle?"
 	
-	para "Ha! You make me"
-	line "laugh!"
-	
-	para "Has the heat got-"
-	line "ten to your head?"
+	para "Ha! The heat must"
+	line "have gotten to"
+	cont "your head!"
 	
 	para "Your #MON will"
 	line "kneel to the might"
 	cont "of my magic!"
 	done
-	
+
 EnyaLossText:
 	text "I yield!"
 	
-	para "Your #MON have"
-	line "shown their might."
+	para "You have proven"
+	line "yourself as the"
+	cont "better trainer on"
+	cont "this day."
 	
 	para "I must reward you"
-	line "for how well you"
-	cont "have trained them."
+	line "for how well your"
+	cont "#MON have been"
+	cont "trained."
 	
-	para "I present to you"
-	line "my ???-BADGE."
+	para "I present to you,"
+	line "the WYRMBADGE."
 	done
 	
 GetBadgeText:
 	text "<PLAYER> received"
-	line "???-BADGE."
+	line "WYRMBADGE."
 	done
 	
 EnyaExplainBadgeText:
@@ -140,8 +141,9 @@ EnyaExplainTMText:
 	para "A breath move of"
 	line "extreme power. Its"
 	cont "heat may even"
-	cont "anything it touch-"
-	cont "ex with a BURN."
+	cont "leave anything it"
+	cont "touches with a"
+	cont "serious BURN."
 	done
 	
 EnyaAfterText:

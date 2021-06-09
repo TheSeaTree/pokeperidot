@@ -278,6 +278,7 @@ CHRIS EQU __enum__
 	const PAT
 	const SANDY
 	const HAL
+	const DENNIS
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -400,6 +401,7 @@ CHRIS EQU __enum__
 	const NATE
 	const JEFF
 	const RUSTY
+	const NORRIS
 
 	trainerclass EXECUTIVEF ; 37
 

@@ -220,6 +220,9 @@ INCLUDE "maps/Route1PavonaGate.asm"
 INCLUDE "maps/Route5CleanseTagHouse.asm"
 INCLUDE "maps/OrchidCity.asm"
 INCLUDE "maps/OrchidDragonbreathHouse.asm"
+INCLUDE "maps/OrchidTeachersHouse.asm"
+INCLUDE "maps/OrchidGrannysHouse.asm"
+INCLUDE "maps/OrchidBlackbeltsHouse.asm"
 INCLUDE "maps/Route22Cave1F.asm"
 INCLUDE "maps/Route22CaveB1F.asm"
 INCLUDE "maps/Route22CaveB2F.asm"
@@ -282,6 +285,7 @@ INCLUDE "maps/SeaRoute2Cave.asm"
 INCLUDE "maps/FastShip1F.asm"
 INCLUDE "maps/FastShip1FRooms.asm"
 INCLUDE "maps/FastShipB1F.asm"
+INCLUDE "maps/FastShipB1FCabin.asm"
 
 
 SECTION "Map Scripts 20", ROMX

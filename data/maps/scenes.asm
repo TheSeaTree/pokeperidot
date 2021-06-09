@@ -55,4 +55,5 @@ MapScenes::
 	scene_var FAST_SHIP_1F,                    			wFastShip1FSceneID
 	scene_var FAST_SHIP_1F_ROOMS,                       wFastShip1FRoomsSceneID
 	scene_var FAST_SHIP_B1F,                    		wFastShipB1FSceneID
+	scene_var FAST_SHIP_B1F_CABIN,                 		wFastShipB1FCabinSceneID
 	db -1

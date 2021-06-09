@@ -1,5 +1,5 @@
 	tilecoll WALL, WALL, WALL, WALL ; 00
-	tilecoll WALL, WALL, WALL, WALL ; 01
+	tilecoll WALL, WALL, FLOOR, LADDER ; 01
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 02
 	tilecoll FLOOR, FLOOR, FLOOR, LADDER ; 03
 	tilecoll WALL, WALL, WALL, FLOOR ; 04
@@ -62,3 +62,19 @@
 	tilecoll FLOOR, STOLEN_ITEMS, STOLEN_ITEMS, STOLEN_ITEMS ; 3d
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 3e
 	tilecoll FLOOR, FLOOR, FLOOR, STOLEN_ITEMS ; 3f
+	tilecoll WALL, WALL, FLOOR, WALL ; 40
+	tilecoll WALL, WALL, WALL, FLOOR ; 41
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 42
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 43
+	tilecoll FLOOR, WALL, WALL, WALL ; 44
+	tilecoll WALL, FLOOR, WALL, WALL ; 45
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 46
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 47
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 48
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 49
+	tilecoll WALL, WALL, WALL, FLOOR ; 4a
+	tilecoll WALL, WALL, FLOOR, WALL ; 4b
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4c
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 4d
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 4e
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 4f

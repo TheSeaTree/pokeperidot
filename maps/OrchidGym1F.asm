@@ -8,7 +8,7 @@ OrchidGym1F_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .SetSteps
-	
+
 .Scene1:
 	turnobject ORCHIDGYM_GYM_GUY, LEFT
 	opentext

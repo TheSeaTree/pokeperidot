@@ -420,6 +420,8 @@ ENDM
 	map_attributes RugosaApartment2F, RUGOSA_APARTMENT_2F, $00, 0
 	map_attributes RugosaApartment3F, RUGOSA_APARTMENT_3F, $00, 0
 	map_attributes OrchidDragonbreathHouse, DRAGONBREATH_HOUSE, $00, 0
+	map_attributes OrchidTeachersHouse, ORCHID_TEACHERS_HOUSE, $00, 0
+	map_attributes OrchidGrannysHouse, ORCHID_GRANNYS_HOUSE, $00, 0
 	map_attributes IlexForestSwordsDanceHouse, SWORDS_DANCE_HOUSE, $00, 0
 	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
 	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
@@ -497,5 +499,7 @@ ENDM
 	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0
 	map_attributes FastShip1FRooms, FAST_SHIP_1F_ROOMS, $00, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0
+	map_attributes FastShipB1FCabin, FAST_SHIP_B1F_CABIN, $00, 0
 	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
 	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $8c, 0
+	map_attributes OrchidBlackbeltsHouse, ORCHID_BLACKBELTS_HOUSE, $09, 0

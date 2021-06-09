@@ -181,7 +181,7 @@ ItemDescriptions:
 	dw TrickMirrorDesc
 	dw BrickPieceDesc
 	dw CrashHelmetDesc
-	dw InvalidItemDesc
+	dw ShrineKeyDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -972,6 +972,10 @@ BrickPieceDesc:
 CrashHelmetDesc:
 	db	 "Halves most recoil"
 	next "damage. (HOLD)@"
+	
+ShrineKeyDesc:
+	db	 "An old key with"
+	next "strange markings.@"
 
 InvalidItemDesc:
 	db   "You should not"

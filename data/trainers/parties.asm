@@ -392,7 +392,7 @@ FangirlGroup:
 PokemonProfGroup:
 	; TEST (1)
 	db "@", TRAINERTYPE_ITEM_MOVES
-	db 52, XATU, GOLD_BERRY,       HYPER_BEAM, NO_MOVE, NO_MOVE, NO_MOVE
+	db 52, XATU, GOLD_BERRY,       HIDDEN_POWER, NO_MOVE, NO_MOVE, NO_MOVE
 	db -1
 
 PKMNTrainerGroup:
@@ -1354,6 +1354,13 @@ SuperNerdGroup:
 	db 39, MAGNETON
 	db 40, PORYGON
 	db -1
+
+	; SUPER_NERD (6)
+	db "DENNIS@", TRAINERTYPE_ITEM
+	db 43, MAGMAR,		NO_ITEM
+	db 45, WEEZING,		NO_ITEM
+	db 48, DITTO, 		METAL_POWDER
+	db -1
 	
 Rival2Group:
 	; RIVAL2 (1)
@@ -1979,6 +1986,14 @@ CamperGroup:
 	db 25, STANTLER
 	db 25, BEEDRILL
 	db 27, QUILAVA
+	db -1
+	
+	; CAMPER (7)
+	db "NORRIS@", TRAINERTYPE_NORMAL
+	db 46, CHARMELEON
+	db 44, SKARMORY
+	db 45, GRAVELER
+	db 46, ARCANINE
 	db -1
 
 ExecutiveFGroup:

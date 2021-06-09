@@ -50,8 +50,13 @@ FangirlBagStolenRight:
 ContinueFangirlBagStolen:
 	disappear FASTSHIP_BURGLAR
 	applymovement FASTSHIP_FANGIRL, ShipFangirlApproach
-	setlasttalked FASTSHIP_FANGIRL
 	showemote EMOTE_SHOCK, FASTSHIP_FANGIRL, 15
+	opentext
+	writetext ShipEmilyNoticesPlayer
+	waitbutton
+	closetext
+	applymovement FASTSHIP_FANGIRL, ShipFangirlApproach2
+	setlasttalked FASTSHIP_FANGIRL
 	faceplayer
 	opentext
 	writetext ShipEmilyExplainBagStolen
@@ -59,6 +64,16 @@ ContinueFangirlBagStolen:
 	closetext
 	follow PLAYER, FASTSHIP_FANGIRL
 	setscene SCENE_FASTSHIP1F_FOLLOWING
+	end
+
+FastShipNoTurningBack:
+	turnobject FASTSHIP_FANGIRL, UP
+	opentext
+	writetext FastShipNoTurningBackText
+	waitbutton
+	closetext
+	applymovement PLAYER, ShipPlayerStepDown
+	turnobject FASTSHIP_FANGIRL, DOWN
 	end
 	
 FangirlTeleport1:
@@ -121,11 +136,13 @@ ShipReceptionist2:
 EmilyStopThief:
 	text "Stop! Thief!"
 	done
+
+ShipEmilyNoticesPlayer:	
+	text "<PLAYER>!"
+	done
 	
 ShipEmilyExplainBagStolen:
-	text "<PLAYER>!"
-	
-	para "That creep who ran"
+	text "That creep who ran"
 	line "by stole my PACK!"
 
 	para "It had all of my"
@@ -148,6 +165,15 @@ ShipFangirlFollowingText:
 	para "Let's go!"
 	done
 	
+FastShipNoTurningBackText:
+	text "Where are you"
+	line "going, <PLAYER>?"
+	
+	para "That thief must"
+	line "still be on the"
+	cont "ship somewhere!"
+	done
+	
 ShipReceptionist1MaleText:
 	text "This is your room"
 	line "here, Mr. <PLAYER>."
@@ -163,6 +189,10 @@ ShipReceptionist2Text:
 	line "room."
 	done
 	
+ShipPlayerStepDown:
+	step DOWN
+	step_end
+
 ShipBurglarCrash:
 	run_step DOWN
 	run_step DOWN
@@ -199,8 +229,11 @@ ShipFangirlApproach:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
-	step DOWN
+	step_resume
+	
+ShipFangirlApproach2:
+	run_step DOWN
+	run_step DOWN
 	step_resume
 
 FastShip1F_MapEvents:
@@ -216,9 +249,11 @@ FastShip1F_MapEvents:
 	warp_event 13, 17, FAST_SHIP_1F_ROOMS, 5
 	warp_event 17, 17, FAST_SHIP_1F_ROOMS, 6
 
-	db 11 ; coord events
+	db 13 ; coord events
 	coord_event 14,  7, SCENE_FASTSHIP1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_FASTSHIP1F_DEFAULT, FangirlBagStolenRight
+	coord_event 14,  7, SCENE_FASTSHIP1F_FOLLOWING, FastShipNoTurningBack
+	coord_event 15,  7, SCENE_FASTSHIP1F_FOLLOWING, FastShipNoTurningBack
 	coord_event 20, 17, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport1
 	coord_event 21, 16, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport1
 	coord_event 20, 15, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport1

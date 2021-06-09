@@ -238,6 +238,7 @@ AcroporaRestTalkHouse_Blocks:
 IlexForestSwordsDanceHouse_Blocks:
 Route11CurseHouse_Blocks:
 Route18Farmhouse_Blocks:
+OrchidGrannysHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
 UnionCaveB1F_Blocks:
@@ -720,12 +721,14 @@ Route22CaveB2F_Blocks:
 	INCBIN "maps/Route22CaveB2F.ablk"
 
 NevermelticeChamber_Blocks:
-Route22HiddenCave_Blocks:
 Route4HiddenCave_Blocks:
 KinglersDen_Blocks:
 Route8HiddenCave_Blocks:
 Route11HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
+
+Route22HiddenCave_Blocks:
+	INCBIN "maps/Route22HiddenCave.ablk"
 	
 SeaRoute2Cave_Blocks:
 	INCBIN "maps/SeaRoute2Cave.ablk"
@@ -738,6 +741,9 @@ FastShip1FRooms_Blocks:
 
 FastShipB1F_Blocks:
 	INCBIN "maps/FastShipB1F.ablk"
+
+FastShipB1FCabin_Blocks:
+	INCBIN "maps/FastShipB1FCabin.ablk"
 
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:
@@ -759,3 +765,9 @@ HoOhCastle3F_Blocks:
 
 HoOhCastleRoof_Blocks:
 	INCBIN "maps/HoOhCastleRoof.ablk"
+
+OrchidTeachersHouse_Blocks:
+	INCBIN "maps/OrchidTeachersHouse.ablk"
+
+OrchidBlackbeltsHouse_Blocks:
+	INCBIN "maps/OrchidBlackbeltsHouse.ablk"

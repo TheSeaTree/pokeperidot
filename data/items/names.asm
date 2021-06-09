@@ -180,7 +180,7 @@ ItemNames::
 	db "TRICK MIRROR@"
 	db "BRICK PIECE@"
 	db "CRASH HELMET@"
-	db "TERU-SAMA@"
+	db "SHRINE KEY@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

@@ -187,7 +187,7 @@
 	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
 	const CRASH_HELMET ; b5
-	const ITEM_B6      ; b6
+	const SHRINE_KEY   ; b6
 	const ITEM_B7      ; b7
 	const ITEM_B8      ; b8
 	const ITEM_B9      ; b9
