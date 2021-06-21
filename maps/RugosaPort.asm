@@ -30,7 +30,30 @@ RugosaPort_MapScripts:
 	end
 
 RugosaPortCaptainScript:
-	jumptextfaceplayer RugosaPortCaptainText
+	opentext
+	faceplayer
+	checkcode VAR_BADGES
+	ifequal 8, .Boarding
+	writetext RugosaPortCaptainText
+	waitbutton
+	closetext
+	end
+	
+.Boarding
+	writetext RugosaPortCaptainBoardingText
+	waitbutton
+	closetext
+	checkcode VAR_FACING
+	ifequal DOWN, .StepLeft
+	applymovement OLIVINEPORT_SAILOR1, BoardShipMovementUp
+	applymovement PLAYER, PlayerBoardShipRight
+	jump .ContinueBoarding
+.StepLeft
+	applymovement OLIVINEPORT_SAILOR1, BoardShipMovementLeft
+	applymovement PLAYER, PlayerBoardShipDown
+.ContinueBoarding
+	warpcheck
+	end
 
 RugosaPortSailorAdmireScript:
 	jumptextfaceplayer RugosaPortSailorAdmireText
@@ -50,6 +73,28 @@ RugosaPortCooltrainerFScript:
 RugosaPortYoungsterScript:
 	jumptextfaceplayer RugosaPortYoungsterText
 
+BoardShipMovementUp:
+	step UP
+	turn_head DOWN
+	step_resume
+
+BoardShipMovementLeft:
+	step LEFT
+	turn_head RIGHT
+	step_resume
+	
+PlayerBoardShipRight:
+	step RIGHT
+	step DOWN
+	turn_step DOWN
+	step_end
+
+PlayerBoardShipDown:
+	step DOWN
+	step DOWN
+	turn_step DOWN
+	step_end
+
 MovementData_0x74a32:
 	step UP
 	step_end
@@ -66,6 +111,10 @@ RugosaPortCaptainText:
 	para "Come back with all"
 	line "8 BADGEs and I'll"
 	cont "let you on board."
+	done
+	
+RugosaPortCaptainBoardingText:
+	text "Welcome aboard!"
 	done
 	
 RugosaPortSailorAdmireText:
@@ -149,7 +198,7 @@ RugosaPort_MapEvents:
 	db 3 ; warp events
 	warp_event  8, 17, RUGOSA_COAST, 6
 	warp_event  9, 17, RUGOSA_COAST, 6
-	warp_event 14,  7, RUGOSA_COAST, 1 ; Ship
+	warp_event 14,  7, FAST_SHIP_1F, 1 ; Ship
 
 	db 0 ; coord events
 ;	coord_event  2,  2, SCENE_DEFAULT, RugosaPortWalkUpToShipScript
@@ -158,7 +207,7 @@ RugosaPort_MapEvents:
 ;	bg_event 15, 16, BGEVENT_ITEM, RugosaPortHiddenProtein
 
 	db 8 ; object events
-	object_event 14,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, -1
+	object_event 14,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, -1
 	object_event 12, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, -1
 	object_event  3, 15, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorWorkingScript, -1
 	object_event 18, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
