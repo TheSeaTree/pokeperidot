@@ -98,7 +98,7 @@ ENDM
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const KINGLERS_DEN,							        5,  7
-	map_const SEA_ROUTE_2_CAVE,                            17, 11 ;  3
+	map_const SEA_ROUTE_2_CAVE,                            17, 12 ;  3
 
 	newgroup                                                      ;  4
 
@@ -390,7 +390,7 @@ ENDM
 	map_const PALEROCK_MOUNTAIN_1F,  					   18, 14 ;  1
 	map_const PALEROCK_MOUNTAIN_2F,  					   15, 11 ;  2
 	map_const PALEROCK_MOUNTAIN_3F,  					    9,  9 ;  3
-	map_const PALEROCK_MOUNTAIN_OUTSIDE,				   18, 13 ;  4
+	map_const PALEROCK_MOUNTAIN_OUTSIDE,				   17, 13 ;  4
 	map_const PALEROCK_MOUNTAIN_B1,						   17, 12 ;  5
 	map_const PALEROCK_MOUNTAIN_B2,						    6, 11 ;  5
 	map_const PALEROCK_MOUNTAIN_B3,						   22, 16 ;  5
