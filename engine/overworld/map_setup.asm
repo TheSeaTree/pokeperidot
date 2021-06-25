@@ -174,6 +174,8 @@ CheckReplaceKrisSprite:
 	jr z, .nope
 	cp PLAYER_SURF
 	jr z, .surfing
+	cp PLAYER_SURF_LAPRAS
+	jr z, .surfing
 	cp PLAYER_SURF_PIKA
 	jr z, .surfing
 	call GetMapEnvironment
@@ -203,6 +205,8 @@ CheckReplaceKrisSprite:
 	jr nz, .ret_nc
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
+	jr z, ._surfing
+	cp PLAYER_SURF_LAPRAS
 	jr z, ._surfing
 	cp PLAYER_SURF_PIKA
 	jr z, ._surfing

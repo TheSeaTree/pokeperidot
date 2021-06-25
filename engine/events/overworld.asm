@@ -370,6 +370,8 @@ SurfFunction:
 	jr z, .alreadyfail
 	cp PLAYER_SURF_PIKA
 	jr z, .alreadyfail
+	cp PLAYER_SURF_LAPRAS
+	jr z, .alreadyfail
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp WATERTILE
@@ -419,21 +421,30 @@ UsedSurfScript:
 	waitbutton
 	closetext
 
-	callasm .empty_fn ; empty function
-
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
+	callasm .checklapras
 
-	writebyte (PAL_NPC_BLUE << 4)
-	special SetPlayerPalette
+.NoLapras
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	special SurfStartStep
 	end
 
-.empty_fn
-	farcall StubbedTrainerRankings_Surf
+.checklapras
+	ld a, [wPlayerState]
+	cp PLAYER_SURF_LAPRAS
+	ret nz
+	ld a, BANK(LaprasPaletteChange)
+	ld hl, LaprasPaletteChange
+	call CallScript
+	scf
 	ret
+	
+LaprasPaletteChange:
+	writebyte (PAL_NPC_BLUE << 4)
+	special SetPlayerPalette
+	jump UsedSurfScript.NoLapras
 
 UsedSurfText:
 	text_jump _UsedSurfText
@@ -461,6 +472,12 @@ GetSurfType:
 	cp PIKACHU
 	ld a, PLAYER_SURF_PIKA
 	ret z
+
+	ld a, [hl]
+	cp LAPRAS
+	ld a, PLAYER_SURF_LAPRAS
+	ret z
+
 	ld a, PLAYER_SURF
 	ret
 
@@ -502,6 +519,8 @@ TrySurfOW::
 ; Don't ask to surf if already fail.
 	ld a, [wPlayerState]
 	cp PLAYER_SURF_PIKA
+	jr z, .quit
+	cp PLAYER_SURF_LAPRAS
 	jr z, .quit
 	cp PLAYER_SURF
 	jr z, .quit
@@ -1583,6 +1602,8 @@ FishFunction:
 	cp PLAYER_SURF
 	jr z, .fail
 	cp PLAYER_SURF_PIKA
+	jr z, .fail
+	cp PLAYER_SURF_LAPRAS
 	jr z, .fail
 	call GetFacingTileCoord
 	call GetTileCollision

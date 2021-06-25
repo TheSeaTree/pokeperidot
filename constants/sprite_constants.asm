@@ -124,6 +124,8 @@
 	const SPRITE_ORVILLE
 	const SPRITE_BOMB
 	const SPRITE_TEACHER_SLEEPING
+	const SPRITE_CHRIS_SURF
+	const SPRITE_KRIS_SURF
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

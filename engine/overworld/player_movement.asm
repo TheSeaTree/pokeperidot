@@ -37,6 +37,8 @@ DoPlayerMovement::
 	jr z, .Normal
 	cp PLAYER_SURF
 	jr z, .Surf
+	cp PLAYER_SURF_LAPRAS
+	jr z, .Surf
 	cp PLAYER_SURF_PIKA
 	jr z, .Surf
 	cp PLAYER_BIKE

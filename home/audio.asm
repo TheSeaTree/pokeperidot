@@ -424,6 +424,8 @@ SpecialMapMusic::
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .surf
+	cp PLAYER_SURF_LAPRAS
+	jr z, .surf
 	cp PLAYER_SURF_PIKA
 	jr z, .surf
 
