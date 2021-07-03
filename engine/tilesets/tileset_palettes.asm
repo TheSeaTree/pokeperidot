@@ -1,8 +1,6 @@
 LoadSpecialMapPalette:
 .continue
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER
 	jr z, .battle_tower
 	cp TILESET_ICE_PATH
@@ -37,12 +35,9 @@ LoadSpecialMapPalette:
 	jr z, .elitefourroom
 	cp  TILESET_POKEMON_LEAGUE
 	jr z, .pokemonleague
+	cp  TILESET_LOST_LAND
+	jr z, .lostland
 	jr .do_nothing
-
-.pokecom_2f
-	call LoadPokeComPalette
-	scf
-	ret
 
 .battle_tower
 	call LoadBattleTowerPalette
@@ -125,20 +120,13 @@ LoadSpecialMapPalette:
 	ld hl, PokemonLeaguePalette
 	jp LoadEightTimeOfDayBGPalettes
 
+.lostland
+	ld hl, LostLandPalette
+	jp LoadEightTimeOfDayBGPalettes
+
 .do_nothing
 	and a
 	ret
-
-LoadPokeComPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, PokeComPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
-PokeComPalette:
-INCLUDE "gfx/tilesets/pokecom_center.pal"
 
 LoadBattleTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -280,6 +268,9 @@ INCLUDE "gfx/tilesets/elite_four_room.pal"
 
 PokemonLeaguePalette:
 INCLUDE "gfx/tilesets/pokemon_league.pal"
+
+LostLandPalette:
+INCLUDE "gfx/tilesets/lost_land.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

@@ -159,14 +159,14 @@ INCLUDE "data/tilesets/underground_collision.asm"
 
 SECTION "Tileset Data 5", ROMX
 
-TilesetPokeComCenterGFX:
-INCBIN "gfx/tilesets/pokecom_center.2bpp.lz"
+TilesetLostLandGFX:
+INCBIN "gfx/tilesets/lost_land.2bpp.lz"
 
-TilesetPokeComCenterMeta:
-INCBIN "data/tilesets/pokecom_center_metatiles.bin"
+TilesetLostLandMeta:
+INCBIN "data/tilesets/lost_land_metatiles.bin"
 
-TilesetPokeComCenterColl:
-INCLUDE "data/tilesets/pokecom_center_collision.asm"
+TilesetLostLandColl:
+INCLUDE "data/tilesets/lost_land_collision.asm"
 
 TilesetBattleTowerGFX:
 INCBIN "gfx/tilesets/battle_tower.2bpp.lz"
@@ -364,8 +364,8 @@ INCBIN "data/tilesets/champions_room_attributes.bin"
 TilesetPlayersRoomAttr:
 INCBIN "data/tilesets/players_room_attributes.bin"
 
-TilesetPokeComCenterAttr:
-INCBIN "data/tilesets/pokecom_center_attributes.bin"
+TilesetLostLandAttr:
+INCBIN "data/tilesets/lost_land_attributes.bin"
 
 TilesetBattleTowerAttr:
 INCBIN "data/tilesets/battle_tower_attributes.bin"
@@ -406,18 +406,6 @@ INCBIN "data/tilesets/mountain_attributes.bin"
 
 SECTION "Tileset Data 12", ROMX
 
-TilesetPokemonLeagueGFX:
-INCBIN "gfx/tilesets/pokemon_league.2bpp.lz"
-
-TilesetPokemonLeagueMeta:
-INCBIN "data/tilesets/pokemon_league_metatiles.bin"
-
-TilesetPokemonLeagueColl:
-INCLUDE "data/tilesets/pokemon_league_collision.asm"
-
-TilesetPokemonLeagueAttr:
-INCBIN "data/tilesets/pokemon_league_attributes.bin"
-
 TilesetCaveAttr:
 INCBIN "data/tilesets/cave_attributes.bin"
 
@@ -441,3 +429,18 @@ INCBIN "data/tilesets/tower_metatiles.bin"
 
 TilesetTowerColl:
 INCLUDE "data/tilesets/tower_collision.asm"
+
+
+SECTION "Tileset Data 13", ROMX
+
+TilesetPokemonLeagueGFX:
+INCBIN "gfx/tilesets/pokemon_league.2bpp.lz"
+
+TilesetPokemonLeagueMeta:
+INCBIN "data/tilesets/pokemon_league_metatiles.bin"
+
+TilesetPokemonLeagueColl:
+INCLUDE "data/tilesets/pokemon_league_collision.asm"
+
+TilesetPokemonLeagueAttr:
+INCBIN "data/tilesets/pokemon_league_attributes.bin"

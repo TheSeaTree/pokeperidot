@@ -17,7 +17,7 @@
 	const TILESET_CHAMPIONS_ROOM       ; 12
 	const TILESET_LIGHTHOUSE           ; 13
 	const TILESET_PLAYERS_ROOM         ; 14
-	const TILESET_POKECOM_CENTER       ; 15
+	const TILESET_LOST_LAND		       ; 15
 	const TILESET_BATTLE_TOWER         ; 16
 	const TILESET_TOWER                ; 17
 	const TILESET_CAVE                 ; 18

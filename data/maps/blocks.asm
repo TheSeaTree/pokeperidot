@@ -732,6 +732,15 @@ Route22HiddenCave_Blocks:
 	
 SeaRoute2Cave_Blocks:
 	INCBIN "maps/SeaRoute2Cave.ablk"
+
+SeaRoute2Cave2F_Blocks:
+	INCBIN "maps/SeaRoute2Cave2F.ablk"
+	
+SeaRoute2CaveOutside_Blocks:
+	INCBIN "maps/SeaRoute2CaveOutside.ablk"
+	
+SeaRoute2Cave3F_Blocks:
+	INCBIN "maps/SeaRoute2Cave3F.ablk"
 	
 FastShip1F_Blocks:
 	INCBIN "maps/FastShip1F.ablk"

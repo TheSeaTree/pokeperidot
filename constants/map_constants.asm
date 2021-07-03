@@ -98,7 +98,10 @@ ENDM
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const KINGLERS_DEN,							        5,  7
-	map_const SEA_ROUTE_2_CAVE,                            17, 12 ;  3
+	map_const SEA_ROUTE_2_CAVE,                            17, 12
+	map_const SEA_ROUTE_2_CAVE_2F,                         18, 18
+	map_const SEA_ROUTE_2_CAVE_OUTSIDE,                    20, 13
+	map_const SEA_ROUTE_2_CAVE_3F,                          7, 13
 
 	newgroup                                                      ;  4
 
