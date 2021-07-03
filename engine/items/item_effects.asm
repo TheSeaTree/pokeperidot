@@ -1762,6 +1762,7 @@ ItemActionText:
 	push hl
 	push de
 	push bc
+	call GetPartyNick
 	farcall WritePartyMenuTilemap
 	farcall PrintPartyMenuActionText
 	call WaitBGMap

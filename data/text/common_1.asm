@@ -48,7 +48,7 @@ UnknownText_0x1bc089::
 	done
 
 UnknownText_0x1bc0a2::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "recovered @"
 	deciram wCurHPAnimDeltaHP, 2, 3
@@ -56,49 +56,49 @@ UnknownText_0x1bc0a2::
 	done
 
 UnknownText_0x1bc0bb::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "cured of poison."
 	done
 
 UnknownText_0x1bc0d2::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "rid of paralysis."
 	done
 
 UnknownText_0x1bc0ea::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "burn was healed."
 	done
 
 UnknownText_0x1bc101::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "thawed out."
 	done
 
 UnknownText_0x1bc115::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "woke up."
 	done
 
 UnknownText_0x1bc123::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "health returned."
 	done
 
 UnknownText_0x1bc13a::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "is revitalized."
 	done
 
 UnknownText_0x1bc14f::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text " grew to"
 	line "level @"
 	deciram wCurPartyLevel, 1, 3
@@ -108,7 +108,7 @@ UnknownText_0x1bc14f::
 	db "@@"
 
 UnknownText_0x1bc16e::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text " came"
 	line "to its senses."
 	done

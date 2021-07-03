@@ -770,9 +770,6 @@ YouHaveNoPKMNString:
 	db "You have no <PK><MN>!@"
 
 PrintPartyMenuActionText:
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNick
 	ld a, [wPartyMenuActionText]
 	and $f
 	ld hl, .MenuActionTexts
@@ -813,7 +810,7 @@ PrintPartyMenuActionText:
 	text_end
 
 .Text_Defrosted:
-	; was defrosted.
+	; thawed out.
 	text_far UnknownText_0x1bc101
 	text_end
 
