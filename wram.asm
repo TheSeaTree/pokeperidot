@@ -2307,7 +2307,9 @@ wScriptTextAddr::
 	ds 1
 wWildEncounterCooldown:: db ; d452
 wXYComparePointer:: dw ; d453
-	ds 4
+
+wOtherTrainerType::	db
+	ds 3
 
 wBattleScriptFlags:: dw ; d459
 wPlayerSpriteSetupFlags:: ; d45b

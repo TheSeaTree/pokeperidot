@@ -3681,7 +3681,7 @@ BattleCommand_SleepTarget:
 	and SLP
 	ld hl, AlreadyAsleepText
 	jr nz, .fail
-	
+
 	ld a, [wTypeModifier]
 	and $7f
 	jr z, .didnt_affect
