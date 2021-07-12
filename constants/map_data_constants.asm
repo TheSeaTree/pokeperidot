@@ -47,7 +47,7 @@ MAP_NONE   EQU 0
 	const FISHGROUP_DRATINI_2
 	const FISHGROUP_GRIMER
 	const FISHGROUP_QWILFISH
-	const FISHGROUP_REMORAID
+	const FISHGROUP_FOSSIL
 	const FISHGROUP_QWILFISH_NO_SWARM
 
 ; connection directions (see data/maps/data.asm)

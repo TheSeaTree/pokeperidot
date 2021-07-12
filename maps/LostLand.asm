@@ -10,21 +10,32 @@ LostLand_MapScripts:
 	scene_script .DummyScene0
 	scene_script .DummyScene1
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
 	
 .DummyScene0:
 	end
 	
 .DummyScene1:
 	end
+	
+.SmashWall:
+	checkevent EVENT_LOST_LAND_HIDDEN_CAVE_OPEN
+	iffalse .done
+	changeblock  6, 10, $54
+.done
+	return
 
 LostLandAerodactyl:
+	special CelebiShrineEvent
+	turnobject PLAYER, LEFT
+	showemote EMOTE_SHOCK, PLAYER, 15
 	opentext
 	writetext LostLandAerodactylText
 	cry AERODACTYL
 	waitbutton
 	closetext
-	loadwildmon AERODACTYL, 45
+	loadwildmon AERODACTYL, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
@@ -115,11 +126,15 @@ LostLandScientistAfterText:
 	cont "have discovered"
 	cont "other ancient"
 	cont "#MON thriving"
-	cont "here as well."
+	cont "here!"
+
+	para "Would you care to"
+	line "assist in our"
+	cont "research here?"
 	
-	para "I promise I will"
+	para "I promise we will"
 	line "make it worth your"
-	cont "while as well!"
+	cont "while!"
 	done
 	
 LostLandScientist2Text:
@@ -186,18 +201,21 @@ LostLandScientist6Text:
 LostLand_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
-	warp_event  8, 31, SEA_ROUTE_2, 1 ;Entrance
-	warp_event 44,  9, CHARCOAL_KILN, 1 ;Puzzle Chamber
-	warp_event  6, 11, CHARCOAL_KILN, 1 ;Unown Chamber, Change the block here to a cave entrance when the Unown are unlocked.
+	db 4 ; warp events
+	warp_event  8, 31, REMNANT_CAVE_3F, 4 ;Entrance
+	warp_event 44,  9, LOST_LAND_CAVE_1F, 1
+	warp_event 20, 15, LOST_LAND_CAVE_1F, 2
+	warp_event  6, 11, LOST_LAND, 4 ;Puzzle Chamber, Unlocks Lugia cave.
 
-	db 0 ; coord events
-;	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist
+	db 3 ; coord events
+	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist
+	coord_event 28, 11, SCENE_FINISHED, LostLandAerodactyl
+	coord_event 29, 11, SCENE_FINISHED, LostLandAerodactyl
 
 	db 0 ; bg events
 
 	db 7 ; object events
-	object_event  29,  9, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, -1
+	object_event 29,  9, SPRITE_EGG, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, -1
 	object_event 12, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientistAfter, -1
 	object_event 25, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist2, -1
 	object_event 31, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist3, -1

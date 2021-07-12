@@ -1,15 +1,16 @@
 	const_def 2 ; object constants
 	
-SeaRoute2Cave_MapScripts:
+RemnantCave1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-SeaRoute2Cave_MapEvents:
+RemnantCave1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
-	warp_event 32,  9, LOST_LAND, 1
+	db 2 ; warp events
+	warp_event  5, 11, SEA_ROUTE_2, 1
+	warp_event 29, 15, REMNANT_CAVE_2F, 1
 
 	db 0 ; coord events
 

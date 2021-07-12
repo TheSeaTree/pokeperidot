@@ -50,6 +50,7 @@ Landmarks:
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
+	landmark 106,  58, RemnantCaveName
 	landmark 116,  44, SeaRoute3Name
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
@@ -136,7 +137,7 @@ BurnedTowerName:      db "BURNED¯TOWER@"
 FastShipName:         db "FAST SHIP@"
 ViridianForestName:   db "ORIENTEM¯FOREST@"
 DiglettsCaveName:     db "MACHOP'S¯DEN@"
-TohjoFallsName:       db "TOHJO FALLS@"
+RemnantCaveName:	  db "REMNANT¯CAVE@"
 UndergroundName:      db "UNDERGROUND@"
 LostLandName:		  db "LOST LAND@"
 BattleTowerName:      db "BATTLE¯TOWER@"

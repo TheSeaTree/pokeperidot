@@ -37,6 +37,7 @@ SpriteMons:
 	db HO_OH
 	db OMANYTE
 	db SHIFUR
+	db EGG
 	db MEWTWO
 	db RAIKOU
 	db ENTEI

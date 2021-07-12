@@ -426,7 +426,11 @@ AcroporaGroupSprites:
 
 SilverGroupSprites:
 ; Route28, SilverCaveOutside
-	; 0 of max 9 walking sprites
+	db SPRITE_SCIENTIST
+	; 1 of max 9 walking sprites
+	db SPRITE_EGG
+	db SPRITE_MOLTRES
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:
@@ -442,6 +446,7 @@ DungeonsGroupSprites:
 	db SPRITE_SUPER_NERD
 	; 8 of max 9 walking sprites
 	db SPRITE_JYNX
+	db SPRITE_EGG
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
 	db SPRITE_MOLTRES

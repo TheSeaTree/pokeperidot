@@ -91,17 +91,12 @@ ENDM
 	map_const NEVERMELTICE_CHAMBER,                         5,  7
 	map_const HEPATICA_CAVE_B2F,                           21, 17
 	map_const OVERLOOK_MAZE,                               29, 19
-	map_const LOST_LAND,		                           29,  20
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const KINGLERS_DEN,							        5,  7
-	map_const SEA_ROUTE_2_CAVE,                            17, 12
-	map_const SEA_ROUTE_2_CAVE_2F,                         18, 18
-	map_const SEA_ROUTE_2_CAVE_OUTSIDE,                    20, 13
-	map_const SEA_ROUTE_2_CAVE_3F,                          7, 13
 
 	newgroup                                                      ;  4
 
@@ -299,6 +294,13 @@ ENDM
 
 	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  1
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  2
+	map_const REMNANT_CAVE_1F,                             17, 12
+	map_const REMNANT_CAVE_2F,	                           18, 18
+	map_const REMNANT_CAVE_OUTSIDE,	                       20, 13
+	map_const REMNANT_CAVE_3F,	                            7, 13
+	map_const LOST_LAND,		                           29, 20
+	map_const LOST_LAND_CAVE_1F,		                   13, 12
+	map_const LOST_LAND_HIDDEN_CAVE_1F,					   10, 10
 
 	newgroup                                                      ; 20
 

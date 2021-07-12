@@ -1,16 +1,16 @@
 	const_def 2 ; object constants
 	
-SeaRoute2CaveOutside_MapScripts:
+RemnantCaveOutside_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 	
-SeaRoute2CaveOutside_MapEvents:
+RemnantCaveOutside_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 16,  7, SEA_ROUTE_2_CAVE_2F, 2
-	warp_event 29, 11, SEA_ROUTE_2_CAVE_3F, 1
+	warp_event 16,  7, REMNANT_CAVE_2F, 2
+	warp_event 29, 11, REMNANT_CAVE_3F, 1
 
 	db 0 ; coord events
 

@@ -495,10 +495,12 @@ ENDM
 	map_attributes Route20AcroporaGate, ROUTE_20_ACROPORA_GATE, $00, 0
 	map_attributes Route25, ROUTE_25, $05, 0
 	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0
-	map_attributes SeaRoute2Cave, SEA_ROUTE_2_CAVE, $09, 0
-	map_attributes SeaRoute2Cave2F, SEA_ROUTE_2_CAVE_2F, $09, 0
-	map_attributes SeaRoute2CaveOutside, SEA_ROUTE_2_CAVE_OUTSIDE, $00, 0
-	map_attributes SeaRoute2Cave3F, SEA_ROUTE_2_CAVE_3F, $09, 0
+	map_attributes RemnantCave1F, REMNANT_CAVE_1F, $09, 0
+	map_attributes RemnantCave2F, REMNANT_CAVE_2F, $09, 0
+	map_attributes RemnantCaveOutside, REMNANT_CAVE_OUTSIDE, $00, 0
+	map_attributes RemnantCave3F, REMNANT_CAVE_3F, $09, 0
+	map_attributes LostLandCave1F, LOST_LAND_CAVE_1F, $09, 0
+	map_attributes LostLandHiddenCave1F, LOST_LAND_HIDDEN_CAVE_1F, $09, 0
 	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0
 	map_attributes FastShip1FRooms, FAST_SHIP_1F_ROOMS, $00, 0
 	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0

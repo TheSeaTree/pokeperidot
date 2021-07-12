@@ -18,7 +18,7 @@ FishGroups:
 	fishgroup 50 percent + 1, .Dratini_2_Old,        .Dratini_2_Good,        .Dratini_2_Super
 	fishgroup 50 percent + 1, .Grimer_Old,     		 .Grimer_Good,     		 .Grimer_Super
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
-	fishgroup 50 percent + 1, .Remoraid_Old,         .Remoraid_Good,         .Remoraid_Super
+	fishgroup 50 percent + 1, .Fossil_Old,           .Fossil_Good,           .Fossil_Super
 	fishgroup  5 percent + 1, .Qwilfish_NoSwarm_Old, .Qwilfish_NoSwarm_Good, .Qwilfish_NoSwarm_Super
 
 .Shore_Old:
@@ -159,7 +159,7 @@ FishGroups:
 .Grimer_Old:
 	db  70 percent + 1, GRIMER,   10
 	db  85 percent + 1, GRIMER,   10
-	db 100 percent,     GRIMER,     10
+	db 100 percent,     GRIMER,   10
 .Grimer_Good:
 	db  35 percent,     GRIMER,   20
 	db  70 percent,     GRIMER,     20
@@ -191,20 +191,15 @@ FishGroups:
 	db  90 percent + 1, MAGIKARP,   40
 	db 100 percent,     QWILFISH,   40
 
-.Remoraid_Old:
-	db  70 percent + 1, MAGIKARP,   10
-	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     POLIWAG,    10
-.Remoraid_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     POLIWAG,    20
-	db  90 percent + 1, POLIWAG,    20
-	db 100 percent,     time_group 6
-.Remoraid_Super:
-	db  40 percent,     POLIWAG,    40
-	db  70 percent,     time_group 7
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     REMORAID,   40
+.Fossil_Old:
+	db  50 percent + 1, KABUTO,   35
+	db 100 percent,     OMANYTE,  35
+.Fossil_Good:
+	db  50 percent + 1, KABUTO,   35
+	db 100 percent,     OMANYTE,  35
+.Fossil_Super:
+	db  50 percent + 1, KABUTO,   35
+	db 100 percent,     OMANYTE,  35
 
 TimeFishGroups:
 	;  day              nite

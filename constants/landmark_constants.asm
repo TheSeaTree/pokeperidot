@@ -46,6 +46,7 @@
 	const ORCHID_CITY
 	const SEA_ROUTE_1       ; 4d
 	const SEA_ROUTE_2       ; 4e
+	const REMNANT_CAVE      ; 4e
 	const SEA_ROUTE_3       ; 4f
 	const SEA_ROUTE_4       ; 3f
 	const SEA_ROUTE_5       ; 3f

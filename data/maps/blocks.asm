@@ -730,17 +730,25 @@ Route11HiddenCave_Blocks:
 Route22HiddenCave_Blocks:
 	INCBIN "maps/Route22HiddenCave.ablk"
 	
-SeaRoute2Cave_Blocks:
-	INCBIN "maps/SeaRoute2Cave.ablk"
+SECTION "Map Blocks 5", ROMX
+	
+RemnantCave1F_Blocks:
+	INCBIN "maps/RemnantCave1F.ablk"
 
-SeaRoute2Cave2F_Blocks:
-	INCBIN "maps/SeaRoute2Cave2F.ablk"
+RemnantCave2F_Blocks:
+	INCBIN "maps/RemnantCave2F.ablk"
 	
-SeaRoute2CaveOutside_Blocks:
-	INCBIN "maps/SeaRoute2CaveOutside.ablk"
+RemnantCaveOutside_Blocks:
+	INCBIN "maps/RemnantCaveOutside.ablk"
 	
-SeaRoute2Cave3F_Blocks:
-	INCBIN "maps/SeaRoute2Cave3F.ablk"
+RemnantCave3F_Blocks:
+	INCBIN "maps/RemnantCave3F.ablk"
+	
+LostLandHiddenCave1F_Blocks:
+	INCBIN "maps/LostLandHiddenCave1F.ablk"
+
+LostLandCave1F_Blocks:
+	INCBIN "maps/LostLandCave1F.ablk"
 	
 FastShip1F_Blocks:
 	INCBIN "maps/FastShip1F.ablk"

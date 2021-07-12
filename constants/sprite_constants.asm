@@ -126,6 +126,7 @@
 	const SPRITE_TEACHER_SLEEPING
 	const SPRITE_CHRIS_SURF
 	const SPRITE_KRIS_SURF
+	const SPRITE_SHADOW
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -167,6 +168,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 	const SPRITE_OMANYTE
 	const SPRITE_SHIFUR
+	const SPRITE_EGG
 	const SPRITE_MEWTWO
 	const SPRITE_RAIKOU
 	const SPRITE_ENTEI

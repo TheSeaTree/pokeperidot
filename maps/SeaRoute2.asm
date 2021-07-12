@@ -9,7 +9,7 @@ SeaRoute2_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 32,  7, LOST_LAND, 1
+	warp_event 32,  7, REMNANT_CAVE_1F, 1
 
 	db 0 ; coord events
 
