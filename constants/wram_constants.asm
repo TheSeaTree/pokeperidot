@@ -180,7 +180,7 @@ NUM_OBJECTS   EQU 18
 	const STATUSFLAGS_UNOWN_DEX_F                ; 1
 	const STATUSFLAGS_FLASH_F                    ; 2
 	const STATUSFLAGS_CAUGHT_POKERUS_F           ; 3
-	const STATUSFLAGS_ROCKET_SIGNAL_F            ; 4
+	const STATUSFLAGS_EXP_ALL_ACTIVE_F           ; 4
 	const STATUSFLAGS_NO_WILD_ENCOUNTERS_F       ; 5
 	const STATUSFLAGS_HALL_OF_FAME_F             ; 6
 	const STATUSFLAGS_BATTLE_SUBWAY_LEVELS_F     ; 7

@@ -191,7 +191,11 @@ ItemEffects:
 	dw RestoreHPEffect     ; SILVER_BERRY
 	dw PokeBallEffect      ; PARK_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
+	dw NoEffect            ; TRICK_MIRROR
+	dw NoEffect            ; BRICK_PIECE
+	dw NoEffect            ; CRASH_HELMET
+	dw NoEffect            ; SHRINE_KEY
+	dw ExpAllEffect        ; EXP_ALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -2225,6 +2229,38 @@ PokeFluteEffect:
 
 .battle
 	jp PokeFluteTerminatorCharacter
+	
+ExpAllEffect:
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	jr nz, .turnoff
+
+	ld de, SFX_FULL_HEAL
+	call PlaySFX
+
+	ld hl, wStatusFlags
+	set STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ld hl, .turnofftext
+	jp MenuTextBoxWaitButton
+
+.turnoff
+	push de
+	ld de, SFX_PECK
+	call PlaySFX
+	pop de
+
+	ld hl, wStatusFlags
+	res STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ld hl, .turnontext
+	jp MenuTextBoxWaitButton
+	
+.turnontext
+	text_far ExpAll_TurnOnText
+	text_end
+	
+.turnofftext
+	text_far ExpAll_TurnOffText
+	text_end
 	
 AncientTomeEffect:
 	; Ancient Tome can only be used outside of battle.

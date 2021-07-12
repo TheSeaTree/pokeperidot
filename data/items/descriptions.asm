@@ -182,7 +182,7 @@ ItemDescriptions:
 	dw BrickPieceDesc
 	dw CrashHelmetDesc
 	dw ShrineKeyDesc
-	dw InvalidItemDesc
+	dw ExpAllDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -976,6 +976,10 @@ CrashHelmetDesc:
 ShrineKeyDesc:
 	db	 "An old key with"
 	next "strange markings.@"
+
+ExpAllDesc:
+	db   "Grants EXP. Points"
+	next "to whole party.@"
 
 InvalidItemDesc:
 	db   "You should not"

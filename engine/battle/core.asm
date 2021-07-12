@@ -2331,9 +2331,13 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	xor a
 	ld [wGivingExperienceToExpShareHolders], a
 	call GiveExperiencePoints
+	; Skip EXP Share if EXP All is active
+	call CheckExpAll
+	jr nz, .active
 	call IsAnyMonHoldingExpShare
 	ret z
 
+.active
 	ld a, [wBattleParticipantsNotFainted]
 	push af
 	ld a, d
@@ -2347,6 +2351,55 @@ UpdateBattleStateAndExperienceAfterEnemyFaint:
 	call GiveExperiencePoints
 	pop af
 	ld [wBattleParticipantsNotFainted], a
+	ret
+
+CheckExpAll:
+	ld a, [wPartyCount]
+	ld b, a
+	ld hl, wPartyMon1
+	ld c, 1
+	ld d, 0
+.loop
+	push hl
+	push bc
+	ld bc, MON_HP
+	add hl, bc
+	ld a, [hli]
+	or [hl]
+	pop bc
+	pop hl
+	jr z, .next
+
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ret z
+
+	ld a, d
+	or c
+	ld d, a
+
+.next
+	sla c
+	push de
+	ld de, PARTYMON_STRUCT_LENGTH
+	add hl, de
+	pop de
+	dec b
+	jr nz, .loop
+
+	ld a, d
+	ld e, 0
+	ld b, PARTY_LENGTH
+.loop2
+	srl a
+	jr nc, .okay
+	inc e
+
+.okay
+	dec b
+	jr nz, .loop2
+	ld a, e
+	and a
 	ret
 
 IsAnyMonHoldingExpShare:

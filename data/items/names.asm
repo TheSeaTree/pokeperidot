@@ -181,7 +181,7 @@ ItemNames::
 	db "BRICK PIECE@"
 	db "CRASH HELMET@"
 	db "SHRINE KEY@"
-	db "TERU-SAMA@"
+	db "EXP.ALL@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

@@ -1626,3 +1626,12 @@ MoveReminderCancelText::
 	cont "PIECE."
 	done
 
+ExpAll_TurnOnText::
+	text "The EXP. ALL has"
+	line "been disabled."
+	done
+
+ExpAll_TurnOffText::
+	text "The EXP. ALL has"
+	line "been enabled."
+	done
