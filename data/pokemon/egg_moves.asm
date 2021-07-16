@@ -176,7 +176,7 @@ VulpixEggMoves:
 	db ENCORE
 	db DRAIN_KISS
 	db -1 ; end
-	
+
 JigglypuffEggMoves:
 	db PERISH_SONG
 	db PRESENT
@@ -885,6 +885,7 @@ MisdreavusEggMoves:
 	db SCREECH
 	db DESTINY_BOND
 	db WILL_O_WISP
+	db MOONBLAST
 	db -1 ; end
 
 GirafarigEggMoves:

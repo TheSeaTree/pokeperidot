@@ -1411,6 +1411,7 @@ GrimerEvosAttacks:
 
 MukEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, MOONBLAST
 	db 1, POISON_GAS
 	db 1, POUND
 	db 4, HARDEN
