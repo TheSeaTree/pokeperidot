@@ -919,6 +919,27 @@ AI_Smart_Bide:
 	inc [hl]
 	ret
 
+; 50% chance to encourage this move if the opponent has Reversal or Flail
+	ld b, EFFECT_REVERSAL
+	call AIHasMoveEffect
+	jr nc, .asm_38fcb
+
+; Or if the enemy's HP is below 50%
+	call AICheckEnemyHalfHP
+	ret nc
+
+.asm_38fcb
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	ret z
+
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	dec [hl]
+	ret
+
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 

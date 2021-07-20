@@ -179,5 +179,6 @@ BattleCommandPointers:
 	dw BattleCommand_QuiverDance
 	dw BattleCommand_Coil
 	dw BattleCommand_Growth
+	dw BattleCommand_UTurnAnim
 	dw BattleCommand_UTurn
 	dw BattleCommand_Burn

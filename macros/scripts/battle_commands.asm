@@ -180,6 +180,7 @@ ENDM
 	command quiverdance
 	command coil
 	command growth
+	command uturnanim
 	command uturn
 	command burn
 

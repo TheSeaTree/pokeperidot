@@ -293,8 +293,6 @@ NUM_ATTACKS EQU const_value + -1
 	const ANIM_THROW_ROCK
 	const ANIM_THROW_BAIT
 	const ANIM_ENEMY_FLED
-; u-turn anims
-	const ANIM_SHOW_MON
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def

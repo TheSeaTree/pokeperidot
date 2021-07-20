@@ -1609,6 +1609,8 @@ BattleCommand_CheckHit:
 	call GetBattleVar
 	cp EFFECT_ALWAYS_HIT
 	ret z
+	cp EFFECT_BIDE
+	ret z
 
 	call .StatModifiers
 
@@ -2146,11 +2148,16 @@ BattleCommand_FailureText:
 BattleCommand_ApplyDamage:
 ; applydamage
 
+	ld a, BATTLE_VARS_SUBSTATUS3_OPP
+	call GetBattleVar
+	bit SUBSTATUS_BIDE, a
+	jr nz, .bide
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVar
 	bit SUBSTATUS_ENDURE, a
 	jr z, .focus_sash
-
+.bide
+; A Pokemon using Bide cannot be knocked out by attacks.
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage

@@ -792,7 +792,6 @@ Bide:
 	doturn
 	usedmovetext
 	unleashenergy
-	resettypematchup
 	checkhit
 	moveanim
 	bidefailtext
@@ -2138,7 +2137,7 @@ UTurn:
 	stab
 	damagevariation
 	checkhit
-	moveanim
+	uturnanim
 	failuretext
 	applydamage
 	criticaltext
