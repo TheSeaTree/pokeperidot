@@ -183,6 +183,7 @@ ENDM
 	command uturnanim
 	command uturn
 	command burn
+	command thiefdamage
 
 	enum_start $fe
 	command endturn                 ; fe

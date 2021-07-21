@@ -182,3 +182,4 @@ BattleCommandPointers:
 	dw BattleCommand_UTurnAnim
 	dw BattleCommand_UTurn
 	dw BattleCommand_Burn
+	dw BattleCommand_ThiefDamage
