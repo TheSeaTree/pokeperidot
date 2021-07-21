@@ -34,5 +34,4 @@ BattleCommand_DragonDance:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
+	jp CantRaiseStats

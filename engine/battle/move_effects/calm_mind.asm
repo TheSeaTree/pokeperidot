@@ -36,6 +36,4 @@ BattleCommand_CalmMind:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
-	
+	jp CantRaiseStats

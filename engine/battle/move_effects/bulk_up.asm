@@ -33,6 +33,4 @@ BattleCommand_BulkUp:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
-	
+	jp CantRaiseStats

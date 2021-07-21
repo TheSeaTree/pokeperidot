@@ -44,6 +44,5 @@ BattleCommand_QuiverDance:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
+	jp CantRaiseStats
 	
