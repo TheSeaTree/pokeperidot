@@ -56,7 +56,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn  7, 14, 10,  8 ; EXECUTIVEF
+	dn  8,  8,  8,  9 ; ENGINEER
 	dn  9,  8,  8,  8 ; SAGE
 	dn 14, 14, 14, 15 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER

@@ -200,6 +200,7 @@ CHRIS EQU __enum__
 	const BRIANNA
 	const DIANE
 	const CHELLE
+	const ERIN
 	
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -212,6 +213,7 @@ CHRIS EQU __enum__
 	trainerclass GRUNTM ; 1f
 
 	trainerclass GENTLEMAN ; 20
+	const WINFRED
 	
 	trainerclass SKIER ; 21
 	
@@ -279,6 +281,7 @@ CHRIS EQU __enum__
 	const SANDY
 	const HAL
 	const DENNIS
+	const HERBERT
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -403,7 +406,8 @@ CHRIS EQU __enum__
 	const RUSTY
 	const NORRIS
 
-	trainerclass EXECUTIVEF ; 37
+	trainerclass ENGINEER ; 37
+	const ENRIQUE
 
 	trainerclass SAGE ; 38
 	const CALEB
@@ -434,6 +438,7 @@ CHRIS EQU __enum__
 	trainerclass POKEFANF ; 3e
 	const ELANE
 	const MARCI
+	const ILENE
 	
 	trainerclass RED ; 3f
 	const RED1

@@ -57,7 +57,7 @@ TrainerPicPointers::
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
+	dba EngineerPic
 	dba SagePic
 	dba MediumPic
 	dba BoarderPic

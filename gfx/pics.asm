@@ -722,6 +722,7 @@ AmberPic:		  	 INCBIN "gfx/trainers/amber.2bpp.lz"
 OrvillePic:		  	 INCBIN "gfx/trainers/orville.2bpp.lz"
 ReganPic:		  	 INCBIN "gfx/trainers/regan.2bpp.lz"
 BredePic:		  	 INCBIN "gfx/trainers/brede.2bpp.lz"
+EngineerPic:		 INCBIN "gfx/trainers/engineer.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

@@ -57,7 +57,7 @@ TrainerGroups:
 	dw PsychicGroup
 	dw PicnickerGroup
 	dw CamperGroup
-	dw ExecutiveFGroup
+	dw EngineerGroup
 	dw SageGroup
 	dw MediumGroup
 	dw BoarderGroup
