@@ -2006,6 +2006,8 @@ BattleCommand_MoveAnimNoSub:
 	jr z, .alternate_anim
 	cp EFFECT_POISON_MULTI_HIT
 	jr z, .alternate_anim
+	cp EFFECT_THIEF
+	jr z, .alternate_anim
 	xor a
 	ld [wKickCounter], a
 

@@ -46,11 +46,12 @@ BattleCommand_UTurnAnim:
 
 	farcall CheckPlayerHasMonToSwitchTo
 	jp nz, BattleCommand_MoveAnim
+	jp .reapper
 
 .enemy_turn:	
 	farcall FindAliveEnemyMons
 	jp nc, BattleCommand_MoveAnim
-
+.reapper
 	ld a, 1
 	ld [wBattleAnimParam], a
 	jp PlayDamageAnim

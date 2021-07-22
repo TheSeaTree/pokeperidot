@@ -179,7 +179,7 @@ Moves: ; 41afb
 	move STONE_EDGE,   EFFECT_NORMAL_HIT,        110, ROCK,      80,  5,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,   100,  1,   0
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,    100, 30,   0
-	move THIEF,        EFFECT_THIEF,              60, DARK,     100, 20, 100
+	move THIEF,        EFFECT_THIEF,              50, DARK,     100, 20, 100
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,    100, 15,  30
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100, 15,   0

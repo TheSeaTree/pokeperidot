@@ -144,8 +144,7 @@ BattleCommand_ThiefDamage:
 	ld a, [wBattleMode]
 	dec a
 	ret z
-.doubledamage
-	jp DoubleDamage
+	jp .doubledamage
 
 .enemy
 
@@ -171,7 +170,9 @@ BattleCommand_ThiefDamage:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	
+.doubledamage
+	ld a, 1
+	ld [wBattleAnimParam], a 
 	jp DoubleDamage
 
 CheckValuableItem:
