@@ -54,7 +54,7 @@ RegionCheck:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LOST_LAND
+	cp FAST_SHIP
 	jr z, .johto
 	cp SPECIAL_MAP
 	jr nz, .checkagain

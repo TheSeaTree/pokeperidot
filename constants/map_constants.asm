@@ -32,7 +32,7 @@ ENDM
 	map_const ROUTE_14_RUGOSA_GATE,							5,  4
 	map_const RUGOSA_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
-	map_const RUGOSA_PORT,                                10,  9 ; 14
+	map_const RUGOSA_PORT,                                 10, 13 ; 14
 	map_const SEA_ROUTE_4,                                 17, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const SEA_ROUTE_1,                                 21, 17 ;  3
@@ -260,6 +260,8 @@ ENDM
 	map_const FAST_SHIP_1F_ROOMS,						   12,  8
 	map_const FAST_SHIP_B1F,							   23,  7
 	map_const FAST_SHIP_B1F_CABIN,							5,  4
+	map_const FAST_SHIP_2F,								   11,  7
+	map_const FAST_SHIP_2F_ROOMS,						   25,  8
 
 	newgroup                                                      ; 16
 

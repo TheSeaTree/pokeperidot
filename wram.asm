@@ -2615,8 +2615,10 @@ wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
 wFastShip1FRoomsSceneID::                         db ; d9bc
 wFastShipB1FCabinSceneID::                        db ; d9bc
+wFastShip2FSceneID::                              db ; d9bc
+wFastShip2FRoomsSceneID::                         db ; d9bd
 
-	ds 47
+	ds 45
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

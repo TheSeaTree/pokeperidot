@@ -47,6 +47,7 @@ Landmarks:
 	landmark  26,  60, Route18Name ; ROUTE_22
 	landmark  26,  60, Route20Name ; ROUTE_24
 	landmark  26,  60, Route21Name ; ROUTE_25
+	landmark  26,  60, MoltenPeakName
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
@@ -59,6 +60,7 @@ Landmarks:
 	landmark 140,  36, VictoryRoadName
 	landmark 140,  28, IndigoPlateauName
 ;	landmark  20,  28, BattleTowerName
+	landmark 118,  34, FastShipName
 	landmark  -8,  -8, LostLandName
 
 NewBarkTownName:      db "ELKHORN¯TOWN@"
@@ -138,6 +140,7 @@ FastShipName:         db "FAST SHIP@"
 ViridianForestName:   db "ORIENTEM¯FOREST@"
 DiglettsCaveName:     db "MACHOP'S¯DEN@"
 RemnantCaveName:	  db "REMNANT¯CAVE@"
+MoltenPeakName:		  db "MOLTEN¯PEAK@"
 UndergroundName:      db "UNDERGROUND@"
 LostLandName:		  db "LOST LAND@"
 BattleTowerName:      db "BATTLE¯TOWER@"

@@ -43,6 +43,7 @@
 	const ROUTE_18          ; 53
 	const ROUTE_20          ; 53
 	const ROUTE_21          ; 53
+	const MOLTEN_PEAK
 	const ORCHID_CITY
 	const SEA_ROUTE_1       ; 4d
 	const SEA_ROUTE_2       ; 4e
@@ -58,6 +59,7 @@
 	
 KANTO_LANDMARK EQU const_value
 
+	const FAST_SHIP
 	const LOST_LAND
 
 ; used in CaughtData

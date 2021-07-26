@@ -508,3 +508,5 @@ ENDM
 	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
 	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $8c, 0
 	map_attributes OrchidBlackbeltsHouse, ORCHID_BLACKBELTS_HOUSE, $09, 0
+	map_attributes FastShip2F, FAST_SHIP_2F, $00, 0
+	map_attributes FastShip2FRooms, FAST_SHIP_2F_ROOMS, $00, 0

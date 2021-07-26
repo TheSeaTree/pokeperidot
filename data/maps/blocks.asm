@@ -762,6 +762,12 @@ FastShipB1F_Blocks:
 FastShipB1FCabin_Blocks:
 	INCBIN "maps/FastShipB1FCabin.ablk"
 
+FastShip2F_Blocks:
+	INCBIN "maps/FastShip2F.ablk"
+
+FastShip2FRooms_Blocks:
+	INCBIN "maps/FastShip2FRooms.ablk"
+
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:
 UnownChamberOU_Blocks:

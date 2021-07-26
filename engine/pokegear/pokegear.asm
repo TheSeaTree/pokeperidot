@@ -128,6 +128,8 @@ Pokegear_LoadGFX:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
+	cp FAST_SHIP
+	jr z, .ssaqua
 	farcall GetPlayerIcon
 	push de
 	ld h, d
@@ -147,6 +149,16 @@ Pokegear_LoadGFX:
 	ld bc, 4 tiles
 	call FarCopyBytes
 	ret
+
+.ssaqua
+	ld hl, FastShipGFX
+	ld de, vTiles0 tile $10
+	ld bc, 8 tiles
+	call CopyBytes
+	ret
+
+FastShipGFX:
+INCBIN "gfx/pokegear/fast_ship.2bpp"
 
 InitPokegearModeIndicatorArrow:
 	depixel 4, 2, 4, 0
@@ -196,8 +208,8 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld a, [wMapNumber]
 	ld c, a
 	call GetWorldMapLocation
-	cp LOST_LAND
-	jr z, .LostLand
+	cp FAST_SHIP
+	jr z, .FastShip
 	cp SPECIAL_MAP
 	jr nz, .LoadLandmark
 	ld a, [wBackupMapGroup]
@@ -210,7 +222,7 @@ TownMap_InitCursorAndPlayerIconPositions:
 	ld [wPokegearMapCursorLandmark], a
 	ret
 
-.LostLand:
+.FastShip:
 	ld [wPokegearMapPlayerIconLandmark], a
 	ld a, ELKHORN_TOWN
 	ld [wPokegearMapCursorLandmark], a
@@ -310,7 +322,7 @@ InitPokegearTilemap:
 
 .Map:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LOST_LAND
+	cp FAST_SHIP
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
@@ -525,7 +537,7 @@ Pokegear_UpdateClock:
 
 PokegearMap_CheckRegion:
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LOST_LAND
+	cp FAST_SHIP
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr nc, .kanto
@@ -1499,7 +1511,7 @@ RadioChannels:
 
 ; otherwise clear carry
 	ld a, [wPokegearMapPlayerIconLandmark]
-	cp LOST_LAND
+	cp FAST_SHIP
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
@@ -1743,6 +1755,12 @@ _TownMap:
 	ldh [rLCDC], a
 	call TownMap_GetCurrentLandmark
 	ld [wTownMapPlayerIconLandmark], a
+	call GetWorldMapLocation
+	cp FAST_SHIP
+	jr nz, .not_fast_ship
+	ld a, ELKHORN_TOWN
+	ld [wPokegearMapCursorLandmark], a
+.not_fast_ship
 	ld [wTownMapCursorLandmark], a
 	xor a
 	ldh [hBGMapMode], a
@@ -1768,8 +1786,11 @@ _TownMap:
 
 .dmg
 	ld a, [wTownMapPlayerIconLandmark]
+	cp FAST_SHIP
+	jr z, .fastship
 	cp KANTO_LANDMARK
 	jr nc, .kanto
+.fastship
 	ld d, KANTO_LANDMARK - 1
 	ld e, 1
 	call .loop
@@ -1851,8 +1872,11 @@ _TownMap:
 
 .InitTilemap:
 	ld a, [wTownMapPlayerIconLandmark]
+	cp FAST_SHIP
+	jr z, .fast_ship
 	cp KANTO_LANDMARK
 	jr nc, .kanto2
+.fast_ship
 	ld e, JOHTO_REGION
 	jr .okay_tilemap
 
@@ -2609,7 +2633,7 @@ Pokedex_GetArea:
 ; not in the same region as what's currently
 ; on the screen.
 	ld a, [wTownMapPlayerIconLandmark]
-	cp LOST_LAND
+	cp FAST_SHIP
 	jr z, .johto
 	cp KANTO_LANDMARK
 	jr c, .johto
@@ -2637,7 +2661,14 @@ Pokedex_GetArea:
 
 .GetPlayerOrFastShipIcon:
 	ld a, [wTownMapPlayerIconLandmark]
+	cp FAST_SHIP
+	jr z, .FastShip
 	farcall GetPlayerIcon
+	ret
+
+.FastShip:
+	ld de, FastShipGFX
+	ld b, BANK(FastShipGFX)
 	ret
 	
 TownMapBGUpdate:

@@ -48,6 +48,51 @@ RoomsFangirlContinueFolow:
 	setmapscene FAST_SHIP_1F, SCENE_FASTSHIP1F_DEFAULT
 	end
 
+FastShipPlayerBedScript:
+	opentext
+	writetext FastShipPlayerBedText
+	waitbutton	
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+;	checkevent EVENT_BEAT_BURGLAR_[The one who steals Emily's bag]
+;	iftrue .Landed
+	end
+.Landed
+	playsound SFX_ELEVATOR_END
+	opentext
+	writetext FastShipLandedText
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	wait 4
+;	checkevent EVENT_COMING_FROM_LEAGUE
+;	iftrue, .Rugosa
+; Set scenes here as well, for each respective map.
+	warpfacing UP, INDIGO_PLATEAU_POKECENTER_1F, 12, 7
+	end
+.Rugosa
+; Set scenes here as well, for each respective map.
+;	clearevent EVENT_COMING_FROM_LEAGUE
+	warpfacing UP, RUGOSA_PORT, 14, 7
+	end
+
+FastShipPlayerBedText:
+	text "It's a comfy bed!"
+	line "Time for a quick"
+	cont "rest!"
+	done
+
+FastShipLandedText:
+	text "We have landed!"
+	done
+
 FastShip1FRooms_MapEvents:
 	db 0, 0 ; filler
 
@@ -73,7 +118,13 @@ FastShip1FRooms_MapEvents:
 	coord_event 11, 15, SCENE_FASTSHIP1F_DEFAULT, RoomsFangirlTeleport5
 	coord_event 21, 15, SCENE_FASTSHIP1F_DEFAULT, RoomsFangirlTeleport6
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 3, 1, BGEVENT_RIGHT, FastShipPlayerBedScript
+	bg_event 3, 2, BGEVENT_RIGHT, FastShipPlayerBedScript
 
-	db 1 ; object events
+	db 5 ; object events
 	object_event -5, -4, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 11,  4, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, ObjectEvent, -1
+	object_event 21,  3, SPRITE_FANGIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, ObjectEvent, -1
+	object_event 20, 12, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 3, ObjectEvent, -1
+	object_event  1, 14, SPRITE_FANGIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, ObjectEvent, -1

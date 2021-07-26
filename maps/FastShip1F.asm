@@ -12,6 +12,7 @@ FastShip1F_MapScripts:
 	
 .DummyScene0:
 	setmapscene FAST_SHIP_1F_ROOMS, SCENE_FASTSHIP1FROOMS_DEFAULT
+	setmapscene FAST_SHIP_2F, SCENE_FASTSHIP2F_DEFAULT
 	end
 
 .DummyScene1:
@@ -99,9 +100,13 @@ FangirlTeleport5:
 FangirlTeleport6:
 	moveobject FASTSHIP_FANGIRL, 13, 17
 	jump FangirlContinueFolow
-	
+
 FangirlTeleport7:
 	moveobject FASTSHIP_FANGIRL, 17, 17
+	jump FangirlContinueFolow
+	
+FangirlTeleport8:
+	moveobject FASTSHIP_FANGIRL,  2, 16
 
 FangirlContinueFolow:
 	appear FASTSHIP_FANGIRL
@@ -239,7 +244,7 @@ ShipFangirlApproach2:
 FastShip1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 9 ; warp events
 	warp_event 15,  1, FAST_SHIP_1F, 1
 	warp_event 20, 16, FAST_SHIP_B1F, 1
 	warp_event  9, 10, FAST_SHIP_1F_ROOMS, 1
@@ -248,8 +253,9 @@ FastShip1F_MapEvents:
 	warp_event  9, 17, FAST_SHIP_1F_ROOMS, 4
 	warp_event 13, 17, FAST_SHIP_1F_ROOMS, 5
 	warp_event 17, 17, FAST_SHIP_1F_ROOMS, 6
+	warp_event  2, 16, FAST_SHIP_2F, 1
 
-	db 13 ; coord events
+	db 16 ; coord events
 	coord_event 14,  7, SCENE_FASTSHIP1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_FASTSHIP1F_DEFAULT, FangirlBagStolenRight
 	coord_event 14,  7, SCENE_FASTSHIP1F_FOLLOWING, FastShipNoTurningBack
@@ -263,6 +269,9 @@ FastShip1F_MapEvents:
 	coord_event  9, 18, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport5
 	coord_event 13, 18, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport6
 	coord_event 17, 18, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport7
+	coord_event  2, 15, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport8
+	coord_event  2, 17, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport8
+	coord_event  3, 16, SCENE_FASTSHIP1F_DEFAULT, FangirlTeleport8
 
 	db 0 ; bg events
 

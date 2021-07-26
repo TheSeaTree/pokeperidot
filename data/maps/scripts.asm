@@ -291,6 +291,8 @@ INCLUDE "maps/FastShip1F.asm"
 INCLUDE "maps/FastShip1FRooms.asm"
 INCLUDE "maps/FastShipB1F.asm"
 INCLUDE "maps/FastShipB1FCabin.asm"
+INCLUDE "maps/FastShip2F.asm"
+INCLUDE "maps/FastShip2FRooms.asm"
 
 
 SECTION "Map Scripts 20", ROMX
