@@ -53,7 +53,7 @@ TilesetMountainAnim:
 	dw NULL,  DoneTileAnimation
 	
 TilesetLostLandAnim:
-	dw vTiles2 tile $49, AnimateWaterTile
+	dw vTiles2 tile $14, AnimateWaterTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
