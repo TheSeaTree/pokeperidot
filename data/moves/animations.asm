@@ -3232,10 +3232,12 @@ BattleAnim_Thief:
 	anim_wait 16
 	anim_call BattleAnim_ShowMon_0
 	anim_wait 1
+	anim_if_param_equal $1, .no_item
 	anim_1gfx ANIM_GFX_STATUS
 	anim_sound 0, 1, SFX_THIEF_2
 	anim_obj ANIM_OBJ_THIEF, 120, 76, $1
 	anim_wait 64
+.no_item
 	anim_ret
 
 BattleAnim_MindReader:
