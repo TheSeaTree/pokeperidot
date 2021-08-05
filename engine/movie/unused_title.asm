@@ -170,10 +170,6 @@ UnusedTitleScreen:
 	ldh [hCGBPalUpdate], a
 	
 	call WaitSFX
-	
-	ld de, MUSIC_TITLE
-	call PlayMusic
-
 	ret
 
 UnusedTitleBG_GFX:
