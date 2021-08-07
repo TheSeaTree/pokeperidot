@@ -13,6 +13,11 @@ MysteryGiftGirl:
 	writetext MysterGiftText
 	yesorno
 	iffalse .Decline
+	checkcode VAR_ITEM_POCKET
+	ifgreater 16, .ItemsNearlyFull
+	checkcode VAR_BALL_POCKET
+	ifgreater  8, .BallsNearlyFull
+.AskSave
 	setflag ENGINE_DAILY_MYSTERY_GIFT
 	writetext MysteryGift_SaveGame
 	yesorno
@@ -55,7 +60,21 @@ MysteryGiftGirl:
 	closetext
 	turnobject LAST_TALKED, DOWN
 	end
-	
+
+.ItemsNearlyFull
+	writetext MysteryGiftItemPocketWarningText
+	waitbutton
+	jump .AskContinueAnyway
+
+.BallsNearlyFull
+	writetext MysteryGiftBallPocketWarningText
+	waitbutton
+.AskContinueAnyway
+	writetext MysteryGiftAnywayText
+	yesorno
+	iffalse .Decline
+	jump .AskSave
+
 FindMysteryGiftItem:
 	jumpstd mysterygiftgirl
 	end
@@ -87,6 +106,24 @@ MysterGiftNoRoom:
 	text "I guess too many"
 	line "people shared with"
 	cont "you! Hehe!"
+	done
+	
+MysteryGiftItemPocketWarningText:
+	text "…You don't have"
+	line "much space in your"
+	cont "ITEM POCKET."
+	done
+
+MysteryGiftBallPocketWarningText:
+	text "…You don't have"
+	line "much space in your"
+	cont "BALL POCKET."
+	done
+
+MysteryGiftAnywayText:
+	text "Do you want to"
+	line "use MYSTERY GIFT"
+	cont "anyway?"
 	done
 	
 MysteryGiftReceivedText:
