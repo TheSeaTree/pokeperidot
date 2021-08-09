@@ -158,7 +158,6 @@ NidoranMEggMoves:
 	
 ClefairyEggMoves:
 	db PRESENT
-	db METRONOME
 	db AMNESIA
 	db BELLY_DRUM
 	db MIMIC
