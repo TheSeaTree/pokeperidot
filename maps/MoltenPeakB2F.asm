@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
-	const ROUTE22CAVEB2F_POKEFAN
+	const MOLTENPEAKB2F_POKEFAN
 
-Route22CaveB2F_MapScripts:
+MoltenPeakB2F_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -36,7 +36,7 @@ TrainerCooltrainerEve:
 	closetext
 	end
 	
-Route22CaveB2FRoarGuy:
+MoltenPeakB2FRoarGuy:
 	checkevent EVENT_GOT_TM_ROAR
 	iftrue .GotRoar
 	opentext
@@ -45,7 +45,7 @@ Route22CaveB2FRoarGuy:
 	cry TYRANITAR
 	waitsfx
 	closetext
-	showemote EMOTE_SHOCK, ROUTE22CAVEB2F_POKEFAN, 15
+	showemote EMOTE_SHOCK, MOLTENPEAKB2F_POKEFAN, 15
 	faceplayer
 	opentext
 	iftrue .GotRoar
@@ -63,28 +63,28 @@ Route22CaveB2FRoarGuy:
 	closetext
 	end
 
-Route22CaveB2FCharcoal:
+MoltenPeakB2FCharcoal:
 	itemball CHARCOAL
 
-Route22CaveB2FKingsRock:
+MoltenPeakB2FKingsRock:
 	itemball KINGS_ROCK
 
-Route22CaveB2FNugget:
+MoltenPeakB2FNugget:
 	itemball NUGGET
 
-Route22CaveHiddenXSpDef:
-	hiddenitem X_SP_DEF, EVENT_ROUTE_22_CAVE_HIDDEN_X_SP_DEF
+MoltenPeakHiddenXSpDef:
+	hiddenitem X_SP_DEF, EVENT_MOLTEN_PEAK_HIDDEN_X_SP_DEF
 
-Route22CaveHiddenPPUp:
-	hiddenitem PP_UP, EVENT_ROUTE_22_CAVE_HIDDEN_PP_UP
+MoltenPeakHiddenPPUp:
+	hiddenitem PP_UP, EVENT_MOLTEN_PEAK_HIDDEN_PP_UP
 
-Route22CaveHiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_ROUTE_22_CAVE_HIDDEN_ULTRA_BALL
+MoltenPeakHiddenUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_MOLTEN_PEAK_HIDDEN_ULTRA_BALL
 
-Route22CaveB2FBoulder:
+MoltenPeakB2FBoulder:
 	jumpstd strengthboulder
 	
-Route22CaveB2FRock:
+MoltenPeakB2FRock:
 	jumpstd smashrock
 	
 FirebreatherRogerText:
@@ -168,33 +168,33 @@ RoarExplainText:
 	cont "have tamed!"
 	done
 
-Route22CaveB2F_MapEvents:
+MoltenPeakB2F_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 13, 21, ROUTE_22_CAVE_B1F, 2
-	warp_event 19,  5, ROUTE_22_CAVE_B1F, 3
-	warp_event 21, 19, ROUTE_22_CAVE_B1F, 4
-	warp_event 27,  9, ROUTE_22_CAVE_B1F, 5
-	warp_event 29, 21, ROUTE_22_CAVE_B1F, 7
-	warp_event 31, 15, ROUTE_22_CAVE_B1F, 8
+	warp_event 13, 21, MOLTEN_PEAK_B1F, 2
+	warp_event 19,  5, MOLTEN_PEAK_B1F, 3
+	warp_event 21, 19, MOLTEN_PEAK_B1F, 4
+	warp_event 27,  9, MOLTEN_PEAK_B1F, 5
+	warp_event 29, 21, MOLTEN_PEAK_B1F, 7
+	warp_event 31, 15, MOLTEN_PEAK_B1F, 8
 	warp_event  9,  3, ENTEI_CAVE_1F, 2
 
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event 35, 36, BGEVENT_ITEM, Route22CaveHiddenXSpDef
-	bg_event 17, 38, BGEVENT_ITEM, Route22CaveHiddenUltraBall
-	bg_event 26,  4, BGEVENT_ITEM, Route22CaveHiddenPPUp
+	bg_event 35, 36, BGEVENT_ITEM, MoltenPeakHiddenXSpDef
+	bg_event 17, 38, BGEVENT_ITEM, MoltenPeakHiddenUltraBall
+	bg_event 26,  4, BGEVENT_ITEM, MoltenPeakHiddenPPUp
 
 	db 10 ; object events
 	object_event  7, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherRoger, -1
 	object_event 26,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerEve, -1
-	object_event 32, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route22CaveB2FRoarGuy, -1
-	object_event 30, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route22CaveB2FCharcoal, EVENT_ROUTE_22_CAVE_B2F_CHARCOAL
-	object_event 32, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route22CaveB2FKingsRock, EVENT_ROUTE_22_CAVE_B2F_KINGS_ROCK
-	object_event 24, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route22CaveB2FNugget, EVENT_ROUTE_22_CAVE_B2F_NUGGET
-	object_event 27, 38, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22CaveB2FBoulder, -1
-	object_event 29, 35, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22CaveB2FBoulder, -1
-	object_event 28, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22CaveB2FBoulder, -1
-	object_event 32, 34, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22CaveB2FRock, -1
+	object_event 32, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MoltenPeakB2FRoarGuy, -1
+	object_event 30, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MoltenPeakB2FCharcoal, EVENT_MOLTEN_PEAK_B2F_CHARCOAL
+	object_event 32, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MoltenPeakB2FKingsRock, EVENT_MOLTEN_PEAK_B2F_KINGS_ROCK
+	object_event 24, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MoltenPeakB2FNugget, EVENT_MOLTEN_PEAK_B2F_NUGGET
+	object_event 27, 38, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakB2FBoulder, -1
+	object_event 29, 35, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakB2FBoulder, -1
+	object_event 28, 34, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakB2FBoulder, -1
+	object_event 32, 34, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakB2FRock, -1

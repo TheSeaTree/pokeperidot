@@ -68,7 +68,7 @@ ItemDescriptions:
 	dw RedScaleDesc
 	dw SecretPotionDesc
 	dw SSTicketDesc
-	dw MysteryEggDesc
+	dw CabinKeyDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
@@ -528,9 +528,9 @@ SSTicketDesc:
 	db   "A ticket for the"
 	next "S.S.AQUA.@"
 
-MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from MR.#MON.@"
+CabinKeyDesc:
+	db   "Opens a cabin on"
+	next "the S.S. MAKO.@"
 
 ClearBellDesc:
 	db   "Makes a gentle"
@@ -757,7 +757,7 @@ LuckyEggDesc:
 
 CardKeyDesc:
 	db   "Opens shutters in"
-	next "the RADIO TOWER.@"
+	next "the HIDEOUT.@"
 
 MachinePartDesc:
 	db   "A machine part for"
@@ -780,7 +780,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 BasementKeyDesc:
-	db   "Opens doors.@"
+	db   "A key marked with"
+	next "a lightning bolt.@"
 
 PassDesc:
 	db   "A ticket for the"

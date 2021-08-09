@@ -1343,7 +1343,7 @@ GrassWildMons:
 	db 39, RHYHORN
 	db 40, RHYHORN
 	
-	map_id ROUTE_22_CAVE_1F
+	map_id MOLTEN_PEAK_1F
 	db 4 percent, 4 percent, 4 percent
 	db 38, GRAVELER
 	db 38, GRAVELER
@@ -1369,7 +1369,7 @@ GrassWildMons:
 	db 41, GOLBAT
 	db 42, GOLBAT
 	
-	map_id ROUTE_22_CAVE_B1F
+	map_id MOLTEN_PEAK_B1F
 	db 4 percent, 4 percent, 4 percent
 	db 38, GRAVELER
 	db 38, GRAVELER
@@ -1395,7 +1395,7 @@ GrassWildMons:
 	db 40, RHYHORN
 	db 41, RHYHORN
 
-	map_id ROUTE_22_CAVE_B2F
+	map_id MOLTEN_PEAK_B2F
 	db 4 percent, 4 percent, 4 percent
 	db 38, MAGCARGO
 	db 38, MAGCARGO
@@ -1421,7 +1421,7 @@ GrassWildMons:
 	db 40, RHYDON
 	db 41, RHYDON
 	
-	map_id ROUTE_22_NORTH
+	map_id ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, SLUGMA
@@ -1448,7 +1448,7 @@ GrassWildMons:
 	db 38, MAROWAK
 	db 38, MAROWAK
 	
-	map_id ROUTE_22_SOUTH
+	map_id MOLTEN_PEAK_OUTSIDE
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, SLUGMA

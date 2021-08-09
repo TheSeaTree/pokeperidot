@@ -142,6 +142,9 @@ UnusedTilesetAnim_fc103:
 
 TilesetPortAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $2c, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileLeft
+	dw vTiles2 tile $2c, WriteTileFromBuffer
 	dw NULL, AnimateLeftGeyserTile
 	dw NULL, AnimateRightGeyserTile
 	dw NULL, AnimateLeftGeyserTile2

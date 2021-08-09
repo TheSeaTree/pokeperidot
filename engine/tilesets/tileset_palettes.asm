@@ -79,9 +79,8 @@ LoadSpecialMapPalette:
 	ret
 	
 .port
-	call LoadPortPalette
-	scf
-	ret
+	ld hl, PortPalette
+	jp LoadEightTimeOfDayBGPalettes
 
 .gate
 	call LoadGatePalette
@@ -197,14 +196,6 @@ INCLUDE "gfx/tilesets/radio_tower.pal"
 MansionPalette1:
 INCLUDE "gfx/tilesets/mansion_1.pal"
 
-LoadPortPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, PortPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-	
 PortPalette:
 INCLUDE "gfx/tilesets/port.pal"
 

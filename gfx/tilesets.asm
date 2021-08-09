@@ -373,9 +373,6 @@ INCBIN "data/tilesets/battle_tower_attributes.bin"
 TilesetTowerAttr:
 INCBIN "data/tilesets/tower_attributes.bin"
 
-TilesetBattleTowerOutsideAttr:
-INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
-
 TilesetCastleAttr:
 INCBIN "data/tilesets/castle_attributes.bin"
 
@@ -402,6 +399,9 @@ INCBIN "data/tilesets/forest_attributes.bin"
 
 TilesetMountainAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
+
+TilesetBattleTowerOutsideAttr:
+INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
 
 
 SECTION "Tileset Data 12", ROMX

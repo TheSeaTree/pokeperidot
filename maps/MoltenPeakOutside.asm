@@ -1,13 +1,13 @@
 	const_def 2 ; object constants
 
-Route22South_MapScripts:
+MoltenPeakOutside_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .HiddenCave
 
 .HiddenCave
-	checkevent EVENT_ROUTE_22_HIDDEN_CAVE_OPEN
+	checkevent EVENT_MOLTEN_PEAK_HIDDEN_CAVE_OPEN
 	iffalse .skip
 	changeblock 24, 6, $3d
 .skip
@@ -68,10 +68,10 @@ TrainerSuperNerdDennis:
 	closetext
 	end	
 	
-Route22HealerScript:
+MoltenPeakHealerScript:
 	faceplayer
 	opentext
-	writetext Route22HealerText
+	writetext MoltenPeakHealerText
 	waitbutton
 	closetext
 	special FadeBlackQuickly
@@ -83,7 +83,7 @@ Route22HealerScript:
 	special FadeInQuickly
 	special RestartMapMusic
 	opentext
-	writetext Route22HealerGoodLuckText
+	writetext MoltenPeakHealerGoodLuckText
 	waitbutton
 	turnobject LAST_TALKED, UP
 	pause 10
@@ -92,19 +92,19 @@ Route22HealerScript:
 	closetext
 	end
 
-Route22ClefableScript:
+MoltenPeakClefableScript:
 	opentext
-	writetext Route22ClefableText
+	writetext MoltenPeakClefableText
 	cry CLEFABLE
 	waitbutton
 	closetext
 	end
 
-Route22SouthDragonScale:
+MoltenPeakOutsideDragonScale:
 	itemball DRAGON_SCALE
 	
-Route22SouthSign:
-	jumptext Route22SouthSignText
+MoltenPeakOutsideSign:
+	jumptext MoltenPeakOutsideSignText
 	
 BlackbeltRikuText:
 	text "You've met with"
@@ -239,7 +239,7 @@ SuperNerdDennisAfterText:
 	cont "my #MON."
 	done
 
-Route22HealerText:
+MoltenPeakHealerText:
 	text "Your #MON look"
 	line "awfully tired."
 
@@ -247,7 +247,7 @@ Route22HealerText:
 	line "and CLEFABLE help."
 	done
 	
-Route22HealerGoodLuckText:
+MoltenPeakHealerGoodLuckText:
 	text "There!"
 
 	para "Your #MON are"
@@ -256,11 +256,11 @@ Route22HealerGoodLuckText:
 	para "Good luck!"
 	done
 	
-Route22ClefableText:
+MoltenPeakClefableText:
 	text "CLEFABLE: Pippi!"
 	done
 
-Route22SouthSignText:
+MoltenPeakOutsideSignText:
 	text "ATTENTION!"
 	
 	para "Exercise extreme"
@@ -268,18 +268,18 @@ Route22SouthSignText:
 	cont "lava pools!"
 	done
 
-Route22South_MapEvents:
+MoltenPeakOutside_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 33, 27, ROUTE_22_CAVE_1F, 4
-	warp_event  7,  5, ROUTE_22_CAVE_1F, 1
-	warp_event 25,  7, ROUTE_22_HIDDEN_CAVE, 1
+	warp_event 33, 27, MOLTEN_PEAK_1F, 4
+	warp_event  7,  5, MOLTEN_PEAK_1F, 1
+	warp_event 25,  7, MOLTEN_PEAK_HIDDEN_CAVE, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 30, 28, BGEVENT_READ, Route22SouthSign
+	bg_event 30, 28, BGEVENT_READ, MoltenPeakOutsideSign
 
 	db 8 ; object events
 	object_event 18, 19, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 3, TrainerBlackbeltRiku, -1
@@ -287,6 +287,6 @@ Route22South_MapEvents:
 	object_event  9,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerCooltrainerFaith, -1
 	object_event 16, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNorris, -1
 	object_event 17, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdDennis, -1
-	object_event 12,  4, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22HealerScript, -1
-	object_event 13,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route22ClefableScript, -1
-	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route22SouthDragonScale, EVENT_ROUTE_22_DRAGON_SCALE
+	object_event 12,  4, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakHealerScript, -1
+	object_event 13,  4, SPRITE_CLEFAIRY, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MoltenPeakClefableScript, -1
+	object_event  6, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MoltenPeakOutsideDragonScale, EVENT_MOLTEN_PEAK_DRAGON_SCALE

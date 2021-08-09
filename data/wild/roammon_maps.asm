@@ -30,8 +30,8 @@ RoamMaps:
 	roam_map ROUTE_1, ROUTE_14
 	
 	; Moltres
-	roam_map ROUTE_22_NORTH, ROUTE_22_SOUTH
-	roam_map ROUTE_22_SOUTH, ROUTE_21
+	roam_map ROUTE_22, MOLTEN_PEAK_OUTSIDE
+	roam_map MOLTEN_PEAK_OUTSIDE, ROUTE_21
 	roam_map ROUTE_21, ROUTE_20
 	roam_map ROUTE_20, ROUTE_13
 	roam_map ROUTE_13, ACROPORA_CITY

@@ -460,6 +460,7 @@ FastShipGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
+	db SPRITE_PHARMACIST
 	; 5 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY

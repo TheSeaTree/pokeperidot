@@ -44,11 +44,11 @@ Landmarks:
 	landmark  36,  52, Route16Name ; ROUTE_20
 	landmark  36,  60, BlackthornCityName
 	landmark  42,  68, Route17Name ; ROUTE_21
-	landmark  26,  60, Route18Name ; ROUTE_22
+	landmark  28,  60, MoltenPeakName
+	landmark  20,  60, Route18Name ; ROUTE_22
+	landmark  20,  52, OrchidCityName
 	landmark  26,  60, Route20Name ; ROUTE_24
 	landmark  26,  60, Route21Name ; ROUTE_25
-	landmark  26,  60, MoltenPeakName
-	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
 	landmark 106,  58, RemnantCaveName
@@ -94,7 +94,7 @@ DragonsDenName:       db "DRAGON'S¯DEN@"
 IcePathName:          db "ICE PATH@"
 NotApplicableName:    db "N/A@" ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
 IndigoPlateauName:    db "#MON¯LEAGUE@"
-VictoryRoadName:      db "VICTORY¯ROAD@"
+VictoryRoadName:      db "VICTORY¯PORT@"
 MtMoonName:           db "MT.MOON@"
 RockTunnelName:       db "ROCK TUNNEL@"
 LavRadioTowerName:    db "LAV¯RADIO TOWER@"

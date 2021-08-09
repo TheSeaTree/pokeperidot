@@ -255,16 +255,19 @@ ENDM
 	map_const HO_OH_CASTLE_ROOF,                            7,  9 ; 18
 
 	newgroup                                                      ; 15
-	map_const ROUTE_25,									   23, 18
-	map_const FAST_SHIP_1F,								   11, 10
-	map_const FAST_SHIP_1F_ROOMS,						   12,  8
-	map_const FAST_SHIP_B1F,							   23,  7
-	map_const FAST_SHIP_B1F_CABIN,							5,  4
-	map_const FAST_SHIP_2F,								   11,  7
-	map_const FAST_SHIP_2F_ROOMS,						   25,  8
+	map_const ROUTE_25,									   	23, 18
+	map_const SS_MAKO_1F,								   	11, 10
+	map_const SS_MAKO_1F_ROOMS,						   		12,  8
+	map_const SS_MAKO_B1F,							   		23,  7
+	map_const SS_MAKO_B1F_CABIN,							 5,  4
+	map_const SS_MAKO_2F,								   	11,  7
+	map_const SS_MAKO_2F_ROOMS,						   		25,  8
+	map_const SS_MAKO_STERN,						   		10,  7
 
 	newgroup                                                      ; 16
 
+	map_const POKEMON_LEAGUE,							   24, 18
+	map_const VICTORY_PORT,							   	   23, 19
 	map_const INDIGO_PLATEAU_POKECENTER_1F,                 8,  4 ;  2
 	map_const ORVILLES_ROOM,                                7, 10 ;  3
 	map_const REGANS_ROOM,                                  7, 10 ;  5
@@ -351,12 +354,12 @@ ENDM
 	map_const ORCHID_GRANNYS_HOUSE,                        	4,  4
 	map_const ORCHID_BLACKBELTS_HOUSE,                     	8,  6
 	map_const ENTEI_LAIR,									7,  5
-	map_const ROUTE_22_CAVE_1F,							   14, 14
-	map_const ROUTE_22_CAVE_B1F,						   23, 17
-	map_const ROUTE_22_CAVE_B2F,						   21, 24
-	map_const ROUTE_22_NORTH,							   19,  8
-	map_const ROUTE_22_SOUTH,							   20, 19
-	map_const ROUTE_22_HIDDEN_CAVE,						    7,  8
+	map_const MOLTEN_PEAK_1F,							   14, 14
+	map_const MOLTEN_PEAK_B1F,							   23, 17
+	map_const MOLTEN_PEAK_B2F,							   21, 24
+	map_const ROUTE_22,									   19,  8
+	map_const MOLTEN_PEAK_OUTSIDE,						   20, 19
+	map_const MOLTEN_PEAK_HIDDEN_CAVE,					    7,  8
 	map_const ENTEI_CAVE_1F,							   16, 18
 	map_const ENTEI_CAVE_B1F,							   15, 18
 

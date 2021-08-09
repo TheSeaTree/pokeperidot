@@ -44,6 +44,7 @@ StdScripts::
 	dba TeleportGuyScript
 	dba StolenItemsBoxScript
 	dba WishingFountainScript
+	dba EmilyCompanionScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -580,7 +581,6 @@ DoTeleportScript:
 	teleport_to
 	step_resume
 	
-	
 CapsuleMachineScript:
 	opentext
 	farwritetext CapsuleMachineText
@@ -718,6 +718,76 @@ WishingFountainScript:
 	db "¥10@"
 	db "¥100@"
 	db "¥500@"
+	
+EmilyCompanionScript:
+	faceplayer
+	opentext
+; Make checks for certain story events on the ship
+	checkevent EVENT_SS_MAKO_DECK_CLEARED
+	iftrue .message11
+	checkevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	iftrue .message10
+	checkevent EVENT_ACCESS_TO_SS_MAKO_2F
+	iftrue .message9
+	checkevent EVENT_GOT_GOLDEN_TICKET
+	iftrue .message8
+	checkevent EVENT_USED_CABIN_KEY
+	iftrue .message7
+	checkevent EVENT_GOT_CABIN_KEY
+	iftrue .message6
+	checkevent EVENT_SS_MAKO_BASEMENT_DOOR_LOCKED
+	iftrue .message5
+	checkevent EVENT_GOLD_TICKET_LOCATION_INFO
+	iftrue .message4
+	checkevent EVENT_SS_MAKO_TRIED_GOING_UPSTAIRS
+	iftrue .message3
+	; A couple of random messages for her bag being stolen.
+	random 2
+	ifequal 1, .message2
+	farwritetext EmilyCompanionText1
+	jump .waitbuttonclosetext
+.message2
+	farwritetext EmilyCompanionText2
+	jump .waitbuttonclosetext
+.message3
+	; After the player tries to go upstairs
+	farwritetext EmilyCompanionText3
+	jump .waitbuttonclosetext
+.message4
+	; Have a counter for the SS Mako trainers, and make one of them hint at the guy in the basement with a ticket after losing.
+	farwritetext EmilyCompanionText4
+	jump .waitbuttonclosetext
+.message5
+	; The door to the basement cabin is locked.
+	farwritetext EmilyCompanionText5
+	jump .waitbuttonclosetext
+.message6
+	; After the player finds the key for the basement cabin.
+	farwritetext EmilyCompanionText6
+	jump .waitbuttonclosetext
+.message7
+	; Basement door is unlocked.
+	farwritetext EmilyCompanionText7
+	jump .waitbuttonclosetext
+.message8
+	; Have the golden ticket.
+	farwritetext EmilyCompanionText8
+	jump .waitbuttonclosetext
+.message9
+	; Access to the second floor.
+	farwritetext EmilyCompanionText9
+	jump .waitbuttonclosetext
+.message10
+	; After the player has talked to an NPC outside, unlock the doors on the second floor.
+	farwritetext EmilyCompanionText10
+	jump .waitbuttonclosetext
+.message11
+	; When the player has defeated enough trainers on the second floor.
+	farwritetext EmilyCompanionText11
+.waitbuttonclosetext
+	waitbutton
+	closetext
+	end
 
 Movement_ContestResults_WalkAfterWarp:
 	step DOWN

@@ -249,9 +249,9 @@ ENDM
 	connection north, Route19, ROUTE_19, 0
 	
 	map_attributes OrchidCity, ORCHID_CITY, $35, SOUTH
-	connection south, Route22North, ROUTE_22_NORTH, 4
+	connection south, Route22, ROUTE_22, 4
 	
-	map_attributes Route22North, ROUTE_22_NORTH, $35, NORTH
+	map_attributes Route22, ROUTE_22, $35, NORTH
 	connection north, OrchidCity, ORCHID_CITY, -4
 
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
@@ -434,15 +434,15 @@ ENDM
 	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0
 	map_attributes DrainPunchChamber, DRAIN_PUNCH_CHAMBER, $09, 0
 	map_attributes OrchidPokecenter1F, ORCHID_POKECENTER_1F, $00, 0
-	map_attributes Route22Cave1F, ROUTE_22_CAVE_1F, $09, 0
-	map_attributes Route22CaveB1F, ROUTE_22_CAVE_B1F, $09, 0
-	map_attributes Route22CaveB2F, ROUTE_22_CAVE_B2F, $09, 0
-	map_attributes Route22South, ROUTE_22_SOUTH, $35, 0
+	map_attributes MoltenPeak1F, MOLTEN_PEAK_1F, $09, 0
+	map_attributes MoltenPeakB1F, MOLTEN_PEAK_B1F, $09, 0
+	map_attributes MoltenPeakB2F, MOLTEN_PEAK_B2F, $09, 0
+	map_attributes MoltenPeakOutside, MOLTEN_PEAK_OUTSIDE, $35, 0
 	map_attributes HepaticaGymNorthChamber, HEPATICA_GYM_NORTH_CHAMBER, $00, 0
 	map_attributes HepaticaGymEastChamber, HEPATICA_GYM_EAST_CHAMBER, $00, 0
 	map_attributes HepaticaGymWestChamber, HEPATICA_GYM_WEST_CHAMBER, $00, 0
 	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
-	map_attributes Route22HiddenCave, ROUTE_22_HIDDEN_CAVE, $09, 0
+	map_attributes MoltenPeakHiddenCave, MOLTEN_PEAK_HIDDEN_CAVE, $09, 0
 	map_attributes Route11CurseHouse, ROUTE_11_CURSE_HOUSE, $00, 0
 	map_attributes NevermelticeChamber, NEVERMELTICE_CHAMBER, $09, 0
 	map_attributes Route20HeavyBallHouse, HEAVY_BALL_HOUSE, $00, 0
@@ -501,12 +501,15 @@ ENDM
 	map_attributes RemnantCave3F, REMNANT_CAVE_3F, $09, 0
 	map_attributes LostLandCave1F, LOST_LAND_CAVE_1F, $09, 0
 	map_attributes LostLandHiddenCave1F, LOST_LAND_HIDDEN_CAVE_1F, $09, 0
-	map_attributes FastShip1F, FAST_SHIP_1F, $00, 0
-	map_attributes FastShip1FRooms, FAST_SHIP_1F_ROOMS, $00, 0
-	map_attributes FastShipB1F, FAST_SHIP_B1F, $00, 0
-	map_attributes FastShipB1FCabin, FAST_SHIP_B1F_CABIN, $00, 0
 	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
 	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $8c, 0
 	map_attributes OrchidBlackbeltsHouse, ORCHID_BLACKBELTS_HOUSE, $09, 0
-	map_attributes FastShip2F, FAST_SHIP_2F, $00, 0
-	map_attributes FastShip2FRooms, FAST_SHIP_2F_ROOMS, $00, 0
+	map_attributes SSMako1F, SS_MAKO_1F, $00, 0
+	map_attributes SSMako1FRooms, SS_MAKO_1F_ROOMS, $00, 0
+	map_attributes SSMakoB1F, SS_MAKO_B1F, $00, 0
+	map_attributes SSMakoB1FCabin, SS_MAKO_B1F_CABIN, $00, 0
+	map_attributes SSMako2F, SS_MAKO_2F, $00, 0
+	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
+	map_attributes SSMakoStern, SS_MAKO_STERN, $72, 0
+	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
+	map_attributes VictoryPort, VICTORY_PORT, $11, 0

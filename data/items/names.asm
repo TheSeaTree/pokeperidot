@@ -67,7 +67,7 @@ ItemNames::
 	db "RED SCALE@"
 	db "SECRETPOTION@"
 	db "S.S.TICKET@"
-	db "MYSTERY EGG@"
+	db "CABIN KEY@"
 	db "CLEAR BELL@"
 	db "SILVER WING@"
 	db "MOOMOO MILK@"

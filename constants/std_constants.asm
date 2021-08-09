@@ -45,3 +45,4 @@
 	enum teleportguy
 	enum stolenitemboxes
 	enum wishingfountain
+	enum emilycompanion

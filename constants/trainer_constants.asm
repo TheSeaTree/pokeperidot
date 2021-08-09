@@ -147,6 +147,7 @@ CHRIS EQU __enum__
 	const JOHNNY
 	const GUS
 	const MARTIN
+	const OLIVER
 
 	trainerclass BIRD_KEEPER ; 18
 	const PHIL
@@ -156,6 +157,7 @@ CHRIS EQU __enum__
 	const RICKY
 	const HUGH
 	const RILEY
+	const COREY
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -187,6 +189,7 @@ CHRIS EQU __enum__
 	const EVE
 	const FAITH
 	const KARI
+	const HEIDY
 	
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -214,6 +217,8 @@ CHRIS EQU __enum__
 
 	trainerclass GENTLEMAN ; 20
 	const WINFRED
+	const CHARLES
+	const RON
 	
 	trainerclass SKIER ; 21
 	
@@ -273,6 +278,10 @@ CHRIS EQU __enum__
 	const MILES
 	const ROLAND
 	const TUCKER
+	const GENE
+	const RANDY
+	const NATHAN
+	const ROSCOE
 	
 	trainerclass SUPER_NERD ; 29
 	const SHANE
@@ -282,6 +291,7 @@ CHRIS EQU __enum__
 	const HAL
 	const DENNIS
 	const HERBERT
+	const MAX
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -408,6 +418,9 @@ CHRIS EQU __enum__
 
 	trainerclass ENGINEER ; 37
 	const ENRIQUE
+	const RUDOLPH
+	const ARNIE
+	const BERNARD
 
 	trainerclass SAGE ; 38
 	const CALEB
@@ -425,6 +438,7 @@ CHRIS EQU __enum__
 	const GERALD
 	const RICHARD
 	const DOUG
+	const HANS
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const ANRI

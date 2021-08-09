@@ -193,6 +193,8 @@ INCLUDE "maps/Route14Gate.asm"
 
 SECTION "Map Scripts 13", ROMX
 
+INCLUDE "maps/PokemonLeague.asm"
+INCLUDE "maps/VictoryPort.asm"
 INCLUDE "maps/IndigoPlateauPokecenter1F.asm"
 INCLUDE "maps/OrvillesRoom.asm"
 INCLUDE "maps/RegansRoom.asm"
@@ -223,9 +225,9 @@ INCLUDE "maps/OrchidDragonbreathHouse.asm"
 INCLUDE "maps/OrchidTeachersHouse.asm"
 INCLUDE "maps/OrchidGrannysHouse.asm"
 INCLUDE "maps/OrchidBlackbeltsHouse.asm"
-INCLUDE "maps/Route22Cave1F.asm"
-INCLUDE "maps/Route22CaveB1F.asm"
-INCLUDE "maps/Route22CaveB2F.asm"
+INCLUDE "maps/MoltenPeak1F.asm"
+INCLUDE "maps/MoltenPeakB1F.asm"
+INCLUDE "maps/MoltenPeakB2F.asm"
 
 
 SECTION "Map Scripts 16", ROMX
@@ -238,8 +240,8 @@ INCLUDE "maps/PectiniaGym.asm"
 INCLUDE "maps/Route21.asm"
 INCLUDE "maps/Route24.asm"
 INCLUDE "maps/Route25.asm"
-INCLUDE "maps/Route22North.asm"
-INCLUDE "maps/Route22South.asm"
+INCLUDE "maps/Route22.asm"
+INCLUDE "maps/MoltenPeakOutside.asm"
 INCLUDE "maps/Route23.asm"
 INCLUDE "maps/RugosaCafe.asm"
 
@@ -287,12 +289,6 @@ INCLUDE "maps/RemnantCaveOutside.asm"
 INCLUDE "maps/RemnantCave3F.asm"
 INCLUDE "maps/LostLandHiddenCave1F.asm"
 INCLUDE "maps/LostLandCave1F.asm"
-INCLUDE "maps/FastShip1F.asm"
-INCLUDE "maps/FastShip1FRooms.asm"
-INCLUDE "maps/FastShipB1F.asm"
-INCLUDE "maps/FastShipB1FCabin.asm"
-INCLUDE "maps/FastShip2F.asm"
-INCLUDE "maps/FastShip2FRooms.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -361,6 +357,7 @@ INCLUDE "maps/Route14Cave1F.asm"
 INCLUDE "maps/Route14Cave2F.asm"
 INCLUDE "maps/CarnationTown.asm"
 INCLUDE "maps/CarnationZooGate.asm"
+INCLUDE "maps/HiddenPowerCave.asm"
 
 
 SECTION "Map Scripts 24", ROMX
@@ -374,7 +371,10 @@ INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
 INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route10South.asm"
-INCLUDE "maps/Route22HiddenCave.asm"
+INCLUDE "maps/MoltenPeakHiddenCave.asm"
+INCLUDE "maps/Factory1F.asm"
+INCLUDE "maps/FactoryB1.asm"
+INCLUDE "maps/FactoryBack.asm"
 
 
 SECTION "Map Scripts 25", ROMX
@@ -393,12 +393,17 @@ INCLUDE "maps/PalerockMountainStrengthRoom.asm"
 INCLUDE "maps/StaghornForestGate.asm"
 INCLUDE "maps/Route4ForestGate.asm"
 INCLUDE "maps/Route4PectiniaGate.asm"
-INCLUDE "maps/HiddenPowerCave.asm"
-INCLUDE "maps/Factory1F.asm"
-INCLUDE "maps/FactoryB1.asm"
-INCLUDE "maps/FactoryBack.asm"
 INCLUDE "maps/OverlookMaze.asm"
 
+
 SECTION "Map Scripts 26", ROMX
+
 INCLUDE "maps/EnteiCave1F.asm"
 INCLUDE "maps/EnteiCaveB1F.asm"
+INCLUDE "maps/SSMako1F.asm"
+INCLUDE "maps/SSMako1FRooms.asm"
+INCLUDE "maps/SSMakoB1F.asm"
+INCLUDE "maps/SSMakoB1FCabin.asm"
+INCLUDE "maps/SSMako2F.asm"
+INCLUDE "maps/SSMako2FRooms.asm"
+INCLUDE "maps/SSMakoStern.asm"

@@ -94,7 +94,7 @@ EnteiCave1F_MapEvents:
 
 	db 7 ; warp events
 	warp_event  8, 27, ENTEI_CAVE_B1F, 1
-	warp_event 13, 33, ROUTE_22_CAVE_B2F, 7
+	warp_event 13, 33, MOLTEN_PEAK_B2F, 7
 	warp_event 23, 15, ENTEI_CAVE_B1F, 3
 	warp_event 21, 23, ENTEI_CAVE_B1F, 4 ; Pit
 	warp_event 13, 13, ENTEI_CAVE_B1F, 5 ; Pit

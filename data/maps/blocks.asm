@@ -359,6 +359,12 @@ SilverCaveRoom3_Blocks:
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.ablk"
 
+VictoryPort_Blocks:
+	INCBIN "maps/VictoryPort.ablk"
+
+PokemonLeague_Blocks:
+	INCBIN "maps/PokemonLeague.ablk"
+
 IndigoPlateauPokecenter1F_Blocks:
 	INCBIN "maps/IndigoPlateauPokecenter1F.ablk"
 
@@ -702,23 +708,23 @@ Route9Cave1F_Blocks:
 DrainPunchChamber_Blocks:
 	INCBIN "maps/DrainPunchChamber.ablk"
 
-Route22North_Blocks:
-	INCBIN "maps/Route22North.ablk"
+Route22_Blocks:
+	INCBIN "maps/Route22.ablk"
 
-Route22South_Blocks:
-	INCBIN "maps/Route22South.ablk"
+MoltenPeakOutside_Blocks:
+	INCBIN "maps/MoltenPeakOutside.ablk"
 	
 Route23_Blocks:
 	INCBIN "maps/Route23.ablk"
 
-Route22Cave1F_Blocks:
-	INCBIN "maps/Route22Cave1F.ablk"
+MoltenPeak1F_Blocks:
+	INCBIN "maps/MoltenPeak1F.ablk"
 
-Route22CaveB1F_Blocks:
-	INCBIN "maps/Route22CaveB1F.ablk"
+MoltenPeakB1F_Blocks:
+	INCBIN "maps/MoltenPeakB1F.ablk"
 
-Route22CaveB2F_Blocks:
-	INCBIN "maps/Route22CaveB2F.ablk"
+MoltenPeakB2F_Blocks:
+	INCBIN "maps/MoltenPeakB2F.ablk"
 
 NevermelticeChamber_Blocks:
 Route4HiddenCave_Blocks:
@@ -727,8 +733,8 @@ Route8HiddenCave_Blocks:
 Route11HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
-Route22HiddenCave_Blocks:
-	INCBIN "maps/Route22HiddenCave.ablk"
+MoltenPeakHiddenCave_Blocks:
+	INCBIN "maps/MoltenPeakHiddenCave.ablk"
 	
 SECTION "Map Blocks 5", ROMX
 	
@@ -750,23 +756,26 @@ LostLandHiddenCave1F_Blocks:
 LostLandCave1F_Blocks:
 	INCBIN "maps/LostLandCave1F.ablk"
 	
-FastShip1F_Blocks:
-	INCBIN "maps/FastShip1F.ablk"
+SSMako1F_Blocks:
+	INCBIN "maps/SSMako1F.ablk"
 
-FastShip1FRooms_Blocks:
-	INCBIN "maps/FastShip1FRooms.ablk"
+SSMako1FRooms_Blocks:
+	INCBIN "maps/SSMako1FRooms.ablk"
 
-FastShipB1F_Blocks:
-	INCBIN "maps/FastShipB1F.ablk"
+SSMakoB1F_Blocks:
+	INCBIN "maps/SSMakoB1F.ablk"
 
-FastShipB1FCabin_Blocks:
-	INCBIN "maps/FastShipB1FCabin.ablk"
+SSMakoB1FCabin_Blocks:
+	INCBIN "maps/SSMakoB1FCabin.ablk"
 
-FastShip2F_Blocks:
-	INCBIN "maps/FastShip2F.ablk"
+SSMako2F_Blocks:
+	INCBIN "maps/SSMako2F.ablk"
 
-FastShip2FRooms_Blocks:
-	INCBIN "maps/FastShip2FRooms.ablk"
+SSMako2FRooms_Blocks:
+	INCBIN "maps/SSMako2FRooms.ablk"
+	
+SSMakoStern_Blocks:
+	INCBIN "maps/SSMakoStern.ablk"
 
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:

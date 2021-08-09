@@ -81,7 +81,7 @@ ItemEffects:
 	dw NoEffect            ; RED_SCALE
 	dw NoEffect            ; SECRETPOTION
 	dw NoEffect            ; S_S_TICKET
-	dw NoEffect            ; MYSTERY_EGG
+	dw NoEffect            ; CABIN_KEY
 	dw NoEffect            ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
 	dw RestoreHPEffect     ; MOOMOO_MILK

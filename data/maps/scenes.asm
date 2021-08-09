@@ -52,10 +52,11 @@ MapScenes::
 	scene_var ORCHID_GYM_1F,						   	wOrchidGym1FSceneID
 	scene_var BATTLE_SUBWAY_PLATFORM,                   wBattleSubwayPlatformSceneID
 	scene_var BATTLE_SUBWAY_TRAIN,                    	wBattleSubwayTrainSceneID
-	scene_var FAST_SHIP_1F,                    			wFastShip1FSceneID
-	scene_var FAST_SHIP_1F_ROOMS,                       wFastShip1FRoomsSceneID
-	scene_var FAST_SHIP_B1F,                    		wFastShipB1FSceneID
-	scene_var FAST_SHIP_B1F_CABIN,                 		wFastShipB1FCabinSceneID
-	scene_var FAST_SHIP_2F,                    			wFastShip2FSceneID
-	scene_var FAST_SHIP_2F_ROOMS,                       wFastShip2FRoomsSceneID
+	scene_var SS_MAKO_1F,                    			wSSMako1FSceneID
+	scene_var SS_MAKO_1F_ROOMS,                       	wSSMako1FRoomsSceneID
+	scene_var SS_MAKO_B1F,                    			wSSMakoB1FSceneID
+	scene_var SS_MAKO_B1F_CABIN,                 		wSSMakoB1FCabinSceneID
+	scene_var SS_MAKO_2F,                    			wSSMako2FSceneID
+	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
+	scene_var SS_MAKO_STERN,                       		wSSMakoSternSceneID
 	db -1

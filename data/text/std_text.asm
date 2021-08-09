@@ -225,7 +225,102 @@ FountainTossed500Text:
 	text "<PLAYER> tossed in"
 	line "¥500."
 	done
+
+EmilyCompanionText1:
+	text "I don't know what I"
+	line "will do if I don't"
+	cont "get my #MON"
+	cont "back soon!"
+	done
 	
+EmilyCompanionText2:
+	text "He couldn't have"
+	line "gotten far."
+	
+	para "Let's go!"
+	done
+	
+EmilyCompanionText3:
+	text "We should see if"
+	line "any trainers on"
+	cont "the first floor"
+	cont "know how to get a"
+	cont "GOLD TICKET!"
+	done
+
+EmilyCompanionText4:
+	text "That trainer said" 
+	line "we could find a"
+	cont "ticket down in the"
+	cont "basement."
+
+	para "Let's go down there"
+	line "and look!"
+	done
+
+EmilyCompanionText5:
+	text "One of the workers"
+	line "must have a key"
+	cont "for the door in"
+	cont "the basement!"
+	done
+
+EmilyCompanionText6:
+	text "We should try out"
+	line "that CABIN KEY you"
+	cont "found."
+	
+	para "Maybe it will open"
+	line "up the door in"
+	cont "the basement!"
+	done
+	
+EmilyCompanionText7:
+	text "The door's unlocked"
+	line "now. What are we"
+	cont "waiting for? Let's"
+	cont "go talk to whoever"
+	cont "is inside."
+	done
+
+EmilyCompanionText8:
+	text "We have the GOLD"
+	line "TICKET now!"
+	
+	para "We can go upstairs"
+	line "and check it out."
+	done
+
+EmilyCompanionText9:
+	text "Wow! It's so nice"
+	line "up here, don't you"
+	cont "think, <PLAYER>?"
+	
+	para "I wish we could"
+	line "take a moment to"
+	cont "enjoy it here!"
+	done
+
+EmilyCompanionText10:
+	text "It's impossible to"
+	line "get through that"
+	cont "crowd right now!"
+	
+	para "Let's go check the"
+	line "rooms back inside."
+	done
+
+EmilyCompanionText11:
+	text "Come on, let's see"
+	line "if those people"
+	cont "outside have"
+	cont "cleared out."
+	
+	para "There's only one"
+	line "last place that"
+	cont "crook could be!"
+	done
+
 GymGeyserText:
 	text "It's impossible to"
 	line "pass!"

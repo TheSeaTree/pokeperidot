@@ -140,7 +140,7 @@ AcroporaCave1F_MapEvents:
 	warp_event  9, 11, ACROPORA_CAVE_B1F, 1
 	warp_event 19,  5, ACROPORA_CAVE_B1F, 2
 	warp_event 31, 11, ACROPORA_CITY, 7
-	warp_event  5,  5, ROUTE_22_CAVE_1F, 5
+	warp_event  5,  5, MOLTEN_PEAK_1F, 5
 
 	db 0 ; coord events
 

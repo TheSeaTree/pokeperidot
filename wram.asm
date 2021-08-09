@@ -2608,17 +2608,18 @@ wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
 wOlivinePortSceneID::                             db ; d9ba
 wVermilionPortSceneID::                           db ; d9bb
-wFastShip1FSceneID::                              db ; d9bc
-wFastShipB1FSceneID::                             db ; d9bd
+wSSMako1FSceneID::                                db ; d9bc
+wSSMakoB1FSceneID::                               db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
-wFastShip1FRoomsSceneID::                         db ; d9bc
-wFastShipB1FCabinSceneID::                        db ; d9bc
-wFastShip2FSceneID::                              db ; d9bc
-wFastShip2FRoomsSceneID::                         db ; d9bd
+wSSMako1FRoomsSceneID::                           db ; d9bc
+wSSMakoB1FCabinSceneID::                          db ; d9bc
+wSSMako2FSceneID::                                db ; d9bc
+wSSMako2FRoomsSceneID::                           db ; d9bd
+wSSMakoSternSceneID::                         	  db ; d9bd
 
-	ds 45
+	ds 44
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2
@@ -2630,8 +2631,8 @@ wJoelFightCount::    	db
 wAlanFightCount::    	db
 wEnyaFightCount::    	db
 wEliteFourFightCount::	db
-wRalphFightCount::   	db ; unused
-wLizFightCount::     	db ; unused
+wSSMako1FFightCount::   Db
+wSSMako2FFightCount::   db
 wAnthonyFightCount:: 	db ; unused
 wToddFightCount::    	db ; unused
 wGinaFightCount::    	db ; unused
