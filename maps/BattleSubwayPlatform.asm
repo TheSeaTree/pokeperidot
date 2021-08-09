@@ -3,6 +3,9 @@
 	const BATTLESUBWAYPLATFORM_RECEPTIONIST2
 	const BATTLESUBWAYPLATFORM_OFFICER1
 	const BATTLESUBWAYPLATFORM_OFFICER2
+	const BATTLESUBWAYPLATFORM_BUGCATCHER
+	const BATTLESUBWAYPLATFORM_POKEFANF
+	const BATTLESUBWAYPLATFORM_POKEFANM
 
 BattleSubwayPlatform_MapScripts:
 	db 3 ; scene scripts
@@ -166,7 +169,7 @@ Script_WalkToBattleTowerElevator:
 	applymovement BATTLESUBWAYPLATFORM_OFFICER1, MovementData_BattleTower1FWalkToElevator
 	writebyte BATTLETOWERACTION_0A
 	special BattleTowerAction
-	warpsound
+;	warpsound
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	stopfollow
 	applymovement PLAYER, MovementData_BattleTowerHallwayPlayerEntersBattleRoom
@@ -201,7 +204,7 @@ Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
-
+	
 	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
 	special UpdatePartyStats
 	special HealParty
@@ -331,6 +334,7 @@ MovementData_BattleTower1FWalkToElevator:
 
 MovementData_BattleTowerHallwayPlayerEntersBattleRoom:
 	step UP
+	hide_person
 	step_end
 
 MovementData_BattleTowerElevatorExitElevator:
@@ -435,8 +439,10 @@ MovementData_BattleSubwayTrainPlayerLeavesTrain2:
 	step DOWN
 	step DOWN
 	step_end
-	
+
 MovementData_BattleSubwayTrainPlayerBoardsTrain:
+	show_person
+	step_sleep 1
 	step UP
 	step UP
 	step RIGHT
@@ -701,4 +707,4 @@ BattleSubwayPlatform_MapEvents:
 	object_event 23,  6, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
 	object_event  4,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
-	object_event 15,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
