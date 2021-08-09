@@ -255,7 +255,7 @@ RugosaPort_MapEvents:
 	db 3 ; warp events
 	warp_event  8, 25, RUGOSA_COAST, 6
 	warp_event  9, 25, RUGOSA_COAST, 6
-	warp_event 14, 15, FAST_SHIP_1F, 1 ; Ship
+	warp_event 14, 15, SS_MAKO_1F, 1 ; Ship
 
 	db 0 ; coord events
 ;	coord_event  2,  2, SCENE_DEFAULT, RugosaPortWalkUpToShipScript

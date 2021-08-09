@@ -702,7 +702,7 @@ RugosaCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 11 ; warp events
-	warp_event 27, 33, RUGOSA_GATE, 1
+	warp_event 27, 33, SS_MAKO_1F, 1
 	warp_event 28, 33, RUGOSA_GATE, 2
 	warp_event  6,  4, POWER_PLANT_1F_B, 1
 	warp_event 31, 29, RUGOSA_POKECENTER_1F, 1
