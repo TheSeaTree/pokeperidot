@@ -1150,6 +1150,7 @@ MiltankEggMoves:
 	db DIZZY_PUNCH
 	db DOUBLE_EDGE
 	db CHARM
+	db TWISTER
 	db -1 ; end
 
 LarvitarEggMoves:

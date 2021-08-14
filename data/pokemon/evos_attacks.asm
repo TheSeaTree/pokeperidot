@@ -1042,7 +1042,7 @@ MachopEvosAttacks:
 	db 37, BULK_UP
 	db 39, CROSS_CHOP
 	db 41, SCARY_FACE
-	db 44, STONE_EDGE
+	db 44, DYNAMICPUNCH
 	db 49, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -1061,7 +1061,7 @@ MachokeEvosAttacks:
 	db 43, BULK_UP
 	db 47, CROSS_CHOP
 	db 50, SCARY_FACE
-	db 53, STONE_EDGE
+	db 53, DYNAMICPUNCH
 	db 57, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -1079,7 +1079,7 @@ MachampEvosAttacks:
 	db 43, BULK_UP
 	db 47, CROSS_CHOP
 	db 50, SCARY_FACE
-	db 53, STONE_EDGE
+	db 53, DYNAMICPUNCH
 	db 57, SUBMISSION
 	db 0 ; no more level-up moves
 
@@ -3548,6 +3548,7 @@ HeracrossEvosAttacks:
 	db 35, DOUBLE_EDGE
 	db 44, REVERSAL
 	db 54, MEGAHORN
+	db 60, DYNAMICPUNCH
 	db 0 ; no more level-up moves
 
 TungtyedEvosAttacks:
@@ -4169,7 +4170,7 @@ OctankEvosAttacks:
 	db 54, HYPER_BEAM
 	db 58, ZAP_CANNON
 	db 0 ; no more level-up moves
-	
+
 FerrodonEvosAttacks:
 	db  0 ; no more evolutions
 	db  1, TACKLE
