@@ -4666,6 +4666,8 @@ BattleAnim_NastyPlot:
 	anim_wait 16
 	anim_obj ANIM_OBJ_AMNESIA, 72, 80, $0
 	anim_wait 64
+	anim_incbgeffect ANIM_BG_1A
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_PsychUp:
