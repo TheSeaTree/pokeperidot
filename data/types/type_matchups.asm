@@ -122,6 +122,7 @@ TypeMatchups:
 	db PSNPOWDER, GRASS,     NO_EFFECT
 	db PSNPOWDER, POISON,    NO_EFFECT
 	db PSNPOWDER, STEEL,     NO_EFFECT
+	db WILLOWISP, FIRE,      NO_EFFECT
 
 	db -2 ; end (with Foresight)
 

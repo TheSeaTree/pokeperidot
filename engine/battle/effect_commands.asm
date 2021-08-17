@@ -4056,21 +4056,6 @@ CheckIfTargetIsElectricType:
 	cp ELECTRIC
 	ret
 
-CheckIfTargetIsFireType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp FIRE
-	ret z
-	ld a, [de]
-	cp FIRE
-	ret
-	
 BattleCommand_AttackUp:
 ; attackup
 	ld b, ATTACK
@@ -4148,12 +4133,10 @@ BattleCommand_GrowthAttack:
 	jr z, .Sunny
 	ld b, ATTACK
 	jr BattleCommand_StatUp
-	ret
 	
 .Sunny
 	ld b, $10 | ATTACK
 	jr BattleCommand_StatUp
-	ret
 
 BattleCommand_GrowthSpecial:
 ; growthspecial
@@ -4162,12 +4145,10 @@ BattleCommand_GrowthSpecial:
 	jr z, .Sunny
 	ld b, SP_ATTACK
 	jr BattleCommand_StatUp
-	ret
 	
 .Sunny
 	ld b, $10 | SP_ATTACK
-	jr BattleCommand_StatUp
-	ret
+	; fallthrough
 	
 BattleCommand_StatUp:
 ; statup
@@ -5896,7 +5877,7 @@ BattleCommand_Paralyze:
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
-	
+
 BattleCommand_Burn:
 ; burn
 
@@ -5906,8 +5887,6 @@ BattleCommand_Burn:
 	jr nz, .burned
 	ld a, [wTypeModifier]
 	and $7f
-	jr z, .didnt_affect
-	call CheckIfTargetIsFireType
 	jr z, .didnt_affect
 
 	ld a, BATTLE_VARS_STATUS_OPP
