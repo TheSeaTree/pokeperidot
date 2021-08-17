@@ -67,8 +67,8 @@ ItemDescriptions:
 	dw ElixerDesc
 	dw RedScaleDesc
 	dw SecretPotionDesc
-	dw SSTicketDesc
-	dw CabinKeyDesc
+	dw VIPTicketDesc
+	dw EngineKeyDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
@@ -524,13 +524,13 @@ SecretPotionDesc:
 	db   "Fully heals any"
 	next "#MON.@"
 
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.AQUA.@"
+VIPTicketDesc:
+	db   "S.S.MAKO FIRST"
+	next "CLASS access.@"
 
-CabinKeyDesc:
-	db   "Opens a cabin on"
-	next "the S.S. MAKO.@"
+EngineKeyDesc:
+	db   "S.S. MAKO engine"
+	next "access key.@"
 
 ClearBellDesc:
 	db   "Makes a gentle"

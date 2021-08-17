@@ -10,7 +10,7 @@ MapScenes::
 	scene_var COLOSSEUM,                                wColosseumSceneID
 	scene_var SEA_ROUTE_2,                              wRoute16GateSceneID
 	scene_var ROUTE_8_ROUTE_10_GATE,                    wRoute17Route18GateSceneID
-	scene_var INDIGO_PLATEAU_POKECENTER_1F,             wIndigoPlateauPokecenter1FSceneID
+	scene_var POKEMON_LEAGUE_POKECENTER_1F,             wPokemonLeaguePokecenter1FSceneID
 	scene_var ORVILLES_ROOM,                            wOrvillesRoomSceneID
 	scene_var REGANS_ROOM,                              wRegansRoomSceneID
 	scene_var BREDES_ROOM,                              wBredesRoomSceneID
@@ -55,7 +55,7 @@ MapScenes::
 	scene_var SS_MAKO_1F,                    			wSSMako1FSceneID
 	scene_var SS_MAKO_1F_ROOMS,                       	wSSMako1FRoomsSceneID
 	scene_var SS_MAKO_B1F,                    			wSSMakoB1FSceneID
-	scene_var SS_MAKO_B1F_CABIN,                 		wSSMakoB1FCabinSceneID
+	scene_var SS_MAKO_ENGINE_ROOM,                 		wSSMakoEngineRoomSceneID
 	scene_var SS_MAKO_2F,                    			wSSMako2FSceneID
 	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
 	scene_var SS_MAKO_STERN,                       		wSSMakoSternSceneID

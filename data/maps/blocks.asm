@@ -362,11 +362,14 @@ MountMoonGiftShop_Blocks:
 VictoryPort_Blocks:
 	INCBIN "maps/VictoryPort.ablk"
 
+VictoryPortInside_Blocks:
+	INCBIN "maps/VictoryPortInside.ablk"
+
 PokemonLeague_Blocks:
 	INCBIN "maps/PokemonLeague.ablk"
 
-IndigoPlateauPokecenter1F_Blocks:
-	INCBIN "maps/IndigoPlateauPokecenter1F.ablk"
+PokemonLeaguePokecenter1F_Blocks:
+	INCBIN "maps/PokemonLeaguePokecenter1F.ablk"
 
 OrvillesRoom_Blocks:
 	INCBIN "maps/OrvillesRoom.ablk"
@@ -765,8 +768,8 @@ SSMako1FRooms_Blocks:
 SSMakoB1F_Blocks:
 	INCBIN "maps/SSMakoB1F.ablk"
 
-SSMakoB1FCabin_Blocks:
-	INCBIN "maps/SSMakoB1FCabin.ablk"
+SSMakoEngineRoom_Blocks:
+	INCBIN "maps/SSMakoEngineRoom.ablk"
 
 SSMako2F_Blocks:
 	INCBIN "maps/SSMako2F.ablk"

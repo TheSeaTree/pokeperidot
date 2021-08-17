@@ -73,8 +73,8 @@
 	const ELIXER       ; 41
 	const RED_SCALE    ; 42
 	const SECRETPOTION ; 43
-	const S_S_TICKET   ; 44
-	const CABIN_KEY    ; 45
+	const VIP_TICKET   ; 44
+	const ENGINE_KEY   ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48

@@ -68,7 +68,7 @@ MAP_NONE   EQU 0
 const_value = -1
 	const SPAWN_N_A
 	const SPAWN_HOME
-	const SPAWN_DEBUG
+	const SPAWN_SS_MAKO
 ; johto
 	const SPAWN_ELKHORN
 	const SPAWN_PAVONA

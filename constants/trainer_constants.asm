@@ -190,7 +190,7 @@ CHRIS EQU __enum__
 	const FAITH
 	const KARI
 	const HEIDY
-	
+
 	trainerclass BEAUTY ; 1d
 	const LILY
 	const BLAZE
@@ -204,7 +204,7 @@ CHRIS EQU __enum__
 	const DIANE
 	const CHELLE
 	const ERIN
-	
+
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
 	const SCOTT
@@ -227,7 +227,8 @@ CHRIS EQU __enum__
 	const SHARON
 	const LISA
 	const BEA
-	
+	const ILENE
+
 	trainerclass SABRINA ; 23
 	const SABRINA1
 
@@ -279,9 +280,11 @@ CHRIS EQU __enum__
 	const ROLAND
 	const TUCKER
 	const GENE
-	const RANDY
+	const DARIUS
 	const NATHAN
 	const ROSCOE
+	const HERMAN
+	const TAYLOR
 	
 	trainerclass SUPER_NERD ; 29
 	const SHANE
@@ -361,6 +364,7 @@ CHRIS EQU __enum__
 	const DUKE
 	const HARRIS
 	const DUKE2
+	const RANDY
 	
 	trainerclass FIREBREATHER ; 30
 	const BRIAN
@@ -378,7 +382,7 @@ CHRIS EQU __enum__
 	const BLAIR
 	const URI
 	const KAI
-	
+
 	trainerclass BLACKBELT_T ; 32
 	const AXEL
 	const CLINT
@@ -421,6 +425,7 @@ CHRIS EQU __enum__
 	const RUDOLPH
 	const ARNIE
 	const BERNARD
+	const ROCCO
 
 	trainerclass SAGE ; 38
 	const CALEB
@@ -448,12 +453,13 @@ CHRIS EQU __enum__
 	const FAYEANDMAE2
 	const LEAHANDMIA1
 	const LEAHANDMIA2
-	
+	const ANITAANDLITA1
+	const ANITAANDLITA2
+
 	trainerclass POKEFANF ; 3e
 	const ELANE
 	const MARCI
-	const ILENE
-	
+
 	trainerclass RED ; 3f
 	const RED1
 

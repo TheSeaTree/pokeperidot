@@ -8,7 +8,7 @@ SpawnPoints:
 ; entries correspond to SPAWN_* constants
 
 	spawn PLAYERS_HOUSE_2F,            3,  3
-	spawn VIRIDIAN_POKECENTER_1F,      5,  3
+	spawn SS_MAKO_1F_ROOMS,            2,  1
 
 	spawn ELKHORN_TOWN,               17, 12
 	spawn PAVONA_VILLAGE,             15, 22
@@ -23,5 +23,5 @@ SpawnPoints:
 	spawn CARNATION_TOWN,             19,  6
 	spawn ACROPORA_CITY,              27, 18
 	spawn ORCHID_CITY,                23, 26
-	spawn SILVER_CAVE_OUTSIDE,        23, 20
+	spawn POKEMON_LEAGUE,	          24,  6
 	spawn N_A,                        -1, -1

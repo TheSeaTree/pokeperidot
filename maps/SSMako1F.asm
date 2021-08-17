@@ -1,6 +1,9 @@
 	const_def 2 ; object constants
 	const SSMAKO_BURGLAR
 	const SSMAKO_FANGIRL
+	const SSMAKO_RECEPTIONIST1
+	const SSMAKO_RECEPTIONIST2
+	const SSMAKO_SAILOR
 
 SSMako1F_MapScripts:
 	db 3 ; scene scripts
@@ -65,6 +68,7 @@ ContinueFangirlBagStolen:
 	closetext
 	follow PLAYER, SSMAKO_FANGIRL
 	setscene SCENE_SSMAKO1F_FOLLOWING
+	blackoutmod SS_MAKO_1F_ROOMS
 	end
 
 SSMakoNoTurningBack:
@@ -115,9 +119,17 @@ FangirlContinueFolow:
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
 	end
-	
+
 SSMako1FFangirl:
 	jumpstd emilycompanion
+
+PlayerBoardSSMako:
+	applymovement PLAYER, ShipPlayerStepDown
+	applymovement SSMAKO_SAILOR, ShipSailorStepRight
+	end
+
+SSMako1FSailor:
+	jumptextfaceplayer SSMako1FSailorText
 
 ShipReceptionist1:
 	faceplayer
@@ -172,6 +184,14 @@ SSMakoNoTurningBackText:
 	cont "ship somewhere!"
 	done
 	
+SSMako1FSailorText:
+	text "The S.S.MAKO is"
+	line "about to depart."
+	cont "If you leave now,"
+	cont "you may not be"
+	cont "able to re-board."
+	done
+	
 ShipReceptionist1MaleText:
 	text "This is your room"
 	line "here, Mr. <PLAYER>."
@@ -189,6 +209,11 @@ ShipReceptionist2Text:
 	
 ShipPlayerStepDown:
 	step DOWN
+	step_end
+	
+ShipSailorStepRight:
+	step RIGHT
+	turn_head DOWN
 	step_end
 
 ShipBurglarCrash:
@@ -248,7 +273,8 @@ SSMako1F_MapEvents:
 	warp_event 17, 17, SS_MAKO_1F_ROOMS, 6
 	warp_event  2, 16, SS_MAKO_2F, 1
 
-	db 16 ; coord events
+	db 17 ; coord events
+	coord_event 15,  2, SCENE_SSMAKO1F_DEFAULT, PlayerBoardSSMako
 	coord_event 14,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenRight
 	coord_event 14,  7, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
@@ -268,8 +294,9 @@ SSMako1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  0,  0, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FFangirl, -1
 	object_event  8,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShipReceptionist1, -1
 	object_event 12, 18, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShipReceptionist2, -1
+	object_event 14,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FSailor, -1

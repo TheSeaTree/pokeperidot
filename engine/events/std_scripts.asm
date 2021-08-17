@@ -729,15 +729,15 @@ EmilyCompanionScript:
 	iftrue .message10
 	checkevent EVENT_ACCESS_TO_SS_MAKO_2F
 	iftrue .message9
-	checkevent EVENT_GOT_GOLDEN_TICKET
+	checkevent EVENT_GOT_VIP_TICKET
 	iftrue .message8
-	checkevent EVENT_USED_CABIN_KEY
+	checkevent EVENT_USED_ENGINE_KEY
 	iftrue .message7
-	checkevent EVENT_GOT_CABIN_KEY
+	checkevent EVENT_GOT_ENGINE_KEY
 	iftrue .message6
-	checkevent EVENT_SS_MAKO_BASEMENT_DOOR_LOCKED
+	checkevent EVENT_SS_MAKO_ENGINE_DOOR_LOCKED
 	iftrue .message5
-	checkevent EVENT_GOLD_TICKET_LOCATION_INFO
+	checkevent EVENT_VIP_TICKET_LOCATION_INFO
 	iftrue .message4
 	checkevent EVENT_SS_MAKO_TRIED_GOING_UPSTAIRS
 	iftrue .message3
@@ -758,15 +758,15 @@ EmilyCompanionScript:
 	farwritetext EmilyCompanionText4
 	jump .waitbuttonclosetext
 .message5
-	; The door to the basement cabin is locked.
+	; The door to the engine room is locked.
 	farwritetext EmilyCompanionText5
 	jump .waitbuttonclosetext
 .message6
-	; After the player finds the key for the basement cabin.
+	; After the player finds the key for the engine room.
 	farwritetext EmilyCompanionText6
 	jump .waitbuttonclosetext
 .message7
-	; Basement door is unlocked.
+	; Engine room door is unlocked.
 	farwritetext EmilyCompanionText7
 	jump .waitbuttonclosetext
 .message8

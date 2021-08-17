@@ -30,43 +30,33 @@ RugosaPort_MapScripts:
 	end
 
 RugosaPortCaptainScript:
-	opentext
 	faceplayer
+	opentext
 	checkcode VAR_BADGES
 	ifequal 8, .Boarding
 	writetext RugosaPortCaptainText
 	waitbutton
 	closetext
 	end
-	
+
 .Boarding
 	writetext RugosaPortCaptainBoardingText
+	yesorno
+	iffalse .Decline
+	writetext RugosaPortAcceptBoardingText
 	waitbutton
 	closetext
-	checkcode VAR_FACING
-	ifequal DOWN, .StepLeft
-	applymovement OLIVINEPORT_SAILOR1, BoardShipMovementUp
-	applymovement PLAYER, PlayerBoardShipRight
-	jump .ContinueBoarding
-.StepLeft
-	applymovement OLIVINEPORT_SAILOR1, BoardShipMovementLeft
-	applymovement PLAYER, PlayerBoardShipDown
-.ContinueBoarding
+	follow OLIVINEPORT_SAILOR1, PLAYER
+	applymovement OLIVINEPORT_SAILOR1, BoardSSMakoMovement
+	playsound SFX_EXIT_BUILDING
+	stopfollow
+	disappear OLIVINEPORT_SAILOR1
+	applymovement PLAYER, BoardSSMakoMovement
 	warpcheck
 	end
-	
-RugosaPortCaptain2Script:
-	opentext
-	faceplayer
-	checkitem PASS
-	iftrue .HavePass
-	writetext RugosaPortShipNotHereText
-	waitbutton
-	closetext
-	end
-	
-.HavePass
-	writetext RugosaPortHavePassText
+
+.Decline
+	writetext RugosaPortDeclineBoardingText
 	waitbutton
 	closetext
 	end
@@ -89,27 +79,9 @@ RugosaPortCooltrainerFScript:
 RugosaPortYoungsterScript:
 	jumptextfaceplayer RugosaPortYoungsterText
 
-BoardShipMovementUp:
-	step UP
-	turn_head DOWN
+BoardSSMakoMovement:
+	step DOWN
 	step_resume
-
-BoardShipMovementLeft:
-	step LEFT
-	turn_head RIGHT
-	step_resume
-	
-PlayerBoardShipRight:
-	step RIGHT
-	step DOWN
-	turn_step DOWN
-	step_end
-
-PlayerBoardShipDown:
-	step DOWN
-	step DOWN
-	turn_step DOWN
-	step_end
 
 MovementData_0x74a32:
 	step UP
@@ -130,50 +102,37 @@ RugosaPortCaptainText:
 	done
 	
 RugosaPortCaptainBoardingText:
-	text "Welcome aboard!"
+	text "Sorry, trainer."
+	
+	para "This ship is only"
+	line "for those who-"
+	
+	para "Oh! There are your"
+	line "BADGEs."
+	
+	para "And right on time,"
+	line "the ship will be"
+	cont "departing soon."
+	
+	para "Are you coming"
+	line "with us?"
 	done
 	
-RugosaPortShipNotHereText:
-	text "Aye, there be no"
-	line "ship makin' her"
-	cont "home at this dock."
-	
-	para "Maybe we will see"
-	line "one in the near"
-	cont "future."
+RugosaPortAcceptBoardingText:
+	text "Please, come on"
+	line "board!"
 	done
+
+RugosaPortDeclineBoardingText:
+	text "Okay, but I hope"
+	line "whatever you're"
+	cont "doing won't take"
+	cont "too long…"
 	
-RugosaPortHavePassText:
-	text "That PASS you have"
-	line "there…"
-	
-	para "Could it be?"
-	line "No…"
-	
-	para "I hadn't seen one"
-	line "of those since I"
-	cont "was a wee lad."
-	
-	para "Wherever did you"
-	line "find it?"
-	
-	para "Ah, that doesn't"
-	line "matter!"
-	
-	para "Shall I ferry ye'"
-	line "to the island?"
+	para "You're really"
+	line "cutting it close."
 	done
-	
-RugosaPortPassDeclineText:
-	text "Do ye' need more"
-	line "time to prepare?"
-	
-	para "I will be docked"
-	line "at this port for"
-	cont "a little while"
-	cont "longer."
-	done
-	
+
 RugosaPortSailorAdmireText:
 	text "Ain't that ship a"
 	line "real beaut'?"
@@ -230,7 +189,7 @@ RugosaPortCooltrainerFText:
 	text "Only trainers who"
 	line "have all 8 GYM"
 	cont "BADGEs can board"
-	cont "the S.S. MAKO."
+	cont "the S.S.MAKO."
 	
 	para "It is the only way"
 	line "to reach the"
@@ -253,9 +212,9 @@ RugosaPort_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  8, 25, RUGOSA_COAST, 6
-	warp_event  9, 25, RUGOSA_COAST, 6
-	warp_event 14, 15, SS_MAKO_1F, 1 ; Ship
+	warp_event  8, 17, RUGOSA_COAST, 6
+	warp_event  9, 17, RUGOSA_COAST, 6
+	warp_event 14,  7, SS_MAKO_1F, 1 ; Ship
 
 	db 0 ; coord events
 ;	coord_event  2,  2, SCENE_DEFAULT, RugosaPortWalkUpToShipScript
@@ -263,13 +222,12 @@ RugosaPort_MapEvents:
 	db 0 ; bg events
 ;	bg_event 15, 16, BGEVENT_ITEM, RugosaPortHiddenProtein
 
-	db 9 ; object events
-	object_event 14, 14, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, -1
-	object_event 14,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptain2Script, -1
-	object_event 12, 21, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, -1
-	object_event  3, 23, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorWorkingScript, -1
-	object_event 18, 24, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 13, 24, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortFishingGuruScript, -1
-	object_event  7, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RugosaPortYoungsterScript, -1
-	object_event  6, 16, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCooltrainerMScript, -1
-	object_event  8, 13, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RugosaPortCooltrainerFScript, -1
+	db 8 ; object events
+	object_event 14,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, -1
+	object_event 12, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, -1
+	object_event  3, 15, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorWorkingScript, -1
+	object_event 18, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 13, 16, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortFishingGuruScript, -1
+	object_event  7, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RugosaPortYoungsterScript, -1
+	object_event  6,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCooltrainerMScript, -1
+	object_event  8,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RugosaPortCooltrainerFScript, -1

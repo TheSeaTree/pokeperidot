@@ -2545,7 +2545,7 @@ wVictoryRoadGateSceneID::                         db ; d97a
 wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
-wIndigoPlateauPokecenter1FSceneID::               db ; d97e
+wPokemonLeaguePokecenter1FSceneID::               db ; d97e
 wOrvillesRoomSceneID::                            db ; d97f
 wRegansRoomSceneID::                              db ; d980
 wBredesRoomSceneID::                              db ; d981
@@ -2614,7 +2614,7 @@ wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
 wSSMako1FRoomsSceneID::                           db ; d9bc
-wSSMakoB1FCabinSceneID::                          db ; d9bc
+wSSMakoEngineRoomSceneID::                        db ; d9bc
 wSSMako2FSceneID::                                db ; d9bc
 wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoSternSceneID::                         	  db ; d9bd

@@ -572,7 +572,7 @@ PokegearMap_KantoMap:
 	jr PokegearMap_ContinueMap
 
 PokegearMap_JohtoMap:
-	ld d, INDIGO_PLATEAU
+	ld d, POKEMON_LEAGUE
 	ld e, ELKHORN_TOWN
 PokegearMap_ContinueMap:
 	ld hl, hJoyLast

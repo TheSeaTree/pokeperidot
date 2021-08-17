@@ -32,7 +32,7 @@ ENDM
 	map_const ROUTE_14_RUGOSA_GATE,							5,  4
 	map_const RUGOSA_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
-	map_const RUGOSA_PORT,                                 10, 13 ; 14
+	map_const RUGOSA_PORT,                                 10,  9 ; 14
 	map_const SEA_ROUTE_4,                                 17, 14 ;  1
 	map_const ROUTE_8,                                     20, 37 ;  1
 	map_const SEA_ROUTE_1,                                 21, 17 ;  3
@@ -256,10 +256,10 @@ ENDM
 
 	newgroup                                                      ; 15
 	map_const ROUTE_25,									   	23, 18
-	map_const SS_MAKO_1F,								   	11, 10
+	map_const SS_MAKO_1F,								   	12, 11
 	map_const SS_MAKO_1F_ROOMS,						   		12,  8
-	map_const SS_MAKO_B1F,							   		23,  7
-	map_const SS_MAKO_B1F_CABIN,							 5,  4
+	map_const SS_MAKO_B1F,							   		24,  8
+	map_const SS_MAKO_ENGINE_ROOM,							 7,  5
 	map_const SS_MAKO_2F,								   	11,  7
 	map_const SS_MAKO_2F_ROOMS,						   		25,  8
 	map_const SS_MAKO_STERN,						   		10,  7
@@ -268,7 +268,8 @@ ENDM
 
 	map_const POKEMON_LEAGUE,							   24, 18
 	map_const VICTORY_PORT,							   	   23, 19
-	map_const INDIGO_PLATEAU_POKECENTER_1F,                 8,  4 ;  2
+	map_const VICTORY_PORT_INSIDE,						   10, 13
+	map_const POKEMON_LEAGUE_POKECENTER_1F,                 8,  4 ;  2
 	map_const ORVILLES_ROOM,                                7, 10 ;  3
 	map_const REGANS_ROOM,                                  7, 10 ;  5
 	map_const BREDES_ROOM,                                  7, 10 ;  4

@@ -40,10 +40,10 @@
 	const ROUTE_16          ; 53
 	const ACROPORA_CITY     ; 29
 	const ROUTE_17          ; 53
-	const ROUTE_18          ; 53
 	const ROUTE_20          ; 53
 	const ROUTE_21          ; 53
 	const MOLTEN_PEAK
+	const ROUTE_18          ; 53
 	const ORCHID_CITY
 	const SEA_ROUTE_1       ; 4d
 	const SEA_ROUTE_2       ; 4e
@@ -54,8 +54,7 @@
 	const SEA_ROUTE_6       ; 3f
 	const ROUTE_19       	; 3f
 	const VICTORY_ROAD      ; 58
-	const INDIGO_PLATEAU    ; 5a
-;	const BATTLE_TOWER      ; 1d
+	const POKEMON_LEAGUE    ; 5a
 	
 KANTO_LANDMARK EQU const_value
 

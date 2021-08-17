@@ -245,50 +245,51 @@ EmilyCompanionText3:
 	line "any trainers on"
 	cont "the first floor"
 	cont "know how to get a"
-	cont "GOLD TICKET!"
+	cont "VIP TICKET!"
 	done
 
 EmilyCompanionText4:
 	text "That trainer said" 
 	line "we could find a"
 	cont "ticket down in the"
-	cont "basement."
+	cont "ENGINE ROOM."
 
-	para "Let's go down there"
-	line "and look!"
+	para "Let's go down to"
+	line "the basement and"
+	cont "check it out!"
 	done
 
 EmilyCompanionText5:
 	text "One of the workers"
 	line "must have a key"
-	cont "for the door in"
-	cont "the basement!"
+	cont "for the door to"
+	cont "the ENGINE!"
 	done
 
 EmilyCompanionText6:
-	text "We should try out"
-	line "that CABIN KEY you"
-	cont "found."
-	
-	para "Maybe it will open"
-	line "up the door in"
-	cont "the basement!"
+	text "I think that KEY"
+	line "you found will let"
+	cont "you into the"
+	cont "ENGINE ROOM!"
 	done
 	
 EmilyCompanionText7:
-	text "The door's unlocked"
-	line "now. What are we"
-	cont "waiting for? Let's"
-	cont "go talk to whoever"
-	cont "is inside."
+	text "The ENGINE ROOM's"
+	line "door is unlocked!"
+	
+	para "What are you wait-"
+	line "ing for? Let's go"
+	cont "talk to whoever is"
+	cont "inside!"
 	done
 
 EmilyCompanionText8:
-	text "We have the GOLD"
+	text "We have the VIP"
 	line "TICKET now!"
 	
-	para "We can go upstairs"
-	line "and check it out."
+	para "We can get past"
+	line "the receptionist"
+	cont "upstairs."
 	done
 
 EmilyCompanionText9:
@@ -325,7 +326,7 @@ GymGeyserText:
 	text "It's impossible to"
 	line "pass!"
 	done
-	
+
 UnownWallText:
 	text "These symbols look"
 	line "like letters."	

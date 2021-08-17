@@ -74,7 +74,7 @@ EngineFlags:
 
 	; fly
 	engine_flag wVisitedSpawns, SPAWN_HOME
-	engine_flag wVisitedSpawns, SPAWN_DEBUG
+	engine_flag wVisitedSpawns, SPAWN_SS_MAKO
 	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
 	engine_flag wVisitedSpawns, SPAWN_ELKHORN
 	engine_flag wVisitedSpawns, SPAWN_PAVONA

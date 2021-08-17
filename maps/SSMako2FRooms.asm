@@ -17,28 +17,40 @@ SSMako2FRooms_MapScripts:
 .DummyScene2:
 	end
 
-; Use wSSMako2FFightCount to keep track of how many battles the trainer has had. After X many battles, have Emily mention that it might be a good idea to see if the people on the deck have moved. Set the event to despawn them.
-	; "EMILY: Do you think the crowd outside has dispersed? Let's go check it out again!"
-; loadvar wSSMako2FFightCount, 1 (2, 3, 4, etc.), keep increasing the value even after hitting the required amount so that the message won't pop up after every battle.
-	
 TrainerGentlemanCharles:
 	trainer GENTLEMAN, CHARLES, EVENT_BEAT_GENTLEMAN_CHARLES, GentlemanCharlesText, GentlemanCharlesWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, .After
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako2FFightCount
+	addvar 1
+	copyvartobyte wSSMako2FFightCount
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
 	writetext GentlemanCharlesAfterText
 	waitbutton
 	closetext
 	end
 
-TrainerPokefanFIlene:
-	trainer POKEFANF, ILENE, EVENT_BEAT_POKEFANF_ILENE, PokefanFIleneText, PokefanFIleneWinText, 0, .Script
+TrainerCooltrainerFHeidy:
+	trainer COOLTRAINERF, HEIDY, EVENT_BEAT_COOLTRAINERF_HEIDY, CooltrainerFHeidyText, CooltrainerFHeidyWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako1FFightCount
+	addvar 1
+	copyvartobyte wSSMako1FFightCount
+	copybytetovar wSSMako1FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
-	writetext PokefanFIleneAfterText
+	writetext CooltrainerFHeidyAfterText
 	waitbutton
 	closetext
 	end
@@ -47,7 +59,16 @@ TrainerBeautyErin:
 	trainer BEAUTY, ERIN, EVENT_BEAT_BEAUTY_ERIN, BeautyErinText, BeautyErinWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, .After
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako2FFightCount
+	addvar 1
+	copyvartobyte wSSMako2FFightCount
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
 	writetext BeautyErinAfterText
 	waitbutton
@@ -58,7 +79,16 @@ TrainerSuperNerdMax:
 	trainer SUPER_NERD, MAX, EVENT_BEAT_SUPER_NERD_MAX, SuperNerdMaxText, SuperNerdMaxWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, .After
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako2FFightCount
+	addvar 1
+	copyvartobyte wSSMako2FFightCount
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
 	writetext SuperNerdMaxAfterText
 	waitbutton
@@ -69,7 +99,16 @@ TrainerPokefanMHans:
 	trainer POKEFANM, HANS, EVENT_BEAT_POKEFANM_HANS, PokefanMHansText, PokefanMHansWinText, 0, .Script
 	
 .Script:
-	endifjustbattled
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, .After
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako2FFightCount
+	addvar 1
+	copyvartobyte wSSMako2FFightCount
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
 	writetext PokefanMHansAfterText
 	waitbutton
@@ -78,17 +117,33 @@ TrainerPokefanMHans:
 
 TrainerSchoolboyOliver:
 	trainer SCHOOLBOY, OLIVER, EVENT_BEAT_SCHOOLBOY_OLIVER, SchoolboyOliverText, SchoolboyOliverWinText, 0, .Script
-	
-	turnobject LAST_TALKED, UP
-	end
 
 .Script:
-;	endifjustbattled
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, .After
+	checkjustbattled
+	iffalse .After
+	copybytetovar wSSMako2FFightCount
+	addvar 1
+	copyvartobyte wSSMako2FFightCount
+	copybytetovar wSSMako2FFightCount
+	ifequal  4, SSMakoSternCrowdCleared
+.After
 	opentext
 	writetext SchoolboyOliverAfterText
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
+	end
+
+SSMakoSternCrowdCleared:
+	setlasttalked SSMAKO2FROOMS_FANGIRL
+	faceplayer
+	opentext
+	writetext SSMakoSternCrowdClearedText
+	waitbutton
+	closetext
+	setevent EVENT_SS_MAKO_DECK_CLEARED
 	end
 
 Rooms2FFangirlTeleport1:
@@ -158,32 +213,31 @@ GentlemanCharlesAfterText:
 	cont "battle."
 	done
 	
-PokefanFIleneText:
-	text "I can still turn"
-	line "heads just as well"
-	cont "as any BEAUTY!"
-	done
-	
-PokefanFIleneWinText:
-	text "What? Old?"
-
-	para "Hmph!"
-
-	para "You must need"
-	line "glasses!"
+CooltrainerFHeidyText:
+	text "Do you know the"
+	line "full potential of"
+	cont "your #MON?"
 	done
 
-PokefanFIleneAfterText:
-	text "I don't care about"
-	line "a child's opinion"
-	cont "on my appearance"
-	cont "anyway!"
+CooltrainerFHeidyWinText:
+	text "I need to learn"
+	line "the limits of my"
+	cont "own party!"
+	done
+
+CooltrainerFHeidyAfterText:
+	text "Knowing that my"
+	line "#MON is not as"
+	cont "strong as it poss-"
+	cont "ibly can be gives"
+	cont "me purpose as a"
+	cont "trainer!"
 	done
 
 BeautyErinText:
 	text "…Sleepy, sleepy,"
 	line "sleepy…………"
-	
+
 	para "…Zzzzz…"
 	done
 
@@ -274,6 +328,15 @@ SchoolboyOliverAfterText:
 	cont "do well at the"
 	cont "#MON LEAGUE!"
 	done
+	
+SSMakoSternCrowdClearedText:
+	text "EMILY: Maybe the"
+	line "crowd outside has"
+	cont "cleared up by now."
+	
+	para "Let's go check it"
+	line "out again!"
+	done
 
 IceColdCoffeeText:
 	text "This mug is filled"
@@ -338,6 +401,6 @@ SSMako2FRooms_MapEvents:
 	object_event 30,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGentlemanCharles, -1
 	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
 	object_event  4, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerPokefanMHans, -1
-	object_event 16, 3, SPRITE_POKEFAN_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPokefanFIlene, -1
+	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
 	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1

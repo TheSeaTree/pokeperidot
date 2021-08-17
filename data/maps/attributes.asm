@@ -312,7 +312,7 @@ ENDM
 	map_attributes DayCare, DAY_CARE, $00, 0
 	map_attributes Route3PectiniaGate, ROUTE_3_PECTINIA_GATE, $00, 0
 	map_attributes Route6SurfersHouse, ROUTE_6_SURFERS_HOUSE, $00, 0
-	map_attributes IndigoPlateauPokecenter1F, INDIGO_PLATEAU_POKECENTER_1F, $00, 0
+	map_attributes PokemonLeaguePokecenter1F, POKEMON_LEAGUE_POKECENTER_1F, $00, 0
 	map_attributes OrvillesRoom, ORVILLES_ROOM, $00, 0
 	map_attributes RegansRoom, REGANS_ROOM, $00, 0
 	map_attributes BredesRoom, BREDES_ROOM, $00, 0
@@ -507,9 +507,10 @@ ENDM
 	map_attributes SSMako1F, SS_MAKO_1F, $00, 0
 	map_attributes SSMako1FRooms, SS_MAKO_1F_ROOMS, $00, 0
 	map_attributes SSMakoB1F, SS_MAKO_B1F, $00, 0
-	map_attributes SSMakoB1FCabin, SS_MAKO_B1F_CABIN, $00, 0
+	map_attributes SSMakoEngineRoom, SS_MAKO_ENGINE_ROOM, $00, 0
 	map_attributes SSMako2F, SS_MAKO_2F, $00, 0
 	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
 	map_attributes SSMakoStern, SS_MAKO_STERN, $72, 0
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 	map_attributes VictoryPort, VICTORY_PORT, $11, 0
+	map_attributes VictoryPortInside, VICTORY_PORT_INSIDE, $00, 0

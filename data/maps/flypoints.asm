@@ -22,5 +22,5 @@ Flypoints:
 
 ; Kanto
 KANTO_FLYPOINT EQU const_value
-	flypoint INDIGO,       INDIGO_PLATEAU
+	flypoint INDIGO,       POKEMON_LEAGUE
 	db -1

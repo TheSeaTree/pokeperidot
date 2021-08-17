@@ -16,6 +16,7 @@ SSMako2F_MapScripts:
 .DummyScene0:
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_DEFAULT
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
+	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_FOLLOWING
 	setmapscene SS_MAKO_STERN, SCENE_SSMAKOSTERN_DEFAULT
 	end
 
@@ -100,7 +101,7 @@ SSMako2FOfficer:
 Check2FPass:
 	turnobject PLAYER, LEFT
 	opentext
-	checkitem S_S_TICKET
+	checkitem VIP_TICKET
 	iffalse .NoPass
 	writetext SSMako2FHavePassText
 	waitbutton
@@ -125,6 +126,7 @@ SSMako2FUpperDoorsLocked:
 	jumptext SSMako2FLockedDoorText
 	
 SSMako2FLowerDoorsLocked:
+	turnobject SSMAKO2F_FANGIRL, DOWN
 	opentext
 	writetext SSMako2FLowerDoorsLockedText
 	waitbutton
@@ -160,7 +162,7 @@ SSMako2FOfficerAfterText:
 
 SSMako2FHavePassText:
 	text "Oh, there is your"
-	line "GOLD TICKET!"
+	line "VIP TICKET!"
 	
 	para "Go right ahead!"
 	done
@@ -168,7 +170,7 @@ SSMako2FHavePassText:
 SSMako2FNoPassText:
 	text "I'm terribly sorry,"
 	line "but only those who"
-	cont "have a GOLD TICKET"
+	cont "have a VIP TICKET"
 	cont "may be up on this"
 	cont "level of the ship."
 	
