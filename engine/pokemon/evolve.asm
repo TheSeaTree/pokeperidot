@@ -131,6 +131,8 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [hli]
 	cp b
 	jp nz, .dont_evolve_3
+	xor a
+	ld [wTempMonItem], a
 	jp .proceed
 
 .trade
