@@ -989,8 +989,8 @@ PoliwrathEvosAttacks:
 	db 1, DOUBLESLAP
 	db 1, SUBMISSION
 	db 32, DRAIN_PUNCH
-	db 43, SUBMISSION
-	db 44, MIND_READER
+	db 43, DYNAMICPUNCH
+	db 55, MIND_READER
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
@@ -3087,8 +3087,9 @@ PolitoedEvosAttacks:
 	db 1, HYPNOSIS
 	db 1, DOUBLESLAP
 	db 1, PERISH_SONG
-	db 27, SWAGGER
-	db 37, PERISH_SONG
+	db 32, SWAGGER
+	db 43, PERISH_SONG
+	db 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:

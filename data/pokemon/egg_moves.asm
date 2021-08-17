@@ -28,6 +28,7 @@ CharmanderEggMoves:
 	db OUTRAGE
 	db DIVE_BOMB
 	db METAL_CLAW
+	db DYNAMICPUNCH
 	db -1 ; end
 
 SquirtleEggMoves:
@@ -41,6 +42,7 @@ SquirtleEggMoves:
 	db DRAGONBREATH
 	db RECOVER
 	db SIGNAL_BEAM
+	db DYNAMICPUNCH
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -118,6 +120,7 @@ PikachuEggMoves:
 	db EXTREMESPEED
 	db PAY_DAY
 	db PETAL_DANCE
+	db DYNAMICPUNCH
 	db SURF
 	db -1 ; end
 
@@ -131,6 +134,7 @@ SandshrewEggMoves:
 	db AMNESIA
 	db AGILITY
 	db STONE_EDGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -163,6 +167,7 @@ ClefairyEggMoves:
 	db MIMIC
 	db SIGNAL_BEAM
 	db PETAL_DANCE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 VulpixEggMoves:
@@ -187,6 +192,7 @@ JigglypuffEggMoves:
 	db DRAIN_KISS
 	db SCREECH
 	db PETAL_DANCE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 ZubatEggMoves:
@@ -271,6 +277,7 @@ MankeyEggMoves:
 	db SCARY_FACE
 	db PAY_DAY
 	db STONE_EDGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -293,6 +300,7 @@ PoliwagEggMoves:
 AbraEggMoves:
 	db ENCORE
 	db BARRIER
+	db DYNAMICPUNCH
 	db -1 ; end
 
 MachopEggMoves:
@@ -432,6 +440,7 @@ DrowzeeEggMoves:
 	db DESTINY_BOND
 	db DRAIN_KISS
 	db METRONOME
+	db DYNAMICPUNCH
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -460,6 +469,7 @@ CuboneEggMoves:
 	db PERISH_SONG
 	db FALSE_SWIPE
 	db STONE_EDGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 SearionEggMoves:
@@ -481,6 +491,7 @@ LickitungEggMoves:
 	db CALM_MIND
 	db THRASH
 	db OUTRAGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 KoffingEggMoves:
@@ -508,6 +519,7 @@ RhyhornEggMoves:
 ChanseyEggMoves:
 	db PRESENT
 	db METRONOME
+	db DYNAMICPUNCH
 	db -1 ; end
 
 TangelaEggMoves:
@@ -528,6 +540,7 @@ KangaskhanEggMoves:
 	db DOUBLE_EDGE
 	db MILK_DRINK
 	db HYDRO_PUMP
+	db DYNAMICPUNCH
 	db -1 ; end
 
 HorseaEggMoves:
@@ -557,6 +570,7 @@ MrMimeEggMoves:
 	db HYPNOSIS
 	db MIMIC
 	db METRONOME
+	db DYNAMICPUNCH
 	db -1 ; end
 
 ScytherEggMoves:
@@ -716,6 +730,7 @@ SentretEggMoves:
 	db U_TURN
 	db EXTREMESPEED
 	db BELLY_DRUM
+	db DYNAMICPUNCH
 	db -1 ; end
 
 HoothootEggMoves:
@@ -815,6 +830,7 @@ MarillEggMoves:
 	db FORESIGHT
 	db AQUA_JET
 	db DRAIN_KISS
+	db DYNAMICPUNCH
 	db -1 ; end
 
 SudowoodoEggMoves:
@@ -843,6 +859,7 @@ AipomEggMoves:
 	db SPITE
 	db DOUBLESLAP
 	db U_TURN
+	db DYNAMICPUNCH
 	db -1 ; end
 	
 SunkernEggMoves:
@@ -868,6 +885,7 @@ WooperEggMoves:
 	db DOUBLE_KICK
 	db RECOVER
 	db HYDRO_PUMP
+	db DYNAMICPUNCH
 	db -1 ; end
 
 MurkrowEggMoves:
@@ -946,6 +964,7 @@ SnubbullEggMoves:
 	db DOUBLE_EDGE
 	db MIMIC
 	db STONE_EDGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -988,6 +1007,7 @@ TeddiursaEggMoves:
 	db CROSS_CHOP
 	db BELLY_DRUM
 	db STONE_EDGE
+	db DYNAMICPUNCH
 	db -1 ; end
 
 SlugmaEggMoves:
@@ -1120,6 +1140,7 @@ SmoochumEggMoves:
 	db PETAL_DANCE
 	db METRONOME
 	db FREEZE_DRY
+	db DYNAMICPUNCH
 	db -1 ; end
 
 ElekidEggMoves:
@@ -1150,6 +1171,7 @@ MiltankEggMoves:
 	db DIZZY_PUNCH
 	db DOUBLE_EDGE
 	db CHARM
+	db DYNAMICPUNCH
 	db TWISTER
 	db -1 ; end
 
