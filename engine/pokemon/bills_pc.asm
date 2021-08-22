@@ -187,11 +187,12 @@ BillsPCDepositFuncRelease:
 	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
+	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
 	lb bc, 14, 11
-	call PlaceYesNoBox
+	call PlaceNoYesBox
 	ld a, [wMenuCursorY]
 	dec a
 	call ExitMenu
@@ -219,6 +220,7 @@ BillsPCDepositFuncRelease:
 	pop af
 	ld [wMenuCursorY], a
 	ret
+
 
 BillsPCDepositFuncCancel:
 	ld a, $0
@@ -441,11 +443,12 @@ BillsPC_Withdraw:
 	push af
 	call BillsPC_IsMonAnEgg
 	jr c, .FailedRelease
+	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
 	lb bc, 14, 11
-	call PlaceYesNoBox
+	call PlaceNoYesBox
 	ld a, [wMenuCursorY]
 	dec a
 	call ExitMenu
@@ -466,6 +469,7 @@ BillsPC_Withdraw:
 	ld [wBillsPC_ScrollPosition], a
 	pop af
 	ret
+
 .FailedRelease:
 	ld de, PCString_WhatsUp
 	call BillsPC_PlaceString
