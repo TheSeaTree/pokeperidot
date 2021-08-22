@@ -16,6 +16,7 @@ SSMako1F_MapScripts:
 .DummyScene0:
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
+	setmapscene SS_MAKO_LOWER_DECK, SCENE_SSMAKOLOWERDECK_DEFAULT
 	end
 
 .DummyScene1:
@@ -111,6 +112,14 @@ FangirlTeleport7:
 	
 FangirlTeleport8:
 	moveobject SSMAKO_FANGIRL,  2, 16
+	jump FangirlContinueFolow
+	
+FangirlTeleport9:
+	moveobject SSMAKO_FANGIRL,  3,  8
+	jump FangirlContinueFolow
+	
+FangirlTeleport10:
+	moveobject SSMAKO_FANGIRL,  3,  9
 
 FangirlContinueFolow:
 	appear SSMAKO_FANGIRL
@@ -118,6 +127,7 @@ FangirlContinueFolow:
 	setscene SCENE_SSMAKO1F_FOLLOWING
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
+	setmapscene SS_MAKO_LOWER_DECK, SCENE_SSMAKOLOWERDECK_DEFAULT
 	end
 
 SSMako1FFangirl:
@@ -262,7 +272,7 @@ ShipFangirlApproach2:
 SSMako1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 11 ; warp events
 	warp_event 15,  1, SS_MAKO_1F, 1
 	warp_event 20, 16, SS_MAKO_B1F, 1
 	warp_event  9, 10, SS_MAKO_1F_ROOMS, 1
@@ -272,8 +282,10 @@ SSMako1F_MapEvents:
 	warp_event 13, 17, SS_MAKO_1F_ROOMS, 5
 	warp_event 17, 17, SS_MAKO_1F_ROOMS, 6
 	warp_event  2, 16, SS_MAKO_2F, 1
+	warp_event  3,  8, SS_MAKO_LOWER_DECK, 1
+	warp_event  3,  9, SS_MAKO_LOWER_DECK, 2
 
-	db 17 ; coord events
+	db 21 ; coord events
 	coord_event 15,  2, SCENE_SSMAKO1F_DEFAULT, PlayerBoardSSMako
 	coord_event 14,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenRight
@@ -291,6 +303,10 @@ SSMako1F_MapEvents:
 	coord_event  2, 15, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport8
 	coord_event  2, 17, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport8
 	coord_event  3, 16, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport8
+	coord_event  4,  8, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport9
+	coord_event  3,  9, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport9
+	coord_event  4,  9, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport10
+	coord_event  3,  8, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport10
 
 	db 0 ; bg events
 

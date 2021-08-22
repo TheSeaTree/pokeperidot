@@ -2618,8 +2618,9 @@ wSSMakoEngineRoomSceneID::                        db ; d9bc
 wSSMako2FSceneID::                                db ; d9bc
 wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoSternSceneID::                         	  db ; d9bd
+wSSMakoLowerDeckSceneID::                      	  db ; d9bd
 
-	ds 44
+	ds 43
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

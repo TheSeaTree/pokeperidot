@@ -1,14 +1,15 @@
 	const_def 2 ; object constants
 	const SSMAKO2F_FANGIRL
 	const SSMAKO2F_RECEPTIONIST
+	const SSMAKO2F_OFFICER
 
 SSMako2F_MapScripts:
 	db 5 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_SSMAKO2F_DEFAULT
 	scene_script .DummyScene1 ; SCENE_SSMAKO2F_BLOCKED
 	scene_script .DummyScene2 ; SCENE_SSMAKO2F_FOLLOWING
-	scene_script .DummyScene3 ; SCENE_SSMAKO2F_UNLOCKED
-	scene_script .DummyScene4 ; SCENE_SSMAKO2F_FINISHED
+	scene_script .DummyScene2 ; SCENE_SSMAKO2F_UNLOCKED
+	scene_script .DummyScene2 ; SCENE_SSMAKO2F_FINISHED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .UnlockDoors
@@ -25,8 +26,6 @@ SSMako2F_MapScripts:
 	iffalse .DummyScene2
 	setscene SCENE_SSMAKO2F_FOLLOWING
 .DummyScene2:
-.DummyScene3:
-.DummyScene4:
 	end
 
 .UnlockDoors:
@@ -96,6 +95,8 @@ SSMako2FFangirl:
 	jumpstd emilycompanion
 	
 SSMako2FOfficer:
+	setevent EVENT_SS_MAKO_DECK_CLEARED
+	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 	jumptextfaceplayer SSMako2FOfficerText
 	
 Check2FPass:
@@ -240,4 +241,4 @@ SSMako2F_MapEvents:
 	db 3 ; object events
 	object_event  0, 13, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FFangirl, -1
 	object_event 15,  7, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 17,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FOfficer, -1
+	object_event 17,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FOfficer, EVENT_SS_MAKO_DEFEATED_BURGLAR

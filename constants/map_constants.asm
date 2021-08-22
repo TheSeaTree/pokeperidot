@@ -263,6 +263,7 @@ ENDM
 	map_const SS_MAKO_2F,								   	11,  7
 	map_const SS_MAKO_2F_ROOMS,						   		25,  8
 	map_const SS_MAKO_STERN,						   		10,  7
+	map_const SS_MAKO_LOWER_DECK,						   	10,  5
 
 	newgroup                                                      ; 16
 

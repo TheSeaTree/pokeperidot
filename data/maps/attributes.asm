@@ -511,6 +511,7 @@ ENDM
 	map_attributes SSMako2F, SS_MAKO_2F, $00, 0
 	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
 	map_attributes SSMakoStern, SS_MAKO_STERN, $72, 0
+	map_attributes SSMakoLowerDeck, SS_MAKO_LOWER_DECK, $72, 0
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 	map_attributes VictoryPort, VICTORY_PORT, $11, 0
 	map_attributes VictoryPortInside, VICTORY_PORT_INSIDE, $00, 0

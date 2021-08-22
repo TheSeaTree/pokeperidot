@@ -1743,6 +1743,7 @@ Fishing_CheckFacingUp:
 	ret
 
 Script_FishCastRod:
+	stopfollow
 	reloadmappart
 	loadvar hBGMapMode, $0
 	special UpdateTimePals
@@ -1751,6 +1752,7 @@ Script_FishCastRod:
 	loademote EMOTE_SHOCK
 	applymovement PLAYER, MovementData_0xd093
 	pause 40
+	setmapscene SS_MAKO_LOWER_DECK, SCENE_SSMAKOLOWERDECK_FISHING
 	end
 
 MovementData_0xd093:

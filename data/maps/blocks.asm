@@ -780,6 +780,9 @@ SSMako2FRooms_Blocks:
 SSMakoStern_Blocks:
 	INCBIN "maps/SSMakoStern.ablk"
 
+SSMakoLowerDeck_Blocks:
+	INCBIN "maps/SSMakoLowerDeck.ablk"
+
 UnownChamberAG_Blocks:
 UnownChamberHN_Blocks:
 UnownChamberOU_Blocks:

@@ -5,6 +5,7 @@
 	const SSMAKO1FROOMS_TWIN1
 	const SSMAKO1FROOMS_TWIN2
 	const SSMAKO1FROOMS_SUPER_NERD
+	const SSMAKO1FROOMS_FANGIRL2
 
 SSMako1FRooms_MapScripts:
 	db 3 ; scene scripts
@@ -61,7 +62,11 @@ RoomsFangirlContinueFolow:
 	end
 	
 SSMako1FRoomsFangirl:
+	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
+	iftrue .After
 	jumpstd emilycompanion
+.After
+	jumptextfaceplayer SSMako1FRoomsFangirlText
 
 TrainerGentlemanWinfred:
 	trainer GENTLEMAN, WINFRED, EVENT_BEAT_GENTLEMAN_WINFRED, SSMako1FRoomsTrainerText, SSMako1FRoomsTrainerWinText, 0, .Script
@@ -347,6 +352,17 @@ SSMako1FRoomsTrainerAfterText:
 PlusOneText:
 	text "Plus one!"
 	done
+	
+SSMako1FRoomsFangirlText:
+	text "My #MON have"
+	line "earned a long"
+	cont "rest after today!"
+
+	para "I'll make sure they"
+	line "are fighting fit"
+	cont "in time for the"
+	cont "#MON LEAGUE!"
+	done
 
 SSMako1FRooms_MapEvents:
 	db 0, 0 ; filler
@@ -377,10 +393,11 @@ SSMako1FRooms_MapEvents:
 	bg_event 3, 1, BGEVENT_RIGHT, SSMakoPlayerBedScript
 	bg_event 3, 2, BGEVENT_RIGHT, SSMakoPlayerBedScript
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event -4, -3, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FRoomsFangirl, -1
 	object_event 12,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerTeacherIlene, -1
 	object_event 21,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanWinfred, -1
 	object_event 20, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinAnita, -1
 	object_event 21, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinLita, -1
 	object_event  1, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdHerbert, -1
+	object_event 11, 12, SPRITE_FANGIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SSMako1FRoomsFangirl, EVENT_HIDE_SS_MAKO_FANGIRL

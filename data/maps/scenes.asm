@@ -59,4 +59,5 @@ MapScenes::
 	scene_var SS_MAKO_2F,                    			wSSMako2FSceneID
 	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
 	scene_var SS_MAKO_STERN,                       		wSSMakoSternSceneID
+	scene_var SS_MAKO_LOWER_DECK,                  		wSSMakoLowerDeckSceneID
 	db -1
