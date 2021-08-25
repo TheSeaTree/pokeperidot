@@ -497,9 +497,9 @@ CheckEnemyTurn:
 	ld de, ANIM_CONFUSED
 	call FarPlayBattleAnimation
 
-	; 50% chance of hitting itself
+	; 33% chance of hitting itself
 	call BattleRandom
-	cp 50 percent + 1
+	cp 33 percent + 1
 	jr nc, .not_confused
 
 	; clear confusion-dependent substatus
