@@ -225,7 +225,7 @@ CarnationZooVendingMachine:
 	takemoney YOUR_MONEY, 350
 	itemtotext FRESH_WATER, MEM_BUFFER_0
 	jump .VendItem
-	
+
 .Lemonade:
 	checkmoney YOUR_MONEY, 450
 	ifequal HAVE_LESS, .NotEnoughMoney
@@ -249,7 +249,6 @@ CarnationZooVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext ZooClangText
-	special PlaceMoneyTopRight
 	buttonsound
 	itemnotify
 	jump .Start
