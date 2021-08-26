@@ -48,11 +48,11 @@ ContinueApproachRegan:
 	wait 4
 
 	appear REGANSROOM_REGAN
-	applymovement REGANSROOM_REGAN, ReganVanishingAct
-	setlasttalked REGANSROOM_REGAN
+	playsound SFX_WARP_TO
+	applymovement REGANSROOM_REGAN, ReganAppearance
 	setscene SCENE_FINISHED
+	waitsfx
 
-	faceplayer
 	opentext
 	writetext ReganScript_ReganBeforeText
 	waitbutton
@@ -60,6 +60,8 @@ ContinueApproachRegan:
 	winlosstext ReganScript_ReganBeatenText, 0
 	loadtrainer REGAN, REGAN1
 	startbattle
+	changeblock 8,  8, $44
+	changeblock 8, 10, $45
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_REGAN
 	opentext
@@ -67,17 +69,39 @@ ContinueApproachRegan:
 	waitbutton
 	closetext
 
+	playsound SFX_POWDER
 	applymovement REGANSROOM_REGAN, ReganVanishingAct
 	disappear REGANSROOM_REGAN
-	wait 8
-
+	waitsfx
+	wait 4
 	applymovement PLAYER, E4AfterBattle
 	disappear REGANSROOM_CHRIS
 	disappear REGANSROOM_KRIS
 
+	wait 2
+	refreshscreen $86
+	playsound SFX_ENTER_DOOR
+	changeblock 4,  8, $01 ; wall
+	changeblock 6,  8, $02 ; wall
+	changeblock 8,  8, $03 ; wall
+	changeblock 4, 10, $05 ; wall
+	changeblock 6, 10, $06 ; wall
+	changeblock 8, 10, $07 ; wall
+	changeblock 8,  8, $42
+	changeblock 8, 10, $43
+	reloadmappart
+	closetext
+	wait 2
+
 	setevent EVENT_REGANS_ROOM_EXIT_OPEN
 	waitsfx
 	end
+	
+ReganHasDisappeared:
+	jumptext ReganHasDisappearedText
+	
+ReganDroppedCards:
+	jumptext ReganDroppedCardsText
 	
 ReganNoTurningBack:
 	jumptext ReganCantProgress
@@ -96,7 +120,7 @@ ReganScript_AfterBattle:
 	closetext
 	end
 	
-ReganVanishingAct:
+ReganAppearance:
 	turn_head DOWN
 	turn_head LEFT
 	turn_head UP
@@ -110,15 +134,36 @@ ReganVanishingAct:
 	turn_head UP
 	turn_head RIGHT
 	turn_head DOWN
+	turn_head LEFT
+	turn_head UP
+	turn_head RIGHT
+	turn_head DOWN
+	turn_head LEFT
 	step_end
-	
+
+ReganVanishingAct:
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_end
+
 E4StartBattle:
 	hide_person
 	slow_step RIGHT
 	step_end
 
 E4AfterBattle:
-	step LEFT
+	slow_step LEFT
 	turn_head RIGHT
 	show_person
 	step_end
@@ -153,47 +198,74 @@ StepAwayE4:
 	step_end
 
 ReganScript_ReganBeforeText:
-	text "I am BRUNO of the"
-	line "ELITE FOUR."
+	text "Ta-da!"
+	
+	para "Pleased to meet"
+	line "you! I am REGAN of"
+	cont "the ELITE FOUR."
+	
+	para "Do you believe"
+	line "that there are"
+	cont "spirits among us?"
+	
+	para "Ever since I was a"
+	line "child, I've had a"
+	cont "strong connection"
+	cont "with them."
+	
+	para "It has given me an"
+	line "advantage when"
+	cont "raising my GHOST-"
+	cont "type #MON."
 
-	para "I always train to"
-	line "the extreme be-"
-	cont "cause I believe in"
-	cont "our potential."
-
-	para "That is how we"
-	line "became strong."
-
-	para "Can you withstand"
-	line "our power?"
-
-	para "Hm? I see no fear"
-	line "in you. You look"
-
-	para "determined. Per-"
-	line "fect for battle!"
-
-	para "Ready, <PLAYER>?"
-	line "You will bow down"
-
-	para "to our overwhelm-"
-	line "ing power!"
+	para "With their help, I"
+	line "can perform mirac-"
+	cont "ulous feats and"
+	cont "illusions!"
+	
+	para "Let's not make the"
+	line "crowd wait any"
+	cont "longer, <PLAYER>."
 
 	para "It's showtime!"
 	done
 
 ReganScript_ReganBeatenText:
-	text "Why? How could we"
-	line "lose?"
+	text "Bravo, bravo!"
+
+	para "That was a marvel-"
+	line "ous performance!"
+
+	para "The crowd loves"
+	line "you, <PLAYER>!"
 	done
 
 ReganScript_ReganDefeatText:
-	text "Having lost, I"
-	line "have no right to"
-	cont "say anything…"
+	text "I can sense you're"
+	line "still skeptical"
+	cont "over the existence"
+	cont "of spirits…"
 
-	para "Go face your next"
-	line "challenge!"
+	para "Hehe!"
+
+	para "You'll be a belie-"
+	line "ver some day."
+
+	para "I promise!"
+	done
+
+ReganHasDisappearedText:
+	text "REGAN has complet-"
+	line "ely disappeared!"
+	
+	para "…How did she do"
+	line "that?"
+	done
+	
+ReganDroppedCardsText:
+	text "REGAN scattered"
+	line "these cards before"
+	cont "the battle."
 	done
 	
 ReganCantProgress:
@@ -216,9 +288,12 @@ RegansRoom_MapEvents:
 	coord_event  6, 16, SCENE_FINISHED, CantPassRegan
 	coord_event  7, 16, SCENE_FINISHED, CantPassRegan
 
-	db 2 ; bg events
+	db 5 ; bg events
 	bg_event  6, 20, BGEVENT_READ, ReganNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, ReganNoTurningBack
+	bg_event  8, 10, BGEVENT_READ, ReganHasDisappeared
+	bg_event  9,  9, BGEVENT_READ, ReganDroppedCards
+	bg_event  9, 10, BGEVENT_READ, ReganDroppedCards
 
 	db 9 ; object events
 	object_event  8, 10, SPRITE_REGAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ReganScript_AfterBattle, -1

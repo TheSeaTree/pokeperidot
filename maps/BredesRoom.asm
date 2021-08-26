@@ -55,16 +55,16 @@ BredeScript_Battle:
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_BREDE
 	iftrue BredeScript_AfterBattle
-	writetext BredeScript_BREDEBeforeText
+	writetext BredeScript_BredeBeforeText
 	waitbutton
 	closetext
-	winlosstext BredeScript_BREDEBeatenText, 0
+	winlosstext BredeScript_BredeBeatenText, 0
 	loadtrainer BREDE, BREDE1
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ELITE_4_BREDE
 	opentext
-	writetext BredeScript_BREDEDefeatText
+	writetext BredeScript_BredeDefeatText
 	waitbutton
 	closetext
 	
@@ -87,7 +87,7 @@ CantPassBrede:
 	end
 
 BredeScript_AfterBattle:
-	writetext BredeScript_BREDEDefeatText
+	writetext BredeScript_BredeDefeatText
 	waitbutton
 	closetext
 	end
@@ -126,12 +126,12 @@ BredesRoom_EnterMovementRight:
 	step RIGHT
 	step_end
 
-BredeScript_BREDEBeforeText:
+BredeScript_BredeBeforeText:
 	text "Greetings,"
 	line "challenger!"
 
 	para "My name is BREDE."
-	
+
 	para "I come from lands"
 	line "far away in search"
 	cont "of greater chall-"
@@ -153,24 +153,35 @@ BredeScript_BREDEBeforeText:
 	cont "down in battle!"
 	done
 
-BredeScript_BREDEBeatenText:
-	text "Ah!"
-	line "You have proven"
-	cont "your worth!"
+BredeScript_BredeBeatenText:
+	text "It is best I go"
+	line "down with honor."
+
+	para "I am proud of my"
+	line "team for sharing"
+	cont "in my belief."
+
+	para "It was not until"
+	line "my last #MON"
+	cont "fainted that I"
+	cont "accepted defeat."
 	done
 
-BredeScript_BREDEDefeatText:
-	text "I subjected you to"
-	line "everything I could"
-	cont "muster."
-
-	para "But my efforts"
-	line "failed. I must"
-	cont "hone my skills."
-
-	para "Go on to the next"
-	line "room, and put your"
-	cont "abilities to test!"
+BredeScript_BredeDefeatText:
+	text "In losing to you,"
+	line "I have no right to"
+	cont "give any advice."
+	
+	para "You have bested"
+	line "me, and you have"
+	cont "earned the right"
+	cont "to progress."
+	
+	para "My training will"
+	line "not end here, and"
+	cont "I await my chance"
+	cont "to meet you in"
+	cont "battle once more."
 	done
 	
 BredeCantProgress:

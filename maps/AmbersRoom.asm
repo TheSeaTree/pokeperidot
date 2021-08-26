@@ -33,13 +33,9 @@ ContinueApporachAmber:
 	appear AMBERSROOM_KRIS
 .ContinueBattle
 	applymovement PLAYER, AmbersRoom_CameraPan
-
-	applymovement AMBERSROOM_AMBER, AmberApproachPlayer
-	moveobject AMBERSROOM_AMBER, 8, 10
 	setscene SCENE_FINISHED
 
 AmberScript_Battle:
-	faceplayer
 	opentext
 	checkevent EVENT_BEAT_ELITE_4_AMBER
 	iftrue AmberScript_AfterBattle
@@ -64,6 +60,27 @@ AmberScript_Battle:
 	waitsfx
 	end
 	
+	
+ChampionDoorLeft:
+	checkflag ENGINE_CREDITS_SKIP
+	iftrue .Rematch
+	warpmod 1, VICTORS_ROOM
+	end
+
+.Rematch
+	warpmod 1, ELKHORN_TOWN ; Placeholder for EMILYS_ROOM
+	end
+
+ChampionDoorRight:
+	checkflag ENGINE_CREDITS_SKIP
+	iftrue .Rematch
+	warpmod 2, VICTORS_ROOM
+	end
+
+.Rematch
+	warpmod 2, ELKHORN_TOWN ; Placeholder for EMILYS_ROOM
+	end
+
 AmberNoTurningBack:
 	jumptext AmberCantProgress
 	
@@ -136,62 +153,81 @@ AmbersRoom_CameraPanDown:
 AmberScript_AmberBeforeText:
 	text "The ELITE FOUR has"
 	line "saved its best for"
-	cont "last."
+	cont "last!"
 	
 	para "My name is AMBER."
 
-	para "ROCKs are my fav-"
-	line "orite thing in"
-	cont "this world. The"
-	cont "more expensive,"
-	cont "the better!"
+	para "Do you like my"
+	line "jewelry, <PLAYER>?"
+
+	para "There's nothing in"
+	line "this world I love"
+	cont "more than an expe-"
+	cont "nsive ROCK."
+
+	para "My #MON are"
+	line "also quite rare"
+	cont "and costly."
 	
-	para "This extends to my"
-	line "#MON as well."
-	
-	para "You may look at"
-	line "them, but you may"
-	cont "not touch."
-	
+	para "I don't expect a"
+	line "child to appreci-"
+	cont "ate their value."
+
+	para "You may look, but"
+	line "don't touch!"
+
 	para "…Not that I will"
 	line "let you get that"
 	cont "close!"
 
-	para "You will soon see"
-	line "that I am more"
-	cont "than just a pretty"
-	cont "face!"
-	done
+	para "I hope that you're"
+	line "ready, challenger."
+
+	para "I didn't get to"
+	line "this position with"
+	cont "my looks alone!"
+	done	
 
 AmberScript_AmberBeatenText:
-	text "Well, aren't you"
-	line "good. I like that"
-	cont "in a trainer."
+	text "Sigh…"
+	
+	para "I am disappointed"
+	line "to be defeated by"
+	cont "someone with such"
+	cont "little class."
+	
+	para "But I will lose"
+	line "with dignity."
+	
+	para "Congratulations."
+	
+	para "You have defeated"
+	line "the ELITE FOUR!"
 	done
 
 AmberScript_AmberDefeatText:
-	text "Strong #MON."
+	text "Don't celebrate so"
+	line "soon, trainer."
 
-	para "Weak #MON."
+	para "While your battles"
+	line "against the ELITE"
+	cont "FOUR are over,"
+	cont "your #MON"
+	cont "LEAGUE challenge is"
+	cont "not over yet."
 
-	para "That is only the"
-	line "selfish perception"
-	cont "of people."
+	para "There is one other"
+	line "trainer who has"
+	cont "defeated me--your"
+	cont "next challenge."
 
-	para "Truly skilled"
-	line "trainers should"
+	para "The CHAMPION awaits"
+	line "you, <PLAYER>."
 
-	para "try to win with"
-	line "their favorites."
-
-	para "I like your style."
-	line "You understand"
-	cont "what's important."
-
-	para "Go on--the CHAM-"
-	line "PION is waiting."
+	para "Don't embarass me"
+	line "by losing now."
 	done
-	
+
 AmberCantProgress:
 	text "There is no"
 	line "turning back now."
@@ -203,30 +239,22 @@ AmbersRoom_MapEvents:
 	db 4 ; warp events
 	warp_event  6, 19, BREDES_ROOM, 3
 	warp_event  7, 19, BREDES_ROOM, 4
-	warp_event  6,  1, LANCES_ROOM, 1
-	warp_event  7,  1, LANCES_ROOM, 2
+	warp_event  6,  1, VICTORS_ROOM, -1
+	warp_event  7,  1, VICTORS_ROOM, -1
 
-	db 4 ; coord events
+	db 6 ; coord events
 	coord_event  6, 16, SCENE_DEFAULT, ApproachAmberLeft
 	coord_event  7, 16, SCENE_DEFAULT, ApproachAmberRight
 	coord_event  6, 16, SCENE_FINISHED, CantPassAmber
 	coord_event  7, 16, SCENE_FINISHED, CantPassAmber
+	coord_event  6,  2, SCENE_FINISHED, ChampionDoorLeft
+	coord_event  7,  2, SCENE_FINISHED, ChampionDoorRight
 
 	db 2 ; bg events
 	bg_event  6, 20, BGEVENT_READ, AmberNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, AmberNoTurningBack
 
-	db 6 ; object events
-	object_event 12, 14, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
+	db 3 ; object events
+	object_event  8, 10, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
 	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  3,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  1, 10, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  8, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  1,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  3,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event 11,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  9,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event  6,  7, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event 10,  6, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
-	object_event 12,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
