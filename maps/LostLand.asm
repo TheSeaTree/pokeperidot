@@ -205,7 +205,7 @@ LostLand_MapEvents:
 	warp_event  8, 31, REMNANT_CAVE_3F, 4
 	warp_event 44,  9, LOST_LAND_CAVE_1F, 1
 	warp_event 20, 15, LOST_LAND_CAVE_1F, 2
-	warp_event  2, 13, LOST_LAND_HIDDEN_CAVE, 1
+	warp_event  2, 13, LOST_LAND_HIDDEN_CAVE_1F, 1
 
 	db 3 ; coord events
 	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist
