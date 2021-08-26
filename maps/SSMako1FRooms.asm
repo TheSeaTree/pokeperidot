@@ -354,7 +354,9 @@ PlusOneText:
 	done
 	
 SSMako1FRoomsFangirlText:
-	text "My #MON have"
+	text "Hey <PLAYER>!"
+	
+	para "My #MON have"
 	line "earned a long"
 	cont "rest after today!"
 

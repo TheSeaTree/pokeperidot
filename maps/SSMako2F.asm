@@ -18,7 +18,7 @@ SSMako2F_MapScripts:
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_DEFAULT
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_FOLLOWING
-	setmapscene SS_MAKO_STERN, SCENE_SSMAKOSTERN_DEFAULT
+	setmapscene SS_MAKO_DECK, SCENE_SSMAKODECK_DEFAULT
 	end
 
 .DummyScene1:
@@ -208,8 +208,8 @@ SSMako2F_MapEvents:
 	warp_event  5,  8, SS_MAKO_2F_ROOMS, 9
 	warp_event  9,  8, SS_MAKO_2F_ROOMS, 10
 	warp_event 13,  8, SS_MAKO_2F_ROOMS, 11
-	warp_event  2,  4, SS_MAKO_STERN, 1
-	warp_event  2,  5, SS_MAKO_STERN, 2
+	warp_event  2,  4, SS_MAKO_DECK, 1
+	warp_event  2,  5, SS_MAKO_DECK, 2
 
 	db 20 ; coord events
 	coord_event 17, 10, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport1

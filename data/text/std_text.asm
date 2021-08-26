@@ -284,11 +284,11 @@ EmilyCompanionText7:
 	done
 
 EmilyCompanionText8:
-	text "We have the VIP"
+	text "You have a VIP"
 	line "TICKET now!"
 	
 	para "We can get past"
-	line "the receptionist"
+	line "the RECEPTIONIST"
 	cont "upstairs."
 	done
 

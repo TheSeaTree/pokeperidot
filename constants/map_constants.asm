@@ -262,7 +262,7 @@ ENDM
 	map_const SS_MAKO_ENGINE_ROOM,							 7,  5
 	map_const SS_MAKO_2F,								   	11,  7
 	map_const SS_MAKO_2F_ROOMS,						   		25,  8
-	map_const SS_MAKO_STERN,						   		10,  7
+	map_const SS_MAKO_DECK, 						   		10,  7
 	map_const SS_MAKO_LOWER_DECK,						   	10,  5
 
 	newgroup                                                      ; 16
@@ -275,7 +275,7 @@ ENDM
 	map_const REGANS_ROOM,                                  7, 10 ;  5
 	map_const BREDES_ROOM,                                  7, 10 ;  4
 	map_const AMBERS_ROOM,                                  7, 10 ;  6
-	map_const LANCES_ROOM,                                  5, 12 ;  7
+	map_const VICTORS_ROOM,                                 7, 15 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
 
 	newgroup                                                      ; 17
@@ -307,7 +307,9 @@ ENDM
 	map_const REMNANT_CAVE_3F,	                            7, 13
 	map_const LOST_LAND,		                           29, 20
 	map_const LOST_LAND_CAVE_1F,		                   13, 12
+	map_const LOST_LAND_CAVE_B1F,		                   22, 14
 	map_const LOST_LAND_HIDDEN_CAVE_1F,					   10, 10
+	map_const LOST_LAND_HIDDEN_CAVE_2F,					    9, 11
 
 	newgroup                                                      ; 20
 

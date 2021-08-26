@@ -201,7 +201,7 @@ INCLUDE "maps/OrvillesRoom.asm"
 INCLUDE "maps/RegansRoom.asm"
 INCLUDE "maps/BredesRoom.asm"
 INCLUDE "maps/AmbersRoom.asm"
-INCLUDE "maps/LancesRoom.asm"
+INCLUDE "maps/VictorsRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
 
 
@@ -289,7 +289,9 @@ INCLUDE "maps/RemnantCave2F.asm"
 INCLUDE "maps/RemnantCaveOutside.asm"
 INCLUDE "maps/RemnantCave3F.asm"
 INCLUDE "maps/LostLandHiddenCave1F.asm"
+INCLUDE "maps/LostLandHiddenCave2F.asm"
 INCLUDE "maps/LostLandCave1F.asm"
+INCLUDE "maps/LostLandCaveB1F.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -407,5 +409,5 @@ INCLUDE "maps/SSMakoB1F.asm"
 INCLUDE "maps/SSMakoEngineRoom.asm"
 INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
-INCLUDE "maps/SSMakoStern.asm"
+INCLUDE "maps/SSMakoDeck.asm"
 INCLUDE "maps/SSMakoLowerDeck.asm"

@@ -145,6 +145,14 @@ SSMakoSternCrowdCleared:
 	closetext
 	setevent EVENT_SS_MAKO_DECK_CLEARED
 	end
+	
+SSMako2FRoomsChampion:
+	faceplayer
+	opentext
+	writetext SSMako2FRoomsChampionText
+	waitbutton
+	closetext
+	end
 
 Rooms2FFangirlTeleport1:
 	moveobject SSMAKO2FROOMS_FANGIRL,  2, 5
@@ -354,6 +362,32 @@ SSMakoJournalsText:
 	cont "rnals of battle"
 	cont "strategies."
 	done
+	
+SSMako2FRoomsChampionText:
+	text "Huh? Who are you?"
+	line "How did you get in"
+	line "here?"
+
+	para "<……><……>"
+
+	para "<PLAYER>, huh?"
+
+	para "Are you planning"
+	line "to challenge the"
+	cont "#MON LEAGUE?"
+
+	para "Kid, you know how"
+	line "many people try"
+	cont "that challenge?"
+
+	para "Most can't even"
+	line "make it past the"
+	cont "first member of"
+	cont "the ELITE FOUR."
+
+;	"I'm not trying to say it can't be done, but you have to be realistic. You're still young. There are people who challenge the LEAGUE that have been training for years."
+	; Come up with something better than the above.
+	done
 
 SSMako2FRooms_MapEvents:
 	db 0, 0 ; filler
@@ -396,7 +430,7 @@ SSMako2FRooms_MapEvents:
 	bg_event  6,  1, BGEVENT_READ, SSMakoJournals
 	bg_event  7,  1, BGEVENT_READ, SSMakoJournals
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event 49, 15, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsFangirl, -1
 	object_event 30,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGentlemanCharles, -1
 	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
@@ -404,3 +438,4 @@ SSMako2FRooms_MapEvents:
 	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
 	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1
+	object_event 45,  5, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, -1

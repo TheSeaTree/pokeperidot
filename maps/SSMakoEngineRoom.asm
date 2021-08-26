@@ -27,7 +27,11 @@ FangirlEngineRoomTeleport:
 SSMakoEngineRoomFangirl:
 ; This one might not need to be an std script. Just check if the player has the item or not.
 	; "Do you think that's the guy who has a spare ticket over there on the other side of the room? Let's talk to him!"
-	; "We got the ticket! Let's go back upstairs to get past that RECEPTIONIST!"
+	checkevent EVENT_GOT_VIP_TICKET
+	iftrue .Ticket
+	jumptextfaceplayer SSMakoEngineRoomEmilyBeforeTicketText
+	
+.Ticket
 	jumpstd emilycompanion
 	
 SSMakoB1FGiveTicket:
@@ -92,6 +96,15 @@ SailorTaylorAfterText:
 	cont "mind giving it"
 	cont "away to a good"
 	cont "trainer like you."
+	done
+	
+SSMakoEngineRoomEmilyBeforeTicketText:
+	text "That must be the"
+	line "man with the VIP"
+	cont "TICKET."
+	
+	para "Let's see if he'll"
+	line "let you have it."
 	done
 
 SSMakoEngineRoom_MapEvents:

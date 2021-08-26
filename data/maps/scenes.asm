@@ -15,7 +15,7 @@ MapScenes::
 	scene_var REGANS_ROOM,                              wRegansRoomSceneID
 	scene_var BREDES_ROOM,                              wBredesRoomSceneID
 	scene_var AMBERS_ROOM,                              wAmbersRoomSceneID
-	scene_var LANCES_ROOM,                              wLancesRoomSceneID
+	scene_var VICTORS_ROOM,                             wVictorsRoomSceneID
 	scene_var HALL_OF_FAME,                             wHallOfFameSceneID
 	scene_var ELKHORN_TOWN,                             wNewBarkTownSceneID
 	scene_var MAPLES_LAB,                               wMaplesLabSceneID
@@ -58,6 +58,6 @@ MapScenes::
 	scene_var SS_MAKO_ENGINE_ROOM,                 		wSSMakoEngineRoomSceneID
 	scene_var SS_MAKO_2F,                    			wSSMako2FSceneID
 	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
-	scene_var SS_MAKO_STERN,                       		wSSMakoSternSceneID
+	scene_var SS_MAKO_DECK,                       		wSSMakoDeckSceneID
 	scene_var SS_MAKO_LOWER_DECK,                  		wSSMakoLowerDeckSceneID
 	db -1

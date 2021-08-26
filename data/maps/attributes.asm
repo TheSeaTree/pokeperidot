@@ -317,7 +317,7 @@ ENDM
 	map_attributes RegansRoom, REGANS_ROOM, $00, 0
 	map_attributes BredesRoom, BREDES_ROOM, $00, 0
 	map_attributes AmbersRoom, AMBERS_ROOM, $00, 0
-	map_attributes LancesRoom, LANCES_ROOM, $00, 0
+	map_attributes VictorsRoom, VICTORS_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes Route3Route4Gate, ROUTE_3_ROUTE_4_GATE, $00, 0
 	map_attributes Route5SuperRodHouse, ROUTE_5_SUPER_ROD_HOUSE, $00, 0
@@ -500,7 +500,9 @@ ENDM
 	map_attributes RemnantCaveOutside, REMNANT_CAVE_OUTSIDE, $00, 0
 	map_attributes RemnantCave3F, REMNANT_CAVE_3F, $09, 0
 	map_attributes LostLandCave1F, LOST_LAND_CAVE_1F, $09, 0
+	map_attributes LostLandCaveB1F, LOST_LAND_CAVE_B1F, $09, 0
 	map_attributes LostLandHiddenCave1F, LOST_LAND_HIDDEN_CAVE_1F, $09, 0
+	map_attributes LostLandHiddenCave2F, LOST_LAND_HIDDEN_CAVE_2F, $09, 0
 	map_attributes EnteiCave1F, ENTEI_CAVE_1F, $09, 0
 	map_attributes EnteiCaveB1F, ENTEI_CAVE_B1F, $8c, 0
 	map_attributes OrchidBlackbeltsHouse, ORCHID_BLACKBELTS_HOUSE, $09, 0
@@ -510,7 +512,7 @@ ENDM
 	map_attributes SSMakoEngineRoom, SS_MAKO_ENGINE_ROOM, $00, 0
 	map_attributes SSMako2F, SS_MAKO_2F, $00, 0
 	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
-	map_attributes SSMakoStern, SS_MAKO_STERN, $72, 0
+	map_attributes SSMakoDeck, SS_MAKO_DECK, $72, 0
 	map_attributes SSMakoLowerDeck, SS_MAKO_LOWER_DECK, $72, 0
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 	map_attributes VictoryPort, VICTORY_PORT, $11, 0

@@ -459,8 +459,8 @@ VictoryRoadGate_Blocks:
 VictoryRoad_Blocks:
 	INCBIN "maps/VictoryRoad.ablk"
 
-LancesRoom_Blocks:
-	INCBIN "maps/LancesRoom.ablk"
+VictorsRoom_Blocks:
+	INCBIN "maps/VictorsRoom.ablk"
 
 HallOfFame_Blocks:
 	INCBIN "maps/HallOfFame.ablk"
@@ -755,9 +755,15 @@ RemnantCave3F_Blocks:
 	
 LostLandHiddenCave1F_Blocks:
 	INCBIN "maps/LostLandHiddenCave1F.ablk"
+	
+LostLandHiddenCave2F_Blocks:
+	INCBIN "maps/LostLandHiddenCave2F.ablk"
 
 LostLandCave1F_Blocks:
 	INCBIN "maps/LostLandCave1F.ablk"
+
+LostLandCaveB1F_Blocks:
+	INCBIN "maps/LostLandCaveB1F.ablk"
 	
 SSMako1F_Blocks:
 	INCBIN "maps/SSMako1F.ablk"
@@ -777,8 +783,8 @@ SSMako2F_Blocks:
 SSMako2FRooms_Blocks:
 	INCBIN "maps/SSMako2FRooms.ablk"
 	
-SSMakoStern_Blocks:
-	INCBIN "maps/SSMakoStern.ablk"
+SSMakoDeck_Blocks:
+	INCBIN "maps/SSMakoDeck.ablk"
 
 SSMakoLowerDeck_Blocks:
 	INCBIN "maps/SSMakoLowerDeck.ablk"
