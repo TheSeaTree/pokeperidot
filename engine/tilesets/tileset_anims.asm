@@ -238,6 +238,7 @@ TilesetIcePathAnim:
 	dw vTiles2 tile $31, WriteTileFromBuffer
 	dw NULL,  DoneTileAnimation
 
+TilesetChampionsRoomAnim:
 TilesetTowerAnim:
 	dw NULL, AnimateRightFireTile
 	dw NULL, AnimateLeftFireTile
@@ -267,7 +268,6 @@ TilesetMartAnim:
 TilesetMansionAnim:
 TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
-TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
 TilesetPlayersRoomAnim:
 TilesetBattleTowerAnim:

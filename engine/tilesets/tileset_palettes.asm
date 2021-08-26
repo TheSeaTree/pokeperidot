@@ -33,6 +33,8 @@ LoadSpecialMapPalette:
 	jr z, .roof
 	cp  TILESET_ELITE_FOUR_ROOM
 	jr z, .elitefourroom
+	cp  TILESET_CHAMPIONS_ROOM
+	jr z, .championsroom
 	cp  TILESET_POKEMON_LEAGUE
 	jr z, .pokemonleague
 	cp  TILESET_LOST_LAND
@@ -117,6 +119,10 @@ LoadSpecialMapPalette:
 
 .pokemonleague
 	ld hl, PokemonLeaguePalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.championsroom
+	ld hl, ChampionsRoomPalette
 	jp LoadEightTimeOfDayBGPalettes
 
 .lostland
@@ -256,6 +262,9 @@ INCLUDE "gfx/tilesets/roof.pal"
 
 EliteFourRoomPalette:
 INCLUDE "gfx/tilesets/elite_four_room.pal"
+
+ChampionsRoomPalette:
+INCLUDE "gfx/tilesets/champions_room.pal"
 
 PokemonLeaguePalette:
 INCLUDE "gfx/tilesets/pokemon_league.pal"
