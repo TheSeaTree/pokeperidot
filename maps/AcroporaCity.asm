@@ -14,14 +14,25 @@ AcroporaFisherScript:
 	jumptextfaceplayer AcroporaFisherText
 	
 AcroporaGymEvent:
+	checkflag ENGINE_COGBADGE
+	iftrue .havebadge
 	scall AcroporaGymEntrance
 	iffalse .no
+.warp
 	warpfacing UP, ACROPORA_GYM,  4, 11
 .no
-	end	
+	end
 	
+.havebadge
+	scall AcroporaEnterGym
+	jump .warp
+
 AcroporaGymEntrance:
 	jumpstd gymdoor
+	end
+	
+AcroporaEnterGym:
+	jumpstd entergym
 	end
 	
 AcroporaCitySign:

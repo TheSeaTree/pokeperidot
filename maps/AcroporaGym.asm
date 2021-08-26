@@ -64,7 +64,7 @@ AcroporaCantLeave:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	wait 4
-	warpfacing DOWN, ACROPORA_CITY, 20, 7
+	warpfacing DOWN, ACROPORA_CITY, 14, 7
 	end
 	
 AcroporaLeaveGym:
