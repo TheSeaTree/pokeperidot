@@ -67,7 +67,7 @@ MaplesLab_MapScripts:
 	return
 	
 .WaterPlant:
-	changeblock 8, 0, $3f
+	changeblock 8, 0, $30
 	return
 
 ProfMapleScript:
