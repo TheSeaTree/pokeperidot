@@ -22,7 +22,7 @@ LostLand_MapScripts:
 .SmashWall:
 	checkevent EVENT_LOST_LAND_HIDDEN_CAVE_OPEN
 	iffalse .done
-	changeblock  6, 10, $54
+	changeblock  2, 12, $54
 .done
 	return
 
@@ -202,10 +202,10 @@ LostLand_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  8, 31, REMNANT_CAVE_3F, 4 ;Entrance
+	warp_event  8, 31, REMNANT_CAVE_3F, 4
 	warp_event 44,  9, LOST_LAND_CAVE_1F, 1
 	warp_event 20, 15, LOST_LAND_CAVE_1F, 2
-	warp_event  6, 11, LOST_LAND, 4 ;Puzzle Chamber, Unlocks Lugia cave.
+	warp_event  2, 13, LOST_LAND_HIDDEN_CAVE, 1
 
 	db 3 ; coord events
 	coord_event  8, 32, SCENE_DEFAULT, LostLandScientist

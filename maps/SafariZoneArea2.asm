@@ -10,6 +10,15 @@ SafariZoneArea2_MapScripts:
 	clearflag ENGINE_SAFARI_REST_HOUSE
 	return
 
+SafariZoneArea2XDefend:
+	itemball X_DEFEND
+
+SafariZoneArea2HiddenBrickPiece:
+	hiddenitem BRICK_PIECE, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_BRICK_PIECE
+
+SafariZoneArea2HiddenEnergyRoot:
+	hiddenitem ENERGY_ROOT, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_ENERGY_ROOT
+
 SafariZoneArea2Sign:
 	jumptext SafariZoneArea2SignText
 	
@@ -33,12 +42,12 @@ SafariZoneArea2_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 5 ; bg events
 	bg_event  6, 20, BGEVENT_READ, SafariZoneArea2Sign
 	bg_event 16,  2, BGEVENT_READ, SafariZoneArea2Sign
 	bg_event 30,  8, BGEVENT_READ, SafariZoneArea2RestHouseSign
-;	bg_event 28, 25, BGEVENT_ITEM, SafariZoneArea2Hidden
-;	bg_event  6, 14, BGEVENT_ITEM, SafariZoneArea2Hidden
+	bg_event 28, 25, BGEVENT_ITEM, SafariZoneArea2HiddenBrickPiece
+	bg_event  6, 14, BGEVENT_ITEM, SafariZoneArea2HiddenEnergyRoot
 
 	db 0 ; object events
-	object_event 14, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 14, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea2XDefend, EVENT_SAFARI_ZONE_X_DEFEND

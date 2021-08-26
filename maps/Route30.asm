@@ -8,8 +8,14 @@ Route30_MapScripts:
 Route30ItemBush:
 	itembush FRUITTREE_ROUTE_30
 
-Route30Brightpowder:
-	itemball BRIGHTPOWDER
+Route30WaterStone:
+	itemball WATER_STONE
+
+Route30MysticWater:
+	itemball MYSTIC_WATER
+	
+Route30HiddenXSpAtk:
+	hiddenitem X_SP_ATK, EVENT_ROUTE_30_HIDDEN_X_SP_ATK
 
 Route30_MapEvents:
 	db 0, 0 ; filler
@@ -19,8 +25,10 @@ Route30_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 30, 11, BGEVENT_ITEM, Route30HiddenXSpAtk
 
 	db 2 ; object events
 	object_event  9, 34, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30ItemBush, -1
-	object_event 30, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30Brightpowder, EVENT_ROUTE_30_BRIGHTPOWDER
+	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30WaterStone, EVENT_ROUTE_30_WATER_STONE
+	object_event  5,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30MysticWater, EVENT_ROUTE_30_MYSTIC_WATER

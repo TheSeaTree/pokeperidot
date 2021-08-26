@@ -11,8 +11,8 @@ LostLandCave1F_MapEvents:
 	db 4 ; warp events
 	warp_event 12,  7, LOST_LAND, 2
 	warp_event  8, 17, LOST_LAND, 3
-	warp_event 20, 13, LOST_LAND_CAVE_1F, 4
-	warp_event  3, 21, LOST_LAND_CAVE_1F, 3
+	warp_event 20, 13, LOST_LAND_CAVE_B1F, 1
+	warp_event  3, 21, LOST_LAND_CAVE_B1F, 2
 
 	db 0 ; coord events
 

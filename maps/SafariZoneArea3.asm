@@ -12,6 +12,15 @@ SafariZoneArea3_MapScripts:
 	
 SafariZoneTMLeechLife:
 	itemball TM_LEECH_LIFE
+	
+SafariZoneArea3MiracleSeed:
+	itemball MIRACLE_SEED
+
+SafariZoneArea3HiddenRevive:
+	hiddenitem REVIVE, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_REVIVE
+
+SafariZoneArea3HiddenCarbos:
+	hiddenitem CARBOS, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_CARBOS
 
 SafariZoneArea3Sign:
 	jumptext SafariZoneArea3SignText
@@ -36,12 +45,12 @@ SafariZoneArea3_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 4 ; bg events
 	bg_event 18, 20, BGEVENT_READ, SafariZoneArea3Sign
 	bg_event  8, 22, BGEVENT_READ, SafariZoneArea3RestHouseSign
-;	bg_event 20, 27, BGEVENT_ITEM, SafariZoneArea3Hidden
-;	bg_event 13,  2, BGEVENT_ITEM, SafariZoneArea3Hidden
+	bg_event 20, 27, BGEVENT_ITEM, SafariZoneArea3HiddenRevive
+	bg_event 13,  2, BGEVENT_ITEM, SafariZoneArea3HiddenCarbos
 
 	db 2 ; object events
 	object_event 23,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, SafariZoneTMLeechLife, EVENT_GOT_TM_LEECH_LIFE
-	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea3MiracleSeed, EVENT_SAFARI_ZONE_MIRACLE_SEED

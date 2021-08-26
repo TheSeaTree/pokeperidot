@@ -25,6 +25,27 @@ SafariZoneArea1_MapScripts:
 	changeblock  2, 20, $7d
 	return
 
+SafariZoneArea1MoonStone:
+	itemball MOON_STONE
+
+SafariZoneArea1WaterStone:
+	itemball MOON_STONE
+
+SafariZoneArea1ScopeLens:
+	itemball SCOPE_LENS
+
+SafariZoneArea1FullRestore:
+	itemball FULL_RESTORE
+
+SafariZoneArea1PokeDoll:
+	itemball POKE_DOLL
+
+SafariZoneArea1HiddenFullHeal:
+	hiddenitem FULL_HEAL, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_FULL_HEAL
+	
+SafariZoneArea1HiddenGoldLeaf:
+	hiddenitem GOLD_LEAF, EVENT_SAFARI_ZONE_AREA_2_HIDDEN_GOLD_LEAF
+
 SafariZoneArea1Sign:
 	jumptext SafariZoneArea1SignText
 
@@ -41,7 +62,7 @@ SafariZoneArea1SignText:
 	text "SAFARI ZONE-"
 	line "AREA 1"
 	done
-	
+
 SafariZoneArea1RestHouseSignText:
 	text "REST HOUSE"
 	done
@@ -66,18 +87,18 @@ SafariZoneArea1_MapEvents:
 
 	db 0 ; coord events
 
-	db 5 ; bg events
+	db 7 ; bg events
 	bg_event 34, 28, BGEVENT_READ, SafariZoneArea1Sign
 	bg_event 16,  6, BGEVENT_READ, SafariZoneArea1Sign
 	bg_event 28, 30, BGEVENT_READ, SafariZoneArea1RestHouseSign
 	bg_event  3, 21, BGEVENT_IFNOTSET, SafariZoneArea1ConstructionSign
 	bg_event  2, 12, BGEVENT_IFNOTSET, SafariZoneArea1ConstructionSign
-;	bg_event 14,  2, BGEVENT_ITEM, SafariZoneArea1Hidden
-;	bg_event 24, 12, BGEVENT_ITEM, SafariZoneArea1Hidden
+	bg_event 24, 12, BGEVENT_ITEM, SafariZoneArea1HiddenFullHeal
+	bg_event 14,  2, BGEVENT_ITEM, SafariZoneArea1HiddenGoldLeaf
 
 	db 5 ; object events
-	object_event 18, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 28, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 27,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 33, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 28, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea1MoonStone, EVENT_SAFARI_ZONE_MOON_STONE
+	object_event 33, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea1WaterStone, EVENT_SAFARI_ZONE_WATER_STONE
+	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea1FullRestore, EVENT_SAFARI_ZONE_FULL_RESORE
+	object_event 27,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea1ScopeLens, EVENT_SAFARI_ZONE_SCOPE_LENS
+	object_event  6,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SafariZoneArea1PokeDoll, EVENT_SAFARI_ZONE_POKE_DOLL

@@ -88,6 +88,9 @@ EastForestHypnoScript:
 	closetext
 	end
 	
+EastForestBrightpowder:
+	itemball BRIGHTPOWDER
+	
 EastForestPowerPlantSign:
 	jumptext EastForestPowerPlantSignText
 	
@@ -221,7 +224,8 @@ EastForest_MapEvents:
 	bg_event 47, 14, BGEVENT_UP, EastForestPowerPlantSign
 	bg_event 45, 13, BGEVENT_READ, EastForestPowerPlantFence
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event 16, 10, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherBea, -1
 	object_event 12, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestMoveTutor, -1
 	object_event 13, 18, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 17, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, EastForestBrightpowder, EVENT_EAST_FOREST_BRIGHTPOWDER

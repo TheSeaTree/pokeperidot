@@ -102,6 +102,15 @@ Route20TrainerTipSign:
 
 Route20PoisonBarb:
 	itemball POISON_BARB
+	
+Route20HiddenNugget:
+	hiddenitem NUGGET, EVENT_ROUTE_20_HIDDEN_NUGGET
+	
+Route20HiddenXSpeed:
+	hiddenitem X_SPEED, EVENT_ROUTE_20_HIDDEN_X_SPEED
+	
+Route20HiddenSunStone:
+	hiddenitem SUN_STONE, EVENT_ROUTE_20_HIDDEN_SUN_STONE
 
 Route20FruitTree1:
 	fruittree FRUITTREE_ROUTE_20_1
@@ -288,9 +297,12 @@ Route20_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 11, 32, BGEVENT_READ, Route20Sign
 	bg_event 43, 25, BGEVENT_READ, Route20TrainerTipSign
+	bg_event 55, 22, BGEVENT_ITEM, Route20HiddenNugget
+	bg_event  7, 30, BGEVENT_ITEM, Route20HiddenXSpeed
+	bg_event  8, 19, BGEVENT_ITEM, Route20HiddenSunStone
 
 	db 9 ; object events
 	object_event 28, 16, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20SnorlaxEvent, EVENT_FOUGHT_SNORLAX
