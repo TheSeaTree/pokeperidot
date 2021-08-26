@@ -57,7 +57,6 @@ RidgeCafeVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext CafeClangText
-	special PlaceMoneyTopRight
 	buttonsound
 	itemnotify
 	writetext CafeAnythingElseText

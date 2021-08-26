@@ -163,32 +163,33 @@ Route14MoveTutor:
 .OneBall:
 	checkmoney YOUR_MONEY, 300
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LOVE_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 300
 	itemtotext LOVE_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 3000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LOVE_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 3000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext LoveBallMerchantBuy1Text
 	yesorno
 	iffalse .No
+	giveitem LOVE_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 300
 	jump .VendItem
 .AskToVend10:
 	writetext LoveBallMerchantBuy10Text
 	yesorno
 	iffalse .No
+	giveitem LOVE_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 3000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 

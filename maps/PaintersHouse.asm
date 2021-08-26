@@ -87,10 +87,9 @@ Painter:
 .BuyPoster
 	writetext PainterConfirmText
 	takemoney YOUR_MONEY, 15000
-	special PlaceMoneyTopRight
-	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	writetext PainterShippedToHomeText
 	waitbutton
 	setevent EVENT_MET_PAINTER

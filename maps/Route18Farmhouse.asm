@@ -50,32 +50,33 @@ Route18FarmhouseMother:
 .One:
 	checkmoney YOUR_MONEY, 950
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem MOOMOO_MILK
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 950
 	itemtotext MOOMOO_MILK, MEM_BUFFER_0
 	jump .AskToVend1
 
 .Dozen:
 	checkmoney YOUR_MONEY, 11400
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem MOOMOO_MILK, 12
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 11400
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext Buy1MilkBottleText
 	yesorno
 	iffalse .No
+	giveitem MOOMOO_MILK
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 950
 	jump .VendItem
 .AskToVend10:
 	writetext BuyDozenMilkBottleText
 	yesorno
 	iffalse .No
+	giveitem MOOMOO_MILK, 12
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 11400
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 

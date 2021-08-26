@@ -39,11 +39,11 @@ CarpetGuy:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 6000
-	special PlaceMoneyTopRight
 	setevent EVENT_DECO_CARPET_1
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .BuyAnother
 
 .Blue
@@ -66,11 +66,11 @@ CarpetGuy:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 6000
-	special PlaceMoneyTopRight
 	setevent EVENT_DECO_CARPET_2
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .BuyAnother
 
 .Yellow
@@ -93,11 +93,11 @@ CarpetGuy:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 6000
-	special PlaceMoneyTopRight
 	setevent EVENT_DECO_CARPET_3
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .BuyAnother
 
 .Green
@@ -120,11 +120,11 @@ CarpetGuy:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 6000
-	special PlaceMoneyTopRight
 	setevent EVENT_DECO_CARPET_4
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .BuyAnother
 	
 .SomethingElse	

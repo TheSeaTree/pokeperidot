@@ -3,9 +3,6 @@ Route6SurfersHouse_MapScripts:
 
 	db 0 ; callbacks
 
-; Use EVENT_LURE_BALLS_FOR_SALE for salesman.
-; Check for a specific caught fish mon? Maybe a rare one?
-
 Route6LureBallGuy:
 	faceplayer
 	opentext
@@ -48,32 +45,33 @@ Route6LureBallGuy:
 .OneBall:
 	checkmoney YOUR_MONEY, 800
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LURE_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 800
 	itemtotext LURE_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 8000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LURE_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 8000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext LureBallGuyBuy1Text
 	yesorno
 	iffalse .No
+	giveitem LURE_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 800
 	jump .VendItem
 .AskToVend10:
 	writetext LureBallGuyBuy10Text
 	yesorno
 	iffalse .No
+	giveitem LURE_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 8000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 

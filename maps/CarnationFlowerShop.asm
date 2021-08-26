@@ -51,9 +51,6 @@ FlowerShopLady:
 	takemoney YOUR_MONEY, 5500
 	special PlaceMoneyTopRight
 	setevent EVENT_DECO_PLANT_1
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
 	jump .Confirm
 
 .Tropic
@@ -67,9 +64,6 @@ FlowerShopLady:
 	takemoney YOUR_MONEY, 5500
 	special PlaceMoneyTopRight
 	setevent EVENT_DECO_PLANT_2
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
 	jump .Confirm
 
 .Jumbo
@@ -83,9 +77,6 @@ FlowerShopLady:
 	takemoney YOUR_MONEY, 5500
 	special PlaceMoneyTopRight
 	setevent EVENT_DECO_PLANT_3
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
 	jump .Confirm
 
 .Desert
@@ -99,9 +90,6 @@ FlowerShopLady:
 	takemoney YOUR_MONEY, 5500
 	special PlaceMoneyTopRight
 	setevent EVENT_DECO_PLANT_5
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
 	jump .Confirm
 
 .Island
@@ -115,11 +103,11 @@ FlowerShopLady:
 	takemoney YOUR_MONEY, 5500
 	special PlaceMoneyTopRight
 	setevent EVENT_DECO_PLANT_6
-	pause 10
-	playsound SFX_TRANSACTION
-	waitsfx
 	
 .Confirm
+	playsound SFX_TRANSACTION
+	waitsfx
+	special PlaceMoneyTopRight
 	writetext CarnationFlowerShopShippedToHome
 	waitbutton
 	jump .SomethingElse
@@ -214,7 +202,10 @@ FlowerShopDesertPlant:
 
 FlowerShopIslandPlant:
 	jumptext FlowerShopIslandPlantText
-	
+
+FlowerShopAssortedFlowers:
+	jumptext FlowerShopAssortedFlowersText
+
 FlowerShopSudowoodoShakeMovement:
 	tree_shake
 	step_resume
@@ -346,6 +337,12 @@ FlowerShopIslandPlantText:
 	text "The tag says this"
 	line "is an ISLANDPLANT."
 	done
+	
+FlowerShopAssortedFlowersText:
+	text "There is an assor-"
+	line "tment of pretty"
+	cont "flowers."
+	done
 
 CarnationFlowerShop_MapEvents:
 	db 0, 0 ; filler
@@ -356,12 +353,18 @@ CarnationFlowerShop_MapEvents:
 
 	db 0 ; coord events
 
-	db 5 ; bg events
+	db 11 ; bg events
 	bg_event  7,  4, BGEVENT_READ, FlowerShopMagnaPlant
 	bg_event  2,  1, BGEVENT_READ, FlowerShopTropicPlant
 	bg_event  0,  2, BGEVENT_READ, FlowerShopJumboPlant
 	bg_event  5,  1, BGEVENT_READ, FlowerShopDesertPlant
 	bg_event  0,  0, BGEVENT_READ, FlowerShopIslandPlant
+	bg_event  7,  3, BGEVENT_READ, FlowerShopAssortedFlowers
+	bg_event  3,  1, BGEVENT_READ, FlowerShopAssortedFlowers
+	bg_event  1,  5, BGEVENT_READ, FlowerShopAssortedFlowers
+	bg_event  1,  4, BGEVENT_READ, FlowerShopAssortedFlowers
+	bg_event  0,  3, BGEVENT_READ, FlowerShopAssortedFlowers
+	bg_event  6,  2, BGEVENT_READ, FlowerShopAssortedFlowers
 
 	db 2 ; object events
 	object_event  3,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FlowerShopLady, -1

@@ -67,7 +67,6 @@ RugosaCafeVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext RugosaCafeClangText
-	special PlaceMoneyTopRight
 	buttonsound
 	itemnotify
 	writetext RugosaCafeAnythingElseText

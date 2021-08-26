@@ -77,32 +77,33 @@ StaghornFriendBallMerchant:
 .OneBall:
 	checkmoney YOUR_MONEY, 400
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRIEND_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 400
 	itemtotext FRIEND_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 4000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem FRIEND_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 4000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext FriendBallMerchantBuy1Text
 	yesorno
 	iffalse .No
+	giveitem FRIEND_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 400
 	jump .VendItem
 .AskToVend10:
 	writetext FriendBallMerchantBuy10Text
 	yesorno
 	iffalse .No
+	giveitem FRIEND_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 4000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 
@@ -115,7 +116,7 @@ StaghornFriendBallMerchant:
 	writetext FriendBallMerchantNoSpaceText
 	waitbutton
 	jump .PurchaseMore
-	
+
 .No:
 	writetext FriendBallMerchantNo
 	waitbutton
@@ -177,9 +178,8 @@ FriendBallMerchantBuy10Text:
 	done
 	
 FriendBallMerchantNo:
-	text "Would you prefer"
-	line "a different amount"
-	cont "of those?"
+	text "Would you prefer a"
+	line "different amount?"
 	done
 	
 FriendBallMerchantComeBack:

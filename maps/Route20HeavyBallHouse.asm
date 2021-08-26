@@ -30,32 +30,33 @@ Route20HeavyBallGuy:
 .OneBall:
 	checkmoney YOUR_MONEY, 600
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem HEAVY_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 600
 	itemtotext HEAVY_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem HEAVY_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 6000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext HeavyBallGuyBuy1Text
 	yesorno
 	iffalse .No
+	giveitem HEAVY_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 600
 	jump .VendItem
 .AskToVend10:
 	writetext HeavyBallGuyBuy10Text
 	yesorno
 	iffalse .No
+	giveitem HEAVY_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 6000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 

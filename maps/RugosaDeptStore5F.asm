@@ -62,6 +62,7 @@ RugosaDeptStore5FDollClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .Clefairy
@@ -79,6 +80,7 @@ RugosaDeptStore5FDollClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .Shifur
@@ -96,6 +98,7 @@ RugosaDeptStore5FDollClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .Bulbasaur
@@ -113,6 +116,7 @@ RugosaDeptStore5FDollClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .Charmander
@@ -130,6 +134,7 @@ RugosaDeptStore5FDollClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .Squirtle
@@ -146,6 +151,7 @@ RugosaDeptStore5FDollClerkScript:
 	setevent EVENT_DECO_SQUIRTLE_DOLL
 	pause 10
 	playsound SFX_TRANSACTION
+	special PlaceMoneyTopRight
 	waitsfx
 
 .Confirm
@@ -225,6 +231,7 @@ RugosaDeptStore5FConsoleClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .N64
@@ -241,6 +248,7 @@ RugosaDeptStore5FConsoleClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 
 .VirtualBoy
@@ -257,6 +265,7 @@ RugosaDeptStore5FConsoleClerkScript:
 	pause 10
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	jump .Confirm
 	
 .Confirm

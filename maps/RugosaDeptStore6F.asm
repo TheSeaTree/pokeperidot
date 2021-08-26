@@ -49,6 +49,7 @@ RugosaDeptStoreVendingMachine:
 	jump .VendItem
 
 .VendItem:
+	special PlaceMoneyTopRight
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext RugosaDeptStoreClangText

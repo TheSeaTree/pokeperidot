@@ -249,7 +249,6 @@ RugosaVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext RugosaClangTextMagikarpDoll
-	special PlaceMoneyTopRight
 	buttonsound
 	writetext SentMagikarpDollHome
 	buttonsound
@@ -267,7 +266,6 @@ RugosaVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext RugosaClangTextPoliwagDoll
-	special PlaceMoneyTopRight
 	buttonsound
 	writetext SentPoliwagDollHome
 	buttonsound
@@ -285,7 +283,6 @@ RugosaVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext RugosaClangTextStaryuDoll
-	special PlaceMoneyTopRight
 	buttonsound
 	writetext SentStaryuDollHome
 	buttonsound

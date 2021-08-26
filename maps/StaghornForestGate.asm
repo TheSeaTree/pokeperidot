@@ -29,37 +29,42 @@ StaghornForestGateBerryVendor:
 .MintBerry:
 	checkmoney YOUR_MONEY, 650
 	ifequal HAVE_LESS, .NotEnoughMoney
+	itemtotext MINT_BERRY, MEM_BUFFER_0
+	writetext BerryVendorYesNoText
+	yesorno
+	iffalse .No
 	giveitem MINT_BERRY
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 650
-	itemtotext MINT_BERRY, MEM_BUFFER_0
-	jump .AskToVend
+	jump .VendItem
 	
 .PrzCureBerry:
 	checkmoney YOUR_MONEY, 650
 	ifequal HAVE_LESS, .NotEnoughMoney
+	itemtotext PRZCUREBERRY, MEM_BUFFER_0
+	writetext BerryVendorYesNoText
+	yesorno
+	iffalse .No
 	giveitem PRZCUREBERRY
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 650
-	itemtotext PRZCUREBERRY, MEM_BUFFER_0
-	jump .AskToVend
+	jump .VendItem
 
 .PsnCureBerry:
 	checkmoney YOUR_MONEY, 650
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem PSNCUREBERRY
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 650
 	itemtotext PSNCUREBERRY, MEM_BUFFER_0
-	jump .AskToVend
-	
-.AskToVend:
 	writetext BerryVendorYesNoText
 	yesorno
 	iffalse .No
+	giveitem PSNCUREBERRY
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 650
+
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 ;	writetext PlayerBoughtBerry
 ;	buttonsound
 	itemnotify
