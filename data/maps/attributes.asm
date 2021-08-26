@@ -517,3 +517,4 @@ ENDM
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 	map_attributes VictoryPort, VICTORY_PORT, $11, 0
 	map_attributes VictoryPortInside, VICTORY_PORT_INSIDE, $00, 0
+	map_attributes MoonBallCave, MOON_BALL_CAVE, $09, 0

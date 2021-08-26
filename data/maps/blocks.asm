@@ -424,6 +424,9 @@ SECTION "Map Blocks 3", ROMX
 
 IlexForest_Blocks:
 	INCBIN "maps/IlexForest.ablk"
+	
+MoonBallCave_Blocks:
+	INCBIN "maps/MoonBallCave.ablk"
 
 PlayersHouse2F_Blocks:
 EmilysHouse2F_Blocks:

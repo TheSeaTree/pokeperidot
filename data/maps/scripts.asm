@@ -92,6 +92,7 @@ SECTION "Map Scripts 6", ROMX
 INCLUDE "maps/Route8.asm"
 INCLUDE "maps/Route8SilkScarfHouse.asm"
 INCLUDE "maps/IlexForest.asm"
+INCLUDE "maps/MoonBallCave.asm"
 INCLUDE "maps/PectiniaGymSpeechHouse.asm"
 INCLUDE "maps/PectiniaEvolutionHouse.asm"
 INCLUDE "maps/PectiniaBikeHouse.asm"

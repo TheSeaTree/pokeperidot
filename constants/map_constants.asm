@@ -283,6 +283,7 @@ ENDM
 	map_const ILEX_FOREST,                                 32, 24 ; 52
 	map_const SWORDS_DANCE_HOUSE,							4,  4
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
+	map_const MOON_BALL_CAVE,			                   10,  9
 
 	newgroup                                                      ; 18
 
