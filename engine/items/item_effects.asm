@@ -997,25 +997,20 @@ LoveBallMultiplier:
 	ret
 
 FastBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if enemy mon is in one of the three
-;          FleeMons tables.
-; Reality: multiply catch rate by 4 if enemy mon is one of the first three in
-;          the first FleeMons table.
+; multiply catch rate by 4 if the enemy mon has > 100 base speed
+; adapted from Polished Crystal https://github.com/Rangi42/polishedcrystal/blob/master/engine/items/poke_balls.asm
+	push bc
 	ld a, [wTempEnemyMonSpecies]
-	ld c, a
-	ld hl, FleeMons
-	ld d, 3
-
-.loop
-	ld a, BANK(FleeMons)
+	dec a
+	ld hl, BaseData + BASE_SPD
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+	pop bc
+	ld a, BANK(BaseData)
 	call GetFarByte
+	cp 100
+	ret c
 
-	inc hl
-	cp -1
-	jr z, .next
-	cp c
-	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop"
 	sla b
 	jr c, .max
 
@@ -1024,11 +1019,6 @@ FastBallMultiplier:
 
 .max
 	ld b, $ff
-	ret
-
-.next
-	dec d
-	jr nz, .loop
 	ret
 
 LevelBallMultiplier:
