@@ -190,6 +190,7 @@ INCLUDE "maps/PokeSeersHouse.asm"
 INCLUDE "maps/HepaticaChurch.asm"
 INCLUDE "maps/Route14RugosaGate.asm"
 INCLUDE "maps/Route14Gate.asm"
+INCLUDE "maps/FastEddiesHouse.asm"
 
 
 SECTION "Map Scripts 13", ROMX

@@ -23,12 +23,12 @@ MoonBallLady:
 	end
 	
 .OneBall:
-	checkmoney YOUR_MONEY, 800
+	checkmoney YOUR_MONEY, 500
 	ifequal HAVE_LESS, .NotEnoughMoney
 	jump .AskToVend1
 
 .TenBalls:
-	checkmoney YOUR_MONEY, 8000
+	checkmoney YOUR_MONEY, 5000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	jump .AskToVend10
 
@@ -38,7 +38,7 @@ MoonBallLady:
 	iffalse .No
 	giveitem MOON_BALL
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 800
+	takemoney YOUR_MONEY, 500
 	jump .VendItem
 .AskToVend10:
 	writetext MoonBallLadyBuy10Text
@@ -46,7 +46,7 @@ MoonBallLady:
 	iffalse .No
 	giveitem MOON_BALL, 10
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 8000
+	takemoney YOUR_MONEY, 5000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx

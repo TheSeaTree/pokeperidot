@@ -78,6 +78,7 @@ PavonaInn_Blocks:
 	INCBIN "maps/PavonaInn.ablk"
 	
 PavonaGymSpeechHouse_Blocks:
+FastEddiesHouse_Blocks
 	INCBIN "maps/House3.ablk"
 
 Route19FuchsiaGate_Blocks:

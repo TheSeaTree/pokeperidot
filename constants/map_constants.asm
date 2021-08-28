@@ -268,6 +268,7 @@ ENDM
 	newgroup                                                      ; 16
 
 	map_const POKEMON_LEAGUE,							   24, 18
+	map_const FAST_EDDIES_HOUSE,						  	4,  4
 	map_const VICTORY_PORT,							   	   23, 19
 	map_const VICTORY_PORT_INSIDE,						   10, 13
 	map_const POKEMON_LEAGUE_POKECENTER_1F,                 8,  4 ;  2

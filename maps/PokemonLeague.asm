@@ -8,11 +8,12 @@ PokemonLeague_MapScripts:
 PokemonLeague_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 ;	warp_event 10, 31, POKEMON_LEAGUE_GATE, 3
 ;	warp_event 11, 31, POKEMON_LEAGUE_GATE, 4
 	warp_event 24,  5, POKEMON_LEAGUE_POKECENTER_1F, 1
 	warp_event 25,  5, POKEMON_LEAGUE_POKECENTER_1F, 4
+	warp_event 39, 23, FAST_EDDIES_HOUSE, 1
 
 	db 0 ; coord events
 
