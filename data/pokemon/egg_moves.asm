@@ -693,6 +693,8 @@ ChikoritaEggMoves:
 	db FLAIL
 	db PRESENT
 	db GROWTH
+	db SLEEP_POWDER
+	db STUN_SPORE
 	db -1 ; end
 
 CyndaquilEggMoves:
