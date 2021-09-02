@@ -17,7 +17,8 @@ BattleCommand_UTurn:
 	call StdBattleTextBox
 
 	call BattleCommand_Teleport.PlayerUTurn
-	jp PursuitSwitch
+	callfar PursuitSwitch
+	ret
 
 .enemy_turn:	
 	farcall FindAliveEnemyMons
@@ -46,12 +47,12 @@ BattleCommand_UTurnAnim:
 
 	farcall CheckPlayerHasMonToSwitchTo
 	jp nz, BattleCommand_MoveAnim
-	jp .reapper
+	jp .reappear
 
 .enemy_turn:	
 	farcall FindAliveEnemyMons
 	jp nc, BattleCommand_MoveAnim
-.reapper
+.reappear
 	ld a, 1
 	ld [wBattleAnimParam], a
 	jp PlayDamageAnim
