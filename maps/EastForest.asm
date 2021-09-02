@@ -74,7 +74,6 @@ EastForestMoveTutor:
 	writetext EastForestTutorExplainGoldLeaf
 	waitbutton
 	closetext
-	giveitem GOLD_LEAF
 	end
 
 EastForestHypnoScript:

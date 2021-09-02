@@ -23,6 +23,7 @@ SodaMan:
 	writetext GiveSodaText
 	waitbutton
 	verbosegiveitem SODA_POP
+	iffalse .NotEnoughSpace
 	setflag EVENT_ROUTE_7_BOUGHT_SODA
 	writetext AfterGiveSodaText
 	jump .EndSodaGuy

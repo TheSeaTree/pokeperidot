@@ -154,13 +154,13 @@ SCENE_FINISHED EQU 1
 	const SCENE_DRAGONSDENB1F_NOTHING        ; 0
 	const SCENE_DRAGONSDENB1F_CLAIR_GIVES_TM ; 1
 
-; wOlivinePortSceneID
+; wRugosaPortSceneID
 	const_def 1
-	const SCENE_OLIVINEPORT_LEAVE_SHIP ; 1
+	const SCENE_RUGOSAPORT_LEAVE_SHIP ; 1
 
-; wVermilionPortSceneID
+; wVictoryPortSceneID
 	const_def 1
-	const SCENE_VERMILIONPORT_LEAVE_SHIP ; 1
+	const SCENE_VICTORYPORT_LEAVE_SHIP ; 1
 
 ; wFastShip1FSceneID
 	const_def 1

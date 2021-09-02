@@ -265,10 +265,16 @@ BurglarHideoutB2FScientist:
 	writetext BurglarHideoutB2FScientistRewardText
 	waitbutton
 	verbosegiveitem MASTER_BALL
+	iffalse .NoRoom
 	waitbutton
 	setevent EVENT_GOT_MASTER_BALL
 .GotMasterBall
 	writetext BurglarHideoutB2FScientistAfterText
+	waitbutton
+	closetext
+	end
+.NoRoom
+	writetext BurglarHideoutB2FScientistNoRoomText
 	waitbutton
 	closetext
 	end
@@ -507,6 +513,18 @@ BurglarHideoutB2FScientistAfterText:
 	para "Those crooks"
 	line "probably wanted to"
 	cont "use it on SNORLAX."
+	done
+	
+BurglarHideoutB2FScientistNoRoomText:
+	text "This item is way"
+	line "too valuable, you"
+	cont "won't want to just"
+	cont "carry it around in"
+	cont "the open."
+	
+	para "Free up some PACK"
+	line "space before I"
+	cont "give you this."
 	done
 	
 BurglarHideoutB2FComputer1Text:

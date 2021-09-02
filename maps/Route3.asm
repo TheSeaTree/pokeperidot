@@ -17,15 +17,6 @@ Route3_MapScripts:
 
 	db 0 ; callbacks
 	
-AerodactylAndRepels:
-	faceplayer
-	opentext
-	givepoke AERODACTYL, 20
-	giveitem MAX_REPEL, 99
-	giveitem ULTRA_BALL, 99
-	closetext
-	end
-	
 TrainerPicnickerCindy:
 	trainer PICNICKER, CINDY, EVENT_BEAT_PICNICKER_CINDY, PicnickerCindyText, PicnickerCindyWinText, 0, .Script
 
