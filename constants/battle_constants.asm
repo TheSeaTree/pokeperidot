@@ -101,6 +101,7 @@ SPDSPCDV_BOSS EQU $FE
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_LEGENDARY
 	const BATTLETYPE_BOSS
+	const BATTLETYPE_NOCASH
 
 ; BattleVarPairs indexes (see home/battle.asm)
 	const_def

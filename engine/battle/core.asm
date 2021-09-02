@@ -2607,6 +2607,10 @@ WinTrainerBattle:
 	jr nz, .skip_win_loss_text
 	call PrintWinLossText
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_NOCASH
+	ret z
+
 .skip_win_loss_text
 	jp .GiveMoney
 
