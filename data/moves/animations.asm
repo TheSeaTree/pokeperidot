@@ -2735,14 +2735,24 @@ BattleAnim_DrainPunch:
 	anim_wait 6
 	anim_wait 32
 	anim_ret
-	anim_ret
-	
+
 BattleAnim_LeechLife:
-	anim_1gfx ANIM_GFX_BUBBLE
+	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_CHARGE
+	anim_sound 0, 0, SFX_BITE
+	anim_obj ANIM_OBJ_00, 136, 56, $0
+	anim_wait 8
+.loop
 	anim_sound 6, 3, SFX_WATER_GUN
-	anim_call BattleAnim_LeechLife_branch_cbab3
-	anim_wait 128
-	anim_wait 48
+	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
+	anim_wait 6
+	anim_sound 6, 3, SFX_WATER_GUN
+	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
+	anim_wait 6
+	anim_loop 2, .loop
+	anim_wait 32
 	anim_ret
 
 BattleAnim_Harden:
