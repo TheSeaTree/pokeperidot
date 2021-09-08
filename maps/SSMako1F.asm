@@ -20,7 +20,10 @@ SSMako1F_MapScripts:
 	end
 
 .DummyScene1:
+	end
+
 .DummyScene2:
+	moveobject SSMAKO_SAILOR, 15, 2
 	end
 
 FangirlBagStolenLeft:
@@ -139,7 +142,20 @@ PlayerBoardSSMako:
 	end
 
 SSMako1FSailor:
-	jumptextfaceplayer SSMako1FSailorText
+	faceplayer
+	opentext
+	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
+	iffalse .FirstTime
+	writetext SSMako1FSailorAfterText
+	waitbutton
+	closetext
+	end
+	
+.FirstTime
+	writetext SSMako1FSailorText
+	waitbutton
+	closetext
+	end
 
 ShipReceptionist1:
 	faceplayer
@@ -200,6 +216,17 @@ SSMako1FSailorText:
 	cont "If you leave now,"
 	cont "you may not be"
 	cont "able to re-board."
+	done
+	
+SSMako1FSailorAfterText:
+	text "The S.S.MAKO has"
+	line "already departed,"
+	cont "I cannot let you"
+	cont "off the ship."
+
+	para "Maybe visit your"
+	line "cabin and try to"
+	cont "get some sleep."
 	done
 	
 ShipReceptionist1MaleText:
@@ -285,8 +312,9 @@ SSMako1F_MapEvents:
 	warp_event  3,  8, SS_MAKO_LOWER_DECK, 1
 	warp_event  3,  9, SS_MAKO_LOWER_DECK, 2
 
-	db 21 ; coord events
+	db 22 ; coord events
 	coord_event 15,  2, SCENE_SSMAKO1F_DEFAULT, PlayerBoardSSMako
+	coord_event 15,  2, SCENE_SSMAKO1F_FINISHED, PlayerBoardSSMako
 	coord_event 14,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenRight
 	coord_event 14,  7, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
@@ -311,8 +339,8 @@ SSMako1F_MapEvents:
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event  0,  0, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FFangirl, -1
 	object_event  8,  9, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShipReceptionist1, -1
-	object_event 12, 18, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShipReceptionist2, -1
+	object_event 12, 18, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ShipReceptionist2, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 14,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FSailor, -1

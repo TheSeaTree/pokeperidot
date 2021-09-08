@@ -181,6 +181,7 @@ CHRIS EQU __enum__
 	const JORDAN
 	const TODD
 	const TORY
+	const EDGAR
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
@@ -190,6 +191,7 @@ CHRIS EQU __enum__
 	const FAITH
 	const KARI
 	const HEIDY
+	const ABBY
 
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -204,6 +206,7 @@ CHRIS EQU __enum__
 	const DIANE
 	const CHELLE
 	const ERIN
+	const GRACE
 
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -228,6 +231,7 @@ CHRIS EQU __enum__
 	const LISA
 	const BEA
 	const ILENE
+	const CECELIA
 
 	trainerclass SABRINA ; 23
 	const SABRINA1
@@ -285,7 +289,12 @@ CHRIS EQU __enum__
 	const ROSCOE
 	const HERMAN
 	const TAYLOR
-	
+	const TAYLOR_REMATCH1
+	const TAYLOR_REMATCH2
+	const TAYLOR_REMATCH3
+	const TAYLOR_REMATCH4
+	const TAYLOR_REMATCH5
+
 	trainerclass SUPER_NERD ; 29
 	const SHANE
 	const STEVEN
@@ -295,6 +304,7 @@ CHRIS EQU __enum__
 	const DENNIS
 	const HERBERT
 	const MAX
+	const NORBERT
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -444,6 +454,7 @@ CHRIS EQU __enum__
 	const RICHARD
 	const DOUG
 	const HANS
+	const IRVING
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const ANRI
@@ -453,12 +464,13 @@ CHRIS EQU __enum__
 	const FAYEANDMAE2
 	const LEAHANDMIA1
 	const LEAHANDMIA2
-	const ANITAANDLITA1
-	const ANITAANDLITA2
+	const JANANDANNE1
+	const JANANDANNE2
 
 	trainerclass POKEFANF ; 3e
 	const ELANE
 	const MARCI
+	const FELICIA
 
 	trainerclass RED ; 3f
 	const RED1

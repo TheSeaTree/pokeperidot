@@ -1,5 +1,12 @@
 	const_def 2 ; object constants
 	const SSMAKO2FROOMS_FANGIRL
+	const SSMAKO2FROOMS_GENTLEMAN
+	const SSMAKO2FROOMS_YOUNGSTER
+	const SSMAKO2FROOMS_POKEFAN_M
+	const SSMAKO2FROOMS_COOLTRAINER_F
+	const SSMAKO2FROOMS_SUPER_NERD
+	const SSMAKO2FROOMS_BUENA_SLEEPING
+	const SSMAKO2FROOMS_CHAMPION
 
 SSMako2FRooms_MapScripts:
 	db 3 ; scene scripts
@@ -21,20 +28,17 @@ TrainerGentlemanCharles:
 	trainer GENTLEMAN, CHARLES, EVENT_BEAT_GENTLEMAN_CHARLES, GentlemanCharlesText, GentlemanCharlesWinText, 0, .Script
 
 .Script:
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, .After
 	checkjustbattled
 	iffalse .After
 	copybytetovar wSSMako2FFightCount
-	addvar 1
-	copyvartobyte wSSMako2FFightCount
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, SSMakoSternCrowdCleared
+	ifgreater  3, .End
+	jump SSMako2FRoomsBattleCount
 .After
 	opentext
 	writetext GentlemanCharlesAfterText
 	waitbutton
 	closetext
+.End
 	end
 
 TrainerCooltrainerFHeidy:
@@ -43,102 +47,95 @@ TrainerCooltrainerFHeidy:
 .Script:
 	checkjustbattled
 	iffalse .After
-	copybytetovar wSSMako1FFightCount
-	addvar 1
-	copyvartobyte wSSMako1FFightCount
-	copybytetovar wSSMako1FFightCount
-	ifequal  4, SSMakoSternCrowdCleared
+	copybytetovar wSSMako2FFightCount
+	ifgreater  3, .End
+	jump SSMako2FRoomsBattleCount
 .After
 	opentext
 	writetext CooltrainerFHeidyAfterText
 	waitbutton
 	closetext
+.End
 	end
 
 TrainerBeautyErin:
 	trainer BEAUTY, ERIN, EVENT_BEAT_BEAUTY_ERIN, BeautyErinText, BeautyErinWinText, 0, .Script
 
 .Script:
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, .After
 	checkjustbattled
 	iffalse .After
 	copybytetovar wSSMako2FFightCount
-	addvar 1
-	copyvartobyte wSSMako2FFightCount
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, SSMakoSternCrowdCleared
+	ifgreater  3, .End
+	jump SSMako2FRoomsBattleCount
 .After
 	opentext
 	writetext BeautyErinAfterText
 	waitbutton
 	closetext
+.End
 	end
 
 TrainerSuperNerdMax:
 	trainer SUPER_NERD, MAX, EVENT_BEAT_SUPER_NERD_MAX, SuperNerdMaxText, SuperNerdMaxWinText, 0, .Script
 
 .Script:
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, .After
 	checkjustbattled
 	iffalse .After
 	copybytetovar wSSMako2FFightCount
-	addvar 1
-	copyvartobyte wSSMako2FFightCount
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, SSMakoSternCrowdCleared
+	ifgreater  3, .End
+	jump SSMako2FRoomsBattleCount
 .After
 	opentext
 	writetext SuperNerdMaxAfterText
 	waitbutton
 	closetext
+.End
 	end
 
 TrainerPokefanMHans:
 	trainer POKEFANM, HANS, EVENT_BEAT_POKEFANM_HANS, PokefanMHansText, PokefanMHansWinText, 0, .Script
 	
 .Script:
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, .After
 	checkjustbattled
 	iffalse .After
 	copybytetovar wSSMako2FFightCount
-	addvar 1
-	copyvartobyte wSSMako2FFightCount
-	copybytetovar wSSMako2FFightCount
-	ifequal  4, SSMakoSternCrowdCleared
+	ifgreater  3, .End
+	jump SSMako2FRoomsBattleCount
 .After
 	opentext
 	writetext PokefanMHansAfterText
 	waitbutton
 	closetext
+.End
 	end
 
 TrainerSchoolboyOliver:
 	trainer SCHOOLBOY, OLIVER, EVENT_BEAT_SCHOOLBOY_OLIVER, SchoolboyOliverText, SchoolboyOliverWinText, 0, .Script
 
 .Script:
+	faceobject PLAYER, SSMAKO2FROOMS_YOUNGSTER
+	opentext
+	writetext SchoolboyOliverAfterText
+	waitbutton
+	closetext
+	turnobject SSMAKO2FROOMS_YOUNGSTER, UP
 	copybytetovar wSSMako2FFightCount
-	ifequal  4, .After
-	checkjustbattled
-	iffalse .After
+	ifgreater  3, .End
+	scall SSMako2FRoomsBattleCount
+.End
+	end
+	
+SSMako2FRoomsBattleCount:
 	copybytetovar wSSMako2FFightCount
 	addvar 1
 	copyvartobyte wSSMako2FFightCount
 	copybytetovar wSSMako2FFightCount
 	ifequal  4, SSMakoSternCrowdCleared
-.After
-	opentext
-	writetext SchoolboyOliverAfterText
-	waitbutton
-	closetext
-	turnobject LAST_TALKED, UP
 	end
 
 SSMakoSternCrowdCleared:
-	setlasttalked SSMAKO2FROOMS_FANGIRL
-	faceplayer
+	faceobject PLAYER, SSMAKO2FROOMS_FANGIRL
+	faceobject SSMAKO2FROOMS_FANGIRL, PLAYER
 	opentext
 	writetext SSMakoSternCrowdClearedText
 	waitbutton
@@ -157,28 +154,24 @@ SSMako2FRoomsChampion:
 Rooms2FFangirlTeleport1:
 	moveobject SSMAKO2FROOMS_FANGIRL,  2, 5
 	jump Rooms2FFangirlContinueFolow
-	
+
 Rooms2FFangirlTeleport2:
 	moveobject SSMAKO2FROOMS_FANGIRL, 16, 5
 	jump Rooms2FFangirlContinueFolow
-	
+
 Rooms2FFangirlTeleport3:
 	moveobject SSMAKO2FROOMS_FANGIRL, 30, 5
 	jump Rooms2FFangirlContinueFolow
-	
+
 Rooms2FFangirlTeleport4:
-	moveobject SSMAKO2FROOMS_FANGIRL, 44, 9
-	jump Rooms2FFangirlContinueFolow
-	
-Rooms2FFangirlTeleport5:
 	moveobject SSMAKO2FROOMS_FANGIRL,  4, 10
 	jump Rooms2FFangirlContinueFolow
-	
-Rooms2FFangirlTeleport6:
+
+Rooms2FFangirlTeleport5:
 	moveobject SSMAKO2FROOMS_FANGIRL, 18, 10
 	jump Rooms2FFangirlContinueFolow
-	
-Rooms2FFangirlTeleport7:
+
+Rooms2FFangirlTeleport6:
 	moveobject SSMAKO2FROOMS_FANGIRL, 32, 10
 	jump Rooms2FFangirlContinueFolow
 
@@ -197,11 +190,17 @@ IceColdCoffee:
 	
 SSMakoJournals:
 	jumptext SSMakoJournalsText
+	
+SSMakoTapes:
+	jumptext SSMakoTapesText
 
 GentlemanCharlesText:
 	text "I'm taking my hands"
 	line "off the wheel for"
 	cont "this battle."
+	
+	para "My #MON know"
+	line "what to do!"
 	done
 	
 GentlemanCharlesWinText:
@@ -298,7 +297,8 @@ PokefanMHansText:
 	done
 
 PokefanMHansWinText:
-	text "I lost."
+	text "Urgh… I'm just too"
+	line "full to battle…"
 	done
 
 PokefanMHansAfterText:
@@ -306,6 +306,9 @@ PokefanMHansAfterText:
 	line "staying in these"
 	cont "cabins is the won-"
 	cont "derful buffet!"
+	
+	para "I just can never"
+	line "resist!"
 	done
 
 SchoolboyOliverText:
@@ -320,11 +323,10 @@ SchoolboyOliverText:
 	done
 
 SchoolboyOliverWinText:
-	text "I refuse to accept"
-	line "that loss!"
+	text "No way you won!"
 	
-	para "I considered all"
-	line "possibilities!"
+	para "I studied every"
+	line "possible outcome!"
 	done
 
 SchoolboyOliverAfterText:
@@ -338,12 +340,13 @@ SchoolboyOliverAfterText:
 	done
 	
 SSMakoSternCrowdClearedText:
-	text "EMILY: Maybe the"
-	line "crowd outside has"
-	cont "cleared up by now."
+	text "EMILY: Hey,"
+	line "<PLAYER>. Maybe the"
+	cont "party has cleared"
+	cont "out by now."
 	
-	para "Let's go check it"
-	line "out again!"
+	para "Let's go check the"
+	line "DECK out again!"
 	done
 
 IceColdCoffeeText:
@@ -362,7 +365,17 @@ SSMakoJournalsText:
 	cont "rnals of battle"
 	cont "strategies."
 	done
+
+SSMakoTapesText:
+	text "These shelves are"
+	line "packed with many"
+	cont "video tapes."
 	
+	para "They seem to all"
+	line "be labeled with"
+	cont "battle names."
+	done
+
 SSMako2FRoomsChampionText:
 	text "Huh? Who are you?"
 	line "How did you get in"
@@ -405,7 +418,7 @@ SSMako2FRooms_MapEvents:
 	warp_event 18, 10, SS_MAKO_2F, 7
 	warp_event 32, 10, SS_MAKO_2F, 8
 
-	db 15 ; coord events
+	db 12 ; coord events
 	coord_event  1,  5, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport1
 	coord_event  2,  4, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport1
 	coord_event  3,  5, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport1
@@ -415,27 +428,26 @@ SSMako2FRooms_MapEvents:
 	coord_event 29,  5, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport3
 	coord_event 30,  4, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport3
 	coord_event 31,  5, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport3
-	coord_event 43,  9, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport4
-	coord_event 44,  8, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport4
-	coord_event 45,  9, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport4
-	coord_event  4, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport5
-	coord_event 18, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport6
-	coord_event 32, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport7
+	coord_event  4, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport4
+	coord_event 18, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport5
+	coord_event 32, 11, SCENE_SSMAKO2FROOMS_DEFAULT, Rooms2FFangirlTeleport6
 
-	db 6 ; bg events
+	db 8 ; bg events
 	bg_event 14, 11, BGEVENT_READ, IceColdCoffee
 	bg_event  0,  1, BGEVENT_READ, SSMakoJournals
 	bg_event  1,  1, BGEVENT_READ, SSMakoJournals
 	bg_event  5,  1, BGEVENT_READ, SSMakoJournals
 	bg_event  6,  1, BGEVENT_READ, SSMakoJournals
 	bg_event  7,  1, BGEVENT_READ, SSMakoJournals
+	bg_event 28, 11, BGEVENT_READ, SSMakoTapes
+	bg_event 29, 11, BGEVENT_READ, SSMakoTapes
 
 	db 8 ; object events
 	object_event 49, 15, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsFangirl, -1
-	object_event 30,  2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerGentlemanCharles, -1
-	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, ObjectEvent, -1
+	object_event 31,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanCharles, -1
+	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSchoolboyOliver, -1
 	object_event  4, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerPokefanMHans, -1
-	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
+	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
 	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1
 	object_event 45,  5, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, -1

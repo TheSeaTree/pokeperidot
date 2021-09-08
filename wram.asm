@@ -2527,7 +2527,7 @@ wHallOfFameCount:: dw
 wTradeFlags:: flag_array NUM_NPC_TRADES ; d960
 	ds 1
 wMooMooBerries:: db ; d962
-wUndergroundSwitchPositions:: db ; d963
+wTrainerHouseStreak:: db ; d963
 wFarfetchdPosition:: db ; d964
 
 	ds 13
@@ -2606,8 +2606,8 @@ wSilverCaveRoom3SceneID::                         db ; d9b6
 wVictoryRoadSceneID::                             db ; d9b7
 wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
-wOlivinePortSceneID::                             db ; d9ba
-wVermilionPortSceneID::                           db ; d9bb
+wRugosaPortSceneID::                              db ; d9ba
+wVictoryPortSceneID::                             db ; d9bb
 wSSMako1FSceneID::                                db ; d9bc
 wSSMakoB1FSceneID::                               db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
@@ -2634,7 +2634,7 @@ wEnyaFightCount::    	db
 wEliteFourFightCount::	db
 wSSMako1FFightCount::   Db
 wSSMako2FFightCount::   db
-wAnthonyFightCount:: 	db ; unused
+wTaylorFightCount:: 	db ; unused
 wToddFightCount::    	db ; unused
 wGinaFightCount::    	db ; unused
 wIrwinFightCount::   	db ; unused

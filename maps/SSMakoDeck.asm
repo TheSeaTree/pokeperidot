@@ -32,6 +32,11 @@ FangirlDeckTeleportContinue:
 	end
 
 SSMakoDeckFangirl:
+	checkevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	iftrue .Deck
+	jumptextfaceplayer SSMakoDeckEmilyCrowdText
+	
+.Deck
 	jumpstd emilycompanion
 
 SSMakoDeckBurglar:
@@ -52,19 +57,24 @@ SSMakoDeckBurglar:
 	writetext SSMakoDeckNoticeFemalePlayerText
 .Continue
 	waitbutton
-	waitbutton SSMakoDeckChallengeText
-	closetext
+	writetext SSMakoDeckDoesntRecognizePlayerText
+	waitbutton
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	writetext SSMakoDeckChallengeText
 	jump .Battle
 .ClearedHideout
 	showemote EMOTE_SHOCK, SSMAKODECK_BURGLAR, 15
 	opentext
 	writetext SSMakoDeckRecognizePlayerText
+	waitbutton
+	playmusic MUSIC_ROCKET_ENCOUNTER
+	writetext SSMakoDeckRecognizePlayerChallengeText
 .Battle
 	waitbutton
 	closetext
-;	winlosstext SSMakoDeckBurglarWinText, 0
-;	loadtrainer BURGLAR, RANDY
-;	startbattle
+	winlosstext SSMakoDeckBurglarWinText, 0
+	loadtrainer BURGLAR, RANDY
+	startbattle
 	reloadmapafterbattle
 	opentext
 	writetext SSMakoDeckBurglarAfterText
@@ -263,6 +273,25 @@ SSMakoDeckClearTempEvents:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	end
 
+SSMakoDeckReceptionist:
+	setevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	jumptext SSMakoDeckReceptionistText
+
+SSMakoDeckFisher:
+	jumptext SSMakoDeckFisherText
+
+SSMakoDeckHiddenSodaPop1:
+	hiddenitem SODA_POP, EVENT_SS_MAKO_HIDDEN_SODA_POP_1
+
+SSMakoDeckHiddenSodaPop2:
+	hiddenitem SODA_POP, EVENT_SS_MAKO_HIDDEN_SODA_POP_2
+
+SSMakoDeckHiddenSodaPop3:
+	hiddenitem SODA_POP, EVENT_SS_MAKO_HIDDEN_SODA_POP_3
+
+SSMakoDeckHiddenSodaPop4:
+	hiddenitem SODA_POP, EVENT_SS_MAKO_HIDDEN_SODA_POP_4
+
 SSMakoDeckOfficerApproach:
 	step LEFT
 	step LEFT
@@ -331,44 +360,55 @@ SSMakoFangirlApproachPlayer:
 	step LEFT
 	step_resume
 
-; Defeat every trainer inside before the crowd disperses.
+SSMakoDeckEmilyCrowdText:
+	text "There's no way we"
+	line "could sneak into"
+	cont "the party."
+	
+	para "We might as well"
+	line "head back inside"
+	cont "and wait for it to"
+	cont "be over."
+	done
 
 SSMakoDeckBurglarText:
-	text "Yeah, waddya'"
-	line "want? Can't you"
-	cont "see I'm trying to"
-	cont "enjoy the oc-"
+	text "If you're looking"
+	line "for the party,"
+	cont "they all headed"
+	cont "back insi-"
 	done
 
 SSMakoDeckNoticeMalePlayerText:
 	text "Heh. So you got"
 	line "your boyfriend to"
 	cont "try and take back"
-	cont "your PACK?"
+	cont "your #MON?"
 	done
 
 SSMakoDeckNoticeFemalePlayerText:
 	text "Heh. So you got"
 	line "your girlfriend to"
 	cont "try and take back"
-	cont "your PACK?"
-	
-SSMakoDeckChallengeText:
+	cont "your #MON?"
+
+SSMakoDeckDoesntRecognizePlayerText:
 	text "Look, kid. I don't"
 	line "know who you are,"
 	cont "but don't make me"
 	cont "embarrass you in"
 	cont "front of your"
 	cont "little girlfriend."
-	
+	done
+
+SSMakoDeckChallengeText:
 	para "You're not gonna"
 	line "back down?"
-	
+
 	para "Fine by me!"
-	
+
 	para "Just make sure you"
 	line "don't start crying"
-	cont "on me!"
+	cont "when you lose!"
 	done
 
 SSMakoDeckRecognizePlayerText:
@@ -380,17 +420,19 @@ SSMakoDeckRecognizePlayerText:
 
 	para "What are you plan-"
 	line "ning to do? Play"
-	cont "hero and take them"
+	cont "hero and take it"
 	cont "back from me?"
+	done
 
-	para "Hah! I'm not afraid"
+SSMakoDeckRecognizePlayerChallengeText:
+	text "Hah! I'm not afraid"
 	line "of you!"
 
 	para "ABBOT's other men"
 	line "were nothing like"
 	cont "me, I promise."
 
-	para "Now let's take"
+	para "Now let's see"
 	line "these new #MON"
 	cont "of mine can do!"
 	done
@@ -560,6 +602,33 @@ SSMakoDeckEmilyAfterText:
 	cont "#MON LEAGUE!"
 	done
 
+SSMakoDeckReceptionistText:
+	text "I'm awfully sorry,"
+	line "but the DECK has"
+	cont "been reserved for"
+	cont "a private party"
+	cont "hosted by the"
+	cont "CHAMPION."
+
+	para "Please head back"
+	line "inside, it will"
+	cont "be wrapping up"
+	cont "shortly."
+	done
+
+SSMakoDeckFisherText:
+	text "Urgh…"
+	
+	para "I never feel good"
+	line "after these kinds"
+	cont "of parties…"
+	
+	para "Urgh…"
+
+	para "I always get so"
+	line "seasick…"
+	done
+
 SSMakoDeck_MapEvents:
 	db 0, 0 ; filler
 
@@ -576,16 +645,20 @@ SSMakoDeck_MapEvents:
 	coord_event  4,  5, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckSetTempEvent2
 	coord_event  5,  4, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckClearTempEvents
 
-	db 0 ; bg events
+	db 4 ; bg events
+	bg_event 11,  2, BGEVENT_ITEM, SSMakoDeckHiddenSodaPop1
+	bg_event 10,  7, BGEVENT_ITEM, SSMakoDeckHiddenSodaPop2
+	bg_event  6,  6, BGEVENT_ITEM, SSMakoDeckHiddenSodaPop3
+	bg_event  8,  4, BGEVENT_ITEM, SSMakoDeckHiddenSodaPop4
 
 	db 10 ; object events
 	object_event  0, 13, SPRITE_FANGIRL, SPRITEMOVEDATA_FOLLOWING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckFangirl, -1
-	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckBurglar, EVENT_SS_MAKO_DEFEATED_BURGLAR
+	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SSMakoDeckBurglar, EVENT_SS_MAKO_DEFEATED_BURGLAR
 	object_event  0, 13, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DEFEATED_BURGLAR
 	object_event  0, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DEFEATED_BURGLAR
-	object_event 10,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
-	object_event  9,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
-	object_event 10,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
-	object_event  9,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
-	object_event 11,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
-	object_event 11,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
+	object_event 11,  4, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckReceptionist, EVENT_SS_MAKO_DECK_CLEARED
+	object_event 11,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckReceptionist, EVENT_SS_MAKO_DECK_CLEARED
+	object_event 11,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SSMakoDeckFisher, -1
+	object_event  8,  3, SPRITE_BUENA, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
+	object_event  9,  7, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED
+	object_event  9,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DECK_CLEARED

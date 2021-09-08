@@ -23,10 +23,8 @@ FangirlEngineRoomTeleport:
 	setscene SCENE_SSMAKOENGINEROOM_FOLLOWING
 	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
 	end
-	
+
 SSMakoEngineRoomFangirl:
-; This one might not need to be an std script. Just check if the player has the item or not.
-	; "Do you think that's the guy who has a spare ticket over there on the other side of the room? Let's talk to him!"
 	checkevent EVENT_GOT_VIP_TICKET
 	iftrue .Ticket
 	jumptextfaceplayer SSMakoEngineRoomEmilyBeforeTicketText
@@ -37,20 +35,69 @@ SSMakoEngineRoomFangirl:
 SSMakoB1FGiveTicket:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_SAILOR_TAYLOR
+	iftrue .AfterRematch
+	checkflag ENGINE_FLYPOINT_POKEMON_LEAGUE
+	iftrue .Rematch
 	checkevent EVENT_GOT_VIP_TICKET
 	iftrue .Ticket
 	writetext SailorTaylorText
 	waitbutton
-
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext SailorTaylorChallengeText
+	waitbutton
+	closetext
 	winlosstext SailorTaylorWinText, 0
 	loadtrainer SAILOR, TAYLOR
 	startbattle
 	reloadmapafterbattle
 
+	opentext
 	verbosegiveitem VIP_TICKET
 	setevent EVENT_GOT_VIP_TICKET
 .Ticket
 	writetext SailorTaylorAfterText
+	waitbutton
+	closetext
+	end
+	
+.Rematch:
+	writetext SailorTaylorRematchIntroText
+	waitbutton
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext SailorTaylorRematchChallengeText
+	waitbutton
+	closetext
+	winlosstext SailorTaylorWinText, 0
+	copybytetovar wTaylorFightCount
+	ifgreater  11, .RematchTeam5
+	ifgreater	8, .RematchTeam4
+	ifgreater  	5, .RematchTeam3
+	ifgreater  	2, .RematchTeam2
+;RematchTeam1
+	loadtrainer SAILOR, TAYLOR_REMATCH1
+	jump .DoBattle
+.RematchTeam2:
+	loadtrainer SAILOR, TAYLOR_REMATCH2
+	jump .DoBattle
+.RematchTeam3:
+	loadtrainer SAILOR, TAYLOR_REMATCH3
+	jump .DoBattle
+.RematchTeam4:
+	loadtrainer SAILOR, TAYLOR_REMATCH4
+	jump .DoBattle
+.RematchTeam5:
+	loadtrainer SAILOR, TAYLOR_REMATCH5
+.DoBattle
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SAILOR_TAYLOR
+	copybytetovar wTaylorFightCount
+	addvar 1
+	copyvartobyte wTaylorFightCount
+	opentext
+.AfterRematch:
+	writetext SailorTaylorAfterRematchText
 	waitbutton
 	closetext
 	end
@@ -65,8 +112,22 @@ SailorTaylorText:
 	line "a VIP TICKET, but"
 	cont "I won't give it to"
 	cont "you that easily."
+	done
 
-	para "How about you ent-"
+SailorTaylorRematchIntroText:
+	text "Hey, you're the" 
+	line "kid I gave that"
+	cont "VIP TICKET to!"
+	
+SailorTaylorRematchChallengeText:
+	text "You want to have"
+	line "another battle?"
+	
+	para "Not a problem!"
+	done
+
+SailorTaylorChallengeText:
+	text "How about you ent-"
 	line "ertain me for my"
 	cont "shift? Let's have"
 	cont "a battle!"
@@ -97,7 +158,17 @@ SailorTaylorAfterText:
 	cont "away to a good"
 	cont "trainer like you."
 	done
+
+SailorTaylorAfterRematchText:
+	text "You're still real"
+	line "good! We might"
+	cont "have to make this"
+	cont "a regular thing."
 	
+	para "You really push me"
+	line "to my limits!"
+	done
+
 SSMakoEngineRoomEmilyBeforeTicketText:
 	text "That must be the"
 	line "man with the VIP"

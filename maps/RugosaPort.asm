@@ -12,7 +12,8 @@ RugosaPort_MapScripts:
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .LeaveFastShip ; SCENE_OLIVINEPORT_LEAVE_SHIP
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .HideShip
 
 .DummyScene0:
 	end
@@ -20,6 +21,20 @@ RugosaPort_MapScripts:
 .LeaveFastShip:
 	priorityjump .LeaveFastShipScript
 	end
+
+.HideShip
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iffalse .Nope
+	changeblock 10,  8, $27
+	changeblock 12,  8, $27
+	changeblock 14,  8, $27
+	changeblock 16,  8, $0a
+	changeblock 10, 10, $0a
+	changeblock 12, 10, $0a
+	changeblock 14, 10, $0a
+	changeblock 16, 10, $0a
+.Nope
+	return
 
 .LeaveFastShipScript:
 	applymovement PLAYER, MovementData_0x74a32
@@ -40,23 +55,46 @@ RugosaPortCaptainScript:
 	end
 
 .Boarding
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iftrue .ShipAtVictoryPort
 	writetext RugosaPortCaptainBoardingText
 	yesorno
 	iffalse .Decline
 	writetext RugosaPortAcceptBoardingText
 	waitbutton
 	closetext
-	follow OLIVINEPORT_SAILOR1, PLAYER
-	applymovement OLIVINEPORT_SAILOR1, BoardSSMakoMovement
+	setevent EVENT_HIDE_SS_MAKO_FANGIRL
+	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	
+; SS Mako B1F Trainers
+	clearevent EVENT_BEAT_SAILOR_DARIUS
+	clearevent EVENT_BEAT_SAILOR_NATHAN
+	clearevent EVENT_BEAT_SAILOR_GENE
+	clearevent EVENT_BEAT_SAILOR_ROSCOE
+	clearevent EVENT_BEAT_SAILOR_HERMAN
+	clearevent EVENT_BEAT_ENGINEER_ROCCO
+	clearevent EVENT_BEAT_ENGINEER_RUDOLPH
+	clearevent EVENT_BEAT_ENGINEER_BERNARD
+	clearevent EVENT_BEAT_ENGINEER_ARNIE
+	clearevent EVENT_BEAT_SAILOR_TAYLOR
+
+;	follow OLIVINEPORT_SAILOR1, PLAYER
+	applymovement OLIVINEPORT_SAILOR1, RugosaPortSailorBoardShipMovement
 	playsound SFX_EXIT_BUILDING
-	stopfollow
+;	stopfollow
 	disappear OLIVINEPORT_SAILOR1
-	applymovement PLAYER, BoardSSMakoMovement
+	applymovement PLAYER, RugosaPortPlayerBoardShipMovement
 	warpcheck
 	end
 
 .Decline
 	writetext RugosaPortDeclineBoardingText
+	waitbutton
+	closetext
+	end
+	
+.ShipAtVictoryPort:
+	writetext RugosaPortSSMakoNotHereText
 	waitbutton
 	closetext
 	end
@@ -69,7 +107,7 @@ RugosaPortSailorWorkingScript:
 	
 RugosaPortFishingGuruScript:
 	jumptextfaceplayer RugosaPortFishingGuruText
-	
+
 RugosaPortCooltrainerMScript:
 	jumptextfaceplayer RugosaPortCooltrainerMText
 
@@ -79,7 +117,11 @@ RugosaPortCooltrainerFScript:
 RugosaPortYoungsterScript:
 	jumptextfaceplayer RugosaPortYoungsterText
 
-BoardSSMakoMovement:
+RugosaPortSailorBoardShipMovement:
+	turn_step DOWN
+	step_resume
+
+RugosaPortPlayerBoardShipMovement:
 	step DOWN
 	step_resume
 
@@ -131,6 +173,15 @@ RugosaPortDeclineBoardingText:
 	
 	para "You're really"
 	line "cutting it close."
+	done
+
+RugosaPortSSMakoNotHereText:
+	text "Sorry to say, but"
+	line "the S.S.MAKO has"
+	cont "already set sail."
+	
+	para "It must be docked"
+	line "at VICTORY PORT."
 	done
 
 RugosaPortSailorAdmireText:
@@ -223,8 +274,8 @@ RugosaPort_MapEvents:
 ;	bg_event 15, 16, BGEVENT_ITEM, RugosaPortHiddenProtein
 
 	db 8 ; object events
-	object_event 14,  6, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, -1
-	object_event 12, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, -1
+	object_event 14,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, EVENT_HIDE_PORT_SAILORS
+	object_event 12, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, EVENT_COMING_FROM_LEAGUE
 	object_event  3, 15, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorWorkingScript, -1
 	object_event 18, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 13, 16, SPRITE_FISHING_GURU, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortFishingGuruScript, -1

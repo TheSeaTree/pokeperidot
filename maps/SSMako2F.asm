@@ -9,7 +9,7 @@ SSMako2F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKO2F_BLOCKED
 	scene_script .DummyScene2 ; SCENE_SSMAKO2F_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKO2F_UNLOCKED
-	scene_script .DummyScene2 ; SCENE_SSMAKO2F_FINISHED
+	scene_script .DummyScene3 ; SCENE_SSMAKO2F_FINISHED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .UnlockDoors
@@ -26,6 +26,16 @@ SSMako2F_MapScripts:
 	iffalse .DummyScene2
 	setscene SCENE_SSMAKO2F_FOLLOWING
 .DummyScene2:
+	checkevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	iffalse .End
+	setscene SCENE_SSMAKO2F_UNLOCKED
+.End
+	end
+
+.DummyScene3:
+	changeblock   4,  0, $19
+	changeblock   8,  0, $19
+	changeblock  12,  0, $19
 	end
 
 .UnlockDoors:
@@ -47,58 +57,62 @@ Fangirl2FTeleport1:
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
 	end
-	
+
 Fangirl2FTeleport2:
 	moveobject SSMAKO2F_FANGIRL,  5,  1
 	jump Fangirl2FContinueFolow
-	
+
 Fangirl2FTeleport3:
 	moveobject SSMAKO2F_FANGIRL,  9,  1
 	jump Fangirl2FContinueFolow
-	
+
 Fangirl2FTeleport4:
 	moveobject SSMAKO2F_FANGIRL, 13,  1
 	jump Fangirl2FContinueFolow
-	
+
 Fangirl2FTeleport5:
-	moveobject SSMAKO2F_FANGIRL, 17,  1
+	moveobject SSMAKO2F_FANGIRL,  5,  8
 	jump Fangirl2FContinueFolow
 
 Fangirl2FTeleport6:
-	moveobject SSMAKO2F_FANGIRL,  5,  8
-	jump Fangirl2FContinueFolow
-	
-Fangirl2FTeleport7:
 	moveobject SSMAKO2F_FANGIRL,  9,  8
 	jump Fangirl2FContinueFolow
-	
-Fangirl2FTeleport8:
+
+Fangirl2FTeleport7:
 	moveobject SSMAKO2F_FANGIRL, 13,  8
 	jump Fangirl2FContinueFolow
-	
-Fangirl2FTeleport9:
+
+Fangirl2FTeleport8:
 	moveobject SSMAKO2F_FANGIRL,  2,  4
 	jump Fangirl2FContinueFolow
-	
-Fangirl2FTeleport10:
+
+Fangirl2FTeleport9:
 	moveobject SSMAKO2F_FANGIRL,  2,  5
 
 Fangirl2FContinueFolow:
 	appear SSMAKO2F_FANGIRL
 	follow PLAYER, SSMAKO2F_FANGIRL
-	setscene SCENE_SSMAKO2F_UNLOCKED
+	setscene SCENE_SSMAKO2F_FOLLOWING
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
 	end
 	
 SSMako2FFangirl:
 	jumpstd emilycompanion
-	
+
+SSMako2FReceptionist: 
+	jumptextfaceplayer SSMako2FReceptionistText
+
 SSMako2FOfficer:
-	setevent EVENT_SS_MAKO_DECK_CLEARED
-	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 	jumptextfaceplayer SSMako2FOfficerText
-	
+
+SSMako2FUnlockDoors:
+	checkevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	iffalse .End
+	setscene SCENE_SSMAKO2F_UNLOCKED
+.End
+	end
+
 Check2FPass:
 	turnobject PLAYER, LEFT
 	opentext
@@ -144,6 +158,17 @@ SSMako2FPlayerStepDown:
 	step DOWN
 	step_resume
 	
+SSMako2FReceptionistText:
+	text "Welcome to the"
+	line "VIP level!"
+
+	para "We currently have"
+	line "no vacancies, but"
+	cont "you are free to"
+	cont "roam around on"
+	cont "this floor."
+	done
+
 SSMako2FOfficerText:
 	text "This is the"
 	line "CHAMPION's cabin."
@@ -204,29 +229,28 @@ SSMako2F_MapEvents:
 	warp_event  5,  1, SS_MAKO_2F_ROOMS, 1
 	warp_event  9,  1, SS_MAKO_2F_ROOMS, 3
 	warp_event 13,  1, SS_MAKO_2F_ROOMS, 5
-	warp_event 17,  1, SS_MAKO_2F_ROOMS, 7
+	warp_event 17,  3, SS_MAKO_2F_ROOMS, 7
 	warp_event  5,  8, SS_MAKO_2F_ROOMS, 9
 	warp_event  9,  8, SS_MAKO_2F_ROOMS, 10
 	warp_event 13,  8, SS_MAKO_2F_ROOMS, 11
 	warp_event  2,  4, SS_MAKO_DECK, 1
 	warp_event  2,  5, SS_MAKO_DECK, 2
 
-	db 20 ; coord events
+	db 19 ; coord events
 	coord_event 17, 10, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport1
 	coord_event 16, 11, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport1
 	coord_event  5,  2, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport2
 	coord_event  9,  2, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport3
 	coord_event 13,  2, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport4
-	coord_event 17,  2, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport5
-	coord_event  5,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport6
-	coord_event  9,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport7
-	coord_event 13,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport8
-	coord_event  2,  3, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
-	coord_event  3,  4, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
-	coord_event  2,  5, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
-	coord_event  2,  4, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport10
-	coord_event  3,  5, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport10
-	coord_event  2,  6, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport10
+	coord_event  5,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport5
+	coord_event  9,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport6
+	coord_event 13,  7, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport7
+	coord_event  2,  3, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport8
+	coord_event  3,  4, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport8
+	coord_event  2,  5, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport8
+	coord_event  2,  4, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
+	coord_event  3,  5, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
+	coord_event  2,  6, SCENE_SSMAKO2F_DEFAULT, Fangirl2FTeleport9
 	coord_event 16,  7, SCENE_SSMAKO2F_BLOCKED, Check2FPass
 	coord_event 17,  7, SCENE_SSMAKO2F_BLOCKED, Check2FPass
 	coord_event  5,  8, SCENE_SSMAKO2F_FOLLOWING, SSMako2FLowerDoorsLocked
@@ -239,6 +263,6 @@ SSMako2F_MapEvents:
 	bg_event  5,  1, BGEVENT_IFNOTSET, SSMako2FUpperDoorsLocked
 
 	db 3 ; object events
-	object_event  0, 13, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FFangirl, -1
-	object_event 15,  7, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 17,  2, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FOfficer, EVENT_SS_MAKO_DEFEATED_BURGLAR
+	object_event 23, -2, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FFangirl, -1
+	object_event 15,  7, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FReceptionist, -1
+	object_event 17,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FOfficer, EVENT_SS_MAKO_DEFEATED_BURGLAR

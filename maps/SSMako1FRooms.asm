@@ -13,20 +13,26 @@ SSMako1FRooms_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKO1FROOMS_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKO1FROOMS_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .Respawn
 	
 .DummyScene0:
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
-	end
+	checkevent EVENT_BEAT_TEACHER_ILENE
+	iffalse .DummyScene1
+	turnobject SSMAKO1FROOMS_TEACHER, RIGHT
 
 .DummyScene1:
-	turnobject SSMAKO1FROOMS_TEACHER, RIGHT
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iftrue .DummyScene2
-	moveobject SSMAKO1FROOMS_FANGIRL, 1, 1
-	jump RoomsFangirlContinueFolow
 .DummyScene2:
 	end
+
+.Respawn:
+	checkevent EVENT_SS_MAKO_RESPAWN
+	iffalse .End
+	moveobject SSMAKO1FROOMS_FANGIRL, 1, 1
+	jump RoomsFangirlContinueFolow
+.End
+	return
 
 RoomsFangirlTeleport1:
 	moveobject SSMAKO1FROOMS_FANGIRL, 1, 0
@@ -58,7 +64,7 @@ RoomsFangirlContinueFolow:
 	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	turnobject SSMAKO1FROOMS_TEACHER, LEFT
+	clearevent EVENT_SS_MAKO_RESPAWN
 	end
 	
 SSMako1FRoomsFangirl:
@@ -69,8 +75,7 @@ SSMako1FRoomsFangirl:
 	jumptextfaceplayer SSMako1FRoomsFangirlText
 
 TrainerGentlemanWinfred:
-	trainer GENTLEMAN, WINFRED, EVENT_BEAT_GENTLEMAN_WINFRED, SSMako1FRoomsTrainerText, SSMako1FRoomsTrainerWinText, 0, .Script
-;	trainer SCHOOLBOY, TIMMY, EVENT_BEAT_GENTLEMAN_WINFRED, SSMako1FRoomsTrainerText, SSMako1FRoomsTrainerWinText, 0, .Script
+	trainer GENTLEMAN, WINFRED, EVENT_BEAT_GENTLEMAN_WINFRED, GentlemanWinfredText, GentlemanWinfredWinText, 0, .Script
 
 .Script:
 	checkjustbattled
@@ -80,22 +85,20 @@ TrainerGentlemanWinfred:
 	copyvartobyte wSSMako1FFightCount
 	copybytetovar wSSMako1FFightCount
 	ifequal  4, DoneTicket
-	; Text about not knowing anything about the ticket.
 	opentext
-	writetext PlusOneText
+	writetext GentlemanWinfredTicketText
 	waitbutton
 	closetext
 	end
 .After
 	opentext
-	writetext SSMako1FRoomsTrainerAfterText
+	writetext GentlemanWinfredAfterText
 	waitbutton
 	closetext
 	end
 
 TrainerTeacherIlene:
 	trainer TEACHER, ILENE, EVENT_BEAT_TEACHER_ILENE, TeacherIleneText, TeacherIleneWinText, 0, .Script
-;	trainer SCHOOLBOY, TIMMY, EVENT_BEAT_TEACHER_ILENE, TeacherIleneText, TeacherIleneWinText, 0, .Script
 
 .Script:
 	copybytetovar wSSMako1FFightCount
@@ -129,7 +132,6 @@ TrainerTeacherIlene:
 
 TrainerSuperNerdHerbert:
 	trainer SUPER_NERD, HERBERT, EVENT_BEAT_SUPER_NERD_HERBERT, SuperNerdHerbertText, SuperNerdHerbertWinText, 0, .Script
-;	trainer SCHOOLBOY, TIMMY, EVENT_BEAT_SUPER_NERD_HERBERT, SuperNerdHerbertText, SSMako1FRoomsTrainerWinText, 0, .Script
 
 .Script:
 	checkjustbattled
@@ -151,8 +153,8 @@ TrainerSuperNerdHerbert:
 	closetext
 	end
 
-TrainerTwinAnita:
-	trainer TWINS, ANITAANDLITA1, EVENT_BEAT_TWINS_JAN_AND_ANNE, SSMako1FRoomsTrainerText, SSMako1FRoomsTrainerWinText, 0, .Script
+TrainerTwinJan:
+	trainer TWINS, JANANDANNE1, EVENT_BEAT_TWINS_JAN_AND_ANNE, TwinJanText, TwinJanWinText, 0, .Script
 
 .Script:
 	checkjustbattled
@@ -162,21 +164,34 @@ TrainerTwinAnita:
 	copyvartobyte wSSMako1FFightCount
 	copybytetovar wSSMako1FFightCount
 	ifequal  4, DoneTicket
+	
+	turnobject SSMAKO1FROOMS_TWIN2, LEFT
 	opentext
-	writetext PlusOneText
+	writetext TwinJanTicketText
+	waitbutton
+	turnobject SSMAKO1FROOMS_TWIN1, RIGHT
+	writetext TwinAnneTicketResponseText
+	waitbutton
+	turnobject SSMAKO1FROOMS_TWIN2, DOWN
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	writetext TwinJanTicketBoyText
+	jump .GotGender
+.Female
+	writetext TwinJanTicketGirlText
+.GotGender
 	waitbutton
 	closetext
 	end
 .After
 	opentext
-	writetext SSMako1FRoomsTrainerAfterText
+	writetext TwinJanAfterText
 	waitbutton
 	closetext
 	end
 
-
-TrainerTwinLita:
-	trainer TWINS, ANITAANDLITA2, EVENT_BEAT_TWINS_JAN_AND_ANNE, SSMako1FRoomsTrainerText, SSMako1FRoomsTrainerWinText, 0, .Script
+TrainerTwinAnne:
+	trainer TWINS, JANANDANNE2, EVENT_BEAT_TWINS_JAN_AND_ANNE, TwinAnneText, TwinAnneWinText, 0, .Script
 
 .Script:
 	checkjustbattled
@@ -186,14 +201,28 @@ TrainerTwinLita:
 	copyvartobyte wSSMako1FFightCount
 	copybytetovar wSSMako1FFightCount
 	ifequal  4, DoneTicket
+	
+	turnobject SSMAKO1FROOMS_TWIN1, RIGHT
 	opentext
-	writetext PlusOneText
+	writetext TwinAnneTicketText
+	waitbutton
+	turnobject SSMAKO1FROOMS_TWIN2, LEFT
+	writetext TwinJanTicketResponseText
+	waitbutton
+	turnobject SSMAKO1FROOMS_TWIN1, DOWN
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Female
+	writetext TwinAnneTicketBoyText
+	jump .GotGender
+.Female
+	writetext TwinAnneTicketGirlText
+.GotGender
 	waitbutton
 	closetext
 	end
 .After
 	opentext
-	writetext SSMako1FRoomsTrainerAfterText
+	writetext TwinAnneAfterText
 	waitbutton
 	closetext
 	end
@@ -215,30 +244,39 @@ SSMakoPlayerBedScript:
 	special StubbedTrainerRankings_Healings
 	playmusic MUSIC_HEAL
 	special HealParty
+	closetext
 	pause 60
 	special FadeInQuickly
 	special RestartMapMusic
 	closetext
-;	checkevent EVENT_BEAT_BURGLAR_[The one who steals Emily's bag]
-;	iftrue .Landed
+	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
+	iftrue .Landed
 	end
 .Landed
+	setevent EVENT_HIDE_PORT_SAILORS
 	playsound SFX_ELEVATOR_END
 	opentext
-	writetext SSMakoLandedText
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iftrue .Rugosa
+	writetext SSMakoLandedLeagueText
 	waitbutton
 	closetext
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	wait 4
-;	checkevent EVENT_COMING_FROM_LEAGUE
-;	iftrue, .Rugosa
-; Set scenes here as well, for each respective map.
-	warpfacing UP, POKEMON_LEAGUE_POKECENTER_1F, 12, 7
+	setmapscene VICTORY_PORT_INSIDE, SCENE_VICTORYPORT_LEAVE_SHIP
+	setevent EVENT_COMING_FROM_LEAGUE
+	warpfacing UP, VICTORY_PORT_INSIDE, 4, 15
 	end
 .Rugosa
-; Set scenes here as well, for each respective map.
-;	clearevent EVENT_COMING_FROM_LEAGUE
+	writetext SSMakoLandedRugosaText
+	waitbutton
+	closetext
+	special FadeOutPalettes
+	playsound SFX_EXIT_BUILDING
+	wait 4
+	setmapscene RUGOSA_PORT, SCENE_RUGOSAPORT_LEAVE_SHIP
+	clearevent EVENT_COMING_FROM_LEAGUE
 	warpfacing UP, RUGOSA_PORT, 14, 7
 	end
 
@@ -252,8 +290,18 @@ SSMakoPlayerBedText:
 	cont "rest!"
 	done
 
-SSMakoLandedText:
-	text "We have landed!"
+SSMakoLandedRugosaText:
+	text "PA: Attention."
+	
+	para "We have landed at"
+	line "RUGOSA COAST."
+	done
+
+SSMakoLandedLeagueText:
+	text "PA: Attention."
+
+	para "We have landed at"
+	line "VICTORY COAST."
 	done
 	
 SuperNerdHerbertText:
@@ -296,6 +344,55 @@ SuperNerdHerbertAfterText:
 	line "time on this trip."
 	done
 
+GentlemanWinfredText:
+	text "How terribly rude"
+	line "of you to enter my"
+	cont "cabin unannounced!"
+	
+	para "Seems I will need"
+	line "to give you a les-"
+	cont "son in manners"
+	cont "that nobody else"
+	cont "is willing to!"
+	done
+
+GentlemanWinfredWinText:
+	text "Hm… Are my methods"
+	line "ineffective towar-"
+	cont "ds the youth of"
+	cont "today?"
+	
+	para "Nonsense! You two"
+	line "are just unteach-"
+	cont "able!"
+	done
+
+GentlemanWinfredTicketText:
+	text "Now what did you"
+	line "think was so imp-"
+	cont "portant that you"
+	cont "came in here with"
+	cont "no invitation?"
+	
+	para "You want a VIP"
+	line "TICKET?"
+	
+	para "Did you think I"
+	line "would be here if I"
+	cont "knew where to obt-"
+	cont "ain one?"
+	done
+
+GentlemanWinfredAfterText:
+	text "I respect that"
+	line "your skills as a"
+	cont "trainer allowed"
+	cont "you to best me in"
+	cont "battle, but I must"
+	cont "still ask you to"
+	cont "leave me be!"
+	done
+
 TeacherIleneText:
 	text "I can still turn"
 	line "heads just as well"
@@ -327,6 +424,117 @@ TeacherIleneAfterText:
 	cont "on my appearance"
 	cont "anyway!"
 	done
+	
+TwinJanText:
+	text "JAN: Don't under-"
+	line "estimate us just"
+	cont "because we're"
+	cont "young!"
+	
+	para "ANNE: Yeah! We won"
+	line "all of our BADGEs"
+	cont "easy peasy!"
+	done
+
+TwinJanWinText:
+	text "JAN: I hope that"
+	line "some day ANNE and"
+	cont "I can run a GYM"
+	cont "together."
+	
+	para "ANNE: Everyone"
+	line "will battle with"
+	cont "two #MON at a"
+	cont "time!"
+	done
+
+TwinJanAfterText:
+	text "JAN: I hope they"
+	line "let us battle in"
+	cont "the #MON LEAGUE"
+	cont "together!"
+	
+	para "ANNE: We never"
+	line "leave each other's"
+	cont "side!"
+	done
+
+TwinAnneText:
+	text "ANNE: Hey, you"
+	line "have a friend to"
+	cont "battle with just"
+	cont "like us!"
+	
+	para "JAN: Um, ANNE…"
+	line "I don't think that"
+	cont "other girl has any"
+	cont "#MON."
+	done
+
+TwinAnneWinText:
+	text "ANNE: Two against"
+	line "one isn't supposed"
+	cont "to be fair!"
+	
+	para "JAN: I don't think"
+	line "we should mess"
+	cont "with this trainer."
+	done
+
+TwinAnneAfterText:
+	text "ANNE: So your"
+	line "friend's #MON"
+	cont "got stolen?"
+
+	para "JAN: That's"
+	line "terrible! I hope"
+	cont "you can find them."
+	done
+	
+TwinJanTicketText:
+	text "JAN: Have you"
+	line "heard about a VIP"
+	cont "TICKET, ANNE?"
+	done
+	
+TwinAnneTicketResponseText:
+	text "ANNE: Nu-uh, I"
+	line "haven't."
+	
+TwinJanTicketBoyText:
+	text "JAN: Sorry mister."
+	line "We'd help if we"
+	cont "knew anything…"
+	done
+
+TwinJanTicketGirlText:
+	text "JAN: Sorry miss."
+	line "We'd help if we"
+	cont "knew anything…"
+	done
+	
+TwinAnneTicketText:
+	text "ANNE: Have you"
+	line "heard about a VIP"
+	cont "TICKET, JAN?"
+	done
+	
+TwinJanTicketResponseText:
+	text "JAN: Nu-uh, I"
+	line "haven't."
+	
+TwinAnneTicketBoyText:
+	text "ANNE: Sorry,"
+	line "mister. We'd help"
+	cont "if we knew any-"
+	cont "thing…"
+	done
+
+TwinAnneTicketGirlText:
+	text "ANNE: Sorry miss."
+	line "We'd help if we"
+	cont "knew anything…"
+	done
 
 SSMako1FRoomsVIPTicketLocationText:
 	text "I've heard about a"
@@ -337,20 +545,6 @@ SSMako1FRoomsVIPTicketLocationText:
 	line "in the ENGINE ROOM"
 	cont "of the ship, down"
 	cont "in the basement."
-	done
-
-SSMako1FRoomsTrainerText:
-	text "I am a"
-	line "#MON trainer."
-	done
-
-SSMako1FRoomsTrainerWinText:
-SSMako1FRoomsTrainerAfterText:
-	text "I lost."
-	done
-
-PlusOneText:
-	text "Plus one!"
 	done
 	
 SSMako1FRoomsFangirlText:
@@ -397,9 +591,9 @@ SSMako1FRooms_MapEvents:
 
 	db 7 ; object events
 	object_event -4, -3, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FRoomsFangirl, -1
-	object_event 12,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerTeacherIlene, -1
-	object_event 21,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanWinfred, -1
-	object_event 20, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinAnita, -1
-	object_event 21, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinLita, -1
-	object_event  1, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdHerbert, -1
+	object_event 12,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerTeacherIlene, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	object_event 21,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanWinfred, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	object_event 20, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinJan, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	object_event 21, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinAnne, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	object_event  1, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdHerbert, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 11, 12, SPRITE_FANGIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SSMako1FRoomsFangirl, EVENT_HIDE_SS_MAKO_FANGIRL
