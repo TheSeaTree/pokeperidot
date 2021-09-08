@@ -1000,7 +1000,7 @@ AbraEvosAttacks:
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
-	db EVOLVE_HAPPINESS, -1, ALAKAZAM
+	db EVOLVE_HAPPINESS, TR_ANYTIME, ALAKAZAM
 	db 0 ; no more evolutions
 	db 1, TELEPORT
 	db 1, CONFUSION
@@ -1037,9 +1037,9 @@ MachopEvosAttacks:
 	db 9, FORESIGHT
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
-	db 25, VITAL_THROW
-	db 33, DRAIN_PUNCH
-	db 37, BULK_UP
+	db 25, DRAIN_PUNCH
+	db 33, BULK_UP
+	db 37, VITAL_THROW
 	db 39, CROSS_CHOP
 	db 41, SCARY_FACE
 	db 44, DYNAMICPUNCH
@@ -1047,7 +1047,7 @@ MachopEvosAttacks:
 	db 0 ; no more level-up moves
 
 MachokeEvosAttacks:
-	db EVOLVE_HAPPINESS, -1, MACHAMP
+	db EVOLVE_HAPPINESS, TR_ANYTIME, MACHAMP
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
@@ -1056,9 +1056,9 @@ MachokeEvosAttacks:
 	db 9, FORESIGHT
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
-	db 25, VITAL_THROW
-	db 37, DRAIN_PUNCH
-	db 43, BULK_UP
+	db 25, DRAIN_PUNCH
+	db 37, BULK_UP
+	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
 	db 50, SCARY_FACE
 	db 53, DYNAMICPUNCH
@@ -1074,9 +1074,9 @@ MachampEvosAttacks:
 	db 9, FORESIGHT
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
-	db 25, VITAL_THROW
-	db 37, DRAIN_PUNCH
-	db 43, BULK_UP
+	db 25, DRAIN_PUNCH
+	db 37, BULK_UP
+	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
 	db 50, SCARY_FACE
 	db 53, DYNAMICPUNCH
@@ -1172,7 +1172,7 @@ GeodudeEvosAttacks:
 	db 0 ; no more level-up moves
 
 GravelerEvosAttacks:
-	db EVOLVE_HAPPINESS, -1, GOLEM
+	db EVOLVE_HAPPINESS, TR_ANYTIME, GOLEM
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, DEFENSE_CURL
@@ -1476,7 +1476,7 @@ GastlyEvosAttacks:
 	db 0 ; no more level-up moves
 
 HaunterEvosAttacks:
-	db EVOLVE_HAPPINESS, -1, GENGAR
+	db EVOLVE_HAPPINESS, TR_ANYTIME, GENGAR
 	db 0 ; no more evolutions
 	db 1, HYPNOSIS
 	db 1, LICK
@@ -1864,7 +1864,7 @@ TangelaEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 36, GIGA_DRAIN
 	db 43, BODY_SLAM
-	db 46, NIGHT_SHADE
+	db 46, SOLARBEAM
 	db 0 ; no more level-up moves
 
 KangaskhanEvosAttacks:
@@ -3919,7 +3919,7 @@ TangrowthEvosAttacks:
 	db 33, ANCIENTPOWER
 	db 38, GIGA_DRAIN
 	db 45, GLARE
-	db 47, NIGHT_SHADE
+	db 48, SOLARBEAM
 	db 0 ; no more level-up moves
 
 GreminiEvosAttacks:
