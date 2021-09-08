@@ -201,9 +201,10 @@ FountainNotEnoughMoneyText:
 	done	
 
 FountainFirstMonHappyText:
+	text "@"
 	text_ram wStringBuffer3
-	text "@ seems"
-	line "happier!"
+	text " seems"
+	line "much happier!"
 	done
 
 FountainCoinsSparkleText:
@@ -272,7 +273,7 @@ EmilyCompanionText6:
 	cont "you into the"
 	cont "ENGINE ROOM!"
 	done
-	
+
 EmilyCompanionText7:
 	text "The ENGINE ROOM's"
 	line "door is unlocked!"
@@ -303,12 +304,12 @@ EmilyCompanionText9:
 	done
 
 EmilyCompanionText10:
-	text "It's impossible to"
-	line "get through that"
-	cont "crowd right now!"
+	text "That party must"
+	line "still be going on."
 	
-	para "Let's go check the"
-	line "rooms back inside."
+	para "We'll just have to"
+	line "wait until it's"
+	cont "over."
 	done
 
 EmilyCompanionText11:

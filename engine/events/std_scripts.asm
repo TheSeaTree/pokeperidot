@@ -694,9 +694,10 @@ WishingFountainScript:
 	special StartShinyEncounterTimer
 	end
 .IncreaseHappiness:
-;	farwritetext FountainFirstMonHappyText
-;	waitbutton
-	special DaisysGrooming ; Make this automatically select the first Pokemon.
+	special GetFirstPokemonHappiness
+	farwritetext FountainFirstMonHappyText
+	waitbutton
+	special FountainHappiness ; Make this add happiness instead of maxing it?
 	closetext
 	end
 

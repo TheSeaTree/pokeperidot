@@ -110,6 +110,7 @@ SpecialsPointers::
 	add_special YoungerHaircutBrother
 	add_special OlderHaircutBrother
 	add_special DaisysGrooming
+	add_special FountainHappiness
 	add_special PlayCurMonCry
 	add_special ProfOaksPCBoot
 	add_special GameboyCheck
