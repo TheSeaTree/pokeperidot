@@ -64,6 +64,14 @@ TilesetLostLandAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
+TilesetPokemonLeagueOutsideAnim:
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  DoneTileAnimation
+
 TilesetOceanAnim:
 	dw vTiles2 tile $49, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
@@ -259,7 +267,6 @@ UnusedTilesetAnim_fc2bf:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:

@@ -182,3 +182,9 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; b5
 	tilecoll WALL, HOP_LEFT, WALL, HOP_LEFT ; b6
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; b7
+	tilecoll LADDER, LADDER, LADDER, LADDER ; b8
+	tilecoll LADDER, LADDER, LADDER, LADDER ; b9
+	tilecoll LADDER, LADDER, LADDER, LADDER ; ba
+	tilecoll LADDER, LADDER, LADDER, LADDER ; bb
+	tilecoll WATER, WATER, BUOY, BUOY ; bc
+	tilecoll BUOY, BUOY, WATER, WATER ; bd

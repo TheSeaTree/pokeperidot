@@ -2,11 +2,11 @@
 	RGB 21,21,21, 11,11,11 ; morn/day
 	RGB 21,21,21, 11,11,11 ; nite
 
-; group 1 (Olivine)
+; group 1 (Ocean)
 	RGB 15,10,31, 07,05,15 ; morn/day
 	RGB 06,05,17, 02,02,08 ; nite
 
-; group 2 (Mahogany)
+; group 2 (Rugosa)
 	RGB 27,23,01, 23,11,00 ; morn/day
 	RGB 15,11,01, 11,10,01 ; nite
 
@@ -14,67 +14,67 @@
 	RGB 21,21,21, 11,11,11 ; morn/day
 	RGB 21,21,21, 17,08,07 ; nite
 
-; group 4 (Ecruteak)
+; group 4 (Staghorn)
 	RGB 31,19,00, 27,10,05 ; morn/day
 	RGB 15,07,02, 11,04,02 ; nite
 
-; group 5 (Blackthorn)
+; group 5 (Acropora)
 	RGB 22,16,08, 19,11,04 ; morn/day
 	RGB 12,08,10, 06,02,03 ; nite
 
-; group 6 (Cinnabar)
+; group 6 (Safari)
 	RGB 15,20,01, 09,13,00 ; morn/day
 	RGB 08,13,19, 00,11,13 ; nite
 
-; group 7 (Cerulean)
+; group 7 (unused)
 	RGB 31,19,24, 30,10,06 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite
 
-; group 8 (Azalea)
+; group 8 (Pectinia)
 	RGB 22,20,10, 17,14,03 ; morn/day
 	RGB 11,11,05, 10,09,07 ; nite
 
-; group 9 (Lake of Rage)
+; group 9 (unused)
 	RGB 31,08,04, 09,09,08 ; morn/day
 	RGB 18,05,09, 09,09,08 ; nite
 
-; group 10 (Violet)
+; group 10 (Ridge)
 	RGB 24,14,31, 13,07,21 ; morn/day
 	RGB 12,03,18, 09,03,15 ; nite
 
-; group 11 (Goldenrod)
+; group 11 (Favia)
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 12 (Vermilion)
+; group 12 (unused)
 	RGB 12,19,00, 06,10,00 ; morn/day
 	RGB 06,09,07, 04,05,06 ; nite
 
-; group 13 (Pallet)
+; group 13 (Route 11)
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 14 (Pewter/Dept Store Roof)
+; group 14 (Roofs)
 	RGB 15,31,31, 05,17,31 ; morn/day
 	RGB 11,11,19, 00,00,05 ; nite
 
-; group 15 (Mount Moon Square)
+; group 15 (unused)
 	RGB 31,28,12, 31,16,01 ; morn/day
 	RGB 16,14,18, 16,14,10 ; nite
 
-; group 16 (Indigo)
+; group 16 (Pokemon League)
 	RGB 21,21,21, 13,13,13 ; morn/day
 	RGB 11,11,19, 07,07,12 ; nite
 
-; group 17 (Fuchsia)
+; group 17 (unused)
 	RGB 31,18,29, 17,13,20 ; morn/day
 	RGB 14,06,12, 11,03,10 ; nite
 
-; group 18 (Lavender)
+; group 18 (unused)
 	RGB 23,15,31, 16,05,31 ; morn/day
 	RGB 12,07,17, 08,06,10 ; nite
 
-; group 19 (Silver Cave)
+; group 19 (unused)
 	RGB 21,21,25, 16,16,16 ; morn/day
 	RGB 13,13,13, 07,07,07 ; nite
 
@@ -82,26 +82,30 @@
 	RGB 21,21,21, 11,11,11 ; morn/day
 	RGB 21,21,21, 11,11,11 ; nite
 
-; group 21 (Celadon)
+; group 21 (unused)
 	RGB 07,07,12, 04,03,18 ; nite
 	RGB 07,07,12, 04,03,18 ; nite
 
-; group 22 (Cianwood)
+; group 22 (Hepatica)
 	RGB 14,17,31, 07,11,15 ; morn/day
 	RGB 09,09,17, 05,07,13 ; nite
 
-; group 23 (Viridian/Orchid)
+; group 23 (Orchid)
 	RGB 31,10,00, 18,06,00 ; morn/day
 	RGB 18,05,09, 17,08,07 ; nite
 
-; group 24 (New Bark)
+; group 24 (Elkhorn)
 	RGB 20,31,14, 11,23,05 ; morn/day
 	RGB 09,13,08, 06,09,04 ; nite
 
-; group 25 (Saffron)
+; group 25 (unused)
 	RGB 31,26,00, 31,15,00 ; morn/day
 	RGB 13,13,01, 08,08,01 ; nite
 
-; group 26 (Cherrygrove)
+; group 26 (Pavona)
 	RGB 31,14,28, 31,05,21 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite
+
+; group 27 (Palerock)
+	RGB 14,17,31, 07,11,15 ; morn/day
+	RGB 09,09,17, 05,07,13 ; nite

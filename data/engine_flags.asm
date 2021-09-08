@@ -75,7 +75,7 @@ EngineFlags:
 	; fly
 	engine_flag wVisitedSpawns, SPAWN_HOME
 	engine_flag wVisitedSpawns, SPAWN_SS_MAKO
-	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
+	engine_flag wVisitedSpawns, SPAWN_LEAGUE ; $40
 	engine_flag wVisitedSpawns, SPAWN_ELKHORN
 	engine_flag wVisitedSpawns, SPAWN_PAVONA
 	engine_flag wVisitedSpawns, SPAWN_PECTINIA
@@ -89,7 +89,7 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_CARNATION
 	engine_flag wVisitedSpawns, SPAWN_ACROPORA
 	engine_flag wVisitedSpawns, SPAWN_ORCHID
-	engine_flag wVisitedSpawns, SPAWN_INDIGO
+	engine_flag wVisitedSpawns, SPAWN_LEAGUE
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F

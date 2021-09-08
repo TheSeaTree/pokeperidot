@@ -23,5 +23,5 @@ SpawnPoints:
 	spawn CARNATION_TOWN,             19,  6
 	spawn ACROPORA_CITY,              27, 18
 	spawn ORCHID_CITY,                23, 26
-	spawn POKEMON_LEAGUE,	          24,  6
+	spawn POKEMON_LEAGUE,	          20,  6
 	spawn N_A,                        -1, -1

@@ -12,7 +12,7 @@ Tilesets::
 ; entries correspond to TILESET_* constants
 	tileset Tileset0
 	tileset TilesetJohto
-	tileset TilesetBattleTowerOutside
+	tileset TilesetPokemonLeagueOutside
 	tileset TilesetHouse
 	tileset TilesetPlayersHouse
 	tileset TilesetPokecenter

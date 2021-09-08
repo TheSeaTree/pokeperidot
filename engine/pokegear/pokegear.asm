@@ -2346,7 +2346,7 @@ FlyMap:
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave.
-	ld a, FLY_INDIGO
+	ld a, FLY_LEAGUE
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap
@@ -2365,7 +2365,7 @@ FlyMap:
 ; enters Kanto, fly access is restricted until Indigo Plateau is
 ; visited and its flypoint enabled.
 	push af
-	ld c, SPAWN_INDIGO
+	ld c, SPAWN_LEAGUE
 	call HasVisitedSpawn
 	and a
 	jr z, .NoKanto
@@ -2380,7 +2380,7 @@ FlyMap:
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave
-	ld a, FLY_INDIGO
+	ld a, FLY_LEAGUE
 	ld [wEndFlypoint], a
 	call FillJohtoMap
 	pop af
@@ -2872,7 +2872,7 @@ TeleportMap:
 ; Flypoints begin at New Bark Town...
 	ld [wStartFlypoint], a
 ; ..and end at Silver Cave.
-	ld a, FLY_INDIGO
+	ld a, FLY_LEAGUE
 	ld [wEndFlypoint], a
 ; Fill out the map
 	call FillJohtoMap

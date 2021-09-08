@@ -191,6 +191,11 @@ INCLUDE "maps/HepaticaChurch.asm"
 INCLUDE "maps/Route14RugosaGate.asm"
 INCLUDE "maps/Route14Gate.asm"
 INCLUDE "maps/FastEddiesHouse.asm"
+INCLUDE "maps/VitaminShop.asm"
+INCLUDE "maps/PokemonLeagueCafe.asm"
+INCLUDE "maps/TrainerHouse.asm"
+INCLUDE "maps/PokemonLeagueGate1F.asm"
+INCLUDE "maps/PokemonLeagueGate2F.asm"
 
 
 SECTION "Map Scripts 13", ROMX
@@ -294,6 +299,8 @@ INCLUDE "maps/LostLandHiddenCave1F.asm"
 INCLUDE "maps/LostLandHiddenCave2F.asm"
 INCLUDE "maps/LostLandCave1F.asm"
 INCLUDE "maps/LostLandCaveB1F.asm"
+INCLUDE "maps/EnteiCave1F.asm"
+INCLUDE "maps/EnteiCaveB1F.asm"
 
 
 SECTION "Map Scripts 20", ROMX
@@ -403,8 +410,6 @@ INCLUDE "maps/OverlookMaze.asm"
 
 SECTION "Map Scripts 26", ROMX
 
-INCLUDE "maps/EnteiCave1F.asm"
-INCLUDE "maps/EnteiCaveB1F.asm"
 INCLUDE "maps/SSMako1F.asm"
 INCLUDE "maps/SSMako1FRooms.asm"
 INCLUDE "maps/SSMakoB1F.asm"

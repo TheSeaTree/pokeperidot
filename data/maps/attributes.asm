@@ -518,4 +518,9 @@ ENDM
 	map_attributes VictoryPort, VICTORY_PORT, $11, 0
 	map_attributes VictoryPortInside, VICTORY_PORT_INSIDE, $00, 0
 	map_attributes MoonBallCave, MOON_BALL_CAVE, $09, 0
+	map_attributes PokemonLeagueGate1F, POKEMON_LEAGUE_GATE_1F, $00, 0
+	map_attributes PokemonLeagueGate2F, POKEMON_LEAGUE_GATE_2F, $00, 0
 	map_attributes FastEddiesHouse, FAST_EDDIES_HOUSE, $00, 0
+	map_attributes VitaminShop, VITAMIN_SHOP, $00, 0
+	map_attributes PokemonLeagueCafe, POKEMON_LEAGUE_CAFE, $00, 0
+	map_attributes TrainerHouse, TRAINER_HOUSE, $00, 0

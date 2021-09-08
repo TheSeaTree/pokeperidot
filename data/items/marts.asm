@@ -31,8 +31,10 @@ Marts:
 	dw MartFuchsia
 	dw MartSaffron
 	dw MartMtMoon
-	dw MartIndigoPlateau
-	dw MartIndigoPlateauTM
+	dw MartPokemonLeague
+	dw MartPokemonLeagueTM
+	dw MartPokemonLeagueVitamins
+	dw MartPokemonLeagueCafe
 	dw MartUnderground
 .End
 
@@ -222,7 +224,7 @@ MartFaviaTM:
 	db TM_ENDURE
 	db TM_PSYCH_UP
 	db -1
-	
+
 MartPewter:
 	db 7 ; # items
 	db GREAT_BALL
@@ -358,7 +360,7 @@ MartMtMoon:
 	db REPEL
 	db -1 ; end
 
-MartIndigoPlateau:
+MartPokemonLeague:
 	db 7 ; # items
 	db ULTRA_BALL
 	db MAX_REPEL
@@ -369,13 +371,31 @@ MartIndigoPlateau:
 	db FULL_HEAL
 	db -1 ; end
 	
-MartIndigoPlateauTM:
+MartPokemonLeagueTM:
 	db 4
 	db FIRE_BLAST
 	db BLIZZARD
 	db THUNDER
 	db HURRICANE
 	db -1
+	
+MartPokemonLeagueVitamins:
+	db 6
+	db HP_UP
+	db PROTEIN
+	db IRON
+	db CARBOS
+	db CALCIUM
+	db PP_UP
+	db -1
+
+MartPokemonLeagueCafe:
+	db 4 ; # items
+	db FRESH_WATER
+	db BERRY_JUICE
+	db LEMONADE
+	db SWEET_TEA
+	db -1 ; end
 
 MartUnderground:
 	db 4 ; # items

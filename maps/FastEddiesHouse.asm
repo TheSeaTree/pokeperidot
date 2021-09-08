@@ -331,8 +331,8 @@ FastEddiesHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  3,  7, POKEMON_LEAGUE, 3
 	warp_event  2,  7, POKEMON_LEAGUE, 3
+	warp_event  3,  7, POKEMON_LEAGUE, 3
 
 	db 0 ; coord events
 
@@ -343,4 +343,4 @@ FastEddiesHouse_MapEvents:
 	bg_event 7, 1, BGEVENT_READ, FastEddieBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FastEddie, -1
+	object_event  2,  3, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FastEddie, -1

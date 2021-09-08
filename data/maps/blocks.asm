@@ -78,8 +78,11 @@ PavonaInn_Blocks:
 	INCBIN "maps/PavonaInn.ablk"
 	
 PavonaGymSpeechHouse_Blocks:
-FastEddiesHouse_Blocks
+FastEddiesHouse_Blocks:
 	INCBIN "maps/House3.ablk"
+	
+VitaminShop_Blocks:
+	INCBIN "maps/VitaminShop.ablk"
 
 Route19FuchsiaGate_Blocks:
 Route43Gate_Blocks:
@@ -96,6 +99,12 @@ Route6Gate_Blocks:
 Route14Gate_Blocks:
 Route20AcroporaGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
+	
+PokemonLeagueGate1F_Blocks:
+	INCBIN "maps/PokemonLeagueGate1F.ablk"
+	
+PokemonLeagueGate2F_Blocks:
+	INCBIN "maps/PokemonLeagueGate2F.ablk"
 
 Route4_Blocks:
 	INCBIN "maps/Route4.ablk"
@@ -173,6 +182,7 @@ FaviaMart_Blocks:
 	
 RidgeCafe_Blocks:
 RugosaCafe_Blocks:
+PokemonLeagueCafe_Blocks:
 	INCBIN "maps/RidgeCafe.ablk"
 
 Route10North_Blocks:
@@ -359,6 +369,9 @@ SilverCaveRoom3_Blocks:
 
 MountMoonGiftShop_Blocks:
 	INCBIN "maps/GiftShop.ablk"
+
+TrainerHouse_Blocks:
+	INCBIN "maps/TrainerHouse.ablk"
 
 VictoryPort_Blocks:
 	INCBIN "maps/VictoryPort.ablk"

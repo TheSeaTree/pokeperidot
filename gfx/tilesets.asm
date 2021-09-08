@@ -183,7 +183,6 @@ INCBIN "data/tilesets/gate_metatiles.bin"
 TilesetGateColl:
 INCLUDE "data/tilesets/gate_collision.asm"
 
-TilesetBattleTowerOutsideGFX:
 TilesetJohtoCityGFX:
 INCBIN "gfx/tilesets/johto_city.2bpp.lz"
 
@@ -229,11 +228,11 @@ INCBIN "data/tilesets/lighthouse_metatiles.bin"
 TilesetLighthouseColl:
 INCLUDE "data/tilesets/lighthouse_collision.asm"
 
-TilesetBattleTowerOutsideMeta:
-INCBIN "data/tilesets/battle_tower_outside_metatiles.bin"
+TilesetPokemonLeagueOutsideMeta:
+INCBIN "data/tilesets/pokemon_league_outside_metatiles.bin"
 
-TilesetBattleTowerOutsideColl:
-INCLUDE "data/tilesets/battle_tower_outside_collision.asm"
+TilesetPokemonLeagueOutsideColl:
+INCLUDE "data/tilesets/pokemon_league_outside_collision.asm"
 
 TilesetGateGFX:
 INCBIN "gfx/tilesets/gate.2bpp.lz"
@@ -400,8 +399,8 @@ INCBIN "data/tilesets/forest_attributes.bin"
 TilesetMountainAttr:
 INCBIN "data/tilesets/mountain_attributes.bin"
 
-TilesetBattleTowerOutsideAttr:
-INCBIN "data/tilesets/battle_tower_outside_attributes.bin"
+TilesetPokemonLeagueOutsideAttr:
+INCBIN "data/tilesets/pokemon_league_outside_attributes.bin"
 
 
 SECTION "Tileset Data 12", ROMX
@@ -444,3 +443,6 @@ INCLUDE "data/tilesets/pokemon_league_collision.asm"
 
 TilesetPokemonLeagueAttr:
 INCBIN "data/tilesets/pokemon_league_attributes.bin"
+
+TilesetPokemonLeagueOutsideGFX:
+INCBIN "gfx/tilesets/pokemon_league_outside.2bpp.lz"
