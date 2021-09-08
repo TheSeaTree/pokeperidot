@@ -13,12 +13,17 @@ Script_Whiteout:
 	pause 40
 	special HealParty
 	checkflag ENGINE_SAFARI_ZONE
+	checkcode VAR_BATTLETYPE
+	ifequal BATTLETYPE_NOCASH, .NoMoney
 	iftrue .safari_zone
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
-	clearflag ENGINE_SAFARI_ZONE
+;	clearflag ENGINE_SAFARI_ZONE
+	setevent EVENT_SS_MAKO_RESPAWN
+
 	special WarpToSpawnPoint
 	newloadmap MAPSETUP_WARP
+.NoMoney
 	endall
 
 .safari_zone
