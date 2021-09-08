@@ -743,7 +743,7 @@ StatsScreen_LoadGFX:
 	ld de, OTString
 	hlcoord 0,  9
 	call PlaceString
-	hlcoord 2, 13
+	hlcoord 1, 13
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -751,7 +751,7 @@ StatsScreen_LoadGFX:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 10
+	hlcoord 1, 10
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -763,7 +763,7 @@ StatsScreen_LoadGFX:
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 10
+	hlcoord 8, 10
 	ld [hl], a
 .done
 	ret
