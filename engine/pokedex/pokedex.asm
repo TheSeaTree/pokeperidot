@@ -537,7 +537,7 @@ Pokedex_UpdateOptionScreen:
 	dw .MenuAction_UnownMode
 
 .MenuAction_NewMode:
-	ld b, DEXMODE_NEW
+	ld b, DEXMODE_NUM
 	jr .ChangeMode
 
 .MenuAction_OldMode:
@@ -1166,7 +1166,7 @@ Pokedex_DrawOptionScreenBG:
 	db $3b, " OPTION ", $3c, -1
 
 .Modes:
-	db   "REGIONAL MODE"
+	db   "NUMERICAL MODE"
 	next "NATIONAL MODE"
 	next "A to Z MODE"
 	db   "@"
@@ -1486,9 +1486,30 @@ Pokedex_PrintListing:
 	call PlaceString
 	ret
 
+Pokedex_GetDexNumber:
+; Get the intended number of the selected Pokémon.
+	push bc
+	push hl
+	
+	ld a, [wTempSpecies] ;a = current mon (internal number)
+	ld b, a ;b = Needed mon (a and b must be matched)
+	ld c, 0 ;c = index
+	ld hl, NewPokedexOrder
+	
+.loop
+	inc c
+	ld a, [hli]
+	cp b
+	jr nz, .loop
+	ld a, c
+	ld [wPokedexNumber], a
+	pop hl
+	pop bc
+	ret
+
 Pokedex_PrintNumberIfOldMode:
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
+	cp DEXMODE_NUM
 	jr z, .printnum
 	ret
 
@@ -1496,7 +1517,8 @@ Pokedex_PrintNumberIfOldMode:
 	push hl
 	ld de, -SCREEN_WIDTH
 	add hl, de
-	ld de, wTempSpecies
+	call Pokedex_GetDexNumber
+	ld de, wPokedexNumber
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
 	call PrintNum
 	pop hl
@@ -1590,6 +1612,7 @@ Pokedex_OrderMonsByMode:
 
 .NewMode:
 	ld de, NewPokedexOrder
+.do_dex
 	ld hl, wPokedexOrder
 	ld c, NUM_POKEMON
 .loopnew
@@ -1602,16 +1625,8 @@ Pokedex_OrderMonsByMode:
 	ret
 
 .OldMode:
-	ld hl, wPokedexOrder
-	ld a, $1
-	ld c, NUM_POKEMON
-.loopold
-	ld [hli], a
-	inc a
-	dec c
-	jr nz, .loopold
-	call .FindLastSeen
-	ret
+	ld de, OldPokedexOrder
+	jr .do_dex
 
 .FindLastSeen:
 	ld hl, wPokedexOrder + NUM_POKEMON - 1
@@ -1670,6 +1685,8 @@ INCLUDE "data/pokemon/dex_order_alpha.asm"
 
 INCLUDE "data/pokemon/dex_order_new.asm"
 
+INCLUDE "data/pokemon/dex_order_old.asm"
+
 Pokedex_DisplayModeDescription:
 	xor a
 	ldh [hBGMapMode], a
@@ -1694,8 +1711,8 @@ Pokedex_DisplayModeDescription:
 	dw .UnownMode
 
 .NewMode:
-	db   "<PK><MN> are listed by"
-	next "evolution order.@"
+	db   "<PK><MN> are listed in"
+	next "numerical order.@"
 
 .OldMode:
 	db   "<PK><MN> are listed by"
@@ -1934,7 +1951,7 @@ Pokedex_DisplayTypeNotFoundMessage:
 
 Pokedex_UpdateCursorOAM:
 	ld a, [wCurDexMode]
-	cp DEXMODE_OLD
+	cp DEXMODE_NUM
 	jp z, Pokedex_PutOldModeCursorOAM
 	call Pokedex_PutNewModeABCModeCursorOAM
 	call Pokedex_PutScrollbarOAM
