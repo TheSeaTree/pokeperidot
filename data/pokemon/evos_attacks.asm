@@ -1439,7 +1439,7 @@ ShellderEvosAttacks:
 	db 16, PROTECT
 	db 20, LEER
 	db 25, WHIRLPOOL
-	db 18, ICICLE_SPEAR
+	db 32, ICICLE_SPEAR
 	db 37, AURORA_BEAM
 	db 52, ICE_BEAM
 	db 61, HYDRO_PUMP

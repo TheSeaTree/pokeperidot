@@ -5,6 +5,17 @@ InitializeSafariZone:
 	ld [wSafariStepsRemaining], a
 	ld a, 300 % $100
 	ld [wSafariStepsRemaining + 1], a
+	jp ContinueInitializeSafariZone
+
+InitializeExtendedSafariZone:
+	ld a, 500 / $100
+	ld [wSafariStepsRemaining], a
+	ld a, 500 % $100
+	ld [wSafariStepsRemaining + 1], a
+	; fallthrough
+ContinueInitializeSafariZone:
+	ld a, 30
+	ld [wParkBallsRemaining], a
 	; Hide Area 5 & 6 encounters from the Pokedex
 	ld a, GROUP_SAFARI_ZONE_AREA_1
 	ld [wBackupMapGroup], a

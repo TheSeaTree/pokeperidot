@@ -34,7 +34,7 @@ Moves: ; 41afb
 	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,    75, 20,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,      100,  5,  10
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
-	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          25, ICE,      100, 20,   0
+	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          20, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
 	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, CURSE_T,  100,  5,   0 ; Replace
 	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING, 100, 20,   0
@@ -151,7 +151,7 @@ Moves: ; 41afb
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, POISON,    55, 40,   0
-	move BARRAGE,      EFFECT_MULTI_HIT,          30, GRASS,     95, 10,   5
+	move BARRAGE,      EFFECT_MULTI_HIT,          20, GRASS,     95, 10,   5
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,      100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,    75, 10,   0
 	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,   100, 10,   0

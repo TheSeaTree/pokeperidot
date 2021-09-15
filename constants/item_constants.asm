@@ -189,8 +189,8 @@
 	const CRASH_HELMET ; b5
 	const SHRINE_KEY   ; b6
 	const EXP_ALL      ; b7
-	const ITEM_B8      ; b8
-	const ITEM_B9      ; b9
+	const SAFARI_PACK  ; b8
+	const SKILL_BELT   ; b9
 	const ITEM_BA      ; ba
 	const ITEM_BB      ; bb
 	const ITEM_BC      ; bc

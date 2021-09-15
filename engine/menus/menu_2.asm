@@ -129,6 +129,12 @@ StartMenu_PrintBugContestStatus:
 	hlcoord 15, 1
 	ld de, .Steps
 	call PlaceString
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	jr z, .normal_safari
+	ld de, .ExtendedSteps
+	call PlaceString
+.normal_safari
 	hlcoord 17, 2
 	ld de, wParkBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
@@ -137,19 +143,6 @@ StartMenu_PrintBugContestStatus:
 	ld de, wSafariStepsRemaining
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
 	call PrintNum
-
-.no_contest_mon
-	ld a, [wContestMon]
-	and a
-	jr z, .skip_level
-	ld a, [wContestMonLevel]
-	ld h, b
-	ld l, c
-	inc hl
-	ld c, 3
-	call Print8BitNumRightAlign
-
-.skip_level
 	pop af
 	ld [wOptions], a
 	ret
@@ -158,6 +151,8 @@ StartMenu_PrintBugContestStatus:
 	db "BALLS:@"
 .Steps:
 	db "/300@"
+.ExtendedSteps:
+	db "/500@"
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.

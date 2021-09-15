@@ -5276,6 +5276,14 @@ BattleCommand_EndLoop:
 	jr z, .double_hit
 	ld a, [hl]
 
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_SKILL_BELT
+	pop bc
+	ld a, 4
+	jr z, .double_hit
+
 	call BattleRandom
 	and $3
 	cp 2

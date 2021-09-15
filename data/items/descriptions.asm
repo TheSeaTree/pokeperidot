@@ -183,8 +183,8 @@ ItemDescriptions:
 	dw CrashHelmetDesc
 	dw ShrineKeyDesc
 	dw ExpAllDesc
-	dw InvalidItemDesc
-	dw InvalidItemDesc
+	dw SafariPackDesc
+	dw SkillBeltDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -981,6 +981,14 @@ ShrineKeyDesc:
 ExpAllDesc:
 	db   "Grants EXP. Points"
 	next "to whole party.@"
+
+SafariPackDesc:
+	db	 "Supplies for long-"
+	next "er SAFARI GAMEs.@"
+
+SkillBeltDesc:
+	db	 "Moves hit maximum"
+	next "amount of strikes."
 
 InvalidItemDesc:
 	db   "You should not"

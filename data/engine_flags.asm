@@ -37,7 +37,7 @@ EngineFlags:
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_HAVE_BATTLE_PASS_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_REACHED_GOLDENROD_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_EXTENDED_SAFARI_GAME_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F
 
 	engine_flag wBikeFlags, BIKEFLAGS_STRENGTH_ACTIVE_F ; $18

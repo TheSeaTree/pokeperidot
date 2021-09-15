@@ -63,25 +63,35 @@ SafariReceptionistScript:
 
 SafariGuardScript:
 	opentext
+	checkitem SAFARI_PACK
+	iftrue .ExtendedSafari
 	writetext SafariZoneWelcomeText
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .decline
+.NormalSafari
 	checkmoney YOUR_MONEY, 500
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
 	takemoney YOUR_MONEY, 500
 	waitsfx
 	special PlaceMoneyTopRight
+	checkitem SAFARI_PACK
+	iftrue .NoExplaination
 	writetext ExplainSafariBalls
+	jump .GotSafariBalls
+.NoExplaination
+	writetext SafariPackBallText
+.GotSafariBalls
 	waitbutton
 	playsound SFX_GOT_SAFARI_BALLS
 	writetext PlayerReceivedSafariBalls
 	wait 8
-	writetext SafariZoneYes
+	writetext HappyHuntingText
 	waitbutton
 	closetext
 	special InitializeSafariZone
+.EnterSafariZone
 	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
 	setflag ENGINE_SAFARI_ZONE
 	special HealParty
@@ -89,6 +99,34 @@ SafariGuardScript:
 	applymovement PLAYER, SafariEnter
 	warpcheck
 	end
+	
+.ExtendedSafari
+	writetext PlayerHasSafariPackText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .AskRegularSafari
+	checkmoney YOUR_MONEY, 750
+	ifequal HAVE_LESS, .NotEnoughMoney
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 750
+	waitsfx
+	special PlaceMoneyTopRight
+	writetext SafariPackBallText
+	waitbutton
+	playsound SFX_GOT_SAFARI_BALLS
+	writetext PlayerReceivedSafariBalls
+	wait 8
+	writetext HappyHuntingText
+	waitbutton
+	closetext
+	special InitializeExtendedSafariZone
+	setflag ENGINE_EXTENDED_SAFARI_GAME
+	jump .EnterSafariZone
+
+.AskRegularSafari:
+	writetext PlayerDeclineExtendedSafariText
+	yesorno
+	iftrue .NormalSafari
 
 .decline
 	writetext SafariZoneNo
@@ -104,6 +142,7 @@ SafariGuardScript:
 
 LeaveSafariZone:
 	clearflag ENGINE_SAFARI_ZONE
+	clearflag ENGINE_EXTENDED_SAFARI_GAME
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariExit
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardExit
@@ -260,13 +299,47 @@ ExplainSafariBalls:
 	para "Here are your"
 	line "SAFARI BALLs."
 	done
+
+SafariPackBallText:
+	text "Thank you!"
+
+	para "I don't need to"
+	line "explain the SAFARI"
+	cont "ZONE to you, so"
+	cont "here are your"
+	cont "SAFARI BALLs."
+	done
+
+PlayerHasSafariPackText:
+	text "Welcome to the"
+	line "SAFARI ZONE!"
 	
+	para "I see you have"
+	line "brought a SAFARI"
+	cont "PACK with you"
+	cont "today."
+	
+	para "Would you like to"
+	line "have an extended"
+	cont "SAFARI GAME?"
+	
+	para "It will only cost"
+	line "¥750."
+	done
+
+PlayerDeclineExtendedSafariText:
+	text "Would you rather"
+	line "go on a regular"
+	cont "SAFARI GAME for"
+	cont "¥500?"
+	done
+
 PlayerReceivedSafariBalls:
 	text "<PLAYER> received"
 	line "30 SAFARI BALLs."
 	done
-	
-SafariZoneYes:
+
+HappyHuntingText:
 	text "Happy hunting,"
 	line "trainer!"
 	done
