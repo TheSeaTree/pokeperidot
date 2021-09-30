@@ -38,7 +38,7 @@ SafariArea1RestHouseCooltrainerText:
 	line "ting new #MON"
 	cont "for the park."
 	done
-	
+
 SafariArea1RestHouseLassText:
 	text "Your step count"
 	line "won't go down in-"

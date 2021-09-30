@@ -196,13 +196,15 @@ INCLUDE "maps/PokemonLeagueCafe.asm"
 INCLUDE "maps/TrainerHouse.asm"
 INCLUDE "maps/PokemonLeagueGate1F.asm"
 INCLUDE "maps/PokemonLeagueGate2F.asm"
+INCLUDE "maps/PokemonLeagueHotel1F.asm"
+INCLUDE "maps/PokemonLeagueHotel2F.asm"
 
 
 SECTION "Map Scripts 13", ROMX
 
 INCLUDE "maps/PokemonLeague.asm"
 INCLUDE "maps/VictoryPort.asm"
-INCLUDE "maps/VictoryPortInside.asm"
+INCLUDE "maps/VictoryCoast.asm"
 INCLUDE "maps/PokemonLeaguePokecenter1F.asm"
 INCLUDE "maps/OrvillesRoom.asm"
 INCLUDE "maps/RegansRoom.asm"
@@ -246,11 +248,16 @@ INCLUDE "maps/PectiniaMart.asm"
 INCLUDE "maps/KurtsHouse.asm"
 INCLUDE "maps/PectiniaGym.asm"
 INCLUDE "maps/Route21.asm"
-INCLUDE "maps/Route24.asm"
+INCLUDE "maps/Route24North.asm"
+INCLUDE "maps/Route24South.asm"
 INCLUDE "maps/Route25.asm"
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/MoltenPeakOutside.asm"
 INCLUDE "maps/Route23.asm"
+INCLUDE "maps/Route26.asm"
+INCLUDE "maps/Route27Gate.asm"
+INCLUDE "maps/Route27.asm"
+INCLUDE "maps/Route23HiddenCave.asm"
 INCLUDE "maps/RugosaCafe.asm"
 
 SECTION "Map Scripts 17", ROMX
@@ -264,6 +271,7 @@ INCLUDE "maps/RidgeMagikarpHouse.asm"
 INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
+INCLUDE "maps/SSMakoLowerDeck.asm"
 
 SECTION "Map Scripts 18", ROMX
 
@@ -417,4 +425,3 @@ INCLUDE "maps/SSMakoEngineRoom.asm"
 INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
 INCLUDE "maps/SSMakoDeck.asm"
-INCLUDE "maps/SSMakoLowerDeck.asm"

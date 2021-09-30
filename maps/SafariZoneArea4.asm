@@ -16,8 +16,8 @@ SafariZoneTMSubmission:
 SafariZoneArea4XSpDef:
 	itemball X_SP_DEF
 	
-SafariZoneArea4HiddenLightBuoy:
-	hiddenitem LIGHT_BUOY, EVENT_SAFARI_ZONE_AREA_4_HIDDEN_LIGHT_BUOY
+SafariZoneArea4HiddenUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_SAFARI_ZONE_AREA_4_HIDDEN_ULTRA_BALL
 	
 SafariZoneArea4HiddenRevivalHerb:
 	hiddenitem REVIVAL_HERB, EVENT_SAFARI_ZONE_AREA_4_HIDDEN_REVIVAL_HERB
@@ -48,7 +48,7 @@ SafariZoneArea4_MapEvents:
 	db 4 ; bg events
 	bg_event  9, 21, BGEVENT_READ, SafariZoneArea4Sign
 	bg_event 16, 16, BGEVENT_READ, SafariZoneArea4RestHouseSign
-	bg_event  1,  3, BGEVENT_ITEM, SafariZoneArea4HiddenLightBuoy
+	bg_event  1,  3, BGEVENT_ITEM, SafariZoneArea4HiddenUltraBall
 	bg_event 25, 27, BGEVENT_ITEM, SafariZoneArea4HiddenRevivalHerb
 
 	db 2 ; object events

@@ -8,8 +8,9 @@ Route20HeavyBallGuy:
 	opentext
 	checkevent EVENT_HEAVY_BALLS_FOR_SALE
 	iftrue .SellBalls
-	writetext LureBallGuyIntro
+	writetext HeavyBallGuyIntro
 	waitbutton
+	setevent EVENT_HEAVY_BALLS_FOR_SALE
 .SellBalls
 	writetext HeavyBallGuySellText
 	jump .Start
@@ -93,11 +94,11 @@ HeavyBallGuyIntro:
 	line "here? Did SNORLAX"
 	cont "move out of the"
 	cont "way?"
-	
+
 	para "Darn! I wanted to"
 	line "test out my HEAVY"
 	cont "BALL against it!"
-	
+
 	para "Well, I have no"
 	line "need for these any"
 	cont "more, but they"

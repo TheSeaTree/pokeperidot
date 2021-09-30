@@ -56,10 +56,10 @@ MomScript:
 	checkscene
 	iffalse MeetMomScript ; SCENE_DEFAULT
 	opentext
-	checkevent EVENT_FIRST_TIME_BANKING_WITH_MOM
-	iftrue .FirstTimeBanking
-	checkevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	iftrue .BankOfMom
+	checkevent EVENT_SHOWED_MOM_ALL_BADGES
+	iftrue .AfterShownBadges
+	checkflag ENGINE_RISINGBADGE
+	iftrue .GotAllBadges
 	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iftrue .GotAPokemon
 	writetext HurryUpMapleIsWaitingText
@@ -70,7 +70,7 @@ MomScript:
 	closetext
 	turnobject PLAYERSHOUSE1F_MOM1, LEFT
 	end
-	
+
 .Directions
 	writetext MaplesLabDirections
 	waitbutton
@@ -84,15 +84,19 @@ MomScript:
 	closetext
 	end
 
-.FirstTimeBanking:
-	writetext ImBehindYouText
+.GotAllBadges:
+	writetext MomAllBadgesText
 	waitbutton
-	closetext
-	end
-
-.BankOfMom:
-	setevent EVENT_TALKED_TO_MOM_AFTER_MYSTERY_EGG_QUEST
-	special BankOfMom
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Girl
+	writetext MomAllBadgesBoyText
+	jump .AfterShownBadges
+.Girl:
+	writetext MomAllBadgesGirlText
+.AfterShownBadges:
+	waitbutton
+	setevent EVENT_SHOWED_MOM_ALL_BADGES
+	writetext MomPokemonLeagueQualificationText
 	waitbutton
 	closetext
 	end
@@ -305,6 +309,95 @@ SoWhatWasProfMaplesErrandText:
 	cont "my taste."
 	done
 
+MomAllBadgesText:
+	text "How nice of you to"
+	line "come home and"
+	cont "visit <PLAYER>!"
+
+	para "Oh my goodness!"
+
+	para "You won every"
+	line "BADGE?"
+	done
+
+MomAllBadgesBoyText:
+	text "My little boy"
+	line "really did it!"
+	done
+
+MomAllBadgesGirlText:
+	text "My little girl"
+	line "really did it!"
+	done
+
+MomPokemonLeagueQualificationText:
+	text "I knew you could!"
+
+	para "That means you've"
+	line "qualified for the"
+	cont "#MON LEAGUE!"
+	cont "I'm so proud of"
+	cont "you!"
+
+	para "I'll be supporting"
+	line "you all the way,"
+	cont "honey! I know you"
+	cont "can win it!"
+	done
+
+MomAfterCreditsMorningText:
+	text "Good morning,"
+	line "sleepyhead!"
+	done
+
+MomAfterCreditsDayText:
+	text "There you are!"
+	line "I was worried you'd"
+	cont "sleep all day!"
+	done
+
+MomAfterCreditsNiteText:
+	text "Oh, honey! #MON"
+	line "training has"
+	cont "really messed up"
+	cont "your sleeping"
+	cont "pattern!"
+	done
+
+MomAfterCreditsVisitorText:
+	text "PROF. MAPLE"
+	line "dropped by earlier"
+	cont "while you were"
+	cont "still asleep."
+
+	para "Go visit her lab"
+	line "when you get the"
+	cont "chance. I know you"
+	cont "must be rather"
+	cont "busy signing auto-"
+	cont "graphs, <PLAYER>!"
+
+	para "Or should I say,"
+	line "CHAMPION <PLAYER>?"
+
+	para "Just don't forget"
+	line "about home now"
+	cont "you're a big famous"
+	cont "#MON trainer!"
+	done
+
+MomCongratulationsText:
+	text "Hi, honey! I'm so"
+	line "glad you can find"
+	cont "time to come home"
+	cont "and see your MOM!"
+
+	para "You must be so"
+	line "busy these days,"
+	cont "but I'm proud of"
+	cont "you, <PLAYER>!"
+	done
+
 ImBehindYouText:
 	text "<PLAYER>, do it!"
 
@@ -385,11 +478,11 @@ NeighborGivesPotion4:
 	text "I shouldn't waste"
 	line "your time with my"
 	cont "stories."
-	
+
 	para "You will make"
 	line "plenty of your"
 	cont "own in time."
-	
+
 	para "Good luck on"
 	line "journey! Come"
 	cont "visit any time."
@@ -398,8 +491,8 @@ NeighborGivesPotion4:
 StoveText:
 	text "Mom's specialty!"
 
-	para "CINNABAR VOLCANO"
-	line "BURGER!"
+	para "MOLTEN PEAK"
+	line "HOT WINGS!"
 	done
 
 SinkText:
@@ -423,7 +516,7 @@ TVText:
 	cont "light, leaving a"
 	cont "trail of fire!"
 
-	para "I should make like"
+	para "I better make like"
 	line "a tree and get out"
 	cont "of here!"
 	done

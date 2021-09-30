@@ -41,6 +41,7 @@ RugosaPort_MapScripts:
 	appear OLIVINEPORT_SAILOR1
 	setscene SCENE_DEFAULT
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	clearevent EVENT_SS_MAKO_DOCKED
 	blackoutmod RUGOSA_COAST
 	end
 
@@ -274,7 +275,7 @@ RugosaPort_MapEvents:
 ;	bg_event 15, 16, BGEVENT_ITEM, RugosaPortHiddenProtein
 
 	db 8 ; object events
-	object_event 14,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, EVENT_HIDE_PORT_SAILORS
+	object_event 14,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortCaptainScript, EVENT_SS_MAKO_DOCKED
 	object_event 12, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorAdmireScript, EVENT_COMING_FROM_LEAGUE
 	object_event  3, 15, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaPortSailorWorkingScript, -1
 	object_event 18, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

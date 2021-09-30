@@ -21,7 +21,7 @@ HepaticaMartClerkScript:
 	pokemart MARTTYPE_STANDARD, MART_CIANWOOD
 	closetext
 	end
-	
+
 .Robbery
 	setevent EVENT_EXPLAINED_BURGLAR
 	writetext CianwooMartRobbed

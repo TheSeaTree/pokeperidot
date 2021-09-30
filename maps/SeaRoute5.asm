@@ -30,7 +30,7 @@ SeaRoute5_MapScripts:
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_5
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_6
 	return
-	
+
 .SmashWall:
 	checkevent EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN
 	iffalse .done

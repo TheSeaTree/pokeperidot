@@ -106,6 +106,12 @@ PokemonLeagueGate1F_Blocks:
 PokemonLeagueGate2F_Blocks:
 	INCBIN "maps/PokemonLeagueGate2F.ablk"
 
+PokemonLeagueHotel1F_Blocks:
+	INCBIN "maps/PokemonLeagueHotel1F.ablk"
+
+PokemonLeagueHotel2F_Blocks:
+	INCBIN "maps/PokemonLeagueHotel2F.ablk"
+
 Route4_Blocks:
 	INCBIN "maps/Route4.ablk"
 
@@ -141,6 +147,7 @@ Route14RugosaGate_Blocks:
 Route21StaghornGate_Blocks:
 Route18CarnationGate_Blocks:
 CarnationZooGate_Blocks:
+Route27Gate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 MaplesLab_Blocks:
@@ -376,8 +383,8 @@ TrainerHouse_Blocks:
 VictoryPort_Blocks:
 	INCBIN "maps/VictoryPort.ablk"
 
-VictoryPortInside_Blocks:
-	INCBIN "maps/VictoryPortInside.ablk"
+VictoryCoast_Blocks:
+	INCBIN "maps/VictoryCoast.ablk"
 
 PokemonLeague_Blocks:
 	INCBIN "maps/PokemonLeague.ablk"
@@ -667,8 +674,11 @@ OrchidCity_Blocks:
 Route21_Blocks:
 	INCBIN "maps/Route21.ablk"	
 
-Route24_Blocks:
-	INCBIN "maps/Route24.ablk"	
+Route24North_Blocks:
+	INCBIN "maps/Route24North.ablk"	
+
+Route24South_Blocks:
+	INCBIN "maps/Route24South.ablk"	
 
 Route25_Blocks:
 	INCBIN "maps/Route25.ablk"	
@@ -737,6 +747,12 @@ MoltenPeakOutside_Blocks:
 Route23_Blocks:
 	INCBIN "maps/Route23.ablk"
 
+Route26_Blocks:
+	INCBIN "maps/Route26.ablk"
+
+Route27_Blocks:
+	INCBIN "maps/Route27.ablk"
+
 MoltenPeak1F_Blocks:
 	INCBIN "maps/MoltenPeak1F.ablk"
 
@@ -751,6 +767,7 @@ Route4HiddenCave_Blocks:
 KinglersDen_Blocks:
 Route8HiddenCave_Blocks:
 Route11HiddenCave_Blocks:
+Route23HiddenCave_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
 MoltenPeakHiddenCave_Blocks:

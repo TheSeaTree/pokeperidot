@@ -127,7 +127,8 @@ ENDM
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
 	map_const ACROPORA_CASTLE_HOUSE,                      4,  4
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
-	map_const ROUTE_24,									 17, 21
+	map_const ROUTE_24_NORTH,							 17, 15
+	map_const ROUTE_24_SOUTH,							 25, 12
 	map_const ACROPORA_CAVE_1F,                          19, 11
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14
@@ -255,7 +256,7 @@ ENDM
 	map_const HO_OH_CASTLE_ROOF,                            7,  9 ; 18
 
 	newgroup                                                      ; 15
-	map_const ROUTE_25,									   	23, 18
+	map_const ROUTE_25,									   	31, 14
 	map_const SS_MAKO_1F,								   	12, 11
 	map_const SS_MAKO_1F_ROOMS,						   		12,  8
 	map_const SS_MAKO_B1F,							   		24,  8
@@ -272,10 +273,12 @@ ENDM
 	map_const VITAMIN_SHOP,						  			6,  4
 	map_const POKEMON_LEAGUE_CAFE,                          7,  4 ;  6
 	map_const TRAINER_HOUSE,							  	9,  8
+	map_const POKEMON_LEAGUE_HOTEL_1F,						7,  5
+	map_const POKEMON_LEAGUE_HOTEL_2F,						7,  5
 	map_const POKEMON_LEAGUE_GATE_1F,						6,  4
 	map_const POKEMON_LEAGUE_GATE_2F,						6,  4
-	map_const VICTORY_PORT,							   	   23, 19
-	map_const VICTORY_PORT_INSIDE,						   10, 13
+	map_const VICTORY_COAST,						   	   23, 19
+	map_const VICTORY_PORT,						   		   10, 13
 	map_const POKEMON_LEAGUE_POKECENTER_1F,                 8,  5 ;  2
 	map_const ORVILLES_ROOM,                                7, 10 ;  3
 	map_const REGANS_ROOM,                                  7, 10 ;  5
@@ -390,19 +393,23 @@ ENDM
 
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
-	map_const ROUTE_23,					                   19, 35 ; 15
+	map_const ROUTE_23,					                   19, 18 ; 15
+	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
+	map_const ROUTE_26,					                   19, 16
+	map_const ROUTE_27_GATE,					           	5,  4
+	map_const ROUTE_27,					           		   20, 24
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 
 	newgroup                                                      ; 26
 
 	map_const ROUTE_30,                                    18, 18 ;  1
-	map_const ROUTE_1_PAVONA_GATE,                     5,  4 ; 14
+	map_const ROUTE_1_PAVONA_GATE,                     		5,  4 ; 14
 	map_const ROUTE_2,                                     23, 20 ;  1
-	map_const PAVONA_VILLAGE,                            17, 16 ;  3
-	map_const PAVONA_GYM_SPEECH_HOUSE,                 4,  4 ;  6
-	map_const PAVONA_INN,                              5,  4 ;  8
-	map_const ROUTE_2_PECTINIA_GATE,                          5,  4 ; 11
+	map_const PAVONA_VILLAGE,                              17, 16 ;  3
+	map_const PAVONA_GYM_SPEECH_HOUSE,                 		4,  4 ;  6
+	map_const PAVONA_INN,                              		5,  4 ;  8
+	map_const ROUTE_2_PECTINIA_GATE,                        5,  4 ; 11
 	map_const ROUTE_9,                                     20, 13 ; 13
 	map_const SUICUNE_LAIR,	    							7,  3
 

@@ -34,7 +34,7 @@ RugosaCafeVendingMachine:
 	ifequal 3, .RageCandyBar
 	closetext
 	end
-	
+
 .GreatBall:
 	checkmoney YOUR_MONEY, 600
 	ifequal HAVE_LESS, .NotEnoughMoney
@@ -43,7 +43,7 @@ RugosaCafeVendingMachine:
 	takemoney YOUR_MONEY, 600
 	itemtotext GREAT_BALL, MEM_BUFFER_0
 	jump .VendItem
-	
+
 .EnergyPowder:
 	checkmoney YOUR_MONEY, 500
 	ifequal HAVE_LESS, .NotEnoughMoney

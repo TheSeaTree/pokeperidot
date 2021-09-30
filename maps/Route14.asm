@@ -333,7 +333,7 @@ TwinMiaText:
 	text "MIA: My sister and"
 	line "I can read each"
 	cont "others' mind."
-	
+
 	para "LEAH: Yeah! So you"
 	line "had better watch"
 	cont "out!"

@@ -31,7 +31,7 @@ BurglarHideoutB1F_MapScripts:
 	changeblock  18, 10, $0D ; open shutter
 	changeblock  20, 10, $0D ; open shutter
 	return
-	
+
 BurglarHideoutAbbotScene:
 	special FadeOutMusic
 	applymovement PLAYER, HideoutRivalStepDown

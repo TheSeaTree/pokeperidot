@@ -39,7 +39,7 @@ MapScenes::
 	scene_var ROUTE_1,                                 	wRoute1SceneID
 	scene_var RIDGE_VILLAGE,							wVioletCitySceneID
 	scene_var RUGOSA_PORT,								wRugosaPortSceneID
-	scene_var VICTORY_PORT_INSIDE,						wVictoryPortSceneID
+	scene_var VICTORY_PORT,								wVictoryPortSceneID
 	scene_var STAGHORN_GYM,                             wEcruteakGymSceneID
 	scene_var STAGHORN_TOWN,                            wEcruteakCitySceneID
 	scene_var ROUTE_12_SHELTER,							wRoute12ShelterSceneID

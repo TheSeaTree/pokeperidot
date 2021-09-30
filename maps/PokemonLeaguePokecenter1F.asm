@@ -3,9 +3,8 @@
 	const POKEMONLEAGUEPOKECENTER1F_CLERK1
 	const POKEMONLEAGUEPOKECENTER1F_CLERK2
 	const POKEMONLEAGUEPOKECENTER1F_COOLTRAINER_M
-	const POKEMONLEAGUEPOKECENTER1F_SILVER
-	const POKEMONLEAGUEPOKECENTER1F_GRAMPS
-	const POKEMONLEAGUEPOKECENTER1F_ABRA
+	const POKEMONLEAGUEPOKECENTER1F_IVY
+	const POKEMONLEAGUEPOKECENTER1F_FANGIRL
 
 PokemonLeaguePokecenter1F_MapScripts:
 	db 1 ; scene scripts
@@ -77,6 +76,15 @@ PokemonLeaguePokecenter1FFangirlScript:
 	closetext
 	end
 
+Ivy:
+	faceplayer
+	opentext
+	trade NPC_TRADE_IVY
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, DOWN
+	end
+
 PokemonLeaguePokecenter1FCooltrainerMScript:
 	jumptextfaceplayer PokemonLeaguePokecenter1FCooltrainerMText
 
@@ -93,7 +101,7 @@ PokemonLeaguePokecenter1FFangirlText:
 	para "But hey, let's not"
 	line "be so negative!"
 	
-	para "Oh, by thr way! I"
+	para "Oh, by the way! I"
 	line "got you something,"
 	cont "as thanks for"
 	cont "saving my #MON"
@@ -159,9 +167,10 @@ PokemonLeaguePokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  3,  3, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeaguePokecenter1FNurseScript, -1
 	object_event 11,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeaguePokecenter1FClerkScript, -1
 	object_event 13,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PokemonLeaguePokecenter1FTMClerkScript, -1
 	object_event  4,  7, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeaguePokecenter1FCooltrainerMScript, -1
+	object_event 14,  8, SPRITE_GAMEBOY_GIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Ivy, -1
 	object_event 10,  6, SPRITE_FANGIRL, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeaguePokecenter1FFangirlScript, EVENT_BEAT_ELITE_FOUR

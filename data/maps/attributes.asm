@@ -121,13 +121,19 @@ ENDM
 
 	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH | WEST
 	connection south, Route21, ROUTE_21, 8
-	connection west, Route24, ROUTE_24, 1
-	
-	map_attributes Route21, ROUTE_21, $05, NORTH
-	connection north, AcroporaCity, ACROPORA_CITY, -8
+	connection west, Route24North, ROUTE_24_NORTH, 1
 
-	map_attributes Route24, ROUTE_24, $05, EAST
+	map_attributes Route21, ROUTE_21, $05, NORTH | WEST
+	connection north, AcroporaCity, ACROPORA_CITY, -8
+	connection west, Route24South, ROUTE_24_SOUTH, 0
+
+	map_attributes Route24North, ROUTE_24_NORTH, $20, SOUTH | EAST
+	connection south, Route24South, ROUTE_24_SOUTH, 0
 	connection east, AcroporaCity, ACROPORA_CITY, -1
+
+	map_attributes Route24South, ROUTE_24_SOUTH, $20, NORTH | EAST
+	connection north, Route24North, ROUTE_24_NORTH, 0
+	connection east, Route21, ROUTE_21, 0
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
 
@@ -194,8 +200,18 @@ ENDM
 	connection west, SeaRoute3, SEA_ROUTE_3, 5
 	connection east, Route23, ROUTE_23, -20
 
-	map_attributes Route23, ROUTE_23, $05, WEST
+	map_attributes Route23, ROUTE_23, $05, NORTH | WEST
+	connection north, Route26, ROUTE_26, 0
 	connection west, SeaRoute6, SEA_ROUTE_6, 20
+
+	map_attributes Route26, ROUTE_26, $05, SOUTH
+	connection south, Route23, ROUTE_23, 0
+
+	map_attributes Route27Gate, ROUTE_27_GATE, $00, 0
+	
+	map_attributes Route27, ROUTE_27, $05, 0
+
+	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 
 	map_attributes Route5, ROUTE_5, $05, NORTH | SOUTH
 	connection north, RidgeVillage, RIDGE_VILLAGE, 9
@@ -514,9 +530,8 @@ ENDM
 	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
 	map_attributes SSMakoDeck, SS_MAKO_DECK, $72, 0
 	map_attributes SSMakoLowerDeck, SS_MAKO_LOWER_DECK, $72, 0
-	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
-	map_attributes VictoryPort, VICTORY_PORT, $11, 0
-	map_attributes VictoryPortInside, VICTORY_PORT_INSIDE, $00, 0
+	map_attributes VictoryCoast, VICTORY_COAST, $35, 0
+	map_attributes VictoryPort, VICTORY_PORT, $00, 0
 	map_attributes MoonBallCave, MOON_BALL_CAVE, $09, 0
 	map_attributes PokemonLeagueGate1F, POKEMON_LEAGUE_GATE_1F, $00, 0
 	map_attributes PokemonLeagueGate2F, POKEMON_LEAGUE_GATE_2F, $00, 0
@@ -524,3 +539,6 @@ ENDM
 	map_attributes VitaminShop, VITAMIN_SHOP, $00, 0
 	map_attributes PokemonLeagueCafe, POKEMON_LEAGUE_CAFE, $00, 0
 	map_attributes TrainerHouse, TRAINER_HOUSE, $00, 0
+	map_attributes PokemonLeagueHotel1F, POKEMON_LEAGUE_HOTEL_1F, $00, 0
+	map_attributes PokemonLeagueHotel2F, POKEMON_LEAGUE_HOTEL_2F, $00, 0
+	map_attributes Route23HiddenCave, ROUTE_23_HIDDEN_CAVE, $09, 0

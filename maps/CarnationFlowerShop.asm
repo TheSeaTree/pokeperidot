@@ -203,6 +203,9 @@ FlowerShopDesertPlant:
 FlowerShopIslandPlant:
 	jumptext FlowerShopIslandPlantText
 
+FlowerShopTablePlant:
+	jumptext FlowerShopTablePlantText
+
 FlowerShopAssortedFlowers:
 	jumptext FlowerShopAssortedFlowersText
 
@@ -337,7 +340,14 @@ FlowerShopIslandPlantText:
 	text "The tag says this"
 	line "is an ISLANDPLANT."
 	done
-	
+
+FlowerShopTablePlantText:
+	text "It seems this"
+	line "small PLANT is"
+	cont "being carefully"
+	cont "tended to."
+	done
+
 FlowerShopAssortedFlowersText:
 	text "There is an assor-"
 	line "tment of pretty"
@@ -353,12 +363,13 @@ CarnationFlowerShop_MapEvents:
 
 	db 0 ; coord events
 
-	db 11 ; bg events
+	db 12 ; bg events
 	bg_event  7,  4, BGEVENT_READ, FlowerShopMagnaPlant
 	bg_event  2,  1, BGEVENT_READ, FlowerShopTropicPlant
 	bg_event  0,  2, BGEVENT_READ, FlowerShopJumboPlant
 	bg_event  5,  1, BGEVENT_READ, FlowerShopDesertPlant
 	bg_event  0,  0, BGEVENT_READ, FlowerShopIslandPlant
+	bg_event  4,  4, BGEVENT_READ, FlowerShopTablePlant
 	bg_event  7,  3, BGEVENT_READ, FlowerShopAssortedFlowers
 	bg_event  3,  1, BGEVENT_READ, FlowerShopAssortedFlowers
 	bg_event  1,  5, BGEVENT_READ, FlowerShopAssortedFlowers
