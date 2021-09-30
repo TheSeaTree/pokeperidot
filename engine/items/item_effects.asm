@@ -2290,16 +2290,14 @@ AncientTomeEffect:
 	end
 
 DollCapsuleEffect:
-	; Ancient Tome can only be used outside of battle.
-	ld hl, .AncientTomeScript
+	ld hl, .DollCapsuleScript
 	call QueueScript
 	ld a, $1
 	ld [wItemEffectSucceeded], a
 	call UseDisposableItem
 	ret
 
-.AncientTomeScript:
-;	opentext 
+.DollCapsuleScript:
 	farwritetext DollCapsule_OpenText
 
 	random  50
