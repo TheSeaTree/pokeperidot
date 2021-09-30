@@ -137,8 +137,6 @@ SSMakoDeckBurglar:
 	end
 
 SSMakoDeckBurglarArrestScript:
-	; If the player is above or below the burglar, have Emily show her trainer card instead of the player.
-
 	showemote EMOTE_SHOCK, SSMAKODECK_FANGIRL, 15
 	faceobject SSMAKODECK_FANGIRL, SSMAKODECK_OFFICER
 	opentext
@@ -543,44 +541,6 @@ SSMakoDeckOfficerStayOutOfTrouble:
 	line "trouble!"
 	done
 
-SSMakoDeckVictorText:
-	text "What did you say"
-	line "your name was?"
-	
-	para "…………"
-	
-	para "<PLAYER>, huh?"
-	
-	para "So you're planning"
-	line "to take on the"
-	cont "#MON LEAGUE?"
-	
-	para "Good luck. You'll"
-	line "need it."
-	
-	para "Most people who"
-	line "try can't even"
-	cont "make it past the"
-	cont "first member of"
-	cont "the ELITE FOUR."
-	
-	para "People who have"
-	line "been training for"
-	cont "years, too!"
-	
-	para "Some people just"
-	line "aren't cut out for"
-	cont "being a CHAMPION…"
-	
-	para "I need to get"
-	line "going for now, but"
-	cont "why don't you stop"
-	cont "by my cabin?"
-	
-	para "We can talk more"
-	line "there."
-	done
-
 SSMakoDeckEmilyAfterText:
 	text "EMILY: Thank you"
 	line "so much for your"
@@ -655,7 +615,7 @@ SSMakoDeck_MapEvents:
 	object_event  0, 13, SPRITE_FANGIRL, SPRITEMOVEDATA_FOLLOWING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckFangirl, -1
 	object_event  4,  4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SSMakoDeckBurglar, EVENT_SS_MAKO_DEFEATED_BURGLAR
 	object_event  0, 13, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DEFEATED_BURGLAR
-	object_event  0, 13, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DEFEATED_BURGLAR
+	object_event  0, 13, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_SS_MAKO_DEFEATED_BURGLAR
 	object_event 11,  4, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckReceptionist, EVENT_SS_MAKO_DECK_CLEARED
 	object_event 11,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoDeckReceptionist, EVENT_SS_MAKO_DECK_CLEARED
 	object_event 11,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SSMakoDeckFisher, -1

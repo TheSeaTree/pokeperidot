@@ -44,4 +44,4 @@ Route20AcroporaGate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route20AcroporaGuardScript, -1
+	object_event  0,  4, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route20AcroporaGuardScript, -1

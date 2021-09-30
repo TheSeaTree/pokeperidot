@@ -13,7 +13,7 @@ Route1PavonaGateOfficerText:
 	text "You must be from"
 	line "ELKHORN TOWN."
 
-	para "You're tarting out"
+	para "You're starting out"
 	line "on a big adven-"
 	cont "ture, aren't you?"
 	done
@@ -32,4 +32,4 @@ Route1PavonaGate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  0,  4, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1PavonaGateOfficerScript, -1
+	object_event  0,  4, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1PavonaGateOfficerScript, -1

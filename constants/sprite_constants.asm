@@ -69,7 +69,7 @@
 	const SPRITE_GENTLEMAN ; 40
 	const SPRITE_BLACK_BELT ; 41
 	const SPRITE_RECEPTIONIST ; 42
-	const SPRITE_OFFICER ; 43
+	const SPRITE_OFFICER_M ; 43
 	const SPRITE_CAL ; 44
 	const SPRITE_SLOWPOKE ; 45
 	const SPRITE_CAPTAIN ; 46
@@ -128,6 +128,7 @@
 	const SPRITE_CHRIS_SURF
 	const SPRITE_KRIS_SURF
 	const SPRITE_SHADOW
+	const SPRITE_OFFICER_F
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
