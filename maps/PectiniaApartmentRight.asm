@@ -8,13 +8,13 @@ PectiniaApartmentRight_MapScripts:
 PectiniaApartmentRightBuenaScript:
 	jumptextfaceplayer PectiniaApartmentRightBuenaText
 	
-PectiniaApartmentRightGuard1Script:
-	jumptextfaceplayer PectiniaApartmentRightGuard1Text
+PectiniaApartmentRightGuardFScript:
+	jumptextfaceplayer PectiniaApartmentRightGuardFText
 
-PectiniaApartmentRightGuard2Script:
-	jumptextfaceplayer PectiniaApartmentRightGuard2Text
+PectiniaApartmentRightGuardMScript:
+	jumptextfaceplayer PectiniaApartmentRightGuardMText
 	
-PectiniaApartmentRightGuard1Text:
+PectiniaApartmentRightGuardFText:
 	text "The building next"
 	line "door had trouble"
 	cont "with some vandals."
@@ -24,7 +24,7 @@ PectiniaApartmentRightGuard1Text:
 	cont "quiet."
 	done
 
-PectiniaApartmentRightGuard2Text:
+PectiniaApartmentRightGuardMText:
 	text "Sorry, kid. I can"
 	line "only let residents"
 	cont "upstairs."
@@ -55,6 +55,6 @@ PectiniaApartmentRight_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  9,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentRightGuard1Script, -1
-	object_event  5,  1, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentRightGuard2Script, EVENT_AZALEA_RETURNED_BIKE
+	object_event  9,  2, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentRightGuardFScript, -1
+	object_event  5,  1, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentRightGuardMScript, EVENT_AZALEA_RETURNED_BIKE
 	object_event  7,  5, SPRITE_BUENA, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentRightBuenaScript, EVENT_AZALEA_RETURNED_BIKE

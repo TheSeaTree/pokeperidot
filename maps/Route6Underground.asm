@@ -74,11 +74,11 @@ Route6UndergroundNerd:
 Route6UndergroundLass:
 	jumptextfaceplayer Route6UndergroundLassText
 	
-Route6UndergroundOfficer1:
-	jumptextfaceplayer Route6UndergroundOfficer1Text
+Route6UndergroundOfficerM:
+	jumptextfaceplayer Route6UndergroundOfficerMText
 
-Route6UndergroundOfficer2:
-	jumptextfaceplayer Route6UndergroundOfficer2Text
+Route6UndergroundOfficerF:
+	jumptextfaceplayer Route6UndergroundOfficerFText
 	
 GiveSodaText:
 	text "Hey, kid. I got"
@@ -167,18 +167,18 @@ Route6UndergroundLassText:
 	cont "use SURF."
 	done
 	
-Route6UndergroundOfficer1Text:
+Route6UndergroundOfficerMText:
 	text "This tunnel will"
 	line "take you to ROUTE"
 	cont "8."
 	done
 
-Route6UndergroundOfficer2Text:
+Route6UndergroundOfficerFText:
 	text "You're working on"
 	line "a #DEX? That's"
+	cont "really something."
 
-	para "really something."
-	line "Don't give up!"
+	para "Don't give up!"
 	done
 
 Route6Underground_MapEvents:
@@ -203,5 +203,5 @@ Route6Underground_MapEvents:
 	object_event 16,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SodaMan, -1
 	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6UndergroundNerd, -1
 	object_event  4,  4, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundLass, -1
-	object_event 27,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficer1, -1
-	object_event  0,  9, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficer2, -1
+	object_event 27,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficerM, -1
+	object_event  0,  9, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route6UndergroundOfficerF, -1

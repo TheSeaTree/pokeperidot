@@ -5,11 +5,11 @@ PectiniaApartmentLeft_MapScripts:
 
 	db 0 ; callbacks
 
-PectiniaApartmentLeftGuard1Script:
-	jumptextfaceplayer PectiniaApartmentLeftGuard1Text
+PectiniaApartmentLeftGuardMScript:
+	jumptextfaceplayer PectiniaApartmentLeftGuardMText
 
-PectiniaApartmentLeftGuard2Script:
-	jumptextfaceplayer PectiniaApartmentLeftGuard2Text
+PectiniaApartmentLeftGuardFScript:
+	jumptextfaceplayer PectiniaApartmentLeftGuardFText
 	
 PectiniaApartmentLeftGameboyKidScript:
 	jumptextfaceplayer PectiniaApartmentLeftGameboyKidText
@@ -22,7 +22,7 @@ PectiniaApartmentLeftPikachu:
 	closetext
 	end
 	
-PectiniaApartmentLeftGuard1Text:
+PectiniaApartmentLeftGuardMText:
 	text "Those hoodlums are"
 	line "so lucky I wasn't"
 	cont "on duty when they"
@@ -33,7 +33,7 @@ PectiniaApartmentLeftGuard1Text:
 	cont "beating."
 	done
 	
-PectiniaApartmentLeftGuard2Text:
+PectiniaApartmentLeftGuardFText:
 	text "There's graffiti"
 	line "all over the halls"
 	cont "upstairs! While we"
@@ -71,7 +71,7 @@ PectiniaApartmentLeft_MapEvents:
 	db 0 ; bg events
 
 	db 4 ; object events
-	object_event  2,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftGuard1Script, -1
-	object_event  6,  1, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftGuard2Script, EVENT_AZALEA_RETURNED_BIKE
+	object_event  2,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftGuardMScript, -1
+	object_event  6,  1, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftGuardFScript, EVENT_AZALEA_RETURNED_BIKE
 	object_event  7,  3, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftGameboyKidScript, EVENT_AZALEA_RETURNED_BIKE
 	object_event  8,  3, SPRITE_PIKACHU, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaApartmentLeftPikachu, EVENT_AZALEA_RETURNED_BIKE
