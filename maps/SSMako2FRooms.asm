@@ -146,10 +146,24 @@ SSMakoSternCrowdCleared:
 SSMako2FRoomsChampion:
 	faceplayer
 	opentext
+	checkevent EVENT_MET_CHAMPION_VICTOR
+	iftrue .AlreadyMet
 	writetext SSMako2FRoomsChampionText
+	waitbutton
+.AlreadyMet
+	writetext SSMako2FRoomsChampionAfterText
 	waitbutton
 	closetext
 	end
+
+SSMako2FRoomsBeauty:
+	jumptextfaceplayer SSMako2FRoomsBeautyText
+
+SSMako2FRoomsCooltrainerF:
+	jumptextfaceplayer SSMako2FRoomsCooltrainerFText
+
+SSMako2FRoomsCooltrainerM
+	jumptextfaceplayer SSMako2FRoomsCooltrainerMText
 
 Rooms2FFangirlTeleport1:
 	moveobject SSMAKO2FROOMS_FANGIRL,  2, 5
@@ -385,21 +399,86 @@ SSMako2FRoomsChampionText:
 
 	para "<PLAYER>, huh?"
 
-	para "Are you planning"
-	line "to challenge the"
+	para "And you think you"
+	line "have what it takes"
+	cont "to compete in the"
 	cont "#MON LEAGUE?"
 
-	para "Kid, you know how"
-	line "many people try"
-	cont "that challenge?"
+	para "Be realistic, kid!"
 
-	para "Most can't even"
-	line "make it past the"
-	cont "first member of"
-	cont "the ELITE FOUR."
+	para "Adults, training"
+	line "for years, can't"
+	cont "even beat a single"
+	cont "member of the"
+	cont "ELITE FOUR."
 
-;	"I'm not trying to say it can't be done, but you have to be realistic. You're still young. There are people who challenge the LEAGUE that have been training for years."
-	; Come up with something better than the above.
+	para "And you expect to"
+	line "just walk up and"
+	cont "take my title that"
+	cont "easily?"
+
+	para "Hahaha!"
+
+	para "Let me give you a"
+	line "bit of advice…"
+
+	para "I've never lost!"
+
+	para "And I don't intend"
+	line "on my first loss"
+	cont "being to a child,"
+	cont "of all things!"
+
+	para "<……><……>"
+	para "You know what?"
+	done
+
+SSMako2FRoomsChampionAfterText:
+	text"You won a set of"
+	line "BADGEs, that gives"
+	cont "you the right to"
+	cont "challenge the"
+	cont "LEAGUE as much as"
+	cont "you want. In fact,"
+	cont "I encourage it."
+
+	para "…You will help pay"
+	line "for more parties"
+	cont "like this one!"
+	done
+
+SSMako2FRoomsBeautyText:
+	text "Hey, you weren't"
+	line "at the party out-"
+	cont "side, were you?"
+	
+	para "…Hehe! Don't worry!"
+	
+	para "I won't tell anyone"
+	line "that you snuck in."
+	done
+
+SSMako2FRoomsCooltrainerFText:
+	text "My boyfriend got"
+	line "me invited to this"
+	cont "party. He knows"
+	cont "the CHAMPION pers-"
+	cont "onally!"
+	
+	para "Can you believe"
+	line "that?"
+	done
+
+SSMako2FRoomsCooltrainerMText:
+	text "When I finally win"
+	line "the title of"
+	cont "CHAMPION, I'm"
+	cont "gonna ask my girl"
+	cont "to marry me!"
+
+	para "But don't tell"
+	line "her. I want it to"
+	cont "be a surprise."
 	done
 
 SSMako2FRooms_MapEvents:
@@ -442,7 +521,7 @@ SSMako2FRooms_MapEvents:
 	bg_event 28, 11, BGEVENT_READ, SSMakoTapes
 	bg_event 29, 11, BGEVENT_READ, SSMakoTapes
 
-	db 8 ; object events
+	db 11 ; object events
 	object_event 49, 15, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsFangirl, -1
 	object_event 31,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanCharles, -1
 	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSchoolboyOliver, -1
@@ -451,3 +530,6 @@ SSMako2FRooms_MapEvents:
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
 	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1
 	object_event 45,  5, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, -1
+	object_event 42,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsBeauty, -1
+	object_event 47,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerF, -1
+	object_event 46,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerM, -1
