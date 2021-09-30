@@ -1489,7 +1489,8 @@ HaunterEvosAttacks:
 	db 22, BITE
 	db 30, WILL_O_WISP
 	db 33, SHADOW_BALL
-	db 39, DREAM_EATER
+	db 39, DOUBLESLAP
+	db 46, DREAM_EATER
 	db 50, DESTINY_BOND
 	db 61, NIGHTMARE
 	db 0 ; no more level-up moves
@@ -1508,7 +1509,7 @@ GengarEvosAttacks:
 	db 25, NASTY_PLOT
 	db 30, WILL_O_WISP
 	db 33, SHADOW_BALL
-	db 39, DRAIN_PUNCH
+	db 39, DOUBLESLAP
 	db 46, DREAM_EATER
 	db 50, DESTINY_BOND
 	db 61, NIGHTMARE
