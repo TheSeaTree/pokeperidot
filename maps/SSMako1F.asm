@@ -139,11 +139,14 @@ SSMako1FFangirl:
 PlayerBoardSSMako:
 	applymovement PLAYER, ShipPlayerStepDown
 	applymovement SSMAKO_SAILOR, ShipSailorStepRight
+	clearevent EVENT_SS_MAKO_DOCKED
 	end
 
 SSMako1FSailor:
 	faceplayer
 	opentext
+	checkevent EVENT_SS_MAKO_DOCKED
+	iftrue .Leave
 	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
 	iffalse .FirstTime
 	writetext SSMako1FSailorAfterText
@@ -155,6 +158,45 @@ SSMako1FSailor:
 	writetext SSMako1FSailorText
 	waitbutton
 	closetext
+	end
+
+.Leave
+	writetext SSMako1FSailorLeaveText
+	waitbutton
+	closetext
+	scall .CheckFacing
+;	follow SSMAKO_SAILOR, PLAYER
+;	applymovement SSMAKO_SAILOR, SSMakoSailorLeaveMovement
+;	stopfollow
+;	playsound SFX_EXIT_BUILDING
+;	disappear SSMAKO_SAILOR
+;	waitsfx
+;	applymovement PLAYER, SSMakoSailorLeaveMovement
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iftrue .Rugosa
+	setmapscene VICTORY_PORT, SCENE_VICTORYPORT_LEAVE_SHIP
+	warpmod 3, VICTORY_PORT
+	setevent EVENT_COMING_FROM_LEAGUE
+	warpcheck
+	end
+
+.Rugosa
+	setmapscene RUGOSA_PORT, SCENE_RUGOSAPORT_LEAVE_SHIP
+	warpmod 3, RUGOSA_PORT
+	clearevent EVENT_COMING_FROM_LEAGUE
+	warpcheck
+	end
+
+.CheckFacing
+	checkcode VAR_FACING
+	ifequal UP, .FacingUp
+	applymovement SSMAKO_SAILOR, SSMakoSailorStepDown
+	applymovement PLAYER, SSMakoSailorLeaveRightMovement
+	end
+
+.FacingUp:
+	applymovement SSMAKO_SAILOR, SSMakoSailorStepLeft
+	applymovement PLAYER, SSMakoSailorLeaveUpMovement
 	end
 
 ShipReceptionist1:
@@ -228,7 +270,12 @@ SSMako1FSailorAfterText:
 	line "cabin and try to"
 	cont "get some sleep."
 	done
-	
+
+SSMako1FSailorLeaveText:
+	text "Right this way,"
+	line "please."
+	done
+
 ShipReceptionist1MaleText:
 	text "This is your room"
 	line "here, Mr. <PLAYER>."
@@ -284,7 +331,7 @@ ShipPlayerCrashRight:
 	run_step LEFT
 	remove_fixed_facing
 	step_end
-	
+
 ShipFangirlApproach:
 	step DOWN
 	step DOWN
@@ -296,11 +343,31 @@ ShipFangirlApproach2:
 	run_step DOWN
 	step_resume
 
+SSMakoSailorStepDown:
+	step DOWN
+	turn_head UP
+	step_resume
+
+SSMakoSailorStepLeft:
+	step LEFT
+	turn_head RIGHT
+	step_resume
+
+SSMakoSailorLeaveRightMovement:
+	step RIGHT
+	step UP
+	step_resume
+
+SSMakoSailorLeaveUpMovement:
+	step UP
+	step UP
+	step_resume
+
 SSMako1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 11 ; warp events
-	warp_event 15,  1, SS_MAKO_1F, 1
+	warp_event 15,  1, SS_MAKO_1F, -1
 	warp_event 20, 16, SS_MAKO_B1F, 1
 	warp_event  9, 10, SS_MAKO_1F_ROOMS, 1
 	warp_event 13, 10, SS_MAKO_1F_ROOMS, 2

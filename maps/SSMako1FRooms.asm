@@ -253,7 +253,7 @@ SSMakoPlayerBedScript:
 	iftrue .Landed
 	end
 .Landed
-	setevent EVENT_HIDE_PORT_SAILORS
+	setevent EVENT_SS_MAKO_DOCKED
 	playsound SFX_ELEVATOR_END
 	opentext
 	checkevent EVENT_COMING_FROM_LEAGUE
@@ -261,23 +261,11 @@ SSMakoPlayerBedScript:
 	writetext SSMakoLandedLeagueText
 	waitbutton
 	closetext
-	special FadeOutPalettes
-	playsound SFX_EXIT_BUILDING
-	wait 4
-	setmapscene VICTORY_PORT_INSIDE, SCENE_VICTORYPORT_LEAVE_SHIP
-	setevent EVENT_COMING_FROM_LEAGUE
-	warpfacing UP, VICTORY_PORT_INSIDE, 4, 15
 	end
 .Rugosa
 	writetext SSMakoLandedRugosaText
 	waitbutton
 	closetext
-	special FadeOutPalettes
-	playsound SFX_EXIT_BUILDING
-	wait 4
-	setmapscene RUGOSA_PORT, SCENE_RUGOSAPORT_LEAVE_SHIP
-	clearevent EVENT_COMING_FROM_LEAGUE
-	warpfacing UP, RUGOSA_PORT, 14, 7
 	end
 
 SSMako1FRoomsTeacherMovement:
@@ -293,15 +281,17 @@ SSMakoPlayerBedText:
 SSMakoLandedRugosaText:
 	text "PA: Attention."
 	
-	para "We have landed at"
-	line "RUGOSA COAST."
+	para "The S.S.MAKO has"
+	line "landed at RUGOSA"
+	cont "COAST."
 	done
 
 SSMakoLandedLeagueText:
 	text "PA: Attention."
 
-	para "We have landed at"
-	line "VICTORY COAST."
+	para "The S.S.MAKO has"
+	line "landed at VICTORY"
+	cont "COAST."
 	done
 	
 SuperNerdHerbertText:
