@@ -78,6 +78,7 @@ CHRIS EQU __enum__
 	const RIVAL1_5_CHIKORITA
 	const RIVAL1_5_CYNDAQUIL
 	const RIVAL1_5_TOTODILE
+	const RIVAL1_6
 
 	trainerclass FANGIRL
 	const EMILY1

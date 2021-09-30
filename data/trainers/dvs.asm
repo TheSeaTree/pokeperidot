@@ -17,7 +17,7 @@ TrainerClassDVs:
 	dn  7, 14, 15, 15 ; REGAN
 	dn  7, 15, 15, 14 ; AMBER
 	dn 14, 14, 15, 14 ; BREDE
-	dn 14, 14, 15, 14 ; CHAMPION
+	dn 15, 14, 15, 14 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
