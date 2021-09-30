@@ -1535,7 +1535,7 @@ TradeText_Intro5::
 
 	para "Unfortunately, the"
 	line "one I caught was"
-	cont "blue."
+	cont "blue…"
 	
 	para "Would you like to"
 	line "trade a pink DITTO"
