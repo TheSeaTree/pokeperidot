@@ -115,10 +115,10 @@ Moves: ; 41afb
 	move NIGHT_SHADE,  EFFECT_LEVEL_DAMAGE,        1, GHOST,    100, 15,   0
 	move MIMIC,        EFFECT_MIMIC,               0, NORMAL,   100, 10,   0
 	move SCREECH,      EFFECT_DEFENSE_DOWN_2,      0, NORMAL,    85, 40,   0
-	move DOUBLE_TEAM,  EFFECT_EVASION_UP,          0, NORMAL,   100, 15,   0
-	move RECOVER,      EFFECT_HEAL,                0, NORMAL,   100, 20,   0
+	move DOUBLE_TEAM,  EFFECT_EVASION_UP,          0, NORMAL,   100, 10,   0
+	move RECOVER,      EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move HARDEN,       EFFECT_DEFENSE_UP,          0, NORMAL,   100, 30,   0
-	move MINIMIZE,     EFFECT_EVASION_UP_2,        0, NORMAL,   100, 20,   0
+	move MINIMIZE,     EFFECT_EVASION_UP_2,        0, NORMAL,   100,  5,   0
 	move SMOKESCREEN,  EFFECT_ACCURACY_DOWN,       0, NORMAL,   100, 20,   0
 	move CONFUSE_RAY,  EFFECT_CONFUSE,             0, GHOST,    100, 10,   0
 	move X_SCISSOR,    EFFECT_NORMAL_HIT,         80, BUG,      100, 15,   0
