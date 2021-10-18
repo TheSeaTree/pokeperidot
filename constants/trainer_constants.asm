@@ -48,11 +48,10 @@ CHRIS EQU __enum__
 	const DUANE_REMATCH
 
 	trainerclass PRYCE ; 5
-	const PRYCE1
 
-	trainerclass JASMINE ; 6
-	const JASMINE1
-	const JASMINE_REMATCH
+	trainerclass ALAN ; 6
+	const ALAN1
+	const ALAN_REMATCH
 
 	trainerclass JOEL ; 7
 	const JOEL1
@@ -109,13 +108,10 @@ CHRIS EQU __enum__
 	const LANCE
 
 	trainerclass BROCK ; 11
-	const BROCK1
 
 	trainerclass MISTY ; 12
-	const MISTY1
 
 	trainerclass LT_SURGE ; 13
-	const LT_SURGE1
 
 	trainerclass SCIENTIST ; 14
 	const ADRIAN
@@ -173,7 +169,6 @@ CHRIS EQU __enum__
 	const DANNI
 
 	trainerclass JANINE ; 1a
-	const JANINE1
 
 	trainerclass COOLTRAINERM ; 1b
 	const LEON
@@ -193,6 +188,7 @@ CHRIS EQU __enum__
 	const KARI
 	const HEIDY
 	const ABBY
+	const ALICE
 
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -235,7 +231,6 @@ CHRIS EQU __enum__
 	const CECELIA
 
 	trainerclass SABRINA ; 23
-	const SABRINA1
 
 	trainerclass BUG_CATCHER ; 24
 	const LIAM
@@ -362,7 +357,6 @@ CHRIS EQU __enum__
 	const DANTE
 	
 	trainerclass BLAINE ; 2e
-	const BLAINE1
 
 	trainerclass BURGLAR ; 2f
 	const ALLEN
@@ -477,18 +471,28 @@ CHRIS EQU __enum__
 	const RED1
 
 	trainerclass BLUE ; 40
-	const BLUE1
 
 	trainerclass OFFICER ; 41
 	const BILLY
 	const JIMMY
 	const GORDON
 	const HARRY
+	const DANIEL1
+	const DANIEL2
 	
 	trainerclass GRUNTF ; 42
 
 	trainerclass MYSTICALMAN ; 43
-	const EUSINE
+	const EUSINE1
+	const EUSINE2
+	const EUSINE3
+	const EUSINE4
+	const EUSINE5
+	const EUSINE6
+	const EUSINE7
+	const EUSINE8
+	const EUSINE9
+	const EUSINE10
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

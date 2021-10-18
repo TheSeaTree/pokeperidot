@@ -10,7 +10,7 @@ GymLeaders:
 	db MURPHY
 	db DUANE
 	db POSEY
-	db JASMINE
+	db ALAN
 	db JOEL
 	db ENYA
 ; fallthrough

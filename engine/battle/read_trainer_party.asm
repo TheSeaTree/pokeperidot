@@ -164,6 +164,50 @@ ReadTrainerPartyPieces:
 	ld [de], a
 .no_dvs
 
+; stat exp?
+	ld a, [wOtherTrainerType]
+	bit TRAINERTYPE_STAT_EXP_F, a
+	jr z, .no_stat_exp
+
+	push hl
+	ld a, [wOTPartyCount]
+	dec a
+	ld hl, wOTPartyMon1StatExp
+	call GetPartyLocation
+	ld d, h
+	ld e, l
+	pop hl
+
+	ld c, NUM_EXP_STATS
+.stat_exp_loop
+; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
+	ld a, [hl]
+	cp LOW(PERFECT_STAT_EXP)
+	jr nz, .not_perfect_stat_exp
+	inc hl
+	ld a, [hl]
+	cp HIGH(PERFECT_STAT_EXP)
+	dec hl
+	jr nz, .not_perfect_stat_exp
+	ld a, $ff
+rept 2
+	ld [de], a
+	inc de
+	inc hl
+endr
+	jr .continue_stat_exp
+
+.not_perfect_stat_exp
+rept 2
+	ld a, [hli]
+	ld [de], a
+	inc de
+endr
+.continue_stat_exp
+	dec c
+	jr nz, .stat_exp_loop
+.no_stat_exp
+
 ; item?
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_ITEM_F, a
@@ -246,9 +290,10 @@ ReadTrainerPartyPieces:
 	pop hl
 .no_moves
 
-; Custom DVs affect stats, so recalculate them after TryAddMonToParty
+; Custom DVs or stat experience affect stats,
+; so recalculate them after TryAddMonToParty
 	ld a, [wOtherTrainerType]
-	and TRAINERTYPE_DVS
+	and TRAINERTYPE_DVS | TRAINERTYPE_STAT_EXP
 	jr z, .no_stat_recalc
 
 	push hl

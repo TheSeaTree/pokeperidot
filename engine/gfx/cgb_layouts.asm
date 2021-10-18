@@ -666,7 +666,7 @@ _CGB_TrainerCard:
 	ld a, JOEL
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, JASMINE
+	ld a, ALAN
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, PREDEFPAL_CGB_BADGE

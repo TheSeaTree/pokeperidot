@@ -8,16 +8,16 @@ AcroporaGym_MapScripts:
 GroundGymLeader:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_JASMINE
+	checkevent EVENT_BEAT_ALAN
 	iftrue .FightDone
 	writetext GroundLeaderChallengeText
 	waitbutton
 	closetext
 	winlosstext GroundLeaderWinText, 0
-	loadtrainer JASMINE, JASMINE1
+	loadtrainer ALAN, ALAN1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_JASMINE
+	setevent EVENT_BEAT_ALAN
 	special HealParty
 	opentext
 	writetext Text_ReceivedTerraBadge
@@ -46,7 +46,7 @@ AcroporaGymStatue:
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext JASMINE, JASMINE1, MEM_BUFFER_1
+	trainertotext ALAN, ALAN1, MEM_BUFFER_1
 	jumpstd gymstatue2
 
 AcroporaCantLeave:
