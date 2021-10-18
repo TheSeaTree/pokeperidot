@@ -22,6 +22,7 @@ Route12_Blocks:
 	INCBIN "maps/Route12.ablk"
 
 BattleSubwayTrain_Blocks:
+BattleSubwayBossTrain_Blocks:
 	INCBIN "maps/BattleSubwayTrain.ablk"
 
 BattleSubwayPlatform_Blocks:

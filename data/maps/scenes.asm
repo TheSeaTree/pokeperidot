@@ -62,4 +62,5 @@ MapScenes::
 	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
 	scene_var SS_MAKO_DECK,                       		wSSMakoDeckSceneID
 	scene_var SS_MAKO_LOWER_DECK,                  		wSSMakoLowerDeckSceneID
+	scene_var BATTLE_SUBWAY_BOSS_TRAIN,                 wBattleSubwayBossTrainSceneID
 	db -1

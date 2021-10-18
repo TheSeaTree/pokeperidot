@@ -325,6 +325,7 @@ INCLUDE "maps/Route14.asm"
 INCLUDE "maps/Route6Gate.asm"
 INCLUDE "maps/BattleSubwayTrain.asm"
 INCLUDE "maps/BattleSubwayPlatform.asm"
+INCLUDE "maps/BattleSubwayBossTrain.asm"
 
 
 SECTION "Map Scripts 21", ROMX

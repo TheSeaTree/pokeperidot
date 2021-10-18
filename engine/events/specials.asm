@@ -404,3 +404,24 @@ SetFireGymSteps:
 	ld a, 50
 	ld [wFireGymStepsRemaining], a
 	ret
+
+CheckStolenTrickMirror:
+	ld hl, wPartyMon1Item
+	ld de, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	ld c, a
+.loop
+	ld a, [hl]
+	cp TRICK_MIRROR
+	jr z, .stolen
+	add hl, de
+	dec c
+	jr nz, .loop
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+
+.stolen
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret

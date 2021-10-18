@@ -66,7 +66,8 @@ NUM_MEM_BUFFERS EQU const_value
 	const VAR_KENJI_BREAK      ; 1a
 	const VAR_ITEM_POCKET      ; 1b
 	const VAR_BALL_POCKET      ; 1c
-NUM_VARS EQU const_value       ; 1d
+	const VAR_SUBWAY_SET       ; 1d
+NUM_VARS EQU const_value       ; 1f
 
 ; variable action types
 RETVAR_STRBUF2 EQU (0 << 6)

@@ -501,6 +501,7 @@ ENDM
 	map_attributes CarnationZooGate, CARNATION_ZOO_GATE, $00, 0
 	map_attributes BattleSubwayTrain, BATTLE_SUBWAY_TRAIN, $00, 0
 	map_attributes BattleSubwayPlatform, BATTLE_SUBWAY_PLATFORM, $00, 0
+	map_attributes BattleSubwayBossTrain, BATTLE_SUBWAY_BOSS_TRAIN, $00, 0
 	map_attributes Route14Gate, ROUTE_14_GATE, $00, 0
 	map_attributes PectiniaBedStore, PECTINIA_BED_STORE, $00, 0
 	map_attributes PectiniaDollStore, PECTINIA_DOLL_STORE, $00, 0

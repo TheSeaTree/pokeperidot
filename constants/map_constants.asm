@@ -400,6 +400,7 @@ ENDM
 	map_const ROUTE_27,					           		   20, 24
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
+	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
 
 	newgroup                                                      ; 26
 

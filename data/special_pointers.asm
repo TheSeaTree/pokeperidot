@@ -191,3 +191,5 @@ SpecialsPointers::
 	add_special InitialClearDSTFlag
 	add_special DummySpecial_c224 ; $a8
 	add_special UpdatePartyStats
+	add_special CheckStolenTrickMirror
+	add_special LoadPokemonData

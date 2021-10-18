@@ -18,9 +18,10 @@ BattleSubwayTrain_MapScripts:
 .DummyScene:
 	priorityjump Script_BattleRoom
 	end
-	
+
 .SetPartyDVs:
 	special UpdatePartyStats
+	warpmod 3, BATTLE_SUBWAY_TRAIN
 	return
 	
 .SetTrainerSprite:
@@ -52,6 +53,7 @@ Script_BattleRoomLoop:
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
 	copybytetovar wNrOfBeatenBattleTowerTrainers
+;	ifequal 1, Script_BeatenAllTrainers
 	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
 	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist
@@ -87,10 +89,26 @@ Script_DontBattleNextOpponent:
 	
 	warpcheck
 	end
-	
+
 Script_BeatenAllTrainers:
+;	jump Script_SubwayBossFight
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
+	
+	checkcode VAR_SUBWAY_SET
+	addvar 1
+	writevarcode VAR_SUBWAY_SET
+
+	checkcode VAR_SUBWAY_SET
+	ifequal 5, Script_SubwayBossFight
+
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
+	warpcheck
+	end
+
+Script_SubwayBossFight:
+	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
+	applymovement PLAYER, MovementData_BattleSubwayPlayerWalkToBoss
+	warpmod 3, BATTLE_SUBWAY_BOSS_TRAIN
 	warpcheck
 	end
 
@@ -103,7 +121,7 @@ BattleSubwayTrain_MapEvents:
 
 	db 4 ; warp events
 	warp_event  1,  5, BATTLE_SUBWAY_PLATFORM, 3
-	warp_event  7,  3, BATTLE_SUBWAY_TRAIN, 3
+	warp_event  7,  3, BATTLE_SUBWAY_TRAIN, -1
 	warp_event  0,  3, BATTLE_SUBWAY_TRAIN, 2
 	warp_event  6,  5, BATTLE_SUBWAY_PLATFORM, 4
 

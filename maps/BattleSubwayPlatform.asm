@@ -46,7 +46,6 @@ BattleSubwayPlatform_MapScripts:
 	
 .Scene2:
 	setscene SCENE_DEFAULT
-	applymovement PLAYER, MovementData_BattleTowerNothing
 	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
 	turnobject PLAYER, RIGHT
 	opentext
@@ -96,10 +95,20 @@ Script_WalkTowardConductorBottom:
 	writetext Text_BattleTowerWelcomesYou
 	buttonsound
 	closetext
-	applymovement PLAYER, MovementData_BattleTowerHallwayPlayerEntersBattleRoom
+	applymovement PLAYER, MovementData_BattleTowerApproachConductor
 	opentext
 	jump Script_Menu_ChallengeExplanationCancel
-	
+
+Script_WalkTowardConductorRight:
+	opentext
+	writetext Text_BattleTowerStopPlayer
+	buttonsound
+	closetext
+	applymovement PLAYER, MovementData_StepAwayFromTrain
+	turnobject PLAYER, UP
+	opentext
+	jump Script_Menu_ChallengeExplanationCancel
+
 Script_Conductor:
 	faceplayer
 ;	writebyte BATTLETOWERACTION_GET_CHALLENGE_STATE ; copybytetovar sBattleTowerChallengeState
@@ -138,7 +147,7 @@ Script_ChooseChallenge:
 	writetext Text_RightThisWayToYourBattleRoom
 	waitbutton
 	closetext
-	
+
 	setflag ENGINE_BATTLE_SUBWAY_ACTIVE
 	special UpdatePartyStats
 	
@@ -152,6 +161,7 @@ Script_ResumeBattleTowerChallenge:
 	special BattleTowerAction
 	musicfadeout MUSIC_NONE, 8
 	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
+	setmapscene BATTLE_SUBWAY_BOSS_TRAIN, SCENE_DEFAULT
 	follow BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
 	applymovement BATTLESUBWAYPLATFORM_OFFICER2, MovementData_BattleTowerReEnterTrain
 	turnobject BATTLESUBWAYPLATFORM_OFFICER2, DOWN
@@ -165,6 +175,7 @@ Script_ResumeBattleTowerChallenge:
 Script_WalkToBattleTowerElevator:
 	musicfadeout MUSIC_NONE, 8
 	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
+	setmapscene BATTLE_SUBWAY_BOSS_TRAIN, SCENE_DEFAULT
 	follow BATTLESUBWAYPLATFORM_OFFICER1, PLAYER
 	applymovement BATTLESUBWAYPLATFORM_OFFICER1, MovementData_BattleTower1FWalkToElevator
 	writebyte BATTLETOWERACTION_0A
@@ -182,7 +193,6 @@ Script_BattleTowerSkipExplanation:
 	writebyte BATTLETOWERACTION_SET_EXPLANATION_READ
 	special BattleTowerAction
 	jump Script_Menu_ChallengeExplanationCancel
-	
 
 Script_DontSaveAndEndTheSession:
 	writetext Text_CancelYourBattleRoomChallenge
@@ -246,6 +256,7 @@ BattleTower_LeftWithoutSaving:
 	opentext
 	writetext Text_BattleTower_LeftWithoutSaving
 	waitbutton
+	writecode VAR_SUBWAY_SET, 0
 	jump Script_BattleTowerHopeToServeYouAgain
 	
 
@@ -269,6 +280,7 @@ BattleTower_LeftWithoutSaving2:
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
 
 	special DoQuickSave
+	writecode VAR_SUBWAY_SET, 0
 	jump Script_BattleTowerHopeToServeYouAgain
 
 Script_BeatenAllTrainers2:
@@ -290,9 +302,21 @@ Script_BeatenAllTrainers2:
 	appear BATTLESUBWAYPLATFORM_OFFICER1
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
+
+	checkcode VAR_SUBWAY_SET
+	ifequal 5, .DefeatedBoss
+
+	callasm CheckLevelGroup
+ 	ifgreater  4, .HardMode
+	givecoins 10
+	writebyte 10
+	jump .GetBPReward
+.HardMode
 	givecoins 20
+	writebyte 20
+.GetBPReward
 	opentext
-	writetext Text_PlayerGot20BP
+	writetext Text_PlayerGotBP
 	writebyte BATTLETOWERACTION_1D
 	special BattleTowerAction
 	setscene SCENE_FINISHED
@@ -303,6 +327,37 @@ Script_BeatenAllTrainers2:
 	setflag ENGINE_BATTLE_SUBWAY_LEVELS
 	writetext Text_CongratulationsYouveBeatenAllTheTrainersFirstTime
 	jump .Continue
+
+.DefeatedBoss:
+	callasm CheckLevelGroup
+ 	ifgreater  4, .HardModeBossReward
+	givecoins 50
+	writebyte 50
+	jump .GetBPReward
+.HardModeBossReward
+	givecoins 100
+	writebyte 100
+	opentext
+	writetext Text_PlayerGotBP
+	writebyte BATTLETOWERACTION_1D
+	special BattleTowerAction
+	setscene SCENE_FINISHED
+	disappear BATTLESUBWAYPLATFORM_OFFICER2
+	writecode VAR_SUBWAY_SET, 0
+	jump Script_BattleTowerHopeToServeYouAgain
+
+CheckLevelGroup:
+	ldh a, [rSVBK]
+	push af
+
+	ld a, BANK(wBTChoiceOfLvlGroup)
+	ldh [rSVBK], a
+	ld a, [wBTChoiceOfLvlGroup]
+	ld [wScriptVar], a
+
+	pop af
+	ldh [rSVBK], a
+	ret
 
 Script_FailedBattleTowerChallenge:
 	pause 60
@@ -315,6 +370,8 @@ Script_FailedBattleTowerChallenge:
 	writetext Text_ThanksForVisiting
 	waitbutton
 	closetext
+
+	writecode VAR_SUBWAY_SET, 0
 	end
 
 BattleSubwayPlatformBugCatcherScript:
@@ -341,7 +398,8 @@ MovementData_BattleTowerElevatorExitElevator:
 	step DOWN
 	step_end
 	
-MovementData_BattleTowerNothing:
+MovementData_BattleTowerApproachConductor:
+	step UP
 	step_end
 
 MovementData_BattleTowerReEnterTrain:
@@ -479,9 +537,24 @@ MovementData_StepAwayFromTrain:
 	step LEFT
 	step_end
 
+MovementData_BattleSubwayPlayerWalkToBoss:
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step_end
+
 Text_BattleTowerWelcomesYou:
 	text "Welcome to the"
 	line "BATTLE SUBWAY!"
+	done
+
+Text_BattleTowerStopPlayer:
+	text "Excuse me!"
+	
+	para "BATTLE SUBWAY reg-"
+	line "istration is back"
+	cont "here."
 	done
 
 Text_WantToGoIntoABattleRoom:
@@ -563,12 +636,14 @@ Text_CongratulationsYouveBeatenAllTheTrainers:
 	line "for your prize."
 	done
 
-Text_PlayerGot20BP:
-	text "<PLAYER> got 20"
-	line "BP!@"
+Text_PlayerGotBP:
+	text "<PLAYER> received"
+	line "@"
+	deciram wScriptVar, 1, 3
+	text " BP!@"
 	sound_item
 	text_waitbutton
-	db "@"
+	text_end
 
 Text_WeHopeToServeYouAgain:
 	text "We hope to serve"
@@ -692,10 +767,11 @@ BattleSubwayPlatform_MapEvents:
 	warp_event 24,  5, BATTLE_SUBWAY_TRAIN, 1
 	warp_event 22,  5, BATTLE_SUBWAY_TRAIN, 1
 
-	db 3 ; coord events
+	db 4 ; coord events
 	coord_event 24,  6, SCENE_FINISHED, Script_BeatenAllTrainers2
 	coord_event 10,  8, SCENE_FINISHED, Script_WalkTowardConductorTop
 	coord_event 10,  9, SCENE_FINISHED, Script_WalkTowardConductorBottom
+	coord_event 11,  8, SCENE_FINISHED, Script_WalkTowardConductorRight
 
 	db 1 ; bg events
 	bg_event  6,  6, BGEVENT_READ, BattleSubwayRulesSign
@@ -705,6 +781,6 @@ BattleSubwayPlatform_MapEvents:
 	object_event  8,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
 	object_event 10,  7, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Script_Conductor, -1
 	object_event 23,  6, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
-	object_event  4,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
+	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
+	object_event  4,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
 	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

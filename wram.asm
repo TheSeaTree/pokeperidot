@@ -2529,8 +2529,9 @@ wTradeFlags:: flag_array NUM_NPC_TRADES ; d960
 wMooMooBerries:: db ; d962
 wTrainerHouseStreak:: db ; d963
 wFarfetchdPosition:: db ; d964
+wBattleSubwaySet:: db ; d964
 
-	ds 13
+	ds 12
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
@@ -2619,8 +2620,9 @@ wSSMako2FSceneID::                                db ; d9bc
 wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoDeckSceneID::                         	  db ; d9bd
 wSSMakoLowerDeckSceneID::                      	  db ; d9bd
+wBattleSubwayBossTrainSceneID::					  db
 
-	ds 43
+	ds 42
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2
