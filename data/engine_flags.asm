@@ -89,15 +89,14 @@ EngineFlags:
 	engine_flag wVisitedSpawns, SPAWN_CARNATION
 	engine_flag wVisitedSpawns, SPAWN_ACROPORA
 	engine_flag wVisitedSpawns, SPAWN_ORCHID
-	engine_flag wVisitedSpawns, SPAWN_LEAGUE
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SIMULATION_F
 
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F ; $50
-	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_OFFICER_DANIEL_BATTLE_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_SODA_POP_GUY_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_VITAMIN_TIMER_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_ALL_FRUIT_TREES_F

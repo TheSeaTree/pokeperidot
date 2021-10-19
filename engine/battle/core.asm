@@ -56,7 +56,7 @@ DoBattle:
 	cp BATTLETYPE_DEBUG
 	jp z, .tutorial_debug
 	jp z, BattleMenu
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jp z, SafariBattleTurn
 	xor a
 	ld [wCurPartyMon], a
@@ -733,9 +733,9 @@ DetermineMoveOrder:
 
 CheckContestBattleOver:
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr nz, .contest_not_over
-	ld a, [wParkBallsRemaining]
+	ld a, [wSafariBallsRemaining]
 	and a
 	jr nz, .contest_not_over
 	ld a, [wBattleResult]
@@ -3900,7 +3900,7 @@ TryToRunAwayFromBattle:
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jp z, .can_escape
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jp z, .can_escape
 	cp BATTLETYPE_TRAP
 	jp z, .cant_escape
@@ -5241,7 +5241,7 @@ BattleMenu:
 	ld a, [wBattleType]
 	cp BATTLETYPE_DEBUG
 	jr z, .ok
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, .ok
 	call EmptyBattleTextBox
 	call UpdateBattleHuds
@@ -5251,10 +5251,15 @@ BattleMenu:
 
 .loop
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jr nz, .not_contest
+	cp BATTLETYPE_SAFARI
+	jr nz, .not_safari
 	farcall SafariBattleMenu
 	jr .safarimenu
+.not_safari
+	cp BATTLETYPE_SIMULATION
+	jr nz, .not_contest
+	farcall ContestBattleMenu
+	jr .next
 .not_contest
 
 	; Auto input: choose "ITEM"
@@ -5266,6 +5271,7 @@ BattleMenu:
 	call LoadBattleMenu2
 	ret c
 
+.next
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, [wBattleMenuCursorBuffer]
@@ -5295,7 +5301,7 @@ BattleMenu:
 
 BattleMenu_Fight:
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, BattleMenu_Rock
 	xor a
 	ld [wNumFleeAttempts], a
@@ -5340,7 +5346,7 @@ BaitRockCommon:
 
 CheckSafariMonRan:
 ; Wildmon always runs when you are out of Safari Balls
-	ld a, [wParkBallsRemaining]
+	ld a, [wSafariBallsRemaining]
 	and a
 	jp z, WildFled_EnemyFled_LinkBattleCanceled
 ; otherwise, check its speed, bait, and rock factors
@@ -5386,15 +5392,21 @@ BattleMenu_Pack:
 	call IsGymLeader
 	jp c, .NoItemsInLeaderBattle
 
+	call LoadStandardMenuHeader
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_SAFARI
+	jr z, .contest
+	cp BATTLETYPE_SIMULATION
+	jr z, .simulation
+
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jp nz, .ItemsCantBeUsed
 
-	call LoadStandardMenuHeader
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
-	jr z, .contest
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .ItemsCantBeUsed
 
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
@@ -5403,7 +5415,21 @@ BattleMenu_Pack:
 	jr .got_item
 
 .contest
-	ld a, PARK_BALL
+	ld a, SAFARI_BALL
+	ld [wCurItem], a
+	call DoItemEffect
+	jr .got_item
+
+.simulation
+	ld a, [wPartyCount]
+	cp PARTY_LENGTH
+	jp z, .PartyIsFull
+
+	ld a, [wParkBallsRemaining]
+	and a
+	jp z, .OutOfCyberBalls
+
+	ld a, CYBER_BALL
 	ld [wCurItem], a
 	call DoItemEffect
 
@@ -5438,6 +5464,16 @@ BattleMenu_Pack:
 	call StdBattleTextBox
 	jp BattleMenu
 
+.PartyIsFull:
+	ld hl, BattleText_PartyIsFullText
+	call StdBattleTextBox
+	jp BattleMenu
+
+.OutOfCyberBalls:
+	ld hl, BattleText_OutOfCyberBallsText
+	call StdBattleTextBox
+	jp BattleMenu
+
 .UseItem:
 	ld a, [wWildMon]
 	and a
@@ -5454,7 +5490,7 @@ BattleMenu_Pack:
 	call _LoadBattleFontsHPBar
 	call ClearSprites
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, .tutorial2
 	call GetBattleMonBackpic
 
@@ -5464,7 +5500,7 @@ BattleMenu_Pack:
 	ld [wMenuCursorY], a
 	call ExitMenu
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, .skipThis
 	call UpdateBattleHUDs
 .skipThis
@@ -5488,7 +5524,7 @@ BattleMenu_Pack:
 
 BattleMenu_PKMN:
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, BattleMenu_Bait
 	call LoadStandardMenuHeader
 BattleMenuPKMN_ReturnFromStats:
@@ -7401,7 +7437,7 @@ FinishBattleAnim:
 
 GiveExperiencePoints:
 ; Give experience.
-; Don't give experience if linked or in the Battle Subway.
+; Don't give experience if linked or in a battle facility.
 	ld a, [wLinkMode]
 	and a
 	ret nz
@@ -7412,6 +7448,10 @@ GiveExperiencePoints:
 
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
+	ret nz
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	ret nz
 
 	call .EvenlyDivideExpAmongParticipants
@@ -9302,7 +9342,7 @@ BattleStartMessage:
 	cp BATTLETYPE_TRAP
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SAFARI
 	jr z, .SkipStartingHUD
 	ld hl, WildPokemonAppearedText
 

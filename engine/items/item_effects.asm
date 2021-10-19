@@ -189,13 +189,16 @@ ItemEffects:
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw NoEffect            ; SQUIRTBOTTLE
 	dw RestoreHPEffect     ; SILVER_BERRY
-	dw PokeBallEffect      ; PARK_BALL
+	dw PokeBallEffect      ; SAFARI_BALL
 	dw NoEffect            ; RAINBOW_WING
 	dw NoEffect            ; TRICK_MIRROR
 	dw NoEffect            ; BRICK_PIECE
 	dw NoEffect            ; CRASH_HELMET
 	dw NoEffect            ; SHRINE_KEY
 	dw ExpAllEffect        ; EXP_ALL
+	dw NoEffect        	   ; SAFARI_PACK
+	dw NoEffect		       ; SKILL_BELT
+	dw PokeBallEffect      ; CYBER_BALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -209,6 +212,10 @@ PokeBallEffect:
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, UseBallInBossBattle
+
 	ld a, BANK(sBoxCount)
 	call GetSRAMBank
 	ld a, [sBoxCount]
@@ -220,9 +227,12 @@ PokeBallEffect:
 	xor a
 	ld [wWildMon], a
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SIMULATION
+	jr z, .ball_from_battle_screen
+	cp BATTLETYPE_SAFARI
 	call nz, ReturnToBattle_UseBall
 
+.ball_from_battle_screen
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, UsedItemText
@@ -500,6 +510,10 @@ PokeBallEffect:
 
 	call ClearSprites
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .skip_pokedex
+
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
@@ -690,8 +704,10 @@ PokeBallEffect:
 	ret z
 	cp BATTLETYPE_DEBUG
 	ret z
-	cp BATTLETYPE_CONTEST
-	jr z, .used_park_ball
+	cp BATTLETYPE_SAFARI
+	jr z, .used_safari_ball
+	cp BATTLETYPE_SIMULATION
+	jr z, .used_cyber_ball
 
 	ld a, [wWildMon]
 	and a
@@ -706,7 +722,12 @@ PokeBallEffect:
 	ld [wItemQuantityChangeBuffer], a
 	jp TossItem
 
-.used_park_ball
+.used_safari_ball
+	ld hl, wSafariBallsRemaining
+	dec [hl]
+	ret
+
+.used_cyber_ball
 	ld hl, wParkBallsRemaining
 	dec [hl]
 	ret
@@ -716,14 +737,14 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
-	dbw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
 	dbw FAST_BALL,   FastBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
-	dbw PARK_BALL,   ParkBallMultiplier
+	dbw SAFARI_BALL, SafariBallMultiplier
+	dbw CYBER_BALL,  UltraBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:

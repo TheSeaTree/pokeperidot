@@ -345,6 +345,16 @@ BattleText_NoItemsInLeagueBattle:
 	cont "battles!"
 	prompt
 
+BattleText_PartyIsFullText::
+	text "The PARTY is full."
+	line "That can't be used."
+	prompt
+
+BattleText_OutOfCyberBallsText::
+	text "You are out of"
+	line "CYBER BALLs!"
+	prompt
+
 BattleText_MonIsAlreadyOut:
 	text_ram wBattleMonNick
 	text_start

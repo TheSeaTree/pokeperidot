@@ -184,7 +184,7 @@ ItemNames::
 	db "EXP.ALL@"
 	db "SAFARI PACK@"
 	db "SKILL BELT@"
-	db "TERU-SAMA@"
+	db "CYBER BALL@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

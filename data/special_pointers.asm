@@ -193,3 +193,4 @@ SpecialsPointers::
 	add_special UpdatePartyStats
 	add_special CheckStolenTrickMirror
 	add_special LoadPokemonData
+	add_special DropOffParty

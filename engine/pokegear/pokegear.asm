@@ -1575,9 +1575,6 @@ LoadStation_BuenasPassword:
 	ld hl, PlayRadioShow
 	call Radio_BackUpFarCallParams
 	ld de, NotBuenasPasswordName
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	ret z
 	ld de, BuenasPasswordName
 	ret
 

@@ -1702,7 +1702,7 @@ Script_GotABite:
 	randomwildmon
 	checkflag ENGINE_SAFARI_ZONE
 	iffalse .not_in_bug_contest
-	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
+	writecode VAR_BATTLETYPE, BATTLETYPE_SAFARI
 .not_in_bug_contest
 	startbattle
 	reloadmapafterbattle

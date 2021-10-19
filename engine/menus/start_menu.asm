@@ -269,6 +269,10 @@ endr
 	and a
 	jr nz, .no_pack
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .no_pack
+
 	ld a, STARTMENUITEM_PACK
 	call .AppendMenuList
 .no_pack
@@ -278,6 +282,11 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_save
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .no_save
+
 	ld a, STARTMENUITEM_SAVE
 .write
 	call .AppendMenuList

@@ -1,6 +1,6 @@
 InitializeSafariZone:
 	ld a, 30
-	ld [wParkBallsRemaining], a
+	ld [wSafariBallsRemaining], a
 	ld a, 300 / $100
 	ld [wSafariStepsRemaining], a
 	ld a, 300 % $100
@@ -15,7 +15,7 @@ InitializeExtendedSafariZone:
 	; fallthrough
 ContinueInitializeSafariZone:
 	ld a, 30
-	ld [wParkBallsRemaining], a
+	ld [wSafariBallsRemaining], a
 	; Hide Area 5 & 6 encounters from the Pokedex
 	ld a, GROUP_SAFARI_ZONE_AREA_1
 	ld [wBackupMapGroup], a
@@ -24,11 +24,11 @@ ContinueInitializeSafariZone:
 	ret
 
 SafariZoneEncounterScript::
-	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
+	writecode VAR_BATTLETYPE, BATTLETYPE_SAFARI
 	randomwildmon
 	startbattle
 	reloadmapafterbattle
-	copybytetovar wParkBallsRemaining
+	copybytetovar wSafariBallsRemaining
 	iffalse BugCatchingContestOutOfBallsScript
 	end
 

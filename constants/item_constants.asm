@@ -182,7 +182,7 @@
 	const GOLD_BERRY   ; ae
 	const SQUIRTBOTTLE ; af
 	const SILVER_BERRY ; b0
-	const PARK_BALL    ; b1
+	const SAFARI_BALL  ; b1
 	const RAINBOW_WING ; b2
 	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
@@ -191,7 +191,7 @@
 	const EXP_ALL      ; b7
 	const SAFARI_PACK  ; b8
 	const SKILL_BELT   ; b9
-	const ITEM_BA      ; ba
+	const CYBER_BALL   ; ba
 	const ITEM_BB      ; bb
 	const ITEM_BC      ; bc
 	const ITEM_BD      ; bd
@@ -309,6 +309,6 @@ USE_SCRIPT_VAR EQU $00
 ITEM_FROM_MEM  EQU $ff
 
 ; leftovers from red
-SAFARI_BALL    EQU $08 ; MOON_STONE
-MOON_STONE_RED EQU $0a ; BURN_HEAL
-FULL_HEAL_RED  EQU $34 ; X_SPEED
+SAFARI_BALL_RED EQU $b1 ; SAFARI_BALL
+MOON_STONE_RED  EQU $0a ; BURN_HEAL
+FULL_HEAL_RED   EQU $34 ; X_SPEED

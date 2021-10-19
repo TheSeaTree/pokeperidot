@@ -425,3 +425,13 @@ CheckStolenTrickMirror:
 	ld a, TRUE
 	ld [wScriptVar], a
 	ret
+
+DropOffParty:
+; Mask the whole party by setting the count to 0...
+	ld hl, wPartyCount
+	ld a, 0
+	ld [hli], a
+	inc hl
+; ... and replacing it with the terminator byte
+	ld [hl], -1
+	ret

@@ -1202,6 +1202,8 @@ RandomEncounter::
 	jr nz, .forced_shiny
 	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
 	jr nz, .safari_zone
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .simulation
 	farcall TryWildEncounter
 	jr nz, .nope
 	jr .ok
@@ -1220,6 +1222,13 @@ RandomEncounter::
 	ld hl, SafariZoneEncounterScript
 	jr .done
 
+.simulation
+	farcall TryWildEncounter
+	jr nz, .nope
+	ld a, BANK(SimulationEncounterScript)
+	ld hl, SimulationEncounterScript
+	jr .done
+
 .nope
 	ld a, 1
 	and a
@@ -1234,6 +1243,10 @@ RandomEncounter::
 	scf
 	ret
 
+SimulationEncounterScript
+	writecode VAR_BATTLETYPE, BATTLETYPE_SIMULATION
+	jump WildBattleScript
+
 ForcedShinyEncounterScript:
 	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 WildBattleScript:
@@ -1241,6 +1254,7 @@ WildBattleScript:
 	startbattle
 	reloadmapafterbattle
 	end
+
 
 CanUseSweetScent::
 	ld hl, wStatusFlags

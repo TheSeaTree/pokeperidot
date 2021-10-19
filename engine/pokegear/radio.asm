@@ -3,10 +3,6 @@ PlayRadioShow:
 	ld a, [wCurRadioLine]
 	cp POKE_FLUTE_RADIO
 	jr nc, .ok
-; If Team Rocket is not occupying the radio tower, we don't need to be here.
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	jr z, .ok
 ; If we're in Kanto, we don't need to be here.
 	call IsInJohto
 	and a

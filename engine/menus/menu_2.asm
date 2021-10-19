@@ -136,7 +136,7 @@ StartMenu_PrintBugContestStatus:
 	call PlaceString
 .normal_safari
 	hlcoord 17, 2
-	ld de, wParkBallsRemaining
+	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum
 	hlcoord 12, 1
@@ -146,7 +146,7 @@ StartMenu_PrintBugContestStatus:
 	pop af
 	ld [wOptions], a
 	ret
-	
+
 .Balls_EN:
 	db "BALLS:@"
 .Steps:
