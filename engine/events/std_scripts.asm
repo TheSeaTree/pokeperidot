@@ -260,10 +260,15 @@ TrashCanScript:
 	farjumptext TrashCanText
 
 PCScript:
+	checkcode VAR_FACING
+	ifnotequal UP, .CantAccessPC
 	opentext
 	special PokemonCenterPC
 	closetext
 	end
+
+.CantAccessPC
+	farjumptext CantAccessPCText
 
 ElevatorButtonScript:
 	playsound SFX_READ_TEXT_2

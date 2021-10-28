@@ -380,11 +380,16 @@ MartSignText:
 	para "#MON MART"
 	done
 
+CantAccessPCText:
+	text "You can't access"
+	line "the PC from here."
+	done
+
 SafariZone_LeavingText:
 	text "I hope you had"
 	line "good luck on your"
 	cont "SAFARI game."
-	
+
 	para "Try again any time"
 	line "you like."
 	done
