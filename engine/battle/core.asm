@@ -459,7 +459,7 @@ HandleWeatherItem:
 	pop bc
 	pop de
 	ret
-	
+
 .RainAnim
 	ld de, RAIN_DANCE
 	call Call_PlayBattleAnim
@@ -5066,6 +5066,14 @@ PrintPlayerHUD:
 .got_gender_char
 	hlcoord 17, 8
 	ld [hl], a
+	
+	call BattleCheckPlayerShininess
+	jr nc, .not_shiny
+
+	hlcoord 18, 8
+	ld [hl], "*"
+
+.not_shiny	
 	hlcoord 11, 8
 
 	ld de, wBattleMonStatus
@@ -5134,7 +5142,14 @@ DrawEnemyHUD:
 .got_gender
 	hlcoord 9, 3
 	ld [hl], a
+	
+	call BattleCheckEnemyShininess
+	jr nc, .not_shiny
 
+	hlcoord 10, 3
+	ld [hl], "*"
+	
+.not_shiny
 	hlcoord 3, 3
 	push af
 	push hl
