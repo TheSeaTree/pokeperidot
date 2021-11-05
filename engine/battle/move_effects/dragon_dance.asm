@@ -24,8 +24,6 @@ BattleCommand_DragonDance:
 .raise
 
 ; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage

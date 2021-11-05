@@ -183,3 +183,4 @@ BattleCommandPointers:
 	dw BattleCommand_UTurn
 	dw BattleCommand_Burn
 	dw BattleCommand_ThiefDamage
+	dw BattleCommand_CheckLegendaryBattle

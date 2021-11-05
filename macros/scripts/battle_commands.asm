@@ -184,6 +184,7 @@ ENDM
 	command uturn
 	command burn
 	command thiefdamage
+	command checklegendary
 
 	enum_start $fe
 	command endturn                 ; fe

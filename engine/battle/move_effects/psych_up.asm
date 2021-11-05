@@ -1,10 +1,5 @@
 BattleCommand_PsychUp:
 ; psychup
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_LEGENDARY
-	jp z, .fail
-
 	ld hl, wEnemyStatLevels
 	ld de, wPlayerStatLevels
 	ldh a, [hBattleTurn]

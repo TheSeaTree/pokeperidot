@@ -31,8 +31,6 @@ BattleCommand_QuiverDance:
 .raise
 
 ; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage

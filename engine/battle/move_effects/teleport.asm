@@ -8,8 +8,6 @@ BattleCommand_Teleport:
 	jr z, .failed
 	cp BATTLETYPE_CELEBI
 	jr z, .failed
-	cp BATTLETYPE_LEGENDARY
-	jr z, .failed
 	cp BATTLETYPE_BOSS
 	jr z, .failed
 

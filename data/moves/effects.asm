@@ -782,6 +782,7 @@ Conversion:
 ResetStats:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	resetstats
 	endmove
@@ -828,6 +829,7 @@ ForceSwitch:
 	checkobedience
 	usedmovetext
 	doturn
+	checklegendary
 	checkhit
 	forceswitch
 	endmove
@@ -1750,6 +1752,7 @@ BellyDrum:
 PsychUp:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	psychup
 	endmove
@@ -1939,6 +1942,7 @@ Thunder:
 Teleport:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	teleport
 	endmove

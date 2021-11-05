@@ -2182,7 +2182,7 @@ BattleCommand_ApplyDamage:
 	ld a, [hl]
 	cp c
 	jr nz, .focus_band
-	
+
 	call GetOpponentItem
 	ld a, b
 	cp HELD_FOCUS_SASH
@@ -2611,15 +2611,48 @@ DittoMetalPowder:
 	ld a, HIGH(MAX_STAT_VALUE)
 	cp b
 	jr c, .cap
+	ret nz
 	ld a, LOW(MAX_STAT_VALUE)
 	cp c
 	ret nc
 
 .cap
-	ld b, HIGH(MAX_STAT_VALUE)
-	ld c, LOW(MAX_STAT_VALUE)
+	ld bc, MAX_STAT_VALUE
 	ret
 
+ParasectBigMushroom:
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .Parasect
+	ld a, [wTempEnemyMonSpecies]
+
+.Parasect:
+	cp PARASECT
+	ret nz
+
+	push bc
+	call GetOpponentItem
+	ld a, [hl]
+	cp BIG_MUSHROOM
+	pop bc
+	ret nz
+
+	sla a
+	rl c
+	ret nc
+
+	srl b
+	ld a, b
+	and a
+	jr nz, .done
+	inc b
+.done
+	scf
+	rr c
+	ret
 
 BattleCommand_DamageStats:
 ; damagestats
@@ -2724,6 +2757,7 @@ PlayerAttackDamage:
 	ld a, [wBattleMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call ParasectBigMushroom
 
 	ld a, 1
 	and a
@@ -3111,6 +3145,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonLevel]
 	ld e, a
 	call DittoMetalPowder
+	call ParasectBigMushroom
 
 	ld a, 1
 	and a
@@ -3438,6 +3473,15 @@ BattleCommand_ClearHazards:
 	and a
 	ret nz
 	farcall RapidSpinEffect
+	ret
+
+BattleCommand_HappinessPower:
+; happinesspower
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall ReturnEffect
 	ret
 
 INCLUDE "engine/battle/move_effects/counter.asm"
@@ -5003,8 +5047,6 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_CELEBI
 	jp z, .fail
-	cp BATTLETYPE_LEGENDARY
-	jp z, .fail
 	cp BATTLETYPE_BOSS
 	jp z, .fail
 	ldh a, [hBattleTurn]
@@ -6034,11 +6076,6 @@ INCLUDE "engine/battle/move_effects/conversion.asm"
 
 BattleCommand_ResetStats:
 ; resetstats
-
-	ld a, [wBattleType]
-	cp BATTLETYPE_LEGENDARY
-	jp z, .fail
-
 	ld a, 7 ; neutral
 	ld hl, wPlayerStatLevels
 	call .Fill
@@ -6444,8 +6481,6 @@ INCLUDE "engine/battle/move_effects/fury_cutter.asm"
 
 INCLUDE "engine/battle/move_effects/attract.asm"
 
-INCLUDE "engine/battle/move_effects/return.asm"
-
 INCLUDE "engine/battle/move_effects/present.asm"
 
 INCLUDE "engine/battle/move_effects/safeguard.asm"
@@ -6652,6 +6687,16 @@ BattleCommand_SkipSunCharge:
 INCLUDE "engine/battle/move_effects/future_sight.asm"
 
 INCLUDE "engine/battle/move_effects/thunder.asm"
+
+BattleCommand_CheckLegendaryBattle:
+; checklegendary
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	ret nz
+
+	call AnimateFailedMove
+	call PrintButItFailed
+	jp EndMoveEffect
 
 CheckHiddenOpponent:
 ; BUG: This routine is completely redundant and introduces a bug, since BattleCommand_CheckHit does these checks properly.

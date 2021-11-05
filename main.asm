@@ -421,6 +421,7 @@ INCLUDE "engine/battle/false_swipe.asm"
 INCLUDE "engine/battle/sap_health.asm"
 INCLUDE "engine/battle/check_gender.asm"
 INCLUDE "engine/battle/rapid_spin.asm"
+INCLUDE "engine/battle/return.asm"
 INCLUDE "engine/battle/misc.asm"
 
 

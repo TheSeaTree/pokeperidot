@@ -1,5 +1,4 @@
-BattleCommand_HappinessPower:
-; happinesspower
+ReturnEffect:
 	push bc
 	ld hl, wBattleMonHappiness
 	ldh a, [hBattleTurn]
