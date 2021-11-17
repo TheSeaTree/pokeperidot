@@ -373,10 +373,10 @@ MartPokemonLeague:
 	
 MartPokemonLeagueTM:
 	db 4
-	db FIRE_BLAST
-	db BLIZZARD
-	db THUNDER
-	db HURRICANE
+	db TM_FIRE_BLAST
+	db TM_BLIZZARD
+	db TM_THUNDER
+	db TM_HURRICANE
 	db -1
 	
 MartPokemonLeagueVitamins:
@@ -391,8 +391,8 @@ MartPokemonLeagueVitamins:
 
 MartPokemonLeagueCafe:
 	db 4 ; # items
-	db FRESH_WATER
 	db BERRY_JUICE
+	db FRESH_WATER
 	db LEMONADE
 	db SWEET_TEA
 	db -1 ; end
