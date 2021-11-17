@@ -167,6 +167,7 @@ CHRIS EQU __enum__
 	const GINGER
 	const KELLY
 	const DANNI
+	const JODIE
 
 	trainerclass JANINE ; 1a
 
@@ -178,6 +179,7 @@ CHRIS EQU __enum__
 	const TODD
 	const TORY
 	const EDGAR
+	const ALBERT
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
@@ -406,6 +408,7 @@ CHRIS EQU __enum__
 	const SOLOMON
 	const WES
 	const FREDDIE
+	const CHAZ
 	
 	trainerclass PICNICKER ; 35
 	const JAMIE
@@ -466,6 +469,7 @@ CHRIS EQU __enum__
 	const ELANE
 	const MARCI
 	const FELICIA
+	const ZOEY
 
 	trainerclass RED ; 3f
 	const RED1

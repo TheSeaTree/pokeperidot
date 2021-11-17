@@ -117,17 +117,19 @@ CeruleanGroupSprites:
 SaffronGroupSprites:
 ; Route5, SaffronCity
 	db SPRITE_COOLTRAINER_M
-	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
-	db SPRITE_OFFICER_M
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
-	db SPRITE_SCIENTIST
 	db SPRITE_BUENA
-	; limit of 9 walking sprites
 	db SPRITE_MONSTER
 	db SPRITE_BIRD
+	db SPRITE_DRAGON
+	; limit of 9 walking sprites
+	db SPRITE_OFFICER_M
+	db SPRITE_SUPER_NERD
+	db SPRITE_POKEFAN_F
+	db SPRITE_SCIENTIST
 	db SPRITE_NURSE
 	db SPRITE_POKE_BALL
 	db SPRITE_SLOWPOKE
@@ -468,7 +470,9 @@ FastShipGroupSprites:
 	; 5 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY
+	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
+	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 CableClubGroupSprites:

@@ -1,4 +1,7 @@
 	const_def 2 ; object constants
+	const ROUTE27GATE_OFFICER1
+	const ROUTE27GATE_OFFICER2
+	const ROUTE27GATE_NURSE
 
 Route27Gate_MapScripts:
 	db 0 ; scene scripts
@@ -11,8 +14,27 @@ Route27GateOfficerMScript:
 Route27GateOfficerFScript:
 	jumptext Route27GateOfficerFText
 
-Route27GateCooltrainerMScript:
-	jumptextfaceplayer Route27GateCooltrainerMText
+Route27GateNurseScript:
+	opentext
+	writetext Route27GateNurseText
+	waitbutton
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext Route27GateNurseAfterText
+	waitbutton
+	closetext
+	turnobject ROUTE27GATE_NURSE, UP
+	pause 4
+	turnobject ROUTE27GATE_NURSE, DOWN
+	end
 
 Route27GateOfficerMText:
 	text "You won't find any"
@@ -36,19 +58,21 @@ Route27GateOfficerFText:
 	cont "day is quite good!"
 	done
 
-Route27GateCooltrainerMText:
-	text "The NURSE on ROUTE"
-	line "27 is sorta cute,"
-	cont "don't you think?"
+Route27GateNurseText:
+	text "Are your #MON"
+	line "hurt from training"
+	cont "on ROUTE 27?"
 
-	para "Something about"
-	line "is… different."
+	para "Let me see, I'll"
+	line "fix them right up!"
+	done
 
-	para "I would talk to"
-	line "her, but she is"
-	cont "always so busy"
-	cont "healing everyone's"
-	cont "#MON."
+Route27GateNurseAfterText:
+	text "Those trainers can"
+	line "be rough."
+
+	para "Be careful out"
+	line "there!"
 	done
 
 Route27Gate_MapEvents:
@@ -67,4 +91,4 @@ Route27Gate_MapEvents:
 	db 3 ; object events
 	object_event  5,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, 3, 17, 0, OBJECTTYPE_SCRIPT, 0, Route27GateOfficerMScript, -1
 	object_event  5,  2, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, Route27GateOfficerFScript, -1
-	object_event  9,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route27GateCooltrainerMScript, -1
+	object_event  4,  2, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route27GateNurseScript, -1
