@@ -26,16 +26,78 @@ HallOfFame_MapScripts:
 	closetext
 	turnobject HALLOFFAME_LANCE, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
+	scall RespawnLegendaries
 	setscene SCENE_FINISHED
 	pause 15
 	writebyte HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
 	setevent EVENT_BEAT_ELITE_FOUR
-	setevent EVENT_TELEPORT_GUY
-	setevent EVENT_RIVAL_SPROUT_TOWER
-	clearevent EVENT_RED_IN_MT_SILVER
+	setmapscene PLAYERS_HOUSE_1F, SCENE_PLAYERSHOUSE1F_POSTGAME
+;	setevent EVENT_TELEPORT_GUY
+;	setevent EVENT_RIVAL_SPROUT_TOWER
+;	clearevent EVENT_RED_IN_MT_SILVER
 	special HealParty
 	halloffame
+	end
+
+RespawnLegendaries:
+	writebyte RAIKOU
+	special CheckOwnedMon
+	iffalse .CheckSuicune
+	clearevent EVENT_HIDE_RAIKOU
+.CheckSuicune
+	writebyte SUICUNE
+	special CheckOwnedMon
+	iffalse .CheckEntei
+	clearevent EVENT_HIDE_SUICUNE
+.CheckEntei
+	writebyte ENTEI
+	special CheckOwnedMon
+	iftrue .CheckArticuno
+	clearevent EVENT_HIDE_ENTEI
+.CheckArticuno
+	checkevent EVENT_ROAMING_BIRDS
+	iffalse .CheckHoOh
+	writebyte ARTICUNO
+	special CheckOwnedMon
+	iffalse .CheckZapdos
+	special InitRoamArticuno
+.CheckZapdos
+	writebyte ZAPDOS
+	special CheckOwnedMon
+	iffalse .CheckMoltres
+	special InitRoamZapdos
+.CheckMoltres
+	writebyte MOLTRES
+	special CheckOwnedMon
+	iftrue .CheckHoOh
+	special InitRoamMoltres
+.CheckHoOh
+	writebyte HO_OH
+	special CheckOwnedMon
+	iftrue .CheckLugia
+	clearevent EVENT_FOUGHT_HO_OH
+.CheckLugia
+	writebyte LUGIA
+	special CheckOwnedMon
+	iftrue .CheckMewtwo
+	clearevent EVENT_FOUGHT_LUGIA
+.CheckMewtwo
+	writebyte MEWTWO
+	special CheckOwnedMon
+	iftrue .CheckMew
+	clearevent EVENT_FOUGHT_MEWTWO
+.CheckMew
+	writebyte MEW
+	special CheckOwnedMon
+	iftrue .CheckCelebi
+	clearevent EVENT_FOUGHT_MEW
+.CheckCelebi
+	writebyte CELEBI
+	special CheckOwnedMon
+	iftrue .Done
+	clearevent EVENT_FOUGHT_CELEBI
+.Done
 	end
 
 HallOfFame_WalkUpWithLance:
