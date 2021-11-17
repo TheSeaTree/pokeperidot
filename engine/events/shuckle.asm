@@ -1,4 +1,4 @@
-MANIA_OT_ID EQU 00518
+MANIA_OT_ID EQU 10101
 
 GiveShuckle:
 ; Adding to the party.
@@ -6,9 +6,9 @@ GiveShuckle:
 	ld [wMonType], a
 
 ; Level 15 Shuckle.
-	ld a, SHUCKLE
+	ld a, PORYGON2
 	ld [wCurPartySpecies], a
-	ld a, 15
+	ld a, 50
 	ld [wCurPartyLevel], a
 
 	predef TryAddMonToParty
@@ -66,10 +66,10 @@ GiveShuckle:
 	ret
 
 SpecialShuckleOT:
-	db "MANIA@"
+	db "BTTLSIM@"
 
 SpecialShuckleNick:
-	db "SHUCKIE@"
+	db "PORYGON2@"
 
 ReturnShuckle:
 	farcall SelectMonFromParty

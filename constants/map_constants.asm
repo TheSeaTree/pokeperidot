@@ -129,6 +129,7 @@ ENDM
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
 	map_const ROUTE_24_NORTH,							 17, 15
 	map_const ROUTE_24_SOUTH,							 25, 12
+	map_const ROUTE_25_GATE,							  5,  4
 	map_const ACROPORA_CAVE_1F,                          19, 11
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14
@@ -401,6 +402,8 @@ ENDM
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
+	map_const BATTLE_SIMULATION,					       10,  7
+	map_const BATTLE_SIMULATION_TEST_ROOM,				   20,  10
 
 	newgroup                                                      ; 26
 

@@ -99,6 +99,7 @@ RugosaGate_Blocks:
 Route6Gate_Blocks:
 Route14Gate_Blocks:
 Route20AcroporaGate_Blocks:
+Route25Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 	
 PokemonLeagueGate1F_Blocks:
@@ -850,3 +851,9 @@ OrchidTeachersHouse_Blocks:
 
 OrchidBlackbeltsHouse_Blocks:
 	INCBIN "maps/OrchidBlackbeltsHouse.ablk"
+
+BattleSimulation_Blocks:
+	INCBIN "maps/BattleSimulation.ablk"
+
+BattleSimulationTestRoom_Blocks:
+	INCBIN "maps/BattleSimulationTestRoom.ablk"

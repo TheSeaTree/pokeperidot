@@ -543,3 +543,6 @@ ENDM
 	map_attributes PokemonLeagueHotel1F, POKEMON_LEAGUE_HOTEL_1F, $00, 0
 	map_attributes PokemonLeagueHotel2F, POKEMON_LEAGUE_HOTEL_2F, $00, 0
 	map_attributes Route23HiddenCave, ROUTE_23_HIDDEN_CAVE, $09, 0
+	map_attributes BattleSimulation, BATTLE_SIMULATION, $00, 0
+	map_attributes BattleSimulationTestRoom, BATTLE_SIMULATION_TEST_ROOM, $04, 0
+	map_attributes Route25Gate, ROUTE_25_GATE, $00, 0

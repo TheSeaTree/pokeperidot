@@ -744,7 +744,7 @@ BallMultiplierFunctionTable:
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw SAFARI_BALL, SafariBallMultiplier
-	dbw CYBER_BALL,  UltraBallMultiplier
+	dbw CYBER_BALL,  CyberBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -752,6 +752,17 @@ UltraBallMultiplier:
 	sla b
 	ret nc
 	ld b, $ff
+	ret
+
+CyberBallMultiplier:
+; multiply catch rate by 4
+	sla b
+	jr c, .max
+	sla b
+	jr nc, .done
+.max
+	ld b, $ff
+.done
 	ret
 
 SafariBallMultiplier:

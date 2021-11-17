@@ -237,18 +237,6 @@ TilesetDarkCaveAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-TilesetIcePathAnim:
-	dw vTiles2 tile $35, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $35, WriteTileFromBuffer
-	dw NULL,  AnimateWaterPalette
-	dw vTiles2 tile $31, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $31, WriteTileFromBuffer
-	dw NULL,  DoneTileAnimation
-
 TilesetChampionsRoomAnim:
 TilesetTowerAnim:
 	dw NULL, AnimateRightFireTile
@@ -290,6 +278,9 @@ TilesetKabutoWordRoomAnim:
 TilesetOmanyteWordRoomAnim:
 TilesetAerodactylWordRoomAnim:
 TilesetRoofAnim:
+TilesetPokecomCenterAnim:
+TilesetIcePathAnim:
+TilesetCyberspaceAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation

@@ -2621,8 +2621,9 @@ wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoDeckSceneID::                         	  db ; d9bd
 wSSMakoLowerDeckSceneID::                      	  db ; d9bd
 wBattleSubwayBossTrainSceneID::					  db
+wBattleSimulationSceneID::					  	  db
 
-	ds 42
+	ds 41
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2
@@ -2771,7 +2772,7 @@ wRepelType:: db
 wLuckyIDNumber:: dw ; dc9f
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
-wBikeStep:: dw
+wMushroomQuantity:: dw
 wKurtApricornQuantity:: db
 
 wPlayerDataEnd::

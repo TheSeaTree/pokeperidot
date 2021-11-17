@@ -429,6 +429,12 @@ INCBIN "data/tilesets/tower_metatiles.bin"
 TilesetTowerColl:
 INCLUDE "data/tilesets/tower_collision.asm"
 
+TilesetCyberspaceColl:
+INCLUDE "data/tilesets/cyberspace_collision.asm"
+
+TilesetCyberspaceAttr:
+INCBIN "data/tilesets/cyberspace_attributes.bin"
+
 
 SECTION "Tileset Data 13", ROMX
 
@@ -446,3 +452,21 @@ INCBIN "data/tilesets/pokemon_league_attributes.bin"
 
 TilesetPokemonLeagueOutsideGFX:
 INCBIN "gfx/tilesets/pokemon_league_outside.2bpp.lz"
+
+TilesetPokecomCenterMeta:
+INCBIN "data/tilesets/pokecom_center_metatiles.bin"
+
+TilesetPokecomCenterColl:
+INCLUDE "data/tilesets/pokecom_center_collision.asm"
+
+TilesetPokecomCenterAttr:
+INCBIN "data/tilesets/pokecom_center_attributes.bin"
+
+TilesetPokecomCenterGFX:
+INCBIN "gfx/tilesets/pokecom_center.2bpp.lz"
+
+TilesetCyberspaceGFX:
+INCBIN "gfx/tilesets/cyberspace.2bpp.lz"
+
+TilesetCyberspaceMeta:
+INCBIN "data/tilesets/cyberspace_metatiles.bin"

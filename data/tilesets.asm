@@ -45,3 +45,5 @@ Tilesets::
 	tileset TilesetCastle
 	tileset TilesetOcean
 	tileset TilesetPokemonLeague
+	tileset TilesetPokecomCenter
+	tileset TilesetCyberspace

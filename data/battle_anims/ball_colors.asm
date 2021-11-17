@@ -26,6 +26,6 @@ BallColors:
 	db SAFARI_BALL
 	RGB 31,25,15, 15,19,10
 	db CYBER_BALL
-	RGB 10,10,10, 00,31,00
+	RGB 25,31,31, 14,22,26
 	db -1 ; end
 	RGB 31,31,31, 16,16,16
