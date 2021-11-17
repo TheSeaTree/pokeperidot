@@ -47,6 +47,16 @@ UnknownText_0x1bc089::
 	line "make?"
 	done
 
+MushroomManText_WhichMushroom::
+	text "Which MUSHROOM do"
+	line "you want to sell?"
+	done
+
+MushroomManText_HowMany::
+	text "How many would you"
+	line "like to sell?"
+	done
+
 UnknownText_0x1bc0a2::
 	text_from_ram wStringBuffer3
 	text_start

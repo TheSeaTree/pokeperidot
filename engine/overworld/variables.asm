@@ -68,6 +68,7 @@ _GetVarAction::
 	dwb wNumItems,               		RETVAR_ADDR_DE
 	dwb wNumBalls,               		RETVAR_ADDR_DE
 	dwb wBattleSubwaySet,               RETVAR_ADDR_DE
+	dwb wMushroomQuantity,              RETVAR_ADDR_DE
 	dwb NULL,                           RETVAR_STRBUF2
 
 .CountCaughtMons:

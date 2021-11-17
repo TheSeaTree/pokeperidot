@@ -306,6 +306,7 @@ SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
 INCLUDE "engine/events/fossils.asm"
+INCLUDE "engine/events/mushroom_man.asm"
 INCLUDE "engine/gfx/player_gfx.asm"
 INCLUDE "mobile/mobile_22.asm"
 INCLUDE "engine/events/unown_walls.asm"

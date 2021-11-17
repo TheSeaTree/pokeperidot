@@ -247,3 +247,50 @@ FindFossilsInBag:
 	ret
 
 INCLUDE "data/items/fossils.asm"
+
+FindMushroomsInBag:
+; Checks the bag for Mushrooms.
+	ld hl, wBuffer1
+	xor a
+	ld [hli], a
+	dec a
+	ld bc, 10
+	call ByteFill
+
+	ld hl, Mushrooms
+.loop
+	ld a, [hl]
+	cp -1
+	jr z, .done
+	push hl
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	pop hl
+	jr nc, .nope
+	ld a, [hl]
+	call .addtobuffer
+.nope
+	inc hl
+	inc hl
+	jr .loop
+
+.done
+	ld a, [wBuffer1]
+	and a
+	ret nz
+	scf
+	ret
+
+.addtobuffer
+	push hl
+	ld hl, wBuffer1
+	inc [hl]
+	ld e, [hl]
+	ld d, 0
+	add hl, de
+	ld [hl], a
+	pop hl
+	ret
+
+INCLUDE "data/items/mushrooms.asm"

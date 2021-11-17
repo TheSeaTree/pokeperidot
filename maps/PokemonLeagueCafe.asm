@@ -94,7 +94,97 @@ PokemonLeagueCafeVendingMachine:
 	db "CANCEL@"
 
 PokemonLeagueCafeChef:
-	jumptextfaceplayer PokemonLeagueCafeChefText
+	opentext
+	writetext MushroomManIntroductionText
+	waitbutton
+	checkitem TINYMUSHROOM
+	iffalse .CheckBigMushrooms
+	jump .Selling
+.CheckBigMushrooms
+	checkitem BIG_MUSHROOM
+	iffalse .NoMushrooms
+	writetext MushroomManHaveMushroomsText
+	waitbutton
+.Selling
+	special PlaceMoneyTopRight
+	special SelectMushroomForMushroomMan
+	ifequal BIG_MUSHROOM, .sell_bigmushroom
+	ifequal TINYMUSHROOM, .sell_tinymushroom
+	jump .Cancel
+
+.sell_tinymushroom
+	checkcode VAR_MUSHROOMS_SOLD
+	ifequal 1, .OneTinyMushroom
+	writetext SellingTinyMushroomsText
+	waitbutton
+.loop_tinymushroom
+	givemoney YOUR_MONEY, 500
+	
+	checkcode VAR_MUSHROOMS_SOLD
+	addvar -1
+	writevarcode VAR_MUSHROOMS_SOLD
+
+	checkcode VAR_MUSHROOMS_SOLD
+	checkcode VAR_MUSHROOMS_SOLD
+	ifgreater 0, .loop_tinymushroom
+
+	special PlaceMoneyTopRight
+	playsound SFX_TRANSACTION
+	waitsfx
+	checkitem TINYMUSHROOM
+	iftrue .Selling
+	checkitem BIG_MUSHROOM
+	iftrue .Selling
+	jump .NoMoreMushrooms
+
+.sell_bigmushroom
+	checkcode VAR_MUSHROOMS_SOLD
+	ifequal 1, .OneBigMushroom
+	writetext SellingBigMushroomsText
+	waitbutton
+.loop_bigmushroom
+	givemoney YOUR_MONEY, 5000
+	checkcode VAR_MUSHROOMS_SOLD
+	addvar -1
+	writevarcode VAR_MUSHROOMS_SOLD
+
+	checkcode VAR_MUSHROOMS_SOLD
+	ifgreater 0, .loop_bigmushroom
+
+	special PlaceMoneyTopRight
+	playsound SFX_TRANSACTION
+	waitsfx
+	checkitem TINYMUSHROOM
+	iftrue .Selling
+	checkitem BIG_MUSHROOM
+	iftrue .Selling
+.NoMoreMushrooms
+	writetext MushroomManThanksText
+	waitbutton
+	closetext
+	end
+
+.OneTinyMushroom
+	writetext SellingOneTinyMushroomText
+	waitbutton
+	jump .loop_tinymushroom
+
+.OneBigMushroom
+	writetext SellingOneBigMushroomText
+	waitbutton
+	jump .loop_bigmushroom
+
+.Cancel
+	writetext MushroomManCancelText
+	waitbutton
+	closetext
+	end
+
+.NoMushrooms
+	writetext MushroomManNoMushroomsText
+	waitbutton
+	closetext
+	end
 
 PokemonLeagueCafeGymGuyScript:
 	jumptextfaceplayer PokemonLeagueCafeGymGuyText
@@ -112,6 +202,8 @@ PokemonLeagueCafeFood:
 	jumptext PokemonLeagueCafeFoodText
 	
 PokemonLeagueCafeAbandonedFood:
+	giveitem TINYMUSHROOM, 20
+	giveitem BIG_MUSHROOM, 20
 	jumptext PokemonLeagueCafeAbandonedFoodText
 
 PokemonLeagueCafeTrash:
@@ -145,19 +237,111 @@ PokemonLeagueCafeVendingNoSpaceText:
 	line "room for stuff…"
 	done
 
-PokemonLeagueCafeChefText:
-	text "Hey! What can I"
-	line "get you?"
-	
-	para "……………"
-	
-	para "I don't make any"
-	line "#MON food, but"
-	cont "our bar serves"
-	cont "lots of drinks"
-	cont "that #MON find"
-	cont "delicious!"
+MushroomManIntroductionText:
+	text "As a CHEF, I am"
+	line "always on the"
+	cont "lookout for the"
+	cont "best ingredients."
+
+	para "I found the most"
+	line "flavorful of them"
+	cont "all are MUSHROOMs."
+
+	para "BIG or TINY, I am"
+	line "looking to buy all"
+	cont "that I can."
+
+	para "I'm even willing to"
+	line "pay a premium for"
+	cont "them!"
 	done
+
+MushroomManHaveMushroomsText:
+	text "Oh, you have some"
+	line "MUSHROOMs to sell"
+	cont "me? Let me see!"
+	done
+
+SellingOneTinyMushroomText:
+	text "Let's see…"
+	
+	para "One TINYMUSHROOM?"
+
+	para "I'll give you"
+	line "¥500 for it."
+	done
+
+SellingOneBigMushroomText:
+	text "Let's see…"
+	
+	para "One BIG MUSHROOM?"
+
+	para "I'll give you"
+	line "¥5000 for it."
+	done
+
+SellingTinyMushroomsText:
+	text "Let's see…"
+	
+	para "@"
+	deciram wMushroomQuantity, 1, 2
+	text " TINYMUSHROOMs"
+	line "for ¥500 apiece?"
+
+	para "Can do!"
+	done
+
+SellingBigMushroomsText:
+	text "Let's see…"
+	
+	para "@"
+	deciram wMushroomQuantity, 1, 2
+	text " BIG MUSHROOMs"
+	line "for ¥5000 apiece?"
+
+	para "Can do!"
+	done
+
+MushroomManThanksText:
+	text "Thank you so much!"
+
+	para "I can tell that my"
+	line "dishes will only"
+	cont "be improved with"
+	cont "this batch!"
+
+	para "I'm your man if you"
+	line "come across any"
+	cont "more MUSHROOMs!"
+	done
+
+MushroomManCancelText:
+	text "Oh, okay."
+
+	para "You must want to"
+	line "cook them on your"
+	cont "own, I understand."
+
+	para "I hope those"
+	line "MUSHROOMs turn out"
+	cont "well for you!"
+	done
+
+MushroomManNoMushroomsText:
+	text "Hm… No. That won't"
+	line "do!"
+
+	para "I only want to buy"
+	line "MUSHROOMs!"
+
+	para "If you find any,"
+	line "bring them to me."
+
+	para "I heard PARAS and"
+	line "PARASECT can be"
+	cont "found holding them"
+	cont "sometimes."
+	done 
 
 PokemonLeagueCafeGymGuyText:
 	text "Yo! Champ in the"

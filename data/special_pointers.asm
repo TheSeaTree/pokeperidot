@@ -126,6 +126,7 @@ SpecialsPointers::
 	add_special CheckOwnedMon
 	add_special SelectFossilsMenu
 	add_special StartShinyEncounterTimer
+	add_special SelectMushroomForMushroomMan
 
 ; Crystal only
 	add_special Function11ac3e

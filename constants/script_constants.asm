@@ -67,6 +67,7 @@ NUM_MEM_BUFFERS EQU const_value
 	const VAR_ITEM_POCKET      ; 1b
 	const VAR_BALL_POCKET      ; 1c
 	const VAR_SUBWAY_SET       ; 1d
+	const VAR_MUSHROOMS_SOLD   ; 1e
 NUM_VARS EQU const_value       ; 1f
 
 ; variable action types
@@ -177,7 +178,7 @@ EMOTE_FROM_MEM EQU -1
 	const FRUITTREE_STAGHORN_TOWN ; 04
 	const FRUITTREE_ROUTE_30_2    ; 05
 	const FRUITTREE_ROUTE_33      ; 06
-	const FRUITTREE_ROUTE_31      ; 07
+	const FRUITTREE_ROUTE_25      ; 07
 	const FRUITTREE_SEA_ROUTE_3   ; 08
 	const FRUITTREE_VIOLET_CITY_1 ; 09
 	const FRUITTREE_CIANWOOD_CITY ; 0a
