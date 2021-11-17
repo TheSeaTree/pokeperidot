@@ -22,7 +22,10 @@ PectiniaSubwayCooltrainer:
 
 PectiniaSubwayTeacher:
 	jumptext PectiniaSubwayTeacherText
-	
+
+BattleSubwayBlock:
+	jumptextfaceplayer BattleSubwayBlockText
+
 AwakeningGuy:
 	jumptextfaceplayer AwakeningGuyText
 
@@ -38,14 +41,14 @@ PectiniaDollStoreSign:
 AwakeningGuyText:
 	text "How well do you"
 	line "sleep at night?"
-	
+
 	para "DOWZEE's SLUMBER"
 	line "SHACK guarantees"
 	cont "you will sleep so"
 	cont "soundly, you will"
 	cont "need an AWAKENING"
 	cont "in the morning."
-	
+
 	para "Act now and we"
 	line "will include an"
 	cont "AWAKENING with"
@@ -61,33 +64,46 @@ PectiniaSubwayLassText:
 	cont "people who pass"
 	cont "through here."
 	done
-	
+
 PectiniaSubwayBugCatcherText:
 	text "Wow! Look at how"
 	line "big that LAPRAS"
 	cont "DOLL is!"
 	done
-	
+
 PectiniaSubwayCooltrainerText:
 	text "The shops upstairs"
 	line "sell all kinds of"
 	cont "furnishing for"
 	cont "your room."
-	
+
 	para "I'm just here for"
 	line "the BATTLE SUBWAY."
 	done
-	
+
 PectiniaSubwayTeacherText:
 	text "Every time I visit"
 	line "here, I toss a few"
 	cont "coins into one of"
 	cont "the fountains for"
 	cont "good luck."
-	
+
 	para "But don't mind me,"
 	line "I'm just a super-"
 	cont "stitious woman."
+	done
+
+BattleSubwayBlockText:
+	text "The BATTLE SUBWAY"
+	line "is not open to the"
+	cont "public just yet."
+
+	para "The shops on the"
+	line "next floor are all"
+	cont "open for business."
+
+	para "Feel free to visit"
+	line "any of those!"
 	done
 
 BattleSubwayEntranceSignText:
@@ -122,10 +138,11 @@ PectiniaTrainStation_MapEvents:
 	bg_event 13,  0, BGEVENT_READ, PectiniaBedStoreSign
 	bg_event  4,  0, BGEVENT_READ, PectiniaDollStoreSign
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  8,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaSubwayLass, -1
 	object_event  5,  1, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaSubwayBugCatcher, -1
 	object_event 10, 13, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaSubwayCooltrainer, -1
 	object_event  4, 16, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaSubwayTeacher, -1
 	object_event 15,  2, SPRITE_CLERK, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AwakeningGuy, -1
 	object_event  9,  1, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  9,  9, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSubwayBlock, -1 ; Remove after getting access to BP.
