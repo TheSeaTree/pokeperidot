@@ -155,12 +155,15 @@ CoastalLabUnownBook:
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse IllegibleUnownBook
 	jumptext CoastalLabUnownBookText
-	
+
 CoastalLabDifficultBook:
 	jumptext CoastalLabDifficultBooksText
 	
 IllegibleUnownBook:
 	jumptext IllegibleUnownBookText
+
+CoastalLabTapeReels:
+	jumptext CoastalLabTapeReelsText
 
 CoastalLabPokeBall:
 	jumptext CoastalLabPokeBallText
@@ -383,7 +386,16 @@ IllegibleUnownBookText:
 	para "Its impossible to"
 	line "read any of it!"
 	done
-	
+
+CoastalLabTapeReelsText:
+	text "The PC is connect-"
+	line "ed to the machine."
+
+	para "The reels spin"
+	line "every once in a"
+	cont "while."
+	done
+
 CoastalLabBirdsBookText:
 	text "This notebook is"
 	line "titled 'LEGENDARY"
@@ -572,11 +584,12 @@ CoastalLab_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event  6,  5, BGEVENT_UP, CoastalLabBirdsBook
 	bg_event  7,  5, BGEVENT_UP, CoastalLabBeastsBook
 	bg_event  8,  5, BGEVENT_UP, CoastalLabLugiaHoOhBook
 	bg_event  6,  1, BGEVENT_UP, CoastalLabUnownBook
+	bg_event  2,  1, BGEVENT_UP, CoastalLabTapeReels
 
 	db 6 ; object events
 	object_event  0,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrScript, -1
