@@ -6,7 +6,7 @@ LugiaLair_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .SpawnRealLugia
-	
+
 .SpawnRealLugia:
 	writebyte LUGIA
 	special CheckOwnedMon
@@ -50,7 +50,7 @@ Lugia:
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
 	end
-	
+
 .BossLugia:
 	loadwildmon LUGIA, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
@@ -61,6 +61,7 @@ Lugia:
 	special InitRoamMoltres
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
+	setevent EVENT_ROAMING_BIRDS
 	end
 	
 LugiaText:
