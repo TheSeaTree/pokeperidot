@@ -279,22 +279,7 @@ DoPlayerMovement::
 	call .RunCheck
 	jr z, .walk
 	call .BikeCheck
-	jr nz, .walk
-
-	ld a, [wWalkingDirection]
-	cp DOWN
 	jr z, .fast
-
-	ld a, STEP_ICE
-	call .DoStep
-	scf
-	ret
-
-.fast
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
 
 .walk
 	ld hl, wPokegearFlags
@@ -312,6 +297,12 @@ DoPlayerMovement::
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	ld a, STEP_WALK
+	call .DoStep
+	scf
+	ret
+
+.fast
+	ld a, STEP_BIKE
 	call .DoStep
 	scf
 	ret
