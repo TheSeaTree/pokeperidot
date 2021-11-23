@@ -15,20 +15,6 @@ DoPlayerMovement::
 
 	ldh a, [hJoyDown]
 	ld [wCurInput], a
-
-; Standing downhill instead moves down.
-
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_DOWNHILL_F, [hl]
-	ret z
-
-	ld c, a
-	and D_PAD
-	ret nz
-
-	ld a, c
-	or D_DOWN
-	ld [wCurInput], a
 	ret
 
 .TranslateIntoMovement:
@@ -294,10 +280,6 @@ DoPlayerMovement::
 	jr z, .walk
 	call .BikeCheck
 	jr nz, .walk
-
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_DOWNHILL_F, [hl]
-	jr z, .fast
 
 	ld a, [wWalkingDirection]
 	cp DOWN

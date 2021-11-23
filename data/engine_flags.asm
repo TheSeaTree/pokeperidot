@@ -42,7 +42,7 @@ EngineFlags:
 
 	engine_flag wBikeFlags, BIKEFLAGS_STRENGTH_ACTIVE_F ; $18
 	engine_flag wBikeFlags, BIKEFLAGS_ALWAYS_ON_BIKE_F
-	engine_flag wBikeFlags, BIKEFLAGS_DOWNHILL_F
+	engine_flag wBikeFlags, BIKEFLAGS_ROCK_SMASH_ACTIVE_F
 
 	engine_flag wJohtoBadges, ZEPHYRBADGE
 	engine_flag wJohtoBadges, HIVEBADGE

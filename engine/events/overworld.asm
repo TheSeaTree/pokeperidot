@@ -1435,6 +1435,7 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
+	setflag ENGINE_ROCK_SMASH_ACTIVE
 	callasm GetPartyNick
 	writetext UnknownText_0xcf58
 	closetext
@@ -1477,6 +1478,8 @@ AskRockSmashScript:
 	iffalse .no
 
 	opentext
+	checkflag ENGINE_ROCK_SMASH_ACTIVE
+	iftrue RockSmashScript
 	writetext UnknownText_0xcf77
 	yesorno
 	iffalse .end
@@ -1484,6 +1487,7 @@ AskRockSmashScript:
 	closetext
 	end
 .no
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
 	jumptext UnknownText_0xcf72
 .end
 	closetext

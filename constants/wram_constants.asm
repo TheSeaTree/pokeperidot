@@ -256,9 +256,9 @@ CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 
 ; wBikeFlags:: ; dbf5
 	const_def
-	const BIKEFLAGS_STRENGTH_ACTIVE_F ; 0
-	const BIKEFLAGS_ALWAYS_ON_BIKE_F  ; 1
-	const BIKEFLAGS_DOWNHILL_F        ; 2
+	const BIKEFLAGS_STRENGTH_ACTIVE_F	; 0
+	const BIKEFLAGS_ALWAYS_ON_BIKE_F	; 1
+	const BIKEFLAGS_ROCK_SMASH_ACTIVE_F ; 2
 
 ; wDailyFlags1:: ; dc1e
 	const_def
