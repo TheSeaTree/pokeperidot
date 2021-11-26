@@ -91,8 +91,13 @@ TrainerHouseBattleRegistration:
 	moveobject TRAINERHOUSE_TRAINER1, 15, 0
 	appear TRAINERHOUSE_TRAINER1
 	applymovement TRAINERHOUSE_TRAINER1, TrainerHouseTrainerApproachMovement
-	
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
+
+	opentext
+	writetext PokefanFeliciaText
+	waitbutton
+	closetext
+
+	winlosstext PokefanFeliciaWinText, PokefanFeliciaLossText
     loadtrainer POKEFANF, FELICIA
 
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
@@ -112,7 +117,12 @@ TrainerHouseBattleRegistration:
 	appear TRAINERHOUSE_TRAINER2
 	applymovement TRAINERHOUSE_TRAINER2, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
+	opentext
+	writetext PokefanIrvingText
+	waitbutton
+	closetext
+
+	winlosstext PokefanIrvingWinText, PokefanIrvingLossText
     loadtrainer POKEFANM, IRVING
 	
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
@@ -132,7 +142,12 @@ TrainerHouseBattleRegistration:
 	appear TRAINERHOUSE_TRAINER3
 	applymovement TRAINERHOUSE_TRAINER3, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
+	opentext
+	writetext GentlemanRonText
+	waitbutton
+	closetext
+
+	winlosstext GentlemanRonWinText, GentlemanRonLossText
     loadtrainer GENTLEMAN, RON
 	
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
@@ -152,7 +167,12 @@ TrainerHouseBattleRegistration:
 	appear TRAINERHOUSE_TRAINER4
 	applymovement TRAINERHOUSE_TRAINER4, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
+	opentext
+	writetext TeacherCeceliaText
+	waitbutton
+	closetext
+
+	winlosstext TeacherCeceliaWinText, TeacherCeceliaLossText
     loadtrainer TEACHER, CECELIA
 
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
@@ -192,7 +212,12 @@ TrainerHouseBattleRegistration:
 	appear TRAINERHOUSE_TRAINER6
 	applymovement TRAINERHOUSE_TRAINER6, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
+	opentext
+	writetext BeautyGraceText
+	waitbutton
+	closetext
+
+	winlosstext BeautyGraceWinText, BeautyGraceLossText
     loadtrainer BEAUTY, GRACE
 
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
@@ -566,6 +591,111 @@ TrainerHouseNoRoomForPrizeText:
 	line "while you make"
 	cont "some room in your"
 	cont "PACK."
+	done
+
+PokefanFeliciaText:
+	text "My babies are very"
+	line "tough. I've raised"
+	cont "them strictly."
+	done
+
+PokefanFeliciaWinText:
+	text "I have been too"
+	line "lenient with my"
+	cont "#MON."
+	done
+
+PokefanFeliciaLossText:
+	text "See, babies?"
+
+	para "That's what happens"
+	line "when we work hard!"
+
+	para "I'm so proud!"
+	done
+
+PokefanIrvingText:
+	text "I sell all of my"
+	line "prizes to buy lots"
+	cont "of BERRIES!"
+	done
+
+PokefanIrvingWinText:
+	text "That's just great."
+
+	para "Now I'll have to"
+	line "go pick my own"
+	cont "BERRIES…"
+	done
+
+PokefanIrvingLossText:
+	text "Ooh, I'll be able"
+	line "to afford some"
+	cont "good ones after"
+	cont "this win!"
+	done
+
+GentlemanRonText:
+	text "Can we make this"
+	line "quick? I have a"
+	cont "packed schedule."
+	done
+
+GentlemanRonWinText:
+	text "I didn't want the"
+	line "fight to end that"
+	cont "quick."
+	done
+
+GentlemanRonLossText:
+	text "You should have"
+	line "thrown in the"
+	cont "towel sooner."
+
+	para "Now I'm going to be"
+	line "late for my appoi-"
+	cont "ntment."
+	done
+
+TeacherCeceliaText:
+	text "Today's lesson:"
+
+	para "How to lose with"
+	line "dignity."
+	done
+
+TeacherCeceliaWinText:
+	text "Good thing I'm not"
+	line "a LASS anymore."
+
+	para "I would be graded"
+	line "so harshly!"
+	done
+
+TeacherCeceliaLossText:
+	text "Have your MOM sign"
+	line "this form and"
+	cont "return it to me."
+	done
+
+BeautyGraceText:
+	text "I'm training to be"
+	line "a #MON NURSE."
+
+	para "Let me damage your"
+	line "#MON so I can"
+	cont "make them healthy"
+	cont "afterward!"
+	done
+
+BeautyGraceWinText:
+	text "I need a doctor!"
+	done
+
+BeautyGraceLossText:
+	text "I hope I didn't"
+	line "hurt your #MON"
+	cont "too badly!"
 	done
 
 TrainerHousePlaceholderWinText:
