@@ -188,3 +188,11 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; bb
 	tilecoll WATER, WATER, BUOY, BUOY ; bc
 	tilecoll BUOY, BUOY, WATER, WATER ; bd
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; be
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; bf
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; c0
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c1
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c2
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; c3
+	tilecoll WALL, HEADBUTT_TREE, WALL, WARP_PANEL ; c4
+	tilecoll HEADBUTT_TREE, WALL, WARP_PANEL, WALL ; c5

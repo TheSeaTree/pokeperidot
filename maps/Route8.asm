@@ -5,15 +5,18 @@ Route8_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .SmashWall
+	callback MAPCALLBACK_TILES, .SmashWallWarpPanel
 
-.SmashWall:
+.SmashWallWarpPanel:
 	checkevent EVENT_ROUTE_8_HIDDEN_CAVE_OPEN
+	iffalse .skipcave
+	changeblock  22,  4, $73
+.skipcave
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .skip
-	changeblock   22, 4, $73
+	changeblock  16, 58, $c5
 .skip
 	return
-
 
 TrainerSwimmerKait:
 	trainer SWIMMERF, KAIT, EVENT_BEAT_SWIMMERF_KAIT, SwimmerKaitText, SwimmerKaitWinText, 0, .Script
@@ -229,7 +232,7 @@ Route8UndergroundPathSignText:
 Route8_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 8 ; warp events
 	warp_event 31, 21, ROUTE_6_UNDERGROUND, 7
 	warp_event  4, 58, ROUTE_8_FAVIA_GATE, 3
 	warp_event  4, 59, ROUTE_8_FAVIA_GATE, 4
@@ -237,6 +240,7 @@ Route8_MapEvents:
 	warp_event 33, 51, ROUTE_8_ROUTE_10_GATE, 2
 	warp_event 15, 45, ROUTE_8_SILK_SCARF_HOUSE, 1
 	warp_event 22,  5, ROUTE_8_HIDDEN_CAVE, 1
+	warp_event 16, 59, FAVIA_TOWN, 11
 	
 	db 0 ; coord events
 

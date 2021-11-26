@@ -194,3 +194,5 @@
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; c1
 	tilecoll FLOOR, FLOOR, FLOOR, WALL ; c2
 	tilecoll FLOOR, FLOOR, WALL, FLOOR ; c3
+	tilecoll WALL, WALL, WALL, WARP_PANEL ; c4
+	tilecoll WALL, WALL, WARP_PANEL, WALL ; c5

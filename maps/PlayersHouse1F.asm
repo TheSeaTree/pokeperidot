@@ -4,11 +4,13 @@
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
 	const PLAYERSHOUSE1F_GRANNY
+	const PLAYERSHOUSE1F_MAPLE
 
 PlayersHouse1F_MapScripts:
-	db 2 ; scene scripts
-	scene_script .DummyScene0 ; SCENE_DEFAULT
-	scene_script .DummyScene1 ; SCENE_FINISHED
+	db 3 ; scene scripts
+	scene_script .DummyScene0 ; SCENE_PLAYERSHOUSE1F_DEFAULT
+	scene_script .DummyScene1 ; SCENE_PLAYERSHOUSE1F_FINISHED
+	scene_script .PostGameScene ; SCENE_PLAYERSHOUSE1F_POSTGAME
 
 	db 0 ; callbacks
 
@@ -16,6 +18,19 @@ PlayersHouse1F_MapScripts:
 	end
 
 .DummyScene1:
+	end
+
+.PostGameScene:
+	; Event involving Prof. Maple upgrading the player's trainer card.
+	applymovement PLAYER, Postgame_PlayerApproachMom
+	moveobject PLAYERSHOUSE1F_MAPLE, 6, 7
+	appear PLAYERSHOUSE1F_MAPLE
+	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleApproachPlayer
+	turnobject PLAYER, DOWN
+	setflag ENGINE_HAVE_BATTLE_PASS
+	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleLeaveHouse
+	disappear PLAYERSHOUSE1F_MAPLE
+	setscene SCENE_FINISHED
 	end
 
 MeetMomScript:
@@ -145,7 +160,7 @@ TownMapSceneLeft:
 	scall TownMapPocketWatchScript
 	applymovement PLAYER, MovementData_MoveForGranny
 	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave1
-	setscene SCENE_FINISHED
+	setscene SCENE_PLAYERSHOUSE1F_FINISHED
 	playsound SFX_ENTER_DOOR
 	disappear PLAYERSHOUSE1F_GRANNY
 	waitsfx
@@ -166,7 +181,7 @@ TownMapSceneRight:
 	applymovement PLAYERSHOUSE1F_GRANNY, GrannyWalksToPlayerRight
 	scall TownMapPocketWatchScript
 	applymovement PLAYERSHOUSE1F_GRANNY, MovementData_GrannyLeave2
-	setscene SCENE_FINISHED
+	setscene SCENE_PLAYERSHOUSE1F_FINISHED
 	playsound SFX_ENTER_DOOR
 	disappear PLAYERSHOUSE1F_GRANNY
 	waitsfx
@@ -249,7 +264,28 @@ MovementData_MoveForGranny:
 	step RIGHT
 	turn_step LEFT
 	step_end
-	
+
+Postgame_PlayerApproachMom:
+	step DOWN
+	step DOWN
+	step LEFT
+	step_end
+
+Postgame_MapleApproachPlayer:
+	step UP
+	step UP
+	step RIGHT
+	step RIGHT
+	step UP
+	step_resume
+
+Postgame_MapleLeaveHouse:
+	step DOWN
+	step DOWN
+	step LEFT
+	step DOWN
+	step_resume
+
 BoyText:
 	text "I can't believe my"
 	line "baby is ready to"
@@ -530,8 +566,8 @@ PlayersHouse1F_MapEvents:
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	db 2 ; coord events
-	coord_event  6,  7, SCENE_DEFAULT, TownMapSceneLeft
-	coord_event  7,  7, SCENE_DEFAULT, TownMapSceneRight
+	coord_event  6,  7, SCENE_PLAYERSHOUSE1F_DEFAULT, TownMapSceneLeft
+	coord_event  7,  7, SCENE_PLAYERSHOUSE1F_DEFAULT, TownMapSceneRight
 
 	db 4 ; bg events
 	bg_event  0,  1, BGEVENT_READ, StoveScript
@@ -539,9 +575,10 @@ PlayersHouse1F_MapEvents:
 	bg_event  2,  1, BGEVENT_READ, FridgeScript
 	bg_event  4,  1, BGEVENT_READ, TVScript
 
-	db 5 ; object events
+	db 6 ; object events
 	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
 	object_event  2,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  0,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
+	object_event -4, -4, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

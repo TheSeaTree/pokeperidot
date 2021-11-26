@@ -331,6 +331,7 @@ FaviaGroupSprites:
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
 	db SPRITE_TEACHER
+	db SPRITE_SCIENTIST
 	db 0 ; end
 
 ; OceanCity and Route40 are connected

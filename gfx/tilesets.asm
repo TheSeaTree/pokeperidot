@@ -41,9 +41,6 @@ INCBIN "data/tilesets/players_room_metatiles.bin"
 TilesetPlayersRoomColl:
 INCLUDE "data/tilesets/players_room_collision.asm"
 
-TilesetLighthouseAttr:
-INCBIN "data/tilesets/lighthouse_attributes.bin"
-
 
 SECTION "Tileset Data 2", ROMX
 
@@ -73,6 +70,9 @@ INCBIN "data/tilesets/mansion_metatiles.bin"
 
 TilesetMansionColl:
 INCLUDE "data/tilesets/mansion_collision.asm"
+
+TilesetLighthouseAttr:
+INCBIN "data/tilesets/lighthouse_attributes.bin"
 
 
 SECTION "Tileset Data 3", ROMX
@@ -335,7 +335,6 @@ INCBIN "data/tilesets/ice_path_attributes.bin"
 
 TilesetVolcanoAttr:
 INCBIN "data/tilesets/volcano_attributes.bin"
-
 
 SECTION "Tileset Data 10", ROMX
 

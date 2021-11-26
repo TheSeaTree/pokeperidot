@@ -5,25 +5,41 @@
 	const GOLDENROD_LASS
 	const GOLDENROD_YOUNGSTER
 	const FAVIA_FANGIRL
+	const FAVIA_SCIENTIST
 
 FaviaTown_MapScripts:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
+	scene_script .DummyScene0 ; SCENE_FAVIATOWN_HAVE_EGG
 	
-	db 2 ; callbacks
+	db 3 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPointAndFloria
-	callback MAPCALLBACK_OBJECTS, .EggCheckCallback
+	callback MAPCALLBACK_OBJECTS, .EggCheckAndScientist
+	callback MAPCALLBACK_TILES, .WarpPanel
 
 .DummyScene0:
 	end
 	
 .DummyScene1:
 	end
-	
+
+.WarpPanel:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .NoPanel
+	changeblock 2, 18, $c4
+.NoPanel
+	return
+
 .FlyPointAndFloria:
 	setflag ENGINE_FLYPOINT_FAVIA
 	return
+
+.EggCheckAndScientist:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .EggCheckCallback
+	moveobject FAVIA_SCIENTIST, 4, 18
+	appear FAVIA_SCIENTIST
 
 .EggCheckCallback:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_EGG
@@ -35,7 +51,12 @@ FaviaTown_MapScripts:
 .PutDayCareManOutside:
 	setevent EVENT_DAY_CARE_MAN_IN_DAY_CARE
 	clearevent EVENT_DAY_CARE_MAN_ON_ROUTE_34
-	jump .CheckMon1
+	checkscene
+	ifnotequal SCENE_DEFAULT, .DontChangeScene
+	setscene SCENE_FAVIATOWN_HAVE_EGG
+.DontChangeScene
+	return
+;	jump .CheckMon1
 
 .CheckMon1:
 	checkflag ENGINE_DAY_CARE_MAN_HAS_MON
@@ -58,7 +79,13 @@ FaviaTown_MapScripts:
 .HideMon2:
 	setevent EVENT_DAY_CARE_MON_2
 	return
-	
+
+DayCareManStopPlayer:
+	faceobject PLAYER, ROUTE34_GRAMPS
+	scall DayCareManScript_Outside
+	setscene SCENE_DEFAULT
+	end
+
 DayCareManScript_Outside:
 	faceplayer
 	opentext
@@ -113,7 +140,10 @@ FaviaLassScript:
 	
 FaviaLadScript:
 	jumptextfaceplayer FaviaLadText
-	
+
+FaviaPostgameScientistScript:
+	jumptextfaceplayer FaviaPostgameScientistText
+
 FaviaGymEvent:
 	checkflag ENGINE_MYSTICBADGE
 	iftrue .havebadge
@@ -263,6 +293,22 @@ FaviaLadText:
 	cont "those robes."
 	done
 
+FaviaPostgameScientistText:
+	text "Hey, I'm ADRIAN,"
+	line "from the GYM here"
+	cont "in town."
+
+	para "The trial run for"
+	line "the teleporter was"
+	cont "so successful, I"
+	cont "wanted to try it"
+	cont "out here in town."
+
+	para "This panel will"
+	line "instantly take you"
+	cont "right to ROUTE 7!"
+	done
+
 DayCareSignText:
 	text "DAY-CARE"
 
@@ -352,7 +398,7 @@ FaviaTownSignText:
 FaviaTown_MapEvents:
 	db 0, 0 ; filler
 
-	db 10 ; warp events
+	db 11 ; warp events
 	warp_event 19, 15, FAVIA_POKECENTER_1F, 1
 	warp_event 21, 25, FAVIA_MART, 1
 	warp_event 13,  6, FAVIA_GYM, 1 ;	warp_event 12,  7, GOLDENROD_GYM, 1
@@ -363,10 +409,12 @@ FaviaTown_MapEvents:
 	warp_event 25, 18, ROUTE_8_FAVIA_GATE, 1
 	warp_event 25, 19, ROUTE_8_FAVIA_GATE, 2
 	warp_event  5,  5, ROUTE_11_FAVIA_GATE, 3
+	warp_event  3, 19, ROUTE_8, 8
 
-	db 2 ; coord events
+	db 3 ; coord events
 	coord_event 24, 26, SCENE_FINISHED, FaviaFangirlScene
 	coord_event 24, 27, SCENE_FINISHED, FaviaFangirlScene
+	coord_event  8, 19, SCENE_FAVIATOWN_HAVE_EGG, DayCareManStopPlayer
 
 	db 7 ; bg events
 	bg_event 10, 18, BGEVENT_READ, DayCareSign
@@ -377,10 +425,11 @@ FaviaTown_MapEvents:
 	bg_event 21,  8, BGEVENT_ITEM, FaviaHiddenRareCandy
 	bg_event 12,  7, BGEVENT_UP,   FaviaGymEvent
 	
-	db 6 ; object events
+	db 7 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event  6, 14, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event  4, 15, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
 	object_event  6, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaLassScript, -1
 	object_event 11, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaLadScript, -1
 	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaPostgameScientistScript, -1
