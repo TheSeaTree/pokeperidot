@@ -52,6 +52,9 @@ Script_BattleRoomLoop:
 	special FadeOutPalettes
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
+
+	special BattleSubway_IncreaseCurrentStreak
+
 	copybytetovar wNrOfBeatenBattleTowerTrainers
 ;	ifequal 1, Script_BeatenAllTrainers
 	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
@@ -86,7 +89,7 @@ Script_DontBattleNextOpponent:
 	special BattleTowerAction
 	writebyte BATTLETOWERACTION_SAVE_AND_QUIT ; quicksave
 	special BattleTowerAction
-	
+
 	warpcheck
 	end
 

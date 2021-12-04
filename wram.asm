@@ -2529,9 +2529,11 @@ wTradeFlags:: flag_array NUM_NPC_TRADES ; d960
 wMooMooBerries:: db ; d962
 wTrainerHouseStreak:: db ; d963
 wFarfetchdPosition:: db ; d964
-wBattleSubwaySet:: db ; d964
+wBattleSubwaySet:: db
+wBattleSubwayCurStreak:: dw
+wBattleSubwayBestStreak:: dw
 
-	ds 12
+	ds 8
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972

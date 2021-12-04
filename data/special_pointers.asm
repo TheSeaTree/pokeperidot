@@ -195,3 +195,6 @@ SpecialsPointers::
 	add_special CheckStolenTrickMirror
 	add_special LoadPokemonData
 	add_special DropOffParty
+	add_special BattleSubway_IncreaseCurrentStreak
+	add_special BattleSubway_CompareStreaks
+	add_special BattleSubway_ResetCurrentStreak

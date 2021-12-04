@@ -1606,3 +1606,65 @@ CheckForBattleTowerRules:
 .asm_170be0
 	ld [wScriptVar], a
 	ret
+
+BattleSubway_ResetCurrentStreak:
+	ld a, 0 / $100
+	ld [wBattleSubwayCurStreak], a
+	ld a, 0 % $100
+	ld [wBattleSubwayCurStreak + 1], a
+	ret
+
+BattleSubway_IncreaseCurrentStreak:
+	call .CheckMaxStreak
+	ret c
+
+	ld a, [wBattleSubwayCurStreak]
+	ld h, a
+	ld a, [wBattleSubwayCurStreak + 1]
+	ld l, a
+	inc hl
+	ld a, h
+	ld [wBattleSubwayCurStreak], a
+	ld a, l
+	ld [wBattleSubwayCurStreak + 1], a
+	ret
+
+.CheckMaxStreak
+; Stop counting at 9999 wins.
+	ld a, [wBattleSubwayCurStreak]
+	cp HIGH(MAX_COINS)
+	jr c, .less
+	jr z, .check_low
+	jr .more
+
+.check_low
+	ld a, [wBattleSubwayCurStreak + 1]
+	cp LOW(MAX_COINS)
+	jr c, .less
+
+.more
+	scf
+	ret
+
+.less
+	and a
+	ret
+
+BattleSubway_CompareStreaks:
+	ld a, [wBattleSubwayCurStreak + 1]
+	ld c, a
+	ld a, [wBattleSubwayCurStreak]
+	ld b, a
+	ld a, [wBattleSubwayBestStreak + 1]
+	cp c
+	ld a, [wBattleSubwayBestStreak]
+	sbc b
+
+	ret nc
+	ret z
+; Copy current streak to best if it's higher.
+	ld a, [wBattleSubwayCurStreak]
+	ld [wBattleSubwayBestStreak], a
+	ld a, [wBattleSubwayCurStreak + 1]
+	ld [wBattleSubwayBestStreak + 1], a
+	ret

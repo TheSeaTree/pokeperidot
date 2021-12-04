@@ -16,6 +16,7 @@ BattleSubwayPlatform_MapScripts:
 	db 0 ; callbacks
 
 .Scene0:
+	faceobject BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
 	writebyte BATTLETOWERACTION_CHECKSAVEFILEISYOURS
 	special BattleTowerAction
 	iffalse .SkipEverything
@@ -40,14 +41,22 @@ BattleSubwayPlatform_MapScripts:
 ;	writebyte BATTLETOWERACTION_06
 ;	special BattleTowerAction
 .SkipEverything:
+	checkcode VAR_XCOORD
+	ifgreater 11, .QuitWithoutSaving
 	setscene SCENE_FINISHED
 .Scene1:
 	end
-	
+
+.QuitWithoutSaving
+	priorityjump BattleTower_LeftWithoutSaving2
+	setscene SCENE_FINISHED
+	end
+
 .Scene2:
-	setscene SCENE_DEFAULT
 	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
-	turnobject PLAYER, RIGHT
+	applymovement PLAYER, MovementData_BattleTowerElevatorExitElevator
+	setscene SCENE_DEFAULT
+;	turnobject PLAYER, RIGHT
 	opentext
 
 	writebyte BATTLETOWERACTION_SAVELEVELGROUP ; save level group
@@ -60,7 +69,6 @@ BattleSubwayPlatform_MapScripts:
 	special DoQuickSave
 	special Reset
 	end
-	
 
 BattleSubwayPrizeGirl:
 	opentext
@@ -78,7 +86,14 @@ BattleSubwayRulesSign:
 .skip:
 	closetext
 	end
-	
+
+BattleSubwayCurStreak:
+	jumptext BattleSubwayCurrentStreakText
+	end
+
+BattleSubwayBestStreak:
+	jumptext BattleSubwayBestStreakText
+
 Script_WalkTowardConductorTop:
 	faceplayer
 	opentext
@@ -256,6 +271,8 @@ BattleTower_LeftWithoutSaving:
 	opentext
 	writetext Text_BattleTower_LeftWithoutSaving
 	waitbutton
+	special BattleSubway_CompareStreaks
+	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
 	jump Script_BattleTowerHopeToServeYouAgain
 	
@@ -279,8 +296,10 @@ BattleTower_LeftWithoutSaving2:
 	opentext
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
 
-	special DoQuickSave
+	special BattleSubway_CompareStreaks
+	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
+	special DoQuickSave
 	jump Script_BattleTowerHopeToServeYouAgain
 
 Script_BeatenAllTrainers2:
@@ -302,6 +321,8 @@ Script_BeatenAllTrainers2:
 	appear BATTLESUBWAYPLATFORM_OFFICER1
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	turnobject BATTLESUBWAYPLATFORM_OFFICER2, LEFT
+
+	special BattleSubway_CompareStreaks
 
 	checkcode VAR_SUBWAY_SET
 	ifequal 5, .DefeatedBoss
@@ -371,6 +392,8 @@ Script_FailedBattleTowerChallenge:
 	waitbutton
 	closetext
 
+	special BattleSubway_CompareStreaks
+	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
 	end
 
@@ -396,7 +419,8 @@ MovementData_BattleTowerHallwayPlayerEntersBattleRoom:
 
 MovementData_BattleTowerElevatorExitElevator:
 	step DOWN
-	step_end
+	turn_head RIGHT
+	step_resume
 	
 MovementData_BattleTowerApproachConductor:
 	step UP
@@ -758,6 +782,20 @@ BattleSubwayPlatformPokefanFText:
 	cont "les very serious."
 	done
 
+BattleSubwayCurrentStreakText:
+	text "Current streak:"
+	line "@"
+	deciram wBattleSubwayCurStreak, 2, 5
+	text " battles."
+	done
+
+BattleSubwayBestStreakText:
+	text "Best streak:"
+	line "@"
+	deciram wBattleSubwayBestStreak, 2, 5
+	text " battles."
+	done
+
 BattleSubwayPlatform_MapEvents:
 	db 0, 0 ; filler
 
@@ -773,14 +811,16 @@ BattleSubwayPlatform_MapEvents:
 	coord_event 10,  9, SCENE_FINISHED, Script_WalkTowardConductorBottom
 	coord_event 11,  8, SCENE_FINISHED, Script_WalkTowardConductorRight
 
-	db 1 ; bg events
+	db 3 ; bg events
 	bg_event  6,  6, BGEVENT_READ, BattleSubwayRulesSign
-	
+	bg_event  0,  3, BGEVENT_READ, BattleSubwayBestStreak
+	bg_event  1,  3, BGEVENT_READ, BattleSubwayCurStreak
+
 	db 7 ; object events
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
 	object_event  8,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
 	object_event 10,  7, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Script_Conductor, -1
-	object_event 23,  6, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 23,  6, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
 	object_event  4,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
 	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
