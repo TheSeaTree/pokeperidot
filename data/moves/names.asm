@@ -23,7 +23,7 @@ MoveNames::
 	db "VINE WHIP@"
 	db "ICICLE SPEAR@"
 	db "DOUBLE KICK@"
-	db "RUNIC POWER@" ; MEGA_KICK
+	db "RUNIC POWER@"
 	db "BULK UP@"
 	db "COIL@"
 	db "SAND-ATTACK@"

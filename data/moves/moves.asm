@@ -36,7 +36,7 @@ Moves: ; 41afb
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          20, ICE,      100, 20,   0
 	move DOUBLE_KICK,  EFFECT_DOUBLE_HIT,         30, FIGHTING, 100, 30,   0
-	move MEGA_KICK,    EFFECT_NORMAL_HIT,        120, CURSE_T,  100,  5,   0 ; Replace
+	move RUNIC_POWER,  EFFECT_ALL_UP_HIT,        100, CURSE_T,  100,  5, 100
 	move BULK_UP,      EFFECT_BULK_UP,             0, FIGHTING, 100, 20,   0
 	move COIL,         EFFECT_COIL,                0, POISON,   100, 20,   0
 	move SAND_ATTACK,  EFFECT_ACCURACY_DOWN,       0, GROUND,   100, 15,   0

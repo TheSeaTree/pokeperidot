@@ -17,5 +17,5 @@
 	dn EGG_NONE, EGG_NONE ; egg groups
 
 	; tm/hm learnset
-	tmhm HIDDEN_POWER, MEGA_KICK
+	tmhm HIDDEN_POWER, RUNIC_POWER
 	; end

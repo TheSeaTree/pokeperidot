@@ -1194,9 +1194,21 @@ BattleCommand_Critical:
 	push bc
 	call IsInArray
 	pop bc
-	jr nc, .ScopeLens
+	jr nc, .RunicPower
 
 ; +2 critical level
+	inc c
+	inc c
+
+.RunicPower
+	ld a, BATTLE_VARS_MOVE_ANIM
+	call GetBattleVar
+	cp RUNIC_POWER
+	jr nz, .ScopeLens
+
+; +4 critical level
+	inc c
+	inc c
 	inc c
 	inc c
 

@@ -39,7 +39,7 @@ BattleCommand_Sketch:
 ; Fail if move is invalid or is Struggle.
 	and a
 	jr z, .fail
-	cp MEGA_KICK
+	cp RUNIC_POWER
 	jr z, .fail
 	cp STRUGGLE
 	jr z, .fail

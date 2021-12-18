@@ -292,7 +292,7 @@ ENDM
 	add_mt SWEET_KISS
 	add_mt LOVELY_KISS
 	add_mt DRAIN_KISS
-	add_mt MEGA_KICK
+	add_mt RUNIC_POWER
 	add_mt BODY_SLAM
 	add_mt DRAIN_PUNCH
 	add_mt HEAL_BELL

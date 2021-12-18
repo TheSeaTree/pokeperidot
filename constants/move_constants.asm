@@ -30,7 +30,7 @@
 	const VINE_WHIP    ; 16
 	const ICICLE_SPEAR ; 17
 	const DOUBLE_KICK  ; 18
-	const MEGA_KICK    ; 19
+	const RUNIC_POWER  ; 19
 	const BULK_UP      ; 1a
 	const COIL         ; 1b
 	const SAND_ATTACK  ; 1c
