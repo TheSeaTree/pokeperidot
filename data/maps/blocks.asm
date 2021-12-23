@@ -280,11 +280,20 @@ Route5UndergroundPathEntrance_Blocks:
 KurtsHouse_Blocks:
 	INCBIN "maps/KurtsHouse.ablk"
 
-PectiniaTrainStation_Blocks:
-	INCBIN "maps/PectiniaTrainStation.ablk"
+PectiniaMall_Blocks:
+	INCBIN "maps/PectiniaMall.ablk"
 
 PectiniaBedStore_Blocks:
 	INCBIN "maps/PectiniaBedStore.ablk"
+
+PectiniaCarpetStore_Blocks:
+	INCBIN "maps/PectiniaCarpetStore.ablk"
+
+PectiniaComicStore_Blocks:
+	INCBIN "maps/PectiniaComicStore.ablk"
+
+PectiniaBattleItemStore_Blocks:
+	INCBIN "maps/PectiniaBattleItemStore.ablk"
 
 PectiniaDollStore_Blocks:
 	INCBIN "maps/PectiniaDollStore.ablk"

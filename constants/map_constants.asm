@@ -127,7 +127,7 @@ ENDM
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
 	map_const ACROPORA_CASTLE_HOUSE,                      4,  4
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
-	map_const ROUTE_24_NORTH,							 17, 15
+	map_const ROUTE_24_NORTH,							 18, 14
 	map_const ROUTE_24_SOUTH,							 25, 12
 	map_const ROUTE_25_GATE,							  5,  4
 	map_const ACROPORA_CAVE_1F,                          19, 11
@@ -218,10 +218,10 @@ ENDM
 
 	newgroup                                                      ; 11
 
-	map_const FAVIA_TOWN,                              18, 17 ;  2
+	map_const FAVIA_TOWN,                                 18, 17 ;  2
 	map_const FAVIA_GYM,                                  16, 22 ;  5
 	map_const FAVIA_HAPPINESS_RATER,                       4,  4 ;  5
-	map_const PECTINIA_TRAIN_STATION,                      9,  9 ;  7
+	map_const PECTINIA_MALL,                     		  17,  9 ;  7
 	map_const CARNATION_FLOWER_SHOP,                       4,  4 ;  8
 	map_const NAME_RATER,                      		       4,  4 ; 10
 	map_const FAVIA_POKECENTER_1F,						   5,  4 ; 20
@@ -233,6 +233,9 @@ ENDM
 	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
 	map_const PECTINIA_BED_STORE,                    	   6,  3
 	map_const PECTINIA_DOLL_STORE,                         5,  3
+	map_const PECTINIA_CARPET_STORE,                       5,  3
+	map_const PECTINIA_COMIC_STORE,                        6,  4
+	map_const PECTINIA_BATTLE_ITEM_STORE,                  7,  4
 
 	newgroup                                                      ; 12
 
@@ -314,7 +317,7 @@ ENDM
 	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  2
 	map_const REMNANT_CAVE_1F,                             17, 12
 	map_const REMNANT_CAVE_2F,	                           18, 18
-	map_const REMNANT_CAVE_OUTSIDE,	                       20, 13
+	map_const REMNANT_CAVE_OUTSIDE,	                       23, 16
 	map_const REMNANT_CAVE_3F,	                            7, 13
 	map_const LOST_LAND,		                           29, 20
 	map_const LOST_LAND_CAVE_1F,		                   13, 12

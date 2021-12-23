@@ -7513,28 +7513,9 @@ GiveExperiencePoints:
 	jr z, .next
 	ld [de], a
 	inc de
-
+	
 .okay1
-	push hl
-	push bc
-	ld a, MON_PKRUS
-	call GetPartyParamLocation
-	ld a, [hl]
-	and a
-	pop bc
-	pop hl
-	jr z, .skip
-	ld a, [de]
-	add [hl]
-	ld [de], a
-	jr nc, .skip
-	dec de
-	ld a, [de]
-	inc a
-	jr z, .next
-	ld [de], a
-	inc de
-	jr .skip
+	jp .skip
 
 .next
 	ld a, $ff
@@ -7589,6 +7570,18 @@ GiveExperiencePoints:
 	ld a, [wBattleMode]
 	dec a
 	call nz, BoostExp
+
+; Boost experience for Pokerus
+	push hl
+	push bc
+	ld a, MON_PKRUS
+	call GetPartyParamLocation
+	ld a, [hl]
+	and a
+	pop bc
+	pop hl
+	call nz, BoostExp
+
 ; Boost experience for Lucky Egg
 	push bc
 	ld a, MON_ITEM

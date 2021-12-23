@@ -21,8 +21,8 @@ PectiniaBedStore_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  6,  5, PECTINIA_TRAIN_STATION, 4
-	warp_event  7,  5, PECTINIA_TRAIN_STATION, 4
+	warp_event  6,  5, PECTINIA_MALL, 4
+	warp_event  7,  5, PECTINIA_MALL, 4
 
 	db 0 ; coord events
 

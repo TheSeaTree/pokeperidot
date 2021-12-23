@@ -212,6 +212,12 @@ FountainCoinsSparkleText:
 	line "the water."
 	done
 
+GivePokerusText:
+	text "One of the #MON"
+	line "in your party"
+	cont "feels weird…"
+	done
+
 FountainTossed10Text:
 	text "<PLAYER> tossed in"
 	line "¥10."

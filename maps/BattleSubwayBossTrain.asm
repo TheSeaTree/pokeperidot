@@ -76,6 +76,7 @@ Script_BossBoardTrain:
 	special LoadPokemonData
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
+	special BattleSubway_IncreaseCurrentStreak
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
 	warpcheck
 	end

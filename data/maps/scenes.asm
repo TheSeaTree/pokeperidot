@@ -23,7 +23,7 @@ MapScenes::
 	scene_var PAVONA_VILLAGE,                           wCherrygroveCitySceneID
 	scene_var PECTINIA_CITY,                            wAzaleaTownSceneID
 	scene_var FAVIA_TOWN,                              	wGoldenrodGymSceneID
-	scene_var PECTINIA_TRAIN_STATION,                   wGoldenrodMagnetTrainStationSceneID
+	scene_var PECTINIA_MALL,	                        wGoldenrodMagnetTrainStationSceneID
 	scene_var FAVIA_POKECENTER_1F,                      wGoldenrodPokecenter1FSceneID
 	scene_var RUGOSA_COAST,                             wOlivineCitySceneID
 	scene_var PECTINIA_GYM,                             wRoute34SceneID ; unused

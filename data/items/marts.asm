@@ -36,6 +36,9 @@ Marts:
 	dw MartPokemonLeagueVitamins
 	dw MartPokemonLeagueCafe
 	dw MartUnderground
+	dw MartPectiniaBattleItems1
+	dw MartPectiniaBattleItems2
+	dw MartPectiniaBattleItems3
 .End
 
 MartOrchid:
@@ -404,6 +407,36 @@ MartUnderground:
 	db HEAL_POWDER
 	db REVIVAL_HERB
 	db -1 ; end
+
+MartPectiniaBattleItems1:
+	db 6
+	db SUN_STONE
+	db FIRE_STONE
+	db SILVERPOWDER
+	db PINK_BOW
+	db SHARP_BEAK
+	db SILK_SCARF
+	db -1
+
+MartPectiniaBattleItems2:
+	db 6
+	db LEAF_STONE
+	db THUNDERSTONE
+	db MAGNET
+	db TWISTEDSPOON
+	db POISON_BARB
+	db DRAGON_FANG
+	db -1
+
+MartPectiniaBattleItems3:
+	db 6
+	db MOON_STONE
+	db WATER_STONE
+	db HARD_STONE
+	db NEVERMELTICE
+	db SPELL_TAG
+	db METAL_COAT
+	db -1
 
 DefaultMart:
 	db 2 ; # items

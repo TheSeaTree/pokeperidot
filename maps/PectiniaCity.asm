@@ -729,7 +729,7 @@ PectiniaCity_MapEvents:
 
 	db 14 ; warp events
 	warp_event 49,  7, PECTINIA_POKECENTER_1F, 1
-	warp_event 24,  9, PECTINIA_TRAIN_STATION, 1
+	warp_event 24,  9, PECTINIA_MALL, 1
 	warp_event 31, 11, PECTINIA_MART, 1
 	warp_event 51, 25, PECTINIA_BERRY_HOUSE, 1
 	warp_event 43,  5, ROUTE_3_PECTINIA_GATE, 3

@@ -121,18 +121,18 @@ ENDM
 
 	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH | WEST
 	connection south, Route21, ROUTE_21, 8
-	connection west, Route24North, ROUTE_24_NORTH, 1
+	connection west, Route24North, ROUTE_24_NORTH, 2
 
 	map_attributes Route21, ROUTE_21, $05, NORTH | WEST
 	connection north, AcroporaCity, ACROPORA_CITY, -8
 	connection west, Route24South, ROUTE_24_SOUTH, 0
 
 	map_attributes Route24North, ROUTE_24_NORTH, $20, SOUTH | EAST
-	connection south, Route24South, ROUTE_24_SOUTH, 0
-	connection east, AcroporaCity, ACROPORA_CITY, -1
+	connection south, Route24South, ROUTE_24_SOUTH, 1
+	connection east, AcroporaCity, ACROPORA_CITY, -2
 
 	map_attributes Route24South, ROUTE_24_SOUTH, $20, NORTH | EAST
-	connection north, Route24North, ROUTE_24_NORTH, 0
+	connection north, Route24North, ROUTE_24_NORTH, -1
 	connection east, Route21, ROUTE_21, 0
 
 	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
@@ -313,7 +313,7 @@ ENDM
 	map_attributes RidgePokecenter1F, RIDGE_POKECENTER_1F, $00, 0
 	map_attributes HepaticaGym, HEPATICA_GYM, $00, 0
 	map_attributes FaviaHappinessRater, FAVIA_HAPPINESS_RATER, $00, 0
-	map_attributes PectiniaTrainStation, PECTINIA_TRAIN_STATION, $00, 0
+	map_attributes PectiniaMall, PECTINIA_MALL, $00, 0
 	map_attributes CarnationFlowerShop, CARNATION_FLOWER_SHOP, $00, 0
 	map_attributes NameRater, NAME_RATER, $00, 0
 	map_attributes RugosaDeptStore1F, RUGOSA_DEPT_STORE_1F, $00, 0
@@ -514,7 +514,7 @@ ENDM
 	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0
 	map_attributes RemnantCave1F, REMNANT_CAVE_1F, $09, 0
 	map_attributes RemnantCave2F, REMNANT_CAVE_2F, $09, 0
-	map_attributes RemnantCaveOutside, REMNANT_CAVE_OUTSIDE, $00, 0
+	map_attributes RemnantCaveOutside, REMNANT_CAVE_OUTSIDE, $21, 0
 	map_attributes RemnantCave3F, REMNANT_CAVE_3F, $09, 0
 	map_attributes LostLandCave1F, LOST_LAND_CAVE_1F, $09, 0
 	map_attributes LostLandCaveB1F, LOST_LAND_CAVE_B1F, $09, 0
@@ -546,3 +546,6 @@ ENDM
 	map_attributes BattleSimulation, BATTLE_SIMULATION, $00, 0
 	map_attributes BattleSimulationTestRoom, BATTLE_SIMULATION_TEST_ROOM, $04, 0
 	map_attributes Route25Gate, ROUTE_25_GATE, $00, 0
+	map_attributes PectiniaCarpetStore, PECTINIA_CARPET_STORE, $00, 0
+	map_attributes PectiniaComicStore, PECTINIA_COMIC_STORE, $00, 0
+	map_attributes PectiniaBattleItemStore, PECTINIA_BATTLE_ITEM_STORE, $00, 0

@@ -113,8 +113,6 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 
-	checkphonecall ; elm already called about pokerus
-	iftrue .no
 	checkflag ENGINE_CAUGHT_POKERUS
 	iftrue .no
 	special CheckPokerus
@@ -136,22 +134,10 @@ PokecenterNurseScript:
 	end
 
 .pokerus
-	; already cleared earlier in the script
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
-	jump .pokerus_done
-
-.pokerus_comcenter
-	farwritetext PokeComNursePokerusText
-	waitbutton
-	closetext
-
-.pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
-	specialphonecall SPECIALCALL_POKERUS
 	end
 
 CenterTurnDown:
@@ -585,7 +571,7 @@ DoTeleportScript:
 	show_object
 	teleport_to
 	step_resume
-	
+
 CapsuleMachineScript:
 	opentext
 	farwritetext CapsuleMachineText
@@ -662,7 +648,7 @@ WishingFountainScript:
 	takemoney YOUR_MONEY, 10
 	special PlaceMoneyTopRight
 	random 10
-	ifequal 0, .roll_100
+	ifequal 0, .results_10
 	closetext
 	end
 
@@ -674,7 +660,8 @@ WishingFountainScript:
 	waitsfx
 	takemoney YOUR_MONEY, 100
 	special PlaceMoneyTopRight
-	random 100
+.results_10
+	random 120
 	jump .results
 
 .roll_500
@@ -685,10 +672,11 @@ WishingFountainScript:
 	waitsfx
 	takemoney YOUR_MONEY, 500
 	special PlaceMoneyTopRight
-	random 75
+	random 60
 .results
 	ifequal 0, .ShinyEncounters
-	ifless 50, .IncreaseHappiness
+	ifless 25, .IncreaseHappiness
+	ifless 40, .GivePokerus
 	closetext
 	end
 
@@ -704,6 +692,12 @@ WishingFountainScript:
 	waitbutton
 	special FountainHappiness ; Make this add happiness instead of maxing it?
 	closetext
+	end
+.GivePokerus
+	farwritetext GivePokerusText
+	waitbutton
+	closetext
+	callasm GivePokerusAndConvertBerries
 	end
 
 .NotEnoughMoney:

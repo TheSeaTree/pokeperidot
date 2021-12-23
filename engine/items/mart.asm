@@ -105,7 +105,7 @@ BPShop:
 
 	ld b, BANK(BattleSubwayBattleShopData)
 	ld de, BattleSubwayBattleShopData
-	
+
 .ok
 	call LoadMartPointer
 	call ReadMart
@@ -213,8 +213,17 @@ StandardMart:
 
 .HowMayIHelpYou:
 	call LoadStandardMenuHeader
+; Print no introduction text if in the battle item shop.
+	ld a, [wMapGroup]
+	cp GROUP_PECTINIA_BATTLE_ITEM_STORE
+	jr nz, .PrintText
+	ld a, [wMapNumber]
+	cp MAP_PECTINIA_BATTLE_ITEM_STORE
+	jr z, .NoText
+.PrintText
 	ld hl, Text_Mart_HowMayIHelpYou
 	call PrintText
+.NoText
 	ld a, STANDARDMART_TOPMENU
 	ret
 
