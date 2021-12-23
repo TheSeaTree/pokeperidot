@@ -1204,8 +1204,13 @@ BattleText_0x8188e:
 	text "There is no time"
 	line "left today!"
 	done
-	
+
 BattleText_AskForfeit:
 	text "Do you want to"
 	line "forfeit?"
 	done
+
+BattleText_AllStatsRose:
+	text "All of <USER>'s"
+	line "stats all rose!"
+	prompt

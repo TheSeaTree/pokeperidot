@@ -25,7 +25,7 @@ BattleAnimations::
 	dw BattleAnim_VineWhip
 	dw BattleAnim_IcicleSpear
 	dw BattleAnim_DoubleKick
-	dw BattleAnim_MegaKick
+	dw BattleAnim_RunicPower
 	dw BattleAnim_BulkUp
 	dw BattleAnim_Coil
 	dw BattleAnim_SandAttack
@@ -809,7 +809,7 @@ BattleAnim_HiJumpKick_branch_c971e:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_MegaKick:
+BattleAnim_RunicPower:
 	anim_1gfx ANIM_GFX_UNOWN
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20

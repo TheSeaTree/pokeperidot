@@ -2302,7 +2302,7 @@ AncientTomeEffect:
 	farwritetext AncientTomeGlowing_Text
 	waitbutton
 	playsound SFX_WARP_TO
-	writebyte MEGA_KICK
+	writebyte RUNIC_POWER
 	special MoveTutor
 	ifequal $0, .TaughtMove
 	closetext

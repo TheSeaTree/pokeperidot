@@ -24,7 +24,7 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw IcicleSpearDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw RunicPowerDescription
 	dw BulkUpDescription
 	dw CoilDescription
 	dw SandAttackDescription
@@ -353,7 +353,7 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-MegaKickDescription:
+RunicPowerDescription:
 	db   "The power of many"
 	next "restored.@"
 
