@@ -1977,6 +1977,55 @@ AskCutScript:
 	ld [wScriptVar], a
 	ret
 
+TryCutGrassOW::
+	ld d, CUT
+	call CheckPartyMove
+	jr c, .cant_cut
+
+	ld de, ENGINE_MYSTICBADGE
+	call CheckEngineFlag
+	jr c, .cant_cut
+
+	; Cannot cut the grass in Staghorn Gym
+	ld a, [wMapMusic]
+	cp MUSIC_GYM
+	jr z, .cant_cut
+
+	ld a, BANK(AskCutGrassScript)
+	ld hl, AskCutGrassScript
+	call CallScript
+	scf
+	ret
+
+.cant_cut
+	xor a
+	ret
+
+AskCutGrassScript:
+	opentext
+	writetext OWAskCutGrassText
+	yesorno
+	iffalse .script_d1b8
+	callasm .CheckMap
+	iftrue Script_Cut
+.script_d1b8
+	closetext
+	end
+
+.CheckMap:
+	xor a
+	ld [wScriptVar], a
+	call CheckMapForSomethingToCut
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+CheckHaveCut::
+	ld d, CUT
+	call CheckPartyMove
+	ret
+
 TrySmashWallOW::
 	ld d, ROCK_SMASH
 	call CheckPartyMove
@@ -1997,6 +2046,10 @@ TrySmashWallOW::
 
 UnknownText_0xd1c8:
 	text_jump UnknownText_0x1c09dd
+	db "@"
+
+OWAskCutGrassText:
+	text_jump AskCutGrassText
 	db "@"
 
 CantCutScript:

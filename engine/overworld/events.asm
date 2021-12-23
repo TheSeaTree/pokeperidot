@@ -1170,8 +1170,15 @@ TryTileCollisionEvent::
 .headbutt
 	ld a, [wEngineBuffer1]
 	call CheckHeadbuttTreeTile
-	jr nz, .surf
+	jr nz, .tallgrass
 	farcall TryHeadbuttOW
+	jr c, .done
+
+.tallgrass
+	ld a, [wEngineBuffer1]
+	call CheckTallGrassTile
+	jr nz, .surf
+	farcall TryCutGrassOW
 	jr c, .done
 	jr .noevent
 

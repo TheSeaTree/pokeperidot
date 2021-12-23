@@ -135,6 +135,11 @@ CheckGrassTile::
 	scf
 	ret
 
+CheckTallGrassTile::
+	cp COLL_TALL_GRASS
+	ret z
+	; fallthrough
+
 CheckSuperTallGrassTile::
 	cp COLL_LONG_GRASS
 	ret z

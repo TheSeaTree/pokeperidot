@@ -504,6 +504,11 @@ UnknownText_0x1c09dd::
 	line "on this tree?"
 	done
 
+AskCutGrassText::
+	text "Want to use CUT"
+	line "on this grass?"
+	done
+
 UnknownText_0x1c0a05::
 	text "This tree can be"
 	line "CUT!"
