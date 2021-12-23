@@ -13,30 +13,15 @@
 	const SPRITE_BILL ; 08
 	const SPRITE_ELDER ; 09
 	const SPRITE_JANINE ; 0a
-	const SPRITE_KURT ; 0b
 	const SPRITE_MOM ; 0c
-	const SPRITE_BLAINE ; 0d
 	const SPRITE_REDS_MOM ; 0e
 	const SPRITE_DAISY ; 0f
-	const SPRITE_ELM ; 10
-	const SPRITE_WILL ; 11
 	const SPRITE_CECIL ; 12
-	const SPRITE_WHITNEY ; 13
 	const SPRITE_MURPHY ; 14
 	const SPRITE_DUANE ; 15
-	const SPRITE_CHUCK ; 16
 	const SPRITE_JASMINE ; 17
-	const SPRITE_PRYCE ; 18
 	const SPRITE_CLAIR ; 19
-	const SPRITE_BROCK ; 1a
-	const SPRITE_KAREN ; 1b
-	const SPRITE_BRUNO ; 1c
-	const SPRITE_MISTY ; 1d
 	const SPRITE_LANCE ; 1e
-	const SPRITE_SURGE ; 1f
-	const SPRITE_ERIKA ; 20
-	const SPRITE_KOGA ; 21
-	const SPRITE_SABRINA ; 22
 	const SPRITE_COOLTRAINER_M ; 23
 	const SPRITE_COOLTRAINER_F ; 24
 	const SPRITE_BUG_CATCHER ; 25
