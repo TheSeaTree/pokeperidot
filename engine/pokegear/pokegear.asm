@@ -705,7 +705,7 @@ PokegearMap_InitCursor:
 
 PokegearMap_UpdateLandmarkName:
 	push af
-	hlcoord 8, 0
+	hlcoord 0, 0
 	lb bc, 2, 12
 	call ClearBox
 	pop af
@@ -714,7 +714,7 @@ PokegearMap_UpdateLandmarkName:
 	farcall GetLandmarkName
 	pop de
 	farcall TownMap_ConvertLineBreakCharacters
-	hlcoord 8, 0
+	hlcoord 0, 0
 	ld [hl], $1f
 	ret
 
@@ -1885,20 +1885,14 @@ _TownMap:
 	ld bc, 6
 	hlcoord 1, 0
 	call ByteFill
-	hlcoord 0, 0
+	hlcoord 0, 2
 	ld [hl], $06
-	hlcoord 7, 0
-	ld [hl], $17
-	hlcoord 7, 1
-	ld [hl], $16
-	hlcoord 7, 2
-	ld [hl], $26
+	hlcoord 12, 2
+	ld [hl], $27
 	ld a, $07
 	ld bc, NAME_LENGTH
-	hlcoord 8, 2
+	hlcoord 1, 2
 	call ByteFill
-	hlcoord 19, 2
-	ld [hl], $17
 	ld a, [wTownMapCursorLandmark]
 	call PokegearMap_UpdateLandmarkName
 	farcall TownMapPals
@@ -2199,7 +2193,7 @@ TownMapBubble:
 	ld a, $1d
 	ld [hli], a
 ; Top row
-	ld bc, 16
+	ld bc, 9
 	ld a, " "
 	call ByteFill
 ; Top-right corner
@@ -2208,7 +2202,7 @@ TownMapBubble:
 	hlcoord 1, 1
 
 ; Middle row
-	ld bc, 18
+	ld bc, 11
 	ld a, " "
 	call ByteFill
 
@@ -2221,15 +2215,18 @@ TownMapBubble:
 	ld [hli], a
 ; Bottom row
 	hlcoord 2, 2
-	ld bc, 16
+	ld bc, 9
 	ld a, " "
 	call ByteFill
 ; Bottom-right corner
-	hlcoord 18, 2
+	hlcoord 11, 2
 	ld a, $2e
 	ld [hli], a
-	hlcoord 19, 2
-	ld a, $2f
+	hlcoord 12, 0
+	ld a, $55
+	ld [hli], a
+	hlcoord 12, 2
+	ld a, $27
 	ld [hli], a
 	call ByteFill
 
@@ -2259,6 +2256,7 @@ TownMapBubble:
 	farcall GetLandmarkName
 	hlcoord 2, 1
 	ld de, wStringBuffer1
+	farcall TownMap_ConvertFlyMapLineBreakCharacters
 	call PlaceString
 	ret
 
