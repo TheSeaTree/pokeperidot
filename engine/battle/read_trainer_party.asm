@@ -1,3 +1,9 @@
+GetNextTrainerDataByte:
+	ld a, [wTrainerGroupBank]
+	call GetFarByte
+	inc hl
+	ret
+
 ReadTrainerParty:
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
@@ -33,6 +39,9 @@ ReadTrainerParty:
 	ld hl, TrainerGroups
 	add hl, bc
 	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld [wTrainerGroupBank], a
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -43,18 +52,18 @@ ReadTrainerParty:
 	dec b
 	jr z, .got_trainer
 .loop
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp -1
 	jr nz, .loop
 	jr .skip_trainer
 .got_trainer
 
 .skip_name
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp "@"
 	jr nz, .skip_name
 
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [wOtherTrainerType], a
 	ld d, h
 	ld e, l
@@ -79,7 +88,7 @@ ReadTrainerPartyPieces:
 
 .loop
 ; end?
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp -1
 	ret z
 
@@ -87,7 +96,7 @@ ReadTrainerPartyPieces:
 	ld [wCurPartyLevel], a
 
 ; species
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [wCurPartySpecies], a
 
 ; add to party
@@ -102,7 +111,7 @@ ReadTrainerPartyPieces:
 	bit TRAINERTYPE_NICKNAME_F, a
 	jr z, .no_nickname
 
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp "@"
 	jr z, .no_nickname
 
@@ -112,7 +121,7 @@ ReadTrainerPartyPieces:
 	ld [de], a
 	inc de
 .copy_nickname
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 	inc de
 	cp "@"
@@ -149,14 +158,14 @@ ReadTrainerPartyPieces:
 	pop hl
 
 ; When reading DVs, treat PERFECT_DV as $ff
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp PERFECT_DV
 	jr nz, .atk_def_dv_ok
 	ld a, $ff
 .atk_def_dv_ok
 	ld [de], a
 	inc de
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	cp PERFECT_DV
 	jr nz, .spd_spc_dv_ok
 	ld a, $ff
@@ -181,17 +190,19 @@ ReadTrainerPartyPieces:
 	ld c, NUM_EXP_STATS
 .stat_exp_loop
 ; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
-	ld a, [hl]
+	call GetNextTrainerDataByte
+	dec hl
 	cp LOW(PERFECT_STAT_EXP)
 	jr nz, .not_perfect_stat_exp
 	inc hl
-	ld a, [hl]
+	call GetNextTrainerDataByte
+	dec hl
 	cp HIGH(PERFECT_STAT_EXP)
 	dec hl
 	jr nz, .not_perfect_stat_exp
 	ld a, $ff
 rept 2
-	ld [de], a
+	call GetNextTrainerDataByte
 	inc de
 	inc hl
 endr
@@ -222,7 +233,7 @@ endr
 	ld e, l
 	pop hl
 
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 .no_item
 
@@ -242,7 +253,7 @@ endr
 
 	ld b, NUM_MOVES
 .copy_moves
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 	inc de
 	dec b
@@ -355,6 +366,8 @@ Battle_GetTrainerName::
 	ld a, [wInBattleTowerBattle]
 	bit 0, a
 	ld hl, wOTPlayerName
+	ld a, BANK(Battle_GetTrainerName)
+	ld [wTrainerGroupBank], a
 	jp nz, CopyTrainerName
 
 	ld a, [wOtherTrainerID]
@@ -387,6 +400,9 @@ GetTrainerName::
 	ld hl, TrainerGroups
 	add hl, bc
 	add hl, bc
+	add hl, bc
+	ld a, [hli]
+	ld [wTrainerGroupBank], a
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -397,16 +413,17 @@ GetTrainerName::
 	jr z, CopyTrainerName
 
 .skip
-	ld a, [hli]
-	cp $ff
-	jr nz, .skip
-	jr .loop
+	call GetNextTrainerDataByte
+ 	cp -1
+ 	jr nz, .skip
+ 	jr .loop
 
 CopyTrainerName:
 	ld de, wStringBuffer1
 	push de
 	ld bc, NAME_LENGTH
-	call CopyBytes
+	ld a, [wTrainerGroupBank]
+	call FarCopyBytes
 	pop de
 	ret
 
@@ -418,7 +435,7 @@ Function39990:
 	pop de
 	ret
 
-INCLUDE "data/trainers/parties.asm"
+INCLUDE "data/trainers/party_pointers.asm"
 
 SetTrainerBattleLevel:
 	ld a, 255

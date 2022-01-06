@@ -30,36 +30,64 @@ CHRIS EQU __enum__
 	const CECIL3
 	const CECIL4
 	const CECIL5
-	const CECIL_REMATCH
+	const CECIL_REMATCH1
+	const CECIL_REMATCH2
+	const CECIL_REMATCH3
+	const CECIL_REMATCH4
+	const CECIL_REMATCH5
 
 	trainerclass CELESTE ; 2
 	const CELESTE1
-	const CELESTE_REMATCH
+	const CELESTE_REMATCH1
+	const CELESTE_REMATCH2
+	const CELESTE_REMATCH3
+	const CELESTE_REMATCH4
+	const CELESTE_REMATCH5
 
 	trainerclass MURPHY ; 3
 	const MURPHY1
 	const MURPHY2
-	const MURPHYY_REMATCH
-	
+	const MURPHYY_REMATCH1
+	const MURPHYY_REMATCH2
+	const MURPHYY_REMATCH3
+	const MURPHYY_REMATCH4
+	const MURPHYY_REMATCH5
+
 	trainerclass DUANE ; 4
 	const DUANE1
 	const DUANE2
 	const DUANE3
-	const DUANE_REMATCH
+	const DUANE_REMATCH1
+	const DUANE_REMATCH2
+	const DUANE_REMATCH3
+	const DUANE_REMATCH4
+	const DUANE_REMATCH5
 
 	trainerclass PRYCE ; 5
 
 	trainerclass ALAN ; 6
 	const ALAN1
-	const ALAN_REMATCH
+	const ALAN_REMATCH1
+	const ALAN_REMATCH2
+	const ALAN_REMATCH3
+	const ALAN_REMATCH4
+	const ALAN_REMATCH5
 
 	trainerclass JOEL ; 7
 	const JOEL1
-	const JOEL_REMATCH
+	const JOEL_REMATCH1
+	const JOEL_REMATCH2
+	const JOEL_REMATCH3
+	const JOEL_REMATCH4
+	const JOEL_REMATCH5
 
 	trainerclass ENYA ; 8
 	const ENYA1
-	const ENYA_REMATCH
+	const ENYA_REMATCH1
+	const ENYA_REMATCH2
+	const ENYA_REMATCH3
+	const ENYA_REMATCH4
+	const ENYA_REMATCH5
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
@@ -94,15 +122,35 @@ CHRIS EQU __enum__
 
 	trainerclass ORVILLE ; b
 	const ORVILLE1
+	const ORVILLE_REMATCH1
+	const ORVILLE_REMATCH2
+	const ORVILLE_REMATCH3
+	const ORVILLE_REMATCH4
+	const ORVILLE_REMATCH5
 
 	trainerclass REGAN ; d
 	const REGAN1
+	const REGAN_REMATCH1
+	const REGAN_REMATCH2
+	const REGAN_REMATCH3
+	const REGAN_REMATCH4
+	const REGAN_REMATCH5
 
 	trainerclass AMBER ; e
 	const AMBER1
+	const AMBER_REMATCH1
+	const AMBER_REMATCH2
+	const AMBER_REMATCH3
+	const AMBER_REMATCH4
+	const AMBER_REMATCH5
 
 	trainerclass BREDE ; f
 	const BREDE1
+	const BREDE_REMATCH1
+	const BREDE_REMATCH2
+	const BREDE_REMATCH3
+	const BREDE_REMATCH4
+	const BREDE_REMATCH5
 
 	trainerclass CHAMPION ; 10
 	const LANCE
@@ -128,7 +176,11 @@ CHRIS EQU __enum__
 	const POSEY2
 	const POSEY3
 	const POSEY4
-	const POSEY_REMATCH
+	const POSEY_REMATCH1
+	const POSEY_REMATCH2
+	const POSEY_REMATCH3
+	const POSEY_REMATCH4
+	const POSEY_REMATCH5
 
 	trainerclass LAD ; 16
 	const JACK
