@@ -134,7 +134,7 @@
 	charmap "<CAUTION>", $ca
 	charmap "<TRADEID>", $cb
 	charmap "<TRADENO>", $cc
-	charmap "*",         $cd
+	charmap "*",         $5e
 	charmap "′",         $ce
 	charmap "″",         $cf
 

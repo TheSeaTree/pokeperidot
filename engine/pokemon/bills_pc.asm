@@ -1750,7 +1750,7 @@ BillsPC_PlaceShinyIcon:
 	farcall CheckShininess
 	ret nc
 	hlcoord  6, 12
-	ld [hl], "*"
+	ld [hl], $cd
 	ret
 
 BillsPC_CopyMon:
