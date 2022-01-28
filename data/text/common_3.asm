@@ -348,6 +348,21 @@ UnknownText_0x1c487f::
 	para "Am I good or what?"
 	prompt
 
+PokeSeer_TimeOnlyText::
+	text "The time was"
+	line "@"
+	text_ram wSeerTimeOfDay
+	text "."
+	
+	para "This #MON had"
+	line "incredible power"
+	cont "when you met it!"
+
+	para "You are truly a"
+	line "special trainer to"
+	cont "have tamed it!"
+	prompt
+	
 UnknownText_0x1c491d::
 	text "Hey!"
 
@@ -554,11 +569,12 @@ Subway_InsufficientFunds_Text::
 	done
 
 UnknownText_0x1c4d47::
-	text "I sell rare items"
-	line "that nobody else"
+	text "Welcome, CHAMPION!"
+	line "We have a special"
+	cont "discount for you!"
 
-	para "carries--but only"
-	line "one of each item."
+	para "Do your #MON"
+	line "need VITAMINs?"
 	done
 
 UnknownText_0x1c4db0::

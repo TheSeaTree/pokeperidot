@@ -7,6 +7,7 @@
 	const SEER_CANCEL
 	const SEER_EGG
 	const SEER_LEVEL_ONLY
+	const SEER_TIME_ONLY
 
 	const_def
 	const SEERACTION_MET
@@ -64,6 +65,11 @@ SeerActions:
 SeerAction0:
 	ld a, SEER_MET_AT
 	call PrintSeerText
+
+	ld a, [wCurPartySpecies]
+	cp MEWTWO
+	jr z, SeerAction5
+
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
 	call SeerAdvice
@@ -90,6 +96,12 @@ SeerAction3:
 
 SeerAction4:
 	ld a, SEER_LEVEL_ONLY
+	call PrintSeerText
+	call SeerAdvice
+	ret
+
+SeerAction5:
+	ld a, SEER_TIME_ONLY
 	call PrintSeerText
 	call SeerAdvice
 	ret
@@ -295,6 +307,7 @@ SeerTexts:
 	dw SeerCancelText
 	dw SeerEggText
 	dw SeerLevelOnlyText
+	dw SeerTimeOnlyText
 
 SeerIntroText:
 	; I see all. I know all… Certainly, I know of your #MON!
@@ -324,6 +337,10 @@ SeerTradedText:
 SeerLevelOnlyText:
 	; What!? Incredible! I don't understand how, but it is incredible! You are special. I can't tell where you met it, but it was at level @ . Am I good or what?
 	text_far UnknownText_0x1c487f
+	text_end
+
+SeerTimeOnlyText:
+	text_far PokeSeer_TimeOnlyText
 	text_end
 
 SeerEggText:
