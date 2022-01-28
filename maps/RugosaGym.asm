@@ -111,6 +111,8 @@ RugosaGym_MapScripts:
 	
 ElectricGymLeader:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	checkevent EVENT_BEAT_JOEL
 	iftrue .FightDone
 	opentext
@@ -147,6 +149,49 @@ ElectricGymLeader:
 	waitbutton
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_JOEL
+	iftrue .DoneRematch
+	
+	opentext
+	writetext JoelRematchText
+	waitbutton
+	closetext
+	
+	winlosstext JoelRematchWinText, 0
+
+	copybytetovar wJoelFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer JOEL, JOEL_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer JOEL, JOEL_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer JOEL, JOEL_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer JOEL, JOEL_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer JOEL, JOEL_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_JOEL
+	copybytetovar wJoelFightCount
+	addvar 1
+	copyvartobyte wJoelFightCount
+
+.DoneRematch
+	jumptext JoelAfterRematchText
 
 RugosaGymPod1:
 	opentext
@@ -1274,7 +1319,24 @@ JoelAfterMessageText:
 	cont "TRAINER and inven-"
 	cont "tor!"
 	done
-	
+
+JoelRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+JoelRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+JoelAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 ScientistAndreText:
 	text "No!"
 	

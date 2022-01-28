@@ -48,22 +48,43 @@ RugosaPort_MapScripts:
 RugosaPortCaptainScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	checkevent EVENT_RUGOSA_COAST_SHOWED_BADGES
+	iftrue .Boarding
 	checkcode VAR_BADGES
-	ifequal 8, .Boarding
+	ifequal 8, .FirstTime
 	writetext RugosaPortCaptainText
 	waitbutton
 	closetext
 	end
-
 .Boarding
 	checkevent EVENT_COMING_FROM_LEAGUE
 	iftrue .ShipAtVictoryPort
 	writetext RugosaPortCaptainBoardingText
+.AskBoarding
 	yesorno
 	iffalse .Decline
 	writetext RugosaPortAcceptBoardingText
 	waitbutton
 	closetext
+	jump .ContinueBoarding
+
+.Postgame
+	writetext RugosaPortPostgameCaptainText
+	yesorno
+	iftrue .PostgameBoarding
+	writetext RugosaPortPostgameCaptainStayText
+	waitbutton
+	closetext
+	end
+.PostgameBoarding
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iftrue .ShipAtVictoryPort
+	writetext RugosaPortPostgameCaptainBoardText
+	waitbutton
+	closetext
+.ContinueBoarding
 	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	
@@ -87,6 +108,11 @@ RugosaPortCaptainScript:
 	applymovement PLAYER, RugosaPortPlayerBoardShipMovement
 	warpcheck
 	end
+
+.FirstTime
+	setevent EVENT_RUGOSA_COAST_SHOWED_BADGES
+	writetext RugosaPortCaptainBoardingFirstTimeText
+	jump .AskBoarding
 
 .Decline
 	writetext RugosaPortDeclineBoardingText
@@ -144,7 +170,7 @@ RugosaPortCaptainText:
 	cont "let you on board."
 	done
 	
-RugosaPortCaptainBoardingText:
+RugosaPortCaptainBoardingFirstTimeText:
 	text "Sorry, trainer."
 	
 	para "This ship is only"
@@ -160,7 +186,17 @@ RugosaPortCaptainBoardingText:
 	para "Are you coming"
 	line "with us?"
 	done
-	
+
+RugosaPortCaptainBoardingText:
+	text "The S.S.MAKO will"
+	line "be departing for"
+	cont "the #MON LEAGUE"
+	cont "shortly."
+
+	para "Will you be coming"
+	line "on board?"
+	done
+
 RugosaPortAcceptBoardingText:
 	text "Please, come on"
 	line "board!"
@@ -174,6 +210,27 @@ RugosaPortDeclineBoardingText:
 	
 	para "You're really"
 	line "cutting it close."
+	done
+
+RugosaPortPostgameCaptainText:
+	text "Greetings,"
+	line "CHAMPION."
+
+	para "Will you be retur-"
+	line "ning to VICTORY"
+	cont "COAST from here?"
+	done
+
+RugosaPortPostgameCaptainBoardText:
+	text "It's a pleasure to"
+	line "have you on board!"
+	done
+
+RugosaPortPostgameCaptainStayText:
+	text "No? You must be"
+	line "passing through"
+	cont "on your way to"
+	cont "the CITY."
 	done
 
 RugosaPortSSMakoNotHereText:

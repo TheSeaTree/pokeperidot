@@ -71,6 +71,8 @@ StaghornGymIntroLeft:
 	
 StaghornGymLeader:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	checkevent EVENT_BEAT_POSEY
 	iftrue .FightDone
 	checkscene
@@ -140,7 +142,50 @@ StaghornGymLeader:
 	waitbutton
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_POSEY
+	iftrue .DoneRematch
 	
+	opentext
+	writetext PoseyRematchText
+	waitbutton
+	closetext
+	
+	winlosstext PoseyRematchWinText, 0
+
+	copybytetovar wPoseyFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer POSEY, POSEY_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer POSEY, POSEY_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer POSEY, POSEY_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer POSEY, POSEY_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer POSEY, POSEY_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_POSEY
+	copybytetovar wPoseyFightCount
+	addvar 1
+	copyvartobyte wPoseyFightCount
+
+.DoneRematch
+	jumptext PoseyAfterRematchText
+
 StaghornCantLeave:
 	checkflag ENGINE_ROOTBADGE
 	iftrue .Leave
@@ -434,7 +479,24 @@ PlayerReceivedRootBadgeText:
 	text "<PLAYER> received"
 	line "ROOTBADGE."
 	done
-	
+
+PoseyRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+PoseyRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+PoseyAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 StaghornGymHaveBadge:
 	text "<PLAYER> used"
 	line "the ROOTBADGE to"

@@ -1,10 +1,8 @@
 	const_def 2 ; object constants
 	const ORVILLESROOM_ORVILLE
 	const ORVILLESROOM_BOMB
-	const ORVILLESROOM_BOMB2
-	const ORVILLESROOM_BOMB3
-	const ORVILLESROOM_BOMB4
-	const ORVILLESROOM_BOMB5
+	const ORVILLESROOM_SHADOW1
+	const ORVILLESROOM_SHADOW2
 	const ORVILLESROOM_CHRIS
 	const ORVILLESROOM_KRIS
 
@@ -18,15 +16,10 @@ OrvillesRoom_MapScripts:
 .LockDoor:
 	disappear ORVILLESROOM_ORVILLE
 	disappear ORVILLESROOM_BOMB
-	disappear ORVILLESROOM_BOMB2
-	disappear ORVILLESROOM_BOMB3
-	disappear ORVILLESROOM_BOMB4
-	disappear ORVILLESROOM_BOMB5
 	end
 
 .DummyScene:
 	end
-
 
 ApproachOrvilleLeft:
 	applymovement PLAYER, OrvillesRoom_EnterMovementLeft
@@ -45,47 +38,44 @@ ContinueApproachOrville:
 	appear ORVILLESROOM_KRIS
 .ContinueBattle
 	applymovement PLAYER, OrvillesRoom_StartBattle
-	
-;	appear ORVILLESROOM_BOMB2
-;	playsound SFX_KINESIS
-;	applymovement ORVILLESROOM_BOMB2, OrvilleFalling
-;	playsound SFX_EGG_BOMB
-;	applymovement ORVILLESROOM_BOMB2, OrvilleExplode
-;	disappear ORVILLESROOM_BOMB2
 
-;	appear ORVILLESROOM_BOMB3
-;	playsound SFX_KINESIS
-;	applymovement ORVILLESROOM_BOMB3, OrvilleFalling
-;	playsound SFX_EGG_BOMB
-;	applymovement ORVILLESROOM_BOMB3, OrvilleExplode
-;	disappear ORVILLESROOM_BOMB3
+	moveobject ORVILLESROOM_BOMB, 11, 10
+	moveobject ORVILLESROOM_SHADOW1, 11, 10
+	moveobject ORVILLESROOM_SHADOW2, 11, 11
+	scall OrvillesRoomDropBombs
 
-;	appear ORVILLESROOM_BOMB4
-;	playsound SFX_KINESIS
-;	applymovement ORVILLESROOM_BOMB4, OrvilleFalling
-;	playsound SFX_EGG_BOMB
-;	applymovement ORVILLESROOM_BOMB4, OrvilleExplode
-;	disappear ORVILLESROOM_BOMB4
+	moveobject ORVILLESROOM_BOMB, 10, 10
+	moveobject ORVILLESROOM_SHADOW1, 10, 10
+	moveobject ORVILLESROOM_SHADOW2, 10, 11
+	scall OrvillesRoomDropBombs
 
-;	appear ORVILLESROOM_BOMB5
-;	playsound SFX_KINESIS
-;	applymovement ORVILLESROOM_BOMB5, OrvilleFalling
-;	playsound SFX_EGG_BOMB
-;	applymovement ORVILLESROOM_BOMB5, OrvilleExplode
-;	disappear ORVILLESROOM_BOMB5
-	
+	moveobject ORVILLESROOM_BOMB, 9, 10
+	moveobject ORVILLESROOM_SHADOW1, 9, 10
+	moveobject ORVILLESROOM_SHADOW2, 9, 11
+	scall OrvillesRoomDropBombs
+
+	moveobject ORVILLESROOM_BOMB, 8, 10
 	appear ORVILLESROOM_BOMB
 	playsound SFX_KINESIS
+	moveobject ORVILLESROOM_SHADOW1, 8, 10
+	moveobject ORVILLESROOM_SHADOW2, 8, 11
+	appear ORVILLESROOM_SHADOW1
+	appear ORVILLESROOM_SHADOW2
+	wait 1
 	applymovement ORVILLESROOM_BOMB, OrvilleFalling
-	waitsfx
 	playsound SFX_EGG_BOMB
 	appear ORVILLESROOM_ORVILLE
-	applymovement ORVILLESROOM_BOMB, OrvilleExplode
-	earthquake 8
+	applymovement ORVILLESROOM_BOMB, OrvilleExplode2
+	disappear ORVILLESROOM_SHADOW1
+	disappear ORVILLESROOM_SHADOW2
+	disappear ORVILLESROOM_BOMB
 	waitsfx
+
 	setscene SCENE_FINISHED
 
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	writetext OrvilleScript_OrvilleBeforeText
 	waitbutton
 	closetext
@@ -93,14 +83,65 @@ ContinueApproachOrville:
 	loadtrainer ORVILLE, ORVILLE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_ORVILLE
 	opentext
 	writetext OrvilleScript_OrvilleDefeatText
 	waitbutton
 	closetext
-	
-	setevent EVENT_ORVILLES_ROOM_EXIT_OPEN
-	waitsfx
+	jump .AfterBattle
+.Rematch
+	writetext OrvilleScript_RematchBeforeText
+	waitbutton
+	closetext
+	winlosstext OrvilleScript_RematchBeatenText, 0
+
+	copybytetovar wEliteFourFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer ORVILLE, ORVILLE_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer ORVILLE, ORVILLE_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer ORVILLE, ORVILLE_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer ORVILLE, ORVILLE_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer ORVILLE, ORVILLE_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext OrvilleScript_RematchDefeatText
+	waitbutton
+	closetext
+
+.AfterBattle
+	wait 4
+
+	applymovement PLAYER, OrvillesRoom_ReturnFromBattle
+	disappear ORVILLESROOM_CHRIS
+	disappear ORVILLESROOM_KRIS
+	end
+
+OrvillesRoomDropBombs:
+	appear ORVILLESROOM_BOMB
+	appear ORVILLESROOM_SHADOW1
+	appear ORVILLESROOM_SHADOW2
+	playsound SFX_KINESIS
+	wait 1
+	applymovement ORVILLESROOM_BOMB, OrvilleFalling
+	playsound SFX_EGG_BOMB
+	applymovement ORVILLESROOM_BOMB, OrvilleExplode
+	disappear ORVILLESROOM_BOMB
+	disappear ORVILLESROOM_SHADOW1
+	disappear ORVILLESROOM_SHADOW2
 	end
 	
 OrvilleNoTurningBack:
@@ -115,10 +156,11 @@ CantPassOrville:
 	end
 
 OrvilleScript_AfterBattle:
-	writetext OrvilleScript_OrvilleDefeatText
-	waitbutton
-	closetext
-	end
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
+	jumptextfaceplayer OrvilleScript_OrvilleDefeatText
+.Rematch
+	jumptextfaceplayer OrvilleScript_RematchDefeatText
 
 OrvillesRoom_EnterMovementLeft:
 	step UP
@@ -151,7 +193,7 @@ OrvillesRoom_StartBattle:
 	step_end
 
 OrvillesRoom_ReturnFromBattle:
-	step LEFT
+	slow_step LEFT
 	turn_head RIGHT
 	show_person
 	step_end
@@ -165,62 +207,100 @@ OrvilleFalling:
 	step_end
 
 OrvilleExplode:
-;	skyfall_top
+	step_shake 8
 	turn_step RIGHT
 	turn_step RIGHT
-;	turn_step RIGHT
-;	turn_step RIGHT
+	turn_step RIGHT
+	turn_step RIGHT
+	hide_person
+	step_end
+
+OrvilleExplode2:
+	step_shake 16
+	turn_step RIGHT
+	turn_step RIGHT
 	hide_person
 	step_end
 
 OrvilleScript_OrvilleBeforeText:
-	text "Welcome to #MON"
-	line "LEAGUE, <PLAYER>."
+	text "The #MON LEAGUE"
+	line "welcomes you."
 
-	para "Allow me to intro-"
-	line "duce myself. I am"
-	cont "WILL."
+	para "My name is"
+	line "ORVILLE, the first"
+	cont "member of the"
+	cont "ELITE FOUR."
 
-	para "I have trained all"
-	line "around the world,"
+	para "Air superiority is"
+	line "my specialty."
 
-	para "making my psychic"
-	line "#MON powerful."
+	para "I have risen"
+	line "through the ranks"
+	cont "as both a trainer"
+	cont "and soldier with"
+	cont "my mastery over"
+	cont "FLYING #MON."
 
-	para "And, at last, I've"
-	line "been accepted into"
-	cont "the ELITE FOUR."
+	para "Can your #MON"
+	line "withstand my stra-"
+	cont "fing runs?"
 
-	para "I can only keep"
-	line "getting better!"
+	para "Only one way to"
+	line "find out."
 
-	para "Losing is not an"
-	line "option!"
+	para "Let's go!"
 	done
 
 OrvilleScript_OrvilleBeatenText:
-	text "I… I can't…"
-	line "believe it…"
+	text "All of my years"
+	line "training, and I"
+	cont "was defeated by a"
+	cont "child."
+
+	para "I am not disappoi-"
+	line "nted. In fact, I"
+	cont "am glad."
+	
+	para "You have shown"
+	line "what it takes to"
+	cont "compete in the"
+	cont "#MON LEAGUE."
+
+	para "I salute you,"
+	line "<PLAYER>."
+	
+	para "Best of luck on"
+	line "your next battles."
 	done
 
 OrvilleScript_OrvilleDefeatText:
-	text "Even though I was"
-	line "defeated, I won't"
-	cont "change my course."
+	text "I may have fallen,"
+	line "but the ELITE FOUR"
+	cont "will only get"
+	cont "stronger from this"
+	cont "point forward."
 
-	para "I will continue"
-	line "battling until I"
+	para "Go on, <PLAYER>."
 
-	para "stand above all"
-	line "trainers!"
-
-	para "Now, <PLAYER>, move"
-	line "on and experience"
-
-	para "the true ferocity"
-	line "of the ELITE FOUR."
+	para "Meet your next"
+	line "opponent."
 	done
-	
+
+OrvilleScript_RematchBeforeText:
+	text "Pre-rematch text"
+	line "goes here."
+	done
+
+OrvilleScript_RematchBeatenText:
+	text "Rematch victory"
+	line "text goes here."
+	done
+
+OrvilleScript_RematchDefeatText:
+	text "After rematch text"
+	line "goes here."
+	done
+
 OrvilleCantProgress:
 	text "There is no"
 	line "turning back now."
@@ -230,8 +310,8 @@ OrvillesRoom_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  6, 19, INDIGO_PLATEAU_POKECENTER_1F, 4
-	warp_event  7, 19, INDIGO_PLATEAU_POKECENTER_1F, 5
+	warp_event  6, 19, POKEMON_LEAGUE_POKECENTER_1F, 4
+	warp_event  7, 19, POKEMON_LEAGUE_POKECENTER_1F, 5
 	warp_event  6,  1, REGANS_ROOM, 1
 	warp_event  7,  1, REGANS_ROOM, 2
 
@@ -245,12 +325,10 @@ OrvillesRoom_MapEvents:
 	bg_event  6, 20, BGEVENT_READ, OrvilleNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, OrvilleNoTurningBack
 
-	db 8 ; object events
+	db 6 ; object events
 	object_event  8, 10, SPRITE_ORVILLE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrvilleScript_AfterBattle, -1
-	object_event  8, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  9, 11, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  7,  9, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  7, 11, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  9,  9, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 11, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

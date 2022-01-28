@@ -1,12 +1,15 @@
 	const_def 2 ; object constants
 	const SSMAKO2FROOMS_FANGIRL
+	const SSMAKO2FROOMS_CLEFAIRY
 	const SSMAKO2FROOMS_GENTLEMAN
 	const SSMAKO2FROOMS_YOUNGSTER
 	const SSMAKO2FROOMS_POKEFAN_M
-	const SSMAKO2FROOMS_COOLTRAINER_F
+	const SSMAKO2FROOMS_COOLTRAINER_F_1
 	const SSMAKO2FROOMS_SUPER_NERD
 	const SSMAKO2FROOMS_BUENA_SLEEPING
 	const SSMAKO2FROOMS_CHAMPION
+	const SSMAKO2FROOMS_COOLTRAINER_F_2
+	const SSMAKO2FROOMS_COOLTRAINER_M
 
 SSMako2FRooms_MapScripts:
 	db 3 ; scene scripts
@@ -14,7 +17,8 @@ SSMako2FRooms_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKO2FROOMS_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKO2FROOMS_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .Doll
 	
 .DummyScene0:
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
@@ -23,6 +27,13 @@ SSMako2FRooms_MapScripts:
 .DummyScene1:
 .DummyScene2:
 	end
+
+.Doll
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .NoAppear
+	moveobject SSMAKO2FROOMS_CLEFAIRY, 46, 4
+.NoAppear
+	return
 
 TrainerGentlemanCharles:
 	trainer GENTLEMAN, CHARLES, EVENT_BEAT_GENTLEMAN_CHARLES, GentlemanCharlesText, GentlemanCharlesWinText, 0, .Script
@@ -164,6 +175,9 @@ SSMako2FRoomsCooltrainerF:
 
 SSMako2FRoomsCooltrainerM
 	jumptextfaceplayer SSMako2FRoomsCooltrainerMText
+
+SSMakoClefairyDoll:
+	jumptext SSMakoClefairyDollText
 
 Rooms2FFangirlTeleport1:
 	moveobject SSMAKO2FROOMS_FANGIRL,  2, 5
@@ -481,6 +495,15 @@ SSMako2FRoomsCooltrainerMText:
 	cont "be a surprise."
 	done
 
+SSMakoClefairyDollText:
+	text "It's an adorable"
+	line "CLEFAIRY DOLL!"
+
+	para "It must have been"
+	line "mistakenly left"
+	cont "behind by someone."
+	done
+
 SSMako2FRooms_MapEvents:
 	db 0, 0 ; filler
 
@@ -521,15 +544,16 @@ SSMako2FRooms_MapEvents:
 	bg_event 28, 11, BGEVENT_READ, SSMakoTapes
 	bg_event 29, 11, BGEVENT_READ, SSMakoTapes
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event 49, 15, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsFangirl, -1
+	object_event 49, 15, SPRITE_CLEFAIRY, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoClefairyDoll, -1
 	object_event 31,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanCharles, -1
 	object_event  3,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSchoolboyOliver, -1
 	object_event  4, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerPokefanMHans, -1
 	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
 	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1
-	object_event 45,  5, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, -1
-	object_event 42,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsBeauty, -1
-	object_event 47,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerF, -1
-	object_event 46,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerM, -1
+	object_event 45,  5, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, EVENT_BEAT_ELITE_FOUR
+	object_event 42,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsBeauty, EVENT_BEAT_ELITE_FOUR
+	object_event 47,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerF, EVENT_BEAT_ELITE_FOUR
+	object_event 46,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerM, EVENT_BEAT_ELITE_FOUR

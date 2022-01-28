@@ -20,6 +20,8 @@ PectiniaGym_MapScripts:
 PectiniaGymMurphyScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	checkevent EVENT_BEAT_MURPHY
 	iftrue .FightDone
 	writetext MurphyText_INeverLose
@@ -69,6 +71,49 @@ PectiniaGymMurphyScript:
 .NoRoomForFuryCutter:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_MURPHY
+	iftrue .DoneRematch
+	
+	opentext
+	writetext MurphyRematchText
+	waitbutton
+	closetext
+	
+	winlosstext MurphyRematchWinText, 0
+
+	copybytetovar wMurphyFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer MURPHY, MURPHY_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer MURPHY, MURPHY_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer MURPHY, MURPHY_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer MURPHY, MURPHY_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer MURPHY, MURPHY_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_DUANE
+	copybytetovar wMurphyFightCount
+	addvar 1
+	copyvartobyte wMurphyFightCount
+
+.DoneRematch
+	jumptext MurphyAfterRematchText
 
 TrainerOfficerBilly:
 	trainer OFFICER, BILLY, EVENT_BEAT_OFFICER_BILLY, OfficerBillyText, OfficerBillyWinText, 0, .AfterScript
@@ -174,7 +219,7 @@ PectiniaGymHaveBadge:
 	line "the FISTBADGE to"
 	cont "unlock the door!"
 	done
-	
+
 MurphyText_INeverLose:
 	text "Welcome, trainer!"
 	line "My name is MURPHY."
@@ -261,6 +306,23 @@ MurphyText_BugMonsAreDeep:
 	cont "bars, and keep"
 	cont "these streets"
 	cont "clean."
+	done
+
+MurphyRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+MurphyRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+MurphyAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
 	done
 
 OfficerBillyText:

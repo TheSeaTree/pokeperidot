@@ -4,14 +4,23 @@
 FaviaGym_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
-;	callback MAPCALLBACK_NEWMAP, .PrepareGym
-	
-;.PrepareGym
-;return
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .Ledge
+
+.Ledge
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .Nothing
+	changeblock 14, 18, $84
+	changeblock 16, 18, $85
+	changeblock 14, 30, $84
+	changeblock 16, 30, $85
+.Nothing
+	return
 
 FaviaGymCelesteScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	opentext
 	checkevent EVENT_BEAT_CELESTE
 	iftrue .AlreadyGotTM
@@ -56,7 +65,50 @@ FaviaGymCelesteScript:
 .BagFull:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_CELESTE
+	iftrue .DoneRematch
 	
+	opentext
+	writetext CelesteRematchText
+	waitbutton
+	closetext
+	
+	winlosstext CelesteRematchWinText, 0
+
+	copybytetovar wCelesteFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer CELESTE, CELESTE_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer CELESTE, CELESTE_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer CELESTE, CELESTE_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer CELESTE, CELESTE_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer CELESTE, CELESTE_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_CELESTE
+	copybytetovar wCelesteFightCount
+	addvar 1
+	copyvartobyte wCelesteFightCount
+
+.DoneRematch
+	jumptext CelesteAfterRematchText
+
 TrainerScientistAdrian:
 	trainer SCIENTIST, ADRIAN, EVENT_BEAT_SCIENTIST_ADRIAN, ScientistAdrianText, ScientistAdrianWinText, 0, .Script
 
@@ -244,7 +296,24 @@ CelesteAfterText:
 	cont "be the same next"
 	cont "time."
 	done
-	
+
+CelesteRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+CelesteRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+CelesteAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 ScientistAdrianText:
 	text "I see you have"
 	line "discovered the"

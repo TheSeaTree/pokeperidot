@@ -30,6 +30,8 @@ HepaticaGym_MapScripts:
 
 HepaticaGymWhitneyScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	checkevent EVENT_BEAT_DUANE
 	iftrue .FightDone
 	opentext
@@ -54,7 +56,7 @@ HepaticaGymWhitneyScript:
 .Team3:
 	loadtrainer DUANE, DUANE3
 	startbattle
-	reloadmapafterbattle	
+	reloadmapafterbattle
 
 .After:
 	setevent EVENT_BEAT_DUANE
@@ -96,7 +98,50 @@ HepaticaGymWhitneyScript:
 .NoRoomForSwagger:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_DUANE
+	iftrue .DoneRematch
 	
+	opentext
+	writetext DuaneRematchText
+	waitbutton
+	closetext
+	
+	winlosstext DuaneRematchWinText, 0
+
+	copybytetovar wDuaneFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer DUANE, DUANE_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer DUANE, DUANE_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer DUANE, DUANE_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer DUANE, DUANE_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer DUANE, DUANE_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_DUANE
+	copybytetovar wDuaneFightCount
+	addvar 1
+	copyvartobyte wDuaneFightCount
+
+.DoneRematch
+	jumptext DuaneAfterRematchText
+
 HepaticaGymDoorGuard:
 	faceplayer
 	opentext
@@ -243,7 +288,24 @@ WhitneyGoodCryText:
 	cont "there for you to"
 	cont "take from me?"
 	done
-	
+
+DuaneRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+DuaneRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+DuaneAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 DoorGuard1TextBefore:
 	text "You must be new"
 	line "here. I'll let you"
@@ -352,4 +414,4 @@ HepaticaGym_MapEvents:
 
 	db 2 ; object events
 	object_event  9,  3, SPRITE_DUANE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, HepaticaGymWhitneyScript, -1
-	object_event  8, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, HepaticaGymDoorGuard, -1
+	object_event  8, 11, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, HepaticaGymDoorGuard, EVENT_BEAT_DUANE

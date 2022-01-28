@@ -53,8 +53,8 @@ ContinueApproachBrede:
 BredeScript_Battle:
 	faceplayer
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_BREDE
-	iftrue BredeScript_AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	writetext BredeScript_BredeBeforeText
 	waitbutton
 	closetext
@@ -62,17 +62,49 @@ BredeScript_Battle:
 	loadtrainer BREDE, BREDE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_BREDE
 	opentext
 	writetext BredeScript_BredeDefeatText
 	waitbutton
 	closetext
-	
+	jump .AfterBattle
+.Rematch
+	writetext BredeScript_BredeRematchBeforeText
+	waitbutton
+	closetext
+	winlosstext BredeScript_RematchBeatenText, 0
+
+	copybytetovar wEliteFourFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer BREDE, BREDE_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer BREDE, BREDE_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer BREDE, BREDE_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer BREDE, BREDE_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer BREDE, BREDE_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext BredeScript_RematchDefeatText
+	waitbutton
+	closetext
+
+.AfterBattle
 	applymovement PLAYER, E4AfterBattle
 	disappear BREDESROOM_CHRIS
 	disappear BREDESROOM_KRIS
-	
-	setevent EVENT_BREDES_ROOM_EXIT_OPEN
 	end
 	
 BredeNoTurningBack:
@@ -87,10 +119,11 @@ CantPassBrede:
 	end
 
 BredeScript_AfterBattle:
-	writetext BredeScript_BredeDefeatText
-	waitbutton
-	closetext
-	end
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
+	jumptextfaceplayer BredeScript_BredeDefeatText
+.Rematch:
+	jumptextfaceplayer BredeScript_RematchDefeatText
 
 FreezingColdWater:
 	jumptext FreezingColdWaterText
@@ -183,7 +216,22 @@ BredeScript_BredeDefeatText:
 	cont "to meet you in"
 	cont "battle once more."
 	done
-	
+
+BredeScript_BredeRematchBeforeText:
+	text "Pre-rematch text"
+	line "goes here."
+	done
+
+BredeScript_RematchBeatenText:
+	text "Rematch victory"
+	line "text goes here."
+	done
+
+BredeScript_RematchDefeatText:
+	text "After rematch text"
+	line "goes here."
+	done
+
 BredeCantProgress:
 	text "There is no"
 	line "turning back now."
@@ -215,6 +263,6 @@ BredesRoom_MapEvents:
 	bg_event  7, 20, BGEVENT_READ, BredeNoTurningBack
 
 	db 3 ; object events
-	object_event 10, 10, SPRITE_BREDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BredeScript_Battle, -1
+	object_event 10, 10, SPRITE_BREDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BredeScript_AfterBattle, -1
 	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

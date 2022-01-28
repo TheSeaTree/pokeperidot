@@ -3,9 +3,17 @@
 AcroporaCity_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .Ledge
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
-	
+
+.Ledge
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .Nothing
+	changeblock 16, 10, $c7
+.Nothing
+	return
+
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ACROPORA
 	return

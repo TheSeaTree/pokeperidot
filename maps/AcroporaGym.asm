@@ -7,6 +7,8 @@ AcroporaGym_MapScripts:
 	
 GroundGymLeader:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	opentext
 	checkevent EVENT_BEAT_ALAN
 	iftrue .FightDone
@@ -40,7 +42,50 @@ GroundGymLeader:
 .NoRoomForEarthquake:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_ALAN
+	iftrue .DoneRematch
 	
+	opentext
+	writetext AlanRematchText
+	waitbutton
+	closetext
+	
+	winlosstext AlanRematchWinText, 0
+
+	copybytetovar wAlanFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer ALAN, ALAN_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer ALAN, ALAN_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer ALAN, ALAN_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer ALAN, ALAN_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer ALAN, ALAN_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_ALAN
+	copybytetovar wAlanFightCount
+	addvar 1
+	copyvartobyte wAlanFightCount
+
+.DoneRematch
+	jumptext AlanAfterRematchText
+
 AcroporaGymStatue:
 	checkflag ENGINE_GLACIERBADGE
 	iftrue .Beaten
@@ -110,7 +155,24 @@ GroundLeaderWinText:
 	para "You have earned"
 	line "my TERRABADGE."
 	done
-	
+
+AlanRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+AlanRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+AlanAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 Text_ReceivedTerraBadge:
 	text "<PLAYER> received"
 	line "TERRABADGE."

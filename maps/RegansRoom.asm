@@ -54,6 +54,9 @@ ContinueApproachRegan:
 	waitsfx
 
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
+
 	writetext ReganScript_ReganBeforeText
 	waitbutton
 	closetext
@@ -63,12 +66,50 @@ ContinueApproachRegan:
 	changeblock 8,  8, $44
 	changeblock 8, 10, $45
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_REGAN
 	opentext
 	writetext ReganScript_ReganDefeatText
 	waitbutton
 	closetext
+	jump .AfterBattle
 
+.Rematch
+	writetext ReganScript_RematchBeforeText
+	waitbutton
+	closetext
+
+	winlosstext ReganScript_RematchBeatenText, 0
+
+	copybytetovar wEliteFourFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer REGAN, REGAN_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer REGAN, REGAN_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer REGAN, REGAN_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer REGAN, REGAN_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer REGAN, REGAN_REMATCH5
+.DoRematch
+	startbattle
+	changeblock 8,  8, $44
+	changeblock 8, 10, $45
+	reloadmapafterbattle
+	opentext
+	writetext ReganScript_RematchDefeatText
+	waitbutton
+	closetext
+
+.AfterBattle
 	playsound SFX_POWDER
 	applymovement REGANSROOM_REGAN, ReganVanishingAct
 	disappear REGANSROOM_REGAN
@@ -92,8 +133,6 @@ ContinueApproachRegan:
 	reloadmappart
 	closetext
 	wait 2
-
-	setevent EVENT_REGANS_ROOM_EXIT_OPEN
 	waitsfx
 	end
 	
@@ -114,12 +153,6 @@ CantPassRegan:
 	applymovement PLAYER, StepAwayE4
 	end
 
-ReganScript_AfterBattle:
-	writetext ReganScript_ReganDefeatText
-	waitbutton
-	closetext
-	end
-	
 ReganAppearance:
 	turn_head DOWN
 	turn_head LEFT
@@ -254,6 +287,48 @@ ReganScript_ReganDefeatText:
 	para "I promise!"
 	done
 
+ReganScript_RematchBeforeText:
+	text "<PLAYER>! What a"
+	line "pleasant surprise!"
+
+	para "Have you come to"
+	line "give the audience"
+	cont "an encore?"
+
+	para "Let's give them a"
+	line "show they will"
+	cont "never forget!"
+	done
+
+ReganScript_RematchBeatenText:
+	text "I can tell you are"
+	line "more of a believer"
+	cont "since the last"
+	cont "time we battled."
+	
+	para "It makes me happy"
+	line "to know you've"
+	cont "started to accept"
+	cont "the existance of"
+	cont "spirits in our"
+	cont "world!"
+	done
+
+ReganScript_RematchDefeatText:
+	text "My, my!"
+
+	para "You haven't been"
+	line "slacking with your"
+	cont "training either!"
+
+	para "I'll train even"
+	line "harder for our"
+	cont "next performance!"
+
+	para "Until then,"
+	line "au revoir!"
+	done
+
 ReganHasDisappearedText:
 	text "REGAN has complet-"
 	line "ely disappeared!"
@@ -296,7 +371,7 @@ RegansRoom_MapEvents:
 	bg_event  9, 10, BGEVENT_READ, ReganDroppedCards
 
 	db 9 ; object events
-	object_event  8, 10, SPRITE_REGAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ReganScript_AfterBattle, -1
+	object_event  8, 10, SPRITE_REGAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  4,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

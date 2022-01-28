@@ -36,6 +36,8 @@ HallOfFame_MapScripts:
 ;	setevent EVENT_TELEPORT_GUY
 ;	setevent EVENT_RIVAL_SPROUT_TOWER
 ;	clearevent EVENT_RED_IN_MT_SILVER
+	setevent EVENT_PLAYERS_HOUSE_MOM_2
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
 	special HealParty
 	halloffame
 	end

@@ -12,6 +12,8 @@ OrchidGymLeaderRoom_MapScripts:
 	
 BlackthornEnyaScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	opentext
 	checkevent EVENT_BEAT_ENYA
 	iftrue .AlreadyGotTM
@@ -54,7 +56,50 @@ BlackthornEnyaScript:
 .BagFull:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_ENYA
+	iftrue .DoneRematch
 	
+	opentext
+	writetext EnyaRematchText
+	waitbutton
+	closetext
+	
+	winlosstext EnyaRematchWinText, 0
+
+	copybytetovar wEnyaFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer ENYA, ENYA_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer ENYA, ENYA_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer ENYA, ENYA_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer ENYA, ENYA_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer ENYA, ENYA_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_ENYA
+	copybytetovar wEnyaFightCount
+	addvar 1
+	copyvartobyte wEnyaFightCount
+
+.DoneRematch
+	jumptext EnyaAfterRematchText
+
 TrainerCooltrainerFKari:
 	trainer COOLTRAINERF, KARI, EVENT_BEAT_COOLTRAINERF_KARI, CooltrainerFKariText, CooltrainerFKariWinText, 0, .Script
 .Script:
@@ -160,7 +205,24 @@ EnyaAfterText:
 	para "This battle will"
 	line "not be our last."
 	done
-	
+
+EnyaRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+EnyaRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+EnyaAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 CooltrainerFKariText:
 	text "Are you trying to"
 	line "escape the heat?"

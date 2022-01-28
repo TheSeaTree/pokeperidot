@@ -27,9 +27,9 @@ VictoryPort_MapScripts:
 	setscene SCENE_DEFAULT
 ;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_SS_MAKO_DOCKED
-	blackoutmod RUGOSA_COAST
+	blackoutmod POKEMON_LEAGUE
 	end
-	
+
 .HideShip
 	checkevent EVENT_COMING_FROM_LEAGUE
 	iftrue .Nope
@@ -47,6 +47,8 @@ VictoryPort_MapScripts:
 VictoryPortCaptainScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
 	writetext VictoryPortCaptainText
 	yesorno
 	iffalse .Boarding
@@ -54,13 +56,29 @@ VictoryPortCaptainScript:
 	waitbutton
 	closetext
 	end
-
 .Boarding:
 	checkevent EVENT_COMING_FROM_LEAGUE
 	iffalse .ShipAtRugosaPort
 	writetext VictoryPortCaptainBoardText
 	waitbutton
 	closetext
+	jump .ContinueBoarding
+
+.Postgame
+	writetext VictoryPortPostgameCaptainText
+	yesorno
+	iftrue .PostgameBoarding
+	writetext VictoryPortPostgameCaptainStayText
+	waitbutton
+	closetext
+	end
+.PostgameBoarding
+	checkevent EVENT_COMING_FROM_LEAGUE
+	iffalse .ShipAtRugosaPort
+	writetext VictoryPortPostgameCaptainBoardText
+	waitbutton
+	closetext
+.ContinueBoarding
 	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 
@@ -136,11 +154,30 @@ VictoryPortCaptainBoardText:
 	line "you home so you"
 	cont "can train more."
 	done
-	
+
 VictoryPortCaptainStayText:
 	text "I like your attit-"
 	line "ude! Get out there"
 	cont "and win!"
+	done
+
+VictoryPortPostgameCaptainText:
+	text "Greetings,"
+	line "CHAMPION."
+
+	para "Will you be retur-"
+	line "ning to RUGOSA"
+	cont "COAST from here?"
+	done
+
+VictoryPortPostgameCaptainBoardText:
+	text "Welcome aboard!"
+	done
+
+VictoryPortPostgameCaptainStayText:
+	text "Going to continue"
+	line "your visit to the"
+	cont "LEAGUE? Alright."
 	done
 
 VictoryPortSSMakoNotHereText:

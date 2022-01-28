@@ -37,8 +37,8 @@ ContinueApporachAmber:
 
 AmberScript_Battle:
 	opentext
-	checkevent EVENT_BEAT_ELITE_4_AMBER
-	iftrue AmberScript_AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	writetext AmberScript_AmberBeforeText
 	waitbutton
 	closetext
@@ -46,18 +46,49 @@ AmberScript_Battle:
 	loadtrainer AMBER, AMBER1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_BEAT_ELITE_4_AMBER
 	opentext
 	writetext AmberScript_AmberDefeatText
 	waitbutton
 	closetext
+	jump .AfterBattle
+.Rematch
+	writetext AmberScript_RematchBeforeText
+	waitbutton
+	closetext
+	winlosstext AmberScript_RematchBeatenText, 0
 
+	copybytetovar wEliteFourFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer AMBER, AMBER_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer AMBER, AMBER_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer AMBER, AMBER_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer AMBER, AMBER_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer AMBER, AMBER_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+	opentext
+	writetext AmberScript_RematchDefeatText
+	waitbutton
+	closetext
+
+.AfterBattle
 	applymovement PLAYER, AmbersRoom_CenterCamera
 	disappear AMBERSROOM_CHRIS
 	disappear AMBERSROOM_KRIS
-
-	setevent EVENT_AMBERS_ROOM_EXIT_OPEN
-	waitsfx
 	end
 	
 	
@@ -93,10 +124,11 @@ CantPassAmber:
 	end
 
 AmberScript_AfterBattle:
-	writetext AmberScript_AmberDefeatText
-	waitbutton
-	closetext
-	end
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
+	jumptextfaceplayer AmberScript_AmberDefeatText
+.Rematch:
+	jumptextfaceplayer AmberScript_RematchDefeatText
 
 AmbersRoom_EnterMovementLeft:
 	step UP
@@ -213,8 +245,8 @@ AmberScript_AmberDefeatText:
 	line "against the ELITE"
 	cont "FOUR are over,"
 	cont "your #MON"
-	cont "LEAGUE challenge is"
-	cont "not over yet."
+	cont "LEAGUE challenge"
+	cont "is not over yet."
 
 	para "There is one other"
 	line "trainer who has"
@@ -226,6 +258,21 @@ AmberScript_AmberDefeatText:
 
 	para "Don't embarass me"
 	line "by losing now."
+	done
+
+AmberScript_RematchBeforeText:
+	text "Pre-rematch text"
+	line "goes here."
+	done
+
+AmberScript_RematchBeatenText:
+	text "Rematch victory"
+	line "text goes here."
+	done
+
+AmberScript_RematchDefeatText:
+	text "After rematch text"
+	line "goes here."
 	done
 
 AmberCantProgress:
@@ -254,7 +301,13 @@ AmbersRoom_MapEvents:
 	bg_event  6, 20, BGEVENT_READ, AmberNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, AmberNoTurningBack
 
-	db 3 ; object events
-	object_event  8, 10, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_Battle, -1
+	db 9 ; object events
+	object_event  8, 10, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_AfterBattle, -1
 	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  9,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  2,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  1,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 10,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -28,6 +28,8 @@ RidgeGymB1_MapScripts:
 
 RidgeGymB1CecilScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	opentext
 	checkevent EVENT_BEAT_CECIL
 	iftrue .FightDone
@@ -97,7 +99,50 @@ RidgeGymB1CecilScript:
 .NoRoomForWhirlpool:
 	closetext
 	end
+
+.Rematch:
+	checkflag ENGINE_REMATCH_CECIL
+	iftrue .DoneRematch
 	
+	opentext
+	writetext CecilRematchText
+	waitbutton
+	closetext
+	
+	winlosstext CecilRematchWinText, 0
+
+	copybytetovar wCecilFightCount
+	ifgreater 3, .FinalRematch
+	ifequal 3, .RematchTeam4
+	ifequal 2, .RematchTeam3
+	ifequal 1, .RematchTeam2
+
+.RematchTeam1:
+	loadtrainer CECIL, CECIL_REMATCH1
+	jump .DoRematch
+.RematchTeam2:
+	loadtrainer CECIL, CECIL_REMATCH2
+	jump .DoRematch
+.RematchTeam3:
+	loadtrainer CECIL, CECIL_REMATCH3
+	jump .DoRematch
+.RematchTeam4:
+	loadtrainer CECIL, CECIL_REMATCH4
+	jump .DoRematch
+.FinalRematch:
+	loadtrainer CECIL, CECIL_REMATCH5
+.DoRematch
+	startbattle
+	reloadmapafterbattle
+
+	setflag ENGINE_REMATCH_CECIL
+	copybytetovar wCecilFightCount
+	addvar 1
+	copyvartobyte wCecilFightCount
+
+.DoneRematch
+	jumptext CecilAfterRematchText
+
 RidgeGymB1TriggerScript1:
 	faceplayer
 	opentext
@@ -289,7 +334,24 @@ CecilFightDoneText:
 	line "will not happen in"
 	cont "the future!"
 	done
-	
+
+CecilRematchText:
+	text "This is where the"
+	line "rematch text goes."
+	done
+
+CecilRematchWinText:
+	text "This is where the"
+	line "victory text goes."
+	done
+
+CecilAfterRematchText:
+	text "Good job!"
+
+	para "We'll do this"
+	line "again tomorrow."
+	done
+
 SwimmerVinnyText:
 	text "Welcome to the"
 	line "RIDGE GYM!"
