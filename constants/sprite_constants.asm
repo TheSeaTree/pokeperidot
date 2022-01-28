@@ -114,6 +114,7 @@
 	const SPRITE_KRIS_SURF
 	const SPRITE_SHADOW
 	const SPRITE_OFFICER_F
+	const SPRITE_BIG_AERODACTYL
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

@@ -118,3 +118,4 @@ OverworldSprites:
 	overworld_sprite KrisSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ShadowSpriteGFX, 12, STANDING_SPRITE, PAL_OW_ROCK
 	overworld_sprite OfficerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite BigAerodactylSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER

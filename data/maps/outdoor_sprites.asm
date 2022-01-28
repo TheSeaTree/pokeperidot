@@ -398,16 +398,10 @@ RugosaGroupSprites:
 
 LakeOfRageGroupSprites:
 ; Route43, LakeOfRage
-	db SPRITE_LANCE
-	db SPRITE_GRAMPS
 	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_LASS
-	db SPRITE_YOUNGSTER
-	; 8 of max 9 walking sprites
-	db SPRITE_GYARADOS
+	db SPRITE_TEACHER
+	; 2 of max 9 walking sprites
+	db SPRITE_JYNX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db 0 ; end
@@ -436,7 +430,7 @@ SilverGroupSprites:
 	db SPRITE_SCIENTIST
 	; 1 of max 9 walking sprites
 	db SPRITE_EGG
-	db SPRITE_MOLTRES
+	db SPRITE_BIG_AERODACTYL
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
@@ -456,7 +450,6 @@ DungeonsGroupSprites:
 	db SPRITE_EGG
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
-	db SPRITE_MOLTRES
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
