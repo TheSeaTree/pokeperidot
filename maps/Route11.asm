@@ -76,7 +76,10 @@ Route11HiddenRevivalHerb:
 
 Route11HiddenGoldLeaf:
 	hiddenitem GOLD_LEAF, EVENT_ROUTE_11_HIDDEN_GOLD_LEAF
-	
+
+Route11FruitTree:
+	fruittree FRUITTREE_ROUTE_11
+
 Route11GoldenrodSign:
 	jumptext Route11GoldenrodSignText
 
@@ -193,10 +196,11 @@ Route11_MapEvents:
 	bg_event  3,  5, BGEVENT_ITEM, Route11HiddenRevivalHerb
 	bg_event 48,  4, BGEVENT_ITEM, Route11HiddenGoldLeaf
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1
 	object_event 23, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route11CooltrainerFScript, -1
 	object_event 29, 23, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route11HikerScript, EVENT_ROUTE_11_LEDGE
 	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
 	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_11_SPELL_TAG
 	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11LeafStone, EVENT_ROUTE_11_LEAF_STONE
+	object_event 39, 27, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

@@ -74,7 +74,10 @@ TrainerSailorRoland:
 	
 Route6LassScript:
 	jumptextfaceplayer Route6LassText
-	
+
+Route6HiddenPearl:
+	hiddenitem PEARL, EVENT_ROUTE_6_HIDDEN_PEARL
+
 Route6Rock:
 	jumpstd smashrock
 	
@@ -257,8 +260,9 @@ Route6_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 12, 26, BGEVENT_READ, Route6UndergroundPathSign
+	bg_event 43, 22, BGEVENT_ITEM, Route6HiddenPearl
 
 	db 12 ; object events
 	object_event 29, 20, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorCalvin, -1

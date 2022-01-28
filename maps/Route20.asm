@@ -297,7 +297,7 @@ Route20_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 5 ; bg events
 	bg_event 11, 32, BGEVENT_READ, Route20Sign
 	bg_event 43, 25, BGEVENT_READ, Route20TrainerTipSign
 	bg_event 55, 22, BGEVENT_ITEM, Route20HiddenNugget
