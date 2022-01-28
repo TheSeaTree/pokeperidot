@@ -5272,19 +5272,12 @@ BattleMenu:
 	jr .safarimenu
 .not_safari
 	cp BATTLETYPE_SIMULATION
-	jr nz, .not_contest
-	farcall ContestBattleMenu
+	jr nz, .not_simulation
+	farcall SimulationBattleMenu
 	jr .next
-.not_contest
-
-	; Auto input: choose "ITEM"
-	ld a, [wInputType]
-	or a
-	jr z, .skip_dude_pack_select
-	farcall _DudeAutoInput_DownA
-.skip_dude_pack_select
-	call LoadBattleMenu2
-	ret c
+.not_simulation
+	
+	farcall LoadBattleMenu
 
 .next
 	ld a, $1
@@ -5298,6 +5291,10 @@ BattleMenu:
 	jp z, BattleMenu_PKMN
 	cp $4
 	jp z, BattleMenu_Run
+	cp $5
+	jp z, BattleMenu_PlayerStats
+	cp $6
+	jp nc, BattleMenu_EnemyStats
 	jr .loop
 
 .safarimenu
@@ -5400,7 +5397,11 @@ BattleMenu_Pack:
 	ld a, [wLinkMode]
 	and a
 	jp nz, .ItemsCantBeUsed
-	
+
+	ld a, [wInBattleTowerBattle]
+	and a
+	jp nz, .ItemsCantBeUsed
+
 	call IsKantoGymLeader
 	jp c, .NoItemsInLeagueBattle
 	
@@ -5414,14 +5415,6 @@ BattleMenu_Pack:
 	jr z, .contest
 	cp BATTLETYPE_SIMULATION
 	jr z, .simulation
-
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
-	jp nz, .ItemsCantBeUsed
-
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
-	jp nz, .ItemsCantBeUsed
 
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
@@ -5831,6 +5824,17 @@ BattleMenu_Run:
 	ret nz
 	jp BattleMenu
 
+BattleMenu_PlayerStats:
+	farcall PlayerStatReadout
+	jp LeaveStatReadout
+
+BattleMenu_EnemyStats:
+	farcall EnemyStatReadout
+LeaveStatReadout:
+	ld a, $1
+	ld [wBattleMenuCursorBuffer], a
+	jp BattleMenu
+
 CheckAmuletCoin:
 	ld a, [wBattleMonItem]
 	ld b, a
@@ -6181,13 +6185,13 @@ MoveInfoBox:
 	hlcoord 4, 17
 	ld [hl], "♠"
 	hlcoord 1, 13
-	ld [hl], $5e	
+	ld [hl], $c8
 	hlcoord 2, 13
-	ld [hl], $5f
+	ld [hl], $c9
 	hlcoord 1, 15
-	ld [hl], $5f
+	ld [hl], $c9
 	hlcoord 2, 15
-	ld [hl], $5f
+	ld [hl], $c9
 	hlcoord 2, 10
 	ld de, .Type
 	call PlaceString
@@ -8310,11 +8314,6 @@ HandleSafariEnemyTurn:
 	ld hl, BattleText_WildMonIsWatching
 	jp StdBattleTextBox
 	jr .continueidle
-	
-LoadBattleMenu2:
-	farcall LoadBattleMenu
-	and a
-	ret
 
 FillInExpBar:
 	push hl

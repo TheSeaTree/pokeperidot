@@ -174,7 +174,6 @@ YesNoMenuHeader::
 	db "YES@"
 	db "NO@"
 
-
 PlaceNoYesBox::
 	jr _NoYesBox
 
@@ -566,10 +565,10 @@ _2DMenu::
 	ld a, [wMenuCursorBuffer]
 	ret
 
-InterpretBattleMenu::
+_SafariSimulationMenu::
 	ldh a, [hROMBank]
 	ld [wMenuData_2DMenuItemStringsBank], a
-	farcall _InterpretBattleMenu
+	farcall _SafariSimulationMenu_
 	ld a, [wMenuCursorBuffer]
 	ret
 

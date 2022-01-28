@@ -92,6 +92,10 @@ LoadHPBar:
 	ld hl, vTiles2 tile $55
 	lb bc, BANK(ExpBarGFX), 10
 	call Get2bpp_2
+	ld de, StatArrowGFX
+	ld hl, vTiles2 tile $7c
+	lb bc, BANK(StatArrowGFX), 2
+	call Get2bpp_2
 ;	ld de, MobilePhoneTilesGFX + 6 tiles ; mobile phone icon
 ;	ld hl, vTiles2 tile $7c
 ;	lb bc, BANK(MobilePhoneTilesGFX), 3

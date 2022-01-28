@@ -1516,7 +1516,10 @@ wInBattleTowerBattle:: ; cfc0
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wBattleMenuFlags::
+; bit 0-2: quick-access buttons (b/start/select)
+; bit 3: quick-select last pack item
+	db
 
 wFXAnimID:: dw ; cfc2
 
