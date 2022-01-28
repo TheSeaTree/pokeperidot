@@ -201,12 +201,6 @@ SECTION "Tileset Data 6", ROMX
 TilesetTraditionalHouseMeta:
 INCBIN "data/tilesets/traditional_house_metatiles.bin"
 
-TilesetChampionsRoomGFX:
-INCBIN "gfx/tilesets/champions_room.2bpp.lz"
-
-TilesetChampionsRoomMeta:
-INCBIN "data/tilesets/champions_room_metatiles.bin"
-
 TilesetChampionsRoomColl:
 INCLUDE "data/tilesets/champions_room_collision.asm"
 
@@ -371,9 +365,6 @@ INCBIN "data/tilesets/battle_tower_attributes.bin"
 TilesetTowerAttr:
 INCBIN "data/tilesets/tower_attributes.bin"
 
-TilesetCastleAttr:
-INCBIN "data/tilesets/castle_attributes.bin"
-
 
 SECTION "Tileset Data 11", ROMX
 
@@ -400,6 +391,9 @@ INCBIN "data/tilesets/mountain_attributes.bin"
 
 TilesetPokemonLeagueOutsideAttr:
 INCBIN "data/tilesets/pokemon_league_outside_attributes.bin"
+
+TilesetCastleAttr:
+INCBIN "data/tilesets/castle_attributes.bin"
 
 
 SECTION "Tileset Data 12", ROMX
@@ -433,6 +427,9 @@ INCLUDE "data/tilesets/cyberspace_collision.asm"
 
 TilesetCyberspaceAttr:
 INCBIN "data/tilesets/cyberspace_attributes.bin"
+
+TilesetChampionsRoomMeta:
+INCBIN "data/tilesets/champions_room_metatiles.bin"
 
 
 SECTION "Tileset Data 13", ROMX
@@ -469,3 +466,6 @@ INCBIN "gfx/tilesets/cyberspace.2bpp.lz"
 
 TilesetCyberspaceMeta:
 INCBIN "data/tilesets/cyberspace_metatiles.bin"
+
+TilesetChampionsRoomGFX:
+INCBIN "gfx/tilesets/champions_room.2bpp.lz"

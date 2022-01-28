@@ -56,3 +56,12 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 37
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 38
 	tilecoll WALL, HOP_UP, LEFT_WALL, HOP_UP ; 39
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 3a
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 3b
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 3c
+	tilecoll WALL, FLOOR, WALL, WALL ; 3d
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 3e
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 3f
+	tilecoll FLOOR, WALL, WALL, WALL ; 40
+	tilecoll WALL, WALL, WALL, FLOOR ; 41
+	tilecoll WALL, WALL, FLOOR, WALL ; 42
