@@ -2312,7 +2312,8 @@ wWildEncounterCooldown:: db ; d452
 wXYComparePointer:: dw ; d453
 
 wOtherTrainerType::	db
-	ds 3
+wTrainerGroupBank:: db
+	ds 2
 
 wBattleScriptFlags:: dw ; d459
 wPlayerSpriteSetupFlags:: ; d45b
@@ -2642,7 +2643,7 @@ wEnyaFightCount::    	db
 wEliteFourFightCount::	db
 wSSMako1FFightCount::   Db
 wSSMako2FFightCount::   db
-wTaylorFightCount:: 	db ; unused
+wTaylorFightCount:: 	db
 wToddFightCount::    	db ; unused
 wGinaFightCount::    	db ; unused
 wIrwinFightCount::   	db ; unused
