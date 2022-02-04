@@ -1038,6 +1038,7 @@ MachopEvosAttacks:
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
 	db 25, DRAIN_PUNCH
+	db 29, MACH_PUNCH
 	db 33, BULK_UP
 	db 37, VITAL_THROW
 	db 39, CROSS_CHOP
@@ -1057,6 +1058,7 @@ MachokeEvosAttacks:
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
 	db 25, DRAIN_PUNCH
+	db 33, MACH_PUNCH
 	db 37, BULK_UP
 	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
@@ -1069,12 +1071,14 @@ MachampEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LOW_KICK
 	db 1, LEER
+	db 1, BULLET_PUNCH
 	db 3, FOCUS_ENERGY
 	db 7, KARATE_CHOP
 	db 9, FORESIGHT
 	db 15, SEISMIC_TOSS
 	db 21, PURSUIT
 	db 25, DRAIN_PUNCH
+	db 33, MACH_PUNCH
 	db 37, BULK_UP
 	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
@@ -3511,6 +3515,7 @@ QwilfishEvosAttacks:
 ScizorEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
+	db 1, BULLET_PUNCH
 	db 1, LEER
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT

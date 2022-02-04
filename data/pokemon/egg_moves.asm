@@ -226,6 +226,7 @@ ParasEggMoves:
 	db PURSUIT
 	db METAL_CLAW
 	db LEECH_SEED
+	db CRABHAMMER
 	db -1 ; end
 
 VenonatEggMoves:
@@ -278,6 +279,8 @@ MankeyEggMoves:
 	db PAY_DAY
 	db STONE_EDGE
 	db DYNAMICPUNCH
+	db BULLET_PUNCH
+	db MACH_PUNCH
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -1137,6 +1140,7 @@ GreminiEggMoves:
 	db -1
 	
 SmoochumEggMoves:
+	db MACH_PUNCH
 	db RECOVER
 	db ICICLE_SPEAR
 	db PETAL_DANCE
@@ -1146,6 +1150,7 @@ SmoochumEggMoves:
 	db -1 ; end
 
 ElekidEggMoves:
+	db MACH_PUNCH
 	db KARATE_CHOP
 	db BARRIER
 	db CROSS_CHOP
@@ -1155,6 +1160,7 @@ ElekidEggMoves:
 	db -1 ; end
 
 MagbyEggMoves:
+	db MACH_PUNCH
 	db KARATE_CHOP
 	db BARRIER
 	db SCREECH
