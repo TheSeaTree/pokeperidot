@@ -7,7 +7,7 @@ SafariZoneArea1RestHouse_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .RestHouse
 	
 .RestHouse:
-	setflag ENGINE_SAFARI_REST_HOUSE
+	setflag ENGINE_EXP_ALL_ACTIVE
 	return
 	
 SafariArea1RestHouseReceptionist:

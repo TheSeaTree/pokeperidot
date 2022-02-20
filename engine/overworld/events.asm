@@ -946,9 +946,9 @@ DoRepelStep:
 	ret
 	
 DoSafariStep:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_REST_HOUSE_F, [hl]
-	jr nz, .NoCall
+	call GetMapEnvironment
+	cp INDOOR
+	jr z, .NoCall
 
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
@@ -983,6 +983,10 @@ DoSafariStep:
 	ret
 
 DoFireGymStep:
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_HALL_OF_FAME_F, a
+	ret nz
+
 	ld a, [wMapGroup]
 	cp GROUP_ORCHID_GYM_B1F
 	jr nz, .NoCall

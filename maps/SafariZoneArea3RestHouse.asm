@@ -3,12 +3,7 @@
 SafariZoneArea3RestHouse_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .RestHouse
-	
-.RestHouse:
-	setflag ENGINE_SAFARI_REST_HOUSE
-	return
+	db 0 ; callbacks
 	
 SafariArea3RestHouseReceptionist:
 	jumptextfaceplayer SafariArea3RestHouseReceptionistText

@@ -32,7 +32,7 @@ EngineFlags:
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F
 	engine_flag wStatusFlags, STATUSFLAGS_BATTLE_SUBWAY_LEVELS_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_REST_HOUSE_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_REST_HOUSE_F ; Unused
 	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_GAME_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F

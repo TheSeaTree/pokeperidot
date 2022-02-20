@@ -33,12 +33,16 @@ SafariZoneEncounterScript::
 	end
 
 SafariGameOverScript::
+	checkcode VAR_MOVEMENT
+	ifnotequal PLAYER_RUN, .NotRunning
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
+.NotRunning
 	playsound SFX_ELEVATOR_END
 	opentext
 	writetext SafariGameText_TimesUp
 	waitbutton
 	clearflag ENGINE_SAFARI_ZONE
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	jump SafariZoneReturnToGateScript
 
 BugCatchingContestOutOfBallsScript:

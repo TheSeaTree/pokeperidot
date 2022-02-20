@@ -3,13 +3,8 @@
 SafariZoneArea1_MapScripts:
 	db 0 ; scene scripts
 
-	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .ClearRestHouse
+	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .Fence
-	
-.ClearRestHouse:
-	clearflag ENGINE_SAFARI_REST_HOUSE
-	return
 
 .Fence:
 	checkevent EVENT_BEAT_ELITE_FOUR
