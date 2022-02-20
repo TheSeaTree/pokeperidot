@@ -801,13 +801,17 @@ RugosaGymGuy:
 	jumptextfaceplayer RugosaGymGuyText
 	
 RugosaGymStatue:
+	trainertotext JOEL, JOEL1, MEM_BUFFER_1
 	checkflag ENGINE_COGBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext JOEL, JOEL1, MEM_BUFFER_1
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
-	
+.RivalBeaten
+	jumpstd gymstatue3
+
 RugosaGymExit:
 	checkflag ENGINE_COGBADGE
 	iftrue .Leave
@@ -823,7 +827,7 @@ RugosaGymExit:
 	special FadeOutPalettes
 	playsound SFX_EXIT_BUILDING
 	wait 4
-	warpfacing DOWN, RUGOSA_CITY, 24, 13
+	warpfacing DOWN, RUGOSA_CITY, 28, 13
 	end
 	
 RugosaLeaveGym:

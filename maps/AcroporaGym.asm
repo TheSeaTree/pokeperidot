@@ -87,12 +87,16 @@ GroundGymLeader:
 	jumptext AlanAfterRematchText
 
 AcroporaGymStatue:
+	trainertotext ALAN, ALAN1, MEM_BUFFER_1
 	checkflag ENGINE_GLACIERBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext ALAN, ALAN1, MEM_BUFFER_1
+	checkflag ENGINE_RISINGBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
+.RivalBeaten
+	jumpstd gymstatue3
 
 AcroporaCantLeave:
 	checkflag ENGINE_GLACIERBADGE

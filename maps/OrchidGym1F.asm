@@ -45,12 +45,16 @@ BlackthornCantLeave:
 	end
 	
 BlackthornGymStatue:
+	trainertotext ENYA, ENYA1, MEM_BUFFER_1
 	checkflag ENGINE_RISINGBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext ENYA, ENYA1, MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_POKEMON_LEAGUE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
+.RivalBeaten
+	jumpstd gymstatue3
 
 BlackthornLeaveGym:
 	turn_step DOWN

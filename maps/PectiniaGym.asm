@@ -166,13 +166,17 @@ PectiniaGymGuyScript:
 	end
 
 PectiniaGymStatue:
+	trainertotext MURPHY, MURPHY1, MEM_BUFFER_1
 	checkflag ENGINE_FISTBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext MURPHY, MURPHY1, MEM_BUFFER_1
+	checkflag ENGINE_MYSTICBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
-	
+.RivalBeaten
+	jumpstd gymstatue3
+
 PectiniaCantLeave:
 	checkflag ENGINE_FISTBADGE
 	iftrue .Leave

@@ -196,12 +196,16 @@ HepaticaGymDoorGuard:
 	end	
 
 HepaticaGymStatue:
+	trainertotext DUANE, DUANE1, MEM_BUFFER_1
 	checkflag ENGINE_SKULLBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext DUANE, DUANE1, MEM_BUFFER_1
+	checkflag ENGINE_COGBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
+.RivalBeaten
+	jumpstd gymstatue3
 
 HepaticaCantLeave:
 	checkflag ENGINE_SKULLBADGE
@@ -290,19 +294,33 @@ WhitneyGoodCryText:
 	done
 
 DuaneRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Ah, <PLAYER>…"
+	line "You have returned…"
+
+	para "Do not waste my"
+	line "time with talk…"
+
+	para "It is time for me"
+	line "to see how strong"
+	cont "CHAMPION truly is!"
 	done
 
 DuaneRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "I have fallen to"
+	line "you once more…"
+
+	para "I must grow even"
+	line "stronger!"
 	done
 
 DuaneAfterRematchText:
-	text "Good job!"
+	text "I could not stand"
+	line "to your might, but"
+	cont "I will not turn"
+	cont "down to your"
+	cont "next challenge."
 
-	para "We'll do this"
+	para "Meet me in battle"
 	line "again tomorrow."
 	done
 

@@ -218,18 +218,54 @@ BredeScript_BredeDefeatText:
 	done
 
 BredeScript_BredeRematchBeforeText:
-	text "Pre-rematch text"
-	line "goes here."
+	text "Welcome, CHAMPION!"
+
+	para "I know why you"
+	line "have returned."
+
+	para "Let's not delay"
+	line "this any further."
+
+	para "My #MON have"
+	line "been against the"
+	cont "grindstone,"
+	cont "waiting for our"
+	cont "eventual rematch."
+
+	para "I will make sure"
+	line "you fall today!"
 	done
 
 BredeScript_RematchBeatenText:
-	text "Rematch victory"
-	line "text goes here."
+	text "My #MON have"
+	line "fallen to you once"
+	cont "again…"
+
+	para "I do not like to"
+	line "lose, but I am"
+	cont "encouraged to grow"
+	cont "even stronger as a"
+	cont "warrior."
+
+	para "I am excited to"
+	line "see what our next"
+	cont "battle has in"
+	cont "store for us."
 	done
 
 BredeScript_RematchDefeatText:
-	text "After rematch text"
-	line "goes here."
+	text "My #MON will"
+	line "hone their skills"
+	cont "until they are as"
+	cont "sharp as my axe's"
+	cont "blade!"
+
+	para "Then, we will meet"
+	line "in this frozen"
+	cont "battlefield once"
+	cont "more, and see who"
+	cont "is the mightier"
+	cont "trainer."
 	done
 
 BredeCantProgress:

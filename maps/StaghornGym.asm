@@ -320,13 +320,17 @@ StaghornGymGuy:
 	jumptextfaceplayer StaghornGymGuyText
 	
 StaghornGymStatue:
+	trainertotext POSEY, POSEY1, MEM_BUFFER_1
 	checkflag ENGINE_ROOTBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext POSEY, POSEY1, MEM_BUFFER_1
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
-	
+.RivalBeaten
+	jumpstd gymstatue3
+
 StaghornGymLeaderApproach:
 	step DOWN
 	turn_head RIGHT

@@ -194,12 +194,16 @@ FaviaGymGuyScript:
 	end
 	
 FaviaGymStatue:
+	trainertotext CELESTE, CELESTE1, MEM_BUFFER_1
 	checkflag ENGINE_MYSTICBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext CELESTE, CELESTE1, MEM_BUFFER_1
+	checkflag ENGINE_SKULLBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
+.RivalBeaten
+	jumpstd gymstatue3
 	
 FaviaCantLeave:
 	checkflag ENGINE_MYSTICBADGE
@@ -298,20 +302,38 @@ CelesteAfterText:
 	done
 
 CelesteRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "I forsaw your"
+	line "return, <PLAYER>."
+
+	para "Have you come to"
+	line "see how my"
+	cont "#MON have grown"
+	cont "since you earned"
+	cont "the MYSTICBADGE?"
+
+	para "I cannot predict"
+	line "the outcome of"
+	cont "this battle, but"
+	cont "I promise I will"
+	cont "not go down as"
+	cont "easily this time!"
 	done
 
 CelesteRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "The stars were not"
+	line "aligned in my"
+	cont "favor today."
 	done
 
 CelesteAfterRematchText:
-	text "Good job!"
+	text "I have learned"
+	line "much from our"
+	cont "battle today."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "I will use this"
+	line "knowledge to"
+	cont "change the out-"
+	cont "come next time."
 	done
 
 ScientistAdrianText:

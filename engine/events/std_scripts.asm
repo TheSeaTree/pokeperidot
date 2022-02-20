@@ -33,6 +33,7 @@ StdScripts::
 	dba InitializeEventsScript
 	dba GymStatue1Script
 	dba GymStatue2Script
+	dba GymStatue3Script
 	dba ReceiveItemScript
 	dba ReceiveTogepiEggScript
 	dba PCScript
@@ -376,6 +377,8 @@ GymStatue1Script:
 	mapnametotext MEM_BUFFER_0
 	opentext
 	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers1Text
 	waitbutton
 	closetext
 	end
@@ -385,7 +388,17 @@ GymStatue2Script:
 	opentext
 	farwritetext GymStatue_CityGymText
 	buttonsound
-	farwritetext GymStatue_WinningTrainersText
+	farwritetext GymStatue_WinningTrainers2Text
+	waitbutton
+	closetext
+	end
+
+GymStatue3Script:
+	mapnametotext MEM_BUFFER_0
+	opentext
+	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers3Text
 	waitbutton
 	closetext
 	end
@@ -541,7 +554,7 @@ TeleportGuyScript:
 	farwritetext TeleportGuyDeclineText
 	closetext
 	end
-	
+
 DoTeleportScript:
 	opentext
 	farwritetext TeleportGuyAcceptText

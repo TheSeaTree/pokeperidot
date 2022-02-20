@@ -58,13 +58,17 @@ RidgeGymGuyScript:
 	end
 
 RidgeGymStatue:
+	trainertotext CECIL, CECIL1, MEM_BUFFER_1
 	checkflag ENGINE_WAVEBADGE
 	iftrue .Beaten
 	jumpstd gymstatue1
 .Beaten:
-	trainertotext CECIL, CECIL1, MEM_BUFFER_1
+	checkflag ENGINE_COGBADGE
+	iftrue .RivalBeaten
 	jumpstd gymstatue2
-	
+.RivalBeaten
+	jumpstd gymstatue3
+
 RidgeCantLeave:
 	checkflag ENGINE_WAVEBADGE
 	iftrue .Leave
