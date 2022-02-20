@@ -1062,8 +1062,7 @@ BattleCommand_DoTurn:
 
 .mimic
 	ld hl, wWildMonPP
-	call .consume_pp
-	ret
+	 jp .consume_pp
 
 .out_of_pp
 	call BattleCommand_MoveDelay
@@ -1653,14 +1652,11 @@ BattleCommand_CheckHit:
 .skip_brightpowder
 	ld a, b
 	cp -1
-	jr z, .Hit
+	ret z
 
 	call BattleRandom
 	cp b
-	jr nc, .Miss
-
-.Hit:
-	ret
+	ret c
 
 .Miss:
 ; Keep the damage value intact if we're using (Hi) Jump Kick.
@@ -4184,28 +4180,22 @@ BattleCommand_EvasionUp2:
 	
 BattleCommand_GrowthAttack:
 ; growthattack
+	ld b, $10 | ATTACK
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr z, .Sunny
+	jr z, BattleCommand_StatUp
 	ld b, ATTACK
-	jr BattleCommand_StatUp
-	
-.Sunny
-	ld b, $10 | ATTACK
 	jr BattleCommand_StatUp
 
 BattleCommand_GrowthSpecial:
 ; growthspecial
+	ld b, $10 | SP_ATTACK
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jr z, .Sunny
+	jr z, BattleCommand_StatUp
 	ld b, SP_ATTACK
-	jr BattleCommand_StatUp
-	
-.Sunny
-	ld b, $10 | SP_ATTACK
 	; fallthrough
-	
+
 BattleCommand_StatUp:
 ; statup
 	call RaiseStat
@@ -4745,7 +4735,9 @@ BattleCommand_LegendaryStatsBoost:
 
 ; Speed
 	call BattleCommand_SpeedUp2
-	ret
+
+; Evasion
+	jp BattleCommand_EvasionUp2
 
 ResetMiss:
 	xor a
@@ -5658,10 +5650,6 @@ BattleCommand_Charge:
 	text_far UnknownText_0x1c0d6c
 	text_end
 
-BattleCommand3c:
-; unused
-	ret
-
 BattleCommand_TrapTarget:
 ; traptarget
 
@@ -6264,7 +6252,9 @@ BattleCommand_Screen:
 	bit SCREENS_LIGHT_SCREEN, [hl]
 	jr nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
-	ld a, 5
+	
+	call CheckLightClay
+	
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
@@ -6277,7 +6267,8 @@ BattleCommand_Screen:
 	; LightScreenCount -> ReflectCount
 	inc bc
 
-	ld a, 5
+	call CheckLightClay
+
 	ld [bc], a
 	ld hl, ReflectEffectText
 
@@ -6288,6 +6279,18 @@ BattleCommand_Screen:
 .failed
 	call AnimateFailedMove
 	jp PrintButItFailed
+
+CheckLightClay:
+	push bc
+	call GetUserItem
+	ld a, b
+	cp HELD_LIGHT_CLAY
+	ld a, 5
+	jr nz, .no_clay
+	ld a, 8
+.no_clay
+	pop bc
+	ret
 
 PrintDoesntAffect:
 ; 'it doesn't affect'
@@ -6490,10 +6493,6 @@ INCLUDE "engine/battle/move_effects/foresight.asm"
 INCLUDE "engine/battle/move_effects/perish_song.asm"
 
 INCLUDE "engine/battle/move_effects/rollout.asm"
-
-BattleCommand5d:
-; unused
-	ret
 
 INCLUDE "engine/battle/move_effects/fury_cutter.asm"
 

@@ -186,7 +186,7 @@ ItemDescriptions:
 	dw SafariPackDesc
 	dw SkillBeltDesc
 	dw InvalidItemDesc
-	dw InvalidItemDesc
+	dw LightClayDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -988,7 +988,11 @@ SafariPackDesc:
 
 SkillBeltDesc:
 	db	 "Moves hit maximum"
-	next "amount of strikes."
+	next "amount of strikes.@"
+
+LightClayDesc:
+	db	 "Extends SCREEN"
+	next "duration. (HOLD)@"
 
 InvalidItemDesc:
 	db   "You should not"

@@ -235,8 +235,8 @@ PlayerStatReadout:
 EnemyStatReadout:
 	call StatDisplay_PlaceStatNames
 	
-	ld de, wEnemyMonNick
-	hlcoord 9, 12
+	ld de, EnemyString
+	hlcoord 14, 12
 	call PlaceString
 
 	ld a, [wEnemyAtkLevel]
@@ -497,6 +497,9 @@ LightScreenString:
 
 SafeguardString:
 	db "SAFEGUARD/@"
+
+EnemyString:
+	db "ENEMY@"
 
 StatsDisplay_Up_Arrow:
 	ld [hl], $7c

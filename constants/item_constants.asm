@@ -192,7 +192,7 @@
 	const SAFARI_PACK  ; b8
 	const SKILL_BELT   ; b9
 	const CYBER_BALL   ; ba
-	const ITEM_BB      ; bb
+	const LIGHT_CLAY   ; bb
 	const ITEM_BC      ; bc
 	const ITEM_BD      ; bd
 	const ITEM_BE      ; be

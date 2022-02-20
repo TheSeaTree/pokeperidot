@@ -1146,6 +1146,7 @@ LeechSeed:
 	checkobedience
 	usedmovetext
 	doturn
+	stab
 	checkhit
 	leechseed
 	endmove

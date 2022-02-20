@@ -84,7 +84,7 @@ Moves: ; 41afb
 	move STRENGTH,     EFFECT_ATTACK_UP_HIT,      80, NORMAL,    95, 10,  30
 	move ABSORB,       EFFECT_LEECH_HIT,          40, GRASS,    100, 20,   0
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          75, GRASS,    100, 10,   0
-	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, GRASS,     90, 10,   0
+	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, POWDER,    90, 10,   0
 	move GROWTH,       EFFECT_GROWTH,              0, GRASS,    100, 40,   0
 	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,     95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,    100, 10,   0

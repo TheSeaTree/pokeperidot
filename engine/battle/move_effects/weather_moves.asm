@@ -37,9 +37,8 @@ StartWeather:
 	ld [wBattleWeather], a
 	ld a, 5
 	ld [wWeatherCount], a
-	call AnimateCurrentMove
-	ret
-	
+	jp AnimateCurrentMove
+
 FailedWeather:
 	call AnimateFailedMove
 	jp PrintButItFailed
