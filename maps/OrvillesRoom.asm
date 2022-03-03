@@ -3,8 +3,8 @@
 	const ORVILLESROOM_BOMB
 	const ORVILLESROOM_SHADOW1
 	const ORVILLESROOM_SHADOW2
-	const ORVILLESROOM_CHRIS
-	const ORVILLESROOM_KRIS
+	const ORVILLESROOM_PERRY
+	const ORVILLESROOM_JADE
 
 OrvillesRoom_MapScripts:
 	db 2 ; scene scripts
@@ -30,12 +30,12 @@ ApproachOrvilleRight:
 ContinueApproachOrville:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Girl
-	moveobject ORVILLESROOM_CHRIS, 5, 10
-	appear ORVILLESROOM_CHRIS
+	moveobject ORVILLESROOM_PERRY, 5, 10
+	appear ORVILLESROOM_PERRY
 	jump .ContinueBattle
 .Girl
-	moveobject ORVILLESROOM_KRIS, 5, 10
-	appear ORVILLESROOM_KRIS
+	moveobject ORVILLESROOM_JADE, 5, 10
+	appear ORVILLESROOM_JADE
 .ContinueBattle
 	applymovement PLAYER, OrvillesRoom_StartBattle
 
@@ -126,8 +126,8 @@ ContinueApproachOrville:
 	wait 4
 
 	applymovement PLAYER, OrvillesRoom_ReturnFromBattle
-	disappear ORVILLESROOM_CHRIS
-	disappear ORVILLESROOM_KRIS
+	disappear ORVILLESROOM_PERRY
+	disappear ORVILLESROOM_JADE
 	end
 
 OrvillesRoomDropBombs:
@@ -330,5 +330,5 @@ OrvillesRoom_MapEvents:
 	object_event 11, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

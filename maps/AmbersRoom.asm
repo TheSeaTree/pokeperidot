@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	const AMBERSROOM_AMBER
-	const AMBERSROOM_CHRIS
-	const AMBERSROOM_KRIS
+	const AMBERSROOM_PERRY
+	const AMBERSROOM_JADE
 
 AmbersRoom_MapScripts:
 	db 2 ; scene scripts
@@ -25,12 +25,12 @@ ApproachAmberRight:
 ContinueApporachAmber:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Girl
-	moveobject AMBERSROOM_CHRIS, 5, 10
-	appear AMBERSROOM_CHRIS
+	moveobject AMBERSROOM_PERRY, 5, 10
+	appear AMBERSROOM_PERRY
 	jump .ContinueBattle
 .Girl
-	moveobject AMBERSROOM_KRIS, 5, 10
-	appear AMBERSROOM_KRIS
+	moveobject AMBERSROOM_JADE, 5, 10
+	appear AMBERSROOM_JADE
 .ContinueBattle
 	applymovement PLAYER, AmbersRoom_CameraPan
 	setscene SCENE_FINISHED
@@ -87,8 +87,8 @@ AmberScript_Battle:
 
 .AfterBattle
 	applymovement PLAYER, AmbersRoom_CenterCamera
-	disappear AMBERSROOM_CHRIS
-	disappear AMBERSROOM_KRIS
+	disappear AMBERSROOM_PERRY
+	disappear AMBERSROOM_JADE
 	end
 	
 	
@@ -303,8 +303,8 @@ AmbersRoom_MapEvents:
 
 	db 9 ; object events
 	object_event  8, 10, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_AfterBattle, -1
-	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  9,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

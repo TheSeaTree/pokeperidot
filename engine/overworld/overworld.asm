@@ -77,7 +77,7 @@ GetPlayerSprite:
 ; Any player state not in the array defaults to Chris's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_PERRY
 	jr .finish
 
 .good

@@ -29,8 +29,6 @@ DoPlayerMovement::
 	jr z, .Surf
 	cp PLAYER_BIKE
 	jr z, .Normal
-	cp PLAYER_SKATE
-	jr z, .Ice
 	cp PLAYER_RUN
 	jr z, .Normal
 
@@ -783,10 +781,8 @@ ENDM
 .BikeCheck:
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	ret z
-	cp PLAYER_SKATE
 	ret
-	
+
 .RunCheck:
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
@@ -892,10 +888,7 @@ CheckStandingOnIce::
 	jr z, .not_ice
 	ld a, [wPlayerStandingTile]
 	call CheckIceTile
-	jr nc, .yep
-	ld a, [wPlayerState]
-	cp PLAYER_SKATE
-	jr nz, .not_ice
+	jr c, .not_ice
 
 .yep
 	scf

@@ -15,7 +15,8 @@ ReturnToReality:
 	playsound SFX_WARP_FROM
 	special FadeOutPalettes
 	waitsfx
-	warpfacing UP, BATTLE_SIMULATION, 8, 5
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	warpfacing DOWN, BATTLE_SIMULATION, 8, 5
 	end
 	
 .Decline

@@ -224,10 +224,10 @@ NamingScreen:
 	pop de
 	ld b, SPRITE_ANIM_INDEX_RED_WALK
 	ld a, d
-	cp HIGH(KrisSpriteGFX)
+	cp HIGH(JadeSpriteGFX)
 	jr nz, .not_kris
 	ld a, e
-	cp LOW(KrisSpriteGFX)
+	cp LOW(JadeSpriteGFX)
 	jr nz, .not_kris
 	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
 .not_kris

@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
 	const BREDESROOM_BREDE
-	const BREDESROOM_CHRIS
-	const BREDESROOM_KRIS
+	const BREDESROOM_PERRY
+	const BREDESROOM_JADE
 
 BredesRoom_MapScripts:
 	db 2 ; scene scripts
@@ -26,12 +26,12 @@ ApproachBredeRight:
 ContinueApproachBrede:
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .Girl
-	moveobject BREDESROOM_CHRIS, 5, 10
-	appear BREDESROOM_CHRIS
+	moveobject BREDESROOM_PERRY, 5, 10
+	appear BREDESROOM_PERRY
 	jump .ContinueBattle
 .Girl
-	moveobject BREDESROOM_KRIS, 5, 10
-	appear BREDESROOM_KRIS
+	moveobject BREDESROOM_JADE, 5, 10
+	appear BREDESROOM_JADE
 .ContinueBattle
 	applymovement PLAYER, E4StartBattle
 
@@ -103,8 +103,8 @@ BredeScript_Battle:
 
 .AfterBattle
 	applymovement PLAYER, E4AfterBattle
-	disappear BREDESROOM_CHRIS
-	disappear BREDESROOM_KRIS
+	disappear BREDESROOM_PERRY
+	disappear BREDESROOM_JADE
 	end
 	
 BredeNoTurningBack:
@@ -300,5 +300,5 @@ BredesRoom_MapEvents:
 
 	db 3 ; object events
 	object_event 10, 10, SPRITE_BREDE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, BredeScript_AfterBattle, -1
-	object_event  0,  0, SPRITE_CHRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_KRIS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

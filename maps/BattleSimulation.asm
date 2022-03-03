@@ -4,7 +4,6 @@
 	const BATTLESIMULATION_SCIENTIST3
 	const BATTLESIMULATION_SCIENTIST4
 	const BATTLESIMULATION_SUPER_NERD
-	const BATTLESIMULATION_HEADSET
 
 BattleSimulation_MapScripts:
 	db 3 ; scene scripts
@@ -12,11 +11,12 @@ BattleSimulation_MapScripts:
 	scene_script .Scene1 ; SCENE_BATTLESIMULATION_CHALLENGE
 	scene_script .Scene2 ; SCENE_BATTLESIMULATION_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_OBJECTS, .Scientist
 
 .Scene0:
 	end
-	
+
 .Scene1:
 	opentext
 	writetext BattleSimulationChallengeCancelled
@@ -26,15 +26,31 @@ BattleSimulation_MapScripts:
 	end
 	
 .Scene2:
-	moveobject BATTLESIMULATION_SCIENTIST1, 9, 7
-	turnobject BATTLESIMULATION_SCIENTIST1, RIGHT
+	playsound SFX_WARP_FROM
+	waitsfx
+	playsound SFX_SHUT_DOWN_PC
+	waitsfx
+	playsound SFX_MENU
+	waitsfx
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
 	applymovement PLAYER, BattleSimulationPlayerLeaveMachine
-;	applymovement BATTLESIMULATION_SCIENTIST1, BattleSimulationBlockEntrance
+	applymovement BATTLESIMULATION_SCIENTIST1, BattleSimulationBlockEntrance
 	special LoadPokemonData
 	clearflag ENGINE_BATTLE_SIMULATION_ACTIVE
 	setscene SCENE_BATTLESIMULATION_DEFAULT
 	special UpdatePartyStats
+	special DoQuickSave
+	; Check the player's score an issue a reward.
 	end
+
+.Scientist
+	checkscene SCENE_BATTLESIMULATION_FINISHED
+	iffalse .nothing
+	moveobject BATTLESIMULATION_SCIENTIST1, 9, 7
+	turnobject BATTLESIMULATION_SCIENTIST1, RIGHT
+.nothing
+	return
 
 BattleSimulationGuy:
 	opentext
@@ -52,15 +68,16 @@ BattleSimulationGuy:
 	special GiveShuckle
 	loadvar wParkBallsRemaining, 30
 	playsound SFX_MENU
-	moveobject BATTLESIMULATION_HEADSET, 7, 5
-	appear BATTLESIMULATION_HEADSET
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	special ReplaceKrisSprite
 	waitsfx
 	playsound SFX_BOOT_PC
 	wait 15
 	playsound SFX_WARP_TO
 	special FadeOutPalettes
 	waitsfx
-	warpfacing UP, BATTLE_SIMULATION_TEST_ROOM, 4, 5
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	warpfacing UP, BATTLE_SIMULATION_TEST_ROOM, 13, 10
 	end
 
 .Decline
@@ -90,6 +107,7 @@ BattleSimulationPlayerLeaveMachine:
 	step DOWN
 	step DOWN
 	step DOWN
+	turn_head UP
 	step_end
 
 BattleSimulationChallengeCancelled:
@@ -125,10 +143,9 @@ BattleSimulation_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  8,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimulationGuy, -1
 	object_event 16,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  4, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_STANDING_YOUNGSTER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
