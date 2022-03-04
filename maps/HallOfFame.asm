@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const HALLOFFAME_LANCE
+	const HALLOFFAME_CHAMPION
 
 HallOfFame_MapScripts:
 	db 2 ; scene scripts
@@ -16,16 +16,29 @@ HallOfFame_MapScripts:
 	end
 
 .EnterHallOfFameScript:
-	follow HALLOFFAME_LANCE, PLAYER
-	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
-	stopfollow
-	turnobject PLAYER, RIGHT
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	
+	turnobject HALLOFFAME_CHAMPION, DOWN
 	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
-	turnobject HALLOFFAME_LANCE, UP
+
+	scall HallOfFame_Approach
+
+	writetext HallOfFame_JosephRegisterText
+	jump .DoRegistration
+.Postgame
+	scall HallOfFame_Approach
+
+	writetext HallOfFame_EmilyText
+.DoRegistration
+	waitbutton
+	closetext
+	turnobject HALLOFFAME_CHAMPION, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
+	turnobject HALLOFFAME_CHAMPION, LEFT
 	scall RespawnLegendaries
 	setscene SCENE_FINISHED
 	pause 15
@@ -41,6 +54,13 @@ HallOfFame_MapScripts:
 	special HealParty
 	halloffame
 	end
+
+HallOfFame_Approach:
+	follow HALLOFFAME_CHAMPION, PLAYER
+	applymovement HALLOFFAME_CHAMPION, HallOfFame_WalkUpWithLance
+	stopfollow
+	turnobject PLAYER, RIGHT
+	opentext
 
 RespawnLegendaries:
 	writebyte RAIKOU
@@ -120,49 +140,55 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	text "LANCE: It's been a"
-	line "long time since I"
-	cont "last came here."
+	text "JOSEPH: This is"
+	line "the HALL OF FAME."
 
-	para "This is where we"
-	line "honor the LEAGUE"
+	para "In this room, a"
+	line "record of each"
+	cont "CHAMPION and their"
+	cont "#MON is created"
+	cont "to celebrate their"
+	cont "accomplishments."
 
-	para "CHAMPIONS for all"
-	line "eternity."
+	para "Please, follow me"
+	line "to the machine."
+	done
 
-	para "Their courageous"
-	line "#MON are also"
-	cont "inducted."
+HallOfFame_JosephRegisterText:
+	text "Allow me to congr-"
+	line "atulate you, new"
+	cont "CHAMPION. For your"
+	cont "triumph over me"
+	cont "on this day."
 
-	para "Here today, we"
-	line "witnessed the rise"
+	para "You and your"
+	line "#MON will never"
+	cont "be forgotten!"
+	done
 
-	para "of a new LEAGUE"
-	line "CHAMPION--a"
+HallOfFame_EmilyText:
+	text "You already know"
+	line "how this works, so"
+	cont "I won't bore you"
+	cont "with the details."
 
-	para "trainer who feels"
-	line "compassion for,"
+	para "Let's record you"
+	line "and your #MON"
+	cont "for all to"
+	cont "remember."
 
-	para "and trust toward,"
-	line "all #MON."
+	para "Congratulations"
+	line "once again!"
 
-	para "A trainer who"
-	line "succeeded through"
+	para "Oh, <PLAYER>!"
 
-	para "perseverance and"
-	line "determination."
+	para "…Could you do me a"
+	line "favor?"
 
-	para "The new LEAGUE"
-	line "CHAMPION who has"
-
-	para "all the makings"
-	line "of greatness!"
-
-	para "<PLAY_G>, allow me"
-	line "to register you"
-
-	para "and your partners"
-	line "as CHAMPIONS!"
+	para "Promise me this"
+	line "won't be the last"
+	cont "time either of us"
+	cont "see this room!"
 	done
 
 HallOfFame_MapEvents:
@@ -177,4 +203,4 @@ HallOfFame_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  4, 12, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4, 12, SPRITE_HOF_CHAMPION, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

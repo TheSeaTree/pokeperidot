@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const REGANSROOM_REGAN
-	const REGANSROOM_PERRY
-	const REGANSROOM_JADE
+	const REGANSROOM_PLAYER
 
 RegansRoom_MapScripts:
 	db 2 ; scene scripts
@@ -24,15 +23,9 @@ ApproachReganLeft:
 ApproachReganRight:
 	applymovement PLAYER, RegansRoom_EnterMovementRight	
 ContinueApproachRegan:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Girl
-	moveobject REGANSROOM_PERRY, 5, 10
-	appear REGANSROOM_PERRY
-	jump .ContinueBattle
-.Girl
-	moveobject REGANSROOM_JADE, 5, 10
-	appear REGANSROOM_JADE
-.ContinueBattle
+	moveobject REGANSROOM_PLAYER, 5, 10
+	appear REGANSROOM_PLAYER
+
 	applymovement PLAYER, E4StartBattle
 	
 	refreshscreen $86
@@ -116,8 +109,7 @@ ContinueApproachRegan:
 	waitsfx
 	wait 4
 	applymovement PLAYER, E4AfterBattle
-	disappear REGANSROOM_PERRY
-	disappear REGANSROOM_JADE
+	disappear REGANSROOM_PLAYER
 
 	wait 2
 	refreshscreen $86
@@ -370,10 +362,9 @@ RegansRoom_MapEvents:
 	bg_event  9,  9, BGEVENT_READ, ReganDroppedCards
 	bg_event  9, 10, BGEVENT_READ, ReganDroppedCards
 
-	db 9 ; object events
+	db 8 ; object events
 	object_event  8, 10, SPRITE_REGAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_LEAGUE_PLAYER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  4,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  9,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 10,  3, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

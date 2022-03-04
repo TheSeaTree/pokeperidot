@@ -3,8 +3,7 @@
 	const ORVILLESROOM_BOMB
 	const ORVILLESROOM_SHADOW1
 	const ORVILLESROOM_SHADOW2
-	const ORVILLESROOM_PERRY
-	const ORVILLESROOM_JADE
+	const ORVILLESROOM_PLAYER
 
 OrvillesRoom_MapScripts:
 	db 2 ; scene scripts
@@ -28,15 +27,10 @@ ApproachOrvilleLeft:
 ApproachOrvilleRight:
 	applymovement PLAYER, OrvillesRoom_EnterMovementRight
 ContinueApproachOrville:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Girl
-	moveobject ORVILLESROOM_PERRY, 5, 10
-	appear ORVILLESROOM_PERRY
-	jump .ContinueBattle
-.Girl
-	moveobject ORVILLESROOM_JADE, 5, 10
-	appear ORVILLESROOM_JADE
-.ContinueBattle
+	
+	moveobject ORVILLESROOM_PLAYER, 5, 10
+	appear ORVILLESROOM_PLAYER
+
 	applymovement PLAYER, OrvillesRoom_StartBattle
 
 	moveobject ORVILLESROOM_BOMB, 11, 10
@@ -126,8 +120,7 @@ ContinueApproachOrville:
 	wait 4
 
 	applymovement PLAYER, OrvillesRoom_ReturnFromBattle
-	disappear ORVILLESROOM_PERRY
-	disappear ORVILLESROOM_JADE
+	disappear ORVILLESROOM_PLAYER
 	end
 
 OrvillesRoomDropBombs:
@@ -325,10 +318,9 @@ OrvillesRoom_MapEvents:
 	bg_event  6, 20, BGEVENT_READ, OrvilleNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, OrvilleNoTurningBack
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  8, 10, SPRITE_ORVILLE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrvilleScript_AfterBattle, -1
 	object_event 11, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_LEAGUE_PLAYER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const AMBERSROOM_AMBER
-	const AMBERSROOM_PERRY
-	const AMBERSROOM_JADE
+	const AMBERSROOM_PLAYER
 
 AmbersRoom_MapScripts:
 	db 2 ; scene scripts
@@ -23,15 +22,9 @@ ApproachAmberLeft:
 ApproachAmberRight:
 	applymovement PLAYER, AmbersRoom_EnterMovementRight
 ContinueApporachAmber:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Girl
-	moveobject AMBERSROOM_PERRY, 5, 10
-	appear AMBERSROOM_PERRY
-	jump .ContinueBattle
-.Girl
-	moveobject AMBERSROOM_JADE, 5, 10
-	appear AMBERSROOM_JADE
-.ContinueBattle
+	moveobject AMBERSROOM_PLAYER, 5, 10
+	appear AMBERSROOM_PLAYER
+
 	applymovement PLAYER, AmbersRoom_CameraPan
 	setscene SCENE_FINISHED
 
@@ -87,8 +80,7 @@ AmberScript_Battle:
 
 .AfterBattle
 	applymovement PLAYER, AmbersRoom_CenterCamera
-	disappear AMBERSROOM_PERRY
-	disappear AMBERSROOM_JADE
+	disappear AMBERSROOM_PLAYER
 	end
 	
 	
@@ -99,7 +91,7 @@ ChampionDoorLeft:
 	end
 
 .Rematch
-	warpmod 1, ELKHORN_TOWN ; Placeholder for EMILYS_ROOM
+	warpmod 1, EMILYS_ROOM
 	end
 
 ChampionDoorRight:
@@ -109,7 +101,7 @@ ChampionDoorRight:
 	end
 
 .Rematch
-	warpmod 2, ELKHORN_TOWN ; Placeholder for EMILYS_ROOM
+	warpmod 2, EMILYS_ROOM
 	end
 
 AmberNoTurningBack:
@@ -244,20 +236,20 @@ AmberScript_AmberDefeatText:
 	para "While your battles"
 	line "against the ELITE"
 	cont "FOUR are over,"
-	cont "your #MON"
-	cont "LEAGUE challenge"
-	cont "is not over yet."
+	cont "you have not won"
+	cont "the #MON LEAGUE"
+	cont "CHALLENGE yet."
 
 	para "There is one other"
 	line "trainer who has"
 	cont "defeated me--your"
-	cont "next challenge."
+	cont "next battle."
 
-	para "The CHAMPION awaits"
-	line "you, <PLAYER>."
+	para "The CHAMPION"
+	line "awaits, <PLAYER>."
 
 	para "Don't embarass me"
-	line "by losing now."
+	line "by losing now!"
 	done
 
 AmberScript_RematchBeforeText:
@@ -303,8 +295,7 @@ AmbersRoom_MapEvents:
 
 	db 9 ; object events
 	object_event  8, 10, SPRITE_AMBER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AmberScript_AfterBattle, -1
-	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_LEAGUE_PLAYER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  9,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 12,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

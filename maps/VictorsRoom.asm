@@ -1,7 +1,6 @@
 	const_def 2 ; object constants
 	const VICTORSROOM_LANCE
-	const VICTORSROOM_PERRY
-	const VICTORSROOM_JADE
+	const VICTORSROOM_PLAYER
 
 VictorsRoom_MapScripts:
 	db 2 ; scene scripts
@@ -24,7 +23,8 @@ VictorsRoom_MapScripts:
 .VictorsDoorLocksBehindYou:
 	applymovement PLAYER, VictorsRoom_EnterMovement
 	setscene SCENE_VICTORSROOM_APPROACH_LANCE
-	setevent EVENT_VICTORS_ROOM_ENTRANCE_CLOSED
+;	setevent EVENT_VICTORS_ROOM_ENTRANCE_CLOSED
+	variablesprite SPRITE_HOF_CHAMPION, SPRITE_LANCE
 	end
 
 Script_ApproachVictorFromLeft:
@@ -37,15 +37,9 @@ Script_ApproachVictorFromRight:
 	applymovement PLAYER, MovementData_ApproachVictorFromRight
 
 VictorsRoomVictorScript:
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Girl
-	moveobject VICTORSROOM_PERRY, 5, 8
-	appear VICTORSROOM_PERRY
-	jump .ContinueBattle
-.Girl
-	moveobject VICTORSROOM_JADE, 5, 8
-	appear VICTORSROOM_JADE
-.ContinueBattle
+	moveobject VICTORSROOM_PLAYER, 5, 8
+	appear VICTORSROOM_PLAYER
+
 	applymovement PLAYER, VictorsRoom_CameraPan
 
 	applymovement VICTORSROOM_LANCE, VictorsRoom_VictorApproachPlayer
@@ -71,12 +65,11 @@ VictorsRoomVictorScript:
 	closetext
 
 	applymovement VICTORSROOM_LANCE, VictorsRoomMovementData_VictorLeadsPlayerToHallOfFame
-	
-	applymovement VICTORSROOM_PERRY, VictorsRoom_CenterCamera
-	applymovement VICTORSROOM_JADE, VictorsRoom_CenterCamera
+
+	applymovement VICTORSROOM_PLAYER, VictorsRoom_CenterCamera
+
 	applymovement PLAYER, VictorsRoom_AppearPlayer
-	disappear VICTORSROOM_PERRY
-	disappear VICTORSROOM_JADE
+	disappear VICTORSROOM_PLAYER
 	applymovement PLAYER, VictorsRoom_PlayerJoinsVictor
 
 	follow VICTORSROOM_LANCE, PLAYER
@@ -255,7 +248,6 @@ VictorsRoom_MapEvents:
 
 	db 0 ; bg events
 
-	db 3 ; object events
+	db 2 ; object events
 	object_event  9,  6, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictorsRoomVictorScript, -1
-	object_event  0,  0, SPRITE_PERRY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_JADE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_LEAGUE_PLAYER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
