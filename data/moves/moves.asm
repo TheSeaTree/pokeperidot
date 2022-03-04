@@ -13,7 +13,7 @@ ENDM
 Moves: ; 41afb
 ; entries correspond to constants/move_constants.asm
 	move POUND,        EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
-	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         70, FIGHTING, 100, 25,   0
+	move KARATE_CHOP,  EFFECT_NORMAL_HIT,         50, FIGHTING, 100, 25,   0
 	move DOUBLESLAP,   EFFECT_MULTI_HIT,          15, FAIRY,     85, 10,   0
 	move COMET_PUNCH,  EFFECT_MULTI_HIT,          18, NORMAL,   100, 15,   0
 	move DIVE_BOMB,    EFFECT_JUMP_KICK,       	 100, FLYING,    90,  5,   0
@@ -78,7 +78,7 @@ Moves: ; 41afb
 	move PECK,         EFFECT_FLINCH_HIT,         40, FLYING,   100, 35,  10
 	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,   100, 20,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,        120, FIGHTING,  90,  5,   0
-	move LOW_KICK,     EFFECT_FLINCH_HIT,         50, FIGHTING,  90, 20,  30
+	move BRICK_BREAK,  EFFECT_BRICK_BREAK,        75, FIGHTING, 100, 15,   0
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING, 100, 20,   0
 	move SEISMIC_TOSS, EFFECT_LEVEL_DAMAGE,        1, FIGHTING, 100, 20,   0
 	move STRENGTH,     EFFECT_ATTACK_UP_HIT,      80, NORMAL,    95, 10,  30
@@ -150,7 +150,7 @@ Moves: ; 41afb
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 20,   0
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
-	move POISON_GAS,   EFFECT_POISON,              0, POISON,    55, 40,   0
+	move POISON_GAS,   EFFECT_POISON,              0, PSNPOWDER, 55, 40,   0
 	move BARRAGE,      EFFECT_MULTI_HIT,          20, GRASS,     95, 10,   5
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,      100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,    75, 10,   0
@@ -184,7 +184,7 @@ Moves: ; 41afb
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
 	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100, 15,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,     100, 25,  10
-	move SNORE,        EFFECT_SNORE,              40, NORMAL,   100, 15,  30
+	move SNORE,        EFFECT_SNORE,             100, NORMAL,   100, 15,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,    100, 10,   0
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,   100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,   100, 30,   0

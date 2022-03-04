@@ -3492,7 +3492,7 @@ BattleCommand_HappinessPower:
 	farcall ReturnEffect
 	ret
 
-INCLUDE "engine/battle/move_effects/counter.asm"
+INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
 
@@ -3513,6 +3513,8 @@ INCLUDE "engine/battle/move_effects/destiny_bond.asm"
 INCLUDE "engine/battle/move_effects/spite.asm"
 
 INCLUDE "engine/battle/move_effects/heal_bell.asm"
+
+INCLUDE "engine/battle/move_effects/brick_break.asm"
 
 FarPlayBattleAnimation:
 ; play animation de
@@ -3829,9 +3831,6 @@ BattleCommand_Poison:
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
-	jp z, .failed
-
-	call CheckIfTargetIsPoisonType
 	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -6668,8 +6667,6 @@ INCLUDE "engine/battle/move_effects/coil.asm"
 INCLUDE "engine/battle/move_effects/growth.asm"
 
 INCLUDE "engine/battle/move_effects/psych_up.asm"
-
-INCLUDE "engine/battle/move_effects/mirror_coat.asm"
 
 BattleCommand_DoubleMinimizeDamage:
 ; doubleminimizedamage

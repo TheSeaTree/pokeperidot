@@ -65,7 +65,7 @@ MoveNames::
 	db "PECK@"
 	db "DRILL PECK@"
 	db "SUBMISSION@"
-	db "LOW KICK@"
+	db "BRICK BREAK@"
 	db "COUNTER@"
 	db "SEISMIC TOSS@"
 	db "STRENGTH@"

@@ -140,6 +140,11 @@ BattleText_MonsReflectFaded:
 	line "REFLECT faded!"
 	prompt
 
+BattleText_MonsBarrierShattered:
+	text "<TARGET>'s"
+	line "barrier shattered!"
+	prompt
+
 BattleText_RainContinuesToFall:
 	text "Rain continues to"
 	line "fall."

@@ -885,42 +885,44 @@ AncorEvosAttacks:
 MankeyEvosAttacks:
 	db EVOLVE_LEVEL, 28, PRIMEAPE
 	db 0 ; no more evolutions
+	db 1, KARATE_CHOP
 	db 1, SCRATCH
 	db 1, LEER
-	db 1, LOW_KICK
-	db 5, FURY_SWIPES
-	db 6, FOCUS_ENERGY
-	db 8, KARATE_CHOP
+	db 1, FOCUS_ENERGY
+	db 6, FURY_SWIPES
+	db 8, MUD_SLAP
 	db 12, PURSUIT
 	db 15, SEISMIC_TOSS
 	db 19, SWAGGER
 	db 22, FAINT_ATTACK
 	db 26, SCREECH
 	db 29, U_TURN
-	db 33, CROSS_CHOP
-	db 36, SUBMISSION
-	db 40, THRASH
-	db 47, OUTRAGE
+	db 32, BRICK_BREAK
+	db 35, CROSS_CHOP
+	db 38, SUBMISSION
+	db 42, THRASH
 	db 0 ; no more level-up moves
 
 PrimeapeEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, KARATE_CHOP
 	db 1, SCRATCH
 	db 1, LEER
-	db 1, LOW_KICK
-	db 5, FURY_SWIPES
-	db 6, FOCUS_ENERGY
-	db 8, KARATE_CHOP
+	db 1, FOCUS_ENERGY
+	db 6, FURY_SWIPES
+	db 8, MUD_SLAP
 	db 12, PURSUIT
 	db 15, SEISMIC_TOSS
 	db 19, SWAGGER
 	db 22, FAINT_ATTACK
 	db 26, SCREECH
 	db 30, U_TURN
-	db 35, CROSS_CHOP
-	db 41, SUBMISSION
+	db 34, BRICK_BREAK
+	db 38, CROSS_CHOP
+	db 44, SUBMISSION
 	db 47, THRASH
 	db 53, OUTRAGE
+	db 60, EXPLOSION
 	db 0 ; no more level-up moves
 
 GrowlitheEvosAttacks:
@@ -1030,7 +1032,7 @@ AlakazamEvosAttacks:
 MachopEvosAttacks:
 	db EVOLVE_LEVEL, 28, MACHOKE
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, BRICK_BREAK
 	db 1, LEER
 	db 3, FOCUS_ENERGY
 	db 7, KARATE_CHOP
@@ -1050,7 +1052,7 @@ MachopEvosAttacks:
 MachokeEvosAttacks:
 	db EVOLVE_HAPPINESS, TR_ANYTIME, MACHAMP
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, BRICK_BREAK
 	db 1, LEER
 	db 3, FOCUS_ENERGY
 	db 7, KARATE_CHOP
@@ -1069,7 +1071,7 @@ MachokeEvosAttacks:
 
 MachampEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LOW_KICK
+	db 1, BRICK_BREAK
 	db 1, LEER
 	db 1, BULLET_PUNCH
 	db 3, FOCUS_ENERGY
@@ -1194,6 +1196,7 @@ GravelerEvosAttacks:
 GolemEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, BRICK_BREAK
 	db 1, DEFENSE_CURL
 	db 10, ROLLOUT
 	db 16, ROCK_THROW
@@ -1416,8 +1419,9 @@ GrimerEvosAttacks:
 MukEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, MOONBLAST
-	db 1, POISON_GAS
+	db 1, BRICK_BREAK
 	db 1, POUND
+	db 1, POISON_GAS
 	db 4, HARDEN
 	db 7, BITE
 	db 12, DISABLE
@@ -2048,7 +2052,7 @@ ElectabuzzEvosAttacks:
 	db 1, LEER
 	db 1, THUNDERSHOCK
 	db 9, THUNDERSHOCK
-	db 8, LOW_KICK
+	db 8, KARATE_CHOP
 	db 15, SPARK
 	db 19, THUNDER_WAVE
 	db 26, LIGHT_SCREEN
@@ -2083,7 +2087,7 @@ PinsirEvosAttacks:
 	db 11, HARDEN
 	db 18, VITAL_THROW
 	db 22, DIG
-	db 26, ROCK_SMASH
+	db 26, BRICK_BREAK
 	db 29, X_SCISSOR
 	db 33, SUBMISSION
 	db 40, SWORDS_DANCE
@@ -3074,13 +3078,13 @@ SudowoodoEvosAttacks:
 	db 1, ROCK_THROW
 	db 1, MIMIC
 	db 5, FLAIL
-	db 8, LOW_KICK
+	db 8, COUNTER
 	db 12, ROCK_THROW
 	db 15, MIMIC
 	db 19, FAINT_ATTACK
 	db 26, BODY_SLAM
 	db 33, ROCK_SLIDE
-	db 36, COUNTER
+	db 36, BRICK_BREAK
 	db 43, DOUBLE_EDGE
 	db 47, STONE_EDGE
 	db 50, SUBMISSION
@@ -3551,6 +3555,7 @@ HeracrossEvosAttacks:
 	db 6, HORN_ATTACK
 	db 12, ENDURE
 	db 19, FURY_ATTACK
+	db 23, BRICK_BREAK
 	db 27, COUNTER
 	db 35, DOUBLE_EDGE
 	db 44, REVERSAL
@@ -3591,6 +3596,7 @@ TeddiursaEvosAttacks:
 	db 36, CHARM
 	db 43, REST
 	db 43, SNORE
+	db 47, BRICK_BREAK
 	db 50, THRASH
 	db 0 ; no more level-up moves
 
@@ -3607,6 +3613,7 @@ UrsaringEvosAttacks:
 	db 38, SCARY_FACE
 	db 47, REST
 	db 49, SNORE
+	db 50, BRICK_BREAK
 	db 58, THRASH
 	db 0 ; no more level-up moves
 
@@ -4003,17 +4010,19 @@ MiltankEvosAttacks:
 
 BlisseyEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, DOUBLE_EDGE
+	db 1, DEFENSE_CURL
 	db 1, POUND
-	db 4, GROWL
-	db 7, TAIL_WHIP
-	db 10, SOFTBOILED
-	db 13, DOUBLESLAP
-	db 18, MINIMIZE
-	db 23, SING
-	db 28, EGG_BOMB
-	db 33, DEFENSE_CURL
-	db 40, LIGHT_SCREEN
-	db 47, DOUBLE_EDGE
+	db 1, GROWL
+	db 5, TAIL_WHIP
+	db 9, REST
+	db 12, DOUBLESLAP
+	db 16, SOFTBOILED
+	db 23, MINIMIZE
+	db 27, DOUBLE_EDGE
+	db 31, SING
+	db 42, EGG_BOMB
+	db 46, LIGHT_SCREEN
 	db 0 ; no more level-up moves
 
 RaikouEvosAttacks:

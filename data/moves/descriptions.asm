@@ -520,8 +520,8 @@ SubmissionDescription:
 	next "so hurts the user.@"
 
 LowKickDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+	db   "Shatters REFLECT"
+	next "and LIGHT SCREEN.@"
 
 CounterDescription:
 	db   "Returns a physical"

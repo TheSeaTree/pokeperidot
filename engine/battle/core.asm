@@ -8312,7 +8312,7 @@ HandleSafariEnemyTurn:
 
 .idle
 	ld hl, BattleText_WildMonIsWatching
-	jp StdBattleTextBox
+	call StdBattleTextBox
 	jr .continueidle
 
 FillInExpBar:

@@ -29,6 +29,7 @@ CharmanderEggMoves:
 	db DIVE_BOMB
 	db METAL_CLAW
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 SquirtleEggMoves:
@@ -43,6 +44,7 @@ SquirtleEggMoves:
 	db RECOVER
 	db SIGNAL_BEAM
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -66,6 +68,7 @@ PsyduckEggMoves:
 	db IRON_TAIL
 	db U_TURN
 	db PETAL_DANCE
+	db BRICK_BREAK
 	db -1 ; end
 
 RinringEggMoves:
@@ -122,6 +125,7 @@ PikachuEggMoves:
 	db PETAL_DANCE
 	db DYNAMICPUNCH
 	db SURF
+	db BRICK_BREAK
 	db -1 ; end
 
 SandshrewEggMoves:
@@ -135,6 +139,7 @@ SandshrewEggMoves:
 	db AGILITY
 	db STONE_EDGE
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 NidoranFEggMoves:
@@ -168,6 +173,7 @@ ClefairyEggMoves:
 	db SIGNAL_BEAM
 	db PETAL_DANCE
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 VulpixEggMoves:
@@ -193,6 +199,7 @@ JigglypuffEggMoves:
 	db SCREECH
 	db PETAL_DANCE
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 ZubatEggMoves:
@@ -227,6 +234,7 @@ ParasEggMoves:
 	db METAL_CLAW
 	db LEECH_SEED
 	db CRABHAMMER
+	db BRICK_BREAK
 	db -1 ; end
 
 VenonatEggMoves:
@@ -281,6 +289,7 @@ MankeyEggMoves:
 	db DYNAMICPUNCH
 	db BULLET_PUNCH
 	db MACH_PUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 GrowlitheEggMoves:
@@ -298,6 +307,7 @@ PoliwagEggMoves:
 	db MIND_READER
 	db ENCORE
 	db SCREECH
+	db BRICK_BREAK
 	db -1 ; end
 
 AbraEggMoves:
@@ -333,6 +343,7 @@ GeodudeEggMoves:
 	db AGILITY
 	db COUNTER
 	db SCREECH
+	db BRICK_BREAK
 	db -1 ; end
 
 PonytaEggMoves:
@@ -343,7 +354,6 @@ PonytaEggMoves:
 	db WILD_CHARGE
 	db HORN_DRILL
 	db MORNING_SUN
-	db LOW_KICK
 	db WILL_O_WISP
 	db PAY_DAY
 	db -1 ; end
@@ -354,6 +364,7 @@ SlowpokeEggMoves:
 	db HYDRO_PUMP
 	db NASTY_PLOT
 	db PAY_DAY
+	db BRICK_BREAK
 	db -1 ; end
 
 FarfetchDEggMoves:
@@ -371,6 +382,7 @@ FarfetchDEggMoves:
 	db BATON_PASS
 	db WATER_GUN
 	db PAY_DAY
+	db BRICK_BREAK
 	db -1 ; end
 
 DoduoEggMoves:
@@ -444,6 +456,7 @@ DrowzeeEggMoves:
 	db DRAIN_KISS
 	db METRONOME
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -453,6 +466,7 @@ KrabbyEggMoves:
 	db ANCIENTPOWER
 	db AGILITY
 	db X_SCISSOR
+	db BRICK_BREAK
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -473,6 +487,7 @@ CuboneEggMoves:
 	db FALSE_SWIPE
 	db STONE_EDGE
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 SearionEggMoves:
@@ -495,6 +510,7 @@ LickitungEggMoves:
 	db THRASH
 	db OUTRAGE
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 KoffingEggMoves:
@@ -523,6 +539,7 @@ ChanseyEggMoves:
 	db PRESENT
 	db METRONOME
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 TangelaEggMoves:
@@ -532,6 +549,7 @@ TangelaEggMoves:
 	db AMNESIA
 	db AGILITY
 	db LEECH_SEED
+	db BRICK_BREAK
 	db -1 ; end
 
 KangaskhanEggMoves:
@@ -544,6 +562,7 @@ KangaskhanEggMoves:
 	db MILK_DRINK
 	db HYDRO_PUMP
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 HorseaEggMoves:
@@ -574,6 +593,7 @@ MrMimeEggMoves:
 	db MIMIC
 	db METRONOME
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 ScytherEggMoves:
@@ -584,6 +604,7 @@ ScytherEggMoves:
 	db SILVER_WIND
 	db GUILLOTINE
 	db STEEL_WING
+	db BRICK_BREAK
 	db -1 ; end
 
 PinsirEggMoves:
@@ -672,6 +693,7 @@ SnorlaxEggMoves:
 	db COUNTER
 	db ENCORE
 	db PAY_DAY
+	db BRICK_BREAK
 	db -1 ; end
 
 DratiniEggMoves:
@@ -712,6 +734,7 @@ CyndaquilEggMoves:
 	db DOUBLE_KICK
 	db PRESENT
 	db WILL_O_WISP
+	db BRICK_BREAK
 	db -1 ; end
 
 TotodileEggMoves:
@@ -724,6 +747,7 @@ TotodileEggMoves:
 	db OUTRAGE
 	db MEAN_LOOK
 	db PRESENT
+	db BRICK_BREAK
 	db -1 ; end
 
 SentretEggMoves:
@@ -736,6 +760,7 @@ SentretEggMoves:
 	db EXTREMESPEED
 	db BELLY_DRUM
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 HoothootEggMoves:
@@ -798,6 +823,7 @@ ShifurEggMoves:
 	db PURSUIT
 	db ENCORE
 	db BODY_SLAM
+	db BRICK_BREAK
 	db -1 ; end
 
 NatuEggMoves:
@@ -836,6 +862,7 @@ MarillEggMoves:
 	db AQUA_JET
 	db DRAIN_KISS
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 SudowoodoEggMoves:
@@ -865,6 +892,7 @@ AipomEggMoves:
 	db DOUBLESLAP
 	db U_TURN
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 	
 SunkernEggMoves:
@@ -891,6 +919,7 @@ WooperEggMoves:
 	db RECOVER
 	db HYDRO_PUMP
 	db DYNAMICPUNCH
+	db BRICK_BREAK
 	db -1 ; end
 
 MurkrowEggMoves:
@@ -1070,6 +1099,7 @@ DelibirdEggMoves:
 	db PAY_DAY
 	db ICICLE_SPEAR
 	db FREEZE_DRY
+	db BRICK_BREAK
 	db -1 ; end
 
 MantineEggMoves:
@@ -1157,6 +1187,7 @@ ElekidEggMoves:
 	db DYNAMICPUNCH
 	db FLAMETHROWER
 	db METRONOME
+	db BRICK_BREAK
 	db -1 ; end
 
 MagbyEggMoves:
@@ -1169,6 +1200,7 @@ MagbyEggMoves:
 	db SLUDGE
 	db THUNDERBOLT
 	db METRONOME
+	db BRICK_BREAK
 	db -1 ; end
 
 MiltankEggMoves:
@@ -1181,6 +1213,7 @@ MiltankEggMoves:
 	db CHARM
 	db DYNAMICPUNCH
 	db TWISTER
+	db BRICK_BREAK
 	db -1 ; end
 
 LarvitarEggMoves:
@@ -1190,6 +1223,7 @@ LarvitarEggMoves:
 	db FOCUS_ENERGY
 	db ANCIENTPOWER
 	db IRON_TAIL
+	db BRICK_BREAK
 	db -1 ; end
 	
 FerrodonEggMoves:
@@ -1205,6 +1239,7 @@ FerrodonEggMoves:
 	db SKULL_BASH
 	db ANCIENTPOWER
 	db STONE_EDGE
+	db BRICK_BREAK
 	db -1
 
 NoEggMoves:

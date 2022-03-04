@@ -67,7 +67,7 @@ BattleAnimations::
 	dw BattleAnim_Peck
 	dw BattleAnim_DrillPeck
 	dw BattleAnim_Submission
-	dw BattleAnim_LowKick
+	dw BattleAnim_BrickBreak
 	dw BattleAnim_Counter
 	dw BattleAnim_SeismicToss
 	dw BattleAnim_Strength
@@ -304,8 +304,6 @@ BattleAnim_SweetScent2:
 BattleAnim_ThrowPokeBall:
 	anim_if_param_equal NO_ITEM, .TheTrainerBlockedTheBall
 	anim_if_param_equal MASTER_BALL, .MasterBall
-	anim_if_param_equal ULTRA_BALL, .UltraBall
-	anim_if_param_equal GREAT_BALL, .GreatBall
 	; any other ball
 	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE
 	anim_sound 6, 2, SFX_THROW_BALL
@@ -327,32 +325,6 @@ BattleAnim_ThrowPokeBall:
 	anim_obj ANIM_OBJ_01, 112, 40, $0
 	anim_wait 32
 	anim_ret
-
-.UltraBall:
-	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
-	anim_wait 36
-	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
-	anim_wait 16
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BALL_POOF, 136, 64, $10
-	anim_wait 16
-	anim_jump .Shake
-
-.GreatBall:
-	anim_2gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE
-	anim_sound 6, 2, SFX_THROW_BALL
-	anim_obj ANIM_OBJ_POKE_BALL, 68, 92, $40
-	anim_wait 36
-	anim_obj ANIM_OBJ_POKE_BALL, 136, 65, $0
-	anim_setobj $2, $7
-	anim_wait 16
-	anim_sound 0, 1, SFX_BALL_POOF
-	anim_obj ANIM_OBJ_BALL_POOF, 136, 64, $10
-	anim_wait 16
-	anim_jump .Shake
 
 .MasterBall:
 	anim_3gfx ANIM_GFX_POKE_BALL, ANIM_GFX_SMOKE, ANIM_GFX_SPEED
@@ -1730,7 +1702,6 @@ BattleAnim_SkullBash_branch_c9fb5:
 
 BattleAnim_FocusEnergy:
 BattleAnim_RazorWind_branch_c9fb5:
-BattleAnim_SkyAttack_branch_c9fb5:
 	anim_1gfx ANIM_GFX_SPEED
 	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_16, $0, $1, $40
@@ -2633,22 +2604,30 @@ BattleAnim_Minimize:
 	anim_ret
 
 BattleAnim_SkyAttack:
-	anim_if_param_equal $1, BattleAnim_SkyAttack_branch_c9fb5
-	anim_1gfx ANIM_GFX_SKY_ATTACK
+	anim_2gfx ANIM_GFX_SKY_ATTACK, ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_LICK
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
 	anim_wait 32
 	anim_sound 0, 0, SFX_HYPER_BEAM
 	anim_obj ANIM_OBJ_SKY_ATTACK, 48, 88, $40
-	anim_wait 64
+	anim_wait 72
 	anim_incobj  1
-	anim_wait 21
-	anim_sound 0, 1, SFX_HYPER_BEAM
-	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
-	anim_wait 64
+	anim_wait 1
 	anim_incobj  1
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $4
+	anim_bgeffect ANIM_BG_1F, $30, $1, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_EGG_BOMB
+	anim_wait 6
+	anim_sound 0, 1, SFX_EGG_BOMB
 	anim_wait 32
 	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 16
+	anim_call BattleAnim_TargetObj_1Row
+	anim_bgeffect ANIM_BG_2C, $0, $1, $0
+	anim_wait 32
+	anim_incbgeffect ANIM_BG_2C
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_NightShade:
@@ -3140,22 +3119,43 @@ BattleAnim_Counter:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_LowKick:
+BattleAnim_BrickBreak:
 	anim_1gfx ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_07, 124, 64, $0
-	anim_obj ANIM_OBJ_00, 124, 64, $0
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_08, 136, 40, $0
 	anim_wait 6
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_07, 132, 64, $0
-	anim_obj ANIM_OBJ_00, 132, 64, $0
+	anim_obj ANIM_OBJ_01, 136, 40, $0
 	anim_wait 6
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_08, 136, 44, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_01, 136, 44, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj ANIM_OBJ_08, 136, 48, $0
+	anim_wait 6
+	anim_obj ANIM_OBJ_01, 136, 48, $0
+	anim_if_param_equal $0, .no_screens
+	anim_1gfx ANIM_GFX_ICE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $2
-	anim_sound 0, 1, SFX_DOUBLE_KICK
-	anim_obj ANIM_OBJ_07, 140, 64, $0
-	anim_obj ANIM_OBJ_00, 140, 64, $0
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 128, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 144, 70, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 120, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 152, 56, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 144, 42, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_SHINE
+	anim_obj ANIM_OBJ_BRICK_BREAK, 128, 70, $0
+.no_screens
 	anim_wait 16
 	anim_ret
 
@@ -4087,7 +4087,7 @@ BattleAnim_UTurn:
 	anim_bgeffect ANIM_BG_27, $0, $1, $0
 	anim_wait 32
 	anim_if_param_equal $0, .keep_hidden
-	anim_wait 16
+	anim_wait 32
 	anim_sound 0, 1, SFX_MENU
 	anim_obj ANIM_OBJ_SPEED_LINE, 24, 88, $2
 	anim_obj ANIM_OBJ_SPEED_LINE, 32, 88, $1

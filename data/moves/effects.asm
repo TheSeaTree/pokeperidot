@@ -2151,7 +2151,7 @@ UTurn:
 	checkfaint
 	buildopponentrage
 	kingsrock
-	endmove	
+	endmove
 
 DoBurn:
 	checkobedience
@@ -2161,4 +2161,25 @@ DoBurn:
 	checkhit
 	checksafeguard
 	burn
+	endmove
+
+BrickBreak:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	stab
+	brickbreak
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

@@ -184,3 +184,4 @@ BattleCommandPointers:
 	dw BattleCommand_Burn
 	dw BattleCommand_ThiefDamage
 	dw BattleCommand_CheckLegendaryBattle
+	dw BattleCommand_BrickBreak

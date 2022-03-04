@@ -185,6 +185,7 @@ ENDM
 	command burn
 	command thiefdamage
 	command checklegendary
+	command brickbreak
 
 	enum_start $fe
 	command endturn                 ; fe

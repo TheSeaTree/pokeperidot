@@ -169,3 +169,4 @@ MoveEffectsPointers:
 	dw DoBurn
 	dw NormalHit
 	dw Splash
+	dw BrickBreak
