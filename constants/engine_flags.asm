@@ -117,10 +117,10 @@
 	const ENGINE_GOLDENROD_DEPT_STORE_SALE_IS_ON
 ; wGameTimerPause
 	const ENGINE_62
-; wCelebiEvent
-	const ENGINE_FOREST_IS_RESTLESS
 ; wPlayerGender
 	const ENGINE_PLAYER_IS_FEMALE
+; wCelebiEvent
+	const ENGINE_FOREST_IS_RESTLESS
 ; wDailyRematchFlags
 
 ; wDailyPhoneItemFlags
