@@ -225,11 +225,19 @@ NamingScreen:
 	ld b, SPRITE_ANIM_INDEX_RED_WALK
 	ld a, d
 	cp HIGH(JadeSpriteGFX)
-	jr nz, .not_kris
+	jr nz, .check_rival
 	ld a, e
 	cp LOW(JadeSpriteGFX)
-	jr nz, .not_kris
+	jr nz, .check_rival
 	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
+.check_rival
+	ld a, d
+	cp HIGH(SilverSpriteGFX)
+	jr nz, .not_kris
+	ld a, e
+	cp LOW(SilverSpriteGFX)
+	jr nz, .not_kris
+	ld b, SPRITE_ANIM_INDEX_PURPLE_WALK
 .not_kris
 	ld a, b
 	depixel 4, 4, 4, 0

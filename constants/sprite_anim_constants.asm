@@ -66,6 +66,7 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_INDEX_INTRO_UNOWN_F            ; 2a
 	const SPRITE_ANIM_INDEX_INTRO_SUICUNE_AWAY       ; 2b
 	const SPRITE_ANIM_INDEX_CELEBI                   ; 2c
+	const SPRITE_ANIM_INDEX_PURPLE_WALK              ; 2d
 
 ; DoAnimFrame.Jumptable indexes (see engine/gfx/sprite_anims.asm)
 	const_def
@@ -173,6 +174,7 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_FRAMESET_INTRO_UNOWN_F            ; 3f
 	const SPRITE_ANIM_FRAMESET_CELEBI_LEFT              ; 40
 	const SPRITE_ANIM_FRAMESET_CELEBI_RIGHT             ; 41
+	const SPRITE_ANIM_FRAMESET_PURPLE_WALK              ; 42
 
 ; SpriteAnimOAMData indexes (see data/sprite_anims/oam.asm)
 	const_def
@@ -316,3 +318,5 @@ NUM_SPRITE_ANIM_STRUCTS EQU 10 ; see wSpriteAnimationStructs
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_9           ; 89
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_10          ; 8a
 	const SPRITE_ANIM_OAMSET_GAMEFREAK_LOGO_11          ; 8b
+	const SPRITE_ANIM_OAMSET_PURPLE_WALK_1              ; 8c
+	const SPRITE_ANIM_OAMSET_PURPLE_WALK_2              ; 8d
