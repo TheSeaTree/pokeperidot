@@ -53,14 +53,14 @@ BargainShop:
 	ld hl, Text_BargainShop_Intro
 	call MartTextBox
 	call BuyMenu
-	ld hl, wBargainShopFlags
-	ld a, [hli]
-	or [hl]
-	jr z, .skip_set
-	ld hl, wDailyFlags1
-	set DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F, [hl]
+;	ld hl, wBargainShopFlags
+;	ld a, [hli]
+;	or [hl]
+;	jr z, .skip_set
+;	ld hl, wDailyFlags1
+;	set DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F, [hl]
 
-.skip_set
+;.skip_set
 	ld hl, Text_BargainShop_ComeAgain
 	call MartTextBox
 	ret
@@ -450,8 +450,6 @@ MartAskPurchaseQuantity:
 	ld a, [hl]
 	and a
 	jp z, StandardMartAskPurchaseQuantity
-	cp 1
-	jp z, BargainShopAskPurchaseQuantity
 	jp RooftopSaleAskPurchaseQuantity
 
 .PurchaseQuantityOfTM:
@@ -529,7 +527,7 @@ GetMartDialogGroup:
 	dw BuyMenuLoop
 
 .BargainShopPointers:
-	dw BuyMenuLoop
+	dw Text_Mart_HowMany
 	dw Text_BargainShop_CostsThisMuch
 	dw Text_BargainShop_InsufficientFunds
 	dw Text_BargainShop_BagFull
@@ -711,46 +709,6 @@ MartConfirmPurchase:
 	call YesNoBox
 	ret
 
-BargainShopAskPurchaseQuantity:
-	ld a, 1
-	ld [wItemQuantityChangeBuffer], a
-	ld a, [wMartItemID]
-	ld e, a
-	ld d, 0
-	ld b, CHECK_FLAG
-	ld hl, wBargainShopFlags
-	call FlagAction
-	ld a, c
-	and a
-	jr nz, .SoldOut
-	ld a, [wMartItemID]
-	ld e, a
-	ld d, 0
-	ld hl, wMartPointer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	inc hl
-	add hl, de
-	add hl, de
-	add hl, de
-	inc hl
-	ld a, [hli]
-	ldh [hMoneyTemp + 2], a
-	ld a, [hl]
-	ldh [hMoneyTemp + 1], a
-	xor a
-	ldh [hMoneyTemp], a
-	and a
-	ret
-
-.SoldOut:
-	ld a, MARTTEXT_SOLD_OUT
-	call LoadBuyMenuText
-	call JoyWaitAorB
-	scf
-	ret
-
 RooftopSaleAskPurchaseQuantity:
 	ld a, MARTTEXT_HOW_MANY
 	call LoadBuyMenuText
@@ -787,7 +745,7 @@ SubwayAskPurchaseQuantity:
 	ld hl, wNumItems
 	call CheckItem
 	pop de
-	jp nc, BargainShopAskPurchaseQuantity
+	jp nc, MartAskPurchaseQuantity.PurchaseQuantityOfTM
 	ld hl, .AlreadyHaveTMText
 	call PrintText
 	call JoyWaitAorB
