@@ -252,9 +252,20 @@ INCBIN "data/tilesets/ruins_of_alph_metatiles.bin"
 TilesetRuinsOfAlphColl:
 INCLUDE "data/tilesets/ruins_of_alph_collision.asm"
 
+TilesetGameCornerGFX:
+INCBIN "gfx/tilesets/game_corner.2bpp.lz"
+
+TilesetGameCornerMeta:
+INCBIN "data/tilesets/game_corner_metatiles.bin"
+
+TilesetGameCornerColl:
+INCLUDE "data/tilesets/game_corner_collision.asm"
+
+TilesetGameCornerAttr:
+INCBIN "data/tilesets/game_corner_attributes.bin"
+
 
 SECTION "Tileset Data 8", ROMX
-
 
 TilesetJohtoCityMeta:
 INCBIN "data/tilesets/johto_city_metatiles.bin"
@@ -304,9 +315,6 @@ INCBIN "data/tilesets/facility_metatiles.bin"
 TilesetFacilityColl:
 INCLUDE "data/tilesets/facility_collision.asm"
 
-
-SECTION "Tileset Data 9", ROMX
-
 Tileset0Attr:
 TilesetJohtoAttr:
 TilesetOceanAttr:
@@ -329,6 +337,7 @@ INCBIN "data/tilesets/ice_path_attributes.bin"
 
 TilesetVolcanoAttr:
 INCBIN "data/tilesets/volcano_attributes.bin"
+
 
 SECTION "Tileset Data 10", ROMX
 

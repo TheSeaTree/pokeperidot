@@ -11,6 +11,7 @@
 	const TILESET_FACILITY             		; 0b
 	const TILESET_MART                 		; 0c
 	const TILESET_MANSION              		; 0d
+	const TILESET_GAME_CORNER          		
 	const TILESET_ELITE_FOUR_ROOM      		; 0f
 	const TILESET_TRADITIONAL_HOUSE    		; 10
 	const TILESET_TRAIN_STATION        		; 11

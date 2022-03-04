@@ -51,6 +51,18 @@ TilesetMountainAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
+
+TilesetGameCornerAnim:
+;	dw NULL,  AnimateRoofPalette
+	dw vTiles2 tile $11, AnimateLeftArcadeScreenTile
+	dw vTiles2 tile $12, AnimateRightArcadeScreenTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
 	
 TilesetLostLandAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
@@ -300,7 +312,7 @@ TilesetPokemonLeagueAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
-	
+
 TilesetGateAnim:
 	dw vTiles2 tile $22, ScrollTileUp
 	dw vTiles2 tile $23, ScrollTileDown
@@ -550,7 +562,6 @@ AnimateLeftGeyserTile:
 	adc HIGH(LeftGeyserTileFrames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $23
 	jp WriteTile
@@ -574,7 +585,6 @@ WallCandleTileAnim:
 	adc HIGH(WallCandleTileFrames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $0f
 	jp WriteTile
@@ -598,7 +608,6 @@ AnimateLeftGeyserTile2:
 	adc HIGH(LeftGeyserTile2Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $33
 	jp WriteTile
@@ -622,7 +631,6 @@ AnimateLeftGeyserTile3:
 	adc HIGH(LeftGeyserTile3Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $43
 	jp WriteTile
@@ -646,7 +654,6 @@ AnimateRightGeyserTile:
 	adc HIGH(RightGeyserTileFrames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $24
 	jp WriteTile
@@ -670,7 +677,6 @@ AnimateRightGeyserTile2:
 	adc HIGH(RightGeyserTile2Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $34
 	jp WriteTile
@@ -694,7 +700,6 @@ AnimateRightGeyserTile3:
 	adc HIGH(RightGeyserTile3Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $44
 	jp WriteTile
@@ -877,6 +882,52 @@ AnimateBottomRightIceWaterTile:
 
 BottomRightIceWaterTileFrames:
 	INCBIN "gfx/tilesets/ice-water/bottom_right.2bpp"
+
+AnimateLeftArcadeScreenTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(LeftArcadeScreenTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(LeftArcadeScreenTileFrames)
+	ld h, a
+
+	ld sp, hl
+	ld hl, vTiles2 tile $11
+	jp WriteTile
+
+LeftArcadeScreenTileFrames:
+	INCBIN "gfx/tilesets/arcade-screen/left_1.2bpp"
+	INCBIN "gfx/tilesets/arcade-screen/left_2.2bpp"
+
+AnimateRightArcadeScreenTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(RightArcadeScreenTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(RightArcadeScreenTileFrames)
+	ld h, a
+
+	ld sp, hl
+	ld hl, vTiles2 tile $12
+	jp WriteTile
+	
+RightArcadeScreenTileFrames:
+	INCBIN "gfx/tilesets/arcade-screen/right_1.2bpp"
+	INCBIN "gfx/tilesets/arcade-screen/right_2.2bpp"
 
 AnimateTopLeftTubeTile:
 ; Draw a water tile for the current frame in VRAM tile at de.
@@ -1154,26 +1205,8 @@ ForestTreeRightAnimation2:
 
 GetForestTreeFrame:
 ; Return 0 if a is even, or 2 if odd.
-	and a
-	jr z, .even
-	cp 1
-	jr z, .odd
-	cp 2
-	jr z, .even
-	cp 3
-	jr z, .odd
-	cp 4
-	jr z, .even
-	cp 5
-	jr z, .odd
-	cp 6
-	jr z, .even
-.odd
-	ld a, 2
-	scf
-	ret
-.even
-	xor a
+	and 1
+	add a
 	ret
 
 AnimateFlowerTile:
@@ -1520,6 +1553,57 @@ AnimateYellowPalette:
 	ldh [rBGPD], a
 
 .end
+	pop af
+	ldh [rSVBK], a
+	ret
+
+AnimateRoofPalette:
+; Transition between color values 0-2 for color 0 in palette 3.
+
+; We don't want to mess with non-standard palettes.
+	ldh a, [rBGP] ; BGP
+	cp %11100100
+	ret nz
+
+; Only update on even frames.
+	ld a, [wTileAnimationTimer]
+	ld l, a
+	and 1 ; odd
+	ret nz
+
+; Ready for BGPD input...
+
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_ROOF color 1
+	ldh [rBGPI], a
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+; Update color 0 in order 0 1 2 1
+	ld a, l
+	and %110 ; frames 0 2 4 6
+	jr z, .color0
+	cp %100 ; frame 4
+	jr z, .color2
+
+.color1
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 1
+	jr .end
+
+.color0
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 0
+	jr .end
+
+.color2
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 0
+
+.end
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
 	pop af
 	ldh [rSVBK], a
 	ret

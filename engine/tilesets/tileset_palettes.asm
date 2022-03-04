@@ -39,6 +39,8 @@ LoadSpecialMapPalette:
 	jr z, .pokemonleague
 	cp  TILESET_LOST_LAND
 	jr z, .lostland
+	cp  TILESET_GAME_CORNER
+	jr z, .gamecorner
 	jr .do_nothing
 
 .battle_tower
@@ -88,7 +90,7 @@ LoadSpecialMapPalette:
 	call LoadGatePalette
 	scf
 	ret
-	
+
 .mountain
 	ld hl, MountainPalette
 	jp LoadEightTimeOfDayBGPalettes
@@ -128,6 +130,11 @@ LoadSpecialMapPalette:
 .lostland
 	ld hl, LostLandPalette
 	jp LoadEightTimeOfDayBGPalettes
+
+.gamecorner
+	call LoadGameCornerPalette
+	scf
+	ret
 
 .do_nothing
 	and a
@@ -238,6 +245,17 @@ LoadMansionPalette:
 	ld bc, 1 palettes
 	call FarCopyWRAM
 	ret
+
+LoadGameCornerPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GameCornerPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+GameCornerPalette:
+INCLUDE "gfx/tilesets/game_corner.pal"
 
 MansionPalette2:
 INCLUDE "gfx/tilesets/mansion_2.pal"
