@@ -304,6 +304,7 @@ BattleTower_LeftWithoutSaving2:
 
 Script_BeatenAllTrainers2:
 	disappear BATTLESUBWAYPLATFORM_OFFICER1
+	faceobject BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
 	turnobject PLAYER, LEFT
 	opentext
 	checkflag ENGINE_BATTLE_SUBWAY_LEVELS
