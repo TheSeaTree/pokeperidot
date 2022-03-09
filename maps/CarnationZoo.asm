@@ -133,10 +133,10 @@ CarnationZooEmilyContinue:
 	opentext
 	writetext CarnationZooFangirlGiveLuckyEggText
 	waitbutton
+	setevent EVENT_BEAT_EMILYS_HOUSE
 	verbosegiveitem LUCKY_EGG
 	iffalse .NoRoom
 	setevent EVENT_CLAIMED_LUCKY_EGG
-	setevent EVENT_BEAT_EMILYS_HOUSE
 	writetext CarnationZooFangirlAfterLuckyEggText
 	waitbutton
 	closetext
