@@ -45,7 +45,7 @@ LostLandAerodactyl:
 	waitbutton
 	closetext
 	setlasttalked LOSTLAND_AERODACTYL
-	loadwildmon AERODACTYL, 5
+	loadwildmon AERODACTYL, 65
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	disappear LOSTLAND_AERODACTYL
@@ -397,11 +397,10 @@ LostLand_MapEvents:
 	warp_event 20, 15, LOST_LAND_CAVE_1F, 2
 	warp_event  2, 13, LOST_LAND_HIDDEN_CAVE_1F, 1
 
-	db 4 ; coord events
+	db 3 ; coord events
 	coord_event  8, 32, SCENE_LOSTLAND_DEFAULT, LostLandScientist
 	coord_event 28, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
 	coord_event 29, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
-	coord_event 20, 16, SCENE_LOSTLAND_DEFAULT, LostLandScene
 
 	db 0 ; bg events
 
