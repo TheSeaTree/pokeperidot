@@ -1,11 +1,11 @@
 	const_def 2 ; object constants
-	const ORVILLESROOM_ORVILLE
-	const ORVILLESROOM_BOMB
-	const ORVILLESROOM_SHADOW1
-	const ORVILLESROOM_SHADOW2
-	const ORVILLESROOM_PLAYER
+	const WILBURSROOM_WILBUR
+	const WILBURSROOM_BOMB
+	const WILBURSROOM_SHADOW1
+	const WILBURSROOM_SHADOW2
+	const WILBURSROOM_PLAYER
 
-OrvillesRoom_MapScripts:
+WilbursRoom_MapScripts:
 	db 2 ; scene scripts
 	scene_script .LockDoor ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINISHED
@@ -13,56 +13,56 @@ OrvillesRoom_MapScripts:
 	db 0 ; callbacks
 
 .LockDoor:
-	disappear ORVILLESROOM_ORVILLE
-	disappear ORVILLESROOM_BOMB
+	disappear WILBURSROOM_WILBUR
+	disappear WILBURSROOM_BOMB
 	end
 
 .DummyScene:
 	end
 
-ApproachOrvilleLeft:
-	applymovement PLAYER, OrvillesRoom_EnterMovementLeft
-	jump ContinueApproachOrville
+ApproachWilburLeft:
+	applymovement PLAYER, WilbursRoom_EnterMovementLeft
+	jump ContinueApproachWilbur
 
-ApproachOrvilleRight:
-	applymovement PLAYER, OrvillesRoom_EnterMovementRight
-ContinueApproachOrville:
+ApproachWilburRight:
+	applymovement PLAYER, WilbursRoom_EnterMovementRight
+ContinueApproachWilbur:
 	
-	moveobject ORVILLESROOM_PLAYER, 5, 10
-	appear ORVILLESROOM_PLAYER
+	moveobject WILBURSROOM_PLAYER, 5, 10
+	appear WILBURSROOM_PLAYER
 
-	applymovement PLAYER, OrvillesRoom_StartBattle
+	applymovement PLAYER, WilbursRoom_StartBattle
 
-	moveobject ORVILLESROOM_BOMB, 11, 10
-	moveobject ORVILLESROOM_SHADOW1, 11, 10
-	moveobject ORVILLESROOM_SHADOW2, 11, 11
-	scall OrvillesRoomDropBombs
+	moveobject WILBURSROOM_BOMB, 11, 10
+	moveobject WILBURSROOM_SHADOW1, 11, 10
+	moveobject WILBURSROOM_SHADOW2, 11, 11
+	scall WilbursRoomDropBombs
 
-	moveobject ORVILLESROOM_BOMB, 10, 10
-	moveobject ORVILLESROOM_SHADOW1, 10, 10
-	moveobject ORVILLESROOM_SHADOW2, 10, 11
-	scall OrvillesRoomDropBombs
+	moveobject WILBURSROOM_BOMB, 10, 10
+	moveobject WILBURSROOM_SHADOW1, 10, 10
+	moveobject WILBURSROOM_SHADOW2, 10, 11
+	scall WilbursRoomDropBombs
 
-	moveobject ORVILLESROOM_BOMB, 9, 10
-	moveobject ORVILLESROOM_SHADOW1, 9, 10
-	moveobject ORVILLESROOM_SHADOW2, 9, 11
-	scall OrvillesRoomDropBombs
+	moveobject WILBURSROOM_BOMB, 9, 10
+	moveobject WILBURSROOM_SHADOW1, 9, 10
+	moveobject WILBURSROOM_SHADOW2, 9, 11
+	scall WilbursRoomDropBombs
 
-	moveobject ORVILLESROOM_BOMB, 8, 10
-	appear ORVILLESROOM_BOMB
+	moveobject WILBURSROOM_BOMB, 8, 10
+	appear WILBURSROOM_BOMB
 	playsound SFX_KINESIS
-	moveobject ORVILLESROOM_SHADOW1, 8, 10
-	moveobject ORVILLESROOM_SHADOW2, 8, 11
-	appear ORVILLESROOM_SHADOW1
-	appear ORVILLESROOM_SHADOW2
+	moveobject WILBURSROOM_SHADOW1, 8, 10
+	moveobject WILBURSROOM_SHADOW2, 8, 11
+	appear WILBURSROOM_SHADOW1
+	appear WILBURSROOM_SHADOW2
 	wait 1
-	applymovement ORVILLESROOM_BOMB, OrvilleFalling
+	applymovement WILBURSROOM_BOMB, WilburFalling
 	playsound SFX_EGG_BOMB
-	appear ORVILLESROOM_ORVILLE
-	applymovement ORVILLESROOM_BOMB, OrvilleExplode2
-	disappear ORVILLESROOM_SHADOW1
-	disappear ORVILLESROOM_SHADOW2
-	disappear ORVILLESROOM_BOMB
+	appear WILBURSROOM_WILBUR
+	applymovement WILBURSROOM_BOMB, WilburExplode2
+	disappear WILBURSROOM_SHADOW1
+	disappear WILBURSROOM_SHADOW2
+	disappear WILBURSROOM_BOMB
 	waitsfx
 
 	setscene SCENE_FINISHED
@@ -70,23 +70,23 @@ ContinueApproachOrville:
 	opentext
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Rematch
-	writetext OrvilleScript_OrvilleBeforeText
+	writetext WilburScript_WilburBeforeText
 	waitbutton
 	closetext
-	winlosstext OrvilleScript_OrvilleBeatenText, 0
-	loadtrainer ORVILLE, ORVILLE1
+	winlosstext WilburScript_WilburBeatenText, 0
+	loadtrainer WILBUR, WILBUR1
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext OrvilleScript_OrvilleDefeatText
+	writetext WilburScript_WilburDefeatText
 	waitbutton
 	closetext
 	jump .AfterBattle
 .Rematch
-	writetext OrvilleScript_RematchBeforeText
+	writetext WilburScript_RematchBeforeText
 	waitbutton
 	closetext
-	winlosstext OrvilleScript_RematchBeatenText, 0
+	winlosstext WilburScript_RematchBeatenText, 0
 
 	copybytetovar wEliteFourFightCount
 	ifgreater 3, .FinalRematch
@@ -95,67 +95,67 @@ ContinueApproachOrville:
 	ifequal 1, .RematchTeam2
 
 .RematchTeam1:
-	loadtrainer ORVILLE, ORVILLE_REMATCH1
+	loadtrainer WILBUR, WILBUR_REMATCH1
 	jump .DoRematch
 .RematchTeam2:
-	loadtrainer ORVILLE, ORVILLE_REMATCH2
+	loadtrainer WILBUR, WILBUR_REMATCH2
 	jump .DoRematch
 .RematchTeam3:
-	loadtrainer ORVILLE, ORVILLE_REMATCH3
+	loadtrainer WILBUR, WILBUR_REMATCH3
 	jump .DoRematch
 .RematchTeam4:
-	loadtrainer ORVILLE, ORVILLE_REMATCH4
+	loadtrainer WILBUR, WILBUR_REMATCH4
 	jump .DoRematch
 .FinalRematch:
-	loadtrainer ORVILLE, ORVILLE_REMATCH5
+	loadtrainer WILBUR, WILBUR_REMATCH5
 .DoRematch
 	startbattle
 	reloadmapafterbattle
 	opentext
-	writetext OrvilleScript_RematchDefeatText
+	writetext WilburScript_RematchDefeatText
 	waitbutton
 	closetext
 
 .AfterBattle
 	wait 4
 
-	applymovement PLAYER, OrvillesRoom_ReturnFromBattle
-	disappear ORVILLESROOM_PLAYER
+	applymovement PLAYER, WilbursRoom_ReturnFromBattle
+	disappear WILBURSROOM_PLAYER
 	end
 
-OrvillesRoomDropBombs:
-	appear ORVILLESROOM_BOMB
-	appear ORVILLESROOM_SHADOW1
-	appear ORVILLESROOM_SHADOW2
+WilbursRoomDropBombs:
+	appear WILBURSROOM_BOMB
+	appear WILBURSROOM_SHADOW1
+	appear WILBURSROOM_SHADOW2
 	playsound SFX_KINESIS
 	wait 1
-	applymovement ORVILLESROOM_BOMB, OrvilleFalling
+	applymovement WILBURSROOM_BOMB, WilburFalling
 	playsound SFX_EGG_BOMB
-	applymovement ORVILLESROOM_BOMB, OrvilleExplode
-	disappear ORVILLESROOM_BOMB
-	disappear ORVILLESROOM_SHADOW1
-	disappear ORVILLESROOM_SHADOW2
+	applymovement WILBURSROOM_BOMB, WilburExplode
+	disappear WILBURSROOM_BOMB
+	disappear WILBURSROOM_SHADOW1
+	disappear WILBURSROOM_SHADOW2
 	end
 	
-OrvilleNoTurningBack:
-	jumptext OrvilleCantProgress
+WilburNoTurningBack:
+	jumptext WilburCantProgress
 	
-CantPassOrville:
+CantPassWilbur:
 	opentext
-	writetext OrvilleCantProgress
+	writetext WilburCantProgress
 	waitbutton
 	closetext
 	applymovement PLAYER, StepAwayE4
 	end
 
-OrvilleScript_AfterBattle:
+WilburScript_AfterBattle:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Rematch
-	jumptextfaceplayer OrvilleScript_OrvilleDefeatText
+	jumptextfaceplayer WilburScript_WilburDefeatText
 .Rematch
-	jumptextfaceplayer OrvilleScript_RematchDefeatText
+	jumptextfaceplayer WilburScript_RematchDefeatText
 
-OrvillesRoom_EnterMovementLeft:
+WilbursRoom_EnterMovementLeft:
 	step UP
 	step UP
 	step LEFT
@@ -167,7 +167,7 @@ OrvillesRoom_EnterMovementLeft:
 	step RIGHT
 	step_end
 
-OrvillesRoom_EnterMovementRight:
+WilbursRoom_EnterMovementRight:
 	step UP
 	step UP
 	step LEFT
@@ -180,26 +180,26 @@ OrvillesRoom_EnterMovementRight:
 	step RIGHT
 	step_end
 	
-OrvillesRoom_StartBattle:
+WilbursRoom_StartBattle:
 	hide_person
 	slow_step RIGHT
 	step_end
 
-OrvillesRoom_ReturnFromBattle:
+WilbursRoom_ReturnFromBattle:
 	slow_step LEFT
 	turn_head RIGHT
 	show_person
 	step_end
 	
-OrvillesRoom_StepAway:
+WilbursRoom_StepAway:
 	step UP
 	step_end
 	
-OrvilleFalling:
+WilburFalling:
 	skyfall
 	step_end
 
-OrvilleExplode:
+WilburExplode:
 	step_shake 8
 	turn_step RIGHT
 	turn_step RIGHT
@@ -208,19 +208,19 @@ OrvilleExplode:
 	hide_person
 	step_end
 
-OrvilleExplode2:
+WilburExplode2:
 	step_shake 16
 	turn_step RIGHT
 	turn_step RIGHT
 	hide_person
 	step_end
 
-OrvilleScript_OrvilleBeforeText:
+WilburScript_WilburBeforeText:
 	text "The #MON LEAGUE"
 	line "welcomes you."
 
 	para "My name is"
-	line "ORVILLE, the first"
+	line "WILBUR, the first"
 	cont "member of the"
 	cont "ELITE FOUR."
 
@@ -244,7 +244,7 @@ OrvilleScript_OrvilleBeforeText:
 	para "Let's go!"
 	done
 
-OrvilleScript_OrvilleBeatenText:
+WilburScript_WilburBeatenText:
 	text "All of my years"
 	line "training, and I"
 	cont "was defeated by a"
@@ -266,7 +266,7 @@ OrvilleScript_OrvilleBeatenText:
 	line "your next battles."
 	done
 
-OrvilleScript_OrvilleDefeatText:
+WilburScript_WilburDefeatText:
 	text "I may have fallen,"
 	line "but the ELITE FOUR"
 	cont "will only get"
@@ -279,27 +279,27 @@ OrvilleScript_OrvilleDefeatText:
 	line "opponent."
 	done
 
-OrvilleScript_RematchBeforeText:
+WilburScript_RematchBeforeText:
 	text "Pre-rematch text"
 	line "goes here."
 	done
 
-OrvilleScript_RematchBeatenText:
+WilburScript_RematchBeatenText:
 	text "Rematch victory"
 	line "text goes here."
 	done
 
-OrvilleScript_RematchDefeatText:
+WilburScript_RematchDefeatText:
 	text "After rematch text"
 	line "goes here."
 	done
 
-OrvilleCantProgress:
+WilburCantProgress:
 	text "There is no"
 	line "turning back now."
 	done
 	
-OrvillesRoom_MapEvents:
+WilbursRoom_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
@@ -309,17 +309,17 @@ OrvillesRoom_MapEvents:
 	warp_event  7,  1, REGANS_ROOM, 2
 
 	db 4 ; coord events
-	coord_event  6, 16, SCENE_DEFAULT, ApproachOrvilleLeft
-	coord_event  7, 16, SCENE_DEFAULT, ApproachOrvilleRight
-	coord_event  6, 16, SCENE_FINISHED, CantPassOrville
-	coord_event  7, 16, SCENE_FINISHED, CantPassOrville
+	coord_event  6, 16, SCENE_DEFAULT, ApproachWilburLeft
+	coord_event  7, 16, SCENE_DEFAULT, ApproachWilburRight
+	coord_event  6, 16, SCENE_FINISHED, CantPassWilbur
+	coord_event  7, 16, SCENE_FINISHED, CantPassWilbur
 
 	db 2 ; bg events
-	bg_event  6, 20, BGEVENT_READ, OrvilleNoTurningBack
-	bg_event  7, 20, BGEVENT_READ, OrvilleNoTurningBack
+	bg_event  6, 20, BGEVENT_READ, WilburNoTurningBack
+	bg_event  7, 20, BGEVENT_READ, WilburNoTurningBack
 
 	db 5 ; object events
-	object_event  8, 10, SPRITE_ORVILLE, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrvilleScript_AfterBattle, -1
+	object_event  8, 10, SPRITE_WILBUR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WilburScript_AfterBattle, -1
 	object_event 11, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

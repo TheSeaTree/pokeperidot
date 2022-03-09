@@ -41,6 +41,7 @@ ENDM
 	map_const SEA_ROUTE_5,                                 22, 17 ;  3
 	map_const SEA_ROUTE_6,                                 19, 19 ;  3
 	map_const ROUTE_6_GATE,                                 5,  4 ;  3
+	map_const SEA_ROUTE_7,                                 14, 15
 
 	newgroup                                                      ;  2
 
@@ -192,7 +193,7 @@ ENDM
 	newgroup                                                      ;  9
 
 	map_const EAST_FOREST,                                 30, 15
-	map_const FACTORY_1F,                                  11, 11
+	map_const FACTORY_1F,                                  16, 12
 	map_const FACTORY_B1,                                   6,  8
 	map_const FACTORY_BACK,                                 5,  8
 	map_const RAIKOU_LAIR,									5,  3
@@ -234,8 +235,9 @@ ENDM
 	map_const PECTINIA_BED_STORE,                    	   6,  3
 	map_const PECTINIA_DOLL_STORE,                         5,  3
 	map_const PECTINIA_CARPET_STORE,                       5,  3
-	map_const PECTINIA_COMIC_STORE,                        6,  4
+	map_const PECTINIA_COMIC_STORE,                        6,  6
 	map_const PECTINIA_BATTLE_ITEM_STORE,                  7,  4
+	map_const PECTINIA_ARCADE,                             8,  8
 
 	newgroup                                                      ; 12
 
@@ -284,11 +286,12 @@ ENDM
 	map_const VICTORY_COAST,						   	   23, 19
 	map_const VICTORY_PORT,						   		   10, 13
 	map_const POKEMON_LEAGUE_POKECENTER_1F,                 8,  5 ;  2
-	map_const ORVILLES_ROOM,                                7, 10 ;  3
+	map_const WILBURS_ROOM,                                 7, 10 ;  3
 	map_const REGANS_ROOM,                                  7, 10 ;  5
 	map_const BREDES_ROOM,                                  7, 10 ;  4
 	map_const AMBERS_ROOM,                                  7, 10 ;  6
 	map_const VICTORS_ROOM,                                 7, 15 ;  7
+	map_const EMILYS_ROOM,                                  7, 15 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
 
 	newgroup                                                      ; 17
@@ -406,7 +409,8 @@ ENDM
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
 	map_const BATTLE_SIMULATION,					       10,  7
-	map_const BATTLE_SIMULATION_TEST_ROOM,				   20,  10
+	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
+	map_const ROUTE_28,					           		   16, 18
 
 	newgroup                                                      ; 26
 

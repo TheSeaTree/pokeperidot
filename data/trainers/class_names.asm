@@ -64,7 +64,7 @@ TrainerClassNames::
 	db "TWINS@"
 	db "#FAN@"
 	db "<PKMN> TRAINER@"
-	db "LEADER@"
+	db "CHAMPION@"
 	db "OFFICER@"
 	db "ROCKET@"
 	db "MYSTICALMAN@"

@@ -11,7 +11,7 @@ MapScenes::
 	scene_var SEA_ROUTE_2,                              wRoute16GateSceneID
 	scene_var ROUTE_8_ROUTE_10_GATE,                    wRoute17Route18GateSceneID
 	scene_var POKEMON_LEAGUE_POKECENTER_1F,             wPokemonLeaguePokecenter1FSceneID
-	scene_var ORVILLES_ROOM,                            wOrvillesRoomSceneID
+	scene_var WILBURS_ROOM,                             wWilbursRoomSceneID
 	scene_var REGANS_ROOM,                              wRegansRoomSceneID
 	scene_var BREDES_ROOM,                              wBredesRoomSceneID
 	scene_var AMBERS_ROOM,                              wAmbersRoomSceneID
@@ -62,6 +62,7 @@ MapScenes::
 	scene_var SS_MAKO_2F_ROOMS,                       	wSSMako2FRoomsSceneID
 	scene_var SS_MAKO_DECK,                       		wSSMakoDeckSceneID
 	scene_var SS_MAKO_LOWER_DECK,                  		wSSMakoLowerDeckSceneID
+	scene_var EMILYS_ROOM,                 				wEmilysRoomSceneID
 	scene_var BATTLE_SUBWAY_BOSS_TRAIN,                 wBattleSubwayBossTrainSceneID
 	scene_var BATTLE_SIMULATION,                 		wBattleSimulationSceneID
 	db -1

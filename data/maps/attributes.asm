@@ -270,6 +270,16 @@ ENDM
 	map_attributes Route22, ROUTE_22, $35, NORTH
 	connection north, OrchidCity, ORCHID_CITY, -4
 
+	map_attributes VictoryCoast, VICTORY_COAST, $35, WEST
+	connection west, SeaRoute7, SEA_ROUTE_7, 0
+
+	map_attributes SeaRoute7, SEA_ROUTE_7, $35, NORTH | EAST
+	connection north, Route28, ROUTE_28, 0
+	connection east, VictoryCoast, VICTORY_COAST, 0
+
+	map_attributes Route28, ROUTE_28, $05, SOUTH
+	connection south, SeaRoute7, SEA_ROUTE_7, 0
+
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
 	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
@@ -329,11 +339,12 @@ ENDM
 	map_attributes Route3PectiniaGate, ROUTE_3_PECTINIA_GATE, $00, 0
 	map_attributes Route6SurfersHouse, ROUTE_6_SURFERS_HOUSE, $00, 0
 	map_attributes PokemonLeaguePokecenter1F, POKEMON_LEAGUE_POKECENTER_1F, $00, 0
-	map_attributes OrvillesRoom, ORVILLES_ROOM, $00, 0
+	map_attributes WilbursRoom, WILBURS_ROOM, $00, 0
 	map_attributes RegansRoom, REGANS_ROOM, $00, 0
 	map_attributes BredesRoom, BREDES_ROOM, $00, 0
 	map_attributes AmbersRoom, AMBERS_ROOM, $00, 0
 	map_attributes VictorsRoom, VICTORS_ROOM, $00, 0
+	map_attributes EmilysRoom, EMILYS_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes Route3Route4Gate, ROUTE_3_ROUTE_4_GATE, $00, 0
 	map_attributes Route5SuperRodHouse, ROUTE_5_SUPER_ROD_HOUSE, $00, 0
@@ -531,7 +542,6 @@ ENDM
 	map_attributes SSMako2FRooms, SS_MAKO_2F_ROOMS, $00, 0
 	map_attributes SSMakoDeck, SS_MAKO_DECK, $72, 0
 	map_attributes SSMakoLowerDeck, SS_MAKO_LOWER_DECK, $72, 0
-	map_attributes VictoryCoast, VICTORY_COAST, $35, 0
 	map_attributes VictoryPort, VICTORY_PORT, $00, 0
 	map_attributes MoonBallCave, MOON_BALL_CAVE, $09, 0
 	map_attributes PokemonLeagueGate1F, POKEMON_LEAGUE_GATE_1F, $00, 0
@@ -549,3 +559,4 @@ ENDM
 	map_attributes PectiniaCarpetStore, PECTINIA_CARPET_STORE, $00, 0
 	map_attributes PectiniaComicStore, PECTINIA_COMIC_STORE, $00, 0
 	map_attributes PectiniaBattleItemStore, PECTINIA_BATTLE_ITEM_STORE, $00, 0
+	map_attributes PectiniaArcade, PECTINIA_ARCADE, $00, 0

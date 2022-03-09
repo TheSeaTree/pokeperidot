@@ -344,8 +344,8 @@ RegansRoom_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  6, 19, ORVILLES_ROOM, 1
-	warp_event  7, 19, ORVILLES_ROOM, 2
+	warp_event  6, 19, WILBURS_ROOM, 1
+	warp_event  7, 19, WILBURS_ROOM, 2
 	warp_event  6,  1, BREDES_ROOM, 1
 	warp_event  7,  1, BREDES_ROOM, 2
 

@@ -120,13 +120,13 @@ CHRIS EQU __enum__
 	const CAL2
 	const CAL3
 
-	trainerclass ORVILLE ; b
-	const ORVILLE1
-	const ORVILLE_REMATCH1
-	const ORVILLE_REMATCH2
-	const ORVILLE_REMATCH3
-	const ORVILLE_REMATCH4
-	const ORVILLE_REMATCH5
+	trainerclass WILBUR ; b
+	const WILBUR1
+	const WILBUR_REMATCH1
+	const WILBUR_REMATCH2
+	const WILBUR_REMATCH3
+	const WILBUR_REMATCH4
+	const WILBUR_REMATCH5
 
 	trainerclass REGAN ; d
 	const REGAN1
@@ -526,7 +526,12 @@ CHRIS EQU __enum__
 	trainerclass RED ; 3f
 	const RED1
 
-	trainerclass BLUE ; 40
+	trainerclass CHAMPIONF ; 40
+	const EMILY_CHAMPION1
+	const EMILY_CHAMPION2
+	const EMILY_CHAMPION3
+	const EMILY_CHAMPION4
+	const EMILY_CHAMPION5
 
 	trainerclass OFFICER ; 41
 	const BILLY

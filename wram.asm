@@ -2553,7 +2553,7 @@ wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
 wPokemonLeaguePokecenter1FSceneID::               db ; d97e
-wOrvillesRoomSceneID::                            db ; d97f
+wWilbursRoomSceneID::                             db ; d97f
 wRegansRoomSceneID::                              db ; d980
 wBredesRoomSceneID::                              db ; d981
 wAmbersRoomSceneID::                              db ; d982
@@ -2626,10 +2626,11 @@ wSSMako2FSceneID::                                db ; d9bc
 wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoDeckSceneID::                         	  db ; d9bd
 wSSMakoLowerDeckSceneID::                      	  db ; d9bd
+wEmilysRoomSceneID::                      	  	  db
 wBattleSubwayBossTrainSceneID::					  db
 wBattleSimulationSceneID::					  	  db
 
-	ds 41
+	ds 40
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

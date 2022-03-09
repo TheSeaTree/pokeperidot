@@ -14,7 +14,7 @@ TrainerPicPointers::
 	dba FangirlPic
 	dba PokemonProfPic
 	dba CalPic
-	dba OrvillePic
+	dba WilburPic
 	dba ReganPic
 	dba AmberPic
 	dba BredePic
@@ -66,7 +66,7 @@ TrainerPicPointers::
 	dba TwinsPic
 	dba PokefanfPic
 	dba RedPic
-	dba BluePic
+	dba ChampionFPic
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic

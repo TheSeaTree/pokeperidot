@@ -17,18 +17,23 @@ PokemonLeaguePokecenter1F_MapScripts:
 	end
 
 .PrepareElite4:
-	setmapscene ORVILLES_ROOM, SCENE_DEFAULT
+	setmapscene WILBURS_ROOM, SCENE_DEFAULT
 	setmapscene REGANS_ROOM, SCENE_DEFAULT
 	setmapscene BREDES_ROOM, SCENE_DEFAULT
 	setmapscene AMBERS_ROOM, SCENE_DEFAULT
 	setmapscene VICTORS_ROOM, SCENE_DEFAULT
 	setmapscene HALL_OF_FAME, SCENE_DEFAULT
-	clearevent EVENT_BEAT_ELITE_4_ORVILLE
+	clearevent EVENT_BEAT_ELITE_4_WILBUR
 	clearevent EVENT_BEAT_ELITE_4_REGAN
 	clearevent EVENT_BEAT_ELITE_4_BREDE
 	clearevent EVENT_BEAT_ELITE_4_AMBER
 	clearevent EVENT_BEAT_CHAMPION_VICTOR
 ;	setevent EVENT_VICTORS_ROOM_OAK_AND_MARY
+	variablesprite SPRITE_LEAGUE_PLAYER, SPRITE_PERRY
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iffalse .GotGender
+	variablesprite SPRITE_LEAGUE_PLAYER, SPRITE_JADE
+.GotGender
 	return
 
 PokemonLeaguePokecenter1FNurseScript:
@@ -150,8 +155,8 @@ PokemonLeaguePokecenter1F_MapEvents:
 	warp_event  7,  9, POKEMON_LEAGUE, 1
 	warp_event  8,  9, POKEMON_LEAGUE, 2
 	warp_event  0,  9, POKECENTER_2F, 1
-	warp_event  7,  0, ORVILLES_ROOM, 1
-	warp_event  8,  0, ORVILLES_ROOM, 2
+	warp_event  7,  0, WILBURS_ROOM, 1
+	warp_event  8,  0, WILBURS_ROOM, 2
 
 	db 0 ; coord events
 

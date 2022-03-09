@@ -38,6 +38,18 @@ PectiniaBedStoreSign:
 PectiniaDollStoreSign:
 	jumptext PectiniaDollStoreSignText
 
+PectiniaCarpetStoreSign:
+	jumptext PectiniaCarpetStoreSignText
+
+PectiniaComicStoreSign:
+	jumptext PectiniaComicStoreSignText
+
+PectiniaBattleItemStoreSign:
+	jumptext PectiniaBattleItemStoreSignText
+
+PectiniaArcadeSign:
+	jumptext PectiniaArcadeSignText
+
 AwakeningGuyText:
 	text "How well do you"
 	line "sleep at night?"
@@ -112,18 +124,38 @@ BattleSubwayEntranceSignText:
 	done
 
 PectiniaBedStoreSignText:
-	text "DROWZEE's SLUMBER"
-	line "SHACK."
+	text "DROWZEE's"
+	line "SLUMBER SHACK"
 	done
 
 PectiniaDollStoreSignText:
-	text "DOLL STORE"
+	text "MR. MIME's"
+	line "DOLL HOUSE"
+	done
+
+PectiniaCarpetStoreSignText: ; Come up with something better
+	text "CARPET STORE"
+	done
+
+PectiniaComicStoreSignText:
+	text "SMEARGLE's COMICS"
+	line "& COLLECTABLES"
+	done
+
+PectiniaBattleItemStoreSignText:
+	text "SKARMORY's SKY-"
+	line "HIGH SELECTION"
+	done
+
+PectiniaArcadeSignText:
+	text "PORYGON's VIRTUAL"
+	line "PLAYGROUND."
 	done
 
 PectiniaMall_MapEvents:
 	db 0, 0 ; filler
 
-	db 8 ; warp events
+	db 9 ; warp events
 	warp_event 16, 17, PECTINIA_CITY, 2
 	warp_event 17, 17, PECTINIA_CITY, 2
 	warp_event 17,  8, BATTLE_SUBWAY_PLATFORM, 1
@@ -132,14 +164,19 @@ PectiniaMall_MapEvents:
 	warp_event 27, 12, PECTINIA_CARPET_STORE, 1
 	warp_event  6, 12, PECTINIA_COMIC_STORE, 1
 	warp_event  2,  6, PECTINIA_BATTLE_ITEM_STORE, 1
+	warp_event 31,  6, PECTINIA_ARCADE, 1
 
 	db 0 ; coord events
 ;	coord_event 18,  8, SCENE_DEFAULT, Script_ArriveFromSaffron
 
-	db 3 ; bg events
+	db 7 ; bg events
 	bg_event 16,  8, BGEVENT_READ, BattleSubwayEntranceSign
 	bg_event 21,  0, BGEVENT_READ, PectiniaBedStoreSign
 	bg_event 12,  0, BGEVENT_READ, PectiniaDollStoreSign
+	bg_event 28, 12, BGEVENT_READ, PectiniaCarpetStoreSign
+	bg_event  5, 12, BGEVENT_READ, PectiniaComicStoreSign
+	bg_event  1,  6, BGEVENT_READ, PectiniaBattleItemStoreSign
+	bg_event 32,  6, BGEVENT_READ, PectiniaArcadeSign
 
 	db 8 ; object events
 	object_event 16,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaSubwayLass, -1

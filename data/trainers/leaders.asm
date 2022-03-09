@@ -15,10 +15,11 @@ GymLeaders:
 	db ENYA
 ; fallthrough
 EliteFour:
-	db ORVILLE
+	db WILBUR
 	db REGAN
 	db BREDE
 	db AMBER
 	db CHAMPION
+	db CHAMPIONF
 	db RED
 	db -1

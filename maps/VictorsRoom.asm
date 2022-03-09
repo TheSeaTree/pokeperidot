@@ -55,10 +55,6 @@ VictorsRoomVictorScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_VICTOR
 
-	copybytetovar wEliteFourFightCount
-	addvar 1
-	copyvartobyte wEliteFourFightCount
-
 	opentext
 	writetext VictorBattleAfterText
 	waitbutton

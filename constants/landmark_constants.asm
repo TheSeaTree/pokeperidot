@@ -54,6 +54,7 @@
 	const SEA_ROUTE_6       ; 3f
 	const ROUTE_19       	; 3f
 	const VICTORY_ROAD      ; 58
+	const SEA_ROUTE_7       ; 3f
 	const POKEMON_LEAGUE    ; 5a
 	
 KANTO_LANDMARK EQU const_value

@@ -44,10 +44,10 @@ Landmarks:
 	landmark  36,  52, Route16Name ; ROUTE_20
 	landmark  36,  60, BlackthornCityName
 	landmark  42,  68, Route17Name ; ROUTE_21
-	landmark  26,  60, Route20Name ; ROUTE_24
-	landmark  26,  60, Route21Name ; ROUTE_25
-	landmark  28,  60, MoltenPeakName
-	landmark  20,  60, Route18Name ; ROUTE_22
+	landmark  28,  68, Route18Name ; ROUTE_24
+	landmark  28,  76, Route19Name ; ROUTE_25
+	landmark  26,  60, MoltenPeakName
+	landmark  20,  60, Route20Name ; ROUTE_22
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
@@ -56,10 +56,11 @@ Landmarks:
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
 	landmark 132,  44, SeaRoute6Name
-	landmark 140,  40, Route19Name ; ROUTE_23
-	landmark 140,  36, VictoryRoadName
-	landmark 140,  28, PokemonLeagueName
-	landmark 118,  34, FastShipName
+	landmark 148,  36, Route21Name ; ROUTE_23
+	landmark 140,  28, VictoryRoadName
+	landmark 128,  28, SeaRoute7Name
+	landmark 140,  20, PokemonLeagueName
+	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
 
 NewBarkTownName:      db "ELKHORN¯TOWN@"
@@ -130,6 +131,7 @@ SeaRoute3Name:        db "SEA ROUTE 3@"
 SeaRoute4Name:        db "SEA ROUTE 4@"
 SeaRoute5Name:        db "SEA ROUTE 5@"
 SeaRoute6Name:        db "SEA ROUTE 6@"
+SeaRoute7Name:        db "SEA ROUTE 7@"
 Route30Name:	      db "PAVONA¯OASIS@"
 CarnationZooName:     db "CARNATION¯ZOO@"
 DarkCaveName:         db "DARK CAVE@"

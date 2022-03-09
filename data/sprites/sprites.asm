@@ -125,7 +125,7 @@ OverworldSprites:
 	overworld_sprite ReganSpriteGFX, 12, WALKING_SPRITE, PAL_OW_PURPLE
 	overworld_sprite BredeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite AmberSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
-	overworld_sprite OrvilleSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite WilburSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BombSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite TeacherSleepingSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite BuenaSleepingSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE

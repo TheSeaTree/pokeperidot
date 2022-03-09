@@ -129,6 +129,9 @@ SeaRoute5_Blocks:
 SeaRoute6_Blocks:
 	INCBIN "maps/SeaRoute6.ablk"
 
+SeaRoute7_Blocks:
+	INCBIN "maps/SeaRoute7.ablk"
+
 PlayersHouse1F_Blocks:
 EmilysHouse1F_Blocks:
 	INCBIN "maps/PlayersHouse1F.ablk"
@@ -295,6 +298,9 @@ PectiniaComicStore_Blocks:
 PectiniaBattleItemStore_Blocks:
 	INCBIN "maps/PectiniaBattleItemStore.ablk"
 
+PectiniaArcade_Blocks:
+	INCBIN "maps/PectiniaArcade.ablk"
+
 PectiniaDollStore_Blocks:
 	INCBIN "maps/PectiniaDollStore.ablk"
 
@@ -403,8 +409,8 @@ PokemonLeague_Blocks:
 PokemonLeaguePokecenter1F_Blocks:
 	INCBIN "maps/PokemonLeaguePokecenter1F.ablk"
 
-OrvillesRoom_Blocks:
-	INCBIN "maps/OrvillesRoom.ablk"
+WilbursRoom_Blocks:
+	INCBIN "maps/WilbursRoom.ablk"
 
 RegansRoom_Blocks:
 	INCBIN "maps/RegansRoom.ablk"
@@ -496,6 +502,9 @@ VictoryRoad_Blocks:
 
 VictorsRoom_Blocks:
 	INCBIN "maps/VictorsRoom.ablk"
+
+EmilysRoom_Blocks:
+	INCBIN "maps/EmilysRoom.ablk"
 
 HallOfFame_Blocks:
 	INCBIN "maps/HallOfFame.ablk"
@@ -763,6 +772,9 @@ Route26_Blocks:
 
 Route27_Blocks:
 	INCBIN "maps/Route27.ablk"
+
+Route28_Blocks:
+	INCBIN "maps/Route28.ablk"
 
 MoltenPeak1F_Blocks:
 	INCBIN "maps/MoltenPeak1F.ablk"

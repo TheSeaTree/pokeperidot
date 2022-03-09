@@ -1,7 +1,7 @@
 ; Places and People will not describe these trainers.
 
 PnP_HiddenPeople:
-	db ORVILLE
+	db WILBUR
 	db REGAN
 	db BREDE
 	db AMBER
@@ -15,7 +15,7 @@ PnP_HiddenPeople_BeatE4:
 	db JANINE
 	db SABRINA
 	db BLAINE
-	db BLUE
+	db CHAMPIONF
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

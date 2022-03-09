@@ -14,7 +14,7 @@ BTTrainerClassGenders:
 	db FEMALE ; FANGIRL
 	db FEMALE ; PROFESSOR
 	db MALE   ; CAL
-	db MALE   ; ORVILLE
+	db MALE   ; WILBUR
 	db FEMALE ; REGAN
 	db FEMALE ; AMBER
 	db MALE   ; BREDE
@@ -66,6 +66,6 @@ BTTrainerClassGenders:
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
 	db MALE   ; RED
-	db MALE   ; BLUE
+	db FEMALE ; CHAMPION
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF

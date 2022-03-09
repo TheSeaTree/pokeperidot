@@ -19,7 +19,7 @@ INCBIN "gfx/trainers/rival1.gbcpal", middle_colors
 INCBIN "gfx/trainers/fangirl.gbcpal", middle_colors
 INCBIN "gfx/trainers/oak.gbcpal", middle_colors
 INCBIN "gfx/trainers/cal.gbcpal", middle_colors
-INCBIN "gfx/trainers/orville.gbcpal", middle_colors
+INCBIN "gfx/trainers/wilbur.gbcpal", middle_colors
 INCBIN "gfx/trainers/regan.gbcpal", middle_colors
 INCBIN "gfx/trainers/amber.gbcpal", middle_colors
 INCBIN "gfx/trainers/brede.gbcpal", middle_colors
@@ -71,7 +71,7 @@ INCBIN "gfx/trainers/kimono_girl.gbcpal", middle_colors
 INCBIN "gfx/trainers/twins.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokefan_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/red.gbcpal", middle_colors
-INCBIN "gfx/trainers/blue.gbcpal", middle_colors
+INCBIN "gfx/trainers/champion_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/officer.gbcpal", middle_colors
 INCBIN "gfx/trainers/grunt_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/mysticalman.gbcpal", middle_colors

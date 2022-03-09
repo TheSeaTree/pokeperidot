@@ -14,7 +14,7 @@ TrainerGroups:
 	dba FangirlGroup
 	dba PokemonProfGroup
 	dba PKMNTrainerGroup
-	dba OrvilleGroup
+	dba WilburGroup
 	dba ReganGroup
 	dba AmberGroup
 	dba BredeGroup
@@ -66,7 +66,7 @@ TrainerGroups:
 	dba TwinsGroup
 	dba PokefanFGroup
 	dba RedGroup
-	dba BlueGroup
+	dba ChampionFGroup
 	dba OfficerGroup
 	dba GruntFGroup
 	dba MysticalmanGroup

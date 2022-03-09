@@ -56,7 +56,6 @@ AmberScript_Battle:
 	ifequal 2, .RematchTeam3
 	ifequal 1, .RematchTeam2
 
-.RematchTeam1:
 	loadtrainer AMBER, AMBER_REMATCH1
 	jump .DoRematch
 .RematchTeam2:

@@ -13,7 +13,7 @@ TrainerClassDVs:
 	dn  7, 13, 13, 13 ; FANGIRL
 	dn 14, 14, 14, 14 ; PROFESSOR
 	dn 13, 12, 13, 13 ; CAL
-	dn 14, 14, 15, 14 ; ORVILLE
+	dn 14, 14, 15, 14 ; WILBUR
 	dn  7, 14, 15, 15 ; REGAN
 	dn  7, 15, 15, 14 ; AMBER
 	dn 14, 14, 15, 14 ; BREDE
@@ -65,7 +65,7 @@ TrainerClassDVs:
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
 	dn 15, 13, 13, 14 ; RED
-	dn  9, 13, 13, 13 ; BLUE
+	dn  7, 15, 15, 14 ; CHAMPIONF
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN
