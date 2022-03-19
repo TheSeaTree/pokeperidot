@@ -250,7 +250,6 @@ DiglettEggMoves:
 	db PURSUIT
 	db EXPLOSION
 	db THRASH
-	db STONE_EDGE
 	db -1 ; end
 
 MeowthEggMoves:
@@ -393,6 +392,7 @@ DoduoEggMoves:
 	db FLAIL
 	db MIRROR_MOVE
 	db BRAVE_BIRD
+	db DOUBLE_EDGE
 	db -1 ; end
 
 SeelEggMoves:

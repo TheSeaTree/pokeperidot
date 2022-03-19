@@ -507,6 +507,7 @@ NidorinaEvosAttacks:
 NidoqueenEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, SPIKES
 	db 1, SCRATCH
 	db 1, DOUBLE_KICK
 	db 1, TAIL_WHIP
@@ -547,6 +548,7 @@ NidorinoEvosAttacks:
 NidokingEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
+	db 1, SPIKES
 	db 1, HORN_ATTACK
 	db 1, DOUBLE_KICK
 	db 1, POISON_STING
@@ -795,11 +797,12 @@ DiglettEvosAttacks:
 	db 4, GROWL
 	db 10, MUD_SLAP
 	db 16, BULLDOZE
-	db 28, IRON_HEAD
+	db 28, CUT
 	db 31, DIG
-	db 35, CUT
+	db 35, IRON_HEAD
 	db 39, EARTHQUAKE
-	db 43, FISSURE
+	db 43, STONE_EDGE
+	db 50, FISSURE
 	db 0 ; no more level-up moves
 
 DugtrioEvosAttacks:
@@ -810,11 +813,12 @@ DugtrioEvosAttacks:
 	db 4, GROWL
 	db 10, MUD_SLAP
 	db 16, BULLDOZE
-	db 30, IRON_HEAD
+	db 30, CUT
 	db 35, DIG
-	db 41, CUT
+	db 41, IRON_HEAD
 	db 47, EARTHQUAKE
-	db 53, FISSURE
+	db 53, STONE_EDGE
+	db 60, FISSURE
 	db 0 ; no more level-up moves
 
 MeowthEvosAttacks:
