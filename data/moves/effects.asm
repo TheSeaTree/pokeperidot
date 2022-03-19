@@ -1233,7 +1233,6 @@ TrapTarget:
 	endmove
 
 SuperFang:
-Psywave:
 StaticDamage:
 	checkobedience
 	usedmovetext
@@ -1241,6 +1240,20 @@ StaticDamage:
 	constantdamage
 	checkhit
 	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+Psywave:
+	checkobedience
+	usedmovetext
+	doturn
+	constantdamage
+	checkhit
 	moveanim
 	failuretext
 	applydamage
