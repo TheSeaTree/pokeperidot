@@ -98,6 +98,7 @@ ENDM
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const KINGLERS_DEN,							        5,  7
+	map_const TENTACRUELS_DEN,						        8,  8
 
 	newgroup                                                      ;  4
 
@@ -130,6 +131,9 @@ ENDM
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
 	map_const ROUTE_24_NORTH,							 18, 14
 	map_const ROUTE_24_SOUTH,							 25, 12
+	map_const ROUTE_24_HIDDEN_CAVE_1F,	                 22, 15
+	map_const ROUTE_24_HIDDEN_CAVE_B1F,	                 20, 14
+	map_const DUGTRIOS_DEN,		                  		  5,  7
 	map_const ROUTE_25_GATE,							  5,  4
 	map_const ACROPORA_CAVE_1F,                          19, 11
 	map_const ACROPORA_CAVE_2F,                          10,  7
@@ -321,7 +325,7 @@ ENDM
 	map_const REMNANT_CAVE_1F,                             17, 12
 	map_const REMNANT_CAVE_2F,	                           18, 18
 	map_const REMNANT_CAVE_OUTSIDE,	                       23, 16
-	map_const REMNANT_CAVE_3F,	                            7, 13
+	map_const REMNANT_CAVE_3F,	                           28,  9
 	map_const LOST_LAND,		                           29, 20
 	map_const LOST_LAND_CAVE_1F,		                   13, 12
 	map_const LOST_LAND_CAVE_B1F,		                   22, 14
@@ -435,6 +439,8 @@ ENDM
 	map_const PALEROCK_MOUNTAIN_B3,						   22, 16 ;  5
 	map_const PALEROCK_MOUNTAIN_WATERFALL_CHAMBER,	       15, 13 ;  6
 	map_const PALEROCK_MOUNTAIN_STRENGTH_ROOM,		        5,  4 ;  6
+	map_const PALEROCK_MOUNTAIN_HIDDEN_CAVE,		       10, 18
+	map_const SKARMORYS_DEN,							   10,  9
 	map_const HIDDEN_POWER_CAVE,                            6,  5
 	map_const UNOWN_CHAMBER_AG,                             6,  7 ; 52
 	map_const UNOWN_CHAMBER_HN,                             6,  7 ; 52

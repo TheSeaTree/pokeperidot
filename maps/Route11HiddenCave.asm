@@ -5,7 +5,7 @@
 Route11HiddenCave_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .OpenCave
 	callback MAPCALLBACK_OBJECTS, .ItemBall
 	
@@ -24,36 +24,21 @@ Route11HiddenCave_MapScripts:
 
 Route11CaveGengar:
 	scall LightsOut
-	opentext
-	writetext Route11CaveGengarText
-	cry HAUNTER
-	waitbutton
-	closetext
-	loadwildmon HAUNTER, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+
+	scall LoadHaunterBattle
+
 	scall LightsOut
 ;	reloadmapafterbattle
 	pause 4
-	opentext
-	writetext Route11CaveGengarText
-	cry HAUNTER
-	waitbutton
-	closetext
-	loadwildmon HAUNTER, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+
+	scall LoadHaunterBattle
+
 	scall LightsOut
 ;	reloadmapafterbattle
 	pause 4
-	opentext
-	writetext Route11CaveGengarText
-	cry HAUNTER
-	waitbutton
-	closetext
-	loadwildmon HAUNTER, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
-	startbattle
+
+	scall LoadHaunterBattle
+
 	reloadmapafterbattle
 	pause 4
 	scall LightsOn
@@ -77,8 +62,16 @@ Route11CaveGengar:
 	setevent EVENT_ROUTE_11_CAVE_BEAT_GENGAR
 	end
 
-HaunterBattle:
-	
+LoadHaunterBattle:
+	opentext
+	writetext Route11CaveGengarText
+	cry HAUNTER
+	waitbutton
+	closetext
+	loadwildmon HAUNTER, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	end
 
 LightsOut:
 	jumpstd darkenroom
@@ -89,7 +82,7 @@ LightsOn:
 	end
 
 Route11CaveXSpAtk:
-	itemball X_SP_ATK
+	itemball SAPPHIRE_BOX
 
 Route11CaveGengarText:
 	text "GENGAR: Hehehe!"

@@ -101,3 +101,6 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 64
 	tilecoll WALL, WALL, FLOOR, WALL ; 65
 	tilecoll WALL, WALL, WALL, FLOOR ; 66
+	tilecoll DOWN_WALL, FLOOR, CAVE, WALL ; 67
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 68
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 69

@@ -11,11 +11,9 @@ Route11CurseHouse_MapScripts:
 .Medium:
 	writebyte CURSTRAW
 	special FindPartyMonThatSpeciesYourTrainerID
-	iffalse .NoAppear
-	return
-
-.NoAppear:
+	iftrue .DoNothing
 	moveobject ROUTE11CURSEHOUSE_MEDIUM,  -3, -3
+.DoNothing:
 	return
 	
 TrainerMediumAnnabel:

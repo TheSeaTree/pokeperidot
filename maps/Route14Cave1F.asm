@@ -157,7 +157,7 @@ Route14Cave1FMarowakScript:
 	moveobject ROUTE_14_CAVE_1F_MAROWAK, 2, 7
 	loadvar wFarfetchdPosition, 4
 	end
-	
+
 .Position4:
 	faceplayer
 	opentext
@@ -516,8 +516,8 @@ Route14Cave1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  9, 19, BGEVENT_READ, Route14CaveReset
+	db 0 ; bg events
+;	bg_event  9, 19, BGEVENT_READ, Route14CaveReset
 
 	db 5 ; object events
 	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_ROUTE_14_CAVE_1F_BOULDER_1

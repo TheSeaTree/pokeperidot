@@ -84,19 +84,19 @@ ItemDescriptions:
 	dw KingsRockDesc
 	dw BitterBerryDesc
 	dw MintBerryDesc
-	dw RedApricornDesc
+	dw RubyBoxDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
-	dw BluApricornDesc
+	dw SapphireBoxDesc
 	dw DampRockDesc
 	dw AmuletCoinDesc
-	dw YlwApricornDesc
-	dw GrnApricornDesc
+	dw AmethystBoxDesc
+	dw EmeraldBoxDesc
 	dw CleanseTagDesc
 	dw MysticWaterDesc
 	dw TwistedSpoonDesc
-	dw WhtApricornDesc
+	dw SpinelBoxDesc
 	dw BlackbeltDesc
 	dw BlkApricornDesc
 	dw HelixFossilDesc
@@ -592,8 +592,9 @@ MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
-RedApricornDesc:
-	db   "A red APRICORN.@"
+RubyBoxDesc:
+	db   "A box covered in"
+	next "red gemstones.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"
@@ -607,8 +608,9 @@ SilverPowderDesc:
 	db   "Powers up bug-type"
 	next "moves. (HOLD)@"
 
-BluApricornDesc:
-	db   "A blue APRICORN.@"
+SapphireBoxDesc:
+	db   "A box covered in"
+	next "blue gemstones.@"
 
 DampRockDesc:
 	db	 "Summons a"
@@ -618,11 +620,13 @@ AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (HOLD)@"
 
-YlwApricornDesc:
-	db   "A yellow APRICORN.@"
+AmethystBoxDesc:
+	db   "A box covered in"
+	next "violet gemstones.@"
 
-GrnApricornDesc:
-	db   "A green APRICORN.@"
+EmeraldBoxDesc:
+	db   "A box covered in"
+	next "green gemstones.@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"
@@ -636,8 +640,9 @@ TwistedSpoonDesc:
 	db   "Powers up psychic-"
 	next "type moves. (HOLD)@"
 
-WhtApricornDesc:
-	db   "A white APRICORN.@"
+SpinelBoxDesc:
+	db   "A box covered in"
+	next "pink gemstones.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"

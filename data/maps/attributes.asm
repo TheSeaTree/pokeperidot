@@ -560,3 +560,9 @@ ENDM
 	map_attributes PectiniaComicStore, PECTINIA_COMIC_STORE, $00, 0
 	map_attributes PectiniaBattleItemStore, PECTINIA_BATTLE_ITEM_STORE, $00, 0
 	map_attributes PectiniaArcade, PECTINIA_ARCADE, $00, 0
+	map_attributes Route24HiddenCave1F, ROUTE_24_HIDDEN_CAVE_1F, $09, 0
+	map_attributes Route24HiddenCaveB1F, ROUTE_24_HIDDEN_CAVE_B1F, $09, 0
+	map_attributes DugtriosDen, DUGTRIOS_DEN, $09, 0
+	map_attributes PalerockMountainHiddenCave, PALEROCK_MOUNTAIN_HIDDEN_CAVE, $6d, 0
+	map_attributes SkarmorysDen, SKARMORYS_DEN, $6d, 0
+	map_attributes TentacruelsDen, TENTACRUELS_DEN, $09, 0

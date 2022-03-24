@@ -164,7 +164,10 @@ LostLandScientist5:
 	
 LostLandScientist6:
 	jumptextfaceplayer LostLandScientist6Text
-	
+
+LostLandStarPiece:
+	itemball STAR_PIECE
+
 LostLandPlayerLeavesCave:
 	step DOWN
 	step_resume
@@ -404,7 +407,7 @@ LostLand_MapEvents:
 
 	db 0 ; bg events
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event  0,  0, SPRITE_BIG_AERODACTYL, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, PAL_NPC_TREE, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, EVENT_LOST_LAND_AERODACTYL
 	object_event 29,  8, SPRITE_EGG, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LostLandAerodactylEgg, -1
 	object_event 12, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientistAfter, -1
@@ -414,3 +417,4 @@ LostLand_MapEvents:
 	object_event 42, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist5, -1
 	object_event 28, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist6, -1
 	object_event  0,  0, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LostLandStarPiece, EVENT_LOST_LAND_STAR_PIECE

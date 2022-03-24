@@ -61,6 +61,8 @@ CutTreeBlockPointers:
 
 .cave
 	db $88, $13, 0 ; smash wall
+	db $e2, $76, 0 ; smash wall
+	db $ed, $37, 0 ; smash wall
 	db -1
 
 .forest

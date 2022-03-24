@@ -3,7 +3,19 @@
 Route24North_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+
+.SmashWall:
+	checkevent EVENT_ROUTE_24_HIDDEN_CAVE_1_OPEN
+	iffalse .checknextcave
+	changeblock   8, 8, $73
+.checknextcave
+	checkevent EVENT_ROUTE_24_HIDDEN_CAVE_2_OPEN
+	iffalse .skip
+	changeblock  18, 4, $73
+.skip
+	return
 
 Route24NorthFruitTree:
 	fruittree FRUITTREE_ROUTE_24_NORTH
@@ -24,8 +36,8 @@ Route24North_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 18,  5, ROUTE_24_NORTH, 1 ; Entei Cave
-	warp_event  8,  9, ROUTE_24_NORTH, 2 ; Hidden Cave
+	warp_event  8,  9, ROUTE_24_HIDDEN_CAVE_1F, 1
+	warp_event 18,  5, ROUTE_24_HIDDEN_CAVE_1F, 2
 
 	db 0 ; coord events
 
@@ -35,5 +47,5 @@ Route24North_MapEvents:
 	bg_event  6, 23, BGEVENT_ITEM, Route24NorthHiddenGoldLeaf
 
 	db 2 ; object events
-	object_event 32, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, Route24NorthFruitTree, -1
-	object_event 29, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, Route24NorthElixer, EVENT_ROUTE_24_ELIXER
+	object_event 32, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24NorthFruitTree, -1
+	object_event 29, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthElixer, EVENT_ROUTE_24_ELIXER

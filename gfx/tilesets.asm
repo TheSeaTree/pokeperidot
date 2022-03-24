@@ -407,9 +407,6 @@ INCBIN "data/tilesets/castle_attributes.bin"
 
 SECTION "Tileset Data 12", ROMX
 
-TilesetCaveAttr:
-INCBIN "data/tilesets/cave_attributes.bin"
-
 TilesetPortGFX:
 INCBIN "gfx/tilesets/port.2bpp.lz"
 
@@ -478,3 +475,9 @@ INCBIN "data/tilesets/cyberspace_metatiles.bin"
 
 TilesetChampionsRoomGFX:
 INCBIN "gfx/tilesets/champions_room.2bpp.lz"
+
+
+SECTION "Tileset Data 14", ROMX
+
+TilesetCaveAttr:
+INCBIN "data/tilesets/cave_attributes.bin"

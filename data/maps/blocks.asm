@@ -354,7 +354,10 @@ Route7Cave1F_Blocks:
 
 Route7CaveB1F_Blocks:
 	INCBIN "maps/Route7CaveB1F.ablk"
-	
+
+TentacruelsDen_Blocks:
+	INCBIN "maps/TentacruelsDen.ablk"
+
 Route30_Blocks:
 	INCBIN "maps/Route30.ablk"
 
@@ -564,7 +567,7 @@ PalerockMountain2F_Blocks:
 
 PalerockMountain3F_Blocks:
 	INCBIN "maps/PalerockMountain3F.ablk"
-	
+
 PalerockMountainOutside_Blocks:
 	INCBIN "maps/PalerockMountainOutside.ablk"
 
@@ -582,7 +585,13 @@ PalerockMountainWaterfallChamber_Blocks:
 	
 PalerockMountainStrengthRoom_Blocks:
 	INCBIN "maps/PalerockMountainStrengthRoom.ablk"
-	
+
+PalerockMountainHiddenCave_Blocks:
+	INCBIN "maps/PalerockMountainHiddenCave.ablk"
+
+SkarmorysDen_Blocks:
+	INCBIN "maps/SkarmorysDen.ablk"
+
 Route9ForestGate_Blocks:
 StaghornForestGate_Blocks:
 	INCBIN "maps/Route9ForestGate.ablk"
@@ -700,6 +709,12 @@ Route24North_Blocks:
 Route24South_Blocks:
 	INCBIN "maps/Route24South.ablk"	
 
+Route24HiddenCave1F_Blocks:
+	INCBIN "maps/Route24HiddenCave1F.ablk"
+
+Route24HiddenCaveB1F_Blocks:
+	INCBIN "maps/Route24HiddenCaveB1F.ablk"
+
 Route25_Blocks:
 	INCBIN "maps/Route25.ablk"	
 
@@ -791,6 +806,7 @@ KinglersDen_Blocks:
 Route8HiddenCave_Blocks:
 Route11HiddenCave_Blocks:
 Route23HiddenCave_Blocks:
+DugtriosDen_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
 MoltenPeakHiddenCave_Blocks:

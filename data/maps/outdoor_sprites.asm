@@ -485,6 +485,7 @@ PalerockGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_SCIENTIST
 	; limit of 9 walking sprites
+	db SPRITE_MOLTRES
 	db SPRITE_POKE_BALL
 	db SPRITE_BOULDER
 	db 0 ; end

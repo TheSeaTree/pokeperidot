@@ -2627,10 +2627,11 @@ wSSMako2FRoomsSceneID::                           db ; d9bd
 wSSMakoDeckSceneID::                         	  db ; d9bd
 wSSMakoLowerDeckSceneID::                      	  db ; d9bd
 wEmilysRoomSceneID::                      	  	  db
+wDugtriosDenSceneID::                      	  	  db
 wBattleSubwayBossTrainSceneID::					  db
 wBattleSimulationSceneID::					  	  db
 
-	ds 40
+	ds 39
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

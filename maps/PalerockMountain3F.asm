@@ -41,8 +41,12 @@ PalerockMountain3F_MapScripts:
 
 .Door:
 	checkevent EVENT_BOULDER_IN_PALEROCK_3B
-	iffalse .skip
+	iffalse .BrokenWall
 	changeblock 8, 8, $24 ; open door
+.BrokenWall
+	checkevent EVENT_PALEROCK_MOUNTAIN_HIDDEN_CAVE_OPEN
+	iffalse .skip
+	changeblock 4, 2, $76
 .skip
 	return
 
@@ -82,14 +86,15 @@ Palerock3FBoulderFellText:
 	text "The boulder fell"
 	line "through!"
 	done
-	
+
 PalerockMountain3F_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
+	db 4 ; warp events
 	warp_event  13, 11, PALEROCK_MOUNTAIN_2F, 4
 	warp_event  13,  3, HEPATICA_TOWN, 5
 	warp_event   4, 14, PALEROCK_MOUNTAIN_2F, 5
+	warp_event   5,  3, PALEROCK_MOUNTAIN_HIDDEN_CAVE, 1
 
 	db 0 ; coord events
 	

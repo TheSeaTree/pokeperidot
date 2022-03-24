@@ -5,6 +5,21 @@ PalerockMountainWaterfallChamber_MapScripts:
 
 	db 0 ; callbacks
 
+PalerockMountainWaterfallChamberMaxRepel:
+	itemball MAX_REPEL
+
+PalerockMountainWaterfallChamberHPUp:
+	itemball HP_UP
+
+PalerockMountainWaterfallChamberBigPearl:
+	itemball BIG_PEARL
+
+Route24HiddenCave1FHiddenCarbos:
+	hiddenitem CARBOS, EVENT_PALEROCK_WATERFALL_HIDDEN_CARBOS
+
+Route24HiddenCave1FHiddenPPUp:
+	hiddenitem PP_UP, EVENT_PALEROCK_WATERFALL_HIDDEN_PP_UP
+
 PalerockMountainWaterfallChamberBoulder:
 	jumpstd strengthboulder
 
@@ -17,8 +32,12 @@ PalerockMountainWaterfallChamber_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event  4, 21, BGEVENT_ITEM, Route24HiddenCave1FHiddenPPUp
+	bg_event  7,  7, BGEVENT_ITEM, Route24HiddenCave1FHiddenCarbos
 
-	db 2 ; object events
-	object_event 22, 16, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainWaterfallChamberBoulder, -1
+	db 4 ; object events
 	object_event 23, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainWaterfallChamberBoulder, -1
+	object_event 25, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberMaxRepel, EVENT_PALEROCK_WATERFALL_MAX_REPEL
+	object_event 24, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberHPUp, EVENT_PALEROCK_WATERFALL_HP_UP
+	object_event  6, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberBigPearl, EVENT_PALEROCK_WATERFALL_BIG_PEARL
