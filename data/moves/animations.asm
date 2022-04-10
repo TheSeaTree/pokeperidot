@@ -864,6 +864,7 @@ BattleAnim_Ember:
 BattleAnim_FirePunch:
 	anim_2gfx ANIM_GFX_HIT, ANIM_GFX_FIRE
 	anim_obj ANIM_OBJ_0A, 136, 56, $43
+	anim_sound 0, 1, SFX_EMBER
 	anim_call BattleAnim_FirePunch_branch_cbbcc
 	anim_wait 16
 	anim_ret
@@ -2652,14 +2653,15 @@ BattleAnim_Lick:
 
 BattleAnim_TriAttack:
 	anim_3gfx ANIM_GFX_FIRE, ANIM_GFX_ICE, ANIM_GFX_LIGHTNING
+	anim_sound 0, 1, SFX_BURN
 	anim_call BattleAnim_TriAttack_branch_cbbcc
-	anim_wait 16
-	anim_call BattleAnim_TriAttack_branch_cbbdf
 	anim_wait 16
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $4
 	anim_sound 0, 1, SFX_THUNDER
-	anim_obj ANIM_OBJ_2F, 152, 68, $0
-	anim_wait 16
+	anim_obj ANIM_OBJ_2F, 136, 68, $0
+	anim_wait 24
+	anim_call BattleAnim_TriAttack_branch_cbbdf
+	anim_wait 24
 	anim_ret
 
 BattleAnim_SignalBeam:
@@ -4945,7 +4947,6 @@ BattleAnim_Snore_branch_cbbbc:
 
 BattleAnim_FirePunch_branch_cbbcc:
 BattleAnim_TriAttack_branch_cbbcc:
-	anim_sound 0, 1, SFX_EMBER
 .loop
 	anim_obj ANIM_OBJ_BURNED, 136, 56, $10
 	anim_obj ANIM_OBJ_BURNED, 136, 56, $90
