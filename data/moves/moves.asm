@@ -147,7 +147,7 @@ Moves: ; 41afb
 	move AMNESIA,      EFFECT_SP_DEF_UP_2,         0, PSYCHIC,  100, 20,   0
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING, 100, 10,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
-	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 20,   0
+	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 10,   0
 	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, PSNPOWDER, 55, 40,   0
@@ -236,7 +236,7 @@ Moves: ; 41afb
 	move BULLDOZE,     EFFECT_SPEED_DOWN_HIT,     60, GROUND,   100, 20, 100
 	move DYNAMICPUNCH, EFFECT_CONFUSE_HIT,       100, FIGHTING,  50,  5, 100
 	move MEGAHORN,     EFFECT_NORMAL_HIT,        120, BUG,       85, 10,   0
-	move DRAGONBREATH, EFFECT_PARALYZE_HIT,       90, DRAGON,   100, 20,  10
+	move DRAGONBREATH, EFFECT_PARALYZE_HIT,       90, DRAGON,   100, 10,  10
 	move BATON_PASS,   EFFECT_BATON_PASS,          0, NORMAL,   100, 40,   0
 	move ENCORE,       EFFECT_ENCORE,              0, NORMAL,   100,  5,   0
 	move PURSUIT,      EFFECT_PURSUIT,            40, DARK,     100, 20,   0
