@@ -34,6 +34,7 @@ StdScripts::
 	dba GymStatue1Script
 	dba GymStatue2Script
 	dba GymStatue3Script
+	dba GymStatue4Script
 	dba ReceiveItemScript
 	dba ReceiveTogepiEggScript
 	dba PCScript
@@ -336,8 +337,8 @@ FireGymWarpScript::
 	wait 8
 	playsound SFX_FULL_HEAL
 	wait 8
-	warpfacing RIGHT, ORCHID_GYM_1F, 7, 5
-	setmapscene ORCHID_GYM_1F, SCENE_FINISHED
+	warpfacing RIGHT, ORCHID_GYM_1F, 9, 7
+	setmapscene ORCHID_GYM_1F, SCENE_ORCHIDGYM1F_FAINTED
 	end
 
 SafariZoneWarpScript:
@@ -402,6 +403,16 @@ GymStatue3Script:
 	waitbutton
 	closetext
 	end
+
+GymStatue4Script:
+	mapnametotext MEM_BUFFER_0
+	opentext
+	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers4Text
+	waitbutton
+	closetext
+	end	
 
 ReceiveItemScript:
 	waitsfx

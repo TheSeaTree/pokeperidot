@@ -440,6 +440,15 @@ GymStatue_WinningTrainers3Text:
 	cont "<RIVAL>"
 	done
 
+GymStatue_WinningTrainers4Text:
+	text "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
+	para "WINNING TRAINERS:"
+	line "EMILY"
+	cont "<RIVAL>"
+	done
+
 CoinVendor_WelcomeText:
 	text "Welcome to the"
 	line "GAME CORNER."

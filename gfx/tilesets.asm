@@ -365,9 +365,6 @@ INCBIN "data/tilesets/champions_room_attributes.bin"
 TilesetPlayersRoomAttr:
 INCBIN "data/tilesets/players_room_attributes.bin"
 
-TilesetLostLandAttr:
-INCBIN "data/tilesets/lost_land_attributes.bin"
-
 TilesetBattleTowerAttr:
 INCBIN "data/tilesets/battle_tower_attributes.bin"
 
@@ -481,3 +478,6 @@ SECTION "Tileset Data 14", ROMX
 
 TilesetCaveAttr:
 INCBIN "data/tilesets/cave_attributes.bin"
+
+TilesetLostLandAttr:
+INCBIN "data/tilesets/lost_land_attributes.bin"

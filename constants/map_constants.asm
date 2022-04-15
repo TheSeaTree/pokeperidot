@@ -369,7 +369,7 @@ ENDM
 
 	map_const ROUTE_2_GATE,                                 5,  4 ; 12
 	map_const ORCHID_CITY,                                 19, 17
-	map_const ORCHID_GYM_1F,		      	                7,  4 ;  2
+	map_const ORCHID_GYM_1F,		      	                9,  5 ;  2
 	map_const ORCHID_GYM_B1F,        	                   10, 14 ;  1
 	map_const ORCHID_GYM_LEADER_ROOM,                      	7,  8 ;  2
 	map_const ORCHID_POKECENTER_1F,                         5,  4 ;  9
