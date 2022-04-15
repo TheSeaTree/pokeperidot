@@ -482,7 +482,7 @@ AI_Smart_LockOn:
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 180
+	cp 204
 	jr nc, .asm_3884f
 
 	ld a, $1
@@ -1974,17 +1974,13 @@ AI_Smart_Foresight:
 	jr z, .asm_38f41
 	ld a, [wBattleMonType2]
 	cp GHOST
-	jr z, .asm_38f41
+	jp z, .asm_38f41
 
-	call Random
-	cp 8 percent
-	ret c
-	inc [hl]
-	ret
+	jp AI_Smart_LockOn
 
 .asm_38f41
 	call Random
-	cp 39 percent + 1
+	cp 74 percent + 1
 	ret c
 	dec [hl]
 	dec [hl]
@@ -2236,9 +2232,19 @@ AI_Smart_Earthquake:
 	ret
 
 AI_Smart_BatonPass:
+; 80% chance to discourage this move during the first turn of enemy's Pokemon.
+	ld a, [wEnemyTurnsTaken]
+	and a
+	jr nz, .not_first_turn
+	call Random
+	cp 79 percent - 1
+	ret nc
+
+;	dec [hl]
+;	ret
+.not_first_turn
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
-
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]

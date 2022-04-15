@@ -172,7 +172,6 @@ BattleTurn:
 	ldh [hInMenu], a
 
 .loop
-	call Stubbed_Function3c1bf
 	call CheckContestBattleOver
 	jp c, .quit
 
@@ -245,24 +244,6 @@ BattleTurn:
 .quit
 	pop af
 	ldh [hInMenu], a
-	ret
-
-Stubbed_Function3c1bf:
-	ret
-	ld a, 5 ; MBC30 bank used by JP Crystal; inaccessible by MBC3
-	call GetSRAMBank
-	ld hl, $a89b ; address of MBC30 bank
-	inc [hl]
-	jr nz, .finish
-	dec hl
-	inc [hl]
-	jr nz, .finish
-	dec [hl]
-	inc hl
-	dec [hl]
-
-.finish
-	call CloseSRAM
 	ret
 
 SafariBattleTurn:
@@ -3785,6 +3766,8 @@ Function_SetEnemyMonAndSendOutAnimation:
 	ld [wMonType], a
 	predef CopyMonToTempMon
 	call GetEnemyMonFrontpic
+; Fix bug where status effects are ignored if the enemy switches.
+	call ApplyStatusEffectOnEnemyStats
 
 	xor a
 	ld [wNumHits], a
@@ -4345,8 +4328,10 @@ endr
 BreakAttraction:
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ret
 
 SpikesDamage:

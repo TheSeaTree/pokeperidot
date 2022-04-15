@@ -128,16 +128,19 @@ ResetBatonPassStatus:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
+
 .ok
 
 	; Disable isn't passed.
 	call ResetActorDisable
 
-	; Attraction isn't passed.
+	; Attraction and Foresight aren't passed.
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ld hl, wPlayerSubStatus5
 
 	ld a, BATTLE_VARS_SUBSTATUS5

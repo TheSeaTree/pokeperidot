@@ -1612,7 +1612,10 @@ BattleCommand_CheckHit:
 	call .ThunderRain
 	ret z
 
-	call .XAccuracy
+; Skip the accuracy check if Foresight is active.
+	ld a, BATTLE_VARS_SUBSTATUS1_OPP
+	call GetBattleVar
+	bit SUBSTATUS_IDENTIFIED, a
 	ret nz
 
 	; Perfect-accuracy moves
@@ -1621,6 +1624,10 @@ BattleCommand_CheckHit:
 	cp EFFECT_ALWAYS_HIT
 	ret z
 	cp EFFECT_BIDE
+	ret z
+	cp EFFECT_FORCE_SWITCH
+	ret z
+	cp EFFECT_FORESIGHT
 	ret z
 
 	call .StatModifiers
@@ -1781,12 +1788,6 @@ BattleCommand_CheckHit:
 	cp WEATHER_RAIN
 	ret
 
-.XAccuracy:
-	ld a, BATTLE_VARS_SUBSTATUS4
-	call GetBattleVar
-	bit SUBSTATUS_X_ACCURACY, a
-	ret
-
 .StatModifiers:
 	ldh a, [hBattleTurn]
 	and a
@@ -1807,17 +1808,6 @@ BattleCommand_CheckHit:
 	ld c, a
 
 .got_acc_eva
-	cp b
-	jr c, .skip_foresight_check
-
-	; if the target's evasion is greater than the user's accuracy,
-	; check the target's foresight status
-	ld a, BATTLE_VARS_SUBSTATUS1_OPP
-	call GetBattleVar
-	bit SUBSTATUS_IDENTIFIED, a
-	ret nz
-
-.skip_foresight_check
 	; subtract evasion from 14
 	ld a, MAX_STAT_LEVEL + 1
 	sub c
