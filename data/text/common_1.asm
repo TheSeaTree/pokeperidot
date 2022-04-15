@@ -306,6 +306,12 @@ UnknownText_0x1bc55d::
 	text "It's the TOWN MAP."
 	done
 
+DiplomaDecoText::
+	text "It's a DIPLOMA"
+	line "awarded for compl-"
+	cont "eting the #DEX!"
+	done
+
 UnknownText_0x1bc570::
 	text "It's a poster of a"
 	line "cute PIKACHU."

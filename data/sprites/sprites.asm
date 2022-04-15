@@ -25,7 +25,7 @@ OverworldSprites:
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused
 	overworld_sprite CecilSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused
+	overworld_sprite PeridotTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	overworld_sprite MurphySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite DuaneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused

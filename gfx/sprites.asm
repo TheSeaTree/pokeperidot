@@ -36,6 +36,7 @@ PokefanMSpriteGFX::            INCBIN "gfx/sprites/pokefan_m.2bpp"
 PokefanFSpriteGFX::            INCBIN "gfx/sprites/pokefan_f.2bpp"
 GrampsSpriteGFX::              INCBIN "gfx/sprites/gramps.2bpp"
 GrannySpriteGFX::              INCBIN "gfx/sprites/granny.2bpp"
+PeridotTrophySpriteGFX::       INCBIN "gfx/sprites/peridot_trophy.2bpp"
 
 
 SECTION "Sprites 2", ROMX
