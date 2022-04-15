@@ -324,7 +324,7 @@ PlaceMoveUsersName::
 	jr nz, .enemy
 
 	ld de, wBattleMonNick
-	jr PlaceCommandCharacter
+	jp PlaceCommandCharacter
 
 .enemy
 	ld de, EnemyText
@@ -332,7 +332,7 @@ PlaceMoveUsersName::
 	ld h, b
 	ld l, c
 	ld de, wEnemyMonNick
-	jr PlaceCommandCharacter
+	jp PlaceCommandCharacter
 
 PlaceEnemysName::
 	push de
@@ -346,6 +346,10 @@ PlaceEnemysName::
 	jr z, .rival
 	cp RIVAL2
 	jr z, .rival
+	cp GRUNTF
+	jr z, .subwayacejade
+	cp MYSTICALMAN
+	jr z, .subwayaceperry
 
 	ld de, wOTClassName
 	call PlaceString
@@ -363,9 +367,23 @@ PlaceEnemysName::
 	ld de, wRivalName
 	jr PlaceCommandCharacter
 
+.subwayacejade
+	ld de, .SubwayJadeName
+	jr PlaceCommandCharacter
+
+.subwayaceperry
+	ld de, .SubwayPerryName
+	jr PlaceCommandCharacter
+
 .linkbattle
 	ld de, wOTClassName
 	jr PlaceCommandCharacter
+
+.SubwayJadeName
+	db "SUBWAY ACE JADE@"
+
+.SubwayPerryName
+	db "SUBWAY ACE PERRY@"
 
 PlaceGenderedPlayerName::
 	push de

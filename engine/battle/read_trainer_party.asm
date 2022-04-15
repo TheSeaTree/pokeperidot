@@ -190,19 +190,17 @@ ReadTrainerPartyPieces:
 	ld c, NUM_EXP_STATS
 .stat_exp_loop
 ; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
-	call GetNextTrainerDataByte
-	dec hl
+	ld a, [hl]
 	cp LOW(PERFECT_STAT_EXP)
 	jr nz, .not_perfect_stat_exp
 	inc hl
-	call GetNextTrainerDataByte
-	dec hl
+	ld a, [hl]
 	cp HIGH(PERFECT_STAT_EXP)
 	dec hl
 	jr nz, .not_perfect_stat_exp
 	ld a, $ff
 rept 2
-	call GetNextTrainerDataByte
+	ld [de], a
 	inc de
 	inc hl
 endr

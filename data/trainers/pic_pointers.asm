@@ -13,7 +13,7 @@ TrainerPicPointers::
 	dba Rival1Pic
 	dba FangirlPic
 	dba PokemonProfPic
-	dba CalPic
+	dba MysticalmanPic ; Link Trainer, uses the same graphics as the male player.
 	dba WilburPic
 	dba ReganPic
 	dba AmberPic

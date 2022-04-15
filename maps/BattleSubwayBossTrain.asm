@@ -29,6 +29,7 @@ Script_BossBoardTrain:
 	writetext Text_BattleSubwayBossIntro
 	waitbutton
 	closetext
+	setlasttalked BATTLESUBWAYBOSSROOM_BOSS
 
 	winlosstext Text_BattleSubwayWinText, Text_BattleSubwayLossText
 	callasm CheckLevelGroup
@@ -41,34 +42,64 @@ Script_BossBoardTrain:
  	ifequal  8, .Level80
  	ifequal  9, .Level90
  	ifequal 10, .Level100
-	loadtrainer MYSTICALMAN, EUSINE1
+	loadtrainer MYSTICALMAN, BOSS_LV10
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV10
 	jump .DoBattle
 .Level20:
-	loadtrainer MYSTICALMAN, EUSINE2
+	loadtrainer MYSTICALMAN, BOSS_LV20
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV20
 	jump .DoBattle
 .Level30:
-	loadtrainer MYSTICALMAN, EUSINE3
+	loadtrainer MYSTICALMAN, BOSS_LV30
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV30
 	jump .DoBattle
 .Level40:
-	loadtrainer MYSTICALMAN, EUSINE4
+	loadtrainer MYSTICALMAN, BOSS_LV40
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV40
 	jump .DoBattle
 .Level50:
-	loadtrainer MYSTICALMAN, EUSINE5
+	loadtrainer MYSTICALMAN, BOSS_LV50
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV50
 	jump .DoBattle
 .Level60:
-	loadtrainer MYSTICALMAN, EUSINE6
+	loadtrainer MYSTICALMAN, BOSS_LV60
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV60
 	jump .DoBattle
 .Level70:
-	loadtrainer MYSTICALMAN, EUSINE7
+	loadtrainer MYSTICALMAN, BOSS_LV70
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV70
 	jump .DoBattle
 .Level80:
-	loadtrainer MYSTICALMAN, EUSINE8
+	loadtrainer MYSTICALMAN, BOSS_LV80
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV80
 	jump .DoBattle
 .Level90:
-	loadtrainer MYSTICALMAN, EUSINE9
+	loadtrainer MYSTICALMAN, BOSS_LV90
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV90
 	jump .DoBattle
 .Level100:
-	loadtrainer MYSTICALMAN, EUSINE10
+	loadtrainer MYSTICALMAN, BOSS_LV100
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .DoBattle
+	loadtrainer GRUNTF, BOSS_LV100
 .DoBattle
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
 
@@ -113,4 +144,4 @@ BattleSubwayBossTrain_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  4,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BATTLE_TOWER_BATTLE_ROOM_YOUNGSTER
+	object_event  4,  3, SPRITE_SUBWAY_BOSS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

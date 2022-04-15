@@ -105,7 +105,10 @@ CHRIS EQU __enum__
 	const RIVAL1_5_CHIKORITA
 	const RIVAL1_5_CYNDAQUIL
 	const RIVAL1_5_TOTODILE
-	const RIVAL1_6
+	const RIVAL1_6_CHIKORITA
+	const RIVAL1_6_CYNDAQUIL
+	const RIVAL1_6_TOTODILE
+	const RIVAL1_7
 
 	trainerclass FANGIRL
 	const EMILY1
@@ -544,16 +547,16 @@ CHRIS EQU __enum__
 	trainerclass GRUNTF ; 42
 
 	trainerclass MYSTICALMAN ; 43
-	const EUSINE1
-	const EUSINE2
-	const EUSINE3
-	const EUSINE4
-	const EUSINE5
-	const EUSINE6
-	const EUSINE7
-	const EUSINE8
-	const EUSINE9
-	const EUSINE10
+	const BOSS_LV10
+	const BOSS_LV20
+	const BOSS_LV30
+	const BOSS_LV40
+	const BOSS_LV50
+	const BOSS_LV60
+	const BOSS_LV70
+	const BOSS_LV80
+	const BOSS_LV90
+	const BOSS_LV100
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

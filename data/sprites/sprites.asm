@@ -22,8 +22,8 @@ OverworldSprites:
 	overworld_sprite JadeHeadsetSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite RedsMomSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DaisySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
-	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused
+	overworld_sprite PerrySpriteGFX, 12, STANDING_SPRITE, PAL_OW_PURPLE
+	overworld_sprite JadeSpriteGFX, 12, STANDING_SPRITE, PAL_OW_GREEN
 	overworld_sprite CecilSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PeridotTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	overworld_sprite MurphySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN

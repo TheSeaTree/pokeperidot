@@ -196,6 +196,11 @@ Script_WalkToBattleTowerElevator:
 	writebyte BATTLETOWERACTION_0A
 	special BattleTowerAction
 ;	warpsound
+	variablesprite SPRITE_SUBWAY_BOSS, SPRITE_GREEN_JADE
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iffalse .GotGender
+	variablesprite SPRITE_SUBWAY_BOSS, SPRITE_PURPLE_PERRY
+.GotGender
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	stopfollow
 	applymovement PLAYER, MovementData_BattleTowerHallwayPlayerEntersBattleRoom
