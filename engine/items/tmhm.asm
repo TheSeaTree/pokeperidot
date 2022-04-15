@@ -371,16 +371,8 @@ TMHM_DisplayPocketItems:
 	jr .okay
 
 .HM:
-	push af
-	sub NUM_TMS
-	ld [wTempTMHM], a
-	ld [hl], "H"
-	inc hl
-	ld de, wTempTMHM
-	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
-	call PrintNum
-	pop af
-	ld [wTempTMHM], a
+	ld de, .HMString
+	call PlaceString
 .okay
 	predef GetTMHMMove
 	ld a, [wNamedObjectIndexBuffer]
@@ -408,6 +400,9 @@ TMHM_DisplayPocketItems:
 	pop de
 .done
 	ret
+
+.HMString:
+	db "HM@"
 
 TMHMPocket_GetCurrentLineCoord:
 	hlcoord 5, 0

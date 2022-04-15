@@ -423,28 +423,17 @@ UsedSurfScript:
 
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
-	callasm .checklapras
+	
+	checkcode VAR_MOVEMENT
+	ifnotequal PLAYER_SURF_LAPRAS, .NoLapras
+	writebyte (PAL_NPC_BLUE << 4)
+	special SetPlayerPalette
 
 .NoLapras
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	special SurfStartStep
 	end
-
-.checklapras
-	ld a, [wPlayerState]
-	cp PLAYER_SURF_LAPRAS
-	ret nz
-	ld a, BANK(LaprasPaletteChange)
-	ld hl, LaprasPaletteChange
-	call CallScript
-	scf
-	ret
-	
-LaprasPaletteChange:
-	writebyte (PAL_NPC_BLUE << 4)
-	special SetPlayerPalette
-	jump UsedSurfScript.NoLapras
 
 UsedSurfText:
 	text_jump _UsedSurfText

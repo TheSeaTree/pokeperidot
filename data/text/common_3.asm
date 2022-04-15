@@ -1037,7 +1037,7 @@ UnknownText_0x1c574e::
 	prompt
 
 UnknownText_0x1c5772::
-	text "HM moves can't be"
+	text "SURF can't be"
 	line "forgotten now."
 	prompt
 
