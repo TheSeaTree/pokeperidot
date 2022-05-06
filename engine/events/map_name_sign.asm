@@ -74,10 +74,19 @@ ReturnFromMapSetupScript::
 	ret z
 	cp BONEYARD
 	ret z
+	cp THE_PAST
+	ret z
+	cp LOST_LAND
+	jr nz, .DisplayMapName
+	; Lost Land will only display the map name if the player has visited previously.
+	ld hl, wPokegearFlags
+	bit LOST_LAND_VISITED_F, [hl]
+	ret z
+.DisplayMapName
 	ld a, 1
 	and a
 	ret
-	
+
 .CheckCarnationZooGate:
 	ld a, [wMapGroup]
 	cp GROUP_CARNATION_TOWN

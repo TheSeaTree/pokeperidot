@@ -62,6 +62,7 @@ Landmarks:
 	landmark 140,  20, PokemonLeagueName
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
+	landmark  -8,  -8, PastMapName
 
 NewBarkTownName:      db "ELKHORN¯TOWN@"
 CherrygroveCityName:  db "PAVONA¯VILLAGE@"
@@ -137,12 +138,13 @@ CarnationZooName:     db "CARNATION¯ZOO@"
 DarkCaveName:         db "DARK CAVE@"
 IlexForestName:       db "OCCIDENT¯FOREST@"
 BurnedTowerName:      db "BURNED¯TOWER@"
-FastShipName:         db "FAST SHIP@"
+FastShipName:         db "S.S. MAKO@"
 ViridianForestName:   db "ORIENTEM¯FOREST@"
 DiglettsCaveName:     db "MACHOP'S¯DEN@"
 RemnantCaveName:	  db "REMNANT¯CAVE@"
 MoltenPeakName:		  db "MOLTEN¯PEAK@"
 UndergroundName:      db "UNDERGROUND@"
 LostLandName:		  db "LOST LAND@"
+PastMapName:		  db "NO SIGNAL@"
 BattleTowerName:      db "BATTLE¯TOWER@"
 SpecialMapName:       db "SPECIAL@"

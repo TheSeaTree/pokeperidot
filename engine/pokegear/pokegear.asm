@@ -394,9 +394,6 @@ Pokegear_FinishTilemap:
 	bit POKEGEAR_MAP_CARD_F, a
 	call nz, .PlaceMapIcon
 	ld a, [de]
-	bit POKEGEAR_PHONE_CARD_F, a
-	call nz, .PlacePhoneIcon
-	ld a, [de]
 	bit POKEGEAR_RADIO_CARD_F, a
 	call nz, .PlaceRadioIcon
 	hlcoord 0, 0
@@ -407,11 +404,6 @@ Pokegear_FinishTilemap:
 .PlaceMapIcon:
 	hlcoord 2, 0
 	ld a, $40
-	jr .PlacePokegearCardIcon
-
-.PlacePhoneIcon:
-	hlcoord 4, 0
-	ld a, $44
 	jr .PlacePokegearCardIcon
 
 .PlaceRadioIcon:
@@ -483,14 +475,6 @@ PokegearClock_Joypad:
 	jr .done
 
 .no_map_card
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone_card
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
-	jr .done
-
-.no_phone_card
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_RADIO_CARD_F, a
 	ret z
@@ -589,14 +573,6 @@ PokegearMap_ContinueMap:
 	ret
 
 .right
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
-	jr .done
-
-.no_phone
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_RADIO_CARD_F, a
 	ret z
@@ -708,15 +684,33 @@ PokegearMap_UpdateLandmarkName:
 	hlcoord 0, 0
 	lb bc, 2, 12
 	call ClearBox
+
+	; Display the "No Signal" string when in the Lost Land
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp LOST_LAND
+	jr z, .NoSignal
 	pop af
+
 	ld e, a
 	push de
 	farcall GetLandmarkName
 	pop de
 	farcall TownMap_ConvertLineBreakCharacters
+.PlaceNoSignalName
 	hlcoord 0, 0
 	ld [hl], $1f
 	ret
+
+.NoSignal
+	pop af
+	hlcoord 1, 0
+	ld de, .NoSignalString
+	call PlaceString
+	jr .PlaceNoSignalName
+
+.NoSignalString:
+	db "NO SIGNAL@"
 
 PokegearMap_UpdateCursorPosition:
 	push bc
@@ -768,14 +762,6 @@ PokegearRadio_Joypad:
 	ret
 
 .left
-	ld a, [wPokegearFlags]
-	bit POKEGEAR_PHONE_CARD_F, a
-	jr z, .no_phone
-	ld c, POKEGEARSTATE_PHONEINIT
-	ld b, POKEGEARCARD_PHONE
-	jr .switch_page
-
-.no_phone
 	ld a, [wPokegearFlags]
 	bit POKEGEAR_MAP_CARD_F, a
 	jr z, .no_map

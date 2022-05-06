@@ -144,6 +144,7 @@ LostLandScientist:
 	waitbutton
 	closetext
 	applymovement LOSTLAND_SCIENTIST1, LostLandScientistEnd
+	setflag ENGINE_LOST_LAND_VISITED
 	setscene SCENE_LOSTLAND_AERODACTYL
 	end
 	
