@@ -69,6 +69,10 @@ SeerAction0:
 	ld a, [wCurPartySpecies]
 	cp MEWTWO
 	jr z, SeerAction5
+	cp HO_OH
+	jr z, SeerAction5
+	cp LUGIA
+	jr z, SeerAction5
 
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
