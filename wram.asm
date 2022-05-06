@@ -2630,8 +2630,9 @@ wEmilysRoomSceneID::                      	  	  db
 wDugtriosDenSceneID::                      	  	  db
 wBattleSubwayBossTrainSceneID::					  db
 wBattleSimulationSceneID::					  	  db
+wTrainerHouseSceneID::					  	  	  db
 
-	ds 39
+	ds 38
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

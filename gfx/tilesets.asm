@@ -141,12 +141,6 @@ INCLUDE "data/tilesets/park_collision.asm"
 TilesetRadioTowerGFX:
 INCBIN "gfx/tilesets/radio_tower.2bpp.lz"
 
-TilesetRadioTowerMeta:
-INCBIN "data/tilesets/radio_tower_metatiles.bin"
-
-TilesetRadioTowerColl:
-INCLUDE "data/tilesets/radio_tower_collision.asm"
-
 TilesetUndergroundGFX:
 INCBIN "gfx/tilesets/underground.2bpp.lz"
 
@@ -185,9 +179,6 @@ INCLUDE "data/tilesets/gate_collision.asm"
 
 TilesetJohtoCityGFX:
 INCBIN "gfx/tilesets/johto_city.2bpp.lz"
-
-TilesetForestGFX:
-INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetTraditionalHouseGFX:
 INCBIN "gfx/tilesets/traditional_house.2bpp.lz"
@@ -275,9 +266,6 @@ INCBIN "data/tilesets/forest_metatiles.bin"
 
 TilesetJohtoCityColl:
 INCLUDE "data/tilesets/johto_city_collision.asm"
-
-TilesetForestColl:
-INCLUDE "data/tilesets/forest_collision.asm"
 
 TilesetMountainMeta:
 INCBIN "data/tilesets/mountain_metatiles.bin"
@@ -373,9 +361,6 @@ INCBIN "data/tilesets/tower_attributes.bin"
 
 
 SECTION "Tileset Data 11", ROMX
-
-TilesetParkAttr:
-INCBIN "data/tilesets/park_attributes.bin"
 
 TilesetRuinsOfAlphAttr:
 INCBIN "data/tilesets/ruins_of_alph_attributes.bin"
@@ -481,3 +466,18 @@ INCBIN "data/tilesets/cave_attributes.bin"
 
 TilesetLostLandAttr:
 INCBIN "data/tilesets/lost_land_attributes.bin"
+
+TilesetParkAttr:
+INCBIN "data/tilesets/park_attributes.bin"
+
+TilesetRadioTowerMeta:
+INCBIN "data/tilesets/radio_tower_metatiles.bin"
+
+TilesetRadioTowerColl:
+INCLUDE "data/tilesets/radio_tower_collision.asm"
+
+TilesetForestGFX:
+INCBIN "gfx/tilesets/forest.2bpp.lz"
+
+TilesetForestColl:
+INCLUDE "data/tilesets/forest_collision.asm"

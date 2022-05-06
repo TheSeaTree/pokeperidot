@@ -66,4 +66,5 @@ MapScenes::
 	scene_var DUGTRIOS_DEN,		        				wDugtriosDenSceneID
 	scene_var BATTLE_SUBWAY_BOSS_TRAIN,                 wBattleSubwayBossTrainSceneID
 	scene_var BATTLE_SIMULATION,                 		wBattleSimulationSceneID
+	scene_var TRAINER_HOUSE,							wTrainerHouseSceneID
 	db -1

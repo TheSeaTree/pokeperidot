@@ -30,7 +30,7 @@ PowerPlant1FB_MapScripts:
 	changeblock  4, 16, $72 ; open shutter
 	changeblock  6, 16, $73 ; open shutter
 	return
-	
+
 FossilResurrectionGuy:
 	faceplayer
 	opentext
@@ -171,13 +171,15 @@ ResurrectOldAmber:
 	jump FossilResurrectionGuy.NotDone
 
 ResurrectSabreFossil:
+	
 	itemtotext SABRE_FOSSIL, MEM_BUFFER_0
 	writetext IdentifyFossilText
 	waitbutton
+	checkevent EVENT_SKELEGON_BATTLED
+	iftrue .NotFirstTime
 	writetext AskResurrectFossilText
 	yesorno
 	iffalse FossilResurrectionGuy.maybe_later
-	takeitem SABRE_FOSSIL
 	writetext SabreFossilResurrectionText
 	waitbutton
 	closetext
@@ -208,6 +210,8 @@ ResurrectSabreFossil:
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
+	takeitem SABRE_FOSSIL
+	setevent EVENT_SKELEGON_BATTLED
 	faceplayer
 	opentext
 	writetext SabreFossilAfterText
@@ -218,6 +222,44 @@ ResurrectSabreFossil:
 
 .PitchBlack
 	jumpstd darkenroom
+	end
+
+.NotFirstTime
+	writetext AskResurrectSabreFossilText
+	yesorno
+	iffalse FossilResurrectionGuy.maybe_later
+	writetext SabreFossilResurrectionText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	opentext
+	writetext SabreFossilGetReadyText
+	waitbutton
+	closetext
+	scall .PitchBlack
+	opentext
+	writetext SkelegonCryText
+	cry SKELEGON
+	waitsfx
+	loadwildmon SKELEGON, 60
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	takeitem SABRE_FOSSIL
+	faceplayer
+	opentext
+	writetext SabreFossilRematchAfterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
 	end
 
 PowerPlantItemfinderEvent:
@@ -336,13 +378,13 @@ IdentifyFossilText:
 	text_ram wStringBuffer3
 	text "?"
 	done
-	
+
 AskResurrectFossilText:
 	text "Would you like me"
 	line "to try and revive"
 	cont "it into a #MON?"
 	done
-	
+
 FossilMenuText:
 	text "Do you have any"
 	line "FOSSILS you could"
@@ -479,7 +521,39 @@ PowerPlantFossilGuyThanks:
 	cont "given me for my"
 	cont "research!"
 	done
-	
+
+AskResurrectSabreFossilText:
+	text "The SKELEGON resu-"
+	line "rrected from this"
+	cont "FOSSIL may react"
+	cont "violently to us."
+
+	para "Are you prepared"
+	line "for a battle?"
+	done
+
+ResurrectSabreFossilText:
+	text "Okay, let me just"
+	line "put this into the"
+	cont "machine…"
+	done
+
+SabreFossilGetReadyText:
+	text "Okay, here it"
+	line "comes!"
+	done
+
+SabreFossilRematchAfterText:
+	text "I will never get"
+	line "used to how feroc-"
+	cont "ious that #MON"
+	cont "can be!"
+
+	para "You're really some-"
+	line "thing for being"
+	cont "able to battle it!"
+	done
+
 PowerPlant1FBreakGuyText:
 	text "Welcome to the"
 	line "POWER PLANT!"
@@ -539,7 +613,6 @@ PowerPlant1FWaterCoolingGuyText:
 	line "been attracted to"
 	cont "the warm water."
 	done
-
 
 PowerPlant1FB_MapEvents:
 	db 0, 0 ; filler

@@ -167,6 +167,7 @@ INCLUDE "maps/Route3Route4Gate.asm"
 INCLUDE "maps/Route5SuperRodHouse.asm"
 INCLUDE "maps/Route4HiddenCave.asm"
 INCLUDE "maps/Route8HiddenCave.asm"
+INCLUDE "maps/TrainerHouse.asm"
 
 
 SECTION "Map Scripts 11", ROMX
@@ -199,7 +200,6 @@ INCLUDE "maps/Route14RugosaGate.asm"
 INCLUDE "maps/Route14Gate.asm"
 INCLUDE "maps/FastEddiesHouse.asm"
 INCLUDE "maps/VitaminShop.asm"
-INCLUDE "maps/TrainerHouse.asm"
 INCLUDE "maps/PokemonLeagueGate1F.asm"
 INCLUDE "maps/PokemonLeagueGate2F.asm"
 INCLUDE "maps/PokemonLeagueHotel1F.asm"

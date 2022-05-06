@@ -282,7 +282,7 @@ ENDM
 	map_const FAST_EDDIES_HOUSE,						  	4,  4
 	map_const VITAMIN_SHOP,						  			6,  4
 	map_const POKEMON_LEAGUE_CAFE,                          7,  4 ;  6
-	map_const TRAINER_HOUSE,							  	9,  8
+	map_const TRAINER_HOUSE,							   14,  5
 	map_const POKEMON_LEAGUE_HOTEL_1F,						7,  5
 	map_const POKEMON_LEAGUE_HOTEL_2F,						7,  5
 	map_const POKEMON_LEAGUE_GATE_1F,						6,  4

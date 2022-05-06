@@ -10,26 +10,33 @@
 	const TRAINERHOUSE_TRAINER6
 	const TRAINERHOUSE_TRAINER7
 	const TRAINERHOUSE_TRAINER8
+	const TRAINERHOUSE_RECEPTIONIST
 
 TrainerHouse_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script .LoadTrainerBattle ; SCENE_FINISHED
 
 	db 0 ; callbacks
 
+.LoadTrainerBattle
+	scall TrainerHouse_LoadTrainer
+
+.DummyScene
+	end
+
 TrainerHouseBattleRegistration:
-	faceobject TRAINERHOUSE_SCIENTIST3, PLAYER
-	faceobject PLAYER, TRAINERHOUSE_SCIENTIST3
 	opentext
 	checkevent EVENT_TRAINER_HOUSE_EARNED_CONSOLATION_PRIZE
-	iftrue .SinglePearl
+	iftrue .PickUpReward
 	checkevent EVENT_TRAINER_HOUSE_EARNED_PEARL
-	iftrue .TwoPearls
+	iftrue .PickUpReward
 	checkevent EVENT_TRAINER_HOUSE_EARNED_STARDUST
-	iftrue .TwoStardust
+	iftrue .PickUpReward
 	checkevent EVENT_TRAINER_HOUSE_EARNED_BIG_PEARL
-	iftrue .BigPearl
+	iftrue .PickUpReward
 	checkevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
-	iftrue .GiveNugget	
+	iftrue .PickUpReward
 	checkevent EVENT_ENTERED_KNOCKOUT_CHALLENGE
 	iftrue .Explained
 	writetext TrainerHouseExplainText
@@ -46,18 +53,20 @@ TrainerHouseBattleRegistration:
 	checkmoney YOUR_MONEY, 4000
 	ifequal HAVE_LESS, .NotEnoughMoney
 	takemoney YOUR_MONEY, 4000
+	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
 	setevent EVENT_ENTERED_KNOCKOUT_CHALLENGE
 	writetext TrainerHouseAcceptText
 	waitbutton
 	closetext
 	loadvar wTrainerHouseStreak, 0
-	checkcode VAR_YCOORD
-	ifequal 7, .Left
-	applymovement PLAYER, TrainerHousePlayerApproachBelowMovement
-.Left
+	follow TRAINERHOUSE_SCIENTIST2, PLAYER
+	applymovement TRAINERHOUSE_SCIENTIST2, TrainerHouseScientistLeadPlayerMovement
+	stopfollow
 	applymovement PLAYER, TrainerHousePlayerApproachMovement
-	jump .Loop
+	setscene SCENE_FINISHED
+	warpcheck
+	end
 	
 .NotEnoughMoney
 	writetext TrainerHouseNotEnoughMoneyText
@@ -75,6 +84,14 @@ TrainerHouseBattleRegistration:
 .SkipStepDown
 	end
 
+.PickUpReward:
+	writetext TrainerHousePickUpRewardText
+	waitbutton
+	closetext
+	end
+
+TrainerHouse_LoadTrainer:
+	applymovement PLAYER, TrainerHousePlayerApproachMovement2
 .Loop
 	random 8
 	ifequal 1, .PokefanIrving
@@ -88,8 +105,7 @@ TrainerHouseBattleRegistration:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	moveobject TRAINERHOUSE_TRAINER1, 15, 0
-	appear TRAINERHOUSE_TRAINER1
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER1, TrainerHouseTrainerApproachMovement
 
 	opentext
@@ -97,24 +113,19 @@ TrainerHouseBattleRegistration:
 	waitbutton
 	closetext
 
-	winlosstext PokefanFeliciaWinText, PokefanFeliciaLossText
-    loadtrainer POKEFANF, FELICIA
-
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER1
+	winlosstext PokefanFeliciaWinText, PokefanFeliciaLossText
+;    loadtrainer POKEFANF, FELICIA
+    loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER1, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER1, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .PokefanIrving:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	moveobject TRAINERHOUSE_TRAINER2, 15, 0
-	appear TRAINERHOUSE_TRAINER2
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER2, TrainerHouseTrainerApproachMovement
 
 	opentext
@@ -122,24 +133,19 @@ TrainerHouseBattleRegistration:
 	waitbutton
 	closetext
 
-	winlosstext PokefanIrvingWinText, PokefanIrvingLossText
-    loadtrainer POKEFANM, IRVING
-	
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER2
+	winlosstext PokefanIrvingWinText, PokefanIrvingLossText
+;    loadtrainer POKEFANM, IRVING
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER2, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER2, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .GentlemanRon:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	moveobject TRAINERHOUSE_TRAINER3, 15, 0
-	appear TRAINERHOUSE_TRAINER3
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER3, TrainerHouseTrainerApproachMovement
 
 	opentext
@@ -147,24 +153,19 @@ TrainerHouseBattleRegistration:
 	waitbutton
 	closetext
 
-	winlosstext GentlemanRonWinText, GentlemanRonLossText
-    loadtrainer GENTLEMAN, RON
-	
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER3
+	winlosstext GentlemanRonWinText, GentlemanRonLossText
+;    loadtrainer GENTLEMAN, RON
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER3, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER3, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .TeacherCecelia:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	moveobject TRAINERHOUSE_TRAINER4, 15, 0
-	appear TRAINERHOUSE_TRAINER4
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER4, TrainerHouseTrainerApproachMovement
 
 	opentext
@@ -172,44 +173,39 @@ TrainerHouseBattleRegistration:
 	waitbutton
 	closetext
 
-	winlosstext TeacherCeceliaWinText, TeacherCeceliaLossText
-    loadtrainer TEACHER, CECELIA
-
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER4
+	winlosstext TeacherCeceliaWinText, TeacherCeceliaLossText
+;    loadtrainer TEACHER, CECELIA
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER4, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER4, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .SuperNerdNorbert:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	moveobject TRAINERHOUSE_TRAINER5, 15, 0
-	appear TRAINERHOUSE_TRAINER5
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER5, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
-    loadtrainer SUPER_NERD, NORBERT
+	opentext
+	writetext SuperNerdNorbertText
+	waitbutton
+	closetext
 
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER5
+	winlosstext SuperNerdNorbertWinText, SuperNerdNorbertLossText
+;    loadtrainer SUPER_NERD, NORBERT
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER5, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER5, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .BeautyGrace:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	moveobject TRAINERHOUSE_TRAINER6, 15, 0
-	appear TRAINERHOUSE_TRAINER6
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER6, TrainerHouseTrainerApproachMovement
 
 	opentext
@@ -217,78 +213,94 @@ TrainerHouseBattleRegistration:
 	waitbutton
 	closetext
 
-	winlosstext BeautyGraceWinText, BeautyGraceLossText
-    loadtrainer BEAUTY, GRACE
-
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER6
+	winlosstext BeautyGraceWinText, BeautyGraceLossText
+;    loadtrainer BEAUTY, GRACE
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER6, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER6, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .CooltrainerEdgar:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	moveobject TRAINERHOUSE_TRAINER7, 15, 0
-	appear TRAINERHOUSE_TRAINER7
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER7, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
-    loadtrainer COOLTRAINERM, EDGAR
+	opentext
+	writetext CooltrainerEdgarText
+	waitbutton
+	closetext
 
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER7
+	winlosstext CooltrainerEdgarWinText, CooltrainerEdgarLossText
+;    loadtrainer COOLTRAINERM, EDGAR
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER7, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER7, 15, -2
-	ifnotequal $0, .GetReward
 	jump .CheckStreak
 
 .CooltrainerAbby:
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	iftrue .Loop
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-	moveobject TRAINERHOUSE_TRAINER8, 15, 0
-	appear TRAINERHOUSE_TRAINER8
+	playsound SFX_EXIT_BUILDING
 	applymovement TRAINERHOUSE_TRAINER8, TrainerHouseTrainerApproachMovement
 
-	winlosstext TrainerHousePlaceholderWinText, TrainerHousePlaceholderLossText
-    loadtrainer COOLTRAINERF, ABBY
+	opentext
+	writetext CooltrainerAbbyText
+	waitbutton
+	closetext
 
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
-	startbattle
-	reloadmap
 	setlasttalked TRAINERHOUSE_TRAINER8
+	winlosstext CooltrainerAbbyWinText, CooltrainerAbbyLossText
+;    loadtrainer COOLTRAINERF, ABBY
+	loadtrainer SCHOOLBOY, TIMMY
+	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER8, TrainerHouseTrainerLeaveMovement
-	moveobject TRAINERHOUSE_TRAINER8, 15, -2
-	ifnotequal $0, .GetReward
-	jump .CheckStreak
 
 .CheckStreak
+	playsound SFX_EXIT_BUILDING
+	wait 8
 	copybytetovar wTrainerHouseStreak
 	addvar 1
 	copyvartobyte wTrainerHouseStreak
-	ifequal 4, .GetReward
+	ifequal 4, .ChallengeVictory
 	jump .Loop
 
-.GetReward
+.DoBattle
+	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
+	startbattle
+	reloadmap
+	ifnotequal $0, .ChallengeDefeat
+	end
+
+.ChallengeDefeat
+	wait 8
+.ChallengeVictory
+	playsound SFX_ELEVATOR_END
+	waitsfx
+	opentext
+	writetext TrainerHouseChallengeOverText
+	waitbutton
+	closetext
 	special HealParty
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
-
 	applymovement PLAYER, TrainerHousePlayerLeaveMovement
+	setscene SCENE_DEFAULT
+	warpcheck
+	end
 
+TrainerHouse_StreakOver:
+	applymovement PLAYER, TrainerHousePlayerReturnToDesk
+	applymovement TRAINERHOUSE_SCIENTIST2, TrainerHouseScientistLeadPlayerMovement
+	applymovement PLAYER, TrainerHousePlayerOneStepDown
+	follow PLAYER, TRAINERHOUSE_SCIENTIST2
+	applymovement PLAYER, TrainerHousePlayerReturnToDesk
+	stopfollow
+	turnobject PLAYER, UP
+
+TrainerHouse_GetReward:
 	opentext
 	copybytetovar wTrainerHouseStreak
 	ifequal 0, .SinglePearl
@@ -368,40 +380,64 @@ TrainerHouseBattleRegistration:
 	clearevent EVENT_TRAINER_HOUSE_EARNED_STARDUST
 	clearevent EVENT_TRAINER_HOUSE_EARNED_BIG_PEARL
 	clearevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
+	clearevent EVENT_TRAINER_HOUSE_RECEPTIONIST_ITEM
 	writetext TrainerHouseComeAgainText
 	waitbutton
 	closetext
-	checkcode VAR_YCOORD
-	ifnotequal 7, .SkipStepDownAfterPrize
-	applymovement PLAYER, TrainerHousePlayerStepAway
-.SkipStepDownAfterPrize:
-	turnobject TRAINERHOUSE_SCIENTIST3, DOWN
 	end
 
 .NoRoomForPrize:
 	writetext TrainerHouseNoRoomForPrizeText
 	waitbutton
+	checkevent EVENT_TRAINER_HOUSE_RECEPTIONIST_ITEM
+	iftrue .ReceptionistHasReward
+	setevent EVENT_TRAINER_HOUSE_RECEPTIONIST_ITEM
+	writetext TrainerHouseScientistNoRoomText
+	waitbutton
 	closetext
-	checkcode VAR_YCOORD
-	ifnotequal 7, .SkipStepDownAfterPackFull
-	applymovement PLAYER, TrainerHousePlayerStepAway
-.SkipStepDownAfterPackFull:
-	turnobject TRAINERHOUSE_SCIENTIST3, DOWN
 	end
 
-TrainerHouseScientistExplain:
-	jumptextfaceplayer TrainerHouseScientistExplainText
+.ReceptionistHasReward
+	writetext TrainerHouseReceptionistNoRoomText
+	waitbutton
+	closetext
+	end
+
+TrainerHouseReceptionist:
+	faceplayer
+	checkevent EVENT_TRAINER_HOUSE_RECEPTIONIST_ITEM
+	iftrue TrainerHouse_GetReward
+	jumptext TrainerHouseReceptionistText
+
+TrainerHouseComputerScientist:
+	jumptextfaceplayer TrainerHouseComputerScientistText
+
+TrainerHouseDataCollector:
+	jumptextfaceplayer TrainerHouseDataCollectorText
 
 TrainerHousePlayerApproachBelowMovement:
 	step LEFT
 	step UP
 	step_resume
 
+TrainerHouseScientistLeadPlayerMovement:
+	step UP
+	step RIGHT
+	turn_head LEFT
+	step_end
+
 TrainerHousePlayerApproachMovement:
 	step UP
 	step UP
 	step UP
-	step RIGHT
+	step UP
+	step_end
+
+TrainerHousePlayerApproachMovement2:
+	step UP
+	step UP
+	step UP
+	turn_head RIGHT
 	step_resume
 	
 TrainerHousePlayerStepAway:
@@ -409,11 +445,11 @@ TrainerHousePlayerStepAway:
 	step_resume
 	
 TrainerHousePlayerLeaveMovement:
-	step LEFT
 	step DOWN
+TrainerHousePlayerReturnToDesk:
 	step DOWN
+TrainerHousePlayerOneStepDown:
 	step DOWN
-	turn_head RIGHT
 	step_resume
 
 TrainerHouseTrainerApproachMovement:
@@ -422,13 +458,11 @@ TrainerHouseTrainerApproachMovement:
 	step DOWN
 	step DOWN
 	step DOWN
-	step LEFT
-	step LEFT
+	step DOWN
+	turn_head LEFT
 	step_end
-	
+
 TrainerHouseTrainerLeaveMovement:
-	step RIGHT
-	step RIGHT
 	step UP
 	step UP
 	step UP
@@ -436,10 +470,20 @@ TrainerHouseTrainerLeaveMovement:
 	hide_person
 	step_resume
 
-TrainerHouseScientistExplainText:
-	text "Hello!"
-	
-	para "Welcome to the"
+TrainerHouseComputerScientistText:
+	text "We gather lots of"
+	line "information from"
+	cont "the battles that"
+	cont "take place here."
+
+	para "Of course, we"
+	line "offer rewards in"
+	cont "exchange for our"
+	cont "data collection."
+	done
+
+TrainerHouseReceptionistText:
+	text "Welcome to the"
 	line "TRAINER HOUSE!"
 	
 	para "In this facility,"
@@ -448,30 +492,42 @@ TrainerHouseScientistExplainText:
 	cont "#MON in prep-"
 	cont "aration for the"
 	cont "#MON LEAGUE."
-	
+
 	para "If you would like"
-	line "to take part in"
-	cont "the challenge,"
-	cont "visit the front"
-	cont "desk for more in-"
-	cont "formation."
+	line "to issue a knock-"
+	cont "out challenge,"
+	cont "please refer to"
+	cont "the other desk."
 	done
-	
+
+TrainerHouseDataCollectorText:
+	text "I need to change"
+	line "out the tapes on"
+	cont "these machines"
+	cont "so often with the"
+	cont "amount of data"
+	cont "that we collect."
+
+	para "I wish there was a"
+	line "better technology"
+	cont "for us to use."
+	done
+
 TrainerHouseExplainText:
 	text "Welcome to the"
 	line "TRAINER HOUSE."
-	
-	para "This desk is where"
-	line "you can register"
-	cont "for the knockout"
+
+	para "This is where you"
+	line "can register for"
+	cont "the knockout"
 	cont "challenge."
-	
+
 	para "You will battle"
 	line "four opponents in"
 	cont "a row. Defeating"
 	cont "any trainers will"
 	cont "earn you a prize."
-	
+
 	para "Defeating all four"
 	line "trainers in a row"
 	cont "will get you our"
@@ -502,19 +558,45 @@ TrainerHouseNotEnoughMoneyText:
 	para "Please come back"
 	line "later."
 	done
-	
+
+TrainerHousePickUpRewardText:
+	text "I'm sorry. I cannot"
+	line "allow you to issue"
+	cont "another challenge"
+	cont "at this time."
+
+	para "You have not coll-"
+	line "ected the reward"
+	cont "from your previous"
+	cont "challenge here."
+
+	para "Please check in"
+	line "with the receptio-"
+	cont "nist to receive"
+	cont "your prize."
+	done
+
 TrainerHouseAcceptText:
 	text "Right this way."
 	
 	para "You will meet your"
 	line "opponent shortly."
 	done
-	
+
 TrainerHouseDeclineText:
 	text "The TRAINER HOUSE"
 	line "is always open,"
 	cont "should you recon-"
 	cont "sider."
+	done
+
+TrainerHouseChallengeOverText:
+	text "Your knockout"
+	line "challenge is over."
+
+	para "Please return to"
+	line "the desk and coll-"
+	cont "ect your prize."
 	done
 
 TrainerHouseZeroStreakPrizeText:
@@ -542,18 +624,18 @@ TrainerHouseThreeStreakPrizeText:
 	line "battles in a row"
 	cont "earns a BIG PEARL."
 	done
-	
+
 TrainerHouseTMHyperBeamPrize:
 	text "Congratulations on"
 	line "defeating all four"
 	cont "trainers we had"
 	cont "set up for you!"
 	
-	para "You have won our"
-	line "GRAND PRIZE! TM20,"
-	cont "HYPER BEAM!"
+	para "You have won the"
+	line "GRAND PRIZE,"
+	cont "TM20 - HYPER BEAM!"
 	done
-	
+
 TrainerHouseAlsoWinNuggetText:
 	text "You have also won"
 	line "a NUGGET."
@@ -586,8 +668,18 @@ TrainerHouseNoRoomForPrizeText:
 	text "You seem to have"
 	line "no room for your"
 	cont "prize."
-	
-	para "I'll hold onto it"
+	done
+
+TrainerHouseScientistNoRoomText:
+	text "I will let the"
+	line "receptionist hold"
+	cont "onto your prize"
+	cont "while you make"
+	cont "room for it."
+	done
+
+TrainerHouseReceptionistNoRoomText:
+	text "I'll hold onto it"
 	line "while you make"
 	cont "some room in your"
 	cont "PACK."
@@ -698,35 +790,106 @@ BeautyGraceLossText:
 	cont "too badly!"
 	done
 
-TrainerHousePlaceholderWinText:
-	text "Yeahhh"
+SuperNerdNorbertText:
+	text "I am collecting my"
+	line "own data."
+
+	para "I hope your"
+	line "#MON will teach"
+	cont "me something."
 	done
-	
-TrainerHousePlaceholderLossText:
-	text "Nahhh"
+
+SuperNerdNorbertWinText:
+	text "Hm… Unfortunate."
+
+	para "I will reflect on"
+	line "my notes upstairs."
+	done
+
+SuperNerdNorbertLossText:
+	text "Yes, I see…"
+
+	para "According to my"
+	line "calculations, your"
+	cont "#MON were not up"
+	cont "to the task of"
+	cont "defeating mine."
+	done
+
+CooltrainerEdgarText:
+	text "I met my #MON"
+	line "in another region."
+
+	para "Our bond cannot be"
+	line "broken!"
+	done
+
+CooltrainerEdgarWinText:
+	text "I'm sorry to have"
+	line "failed you, team."
+
+	para "You deserve a good"
+	line "rest after that."
+	done
+
+CooltrainerEdgarLossText:
+	text "Good job, team!"
+
+	para "This trainer had"
+	line "no chance against"
+	cont "our bond!"
+	done
+
+CooltrainerAbbyText:
+	text "Do you want to"
+	line "meet my friends?"
+
+	para "They're all very"
+	line "strong."
+	done
+
+CooltrainerAbbyWinText:
+	text "Can I get to know"
+	line "your friends too?"
+
+	para "They're so strong!"
+	done
+
+CooltrainerAbbyLossText:
+	text "The secret to a"
+	line "good friendship"
+	cont "with #MON is to"
+	cont "reward them nicely"
+	cont "when they win."
+
+	para "I'm taking them to"
+	line "the CAFé!"
 	done
 
 TrainerHouse_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  2, 15, POKEMON_LEAGUE, 6
-	warp_event  3, 15, POKEMON_LEAGUE, 6
+	db 4 ; warp events
+	warp_event 17,  9, POKEMON_LEAGUE, 6
+	warp_event 18,  9, POKEMON_LEAGUE, 6
+	warp_event 18,  0, TRAINER_HOUSE, 4
+	warp_event  2,  9, TRAINER_HOUSE, 3
 
 	db 1 ; coord events
-	coord_event 11,  7, -1, TrainerHouseBattleRegistration
+	coord_event 18,  1, SCENE_DEFAULT, TrainerHouse_StreakOver
 
 	db 0 ; bg events
 
-	db 11 ; object events
-	object_event  2, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseScientistExplain, -1
-	object_event  8, 14, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Desk NPC
-	object_event 12,  7, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseBattleRegistration, -1
-	object_event 15, -2, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Pokefan Felicia
-	object_event 15, -2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Pokefan Irving
-	object_event 15, -2, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Gentleman Ron
-	object_event 15, -2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Teacher Cecelia
-	object_event 15, -2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Super Nerd Norbert
-	object_event 15, -2, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Beauty Grace
-	object_event 15, -2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Cooltrainer Edgar
-	object_event 15, -2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Cooltrainer Abby
+	db 12 ; object events
+	object_event 23,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseComputerScientist, -1
+	object_event 18,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseBattleRegistration, -1
+	object_event 12,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseDataCollector, -1
+	object_event  3,  1, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Pokefan Felicia
+	object_event  3,  1, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Pokefan Irving
+	object_event  3,  1, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Gentleman Ron
+	object_event  3,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Teacher Cecelia
+	object_event  3,  1, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Super Nerd Norbert
+	object_event  3,  1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Beauty Grace
+	object_event  3,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Cooltrainer Edgar
+	object_event  3,  1, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Cooltrainer Abby
+	object_event 13,  8, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerHouseReceptionist, -1
