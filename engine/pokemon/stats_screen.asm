@@ -549,8 +549,12 @@ StatsScreen_LoadGFX:
 	ld a, b
 	and $f0
 	jr z, .NotImmuneToPkrs
-	hlcoord 8, 8
+	hlcoord 7, 12
 	ld [hl], "." ; Pokérus immunity dot
+.HasPokerus:
+	ld de, .PkrsStr
+	hlcoord  3, 13
+	call PlaceString
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
@@ -561,12 +565,6 @@ StatsScreen_LoadGFX:
 	predef PlaceStatusString
 	pop hl
 	jr nz, .done_status
-	jr .StatusOK
-.HasPokerus:
-	ld de, .PkrsStr
-	hlcoord 1, 13
-	call PlaceString
-	jr .done_status
 .StatusOK:
 	ld de, .OK_str
 	call PlaceString
@@ -595,7 +593,7 @@ StatsScreen_LoadGFX:
 	db "OK @"
 
 .PkrsStr:
-	db "#RUS@"
+	db "<PK><RS>/@"
 
 .GreenPage:
 	ld de, .Item
