@@ -132,11 +132,11 @@ INCLUDE "audio/music/mobileadapter.asm"
 SECTION "Extra Songs 1", ROMX
 
 INCLUDE "audio/music/credits.asm"
-INCLUDE "audio/music/clair.asm"
 
 
 SECTION "Extra Songs 2", ROMX
 
+INCLUDE "audio/music/clair.asm"
 INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/postcredits.asm"
 
