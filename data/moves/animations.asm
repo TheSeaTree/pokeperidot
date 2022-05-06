@@ -396,7 +396,7 @@ BattleAnim_ThrowRock:
 BattleAnim_ThrowBait:
 	anim_1gfx ANIM_GFX_BAIT
 	anim_sound 0, 0, SFX_KINESIS
-	anim_obj ANIM_OBJ_SAFARI_BAIT, 72, 108, $20
+	anim_obj ANIM_OBJ_SAFARI_BAIT, 52, 96, $20
 	anim_wait 32
 	anim_ret
 
