@@ -508,8 +508,8 @@ AuroraBeamDescription:
 	next "lower ATTACK.@"
 
 HyperBeamDescription:
-	db   "1st turn: Attack"
-	next "2nd turn: Rest@"
+	db 	 "Must recharge."
+	next "Skips if it KOs.@"
 
 DrillPeckDescription:
 	db   "A strong, spin-"
