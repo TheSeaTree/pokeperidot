@@ -320,6 +320,8 @@ MachopEggMoves:
 	db BULLET_PUNCH
 	db REVERSAL
 	db METRONOME
+	db STONE_EDGE
+	db SCARY_FACE
 	db -1 ; end
 
 BellsproutEggMoves:

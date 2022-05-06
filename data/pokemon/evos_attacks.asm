@@ -792,6 +792,12 @@ VenomothEvosAttacks:
 DiglettEvosAttacks:
 	db EVOLVE_LEVEL, 26, DUGTRIO
 	db 0 ; no more evolutions
+;	db 1, PSYCHIC_M
+;	db 1, ROCK_SMASH
+;	db 1, PSYBEAM
+;	db 1, CONFUSION
+;	db 0
+
 	db 1, SAND_ATTACK
 	db 1, SCRATCH
 	db 4, GROWL
@@ -1048,7 +1054,7 @@ MachopEvosAttacks:
 	db 33, BULK_UP
 	db 37, VITAL_THROW
 	db 39, CROSS_CHOP
-	db 41, SCARY_FACE
+	db 41, BULLDOZE
 	db 44, DYNAMICPUNCH
 	db 49, SUBMISSION
 	db 0 ; no more level-up moves
@@ -1058,6 +1064,7 @@ MachokeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BRICK_BREAK
 	db 1, LEER
+	db 1, BULLET_PUNCH
 	db 3, FOCUS_ENERGY
 	db 7, KARATE_CHOP
 	db 9, FORESIGHT
@@ -1068,9 +1075,9 @@ MachokeEvosAttacks:
 	db 37, BULK_UP
 	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
-	db 50, SCARY_FACE
-	db 53, DYNAMICPUNCH
-	db 57, SUBMISSION
+	db 50, BULLDOZE
+	db 57, DYNAMICPUNCH
+	db 61, SUBMISSION
 	db 0 ; no more level-up moves
 
 MachampEvosAttacks:
@@ -1088,9 +1095,11 @@ MachampEvosAttacks:
 	db 37, BULK_UP
 	db 43, VITAL_THROW
 	db 47, CROSS_CHOP
-	db 50, SCARY_FACE
-	db 53, DYNAMICPUNCH
-	db 57, SUBMISSION
+	db 49, FORESIGHT
+	db 50, BULLDOZE
+	db 54, STONE_EDGE
+	db 57, DYNAMICPUNCH
+	db 61, SUBMISSION
 	db 0 ; no more level-up moves
 
 BellsproutEvosAttacks:
@@ -1146,9 +1155,9 @@ TentacoolEvosAttacks:
 	db 10, WRAP
 	db 16, BUBBLEBEAM
 	db 19, ACID
-	db 28, BARRIER
+	db 28, SCREECH
 	db 31, SLUDGE_BOMB
-	db 37, SCREECH
+	db 37, BARRIER
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1160,9 +1169,9 @@ TentacruelEvosAttacks:
 	db 10, WRAP
 	db 16, BUBBLEBEAM
 	db 19, ACID
-	db 28, BARRIER
+	db 28, SCREECH
 	db 32, SLUDGE_BOMB
-	db 40, SCREECH
+	db 40, BARRIER
 	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -3787,6 +3796,8 @@ SkarmoryEvosAttacks:
 	db 34, STEEL_WING
 	db 39, RAZOR_WIND
 	db 45, BRAVE_BIRD
+	db 52, IRON_HEAD
+	db 58, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:
@@ -4164,11 +4175,14 @@ CelebiEvosAttacks:
 	db 1, RECOVER
 	db 1, HEAL_BELL
 	db 10, SAFEGUARD
-	db 20, ANCIENTPOWER
-	db 30, FUTURE_SIGHT
-	db 40, BATON_PASS
-	db 50, PERISH_SONG
+	db 19, RAZOR_LEAF
+	db 28, ANCIENTPOWER
+	db 37, BATON_PASS
+	db 46, GIGA_DRAIN
+	db 50, PSYCHIC_M
+	db 54, FUTURE_SIGHT
 	db 60, U_TURN
+	db 64, PERISH_SONG
 	db 0 ; no more level-up moves
 	
 OctankEvosAttacks:
