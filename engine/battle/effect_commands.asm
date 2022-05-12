@@ -972,6 +972,13 @@ BattleCommand_DoTurn:
 	and a
 	jr z, .proceed
 
+; Bosses and Legendaries do not lose PP.
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
+	ret z
+	cp BATTLETYPE_BOSS
+	ret z
+
 	ld hl, wEnemyMonPP
 	ld de, wEnemySubStatus3
 	ld bc, wEnemyTurnsTaken
