@@ -87,60 +87,60 @@ GrassWildMons:
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, BEEDRILL
-	db 33, SKIPLOOM
-	db 32, PIKACHU
+	db 33, CUBBOLT
 	db 31, HYPNO
+	db 32, PIKACHU
 	db 34, DITTO
 	db 31, PINSIR
 	db 33, PINSIR
 	; day
 	db 35, BEEDRILL
-	db 33, WEEPINBELL
-	db 32, PIKACHU
+	db 33, CUBBOLT
 	db 31, HYPNO
+	db 32, PIKACHU
 	db 34, DITTO
 	db 31, PINSIR
 	db 33, PINSIR
 	; nite
 	db 33, VENOMOTH
-	db 33, GLOOM
-	db 32, PIKACHU
+	db 33, CUBBOLT
 	db 31, HYPNO
+	db 32, PIKACHU
 	db 34, DITTO
 	db 31, PINSIR
 	db 33, PINSIR
 
 	map_id FACTORY_1F
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 29, MAGNEMITE
-	db 32, VOLTORB
-	db 30, PIKACHU
+	db 29, VOLTORB
 	db 31, VOLTORB
+	db 32, ARIADOS
+	db 30, PIKACHU
 	db 32, MAGNETON
 	db 30, PIKACHU
 	db 35, PIKACHU
 	; day
-	db 29, MAGNEMITE
-	db 32, VOLTORB
-	db 30, PIKACHU
+	db 29, VOLTORB
 	db 31, VOLTORB
+	db 32, ARIADOS
+	db 30, PIKACHU
 	db 32, MAGNETON
 	db 30, PIKACHU
 	db 35, PIKACHU
 	; nite
-	db 29, MAGNEMITE
-	db 32, VOLTORB
-	db 30, PIKACHU
+	db 29, VOLTORB
 	db 31, VOLTORB
+	db 32, ARIADOS
+	db 30, PIKACHU
 	db 32, MAGNETON
 	db 30, PIKACHU
 	db 35, PIKACHU
 
 	map_id FACTORY_B1
-	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
-	db 29, MAGNEMITE
+	db 29, KOFFING
 	db 32, VOLTORB
 	db 32, GRIMER
 	db 31, VOLTORB
@@ -148,7 +148,7 @@ GrassWildMons:
 	db 32, GRIMER
 	db 34, ELECTRODE
 	; day
-	db 29, MAGNEMITE
+	db 29, KOFFING
 	db 32, VOLTORB
 	db 32, GRIMER
 	db 31, VOLTORB
@@ -156,7 +156,7 @@ GrassWildMons:
 	db 32, GRIMER
 	db 34, ELECTRODE
 	; nite
-	db 29, MAGNEMITE
+	db 29, KOFFING
 	db 32, VOLTORB
 	db 32, GRIMER
 	db 31, VOLTORB
@@ -164,30 +164,57 @@ GrassWildMons:
 	db 32, GRIMER
 	db 34, ELECTRODE
 
-	map_id FACTORY_BACK
+	map_id FACTORY_2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 29, VOLTORB
+	db 31, GOLBAT
+	db 30, PIKACHU
+	db 32, MAGNETON
+	db 32, GOLBAT
+	db 30, ARIADOS
+	db 35, ARIADOS
+	; day
+	db 29, VOLTORB
+	db 31, GOLBAT
+	db 30, PIKACHU
+	db 32, MAGNETON
+	db 32, GOLBAT
+	db 30, ARIADOS
+	db 35, ARIADOS
+	; nite
+	db 29, VOLTORB
+	db 31, GOLBAT
+	db 30, PIKACHU
+	db 32, MAGNETON
+	db 32, GOLBAT
+	db 30, ARIADOS
+	db 35, ARIADOS
+
+	map_id FACTORY_BACK
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, DITTO
 	db 30, DITTO
-	db 29, MAGNEMITE
 	db  5, PORYGON
-	db 30, MAGNETON
+	db  5, PORYGON
+	db 30, ARIADOS
 	db 30, PORYGON
 	db 32, PORYGON
 	; day
 	db 30, DITTO
 	db 30, DITTO
-	db 29, MAGNEMITE
 	db  5, PORYGON
-	db 30, MAGNETON
+	db  5, PORYGON
+	db 30, ARIADOS
 	db 30, PORYGON
 	db 32, PORYGON
 	; nite
 	db 30, DITTO
 	db 30, DITTO
-	db 29, MAGNEMITE
 	db  5, PORYGON
-	db 30, MAGNETON
+	db  5, PORYGON
+	db 30, ARIADOS
 	db 30, PORYGON
 	db 32, PORYGON
 
@@ -433,7 +460,7 @@ GrassWildMons:
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, MISDREAVUS
-	
+
 	map_id PALEROCK_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1105,7 +1132,7 @@ GrassWildMons:
 	db 28, MAGNEMITE
 	db 26, KOFFING
 	db 30, KOFFING
-	db 30, KOFFING	
+	db 30, KOFFING
 
 	map_id SAFARI_ZONE_AREA_1
 	db 10 percent, 10 percent, 10 percent
@@ -1316,6 +1343,114 @@ GrassWildMons:
 	db 35, CLEFAIRY
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
+
+	map_id ROUTE_23
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, AZUMARILL
+	db 35, AZUMARILL
+	db 35, EXEGGCUTE
+	db 36, EXEGGCUTE
+	db 37, BUTTERFREE
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+	; day
+	db 35, AZUMARILL
+	db 35, AZUMARILL
+	db 35, EXEGGCUTE
+	db 36, EXEGGCUTE
+	db 37, BUTTERFREE
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+	; nite
+	db 35, AZUMARILL
+	db 35, AZUMARILL
+	db 35, EXEGGCUTE
+	db 36, EXEGGCUTE
+	db 37, VENOMOTH
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+
+	map_id ROUTE_24_NORTH
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+	; day
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+	; nite
+	db 35, GRANBULL
+	db 35, ARIADOS
+	db 38, NOCTOWL
+	db 38, NOCTOWL
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+
+	map_id ROUTE_24_SOUTH
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+	; day
+	db 35, GRANBULL
+	db 35, YANMA
+	db 38, FEAROW
+	db 38, FEAROW
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+	; nite
+	db 35, GRANBULL
+	db 35, ARIADOS
+	db 38, NOCTOWL
+	db 38, NOCTOWL
+	db 35, PARAS
+	db 35, PARASECT
+	db 35, PARASECT
+
+	map_id ROUTE_25
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, VULPIX
+	db 35, FEAROW
+	db 38, MEOWTH
+	db 35, MEOWTH
+	db 38, TANGELA
+	db 35, MR__MIME
+	db 35, MR__MIME
+	; day
+	db 35, VULPIX
+	db 35, FEAROW
+	db 38, MEOWTH
+	db 35, MEOWTH
+	db 38, TANGELA
+	db 35, MR__MIME
+	db 35, MR__MIME
+	; nite
+	db 35, VULPIX
+	db 35, NOCTOWL
+	db 38, RINRING
+	db 35, RINRING
+	db 38, TANGELA
+	db 35, MR__MIME
+	db 35, MR__MIME
 
 	map_id ACROPORA_CAVE_B1F
 	db 2 percent, 2 percent, 2 percent
@@ -1771,5 +1906,33 @@ GrassWildMons:
 	db 42, UNOWN
 	db 42, UNOWN
 	db 42, UNOWN
+
+	map_id BATTLE_SIMULATION_TEST_ROOM
+;	db 50 percent, 50 percent, 50 percent ; encounter rates: morn/day/nite
+	db 0 percent, 0 percent, 0 percent ; encounter rates: morn/day/nite
+	; morn
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	; day
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	; nite
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
+	db 50, NATU
 
 	db -1 ; end

@@ -66,6 +66,46 @@ WaterWildMons:
 	db 24, YANMA
 	db 25, POLIWHIRL
 
+	map_id PALEROCK_CAVE_B1F
+	db 4 percent ; encounter rate
+	db 25, MAGIKARP
+	db 26, POLIWHIRL
+	db 24, MAGIKARP
+	db 24, MAGIKARP
+	db 25, POLIWHIRL
+
+	map_id PALEROCK_MOUNTAIN_B1
+	db 4 percent ; encounter rate
+	db 25, MAGIKARP
+	db 26, POLIWHIRL
+	db 24, MAGIKARP
+	db 26, MISDREAVUS
+	db 26, GOLBAT
+
+	map_id PALEROCK_MOUNTAIN_B3
+	db 4 percent ; encounter rate
+	db 33, SEAKING
+	db 28, POLIWHIRL
+	db 34, SEAKING
+	db 28, KINGLER
+	db 30, KINGLER
+
+	map_id PALEROCK_MOUNTAIN_WATERFALL_CHAMBER
+	db 4 percent ; encounter rate
+	db 33, SEAKING
+	db 28, POLIWHIRL
+	db 34, SEAKING
+	db 28, KINGLER
+	db 30, KINGLER
+
+	map_id PALEROCK_MOUNTAIN_HIDDEN_CAVE
+	db 4 percent ; encounter rate
+	db 38, SEAKING
+	db 37, MAGIKARP
+	db 39, SEAKING
+	db 40, MAGIKARP
+	db 41, SEAKING
+
 	map_id ROUTE_4
 	db 4 percent ; encounter rate
 	db 25, QUAGSIRE
@@ -161,7 +201,7 @@ WaterWildMons:
 	db 34, KINGLER
 	db 35, SHELLDER
 	db 33, SHELLDER
-	
+
 	map_id ROUTE_8
 	db 4 percent ; encounter rate
 	db 30, CORSOLA
@@ -233,7 +273,39 @@ WaterWildMons:
 	db 24, AZUMARILL
 	db 24, AZUMARILL
 	db 25, POLIWHIRL
-	
+
+	map_id ROUTE_18
+	db 8 percent ; encounter rate
+	db 30, AZUMARILL
+	db 31, AZUMARILL
+	db 31, PSYDUCK
+	db 32, SLOWPOKE
+	db 33, SEAKING
+
+	map_id ACROPORA_CITY
+	db 4 percent ; encounter rate
+	db 36, GOLDUCK
+	db 35, POLIWHIRL
+	db 36, AZUMARILL
+	db 37, YANMA
+	db 38, AZUMARILL
+
+	map_id ROUTE_21
+	db 4 percent ; encounter rate
+	db 36, GOLDUCK
+	db 35, POLIWHIRL
+	db 36, AZUMARILL
+	db 37, YANMA
+	db 38, AZUMARILL
+
+	map_id ROUTE_23
+	db 4 percent ; encounter rate
+	db 35, TENTACRUEL
+	db 35, KINGLER
+	db 34, SHELLDER
+	db 35, SHELLDER
+	db 36, ANCOR
+
 	map_id LUGIA_CAVE_B1F
 	db 4 percent ; encounter rate
 	db 33, SEEL
@@ -305,7 +377,31 @@ WaterWildMons:
 	db 10, TOTODILE
 	db 10, TOTODILE
 	db 10, TOTODILE
-	
+
+	map_id REMNANT_CAVE_1F
+	db 3 percent
+	db 36, CORSOLA
+	db 36, CORSOLA
+	db 35, STARYU
+	db 35, STARYU
+	db 36, STARYU
+
+	map_id REMNANT_CAVE_2F
+	db 3 percent
+	db 35, STARYU
+	db 35, STARYU
+	db 35, MAGIKARP
+	db 36, MAGIKARP
+	db 36, MAGIKARP
+
+	map_id REMNANT_CAVE_OUTSIDE
+	db 3 percent
+	db 36, MAGIKARP
+	db 36, MAGIKARP
+	db 35, PSYDUCK
+	db 36, GOLDUCK
+	db 36, GOLDUCK
+
 	map_id LOST_LAND
 	db 3 percent
 	db 35, OMANYTE

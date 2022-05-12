@@ -31,10 +31,10 @@ FishGroups:
 	db  90 percent + 1, KRABBY,     15
 	db 100 percent,     time_group 0
 .Shore_Super:
-	db  40 percent,     KRABBY,     40
+	db  40 percent,     KRABBY,     44
 	db  70 percent,     time_group 1
-	db  90 percent + 1, KRABBY,     40
-	db 100 percent,     KINGLER,    40
+	db  90 percent + 1, KRABBY,     46
+	db 100 percent,     KINGLER,    50
 
 .Ocean_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -46,10 +46,9 @@ FishGroups:
 	db  90 percent + 1, SHELLDER,   13
 	db 100 percent,     time_group 2
 .Ocean_Super:
-	db  40 percent,     CHINCHOU,   40
-	db  70 percent,     time_group 3
-	db  90 percent + 1, TENTACRUEL, 40
-	db 100 percent,     LANTURN,    40
+	db  40 percent,     SHELLDER,   44
+	db  80 percent + 1, ANCOR,   	44
+	db 100 percent,     SHELLDER, 	45
 
 .Lake_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -61,10 +60,10 @@ FishGroups:
 	db  90 percent + 1, GOLDEEN,    13
 	db 100 percent,     time_group 4
 .Lake_Super:
-	db  40 percent,     GOLDEEN,    40
+	db  40 percent,     GOLDEEN,     46
 	db  70 percent,     time_group 5
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     SEAKING,    40
+	db  95 percent + 1, MAGIKARP,    45
+	db 100 percent,     GYARADOS,    47
 
 .Pond_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -76,10 +75,10 @@ FishGroups:
 	db  90 percent + 1, POLIWAG,    13
 	db 100 percent,     time_group 6
 .Pond_Super:
-	db  40 percent,     POLIWAG,    40
+	db  40 percent,     POLIWHIRL,  45
 	db  70 percent,     time_group 7
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     POLIWAG,    40
+	db  90 percent + 1, MAGIKARP,   45
+	db 100 percent,     POLIWHIRL,  47
 
 .Dratini_Old:
 	db  70 percent + 1, MAGIKARP,   10
@@ -91,10 +90,10 @@ FishGroups:
 	db  90 percent + 1, DRATINI,    28
 	db 100 percent,     time_group 8
 .Dratini_Super:
-	db  40 percent,     MAGIKARP,   40
+	db  40 percent,     MAGIKARP,   45
 	db  70 percent,     time_group 9
-	db  90 percent + 1, GYARADOS,   40
-	db 100 percent,     DRAGONAIR,  40
+	db  90 percent + 1, GYARADOS,   43
+	db 100 percent,     DRAGONAIR,  45
 
 .Qwilfish_Swarm_Old:
 	db  70 percent + 1, MAGIKARP,   5
@@ -161,15 +160,11 @@ FishGroups:
 	db  85 percent + 1, GRIMER,   10
 	db 100 percent,     GRIMER,   10
 .Grimer_Good:
-	db  35 percent,     GRIMER,   20
-	db  70 percent,     GRIMER,     20
-	db  90 percent + 1, GRIMER,     20
-	db 100 percent,     time_group 18
+	db  70 percent + 1, GRIMER,     20
+	db 100 percent, GRIMER,		    20
 .Grimer_Super:
-	db  40 percent,     GRIMER,     40
-	db  70 percent,     time_group 19
-	db  90 percent + 1, GRIMER,    40
-	db 100 percent,     GRIMER,     40
+	db  90 percent + 1, GRIMER,     45
+	db 100 percent,     MUK,        48
 
 .Qwilfish_NoSwarm_Old:
 .Qwilfish_Old:
@@ -186,10 +181,8 @@ FishGroups:
 	db 100 percent,     time_group  20
 .Qwilfish_NoSwarm_Super:
 .Qwilfish_Super:
-	db  40 percent,     TENTACOOL,  40
-	db  70 percent,     time_group  21
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     QWILFISH,   40
+	db  50 percent + 1, CLOYSTER,  45
+	db 100 percent,     CONCHER,   45
 
 .Fossil_Old:
 	db  50 percent + 1, KABUTO,   35
@@ -198,21 +191,21 @@ FishGroups:
 	db  50 percent + 1, KABUTO,   35
 	db 100 percent,     OMANYTE,  35
 .Fossil_Super:
-	db  50 percent + 1, KABUTO,   35
-	db 100 percent,     OMANYTE,  35
+	db  50 percent + 1, KABUTOPS, 45
+	db 100 percent,     OMASTAR,  45
 
 TimeFishGroups:
 	;  day              nite
 	db CORSOLA,    20,  STARYU,     20 ; 0
-	db CORSOLA,    40,  STARYU,     40 ; 1
+	db CORSOLA,    46,  STARYU,     44 ; 1
 	db SHELLDER,   20,  SHELLDER,   20 ; 2
 	db SHELLDER,   40,  SHELLDER,   40 ; 3
 	db GOLDEEN,    20,  GOLDEEN,    20 ; 4
-	db GOLDEEN,    40,  GOLDEEN,    40 ; 5
+	db SEAKING,    45,  SEAKING,    45 ; 5
 	db POLIWAG,    20,  POLIWAG,    20 ; 6
-	db POLIWAG,    40,  POLIWAG,    40 ; 7
+	db POLIWAG,    49,  POLIWAG,    49 ; 7
 	db DRATINI,    20,  DRATINI,    20 ; 8
-	db DRATINI,    40,  DRATINI,    40 ; 9
+	db DRATINI,    46,  DRATINI,    46 ; 9
 	db QWILFISH,   20,  QWILFISH,   20 ; 10
 	db QWILFISH,   40,  QWILFISH,   40 ; 11
 	db REMORAID,   20,  REMORAID,   20 ; 12
