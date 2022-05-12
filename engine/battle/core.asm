@@ -9321,14 +9321,13 @@ BattleStartMessage:
 	jr .PlaceBattleStartText
 
 .NotFishing:
+	cp BATTLETYPE_BOSS
+	jr z, .CheckBossMon
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
 	ld hl, WildCelebiAppearedText
 	cp BATTLETYPE_CELEBI
-	jr z, .PlaceBattleStartText
-	ld hl, WildBossAppearedText
-	cp BATTLETYPE_BOSS
 	jr z, .PlaceBattleStartText
 	ld hl, WildBossAppearedText
 	cp BATTLETYPE_TRAP
@@ -9345,3 +9344,60 @@ BattleStartMessage:
 .SkipStartingHUD
 	call StdBattleTextBox
 	ret
+
+.CheckBossMon:
+	ld a, [wTempEnemyMonSpecies]
+	cp DIGLETT
+	jr z, .Diglett
+	cp DUGTRIO
+	jr z, .Dugtrio
+	cp AERODACTYL
+	jr z, .Aerodactyl
+	cp MAROWAK
+	jr z, .Marowak
+	cp MUK
+	jr z, .Muk
+	cp LUGIA
+	jr z, .Lugia
+	cp GENGAR
+	jr z, .Gengar
+	cp SKARMORY
+	jr z, .Skarmory
+	cp TENTACRUEL
+	jr z, .Tentacruel
+	cp MACHAMP
+	jr nz, .Unspecified
+
+	ld hl, MachampBossText
+	jr .DoneBossText
+.Diglett
+	ld hl, DiglettBossText
+	jr .DoneBossText
+.Dugtrio
+	ld hl, DugtrioBossText
+	jr .DoneBossText
+.Aerodactyl
+	ld hl, AerodactylBossText
+	jr .DoneBossText
+.Marowak
+	ld hl, MarowakBossText
+	jr .DoneBossText
+.Muk
+	ld hl, MukBossText
+	jr .DoneBossText
+.Lugia
+	ld hl, LugiaBossText
+	jr .DoneBossText
+.Gengar
+	ld hl, GengarBossText
+	jr .DoneBossText
+.Skarmory
+	ld hl, SkarmoryBossText
+	jr .DoneBossText
+.Tentacruel
+	ld hl, TentacruelBossText
+	jr .DoneBossText
+.Unspecified
+	ld hl, WildBossAppearedText
+.DoneBossText
+	jr .PlaceBattleStartText

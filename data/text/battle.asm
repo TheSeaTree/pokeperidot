@@ -42,6 +42,66 @@ WildBossAppearedText:
 	line "challenges you!"
 	prompt
 
+DugtrioBossText::
+	text "UNDERGROUND MENACE"
+	line "DUGTRIO"
+	cont "challenges you!"
+	prompt
+
+DiglettBossText::
+	text "UNDERGROUND PEST"
+	line "DIGLETT"
+	cont "challenges you!"
+	prompt
+
+AerodactylBossText::
+	text "FOSSILIZED FURY"
+	line "AERODACTYL"
+	cont "challenges you!"
+	prompt
+
+MarowakBossText::
+	text "RUNAWAY"
+	line "MAROWAK"
+	cont "challenges you!"
+	prompt
+
+MukBossText::
+	text "ENERGY GLUTTON"
+	line "MUK"
+	cont "challenges you!"
+	prompt
+
+LugiaBossText::
+	text "WAVE GUARDIAN"
+	line "LUGIA"
+	cont "challenges you!"
+	prompt
+
+GengarBossText::
+	text "SHADOW BOSS"
+	line "GENGAR"
+	cont "challenges you!"
+	prompt
+
+SkarmoryBossText::
+	text "IRON RAPTOR"
+	line "SKARMORY"
+	cont "challenges you!"
+	prompt
+
+TentacruelBossText::
+	text "TERROR OF THE DEEP"
+	line "TENTACRUEL"
+	cont "challenges you!"
+	prompt
+
+MachampBossText::
+	text "BOSS OF THIS GYM"
+	line "MACHAMP"
+	cont "challenges you!"
+	prompt
+
 WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
