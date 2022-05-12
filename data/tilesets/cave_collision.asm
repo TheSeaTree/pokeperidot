@@ -236,3 +236,12 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; eb
 	tilecoll WALL, WALL, FLOOR, FLOOR ; ec
 	tilecoll WALL, WALL, WALL, SMASH_WALL ; ed
+	tilecoll FLOOR, WALL, FLOOR, WALL ; ee
+	tilecoll WALL, FLOOR, WALL, FLOOR ; ef
+	tilecoll FLOOR, FLOOR, WALL, WALL ; f0
+	tilecoll FLOOR, FLOOR, WALL, WALL ; f1
+	tilecoll FLOOR, FLOOR, FLOOR, WARP_CARPET_DOWN ; f2
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f3
+	tilecoll WALL, WALL, FLOOR, FLOOR ; f4
+	tilecoll WALL, WALL, FLOOR, FLOOR ; f5
+	tilecoll WALL, WALL, FLOOR, FLOOR ; f6

@@ -395,4 +395,4 @@ FluteMasterHouse_MapEvents:
 	db 3 ; object events
 	object_event  2,  4, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FluteMaster, -1
 	object_event  0, -4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  3,  4, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ComplicatedSheetMusic, -1
+	object_event  3,  4, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ComplicatedSheetMusic, -1

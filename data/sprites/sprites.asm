@@ -92,7 +92,7 @@ OverworldSprites:
 	overworld_sprite SurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PokeBallSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite PokedexSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
-	overworld_sprite PaperSpriteGFX, 4, STILL_SPRITE, PAL_OW_BLUE
+	overworld_sprite PaperSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	overworld_sprite VirtualBoySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite OldLinkReceptionistSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite RockSpriteGFX, 4, STILL_SPRITE, PAL_OW_ROCK

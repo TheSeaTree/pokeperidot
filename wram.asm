@@ -2664,8 +2664,9 @@ wKenjiFightCount::   	db ; unused
 wParryFightCount::   	db ; unused
 wErinFightCount::    	db ; unused
 ; da0e
+wTreasuresTraded::		db
 
-	ds 100
+	ds 99
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

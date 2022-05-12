@@ -45,6 +45,7 @@
 	const ICON_RAIKOU
 	const ICON_ENTEI
 	const ICON_SUICUNE
+	const ICON_CELEBI
 
 ; LoadMenuMonIcon.Jumptable indexes (see engine/gfx/mon_icons.asm)
 	const_def

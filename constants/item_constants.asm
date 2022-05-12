@@ -71,8 +71,8 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const RED_SCALE    ; 42
-	const SECRETPOTION ; 43
+	const JOURNAL_PAGE ; 42
+	const BACKDOOR_KEY ; 43
 	const VIP_TICKET   ; 44
 	const ENGINE_KEY   ; 45
 	const CLEAR_BELL   ; 46

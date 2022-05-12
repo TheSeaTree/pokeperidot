@@ -242,6 +242,9 @@ RugosaDeptStore6F_Blocks:
 RugosaDeptStoreElevator_Blocks:
 	INCBIN "maps/DeptStoreElevator.2x2.mart.ablk"
 
+MaplesLabElevator_Blocks:
+	INCBIN "maps/MaplesLabElevator.ablk"
+
 Colosseum_Blocks:
 	INCBIN "maps/Colosseum.ablk"
 
@@ -553,7 +556,8 @@ LugiaCaveGateChamber_Blocks:
 
 LugiaLair_Blocks:
 	INCBIN "maps/LugiaLair.ablk"
-	
+
+
 SECTION "Map Blocks 4", ROMX
 
 RidgeGymB1_Blocks:
@@ -608,14 +612,18 @@ HiddenPowerCave_Blocks:
 Factory1F_Blocks:
 	INCBIN "maps/Factory1F.ablk"
 	
+Factory2F_Blocks:
+	INCBIN "maps/Factory2F.ablk"
+
 FactoryB1_Blocks:
 	INCBIN "maps/FactoryB1.ablk"
-	
+
 FactoryBack_Blocks:
 	INCBIN "maps/FactoryBack.ablk"
-	
+
 PectiniaApartmentLeft_Blocks:
 RugosaApartment1F_Blocks:
+PastPectiniaApartment1F_Blocks:
 	INCBIN "maps/PectiniaApartmentLeft.ablk"
 	
 PectiniaApartmentRight_Blocks:
@@ -811,7 +819,8 @@ DugtriosDen_Blocks:
 
 MoltenPeakHiddenCave_Blocks:
 	INCBIN "maps/MoltenPeakHiddenCave.ablk"
-	
+
+
 SECTION "Map Blocks 5", ROMX
 	
 RemnantCave1F_Blocks:
@@ -894,3 +903,48 @@ BattleSimulation_Blocks:
 
 BattleSimulationTestRoom_Blocks:
 	INCBIN "maps/BattleSimulationTestRoom.ablk"
+
+TreasureHuntersHouse_Blocks:
+	INCBIN "maps/TreasureHuntersHouse.ablk"
+
+SECTION "Map Blocks 6", ROMX
+
+PastFaviaInn_Blocks:
+PastRoute11Inn_Blocks:
+	INCBIN "maps/time-travel/PastInn.5x4.players_house.ablk"
+
+PastPectiniaCity_Blocks:
+	INCBIN "maps/time-travel/PastPectiniaCity.ablk"
+
+PastPectiniaGym_Blocks:
+	INCBIN "maps/time-travel/PastPectiniaGym.ablk"
+
+PastRoute3_Blocks:
+	INCBIN "maps/time-travel/PastRoute3.ablk"
+
+PastFaviaTown_Blocks:
+	INCBIN "maps/time-travel/PastFaviaTown.ablk"
+
+PastRoute11_Blocks:
+	INCBIN "maps/time-travel/PastRoute11.ablk"
+
+PastIlexForest_Blocks:
+	INCBIN "maps/time-travel/PastIlexForest.ablk"
+
+PastElkhornTown_Blocks:
+	INCBIN "maps/time-travel/PastElkhornTown.ablk"
+
+PastRoute1_Blocks:
+	INCBIN "maps/time-travel/PastRoute1.ablk"
+
+PastPavonaVillage_Blocks:
+	INCBIN "maps/time-travel/PastPavonaVillage.ablk"
+
+PastRoute2_Blocks:
+	INCBIN "maps/time-travel/PastRoute2.ablk"
+
+PastPectiniaApartment2F_Blocks:
+	INCBIN "maps/time-travel/PastPectiniaApartment2F.ablk"
+
+PastPectiniaApartment3F_Blocks:
+	INCBIN "maps/time-travel/PastPectiniaApartment3F.ablk"

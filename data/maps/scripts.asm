@@ -346,6 +346,7 @@ INCLUDE "maps/BattleSubwayBossTrain.asm"
 SECTION "Map Scripts 21", ROMX
 
 INCLUDE "maps/HepaticaTown.asm"
+INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route4.asm"
 INCLUDE "maps/EastForest.asm"
 INCLUDE "maps/RaikouLair.asm"
@@ -356,6 +357,7 @@ INCLUDE "maps/SilverCavePokecenter1F.asm"
 INCLUDE "maps/Route18Barn.asm"
 INCLUDE "maps/Route18Farmhouse.asm"
 INCLUDE "maps/Route18CarnationGate.asm"
+INCLUDE "maps/TreasureHuntersHouse.asm"
 
 
 SECTION "Map Scripts 22", ROMX
@@ -405,11 +407,11 @@ INCLUDE "maps/SeaRoute2.asm"
 INCLUDE "maps/SeaRoute3.asm"
 INCLUDE "maps/Route13.asm"
 INCLUDE "maps/Route6.asm"
-INCLUDE "maps/Route3.asm"
 INCLUDE "maps/Route10South.asm"
 INCLUDE "maps/MoltenPeakHiddenCave.asm"
 INCLUDE "maps/Factory1F.asm"
 INCLUDE "maps/FactoryB1.asm"
+INCLUDE "maps/Factory2F.asm"
 INCLUDE "maps/FactoryBack.asm"
 
 
@@ -440,5 +442,25 @@ INCLUDE "maps/SSMakoEngineRoom.asm"
 INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
 INCLUDE "maps/SSMakoDeck.asm"
+INCLUDE "maps/MaplesLabElevator.asm"
 INCLUDE "maps/BattleSimulation.asm"
 INCLUDE "maps/BattleSimulationTestRoom.asm"
+
+
+SECTION "Map Scripts 27", ROMX
+
+INCLUDE "maps/time-travel/PastPectiniaCity.asm"
+INCLUDE "maps/time-travel/PastPectiniaGym.asm"
+INCLUDE "maps/time-travel/PastRoute3.asm"
+INCLUDE "maps/time-travel/PastFaviaTown.asm"
+INCLUDE "maps/time-travel/PastRoute11.asm"
+INCLUDE "maps/time-travel/PastIlexForest.asm"
+INCLUDE "maps/time-travel/PastElkhornTown.asm"
+INCLUDE "maps/time-travel/PastRoute1.asm"
+INCLUDE "maps/time-travel/PastPavonaVillage.asm"
+INCLUDE "maps/time-travel/PastRoute2.asm"
+INCLUDE "maps/time-travel/PastFaviaInn.asm"
+INCLUDE "maps/time-travel/PastRoute11Inn.asm"
+INCLUDE "maps/time-travel/PastPectiniaApartment1F.asm"
+INCLUDE "maps/time-travel/PastPectiniaApartment2F.asm"
+INCLUDE "maps/time-travel/PastPectiniaApartment3F.asm"

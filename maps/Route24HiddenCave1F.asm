@@ -36,8 +36,8 @@ Route24HiddenCave1FHiddenRevive:
 Route24HiddenCave1FHiddenNugget:
 	hiddenitem NUGGET, EVENT_ROUTE_24_CAVE_1F_HIDDEN_NUGGET
 
-Route24HiddenCave1FHiddenThunderstone:
-	hiddenitem THUNDERSTONE, EVENT_ROUTE_24_CAVE_1F_HIDDEN_THUNDERSTONE
+Route24HiddenCave1FHiddenProtein:
+	hiddenitem PROTEIN, EVENT_ROUTE_24_CAVE_1F_HIDDEN_PROTEIN
 
 Route24HiddenCave1FBoulder:
 	jumpstd strengthboulder
@@ -65,7 +65,7 @@ Route24HiddenCave1F_MapEvents:
 	bg_event 31,  1, BGEVENT_ITEM, Route24HiddenCave1FHiddenMaxRepel
 	bg_event 36, 13, BGEVENT_ITEM, Route24HiddenCave1FHiddenRevive
 	bg_event  3, 20, BGEVENT_ITEM, Route24HiddenCave1FHiddenNugget
-	bg_event 28, 16, BGEVENT_ITEM, Route24HiddenCave1FHiddenThunderstone
+	bg_event 28, 16, BGEVENT_ITEM, Route24HiddenCave1FHiddenProtein
 
 	db 15 ; object events
 	object_event 12, 22, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24HiddenCave1FBoulder, -1

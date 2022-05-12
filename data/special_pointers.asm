@@ -190,7 +190,7 @@ SpecialsPointers::
 	add_special UnusedFindItemInPCOrBag
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
-	add_special DummySpecial_c224 ; $a8
+	add_special SelectTreasureMenu ; $a8
 	add_special UpdatePartyStats
 	add_special CheckStolenTrickMirror
 	add_special LoadPokemonData

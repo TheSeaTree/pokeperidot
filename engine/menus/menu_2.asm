@@ -164,42 +164,7 @@ FindApricornsInBag:
 	call ByteFill
 
 	ld hl, ApricornBalls
-.loop
-	ld a, [hl]
-	cp -1
-	jr z, .done
-	push hl
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	pop hl
-	jr nc, .nope
-	ld a, [hl]
-	call .addtobuffer
-.nope
-	inc hl
-	inc hl
-	jr .loop
-
-.done
-	ld a, [wBuffer1]
-	and a
-	ret nz
-	scf
-	ret
-
-.addtobuffer
-	push hl
-	ld hl, wBuffer1
-	inc [hl]
-	ld e, [hl]
-	ld d, 0
-	add hl, de
-	ld [hl], a
-	pop hl
-	ret
-
-INCLUDE "data/items/apricorn_balls.asm"
+	jp FindSpecificItems
 
 FindFossilsInBag:
 ; Checks the bag for Fossils.
@@ -211,42 +176,7 @@ FindFossilsInBag:
 	call ByteFill
 
 	ld hl, Fossils
-.loop
-	ld a, [hl]
-	cp -1
-	jr z, .done
-	push hl
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	pop hl
-	jr nc, .nope
-	ld a, [hl]
-	call .addtobuffer
-.nope
-	inc hl
-	inc hl
-	jr .loop
-
-.done
-	ld a, [wBuffer1]
-	and a
-	ret nz
-	scf
-	ret
-
-.addtobuffer
-	push hl
-	ld hl, wBuffer1
-	inc [hl]
-	ld e, [hl]
-	ld d, 0
-	add hl, de
-	ld [hl], a
-	pop hl
-	ret
-
-INCLUDE "data/items/fossils.asm"
+	jp FindSpecificItems
 
 FindMushroomsInBag:
 ; Checks the bag for Mushrooms.
@@ -258,6 +188,21 @@ FindMushroomsInBag:
 	call ByteFill
 
 	ld hl, Mushrooms
+	jp FindSpecificItems
+
+FindTreasureInBag:
+; Checks the bag for Mushrooms.
+	ld hl, wBuffer1
+	xor a
+	ld [hli], a
+	dec a
+	ld bc, 10
+	call ByteFill
+
+	ld hl, Treasure
+	jp FindSpecificItems
+
+FindSpecificItems:
 .loop
 	ld a, [hl]
 	cp -1
@@ -293,4 +238,4 @@ FindMushroomsInBag:
 	pop hl
 	ret
 
-INCLUDE "data/items/mushrooms.asm"
+INCLUDE "data/items/exchange_items.asm"

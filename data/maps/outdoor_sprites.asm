@@ -192,12 +192,10 @@ LavenderGroupSprites:
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
 	db SPRITE_POKEFAN_M
-	db SPRITE_BUENA
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
 	db SPRITE_TEACHER
 	db SPRITE_SUPER_NERD
-	db SPRITE_BIKER
 	db SPRITE_POKEFAN_F
 	db SPRITE_LASS
 	; 9 of max 9 walking sprites
@@ -205,12 +203,14 @@ FuchsiaGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCK
 	db SPRITE_KIMONO_GIRL
+	db SPRITE_CELEBI
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 IndigoGroupSprites:
 ; Route23
+	db SPRITE_SUPER_NERD
 	; 0 of max 9 walking sprites
 	db 0 ; end
 
@@ -411,7 +411,7 @@ AcroporaGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
-	db SPRITE_SUPER_NERD
+	db SPRITE_BUENA
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_POKEFAN_M
 	db SPRITE_ROCKER

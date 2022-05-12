@@ -292,7 +292,7 @@ GetCelebiSpriteTile:
 	ret
 
 CelebiEvent_SetBattleType:
-	ld a, BATTLETYPE_CELEBI
+	ld a, BATTLETYPE_LEGENDARY
 	ld [wBattleType], a
 	ret
 

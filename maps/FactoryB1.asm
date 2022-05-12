@@ -12,7 +12,7 @@ FactoryB1_MapScripts:
 	return
 
 .Change:
-	changeblock  4,12, $07 ; open shutter
+	changeblock  6, 12, $07 ; open shutter
 	return
 
 FactoryBasementDoor:
@@ -27,7 +27,7 @@ FactoryBasementDoor:
 	waitbutton
 	closetext
 	setevent EVENT_USED_BASEMENT_KEY
-	changeblock  4,12, $07 ; open shutter
+	changeblock  6, 12, $07 ; open shutter
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	waitsfx
@@ -50,7 +50,22 @@ FactoryBasementLockedDoor:
 	waitbutton
 	closetext
 	end
-	
+
+FactoryB1Lemonade:
+	itemball LEMONADE
+
+FactoryBasementHiddenFastBall:
+	hiddenitem FAST_BALL, EVENT_FACTORY_HIDDEN_FAST_BALL
+
+FactoryBasementHiddenHPUp:
+	hiddenitem HP_UP, EVENT_FACTORY_HIDDEN_HP_UP
+
+FactoryBasementHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_FACTORY_HIDDEN_RARE_CANDY
+
+FactoryBasementHiddenFullRestore:
+	hiddenitem FULL_RESTORE, EVENT_FACTORY_HIDDEN_FULL_RESTORE
+
 KeySlotText:
 	text "It looks like a"
 	line "KEY would go here."
@@ -75,15 +90,20 @@ FactoryB1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  7, 14, FACTORY_1F, 3
-	warp_event  5,  2, FACTORY_1F, 4
+	warp_event 12, 10, FACTORY_1F, 3
+	warp_event  7,  0, FACTORY_1F, 4
 
 	db 0 ; coord events
 	
-	db 3 ; bg events
-	bg_event  6, 11, BGEVENT_UP, FactoryBasementDoor
-	bg_event  5, 12, BGEVENT_IFNOTSET, FactoryBasementLockedDoor
-	bg_event  5, 13, BGEVENT_IFNOTSET, FactoryBasementLockedDoor
+	db 7 ; bg events
+	bg_event  8, 11, BGEVENT_UP, FactoryBasementDoor
+	bg_event  7, 12, BGEVENT_IFNOTSET, FactoryBasementLockedDoor
+	bg_event  7, 13, BGEVENT_IFNOTSET, FactoryBasementLockedDoor
+	bg_event 10,  1, BGEVENT_ITEM, FactoryBasementHiddenFastBall
+	bg_event  3,  5, BGEVENT_ITEM, FactoryBasementHiddenHPUp
+	bg_event 12, 15, BGEVENT_ITEM, FactoryBasementHiddenRareCandy
+	bg_event 13,  8, BGEVENT_ITEM, FactoryBasementHiddenFullRestore
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  9,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryB1Lemonade, EVENT_FACTORY_B1_LEMONADE
 	

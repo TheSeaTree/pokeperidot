@@ -42,4 +42,4 @@ SpriteMons:
 	db RAIKOU
 	db ENTEI
 	db SUICUNE
-	
+	db CELEBI

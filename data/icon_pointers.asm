@@ -45,3 +45,4 @@ IconPointers:
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon
+	dw CelebiIcon

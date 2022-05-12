@@ -65,8 +65,8 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw RedScaleDesc
-	dw SecretPotionDesc
+	dw JournalPageDesc
+	dw BackdoorKeyDesc
 	dw VIPTicketDesc
 	dw EngineKeyDesc
 	dw ClearBellDesc
@@ -516,13 +516,13 @@ ElixerDesc:
 	db   "Restores PP of all"
 	next "moves by 10.@"
 
-RedScaleDesc:
-	db   "A scale from the"
-	next "red GYARADOS.@"
+JournalPageDesc:
+	db   "A page full of"
+	next "access codes.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
+BackdoorKeyDesc:
+	db   "A pink key with an"
+	next "angular design.@"
 
 VIPTicketDesc:
 	db   "S.S.MAKO FIRST"
@@ -765,8 +765,8 @@ CardKeyDesc:
 	next "the HIDEOUT.@"
 
 MachinePartDesc:
-	db   "A machine part for"
-	next "the POWER PLANT.@"
+	db   "A machine part"
+	next "that looks old.@"
 
 EggTicketDesc:
 	db   "May use at Golden-"

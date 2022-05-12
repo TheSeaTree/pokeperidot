@@ -280,6 +280,39 @@ ENDM
 	map_attributes Route28, ROUTE_28, $05, SOUTH
 	connection south, SeaRoute7, SEA_ROUTE_7, 0
 
+	map_attributes PastElkhornTown, PAST_ELKHORN_TOWN, $05, NORTH | SOUTH
+	connection north, PastRoute11, PAST_ROUTE_11, 5
+	connection south, PastRoute1, PAST_ROUTE_1, -4
+
+	map_attributes PastRoute1, PAST_ROUTE_1, $05, NORTH | SOUTH
+	connection north, PastElkhornTown, PAST_ELKHORN_TOWN, 4
+	connection south, PastPavonaVillage, PAST_PAVONA_VILLAGE, 1
+
+	map_attributes PastPavonaVillage, PAST_PAVONA_VILLAGE, $05, NORTH | EAST
+	connection north, PastRoute1, PAST_ROUTE_1, -1
+	connection east, PastRoute2, PAST_ROUTE_2, 3
+
+	map_attributes PastRoute2, PAST_ROUTE_2, $05, WEST
+	connection west, PastPavonaVillage, PAST_PAVONA_VILLAGE, -3
+
+	map_attributes PastFaviaTown, PAST_FAVIA_TOWN, $05, SOUTH
+	connection south, PastRoute3, PAST_ROUTE_3, 7
+
+	map_attributes PastRoute3, PAST_ROUTE_3, $05, NORTH
+	connection north, PastFaviaTown, PAST_FAVIA_TOWN, -7
+
+	map_attributes PastRoute11, PAST_ROUTE_11, $05, SOUTH
+	connection south, PastElkhornTown, PAST_ELKHORN_TOWN, -5
+
+	map_attributes PastPectiniaCity, PAST_PECTINIA_CITY, $05, 0
+	map_attributes PastPectiniaGym, PAST_PECTINIA_GYM, $00, 0
+	map_attributes PastFaviaInn, PAST_FAVIA_INN, $00, 0
+	map_attributes PastRoute11Inn, PAST_ROUTE_11_INN, $00, 0
+	map_attributes PastIlexForest, PAST_ILEX_FOREST, $05, 0
+	map_attributes PastPectiniaApartment1F, PAST_PECTINIA_APARTMENT_1F, $00, 0
+	map_attributes PastPectiniaApartment2F, PAST_PECTINIA_APARTMENT_2F, $00, 0
+	map_attributes PastPectiniaApartment3F, PAST_PECTINIA_APARTMENT_3F, $00, 0
+
 	map_attributes NationalPark, NATIONAL_PARK, $00, 0
 	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
 	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
@@ -391,6 +424,7 @@ ENDM
 	map_attributes HiddenPowerCave, HIDDEN_POWER_CAVE, $09, 0
 	map_attributes Factory1F, FACTORY_1F, $00, 0
 	map_attributes FactoryB1, FACTORY_B1, $00, 0
+	map_attributes Factory2F, FACTORY_2F, $00, 0
 	map_attributes FactoryBack, FACTORY_BACK, $00, 0
 	map_attributes HepaticaChurch, HEPATICA_CHURCH, $00, 0
 	map_attributes PectiniaApartmentLeft, PECTINIA_APARTMENT_LEFT, $00, 0
@@ -566,3 +600,5 @@ ENDM
 	map_attributes PalerockMountainHiddenCave, PALEROCK_MOUNTAIN_HIDDEN_CAVE, $6d, 0
 	map_attributes SkarmorysDen, SKARMORYS_DEN, $6d, 0
 	map_attributes TentacruelsDen, TENTACRUELS_DEN, $09, 0
+	map_attributes MaplesLabElevator, MAPLES_LAB_ELEVATOR, $00, 0
+	map_attributes TreasureHuntersHouse, TREASURE_HUNTERS_HOUSE, $09, 0

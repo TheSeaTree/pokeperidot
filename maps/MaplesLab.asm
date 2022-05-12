@@ -20,7 +20,7 @@ MaplesLab_MapScripts:
 	scene_script .DummyScene5 ; SCENE_MAPLESLAB_AIDE_GIVES_POTION
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .WateredPlant
+	callback MAPCALLBACK_TILES, .ChangeTiles
 
 .MeetMaple:
 	priorityjump .WalkUpToMaple
@@ -60,6 +60,12 @@ MaplesLab_MapScripts:
 	setscene SCENE_MAPLESLAB_CANT_LEAVE
 	closetext
 	end
+
+.ChangeTiles
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .WateredPlant
+	changeblock 0, 0, $31
+	changeblock 2, 0, $32
 	
 .WateredPlant:
 	checkevent EVENT_GOT_TM_CUT
@@ -336,8 +342,13 @@ MaplesLabBugCatcher:
 MaplesLabGameboyKid:
 	jumptextfaceplayer MaplesLabGameboyKidText
 
+MaplesLabAlternateBookshelf:
+	conditional_event EVENT_BEAT_ELITE_FOUR, .Script
+	
+.Script:
 MaplesLabBookshelf:
 	jumpstd difficultbookshelf
+
 
 MaplesLabPlant:
 	checkevent EVENT_GOT_TM_CUT
@@ -878,9 +889,10 @@ MaplesLabGameboyKidText:
 MaplesLab_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  4, 11, PAVONA_VILLAGE, 3
 	warp_event  5, 11, PAVONA_VILLAGE, 3
+	warp_event  2,  0, MAPLES_LAB_ELEVATOR, 1
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript
@@ -890,8 +902,8 @@ MaplesLab_MapEvents:
 
 	db 14 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MaplesLabBookshelf
-	bg_event  1,  1, BGEVENT_READ, MaplesLabBookshelf
-	bg_event  2,  1, BGEVENT_READ, MaplesLabBookshelf
+	bg_event  1,  1, BGEVENT_IFNOTSET, MaplesLabAlternateBookshelf
+	bg_event  2,  1, BGEVENT_IFNOTSET, MaplesLabAlternateBookshelf
 	bg_event  3,  1, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  0,  5, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  1,  5, BGEVENT_READ, MaplesLabBookshelf

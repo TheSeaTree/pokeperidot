@@ -173,12 +173,12 @@ ENDM
 
 	newgroup                                                      ;  8
 
-	map_const ROUTE_3,                                     32, 22 ;  1
+	map_const ROUTE_3,                                       32, 22 ;  1
 	map_const ROUTE_3_PECTINIA_GATE,                          5,  4 ; 12
 	map_const PECTINIA_POKECENTER_1F,                         5,  4 ;  1
-	map_const CHARCOAL_KILN,                                4,  4 ;  2
+	map_const CHARCOAL_KILN,                                  4,  4 ;  2
 	map_const PECTINIA_MART,                                  6,  4 ;  3
-	map_const KURTS_HOUSE,                                  8,  4 ;  4
+	map_const KURTS_HOUSE,                                    8,  4 ;  4
 	map_const PECTINIA_GYM,                                   9,  9 ;  5
 	map_const PECTINIA_CITY,                                 30, 20 ;  7
 	map_const PECTINIA_APARTMENT_LEFT,                        6,  4
@@ -193,14 +193,21 @@ ENDM
 	map_const PECTINIA_BERRY_HOUSE,                           4,  4
 	map_const ROUTE_4_FOREST_GATE,                            5,  4
 	map_const ROUTE_4_PECTINIA_GATE,                          5,  4
+	map_const PAST_PECTINIA_CITY,                            28, 15
+	map_const PAST_PECTINIA_GYM,                              9, 11
+	map_const PAST_PECTINIA_APARTMENT_1F,                     6,  4
+	map_const PAST_PECTINIA_APARTMENT_2F,                     6,  4
+	map_const PAST_PECTINIA_APARTMENT_3F,                     6,  4
+	map_const PAST_ROUTE_3,                                  20, 24
 
 	newgroup                                                      ;  9
 
 	map_const EAST_FOREST,                                 30, 15
 	map_const FACTORY_1F,                                  16, 12
-	map_const FACTORY_B1,                                   6,  8
+	map_const FACTORY_B1,                                   7,  8
+	map_const FACTORY_2F,                                  14,  8
 	map_const FACTORY_BACK,                                 5,  8
-	map_const RAIKOU_LAIR,									5,  3
+	map_const RAIKOU_LAIR,									7,  3
 
 	newgroup                                                      ; 10
 
@@ -237,11 +244,13 @@ ENDM
 	map_const ROUTE_11_FAVIA_GATE,                         5,  4
 	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
 	map_const PECTINIA_BED_STORE,                    	   6,  3
-	map_const PECTINIA_DOLL_STORE,                         5,  3
+	map_const PECTINIA_DOLL_STORE,                         8,  4
 	map_const PECTINIA_CARPET_STORE,                       5,  3
 	map_const PECTINIA_COMIC_STORE,                        6,  6
 	map_const PECTINIA_BATTLE_ITEM_STORE,                  7,  4
 	map_const PECTINIA_ARCADE,                             8,  8
+	map_const PAST_FAVIA_TOWN,							  15, 14
+	map_const PAST_FAVIA_INN,							   5,  4
 
 	newgroup                                                      ; 12
 
@@ -260,6 +269,8 @@ ENDM
 	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
 	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
 	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
+	map_const PAST_ROUTE_11,                               31, 16	
+	map_const PAST_ROUTE_11_INN,                            5,  4
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
@@ -304,6 +315,7 @@ ENDM
 	map_const SWORDS_DANCE_HOUSE,							4,  4
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 	map_const MOON_BALL_CAVE,			                   10,  9
+	map_const PAST_ILEX_FOREST,                            37, 21
 
 	newgroup                                                      ; 18
 
@@ -390,15 +402,16 @@ ENDM
 
 	newgroup                                                      ; 24
 
-	map_const ROUTE_1,                                     33, 17 ;  1
+	map_const ROUTE_1,                                    33, 17 ;  1
 	map_const ELKHORN_TOWN,                               12, 11 ;  4
-	map_const VIRIDIAN_POKECENTER_1F,                       5,  4 ;  9
-	map_const MAPLES_LAB,                                   5,  6 ;  5
-	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
-	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
-	map_const PLAYERS_NEIGHBORS_HOUSE,                      4,  4 ;  8
-	map_const ELMS_HOUSE,                                   4,  4 ;  9
+	map_const VIRIDIAN_POKECENTER_1F,                      5,  4 ;  9
+	map_const MAPLES_LAB,                                  5,  6 ;  5
+	map_const PLAYERS_HOUSE_1F,                            5,  4 ;  6
+	map_const PLAYERS_HOUSE_2F,                            4,  3 ;  7
+	map_const PLAYERS_NEIGHBORS_HOUSE,                     4,  4 ;  8
+	map_const ELMS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_1_ELKHORN_GATE,                        5,  4 ; 13
+	map_const PAST_ELKHORN_TOWN,						  15, 11 
 
 	newgroup                                                      ; 25
 
@@ -412,6 +425,7 @@ ENDM
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
+	map_const MAPLES_LAB_ELEVATOR,					        2,  2
 	map_const BATTLE_SIMULATION,					       10,  7
 	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
 	map_const ROUTE_28,					           		   16, 18
@@ -427,6 +441,9 @@ ENDM
 	map_const ROUTE_2_PECTINIA_GATE,                        5,  4 ; 11
 	map_const ROUTE_9,                                     20, 13 ; 13
 	map_const SUICUNE_LAIR,	    							7,  3
+	map_const PAST_PAVONA_VILLAGE,                         16, 10 ;  3
+	map_const PAST_ROUTE_1,						  		   26, 16
+	map_const PAST_ROUTE_2,                                23, 18 ;  1
 
 	newgroup													  ; 27
 	
@@ -446,4 +463,5 @@ ENDM
 	map_const UNOWN_CHAMBER_HN,                             6,  7 ; 52
 	map_const UNOWN_CHAMBER_OU,                             6,  7 ; 52
 	map_const UNOWN_CHAMBER_VZ,                             6,  7 ; 52
+	map_const TREASURE_HUNTERS_HOUSE,                       7,  5
 	

@@ -176,6 +176,7 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_RAIKOU
 	const SPRITE_ENTEI
 	const SPRITE_SUICUNE
+	const SPRITE_CELEBI
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0
