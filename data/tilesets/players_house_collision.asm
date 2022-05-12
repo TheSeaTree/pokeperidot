@@ -63,3 +63,11 @@
 	tilecoll WALL, FLOOR, WALL, FLOOR ; 3e
 	tilecoll FLOOR, WALL, FLOOR, WALL ; 3f
 	tilecoll WINDOW, WALL, FLOOR, FLOOR ; 40
+	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 41
+	tilecoll WALL, WALL, WALL, WALL ; 42
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 43
+	tilecoll WALL, WALL, WALL, WALL ; 44
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 45
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 46
+	tilecoll WALL, WALL, LEFT_WALL, RIGHT_WALL ; 47
+	tilecoll WINDOW, WALL, WALL, FLOOR ; 48
