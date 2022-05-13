@@ -792,12 +792,6 @@ VenomothEvosAttacks:
 DiglettEvosAttacks:
 	db EVOLVE_LEVEL, 26, DUGTRIO
 	db 0 ; no more evolutions
-;	db 1, PSYCHIC_M
-;	db 1, ROCK_SMASH
-;	db 1, PSYBEAM
-;	db 1, CONFUSION
-;	db 0
-
 	db 1, SAND_ATTACK
 	db 1, SCRATCH
 	db 4, GROWL
@@ -2373,10 +2367,12 @@ SnorlaxEvosAttacks:
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1,  GUST
-	db 1,  FREEZE_DRY
-	db 13, MIST
+	db 1,  ICY_WIND
+	db 1,  MIST
+	db 3,  TRI_ATTACK
+	db 13, FREEZE_DRY
 	db 25, AGILITY
-	db 30, AURORA_BEAM
+	db 30, WHIRLWIND
 	db 37, MIND_READER
 	db 40, RAZOR_WIND
 	db 44, ICE_BEAM
@@ -2391,12 +2387,14 @@ ZapdosEvosAttacks:
 	db 0 ; no more evolutions
 	db 1,  PECK
 	db 1,  THUNDERSHOCK
-	db 13, THUNDER_WAVE
+	db 1,  THUNDER_WAVE
+	db 3,  TRI_ATTACK
+	db 13, SPARK
 	db 25, AGILITY
-	db 30, SPARK
+	db 30, WHIRLWIND
 	db 37, PROTECT
-	db 40, RAZOR_WIND
-	db 44, DRILL_PECK
+	db 40, DRILL_PECK
+	db 44, THUNDERBOLT
 	db 50, U_TURN
 	db 61, LIGHT_SCREEN
 	db 65, THUNDER
@@ -2408,9 +2406,11 @@ MoltresEvosAttacks:
 	db 0 ; no more evolutions
 	db 1,  WING_ATTACK
 	db 1,  EMBER
+	db 1,  WILL_O_WISP
+	db 3,  TRI_ATTACK
 	db 13, FIRE_SPIN
 	db 25, AGILITY
-	db 30, FLAME_WHEEL
+	db 30, WHIRLWIND
 	db 37, ENDURE
 	db 40, RAZOR_WIND
 	db 44, FLAMETHROWER
@@ -4042,17 +4042,21 @@ BlisseyEvosAttacks:
 
 RaikouEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, LEER
 	db 1, THUNDERSHOCK
+	db 1, LEER
+	db 1, ROAR
+	db 1, THUNDER_WAVE
 	db 8, BITE
-	db 22, QUICK_ATTACK
-	db 29, SPARK
-	db 32, ROAR
-	db 36, REFLECT
-	db 43, CRUNCH
+	db 15, TRI_ATTACK
+	db 22, SPARK
+	db 29, CRUNCH
+	db 32, SAFEGUARD
+	db 36, THUNDERBOLT
+	db 40, EXTREMESPEED
+	db 43, REFLECT
 	db 48, AGILITY
 	db 54, CALM_MIND
-	db 61, THUNDER
+	db 57, THUNDER
 	db 61, RAIN_DANCE
 	db 0 ; no more level-up moves
 
@@ -4060,15 +4064,19 @@ EnteiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 1, LEER
+	db 1, ROAR
+	db 1, FIRE_SPIN
 	db 8, BITE
+	db 15, TRI_ATTACK
 	db 22, FLAME_WHEEL
 	db 29, HEADBUTT
-	db 32, ROAR
+	db 32, SAFEGUARD
 	db 36, FLAMETHROWER
+	db 40, EXTREMESPEED
 	db 43, SWAGGER
 	db 48, AGILITY
 	db 54, CALM_MIND
-	db 61, FIRE_BLAST
+	db 57, FIRE_BLAST
 	db 61, SUNNY_DAY
 	db 0 ; no more level-up moves
 
@@ -4076,15 +4084,19 @@ SuicuneEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GUST
 	db 1, LEER
+	db 1, ROAR
+	db 1, MIST
 	db 8, BITE
+	db 15, TRI_ATTACK
 	db 22, BUBBLEBEAM
 	db 29, AURORA_BEAM
-	db 32, ROAR
-	db 36, MIST
+	db 32, SAFEGUARD
+	db 36, SURF
+	db 40, EXTREMESPEED
 	db 43, MIRROR_COAT
 	db 48, AGILITY
 	db 54, CALM_MIND
-	db 61, HYDRO_PUMP
+	db 57, HYDRO_PUMP
 	db 61, RAIN_DANCE
 	db 0 ; no more level-up moves
 

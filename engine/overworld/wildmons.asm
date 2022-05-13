@@ -455,7 +455,7 @@ InitRoamArticuno:
 	ld [wRoamMon1Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon1Level], a
 
 ; articuno starting map
@@ -478,7 +478,7 @@ InitRoamZapdos:
 	ld [wRoamMon2Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon2Level], a
 
 ; zapdos starting map
@@ -501,7 +501,7 @@ InitRoamMoltres:
 	ld [wRoamMon3Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon3Level], a
 
 ; moltres starting map
