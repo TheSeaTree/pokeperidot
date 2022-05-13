@@ -403,21 +403,30 @@ Options_Frame:
 .RightPressed:
 	ld a, [hl]
 	inc a
+	cp $a
+	jr nz, .Save
+	xor a
 	jr .Save
 
 .LeftPressed:
 	ld a, [hl]
 	dec a
+	cp $ff
+	jr nz, .Save
+	ld a, $9
 
 .Save:
-	maskbits NUM_FRAMES
-	ld [hl], a
+;	maskbits NUM_FRAMES
+	ld [hl], a	
 UpdateFrame:
 	ld a, [wTextBoxFrame]
 	hlcoord 17, 15 ; where on the screen the number is drawn
 	add "1"
 	ld [hl], a
-	call LoadFontsExtra
+	hlcoord 16, 15 ; where on the screen the number is drawn
+	add $0a
+	ld [hl], a
+	call LoadFontsOptionsExtra
 	and a
 	ret
 

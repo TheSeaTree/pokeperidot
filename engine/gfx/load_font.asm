@@ -51,6 +51,13 @@ _LoadFontsBattleExtra::
 	call Get2bpp_2
 	jr LoadFrame
 
+_LoadFontsOptionsExtra::
+	ld de, FontOptionsExtra
+	ld hl, vTiles2 tile $00
+	lb bc, BANK(FontOptionsExtra), 11
+	call Get1bpp_2
+	jr LoadFrame
+
 LoadFrame:
 	ld a, [wTextBoxFrame]
 	maskbits NUM_FRAMES
