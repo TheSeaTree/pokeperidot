@@ -150,9 +150,11 @@ CutFunction:
 	cp MUSIC_GYM
 	jr z, .nothingtocut
 
-	ld de, ENGINE_MYSTICBADGE
-	call CheckBadge
-	jr c, .nocutbadge
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
@@ -358,7 +360,11 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	jr c, .asm_c956
+	ld a, HM_SURF
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
@@ -523,6 +529,12 @@ TrySurfOW::
 ; Check tile permissions.
 	call CheckDirection
 	jr c, .quit
+
+	ld a, HM_SURF
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
 
 	ld d, SURF
 	call CheckPartyMove
