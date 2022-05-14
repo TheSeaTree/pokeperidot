@@ -26,7 +26,7 @@ BlackthornEnyaScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_ENYA
 	opentext
-	writetext GetBadgeText
+	writetext GetWyrmBadgeText
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_RISINGBADGE
@@ -167,22 +167,27 @@ EnyaLossText:
 	line "the WYRMBADGE."
 	done
 	
-GetBadgeText:
+GetWyrmBadgeText:
 	text "<PLAYER> received"
 	line "WYRMBADGE."
 	done
 	
 EnyaExplainBadgeText:
-	text "I know now I can"
+	text "With that BADGE,"
+	line "#MON below Lv70"
+	cont "will treat your"
+	cont "word as law."
+
+	para "I know now I can"
 	line "trust you with my"
 	cont "TM, after your"
 	cont "display of skill."
 	done
-	
+
 EnyaExplainTMText:
 	text "That TM will teach"
 	line "FLAMETHROWER."
-	
+
 	para "A breath move of"
 	line "extreme power. Its"
 	cont "heat may even"
@@ -190,20 +195,22 @@ EnyaExplainTMText:
 	cont "touches with a"
 	cont "serious BURN."
 	done
-	
+
 EnyaAfterText:
 	text "With my badge, you"
 	line "now have enough to"
 	cont "travel to the"
 	cont "#MON LEAGUE."
-	
+
 	para "Visit the port on"
 	line "RUGOSA COAST, and"
 	cont "best of luck to"
 	cont "you."
-	
-	para "This battle will"
-	line "not be our last."
+
+	para "Train well,"
+	line "<PLAYER>, for this"
+	line "battle will not be"
+	cont "our last."
 	done
 
 EnyaRematchText:

@@ -637,6 +637,11 @@ HitConfusion:
 BattleCommand_CheckObedience:
 ; checkobedience
 
+	; Everything obeys in postgame
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_HALL_OF_FAME_F, [hl]
+	ret nz
+
 	; Enemy can't disobey
 	ldh a, [hBattleTurn]
 	and a
@@ -665,43 +670,56 @@ BattleCommand_CheckObedience:
 
 	; If the monster's id doesn't match the player's,
 	; some conditions need to be met.
-	ld a, MON_ID
-	call BattlePartyAttr
+;	ld a, MON_ID
+;	call BattlePartyAttr
 
-	ld a, [wPlayerID]
-	cp [hl]
-	jr nz, .obeylevel
-	inc hl
-	ld a, [wPlayerID + 1]
-	cp [hl]
-	ret z
+;	ld a, [wPlayerID]
+;	cp [hl]
+;	jr nz, .obeylevel
+;	inc hl
+;	ld a, [wPlayerID + 1]
+;	cp [hl]
+;	ret z
 
 .obeylevel
+
+	ld a, MAX_LEVEL + 1
+	jr nz, .getlevel
 	; The maximum obedience level is constrained by owned badges:
 	ld hl, wJohtoBadges
 
-	; risingbadge
+	; Enya
 	bit RISINGBADGE, [hl]
-	ld a, MAX_LEVEL + 1
-	jr nz, .getlevel
-
-	; stormbadge
-	bit STORMBADGE, [hl]
 	ld a, 70
 	jr nz, .getlevel
 
-	; fogbadge
-	bit FOGBADGE, [hl]
+	; Alan
+	bit GLACIERBADGE, [hl]
+	ld a, 60
+	jr nz, .getlevel
+	
+	; Joel
+	bit STORMBADGE, [hl]
 	ld a, 50
 	jr nz, .getlevel
 
-	; hivebadge
+	; Celeste
+	bit PLAINBADGE, [hl]
+	ld a, 40
+	jr nz, .getlevel
+
+	; Cecil
 	bit HIVEBADGE, [hl]
 	ld a, 30
 	jr nz, .getlevel
 
+	; Murphy
+	bit ZEPHYRBADGE, [hl]
+	ld a, 30
+	jr nz, .getlevel
+
 	; no badges
-	ld a, 10
+	ld a, 20
 
 .getlevel
 ; c = obedience level

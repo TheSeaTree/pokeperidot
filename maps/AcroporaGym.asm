@@ -183,7 +183,14 @@ Text_ReceivedTerraBadge:
 	done
 	
 TerraBadgeText:
-	text "I must also reward"
+	text "That BADGE will"
+	line "let you use"
+	cont "#MON up to Lv60"
+	cont "without them"
+	cont "second guessing"
+	cont "your decisions."
+
+	para "I must also reward"
 	line "you with my sig-"
 	cont "nature move."
 	

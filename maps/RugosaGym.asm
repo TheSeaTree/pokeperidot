@@ -1292,7 +1292,11 @@ PlayerReceivedCogBadgeText
 	done
 
 CogBadgeText:
-	text "Defeating me in"
+	text "#MON up to Lv50"
+	line "will obey you with"
+	cont "the COGBADGE."
+	
+	para "Defeating me in"
 	line "battle has earned"
 	cont "you my signature"
 	cont "TM as well."

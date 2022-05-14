@@ -79,6 +79,10 @@ RidgeGymB1CecilScript:
 	waitsfx
 	setflag ENGINE_WAVEBADGE
 	checkcode VAR_BADGES
+	checkflag ENGINE_FISTBADGE
+	iftrue .FightDone
+	writetext CecilWaveBadgeFirstText
+	waitbutton
 .FightDone:
 	checkevent EVENT_GOT_TM_WHIRLPOOL
 	iftrue .SpeechAfterTM
@@ -302,6 +306,12 @@ CecilWinLossText:
 ReceivedWaveBadgeText:
 	text "<PLAYER> received"
 	line "WAVEBADGE."
+	done
+
+CecilWaveBadgeFirstText:
+	text "With my BADGE,"
+	line "#MON up to Lv30"
+	cont "will obey you."
 	done
 
 CecilWaveBadgeText:

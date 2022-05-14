@@ -270,9 +270,10 @@ GetMysticBadgeText:
 
 CelesteExplainBadgeText:
 	text "The MYSTICBADGE"
-	line "will allow use of"
-	cont "the move CUT while"
-	cont "out of battle."
+	line "will allow #MON"
+	cont "up to Lv40 to"
+	cont "follow your lead"
+	cont "without question."
 
 	para "Here, you have"
 	line "earned this as"

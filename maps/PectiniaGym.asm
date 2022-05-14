@@ -271,7 +271,12 @@ Text_ReceivedFistBadge:
 	done
 
 MurphyText_FistBadgeSpeech:
-	text "Of course, you do"
+	text "With that badge,"
+	line "any #MON up to"
+	cont "Lv30 will obey"
+	cont "your orders."
+	
+	para "Of course, you do"
 	line "not only win a"
 	cont "BADGE from defeat-"
 	cont "ing a GYM LEADER."
