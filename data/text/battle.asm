@@ -169,6 +169,14 @@ BattleText_TargetRecoveredWithItem:
 	text "."
 	prompt
 
+BattleText_TargetIsHurtByItem:
+	text "<USER>"
+	line "is hurt by"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
+
 BattleText_UserRecoveredPPUsing:
 	text "<USER>"
 	line "recovered PP using"

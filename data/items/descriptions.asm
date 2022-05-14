@@ -98,7 +98,7 @@ ItemDescriptions:
 	dw TwistedSpoonDesc
 	dw SpinelBoxDesc
 	dw BlackbeltDesc
-	dw BlkApricornDesc
+	dw BlackSludgeDesc
 	dw HelixFossilDesc
 	dw PnkApricornDesc
 	dw BlackGlassesDesc
@@ -593,8 +593,8 @@ MintBerryDesc:
 	next "for sleep. (HOLD)@"
 
 RubyBoxDesc:
-	db   "A box covered in"
-	next "red gemstones.@"
+	db   "A necklace adorned"
+	next "in red gemstones.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"
@@ -609,8 +609,8 @@ SilverPowderDesc:
 	next "moves. (HOLD)@"
 
 SapphireBoxDesc:
-	db   "A box covered in"
-	next "blue gemstones.@"
+	db   "A pin adorned with"
+	next "a blue gemstone.@"
 
 DampRockDesc:
 	db	 "Summons a"
@@ -621,11 +621,11 @@ AmuletCoinDesc:
 	next "earnings. (HOLD)@"
 
 AmethystBoxDesc:
-	db   "A box covered in"
-	next "violet gemstones.@"
+	db   "A string of violet"
+	next "gemstones.@"
 
 EmeraldBoxDesc:
-	db   "A box covered in"
+	db   "A ring adorned in"
 	next "green gemstones.@"
 
 CleanseTagDesc:
@@ -641,16 +641,16 @@ TwistedSpoonDesc:
 	next "type moves. (HOLD)@"
 
 SpinelBoxDesc:
-	db   "A box covered in"
+	db   "A chain adorned in"
 	next "pink gemstones.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (HOLD)@"
 
-BlkApricornDesc:
-	db   "A black APRICORN."
-	next "@"
+BlackSludgeDesc:
+	db   "Heals POISON-type."
+	next "Hurts all others.@"
 
 HelixFossilDesc:
 	db   "The remains of an"

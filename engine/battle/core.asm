@@ -289,6 +289,9 @@ HandleBetweenTurnEffects:
 	call HandlePerishSong
 	call CheckFaint_PlayerThenEnemy
 	ret c
+	call HandleLeftovers
+	call CheckFaint_EnemyThenPlayer
+	ret c
 	jr .NoMoreFaintingConditions
 
 .CheckEnemyFirst:
@@ -306,9 +309,11 @@ HandleBetweenTurnEffects:
 	call HandlePerishSong
 	call CheckFaint_EnemyThenPlayer
 	ret c
+	call HandleLeftovers
+	call CheckFaint_EnemyThenPlayer
+	ret c
 
 .NoMoreFaintingConditions:
-	call HandleLeftovers
 	call HandleMysteryberry
 	call HandleDefrost
 	call HandleSafeguard
@@ -1458,8 +1463,16 @@ HandleLeftovers:
 	call GetItemName
 	ld a, b
 	cp HELD_LEFTOVERS
+	jp z, .leftovers
+	cp HELD_BLACK_SLUDGE
 	ret nz
 
+	call SwitchTurnCore
+	farcall CheckIfTargetIsPoisonType
+	jr nz, .subtract
+	call SwitchTurnCore
+
+.leftovers
 	ld hl, wBattleMonHP
 	ldh a, [hBattleTurn]
 	and a
@@ -1484,6 +1497,13 @@ HandleLeftovers:
 	call SwitchTurnCore
 	call RestoreHP
 	ld hl, BattleText_TargetRecoveredWithItem
+	jp StdBattleTextBox
+
+.subtract
+	call SwitchTurnCore
+	call GetEighthMaxHP
+	call SubtractHPFromUser
+	ld hl, BattleText_TargetIsHurtByItem
 	jp StdBattleTextBox
 
 HandleMysteryberry:

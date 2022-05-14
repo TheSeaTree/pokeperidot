@@ -90,21 +90,21 @@
 	const KINGS_ROCK   ; 52
 	const BITTER_BERRY ; 53
 	const MINT_BERRY   ; 54
-	const RUBY_BOX	   ; 55
+	const RUBY_PENDANT ; 55
 	const TINYMUSHROOM ; 56
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
-	const SAPPHIRE_BOX ; 59
+	const SAPPHIRE_PIN ; 59
 	const DAMP_CHARM   ; 5a
 	const AMULET_COIN  ; 5b
-	const AMETHYST_BOX ; 5c
-	const EMERALD_BOX  ; 5d
+	const QUARTZ_BEADS ; 5c
+	const EMERALD_RING ; 5d
 	const CLEANSE_TAG  ; 5e
 	const MYSTIC_WATER ; 5f
 	const TWISTEDSPOON ; 60
-	const SPINEL_BOX   ; 61
+	const SPINEL_CHAIN ; 61
 	const BLACKBELT    ; 62
-	const BLK_APRICORN ; 63
+	const BLACK_SLUDGE ; 63
 	const HELIX_FOSSIL ; 64
 	const PNK_APRICORN ; 65
 	const BLACKGLASSES ; 66

@@ -63,8 +63,8 @@ FactoryBasementHiddenHPUp:
 FactoryBasementHiddenRareCandy:
 	hiddenitem RARE_CANDY, EVENT_FACTORY_HIDDEN_RARE_CANDY
 
-FactoryBasementHiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_FACTORY_HIDDEN_FULL_RESTORE
+FactoryBasementHiddenBlackSludge:
+	hiddenitem BLACK_SLUDGE, EVENT_FACTORY_HIDDEN_BLACK_SLUDGE
 
 KeySlotText:
 	text "It looks like a"
@@ -102,7 +102,7 @@ FactoryB1_MapEvents:
 	bg_event 10,  1, BGEVENT_ITEM, FactoryBasementHiddenFastBall
 	bg_event  3,  5, BGEVENT_ITEM, FactoryBasementHiddenHPUp
 	bg_event 12, 15, BGEVENT_ITEM, FactoryBasementHiddenRareCandy
-	bg_event 13,  8, BGEVENT_ITEM, FactoryBasementHiddenFullRestore
+	bg_event 13,  8, BGEVENT_ITEM, FactoryBasementHiddenBlackSludge
 
 	db 1 ; object events
 	object_event  9,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryB1Lemonade, EVENT_FACTORY_B1_LEMONADE
