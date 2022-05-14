@@ -226,6 +226,7 @@ PavonaGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
+	db SPRITE_VARIABLE_MOM
 	db SPRITE_SUICUNE
 	db SPRITE_BUSH
 	db SPRITE_POKE_BALL

@@ -3,6 +3,7 @@
 	const PLAYERSHOUSE1F_MOM2
 	const PLAYERSHOUSE1F_MOM3
 	const PLAYERSHOUSE1F_MOM4
+	const PLAYERSHOUSE1F_MOM5
 	const PLAYERSHOUSE1F_GRANNY
 	const PLAYERSHOUSE1F_MAPLE
 
@@ -21,16 +22,74 @@ PlayersHouse1F_MapScripts:
 	end
 
 .PostGameScene:
-	; Event involving Prof. Maple upgrading the player's trainer card.
+	; Mom & Maple are sitting at the table, facing each other.
+	; "MOM: Oh, <PLAYER>! You're finally awake."
+	; "PROF. MAPLE wanted to speak with you."
+	; Maple congratulates the player on becoming champion. Apologizes for not being there in person.
+	; Mentions the Battle Subway.
+	; Upgrades your trainer card do display BP.
+	; "We've made some expansions to the LAB as well."
+	; "I need to be getting back there now for the finishing touches."
+	; "Stop by sometime and see what my AIDE and I have been working on."
+
+	; Mom sitting at table alone.
+	; Exclamation mark over Mom's head.
+	; "MOM: There's my little CHAMPION!"
+	; "You looked so exhausted after coming home that I wanted to just let you sleep."
+	; Gets cut off mid-sentence by Maple stopping by.
+	
+	turnobject PLAYERSHOUSE1F_MOM1, UP
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MOM1, 15
+
+	opentext
+	writetext PostgameMomNoticePlayerText
+	waitbutton
+	closetext
+
 	applymovement PLAYER, Postgame_PlayerApproachMom
+	faceobject PLAYER, PLAYERSHOUSE1F_MOM1
+	opentext
+	writetext PostgameMomCongratulatePlayerText
+	waitbutton
+	closetext
+
 	moveobject PLAYERSHOUSE1F_MAPLE, 6, 7
 	appear PLAYERSHOUSE1F_MAPLE
+
+	opentext
+	writetext PostgameMapleInterruptText
+	waitbutton
+	writetext PostgameMomGreetMapleText
+	waitbutton
+	writetext PostgameMapleGiftText
+	waitbutton
+	closetext
+
 	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleApproachPlayer
 	turnobject PLAYER, DOWN
+
+	opentext
+	writetext PostgameMapleUpgradeTrainerCard
+	waitbutton
+	closetext	
 	setflag ENGINE_HAVE_BATTLE_PASS
+	opentext
+	writetext PostgameMapleAfterTrainerCardUpgrade
+	waitbutton
+	closetext
+	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleStepAway
+	showemote EMOTE_SHOCK, PLAYERSHOUSE1F_MAPLE, 15
+	opentext
+	writetext PostgameMapleExplainSimulation
+	waitbutton
+	closetext
 	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleLeaveHouse
 	disappear PLAYERSHOUSE1F_MAPLE
+; One last line with Mom?
 	setscene SCENE_FINISHED
+	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	setevent EVENT_PLAYERS_HOUSE_MOM_1
+	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	end
 
 MeetMomScript:
@@ -57,7 +116,7 @@ MeetMomScript:
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	end
-	
+
 .Directions
 	writetext MaplesLabDirections
 	waitbutton
@@ -70,11 +129,26 @@ MomScript:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	checkscene
 	iffalse MeetMomScript ; SCENE_DEFAULT
+.Outside
 	opentext
 	checkevent EVENT_SHOWED_MOM_ALL_BADGES
 	iftrue .AfterShownBadges
 	checkflag ENGINE_RISINGBADGE
 	iftrue .GotAllBadges
+	checkflag ENGINE_GLACIERBADGE
+	iftrue .GotTerraBadge
+	checkflag ENGINE_COGBADGE
+	iftrue .GotCogBadge
+	checkflag ENGINE_ROOTBADGE
+	iftrue .GotRootBadge
+	checkflag ENGINE_SKULLBADGE
+	iftrue .GotSkullBadge
+	checkflag ENGINE_MYSTICBADGE
+	iftrue .GotMysticBadge
+	checkflag ENGINE_WAVEBADGE
+	iftrue .GotWaveBadge
+	checkflag ENGINE_FISTBADGE
+	iftrue .GotFistBadge
 	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	iftrue .GotAPokemon
 	writetext HurryUpMapleIsWaitingText
@@ -96,8 +170,33 @@ MomScript:
 .GotAPokemon:
 	writetext SoWhatWasProfMaplesErrandText
 	waitbutton
+	checkevent EVENT_GOT_CHARMANDER_FROM_MAPLE
+	iftrue .CheckCharmander
+	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
+	iftrue .CheckSquirtle
+	writebyte BULBASAUR
+.CheckForStarter
+	special FindPartyMonThatSpecies
+	iffalse .DontHaveStarter
+	showemote EMOTE_HEART, LAST_TALKED, 15
+	writetext MomHaveStarterText
+	waitbutton
 	closetext
 	end
+
+.DontHaveStarter
+	writetext MomDontHaveStarterText
+	waitbutton
+	closetext
+	end
+
+.CheckCharmander:
+	writebyte CHARMANDER
+	jump .CheckForStarter
+
+.CheckSquirtle:
+	writebyte SQUIRTLE
+	jump .CheckForStarter
 
 .GotAllBadges:
 	writetext MomAllBadgesText
@@ -112,6 +211,55 @@ MomScript:
 	waitbutton
 	setevent EVENT_SHOWED_MOM_ALL_BADGES
 	writetext MomPokemonLeagueQualificationText
+	waitbutton
+	closetext
+	end
+
+.GotTerraBadge:
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	writetext MomTerraBadgeBoyText
+	jump .ContinueTerraBadge
+	iftrue .Girl
+	writetext MomTerraBadgeGirlText
+.ContinueTerraBadge
+	waitbutton
+	writetext MomTerraBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotCogBadge:
+	writetext MomCogBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotRootBadge:
+	writetext MomRootBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotSkullBadge:
+	writetext MomSkullBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotMysticBadge:
+	writetext MomMysticBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotWaveBadge:
+	writetext MomWaveBadgeText
+	waitbutton
+	closetext
+	end
+
+.GotFistBadge:
+	writetext MomFistBadgeText
 	waitbutton
 	closetext
 	end
@@ -279,11 +427,15 @@ Postgame_MapleApproachPlayer:
 	step UP
 	step_resume
 
-Postgame_MapleLeaveHouse:
+Postgame_MapleStepAway:
 	step DOWN
 	step DOWN
 	step LEFT
 	step DOWN
+	step_resume
+
+Postgame_MapleLeaveHouse:
+	turn_step DOWN
 	step_resume
 
 BoyText:
@@ -337,12 +489,167 @@ SoWhatWasProfMaplesErrandText:
 	line "#MON already?"
 	
 	para "Let me see!"
-	
-	para "Aw! It's adorable!"
+	done
+
+MomHaveStarterText:
+	text "Aw! It's adorable!"
 
 	para "It's good to see"
-	line "you inherited"
-	cont "my taste."
+	line "you inherited your"
+	cont "mother's taste."
+	done
+
+MomDontHaveStarterText:
+	text "Huh? This isn't one"
+	line "of the #MON"
+	cont "PROF.MAPLE had to"
+	cont "choose from."
+
+	para "But it's still"
+	line "pretty cute."
+	done
+
+MomFistBadgeText:
+	text "Back so soon," 
+	line "<PLAYER>?"
+
+	para "Oh my! You already"
+	line "have a GYM BADGE?"
+
+	para "That's amazing!"
+	
+	para "You're on your"
+	line "first step toward"
+	cont "greatness, baby!"
+	done
+
+MomWaveBadgeText:
+	text "I always love when"
+	line "you come back home"
+	cont "to visit, <PLAYER>."
+
+	para "I see you have the"
+	line "BADGE from RIDGE"
+	cont "VILLAGE now."
+
+	para "Did you bring your"
+	line "mother back some"
+	cont "seashells?"
+
+	para "I'm only kidding!"
+
+	para "You're going to"
+	line "need all the PACK"
+	cont "space you can get!"
+	done
+
+MomMysticBadgeText:
+	text "Welcome home,"
+	line "<PLAYER>! Have you"
+	cont "been up to any-"
+	cont "thing exciting?"
+
+	para "I've been seeing a"
+	line "lot of NATU lately"
+	cont "while tending to"
+	cont "the garden."
+
+	para "I'm sure it's"
+	line "nothing compared"
+	cont "to what you have"
+	cont "been doing, but"
+	cont "those little"
+	cont "#MON always"
+	cont "make me smile!"
+	done
+
+MomSkullBadgeText:
+	text "Hi honey! Your"
+	line "journey has been"
+	cont "well, I hope!"
+	
+	para "You already won"
+	line "the BADGE from"
+	cont "HEPATICA TOWN?"
+
+	para "That town is very"
+	line "cold, isn't it?"
+
+	para "I wish you had"
+	line "told me you were"
+	cont "going! I would"
+	cont "have gotten you"
+	cont "a pair of mittens!"
+	done
+
+MomRootBadgeText:
+	text "Hi <PLAYER>!"
+
+	para "You'll never"
+	line "believe what I saw"
+	cont "the other day!"
+
+	para "While I was out"
+	line "in the garden, a"
+	cont "POLIWHIRL hopped"
+	cont "out of the pond"
+	cont "and helped water"
+	cont "the flowers!"
+
+	para "It was adorable!"
+	line "Can you catch a"
+	cont "POLIWHIRL for me?"
+	done
+
+MomCogBadgeText:
+	text "<PLAYER>, honey!"
+	line "How are you?"
+
+	para "You just won the"
+	line "BADGE from RUGOSA"
+	cont "CITY? That's great!"
+
+	para "Is PROF. MAPLE's"
+	line "brother still the"
+	cont "leader there?"
+
+	para "I used to go to"
+	line "school with him."
+	done
+
+MomTerraBadgeBoyText:
+	text "Welcome home! How"
+	line "is my little man's"
+	cont "journey going?"
+	done
+
+MomTerraBadgeGirlText:
+	text "Welcome home! How"
+	line "is my little girl's"
+	cont "journey going?"
+	done
+
+MomTerraBadgeText:
+	text "You have 7 BADGEs?"
+
+	para "Wow! You got those"
+	line "fast!"
+
+	para "Where is your next"
+	line "one?"
+
+	para "…………………………"
+
+	para "ORCHID CITY?"
+
+	para "Remember to drink"
+	line "lots of water."
+	cont "ORCHID CITY is a"
+	cont "very warm place!"
+
+	para "Be careful, babe!"
+	line "I know you can win"
+	cont "that city's badge!"
 	done
 
 MomAllBadgesText:
@@ -509,7 +816,7 @@ NeighborGivesPotion3:
 	para "I was but a little"
 	line "girl at the time…"
 	done
-	
+
 NeighborGivesPotion4:
 	text "I shouldn't waste"
 	line "your time with my"
@@ -522,6 +829,106 @@ NeighborGivesPotion4:
 	para "Good luck on"
 	line "journey! Come"
 	cont "visit any time."
+	done
+
+PostgameMomNoticePlayerText:
+	text "MOM: There's my"
+	line "little CHAMPION!"
+	done
+
+PostgameMomCongratulatePlayerText:
+	text "I didn't want to"
+	line "bother you when"
+	cont "you got home, you"
+	cont "seemed exhausted!"
+
+	para "I'm so proud of my"
+	line "baby for becoming"
+	cont "the CHAMPION!"
+	done
+
+PostgameMapleInterruptText:
+	text "MAPLE: Sorry to"
+	line "intrude."
+
+	para "I hope I'm not"
+	line "interrupting any-"
+	cont "thing."
+	done
+
+PostgameMomGreetMapleText:
+	text "MOM: Oh, PROF."
+	line "MAPLE. Welcome!"
+
+	para "I was just congra-"
+	line "tulating <PLAYER>"
+	cont "for winning at the"
+	cont "#MON LEAGUE."
+	done
+
+PostgameMapleGiftText:
+	text "MAPLE: You must be"
+	line "quite proud of"
+	cont "your child."
+
+	para "I wish I could"
+	line "have sees the battle"
+	cont "in person."
+
+	para "I actually came to"
+	line "visit because I"
+	cont "have something to"
+	cont "tell <PLAYER>."
+	done
+
+PostgameMapleUpgradeTrainerCard:
+	text "The BATTLE SUBWAY"
+	line "in PECTINIA CITY"
+	cont "has opened up!"
+
+	para "It's a place where"
+	line "you can battle all"
+	cont "kinds of trainers."
+
+	para "Before you go over"
+	line "there, let me see"
+	cont "your TRAINER CARD"
+	cont "for a second…"
+	done
+
+PostgameMapleAfterTrainerCardUpgrade:
+	text "There! Now your"
+	line "TRAINER CARD will"
+	cont "keep track of the"
+	cont "BP you've earned."
+
+	para "BATTLE POINTS, or"
+	line "BP, is what the"
+	cont "BATTLE SUBWAY"
+	cont "gives out for"
+	cont "victories."
+
+	para "You can trade in"
+	line "your BP for all"
+	cont "kinds of items."
+	done
+
+PostgameMapleExplainSimulation:
+	text "Oh! I had nearly"
+	line "forgotten!"
+
+	para "My AIDE and I have"
+	line "been busy making"
+	cont "an expansion to"
+	cont "the LAB."
+
+	para "I need to get back"
+	line "there to make some"
+	cont "finishing touches."
+
+	para "You should stop by"
+	line "and see what we've"
+	cont "been up to!"
 	done
 
 StoveText:
@@ -575,10 +982,11 @@ PlayersHouse1F_MapEvents:
 	bg_event  2,  1, BGEVENT_READ, FridgeScript
 	bg_event  4,  1, BGEVENT_READ, TVScript
 
-	db 6 ; object events
-	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  3, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_REDS_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	db 7 ; object events
+	object_event  7,  3, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_GOT_A_POKEMON_FROM_MAPLE
+	object_event  7,  3, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  2,  2, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  7,  3, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  0,  2, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR
 	object_event -4, -4, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

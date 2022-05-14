@@ -3,14 +3,16 @@
 	const ELKHORNTOWN_FISHER1
 	const ELKHORNTOWN_FISHER2
 	const ELKHORNTOWN_BUG_CATCHER
+	const ELKHORNTOWN_MOM
 
 ElkhornTown_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene0 ; SCENE_DEFAULT
 	scene_script .DummyScene1 ; SCENE_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
+	callback MAPCALLBACK_OBJECTS, .HideMom
 
 .DummyScene0:
 	end
@@ -21,6 +23,15 @@ ElkhornTown_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_ELKHORN
 	clearevent EVENT_FIRST_TIME_BANKING_WITH_MOM
+	return
+
+.HideMom:
+	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	iffalse .NoAppear
+	return
+
+.NoAppear:
+	moveobject ELKHORNTOWN_MOM, -4, -4
 	return
 
 ElkhornTownTeacherScript:
@@ -38,7 +49,11 @@ ElkhornTownTeacherScript:
 	waitbutton
 	closetext
 	end
-	
+
+MomScript_Outside:
+	faceplayer
+	jump MomScript.Outside
+
 ElkhornTownYoungsterScript:
 	jumptextfaceplayer Text_BrothersAreJerks
 	
@@ -54,8 +69,8 @@ ElkhornTownSign:
 ElkhornTownPlayersHouseSign:
 	jumptext ElkhornTownPlayersHouseSignText
 
-ElkhornTownElmsHouseSign:
-	jumptext ElkhornTownElmsHouseSignText
+ElkhornTownMomsGarden:
+	jumptext ElkhornTownMomsGardenText
 
 Movement_SilverPushesYouAway_NBT:
 	turn_head UP
@@ -132,8 +147,13 @@ ElkhornTownPlayersHouseSignText:
 	text "<PLAYER>'s House"
 	done
 
-ElkhornTownElmsHouseSignText:
-	text "ELM'S HOUSE"
+ElkhornTownMomsGardenText:
+	text "It's the garden"
+	line "that MOM tends to"
+	cont "in the morning."
+
+	para "The flowers look"
+	line "so lively!"
 	done
 
 ElkhornTown_MapEvents:
@@ -149,12 +169,16 @@ ElkhornTown_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 5 ; bg events
 	bg_event 10, 12, BGEVENT_READ, ElkhornTownSign
 	bg_event 15, 11, BGEVENT_UP, ElkhornTownPlayersHouseSign
+	bg_event 20, 11, BGEVENT_READ, ElkhornTownMomsGarden
+	bg_event 21, 11, BGEVENT_READ, ElkhornTownMomsGarden
+	bg_event 22, 11, BGEVENT_READ, ElkhornTownMomsGarden
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  9,  9, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ElkhornTownTeacherScript, -1
 	object_event  7, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElkhornTownRightNerdScript, EVENT_MOVED_NERDS
 	object_event  6, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ElkhornTownLeftNerdScript, EVENT_MOVED_NERDS
 	object_event  4, 15, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ElkhornTownYoungsterScript, -1
+	object_event 21, 12, SPRITE_VARIABLE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript_Outside, -1

@@ -198,3 +198,5 @@
 	tilecoll WALL, WALL, WARP_PANEL, WALL ; c5
 	tilecoll BUOY, WATER, BUOY, WATER ; c6
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; c7
+	tilecoll WALL, WALL, WALL, WALL ; c8
+	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; c9

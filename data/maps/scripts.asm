@@ -144,8 +144,6 @@ SECTION "Map Scripts 9", ROMX
 
 INCLUDE "maps/CoastalLab.asm"
 INCLUDE "maps/RugosaPort.asm"
-INCLUDE "maps/PlayersHouse1F.asm"
-INCLUDE "maps/PlayersHouse2F.asm"
 INCLUDE "maps/EmilysHouse1F.asm"
 INCLUDE "maps/EmilysHouse2F.asm"
 INCLUDE "maps/PlayersNeighborsHouse.asm"
@@ -231,6 +229,9 @@ INCLUDE "maps/UnownChamberHN.asm"
 INCLUDE "maps/UnownChamberOU.asm"
 INCLUDE "maps/UnownChamberVZ.asm"
 INCLUDE "maps/PokemonLeagueCafe.asm"
+INCLUDE "maps/PlayersHouse1F.asm"
+INCLUDE "maps/PlayersHouse2F.asm"
+INCLUDE "maps/ElkhornTown.asm"
 
 
 SECTION "Map Scripts 15", ROMX
@@ -381,7 +382,6 @@ INCLUDE "maps/Route21StaghornGate.asm"
 
 SECTION "Map Scripts 23", ROMX
 
-INCLUDE "maps/ElkhornTown.asm"
 INCLUDE "maps/RidgeVillage.asm"
 INCLUDE "maps/RugosaCoast.asm"
 INCLUDE "maps/SeaRoute1.asm"
