@@ -235,6 +235,7 @@ ParasEggMoves:
 	db LEECH_SEED
 	db CRABHAMMER
 	db BRICK_BREAK
+	db MOONLIGHT
 	db -1 ; end
 
 VenonatEggMoves:
@@ -322,6 +323,7 @@ MachopEggMoves:
 	db METRONOME
 	db STONE_EDGE
 	db SCARY_FACE
+	db FALSE_SWIPE
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -338,6 +340,7 @@ TentacoolEggMoves:
 	db BUBBLE
 	db DESTINY_BOND
 	db ACID_ARMOR
+	db CONFUSE_RAY
 	db -1 ; end
 
 GeodudeEggMoves:
@@ -345,6 +348,7 @@ GeodudeEggMoves:
 	db COUNTER
 	db SCREECH
 	db BRICK_BREAK
+	db CROSS_CHOP
 	db -1 ; end
 
 PonytaEggMoves:
@@ -459,6 +463,7 @@ DrowzeeEggMoves:
 	db METRONOME
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db MIND_READER
 	db -1 ; end
 
 KrabbyEggMoves:
@@ -596,6 +601,7 @@ MrMimeEggMoves:
 	db METRONOME
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db MIND_READER
 	db -1 ; end
 
 ScytherEggMoves:
@@ -922,6 +928,7 @@ WooperEggMoves:
 	db HYDRO_PUMP
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db SEISMIC_TOSS
 	db -1 ; end
 
 MurkrowEggMoves:

@@ -222,6 +222,7 @@ ButterfreeEvosAttacks:
 	db 35, SIGNAL_BEAM
 	db 40, U_TURN
 	db 43, RAZOR_WIND
+	db 50, HURRICANE
 	db 0 ; no more level-up moves
 
 WeedleEvosAttacks:
@@ -241,18 +242,21 @@ KakunaEvosAttacks:
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, FURY_ATTACK
+	db 10, WING_ATTACK
 	db 11, FURY_ATTACK
 	db 14, RAGE
 	db 17, PURSUIT
-	db 20, FOCUS_ENERGY
-	db 23, SLUDGE
-	db 26, PIN_MISSILE
+	db 20, PIN_MISSILE
+	db 23, TWINEEDLE
+	db 25, BRICK_BREAK
+	db 26, FOCUS_ENERGY
 	db 29, AGILITY
-	db 32, TWINEEDLE
+	db 32, BRICK_BREAK
 	db 35, SLUDGE_BOMB
 	db 38, OUTRAGE
 	db 40, U_TURN
 	db 44, X_SCISSOR
+	db 50, MEGAHORN
 	db 0 ; no more level-up moves
 
 PsyduckEvosAttacks:
@@ -1580,6 +1584,7 @@ HypnoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, HYPNOSIS
+	db 1, MIND_READER
 	db 5, DISABLE
 	db 9, CONFUSION
 	db 13, HEADBUTT
@@ -3238,16 +3243,16 @@ YanmaEvosAttacks:
 	db 14, SONICBOOM
 	db 17, DOUBLE_TEAM
 	db 20, SILVER_WIND
-	db 25, GUST
+	db 25, WING_ATTACK
 	db 28, SUPERSONIC
 	db 30, PURSUIT
 	db 33, ANCIENTPOWER
 	db 35, U_TURN
 	db 38, HYPNOSIS
-	db 43, WING_ATTACK
+	db 43, RAZOR_WIND
 	db 46, SCREECH
 	db 49, SIGNAL_BEAM
-	db 54, RAZOR_WIND
+	db 54, HURRICANE
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
