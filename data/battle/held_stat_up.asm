@@ -5,6 +5,7 @@ HeldStatUpItems:
 	dbw HELD_SP_ATTACK_UP,  BattleCommand_SpecialAttackUp
 	dbw HELD_SP_DEFENSE_UP, BattleCommand_SpecialDefenseUp
 	dbw HELD_ACCURACY_UP,   BattleCommand_AccuracyUp
+	dbw HELD_BERSERK_GENE,  BattleCommand_AttackUp2
 	db -1 ; end
 
 HeldWeatherItems:

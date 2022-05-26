@@ -184,10 +184,10 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
+	call HandleBerserkGene
 	call HandleStatBoostingHeldItems
 	call HandleWeatherItem
 	call HandleLegendaryStatBoost
-	call HandleBerserkGene
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
 
@@ -481,6 +481,10 @@ HandleBerserkGene:
 	ld de, wPartyMon1Item
 	ld a, [wCurBattleMon]
 	ld b, a
+	ld a, [wCurPartySpecies]
+	cp MEWTWO
+	ret z
+;	jp z, .mewtwo
 	jr .go
 
 .enemy
@@ -488,6 +492,11 @@ HandleBerserkGene:
 	ld de, wOTPartyMon1Item
 	ld a, [wCurOTMon]
 	ld b, a
+
+	ld a, [wTempEnemyMonSpecies]
+	cp MEWTWO
+	ret z
+;	jp z, .mewtwo
 	; fallthrough
 
 .go
@@ -539,7 +548,10 @@ HandleBerserkGene:
 	call SwitchTurnCore
 	ld hl, BecameConfusedText
 	jp StdBattleTextBox
-	
+
+.mewtwo
+	ret
+
 HandleLegendaryStatBoost:
 	call SetEnemyTurn
 	ld de, wOTPartyMon1Item
@@ -2804,6 +2816,8 @@ PlayVictoryMusic:
 	ld de, MUSIC_GYM_VICTORY
 	call IsGymLeader
 	jr c, .play_music
+	call IsEliteFour
+	jr c, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
 
 .play_music
@@ -2813,7 +2827,7 @@ PlayVictoryMusic:
 	pop de
 	ret
 
-IsKantoGymLeader:
+IsEliteFour:
 	ld hl, EliteFour
 	jr IsGymLeaderCommon
 
@@ -5407,7 +5421,7 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
-	call IsKantoGymLeader
+	call IsEliteFour
 	jp c, .NoItemsInLeagueBattle
 	
 	call IsGymLeader
