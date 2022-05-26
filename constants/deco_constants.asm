@@ -40,6 +40,7 @@ const_value = 1
 	const THIRSTYPLANT
 	const MYTHIC_POSTER
 	const DIPLOMA_POSTER
+	const CAMO_BED
 
 ; DoDecorationAction2.DecoActions indexes (see engine/overworld/decorations.asm)
 const_value = 1
@@ -137,7 +138,8 @@ __enum__ = 0
 	deco  SHUCKLE_POSTER
 	deco  MYTHIC_POSTER
 	deco  DIPLOMA_POSTER
-	deco  SCYTHER_DOLL
+	deco  CAMO_BED
+	deco  LAPRAS_DOLL
 	deco  SNORLAX_DOLL
 	deco  SUDOWOODO_DOLL
 NUM_NON_TROPHY_DECOS = __enum__

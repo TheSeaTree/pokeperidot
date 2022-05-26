@@ -13,14 +13,18 @@ Raikou:
 	waitsfx
 ;	waitbutton
 	closetext
+	special LegendaryEvent_SetBattleType
 	loadwildmon RAIKOU, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear RAIKOULAIR_RAIKOU
 	setevent EVENT_HIDE_RAIKOU
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_RAIKOU
+.FailedCapture
 	end
-	
+
 RaikouText:
 	text "Rararaiiiiii!"
 	done

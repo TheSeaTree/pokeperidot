@@ -12,14 +12,18 @@ Entei:
 	cry ENTEI
 	waitsfx
 	closetext
+	special LegendaryEvent_SetBattleType
 	loadwildmon ENTEI, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear ENTEILAIR_ENTEI
 	setevent EVENT_HIDE_ENTEI
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_ENTEI
+.FailedCapture
 	end
-	
+
 EnteiText:
 	text "Enteiiiii!"
 	done

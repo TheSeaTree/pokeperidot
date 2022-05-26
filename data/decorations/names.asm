@@ -32,3 +32,4 @@ DecorationNames:
 	db "THIRSTYPLANT@"
 	db "MYTHIC POSTER@"
 	db "DIPLOMA@"
+	db "CAMO@"

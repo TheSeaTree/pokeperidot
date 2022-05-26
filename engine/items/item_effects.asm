@@ -541,12 +541,41 @@ PokeBallEffect:
 
 .skip_pokedex
 	ld a, [wBattleType]
-	cp BATTLETYPE_CELEBI
-	jr nz, .not_celebi
+	cp BATTLETYPE_LEGENDARY
+	jr z, .check_caught_legendary
+	cp BATTLETYPE_FORCEITEM
+	jr nz, .check_articuno
+.check_caught_legendary
 	ld hl, wBattleResult
 	set BATTLERESULT_CAUGHT_CELEBI, [hl]
-.not_celebi
 
+.check_articuno
+	ld a, [wCurPartySpecies]
+	cp ARTICUNO
+	jr nz, .check_zapdos
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_ARTICUNO
+	call EventFlagAction
+	jr .done_legend
+
+.check_zapdos
+	ld a, [wCurPartySpecies]
+	cp ZAPDOS
+	jr nz, .check_moltres
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_ZAPDOS
+	call EventFlagAction
+	jr .done_legend
+
+.check_moltres
+	ld a, [wCurPartySpecies]
+	cp MOLTRES
+	jr nz, .done_legend
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_MOLTRES
+	call EventFlagAction
+
+.done_legend
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr z, .SendToPC

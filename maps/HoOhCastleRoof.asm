@@ -6,7 +6,7 @@ HoOhCastleRoof_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .Morning
-	
+
 .Morning:
 	checktime MORN
 	iffalse .CheckNight
@@ -42,14 +42,18 @@ HoOh:
 	waitsfx
 	waitbutton
 	closetext
-	loadwildmon HO_OH, 50
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	special LegendaryEvent_SetBattleType
+	loadwildmon HO_OH, 70
 	startbattle
 	reloadmapafterbattle
 	disappear HOOHCASTLE_HO_OH
 	setevent EVENT_FOUGHT_HO_OH
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_HO_OH
+.FailedCapture
 	end
-	
+
 HoOhCastleHiddenSacredAsh:
 	hiddenitem SACRED_ASH, EVENT_HO_OH_CASTLE_HIDDEN_SACRED_ASH
 	

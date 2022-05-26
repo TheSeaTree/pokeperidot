@@ -57,10 +57,9 @@ TrainerFirebreatherRubin:
 	waitbutton
 	closetext
 	end
-	
+
 Route20Teacher:
-	writebyte SNORLAX
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_SNORLAX
 	iftrue .CaughtSnorlax
 	jumptextfaceplayer Route20TeacherMissedSnorlaxText
 	
@@ -76,19 +75,30 @@ Route20SnorlaxEvent:
 	writetext UseFluteText
 	yesorno
 	iffalse .noflute
-	closetext
+	writetext PlayerPlayedFluteText
 	playsound SFX_POKEFLUTE
 	waitsfx
-	opentext
+;	closetext
+;	opentext
 	writetext SnorlaxWokeUpText
 	waitbutton
+	cry SNORLAX
+	waitsfx
+	writetext SnorlaxAttackedText
+	waitbutton
 	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	special SnorlaxEvent_SetBattleType
 	loadwildmon SNORLAX, 45
 	startbattle
+	reloadmapafterbattle
 	disappear ROUTE20_SNORLAX
 	setevent EVENT_FOUGHT_SNORLAX
-	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iffalse .NoSnorlax
+	setevent EVENT_CAUGHT_SNORLAX
+	end
+.NoSnorlax
+	jumptext SnorlaxReturnedHomeText
 	end
 .noflute
 	closetext
@@ -130,14 +140,21 @@ SnorlaxWokeUpText:
 	line "#MON was awoken"
 	cont "by the sound of"
 	cont "the # FLUTE!"
-	
-	para "The sleeping"
+	done
+
+SnorlaxAttackedText:
+	text "The sleeping"
 	line "#MON attacked!"
 	done
-	
+
 UseFluteText:
 	text "Try playing the"
 	line "# FLUTE?"
+	done
+
+PlayerPlayedFluteText:
+	text "<PLAYER> played the"
+	line "# FLUTE."
 	done
 
 LadJulesText:
@@ -268,7 +285,7 @@ SnorlaxReturnedHomeText:
 	para "It looked quite"
 	line "grumpy…"
 	done
-	
+
 Route20SignText:
 	text "ROUTE 16"
 	

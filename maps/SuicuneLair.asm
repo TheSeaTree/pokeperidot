@@ -13,14 +13,18 @@ Suicune:
 	waitsfx
 ;	waitbutton
 	closetext
+	special LegendaryEvent_SetBattleType
 	loadwildmon SUICUNE, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
 	startbattle
 	reloadmapafterbattle
 	disappear SUICUNELAIR_SUICUNE
 	setevent EVENT_HIDE_SUICUNE
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_SUICUNE
+.FailedCapture
 	end
-	
+
 SuicuneText:
 	text "Susuiiiiii!"
 	done

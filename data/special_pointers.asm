@@ -198,3 +198,5 @@ SpecialsPointers::
 	add_special BattleSubway_IncreaseCurrentStreak
 	add_special BattleSubway_CompareStreaks
 	add_special BattleSubway_ResetCurrentStreak
+	add_special SnorlaxEvent_SetBattleType
+	add_special LegendaryEvent_SetBattleType

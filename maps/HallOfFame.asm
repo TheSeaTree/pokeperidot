@@ -28,8 +28,10 @@ HallOfFame_MapScripts:
 	scall HallOfFame_Approach
 
 	writetext HallOfFame_JosephRegisterText
+	clearevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	jump .DoRegistration
 .Postgame
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
 	scall HallOfFame_Approach
 
 	writetext HallOfFame_EmilyText
@@ -50,7 +52,6 @@ HallOfFame_MapScripts:
 ;	setevent EVENT_RIVAL_SPROUT_TOWER
 ;	clearevent EVENT_RED_IN_MT_SILVER
 	setevent EVENT_PLAYERS_HOUSE_MOM_2
-	clearevent EVENT_PLAYERS_HOUSE_MOM_1
 	special HealParty
 	halloffame
 	end
@@ -63,60 +64,47 @@ HallOfFame_Approach:
 	opentext
 
 RespawnLegendaries:
-	writebyte RAIKOU
-	special CheckOwnedMon
-	iffalse .CheckSuicune
+	checkevent EVENT_CAUGHT_RAIKOU
+	iftrue .CheckSuicune
 	clearevent EVENT_HIDE_RAIKOU
 .CheckSuicune
-	writebyte SUICUNE
-	special CheckOwnedMon
-	iffalse .CheckEntei
+	checkevent EVENT_CAUGHT_SUICUNE
+	iftrue .CheckEntei
 	clearevent EVENT_HIDE_SUICUNE
 .CheckEntei
-	writebyte ENTEI
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ENTEI
 	iftrue .CheckArticuno
 	clearevent EVENT_HIDE_ENTEI
 .CheckArticuno
-	checkevent EVENT_ROAMING_BIRDS
-	iffalse .CheckHoOh
-	writebyte ARTICUNO
-	special CheckOwnedMon
-	iffalse .CheckZapdos
+	checkevent EVENT_CAUGHT_ARTICUNO
+	iftrue .CheckZapdos
 	special InitRoamArticuno
 .CheckZapdos
-	writebyte ZAPDOS
-	special CheckOwnedMon
-	iffalse .CheckMoltres
+	checkevent EVENT_CAUGHT_ZAPDOS
+	iftrue .CheckMoltres
 	special InitRoamZapdos
 .CheckMoltres
-	writebyte MOLTRES
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MOLTRES
 	iftrue .CheckHoOh
 	special InitRoamMoltres
 .CheckHoOh
-	writebyte HO_OH
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_HO_OH
 	iftrue .CheckLugia
 	clearevent EVENT_FOUGHT_HO_OH
 .CheckLugia
-	writebyte LUGIA
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_LUGIA
 	iftrue .CheckMewtwo
 	clearevent EVENT_FOUGHT_LUGIA
 .CheckMewtwo
-	writebyte MEWTWO
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MEWTWO
 	iftrue .CheckMew
 	clearevent EVENT_FOUGHT_MEWTWO
 .CheckMew
-	writebyte MEW
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MEW
 	iftrue .CheckCelebi
 	clearevent EVENT_FOUGHT_MEW
 .CheckCelebi
-	writebyte CELEBI
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_CELEBI
 	iftrue .Done
 	clearevent EVENT_FOUGHT_CELEBI
 .Done

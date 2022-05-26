@@ -8,19 +8,17 @@ LugiaLair_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .SpawnRealLugia
 
 .SpawnRealLugia:
-	writebyte LUGIA
-	special CheckOwnedMon
+	checkevent EVENT_REGULAR_LUGIA
 	iftrue .end
-	writebyte ARTICUNO
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ARTICUNO
 	iffalse .end
-	writebyte ZAPDOS
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ZAPDOS
 	iffalse .end
-	writebyte MOLTRES
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MOLTRES
 	iffalse .end
 	appear LUGIALAIR_LUGIA
+	setevent EVENT_REGULAR_LUGIA
+	clearevent EVENT_FOUGHT_LUGIA
 .end
 	return
 
@@ -40,15 +38,19 @@ Lugia:
 	writebyte MOLTRES
 	special CheckOwnedMon
 	iffalse .BossLugia
-	loadwildmon LUGIA, 50
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	special LegendaryEvent_SetBattleType
+	loadwildmon LUGIA, 70
 	startbattle
 	reloadmapafterbattle
-	special InitRoamArticuno
-	special InitRoamZapdos
-	special InitRoamMoltres
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_LUGIA
+.FailedCapture
+;	special InitRoamArticuno
+;	special InitRoamZapdos
+;	special InitRoamMoltres
 	end
 
 .BossLugia:

@@ -45,7 +45,7 @@ CelebiShrineEvent:
 	pop af
 	ld [wVramState], a
 	call .RestorePlayerSprite_DespawnLeaves
-	call CelebiEvent_SetBattleType
+	call LegendaryEvent_SetBattleType
 	ret
 
 .RestorePlayerSprite_DespawnLeaves:
@@ -291,8 +291,13 @@ GetCelebiSpriteTile:
 	pop af
 	ret
 
-CelebiEvent_SetBattleType:
+LegendaryEvent_SetBattleType:
 	ld a, BATTLETYPE_LEGENDARY
+	ld [wBattleType], a
+	ret
+
+SnorlaxEvent_SetBattleType:
+	ld a, BATTLETYPE_FORCEITEM
 	ld [wBattleType], a
 	ret
 
