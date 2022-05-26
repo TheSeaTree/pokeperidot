@@ -76,6 +76,8 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jr z, .done
+	cp CHAMPIONF
+	jr z, .done
 	cp RED
 	jr z, .done
 
@@ -89,7 +91,7 @@ PlayBattleMusic:
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
-	farcall IsKantoGymLeader
+	farcall IsEliteFour
 	jr c, .done
 
 	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders
