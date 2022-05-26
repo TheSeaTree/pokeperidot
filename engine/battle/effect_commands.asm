@@ -1175,28 +1175,38 @@ BattleCommand_Critical:
 	ld c, 0
 
 	cp CHANSEY
+	jr z, .checkluckypunch
+	cp BLISSEY
 	jr nz, .Farfetchd
+.checkluckypunch
 	ld a, [hl]
 	cp LUCKY_PUNCH
 	jr nz, .FocusEnergy
 
-; +2 critical level
-	ld c, 2
+; +4 critical level
+	ld c, 4
 	jr .Tally
 
 .Farfetchd:
 	cp FARFETCH_D
-	jr nz, .Sirfetchd
-	jr .checkstick
-
+	jr z, .checkstick
 .Sirfetchd:
 	cp SIRFETCH_D
-	jr nz, .FocusEnergy
+	jr nz, .Smeargle
 .checkstick
 	ld a, [hl]
 	cp STICK
 	jr nz, .FocusEnergy
+	jr .docritlevel
 
+.Smeargle:
+	cp SMEARGLE
+	jr nz, .FocusEnergy
+
+	ld a, [hl]
+	cp PALETTE
+	jr nz, .FocusEnergy
+.docritlevel
 ; +3 critical level
 	ld c, 3
 	jr .Tally

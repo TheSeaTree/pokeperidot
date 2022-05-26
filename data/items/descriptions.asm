@@ -373,8 +373,8 @@ CarbosDesc:
 	next "one #MON.@"
 
 LuckyPunchDesc:
-	db   "Ups critical hit"
-	next "ratio of CHANSEY.@"
+	db   "Max crit ratio for"
+	next "BLISSEY & CHANSEY.@"
 
 CalciumDesc:
 	db   "Ups SPECIAL stats"
