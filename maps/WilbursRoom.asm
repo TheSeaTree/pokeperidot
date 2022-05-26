@@ -75,6 +75,7 @@ ContinueApproachWilbur:
 	closetext
 	winlosstext WilburScript_WilburBeatenText, 0
 	loadtrainer WILBUR, WILBUR1
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -109,6 +110,7 @@ ContinueApproachWilbur:
 .FinalRematch:
 	loadtrainer WILBUR, WILBUR_REMATCH5
 .DoRematch
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -139,7 +141,7 @@ WilbursRoomDropBombs:
 	
 WilburNoTurningBack:
 	jumptext WilburCantProgress
-	
+
 CantPassWilbur:
 	opentext
 	writetext WilburCantProgress
@@ -238,8 +240,8 @@ WilburScript_WilburBeforeText:
 	line "withstand my stra-"
 	cont "fing runs?"
 
-	para "Only one way to"
-	line "find out."
+	para "There's only one"
+	line "way to find out."
 
 	para "Let's go!"
 	done

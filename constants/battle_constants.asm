@@ -103,6 +103,7 @@ SPDSPCDV_BOSS EQU $FE
 	const BATTLETYPE_BOSS
 	const BATTLETYPE_NOCASH
 	const BATTLETYPE_SIMULATION
+	const BATTLETYPE_LEAGUE
 
 ; BattleVarPairs indexes (see home/battle.asm)
 	const_def

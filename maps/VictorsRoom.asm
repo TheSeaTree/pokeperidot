@@ -48,8 +48,9 @@ VictorsRoomVictorScript:
 	waitbutton
 	closetext
 	winlosstext VictorBattleWinText, 0
-	setlasttalked VICTORSROOM_LANCE
+;	setlasttalked VICTORSROOM_LANCE
 	loadtrainer CHAMPION, LANCE
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle

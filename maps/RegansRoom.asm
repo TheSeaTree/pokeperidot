@@ -55,6 +55,7 @@ ContinueApproachRegan:
 	closetext
 	winlosstext ReganScript_ReganBeatenText, 0
 	loadtrainer REGAN, REGAN1
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	changeblock 8,  8, $44
 	changeblock 8, 10, $45
@@ -93,6 +94,7 @@ ContinueApproachRegan:
 .FinalRematch:
 	loadtrainer REGAN, REGAN_REMATCH5
 .DoRematch
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	changeblock 8,  8, $44
 	changeblock 8, 10, $45

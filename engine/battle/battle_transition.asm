@@ -62,9 +62,14 @@ DoBattleTransition:
 	ret
 
 .InitGFX:
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEAGUE
+	jr z, .mobile
+	
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
 	jr z, .mobile
+
 	farcall ReanchorBGMap_NoOAMUpdate
 	call UpdateSprites
 	call DelayFrame

@@ -47,7 +47,7 @@ EmilysRoomEmilyScript:
 	writetext EmilyBattleIntroText
 	waitbutton
 	closetext
-	setlasttalked EMILYSROOM_EMILY
+;	setlasttalked EMILYSROOM_EMILY
 	winlosstext EmilyBattleWinText, 0
 	
 	copybytetovar wEliteFourFightCount
@@ -70,7 +70,7 @@ EmilysRoomEmilyScript:
 .FinalRematch:
 	loadtrainer CHAMPIONF, EMILY_CHAMPION5
 .DoBattle
-
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
@@ -181,8 +181,9 @@ EmilysRoomMovementData_PlayerExits:
 
 EmilyBattleIntroText:
 	text "Hey, <PLAYER>! Can"
-	line "you believe I fin-"
-	cont "ally made it?"
+	line "you believe it?"
+	
+	para "I finally made it!"
 
 	para "Thanks to every-"
 	line "thing you and"
@@ -195,8 +196,11 @@ EmilyBattleIntroText:
 	line "you because you're"
 	cont "my friend."
 
-	para "Don't you hold back"
-	line "either!"
+	para "I don't want you to"
+	line "hold back, either!"
+
+	para "Let's make this a"
+	line "memorable battle!"
 	done
 
 EmilyBattleWinText:

@@ -53,6 +53,7 @@ BredeScript_Battle:
 	closetext
 	winlosstext BredeScript_BredeBeatenText, 0
 	loadtrainer BREDE, BREDE1
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -87,6 +88,7 @@ BredeScript_Battle:
 .FinalRematch:
 	loadtrainer BREDE, BREDE_REMATCH5
 .DoRematch
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext

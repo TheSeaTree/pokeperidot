@@ -37,6 +37,7 @@ AmberScript_Battle:
 	closetext
 	winlosstext AmberScript_AmberBeatenText, 0
 	loadtrainer AMBER, AMBER1
+	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
 	startbattle
 	reloadmapafterbattle
 	opentext
@@ -70,9 +71,12 @@ AmberScript_Battle:
 .FinalRematch:
 	loadtrainer AMBER, AMBER_REMATCH5
 .DoRematch
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext
+	copybytetovar wEliteFourFightCount
+	ifgreater 0, .FirstRematch
 	writetext AmberScript_RematchDefeatText
 	waitbutton
 	closetext
@@ -81,8 +85,14 @@ AmberScript_Battle:
 	applymovement PLAYER, AmbersRoom_CenterCamera
 	disappear AMBERSROOM_PLAYER
 	end
-	
-	
+
+.FirstRematch
+	writetext AmberScript_FirstRematchDefeatText
+	waitbutton
+	closetext
+	jump .AfterBattle
+
+
 ChampionDoorLeft:
 	checkflag ENGINE_CREDITS_SKIP
 	iftrue .Rematch
@@ -264,6 +274,11 @@ AmberScript_RematchBeatenText:
 AmberScript_RematchDefeatText:
 	text "After rematch text"
 	line "goes here."
+	done
+
+AmberScript_FirstRematchDefeatText:
+	text "After 1st rematch"
+	line "text goes here."
 	done
 
 AmberCantProgress:
