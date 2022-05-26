@@ -10,9 +10,9 @@ BattleCommand_CalmMind:
 .go
 
 ; Special Attack
+rept 3
 	inc bc
-	inc bc
-	inc bc
+endr
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr c, .raise
