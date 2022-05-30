@@ -161,8 +161,8 @@ FacingEmote: ; emote
 
 FacingShadow: ; shadow
 	db 2 ; #
-	db  0,  0, ABSOLUTE_TILE_ID, $fc
-	db  0,  8, ABSOLUTE_TILE_ID | X_FLIP, $fc
+	db  0,  0, ABSOLUTE_TILE_ID, $fb
+	db  0,  8, ABSOLUTE_TILE_ID | X_FLIP, $fb
 
 FacingBigDollSymmetric: ; big snorlax or lapras doll
 	db 16 ; #
@@ -230,10 +230,10 @@ FacingBoulderDust2: ; boulder dust 2
 
 FacingGrass1:
 	db 2 ; #
-	db  8,  0, ABSOLUTE_TILE_ID, $fe
-	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $fe
+	db  8,  0, ABSOLUTE_TILE_ID, $fc
+	db  8,  8, ABSOLUTE_TILE_ID | X_FLIP, $fc
 
 FacingGrass2:
 	db 2 ; #
-	db  9, -1, ABSOLUTE_TILE_ID, $fe
-	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fe
+	db  9, -1, ABSOLUTE_TILE_ID, $fc
+	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fc

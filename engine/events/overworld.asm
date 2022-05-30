@@ -1683,7 +1683,7 @@ Script_NotEvenANibble2:
 	writetext UnknownText_0xd0a9
 
 Script_NotEvenANibble_FallThrough:
-	loademote EMOTE_SHADOW
+	loademote EMOTE_OVERWORLD
 	callasm PutTheRodAway
 	closetext
 	end

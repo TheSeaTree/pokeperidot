@@ -147,14 +147,7 @@ LoadUsedSpritesGFX:
 	bit 6, a
 	ret nz
 
-	ld c, EMOTE_SHADOW
-	farcall LoadEmote
-	call GetMapEnvironment
-	call CheckOutdoorMap
-	ld c, EMOTE_GRASS_RUSTLE
-	jr z, .outdoor
-	ld c, EMOTE_BOULDER_DUST
-.outdoor
+	ld c, EMOTE_OVERWORLD
 	farcall LoadEmote
 	ret
 

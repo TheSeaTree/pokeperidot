@@ -15,7 +15,5 @@ Emotes:
 	emote BoltEmote,      4, $f8
 	emote SleepEmote,     4, $f8
 	emote FishEmote,      4, $f8
-	emote JumpShadowGFX,  1, $fc
+	emote OverworldGFX,   5, $fb
 	emote FishingRodGFX,  2, $fc
-	emote BoulderDustGFX, 2, $fe
-	emote GrassRustleGFX, 1, $fe
