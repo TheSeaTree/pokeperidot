@@ -247,11 +247,11 @@ BeedrillEvosAttacks:
 	db 14, RAGE
 	db 17, PURSUIT
 	db 20, PIN_MISSILE
-	db 23, TWINEEDLE
+	db 23, SPIKES
 	db 25, BRICK_BREAK
 	db 26, FOCUS_ENERGY
 	db 29, AGILITY
-	db 32, BRICK_BREAK
+	db 32, TWINEEDLE
 	db 35, SLUDGE_BOMB
 	db 38, OUTRAGE
 	db 40, U_TURN
@@ -1313,6 +1313,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, SUPERSONIC
+	db 1, MEAN_LOOK
 	db 5, THUNDERSHOCK
 	db 11, THUNDER_WAVE
 	db 13, LIGHT_SCREEN

@@ -509,7 +509,7 @@ SearionEggMoves:
 	db EGG_BOMB
 	db BARRAGE
 	db -1 ; end
-	
+
 LickitungEggMoves:
 	db BELLY_DRUM
 	db SNORE
@@ -879,6 +879,7 @@ SudowoodoEggMoves:
 	db ROLLOUT
 	db DEFENSE_CURL
 	db SPIKES
+	db SEISMIC_TOSS
 	db -1 ; end
 
 HoppipEggMoves:
@@ -1425,7 +1426,7 @@ GreminiEggMoves:
 	db MOONLIGHT
 	db MEAN_LOOK
 	db -1
-	
+
 SmoochumEggMoves:
 	db MACH_PUNCH
 	db RECOVER

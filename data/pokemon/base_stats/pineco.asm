@@ -6,7 +6,7 @@
 	db BUG, BUG ; type
 	db 190 ; catch rate
 	db 60 ; base exp
-	db NO_ITEM, FOCUS_SASH ; items
+	db FOCUS_SASH, FOCUS_SASH ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
 	db 20 ; step cycles to hatch
