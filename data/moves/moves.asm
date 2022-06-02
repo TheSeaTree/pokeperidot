@@ -52,7 +52,7 @@ Moves: ; 41afb
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,   100, 15,   0
 	move TAIL_WHIP,    EFFECT_DEFENSE_DOWN,        0, NORMAL,   100, 30,   0
 	move POISON_STING, EFFECT_POISON_HIT,         40, POISON,   100, 35,  30
-	move TWINEEDLE,    EFFECT_POISON_MULTI_HIT,   50, BUG,       90, 20,  20
+	move TWINEEDLE,    EFFECT_POISON_MULTI_HIT,   50, BUG,       90, 15,  20
 	move PIN_MISSILE,  EFFECT_MULTI_HIT,          25, BUG,       95, 20,   0
 	move LEER,         EFFECT_DEFENSE_DOWN,        0, NORMAL,   100, 30,   0
 	move BITE,         EFFECT_FLINCH_HIT,         60, DARK,     100, 25,  30
@@ -222,7 +222,7 @@ Moves: ; 41afb
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC, 100, 20,  30
 	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        20, BUG,       95, 20,   0
-	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,    100, 25,  10
+	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,    100, 10,  10
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, NORMAL,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, NORMAL,   100, 15,   0
 	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,   100, 10,   0
