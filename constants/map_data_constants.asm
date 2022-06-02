@@ -24,6 +24,7 @@ MAP_NONE   EQU 0
 	const ENVIRONMENT_5
 	const GATE
 	const DUNGEON
+	const GYM_CAVE
 
 ; map palettes (wEnvironment)
 	const_def

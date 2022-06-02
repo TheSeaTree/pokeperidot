@@ -50,7 +50,37 @@ OrchidTeacherDaytime:
 OrchidTeacherMorning:
 	showemote EMOTE_SLEEP, ORCHIDTEACHERSHOUSE_TEACHER, 15
 	opentext
-	writetext OrchidTeacherSleeping
+	writetext OrchidTeacherSleepingText
+	waitbutton
+	random 6
+	ifequal 1, .SecondTextbox
+	ifequal 2, .ThirdTextbox
+	ifequal 3, .FourthTextbox
+	ifequal 4, .FifthTextbox
+	ifequal 5, .SixthTextbox
+
+	writetext OrchidTeacherSleepingText1
+	jump .CloseText
+
+.SecondTextbox
+	writetext OrchidTeacherSleepingText2
+	jump .CloseText
+
+.ThirdTextbox
+	writetext OrchidTeacherSleepingText3
+	jump .CloseText
+
+.FourthTextbox
+	writetext OrchidTeacherSleepingText4
+	jump .CloseText
+
+.FifthTextbox
+	writetext OrchidTeacherSleepingText5
+	jump .CloseText
+
+.SixthTextbox
+	writetext OrchidTeacherSleepingText6
+.CloseText
 	waitbutton
 	closetext
 	end
@@ -96,16 +126,59 @@ OrchidTeacherNoticeText:
 	line "enjoy the company."
 	done
 	
-OrchidTeacherSleeping:
-; TODO: Randomize her sleep talking.
+OrchidTeacherSleepingText:
 	text "…Zzzz…"
 
 	para "………………………………"
-	para "…Not now mom,"
+	done
+
+OrchidTeacherSleepingText1:
+	text "…Not now mom,"
 	line "I just got to"
 	cont "sleep………"
 	done
-	
+
+OrchidTeacherSleepingText2:
+	text "…MEOWTH, put that"
+	line "down right now………"
+	done
+
+OrchidTeacherSleepingText3:
+	text "…Groan…………It's too"
+	line "hot…………"
+
+	para "…Someone turn down"
+	line "the heat………"
+	done
+
+OrchidTeacherSleepingText4:
+	text "…Someone stop that"
+	line "MURKROW………"
+
+	para "……It has my house"
+	line "keys…………"
+	done
+
+OrchidTeacherSleepingText5:
+	text "………Oh my goodness…"
+
+	para "………I can't possibly"
+	line "eat all of this"
+	cont "cake by myself…………"
+
+	para "………Mmmm…………"
+
+	para "……But it's so"
+	line "delicious………!"
+	done
+
+OrchidTeacherSleepingText6:
+	text "Groan………"
+
+	para "…………I'm not ready"
+	line "for school…………"
+	done
+
 OrchidTeacherGiftText:
 	text "Hi, <PLAYER>!"
 	
@@ -179,6 +252,6 @@ OrchidTeachersHouse_MapEvents:
 	db 5 ; object events
 	object_event  8,  3, SPRITE_TEACHER_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, MORN, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidTeacherMorning, -1
 	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, DAY, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidTeacherDaytime, -1
-	object_event  4,  1, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1
-	object_event  6,  5, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1
-	object_event  9,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1
+	object_event  4,  1, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, MORN, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1
+	object_event  6,  5, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, DAY, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1
+	object_event  9,  3, SPRITE_GROWLITHE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, NITE, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, OrchidTeachersHouseMeowth, -1

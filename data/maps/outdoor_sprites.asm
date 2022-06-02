@@ -46,6 +46,7 @@ PalletGroupSprites:
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
 	db SPRITE_POKEFAN_M
+	db SPRITE_BIRD
 	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE
@@ -211,6 +212,11 @@ FuchsiaGroupSprites:
 IndigoGroupSprites:
 ; Route23
 	db SPRITE_SUPER_NERD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_YOUNGSTER
+	db SPRITE_BUENA
+	db SPRITE_ROCKER
+	db SPRITE_TEACHER
 	; 0 of max 9 walking sprites
 	db 0 ; end
 

@@ -3,7 +3,17 @@
 EastForest_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .BackRoomWall
+
+.BackRoomWall:
+	checkcode VAR_XCOORD
+	ifnotequal 52, .nope
+	checkcode VAR_YCOORD
+	ifnotequal  4, .nope
+	setevent EVENT_FACTORY_BACK_ROOM_SMASH_WALL
+.nope
+	return
 
 TrainerTeacherBea:
 	trainer TEACHER, BEA, EVENT_BEAT_TEACHER_BEA, TeacherBeaText, TeacherBeaWinText, 0, .Script

@@ -79,10 +79,6 @@ HepaticaGymEastChamberLeaderSwitch:
 .flipped
 	jumptext HepaticaGymEastChamberLeaderSwitchStuckText
 
-HepaticaEastRoomPlaceholderText:
-	text "?"
-	done
-	
 GuitaristAndyText:
 	text "I feel on top of"
 	line "the world in this"

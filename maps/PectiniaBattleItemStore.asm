@@ -114,10 +114,9 @@ PectiniaBattleItemNightClerk1Text:
 PectiniaBattleItemNightClerk2Text:
 	text "Hey there!"
 
-	para ""
-
-	para "Text goes here."
-	line "(Child)"
+	para "Do you want to see"
+	line "the cool items I"
+	cont "have for sale?"
 	done
 
 PectiniaBattleItemBlankTextBox:

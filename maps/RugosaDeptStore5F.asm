@@ -336,7 +336,7 @@ DeptStoreSquirtleDollScript:
 	opentext
 	pokenamemem SQUIRTLE, MEM_BUFFER_0
 	
-DeptStoreGenericDoll:	
+DeptStoreGenericDoll:
 	writetext RugosaDeptStore5FDollText
 	waitbutton
 	closetext

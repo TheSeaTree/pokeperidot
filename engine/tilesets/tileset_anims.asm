@@ -256,6 +256,13 @@ TilesetTowerAnim:
 	dw NULL,  StandingTileFrame
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 UnusedTilesetAnim_fc2bf:

@@ -135,7 +135,7 @@ ENDM
 	map_const ROUTE_24_HIDDEN_CAVE_B1F,	                 20, 14
 	map_const DUGTRIOS_DEN,		                  		  5,  7
 	map_const ROUTE_25_GATE,							  5,  4
-	map_const ACROPORA_CAVE_1F,                          19, 11
+	map_const ACROPORA_CAVE_1F,                          19, 15
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14
 
@@ -243,7 +243,7 @@ ENDM
 	map_const FAVIA_MART,                                  6,  4
 	map_const ROUTE_11_FAVIA_GATE,                         5,  4
 	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
-	map_const PECTINIA_BED_STORE,                    	   6,  3
+	map_const PECTINIA_BED_STORE,                    	   7,  3
 	map_const PECTINIA_DOLL_STORE,                         8,  4
 	map_const PECTINIA_CARPET_STORE,                       5,  3
 	map_const PECTINIA_COMIC_STORE,                        6,  6
@@ -390,8 +390,9 @@ ENDM
 	map_const ORCHID_TEACHERS_HOUSE,                        5,  4
 	map_const ORCHID_GRANNYS_HOUSE,                        	4,  4
 	map_const ORCHID_BLACKBELTS_HOUSE,                     	8,  6
+	map_const ORCHID_ENTEI_SHRINE,						   12, 14
 	map_const ENTEI_LAIR,									7,  5
-	map_const MOLTEN_PEAK_1F,							   14, 14
+	map_const MOLTEN_PEAK_1F,							   14, 10
 	map_const MOLTEN_PEAK_B1F,							   23, 17
 	map_const MOLTEN_PEAK_B2F,							   21, 24
 	map_const ROUTE_22,									   19,  8
@@ -417,11 +418,15 @@ ENDM
 
 	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
 	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
-	map_const ROUTE_23,					                   19, 18 ; 15
+	map_const ROUTE_23,					                   19, 20 ; 15
+	map_const ROUTE_23_GATE,					           	5,  4
 	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
-	map_const ROUTE_26,					                   19, 16
+	map_const ROUTE_26,					                   21, 16
+	map_const ROUTE_26_GATE,					           	5,  4
+	map_const ROUTE_26_CAVE_1F,			                   13,  5
+	map_const ROUTE_26_CAVE_2F,			                   15, 10
 	map_const ROUTE_27_GATE,					           	5,  4
-	map_const ROUTE_27,					           		   20, 24
+	map_const ROUTE_27,					           		   20, 22
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3

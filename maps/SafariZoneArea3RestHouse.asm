@@ -127,7 +127,7 @@ SafariArea3RestHouseCooltrainerFGiveRewardText:
 	text "There's one item"
 	line "that I was able to"
 	cont "hold onto, but I"
-	cont "dont' have any use"
+	cont "don't have any use"
 	cont "for it right now."
 	
 	para "Here, you can have"
@@ -136,14 +136,14 @@ SafariArea3RestHouseCooltrainerFGiveRewardText:
 
 SafariArea3RestHouseCooltrainerFNoRoomText:
 	text "Oh…"
-	
+
 	para "There's not enough"
 	line "space in your PACK"
 	cont "for it…"
-	
+
 	para "When you make some"
 	line "room, let me know."
-	
+
 	para "I can't exactly go"
 	line "anywhere right now."
 	done
@@ -172,11 +172,11 @@ SafariArea3RestHouseCooltrainerFAfterText:
 SafariArea3RestHousePokefanText:
 	text "WAHOO!"
 	line "I did it!"
-	
+
 	para "I finally caught a"
 	line "CHANSEY all of my"
 	cont "own!"
-	
+
 	para "And it was green!"
 	line "I've never seen one"
 	cont "like that."

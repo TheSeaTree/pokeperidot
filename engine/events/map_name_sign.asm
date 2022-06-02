@@ -13,9 +13,11 @@ ReturnFromMapSetupScript::
 	jr z, .not_gate
 
 	call GetMapEnvironment
+	cp GYM_CAVE
+	jr z, .gym_cave
 	cp GATE
 	jr nz, .not_gate
-
+.gym_cave
 	ld a, -1
 	ld [wCurLandmark], a
 

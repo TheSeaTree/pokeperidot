@@ -31,7 +31,7 @@ OrchidGymEvent:
 	scall OrchidGymEntrance
 	iffalse .no
 .warp
-	warpfacing UP, ORCHID_GYM_1F, 6, 7
+	warpfacing UP, ORCHID_GYM_1F, 8, 9
 .no
 	end
 

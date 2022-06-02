@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const ORCHIDBLACKBELTHOUSE_GRAMPS
+	const ORCHIDBLACKBELTHOUSE_ELDER
 	const ORCHIDBLACKBELTHOUSE_BLACKBELT1
 	const ORCHIDBLACKBELTHOUSE_BLACKBELT2
 	const ORCHIDBLACKBELTHOUSE_BLACKBELT3
@@ -15,6 +15,32 @@ OrchidBlackbeltsHouse_MapScripts:
 	setevent EVENT_ORCHID_CITY_HIDDEN_CAVE_OPEN
 	return
 
+OrchidBlackbeltsHouseEnteiGuy:
+	faceplayer
+	opentext
+	checkevent EVENT_SHOWED_ORCHID_BLACKBELT_ENTEI
+	iftrue .AfterShowedEntei
+	writebyte ENTEI
+	special FindPartyMonThatSpecies
+	iftrue .HaveEntei
+	writetext OrchidBlackbelt1Text
+	waitbutton
+	closetext
+	end
+
+.HaveEntei
+	writetext OrchidBlackbelt1ShowEnteiText
+	waitbutton
+	closetext
+	setevent EVENT_SHOWED_ORCHID_BLACKBELT_ENTEI
+	end
+
+.AfterShowedEntei
+	writetext OrchidBlackbelt1AfterEnteiText
+	waitbutton
+	closetext
+	end
+
 CrashHelmetGuy:
 	faceplayer
 	opentext
@@ -26,6 +52,12 @@ CrashHelmetGuy:
 	yesorno
 	iffalse .Decline
 	writetext CrashHelmetGuyDemonstratesTrainingText
+	waitbutton
+	closetext
+	wait 2
+	applymovement ORCHIDBLACKBELTHOUSE_BLACKBELT3, CrashHelmetGuyPrepareRun
+	opentext
+	writetext CrashHelmetGuyYellingText
 	waitbutton
 	closetext
 	
@@ -67,8 +99,25 @@ CrashHelmetGuy:
 	closetext
 	end
 
-OrchidBackbeltsHouseGramps:
-	jumptextfaceplayer OrchidBackbeltsHouseGrampsText
+OrchidBlackbeltLavaGuy:
+	jumptextfaceplayer OrchidBlackbeltLavaGuyText
+
+OrchidBackbeltsHouseElder:
+	jumptextfaceplayer OrchidBackbeltsHouseElderText
+
+OrchidBlackbeltsHouseMachoke:
+	opentext
+	writetext OrchidBlackbeltsHouseMachokeText
+	cry MACHOKE
+	waitbutton
+	closetext
+	end
+
+CrashHelmetGuyPrepareRun:
+	turn_step LEFT
+	turn_step LEFT
+	turn_step LEFT
+	step_end
 
 CrashHelmetGuyRunIntoWall:
 	turn_step LEFT
@@ -94,41 +143,54 @@ OrchidBlackbelt1Text:
 	cont "powerful #MON"
 	cont "that used to live"
 	cont "here?"
-	
+
 	para "I bet it was a"
 	line "FIGHTING-type!"
 	done
-	
+
 OrchidBlackbelt1ShowEnteiText:
 	text "No way? You caught"
 	line "the GUARDIAN?"
-	
+
 	para "…And it's FIRE,"
 	line "not FIGHTING-type?"
-	
+
 	para "My life has been a"
 	line "lie! FIGHTING-"
 	cont "types should be"
 	cont "the strongest!"
 	done
 
-OrchidBackbeltsHouseGrampsText:
+OrchidBlackbelt1AfterEnteiText:
+	text "From this day"
+	line "forward, I will"
+	cont "exclusively train"
+	cont "FIRE-type #MON!"
+
+	para "I will be the"
+	line "strongest!"
+
+	para "Just like our"
+	line "GUARDIAN, ENTEI!"
+	done
+
+OrchidBackbeltsHouseElderText:
 	text "Ehehehe!"
-	
+
 	para "I may not look"
 	line "like much now, but"
 	cont "I used to be quite"
 	cont "the bodybuilder in"
 	cont "my day."
-	
+
 	para "I still have some"
 	line "fight left in me!"
-	
+
 	para "Someone has to"
 	line "keep these boys in"
 	cont "line!"
 	done
-	
+
 CrashHelmetGuyAskText:
 	text "Hey kid, want to"
 	line "see my training?"
@@ -137,8 +199,10 @@ CrashHelmetGuyAskText:
 CrashHelmetGuyDemonstratesTrainingText:
 	text "Alright, watch and"
 	line "learn…"
-	
-	para "HIIIII-YA!"
+	done
+
+CrashHelmetGuyYellingText:
+	text "HIIIII-YA!"
 	done
 
 CrashHelmetGuyGiftCrashHelmetText:
@@ -181,19 +245,36 @@ CrashHelmetMoveText:
 	line "here!"
 	done
 
+OrchidBlackbeltLavaGuyText:
+	text "Every day I train"
+	line "my body and my"
+	cont "#MON in this"
+	cont "intense heat!"
+
+	para "Weakness leaves"
+	line "our bodies in the"
+	cont "form of sweat!"
+	done
+
+OrchidBlackbeltsHouseMachokeText:
+	text "MACHOKE: Guooh"
+	line "gogogoh!"
+	done
+
 OrchidBlackbeltsHouse_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event  7,  9, ORCHID_CITY, 6
+	warp_event 13,  7, ORCHID_ENTEI_SHRINE, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 5 ; object events
-	object_event 12,  5, SPRITE_GRAMPS, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidBackbeltsHouseGramps, -1
-	object_event  2,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 12,  5, SPRITE_ELDER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidBackbeltsHouseElder, -1
+	object_event  2,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidBlackbeltsHouseEnteiGuy, -1
+	object_event  6,  4, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidBlackbeltLavaGuy, -1
 	object_event  8,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CrashHelmetGuy, -1
-	object_event 10,  4, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 1, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 10,  4, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 1, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, OrchidBlackbeltsHouseMachoke, -1

@@ -2631,8 +2631,9 @@ wDugtriosDenSceneID::                      	  	  db
 wBattleSubwayBossTrainSceneID::					  db
 wBattleSimulationSceneID::					  	  db
 wTrainerHouseSceneID::					  	  	  db
+wOrchidEnteiShrineSceneID::				  	  	  db
 
-	ds 38
+	ds 37
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

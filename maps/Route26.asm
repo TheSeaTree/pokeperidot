@@ -11,14 +11,16 @@ Route26HiddenBrickPiece:
 Route26_MapEvents:
 	db 0, 0 ; filler
 
-	db 3 ; warp events
-	warp_event 30, 11, ROUTE_23, 1
-	warp_event 16, 17, ROUTE_23, 2
-	warp_event 11,  5, ROUTE_23, 3
+	db 5 ; warp events
+	warp_event 18, 17, ROUTE_26_CAVE_1F, 1
+	warp_event 32,  9, ROUTE_26_CAVE_1F, 2
+	warp_event  4, 26, ROUTE_26_GATE, 3
+	warp_event  4, 27, ROUTE_26_GATE, 4
+	warp_event  8,  7, TREASURE_HUNTERS_HOUSE, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 23, 25, BGEVENT_ITEM, Route26HiddenBrickPiece
+	bg_event 27, 23, BGEVENT_ITEM, Route26HiddenBrickPiece
 
 	db 0 ; object events

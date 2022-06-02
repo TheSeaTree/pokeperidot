@@ -42,7 +42,7 @@ PalerockMountain3F_MapScripts:
 .Door:
 	checkevent EVENT_BOULDER_IN_PALEROCK_3B
 	iffalse .BrokenWall
-	changeblock 8, 8, $24 ; open door
+	changeblock 8, 8, $cf ; open door
 .BrokenWall
 	checkevent EVENT_PALEROCK_MOUNTAIN_HIDDEN_CAVE_OPEN
 	iffalse .skip

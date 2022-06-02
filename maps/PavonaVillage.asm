@@ -122,7 +122,7 @@ CherrygroveInnSign:
 	jumptext CherrygroveInnSignText
 
 CherrygroveCityRock:
-	jumpstd smashrock	
+	jumpstd smashrock
 	
 MovementData_FisherApproachTop:
 	run_step UP

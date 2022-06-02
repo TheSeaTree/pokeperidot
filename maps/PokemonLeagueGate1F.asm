@@ -56,8 +56,8 @@ PokemonLeagueGate1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  4,  0, POKEMON_LEAGUE, 8
-	warp_event  5,  0, POKEMON_LEAGUE, 9
+	warp_event  3,  0, POKEMON_LEAGUE, 8
+	warp_event  4,  0, POKEMON_LEAGUE, 9
 	warp_event  3,  7, VICTORY_COAST, 2
 	warp_event  4,  7, VICTORY_COAST, 2
 	warp_event  0,  7, POKEMON_LEAGUE_GATE_2F, 1

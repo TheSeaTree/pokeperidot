@@ -29,6 +29,8 @@ ProfessorMapleSrScript:
 ProfessorMapleSrAideScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_ANCIENT_TOME
+	iftrue .GotAncientTome
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse .NotMet
 	checkflag ENGINE_UNOWN_DEX
@@ -90,11 +92,21 @@ ProfessorMapleSrAideScript:
 .AlreadyShown
 	checkcode VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AllUnown
-.AllUnown
 	writetext ProfessorMapleSrAdieAfterUpgradeText2
 	waitbutton
 	closetext
 	applymovement COASTAL_LAB_AIDE, CoastalLabAideStepResume
+	end
+
+.AllUnown
+	writetext ProfessorMapleSrAideAllUnownText
+	waitbutton
+	verbosegiveitem ANCIENT_TOME
+	setevent EVENT_GOT_ANCIENT_TOME
+.GotAncientTome
+	writetext ProfessorMapleSrAideAfterAncientTomeText
+	waitbutton
+	closetext
 	end
 
 CoastalLabBirdsBook:
@@ -316,16 +328,18 @@ ProfessorMapleSrAideUpgradePokedexText:
 	
 ProfessorMapleSrAdieAfterUpgradeText:
 	text "There. Thank you!"
-	
+
 	para "I have added a new"
 	line "program to track"
 	cont "the UNOWN you enc-"
 	cont "ounter."
-	
+
 	para "I used a program I"
 	line "wrote to translate"
 	cont "ancient UNOWN"
-	cont "writing."
+	cont "writing in order"
+	cont "to make this new"
+	cont "#DEX mode."
 	done
 
 ProfessorMapleSrAdieAfterUpgradeText2:
@@ -339,31 +353,40 @@ ProfessorMapleSrAdieAfterUpgradeText2:
 	cont "those mysterious"
 	cont "#MON!"
 	done
-	
+
 ProfessorMapleSrAideAllUnownText:
 	text "Oh my! Have you"
 	cont "done it? You have!"
-	
+
 	para "You have cataloged"
 	line "every UNOWN form!"
-	
+
 	para "I know I can trust"
 	line "you with this now-"
-	
+
 	para "It's an ancient"
 	line "book written in"
 	cont "UNOWN characters."
-	
+
 	para "I have recently"
-	line  "finished translat-"
+	line "finished translat-"
 	cont "ing it."
-	
+
 	para "You seem to have"
 	line "more experience"
 	cont "with UNOWN than I,"
 	cont "so please take it."
 	done
-	
+
+ProfessorMapleSrAideAfterAncientTomeText:
+	text "You have been a"
+	line "considerable help"
+	cont "to my research."
+
+	para "I am ever-grateful"
+	line "to you."
+	done
+
 CoastalLabDifficultBooksText:
 	text "There are so many"
 	line "difficult books"

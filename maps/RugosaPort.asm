@@ -288,23 +288,24 @@ RugosaPortCooltrainerMText:
 	line "girlfriend that I"
 	cont "would take her"
 	cont "along."
-	
+
 	para "Until she wins her"
 	line "BADGEs, I will"
 	cont "have to wait."
 	done
-	
+
 RugosaPortCooltrainerFText:
 	text "Only trainers who"
 	line "have all 8 GYM"
 	cont "BADGEs can board"
 	cont "the S.S.MAKO."
-	
+
 	para "It is the only way"
-	line "to reach the"
+	line "for most trainers"
+	cont "to reach the"
 	cont "#MON LEAGUE."
 	done
-	
+
 RugosaPortYoungsterText:
 	text "My big sister left"
 	line "to challenge the"

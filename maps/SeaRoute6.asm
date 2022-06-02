@@ -56,7 +56,45 @@ TrainerSwimmerKarla:
 	waitbutton
 	closetext
 	end
+
+SeaRoute6TeleportGuy:
+	faceplayer
+	opentext
+	writetext SeaRoute6TeleportGuyText
+	yesorno
+	iffalse .Decline
+	writetext SeaRoute6TeleportGuyAcceptText
+	waitbutton
+	closetext
+	playsound SFX_WARP_TO
+	special FadeOutPalettes
+	waitsfx
+	warp RUGOSA_CITY, 31, 30
+	end
+
+.Decline
+	writetext SeaRoute6TeleportGuyDeclineText
+	waitbutton
+	closetext
+	end
+
+.TeleportOut:
+	teleport_from
+	step_resume
 	
+.TeleportIn:
+	show_object
+	teleport_to
+	step_resume
+
+SeaRoute6Xatu:
+	opentext
+	writetext SeaRoute6XatuText
+	cry XATU
+	waitbutton
+	closetext
+	end
+
 BeautyChelleText:
 	text "My hero! You've"
 	line "come to rescue m-"
@@ -157,6 +195,38 @@ SwimmerKarlaAfterText:
 	cont "me afloat!"
 	done
 
+SeaRoute6TeleportGuyText:
+	text "Hey, you look like"
+	line "you're pretty far"
+	cont "from home."
+
+	para "My XATU's TELEPORT"
+	line "power isn't very"
+	cont "strong, but he"
+	cont "could send you to"
+	cont "RUGOSA CITY."
+	done
+
+SeaRoute6TeleportGuyAcceptText:
+	text "Okay, perfect!"
+
+	para "Just give him a"
+	line "second and…"
+	done
+
+SeaRoute6TeleportGuyDeclineText:
+	text "Okay, cool."
+
+	para "But if you ever"
+	line "need a way back to"
+	cont "land, we can lend"
+	cont "a hand."
+	done
+
+SeaRoute6XatuText:
+	text "XATU: Dootdoot!"
+	done
+
 SeaRoute6_MapEvents:
 	db 0, 0 ; filler
 
@@ -167,7 +237,9 @@ SeaRoute6_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 6 ; object events
+	object_event 31,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, SeaRoute6TeleportGuy, -1
+	object_event 30,  6, SPRITE_BIRD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SeaRoute6Xatu, -1
 	object_event 21, 22, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBeautyChelle, -1
 	object_event 20, 15, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerLauren, -1
 	object_event 16, 28, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerWalker, -1

@@ -108,8 +108,8 @@ VictoryPortCaptainScript:
 	end
 
 VictoryPortCaptain2Script:
-	opentext
 	faceplayer
+	opentext
 	checkitem PASS
 	iftrue .HavePass
 	writetext VictoryPortShipNotHereText

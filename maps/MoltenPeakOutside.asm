@@ -272,7 +272,7 @@ MoltenPeakOutside_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 33, 27, MOLTEN_PEAK_1F, 4
+	warp_event 33, 27, ACROPORA_CAVE_1F, 9
 	warp_event  7,  5, MOLTEN_PEAK_1F, 1
 	warp_event 25,  7, MOLTEN_PEAK_HIDDEN_CAVE, 1
 

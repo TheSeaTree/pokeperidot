@@ -37,6 +37,17 @@ Route24North_MapEvents:
 
 	db 2 ; warp events
 	warp_event  8,  9, ROUTE_24_HIDDEN_CAVE_1F, 1
+;	warp_event  8,  9, TREASURE_HUNTERS_HOUSE, 1
+;	warp_event  8,  9, FACTORY_1F, 1
+;	warp_event  8,  9, PECTINIA_MALL, 5
+;	warp_event  8,  9, RUGOSA_GATE, 1
+;	warp_event  8,  9, TENTACRUELS_DEN, 1
+;	warp_event  8,  9, DUGTRIOS_DEN, 1
+;	warp_event  8,  9, PAST_ILEX_FOREST, 3
+;	warp_event  8,  9, POKEMON_LEAGUE, 6
+;	warp_event  8,  9, PAVONA_VILLAGE, 3
+;	warp_event  8,  9, WILBURS_ROOM, 1
+;	warp_event  8,  9, SKARMORYS_DEN, 1
 	warp_event 18,  5, ROUTE_24_HIDDEN_CAVE_1F, 2
 
 	db 0 ; coord events

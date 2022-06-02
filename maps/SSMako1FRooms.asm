@@ -201,7 +201,7 @@ TrainerTwinAnne:
 	copyvartobyte wSSMako1FFightCount
 	copybytetovar wSSMako1FFightCount
 	ifequal  4, DoneTicket
-	
+
 	turnobject SSMAKO1FROOMS_TWIN1, RIGHT
 	opentext
 	writetext TwinAnneTicketText
@@ -443,7 +443,7 @@ TwinJanAfterText:
 	line "let us battle in"
 	cont "the #MON LEAGUE"
 	cont "together!"
-	
+
 	para "ANNE: We never"
 	line "leave each other's"
 	cont "side!"
@@ -454,7 +454,7 @@ TwinAnneText:
 	line "have a friend to"
 	cont "battle with just"
 	cont "like us!"
-	
+
 	para "JAN: Um, ANNE…"
 	line "I don't think that"
 	cont "other girl has any"
@@ -465,7 +465,7 @@ TwinAnneWinText:
 	text "ANNE: Two against"
 	line "one isn't supposed"
 	cont "to be fair!"
-	
+
 	para "JAN: I don't think"
 	line "we should mess"
 	cont "with this trainer."
@@ -480,17 +480,18 @@ TwinAnneAfterText:
 	line "terrible! I hope"
 	cont "you can find them."
 	done
-	
+
 TwinJanTicketText:
 	text "JAN: Have you"
 	line "heard about a VIP"
 	cont "TICKET, ANNE?"
 	done
-	
+
 TwinAnneTicketResponseText:
 	text "ANNE: Nu-uh, I"
 	line "haven't."
-	
+	done
+
 TwinJanTicketBoyText:
 	text "JAN: Sorry mister."
 	line "We'd help if we"
@@ -502,17 +503,18 @@ TwinJanTicketGirlText:
 	line "We'd help if we"
 	cont "knew anything…"
 	done
-	
+
 TwinAnneTicketText:
 	text "ANNE: Have you"
 	line "heard about a VIP"
 	cont "TICKET, JAN?"
 	done
-	
+
 TwinJanTicketResponseText:
-	text "JAN: Nu-uh, I"
-	line "haven't."
-	
+	text "JAN: I don't"
+	line "think I have."
+	done
+
 TwinAnneTicketBoyText:
 	text "ANNE: Sorry,"
 	line "mister. We'd help"
@@ -536,10 +538,10 @@ SSMako1FRoomsVIPTicketLocationText:
 	cont "of the ship, down"
 	cont "in the basement."
 	done
-	
+
 SSMako1FRoomsFangirlText:
 	text "Hey <PLAYER>!"
-	
+
 	para "My #MON have"
 	line "earned a long"
 	cont "rest after today!"

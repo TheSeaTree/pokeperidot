@@ -17,9 +17,9 @@ MapGroupRoofs:
 	db ROOF_VIOLET    ;  4 (Staghorn)
 	db ROOF_AZALEA    ;  5 (Acropora)
 	db ROOF_AZALEA    ;  6 (Safari)
-	db -1             ;  7 
+	db -1             ;  7
 	db ROOF_GOLDENROD ;  8 (Pectinia)
-	db ROOF_AZALEA    ;  9
+	db ROOF_AZALEA    ;  9 (East Forest)
 	db ROOF_OLIVINE   ; 10 (Ridge)
 	db ROOF_AZALEA    ; 11 (Favia)
 	db -1             ; 12

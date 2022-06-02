@@ -37,6 +37,8 @@ LoadSpecialMapPalette:
 	jr z, .championsroom
 	cp  TILESET_POKEMON_LEAGUE
 	jr z, .pokemonleague
+	cp  TILESET_POKEMON_LEAGUE_OUTSIDE
+	jr z, .pokemonleagueoutside
 	cp  TILESET_LOST_LAND
 	jr z, .lostland
 	cp  TILESET_GAME_CORNER
@@ -121,6 +123,10 @@ LoadSpecialMapPalette:
 
 .pokemonleague
 	ld hl, PokemonLeaguePalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.pokemonleagueoutside
+	ld hl, PokemonLeagueOutsidePalette
 	jp LoadEightTimeOfDayBGPalettes
 	
 .championsroom
@@ -286,6 +292,9 @@ INCLUDE "gfx/tilesets/champions_room.pal"
 
 PokemonLeaguePalette:
 INCLUDE "gfx/tilesets/pokemon_league.pal"
+
+PokemonLeagueOutsidePalette:
+INCLUDE "gfx/tilesets/pokemon_league_outside.pal"
 
 LostLandPalette:
 INCLUDE "gfx/tilesets/lost_land.pal"

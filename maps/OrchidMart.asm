@@ -22,26 +22,23 @@ OrchidMartYoungsterScript:
 	jumptextfaceplayer OrchidMartYoungsterText
 
 OrchidMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
+	text "Are you collecting"
+	line "GYM BADGEs too?"
 
-	para "When will they get"
-	line "more of them?"
+	para "I only need one"
+	line "more, my friend."
+
+	para "Some day I hope"
+	cont "we can meet at the"
+	cont "#MON LEAGUE!"
 	done
 
 OrchidMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "I wish this MART"
+	line "sold FRESH WATER."
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "I get dehydrated"
+	line "so easily here."
 	done
 
 OrchidMart_MapEvents:

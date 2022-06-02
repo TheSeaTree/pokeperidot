@@ -116,10 +116,10 @@ TrainerMarieAfterScript:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Postgame
 	jumptextfaceplayer TrainerMarieBackHomeText
-	
+
 .Postgame
-	opentext
 	faceplayer
+	opentext
 	writetext TrainerMariePostgameChallengeText
 	yesorno
 	iffalse .Decline
@@ -132,8 +132,8 @@ TrainerMarieAfterScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
 .AfterBattle
-	opentext
 	faceplayer
+	opentext
 	writetext Route18DaughterAfterText
 	waitbutton
 	closetext
@@ -348,7 +348,7 @@ Route18DaughterWinText:
 	para "My dream will not"
 	line "die!"
 	done
-	
+
 Route18DaughterAfterText:
 	text "You won, but you"
 	line "have a lot more"

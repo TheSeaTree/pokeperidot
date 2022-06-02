@@ -476,9 +476,9 @@ RidgeVillageSignText:
 	para "Admire the"
 	line "sea's majesty."
 	done
-	
+
 RidgeCafeSignText:
-	text "RIDGE CAFE"
+	text "RIDGE CAFé"
 	done
 	
 RidgeVillageMagikarpBrosSignText:

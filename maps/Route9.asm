@@ -40,8 +40,8 @@ Route9HiddenEther:
 	hiddenitem ETHER, EVENT_ROUTE_9_HIDDEN_ETHER
 
 Route9SignText:
-	text "ILEX FOREST"
-	line "Rest house ahead."
+	text "OCCIDENT FOREST"
+	line "REST HOUSE"
 	done
 	
 RainDanceLadyText:

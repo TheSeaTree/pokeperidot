@@ -198,18 +198,18 @@ ENDM
 	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST | EAST 
 	connection south, SeaRoute5, SEA_ROUTE_5, -4
 	connection west, SeaRoute3, SEA_ROUTE_3, 5
-	connection east, Route23, ROUTE_23, -20
+	connection east, Route23, ROUTE_23, -5
 
 	map_attributes Route23, ROUTE_23, $05, NORTH | WEST
-	connection north, Route26, ROUTE_26, 0
-	connection west, SeaRoute6, SEA_ROUTE_6, 20
+	connection north, Route27, ROUTE_27, -10
+	connection west, SeaRoute6, SEA_ROUTE_6, 5
 
-	map_attributes Route26, ROUTE_26, $05, SOUTH
-	connection south, Route23, ROUTE_23, 0
+	map_attributes Route26, ROUTE_26, $05, 0
 
 	map_attributes Route27Gate, ROUTE_27_GATE, $00, 0
 	
-	map_attributes Route27, ROUTE_27, $05, 0
+	map_attributes Route27, ROUTE_27, $05, SOUTH
+	connection south, Route23, ROUTE_23, 10
 
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 
@@ -602,3 +602,8 @@ ENDM
 	map_attributes TentacruelsDen, TENTACRUELS_DEN, $09, 0
 	map_attributes MaplesLabElevator, MAPLES_LAB_ELEVATOR, $00, 0
 	map_attributes TreasureHuntersHouse, TREASURE_HUNTERS_HOUSE, $09, 0
+	map_attributes OrchidEnteiShrine, ORCHID_ENTEI_SHRINE, $59, 0
+	map_attributes Route26Cave1F, ROUTE_26_CAVE_1F, $09, 0
+	map_attributes Route26Cave2F, ROUTE_26_CAVE_2F, $09, 0
+	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
+	map_attributes Route26Gate, ROUTE_26_GATE, $00, 0

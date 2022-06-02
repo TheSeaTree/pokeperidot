@@ -34,9 +34,9 @@
 	RGB 22,20,10, 17,14,03 ; morn/day
 	RGB 11,11,05, 10,09,07 ; nite
 
-; group 9 (unused)
-	RGB 31,08,04, 09,09,08 ; morn/day
-	RGB 18,05,09, 09,09,08 ; nite
+; group 9 (East Forest)
+	RGB 31,08,04, 15,00,00 ; morn/day
+	RGB 14,00,04, 10,08,08 ; nite
 
 ; group 10 (Ridge)
 	RGB 24,14,31, 13,07,21 ; morn/day

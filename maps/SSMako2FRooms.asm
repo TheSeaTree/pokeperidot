@@ -226,28 +226,28 @@ GentlemanCharlesText:
 	text "I'm taking my hands"
 	line "off the wheel for"
 	cont "this battle."
-	
+
 	para "My #MON know"
 	line "what to do!"
 	done
-	
+
 GentlemanCharlesWinText:
 	text "What fun is a"
 	line "battle if I alrea-"
 	cont "dy know the out-"
 	cont "come?"
 	done
-	
+
 GentlemanCharlesAfterText:
 	text "You know what the"
 	line "problem with unce-"
 	cont "rtainty is?"
-	
+
 	para "I can't tell when"
 	line "it will cost me a"
 	cont "battle."
 	done
-	
+
 CooltrainerFHeidyText:
 	text "Do you know the"
 	line "full potential of"

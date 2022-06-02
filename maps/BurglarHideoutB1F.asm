@@ -13,8 +13,8 @@
 BurglarHideoutB1F_MapScripts:
 	db 3 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_RIVAL
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script .DummyScene ; SCENE_BURGLARHIDEOUTB1F_RIVAL
+	scene_script .DummyScene ; SCENE_BURGLARHIDEOUTB1F_FINISHED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .PasswordShutterCallback
@@ -301,9 +301,10 @@ BurglarHideoutRivalScriptContinue:
 	disappear BURGLARHIDEOUTB1F_RIVAL
 	waitsfx
 	setscene SCENE_BURGLARHIDEOUTB1F_RIVAL
+	setmapscene ORCHID_GYM_1F, SCENE_ORCHIDGYM1F_RIVAL
 	playmapmusic
 	end
-	
+
 TrainerSageLo2:
 	trainer SAGE, LO2, EVENT_BEAT_SAGE_LO2, SageLo2Text, SageLo2WinText, 0, .Script
 
@@ -650,10 +651,10 @@ HideoutRivalText:
 	cont "send you back to a"
 	cont "#MON CENTER!"
 	done
-	
+
 HideoutRivalLossText:
 	text "Pathetic."
-	
+
 	para "I knew you"
 	line "couldn't best me"
 	cont "forever."
@@ -662,16 +663,16 @@ HideoutRivalLossText:
 HideoutRivalWinText:
 	text "I can't stand"
 	line "this!"
-	
+
 	para "You got a lucky"
 	line "handout at the"
 	cont "start of your"
 	cont "journey!"
-	
+
 	para "I had to catch my"
 	line "own #MON!"
 	done
-	
+
 HideoutRivalAfterText:
 	text "Fine! Go win back"
 	line "the # FLUTE!"
@@ -683,11 +684,11 @@ HideoutRivalAfterText:
 	line "the only trainer I"
 	cont "simply can't beat!"
 	done
-	
+
 HideoutRivalAngryText:
 	text "ARGH!"
 	done
-	
+
 BurglarHideoutB1FSageText:
 	text "He…"
 	

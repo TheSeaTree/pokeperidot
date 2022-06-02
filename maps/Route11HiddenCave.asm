@@ -82,7 +82,7 @@ LightsOn:
 	end
 
 Route11CaveXSpAtk:
-	itemball SAPPHIRE_BOX
+	itemball SAPPHIRE_PIN
 
 Route11CaveGengarText:
 	text "GENGAR: Hehehe!"

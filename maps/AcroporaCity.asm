@@ -20,7 +20,26 @@ AcroporaCity_MapScripts:
 	
 AcroporaFisherScript:
 	jumptextfaceplayer AcroporaFisherText
-	
+
+AcroporaPokefanMScript:
+	jumptextfaceplayer AcroporaPokefanMText
+
+AcroporaBuenaScript:
+	jumptextfaceplayer AcroporaBuenaText
+
+AcroporaLassScript:
+	checkevent EVENT_CLEARED_BURGLAR_HIDEOUT
+	iftrue .ClearedHideout
+	jumptextfaceplayer AcroporaLassText
+.ClearedHideout
+	jumptextfaceplayer AcroporaLassClearedHideoutText
+
+AcroporaRockerScript:
+	jumptextfaceplayer AcroporaRockerText
+
+AcroporaBikerScript:
+	jumptextfaceplayer AcroporaBikerText
+
 AcroporaGymEvent:
 	checkflag ENGINE_COGBADGE
 	iftrue .havebadge
@@ -30,7 +49,7 @@ AcroporaGymEvent:
 	warpfacing UP, ACROPORA_GYM,  4, 11
 .no
 	end
-	
+
 .havebadge
 	scall AcroporaEnterGym
 	jump .warp
@@ -75,7 +94,78 @@ AcroporaFisherText:
 	cont "town. What could"
 	cont "he be working on?"
 	done
-	
+
+AcroporaPokefanMText:
+	text "There's someone in"
+	line "the cave that is"
+	cont "blocking the way"
+	cont "to MOLTEN PEAK."
+
+	para "I heard that's"
+	line "where the best"
+	cont "FIRE #MON can"
+	cont "be found."
+
+	para "It's also where the"
+	line "red-hot LEADER"
+	cont "ENYA trains!"
+	done
+
+AcroporaBuenaText:
+	text "When I was little,"
+	line "I used to look at"
+	cont "MOLTEN PEAK from"
+	cont "my window before"
+	cont "I went to sleep."
+
+	para "The shining lava"
+	line "looks so beautiful"
+	cont "at night."
+	done
+
+AcroporaLassText:
+	text "A group of loud"
+	line "BIKERs showed up"
+	cont "in town recently."
+
+	para "I wish someone"
+	line "would do something"
+	cont "about all the"
+	cont "noise they make."
+
+	para "It's so rude!"
+	done
+
+AcroporaLassClearedHideoutText:
+	text "I haven't seen the"
+	line "BIKERs in a while."
+
+	para "We can finally"
+	line "enjoy some peace"
+	cont "and quiet again!"
+
+	para "I wonder what made"
+	line "them leave here"
+	cont "so suddenly."
+	done
+
+AcroporaRockerText:
+	text "Have you ever"
+	line "heard the FLUTE"
+	cont "MASTER's music?"
+
+	para "It's truly life-"
+	line "changing."
+
+	para "I'm going to write"
+	line "music like his"
+	cont "some day."
+
+	para "Aha! Maybe they'll"
+	line "call me the GUITAR"
+	cont "MASTER!"
+	done
+
 AcroporaBikerText:
 	text "VROOM!"
 	
@@ -83,16 +173,16 @@ AcroporaBikerText:
 	line "VROOM!"
 	
 	para "BADABADABADABADA!"
-	
+
 	para "If this guy don't"
 	line "like our bikes'"
 	cont "music, he can just"
 	cont "GIT OUT!"
-	
+
 	para "VROOM!"
 	line "BADABADABADABADA!"
 	done
-	
+
 AcroporaCityGoAwaySignText:
 	text "TRAINER TIPS-"
 	
@@ -143,10 +233,11 @@ AcroporaCity_MapEvents:
 	bg_event 14,  7, BGEVENT_UP,   AcroporaGymEvent
 	bg_event  5, 15, BGEVENT_READ, AcroporaCityGymSign
 
-	db 6 ; object events
-	object_event 38, 22, SPRITE_FISHER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1
-	object_event  8, 19, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
-	object_event 17, 24, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
-	object_event 33, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
-	object_event 21, 18, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1
+	db 7 ; object events
+	object_event 38, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 4, AcroporaFisherScript, -1
+	object_event  8, 19, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaPokefanMScript, -1
+	object_event 17, 24, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 4, AcroporaBuenaScript, -1
+	object_event 33, 20, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 1, 2, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 4, AcroporaLassScript, -1
+	object_event 21, 18, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 4, AcroporaRockerScript, -1
+	object_event 30, 27, SPRITE_BIKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, AcroporaBikerScript, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event -4, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, ObjectEvent, -1

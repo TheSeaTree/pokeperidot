@@ -31,9 +31,9 @@ AcroporaPokecenter1FPokefanFText:
 	text "Have you ever"
 	line "heard the FLUTE"
 	cont "MASTER's music?"
-	
+
 	para "You simply must!"
-	
+
 	para "The man is like a"
 	line "sorcerer, with a"
 	cont "FLUTE as his wand." 

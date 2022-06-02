@@ -358,7 +358,7 @@ RugosaCoastTutorExplainGoldLeaf:
 	done
 	
 RugosaCoastSurfHouseSignText:
-	text "CYNARA COAST"
+	text "RUGOSA COAST"
 	line "SURF HOUSE"
 	
 	para "Members only."

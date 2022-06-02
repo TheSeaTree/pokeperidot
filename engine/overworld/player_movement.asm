@@ -288,6 +288,8 @@ DoPlayerMovement::
 	jr z, .holdwalk
 	cp DUNGEON
 	jr z, .holdwalk
+	cp GYM_CAVE
+	jr z, .holdwalk
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
@@ -795,6 +797,8 @@ ENDM
 	ret z
 	cp DUNGEON
 	ret z
+	cp GYM_CAVE
+	ret z
 	ld a, [hJoypadDown]
 	and B_BUTTON
 	cp B_BUTTON
@@ -811,6 +815,8 @@ ENDM
 	cp INDOOR
 	jp z, .runningstand
 	cp DUNGEON
+	jp z, .runningstand
+	cp GYM_CAVE
 	jp z, .runningstand
 	ld a, [wPlayerState]
 	cp PLAYER_RUN

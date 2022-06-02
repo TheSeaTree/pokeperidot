@@ -185,7 +185,7 @@ PectiniaComicStore_MapEvents:
 
 	db 0 ; coord events
 
-	db 6 ; bg events
+	db 12 ; bg events
 	bg_event  4,  0, BGEVENT_READ, PectiniaComicStoreYouBreakIt
 	bg_event  3,  5, BGEVENT_READ, PectiniaComicStoreWilburHeadline
 	bg_event  5,  5, BGEVENT_READ, PectiniaComicStoreReganHeadline

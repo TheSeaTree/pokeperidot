@@ -19,8 +19,9 @@ MaplesLab_MapScripts:
 	scene_script .DummyScene4 ; SCENE_MAPLESLAB_UNUSED
 	scene_script .DummyScene5 ; SCENE_MAPLESLAB_AIDE_GIVES_POTION
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .ChangeTiles
+	callback MAPCALLBACK_OBJECTS, .BlockElevator
 
 .MeetMaple:
 	priorityjump .WalkUpToMaple
@@ -74,6 +75,14 @@ MaplesLab_MapScripts:
 	
 .WaterPlant:
 	changeblock 8, 0, $30
+	return
+
+.BlockElevator
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .Nothing
+	moveobject MAPLESLAB_MAPLES_AIDE, 2, 1
+	appear MAPLESLAB_MAPLES_AIDE
+.Nothing
 	return
 
 ProfMapleScript:
@@ -311,6 +320,8 @@ AideScript_ReceiveTheBalls:
 
 MaplesAideScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .MapleGettingOrganized
 	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
@@ -324,6 +335,9 @@ MaplesAideScript:
 	
 .MapleGettingOrganized:
 	jumptext AideText_MapleOrganized
+
+.Postgame
+	jumptext AideText_Postgame
 
 MaplesLabLass:
 	jumptextfaceplayer MaplesLabLassText
@@ -760,6 +774,26 @@ AideText_MapleOrganized:
 	line "correct her mis-"
 	cont "takes has made my"
 	cont "job easier!"
+	done
+
+AideText_Postgame:
+	text "Hello, <PLAYER>!"
+
+	para "Did PROF.MAPLE"
+	line "tell you about the"
+	cont "project I've been"
+	cont "working on?"
+
+	para "I'm sorry to say"
+	line "that it's not quite"
+	cont "ready yet."
+
+	para "She must have been"
+	line "too excited to"
+	cont "keep it a secret."
+
+	para "I can't blame her,"
+	line "I'm excited too!"
 	done
 
 MaplesLabTravelTip1Text:

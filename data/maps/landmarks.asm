@@ -56,10 +56,13 @@ Landmarks:
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
 	landmark 132,  44, SeaRoute6Name
-	landmark 148,  36, Route21Name ; ROUTE_23
-	landmark 140,  28, VictoryRoadName
-	landmark 128,  28, SeaRoute7Name
-	landmark 140,  20, PokemonLeagueName
+	landmark 140,  44, Route21Name ; ROUTE_23
+	landmark 140,  36, Route22Name ; ROUTE_27
+	landmark 148,  36, Route23Name ; ROUTE_26
+	landmark 132,  36, VictoryRoadName
+	landmark 121,  36, SeaRoute7Name
+	landmark 116,  24, Route24Name ; ROUTE_28
+	landmark 132,  28, PokemonLeagueName
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
 	landmark  -8,  -8, PastMapName
@@ -126,6 +129,9 @@ Route18Name:          db "ROUTE 18@"
 Route19Name:          db "ROUTE 19@"
 Route20Name:          db "ROUTE 20@"
 Route21Name:          db "ROUTE 21@"
+Route22Name:          db "ROUTE 22@"
+Route23Name:          db "ROUTE 23@"
+Route24Name:          db "ROUTE 24@"
 SeaRoute1Name:        db "SEA ROUTE 1@"
 SeaRoute2Name:        db "SEA ROUTE 2@"
 SeaRoute3Name:        db "SEA ROUTE 3@"

@@ -51,11 +51,11 @@ PokemonLeagueCafeVendingMachine:
 	jump .VendItem
 
 .RareCandy:
-	checkmoney YOUR_MONEY, 4800
+	checkmoney YOUR_MONEY, 9800
 	ifequal HAVE_LESS, .NotEnoughMoney
 	giveitem RARE_CANDY
 	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 4800
+	takemoney YOUR_MONEY, 9800
 	itemtotext RARE_CANDY, MEM_BUFFER_0
 	jump .VendItem
 	
@@ -98,11 +98,11 @@ PokemonLeagueCafeChef:
 	writetext MushroomManIntroductionText
 	waitbutton
 	checkitem TINYMUSHROOM
-	iffalse .CheckBigMushrooms
-	jump .Selling
+	iftrue .HaveMushrooms
 .CheckBigMushrooms
 	checkitem BIG_MUSHROOM
 	iffalse .NoMushrooms
+.HaveMushrooms
 	writetext MushroomManHaveMushroomsText
 	waitbutton
 .Selling
@@ -194,6 +194,9 @@ PokemonLeagueCafePokefanFScript:
 	
 PokemonLeagueCafeLassScript:
 	jumptextfaceplayer PokemonLeagueCafeLassText
+
+PokemonLeagueCafeCooltrainerFScript:
+	jumptextfaceplayer PokemonLeagueCafeCooltrainerFText
 
 PokemonLeagueCafeFridge:
 	jumptext PokemonLeagueCafeFridgeText
@@ -401,6 +404,18 @@ PokemonLeagueCafeLassText:
 	cont "small town here!"
 	done
 
+PokemonLeagueCafeCooltrainerFText:
+	text "It's important to"
+	line "reward myself and"
+	cont "my #MON when"
+	cont "they do well."
+
+	para "Hehe!"
+
+	para "That's why I spend"
+	line "lots of time here!"
+	done
+
 PokemonLeagueCafeFridgeText:
 	text "It's stocked full"
 	line "of fresh seafood"
@@ -442,11 +457,12 @@ PokemonLeagueCafe_MapEvents:
 	bg_event 13,  1, BGEVENT_READ, PokemonLeagueCafeFridge
 	bg_event  6,  1, BGEVENT_READ, PokemonLeagueCafeTrash
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event  9,  1, SPRITE_CHEF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeChef, -1
 	object_event  0,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeClerkScript, -1
 	object_event  2,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeGymGuyScript, -1
 	object_event 13,  7, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafePokefanFScript, -1
 	object_event  2,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeLassScript, -1
+	object_event  2,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeCooltrainerFScript, -1
 	object_event  7,  5, SPRITE_FOOD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeAbandonedFood, -1
 	object_event 12,  7, SPRITE_FOOD, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PokemonLeagueCafeFood, -1

@@ -4,6 +4,15 @@ TreasureHuntersHouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
+;	callback MAPCALLBACK_NEWMAP, .Items
+
+.Items
+	giveitem RUBY_PENDANT
+	giveitem SAPPHIRE_PIN
+	giveitem EMERALD_RING
+	giveitem QUARTZ_BEADS
+	giveitem SPINEL_CHAIN
+	return
 
 TreasureHunter:
 	faceplayer
@@ -24,15 +33,15 @@ TreasureHunter:
 	writetext TreasureHunterIntroText
 	waitbutton
 .CheckItems
-	checkitem RUBY_BOX
+	checkitem RUBY_PENDANT
 	iftrue .HaveTreasure
-	checkitem SAPPHIRE_BOX
+	checkitem SAPPHIRE_PIN
 	iftrue .HaveTreasure
-	checkitem AMETHYST_BOX
+	checkitem QUARTZ_BEADS
 	iftrue .HaveTreasure
-	checkitem EMERALD_BOX
+	checkitem EMERALD_RING
 	iftrue .HaveTreasure
-	checkitem SPINEL_BOX
+	checkitem SPINEL_CHAIN
 	iftrue .HaveTreasure
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .FirstTime
@@ -52,21 +61,21 @@ TreasureHunter:
 	waitbutton
 .TradeTreasure
 	special SelectTreasureMenu
-	ifequal RUBY_BOX, .RubyBox
-	ifequal AMETHYST_BOX, .AmethystBox
-	ifequal SAPPHIRE_BOX, .SapphireBox
-	ifequal SPINEL_BOX, .SpinelBox
-	ifequal EMERALD_BOX, .EmeraldBox
+	ifequal RUBY_PENDANT, .RubyBox
+	ifequal QUARTZ_BEADS, .AmethystBox
+	ifequal SAPPHIRE_PIN, .SapphireBox
+	ifequal SPINEL_CHAIN, .SpinelBox
+	ifequal EMERALD_RING, .EmeraldBox
 	jump .Decline
 
 .RubyBox
 	checkcode VAR_ITEM_POCKET
 	ifgreater 18, .ItemsNearlyFull
-	itemtotext RUBY_BOX, MEM_BUFFER_0
+	itemtotext RUBY_PENDANT, MEM_BUFFER_0
 	writetext TreasureHunterAskTreasureText
 	yesorno
 	iffalse .Decline
-	takeitem RUBY_BOX
+	takeitem RUBY_PENDANT
 	writetext TreasureHunterGiveTreasureText
 	waitbutton
 	itemtotext X_ATTACK, MEM_BUFFER_0
@@ -79,11 +88,11 @@ TreasureHunter:
 .AmethystBox
 	checkcode VAR_ITEM_POCKET
 	ifgreater 18, .ItemsNearlyFull
-	itemtotext AMETHYST_BOX, MEM_BUFFER_0
+	itemtotext QUARTZ_BEADS, MEM_BUFFER_0
 	writetext TreasureHunterAskTreasureText
 	yesorno 
 	iffalse .Decline
-	takeitem AMETHYST_BOX
+	takeitem QUARTZ_BEADS
 	writetext TreasureHunterGiveTreasureText
 	waitbutton
 	itemtotext X_DEFEND, MEM_BUFFER_0
@@ -96,11 +105,11 @@ TreasureHunter:
 .SapphireBox
 	checkcode VAR_ITEM_POCKET
 	ifgreater 18, .ItemsNearlyFull
-	itemtotext SAPPHIRE_BOX, MEM_BUFFER_0
+	itemtotext SAPPHIRE_PIN, MEM_BUFFER_0
 	writetext TreasureHunterAskTreasureText
 	yesorno 
 	iffalse .Decline
-	takeitem SAPPHIRE_BOX
+	takeitem SAPPHIRE_PIN
 	writetext TreasureHunterGiveTreasureText
 	waitbutton
 	itemtotext X_SP_ATK, MEM_BUFFER_0
@@ -113,11 +122,11 @@ TreasureHunter:
 .SpinelBox
 	checkcode VAR_ITEM_POCKET
 	ifgreater 18, .ItemsNearlyFull
-	itemtotext SPINEL_BOX, MEM_BUFFER_0
+	itemtotext SPINEL_CHAIN, MEM_BUFFER_0
 	writetext TreasureHunterAskTreasureText
 	yesorno 
 	iffalse .Decline
-	takeitem SPINEL_BOX
+	takeitem SPINEL_CHAIN
 	writetext TreasureHunterGiveTreasureText
 	waitbutton
 	itemtotext X_SP_DEF, MEM_BUFFER_0
@@ -130,11 +139,11 @@ TreasureHunter:
 .EmeraldBox
 	checkcode VAR_ITEM_POCKET
 	ifgreater 18, .ItemsNearlyFull
-	itemtotext EMERALD_BOX, MEM_BUFFER_0
+	itemtotext EMERALD_RING, MEM_BUFFER_0
 	writetext TreasureHunterAskTreasureText
 	yesorno 
 	iffalse .Decline
-	takeitem EMERALD_BOX
+	takeitem EMERALD_RING
 	writetext TreasureHunterGiveTreasureText
 	waitbutton
 	itemtotext X_SPEED, MEM_BUFFER_0
@@ -150,15 +159,15 @@ TreasureHunter:
 	addvar 1
 	copyvartobyte wTreasuresTraded
 	ifequal 5, .TradedAllTreasures
-	checkitem RUBY_BOX
+	checkitem RUBY_PENDANT
 	iftrue .MoreTreasure
-	checkitem SAPPHIRE_BOX
+	checkitem SAPPHIRE_PIN
 	iftrue .MoreTreasure
-	checkitem AMETHYST_BOX
+	checkitem QUARTZ_BEADS
 	iftrue .MoreTreasure
-	checkitem EMERALD_BOX
+	checkitem EMERALD_RING
 	iftrue .MoreTreasure
-	checkitem SPINEL_BOX
+	checkitem SPINEL_CHAIN
 	iftrue .MoreTreasure
 	writetext TreasureHunterNoMoreTreasureText
 	waitbutton
@@ -247,7 +256,8 @@ TreasureHunterIntroText:
 TreasureHunterHaveTreasureText:
 	text "Oh my! You have?"
 
-	para "Please let me see!"
+	para "Please, let me see"
+	line "what you have!"
 	done
 
 TreasureHunterNoTreasureText:
@@ -395,7 +405,7 @@ TreasureHuntersHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  5,  7, TREASURE_HUNTERS_HOUSE, 1
+	warp_event  5,  7, ROUTE_26, 5
 
 	db 0 ; coord events
 

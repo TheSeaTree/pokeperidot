@@ -294,9 +294,9 @@ FaviaLadText:
 	done
 
 FaviaPostgameScientistText:
-	text "Hey, I'm ADRIAN,"
-	line "from the GYM here"
-	cont "in town."
+	text "Hello again!"
+	line "I'm ADRIAN from"
+	cont "CELESTE's GYM."
 
 	para "The trial run for"
 	line "the teleporter was"

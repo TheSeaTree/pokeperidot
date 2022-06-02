@@ -329,7 +329,7 @@ CHRIS EQU __enum__
 	const MIRANDA
 	const LAUREN
 	const KARLA
-	
+
 	trainerclass SAILOR ; 28
 	const CALVIN
 	const JEREMY
@@ -451,6 +451,13 @@ CHRIS EQU __enum__
 	const JUN
 	const TAKEO
 	const RIKU
+	const TOURNAMENT_1
+	const TOURNAMENT_2
+	const TOURNAMENT_3
+	const TOURNAMENT_4
+	const TOURNAMENT_5
+	const TOURNAMENT_6
+	const TOURNAMENT_7
 
 	trainerclass EXECUTIVEM ; 33
 	const ABBOT

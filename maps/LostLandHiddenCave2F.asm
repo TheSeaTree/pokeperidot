@@ -58,18 +58,18 @@ LostLandHiddenCave2FHiddenXSpDef:
 
 LostLandHiddenCave2FBoulder:
 	jumpstd strengthboulder
-	
+
 LostLandHiddenCave2FRock:
 	jumpstd smashrock
-	
+
 LostLandHiddenCave2FStuckBoulder:
 	jumptext LostLandHiddenCave2FStuckBoulderText
-	
+
 LostLandHiddenCave2FStuckBoulderText:
 	text "This boulder won't"
 	line "budge!"
 	done
-	
+
 LostLandHiddenCave2FFarAwaySound:
 	text "It sounded as if a"
 	line "door opened some-"

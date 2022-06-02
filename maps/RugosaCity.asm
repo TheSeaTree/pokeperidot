@@ -663,14 +663,14 @@ RugosaCitySailorText:
 	
 RugosaCityCooltrainerMText:
 	text "I paid a visit to"
-	line "the MOVE REMINDER"
-	cont "earlier."
+	line "the MOVE MANIAC"
+	cont "earlier today."
 	
 	para "I can't hope to"
 	line "take on the #-"
 	cont "MON LEAGUE without"
-	cont "the best moveset"
-	cont "possible!"
+	cont "the best set of"
+	cont "moves possible!"
 	done
 	
 RugosaCitySignText:

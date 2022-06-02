@@ -11,16 +11,14 @@ PlayersHouse2F_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .InitializeRoom
 	callback MAPCALLBACK_TILES, .SetSpawn
 
-; unused
-.Null:
-	end
-
 .InitializeRoom:
-; Set Mom's palette
+; Set Parents' palette
 	variablesprite SPRITE_VARIABLE_MOM, SPRITE_RED_MOM
+	variablesprite SPRITE_VARIABLE_DAD, SPRITE_RED_DAD
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iffalse .GotGender
 	variablesprite SPRITE_VARIABLE_MOM, SPRITE_BLUE_MOM
+	variablesprite SPRITE_VARIABLE_DAD, SPRITE_BLUE_DAD
 .GotGender
 	special ToggleDecorationsVisibility
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8

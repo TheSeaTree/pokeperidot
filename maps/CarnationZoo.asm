@@ -422,7 +422,7 @@ ZooVendingNoSpaceText:
 
 LaprasSignText:
 	text "It's LAPRAS!"
-	
+
 	para "It says LAPRAS are"
 	line "intelligent enough"
 	cont "to understand"
@@ -431,6 +431,10 @@ LaprasSignText:
 
 MachokeSignText:
 	text "It's MACHOKE!"
+
+	para "The belt they wear"
+	line "keeps their power"
+	cont "under control."
 	done
 
 ScytherSignText:
@@ -444,7 +448,7 @@ SudowoodoSignText:
 	para "This isn't a"
 	line "#MON…"
 	done
-	
+
 SudowoodoAfterText:
 	text "Oh, it says this"
 	line "is a SUDOWOODO."
@@ -455,13 +459,19 @@ SudowoodoAfterText:
 
 RhyhornSignText:
 	text "It's RHYHORN!"
+
+	para "It says they can"
+	line "be very destruct-"
+	cont "ive when they"
+	cont "stampede, but this"
+	cont "one seems calm."
 	done
-	
+
 CarnationZooFangirlIntroText:
 	text "<PLAYER>!"
 	line "What a surprise!"
 	done
-	
+
 CarnationZooFangirlVisitedSafariText:
 	text "Check it out! I"
 	line "have 7 BADGEs now!"

@@ -14,7 +14,7 @@ SkarmorysDen_MapScripts:
 	return
 
 .Appear:
-	moveobject SKARMORYSDEN_ITEMBALL,   5,  3
+	moveobject SKARMORYSDEN_ITEMBALL,  10,  5
 	return
 
 SkarmorysDenSkarmory:
@@ -38,7 +38,7 @@ SkarmorysDenSkarmory:
 	end
 
 SkarmorysDenTreasure:
-	itemball AMETHYST_BOX
+	itemball QUARTZ_BEADS
 
 SkarmorysDenSkarmoryText:
 	text "SKARMORY: Scree!"

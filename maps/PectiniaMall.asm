@@ -143,8 +143,7 @@ PectiniaComicStoreSignText:
 	done
 
 PectiniaBattleItemStoreSignText:
-	text "SKARMORY's SKY-"
-	line "HIGH SELECTION"
+	text "DODRIO'S ROOST"
 	done
 
 PectiniaArcadeSignText:
@@ -167,7 +166,6 @@ PectiniaMall_MapEvents:
 	warp_event 31,  6, PECTINIA_ARCADE, 1
 
 	db 0 ; coord events
-;	coord_event 18,  8, SCENE_DEFAULT, Script_ArriveFromSaffron
 
 	db 7 ; bg events
 	bg_event 16,  8, BGEVENT_READ, BattleSubwayEntranceSign

@@ -133,14 +133,16 @@ AcroporaGymGuy2Text:
 AcroporaCave1F_MapEvents:
 	db 0, 0 ; filler
 
-	db 7 ; warp events
+	db 9 ; warp events
 	warp_event 13, 19, ACROPORA_CITY, 6
 	warp_event 17, 17, ACROPORA_CAVE_2F, 1
 	warp_event  3, 13, ACROPORA_CAVE_2F, 2
 	warp_event  9, 11, ACROPORA_CAVE_B1F, 1
 	warp_event 19,  5, ACROPORA_CAVE_B1F, 2
 	warp_event 31, 11, ACROPORA_CITY, 7
-	warp_event  5,  5, MOLTEN_PEAK_1F, 5
+	warp_event  5,  5, ACROPORA_CAVE_1F, 8
+	warp_event 35, 27, ACROPORA_CAVE_1F, 7
+	warp_event 25, 21, MOLTEN_PEAK_OUTSIDE, 1
 
 	db 0 ; coord events
 

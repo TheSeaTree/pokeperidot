@@ -114,42 +114,10 @@ DugtriosDenDiglettBattle:
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
-;	jump .BossTest
-	end
-
-.BossTest
-	loadwildmon AERODACTYL, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon LUGIA, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon MAROWAK, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon MUK, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon GENGAR, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon KINGLER, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
-	loadwildmon RAICHU, 10
-	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
-	startbattle
-	reloadmapafterbattle
 	end
 
 DugtriosDenXSpeed:
-	itemball EMERALD_BOX
+	itemball EMERALD_RING
 
 DugtriosDenDiglettText:
 	text "DIGLETT-DIG!"

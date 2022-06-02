@@ -100,6 +100,7 @@ Route6Gate_Blocks:
 Route14Gate_Blocks:
 Route20AcroporaGate_Blocks:
 Route25Gate_Blocks:
+Route23Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 	
 PokemonLeagueGate1F_Blocks:
@@ -153,6 +154,7 @@ Route21StaghornGate_Blocks:
 Route18CarnationGate_Blocks:
 CarnationZooGate_Blocks:
 Route27Gate_Blocks:
+Route26Gate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 MaplesLab_Blocks:
@@ -793,6 +795,12 @@ Route23_Blocks:
 Route26_Blocks:
 	INCBIN "maps/Route26.ablk"
 
+Route26Cave1F_Blocks:
+	INCBIN "maps/Route26Cave1F.ablk"
+
+Route26Cave2F_Blocks:
+	INCBIN "maps/Route26Cave2F.ablk"
+
 Route27_Blocks:
 	INCBIN "maps/Route27.ablk"
 
@@ -897,6 +905,9 @@ OrchidTeachersHouse_Blocks:
 
 OrchidBlackbeltsHouse_Blocks:
 	INCBIN "maps/OrchidBlackbeltsHouse.ablk"
+
+OrchidEnteiShrine_Blocks:
+	INCBIN "maps/OrchidEnteiShrine.ablk"
 
 BattleSimulation_Blocks:
 	INCBIN "maps/BattleSimulation.ablk"
