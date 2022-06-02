@@ -23,9 +23,9 @@ BattleSubwayBattleShopData:
 	dbw X_SP_DEF,		  5
 	dbw X_SPEED,		  8
 	dbw X_ACCURACY,		  8
-	dbw HEAT_CHARM,		 10
-	dbw DAMP_CHARM,		 10
 	dbw COARSE_CHARM,	 10
+	dbw HEAT_CHARM,		 12
+	dbw DAMP_CHARM,		 12
 	dbw FOCUS_SASH,		 16
 	dbw FOCUS_BAND, 	 16
 	dbw POWER_HERB,		 16
