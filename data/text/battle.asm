@@ -97,7 +97,7 @@ TentacruelBossText::
 	prompt
 
 MachampBossText::
-	text "BOSS OF THIS GYM"
+	text "FOUR-ARMED FLEXER"
 	line "MACHAMP"
 	cont "challenges you!"
 	prompt
@@ -248,9 +248,9 @@ BattleText_EnemyMonFainted:
 	text_start
 	line "fainted!"
 	prompt
-	
+
 BattleText_EnemyMonRanAway:
-	text "Wild @"
+	text "@"
 	text_ram wEnemyMonNick
 	text_start
 	line "was defeated!"
