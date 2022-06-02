@@ -48,14 +48,9 @@ MoveRelearner:
 	ld a, [wMenuSelection]
 	ld [wd265], a
 	call GetMoveName
-	ld hl, wStringBuffer1
-	ld de, wStringBuffer2
-	ld bc, wStringBuffer2 - wStringBuffer1
-	call CopyBytes
-	ld b, 0
+	call CopyName1
 	predef LearnMove
-	ld a, b
-	and a
+	xor a
 	jr z, .skip_learn
 
 	ld a, BRICK_PIECE
@@ -93,7 +88,6 @@ MoveRelearner:
 .no_moves
 	ld hl, Text_MoveReminderNoMoves
 	jp PrintText
-
 
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
