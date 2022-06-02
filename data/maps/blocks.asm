@@ -49,7 +49,6 @@ PokeSeersHouse_Blocks:
 Route2NuggetHouse_Blocks:
 PlayersNeighborsHouse_Blocks:
 MrPsychicsHouse_Blocks:
-Route5CleanseTagHouse_Blocks:
 PectiniaBikeHouse_Blocks:
 PectiniaEvolutionHouse_Blocks:
 PectiniaGymSpeechHouse_Blocks:
@@ -102,6 +101,9 @@ Route20AcroporaGate_Blocks:
 Route25Gate_Blocks:
 Route23Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
+
+Route28Gate_Blocks:
+	INCBIN "maps/Route28Gate.ablk"
 	
 PokemonLeagueGate1F_Blocks:
 	INCBIN "maps/PokemonLeagueGate1F.ablk"
@@ -215,7 +217,6 @@ FaviaPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
 FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
-SilverCavePokecenter1F_Blocks:
 HepaticaPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
 SaffronPokecenter1F_Blocks:
@@ -278,16 +279,6 @@ UnionCaveB2F_Blocks:
 UnionCave1F_Blocks:
 	INCBIN "maps/UnionCave1F.ablk"
 
-NationalPark_Blocks:
-NationalParkBugContest_Blocks:
-	INCBIN "maps/NationalPark.ablk"
-
-Route5UndergroundPathEntrance_Blocks:
-	INCBIN "maps/UndergroundPathEntrance.ablk"
-
-KurtsHouse_Blocks:
-	INCBIN "maps/KurtsHouse.ablk"
-
 PectiniaMall_Blocks:
 	INCBIN "maps/PectiniaMall.ablk"
 
@@ -308,21 +299,6 @@ PectiniaArcade_Blocks:
 
 PectiniaDollStore_Blocks:
 	INCBIN "maps/PectiniaDollStore.ablk"
-
-RadioTower1F_Blocks:
-	INCBIN "maps/RadioTower1F.ablk"
-
-RadioTower2F_Blocks:
-	INCBIN "maps/RadioTower2F.ablk"
-
-RadioTower3F_Blocks:
-	INCBIN "maps/RadioTower3F.ablk"
-
-RadioTower4F_Blocks:
-	INCBIN "maps/RadioTower4F.ablk"
-
-RadioTower5F_Blocks:
-	INCBIN "maps/RadioTower5F.ablk"
 
 PavonaVillage_Blocks:
 	INCBIN "maps/PavonaVillage.ablk"
@@ -347,9 +323,6 @@ RugosaCity_Blocks:
 
 AcroporaCity_Blocks:
 	INCBIN "maps/AcroporaCity.ablk"
-
-SilverCaveOutside_Blocks:
-	INCBIN "maps/SilverCaveOutside.ablk"
 
 SeaRoute4_Blocks:
 	INCBIN "maps/SeaRoute4.ablk"
@@ -389,18 +362,6 @@ MountMortar2FInside_Blocks:
 
 MountMortarB1F_Blocks:
 	INCBIN "maps/MountMortarB1F.ablk"
-
-SilverCaveRoom1_Blocks:
-	INCBIN "maps/SilverCaveRoom1.ablk"
-
-SilverCaveRoom2_Blocks:
-	INCBIN "maps/SilverCaveRoom2.ablk"
-
-SilverCaveRoom3_Blocks:
-	INCBIN "maps/SilverCaveRoom3.ablk"
-
-MountMoonGiftShop_Blocks:
-	INCBIN "maps/GiftShop.ablk"
 
 TrainerHouse_Blocks:
 	INCBIN "maps/TrainerHouse.ablk"
@@ -478,14 +439,11 @@ PlayersHouse2F_Blocks:
 EmilysHouse2F_Blocks:
 	INCBIN "maps/PlayersHouse2F.ablk"
 
-SilverCaveItemRooms_Blocks:
-	INCBIN "maps/SilverCaveItemRooms.ablk"
-
 DayCare_Blocks:
 	INCBIN "maps/DayCare.ablk"
 
-SoulHouse_Blocks:
-	INCBIN "maps/SoulHouse.ablk"
+NorthForest_Blocks
+	INCBIN "maps/NorthForest.ablk"
 
 PalerockCave1F_Blocks:
 	INCBIN "maps/PalerockCave1F.ablk"
@@ -498,15 +456,6 @@ PalerockCaveB2F_Blocks:
 
 DiglettsCave_Blocks:
 	INCBIN "maps/DiglettsCave.ablk"
-
-MountMoon_Blocks:
-	INCBIN "maps/MountMoon.ablk"
-
-VictoryRoadGate_Blocks:
-	INCBIN "maps/VictoryRoadGate.ablk"
-
-VictoryRoad_Blocks:
-	INCBIN "maps/VictoryRoad.ablk"
 
 VictorsRoom_Blocks:
 	INCBIN "maps/VictorsRoom.ablk"

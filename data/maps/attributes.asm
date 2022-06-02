@@ -135,8 +135,6 @@ ENDM
 	connection north, Route24North, ROUTE_24_NORTH, -1
 	connection east, Route21, ROUTE_21, 0
 
-	map_attributes SilverCaveOutside, SILVER_CAVE_OUTSIDE, $2c, 0
-
 	map_attributes Route30, ROUTE_30, $05, NORTH | EAST
 	connection north, Route9, ROUTE_9, 0
 	connection east, PavonaVillage, PAVONA_VILLAGE, 1
@@ -313,30 +311,17 @@ ENDM
 	map_attributes PastPectiniaApartment2F, PAST_PECTINIA_APARTMENT_2F, $00, 0
 	map_attributes PastPectiniaApartment3F, PAST_PECTINIA_APARTMENT_3F, $00, 0
 
-	map_attributes NationalPark, NATIONAL_PARK, $00, 0
-	map_attributes NationalParkBugContest, NATIONAL_PARK_BUG_CONTEST, $00, 0
-	map_attributes RadioTower1F, RADIO_TOWER_1F, $00, 0
-	map_attributes RadioTower2F, RADIO_TOWER_2F, $00, 0
-	map_attributes RadioTower3F, RADIO_TOWER_3F, $00, 0
-	map_attributes RadioTower4F, RADIO_TOWER_4F, $00, 0
-	map_attributes RadioTower5F, RADIO_TOWER_5F, $00, 0
 	map_attributes UnionCave1F, UNION_CAVE_1F, $09, 0
 	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $09, 0
 	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
 	map_attributes IlexForest, ILEX_FOREST, $05, 0
 	map_attributes Route6Underground, ROUTE_6_UNDERGROUND, $00, 0
-	map_attributes MountMortar1FOutside, MOUNT_MORTAR_1F_OUTSIDE, $09, 0
-	map_attributes MountMortar1FInside, MOUNT_MORTAR_1F_INSIDE, $09, 0
-	map_attributes MountMortar2FInside, MOUNT_MORTAR_2F_INSIDE, $09, 0
-	map_attributes MountMortarB1F, MOUNT_MORTAR_B1F, $09, 0
 	map_attributes AcroporaGym, ACROPORA_GYM, $00, 0
 	map_attributes RugosaGym, RUGOSA_GYM, $00, 0
 	map_attributes RugosaPokecenter1F, RUGOSA_POKECENTER_1F, $00, 0
 	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
-	map_attributes MountMoon, MOUNT_MOON, $09, 0
 	map_attributes PalerockCave1F, PALEROCK_CAVE_1F, $09, 0
 	map_attributes PalerockCaveB1F, PALEROCK_CAVE_B1F, $09, 0
-	map_attributes VictoryRoad, VICTORY_ROAD, $1d, 0
 	map_attributes StaghornPokecenter1F, STAGHORN_POKECENTER_1F, $00, 0
 	map_attributes StaghornMart, STAGHORN_MART, $00, 0
 	map_attributes StaghornGym, STAGHORN_GYM, $00, 0
@@ -349,7 +334,6 @@ ENDM
 	map_attributes PectiniaPokecenter1F, PECTINIA_POKECENTER_1F, $00, 0
 	map_attributes CharcoalKiln, CHARCOAL_KILN, $00, 0
 	map_attributes PectiniaMart, PECTINIA_MART, $00, 0
-	map_attributes KurtsHouse, KURTS_HOUSE, $00, 0
 	map_attributes PectiniaGym, PECTINIA_GYM, $00, 0
 	map_attributes RidgeCafe, RIDGE_CAFE, $00, 0
 	map_attributes RidgeGym, RIDGE_GYM, $00, 0
@@ -381,7 +365,6 @@ ENDM
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes Route3Route4Gate, ROUTE_3_ROUTE_4_GATE, $00, 0
 	map_attributes Route5SuperRodHouse, ROUTE_5_SUPER_ROD_HOUSE, $00, 0
-	map_attributes SilverCavePokecenter1F, SILVER_CAVE_POKECENTER_1F, $00, 0
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
@@ -401,9 +384,7 @@ ENDM
 	map_attributes ElmsHouse, ELMS_HOUSE, $00, 0
 	map_attributes Route1ElkhornGate, ROUTE_1_ELKHORN_GATE, $00, 0
 	map_attributes Route1FaviaGate, ROUTE_1_FAVIA_GATE, $00, 0
-	map_attributes Route5UndergroundPathEntrance, ROUTE_5_UNDERGROUND_PATH_ENTRANCE, $00, 0
 	map_attributes Route1PavonaGate, ROUTE_1_PAVONA_GATE, $00, 0
-	map_attributes Route5CleanseTagHouse, ROUTE_5_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes OrchidMart, ORCHID_MART, $00, 0
 	map_attributes PavonaGymSpeechHouse, PAVONA_GYM_SPEECH_HOUSE, $00, 0
 	map_attributes PavonaInn, PAVONA_INN, $00, 0
@@ -520,7 +501,6 @@ ENDM
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0
 	map_attributes Route7Cave1F, ROUTE_7_CAVE_1F, $09, 0
 	map_attributes Route7CaveB1F, ROUTE_7_CAVE_B1F, $09, 0
-	map_attributes KinglersDen, KINGLERS_DEN, $09, 0
 	map_attributes Route8HiddenCave, ROUTE_8_HIDDEN_CAVE, $09, 0
 	map_attributes PalerockMountainB2, PALEROCK_MOUNTAIN_B2, $09, 0
 	map_attributes PalerockCaveB2F, PALEROCK_CAVE_B2F, $09, 0
@@ -607,3 +587,5 @@ ENDM
 	map_attributes Route26Cave2F, ROUTE_26_CAVE_2F, $09, 0
 	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
 	map_attributes Route26Gate, ROUTE_26_GATE, $00, 0
+	map_attributes Route28Gate, ROUTE_28_GATE, $00, 0
+	map_attributes NorthForest, NORTH_FOREST, $00, 0

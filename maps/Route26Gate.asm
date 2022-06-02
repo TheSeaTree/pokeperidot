@@ -73,4 +73,4 @@ Route26Gate_MapEvents:
 	bg_event  7,  2, BGEVENT_READ, Route26GateComputer
 
 	db 1 ; object events
-	object_event  6,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26GateOfficerMScript, -1
+	object_event  6,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route26GateOfficerMScript, -1

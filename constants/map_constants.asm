@@ -66,23 +66,11 @@ ENDM
 
 	newgroup                                                      ;  3
 
-	map_const NATIONAL_PARK,                               20, 27 ; 15
-	map_const NATIONAL_PARK_BUG_CONTEST,                   20, 27 ; 16
-	map_const RADIO_TOWER_1F,                               9,  4 ; 17
-	map_const RADIO_TOWER_2F,                               9,  4 ; 18
-	map_const RADIO_TOWER_3F,                               9,  4 ; 19
-	map_const RADIO_TOWER_4F,                               9,  4 ; 20
-	map_const RADIO_TOWER_5F,                               9,  4 ; 21
 	map_const UNION_CAVE_1F,                               23, 10 ; 37
 	map_const UNION_CAVE_B1F,                              20, 16 ; 38
 	map_const UNION_CAVE_B2F,                              10, 18 ; 39
-	map_const MOUNT_MORTAR_1F_OUTSIDE,                     20, 18 ; 57
-	map_const MOUNT_MORTAR_1F_INSIDE,                      20, 27 ; 58
-	map_const MOUNT_MORTAR_2F_INSIDE,                      20, 18 ; 59
-	map_const MOUNT_MORTAR_B1F,                            20, 18 ; 60
 	map_const DIGLETTS_CAVE,                               13,  9 ; 84
 	map_const DRAIN_PUNCH_CHAMBER,							5,  4
-	map_const MOUNT_MOON,                                  15,  9 ; 85
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
 	map_const PALEROCK_CAVE_B2F,                            6,  4 ; 88
@@ -97,7 +85,6 @@ ENDM
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
-	map_const KINGLERS_DEN,							        5,  7
 	map_const TENTACRUELS_DEN,						        8,  8
 
 	newgroup                                                      ;  4
@@ -178,7 +165,6 @@ ENDM
 	map_const PECTINIA_POKECENTER_1F,                         5,  4 ;  1
 	map_const CHARCOAL_KILN,                                  4,  4 ;  2
 	map_const PECTINIA_MART,                                  6,  4 ;  3
-	map_const KURTS_HOUSE,                                    8,  4 ;  4
 	map_const PECTINIA_GYM,                                   9,  9 ;  5
 	map_const PECTINIA_CITY,                                 30, 20 ;  7
 	map_const PECTINIA_APARTMENT_LEFT,                        6,  4
@@ -332,8 +318,6 @@ ENDM
 
 	newgroup                                                      ; 19
 
-	map_const SILVER_CAVE_OUTSIDE,                         20, 18 ;  1
-	map_const SILVER_CAVE_POKECENTER_1F,                    5,  4 ;  2
 	map_const REMNANT_CAVE_1F,                             17, 12
 	map_const REMNANT_CAVE_2F,	                           18, 18
 	map_const REMNANT_CAVE_OUTSIDE,	                       23, 16
@@ -416,8 +400,6 @@ ENDM
 
 	newgroup                                                      ; 25
 
-	map_const ROUTE_5_UNDERGROUND_PATH_ENTRANCE,            4,  4 ; 13
-	map_const ROUTE_5_CLEANSE_TAG_HOUSE,                    4,  4 ; 15
 	map_const ROUTE_23,					                   19, 20 ; 15
 	map_const ROUTE_23_GATE,					           	5,  4
 	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
@@ -434,6 +416,8 @@ ENDM
 	map_const BATTLE_SIMULATION,					       10,  7
 	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
 	map_const ROUTE_28,					           		   16, 18
+	map_const ROUTE_28_GATE,					            3,  4
+	map_const NORTH_FOREST,					           	   20, 15
 
 	newgroup                                                      ; 26
 

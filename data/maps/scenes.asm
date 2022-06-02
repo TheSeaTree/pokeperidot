@@ -32,10 +32,9 @@ MapScenes::
 	scene_var POWER_PLANT_1F_B,                         wMahoganyTownSceneID
 	scene_var HEPATICA_TOWN,                            wCianwoodCitySceneID
 	scene_var PALEROCK_MOUNTAIN_3F,                     wBattleTowerOutsideSceneID ; unused
-	scene_var MOUNT_MOON,                               wMountMoonSceneID
-	scene_var RADIO_TOWER_5F,                           wRadioTower5FSceneID
+	scene_var NORTH_FOREST,                             wNorthForestSceneID
+	scene_var ROUTE_28_GATE,                            wRoute28GateSceneID
 	scene_var RUGOSA_CITY,                              wMahoganyMart1FSceneID ; unused
-	scene_var VICTORY_ROAD,                             wVictoryRoadSceneID
 	scene_var ROUTE_1,                                 	wRoute1SceneID
 	scene_var RIDGE_VILLAGE,							wVioletCitySceneID
 	scene_var RUGOSA_PORT,								wRugosaPortSceneID

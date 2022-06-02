@@ -2591,12 +2591,12 @@ wBattleTowerElevatorSceneID::                     db ; d9a0
 wBattleSubwayPlatformSceneID::                    db ; d9a1
 wBattleTowerOutsideSceneID::                      db ; d9a2
 wRoute43GateSceneID::                             db ; d9a3
-wMountMoonSceneID::                               db ; d9a4
+wNorthForestSceneID::                             db ; d9a4
 wFluteMasterHouseSceneID::                        db ; d9a5
 wLostLandSceneID::                                db ; d9a6
 wOrchidGym1FSceneID::                             db ; d9a7
 wBurnedTowerB1FSceneID::                          db ; d9a8
-wRadioTower5FSceneID::                            db ; d9a9
+wRoute28GateSceneID::                             db ; d9a9
 wRuinsOfAlphOutsideSceneID::                      db ; d9aa
 wRuinsOfAlphResearchCenterSceneID::               db ; d9ab
 wUnownChamberAGSceneID::               			  db ; d9ac
