@@ -48,7 +48,13 @@ GroundGymLeader:
 	iftrue .DoneRematch
 	
 	opentext
+	copybytetovar wAlanFightCount
+	ifgreater 0, .FirstRematch
 	writetext AlanRematchText
+	jump .LoadTrainer
+.FirstRematch
+	writetext AlanFirstRematchText
+.LoadTrainer
 	waitbutton
 	closetext
 	
@@ -160,21 +166,75 @@ GroundLeaderWinText:
 	line "my TERRABADGE."
 	done
 
+AlanFirstRematchText:
+	text "Aha! <PLAYER>!"
+
+	para "How good to see"
+	line "you again!"
+
+	para "You must have"
+	line "noticed the more"
+	cont "direct path to"
+	cont "this GYM now!"
+
+	para "I wasn't getting"
+	line "as many battles as"
+	cont "I wanted to."
+
+	para "Since then, my"
+	line "#MON and I have"
+	cont "made great discov-"
+	cont "eries."
+
+	para "You must have made"
+	line "some discoveries"
+	cont "of your own."
+
+	para "Let's share our"
+	line "experiences!"
+	done
+
 AlanRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Aha! There you"
+	line "are, <PLAYER>!"
+
+	para "I wondered when I'd"
+	line "see you again."
+
+	para "Come on! Let's make"
+	line "the foundation of"
+	cont "this GYM shake"
+	cont "like no other"
+	cont "trainers can!"
 	done
 
 AlanRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "Aha! What a good"
+	line "battle that was!"
+	
+	para "You've knocked me"
+	line "off my feet again!"
+
+	para "Don't get used to"
+	line "that feeling, be-"
+	cont "cause I'll get you"
+	cont "next time!"
 	done
 
 AlanAfterRematchText:
-	text "Good job!"
+	text "Ha! This world has"
+	line "so many secrets"
+	cont "for us to find!"
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "I will keep digg-"
+	line "ing to unlock"
+	cont "these secrets!"
+
+	para "Give me some time"
+	line "and I'll find some-"
+	cont "thing to make my"
+	cont "#MON even"
+	cont "better in battle!"
 	done
 
 Text_ReceivedTerraBadge:

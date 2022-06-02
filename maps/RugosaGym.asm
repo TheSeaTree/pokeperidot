@@ -1305,22 +1305,22 @@ CogBadgeText:
 ThunderboltTMText:
 	text "That TM is"
 	line "THUNDERBOLT."
-	
+
 	para "As you saw in our"
 	line "battle, its raw"
 	cont "power is nothing"
 	cont "to scoff at."
-	
+
 	para "Leaving your foe"
 	line "paralyzed opens up"
 	cont "many opportunities"
 	cont "in battle."
 	done
-	
+
 JoelAfterMessageText:
 	text "The march of prog-"
 	line "ress knows no end!"
-	
+
 	para "I will always push"
 	line "myself to become a"
 	cont "better #MON"
@@ -1329,20 +1329,46 @@ JoelAfterMessageText:
 	done
 
 JoelRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Welcome back,"
+	line "CHAMPION <PLAYER>."
+
+	para "I must admit that"
+	line "my inventions have"
+	cont "taken a back seat"
+	cont "to my training,"
+	cont "ever since I heard"
+	cont "that you had"
+	cont "defeated the"
+	cont "#MON LEAGUE."
+
+	para "Would you like to"
+	line "hear a progress"
+	cont "report on my team?"
+
+	para "Because I would be"
+	line "happy to show you!"
 	done
 
 JoelRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "I thought my"
+	line "current plan would"
+	cont "have been enough"
+	cont "to win."
+
+	para "There is always"
+	line "something new to"
+	cont "learn in battling."
 	done
 
 JoelAfterRematchText:
-	text "Good job!"
+	text "I must return to"
+	line "my studies if I"
+	cont "wish to defeat"
+	cont "your #MON."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "I will be ready"
+	line "first thing in the"
+	cont "morning tomorrow."
 	done
 
 ScientistAndreText:

@@ -168,6 +168,7 @@ MAPOBJECT_SCREEN_HEIGHT EQU (SCREEN_HEIGHT / 2) + 2
 	const SPRITEMOVEDATA_BOULDERDUST          ; 22
 	const SPRITEMOVEDATA_GRASS                ; 23
 	const SPRITEMOVEDATA_SWIM_WANDER          ; 24
+	const SPRITEMOVEDATA_SPRITE_SHADOW        ; 25
 NUM_SPRITEMOVEDATA EQU const_value
 
 ; MapObjectMovementPattern.Pointers indexes (see engine/overworld/map_objects.asm)
@@ -250,6 +251,7 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const OBJECT_ACTION_GRASS_SHAKE   ; 0f
 	const OBJECT_ACTION_SKYFALL       ; 10
 	const OBJECT_ACTION_RUN
+	const OBJECT_ACTION_SPRITE_SHADOW
 
 ; Facings indexes (see data/sprites/facings.asm)
 	const_def
@@ -285,6 +287,7 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const FACING_BOULDER_DUST_2 ; 1d
 	const FACING_GRASS_1        ; 1e
 	const FACING_GRASS_2        ; 1f
+	const FACING_SPRITE_SHADOW  ; 20
 
 ; DoPlayerMovement.DoStep arguments (see engine/overworld/player_movement.asm)
 	const_def

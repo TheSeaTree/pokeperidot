@@ -184,7 +184,19 @@ StaghornGymLeader:
 	copyvartobyte wPoseyFightCount
 
 .DoneRematch
-	jumptext PoseyAfterRematchText
+	opentext
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iftrue .Girl
+	writetext PoseyAfterRematchBoyText
+	jump .AfterText
+.Girl
+	writetext PoseyAfterRematchGirlText
+.AfterText
+	waitbutton
+	writetext PoseyAfterRematchText
+	waitbutton
+	closetext
+	end
 
 StaghornCantLeave:
 	checkflag ENGINE_ROOTBADGE
@@ -485,20 +497,76 @@ PlayerReceivedRootBadgeText:
 	done
 
 PoseyRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Ah, <PLAYER>!"
+	
+	para "I'm glad that our"
+	line "paths have crossed"
+	cont "once again!"
+
+	para "Much like the"
+	line "grass around us,"
+	cont "my team has been"
+	cont "growing at a"
+	cont "considerable rate."
+
+	para "Your #MON must"
+	line "have done a lot of"
+	cont "growing since our"
+	cont "last battle too."
+
+	para "I can't wait to see"
+	line "what kind of trai-"
+	cont "ning you've done!"
+
+	para "I'm ready for you!"
 	done
 
 PoseyRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "Battling with you"
+	line "will always put a"
+	cont "smile on my face."
+	
+	para "I can see that you"
+	line "still show your"
+	cont "#MON the same"
+	cont "amount of love"
+	cont "and respect as in"
+	cont "our last battle."
+
+	para "You really deserve"
+	line "the success that"
+	cont "has come your way."
+	done
+
+PoseyAfterRematchBoyText:
+	text "I am always so"
+	line "glad to see a"
+	cont "trainer with true"
+	cont "compassion toward"
+	cont "his #MON."
+	done
+
+PoseyAfterRematchGirlText:
+	text "I am always so"
+	line "glad to see a"
+	cont "trainer with true"
+	cont "compassion toward"
+	cont "her #MON."
 	done
 
 PoseyAfterRematchText:
-	text "Good job!"
+	text "If mine weren't so"
+	line "worn out, I would"
+	cont "be happy to have"
+	cont "another rematch"
+	cont "with you."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "My #MON should"
+	line "be feeling better"
+	cont "by tomorrow."
+
+	para "Yours deserve a"
+	line "good rest too!"
 	done
 
 StaghornGymHaveBadge:

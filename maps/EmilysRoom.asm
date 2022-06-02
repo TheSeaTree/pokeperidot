@@ -44,12 +44,18 @@ EmilysRoomEmilyScript:
 
 ;	applymovement EMILYSROOM_EMILY, EmilysRoom_EmilyApproachPlayer
 	opentext
+	copybytetovar wEliteFourFightCount
+	ifgreater 0, .RematchIntro
 	writetext EmilyBattleIntroText
+	jump .LoadParty
+.RematchIntro
+	writetext EmilyRematchIntroText
+.LoadParty
 	waitbutton
 	closetext
 ;	setlasttalked EMILYSROOM_EMILY
 	winlosstext EmilyBattleWinText, 0
-	
+
 	copybytetovar wEliteFourFightCount
 	ifgreater 3, .FinalRematch
 	ifequal 3, .RematchTeam4
@@ -201,6 +207,24 @@ EmilyBattleIntroText:
 
 	para "Let's make this a"
 	line "memorable battle!"
+	done
+
+EmilyRematchIntroText:
+	text "Hey, <PLAYER>!"
+	
+	para "I'm glad you made"
+	line "it!"
+
+	para "I can't wait to see"
+	line "what you have done"
+	cont "with your #MON!"
+
+	para "Okay, are you"
+	line "ready?"
+
+	para "Let's make this"
+	line "battle as memoable"
+	cont "as our last one!"
 	done
 
 EmilyBattleWinText:

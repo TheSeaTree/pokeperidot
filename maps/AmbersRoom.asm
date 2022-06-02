@@ -223,17 +223,17 @@ AmberScript_AmberBeforeText:
 
 AmberScript_AmberBeatenText:
 	text "Sigh…"
-	
+
 	para "I am disappointed"
 	line "to be defeated by"
 	cont "someone with such"
 	cont "little class."
-	
+
 	para "But I will lose"
 	line "with dignity."
-	
+
 	para "Congratulations."
-	
+
 	para "You have defeated"
 	line "the ELITE FOUR!"
 	done
@@ -262,23 +262,95 @@ AmberScript_AmberDefeatText:
 	done
 
 AmberScript_RematchBeforeText:
-	text "Pre-rematch text"
-	line "goes here."
+	text "Well, it's about"
+	line "time you made it"
+	cont "back, <PLAYER>."
+
+	para "I'd be a liar if I"
+	line "wasn't excited for"	
+	cont "this battle."
+
+	para "My #MON have"
+	line "been getting the"
+	cont "best training that"
+	cont "money can buy!"
+
+	para "I've even skipped"
+	line "out on buying new"
+	cont "jewelry since our"
+	cont "last battle."
+
+	para "I hope you have"
+	line "been training just"
+	cont "as hard as me."
+
+	para "I don't intend on"
+	line "losing again!"
 	done
 
 AmberScript_RematchBeatenText:
-	text "Rematch victory"
-	line "text goes here."
+	text "Sigh…"
+
+	para "I will never get"
+	line "used to this feel-"
+	cont "ing of defeat."
+
+	para "But I feel"
+	line "strangely happy"
+	cont "right now."
+
+	para "I admire how your"
+	line "strength, <PLAYER>."
+
+	para "Our first battle"
+	line "ended in dis-"
+	cont "appointment for"
+	cont "me, but I feel"
+	cont "better now."
+
+	para "I have much more"
+	line "respect toward a"
+	cont "powerful trainer"
+	cont "like you."
 	done
 
 AmberScript_RematchDefeatText:
-	text "After rematch text"
-	line "goes here."
+	text "You have grown"
+	line "considerably since"
+	cont "we last met."
+
+	para "But there was ano-"
+	line "ther young trainer"
+	cont "who had defeated"
+	cont "me since you have"
+	cont "become CHAMPION."
+
+	para "So I'm afraid you"
+	line "still have one"
+	cont "more battle ahead"
+	cont "of you, <PLAYER>."
+
+	para "Good luck, because"
+	line "she was tough!"
 	done
 
 AmberScript_FirstRematchDefeatText:
-	text "After 1st rematch"
-	line "text goes here."
+	text "I think I might be"
+	line "warming up to you,"
+	cont "<PLAYER>."
+
+	para "Between you and"
+	line "EMILY, I have been"
+	cont "given the perfect"
+	cont "reason to make my"
+	cont "#MON stronger."
+
+	para "Please come back"
+	line "again, CHAMPION."
+
+	para "I don't want my"
+	line "extra training to"
+	cont "be wasted!"
 	done
 
 AmberCantProgress:

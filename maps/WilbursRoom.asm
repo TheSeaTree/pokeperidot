@@ -1,8 +1,7 @@
 	const_def 2 ; object constants
 	const WILBURSROOM_WILBUR
 	const WILBURSROOM_BOMB
-	const WILBURSROOM_SHADOW1
-	const WILBURSROOM_SHADOW2
+	const WILBURSROOM_SHADOW
 	const WILBURSROOM_PLAYER
 
 WilbursRoom_MapScripts:
@@ -27,41 +26,39 @@ ApproachWilburLeft:
 ApproachWilburRight:
 	applymovement PLAYER, WilbursRoom_EnterMovementRight
 ContinueApproachWilbur:
-	
 	moveobject WILBURSROOM_PLAYER, 5, 10
 	appear WILBURSROOM_PLAYER
 
 	applymovement PLAYER, WilbursRoom_StartBattle
 
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .RegularIntro
+	random 10
+	ifequal 0, .RematchIntro
+.RegularIntro
 	moveobject WILBURSROOM_BOMB, 11, 10
-	moveobject WILBURSROOM_SHADOW1, 11, 10
-	moveobject WILBURSROOM_SHADOW2, 11, 11
+	moveobject WILBURSROOM_SHADOW, 11, 10
 	scall WilbursRoomDropBombs
 
 	moveobject WILBURSROOM_BOMB, 10, 10
-	moveobject WILBURSROOM_SHADOW1, 10, 10
-	moveobject WILBURSROOM_SHADOW2, 10, 11
+	moveobject WILBURSROOM_SHADOW, 10, 10
 	scall WilbursRoomDropBombs
 
 	moveobject WILBURSROOM_BOMB, 9, 10
-	moveobject WILBURSROOM_SHADOW1, 9, 10
-	moveobject WILBURSROOM_SHADOW2, 9, 11
+	moveobject WILBURSROOM_SHADOW, 9, 10
 	scall WilbursRoomDropBombs
 
 	moveobject WILBURSROOM_BOMB, 8, 10
 	appear WILBURSROOM_BOMB
 	playsound SFX_KINESIS
-	moveobject WILBURSROOM_SHADOW1, 8, 10
-	moveobject WILBURSROOM_SHADOW2, 8, 11
-	appear WILBURSROOM_SHADOW1
-	appear WILBURSROOM_SHADOW2
+	moveobject WILBURSROOM_SHADOW, 8, 10
+	appear WILBURSROOM_SHADOW
 	wait 1
 	applymovement WILBURSROOM_BOMB, WilburFalling
 	playsound SFX_EGG_BOMB
 	appear WILBURSROOM_WILBUR
 	applymovement WILBURSROOM_BOMB, WilburExplode2
-	disappear WILBURSROOM_SHADOW1
-	disappear WILBURSROOM_SHADOW2
+	disappear WILBURSROOM_SHADOW
 	disappear WILBURSROOM_BOMB
 	waitsfx
 
@@ -125,18 +122,36 @@ ContinueApproachWilbur:
 	disappear WILBURSROOM_PLAYER
 	end
 
+.RematchIntro:
+	moveobject WILBURSROOM_BOMB, 8, 5
+	appear WILBURSROOM_BOMB
+	moveobject WILBURSROOM_WILBUR, 8, 5
+	appear WILBURSROOM_WILBUR
+	turnobject WILBURSROOM_BOMB, UP
+	moveobject WILBURSROOM_SHADOW, 8, 10
+	appear WILBURSROOM_SHADOW
+	follow WILBURSROOM_WILBUR, WILBURSROOM_BOMB
+	applymovement WILBURSROOM_WILBUR, WilburParachuteDown
+	stopfollow
+	applymovement WILBURSROOM_BOMB, WilburParachuteDisappear
+	disappear WILBURSROOM_SHADOW
+
+	wait 8
+
+	setscene SCENE_FINISHED
+	opentext
+	jump .Rematch
+
 WilbursRoomDropBombs:
 	appear WILBURSROOM_BOMB
-	appear WILBURSROOM_SHADOW1
-	appear WILBURSROOM_SHADOW2
+	appear WILBURSROOM_SHADOW
 	playsound SFX_KINESIS
 	wait 1
 	applymovement WILBURSROOM_BOMB, WilburFalling
 	playsound SFX_EGG_BOMB
 	applymovement WILBURSROOM_BOMB, WilburExplode
 	disappear WILBURSROOM_BOMB
-	disappear WILBURSROOM_SHADOW1
-	disappear WILBURSROOM_SHADOW2
+	disappear WILBURSROOM_SHADOW
 	end
 	
 WilburNoTurningBack:
@@ -217,6 +232,44 @@ WilburExplode2:
 	hide_person
 	step_end
 
+WilburParachuteDown:
+	fix_facing
+	slow_slide_step DOWN
+	slow_slide_step DOWN
+	slow_slide_step DOWN
+	slow_slide_step DOWN
+	slow_slide_step DOWN
+	remove_fixed_facing
+	step_resume
+
+WilburParachuteDisappear:
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_sleep 1
+	show_person
+	step_sleep 1
+	hide_person
+	step_end
+
 WilburScript_WilburBeforeText:
 	text "The #MON LEAGUE"
 	line "welcomes you."
@@ -282,18 +335,50 @@ WilburScript_WilburDefeatText:
 	done
 
 WilburScript_RematchBeforeText:
-	text "Pre-rematch text"
-	line "goes here."
+	text "Welcome back to"
+	line "the #MON"
+	cont "LEAGUE, <PLAYER>!"
+
+	para "I have improved my"
+	line "aerial maneuvers"
+	cont "drastically since"
+	cont "our last battle."
+
+	para "I hope you have"
+	line "prepared for this."
+
+	para "I'm coming in hot!"
 	done
 
 WilburScript_RematchBeatenText:
-	text "Rematch victory"
-	line "text goes here."
+	text "Even after all of"
+	line "the extra drills I"
+	cont "put my #MON"
+	cont "through, you still"
+	cont "emerge victorious."
+
+	para "It is clear to me"
+	line "that there is"
+	cont "still room to grow"
+	cont "as a trainer, even"
+	cont "at my age."
+
+	para "Good work,"
+	line "CHAMPION."
 	done
 
 WilburScript_RematchDefeatText:
-	text "After rematch text"
-	line "goes here."
+	text "I have little to"
+	line "say to you, I must"
+	cont "focus on how I can"
+	cont "defeat you in our"
+	cont "next battlee."
+
+	para "Don't keep REGAN's"
+	line "audience waiting!"
+
+	para "Put on a good show"
+	line "for them!"
 	done
 
 WilburCantProgress:
@@ -320,9 +405,13 @@ WilbursRoom_MapEvents:
 	bg_event  6, 20, BGEVENT_READ, WilburNoTurningBack
 	bg_event  7, 20, BGEVENT_READ, WilburNoTurningBack
 
-	db 5 ; object events
+	db 9 ; object events
 	object_event  8, 10, SPRITE_WILBUR, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, WilburScript_AfterBattle, -1
 	object_event 11, 10, SPRITE_BOMB, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  0, SPRITE_SHADOW, SPRITEMOVEDATA_SPRITE_SHADOW, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_LEAGUE_PLAYER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  3,  1, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 11,  4, SPRITE_ELDER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  1,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  9,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

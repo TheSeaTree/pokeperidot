@@ -346,20 +346,40 @@ CecilFightDoneText:
 	done
 
 CecilRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Ah, CHAMPION! Have"
+	line "you resurfaced for"
+	cont "a rematch?"
+
+	para "What an honor!"
+
+	para "I can't wait to"
+	line "show you how much"
+	cont "my #MON have"
+	cont "grown since our"
+	cont "last battle!"
 	done
 
 CecilRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "You've pulled me"
+	line "under again."
+
+	para "Oh, how could that"
+	line "happen to me?"
 	done
 
 CecilAfterRematchText:
-	text "Good job!"
+	text "I promise you that"
+	line "I won't stay down"
+	line "for long."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "When I float back"
+	line "up, we will have"
+	cont "another battle."
+
+	para "Until then, I will"
+	line "make sure my"
+	cont "#MON become"
+	cont "even stronger!"
 	done
 
 SwimmerVinnyText:

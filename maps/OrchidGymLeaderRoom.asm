@@ -214,20 +214,47 @@ EnyaAfterText:
 	done
 
 EnyaRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Good day to you,"
+	line "CHAMPION."
+
+	para "You must have"
+	line "grown considerably"
+	cont "as a trainer since"
+	cont "our last battle."
+
+	para "I must warn you,"
+	line "so have I."
+
+	para "My magic may have"
+	line "failed me last"
+	cont "time, but it will"
+	cont "not again!"
 	done
 
 EnyaRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "I was not prepared"
+	line "for you to have"
+	cont "gained so much"
+	cont "power in such"
+	cont "little time."
+
+	para "I am impressed in"
+	line "your ability,"
+	cont "young CHAMPION."
 	done
 
 EnyaAfterRematchText:
-	text "Good job!"
+	text "My #MON have"
+	line "been felled by"
+	cont "yours once more,"
+	cont "but I will be more"
+	cont "prepared for our"
+	cont "next battle."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "Return tomorrow"
+	line "and I will be"
+	cont "ready to strike"
+	cont "down a CHAMPION!"
 	done
 
 CooltrainerFKariText:

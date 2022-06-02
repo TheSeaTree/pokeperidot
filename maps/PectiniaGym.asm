@@ -227,24 +227,24 @@ PectiniaGymHaveBadge:
 MurphyText_INeverLose:
 	text "Welcome, trainer!"
 	line "My name is MURPHY."
-	
+
 	para "Since before you"
 	line "were born, I have"
 	cont "been the strong"
 	cont "arm of the law in"
 	cont "this city!"
-	
+
 	para "My FIGHTING-type"
 	line "#MON have been"
 	cont "trained under the"
 	cont "same discipline I"
 	cont "had at the academy"
 	cont "so many years ago."
-	
+
 	para "My #MON do not"
 	line "only stop crime in"
 	cont "this city."
-	
+
 	para "They will also put"
 	line "a stop to your GYM"
 	cont "CHALLENGE!"
@@ -293,12 +293,12 @@ MurphyText_FuryCutterSpeech:
 	line "chance of lowering"
 	cont "your target's"
 	cont "DEFENSE."
-	
+
 	para "It hits hard, and"
 	line "will hit even"
 	cont "harder on subsequ-"
 	cont "quent strikes!"
-	
+
 	para "You can also use"
 	line "ROCK SMASH to"
 	cont "destroy any rocks"
@@ -309,7 +309,7 @@ MurphyText_BugMonsAreDeep:
 	text "My #MON have"
 	line "sworn to uphold"
 	cont "justice."
-	
+
 	para "They put these"
 	line "criminals behind"
 	cont "bars, and keep"
@@ -318,20 +318,52 @@ MurphyText_BugMonsAreDeep:
 	done
 
 MurphyRematchText:
-	text "This is where the"
-	line "rematch text goes."
+	text "Hello again,"
+	line "CHAMPION <PLAYER>."
+
+	para "I trust you've been"
+	line "staying out of"
+	cont "trouble since we"
+	cont "last met."
+
+	para "My #MON have"
+	line "been on a strict"
+	cont "and rigorous"
+	cont "training schedule."
+
+	para "You will stand no"
+	line "chance this time!"
 	done
 
 MurphyRematchWinText:
-	text "This is where the"
-	line "victory text goes."
+	text "With #MON like"
+	line "that, I'm grateful"
+	cont "you do not use"
+	cont "them for wrong-"
+	cont "doing."
+	
+	para "How would you like"
+	line "to join the force"
+	cont "as my deputy?"
+
+	para "No? Understood."
+
+	para "You're still a kid,"
+	line "after all."
 	done
 
 MurphyAfterRematchText:
-	text "Good job!"
+	text "Despite my train-"
+	line "ing, I have failed"
+	cont "my #MON."
 
-	para "We'll do this"
-	line "again tomorrow."
+	para "I will continue to"
+	line "shape them into"
+	cont "the best #MON"
+	cont "they can be."
+
+	para "But for now, they"
+	line "deserve a rest."
 	done
 
 OfficerBillyText:

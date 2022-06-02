@@ -32,6 +32,7 @@ Facings:
 	dw FacingBoulderDust2
 	dw FacingGrass1
 	dw FacingGrass2
+	dw FacingSpriteShadow
 .End
 	dw 0
 
@@ -237,3 +238,11 @@ FacingGrass2:
 	db 2 ; #
 	db  9, -1, ABSOLUTE_TILE_ID, $fc
 	db  9,  9, ABSOLUTE_TILE_ID | X_FLIP, $fc
+
+FacingSpriteShadow:
+	db  4 ; #
+	db  8,  0, 0, $00
+	db  8,  8, X_FLIP, $00
+	db 16,  0, 0, $01
+	db 16,  8, X_FLIP, $01
+

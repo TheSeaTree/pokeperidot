@@ -18,6 +18,7 @@ ObjectActionPairPointers:
 	dw SetFacingGrassShake,            SetFacingStanding
 	dw SetFacingSkyfall,               SetFacingCurrent
 	dw SetFacingRunAction,			   SetFacingCurrent
+	dw SetFacingSpriteShadow,          SetFacingSpriteShadow
 
 SetFacingStanding:
 	ld hl, OBJECT_FACING_STEP
@@ -306,4 +307,10 @@ SetFacingRunAction:
 	ld hl, OBJECT_FACING_STEP
 	add hl, bc
 	ld [hl], a
+	ret
+
+SetFacingSpriteShadow:
+	ld hl, OBJECT_FACING_STEP
+	add hl, bc
+	ld [hl], FACING_SPRITE_SHADOW
 	ret
