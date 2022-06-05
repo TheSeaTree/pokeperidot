@@ -356,9 +356,6 @@ INCBIN "data/tilesets/players_room_attributes.bin"
 TilesetBattleTowerAttr:
 INCBIN "data/tilesets/battle_tower_attributes.bin"
 
-TilesetTowerAttr:
-INCBIN "data/tilesets/tower_attributes.bin"
-
 
 SECTION "Tileset Data 11", ROMX
 
@@ -481,3 +478,6 @@ INCBIN "gfx/tilesets/forest.2bpp.lz"
 
 TilesetForestColl:
 INCLUDE "data/tilesets/forest_collision.asm"
+
+TilesetTowerAttr:
+INCBIN "data/tilesets/tower_attributes.bin"

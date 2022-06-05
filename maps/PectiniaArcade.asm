@@ -9,8 +9,8 @@ PectiniaArcade_MapScripts:
 .Night:
 	checktime NITE
 	iffalse .NotNight
-	changeblock   2, 6, $03
-	changeblock   2, 8, $07
+	changeblock   2,  8, $03
+	changeblock   2, 10, $07
 .NotNight
 	return
 
@@ -607,35 +607,35 @@ PectiniaArcade_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 15, PECTINIA_MALL, 9
-	warp_event  5, 15, PECTINIA_MALL, 9
+	warp_event  4, 17, PECTINIA_MALL, 9
+	warp_event  5, 17, PECTINIA_MALL, 9
 
 	db 0 ; coord events
 
-	db 6 ; bg events
-	bg_event 13, 11, BGEVENT_UP, PectiniaArcadeImportGame
-	bg_event 14, 11, BGEVENT_UP, PectiniaArcadeImportGame
-	bg_event  5,  1, BGEVENT_UP, PectiniaArcadeTrackballGame
-	bg_event 12,  7, BGEVENT_UP, PectiniaArcadeFightingGame
-	bg_event  0, 13, BGEVENT_UP, PectiniaArcadeSpaceshipGame
-	bg_event  2, 13, BGEVENT_UP, PectiniaArcadeSpaceshipGame
-	bg_event  9, 13, BGEVENT_UP, PectiniaArcadeRacingGame
-	bg_event 10, 13, BGEVENT_UP, PectiniaArcadeRacingGame
-	bg_event  8,  0, BGEVENT_UP, PectiniaArcadePoster
+	db 9 ; bg events
+	bg_event 13, 13, BGEVENT_UP, PectiniaArcadeImportGame
+	bg_event 14, 13, BGEVENT_UP, PectiniaArcadeImportGame
+	bg_event  5,  3, BGEVENT_UP, PectiniaArcadeTrackballGame
+	bg_event 12,  9, BGEVENT_UP, PectiniaArcadeFightingGame
+	bg_event  0, 15, BGEVENT_UP, PectiniaArcadeSpaceshipGame
+	bg_event  2, 15, BGEVENT_UP, PectiniaArcadeSpaceshipGame
+	bg_event  9, 15, BGEVENT_UP, PectiniaArcadeRacingGame
+	bg_event 10, 15, BGEVENT_UP, PectiniaArcadeRacingGame
+	bg_event  8,  2, BGEVENT_UP, PectiniaArcadePoster
 
 	db 15 ; object events
-	object_event 12,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeClerk, -1
-	object_event  1, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeYoungster1, -1
-	object_event 14,  8, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeBlackbelt, -1
-	object_event 11, 14, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeBugCatcher, -1
-	object_event  8, 14, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeSuperNerd, -1
-	object_event  7, 14, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeFisher, -1
-	object_event  7,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeScientist, -1
-	object_event  6,  2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeRocker1, -1
-	object_event  4,  2, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCooltrainer1, -1
-	object_event  3,  2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeRocker2, -1
-	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCardYoungster, -1
-	object_event  1,  7, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCardSuperNerd, -1
-	object_event 13,  8, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCooltrainer2, -1
-	object_event 15, 12, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeLass, -1
-	object_event  0,  1, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeSubwayRewardGuy, -1
+	object_event 12,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeClerk, -1
+	object_event  1, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeYoungster1, -1
+	object_event 14, 10, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeBlackbelt, -1
+	object_event 11, 16, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeBugCatcher, -1
+	object_event  8, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeSuperNerd, -1
+	object_event  7, 16, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeFisher, -1
+	object_event  7,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeScientist, -1
+	object_event  6,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeRocker1, -1
+	object_event  4,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCooltrainer1, -1
+	object_event  3,  4, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeRocker2, -1
+	object_event  4,  9, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, NITE, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCardYoungster, -1
+	object_event  1,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCardSuperNerd, -1
+	object_event 13, 10, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeCooltrainer2, -1
+	object_event 15, 14, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeLass, -1
+	object_event  0,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaArcadeSubwayRewardGuy, -1

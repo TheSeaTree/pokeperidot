@@ -5,8 +5,23 @@ Route26_MapScripts:
 
 	db 0 ; callbacks
 
+Route26XAccuracy:
+	itemball X_ACCURACY
+
+Route26Slowpoketail:
+	itemball SLOWPOKETAIL
+
 Route26HiddenBrickPiece:
 	hiddenitem BRICK_PIECE, EVENT_ROUTE_26_HIDDEN_BRICK_PIECE
+
+Route26HiddenGoldLeaf:
+	hiddenitem GOLD_LEAF, EVENT_ROUTE_26_HIDDEN_GOLD_LEAF
+
+Route26HiddenSilverLeaf:
+	hiddenitem SILVER_LEAF, EVENT_ROUTE_26_HIDDEN_SILVER_LEAF
+
+Route26HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_26_HIDDEN_POWER_HERB
 
 Route26_MapEvents:
 	db 0, 0 ; filler
@@ -20,7 +35,12 @@ Route26_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 4 ; bg events
 	bg_event 27, 23, BGEVENT_ITEM, Route26HiddenBrickPiece
+	bg_event 36, 28, BGEVENT_ITEM, Route26HiddenGoldLeaf
+	bg_event 24, 27, BGEVENT_ITEM, Route26HiddenSilverLeaf
+	bg_event  3, 14, BGEVENT_ITEM, Route26HiddenPowerHerb
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 39, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26XAccuracy, EVENT_ROUTE_26_X_ACCURACY
+	object_event 40, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26Slowpoketail, EVENT_ROUTE_26_SLOWPOKETAIL

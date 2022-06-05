@@ -747,8 +747,8 @@ Route26_Blocks:
 Route26Cave1F_Blocks:
 	INCBIN "maps/Route26Cave1F.ablk"
 
-Route26Cave2F_Blocks:
-	INCBIN "maps/Route26Cave2F.ablk"
+Route26CaveB1F_Blocks:
+	INCBIN "maps/Route26CaveB1F.ablk"
 
 Route27_Blocks:
 	INCBIN "maps/Route27.ablk"

@@ -222,6 +222,27 @@ Route27FocusedPokemon:
 Route27SuperNerd:
 	jumptextfaceplayer Route27SuperNerdText
 
+Route27HiddenRevive:
+	hiddenitem REVIVE, EVENT_ROUTE_27_HIDDEN_REVIVE
+
+Route27HiddenFullRestore:
+	hiddenitem FULL_RESTORE, EVENT_ROUTE_27_HIDDEN_FULL_RESTORE
+
+Route27HiddenMaxRevive:
+	hiddenitem MAX_REVIVE, EVENT_ROUTE_27_HIDDEN_MAX_REVIVE
+
+Route27HiddenPPUp:
+	hiddenitem PP_UP, EVENT_ROUTE_27_HIDDEN_PP_UP
+
+Route27HiddenRareCandy1:
+	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_1
+
+Route27HiddenRareCandy2:
+	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_2
+
+Route27HiddenRareCandy3:
+	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_3
+
 Route27NidoqueenStomping:
 	turn_step LEFT
 	turn_step LEFT
@@ -568,7 +589,14 @@ Route27_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 7 ; bg events
+	bg_event  3, 28, BGEVENT_ITEM, Route27HiddenRevive
+	bg_event  5, 39, BGEVENT_ITEM, Route27HiddenFullRestore
+	bg_event 20, 37, BGEVENT_ITEM, Route27HiddenMaxRevive
+	bg_event 36, 40, BGEVENT_ITEM, Route27HiddenPPUp
+	bg_event 18,  1, BGEVENT_ITEM, Route27HiddenRareCandy1
+	bg_event 17,  3, BGEVENT_ITEM, Route27HiddenRareCandy2
+	bg_event 19,  2, BGEVENT_ITEM, Route27HiddenRareCandy3
 
 	db 15 ; object events
 	object_event  7, 33, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route27SuperNerd, -1
@@ -582,7 +610,7 @@ Route27_MapEvents:
 	object_event 29, 37, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route27CooltrainerMScript, EVENT_BEAT_ELITE_FOUR
 	object_event 31, 37, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, EVENT_BEAT_ELITE_FOUR
 	object_event 30, 37, SPRITE_BIRD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, EVENT_BEAT_ELITE_FOUR
-	object_event 15, 28, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27BeautyScript, -1
-	object_event 15, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 15, 30, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, -1
-	object_event 15, 29, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, -1
+	object_event 15, 28, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27BeautyScript, EVENT_BEAT_ELITE_FOUR
+	object_event 15, 31, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_ELITE_FOUR
+	object_event 15, 30, SPRITE_DRAGON, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, EVENT_BEAT_ELITE_FOUR
+	object_event 15, 29, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route27FocusedPokemon, EVENT_BEAT_ELITE_FOUR

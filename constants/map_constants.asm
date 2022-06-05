@@ -73,7 +73,7 @@ ENDM
 	map_const DRAIN_PUNCH_CHAMBER,							5,  4
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
-	map_const PALEROCK_CAVE_B2F,                            6,  4 ; 88
+	map_const PALEROCK_CAVE_B2F,                           15, 12 ; 88
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const HEPATICA_CAVE_1F,                             7,  6
 	map_const HEPATICA_CAVE_B1F,                           20, 15
@@ -219,7 +219,7 @@ ENDM
 	map_const FAVIA_TOWN,                                 18, 17 ;  2
 	map_const FAVIA_GYM,                                  16, 22 ;  5
 	map_const FAVIA_HAPPINESS_RATER,                       4,  4 ;  5
-	map_const PECTINIA_MALL,                     		  17,  9 ;  7
+	map_const PECTINIA_MALL,                     		  17, 10 ;  7
 	map_const CARNATION_FLOWER_SHOP,                       4,  4 ;  8
 	map_const NAME_RATER,                      		       4,  4 ; 10
 	map_const FAVIA_POKECENTER_1F,						   5,  4 ; 20
@@ -234,7 +234,7 @@ ENDM
 	map_const PECTINIA_CARPET_STORE,                       5,  3
 	map_const PECTINIA_COMIC_STORE,                        6,  6
 	map_const PECTINIA_BATTLE_ITEM_STORE,                  7,  4
-	map_const PECTINIA_ARCADE,                             8,  8
+	map_const PECTINIA_ARCADE,                             8,  9
 	map_const PAST_FAVIA_TOWN,							  15, 14
 	map_const PAST_FAVIA_INN,							   5,  4
 
@@ -406,7 +406,7 @@ ENDM
 	map_const ROUTE_26,					                   21, 16
 	map_const ROUTE_26_GATE,					           	5,  4
 	map_const ROUTE_26_CAVE_1F,			                   13,  5
-	map_const ROUTE_26_CAVE_2F,			                   15, 10
+	map_const ROUTE_26_CAVE_B1F,		                   15, 10
 	map_const ROUTE_27_GATE,					           	5,  4
 	map_const ROUTE_27,					           		   20, 22
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3

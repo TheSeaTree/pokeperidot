@@ -1398,6 +1398,58 @@ GrassWildMons:
 	db 35, PARASECT
 	db 35, PARASECT
 
+	map_id ROUTE_24_HIDDEN_CAVE_1F
+	db 3 percent, 3 percent, 3 percent
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, PARASECT
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+	; day
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, PARASECT
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+	; nite
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, PARASECT
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+
+	map_id ROUTE_24_HIDDEN_CAVE_B1F
+	db 3 percent, 3 percent, 3 percent
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, DUNSPARCE
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+	; day
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, DUNSPARCE
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+	; nite
+	db 39, GRAVELER
+	db 38, DIGLETT
+	db 39, DIGLETT
+	db 40, DUNSPARCE
+	db 40, GOLBAT
+	db 39, GOLBAT
+	db 40, GRAVELER
+
 	map_id ROUTE_24_SOUTH
 	db 8 percent, 8 percent, 8 percent
 	; morn
@@ -1452,8 +1504,87 @@ GrassWildMons:
 	db 35, MR__MIME
 	db 35, MR__MIME
 
+	map_id ROUTE_26
+	db 8 percent, 8 percent, 8 percent
+	; morn
+	db 35, VULPIX
+	db 35, AZUMARILL
+	db 35, YANMA
+	db 37, TANGELA
+	db 36, QUAGSIRE
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+	; day
+	db 35, VULPIX
+	db 35, AZUMARILL
+	db 35, YANMA
+	db 37, TANGELA
+	db 36, QUAGSIRE
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+	; nite
+	db 35, VULPIX
+	db 35, AZUMARILL
+	db 35, YANMA
+	db 37, TANGELA
+	db 36, QUAGSIRE
+	db 36, SLOWPOKE
+	db 37, SLOWPOKE
+
+	map_id ROUTE_26_CAVE_1F
+	db 3 percent, 3 percent, 3 percent
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DIGLETT
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, DUGTRIO
+	db 40, DUGTRIO
+	; day
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DIGLETT
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, DUGTRIO
+	db 40, DUGTRIO
+	; nite
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DIGLETT
+	db 40, GOLBAT
+	db 40, GOLBAT
+	db 39, DUGTRIO
+	db 40, DUGTRIO
+
+	map_id ROUTE_26_CAVE_B1F
+	db 3 percent, 3 percent, 3 percent
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DUGTRIO
+	db 40, MISDREAVUS
+	db 40, MISDREAVUS
+	db 39, FERRODON
+	db 40, FERRODON
+	; day
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DUGTRIO
+	db 40, MISDREAVUS
+	db 40, MISDREAVUS
+	db 39, FERRODON
+	db 40, FERRODON
+	; nite
+	db 39, ONIX
+	db 38, ONIX
+	db 39, DUGTRIO
+	db 40, MISDREAVUS
+	db 40, MISDREAVUS
+	db 39, FERRODON
+	db 40, FERRODON
+
 	map_id ACROPORA_CAVE_B1F
-	db 2 percent, 2 percent, 2 percent
+	db 3 percent, 3 percent, 3 percent
 	db 39, GRAVELER
 	db 38, GRAVELER
 	db 39, ONIX

@@ -584,7 +584,7 @@ ENDM
 	map_attributes TreasureHuntersHouse, TREASURE_HUNTERS_HOUSE, $09, 0
 	map_attributes OrchidEnteiShrine, ORCHID_ENTEI_SHRINE, $59, 0
 	map_attributes Route26Cave1F, ROUTE_26_CAVE_1F, $09, 0
-	map_attributes Route26Cave2F, ROUTE_26_CAVE_2F, $09, 0
+	map_attributes Route26CaveB1F, ROUTE_26_CAVE_B1F, $09, 0
 	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
 	map_attributes Route26Gate, ROUTE_26_GATE, $00, 0
 	map_attributes Route28Gate, ROUTE_28_GATE, $00, 0

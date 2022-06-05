@@ -306,6 +306,14 @@ WaterWildMons:
 	db 35, SHELLDER
 	db 36, ANCOR
 
+	map_id ROUTE_26
+	db 4 percent ; encounter rate
+	db 35, AZUMARILL
+	db 35, QUAGSIRE
+	db 34, SLOWPOKE
+	db 35, SLOWPOKE
+	db 36, YANMA
+
 	map_id LUGIA_CAVE_B1F
 	db 4 percent ; encounter rate
 	db 33, SEEL
