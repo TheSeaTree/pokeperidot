@@ -20,7 +20,7 @@ ReadTrainerParty:
 	ld [hl], a
 
 	ld hl, wOTPartyMons
-	ld bc, wOTPartyMonsEnd - wOTPartyMons
+	ld bc, PARTYMON_STRUCT_LENGTH * PARTY_LENGTH
 	xor a
 	call ByteFill
 
@@ -74,7 +74,7 @@ ReadTrainerParty:
 
 .cal2
 	ld a, BANK(sMysteryGiftTrainer)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, TRAINERTYPE_MOVES
 	ld [wOtherTrainerType], a
 	ld de, sMysteryGiftTrainer
@@ -172,7 +172,6 @@ ReadTrainerPartyPieces:
 .spd_spc_dv_ok
 	ld [de], a
 .no_dvs
-
 ; stat exp?
 	ld a, [wOtherTrainerType]
 	bit TRAINERTYPE_STAT_EXP_F, a
@@ -190,11 +189,13 @@ ReadTrainerPartyPieces:
 	ld c, NUM_EXP_STATS
 .stat_exp_loop
 ; When reading stat experience, treat PERFECT_STAT_EXP as $FFFF
-	ld a, [hl]
+	call GetNextTrainerDataByte
+	dec hl
 	cp LOW(PERFECT_STAT_EXP)
 	jr nz, .not_perfect_stat_exp
 	inc hl
-	ld a, [hl]
+	call GetNextTrainerDataByte
+	dec hl
 	cp HIGH(PERFECT_STAT_EXP)
 	dec hl
 	jr nz, .not_perfect_stat_exp
@@ -208,7 +209,7 @@ endr
 
 .not_perfect_stat_exp
 rept 2
-	ld a, [hli]
+	call GetNextTrainerDataByte
 	ld [de], a
 	inc de
 endr
@@ -216,6 +217,7 @@ endr
 	dec c
 	jr nz, .stat_exp_loop
 .no_stat_exp
+
 
 ; item?
 	ld a, [wOtherTrainerType]
@@ -298,7 +300,6 @@ endr
 
 	pop hl
 .no_moves
-
 ; Custom DVs or stat experience affect stats,
 ; so recalculate them after TryAddMonToParty
 	ld a, [wOtherTrainerType]
@@ -337,7 +338,6 @@ endr
 
 	pop hl
 .no_stat_recalc
-
 	jp .loop
 
 ComputeTrainerReward:
@@ -379,14 +379,14 @@ GetTrainerName::
 	jr nz, .not_cal2
 
 	ld a, BANK(sMysteryGiftTrainerHouseFlag)
-	call GetSRAMBank
+	call OpenSRAM
 	ld a, [sMysteryGiftTrainerHouseFlag]
 	and a
 	call CloseSRAM
 	jr z, .not_cal2
 
 	ld a, BANK(sMysteryGiftPartnerName)
-	call GetSRAMBank
+	call OpenSRAM
 	ld hl, sMysteryGiftPartnerName
 	call CopyTrainerName
 	jp CloseSRAM
@@ -412,9 +412,9 @@ GetTrainerName::
 
 .skip
 	call GetNextTrainerDataByte
- 	cp -1
- 	jr nz, .skip
- 	jr .loop
+	cp -1
+	jr nz, .skip
+	jr .loop
 
 CopyTrainerName:
 	ld de, wStringBuffer1
@@ -422,14 +422,6 @@ CopyTrainerName:
 	ld bc, NAME_LENGTH
 	ld a, [wTrainerGroupBank]
 	call FarCopyBytes
-	pop de
-	ret
-
-Function39990:
-; This function is useless.
-	ld de, wStringBuffer1
-	push de
-	ld bc, NAME_LENGTH
 	pop de
 	ret
 
