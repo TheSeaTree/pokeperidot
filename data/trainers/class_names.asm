@@ -66,5 +66,5 @@ TrainerClassNames::
 	db "<PKMN> TRAINER@"
 	db "CHAMPION@"
 	db "OFFICER@"
-	db "<PKMN> TRAINER@" ; Jade
-	db "<PKMN> TRAINER@" ; Perry
+	db "SUBWAY ACE@" ; Jade
+	db "SUBWAY ACE@" ; Perry

@@ -551,9 +551,9 @@ CHRIS EQU __enum__
 	const DANIEL1
 	const DANIEL2
 	
-	trainerclass GRUNTF ; 42
+	trainerclass JADE ; 42
 
-	trainerclass MYSTICALMAN ; 43
+	trainerclass PERRY ; 43
 	const BOSS_LV10
 	const BOSS_LV20
 	const BOSS_LV30

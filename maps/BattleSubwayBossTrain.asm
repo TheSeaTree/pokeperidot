@@ -42,64 +42,64 @@ Script_BossBoardTrain:
  	ifequal  8, .Level80
  	ifequal  9, .Level90
  	ifequal 10, .Level100
-	loadtrainer MYSTICALMAN, BOSS_LV10
+	loadtrainer PERRY, BOSS_LV10
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV10
+	loadtrainer JADE, BOSS_LV10
 	jump .DoBattle
 .Level20:
-	loadtrainer MYSTICALMAN, BOSS_LV20
+	loadtrainer PERRY, BOSS_LV20
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV20
+	loadtrainer JADE, BOSS_LV20
 	jump .DoBattle
 .Level30:
-	loadtrainer MYSTICALMAN, BOSS_LV30
+	loadtrainer PERRY, BOSS_LV30
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV30
+	loadtrainer JADE, BOSS_LV30
 	jump .DoBattle
 .Level40:
-	loadtrainer MYSTICALMAN, BOSS_LV40
+	loadtrainer PERRY, BOSS_LV40
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV40
+	loadtrainer JADE, BOSS_LV40
 	jump .DoBattle
 .Level50:
-	loadtrainer MYSTICALMAN, BOSS_LV50
+	loadtrainer PERRY, BOSS_LV50
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV50
+	loadtrainer JADE, BOSS_LV50
 	jump .DoBattle
 .Level60:
-	loadtrainer MYSTICALMAN, BOSS_LV60
+	loadtrainer PERRY, BOSS_LV60
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV60
+	loadtrainer JADE, BOSS_LV60
 	jump .DoBattle
 .Level70:
-	loadtrainer MYSTICALMAN, BOSS_LV70
+	loadtrainer PERRY, BOSS_LV70
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV70
+	loadtrainer JADE, BOSS_LV70
 	jump .DoBattle
 .Level80:
-	loadtrainer MYSTICALMAN, BOSS_LV80
+	loadtrainer PERRY, BOSS_LV80
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV80
+	loadtrainer JADE, BOSS_LV80
 	jump .DoBattle
 .Level90:
-	loadtrainer MYSTICALMAN, BOSS_LV90
+	loadtrainer PERRY, BOSS_LV90
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV90
+	loadtrainer JADE, BOSS_LV90
 	jump .DoBattle
 .Level100:
-	loadtrainer MYSTICALMAN, BOSS_LV100
+	loadtrainer PERRY, BOSS_LV100
 	checkflag ENGINE_PLAYER_IS_FEMALE
 	iftrue .DoBattle
-	loadtrainer GRUNTF, BOSS_LV100
+	loadtrainer JADE, BOSS_LV100
 .DoBattle
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
 
@@ -114,20 +114,29 @@ Script_BossBoardTrain:
 
 Text_BattleSubwayBossIntro:
 	text "You must be good"
-	line "if you beat 35"
-	cont "trainers in a"
-	cont "row."
+	line "if you beat 25"
+	cont "trainers in a row."
 
-	para "Let's see exactly"
+	para "Show me exactly"
 	line "how good you are."
 	done
 
 Text_BattleSubwayWinText:
-	text "I lost."
+	text "I'm impressed, that"
+	line "was my first diff-"
+	cont "icult battle I had"
+	cont "in this challenge."
+
+	para "I hope we can meet"
+	line "each other again."
 	done
 
 Text_BattleSubwayLossText:
-	text "I won."
+	text "How disappointing."
+
+	para "You're good, but"
+	line "I expected a more"
+	cont "difficult battle."
 	done
 
 BattleSubwayBossTrain_MapEvents:

@@ -346,9 +346,9 @@ PlaceEnemysName::
 	jr z, .rival
 	cp RIVAL2
 	jr z, .rival
-	cp GRUNTF
+	cp JADE
 	jr z, .subwayacejade
-	cp MYSTICALMAN
+	cp PERRY
 	jr z, .subwayaceperry
 
 	ld de, wOTClassName

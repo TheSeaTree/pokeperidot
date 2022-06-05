@@ -57,7 +57,7 @@ Script_BattleRoomLoop:
 
 	copybytetovar wNrOfBeatenBattleTowerTrainers
 ;	ifequal 1, Script_BeatenAllTrainers
-	ifequal BATTLETOWER_STREAK_LENGTH, Script_BeatenAllTrainers
+	ifequal 6, Script_BeatenAllTrainers
 	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist
 	playsound SFX_FULL_HEAL
@@ -102,7 +102,7 @@ Script_BeatenAllTrainers:
 	writevarcode VAR_SUBWAY_SET
 
 	checkcode VAR_SUBWAY_SET
-	ifequal 5, Script_SubwayBossFight
+	ifequal 4, Script_SubwayBossFight
 
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
 	warpcheck
