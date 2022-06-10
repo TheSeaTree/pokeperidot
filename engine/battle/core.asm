@@ -94,7 +94,6 @@ DoBattle:
 	call EmptyBattleTextBox
 	call LoadTileMapToTempTileMap
 	call SetPlayerTurn
-	call SpikesDamage
 	ld a, [wLinkMode]
 	and a
 	jr z, .not_linked_2
@@ -108,9 +107,9 @@ DoBattle:
 	call BreakAttraction
 	call EnemySwitch
 	call SetEnemyTurn
-	call SpikesDamage
 
 .not_linked_2
+	call CheckStatMirror
 	jp BattleTurn
 	
 .tutorial_debug
@@ -2080,7 +2079,7 @@ GetHalfMaxHP:
 .end
 	ret
 
-GetMaxHP:
+GetMaxHP::
 ; output: bc, wBuffer1-2
 
 	ld hl, wBattleMonMaxHP
@@ -4368,7 +4367,27 @@ BreakAttraction:
 	res SUBSTATUS_IDENTIFIED, [hl]
 	ret
 
+CheckStatMirror:
+	call DetermineMoveOrder
+	jr c, .PlayerFirst
+	call SwitchTurnCore
+.PlayerFirst
+	call SpikesDamage
+	call SwitchTurnCore
+;	jp SpikesDamage
+
 SpikesDamage:
+	callfar GetUserItem
+	ld a, [hl]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld a, b
+	cp HELD_STAT_SWAP
+	jr nz, .check_spikes
+.done_mirror
+	ld hl, BattleText_UsersStatsAreSwapped
+	call StdBattleTextBox
+.check_spikes
 	ld hl, wPlayerScreens
 	ld de, wBattleMonType
 	ld bc, UpdatePlayerHUD
@@ -4379,7 +4398,6 @@ SpikesDamage:
 	ld de, wEnemyMonType
 	ld bc, UpdateEnemyHUD
 .ok
-
 	bit SCREENS_SPIKES, [hl]
 	ret z
 
@@ -4397,7 +4415,20 @@ SpikesDamage:
 	ld hl, BattleText_UserHurtBySpikes ; "hurt by SPIKES!"
 	call StdBattleTextBox
 
+	ld hl, wEnemySpikesCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .do_spike
+	ld hl, wPlayerSpikesCount
+.do_spike
+	ld a, [hl]
+	ld b, a
+	cp 3
+	jp z, .three_layers
+	cp 2
+	jp z, .two_layers
 	call GetEighthMaxHP
+.continue_spikes_damage
 	call SubtractHPFromTarget
 
 	pop hl
@@ -4407,6 +4438,14 @@ SpikesDamage:
 
 .hl
 	jp hl
+
+.two_layers
+	call GetSixthMaxHP
+	jp .continue_spikes_damage
+
+.three_layers
+	call GetQuarterMaxHP
+	jp .continue_spikes_damage
 
 PursuitSwitch:
 	ld a, BATTLE_VARS_MOVE

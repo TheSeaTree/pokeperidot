@@ -22,6 +22,19 @@ RapidSpinEffect:
 	jr z, .no_spikes
 	res SCREENS_SPIKES, [hl]
 	ld hl, BlewSpikesText
+
+; Set Spikes count to 0
+	push hl
+	ld hl, wEnemySpikesCount
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .reset
+	ld hl, wPlayerSpikesCount
+.reset
+	xor a
+	ld [hl], a
+	pop hl
+
 	push de
 	call StdBattleTextBox
 	pop de

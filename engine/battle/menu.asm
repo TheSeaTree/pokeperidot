@@ -207,6 +207,8 @@ PlayerStatReadout:
 	call c, StatsDisplay_Down_Arrow
 .CheckScreens
 	ld a, [wPlayerScreens]
+	bit SCREENS_SPIKES, A
+	jr nz, .Screens_Count
 	bit SCREENS_REFLECT, a
 	jr nz, .Screens_Count
 	bit SCREENS_LIGHT_SCREEN, a
@@ -219,14 +221,18 @@ PlayerStatReadout:
 	call StatsDisplay_PlaceScreenNames
 
 	hlcoord 13, 13
-	ld de, wPlayerReflectCount
+	ld de, wEnemySpikesCount
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 13, 14
-	ld de, wPlayerLightScreenCount
+	ld de, wPlayerReflectCount
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 13, 15
+	ld de, wPlayerLightScreenCount
+	lb bc, 1, 2
+	call PrintNum
+	hlcoord 13, 16
 	ld de, wPlayerSafeguardCount
 	lb bc, 1, 2
 	call PrintNum
@@ -317,6 +323,8 @@ EnemyStatReadout:
 	call c, StatsDisplay_Down_Arrow
 .CheckScreens
 	ld a, [wEnemyScreens]
+	bit SCREENS_SPIKES, a
+	jr nz, .Screens_Count
 	bit SCREENS_REFLECT, a
 	jr nz, .Screens_Count
 	bit SCREENS_LIGHT_SCREEN, a
@@ -329,14 +337,18 @@ EnemyStatReadout:
 	call StatsDisplay_PlaceScreenNames
 
 	hlcoord 13, 13
-	ld de, wEnemyReflectCount
+	ld de, wPlayerSpikesCount
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 13, 14
-	ld de, wEnemyLightScreenCount
+	ld de, wEnemyReflectCount
 	lb bc, 1, 2
 	call PrintNum
 	hlcoord 13, 15
+	ld de, wEnemyLightScreenCount
+	lb bc, 1, 2
+	call PrintNum
+	hlcoord 13, 16
 	ld de, wEnemySafeguardCount
 	lb bc, 1, 2
 	call PrintNum
@@ -354,14 +366,17 @@ StatsDisplay_PlaceScreenNames:
 	lb bc, 4, 18
 	call ClearBox
 
-	ld de, ReflectString
+	ld de, SpikesString
 	hlcoord 1, 13
 	call PlaceString
-	ld de, LightScreenString
+	ld de, ReflectString
 	hlcoord 1, 14
 	call PlaceString
-	ld de, SafeguardString
+	ld de, LightScreenString
 	hlcoord 1, 15
+	call PlaceString
+	ld de, SafeguardString
+	hlcoord 1, 16
 	jp PlaceString
 
 StatDisplay_PlaceStatNames:
@@ -488,6 +503,9 @@ DrawWeatherStatus:
 
 .SandString:
 	db "SAND/@"
+
+SpikesString:
+	db "SPIKES/@"
 
 ReflectString:
 	db "REFLECT/@"
