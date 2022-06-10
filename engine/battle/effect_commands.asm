@@ -4128,6 +4128,21 @@ CheckIfTargetIsElectricType:
 	ld a, [de]
 	cp ELECTRIC
 	ret
+	
+CheckIfTargetIsGhostType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp GHOST
+	ret z
+	ld a, [de]
+	cp GHOST
+	ret
 
 BattleCommand_AttackUp:
 ; attackup
@@ -6134,8 +6149,7 @@ BattleCommand_ResetStats:
 	ret
 	
 .fail
-	call AnimateFailedMove
-	jp PrintButItFailed
+	jp BattleEffect_ButItFailed
 
 BattleCommand_Heal:
 ; heal
@@ -6271,18 +6285,18 @@ BattleCommand_Screen:
 	jr nz, .Reflect
 
 	bit SCREENS_LIGHT_SCREEN, [hl]
-	jr nz, .failed
+	jp nz, CheckIfTargetIsGhostType
 	set SCREENS_LIGHT_SCREEN, [hl]
-	
+
 	call CheckLightClay
-	
+
 	ld [bc], a
 	ld hl, LightScreenEffectText
 	jr .good
 
 .Reflect:
 	bit SCREENS_REFLECT, [hl]
-	jr nz, .failed
+	jp nz, CheckIfTargetIsGhostType
 	set SCREENS_REFLECT, [hl]
 
 	; LightScreenCount -> ReflectCount
@@ -6296,10 +6310,6 @@ BattleCommand_Screen:
 .good
 	call AnimateCurrentMove
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 CheckLightClay:
 	push bc
@@ -6445,17 +6455,22 @@ INCLUDE "engine/battle/move_effects/thief.asm"
 BattleCommand_ArenaTrap:
 ; arenatrap
 
+; Doesn't work on Ghost-types.
+
+	call CheckIfTargetIsGhostType
+	jp z, BattleEffect_ButItFailed
+
 ; Doesn't work on an absent opponent.
 
 	call CheckHiddenOpponent
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 ; Don't trap if the opponent is already trapped.
 
 	ld a, BATTLE_VARS_SUBSTATUS5
 	call GetBattleVarAddr
 	bit SUBSTATUS_CANT_RUN, [hl]
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 ; Otherwise trap the opponent.
 
@@ -6463,10 +6478,6 @@ BattleCommand_ArenaTrap:
 	call AnimateCurrentMove
 	ld hl, CantEscapeNowText
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 INCLUDE "engine/battle/move_effects/nightmare.asm"
 

@@ -12,12 +12,12 @@ BattleCommand_Sketch:
 .not_linked
 ; If the opponent has a substitute up, fail.
 	call CheckSubstituteOpp
-	jp nz, .fail
+	jp nz, BattleEffect_ButItFailed
 ; If the opponent is transformed, fail.
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_TRANSFORMED, [hl]
-	jp nz, .fail
+	jp nz, BattleEffect_ButItFailed
 ; Get the user's moveset in its party struct.
 ; This move replacement shall be permanent.
 ; Pointer will be in de.
@@ -38,17 +38,17 @@ BattleCommand_Sketch:
 	ld b, a
 ; Fail if move is invalid or is Struggle.
 	and a
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	cp RUNIC_POWER
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	cp STRUGGLE
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 ; Fail if user already knows that move
 	ld c, NUM_MOVES
 .does_user_already_know_move
 	ld a, [hli]
 	cp b
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	dec c
 	jr nz, .does_user_already_know_move
 ; Find Sketch in the user's moveset.
@@ -113,7 +113,3 @@ BattleCommand_Sketch:
 
 	ld hl, SketchedText
 	jp StdBattleTextBox
-
-.fail
-	call AnimateFailedMove
-	jp PrintDidntAffect

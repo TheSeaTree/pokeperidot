@@ -4,7 +4,7 @@ BattleCommand_SleepTalk:
 	call ClearLastMove
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .fail
+	jp nz, BattleEffect_ButItFailed
 	ldh a, [hBattleTurn]
 	and a
 	ld hl, wBattleMonMoves + 1
@@ -18,12 +18,12 @@ BattleCommand_SleepTalk:
 	ld a, BATTLE_VARS_STATUS
 	call GetBattleVar
 	and SLP
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	ld a, [hl]
 	and a
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	call .safely_check_has_usable_move
-	jr c, .fail
+	jp c, BattleEffect_ButItFailed
 	dec hl
 .sample_move
 	push hl
@@ -61,10 +61,6 @@ BattleCommand_SleepTalk:
 	call LoadMoveAnim
 	call UpdateMoveData
 	jp ResetTurn
-
-.fail
-	call AnimateFailedMove
-	jp TryPrintButItFailed
 
 .safely_check_has_usable_move
 	push hl

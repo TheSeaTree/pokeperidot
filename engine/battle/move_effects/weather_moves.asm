@@ -3,7 +3,7 @@ BattleCommand_StartSun:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
-	jp z, FailedWeather
+	jp z, BattleEffect_ButItFailed
 
 	ld a, WEATHER_SUN
 	call StartWeather
@@ -14,7 +14,7 @@ BattleCommand_StartRain:
 ; startrain
 	ld a, [wBattleWeather]
 	cp WEATHER_RAIN
-	jp z, FailedWeather
+	jp z, BattleEffect_ButItFailed
 
 	ld a, WEATHER_RAIN
 	call StartWeather
@@ -26,7 +26,7 @@ BattleCommand_StartSandstorm:
 
 	ld a, [wBattleWeather]
 	cp WEATHER_SANDSTORM
-	jp z, FailedWeather
+	jp z, BattleEffect_ButItFailed
 
 	ld a, WEATHER_SANDSTORM
 	call StartWeather
@@ -38,10 +38,6 @@ StartWeather:
 	ld a, 5
 	ld [wWeatherCount], a
 	jp AnimateCurrentMove
-
-FailedWeather:
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 BattleCommand_ItemSun:
 	ld a, WEATHER_SUN

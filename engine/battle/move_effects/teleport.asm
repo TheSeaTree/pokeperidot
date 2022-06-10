@@ -3,13 +3,13 @@ BattleCommand_Teleport:
 
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
-	jr z, .failed
+	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_TRAP
-	jr z, .failed
+	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_CELEBI
-	jr z, .failed
+	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_BOSS
-	jr z, .failed
+	jp z, BattleEffect_ButItFailed
 
 	ld a, BATTLE_VARS_SUBSTATUS5_OPP
 	call GetBattleVar
@@ -42,10 +42,6 @@ BattleCommand_Teleport:
 	srl b
 	cp b
 	jr nc, .run_away
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 .enemy_turn
 	ld a, [wBattleMode]
@@ -90,7 +86,7 @@ BattleCommand_Teleport:
 	
 .switchout
 	call CheckPlayerHasMonToSwitchTo
-	jr c, .failed
+	jp c, BattleEffect_ButItFailed
 
 	call UpdateBattleMonInParty
 	ld a, $1
@@ -141,7 +137,7 @@ BattleCommand_Teleport:
 
 .enemyswitch
 	call FindAliveEnemyMons
-	jp c, .switch_fail
+	jp c, BattleEffect_ButItFailed
 	call UpdateEnemyMonInParty
 	ld a, $1
 	ld [wKickCounter], a
@@ -192,28 +188,25 @@ BattleCommand_Teleport:
 
 	ld hl, TeleportInText
 	call StdBattleTextBox
-	ld hl, SpikesDamage
-	jp CallBattleCore
+	jr .new_participants
 
 .link_switch
 	ld a, BATTLE_VARS_SUBSTATUS4
 	call GetBattleVarAddr
 	res SUBSTATUS_LEECH_SEED, [hl]
 
+.new_participants
 	ld hl, BreakAttraction
-	jp CallBattleCore
+	call CallBattleCore
 	ld hl, NewEnemyMonStatus
-	jp CallBattleCore
+	call CallBattleCore
 	ld hl, ResetEnemyStatLevels
-	jp CallBattleCore
+	call CallBattleCore
 	ld hl, ResetBattleParticipants
-	jp CallBattleCore
+	call CallBattleCore
 
 	ld hl, SpikesDamage
 	jp CallBattleCore
-
-.switch_fail
-	jp .failed
 
 .ClearTextbox:
 	;
