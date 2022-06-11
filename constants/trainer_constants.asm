@@ -156,7 +156,7 @@ CHRIS EQU __enum__
 	const BREDE_REMATCH5
 
 	trainerclass CHAMPION ; 10
-	const LANCE
+	const JOSEPH
 
 	trainerclass BROCK ; 11
 

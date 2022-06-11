@@ -360,7 +360,7 @@ ENDM
 	map_attributes RegansRoom, REGANS_ROOM, $00, 0
 	map_attributes BredesRoom, BREDES_ROOM, $00, 0
 	map_attributes AmbersRoom, AMBERS_ROOM, $00, 0
-	map_attributes VictorsRoom, VICTORS_ROOM, $00, 0
+	map_attributes JosephsRoom, JOSEPHS_ROOM, $00, 0
 	map_attributes EmilysRoom, EMILYS_ROOM, $00, 0
 	map_attributes HallOfFame, HALL_OF_FAME, $00, 0
 	map_attributes Route3Route4Gate, ROUTE_3_ROUTE_4_GATE, $00, 0

@@ -457,8 +457,8 @@ PalerockCaveB2F_Blocks:
 DiglettsCave_Blocks:
 	INCBIN "maps/DiglettsCave.ablk"
 
-VictorsRoom_Blocks:
-	INCBIN "maps/VictorsRoom.ablk"
+JosephsRoom_Blocks:
+	INCBIN "maps/JosephsRoom.ablk"
 
 EmilysRoom_Blocks:
 	INCBIN "maps/EmilysRoom.ablk"

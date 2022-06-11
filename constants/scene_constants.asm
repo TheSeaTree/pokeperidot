@@ -29,9 +29,9 @@ SCENE_FINISHED EQU 1
 	const SCENE_ROUTE25_NOTHING     ; 0
 	const SCENE_ROUTE25_MISTYS_DATE ; 1
 
-; wVictorsRoomSceneID
+; wJosephsRoomSceneID
 	const_def 1
-	const SCENE_VICTORSROOM_APPROACH_LANCE ; 1
+	const SCENE_JOSEPHSROOM_APPROACH_JOSEPH ; 1
 
 ; wPlayersHouse1FSceneID
 	const_def

@@ -16,7 +16,7 @@ BTTrainerClassSprites:
 	db SPRITE_REGAN
 	db SPRITE_AMBER
 	db SPRITE_BREDE
-	db SPRITE_LANCE ; Champion
+	db SPRITE_JOSEPH ; Champion
 	db SPRITE_PERRY ; Brock
 	db SPRITE_PERRY ; Misty
 	db SPRITE_PERRY ; Lt. Surge

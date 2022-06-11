@@ -291,7 +291,7 @@ ENDM
 	map_const REGANS_ROOM,                                  7, 10 ;  5
 	map_const BREDES_ROOM,                                  7, 10 ;  4
 	map_const AMBERS_ROOM,                                  7, 10 ;  6
-	map_const VICTORS_ROOM,                                 7, 15 ;  7
+	map_const JOSEPHS_ROOM,                                 7, 15 ;  7
 	map_const EMILYS_ROOM,                                  7, 15 ;  7
 	map_const HALL_OF_FAME,                                 5,  7 ;  8
 

@@ -32,7 +32,7 @@
 	const SPRITE_BLUE_DAD ; 1b
 	const SPRITE_UNUSED_1C ; 1c
 	const SPRITE_UNUSED_1D ; 1d
-	const SPRITE_LANCE ; 1e
+	const SPRITE_JOSEPH ; 1e
 	const SPRITE_UNUSED_1F ; 1f
 	const SPRITE_UNUSED_20 ; 20
 	const SPRITE_UNUSED_21 ; 21

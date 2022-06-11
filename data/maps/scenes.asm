@@ -15,7 +15,7 @@ MapScenes::
 	scene_var REGANS_ROOM,                              wRegansRoomSceneID
 	scene_var BREDES_ROOM,                              wBredesRoomSceneID
 	scene_var AMBERS_ROOM,                              wAmbersRoomSceneID
-	scene_var VICTORS_ROOM,                             wVictorsRoomSceneID
+	scene_var JOSEPHS_ROOM,                             wJosephsRoomSceneID
 	scene_var HALL_OF_FAME,                             wHallOfFameSceneID
 	scene_var ELKHORN_TOWN,                             wNewBarkTownSceneID
 	scene_var MAPLES_LAB,                               wMaplesLabSceneID

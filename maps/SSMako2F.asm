@@ -181,7 +181,7 @@ SSMako2FOfficerAfterText:
 	text "You're <PLAYER>,"
 	line "right?"
 	
-	para "CHAMPION VICTOR"
+	para "CHAMPION JOSEPH"
 	line "would be happy for"
 	cont "you to visit."
 	done

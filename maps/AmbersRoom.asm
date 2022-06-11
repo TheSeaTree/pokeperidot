@@ -96,7 +96,7 @@ AmberScript_Battle:
 ChampionDoorLeft:
 	checkflag ENGINE_CREDITS_SKIP
 	iftrue .Rematch
-	warpmod 1, VICTORS_ROOM
+	warpmod 1, JOSEPHS_ROOM
 	end
 
 .Rematch
@@ -106,7 +106,7 @@ ChampionDoorLeft:
 ChampionDoorRight:
 	checkflag ENGINE_CREDITS_SKIP
 	iftrue .Rematch
-	warpmod 2, VICTORS_ROOM
+	warpmod 2, JOSEPHS_ROOM
 	end
 
 .Rematch
@@ -364,8 +364,8 @@ AmbersRoom_MapEvents:
 	db 4 ; warp events
 	warp_event  6, 19, BREDES_ROOM, 3
 	warp_event  7, 19, BREDES_ROOM, 4
-	warp_event  6,  1, VICTORS_ROOM, -1
-	warp_event  7,  1, VICTORS_ROOM, -1
+	warp_event  6,  1, JOSEPHS_ROOM, -1
+	warp_event  7,  1, JOSEPHS_ROOM, -1
 
 	db 6 ; coord events
 	coord_event  6, 16, SCENE_DEFAULT, ApproachAmberLeft

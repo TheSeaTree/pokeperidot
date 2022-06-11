@@ -202,7 +202,7 @@ INCLUDE "maps/WilbursRoom.asm"
 INCLUDE "maps/RegansRoom.asm"
 INCLUDE "maps/BredesRoom.asm"
 INCLUDE "maps/AmbersRoom.asm"
-INCLUDE "maps/VictorsRoom.asm"
+INCLUDE "maps/JosephsRoom.asm"
 INCLUDE "maps/EmilysRoom.asm"
 INCLUDE "maps/HallOfFame.asm"
 

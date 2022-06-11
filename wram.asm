@@ -658,12 +658,13 @@ wEnemyScreens:: ; c700
 wPlayerSafeguardCount:: db ; c701
 wPlayerLightScreenCount:: db ; c702
 wPlayerReflectCount:: db ; c703
-	ds 1
+wPlayerSpikesCount:: db
 
 wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
-	ds 2
+wEnemySpikesCount:: db
+	ds 1
 
 wBattleWeather:: ; c70a
 ; 00 normal
@@ -2557,7 +2558,7 @@ wWilbursRoomSceneID::                             db ; d97f
 wRegansRoomSceneID::                              db ; d980
 wBredesRoomSceneID::                              db ; d981
 wAmbersRoomSceneID::                              db ; d982
-wVictorsRoomSceneID::                             db ; d983
+wJosephsRoomSceneID::                             db ; d983
 wHallOfFameSceneID::                              db ; d984
 wCarnationZooSceneID::                            db ; d985
 wNewBarkTownSceneID::                             db ; d986
