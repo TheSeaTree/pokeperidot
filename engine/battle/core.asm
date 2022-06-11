@@ -53,9 +53,6 @@ DoBattle:
 	jp z, LostBattle
 	call Call_LoadTempTileMapToTileMap
 	ld a, [wBattleType]
-	cp BATTLETYPE_DEBUG
-	jp z, .tutorial_debug
-	jp z, BattleMenu
 	cp BATTLETYPE_SAFARI
 	jp z, SafariBattleTurn
 	xor a
@@ -111,9 +108,6 @@ DoBattle:
 .not_linked_2
 	call CheckStatMirror
 	jp BattleTurn
-	
-.tutorial_debug
-	jp BattleMenu
 
 WildFled_EnemyFled_LinkBattleCanceled:
 	call Call_LoadTempTileMapToTileMap
@@ -1436,10 +1430,19 @@ HandleWrap:
 	call SwitchTurnCore
 
 .skip_anim
-	call GetSixteenthMaxHP
+	callfar GetOpponentItem
+	ld a, b
+	cp HELD_BINDING_BAND
+	jr z, .binding_band
+	call GetEighthMaxHP
+.subtract_hp
 	call SubtractHPFromUser
 	ld hl, BattleText_UsersHurtByStringBuffer1
 	jr .print_text
+
+.binding_band
+	call GetSixthMaxHP
+	jp .subtract_hp
 
 .release_from_bounds
 	ld hl, BattleText_UserWasReleasedFromStringBuffer1
@@ -4374,7 +4377,6 @@ CheckStatMirror:
 .PlayerFirst
 	call SpikesDamage
 	call SwitchTurnCore
-;	jp SpikesDamage
 
 SpikesDamage:
 	callfar GetUserItem
@@ -4618,8 +4620,7 @@ HandleQuarterHPHealingItem:
 	call GetQuarterMaxHP
 	call CompareHP
 	ret nc
-	
-	
+
 	call GetHalfMaxHP
 	call SwitchTurnCore
 	call ItemRecoveryAnim

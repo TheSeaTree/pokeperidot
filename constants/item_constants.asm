@@ -106,7 +106,7 @@
 	const BLACKBELT    ; 62
 	const BLACK_SLUDGE ; 63
 	const HELIX_FOSSIL ; 64
-	const PNK_APRICORN ; 65
+	const BINDING_BAND ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
 	const SILK_SCARF   ; 68

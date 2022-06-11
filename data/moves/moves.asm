@@ -31,7 +31,7 @@ Moves: ; 41afb
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,   100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,   100, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,    95, 15,   0
-	move BIND,         EFFECT_TRAP_TARGET,        15, NORMAL,    75, 20,   0
+	move BIND,         EFFECT_TRAP_TARGET,        75, NORMAL,    75, 20,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,      100,  5,  10
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          20, ICE,      100, 20,   0
@@ -46,7 +46,7 @@ Moves: ; 41afb
 	move HORN_DRILL,   EFFECT_OHKO,                1, NORMAL,    30,  5,   0
 	move TACKLE,       EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
 	move BODY_SLAM,    EFFECT_PARALYZE_HIT,       85, NORMAL,   100, 15,  30
-	move WRAP,         EFFECT_TRAP_TARGET,        15, NORMAL,    85, 20,   0
+	move WRAP,         EFFECT_TRAP_TARGET,        60, NORMAL,    85, 20,   0
 	move FLARE_BLITZ,  EFFECT_BURN_RECOIL_HIT,   120, FIRE,     100, 10,  10
 	move THRASH,       EFFECT_RAMPAGE,           120, NORMAL,   100, 10,   0
 	move DOUBLE_EDGE,  EFFECT_RECOIL_HIT,        120, NORMAL,   100, 15,   0
@@ -94,7 +94,7 @@ Moves: ; 41afb
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, GRASS,    100, 10,   0
 	move STRING_SHOT,  EFFECT_SPEED_DOWN,          0, BUG,       95, 40,   0
 	move DRAGON_RAGE,  EFFECT_STATIC_DAMAGE,      40, DRAGON,   100, 10,   0
-	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        35, FIRE,      85, 15,   0
+	move FIRE_SPIN,    EFFECT_TRAP_TARGET,        60, FIRE,      85, 15,   0
 	move THUNDERSHOCK, EFFECT_PARALYZE_HIT,       40, ELECTRIC, 100, 30,  10
 	move THUNDERBOLT,  EFFECT_PARALYZE_HIT,       95, ELECTRIC, 100, 15,  10
 	move THUNDER_WAVE, EFFECT_PARALYZE,            0, ELECTRIC,  90, 20,   0
@@ -261,7 +261,7 @@ Moves: ; 41afb
 	move SHADOW_BALL,  EFFECT_SP_DEF_DOWN_HIT,    80, GHOST,    100, 15,  20
 	move FUTURE_SIGHT, EFFECT_FUTURE_SIGHT,      120, PSYCHIC,  100, 15,   0
 	move ROCK_SMASH,   EFFECT_DEFENSE_DOWN_HIT,   60, FIGHTING, 100, 20,  30
-	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        35, WATER,     70, 15,   0
+	move WHIRLPOOL,    EFFECT_TRAP_TARGET,        60, WATER,     70, 15,   0
 	move DRAIN_KISS,   EFFECT_LEECH_HIT,          40, FAIRY,    100, 15,   0
 	move NASTY_PLOT,   EFFECT_SP_ATK_UP_2,         0, DARK,     100, 20,   0
 	move HURRICANE,    EFFECT_HURRICANE,         110, FLYING,    70,  5,  30

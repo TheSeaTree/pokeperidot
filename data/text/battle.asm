@@ -177,6 +177,12 @@ BattleText_TargetIsHurtByItem:
 	text "."
 	prompt
 
+BattleText_UsersStatsAreSwapped:
+	text "<USER>'s"
+	line "TRICK MIRROR swaps"
+	cont "its damage types."
+	prompt
+
 BattleText_UserRecoveredPPUsing:
 	text "<USER>"
 	line "recovered PP using"

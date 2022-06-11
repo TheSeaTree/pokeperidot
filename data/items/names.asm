@@ -99,7 +99,7 @@ ItemNames::
 	db "BLACKBELT@"
 	db "BLACK SLUDGE@"
 	db "HELIX FOSSIL@"
-	db "PNK APRICORN@"
+	db "BINDING BAND@"
 	db "BLACKGLASSES@"
 	db "SLOWPOKETAIL@"
 	db "SILK SCARF@"

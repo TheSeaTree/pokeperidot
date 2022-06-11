@@ -100,7 +100,7 @@ ItemDescriptions:
 	dw BlackbeltDesc
 	dw BlackSludgeDesc
 	dw HelixFossilDesc
-	dw PnkApricornDesc
+	dw BindingBandDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
@@ -656,9 +656,9 @@ HelixFossilDesc:
 	db   "The remains of an"
 	next "ancient #MON.@"
 
-PnkApricornDesc:
-	db   "A pink APRICORN."
-	next "@"
+BindingBandDesc:
+	db   "Increases trapping"
+	next "move damage.(HOLD)@"
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
