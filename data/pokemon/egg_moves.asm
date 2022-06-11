@@ -45,6 +45,7 @@ SquirtleEggMoves:
 	db SIGNAL_BEAM
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db BODY_PRESS
 	db -1 ; end
 
 PsyduckEggMoves:
@@ -324,6 +325,7 @@ MachopEggMoves:
 	db STONE_EDGE
 	db SCARY_FACE
 	db FALSE_SWIPE
+	db BODY_PRESS
 	db -1 ; end
 
 BellsproutEggMoves:
@@ -370,6 +372,7 @@ SlowpokeEggMoves:
 	db NASTY_PLOT
 	db PAY_DAY
 	db BRICK_BREAK
+	db BODY_PRESS
 	db -1 ; end
 
 FarfetchDEggMoves:
@@ -425,6 +428,7 @@ GrimerEggMoves:
 	db MOONBLAST
 	db DESTINY_BOND
 	db STONE_EDGE
+	db BODY_PRESS
 	db -1 ; end
 
 ShellderEggMoves:
@@ -453,6 +457,7 @@ OnixEggMoves:
 	db IRON_TAIL
 	db ROLLOUT
 	db MUD_SLAP
+	db BODY_PRESS
 	db -1 ; end
 
 DrowzeeEggMoves:
@@ -474,6 +479,7 @@ KrabbyEggMoves:
 	db AGILITY
 	db X_SCISSOR
 	db BRICK_BREAK
+	db BODY_PRESS
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -518,6 +524,7 @@ LickitungEggMoves:
 	db OUTRAGE
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db BODY_PRESS
 	db -1 ; end
 
 KoffingEggMoves:
@@ -540,6 +547,7 @@ RhyhornEggMoves:
 	db IRON_TAIL
 	db SKULL_BASH
 	db PAY_DAY
+	db BODY_PRESS
 	db -1 ; end
 
 ChanseyEggMoves:
@@ -547,6 +555,7 @@ ChanseyEggMoves:
 	db METRONOME
 	db DYNAMICPUNCH
 	db BRICK_BREAK
+	db COUNTER
 	db -1 ; end
 
 TangelaEggMoves:
@@ -602,6 +611,7 @@ MrMimeEggMoves:
 	db DYNAMICPUNCH
 	db BRICK_BREAK
 	db MIND_READER
+	db BODY_PRESS
 	db -1 ; end
 
 ScytherEggMoves:
@@ -623,8 +633,9 @@ PinsirEggMoves:
 	db FOCUS_ENERGY
 	db REVERSAL
 	db STONE_EDGE
+	db BODY_PRESS
 	db -1 ; end
-	
+
 TaurosEggMoves:
 	db PRESENT
 	db REVERSAL
@@ -650,6 +661,7 @@ LaprasEggMoves:
 	db RECOVER
 	db CHARM
 	db SIGNAL_BEAM
+	db BODY_PRESS
 	db -1 ; end
 
 EeveeEggMoves:
@@ -716,6 +728,7 @@ DratiniEggMoves:
 	db HYDRO_PUMP
 	db STONE_EDGE
 	db DIVE_BOMB
+	db BODY_PRESS
 	db -1 ; end
 
 ChikoritaEggMoves:
@@ -728,6 +741,7 @@ ChikoritaEggMoves:
 	db GROWTH
 	db SLEEP_POWDER
 	db STUN_SPORE
+	db BODY_PRESS
 	db -1 ; end
 
 CyndaquilEggMoves:
@@ -832,6 +846,7 @@ ShifurEggMoves:
 	db ENCORE
 	db BODY_SLAM
 	db BRICK_BREAK
+	db RAZOR_WIND
 	db -1 ; end
 
 NatuEggMoves:
@@ -930,6 +945,7 @@ WooperEggMoves:
 	db DYNAMICPUNCH
 	db BRICK_BREAK
 	db SEISMIC_TOSS
+	db BODY_PRESS
 	db -1 ; end
 
 MurkrowEggMoves:
@@ -972,6 +988,7 @@ PinecoEggMoves:
 	db SPIKES
 	db REVERSAL
 	db SIGNAL_BEAM
+	db BODY_PRESS
 	db -1 ; end
 
 DunsparceEggMoves:
@@ -1009,6 +1026,7 @@ SnubbullEggMoves:
 	db MIMIC
 	db STONE_EDGE
 	db DYNAMICPUNCH
+	db COUNTER
 	db -1 ; end
 
 QwilfishEggMoves:
@@ -1025,6 +1043,7 @@ ShuckleEggMoves:
 	db EXPLOSION
 	db ROLLOUT
 	db DEFENSE_CURL
+	db BODY_PRESS
 	db -1 ; end
 
 HeracrossEggMoves:
@@ -1060,6 +1079,7 @@ SlugmaEggMoves:
 	db FIRE_SPIN
 	db EXPLOSION
 	db STONE_EDGE
+	db BODY_PRESS
 	db -1 ; end
 
 SwinubEggMoves:
@@ -1070,6 +1090,7 @@ SwinubEggMoves:
 	db SPIKES
 	db STONE_EDGE
 	db FREEZE_DRY
+	db BODY_PRESS
 	db -1 ; end
 
 CorsolaEggMoves:
@@ -1080,6 +1101,7 @@ CorsolaEggMoves:
 	db CONFUSE_RAY
 	db ICICLE_SPEAR
 	db BIDE
+	db BODY_PRESS
 	db -1 ; end
 
 RemoraidEggMoves:
@@ -1091,6 +1113,7 @@ RemoraidEggMoves:
 	db FLAIL
 	db RECOVER
 	db POISON_STING
+	db BODY_PRESS
 	db -1 ; end
 
 DelibirdEggMoves:
@@ -1119,6 +1142,7 @@ MantineEggMoves:
 	db MIRROR_COAT
 	db AMNESIA
 	db BARRAGE
+	db BODY_PRESS
 	db -1 ; end
 
 SkarmoryEggMoves:
@@ -1127,6 +1151,7 @@ SkarmoryEggMoves:
 	db WHIRLWIND
 	db BRAVE_BIRD
 	db X_SCISSOR
+	db DOUBLE_EDGE
 	db -1 ; end
 
 HoundourEggMoves:
@@ -1153,6 +1178,7 @@ PhanpyEggMoves:
 	db FLARE_BLITZ
 	db IRON_HEAD
 	db ENCORE
+	db BODY_PRESS
 	db -1 ; end
 
 StantlerEggMoves:
@@ -1180,7 +1206,7 @@ SmeargleEggMoves:
 	db ICE_PUNCH
 	db THUNDERPUNCH 
 	db SCRATCH
-	db VICEGRIP
+	db BODY_PRESS
 	db GUILLOTINE
 	db RAZOR_WIND
 	db SWORDS_DANCE 
@@ -1468,10 +1494,8 @@ MiltankEggMoves:
 	db WILD_CHARGE
 	db DIZZY_PUNCH
 	db DOUBLE_EDGE
-	db CHARM
 	db DYNAMICPUNCH
 	db TWISTER
-	db BRICK_BREAK
 	db -1 ; end
 
 LarvitarEggMoves:
@@ -1482,8 +1506,9 @@ LarvitarEggMoves:
 	db ANCIENTPOWER
 	db IRON_TAIL
 	db BRICK_BREAK
+	db BODY_PRESS
 	db -1 ; end
-	
+
 FerrodonEggMoves:
 	db FOCUS_ENERGY
 	db MUD_SLAP

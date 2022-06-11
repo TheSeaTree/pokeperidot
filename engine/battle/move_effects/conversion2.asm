@@ -3,7 +3,7 @@ BattleCommand_Conversion2:
 
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, FailMove
 	ld hl, wBattleMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -13,7 +13,7 @@ BattleCommand_Conversion2:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
-	jr z, .failed
+	jp z, FailMove
 	push hl
 	dec a
 	ld hl, Moves + MOVE_TYPE
@@ -21,7 +21,7 @@ BattleCommand_Conversion2:
 	ld d, a
 	pop hl
 	cp CURSE_T
-	jr z, .failed
+	jp z, FailMove
 	call AnimateCurrentMove
 	call BattleCommand_SwitchTurn
 
@@ -59,6 +59,3 @@ BattleCommand_Conversion2:
 	predef GetTypeName
 	ld hl, TransformedTypeText
 	jp StdBattleTextBox
-
-.failed
-	jp FailMove

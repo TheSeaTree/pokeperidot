@@ -22,9 +22,9 @@ Moves: ; 41afb
 	move ICE_PUNCH,    EFFECT_FREEZE_HIT,         75, ICE,      100, 15,  10
 	move THUNDERPUNCH, EFFECT_PARALYZE_HIT,       75, ELECTRIC, 100, 15,  10
 	move SCRATCH,      EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0
-	move VICEGRIP,     EFFECT_NORMAL_HIT,         55, NORMAL,   100, 30,   0
+	move BODY_PRESS,   EFFECT_BODY_PRESS,         80, FIGHTING, 100, 10,   0
 	move GUILLOTINE,   EFFECT_OHKO,                0, NORMAL,    30,  5,   0
-	move RAZOR_WIND,   EFFECT_NORMAL_HIT,         70, FLYING,   100, 20,   0
+	move RAZOR_WIND,   EFFECT_NORMAL_HIT,         70, FLYING,   100, 15,   0
 	move SWORDS_DANCE, EFFECT_ATTACK_UP_2,         0, NORMAL,   100, 30,   0
 	move CUT,          EFFECT_NORMAL_HIT,         70, NORMAL,   100, 20,   0
 	move GUST,         EFFECT_GUST,               40, FLYING,   100, 35,   0
@@ -200,7 +200,7 @@ Moves: ; 41afb
 	move SWEET_KISS,   EFFECT_CONFUSE,             0, FAIRY,     75, 10,   0
 	move BELLY_DRUM,   EFFECT_BELLY_DRUM,          0, NORMAL,   100, 10,   0
 	move SLUDGE_BOMB,  EFFECT_POISON_HIT,         90, POISON,   100, 10,  30
-	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  20, GROUND,   100, 10, 100
+	move MUD_SLAP,     EFFECT_ACCURACY_DOWN_HIT,  40, GROUND,   100, 10, 100
 	move OCTAZOOKA,    EFFECT_ACCURACY_DOWN_HIT, 100, WATER,     85, 10,  50
 	move SPIKES,       EFFECT_SPIKES,              0, GROUND,   100, 20,   0
 	move ZAP_CANNON,   EFFECT_PARALYZE_HIT,      120, ELECTRIC,  50,  5, 100
@@ -222,7 +222,7 @@ Moves: ; 41afb
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC, 100, 20,  30
 	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        20, BUG,       95, 20,   0
-	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,    100, 10,  10
+	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,     95, 10,  20
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, NORMAL,   100,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, NORMAL,   100, 15,   0
 	move SLEEP_TALK,   EFFECT_SLEEP_TALK,          0, NORMAL,   100, 10,   0

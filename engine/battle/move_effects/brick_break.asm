@@ -15,7 +15,6 @@ BattleCommand_BrickBreak:
 	ld hl, BattleText_MonsBarrierShattered
 	jp StdBattleTextBox
 
-
 BrickBreak_Anim:
 	call BrickBreak_CheckEnemyScreens
 

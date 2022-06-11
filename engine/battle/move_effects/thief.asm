@@ -107,14 +107,6 @@ BattleCommand_Thief:
 	ld hl, wEnemyMonItem
 	ret
 
-ItemIsValuable:
-	ld a, d
-	ld hl, ValuableItems
-	ld de, 1
-	jp IsInArray
-
-INCLUDE "data/items/valuable_items.asm"
-
 BattleCommand_ThiefDamage:
 	ldh a, [hBattleTurn]
 	and a

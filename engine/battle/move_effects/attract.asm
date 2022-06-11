@@ -2,15 +2,15 @@ BattleCommand_Attract:
 ; attract
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, FailMove
 	farcall CheckOppositeGender
-	jr c, .failed
+	jp c, PrintDidntAffect2
 	call CheckHiddenOpponent
-	jr nz, .failed
+	jp nz, FailMove
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_IN_LOVE, [hl]
-	jr nz, .failed
+	jp nz, FailMove
 
 	set SUBSTATUS_IN_LOVE, [hl]
 	call AnimateCurrentMove
@@ -18,6 +18,3 @@ BattleCommand_Attract:
 ; 'fell in love!'
 	ld hl, FellInLoveText
 	jp StdBattleTextBox
-
-.failed
-	jp FailMove

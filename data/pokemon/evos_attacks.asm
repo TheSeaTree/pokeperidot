@@ -179,6 +179,7 @@ BlastoiseEvosAttacks:
 	db 1, TAIL_WHIP
 	db 1, WATER_GUN
 	db 1, DEFENSE_CURL
+	db 1, BODY_PRESS
 	db 4, TAIL_WHIP
 	db 7, WATER_GUN
 	db 10, DEFENSE_CURL
@@ -329,7 +330,7 @@ RinringEvosAttacks:
 	db 22, FAINT_ATTACK
 	db 27, HEAL_BELL
 	db 33, CUT
-	db 38, NASTY_PLOT
+	db 38, PURSUIT
 	db 41, CRUNCH
 	db 0 ; no more level-up moves
 
@@ -343,7 +344,7 @@ NyanellEvosAttacks:
 	db 22, FAINT_ATTACK
 	db 27, HEAL_BELL
 	db 33, CUT
-	db 38, NASTY_PLOT
+	db 38, PURSUIT
 	db 41, CRUNCH
 	db 0 ; no more level-up moves
 
@@ -518,7 +519,7 @@ NidoqueenEvosAttacks:
 	db 35, BODY_SLAM
 	db 43, EARTHQUAKE
 	db 46, ATTRACT
-	db 58, SUBMISSION
+	db 58, BODY_PRESS
 	db 0 ; no more level-up moves
 
 NidoranMEvosAttacks:
@@ -917,6 +918,7 @@ PrimeapeEvosAttacks:
 	db 1, SCRATCH
 	db 1, LEER
 	db 1, FOCUS_ENERGY
+	db 1, COUNTER
 	db 6, FURY_SWIPES
 	db 8, MUD_SLAP
 	db 12, PURSUIT
@@ -1000,6 +1002,7 @@ PoliwrathEvosAttacks:
 	db 1, SUBMISSION
 	db 32, DRAIN_PUNCH
 	db 43, DYNAMICPUNCH
+	db 50, BODY_PRESS
 	db 55, MIND_READER
 	db 0 ; no more level-up moves
 
@@ -1083,6 +1086,7 @@ MachampEvosAttacks:
 	db 1, BRICK_BREAK
 	db 1, LEER
 	db 1, BULLET_PUNCH
+	db 1, BODY_PRESS
 	db 3, FOCUS_ENERGY
 	db 7, KARATE_CHOP
 	db 9, FORESIGHT
@@ -1606,7 +1610,7 @@ KrabbyEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, LEER
-	db 5, VICEGRIP
+	db 5, BIND
 	db 9, LEER
 	db 11, HARDEN
 	db 15, BUBBLEBEAM
@@ -1624,7 +1628,7 @@ KinglerEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, BUBBLE
 	db 1, LEER
-	db 5, VICEGRIP
+	db 5, BIND
 	db 9, LEER
 	db 11, HARDEN
 	db 15, BUBBLEBEAM
@@ -2093,9 +2097,9 @@ MagmarEvosAttacks:
 
 PinsirEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, VICEGRIP
+	db 1, BIND
 	db 1, FOCUS_ENERGY
-	db 4, BIND
+	db 4, HORN_ATTACK
 	db 8, SEISMIC_TOSS
 	db 11, HARDEN
 	db 18, VITAL_THROW
@@ -2365,7 +2369,7 @@ SnorlaxEvosAttacks:
 	db 41, MEAN_LOOK
 	db 44, BELLY_DRUM
 	db 49, CRUNCH
-	db 50, IRON_HEAD
+	db 50, BODY_PRESS
 	db 52, HYPER_BEAM
 	db 57, BULLDOZE
 	db 0 ; no more level-up moves
@@ -3106,7 +3110,7 @@ SudowoodoEvosAttacks:
 	db 36, BRICK_BREAK
 	db 43, DOUBLE_EDGE
 	db 47, STONE_EDGE
-	db 50, SUBMISSION
+	db 50, BODY_PRESS
 	db 0 ; no more level-up moves
 
 PolitoedEvosAttacks:
@@ -3577,7 +3581,7 @@ HeracrossEvosAttacks:
 	db 23, BRICK_BREAK
 	db 27, COUNTER
 	db 35, DOUBLE_EDGE
-	db 44, REVERSAL
+	db 44, BODY_PRESS
 	db 54, MEGAHORN
 	db 60, DYNAMICPUNCH
 	db 0 ; no more level-up moves
@@ -3803,7 +3807,7 @@ SkarmoryEvosAttacks:
 	db 39, RAZOR_WIND
 	db 45, BRAVE_BIRD
 	db 52, IRON_HEAD
-	db 58, DOUBLE_EDGE
+	db 58, BODY_PRESS
 	db 0 ; no more level-up moves
 
 HoundourEvosAttacks:
@@ -4018,15 +4022,18 @@ MagbyEvosAttacks:
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 4, GROWL
-	db 8, DEFENSE_CURL
-	db 13, HEADBUTT
-	db 16, CHARM
-	db 19, MILK_DRINK
-	db 26, BIDE
-	db 34, ROLLOUT
-	db 43, BODY_SLAM
-	db 53, HEAL_BELL
+	db 3, GROWL
+	db 5, DEFENSE_CURL
+	db 8, HEADBUTT
+	db 11, MILK_DRINK
+	db 15, BIDE
+	db 19, ROLLOUT
+	db 24, BODY_SLAM
+	db 29, CHARM
+	db 35, HEAL_BELL
+	db 41, DOUBLE_EDGE
+	db 48, BRICK_BREAK
+	db 50, BODY_PRESS
 	db 0 ; no more level-up moves
 
 BlisseyEvosAttacks:
@@ -4239,6 +4246,7 @@ FerrodonEvosAttacks:
 	db 31, DIG
 	db 35, DRAGONBREATH
 	db 40, COIL
+	db 42, BODY_PRESS
 	db 45, IRON_TAIL
 	db 49, OUTRAGE
 	db 55, FISSURE

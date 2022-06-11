@@ -9,7 +9,7 @@ MoveNames::
 	db "ICE PUNCH@"
 	db "THUNDERPUNCH@"
 	db "SCRATCH@"
-	db "VICEGRIP@"
+	db "BODY PRESS@"
 	db "GUILLOTINE@"
 	db "RAZOR WIND@"
 	db "SWORDS DANCE@"

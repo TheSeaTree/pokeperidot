@@ -10,7 +10,7 @@ MoveDescriptions::
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
+	dw BodyPressDescription
 	dw GuillotineDescription
 	dw RazorWindDescription
 	dw SwordsDanceDescription
@@ -305,9 +305,9 @@ ScratchDescription:
 	db   "Scratches with"
 	next "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
+BodyPressDescription:
+	db   "Attacks using the"
+	next "DEFENSE stat.@"
 
 GuillotineDescription:
 	db   "A one-hit KO,"

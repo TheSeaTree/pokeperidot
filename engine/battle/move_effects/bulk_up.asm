@@ -29,6 +29,6 @@ BattleCommand_BulkUp:
 	call ResetMiss
 	call BattleCommand_DefenseUp
 	jp   BattleCommand_StatUpMessage
-	
+
 .cantraise
 	jp CantRaiseStats

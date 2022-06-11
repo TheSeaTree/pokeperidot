@@ -143,3 +143,11 @@ DoWeatherModifiers:
 	ret
 
 INCLUDE "data/battle/weather_modifiers.asm"
+
+ItemIsValuable:
+	ld a, d
+	ld hl, ValuableItems
+	ld de, 1
+	jp IsInArray
+
+INCLUDE "data/items/valuable_items.asm"

@@ -11,7 +11,7 @@ BattleAnimations::
 	dw BattleAnim_IcePunch
 	dw BattleAnim_Thunderpunch
 	dw BattleAnim_Scratch
-	dw BattleAnim_Vicegrip
+	dw BattleAnim_BodyPress
 	dw BattleAnim_Guillotine
 	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
@@ -815,31 +815,6 @@ BattleAnim_RunicPower:
 	anim_wait 32
 	anim_ret
 
-BattleAnim_HyperFang:
-	anim_1gfx ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_1F, $20, $1, $0
-	anim_sound 0, 1, SFX_BITE
-	anim_obj ANIM_OBJ_FANG, 136, 56, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_01, 136, 56, $0
-	anim_wait 16
-	anim_ret
-
-BattleAnim_SuperFang:
-	anim_1gfx ANIM_GFX_HIT
-	anim_bgeffect ANIM_BG_1F, $40, $2, $0
-	anim_wait 48
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-.loop
-	anim_sound 0, 1, SFX_BITE
-	anim_obj ANIM_OBJ_FANG, 136, 56, $0
-	anim_obj ANIM_OBJ_00, 136, 56, $0
-	anim_wait 6
-	anim_obj ANIM_OBJ_FANG, 136, 56, $0
-	anim_wait 6
-	anim_loop 3, .loop
-	anim_ret
-
 BattleAnim_Ember:
 	anim_1gfx ANIM_GFX_FIRE
 	anim_sound 6, 2, SFX_EMBER
@@ -1481,12 +1456,24 @@ BattleAnim_AuroraBeam:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_Vicegrip:
-	anim_1gfx ANIM_GFX_CUT
-	anim_sound 0, 1, SFX_VICEGRIP
-	anim_obj ANIM_OBJ_37, 152, 40, $0
-	anim_obj ANIM_OBJ_39, 120, 72, $0
+BattleAnim_BodyPress:
+	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
 	anim_wait 32
+	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
+	anim_wait 4
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_wait 3
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_obj ANIM_OBJ_01, 136, 48, $0
+	anim_wait 6
+	anim_sound 0, 1, SFX_TACKLE
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_obj ANIM_OBJ_01, 144, 48, $0
+	anim_wait 3
+	anim_call BattleAnim_ShowMon_0
 	anim_ret
 
 BattleAnim_Scratch:
@@ -3217,6 +3204,11 @@ BattleAnim_TailWhip:
 
 BattleAnim_Struggle:
 	anim_1gfx ANIM_GFX_HIT
+	anim_call BattleAnim_UserObj_1Row
+	anim_bgeffect ANIM_BG_VIBRATE_MON, $0, $1, $0
+	anim_wait 40
+	anim_call BattleAnim_ShowMon_1
+	anim_wait 1
 	anim_sound 0, 1, SFX_POUND
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 16

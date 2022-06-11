@@ -43,7 +43,7 @@ MoveEffectsPointers:
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw Splash ; Unused
+	dw NormalHit ; Body Press
 	dw MultiHit
 	dw NormalHit
 	dw Mist

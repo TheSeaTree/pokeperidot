@@ -2,7 +2,7 @@ BattleCommand_LeechSeed:
 ; leechseed
 	ld a, [wTypeModifier]
 	and $7f
-	jr z, .didnt_affect
+	jp z, BattleEffect_DoesntAffect
 
 	ld a, [wAttackMissed]
 	and a
@@ -18,10 +18,6 @@ BattleCommand_LeechSeed:
 	call AnimateCurrentMove
 	ld hl, WasSeededText
 	jp StdBattleTextBox
-
-.didnt_affect
-	call AnimateFailedMove
-	jp PrintDoesntAffect
 
 .evaded
 	call AnimateFailedMove

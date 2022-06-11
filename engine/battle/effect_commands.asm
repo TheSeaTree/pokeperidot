@@ -2709,9 +2709,13 @@ PlayerAttackDamage:
 	jr nc, .special
 
 .physical
+	call CheckBodyPress
+	jr z, .skip_trick_mirror
+
 	call CheckStatSwapItem
 	jr z, .continuespecial
 
+.skip_trick_mirror
 	ld a, [wBattleMonSpecies]
 	call CheckLightBuoy
 	jr z, .continuespecial
@@ -2729,6 +2733,9 @@ PlayerAttackDamage:
 	rl b
 
 .physicalcrit
+	call CheckBodyPress
+	jr z, .body_press
+
 	ld hl, wBattleMonAttack
 	call CheckDamageStatsCritical
 	jr c, .thickclub
@@ -2738,6 +2745,18 @@ PlayerAttackDamage:
 	ld b, a
 	ld c, [hl]
 	ld hl, wPlayerAttack
+	jr .thickclub
+
+.body_press
+	ld hl, wBattleMonDefense
+	call CheckDamageStatsCritical
+	jr c, .thickclub
+
+	ld hl, wEnemyDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wPlayerDefense
 	jr .thickclub
 
 .special
@@ -2797,6 +2816,12 @@ CheckStatSwapItem:
 	call GetUserItem
 	ld a, b
 	cp HELD_STAT_SWAP
+	ret
+
+CheckBodyPress:
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BODY_PRESS
 	ret
 
 CheckLightBuoy:
@@ -3101,13 +3126,17 @@ EnemyAttackDamage:
 	jr nc, .Special
 
 .physical
+	call CheckBodyPress
+	jr z, .skip_trick_mirror
+
 	call CheckStatSwapItem
 	jr z, .continuespecial
-	
+
+.skip_trick_mirror
 	ld a, [wEnemyMonSpecies]
 	call CheckLightBuoy
 	jr z, .continuephysical
-	
+
 .continuephysical
 	ld hl, wBattleMonDefense
 	ld a, [hli]
@@ -3121,6 +3150,9 @@ EnemyAttackDamage:
 	rl b
 
 .physicalcrit
+	call CheckBodyPress
+	jr z, .body_press
+
 	ld hl, wEnemyMonAttack
 	call CheckDamageStatsCritical
 	jr c, .thickclub
@@ -3130,6 +3162,18 @@ EnemyAttackDamage:
 	ld b, a
 	ld c, [hl]
 	ld hl, wEnemyAttack
+	jr .thickclub
+
+.body_press
+	ld hl, wEnemyMonDefense
+	call CheckDamageStatsCritical
+	jr c, .thickclub
+
+	ld hl, wPlayerDefense
+	ld a, [hli]
+	ld b, a
+	ld c, [hl]
+	ld hl, wEnemyDefense
 	jr .thickclub
 
 .Special:
@@ -3769,7 +3813,7 @@ BattleCommand_SleepTarget:
 
 	ld a, [wTypeModifier]
 	and $7f
-	jr z, .didnt_affect
+	jp z, BattleEffect_DoesntAffect
 
 	ld a, [wAttackMissed]
 	and a
@@ -3811,10 +3855,6 @@ BattleCommand_SleepTarget:
 	call AnimateFailedMove
 	pop hl
 	jp StdBattleTextBox
-	
-.didnt_affect
-	call AnimateFailedMove
-	jp PrintDoesntAffect
 
 BattleCommand_PoisonTarget:
 ; poisontarget
@@ -5929,19 +5969,19 @@ BattleCommand_Paralyze:
 	jr nz, .paralyzed
 	ld a, [wTypeModifier]
 	and $7f
-	jr z, .didnt_affect
+	jp z, BattleEffect_DoesntAffect
 	call CheckIfTargetIsElectricType
-	jr z, .didnt_affect
+	jp z, BattleEffect_DoesntAffect
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	call CheckSubstituteOpp
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	ld c, 30
 	call DelayFrames
 	call AnimateCurrentMove
@@ -5963,9 +6003,6 @@ BattleCommand_Paralyze:
 	ld hl, AlreadyParalyzedText
 	jp StdBattleTextBox
 
-.failed
-	jp PrintDidntAffect2
-
 .didnt_affect
 	call AnimateFailedMove
 	jp PrintDoesntAffect
@@ -5979,17 +6016,17 @@ BattleCommand_Burn:
 	jr nz, .burned
 	ld a, [wTypeModifier]
 	and $7f
-	jr z, .didnt_affect
+	jp z, BattleEffect_DoesntAffect
 
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
 	and a
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	call CheckSubstituteOpp
-	jr nz, .failed
+	jp nz, PrintDidntAffect2
 	ld c, 30
 	call DelayFrames
 	call AnimateCurrentMove
@@ -6012,13 +6049,6 @@ BattleCommand_Burn:
 	call AnimateFailedMove
 	ld hl, AlreadyBurnedText
 	jp StdBattleTextBox
-
-.failed
-	jp PrintDidntAffect2
-
-.didnt_affect
-	call AnimateFailedMove
-	jp PrintDoesntAffect
 
 CheckMoveTypeMatchesTarget:
 ; Compare move type to opponent type.
@@ -6238,6 +6268,10 @@ INCLUDE "engine/battle/move_effects/transform.asm"
 BattleEffect_ButItFailed:
 	call AnimateFailedMove
 	jp PrintButItFailed
+
+BattleEffect_DoesntAffect:
+	call AnimateFailedMove
+	jp PrintDoesntAffect
 
 ClearLastMove:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE
