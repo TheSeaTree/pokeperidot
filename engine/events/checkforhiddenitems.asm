@@ -83,6 +83,10 @@ CheckForHiddenItems:
 	ret
 
 RockItemEncounter:
+	ld de, EVENT_LOST_LAND_GOT_OLD_AMBER
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	jr nz, .OldAmber
 	ld hl, .RockItems
 	call Random
 .loop
@@ -101,7 +105,12 @@ endr
 .done
 	ld [wScriptVar], a
 	ret
-	
+
+.OldAmber
+	ld hl, .RockItems2
+	call Random
+	jr .loop
+
 .RockItems:
 	db 1, MAX_REVIVE
 	db 1, NUGGET
@@ -119,6 +128,23 @@ endr
 	db 48, NO_ITEM
 	db -1
 
+.RockItems2:
+	db 1, MAX_REVIVE
+	db 1, NUGGET
+	db 2, STARDUST
+	db 4, THICK_CLUB
+	db 6, STAR_PIECE
+	db 8, OLD_AMBER
+	db 8, FIRE_STONE
+	db 8, WATER_STONE
+	db 8, LEAF_STONE
+	db 8, THUNDERSTONE
+	db 8, MOON_STONE
+	db 8, SUN_STONE
+	db 12, BIG_PEARL
+	db 48, BRICK_PIECE
+	db 40, NO_ITEM
+	db -1
 
 TreeItemEncounter:
 	ld hl, .TreeItems
