@@ -378,6 +378,7 @@ FearowEvosAttacks:
 	db 32, FOCUS_ENERGY
 	db 38, DOUBLE_TEAM
 	db 41, DRILL_PECK
+	db 58, EXTREMESPEED
 	db 0 ; no more level-up moves
 
 EkansEvosAttacks:
@@ -2502,7 +2503,7 @@ MewtwoEvosAttacks:
 	db 50, RECOVER
 	db 57, PSYCHIC_M
 	db 64, BARRIER
-	db 70, SUBMISSION
+	db 70, SHADOW_BALL
 	db 79, AMNESIA
 	db 86, MIST
 	db 0 ; no more level-up moves
@@ -2941,7 +2942,7 @@ ShifurEvosAttacks:
 	db 32, SCREECH
 	db 35, CUT
 	db 40, ICE_BEAM
-	db 47, EXTREMESPEED
+	db 47, BLIZZARD
 	db 0 ; no more level-up moves
 
 SnowmadEvosAttacks:
@@ -3662,6 +3663,7 @@ SlugmaEvosAttacks:
 MagcargoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
+	db 1, BODY_PRESS
 	db 6, EMBER
 	db 8, ROCK_THROW
 	db 13, HARDEN

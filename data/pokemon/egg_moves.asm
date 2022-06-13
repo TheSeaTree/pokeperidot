@@ -103,6 +103,7 @@ SpearowEggMoves:
 	db U_TURN
 	db DIVE_BOMB
 	db PAY_DAY
+	db EXTREMESPEED
 	db -1 ; end
 
 EkansEggMoves:
@@ -351,6 +352,7 @@ GeodudeEggMoves:
 	db SCREECH
 	db BRICK_BREAK
 	db CROSS_CHOP
+	db BODY_PRESS
 	db -1 ; end
 
 PonytaEggMoves:
