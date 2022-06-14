@@ -3,6 +3,7 @@ ValuableItems:
 	db EXP_SHARE
 	db HELIX_FOSSIL
 	db DOME_FOSSIL
+	db SABRE_FOSSIL
 	db OLD_AMBER
 	db SACRED_ASH
 	db LEGENDS_AURA

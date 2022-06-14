@@ -8,20 +8,50 @@ OrchidGrannysHouse_MapScripts:
 OrchidGranny:
 	faceplayer
 	opentext
+	checkevent EVENT_SHOWN_ENTEI_TO_ORCHID_GRANNY
+	iftrue .shown_entei
+	checkevent EVENT_GOT_GUARDIAN_KEY
+	iftrue .after_key
 	writetext OrchidGrannyAskText
 	yesorno
 	iffalse .decline
 	writetext OrchidGrannyStoryText
 	waitbutton
-	writetext OrchidGrannyGiveShrineKeyText
+	writetext OrchidGrannyHearMore
+	yesorno
+	iftrue .decline
+	writetext OrchidGrannyGiveGuardianKeyText
 	waitbutton
-	verbosegiveitem SHRINE_KEY
+	verbosegiveitem GUARDIAN_KEY
+	setevent EVENT_GOT_GUARDIAN_KEY
 	waitbutton
 	closetext
 	end
 
 .decline
 	writetext OrchidGrannyDeclineText
+	waitbutton
+	closetext
+	end
+
+.after_key
+	writebyte ENTEI
+	special FindPartyMonThatSpecies
+	iftrue .have_entei
+	writetext OrchidGrannyAfterText
+	waitbutton
+	closetext
+	end
+
+.have_entei
+	writetext OrchidGrannyShowEnteiText
+	waitbutton
+	closetext
+	setevent EVENT_SHOWN_ENTEI_TO_ORCHID_GRANNY
+	end
+
+.shown_entei
+	writetext OrchidGrannyAfterEnteiText
 	waitbutton
 	closetext
 	end
@@ -85,34 +115,81 @@ OrchidGrannyStoryText:
 	cont "volcano."
 	done
 
-OrchidGrannyGiveShrineKeyText:
-	text "If you are eager"
-	line "to learn more, you"
-	cont "can visit the"
-	cont "SHRINE next to the"
-	cont "#MON CENTER."
-	
-	para "I believe some"
-	line "young men live"
-	cont "there now, but"
-	cont "their master will"
-	cont "let you by with"
-	cont "this KEY."
-	
-	; giveitem SHRINE_KEY
-	
+OrchidGrannyHearMore:
+	text "I'm sorry, I have"
+	line "been speaking for"
+	cont "so long."
+
+	para "Does my story bore"
+	line "you?"
 	done
+
+OrchidGrannyGiveGuardianKeyText:
+	text "I only have a"
+	line "little more to"
+	cont "tell you."
 	
+	para "There is a cave"
+	line "deep within MOLTEN"
+	cont "PEAK which has"
+	cont "been sealed off"
+	cont "for decades."
+
+	para "Rumor has it that"
+	line "the GUARDIAN lives"
+	cont "behind those"
+	cont "locked doors."
+
+	para "I have a KEY which"
+	line "is said to be able"
+	cont "to unseal the way"
+	cont "to the GUARDIAN."
+
+	para "I am in no shape"
+	line "to be exploring"
+	cont "caves at my age,"
+	cont "so you should"
+	cont "take this KEY and"
+	cont "look for me."
+
+	para "You have been so"
+	line "patient with me,"
+	cont "you deserve a"
+	cont "chance to meet the"
+	cont "GUARDIAN of old."
+	done
+
+OrchidGrannyAfterText:
+	text "It is said the"
+	line "GUARDIAN is rest-"
+	cont "ing deep within"
+	cont "MOLTEN PEAK."
+
+	para "The KEY I gave you"
+	line "should let you ac-"
+	cont "cess its chamber."
+	done
+
 OrchidGrannyShowEnteiText:
 	text "Oh my! …Is that"
 	line "truly the GUARDIAN"
 	cont "from my youth?"
-	
+
 	para "I can't believe it!"
-	
+
 	para "Thank you so much"
 	line "for letting me see"
 	cont "it one last time…"
+	done
+
+OrchidGrannyAfterEnteiText:
+	text "Thank you so much"
+	line "for letting me"
+	cont "meet the GUARDIAN"
+	cont "once again."
+
+	para "You have been so"
+	line "kind to me."
 	done
 
 OrchidGrannyDeclineText:

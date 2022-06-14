@@ -181,7 +181,7 @@ ItemDescriptions:
 	dw TrickMirrorDesc
 	dw BrickPieceDesc
 	dw CrashHelmetDesc
-	dw ShrineKeyDesc
+	dw GuardianKeyDesc
 	dw ExpAllDesc
 	dw SafariPackDesc
 	dw SkillBeltDesc
@@ -979,9 +979,9 @@ CrashHelmetDesc:
 	db	 "Halves most recoil"
 	next "damage. (HOLD)@"
 	
-ShrineKeyDesc:
-	db	 "An old key with"
-	next "strange markings.@"
+GuardianKeyDesc:
+	db	 "A rusty key that"
+	next "appears quite old.@"
 
 ExpAllDesc:
 	db   "Grants EXP. Points"

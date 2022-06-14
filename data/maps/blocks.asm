@@ -351,18 +351,6 @@ Route18Barn_Blocks:
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"
 
-MountMortar1FOutside_Blocks:
-	INCBIN "maps/MountMortar1FOutside.ablk"
-
-MountMortar1FInside_Blocks:
-	INCBIN "maps/MountMortar1FInside.ablk"
-
-MountMortar2FInside_Blocks:
-	INCBIN "maps/MountMortar2FInside.ablk"
-
-MountMortarB1F_Blocks:
-	INCBIN "maps/MountMortarB1F.ablk"
-
 TrainerHouse_Blocks:
 	INCBIN "maps/TrainerHouse.ablk"
 
@@ -908,3 +896,6 @@ PastPectiniaApartment2F_Blocks:
 
 PastPectiniaApartment3F_Blocks:
 	INCBIN "maps/time-travel/PastPectiniaApartment3F.ablk"
+
+DevelopersHouse_Blocks:
+	INCBIN "maps/DevelopersHouse.ablk"

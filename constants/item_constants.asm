@@ -187,7 +187,7 @@
 	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
 	const CRASH_HELMET ; b5
-	const SHRINE_KEY   ; b6
+	const GUARDIAN_KEY ; b6
 	const EXP_ALL      ; b7
 	const SAFARI_PACK  ; b8
 	const SKILL_BELT   ; b9

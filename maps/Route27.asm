@@ -579,13 +579,14 @@ Route27SuperNerdText:
 Route27_MapEvents:
 	db 0, 0 ; filler
 
-	db 6 ; warp events
+	db 7 ; warp events
 	warp_event  4, 34, ROUTE_27_GATE, 3
 	warp_event  4, 35, ROUTE_27_GATE, 4
 	warp_event 31, 43, ROUTE_23_GATE, 1
 	warp_event 32, 43, ROUTE_23_GATE, 2
 	warp_event 33, 30, ROUTE_26_GATE, 1
 	warp_event 33, 31, ROUTE_26_GATE, 2
+	warp_event  5,  1, DEVELOPERS_HOUSE, 1
 
 	db 0 ; coord events
 

@@ -387,10 +387,10 @@ PsychicParkerText:
 	done
 	
 PsychicParkerWinText:
-	text "'You will be met"
+	text "“You will be met"
 	line "with great victory"
 	cont "before you know"
-	cont "it.'"
+	cont "it.”"
 	done
 	
 PsychicParkerAfterText:

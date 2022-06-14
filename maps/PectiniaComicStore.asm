@@ -116,8 +116,8 @@ PectiniaComicStoreSuperNerd2Text:
 	done
 
 PectiniaComicStoreWilburHeadlineText:
-	text "'CAN HE STILL HANG"
-	line "WITH THE BEST?'"
+	text "“CAN HE STILL HANG"
+	line "WITH THE BEST?”"
 
 	para "We discuss ELITE"
 	line "FOUR WILBUR and"
@@ -126,8 +126,8 @@ PectiniaComicStoreWilburHeadlineText:
 	done
 
 PectiniaComicStoreReganHeadlineText:
-	text "'I WAS TOTALLY"
-	line "MYSTIFIED!'"
+	text "“I WAS TOTALLY"
+	line "MYSTIFIED!”"
 
 	para "Read our review of"
 	line "REGAN's latest"
@@ -135,8 +135,8 @@ PectiniaComicStoreReganHeadlineText:
 	done
 
 PectiniaComicStoreBredeHeadlineText:
-	text "'THE BENEFITS OF"
-	line "ICE BATHS.'"
+	text "“THE BENEFITS OF"
+	line "ICE BATHS.”"
 
 	para "BREDE discusses"
 	line "how his morning"
@@ -145,9 +145,9 @@ PectiniaComicStoreBredeHeadlineText:
 	done
 
 PectiniaComicStoreAmberHeadlineText:
-	text "'FRESH OFF THE"
+	text "“FRESH OFF THE"
 	line "RUNWAY AND HEADING"
-	cont "TO THE TOP!'"
+	cont "TO THE TOP!”"
 
 	para "Exclusive inter-"
 	line "view with the new-"

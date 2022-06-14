@@ -44,6 +44,7 @@ INCLUDE "maps/BurglarHideoutB1F.asm"
 INCLUDE "maps/BurglarHideoutB2F.asm"
 INCLUDE "maps/Route28Gate.asm"
 INCLUDE "maps/NorthForest.asm"
+INCLUDE "maps/DevelopersHouse.asm"
 
 
 SECTION "Map Scripts 4", ROMX

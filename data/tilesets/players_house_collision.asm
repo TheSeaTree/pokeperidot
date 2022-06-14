@@ -71,3 +71,8 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 46
 	tilecoll WALL, WALL, LEFT_WALL, RIGHT_WALL ; 47
 	tilecoll WINDOW, WALL, WALL, FLOOR ; 48
+	tilecoll WALL, WALL, FLOOR, WALL ; 49
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 4a
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4b
+	tilecoll WALL, WALL, WALL, FLOOR ; 4c
+	tilecoll WALL, WALL, TV, WALL ; 4d

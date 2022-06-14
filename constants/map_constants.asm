@@ -418,6 +418,7 @@ ENDM
 	map_const ROUTE_28,					           		   16, 18
 	map_const ROUTE_28_GATE,					            3,  4
 	map_const NORTH_FOREST,					           	   20, 15
+	map_const DEVELOPERS_HOUSE,				           	    5,  4
 
 	newgroup                                                      ; 26
 

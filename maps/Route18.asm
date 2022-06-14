@@ -109,7 +109,7 @@ TrainerMarieScript:
 .No
 	closetext
 	end
-	
+
 TrainerMarieAfterScript:
 	checkevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
 	iftrue .AfterBattle
@@ -134,7 +134,7 @@ TrainerMarieAfterScript:
 .AfterBattle
 	faceplayer
 	opentext
-	writetext Route18DaughterAfterText
+	writetext TrainerMariePostgameAfterText
 	waitbutton
 	closetext
 	end
@@ -361,7 +361,7 @@ Route18DaughterAfterText:
 	para "When I do, we will"
 	line "battle again!"
 	done
-	
+
 TrainerMarieBackHomeText:
 	text "Heya, <PLAYER>!"
 	
@@ -372,7 +372,7 @@ TrainerMarieBackHomeText:
 	cont "promise we will"
 	cont "battle again!"
 	done
-	
+
 TrainerMariePostgameChallengeText:
 	text "Oh! <PLAYER>!"
 	
@@ -380,27 +380,27 @@ TrainerMariePostgameChallengeText:
 	line "that you and your"
 	cont "#MON became the"
 	cont "CHAMPION!"
-	
+
 	para "You know, grandpa"
 	line "has allowed me to"
 	cont "train some with"
 	cont "BESSIE!"
-	
+
 	para "Can I show you"
 	line "what I've learned?"
 	done
-	
+
 TrainerMariePostgameAcceptText:
 	text "Yipee!"
-	
+
 	para "I won't waste your"
 	line "time, I promise!"
 	done
-	
+
 TrainerMariePostgameWinText:
 	text "Gah! I'm not quite"
 	line "there yet!"
-	
+
 	para "Good battle!"
 	done
 
@@ -417,10 +417,10 @@ TrainerMariePostgameAfterText:
 
 TrainerMariePostgameDeclineText:
 	text "…Oh, I see."
-	
+
 	para "You must be so"
 	line "busy these days."
-	
+
 	para "If you find the"
 	line "time for me, I"
 	cont "would love to show"

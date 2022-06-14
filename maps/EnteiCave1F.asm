@@ -10,13 +10,16 @@ EnteiCave1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 2 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .OpenCave
+	callback MAPCALLBACK_TILES, .OpenDoors
 	callback MAPCALLBACK_CMDQUEUE, .SetUpStoneTable
-	
-.OpenCave:
-	setevent EVENT_ENTEI_HIDDEN_CAVE_OPEN
+
+.OpenDoors:
+	checkevent EVENT_ENTEI_CAVE_GATES_OPEN
+	iffalse .end
+	changeblock 12, 28, $cf
+.end
 	return
-	
+
 .SetUpStoneTable:
 	writecmdqueue .CommandQueue
 	return
@@ -68,7 +71,30 @@ EnteiCave1F_MapScripts:
 	playsound SFX_STRENGTH
 	earthquake 80
 	end
-	
+
+EnteiCave1FDoor:
+	opentext
+	writetext EnteiCave1FDoorText
+	waitbutton
+	checkitem GUARDIAN_KEY
+	iffalse .NoKey
+	writetext EnteiCave1FAskUseKeyText
+	yesorno
+	iffalse .NoKey
+	closetext
+	takeitem GUARDIAN_KEY
+	changeblock 12, 28, $cf
+	playsound SFX_ENTER_DOOR
+	reloadmappart
+	waitsfx
+	opentext
+	writetext EnteiCave1FShrineKeyBrokeText
+	waitbutton
+	setevent EVENT_ENTEI_CAVE_GATES_OPEN
+.NoKey
+	closetext
+	end
+
 EnteiCave1FBoulder:
 	jumpstd strengthboulder
 	
@@ -83,7 +109,29 @@ EnteiCave1FHiddenUltraBall:
 
 EnteiCave1FHiddenNugget:
 	hiddenitem NUGGET, EVENT_ENTEI_CAVE_1F_HIDDEN_NUGGET
-	
+
+EnteiCave1FDoorText:
+	text "This door is"
+	line "locked up tight."
+	done
+
+EnteiCave1FAskUseKeyText:
+	text "Use the GUARDIAN"
+	line "KEY?"
+	done
+
+EnteiCave1FPlayerUsedKeyText:
+	text "<PLAYER> used the"
+	line "GUARDIAN KEY."
+	done
+
+EnteiCave1FShrineKeyBrokeText:
+	text "The door opened!"
+
+	para "…But the KEY broke"
+	line "off inside."
+	done
+
 EnteiCave1FBoulderFellText:
 	text "The boulder fell"
 	line "through!"
@@ -103,7 +151,9 @@ EnteiCave1F_MapEvents:
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 6 ; bg events
+	bg_event 12, 29, BGEVENT_UP, EnteiCave1FDoor
+	bg_event 13, 29, BGEVENT_UP, EnteiCave1FDoor
 	bg_event 22, 26, BGEVENT_ITEM, EnteiCave1FHiddenXAccuracy
 	bg_event  7, 11, BGEVENT_ITEM, EnteiCave1FHiddenPPUp
 	bg_event  8, 22, BGEVENT_ITEM, EnteiCave1FHiddenUltraBall

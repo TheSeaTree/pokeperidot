@@ -14,8 +14,8 @@ PalerockCaveB2FNugget:
 PalerockCaveB2FPPUp:
 	itemball PP_UP
 
-PalerockCaveB2FSunStone:
-	itemball SUN_STONE
+PalerockCaveB2FBindingBand:
+	itemball BINDING_BAND
 
 PalerockCaveB2FHiddenNugget:
 	hiddenitem NUGGET, EVENT_PALEROCK_CAVE_HIDDEN_NUGGET
@@ -42,4 +42,4 @@ PalerockCaveB2F_MapEvents:
 
 	db 2 ; object events
 	object_event 27, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockCaveB2FPPUp, EVENT_PALEROCK_CAVE_PP_UP
-	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockCaveB2FSunStone, EVENT_PALEROCK_CAVE_SUN_STONE
+	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockCaveB2FBindingBand, EVENT_PALEROCK_CAVE_BINDING_BAND

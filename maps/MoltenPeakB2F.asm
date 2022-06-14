@@ -4,15 +4,7 @@
 MoltenPeakB2F_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .OpenCave
-	
-.OpenCave:
-	checkevent EVENT_ENTEI_HIDDEN_CAVE_OPEN
-	iffalse .end
-	changeblock 8, 2, $13
-.end
-	return
+	db 0 ; callbacks
 	
 TrainerFirebreatherRoger:
 	trainer FIREBREATHER, ROGER, EVENT_BEAT_FIREBREATHER_ROGER, FirebreatherRogerText, FirebreatherRogerWinText, 0, .AfterScript

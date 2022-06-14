@@ -41,7 +41,6 @@ OrchidRivalBattle:
 	waitbutton
 	closetext
 	winlosstext OrchidGymRivalWinText, OrchidGymRivalLossText
-	setlasttalked BURGLARHIDEOUTB1F_RIVAL
 	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
 	iftrue .Squirtle
 	checkevent EVENT_GOT_BULBASAUR_FROM_MAPLE
@@ -225,8 +224,8 @@ OrchidGymRivalLossText:
 	para "Get out of here."
 
 	para "Your #MON don't"
-	line "deserve to challenge"
-	cont "this GYM!"
+	line "deserve to chall-"
+	cont "enge this GYM!"
 	done
 
 OrchidGymRivalAfterText:

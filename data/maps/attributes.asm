@@ -589,3 +589,4 @@ ENDM
 	map_attributes Route26Gate, ROUTE_26_GATE, $00, 0
 	map_attributes Route28Gate, ROUTE_28_GATE, $00, 0
 	map_attributes NorthForest, NORTH_FOREST, $00, 0
+	map_attributes DevelopersHouse, DEVELOPERS_HOUSE, $00, 0

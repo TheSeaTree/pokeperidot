@@ -180,7 +180,7 @@ ItemNames::
 	db "TRICK MIRROR@"
 	db "BRICK PIECE@"
 	db "CRASH HELMET@"
-	db "SHRINE KEY@"
+	db "GUARDIAN KEY@"
 	db "EXP.ALL@"
 	db "SAFARI PACK@"
 	db "SKILL BELT@"
