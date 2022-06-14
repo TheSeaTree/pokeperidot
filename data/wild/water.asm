@@ -197,10 +197,34 @@ WaterWildMons:
 	map_id SEA_ROUTE_6
 	db 4 percent ; encounter rate
 	db 34, MANTINE
-	db 34, TENTACRUEL
+	db 34, OCTILLERY
 	db 34, KINGLER
 	db 35, SHELLDER
 	db 33, SHELLDER
+
+	map_id SEA_ROUTE_7
+	db 4 percent ; encounter rate
+	db 48, ANCOR
+	db 47, OCTILLERY
+	db 49, DEWGONG
+	db 48, SEADRA
+	db 50, SEADRA
+
+	map_id VICTORY_COAST
+	db 4 percent ; encounter rate
+	db 48, MANTINE
+	db 47, OCTILLERY
+	db 48, SEADRA
+	db 49, DEWGONG
+	db 50, DEWGONG
+
+	map_id ROUTE_28
+	db 4 percent ; encounter rate
+	db 48, ANCOR
+	db 47, OCTILLERY
+	db 49, DEWGONG
+	db 48, SEADRA
+	db 50, SEADRA
 
 	map_id ROUTE_8
 	db 4 percent ; encounter rate

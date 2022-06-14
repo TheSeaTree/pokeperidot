@@ -515,6 +515,33 @@ GrassWildMons:
 	db 15, ONIX
 	db 16, FERRODON
 	
+	map_id PALEROCK_CAVE_B2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, GOLBAT
+	db 34, MISDREAVUS
+	db 35, DUNSPARCE
+	db 34, ONIX
+	db 34, FERRODON
+	db 35, ONIX
+	db 36, FERRODON
+	; day
+	db 36, GOLBAT
+	db 34, MISDREAVUS
+	db 35, DUNSPARCE
+	db 34, ONIX
+	db 34, FERRODON
+	db 35, ONIX
+	db 36, FERRODON
+	; nite
+	db 36, GOLBAT
+	db 34, MISDREAVUS
+	db 35, DUNSPARCE
+	db 34, ONIX
+	db 34, FERRODON
+	db 35, ONIX
+	db 36, FERRODON
+	
 	map_id HEPATICA_TOWN
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
