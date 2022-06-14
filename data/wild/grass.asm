@@ -1767,9 +1767,9 @@ GrassWildMons:
 	db 38, MAGCARGO
 	db 38, MAROWAK
 	db 38, MAROWAK
-	
+
 	map_id HO_OH_CASTLE_1F_CENTER_ROOM
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
 	db 36, VULPIX
@@ -1794,9 +1794,9 @@ GrassWildMons:
 	db 36, MEOWTH
 	db 35, EEVEE
 	db 37, EEVEE
-	
+
 	map_id HO_OH_CASTLE_1F_SIDE_ROOMS
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
 	db 36, VULPIX
@@ -1821,14 +1821,14 @@ GrassWildMons:
 	db 36, MEOWTH
 	db 35, EEVEE
 	db 37, EEVEE
-	
+
 	map_id HO_OH_CASTLE_2F
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
 	db 37, VULPIX
 	db 35, MEOWTH
-	db 35, KADABRA
+	db 35, HYPNO
 	db 35, EEVEE
 	db 36, EEVEE
 	db 35, NINETALES
@@ -1836,7 +1836,7 @@ GrassWildMons:
 	db 35, MEOWTH
 	db 37, VULPIX
 	db 35, MEOWTH
-	db 35, KADABRA
+	db 35, HYPNO
 	db 35, EEVEE
 	db 36, EEVEE
 	db 35, NINETALES
@@ -1844,13 +1844,13 @@ GrassWildMons:
 	db 35, MEOWTH
 	db 36, VULPIX
 	db 35, MEOWTH
-	db 35, KADABRA
+	db 35, HYPNO
 	db 35, EEVEE
 	db 36, EEVEE
 	db 35, NINETALES
-	
+
 	map_id HO_OH_CASTLE_3F
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
 	db 36, VULPIX
