@@ -104,6 +104,22 @@
 	const TEXT_TRANSLATION
 	const PAAD_TESTING
 
+	const PRET
+	const RANGI
+	const THEFAKEMATEO
+	const CORALDEV
+	const PFERO
+	const MAYORAPTOR
+	const HYPERDRIVEGUY
+	const ELKO
+	const FREDRIQ
+	const FIQ
+	const DARSH
+	const YEAHHHCHAT
+	const RHEG
+	const FRANK
+	const SEATREE
+
 ; CreditsScript indexes (see data/credits_script.asm)
 	const_def -7
 	const CREDITS_THEEND

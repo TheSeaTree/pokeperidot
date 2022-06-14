@@ -103,6 +103,21 @@ CreditsStrings:
 	dw .UsCoordination
 	dw .TextTranslation
 	dw .PaadTesting
+	dw .pret
+	dw .Rangi
+	dw .TheFakeMateo
+	dw .Coraldev
+	dw .Pfero
+	dw .MayoRaptor
+	dw .HyperDriveGuy
+	dw .Elko
+	dw .Fredriq
+	dw .FIQ
+	dw .Darsh
+	dw .YeahhhChat
+	dw .rheg
+	dw .Frank
+	dw .SeaTree
 
 .SatoshiTajiri:       db "   SATOSHI TAJIRI@"         ; "たじり　さとし@"
 .JunichiMasuda:       db "   JUNICHI MASUDA@"         ; "ますだ　じゅんいち@"
@@ -166,7 +181,7 @@ CreditsStrings:
 .SatoshiYamato:       db "   SATOSHI YAMATO@"         ; "やまと　さとし@"
 .ShigeruMiyamoto:     db "  SHIGERU MIYAMOTO@"        ; "みやもと　しげる@"
 .End:                 db "        END@"               ; "おしまい@"
-.Unknown:             db "      ????????@"            ; "？？？？？？？？@"
+.Unknown:             db "      #MON@"
 .GailTilden:          db "    GAIL TILDEN@"
 .NobOgasawara:        db "   NOB OGASAWARA@"
 .SethMcMahill:        db "   SETH McMAHILL@"
@@ -178,9 +193,7 @@ CreditsStrings:
 .TerukiMurakawa:      db "  TERUKI MURAKAWA@"
 .KazuyoshiOsawa:      db "  KAZUYOSHI OSAWA@"
 .KimikoNakamichi:     db "  KIMIKO NAKAMICHI@"
-.Staff:               db "      #MON"                 ; "ポケットモンスター"
-                    next "  CRYSTAL VERSION"          ; "　　クりスタル　バージョン"
-                    next "       STAFF@"              ; "　　　　スタッフ@"
+.Staff:               db "       STAFF@"              ; "　　　　スタッフ@"
 .Director:            db "      DIRECTOR@"            ; "エグゼクティブ　ディレクター@"
 .CoDirector:          db "    CO-DIRECTOR@"           ; "ディレクター@"
 .Programmers:         db "    PROGRAMMERS@"           ; "プログラム@"
@@ -199,7 +212,7 @@ CreditsStrings:
 .ProductTesting:      db "  PRODUCT TESTING@"         ; "デバッグプレイ@"
 .SpecialThanks:       db "   SPECIAL THANKS@"         ; "スぺシャルサンクス@"
 .Producers:           db "     PRODUCERS@"            ; "プロデューサー@"
-.ExecutiveProducer:   db " EXECUTIVE PRODUCER@"       ; "エグゼクティブ　プロデューサー@"
+.ExecutiveProducer:   db "     CREATED BY@"       ; "エグゼクティブ　プロデューサー@"
 .PokemonAnimation:    db " #MON ANIMATION@"           ; "#　アニメーション@"
 .PokedexText:         db "    #DEX TEXT@"             ; "ずかん　テキスト@"
 .MobilePrjLeader:     db " MOBILE PRJ. LEADER@"       ; "モバイルプロジェクト　りーダー@"
@@ -211,11 +224,27 @@ CreditsStrings:
 .TextTranslation:     db "  TEXT TRANSLATION@"
 .PaadTesting:         db "    PAAD TESTING@"
 
+.pret:				  db "        PRET@"
+.Rangi:               db "      RANGI42@"
+.TheFakeMateo:		  db "    THEFAKEMATEO@"
+.Coraldev:            db "      CORALDEV@"
+.Pfero:               db "       PFERO@"
+.MayoRaptor:          db "     MAYORAPTOR@"
+.HyperDriveGuy:       db "    HYPERDRIVEGUY@"
+.Elko:                db "        ELKO@"
+.Fredriq:             db "      FREDRIQ@"
+.FIQ:                 db "        FIQ@"
+.Darsh:               db "       DARSH@"
+.YeahhhChat:          db "    YEAHHH CHAT@"
+.rheg:                db "       /rheg/@"
+.Frank:			      db "       FRANK@"
+.SeaTree:			  db "     “SEA TREE”@"
+
 .Copyright:
 	;    (C) 1  9  9  5 - 2  0  0  1     N  i  n  t  e  n  d  o
-	db   $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,$6a,$6b,$6c
+	db   $7f,$7f,$7f,$c0,$c1,$c2,$c3,$c4,$c5,$c6,$c7,$c8,$c9,$7f,$7f,$7f
 	;    (C) 1  9  9  5 - 2  0  0  1    C  r  e  a  t  u  r  e  s     i  n  c .
-	next $60,$61,$62,$63,$64,$65,$66,$6d,$6e,$6f,$70,$71,$72,  $7a,$7b,$7c
+	next $7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f
 	;    (C) 1  9  9  5 - 2  0  0  1  G  A  M  E  F  R  E  A  K     i  n  c .
-	next $60,$61,$62,$63,$64,$65,$66,$73,$74,$75,$76,$77,$78,$79,  $7a,$7b,$7c
+	next $7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f,$7f
 	db "@"

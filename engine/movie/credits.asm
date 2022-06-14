@@ -40,6 +40,11 @@ Credits::
 	lb bc, BANK(CreditsBorderGFX), 9
 	call Request2bpp
 
+	ld de, PeridotLogoGFX
+	ld hl, vTiles0 tile $c0
+	lb bc, BANK(PeridotLogoGFX), 10
+	call Request2bpp
+
 	ld de, CopyrightGFX
 	ld hl, vTiles2 tile $60
 	lb bc, BANK(CopyrightGFX), 29
@@ -547,13 +552,14 @@ Credits_LoadBorderGFX:
 	cp $ff
 	jr z, .init
 
-	and %11
+	and %111
 	ld e, a
 	inc a
-	and %11
+	and %111
 	ld [hl], a
 	ld a, [wCreditsBorderMon]
-	and %11
+	and %111
+	add a
 	add a
 	add a
 	add e
@@ -572,22 +578,39 @@ Credits_LoadBorderGFX:
 	ret
 
 .Frames:
-	dw CreditsPichuGFX
-	dw CreditsPichuGFX     + 16 tiles
-	dw CreditsPichuGFX     + 32 tiles
-	dw CreditsPichuGFX     + 48 tiles
-	dw CreditsSmoochumGFX
-	dw CreditsSmoochumGFX  + 16 tiles
-	dw CreditsSmoochumGFX  + 32 tiles
-	dw CreditsSmoochumGFX  + 48 tiles
+; Frames duplicated for Wooper animation speed.
+	dw CreditsWooperGFX
+	dw CreditsWooperGFX
+	dw CreditsWooperGFX	   + 48 tiles
+	dw CreditsWooperGFX	   + 48 tiles
+	dw CreditsWooperGFX	   + 32 tiles
+	dw CreditsWooperGFX	   + 32 tiles
+	dw CreditsWooperGFX	   + 48 tiles
+	dw CreditsWooperGFX	   + 48 tiles
+	dw CreditsSentretGFX
+	dw CreditsSentretGFX   + 16 tiles
+	dw CreditsSentretGFX   + 32 tiles
+	dw CreditsSentretGFX   + 48 tiles
+	dw CreditsSentretGFX
+	dw CreditsSentretGFX   + 16 tiles
+	dw CreditsSentretGFX   + 32 tiles
+	dw CreditsSentretGFX   + 48 tiles
+	dw CreditsShifurGFX
+	dw CreditsShifurGFX    + 16 tiles
+	dw CreditsShifurGFX
+	dw CreditsShifurGFX    + 16 tiles
+	dw CreditsShifurGFX
+	dw CreditsShifurGFX    + 16 tiles
+	dw CreditsShifurGFX
+	dw CreditsShifurGFX    + 16 tiles
 	dw CreditsDittoGFX
 	dw CreditsDittoGFX     + 16 tiles
 	dw CreditsDittoGFX     + 32 tiles
 	dw CreditsDittoGFX     + 48 tiles
-	dw CreditsIgglybuffGFX
-	dw CreditsIgglybuffGFX + 16 tiles
-	dw CreditsIgglybuffGFX + 32 tiles
-	dw CreditsIgglybuffGFX + 48 tiles
+	dw CreditsDittoGFX
+	dw CreditsDittoGFX     + 16 tiles
+	dw CreditsDittoGFX     + 32 tiles
+	dw CreditsDittoGFX     + 48 tiles
 
 Credits_TheEnd:
 	ld a, $40
@@ -606,10 +629,10 @@ Credits_TheEnd:
 CreditsBorderGFX:    INCBIN "gfx/credits/border.2bpp"
 
 CreditsMonsGFX: ; used only for BANK(CreditsMonsGFX)
-CreditsPichuGFX:     INCBIN "gfx/credits/pichu.2bpp"
-CreditsSmoochumGFX:  INCBIN "gfx/credits/smoochum.2bpp"
+CreditsShifurGFX:    INCBIN "gfx/credits/shifur.2bpp"
+CreditsWooperGFX:    INCBIN "gfx/credits/wooper.2bpp"
+CreditsSentretGFX: 	 INCBIN "gfx/credits/sentret.2bpp"
 CreditsDittoGFX:     INCBIN "gfx/credits/ditto.2bpp"
-CreditsIgglybuffGFX: INCBIN "gfx/credits/igglybuff.2bpp"
 
 INCLUDE "data/credits_script.asm"
 INCLUDE "data/credits_strings.asm"

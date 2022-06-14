@@ -363,6 +363,9 @@ INCLUDE "engine/phone/phone_scripts.asm"
 TheEndGFX::
 INCBIN "gfx/credits/theend.2bpp"
 
+PeridotLogoGFX::
+INCBIN "gfx/credits/peridot.2bpp"
+
 
 SECTION "bank32", ROMX
 
