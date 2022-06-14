@@ -58,9 +58,9 @@
 	RGB 15,31,31, 05,17,31 ; morn/day
 	RGB 11,11,19, 00,00,05 ; nite
 
-; group 15 (unused)
+; group 15 (Castle)
 	RGB 31,28,12, 31,16,01 ; morn/day
-	RGB 16,14,18, 16,14,10 ; nite
+	RGB 16,14,10, 12,07,04 ; nite
 
 ; group 16 (Pokemon League)
 	RGB 21,21,21, 13,13,13 ; morn/day
