@@ -38,5 +38,4 @@ pokecrystal.txt
 
 engine/phone/phone_gossip.asm
 engine/phone/phone_scripts.asm
-*.png
 *.cmap
