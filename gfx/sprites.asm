@@ -91,7 +91,7 @@ SilverTrophySpriteGFX::        INCBIN "gfx/sprites/silver_trophy.2bpp"
 JadeSpriteGFX::                INCBIN "gfx/sprites/player/jade.2bpp"
 JadeBikeSpriteGFX::            INCBIN "gfx/sprites/player/jade_bike.2bpp"
 KurtOutsideSpriteGFX::         INCBIN "gfx/sprites/kurt_outside.2bpp"
-StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+CameraYoungsterSpriteGFX::     INCBIN "gfx/sprites/camera_youngster.2bpp"
 
 SECTION "Sprites 3", ROMX
 

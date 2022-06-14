@@ -105,7 +105,7 @@ OverworldSprites:
 	overworld_sprite JadeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite JadeBikeSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
-	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CameraYoungsterSpriteGFX, 4, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ConeSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite ProfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite OldAmberSpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN
