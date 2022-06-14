@@ -14,19 +14,11 @@ HoOhCastle1FSideRooms_MapScripts:
 	return
 
 HoOhCastle1FTreasureChest:
-	; Maybe these should be openable with small keys that are hidden items?
-	; Some contain cash, some items, some Pokemon.
-	opentext
 	checkevent EVENT_HO_OH_CASTLE_1F_SUPER_REPEL
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	iftrue HoOhCastleEmptyChest
+	opentext
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 26, 4, $44
 	reloadmappart
 	waitsfx
@@ -38,34 +30,35 @@ HoOhCastle1FTreasureChest:
 .end
 	closetext
 	end
-	
-.opened
-	writetext HoOhCastleEmptyChest
+
+HoOhCastleTreasureChestCommon:
+	writetext HoOhCastleOpenChest
 	waitbutton
-	closetext
-	end
-	
+	checkitem SMALL_KEY
+	iffalse .end
+	writetext HoOhCastleUseKey
+	yesorno
+	iffalse .end
+	playsound SFX_ENTER_DOOR
+.end
+	return
+
+HoOhCastleEmptyChest:
+	jumptext HoOhCastleEmptyChestText
+
 HoOhCastle1FHiddenSmallKey2:
 	hiddenitem SMALL_KEY, EVENT_HO_OH_CASTLE_1F_SMALL_KEY_2
-	
+
 HoOhCastleOpenChest:
 	text "A key might fit"
 	line "this lock."
 	done
-	
+
 HoOhCastleUseKey:
 	text "Use a SMALL KEY?"
 	done
-
-; unreferenced
-	text "The lock on this"
-	line "chest seems to be"
-	cont "broken."
-
-	para "Open it?"
-	done
 	
-HoOhCastleEmptyChest:
+HoOhCastleEmptyChestText:
 	text "This chest has al-"
 	line "ready been raided."
 	done
@@ -74,6 +67,29 @@ HoOhCastlePokemonInChest:
 	text "There is a wild"
 	line "#MON inside!"
 	done
+
+HoOhCastleMoneyInChest:
+	text "There's some money"
+	line "in the chest."
+	done
+
+HoOhCastleEeveeReward:
+	text "<PLAYER> took the"
+	line "¥851.@"
+	sound_dex_fanfare_50_79
+	text_end
+
+HoOhCastleDrowzeeReward:
+	text "<PLAYER> took the"
+	line "¥1238.@"
+	sound_dex_fanfare_50_79
+	text_end
+
+HoOhCastleMeowthReward:
+	text "<PLAYER> took the"
+	line "¥2072.@"
+	sound_dex_fanfare_50_79
+	text_end
 
 HoOhCastle1FSideRooms_MapEvents:
 	db 0, 0 ; filler

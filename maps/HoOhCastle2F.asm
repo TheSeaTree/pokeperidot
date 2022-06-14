@@ -7,19 +7,19 @@ HoOhCastle2F_MapScripts:
 	callback MAPCALLBACK_TILES, .Chest1
 	
 .Chest1
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_1
+	checkevent EVENT_HO_OH_CASTLE_2F_EEVEE
 	iffalse .Chest2
 	changeblock  14, 10, $44
 .Chest2
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_2
+	checkevent EVENT_HO_OH_CASTLE_2F_DROWZEE
 	iffalse .Chest3
 	changeblock  28,  2, $44
 .Chest3
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_3
+	checkevent EVENT_HO_OH_CASTLE_2F_STAR_PIECE
 	iffalse .Chest4
 	changeblock  32, 10, $44
 .Chest4
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_4
+	checkevent EVENT_HO_OH_CASTLE_2F_REVIVE
 	iffalse .Pit1
 	changeblock  18, 18, $44
 .Pit1
@@ -66,127 +66,97 @@ HoOhCastle2FBrittleFloor3:
 	changeblock  16, 16, $2c
 	setevent EVENT_HO_OH_CASTLE_2F_PIT_3
 	jump HoOhCastleBrittleFloor
-	
+
 SkipHoOhCastle2FPit:
 	end
-	
+
 HoOhCastle2FTreasureChest1:
+	checkevent EVENT_HO_OH_CASTLE_2F_EEVEE
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_1
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 14, 10, $44
 	reloadmappart
 	waitsfx
-	opentext
-	verbosegiveitem SUPER_REPEL
-	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_2F_CHEST_1
+	setevent EVENT_HO_OH_CASTLE_2F_EEVEE
 	takeitem SMALL_KEY
+	opentext
+	loadwildmon EEVEE, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	givemoney YOUR_MONEY, 851
+	writetext HoOhCastleMoneyInChest
+	waitbutton
+	writetext HoOhCastleEeveeReward
+	waitbutton
 .end
 	closetext
 	end
 
-.opened
-	writetext HoOhCastleEmptyChest
-	waitbutton
-	closetext
-	end
-	
 HoOhCastle2FTreasureChest2:
+	checkevent EVENT_HO_OH_CASTLE_2F_DROWZEE
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_2
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 28, 2, $44
 	reloadmappart
 	waitsfx
-	opentext
-	verbosegiveitem SUPER_REPEL
-	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_2F_CHEST_2
+	setevent EVENT_HO_OH_CASTLE_2F_DROWZEE
 	takeitem SMALL_KEY
-.end
-	closetext
-	end
-
-.opened
-	writetext HoOhCastleEmptyChest
+	opentext
+	writetext HoOhCastlePokemonInChest
 	waitbutton
+	closetext
+	loadwildmon DROWZEE, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	opentext
+	givemoney YOUR_MONEY, 1238
+	writetext HoOhCastleMoneyInChest
+	waitbutton
+	writetext HoOhCastleDrowzeeReward
+	waitbutton
+.end
 	closetext
 	end
 	
 HoOhCastle2FTreasureChest3:
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_3
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	checkevent EVENT_HO_OH_CASTLE_2F_STAR_PIECE
+	iftrue HoOhCastleEmptyChest
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 32, 10, $44
 	reloadmappart
 	waitsfx
 	opentext
-	verbosegiveitem SUPER_REPEL
+	verbosegiveitem STAR_PIECE
 	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_2F_CHEST_3
+	setevent EVENT_HO_OH_CASTLE_2F_STAR_PIECE
 	takeitem SMALL_KEY
 .end
 	closetext
 	end
 
-.opened
-	writetext HoOhCastleEmptyChest
-	waitbutton
-	closetext
-	end
-	
 HoOhCastle2FTreasureChest4:
+	checkevent EVENT_HO_OH_CASTLE_2F_REVIVE
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_4
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 18, 18, $44
 	reloadmappart
 	waitsfx
 	opentext
-	verbosegiveitem SUPER_REPEL
+	verbosegiveitem REVIVE
 	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_2F_CHEST_4
+	setevent EVENT_HO_OH_CASTLE_2F_REVIVE
 	takeitem SMALL_KEY
 .end
-	closetext
-	end
-
-.opened
-	writetext HoOhCastleEmptyChest
-	waitbutton
 	closetext
 	end
 	

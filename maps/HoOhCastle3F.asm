@@ -7,15 +7,15 @@ HoOhCastle3F_MapScripts:
 	callback MAPCALLBACK_TILES, .Chest1
 	
 .Chest1
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_1
+	checkevent EVENT_HO_OH_CASTLE_3F_FULL_RESTORE
 	iffalse .Chest2
 	changeblock  16,  2, $44
 .Chest2
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_2
+	checkevent EVENT_HO_OH_CASTLE_3F_MEOWTH
 	iffalse .Chest3
 	changeblock  10,  8, $44
 .Chest3
-	checkevent EVENT_HO_OH_CASTLE_2F_CHEST_3
+	checkevent EVENT_HO_OH_CASTLE_3F_NUGGET
 	iffalse .Pit1
 	changeblock  13, 10, $44
 .Pit1
@@ -88,92 +88,67 @@ SkipHoOhCastle3FPit:
 	end
 	
 HoOhCastle3FTreasureChest1:
+	checkevent EVENT_HO_OH_CASTLE_3F_FULL_RESTORE
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_1
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 16, 2, $44
 	reloadmappart
 	waitsfx
 	opentext
-	verbosegiveitem SUPER_REPEL
+	verbosegiveitem FULL_RESTORE
 	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_3F_CHEST_1
+	setevent EVENT_HO_OH_CASTLE_3F_FULL_RESTORE
 	takeitem SMALL_KEY
 .end
-	closetext
-	end
-
-.opened
-	writetext HoOhCastleEmptyChest
-	waitbutton
 	closetext
 	end
 	
 HoOhCastle3FTreasureChest2:
+	checkevent EVENT_HO_OH_CASTLE_3F_MEOWTH
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_2
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 10, 8, $44
 	reloadmappart
 	waitsfx
-	opentext
-	verbosegiveitem SUPER_REPEL
-	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_3F_CHEST_2
+	setevent EVENT_HO_OH_CASTLE_3F_MEOWTH
 	takeitem SMALL_KEY
-.end
-	closetext
-	end
-
-.opened
-	writetext HoOhCastleEmptyChest
+	opentext
+	writetext HoOhCastlePokemonInChest
 	waitbutton
+	closetext
+	loadwildmon MEOWTH, 40
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	opentext
+	givemoney YOUR_MONEY, 2072
+	writetext HoOhCastleMoneyInChest
+	waitbutton
+	writetext HoOhCastleMeowthReward
+	waitbutton
+.end
 	closetext
 	end
 	
 HoOhCastle3FTreasureChest3:
+	checkevent EVENT_HO_OH_CASTLE_3F_NUGGET
+	iftrue HoOhCastleEmptyChest
 	opentext
-	checkevent EVENT_HO_OH_CASTLE_3F_CHEST_3
-	iftrue .opened
-	writetext HoOhCastleOpenChest
-	waitbutton
-	checkitem SMALL_KEY
+	scall HoOhCastleTreasureChestCommon
 	iffalse .end
-	writetext HoOhCastleUseKey
-	yesorno
-	iffalse .end
-	playsound SFX_ENTER_DOOR
 	changeblock 16, 10, $44
 	reloadmappart
 	waitsfx
 	opentext
-	verbosegiveitem SUPER_REPEL
+	verbosegiveitem NUGGET
 	iffalse .end
-	setevent EVENT_HO_OH_CASTLE_3F_CHEST_3
+	setevent EVENT_HO_OH_CASTLE_3F_NUGGET
 	takeitem SMALL_KEY
 .end
-	closetext
-	end
-
-.opened
-	writetext HoOhCastleEmptyChest
-	waitbutton
 	closetext
 	end
 	
@@ -208,10 +183,12 @@ HoOhCastle3F_MapEvents:
 	coord_event  9, 10, -1, HoOhCastle3FBrittleFloor3
 	coord_event 10, 11, -1, HoOhCastle3FBrittleFloor4
 
-	db 6 ; bg events
+	db 8 ; bg events
 	bg_event 17,  2, BGEVENT_UP, HoOhCastle3FTreasureChest1
 	bg_event 11,  8, BGEVENT_UP, HoOhCastle3FTreasureChest2
 	bg_event 17, 10, BGEVENT_UP, HoOhCastle3FTreasureChest3
+	bg_event 17,  8, BGEVENT_UP, HoOhCastleEmptyChest
+	bg_event 15, 10, BGEVENT_UP, HoOhCastleEmptyChest
 	bg_event 15,  4, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey1
 	bg_event 24, 14, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey2
 	bg_event 12, 10, BGEVENT_ITEM, HoOhCastle3FHiddenSmallKey3
