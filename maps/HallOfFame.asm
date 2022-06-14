@@ -183,8 +183,8 @@ HallOfFame_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 13, VICTORS_ROOM, 3
-	warp_event  5, 13, VICTORS_ROOM, 4
+	warp_event  4, 13, JOSEPHS_ROOM, 3
+	warp_event  5, 13, JOSEPHS_ROOM, 4
 
 	db 0 ; coord events
 
