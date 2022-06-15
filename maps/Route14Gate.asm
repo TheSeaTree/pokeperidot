@@ -143,7 +143,7 @@ Route14GatePlayerGotItem:
 	sound_item
 	db "@"
 	done
-	
+
 Route14GatePlayerPutAway:
 	text "<PLAYER> put the"
 	line "RARE CANDY in the"

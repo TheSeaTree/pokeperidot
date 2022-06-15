@@ -459,7 +459,7 @@ InitRoamArticuno:
 	ld [wRoamMon1Level], a
 
 ; articuno starting map
-	ld a, MAP_PALEROCK_MOUNTAIN_OUTSIDE
+	ld a, GROUP_PALEROCK_MOUNTAIN_OUTSIDE
 	ld [wRoamMon1MapGroup], a
 	ld a, MAP_PALEROCK_MOUNTAIN_OUTSIDE
 	ld [wRoamMon1MapNumber], a

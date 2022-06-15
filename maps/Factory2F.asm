@@ -92,7 +92,7 @@ Factory2FSmashRock:
 Factory2F_MapEvents:
 	db 0, 0 ; filler
 
-	db 11 ; warp events
+	db 12 ; warp events
 	warp_event  4, 14, FACTORY_1F, 5
 	warp_event  0,  2, FACTORY_1F, 6
 	warp_event 27,  6, FACTORY_1F, 7

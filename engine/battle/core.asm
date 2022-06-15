@@ -5461,6 +5461,10 @@ BattleMenu_Pack:
 	and a
 	jp nz, .ItemsCantBeUsed
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
+	jp nz, .ItemsCantBeUsed
+
 	call IsEliteFour
 	jp c, .NoItemsInLeagueBattle
 	
@@ -7519,10 +7523,6 @@ GiveExperiencePoints:
 	ld a, [wLinkMode]
 	and a
 	ret nz
-
-;	ld a, [wInBattleTowerBattle]
-;	bit 0, a
-;	ret nz
 
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]

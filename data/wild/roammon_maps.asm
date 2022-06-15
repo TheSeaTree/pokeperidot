@@ -26,8 +26,7 @@ RoamMaps:
 	roam_map ROUTE_14, ROUTE_12
 	roam_map ROUTE_12, ILEX_FOREST
 	roam_map ILEX_FOREST, ROUTE_9
-	roam_map ROUTE_9, ROUTE_1
-	roam_map ROUTE_1, ROUTE_14
+	roam_map ROUTE_9, ROUTE_14
 	
 	; Moltres
 	roam_map ROUTE_22, MOLTEN_PEAK_OUTSIDE

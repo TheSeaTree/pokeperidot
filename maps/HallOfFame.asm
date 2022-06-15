@@ -73,8 +73,11 @@ RespawnLegendaries:
 	clearevent EVENT_HIDE_SUICUNE
 .CheckEntei
 	checkevent EVENT_CAUGHT_ENTEI
-	iftrue .CheckArticuno
+	iftrue .CheckLugiaBoss
 	clearevent EVENT_HIDE_ENTEI
+.CheckLugiaBoss
+	checkevent EVENT_ROAMING_BIRDS
+	iffalse .CheckHoOh
 .CheckArticuno
 	checkevent EVENT_CAUGHT_ARTICUNO
 	iftrue .CheckZapdos
