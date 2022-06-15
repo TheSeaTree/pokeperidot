@@ -35,8 +35,8 @@ BulbasaurEvosAttacks:
 	db 7, LEECH_SEED
 	db 10, VINE_WHIP
 	db 13, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 19, RAZOR_LEAF
+	db 15, RAZOR_LEAF
+	db 19, SLEEP_POWDER
 	db 21, SWEET_SCENT
 	db 25, GROWTH
 	db 27, DOUBLE_EDGE
@@ -54,8 +54,8 @@ IvysaurEvosAttacks:
 	db 7, LEECH_SEED
 	db 9, VINE_WHIP
 	db 13, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 20, RAZOR_LEAF
+	db 15, RAZOR_LEAF
+	db 20, SLEEP_POWDER
 	db 23, SWEET_SCENT
 	db 28, GROWTH
 	db 31, DOUBLE_EDGE
@@ -73,8 +73,8 @@ VenusaurEvosAttacks:
 	db 7, LEECH_SEED
 	db 9, VINE_WHIP
 	db 13, POISONPOWDER
-	db 15, SLEEP_POWDER
-	db 20, RAZOR_LEAF
+	db 15, RAZOR_LEAF
+	db 20, SLEEP_POWDER
 	db 23, SWEET_SCENT
 	db 28, GROWTH
 	db 31, DOUBLE_EDGE
@@ -388,9 +388,9 @@ EkansEvosAttacks:
 	db 1, LEER
 	db 4, POISON_STING
 	db 9, BITE
-	db 12, GLARE
-	db 17, SCREECH
+	db 14, SCREECH
 	db 20, ACID
+	db 23, GLARE
 	db 25, COIL
 	db 28, SLUDGE
 	db 38, SLUDGE_BOMB
@@ -405,10 +405,10 @@ ArbokEvosAttacks:
 	db 1, BITE
 	db 4, POISON_STING
 	db 9, BITE
-	db 12, GLARE
-	db 17, SCREECH
+	db 14, SCREECH
 	db 22, CRUNCH
 	db 20, ACID
+	db 26, GLARE
 	db 28, COIL
 	db 32, SLUDGE
 	db 48, SLUDGE_BOMB
@@ -4168,31 +4168,32 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GUST
-	db 11, SAFEGUARD
-	db 22, AEROBLAST
-	db 33, RECOVER
-	db 44, HYDRO_PUMP
-	db 55, RAIN_DANCE
-	db 66, SWIFT
-	db 77, WHIRLWIND
-	db 88, ANCIENTPOWER
-	db 99, FUTURE_SIGHT
+	db  1, GUST
+	db  1, ANCIENTPOWER
+	db 11, SWIFT
+	db 22, RAIN_DANCE
+	db 33, SAFEGUARD
+	db 44, AEROBLAST
+	db 55, RECOVER
+	db 66, HYDRO_PUMP
+	db 77, CALM_MIND
+	db 88, FUTURE_SIGHT
+	db 99, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, SACRED_FIRE
-	db 11, SAFEGUARD
-	db 15, BRAVE_BIRD
-	db 22, GUST
-	db 33, RECOVER
-	db 44, FIRE_BLAST
-	db 55, SUNNY_DAY
-	db 66, SWIFT
-	db 77, WHIRLWIND
-	db 88, ANCIENTPOWER
-	db 99, FUTURE_SIGHT
+	db  1, GUST
+	db  1, ANCIENTPOWER
+	db 11, SWIFT
+	db 22, SUNNY_DAY
+	db 33, SAFEGUARD
+	db 44, SACRED_FIRE
+	db 55, RECOVER
+	db 66, STEEL_WING
+	db 77, CALM_MIND
+	db 88, FUTURE_SIGHT
+	db 99, BRAVE_BIRD
 	db 0 ; no more level-up moves
 
 CelebiEvosAttacks:
