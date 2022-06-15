@@ -105,8 +105,8 @@ PlayersHouse1F_MapScripts:
 .Dad:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .NoHide
-;	moveobject PLAYERSHOUSE1F_DAD,  4, 3
-	disappear PLAYERSHOUSE1F_DAD
+	moveobject PLAYERSHOUSE1F_DAD,  -4, -3
+	appear PLAYERSHOUSE1F_DAD
 .NoHide:
 	return
 
