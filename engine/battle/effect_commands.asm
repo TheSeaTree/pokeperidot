@@ -4813,7 +4813,7 @@ BattleCommand_LegendaryStatsBoost:
 	call BattleCommand_SpeedUp2
 
 ; Evasion
-	jp BattleCommand_EvasionUp2
+	jp BattleCommand_EvasionUp
 
 ResetMiss:
 	xor a
