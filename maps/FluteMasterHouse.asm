@@ -209,7 +209,7 @@ FluteBurglarShockText:
 	para "You're the kid"
 	line "that managed to"
 	cont "beat the guys at"
-	cont "HELIO TOWN!"
+	cont "HEPATICA TOWN!"
 	done
 	
 FluteBurglarChallengeText:

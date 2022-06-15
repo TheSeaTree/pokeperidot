@@ -85,9 +85,9 @@ Route21BikerText:
 Route21Burglar1Text:
 	text "When are they"
 	line "supposed to get"
-	cont "back from HELIO"
+	cont "back from HEPATICA"
 	cont "TOWN?"
-	
+
 	para "They've been up"
 	line "there for such a"
 	cont "long time."

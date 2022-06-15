@@ -38,16 +38,6 @@ PavonaInnLass:
 	jumptextfaceplayer PavonaInnLassText
 
 PavonaInnFisher:
-;	checkcode VAR_PARTYCOUNT
-;	ifequal PARTY_LENGTH, .PartyFull
-;	opentext
-;	givepoke KANGASKHAN, 15
-;	givepoke TOTODILE, 15
-;	special GiftMonMoves
-;	closetext
-;	end
-	
-;.PartyFull
 	jumptextfaceplayer PavonaInnFisherText
 	
 PavonaInnBed:
@@ -103,7 +93,7 @@ PavonaInnLassText:
 PavonaInnFisherText:
 	text "This town isn't"
 	line "big enough for a"
-	cont "#MON center of"
+	cont "#MON CENTER of"
 	cont "its own."
 	done
 	

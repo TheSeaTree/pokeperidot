@@ -89,11 +89,12 @@ Movement_SilverReturnsToTheShadows_NBT:
 	step_end
 
 Text_GearIsImpressive:
-	text "Wow, your #GEAR"
-	line "is impressive!"
+	text "Are you going to"
+	line "get a #MON?"
 
-	para "Did your mom get"
-	line "it for you?"
+	para "I'm not brave"
+	line "enough to catch"
+	cont "wild #MON."
 	done
 
 Text_YourMonIsAdorable:

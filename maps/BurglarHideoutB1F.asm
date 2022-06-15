@@ -470,8 +470,8 @@ PlaySecurityAlarm:
 	
 SomeBurglarText:
 	text "You didn't think"
-	line "HELIO was our only"
-	cont "gig, did you?"
+	line "HEPATICA was our"
+	cont "only gig, did you?"
 	
 	para "Fufufu! Nope!"
 	
@@ -520,9 +520,9 @@ BurglarHideoutB1FScientistText:
 BurglarHideoutB1FScientistNoticeText:
 	text "Wait a second…"
 	
-	para "You're the kid"
-	line "who beat the boss"
-	cont "up at HELIO TOWN!"
+	para "You're the kid who"
+	line "beat the boss up"
+	cont "at HEPTAICA TOWN!"
 	
 	para "You made a big"
 	line "mistake coming"
@@ -712,8 +712,8 @@ SageAbbotText:
 	done
 	
 SageAbbotChallenge:
-	text "HELIO TOWN was a"
-	line "fluke."
+	text "HEPATICA TOWN was"
+	line "a fluke."
 	
 	para "I will not stand"
 	line "for you ruining my"

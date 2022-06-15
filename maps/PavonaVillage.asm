@@ -223,7 +223,7 @@ CherrygroveScientistCantGoText:
 	done
 
 SchoolboyTimmyBeatenText:
-	text "Oh man, your"
+	text "Oh man, the"
 	line "#MON you got is"
 	cont "so strong!"
 	done
