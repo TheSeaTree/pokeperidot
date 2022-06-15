@@ -255,7 +255,7 @@ NamingScreen:
 	jr .StoreParams
 
 .StoreBoxIconParams:
-	ld a, BOX_NAME_LENGTH - 2
+	ld a, $7
 	hlcoord 5, 4
 	jr .StoreParams
 

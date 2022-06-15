@@ -1024,7 +1024,7 @@ BillsPC_BoxName:
 .gotbox
 	dec a
 	ld hl, wBoxNames
-	ld bc, BOX_NAME_LENGTH
+	ld bc, $8
 	call AddNTimes
 	ld e, l
 	ld d, h
@@ -2362,7 +2362,7 @@ endr
 	ret
 
 GetBoxName:
-	ld bc, BOX_NAME_LENGTH
+	ld bc, $8
 	ld hl, wBoxNames
 	call AddNTimes
 	ld d, h
@@ -2516,7 +2516,7 @@ BillsPC_ChangeBoxSubmenu:
 	ld e, l
 	ld d, h
 	ld hl, wd002
-	ld c, BOX_NAME_LENGTH - 1
+	ld c, $7
 	call InitString
 	ld a, [wMenuSelection]
 	dec a
