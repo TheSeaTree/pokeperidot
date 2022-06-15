@@ -1,6 +1,7 @@
 CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_JOHTO,        .johto
+	dbw TILESET_OCEAN,        .johto
 	dbw TILESET_MOUNTAIN,     .mountain
 	dbw TILESET_VOLCANO,      .volcano
 	dbw TILESET_JOHTO_CITY,   .johto_city
