@@ -534,7 +534,7 @@ TrySurfOW::
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
-	jp nc, CantUseFieldMove
+	jp nc, .quit
 
 	ld d, SURF
 	call CheckPartyMove
@@ -1941,9 +1941,11 @@ TryCutOW::
 	call CheckPartyMove
 	jr c, .cant_cut
 
-	ld de, ENGINE_MYSTICBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .cant_cut
 
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
@@ -1983,9 +1985,11 @@ TryCutGrassOW::
 	call CheckPartyMove
 	jr c, .cant_cut
 
-	ld de, ENGINE_MYSTICBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .cant_cut
 
 	; Cannot cut the grass in Staghorn Gym
 	ld a, [wMapMusic]
