@@ -6,30 +6,12 @@ RugosaGate_MapScripts:
 	db 0 ; callbacks
 
 RugosaGateOfficerScript:
-;	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-;	iftrue .Event
-;	givepoke GOLBAT, 99
-;	giveitem RARE_CANDY
-;	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-;	end
-;.Event
-;	special FountainHappiness
-;	special GetFirstPokemonHappiness
-;	ifgreater 100 - 1, .QuiteCute
-;	showemote EMOTE_FISH, PLAYER, 15
-;	end
-
-;.QuiteCute
-;	turnobject PLAYER, DOWN
-;	showemote EMOTE_HEART, PLAYER, 15
-;	end
-	
 	jumptext RugosaGateOfficerText
 
 RugosaGateOfficerText:
 	text "RUGOSA CITY is"
 	line "ahead."
-	
+
 	para "The city attracts"
 	line "a lot of tourism"
 	cont "from people who"
