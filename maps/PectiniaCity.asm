@@ -580,10 +580,10 @@ PectiniaCityRockerText:
 	done
 
 PectiniaCityGentlemanText:
-	text "The SUBWAY is not"
-	line "running at this"
-	cont "time."
-	
+	text "The PECTINIA MALL"
+	line "is not yet open to"
+	cont "the public."
+
 	para "We apologize for"
 	line "any inconvenience"
 	cont "this may cause."
@@ -617,7 +617,7 @@ PectiniaSquareSignText:
 	done
 	
 PectiniaTrainStationSignText:
-	text "PECTINIA SUBWAY"
+	text "PECTINIA MALL"
 	done
 
 PectiniaGymFirstTimeText:
@@ -774,5 +774,5 @@ PectiniaCity_MapEvents:
 	object_event 13, 28, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaCityYoungster3Script, -1
 	object_event 49, 26, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaBerryTree, -1
 	object_event 33, 37, SPRITE_PHARMACIST, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PectiniaBurglar, EVENT_AZALEA_RETURNED_BIKE
-	object_event 24, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaTrainBlock, EVENT_BEAT_ENYA
+	object_event 24, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PectiniaTrainBlock, EVENT_GOT_HM_SURF
 	object_event 0, 0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
