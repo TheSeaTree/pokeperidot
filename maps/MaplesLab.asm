@@ -249,6 +249,7 @@ MapleAfterStarterScript:
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
 	setscene SCENE_MAPLESLAB_AIDE_GIVES_POTION
 	setmapscene PAVONA_VILLAGE, SCENE_PAVONAVILLAGE_MEET_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_FINISHED
@@ -309,7 +310,6 @@ AideScript_GivePotion:
 	giveitem POKE_BALL, 5
 	writetext AideText_CatchTips
 	waitbutton
-	
 	closetext
 	setscene SCENE_MAPLESLAB_NOTHING
 	end
