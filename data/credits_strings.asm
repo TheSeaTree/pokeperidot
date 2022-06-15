@@ -114,6 +114,7 @@ CreditsStrings:
 	dw .Fredriq
 	dw .FIQ
 	dw .Darsh
+	dw .DaHavoc
 	dw .YeahhhChat
 	dw .rheg
 	dw .Frank
@@ -235,6 +236,7 @@ CreditsStrings:
 .Fredriq:             db "      FREDRIQ@"
 .FIQ:                 db "        FIQ@"
 .Darsh:               db "       DARSH@"
+.DaHavoc			  db "       DAHAVOC@"
 .YeahhhChat:          db "    YEAHHH CHAT@"
 .rheg:                db "       /rheg/@"
 .Frank:			      db "       FRANK@"

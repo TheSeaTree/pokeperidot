@@ -273,6 +273,7 @@ CreditsScript:
 	db    ELKO, 2
 	db   FREDRIQ, 3
 	db   YEAHHHCHAT, 4
+	db   DAHAVOC, 5
 
 	db CREDITS_WAIT, 12
 	db       SPECIAL_THANKS, 0

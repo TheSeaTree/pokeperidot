@@ -115,6 +115,7 @@
 	const FREDRIQ
 	const FIQ
 	const DARSH
+	const DAHAVOC
 	const YEAHHHCHAT
 	const RHEG
 	const FRANK
