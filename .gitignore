@@ -39,3 +39,10 @@ pokecrystal.txt
 engine/phone/phone_gossip.asm
 engine/phone/phone_scripts.asm
 *.cmap
+Changelog.txt
+gfx/sprites/frank.png
+gfx/tilesets/cyberspace.png
+gfx/tilesets/fan/1.2bpp
+gfx/tilesets/fan/2.2bpp
+gfx/tilesets/fan/3.2bpp
+gfx/tilesets/fan/4.2bpp
