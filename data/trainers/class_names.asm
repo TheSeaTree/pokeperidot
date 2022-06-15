@@ -10,7 +10,7 @@ TrainerClassNames::
 	db "LEADER@"
 	db "RIVAL@"
 	db "<PKMN> TRAINER@" ; Fangirl
-	db "<PKMN> PROFESSOR@"
+	db "PROFESSOR@"
 	db "<PKMN> TRAINER@"
 	db "ELITE FOUR@"
 	db "ELITE FOUR@"
