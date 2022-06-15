@@ -24,7 +24,7 @@
 	const SPRITE_PERIDOT_TROPHY ; 13
 	const SPRITE_MURPHY ; 14
 	const SPRITE_DUANE ; 15
-	const SPRITE_UNUSED_16 ; 16
+	const SPRITE_BIG_AERODACTYL
 	const SPRITE_JASMINE ; 17
 	const SPRITE_UNUSED_18 ; 18
 	const SPRITE_CLAIR ; 19
@@ -129,7 +129,6 @@
 	const SPRITE_JADE_SURF
 	const SPRITE_SHADOW
 	const SPRITE_OFFICER_F
-	const SPRITE_BIG_AERODACTYL
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80

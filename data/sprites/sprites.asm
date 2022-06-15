@@ -28,7 +28,7 @@ OverworldSprites:
 	overworld_sprite PeridotTrophySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN
 	overworld_sprite MurphySpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite DuaneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
-	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused
+	overworld_sprite BigAerodactylSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite JasmineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
@@ -133,4 +133,3 @@ OverworldSprites:
 	overworld_sprite JadeSurfSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite ShadowSpriteGFX, 2, STILL_SPRITE, PAL_OW_ROCK
 	overworld_sprite OfficerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BigAerodactylSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER

@@ -425,7 +425,7 @@ ENDM
 	map_attributes HepaticaCaveB1F, HEPATICA_CAVE_B1F, $09, 0
 	map_attributes HepaticaCaveB2F, HEPATICA_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
-	map_attributes LostLand, LOST_LAND, $20, 0
+	map_attributes LostLand, LOST_LAND, $01, 0
 	map_attributes Route12StaghornGate, ROUTE_12_STAGHORN_GATE, $00, 0
 	map_attributes Route12Shelter, ROUTE_12_SHELTER, $00, 0
 	map_attributes Route14Cave1F, ROUTE_14_CAVE_1F, $09, 0

@@ -33,7 +33,7 @@ LostLandAerodactyl:
 	showemote EMOTE_QUESTION, PLAYER, 15
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	moveobject LOSTLAND_AERODACTYL, 28, 9
+	moveobject LOSTLAND_AERODACTYL, 30, 9
 	appear LOSTLAND_AERODACTYL
 	playsound SFX_WING_ATTACK
 	waitsfx
@@ -69,27 +69,27 @@ LostLandAerodactylEgg:
 	ifequal LEFT, .FacingLeft
 	turnobject PLAYER, DOWN
 	showemote EMOTE_QUESTION, PLAYER, 15
-	moveobject LOSTLAND_SCIENTIST7, 28, 14
+	moveobject LOSTLAND_SCIENTIST7, 30, 14
 	appear LOSTLAND_SCIENTIST7
 	applymovement LOSTLAND_SCIENTIST7, LostLandScientistEggApproachUp
 	jump .Continue
 .FacingRight
 	turnobject PLAYER, DOWN
 	showemote EMOTE_QUESTION, PLAYER, 15
-	moveobject LOSTLAND_SCIENTIST7, 28, 13
+	moveobject LOSTLAND_SCIENTIST7, 30, 13
 	appear LOSTLAND_SCIENTIST7
 	applymovement LOSTLAND_SCIENTIST7, LostLandScientistEggApproachRight
 	jump .Continue
 .FacingDown
 	showemote EMOTE_QUESTION, PLAYER, 15
-	moveobject LOSTLAND_SCIENTIST7, 28, 12
+	moveobject LOSTLAND_SCIENTIST7, 30, 12
 	appear LOSTLAND_SCIENTIST7
 	applymovement LOSTLAND_SCIENTIST7, LostLandScientistEggApproachDown
 	jump .Continue
 .FacingLeft
 	turnobject PLAYER, DOWN
 	showemote EMOTE_QUESTION, PLAYER, 15
-	moveobject LOSTLAND_SCIENTIST7, 29, 13
+	moveobject LOSTLAND_SCIENTIST7, 31, 13
 	appear LOSTLAND_SCIENTIST7
 	applymovement LOSTLAND_SCIENTIST7, LostLandScientistEggApproachLeft
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -255,38 +255,41 @@ LostLandScientistExplainText:
 	done
 
 LostLandScientistAfterText:
-	text "Other than"
-	line "AERODACTYL, We"
-	cont "have discovered"
-	cont "other ancient"
-	cont "#MON thriving"
-	cont "here!"
+	text "Our biggest disco-"
+	line "very has been an"
+	cont "AERODACTYL egg."
 
-	para "Would you care to"
-	line "assist in our"
-	cont "research here?"
-	
-	para "I promise we will"
-	line "make it worth your"
-	cont "while!"
+	para "Can you imagine?"
+	line "A brand-new EGG"
+	cont "of an ancient"
+	cont "#MON!"
+
+	para "We haven't been"
+	line "able to get very"
+	cont "close to the EGG."
+
+	para "As we learned,"
+	line "AERODACTYL are"
+	cont "very protective of"
+	cont "their young."
 	done
 	
 LostLandScientist2Text:
 	text "Using DNA found in"
-	line "OLD AMBER, some"
-	cont "scientists have"
+	line "FOSSILs, some"
+	cont "scientists in far-"
+	cont "away regions have"
 	cont "been able to"
-	cont "revive AERODACTYL."
-	
-	para "They were thought"
-	line "to have been"
-	cont "extinct for"
-	cont "centuries. Nobody"
-	cont "has ever seen one"
-	cont "in its natural"
-	cont "habitat!"
+	cont "revive these"
+	cont "ancient #MON."
+
+	para "Studying them in a"
+	line "lab is one thing,"
+	cont "but we can observe"
+	cont "them in their"
+	cont "natural habitat!"
 	done
-	
+
 LostLandScientist3Text:
 	text "The #MON here"
 	line "are likely to be"
@@ -295,7 +298,7 @@ LostLandScientist3Text:
 	cont "come in contact"
 	cont "with people."
 	done
-	
+
 LostLandScientist4Text:
 	text "If you will share"
 	line "any of your find-"
@@ -317,16 +320,16 @@ LostLandScientist6Text:
 	text "My TOWN MAP gets"
 	line "all messed up when"
 	cont "we're here."
-	
+
 	para "The signal to the"
 	line "global positioning"
 	cont "satellite must be"
 	cont "too weak."
-	
+
 	para "…It's spooky think-"
 	line "ing about being"
 	cont "all alone."
-	
+
 	para "We're the only"
 	line "people who know"
 	cont "this place exists."
@@ -396,26 +399,26 @@ LostLand_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  8, 31, REMNANT_CAVE_3F, 4
-	warp_event 44,  9, LOST_LAND_CAVE_1F, 1
-	warp_event 20, 15, LOST_LAND_CAVE_1F, 2
-	warp_event  2, 13, LOST_LAND_HIDDEN_CAVE_1F, 1
+	warp_event 10, 31, REMNANT_CAVE_3F, 4
+	warp_event 46,  9, LOST_LAND_CAVE_1F, 1
+	warp_event 22, 15, LOST_LAND_CAVE_1F, 2
+	warp_event  4, 13, LOST_LAND_HIDDEN_CAVE_1F, 1
 
 	db 3 ; coord events
-	coord_event  8, 32, SCENE_LOSTLAND_DEFAULT, LostLandScientist
-	coord_event 28, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
-	coord_event 29, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
+	coord_event 10, 32, SCENE_LOSTLAND_DEFAULT, LostLandScientist
+	coord_event 30, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
+	coord_event 31, 11, SCENE_LOSTLAND_AERODACTYL, LostLandAerodactyl
 
 	db 0 ; bg events
 
 	db 10 ; object events
 	object_event  0,  0, SPRITE_BIG_AERODACTYL, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, PAL_NPC_TREE, OBJECTTYPE_SCRIPT, 0, LostLandAerodactyl, EVENT_LOST_LAND_AERODACTYL
-	object_event 29,  8, SPRITE_EGG, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LostLandAerodactylEgg, -1
-	object_event 12, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientistAfter, -1
-	object_event 25, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist2, -1
-	object_event 31, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist3, -1
-	object_event 48, 16, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist4, -1
-	object_event 42, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist5, -1
-	object_event 28, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist6, -1
+	object_event 31,  8, SPRITE_EGG, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, LostLandAerodactylEgg, -1
+	object_event 14, 32, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientistAfter, -1
+	object_event 27, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist2, -1
+	object_event 33, 30, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist3, -1
+	object_event 50, 16, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist4, -1
+	object_event 44, 12, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist5, -1
+	object_event 30, 27, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LostLandScientist6, -1
 	object_event  0,  0, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  6, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LostLandStarPiece, EVENT_LOST_LAND_STAR_PIECE
+	object_event  8, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, LostLandStarPiece, EVENT_LOST_LAND_STAR_PIECE

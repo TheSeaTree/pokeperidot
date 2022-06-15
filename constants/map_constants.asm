@@ -321,7 +321,7 @@ ENDM
 	map_const REMNANT_CAVE_2F,	                           18, 18
 	map_const REMNANT_CAVE_OUTSIDE,	                       23, 16
 	map_const REMNANT_CAVE_3F,	                           28,  9
-	map_const LOST_LAND,		                           29, 20
+	map_const LOST_LAND,		                           30, 20
 	map_const LOST_LAND_CAVE_1F,		                   13, 12
 	map_const LOST_LAND_CAVE_B1F,		                   22, 14
 	map_const LOST_LAND_HIDDEN_CAVE_1F,					   10, 10
