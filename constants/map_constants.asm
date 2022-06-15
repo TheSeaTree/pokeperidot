@@ -74,7 +74,6 @@ ENDM
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
 	map_const PALEROCK_CAVE_B2F,                           15, 12 ; 88
-	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const HEPATICA_CAVE_1F,                             7,  6
 	map_const HEPATICA_CAVE_B1F,                           20, 15
 	map_const NEVERMELTICE_CHAMBER,                         5,  7
