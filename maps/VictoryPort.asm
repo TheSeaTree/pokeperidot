@@ -79,8 +79,8 @@ VictoryPortCaptainScript:
 	waitbutton
 	closetext
 .ContinueBoarding
-	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
+	setevent EVENT_HIDE_SS_MAKO_FANGIRL
 
 ; SS Mako B1F Trainers
 	clearevent EVENT_BEAT_SAILOR_DARIUS

@@ -84,10 +84,10 @@ RugosaPortCaptainScript:
 	writetext RugosaPortPostgameCaptainBoardText
 	waitbutton
 	closetext
+	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 .ContinueBoarding
 	setevent EVENT_HIDE_SS_MAKO_FANGIRL
-	setevent EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	
+
 ; SS Mako B1F Trainers
 	clearevent EVENT_BEAT_SAILOR_DARIUS
 	clearevent EVENT_BEAT_SAILOR_NATHAN
