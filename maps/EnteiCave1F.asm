@@ -73,6 +73,9 @@ EnteiCave1F_MapScripts:
 	end
 
 EnteiCave1FDoor:
+	conditional_event EVENT_ENTEI_CAVE_GATES_OPEN, .Script
+
+.Script
 	opentext
 	writetext EnteiCave1FDoorText
 	waitbutton
@@ -152,8 +155,8 @@ EnteiCave1F_MapEvents:
 	db 0 ; coord events
 
 	db 6 ; bg events
-	bg_event 12, 29, BGEVENT_UP, EnteiCave1FDoor
-	bg_event 13, 29, BGEVENT_UP, EnteiCave1FDoor
+	bg_event 12, 29, BGEVENT_IFNOTSET, EnteiCave1FDoor
+	bg_event 13, 29, BGEVENT_IFNOTSET, EnteiCave1FDoor
 	bg_event 22, 26, BGEVENT_ITEM, EnteiCave1FHiddenXAccuracy
 	bg_event  7, 11, BGEVENT_ITEM, EnteiCave1FHiddenPPUp
 	bg_event  8, 22, BGEVENT_ITEM, EnteiCave1FHiddenUltraBall

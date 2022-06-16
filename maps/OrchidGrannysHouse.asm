@@ -24,7 +24,6 @@ OrchidGranny:
 	waitbutton
 	verbosegiveitem GUARDIAN_KEY
 	setevent EVENT_GOT_GUARDIAN_KEY
-	waitbutton
 	closetext
 	end
 
