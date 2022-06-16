@@ -434,6 +434,33 @@ GrassWildMons:
 	db 18, SMOOCHUM
 	db 21, SMOOCHUM
 	
+	map_id PALEROCK_MOUNTAIN_HIDDEN_CAVE
+	db 7 percent, 7 percent, 7 percent ; encounter rates: morn/day/nite
+	; morn
+	db 19, SHIFUR
+	db 18, SWINUB
+	db 18, DELIBIRD
+	db 20, SWINUB
+	db 19, CLEFAIRY
+	db 18, SMOOCHUM
+	db 21, SMOOCHUM
+	; day
+	db 19, SHIFUR
+	db 18, SWINUB
+	db 20, DELIBIRD
+	db 17, SWINUB
+	db 19, CLEFAIRY
+	db 18, ZUBAT
+	db 21, ZUBAT
+	; nite
+	db 19, SHIFUR
+	db 18, SWINUB
+	db 20, DELIBIRD
+	db 17, SWINUB
+	db 19, CLEFAIRY
+	db 18, ZUBAT
+	db 21, ZUBAT
+	
 	map_id PALEROCK_MOUNTAIN_B1
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1688,31 +1715,57 @@ GrassWildMons:
 	db 40, RHYHORN
 	db 41, RHYHORN
 
-	map_id MOLTEN_PEAK_B2F
+	map_id ENTEI_CAVE_1F
 	db 4 percent, 4 percent, 4 percent
 	db 38, MAGCARGO
 	db 38, MAGCARGO
-	db 40, GRAVELER
-	db 39, MAGMAR
-	db 39, MAGMAR
-	db 40, RHYDON
-	db 41, RHYDON
+	db 40, WEEZING
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, WEEZING
+	db 42, WEEZING
 	; day
 	db 38, MAGCARGO
 	db 38, MAGCARGO
-	db 40, GRAVELER
-	db 39, MAGMAR
-	db 39, MAGMAR
-	db 40, RHYDON
-	db 41, RHYDON
+	db 40, WEEZING
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, WEEZING
+	db 42, WEEZING
 	; nite
 	db 38, MAGCARGO
 	db 38, MAGCARGO
-	db 40, GRAVELER
-	db 39, MAGMAR
-	db 39, MAGMAR
-	db 40, RHYDON
-	db 41, RHYDON
+	db 40, WEEZING
+	db 38, MAGMAR
+	db 38, MAGMAR
+	db 40, WEEZING
+	db 42, WEEZING
+
+	map_id ENTEI_CAVE_B1F
+	db 6 percent, 6 percent, 6 percent
+	db 44, MAGCARGO
+	db 45, MAGCARGO
+	db 43, WEEZING
+	db 44, MAGMAR
+	db 45, MAGMAR
+	db 45, WEEZING
+	db 46, WEEZING
+	; day
+	db 44, MAGCARGO
+	db 45, MAGCARGO
+	db 43, WEEZING
+	db 44, MAGMAR
+	db 45, MAGMAR
+	db 45, WEEZING
+	db 46, WEEZING
+	; nite
+	db 44, MAGCARGO
+	db 45, MAGCARGO
+	db 43, WEEZING
+	db 44, MAGMAR
+	db 45, MAGMAR
+	db 45, WEEZING
+	db 46, WEEZING
 	
 	map_id ROUTE_22
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
