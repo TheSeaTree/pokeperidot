@@ -123,7 +123,7 @@ EngineFlags:
 	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_ENYA
 
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F ; $60
-	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F
+	engine_flag wSafariFlag, SAFARIFLAGS_SAFARI_GAME_ACTIVE_F
 
 	engine_flag wGameTimerPause, GAMETIMERPAUSE_MOBILE_7_F
 

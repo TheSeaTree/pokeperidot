@@ -16,8 +16,8 @@ StartMenu::
 
 	farcall ReanchorBGMap_NoOAMUpdate
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ld hl, .MenuHeader
 	jr z, .GotMenuData
 	ld hl, .ContestMenuHeader
@@ -295,8 +295,8 @@ endr
 	ld a, STARTMENUITEM_OPTION
 	call .AppendMenuList
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr nz, .no_exit
 
 	ld a, STARTMENUITEM_EXIT
@@ -371,15 +371,15 @@ endr
 	ret
 
 .DrawBugContestStatusBox:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ret z
 	farcall StartMenu_DrawBugContestStatusBox
 	ret
 
 .DrawBugContestStatus:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr nz, .contest
 	ret
 .contest

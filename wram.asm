@@ -2576,7 +2576,7 @@ wGoldenrodGymSceneID::                            db ; d991
 wGoldenrodMagnetTrainStationSceneID::             db ; d992
 wGoldenrodPokecenter1FSceneID::                   db ; d993
 wOlivineCitySceneID::                             db ; d994
-wRoute34SceneID::                                 db ; d995
+wSafariZoneGateSceneID::                          db ; d995
 wVioletGymSceneID::
 wRoute34IlexForestGateSceneID::                   db ; d996
 wEcruteakCitySceneID::				              db ; d997
@@ -2735,7 +2735,8 @@ wSwarmFlags:: db
 wDailyFlags3:: db
 	ds 1
 wTimerEventStartDay:: db
-	ds 3
+wSafariFlag:: db
+	ds 2
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES ; dc27
 

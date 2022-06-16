@@ -345,6 +345,7 @@ SafariZoneWarpScript:
 	special FadeOutPalettes
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	playsound SFX_EXIT_BUILDING
+	setmapscene SAFARI_ZONE_GATE_1F, SCENE_DEFAULT
 	waitsfx
 	warp SAFARI_ZONE_GATE_1F, 8, 0
 	end

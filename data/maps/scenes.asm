@@ -26,7 +26,7 @@ MapScenes::
 	scene_var PECTINIA_MALL,	                        wGoldenrodMagnetTrainStationSceneID
 	scene_var FAVIA_POKECENTER_1F,                      wGoldenrodPokecenter1FSceneID
 	scene_var RUGOSA_COAST,                             wOlivineCitySceneID
-	scene_var PECTINIA_GYM,                             wRoute34SceneID ; unused
+	scene_var SAFARI_ZONE_GATE_1F,                      wSafariZoneGateSceneID
 	scene_var RIDGE_GYM,                                wVioletGymSceneID
 	scene_var STAGHORN_POKECENTER_1F,                   wEcruteakPokecenter1FSceneID
 	scene_var POWER_PLANT_1F_B,                         wMahoganyTownSceneID

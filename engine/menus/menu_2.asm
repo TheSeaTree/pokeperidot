@@ -129,8 +129,8 @@ StartMenu_PrintBugContestStatus:
 	hlcoord 15, 1
 	ld de, .Steps
 	call PlaceString
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr z, .normal_safari
 	ld de, .ExtendedSteps
 	call PlaceString

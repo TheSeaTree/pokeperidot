@@ -3,10 +3,15 @@
 	const SAFARI_ZONE_GATE_RECEPTIONIST
 
 SafariZoneGate1F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 0 ; callbacks
-	
+
+.DummyScene:
+	end
+
 SafariReceptionistScript:
 	opentext
 	writetext SafariZoneReceptionistText
@@ -74,6 +79,7 @@ SafariGuardScript:
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
 	takemoney YOUR_MONEY, 500
+.EnterSafariZone
 	waitsfx
 	special PlaceMoneyTopRight
 	checkitem SAFARI_PACK
@@ -82,8 +88,8 @@ SafariGuardScript:
 	jump .GotSafariBalls
 .NoExplaination
 	writetext SafariPackBallText
-.GotSafariBalls
 	waitbutton
+.GotSafariBalls
 	playsound SFX_GOT_SAFARI_BALLS
 	writetext PlayerReceivedSafariBalls
 	wait 8
@@ -91,12 +97,12 @@ SafariGuardScript:
 	waitbutton
 	closetext
 	special InitializeSafariZone
-.EnterSafariZone
 	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
-	setflag ENGINE_SAFARI_ZONE
+	setflag ENGINE_SAFARI_GAME_ACTIVE
 	special HealParty
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariEnter
+	setscene SCENE_FINISHED
 	warpcheck
 	end
 	
@@ -112,13 +118,6 @@ SafariGuardScript:
 	waitsfx
 	special PlaceMoneyTopRight
 	writetext SafariPackBallText
-	waitbutton
-	playsound SFX_GOT_SAFARI_BALLS
-	writetext PlayerReceivedSafariBalls
-	wait 8
-	writetext HappyHuntingText
-	waitbutton
-	closetext
 	special InitializeExtendedSafariZone
 	setflag ENGINE_EXTENDED_SAFARI_GAME
 	jump .EnterSafariZone
@@ -140,8 +139,27 @@ SafariGuardScript:
 	closetext
 	end
 
+AskLeaveSafariZone:
+	turnobject SAFARI_ZONE_GATE_OFFICER, UP
+	opentext
+	writetext AskLeaveSafariZoneText
+	yesorno
+	iftrue .EndSafari
+	writetext ReEnterSafariZoneText
+	waitbutton
+	closetext
+	applymovement PLAYER, SafariReEnter
+	warpcheck
+	end
+
+.EndSafari
+	writetext SafariReturnToCounterText
+	waitbutton
+	closetext
 LeaveSafariZone:
-	clearflag ENGINE_SAFARI_ZONE
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
+	clearflag ENGINE_SAFARI_GAME_ACTIVE
 	clearflag ENGINE_EXTENDED_SAFARI_GAME
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariExit
@@ -151,14 +169,15 @@ LeaveSafariZone:
 	waitbutton
 	closetext
 	end
-	
+
 SafariEnter:
 	step UP
 	step UP
 	step UP
+SafariReEnter:
 	step UP
 	step_resume
-	
+
 SafariGuardEnter:
 	step UP
 	step RIGHT
@@ -361,7 +380,27 @@ SafariZoneNoMoneyText:
 	para "We can't let you"
 	line "in for free."
 	done
-	
+
+AskLeaveSafariZoneText:
+	text "You still have"
+	line "some time and"
+	cont "SAFARI BALLs left."
+
+	para "Are you ready to"
+	line "end your current"
+	cont "SAFARI GAME?"
+	done
+
+ReEnterSafariZoneText:
+	text "Best of luck out"
+	line "there, trainer!"
+	done
+
+SafariReturnToCounterText:
+	text "Return to the"
+	line "counter, please."
+	done
+
 SafariGoodHaulText:
 	text "I hope you had"
 	line "good luck on your"
@@ -380,8 +419,9 @@ SafariZoneGate1F_MapEvents:
 	warp_event  8,  0, SAFARI_ZONE_AREA_1,  1
 	warp_event  0,  7, SAFARI_ZONE_GATE_2F, 1
 
-	db 1 ; coord events
-	coord_event  8,  1, -1, LeaveSafariZone
+	db 2 ; coord events
+	coord_event  8,  1, SCENE_FINISHED, AskLeaveSafariZone
+	coord_event  8,  1, SCENE_DEFAULT, LeaveSafariZone
 
 	db 0 ; bg events
 

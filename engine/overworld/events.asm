@@ -950,8 +950,8 @@ DoSafariStep:
 	cp INDOOR
 	jr z, .NoCall
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr z, .NoCall
 
 	ld a, [wSafariStepsRemaining]
@@ -1094,8 +1094,8 @@ ChangeDirectionScript: ; 9
 INCLUDE "engine/overworld/scripting.asm"
 
 WarpToSpawnPoint::
-	ld hl, wStatusFlags2
-	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	res SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ret
 
 RunMemScript::
@@ -1208,11 +1208,12 @@ RandomEncounter::
 	jr c, .nope
 	call CanUseSweetScent
 	jr nc, .nope
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
+	jr nz, .safari_zone
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
 	jr nz, .forced_shiny
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
-	jr nz, .safari_zone
 	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jr nz, .simulation
 	farcall TryWildEncounter

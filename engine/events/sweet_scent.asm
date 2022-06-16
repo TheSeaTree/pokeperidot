@@ -13,7 +13,7 @@ SweetScentFromMenu:
 	waitbutton
 	callasm SweetScentEncounter
 	iffalse SweetScentNothing
-	checkflag ENGINE_SAFARI_ZONE
+	checkflag ENGINE_SAFARI_GAME_ACTIVE
 	iftrue .SafariZone
 	randomwildmon
 	startbattle
@@ -32,8 +32,8 @@ SweetScentNothing:
 SweetScentEncounter:
 	farcall CanUseSweetScent
 	jr nc, .no_battle
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_SAFARI_GAME_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr nz, .not_in_bug_contest
 	farcall GetMapEncounterRate
 	ld a, b

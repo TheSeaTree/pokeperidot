@@ -42,7 +42,7 @@ SafariGameOverScript::
 	opentext
 	writetext SafariGameText_TimesUp
 	waitbutton
-	clearflag ENGINE_SAFARI_ZONE
+	clearflag ENGINE_SAFARI_GAME_ACTIVE
 	jump SafariZoneReturnToGateScript
 
 BugCatchingContestOutOfBallsScript:

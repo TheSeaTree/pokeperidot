@@ -12,10 +12,10 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
-	checkflag ENGINE_SAFARI_ZONE
+	checkflag ENGINE_SAFARI_GAME_ACTIVE
+	iftrue .safari_zone
 	checkcode VAR_BATTLETYPE
 	ifequal BATTLETYPE_NOCASH, .NoMoney
-	iftrue .safari_zone
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
 ;	clearflag ENGINE_SAFARI_ZONE
