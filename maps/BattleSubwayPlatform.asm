@@ -398,6 +398,10 @@ Script_FailedBattleTowerChallenge:
 	waitbutton
 	closetext
 
+	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
+	special UpdatePartyStats
+	special HealParty
+
 	special BattleSubway_CompareStreaks
 	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
