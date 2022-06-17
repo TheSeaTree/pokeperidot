@@ -1160,8 +1160,8 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	lb bc, BANK(FontBattleExtra), 15
 	call Get2bpp
 	
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_BATTLE_SUBWAY_LEVELS_F, a
+	ld a, [wPokegearFlags]
+	bit BATTLE_SUBWAY_LEVELS_F, a
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
 	ld a, 5                 ; 4 levels to choose from, including 'Cancel'-option

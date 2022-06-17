@@ -127,7 +127,7 @@ SampleKenjiBreakCountdown:
 	add 3
 	ld [wKenjiBreakTimer], a
 	ret
-	
+
 StartShinyEncounterTimer:
 	ld hl, wStatusFlags2
 	set STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]

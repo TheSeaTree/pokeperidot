@@ -8,8 +8,8 @@ EngineFlags:
 ; entries correspond to ENGINE_* constants
 
 	; pokegear
-	engine_flag wPokegearFlags, POKEGEAR_RADIO_CARD_F ; $0
-	engine_flag wPokegearFlags, POKEGEAR_MAP_CARD_F
+	engine_flag wPokegearFlags, BATTLE_SUBWAY_LEVELS_F ; $0
+	engine_flag wPokegearFlags, TRAINER_CARD_BP_F
 	engine_flag wPokegearFlags, LOST_LAND_VISITED_F
 	engine_flag wPokegearFlags, RUNNING_SHOES_F
 	engine_flag wPokegearFlags, POKEGEAR_OBTAINED_F
@@ -30,13 +30,13 @@ EngineFlags:
 	engine_flag wStatusFlags, STATUSFLAGS_CAUGHT_POKERUS_F
 	engine_flag wStatusFlags, STATUSFLAGS_EXP_ALL_ACTIVE_F
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F
-	engine_flag wStatusFlags, STATUSFLAGS_BATTLE_SUBWAY_LEVELS_F
+	engine_flag wStatusFlags, STATUSFLAGS_UNUSED_1_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_REST_HOUSE_F ; Unused
-	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_GAME_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_1_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_2_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_HAVE_BATTLE_PASS_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_EXTENDED_SAFARI_GAME_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F
 

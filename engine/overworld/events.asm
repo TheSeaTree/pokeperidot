@@ -1267,7 +1267,6 @@ WildBattleScript:
 	reloadmapafterbattle
 	end
 
-
 CanUseSweetScent::
 	ld hl, wStatusFlags
 	bit STATUSFLAGS_NO_WILD_ENCOUNTERS_F, [hl]

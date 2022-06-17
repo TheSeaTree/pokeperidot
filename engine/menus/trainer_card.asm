@@ -281,8 +281,8 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 15, 12
 	lb bc, 1, 3
 	call PrintNum
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_HAVE_BATTLE_PASS_F, [hl]
+	ld hl, wPokegearFlags
+	bit TRAINER_CARD_BP_F, [hl]
 	jr z, .NoBattlePass
 	hlcoord 2, 16
 	ld de, .Total_BP

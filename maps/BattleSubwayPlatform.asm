@@ -234,7 +234,7 @@ Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
-	
+
 	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
 	special UpdatePartyStats
 	special HealParty
@@ -597,34 +597,31 @@ Text_RightThisWayToYourBattleRoom:
 	done
 
 Text_BattleTowerIntroduction_2:
-	text "BATTLE TOWER is a"
+	text "BATTLE SUBWAY is a"
 	line "facility made for"
 	cont "#MON battles."
 
 	para "Countless #MON"
 	line "trainers gather"
-
-	para "from all over to"
-	line "hold battles in"
-
-	para "specially designed"
-	line "BATTLE ROOMS."
+	cont "from all over to"
+	cont "hold battles in"
+	cont "specially designed"
+	cont "BATTLE TRAINS."
 
 	para "There are many"
-	line "BATTLE ROOMS in"
-	cont "the BATTLE TOWER."
+	line "BATTLE TRAINS on"
+	cont "the BATTLE SUBWAY."
 
-	para "Each ROOM holds"
-	line "seven trainers."
+	para "Each TRAIN carries"
+	line "six trainers."
 
 	para "Beat them all, and"
 	line "win a prize."
 
 	para "To interrupt a"
 	line "session, you must"
-
-	para "SAVE. If not, you"
-	line "won't be able to"
+	cont "SAVE. If not, you"
+	cont "won't be able to"
 
 	para "resume your ROOM"
 	line "challenge."
