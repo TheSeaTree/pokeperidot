@@ -306,6 +306,14 @@ WaterWildMons:
 	db 32, SLOWPOKE
 	db 33, SEAKING
 
+	map_id CARNATION_TOWN
+	db 5 percent ; encounter rate
+	db 30, AZUMARILL
+	db 31, AZUMARILL
+	db 31, YANMA
+	db 32, SLOWPOKE
+	db 33, SEAKING
+
 	map_id ACROPORA_CITY
 	db 4 percent ; encounter rate
 	db 36, GOLDUCK
