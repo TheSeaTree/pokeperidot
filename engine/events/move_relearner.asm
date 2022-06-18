@@ -7,7 +7,8 @@
 MoveRelearner:
 	ld hl, Text_MoveReminderIntro
 	call PrintText
-	call JoyWaitAorB
+	call YesNoBox
+	jp c, .cancel
 
 	ld a, BRICK_PIECE
 	ld [wCurItem], a
@@ -24,7 +25,7 @@ MoveRelearner:
 	call PrintText
 	call JoyWaitAorB
 
-	ld b, $6
+	ld b, 6
 	farcall SelectMonFromParty
 	jr c, .cancel
 
@@ -48,9 +49,14 @@ MoveRelearner:
 	ld a, [wMenuSelection]
 	ld [wd265], a
 	call GetMoveName
-	call CopyName1
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+	ld bc, wStringBuffer2 - wStringBuffer1
+	call CopyBytes
+	ld b, 0
 	predef LearnMove
-	xor a
+	ld a, b
+	and a
 	jr z, .skip_learn
 
 	ld a, BRICK_PIECE
@@ -67,8 +73,7 @@ MoveRelearner:
 	call WaitSFX
 
 .skip_learn
-	call CloseSubmenu
-	call SpeechTextBox
+	call ReturnToMapWithSpeechTextbox
 .cancel
 	ld hl, Text_MoveReminderCancel
 	jp PrintText
@@ -92,7 +97,7 @@ MoveRelearner:
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
 ; Returns z if no moves can be reminded.
-	GLOBAL EvosAttacksPointers, EvosAttacks
+
 	ld hl, wd002
 	xor a
 	ld [hli], a
@@ -111,27 +116,28 @@ GetRemindableMoves:
 
 	ld b, 0
 	ld de, wd002 + 1
-; based on GetEggMove in engine/breeding.asm
-.loop
+
+; Based on GetEggMove in engine/breeding/egg.asm
 	ld a, [wCurPartySpecies]
 	dec a
 	push bc
 	ld b, 0
 	ld c, a
 	ld hl, EvosAttacksPointers
+REPT 2
 	add hl, bc
-	add hl, bc
+ENDR
 	ld a, BANK(EvosAttacksPointers)
 	call GetFarHalfword
 .skip_evos
-	ld a, BANK(EvosAttacks)
+	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	inc hl
 	and a
 	jr nz, .skip_evos
 
 .loop_moves
-	ld a, BANK(EvosAttacks)
+	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	inc hl
 	and a
@@ -139,7 +145,7 @@ GetRemindableMoves:
 	ld c, a
 	ld a, [wCurPartyLevel]
 	cp c
-	ld a, BANK(EvosAttacks)
+	ld a, BANK("Evolutions and Attacks")
 	call GetFarByte
 	inc hl
 	jr c, .loop_moves
@@ -160,12 +166,7 @@ GetRemindableMoves:
 	jr .loop_moves
 
 .done
-	ld a, [wCurPartySpecies]
-	dec a
-
-	farcall GetPreEvolution
 	pop bc
-	jr c, .loop
 	pop af
 	ld [wCurPartySpecies], a
 	ld a, b
@@ -173,14 +174,14 @@ GetRemindableMoves:
 	and a
 	ret
 
-
 CheckAlreadyInList:
 	push hl
 	ld hl, wd002 + 1
 .loop
 	ld a, [hli]
-	cp $ff
+	inc a
 	jr z, .nope
+	dec a
 	cp c
 	jr nz, .loop
 	pop hl
@@ -191,13 +192,12 @@ CheckAlreadyInList:
 	and a
 	ret
 
-
 CheckPokemonAlreadyKnowsMove:
 	push hl
 	push bc
 	ld a, MON_MOVES
 	call GetPartyParamLocation
-	ld b, NUM_MOVES
+	ld b, 4
 .loop
 	ld a, [hli]
 	cp c
@@ -214,15 +214,19 @@ CheckPokemonAlreadyKnowsMove:
 	scf
 	ret
 
-
 ChooseMoveToLearn:
-	; Number of items stored in wd002
-	; List of items stored in wd002 + 1
+; Number of items stored in wd002
+; List of items stored in wd002 + 1
 	call FadeToMenu
 	farcall BlankScreen
 	call UpdateSprites
-	call SetUpMoveRelearnerScreenBG
-	ld hl, .MenuDataHeader
+	
+	hlcoord 0, 0
+	ld b, 12
+	ld c, 18
+	call TextBox
+	
+	ld hl, .MenuHeader
 	call CopyMenuHeader
 	xor a
 	ld [wMenuCursorBuffer], a
@@ -241,18 +245,17 @@ ChooseMoveToLearn:
 	scf
 	ret
 
-.MenuDataHeader:
-	db $40 ; flags
-	db 01, 01 ; start coords
-	db 10, 18 ; end coords
-	dw .menudata2
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 1, 18, 10
+	dw .MenuData
 	db 1 ; default option
 
-.menudata2:
-	db $30 ; pointers
-	db 4, 8 ; rows, columns
+.MenuData:
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; item format
+	db 4, SCREEN_WIDTH + 2 ; rows, columns
 	db 1 ; horizontal spacing
-	dbw 0, wd002
+	dba  wd002
 	dba .PrintMoveName
 	dba .PrintDetails
 	dba .PrintMoveDesc
@@ -263,7 +266,8 @@ ChooseMoveToLearn:
 	ld [wd265], a
 	call GetMoveName
 	pop hl
-	jp PlaceString
+	call PlaceString
+	ret
 
 .PrintDetails
 	ld hl, wStringBuffer1
@@ -271,29 +275,32 @@ ChooseMoveToLearn:
 	ld a, " "
 	call ByteFill
 	ld a, [wMenuSelection]
-	cp $ff
+	inc a
 	ret z
+	dec a
 	push de
 	dec a
 
-	ld hl, wStringBuffer1 + 9
-	ld de, .BP
-	ld bc, 3
-	call PlaceString
+	ld bc, MOVE_LENGTH
+	ld hl, Moves + MOVE_TYPE
+	call AddNTimes
+	ld a, BANK(Moves)
+	call GetFarByte
+	ld [wd265], a
 
 	ld a, [wMenuSelection]
 	dec a
-
+	
 	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_POWER
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-	ld hl, wStringBuffer1 + 12
+	ld hl, wStringBuffer1 + 11
 	and a
 	jr z, .no_power
-	ld [wEngineBuffer1], a
-	ld de, wEngineBuffer1
+	ld [wBuffer1], a
+	ld de, wBuffer1
 	lb bc, 1, 3
 	call PrintNum
 	jr .got_power
@@ -302,26 +309,29 @@ ChooseMoveToLearn:
 	ld bc, 3
 	call PlaceString
 .got_power
-	ld hl, wStringBuffer1 + 13 + 2
+	ld hl, wStringBuffer1 + 8
+	ld de, .BP
+	ld bc, 3
+	call PlaceString
+
+	ld a, [wMenuSelection]
+	dec a
+
+; Print PP (works)
+	ld hl, wStringBuffer1 + 14
 	ld [hl], "@"
 
-	ld hl, SCREEN_WIDTH - 6
-	pop de
-	add hl, de
-	push de
+	pop hl
 	ld de, wStringBuffer1
-	call PlaceString
-	pop de
-	ret
-
+	jp PlaceString
+	
 .ThreeDashes
 	db "---@"
-	
-.BP
-	db "<BOLD_B><BOLD_P>/@"
 
 .PrintMoveDesc
 	push de
+	call SpeechTextBox
+
 	push hl
 	hlcoord 0, 10
 	ld de, String_MoveRelearnerType_Top
@@ -348,18 +358,20 @@ ChooseMoveToLearn:
 	hlcoord 19, 12
 	ld [hl], "│"
 	call PlaceString
+
 	ld a, [wMenuSelection]
-	cp $ff
+	inc a
 	pop de
 	jr z, .CancelButton
+	dec a
 	ld [wCurSpecies], a
 	hlcoord 1, 14
 	predef PrintMoveDesc
-	
+
+	; Print Accuracy
 	hlcoord 12, 12
 	ld de, .ACC
 	call PlaceString
-
 	ld a, [wCurSpecies]
 	dec a
 	ld hl, Moves + MOVE_ACC
@@ -407,35 +419,13 @@ ChooseMoveToLearn:
 .CancelDescription
 	db   "Do not relearn a"
 	next "previous move.@"
-	
+
+.BP
+	db "<BOLD_B><BOLD_P>/@"
+
 .ACC
 	db "<BOLD_A><BOLD_C><BOLD_C>/@"
-	
-SetUpMoveRelearnerScreenBG:
-	call PlaceString
-	call ClearBGPalettes
-	call ClearTileMap
-	call ClearSprites
-	xor a
-	ldh [hBGMapMode], a
-	farcall ClearSpriteAnims2
-	hlcoord 0, 0
-	ld b, 12
-	ld c, 18
-	call TextBox
-	hlcoord 0, 12
-	ld b, 4
-	ld c, 18
-	call TextBox
-	hlcoord 0, 0
-	ld de, .Corner
-	call PlaceString
-	xor a
-	ret
-	
-.Corner
-	db "┌@"
-	
+
 String_MoveRelearnerType_Top:
 	db "♣─────┐@"
 String_MoveRelearnerType_Bottom:
