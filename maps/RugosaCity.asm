@@ -37,7 +37,7 @@ RugosaCity_MapScripts:
 .MoveOfficer:
 	checkevent EVENT_MAHOGANY_OFFICER_WITHDRAW
 	iffalse .skip2
-	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
+	moveobject MAHOGANYTOWN_OFFICER1, 30, 8
 .skip2
 	return
 	
@@ -168,7 +168,13 @@ RugosaCityOfficer2Script:
 	jumptextfaceplayer RugosaCityOfficerBeforeText
 	
 .Backup
-	jumptext RugosaCityOfficer2Text
+	opentext
+	faceplayer
+	writetext RugosaCityOfficer2Text
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, LEFT
+	end
 
 RugosaCityGrimerBattle:
 	opentext
@@ -182,11 +188,10 @@ RugosaCityGrimerBattle:
 	startbattle
 	disappear MAHOGANYTOWN_GRIMER1
 	disappear MAHOGANYTOWN_OFFICER1
-	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
+	moveobject MAHOGANYTOWN_OFFICER1, 30, 8
 	appear MAHOGANYTOWN_OFFICER1
 	reloadmapafterbattle
 	setevent EVENT_MAHOGANY_GRIMER
-;	moveobject MAHOGANYTOWN_OFFICER1, 26, 8
 	applymovement MAHOGANYTOWN_OFFICER1, RugosaOfficerToPlayerMovement
 	turnobject PLAYER, RIGHT
 	opentext
