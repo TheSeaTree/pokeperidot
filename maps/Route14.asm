@@ -28,7 +28,7 @@ TrainerTwinLeah:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerTwinMia:
 	trainer TWINS, LEAHANDMIA2, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinMiaText, TwinMiaWinText, 0, .AfterScript
 
@@ -217,11 +217,10 @@ Route14MoveTutor:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "1   ¥400@"
-	db "10 ¥4000@"
+	db "1   ¥300@"
+	db "10 ¥3000@"
 	db "CANCEL@"
 
-	
 BlackGlassesGuy:
 	faceplayer
 	opentext
@@ -238,6 +237,7 @@ BlackGlassesGuy:
 	writetext Route14GiveBlackGlasses
 	waitbutton
 	verbosegiveitem BLACKGLASSES
+	iffalse .NoRoom
 	waitbutton
 	closetext
 	setevent EVENT_GOT_BLACKGLASSES
@@ -248,7 +248,13 @@ BlackGlassesGuy:
 	waitbutton
 	closetext
 	end
-	
+
+.NoRoom:
+	writetext Route14BlackGlassesGuyBagFullText
+	waitbutton
+	closetext
+	end
+
 Route14CaveGuard:
 	jumptextfaceplayer Route14CaveGuardText
 	
@@ -650,6 +656,14 @@ Route14ExplainBlackGlasses:
 	line "use them yourself"
 	cont "when SUNNY DAY is"
 	cont "active."
+	done
+
+Route14BlackGlassesGuyBagFullText:
+	text "Woah, there!"
+
+	para "It ain't cool to"
+	line "have a BAG overfl-"
+	cont "owing with items."
 	done
 
 Route14_MapEvents:
