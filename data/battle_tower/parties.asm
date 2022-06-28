@@ -4813,7 +4813,7 @@ BattleTowerMons9:
 
 	db SHUCKLE
 	db GOLD_BERRY
-	db TOXIC, WRAP, BODY_PRESS, ENCORE
+	db TOXIC, BIND, BODY_PRESS, ENCORE
 	dw 0 ; OT ID
 	dt 729000 ; Exp
 	; Stat exp

@@ -31,7 +31,7 @@ Moves: ; 41afb
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,   100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,   100, 20,   0
 	move FLY,          EFFECT_FLY,                90, FLYING,    95, 15,   0
-	move BIND,         EFFECT_TRAP_TARGET,        75, NORMAL,    75, 20,   0
+	move BIND,    	   EFFECT_TRAP_TARGET,        60, BUG,       85, 15,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,      100,  5,  10
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
 	move ICICLE_SPEAR, EFFECT_MULTI_HIT,          20, ICE,      100, 20,   0

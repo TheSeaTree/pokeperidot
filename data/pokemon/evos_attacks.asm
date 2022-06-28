@@ -106,7 +106,6 @@ CharmeleonEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 1, EMBER
 	db 7, EMBER
 	db 10, SMOKESCREEN
 	db 17, RAGE
@@ -123,7 +122,6 @@ CharizardEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 1, EMBER
 	db 1, SMOKESCREEN
 	db 7, EMBER
 	db 10, SMOKESCREEN
@@ -884,6 +882,7 @@ AncorEvosAttacks:
 	db 18, SCREECH
 	db 22, SWAGGER
 	db 29, SCARY_FACE
+	db 32, BIND
 	db 34, IRON_TAIL
 	db 40, CRUNCH
 	db 48, SKULL_BASH
@@ -1153,29 +1152,36 @@ TentacoolEvosAttacks:
 	db EVOLVE_LEVEL, 30, TENTACRUEL
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 4, SUPERSONIC
-	db 7, TACKLE
-	db 10, WRAP
+	db 1, WATER_GUN
+	db 4, ACID
+	db 8, WRAP
+	db 12, SUPERSONIC
 	db 16, BUBBLEBEAM
-	db 19, ACID
-	db 28, SCREECH
-	db 31, SLUDGE_BOMB
-	db 37, BARRIER
-	db 46, HYDRO_PUMP
+	db 20, SCREECH
+	db 24, BIND
+	db 32, ACID_ARMOR
+	db 36, SLUDGE_BOMB
+	db 40, SURF
+	db 44, TOXIC
+	db 48, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 TentacruelEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POISON_STING
-	db 4, SUPERSONIC
-	db 7, TACKLE
-	db 10, WRAP
+	db 1, WATER_GUN
+	db 1, ACID
+	db 1, WRAP
+	db 12, SUPERSONIC
 	db 16, BUBBLEBEAM
-	db 19, ACID
-	db 28, SCREECH
-	db 32, SLUDGE_BOMB
-	db 40, BARRIER
-	db 52, HYDRO_PUMP
+	db 20, SCREECH
+	db 24, BIND
+	db 30, MEAN_LOOK
+	db 34, ACID_ARMOR
+	db 40, SLUDGE_BOMB
+	db 46, SURF
+	db 52, TOXIC
+	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 GeodudeEvosAttacks:
@@ -1545,7 +1551,7 @@ OnixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
-	db 1, BIND
+	db 1, WRAP
 	db 4, CURSE
 	db 7, ROCK_THROW
 	db 10, COIL
@@ -2808,8 +2814,8 @@ SpinarakEvosAttacks:
 	db 26, BITE
 	db 29, LEECH_LIFE
 	db 33, AGILITY
-	db 36, PIN_MISSILE
-	db 40, PSYCHIC_M
+	db 36, BIND
+	db 40, PIN_MISSILE
 	db 43, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
@@ -2825,8 +2831,8 @@ AriadosEvosAttacks:
 	db 27, BITE
 	db 32, LEECH_LIFE
 	db 37, AGILITY
-	db 41, PIN_MISSILE
-	db 46, PSYCHIC_M
+	db 41, BIND
+	db 46, PIN_MISSILE
 	db 50, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
@@ -3468,7 +3474,7 @@ SteelixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, HARDEN
-	db 1, BIND
+	db 1, WRAP
 	db 4, CURSE
 	db 14, ROCK_THROW
 	db 17, COIL
@@ -3569,6 +3575,7 @@ ShuckleEvosAttacks:
 	db 23, ROCK_THROW
 	db 28, ACID_ARMOR
 	db 34, ROCK_SLIDE
+	db 40, BIND
 	db 45, STONE_EDGE
 	db 0 ; no more level-up moves
 
@@ -3947,6 +3954,7 @@ TangrowthEvosAttacks:
 	db 1, POUND
 	db 1, MEAN_LOOK
 	db 1, SCARY_FACE
+	db 1, BIND
 	db 4, SLEEP_POWDER
 	db 7, VINE_WHIP
 	db 10, ABSORB
@@ -4170,6 +4178,7 @@ LugiaEvosAttacks:
 	db 0 ; no more evolutions
 	db  1, GUST
 	db  1, ANCIENTPOWER
+	db  1, PSYCHIC_M
 	db 11, SWIFT
 	db 22, RAIN_DANCE
 	db 33, SAFEGUARD
@@ -4185,6 +4194,7 @@ HoOhEvosAttacks:
 	db 0 ; no more evolutions
 	db  1, GUST
 	db  1, ANCIENTPOWER
+	db  1, FLAMETHROWER
 	db 11, SWIFT
 	db 22, SUNNY_DAY
 	db 33, SAFEGUARD

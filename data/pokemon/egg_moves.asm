@@ -112,6 +112,7 @@ EkansEggMoves:
 	db DRAGONBREATH
 	db DRAGON_DANCE
 	db IRON_TAIL
+	db BIND
 	db -1 ; end
 
 PikachuEggMoves:
@@ -333,6 +334,7 @@ BellsproutEggMoves:
 	db ENCORE
 	db SYNTHESIS
 	db AGILITY
+	db BIND
 	db -1 ; end
 
 TentacoolEggMoves:
@@ -431,6 +433,7 @@ GrimerEggMoves:
 	db DESTINY_BOND
 	db STONE_EDGE
 	db BODY_PRESS
+	db BIND
 	db -1 ; end
 
 ShellderEggMoves:
@@ -452,6 +455,7 @@ GastlyEggMoves:
 	db SCARY_FACE
 	db SMOG
 	db ENCORE
+	db BIND
 	db -1 ; end
 
 OnixEggMoves:
@@ -568,6 +572,7 @@ TangelaEggMoves:
 	db AGILITY
 	db LEECH_SEED
 	db BRICK_BREAK
+	db BIND
 	db -1 ; end
 
 KangaskhanEggMoves:
