@@ -866,6 +866,114 @@ GrassWildMons:
 	db 20, VULPIX
 	db 23, VULPIX
 
+	map_id ROUTE_30
+	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, HOPPIP
+	db 26, EKANS
+	db 25, SKIPLOOM
+	db 25, POLIWHIRL
+	db 26, MARILL
+	db 28, AZUMARILL
+	db 30, AZUMARILL
+	; day
+	db 24, BELLSPROUT
+	db 26, EKANS
+	db 25, WEEPINBELL
+	db 25, POLIWHIRL
+	db 26, MARILL
+	db 28, AZUMARILL
+	db 30, AZUMARILL
+	; nite
+	db 24, ODDISH
+	db 26, EKANS
+	db 25, GLOOM
+	db 25, POLIWHIRL
+	db 26, MARILL
+	db 28, AZUMARILL
+	db 30, AZUMARILL
+
+	map_id ROUTE_30_CAVE_1F
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, PARASECT
+	db 26, POLIWHIRL
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+	; day
+	db 24, PARASECT
+	db 26, POLIWHIRL
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+	; nite
+	db 24, PARASECT
+	db 26, POLIWHIRL
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+
+	map_id ROUTE_30_CAVE_B1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, FERRODON
+	db 30, FERRODON
+	; day
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, FERRODON
+	db 30, FERRODON
+	; nite
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, FERRODON
+	db 30, FERRODON
+
+	map_id ROUTE_9_CAVE_1F
+	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
+	; morn
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+	; day
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+	; nite
+	db 24, PARASECT
+	db 26, ONIX
+	db 25, QUAGSIRE
+	db 25, POLIWHIRL
+	db 26, QUAGSIRE
+	db 28, QUAGSIRE
+	db 30, QUAGSIRE
+
 	map_id ROUTE_10_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

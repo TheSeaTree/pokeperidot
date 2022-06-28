@@ -42,6 +42,22 @@ WaterWildMons:
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 
+	map_id ROUTE_30_CAVE_B1F
+	db 5 percent ; encounter rate
+	db 26, GOLDEEN
+	db 25, QUAGSIRE
+	db 24, POLIWAG
+	db 24, POLIWAG
+	db 25, POLIWHIRL
+
+	map_id ROUTE_9_CAVE_1F
+	db 7 percent ; encounter rate
+	db 26, GOLDEEN
+	db 25, QUAGSIRE
+	db 24, POLIWAG
+	db 24, POLIWAG
+	db 25, POLIWHIRL
+
 	map_id PAVONA_VILLAGE
 	db 2 percent ; encounter rate
 	db 26, GOLDEEN
