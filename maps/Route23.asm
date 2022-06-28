@@ -8,17 +8,8 @@ Route23_MapScripts:
 
 .SmashWall:
 	checkevent EVENT_ROUTE_23_HIDDEN_CAVE_OPEN
-	iffalse .checkpostgame
-	changeblock  6, 58, $73
-.checkpostgame
-	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .skip
-	changeblock 12, 10, $02
-	changeblock 14, 10, $02
-	changeblock  6, 12, $3c
-	changeblock  8, 12, $02
-	changeblock 10, 12, $02
-	changeblock 12, 12, $02
+	changeblock  6, 28, $73
 .skip
 	return
 

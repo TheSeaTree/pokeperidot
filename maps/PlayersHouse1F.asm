@@ -79,7 +79,7 @@ PlayersHouse1F_MapScripts:
 	waitbutton
 	giveitem NORMAL_BOX
 	iffalse .OpenNow
-	itemnotify	
+	itemnotify
 .DonePostgameScene
 	writetext PostgameMomEndText
 	waitbutton

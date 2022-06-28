@@ -88,6 +88,8 @@ MaplesLab_MapScripts:
 ProfMapleScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
 	checkevent EVENT_SHOWED_MAPLE_COGBADGE
 	iftrue .AfterCogBadge
 	checkflag ENGINE_COGBADGE
@@ -124,6 +126,12 @@ ProfMapleScript:
 	
 .AfterCogBadge:
 	writetext MapleAfterCogbadgeText
+	waitbutton
+	closetext
+	end
+
+.Postgame:
+	writetext MaplePostgameText
 	waitbutton
 	closetext
 	end
@@ -250,6 +258,7 @@ MapleAfterStarterScript:
 	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
 	clearevent EVENT_PLAYERS_HOUSE_MOM_1
+	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	setscene SCENE_MAPLESLAB_AIDE_GIVES_POTION
 	setmapscene PAVONA_VILLAGE, SCENE_PAVONAVILLAGE_MEET_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_FINISHED
@@ -694,6 +703,27 @@ MapleAfterCogbadgeText:
 	para "Some day I will"
 	line "become organized,"
 	cont "I promise! Ha!"
+	done
+
+MaplePostgameText:
+	text "<PLAYER>! Hello!"
+
+	para "Have you come to"
+	line "see what we have"
+	cont "been working on"
+	cont "in the LAB?"
+
+	para "I'm sorry to dis-"
+	line "appoint, but there"
+	cont "is still so much"
+	cont "more to do."
+
+	para "But thank you for"
+	line "checking up on us."
+
+	para "Have you challen-"
+	line "ged the BATTLE"
+	cont "SUBWAY yet?"
 	done
 
 MaplePokeBallText:

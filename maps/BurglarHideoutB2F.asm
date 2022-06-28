@@ -252,15 +252,15 @@ TrainerScientistMilton:
 BurglarHideoutB2FScientist:
 	faceplayer
 	opentext
-	checkevent EVENT_CLEARED_BURGLAR_HIDEOUT
-	iftrue .HideoutOccupied
 	checkevent EVENT_GOT_MASTER_BALL
 	iftrue .GotMasterBall
+	checkevent EVENT_CLEARED_BURGLAR_HIDEOUT
+	iftrue .HideoutOccupied
 	writetext BurglarHideoutB2FScientistText
 	waitbutton
 	closetext
 	end
-	
+
 .HideoutOccupied
 	writetext BurglarHideoutB2FScientistRewardText
 	waitbutton

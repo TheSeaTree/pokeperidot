@@ -125,6 +125,7 @@ LevelBallGuyIntro:
 
 	para "Do you have the"
 	line "same problem?"
+	done
 
 LevelBallGuyEnoughMonsText:
 	text "I have just the"

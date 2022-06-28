@@ -29,8 +29,8 @@ PectiniaApartmentLeftGuardMText:
 	cont "were here."
 	
 	para "I would have given"
-	line "then such a"
-	cont "beating."
+	line "them a real"
+	cont "beating!"
 	done
 	
 PectiniaApartmentLeftGuardFText:

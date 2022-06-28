@@ -34,7 +34,7 @@ ProfessorMapleSrAideScript:
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse .NotMet
 	checkflag ENGINE_UNOWN_DEX
-	iftrue .AlreadyShown
+;	iftrue .AlreadyShown
 	writebyte UNOWN
 	special FindPartyMonThatSpecies
 	iftrue .ShowUnown
@@ -90,6 +90,11 @@ ProfessorMapleSrAideScript:
 	setflag ENGINE_UNOWN_DEX
 	setevent EVENT_SHOWED_UNOWN_MANIAC_UNOWN
 .AlreadyShown
+	checkevent EVENT_DECO_UNOWN_DOLL
+	iftrue .CheckAllUnown
+	checkcode VAR_UNOWNCOUNT
+	ifgreater 12, .GiveUnownDoll
+.CheckAllUnown
 	checkcode VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AllUnown
 	writetext ProfessorMapleSrAdieAfterUpgradeText2
@@ -97,6 +102,20 @@ ProfessorMapleSrAideScript:
 	closetext
 	applymovement COASTAL_LAB_AIDE, CoastalLabAideStepResume
 	end
+
+.GiveUnownDoll
+	writetext ProfessorMapleSrAideHalfUnownText
+	waitbutton
+	setevent EVENT_DECO_UNOWN_DOLL
+	writetext ProfessorMapleSrAideGiveUnownDollText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	writetext ProfessorMapleSrAideSentUnownDollHomeText
+	waitbutton
+	checkcode VAR_UNOWNCOUNT
+	ifless NUM_UNOWN, .CheckAllUnown
+	writetext ProfessorMapleSrAideCheckAllUnown
+	waitbutton
 
 .AllUnown
 	writetext ProfessorMapleSrAideAllUnownText
@@ -352,6 +371,43 @@ ProfessorMapleSrAdieAfterUpgradeText2:
 	line "all I can about"
 	cont "those mysterious"
 	cont "#MON!"
+	done
+
+ProfessorMapleSrAideHalfUnownText:
+	text "Wow! You've already"
+	line "captured half of"
+	cont "the UNOWN forms?"
+
+	para "That's fantastic!"
+
+	para "Oh! By the way."
+
+	para "I've taken up"
+	line "sewing in my spare"
+	cont "time, and managed"
+	cont "to make a DOLL"
+	cont "that looks like"
+	cont "the UNOWN."
+
+	para "Take a look, I"
+	line "think it turned"
+	cont "out decently."
+	done
+
+ProfessorMapleSrAideGiveUnownDollText:
+	text "<PLAYER> received"
+	line "the UNOWN DOLL."
+	done
+
+ProfessorMapleSrAideSentUnownDollHomeText:
+	text "<PLAYER> sent the"
+	line "UNOWN DOLL home."
+	done
+
+ProfessorMapleSrAideCheckAllUnown:
+	text "Huh? You've seen"
+	line "even more than"
+	cont "half of the UNOWN?"
 	done
 
 ProfessorMapleSrAideAllUnownText:
