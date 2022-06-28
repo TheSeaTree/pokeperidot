@@ -170,7 +170,7 @@ PokemonNames::
 	db "CROBAT@@@@"
 	db "CHINCHOU@@"
 	db "LANTURN@@@"
-	db "MALLAR'KEY"
+	db "MALLARK'Y@"
 	db "MANDRABEL@"
 	db "CURSTRAW@@"
 	db "SHIFUR@@@@"
