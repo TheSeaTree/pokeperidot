@@ -51,3 +51,4 @@
 	tilecoll DOOR, WALL, FLOOR, BOOKSHELF ; 32
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 33
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 34
+	tilecoll WALL, WALL, WALL, FLOOR ; 35
