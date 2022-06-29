@@ -1024,10 +1024,15 @@ SellMenu:
 	ret
 
 .try_sell
+	farcall _CheckSellableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jr nz, .cant_sell
 	farcall _CheckTossableItem
 	ld a, [wItemAttributeParamBuffer]
 	and a
 	jr z, .okay_to_sell
+.cant_sell
 	ld hl, TextMart_CantBuyFromYou
 	call PrintText
 	and a

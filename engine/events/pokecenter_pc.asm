@@ -443,6 +443,10 @@ PlayerDepositItemMenu:
 	text_end
 
 .TryDepositItem:
+	farcall _CheckHoldableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jp nz, .denied
 	ld a, [wCurItem]
 	cp TM01
 	jr nc, .denied

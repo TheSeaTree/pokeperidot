@@ -490,6 +490,24 @@ CheckSelectableItem:
 	and a
 	ret
 
+_CheckSellableItem:
+; Return 1 in wItemAttributeParamBuffer and carry if wCurItem can't be selected.
+	ld a, ITEMATTR_PERMISSIONS
+	call GetItemAttr
+	bit CANT_SELL_F, a
+	jr nz, ItemAttr_ReturnCarry
+	and a
+	ret
+
+_CheckHoldableItem:
+; Return 1 in wItemAttributeParamBuffer and carry if wCurItem can't be selected.
+	ld a, ITEMATTR_PERMISSIONS
+	call GetItemAttr
+	bit CANT_HOLD_F, a
+	jr nz, ItemAttr_ReturnCarry
+	and a
+	ret
+
 CheckItemPocket::
 ; Return the pocket for wCurItem in wItemAttributeParamBuffer.
 	ld a, ITEMATTR_POCKET

@@ -240,6 +240,10 @@ Pack:
 	ret
 
 .ItemBallsKey_LoadSubmenu:
+	farcall _CheckHoldableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jp nz, .tossable_selectable
 	farcall _CheckTossableItem
 	ld a, [wItemAttributeParamBuffer]
 	and a
