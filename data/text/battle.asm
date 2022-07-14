@@ -1290,6 +1290,7 @@ BattleText_AskForfeit:
 	done
 
 BattleText_AllStatsRose:
-	text "All of <USER>'s"
-	line "stats all rose!"
+	text "All of"
+	line "<USER>'s"
+	cont "stats rose!"
 	prompt
