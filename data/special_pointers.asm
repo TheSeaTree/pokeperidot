@@ -200,3 +200,4 @@ SpecialsPointers::
 	add_special BattleSubway_ResetCurrentStreak
 	add_special SnorlaxEvent_SetBattleType
 	add_special LegendaryEvent_SetBattleType
+	add_special CheckOtherPlayerGender

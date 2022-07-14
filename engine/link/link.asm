@@ -419,8 +419,16 @@ Gen2ToGen2LinkComms:
 	ld a, [wLinkMode]
 	cp LINK_BATTLE_PERIDOT
 	jr nz, .ready_to_trade
+	ldh a, [hLinkOtherPlayerGender]
+	and 1 << PLAYERGENDER_FEMALE_F
+	jr z, .Cal
+	ld a, JADE_LINK
+	ld [wOtherTrainerClass], a
+	jr .LoadedTrainer
+.Cal
 	ld a, CAL
 	ld [wOtherTrainerClass], a
+.LoadedTrainer
 	call ClearScreen
 	farcall Link_WaitBGMap
 	ld hl, wOptions
@@ -2309,6 +2317,14 @@ TryQuickSave:
 DoQuickSave:
 	farcall Subway_SaveGame
 	ret
+
+CheckOtherPlayerGender:
+	ld a, [wPlayerGender]
+	call Link_EnsureSync
+	ldh [hLinkOtherPlayerGender], a
+    call LinkDataReceived
+    call DelayFrame
+    jp LinkDataReceived
 
 CheckBothSelectedSameRoom:
 	ld a, [wChosenCableClubRoom]

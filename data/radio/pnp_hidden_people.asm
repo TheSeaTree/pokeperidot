@@ -14,7 +14,6 @@ PnP_HiddenPeople_BeatE4:
 	db POSEY
 	db JANINE
 	db SABRINA
-	db BLAINE
 	db CHAMPIONF
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:

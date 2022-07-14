@@ -48,7 +48,7 @@ BTTrainerClassGenders:
 	db MALE   ; GUITARIST
 	db MALE   ; HIKER
 	db MALE   ; BIKER
-	db MALE   ; BLAINE
+	db FEMALE ; JADE
 	db MALE   ; BURGLAR
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER

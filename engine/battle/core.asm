@@ -4055,7 +4055,7 @@ TryToRunAwayFromBattle:
 	call PlaceYesNoBox
 	ld a, [wMenuCursorY]
 	dec a
-	jp nz, BattleMenu
+	jp nz, LoadBattleMenu
 .can_escape
 	ld a, [wLinkMode]
 	and a
@@ -4371,6 +4371,9 @@ BreakAttraction:
 	ret
 
 CheckStatMirror:
+	ld a, [wLinkMode]
+	and a
+	jr nz, .PlayerFirst
 	call DetermineMoveOrder
 	jr c, .PlayerFirst
 	call SwitchTurnCore
@@ -6085,9 +6088,9 @@ MoveSelectionScreen:
 	dec a
 	cp c
 	jr z, .move_disabled
-	ld a, [wUnusedPlayerLockedMove]
-	and a
-	jr nz, .skip2
+;	ld a, [wUnusedPlayerLockedMove]
+;	and a
+;	jr nz, .skip2
 	ld a, [wMenuCursorY]
 	ld hl, wBattleMonMoves
 	ld c, a

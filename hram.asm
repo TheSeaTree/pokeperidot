@@ -12,7 +12,9 @@ hRTCHours::   db ; ff8f
 hRTCMinutes:: db ; ff90
 hRTCSeconds:: db ; ff91
 
-	ds 2
+hLinkOtherPlayerGender:: db
+
+	ds 1
 
 hHours:: db ; ff94
 	ds 1

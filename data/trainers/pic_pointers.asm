@@ -48,7 +48,7 @@ TrainerPicPointers::
 	dba GuitaristPic
 	dba HikerPic
 	dba BikerPic
-	dba BlainePic
+	dba GruntfPic ; Link Trainer, uses the same graphics as the female player.
 	dba BurglarPic
 	dba FirebreatherPic
 	dba JugglerPic

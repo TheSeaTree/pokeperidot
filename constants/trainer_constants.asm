@@ -413,7 +413,10 @@ CHRIS EQU __enum__
 	const LARS
 	const DANTE
 	
-	trainerclass BLAINE ; 2e
+	trainerclass JADE_LINK ; 2e
+	const JADE_LINK1
+	const JADE_LINK2
+	const JADE_LINK3
 
 	trainerclass BURGLAR ; 2f
 	const ALLEN
