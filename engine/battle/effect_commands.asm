@@ -2728,6 +2728,13 @@ PlayerAttackDamage:
 
 	ld a, [wEnemyScreens]
 	bit SCREENS_REFLECT, a
+	jr z, .checkburn
+	sla c
+	rl b
+
+.checkburn
+	ld a, [wBattleMonStatus]
+	and 1 << BRN
 	jr z, .physicalcrit
 	sla c
 	rl b
@@ -3145,6 +3152,13 @@ EnemyAttackDamage:
 
 	ld a, [wPlayerScreens]
 	bit SCREENS_REFLECT, a
+	jr z, .checkburn
+	sla c
+	rl b
+
+.checkburn
+	ld a, [wEnemyMonStatus]
+	and 1 << BRN
 	jr z, .physicalcrit
 	sla c
 	rl b
@@ -4034,8 +4048,6 @@ BattleCommand_BurnTarget:
 	call GetBattleVarAddr
 	set BRN, [hl]
 	call UpdateOpponentInParty
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
 	call RefreshBattleHuds
@@ -4956,9 +4968,6 @@ CalcPlayerStats:
 	ld hl, ApplyPrzEffectOnSpeed
 	call CallBattleCore
 
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
-
 	jp BattleCommand_SwitchTurn
 
 CalcEnemyStats:
@@ -4972,9 +4981,6 @@ CalcEnemyStats:
 	call BattleCommand_SwitchTurn
 
 	ld hl, ApplyPrzEffectOnSpeed
-	call CallBattleCore
-
-	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
 
 	jp BattleCommand_SwitchTurn
@@ -6036,8 +6042,6 @@ BattleCommand_Burn:
 	call GetBattleVarAddr
 	set BRN, [hl]
 	call UpdateOpponentInParty
-	ld hl, ApplyBrnEffectOnAttack
-	call CallBattleCore
 	ld de, ANIM_BRN
 	call PlayOpponentBattleAnim
 	call UpdateBattleHuds
