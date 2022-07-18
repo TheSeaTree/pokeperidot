@@ -25,7 +25,7 @@ ProfessorMapleSrScript:
 	closetext
 	turnobject LAST_TALKED, UP
 	end
-	
+
 ProfessorMapleSrAideScript:
 	faceplayer
 	opentext
@@ -34,7 +34,7 @@ ProfessorMapleSrAideScript:
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse .NotMet
 	checkflag ENGINE_UNOWN_DEX
-;	iftrue .AlreadyShown
+	iftrue .AlreadyShown
 	writebyte UNOWN
 	special FindPartyMonThatSpecies
 	iftrue .ShowUnown

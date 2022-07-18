@@ -147,10 +147,8 @@ TrainerCooltrainerMLeon:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_COOLTRAINERM_LEON
-	jump .FightDone
-	
-.FightDone:
 	opentext
+.FightDone:
 	checkevent EVENT_GOT_TM_HEADBUTT
 	iftrue .Headbutt
 	verbosegiveitem TM_HEADBUTT
