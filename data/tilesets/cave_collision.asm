@@ -225,3 +225,4 @@
 	tilecoll FLOOR, FLOOR, WALL, WALL ; e0
 	tilecoll WALL, WALL, WALL, FLOOR ; e1
 	tilecoll FLOOR, FLOOR, WALL, SMASH_WALL ; e2
+	tilecoll UP_WALL, UP_WALL, FLOOR, FLOOR ; e3
