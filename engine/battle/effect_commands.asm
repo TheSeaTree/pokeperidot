@@ -167,22 +167,7 @@ CheckPlayerTurn:
 	ld [wNumHits], a
 	ld de, ANIM_SLP
 	call FarPlayBattleAnimation
-	jr .fast_asleep
 
-.woke_up
-	ld hl, WokeUpText
-	call StdBattleTextBox
-	call CantMove
-	call UpdateBattleMonInParty
-	ld hl, UpdatePlayerHUD
-	call CallBattleCore
-	ld a, $1
-	ldh [hBGMapMode], a
-	ld hl, wPlayerSubStatus1
-	res SUBSTATUS_NIGHTMARE, [hl]
-	jr .not_asleep
-
-.fast_asleep
 	ld hl, FastAsleepText
 	call StdBattleTextBox
 
@@ -196,8 +181,17 @@ CheckPlayerTurn:
 	call CantMove
 	jp EndTurn
 
-.not_asleep
+.woke_up
+	ld hl, WokeUpText
+	call StdBattleTextBox
+	call CantMove
+	call UpdateBattleMonInParty
+	ld hl, UpdatePlayerHUD
+	call CallBattleCore
+	ld a, $1
+	ldh [hBGMapMode], a
 
+.not_asleep
 	ld hl, wBattleMonStatus
 	bit FRZ, [hl]
 	jr z, .not_frozen
@@ -409,8 +403,8 @@ CheckEnemyTurn:
 	call CallBattleCore
 	ld a, $1
 	ldh [hBGMapMode], a
-	ld hl, wEnemySubStatus1
-	res SUBSTATUS_NIGHTMARE, [hl]
+;	ld hl, wEnemySubStatus1
+;	res SUBSTATUS_NIGHTMARE, [hl]
 	jr .not_asleep
 
 .fast_asleep

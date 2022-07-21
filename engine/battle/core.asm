@@ -1259,6 +1259,17 @@ ResidualDamage:
 	call HasUserFainted
 	jr z, .fainted
 
+	ld hl, wBattleMonStatus
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .check_sleep
+	ld hl, wEnemyMonStatus
+
+.check_sleep
+	ld a, [hl]
+	and SLP
+	jr z, .not_nightmare
+
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	bit SUBSTATUS_NIGHTMARE, [hl]

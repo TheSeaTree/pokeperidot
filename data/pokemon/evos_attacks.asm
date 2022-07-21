@@ -1583,13 +1583,15 @@ DrowzeeEvosAttacks:
 	db 17, POISON_GAS
 	db 21, CALM_MIND
 	db 25, PSYBEAM
-	db 29, DRAIN_PUNCH
-	db 33, PSYCH_UP
-	db 36, MEAN_LOOK
-	db 41, PSYCHIC_M
-	db 45, SWAGGER
-	db 53, NASTY_PLOT
-	db 61, FUTURE_SIGHT
+	db 27, DRAIN_PUNCH
+	db 31, PSYCH_UP
+	db 33, DREAM_EATER
+	db 33, NIGHTMARE
+	db 36, PSYCHIC_M
+	db 38, MEAN_LOOK
+	db 40, SWAGGER
+	db 42, NASTY_PLOT
+	db 50, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 HypnoEvosAttacks:
@@ -1603,8 +1605,10 @@ HypnoEvosAttacks:
 	db 17, POISON_GAS
 	db 21, CALM_MIND
 	db 25, PSYBEAM
-	db 29, HEADBUTT
+	db 29, DRAIN_PUNCH
 	db 33, PSYCH_UP
+	db 35, DREAM_EATER
+	db 35, NIGHTMARE
 	db 41, PSYCHIC_M
 	db 43, MEAN_LOOK
 	db 45, SWAGGER
@@ -3985,6 +3989,7 @@ GreminiEvosAttacks:
 	db 36, RECOVER
 	db 40, SHADOW_BALL
 	db 46, DESTINY_BOND
+	db 50, NIGHTMARE
 	db 0 ; no more level-up moves
 
 SmoochumEvosAttacks:
