@@ -182,7 +182,7 @@ Moves: ; 41afb
 	move THIEF,        EFFECT_THIEF,              50, DARK,     100, 20, 100
 	move IRON_HEAD,    EFFECT_FLINCH_HIT,         80, STEEL,    100, 15,  30
 	move MIND_READER,  EFFECT_LOCK_ON,             0, NORMAL,   100,  5,   0
-	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100, 15,   0
+	move NIGHTMARE,    EFFECT_NIGHTMARE,           0, GHOST,    100,  5,   0
 	move FLAME_WHEEL,  EFFECT_FLAME_WHEEL,        60, FIRE,     100, 25,  10
 	move SNORE,        EFFECT_SNORE,             100, NORMAL,   100, 15,  30
 	move CURSE,        EFFECT_CURSE,               0, GHOST,    100, 10,   0
