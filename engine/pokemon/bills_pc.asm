@@ -1028,14 +1028,13 @@ BillsPC_BoxName:
 	call AddNTimes
 	ld e, l
 	ld d, h
-	jr .print
+	hlcoord 1, 2
+	jp PlaceString
 
 .party
 	ld de, .PartyPKMN
-.print
 	hlcoord 2, 2
-	call PlaceString
-	ret
+	jp PlaceString
 
 .PartyPKMN:
 	db "PARTY@"

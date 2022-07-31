@@ -209,7 +209,7 @@ SetDefaultBoxNames:
 	ld [hli], a
 	ld [hl], "@"
 	pop hl
-	ld de, 7 ; Change to 7 (Box Name Length)
+	ld de, 8
 	add hl, de
 	inc c
 	ld a, c
