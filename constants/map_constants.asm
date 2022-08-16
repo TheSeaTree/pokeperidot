@@ -85,6 +85,9 @@ ENDM
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const TENTACRUELS_DEN,						        8,  8
+	map_const MEWTWO_LAB_1F,						       18, 13
+	map_const MEWTWO_LAB_B1F,						       18,  8
+	map_const MEWTWO_LAB_2F,						       13,  8
 
 	newgroup                                                      ;  4
 
@@ -254,7 +257,8 @@ ENDM
 	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
 	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
 	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
-	map_const PAST_ROUTE_11,                               31, 16	
+	map_const PAST_ROUTE_11,                               31, 16
+	map_const PAST_ROUTE_11_GATE,                           5,  4
 	map_const PAST_ROUTE_11_INN,                            5,  4
 
 	newgroup                                                      ; 14

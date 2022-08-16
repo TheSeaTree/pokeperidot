@@ -128,7 +128,7 @@ ItemNames::
 	db "CARD KEY@"
 	db "MACHINE PART@"
 	db "EGG TICKET@"
-	db "LOST ITEM@"
+	db "LAB KEY@"
 	db "STARDUST@"
 	db "STAR PIECE@"
 	db "BASEMENT KEY@"

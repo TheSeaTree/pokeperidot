@@ -51,6 +51,8 @@ HallOfFame_MapScripts:
 ;	setevent EVENT_TELEPORT_GUY
 ;	setevent EVENT_RIVAL_SPROUT_TOWER
 ;	clearevent EVENT_RED_IN_MT_SILVER
+	clearevent EVENT_HO_OH_CASTLE_HIDDEN_SACRED_ASH
+	clearevent EVENT_MEWTWO_LAB_HIDDEN_BERSERK_GENE
 	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	special HealParty
 	halloffame

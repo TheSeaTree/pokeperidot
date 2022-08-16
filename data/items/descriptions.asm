@@ -129,7 +129,7 @@ ItemDescriptions:
 	dw CardKeyDesc
 	dw MachinePartDesc
 	dw EggTicketDesc
-	dw LostItemDesc
+	dw LabKeyDesc
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
@@ -772,9 +772,9 @@ EggTicketDesc:
 	db   "May use at Golden-"
 	next "rod trade corner.@"
 
-LostItemDesc:
-	db   "The # DOLL lost"
-	next "by the COPYCAT.@"
+LabKeyDesc:
+	db   "An old-looking"
+	next "keycard.@"
 
 StardustDesc:
 	db   "Pretty, red sand."

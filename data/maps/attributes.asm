@@ -588,5 +588,9 @@ ENDM
 	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
 	map_attributes Route26Gate, ROUTE_26_GATE, $00, 0
 	map_attributes Route28Gate, ROUTE_28_GATE, $00, 0
-	map_attributes NorthForest, NORTH_FOREST, $00, 0
+	map_attributes NorthForest, NORTH_FOREST, $07, 0
 	map_attributes DevelopersHouse, DEVELOPERS_HOUSE, $00, 0
+	map_attributes PastRoute11Gate, PAST_ROUTE_11_GATE, $00, 0
+	map_attributes MewtwoLab1F, MEWTWO_LAB_1F, $00, 0
+	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
+	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0

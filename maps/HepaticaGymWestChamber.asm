@@ -44,6 +44,8 @@ TrainerGuitaristBobby:
 
 HepaticaGymWestChamberLightsOn:
 	opentext
+	checkflag ENGINE_FLASH
+	iftrue .flipped
 	writetext HepaticaGymWestChamberLightsOnText
 	yesorno
 	iffalse .no
@@ -58,7 +60,13 @@ HepaticaGymWestChamberLightsOn:
 .no
 	closetext
 	end
-	
+
+.flipped
+	writetext HepaticaGymLightsOnText
+	waitbutton
+	closetext
+	end
+
 WestChamberLightsOnSTD:
 	jumpstd lightuproom
 	end

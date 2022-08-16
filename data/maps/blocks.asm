@@ -100,6 +100,7 @@ Route14Gate_Blocks:
 Route20AcroporaGate_Blocks:
 Route25Gate_Blocks:
 Route23Gate_Blocks:
+PastRoute11Gate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route28Gate_Blocks:
@@ -899,3 +900,12 @@ PastPectiniaApartment3F_Blocks:
 
 DevelopersHouse_Blocks:
 	INCBIN "maps/DevelopersHouse.ablk"
+
+MewtwoLab1F_Blocks:
+	INCBIN "maps/MewtwoLab1F.ablk"
+
+MewtwoLabB1F_Blocks:
+	INCBIN "maps/MewtwoLabB1F.ablk"
+
+MewtwoLab2F_Blocks:
+	INCBIN "maps/MewtwoLab2F.ablk"

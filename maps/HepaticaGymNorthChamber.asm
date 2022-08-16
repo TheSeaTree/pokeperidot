@@ -55,6 +55,8 @@ TrainerGuitaristIvan:
 	
 HepaticaGymNorthChamberLightsOn:
 	opentext
+	checkflag ENGINE_FLASH
+	iftrue .flipped
 	writetext HepaticaGymNorthChamberLightsOnText
 	yesorno
 	iffalse .no
@@ -71,7 +73,13 @@ HepaticaGymNorthChamberLightsOn:
 .no
 	closetext
 	end
-	
+
+.flipped
+	writetext HepaticaGymLightsOnText
+	waitbutton
+	closetext
+	end
+
 NorthChamberLightsOnSTD:
 	jumpstd lightuproom
 	end

@@ -43,6 +43,8 @@ TrainerGuitaristColin:
 	
 HepaticaGymEastChamberLightsOn:
 	opentext
+	checkflag ENGINE_FLASH
+	iftrue .flipped
 	writetext HepaticaGymEastChamberLightsOnText
 	yesorno
 	iffalse .no
@@ -55,6 +57,12 @@ HepaticaGymEastChamberLightsOn:
 	appear GOLDENRODEASTROOM_ROCKER3
 	special FadeInQuickly
 .no
+	closetext
+	end
+
+.flipped
+	writetext HepaticaGymLightsOnText
+	waitbutton
 	closetext
 	end
 
@@ -142,6 +150,12 @@ HepaticaGymEastChamberLightsOnText:
 	cont "the lights."
 
 	para "Flip it?"
+	done
+
+HepaticaGymLightsOnText:
+	text "The lights don't"
+	line "seem to turn"
+	cont "back off."
 	done
 
 HepaticaGymEastChamberLeaderSwitchText:

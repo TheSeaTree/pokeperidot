@@ -419,6 +419,9 @@ INCLUDE "maps/PalerockMountainStrengthRoom.asm"
 INCLUDE "maps/PalerockMountainHiddenCave.asm"
 INCLUDE "maps/SkarmorysDen.asm"
 INCLUDE "maps/OverlookMaze.asm"
+INCLUDE "maps/MewtwoLab1F.asm"
+INCLUDE "maps/MewtwoLabB1F.asm"
+INCLUDE "maps/MewtwoLab2F.asm"
 
 
 SECTION "Map Scripts 26", ROMX
@@ -442,6 +445,7 @@ INCLUDE "maps/time-travel/PastPectiniaGym.asm"
 INCLUDE "maps/time-travel/PastRoute3.asm"
 INCLUDE "maps/time-travel/PastFaviaTown.asm"
 INCLUDE "maps/time-travel/PastRoute11.asm"
+INCLUDE "maps/time-travel/PastRoute11Gate.asm"
 INCLUDE "maps/time-travel/PastIlexForest.asm"
 INCLUDE "maps/time-travel/PastElkhornTown.asm"
 INCLUDE "maps/time-travel/PastRoute1.asm"

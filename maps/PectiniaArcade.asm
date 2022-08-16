@@ -161,12 +161,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext LEFTOVERS, MEM_BUFFER_0
 .GiveReward16:
 	copybytetovar wBattleSubwayBestStreak
-	ifless 255, .NoMoreRewards
-	giveitem LEFTOVERS
-	iffalse .NoSpace
-	setevent EVENT_ARCADE_REWARD_16
-	writebyte 255
-	itemtotext LEFTOVERS, MEM_BUFFER_0
+	ifgreater 254, .MaxScoreReward
+
 .ReceivedReward:
 	writetext PectiniaArcadeRewardReceiveText
 	waitbutton
@@ -201,7 +197,7 @@ PectiniaArcadeSubwayRewardGuy:
 	checkevent EVENT_ARCADE_REWARD_15
 	iffalse .GiveReward15
 	checkevent EVENT_ARCADE_REWARD_16
-	iffalse .GiveReward15
+	iffalse .GiveReward16
 
 .NoMoreRewards:
 	writetext PectiniaArcadeRewardAfterText
@@ -220,7 +216,13 @@ PectiniaArcadeSubwayRewardGuy:
 	iffalse .NoSpace
 	writetext PectiniaArcadeMaxStreakText
 	waitbutton
+	writetext PectiniaArcadeReceiveMasterBallText
+	playsound SFX_ITEM
+	pause 60
+	writetext PectiniaArcadePutAwayMasterBallText
+	waitbutton
 	closetext
+	setevent EVENT_ARCADE_REWARD_16
 	end
 
 PectiniaArcadeClerk:
@@ -520,10 +522,9 @@ PectiniaArcadeRewardReceiveText:
 	done
 
 PectiniaArcadeMaxStreakText:
-	text "Woah! You got the"
-	line "maximum possible"
-	cont "streak on the"
-	cont "BATTLE SUBWAY?"
+	text "Woah! You got a"
+	line "streak of 255 on"
+	cont "the BATTLE SUBWAY?"
 
 	para "You must really"
 	line "be some kind of"
@@ -533,6 +534,17 @@ PectiniaArcadeMaxStreakText:
 	line "earned these"
 	cont "MASTER BALLs!"
 	done
+
+PectiniaArcadeReceiveMasterBallText:
+	text "<PLAYER> received"
+	line "99 MASTER BALLs!"
+	done
+
+PectiniaArcadePutAwayMasterBallText:
+	text "<PLAYER> put the"
+	line "MASTER BALLs in"
+	cont "the BALL POCKET."
+	prompt
 
 PectiniaArcadeRewardNoRoomText:
 	text "Aw, that's too bad…"

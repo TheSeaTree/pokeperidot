@@ -596,7 +596,7 @@ PowerPlant1FMonitorText:
 	cont "from this PC."
 	
 	para "I'm also closest"
-	cont "to the door just"
+	line "to the door just"
 	cont "in case anything"
 	cont "goes wrong."
 	done

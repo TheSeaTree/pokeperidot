@@ -70,22 +70,22 @@ KeySlotText:
 	text "It looks like a"
 	line "KEY would go here."
 	done
-	
+
 NeedsAKeyText:
 	text "This door needs a"
 	line "KEY to open."
 	done
-	
+
 OpenDoorText:
 	text "<PLAYER> used"
 	line "the BASEMENT KEY!"
 	done
-	
+
 UsedTheKeyText:
 	text "The door is"
 	line "already open."
 	done
-	
+
 FactoryB1_MapEvents:
 	db 0, 0 ; filler
 

@@ -178,7 +178,6 @@ SECTION "bank10", ROMX
 
 INCLUDE "data/moves/moves.asm"
 INCLUDE "engine/pokemon/evolve.asm"
-INCLUDE "engine/overworld/wildmons.asm"
 
 
 SECTION "bank11", ROMX
@@ -340,6 +339,7 @@ INCLUDE "engine/events/magnet_train.asm"
 
 SECTION "bank28", ROMX
 
+INCLUDE "engine/overworld/wildmons.asm"
 
 SECTION "bank29", ROMX
 

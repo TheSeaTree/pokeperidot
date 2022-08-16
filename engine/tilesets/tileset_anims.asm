@@ -342,6 +342,10 @@ TilesetFacilityAnim:
 	dw vTiles2 tile $6c, AnimateTopRightTubeTile
 	dw vTiles2 tile $7b, AnimateBottomLeftTubeTile
 	dw vTiles2 tile $7c, AnimateBottomRightTubeTile
+	dw vTiles2 tile $69, AnimateTopLeftEmptyTubeTile
+	dw vTiles2 tile $6a, AnimateTopRightEmptyTubeTile
+	dw vTiles2 tile $79, AnimateBottomLeftEmptyTubeTile
+	dw vTiles2 tile $7a, AnimateBottomRightEmptyTubeTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
@@ -1075,6 +1079,146 @@ AnimateBottomRightTubeTile:
 
 BottomRightTubeTileFrames:
 	INCBIN "gfx/tilesets/tube/bottom_right.2bpp"
+
+
+AnimateTopLeftEmptyTubeTile:
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopLeftEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopLeftEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopLeftEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/top_left.2bpp"
+
+AnimateTopRightEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopRightEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopRightEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopRightEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/top_right.2bpp"
+
+AnimateBottomLeftEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomLeftEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomLeftEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomLeftEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/bottom_left.2bpp"
+
+AnimateBottomRightEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomRightEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomRightEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomRightEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/bottom_right.2bpp"
 
 ForestTreeLeftAnimation:
 	ld hl, sp+0

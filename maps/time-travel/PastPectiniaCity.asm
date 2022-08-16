@@ -18,7 +18,7 @@ PastPectiniaCity_MapEvents:
 	warp_event 51, 25, PAST_PECTINIA_CITY,  7 ; Berry House
 	warp_event 40, 17, PAST_PECTINIA_GYM,   1 ; Police Station
 	warp_event 37, 11, PAST_PECTINIA_CITY,  9 ; Evolution House
-	warp_event 23, 11, PAST_PECTINIA_APARTMENT_1F, 10 ; Apartments
+	warp_event 23, 11, PAST_PECTINIA_APARTMENT_1F, 1
 
 	db 0 ; coord events
 

@@ -320,9 +320,6 @@ INCBIN "data/tilesets/pokecenter_attributes.bin"
 TilesetLabAttr:
 INCBIN "data/tilesets/lab_attributes.bin"
 
-TilesetIcePathAttr:
-INCBIN "data/tilesets/ice_path_attributes.bin"
-
 TilesetVolcanoAttr:
 INCBIN "data/tilesets/volcano_attributes.bin"
 
@@ -481,3 +478,6 @@ INCLUDE "data/tilesets/forest_collision.asm"
 
 TilesetTowerAttr:
 INCBIN "data/tilesets/tower_attributes.bin"
+
+TilesetIcePathAttr:
+INCBIN "data/tilesets/ice_path_attributes.bin"

@@ -447,7 +447,7 @@ Route12AssistantYes:
 	line "very much!"
 	
 	para "MAROWAK would love"
-	cont "to play in THE"
+	line "to play in THE"
 	cont "BONEYARD when it"
 	cont "was young."
 	
