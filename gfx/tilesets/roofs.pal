@@ -109,3 +109,7 @@
 ; group 27 (Palerock)
 	RGB 14,17,31, 07,11,15 ; morn/day
 	RGB 09,09,17, 05,07,13 ; nite
+
+; group 28 (North Forest)
+	RGB 31,19,27, 16,05,20 ; morn/day
+	RGB 31,19,27, 16,05,20 ; nite

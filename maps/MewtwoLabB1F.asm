@@ -49,6 +49,15 @@ MewtwoLabLightUpRoom:
 	jumpstd lightuproom
 	end
 
+MewtwoLabB1FNugget:
+	itemball NUGGET
+
+MewtwoLabB1FMaxRevive:
+	itemball MAX_REVIVE
+
+MewtwoLabB1FHiddenRareCandy:
+	hiddenitem RARE_CANDY, EVENT_MEWTWO_LAB_HIDDEN_RARE_CANDY
+
 MewtwoLabPowerSwitchText:
 	text "This switch is"
 	line "labeled “BACKUP"
@@ -85,7 +94,10 @@ MewtwoLabB1F_MapEvents:
 	
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 10, 12, BGEVENT_UP, MewtwoLabPowerSwitch
+	bg_event 20, 14, BGEVENT_ITEM, MewtwoLabB1FHiddenRareCandy
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 0, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLabB1FNugget, EVENT_MEWTWO_LAB_NUGGET
+	object_event 15,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLabB1FMaxRevive, EVENT_MEWTWO_LAB_MAX_REVIVE

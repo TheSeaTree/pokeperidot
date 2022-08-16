@@ -89,6 +89,15 @@ NorthForestRivalAfterBattle:
 	closetext
 	end
 
+NorthForestHiddenRevivalHerb:
+	hiddenitem REVIVAL_HERB, EVENT_NORTH_FOREST_HIDDEN_REVIVAL_HERB
+
+NorthForestHiddenXAttack:
+	hiddenitem REVIVAL_HERB, EVENT_NORTH_FOREST_HIDDEN_X_ATTACK
+
+NorthForestHiddenXSpAtk:
+	hiddenitem X_SP_ATK, EVENT_NORTH_FOREST_HIDDEN_X_SP_ATK
+
 NorthForestRivalApproachPlayerRight:
 	step RIGHT
 NorthForestRivalApproachPlayerLeft:
@@ -264,7 +273,10 @@ NorthForest_MapEvents:
 	coord_event 17, 24, SCENE_DEFAULT, NorthForestRivalBattleLeft
 	coord_event 18, 24, SCENE_DEFAULT, NorthForestRivalBattleRight
 
-	db 0 ; bg events
+	db 3 ; bg events
+	bg_event 32, 21, BGEVENT_ITEM, NorthForestHiddenRevivalHerb
+	bg_event 31,  7, BGEVENT_ITEM, NorthForestHiddenXAttack
+	bg_event 11,  3, BGEVENT_ITEM, NorthForestHiddenXSpAtk
 
 	db 2 ; object events
 	object_event 17, 21, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_POSTGAME

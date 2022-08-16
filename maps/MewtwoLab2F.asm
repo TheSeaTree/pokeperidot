@@ -48,6 +48,18 @@ MewtwoLab2FShutterButton:
 	closetext
 	end
 
+MewtwoLab2FPokeDoll:
+	itemball POKE_DOLL
+
+MewtwoLab2FUltraBall:
+	itemball ULTRA_BALL
+
+MewtwoLab1FHiddenXDefend:
+	hiddenitem X_DEFEND, EVENT_MEWTWO_LAB_HIDDEN_X_DEFEND
+
+MewtwoLab1FHiddenXSpDef:
+	hiddenitem X_SP_DEF, EVENT_MEWTWO_LAB_HIDDEN_X_SP_DEF
+
 MewtwoLabUnresponsiveButtonsText:
 	text "The button to open"
 	line "this shutter is"
@@ -90,7 +102,11 @@ MewtwoLab2F_MapEvents:
 	
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 3 ; bg events
 	bg_event 8, 11, BGEVENT_UP, MewtwoLab2FShutterButton
+	bg_event  4, 15, BGEVENT_ITEM, MewtwoLab1FHiddenXDefend
+	bg_event 25,  1, BGEVENT_ITEM, MewtwoLab1FHiddenXSpDef
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FPokeDoll, EVENT_MEWTWO_LAB_POKE_DOLL
+	object_event 25, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FUltraBall, EVENT_MEWTWO_LAB_ULTRA_BALL

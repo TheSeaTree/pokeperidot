@@ -2254,4 +2254,112 @@ GrassWildMons:
 	db 50, NATU
 	db 50, NATU
 
+	map_id NORTH_FOREST
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 58, LICKITUNG
+	db 58, EXEGGCUTE
+	db 65, SUNKERN
+	db 59, FARFETCH_D
+	db 60, EXEGGCUTE
+	db 59, HERACROSS
+	db 60, HERACROSS
+	; day
+	db 58, LICKITUNG
+	db 58, EXEGGCUTE
+	db 60, PARASECT
+	db 59, FARFETCH_D
+	db 60, EXEGGCUTE
+	db 59, HERACROSS
+	db 60, HERACROSS
+	; nite
+	db 58, LICKITUNG
+	db 58, EXEGGCUTE
+	db 60, PARASECT
+	db 59, MURKROW
+	db 60, EXEGGCUTE
+	db 59, HERACROSS
+	db 60, HERACROSS
+
+	map_id MEWTWO_LAB_1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 58, ELECTABUZZ
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, ARCANINE
+	db 60, KADABRA
+	db 59, PERSIAN
+	db 60, PERSIAN
+	; day
+	db 58, ELECTABUZZ
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, ARCANINE
+	db 60, KADABRA
+	db 59, ARBOK
+	db 60, ARBOK
+	; nite
+	db 58, ELECTABUZZ
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, ARCANINE
+	db 60, HAUNTER
+	db 59, WEEZING
+	db 60, WEEZING
+
+	map_id MEWTWO_LAB_B1F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 58, PIKACHU
+	db 58, HYPNO
+	db 61, PARASECT
+	db 59, VENOMOTH
+	db 60, KADABRA
+	db 59, MISDREAVUS
+	db 60, DITTO
+	; day
+	db 58, PIKACHU
+	db 58, HYPNO
+	db 61, PARASECT
+	db 59, VENOMOTH
+	db 60, KADABRA
+	db 59, MISDREAVUS
+	db 60, DITTO
+	; nite
+	db 58, PIKACHU
+	db 58, HYPNO
+	db 61, PARASECT
+	db 59, VENOMOTH
+	db 60, HAUNTER
+	db 59, MISDREAVUS
+	db 60, DITTO
+
+	map_id MEWTWO_LAB_2F
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 58, MAGNETON
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, GOLBAT
+	db 60, KADABRA
+	db 59, PERSIAN
+	db 60, PERSIAN
+	; day
+	db 58, MAGNETON
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, GOLBAT
+	db 60, KADABRA
+	db 59, ARBOK
+	db 60, ARBOK
+	; nite
+	db 58, MAGNETON
+	db 58, HYPNO
+	db 61, ARIADOS
+	db 59, GOLBAT
+	db 60, HAUNTER
+	db 59, WEEZING
+	db 60, WEEZING
+
 	db -1 ; end

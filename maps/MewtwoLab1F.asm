@@ -155,8 +155,20 @@ MewtwoLabDoor:
 MewtwoLab1FLabKey:
 	itemball LAB_KEY
 
+MewtwoLab1FCarbos:
+	itemball CARBOS
+
+MewtwoLab1FTwistedSpoon:
+	itemball TWISTEDSPOON
+
 MewtwoLabHiddenBerserkGene:
 	hiddenitem BERSERK_GENE, EVENT_MEWTWO_LAB_HIDDEN_BERSERK_GENE
+
+MewtwoLab1FHiddenXSpeed:
+	hiddenitem X_SPEED, EVENT_MEWTWO_LAB_HIDDEN_X_SPEED
+
+MewtwoLab1FHiddenFullRestore:
+	hiddenitem FULL_RESTORE, EVENT_MEWTWO_LAB_HIDDEN_FULL_RESTORE
 
 MewtwoText:
 	text "Mew!"
@@ -209,12 +221,16 @@ MewtwoLab1F_MapEvents:
 	
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 6 ; bg events
 	bg_event 18,  4, BGEVENT_ITEM, MewtwoLabHiddenBerserkGene
 	bg_event 32, 14, BGEVENT_READ, MewtwoLab1FShutterButton
 	bg_event 19,  8, BGEVENT_UP, MewtwoLabDoor
 	bg_event  4, 14, BGEVENT_UP, MewtwoLabExitShutter
+	bg_event 26, 12, BGEVENT_ITEM, MewtwoLab1FHiddenXSpeed
+	bg_event 24, 23, BGEVENT_ITEM, MewtwoLab1FHiddenFullRestore
 
-	db 2 ; object events
+	db 4 ; object events
 	object_event 18,  4, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Mewtwo, EVENT_FOUGHT_MEWTWO
 	object_event 31,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FLabKey, EVENT_MEWTWO_LAB_LAB_KEY
+	object_event  0, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FCarbos, EVENT_MEWTWO_LAB_CARBOS
+	object_event  8,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FTwistedSpoon, EVENT_MEWTWO_LAB_TWISTEDSPOON
