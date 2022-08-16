@@ -38,6 +38,7 @@ MapGroupRoofs:
 	db -1             ; 25
 	db ROOF_NEW_BARK  ; 26 (Pavona)
 	db ROOF_SNOWY	  ; 26 (Palerock)
+	db -1			  ; 27 (North Forest)
 
 Roofs:
 ; entries correspond to ROOF_* constants

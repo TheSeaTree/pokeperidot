@@ -12,21 +12,39 @@ Route28Gate_MapScripts:
 	end
 
 Route28GateOfficerScript:
-	jumptextfaceplayer Route28GateOfficerText
+	jumptextfaceplayer TrainerOfficerMatthewAfterText
 
 Route28OfficerBattleRight:
-	playmusic MUSIC_OFFICER_ENCOUNTER
-	showemote EMOTE_SHOCK, ROUTE28GATE_OFFICER, 30
+	scall OfficerMatthewStopPlayer
 	applymovement PLAYER, Route28GatePlayerMovement
 	jump Route28OfficerBattleCommon
 
 Route28OfficerBattleLeft:
-	playmusic MUSIC_OFFICER_ENCOUNTER
-	showemote EMOTE_SHOCK, ROUTE28GATE_OFFICER, 30
+	scall OfficerMatthewStopPlayer
 	turnobject PLAYER, LEFT
 Route28OfficerBattleCommon:
+	opentext
+	writetext TrainerOfficerMatthewText
+	waitbutton
+	closetext
+	winlosstext TrainerOfficerMatthewWinText, 0
+	loadtrainer OFFICER, MATTHEW
+	startbattle
 	reloadmapafterbattle
+	opentext
+	writetext TrainerOfficerMatthewAfterText
+	waitbutton
+	closetext
 	setscene SCENE_FINISHED
+	end
+
+OfficerMatthewStopPlayer:
+	playmusic MUSIC_OFFICER_ENCOUNTER
+	showemote EMOTE_SHOCK, ROUTE28GATE_OFFICER, 30
+	opentext
+	writetext TrainerOfficerMatthewStopPlayerText
+	waitbutton
+	closetext
 	end
 
 Route28GatePlayerMovement:
@@ -36,6 +54,36 @@ Route28GatePlayerMovement:
 Route28GateOfficerText:
 	text "You beat me in"
 	line "battle."
+	done
+
+TrainerOfficerMatthewStopPlayerText:
+	text "Freeze!"
+	done
+
+TrainerOfficerMatthewText:
+	text "No way I'm going to"
+	line "let a second tres-"
+	cont "passer through!"
+	done
+
+TrainerOfficerMatthewWinText:
+	text "Man! You kids are"
+	line "getting strong!"
+
+	para "My #MON just"
+	line "can't keep up."
+	done
+
+TrainerOfficerMatthewAfterText:
+	text "After you and the"
+	line "other kid who came"
+	cont "by today, I really"
+	cont "need to train my"
+	cont "#MON harder."
+
+	para "What use is an"
+	line "OFFICER who can't"
+	cont "defend his gate?"
 	done
 
 Route28Gate_MapEvents:

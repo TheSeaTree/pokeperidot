@@ -30,6 +30,7 @@ OutdoorSprites:
 	dw SaffronGroupSprites
 	dw PavonaGroupSprites
 	dw PalerockGroupSprites
+	dw NorthForestGroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
@@ -496,4 +497,9 @@ PalerockGroupSprites:
 	db SPRITE_POKE_BALL
 	db SPRITE_BOULDER
 	db 0 ; end
+
+NorthForestGroupSprites:
+	db SPRITE_SILVER
+	db SPRITE_MEWTWO
+	db 0
 	

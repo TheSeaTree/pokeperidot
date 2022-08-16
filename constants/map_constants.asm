@@ -85,9 +85,6 @@ ENDM
 	map_const ROUTE_7_CAVE_1F,							   13, 10
 	map_const ROUTE_7_CAVE_B1F,							   21, 19
 	map_const TENTACRUELS_DEN,						        8,  8
-	map_const MEWTWO_LAB_1F,						       18, 13
-	map_const MEWTWO_LAB_B1F,						       18,  8
-	map_const MEWTWO_LAB_2F,						       13,  8
 
 	newgroup                                                      ;  4
 
@@ -418,9 +415,8 @@ ENDM
 	map_const MAPLES_LAB_ELEVATOR,					        2,  2
 	map_const BATTLE_SIMULATION,					       10,  7
 	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
-	map_const ROUTE_28,					           		   16, 18
+	map_const ROUTE_28,					           		   16, 16
 	map_const ROUTE_28_GATE,					            3,  4
-	map_const NORTH_FOREST,					           	   20, 15
 	map_const DEVELOPERS_HOUSE,				           	    5,  4
 
 	newgroup                                                      ; 26
@@ -457,4 +453,10 @@ ENDM
 	map_const UNOWN_CHAMBER_OU,                             6,  7 ; 52
 	map_const UNOWN_CHAMBER_VZ,                             6,  7 ; 52
 	map_const TREASURE_HUNTERS_HOUSE,                       7,  5
+	
+	newgroup
+	map_const NORTH_FOREST,					           	   20, 15
+	map_const MEWTWO_LAB_1F,						       18, 13
+	map_const MEWTWO_LAB_B1F,						       18,  8
+	map_const MEWTWO_LAB_2F,						       13,  8
 	

@@ -399,6 +399,7 @@ CHRIS EQU __enum__
 	const ZEKE
 	const VINCENT
 	const ISAIAH
+	const NOAH
 	
 	trainerclass BIKER ; 2d
 	const JERRY
@@ -553,6 +554,7 @@ CHRIS EQU __enum__
 	const HARRY
 	const DANIEL1
 	const DANIEL2
+	const MATTHEW
 	
 	trainerclass JADE ; 42
 
