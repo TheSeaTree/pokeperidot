@@ -1551,13 +1551,13 @@ Pokedex_DrawFootprint:
 	hlcoord 18, 1
 	ld a, $62
 	ld [hli], a
-	inc a
-	ld [hl], a
-	hlcoord 18, 2
-	ld a, $64
+;	inc a
+;	ld [hl], a
+	hlcoord 19, 1
+	ld a, $63
 	ld [hli], a
-	inc a
-	ld [hl], a
+;	inc a
+;	ld [hl], a
 	ret
 
 Pokedex_GetSelectedMon:
@@ -2378,7 +2378,7 @@ Pokedex_LoadAnyFootprint:
 	ld e, l
 	ld d, h
 	ld hl, vTiles2 tile $62
-	lb bc, BANK(Footprints), 2
+	lb bc, BANK(Footprints), 1
 	call Request1bpp
 	pop hl
 
@@ -2389,8 +2389,8 @@ Pokedex_LoadAnyFootprint:
 
 	ld e, l
 	ld d, h
-	ld hl, vTiles2 tile $64
-	lb bc, BANK(Footprints), 2
+	ld hl, vTiles2 tile $63
+	lb bc, BANK(Footprints), 1
 	call Request1bpp
 
 	ret

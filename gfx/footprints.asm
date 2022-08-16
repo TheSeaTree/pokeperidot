@@ -217,7 +217,7 @@ INCBIN "gfx/types/ghost.1bpp",     primary_type ;Gengar
 INCBIN "gfx/types/rock.1bpp",       primary_type ;Onix
 INCBIN "gfx/types/psychic.1bpp",    primary_type ;Drowzee
 ; 089-096 second type
-INCBIN "gfx/types/dark.1bpp",        secondary_type ;Muk
+INCBIN "gfx/types/none.1bpp",        secondary_type ;Muk
 INCBIN "gfx/types/none.1bpp",   secondary_type ;Shellder
 INCBIN "gfx/types/ice.1bpp",   secondary_type ;Cloyster
 INCBIN "gfx/types/poison.1bpp",     secondary_type ;Gastly
@@ -232,7 +232,7 @@ INCBIN "gfx/types/water.1bpp",    primary_type ;Kingler
 INCBIN "gfx/types/electric.1bpp",    primary_type ;Voltorb
 INCBIN "gfx/types/electric.1bpp",  primary_type ;Electrode
 INCBIN "gfx/types/grass.1bpp",  primary_type ;Exeggcute
-INCBIN "gfx/types/psychic.1bpp",  primary_type ;Exeggutor
+INCBIN "gfx/types/grass.1bpp",  primary_type ;Exeggutor
 INCBIN "gfx/types/ground.1bpp",     primary_type ;Cubone
 ; 097-104 second type
 INCBIN "gfx/types/none.1bpp",      secondary_type ;Hypno
