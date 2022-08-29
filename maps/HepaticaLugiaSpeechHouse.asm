@@ -154,4 +154,4 @@ HepaticaLugiaSpeechHouse_MapEvents:
 	db 3 ; object events
 	object_event  2,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, HepaticaLugiaSpeechHouseTeacherScript, -1
 	object_event  4,  5, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 2, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, FlySpearow, -1
-	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STILL, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, HepaticaLugiaSpeechHouseHikerScript, EVENT_CIANWOOD_FLY_GUY
+	object_event  5,  3, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, HepaticaLugiaSpeechHouseHikerScript, EVENT_CIANWOOD_FLY_GUY

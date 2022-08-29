@@ -206,11 +206,11 @@ UnionCaveRivalWinText:
 	
 UnionCaveRivalLossText:
 	text "Just as I thought."
-	
+
 	para "That last time was"
 	line "a fluke."
 	done
-	
+
 UnionCaveRivalAfterText:
 	text "…"
 	done

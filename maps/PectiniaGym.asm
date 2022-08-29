@@ -286,7 +286,7 @@ MurphyText_FistBadgeSpeech:
 	done
 
 MurphyText_FuryCutterSpeech:
-	text "TM08 contains"
+	text "TM38 contains"
 	line "ROCK SMASH."
 
 	para "It has a good"
