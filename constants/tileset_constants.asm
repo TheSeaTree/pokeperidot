@@ -39,7 +39,7 @@
 	const TILESET_CYBERSPACE       			; 2e
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
-; TilesetBGPalette indexes (see gfx/tilesets/bg_tiles.pal)
+; TilesetBGPalette indexes (see gfx/tilesets_pals/bg_tiles.pal)
 	const_def
 	const PAL_BG_GRAY   ; 0
 	const PAL_BG_RED    ; 1

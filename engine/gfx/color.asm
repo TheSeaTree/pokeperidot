@@ -1406,7 +1406,7 @@ PartyMenuBGPalette:
 INCLUDE "gfx/stats/party_menu_bg.pal"
 
 TilesetBGPalette:
-INCLUDE "gfx/tilesets/bg_tiles.pal"
+INCLUDE "gfx/tilesets_pals/bg_tiles.pal"
 
 MapObjectPals::
 INCLUDE "gfx/overworld/npc_sprites.pal"
@@ -1415,7 +1415,7 @@ VolcanoObjectPals::
 INCLUDE "gfx/overworld/npc_sprites_volcano.pal"
 
 RoofPals:
-INCLUDE "gfx/tilesets/roofs.pal"
+INCLUDE "gfx/tilesets_pals/roofs.pal"
 
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
@@ -1451,4 +1451,4 @@ SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
 
 DarknessPals:
-INCLUDE "gfx/tilesets/darkness.pal"
+INCLUDE "gfx/tilesets_pals/darkness.pal"
