@@ -31,6 +31,7 @@ OutdoorSprites:
 	dw PavonaGroupSprites
 	dw PalerockGroupSprites
 	dw NorthForestGroupSprites
+	dw SeaRoute7GroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
@@ -218,7 +219,9 @@ IndigoGroupSprites:
 	db SPRITE_BUENA
 	db SPRITE_ROCKER
 	db SPRITE_TEACHER
+	db SPRITE_POKEFAN_M
 	; 0 of max 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 NewBarkGroupSprites:
@@ -502,4 +505,10 @@ NorthForestGroupSprites:
 	db SPRITE_SILVER
 	db SPRITE_MEWTWO
 	db 0
-	
+
+SeaRoute7GroupSprites:
+; Sea Route 7
+	db SPRITE_POKEFAN_M
+	; 0 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db 0 ; end

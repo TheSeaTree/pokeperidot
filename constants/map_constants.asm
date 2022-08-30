@@ -41,7 +41,6 @@ ENDM
 	map_const SEA_ROUTE_5,                                 22, 17 ;  3
 	map_const SEA_ROUTE_6,                                 19, 19 ;  3
 	map_const ROUTE_6_GATE,                                 5,  4 ;  3
-	map_const SEA_ROUTE_7,                                 14, 15
 
 	newgroup                                                      ;  2
 
@@ -455,8 +454,12 @@ ENDM
 	map_const TREASURE_HUNTERS_HOUSE,                       7,  5
 	
 	newgroup
+
 	map_const NORTH_FOREST,					           	   20, 15
 	map_const MEWTWO_LAB_1F,						       18, 13
 	map_const MEWTWO_LAB_B1F,						       18,  8
 	map_const MEWTWO_LAB_2F,						       13,  8
 	
+	newgroup
+	
+	map_const SEA_ROUTE_7,                                 14, 15
