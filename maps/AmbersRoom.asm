@@ -37,7 +37,7 @@ AmberScript_Battle:
 	closetext
 	winlosstext AmberScript_AmberBeatenText, 0
 	loadtrainer AMBER, AMBER1
-	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
+	writecode VAR_BATTLETYPE, BATTLETYPE_LEAGUE
 	startbattle
 	reloadmapafterbattle
 	opentext
