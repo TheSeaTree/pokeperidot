@@ -135,9 +135,8 @@ BattleSimulationChallengeCancelled:
 BattleSimulation_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  8, 13, BATTLE_SIMULATION, 2
-	warp_event  9, 13, BATTLE_SIMULATION, 1
+	db 1 ; warp events
+	warp_event 13,  1, MAPLES_LAB_ELEVATOR, 1
 
 	db 0 ; coord events
 
@@ -148,4 +147,4 @@ BattleSimulation_MapEvents:
 	object_event 16,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  4, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  6, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
