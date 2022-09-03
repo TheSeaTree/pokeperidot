@@ -2747,11 +2747,11 @@ SacredAshEffect:
 	ret
 
 NormalBoxEffect:
-	ld c, DECOFLAG_SILVER_TROPHY_DOLL
+	ld c, DECOFLAG_GOLD_TROPHY_DOLL
 	jr OpenBox
 
 GorgeousBoxEffect:
-	ld c, DECOFLAG_GOLD_TROPHY_DOLL
+	ld c, DECOFLAG_SILVER_TROPHY_DOLL
 OpenBox:
 	farcall SetSpecificDecorationFlag
 
