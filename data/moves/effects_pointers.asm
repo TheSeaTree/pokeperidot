@@ -108,7 +108,7 @@ MoveEffectsPointers:
 	dw Nightmare
 	dw FlameWheel
 	dw Curse
-	dw Splash ; Unused
+	dw Glare
 	dw Protect
 	dw Spikes
 	dw Foresight

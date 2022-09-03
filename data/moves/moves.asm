@@ -148,7 +148,7 @@ Moves: ; 41afb
 	move DRAIN_PUNCH,  EFFECT_LEECH_HIT,          75, FIGHTING, 100, 10,   0
 	move SOFTBOILED,   EFFECT_HEAL,                0, NORMAL,   100, 10,   0
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 10,   0
-	move GLARE,        EFFECT_PARALYZE,            0, NORMAL,    95, 30,   0
+	move GLARE,        EFFECT_GLARE,               0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
 	move POISON_GAS,   EFFECT_POISON,              0, PSNPOWDER, 55, 40,   0
 	move BARRAGE,      EFFECT_MULTI_HIT,          20, GRASS,     95, 10,   5

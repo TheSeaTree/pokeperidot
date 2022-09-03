@@ -1053,7 +1053,16 @@ DoParalyze:
 	checksafeguard
 	paralyze
 	endmove
-	
+
+Glare:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	checksafeguard
+	paralyze
+	endmove
+
 SkyAttack:
 	checkcharge
 	checkobedience
