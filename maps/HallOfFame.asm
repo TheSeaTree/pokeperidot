@@ -40,7 +40,7 @@ HallOfFame_MapScripts:
 	closetext
 	turnobject HALLOFFAME_CHAMPION, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
-	turnobject HALLOFFAME_CHAMPION, LEFT
+	turnobject HALLOFFAME_CHAMPION, RIGHT
 	scall RespawnLegendaries
 	setscene SCENE_FINISHED
 	pause 15
