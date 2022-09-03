@@ -13,11 +13,8 @@ OrchidGym1F_MapScripts:
 
 .Scene1:
 	turnobject ORCHIDGYM_GYM_GUY, LEFT
-	opentext
-	writetext BlackthornGymGuyFailureText
-	closetext
-	turnobject ORCHIDGYM_GYM_GUY, DOWN
-	setscene SCENE_ORCHIDGYM1F_RIVAL
+	moveobject ORCHIDGYM_GYM_GUY,  9, 3
+	priorityjump BlackthornGymGuy
 .Scene0:
 	end
 
@@ -95,6 +92,8 @@ OrchidRivalBattle:
 	end
 
 BlackthornGymGuy:
+	checkscene SCENE_ORCHIDGYM1F_FAINTED
+	iftrue .RevivedPlayer
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .JustBeatRival
 	jumptextfaceplayer BlackthornGymGuyText
@@ -118,6 +117,15 @@ BlackthornGymGuy:
 	waitbutton
 	closetext
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	end
+
+.RevivedPlayer:
+	opentext
+	writetext BlackthornGymGuyFailureText
+	waitbutton
+	closetext
+	turnobject ORCHIDGYM_GYM_GUY, DOWN
+	setscene SCENE_ORCHIDGYM1F_RIVAL
 	end
 
 BlackthornCantLeave:
