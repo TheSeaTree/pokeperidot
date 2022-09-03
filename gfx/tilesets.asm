@@ -443,12 +443,6 @@ INCBIN "data/tilesets/pokecom_center_attributes.bin"
 TilesetPokecomCenterGFX:
 INCBIN "gfx/tilesets/pokecom_center.2bpp.lz"
 
-TilesetCyberspaceGFX:
-INCBIN "gfx/tilesets/cyberspace.2bpp.lz"
-
-TilesetCyberspaceMeta:
-INCBIN "data/tilesets/cyberspace_metatiles.bin"
-
 TilesetChampionsRoomGFX:
 INCBIN "gfx/tilesets/champions_room.2bpp.lz"
 
@@ -481,3 +475,12 @@ INCBIN "data/tilesets/tower_attributes.bin"
 
 TilesetIcePathAttr:
 INCBIN "data/tilesets/ice_path_attributes.bin"
+
+
+SECTION "Tileset Data 15", ROMX
+
+TilesetCyberspaceGFX:
+INCBIN "gfx/tilesets/cyberspace.2bpp.lz"
+
+TilesetCyberspaceMeta:
+INCBIN "data/tilesets/cyberspace_metatiles.bin"
