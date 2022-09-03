@@ -18,6 +18,8 @@ ElkhornTown_MapScripts:
 	end
 
 .DummyScene1:
+	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	setscene SCENE_DEFAULT
 	end
 
 .FlyPoint:

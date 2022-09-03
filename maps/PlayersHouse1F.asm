@@ -33,7 +33,8 @@ PlayersHouse1F_MapScripts:
 	closetext
 
 	applymovement PLAYER, Postgame_PlayerApproachMom
-	faceobject PLAYER, PLAYERSHOUSE1F_MOM1
+	turnobject PLAYERSHOUSE1F_MOM1, RIGHT
+	turnobject PLAYER, LEFT
 	opentext
 	writetext PostgameMomCongratulatePlayerText
 	waitbutton
@@ -41,6 +42,11 @@ PlayersHouse1F_MapScripts:
 
 	moveobject PLAYERSHOUSE1F_MAPLE, 6, 7
 	appear PLAYERSHOUSE1F_MAPLE
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	turnobject PLAYER, DOWN
+	turnobject PLAYERSHOUSE1F_MOM1, DOWN
+	showemote EMOTE_QUESTION, PLAYERSHOUSE1F_MOM1, 30
 
 	opentext
 	writetext PostgameMapleInterruptText
@@ -48,18 +54,21 @@ PlayersHouse1F_MapScripts:
 	writetext PostgameMomGreetMapleText
 	waitbutton
 	closetext
-	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleApproachPlayer
+	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleApproachMom
 	opentext
 	writetext PostgameMapleGiftText
 	waitbutton
 	closetext
+	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleApproachPlayer
 	turnobject PLAYER, DOWN	
 
 	opentext
 	writetext PostgameMapleUpgradeTrainerCard
 	waitbutton
-	closetext	
+	closetext
+	playsound SFX_TRANSACTION
 	setflag ENGINE_HAVE_BATTLE_PASS
+	waitsfx
 	opentext
 	writetext PostgameMapleAfterTrainerCardUpgrade
 	waitbutton
@@ -71,23 +80,26 @@ PlayersHouse1F_MapScripts:
 	waitbutton
 	closetext
 	applymovement PLAYERSHOUSE1F_MAPLE, Postgame_MapleLeaveHouse
+	playsound SFX_EXIT_BUILDING
 	disappear PLAYERSHOUSE1F_MAPLE
+	waitsfx
 
+	turnobject PLAYERSHOUSE1F_MOM1, RIGHT
 	turnobject PLAYER, LEFT
 	opentext
 	writetext PostgameMomGotMailText
 	waitbutton
-	giveitem NORMAL_BOX
+	verbosegiveitem NORMAL_BOX
 	iffalse .OpenNow
-	itemnotify
 .DonePostgameScene
 	writetext PostgameMomEndText
 	waitbutton
 	closetext
 	setscene SCENE_FINISHED
-	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	setmapscene ELKHORN_TOWN, SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
+	disappear PLAYERSHOUSE1F_MOM3
 	end
 
 .OpenNow
@@ -100,6 +112,7 @@ PlayersHouse1F_MapScripts:
 	waitsfx
 	writetext PutSilverTrophyInRoomText
 	waitbutton
+	setevent EVENT_DECO_SILVER_TROPHY
 	jump .DonePostgameScene
 
 .Dad:
@@ -487,12 +500,16 @@ Postgame_PlayerApproachMom:
 	step LEFT
 	step_end
 
+Postgame_MapleApproachMom:
+	step UP
+	step UP
+	step RIGHT
+	step UP
+	step_resume
+
 Postgame_MapleApproachPlayer:
-	step UP
-	step UP
 	step RIGHT
-	step RIGHT
-	step UP
+	turn_head UP
 	step_resume
 
 Postgame_MapleStepAway:
@@ -940,8 +957,8 @@ PostgameMapleGiftText:
 	cont "your child."
 
 	para "I wish I could"
-	line "have sees the battle"
-	cont "in person."
+	line "have seen the"
+	cont "battle in person."
 
 	para "I actually came to"
 	line "visit because I"
@@ -1016,10 +1033,10 @@ PostgameMomGotMailText:
 	done
 
 NoRoomForNormalBoxText:
-	text "You don't have any"
-	line "room for it, so"
+	text "Since you don't"
+	line "have room for it,"
 	cont "I'll just open it"
-	cont "now for you."
+	cont "for you here."
 	done
 
 OpenSilverTrophyText:
