@@ -297,6 +297,14 @@ UnknownText_0x1c47d4::
 	text "!"
 	prompt
 
+PokeSeer_PalerockLocationText::
+	text "Hm… I see you met"
+	line "@"
+	text_ram wSeerNickname
+	text " here:"
+	cont "PALEROCK MOUNTAIN!"
+	prompt
+
 UnknownText_0x1c47fa::
 	text "The time was"
 	line "@"
