@@ -39,7 +39,6 @@ INCLUDE "engine/battle/anim_hp_bar.asm"
 INCLUDE "engine/pokemon/move_mon.asm"
 INCLUDE "engine/pokemon/bills_pc_top.asm"
 INCLUDE "engine/pokemon/breedmon_level_growth.asm"
-INCLUDE "engine/events/bug_contest/caught_mon.asm"
 INCLUDE "engine/items/item_effects.asm"
 INCLUDE "engine/battle_anims/pokeball_wobble.asm"
 INCLUDE "engine/pokemon/knows_move.asm"
@@ -60,13 +59,13 @@ INCLUDE "engine/menus/start_menu.asm"
 INCLUDE "engine/pokemon/mon_menu.asm"
 INCLUDE "engine/overworld/select_menu.asm"
 INCLUDE "engine/events/elevator.asm"
-INCLUDE "engine/events/bug_contest/contest.asm"
+INCLUDE "engine/events/safari_zone.asm"
 INCLUDE "engine/events/misc_scripts_2.asm"
 INCLUDE "engine/events/std_collision.asm"
 INCLUDE "engine/events/bug_contest/judging.asm"
 INCLUDE "engine/events/pokerus/apply_pokerus_tick.asm"
 INCLUDE "engine/events/bug_contest/contest_2.asm"
-INCLUDE "engine/pokemon/correct_party_errors.asm"
+INCLUDE "engine/pokemon/update_party_stats.asm"
 INCLUDE "engine/math/get_square_root.asm"
 
 
@@ -126,7 +125,6 @@ INCLUDE "engine/events/kurt_selectquantity_interpretjoypad.asm"
 SECTION "bankA", ROMX
 
 INCLUDE "engine/link/link.asm"
-INCLUDE "engine/overworld/wildmons.asm"
 INCLUDE "engine/battle/link_result.asm"
 INCLUDE "engine/overworld/decorations.asm"
 
@@ -164,6 +162,8 @@ INCLUDE "engine/battle/ai/scoring.asm"
 INCLUDE "engine/battle/read_trainer_attributes.asm"
 INCLUDE "engine/battle/read_trainer_party.asm"
 
+
+INCLUDE "data/trainers/parties.asm"
 
 SECTION "Battle Core", ROMX
 
@@ -306,7 +306,8 @@ INCLUDE "engine/events/halloffame.asm"
 SECTION "Crystal Features 2", ROMX
 
 INCLUDE "engine/events/kurt.asm"
-INCLUDE "engine/events/fossils.asm"
+INCLUDE "engine/events/fossils_treasure.asm"
+INCLUDE "engine/events/mushroom_man.asm"
 INCLUDE "engine/gfx/player_gfx.asm"
 INCLUDE "mobile/mobile_22.asm"
 INCLUDE "engine/events/unown_walls.asm"
@@ -321,7 +322,6 @@ SECTION "bank23", ROMX
 INCLUDE "engine/tilesets/timeofday_pals.asm"
 INCLUDE "engine/battle/battle_transition.asm"
 INCLUDE "engine/events/field_moves.asm"
-INCLUDE "engine/events/magnet_train.asm"
 INCLUDE "engine/battle/battlestart_copytilemapatonce.asm"
 INCLUDE "engine/gfx/sprites.asm"
 INCLUDE "engine/gfx/mon_icons.asm"
@@ -334,10 +334,12 @@ INCLUDE "engine/rtc/timeset.asm"
 INCLUDE "engine/pokegear/pokegear.asm"
 INCLUDE "engine/events/fish.asm"
 INCLUDE "engine/games/slot_machine.asm"
+INCLUDE "engine/events/magnet_train.asm"
 
 
 SECTION "bank28", ROMX
 
+INCLUDE "engine/overworld/wildmons.asm"
 
 SECTION "bank29", ROMX
 
@@ -358,6 +360,12 @@ INCLUDE "engine/events/std_scripts.asm"
 INCLUDE "engine/events/trainer_scripts.asm"
 INCLUDE "engine/phone/phone_scripts.asm"
 
+TheEndGFX::
+INCBIN "gfx/credits/theend.2bpp"
+
+PeridotLogoGFX::
+INCBIN "gfx/credits/peridot.2bpp"
+
 
 SECTION "bank32", ROMX
 
@@ -365,13 +373,9 @@ INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
 INCLUDE "engine/events/poisonstep_pals.asm"
 
-TheEndGFX::
-INCBIN "gfx/credits/theend.2bpp"
-
 
 SECTION "Move Animations", ROMX
 
-INCLUDE "engine/events/bug_contest/display_stats.asm"
 INCLUDE "engine/battle_anims/anim_commands.asm"
 INCLUDE "engine/battle_anims/core.asm"
 INCLUDE "data/battle_anims/objects.asm"
@@ -420,6 +424,10 @@ INCLUDE "engine/battle/hidden_power.asm"
 INCLUDE "engine/battle/constant_damage_moves.asm"
 INCLUDE "engine/battle/pay_day.asm"
 INCLUDE "engine/battle/false_swipe.asm"
+INCLUDE "engine/battle/sap_health.asm"
+INCLUDE "engine/battle/check_gender.asm"
+INCLUDE "engine/battle/rapid_spin.asm"
+INCLUDE "engine/battle/return.asm"
 INCLUDE "engine/battle/misc.asm"
 
 
@@ -538,35 +546,6 @@ SECTION "Special Phone Text", ROMX
 INCLUDE "data/phone/text/mom.asm"
 INCLUDE "data/phone/text/bill.asm"
 INCLUDE "data/phone/text/elm.asm"
-INCLUDE "data/phone/text/jack_callee.asm"
-INCLUDE "data/phone/text/beverly_callee.asm"
-INCLUDE "data/phone/text/huey_callee.asm"
-INCLUDE "data/phone/text/unknown_callee.asm"
-INCLUDE "data/phone/text/gaven_callee.asm"
-INCLUDE "data/phone/text/beth_callee.asm"
-INCLUDE "data/phone/text/jose_callee.asm"
-INCLUDE "data/phone/text/reena_callee.asm"
-INCLUDE "data/phone/text/joey_callee.asm"
-INCLUDE "data/phone/text/wade_callee.asm"
-INCLUDE "data/phone/text/ralph_callee.asm"
-INCLUDE "data/phone/text/liz_callee.asm"
-INCLUDE "data/phone/text/anthony_callee.asm"
-INCLUDE "data/phone/text/todd_callee.asm"
-INCLUDE "data/phone/text/gina_callee.asm"
-INCLUDE "data/phone/text/irwin_callee.asm"
-INCLUDE "data/phone/text/arnie_callee.asm"
-INCLUDE "data/phone/text/alan_callee.asm"
-INCLUDE "data/phone/text/dana_callee.asm"
-INCLUDE "data/phone/text/chad_callee.asm"
-INCLUDE "data/phone/text/derek_callee.asm"
-INCLUDE "data/phone/text/tully_callee.asm"
-INCLUDE "data/phone/text/brent_callee.asm"
-INCLUDE "data/phone/text/tiffany_callee.asm"
-INCLUDE "data/phone/text/vance_callee.asm"
-INCLUDE "data/phone/text/wilton_callee.asm"
-INCLUDE "data/phone/text/kenji_callee.asm"
-INCLUDE "data/phone/text/parry_callee.asm"
-INCLUDE "data/phone/text/erin_callee.asm"
 INCLUDE "data/phone/text/unused.asm"
 
 
@@ -576,6 +555,8 @@ INCLUDE "data/items/names.asm"
 INCLUDE "engine/items/print_item_description.asm"
 INCLUDE "data/moves/names.asm"
 INCLUDE "engine/overworld/landmarks.asm"
+INCLUDE "engine/events/diploma.asm"
+INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 
 
 SECTION "bank77", ROMX
@@ -589,15 +570,11 @@ INCLUDE "engine/printer/print_party.asm"
 SECTION "bank77_2", ROMX
 
 INCLUDE "engine/rtc/print_hours_mins.asm"
-INCLUDE "engine/events/diploma.asm"
 INCLUDE "engine/pokedex/pokedex_3.asm"
 INCLUDE "engine/events/catch_tutorial_input.asm"
-INCLUDE "engine/pokegear/townmap_convertlinebreakcharacters.asm"
 
 PokegearGFX:
 INCBIN "gfx/pokegear/pokegear.2bpp.lz"
-
-INCLUDE "engine/pokemon/european_mail.asm"
 
 
 SECTION "Battle Tower Text", ROMX
@@ -614,6 +591,8 @@ SECTION "Mobile News Data", ROMX
 
 INCLUDE "mobile/news/news.asm"
 
+INCLUDE "engine/pokemon/european_mail.asm"
+
 
 SECTION "Crystal Events", ROMX
 
@@ -628,8 +607,4 @@ INCLUDE "gfx/footprints.asm"
 
 SECTION "Mobile Stadium 2", ROMX
 
-if DEF(_CRYSTAL11)
 INCBIN "mobile/stadium/stadium2_2.bin"
-else
-INCBIN "mobile/stadium/stadium2_1.bin"
-endc

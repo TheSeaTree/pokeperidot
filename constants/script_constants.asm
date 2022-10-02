@@ -64,7 +64,11 @@ NUM_MEM_BUFFERS EQU const_value
 	const VAR_BLUECARDBALANCE  ; 18
 	const VAR_BUENASPASSWORD   ; 19
 	const VAR_KENJI_BREAK      ; 1a
-NUM_VARS EQU const_value       ; 1b
+	const VAR_ITEM_POCKET      ; 1b
+	const VAR_BALL_POCKET      ; 1c
+	const VAR_SUBWAY_SET       ; 1d
+	const VAR_MUSHROOMS_SOLD   ; 1e
+NUM_VARS EQU const_value       ; 1f
 
 ; variable action types
 RETVAR_STRBUF2 EQU (0 << 6)
@@ -159,46 +163,45 @@ NUM_CMDQUEUE_TYPES EQU const_value
 	const EMOTE_BOLT ; 5
 	const EMOTE_SLEEP ; 6
 	const EMOTE_FISH ; 7
-	const EMOTE_SHADOW ; 8
+	const EMOTE_OVERWORLD ; 8
 	const EMOTE_ROD ; 9
-	const EMOTE_BOULDER_DUST ; 10
-	const EMOTE_GRASS_RUSTLE ; 11
 EMOTE_FROM_MEM EQU -1
 
 ; fruittree arguments
 ; FruitTreeItems indexes (see data/items/fruit_trees.asm)
 	const_def 1
-	const FRUITTREE_ROUTE_29      ; 01
-	const FRUITTREE_ROUTE_30      ; 02
-	const FRUITTREE_ROUTE_38      ; 03
-	const FRUITTREE_ECRUTEAK_CITY ; 04
-	const FRUITTREE_ROUTE_30_2    ; 05
-	const FRUITTREE_ROUTE_33      ; 06
-	const FRUITTREE_ROUTE_31      ; 07
-	const FRUITTREE_ROUTE_43      ; 08
-	const FRUITTREE_VIOLET_CITY_1 ; 09
-	const FRUITTREE_CIANWOOD_CITY ; 0a
-	const FRUITTREE_ROUTE_35      ; 0b
-	const FRUITTREE_ROUTE_45      ; 0c
-	const FRUITTREE_ROUTE_36      ; 0d
-	const FRUITTREE_ROUTE_26      ; 0e
-	const FRUITTREE_ROUTE_12_1    ; 0f
-	const FRUITTREE_ROUTE_12_2    ; 10
-	const FRUITTREE_ROUTE_20_1    ; 11
-	const FRUITTREE_ROUTE_20_2    ; 12
-	const FRUITTREE_ROUTE_3	      ; 13
-	const FRUITTREE_AZALEA_TOWN   ; 14
-	const FRUITTREE_MAHOGANY_TOWN ; 15
-	const FRUITTREE_ROUTE_13_1    ; 16
-	const FRUITTREE_ROUTE_13_2    ; 17
-	const FRUITTREE_ROUTE_11      ; 18
-	const FRUITTREE_ROUTE_2_1     ; 19
-	const FRUITTREE_ROUTE_1       ; 1a
-	const FRUITTREE_ROUTE_8       ; 1b
-	const FRUITTREE_VIOLET_CITY_2 ; 1c
-	const FRUITTREE_PAINTERS_FOREST ; 1d
-	const FRUITTREE_ROUTE_5       ; 1e
-	const FRUITTREE_ROUTE_2_2     ; 1f
+	const FRUITTREE_ROUTE_24_SOUTH_1   	; 01
+	const FRUITTREE_ROUTE_30      		; 02
+	const FRUITTREE_ROUTE_24_SOUTH_2   	; 03
+	const FRUITTREE_STAGHORN_TOWN 		; 04
+	const FRUITTREE_ROUTE_30_2    		; 05
+	const FRUITTREE_EAST_FOREST   		; 06
+	const FRUITTREE_ROUTE_25      		; 07
+	const FRUITTREE_SEA_ROUTE_3   		; 08
+	const FRUITTREE_VIOLET_CITY_1 		; 09
+	const FRUITTREE_CIANWOOD_CITY 		; 0a
+	const FRUITTREE_ROUTE_23      		; 0b
+	const FRUITTREE_CARNATION_TOWN		; 0c
+	const FRUITTREE_ROUTE_21      		; 0d
+	const FRUITTREE_ROUTE_24_NORTH		; 0e
+	const FRUITTREE_ROUTE_12_1    		; 0f
+	const FRUITTREE_ROUTE_12_2    		; 10
+	const FRUITTREE_ROUTE_20_1    		; 11
+	const FRUITTREE_ROUTE_20_2    		; 12
+	const FRUITTREE_ROUTE_3	      		; 13
+	const FRUITTREE_AZALEA_TOWN   		; 14
+	const FRUITTREE_MAHOGANY_TOWN 		; 15
+	const FRUITTREE_ROUTE_13_1    		; 16
+	const FRUITTREE_ROUTE_13_2    		; 17
+	const FRUITTREE_ROUTE_11      		; 18
+	const FRUITTREE_ROUTE_2_1     		; 19
+	const FRUITTREE_ROUTE_1       		; 1a
+	const FRUITTREE_ROUTE_8       		; 1b
+	const FRUITTREE_VIOLET_CITY_2 		; 1c
+	const FRUITTREE_PAINTERS_FOREST 	; 1d
+	const FRUITTREE_ROUTE_5       		; 1e
+	const FRUITTREE_ROUTE_2_2			; 1f
+	const FRUITTREE_ILEX_FOREST   		; 20
 NUM_FRUIT_TREES EQU const_value + -1
 
 ; describedecoration arguments

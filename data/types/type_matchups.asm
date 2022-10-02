@@ -118,7 +118,11 @@ TypeMatchups:
 	db FAIRY,     DRAGON,    SUPER_EFFECTIVE
 	db FAIRY,     DARK,      SUPER_EFFECTIVE
 	db FAIRY,     STEEL,     NOT_VERY_EFFECTIVE
-	
+	db POWDER,    GRASS,     NO_EFFECT
+	db PSNPOWDER, GRASS,     NO_EFFECT
+	db PSNPOWDER, POISON,    NO_EFFECT
+	db PSNPOWDER, STEEL,     NO_EFFECT
+	db WILLOWISP, FIRE,      NO_EFFECT
 
 	db -2 ; end (with Foresight)
 
@@ -126,4 +130,26 @@ TypeMatchups:
 	db NORMAL,    GHOST,     NO_EFFECT
 	db FIGHTING,  GHOST,     NO_EFFECT
 
+	db -1 ; end
+
+AlternateMatchups:
+; Bonemerang ignores Flying's immunity.
+	db GROUND,    FIRE,      SUPER_EFFECTIVE
+	db GROUND,    ELECTRIC,  SUPER_EFFECTIVE
+	db GROUND,    GRASS,     NOT_VERY_EFFECTIVE
+	db GROUND,    POISON,    SUPER_EFFECTIVE
+	db GROUND,    FLYING,    NOT_VERY_EFFECTIVE
+	db GROUND,    BUG,       NOT_VERY_EFFECTIVE
+	db GROUND,    ROCK,      SUPER_EFFECTIVE
+	db GROUND,    STEEL,     SUPER_EFFECTIVE
+
+; Freeze-Dry is super effective against Water.
+	db ICE,       WATER,     SUPER_EFFECTIVE
+	db ICE,       GRASS,     SUPER_EFFECTIVE
+	db ICE,       ICE,       NOT_VERY_EFFECTIVE
+	db ICE,       GROUND,    SUPER_EFFECTIVE
+	db ICE,       FLYING,    SUPER_EFFECTIVE
+	db ICE,       DRAGON,    SUPER_EFFECTIVE
+	db ICE,       STEEL,     NOT_VERY_EFFECTIVE
+	db ICE,       FIRE,      NOT_VERY_EFFECTIVE
 	db -1 ; end

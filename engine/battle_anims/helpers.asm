@@ -149,8 +149,8 @@ endr
 	; switch to the WRAM bank of wOBPals2 so we can write to it
 	ld a, BANK(wOBPals2)
 	ld [rSVBK], a
-	; load the RGB colors into the middle two colors of PAL_BATTLE_OB_RED
-	ld de, wOBPals2 palette PAL_BATTLE_OB_RED color 1
+	; load the RGB colors into the middle two colors of PAL_BATTLE_OB_BROWN
+	ld de, wOBPals2 palette PAL_BATTLE_OB_BROWN color 1
 rept PAL_COLOR_SIZE * 2 - 1
 	ld a, [hli]
 	ld [de], a

@@ -6,21 +6,19 @@ LugiaLair_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .SpawnRealLugia
-	
+
 .SpawnRealLugia:
-	writebyte LUGIA
-	special CheckOwnedMon
+	checkevent EVENT_REGULAR_LUGIA
+	iftrue .end
+	checkevent EVENT_CAUGHT_ARTICUNO
 	iffalse .end
-	writebyte ARTICUNO
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ZAPDOS
 	iffalse .end
-	writebyte ZAPDOS
-	special CheckOwnedMon
-	iffalse .end
-	writebyte MOLTRES
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MOLTRES
 	iffalse .end
 	appear LUGIALAIR_LUGIA
+	setevent EVENT_REGULAR_LUGIA
+	clearevent EVENT_FOUGHT_LUGIA
 .end
 	return
 
@@ -40,19 +38,23 @@ Lugia:
 	writebyte MOLTRES
 	special CheckOwnedMon
 	iffalse .BossLugia
-	loadwildmon LUGIA, 50
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	special LegendaryEvent_SetBattleType
+	loadwildmon LUGIA, 70
 	startbattle
 	reloadmapafterbattle
-	special InitRoamArticuno
-	special InitRoamZapdos
-	special InitRoamMoltres
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_LUGIA
+.FailedCapture
+;	special InitRoamArticuno
+;	special InitRoamZapdos
+;	special InitRoamMoltres
 	end
-	
+
 .BossLugia:
-	loadwildmon LUGIA, 30
+	loadwildmon LUGIA, 50
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
@@ -61,12 +63,7 @@ Lugia:
 	special InitRoamMoltres
 	disappear LUGIALAIR_LUGIA
 	setevent EVENT_FOUGHT_LUGIA
-	end
-	
-GiftBirds:
-	givepoke ARTICUNO, 50
-	givepoke ZAPDOS, 50
-	givepoke MOLTRES, 50
+	setevent EVENT_ROAMING_BIRDS
 	end
 	
 LugiaText:
@@ -77,12 +74,11 @@ LugiaLair_MapEvents:
 	db 0, 0 ; filler
 
 	db  1 ; warp events
-	warp_event 13, 13, BLACKTHORN_CITY, 7
+	warp_event 13, 13, LUGIA_CAVE_GATE_CHAMBER, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 13, 15, BGEVENT_READ, GiftBirds
+	db 0 ; bg events
 
 	db 1 ; object events
-	object_event 13,  6, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_FOUGHT_LUGIA
+	object_event 13,  7, SPRITE_LUGIA, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Lugia, EVENT_FOUGHT_LUGIA

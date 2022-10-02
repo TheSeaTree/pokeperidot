@@ -58,15 +58,15 @@ BattleCommand_Curse:
 ; Cut HP in half and put a curse on the opponent.
 
 	call CheckHiddenOpponent
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 	call CheckSubstituteOpp
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 	ld a, BATTLE_VARS_SUBSTATUS1_OPP
 	call GetBattleVarAddr
 	bit SUBSTATUS_CURSE, [hl]
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 	set SUBSTATUS_CURSE, [hl]
 	call AnimateCurrentMove
@@ -77,10 +77,6 @@ BattleCommand_Curse:
 	call UpdateUserInParty
 	ld hl, PutACurseText
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 .cantraise
 	call CantRaiseStats

@@ -19,8 +19,9 @@ MaplesLab_MapScripts:
 	scene_script .DummyScene4 ; SCENE_MAPLESLAB_UNUSED
 	scene_script .DummyScene5 ; SCENE_MAPLESLAB_AIDE_GIVES_POTION
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_TILES, .WateredPlant
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .ChangeTiles
+	callback MAPCALLBACK_OBJECTS, .BlockElevator
 
 .MeetMaple:
 	priorityjump .WalkUpToMaple
@@ -60,6 +61,12 @@ MaplesLab_MapScripts:
 	setscene SCENE_MAPLESLAB_CANT_LEAVE
 	closetext
 	end
+
+.ChangeTiles
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .WateredPlant
+	changeblock 0, 0, $31
+	changeblock 2, 0, $32
 	
 .WateredPlant:
 	checkevent EVENT_GOT_TM_CUT
@@ -67,12 +74,22 @@ MaplesLab_MapScripts:
 	return
 	
 .WaterPlant:
-	changeblock 8, 0, $3f
+	changeblock 8, 0, $30
+	return
+
+.BlockElevator
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .Nothing
+	moveobject MAPLESLAB_MAPLES_AIDE, 2, 1
+	appear MAPLESLAB_MAPLES_AIDE
+.Nothing
 	return
 
 ProfMapleScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
 	checkevent EVENT_SHOWED_MAPLE_COGBADGE
 	iftrue .AfterCogBadge
 	checkflag ENGINE_COGBADGE
@@ -109,6 +126,12 @@ ProfMapleScript:
 	
 .AfterCogBadge:
 	writetext MapleAfterCogbadgeText
+	waitbutton
+	closetext
+	end
+
+.Postgame:
+	writetext MaplePostgameText
 	waitbutton
 	closetext
 	end
@@ -234,8 +257,10 @@ MapleAfterStarterScript:
 	closetext
 	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	setevent EVENT_RIVAL_CHERRYGROVE_CITY
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
+	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	setscene SCENE_MAPLESLAB_AIDE_GIVES_POTION
-	setmapscene CHERRYGROVE_CITY, SCENE_CHERRYGROVECITY_MEET_RIVAL
+	setmapscene PAVONA_VILLAGE, SCENE_PAVONAVILLAGE_MEET_RIVAL
 	setmapscene PLAYERS_HOUSE_1F, SCENE_FINISHED
 	end
 
@@ -294,7 +319,6 @@ AideScript_GivePotion:
 	giveitem POKE_BALL, 5
 	writetext AideText_CatchTips
 	waitbutton
-	
 	closetext
 	setscene SCENE_MAPLESLAB_NOTHING
 	end
@@ -305,6 +329,8 @@ AideScript_ReceiveTheBalls:
 
 MaplesAideScript:
 	faceplayer
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .MapleGettingOrganized
 	checkevent EVENT_GOT_A_POKEMON_FROM_MAPLE
@@ -318,6 +344,9 @@ MaplesAideScript:
 	
 .MapleGettingOrganized:
 	jumptext AideText_MapleOrganized
+
+.Postgame
+	jumptext AideText_Postgame
 
 MaplesLabLass:
 	jumptextfaceplayer MaplesLabLassText
@@ -336,8 +365,13 @@ MaplesLabBugCatcher:
 MaplesLabGameboyKid:
 	jumptextfaceplayer MaplesLabGameboyKidText
 
+MaplesLabAlternateBookshelf:
+	conditional_event EVENT_BEAT_ELITE_FOUR, .Script
+	
+.Script:
 MaplesLabBookshelf:
 	jumpstd difficultbookshelf
+
 
 MaplesLabPlant:
 	checkevent EVENT_GOT_TM_CUT
@@ -671,6 +705,27 @@ MapleAfterCogbadgeText:
 	cont "I promise! Ha!"
 	done
 
+MaplePostgameText:
+	text "<PLAYER>! Hello!"
+
+	para "Have you come to"
+	line "see what we have"
+	cont "been working on"
+	cont "in the LAB?"
+
+	para "I'm sorry to dis-"
+	line "appoint, but there"
+	cont "is still so much"
+	cont "more to do."
+
+	para "But thank you for"
+	line "checking up on us."
+
+	para "Have you challen-"
+	line "ged the BATTLE"
+	cont "SUBWAY yet?"
+	done
+
 MaplePokeBallText:
 	text "It contains a"
 	line "#MON caught by"
@@ -749,6 +804,26 @@ AideText_MapleOrganized:
 	line "correct her mis-"
 	cont "takes has made my"
 	cont "job easier!"
+	done
+
+AideText_Postgame:
+	text "Hello, <PLAYER>!"
+
+	para "Did PROF.MAPLE"
+	line "tell you about the"
+	cont "project I've been"
+	cont "working on?"
+
+	para "I'm sorry to say"
+	line "that it's not quite"
+	cont "ready yet."
+
+	para "She must have been"
+	line "too excited to"
+	cont "keep it a secret."
+
+	para "I can't blame her,"
+	line "I'm excited too!"
 	done
 
 MaplesLabTravelTip1Text:
@@ -878,9 +953,10 @@ MaplesLabGameboyKidText:
 MaplesLab_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
-	warp_event  4, 11, CHERRYGROVE_CITY, 3
-	warp_event  5, 11, CHERRYGROVE_CITY, 3
+	db 3 ; warp events
+	warp_event  4, 11, PAVONA_VILLAGE, 3
+	warp_event  5, 11, PAVONA_VILLAGE, 3
+	warp_event  3,  0, MAPLES_LAB_ELEVATOR, 1
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript
@@ -890,8 +966,8 @@ MaplesLab_MapEvents:
 
 	db 14 ; bg events
 	bg_event  0,  1, BGEVENT_READ, MaplesLabBookshelf
-	bg_event  1,  1, BGEVENT_READ, MaplesLabBookshelf
-	bg_event  2,  1, BGEVENT_READ, MaplesLabBookshelf
+	bg_event  1,  1, BGEVENT_IFNOTSET, MaplesLabAlternateBookshelf
+	bg_event  2,  1, BGEVENT_IFNOTSET, MaplesLabAlternateBookshelf
 	bg_event  3,  1, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  0,  5, BGEVENT_READ, MaplesLabBookshelf
 	bg_event  1,  5, BGEVENT_READ, MaplesLabBookshelf

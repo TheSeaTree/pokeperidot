@@ -9,11 +9,17 @@
 	const CARNATIONZOO_SWIMMER
 	const CARNATIONZOO_BLACKBELT
 	const CARNATIONZOO_YOUNGSTER
+	const CARNATIONZOO_FANGIRL
 
 CarnationZoo_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 0 ; callbacks
+	
+.DummyScene:
+	end
 	
 CarnationZooSwimmer:
 	jumptextfaceplayer CarnationZooSwimmerText
@@ -50,6 +56,97 @@ CarnationZooMotherSon:
 	turnobject CARNATIONZOO_CHILD, UP
 	turnobject CARNATIONZOO_MOTHER, UP
 	end	
+
+CarnationZooEmilyBattleLeft:
+	playsound SFX_EXIT_BUILDING
+	special FadeOutMusic
+	moveobject CARNATIONZOO_FANGIRL, 12, 5
+	appear CARNATIONZOO_FANGIRL
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlExitBuilding
+	showemote EMOTE_SHOCK, CARNATIONZOO_FANGIRL, 15
+	opentext
+	writetext CarnationZooFangirlIntroText
+	waitbutton
+	closetext
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlApproachPlayerLeft
+	
+	scall CarnationZooEmilyContinue
+
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlLeaveLeft
+	disappear CARNATIONZOO_FANGIRL
+	setscene SCENE_FINISHED
+	playmapmusic
+	end
+
+CarnationZooEmilyBattleRight:
+	playsound SFX_EXIT_BUILDING
+	special FadeOutMusic
+	moveobject CARNATIONZOO_FANGIRL, 12, 5
+	appear CARNATIONZOO_FANGIRL
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlExitBuilding
+	showemote EMOTE_SHOCK, CARNATIONZOO_FANGIRL, 15
+	opentext
+	writetext CarnationZooFangirlIntroText
+	waitbutton
+	closetext
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlApproachPlayerRight
+	turnobject CARNATIONZOO_FANGIRL, RIGHT
+	turnobject PLAYER, LEFT
+	
+	scall CarnationZooEmilyContinue
+
+	applymovement CARNATIONZOO_FANGIRL, CarnationZooFangirlLeaveRight
+	disappear CARNATIONZOO_FANGIRL
+	setscene SCENE_FINISHED
+	playmapmusic
+	end
+
+CarnationZooEmilyContinue:
+	opentext
+	writetext CarnationZooFangirlVisitedSafariText
+	waitbutton
+	closetext
+	showemote EMOTE_QUESTION, CARNATIONZOO_FANGIRL, 15
+	opentext
+	writetext CarnationZooFangirlExplainSafariText
+	waitbutton
+	closetext
+	winlosstext CarnationZooFangirlWinText, CarnatioNZooFangirlLossText
+	loadtrainer FANGIRL, EMILY3
+	startbattle
+	dontrestartmapmusic
+	reloadmapafterbattle
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
+.AfterBattle
+	opentext
+	writetext CarnationZooFangirlAfterText
+	waitbutton
+	closetext
+	checkevent EVENT_CLAIMED_LUCKY_EGG
+	iffalse .TryGiveLuckyEgg
+	end
+	
+.TryGiveLuckyEgg:
+	showemote EMOTE_SHOCK, CARNATIONZOO_FANGIRL, 15
+	opentext
+	writetext CarnationZooFangirlGiveLuckyEggText
+	waitbutton
+	setevent EVENT_BEAT_EMILYS_HOUSE
+	verbosegiveitem LUCKY_EGG
+	iffalse .NoRoom
+	setevent EVENT_CLAIMED_LUCKY_EGG
+	writetext CarnationZooFangirlAfterLuckyEggText
+	waitbutton
+	closetext
+	end
+	
+.NoRoom
+	writetext CarnationZooFangirlNoRoomText
+	waitbutton
+	closetext
+	end
 
 SafariZoneGateSign:
 	jumptext SafariZoneGateSignText
@@ -128,7 +225,7 @@ CarnationZooVendingMachine:
 	takemoney YOUR_MONEY, 350
 	itemtotext FRESH_WATER, MEM_BUFFER_0
 	jump .VendItem
-	
+
 .Lemonade:
 	checkmoney YOUR_MONEY, 450
 	ifequal HAVE_LESS, .NotEnoughMoney
@@ -152,7 +249,6 @@ CarnationZooVendingMachine:
 	pause 10
 	playsound SFX_ENTER_DOOR
 	writetext ZooClangText
-	special PlaceMoneyTopRight
 	buttonsound
 	itemnotify
 	jump .Start
@@ -190,6 +286,35 @@ CarnationZooChildStomp:
 	
 SudowoodoShakeMovement:
 	tree_shake
+	step_resume
+	
+CarnationZooFangirlExitBuilding:
+	step DOWN
+	step_resume
+
+CarnationZooFangirlApproachPlayerRight:
+	step DOWN
+
+CarnationZooFangirlApproachPlayerLeft:
+	step DOWN
+	step_resume
+	
+CarnationZooFangirlLeaveLeft:
+	step RIGHT
+	step DOWN
+
+CarnationZooFangirlLeaveRight:
+	step DOWN
+	step DOWN
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step DOWN
+	step DOWN
 	step_resume
 	
 CarnationZooSwimmerText:
@@ -297,7 +422,7 @@ ZooVendingNoSpaceText:
 
 LaprasSignText:
 	text "It's LAPRAS!"
-	
+
 	para "It says LAPRAS are"
 	line "intelligent enough"
 	cont "to understand"
@@ -306,6 +431,10 @@ LaprasSignText:
 
 MachokeSignText:
 	text "It's MACHOKE!"
+
+	para "The belt they wear"
+	line "keeps their power"
+	cont "under control."
 	done
 
 ScytherSignText:
@@ -319,7 +448,7 @@ SudowoodoSignText:
 	para "This isn't a"
 	line "#MON…"
 	done
-	
+
 SudowoodoAfterText:
 	text "Oh, it says this"
 	line "is a SUDOWOODO."
@@ -330,6 +459,126 @@ SudowoodoAfterText:
 
 RhyhornSignText:
 	text "It's RHYHORN!"
+
+	para "It says they can"
+	line "be very destruct-"
+	cont "ive when they"
+	cont "stampede, but this"
+	cont "one seems calm."
+	done
+
+CarnationZooFangirlIntroText:
+	text "<PLAYER>!"
+	line "What a surprise!"
+	done
+
+CarnationZooFangirlVisitedSafariText:
+	text "Check it out! I"
+	line "have 7 BADGEs now!"
+	
+	para "I'm just taking a"
+	line "short break before"
+	cont "heading to ORCHID"
+	cont "CITY for my final"
+	cont "badge."
+	
+	para "Have you been to"
+	line "the SAFARI ZONE?"
+	
+	para "I just caught some"
+	line "great new #MON"
+	cont "there!"
+	done
+	
+CarnationZooFangirlExplainSafariText:
+	text "What? You haven't"
+	line "been to the SAFARI"
+	cont "ZONE yet?"
+
+	para "A lot of rare"
+	line "#MON can only"
+	cont "be found there."
+
+	para "Here, let me show"
+	line "you some of the"
+	cont "ones I caught!"
+	done
+	
+CarnationZooFangirlWinText:
+	text "No big deal."
+
+	para "These #MON will"
+	line "get better after"
+	cont "some training!"
+	done
+
+CarnatioNZooFangirlLossText:
+	text "Oh, wow!"
+	
+	para "These #MON are"
+	line "strong even with-"
+	cont "out training!"
+	done
+
+CarnationZooFangirlAfterText:
+	text "You put up a good"
+	line "fight, but I think"
+	cont "these #MON will"
+	cont "become great after"
+	cont "we spend more time"
+	cont "together."
+	
+	para "I'm going to go"
+	line "heal my #MON,"
+	cont "then it's time for"
+	cont "training!"
+	
+	para "Take care,"
+	line "<PLAYER>!"
+	done
+
+CarnationZooFangirlGiveLuckyEggText:
+	text "…Oh, wait!"
+	line "I almost forgot!"
+	
+	para "I found this item"
+	line "while I was in the"
+	cont "SAFARI ZONE."
+	
+	para "I already have"
+	line "one, so you can"
+	cont "take my spare!"
+	done
+	
+CarnationZooFangirlAfterLuckyEggText:
+	text "A LUCKY EGG really"
+	line "comes in handy if"
+	cont "you want to train"
+	cont "a weaker #MON."
+	
+	para "I hope it'll help,"
+	line "<PLAYER>."
+	
+	para "Anyway, I've gotta"
+	line "run! I'm sure I'll"
+	cont "see you later!"
+	
+	para "Take care!"
+	done
+
+CarnationZooFangirlNoRoomText:
+	text "…I guess you don't"
+	line "have enough room"
+	cont "for this item."
+	
+	para "I'll just leave it"
+	line "with my MOM in"
+	cont "STAGHORN TOWN."
+	
+	para "I was going to go"
+	line "visit home anyway."
+	
+	para "See you later!"
 	done
 
 SafariZoneGateSignText:
@@ -341,11 +590,13 @@ CarnationZoo_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 29, 14, CARNATION_TOWN, 3
-	warp_event 29, 15, CARNATION_TOWN, 4
+	warp_event 29, 14, CARNATION_ZOO_GATE, 1
+	warp_event 29, 15, CARNATION_ZOO_GATE, 2
 	warp_event 12,  5, SAFARI_ZONE_GATE_1F, 1
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 12,  8, SCENE_DEFAULT, CarnationZooEmilyBattleLeft
+	coord_event 13,  8, SCENE_DEFAULT, CarnationZooEmilyBattleRight
 
 	db 8 ; bg events
 	bg_event 11,  9, BGEVENT_READ, SafariZoneGateSign
@@ -357,7 +608,7 @@ CarnationZoo_MapEvents:
 	bg_event  6,  9, BGEVENT_UP, CarnationZooVendingMachine
 	bg_event 19, 19, BGEVENT_UP, CarnationZooVendingMachine
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 23, 17, SPRITE_PARAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 15, 14, SPRITE_LAPRAS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  6, 14, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
@@ -368,4 +619,5 @@ CarnationZoo_MapEvents:
 	object_event 14, 16, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CarnationZooSwimmer, -1
 	object_event  3, 14, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CarnationZooBlackBelt, -1
 	object_event 22, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 3, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CarnationZooYoungster, -1
+	object_event 0, 0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 3, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	

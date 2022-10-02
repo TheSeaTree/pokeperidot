@@ -27,6 +27,7 @@ Route8SilkScarfLady:
 	writetext Route8SilkScarfLadyHaveTeddiursaText
 	waitbutton
 	verbosegiveitem SILK_SCARF
+	iffalse .NoRoom
 	setevent ROUTE_8_SILK_SCARF
 	writetext Route8SilkScarfLadyAfterText
 	waitbutton
@@ -42,6 +43,12 @@ Route8SilkScarfLady:
 	
 .After
 	writetext Route8SilkScarfLadyAfterText
+	waitbutton
+	closetext
+	end
+	
+.NoRoom
+	writetext Route8SilkScarfLadyNoRoomText
 	waitbutton
 	closetext
 	end
@@ -100,6 +107,14 @@ Route8SilkScarfLadyAfterText
 	para "It's a perfect fit"
 	line "for a lovely"
 	cont "little TEDDIURSA!"
+	done
+	
+Route8SilkScarfLadyNoRoomText:
+	text "Oh, hon. You can't"
+	line "put this anywhere."
+	
+	para "I'll hold onto it,"
+	line "pick it up later."
 	done
 
 Route8SilkScarfHouse_MapEvents:

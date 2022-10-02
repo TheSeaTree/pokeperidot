@@ -8,7 +8,7 @@ BattleCommand_PerishSong:
 
 	ld a, [de]
 	bit SUBSTATUS_PERISH, a
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 .ok
 	bit SUBSTATUS_PERISH, [hl]
@@ -32,7 +32,3 @@ BattleCommand_PerishSong:
 	call AnimateCurrentMove
 	ld hl, StartPerishText
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed

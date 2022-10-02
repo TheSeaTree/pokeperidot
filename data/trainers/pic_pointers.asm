@@ -13,11 +13,11 @@ TrainerPicPointers::
 	dba Rival1Pic
 	dba FangirlPic
 	dba PokemonProfPic
-	dba CalPic
-	dba WillPic
-	dba BrunoPic
-	dba KarenPic
-	dba KogaPic
+	dba MysticalmanPic ; Link Trainer, uses the same graphics as the male player.
+	dba WilburPic
+	dba ReganPic
+	dba AmberPic
+	dba BredePic
 	dba ChampionPic
 	dba BrockPic
 	dba MistyPic
@@ -48,7 +48,7 @@ TrainerPicPointers::
 	dba GuitaristPic
 	dba HikerPic
 	dba BikerPic
-	dba BlainePic
+	dba GruntfPic ; Link Trainer, uses the same graphics as the female player.
 	dba BurglarPic
 	dba FirebreatherPic
 	dba JugglerPic
@@ -57,7 +57,7 @@ TrainerPicPointers::
 	dba PsychicTPic
 	dba PicnickerPic
 	dba CamperPic
-	dba ExecutivefPic
+	dba EngineerPic
 	dba SagePic
 	dba MediumPic
 	dba BoarderPic
@@ -66,7 +66,7 @@ TrainerPicPointers::
 	dba TwinsPic
 	dba PokefanfPic
 	dba RedPic
-	dba BluePic
+	dba ChampionFPic
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic

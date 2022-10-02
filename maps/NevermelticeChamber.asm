@@ -17,7 +17,7 @@ NevermelticeChamber_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 5, 11, CIANWOOD_CAVE_B1F, 5
+	warp_event 5, 11, HEPATICA_CAVE_B1F, 5
 
 	db 0 ; coord events
 

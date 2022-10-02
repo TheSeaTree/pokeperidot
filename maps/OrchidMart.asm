@@ -22,26 +22,23 @@ OrchidMartYoungsterScript:
 	jumptextfaceplayer OrchidMartYoungsterText
 
 OrchidMartCooltrainerMText:
-	text "They're fresh out"
-	line "of # BALLS!"
+	text "Are you collecting"
+	line "GYM BADGEs too?"
 
-	para "When will they get"
-	line "more of them?"
+	para "I only need one"
+	line "more, my friend."
+
+	para "Some day I hope"
+	cont "we can meet at the"
+	cont "#MON LEAGUE!"
 	done
 
 OrchidMartYoungsterText:
-	text "When I was walking"
-	line "in the grass, a"
+	text "I wish this MART"
+	line "sold FRESH WATER."
 
-	para "bug #MON poi-"
-	line "soned my #MON!"
-
-	para "I just kept going,"
-	line "but then my"
-	cont "#MON fainted."
-
-	para "You should keep an"
-	line "ANTIDOTE with you."
+	para "I get dehydrated"
+	line "so easily here."
 	done
 
 OrchidMart_MapEvents:
@@ -58,4 +55,4 @@ OrchidMart_MapEvents:
 	db 3 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidMartClerkScript, -1
 	object_event  7,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrchidMartCooltrainerMScript, -1
-	object_event  2,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidMartYoungsterScript, -1
+	object_event  5,  2, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidMartYoungsterScript, -1

@@ -297,6 +297,14 @@ SpriteMovementData::
 	db 0 ; flags2
 	db SWIMMING ; palette flags
 
+; SPRITEMOVEDATA_SPRITE_SHADOW
+	db SPRITEMOVEFN_STRENGTH ; movement function
+	db DOWN ; facing
+	db OBJECT_ACTION_SPRITE_SHADOW ; action
+	db WONT_DELETE | FIXED_FACING | SLIDING | MOVE_ANYWHERE ; flags1
+	db LOW_PRIORITY ; flags2
+	db STRENGTH_BOULDER ; palette flags
+
 ; 25
 	db SPRITEMOVEFN_00 ; movement function
 	db DOWN ; facing

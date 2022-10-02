@@ -77,7 +77,7 @@ GetPlayerSprite:
 ; Any player state not in the array defaults to Chris's sprite.
 	xor a ; ld a, PLAYER_NORMAL
 	ld [wPlayerState], a
-	ld a, SPRITE_CHRIS
+	ld a, SPRITE_PERRY
 	jr .finish
 
 .good
@@ -147,14 +147,7 @@ LoadUsedSpritesGFX:
 	bit 6, a
 	ret nz
 
-	ld c, EMOTE_SHADOW
-	farcall LoadEmote
-	call GetMapEnvironment
-	call CheckOutdoorMap
-	ld c, EMOTE_GRASS_RUSTLE
-	jr z, .outdoor
-	ld c, EMOTE_BOULDER_DUST
-.outdoor
+	ld c, EMOTE_OVERWORLD
 	farcall LoadEmote
 	ret
 

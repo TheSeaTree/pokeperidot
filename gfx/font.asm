@@ -4,6 +4,9 @@ INCBIN "gfx/font/font.1bpp"
 FontBattleExtra:
 INCBIN "gfx/font/font_battle_extra.2bpp"
 
+FontOptionsExtra:
+INCBIN "gfx/font/font_options_extra.1bpp"
+
 Frames:
 INCBIN "gfx/frames/1.1bpp"
 INCBIN "gfx/frames/2.1bpp"
@@ -13,6 +16,8 @@ INCBIN "gfx/frames/5.1bpp"
 INCBIN "gfx/frames/6.1bpp"
 INCBIN "gfx/frames/7.1bpp"
 INCBIN "gfx/frames/8.1bpp"
+INCBIN "gfx/frames/9.1bpp"
+INCBIN "gfx/frames/10.1bpp"
 
 ; Various misc graphics here.
 
@@ -27,6 +32,9 @@ INCBIN "gfx/battle/hp_exp_bar_border.1bpp"
 
 ExpBarGFX:
 INCBIN "gfx/battle/expbar.2bpp"
+
+StatArrowGFX:
+INCBIN "gfx/battle/stat_arrows.2bpp"
 
 TownMapGFX:
 INCBIN "gfx/pokegear/town_map.2bpp.lz"

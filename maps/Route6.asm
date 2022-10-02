@@ -72,9 +72,12 @@ TrainerSailorRoland:
 	closetext
 	end
 	
-Route6TMWaterfall:
-	itemball TM_WATERFALL
-	
+Route6LassScript:
+	jumptextfaceplayer Route6LassText
+
+Route6HiddenPearl:
+	hiddenitem PEARL, EVENT_ROUTE_6_HIDDEN_PEARL
+
 Route6Rock:
 	jumpstd smashrock
 	
@@ -219,6 +222,25 @@ SailorMilesAfterText:
 	cont "stories."
 	done
 
+Route6LassText:
+	text "One night while I"
+	line "was standing here,"
+	cont "I saw the most am-"
+	cont "azing thing!"
+	
+	para "A gigantic #MON"
+	line "emerged from the"
+	cont "ocean and flew"
+	cont "away with sparkl-"
+	cont "ing wings of"
+	cont "SILVER."
+	
+	para "I have vowed to"
+	line "stay right here"
+	cont "until I see that"
+	cont "#MON again!"
+	done
+
 Route6UndergroundPathSignText:
 	text "UNDERGROUND PATH"
 	
@@ -229,26 +251,30 @@ Route6UndergroundPathSignText:
 Route6_MapEvents:
 	db 0, 0 ; filler
 
-	db 2; warp events
-	warp_event  3, 19, ROUTE_6_UNDERGROUND, 1
-	warp_event 29,  9, ROUTE_6_SURFERS_HOUSE, 1
+	db 5 ; warp events
+	warp_event 11, 25, ROUTE_6_UNDERGROUND, 1
+	warp_event 37, 15, ROUTE_6_SURFERS_HOUSE, 1
+	warp_event 21,  9, ROUTE_6_GATE, 3
+	warp_event 11,  7, ROUTE_6_WATERFALL_HOUSE, 1
+	warp_event  0, 13, ROUTE_7_CAVE_1F, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event  4, 20, BGEVENT_READ, Route6UndergroundPathSign
+	db 2 ; bg events
+	bg_event 12, 26, BGEVENT_READ, Route6UndergroundPathSign
+	bg_event 43, 22, BGEVENT_ITEM, Route6HiddenPearl
 
 	db 12 ; object events
-	object_event 21, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorCalvin, -1
-	object_event 52, 17, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerFisherNelson, -1
-	object_event 32,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerFisherBrady, -1
-	object_event 40,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorJeremy, -1
-	object_event 42,  9, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorMiles, -1
-	object_event 49,  8, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorRoland, -1
-	object_event  6, 21, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, EVENT_GOT_TM_TELEPORT
-	object_event  5, 20, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
-	object_event  6, 18, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
-	object_event  3, 15, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
-	object_event  0, 21, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
-	object_event 12,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route6TMWaterfall, EVENT_GOT_TM_WATERFALL
+	object_event 29, 20, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorCalvin, -1
+	object_event 60, 23, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerFisherNelson, -1
+	object_event 40, 15, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerFisherBrady, -1
+	object_event 48, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorJeremy, -1
+	object_event 50, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorMiles, -1
+	object_event 57, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorRoland, -1
+	object_event 18,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route6LassScript, EVENT_FOUGHT_LUGIA
+	object_event 14, 27, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, EVENT_GOT_TM_TELEPORT
+	object_event 13, 26, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
+	object_event 14, 24, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
+	object_event 11, 21, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
+	object_event  8, 27, SPRITE_ROCK, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
 	

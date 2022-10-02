@@ -534,8 +534,10 @@ endr
 	jr z, .cave
 	cp DUNGEON
 	jr z, .cave
+	cp GYM_CAVE
+	jr z, .cave
 	cp ENVIRONMENT_5
-	jr z, .env5
+	jr z, .cave
 	cp GATE
 	jr z, .gate
 	ld a, [wMapGroup]

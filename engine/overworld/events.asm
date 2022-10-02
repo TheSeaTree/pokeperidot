@@ -241,8 +241,6 @@ PlayerEvents:
 	and a
 	ret nz
 
-	call Dummy_CheckScriptFlags3Bit5 ; This is a waste of time
-
 	call CheckTrainerBattle_GetPlayerEvent
 	jr c, .ok
 
@@ -449,11 +447,11 @@ CheckTimeEvents:
 	jr nz, .nothing
 
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
 	jr z, .do_daily
 
-	farcall CheckBugContestTimer
-	jr c, .end_bug_contest
+	farcall CheckShinyEncounterTimer
+	jr c, .end_shiny_encounters
 	xor a
 	ret
 
@@ -466,18 +464,17 @@ CheckTimeEvents:
 .nothing
 	xor a
 	ret
-
-.end_bug_contest
-	ld a, BANK(BugCatchingContestOverScript)
-	ld hl, BugCatchingContestOverScript
+	
+.end_shiny_encounters
+	ld a, BANK(ShinyEncountersOverScript)
+	ld hl, ShinyEncountersOverScript
 	call CallScript
 	scf
 	ret
-
-.unused
-	ld a, 8
-	scf
-	ret
+	
+ShinyEncountersOverScript:
+	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
+	end
 
 OWPlayerInput:
 	call PlayerMovement
@@ -859,9 +856,11 @@ CountStep:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .done
-
-	; If there is a special phone call, don't count the step.
-	farcall CheckSpecialPhoneCall
+	
+	call DoSafariStep
+	jr c, .doscript
+	
+	call DoFireGymStep
 	jr c, .doscript
 
 	; If Repel wore off, don't count the step.
@@ -897,14 +896,11 @@ CountStep:
 	ld hl, wPoisonStepCount
 	ld a, [hl]
 	cp 4
-	jr c, .skip_poison
+	jr c, .done
 	ld [hl], 0
 
 	farcall DoPoisonStep
 	jr c, .doscript
-
-.skip_poison
-	farcall DoBikeStep
 
 .done
 	xor a
@@ -947,6 +943,74 @@ DoRepelStep:
 .got_script
 	call CallScript
 	scf
+	ret
+	
+DoSafariStep:
+	call GetMapEnvironment
+	cp INDOOR
+	jr z, .NoCall
+
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
+	jr z, .NoCall
+
+	ld a, [wSafariStepsRemaining]
+	ld b, a
+	ld a, [wSafariStepsRemaining + 1]
+	ld c, a
+	or b
+
+	dec bc
+	ld a, b   
+	or c   
+	jr z, .returntogate
+
+	ld a, b
+	ld [wSafariStepsRemaining], a
+	ld a, c
+	ld [wSafariStepsRemaining + 1], a
+	ret
+
+.returntogate
+	ld a, BANK(SafariGameOverScript)
+	ld hl, SafariGameOverScript
+	call CallScript
+	scf
+	ret
+	
+.NoCall
+	xor a
+	ret
+
+DoFireGymStep:
+	ld a, [wStatusFlags]
+	bit STATUSFLAGS_HALL_OF_FAME_F, a
+	ret nz
+
+	ld a, [wMapGroup]
+	cp GROUP_ORCHID_GYM_B1F
+	jr nz, .NoCall
+
+	ld a, [wMapNumber]
+	cp MAP_ORCHID_GYM_B1F
+	jr nz, .NoCall
+
+	ld a, [wFireGymStepsRemaining]
+	and a
+	ret z
+
+	dec a
+	ld [wFireGymStepsRemaining], a
+	ret nz
+
+	ld a, BANK(FireGymWarpScript)
+	ld hl, FireGymWarpScript
+	call CallScript
+	scf
+	ret
+	
+.NoCall
+	xor a
 	ret
 
 DoPlayerEvent:
@@ -1030,9 +1094,8 @@ ChangeDirectionScript: ; 9
 INCLUDE "engine/overworld/scripting.asm"
 
 WarpToSpawnPoint::
-	ld hl, wStatusFlags2
-	res STATUSFLAGS2_SAFARI_GAME_F, [hl]
-	res STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld hl, wSafariFlag
+	res SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ret
 
 RunMemScript::
@@ -1111,8 +1174,15 @@ TryTileCollisionEvent::
 .headbutt
 	ld a, [wEngineBuffer1]
 	call CheckHeadbuttTreeTile
-	jr nz, .surf
+	jr nz, .tallgrass
 	farcall TryHeadbuttOW
+	jr c, .done
+
+.tallgrass
+	ld a, [wEngineBuffer1]
+	call CheckTallGrassTile
+	jr nz, .surf
+	farcall TryCutGrassOW
 	jr c, .done
 	jr .noevent
 
@@ -1138,18 +1208,37 @@ RandomEncounter::
 	jr c, .nope
 	call CanUseSweetScent
 	jr nc, .nope
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
+	jr nz, .safari_zone
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-	jr nz, .bug_contest
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
+	jr nz, .forced_shiny
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .simulation
 	farcall TryWildEncounter
 	jr nz, .nope
 	jr .ok
 
-.bug_contest
+.forced_shiny
 	farcall TryWildEncounter
 	jr nz, .nope
-	ld a, BANK(BugCatchingContestBattleScript)
-	ld hl, BugCatchingContestBattleScript
+	ld a, BANK(ForcedShinyEncounterScript)
+	ld hl, ForcedShinyEncounterScript
+	jr .done
+
+.safari_zone
+	farcall TryWildEncounter
+	jr nz, .nope
+	ld a, BANK(SafariZoneEncounterScript)
+	ld hl, SafariZoneEncounterScript
+	jr .done
+
+.simulation
+	farcall TryWildEncounter
+	jr nz, .nope
+	ld a, BANK(SimulationEncounterScript)
+	ld hl, SimulationEncounterScript
 	jr .done
 
 .nope
@@ -1160,13 +1249,18 @@ RandomEncounter::
 .ok
 	ld a, BANK(WildBattleScript)
 	ld hl, WildBattleScript
-;	jr .done
 
 .done
 	call CallScript
 	scf
 	ret
 
+SimulationEncounterScript
+	writecode VAR_BATTLETYPE, BATTLETYPE_SIMULATION
+	jump WildBattleScript
+
+ForcedShinyEncounterScript:
+	writecode VAR_BATTLETYPE, BATTLETYPE_SHINY
 WildBattleScript:
 	randomwildmon
 	startbattle
@@ -1181,6 +1275,8 @@ CanUseSweetScent::
 	cp CAVE
 	jr z, .ice_check
 	cp DUNGEON
+	jr z, .ice_check
+	cp GYM_CAVE
 	jr z, .ice_check
 	farcall CheckGrassCollision
 	jr nc, .no
@@ -1264,7 +1360,6 @@ TryWildEncounter_BugContest:
 	ld b, 20 percent
 
 .ok
-	farcall ApplyMusicEffectOnEncounterRate
 	farcall ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	ldh a, [hRandomAdd]
@@ -1275,72 +1370,6 @@ TryWildEncounter_BugContest:
 	ret
 
 INCLUDE "data/wild/bug_contest_mons.asm"
-
-DoBikeStep::
-	nop
-	nop
-	; If the bike shop owner doesn't have our number, or
-	; if we've already gotten the call, we don't have to
-	; be here.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	jr z, .NoCall
-
-	; If we're not on the bike, we don't have to be here.
-	ld a, [wPlayerState]
-	cp PLAYER_BIKE
-	jr nz, .NoCall
-
-	; If we're not in an area of phone service, we don't
-	; have to be here.
-	call GetMapPhoneService
-	and a
-	jr nz, .NoCall
-
-	; Check the bike step count and check whether we've
-	; taken 65536 of them yet.
-	ld hl, wBikeStep
-	ld a, [hli]
-	ld d, a
-	ld e, [hl]
-	cp 255
-	jr nz, .increment
-	ld a, e
-	cp 255
-	jr z, .dont_increment
-
-.increment
-	inc de
-	ld [hl], e
-	dec hl
-	ld [hl], d
-
-.dont_increment
-	; If we've taken at least 1024 steps, have the bike
-	;  shop owner try to call us.
-	ld a, d
-	cp HIGH(1024)
-	jr c, .NoCall
-
-	; If a call has already been queued, don't overwrite
-	; that call.
-	ld a, [wSpecialPhoneCallID]
-	and a
-	jr nz, .NoCall
-
-	; Queue the call.
-	ld a, SPECIALCALL_BIKESHOP
-	ld [wSpecialPhoneCallID], a
-	xor a
-	ld [wSpecialPhoneCallID + 1], a
-	ld hl, wStatusFlags2
-	res STATUSFLAGS2_BIKE_SHOP_CALL_F, [hl]
-	scf
-	ret
-
-.NoCall:
-	xor a
-	ret
 
 ClearCmdQueue::
 	ld hl, wCmdQueue

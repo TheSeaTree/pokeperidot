@@ -23,16 +23,12 @@ BattleCommand_BulkUp:
 .raise
 
 ; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
 	call ResetMiss
 	call BattleCommand_DefenseUp
 	jp   BattleCommand_StatUpMessage
-	
+
 .cantraise
-	call CantRaiseStats
-	ret
-	
+	jp CantRaiseStats

@@ -211,21 +211,12 @@ CheckBTMonMovesForErrors:
 	ld hl, wBT_OTTempMon1Moves
 .loop
 	push hl
-	ld a, [hl]
-	cp NUM_ATTACKS + 1
-	jr c, .okay
-	ld a, POUND
-	ld [hl], a
-
-.okay
-	inc hl
+	ld a, [hli]
 	ld b, NUM_MOVES - 1
 .loop2
 	ld a, [hl]
 	and a
-	jr z, .loop3
-	cp NUM_ATTACKS + 1
-	jr c, .next
+	jr nz, .next
 
 .loop3
 	xor a
@@ -901,11 +892,7 @@ GameBoyN64GFX:
 INCBIN "gfx/trade/game_boy_n64.2bpp"
 
 Tilemap_1733af:
-if DEF(_CRYSTAL11)
 INCBIN "gfx/unknown/1733af_corrupt.tilemap"
-else
-INCBIN "gfx/unknown/1733af.tilemap"
-endc
 
 Attrmap_173517:
 INCBIN "gfx/unknown/173517.attrmap"

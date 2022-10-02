@@ -227,3 +227,26 @@ GetBattleAnimByte::
 
 	ld a, [wBattleAnimByte]
 	ret
+
+GetSixthMaxHP::
+	call GetThirdMaxHP
+	jp HalveBC
+
+GetThirdMaxHP::
+; Assumes HP<768
+	farcall GetMaxHP
+	xor a
+	inc b
+.loop
+	dec b
+	inc a
+	dec bc
+	dec bc
+	dec bc
+	inc b
+	jr nz, .loop
+	dec a
+	ld c, a
+	ret nz
+	inc c
+	ret

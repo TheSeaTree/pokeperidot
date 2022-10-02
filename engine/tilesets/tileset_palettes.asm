@@ -1,12 +1,12 @@
 LoadSpecialMapPalette:
 .continue
 	ld a, [wMapTileset]
-	cp TILESET_POKECOM_CENTER
-	jr z, .pokecom_2f
 	cp TILESET_BATTLE_TOWER
 	jr z, .battle_tower
 	cp TILESET_ICE_PATH
 	jr z, .ice_path
+	cp TILESET_CASTLE
+	jr z, .castle
 	cp TILESET_HOUSE
 	jr z, .house
 	cp TILESET_RADIO_TOWER
@@ -27,14 +27,23 @@ LoadSpecialMapPalette:
 	jr z, .lighthouse
 	cp  TILESET_PORT
 	jr z, .port
+	cp  TILESET_GATE
+	jr z, .gate
 	cp  TILESET_ROOF
 	jr z, .roof
+	cp  TILESET_ELITE_FOUR_ROOM
+	jr z, .elitefourroom
+	cp  TILESET_CHAMPIONS_ROOM
+	jr z, .championsroom
+	cp  TILESET_POKEMON_LEAGUE
+	jr z, .pokemonleague
+	cp  TILESET_POKEMON_LEAGUE_OUTSIDE
+	jr z, .pokemonleagueoutside
+	cp  TILESET_LOST_LAND
+	jr z, .lostland
+	cp  TILESET_GAME_CORNER
+	jr z, .gamecorner
 	jr .do_nothing
-
-.pokecom_2f
-	call LoadPokeComPalette
-	scf
-	ret
 
 .battle_tower
 	call LoadBattleTowerPalette
@@ -50,6 +59,11 @@ LoadSpecialMapPalette:
 	scf
 	ret
 	
+.castle
+	call LoadCastlePalette
+	scf
+	ret
+
 .tower
 	call LoadTowerPalette
 	scf
@@ -71,10 +85,14 @@ LoadSpecialMapPalette:
 	ret
 	
 .port
-	call LoadPortPalette
+	ld hl, PortPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.gate
+	call LoadGatePalette
 	scf
 	ret
-	
+
 .mountain
 	ld hl, MountainPalette
 	jp LoadEightTimeOfDayBGPalettes
@@ -99,20 +117,34 @@ LoadSpecialMapPalette:
 	ld hl, RoofPalette
 	jp LoadEightTimeOfDayBGPalettes
 
+.elitefourroom
+	ld hl, EliteFourRoomPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.pokemonleague
+	ld hl, PokemonLeaguePalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.pokemonleagueoutside
+	ld hl, PokemonLeagueOutsidePalette
+	jp LoadEightTimeOfDayBGPalettes
+	
+.championsroom
+	ld hl, ChampionsRoomPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.lostland
+	ld hl, LostLandPalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.gamecorner
+	call LoadGameCornerPalette
+	scf
+	ret
+
 .do_nothing
 	and a
 	ret
-
-LoadPokeComPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, PokeComPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
-PokeComPalette:
-INCLUDE "gfx/tilesets/pokecom_center.pal"
 
 LoadBattleTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -123,7 +155,7 @@ LoadBattleTowerPalette:
 	ret
 
 BattleTowerPalette:
-INCLUDE "gfx/tilesets/battle_tower.pal"
+INCLUDE "gfx/tilesets_pals/battle_tower.pal"
 
 LoadIcePathPalette:
 	ld a, BANK(wBGPals1)
@@ -134,7 +166,7 @@ LoadIcePathPalette:
 	ret
 
 IcePathPalette:
-INCLUDE "gfx/tilesets/ice_path.pal"
+INCLUDE "gfx/tilesets_pals/ice_path.pal"
 
 LoadHousePalette:
 	ld a, BANK(wBGPals1)
@@ -145,7 +177,18 @@ LoadHousePalette:
 	ret
 
 HousePalette:
-INCLUDE "gfx/tilesets/house.pal"
+INCLUDE "gfx/tilesets_pals/house.pal"
+
+LoadCastlePalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, CastlePalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+
+CastlePalette:
+INCLUDE "gfx/tilesets_pals/castle.pal"
 
 LoadTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -156,7 +199,7 @@ LoadTowerPalette:
 	ret
 
 TowerPalette:
-INCLUDE "gfx/tilesets/tower.pal"
+INCLUDE "gfx/tilesets_pals/tower.pal"
 
 LoadRadioTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -167,21 +210,24 @@ LoadRadioTowerPalette:
 	ret
 
 RadioTowerPalette:
-INCLUDE "gfx/tilesets/radio_tower.pal"
+INCLUDE "gfx/tilesets_pals/radio_tower.pal"
 
 MansionPalette1:
-INCLUDE "gfx/tilesets/mansion_1.pal"
+INCLUDE "gfx/tilesets_pals/mansion_1.pal"
 
-LoadPortPalette:
+PortPalette:
+INCLUDE "gfx/tilesets_pals/port.pal"
+
+LoadGatePalette:
 	ld a, BANK(wBGPals1)
 	ld de, wBGPals1
-	ld hl, PortPalette
+	ld hl, GatePalette
 	ld bc, 8 palettes
 	call FarCopyWRAM
 	ret
 	
-PortPalette:
-INCLUDE "gfx/tilesets/port.pal"
+GatePalette:
+INCLUDE "gfx/tilesets_pals/gate.pal"
 
 LoadMansionPalette:
 	ld a, BANK(wBGPals1)
@@ -206,26 +252,52 @@ LoadMansionPalette:
 	call FarCopyWRAM
 	ret
 
+LoadGameCornerPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, GameCornerPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+GameCornerPalette:
+INCLUDE "gfx/tilesets_pals/game_corner.pal"
+
 MansionPalette2:
-INCLUDE "gfx/tilesets/mansion_2.pal"
+INCLUDE "gfx/tilesets_pals/mansion_2.pal"
 
 MountainPalette:
-INCLUDE "gfx/tilesets/mountain.pal"
+INCLUDE "gfx/tilesets_pals/mountain.pal"
 
 VolcanoPalette:
-INCLUDE "gfx/tilesets/volcano.pal"
+INCLUDE "gfx/tilesets_pals/volcano.pal"
 
 CavePalette:
-INCLUDE "gfx/tilesets/cave.pal"
+INCLUDE "gfx/tilesets_pals/cave.pal"
 
 FacilityPalette:
-INCLUDE "gfx/tilesets/facility.pal"
+INCLUDE "gfx/tilesets_pals/facility.pal"
 
 LighthousePalette:
-INCLUDE "gfx/tilesets/lighthouse.pal"
+INCLUDE "gfx/tilesets_pals/lighthouse.pal"
 
 RoofPalette:
-INCLUDE "gfx/tilesets/roof.pal"
+INCLUDE "gfx/tilesets_pals/roof.pal"
+
+EliteFourRoomPalette:
+INCLUDE "gfx/tilesets_pals/elite_four_room.pal"
+
+ChampionsRoomPalette:
+INCLUDE "gfx/tilesets_pals/champions_room.pal"
+
+PokemonLeaguePalette:
+INCLUDE "gfx/tilesets_pals/pokemon_league.pal"
+
+PokemonLeagueOutsidePalette:
+INCLUDE "gfx/tilesets_pals/pokemon_league_outside.pal"
+
+LostLandPalette:
+INCLUDE "gfx/tilesets_pals/lost_land.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

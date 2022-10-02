@@ -1,25 +1,14 @@
 BattleCommand_LeechSeed:
 ; leechseed
+	ld a, [wTypeModifier]
+	and $7f
+	jp z, BattleEffect_DoesntAffect
+
 	ld a, [wAttackMissed]
 	and a
 	jr nz, .evaded
 	call CheckSubstituteOpp
 	jr nz, .evaded
-
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-
-	ld a, [de]
-	cp GRASS
-	jr z, .grass
-	inc de
-	ld a, [de]
-	cp GRASS
-	jr z, .grass
 
 	ld a, BATTLE_VARS_SUBSTATUS4_OPP
 	call GetBattleVarAddr
@@ -29,10 +18,6 @@ BattleCommand_LeechSeed:
 	call AnimateCurrentMove
 	ld hl, WasSeededText
 	jp StdBattleTextBox
-
-.grass
-	call AnimateFailedMove
-	jp PrintDoesntAffect
 
 .evaded
 	call AnimateFailedMove

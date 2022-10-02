@@ -4,7 +4,9 @@ CreditsScript:
 	db CREDITS_CLEAR
 
 ; Pokemon Crystal Version Staff
-	db                STAFF, 1
+	db	     CREDIT_UNKNOWN, 1
+	db	          COPYRIGHT, 2
+	db                STAFF, 3
 
 	db CREDITS_WAIT, 8
 
@@ -251,32 +253,39 @@ CreditsScript:
 	db CREDITS_WAIT, 12
 
 	db       SPECIAL_THANKS, 0
-	db     KIMIKO_NAKAMICHI, 1
-	db           AKITO_MORI, 2
+	db     PRET, 1
+	db           RANGI, 2
+	db      THEFAKEMATEO, 3
+	db   CORALDEV, 4
 
 	db CREDITS_WAIT, 12
 
 	db       SPECIAL_THANKS, 0
-	db        GAKUZI_NOMOTO, 1
-	db           AI_MASHIMA, 2
-	db      KUNIMI_KAWAMURA, 3
+	db        FIQ, 1
+	db           DARSH, 2
+	db      PFERO, 3
+	db      MAYORAPTOR, 4
 
 	db CREDITS_WAIT, 12
 
 	db       SPECIAL_THANKS, 0
-	db    MIKIHIRO_ISHIKAWA, 1
-	db   HIDEYUKI_HASHIMOTO, 2
+	db       HYPERDRIVEGUY, 1
+	db    ELKO, 2
+	db   FREDRIQ, 3
+	db   YEAHHHCHAT, 4
+	db   DAHAVOC, 5
+
+	db CREDITS_WAIT, 12
+	db       SPECIAL_THANKS, 0
+	db   RHEG, 2
 
 	db CREDITS_WAIT, 12
 
 	db   EXECUTIVE_PRODUCER, 1
-	db     HIROSHI_YAMAUCHI, 2
+	db     FRANK, 2
+	db     SEATREE, 3
 
-	db CREDITS_WAIT, 12
-
-	db            COPYRIGHT, 1
-
-	db CREDITS_WAIT, 9
+	db CREDITS_WAIT, 13
 
 ; Display "The End" graphic.
 	db CREDITS_THEEND

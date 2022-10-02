@@ -250,7 +250,7 @@ EmilyGameConsoleText:
 
 EmilyDollText:
 	text "It's an adorable"
-	line "CLEFAIRY doll."
+	line "CLEFAIRY DOLL."
 	done
 
 EmilysRadioText:

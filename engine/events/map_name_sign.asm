@@ -9,12 +9,15 @@ ReturnFromMapSetupScript::
 	ld c, a
 	call GetWorldMapLocation
 	ld [wCurLandmark], a
+	call .CheckCarnationZooGate
+	jr z, .not_gate
 
 	call GetMapEnvironment
+	cp GYM_CAVE
+	jr z, .gym_cave
 	cp GATE
 	jr nz, .not_gate
-
-.nationalparkgate
+.gym_cave
 	ld a, -1
 	ld [wCurLandmark], a
 
@@ -67,10 +70,31 @@ ReturnFromMapSetupScript::
 	ret z
 	cp SPECIAL_MAP
 	ret z
+	cp PALEROCK_MOUNTAIN
+	ret z
 	cp DIGLETTS_CAVE
 	ret z
+	cp BONEYARD
+	ret z
+	cp THE_PAST
+	ret z
+	cp LOST_LAND
+	jr nz, .DisplayMapName
+	; Lost Land will only display the map name if the player has visited previously.
+	ld hl, wPokegearFlags
+	bit LOST_LAND_VISITED_F, [hl]
+	ret z
+.DisplayMapName
 	ld a, 1
 	and a
+	ret
+
+.CheckCarnationZooGate:
+	ld a, [wMapGroup]
+	cp GROUP_CARNATION_TOWN
+	ret nz
+	ld a, [wMapNumber]
+	cp MAP_CARNATION_ZOO_GATE
 	ret
 
 PlaceMapNameSign::

@@ -24,6 +24,7 @@ MAP_NONE   EQU 0
 	const ENVIRONMENT_5
 	const GATE
 	const DUNGEON
+	const GYM_CAVE
 
 ; map palettes (wEnvironment)
 	const_def
@@ -47,7 +48,7 @@ MAP_NONE   EQU 0
 	const FISHGROUP_DRATINI_2
 	const FISHGROUP_GRIMER
 	const FISHGROUP_QWILFISH
-	const FISHGROUP_REMORAID
+	const FISHGROUP_FOSSIL
 	const FISHGROUP_QWILFISH_NO_SWARM
 
 ; connection directions (see data/maps/data.asm)
@@ -68,22 +69,22 @@ MAP_NONE   EQU 0
 const_value = -1
 	const SPAWN_N_A
 	const SPAWN_HOME
-	const SPAWN_DEBUG
+	const SPAWN_SS_MAKO
 ; johto
-	const SPAWN_NEW_BARK
-	const SPAWN_CHERRYGROVE
-	const SPAWN_AZALEA
-	const SPAWN_VIOLET
-	const SPAWN_GOLDENROD
-	const SPAWN_CIANWOOD
+	const SPAWN_ELKHORN
+	const SPAWN_PAVONA
+	const SPAWN_PECTINIA
+	const SPAWN_RIDGE
+	const SPAWN_FAVIA
+	const SPAWN_HEPATICA
 	const SPAWN_ROUTE_9
-	const SPAWN_ECRUTEAK
-	const SPAWN_OLIVINE
-	const SPAWN_MAHOGANY
+	const SPAWN_STAGHORN
+	const SPAWN_RUGOSA_COAST
+	const SPAWN_RUGOSA
 	const SPAWN_CARNATION
-	const SPAWN_BLACKTHORN
+	const SPAWN_ACROPORA
 	const SPAWN_ORCHID
-	const SPAWN_INDIGO
+	const SPAWN_LEAGUE
 NUM_SPAWNS EQU const_value
 
 ; outdoor sprite limits (see engine/overworld/overworld.asm)

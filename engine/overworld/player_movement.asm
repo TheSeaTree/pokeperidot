@@ -15,20 +15,6 @@ DoPlayerMovement::
 
 	ldh a, [hJoyDown]
 	ld [wCurInput], a
-
-; Standing downhill instead moves down.
-
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_DOWNHILL_F, [hl]
-	ret z
-
-	ld c, a
-	and D_PAD
-	ret nz
-
-	ld a, c
-	or D_DOWN
-	ld [wCurInput], a
 	ret
 
 .TranslateIntoMovement:
@@ -37,12 +23,12 @@ DoPlayerMovement::
 	jr z, .Normal
 	cp PLAYER_SURF
 	jr z, .Surf
+	cp PLAYER_SURF_LAPRAS
+	jr z, .Surf
 	cp PLAYER_SURF_PIKA
 	jr z, .Surf
 	cp PLAYER_BIKE
 	jr z, .Normal
-	cp PLAYER_SKATE
-	jr z, .Ice
 	cp PLAYER_RUN
 	jr z, .Normal
 
@@ -276,6 +262,14 @@ DoPlayerMovement::
 	jp z, .bump
 
 	ld a, [wPlayerStandingTile]
+	cp COLL_ESCALATOR_DOWN
+	jp z, .escalatordown
+
+	ld a, [wPlayerStandingTile]
+	cp COLL_ESCALATOR_UP
+	jp z, .escalatorup
+
+	ld a, [wPlayerStandingTile]
 	call CheckIceTile
 	jp nc, .ice
 
@@ -283,26 +277,7 @@ DoPlayerMovement::
 	call .RunCheck
 	jr z, .walk
 	call .BikeCheck
-	jr nz, .walk
-
-	ld hl, wBikeFlags
-	bit BIKEFLAGS_DOWNHILL_F, [hl]
 	jr z, .fast
-
-	ld a, [wWalkingDirection]
-	cp DOWN
-	jr z, .fast
-
-	ld a, STEP_WALK
-	call .DoStep
-	scf
-	ret
-
-.fast
-	ld a, STEP_BIKE
-	call .DoStep
-	scf
-	ret
 
 .walk
 	ld hl, wPokegearFlags
@@ -313,6 +288,8 @@ DoPlayerMovement::
 	jr z, .holdwalk
 	cp DUNGEON
 	jr z, .holdwalk
+	cp GYM_CAVE
+	jr z, .holdwalk
 	ld a, [wCurInput]
 	and B_BUTTON
 	jr nz, .holdrun
@@ -320,6 +297,12 @@ DoPlayerMovement::
 	ld a, [wPlayerState]
 	cp PLAYER_NORMAL
 	ld a, STEP_WALK
+	call .DoStep
+	scf
+	ret
+
+.fast
+	ld a, STEP_BIKE
 	call .DoStep
 	scf
 	ret
@@ -343,6 +326,36 @@ DoPlayerMovement::
 
 .ice
 	ld a, STEP_ICE
+	call .DoStep
+	scf
+	ret
+	
+.escalatordown
+	ld a, [wWalkingDirection]
+	cp UP
+	jr z, .slow
+
+	ld a, DOWN
+	ld [wWalkingDirection], a
+	jr .escalatorslide
+
+.escalatorup
+	ld a, [wWalkingDirection]
+	cp DOWN
+	jr z, .slow
+
+	ld a, UP
+	ld [wWalkingDirection], a
+	
+.escalatorslide
+	ld a, STEP_SLIDE
+	call .DoStep
+	ld a, 5
+	scf
+	ret
+
+.slow
+	ld a, STEP_SLOW
 	call .DoStep
 	scf
 	ret
@@ -502,11 +515,12 @@ DoPlayerMovement::
 	dw .NormalStep
 	dw .FastStep
 	dw .JumpStep
-	dw .SlideStep
+	dw .IceStep
 	dw .TurningStep
 	dw .BackJumpStep
 	dw .FinishFacing
 	dw .RunStep
+	dw .SlideStep
 
 .SlowStep:
 	slow_step DOWN
@@ -528,7 +542,7 @@ DoPlayerMovement::
 	jump_step UP
 	jump_step LEFT
 	jump_step RIGHT
-.SlideStep:
+.IceStep:
 	fast_slide_step DOWN
 	fast_slide_step UP
 	fast_slide_step LEFT
@@ -553,6 +567,11 @@ DoPlayerMovement::
 	run_step UP
 	run_step LEFT
 	run_step RIGHT
+.SlideStep
+	slide_step DOWN
+	slide_step UP
+	turn_head LEFT
+	turn_head RIGHT
 
 .StandInPlace:
 	ld a, 0
@@ -764,10 +783,8 @@ ENDM
 .BikeCheck:
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	ret z
-	cp PLAYER_SKATE
 	ret
-	
+
 .RunCheck:
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
@@ -779,6 +796,8 @@ ENDM
 	cp INDOOR
 	ret z
 	cp DUNGEON
+	ret z
+	cp GYM_CAVE
 	ret z
 	ld a, [hJoypadDown]
 	and B_BUTTON
@@ -796,6 +815,8 @@ ENDM
 	cp INDOOR
 	jp z, .runningstand
 	cp DUNGEON
+	jp z, .runningstand
+	cp GYM_CAVE
 	jp z, .runningstand
 	ld a, [wPlayerState]
 	cp PLAYER_RUN
@@ -873,10 +894,7 @@ CheckStandingOnIce::
 	jr z, .not_ice
 	ld a, [wPlayerStandingTile]
 	call CheckIceTile
-	jr nc, .yep
-	ld a, [wPlayerState]
-	cp PLAYER_SKATE
-	jr nz, .not_ice
+	jr c, .not_ice
 
 .yep
 	scf

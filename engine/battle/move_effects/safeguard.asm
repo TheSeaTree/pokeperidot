@@ -10,14 +10,10 @@ BattleCommand_Safeguard:
 	ld de, wEnemySafeguardCount
 .ok
 	bit SCREENS_SAFEGUARD, [hl]
-	jr nz, .failed
+	jP nz, BattleEffect_ButItFailed
 	set SCREENS_SAFEGUARD, [hl]
 	ld a, 5
 	ld [de], a
 	call AnimateCurrentMove
 	ld hl, CoveredByVeilText
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed

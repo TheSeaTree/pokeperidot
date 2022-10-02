@@ -8,9 +8,9 @@ EngineFlags:
 ; entries correspond to ENGINE_* constants
 
 	; pokegear
-	engine_flag wPokegearFlags, POKEGEAR_RADIO_CARD_F ; $0
-	engine_flag wPokegearFlags, POKEGEAR_MAP_CARD_F
-	engine_flag wPokegearFlags, POKEGEAR_PHONE_CARD_F
+	engine_flag wPokegearFlags, BATTLE_SUBWAY_LEVELS_F ; $0
+	engine_flag wPokegearFlags, TRAINER_CARD_BP_F
+	engine_flag wPokegearFlags, LOST_LAND_VISITED_F
 	engine_flag wPokegearFlags, RUNNING_SHOES_F
 	engine_flag wPokegearFlags, POKEGEAR_OBTAINED_F
 
@@ -28,21 +28,21 @@ EngineFlags:
 	engine_flag wStatusFlags, STATUSFLAGS_UNOWN_DEX_F
 	engine_flag wStatusFlags, STATUSFLAGS_FLASH_F
 	engine_flag wStatusFlags, STATUSFLAGS_CAUGHT_POKERUS_F
-	engine_flag wStatusFlags, STATUSFLAGS_ROCKET_SIGNAL_F
+	engine_flag wStatusFlags, STATUSFLAGS_EXP_ALL_ACTIVE_F
 	engine_flag wStatusFlags, STATUSFLAGS_HALL_OF_FAME_F
-	engine_flag wStatusFlags, STATUSFLAGS_MAIN_MENU_MOBILE_CHOICES_F
+	engine_flag wStatusFlags, STATUSFLAGS_UNUSED_1_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_BUG_CONTEST_TIMER_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_SAFARI_GAME_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_1_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_2_F
 	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_BIKE_SHOP_CALL_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_HAVE_BATTLE_PASS_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_REACHED_GOLDENROD_F
-	engine_flag wStatusFlags2, STATUSFLAGS2_ROCKETS_IN_MAHOGANY_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_EXTENDED_SAFARI_GAME_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F
 
 	engine_flag wBikeFlags, BIKEFLAGS_STRENGTH_ACTIVE_F ; $18
 	engine_flag wBikeFlags, BIKEFLAGS_ALWAYS_ON_BIKE_F
-	engine_flag wBikeFlags, BIKEFLAGS_DOWNHILL_F
+	engine_flag wBikeFlags, BIKEFLAGS_ROCK_SMASH_ACTIVE_F
 
 	engine_flag wJohtoBadges, ZEPHYRBADGE
 	engine_flag wJohtoBadges, HIVEBADGE
@@ -74,30 +74,29 @@ EngineFlags:
 
 	; fly
 	engine_flag wVisitedSpawns, SPAWN_HOME
-	engine_flag wVisitedSpawns, SPAWN_DEBUG
-	engine_flag wVisitedSpawns, SPAWN_INDIGO ; $40
-	engine_flag wVisitedSpawns, SPAWN_NEW_BARK
-	engine_flag wVisitedSpawns, SPAWN_CHERRYGROVE
-	engine_flag wVisitedSpawns, SPAWN_AZALEA
-	engine_flag wVisitedSpawns, SPAWN_VIOLET
-	engine_flag wVisitedSpawns, SPAWN_GOLDENROD
-	engine_flag wVisitedSpawns, SPAWN_CIANWOOD
+	engine_flag wVisitedSpawns, SPAWN_SS_MAKO
+	engine_flag wVisitedSpawns, SPAWN_LEAGUE ; $40
+	engine_flag wVisitedSpawns, SPAWN_ELKHORN
+	engine_flag wVisitedSpawns, SPAWN_PAVONA
+	engine_flag wVisitedSpawns, SPAWN_PECTINIA
+	engine_flag wVisitedSpawns, SPAWN_RIDGE
+	engine_flag wVisitedSpawns, SPAWN_FAVIA
+	engine_flag wVisitedSpawns, SPAWN_HEPATICA
 	engine_flag wVisitedSpawns, SPAWN_ROUTE_9
-	engine_flag wVisitedSpawns, SPAWN_ECRUTEAK ; $48
-	engine_flag wVisitedSpawns, SPAWN_OLIVINE
-	engine_flag wVisitedSpawns, SPAWN_MAHOGANY
+	engine_flag wVisitedSpawns, SPAWN_STAGHORN ; $48
+	engine_flag wVisitedSpawns, SPAWN_RUGOSA_COAST
+	engine_flag wVisitedSpawns, SPAWN_RUGOSA
 	engine_flag wVisitedSpawns, SPAWN_CARNATION
-	engine_flag wVisitedSpawns, SPAWN_BLACKTHORN
+	engine_flag wVisitedSpawns, SPAWN_ACROPORA
 	engine_flag wVisitedSpawns, SPAWN_ORCHID
-	engine_flag wVisitedSpawns, SPAWN_INDIGO
 	engine_flag wVisitedSpawns, NUM_SPAWNS ; unused
 
 	engine_flag wLuckyNumberShowFlag, LUCKYNUMBERSHOW_GAME_OVER_F
 
-	engine_flag wStatusFlags2, STATUSFLAGS2_UNUSED_3_F
+	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SIMULATION_F
 
 	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F ; $50
-	engine_flag wDailyFlags1, DAILYFLAGS1_BUG_CONTEST_F
+	engine_flag wDailyFlags1, DAILYFLAGS1_OFFICER_DANIEL_BATTLE_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_SODA_POP_GUY_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_VITAMIN_TIMER_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_ALL_FRUIT_TREES_F
@@ -114,8 +113,17 @@ EngineFlags:
 	engine_flag wDailyFlags2, DAILYFLAGS2_MOVE_TUTOR_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
 
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_MURPHY
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_CECIL
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_CELESTE
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_DUANE
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_POSEY
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_JOEL
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_ALAN
+	engine_flag wDailyFlags3, DAILYFLAGS3_REMATCH_ENYA
+
 	engine_flag wSwarmFlags, SWARMFLAGS_BUENAS_PASSWORD_F ; $60
-	engine_flag wSwarmFlags, SWARMFLAGS_GOLDENROD_DEPT_STORE_SALE_F
+	engine_flag wSafariFlag, SAFARIFLAGS_SAFARI_GAME_ACTIVE_F
 
 	engine_flag wGameTimerPause, GAMETIMERPAUSE_MOBILE_7_F
 

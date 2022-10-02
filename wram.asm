@@ -39,7 +39,7 @@ wChannel8:: channel_struct wChannel8 ; c25f
 wCurTrackDuty:: db
 wCurTrackIntensity:: db
 wCurTrackFrequency:: dw
-wc296:: db ; BCD value, dummied out
+wPokedexNumber:: db ; BCD value, dummied out
 wCurNoteDuration:: db ; used in MusicE0 and LoadNote
 
 wCurMusicByte:: db ; c298
@@ -658,12 +658,13 @@ wEnemyScreens:: ; c700
 wPlayerSafeguardCount:: db ; c701
 wPlayerLightScreenCount:: db ; c702
 wPlayerReflectCount:: db ; c703
-	ds 1
+wPlayerSpikesCount:: db
 
 wEnemySafeguardCount:: db ; c705
 wEnemyLightScreenCount:: db ; c706
 wEnemyReflectCount:: db ; c707
-	ds 2
+wEnemySpikesCount:: db
+	ds 1
 
 wBattleWeather:: ; c70a
 ; 00 normal
@@ -859,13 +860,8 @@ wDexListingCursorBackup:: db
 wBackupDexListingCursor:: db
 wBackupDexListingPage:: db
 wDexCurLocation:: db
-if DEF(_CRYSTAL11)
 wPokedexStatus:: db
-wPokedexDataEnd::
-else
-wPokedexDataEnd:: ds 1
-endc
-	ds 2
+wPokedexDataEnd:: ds 2
 
 NEXTU ; c6d0
 ; mobile data
@@ -1347,12 +1343,7 @@ wCreditsLYOverride:: db
 NEXTU ; cf64
 ; pokedex
 wPrevDexEntryJumptableIndex:: db
-if DEF(_CRYSTAL11)
 wPrevDexEntryBackup:: db
-else
-wPrevDexEntryBackup::
-wPokedexStatus:: db
-endc
 
 NEXTU ; cf64
 ; pokegear
@@ -1526,7 +1517,10 @@ wInBattleTowerBattle:: ; cfc0
 ; 1 BattleTower-Battle
 	db
 
-	ds 1
+wBattleMenuFlags::
+; bit 0-2: quick-access buttons (b/start/select)
+; bit 3: quick-select last pack item
+	db
 
 wFXAnimID:: dw ; cfc2
 
@@ -1637,6 +1631,16 @@ wMartItem7BCD:: ds 3
 wMartItem8BCD:: ds 3
 wMartItem9BCD:: ds 3
 wMartItem10BCD:: ds 3
+wMartItem11BCD:: ds 3
+wMartItem12BCD:: ds 3
+wMartItem13BCD:: ds 3
+wMartItem14BCD:: ds 3
+wMartItem15BCD:: ds 3
+wMartItem16BCD:: ds 3
+wMartItem17BCD:: ds 3
+wMartItem18BCD:: ds 3
+wMartItem19BCD:: ds 3
+wMartItem20BCD:: ds 3
 
 NEXTU ; d002
 ; town map data
@@ -1910,7 +1914,7 @@ wUsingItemWithSelect:: db ; d0ef
 
 UNION ; d0f0
 ; mart data
-wCurMart:: ds 16
+wCurMart:: ds 22
 wCurMartEnd::
 
 NEXTU ; d0f0
@@ -2307,7 +2311,10 @@ wScriptTextAddr::
 	ds 1
 wWildEncounterCooldown:: db ; d452
 wXYComparePointer:: dw ; d453
-	ds 4
+
+wOtherTrainerType::	db
+wTrainerGroupBank:: db
+	ds 2
 
 wBattleScriptFlags:: dw ; d459
 wPlayerSpriteSetupFlags:: ; d45b
@@ -2525,10 +2532,13 @@ wHallOfFameCount:: dw
 wTradeFlags:: flag_array NUM_NPC_TRADES ; d960
 	ds 1
 wMooMooBerries:: db ; d962
-wUndergroundSwitchPositions:: db ; d963
+wTrainerHouseStreak:: db ; d963
 wFarfetchdPosition:: db ; d964
+wBattleSubwaySet:: db
+wBattleSubwayCurStreak:: dw
+wBattleSubwayBestStreak:: dw
 
-	ds 13
+	ds 8
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
@@ -2543,14 +2553,14 @@ wVictoryRoadGateSceneID::                         db ; d97a
 wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
 wRoute17Route18GateSceneID::                      db ; d97d
-wIndigoPlateauPokecenter1FSceneID::               db ; d97e
-wWillsRoomSceneID::                               db ; d97f
-wKogasRoomSceneID::                               db ; d980
-wBrunosRoomSceneID::                              db ; d981
-wKarensRoomSceneID::                              db ; d982
-wLancesRoomSceneID::                              db ; d983
+wPokemonLeaguePokecenter1FSceneID::               db ; d97e
+wWilbursRoomSceneID::                             db ; d97f
+wRegansRoomSceneID::                              db ; d980
+wBredesRoomSceneID::                              db ; d981
+wAmbersRoomSceneID::                              db ; d982
+wJosephsRoomSceneID::                             db ; d983
 wHallOfFameSceneID::                              db ; d984
-wRoute27SceneID::                                 db ; d985
+wCarnationZooSceneID::                            db ; d985
 wNewBarkTownSceneID::                             db ; d986
 wMaplesLabSceneID::                               db ; d987
 wPlayersHouse1FSceneID::                          db ; d988
@@ -2566,7 +2576,7 @@ wGoldenrodGymSceneID::                            db ; d991
 wGoldenrodMagnetTrainStationSceneID::             db ; d992
 wGoldenrodPokecenter1FSceneID::                   db ; d993
 wOlivineCitySceneID::                             db ; d994
-wRoute34SceneID::                                 db ; d995
+wSafariZoneGateSceneID::                          db ; d995
 wVioletGymSceneID::
 wRoute34IlexForestGateSceneID::                   db ; d996
 wEcruteakCitySceneID::				              db ; d997
@@ -2574,20 +2584,20 @@ wRoute12ShelterSceneID::                          db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a
 wMahoganyTownSceneID::                            db ; d99b
-wRoute42SceneID::                                 db ; d99c
+wRoute18FarmhouseSceneID::                        db ; d99c
 wCianwoodCitySceneID::                            db ; d99d
-wBattleTower1FSceneID::                           db ; d99e
-wBattleTowerBattleRoomSceneID::                   db ; d99f
+wBattleSubwayInsideSceneID::                      db ; d99e
+wBattleSubwayTrainSceneID::                       db ; d99f
 wBattleTowerElevatorSceneID::                     db ; d9a0
-wBattleTowerHallwaySceneID::                      db ; d9a1
+wBattleSubwayPlatformSceneID::                    db ; d9a1
 wBattleTowerOutsideSceneID::                      db ; d9a2
 wRoute43GateSceneID::                             db ; d9a3
-wMountMoonSceneID::                               db ; d9a4
+wNorthForestSceneID::                             db ; d9a4
 wFluteMasterHouseSceneID::                        db ; d9a5
 wLostLandSceneID::                                db ; d9a6
-wBurnedTower1FSceneID::                           db ; d9a7
+wOrchidGym1FSceneID::                             db ; d9a7
 wBurnedTowerB1FSceneID::                          db ; d9a8
-wRadioTower5FSceneID::                            db ; d9a9
+wRoute28GateSceneID::                             db ; d9a9
 wRuinsOfAlphOutsideSceneID::                      db ; d9aa
 wRuinsOfAlphResearchCenterSceneID::               db ; d9ab
 wUnownChamberAGSceneID::               			  db ; d9ac
@@ -2604,48 +2614,61 @@ wSilverCaveRoom3SceneID::                         db ; d9b6
 wVictoryRoadSceneID::                             db ; d9b7
 wDragonsDenB1FSceneID::                           db ; d9b8
 wDragonShrineSceneID::                            db ; d9b9
-wOlivinePortSceneID::                             db ; d9ba
-wVermilionPortSceneID::                           db ; d9bb
-wFastShip1FSceneID::                              db ; d9bc
-wFastShipB1FSceneID::                             db ; d9bd
+wRugosaPortSceneID::                              db ; d9ba
+wVictoryPortSceneID::                             db ; d9bb
+wSSMako1FSceneID::                                db ; d9bc
+wSSMakoB1FSceneID::                               db ; d9bd
 wMountMoonSquareSceneID::                         db ; d9be
 wMobileTradeRoomSceneID::                         db ; d9bf
 wMobileBattleRoomSceneID::                        db ; d9c0
+wSSMako1FRoomsSceneID::                           db ; d9bc
+wSSMakoEngineRoomSceneID::                        db ; d9bc
+wSSMako2FSceneID::                                db ; d9bc
+wSSMako2FRoomsSceneID::                           db ; d9bd
+wSSMakoDeckSceneID::                         	  db ; d9bd
+wSSMakoLowerDeckSceneID::                      	  db ; d9bd
+wEmilysRoomSceneID::                      	  	  db
+wDugtriosDenSceneID::                      	  	  db
+wBattleSubwayBossTrainSceneID::					  db
+wBattleSimulationSceneID::					  	  db
+wTrainerHouseSceneID::					  	  	  db
+wOrchidEnteiShrineSceneID::				  	  	  db
 
-	ds 49
+	ds 37
 
 ; fight counts
-wJackFightCount::    db ; d9f2
-wBeverlyFightCount:: db ; unused
-wHueyFightCount::    db
-wGavenFightCount::   db
-wBethFightCount::    db
-wJoseFightCount::    db
-wReenaFightCount::   db
-wJoeyFightCount::    db
-wWadeFightCount::    db
-wRalphFightCount::   db
-wLizFightCount::     db
-wAnthonyFightCount:: db
-wToddFightCount::    db
-wGinaFightCount::    db
-wIrwinFightCount::   db ; unused
-wArnieFightCount::   db
-wAlanFightCount::    db
-wDanaFightCount::    db
-wChadFightCount::    db
-wDerekFightCount::   db ; unused
-wTullyFightCount::   db
-wBrentFightCount::   db
-wTiffanyFightCount:: db
-wVanceFightCount::   db
-wWiltonFightCount::  db
-wKenjiFightCount::   db ; unused
-wParryFightCount::   db
-wErinFightCount::    db
+wMurphyFightCount::  	db ; d9f2
+wCecilFightCount::   	db
+wCelesteFightCount:: 	db
+wDuaneFightCount::   	db
+wPoseyFightCount::   	db
+wJoelFightCount::    	db
+wAlanFightCount::    	db
+wEnyaFightCount::    	db
+wEliteFourFightCount::	db
+wSSMako1FFightCount::   Db
+wSSMako2FFightCount::   db
+wTaylorFightCount:: 	db
+wToddFightCount::    	db ; unused
+wGinaFightCount::    	db ; unused
+wIrwinFightCount::   	db ; unused
+wArnieFightCount::   	db ; unused
+wReenaFightCount::    	db ; unused
+wDanaFightCount::    	db ; unused
+wChadFightCount::    	db ; unused
+wDerekFightCount::   	db ; unused
+wTullyFightCount::   	db ; unused
+wBrentFightCount::   	db ; unused
+wTiffanyFightCount:: 	db ; unused
+wVanceFightCount::   	db ; unused
+wWiltonFightCount::  	db ; unused
+wKenjiFightCount::   	db ; unused
+wParryFightCount::   	db ; unused
+wErinFightCount::    	db ; unused
 ; da0e
+wTreasuresTraded::		db
 
-	ds 100
+	ds 99
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c
@@ -2709,9 +2732,11 @@ wDailyResetTimer:: dw ; dc1c
 wDailyFlags1:: db
 wDailyFlags2:: db
 wSwarmFlags:: db
-	ds 2
+wDailyFlags3:: db
+	ds 1
 wTimerEventStartDay:: db
-	ds 3
+wSafariFlag:: db
+	ds 2
 
 wFruitTreeFlags:: flag_array NUM_FRUIT_TREES ; dc27
 
@@ -2745,11 +2770,11 @@ wStepCount:: db ; dc73
 wPoisonStepCount:: db ; dc74
 	ds 2
 wHappinessStepCount:: db
-	ds 1
 
+wFireGymStepsRemaining:: db ; dc7a
 wParkBallsRemaining::
 wSafariBallsRemaining:: db ; dc79
-wSafariTimeRemaining:: dw ; dc7a
+wSafariStepsRemaining:: dw
 
 wPhoneList:: ds CONTACT_LIST_SIZE ; dc7c
 ; dc86
@@ -2760,7 +2785,7 @@ wRepelType:: db
 wLuckyIDNumber:: dw ; dc9f
 
 wRepelEffect:: db ; If a Repel is in use, it contains the nr of steps it's still active
-wBikeStep:: dw
+wMushroomQuantity:: dw
 wKurtApricornQuantity:: db
 
 wPlayerDataEnd::

@@ -17,7 +17,7 @@ PalerockCave1F_MapEvents:
 	warp_event 12,  7, PALEROCK_CAVE_B1F, 1
 	warp_event 19, 15, PALEROCK_CAVE_B1F, 2
 	warp_event  9, 25, PALEROCK_CAVE_B1F, 3
-	warp_event 14, 29, PALEROCK_CAVE_B1F, 4
+	warp_event 15, 29, PALEROCK_CAVE_B1F, 4
 
 	db 0 ; coord events
 

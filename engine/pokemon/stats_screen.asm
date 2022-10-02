@@ -382,9 +382,10 @@ StatsScreen_InitUpperHalf:
 	inc hl
 	ld [hl], "."
 	inc hl
-	hlcoord 10, 0
+	farcall Pokedex_GetDexNumber
 	lb bc, PRINTNUM_LEADINGZEROS | 1, 3
-	ld de, wDeciramBuffer
+	ld de, wPokedexNumber
+	hlcoord 10, 0
 	call PrintNum
 	hlcoord 14, 0
 	call PrintLevel
@@ -548,8 +549,12 @@ StatsScreen_LoadGFX:
 	ld a, b
 	and $f0
 	jr z, .NotImmuneToPkrs
-	hlcoord 8, 8
+	hlcoord 7, 12
 	ld [hl], "." ; Pokérus immunity dot
+.HasPokerus:
+	ld de, .PkrsStr
+	hlcoord  3, 13
+	call PlaceString
 .NotImmuneToPkrs:
 	ld a, [wMonType]
 	cp BOXMON
@@ -560,12 +565,6 @@ StatsScreen_LoadGFX:
 	predef PlaceStatusString
 	pop hl
 	jr nz, .done_status
-	jr .StatusOK
-.HasPokerus:
-	ld de, .PkrsStr
-	hlcoord 1, 13
-	call PlaceString
-	jr .done_status
 .StatusOK:
 	ld de, .OK_str
 	call PlaceString
@@ -594,7 +593,7 @@ StatsScreen_LoadGFX:
 	db "OK @"
 
 .PkrsStr:
-	db "#RUS@"
+	db "<PK><RS>/@"
 
 .GreenPage:
 	ld de, .Item
@@ -743,7 +742,7 @@ StatsScreen_LoadGFX:
 	ld de, OTString
 	hlcoord 0,  9
 	call PlaceString
-	hlcoord 2, 13
+	hlcoord 1, 13
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
 	call PrintNum
@@ -751,7 +750,7 @@ StatsScreen_LoadGFX:
 	call GetNicknamePointer
 	call CopyNickname
 	farcall CorrectNickErrors
-	hlcoord 2, 10
+	hlcoord 1, 10
 	call PlaceString
 	ld a, [wTempMonCaughtGender]
 	and a
@@ -763,7 +762,7 @@ StatsScreen_LoadGFX:
 	jr z, .got_gender
 	ld a, "♀"
 .got_gender
-	hlcoord 9, 10
+	hlcoord 8, 10
 	ld [hl], a
 .done
 	ret

@@ -16,6 +16,16 @@ RooftopSale_SelectQuantityToBuy:
 	call Toss_Sell_Loop
 	ret
 
+Subway_SelectQuantityToBuy:
+	ld a, d
+	ld [wBuffer1], a
+	ld a, e
+	ld [wBuffer2], a
+	ld hl, SubwayBuyItem_MenuHeader
+	call LoadMenuHeader
+	call Toss_Sell_Loop
+	ret
+
 SelectQuantityToSell:
 	farcall GetItemPrice
 	ld a, d
@@ -149,6 +159,11 @@ DisplayPurchasePrice:
 	call BuySell_DisplaySubtotal
 	ret
 
+DisplaySubwayPurchasePrice:
+	call BuySell_MultiplyPrice
+	call BuySell_DisplaySubtotalSubway
+	ret
+
 DisplaySellingPrice:
 	call BuySell_MultiplyPrice
 	call Sell_HalvePrice
@@ -201,6 +216,27 @@ BuySell_DisplaySubtotal:
 	call WaitBGMap
 	ret
 
+BuySell_DisplaySubtotalSubway:
+	push hl
+	ld hl, hMoneyTemp
+	ldh a, [hProduct + 1]
+	ld [hli], a
+	ldh a, [hProduct + 2]
+	ld [hli], a
+	ldh a, [hProduct + 3]
+	ld [hl], a
+	pop hl
+	inc hl
+	ld de, hMoneyTemp
+	lb bc, 3, 5
+	call PrintNum
+	ld [hl], $c8
+	inc hl
+	ld [hl], $c9
+	inc hl
+	call WaitBGMap
+	ret
+
 TossItem_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 15, 9, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
@@ -218,3 +254,9 @@ SellItem_MenuHeader:
 	menu_coords 7, 15, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw DisplaySellingPrice
 	db 0 ; default option
+	
+SubwayBuyItem_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 7, 15, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	dw DisplaySubwayPurchasePrice
+	db -1 ; default option

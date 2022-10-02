@@ -51,6 +51,13 @@ _LoadFontsBattleExtra::
 	call Get2bpp_2
 	jr LoadFrame
 
+_LoadFontsOptionsExtra::
+	ld de, FontOptionsExtra
+	ld hl, vTiles2 tile $00
+	lb bc, BANK(FontOptionsExtra), 11
+	call Get1bpp_2
+	jr LoadFrame
+
 LoadFrame:
 	ld a, [wTextBoxFrame]
 	maskbits NUM_FRAMES
@@ -90,12 +97,16 @@ LoadHPBar:
 	call Get1bpp_2
 	ld de, ExpBarGFX
 	ld hl, vTiles2 tile $55
-	lb bc, BANK(ExpBarGFX), 9
+	lb bc, BANK(ExpBarGFX), 10
 	call Get2bpp_2
-	ld de, MobilePhoneTilesGFX + 7 tiles ; mobile phone icon
-	ld hl, vTiles2 tile $5e
-	lb bc, BANK(MobilePhoneTilesGFX), 2
+	ld de, StatArrowGFX
+	ld hl, vTiles2 tile $7c
+	lb bc, BANK(StatArrowGFX), 2
 	call Get2bpp_2
+;	ld de, MobilePhoneTilesGFX + 6 tiles ; mobile phone icon
+;	ld hl, vTiles2 tile $7c
+;	lb bc, BANK(MobilePhoneTilesGFX), 3
+;	call Get2bpp_2
 	ret
 
 StatsScreen_LoadFont:

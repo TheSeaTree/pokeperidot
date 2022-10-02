@@ -1,3 +1,0 @@
-BattleCommand_FalseSwipe:
-; falseswipe
-

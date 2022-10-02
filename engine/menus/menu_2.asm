@@ -66,11 +66,11 @@ MenuHeader_0x24b1d:
 
 DisplayCoinCaseBalance:
 	; Place a text box of size 1x7 at 11, 0.
-	hlcoord 11, 0
-	ld b, 1
-	ld c, 7
-	call TextBox
 	hlcoord 12, 0
+	ld b, 1
+	ld c, 6
+	call TextBox
+	hlcoord 17, 1
 	ld de, CoinString
 	call PlaceString
 	hlcoord 17, 1
@@ -106,46 +106,13 @@ DisplayMoneyAndCoinBalance:
 MoneyString:
 	db "MONEY@"
 CoinString:
-	db "BP@"
+	db $c8, $c9
 ShowMoney_TerminatorString:
 	db "@"
 
-Unreferenced_Function24b8f:
-; related to safari?
-	ld hl, wOptions
-	ld a, [hl]
-	push af
-	set NO_TEXT_SCROLL, [hl]
-	hlcoord 0, 0
-	ld b, 3
-	ld c, 7
-	call TextBox
-	hlcoord 1, 1
-	ld de, wSafariTimeRemaining
-	lb bc, 2, 3
-	call PrintNum
-	hlcoord 4, 1
-	ld de, .slash_500
-	call PlaceString
-	hlcoord 1, 3
-	ld de, .booru_ko
-	call PlaceString
-	hlcoord 5, 3
-	ld de, wSafariBallsRemaining
-	lb bc, 1, 2
-	call PrintNum
-	pop af
-	ld [wOptions], a
-	ret
-
-.slash_500
-	db "／５００@"
-.booru_ko
-	db "ボール　　　こ@"
-
 StartMenu_DrawBugContestStatusBox:
 	hlcoord 10, 0
-	ld b, 1
+	ld b, 2
 	ld c, 8
 	call TextBox
 	ret
@@ -156,45 +123,36 @@ StartMenu_PrintBugContestStatus:
 	push af
 	set NO_TEXT_SCROLL, [hl]
 	call StartMenu_DrawBugContestStatusBox
-	hlcoord 11, 1
+	hlcoord 11, 2
 	ld de, .Balls_EN
 	call PlaceString
-	hlcoord 17, 1
-	ld de, wParkBallsRemaining
+	hlcoord 15, 1
+	ld de, .Steps
+	call PlaceString
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
+	jr z, .normal_safari
+	ld de, .ExtendedSteps
+	call PlaceString
+.normal_safari
+	hlcoord 17, 2
+	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
 	call PrintNum
-	ld a, [wContestMon]
-	and a
-	jr z, .no_contest_mon
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-
-.no_contest_mon
-	ld a, [wContestMon]
-	and a
-	jr z, .skip_level
-	ld a, [wContestMonLevel]
-	ld h, b
-	ld l, c
-	inc hl
-	ld c, 3
-	call Print8BitNumRightAlign
-
-.skip_level
+	hlcoord 12, 1
+	ld de, wSafariStepsRemaining
+	lb bc, PRINTNUM_LEADINGZEROS | 2, 3
+	call PrintNum
 	pop af
 	ld [wOptions], a
 	ret
 
-.Balls_JP:
-	db "ボール　　　こ@"
-.CAUGHT:
-	db "CAUGHT@"
 .Balls_EN:
 	db "BALLS:@"
-.None:
-	db "None@"
-.LEVEL:
-	db "LEVEL@"
+.Steps:
+	db "/300@"
+.ExtendedSteps:
+	db "/500@"
 
 FindApricornsInBag:
 ; Checks the bag for Apricorns.
@@ -206,42 +164,7 @@ FindApricornsInBag:
 	call ByteFill
 
 	ld hl, ApricornBalls
-.loop
-	ld a, [hl]
-	cp -1
-	jr z, .done
-	push hl
-	ld [wCurItem], a
-	ld hl, wNumItems
-	call CheckItem
-	pop hl
-	jr nc, .nope
-	ld a, [hl]
-	call .addtobuffer
-.nope
-	inc hl
-	inc hl
-	jr .loop
-
-.done
-	ld a, [wBuffer1]
-	and a
-	ret nz
-	scf
-	ret
-
-.addtobuffer
-	push hl
-	ld hl, wBuffer1
-	inc [hl]
-	ld e, [hl]
-	ld d, 0
-	add hl, de
-	ld [hl], a
-	pop hl
-	ret
-
-INCLUDE "data/items/apricorn_balls.asm"
+	jp FindSpecificItems
 
 FindFossilsInBag:
 ; Checks the bag for Fossils.
@@ -253,6 +176,33 @@ FindFossilsInBag:
 	call ByteFill
 
 	ld hl, Fossils
+	jp FindSpecificItems
+
+FindMushroomsInBag:
+; Checks the bag for Mushrooms.
+	ld hl, wBuffer1
+	xor a
+	ld [hli], a
+	dec a
+	ld bc, 10
+	call ByteFill
+
+	ld hl, Mushrooms
+	jp FindSpecificItems
+
+FindTreasureInBag:
+; Checks the bag for Mushrooms.
+	ld hl, wBuffer1
+	xor a
+	ld [hli], a
+	dec a
+	ld bc, 10
+	call ByteFill
+
+	ld hl, Treasure
+	jp FindSpecificItems
+
+FindSpecificItems:
 .loop
 	ld a, [hl]
 	cp -1
@@ -288,4 +238,4 @@ FindFossilsInBag:
 	pop hl
 	ret
 
-INCLUDE "data/items/fossils.asm"
+INCLUDE "data/items/exchange_items.asm"

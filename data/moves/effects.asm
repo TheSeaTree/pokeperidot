@@ -702,10 +702,10 @@ DefenseUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	defenseup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AttackUpHit:
@@ -724,10 +724,10 @@ AttackUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	attackup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 
 AllUpHit:
@@ -746,9 +746,9 @@ AllUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
+	allstatsup
 	checkfaint
 	buildopponentrage
-	allstatsup
 	endmove
 
 PayDay:
@@ -782,6 +782,7 @@ Conversion:
 ResetStats:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	resetstats
 	endmove
@@ -792,7 +793,6 @@ Bide:
 	doturn
 	usedmovetext
 	unleashenergy
-	resettypematchup
 	checkhit
 	moveanim
 	bidefailtext
@@ -829,6 +829,7 @@ ForceSwitch:
 	checkobedience
 	usedmovetext
 	doturn
+	checklegendary
 	checkhit
 	forceswitch
 	endmove
@@ -1030,6 +1031,7 @@ TriAttack:
 	tristatuschance
 	endmove
 
+PoisonPowder:
 Toxic:
 DoPoison:
 	checkobedience
@@ -1041,6 +1043,7 @@ DoPoison:
 	poison
 	endmove
 
+StunSpore:
 DoParalyze:
 	checkobedience
 	usedmovetext
@@ -1050,7 +1053,16 @@ DoParalyze:
 	checksafeguard
 	paralyze
 	endmove
-	
+
+Glare:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	checksafeguard
+	paralyze
+	endmove
+
 SkyAttack:
 	checkcharge
 	checkobedience
@@ -1143,6 +1155,7 @@ LeechSeed:
 	checkobedience
 	usedmovetext
 	doturn
+	stab
 	checkhit
 	leechseed
 	endmove
@@ -1229,7 +1242,6 @@ TrapTarget:
 	endmove
 
 SuperFang:
-Psywave:
 StaticDamage:
 	checkobedience
 	usedmovetext
@@ -1237,6 +1249,20 @@ StaticDamage:
 	constantdamage
 	checkhit
 	resettypematchup
+	moveanim
+	failuretext
+	applydamage
+	checkfaint
+	buildopponentrage
+	kingsrock
+	endmove
+
+Psywave:
+	checkobedience
+	usedmovetext
+	doturn
+	constantdamage
+	checkhit
 	moveanim
 	failuretext
 	applydamage
@@ -1336,13 +1362,6 @@ Sketch:
 	sketch
 	endmove
 
-DefrostOpponent:
-	checkobedience
-	usedmovetext
-	doturn
-	defrostopponent
-	endmove
-
 SleepTalk:
 	checkobedience
 	usedmovetext
@@ -1403,7 +1422,7 @@ Thief:
 	stab
 	damagevariation
 	checkhit
-	effectchance
+	thiefdamage
 	moveanim
 	failuretext
 	applydamage
@@ -1679,17 +1698,16 @@ RapidSpin:
 	stab
 	damagevariation
 	checkhit
-	effectchance
 	moveanim
 	failuretext
 	applydamage
 	criticaltext
 	supereffectivetext
 	clearhazards
-	checkfaint
-	buildopponentrage
 	speedup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	kingsrock
 	endmove
 
@@ -1757,6 +1775,7 @@ BellyDrum:
 PsychUp:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	psychup
 	endmove
@@ -1946,6 +1965,7 @@ Thunder:
 Teleport:
 	checkobedience
 	usedmovetext
+	checklegendary
 	doturn
 	teleport
 	endmove
@@ -2028,10 +2048,10 @@ SpeedUpHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	checkfaint
-	buildopponentrage
 	speedup
 	statupmessage
+	checkfaint
+	buildopponentrage
 	endmove
 	
 BurnRecoilHit:
@@ -2128,32 +2148,10 @@ SleepPowder:
 	checkobedience
 	usedmovetext
 	doturn
-	checkgrasstype
+	stab
 	checkhit
 	checksafeguard
 	sleeptarget
-	endmove
-
-PoisonPowder:
-	checkobedience
-	usedmovetext
-	doturn
-	checkgrasstype
-	checkhit
-	stab
-	checksafeguard
-	poison
-	endmove
-
-StunSpore:
-	checkobedience
-	usedmovetext
-	doturn
-	stab
-	checkhit
-	checkgrasstype
-	checksafeguard
-	paralyze
 	endmove
 
 UTurn:
@@ -2166,7 +2164,7 @@ UTurn:
 	stab
 	damagevariation
 	checkhit
-	moveanim
+	uturnanim
 	failuretext
 	applydamage
 	criticaltext
@@ -2175,7 +2173,7 @@ UTurn:
 	checkfaint
 	buildopponentrage
 	kingsrock
-	endmove	
+	endmove
 
 DoBurn:
 	checkobedience
@@ -2185,4 +2183,25 @@ DoBurn:
 	checkhit
 	checksafeguard
 	burn
+	endmove
+
+BrickBreak:
+	checkobedience
+	usedmovetext
+	doturn
+	checkhit
+	stab
+	brickbreak
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	checkfaint
+	buildopponentrage
+	kingsrock
 	endmove

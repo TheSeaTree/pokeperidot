@@ -203,6 +203,7 @@ FindOwnedBeds:
 	db DECO_PINK_BED ; 3
 	db DECO_POLKADOT_BED ; 4
 	db DECO_PIKACHU_BED ; 5
+	db DECO_CAMO_BED ; 6
 	db -1
 
 DecoCarpetMenu:
@@ -262,6 +263,7 @@ FindOwnedPosters:
 	db DECO_TANGELA_POSTER
 	db DECO_SHUCKLE_POSTER
 	db DECO_MYTHIC_POSTER
+	db DECO_DIPLOMA_POSTER
 	db -1
 
 DecoConsoleMenu:
@@ -316,8 +318,12 @@ FindOwnedOrnaments:
 	db DECO_MACHOP_DOLL ; 31
 	db DECO_TENTACOOL_DOLL ; 32
 	db DECO_SHIFUR_DOLL ; 32
-	db DECO_GOLD_TROPHY_DOLL ; 33
-	db DECO_SILVER_TROPHY_DOLL ; 34
+	db DECO_LAPRAS_DOLL ; 33
+	db DECO_SNORLAX_DOLL ; 34
+	db DECO_SUDOWOODO_DOLL ; 35
+	db DECO_GOLD_TROPHY_DOLL ; 36
+	db DECO_SILVER_TROPHY_DOLL ; 37
+	db DECO_PERIDOT_TROPHY_DOLL ; 38
 	db -1
 
 DecoBigDollMenu:
@@ -1011,6 +1017,7 @@ DecorationDesc_PosterPointers:
 	dbw DECO_TANGELA_POSTER, DecorationDesc_TangelaPoster
 	dbw DECO_SHUCKLE_POSTER, DecorationDesc_ShucklePoster
 	dbw DECO_MYTHIC_POSTER, DecorationDesc_MewPoster
+	dbw DECO_DIPLOMA_POSTER, DecorationDesc_DiplomaPoster
 	db -1
 
 DecorationDesc_TownMapPoster:
@@ -1024,6 +1031,19 @@ DecorationDesc_TownMapPoster:
 .TownMapText:
 	; It's the TOWN MAP.
 	text_far UnknownText_0x1bc55d
+	text_end
+
+DecorationDesc_DiplomaPoster:
+	opentext
+	writetext .DiplomaText
+	waitbutton
+	special Diploma
+	closetext
+	end
+
+.DiplomaText
+	; It's a DIPLOMA for completing the POKEDEX!
+	text_far DiplomaDecoText
 	text_end
 
 DecorationDesc_PikachuPoster:

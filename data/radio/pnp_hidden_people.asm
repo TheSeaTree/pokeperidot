@@ -1,10 +1,10 @@
 ; Places and People will not describe these trainers.
 
 PnP_HiddenPeople:
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
+	db WILBUR
+	db REGAN
+	db BREDE
+	db AMBER
 	db CHAMPION
 	; fallthrough
 PnP_HiddenPeople_BeatE4:
@@ -14,8 +14,7 @@ PnP_HiddenPeople_BeatE4:
 	db POSEY
 	db JANINE
 	db SABRINA
-	db BLAINE
-	db BLUE
+	db CHAMPIONF
 	; fallthrough
 PnP_HiddenPeople_BeatKanto:
 	db RIVAL1

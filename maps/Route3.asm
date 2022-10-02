@@ -17,15 +17,6 @@ Route3_MapScripts:
 
 	db 0 ; callbacks
 	
-AerodactylAndRepels:
-	faceplayer
-	opentext
-	givepoke AERODACTYL, 20
-	giveitem MAX_REPEL, 99
-	giveitem ULTRA_BALL, 99
-	closetext
-	end
-	
 TrainerPicnickerCindy:
 	trainer PICNICKER, CINDY, EVENT_BEAT_PICNICKER_CINDY, PicnickerCindyText, PicnickerCindyWinText, 0, .Script
 
@@ -197,8 +188,9 @@ PickupHelixFossilEvent:
 	writetext TryTakeFossil
 	yesorno
 	iffalse .no
-	verbosegiveitem HELIX_FOSSIL
+	giveitem HELIX_FOSSIL
 	iffalse .noroom
+	itemnotify
 	closetext
 	disappear ROUTE3_OMANYTE
 	applymovement ROUTE3_GRANT, HikerGrantTakeDomeFossil
@@ -216,7 +208,7 @@ PickupHelixFossilEvent:
 	end
 
 .noroom
-	writetext NoRoomForFossil
+	writetext Route3NoRoomForFossil
 	waitbutton
 .no
 	closetext
@@ -227,8 +219,9 @@ PickupDomeFossilEvent:
 	writetext TryTakeFossil
 	yesorno
 	iffalse .no
-	verbosegiveitem DOME_FOSSIL
+	giveitem DOME_FOSSIL
 	iffalse .noroom
+	itemnotify
 	closetext
 	disappear ROUTE3_KABUTO
 	applymovement ROUTE3_GRANT, HikerGrantTakeHelixFossil
@@ -246,7 +239,7 @@ PickupDomeFossilEvent:
 	end
 
 .noroom
-	writetext NoRoomForFossil
+	writetext Route3NoRoomForFossil
 	waitbutton
 .no
 	closetext
@@ -577,8 +570,8 @@ Route3_MapEvents:
 	db 0, 0 ; filler
 
 	db 10 ; warp events
-	warp_event 43,  39, ROUTE_3_AZALEA_GATE, 1
-	warp_event 44,  39, ROUTE_3_AZALEA_GATE, 2
+	warp_event 43,  39, ROUTE_3_PECTINIA_GATE, 1
+	warp_event 44,  39, ROUTE_3_PECTINIA_GATE, 2
 	warp_event 42,  29, DIGLETTS_CAVE, 1
 	warp_event 28,  31, DIGLETTS_CAVE, 2
 	warp_event 28,   5, PALEROCK_MOUNTAIN_1F, 1
@@ -594,7 +587,7 @@ Route3_MapEvents:
 	bg_event 42, 35, BGEVENT_READ, Route3TrainerTipsSign
 	bg_event 10, 37, BGEVENT_ITEM, Route3SilverLeaf
 
-	db 12 ; object events
+	db 13 ; object events
 	object_event 52, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerPicnickerCindy, -1
 	object_event 50, 15, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerCamperNate, -1
 	object_event 21, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerEarl, -1

@@ -446,14 +446,14 @@ Route12AssistantYes:
 	text "Oh, thank you so"
 	line "very much!"
 	
-	para "There is a cave on"
-	line "ROUTE 14 where"
-	cont "MAROWAK would love"
-	cont "to play when it"
+	para "MAROWAK would love"
+	line "to play in THE"
+	cont "BONEYARD when it"
 	cont "was young."
 	
 	para "You could start by"
-	line "looking there."
+	line "looking there, it's"
+	cont "on ROUTE 13."
 	done
 	
 Route12AssistantAfter:

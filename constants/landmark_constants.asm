@@ -3,54 +3,68 @@
 
 ; Johto landmarks
 	const SPECIAL_MAP       ; 00
-	const NEW_BARK_TOWN     ; 01
+	const ELKHORN_TOWN      ; 01
 	const ROUTE_1           ; 30
-	const CHERRYGROVE_CITY  ; 03
+	const PAVONA_VILLAGE    ; 03
 	const ROUTE_30          ; 04
 	const ROUTE_2           ; 32
-	const AZALEA_TOWN       ; 0c
+	const PECTINIA_CITY     ; 0c
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
 	const VIRIDIAN_FOREST   ; 0e
 	const ROUTE_5           ; 3a
-	const VIOLET_CITY       ; 06
+	const RIDGE_VILLAGE     ; 06
 	const ROUTE_6           ; 3c
-	const ROUTE_8           ; 40
-	const GOLDENROD_CITY    ; 10
-	const ROUTE_10          ; 43
+	const ROUTE_7           ; 40
+	const FAVIA_TOWN        ; 10
+	const ROUTE_8           ; 43
 	const DIGLETTS_CAVE     ; 3e
-	const CIANWOOD_CITY     ; 21
+	const PALEROCK_MOUNTAIN
+	const HEPATICA_TOWN     ; 21
 	const UNION_CAVE        ; 0a
 	const ROUTE_9           ; 41
 	const ILEX_FOREST       ; 0e
-	const ECRUTEAK_CITY     ; 16
+	const STAGHORN_TOWN     ; 16
 	const PAINTERS_FOREST
-	const ROUTE_11          ; 49
-	const ROUTE_12          ; 4a
-	const ROUTE_13          ; 4b
-	const ROUTE_14          ; 4c
-	const OLIVINE_CITY      ; 1b
-	const MAHOGANY_TOWN     ; 24
-	const ROUTE_18          ; 50
+	const ROUTE_10          ; 49
+	const ROUTE_11          ; 4a
+	const ROUTE_12          ; 4b
+	const ROUTE_13          ; 4c
+	const BONEYARD          ; 4c
+	const RUGOSA_COAST      ; 1b
+	const RUGOSA_CITY       ; 24
+	const ROUTE_14          ; 50
 	const CARNATION_TOWN
 	const SAFARI_ZONE       ; 13
-	const ROUTE_19          ; 52
+	const ROUTE_15          ; 52
+	const ROUTE_16          ; 53
+	const ACROPORA_CITY     ; 29
+	const ROUTE_17          ; 53
 	const ROUTE_20          ; 53
-	const BLACKTHORN_CITY   ; 29
 	const ROUTE_21          ; 53
-	const ROUTE_22          ; 53
+	const MOLTEN_PEAK
+	const ROUTE_18          ; 53
 	const ORCHID_CITY
-	const ROUTE_15          ; 4d
-	const ROUTE_16          ; 4e
-	const ROUTE_17          ; 4f
-	const ROUTE_7           ; 3f
+	const SEA_ROUTE_1       ; 4d
+	const SEA_ROUTE_2       ; 4e
+	const REMNANT_CAVE      ; 4e
+	const SEA_ROUTE_3       ; 4f
+	const SEA_ROUTE_4       ; 3f
+	const SEA_ROUTE_5       ; 3f
+	const SEA_ROUTE_6       ; 3f
+	const ROUTE_19       	; 3f
+	const ROUTE_22
+	const ROUTE_23
 	const VICTORY_ROAD      ; 58
-	const INDIGO_PLATEAU    ; 5a
-	const BATTLE_TOWER      ; 1d
+	const SEA_ROUTE_7       ; 3f
+	const ROUTE_24
+	const POKEMON_LEAGUE    ; 5a
 	
 KANTO_LANDMARK EQU const_value
 
+	const FAST_SHIP
 	const LOST_LAND
+	const THE_PAST
 
 ; used in CaughtData
 GIFT_LOCATION  EQU $7e

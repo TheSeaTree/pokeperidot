@@ -62,9 +62,14 @@ DoBattleTransition:
 	ret
 
 .InitGFX:
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEAGUE
+	jr z, .mobile
+	
 	ld a, [wLinkMode]
 	cp LINK_MOBILE
 	jr z, .mobile
+
 	farcall ReanchorBGMap_NoOAMUpdate
 	call UpdateSprites
 	call DelayFrame
@@ -246,6 +251,8 @@ StartTrainerBattle_DetermineWhichAnimation:
 	cp ENVIRONMENT_5
 	jr z, .cave
 	cp DUNGEON
+	jr z, .cave
+	cp GYM_CAVE
 	jr z, .cave
 	set TRANS_NO_CAVE_F, e
 .cave

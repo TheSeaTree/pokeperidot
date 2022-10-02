@@ -419,15 +419,23 @@ Gen2ToGen2LinkComms:
 	ld a, [wLinkMode]
 	cp LINK_BATTLE_PERIDOT
 	jr nz, .ready_to_trade
+	ldh a, [hLinkOtherPlayerGender]
+	and 1 << PLAYERGENDER_FEMALE_F
+	jr z, .Cal
+	ld a, JADE_LINK
+	ld [wOtherTrainerClass], a
+	jr .LoadedTrainer
+.Cal
 	ld a, CAL
 	ld [wOtherTrainerClass], a
+.LoadedTrainer
 	call ClearScreen
 	farcall Link_WaitBGMap
 	ld hl, wOptions
 	ld a, [hl]
 	push af
 	and 1 << STEREO
-	or TEXT_DELAY_MED
+	or TEXT_DELAY_FAST
 	ld [hl], a
 	ld hl, wOTPlayerName
 	ld de, wOTClassName
@@ -1989,87 +1997,6 @@ Unreferenced_Function28f09:
 
 INCLUDE "engine/movie/trade_animation.asm"
 
-CheckTimeCapsuleCompatibility:
-; Checks to see if your party is compatible with the Gen 1 games.
-; Returns the following in wScriptVar:
-; 0: Party is okay
-; 1: At least one Pokémon was introduced in Gen 2
-; 2: At least one Pokémon has a move that was introduced in Gen 2
-; 3: At least one Pokémon is holding mail
-
-; If any party Pokémon was introduced in the Gen 2 games, don't let it in.
-	ld hl, wPartySpecies
-	ld b, PARTY_LENGTH
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .checkitem
-	cp JOHTO_POKEMON
-	jr nc, .mon_too_new
-	dec b
-	jr nz, .loop
-
-; If any party Pokémon is holding mail, don't let it in.
-.checkitem
-	ld a, [wPartyCount]
-	ld b, a
-	ld hl, wPartyMon1Item
-.itemloop
-	push hl
-	push bc
-	ld d, [hl]
-	farcall ItemIsMail
-	pop bc
-	pop hl
-	jr c, .mon_has_mail
-	ld de, PARTYMON_STRUCT_LENGTH
-	add hl, de
-	dec b
-	jr nz, .itemloop
-
-; If any party Pokémon has a move that was introduced in the Gen 2 games, don't let it in.
-	ld hl, wPartyMon1Moves
-	ld a, [wPartyCount]
-	ld b, a
-.move_loop
-	ld c, NUM_MOVES
-.move_next
-	ld a, [hli]
-	cp STRUGGLE + 1
-	jr nc, .move_too_new
-	dec c
-	jr nz, .move_next
-	ld de, PARTYMON_STRUCT_LENGTH - NUM_MOVES
-	add hl, de
-	dec b
-	jr nz, .move_loop
-	xor a
-	jr .done
-
-.mon_too_new
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	ld a, $1
-	jr .done
-
-.move_too_new
-	push bc
-	ld [wNamedObjectIndexBuffer], a
-	call GetMoveName
-	call CopyName1
-	pop bc
-	call Function29c67
-	ld a, $2
-	jr .done
-
-.mon_has_mail
-	call Function29c67
-	ld a, $3
-
-.done
-	ld [wScriptVar], a
-	ret
-
 Function29c67:
 	ld a, [wPartyCount]
 	sub b
@@ -2386,6 +2313,18 @@ TryQuickSave:
 	pop af
 	ld [wChosenCableClubRoom], a
 	ret
+
+DoQuickSave:
+	farcall Subway_SaveGame
+	ret
+
+CheckOtherPlayerGender:
+	ld a, [wPlayerGender]
+	call Link_EnsureSync
+	ldh [hLinkOtherPlayerGender], a
+    call LinkDataReceived
+    call DelayFrame
+    jp LinkDataReceived
 
 CheckBothSelectedSameRoom:
 	ld a, [wChosenCableClubRoom]

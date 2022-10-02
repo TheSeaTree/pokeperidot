@@ -198,15 +198,15 @@ DayCareStep::
 	callfar CheckBreedmonCompatibility
 	ld a, [wBreedingCompatibility]
 	cp 230
-	ld b, 64 percent - 1
+	ld b, 70 percent - 1
 	jr nc, .okay
 	ld a, [wBreedingCompatibility]
 	cp 170
-	ld b, 64 percent
+	ld b, 50 percent
 	jr nc, .okay
 	ld a, [wBreedingCompatibility]
 	cp 110
-	ld b, 32 percent
+	ld b, 20 percent
 	jr nc, .okay
 	ld b, 12 percent
 
@@ -217,4 +217,15 @@ DayCareStep::
 	ld hl, wDayCareMan
 	res DAYCAREMAN_MONS_COMPATIBLE_F, [hl]
 	set DAYCAREMAN_HAS_EGG_F, [hl]
+	ret
+
+FountainHappiness:
+	ld a, 0
+    ld [wCurPartyMon], a
+	ld hl, wPartyMon1Happiness
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+
+	ld a, 255
+	ld [hl], a
 	ret

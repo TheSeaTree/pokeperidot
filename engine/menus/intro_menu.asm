@@ -177,10 +177,6 @@ endc
 
 	farcall InitDecorations
 
-	farcall DeletePartyMonMail
-
-	farcall DeleteMobileEventIndex
-
 	call ResetGameTime
 	ret
 
@@ -213,7 +209,7 @@ SetDefaultBoxNames:
 	ld [hli], a
 	ld [hl], "@"
 	pop hl
-	ld de, 9 ; Change to 7 (Box Name Length)
+	ld de, 8
 	add hl, de
 	inc c
 	ld a, c
@@ -343,13 +339,13 @@ Continue:
 	ret
 
 .SpawnAfterE4:
-	ld a, SPAWN_NEW_BARK
+	ld a, SPAWN_HOME
 	ld [wDefaultSpawnpoint], a
 	call PostCreditsSpawn
 	jp FinishContinueFunction
 
 SpawnAfterRed:
-	ld a, SPAWN_NEW_BARK
+	ld a, SPAWN_HOME
 	ld [wDefaultSpawnpoint], a
 
 PostCreditsSpawn:
@@ -729,6 +725,11 @@ OakSpeech:
 	ld hl, OakText6
 	call PrintText
 	call NamePlayer
+	
+	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
+	call GetSGBLayout
+	call SetPalettes
+
 	ld hl, OakText7
 	call PrintText
 	ret
@@ -839,9 +840,9 @@ NamePlayer:
 	ret
 
 .Chris:
-	db "FRANK@@@@@@"
+	db "PERRY@@@@@@"
 .Kris:
-	db "KRIS@@@@@@@"
+	db "JADE@@@@@@@"
 
 Unreferenced_Function60e9:
 	call LoadMenuHeader
@@ -1359,11 +1360,45 @@ Unreferenced_Function639b:
 
 Copyright:
 	call ClearTileMap
-;	call LoadFontsExtra
 	ld de, BoldFontGFX
 	ld hl, vTiles1
 	lb bc, BANK(BoldFontGFX), $80
 	call Get1bpp
+	
+	xor a ; Display a warning screen on inaccurate emulators.
+	ldh [rSC], a
+	ldh a, [rSC]
+	and %01111100
+	cp %01111100
+	jr z, .skip_warning
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+	ld hl, WarningScreen_Palettes
+	ld de, wBGPals2
+	ld bc, 1 palettes
+	call CopyBytes
+
+	pop af
+	ldh [rSVBK], a
+
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+
+	hlcoord 0, 0
+	ld de, VBAIntroString
+	call PlaceString
+	ld c, 255
+	call DelayFrames
+	call ClearTileMap
+	ld b, SCGB_GAMEFREAK_LOGO
+	call GetSGBLayout
+	call SetPalettes
+	
+.skip_warning
 	hlcoord 1, 7
 	ld de, CopyrightString
 	jp PlaceString
@@ -1372,6 +1407,20 @@ CopyrightString:
 	db   "  PRODUCED BY OR"
 	next "UNDER LICENSE FROM"
 	next " NOBODY OFFICIAL)@"
+
+VBAIntroString:
+	db   "    : WARNING :"
+	next "   POK[MON PERIDOT"
+	next "  DOES NOT SUPPORT"
+	next "   THIS EMULATOR)"
+	next "GLITCHES AND CRASHES"
+	next "     MAY OCCUR)"
+	next ""
+	next " GAMBATTE] mGBA] OR"
+	next "BGB ARE RECOMMENDED)@"
+	
+WarningScreen_Palettes:
+INCLUDE "gfx/title/warning_screen.pal"
 
 GameInit::
 	farcall TryLoadSaveData

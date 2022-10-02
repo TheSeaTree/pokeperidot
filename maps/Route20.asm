@@ -57,10 +57,9 @@ TrainerFirebreatherRubin:
 	waitbutton
 	closetext
 	end
-	
+
 Route20Teacher:
-	writebyte SNORLAX
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_SNORLAX
 	iftrue .CaughtSnorlax
 	jumptextfaceplayer Route20TeacherMissedSnorlaxText
 	
@@ -76,26 +75,52 @@ Route20SnorlaxEvent:
 	writetext UseFluteText
 	yesorno
 	iffalse .noflute
-	closetext
+	writetext PlayerPlayedFluteText
 	playsound SFX_POKEFLUTE
 	waitsfx
-	opentext
+;	closetext
+;	opentext
 	writetext SnorlaxWokeUpText
 	waitbutton
+	cry SNORLAX
+	waitsfx
+	writetext SnorlaxAttackedText
+	waitbutton
 	closetext
-	loadvar VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
+	special SnorlaxEvent_SetBattleType
 	loadwildmon SNORLAX, 45
 	startbattle
+	reloadmapafterbattle
 	disappear ROUTE20_SNORLAX
 	setevent EVENT_FOUGHT_SNORLAX
-	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iffalse .NoSnorlax
+	setevent EVENT_CAUGHT_SNORLAX
+	end
+.NoSnorlax
+	jumptext SnorlaxReturnedHomeText
 	end
 .noflute
 	closetext
 	end
 
+Route20Sign:
+	jumptext Route20SignText
+
+Route20TrainerTipSign:
+	jumptext Route20TrainerTipSignText
+
 Route20PoisonBarb:
 	itemball POISON_BARB
+	
+Route20HiddenNugget:
+	hiddenitem NUGGET, EVENT_ROUTE_20_HIDDEN_NUGGET
+	
+Route20HiddenXSpeed:
+	hiddenitem X_SPEED, EVENT_ROUTE_20_HIDDEN_X_SPEED
+	
+Route20HiddenSunStone:
+	hiddenitem SUN_STONE, EVENT_ROUTE_20_HIDDEN_SUN_STONE
 
 Route20FruitTree1:
 	fruittree FRUITTREE_ROUTE_20_1
@@ -115,27 +140,42 @@ SnorlaxWokeUpText:
 	line "#MON was awoken"
 	cont "by the sound of"
 	cont "the # FLUTE!"
-	
-	para "The sleeping"
+	done
+
+SnorlaxAttackedText:
+	text "The sleeping"
 	line "#MON attacked!"
 	done
-	
+
 UseFluteText:
 	text "Try playing the"
 	line "# FLUTE?"
 	done
 
+PlayerPlayedFluteText:
+	text "<PLAYER> played the"
+	line "# FLUTE."
+	done
+
 LadJulesText:
-	text "I am a"
-	line "#MON trainer!"
+	text "Hey! Let me show"
+	line "you the new #-"
+	cont "MON I just caught!"
 	done
 	
 LadJulesWinText:
-	text "I lost."
+	text "I needed more"
+	line "#MON…"
 	done
 	
 LadJulesAfterText:
-	text "I lost."
+	text "I'm sure there are"
+	line "more #MON to"
+	cont "catch here."
+	
+	para "I'm going to keep"
+	line "looking in the"
+	cont "grass."
 	done
 	
 BirdKeeperHughText:
@@ -246,17 +286,40 @@ SnorlaxReturnedHomeText:
 	line "grumpy…"
 	done
 
+Route20SignText:
+	text "ROUTE 16"
+	
+	para "ACROPORA CITY"
+	line "ahead."
+	done
+
+Route20TrainerTipSignText:
+	text "TRAINER TIPS"
+	
+	para "Be aware of any"
+	line "food dropped on"
+	cont "the ground."
+	
+	para "It may attract"
+	line "wild #MON."
+	done
+
 Route20_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  9, 39, BLACKTHORN_CITY, 1
-	warp_event 10, 39, BLACKTHORN_CITY, 1
+	warp_event  9, 39, ROUTE_20_ACROPORA_GATE, 1
+	warp_event 10, 39, ROUTE_20_ACROPORA_GATE, 2
 	warp_event 37,  5, HEAVY_BALL_HOUSE, 1
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 5 ; bg events
+	bg_event 11, 32, BGEVENT_READ, Route20Sign
+	bg_event 43, 25, BGEVENT_READ, Route20TrainerTipSign
+	bg_event 55, 22, BGEVENT_ITEM, Route20HiddenNugget
+	bg_event  7, 30, BGEVENT_ITEM, Route20HiddenXSpeed
+	bg_event  8, 19, BGEVENT_ITEM, Route20HiddenSunStone
 
 	db 9 ; object events
 	object_event 28, 16, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20SnorlaxEvent, EVENT_FOUGHT_SNORLAX

@@ -7,8 +7,6 @@
 	const STARTMENUITEM_SAVE     ; 4
 	const STARTMENUITEM_OPTION   ; 5
 	const STARTMENUITEM_EXIT     ; 6
-;	const STARTMENUITEM_POKEGEAR ; 7
-	const STARTMENUITEM_QUIT     ; 8
 
 StartMenu::
 	call ClearWindowData
@@ -18,8 +16,8 @@ StartMenu::
 
 	farcall ReanchorBGMap_NoOAMUpdate
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ld hl, .MenuHeader
 	jr z, .GotMenuData
 	ld hl, .ContestMenuHeader
@@ -163,7 +161,7 @@ StartMenu::
 
 .ContestMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 10, 3, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
+	menu_coords 10, 4, SCREEN_WIDTH - 1, SCREEN_HEIGHT - 1
 	dw .MenuData
 	db 1 ; default selection
 
@@ -176,15 +174,13 @@ StartMenu::
 
 .Items:
 ; entries correspond to STARTMENUITEM_* constants
-	dw StartMenu_Pokedex,  .PokedexString,  .PokedexDesc
-	dw StartMenu_Pokemon,  .PartyString,    .PartyDesc
-	dw StartMenu_Pack,     .PackString,     .PackDesc
-	dw StartMenu_Status,   .StatusString,   .StatusDesc
-	dw StartMenu_Save,     .SaveString,     .SaveDesc
-	dw StartMenu_Option,   .OptionString,   .OptionDesc
+	dw StartMenu_Pokedex,  .PokedexString,  .ExitDesc
+	dw StartMenu_Pokemon,  .PartyString,    .ExitDesc
+	dw StartMenu_Pack,     .PackString,     .ExitDesc
+	dw StartMenu_Status,   .StatusString,   .ExitDesc
+	dw StartMenu_Save,     .SaveString,     .ExitDesc
+	dw StartMenu_Option,   .OptionString,   .ExitDesc
 	dw StartMenu_Exit,     .ExitString,     .ExitDesc
-;	dw StartMenu_Pokegear, .PokegearString, .PokegearDesc
-	dw StartMenu_Quit,     .QuitString,     .QuitDesc
 
 .PokedexString:  db "#DEX@"
 .PartyString:    db "#MON@"
@@ -193,44 +189,10 @@ StartMenu::
 .SaveString:     db "SAVE@"
 .OptionString:   db "OPTION@"
 .ExitString:     db "EXIT@"
-.PokegearString: db "<POKE>GEAR@"
-.QuitString:     db "QUIT@"
-
-.PokedexDesc:
-	db   "#MON"
-	next "database@"
-
-.PartyDesc:
-	db   "Party <PKMN>"
-	next "status@"
-
-.PackDesc:
-	db   "Contains"
-	next "items@"
-
-.PokegearDesc:
-	db   "Trainer's"
-	next "key device@"
-
-.StatusDesc:
-	db   "Your own"
-	next "status@"
-
-.SaveDesc:
-	db   "Save your"
-	next "progress@"
-
-.OptionDesc:
-	db   "Change"
-	next "settings@"
 
 .ExitDesc:
 	db   "Close this"
 	next "menu@"
-
-.QuitDesc:
-	db   "Quit and"
-	next "be judged.@"
 
 .OpenMenu:
 	ld a, [wMenuSelection]
@@ -306,30 +268,25 @@ endr
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_pack
-;	ld hl, wStatusFlags2
-;	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-;	jr nz, .no_pack
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .no_pack
+
 	ld a, STARTMENUITEM_PACK
 	call .AppendMenuList
 .no_pack
-
-	ld hl, wPokegearFlags
-	bit POKEGEAR_OBTAINED_F, [hl]
-	jr z, .no_pokegear
-;	ld a, STARTMENUITEM_POKEGEAR
-;	call .AppendMenuList
-.no_pokegear
-
 	ld a, STARTMENUITEM_STATUS
 	call .AppendMenuList
 
 	ld a, [wLinkMode]
 	and a
 	jr nz, .no_save
+
 	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
-;	ld a, STARTMENUITEM_QUIT
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jr nz, .no_save
+
 	ld a, STARTMENUITEM_SAVE
 .write
 	call .AppendMenuList
@@ -337,8 +294,14 @@ endr
 
 	ld a, STARTMENUITEM_OPTION
 	call .AppendMenuList
+
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
+	jr nz, .no_exit
+
 	ld a, STARTMENUITEM_EXIT
 	call .AppendMenuList
+.no_exit
 	ld a, c
 	ld [wMenuItemsList], a
 	ret
@@ -400,10 +363,7 @@ endr
 	hlcoord 0, 0
 	lb bc, 1, 8
 	call TextBox
-	hlcoord 0, 0
-	ld b, 1
-	ld c, 8
-	jp TextBoxPalette
+	ret
 
 .IsMenuAccountOn:
 	ld a, [wOptions2]
@@ -411,15 +371,15 @@ endr
 	ret
 
 .DrawBugContestStatusBox:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ret z
 	farcall StartMenu_DrawBugContestStatusBox
 	ret
 
 .DrawBugContestStatus:
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, [hl]
+	ld hl, wSafariFlag
+	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr nz, .contest
 	ret
 .contest
@@ -428,29 +388,8 @@ endr
 
 StartMenu_Exit:
 ; Exit the menu.
-
 	ld a, 1
 	ret
-
-StartMenu_Quit:
-; Retire from the bug catching contest.
-
-	ld hl, .EndTheContestText
-	call StartMenuYesNo
-	jr c, .DontEndContest
-	ld a, BANK(BugCatchingContestReturnToGateScript)
-	ld hl, BugCatchingContestReturnToGateScript
-	call FarQueueScript
-	ld a, 4
-	ret
-
-.DontEndContest:
-	ld a, 0
-	ret
-
-.EndTheContestText:
-	text_far UnknownText_0x1c1a6c
-	text_end
 
 StartMenu_Save:
 ; Save the game.

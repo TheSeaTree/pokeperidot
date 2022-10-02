@@ -174,6 +174,47 @@ YesNoMenuHeader::
 	db "YES@"
 	db "NO@"
 
+PlaceNoYesBox::
+	jr _NoYesBox
+
+_NoYesBox::
+; Return nc (yes) or c (no).
+	push bc
+	ld hl, NoYesMenuHeader
+	call CopyMenuHeader
+	pop bc
+; This seems to be an overflow prevention, but
+; it was coded wrong.
+	ld a, b
+	cp SCREEN_WIDTH - 6
+	jr nz, .okay ; should this be "jr nc"?
+	ld a, SCREEN_WIDTH - 6
+	ld b, a
+
+.okay
+	ld a, b
+	ld [wMenuBorderLeftCoord], a
+	add 5
+	ld [wMenuBorderRightCoord], a
+	ld a, c
+	ld [wMenuBorderTopCoord], a
+	add 4
+	ld [wMenuBorderBottomCoord], a
+	call PushWindow
+	jp InterpretTwoOptionMenu
+
+NoYesMenuHeader::
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 10, 5, 15, 9
+	dw .MenuData
+	db 2 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
+	db 2
+	db "YES@"
+	db "NO@"
+
 OffsetMenuHeader::
 	call _OffsetMenuHeader
 	call PushWindow
@@ -524,10 +565,10 @@ _2DMenu::
 	ld a, [wMenuCursorBuffer]
 	ret
 
-InterpretBattleMenu::
+_SafariSimulationMenu::
 	ldh a, [hROMBank]
 	ld [wMenuData_2DMenuItemStringsBank], a
-	farcall _InterpretBattleMenu
+	farcall _SafariSimulationMenu_
 	ld a, [wMenuCursorBuffer]
 	ret
 

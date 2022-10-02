@@ -107,42 +107,6 @@ FarPlaceString:
 
 CheckPhoneCall::
 ; Check if the phone is ringing in the overworld.
-
-	call CheckStandingOnEntrance
-	jr z, .no_call
-
-	call .timecheck
-	nop
-	jr nc, .no_call
-
-	call Random
-	ld b, a
-	and 50 percent
-	cp b
-	jr nz, .no_call
-
-	call GetMapPhoneService
-	and a
-	jr nz, .no_call
-
-	call GetAvailableCallers
-	call ChooseRandomCaller
-	jr nc, .no_call
-
-	ld e, a
-	call LoadCallerScript
-	ld a, BANK(Script_ReceivePhoneCall)
-	ld hl, Script_ReceivePhoneCall
-	call CallScript
-	scf
-	ret
-
-.no_call
-	xor a
-	ret
-
-.timecheck
-	farcall CheckReceiveCallTimer
 	ret
 
 CheckPhoneContactTimeOfDay:

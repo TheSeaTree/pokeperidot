@@ -3,10 +3,6 @@ PlayRadioShow:
 	ld a, [wCurRadioLine]
 	cp POKE_FLUTE_RADIO
 	jr nc, .ok
-; If Team Rocket is not occupying the radio tower, we don't need to be here.
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_ROCKETS_IN_RADIO_TOWER_F, a
-	jr z, .ok
 ; If we're in Kanto, we don't need to be here.
 	call IsInJohto
 	and a
@@ -218,17 +214,17 @@ OaksPKMNTalk4:
 	; bc now contains the chosen map's group and number indices.
 	push bc
 
-	; Search the JohtoGrassWildMons array for the chosen map.
-	ld hl, JohtoGrassWildMons
+	; Search the GrassWildMons array for the chosen map.
+	ld hl, GrassWildMons
 .loop
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	cp -1
 	jr z, .overflow
 	inc hl
 	cp b
 	jr nz, .next
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	cp c
 	jr z, .done
@@ -265,7 +261,7 @@ endr
 	add hl, de
 	add hl, de
 	inc hl ; skip level
-	ld a, BANK(JohtoGrassWildMons)
+	ld a, BANK(GrassWildMons)
 	call GetFarByte
 	ld [wNamedObjectIndexBuffer], a
 	ld [wCurPartySpecies], a

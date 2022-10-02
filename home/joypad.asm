@@ -297,6 +297,15 @@ JoyWaitAorB::
 	call RTC
 	jr .loop
 
+JoyWaitFaceButton::
+.loop
+	call DelayFrame
+	call GetJoypad
+	ldh a, [hJoyPressed]
+	and A_BUTTON | B_BUTTON | START | SELECT
+	ret nz
+	jr .loop
+
 WaitButton::
 	ldh a, [hOAMUpdate]
 	push af

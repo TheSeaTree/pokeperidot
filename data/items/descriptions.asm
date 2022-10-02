@@ -65,10 +65,10 @@ ItemDescriptions:
 	dw EtherDesc
 	dw MaxEtherDesc
 	dw ElixerDesc
-	dw RedScaleDesc
-	dw SecretPotionDesc
-	dw SSTicketDesc
-	dw MysteryEggDesc
+	dw JournalPageDesc
+	dw BackdoorKeyDesc
+	dw VIPTicketDesc
+	dw EngineKeyDesc
 	dw ClearBellDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
@@ -84,23 +84,23 @@ ItemDescriptions:
 	dw KingsRockDesc
 	dw BitterBerryDesc
 	dw MintBerryDesc
-	dw RedApricornDesc
+	dw RubyBoxDesc
 	dw TinyMushroomDesc
 	dw BigMushroomDesc
 	dw SilverPowderDesc
-	dw BluApricornDesc
+	dw SapphireBoxDesc
 	dw DampRockDesc
 	dw AmuletCoinDesc
-	dw YlwApricornDesc
-	dw GrnApricornDesc
+	dw AmethystBoxDesc
+	dw EmeraldBoxDesc
 	dw CleanseTagDesc
 	dw MysticWaterDesc
 	dw TwistedSpoonDesc
-	dw WhtApricornDesc
+	dw SpinelBoxDesc
 	dw BlackbeltDesc
-	dw BlkApricornDesc
+	dw BlackSludgeDesc
 	dw HelixFossilDesc
-	dw PnkApricornDesc
+	dw BindingBandDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
 	dw PinkBowDesc
@@ -129,7 +129,7 @@ ItemDescriptions:
 	dw CardKeyDesc
 	dw MachinePartDesc
 	dw EggTicketDesc
-	dw LostItemDesc
+	dw LabKeyDesc
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
@@ -152,12 +152,12 @@ ItemDescriptions:
 	dw MysteryBerryDesc
 	dw DragonScaleDesc
 	dw BerserkGeneDesc
-	dw LegendsAuraDesc
-	dw TeruSama19Desc
-	dw TeruSama20Desc
+	dw InvalidItemDesc
+	dw AncientTomeDesc
+	dw DollCapsuleDesc
 	dw SacredAshDesc
 	dw HeavyBallDesc
-	dw FlowerMailDesc
+	dw SmallKeyDesc
 	dw LevelBallDesc
 	dw LureBallDesc
 	dw FastBallDesc
@@ -170,7 +170,7 @@ ItemDescriptions:
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
 	dw PolkadotBowDesc
-	dw TeruSama22Desc
+	dw LightBuoyDesc
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
@@ -178,83 +178,83 @@ ItemDescriptions:
 	dw SilverBerryDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
-	dw TeruSama24Desc
+	dw TrickMirrorDesc
 	dw BrickPieceDesc
-	dw SurfMailDesc
-	dw LiteBlueMailDesc
-	dw PortraitMailDesc
-	dw LovelyMailDesc
-	dw EonMailDesc
-	dw MorphMailDesc
-	dw BlueSkyMailDesc
-	dw MusicMailDesc
-	dw MewMailDesc
-	dw TeruSama25Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama26Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama27Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama28Desc
-	dw TeruSama29Desc
-	dw TeruSama30Desc
-	dw TeruSama31Desc
-	dw TeruSama32Desc
-	dw TeruSama33Desc
+	dw CrashHelmetDesc
+	dw GuardianKeyDesc
+	dw ExpAllDesc
+	dw SafariPackDesc
+	dw SkillBeltDesc
+	dw InvalidItemDesc
+	dw LightClayDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
+	dw InvalidItemDesc
 
 MasterBallDesc:
 	db   "The best BALL. It"
@@ -373,8 +373,8 @@ CarbosDesc:
 	next "one #MON.@"
 
 LuckyPunchDesc:
-	db   "Ups critical hit"
-	next "ratio of CHANSEY.@"
+	db   "Max crit ratio for"
+	next "BLISSEY & CHANSEY.@"
 
 CalciumDesc:
 	db   "Ups SPECIAL stats"
@@ -516,21 +516,21 @@ ElixerDesc:
 	db   "Restores PP of all"
 	next "moves by 10.@"
 
-RedScaleDesc:
-	db   "A scale from the"
-	next "red GYARADOS.@"
+JournalPageDesc:
+	db   "A page full of"
+	next "access codes.@"
 
-SecretPotionDesc:
-	db   "Fully heals any"
-	next "#MON.@"
+BackdoorKeyDesc:
+	db   "A pink key with an"
+	next "angular design.@"
 
-SSTicketDesc:
-	db   "A ticket for the"
-	next "S.S.AQUA.@"
+VIPTicketDesc:
+	db   "S.S.MAKO FIRST"
+	next "CLASS access.@"
 
-MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from MR.#MON.@"
+EngineKeyDesc:
+	db   "S.S. MAKO engine"
+	next "access key.@"
 
 ClearBellDesc:
 	db   "Makes a gentle"
@@ -592,8 +592,9 @@ MintBerryDesc:
 	db   "A self-awakening"
 	next "for sleep. (HOLD)@"
 
-RedApricornDesc:
-	db   "A red APRICORN.@"
+RubyBoxDesc:
+	db   "A necklace adorned"
+	next "in red gemstones.@"
 
 TinyMushroomDesc:
 	db   "An ordinary mush-"
@@ -607,8 +608,9 @@ SilverPowderDesc:
 	db   "Powers up bug-type"
 	next "moves. (HOLD)@"
 
-BluApricornDesc:
-	db   "A blue APRICORN.@"
+SapphireBoxDesc:
+	db   "A pin adorned with"
+	next "a blue gemstone.@"
 
 DampRockDesc:
 	db	 "Summons a"
@@ -618,11 +620,13 @@ AmuletCoinDesc:
 	db   "Doubles monetary"
 	next "earnings. (HOLD)@"
 
-YlwApricornDesc:
-	db   "A yellow APRICORN.@"
+AmethystBoxDesc:
+	db   "A string of violet"
+	next "gemstones.@"
 
-GrnApricornDesc:
-	db   "A green APRICORN.@"
+EmeraldBoxDesc:
+	db   "A ring adorned in"
+	next "green gemstones.@"
 
 CleanseTagDesc:
 	db   "Helps repel wild"
@@ -636,24 +640,25 @@ TwistedSpoonDesc:
 	db   "Powers up psychic-"
 	next "type moves. (HOLD)@"
 
-WhtApricornDesc:
-	db   "A white APRICORN.@"
+SpinelBoxDesc:
+	db   "A chain adorned in"
+	next "pink gemstones.@"
 
 BlackbeltDesc:
 	db   "Boosts fighting-"
 	next "type moves. (HOLD)@"
 
-BlkApricornDesc:
-	db   "A black APRICORN."
-	next "@"
+BlackSludgeDesc:
+	db   "Heals POISON-type."
+	next "Hurts all others.@"
 
 HelixFossilDesc:
 	db   "The remains of an"
 	next "ancient #MON.@"
 
-PnkApricornDesc:
-	db   "A pink APRICORN."
-	next "@"
+BindingBandDesc:
+	db   "Increases trapping"
+	next "move damage.(HOLD)@"
 
 BlackGlassesDesc:
 	db   "Powers up dark-"
@@ -757,19 +762,19 @@ LuckyEggDesc:
 
 CardKeyDesc:
 	db   "Opens shutters in"
-	next "the RADIO TOWER.@"
+	next "the HIDEOUT.@"
 
 MachinePartDesc:
-	db   "A machine part for"
-	next "the POWER PLANT.@"
+	db   "A machine part"
+	next "that looks old.@"
 
 EggTicketDesc:
 	db   "May use at Golden-"
 	next "rod trade corner.@"
 
-LostItemDesc:
-	db   "The # DOLL lost"
-	next "by the COPYCAT.@"
+LabKeyDesc:
+	db   "An old-looking"
+	next "keycard.@"
 
 StardustDesc:
 	db   "Pretty, red sand."
@@ -780,7 +785,8 @@ StarPieceDesc:
 	next "Sell very high.@"
 
 BasementKeyDesc:
-	db   "Opens doors.@"
+	db   "A key marked with"
+	next "a lightning bolt.@"
 
 PassDesc:
 	db   "A ticket for the"
@@ -796,7 +802,7 @@ SmoothRockDesc:
 
 PowerHerbDesc:
 	db 	 "Skips charging"
-	next "turn. (HOLD)@"
+	next "turn once. (HOLD)@"
 	
 CharcoalDesc:
 	db   "Powers up fire-"
@@ -858,15 +864,13 @@ BerserkGeneDesc:
 	db   "Boosts ATTACK but"
 	next "causes confusion.@"
 
-LegendsAuraDesc:
-	db   "You should not"
-	next "have this item!@"
+AncientTomeDesc:
+	db   "An old book with a"
+	next "powerful aura.@"
 
-TeruSama19Desc:
-	db   "?@"
-
-TeruSama20Desc:
-	db   "?@"
+DollCapsuleDesc:
+	db   "Contains a random"
+	next "#MON DOLL.@"
 
 SacredAshDesc:
 	db   "Fully revives all"
@@ -876,9 +880,9 @@ HeavyBallDesc:
 	db   "A BALL for catch-"
 	next "ing heavy #MON.@"
 
-FlowerMailDesc:
-	db   "Flower-print MAIL."
-	next "(HOLD)@"
+SmallKeyDesc:
+	db	 "A small golden"
+	next "key. Sell low.@"
 
 LevelBallDesc:
 	db   "A BALL for lower-"
@@ -931,6 +935,10 @@ PolkadotBowDesc:
 TeruSama22Desc:
 	db   "?@"
 
+LightBuoyDesc:
+	db   "An odd orb. Floats"
+	next "on water. (HOLD)@"
+
 UpGradeDesc:
 	db   "A mysterious box"
 	next "made by SILPH CO.@"
@@ -959,72 +967,38 @@ RainbowWingDesc:
 	db   "A mystical feather"
 	next "of rainbow colors.@"
 
-TeruSama24Desc:
-	db   "?@"
+TrickMirrorDesc:
+	db   "Swap PHYS. & SPCL."
+	next "types. (HOLD)@"
 
 BrickPieceDesc:
 	db   "A rare chunk of"
 	next "tile.@"
+	
+CrashHelmetDesc:
+	db	 "Halves most recoil"
+	next "damage. (HOLD)@"
+	
+GuardianKeyDesc:
+	db	 "A rusty key that"
+	next "appears quite old.@"
 
-SurfMailDesc:
-	db   "LAPRAS-print MAIL."
-	next "(HOLD)@"
+ExpAllDesc:
+	db   "Grants EXP. Points"
+	next "to whole party.@"
 
-LiteBlueMailDesc:
-	db   "DRATINI-print"
-	next "MAIL. (HOLD)@"
+SafariPackDesc:
+	db	 "Supplies for long-"
+	next "er SAFARI GAMEs.@"
 
-PortraitMailDesc:
-	db   "MAIL featuring the"
-	next "holder's likeness.@"
+SkillBeltDesc:
+	db	 "Moves hit maximum"
+	next "amount of strikes.@"
 
-LovelyMailDesc:
-	db   "Heart-print MAIL."
-	next "(HOLD)@"
+LightClayDesc:
+	db	 "Extends SCREEN"
+	next "duration. (HOLD)@"
 
-EonMailDesc:
-	db   "EEVEE-print MAIL."
-	next "(HOLD)@"
-
-MorphMailDesc:
-	db   "DITTO-print MAIL."
-	next "(HOLD)@"
-
-BlueSkyMailDesc:
-	db   "Sky-print MAIL."
-	next "(HOLD)@"
-
-MusicMailDesc:
-	db   "NATU-print MAIL."
-	next "(HOLD)@"
-
-MewMailDesc:
-	db   "MEW-print MAIL."
-	next "(HOLD)@"
-
-TeruSama25Desc:
-	db   "?@"
-
-TeruSama26Desc:
-	db   "?@"
-
-TeruSama27Desc:
-	db   "?@"
-
-TeruSama28Desc:
-	db   "?@"
-
-TeruSama29Desc:
-	db   "?@"
-
-TeruSama30Desc:
-	db   "?@"
-
-TeruSama31Desc:
-	db   "?@"
-
-TeruSama32Desc:
-	db   "?@"
-
-TeruSama33Desc:
-	db   "?@"
+InvalidItemDesc:
+	db   "You should not"
+	next "have this item!@"

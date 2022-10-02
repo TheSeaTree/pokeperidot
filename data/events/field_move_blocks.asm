@@ -1,11 +1,15 @@
 CutTreeBlockPointers:
 ; tileset, block list pointer
 	dbw TILESET_JOHTO,        .johto
+	dbw TILESET_OCEAN,        .johto
 	dbw TILESET_MOUNTAIN,     .mountain
 	dbw TILESET_VOLCANO,      .volcano
 	dbw TILESET_JOHTO_CITY,   .johto_city
 	dbw TILESET_FACILITY,	  .facility
 	dbw TILESET_CAVE,		  .cave
+	dbw TILESET_FOREST,		  .forest
+	dbw TILESET_PARK,		  .park
+	dbw TILESET_LOST_LAND,	  .lost_land
 	db -1 ; end
 
 .johto:
@@ -58,6 +62,46 @@ CutTreeBlockPointers:
 
 .cave
 	db $88, $13, 0 ; smash wall
+	db $e2, $76, 0 ; smash wall
+	db $5c, $37, 0 ; smash wall
+	db -1
+
+.forest
+	db $03, $02, 1 ; grass
+	db $34, $24, 1 ; grass
+	db $35, $25, 1 ; grass
+	db $36, $26, 1 ; grass
+	db $38, $28, 1 ; grass
+	db $3a, $2a, 1 ; grass
+	db $3c, $2c, 1 ; grass
+	db $2d, $2d, 1 ; grass
+	db $2e, $2e, 1 ; grass
+	db $3f, $30, 1 ; grass
+	db $39, $31, 1 ; grass
+	db $3b, $32, 1 ; grass
+	db $37, $33, 1 ; grass
+	db $20, $33, 0 ; tree
+	db $21, $32, 0 ; tree
+	db $22, $31, 0 ; tree
+	db $23, $30, 0 ; tree
+	db $5f, $66, 0 ; smash wall
+	db -1
+
+.park
+	db $03, $04, 1 ; grass
+	db $1f, $04, 1 ; grass
+	db $23, $04, 1 ; grass
+	db $27, $04, 1 ; grass
+	db $2b, $04, 1 ; grass
+	db $13, $03, 1 ; long grass
+	db $84, $2b, 1 ; long grass
+	db $85, $27, 1 ; long grass
+	db $86, $1f, 1 ; long grass
+	db $87, $23, 1 ; long grass
+	db -1
+
+.lost_land
+	db $55, $54, 1 ; smash wall
 	db -1
 
 WhirlpoolBlockPointers:

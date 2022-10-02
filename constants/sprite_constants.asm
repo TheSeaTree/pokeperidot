@@ -2,8 +2,8 @@
 ; OverworldSprites indexes (see data/sprites/sprites.asm)
 	const_def
 	const SPRITE_NONE ; 00
-	const SPRITE_CHRIS ; 01
-	const SPRITE_CHRIS_BIKE ; 02
+	const SPRITE_PERRY ; 01
+	const SPRITE_PERRY_BIKE ; 02
 	const SPRITE_GAMEBOY_KID ; 03
 	const SPRITE_GAMEBOY_GIRL ; 03
 	const SPRITE_SILVER ; 04
@@ -13,30 +13,30 @@
 	const SPRITE_BILL ; 08
 	const SPRITE_ELDER ; 09
 	const SPRITE_JANINE ; 0a
-	const SPRITE_KURT ; 0b
-	const SPRITE_MOM ; 0c
-	const SPRITE_BLAINE ; 0d
-	const SPRITE_REDS_MOM ; 0e
+	const SPRITE_PERRY_HEADSET
+	const SPRITE_BLUE_MOM ; 0c
+	const SPRITE_JADE_HEADSET
+	const SPRITE_RED_MOM ; 0e
 	const SPRITE_DAISY ; 0f
-	const SPRITE_ELM ; 10
-	const SPRITE_WILL ; 11
+	const SPRITE_PURPLE_PERRY ; 10
+	const SPRITE_GREEN_JADE ; 11
 	const SPRITE_CECIL ; 12
-	const SPRITE_WHITNEY ; 13
+	const SPRITE_PERIDOT_TROPHY ; 13
 	const SPRITE_MURPHY ; 14
 	const SPRITE_DUANE ; 15
-	const SPRITE_CHUCK ; 16
+	const SPRITE_BIG_AERODACTYL
 	const SPRITE_JASMINE ; 17
-	const SPRITE_PRYCE ; 18
+	const SPRITE_UNUSED_18 ; 18
 	const SPRITE_CLAIR ; 19
-	const SPRITE_BROCK ; 1a
-	const SPRITE_KAREN ; 1b
-	const SPRITE_BRUNO ; 1c
-	const SPRITE_MISTY ; 1d
-	const SPRITE_LANCE ; 1e
-	const SPRITE_SURGE ; 1f
-	const SPRITE_ERIKA ; 20
-	const SPRITE_KOGA ; 21
-	const SPRITE_SABRINA ; 22
+	const SPRITE_RED_DAD ; 1a
+	const SPRITE_BLUE_DAD ; 1b
+	const SPRITE_UNUSED_1C ; 1c
+	const SPRITE_UNUSED_1D ; 1d
+	const SPRITE_JOSEPH ; 1e
+	const SPRITE_UNUSED_1F ; 1f
+	const SPRITE_UNUSED_20 ; 20
+	const SPRITE_UNUSED_21 ; 21
+	const SPRITE_UNUSED_22 ; 22
 	const SPRITE_COOLTRAINER_M ; 23
 	const SPRITE_COOLTRAINER_F ; 24
 	const SPRITE_BUG_CATCHER ; 25
@@ -69,7 +69,7 @@
 	const SPRITE_GENTLEMAN ; 40
 	const SPRITE_BLACK_BELT ; 41
 	const SPRITE_RECEPTIONIST ; 42
-	const SPRITE_OFFICER ; 43
+	const SPRITE_OFFICER_M ; 43
 	const SPRITE_CAL ; 44
 	const SPRITE_SLOWPOKE ; 45
 	const SPRITE_CAPTAIN ; 46
@@ -98,22 +98,19 @@
 	const SPRITE_FRUIT_TREE ; 5d
 	const SPRITE_GOLD_TROPHY ; 5e
 	const SPRITE_SILVER_TROPHY ; 5f
-	const SPRITE_KRIS ; 60
-	const SPRITE_KRIS_BIKE ; 61
-	const SPRITE_KURT_OUTSIDE ; 62
-	const SPRITE_SUICUNE ; 63
-	const SPRITE_ENTEI ; 64
-	const SPRITE_RAIKOU ; 65
-	const SPRITE_STANDING_YOUNGSTER ; 66
+	const SPRITE_JADE ; 60
+	const SPRITE_JADE_BIKE ; 61
+	const SPRITE_UNUSED_62 ; 62
+	const SPRITE_CAMERA_YOUNGSTER ; 66
 	const SPRITE_CONE
 	const SPRITE_PROFESSOR
-	const SPRITE_AMBER
+	const SPRITE_OLD_AMBER
 	const SPRITE_BOOK
 	const SPRITE_BUSH
 	const SPRITE_SWIMMER_GUY_LAND
 	const SPRITE_SWIMMER_GIRL_LAND
-	const SPRITE_CHRIS_RUN
-	const SPRITE_KRIS_RUN
+	const SPRITE_PERRY_RUN
+	const SPRITE_JADE_RUN
 	const SPRITE_POSEY
 	const SPRITE_CELESTE
 	const SPRITE_ABBOT
@@ -121,6 +118,17 @@
 	const SPRITE_FOOD
 	const SPRITE_CHEF
 	const SPRITE_JOEL
+	const SPRITE_REGAN
+	const SPRITE_BREDE
+	const SPRITE_AMBER
+	const SPRITE_WILBUR
+	const SPRITE_BOMB
+	const SPRITE_TEACHER_SLEEPING
+	const SPRITE_BUENA_SLEEPING
+	const SPRITE_PERRY_SURF
+	const SPRITE_JADE_SURF
+	const SPRITE_SHADOW
+	const SPRITE_OFFICER_F
 
 ; SpriteMons indexes (see data/sprites/sprite_mons.asm)
 	const_def $80
@@ -162,6 +170,12 @@ SPRITE_POKEMON EQU const_value
 	const SPRITE_HO_OH ; a2
 	const SPRITE_OMANYTE
 	const SPRITE_SHIFUR
+	const SPRITE_EGG
+	const SPRITE_MEWTWO
+	const SPRITE_RAIKOU
+	const SPRITE_ENTEI
+	const SPRITE_SUICUNE
+	const SPRITE_CELEBI
 
 ; special GetMonSprite values (see engine/overworld/overworld.asm)
 	const_def $e0
@@ -178,9 +192,9 @@ SPRITE_VARS EQU const_value
 	const SPRITE_WEIRD_TREE ; f4
 	const SPRITE_OLIVINE_RIVAL ; f5
 	const SPRITE_SUBSTITUTE_GUY ; f6
-	const SPRITE_FUCHSIA_GYM_1 ; f7
-	const SPRITE_FUCHSIA_GYM_2 ; f8
-	const SPRITE_FUCHSIA_GYM_3 ; f9
-	const SPRITE_FUCHSIA_GYM_4 ; fa
-	const SPRITE_COPYCAT ; fb
-	const SPRITE_JANINE_IMPERSONATOR ; fc
+	const SPRITE_LINK_TRAINER ; f7
+	const SPRITE_VARIABLE_DAD ; f8
+	const SPRITE_SUBWAY_BOSS ; f9
+	const SPRITE_VARIABLE_MOM ; fa
+	const SPRITE_HOF_CHAMPION ; fb
+	const SPRITE_LEAGUE_PLAYER ; fc

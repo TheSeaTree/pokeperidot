@@ -297,6 +297,14 @@ UnknownText_0x1c47d4::
 	text "!"
 	prompt
 
+PokeSeer_PalerockLocationText::
+	text "Hm… I see you met"
+	line "@"
+	text_ram wSeerNickname
+	text " here:"
+	cont "PALEROCK MOUNTAIN!"
+	prompt
+
 UnknownText_0x1c47fa::
 	text "The time was"
 	line "@"
@@ -348,6 +356,21 @@ UnknownText_0x1c487f::
 	para "Am I good or what?"
 	prompt
 
+PokeSeer_TimeOnlyText::
+	text "The time was"
+	line "@"
+	text_ram wSeerTimeOfDay
+	text "."
+	
+	para "This #MON had"
+	line "incredible power"
+	cont "when you met it!"
+
+	para "You are truly a"
+	line "special trainer to"
+	cont "have tamed it!"
+	prompt
+	
 UnknownText_0x1c491d::
 	text "Hey!"
 
@@ -488,18 +511,15 @@ UnknownText_0x1c4c08::
 	done
 
 UnknownText_0x1c4c28::
-	text "Hello, dear."
+	text "Hiya!"
 
 	para "I sell inexpensive"
 	line "herbal medicine."
 
 	para "They're good, but"
-	line "a trifle bitter."
-
-	para "Your #MON may"
-	line "not like them."
-
-	para "Hehehehe…"
+	line "Your #MON may"
+	cont "not like their"
+	cont "bitterness."
 	done
 
 UnknownText_0x1c4ca3::
@@ -517,34 +537,52 @@ UnknownText_0x1c4cae::
 	done
 
 UnknownText_0x1c4cce::
-	text "Thank you, dear."
-	line "Hehehehe…"
+	text "Thanks a lot!"
 	done
 
 UnknownText_0x1c4cea::
 	text "Oh? Your PACK is"
-	line "full, dear."
+	line "full."
 	done
 
 UnknownText_0x1c4d08::
-	text "Hehehe… You don't"
-	line "have the money."
+	text "You can't afford"
+	line "that right now."
 	done
 
 UnknownText_0x1c4d2a::
-	text "Come again, dear."
-	line "Hehehehe…"
+	text "Take care and come"
+	line "again!"
+	done
+	
+Subway_TradeBPText::
+	text "You may exchange"
+	line "your BP for prizes"
+	cont "here."
+	done
+
+Subway_CostsThisMuch_Text::
+	text_decimal wItemQuantityChangeBuffer, 1, 2
+	text " @"
+	text_ram wStringBuffer2
+	text "(S)"
+	line "will be @"
+	text_decimal hMoneyTemp, 3, 6
+	text " BP."
+	done
+
+Subway_InsufficientFunds_Text::
+	text "You do not have"
+	line "enough BP."
 	done
 
 UnknownText_0x1c4d47::
-	text "Hiya! Care to see"
-	line "some bargains?"
+	text "Welcome, CHAMPION!"
+	line "We have a special"
+	cont "discount for you!"
 
-	para "I sell rare items"
-	line "that nobody else"
-
-	para "carries--but only"
-	line "one of each item."
+	para "Do your #MON"
+	line "need VITAMINs?"
 	done
 
 UnknownText_0x1c4db0::
@@ -1007,7 +1045,7 @@ UnknownText_0x1c574e::
 	prompt
 
 UnknownText_0x1c5772::
-	text "HM moves can't be"
+	text "SURF can't be"
 	line "forgotten now."
 	prompt
 
@@ -1264,10 +1302,14 @@ UnknownText_0x1c5bac::
 	line "on this #MON."
 	prompt
 
-Text_RepelUsedEarlierIsStillInEffect::
-	text "The REPEL used"
-	line "earlier is still"
-	cont "in effect."
+Text_RepelUsedEarlierIsStillInEffect::	
+	text "There is a REPEL"
+	line "still in effect."
+
+	para "Steps remaining:"
+	line "@"
+	text_decimal wRepelEffect, 1, 3
+	text "."
 	prompt
 
 UnknownText_0x1c5bf9::
@@ -1293,6 +1335,27 @@ UnknownText_0x1c5c5e::
 	line "@"
 	text_decimal wBlueCardBalance, 1, 2
 	text " points."
+	done
+	
+AncientTomeRead_Text::
+	text "<PLAYER> read"
+	line "aloud from the"
+	cont "ANCIENT TOME…"
+	done
+	
+AncientTomeNothingHappened_Text::
+	text "…But nothing"
+	line "happened."
+	done
+
+AncientTomeGlowing_Text::
+	text "The ANCIENT TOME"
+	line "is glowing!"
+	done
+
+AncientTomeUnownReact_Text::
+	text "Your UNOWN seems"
+	line "quite pleased!"
 	done
 
 UnknownText_0x1c5c7b::
@@ -1587,3 +1650,12 @@ MoveReminderCancelText::
 	cont "PIECE."
 	done
 
+ExpAll_TurnOnText::
+	text "The EXP. ALL has"
+	line "been disabled."
+	done
+
+ExpAll_TurnOffText::
+	text "The EXP. ALL has"
+	line "been enabled."
+	done

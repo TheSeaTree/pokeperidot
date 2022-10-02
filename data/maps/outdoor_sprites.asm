@@ -3,17 +3,17 @@
 
 OutdoorSprites:
 ; entries correspond to map groups
-	dw OlivineGroupSprites
-	dw MahoganyGroupSprites
+	dw OceanGroupSprites
+	dw RugosaGroupSprites
 	dw DungeonsGroupSprites
-	dw EcruteakGroupSprites
-	dw BlackthornGroupSprites
+	dw StaghornGroupSprites
+	dw AcroporaGroupSprites
 	dw CinnabarGroupSprites
 	dw CeruleanGroupSprites
-	dw AzaleaGroupSprites
+	dw PectiniaGroupSprites
 	dw LakeOfRageGroupSprites
-	dw VioletGroupSprites
-	dw GoldenrodGroupSprites
+	dw RidgeGroupSprites
+	dw FaviaGroupSprites
 	dw VermilionGroupSprites
 	dw PalletGroupSprites
 	dw PewterGroupSprites
@@ -25,11 +25,13 @@ OutdoorSprites:
 	dw CableClubGroupSprites
 	dw CeladonGroupSprites
 	dw CianwoodGroupSprites
-	dw ViridianGroupSprites
+	dw OrchidGroupSprites
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
-	dw CherrygroveGroupSprites
+	dw PavonaGroupSprites
 	dw PalerockGroupSprites
+	dw NorthForestGroupSprites
+	dw SeaRoute7GroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
@@ -45,6 +47,8 @@ PalletGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
+	db SPRITE_POKEFAN_M
+	db SPRITE_BIRD
 	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
 	db SPRITE_FRUIT_TREE
@@ -64,6 +68,7 @@ PewterGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	; limit 9 of 9 walking sprites
 	db SPRITE_FISHER
+	db SPRITE_HO_OH
 	db 0 ; end
 
 CinnabarGroupSprites:
@@ -103,7 +108,7 @@ CeruleanGroupSprites:
 	db SPRITE_BIKER
 	; limit 9 of 9 walking sprites
 	db SPRITE_SWIMMER_GIRL_LAND
-	db SPRITE_OFFICER
+	db SPRITE_OFFICER_M
 	db SPRITE_GRAMPS
 	db SPRITE_TAUROS
 	db SPRITE_FRUIT_TREE
@@ -115,15 +120,20 @@ CeruleanGroupSprites:
 SaffronGroupSprites:
 ; Route5, SaffronCity
 	db SPRITE_COOLTRAINER_M
-	db SPRITE_BUG_CATCHER
 	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_M
-	db SPRITE_SCIENTIST
 	db SPRITE_BUENA
+	db SPRITE_MONSTER
+	db SPRITE_BIRD
+	db SPRITE_DRAGON
 	; limit of 9 walking sprites
+	db SPRITE_OFFICER_M
+	db SPRITE_SUPER_NERD
+	db SPRITE_POKEFAN_F
+	db SPRITE_SCIENTIST
+	db SPRITE_NURSE
 	db SPRITE_POKE_BALL
 	db SPRITE_SLOWPOKE
 	db 0 ; end
@@ -185,12 +195,10 @@ LavenderGroupSprites:
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
 	db SPRITE_POKEFAN_M
-	db SPRITE_BUENA
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
 	db SPRITE_TEACHER
 	db SPRITE_SUPER_NERD
-	db SPRITE_BIKER
 	db SPRITE_POKEFAN_F
 	db SPRITE_LASS
 	; 9 of max 9 walking sprites
@@ -198,17 +206,26 @@ FuchsiaGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCK
 	db SPRITE_KIMONO_GIRL
+	db SPRITE_CELEBI
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 IndigoGroupSprites:
 ; Route23
+	db SPRITE_SUPER_NERD
+	db SPRITE_COOLTRAINER_F
+	db SPRITE_YOUNGSTER
+	db SPRITE_BUENA
+	db SPRITE_ROCKER
+	db SPRITE_TEACHER
+	db SPRITE_POKEFAN_M
 	; 0 of max 9 walking sprites
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 NewBarkGroupSprites:
-CherrygroveGroupSprites:
+PavonaGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -219,6 +236,7 @@ CherrygroveGroupSprites:
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_SUPER_NERD
 	; limit of 9 walking sprites
+	db SPRITE_VARIABLE_MOM
 	db SPRITE_SUICUNE
 	db SPRITE_BUSH
 	db SPRITE_POKE_BALL
@@ -226,9 +244,9 @@ CherrygroveGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 	
-ViridianGroupSprites:
+OrchidGroupSprites:
 	db SPRITE_TEACHER
-	db SPRITE_FISHER
+	db SPRITE_POKEFAN_M
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
 	db SPRITE_BUENA
@@ -244,12 +262,12 @@ ViridianGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-; Route37 and EcruteakCity are connected
-EcruteakGroupSprites:
-; EcruteakCity
+; Route37 and StaghornCity are connected
+StaghornGroupSprites:
+; StaghornCity
 	db SPRITE_FISHER
 	db SPRITE_LASS
-	db SPRITE_OFFICER
+	db SPRITE_OFFICER_M
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_COOLTRAINER_M
@@ -264,8 +282,8 @@ EcruteakGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-AzaleaGroupSprites:
-; Route33, AzaleaTown
+PectiniaGroupSprites:
+; Route33, PectiniaTown
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
@@ -287,12 +305,12 @@ AzaleaGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-VioletGroupSprites:
+RidgeGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
-	db SPRITE_OLIVINE_RIVAL
+	db SPRITE_SILVER
 	db SPRITE_FISHER
 	db SPRITE_LASS
 	db SPRITE_SAILOR
@@ -300,8 +318,6 @@ VioletGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_POKEFAN_M
-	db SPRITE_SWIMMER_GUY_LAND
-	db SPRITE_BLACK_BELT
 	db SPRITE_DAY_CARE_MON_1
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
@@ -310,8 +326,8 @@ VioletGroupSprites:
 	db SPRITE_BUSH
 	db 0 ; end
 	
-GoldenrodGroupSprites:
-; Route34, GoldenrodCity
+FaviaGroupSprites:
+; Route34, FaviaCity
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
@@ -326,29 +342,30 @@ GoldenrodGroupSprites:
 	db SPRITE_DAY_CARE_MON_2
 	db SPRITE_POKE_BALL
 	db SPRITE_TEACHER
+	db SPRITE_SCIENTIST
 	db 0 ; end
 
-; OlivineCity and Route40 are connected
-OlivineGroupSprites:
-; Route38, Route39, OlivineCity
+; OceanCity and Route40 are connected
+OceanGroupSprites:
+; Route38, Route39, OceanCity
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER
-	db SPRITE_BUG_CATCHER
+	db SPRITE_BUENA
 	db SPRITE_SILVER
 	db SPRITE_FISHER
 	db SPRITE_LASS
-	db SPRITE_SAILOR
 	db SPRITE_SWIMMER_GUY
 	db SPRITE_SWIMMER_GIRL
+	db SPRITE_SWIMMER_GIRL_LAND
 	; 9 of max 9 walking sprites
-	db SPRITE_OLIVINE_RIVAL
+	db SPRITE_SAILOR
 	db SPRITE_BOULDER
-	db SPRITE_TAUROS
+	db SPRITE_BLACK_BELT
 	db SPRITE_FRUIT_TREE
-	db SPRITE_BUENA
 	db SPRITE_MACHOP
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
+	db SPRITE_SWIMMER_GUY_LAND
 	db 0 ; end
 
 CianwoodGroupSprites:
@@ -370,8 +387,8 @@ CianwoodGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-MahoganyGroupSprites:
-; Route42, Route44, MahoganyTown
+RugosaGroupSprites:
+; Route42, Route44, RugosaTown
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -380,7 +397,7 @@ MahoganyGroupSprites:
 	db SPRITE_JOEL
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_FISHER
-	db SPRITE_OFFICER
+	db SPRITE_OFFICER_M
 	; 9 of max 9 walking sprites
 	db SPRITE_SCIENTIST
 	db SPRITE_TWIN
@@ -392,41 +409,40 @@ MahoganyGroupSprites:
 
 LakeOfRageGroupSprites:
 ; Route43, LakeOfRage
-	db SPRITE_LANCE
-	db SPRITE_GRAMPS
 	db SPRITE_SUPER_NERD
-	db SPRITE_COOLTRAINER_F
-	db SPRITE_FISHER
-	db SPRITE_COOLTRAINER_M
-	db SPRITE_LASS
-	db SPRITE_YOUNGSTER
-	; 8 of max 9 walking sprites
-	db SPRITE_GYARADOS
+	db SPRITE_TEACHER
+	; 2 of max 9 walking sprites
+	db SPRITE_JYNX
 	db SPRITE_FRUIT_TREE
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-BlackthornGroupSprites:
-; Route45, Route46, BlackthornCity
+AcroporaGroupSprites:
+; Route45, Route46, AcroporaCity
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
-	db SPRITE_SUPER_NERD
+	db SPRITE_BUENA
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_POKEFAN_M
-	db SPRITE_BLACK_BELT
+	db SPRITE_ROCKER
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_BIKER
 	; 9 of max 9 walking sprites
 	db SPRITE_PHARMACIST
 	db SPRITE_FRUIT_TREE
+	db SPRITE_BUSH
 	db SPRITE_POKE_BALL
 	db SPRITE_BIG_SNORLAX
 	db 0 ; end
 
 SilverGroupSprites:
 ; Route28, SilverCaveOutside
-	; 0 of max 9 walking sprites
+	db SPRITE_SCIENTIST
+	; 1 of max 9 walking sprites
+	db SPRITE_EGG
+	db SPRITE_BIG_AERODACTYL
+	db SPRITE_POKE_BALL
 	db 0 ; end
 
 DungeonsGroupSprites:
@@ -442,23 +458,26 @@ DungeonsGroupSprites:
 	db SPRITE_SUPER_NERD
 	; 8 of max 9 walking sprites
 	db SPRITE_JYNX
+	db SPRITE_EGG
 	db SPRITE_GAMEBOY_KID
 	db SPRITE_GROWLITHE
-	db SPRITE_MOLTRES
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
 FastShipGroupSprites:
-; OlivinePort, VermilionPort, MountMoonSquare, TinTowerRoof
+; OceanPort, VermilionPort, MountMoonSquare, TinTowerRoof
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
+	db SPRITE_PHARMACIST
 	; 5 of max 9 walking sprites
 	db SPRITE_HO_OH
 	db SPRITE_FAIRY
+	db SPRITE_POKE_BALL
 	db SPRITE_ROCK
+	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
 CableClubGroupSprites:
@@ -477,7 +496,19 @@ PalerockGroupSprites:
 	db SPRITE_FISHER
 	db SPRITE_SCIENTIST
 	; limit of 9 walking sprites
+	db SPRITE_MOLTRES
 	db SPRITE_POKE_BALL
 	db SPRITE_BOULDER
 	db 0 ; end
-	
+
+NorthForestGroupSprites:
+	db SPRITE_SILVER
+	db SPRITE_MEWTWO
+	db 0
+
+SeaRoute7GroupSprites:
+; Sea Route 7
+	db SPRITE_POKEFAN_M
+	; 0 of max 9 walking sprites
+	db SPRITE_POKE_BALL
+	db 0 ; end

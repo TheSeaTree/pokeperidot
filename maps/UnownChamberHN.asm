@@ -49,9 +49,11 @@ UnownHNChamberWallText:
 	writetext UnownHNWritingText1
 	writebyte UNOWNWORDS_FISH
 	special DisplayUnownWords
+	writetext UnownHNWritingText2
+	waitbutton
 	writebyte UNOWNWORDS_STATUE
 	special DisplayUnownWords
-	writetext UnownHNWritingText2
+	writetext UnownHNWritingText3
 	waitbutton
 	closetext
 	end
@@ -62,9 +64,15 @@ UnownHNWritingText1:
 	done
 
 UnownHNWritingText2:
+	text "There's more of"
+	line "them…"
+	done
+	
+UnownHNWritingText3:
 	text "What are these"
 	line "symbols?"
 	done
+	
 	
 UnownHNStrangePresence:
 	text "A strange presence"

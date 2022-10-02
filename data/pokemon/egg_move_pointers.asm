@@ -126,8 +126,8 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw PinsirEggMoves
-	dw NoEggMoves
-	dw NoEggMoves
+	dw TaurosEggMoves
+	dw MagikarpEggMoves
 	dw NoEggMoves
 	dw LaprasEggMoves
 	dw NoEggMoves
@@ -233,7 +233,7 @@ EggMovePointers::
 	dw NoEggMoves
 	dw NoEggMoves
 	dw StantlerEggMoves
-	dw NoEggMoves
+	dw SmeargleEggMoves
 	dw NoEggMoves
 	dw GreminiEggMoves
 	dw SmoochumEggMoves

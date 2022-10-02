@@ -160,6 +160,9 @@ ScrollingMenuJoypad::
 	call GetMenuJoypad
 	ret
 
+DoMenuJoypadLoop::
+	farcall _DoMenuJoypadLoop
+
 GetMenuJoypad::
 	push bc
 	push af

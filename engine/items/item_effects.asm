@@ -81,7 +81,7 @@ ItemEffects:
 	dw NoEffect            ; RED_SCALE
 	dw NoEffect            ; SECRETPOTION
 	dw NoEffect            ; S_S_TICKET
-	dw NoEffect            ; MYSTERY_EGG
+	dw NoEffect            ; CABIN_KEY
 	dw NoEffect            ; CLEAR_BELL
 	dw NoEffect            ; SILVER_WING
 	dw RestoreHPEffect     ; MOOMOO_MILK
@@ -165,9 +165,9 @@ ItemEffects:
 	dw RestorePPEffect     ; MYSTERYBERRY
 	dw NoEffect            ; DRAGON_SCALE
 	dw NoEffect            ; BERSERK_GENE
-	dw NoEffect            ; ITEM_99
-	dw NoEffect            ; ITEM_9A
-	dw NoEffect            ; ITEM_9B
+	dw NoEffect            ; LEGENDS_AURA
+	dw AncientTomeEffect   ; ANCIENT_TOME
+	dw DollCapsuleEffect   ; DOLL_CAPSULE
 	dw SacredAshEffect     ; SACRED_ASH
 	dw PokeBallEffect      ; HEAVY_BALL
 	dw NoEffect            ; FLOWER_MAIL
@@ -189,9 +189,16 @@ ItemEffects:
 	dw RestoreHPEffect     ; GOLD_BERRY
 	dw NoEffect            ; SQUIRTBOTTLE
 	dw RestoreHPEffect     ; SILVER_BERRY
-	dw PokeBallEffect      ; PARK_BALL
+	dw PokeBallEffect      ; SAFARI_BALL
 	dw NoEffect            ; RAINBOW_WING
-	dw NoEffect            ; ITEM_B3
+	dw NoEffect            ; TRICK_MIRROR
+	dw NoEffect            ; BRICK_PIECE
+	dw NoEffect            ; CRASH_HELMET
+	dw NoEffect            ; SHRINE_KEY
+	dw ExpAllEffect        ; EXP_ALL
+	dw NoEffect        	   ; SAFARI_PACK
+	dw NoEffect		       ; SKILL_BELT
+	dw PokeBallEffect      ; CYBER_BALL
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -205,6 +212,10 @@ PokeBallEffect:
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, UseBallInBossBattle
+
 	ld a, BANK(sBoxCount)
 	call GetSRAMBank
 	ld a, [sBoxCount]
@@ -216,9 +227,12 @@ PokeBallEffect:
 	xor a
 	ld [wWildMon], a
 	ld a, [wBattleType]
-	cp BATTLETYPE_CONTEST
+	cp BATTLETYPE_SIMULATION
+	jr z, .ball_from_battle_screen
+	cp BATTLETYPE_SAFARI
 	call nz, ReturnToBattle_UseBall
 
+.ball_from_battle_screen
 	ld hl, wOptions
 	res NO_TEXT_SCROLL, [hl]
 	ld hl, UsedItemText
@@ -496,6 +510,10 @@ PokeBallEffect:
 
 	call ClearSprites
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .skip_pokedex
+
 	ld a, [wTempSpecies]
 	dec a
 	call CheckCaughtMon
@@ -523,12 +541,41 @@ PokeBallEffect:
 
 .skip_pokedex
 	ld a, [wBattleType]
-	cp BATTLETYPE_CELEBI
-	jr nz, .not_celebi
+	cp BATTLETYPE_LEGENDARY
+	jr z, .check_caught_legendary
+	cp BATTLETYPE_FORCEITEM
+	jr nz, .check_articuno
+.check_caught_legendary
 	ld hl, wBattleResult
 	set BATTLERESULT_CAUGHT_CELEBI, [hl]
-.not_celebi
 
+.check_articuno
+	ld a, [wCurPartySpecies]
+	cp ARTICUNO
+	jr nz, .check_zapdos
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_ARTICUNO
+	call EventFlagAction
+	jr .done_legend
+
+.check_zapdos
+	ld a, [wCurPartySpecies]
+	cp ZAPDOS
+	jr nz, .check_moltres
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_ZAPDOS
+	call EventFlagAction
+	jr .done_legend
+
+.check_moltres
+	ld a, [wCurPartySpecies]
+	cp MOLTRES
+	jr nz, .done_legend
+	ld b, SET_FLAG
+	ld de, EVENT_CAUGHT_MOLTRES
+	call EventFlagAction
+
+.done_legend
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
 	jr z, .SendToPC
@@ -686,8 +733,10 @@ PokeBallEffect:
 	ret z
 	cp BATTLETYPE_DEBUG
 	ret z
-	cp BATTLETYPE_CONTEST
-	jr z, .used_park_ball
+	cp BATTLETYPE_SAFARI
+	jr z, .used_safari_ball
+	cp BATTLETYPE_SIMULATION
+	jr z, .used_cyber_ball
 
 	ld a, [wWildMon]
 	and a
@@ -702,7 +751,12 @@ PokeBallEffect:
 	ld [wItemQuantityChangeBuffer], a
 	jp TossItem
 
-.used_park_ball
+.used_safari_ball
+	ld hl, wSafariBallsRemaining
+	dec [hl]
+	ret
+
+.used_cyber_ball
 	ld hl, wParkBallsRemaining
 	dec [hl]
 	ret
@@ -712,14 +766,14 @@ BallMultiplierFunctionTable:
 ; which ball is used in a certain situation.
 	dbw ULTRA_BALL,  UltraBallMultiplier
 	dbw GREAT_BALL,  GreatBallMultiplier
-	dbw SAFARI_BALL, SafariBallMultiplier ; Safari Ball, leftover from RBY
 	dbw HEAVY_BALL,  HeavyBallMultiplier
 	dbw LEVEL_BALL,  LevelBallMultiplier
 	dbw LURE_BALL,   LureBallMultiplier
 	dbw FAST_BALL,   FastBallMultiplier
 	dbw MOON_BALL,   MoonBallMultiplier
 	dbw LOVE_BALL,   LoveBallMultiplier
-	dbw PARK_BALL,   ParkBallMultiplier
+	dbw SAFARI_BALL, SafariBallMultiplier
+	dbw CYBER_BALL,  CyberBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -727,6 +781,17 @@ UltraBallMultiplier:
 	sla b
 	ret nc
 	ld b, $ff
+	ret
+
+CyberBallMultiplier:
+; multiply catch rate by 4
+	sla b
+	jr c, .max
+	sla b
+	jr nc, .done
+.max
+	ld b, $ff
+.done
 	ret
 
 SafariBallMultiplier:
@@ -993,25 +1058,20 @@ LoveBallMultiplier:
 	ret
 
 FastBallMultiplier:
-; This function is buggy.
-; Intent:  multiply catch rate by 4 if enemy mon is in one of the three
-;          FleeMons tables.
-; Reality: multiply catch rate by 4 if enemy mon is one of the first three in
-;          the first FleeMons table.
+; multiply catch rate by 4 if the enemy mon has > 100 base speed
+; adapted from Polished Crystal https://github.com/Rangi42/polishedcrystal/blob/master/engine/items/poke_balls.asm
+	push bc
 	ld a, [wTempEnemyMonSpecies]
-	ld c, a
-	ld hl, FleeMons
-	ld d, 3
-
-.loop
-	ld a, BANK(FleeMons)
+	dec a
+	ld hl, BaseData + BASE_SPD
+	ld bc, BASE_DATA_SIZE
+	call AddNTimes
+	pop bc
+	ld a, BANK(BaseData)
 	call GetFarByte
+	cp 100
+	ret c
 
-	inc hl
-	cp -1
-	jr z, .next
-	cp c
-	jr nz, .loop ; for the intended effect, this should be "jr nz, .loop"
 	sla b
 	jr c, .max
 
@@ -1020,11 +1080,6 @@ FastBallMultiplier:
 
 .max
 	ld b, $ff
-	ret
-
-.next
-	dec d
-	jr nz, .loop
 	ret
 
 LevelBallMultiplier:
@@ -1762,6 +1817,7 @@ ItemActionText:
 	push hl
 	push de
 	push bc
+	call GetPartyNick
 	farcall WritePartyMenuTilemap
 	farcall PrintPartyMenuActionText
 	call WaitBGMap
@@ -2225,6 +2281,168 @@ PokeFluteEffect:
 .battle
 	jp PokeFluteTerminatorCharacter
 	
+ExpAllEffect:
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	jr nz, .turnoff
+
+	ld de, SFX_FULL_HEAL
+	call PlaySFX
+
+	ld hl, wStatusFlags
+	set STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ld hl, .turnofftext
+	jp MenuTextBoxWaitButton
+
+.turnoff
+	push de
+	ld de, SFX_PECK
+	call PlaySFX
+	pop de
+
+	ld hl, wStatusFlags
+	res STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ld hl, .turnontext
+	jp MenuTextBoxWaitButton
+	
+.turnontext
+	text_far ExpAll_TurnOnText
+	text_end
+	
+.turnofftext
+	text_far ExpAll_TurnOffText
+	text_end
+	
+AncientTomeEffect:
+	; Ancient Tome can only be used outside of battle.
+	ld hl, .AncientTomeScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	ret
+
+.AncientTomeScript:
+	opentext
+	farwritetext AncientTomeRead_Text
+	waitbutton
+	writebyte UNOWN
+	special FindPartyMonThatSpecies
+	iffalse .NoUnown
+	farwritetext AncientTomeGlowing_Text
+	waitbutton
+	playsound SFX_WARP_TO
+	writebyte RUNIC_POWER
+	special MoveTutor
+	ifequal $0, .TaughtMove
+	closetext
+	end
+	
+.TaughtMove
+	farwritetext AncientTomeUnownReact_Text
+	cry UNOWN
+	waitbutton
+	closetext
+	end
+
+.NoUnown
+	farwritetext AncientTomeNothingHappened_Text
+	waitbutton
+	closetext
+	end
+
+DollCapsuleEffect:
+	ld hl, .DollCapsuleScript
+	call QueueScript
+	ld a, $1
+	ld [wItemEffectSucceeded], a
+	call UseDisposableItem
+	ret
+
+.DollCapsuleScript:
+	farwritetext DollCapsule_OpenText
+
+	random  50
+	ifequal  0, .SurfPikachu
+	ifless   3, .Gengar
+	ifless   6, .Diglett
+	ifless   9, .Shellder
+	ifless  12, .Grimer
+	ifless  15, .Oddish
+	ifless  20, .Geodude
+	ifless  25, .Machop
+	ifless  30, .Voltorb
+	ifless  40, .Tentacool
+
+.Weedle:
+	setevent EVENT_DECO_WEEDLE_DOLL
+	pokenamemem WEEDLE, MEM_BUFFER_0
+	jump .Continue
+
+.Gengar:
+	setevent EVENT_DECO_GENGAR_DOLL
+	pokenamemem GENGAR, MEM_BUFFER_0
+	jump .Continue
+	
+.Diglett:
+	setevent EVENT_DECO_DIGLETT_DOLL
+	pokenamemem DIGLETT, MEM_BUFFER_0
+	jump .Continue
+
+.Shellder:
+	setevent EVENT_DECO_SHELLDER_DOLL
+	pokenamemem SHELLDER, MEM_BUFFER_0
+	jump .Continue
+
+.Grimer:
+	setevent EVENT_DECO_GRIMER_DOLL
+	pokenamemem GRIMER, MEM_BUFFER_0
+	jump .Continue
+
+.Geodude:
+	setevent EVENT_DECO_GEODUDE_DOLL
+	pokenamemem GEODUDE, MEM_BUFFER_0
+	jump .Continue
+
+.Machop:
+	setevent EVENT_DECO_MACHOP_DOLL
+	pokenamemem MACHOP, MEM_BUFFER_0
+	jump .Continue
+
+.Voltorb:
+	setevent EVENT_DECO_VOLTORB_DOLL
+	pokenamemem VOLTORB, MEM_BUFFER_0
+	jump .Continue
+
+.Tentacool:
+	setevent EVENT_DECO_TENTACOOL_DOLL
+	pokenamemem TENTACOOL, MEM_BUFFER_0
+
+.Continue:
+	farwritetext DollCapsule_GenericText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	jump .SentHome
+
+.Oddish:
+	setevent EVENT_DECO_ODDISH_DOLL
+	pokenamemem ODDISH, MEM_BUFFER_0
+	farwritetext DollCapsule_OddishText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	jump .SentHome
+
+.SurfPikachu:
+	setevent EVENT_DECO_SURFING_PIKACHU_DOLL
+	farwritetext DollCapsule_SurfPikachuText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	waitsfx
+
+.SentHome:
+	farwritetext DollCapsule_SentHomeText
+	closetext
+	end
+
 BlueCardEffect:
 	ld hl, .bluecardtext
 	jp MenuTextBoxWaitButton
@@ -2529,11 +2747,11 @@ SacredAshEffect:
 	ret
 
 NormalBoxEffect:
-	ld c, DECOFLAG_SILVER_TROPHY_DOLL
+	ld c, DECOFLAG_GOLD_TROPHY_DOLL
 	jr OpenBox
 
 GorgeousBoxEffect:
-	ld c, DECOFLAG_GOLD_TROPHY_DOLL
+	ld c, DECOFLAG_SILVER_TROPHY_DOLL
 OpenBox:
 	farcall SetSpecificDecorationFlag
 

@@ -89,12 +89,12 @@ BattleCommand_UnleashEnergy:
 	ld [de], a
 	ld [wPlayerMoveStructEffect], a
 	ld [wEnemyMoveStructEffect], a
-	call BattleRandom
-	and 1
 	inc a
 	inc a
 	ld [bc], a
 	ld a, 1
 	ld [wKickCounter], a
 	call AnimateCurrentMove
+	ld hl, StoringEnergyText
+	call StdBattleTextBox
 	jp EndMoveEffect

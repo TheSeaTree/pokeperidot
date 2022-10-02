@@ -43,7 +43,7 @@ MoveEffectsPointers:
 	dw SuperFang
 	dw StaticDamage
 	dw TrapTarget
-	dw Splash ; Unused
+	dw NormalHit ; Body Press
 	dw MultiHit
 	dw NormalHit
 	dw Mist
@@ -78,7 +78,7 @@ MoveEffectsPointers:
 	dw SkyAttack
 	dw ConfuseHit
 	dw PoisonMultiHit
-	dw Splash ; Unused
+	dw FreezeHit ; Freeze-Dry
 	dw Substitute
 	dw HyperBeam
 	dw Rage
@@ -96,7 +96,6 @@ MoveEffectsPointers:
 	dw Conversion2
 	dw LockOn
 	dw Sketch
-	dw DefrostOpponent
 	dw SleepTalk
 	dw DestinyBond
 	dw Reversal
@@ -109,7 +108,7 @@ MoveEffectsPointers:
 	dw Nightmare
 	dw FlameWheel
 	dw Curse
-	dw Splash ; Unused
+	dw Glare
 	dw Protect
 	dw Spikes
 	dw Foresight
@@ -168,4 +167,6 @@ MoveEffectsPointers:
 	dw StunSpore
 	dw UTurn
 	dw DoBurn
+	dw NormalHit
 	dw Splash
+	dw BrickBreak

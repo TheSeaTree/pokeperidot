@@ -114,6 +114,10 @@ LoadFontsExtra2::
 	farcall _LoadFontsExtra2
 	ret
 
+LoadFontsOptionsExtra::
+	farcall _LoadFontsOptionsExtra
+	ret
+
 DecompressRequest2bpp::
 	push de
 	ld a, BANK(sScratch)

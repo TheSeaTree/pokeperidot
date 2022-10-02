@@ -9,7 +9,6 @@
 	const POWERPLANT1FB_SCIENTIST4
 	const POWERPLANT1FB_SCIENTIST5
 	const POWERPLANT1FB_SCIENTIST6
-	const POWERPLANT1FB_SKELEGON
 
 PowerPlant1FB_MapScripts:
 	db 2 ; scene scripts
@@ -28,8 +27,10 @@ PowerPlant1FB_MapScripts:
 
 .CardKeyShutterCallback:
 	changeblock  4,  8, $07 ; open shutter
+	changeblock  4, 16, $72 ; open shutter
+	changeblock  6, 16, $73 ; open shutter
 	return
-	
+
 FossilResurrectionGuy:
 	faceplayer
 	opentext
@@ -170,16 +171,19 @@ ResurrectOldAmber:
 	jump FossilResurrectionGuy.NotDone
 
 ResurrectSabreFossil:
+	
 	itemtotext SABRE_FOSSIL, MEM_BUFFER_0
 	writetext IdentifyFossilText
 	waitbutton
+	checkevent EVENT_SKELEGON_BATTLED
+	iftrue .NotFirstTime
 	writetext AskResurrectFossilText
 	yesorno
+	iffalse FossilResurrectionGuy.maybe_later
 	writetext SabreFossilResurrectionText
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
-	playsound SFX_TRANSACTION
 	playsound SFX_TRANSACTION
 	waitsfx
 	opentext
@@ -188,24 +192,71 @@ ResurrectSabreFossil:
 	closetext
 	showemote EMOTE_QUESTION, POWERPLANT1FB_SCIENTIST2, 15
 	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
 	playsound SFX_TRANSACTION
 	waitsfx
 	opentext
 	writetext SabreFossilAlarmText
 	waitbutton
 	closetext
-	special FadeBlackQuickly
+	scall .PitchBlack
 	opentext
 	writetext SkelegonCryText
 	cry SKELEGON
 	waitsfx
-	loadwildmon SKELEGON, 50
+	loadwildmon SKELEGON, 45
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
 	startbattle
 	reloadmapafterbattle
+	takeitem SABRE_FOSSIL
+	setevent EVENT_SKELEGON_BATTLED
 	faceplayer
 	opentext
 	writetext SabreFossilAfterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
+	end
+
+.PitchBlack
+	jumpstd darkenroom
+	end
+
+.NotFirstTime
+	writetext AskResurrectSabreFossilText
+	yesorno
+	iffalse FossilResurrectionGuy.maybe_later
+	writetext SabreFossilResurrectionText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	playsound SFX_TRANSACTION
+	waitsfx
+	opentext
+	writetext SabreFossilGetReadyText
+	waitbutton
+	closetext
+	scall .PitchBlack
+	opentext
+	writetext SkelegonCryText
+	cry SKELEGON
+	waitsfx
+	loadwildmon SKELEGON, 60
+	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	startbattle
+	reloadmapafterbattle
+	takeitem SABRE_FOSSIL
+	faceplayer
+	opentext
+	writetext SabreFossilRematchAfterText
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP
@@ -221,7 +272,6 @@ PowerPlantItemfinderEvent:
 	buttonsound
 	setscene SCENE_FINISHED
 	setevent EVENT_POWER_PLANT_1F_MUK
-	setevent EVENT_RETURNED_MACHINE_PART
 	closetext
 	applymovement POWERPLANT1FB_ADMIN, PowerPlantAdminWalkAway
 	disappear POWERPLANT1FB_ADMIN
@@ -327,13 +377,13 @@ IdentifyFossilText:
 	text_ram wStringBuffer3
 	text "?"
 	done
-	
+
 AskResurrectFossilText:
 	text "Would you like me"
 	line "to try and revive"
 	cont "it into a #MON?"
 	done
-	
+
 FossilMenuText:
 	text "Do you have any"
 	line "FOSSILS you could"
@@ -470,7 +520,39 @@ PowerPlantFossilGuyThanks:
 	cont "given me for my"
 	cont "research!"
 	done
-	
+
+AskResurrectSabreFossilText:
+	text "The SKELEGON resu-"
+	line "rrected from this"
+	cont "FOSSIL may react"
+	cont "violently to us."
+
+	para "Are you prepared"
+	line "for a battle?"
+	done
+
+ResurrectSabreFossilText:
+	text "Okay, let me just"
+	line "put this into the"
+	cont "machine…"
+	done
+
+SabreFossilGetReadyText:
+	text "Okay, here it"
+	line "comes!"
+	done
+
+SabreFossilRematchAfterText:
+	text "I will never get"
+	line "used to how feroc-"
+	cont "ious that #MON"
+	cont "can be!"
+
+	para "You're really some-"
+	line "thing for being"
+	cont "able to battle it!"
+	done
+
 PowerPlant1FBreakGuyText:
 	text "Welcome to the"
 	line "POWER PLANT!"
@@ -514,7 +596,7 @@ PowerPlant1FMonitorText:
 	cont "from this PC."
 	
 	para "I'm also closest"
-	cont "to the door just"
+	line "to the door just"
 	cont "in case anything"
 	cont "goes wrong."
 	done
@@ -531,13 +613,12 @@ PowerPlant1FWaterCoolingGuyText:
 	cont "the warm water."
 	done
 
-
 PowerPlant1FB_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  5, 21, MAHOGANY_TOWN, 3
-	warp_event  6, 21, MAHOGANY_TOWN, 3
+	warp_event  5, 21, RUGOSA_CITY, 3
+	warp_event  6, 21, RUGOSA_CITY, 11
 	warp_event 25, 20, POWER_PLANT_2F_B, 1
 	warp_event  3, 10, POWER_PLANT_2F_B, 2
 
@@ -545,8 +626,8 @@ PowerPlant1FB_MapEvents:
 
 	db 0 ; bg events
 
-	db 11 ; object events
-	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantAdmin, EVENT_RETURNED_MACHINE_PART
+	db 10 ; object events
+	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantAdmin, EVENT_POWER_PLANT_1F_MUK
 	object_event  0,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBHyperPotion, EVENT_POWER_PLANT_HYPER_POTION
 	object_event  0,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBMetalCoat, EVENT_POWER_PLANT_METAL_COAT
 	object_event  0, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_ITEMBALL, 0, PowerPlantBPPUp, EVENT_POWER_PLANT_PP_UP
@@ -556,4 +637,3 @@ PowerPlant1FB_MapEvents:
 	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FHardWorkerScript, -1
 	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMonitorScript, -1
 	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FWaterCoolingGuy, -1
-	object_event 31,  0, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

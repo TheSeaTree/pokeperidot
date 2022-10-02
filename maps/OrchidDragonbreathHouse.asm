@@ -24,7 +24,11 @@ OrchidDragonbreathHouseBookshelf:
 	jumpstd difficultbookshelf
 	
 OrchidDragonbreathTMGuyText:
-	text "Take this TM."
+	text "Has ENYA's GYM"
+	line "given you trouble?"
+	
+	para "Take this TM,"
+	line "and use it well."
 	
 	para "It is one of the"
 	line "few moves that is"
@@ -54,4 +58,4 @@ OrchidDragonbreathHouse_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, OrchidDragonbreathHouseBookshelf
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OrchidDragonbreathTMGuy, -1
+	object_event  2,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, OrchidDragonbreathTMGuy, -1

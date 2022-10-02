@@ -11,6 +11,7 @@ StdScripts::
 	dba TeamRocketOathScript
 	dba IncenseBurnerScript
 	dba MerchandiseShelfScript
+	dba CapsuleMachineScript
 	dba GymGeyserScript
 	dba UnownWallScript
 	dba OldStatueScript
@@ -27,11 +28,13 @@ StdScripts::
 	dba MartSignScript
 	dba ElevatorButtonScript
 	dba DayToTextScript
-	dba BugContestResultsWarpScript
-	dba BugContestResultsScript
+	dba FireGymWarpScript
+	dba SafariZoneWarpScript
 	dba InitializeEventsScript
 	dba GymStatue1Script
 	dba GymStatue2Script
+	dba GymStatue3Script
+	dba GymStatue4Script
 	dba ReceiveItemScript
 	dba ReceiveTogepiEggScript
 	dba PCScript
@@ -39,7 +42,11 @@ StdScripts::
 	dba HappinessCheckScript
 	dba MysteryGiftGirl
 	dba LightUpRoomScript
+	dba DarkenRoomScript
 	dba TeleportGuyScript
+	dba StolenItemsBoxScript
+	dba WishingFountainScript
+	dba EmilyCompanionScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -108,8 +115,6 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 
-	checkphonecall ; elm already called about pokerus
-	iftrue .no
 	checkflag ENGINE_CAUGHT_POKERUS
 	iftrue .no
 	special CheckPokerus
@@ -131,22 +136,10 @@ PokecenterNurseScript:
 	end
 
 .pokerus
-	; already cleared earlier in the script
-	checkevent EVENT_WELCOMED_TO_POKECOM_CENTER
-	iftrue .pokerus_comcenter
 	farwritetext NursePokerusText
 	waitbutton
 	closetext
-	jump .pokerus_done
-
-.pokerus_comcenter
-	farwritetext PokeComNursePokerusText
-	waitbutton
-	closetext
-
-.pokerus_done
 	setflag ENGINE_CAUGHT_POKERUS
-	specialphonecall SPECIALCALL_POKERUS
 	end
 
 CenterTurnDown:
@@ -255,10 +248,15 @@ TrashCanScript:
 	farjumptext TrashCanText
 
 PCScript:
+	checkcode VAR_FACING
+	ifnotequal UP, .CantAccessPC
 	opentext
 	special PokemonCenterPC
 	closetext
 	end
+
+.CantAccessPC
+	farjumptext CantAccessPCText
 
 ElevatorButtonScript:
 	playsound SFX_READ_TEXT_2
@@ -321,20 +319,35 @@ DayToTextScript:
 .SaturdayText:
 	db "SATURDAY@"
 
-BugContestResultsWarpScript:
-	special FadeOutPalettes
+FireGymWarpScript::
+	special FadeOutMusic
+	showemote EMOTE_SAD, PLAYER, 15
+	opentext
+	farwritetext FireGymUnbearableHeatText
+	waitbutton
+	playsound SFX_KINESIS
+	waitsfx
+	playsound SFX_FAINT
+	scall DarkenRoomScript
+	waitsfx
+	farwritetext FireGymPassOutText
+	waitbutton
+	closetext
 	playsound SFX_EXIT_BUILDING
+	wait 8
+	playsound SFX_FULL_HEAL
+	wait 8
+	warpfacing RIGHT, ORCHID_GYM_1F, 9, 7
+	setmapscene ORCHID_GYM_1F, SCENE_ORCHIDGYM1F_FAINTED
+	end
+
+SafariZoneWarpScript:
+	special FadeOutPalettes
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	playsound SFX_EXIT_BUILDING
+	setmapscene SAFARI_ZONE_GATE_1F, SCENE_DEFAULT
 	waitsfx
 	warp SAFARI_ZONE_GATE_1F, 8, 0
-;	applymovement PLAYER, Movement_ContestResults_WalkAfterWarp
-
-BugContestResultsScript:
-;	clearflag ENGINE_BUG_CONTEST_TIMER
-;	opentext
-;	farwritetext SafariZone_LeavingText
-;	waitbutton
-;	closetext
-;	applymovement PLAYER, Movement_SafariZone_Leave
 	end
 
 InitializeEventsScript:
@@ -344,6 +357,7 @@ InitializeEventsScript:
 	setevent EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
 	setevent EVENT_DECO_BED_1
 	setevent EVENT_DECO_PLANT_4
+	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	setevent EVENT_PALEROCK_MOUNTAIN_B1F_FIRE_STONE
 	setevent EVENT_PALEROCK_MOUNTAIN_B1F_STARDUST
@@ -366,6 +380,8 @@ GymStatue1Script:
 	mapnametotext MEM_BUFFER_0
 	opentext
 	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers1Text
 	waitbutton
 	closetext
 	end
@@ -375,10 +391,30 @@ GymStatue2Script:
 	opentext
 	farwritetext GymStatue_CityGymText
 	buttonsound
-	farwritetext GymStatue_WinningTrainersText
+	farwritetext GymStatue_WinningTrainers2Text
 	waitbutton
 	closetext
 	end
+
+GymStatue3Script:
+	mapnametotext MEM_BUFFER_0
+	opentext
+	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers3Text
+	waitbutton
+	closetext
+	end
+
+GymStatue4Script:
+	mapnametotext MEM_BUFFER_0
+	opentext
+	farwritetext GymStatue_CityGymText
+	buttonsound
+	farwritetext GymStatue_WinningTrainers4Text
+	waitbutton
+	closetext
+	end	
 
 ReceiveItemScript:
 	waitsfx
@@ -508,7 +544,13 @@ LightUpRoomScript:
 	special UpdateTimePals
 	callasm BlindingFlash
 	end
-	
+
+DarkenRoomScript:
+	reloadmappart
+	special UpdateTimePals
+	callasm TotalDarkness
+	end
+
 TeleportGuyScript:
 	opentext
 	checkevent EVENT_TELEPORT_GUY_INTRODUCED
@@ -521,12 +563,18 @@ TeleportGuyScript:
 	iffalse .decline
 	closetext
 	special OverworldFlyMap
+.decline
+	farwritetext TeleportGuyDeclineText
+	closetext
+	end
+
+DoTeleportScript:
+	opentext
 	farwritetext TeleportGuyAcceptText
 	closetext
 	playsound SFX_WARP_TO
 	applymovement PLAYER, .TeleportOut
 	pause 8
-;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
 	callasm DelayLoadingNewSprites
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
@@ -549,9 +597,221 @@ TeleportGuyScript:
 	show_object
 	teleport_to
 	step_resume
+
+CapsuleMachineScript:
+	opentext
+	farwritetext CapsuleMachineText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .End
+.Again
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem DOLL_CAPSULE
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 500
+	special PlaceMoneyTopRight
+	farwritetext CapsuleMachineUsedText1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	farwritetext CapsuleMachineUsedText1
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	farwritetext CapsuleMachineUsedText2
+	playsound SFX_BALL_POOF
+	waitbutton
+
+	itemtotext DOLL_CAPSULE, MEM_BUFFER_1
+	farwritetext GiveItemText
+	playsound SFX_ITEM
+	pause 60
+	itemnotify
+	farwritetext CapsuleMachineAgainText
+	yesorno
+	iftrue .Again	
+.End
+	closetext
+	end
 	
-.decline
-	farwritetext TeleportGuyDeclineText
+.NotEnoughMoney:
+	farwritetext UnknownText_0x1bdebc
+	jump .End
+	
+.NotEnoughSpace:
+	farwritetext UnknownText_0x1c4fb7
+	waitbutton
+	jump .End
+
+StolenItemsBoxScript:
+	random 2
+	ifequal 1, .box1
+	farjumptext StolenGoodsText1
+.box1:
+	farjumptext StolenGoodsText2
+	
+WishingFountainScript:
+; 1% chance to call StartShinyEncounterTimer, 49% chance to raise happiness by 1, 50% chance to do nothing.
+; Change the  random amount depending on how much money is spent(255, 100, 75).
+	opentext
+	farwritetext FountainIntroText
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .roll_10
+	ifequal 2, .roll_100
+	ifequal 3, .roll_500
+	closetext
+	end
+
+.roll_10
+	checkmoney YOUR_MONEY, 10
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed10Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 10
+	special PlaceMoneyTopRight
+	random 10
+	ifequal 0, .results_10
+	closetext
+	end
+
+.roll_100
+	checkmoney YOUR_MONEY, 100
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed100Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 100
+	special PlaceMoneyTopRight
+.results_10
+	random 120
+	jump .results
+
+.roll_500
+	checkmoney YOUR_MONEY, 500
+	ifequal HAVE_LESS, .NotEnoughMoney
+	farwritetext FountainTossed500Text
+	playsound SFX_PAY_DAY
+	waitsfx
+	takemoney YOUR_MONEY, 500
+	special PlaceMoneyTopRight
+	random 60
+.results
+	ifequal 0, .ShinyEncounters
+	ifless 25, .IncreaseHappiness
+	ifless 40, .GivePokerus
+	closetext
+	end
+
+.ShinyEncounters:
+	farwritetext FountainCoinsSparkleText
+	waitbutton
+	closetext
+	special StartShinyEncounterTimer
+	end
+.IncreaseHappiness:
+	special GetFirstPokemonHappiness
+	farwritetext FountainFirstMonHappyText
+	waitbutton
+	special FountainHappiness ; Make this add happiness instead of maxing it?
+	closetext
+	end
+.GivePokerus
+	farwritetext GivePokerusText
+	waitbutton
+	closetext
+	callasm GivePokerusAndConvertBerries
+	end
+
+.NotEnoughMoney:
+	farwritetext FountainNotEnoughMoneyText
+	waitbutton
+	closetext
+	end
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 13, 4, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "¥10@"
+	db "¥100@"
+	db "¥500@"
+	
+EmilyCompanionScript:
+	faceplayer
+	opentext
+; Make checks for certain story events on the ship
+	checkevent EVENT_SS_MAKO_DECK_CLEARED
+	iftrue .message11
+	checkevent EVENT_SS_MAKO_UNLOCK_2F_DOORS
+	iftrue .message10
+	checkevent EVENT_ACCESS_TO_SS_MAKO_2F
+	iftrue .message9
+	checkevent EVENT_GOT_VIP_TICKET
+	iftrue .message8
+	checkevent EVENT_USED_ENGINE_KEY
+	iftrue .message7
+	checkevent EVENT_GOT_ENGINE_KEY
+	iftrue .message6
+	checkevent EVENT_SS_MAKO_ENGINE_DOOR_LOCKED
+	iftrue .message5
+	checkevent EVENT_VIP_TICKET_LOCATION_INFO
+	iftrue .message4
+	checkevent EVENT_SS_MAKO_TRIED_GOING_UPSTAIRS
+	iftrue .message3
+	; A couple of random messages for her bag being stolen.
+	random 2
+	ifequal 1, .message2
+	farwritetext EmilyCompanionText1
+	jump .waitbuttonclosetext
+.message2
+	farwritetext EmilyCompanionText2
+	jump .waitbuttonclosetext
+.message3
+	; After the player tries to go upstairs
+	farwritetext EmilyCompanionText3
+	jump .waitbuttonclosetext
+.message4
+	; Have a counter for the SS Mako trainers, and make one of them hint at the guy in the basement with a ticket after losing.
+	farwritetext EmilyCompanionText4
+	jump .waitbuttonclosetext
+.message5
+	; The door to the engine room is locked.
+	farwritetext EmilyCompanionText5
+	jump .waitbuttonclosetext
+.message6
+	; After the player finds the key for the engine room.
+	farwritetext EmilyCompanionText6
+	jump .waitbuttonclosetext
+.message7
+	; Engine room door is unlocked.
+	farwritetext EmilyCompanionText7
+	jump .waitbuttonclosetext
+.message8
+	; Have the golden ticket.
+	farwritetext EmilyCompanionText8
+	jump .waitbuttonclosetext
+.message9
+	; Access to the second floor.
+	farwritetext EmilyCompanionText9
+	jump .waitbuttonclosetext
+.message10
+	; After the player has talked to an NPC outside, unlock the doors on the second floor.
+	farwritetext EmilyCompanionText10
+	jump .waitbuttonclosetext
+.message11
+	; When the player has defeated enough trainers on the second floor.
+	farwritetext EmilyCompanionText11
+.waitbuttonclosetext
+	waitbutton
 	closetext
 	end
 

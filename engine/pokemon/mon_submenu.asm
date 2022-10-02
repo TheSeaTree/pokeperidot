@@ -160,6 +160,9 @@ GetMonSubmenuItems:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .skip2
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .skip2
 	push hl
 	ld a, MON_ITEM
 	call GetPartyParamLocation

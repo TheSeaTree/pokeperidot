@@ -253,6 +253,11 @@ GiveTakePartyMonItem:
 	cp 2
 	jr z, .next
 
+	farcall _CheckHoldableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jr nz, .next
+
 	call CheckTossableItem
 	ld a, [wItemAttributeParamBuffer]
 	and a

@@ -8,16 +8,16 @@ TrainerClassDVs:
 	dn 10, 10, 10, 10 ; PRYCE
 	dn 10, 10, 10, 10 ; JASMINE
 	dn 10, 10, 10, 10 ; JOEL
-	dn 15, 15, 15, 14 ; CLAIR
+	dn 14, 14, 14, 14 ; ENYA
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  7, 13, 13, 13 ; FANGIRL
 	dn 14, 14, 14, 14 ; PROFESSOR
 	dn 13, 12, 13, 13 ; CAL
-	dn 14, 14, 15, 14 ; WILL
-	dn 14, 14, 15, 14 ; BRUNO
-	dn 14, 14, 15, 14 ; KAREN
-	dn 14, 14, 15, 14 ; KOGA
-	dn 14, 14, 15, 14 ; CHAMPION
+	dn 14, 14, 15, 14 ; WILBUR
+	dn  7, 14, 15, 15 ; REGAN
+	dn  7, 15, 15, 14 ; AMBER
+	dn 14, 14, 15, 14 ; BREDE
+	dn 15, 14, 15, 14 ; CHAMPION
 	dn  9,  8,  8,  8 ; BROCK
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
@@ -56,7 +56,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; PSYCHIC_T
 	dn  6, 10, 10,  8 ; PICNICKER
 	dn  9,  8,  8,  8 ; CAMPER
-	dn  7, 14, 10,  8 ; EXECUTIVEF
+	dn  8,  8,  8,  9 ; ENGINEER
 	dn  9,  8,  8,  8 ; SAGE
 	dn 14, 14, 14, 15 ; MEDIUM
 	dn  9,  8,  8,  8 ; BOARDER
@@ -65,7 +65,7 @@ TrainerClassDVs:
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
 	dn 15, 13, 13, 14 ; RED
-	dn  9, 13, 13, 13 ; BLUE
+	dn  7, 15, 15, 14 ; CHAMPIONF
 	dn  9,  8,  8,  8 ; OFFICER
 	dn  7, 14, 10,  8 ; GRUNTF
 	dn  9,  8,  8,  8 ; MYSTICALMAN

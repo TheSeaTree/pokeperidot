@@ -95,6 +95,7 @@ CheckDailyResetTimer::
 	ld [hli], a ; wDailyFlags1
 	ld [hli], a ; wDailyFlags2
 	ld [hli], a ; wSwarmFlags
+	ld [hli], a ; wDailyFlags3
 	ld [hl], a  ; wSwarmFlags + 1
 	ld hl, wDailyRematchFlags
 rept 4
@@ -127,17 +128,19 @@ SampleKenjiBreakCountdown:
 	ld [wKenjiBreakTimer], a
 	ret
 
-StartBugContestTimer:
-	ld a, BUG_CONTEST_MINUTES
+StartShinyEncounterTimer:
+	ld hl, wStatusFlags2
+	set STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
+	ld a, SHINY_MINUTES
 	ld [wBugContestMinsRemaining], a
-	ld a, BUG_CONTEST_SECONDS
+	ld a, SHINY_SECONDS
 	ld [wBugContestSecsRemaining], a
 	call UpdateTime
 	ld hl, wBugContestStartTime
 	call CopyDayHourMinSecToHL
 	ret
-
-CheckBugContestTimer::
+	
+CheckShinyEncounterTimer::
 	ld hl, wBugContestStartTime
 	call CalcSecsMinsHoursDaysSince
 	ld a, [wDaysSince]

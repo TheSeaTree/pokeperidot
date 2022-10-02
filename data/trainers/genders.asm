@@ -14,10 +14,10 @@ BTTrainerClassGenders:
 	db FEMALE ; FANGIRL
 	db FEMALE ; PROFESSOR
 	db MALE   ; CAL
-	db MALE   ; WILL
-	db MALE   ; BRUNO
-	db FEMALE ; KAREN
-	db MALE   ; KOGA
+	db MALE   ; WILBUR
+	db FEMALE ; REGAN
+	db FEMALE ; AMBER
+	db MALE   ; BREDE
 	db MALE   ; CHAMPION
 	db MALE   ; BROCK
 	db FEMALE ; MISTY
@@ -48,7 +48,7 @@ BTTrainerClassGenders:
 	db MALE   ; GUITARIST
 	db MALE   ; HIKER
 	db MALE   ; BIKER
-	db MALE   ; BLAINE
+	db FEMALE ; JADE
 	db MALE   ; BURGLAR
 	db MALE   ; FIREBREATHER
 	db MALE   ; JUGGLER
@@ -57,7 +57,7 @@ BTTrainerClassGenders:
 	db MALE   ; PSYCHIC_T
 	db FEMALE ; PICNICKER
 	db MALE   ; CAMPER
-	db FEMALE ; EXECUTIVEF
+	db MALE   ; ENGINEER
 	db MALE   ; SAGE
 	db FEMALE ; MEDIUM
 	db MALE   ; BOARDER
@@ -66,6 +66,6 @@ BTTrainerClassGenders:
 	db FEMALE ; TWINS
 	db FEMALE ; POKEFANF
 	db MALE   ; RED
-	db MALE   ; BLUE
+	db FEMALE ; CHAMPION
 	db MALE   ; OFFICER
 	db FEMALE ; GRUNTF

@@ -12,6 +12,7 @@
 	enum teamrocketoath
 	enum incenseburner
 	enum merchandiseshelf
+	enum capsulemachine
 	enum gymgeyser
 	enum strangesymbols
 	enum oldstatue
@@ -28,11 +29,13 @@
 	enum martsign
 	enum elevatorbutton
 	enum daytotext
-	enum bugcontestresultswarp
-	enum bugcontestresults
+	enum firegymwarp
+	enum safarizonewarp
 	enum initializeevents
 	enum gymstatue1
 	enum gymstatue2
+	enum gymstatue3
+	enum gymstatue4
 	enum receiveitem
 	enum receivetogepiegg
 	enum pcscript
@@ -40,4 +43,8 @@
 	enum happinesschecknpc
 	enum mysterygiftgirl
 	enum lightuproom
+	enum darkenroom
 	enum teleportguy
+	enum stolenitemboxes
+	enum wishingfountain
+	enum emilycompanion

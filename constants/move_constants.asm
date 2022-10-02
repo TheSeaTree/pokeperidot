@@ -16,7 +16,7 @@
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SCRATCH      ; 0a
-	const VICEGRIP     ; 0b
+	const BODY_PRESS   ; 0b
 	const GUILLOTINE   ; 0c
 	const RAZOR_WIND   ; 0d
 	const SWORDS_DANCE ; 0e
@@ -30,7 +30,7 @@
 	const VINE_WHIP    ; 16
 	const ICICLE_SPEAR ; 17
 	const DOUBLE_KICK  ; 18
-	const MEGA_KICK    ; 19
+	const RUNIC_POWER  ; 19
 	const BULK_UP      ; 1a
 	const COIL         ; 1b
 	const SAND_ATTACK  ; 1c
@@ -72,7 +72,7 @@
 	const PECK         ; 40
 	const DRILL_PECK   ; 41
 	const SUBMISSION   ; 42
-	const LOW_KICK     ; 43
+	const BRICK_BREAK  ; 43
 	const COUNTER      ; 44
 	const SEISMIC_TOSS ; 45
 	const STRENGTH     ; 46
@@ -170,7 +170,7 @@
 	const WILD_CHARGE  ; a2
 	const GUNK_SHOT    ; a3
 	const SUBSTITUTE   ; a4
-	const STRUGGLE     ; a5
+	const STONE_EDGE   ; a5
 	const SKETCH       ; a6
 	const BULLET_PUNCH ; a7
 	const THIEF        ; a8
@@ -186,7 +186,7 @@
 	const COTTON_SPORE ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
-	const POWDER_SNOW  ; b5
+	const FREEZE_DRY   ; b5
 	const PROTECT      ; b6
 	const MACH_PUNCH   ; b7
 	const SCARY_FACE   ; b8
@@ -260,6 +260,7 @@
 	const NASTY_PLOT   ; fc
 	const HURRICANE	   ; fd
 	const SIGNAL_BEAM  ; fe
+	const STRUGGLE     ; ff
 NUM_ATTACKS EQU const_value + -1
 
 
@@ -291,8 +292,7 @@ NUM_ATTACKS EQU const_value + -1
 ; safari anims
 	const ANIM_THROW_ROCK
 	const ANIM_THROW_BAIT
-; u-turn anims
-	const ANIM_SHOW_MON
+	const ANIM_ENEMY_FLED
 
 ; wNumHits uses offsets from ANIM_MISS
 	const_def

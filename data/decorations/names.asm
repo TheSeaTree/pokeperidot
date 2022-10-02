@@ -12,6 +12,7 @@ DecorationNames:
 	db "VIRTUAL BOY@"
 	db "GOLD TROPHY@"
 	db "SILVER TROPHY@"
+	db "PERIDOT TROPHY@"
 	db "SURF PIKACHU DOLL@"
 	db " BED@"
 	db " CARPET@"
@@ -30,3 +31,5 @@ DecorationNames:
 	db "ISLANDPLANT@"
 	db "THIRSTYPLANT@"
 	db "MYTHIC POSTER@"
+	db "DIPLOMA@"
+	db "CAMO@"

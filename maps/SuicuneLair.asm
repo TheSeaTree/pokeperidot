@@ -11,16 +11,20 @@ Suicune:
 	writetext SuicuneText
 	cry SUICUNE
 	waitsfx
-	waitbutton
+;	waitbutton
 	closetext
-	loadwildmon SUICUNE, 30
-	writecode VAR_BATTLETYPE, BATTLETYPE_LEGENDARY
+	special LegendaryEvent_SetBattleType
+	loadwildmon SUICUNE, 40
 	startbattle
 	reloadmapafterbattle
 	disappear SUICUNELAIR_SUICUNE
 	setevent EVENT_HIDE_SUICUNE
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_SUICUNE
+.FailedCapture
 	end
-	
+
 SuicuneText:
 	text "Susuiiiiii!"
 	done
@@ -35,4 +39,4 @@ SuicuneLair_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  7,  2, SPRITE_SUICUNE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Suicune, EVENT_HIDE_SUICUNE
+	object_event  7,  2, SPRITE_SUICUNE, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Suicune, EVENT_HIDE_SUICUNE

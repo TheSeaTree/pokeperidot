@@ -31,8 +31,6 @@ BattleCommand_QuiverDance:
 .raise
 
 ; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage
@@ -44,6 +42,5 @@ BattleCommand_QuiverDance:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
+	jp CantRaiseStats
 	

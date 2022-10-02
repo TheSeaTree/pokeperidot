@@ -136,9 +136,9 @@ ROMX $32
 	"bank32"
 ROMX $33
 	"Move Animations"
-	"Extra Songs 2"
 ROMX $36
 	"Font Inversed"
+	"Extra Songs 2"
 ROMX $37
 	"Tileset Data 6"
 ROMX $38
@@ -247,7 +247,6 @@ ROMX $5f
 	"Pics 24"
 ROMX $60
 	"Map Scripts 13"
-	"Pokedex Entries 001-064"
 ROMX $61
 	"Map Scripts 14"
 ROMX $62
@@ -274,6 +273,7 @@ ROMX $6c
 	"Phone Text 2"
 	"Map Scripts 25"
 ROMX $6d
+	"Pokedex Entries 001-064"
 	"Special Phone Text"
 ROMX $6e
 	"Pokedex Entries 065-128"

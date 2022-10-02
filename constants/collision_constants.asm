@@ -11,7 +11,7 @@ COLL_01                EQU $01 ; garbage
 COLL_03                EQU $03 ; garbage
 COLL_04                EQU $04 ; garbage
 COLL_WALL              EQU $07
-COLL_GEYSER            EQU $08 ; unused
+COLL_GEYSER            EQU $08
 COLL_TALL_GRASS_10     EQU $10 ; unused
 COLL_CUT_TREE          EQU $12
 COLL_LONG_GRASS        EQU $14
@@ -60,8 +60,8 @@ COLL_BRAKE_57          EQU $57 ; unused
 COLL_5B                EQU $5b ; garbage
 COLL_PIT               EQU $60
 COLL_VIRTUAL_BOY       EQU $61 ; garbage
-COLL_64                EQU $64 ; garbage
-COLL_65                EQU $65 ; garbage
+COLL_ESCALATOR_DOWN    EQU $64
+COLL_ESCALATOR_UP      EQU $65
 COLL_BUTTON            EQU $68 ; unused
 COLL_WARP_CARPET_DOWN  EQU $70
 COLL_DOOR              EQU $71
@@ -78,7 +78,7 @@ COLL_CAVE              EQU $7b
 COLL_WARP_PANEL        EQU $7c
 COLL_DOOR_7D           EQU $7d ; unused
 COLL_WARP_CARPET_RIGHT EQU $7e
-COLL_WARP_7F           EQU $7f ; unused
+COLL_FOUNTAIN          EQU $7f
 COLL_COUNTER           EQU $90
 COLL_BOOKSHELF         EQU $91
 COLL_PC                EQU $93
@@ -86,7 +86,7 @@ COLL_RADIO             EQU $94
 COLL_TOWN_MAP          EQU $95
 COLL_MART_SHELF        EQU $96
 COLL_TV                EQU $97
-COLL_COUNTER_98        EQU $98 ; unused
+COLL_CAPSULE_MACHINE   EQU $98 ; unused
 COLL_9C                EQU $9c ; garbage
 COLL_WINDOW            EQU $9d
 COLL_INCENSE_BURNER    EQU $9f
@@ -107,6 +107,7 @@ COLL_SMASH_WALL_B5	   EQU $b5
 COLL_UNOWN			   EQU $b6
 COLL_OLD_STATUE		   EQU $b7
 COLL_UNOWN_X		   EQU $b8
+COLL_STOLEN_ITEMS	   EQU $b9
 COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles

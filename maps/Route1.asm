@@ -147,10 +147,8 @@ TrainerCooltrainerMLeon:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_COOLTRAINERM_LEON
-	jump .FightDone
-	
-.FightDone:
 	opentext
+.FightDone:
 	checkevent EVENT_GOT_TM_HEADBUTT
 	iftrue .Headbutt
 	verbosegiveitem TM_HEADBUTT
@@ -469,10 +467,10 @@ Route1_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  23,  3, ROUTE_1_NEW_BARK_GATE, 3
-	warp_event   9, 29, ROUTE_1_CHERRYGROVE_GATE, 1
-	warp_event  10, 29, ROUTE_1_CHERRYGROVE_GATE, 2
-	warp_event  61,  5, ROUTE_1_GOLDENROD_GATE, 3
+	warp_event  23,  3, ROUTE_1_ELKHORN_GATE, 3
+	warp_event   9, 29, ROUTE_1_PAVONA_GATE, 1
+	warp_event  10, 29, ROUTE_1_PAVONA_GATE, 2
+	warp_event  61,  5, ROUTE_1_FAVIA_GATE, 3
 	warp_event  39,  7, CHARCOAL_KILN, 1
 
 	db 1 ; coord events
@@ -495,4 +493,4 @@ Route1_MapEvents:
 	object_event  40, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherMarshall, -1
 	object_event  62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
 	object_event  57, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1
-	object_event  50,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route1TMPlayRough, EVENT_GOT_TM_PLAY_ROUGH
+	object_event  50,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route1TMPlayRough, EVENT_GOT_TM_PLAY_ROUGH

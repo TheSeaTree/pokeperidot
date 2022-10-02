@@ -71,10 +71,10 @@
 	const ETHER        ; 3f
 	const MAX_ETHER    ; 40
 	const ELIXER       ; 41
-	const RED_SCALE    ; 42
-	const SECRETPOTION ; 43
-	const S_S_TICKET   ; 44
-	const MYSTERY_EGG  ; 45
+	const JOURNAL_PAGE ; 42
+	const BACKDOOR_KEY ; 43
+	const VIP_TICKET   ; 44
+	const ENGINE_KEY   ; 45
 	const CLEAR_BELL   ; 46
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48
@@ -90,23 +90,23 @@
 	const KINGS_ROCK   ; 52
 	const BITTER_BERRY ; 53
 	const MINT_BERRY   ; 54
-	const RED_APRICORN ; 55
+	const RUBY_PENDANT ; 55
 	const TINYMUSHROOM ; 56
 	const BIG_MUSHROOM ; 57
 	const SILVERPOWDER ; 58
-	const BLU_APRICORN ; 59
+	const SAPPHIRE_PIN ; 59
 	const DAMP_CHARM   ; 5a
 	const AMULET_COIN  ; 5b
-	const YLW_APRICORN ; 5c
-	const GRN_APRICORN ; 5d
+	const QUARTZ_BEADS ; 5c
+	const EMERALD_RING ; 5d
 	const CLEANSE_TAG  ; 5e
 	const MYSTIC_WATER ; 5f
 	const TWISTEDSPOON ; 60
-	const WHT_APRICORN ; 61
+	const SPINEL_CHAIN ; 61
 	const BLACKBELT    ; 62
-	const BLK_APRICORN ; 63
+	const BLACK_SLUDGE ; 63
 	const HELIX_FOSSIL ; 64
-	const PNK_APRICORN ; 65
+	const BINDING_BAND ; 65
 	const BLACKGLASSES ; 66
 	const SLOWPOKETAIL ; 67
 	const SILK_SCARF   ; 68
@@ -135,7 +135,7 @@
 	const CARD_KEY     ; 7f
 	const MACHINE_PART ; 80
 	const EGG_TICKET   ; 81
-	const LOST_ITEM    ; 82
+	const LAB_KEY      ; 82
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
@@ -159,11 +159,11 @@
 	const DRAGON_SCALE ; 97
 	const BERSERK_GENE ; 98
 	const LEGENDS_AURA ; 99
-	const ITEM_9A      ; 9a
-	const ITEM_9B      ; 9b
+	const ANCIENT_TOME ; 9a
+	const DOLL_CAPSULE ; 9b
 	const SACRED_ASH   ; 9c
 	const HEAVY_BALL   ; 9d
-	const FLOWER_MAIL  ; 9e
+	const SMALL_KEY    ; 9e
 	const LEVEL_BALL   ; 9f
 	const LURE_BALL    ; a0
 	const FAST_BALL    ; a1
@@ -176,25 +176,25 @@
 	const GORGEOUS_BOX ; a8
 	const SUN_STONE    ; a9
 	const PINK_BOW     ; aa
-	const ITEM_AB      ; ab
+	const LIGHT_BUOY   ; ab
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
 	const SQUIRTBOTTLE ; af
 	const SILVER_BERRY ; b0
-	const PARK_BALL    ; b1
+	const SAFARI_BALL  ; b1
 	const RAINBOW_WING ; b2
-	const ITEM_B3      ; b3
+	const TRICK_MIRROR ; b3
 	const BRICK_PIECE  ; b4
-	const SURF_MAIL    ; b5
-	const LITEBLUEMAIL ; b6
-	const PORTRAITMAIL ; b7
-	const LOVELY_MAIL  ; b8
-	const EON_MAIL     ; b9
-	const MORPH_MAIL   ; ba
-	const BLUESKY_MAIL ; bb
-	const MUSIC_MAIL   ; bc
-	const MIRAGE_MAIL  ; bd
+	const CRASH_HELMET ; b5
+	const GUARDIAN_KEY ; b6
+	const EXP_ALL      ; b7
+	const SAFARI_PACK  ; b8
+	const SKILL_BELT   ; b9
+	const CYBER_BALL   ; ba
+	const LIGHT_CLAY   ; bb
+	const ITEM_BC      ; bc
+	const ITEM_BD      ; bd
 	const ITEM_BE      ; be
 	const ITEM_C3      ; c3
 	const ITEM_DC      ; dc
@@ -292,7 +292,7 @@ ENDM
 	add_mt SWEET_KISS
 	add_mt LOVELY_KISS
 	add_mt DRAIN_KISS
-	add_mt PETAL_DANCE
+	add_mt RUNIC_POWER
 	add_mt BODY_SLAM
 	add_mt DRAIN_PUNCH
 	add_mt HEAL_BELL
@@ -309,6 +309,6 @@ USE_SCRIPT_VAR EQU $00
 ITEM_FROM_MEM  EQU $ff
 
 ; leftovers from red
-SAFARI_BALL    EQU $08 ; MOON_STONE
-MOON_STONE_RED EQU $0a ; BURN_HEAL
-FULL_HEAL_RED  EQU $34 ; X_SPEED
+SAFARI_BALL_RED EQU $b1 ; SAFARI_BALL
+MOON_STONE_RED  EQU $0a ; BURN_HEAL
+FULL_HEAL_RED   EQU $34 ; X_SPEED

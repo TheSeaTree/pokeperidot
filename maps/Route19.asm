@@ -58,6 +58,18 @@ TrainerBeautyDiane:
 	closetext
 	end
 
+Route19Sign:
+	jumptext Route19SignText
+
+Route19Sign2:
+	jumptext Route19Sign2Text
+
+Route19Calcium:
+	itemball CALCIUM
+
+Route19Thunderstone:
+	itemball THUNDERSTONE
+
 Route19TMSludgeBomb:
 	itemball TM_SLUDGE_BOMB
 	
@@ -175,6 +187,26 @@ BeautyDianeAfterText:
 	line "I can't get enough!"
 	done
 
+Route19SignText:
+	text "ROUTE 15"
+	
+	para "CARNATION TOWN -"
+	line "ROUTE 16"
+	done
+
+Route19Sign2Text:
+	text "TRAINER TIPS"
+
+	para "Exercise caution"
+	line "when encountering"
+	cont "wild MANKEY."
+
+	para "These #MON are"
+	line "quick to anger,"
+	cont "and can pose a"
+	cont "threat to humans."
+	done
+
 Route19_MapEvents:
 	db 0, 0 ; filler
 
@@ -182,7 +214,9 @@ Route19_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 4 ; bg events
+	bg_event 37, 13, BGEVENT_READ, Route19Sign
+	bg_event  8, 11, BGEVENT_READ, Route19Sign2
 	bg_event  8,  5, BGEVENT_ITEM, Route19BigMushroom
 	bg_event 49, 16, BGEVENT_ITEM, Route19Stick
 
@@ -192,6 +226,6 @@ Route19_MapEvents:
 	object_event  0, 10, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerMorton, -1
 	object_event  2,  9, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBugCatcherTroy, -1
 	object_event  1, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyDiane, -1
-	object_event 32,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1
-	object_event 24, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, ObjectEvent, -1
-	object_event  1,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route19TMSludgeBomb, EVENT_GOT_TM_SLUDGE_BOMB
+	object_event 24, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route19Thunderstone, EVENT_ROUTE_19_THUNDERSTONE
+	object_event 32,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route19Calcium, EVENT_ROUTE_19_CALCIUM
+	object_event  1,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route19TMSludgeBomb, EVENT_GOT_TM_SLUDGE_BOMB

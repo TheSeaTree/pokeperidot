@@ -10,7 +10,7 @@ TrainerClassNames::
 	db "LEADER@"
 	db "RIVAL@"
 	db "<PKMN> TRAINER@" ; Fangirl
-	db "#MON PROF.@"
+	db "PROFESSOR@"
 	db "<PKMN> TRAINER@"
 	db "ELITE FOUR@"
 	db "ELITE FOUR@"
@@ -55,7 +55,7 @@ TrainerClassNames::
 	db "PSYCHIC@"
 	db "PICNICKER@"
 	db "CAMPER@"
-	db "ROCKET@"
+	db "ENGINEER@"
 	db "SAGE@"
 	db "MEDIUM@"
 	db "BOARDER@"
@@ -64,7 +64,7 @@ TrainerClassNames::
 	db "TWINS@"
 	db "#FAN@"
 	db "<PKMN> TRAINER@"
-	db "LEADER@"
+	db "CHAMPION@"
 	db "OFFICER@"
-	db "ROCKET@"
-	db "MYSTICALMAN@"
+	db "SUBWAY ACE@" ; Jade
+	db "SUBWAY ACE@" ; Perry

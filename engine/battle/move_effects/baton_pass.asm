@@ -7,7 +7,7 @@ BattleCommand_BatonPass:
 
 ; Need something to switch to
 	call CheckAnyOtherAlivePartyMons
-	jp z, FailedBatonPass
+	jp z, BattleEffect_ButItFailed
 
 	call UpdateBattleMonInParty
 	call AnimateCurrentMove
@@ -34,10 +34,6 @@ BattleCommand_BatonPass:
 	call SetPalettes
 	call BatonPass_LinkPlayerSwitch
 
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
-
 	ld hl, PassedBattleMonEntrance
 	call CallBattleCore
 
@@ -48,18 +44,14 @@ BattleCommand_BatonPass:
 ; Wildmons don't have anything to switch to
 	ld a, [wBattleMode]
 	dec a ; WILDMON
-	jp z, FailedBatonPass
+	jp z, BattleEffect_ButItFailed
 
 	call CheckAnyOtherAliveEnemyMons
-	jp z, FailedBatonPass
+	jp z, BattleEffect_ButItFailed
 
 	call UpdateEnemyMonInParty
 	call AnimateCurrentMove
 	call BatonPass_LinkEnemySwitch
-
-; Mobile link battles handle entrances differently
-	farcall CheckMobileBattleError
-	jp c, EndMoveEffect
 
 ; Passed enemy PartyMon entrance
 	xor a
@@ -120,10 +112,6 @@ BatonPass_LinkEnemySwitch:
 .switch
 	jp CloseWindow
 
-FailedBatonPass:
-	call AnimateFailedMove
-	jp PrintButItFailed
-
 ResetBatonPassStatus:
 ; Reset status changes that aren't passed by Baton Pass.
 
@@ -136,16 +124,19 @@ ResetBatonPassStatus:
 	ld a, BATTLE_VARS_SUBSTATUS1
 	call GetBattleVarAddr
 	res SUBSTATUS_NIGHTMARE, [hl]
+
 .ok
 
 	; Disable isn't passed.
 	call ResetActorDisable
 
-	; Attraction isn't passed.
+	; Attraction and Foresight aren't passed.
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ld hl, wEnemySubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	ld hl, wPlayerSubStatus5
 
 	ld a, BATTLE_VARS_SUBSTATUS5

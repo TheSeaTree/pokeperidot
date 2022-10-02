@@ -2,7 +2,7 @@ Marts:
 ; entries correspond to MART_* constants
 	dw MartOrchid
 	dw MartViolet
-	dw MartAzalea
+	dw MartPectinia
 	dw MartCianwood
 	dw MartCianwoodRobbed
 	dw MartDeptStore2F1
@@ -16,8 +16,8 @@ Marts:
 	dw MartMahogany
 	dw MartBlackthorn
 	dw MartBlackthornTM
-	dw MartGoldenrod
-	dw MartGoldenrodTM
+	dw MartFavia
+	dw MartFaviaTM
 	dw MartPewter
 	dw MartCerulean
 	dw MartLavender
@@ -31,17 +31,27 @@ Marts:
 	dw MartFuchsia
 	dw MartSaffron
 	dw MartMtMoon
-	dw MartIndigoPlateau
-	dw MartIndigoPlateauTM
+	dw MartPokemonLeague
+	dw MartPokemonLeagueTM
+	dw MartPokemonLeagueVitamins
+	dw MartPokemonLeagueCafe
 	dw MartUnderground
+	dw MartPectiniaBattleItems1
+	dw MartPectiniaBattleItems2
+	dw MartPectiniaBattleItems3
 .End
 
 MartOrchid:
-	db 4 ; # items
-	db POTION
-	db ANTIDOTE
-	db PARLYZ_HEAL
-	db AWAKENING
+	db 9 ; # items
+	db GREAT_BALL
+	db ULTRA_BALL
+	db HYPER_POTION
+	db MAX_POTION
+	db FULL_HEAL
+	db ETHER
+	db MAX_ETHER
+	db REVIVE
+	db MAX_REPEL
 	db -1 ; end
 
 MartViolet:
@@ -51,7 +61,7 @@ MartViolet:
 	db SWEET_TEA
 	db -1 ; end
 
-MartAzalea:
+MartPectinia:
 	db 6 ; # items
 	db POKE_BALL
 	db POTION
@@ -199,7 +209,7 @@ MartBlackthornTM:
 	db TM_SHADOW_BALL
 	db -1
 
-MartGoldenrod:
+MartFavia:
 	db 8 ; # items
 	db POKE_BALL
 	db GREAT_BALL
@@ -211,13 +221,13 @@ MartGoldenrod:
 	db ETHER
 	db -1 ; end
 	
-MartGoldenrodTM:
+MartFaviaTM:
 	db 3
 	db TM_PROTECT
 	db TM_ENDURE
 	db TM_PSYCH_UP
 	db -1
-	
+
 MartPewter:
 	db 7 ; # items
 	db GREAT_BALL
@@ -353,7 +363,7 @@ MartMtMoon:
 	db REPEL
 	db -1 ; end
 
-MartIndigoPlateau:
+MartPokemonLeague:
 	db 7 ; # items
 	db ULTRA_BALL
 	db MAX_REPEL
@@ -364,13 +374,31 @@ MartIndigoPlateau:
 	db FULL_HEAL
 	db -1 ; end
 	
-MartIndigoPlateauTM:
+MartPokemonLeagueTM:
 	db 4
-	db FIRE_BLAST
-	db BLIZZARD
-	db THUNDER
-	db HURRICANE
+	db TM_FIRE_BLAST
+	db TM_BLIZZARD
+	db TM_THUNDER
+	db TM_HURRICANE
 	db -1
+	
+MartPokemonLeagueVitamins:
+	db 6
+	db HP_UP
+	db PROTEIN
+	db IRON
+	db CARBOS
+	db CALCIUM
+	db PP_UP
+	db -1
+
+MartPokemonLeagueCafe:
+	db 4 ; # items
+	db BERRY_JUICE
+	db FRESH_WATER
+	db LEMONADE
+	db SWEET_TEA
+	db -1 ; end
 
 MartUnderground:
 	db 4 ; # items
@@ -379,6 +407,36 @@ MartUnderground:
 	db HEAL_POWDER
 	db REVIVAL_HERB
 	db -1 ; end
+
+MartPectiniaBattleItems1:
+	db 6
+	db SUN_STONE
+	db FIRE_STONE
+	db SILVERPOWDER
+	db PINK_BOW
+	db SHARP_BEAK
+	db SILK_SCARF
+	db -1
+
+MartPectiniaBattleItems2:
+	db 6
+	db LEAF_STONE
+	db THUNDERSTONE
+	db MAGNET
+	db TWISTEDSPOON
+	db POISON_BARB
+	db DRAGON_FANG
+	db -1
+
+MartPectiniaBattleItems3:
+	db 6
+	db MOON_STONE
+	db WATER_STONE
+	db HARD_STONE
+	db NEVERMELTICE
+	db SPELL_TAG
+	db METAL_COAT
+	db -1
 
 DefaultMart:
 	db 2 ; # items

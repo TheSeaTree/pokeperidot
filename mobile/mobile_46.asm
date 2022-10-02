@@ -476,7 +476,6 @@ BattleTowerRoomMenu_InitRAM:
 	ldh [hMobile], a
 	ei
 	farcall Stubbed_Function106462
-	farcall Function106464
 	farcall Function115d99
 	farcall Function11615a
 	ld a, $5
@@ -1146,7 +1145,7 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	call MenuBox
 	call MenuBoxCoord2Tile
 	call ApplyTilemap
-	hlcoord 16, 8, wAttrMap
+	hlcoord 3, 8, wAttrMap
 	ld a, $40
 	or [hl]
 	ld [hl], a
@@ -1155,8 +1154,14 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	ld [wcd4f], a
 	ld a, $1
 	ldh [rSVBK], a
-	ld a, [wStatusFlags]
-	bit STATUSFLAGS_HALL_OF_FAME_F, a
+
+	ld de, FontBattleExtra
+	ld hl, vTiles0 tile $c0
+	lb bc, BANK(FontBattleExtra), 15
+	call Get2bpp
+	
+	ld a, [wPokegearFlags]
+	bit BATTLE_SUBWAY_LEVELS_F, a
 	jr nz, .asm_11896b
 	ld hl, Strings_Ll0ToL40 ; Address to list of strings with the choosable levels
 	ld a, 5                 ; 4 levels to choose from, including 'Cancel'-option
@@ -1177,10 +1182,10 @@ BattleTowerRoomMenu_PlacePickLevelMenu:
 	call BattleTowerRoomMenu_IncrementJumptable
 
 BattleTowerRoomMenu_UpdatePickLevelMenu:
-	hlcoord 13, 8
+	hlcoord 1, 8
 	ld de, String_119d07
 	call PlaceString
-	hlcoord 13, 10
+	hlcoord 1, 10
 	ld de, String_119d07
 	call PlaceString
 	ld a, [wcd4b]
@@ -1221,7 +1226,7 @@ BattleTowerRoomMenu_UpdatePickLevelMenu:
 	ld [bc], a
 	pop af
 	ldh [rSVBK], a
-	hlcoord 13, 9
+	hlcoord 1, 9
 	call PlaceString
 	ld hl, hJoyPressed
 	ld a, [hl]
@@ -3844,37 +3849,37 @@ BattleTowerRoomMenu_UpdateYesNoMenu:
 
 MenuHeader_119cf7:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 12, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 7, SCREEN_WIDTH - 13, TEXTBOX_Y - 1
 	dw NULL
 	db 0 ; default option
 
 MenuData_119cff:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 15, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw NULL
 	db 0 ; default option
 
 String_119d07:
-	db "   ▼@"
-
-Strings_L10ToL100:
-	db " L:10 @@"
-	db " L:20 @@"
-	db " L:30 @@"
-	db " L:40 @@"
-	db " L:50 @@"
-	db " L:60 @@"
-	db " L:70 @@"
-	db " L:80 @@"
-	db " L:90 @@"
-	db " L:100@@"
-	db "CANCEL@@"
+	db "  ▼@"
 
 Strings_Ll0ToL40:
-	db " L:10 @@"
-	db " L:20 @@"
-	db " L:30 @@"
-	db " L:40 @@"
+	db " ′10  @@"
+	db " ′20  @@"
+	db " ′30  @@"
+	db " ′40  @@"
+	db "CANCEL@@"
+
+Strings_L10ToL100:
+	db " ′10  @@"
+	db " ′20  @@"
+	db " ′30  @@"
+	db " ′40  @@"
+	db " ′50  @@"
+	db " ′60  @@"
+	db " ′70  @@"
+	db " ′80  @@"
+	db " ′90  @@"
+	db " ′100 @@"
 	db "CANCEL@@"
 
 String_119d8c:
@@ -4502,13 +4507,13 @@ BattleTowerRoomMenu2_PlaceYesNoMenu:
 	call MenuBox
 	call MenuBoxCoord2Tile
 	call ApplyTilemap
-	hlcoord 16, 8
+	hlcoord 2, 8
 	ld de, String_11a2cf
 	call PlaceString
-	hlcoord 16, 10
+	hlcoord 2, 10
 	ld de, String_11a2d3
 	call PlaceString
-	hlcoord 15, 8
+	hlcoord 1, 8
 	ld a, $ed
 	ld [hl], a
 	xor a
@@ -4543,10 +4548,10 @@ BattleTowerRoomMenu2_UpdateYesNoMenu:
 	jr z, .asm_11a24c
 	xor a
 	ld [wMobileInactivityTimerMinutes], a
-	hlcoord 15, 8
+	hlcoord 1, 8
 	ld a, $ed
 	ld [hl], a
-	hlcoord 15, 10
+	hlcoord 1, 10
 	ld a, $7f
 	ld [hl], a
 	jr .asm_11a24c
@@ -4560,10 +4565,10 @@ BattleTowerRoomMenu2_UpdateYesNoMenu:
 	jr nz, .asm_11a24c
 	inc a
 	ld [wMobileInactivityTimerMinutes], a
-	hlcoord 15, 8
+	hlcoord 1, 8
 	ld a, $7f
 	ld [hl], a
-	hlcoord 15, 10
+	hlcoord 1, 10
 	ld a, $ed
 	ld [hl], a
 	jr .asm_11a24c
@@ -4609,15 +4614,9 @@ String_11a2cf:
 String_11a2d3:
 	db "NO@"
 
-MenuHeader_11a2d6:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 14, 6, SCREEN_WIDTH - 1, 10
-	dw NULL
-	db 0 ; default option
-
 MenuHeader_11a2de:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 14, 7, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 7, 5, TEXTBOX_Y - 1
 	dw NULL
 	db 0 ; default option
 

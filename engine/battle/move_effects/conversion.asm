@@ -45,7 +45,7 @@ BattleCommand_Conversion:
 .loop2
 	ld a, [hl]
 	cp -1
-	jr z, .fail
+	jp z, BattleEffect_ButItFailed
 	cp CURSE_T
 	jr z, .next
 	ld a, [de]
@@ -59,10 +59,6 @@ BattleCommand_Conversion:
 .next
 	inc hl
 	jr .loop2
-
-.fail
-	call AnimateFailedMove
-	jp PrintButItFailed
 
 .done
 .loop3

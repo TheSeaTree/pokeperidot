@@ -281,8 +281,8 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 	hlcoord 15, 12
 	lb bc, 1, 3
 	call PrintNum
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_HAVE_BATTLE_PASS_F, [hl]
+	ld hl, wPokegearFlags
+	bit TRAINER_CARD_BP_F, [hl]
 	jr z, .NoBattlePass
 	hlcoord 2, 16
 	ld de, .Total_BP
@@ -648,10 +648,9 @@ TrainerCard_JohtoBadgesOAM:
 	db $18, $20, $24, $20 | (1 << 7)
 
 	; Risingbadge
-	; X-flips on alternate cycles.
 	db $80, $78, 0
-	db $1c,            $20, $24, $20 | (1 << 7)
-	db $1c | (1 << 7), $20, $24, $20 | (1 << 7)
+	db $1c, $20, $24, $20 | (1 << 7)
+	db $1c, $20, $24, $20 | (1 << 7)
 
 CardStatusGFX: INCBIN "gfx/trainer_card/card_status.2bpp"
 

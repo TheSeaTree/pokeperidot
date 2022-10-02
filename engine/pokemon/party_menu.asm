@@ -72,11 +72,13 @@ WritePartyMenuTilemap:
 	dw PlacePartyHPBar
 	dw PlacePartyMenuHPDigits
 	dw PlacePartyMonLevel
+	dw PlacePartyMonLevelAlt
 	dw PlacePartyMonStatus
+	dw PlacePartyMonStatusAlt
 	dw PlacePartyMonTMHMCompatibility
 	dw PlacePartyMonEvoStoneCompatibility
 	dw PlacePartyMonGender
-	dw PlacePartyMonMobileBattleSelection
+	dw PlacePartyMonGenderIcon
 
 PlacePartyNicknames:
 	hlcoord 3, 1
@@ -227,7 +229,7 @@ PlacePartyMonLevel:
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 8, 2
+	hlcoord 7, 2
 .loop
 	push bc
 	push hl
@@ -247,10 +249,8 @@ PlacePartyMonLevel:
 	ld a, "<LV>"
 	ld [hli], a
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2
-	; jr .okay
 .ThreeDigits:
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 3
-; .okay
 	call PrintNum
 
 .next
@@ -262,6 +262,15 @@ PlacePartyMonLevel:
 	dec c
 	jr nz, .loop
 	ret
+	
+PlacePartyMonLevelAlt:
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld c, a
+	ld b, 0
+	hlcoord 8, 2
+	jr PlacePartyMonLevel.loop
 
 PlacePartyMonStatus:
 	ld a, [wPartyCount]
@@ -269,7 +278,7 @@ PlacePartyMonStatus:
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 5, 2
+	hlcoord 4, 2
 .loop
 	push bc
 	push hl
@@ -294,6 +303,15 @@ PlacePartyMonStatus:
 	dec c
 	jr nz, .loop
 	ret
+	
+PlacePartyMonStatusAlt:
+	ld a, [wPartyCount]
+	and a
+	ret z
+	ld c, a
+	ld b, 0
+	hlcoord 5, 2
+	jr PlacePartyMonStatus.loop
 
 PlacePartyMonTMHMCompatibility:
 	ld a, [wPartyCount]
@@ -473,18 +491,36 @@ PlacePartyMonGender:
 .unknown
 	db "…UNKNOWN@"
 
-PlacePartyMonMobileBattleSelection:
+PlacePartyMonGenderIcon:
 	ld a, [wPartyCount]
 	and a
 	ret z
 	ld c, a
 	ld b, 0
-	hlcoord 12, 1
+	hlcoord 10, 2
 .loop
 	push bc
 	push hl
-	ld de, .String_Sanka_Shinai
+	call PartyMenuCheckEgg
+	jr z, .next
+	ld [wCurPartySpecies], a
+	push hl
+	ld a, b
+	ld [wCurPartyMon], a
+	xor a
+	ld [wMonType], a
+	call GetGender
+	ld de, .unknown
+	jr c, .got_gender
+	ld de, .male
+	jr nz, .got_gender
+	ld de, .female
+
+.got_gender
+	pop hl
 	call PlaceString
+
+.next
 	pop hl
 	ld de, 2 * SCREEN_WIDTH
 	add hl, de
@@ -492,63 +528,16 @@ PlacePartyMonMobileBattleSelection:
 	inc b
 	dec c
 	jr nz, .loop
-	ld a, l
-	ld e, MON_NAME_LENGTH
-	sub e
-	ld l, a
-	ld a, h
-	sbc $0
-	ld h, a
-	ld de, .String_Kettei_Yameru
-	call PlaceString
-	ld b, $3
-	ld c, $0
-	ld hl, wd002
-	ld a, [hl]
-.loop2
-	push hl
-	push bc
-	hlcoord 12, 1
-.loop3
-	and a
-	jr z, .done
-	ld de, 2 * SCREEN_WIDTH
-	add hl, de
-	dec a
-	jr .loop3
+	ret
 
-.done
-	ld de, .String_Banme
-	push hl
-	call PlaceString
-	pop hl
-	pop bc
-	push bc
-	push hl
-	ld a, c
-	ld hl, .Strings_1_2_3
-	call GetNthString
-	ld d, h
-	ld e, l
-	pop hl
-	call PlaceString
-	pop bc
-	pop hl
-	inc hl
-	ld a, [hl]
-	inc c
-	dec b
-	ret z
-	jr .loop2
+.male
+	db "♂@"
 
-.String_Banme:
-	db "　ばんめ　　@" ; Place
-.String_Sanka_Shinai:
-	db "さんかしない@" ; Cancel
-.String_Kettei_Yameru:
-	db "けってい　　やめる@" ; Quit
-.Strings_1_2_3:
-	db "１@", "２@", "３@" ; 1st, 2nd, 3rd
+.female
+	db "♀@"
+
+.unknown
+	db "@"
 
 PartyMenuCheckEgg:
 	ld a, LOW(wPartySpecies)
@@ -781,9 +770,6 @@ YouHaveNoPKMNString:
 	db "You have no <PK><MN>!@"
 
 PrintPartyMenuActionText:
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonNicknames
-	call GetNick
 	ld a, [wPartyMenuActionText]
 	and $f
 	ld hl, .MenuActionTexts
@@ -824,7 +810,7 @@ PrintPartyMenuActionText:
 	text_end
 
 .Text_Defrosted:
-	; was defrosted.
+	; thawed out.
 	text_far UnknownText_0x1bc101
 	text_end
 

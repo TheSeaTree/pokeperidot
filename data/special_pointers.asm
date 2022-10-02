@@ -14,13 +14,13 @@ SpecialsPointers::
 	add_special WaitForLinkedFriend
 	add_special CheckLinkTimeout
 	add_special TryQuickSave
+	add_special DoQuickSave
 	add_special CheckBothSelectedSameRoom
 	add_special FailedLinkToPast
 	add_special CloseLink
 	add_special WaitForOtherPlayerToExit ; $8
 	add_special SetBitsForBattleRequest
 	add_special SetBitsForTimeCapsuleRequest
-	add_special CheckTimeCapsuleCompatibility
 	add_special EnterTimeCapsule
 	add_special TradeCenter
 	add_special Colosseum
@@ -32,7 +32,9 @@ SpecialsPointers::
 	add_special CheckPartyFullAfterContest
 	add_special ContestDropOffMons
 	add_special ContestReturnMons
-	add_special GiveParkBalls ; $18
+	add_special InitializeSafariZone ; $18
+	add_special InitializeExtendedSafariZone
+	add_special SetFireGymSteps
 	add_special CheckMagikarpLength
 	add_special MagikarpHouseSign
 	add_special HealParty ; this is both a special and a predef
@@ -109,6 +111,7 @@ SpecialsPointers::
 	add_special YoungerHaircutBrother
 	add_special OlderHaircutBrother
 	add_special DaisysGrooming
+	add_special FountainHappiness
 	add_special PlayCurMonCry
 	add_special ProfOaksPCBoot
 	add_special GameboyCheck
@@ -122,6 +125,8 @@ SpecialsPointers::
 	add_special PrintDiploma
 	add_special CheckOwnedMon
 	add_special SelectFossilsMenu
+	add_special StartShinyEncounterTimer
+	add_special SelectMushroomForMushroomMan
 
 ; Crystal only
 	add_special Function11ac3e
@@ -165,6 +170,7 @@ SpecialsPointers::
 	add_special TotodileGiftMon
 	add_special CyndaquilGiftMon
 	add_special ChikoritaGiftMon
+	add_special MagikarpGiftMon
 	add_special SampleKenjiBreakCountdown
 	add_special BeastsCheck
 	add_special MonCheck
@@ -184,4 +190,14 @@ SpecialsPointers::
 	add_special UnusedFindItemInPCOrBag
 	add_special InitialSetDSTFlag
 	add_special InitialClearDSTFlag
-	add_special DummySpecial_c224 ; $a8
+	add_special SelectTreasureMenu ; $a8
+	add_special UpdatePartyStats
+	add_special CheckStolenTrickMirror
+	add_special LoadPokemonData
+	add_special DropOffParty
+	add_special BattleSubway_IncreaseCurrentStreak
+	add_special BattleSubway_CompareStreaks
+	add_special BattleSubway_ResetCurrentStreak
+	add_special SnorlaxEvent_SetBattleType
+	add_special LegendaryEvent_SetBattleType
+	add_special CheckOtherPlayerGender

@@ -66,6 +66,7 @@ SpriteAnimFrameData:
 	dw .Frameset_IntroUnownF
 	dw .Frameset_CelebiLeft
 	dw .Frameset_CelebiRight
+	dw .Frameset_PurpleWalk
 
 .Frameset_00:
 	frame SPRITE_ANIM_OAMSET_RED_WALK_1, 32
@@ -495,3 +496,10 @@ SpriteAnimFrameData:
 	frame SPRITE_ANIM_OAMSET_CELEBI_1,  8, OAM_X_FLIP
 	frame SPRITE_ANIM_OAMSET_CELEBI_2,  8, OAM_X_FLIP
 	endanim
+
+.Frameset_PurpleWalk:
+	frame SPRITE_ANIM_OAMSET_PURPLE_WALK_1,  8
+	frame SPRITE_ANIM_OAMSET_PURPLE_WALK_2,  8
+	frame SPRITE_ANIM_OAMSET_PURPLE_WALK_1,  8
+	frame SPRITE_ANIM_OAMSET_PURPLE_WALK_2,  8, OAM_X_FLIP
+	dorestart

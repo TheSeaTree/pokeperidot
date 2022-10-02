@@ -324,7 +324,6 @@ AI_Smart:
 	dbw EFFECT_RAZOR_WIND,       AI_Smart_RazorWind
 	dbw EFFECT_SUPER_FANG,       AI_Smart_SuperFang
 	dbw EFFECT_TRAP_TARGET,      AI_Smart_TrapTarget
-	dbw EFFECT_UNUSED_2B,        AI_Smart_Unused2B
 	dbw EFFECT_CONFUSE,          AI_Smart_Confuse
 	dbw EFFECT_SP_DEF_UP_2,      AI_Smart_SpDefenseUp2
 	dbw EFFECT_REFLECT,          AI_Smart_Reflect
@@ -342,7 +341,6 @@ AI_Smart:
 	dbw EFFECT_SNORE,            AI_Smart_Snore
 	dbw EFFECT_CONVERSION2,      AI_Smart_Conversion2
 	dbw EFFECT_LOCK_ON,          AI_Smart_LockOn
-	dbw EFFECT_DEFROST_OPPONENT, AI_Smart_DefrostOpponent
 	dbw EFFECT_SLEEP_TALK,       AI_Smart_SleepTalk
 	dbw EFFECT_DESTINY_BOND,     AI_Smart_DestinyBond
 	dbw EFFECT_REVERSAL,         AI_Smart_Reversal
@@ -386,6 +384,7 @@ AI_Smart:
 	dbw EFFECT_THUNDER,          AI_Smart_Thunder
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_BURN,             AI_Smart_Burn
+	dbw EFFECT_EXTREMESPEED,     AI_Smart_PriorityHit
 	db -1 ; end
 
 AI_Smart_Sleep:
@@ -482,7 +481,7 @@ AI_Smart_LockOn:
 	call AIGetEnemyMove
 
 	ld a, [wEnemyMoveStruct + MOVE_ACC]
-	cp 180
+	cp 204
 	jr nc, .asm_3884f
 
 	ld a, $1
@@ -919,6 +918,27 @@ AI_Smart_Bide:
 	inc [hl]
 	ret
 
+; 50% chance to encourage this move if the opponent has Reversal or Flail
+	ld b, EFFECT_REVERSAL
+	call AIHasMoveEffect
+	jr nc, .asm_38fcb
+
+; Or if the enemy's HP is below 50%
+	call AICheckEnemyHalfHP
+	ret nc
+
+.asm_38fcb
+	ld a, [wEnemySubStatus5]
+	bit SUBSTATUS_LOCK_ON, a
+	ret z
+
+	call AI_50_50
+	ret c
+
+	dec [hl]
+	dec [hl]
+	ret
+
 AI_Smart_ForceSwitch:
 ; Whirlwind, Roar.
 
@@ -1034,7 +1054,6 @@ AI_Smart_TrapTarget:
 	ret
 
 AI_Smart_RazorWind:
-AI_Smart_Unused2B:
 	ld a, [wEnemySubStatus1]
 	bit SUBSTATUS_PERISH, a
 	jr z, .asm_38aaa
@@ -1483,18 +1502,6 @@ AI_Smart_SleepTalk:
 	inc [hl]
 	ret
 
-AI_Smart_DefrostOpponent:
-; Greatly encourage this move if enemy is frozen.
-; No move has EFFECT_DEFROST_OPPONENT, so this layer is unused.
-
-	ld a, [wEnemyMonStatus]
-	and 1 << FRZ
-	ret z
-	dec [hl]
-	dec [hl]
-	dec [hl]
-	ret
-
 AI_Smart_Spite:
 	ld a, [wLastPlayerCounterMove]
 	and a
@@ -1663,7 +1670,7 @@ AI_Smart_Thief:
 AI_Smart_Conversion2:
 	ld a, [wLastPlayerMove]
 	and a
-	jr nz, .asm_38dc9
+	jr z, .asm_38dc9
 
 	push hl
 	dec a
@@ -1965,17 +1972,13 @@ AI_Smart_Foresight:
 	jr z, .asm_38f41
 	ld a, [wBattleMonType2]
 	cp GHOST
-	jr z, .asm_38f41
+	jp z, .asm_38f41
 
-	call Random
-	cp 8 percent
-	ret c
-	inc [hl]
-	ret
+	jp AI_Smart_LockOn
 
 .asm_38f41
 	call Random
-	cp 39 percent + 1
+	cp 74 percent + 1
 	ret c
 	dec [hl]
 	dec [hl]
@@ -2227,9 +2230,19 @@ AI_Smart_Earthquake:
 	ret
 
 AI_Smart_BatonPass:
+; 80% chance to discourage this move during the first turn of enemy's Pokemon.
+	ld a, [wEnemyTurnsTaken]
+	and a
+	jr nz, .not_first_turn
+	call Random
+	cp 79 percent - 1
+	ret nc
+
+;	dec [hl]
+;	ret
+.not_first_turn
 ; Discourage this move if the player hasn't shown super-effective moves against the enemy.
 ; Consider player's type(s) if its moves are unknown.
-
 	push hl
 	callfar CheckPlayerMoveTypeMatchups
 	ld a, [wEnemyAISwitchScore]

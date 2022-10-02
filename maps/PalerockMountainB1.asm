@@ -52,9 +52,10 @@ PalerockB1HikerText:
 PalerockMountainB1_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  31, 19, PALEROCK_MOUNTAIN_1F, 3
 	warp_event   7,  3, PALEROCK_MOUNTAIN_STRENGTH_ROOM, 1
+	warp_event  26,  5, PALEROCK_MOUNTAIN_B2, 2
 
 	db 0 ; coord events
 

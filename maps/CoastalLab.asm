@@ -25,10 +25,12 @@ ProfessorMapleSrScript:
 	closetext
 	turnobject LAST_TALKED, UP
 	end
-	
+
 ProfessorMapleSrAideScript:
 	faceplayer
 	opentext
+	checkevent EVENT_GOT_ANCIENT_TOME
+	iftrue .GotAncientTome
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse .NotMet
 	checkflag ENGINE_UNOWN_DEX
@@ -88,13 +90,42 @@ ProfessorMapleSrAideScript:
 	setflag ENGINE_UNOWN_DEX
 	setevent EVENT_SHOWED_UNOWN_MANIAC_UNOWN
 .AlreadyShown
+	checkevent EVENT_DECO_UNOWN_DOLL
+	iftrue .CheckAllUnown
+	checkcode VAR_UNOWNCOUNT
+	ifgreater 12, .GiveUnownDoll
+.CheckAllUnown
 	checkcode VAR_UNOWNCOUNT
 	ifequal NUM_UNOWN, .AllUnown
-.AllUnown
 	writetext ProfessorMapleSrAdieAfterUpgradeText2
 	waitbutton
 	closetext
 	applymovement COASTAL_LAB_AIDE, CoastalLabAideStepResume
+	end
+
+.GiveUnownDoll
+	writetext ProfessorMapleSrAideHalfUnownText
+	waitbutton
+	setevent EVENT_DECO_UNOWN_DOLL
+	writetext ProfessorMapleSrAideGiveUnownDollText
+	playsound SFX_LEVEL_UP
+	waitsfx
+	writetext ProfessorMapleSrAideSentUnownDollHomeText
+	waitbutton
+	checkcode VAR_UNOWNCOUNT
+	ifless NUM_UNOWN, .CheckAllUnown
+	writetext ProfessorMapleSrAideCheckAllUnown
+	waitbutton
+
+.AllUnown
+	writetext ProfessorMapleSrAideAllUnownText
+	waitbutton
+	verbosegiveitem ANCIENT_TOME
+	setevent EVENT_GOT_ANCIENT_TOME
+.GotAncientTome
+	writetext ProfessorMapleSrAideAfterAncientTomeText
+	waitbutton
+	closetext
 	end
 
 CoastalLabBirdsBook:
@@ -155,12 +186,15 @@ CoastalLabUnownBook:
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse IllegibleUnownBook
 	jumptext CoastalLabUnownBookText
-	
+
 CoastalLabDifficultBook:
 	jumptext CoastalLabDifficultBooksText
 	
 IllegibleUnownBook:
 	jumptext IllegibleUnownBookText
+
+CoastalLabTapeReels:
+	jumptext CoastalLabTapeReelsText
 
 CoastalLabPokeBall:
 	jumptext CoastalLabPokeBallText
@@ -313,16 +347,18 @@ ProfessorMapleSrAideUpgradePokedexText:
 	
 ProfessorMapleSrAdieAfterUpgradeText:
 	text "There. Thank you!"
-	
+
 	para "I have added a new"
 	line "program to track"
 	cont "the UNOWN you enc-"
 	cont "ounter."
-	
+
 	para "I used a program I"
 	line "wrote to translate"
 	cont "ancient UNOWN"
-	cont "writing."
+	cont "writing in order"
+	cont "to make this new"
+	cont "#DEX mode."
 	done
 
 ProfessorMapleSrAdieAfterUpgradeText2:
@@ -336,7 +372,77 @@ ProfessorMapleSrAdieAfterUpgradeText2:
 	cont "those mysterious"
 	cont "#MON!"
 	done
-	
+
+ProfessorMapleSrAideHalfUnownText:
+	text "Wow! You've already"
+	line "captured half of"
+	cont "the UNOWN forms?"
+
+	para "That's fantastic!"
+
+	para "Oh! By the way."
+
+	para "I've taken up"
+	line "sewing in my spare"
+	cont "time, and managed"
+	cont "to make a DOLL"
+	cont "that looks like"
+	cont "the UNOWN."
+
+	para "Take a look, I"
+	line "think it turned"
+	cont "out decently."
+	done
+
+ProfessorMapleSrAideGiveUnownDollText:
+	text "<PLAYER> received"
+	line "the UNOWN DOLL."
+	done
+
+ProfessorMapleSrAideSentUnownDollHomeText:
+	text "<PLAYER> sent the"
+	line "UNOWN DOLL home."
+	done
+
+ProfessorMapleSrAideCheckAllUnown:
+	text "Huh? You've seen"
+	line "even more than"
+	cont "half of the UNOWN?"
+	done
+
+ProfessorMapleSrAideAllUnownText:
+	text "Oh my! Have you"
+	cont "done it? You have!"
+
+	para "You have cataloged"
+	line "every UNOWN form!"
+
+	para "I know I can trust"
+	line "you with this now-"
+
+	para "It's an ancient"
+	line "book written in"
+	cont "UNOWN characters."
+
+	para "I have recently"
+	line "finished translat-"
+	cont "ing it."
+
+	para "You seem to have"
+	line "more experience"
+	cont "with UNOWN than I,"
+	cont "so please take it."
+	done
+
+ProfessorMapleSrAideAfterAncientTomeText:
+	text "You have been a"
+	line "considerable help"
+	cont "to my research."
+
+	para "I am ever-grateful"
+	line "to you."
+	done
+
 CoastalLabDifficultBooksText:
 	text "There are so many"
 	line "difficult books"
@@ -359,7 +465,16 @@ IllegibleUnownBookText:
 	para "Its impossible to"
 	line "read any of it!"
 	done
-	
+
+CoastalLabTapeReelsText:
+	text "The PC is connect-"
+	line "ed to the machine."
+
+	para "The reels spin"
+	line "every once in a"
+	cont "while."
+	done
+
 CoastalLabBirdsBookText:
 	text "This notebook is"
 	line "titled 'LEGENDARY"
@@ -543,16 +658,17 @@ CoastalLab_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4,  7, OLIVINE_CITY, 5
-	warp_event  5,  7, OLIVINE_CITY, 5
+	warp_event  4,  7, RUGOSA_COAST, 5
+	warp_event  5,  7, RUGOSA_COAST, 5
 
 	db 0 ; coord events
 
-	db 4 ; bg events
+	db 5 ; bg events
 	bg_event  6,  5, BGEVENT_UP, CoastalLabBirdsBook
 	bg_event  7,  5, BGEVENT_UP, CoastalLabBeastsBook
 	bg_event  8,  5, BGEVENT_UP, CoastalLabLugiaHoOhBook
 	bg_event  6,  1, BGEVENT_UP, CoastalLabUnownBook
+	bg_event  2,  1, BGEVENT_UP, CoastalLabTapeReels
 
 	db 6 ; object events
 	object_event  0,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrScript, -1

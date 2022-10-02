@@ -24,7 +24,6 @@ INCLUDE "audio/music/ssaqua.asm"
 INCLUDE "audio/music/newbarktown.asm"
 INCLUDE "audio/music/goldenrodcity.asm"
 INCLUDE "audio/music/vermilioncity.asm"
-INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/ruinsofalphinterior.asm"
 INCLUDE "audio/music/lookpokemaniac.asm"
 INCLUDE "audio/music/trainervictory.asm"
@@ -133,11 +132,12 @@ INCLUDE "audio/music/mobileadapter.asm"
 SECTION "Extra Songs 1", ROMX
 
 INCLUDE "audio/music/credits.asm"
-INCLUDE "audio/music/clair.asm"
 
 
 SECTION "Extra Songs 2", ROMX
 
+INCLUDE "audio/music/clair.asm"
+INCLUDE "audio/music/titlescreen.asm"
 INCLUDE "audio/music/postcredits.asm"
 
 

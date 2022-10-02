@@ -21,10 +21,9 @@ BattleCommand_Coil:
 	jr c, .raise
 	
 ; Accuracy
+rept 4
 	inc bc
-	inc bc
-	inc bc
-	inc bc
+endr
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr nc, .cantraise
@@ -45,6 +44,4 @@ BattleCommand_Coil:
 	jp   BattleCommand_StatUpMessage
 	
 .cantraise
-	call CantRaiseStats
-	ret
-	
+	jp CantRaiseStats

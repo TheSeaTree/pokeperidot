@@ -6,7 +6,7 @@ BattleCommand_UTurn:
 	jr nz, .enemy_turn
 
 	farcall CheckPlayerHasMonToSwitchTo
-	jr z, .LastMon
+	ret z
 
 	ld c, 20
 	call DelayFrames
@@ -22,11 +22,11 @@ BattleCommand_UTurn:
 
 .enemy_turn:	
 	farcall FindAliveEnemyMons
-	jr c, .LastMon
+	ret c
 
 	ld a, [wBattleMode]
 	dec a
-	jr z, .LastMon
+	ret z
 
 	call UpdateEnemyMonInParty
 	ld a, $1
@@ -35,15 +35,24 @@ BattleCommand_UTurn:
 	ld hl, UTurnOutEnemyText
 	call StdBattleTextBox
 	
-	ld a, [wOTPartyCount]
-	ld b, a
-	ld a, [wCurOTMon]
-	ld c, a
+	jp BattleCommand_Teleport.enemy_uturn
 	
-	call BattleCommand_Teleport.random_loop_trainer
-	ret
-	
-.LastMon:
-	ld de, ANIM_SHOW_MON
-	call FarPlayBattleAnimation
-	ret
+BattleCommand_UTurnAnim:
+; uturnanim
+
+; Play a unique animation if the user is the last in its party
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy_turn
+
+	farcall CheckPlayerHasMonToSwitchTo
+	jp nz, BattleCommand_MoveAnim
+	jp .reappear
+
+.enemy_turn:	
+	farcall FindAliveEnemyMons
+	jp nc, BattleCommand_MoveAnim
+.reappear
+	ld a, 1
+	ld [wBattleAnimParam], a
+	jp PlayDamageAnim

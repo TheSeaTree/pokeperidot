@@ -131,6 +131,8 @@ EvolveAfterBattle_MasterLoop:
 	ld a, [hli]
 	cp b
 	jp nz, .dont_evolve_3
+	xor a
+	ld [wTempMonItem], a
 	jp .proceed
 
 .trade
@@ -616,7 +618,7 @@ GetPreEvolution:
 	ld a, [hli]
 	and a
 	jr z, .no_evolve ; If we jump, this Pokemon does not evolve into wCurPartySpecies.
-	
+
 	inc hl
 	ld a, [wCurPartySpecies]	
 	cp [hl]	

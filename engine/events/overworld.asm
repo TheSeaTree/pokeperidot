@@ -145,9 +145,16 @@ CutFunction:
 	dw .FailCut
 
 .CheckAble:
-	ld de, ENGINE_MYSTICBADGE
-	call CheckBadge
-	jr c, .nocutbadge
+	; Cannot cut the grass in Staghorn Gym
+	ld a, [wMapMusic]
+	cp MUSIC_GYM
+	jr z, .nothingtocut
+
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
 	call CheckMapForSomethingToCut
 	jr c, .nothingtocut
 	ld a, $1
@@ -353,14 +360,23 @@ SurfFunction:
 	dw .AlreadySurfing
 
 .TrySurf:
-	jr c, .asm_c956
+	ld a, HM_SURF
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, CantUseFieldMove
 	ld hl, wBikeFlags
 	bit BIKEFLAGS_ALWAYS_ON_BIKE_F, [hl]
 	jr nz, .cannotsurf
+	ld a, [wMapGroup]
+	cp GROUP_BREDES_ROOM
+	jr z, .cannotsurf
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .alreadyfail
 	cp PLAYER_SURF_PIKA
+	jr z, .alreadyfail
+	cp PLAYER_SURF_LAPRAS
 	jr z, .alreadyfail
 	call GetFacingTileCoord
 	call GetTileCollision
@@ -411,21 +427,19 @@ UsedSurfScript:
 	waitbutton
 	closetext
 
-	callasm .empty_fn ; empty function
-
 	copybytetovar wBuffer2
 	writevarcode VAR_MOVEMENT
-
+	
+	checkcode VAR_MOVEMENT
+	ifnotequal PLAYER_SURF_LAPRAS, .NoLapras
 	writebyte (PAL_NPC_BLUE << 4)
 	special SetPlayerPalette
+
+.NoLapras
 	special ReplaceKrisSprite
 	special PlayMapMusic
 	special SurfStartStep
 	end
-
-.empty_fn
-	farcall StubbedTrainerRankings_Surf
-	ret
 
 UsedSurfText:
 	text_jump _UsedSurfText
@@ -453,6 +467,12 @@ GetSurfType:
 	cp PIKACHU
 	ld a, PLAYER_SURF_PIKA
 	ret z
+
+	ld a, [hl]
+	cp LAPRAS
+	ld a, PLAYER_SURF_LAPRAS
+	ret z
+
 	ld a, PLAYER_SURF
 	ret
 
@@ -495,6 +515,8 @@ TrySurfOW::
 	ld a, [wPlayerState]
 	cp PLAYER_SURF_PIKA
 	jr z, .quit
+	cp PLAYER_SURF_LAPRAS
+	jr z, .quit
 	cp PLAYER_SURF
 	jr z, .quit
 
@@ -507,6 +529,12 @@ TrySurfOW::
 ; Check tile permissions.
 	call CheckDirection
 	jr c, .quit
+
+	ld a, HM_SURF
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .quit
 
 	ld d, SURF
 	call CheckPartyMove
@@ -560,7 +588,7 @@ FlyFunction:
 
 .TryFly:
 ; Fly
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .indoors
 	call GetMapEnvironment
@@ -630,7 +658,6 @@ FlyFunction:
 	ret
 
 TeleportGuyFunction:
-	xor a
 	ldh [hMapAnims], a
 	call LoadStandardMenuHeader
 	call ClearSprites
@@ -800,14 +827,14 @@ dig_incave
 	dw .FailDig
 
 .CheckCanDig:
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .fail
 	call GetMapEnvironment
 	cp CAVE
 	jr z, .incave
-;	cp DUNGEON
-;	jr z, .incave
+	cp ENVIRONMENT_5
+	jr z, .incave
 .fail
 	ld a, $2
 	ret
@@ -892,7 +919,6 @@ dig_incave
 	applymovement PLAYER, .DigOut
 ;	farscall Script_AbortBugContest
 	special WarpToSpawnPoint
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	newloadmap MAPSETUP_DOOR
 	playsound SFX_WARP_FROM
 	applymovement PLAYER, .DigReturn
@@ -924,7 +950,7 @@ TeleportFunction:
 	dw .FailTeleport
 
 .TryTeleport:
-	ld de, ENGINE_BUG_CONTEST_TIMER
+	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .nope
 	call GetMapEnvironment
@@ -1410,6 +1436,7 @@ RockSmashFromMenuScript:
 	special UpdateTimePals
 
 RockSmashScript:
+	setflag ENGINE_ROCK_SMASH_ACTIVE
 	callasm GetPartyNick
 	writetext UnknownText_0xcf58
 	closetext
@@ -1452,6 +1479,8 @@ AskRockSmashScript:
 	iffalse .no
 
 	opentext
+	checkflag ENGINE_ROCK_SMASH_ACTIVE
+	iftrue RockSmashScript
 	writetext UnknownText_0xcf77
 	yesorno
 	iffalse .end
@@ -1459,6 +1488,7 @@ AskRockSmashScript:
 	closetext
 	end
 .no
+	clearflag ENGINE_ROCK_SMASH_ACTIVE
 	jumptext UnknownText_0xcf72
 .end
 	closetext
@@ -1578,6 +1608,8 @@ FishFunction:
 	jr z, .fail
 	cp PLAYER_SURF_PIKA
 	jr z, .fail
+	cp PLAYER_SURF_LAPRAS
+	jr z, .fail
 	call GetFacingTileCoord
 	call GetTileCollision
 	cp WATERTILE
@@ -1651,7 +1683,7 @@ Script_NotEvenANibble2:
 	writetext UnknownText_0xd0a9
 
 Script_NotEvenANibble_FallThrough:
-	loademote EMOTE_SHADOW
+	loademote EMOTE_OVERWORLD
 	callasm PutTheRodAway
 	closetext
 	end
@@ -1673,9 +1705,9 @@ Script_GotABite:
 	callasm PutTheRodAway
 	closetext
 	randomwildmon
-	checkflag ENGINE_BUG_CONTEST_TIMER
+	checkflag ENGINE_SAFARI_GAME_ACTIVE
 	iffalse .not_in_bug_contest
-	writecode VAR_BATTLETYPE, BATTLETYPE_CONTEST
+	writecode VAR_BATTLETYPE, BATTLETYPE_SAFARI
 .not_in_bug_contest
 	startbattle
 	reloadmapafterbattle
@@ -1716,6 +1748,7 @@ Fishing_CheckFacingUp:
 	ret
 
 Script_FishCastRod:
+	stopfollow
 	reloadmappart
 	loadvar hBGMapMode, $0
 	special UpdateTimePals
@@ -1724,6 +1757,7 @@ Script_FishCastRod:
 	loademote EMOTE_SHOCK
 	applymovement PLAYER, MovementData_0xd093
 	pause 40
+	setmapscene SS_MAKO_LOWER_DECK, SCENE_SSMAKOLOWERDECK_FISHING
 	end
 
 MovementData_0xd093:
@@ -1829,6 +1863,8 @@ BikeFunction:
 	jr z, .ok
 	cp GATE
 	jr z, .ok
+	cp ENVIRONMENT_5
+	jr z, .ok
 	jr .nope
 
 .ok
@@ -1905,9 +1941,11 @@ TryCutOW::
 	call CheckPartyMove
 	jr c, .cant_cut
 
-	ld de, ENGINE_MYSTICBADGE
-	call CheckEngineFlag
-	jr c, .cant_cut
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .cant_cut
 
 	ld a, BANK(AskCutScript)
 	ld hl, AskCutScript
@@ -1942,6 +1980,57 @@ AskCutScript:
 	ld [wScriptVar], a
 	ret
 
+TryCutGrassOW::
+	ld d, CUT
+	call CheckPartyMove
+	jr c, .cant_cut
+
+	ld a, TM_CUT
+	ld [wCurItem], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .cant_cut
+
+	; Cannot cut the grass in Staghorn Gym
+	ld a, [wMapMusic]
+	cp MUSIC_GYM
+	jr z, .cant_cut
+
+	ld a, BANK(AskCutGrassScript)
+	ld hl, AskCutGrassScript
+	call CallScript
+	scf
+	ret
+
+.cant_cut
+	xor a
+	ret
+
+AskCutGrassScript:
+	opentext
+	writetext OWAskCutGrassText
+	yesorno
+	iffalse .script_d1b8
+	callasm .CheckMap
+	iftrue Script_Cut
+.script_d1b8
+	closetext
+	end
+
+.CheckMap:
+	xor a
+	ld [wScriptVar], a
+	call CheckMapForSomethingToCut
+	ret c
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+CheckHaveCut::
+	ld d, CUT
+	call CheckPartyMove
+	ret
+
 TrySmashWallOW::
 	ld d, ROCK_SMASH
 	call CheckPartyMove
@@ -1962,6 +2051,10 @@ TrySmashWallOW::
 
 UnknownText_0xd1c8:
 	text_jump UnknownText_0x1c09dd
+	db "@"
+
+OWAskCutGrassText:
+	text_jump AskCutGrassText
 	db "@"
 
 CantCutScript:

@@ -1,14 +1,10 @@
 BuenaPhoneScript1:
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue BuenaPhoneScript_Rocket
 	checkcode VAR_HOUR
 	ifgreater 17, BuenaPhoneScript_AfterMidnight1
 	scall BuenaPhoneScript_CheckTimeOfDay1
 	jump BuenaPhoneScript_Random1
 
 BuenaPhoneScript2:
-	checkflag ENGINE_ROCKETS_IN_RADIO_TOWER
-	iftrue BuenaPhoneScript_Rocket
 	scall BuenaPhoneScript_CheckTimeOfDay2
 	jump BuenaPhoneScript_Random2
 
@@ -59,10 +55,6 @@ BuenaPhoneScript_CheckTimeOfDay2:
 BuenaPhoneScript_AfterMidnight2:
 	writetext UnknownText_0xa0e01
 	buttonsound
-	end
-
-BuenaPhoneScript_Rocket:
-	writetext UnknownText_0xa0e5e
 	end
 
 BuenaPhoneScript_Random2:

@@ -74,7 +74,6 @@ BattleCommandPointers:
 	dw BattleCommand_Conversion2
 	dw BattleCommand_LockOn
 	dw BattleCommand_Sketch
-	dw BattleCommand_DefrostOpponent
 	dw BattleCommand_SleepTalk
 	dw BattleCommand_DestinyBond
 	dw BattleCommand_Spite
@@ -178,8 +177,11 @@ BattleCommandPointers:
 	dw BattleCommand_BulkUp
 	dw BattleCommand_CosmicPower
 	dw BattleCommand_QuiverDance
-	dw BattleCommand_CheckGrassType
 	dw BattleCommand_Coil
 	dw BattleCommand_Growth
+	dw BattleCommand_UTurnAnim
 	dw BattleCommand_UTurn
 	dw BattleCommand_Burn
+	dw BattleCommand_ThiefDamage
+	dw BattleCommand_CheckLegendaryBattle
+	dw BattleCommand_BrickBreak

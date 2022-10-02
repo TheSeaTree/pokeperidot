@@ -36,6 +36,7 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetKantoAnim:
 TilesetJohtoCityAnim:
+TilesetForestAnim:
 TilesetMountainAnim:
 	dw vTiles2 tile $49, AnimateWaterTile
 	dw NULL,  LavaBubbleAnim2
@@ -49,6 +50,53 @@ TilesetMountainAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetGameCornerAnim:
+;	dw NULL,  AnimateRoofPalette
+	dw vTiles2 tile $11, AnimateLeftArcadeScreenTile
+	dw vTiles2 tile $12, AnimateRightArcadeScreenTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+	
+TilesetLostLandAnim:
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetPokemonLeagueOutsideAnim:
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetOceanAnim:
+	dw vTiles2 tile $49, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileRightLeft
+	dw vTiles2 tile $49, WriteTileFromBuffer
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  AnimateFlowerTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
 TilesetVolcanoAnim:
@@ -117,6 +165,9 @@ UnusedTilesetAnim_fc103:
 
 TilesetPortAnim:
 	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $2c, WriteTileToBuffer
+	dw wTileAnimBuffer, ScrollTileLeft
+	dw vTiles2 tile $2c, WriteTileFromBuffer
 	dw NULL, AnimateLeftGeyserTile
 	dw NULL, AnimateRightGeyserTile
 	dw NULL, AnimateLeftGeyserTile2
@@ -137,7 +188,9 @@ TilesetPortAnim:
 	dw NULL,  DoneTileAnimation
 
 TilesetEliteFourRoomAnim:
+TilesetCastleAnim:
 	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WallCandleTileAnim
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
@@ -196,24 +249,20 @@ TilesetDarkCaveAnim:
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
-TilesetIcePathAnim:
-	dw vTiles2 tile $35, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileRightLeft
-	dw vTiles2 tile $35, WriteTileFromBuffer
-	dw NULL,  AnimateWaterPalette
-	dw vTiles2 tile $31, WriteTileToBuffer
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw wTileAnimBuffer, ScrollTileDown
-	dw vTiles2 tile $31, WriteTileFromBuffer
-	dw NULL,  DoneTileAnimation
-
+TilesetChampionsRoomAnim:
 TilesetTowerAnim:
 	dw NULL, AnimateRightFireTile
 	dw NULL, AnimateLeftFireTile
 	dw NULL,  StandingTileFrame
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim2
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  LavaBubbleAnim1
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
 UnusedTilesetAnim_fc2bf:
@@ -228,21 +277,16 @@ UnusedTilesetAnim_fc2bf:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
-TilesetBattleTowerOutsideAnim:
 TilesetHouseAnim:
 TilesetPlayersHouseAnim:
 TilesetPokecenterAnim:
-TilesetGateAnim:
 TilesetLabAnim:
 TilesetMartAnim:
 TilesetMansionAnim:
-TilesetGameCornerAnim:
 TilesetTraditionalHouseAnim:
 TilesetTrainStationAnim:
-TilesetChampionsRoomAnim:
 TilesetLighthouseAnim:
 TilesetPlayersRoomAnim:
-TilesetPokeComCenterAnim:
 TilesetBattleTowerAnim:
 TilesetRuinsOfAlphAnim:
 TilesetRadioTowerAnim:
@@ -253,18 +297,55 @@ TilesetKabutoWordRoomAnim:
 TilesetOmanyteWordRoomAnim:
 TilesetAerodactylWordRoomAnim:
 TilesetRoofAnim:
+TilesetPokecomCenterAnim:
+TilesetIcePathAnim:
+TilesetCyberspaceAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
+TilesetPokemonLeagueAnim:
+	dw vTiles2 tile $57, AnimateTopLeftIceWaterTile
+	dw vTiles2 tile $58, AnimateTopRightIceWaterTile
+	dw vTiles2 tile $67, AnimateBottomLeftIceWaterTile
+	dw vTiles2 tile $68, AnimateBottomRightIceWaterTile
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetGateAnim:
+	dw vTiles2 tile $22, ScrollTileUp
+	dw vTiles2 tile $23, ScrollTileDown
+	dw vTiles2 tile $22, ScrollTileUp
+	dw vTiles2 tile $23, ScrollTileDown
+	dw vTiles2 tile $32, AnimateWaterTile
+	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $1e, AnimateFountain
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateYellowPalette
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+;	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 TilesetFacilityAnim:
 	dw vTiles2 tile $26, AnimateWaterTile
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
-	dw NULL,  WaitTileAnimation
+	dw vTiles2 tile $6b, AnimateTopLeftTubeTile
+	dw vTiles2 tile $6c, AnimateTopRightTubeTile
+	dw vTiles2 tile $7b, AnimateBottomLeftTubeTile
+	dw vTiles2 tile $7c, AnimateBottomRightTubeTile
+	dw vTiles2 tile $69, AnimateTopLeftEmptyTubeTile
+	dw vTiles2 tile $6a, AnimateTopRightEmptyTubeTile
+	dw vTiles2 tile $79, AnimateBottomLeftEmptyTubeTile
+	dw vTiles2 tile $7a, AnimateBottomRightEmptyTubeTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  AnimateWaterPalette
 	dw NULL,  WaitTileAnimation
@@ -492,7 +573,6 @@ AnimateLeftGeyserTile:
 	adc HIGH(LeftGeyserTileFrames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $23
 	jp WriteTile
@@ -500,6 +580,29 @@ AnimateLeftGeyserTile:
 LeftGeyserTileFrames:
 	INCBIN "gfx/tilesets/geyser/left_1.2bpp"
 	INCBIN "gfx/tilesets/geyser/left_2.2bpp"
+
+WallCandleTileAnim:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(WallCandleTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(WallCandleTileFrames)
+	ld h, a
+
+	ld sp, hl
+	ld hl, vTiles2 tile $0f
+	jp WriteTile
+	
+WallCandleTileFrames:
+	INCBIN "gfx/tilesets/candle/2.2bpp"
+	INCBIN "gfx/tilesets/candle/1.2bpp"
 
 AnimateLeftGeyserTile2:
 	ld hl, sp+0
@@ -516,7 +619,6 @@ AnimateLeftGeyserTile2:
 	adc HIGH(LeftGeyserTile2Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $33
 	jp WriteTile
@@ -540,7 +642,6 @@ AnimateLeftGeyserTile3:
 	adc HIGH(LeftGeyserTile3Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $43
 	jp WriteTile
@@ -564,7 +665,6 @@ AnimateRightGeyserTile:
 	adc HIGH(RightGeyserTileFrames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $24
 	jp WriteTile
@@ -588,7 +688,6 @@ AnimateRightGeyserTile2:
 	adc HIGH(RightGeyserTile2Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $34
 	jp WriteTile
@@ -612,7 +711,6 @@ AnimateRightGeyserTile3:
 	adc HIGH(RightGeyserTile3Frames)
 	ld h, a
 
-.asm_fc47d
 	ld sp, hl
 	ld hl, vTiles2 tile $44
 	jp WriteTile
@@ -655,6 +753,472 @@ AnimateWaterTile:
 
 WaterTileFrames:
 	INCBIN "gfx/tilesets/water/water.2bpp"
+
+AnimateTopLeftIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopLeftIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopLeftIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopLeftIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/top_left.2bpp"
+
+AnimateTopRightIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopRightIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopRightIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopRightIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/top_right.2bpp"
+
+AnimateBottomLeftIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomLeftIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomLeftIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomLeftIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/bottom_left.2bpp"
+
+AnimateBottomRightIceWaterTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomRightIceWaterTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomRightIceWaterTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomRightIceWaterTileFrames:
+	INCBIN "gfx/tilesets/ice-water/bottom_right.2bpp"
+
+AnimateLeftArcadeScreenTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(LeftArcadeScreenTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(LeftArcadeScreenTileFrames)
+	ld h, a
+
+	ld sp, hl
+	ld hl, vTiles2 tile $11
+	jp WriteTile
+
+LeftArcadeScreenTileFrames:
+	INCBIN "gfx/tilesets/arcade-screen/left_1.2bpp"
+	INCBIN "gfx/tilesets/arcade-screen/left_2.2bpp"
+
+AnimateRightArcadeScreenTile:
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+	ld a, [wTileAnimationTimer]
+	call GetForestTreeFrame
+	add a
+	add a
+	add a
+	add LOW(RightArcadeScreenTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(RightArcadeScreenTileFrames)
+	ld h, a
+
+	ld sp, hl
+	ld hl, vTiles2 tile $12
+	jp WriteTile
+	
+RightArcadeScreenTileFrames:
+	INCBIN "gfx/tilesets/arcade-screen/right_1.2bpp"
+	INCBIN "gfx/tilesets/arcade-screen/right_2.2bpp"
+
+AnimateTopLeftTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopLeftTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopLeftTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopLeftTubeTileFrames:
+	INCBIN "gfx/tilesets/tube/top_left.2bpp"
+
+AnimateTopRightTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopRightTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopRightTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopRightTubeTileFrames:
+	INCBIN "gfx/tilesets/tube/top_right.2bpp"
+
+AnimateBottomLeftTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomLeftTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomLeftTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomLeftTubeTileFrames:
+	INCBIN "gfx/tilesets/tube/bottom_left.2bpp"
+
+AnimateBottomRightTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomRightTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomRightTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomRightTubeTileFrames:
+	INCBIN "gfx/tilesets/tube/bottom_right.2bpp"
+
+
+AnimateTopLeftEmptyTubeTile:
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopLeftEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopLeftEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopLeftEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/top_left.2bpp"
+
+AnimateTopRightEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(TopRightEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(TopRightEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+TopRightEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/top_right.2bpp"
+
+AnimateBottomLeftEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomLeftEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomLeftEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomLeftEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/bottom_left.2bpp"
+
+AnimateBottomRightEmptyTubeTile:
+; Draw a water tile for the current frame in VRAM tile at de.
+
+; Save sp in bc (see WriteTile).
+	ld hl, sp+0
+	ld b, h
+	ld c, l
+
+	ld a, [wTileAnimationTimer]
+
+; 4 tile graphics, updated every other frame.
+	and %110
+
+; 2 x 8 = 16 bytes per tile
+	add a
+	add a
+	add a
+
+	add LOW(BottomRightEmptyTubeTileFrames)
+	ld l, a
+	ld a, 0
+	adc HIGH(BottomRightEmptyTubeTileFrames)
+	ld h, a
+
+; The stack now points to the start of the tile for this frame.
+	ld sp, hl
+
+	ld l, e
+	ld h, d
+
+	jp WriteTile
+
+BottomRightEmptyTubeTileFrames:
+	INCBIN "gfx/tilesets/tube_empty/bottom_right.2bpp"
 
 ForestTreeLeftAnimation:
 	ld hl, sp+0
@@ -792,26 +1356,8 @@ ForestTreeRightAnimation2:
 
 GetForestTreeFrame:
 ; Return 0 if a is even, or 2 if odd.
-	and a
-	jr z, .even
-	cp 1
-	jr z, .odd
-	cp 2
-	jr z, .even
-	cp 3
-	jr z, .odd
-	cp 4
-	jr z, .even
-	cp 5
-	jr z, .odd
-	cp 6
-	jr z, .even
-.odd
-	ld a, 2
-	scf
-	ret
-.even
-	xor a
+	and 1
+	add a
 	ret
 
 AnimateFlowerTile:
@@ -1104,6 +1650,111 @@ AnimateWaterPalette:
 	ldh [rBGPD], a
 
 .end
+	pop af
+	ldh [rSVBK], a
+	ret
+	
+AnimateYellowPalette:
+; Transition between color values 0-2 for color 0 in palette 4.
+
+; Only update on even frames.
+	ld a, [wTileAnimationTimer]
+	ld l, a
+	and 1 ; odd
+	ret nz
+
+; Ready for BGPD input...
+
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_YELLOW
+	ldh [rBGPI], a
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+; Update color 0 in order 0 1 2 1
+	ld a, l
+	and %110 ; frames 0 2 4 6
+	jr z, .color0
+	cp %100 ; frame 4
+	jr z, .color2
+
+.color1
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 1
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+	jr .end
+
+.color0
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 0
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+	jr .end
+
+.color2
+	ld hl, wBGPals1 palette PAL_BG_YELLOW color 2
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
+
+.end
+	pop af
+	ldh [rSVBK], a
+	ret
+
+AnimateRoofPalette:
+; Transition between color values 0-2 for color 0 in palette 3.
+
+; We don't want to mess with non-standard palettes.
+	ldh a, [rBGP] ; BGP
+	cp %11100100
+	ret nz
+
+; Only update on even frames.
+	ld a, [wTileAnimationTimer]
+	ld l, a
+	and 1 ; odd
+	ret nz
+
+; Ready for BGPD input...
+
+	ld a, (1 << rBGPI_AUTO_INCREMENT) palette PAL_BG_ROOF color 1
+	ldh [rBGPI], a
+
+	ldh a, [rSVBK]
+	push af
+	ld a, BANK(wBGPals1)
+	ldh [rSVBK], a
+
+; Update color 0 in order 0 1 2 1
+	ld a, l
+	and %110 ; frames 0 2 4 6
+	jr z, .color0
+	cp %100 ; frame 4
+	jr z, .color2
+
+.color1
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 1
+	jr .end
+
+.color0
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 0
+	jr .end
+
+.color2
+	ld hl, wBGPals1 palette PAL_BG_ROOF color 0
+
+.end
+	ld a, [hli]
+	ldh [rBGPD], a
+	ld a, [hli]
+	ldh [rBGPD], a
 	pop af
 	ldh [rSVBK], a
 	ret

@@ -359,7 +359,7 @@ ApplyHPBarPals:
 .PartyMenu:
 	ld e, c
 	inc e
-	hlcoord 11, 1, wAttrMap
+	hlcoord 13, 1, wAttrMap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wCurPartyMon]
 .loop
@@ -390,9 +390,11 @@ LoadStatsScreenPals:
 	ld a, [hli]
 	ld [wBGPals1 palette 0], a
 	ld [wBGPals1 palette 2], a
+	ld [wBGPals1 palette 6], a
 	ld a, [hl]
 	ld [wBGPals1 palette 0 + 1], a
 	ld [wBGPals1 palette 2 + 1], a
+	ld [wBGPals1 palette 6 + 1], a
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals
@@ -659,7 +661,7 @@ CGB_ApplyPartyMenuHPPals:
 	ld a, [de]
 	inc a
 	ld e, a
-	hlcoord 11, 2, wAttrMap
+	hlcoord 13, 2, wAttrMap
 	ld bc, 2 * SCREEN_WIDTH
 	ld a, [wSGBPals]
 .loop
@@ -1206,6 +1208,9 @@ INCLUDE "gfx/battle/hp_bar.pal"
 ExpBarPalette:
 INCLUDE "gfx/battle/exp_bar.pal"
 
+HPBarTextPalette:
+INCLUDE "gfx/battle/hp_bar_text.pal"
+
 INCLUDE "data/pokemon/palettes.asm"
 
 INCLUDE "data/trainers/palettes.asm"
@@ -1272,10 +1277,25 @@ LoadMapPals:
 	ldh [rSVBK], a
 
 .got_pals
+	ld a, [wMapTileset]
+	cp TILESET_VOLCANO
+	jr z, .volcano
+	cp TILESET_LOST_LAND
+	jr z, .volcano
+	
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
 	ld hl, MapObjectPals
+	jr .got_pals_2
+	
+.volcano
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	ld hl, VolcanoObjectPals
+
+.got_pals_2
 	call AddNTimes
 	ld de, wOBPals1
 	ld bc, 8 palettes
@@ -1284,6 +1304,8 @@ LoadMapPals:
 
 	ld a, [wEnvironment]
 	cp TOWN
+	jr z, .outside
+	cp ENVIRONMENT_5
 	jr z, .outside
 	cp ROUTE
 	ret nz
@@ -1384,13 +1406,16 @@ PartyMenuBGPalette:
 INCLUDE "gfx/stats/party_menu_bg.pal"
 
 TilesetBGPalette:
-INCLUDE "gfx/tilesets/bg_tiles.pal"
+INCLUDE "gfx/tilesets_pals/bg_tiles.pal"
 
 MapObjectPals::
 INCLUDE "gfx/overworld/npc_sprites.pal"
 
+VolcanoObjectPals::
+INCLUDE "gfx/overworld/npc_sprites_volcano.pal"
+
 RoofPals:
-INCLUDE "gfx/tilesets/roofs.pal"
+INCLUDE "gfx/tilesets_pals/roofs.pal"
 
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
@@ -1424,3 +1449,6 @@ INCLUDE "gfx/beta_poker/beta_poker.pal"
 
 SlotMachinePals:
 INCLUDE "gfx/slots/slots.pal"
+
+DarknessPals:
+INCLUDE "gfx/tilesets_pals/darkness.pal"

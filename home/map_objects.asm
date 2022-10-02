@@ -135,6 +135,11 @@ CheckGrassTile::
 	scf
 	ret
 
+CheckTallGrassTile::
+	cp COLL_TALL_GRASS
+	ret z
+	; fallthrough
+
 CheckSuperTallGrassTile::
 	cp COLL_LONG_GRASS
 	ret z
@@ -168,7 +173,7 @@ CheckUnownXTile::
 CheckCounterTile::
 	cp COLL_COUNTER
 	ret z
-	cp COLL_COUNTER_98
+	cp COLL_CAPSULE_MACHINE
 	ret
 
 CheckPitTile::

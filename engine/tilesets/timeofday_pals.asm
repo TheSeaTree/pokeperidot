@@ -1,5 +1,8 @@
 DummyPredef35:
 DummyPredef36:
+DummyPredef2F:
+DummyPredef38:
+DummyPredef39:
 	ret
 
 UpdateTimeOfDayPal::
@@ -209,7 +212,15 @@ ReplaceTimeOfDayPals:
 	ret
 
 .UsedFlash:
+	ld a, [wEnvironment]
+	cp DUNGEON
+	jr z, .Dungeon
 	ld a, %10101010 ; 2, 2, 2, 2
+	ld [wTimeOfDayPalset], a
+	ret
+
+.Dungeon
+	ld a, $0
 	ld [wTimeOfDayPalset], a
 	ret
 

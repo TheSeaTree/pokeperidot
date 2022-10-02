@@ -102,10 +102,46 @@ TrainerMarieScript:
 	disappear ROUTE18_MARIE1
 	disappear ROUTE18_BESSIE1
 	disappear ROUTE18_GRAMPS
+	setmapscene ROUTE_18_FARMHOUSE, SCENE_FINISHED
 	special FadeInQuickly
 	end
 	
 .No
+	closetext
+	end
+
+TrainerMarieAfterScript:
+	checkevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+	iftrue .AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	jumptextfaceplayer TrainerMarieBackHomeText
+
+.Postgame
+	faceplayer
+	opentext
+	writetext TrainerMariePostgameChallengeText
+	yesorno
+	iffalse .Decline
+	writetext TrainerMariePostgameAcceptText
+	waitbutton
+	closetext
+	winlosstext TrainerMariePostgameWinText, 0
+    loadtrainer BEAUTY, MARIE2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+.AfterBattle
+	faceplayer
+	opentext
+	writetext TrainerMariePostgameAfterText
+	waitbutton
+	closetext
+	end
+
+.Decline
+	writetext TrainerMariePostgameDeclineText
+	waitbutton
 	closetext
 	end
 	
@@ -125,9 +161,15 @@ Route18MiltankScript:
 	waitbutton
 	closetext
 	end
+
+Route18FarmSign:
+	jumptext Route18FarmSignText
 	
-Route18UltraBall:
+Route18HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_18_HIDDEN_ULTRA_BALL
+	
+Route18HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_18_HIDDEN_POWER_HERB
 
 Route18LeafStone:
 	itemball LEAF_STONE
@@ -223,7 +265,7 @@ FisherFisherWinText:
 	done
 
 FisherFisherAfterText:
-	text "My parents must"
+	text "My parents must be"
 	line "PSYCHIC-types to"
 	cont "choose my name the"
 	cont "way they did."
@@ -271,7 +313,7 @@ Route18DaughterText:
 	cont "world with #MON"
 	cont "that I caught!"
 	done
-	
+
 Route18DaughterNoticeBadges:
 	text "Those things you"
 	line "have pinned to"
@@ -306,7 +348,7 @@ Route18DaughterWinText:
 	para "My dream will not"
 	line "die!"
 	done
-	
+
 Route18DaughterAfterText:
 	text "You won, but you"
 	line "have a lot more"
@@ -320,19 +362,94 @@ Route18DaughterAfterText:
 	line "battle again!"
 	done
 
+TrainerMarieBackHomeText:
+	text "Heya, <PLAYER>!"
+	
+	para "I've put my dreams"
+	line "of being a #MON"
+	cont "trainer on hold"
+	cont "for a while, but I"
+	cont "promise we will"
+	cont "battle again!"
+	done
+
+TrainerMariePostgameChallengeText:
+	text "Oh! <PLAYER>!"
+	
+	para "I saw on the TV"
+	line "that you and your"
+	cont "#MON became the"
+	cont "CHAMPION!"
+
+	para "You know, grandpa"
+	line "has allowed me to"
+	cont "train some with"
+	cont "BESSIE!"
+
+	para "Can I show you"
+	line "what I've learned?"
+	done
+
+TrainerMariePostgameAcceptText:
+	text "Yipee!"
+
+	para "I won't waste your"
+	line "time, I promise!"
+	done
+
+TrainerMariePostgameWinText:
+	text "Gah! I'm not quite"
+	line "there yet!"
+
+	para "Good battle!"
+	done
+
+TrainerMariePostgameAfterText:
+	text "I don't feel bad"
+	line "about losing to a"
+	cont "CHAMPION, not one"
+	cont "bit!"
+	
+	para "The fact I stood"
+	line "any chance gives"
+	cont "me so much hope!"
+	done
+
+TrainerMariePostgameDeclineText:
+	text "…Oh, I see."
+
+	para "You must be so"
+	line "busy these days."
+
+	para "If you find the"
+	line "time for me, I"
+	cont "would love to show"
+	cont "you my #MON!"
+	done
+
+Route18FarmSignText:
+	text "MOOMOO FARMS"
+	
+	para "Fresh milk daily!"
+	done
+
 Route18_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event 27, 35, ROUTE_14, 4
-	warp_event 28, 35, ROUTE_14, 4
-	warp_event  4, 18, CARNATION_TOWN, 1
-	warp_event  4, 19, CARNATION_TOWN, 2
+	db 6 ; warp events
+	warp_event 27, 35, ROUTE_14_GATE, 3
+	warp_event 28, 35, ROUTE_14_GATE, 4
+	warp_event  4, 18, ROUTE_18_CARNATION_GATE, 3
+	warp_event  4, 19, ROUTE_18_CARNATION_GATE, 4
+	warp_event 27,  3, ROUTE_18_BARN, 1
+	warp_event 31,  3, ROUTE_18_FARMHOUSE, 1
 
 	db 0 ; coord events
 
-	db 1 ; bg events
-	bg_event 20, 19, BGEVENT_ITEM, Route18UltraBall
+	db 3 ; bg events
+	bg_event 23,  9, BGEVENT_READ, Route18FarmSign
+	bg_event 20, 19, BGEVENT_ITEM, Route18HiddenUltraBall
+	bg_event 19,  8, BGEVENT_ITEM, Route18HiddenPowerHerb
 
 	db 14 ; object events 
 	object_event 25, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperRicky, -1
@@ -344,7 +461,7 @@ Route18_MapEvents:
 	object_event 14,  7, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1
 	object_event 16, 33, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieScript, EVENT_MARIE_GONE_HOME
 	object_event 15, 33, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, EVENT_MARIE_GONE_HOME
-	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Runaway Daughter After
+	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieAfterScript, -1 ; Runaway Daughter After
 	object_event 11,  5, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1 ; Her Miltank After
 	object_event 24,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MariesGrandfatherScript, EVENT_MARIE_GONE_HOME
 	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18LeafStone, EVENT_ROUTE_18_LEAF_STONE

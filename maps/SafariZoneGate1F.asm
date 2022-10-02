@@ -3,10 +3,15 @@
 	const SAFARI_ZONE_GATE_RECEPTIONIST
 
 SafariZoneGate1F_MapScripts:
-	db 0 ; scene scripts
+	db 2 ; scene scripts
+	scene_script .DummyScene ; SCENE_DEFAULT
+	scene_script .DummyScene ; SCENE_FINISHED
 
 	db 0 ; callbacks
-	
+
+.DummyScene:
+	end
+
 SafariReceptionistScript:
 	opentext
 	writetext SafariZoneReceptionistText
@@ -22,7 +27,7 @@ SafariReceptionistScript:
 	waitbutton
 	closetext
 	end
-	
+
 .ExplainZone:
 	writetext ExplainSafariZoneText
 	waitbutton
@@ -63,34 +68,64 @@ SafariReceptionistScript:
 
 SafariGuardScript:
 	opentext
+	checkitem SAFARI_PACK
+	iftrue .ExtendedSafari
 	writetext SafariZoneWelcomeText
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .decline
-	checkmoney YOUR_MONEY, 2000
+.NormalSafari
+	checkmoney YOUR_MONEY, 500
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
-	takemoney YOUR_MONEY, 2000
+	takemoney YOUR_MONEY, 500
+.EnterSafariZone
 	waitsfx
 	special PlaceMoneyTopRight
+	checkitem SAFARI_PACK
+	iftrue .NoExplaination
 	writetext ExplainSafariBalls
+	jump .GotSafariBalls
+.NoExplaination
+	writetext SafariPackBallText
 	waitbutton
+.GotSafariBalls
 	playsound SFX_GOT_SAFARI_BALLS
 	writetext PlayerReceivedSafariBalls
 	wait 8
-	writetext SafariZoneYes
+	writetext HappyHuntingText
 	waitbutton
 	closetext
+	special InitializeSafariZone
+	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
+	setflag ENGINE_SAFARI_GAME_ACTIVE
+	special HealParty
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariEnter
-	playsound SFX_ENTER_DOOR
-	special FadeOutPalettes
-	waitsfx
-	special GiveParkBalls
-	setflag ENGINE_BUG_CONTEST_TIMER
-	special HealParty
-	warpfacing UP, SAFARI_ZONE_AREA_1, 16, 29
+	setscene SCENE_FINISHED
+	warpcheck
 	end
+	
+.ExtendedSafari
+	writetext PlayerHasSafariPackText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .AskRegularSafari
+	checkmoney YOUR_MONEY, 750
+	ifequal HAVE_LESS, .NotEnoughMoney
+	playsound SFX_TRANSACTION
+	takemoney YOUR_MONEY, 750
+	waitsfx
+	special PlaceMoneyTopRight
+	writetext SafariPackBallText
+	special InitializeExtendedSafariZone
+	setflag ENGINE_EXTENDED_SAFARI_GAME
+	jump .EnterSafariZone
+
+.AskRegularSafari:
+	writetext PlayerDeclineExtendedSafariText
+	yesorno
+	iftrue .NormalSafari
 
 .decline
 	writetext SafariZoneNo
@@ -104,8 +139,28 @@ SafariGuardScript:
 	closetext
 	end
 
+AskLeaveSafariZone:
+	turnobject SAFARI_ZONE_GATE_OFFICER, UP
+	opentext
+	writetext AskLeaveSafariZoneText
+	yesorno
+	iftrue .EndSafari
+	writetext ReEnterSafariZoneText
+	waitbutton
+	closetext
+	applymovement PLAYER, SafariReEnter
+	warpcheck
+	end
+
+.EndSafari
+	writetext SafariReturnToCounterText
+	waitbutton
+	closetext
 LeaveSafariZone:
-	clearflag ENGINE_BUG_CONTEST_TIMER
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
+	clearflag ENGINE_SAFARI_GAME_ACTIVE
+	clearflag ENGINE_EXTENDED_SAFARI_GAME
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardEnter
 	applymovement PLAYER, SafariExit
 	applymovement SAFARI_ZONE_GATE_OFFICER, SafariGuardExit
@@ -114,14 +169,15 @@ LeaveSafariZone:
 	waitbutton
 	closetext
 	end
-	
+
 SafariEnter:
 	step UP
 	step UP
 	step UP
+SafariReEnter:
 	step UP
 	step_resume
-	
+
 SafariGuardEnter:
 	step UP
 	step RIGHT
@@ -175,10 +231,9 @@ SafariZoneBallText:
 	text "Here in the SAFARI"
 	line "ZONE, participants"
 	cont "are only allowed"
-	cont "to use SAFARI"
-	cont "BALLs that we"
-	cont "provide."
-	
+	cont "to use our provi-"
+	cont "ded SAFARI BALLs."
+
 	para "These function"
 	line "slightly better"
 	cont "than normal"
@@ -212,15 +267,14 @@ SafariZoneBaitText:
 	cont "special BAIT for"
 	cont "keeping #MON"
 	cont "from running."
-	
-	para "They will be less"
-	line "likely to flee"
-	cont "while they are"
-	cont "eating, but won't"
-	cont "be as easy to"
+
+	para "An eating #MON"
+	line "will stay put for"
+	cont "longer, but will"
+	cont "not be as easy to"
 	cont "capture."
 	done
-	
+
 SafariZoneAnythingElseText:
 	text "Would you like to"
 	line "know more?"
@@ -236,14 +290,13 @@ SafariZoneWelcomeText:
 	text "Welcome to the"
 	line "SAFARI ZONE!"
 
+	para "For ¥500, you can"
+	line "catch any #MON"
+	cont "in the park."
+
 	para "Would you like to"
 	line "participate in our"
 	cont "SAFARI game?"
-	
-	para "You will have 10"
-	line "minutes to capture"
-	cont "any #MON in the"
-	cont "park for ¥2000"
 	done
 
 ExplainSafariBalls:
@@ -265,13 +318,47 @@ ExplainSafariBalls:
 	para "Here are your"
 	line "SAFARI BALLs."
 	done
+
+SafariPackBallText:
+	text "Thank you!"
+
+	para "I don't need to"
+	line "explain the SAFARI"
+	cont "ZONE to you, so"
+	cont "here are your"
+	cont "SAFARI BALLs."
+	done
+
+PlayerHasSafariPackText:
+	text "Welcome to the"
+	line "SAFARI ZONE!"
 	
+	para "I see you have"
+	line "brought a SAFARI"
+	cont "PACK with you"
+	cont "today."
+	
+	para "Would you like to"
+	line "have an extended"
+	cont "SAFARI GAME?"
+	
+	para "It will only cost"
+	line "¥750."
+	done
+
+PlayerDeclineExtendedSafariText:
+	text "Would you rather"
+	line "go on a regular"
+	cont "SAFARI GAME for"
+	cont "¥500?"
+	done
+
 PlayerReceivedSafariBalls:
 	text "<PLAYER> received"
-	line "20 SAFARI BALLs."
+	line "30 SAFARI BALLs."
 	done
-	
-SafariZoneYes:
+
+HappyHuntingText:
 	text "Happy hunting,"
 	line "trainer!"
 	done
@@ -293,7 +380,27 @@ SafariZoneNoMoneyText:
 	para "We can't let you"
 	line "in for free."
 	done
-	
+
+AskLeaveSafariZoneText:
+	text "You still have"
+	line "some time and"
+	cont "SAFARI BALLs left."
+
+	para "Are you ready to"
+	line "end your current"
+	cont "SAFARI GAME?"
+	done
+
+ReEnterSafariZoneText:
+	text "Best of luck out"
+	line "there, trainer!"
+	done
+
+SafariReturnToCounterText:
+	text "Return to the"
+	line "counter, please."
+	done
+
 SafariGoodHaulText:
 	text "I hope you had"
 	line "good luck on your"
@@ -309,14 +416,15 @@ SafariZoneGate1F_MapEvents:
 	db 4 ; warp events
 	warp_event  4,  7, CARNATION_ZOO, 3
 	warp_event  5,  7, CARNATION_ZOO, 3
-	warp_event  8,  0, SAFARI_ZONE_GATE_1F, 3
+	warp_event  8,  0, SAFARI_ZONE_AREA_1,  1
 	warp_event  0,  7, SAFARI_ZONE_GATE_2F, 1
 
-	db 1 ; coord events
-	coord_event  8,  1, -1, LeaveSafariZone
+	db 2 ; coord events
+	coord_event  8,  1, SCENE_FINISHED, AskLeaveSafariZone
+	coord_event  8,  1, SCENE_DEFAULT, LeaveSafariZone
 
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event  8,  3, SPRITE_OFFICER, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariGuardScript, -1
+	object_event  8,  3, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SafariGuardScript, -1
 	object_event  4,  2, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SafariReceptionistScript, -1

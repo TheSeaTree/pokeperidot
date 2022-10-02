@@ -1,7 +1,7 @@
 RooftopSaleMart1:
 	db 6
-	dbw SUN_STONE,		2400
-	dbw FIRE_STONE,		2400
+	dbw SUN_STONE,		2100
+	dbw FIRE_STONE,		2100
 	dbw SILVERPOWDER,	 500
 	dbw PINK_BOW,     	 500
 	dbw SHARP_BEAK,		 500
@@ -10,8 +10,8 @@ RooftopSaleMart1:
 
 RooftopSaleMart2:
 	db 6
-	dbw LEAF_STONE,		2400
-	dbw THUNDERSTONE,	2400
+	dbw LEAF_STONE,		2100
+	dbw THUNDERSTONE,	2100
 	dbw MAGNET,			 500
 	dbw TWISTEDSPOON,	 500
 	dbw POISON_BARB,	 500
@@ -20,8 +20,8 @@ RooftopSaleMart2:
 
 RooftopSaleMart3:
 	db 6
-	dbw MOON_STONE,		2400
-	dbw WATER_STONE,	2400
+	dbw MOON_STONE,		2100
+	dbw WATER_STONE,	2100
 	dbw HARD_STONE,		 500
 	dbw NEVERMELTICE,	 500
 	dbw METAL_COAT,     2000

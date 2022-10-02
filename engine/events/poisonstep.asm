@@ -61,7 +61,7 @@ DoPoisonStep::
 	ld a, MON_STATUS
 	call GetPartyParamLocation
 	ld a, [hl]
-	and 1 << PSN
+	and 1 << PSN | 1 << TOX
 	ret z
 
 ; check if mon is already fainted, return if so

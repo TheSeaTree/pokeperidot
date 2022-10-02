@@ -187,11 +187,12 @@ BillsPCDepositFuncRelease:
 	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
+	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
 	lb bc, 14, 11
-	call PlaceYesNoBox
+	call PlaceNoYesBox
 	ld a, [wMenuCursorY]
 	dec a
 	call ExitMenu
@@ -220,6 +221,7 @@ BillsPCDepositFuncRelease:
 	ld [wMenuCursorY], a
 	ret
 
+
 BillsPCDepositFuncCancel:
 	ld a, $0
 	ld [wJumptableIndex], a
@@ -227,7 +229,7 @@ BillsPCDepositFuncCancel:
 
 BillsPCDepositMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 9, 3, SCREEN_WIDTH - 1, 12
+	menu_coords 9, 4, SCREEN_WIDTH - 1, 13
 	dw .MenuData
 	db 1 ; default option
 
@@ -441,11 +443,12 @@ BillsPC_Withdraw:
 	push af
 	call BillsPC_IsMonAnEgg
 	jr c, .FailedRelease
+	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
 	lb bc, 14, 11
-	call PlaceYesNoBox
+	call PlaceNoYesBox
 	ld a, [wMenuCursorY]
 	dec a
 	call ExitMenu
@@ -466,6 +469,7 @@ BillsPC_Withdraw:
 	ld [wBillsPC_ScrollPosition], a
 	pop af
 	ret
+
 .FailedRelease:
 	ld de, PCString_WhatsUp
 	call BillsPC_PlaceString
@@ -480,7 +484,7 @@ BillsPC_Withdraw:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 9, 3, SCREEN_WIDTH - 1, 12
+	menu_coords 9, 4, SCREEN_WIDTH - 1, 13
 	dw .MenuData
 	db 1 ; default option
 
@@ -694,7 +698,7 @@ _MovePKMNWithoutMail:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 9, 4, SCREEN_WIDTH - 1, 13
+	menu_coords 11, 6, SCREEN_WIDTH - 1, 13
 	dw .MenuData
 	db 1 ; default option
 
@@ -1020,18 +1024,17 @@ BillsPC_BoxName:
 .gotbox
 	dec a
 	ld hl, wBoxNames
-	ld bc, BOX_NAME_LENGTH
+	ld bc, $8
 	call AddNTimes
 	ld e, l
 	ld d, h
-	jr .print
+	hlcoord 1, 2
+	jp PlaceString
 
 .party
 	ld de, .PartyPKMN
-.print
 	hlcoord 2, 2
-	call PlaceString
-	ret
+	jp PlaceString
 
 .PartyPKMN:
 	db "PARTY@"
@@ -1746,7 +1749,7 @@ BillsPC_PlaceShinyIcon:
 	farcall CheckShininess
 	ret nc
 	hlcoord  6, 12
-	ld [hl], "*"
+	ld [hl], $cd
 	ret
 
 BillsPC_CopyMon:
@@ -2358,7 +2361,7 @@ endr
 	ret
 
 GetBoxName:
-	ld bc, BOX_NAME_LENGTH
+	ld bc, $8
 	ld hl, wBoxNames
 	call AddNTimes
 	ld d, h
@@ -2512,7 +2515,7 @@ BillsPC_ChangeBoxSubmenu:
 	ld e, l
 	ld d, h
 	ld hl, wd002
-	ld c, BOX_NAME_LENGTH - 1
+	ld c, $7
 	call InitString
 	ld a, [wMenuSelection]
 	dec a

@@ -2,14 +2,14 @@ BattleCommand_BellyDrum:
 ; bellydrum
 	callfar GetHalfMaxHP
 	callfar CheckUserHasEnoughHP
-	jr nc, .failed
+	jp nc, BattleEffect_ButItFailed
 	
 	push bc
 	call BattleCommand_AttackUp2
 	pop bc
 	ld a, [wAttackMissed]
 	and a
-	jr nz, .failed
+	jp nz, BattleEffect_ButItFailed
 
 	push bc
 	call AnimateCurrentMove
@@ -27,7 +27,3 @@ BattleCommand_BellyDrum:
 
 	ld hl, BellyDrumText
 	jp StdBattleTextBox
-
-.failed
-	call AnimateFailedMove
-	jp PrintButItFailed

@@ -29,7 +29,7 @@ UnownVZChamberWallText:
 	waitbutton
 	closetext
 	end
-	
+
 .UnlockUnown:
 	closetext
 	earthquake 30
@@ -65,8 +65,8 @@ UnownChamberVZ_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  5, 13, ROUTE_5, 2
-	warp_event  6, 13, ROUTE_5, 2
+	warp_event  5, 13, SEA_ROUTE_6, 1
+	warp_event  6, 13, SEA_ROUTE_6, 1
 
 	db 0 ; coord events
 

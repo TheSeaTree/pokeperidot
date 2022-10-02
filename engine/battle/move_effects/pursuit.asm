@@ -11,7 +11,7 @@ BattleCommand_Pursuit:
 	ld a, [hl]
 	and a
 	ret z
-	
+
 	ld a, 1
 	ld [wBattleAnimParam], a 
 

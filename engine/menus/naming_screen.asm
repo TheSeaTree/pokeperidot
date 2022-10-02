@@ -224,12 +224,20 @@ NamingScreen:
 	pop de
 	ld b, SPRITE_ANIM_INDEX_RED_WALK
 	ld a, d
-	cp HIGH(KrisSpriteGFX)
+	cp HIGH(JadeSpriteGFX)
+	jr nz, .check_rival
+	ld a, e
+	cp LOW(JadeSpriteGFX)
+	jr nz, .check_rival
+	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
+.check_rival
+	ld a, d
+	cp HIGH(SilverSpriteGFX)
 	jr nz, .not_kris
 	ld a, e
-	cp LOW(KrisSpriteGFX)
+	cp LOW(SilverSpriteGFX)
 	jr nz, .not_kris
-	ld b, SPRITE_ANIM_INDEX_BLUE_WALK
+	ld b, SPRITE_ANIM_INDEX_PURPLE_WALK
 .not_kris
 	ld a, b
 	depixel 4, 4, 4, 0
@@ -247,7 +255,7 @@ NamingScreen:
 	jr .StoreParams
 
 .StoreBoxIconParams:
-	ld a, BOX_NAME_LENGTH - 2
+	ld a, $7
 	hlcoord 5, 4
 	jr .StoreParams
 

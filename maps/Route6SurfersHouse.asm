@@ -3,9 +3,6 @@ Route6SurfersHouse_MapScripts:
 
 	db 0 ; callbacks
 
-; Use EVENT_LURE_BALLS_FOR_SALE for salesman.
-; Check for a specific caught fish mon? Maybe a rare one?
-
 Route6LureBallGuy:
 	faceplayer
 	opentext
@@ -48,32 +45,33 @@ Route6LureBallGuy:
 .OneBall:
 	checkmoney YOUR_MONEY, 800
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LURE_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 800
 	itemtotext LURE_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 8000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem LURE_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 8000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext LureBallGuyBuy1Text
 	yesorno
 	iffalse .No
+	giveitem LURE_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 800
 	jump .VendItem
 .AskToVend10:
 	writetext LureBallGuyBuy10Text
 	yesorno
 	iffalse .No
+	giveitem LURE_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 8000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 
@@ -94,15 +92,15 @@ Route6LureBallGuy:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 2, SCREEN_WIDTH - 10, TEXTBOX_Y - 2
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "1      ¥800@"
-	db "10    ¥8000@"
+	db "1   ¥800@"
+	db "10 ¥8000@"
 	db "CANCEL@"
 
 LureBallGuyIntro:

@@ -12,7 +12,7 @@ Tilesets::
 ; entries correspond to TILESET_* constants
 	tileset Tileset0
 	tileset TilesetJohto
-	tileset TilesetBattleTowerOutside
+	tileset TilesetPokemonLeagueOutside
 	tileset TilesetHouse
 	tileset TilesetPlayersHouse
 	tileset TilesetPokecenter
@@ -29,7 +29,7 @@ Tilesets::
 	tileset TilesetChampionsRoom
 	tileset TilesetLighthouse
 	tileset TilesetPlayersRoom
-	tileset TilesetPokeComCenter
+	tileset TilesetLostLand
 	tileset TilesetBattleTower
 	tileset TilesetTower
 	tileset TilesetCave
@@ -42,3 +42,9 @@ Tilesets::
 	tileset TilesetMountain
 	tileset TilesetVolcano
 	tileset TilesetRoof
+	tileset TilesetForest
+	tileset TilesetCastle
+	tileset TilesetOcean
+	tileset TilesetPokemonLeague
+	tileset TilesetPokecomCenter
+	tileset TilesetCyberspace

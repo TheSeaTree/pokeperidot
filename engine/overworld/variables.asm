@@ -65,6 +65,10 @@ _GetVarAction::
 	dwb wBlueCardBalance,               RETVAR_ADDR_DE
 	dwb wBuenasPassword,                RETVAR_ADDR_DE
 	dwb wKenjiBreakTimer,               RETVAR_STRBUF2
+	dwb wNumItems,               		RETVAR_ADDR_DE
+	dwb wNumBalls,               		RETVAR_ADDR_DE
+	dwb wBattleSubwaySet,               RETVAR_ADDR_DE
+	dwb wMushroomQuantity,              RETVAR_ADDR_DE
 	dwb NULL,                           RETVAR_STRBUF2
 
 .CountCaughtMons:

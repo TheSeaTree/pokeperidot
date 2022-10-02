@@ -8,8 +8,9 @@ Route20HeavyBallGuy:
 	opentext
 	checkevent EVENT_HEAVY_BALLS_FOR_SALE
 	iftrue .SellBalls
-	writetext LureBallGuyIntro
+	writetext HeavyBallGuyIntro
 	waitbutton
+	setevent EVENT_HEAVY_BALLS_FOR_SALE
 .SellBalls
 	writetext HeavyBallGuySellText
 	jump .Start
@@ -30,32 +31,33 @@ Route20HeavyBallGuy:
 .OneBall:
 	checkmoney YOUR_MONEY, 600
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem HEAVY_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 600
 	itemtotext HEAVY_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
 	checkmoney YOUR_MONEY, 6000
 	ifequal HAVE_LESS, .NotEnoughMoney
-	giveitem HEAVY_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 6000
 	jump .AskToVend10
 	
 .AskToVend1:
 	writetext HeavyBallGuyBuy1Text
 	yesorno
 	iffalse .No
+	giveitem HEAVY_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 600
 	jump .VendItem
 .AskToVend10:
 	writetext HeavyBallGuyBuy10Text
 	yesorno
 	iffalse .No
+	giveitem HEAVY_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 6000
 .VendItem
 	playsound SFX_TRANSACTION
 	waitsfx
+	special PlaceMoneyTopRight
 	itemnotify
 	jump .PurchaseMore
 
@@ -76,15 +78,15 @@ Route20HeavyBallGuy:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 0, 2, SCREEN_WIDTH - 10, TEXTBOX_Y - 2
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db "1      ¥600@"
-	db "10    ¥6000@"
+	db "1   ¥600@"
+	db "10 ¥6000@"
 	db "CANCEL@"
 
 HeavyBallGuyIntro:
@@ -92,11 +94,11 @@ HeavyBallGuyIntro:
 	line "here? Did SNORLAX"
 	cont "move out of the"
 	cont "way?"
-	
+
 	para "Darn! I wanted to"
 	line "test out my HEAVY"
 	cont "BALL against it!"
-	
+
 	para "Well, I have no"
 	line "need for these any"
 	cont "more, but they"

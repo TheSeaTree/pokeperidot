@@ -37,9 +37,9 @@ FindNest:
 	and a
 	jr nz, .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call .FindGrass
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	call .FindWater
 	call .RoamMon1
 	call .RoamMon2
@@ -48,9 +48,9 @@ FindNest:
 
 .kanto
 	decoord 0, 0
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call .FindGrass
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	jp .FindWater
 
 .FindGrass:
@@ -211,7 +211,6 @@ TryWildEncounter::
 
 .EncounterRate:
 	call GetMapEncounterRate
-;	call ApplyMusicEffectOnEncounterRate
 	call ApplyCleanseTagEffectOnEncounterRate
 	call Random
 	cp b
@@ -228,23 +227,6 @@ GetMapEncounterRate:
 	ld b, 0
 	add hl, bc
 	ld b, [hl]
-	ret
-
-ApplyMusicEffectOnEncounterRate::
-; Pokemon March and Ruins of Alph signal double encounter rate.
-; Pokemon Lullaby halves encounter rate.
-	ld a, [wMapMusic]
-	cp MUSIC_POKEMON_MARCH
-	jr z, .double
-	cp MUSIC_RUINS_OF_ALPH_RADIO
-	jr z, .double
-	cp MUSIC_POKEMON_LULLABY
-	ret nz
-	srl b
-	ret
-
-.double
-	sla b
 	ret
 
 ApplyCleanseTagEffectOnEncounterRate::
@@ -398,26 +380,26 @@ LoadWildMonDataPointer:
 	jr z, _WaterWildmonLookup
 
 _GrassWildmonLookup:
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	ret c
-	ld hl, JohtoGrassWildMons
-	ld de, JohtoGrassWildMons
-	call _JohtoWildmonCheck
+	ld hl, GrassWildMons
+	ld de, GrassWildMons
+	call _WildmonCheck
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
 _WaterWildmonLookup:
-	ld hl, JohtoWaterWildMons
+	ld hl, WaterWildMons
 	ld bc, WATER_WILDDATA_LENGTH
 	ret c
-	ld hl, JohtoWaterWildMons
-	ld de, JohtoWaterWildMons
-	call _JohtoWildmonCheck
+	ld hl, WaterWildMons
+	ld de, WaterWildMons
+	call _WildmonCheck
 	ld bc, WATER_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
-_JohtoWildmonCheck:
+_WildmonCheck:
 	call IsInJohto
 	and a
 	ret z
@@ -473,13 +455,13 @@ InitRoamArticuno:
 	ld [wRoamMon1Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon1Level], a
 
 ; articuno starting map
-	ld a, GROUP_ROUTE_4
+	ld a, GROUP_PALEROCK_MOUNTAIN_OUTSIDE
 	ld [wRoamMon1MapGroup], a
-	ld a, MAP_ROUTE_4
+	ld a, MAP_PALEROCK_MOUNTAIN_OUTSIDE
 	ld [wRoamMon1MapNumber], a
 
 ; hp
@@ -496,13 +478,13 @@ InitRoamZapdos:
 	ld [wRoamMon2Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon2Level], a
 
 ; zapdos starting map
-	ld a, GROUP_ROUTE_3
+	ld a, GROUP_RUGOSA_CITY
 	ld [wRoamMon2MapGroup], a
-	ld a, MAP_ROUTE_3
+	ld a, MAP_RUGOSA_CITY
 	ld [wRoamMon2MapNumber], a
 
 ; hp
@@ -519,13 +501,13 @@ InitRoamMoltres:
 	ld [wRoamMon3Species], a
 
 ; level
-	ld a, 40
+	ld a, 45
 	ld [wRoamMon3Level], a
 
 ; moltres starting map
-	ld a, GROUP_ROUTE_12
+	ld a, GROUP_ROUTE_22
 	ld [wRoamMon3MapGroup], a
-	ld a, MAP_ROUTE_12
+	ld a, MAP_ROUTE_22
 	ld [wRoamMon3MapNumber], a
 
 ; hp
@@ -539,6 +521,10 @@ CheckEncounterRoamMon:
 ; Don't trigger an encounter if we're on water.
 	call CheckOnWater
 	jr z, .DontEncounterRoamMon
+; Don't trigger an encounter if the wishing well is active.
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_FORCE_SHINY_ENCOUNTERS_F, [hl]
+	jr nz, .DontEncounterRoamMon
 ; Load the current map group and number to de
 	call CopyCurrMapDE
 ; Randomly select a beast.
@@ -780,11 +766,11 @@ RandomUnseenWildMon:
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .GetGrassmon
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call LookUpWildmonsForMapDE
 	jr nc, .done
 
@@ -852,11 +838,11 @@ RandomPhoneWildMon:
 	farcall GetCallerLocation
 	ld d, b
 	ld e, c
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	ld bc, GRASS_WILDDATA_LENGTH
 	call LookUpWildmonsForMapDE
 	jr c, .ok
-	ld hl, JohtoGrassWildMons
+	ld hl, GrassWildMons
 	call LookUpWildmonsForMapDE
 
 .ok
@@ -888,87 +874,7 @@ RandomPhoneWildMon:
 	jp CopyBytes
 
 RandomPhoneMon:
-; Get a random monster owned by the trainer who's calling.
-	farcall GetCallerLocation
-	ld hl, TrainerGroups
-	ld a, d
-	dec a
-	ld c, a
-	ld b, 0
-	add hl, bc
-	add hl, bc
-	ld a, BANK(TrainerGroups)
-	call GetFarHalfword
+	ret
 
-.skip_trainer
-	dec e
-	jr z, .skipped
-.skip
-	ld a, BANK(Trainers)
-	call GetFarByte
-	inc hl
-	cp -1
-	jr nz, .skip
-	jr .skip_trainer
-.skipped
-
-.skip_name
-	ld a, BANK(Trainers)
-	call GetFarByte
-	inc hl
-	cp "@"
-	jr nz, .skip_name
-
-	ld a, BANK(Trainers)
-	call GetFarByte
-	inc hl
-	ld bc, 2 ; level, species
-	cp TRAINERTYPE_NORMAL
-	jr z, .got_mon_length
-	ld bc, 2 + NUM_MOVES ; level, species, moves
-	cp TRAINERTYPE_MOVES
-	jr z, .got_mon_length
-	ld bc, 2 + 1 ; level, species, item
-	cp TRAINERTYPE_ITEM
-	jr z, .got_mon_length
-	; TRAINERTYPE_ITEM_MOVES
-	ld bc, 2 + 1 + NUM_MOVES ; level, species, item, moves
-.got_mon_length
-
-	ld e, 0
-	push hl
-.count_mon
-	inc e
-	add hl, bc
-	ld a, BANK(Trainers)
-	call GetFarByte
-	cp -1
-	jr nz, .count_mon
-	pop hl
-
-.rand
-	call Random
-	maskbits PARTY_LENGTH
-	cp e
-	jr nc, .rand
-
-	inc a
-.get_mon
-	dec a
-	jr z, .got_mon
-	add hl, bc
-	jr .get_mon
-.got_mon
-
-	inc hl ; species
-	ld a, BANK(Trainers)
-	call GetFarByte
-	ld [wNamedObjectIndexBuffer], a
-	call GetPokemonName
-	ld hl, wStringBuffer1
-	ld de, wStringBuffer4
-	ld bc, MON_NAME_LENGTH
-	jp CopyBytes
-
-INCLUDE "data/wild/johto_grass.asm"
-INCLUDE "data/wild/johto_water.asm"
+INCLUDE "data/wild/grass.asm"
+INCLUDE "data/wild/water.asm"

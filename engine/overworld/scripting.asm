@@ -2133,7 +2133,7 @@ Script_checkmoney:
 	call LoadMoneyAmountToMem
 	farcall CompareMoney
 
-CompareMoneyAction:
+CompareMoneyAction::
 	jr c, .less
 	jr z, .exact
 	ld a, HAVE_MORE

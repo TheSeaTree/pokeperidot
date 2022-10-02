@@ -66,7 +66,10 @@ TrainerBikerFlynn:
 	writetext BikerFlynnAfterText
 	waitbutton
 	closetext
-	end	
+	end
+	
+Route21ItemBush:
+	itembush FRUITTREE_ROUTE_21
 
 Route21BikerText:
 	text "Bet you'd like to"
@@ -82,9 +85,9 @@ Route21BikerText:
 Route21Burglar1Text:
 	text "When are they"
 	line "supposed to get"
-	cont "back from HELIO"
+	cont "back from HEPATICA"
 	cont "TOWN?"
-	
+
 	para "They've been up"
 	line "there for such a"
 	cont "long time."
@@ -143,6 +146,7 @@ Route21Burglar3NoticeText:
 	
 BikerFlynnText:
 	text "Hey you!"
+	line "Freeze!"
 	
 	para "I'm standing guard"
 	line "by this house for"
@@ -162,25 +166,26 @@ BikerFlynnAfterText:
 	
 	para "I will never say"
 	line "what I'm guarding"
-	cont "this house for."
+	cont "this house for!"
 	done
 
 Route21_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 47,  2, ROUTE_21_ECRUTEAK_GATE, 1
-	warp_event 47,  3, ROUTE_21_ECRUTEAK_GATE, 2
+	warp_event 47,  2, ROUTE_21_STAGHORN_GATE, 1
+	warp_event 47,  3, ROUTE_21_STAGHORN_GATE, 2
 	warp_event 13, 15, BURGLAR_HIDEOUT_1F, 1
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 31, 11, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21Biker, EVENT_FLUTE_HIDEOUT_OPEN
 	object_event 18, 16, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerBikerFlynn, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 34,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars, EVENT_CLEARED_CHURCH
 	object_event 33,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars, EVENT_CLEARED_CHURCH
 	object_event 38,  3, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route21Burglars2, EVENT_FLUTE_HIDEOUT_OPEN
 	object_event 38,  4, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route21Burglars2, EVENT_FLUTE_HIDEOUT_OPEN
+	object_event  4, 12, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route21ItemBush, -1

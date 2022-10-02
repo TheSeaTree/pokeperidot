@@ -69,55 +69,6 @@ ContinueMenu:
 	db OPTION
 	db -1
 
-MobileMysteryMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-MobileMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-MobileStudiumMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-MysteryMobileStudiumMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-MysteryMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-MysteryStudiumMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
-StudiumMenu:
-	db 3
-	db CONTINUE
-	db NEW_GAME
-	db OPTION
-	db -1
-
 MainMenu_GetWhichMenu:
 	nop
 	nop

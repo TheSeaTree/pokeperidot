@@ -11,11 +11,9 @@ Route11CurseHouse_MapScripts:
 .Medium:
 	writebyte CURSTRAW
 	special FindPartyMonThatSpeciesYourTrainerID
-	iffalse .NoAppear
-	return
-
-.NoAppear:
+	iftrue .DoNothing
 	moveobject ROUTE11CURSEHOUSE_MEDIUM,  -3, -3
+.DoNothing:
 	return
 	
 TrainerMediumAnnabel:
@@ -85,4 +83,4 @@ Route11CurseHouse_MapEvents:
 
 	db 2 ; object events
 	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 1, TrainerMediumAnnabel, EVENT_HIDE_MEDIUM_ANNABELLE
-	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, TMCurse, EVENT_GOT_TM_CURSE
+	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, TMCurse, EVENT_GOT_TM_CURSE

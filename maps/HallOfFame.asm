@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const HALLOFFAME_LANCE
+	const HALLOFFAME_CHAMPION
 
 HallOfFame_MapScripts:
 	db 2 ; scene scripts
@@ -16,26 +16,103 @@ HallOfFame_MapScripts:
 	end
 
 .EnterHallOfFameScript:
-	follow HALLOFFAME_LANCE, PLAYER
-	applymovement HALLOFFAME_LANCE, HallOfFame_WalkUpWithLance
-	stopfollow
-	turnobject PLAYER, RIGHT
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	
+	turnobject HALLOFFAME_CHAMPION, DOWN
 	opentext
 	writetext HallOfFame_LanceText
 	waitbutton
 	closetext
-	turnobject HALLOFFAME_LANCE, UP
+
+	scall HallOfFame_Approach
+
+	writetext HallOfFame_JosephRegisterText
+	clearevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	jump .DoRegistration
+.Postgame
+	clearevent EVENT_PLAYERS_HOUSE_MOM_1
+	scall HallOfFame_Approach
+
+	writetext HallOfFame_EmilyText
+.DoRegistration
+	waitbutton
+	closetext
+	turnobject HALLOFFAME_CHAMPION, UP
 	applymovement PLAYER, HallOfFame_SlowlyApproachMachine
+	turnobject HALLOFFAME_CHAMPION, RIGHT
+	scall RespawnLegendaries
 	setscene SCENE_FINISHED
 	pause 15
 	writebyte HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
 	setevent EVENT_BEAT_ELITE_FOUR
-	setevent EVENT_TELEPORT_GUY
-	setevent EVENT_RIVAL_SPROUT_TOWER
-	clearevent EVENT_RED_IN_MT_SILVER
+	setmapscene PLAYERS_HOUSE_1F, SCENE_PLAYERSHOUSE1F_POSTGAME
+;	setevent EVENT_TELEPORT_GUY
+;	setevent EVENT_RIVAL_SPROUT_TOWER
+;	clearevent EVENT_RED_IN_MT_SILVER
+	clearevent EVENT_HO_OH_CASTLE_HIDDEN_SACRED_ASH
+	clearevent EVENT_MEWTWO_LAB_HIDDEN_BERSERK_GENE
+	setevent EVENT_PLAYERS_HOUSE_MOM_2
 	special HealParty
 	halloffame
+	end
+
+HallOfFame_Approach:
+	follow HALLOFFAME_CHAMPION, PLAYER
+	applymovement HALLOFFAME_CHAMPION, HallOfFame_WalkUpWithLance
+	stopfollow
+	turnobject PLAYER, RIGHT
+	opentext
+
+RespawnLegendaries:
+	checkevent EVENT_CAUGHT_RAIKOU
+	iftrue .CheckSuicune
+	clearevent EVENT_HIDE_RAIKOU
+.CheckSuicune
+	checkevent EVENT_CAUGHT_SUICUNE
+	iftrue .CheckEntei
+	clearevent EVENT_HIDE_SUICUNE
+.CheckEntei
+	checkevent EVENT_CAUGHT_ENTEI
+	iftrue .CheckLugiaBoss
+	clearevent EVENT_HIDE_ENTEI
+.CheckLugiaBoss
+	checkevent EVENT_ROAMING_BIRDS
+	iffalse .CheckHoOh
+.CheckArticuno
+	checkevent EVENT_CAUGHT_ARTICUNO
+	iftrue .CheckZapdos
+	special InitRoamArticuno
+.CheckZapdos
+	checkevent EVENT_CAUGHT_ZAPDOS
+	iftrue .CheckMoltres
+	special InitRoamZapdos
+.CheckMoltres
+	checkevent EVENT_CAUGHT_MOLTRES
+	iftrue .CheckHoOh
+	special InitRoamMoltres
+.CheckHoOh
+	checkevent EVENT_CAUGHT_HO_OH
+	iftrue .CheckLugia
+	clearevent EVENT_FOUGHT_HO_OH
+.CheckLugia
+	checkevent EVENT_CAUGHT_LUGIA
+	iftrue .CheckMewtwo
+	clearevent EVENT_FOUGHT_LUGIA
+.CheckMewtwo
+	checkevent EVENT_CAUGHT_MEWTWO
+	iftrue .CheckMew
+	clearevent EVENT_FOUGHT_MEWTWO
+.CheckMew
+	checkevent EVENT_CAUGHT_MEW
+	iftrue .CheckCelebi
+	clearevent EVENT_FOUGHT_MEW
+.CheckCelebi
+	checkevent EVENT_CAUGHT_CELEBI
+	iftrue .Done
+	clearevent EVENT_FOUGHT_CELEBI
+.Done
 	end
 
 HallOfFame_WalkUpWithLance:
@@ -56,61 +133,67 @@ HallOfFame_SlowlyApproachMachine:
 	step_end
 
 HallOfFame_LanceText:
-	text "LANCE: It's been a"
-	line "long time since I"
-	cont "last came here."
+	text "JOSEPH: This is"
+	line "the HALL OF FAME."
 
-	para "This is where we"
-	line "honor the LEAGUE"
+	para "In this room, a"
+	line "record of each"
+	cont "CHAMPION and their"
+	cont "#MON is created"
+	cont "to celebrate their"
+	cont "accomplishments."
 
-	para "CHAMPIONS for all"
-	line "eternity."
+	para "Please, follow me"
+	line "to the machine."
+	done
 
-	para "Their courageous"
-	line "#MON are also"
-	cont "inducted."
+HallOfFame_JosephRegisterText:
+	text "Allow me to congr-"
+	line "atulate you, new"
+	cont "CHAMPION. For your"
+	cont "triumph over me"
+	cont "on this day."
 
-	para "Here today, we"
-	line "witnessed the rise"
+	para "You and your"
+	line "#MON will never"
+	cont "be forgotten!"
+	done
 
-	para "of a new LEAGUE"
-	line "CHAMPION--a"
+HallOfFame_EmilyText:
+	text "You already know"
+	line "how this works, so"
+	cont "I won't bore you"
+	cont "with the details."
 
-	para "trainer who feels"
-	line "compassion for,"
+	para "Let's record you"
+	line "and your #MON"
+	cont "for all to"
+	cont "remember."
 
-	para "and trust toward,"
-	line "all #MON."
+	para "Congratulations"
+	line "once again!"
 
-	para "A trainer who"
-	line "succeeded through"
+	para "Oh, <PLAYER>!"
 
-	para "perseverance and"
-	line "determination."
+	para "…Could you do me a"
+	line "favor?"
 
-	para "The new LEAGUE"
-	line "CHAMPION who has"
-
-	para "all the makings"
-	line "of greatness!"
-
-	para "<PLAY_G>, allow me"
-	line "to register you"
-
-	para "and your partners"
-	line "as CHAMPIONS!"
+	para "Promise me this"
+	line "won't be the last"
+	cont "time either of us"
+	cont "see this room!"
 	done
 
 HallOfFame_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  4, 13, LANCES_ROOM, 3
-	warp_event  5, 13, LANCES_ROOM, 4
+	warp_event  4, 13, JOSEPHS_ROOM, 3
+	warp_event  5, 13, JOSEPHS_ROOM, 4
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  4, 12, SPRITE_LANCE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  4, 12, SPRITE_HOF_CHAMPION, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

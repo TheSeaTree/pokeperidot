@@ -8,6 +8,9 @@ PaintersForest_MapScripts:
 PaintersForestBeautyScript:
 	jumptextfaceplayer PaintersForestBeautyText
 
+PaintersForestHiddenPalette:
+	hiddenitem PALETTE, EVENT_PAINTERS_FOREST_HIDDEN_PALETTE
+
 PaintersForestFruitTree:
 	fruittree FRUITTREE_PAINTERS_FOREST
 	
@@ -33,7 +36,8 @@ PaintersForest_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 14,  4, BGEVENT_ITEM, PaintersForestHiddenPalette
 
 	db 2 ; object events
 	object_event  5, 13, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PaintersForestBeautyScript, -1

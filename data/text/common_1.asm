@@ -47,8 +47,18 @@ UnknownText_0x1bc089::
 	line "make?"
 	done
 
+MushroomManText_WhichMushroom::
+	text "Which MUSHROOM do"
+	line "you want to sell?"
+	done
+
+MushroomManText_HowMany::
+	text "How many would you"
+	line "like to sell?"
+	done
+
 UnknownText_0x1bc0a2::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "recovered @"
 	deciram wCurHPAnimDeltaHP, 2, 3
@@ -56,49 +66,49 @@ UnknownText_0x1bc0a2::
 	done
 
 UnknownText_0x1bc0bb::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "cured of poison."
 	done
 
 UnknownText_0x1bc0d2::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "rid of paralysis."
 	done
 
 UnknownText_0x1bc0ea::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "burn was healed."
 	done
 
 UnknownText_0x1bc101::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
-	line "was defrosted."
+	line "thawed out."
 	done
 
 UnknownText_0x1bc115::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "woke up."
 	done
 
 UnknownText_0x1bc123::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text "'s"
 	line "health returned."
 	done
 
 UnknownText_0x1bc13a::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text_start
 	line "is revitalized."
 	done
 
 UnknownText_0x1bc14f::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text " grew to"
 	line "level @"
 	deciram wCurPartyLevel, 1, 3
@@ -108,7 +118,7 @@ UnknownText_0x1bc14f::
 	db "@@"
 
 UnknownText_0x1bc16e::
-	text_from_ram wStringBuffer1
+	text_from_ram wStringBuffer3
 	text " came"
 	line "to its senses."
 	done
@@ -294,6 +304,12 @@ UnknownText_0x1bc546::
 
 UnknownText_0x1bc55d::
 	text "It's the TOWN MAP."
+	done
+
+DiplomaDecoText::
+	text "It's a DIPLOMA"
+	line "awarded for compl-"
+	cont "eting the #DEX!"
 	done
 
 UnknownText_0x1bc570::
@@ -1267,10 +1283,10 @@ UnknownText_0x1bd2bc::
 	done
 
 UnknownText_0x1bd2ca::
-	text "ANNOUNCER: DING"
-	line "DONG!"
+	text "PA: DING DONG!"
 
-	para "Time's up!"
+	para "Time's up, trainer"
+	line "<PLAYER>!"
 	
 	para "Please return any"
 	line "SAFARI BALLs you"
@@ -1279,12 +1295,21 @@ UnknownText_0x1bd2ca::
 	done
 
 UnknownText_0x1bd2e7::
-	text "ANNOUNCER: You are"
-	line "out of SAFARI"
-	cont "BALLS."
+	text "PA: You are out of"
+	line "SAFARI BALLs."
 	
 	para "Please return to"
 	line "the main gate."
+	done
+
+FireGymUnbearableHeatText::
+	text "The heat became"
+	line "too much to bear…"
+	done
+
+FireGymPassOutText::
+	text "<PLAYER> passed"
+	line "out…"
 	done
 
 UnknownText_0x1bd308::
@@ -1526,7 +1551,7 @@ TradeText_Intro5::
 
 	para "Unfortunately, the"
 	line "one I caught was"
-	cont "blue."
+	cont "blue…"
 	
 	para "Would you like to"
 	line "trade a pink DITTO"

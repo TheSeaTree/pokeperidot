@@ -24,6 +24,7 @@ OpenMartDialog::
 	dw RooftopSale
 	dw Robbed
 	dw Drinks
+	dw BPShop
 
 MartDialog:
 	ld a, 0
@@ -52,14 +53,14 @@ BargainShop:
 	ld hl, Text_BargainShop_Intro
 	call MartTextBox
 	call BuyMenu
-	ld hl, wBargainShopFlags
-	ld a, [hli]
-	or [hl]
-	jr z, .skip_set
-	ld hl, wDailyFlags1
-	set DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F, [hl]
+;	ld hl, wBargainShopFlags
+;	ld a, [hli]
+;	or [hl]
+;	jr z, .skip_set
+;	ld hl, wDailyFlags1
+;	set DAILYFLAGS1_GOLDENROD_UNDERGROUND_BARGAIN_F, [hl]
 
-.skip_set
+;.skip_set
 	ld hl, Text_BargainShop_ComeAgain
 	call MartTextBox
 	ret
@@ -93,6 +94,30 @@ Drinks:
 	ld hl, Text_BargainShop_ComeAgain
 	call MartTextBox
 	ret
+
+BPShop:
+	ld b, BANK(BattleSubwayStatShopData)
+	ld de, BattleSubwayStatShopData
+	; Hard coded. Selects a different mart inventory depending on what tile the player stands on.
+	ld a, [wXCoord]
+	cp 8
+	jr c, .ok
+
+	ld b, BANK(BattleSubwayBattleShopData)
+	ld de, BattleSubwayBattleShopData
+
+.ok
+	call LoadMartPointer
+	call ReadMart
+	call LoadStandardMenuHeader
+	ld hl, Text_Mart_SubwayIntro
+	call MartTextBox
+	call SubwayBuyMenu
+	ld hl, Text_Mart_ComeAgain
+	call MartTextBox
+	ret
+	
+INCLUDE "data/items/subway_shop.asm"
 
 RooftopSale:
 	ld b, BANK(RooftopSaleMart1)
@@ -188,8 +213,17 @@ StandardMart:
 
 .HowMayIHelpYou:
 	call LoadStandardMenuHeader
+; Print no introduction text if in the battle item shop.
+	ld a, [wMapGroup]
+	cp GROUP_PECTINIA_BATTLE_ITEM_STORE
+	jr nz, .PrintText
+	ld a, [wMapNumber]
+	cp MAP_PECTINIA_BATTLE_ITEM_STORE
+	jr z, .NoText
+.PrintText
 	ld hl, Text_Mart_HowMayIHelpYou
 	call PrintText
+.NoText
 	ld a, STANDARDMART_TOPMENU
 	ret
 
@@ -373,6 +407,19 @@ BuyMenu:
 	call CloseSubmenu
 	ret
 
+SubwayBuyMenu:
+	call FadeToMenu
+	farcall BlankScreen
+	xor a
+	ld [wMenuScrollPositionBackup], a
+	ld a, 1
+	ld [wMenuCursorBufferBackup], a
+.loop
+	call SubwayBuyMenuLoop ; menu loop
+	jr nc, .loop
+	call CloseSubmenu
+	ret
+
 LoadBuyMenuText:
 ; load text from a nested table
 ; which table is in wEngineBuffer1
@@ -403,8 +450,6 @@ MartAskPurchaseQuantity:
 	ld a, [hl]
 	and a
 	jp z, StandardMartAskPurchaseQuantity
-	cp 1
-	jp z, BargainShopAskPurchaseQuantity
 	jp RooftopSaleAskPurchaseQuantity
 
 .PurchaseQuantityOfTM:
@@ -463,6 +508,7 @@ GetMartDialogGroup:
 	dwb .StandardMartPointers, 2
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 0
+	dwb .SubwayMartPointers, 1
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -481,7 +527,7 @@ GetMartDialogGroup:
 	dw BuyMenuLoop
 
 .BargainShopPointers:
-	dw BuyMenuLoop
+	dw Text_Mart_HowMany
 	dw Text_BargainShop_CostsThisMuch
 	dw Text_BargainShop_InsufficientFunds
 	dw Text_BargainShop_BagFull
@@ -495,6 +541,14 @@ GetMartDialogGroup:
 	dw Text_Pharmacy_BagFull
 	dw Text_Pharmacy_HereYouGo
 	dw BuyMenuLoop
+
+.SubwayMartPointers:
+	dw Text_Pharmacy_HowMany
+	dw Text_Subway_CostsThisMuch
+	dw Text_Subway_InsufficientFunds
+	dw Text_Pharmacy_BagFull
+	dw Text_Pharmacy_HereYouGo
+	dw SubwayBuyMenuLoop
 
 BuyMenuLoop:
 	farcall PlaceMoneyTopRight
@@ -567,6 +621,78 @@ BuyMenuLoop:
 	and a
 	ret
 
+SubwayBuyMenuLoop:
+	farcall DisplayCoinCaseBalance
+	call UpdateSprites
+	ld hl, MenuHeader_BuySubway
+	call CopyMenuHeader
+	ld a, [wMenuCursorBufferBackup]
+	ld [wMenuCursorBuffer], a
+	ld a, [wMenuScrollPositionBackup]
+	ld [wMenuScrollPosition], a
+	call ScrollingMenu
+	ld a, [wMenuScrollPosition]
+	ld [wMenuScrollPositionBackup], a
+	ld a, [wMenuCursorY]
+	ld [wMenuCursorBufferBackup], a
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .set_carry
+
+	call SubwayAskPurchaseQuantity
+	jr c, .cancel
+	call MartConfirmPurchase
+	jr c, .cancel
+	call CompareCoins
+	jr c, .insufficient_funds
+	ld hl, wNumItems
+	call ReceiveItem
+	jr nc, .insufficient_bag_space
+	call PlayTransactionSound
+	ld de, wCoins
+	ld bc, hMoneyTemp + 1
+	ld a, 2
+	farcall SubtractFunds
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call JoyWaitAorB
+
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+
+.set_carry
+	scf
+	ret
+
+.insufficient_bag_space
+	ld a, MARTTEXT_BAG_FULL
+	call LoadBuyMenuText
+	call JoyWaitAorB
+	and a
+	ret
+
+.insufficient_funds
+	ld a, MARTTEXT_NOT_ENOUGH_MONEY
+	call LoadBuyMenuText
+	call JoyWaitAorB
+	and a
+	ret
+
+CompareCoins:
+	ldh a, [hMoneyTemp + 1]
+	ld d, a
+	ld a, [wCoins]
+	cp d
+	ret nz
+	ldh a, [hMoneyTemp + 2]
+	ld d, a
+	ld a, [wCoins + 1]
+	cp d
+	ret
+
 StandardMartAskPurchaseQuantity:
 	ld a, 99
 	ld [wItemQuantityBuffer], a
@@ -581,46 +707,6 @@ MartConfirmPurchase:
 	ld a, MARTTEXT_COSTS_THIS_MUCH
 	call LoadBuyMenuText
 	call YesNoBox
-	ret
-
-BargainShopAskPurchaseQuantity:
-	ld a, 1
-	ld [wItemQuantityChangeBuffer], a
-	ld a, [wMartItemID]
-	ld e, a
-	ld d, 0
-	ld b, CHECK_FLAG
-	ld hl, wBargainShopFlags
-	call FlagAction
-	ld a, c
-	and a
-	jr nz, .SoldOut
-	ld a, [wMartItemID]
-	ld e, a
-	ld d, 0
-	ld hl, wMartPointer
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	inc hl
-	add hl, de
-	add hl, de
-	add hl, de
-	inc hl
-	ld a, [hli]
-	ldh [hMoneyTemp + 2], a
-	ld a, [hl]
-	ldh [hMoneyTemp + 1], a
-	xor a
-	ldh [hMoneyTemp], a
-	and a
-	ret
-
-.SoldOut:
-	ld a, MARTTEXT_SOLD_OUT
-	call LoadBuyMenuText
-	call JoyWaitAorB
-	scf
 	ret
 
 RooftopSaleAskPurchaseQuantity:
@@ -650,6 +736,53 @@ RooftopSaleAskPurchaseQuantity:
 	inc hl
 	ld d, [hl]
 	ret
+
+SubwayAskPurchaseQuantity:
+	ld a, [wCurItem]
+	cp TM01
+	jp c, .HowMany
+	push de
+	ld hl, wNumItems
+	call CheckItem
+	pop de
+	jp nc, MartAskPurchaseQuantity.PurchaseQuantityOfTM
+	ld hl, .AlreadyHaveTMText
+	call PrintText
+	call JoyWaitAorB
+	scf
+	ret
+
+.HowMany
+	ld a, MARTTEXT_HOW_MANY
+	call LoadBuyMenuText
+	call .GetSalePrice
+	ld a, 99
+	ld [wItemQuantityBuffer], a
+	farcall Subway_SelectQuantityToBuy
+	call ExitMenu
+	ret
+	
+.GetSalePrice:
+	ld a, [wMartItemID]
+	ld e, a
+	ld d, 0
+	ld hl, wMartPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	inc hl
+	add hl, de
+	add hl, de
+	add hl, de
+	inc hl
+	ld e, [hl]
+	inc hl
+	ld d, [hl]
+	ret
+
+.AlreadyHaveTMText:
+	text_jump AlreadyHaveTMText
+	db "@"
 
 Text_Mart_HowMany:
 	; How many?
@@ -694,6 +827,43 @@ MenuHeader_Buy:
 	call PrintBCDNumber
 	ret
 
+MenuHeader_BuySubway:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 3, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; flags
+	db 4, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMenuItemName
+	dba .PrintBCDPrices
+	dba UpdateItemDescription
+
+.PrintBCDPrices:
+	ld a, [wScrollingMenuCursorPosition]
+	ld c, a
+	ld b, 0
+	ld hl, wMartItem1BCD
+	add hl, bc
+	add hl, bc
+	add hl, bc
+	push de
+	ld d, h
+	ld e, l
+	pop hl
+	ld bc, SCREEN_WIDTH
+	add hl, bc
+	ld c, PRINTNUM_LEADINGZEROS | 3
+	call PrintBCDNumber
+	ld [hl], $c8
+	inc hl
+	ld [hl], $c9
+	inc hl
+	ret
+
 Text_HerbShop_Intro:
 	; Hello, dear. I sell inexpensive herbal medicine. They're good, but a trifle bitter. Your #MON may not like them. Hehehehe…
 	text_jump UnknownText_0x1c4c28
@@ -730,7 +900,7 @@ Text_HerbShop_ComeAgain:
 	db "@"
 
 Text_BargainShop_Intro:
-	; Hiya! Care to see some bargains? I sell rare items that nobody else carries--but only one of each item.
+	; I sell rare items that nobody else carries--but only one of each item.
 	text_jump UnknownText_0x1c4d47
 	db "@"
 
@@ -799,6 +969,14 @@ Text_Pharmacist_ComeAgain:
 	text_jump UnknownText_0x1c4ef6
 	db "@"
 
+Text_Subway_CostsThisMuch:
+	text_jump Subway_CostsThisMuch_Text
+	db "@"
+	
+Text_Subway_InsufficientFunds:
+	text_jump Subway_InsufficientFunds_Text
+	db "@"
+
 SellMenu:
 	call DisableSpriteUpdates
 	farcall DepositSellInitPackBuffers
@@ -846,10 +1024,15 @@ SellMenu:
 	ret
 
 .try_sell
+	farcall _CheckSellableItem
+	ld a, [wItemAttributeParamBuffer]
+	and a
+	jr nz, .cant_sell
 	farcall _CheckTossableItem
 	ld a, [wItemAttributeParamBuffer]
 	and a
 	jr z, .okay_to_sell
+.cant_sell
 	ld hl, TextMart_CantBuyFromYou
 	call PrintText
 	and a
@@ -914,6 +1097,10 @@ Text_Mart_RooftopIntro:
 	
 Text_Mart_DrinksIntro:
 	text_jump Drinks_HowMayIHelpYouText
+	db "@"
+	
+Text_Mart_SubwayIntro:
+	text_jump Subway_TradeBPText
 	db "@"
 
 MenuHeader_BuySell:

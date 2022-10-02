@@ -28,7 +28,7 @@ TrainerTwinLeah:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerTwinMia:
 	trainer TWINS, LEAHANDMIA2, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinMiaText, TwinMiaWinText, 0, .AfterScript
 
@@ -110,52 +110,117 @@ Route14MoveTutor:
 	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	opentext
+	checkevent EVENT_LOVE_BALLS_FOR_SALE
+	iftrue .SellBalls
 	writetext Route14TutorText
 	waitbutton
 	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
 	writetext Route14TutorDanceText
 	waitbutton
-	checkitem GOLD_LEAF
-	iffalse .NoLeaf
-	applymovement ROUTE_14_TUTOR, Route14TutorDance
-	faceplayer
-	writetext Route14TutorTeach
 	yesorno
-	iftrue .PetalDance
-	jump .Refused
-	
-.PetalDance
-	writetext Route14TutorWhichOne
-	buttonsound
-	writebyte PETAL_DANCE
-	special MoveTutor
-	ifequal $0, .TeachMove
-	jump .Refused
-
-.TeachMove
-	takeitem SILVER_LEAF
-	writetext Route14TutorThankYou
+	iffalse .Refused
+	writetext Route14DancerAcceptText
 	waitbutton
+	closetext
+	winlosstext Route14DancerWinText, -1
+	loadtrainer KIMONO_GIRL, ANRI
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_LOVE_BALLS_FOR_SALE
 	applymovement ROUTE_14_TUTOR, Route14TutorDance
 	faceplayer
-	applymovement PLAYER, Route14TutorDance
+	opentext
+	writetext Route14DancerAfterText
+	waitbutton
+	jump .Start
+	
+.SellBalls
+	writetext MerchantSellLoveBall
+	jump .Start
+.PurchaseMore:
+	writetext LoveBallMerchantMoreSelection
+.Start:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .OneBall
+	ifequal 2, .TenBalls
+	applymovement ROUTE_14_TUTOR, Route14TutorDance
+	faceplayer
+	writetext LoveBallMerchantComeBack
+	waitbutton
 	closetext
 	end
 	
-.Refused
+.Refused:
 	writetext Route14TutorRefused
 	waitbutton
 	closetext
 	end
 	
-.NoLeaf
-	writetext Route14TutorExplainSilverLeaf
-	waitbutton
-	turnobject LAST_TALKED, DOWN
-	closetext
-	end
+.OneBall:
+	checkmoney YOUR_MONEY, 300
+	ifequal HAVE_LESS, .NotEnoughMoney
+	itemtotext LOVE_BALL, MEM_BUFFER_0
+	jump .AskToVend1
+
+.TenBalls:
+	checkmoney YOUR_MONEY, 3000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	jump .AskToVend10
 	
+.AskToVend1:
+	writetext LoveBallMerchantBuy1Text
+	yesorno
+	iffalse .No
+	giveitem LOVE_BALL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 300
+	jump .VendItem
+.AskToVend10:
+	writetext LoveBallMerchantBuy10Text
+	yesorno
+	iffalse .No
+	giveitem LOVE_BALL, 10
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 3000
+.VendItem
+	playsound SFX_TRANSACTION
+	waitsfx
+	special PlaceMoneyTopRight
+	itemnotify
+	jump .PurchaseMore
+
+.NotEnoughMoney:
+	writetext LoveBallMerchantNoMoneyText
+	waitbutton
+	jump .Start
+
+.NotEnoughSpace:
+	writetext LoveBallMerchantNoSpaceText
+	waitbutton
+	jump .PurchaseMore
+	
+.No:
+	writetext LoveBallMerchantNo
+	waitbutton
+	jump .Start
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 10, TEXTBOX_Y - 2
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "1   ¥300@"
+	db "10 ¥3000@"
+	db "CANCEL@"
+
 BlackGlassesGuy:
 	faceplayer
 	opentext
@@ -172,6 +237,7 @@ BlackGlassesGuy:
 	writetext Route14GiveBlackGlasses
 	waitbutton
 	verbosegiveitem BLACKGLASSES
+	iffalse .NoRoom
 	waitbutton
 	closetext
 	setevent EVENT_GOT_BLACKGLASSES
@@ -182,7 +248,13 @@ BlackGlassesGuy:
 	waitbutton
 	closetext
 	end
-	
+
+.NoRoom:
+	writetext Route14BlackGlassesGuyBagFullText
+	waitbutton
+	closetext
+	end
+
 Route14CaveGuard:
 	jumptextfaceplayer Route14CaveGuardText
 	
@@ -267,7 +339,7 @@ TwinMiaText:
 	text "MIA: My sister and"
 	line "I can read each"
 	cont "others' mind."
-	
+
 	para "LEAH: Yeah! So you"
 	line "had better watch"
 	cont "out!"
@@ -426,23 +498,15 @@ Route14TutorText:
 	done
 	
 Route14TutorDanceText:
-	text "The dance's name?"
+	text "I love to dance"
+	line "with my #MON."
 	
-	para "Why it's no other"
-	line "than PETAL DANCE!"
+	para "I also adore comb-"
+	line "ining dance with"
+	cont "battle."
 	
-	para "If you would like"
-	line "to give me a GOLD"
-	cont "LEAF, I would be"
-	cont "delighted to teach"
-	cont "your #MON such"
-	cont "a dance."
-	done
-	
-Route14TutorTeach:
-	text "Would you like to"
-	line "teach your #MON"
-	cont "PETAL DANCE?"
+	para "Would you care to"
+	line "perform with us?"
 	done
 
 Route14TutorRefused:
@@ -451,27 +515,101 @@ Route14TutorRefused:
 	cont "right here."
 	done
 
-Route14TutorExplainSilverLeaf:
-	text "Oh. You don't seem"
-	line "to have a GOLD"
-	cont "LEAF."
+Route14DancerAcceptText:
+	text "Wonderful!"
 	
-	para "No matter! I won't"
-	cont "be going anywhere."
+	para "I hope you can"
+	line "keep up!"
 	done
 	
-Route14TutorWhichOne:
-	text "Which #MON"
-	line "should I tutor?"
+Route14DancerWinText:
+	text "Oh my…"
+	
+	para "I did not expect"
+	line "such moves out of"
+	cont "you. You're good."
+	done
+
+Route14DancerAfterText:
+	text "Dance has been so"
+	line "often used in cou-"
+	cont "rtship between"
+	cont "members of the"
+	cont "opposite gender."
+	
+	para "…While I don't have"
+	line "feelings for you"
+	cont "in that way, I'd be"
+	cont "happy to share"
+	cont "some LOVE with you"
+	cont "in the form of the"
+	cont "LOVE BALL!"
+	
+	para "Would you care to"
+	line "buy some from me?"
 	done
 	
-Route14TutorThankYou:
-	text "Thank you!"
-	
-	para "Please, won't you"
-	line "dance with me too?"
+MerchantSellLoveBall:
+	text "Ah! It's you!"
+
+	para "Do you need more"
+	line "LOVE BALLs?"
+	done
+
+LoveBallMerchantMoreSelection:
+	text "Would you like any"
+	line "more LOVE BALLs?"
 	done
 	
+LoveBallMerchantNoMoneyText:
+	text "Sorry, but you can"
+	line "not afford that"
+	cont "many right now…"
+	done
+
+LoveBallMerchantNoSpaceText:
+	text "How could you"
+	line "dance so well with"
+	cont "your PACK stuffed"
+	cont "so full?"
+	
+	para "Please clear up"
+	line "some space for an"
+	cont "item."
+	done
+	
+LoveBallMerchantBuy1Text:
+	text "A @"
+	text_from_ram wStringBuffer3
+	text_start
+	line "will cost ¥300,"
+	cont "okay?"
+	done	
+
+LoveBallMerchantBuy10Text:
+	text "10 LOVE BALLs will"
+	line "cost ¥3000, okay?"
+	done
+
+LoveBallMerchantNo:
+	text "Would you prefer a"
+	line "different amount?"
+	done
+	
+LoveBallMerchantComeBack:
+	text "Take care!"
+	
+	para "Also."
+	
+	para "You don't need to"
+	line "see me just to buy"
+	cont "LOVE BALLs."
+	
+	para "You may also be my"
+	line "dance partner any"
+	cont "time."
+	done
+
 Route14CaveGuardText:
 	text "Groan…"
 
@@ -520,14 +658,22 @@ Route14ExplainBlackGlasses:
 	cont "active."
 	done
 
+Route14BlackGlassesGuyBagFullText:
+	text "Woah, there!"
+
+	para "It ain't cool to"
+	line "have a BAG overfl-"
+	cont "owing with items."
+	done
+
 Route14_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
 	warp_event 40,  7, ROUTE_14_CAVE_1F, 5
-	warp_event 55, 10, ROUTE_14_OLIVINE_GATE, 1
-	warp_event 55, 11, ROUTE_14_OLIVINE_GATE, 2
-	warp_event 17,  5, ROUTE_18, 1
+	warp_event 55, 10, ROUTE_14_RUGOSA_GATE, 1
+	warp_event 55, 11, ROUTE_14_RUGOSA_GATE, 2
+	warp_event 17,  5, ROUTE_14_GATE, 1
 
 	db 0 ; coord events
 

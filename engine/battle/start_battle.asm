@@ -76,22 +76,25 @@ PlayBattleMusic:
 	ld de, MUSIC_CHAMPION_BATTLE
 	cp CHAMPION
 	jr z, .done
+	cp CHAMPIONF
+	jr z, .done
 	cp RED
+	jr z, .done
+	ld a, [wMapGroup]
+	cp GROUP_NORTH_FOREST
 	jr z, .done
 
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
 	ld de, MUSIC_ROCKET_BATTLE
-	cp GRUNTM
+	cp BURGLAR
 	jr z, .done
-	cp GRUNTF
+	cp SAGE
 	jr z, .done
 	cp EXECUTIVEM
 	jr z, .done
-	cp EXECUTIVEF
-	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
-	farcall IsKantoGymLeader
+	farcall IsEliteFour
 	jr c, .done
 
 	; IsGymLeader also counts CHAMPION, RED, and the Kanto gym leaders

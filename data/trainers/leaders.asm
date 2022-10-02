@@ -10,23 +10,16 @@ GymLeaders:
 	db MURPHY
 	db DUANE
 	db POSEY
-	db JASMINE
+	db ALAN
 	db JOEL
-	db CLAIR
-	db WILL
-	db BRUNO
-	db KAREN
-	db KOGA
-	db CHAMPION
-	db RED
+	db ENYA
 ; fallthrough
-KantoGymLeaders:
-	db BROCK
-	db MISTY
-	db LT_SURGE
-	db PRYCE
-	db JANINE
-	db SABRINA
-	db BLAINE
-	db BLUE
+EliteFour:
+	db WILBUR
+	db REGAN
+	db BREDE
+	db AMBER
+	db CHAMPION
+	db CHAMPIONF
+	db RED
 	db -1

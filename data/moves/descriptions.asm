@@ -10,7 +10,7 @@ MoveDescriptions::
 	dw IcePunchDescription
 	dw ThunderpunchDescription
 	dw ScratchDescription
-	dw VicegripDescription
+	dw BodyPressDescription
 	dw GuillotineDescription
 	dw RazorWindDescription
 	dw SwordsDanceDescription
@@ -24,7 +24,7 @@ MoveDescriptions::
 	dw VineWhipDescription
 	dw IcicleSpearDescription
 	dw DoubleKickDescription
-	dw MegaKickDescription
+	dw RunicPowerDescription
 	dw BulkUpDescription
 	dw CoilDescription
 	dw SandAttackDescription
@@ -164,7 +164,7 @@ MoveDescriptions::
 	dw WildChargeDescription
 	dw GunkShotDescription
 	dw SubstituteDescription
-	dw StruggleDescription
+	dw StoneEdgeDescription
 	dw SketchDescription
 	dw BulletPunchDescription
 	dw ThiefDescription
@@ -180,7 +180,7 @@ MoveDescriptions::
 	dw CottonSporeDescription
 	dw ReversalDescription
 	dw SpiteDescription
-	dw PowderSnowDescription
+	dw FreezeDryDescription
 	dw ProtectDescription
 	dw MachPunchDescription
 	dw ScaryFaceDescription
@@ -254,7 +254,7 @@ MoveDescriptions::
 	dw NastyPlotDescription
 	dw HurricaneDescription
 	dw BugBuzzDescription
-	dw MoveFFDescription
+	dw StruggleDescription
 	dw Move00Description
 
 
@@ -273,6 +273,7 @@ CrabhammerDescription:
 AeroblastDescription:
 CrossChopDescription:
 RazorWindDescription:
+StoneEdgeDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
@@ -304,9 +305,9 @@ ScratchDescription:
 	db   "Scratches with"
 	next "sharp claws.@"
 
-VicegripDescription:
-	db   "Grips with power-"
-	next "ful pincers.@"
+BodyPressDescription:
+	db   "Attacks using the"
+	next "DEFENSE stat.@"
 
 GuillotineDescription:
 	db   "A one-hit KO,"
@@ -352,9 +353,9 @@ DoubleKickDescription:
 	db   "A double kicking"
 	next "attack.@"
 
-MegaKickDescription:
-	db   "A powerful kicking"
-	next "attack.@"
+RunicPowerDescription:
+	db   "The power of many"
+	next "restored.@"
 
 BulkUpDescription:
 	db   "Raises ATTACK"
@@ -507,8 +508,8 @@ AuroraBeamDescription:
 	next "lower ATTACK.@"
 
 HyperBeamDescription:
-	db   "1st turn: Attack"
-	next "2nd turn: Rest@"
+	db 	 "Must recharge."
+	next "Skips if it KOs.@"
 
 DrillPeckDescription:
 	db   "A strong, spin-"
@@ -519,8 +520,8 @@ SubmissionDescription:
 	next "so hurts the user.@"
 
 LowKickDescription:
-	db   "An attack that may"
-	next "cause flinching.@"
+	db   "Shatters REFLECT"
+	next "and LIGHT SCREEN.@"
 
 CounterDescription:
 	db   "Returns a physical"
@@ -960,9 +961,9 @@ SpiteDescription:
 	db   "Cuts the PP of the"
 	next "foe's last move.@"
 
-PowderSnowDescription:
-	db   "An attack that may"
-	next "cause freezing.@"
+FreezeDryDescription:
+	db   "Strong against"
+	next "WATER-types.@"
 
 ProtectDescription:
 	db   "Foils attack that"
@@ -1222,8 +1223,8 @@ AncientpowerDescription:
 	next "raise all stats.@"
 
 ShadowBallDescription:
-	db   "An attack that may"
-	next "lower SPCL.DEF.@"
+	db   "A GHOST move that"
+	next "lowers SPCL.DEF.@"
 
 FutureSightDescription:
 	db   "An attack that"

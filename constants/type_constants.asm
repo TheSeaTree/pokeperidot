@@ -25,9 +25,9 @@ UNUSED_TYPES EQU const_value
 	const TYPE_13
 	const TYPE_14
 	const TYPE_15
-	const TYPE_16
-	const TYPE_17
-	const TYPE_18
+	const WILLOWISP
+	const POWDER
+	const PSNPOWDER
 	const CURSE_T
 UNUSED_TYPES_END EQU const_value
 

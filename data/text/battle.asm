@@ -42,6 +42,66 @@ WildBossAppearedText:
 	line "challenges you!"
 	prompt
 
+DugtrioBossText::
+	text "UNDERGROUND MENACE"
+	line "DUGTRIO"
+	cont "challenges you!"
+	prompt
+
+DiglettBossText::
+	text "UNDERGROUND PEST"
+	line "DIGLETT"
+	cont "challenges you!"
+	prompt
+
+AerodactylBossText::
+	text "FOSSILIZED FURY"
+	line "AERODACTYL"
+	cont "challenges you!"
+	prompt
+
+MarowakBossText::
+	text "RUNAWAY"
+	line "MAROWAK"
+	cont "challenges you!"
+	prompt
+
+MukBossText::
+	text "ENERGY GLUTTON"
+	line "MUK"
+	cont "challenges you!"
+	prompt
+
+LugiaBossText::
+	text "WAVE GUARDIAN"
+	line "LUGIA"
+	cont "challenges you!"
+	prompt
+
+GengarBossText::
+	text "SHADOW BOSS"
+	line "GENGAR"
+	cont "challenges you!"
+	prompt
+
+SkarmoryBossText::
+	text "IRON RAPTOR"
+	line "SKARMORY"
+	cont "challenges you!"
+	prompt
+
+TentacruelBossText::
+	text "TERROR OF THE DEEP"
+	line "TENTACRUEL"
+	cont "challenges you!"
+	prompt
+
+MachampBossText::
+	text "FOUR-ARMED FLEXER"
+	line "MACHAMP"
+	cont "challenges you!"
+	prompt
+
 WantsToBattleText::
 	text "<ENEMY>"
 	line "wants to battle!"
@@ -54,11 +114,14 @@ BattleText_WildFled:
 	line "fled!"
 	prompt
 
-BattleText_EnemyFled:
-	text "Enemy @"
-	text_ram wEnemyMonNick
-	text_start
-	line "fled!"
+BattleText_EnemyForfeited:
+	text "<ENEMY> forfeited"
+	line "the battle!"
+	prompt
+
+BattleText_PlayerForefeited:
+	text "You forfeited"
+	line "the battle!"
 	prompt
 
 HurtByPoisonText:
@@ -106,6 +169,20 @@ BattleText_TargetRecoveredWithItem:
 	text "."
 	prompt
 
+BattleText_TargetIsHurtByItem:
+	text "<USER>"
+	line "is hurt by"
+	cont "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
+
+BattleText_UsersStatsAreSwapped:
+	text "<USER>'s"
+	line "TRICK MIRROR swaps"
+	cont "its damage types."
+	prompt
+
 BattleText_UserRecoveredPPUsing:
 	text "<USER>"
 	line "recovered PP using"
@@ -135,6 +212,11 @@ BattleText_MonsReflectFaded:
 	text_ram wStringBuffer1
 	text " #MON's"
 	line "REFLECT faded!"
+	prompt
+
+BattleText_MonsBarrierShattered:
+	text "<TARGET>'s"
+	line "barrier shattered!"
 	prompt
 
 BattleText_RainContinuesToFall:
@@ -172,9 +254,9 @@ BattleText_EnemyMonFainted:
 	text_start
 	line "fainted!"
 	prompt
-	
+
 BattleText_EnemyMonRanAway:
-	text "Wild @"
+	text "@"
 	text_ram wEnemyMonNick
 	text_start
 	line "was defeated!"
@@ -336,6 +418,22 @@ BattleText_NoItemsInLeaderBattle:
 	cont "battles!"
 	prompt
 
+BattleText_NoItemsInLeagueBattle:
+	text "Items can't be"
+	line "used in LEAGUE"
+	cont "battles!"
+	prompt
+
+BattleText_PartyIsFullText::
+	text "The PARTY is full."
+	line "That can't be used."
+	prompt
+
+BattleText_OutOfCyberBallsText::
+	text "You are out of"
+	line "CYBER BALLs!"
+	prompt
+
 BattleText_MonIsAlreadyOut:
 	text_ram wBattleMonNick
 	text_start
@@ -402,6 +500,13 @@ BattleText_WildMonIsAngry:
 	text_ram wEnemyMonNick
 	text_start
 	line "is angry!"
+	prompt
+
+BattleText_WildMonIsWatching:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text " is"
+	line "watching <PLAYER>."
 	prompt
 
 FastAsleepText:
@@ -768,7 +873,7 @@ WasBurnedText:
 
 DefrostedOpponentText:
 	text "<TARGET>"
-	line "was defrosted!"
+	line "thawed out!"
 	prompt
 
 WasFrozenText:
@@ -964,19 +1069,23 @@ TeleportOutText:
 UTurnOutPlayerText:
 	text "<USER>"
 	line "returned to"
-	cont "<PLAYER>"
+	cont "<PLAYER>."
 	prompt
 	
 UTurnOutEnemyText:
 	text "<USER>"
 	line "returned to"
-	cont "<ENEMY>"
+	cont "<ENEMY>."
 	prompt	
 	
 TeleportInText:
 	text "<USER>"
 	line "took its place!"
 	prompt
+	
+BlankText:
+	text " "
+	done
 	
 DraggedOutText:
 	text "<USER>"
@@ -1038,7 +1147,7 @@ StartedNightmareText:
 
 WasDefrostedText:
 	text "<USER>"
-	line "was defrosted!"
+	line "defrosted itself!"
 	prompt
 
 PutACurseText:
@@ -1174,3 +1283,14 @@ BattleText_0x8188e:
 	text "There is no time"
 	line "left today!"
 	done
+
+BattleText_AskForfeit:
+	text "Do you want to"
+	line "forfeit?"
+	done
+
+BattleText_AllStatsRose:
+	text "All of"
+	line "<USER>'s"
+	cont "stats rose!"
+	prompt

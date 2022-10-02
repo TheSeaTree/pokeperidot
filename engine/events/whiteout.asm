@@ -12,17 +12,22 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
-	checkflag ENGINE_BUG_CONTEST_TIMER
-	iftrue .bug_contest
+	checkflag ENGINE_SAFARI_GAME_ACTIVE
+	iftrue .safari_zone
+	checkcode VAR_BATTLETYPE
+	ifequal BATTLETYPE_NOCASH, .NoMoney
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
-	clearflag ENGINE_BUG_CONTEST_TIMER
+;	clearflag ENGINE_SAFARI_ZONE
+	setevent EVENT_SS_MAKO_RESPAWN
+
 	special WarpToSpawnPoint
 	newloadmap MAPSETUP_WARP
+.NoMoney
 	endall
 
-.bug_contest
-	jumpstd bugcontestresultswarp
+.safari_zone
+	jumpstd safarizonewarp
 
 .WhitedOutText:
 	; is out of useable #MON!  whited out!

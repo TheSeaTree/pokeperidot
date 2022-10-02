@@ -15,9 +15,6 @@ Special::
 
 INCLUDE "data/special_pointers.asm"
 
-DummySpecial_c224:
-	ret
-
 SetPlayerPalette:
 	ld a, [wScriptVar]
 	ld d, a
@@ -397,4 +394,41 @@ TrainerHouse:
 	
 SpecialMoveRelearner:
 	farcall MoveRelearner
+	ret
+
+SetFireGymSteps:
+	xor a
+	ld a, 50
+	ld [wFireGymStepsRemaining], a
+	ret
+
+CheckStolenTrickMirror:
+	ld hl, wPartyMon1Item
+	ld de, PARTYMON_STRUCT_LENGTH
+	ld a, [wPartyCount]
+	ld c, a
+.loop
+	ld a, [hl]
+	cp TRICK_MIRROR
+	jr z, .stolen
+	add hl, de
+	dec c
+	jr nz, .loop
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+
+.stolen
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+DropOffParty:
+; Mask the whole party by setting the count to 0...
+	ld hl, wPartyCount
+	ld a, 0
+	ld [hli], a
+	inc hl
+; ... and replacing it with the terminator byte
+	ld [hl], -1
 	ret

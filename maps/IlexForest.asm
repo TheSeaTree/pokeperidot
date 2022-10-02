@@ -13,7 +13,7 @@ IlexForest_MapScripts:
 .SmashWall:
 	checkevent EVENT_UNOWN_CHAMBER_HN_OPEN
 	iffalse .skip
-	changeblock 14, 34, $73
+	changeblock 14, 34, $66
 .skip
 	return
 	
@@ -113,6 +113,8 @@ TrainerCooltrainerFSasha:
 .FightDone
 	checkevent GOT_CHIKORITA
 	iftrue .Chikorita
+	writetext SashaAfterBattleText
+	waitbutton
 	checkcode VAR_PARTYCOUNT
 	ifequal PARTY_LENGTH, .PartyFull
 	writetext SashaGaveChikorita
@@ -169,7 +171,10 @@ IlexForestHiddenSuperPotion:
 
 IlexForestHiddenFullHeal:
 	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
-	
+
+IlexForestFruitTree:
+	fruittree FRUITTREE_ILEX_FOREST
+
 HikerRayText:
 	text "Ho ho!"
 	
@@ -354,10 +359,18 @@ CooltrainerSashaLoss:
 	cont "#MON some help."
 	done
 	
+SashaAfterBattleText:
+	text "Wow! That was a"
+	line "great battle!"
+	
+	para "As promised, you"
+	line "may have my rare"
+	cont "#MON."
+	done
+	
 SashaGaveChikorita:
-	text "<PLAYER>"
-	line "received"
-	cont "CHIKORITA!"
+	text "<PLAYER> received"
+	line "CHIKORITA!"
 	done
 	
 SashaNotEnoughRoom:
@@ -380,12 +393,13 @@ AlreadyGotChikorita:
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
+	db 6 ; warp events
 	warp_event 49, 43, ROUTE_9_FOREST_GATE, 3
 	warp_event 50, 43, ROUTE_9_FOREST_GATE, 4
-	warp_event 22,  5, ECRUTEAK_FOREST_GATE, 1
+	warp_event 22,  5, STAGHORN_FOREST_GATE, 1
 	warp_event  3,  7, SWORDS_DANCE_HOUSE, 1
 	warp_event 14, 35, UNOWN_CHAMBER_HN, 1
+	warp_event  4, 29, MOON_BALL_CAVE, 1
 
 	db 0 ; coord events
 
@@ -394,15 +408,16 @@ IlexForest_MapEvents:
 	bg_event 37,  5, BGEVENT_ITEM, IlexForestHiddenEther
 	bg_event 16, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
 
-	db 11 ; object events
+	db 12 ; object events
 	object_event 14, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHardStone, EVENT_ILEX_FOREST_HARD_STONE
 	object_event 46,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
 	object_event 16, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
 	object_event 57, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSuperPotion, EVENT_ILEX_FOREST_SUPER_POTION
 	object_event 18, 38, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerRay, -1
-	object_event 34, 14, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassAmanda, -1
+	object_event 35, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassAmanda, -1
 	object_event 52, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperEllis, -1
 	object_event 40, 23, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
 	object_event 36, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
 	object_event 37, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
 	object_event 53,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFSasha, -1
+	object_event 34, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, IlexForestFruitTree, -1

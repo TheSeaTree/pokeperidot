@@ -424,14 +424,11 @@ SpecialMapMusic::
 	ld a, [wPlayerState]
 	cp PLAYER_SURF
 	jr z, .surf
+	cp PLAYER_SURF_LAPRAS
+	jr z, .surf
 	cp PLAYER_SURF_PIKA
 	jr z, .surf
 
-	ld a, [wStatusFlags2]
-	bit STATUSFLAGS2_BUG_CONTEST_TIMER_F, a
-	jr nz, .contest
-
-.no
 	and a
 	ret
 
@@ -445,53 +442,10 @@ SpecialMapMusic::
 	scf
 	ret
 
-.contest
-	jr nz, .no
-
-.ranking
-	ld de, MUSIC_BUG_CATCHING_CONTEST_RANKING
-	scf
-	ret
-
 GetMapMusic_MaybeSpecial::
 	call SpecialMapMusic
 	ret c
 	call GetMapMusic
-	ret
-
-Unreferenced_Function3d9f::
-; Places a BCD number at the
-; upper center of the screen.
-	ld a, 4 * TILE_WIDTH
-	ld [wVirtualOAMSprite38YCoord], a
-	ld [wVirtualOAMSprite39YCoord], a
-	ld a, 10 * TILE_WIDTH
-	ld [wVirtualOAMSprite38XCoord], a
-	ld a, 11 * TILE_WIDTH
-	ld [wVirtualOAMSprite39XCoord], a
-	xor a
-	ld [wVirtualOAMSprite38Attributes], a
-	ld [wVirtualOAMSprite39Attributes], a
-	ld a, [wc296]
-	cp 100
-	jr nc, .max
-	add 1
-	daa
-	ld b, a
-	swap a
-	and $f
-	add "0"
-	ld [wVirtualOAMSprite38TileID], a
-	ld a, b
-	and $f
-	add "0"
-	ld [wVirtualOAMSprite39TileID], a
-	ret
-
-.max
-	ld a, "9"
-	ld [wVirtualOAMSprite38TileID], a
-	ld [wVirtualOAMSprite39TileID], a
 	ret
 
 CheckSFX::

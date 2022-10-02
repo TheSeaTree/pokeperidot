@@ -11,12 +11,18 @@ EmilysHouse1F_MapScripts:
 EmilysMomScript:
 	faceplayer
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iffalse .NotPostgame
+	checkevent EVENT_GOT_EXP_ALL
+	iffalse .GetExpAll
+.NotPostgame
 	checkevent EVENT_BEAT_EMILYS_HOUSE
 	iffalse .Normal
 	checkevent EVENT_CLAIMED_LUCKY_EGG
 	iftrue .GotItem
-	writetext EmilysMomLuckyEggText
+	writetext EmilysMomHasItemText
 	waitbutton
+.GiveLuckyEgg
 	verbosegiveitem LUCKY_EGG
 	iffalse .NoRoom
 	setevent EVENT_CLAIMED_LUCKY_EGG
@@ -28,7 +34,7 @@ EmilysMomScript:
 	waitbutton
 	closetext
 	end
-	
+
 .GotItem:
 	writetext EmilysMomAfterText
 	waitbutton
@@ -40,7 +46,21 @@ EmilysMomScript:
 	waitbutton
 	closetext
 	end
-	
+
+.GetExpAll
+	writetext EmilysMomHasItemText
+	waitbutton
+	verbosegiveitem EXP_ALL
+	setevent EVENT_GOT_EXP_ALL
+	checkevent EVENT_CLAIMED_LUCKY_EGG
+	iffalse .AnotherItem
+	closetext
+	end
+
+.AnotherItem
+	writetext EmilysMomSomethingElseText
+	jump .GiveLuckyEgg
+
 EmilysDadScript:
 	jumptextfaceplayer EmilysDadText
 
@@ -72,16 +92,26 @@ EmilysMomText:
 	cont "and <RIVAL> each"
 	cont "battle."
 	done
-	
-EmilysMomLuckyEggText:
+
+EmilysMomHasItemText:
 	text "Oh, hi <PLAYER>!"
-	
+
 	para "EMILY told me to"
-	line "give you this item"
-	cont "because your PACK"
-	cont "was full earlier."
+	line "give you this."
+
+	para "She was in a hurry"
+	line "to get somewhere,"
+	cont "and said she"
+	cont "couldn't wait"
+	cont "around to give it"
+	cont "to you in person."
 	done
-	
+
+EmilysMomSomethingElseText:
+	text "There was some-"
+	line "thing else, too."
+	done
+
 EmilysMomNoRoomText:
 	text "Didn't EMILY tell"
 	line "you to free up"
@@ -90,7 +120,7 @@ EmilysMomNoRoomText:
 	cont "way this item will"
 	cont "fit…"
 	done
-	
+
 EmilysMomAfterText:
 	text "EMILY is determin-"
 	line "ed to be the best"
@@ -163,8 +193,8 @@ EmilysHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  6,  7, ECRUTEAK_CITY, 12
-	warp_event  7,  7, ECRUTEAK_CITY, 12
+	warp_event  6,  7, STAGHORN_TOWN, 12
+	warp_event  7,  7, STAGHORN_TOWN, 12
 	warp_event  9,  0, EMILYS_HOUSE_2F, 1
 
 	db 0 ; coord events

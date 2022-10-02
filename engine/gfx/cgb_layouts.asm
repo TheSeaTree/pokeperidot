@@ -60,6 +60,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_TradeTube
 	dw _CGB_TrainerOrMonFrontpicPals
 	dw _CGB_MysteryGift
+	dw _CGB_Darkness
 	dw _CGB1e
 
 _CGB_BattleGrayscale:
@@ -103,6 +104,8 @@ _CGB_BattleColors:
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_PLAYER_HP
 	ld hl, ExpBarPalette
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_EXP
+	ld hl, HPBarTextPalette
+	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_BG_HP_BAR_TEXT
 	ld de, wOBPals1
 	pop hl
 	call LoadPalette_White_Col1_Col2_Black ; PAL_BATTLE_OB_ENEMY
@@ -115,32 +118,46 @@ _CGB_FinishBattleScreenLayout:
 	call InitPartyMenuBGPal7
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
-	ld a, PAL_BATTLE_BG_ENEMY_HP
+	ld a, PAL_BATTLE_BG_5
 	call ByteFill
 	hlcoord 0, 4, wAttrMap
-	lb bc, 8, 10
+	lb bc, 8, 9
 	ld a, PAL_BATTLE_BG_PLAYER
 	call FillBoxCGB
-	hlcoord 10, 0, wAttrMap
-	lb bc, 7, 10
+	hlcoord 11, 0, wAttrMap
+	lb bc, 7, 9
 	ld a, PAL_BATTLE_BG_ENEMY
 	call FillBoxCGB
-	hlcoord 0, 0, wAttrMap
-	lb bc, 4, 10
+
+	hlcoord 10, 3, wAttrMap ; Shiny Icon
+	lb bc, 1, 1
 	ld a, PAL_BATTLE_BG_ENEMY
 	call FillBoxCGB
-	hlcoord 2, 2, wAttrMap
-	lb bc, 1, 8
+
+	hlcoord 1, 2, wAttrMap ; Caught Icon
+	lb bc, 1, 1
+	ld a, PAL_BATTLE_BG_ENEMY
+	call FillBoxCGB
+
+	hlcoord 4, 2, wAttrMap
+	lb bc, 1, 6
 	ld a, PAL_BATTLE_BG_ENEMY_HP
 	call FillBoxCGB
-	hlcoord 10, 7, wAttrMap
-	lb bc, 5, 10
+
+	hlcoord 18, 8, wAttrMap ; Shiny Icon
+	lb bc, 1, 1
+	ld a, PAL_BATTLE_BG_PLAYER
+	call FillBoxCGB
+
+	hlcoord 12, 9, wAttrMap
+	lb bc, 1, 6
 	ld a, PAL_BATTLE_BG_PLAYER_HP
 	call FillBoxCGB
 	hlcoord 10, 11, wAttrMap
 	lb bc, 1, 8
 	ld a, PAL_BATTLE_BG_EXP
 	call FillBoxCGB
+
 	hlcoord 0, 12, wAttrMap
 	ld bc, 6 * SCREEN_WIDTH
 	ld a, PAL_BATTLE_BG_TEXT
@@ -215,7 +232,7 @@ _CGB_StatsScreenHPPals:
 	call LoadPalette_White_Col1_Col2_Black ; exp palette
 	ld hl, StatsScreenPagePals
 	ld de, wBGPals1 palette 3
-	ld bc, 3 palettes ; pink, green, and blue page palettes
+	ld bc, 4 palettes ; pink, green, and blue page palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrMap
@@ -243,6 +260,11 @@ _CGB_StatsScreenHPPals:
 	hlcoord 17, 5, wAttrMap
 	lb bc, 2, 2
 	ld a, $5 ; blue page palette
+	call FillBoxCGB
+
+	hlcoord 0, 9, wAttrMap
+	lb bc, 1, 2
+	ld a, $6 ; blue page palette
 	call FillBoxCGB
 
 	call ApplyAttrMap
@@ -584,12 +606,12 @@ _CGB_Evolution:
 _CGB_GSTitleScreen:
 	ld hl, UnusedGSTitleBGPals
 	ld de, wBGPals1
-	ld bc, 5 palettes
+	ld bc, 6 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-	ld hl, UnusedGSTitleOBPals
+	ld hl, UnusedGSTitleBGPals
 	ld de, wOBPals1
-	ld bc, 2 palettes
+	ld bc, 6 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	ld a, SCGB_DIPLOMA
@@ -650,7 +672,7 @@ _CGB_TrainerCard:
 	ld a, CECIL ; KRIS
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, CLAIR
+	ld a, ENYA
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, CELESTE
@@ -665,7 +687,7 @@ _CGB_TrainerCard:
 	ld a, JOEL
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
-	ld a, JASMINE
+	ld a, ALAN
 	call GetTrainerPalettePointer
 	call LoadPalette_White_Col1_Col2_Black
 	ld a, PREDEFPAL_CGB_BADGE
@@ -987,3 +1009,22 @@ _CGB_MysteryGift:
 
 .Palettes:
 INCLUDE "gfx/mystery_gift/mystery_gift.pal"
+
+_CGB_Darkness:
+	ld hl, DarknessPals
+	ld de, wBGPals1
+	ld bc, 7 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
+	ld hl, DarknessPals
+	ld de, wOBPals1
+	ld bc, 6 palettes
+	ld a, BANK(wOBPals1)
+	call FarCopyWRAM
+	ld a, SCGB_DIPLOMA
+	ld [wSGBPredef], a
+	call ApplyPals
+	ld a, $1
+	ldh [hCGBPalUpdate], a
+	ret
+

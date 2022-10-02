@@ -232,8 +232,8 @@ Route12_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  4, 12, ROUTE_12_ECRUTEAK_GATE, 3
-	warp_event  4, 13, ROUTE_12_ECRUTEAK_GATE, 4
+	warp_event  4, 12, ROUTE_12_STAGHORN_GATE, 3
+	warp_event  4, 13, ROUTE_12_STAGHORN_GATE, 4
 	warp_event 49,  5, ROUTE_12_SHELTER, 1
 	warp_event 57, 21, ROUTE_11_ROUTE_12_GATE, 3
 	warp_event 58, 21, ROUTE_11_ROUTE_12_GATE, 4

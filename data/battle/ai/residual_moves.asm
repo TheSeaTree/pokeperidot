@@ -13,6 +13,4 @@ ResidualMoves:
 	db TRANSFORM
 	db CONVERSION
 	db SUBSTITUTE
-	db SPIKES
-	db TELEPORT
 	db -1 ; end

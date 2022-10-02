@@ -426,7 +426,7 @@ BattleAnimFunction_PokeBallBlocked:
 GetBallAnimPal:
 	ld hl, BATTLEANIMSTRUCT_PALETTE
 	add hl, bc
-	ld [hl], PAL_BATTLE_OB_RED
+	ld [hl], PAL_BATTLE_OB_BROWN
 	ret
 
 BattleAnimFunction_10:

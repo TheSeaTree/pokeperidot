@@ -11,13 +11,13 @@ FluteMasterHouse_MapScripts:
 	
 .FluteMaster:
 	opentext
-	writetext FluteMasterIntro
+	writetext FluteMasterIntroText
 	waitbutton
 	closetext
 	turnobject FLUTE_MASTER, DOWN
 	showemote EMOTE_QUESTION, FLUTE_MASTER, 15
 	opentext
-	writetext FluteMasterNoticesPlayer
+	writetext FluteMasterNoticesPlayerText
 	waitbutton
 	closetext
 	playsound SFX_ENTER_DOOR
@@ -28,7 +28,7 @@ FluteMasterHouse_MapScripts:
 	waitsfx
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
-	writetext FluteBurglarIntro
+	writetext FluteBurglarIntroText
 	waitbutton
 	closetext
 	turnobject FLUTE_BURGLAR, RIGHT
@@ -55,9 +55,9 @@ FluteMasterHouse_MapScripts:
 	special RestartMapMusic
 	applymovement FLUTE_MASTER, FluteMasterApproach
 	opentext
-	writetext FluteMasterExplain
+	writetext FluteMasterExplainText
 	waitbutton
-	writetext FluteMasterAfter
+	writetext FluteMasterAfterText
 	waitbutton
 	closetext
 	applymovement FLUTE_MASTER, FluteMasterWalkBack
@@ -69,23 +69,24 @@ FluteMasterHouse_MapScripts:
 	end
 
 FluteMaster:
-	jumptextfaceplayer FluteMasterAfter
-	; Heal Bell tutor after defeating the lair.
-	
-HealBellMoveTutor:
 	faceplayer
 	opentext
-	writetext FluteMasterTutor
+	checkevent EVENT_FOUGHT_SNORLAX
+	iffalse .TutorNotActive
+	checkitem POKE_FLUTE
+	iftrue .TakeFlute
+
+	writetext FluteMasterTutorText
 	waitbutton
 	checkitem GOLD_LEAF
 	iffalse .NoLeaf
-	writetext HealBellTutorTeach
+	writetext HealBellTutorTeachText
 	yesorno
 	iftrue .HealBell
 	jump .Refused
 	
 .HealBell
-	writetext HealBellTutorWhichOne
+	writetext HealBellTutorWhichOneText
 	buttonsound
 	writebyte HEAL_BELL
 	special MoveTutor
@@ -94,21 +95,45 @@ HealBellMoveTutor:
 	
 .TeachMove
 	takeitem GOLD_LEAF
-	writetext HealBellTutorThankYou
+	writetext HealBellTutorThankYouText
 	waitbutton
 	closetext
 	end
 	
 .Refused
-	writetext HealBellTutorRefused
+	writetext HealBellTutorRefusedText
 	waitbutton
 	closetext
 	end
 	
 .NoLeaf
-	writetext HealBellTutorExplainGoldLeaf
+	writetext HealBellTutorExplainGoldLeafText
 	waitbutton
 	turnobject LAST_TALKED, RIGHT
+	closetext
+	end
+	
+.TutorNotActive
+	writetext FluteMasterAfterText
+	waitbutton
+	closetext
+	end
+	
+.TakeFlute
+	writetext FluteMasterWantsFluteText
+	yesorno
+	iffalse .KeepFlute
+	writetext PlayerReturnsFluteText
+	takeitem POKE_FLUTE
+	waitbutton
+	writetext AfterReturningFluteText
+	waitbutton
+	closetext
+	end
+	
+.KeepFlute
+	writetext PlayerKeepFluteText
+	waitbutton
 	closetext
 	end
 	
@@ -144,14 +169,14 @@ PlayerPushedMovement:
 	remove_fixed_facing
 	step_resume
 
-FluteMasterIntro:
+FluteMasterIntroText:
 	text "Haven't you taken"
 	line "enough? What more"
 	cont "could you possibly"
 	cont "want from me?"
 	done
 	
-FluteMasterNoticesPlayer:
+FluteMasterNoticesPlayerText:
 	text "…Oh, you're not"
 	line "one of them."
 	
@@ -165,7 +190,7 @@ FluteMasterNoticesPlayer:
 	cont "away from-"
 	done
 
-FluteBurglarIntro:
+FluteBurglarIntroText:
 	text "Well, well, well…"
 	
 	para "Did our last visit"
@@ -175,23 +200,24 @@ FluteBurglarIntro:
 	done
 
 FluteBurglarShockText:
-	text "No way…"
+	text "Wait a second…"
 	
-	para "I've heard about"
-	line "you!"
+	para "No way…"
+	
+	para "I recognize you!"
 	
 	para "You're the kid"
 	line "that managed to"
 	cont "beat the guys at"
-	cont "HELIO TOWN!"
+	cont "HEPATICA TOWN!"
 	done
 	
 FluteBurglarChallengeText:
 	text "Hehehe…"
 	
 	para "I'm going to get"
-	line "such a raise if I"
-	cont "can beat you!"
+	line "such a raise when"
+	cont "I beat you!"
 	done
 	
 FluteBurglarWinText:
@@ -206,6 +232,8 @@ FluteBurglarAfterText:
 	cont "to take on our"
 	cont "whole base."
 	
+	para "Hehehe…"
+	
 	para "Especially now"
 	line "that we got the"
 	cont "# FLUTE and"
@@ -213,7 +241,7 @@ FluteBurglarAfterText:
 	cont "on our side."
 	done
 	
-FluteMasterExplain:
+FluteMasterExplainText:
 	text "You know these"
 	line "hoodlums?"
 	
@@ -239,7 +267,7 @@ FluteMasterExplain:
 	cont "those thieves?"
 	done
 	
-FluteMasterAfter:
+FluteMasterAfterText:
 	text "That # FLUTE"
 	line "has caused so much"
 	cont "trouble."
@@ -248,7 +276,54 @@ FluteMasterAfter:
 	line "still want it."
 	done
 	
-FluteMasterTutor:
+FluteMasterWantsFluteText:
+	text "After some serious"
+	line "thought, I have"
+	cont "decided that I"
+	cont "would like the"
+	cont "# FLUTE back."
+	
+	para "I realize my mis-"
+	line "take now. No man"
+	cont "should have the"
+	cont "kind of power it"
+	cont "can grant."
+	
+	para "Would you mind re-"
+	line "turning the FLUTE?"
+	
+	para "I plan to destroy"
+	line "it."
+	done
+
+PlayerReturnsFluteText:
+	text "<PLAYER> reutned"
+	line "the # FLUTE."
+	done
+	
+PlayerKeepFluteText:
+	text "I can't exactly"
+	line "stop you from kee-"
+	cont "ping the FLUTE,"
+	cont "but if you recons-"
+	cont "ider, find me."
+	done
+	
+AfterReturningFluteText:
+	text "I know it takes a"
+	line "lot to give up an"
+	cont "item as powerful"
+	cont "as the # FLUTE."
+	
+	para "Stop by again some"
+	line "time."
+	
+	para "I have an idea of"
+	line "how to make this"
+	cont "up to you."
+	done
+
+FluteMasterTutorText:
 	text "Brilliant job"
 	line "defeating those"
 	cont "crooks!"
@@ -263,21 +338,21 @@ FluteMasterTutor:
 	line "require a GOLD"
 	cont "LEAF in return."
 	done
-	
-HealBellTutorTeach:
+
+HealBellTutorTeachText:
 	text "Would you like to"
 	line "teach your #MON"
 	cont "HEAL BELL?"
 	done
 	
-HealBellTutorWhichOne:
+HealBellTutorWhichOneText:
 	text "Ah, wonderful!"
 	
 	para "Which #MON will"
 	line "I be tutoring?"
 	done
 	
-HealBellTutorThankYou:
+HealBellTutorThankYouText:
 	text "Thank you."
 	
 	para "Your #MON will"
@@ -285,14 +360,14 @@ HealBellTutorThankYou:
 	cont "music can create."
 	done
 	
-HealBellTutorRefused:
+HealBellTutorRefusedText:
 	text "Pity, you must not"
 	line "have a #MON"
 	cont "that can learn my"
 	cont "special song."
 	done
 	
-HealBellTutorExplainGoldLeaf:
+HealBellTutorExplainGoldLeafText:
 	text "I'm sorry, but"
 	line "I need something"
 	cont "in return for my"
@@ -310,8 +385,8 @@ FluteMasterHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, BLACKTHORN_CITY, 5
-	warp_event  3,  7, BLACKTHORN_CITY, 5
+	warp_event  2,  7, ACROPORA_CITY, 5
+	warp_event  3,  7, ACROPORA_CITY, 5
 
 	db 0 ; coord events
 
@@ -320,4 +395,4 @@ FluteMasterHouse_MapEvents:
 	db 3 ; object events
 	object_event  2,  4, SPRITE_BILL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, FluteMaster, -1
 	object_event  0, -4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_UP, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  3,  4, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ComplicatedSheetMusic, -1
+	object_event  3,  4, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ComplicatedSheetMusic, -1

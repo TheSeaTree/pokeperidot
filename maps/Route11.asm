@@ -3,7 +3,19 @@
 Route11_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .Tiles
+	
+.Tiles:
+	checkevent EVENT_ROUTE_11_LEDGE
+	iffalse .checkcave
+	changeblock  28, 20, $4b
+.checkcave
+	checkevent EVENT_ROUTE_11_HIDDEN_CAVE_OPEN
+	iffalse .skip
+	changeblock  58,  6, $73
+.skip
+	return
 
 Route11MoveTutor:
 	faceplayer
@@ -47,6 +59,9 @@ Route11MoveTutor:
 Route11CooltrainerFScript:
 	jumptextfaceplayer Route11CooltrainerFText
 
+Route11HikerScript:
+	jumptextfaceplayer Route11HikerText
+
 Route11SpellTag:
 	itemball SPELL_TAG
 
@@ -58,7 +73,13 @@ Route11TMGigaDrain:
 	
 Route11HiddenRevivalHerb:
 	hiddenitem REVIVAL_HERB, EVENT_ROUTE_11_HIDDEN_REVIVAL_HERB
-	
+
+Route11HiddenGoldLeaf:
+	hiddenitem GOLD_LEAF, EVENT_ROUTE_11_HIDDEN_GOLD_LEAF
+
+Route11FruitTree:
+	fruittree FRUITTREE_ROUTE_11
+
 Route11GoldenrodSign:
 	jumptext Route11GoldenrodSignText
 
@@ -135,6 +156,17 @@ Route11CooltrainerFText:
 	cont "is a nice old man."
 	done
 	
+Route11HikerText:
+	text "Some day, through"
+	line "sheer willpower, I"
+	cont "hope to make this"
+	cont "ledge accessible"
+	cont "from the south."
+	
+	para "It will be my"
+	line "destiny."
+	done
+	
 Route11GoldenrodSignText:
 	text "ROUTE 11 -"
 	line "FAVIA TOWN"
@@ -148,23 +180,27 @@ Route11Route12SignText:
 Route11_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
-	warp_event 29, 27, ROUTE_11_GOLDENROD_GATE, 1
-	warp_event 30, 27, ROUTE_11_GOLDENROD_GATE, 2
+	db 6 ; warp events
+	warp_event 29, 27, ROUTE_11_FAVIA_GATE, 1
+	warp_event 30, 27, ROUTE_11_FAVIA_GATE, 2
 	warp_event 21,  3, ROUTE_11_ROUTE_12_GATE, 1
 	warp_event 51, 21, ROUTE_11_CURSE_HOUSE, 1
 	warp_event  9, 11, ROUTE_11_CLEANSE_TAG_HOUSE, 1
+	warp_event 58,  7, ROUTE_11_HIDDEN_CAVE, 1
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event 32, 23, BGEVENT_READ, Route11GoldenrodSign
 	bg_event 18,  9, BGEVENT_READ, Route11Route12Sign
 	bg_event  3,  5, BGEVENT_ITEM, Route11HiddenRevivalHerb
+	bg_event 48,  4, BGEVENT_ITEM, Route11HiddenGoldLeaf
 
-	db 5 ; object events
+	db 7 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1
 	object_event 23, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route11CooltrainerFScript, -1
-	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
+	object_event 29, 23, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route11HikerScript, EVENT_ROUTE_11_LEDGE
+	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
 	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_11_SPELL_TAG
 	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11LeafStone, EVENT_ROUTE_11_LEAF_STONE
+	object_event 39, 27, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

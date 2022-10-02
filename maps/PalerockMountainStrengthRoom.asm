@@ -95,4 +95,4 @@ PalerockMountainStrengthRoom_MapEvents:
 	bg_event  4,  2, BGEVENT_READ, PalerockStrengthRoomSign
 
 	db 1 ; object events
-	object_event   5,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, PalerockMountainStrengthRoomBall, EVENT_GOT_TM_STRENGTH
+	object_event   5,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PalerockMountainStrengthRoomBall, EVENT_GOT_TM_STRENGTH

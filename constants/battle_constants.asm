@@ -93,7 +93,7 @@ SPDSPCDV_BOSS EQU $FE
 	const BATTLETYPE_TUTORIAL
 	const BATTLETYPE_FISH
 	const BATTLETYPE_ROAMING
-	const BATTLETYPE_CONTEST
+	const BATTLETYPE_SAFARI
 	const BATTLETYPE_SHINY
 	const BATTLETYPE_TREE
 	const BATTLETYPE_TRAP
@@ -101,6 +101,9 @@ SPDSPCDV_BOSS EQU $FE
 	const BATTLETYPE_CELEBI
 	const BATTLETYPE_LEGENDARY
 	const BATTLETYPE_BOSS
+	const BATTLETYPE_NOCASH
+	const BATTLETYPE_SIMULATION
+	const BATTLETYPE_LEAGUE
 
 ; BattleVarPairs indexes (see home/battle.asm)
 	const_def
@@ -162,8 +165,9 @@ SLP EQU %111 ; 0-7 turns
 	const BRN
 	const FRZ
 	const PAR
+	const TOX
 
-ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | SLP
+ALL_STATUS EQU (1 << PSN) | (1 << BRN) | (1 << FRZ) | (1 << PAR) | (1 << TOX) | SLP
 
 ; wPlayerSubStatus1 or wEnemySubStatus1 bit flags
 	enum_start 7, -1
@@ -254,6 +258,16 @@ SUBSTATUS_CURLED EQU 0
 	const BATTLEPLAYERACTION_USEMOVE
 	const BATTLEPLAYERACTION_USEITEM
 	const BATTLEPLAYERACTION_SWITCH
+
+; wBattleMenuFlags
+	const_def
+	const QUICK_START_F
+	const QUICK_SELECT_F
+	const QUICK_PACK_F
+
+QUICK_START  EQU 1 << QUICK_START_F
+QUICK_SELECT EQU 1 << QUICK_SELECT_F
+QUICK_PACK   EQU 1 << QUICK_PACK_F
 
 ; wBattleResult
 	const_def

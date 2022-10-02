@@ -13,15 +13,11 @@
 BurglarHideoutB1F_MapScripts:
 	db 3 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
-	scene_script .DummyScene ; SCENE_RIVAL
-	scene_script .DummyScene ; SCENE_FINISHED
+	scene_script .DummyScene ; SCENE_BURGLARHIDEOUTB1F_RIVAL
+	scene_script .DummyScene ; SCENE_BURGLARHIDEOUTB1F_FINISHED
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .PasswordShutterCallback
-
-.HidePokeFlute:
-	disappear BURGLARHIDEOUTB1F_ITEMBALL1
-	end
 	
 .DummyScene:
 	end	
@@ -35,20 +31,20 @@ BurglarHideoutB1F_MapScripts:
 	changeblock  18, 10, $0D ; open shutter
 	changeblock  20, 10, $0D ; open shutter
 	return
-	
+
 BurglarHideoutAbbotScene:
 	special FadeOutMusic
 	applymovement PLAYER, HideoutRivalStepDown
 	applymovement BURGLARHIDEOUTB1F_SAGE3, SageBlockPlayer
-	turnobject PLAYER, UP
-	showemote EMOTE_QUESTION, PLAYER, 15
-	applymovement PLAYER, PlayerApproachAbbot
+;	turnobject PLAYER, UP
+;	showemote EMOTE_QUESTION, PLAYER, 15
+	showemote EMOTE_SHOCK, BURGLARHIDEOUTB1F_LEADER, 15
 	opentext
 	writetext SageAbbotGreeting
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, PLAYER, 15
-	turnobject PLAYER, DOWN
+	applymovement BURGLARHIDEOUTB1F_LEADER, PlayerApproachAbbot
+;	turnobject BURGLARHIDEOUTB1F_LEADER, LEFT
 	opentext
 	writetext SageAbbotText
 	waitbutton
@@ -56,6 +52,7 @@ BurglarHideoutAbbotScene:
 	writetext SageAbbotChallenge
 	waitbutton
 	closetext
+	setlasttalked BURGLARHIDEOUTB1F_LEADER
 	winlosstext SageAbbotWinText, 0
 	loadtrainer EXECUTIVEM, ABBOT2
 	startbattle
@@ -67,7 +64,6 @@ BurglarHideoutAbbotScene:
 	disappear BURGLARHIDEOUTB1F_SAGE2
 	disappear BURGLARHIDEOUTB1F_SAGE3
 	clearevent EVENT_HIDEOUT_POKE_FLUTE
-	appear    BURGLARHIDEOUTB1F_ITEMBALL1
 	setevent EVENT_CLEARED_BURGLAR_HIDEOUT
 	setscene SCENE_BURGLARHIDEOUTB1F_FINISHED
 	special FadeInQuickly
@@ -160,6 +156,7 @@ BurglarHideoutB1FScientist:
 	winlosstext BikerGuard1WinText, 0
 	loadtrainer BIKER, BRANDON
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
 	turnobject PLAYER, LEFT
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -170,6 +167,7 @@ BurglarHideoutB1FScientist:
 	winlosstext BikerGuard2WinText, 0
 	loadtrainer BIKER, RYAN
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
 	turnobject PLAYER, RIGHT
 	playmusic MUSIC_ROCKET_ENCOUNTER
@@ -180,6 +178,7 @@ BurglarHideoutB1FScientist:
 	winlosstext BikerGuard3WinText, 0
 	loadtrainer BIKER, BAM
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
 	turnobject PLAYER, LEFT
 	opentext
@@ -302,9 +301,10 @@ BurglarHideoutRivalScriptContinue:
 	disappear BURGLARHIDEOUTB1F_RIVAL
 	waitsfx
 	setscene SCENE_BURGLARHIDEOUTB1F_RIVAL
+	setmapscene ORCHID_GYM_1F, SCENE_ORCHIDGYM1F_RIVAL
 	playmapmusic
 	end
-	
+
 TrainerSageLo2:
 	trainer SAGE, LO2, EVENT_BEAT_SAGE_LO2, SageLo2Text, SageLo2WinText, 0, .Script
 
@@ -315,6 +315,9 @@ TrainerSageLo2:
 	waitbutton
 	closetext
 	end		
+
+BurglarHideoutB1FSage:
+	jumptextfaceplayer BurglarHideoutB1FSageText
 
 BurglarHideoutPokeFlute:
 	itemball POKE_FLUTE
@@ -388,11 +391,15 @@ SageBlockPlayer:
 	step_end
 	
 PlayerApproachAbbot:
-	step DOWN
-	step DOWN
-	step DOWN
-	step DOWN
-	turn_head RIGHT
+;	step DOWN
+;	step DOWN
+;	step DOWN
+;	step DOWN
+;	turn_head RIGHT
+	step LEFT
+	step UP
+	step UP
+	step UP
 	step_resume
 
 HideoutRivalStepDown:
@@ -463,8 +470,8 @@ PlaySecurityAlarm:
 	
 SomeBurglarText:
 	text "You didn't think"
-	line "HELIO was our only"
-	cont "gig, did you?"
+	line "HEPATICA was our"
+	cont "only gig, did you?"
 	
 	para "Fufufu! Nope!"
 	
@@ -513,9 +520,9 @@ BurglarHideoutB1FScientistText:
 BurglarHideoutB1FScientistNoticeText:
 	text "Wait a second…"
 	
-	para "You're the kid"
-	line "who beat the boss"
-	cont "up at HELIO TOWN!"
+	para "You're the kid who"
+	line "beat the boss up"
+	cont "at HEPTAICA TOWN!"
 	
 	para "You made a big"
 	line "mistake coming"
@@ -633,7 +640,7 @@ HideoutRivalText:
 	
 	para "You probably don't"
 	line "even care about"
-	cont "capturing the"
+	cont "capturing that"
 	cont "SNORLAX."
 	
 	para "What a waste."
@@ -644,10 +651,10 @@ HideoutRivalText:
 	cont "send you back to a"
 	cont "#MON CENTER!"
 	done
-	
+
 HideoutRivalLossText:
 	text "Pathetic."
-	
+
 	para "I knew you"
 	line "couldn't best me"
 	cont "forever."
@@ -656,27 +663,36 @@ HideoutRivalLossText:
 HideoutRivalWinText:
 	text "I can't stand"
 	line "this!"
-	
+
 	para "You got a lucky"
 	line "handout at the"
 	cont "start of your"
 	cont "journey!"
-	
+
 	para "I had to catch my"
 	line "own #MON!"
 	done
-	
+
 HideoutRivalAfterText:
 	text "Fine! Go win back"
 	line "the # FLUTE!"
+	
+	para "Be the hero,"
+	line "I don't care!"
 	
 	para "Clearly you are"
 	line "the only trainer I"
 	cont "simply can't beat!"
 	done
-	
+
 HideoutRivalAngryText:
 	text "ARGH!"
+	done
+
+BurglarHideoutB1FSageText:
+	text "He…"
+	
+	para "Awaits…"
 	done
 	
 SageAbbotGreeting:
@@ -696,8 +712,8 @@ SageAbbotText:
 	done
 	
 SageAbbotChallenge:
-	text "HELIO TOWN was a"
-	line "fluke."
+	text "HEPATICA TOWN was"
+	line "a fluke."
 	
 	para "I will not stand"
 	line "for you ruining my"
@@ -735,8 +751,8 @@ BurglarHideoutB1F_MapEvents:
 	object_event 26, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB1FScientist, EVENT_HIDEOUT_BEAT_BIKERS
 	object_event  6, 28, SPRITE_ABBOT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 11,  6, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSageLo2, EVENT_CLEARED_BURGLAR_HIDEOUT
-	object_event  4, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_BURGLAR_HIDEOUT
-	object_event  6, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event  4, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB1FSage, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event  6, 22, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB1FSage, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS
 	object_event  0, 0, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDEOUT_BEAT_BIKERS

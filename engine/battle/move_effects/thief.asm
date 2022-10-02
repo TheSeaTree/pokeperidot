@@ -21,9 +21,7 @@ BattleCommand_Thief:
 
 ; Can't steal valuables.
 
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	call ItemIsValuable
+	call CheckValuableItem
 	ret c
 
 	ld a, [wEffectFailed]
@@ -68,9 +66,7 @@ BattleCommand_Thief:
 
 ; Can't steal valuables!
 
-	ld [wNamedObjectIndexBuffer], a
-	ld d, a
-	call ItemIsValuable
+	call CheckValuableItem
 	ret c
 
 	ld a, [wEffectFailed]
@@ -111,10 +107,68 @@ BattleCommand_Thief:
 	ld hl, wEnemyMonItem
 	ret
 
-ItemIsValuable:
-	ld a, d
-	ld hl, ValuableItems
-	ld de, 1
-	jp IsInArray
+BattleCommand_ThiefDamage:
+	ldh a, [hBattleTurn]
+	and a
+	jr nz, .enemy
 
-INCLUDE "data/items/valuable_items.asm"
+; The player needs to be able to steal an item.
+
+	call BattleCommand_Thief.playeritem
+	ld a, [hl]
+	and a
+	ret nz
+
+; The enemy needs to have an item to steal.
+
+	call BattleCommand_Thief.enemyitem
+	ld a, [hl]
+	and a
+	ret z
+
+	call CheckValuableItem
+	ret c
+	
+	ld a, [wLinkMode]
+	and a
+	jr z, .doubledamage
+
+	ld a, [wBattleMode]
+	dec a
+	ret z
+	jp .doubledamage
+
+.enemy
+
+; The enemy can't already have an item.
+
+	call BattleCommand_Thief.enemyitem
+	ld a, [hl]
+	and a
+	ret nz
+
+; The player must have an item to steal.
+
+	call BattleCommand_Thief.playeritem
+	ld a, [hl]
+	and a
+	ret z
+
+; Can't steal valuables!
+
+	call CheckValuableItem
+	ret c
+
+	ld a, [wEffectFailed]
+	and a
+	ret nz
+.doubledamage
+	ld a, 1
+	ld [wBattleAnimParam], a 
+	jp DoubleDamage
+
+CheckValuableItem:
+	ld [wNamedObjectIndexBuffer], a
+	ld d, a
+	farcall ItemIsValuable
+	ret

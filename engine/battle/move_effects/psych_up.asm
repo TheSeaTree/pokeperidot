@@ -1,6 +1,5 @@
 BattleCommand_PsychUp:
 ; psychup
-
 	ld hl, wEnemyStatLevels
 	ld de, wPlayerStatLevels
 	ldh a, [hBattleTurn]
@@ -23,8 +22,8 @@ BattleCommand_PsychUp:
 	dec b
 	jr nz, .loop
 	pop hl
-	call AnimateFailedMove
-	jp PrintButItFailed
+.fail
+	call BattleEffect_ButItFailed
 
 .break
 	pop hl

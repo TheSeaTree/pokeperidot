@@ -281,9 +281,6 @@ Serial_PrintWaitingTextAndSyncAndExchangeNybble::
 Serial_SyncAndExchangeNybble::
 	call LoadTileMapToTempTileMap
 	callfar PlaceWaitingText
-	jp WaitLinkTransfer
-
-; One "giant" leap for machinekind
 
 WaitLinkTransfer::
 	ld a, $ff

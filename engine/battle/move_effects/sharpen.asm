@@ -1,13 +1,9 @@
 BattleCommand_Sharpen:
 ; sharpen
 
-	call ResetMiss
 	call BattleCommand_AttackUp
-	
 	call ResetMiss
 	call BattleCommand_AttackUp2
-	jp   BattleCommand_SharpenMessage
-	
 BattleCommand_SharpenMessage:
 	ld a, [wFailedMessage]
 	and a
@@ -20,7 +16,7 @@ BattleCommand_SharpenMessage:
 	call GetStatName
 	ld hl, .stat
 	jp BattleTextBox
-	
+
 .stat
 	text_far UnknownText_0x1c0cc6
 	text_asm

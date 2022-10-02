@@ -7,6 +7,8 @@
 	const SEER_CANCEL
 	const SEER_EGG
 	const SEER_LEVEL_ONLY
+	const SEER_TIME_ONLY
+	const SEER_PALEROCK
 
 	const_def
 	const SEERACTION_MET
@@ -14,6 +16,8 @@
 	const SEERACTION_CANT_TELL_1
 	const SEERACTION_CANT_TELL_2
 	const SEERACTION_LEVEL_ONLY
+	const SEERACTION_TIME_ONLY
+	const SEERACTION_PALEROCK
 
 PokeSeer:
 	ld a, SEER_INTRO
@@ -60,10 +64,26 @@ SeerActions:
 	dw SeerAction2
 	dw SeerAction3
 	dw SeerAction4
+	dw SeerAction5
+	dw SeerAction6
 
 SeerAction0:
+	; Palerock Mountain's landmark name is too long for the Poke Seer to display normally.
+	ld a, [wSeerCaughtGender]
+	cp PALEROCK_MOUNTAIN
+	jr z, SeerAction6
+
 	ld a, SEER_MET_AT
 	call PrintSeerText
+
+	ld a, [wCurPartySpecies]
+	cp MEWTWO
+	jr z, SeerAction5
+	cp HO_OH
+	jr z, SeerAction5
+	cp LUGIA
+	jr z, SeerAction5
+
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
 	call SeerAdvice
@@ -90,6 +110,21 @@ SeerAction3:
 
 SeerAction4:
 	ld a, SEER_LEVEL_ONLY
+	call PrintSeerText
+	call SeerAdvice
+	ret
+
+SeerAction5:
+	ld a, SEER_TIME_ONLY
+	call PrintSeerText
+	call SeerAdvice
+	ret
+
+SeerAction6:
+	ld a, SEER_PALEROCK
+	call PrintSeerText
+	
+	ld a, SEER_TIME_LEVEL
 	call PrintSeerText
 	call SeerAdvice
 	ret
@@ -295,6 +330,8 @@ SeerTexts:
 	dw SeerCancelText
 	dw SeerEggText
 	dw SeerLevelOnlyText
+	dw SeerTimeOnlyText
+	dw SeerPalerockMountainText
 
 SeerIntroText:
 	; I see all. I know all… Certainly, I know of your #MON!
@@ -326,6 +363,10 @@ SeerLevelOnlyText:
 	text_far UnknownText_0x1c487f
 	text_end
 
+SeerTimeOnlyText:
+	text_far PokeSeer_TimeOnlyText
+	text_end
+
 SeerEggText:
 	; Hey! That's an EGG! You can't say that you've met it yet…
 	text_far UnknownText_0x1c491d
@@ -334,6 +375,10 @@ SeerEggText:
 SeerCancelText:
 	; Fufufu! I saw that you'd do nothing!
 	text_far UnknownText_0x1c4955
+	text_end
+
+SeerPalerockMountainText:
+	text_far PokeSeer_PalerockLocationText
 	text_end
 
 SeerAdvice:
