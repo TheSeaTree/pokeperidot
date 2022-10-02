@@ -13,6 +13,9 @@ Route23_MapScripts:
 .skip
 	return
 
+Route23Sign:
+	jumptext Route23SignText
+
 Route23ItemBush:
 	itembush FRUITTREE_ROUTE_23
 
@@ -21,6 +24,14 @@ Route23StarPiece:
 
 Route23HiddenWaterStone:
 	hiddenitem WATER_STONE, EVENT_ROUTE_23_HIDDEN_WATER_STONE
+
+Route23SignText:
+	text "ROUTE 21"
+
+	para "Entry to ROUTE 22"
+	line "is not permitted"
+	cont "from this point."
+	done
 
 Route23_MapEvents:
 	db 0, 0 ; filler
@@ -31,7 +42,8 @@ Route23_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
+	bg_event  8, 12, BGEVENT_ITEM, Route23Sign
 	bg_event 19, 28, BGEVENT_ITEM, Route23HiddenWaterStone
 
 	db 2 ; object events

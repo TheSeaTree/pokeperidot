@@ -540,7 +540,7 @@ BurglarHideoutB2FComputer2Text:
 	cont "on the screen."
 
 	para "It looks"
-	cont "complicated."
+	line "complicated."
 	done
 	
 UsedCardKeyText:

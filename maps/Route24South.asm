@@ -5,6 +5,9 @@ Route24South_MapScripts:
 
 	db 0 ; callbacks
 
+Route24SouthSign:
+	jumptext Route24SouthSignText
+
 Route24NorthBigMushroom:
 	itemball BIG_MUSHROOM
 
@@ -26,6 +29,13 @@ Route24SouthHiddenHeatCharm:
 Route24SouthHiddenXDefend:
 	hiddenitem X_DEFEND, EVENT_ROUTE_24_HIDDEN_X_DEFEND
 
+Route24SouthSignText:
+	text "ROUTE 18"
+	
+	para "ACROPORA CITY -"
+	line "ROUTE 19"
+	done
+
 Route24South_MapEvents:
 	db 0, 0 ; filler
 
@@ -39,6 +49,7 @@ Route24South_MapEvents:
 	bg_event 11,  9, BGEVENT_ITEM, Route24SouthHiddenTinyMushroom
 	bg_event 29,  8, BGEVENT_ITEM, Route24SouthHiddenHeatCharm
 	bg_event  3,  3, BGEVENT_ITEM, Route24SouthHiddenXDefend
+	bg_event  3,  3, BGEVENT_READ, Route24SouthSign
 
 	db 4 ; object events
 	object_event  0, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthBigMushroom, EVENT_ROUTE_24_BIG_MUSHROOM

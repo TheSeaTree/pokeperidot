@@ -137,7 +137,7 @@ GuitaristMarcelWinText:
 	done
 	
 GuitaristMarcelAfterText:
-	text "I go my many"
+	text "I go by many"
 	line "names."
 	
 	para "Pseudonyms are"

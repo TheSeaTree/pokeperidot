@@ -104,8 +104,8 @@ Route18FarmhouseMother:
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 3 ; items
-	db " 1 BOTTLE     ¥950@"
-	db "12 BOTTLES  ¥11400@"
+	db " 1 BOTTLE    ¥950@"
+	db "12 BOTTLES ¥11400@"
 	db "CANCEL@"
 	
 Route18FarmhouseFather:

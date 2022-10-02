@@ -61,6 +61,9 @@ TrainerBeautyDiane:
 Route19Sign:
 	jumptext Route19SignText
 
+Route19Sign2:
+	jumptext Route19Sign2Text
+
 Route19Calcium:
 	itemball CALCIUM
 
@@ -191,6 +194,19 @@ Route19SignText:
 	line "ROUTE 16"
 	done
 
+Route19Sign2Text:
+	text "TRAINER TIPS"
+
+	para "Exercise caution"
+	line "when encountering"
+	cont "wild MANKEY."
+
+	para "These #MON are"
+	line "quick to anger,"
+	cont "and can pose a"
+	cont "threat to humans."
+	done
+
 Route19_MapEvents:
 	db 0, 0 ; filler
 
@@ -198,8 +214,9 @@ Route19_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event 37, 13, BGEVENT_READ, Route19Sign
+	bg_event  8, 11, BGEVENT_READ, Route19Sign2
 	bg_event  8,  5, BGEVENT_ITEM, Route19BigMushroom
 	bg_event 49, 16, BGEVENT_ITEM, Route19Stick
 

@@ -24,7 +24,7 @@ Factory1F_MapScripts:
 .CheckDoor2
 	checkevent EVENT_FACTORY_1F_DOOR_2_OPEN
 	iffalse .skip
-	changeblock 10, 14, $B6
+	changeblock 10, 14, $CC
 	changeblock 12, 14, $24
 	checkevent EVENT_FACTORY_BACK_ROOM_OPEN
 	iffalse .skip
@@ -72,7 +72,7 @@ Factory1FPasscodeDoor2:
 	waitbutton
 	closetext
 	setevent EVENT_FACTORY_1F_DOOR_2_OPEN
-	changeblock 10, 14, $B6
+	changeblock 10, 14, $CC
 	changeblock 12, 14, $24
 	playsound SFX_ENTER_DOOR
 	reloadmappart

@@ -118,8 +118,8 @@ PokemonLeaguePokecenter1FFangirlExplainExpAllText:
 	para "Pretty neat, huh?"
 
 	para "Now you have no"
-	line "excuse to keep"
-	cont "training!"
+	line "excuse not to"
+	cont "keep training!"
 	done
 	
 PokemonLeaguePokecenter1FFangirlAfterText:

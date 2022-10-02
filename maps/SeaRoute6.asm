@@ -95,6 +95,9 @@ SeaRoute6Xatu:
 	closetext
 	end
 
+SeaRoute6Sign:
+	jumptext SeaRoute6SignText
+
 BeautyChelleText:
 	text "My hero! You've"
 	line "come to rescue m-"
@@ -227,6 +230,18 @@ SeaRoute6XatuText:
 	text "XATU: Dootdoot!"
 	done
 
+SeaRoute6SignText:
+	text "TRAINER TIPS"
+
+	para "It is recommended"
+	line "that trainers who"
+	cont "travel across the"
+	cont "ocean are accomp-"
+	cont "anied by a WATER-"
+	cont "type #MON at"
+	cont "all times."
+	done
+
 SeaRoute6_MapEvents:
 	db 0, 0 ; filler
 
@@ -235,7 +250,8 @@ SeaRoute6_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 33,  8, BGEVENT_READ, SeaRoute6Sign
 
 	db 6 ; object events
 	object_event 31,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, SeaRoute6TeleportGuy, -1

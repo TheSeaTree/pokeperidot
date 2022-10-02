@@ -132,7 +132,7 @@ RidgeVillageShoeGuy:
 	writetext PlayerReceivedRunningShoes
 	playsound SFX_KEY_ITEM
 	setflag ENGINE_RUNNING_SHOES
-	buttonsound
+	waitsfx
 	writetext ShoeguyExplain
 	yesorno
 	iffalse .ExplainedShoes

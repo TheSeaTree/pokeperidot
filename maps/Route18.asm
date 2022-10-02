@@ -265,7 +265,7 @@ FisherFisherWinText:
 	done
 
 FisherFisherAfterText:
-	text "My parents must"
+	text "My parents must be"
 	line "PSYCHIC-types to"
 	cont "choose my name the"
 	cont "way they did."

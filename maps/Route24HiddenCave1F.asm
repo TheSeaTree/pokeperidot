@@ -8,7 +8,7 @@ Route24HiddenCave1F_MapScripts:
 	
 .OpenCave
 	checkcode VAR_XCOORD
-	ifgreater 19, .Entrance2
+	ifequal 30, .Entrance2
 	setevent EVENT_ROUTE_24_HIDDEN_CAVE_1_OPEN
 	return
 .Entrance2
