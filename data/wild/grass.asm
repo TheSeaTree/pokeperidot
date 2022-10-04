@@ -2118,6 +2118,87 @@ GrassWildMons:
 	db 35, SLOWKING
 	db 35, SLOWKING
 
+	map_id REMNANT_CAVE_1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, SANDSLASH
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	; day
+	db 35, SANDSLASH
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	; nite
+	db 35, SANDSLASH
+	db 36, GOLBAT
+	db 35, KINGLER
+	db 35, DUGTRIO
+	db 36, KINGLER
+	db 35, DUGTRIO
+	db 37, DUGTRIO
+	
+	map_id REMNANT_CAVE_2F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, DUGTRIO
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, SANDSLASH
+	db 35, SANDSLASH
+	; day
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, DUGTRIO
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, SANDSLASH
+	db 35, SANDSLASH
+	; nite
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, DUGTRIO
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, SANDSLASH
+	db 35, SANDSLASH
+	
+	map_id REMNANT_CAVE_3F
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, SANDSLASH
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, ONIX
+	db 35, ONIX
+	; day
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, SANDSLASH
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, ONIX
+	db 35, ONIX
+	; nite
+	db 34, GOLBAT
+	db 34, GRAVELER
+	db 35, SANDSLASH
+	db 37, SANDSLASH
+	db 37, ONIX
+	db 35, ONIX
+	db 35, ONIX
+
 	map_id UNOWN_CHAMBER_AG
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
