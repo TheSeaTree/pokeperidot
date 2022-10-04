@@ -156,6 +156,7 @@ INCLUDE "maps/Route5SuperRodHouse.asm"
 INCLUDE "maps/Route4HiddenCave.asm"
 INCLUDE "maps/Route8HiddenCave.asm"
 INCLUDE "maps/TrainerHouse.asm"
+INCLUDE "maps/VictoryCoastOfficersHouse.asm"
 
 
 SECTION "Map Scripts 11", ROMX

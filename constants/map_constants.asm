@@ -41,6 +41,9 @@ ENDM
 	map_const SEA_ROUTE_5,                                 22, 17 ;  3
 	map_const SEA_ROUTE_6,                                 19, 19 ;  3
 	map_const ROUTE_6_GATE,                                 5,  4 ;  3
+	map_const ROUTE_23,					                   19, 20 ; 15
+	map_const ROUTE_23_GATE,					           	5,  4
+	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
 
 	newgroup                                                      ;  2
 
@@ -399,9 +402,6 @@ ENDM
 
 	newgroup                                                      ; 25
 
-	map_const ROUTE_23,					                   19, 20 ; 15
-	map_const ROUTE_23_GATE,					           	5,  4
-	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
 	map_const ROUTE_26,					                   21, 16
 	map_const ROUTE_26_GATE,					           	5,  4
 	map_const ROUTE_26_CAVE_1F,			                   13,  5
@@ -452,6 +452,7 @@ ENDM
 	map_const UNOWN_CHAMBER_OU,                             6,  7 ; 52
 	map_const UNOWN_CHAMBER_VZ,                             6,  7 ; 52
 	map_const TREASURE_HUNTERS_HOUSE,                       7,  5
+	map_const VICTORY_COAST_OFFICERS_HOUSE,		   		    5,  4
 	
 	newgroup
 

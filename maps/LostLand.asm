@@ -24,7 +24,7 @@ LostLand_MapScripts:
 .SmashWall:
 	checkevent EVENT_LOST_LAND_HIDDEN_CAVE_OPEN
 	iffalse .done
-	changeblock  2, 12, $54
+	changeblock  4, 12, $54
 .done
 	return
 
@@ -118,7 +118,7 @@ LostLandAerodactylEgg:
 	waitbutton
 	closetext
 	applymovement LOSTLAND_SCIENTIST7, LostLandScientistEggLeave
-	disappear LOSTLAND_SCIENTIST1
+	disappear LOSTLAND_SCIENTIST7
 	setevent EVENT_LOST_LAND_WAITING_OLD_AMBER
 	end
 
@@ -149,7 +149,30 @@ LostLandScientist:
 	end
 	
 LostLandScientistAfter:
-	jumptextfaceplayer LostLandScientistAfterText
+	faceplayer
+	opentext
+	checkevent EVENT_LOST_LAND_WAITING_OLD_AMBER
+	iftrue .TryGiveOldAmber
+	writetext LostLandScientistAfterText
+	waitbutton
+	closetext
+	end
+
+.TryGiveOldAmber
+	writetext LostLandScientistGiveOldAmberText
+	verbosegiveitem OLD_AMBER
+	iffalse .NoRoom
+	writetext LostLandScientistExplainOldAmber
+	waitbutton
+	closetext
+	setevent EVENT_LOST_LAND_GOT_OLD_AMBER
+	end
+
+.NoRoom
+	writetext LostLandScientistBagStillFullText
+	waitbutton
+	closetext
+	end
 
 LostLandScientist2:
 	jumptextfaceplayer LostLandScientist2Text
@@ -388,6 +411,23 @@ LostLandScientistFailedGiveOldAmber:
 	para "Come see me by the"
 	line "entrance. I'll hold"
 	cont "onto it for you."
+	done
+
+LostLandScientistGiveOldAmberText:
+	text "There you are!"
+
+	para "Here's the OLD"
+	line "AMBER I was hold-"
+	cont "ing onto for you."
+	done
+
+LostLandScientistBagStillFullText:
+	text "What? You still"
+	line "haven't made room"
+	cont "for this?"
+
+	para "What are you wait-"
+	line "ing for?"
 	done
 
 LostLandAerodactylEggText:

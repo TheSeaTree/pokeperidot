@@ -909,3 +909,6 @@ MewtwoLabB1F_Blocks:
 
 MewtwoLab2F_Blocks:
 	INCBIN "maps/MewtwoLab2F.ablk"
+
+VictoryCoastOfficersHouse_Blocks:
+	INCBIN "maps/VictoryCoastOfficersHouse.ablk"

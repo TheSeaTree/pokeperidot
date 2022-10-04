@@ -366,6 +366,8 @@ OceanGroupSprites:
 	db SPRITE_ROCK
 	db SPRITE_POKE_BALL
 	db SPRITE_SWIMMER_GUY_LAND
+	db SPRITE_BUSH
+	db SPRITE_MOLTRES
 	db 0 ; end
 
 CianwoodGroupSprites:

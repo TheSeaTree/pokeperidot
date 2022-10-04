@@ -594,3 +594,4 @@ ENDM
 	map_attributes MewtwoLab1F, MEWTWO_LAB_1F, $00, 0
 	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
 	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0
+	map_attributes VictoryCoastOfficersHouse, VICTORY_COAST_OFFICERS_HOUSE, $00, 0

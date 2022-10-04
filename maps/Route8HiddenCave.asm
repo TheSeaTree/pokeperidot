@@ -10,6 +10,12 @@ Route8HiddenCave_MapScripts:
 	setevent EVENT_ROUTE_8_HIDDEN_CAVE_OPEN
 	return
 
+Route8HiddenCaveXAttack:
+	itemball X_ATTACK
+
+Route8HiddenCaveXSpAtk:
+	itemball X_SP_ATK
+
 Route8HiddenCave_MapEvents:
 	db 0, 0 ; filler
 
@@ -19,5 +25,7 @@ Route8HiddenCave_MapEvents:
 	db 0 ; coord events
 
 	db 0 ; bg events
-	
-	db 0 ; object events
+
+	db 2 ; object events
+	object_event  3,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8HiddenCaveXAttack, EVENT_ROUTE_8_HIDDEN_CAVE_X_ATTACK
+	object_event  6,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8HiddenCaveXSpAtk, EVENT_ROUTE_8_HIDDEN_CAVE_X_SP_ATK

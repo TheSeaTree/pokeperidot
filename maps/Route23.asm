@@ -43,9 +43,9 @@ Route23_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event  8, 12, BGEVENT_ITEM, Route23Sign
+	bg_event  8, 12, BGEVENT_READ, Route23Sign
 	bg_event 19, 28, BGEVENT_ITEM, Route23HiddenWaterStone
 
 	db 2 ; object events
-	object_event 27,  6, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, Route23ItemBush, -1
-	object_event 27, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 4, Route23StarPiece, -1
+	object_event 27,  5, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 4, Route23ItemBush, -1
+	object_event 27, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 4, Route23StarPiece, EVENT_ROUTE_23_STAR_PIECE
