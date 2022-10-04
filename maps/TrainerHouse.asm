@@ -115,8 +115,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER1
 	winlosstext PokefanFeliciaWinText, PokefanFeliciaLossText
-;    loadtrainer POKEFANF, FELICIA
-    loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer POKEFANF, FELICIA
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER1, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -135,8 +134,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER2
 	winlosstext PokefanIrvingWinText, PokefanIrvingLossText
-;    loadtrainer POKEFANM, IRVING
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer POKEFANM, IRVING
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER2, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -155,8 +153,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER3
 	winlosstext GentlemanRonWinText, GentlemanRonLossText
-;    loadtrainer GENTLEMAN, RON
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer GENTLEMAN, RON
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER3, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -175,8 +172,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER4
 	winlosstext TeacherCeceliaWinText, TeacherCeceliaLossText
-;    loadtrainer TEACHER, CECELIA
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer TEACHER, CECELIA
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER4, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -195,8 +191,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER5
 	winlosstext SuperNerdNorbertWinText, SuperNerdNorbertLossText
-;    loadtrainer SUPER_NERD, NORBERT
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer SUPER_NERD, NORBERT
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER5, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -215,8 +210,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER6
 	winlosstext BeautyGraceWinText, BeautyGraceLossText
-;    loadtrainer BEAUTY, GRACE
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer BEAUTY, GRACE
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER6, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -235,8 +229,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER7
 	winlosstext CooltrainerEdgarWinText, CooltrainerEdgarLossText
-;    loadtrainer COOLTRAINERM, EDGAR
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer COOLTRAINERM, EDGAR
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER7, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
@@ -255,8 +248,7 @@ TrainerHouse_LoadTrainer:
 
 	setlasttalked TRAINERHOUSE_TRAINER8
 	winlosstext CooltrainerAbbyWinText, CooltrainerAbbyLossText
-;    loadtrainer COOLTRAINERF, ABBY
-	loadtrainer SCHOOLBOY, TIMMY
+    loadtrainer COOLTRAINERF, ABBY
 	scall .DoBattle
 	applymovement TRAINERHOUSE_TRAINER8, TrainerHouseTrainerLeaveMovement
 
