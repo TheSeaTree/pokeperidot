@@ -588,6 +588,12 @@ FlyFunction:
 
 .TryFly:
 ; Fly
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp LOST_LAND
+	jr z, .indoors
+	cp THE_PAST
+	jr z, .indoors
 	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .indoors
