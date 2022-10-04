@@ -209,7 +209,7 @@ EnyaAfterText:
 
 	para "Train well,"
 	line "<PLAYER>, for this"
-	line "battle will not be"
+	cont "battle will not be"
 	cont "our last."
 	done
 

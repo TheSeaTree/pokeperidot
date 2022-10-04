@@ -45,11 +45,11 @@ Route24South_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 4 ; bg events
 	bg_event 11,  9, BGEVENT_ITEM, Route24SouthHiddenTinyMushroom
 	bg_event 29,  8, BGEVENT_ITEM, Route24SouthHiddenHeatCharm
 	bg_event  3,  3, BGEVENT_ITEM, Route24SouthHiddenXDefend
-	bg_event  3,  3, BGEVENT_READ, Route24SouthSign
+	bg_event 34,  5, BGEVENT_READ, Route24SouthSign
 
 	db 4 ; object events
 	object_event  0, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthBigMushroom, EVENT_ROUTE_24_BIG_MUSHROOM

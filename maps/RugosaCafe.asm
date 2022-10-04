@@ -212,8 +212,8 @@ RugosaCafeYoungsterText:
 	cont "eat."
 
 	para "It's fun to see all"
-	line "the different kinds"
-	cont "of tourists!"
+	line "the different"
+	cont "kinds of tourists!"
 	done
 
 RugosaCafeFridgeText:

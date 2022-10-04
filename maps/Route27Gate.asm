@@ -39,7 +39,7 @@ Route27GateNurseScript:
 Route27GateOfficerMText:
 	text "You won't find any"
 	line "#MON on ROUTE"
-	cont "27, but there are"
+	cont "22, but there are"
 	cont "always trainers"
 	cont "around looking for"
 	cont "a good battle!"
@@ -50,7 +50,7 @@ Route27GateOfficerMText:
 	done
 
 Route27GateOfficerFText:
-	text "Going to ROUTE 27"
+	text "Going to ROUTE 22"
 	line "for some battles?"
 
 	para "The man who works"
@@ -61,7 +61,7 @@ Route27GateOfficerFText:
 Route27GateNurseText:
 	text "Are your #MON"
 	line "hurt from training"
-	cont "on ROUTE 27?"
+	cont "on ROUTE 22?"
 
 	para "Let me see, I'll"
 	line "fix them right up!"
