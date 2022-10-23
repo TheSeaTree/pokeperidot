@@ -3,7 +3,6 @@ SelectFossilsMenu:
 	ld c, $1
 	xor a
 	ld [wMenuScrollPosition], a
-	ld [wKurtApricornQuantity], a
 .loop
 	ld a, c
 	ld [wMenuSelection], a
@@ -63,7 +62,6 @@ SelectTreasureMenu:
 	ld c, $1
 	xor a
 	ld [wMenuScrollPosition], a
-	ld [wKurtApricornQuantity], a
 .loop
 	ld a, c
 	ld [wMenuSelection], a

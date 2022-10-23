@@ -126,15 +126,20 @@ StartMenu_PrintBugContestStatus:
 	hlcoord 11, 2
 	ld de, .Balls_EN
 	call PlaceString
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_EXTENDED_SAFARI_GAME_F, [hl]
+	jr z, .normal_safari
+	hlcoord 15, 1
+	ld de, .ExtendedSteps
+	call PlaceString
+	call PlaceString
+	jr .ball_count
+.normal_safari
 	hlcoord 15, 1
 	ld de, .Steps
 	call PlaceString
-	ld hl, wSafariFlag
-	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
-	jr z, .normal_safari
-	ld de, .ExtendedSteps
-	call PlaceString
-.normal_safari
+.ball_count
 	hlcoord 17, 2
 	ld de, wSafariBallsRemaining
 	lb bc, PRINTNUM_RIGHTALIGN | 1, 2

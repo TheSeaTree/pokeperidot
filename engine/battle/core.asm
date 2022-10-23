@@ -563,7 +563,8 @@ HandleLegendaryStatBoost:
 
 	ld [hl], a
 
-	call GetPartyLocation
+;	call GetPartyLocation
+
 ;	xor a
 ;	ld [hl], a
 	call GetBattleVarAddr
@@ -1746,7 +1747,7 @@ HandleDefrost:
 	ret nz
 
 	call BattleRandom
-	cp 10 percent
+	cp 20 percent
 	ret nc
 	xor a
 	ld [wBattleMonStatus], a
