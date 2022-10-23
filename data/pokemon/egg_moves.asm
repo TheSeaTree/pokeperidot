@@ -128,6 +128,7 @@ PikachuEggMoves:
 	db PETAL_DANCE
 	db DYNAMICPUNCH
 	db SURF
+	db IRON_TAIL
 	db BRICK_BREAK
 	db -1 ; end
 
