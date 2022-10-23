@@ -2335,6 +2335,33 @@ GrassWildMons:
 	db 50, NATU
 	db 50, NATU
 
+	map_id ROUTE_28
+	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
+	; morn
+	db 58, JIGGLYPUFF
+	db 58, FEAROW
+	db 65, WEEPINBELL
+	db 59, ARBOK
+	db 60, FEAROW
+	db 59, VULPIX
+	db 60, VULPIX
+	; day
+	db 58, JIGGLYPUFF
+	db 58, MURKROW
+	db 60, WEEPINBELL
+	db 59, ARBOK
+	db 60, MURKROW
+	db 59, VULPIX
+	db 60, VULPIX
+	; nite
+	db 58, JIGGLYPUFF
+	db 58, MURKROW
+	db 60, WEEPINBELL
+	db 59, ARBOK
+	db 60, MURKROW
+	db 59, VULPIX
+	db 60, VULPIX
+
 	map_id NORTH_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
