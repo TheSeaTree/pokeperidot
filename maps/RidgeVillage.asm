@@ -115,6 +115,7 @@ RidgeVillageRivalBattleScript:
 	applymovement RIDGEVILLAGE_FANGIRL, RidgeVillageRivalBattleExitMovement
 	disappear RIDGEVILLAGE_FANGIRL
 	playmapmusic
+	setmapscene PECTINIA_CITY, SCENE_PECTINIACITY_DEFEATED_RIVAL
 	end
 	
 RidgeVillageShoeGuy:

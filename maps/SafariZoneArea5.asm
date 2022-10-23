@@ -3,7 +3,20 @@
 SafariZoneArea5_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .Fence
+
+.Fence:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Change
+	return
+
+.Change:
+	changeblock  30, 12, $15
+	changeblock  30, 14, $02
+	changeblock  30, 22, $7e
+	changeblock  30, 24, $02
+	return
 
 SafariZoneArea5Sign:
 	jumptext SafariZoneArea5SignText

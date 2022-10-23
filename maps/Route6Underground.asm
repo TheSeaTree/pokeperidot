@@ -169,8 +169,8 @@ Route6UndergroundLassText:
 	
 Route6UndergroundOfficerMText:
 	text "This tunnel will"
-	line "take you to ROUTE"
-	cont "8."
+	line "take you directly"
+	cont "to ROUTE 7."
 	done
 
 Route6UndergroundOfficerFText:

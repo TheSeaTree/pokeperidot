@@ -102,7 +102,7 @@ FossilResurrectionGuy:
 	jump .DoneFossil
 	
 .GiveAerodactyl
-	pokenamemem OMANYTE, MEM_BUFFER_0
+	pokenamemem AERODACTYL, MEM_BUFFER_0
 	writetext GiveRevivedFossilText
 	waitbutton
 	checkcode VAR_PARTYCOUNT

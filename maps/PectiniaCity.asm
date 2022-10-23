@@ -119,6 +119,7 @@ PectiniaCityRivalBattleScript:
 	applymovement PECTINIACITY_FANGIRL, PectiniaFangirlLeave
 	disappear PECTINIACITY_FANGIRL
 	playmapmusic
+	setmapscene RIDGE_VILLAGE, SCENE_RIDGEVILLAGE_DEFEATED_RIVAL
 	end
 	
 PectiniaGymConfirm:

@@ -22,6 +22,8 @@ PokemonLeagueCafeVendingMachine:
 	opentext
 	writetext PokemonLeagueCafeVendingText
 .Start:
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .StartPostgame
 	special PlaceMoneyTopRight
 	loadmenu .MenuHeader
 	verticalmenu
@@ -29,6 +31,17 @@ PokemonLeagueCafeVendingMachine:
 	ifequal 1, .RageCandyBar
 	ifequal 2, .UltraBall
 	ifequal 3, .RareCandy
+	closetext
+	end
+
+.StartPostgame:
+	special PlaceMoneyTopRight
+	loadmenu .MenuHeaderPostgame
+	verticalmenu
+	closewindow
+	ifequal 1, .RageCandyBar
+	ifequal 2, .UltraBall
+	ifequal 3, .RareCandyPostgame
 	closetext
 	end
 
@@ -56,6 +69,15 @@ PokemonLeagueCafeVendingMachine:
 	giveitem RARE_CANDY
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 9800
+	itemtotext RARE_CANDY, MEM_BUFFER_0
+	jump .VendItem
+
+.RareCandyPostgame:
+	checkmoney YOUR_MONEY, 4900
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem RARE_CANDY
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 4900
 	itemtotext RARE_CANDY, MEM_BUFFER_0
 	jump .VendItem
 	
@@ -90,7 +112,21 @@ PokemonLeagueCafeVendingMachine:
 	db 4 ; items
 	db "RAGECANDYBAR ¥800@"
 	db "ULTRA BALL  ¥1200@"
-	db "RARE CANDY  ¥4800@"
+	db "RARE CANDY  ¥9800@"
+	db "CANCEL@"
+
+.MenuHeaderPostgame:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuDataPostgame
+	db 1 ; default option
+
+.MenuDataPostgame:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "RAGECANDYBAR ¥800@"
+	db "ULTRA BALL  ¥1200@"
+	db "RARE CANDY  ¥4900@"
 	db "CANCEL@"
 
 PokemonLeagueCafeChef:

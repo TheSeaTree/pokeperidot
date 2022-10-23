@@ -414,8 +414,6 @@ ENDM
 	map_const MAPLES_LAB_ELEVATOR,					        2,  2
 	map_const BATTLE_SIMULATION,					       10,  7
 	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
-	map_const ROUTE_28,					           		   16, 16
-	map_const ROUTE_28_GATE,					            3,  4
 	map_const DEVELOPERS_HOUSE,				           	    5,  4
 
 	newgroup                                                      ; 26
@@ -464,3 +462,5 @@ ENDM
 	newgroup
 	
 	map_const SEA_ROUTE_7,                                 14, 15
+	map_const ROUTE_28,					           		   16, 16
+	map_const ROUTE_28_GATE,					            3,  4

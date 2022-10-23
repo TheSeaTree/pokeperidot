@@ -93,15 +93,17 @@ BuyMagikarp:
 	farwritetext UnknownText_0x1bdfa5
 	playsound SFX_GET_EGG_FROM_DAY_CARE_LADY
 	waitsfx
-	giveegg MAGIKARP, 5
 	checkevent EVENT_DIVE_BOMB_MAGIKARP
 	iffalse .NormalEgg
+	giveegg MAGIKARP, 5
 	special MagikarpGiftMon
 	writetext SpecialMagikarpEggText
 	waitbutton
+	jump .SoldToday
 .NormalEgg
-	setflag ENGINE_BOUGHT_MAGIKARP_TODAY
+	giveegg MAGIKARP, 5
 .SoldToday
+	setflag ENGINE_BOUGHT_MAGIKARP_TODAY
 	writetext SoldMagikarpTodayText
 	waitbutton
 	closetext

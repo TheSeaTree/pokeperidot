@@ -35,7 +35,7 @@ TrainerHouseBattleRegistration:
 	iftrue .PickUpReward
 	checkevent EVENT_TRAINER_HOUSE_EARNED_BIG_PEARL
 	iftrue .PickUpReward
-	checkevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
+	checkevent EVENT_TRAINER_HOUSE_EARNED_STAR_PIECE
 	iftrue .PickUpReward
 	checkevent EVENT_ENTERED_KNOCKOUT_CHALLENGE
 	iftrue .Explained
@@ -50,9 +50,9 @@ TrainerHouseBattleRegistration:
 	special PlaceMoneyTopRight
 	yesorno
 	iffalse .DeclineEntry
-	checkmoney YOUR_MONEY, 4000
+	checkmoney YOUR_MONEY, 2500
 	ifequal HAVE_LESS, .NotEnoughMoney
-	takemoney YOUR_MONEY, 4000
+	takemoney YOUR_MONEY, 2500
 	playsound SFX_TRANSACTION
 	special PlaceMoneyTopRight
 	setevent EVENT_ENTERED_KNOCKOUT_CHALLENGE
@@ -300,17 +300,20 @@ TrainerHouse_GetReward:
 	ifequal 2, .TwoStardust
 	ifequal 3, .BigPearl
 	checkevent EVENT_GOT_TM_HYPER_BEAM
-	iftrue .GiveNugget
+	iftrue .GiveStarPiece
 	writetext TrainerHouseTMHyperBeamPrize
 	waitbutton
 	verbosegiveitem TM_HYPER_BEAM
 	setevent EVENT_GOT_TM_HYPER_BEAM
 	writetext TrainerHouseAlsoWinNuggetText
 	waitbutton
-	verbosegiveitem NUGGET
-	iftrue .ReceivedItem
-	setevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
-	jump .NoRoomForPrize
+	giveitem STAR_PIECE, 3
+	iffalse .NoRoomForStarPiece
+	itemtotext STAR_PIECE, MEM_BUFFER_1
+	writetext TrainerHouseGiveThreeItemsText
+	playsound SFX_ITEM
+	waitsfx
+	jump .ReceivedItem
 
 .SinglePearl:
 	writetext TrainerHouseZeroStreakPrizeText
@@ -329,7 +332,7 @@ TrainerHouse_GetReward:
 	itemtotext PEARL, MEM_BUFFER_1
 	writetext TrainerHouseGiveTwoItemsText
 	playsound SFX_ITEM
-	waitbutton
+	waitsfx
 	jump .ReceivedItem
 	
 .NoRoomForPearls:
@@ -344,7 +347,7 @@ TrainerHouse_GetReward:
 	itemtotext STARDUST, MEM_BUFFER_1
 	writetext TrainerHouseGiveTwoItemsText
 	playsound SFX_ITEM
-	waitbutton
+	waitsfx
 	jump .ReceivedItem
 
 .NoRoomForStardust:
@@ -359,19 +362,27 @@ TrainerHouse_GetReward:
 	setevent EVENT_TRAINER_HOUSE_EARNED_BIG_PEARL
 	jump .NoRoomForPrize
 
-.GiveNugget:
+.GiveStarPiece:
 	writetext TrainerHouseFourStreakPrizeText
 	waitbutton
-	verbosegiveitem NUGGET
-	iftrue .ReceivedItem
-	setevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
+	giveitem STAR_PIECE, 3
+	iffalse .NoRoomForStarPiece
+	itemtotext STAR_PIECE, MEM_BUFFER_1
+	writetext TrainerHouseGiveThreeItemsText
+	playsound SFX_ITEM
+	waitsfx
+	jump .ReceivedItem
+
+.NoRoomForStarPiece:
+	setevent EVENT_TRAINER_HOUSE_EARNED_STAR_PIECE
 	jump .NoRoomForPrize
+
 .ReceivedItem:
 	clearevent EVENT_TRAINER_HOUSE_EARNED_CONSOLATION_PRIZE
 	clearevent EVENT_TRAINER_HOUSE_EARNED_PEARL
 	clearevent EVENT_TRAINER_HOUSE_EARNED_STARDUST
 	clearevent EVENT_TRAINER_HOUSE_EARNED_BIG_PEARL
-	clearevent EVENT_TRAINER_HOUSE_EARNED_NUGGET
+	clearevent EVENT_TRAINER_HOUSE_EARNED_STAR_PIECE
 	clearevent EVENT_TRAINER_HOUSE_RECEPTIONIST_ITEM
 	writetext TrainerHouseComeAgainText
 	waitbutton
@@ -538,7 +549,7 @@ TrainerHouseRegistrationText:
 
 TrainerHouseEntreFeeText:	
 	text "The entry fee is"
-	line "¥4000, okay?"
+	line "¥2500, okay?"
 	done	
 
 TrainerHouseNotEnoughMoneyText:
@@ -630,7 +641,7 @@ TrainerHouseTMHyperBeamPrize:
 
 TrainerHouseAlsoWinNuggetText:
 	text "You have also won"
-	line "a NUGGET."
+	line "3 STAR PIECEs."
 	done
 
 TrainerHouseFourStreakPrizeText:
@@ -639,7 +650,8 @@ TrainerHouseFourStreakPrizeText:
 	para "For defeating all"
 	line "four trainers in a"
 	cont "row, you have"
-	cont "earned a NUGGET!"
+	cont "earned a trio of"
+	cont "STAR PIECEs!"
 	done
 
 TrainerHouseComeAgainText:
@@ -652,6 +664,13 @@ TrainerHouseComeAgainText:
 TrainerHouseGiveTwoItemsText:
 	text "<PLAYER> received"
 	line "two @"
+	text_ram wStringBuffer4
+	text "s."
+	done
+	
+TrainerHouseGiveThreeItemsText:
+	text "<PLAYER> received"
+	line "three @"
 	text_ram wStringBuffer4
 	text "s."
 	done

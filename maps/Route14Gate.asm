@@ -81,9 +81,9 @@ Route14GateOfficer2Script:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_OFFICER_HARRY
+	endifjustbattled
 	
 .FightDone
-	endifjustbattled
 	writetext Route14GateOfficer2AfterBattleText
 	waitbutton
 	closetext

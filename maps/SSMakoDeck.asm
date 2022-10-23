@@ -399,7 +399,7 @@ SSMakoDeckDoesntRecognizePlayerText:
 	done
 
 SSMakoDeckChallengeText:
-	para "You're not gonna"
+	text "You're not gonna"
 	line "back down?"
 
 	para "Fine by me!"

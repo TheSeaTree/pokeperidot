@@ -8,8 +8,7 @@ VitaminShop_MapScripts:
 VitaminShopClerkScript:
 	opentext
 	checkevent EVENT_BEAT_ELITE_FOUR
-;	iftrue .Postgame
-	iffalse .Postgame
+	iftrue .Postgame
 	pokemart MARTTYPE_STANDARD, MART_POKEMON_LEAGUE_VITAMINS
 	closetext
 	end

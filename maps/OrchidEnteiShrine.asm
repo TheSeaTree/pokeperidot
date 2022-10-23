@@ -278,6 +278,7 @@ MachampTournamentTest:
 	end
 
 .WonRematch:
+	setscene SCENE_ORCHIDENTEISHRINE_FINISHED
 	writetext OrchidEnteiShrineWonRematchText
 	waitbutton
 	closetext

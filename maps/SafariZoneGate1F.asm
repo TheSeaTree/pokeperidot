@@ -79,11 +79,12 @@ SafariGuardScript:
 	ifequal HAVE_LESS, .NotEnoughMoney
 	playsound SFX_TRANSACTION
 	takemoney YOUR_MONEY, 500
+	special InitializeSafariZone
 .EnterSafariZone
 	waitsfx
 	special PlaceMoneyTopRight
 	checkitem SAFARI_PACK
-	iftrue .NoExplaination
+	iftrue .GotSafariBalls
 	writetext ExplainSafariBalls
 	jump .GotSafariBalls
 .NoExplaination
@@ -91,12 +92,17 @@ SafariGuardScript:
 	waitbutton
 .GotSafariBalls
 	playsound SFX_GOT_SAFARI_BALLS
+	checkflag ENGINE_EXTENDED_SAFARI_GAME
+	iftrue .ExtendedSafariBalls
 	writetext PlayerReceivedSafariBalls
+	jump .StartSafariGame
+.ExtendedSafariBalls
+	writetext PlayerReceivedExtendedSafariBalls
+.StartSafariGame
 	wait 8
 	writetext HappyHuntingText
 	waitbutton
 	closetext
-	special InitializeSafariZone
 	clearflag ENGINE_FORCE_SHINY_ENCOUNTERS
 	setflag ENGINE_SAFARI_GAME_ACTIVE
 	special HealParty
@@ -118,6 +124,7 @@ SafariGuardScript:
 	waitsfx
 	special PlaceMoneyTopRight
 	writetext SafariPackBallText
+	waitbutton
 	special InitializeExtendedSafariZone
 	setflag ENGINE_EXTENDED_SAFARI_GAME
 	jump .EnterSafariZone
@@ -356,6 +363,11 @@ PlayerDeclineExtendedSafariText:
 PlayerReceivedSafariBalls:
 	text "<PLAYER> received"
 	line "30 SAFARI BALLs."
+	done
+
+PlayerReceivedExtendedSafariBalls:
+	text "<PLAYER> received"
+	line "45 SAFARI BALLs."
 	done
 
 HappyHuntingText:

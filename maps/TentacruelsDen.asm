@@ -20,8 +20,11 @@ TentacruelsDen_MapScripts:
 	return
 
 .Appear:
+	checkevent EVENT_TENTACRUELS_DEN_TREASURE
+	iftrue .NoAppear
 	moveobject TENTACRUELSDEN_ITEMBALL,   7,  2
 	appear TENTACRUELSDEN_ITEMBALL
+.NoAppear
 	return
 
 TentacruelsDenBossFight:

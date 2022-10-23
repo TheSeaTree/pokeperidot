@@ -126,6 +126,7 @@ ProfessorMapleSrAideScript:
 	writetext ProfessorMapleSrAideAfterAncientTomeText
 	waitbutton
 	closetext
+	applymovement COASTAL_LAB_AIDE, CoastalLabAideStepResume
 	end
 
 CoastalLabBirdsBook:
