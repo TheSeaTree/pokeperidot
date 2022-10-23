@@ -1,6 +1,6 @@
 NAMINGSCREEN_CURSOR     EQU $7e
 
-NAMINGSCREEN_BORDER     EQUS "\"┌\"" ; $ba
+NAMINGSCREEN_BORDER     EQUS "\"─\"" ; $bb
 NAMINGSCREEN_MIDDLELINE EQUS "\"→\"" ; $eb
 NAMINGSCREEN_UNDERLINE  EQUS "\"☎\"" ; $d9
 
@@ -174,15 +174,15 @@ NamingScreen:
 	hlcoord 5, 2
 	ld de, .BoxNameString
 	call PlaceString
-	
+
 	hlcoord 0, 5
 	ld bc, 20
 	ld a, NAMINGSCREEN_BORDER
 	call ByteFill
 	hlcoord  0,  5
-	ld [hl], $c2
+	ld [hl], $ba
 	hlcoord 19,  5
-	ld [hl], $c1
+	ld [hl], $bc
 	hlcoord  0,  7
 	ld [hl], $bd
 	hlcoord 19,  7
@@ -306,22 +306,21 @@ NamingScreen_InitText:
 	call ByteFill
 
 	hlcoord  0,  0
-	ld [hl], $bb
+	ld [hl], $c0
 	hlcoord 19,  0
-	ld [hl], $bc
+	ld [hl], $c1
 	hlcoord  0, 17
 	ld [hl], $be
 	hlcoord 19, 17
 	ld [hl], $bf
 	hlcoord  0,  7
-	ld [hl], $c2
+	ld [hl], $ba
 	hlcoord 19,  7
-	ld [hl], $c1
+	ld [hl], $bc
 	hlcoord  0, 15
-	ld [hl], $c2
+	ld [hl], $ba
 	hlcoord 19, 15
-	ld [hl], $c1
-
+	ld [hl], $bc
 	
 	hlcoord 1, 1
 	lb bc, 6, 18
@@ -912,7 +911,7 @@ LoadNamingScreenGFX:
 	lb bc, BANK(NamingScreenGFX_UnderLine), 1
 	call Get1bpp
 
-	ld de, vTiles0 tile NAMINGSCREEN_BORDER
+	ld de, vTiles0 tile $ba
 	ld hl, NamingScreenGFX_Border
 	ld bc, 10 tiles
 	ld a, BANK(NamingScreenGFX_Border)
