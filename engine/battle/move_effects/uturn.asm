@@ -41,6 +41,10 @@ BattleCommand_UTurnAnim:
 ; uturnanim
 
 ; Play a unique animation if the user is the last in its party
+;	ld a, [wBattleMode]
+;	dec a
+;	jr nz, .reappear
+
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy_turn

@@ -23,7 +23,7 @@ BattleCommand_PsychUp:
 	jr nz, .loop
 	pop hl
 .fail
-	call BattleEffect_ButItFailed
+	jp BattleEffect_ButItFailed
 
 .break
 	pop hl
