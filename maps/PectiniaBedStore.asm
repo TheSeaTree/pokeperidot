@@ -440,7 +440,7 @@ PectiniaBedStore_MapEvents:
 	bg_event  3,  4, BGEVENT_READ, PectiniaPolkaDotBed
 
 	db 5 ; object events
-	object_event 11,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaBedStoreDollSalesman, -1
+	object_event 13,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaBedStoreDollSalesman, -1
 	object_event  7,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaBedStoreClerk, -1
 	object_event 11,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaBedStoreCooltrainer, -1
 	object_event 12,  1, SPRITE_BIG_SNORLAX, SPRITEMOVEDATA_BIGDOLLSYM, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PectiniaBedStoreSnorlaxDoll, EVENT_DECO_BIG_SNORLAX_DOLL

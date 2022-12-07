@@ -313,7 +313,7 @@ HikerEarlWinText:
 HikerEarlAfterText:
 	text "You've really dis-"
 	line "couraged me from"
-	cont "climing other"
+	cont "climbing other"
 	cont "mountains, kid."
 	done
 	

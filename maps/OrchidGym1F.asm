@@ -120,6 +120,7 @@ BlackthornGymGuy:
 	end
 
 .RevivedPlayer:
+	turnobject ORCHIDGYM_GYM_GUY, LEFT
 	opentext
 	writetext BlackthornGymGuyFailureText
 	waitbutton

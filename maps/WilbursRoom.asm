@@ -372,7 +372,7 @@ WilburScript_RematchDefeatText:
 	line "say to you, I must"
 	cont "focus on how I can"
 	cont "defeat you in our"
-	cont "next battlee."
+	cont "next battle."
 
 	para "Don't keep REGAN's"
 	line "audience waiting!"

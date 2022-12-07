@@ -43,7 +43,6 @@ ROMX $06
 ROMX $07
 	"Roofs"
 	"Tileset Data 2"
-	"Extra Songs 1"
 ROMX $08
 	"Clock Reset"
 	"Tileset Data 3"
@@ -115,6 +114,7 @@ ROMX $27
 ROMX $28
 	"bank28"
 ROMX $29
+	"Extra Songs 1"
 	"bank29"
 ROMX $2a
 	"Map Blocks 1"

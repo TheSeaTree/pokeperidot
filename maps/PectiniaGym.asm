@@ -107,7 +107,7 @@ PectiniaGymMurphyScript:
 	startbattle
 	reloadmapafterbattle
 
-	setflag ENGINE_REMATCH_DUANE
+	setflag ENGINE_REMATCH_MURPHY
 	copybytetovar wMurphyFightCount
 	addvar 1
 	copyvartobyte wMurphyFightCount

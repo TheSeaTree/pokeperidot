@@ -299,7 +299,7 @@ AmberScript_RematchBeatenText:
 	line "strangely happy"
 	cont "right now."
 
-	para "I admire how your"
+	para "I admire your"
 	line "strength, <PLAYER>."
 
 	para "Our first battle"

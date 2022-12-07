@@ -17,7 +17,7 @@ HoOhCastle3F_MapScripts:
 .Chest3
 	checkevent EVENT_HO_OH_CASTLE_3F_NUGGET
 	iffalse .Pit1
-	changeblock  13, 10, $44
+	changeblock  16, 10, $44
 .Pit1
 	checkevent EVENT_HO_OH_CASTLE_3F_PIT_1
 	iffalse .Pit2

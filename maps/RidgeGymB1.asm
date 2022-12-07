@@ -370,7 +370,7 @@ CecilRematchWinText:
 CecilAfterRematchText:
 	text "I promise you that"
 	line "I won't stay down"
-	line "for long."
+	cont "for long."
 
 	para "When I float back"
 	line "up, we will have"

@@ -241,8 +241,6 @@ PokemonLeagueCafeFood:
 	jumptext PokemonLeagueCafeFoodText
 	
 PokemonLeagueCafeAbandonedFood:
-	giveitem TINYMUSHROOM, 20
-	giveitem BIG_MUSHROOM, 20
 	jumptext PokemonLeagueCafeAbandonedFoodText
 
 PokemonLeagueCafeTrash:

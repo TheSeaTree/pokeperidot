@@ -87,6 +87,7 @@ HoOhCastle2FTreasureChest1:
 	startbattle
 	reloadmapafterbattle
 	givemoney YOUR_MONEY, 851
+	opentext
 	writetext HoOhCastleMoneyInChest
 	waitbutton
 	writetext HoOhCastleEeveeReward

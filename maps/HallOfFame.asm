@@ -29,6 +29,7 @@ HallOfFame_MapScripts:
 
 	writetext HallOfFame_JosephRegisterText
 	clearevent EVENT_GOT_A_POKEMON_FROM_MAPLE
+	setmapscene PLAYERS_HOUSE_1F, SCENE_PLAYERSHOUSE1F_POSTGAME
 	jump .DoRegistration
 .Postgame
 	clearevent EVENT_PLAYERS_HOUSE_MOM_1
@@ -47,7 +48,6 @@ HallOfFame_MapScripts:
 	writebyte HEALMACHINE_HALL_OF_FAME
 	special HealMachineAnim
 	setevent EVENT_BEAT_ELITE_FOUR
-	setmapscene PLAYERS_HOUSE_1F, SCENE_PLAYERSHOUSE1F_POSTGAME
 ;	setevent EVENT_TELEPORT_GUY
 ;	setevent EVENT_RIVAL_SPROUT_TOWER
 ;	clearevent EVENT_RED_IN_MT_SILVER

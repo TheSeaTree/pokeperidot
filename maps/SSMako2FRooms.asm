@@ -407,7 +407,7 @@ SSMakoTapesText:
 SSMako2FRoomsChampionText:
 	text "Huh? Who are you?"
 	line "How did you get in"
-	line "here?"
+	cont "here?"
 
 	para "<……><……>"
 
@@ -444,11 +444,12 @@ SSMako2FRoomsChampionText:
 	cont "of all things!"
 
 	para "<……><……>"
+
 	para "You know what?"
 	done
 
 SSMako2FRoomsChampionAfterText:
-	text"You won a set of"
+	text "You won a set of"
 	line "BADGEs, that gives"
 	cont "you the right to"
 	cont "challenge the"

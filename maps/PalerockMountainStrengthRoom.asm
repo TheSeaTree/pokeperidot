@@ -48,7 +48,7 @@ PalerockStrengthRoomSign:
 
 ItLooksStuck:
 	text "The capsule seems"
-	line "to be suck…"
+	line "to be stuck…"
 
 	para "Attempt to"
 	line "dislodge it?"

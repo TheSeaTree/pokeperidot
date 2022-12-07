@@ -134,7 +134,7 @@ BikerJerryText:
 	
 BikerJerryWinText:
 	text "What did you say?"
-	line "speak up!"
+	line "Speak up!"
 	done
 	
 BikerJerryAfterText:

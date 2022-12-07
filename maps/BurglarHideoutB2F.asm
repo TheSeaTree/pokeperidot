@@ -385,7 +385,7 @@ BurglarDuke2AfterText:
 	line "to guard the CARD"
 	cont "KEY."
 	
-	para "I have failed"
+	para "I have failed."
 	done
 	
 SageCaleb2Text:

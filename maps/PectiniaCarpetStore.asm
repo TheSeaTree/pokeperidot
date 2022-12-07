@@ -275,7 +275,7 @@ PectiniaCarpetStoreCooltrainerMText:
 	cont "pick out."
 	
 	para "She can be so"
-	cont "stubborn!"
+	line "stubborn!"
 	done
 
 PectiniaCarpetStoreSamplesText:
