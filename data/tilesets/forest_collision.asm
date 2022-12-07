@@ -156,3 +156,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9b
 	tilecoll FLOOR, RIGHT_WALL, FLOOR, FLOOR ; 9c
 	tilecoll LEFT_WALL, FLOOR, FLOOR, FLOOR ; 9d
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
