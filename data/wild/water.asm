@@ -122,6 +122,14 @@ WaterWildMons:
 	db 40, MAGIKARP
 	db 41, SEAKING
 
+	map_id HEPATICA_TOWN
+	db 4 percent ; encounter rate
+	db 38, MAGIKARP
+	db 37, MAGIKARP
+	db 40, GASTLY
+	db 40, MAGIKARP
+	db 41, MISDREAVUS
+
 	map_id ROUTE_4
 	db 4 percent ; encounter rate
 	db 25, QUAGSIRE
