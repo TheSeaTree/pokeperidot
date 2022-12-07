@@ -4215,17 +4215,18 @@ CelebiEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, LEECH_SEED
 	db 1, CONFUSION
-	db 1, RECOVER
+	db 1, MORNING_SUN
 	db 1, HEAL_BELL
 	db 10, SAFEGUARD
 	db 19, RAZOR_LEAF
 	db 28, ANCIENTPOWER
 	db 37, BATON_PASS
-	db 46, GIGA_DRAIN
+	db 46, PERISH_SONG
 	db 50, PSYCHIC_M
-	db 54, FUTURE_SIGHT
+	db 54, GIGA_DRAIN
+	db 64, FUTURE_SIGHT
 	db 60, U_TURN
-	db 64, PERISH_SONG
+	db 70, RECOVER
 	db 0 ; no more level-up moves
 	
 OctankEvosAttacks:

@@ -3,6 +3,15 @@
 	const ILEXFOREST_POKE_BALL2
 	const ILEXFOREST_POKE_BALL3
 	const ILEXFOREST_POKE_BALL4
+	const ILEXFOREST_POKEFAN_M
+	const ILEXFOREST_LASS
+	const ILEXFOREST_YOUNGSTER
+	const ILEXFOREST_POKEFAN_F
+	const ILEXFOREST_TWIN1
+	const ILEXFOREST_TWIN2
+	const ILEXFOREST_COOLTRAINER_F
+	const ILEXFOREST_FRUITTREE	
+	const ILEXFOREST_CELEBI
 
 IlexForest_MapScripts:
 	db 0 ; scene scripts
@@ -12,11 +21,18 @@ IlexForest_MapScripts:
 	
 .SmashWall:
 	checkevent EVENT_UNOWN_CHAMBER_HN_OPEN
+	iffalse .CheckCelebi
+	changeblock 14, 36, $66
+.CheckCelebi
+	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iffalse .skip
-	changeblock 14, 34, $66
+	changeblock 58, 14, $34
+	changeblock 60, 14, $37
+	changeblock 62, 14, $3b
+	setflag ENGINE_FOREST_IS_RESTLESS
 .skip
 	return
-	
+
 TrainerHikerRay:
 	trainer HIKER, RAY, EVENT_BEAT_HIKER_RAY, HikerRayText, HikerRayWinText, 0, .Script
 
@@ -149,6 +165,25 @@ TrainerCooltrainerFSasha:
 	writetext SashaMoreToGo
 	waitbutton
 	closetext
+	end
+
+Celebi:
+	opentext
+	writetext CelebiText
+	cry CELEBI
+	waitsfx
+	closetext
+	special LegendaryEvent_SetBattleType
+	loadwildmon CELEBI, 70
+	startbattle
+	reloadmapafterbattle
+	disappear ILEXFOREST_CELEBI
+	setevent EVENT_HIDE_PRESENT_CELEBI
+	special CheckCaughtCelebi
+	iffalse .FailedCapture
+	setevent EVENT_CAUGHT_CELEBI
+.FailedCapture
+	clearflag ENGINE_FOREST_IS_RESTLESS
 	end
 
 IlexForestHardStone:
@@ -390,34 +425,39 @@ AlreadyGotChikorita:
 	cont "to be strong."
 	done
 
+CelebiText:
+	text "Ceeeel!"
+	done
+
 IlexForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event 49, 43, ROUTE_9_FOREST_GATE, 3
-	warp_event 50, 43, ROUTE_9_FOREST_GATE, 4
-	warp_event 22,  5, STAGHORN_FOREST_GATE, 1
-	warp_event  3,  7, SWORDS_DANCE_HOUSE, 1
-	warp_event 14, 35, UNOWN_CHAMBER_HN, 1
-	warp_event  4, 29, MOON_BALL_CAVE, 1
+	warp_event 49, 45, ROUTE_9_FOREST_GATE, 3
+	warp_event 50, 45, ROUTE_9_FOREST_GATE, 4
+	warp_event 22,  7, STAGHORN_FOREST_GATE, 1
+	warp_event  3,  9, SWORDS_DANCE_HOUSE, 1
+	warp_event 14, 37, UNOWN_CHAMBER_HN, 1
+	warp_event  4, 31, MOON_BALL_CAVE, 1
 
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event 38, 23, BGEVENT_ITEM, IlexForestHiddenSuperPotion
-	bg_event 37,  5, BGEVENT_ITEM, IlexForestHiddenEther
-	bg_event 16, 17, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event 38, 25, BGEVENT_ITEM, IlexForestHiddenSuperPotion
+	bg_event 37,  7, BGEVENT_ITEM, IlexForestHiddenEther
+	bg_event 16, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
 
-	db 12 ; object events
-	object_event 14, 39, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHardStone, EVENT_ILEX_FOREST_HARD_STONE
-	object_event 46,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
-	object_event 16, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
-	object_event 57, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSuperPotion, EVENT_ILEX_FOREST_SUPER_POTION
-	object_event 18, 38, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerRay, -1
-	object_event 35, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassAmanda, -1
-	object_event 52, 29, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperEllis, -1
-	object_event 40, 23, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
-	object_event 36, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
-	object_event 37, 26, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
-	object_event 53,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFSasha, -1
-	object_event 34, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, IlexForestFruitTree, -1
+	db 13 ; object events
+	object_event 14, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHardStone, EVENT_ILEX_FOREST_HARD_STONE
+	object_event 46, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
+	object_event 16, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
+	object_event 57, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSuperPotion, EVENT_ILEX_FOREST_SUPER_POTION
+	object_event 18, 40, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerRay, -1
+	object_event 35, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassAmanda, -1
+	object_event 52, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperEllis, -1
+	object_event 40, 25, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
+	object_event 36, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
+	object_event 37, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
+	object_event 53,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFSasha, -1
+	object_event 34, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, IlexForestFruitTree, -1
+	object_event 66,  0, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Celebi, EVENT_HIDE_PRESENT_CELEBI
