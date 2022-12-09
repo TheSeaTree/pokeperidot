@@ -64,7 +64,7 @@ PlayBattleMusic:
 	ld de, MUSIC_JOHTO_WILD_BATTLE
 	ld a, [wTimeOfDay]
 	cp NITE_F
-	jr nz, .done
+	jp nz, .done
 	ld de, MUSIC_JOHTO_WILD_BATTLE_NIGHT
 	jr .done
 
@@ -84,6 +84,7 @@ PlayBattleMusic:
 	cp GROUP_NORTH_FOREST
 	jr z, .done
 
+	ld a, [wOtherTrainerClass]
 	; They should have included EXECUTIVEM, EXECUTIVEF, and SCIENTIST too...
 	ld de, MUSIC_ROCKET_BATTLE
 	cp BURGLAR
@@ -94,6 +95,8 @@ PlayBattleMusic:
 	jr z, .done
 
 	ld de, MUSIC_KANTO_GYM_LEADER_BATTLE
+	cp PROFESSOR
+	jr z, .done
 	farcall IsEliteFour
 	jr c, .done
 
@@ -106,6 +109,8 @@ PlayBattleMusic:
 	ld de, MUSIC_RIVAL_BATTLE
 	ld a, [wOtherTrainerClass]
 	cp RIVAL1
+	jr z, .done
+	cp FANGIRL
 	jr z, .done
 	cp RIVAL2
 	jr nz, .othertrainer

@@ -2832,6 +2832,9 @@ PlayVictoryMusic:
 	jr c, .play_music
 	call IsEliteFour
 	jr c, .play_music
+	ld a, [wOtherTrainerClass]
+	cp PROFESSOR
+	jr z, .play_music
 	ld de, MUSIC_TRAINER_VICTORY
 
 .play_music
@@ -5478,6 +5481,10 @@ BattleMenu_Pack:
 
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
+	jp nz, .ItemsCantBeUsed
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jp nz, .ItemsCantBeUsed
 
 	call IsEliteFour
