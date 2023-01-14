@@ -64,13 +64,13 @@ StaghornThiefHouseHaveBikeText:
 StaghornThiefHouseMaleShowBike:
 	text "<PLAYER> showed"
 	line "the man his"
-	cont "BICYCLE"
+	cont "BICYCLE."
 	done
-	
+
 StaghornThiefHouseFemaleShowBike	
 	text "<PLAYER> showed"
 	line "the man her"
-	cont "BICYCLE"
+	cont "BICYCLE."
 	done
 
 StaghornThiefHouseSurprised:	
@@ -78,7 +78,7 @@ StaghornThiefHouseSurprised:
 	line "my BICYCLE!"
 	
 	para "Look, you seem"
-	line "Like a good kid so"
+	line "like a good kid so"
 	cont "I won't ask for my"
 	cont "BICYCLE back."
 	

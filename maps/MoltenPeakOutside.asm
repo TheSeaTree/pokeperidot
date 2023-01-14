@@ -195,7 +195,7 @@ CamperNorrisText:
 
 CamperNorrisWinText:
 	text "I need to get some"
-	line "shots for my"
+	line "shorts for my"
 	cont "#MON to wear,"
 	cont "so they can be as"
 	cont "comfy as me!"

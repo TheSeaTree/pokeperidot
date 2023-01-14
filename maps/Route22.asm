@@ -9,7 +9,7 @@ Route22Sign:
 	jumptext Route22SignText
 
 Route22SignText:
-	text "ROUTE 22"
+	text "ROUTE 20"
 	
 	para "ORCHID CITY"
 	line "ahead."
