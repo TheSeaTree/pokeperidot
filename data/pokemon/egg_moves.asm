@@ -954,6 +954,7 @@ WooperEggMoves:
 	db BRICK_BREAK
 	db SEISMIC_TOSS
 	db BODY_PRESS
+	db SPIKES
 	db -1 ; end
 
 MurkrowEggMoves:
