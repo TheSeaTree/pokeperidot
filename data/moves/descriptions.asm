@@ -818,8 +818,8 @@ LovelyKissDescription:
 	next "to fall asleep.@"
 
 SkyAttackDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+	db   "A tackle that also"
+	next "hurts the user.@"
 
 TransformDescription:
 	db   "The user assumes"
