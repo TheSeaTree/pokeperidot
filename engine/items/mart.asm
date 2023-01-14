@@ -106,6 +106,13 @@ BPShop:
 	ld b, BANK(BattleSubwayBattleShopData)
 	ld de, BattleSubwayBattleShopData
 
+	ld a, [wMapGroup]
+	cp GROUP_BATTLE_SIMULATION
+	jr nz, .ok
+
+	ld b, BANK(BattleSimulationShopData)
+	ld de, BattleSimulationShopData
+
 .ok
 	call LoadMartPointer
 	call ReadMart

@@ -15,11 +15,15 @@ StartMenu::
 	call PlaySFX
 
 	farcall ReanchorBGMap_NoOAMUpdate
-
+	
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .SimulationMenuPlacement
 	ld hl, wSafariFlag
 	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ld hl, .MenuHeader
 	jr z, .GotMenuData
+.SimulationMenuPlacement
 	ld hl, .ContestMenuHeader
 
 .GotMenuData:
@@ -251,6 +255,10 @@ endr
 	ld [wWhichIndexSet], a
 	call .FillMenuList
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .no_pokedex
+
 	ld hl, wStatusFlags
 	bit STATUSFLAGS_POKEDEX_F, [hl]
 	jr z, .no_pokedex
@@ -371,9 +379,13 @@ endr
 	ret
 
 .DrawBugContestStatusBox:
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .SimulationActive
 	ld hl, wSafariFlag
 	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	ret z
+.SimulationActive
 	farcall StartMenu_DrawBugContestStatusBox
 	ret
 
@@ -381,6 +393,10 @@ endr
 	ld hl, wSafariFlag
 	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
 	jr nz, .contest
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	ret z
+	farcall StartMenu_PrintSimulationStatus
 	ret
 .contest
 	farcall StartMenu_PrintBugContestStatus

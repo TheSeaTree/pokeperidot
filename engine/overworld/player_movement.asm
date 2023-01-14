@@ -130,6 +130,8 @@ DoPlayerMovement::
 	jr z, .land2
 	cp HI_NYBBLE_WARPS
 	jr z, .warps
+	cp HI_NYBBLE_BOUNCE
+	jr z, .bounce
 	jr .no_walk
 
 .water
@@ -221,6 +223,32 @@ DoPlayerMovement::
 	ld a, 5
 	scf
 	ret
+
+.bounce
+	ld a, c
+	and 7
+	ld c, a
+	ld b, 0
+	ld hl, .bounce_table
+	add hl, bc
+	ld a, [hl]
+	cp STANDING
+	jr z, .no_walk
+	ld [wWalkingDirection], a
+
+	ld de, SFX_JUMP_OVER_LEDGE
+	call PlaySFX
+	ld a, STEP_LEDGE
+	call .DoStep
+	ld a, 7
+	scf
+	ret
+
+.bounce_table
+	db UP    ; COLL_BOUNCE_UP
+	db DOWN  ; COLL_BOUNCE_DOWN
+	db LEFT  ; COLL_BOUNCE_LEFT
+	db RIGHT ; COLL_BOUNCE_RIGHT
 
 .CheckTurning:
 ; If the player is turning, change direction first. This also lets
@@ -521,6 +549,7 @@ DoPlayerMovement::
 	dw .FinishFacing
 	dw .RunStep
 	dw .SlideStep
+	dw .BounceStep
 
 .SlowStep:
 	slow_step DOWN
@@ -572,6 +601,11 @@ DoPlayerMovement::
 	slide_step UP
 	turn_head LEFT
 	turn_head RIGHT
+.BounceStep:
+	jump_step DOWN
+	jump_step UP
+	jump_step LEFT
+	jump_step RIGHT
 
 .StandInPlace:
 	ld a, 0

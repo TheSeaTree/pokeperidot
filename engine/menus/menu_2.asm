@@ -159,6 +159,26 @@ StartMenu_PrintBugContestStatus:
 .ExtendedSteps:
 	db "/500@"
 
+StartMenu_PrintSimulationStatus:
+	ld hl, wOptions
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	call StartMenu_DrawBugContestStatusBox
+	hlcoord 11, 1
+	ld de, .SimulationPoints
+	call PlaceString
+	hlcoord 16, 2
+	ld de, wSimulationPoints
+	lb bc, 1, 3
+	call PrintNum
+	pop af
+	ld [wOptions], a
+	ret
+
+.SimulationPoints:
+	db "POINTS:@"
+
 FindApricornsInBag:
 ; Checks the bag for Apricorns.
 	ld hl, wBuffer1

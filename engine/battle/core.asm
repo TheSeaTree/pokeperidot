@@ -5483,10 +5483,6 @@ BattleMenu_Pack:
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jp nz, .ItemsCantBeUsed
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
-	jp nz, .ItemsCantBeUsed
-
 	call IsEliteFour
 	jp c, .NoItemsInLeagueBattle
 	
@@ -5500,6 +5496,10 @@ BattleMenu_Pack:
 	jr z, .contest
 	cp BATTLETYPE_SIMULATION
 	jr z, .simulation
+
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .ItemsCantBeUsed
 
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
@@ -7052,6 +7052,11 @@ LoadEnemyMon:
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
 
+; Pokemon encountered in the Battle Simulation shouldn't update the dex.
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .Simulation
+
 ; Saw this mon
 	ld a, [wTempEnemyMonSpecies]
 	dec a
@@ -7060,6 +7065,7 @@ LoadEnemyMon:
 	ld hl, wPokedexSeen
 	predef SmallFarFlagAction
 
+.Simulation
 	ld hl, wEnemyMonStats
 	ld de, wEnemyStats
 	ld bc, wEnemyMonStatsEnd - wEnemyMonStats

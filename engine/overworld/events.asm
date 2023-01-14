@@ -1275,12 +1275,16 @@ CanUseSweetScent::
 	cp CAVE
 	jr z, .ice_check
 	cp DUNGEON
-	jr z, .ice_check
+	jr z, .bounce_check
 	cp GYM_CAVE
 	jr z, .ice_check
 	farcall CheckGrassCollision
 	jr nc, .no
 
+.bounce_check
+	ld a, [wPlayerStandingTile]
+	call CheckBounceTile
+	jr z, .no
 .ice_check
 	ld a, [wPlayerStandingTile]
 	call CheckIceTile
@@ -1672,4 +1676,16 @@ CmdQueue_StoneTable:
 
 .fall_down_hole
 	pop af
+	ret
+
+CheckBounceTile:
+	cp COLL_BOUNCE_UP
+	ret z
+	cp COLL_BOUNCE_DOWN
+	ret z
+	cp COLL_BOUNCE_LEFT
+	ret z
+	cp COLL_BOUNCE_RIGHT
+	ret z
+	scf
 	ret
