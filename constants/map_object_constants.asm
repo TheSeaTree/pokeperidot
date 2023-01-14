@@ -301,3 +301,4 @@ NUM_SPRITEMOVEDATA EQU const_value
 	const STEP_WALK_IN_PLACE ; 7
 	const STEP_RUN
 	const STEP_SLIDE
+	const STEP_BOOUNCE

@@ -117,6 +117,7 @@ CHRIS EQU __enum__
 
 	trainerclass PROFESSOR ; a
 	const TEST
+	const MAPLE
 
 	trainerclass CAL ; c
 	const CAL1

@@ -2537,8 +2537,9 @@ wFarfetchdPosition:: db ; d964
 wBattleSubwaySet:: db
 wBattleSubwayCurStreak:: dw
 wBattleSubwayBestStreak:: dw
+wSimulationPoints:: db ; d855
 
-	ds 8
+	ds 7
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
@@ -2649,14 +2650,16 @@ wEliteFourFightCount::	db
 wSSMako1FFightCount::   Db
 wSSMako2FFightCount::   db
 wTaylorFightCount:: 	db
-wToddFightCount::    	db ; unused
-wGinaFightCount::    	db ; unused
-wIrwinFightCount::   	db ; unused
-wArnieFightCount::   	db ; unused
-wReenaFightCount::    	db ; unused
-wDanaFightCount::    	db ; unused
-wChadFightCount::    	db ; unused
-wDerekFightCount::   	db ; unused
+; Level setting, for fighting older versions of leaders.
+wMurphyLevelSetting::  	db
+wCecilLevelSetting::   	db
+wCelesteLevelSetting:: 	db
+wDuaneLevelSetting::   	db
+wPoseyLevelSetting::   	db
+wJoelLevelSetting::    	db
+wAlanLevelSetting::    	db
+wEnyaLevelSetting::   	db
+
 wTullyFightCount::   	db ; unused
 wBrentFightCount::   	db ; unused
 wTiffanyFightCount:: 	db ; unused

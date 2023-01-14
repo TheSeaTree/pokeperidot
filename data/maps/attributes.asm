@@ -568,7 +568,6 @@ ENDM
 	map_attributes PokemonLeagueHotel2F, POKEMON_LEAGUE_HOTEL_2F, $00, 0
 	map_attributes Route23HiddenCave, ROUTE_23_HIDDEN_CAVE, $09, 0
 	map_attributes BattleSimulation, BATTLE_SIMULATION, $00, 0
-	map_attributes BattleSimulationTestRoom, BATTLE_SIMULATION_TEST_ROOM, $04, 0
 	map_attributes Route25Gate, ROUTE_25_GATE, $00, 0
 	map_attributes PectiniaCarpetStore, PECTINIA_CARPET_STORE, $00, 0
 	map_attributes PectiniaComicStore, PECTINIA_COMIC_STORE, $00, 0
@@ -595,3 +594,14 @@ ENDM
 	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
 	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0
 	map_attributes VictoryCoastOfficersHouse, VICTORY_COAST_OFFICERS_HOUSE, $00, 0
+; Battle Simulation Maps
+	map_attributes SkyWorld1, BATTLE_SIM_SKY_1, $04, 0
+	map_attributes SkyWorld2, BATTLE_SIM_SKY_2, $04, 0
+	map_attributes SkyWorld3, BATTLE_SIM_SKY_3, $04, 0
+	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
+	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
+	map_attributes IceWorld1, BATTLE_SIM_ICE_1, $01, 0
+	map_attributes CastleWorld1, BATTLE_SIM_CASTLE_1, $00, 0
+	map_attributes LavaWorld1, BATTLE_SIM_LAVA_1, $8c, 0
+	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0
+	map_attributes BattleSimulationFinalRoom, BATTLE_SIMULATION_FINAL_ROOM, $00, 0

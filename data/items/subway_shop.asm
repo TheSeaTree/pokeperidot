@@ -34,3 +34,16 @@ BattleSubwayBattleShopData:
 	dbw SCOPE_LENS,	 	 16
 	dbw LEFTOVERS,	 	 16
 	db -1
+
+BattleSimulationShopData:
+	db 9
+	dbw BLACK_SLUDGE,	16
+	dbw CRASH_HELMET,	16
+	dbw PALETTE,		16
+	dbw METAL_POWDER,	24
+	dbw THICK_CLUB,		24
+	dbw TRICK_MIRROR,	32
+	dbw LIGHT_BALL,		32
+	dbw LIGHT_BUOY,		32
+	dbw LUCKY_EGG,		50
+	db -1

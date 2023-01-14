@@ -413,7 +413,6 @@ ENDM
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
 	map_const MAPLES_LAB_ELEVATOR,					        2,  2
 	map_const BATTLE_SIMULATION,					       10,  7
-	map_const BATTLE_SIMULATION_TEST_ROOM,				   20, 10
 	map_const DEVELOPERS_HOUSE,				           	    5,  4
 
 	newgroup                                                      ; 26
@@ -464,3 +463,17 @@ ENDM
 	map_const SEA_ROUTE_7,                                 14, 15
 	map_const ROUTE_28,					           		   16, 16
 	map_const ROUTE_28_GATE,					            3,  4
+
+	newgroup
+
+	map_const BATTLE_SIM_SKY_1,								10, 10
+	map_const BATTLE_SIM_SKY_2,								19, 16
+	map_const BATTLE_SIM_SKY_3,								21, 15
+	map_const BATTLE_SIM_COMP_1,							 9, 10
+	map_const BATTLE_SIM_GRAVE_1,							10, 10
+	map_const BATTLE_SIM_ICE_1,								10, 10
+	map_const BATTLE_SIM_CASTLE_1,							10, 10
+	map_const BATTLE_SIM_LAVA_1,							10, 10
+	map_const BATTLE_SIM_FOREST_1,							10, 10
+	map_const BATTLE_SIMULATION_FINAL_ROOM,				  	 3,  4
+

@@ -435,8 +435,6 @@ INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
 INCLUDE "maps/SSMakoDeck.asm"
 INCLUDE "maps/MaplesLabElevator.asm"
-INCLUDE "maps/BattleSimulation.asm"
-INCLUDE "maps/BattleSimulationTestRoom.asm"
 
 
 SECTION "Map Scripts 27", ROMX
@@ -457,3 +455,17 @@ INCLUDE "maps/time-travel/PastRoute11Inn.asm"
 INCLUDE "maps/time-travel/PastPectiniaApartment1F.asm"
 INCLUDE "maps/time-travel/PastPectiniaApartment2F.asm"
 INCLUDE "maps/time-travel/PastPectiniaApartment3F.asm"
+
+SECTION "Map Scripts 28", ROMX
+
+INCLUDE "maps/BattleSimulation.asm"
+INCLUDE "maps/battle-simulation/SkyWorld1.asm"
+INCLUDE "maps/battle-simulation/SkyWorld2.asm"
+INCLUDE "maps/battle-simulation/SkyWorld3.asm"
+INCLUDE "maps/battle-simulation/CyberspaceWorld1.asm"
+INCLUDE "maps/battle-simulation/GraveyardWorld1.asm"
+INCLUDE "maps/battle-simulation/IceWorld1.asm"
+INCLUDE "maps/battle-simulation/CastleWorld1.asm"
+INCLUDE "maps/battle-simulation/LavaWorld1.asm"
+INCLUDE "maps/battle-simulation/ForestWorld1.asm"
+INCLUDE "maps/battle-simulation/BattleSimulationFinalRoom.asm"

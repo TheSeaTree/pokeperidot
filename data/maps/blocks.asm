@@ -850,9 +850,6 @@ OrchidEnteiShrine_Blocks:
 BattleSimulation_Blocks:
 	INCBIN "maps/BattleSimulation.ablk"
 
-BattleSimulationTestRoom_Blocks:
-	INCBIN "maps/BattleSimulationTestRoom.ablk"
-
 TreasureHuntersHouse_Blocks:
 	INCBIN "maps/TreasureHuntersHouse.ablk"
 
@@ -912,3 +909,36 @@ MewtwoLab2F_Blocks:
 
 VictoryCoastOfficersHouse_Blocks:
 	INCBIN "maps/VictoryCoastOfficersHouse.ablk"
+
+SECTION "Map Blocks 7", ROMX
+
+SkyWorld1_Blocks:
+	INCBIN "maps/battle-simulation/SkyWorld1.ablk"
+
+SkyWorld2_Blocks:
+	INCBIN "maps/battle-simulation/SkyWorld2.ablk"
+
+SkyWorld3_Blocks:
+	INCBIN "maps/battle-simulation/SkyWorld3.ablk"
+
+CyberspaceWorld1_Blocks:
+	INCBIN "maps/battle-simulation/CyberspaceWorld1.ablk"
+
+GraveyardWorld1_Blocks:
+	INCBIN "maps/battle-simulation/GraveyardWorld1.ablk"
+
+IceWorld1_Blocks:
+	INCBIN "maps/battle-simulation/IceWorld1.ablk"
+
+CastleWorld1_Blocks:
+	INCBIN "maps/battle-simulation/CastleWorld1.ablk"
+
+LavaWorld1_Blocks:
+	INCBIN "maps/battle-simulation/LavaWorld1.ablk"
+
+ForestWorld1_Blocks:
+	INCBIN "maps/battle-simulation/ForestWorld1.ablk"
+
+BattleSimulationFinalRoom_Blocks:
+	INCBIN "maps/battle-simulation/BattleSimulationFinalRoom.ablk"
+
