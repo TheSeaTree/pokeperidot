@@ -157,3 +157,4 @@
 	tilecoll FLOOR, RIGHT_WALL, FLOOR, FLOOR ; 9c
 	tilecoll LEFT_WALL, FLOOR, FLOOR, FLOOR ; 9d
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; 9e
+	tilecoll WARP_PANEL, FLOOR, FLOOR, FLOOR ; 9f

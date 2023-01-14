@@ -2,48 +2,50 @@ LoadSpecialMapPalette:
 .continue
 	ld a, [wMapTileset]
 	cp TILESET_BATTLE_TOWER
-	jr z, .battle_tower
+	jp z, .battle_tower
 	cp TILESET_ICE_PATH
-	jr z, .ice_path
+	jp z, .ice_path
 	cp TILESET_CASTLE
-	jr z, .castle
+	jp z, .castle
 	cp TILESET_HOUSE
-	jr z, .house
+	jp z, .house
 	cp TILESET_RADIO_TOWER
-	jr z, .radio_tower
+	jp z, .radio_tower
 	cp TILESET_MANSION
-	jr z, .mansion_mobile
+	jp z, .mansion_mobile
 	cp TILESET_TOWER
-	jr z, .tower
+	jp z, .tower
 	cp TILESET_MOUNTAIN
-	jr z, .mountain
+	jp z, .mountain
 	cp TILESET_VOLCANO
-	jr z, .volcano
+	jp z, .volcano
 	cp 	TILESET_CAVE
-	jr z, .cave
+	jp z, .cave
 	cp  TILESET_FACILITY
-	jr z, .facility
+	jp z, .facility
 	cp  TILESET_LIGHTHOUSE
-	jr z, .lighthouse
+	jp z, .lighthouse
 	cp  TILESET_PORT
-	jr z, .port
+	jp z, .port
 	cp  TILESET_GATE
-	jr z, .gate
+	jp z, .gate
 	cp  TILESET_ROOF
-	jr z, .roof
+	jp z, .roof
 	cp  TILESET_ELITE_FOUR_ROOM
-	jr z, .elitefourroom
+	jp z, .elitefourroom
 	cp  TILESET_CHAMPIONS_ROOM
-	jr z, .championsroom
+	jp z, .championsroom
 	cp  TILESET_POKEMON_LEAGUE
-	jr z, .pokemonleague
+	jp z, .pokemonleague
 	cp  TILESET_POKEMON_LEAGUE_OUTSIDE
-	jr z, .pokemonleagueoutside
+	jp z, .pokemonleagueoutside
 	cp  TILESET_LOST_LAND
-	jr z, .lostland
+	jp z, .lostland
 	cp  TILESET_GAME_CORNER
-	jr z, .gamecorner
-	jr .do_nothing
+	jp z, .gamecorner
+	cp  TILESET_CYBERSPACE
+	jp z, .cyberspace
+	jp .do_nothing
 
 .battle_tower
 	call LoadBattleTowerPalette
@@ -141,6 +143,10 @@ LoadSpecialMapPalette:
 	call LoadGameCornerPalette
 	scf
 	ret
+
+.cyberspace
+	ld hl, CyberspacePalette
+	jp LoadEightTimeOfDayBGPalettes
 
 .do_nothing
 	and a
@@ -298,6 +304,9 @@ INCLUDE "gfx/tilesets_pals/pokemon_league_outside.pal"
 
 LostLandPalette:
 INCLUDE "gfx/tilesets_pals/lost_land.pal"
+
+CyberspacePalette:
+INCLUDE "gfx/tilesets_pals/cyberspace.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]
