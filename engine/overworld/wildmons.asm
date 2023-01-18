@@ -381,42 +381,27 @@ LoadWildMonDataPointer:
 
 _GrassWildmonLookup:
 	ld hl, GrassWildMons
-	ld bc, GRASS_WILDDATA_LENGTH
-	ret c
-	ld hl, GrassWildMons
-	ld de, GrassWildMons
-	call _WildmonCheck
+	ld de, SimulationWildMons
+	call IsInSimulation
 	ld bc, GRASS_WILDDATA_LENGTH
 	jr _NormalWildmonOK
 
-_WaterWildmonLookup:
-	ld hl, WaterWildMons
-	ld bc, WATER_WILDDATA_LENGTH
-	ret c
-	ld hl, WaterWildMons
-	ld de, WaterWildMons
-	call _WildmonCheck
-	ld bc, WATER_WILDDATA_LENGTH
-	jr _NormalWildmonOK
-
-_WildmonCheck:
-	call IsInJohto
-	and a
-	ret z
+IsInSimulation:
+	ld a, [wMapGroup]
+	cp GROUP_BATTLE_SIM_SKY_1
+	ret nz
 	ld h, d
 	ld l, e
 	ret
 
+_WaterWildmonLookup:
+	ld hl, WaterWildMons
+	ld bc, WATER_WILDDATA_LENGTH
+	; fallthrough
+
 _NormalWildmonOK:
 	call CopyCurrMapDE
-	jr LookUpWildmonsForMapDE
-
-CopyCurrMapDE:
-	ld a, [wMapGroup]
-	ld d, a
-	ld a, [wMapNumber]
-	ld e, a
-	ret
+	; fallthrough
 
 LookUpWildmonsForMapDE:
 .loop
@@ -446,7 +431,14 @@ LookUpWildmonsForMapDE:
 	pop hl
 	scf
 	ret
-	
+
+CopyCurrMapDE:
+	ld a, [wMapGroup]
+	ld d, a
+	ld a, [wMapNumber]
+	ld e, a
+	ret
+
 InitRoamArticuno:
 ; initialize wRoamMon structs
 
@@ -878,3 +870,4 @@ RandomPhoneMon:
 
 INCLUDE "data/wild/grass.asm"
 INCLUDE "data/wild/water.asm"
+INCLUDE "data/wild/battle_sim.asm"
