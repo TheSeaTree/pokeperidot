@@ -930,6 +930,9 @@ GraveyardWorld1_Blocks:
 IceWorld1_Blocks:
 	INCBIN "maps/battle-simulation/IceWorld1.ablk"
 
+IceWorld2_Blocks:
+	INCBIN "maps/battle-simulation/IceWorld2.ablk"
+
 CastleWorld1_Blocks:
 	INCBIN "maps/battle-simulation/CastleWorld1.ablk"
 

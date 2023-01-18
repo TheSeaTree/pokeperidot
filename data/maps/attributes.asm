@@ -601,6 +601,7 @@ ENDM
 	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
 	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
 	map_attributes IceWorld1, BATTLE_SIM_ICE_1, $01, 0
+	map_attributes IceWorld2, BATTLE_SIM_ICE_2, $01, 0
 	map_attributes CastleWorld1, BATTLE_SIM_CASTLE_1, $00, 0
 	map_attributes LavaWorld1, BATTLE_SIM_LAVA_1, $8c, 0
 	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0
