@@ -1337,13 +1337,7 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
-	; Bonemerang ignores Flying's immunity to Ground.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BONEMERANG
-	jr z, .alternate
-	; Freeze-Dry is super-effective against Water.
-	cp EFFECT_FREEZE_DRY
+	call CheckSpecialMatchupMoves
 	jr z, .alternate
 
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1480,13 +1474,7 @@ CheckTypeMatchup:
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
 
-	; Bonemerang ignores Flying's immunity to Ground.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BONEMERANG
-	jr z, .alternate
-	; Freeze-Dry is super-effective against Water.
-	cp EFFECT_FREEZE_DRY
+	call CheckSpecialMatchupMoves
 	jr z, .alternate
 
 	ld hl, TypeMatchups
@@ -1546,6 +1534,21 @@ CheckTypeMatchup:
 	pop bc
 	pop de
 	pop hl
+	ret
+
+CheckSpecialMatchupMoves:
+	; Bonemerang ignores Flying's immunity to Ground.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_BONEMERANG
+	jr z, .alternate
+	; Freeze-Dry is super-effective against Water.
+	cp EFFECT_FREEZE_DRY
+	jr z, .alternate
+	ret
+
+.alternate
+	ld a, 1
 	ret
 
 BattleCommand_ResetTypeMatchup:
