@@ -1574,3 +1574,27 @@ _OakText5::
 	para "This brings me to"
 	line "my next question…"
 	prompt
+
+BattleSim_LastPokemon::
+	text "This is your last"
+	line "usable #MON!"
+	prompt
+
+BattleSim_CantReleasePorygon2::
+	text "You can't release"
+	line "PORYGON2!"
+	prompt
+
+BattleSim_AskRelease::
+	text "Release your"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "?"
+	done
+
+BattleSim_ByeBye::
+	text "Bye, bye,"
+	line "@"
+	text_from_ram wStringBuffer1
+	text "!"
+	prompt

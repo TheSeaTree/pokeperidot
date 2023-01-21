@@ -54,7 +54,7 @@
 	const MONMENUITEM_ITEM       ; 17
 	const MONMENUITEM_CANCEL     ; 18
 	const MONMENUITEM_MOVE       ; 19
-	const MONMENUITEM_MAIL       ; 20
+	const MONMENUITEM_RELEASE    ; 20
 	const MONMENUITEM_ERROR      ; 21
 
 ; MonMenuOptions categories

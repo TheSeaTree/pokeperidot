@@ -162,16 +162,17 @@ GetMonSubmenuItems:
 	jr nz, .skip2
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
-	jr nz, .skip2
+	jr nz, .simulation
 	push hl
 	ld a, MON_ITEM
 	call GetPartyParamLocation
 	ld d, [hl]
-	farcall ItemIsMail
 	pop hl
-	ld a, MONMENUITEM_MAIL
-	jr c, .ok
 	ld a, MONMENUITEM_ITEM
+	jr .ok
+
+.simulation
+	ld a, MONMENUITEM_RELEASE
 
 .ok
 	call AddMonMenuItem

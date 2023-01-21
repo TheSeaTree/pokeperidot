@@ -148,7 +148,7 @@ PokemonActionSubmenu:
 	dbw MONMENUITEM_ITEM,       GiveTakePartyMonItem
 	dbw MONMENUITEM_CANCEL,     CancelPokemonAction
 	dbw MONMENUITEM_MOVE,       ManagePokemonMoves
-	dbw MONMENUITEM_MAIL,       MonMailAction
+	dbw MONMENUITEM_RELEASE,    ReleaseFromParty
 
 SwitchPartyMons:
 ; Don't try if there's nothing to switch!
@@ -1260,6 +1260,11 @@ PlaceMoveData:
 	inc a
 .no_inc
 	hlcoord 16, 13
+
+	; Display "---" for moves that can't miss.
+	cp 2
+	jr c, .perfect_accuracy
+
 	ld [wDeciramBuffer], a
 	ld de, wDeciramBuffer
 	lb bc, 1, 3
@@ -1271,7 +1276,12 @@ PlaceMoveData:
 	ld a, $1
 	ldh [hBGMapMode], a
 	ret
-	
+
+.perfect_accuracy
+	ld de, String_MoveNoPower
+	call PlaceString
+	jp .description
+
 .BP
 	db "<BOLD_B><BOLD_P>/@"
 	
@@ -1349,3 +1359,59 @@ Function132fe:
 	hlcoord 18, 0
 	ld [hl], "▶"
 	ret
+
+ReleaseFromParty:
+	ld a, [wCurPartySpecies]
+	cp PORYGON2
+	jr z, .CantReleasePorygon2
+
+	farcall CheckCurPartyMonFainted
+	jr c, .LastAliveMon
+
+	ld a, [wCurPartySpecies]
+	ld [wTempSpecies], a
+	call GetPokemonName
+	ld hl, AskReleaseMonText
+	call PrintText
+
+	lb bc, SCREEN_WIDTH - 6, 7
+	call PlaceNoYesBox
+
+	call CopyBytes
+	ld a, [wMenuCursorY]
+	cp 1
+	jr nz, .Finish
+
+	farcall RemoveMonFromPartyOrBox
+
+	ld hl, ByeByeText
+	call MenuTextBoxBackup
+	jr .Finish
+
+.LastAliveMon
+	ld hl, LastMonText
+	call MenuTextBoxBackup
+	jr .Finish
+
+.CantReleasePorygon2
+	ld hl, CantReleasePorygon2Text
+	call MenuTextBoxBackup
+.Finish
+	ld a, $3
+	ret
+
+AskReleaseMonText:
+	text_far BattleSim_AskRelease
+	text_end
+
+ByeByeText:
+	text_far BattleSim_ByeBye
+	text_end
+
+LastMonText:
+	text_far BattleSim_LastPokemon
+	text_end
+
+CantReleasePorygon2Text:
+	text_far BattleSim_CantReleasePorygon2
+	text_end
