@@ -112,9 +112,9 @@ ROMX $26
 ROMX $27
 	"Map Scripts 12"
 ROMX $28
+	"Extra Songs 1"
 	"bank28"
 ROMX $29
-	"Extra Songs 1"
 	"bank29"
 ROMX $2a
 	"Map Blocks 1"

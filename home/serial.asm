@@ -384,17 +384,3 @@ LinkDataReceived::
 	ld a, (1 << rSC_ON) | 1
 	ldh [rSC], a
 	ret
-
-Unreferenced_Function919::
-	ld a, [wLinkMode]
-	and a
-	ret nz
-	ld a, USING_INTERNAL_CLOCK
-	ldh [rSB], a
-	xor a
-	ldh [hSerialReceive], a
-	ld a, 0 << rSC_ON
-	ldh [rSC], a
-	ld a, 1 << rSC_ON
-	ldh [rSC], a
-	ret

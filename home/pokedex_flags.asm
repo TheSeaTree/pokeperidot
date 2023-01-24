@@ -1,4 +1,8 @@
 SetSeenAndCaughtMon::
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	ret nz
+
 	push af
 	ld c, a
 	ld hl, wPokedexCaught
