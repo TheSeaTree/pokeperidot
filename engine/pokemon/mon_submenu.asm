@@ -125,7 +125,10 @@ GetMonSubmenuItems:
 	jr z, .egg
 	ld a, [wLinkMode]
 	and a
-	jr nz, .skip_moves
+	jr nz, .skip_field_moves
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .skip_field_moves
 	ld a, MON_MOVES
 	call GetPartyParamLocation
 	ld d, h
@@ -150,7 +153,7 @@ GetMonSubmenuItems:
 	dec c
 	jr nz, .loop
 
-.skip_moves
+.skip_field_moves
 	ld a, MONMENUITEM_STATS
 	call AddMonMenuItem
 	ld a, MONMENUITEM_SWITCH
