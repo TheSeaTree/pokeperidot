@@ -350,7 +350,10 @@ RugosaPowerPlantSign:
 	
 RugosaCityPokecenterSign:
 	jumpstd pokecentersign
-	
+
+RugosaCityCafeSign:
+	jumptext RugosaCafeSignText
+
 RugosaCityMetalPowder:
 	itemball METAL_POWDER
 	
@@ -700,6 +703,10 @@ RugosaPowerPlantSignText:
 	line "POWER PLANT"
 	done
 
+RugosaCafeSignText:
+	text "RUGOSA CAFé"
+	done
+
 RugosaCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -720,7 +727,7 @@ RugosaCity_MapEvents:
 	coord_event  6,  4, -1, PowerPlantDoorLeft
 	coord_event  7,  4, -1, PowerPlantDoorRight
 
-	db 12 ; bg events
+	db 13 ; bg events
 	bg_event 28, 29, BGEVENT_UP, RugosaCitySign
 	bg_event 15, 21, BGEVENT_UP, RugosaDeptStoreSign
 	bg_event 28, 13, BGEVENT_UP, RugosaGymEvent
@@ -733,6 +740,7 @@ RugosaCity_MapEvents:
 	bg_event  8, 23, BGEVENT_ITEM, RugosaHiddenHPUp
 	bg_event 33, 18, BGEVENT_ITEM, RugosaHiddenCalcium
 	bg_event 18, 28, BGEVENT_ITEM, RugosaHiddenIron
+	bg_event 24, 29, BGEVENT_READ, RugosaCityCafeSign
 
 	db 15 ; object events
 	object_event 28, 24, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCityLass, -1

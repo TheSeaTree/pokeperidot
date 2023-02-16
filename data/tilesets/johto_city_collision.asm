@@ -196,3 +196,4 @@
 	tilecoll FLOOR, WALL, WALL, WALL ; c3
 	tilecoll WALL, WALL, FLOOR, FLOOR ; c4
 	tilecoll HEADBUTT_TREE, HEADBUTT_TREE, HEADBUTT_TREE, WALL ; c5
+	tilecoll WALL, WALL, WALL, WALL ; c6

@@ -526,7 +526,7 @@ RidgeVillage_MapEvents:
 	bg_event  8, 13, BGEVENT_READ, RidgeVillageSign
 	bg_event 16, 14, BGEVENT_READ, RidgeTutorSign
 	bg_event 10,  7, BGEVENT_READ, RidgeVillagePokecenterSign
-	bg_event 20, 10, BGEVENT_READ, RidgeVillageCafeSign
+	bg_event 22,  9, BGEVENT_READ, RidgeVillageCafeSign
 	bg_event 36, 16, BGEVENT_READ, RidgeVillageMagikarpBrosSign
 	bg_event 19,  1, BGEVENT_ITEM, RidgeVillageHiddenHyperPotion
 	bg_event 38,  7, BGEVENT_UP, RidgeGymEvent
