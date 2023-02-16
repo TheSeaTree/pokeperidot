@@ -395,6 +395,10 @@ TrainerHouse:
 SpecialMoveRelearner:
 	farcall MoveRelearner
 	ret
+	
+SimulationMoveRelearner:
+	farcall MoveReminder_Simulation
+	ret
 
 SetFireGymSteps:
 	xor a

@@ -94,6 +94,43 @@ MoveRelearner:
 	ld hl, Text_MoveReminderNoMoves
 	jp PrintText
 
+MoveReminder_Simulation:
+; Used in the Battle Simulation as well, where it has no cost.
+	ld b, 6
+	farcall SelectMonFromParty
+	jr c, .cancel
+
+	call GetRemindableMoves
+	jr z, .no_moves
+
+	ld hl, Text_MoveReminderWhichMove
+	call PrintText
+	call JoyWaitAorB
+
+	call ChooseMoveToLearn
+	jr c, .skip_learn
+
+	ld a, [wMenuSelection]
+	ld [wd265], a
+	call GetMoveName
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+	ld bc, wStringBuffer2 - wStringBuffer1
+	call CopyBytes
+	ld b, 0
+	predef LearnMove
+	ld a, b
+	and a
+.skip_learn
+	call ReturnToMapWithSpeechTextbox
+.cancel
+	ld hl, Text_MoveReminderCancel
+	jp PrintText
+
+.no_moves
+	ld hl, Text_MoveReminderNoMoves
+	jp PrintText
+
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
 ; Returns z if no moves can be reminded.
@@ -298,7 +335,9 @@ ChooseMoveToLearn:
 	call GetFarByte
 	ld hl, wStringBuffer1 + 11
 	and a
-	jr z, .no_power
+;	jr z, .no_power
+	cp 2
+	jr c, .no_power
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
@@ -379,6 +418,7 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
+
 	; display accuracy out of 100
 	ld [hMultiplicand], a
 	ld a, 100
@@ -391,6 +431,11 @@ ChooseMoveToLearn:
 	inc a
 .no_inc
 	hlcoord 16, 12
+
+	; Display "---" for moves that can't miss.
+	cp 2
+	jr c, .Perfect_Accuracy
+
 	ld [wDeciramBuffer], a
 	ld de, wDeciramBuffer
 	lb bc, 1, 3
@@ -416,6 +461,11 @@ ChooseMoveToLearn:
 	ld de, .CancelDescription
 	jp PlaceString
 	
+.Perfect_Accuracy
+	hlcoord 16, 12
+	ld de, .String_PerfectAccuracy
+	jp PlaceString
+	
 .CancelDescription
 	db   "Do not relearn a"
 	next "previous move.@"
@@ -425,6 +475,9 @@ ChooseMoveToLearn:
 
 .ACC
 	db "<BOLD_A><BOLD_C><BOLD_C>/@"
+
+.String_PerfectAccuracy
+	db "---@"
 
 String_MoveRelearnerType_Top:
 	db "♣─────┐@"
