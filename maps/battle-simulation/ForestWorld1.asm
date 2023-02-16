@@ -46,8 +46,7 @@ ForestWorld1_MapScripts:
 .WarpIceCave:
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_2
+	warpmod 1, BATTLE_SIM_ICE_2
 	return
 
 .WarpSky:

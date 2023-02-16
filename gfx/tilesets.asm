@@ -449,9 +449,6 @@ INCBIN "gfx/tilesets/champions_room.2bpp.lz"
 
 SECTION "Tileset Data 14", ROMX
 
-TilesetCaveAttr:
-INCBIN "data/tilesets/cave_attributes.bin"
-
 TilesetLostLandAttr:
 INCBIN "data/tilesets/lost_land_attributes.bin"
 
@@ -484,3 +481,6 @@ INCBIN "gfx/tilesets/cyberspace.2bpp.lz"
 
 TilesetCyberspaceMeta:
 INCBIN "data/tilesets/cyberspace_metatiles.bin"
+
+TilesetCaveAttr:
+INCBIN "data/tilesets/cave_attributes.bin"

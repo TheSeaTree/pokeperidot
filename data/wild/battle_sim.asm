@@ -189,59 +189,59 @@ SimulationWildMons:
 	db 50, CURSTRAW
 	db 50, CURSTRAW
 
-;	map_id BATTLE_SIM_GRAVE_2
-;	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	map_id BATTLE_SIM_GRAVE_2
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 	; day
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 	; nite
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 
-;	map_id BATTLE_SIM_GRAVE_3
-;	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	map_id BATTLE_SIM_GRAVE_3
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 	; day
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 	; nite
-;	db 50, GOLBAT
-;	db 50, MISDREAVUS
-;	db 50, HOUNDOOM
-;	db 50, NOCTOWL
-;	db 50, UMBREON
-;	db 50, CURSTRAW
-;	db 50, CURSTRAW
+	db 50, GOLBAT
+	db 50, MISDREAVUS
+	db 50, HOUNDOOM
+	db 50, NOCTOWL
+	db 50, UMBREON
+	db 50, CURSTRAW
+	db 50, CURSTRAW
 
 	map_id BATTLE_SIM_ICE_1
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -271,7 +271,7 @@ SimulationWildMons:
 	db 50, VAPOREON
 
 	map_id BATTLE_SIM_ICE_2
-	db 100 percent, 100 percent, 100 percent ; encounter rates: morn/day/nite
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PILOSWINE
 	db 50, JYNX
@@ -297,32 +297,32 @@ SimulationWildMons:
 	db 50, VAPOREON
 	db 50, VAPOREON
 
-;	map_id BATTLE_SIM_ICE_3
-;	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	map_id BATTLE_SIM_ICE_3
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
-;	db 50, PILOSWINE
-;	db 50, JYNX
-;	db 50, KINGLER
-;	db 50, QUAGSIRE
-;	db 50, SNOWMAD
-;	db 50, VAPOREON
-;	db 50, VAPOREON
+	db 50, PILOSWINE
+	db 50, JYNX
+	db 50, KINGLER
+	db 50, QUAGSIRE
+	db 50, SNOWMAD
+	db 50, VAPOREON
+	db 50, VAPOREON
 	; day
-;	db 50, PILOSWINE
-;	db 50, JYNX
-;	db 50, KINGLER
-;	db 50, QUAGSIRE
-;	db 50, SNOWMAD
-;	db 50, VAPOREON
-;	db 50, VAPOREON
+	db 50, PILOSWINE
+	db 50, JYNX
+	db 50, KINGLER
+	db 50, QUAGSIRE
+	db 50, SNOWMAD
+	db 50, VAPOREON
+	db 50, VAPOREON
 	; nite
-;	db 50, PILOSWINE
-;	db 50, JYNX
-;	db 50, KINGLER
-;	db 50, QUAGSIRE
-;	db 50, SNOWMAD
-;	db 50, VAPOREON
-;	db 50, VAPOREON
+	db 50, PILOSWINE
+	db 50, JYNX
+	db 50, KINGLER
+	db 50, QUAGSIRE
+	db 50, SNOWMAD
+	db 50, VAPOREON
+	db 50, VAPOREON
 
 	map_id BATTLE_SIM_CASTLE_1
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite

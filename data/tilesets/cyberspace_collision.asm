@@ -138,3 +138,6 @@
 	tilecoll WALL, WALL, FLOOR, FLOOR ; 89
 	tilecoll LEFT_WALL, WARP_PANEL, WALL, WALL ; 8a
 	tilecoll WALL, WALL, WALL, WALL ; 8b
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 8c
+	tilecoll WALL, WALL, FLOOR, WALL ; 8d
+	tilecoll HOP_DOWN, HOP_DOWN, UP_WALL, UP_WALL ; 8e

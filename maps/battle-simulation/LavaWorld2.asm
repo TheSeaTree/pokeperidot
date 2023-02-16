@@ -18,13 +18,13 @@ LavaWorld2_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_3
+;	warpmod 1, BATTLE_SIM_CASTLE_3
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_3
+;	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpGraveyard:
@@ -48,15 +48,15 @@ LavaWorld2_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_3
+;	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 LavaWorld2_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  9, 14, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  5,  3, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 16, 10, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event 29,  1, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

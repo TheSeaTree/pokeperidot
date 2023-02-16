@@ -18,8 +18,7 @@ CastleWorld1_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_2
+	warpmod 1, BATTLE_SIM_ICE_2
 	return
 
 .WarpComputer:
@@ -56,6 +55,21 @@ CastleWorld1_MapScripts:
 ;	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
+BattleSimMoveRelearner:
+	faceplayer
+	opentext
+	special SpecialMoveRelearner
+	waitbutton
+	closetext
+	end
+	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
+	playsound SFX_WARP_FROM
+	special FadeOutPalettes
+	waitsfx
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
+	end
+
 CastleWorld1_MapEvents:
 	db 0, 0 ; filler
 
@@ -67,4 +81,5 @@ CastleWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 11, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1

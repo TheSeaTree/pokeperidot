@@ -45,8 +45,7 @@ LavaWorld1_MapScripts:
 .WarpIceCave:
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_2
+	warpmod 1, BATTLE_SIM_ICE_2
 	return
 
 .WarpForest:
@@ -60,8 +59,8 @@ LavaWorld1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  9, 14, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  5,  3, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 20,  8, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event  5,  1, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

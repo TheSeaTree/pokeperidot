@@ -30,13 +30,13 @@ IceWorld2_MapScripts:
 .WarpGraveyard:
 	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_GRAVE_3
+	warpmod 1, BATTLE_SIM_GRAVE_3
 	return
 
 .WarpSky:
 	checkevent EVENT_BATTLE_SIM_VISITED_SKY
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_SKY_3
+	warpmod 1, BATTLE_SIM_SKY_3
 	return
 
 .WarpVolcano:
@@ -56,7 +56,7 @@ IceWorld2_MapEvents:
 
 	db 2 ; warp events
 	warp_event 24,  2, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  3,  4, BATTLE_SIMULATION, -1 ; Exit
+	warp_event  5,  2, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

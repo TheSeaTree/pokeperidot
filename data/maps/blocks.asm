@@ -927,17 +927,29 @@ CyberspaceWorld1_Blocks:
 GraveyardWorld1_Blocks:
 	INCBIN "maps/battle-simulation/GraveyardWorld1.ablk"
 
+GraveyardWorld2_Blocks:
+	INCBIN "maps/battle-simulation/GraveyardWorld2.ablk"
+
+GraveyardWorld3_Blocks:
+	INCBIN "maps/battle-simulation/GraveyardWorld3.ablk"
+
 IceWorld1_Blocks:
 	INCBIN "maps/battle-simulation/IceWorld1.ablk"
 
 IceWorld2_Blocks:
 	INCBIN "maps/battle-simulation/IceWorld2.ablk"
 
+IceWorld3_Blocks:
+	INCBIN "maps/battle-simulation/IceWorld3.ablk"
+
 CastleWorld1_Blocks:
 	INCBIN "maps/battle-simulation/CastleWorld1.ablk"
 
 LavaWorld1_Blocks:
 	INCBIN "maps/battle-simulation/LavaWorld1.ablk"
+
+LavaWorld2_Blocks:
+	INCBIN "maps/battle-simulation/LavaWorld2.ablk"
 
 ForestWorld1_Blocks:
 	INCBIN "maps/battle-simulation/ForestWorld1.ablk"

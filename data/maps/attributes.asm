@@ -600,9 +600,13 @@ ENDM
 	map_attributes SkyWorld3, BATTLE_SIM_SKY_3, $04, 0
 	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
 	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
+	map_attributes GraveyardWorld2, BATTLE_SIM_GRAVE_2, $6d, 0
+	map_attributes GraveyardWorld3, BATTLE_SIM_GRAVE_3, $6d, 0
 	map_attributes IceWorld1, BATTLE_SIM_ICE_1, $01, 0
 	map_attributes IceWorld2, BATTLE_SIM_ICE_2, $01, 0
+	map_attributes IceWorld3, BATTLE_SIM_ICE_3, $01, 0
 	map_attributes CastleWorld1, BATTLE_SIM_CASTLE_1, $00, 0
 	map_attributes LavaWorld1, BATTLE_SIM_LAVA_1, $8c, 0
+	map_attributes LavaWorld2, BATTLE_SIM_LAVA_2, $8c, 0
 	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0
 	map_attributes BattleSimulationFinalRoom, BATTLE_SIMULATION_FINAL_ROOM, $00, 0

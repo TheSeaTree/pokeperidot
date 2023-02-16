@@ -46,8 +46,7 @@ GraveyardWorld1_MapScripts:
 .WarpIceCave:
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_2
+	warpmod 1, BATTLE_SIM_ICE_2
 	return
 
 .WarpForest:
@@ -82,39 +81,115 @@ GraveyardWorld1_MapScripts:
 
 GraveyardSwitch1:
 	opentext
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_1
+	iftrue .Reset
 	changeblock 14, 16, $1e
 	changeblock 16, 18, $6f
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
+.Decline
+	end
+
+.Reset
+	changeblock 14, 16, $38
+	changeblock 16, 18, $6e
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	end
 
 GraveyardSwitch2:
 	opentext
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_2
+	iftrue .Reset
 	changeblock 14,  4, $71
 	changeblock  6,  6, $6f
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_2
+.Decline
 	end
+
+.Reset
+	changeblock 14,  4, $70
+	changeblock  6,  6, $6e
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_1
+	end
+	
 
 GraveyardSwitch3:
 	opentext
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_3
+	iftrue .Reset
 	changeblock  6, 12, $35
 	changeblock 10, 10, $6f
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_3
+.Decline
+	end
+
+.Reset
+	changeblock  6, 12, $6c
+	changeblock 10, 10, $6e
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	end
 
 GraveyardSwitch4:
 	opentext
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_4
+	iftrue .Reset
 	changeblock 12,  2, $1e
 	changeblock  6, 16, $6f
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_4
+.Decline
 	end
+
+.Reset
+	changeblock 12,  2, $38
+	changeblock  6, 16, $6e
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_4
+	end
+
+GraveyardGateAskText:
+	text "There's a switch on"
+	line "this headstone."
+
+	para "Flip it?"
+	done
+
+GraveyardGateConfirmText:
+	text "Who wouldn't?"
+	done
 
 GraveyardWorld1_MapEvents:
 	db 0, 0 ; filler
@@ -126,7 +201,7 @@ GraveyardWorld1_MapEvents:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event 16, 18, BGEVENT_UP, GraveyardSwitch1
+	bg_event  0, 14, BGEVENT_UP, GraveyardSwitch1
 	bg_event  6,  6, BGEVENT_UP, GraveyardSwitch2
 	bg_event 10, 10, BGEVENT_UP, GraveyardSwitch3
 	bg_event  6, 16, BGEVENT_UP, GraveyardSwitch4

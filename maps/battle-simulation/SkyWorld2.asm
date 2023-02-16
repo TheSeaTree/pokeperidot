@@ -32,8 +32,7 @@ SkyWorld2_MapScripts:
 .WarpGraveyard:
 	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_GRAVE_1
-;	warpmod 1, BATTLE_SIM_GRAVE_3
+	warpmod 1, BATTLE_SIM_GRAVE_3
 	return
 
 .WarpVolcano:
@@ -46,8 +45,7 @@ SkyWorld2_MapScripts:
 .WarpIceCave:
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_3
+	warpmod 1, BATTLE_SIM_ICE_3
 	return
 
 .WarpForest:

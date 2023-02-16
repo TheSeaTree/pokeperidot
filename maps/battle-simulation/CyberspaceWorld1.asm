@@ -30,10 +30,9 @@ CyberspaceWorld1_MapScripts:
 	return
 
 .WarpGraveyard:
-	checkevent EVENT_BATTLE_SIM_VISITED_SKY
+	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_SKY_1
-;	warpmod 1, BATTLE_SIM_SKY_2
+;	warpmod 1, BATTLE_SIM_GRAVEYARD_2
 	return
 
 .WarpVolcano:
@@ -46,8 +45,7 @@ CyberspaceWorld1_MapScripts:
 .WarpIceCave:
 	checkevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_ICE_1
-;	warpmod 1, BATTLE_SIM_ICE_2
+	warpmod 1, BATTLE_SIM_ICE_2
 	return
 
 .WarpForest:

@@ -19,13 +19,13 @@ GraveyardWorld2_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_3
+;	warpmod 1, BATTLE_SIM_CASTLE_3
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_3
+;	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpSky:
@@ -37,7 +37,7 @@ GraveyardWorld2_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_3
+;	warpmod 1, BATTLE_SIM_LAVA_3
 	return
 
 .WarpIceCave:
@@ -49,81 +49,157 @@ GraveyardWorld2_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_3
+;	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 .Gates:
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	iffalse .Gate2
-	changeblock 14, 16, $1e
-	changeblock 16, 18, $6f
+	changeblock 22, 22, $71
+	changeblock 30, 18, $6f
 .Gate2
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_2
 	iffalse .Gate3
-	changeblock 14,  4, $71
-	changeblock  6,  6, $6f
+	changeblock 20, 12, $71
+	changeblock 14, 12, $38
+	changeblock 14, 14, $38
+	changeblock  4, 20, $6f
 .Gate3
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_3
 	iffalse .Gate4
-	changeblock  6, 12, $35
-	changeblock 10, 10, $6f
+	changeblock 14, 14, $1e
+	changeblock 20, 12, $70
+	changeblock  4,  4, $6f
 .Gate4
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_4
 	iffalse .NoGates
-	changeblock 12,  2, $1e
-	changeblock  6, 16, $6f
+	changeblock 14, 12, $1e
+	changeblock 14,  4, $6c
+	changeblock 28,  8, $6f
 .NoGates
 	return
 
 Graveyard2Switch1:
 	opentext
-	changeblock 14, 16, $1e
-	changeblock 16, 18, $6f
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_1
+	iftrue .Reset
+	changeblock 22, 22, $71 ; open gate 1
+	changeblock 30, 18, $6f ; switch
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
+.Decline
+	end
+
+.Reset
+	changeblock 22, 22, $70 ; close gate 1
+	changeblock 30, 18, $6e ; switch
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	end
 
 Graveyard2Switch2:
 	opentext
-	changeblock 14,  4, $71
-	changeblock  6,  6, $6f
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_2
+	iftrue .Reset
+	changeblock 20, 12, $71 ; open gate 2
+	changeblock 14, 12, $38 ; close gate 4
+	changeblock 14, 14, $38 ; close gate 5
+	changeblock  4, 20, $6f ; switch
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_2
+.Decline
+	end
+
+.Reset
+	changeblock 20, 12, $70 ; close gate 2
+	changeblock 14, 12, $38 ; close gate 4
+	changeblock 14, 14, $38 ; close gate 5
+	changeblock  4, 20, $6e ; switch
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_2
 	end
 
 Graveyard2Switch3:
 	opentext
-	changeblock  6, 12, $35
-	changeblock 10, 10, $6f
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_3
+	iftrue .Reset
+	changeblock 14, 14, $1e ; open gate 4
+	changeblock 20, 12, $70 ; close gate 2
+	changeblock  4,  4, $6f ; switch
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_3
+.Decline
+	end
+
+.Reset
+	changeblock 14, 14, $38 ; close gate 4
+	changeblock 20, 12, $71 ; open gate 2
+	changeblock  4,  4, $6e ; switch
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_3
 	end
 
 Graveyard2Switch4:
 	opentext
-	changeblock 12,  2, $1e
-	changeblock  6, 16, $6f
+	writetext GraveyardGateAskText
+	yesorno
+	iffalse .Decline
+	writetext GraveyardGateConfirmText
+	waitbutton
+	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_4
+	iftrue .Reset
+	changeblock 14, 12, $1e ; open gate 5
+	changeblock 14,  4, $6c ; close gate 3
+	changeblock 28,  8, $6f ; switch
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_4
+.Decline
+	end
+
+.Reset
+	changeblock 14, 12, $38 ; close gate 5
+	changeblock 14,  4, $35 ; open gate 3
+	changeblock 28,  8, $6e ; switch
+	reloadmappart
+	closetext
+	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_4
 	end
 
 GraveyardWorld2_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 14, 19, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  5,  0, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 23, 26, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event 15, 10, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event 16, 18, BGEVENT_UP, Graveyard2Switch1
-	bg_event  6,  6, BGEVENT_UP, Graveyard2Switch2
-	bg_event 10, 10, BGEVENT_UP, Graveyard2Switch3
-	bg_event  6, 16, BGEVENT_UP, Graveyard2Switch4
+	bg_event 30, 18, BGEVENT_UP, Graveyard2Switch1
+	bg_event  4, 20, BGEVENT_UP, Graveyard2Switch2
+	bg_event  4,  4, BGEVENT_UP, Graveyard2Switch3
+	bg_event 28,  8, BGEVENT_UP, Graveyard2Switch4
 
 	db 0 ; object events

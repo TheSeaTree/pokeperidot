@@ -471,10 +471,14 @@ ENDM
 	map_const BATTLE_SIM_SKY_3,								21, 15
 	map_const BATTLE_SIM_COMP_1,							 9, 10
 	map_const BATTLE_SIM_GRAVE_1,							10, 10
+	map_const BATTLE_SIM_GRAVE_2,							16, 14
+	map_const BATTLE_SIM_GRAVE_3,							29, 19
 	map_const BATTLE_SIM_ICE_1,								10, 10
 	map_const BATTLE_SIM_ICE_2,								16, 13
+	map_const BATTLE_SIM_ICE_3,								21, 15
 	map_const BATTLE_SIM_CASTLE_1,							10, 10
-	map_const BATTLE_SIM_LAVA_1,							10, 10
+	map_const BATTLE_SIM_LAVA_1,							12, 11
+	map_const BATTLE_SIM_LAVA_2,							18, 14
 	map_const BATTLE_SIM_FOREST_1,							10, 10
 	map_const BATTLE_SIMULATION_FINAL_ROOM,				  	 3,  4
 
