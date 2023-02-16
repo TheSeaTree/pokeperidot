@@ -212,10 +212,6 @@ PokeBallEffect:
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
 
-	ld a, [wBattleType]
-	cp BATTLETYPE_BOSS
-	jp z, UseBallInBossBattle
-
 	ld a, BANK(sBoxCount)
 	call GetSRAMBank
 	ld a, [sBoxCount]
