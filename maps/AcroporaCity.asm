@@ -41,7 +41,7 @@ AcroporaBikerScript:
 	jumptextfaceplayer AcroporaBikerText
 
 AcroporaGymEvent:
-	checkflag ENGINE_COGBADGE
+	checkflag ENGINE_GLACIERBADGE
 	iftrue .havebadge
 	scall AcroporaGymEntrance
 	iffalse .no
