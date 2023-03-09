@@ -185,6 +185,6 @@ FaviaHappinessRater_MapEvents:
 	bg_event  1,  1, BGEVENT_READ, HappinessRatersHouseBookshelf
 
 	db 3 ; object events
-	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FaviaHappinessRaterTeacherScript, -1
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FaviaHappinessRaterTeacherScript, -1
 	object_event  5,  2, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaHappinessRaterPokefanMScript, -1
 	object_event  5,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FaviaHappinessRaterYoungsterScript, -1
