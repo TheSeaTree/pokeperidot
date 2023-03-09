@@ -12,8 +12,15 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
-	checkflag ENGINE_SAFARI_GAME_ACTIVE
-	iftrue .safari_zone
+;	checkflag ENGINE_SAFARI_GAME_ACTIVE
+;	iftrue .safari_zone
+
+	checkflag ENGINE_BATTLE_SIMULATION_ACTIVE
+	iftrue .battle_sim
+
+	callasm CheckTimeTravel
+	iftrue .time_travel
+
 	checkcode VAR_BATTLETYPE
 	ifequal BATTLETYPE_NOCASH, .NoMoney
 	callasm HalveMoney
@@ -26,13 +33,30 @@ Script_Whiteout:
 .NoMoney
 	endall
 
-.safari_zone
-	jumpstd safarizonewarp
+;.safari_zone
+;	jumpstd safarizonewarp
+
+.battle_sim
+	jumpstd battlesimexitwarp
+
+.time_travel
+	jumpstd timetravelwarp
 
 .WhitedOutText:
 	; is out of useable #MON!  whited out!
 	text_far UnknownText_0x1c0a4e
 	text_end
+
+CheckTimeTravel:
+	ld a, [wCurLandmark]
+;	ld [wPrevLandmark], a
+	cp THE_PAST
+	ret nz
+	ld de, SFX_WARP_FROM
+	call PlaySFX
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
 
 OverworldBGMap:
 	call ClearPalettes

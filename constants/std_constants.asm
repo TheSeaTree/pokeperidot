@@ -48,3 +48,5 @@
 	enum stolenitemboxes
 	enum wishingfountain
 	enum emilycompanion
+	enum battlesimexitwarp
+	enum timetravelwarp

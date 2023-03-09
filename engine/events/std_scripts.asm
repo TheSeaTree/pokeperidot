@@ -47,6 +47,8 @@ StdScripts::
 	dba StolenItemsBoxScript
 	dba WishingFountainScript
 	dba EmilyCompanionScript
+	dba BattleSimExitWarpScript
+	dba TimeTravelWarpScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -824,3 +826,21 @@ Movement_ContestResults_WalkAfterWarp:
 Movement_SafariZone_Leave:
 	step DOWN
 	step_resume
+
+BattleSimExitWarpScript:
+	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
+	playsound SFX_WARP_FROM
+	special FadeOutPalettes
+	waitsfx
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
+	end
+
+TimeTravelWarpScript:
+	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
+	playsound SFX_WARP_FROM
+	special FadeOutPalettes
+	waitsfx
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	warpfacing DOWN, BATTLE_SIMULATION, 2, 9
+	end
