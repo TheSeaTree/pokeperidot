@@ -73,3 +73,9 @@
 	tilecoll HOP_DOWN, HOP_DOWN, WALL, WALL ; 48
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; 49
 	tilecoll WARP_PANEL, FLOOR, FLOOR, FLOOR ; 4a
+	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 4b
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 4c
+	tilecoll WALL, FLOOR, WALL, WALL ; 4d
+	tilecoll FLOOR, WALL, WALL, WALL ; 4e
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 4f
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 50

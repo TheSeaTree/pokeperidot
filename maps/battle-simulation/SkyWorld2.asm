@@ -19,7 +19,7 @@ SkyWorld2_MapScripts:
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
 	warpmod 1, BATTLE_SIM_CASTLE_1
-;	warpmod 1, BATTLE_SIM_CASTLE_3
+	warpmod 1, BATTLE_SIM_CASTLE_3
 	return
 
 .WarpComputer:

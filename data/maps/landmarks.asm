@@ -66,6 +66,7 @@ Landmarks:
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
 	landmark  -8,  -8, PastMapName
+	landmark  -8,  -8, PastMapName ; BATTLE_SIM
 
 NewBarkTownName:      db "ELKHORN¯TOWN@"
 CherrygroveCityName:  db "PAVONA¯VILLAGE@"

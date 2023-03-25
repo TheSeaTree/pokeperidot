@@ -24,7 +24,7 @@ CastleWorld2_MapScripts:
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_3
+;	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpGraveyard:
@@ -42,21 +42,21 @@ CastleWorld2_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_3
+;	warpmod 1, BATTLE_SIM_LAVA_3
 	return
 
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_3
+;	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 CastleWorld2_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 11, 15, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  8,  4, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 12, 27, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event  8,  6, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

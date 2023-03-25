@@ -51,4 +51,5 @@ GraveyardWorld3_MapEvents:
 	db 1 ; bg events
 	bg_event 12, 10, BGEVENT_UP, Graveyard3Switch
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 39,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1 ; Move Reminder

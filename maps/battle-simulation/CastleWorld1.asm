@@ -74,8 +74,8 @@ CastleWorld1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 11, 15, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event  8,  4, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 17, 18, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event  4,  2, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

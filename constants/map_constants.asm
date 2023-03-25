@@ -477,6 +477,8 @@ ENDM
 	map_const BATTLE_SIM_ICE_2,								16, 13
 	map_const BATTLE_SIM_ICE_3,								21, 15
 	map_const BATTLE_SIM_CASTLE_1,							10, 10
+	map_const BATTLE_SIM_CASTLE_2,							14, 15
+	map_const BATTLE_SIM_CASTLE_3,							21, 16
 	map_const BATTLE_SIM_LAVA_1,							12, 11
 	map_const BATTLE_SIM_LAVA_2,							18, 14
 	map_const BATTLE_SIM_FOREST_1,							10, 10

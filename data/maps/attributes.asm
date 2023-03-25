@@ -606,6 +606,8 @@ ENDM
 	map_attributes IceWorld2, BATTLE_SIM_ICE_2, $01, 0
 	map_attributes IceWorld3, BATTLE_SIM_ICE_3, $01, 0
 	map_attributes CastleWorld1, BATTLE_SIM_CASTLE_1, $00, 0
+	map_attributes CastleWorld2, BATTLE_SIM_CASTLE_2, $00, 0
+	map_attributes CastleWorld3, BATTLE_SIM_CASTLE_3, $00, 0
 	map_attributes LavaWorld1, BATTLE_SIM_LAVA_1, $8c, 0
 	map_attributes LavaWorld2, BATTLE_SIM_LAVA_2, $8c, 0
 	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0

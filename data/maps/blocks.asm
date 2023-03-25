@@ -945,6 +945,12 @@ IceWorld3_Blocks:
 CastleWorld1_Blocks:
 	INCBIN "maps/battle-simulation/CastleWorld1.ablk"
 
+CastleWorld2_Blocks:
+	INCBIN "maps/battle-simulation/CastleWorld2.ablk"
+
+CastleWorld3_Blocks:
+	INCBIN "maps/battle-simulation/CastleWorld3.ablk"
+
 LavaWorld1_Blocks:
 	INCBIN "maps/battle-simulation/LavaWorld1.ablk"
 
