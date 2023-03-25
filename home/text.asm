@@ -350,8 +350,14 @@ PlaceEnemysName::
 	jr z, .subwayacejade
 	cp PERRY
 	jr z, .subwayaceperry
+	
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp BATTLE_SIM
+	jr z, .battlesim
 
 	ld de, wOTClassName
+.continueclassname
 	call PlaceString
 	ld h, b
 	ld l, c
@@ -379,11 +385,18 @@ PlaceEnemysName::
 	ld de, wOTClassName
 	jr PlaceCommandCharacter
 
+.battlesim
+	ld de, .BattleSimTrainer
+	jr .continueclassname
+
 .SubwayJadeName
 	db "SUBWAY ACE JADE@"
 
 .SubwayPerryName
 	db "SUBWAY ACE PERRY@"
+
+.BattleSimTrainer
+	db "SIM TRAINER@"
 
 PlaceGenderedPlayerName::
 	push de
