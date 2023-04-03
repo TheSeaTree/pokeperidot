@@ -27,6 +27,7 @@ InitGender:
 	call SetPalettes
 	ld hl, TextJump_AreYouABoyOrAreYouAGirl
 	call PrintText
+	farcall DrawGenderSelectionPics
 	ld hl, .MenuHeader
 	call LoadMenuHeader
 	call WaitBGMap2
@@ -35,6 +36,19 @@ InitGender:
 	ld a, [wMenuCursorY]
 	dec a
 	ld [wPlayerGender], a
+
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .MaleSelected
+	hlcoord 0, 4
+	lb bc, 7, 7
+	call ClearBox
+	jr .SetGenderPalettes
+.MaleSelected
+	hlcoord 12, 4
+	lb bc, 7, 7
+	call ClearBox
+.SetGenderPalettes
 	ld c, 10
 	call DelayFrames
 	ret

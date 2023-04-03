@@ -1,6 +1,6 @@
 ChrisNameMenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, 10, TEXTBOX_Y - 1
+	menu_coords 9, 0, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MaleNames
 	db 1 ; ????
 	db 0 ; default option
@@ -32,6 +32,6 @@ FemalePlayerNameArray:
 	db "JADE@"
 	db "AMANDA@"
 	db "SUSAN@"
-	db "LUCY@"
+	db "JULIA@"
 	db 2 ; displacement
 	db " NAME @" ; title

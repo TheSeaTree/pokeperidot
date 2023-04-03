@@ -36,7 +36,7 @@ LoadSGBLayoutCGB:
 	dw _CGB_StatsScreenHPPals
 	dw _CGB_Pokedex
 	dw _CGB_SlotMachine
-	dw _CGB_BetaTitleScreen
+	dw _CGB_GenderSelection
 	dw _CGB_GSIntro
 	dw _CGB_Diploma
 	dw _CGB_MapPals
@@ -445,16 +445,20 @@ _CGB_SlotMachine:
 	ldh [hCGBPalUpdate], a
 	ret
 
-_CGB_BetaTitleScreen:
-	ld hl, PalPacket_BetaTitleScreen + 1
-	call CopyFourPalettes
+_CGB_GenderSelection:
+	ld hl, .GenderScreenPals
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .male
+	ld hl, .FemaleSelected
+.male
+	ld de, wBGPals1
+	ld bc, 2 palettes
+	ld a, BANK(wBGPals1)
+	call FarCopyWRAM
 	call WipeAttrMap
-	ld de, wOBPals1
-	ld a, PREDEFPAL_PACK
-	call GetPredefPal
-	call LoadHLPaletteIntoDE
-	hlcoord 0, 6, wAttrMap
-	lb bc, 12, SCREEN_WIDTH
+	hlcoord 12, 4, wAttrMap
+	lb bc, 7, 7
 	ld a, $1
 	call FillBoxCGB
 	call ApplyAttrMap
@@ -462,6 +466,12 @@ _CGB_BetaTitleScreen:
 	ld a, $1
 	ldh [hCGBPalUpdate], a
 	ret
+
+.GenderScreenPals:
+INCLUDE "gfx/new_game/gender_selection.pal"
+
+.FemaleSelected:
+INCLUDE "gfx/new_game/gender_selection_f.pal"
 
 _CGB_GSIntro:
 	ld b, 0

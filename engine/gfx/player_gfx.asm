@@ -11,18 +11,18 @@ Unreferenced_Function88248:
 	ret
 
 MovePlayerPicRight:
-	hlcoord 6, 4
+	hlcoord 0, 4
 	ld de, 1
 	jr MovePlayerPic
 
 MovePlayerPicLeft:
-	hlcoord 13, 4
+	hlcoord 12, 4
 	ld de, -1
 	; fallthrough
 
 MovePlayerPic:
 ; Move player pic at hl by de * 7 tiles.
-	ld c, $8
+	ld c, $7
 .loop
 	push bc
 	push hl
@@ -60,6 +60,7 @@ ShowPlayerNamingChoices:
 	ld a, [wPlayerGender]
 	bit PLAYERGENDER_FEMALE_F, a
 	jr z, .GotGender
+
 	ld hl, KrisNameMenuHeader
 .GotGender:
 	call LoadMenuHeader
@@ -161,6 +162,17 @@ HOF_LoadTrainerFrontpic:
 	ldh [hBGMapMode], a
 	ret
 
+Intro_GetPlayerClass:
+	ld e, CHRIS
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .GotClass
+	ld e, KRIS
+.GotClass:
+	ld a, e
+	ld [wTrainerClass], a
+	ret
+
 DrawIntroPlayerPic:
 ; Draw the player pic at (6,4).
 
@@ -190,6 +202,42 @@ DrawIntroPlayerPic:
 	xor a
 	ldh [hGraphicStartTile], a
 	hlcoord 6, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+	ret
+
+ReplaceJadeGraphics:
+	ld de, ChrisPic
+	ld hl, vTiles2 tile $30
+	ld b, BANK(ChrisPic)
+	ld c, 7 * 7 ; dimensions
+	jp Get2bpp
+
+DrawGenderSelectionPics:
+; Draw both player pics.
+	ld de, ChrisPic
+	ld hl, vTiles2
+	ld b, BANK(ChrisPic)
+	ld c, 7 * 7 ; dimensions
+	call Get2bpp
+	ld de, KrisPic
+	ld hl, vTiles2 tile $30
+	ld b, BANK(KrisPic) ; aka BANK(KrisPic)
+	ld c, 7 * 7 ; dimensions
+	call Get2bpp
+
+; Draw
+	xor a
+	ldh [hGraphicStartTile], a
+	hlcoord 0, 4
+	lb bc, 7, 7
+	predef PlaceGraphic
+
+; Draw
+	xor a
+	ld a, $30
+	ldh [hGraphicStartTile], a
+	hlcoord 12, 4
 	lb bc, 7, 7
 	predef PlaceGraphic
 	ret

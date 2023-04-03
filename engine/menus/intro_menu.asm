@@ -648,7 +648,7 @@ OakSpeech:
 	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
 	call GetSGBLayout
 	call Intro_WipeInFrontpic
-	
+
 	ld hl, OakText4a
 	call PrintText
 	call RotateThreePalettesRight
@@ -713,22 +713,22 @@ OakSpeech:
 	call RotateThreePalettesRight
 	call ClearTileMap
 
+	ld b, SCGB_GENDER_SELECTION
+	call GetSGBLayout
+	call SetPalettes
+
 	xor a
 	ld [wCurPartySpecies], a
 	farcall InitGender
-	farcall DrawIntroPlayerPic
+	farcall Intro_GetPlayerClass
 
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_GENDER_SELECTION
 	call GetSGBLayout
-	call Intro_RotatePalettesLeftFrontpic
+	call SetPalettes
 
 	ld hl, OakText6
 	call PrintText
 	call NamePlayer
-	
-	ld b, SCGB_PLAYER_OR_MON_FRONTPIC_PALS
-	call GetSGBLayout
-	call SetPalettes
 
 	ld hl, OakText7
 	call PrintText
@@ -800,14 +800,26 @@ OakText7:
 	db "@"
 
 NamePlayer:
-	farcall MovePlayerPicRight
 	farcall ShowPlayerNamingChoices
 	ld a, [wMenuCursorY]
 	dec a
 	jr z, .NewName
 	call StorePlayerName
 	farcall ApplyMonOrTrainerPals
+
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .MaleSelected
+
+;	ld b, SCGB_GENDER_SELECTION
+;	call GetSGBLayout
+;	call SetPalettes
+
 	farcall MovePlayerPicLeft
+	ret
+.MaleSelected
+	farcall ReplaceJadeGraphics
+	farcall MovePlayerPicRight
 	ret
 
 .NewName:
@@ -825,7 +837,7 @@ NamePlayer:
 	ld [wCurPartySpecies], a
 	farcall DrawIntroPlayerPic
 
-	ld b, SCGB_TRAINER_OR_MON_FRONTPIC_PALS
+	ld b, SCGB_GENDER_SELECTION
 	call GetSGBLayout
 	call RotateThreePalettesLeft
 
