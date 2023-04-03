@@ -1053,6 +1053,7 @@ ShuckleEggMoves:
 	db ROLLOUT
 	db DEFENSE_CURL
 	db BODY_PRESS
+	db RAPID_SPIN
 	db -1 ; end
 
 HeracrossEggMoves:
