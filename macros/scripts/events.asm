@@ -1066,3 +1066,9 @@ ENDM
 checksave: MACRO
 	db checksave_command
 ENDM
+
+	enum trainerpic_command ; $56
+trainerpic: MACRO
+	db trainerpic_command
+	db \1 ; trainer class
+ENDM

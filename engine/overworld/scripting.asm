@@ -236,6 +236,7 @@ endc
 	dw Script_name                       ; a7
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
+	dw Script_trainerpic                 ; aa
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2830,10 +2831,15 @@ Script_checksave:
 	ld [wScriptVar], a
 	ret
 
-; unused
-	ld a, [.byte]
-	ld [wScriptVar], a
-	ret
+Script_trainerpic:
+; script command 0x56
+; parameters: trainer class
 
-.byte
-	db 0
+	call GetScriptByte
+	and a
+	jr nz, .ok
+	ld a, [wScriptVar]
+.ok
+	ld [wTrainerClass], a
+	farcall Trainerpic
+	ret

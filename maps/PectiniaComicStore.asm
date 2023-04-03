@@ -33,7 +33,18 @@ PectiniaComicStoreBredeHeadline:
 	jumptext PectiniaComicStoreBredeHeadlineText
 
 PectiniaComicStoreAmberHeadline:
-	jumptext PectiniaComicStoreAmberHeadlineText
+	opentext
+	writetext PectiniaComicStoreAmberCoverText
+	waitbutton
+	closetext
+	refreshscreen
+	trainerpic AMBER
+	waitbutton
+	opentext
+	writetext PectiniaComicStoreAmberHeadlineText
+	waitbutton
+	closetext
+	end
 
 PectiniaComicStoreComicsShelf:
 	jumptext PectiniaComicStoreComicsShelfText
@@ -144,6 +155,12 @@ PectiniaComicStoreBredeHeadlineText:
 	cont "his training."
 	done
 
+PectiniaComicStoreAmberCoverText:
+	text "There's a model on"
+	line "the cover of this"
+	cont "magazine…"
+	done
+
 PectiniaComicStoreAmberHeadlineText:
 	text "“FRESH OFF THE"
 	line "RUNWAY AND HEADING"
@@ -166,7 +183,7 @@ PectiniaComicStoreYouBreakItText:
 	text "NOTICE:"
 
 	para "You break it,"
-	line "you buy it."
+	line "you buy it!"
 	done
 
 PectiniaComicStoreStatuesText:
