@@ -47,8 +47,9 @@ DevelopersPeridotTrophyText:
 	line "TROPHY."
 
 	para "It says here it is"
-	line "awarded for a 50-"
-	cont "win streak in the"
+	line "awarded for win-"
+	cont "ning against a"
+	cont "SUBWAY ACE at the"
 	cont "BATTLE SUBWAY."
 	done
 

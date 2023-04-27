@@ -356,6 +356,15 @@ Script_BeatenAllTrainers2:
 	jump .Continue
 
 .DefeatedBoss:
+	checkflag EVENT_DECO_PERIDOT_TROPHY
+	iftrue .GotTrophy
+	writetext Text_PeridotTrophyGift
+	playsound SFX_DEX_FANFARE_50_79
+	setflag EVENT_DECO_PERIDOT_TROPHY
+	waitsfx
+	writetext Text_SentPeridotTrophyHome
+	waitbutton
+.GotTrophy
 	callasm CheckLevelGroup
  	ifgreater  4, .HardModeBossReward
 	givecoins 50
@@ -787,6 +796,18 @@ BattleSubwayPlatformPokefanFText:
 	para "The trainers who"
 	line "ride it take batt-"
 	cont "les very serious."
+	done
+
+Text_PeridotTrophyGift:
+	text "For defeating the"
+	line "SUBWAY ACE, you"
+	cont "have earned the"
+	cont "PERIDOT TROPHY."
+	done
+
+Text_SentPeridotTrophyHome:
+	text "I will just send"
+	line "home for you."
 	done
 
 BattleSubwayCurrentStreakText:
