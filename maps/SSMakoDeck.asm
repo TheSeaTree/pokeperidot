@@ -134,6 +134,9 @@ SSMakoDeckBurglar:
 	setmapscene SS_MAKO_ENGINE_ROOM, SCENE_SSMAKOENGINEROOM_FINISHED
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_FINISHED
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_FINISHED
+; To prevent freezing after the scene?
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
 	end
 
 SSMakoDeckBurglarArrestScript:
