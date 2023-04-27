@@ -1072,3 +1072,8 @@ trainerpic: MACRO
 	db trainerpic_command
 	db \1 ; trainer class
 ENDM
+
+	enum sketchbookmenu_command ; $59
+sketchbookmenu: MACRO
+	db sketchbookmenu_command
+ENDM

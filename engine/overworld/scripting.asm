@@ -237,6 +237,7 @@ endc
 	dw Script_wait                       ; a8
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
+	dw Script_sketchbookmenu             ; ab
 
 StartScript:
 	ld hl, wScriptFlags
@@ -475,6 +476,19 @@ Script_verticalmenu:
 
 	ld a, [wScriptBank]
 	ld hl, VerticalMenu
+	rst FarCall
+	ld a, [wMenuCursorY]
+	jr nc, .ok
+	xor a
+.ok
+	ld [wScriptVar], a
+	ret
+
+Script_sketchbookmenu:
+; script command 0x59
+
+	ld a, [wScriptBank]
+	ld hl, SketchbookMenu
 	rst FarCall
 	ld a, [wMenuCursorY]
 	jr nc, .ok

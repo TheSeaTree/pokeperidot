@@ -159,11 +159,11 @@ CHRIS EQU __enum__
 	trainerclass CHAMPION ; 10
 	const JOSEPH
 
-	trainerclass BROCK ; 11
+	trainerclass BROCK
 
-	trainerclass MISTY ; 12
+	trainerclass MISTY
 
-	trainerclass LT_SURGE ; 13
+	trainerclass LT_SURGE
 
 	trainerclass SCIENTIST ; 14
 	const ADRIAN
@@ -570,6 +570,14 @@ CHRIS EQU __enum__
 	const BOSS_LV80
 	const BOSS_LV90
 	const BOSS_LV100
+
+; Used for trainerpic images
+	trainerclass GEN_1_ARTICUNO
+	trainerclass GEN_1_ZAPDOS
+	trainerclass GEN_1_MOLTRES
+	trainerclass SW97_RAIKOU
+	trainerclass SW97_ENTEI
+	trainerclass SW97_SUICUNE
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__

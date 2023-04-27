@@ -70,3 +70,9 @@ TrainerPicPointers::
 	dba OfficerPic
 	dba GruntfPic
 	dba MysticalmanPic
+	dba Gen1ArticunoPic
+	dba Gen1ZapdosPic
+	dba Gen1MoltresPic
+	dba SW97RaikouPic
+	dba SW97EnteiPic
+	dba SW97SuicunePic

@@ -5,6 +5,7 @@
 	const COASTAL_LAB_BALL1
 	const COASTAL_LAB_BALL2
 	const COASTAL_LAB_BALL3
+	const COASTAL_LAB_BOOK
 
 CoastalLab_MapScripts:
 	db 0 ; scene scripts
@@ -182,7 +183,101 @@ CoastalLabLugiaHoOhBook:
 .No
 	closetext
 	end
-	
+
+CoastalLabSketchbook:
+	opentext
+	writetext CoastalLabBirdSketchbookText
+.Loop:
+	loadmenu .SketchbookMenuHeader
+	sketchbookmenu
+	closewindow
+	ifequal 1, .Articuno
+	ifequal 2, .Zapdos
+	ifequal 3, .Moltres
+	ifequal 4, .Raikou
+	ifequal 5, .Entei
+	ifequal 6, .Suicune
+	writetext CoastalLabSketchbookCloseText
+	waitbutton
+	closetext
+	end
+
+.Articuno
+	refreshscreen
+	trainerpic GEN_1_ARTICUNO
+	waitbutton
+	closetext
+	writebyte ARTICUNO
+	special SetSeenMon
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.Zapdos
+	refreshscreen
+	trainerpic GEN_1_ZAPDOS
+	waitbutton
+	closetext
+	writebyte ZAPDOS
+	special SetSeenMon
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.Moltres
+	refreshscreen
+	trainerpic GEN_1_MOLTRES
+	waitbutton
+	closetext
+	writebyte MOLTRES
+	special SetSeenMon
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.Raikou
+	refreshscreen
+	trainerpic SW97_RAIKOU
+	waitbutton
+	closetext
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.Entei
+	refreshscreen
+	trainerpic SW97_ENTEI
+	waitbutton
+	closetext
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.Suicune
+	refreshscreen
+	trainerpic SW97_SUICUNE
+	waitbutton
+	closetext
+	opentext
+	writetext CoastalLabSketchbookLabeledText
+	jump .Loop
+
+.SketchbookMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 17, 12
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING | STATICMENU_WRAP ; flags
+	db 6 ; items
+	db "FROZEN WING@"
+	db "THUNDER BEAK@"
+	db "BURNING FEATHER@"
+	db "LIGHTNING QUILL@"
+	db "MAGMA STEP@"
+	db "LIQUID MANE@"
+
 CoastalLabUnownBook:
 	checkevent EVENT_MET_UNOWN_MANIAC
 	iffalse IllegibleUnownBook
@@ -196,6 +291,9 @@ IllegibleUnownBook:
 
 CoastalLabTapeReels:
 	jumptext CoastalLabTapeReelsText
+
+CoastalLabOpenWindow:
+	jumptext CoastalLabOpenWindowText
 
 CoastalLabPokeBall:
 	jumptext CoastalLabPokeBallText
@@ -250,32 +348,32 @@ ProfessorMapleSrIntroductionText:
 	
 	para "As you may have"
 	line "been able to tell,"
-	cont "but JULIA wants to"
+	cont "my JULIA wants to"
 	cont "introduce young"
 	cont "minds to the world"
 	cont "of #MON. You"
 	cont "must have gotten"
 	cont "your first #MON"
 	cont "from her!"
-	
+
 	para "Now, I prefer to"
 	line "dedicate my stud-"
 	cont "ies to LEGENDARY"
 	cont "#MON. Creatures"
 	cont "some regard as"
 	cont "pure myth."
-	
+
 	para "If you would like,"
 	line "I would be happy"
 	cont "to share my notes"
 	cont "with any friend of"
 	cont "my daughter!"
 	done
-	
+
 ProfessorMapleSrAfterText:
 	text "Help yourself to"
 	line "any book I own."
-	
+
 	para "I'm sure a trainer"
 	line "such as yourself"
 	cont "would love to find"
@@ -283,28 +381,28 @@ ProfessorMapleSrAfterText:
 	cont "ary #MON for"
 	cont "yourself."
 	done
-	
+
 ProfessorMapleSrAdieText:
 	text "Have you ever"
 	line "heard of UNOWN?"
-	
+
 	para "It's an ancient"
 	line "language created"
 	cont "long before any"
 	cont "of us were born."
-	
+
 	para "I work with PROF."
 	line "MAPLE to translate"
 	cont "and learn more"
 	cont "about it."
-	
+
 	para "The glyphs UNOWN"
 	line "uses bear an unca-"
 	cont "nny reselblance to"
 	cont "the characters we"
 	cont "use to write with"
 	cont "every day."
-	
+
 	para "Isn't that so int-"
 	line "eresting to you?"
 	done
@@ -314,7 +412,7 @@ ProfessorMapleSrAdieShowUnown:
 	line "you come to learn"
 	cont "more about the"
 	cont "UNOWN language?"
-	
+
 	para "Hm? You have some-"
 	line "thing for me to"
 	cont "see? What is it?"
@@ -367,7 +465,7 @@ ProfessorMapleSrAdieAfterUpgradeText2:
 	line "know if you manage"
 	cont "to find every kind"
 	cont "of UNOWN!"
-	
+
 	para "I want to learn"
 	line "all I can about"
 	cont "those mysterious"
@@ -476,10 +574,18 @@ CoastalLabTapeReelsText:
 	cont "while."
 	done
 
+CoastalLabOpenWindowText:
+	text "The window is"
+	line "open."
+
+	para "It's letting in a"
+	line "salty sea breeze."
+	done
+
 CoastalLabBirdsBookText:
 	text "This notebook is"
-	line "titled 'LEGENDARY"
-	cont "BIRDS'…"
+	line "titled “LEGENDARY"
+	cont "BIRDS”…"
 	
 	para "Open it?"
 	done
@@ -509,7 +615,7 @@ CoastalLabArticunoBookText
 CoastalLabZapdosBookText:
 	text "Our next subject"
 	line "is ZAPDOS."
-	
+
 	para "All reports of"
 	line "ZAPDOS sightings"
 	cont "have described a"
@@ -518,14 +624,14 @@ CoastalLabZapdosBookText:
 	cont "of nowhere moments"
 	cont "before its appear-"
 	cont "ance."
-	
+
 	para "Could ZAPDOS be"
 	line "capable of summon-"
 	cont "ing such storms on"
 	cont "its own? Or does"
 	cont "it simply thrive"
 	cont "in such chaos?"
-	
+
 	para "Continue reading?"
 	done
 	
@@ -534,36 +640,36 @@ CoastalLabMoltresBookText:
 	line "trio of birds, we"
 	cont "are left with"
 	cont "MOLTRES."
-	
+
 	para "Contrary to the"
 	line "myths surrounding"
 	cont "ARTICUNO, MOLTRES"
 	cont "signifies an early"
 	cont "spring."
-	
+
 	para "Its burning wings"
 	line "shine with such"
 	cont "brilliance that it"
 	cont "can turn night"
 	cont "into day."
-	
+
 	para "The rest of the"
 	line "pages are blank…"
 	done
-	
+
 CoastalLabBeastsBookText:
 	text "This notebook is"
-	line "titled 'LEGENDARY"
-	cont "BEASTS'…"
-	
+	line "titled “LEGENDARY"
+	cont "BEASTS”…"
+
 	para "Open it?"
 	done
-	
+
 CoastalLabRaikouBookText:
 	text "RAIKOU is as fast"
 	line "as the lighting"
 	cont "which trails it."
-	
+
 	para "There are no repo-"
 	line "rts of any person"
 	cont "capturing RAIKOU"
@@ -571,19 +677,19 @@ CoastalLabRaikouBookText:
 	
 	para "Continue reading?"
 	done
-	
+
 CoastalLabEnteiBookText:
 	text "Born of a volcano,"
 	line "ENTEI seems to"
 	cont "prefer hotter cli-"
 	cont "mates."
-	
+
 	para "Rumors suggest"
 	line "ENTEI has a conne-"
 	cont "ction with UNOWN,"
 	cont "but this cannot be"
 	cont "substantiated."
-	
+
 	para "Continue reading?"
 	done
 
@@ -592,34 +698,34 @@ CoastalLabSuicuneBookText:
 	line "SUICUNE treads is"
 	cont "said to become in-"
 	cont "stantly purified."
-	
+
 	para "Many people descr-"
 	line "ibe close encount-"
 	cont "ers with this"
 	cont "#MON. Although"
 	cont "these are always"
 	cont "brief."
-	
+
 	para "The rest of the"
 	line "pages are blank…"
 	done
-	
+
 CoastalLabLugiaHoOhBookText:
 	text "This notebook is"
-	line "titled 'MASTERS OF"
-	cont "THE TRIOS'…"
-	
+	line "titled “MASTERS OF"
+	cont "THE TRIOS”…"
+
 	para "Open it?"
 	done
-	
+
 CoastalLabLugiaBookText:
 	text "LUGIA is the guar-"
 	line "dian of the sea."
-	
+
 	para "It spends its time"
 	line "deep in the ocean,"
 	cont "away from people."
-	
+
 	para "It is said that if"
 	line "ARTICUNO, ZAPDOS,"
 	cont "and MOLTRES are in"
@@ -627,10 +733,10 @@ CoastalLabLugiaBookText:
 	cont "will emerge from"
 	cont "the sea and come"
 	cont "their aide."
-	
+
 	para "Continue reading?"
 	done
-	
+
 CoastalLabHoOhBookText:
 	text "HO-OH, the BIRD OF"
 	line "CREATION, is known"
@@ -639,15 +745,40 @@ CoastalLabHoOhBookText:
 	cont "the souls of the"
 	cont "LEGENDARY BEAST"
 	cont "#MON."
-	
+
 	para "HO-OH must have"
 	line "some kind of conn-"
 	cont "ection with ENTEI,"
 	cont "SUICUNE, and"
 	cont "RAIKOU."
-	
+
 	para "The rest of the"
 	line "pages are blank…"
+	done
+
+CoastalLabBirdSketchbookText:
+	text "It's a sketchbook"
+	line "titled “WHAT MAY"
+	cont "BE - A GUIDE TO"
+	cont "#MON MYTHS.”"
+
+	para "There's a table of"
+	line "contents."
+	done
+
+CoastalLabSketchbookLabeledText:
+	text "Continue looking?"
+	done
+
+CoastalLabSketchbookCloseText:
+	text "There are no words"
+	line "written in this"
+	cont "book, only"
+	cont "sketches that vary"
+	cont "in quality."
+
+	para "…Are these even"
+	line "real #MON?"
 	done
 
 CoastalLabPokeBallText:
@@ -664,17 +795,19 @@ CoastalLab_MapEvents:
 
 	db 0 ; coord events
 
-	db 5 ; bg events
+	db 6 ; bg events
 	bg_event  6,  5, BGEVENT_UP, CoastalLabBirdsBook
 	bg_event  7,  5, BGEVENT_UP, CoastalLabBeastsBook
 	bg_event  8,  5, BGEVENT_UP, CoastalLabLugiaHoOhBook
 	bg_event  6,  1, BGEVENT_UP, CoastalLabUnownBook
 	bg_event  2,  1, BGEVENT_UP, CoastalLabTapeReels
+	bg_event  5,  0, BGEVENT_UP, CoastalLabOpenWindow
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  0,  2, SPRITE_OAK, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrScript, -1
 	object_event  7,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ProfessorMapleSrAideScript, -1
 	object_event  -3, -3, SPRITE_UNOWN, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CoastalLabPokeBall, EVENT_BULBASAUR_POKEBALL_IN_MAPLES_LAB
 	object_event  1,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, CoastalLabPokeBall, EVENT_CHARMANDER_POKEBALL_IN_MAPLES_LAB
 	object_event  2,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CoastalLabPokeBall, EVENT_SQUIRTLE_POKEBALL_IN_MAPLES_LAB
+	object_event  4,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, CoastalLabSketchbook, -1

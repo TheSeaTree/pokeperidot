@@ -722,6 +722,12 @@ WilburPic:		  	 INCBIN "gfx/trainers/wilbur.2bpp.lz"
 ReganPic:		  	 INCBIN "gfx/trainers/regan.2bpp.lz"
 BredePic:		  	 INCBIN "gfx/trainers/brede.2bpp.lz"
 EngineerPic:		 INCBIN "gfx/trainers/engineer.2bpp.lz"
+Gen1ArticunoPic:     INCBIN "gfx/trainers/articuno.2bpp.lz"
+Gen1ZapdosPic:       INCBIN "gfx/trainers/zapdos.2bpp.lz"
+Gen1MoltresPic:		 INCBIN "gfx/trainers/moltres.2bpp.lz"
+SW97RaikouPic:		 INCBIN "gfx/trainers/raikou.2bpp.lz"
+SW97EnteiPic:        INCBIN "gfx/trainers/entei.2bpp.lz"
+SW97SuicunePic:      INCBIN "gfx/trainers/suicune.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

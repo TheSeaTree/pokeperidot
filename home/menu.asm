@@ -57,6 +57,34 @@ Call_ExitMenu::
 	call ExitMenu
 	ret
 
+SketchbookMenu::
+	xor a
+	ldh [hBGMapMode], a
+	call MenuBox
+	hlcoord 0, 12
+	ld [hl], $c2
+	hlcoord 17, 12
+	ld [hl], $c3
+	call UpdateSprites
+	call PlaceVerticalMenuItems
+	call ApplyTilemap
+	call CopyMenuData
+	ld a, [wMenuDataFlags]
+	bit 7, a
+	jr z, .cancel
+	call InitVerticalMenuCursor
+	call StaticMenuJoypad
+	call MenuClickSound
+	bit 1, a
+	jr z, .okay
+.cancel
+	scf
+	ret
+
+.okay
+	and a
+	ret
+
 VerticalMenu::
 	xor a
 	ldh [hBGMapMode], a
