@@ -96,6 +96,11 @@ MoveRelearner:
 
 MoveReminder_Simulation:
 ; Used in the Battle Simulation as well, where it has no cost.
+	ld hl, Text_SimulationMoveReminderIntro
+	call PrintText
+	call YesNoBox
+	jp c, .cancel
+
 	ld b, 6
 	farcall SelectMonFromParty
 	jr c, .cancel
@@ -124,7 +129,7 @@ MoveReminder_Simulation:
 .skip_learn
 	call ReturnToMapWithSpeechTextbox
 .cancel
-	ld hl, Text_MoveReminderCancel
+	ld hl, Text_SimulationMoveReminderCancel
 	jp PrintText
 
 .no_moves
@@ -518,4 +523,12 @@ Text_MoveReminderNoMon:
 
 Text_MoveReminderNoMoves:
 	text_jump MoveReminderNoMovesText
+	db "@"
+
+Text_SimulationMoveReminderIntro:
+	text_jump SimulationMoveReminderIntrroText
+	db "@"
+
+Text_SimulationMoveReminderCancel:
+	text_jump SimulationMoveReminderCancelText
 	db "@"

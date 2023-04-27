@@ -1650,6 +1650,28 @@ MoveReminderCancelText::
 	cont "PIECE."
 	done
 
+SimulationMoveReminderIntrroText::
+	text "I am the MOVE"
+	line "MANIAC."
+
+	para "I can teach your"
+	line "#MON moves it"
+	cont "may have known at"
+	cont "a lower level."
+
+	para "Would you like to"
+	line "change your"
+	cont "#MON's moveset?"
+	done
+
+SimulationMoveReminderCancelText::
+	text "All set?"
+
+	para "Good luck with the"
+	line "rest of your"
+	cont "SIMULATION run!"
+	done
+
 ExpAll_TurnOnText::
 	text "The EXP. ALL has"
 	line "been disabled."
