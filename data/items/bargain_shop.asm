@@ -1,9 +1,9 @@
 BargainShopData:
 	db 6
-	dbw HP_UP,   1960
-	dbw PROTEIN, 1960
-	dbw IRON,    1960
-	dbw CARBOS,  1960
-	dbw CALCIUM, 1960
-	dbw PP_UP,	 1960
+	dbw HP_UP,   4900
+	dbw PROTEIN, 4900
+	dbw IRON,    4900
+	dbw CARBOS,  4900
+	dbw CALCIUM, 4900
+	dbw PP_UP,	 4900
 	db -1
