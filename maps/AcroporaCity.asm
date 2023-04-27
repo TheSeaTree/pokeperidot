@@ -208,7 +208,7 @@ AcroporaCityGymSignText:
 AcroporaCity_MapEvents:
 	db 0, 0 ; filler
 
-	db 9 ; warp events
+	db 10 ; warp events
 	warp_event 33, 13, ROUTE_20_ACROPORA_GATE, 3
 	warp_event 27, 17, ACROPORA_POKECENTER_1F, 1
 	warp_event 13, 21, ACROPORA_MART, 1
@@ -218,10 +218,11 @@ AcroporaCity_MapEvents:
 	warp_event 22,  5, ACROPORA_CAVE_1F, 6
 	warp_event 29, 23, ACROPORA_LASS_HOUSE, 1
 	warp_event  5, 25, ACROPORA_CASTLE_HOUSE, 1
+	warp_event 14,  7, ACROPORA_GYM, 1
 
 	db 0 ; coord events
 
-	db 10 ; bg events
+	db 9 ; bg events
 	bg_event 28, 17, BGEVENT_READ, AcroporaCityPokecenterSign
 	bg_event 14, 21, BGEVENT_READ, AcroporaCityMartSign
 	bg_event  3, 25, BGEVENT_UP,   AcroporaCityMailbox
@@ -230,7 +231,6 @@ AcroporaCity_MapEvents:
 	bg_event 30, 17, BGEVENT_READ, AcroporaCitySign
 	bg_event 40, 23, BGEVENT_READ, AcroporaCityGoAwaySign
 	bg_event 46, 18, BGEVENT_READ, FluteMasterSign
-	bg_event 14,  7, BGEVENT_UP,   AcroporaGymEvent
 	bg_event  5, 15, BGEVENT_READ, AcroporaCityGymSign
 
 	db 7 ; object events

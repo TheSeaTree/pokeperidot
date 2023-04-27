@@ -271,13 +271,13 @@ EarthquakeTMText:
 AcroporaGym_MapEvents:
 	db 0, 0 ; filler
 
-	db 0 ; warp events
+	db 2 ; warp events
+	warp_event 4, 11, ACROPORA_CITY, 10
+	warp_event 5, 11, ACROPORA_CITY, 10
 
 	db 0 ; coord events
 
-	db 4 ; bg events
-	bg_event  4, 12, BGEVENT_DOWN, AcroporaCantLeave
-	bg_event  5, 12, BGEVENT_DOWN, AcroporaCantLeave
+	db 2 ; bg events
 	bg_event  3,  9, BGEVENT_READ, AcroporaGymStatue
 	bg_event  6,  9, BGEVENT_READ, AcroporaGymStatue
 
