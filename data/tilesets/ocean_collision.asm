@@ -202,3 +202,4 @@
 	tilecoll WALL, HEADBUTT_TREE, WALL, FLOOR ; c9
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; ca
 	tilecoll WALL, WALL, WALL, WALL ; cb
+	tilecoll WALL, WALL, DOOR, WALL ; cc
