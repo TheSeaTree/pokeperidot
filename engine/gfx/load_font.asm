@@ -36,7 +36,7 @@ _LoadStandardFont::
 	ld hl, vTiles1 tile $60
 	lb bc, BANK(Font), 32 ; "'" to "9"
 	call Get1bpp_2
-	ret
+;	ret
 
 _LoadFontsExtra1::
 	jr LoadFrame
