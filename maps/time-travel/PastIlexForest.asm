@@ -17,10 +17,33 @@ PastCelebiTest:
 	appear PASTILEXFOREST_CELEBI
 	turnobject PLAYER, LEFT
 	setlasttalked PASTILEXFOREST_CELEBI
-	loadwildmon CELEBI, 60
+	loadwildmon CELEBI, 70
 	startbattle
 	reloadmapafterbattle
+	setevent EVENT_FOUGHT_BOSS_CELEBI
+	; Event to return the player back to the present.
+	special FadeOutMusic
+	scall .PitchBlack
+	cry CELEBI
+	wait 8
+	opentext
+	writetext PastCelebiEnergyText
+	waitbutton
+	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
+	warpfacing DOWN, BATTLE_SIMULATION, 2, 9
+	playsound SFX_BUBBLEBEAM
+	wait 8
 	end
+
+.PitchBlack
+	jumpstd darkenroom
+	end
+
+PastCelebiEnergyText:
+	text "CELEBI unleashed"
+	line "a huge amount of"
+	cont "PSYCHIC power!"
+	done
 
 PastIlexForest_MapEvents:
 	db 0, 0 ; filler

@@ -5,6 +5,9 @@ PastPectiniaApartment1F_MapScripts:
 
 	db 0 ; callbacks
 
+; Pectinia City is growing larger by the day. It's a real vision of the future!
+; There are still some vacant rooms currently, but I can't imagine they will remain that way for long.
+
 PastPectiniaApartment1F_MapEvents:
 	db 0, 0 ; filler
 

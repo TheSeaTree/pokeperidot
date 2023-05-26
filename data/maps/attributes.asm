@@ -590,6 +590,11 @@ ENDM
 	map_attributes NorthForest, NORTH_FOREST, $07, 0
 	map_attributes DevelopersHouse, DEVELOPERS_HOUSE, $00, 0
 	map_attributes PastRoute11Gate, PAST_ROUTE_11_GATE, $00, 0
+	map_attributes PastRoute11House1, PAST_ROUTE_11_HOUSE_1, $00, 0
+	map_attributes PastRoute11House2, PAST_ROUTE_11_HOUSE_2, $00, 0
+	map_attributes PastRoute11House3, PAST_ROUTE_11_HOUSE_3, $00, 0
+	map_attributes PastRoute11House4, PAST_ROUTE_11_HOUSE_4, $00, 0
+	map_attributes PastRoute11House5, PAST_ROUTE_11_HOUSE_5, $00, 0
 	map_attributes MewtwoLab1F, MEWTWO_LAB_1F, $00, 0
 	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
 	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0
@@ -599,6 +604,7 @@ ENDM
 	map_attributes SkyWorld2, BATTLE_SIM_SKY_2, $04, 0
 	map_attributes SkyWorld3, BATTLE_SIM_SKY_3, $04, 0
 	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
+	map_attributes CyberspaceWorld2, BATTLE_SIM_COMP_2, $00, 0
 	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
 	map_attributes GraveyardWorld2, BATTLE_SIM_GRAVE_2, $6d, 0
 	map_attributes GraveyardWorld3, BATTLE_SIM_GRAVE_3, $6d, 0
@@ -610,5 +616,6 @@ ENDM
 	map_attributes CastleWorld3, BATTLE_SIM_CASTLE_3, $00, 0
 	map_attributes LavaWorld1, BATTLE_SIM_LAVA_1, $8c, 0
 	map_attributes LavaWorld2, BATTLE_SIM_LAVA_2, $8c, 0
+	map_attributes LavaWorld3, BATTLE_SIM_LAVA_3, $8c, 0
 	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0
 	map_attributes BattleSimulationFinalRoom, BATTLE_SIMULATION_FINAL_ROOM, $00, 0

@@ -5,6 +5,14 @@ SkyWorld3_MapScripts:
 
 	db 0 ; callbacks
 
+SimulationMoveReminder:
+	faceplayer
+	opentext
+	special SimulationMoveRelearner
+	waitbutton
+	closetext
+	end
+
 SkyWorld3_MapEvents:
 	db 0, 0 ; filler
 

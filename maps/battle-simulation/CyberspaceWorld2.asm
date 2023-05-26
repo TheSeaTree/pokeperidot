@@ -1,5 +1,4 @@
 	const_def 2 ; object constants
-	const CYBERSPACE_VOLTORB
 
 CyberspaceWorld2_MapScripts:
 	db 0 ; scene scripts
@@ -49,7 +48,7 @@ CyberspaceWorld2_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_3
+;	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 CyberspaceWorld2_MapEvents:

@@ -55,6 +55,39 @@ CastleWorld1_MapScripts:
 ;	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
+BattleSimCastle1Trainer1
+	trainer JUGGLER, CASTLE1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCastle1Trainer2:
+	trainer COOLTRAINERF, CASTLE1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCastle1Trainer3:
+	trainer COOLTRAINERM, CASTLE1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
 BattleSimMoveRelearner:
 	faceplayer
 	opentext
@@ -70,6 +103,21 @@ BattleSimMoveRelearner:
 	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
 	end
 
+BattleSimTrainerText:
+	text "Battle protocol"
+	line "initiated."
+	done
+
+BattleSimTrainerWinText:
+	text "Battle complete."
+	
+	para "Winner: <PLAYER>."
+	done
+
+BattleSimTrainerAfterText:
+	text "Unable to battle."
+	done
+
 CastleWorld1_MapEvents:
 	db 0, 0 ; filler
 
@@ -81,5 +129,7 @@ CastleWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event 11, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1
+	db 3 ; object events
+	object_event 11, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle1Trainer1, -1
+	object_event  6, 10, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle1Trainer2, -1
+	object_event 13,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle1Trainer3, -1

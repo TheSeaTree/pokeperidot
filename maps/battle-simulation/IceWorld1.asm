@@ -56,6 +56,28 @@ IceWorld1_MapScripts:
 ;	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
+BattleSimIce1Trainer1:
+	trainer SKIER, ICE1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimIce1Trainer2:
+	trainer BOARDER, ICE1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
 IceWorld1_MapEvents:
 	db 0, 0 ; filler
 
@@ -67,4 +89,6 @@ IceWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 2 ; object events
+	object_event  2, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimIce1Trainer1, -1
+	object_event 15, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimIce1Trainer2, -1

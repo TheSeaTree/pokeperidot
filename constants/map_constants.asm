@@ -259,6 +259,11 @@ ENDM
 	map_const PAST_ROUTE_11,                               31, 16
 	map_const PAST_ROUTE_11_GATE,                           5,  4
 	map_const PAST_ROUTE_11_INN,                            5,  4
+	map_const PAST_ROUTE_11_HOUSE_1,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_2,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_3,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
@@ -469,18 +474,27 @@ ENDM
 	map_const BATTLE_SIM_SKY_1,								10, 10
 	map_const BATTLE_SIM_SKY_2,								19, 16
 	map_const BATTLE_SIM_SKY_3,								21, 15
+
 	map_const BATTLE_SIM_COMP_1,							 9, 10
+	map_const BATTLE_SIM_COMP_2,							12, 13
+
 	map_const BATTLE_SIM_GRAVE_1,							10, 10
 	map_const BATTLE_SIM_GRAVE_2,							16, 14
 	map_const BATTLE_SIM_GRAVE_3,							29, 19
+
 	map_const BATTLE_SIM_ICE_1,								10, 10
 	map_const BATTLE_SIM_ICE_2,								16, 13
 	map_const BATTLE_SIM_ICE_3,								21, 15
+
 	map_const BATTLE_SIM_CASTLE_1,							10, 10
 	map_const BATTLE_SIM_CASTLE_2,							14, 15
 	map_const BATTLE_SIM_CASTLE_3,							21, 16
+
 	map_const BATTLE_SIM_LAVA_1,							12, 11
 	map_const BATTLE_SIM_LAVA_2,							18, 14
+	map_const BATTLE_SIM_LAVA_3,							20, 18
+
 	map_const BATTLE_SIM_FOREST_1,							10, 10
+
 	map_const BATTLE_SIMULATION_FINAL_ROOM,				  	 3,  4
 

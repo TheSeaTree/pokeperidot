@@ -1,16 +1,16 @@
 	const_def 2 ; object constants
 
-LavaWorld3_MapScripts:
+PastRoute11House1_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-
-LavaWorld3_MapEvents:
+	
+PastRoute11House1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 31, 30, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event 17,  7, BATTLE_SIMULATION_FINAL_ROOM, 1
+	warp_event 2,  7, PAST_ROUTE_11, 5
+	warp_event 3,  7, PAST_ROUTE_11, 5
 
 	db 0 ; coord events
 

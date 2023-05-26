@@ -80,7 +80,14 @@ PavonaInn_Blocks:
 PavonaGymSpeechHouse_Blocks:
 FastEddiesHouse_Blocks:
 	INCBIN "maps/House3.ablk"
-	
+
+PastRoute11House1_Blocks:
+PastRoute11House2_Blocks:
+PastRoute11House3_Blocks:
+PastRoute11House4_Blocks:
+PastRoute11House5_Blocks:
+	INCBIN "maps/time-travel/PastHouse.4x4.house.ablk"
+
 VitaminShop_Blocks:
 	INCBIN "maps/VitaminShop.ablk"
 
@@ -924,6 +931,9 @@ SkyWorld3_Blocks:
 CyberspaceWorld1_Blocks:
 	INCBIN "maps/battle-simulation/CyberspaceWorld1.ablk"
 
+CyberspaceWorld2_Blocks:
+	INCBIN "maps/battle-simulation/CyberspaceWorld2.ablk"
+
 GraveyardWorld1_Blocks:
 	INCBIN "maps/battle-simulation/GraveyardWorld1.ablk"
 
@@ -956,6 +966,9 @@ LavaWorld1_Blocks:
 
 LavaWorld2_Blocks:
 	INCBIN "maps/battle-simulation/LavaWorld2.ablk"
+
+LavaWorld3_Blocks:
+	INCBIN "maps/battle-simulation/LavaWorld3.ablk"
 
 ForestWorld1_Blocks:
 	INCBIN "maps/battle-simulation/ForestWorld1.ablk"
