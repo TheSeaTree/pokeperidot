@@ -32,6 +32,12 @@ OutdoorSprites:
 	dw PalerockGroupSprites
 	dw NorthForestGroupSprites
 	dw SeaRoute7GroupSprites
+	dw BattleSimGroupSprites
+	dw PastFaviaGroupSprites
+	dw PastPectiniaGroupSprites
+	dw PastRoute11GroupSprites
+	dw PastElkhornGroupSprites
+	dw PastPavonaGroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
@@ -514,3 +520,25 @@ SeaRoute7GroupSprites:
 	; 0 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
+
+BattleSimGroupSprites:
+	db 0
+
+PastFaviaGroupSprites:
+	db SPRITE_TWIN
+	db 0
+
+PastPectiniaGroupSprites:
+	db SPRITE_POKEFAN_M
+	db SPRITE_SAILOR
+	db SPRITE_MACHOP
+	db 0
+
+PastRoute11GroupSprites:
+	db 0
+
+PastElkhornGroupSprites:
+	db 0
+
+PastPavonaGroupSprites:
+	db 0

@@ -46,6 +46,11 @@
 	tilecoll WALL, WALL, WALL, WALL ; 2d
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; 2e
 	tilecoll FLOOR, WALL, FLOOR, FLOOR ; 2f
-	tilecoll FLOOR, FLOOR, WALL, FLOOR ; 30
-	tilecoll FLOOR, FLOOR, FLOOR, WALL ; 31
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 30
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 31
 	tilecoll FLOOR, UP_WALL, FLOOR, UP_WALL ; 32
+	tilecoll WALL, FLOOR, WALL, FLOOR ; 33
+	tilecoll COUNTER, COUNTER, FLOOR, FLOOR ; 34
+	tilecoll COUNTER, WALL, FLOOR, FLOOR ; 35
+	tilecoll FLOOR, WALL, FLOOR, WALL ; 36
+	tilecoll WALL, WALL, WALL, WALL ; 37

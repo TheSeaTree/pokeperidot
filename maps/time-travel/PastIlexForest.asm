@@ -49,8 +49,8 @@ PastIlexForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 67, 34, PAST_ELKHORN_TOWN, 4 ; Forest Gate
-	warp_event 67, 35, PAST_ELKHORN_TOWN, 5 ; Forest Gate
+	warp_event 67, 34, PAST_FOREST_GATE, 1 ; Forest Gate
+	warp_event 67, 35, PAST_FOREST_GATE, 2 ; Forest Gate
 	warp_event 48,  3, ROUTE_24_NORTH, 1 ; Test Point
 
 	db 0 ; coord events

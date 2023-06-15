@@ -18,22 +18,19 @@ LavaWorld1_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_1
-;	warpmod 1, BATTLE_SIM_CASTLE_2
+	warpmod 1, BATTLE_SIM_CASTLE_2
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_1
-;	warpmod 1, BATTLE_SIM_COMP_2
+	warpmod 1, BATTLE_SIM_COMP_2
 	return
 
 .WarpGraveyard:
 	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_GRAVE_1
-;	warpmod 1, BATTLE_SIM_GRAVE_2
+	warpmod 1, BATTLE_SIM_GRAVE_2
 	return
 
 .WarpSky:
@@ -51,8 +48,7 @@ LavaWorld1_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_1
-;	warpmod 1, BATTLE_SIM_FOREST_2
+	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
 LavaWorld1_MapEvents:

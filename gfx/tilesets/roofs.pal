@@ -117,3 +117,27 @@
 ; group 29 (Sea Route 7)
 	RGB 15,10,31, 07,05,15 ; morn/day
 	RGB 06,05,17, 02,02,08 ; nite
+
+; group 30 (Battle Sim)
+	RGB 21,21,21, 13,13,13 ; morn/day
+	RGB 11,11,19, 07,07,12 ; nite
+
+; group 31 (Past Favia)
+	RGB 25,25,00, 20,17,08 ; morn/day
+	RGB 12,12,00, 10,09,05 ; nite
+
+; group 32 (Past Pectinia)
+	RGB 22,20,10, 17,14,03 ; morn/day
+	RGB 11,11,05, 10,09,07 ; nite
+
+; group 33 (Past Route 11)
+	RGB 25,25,00, 20,17,08 ; morn/day
+	RGB 12,12,00, 10,09,05 ; nite
+
+; group 34 (Elkhorn)
+	RGB 20,31,14, 11,23,05 ; morn/day
+	RGB 09,13,08, 06,09,04 ; nite
+
+; group 35 (Pavona)
+	RGB 31,14,28, 31,05,21 ; morn/day
+	RGB 14,07,17, 13,00,08 ; nite

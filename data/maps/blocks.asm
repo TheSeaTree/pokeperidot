@@ -86,7 +86,15 @@ PastRoute11House2_Blocks:
 PastRoute11House3_Blocks:
 PastRoute11House4_Blocks:
 PastRoute11House5_Blocks:
-	INCBIN "maps/time-travel/PastHouse.4x4.house.ablk"
+PastElkhornLakesideHouse_Blocks:
+PastElkhornRichardsHouse_Blocks:
+PastFaviaDayCare_Blocks:
+PastFaviaFriendshipHouse_Blocks:
+	INCBIN "maps/time-travel/PastHouse1.4x4.house.ablk"
+
+PastElkhornMomsHouse_Blocks:
+PastFaviaCelestesHouse_Blocks:
+	INCBIN "maps/time-travel/PastHouse2.4x4.players_house.ablk"
 
 VitaminShop_Blocks:
 	INCBIN "maps/VitaminShop.ablk"
@@ -108,6 +116,7 @@ Route20AcroporaGate_Blocks:
 Route25Gate_Blocks:
 Route23Gate_Blocks:
 PastRoute11Gate_Blocks:
+PastPectiniaGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
 Route28Gate_Blocks:
@@ -165,6 +174,8 @@ Route18CarnationGate_Blocks:
 CarnationZooGate_Blocks:
 Route27Gate_Blocks:
 Route26Gate_Blocks:
+PastForestGate_Blocks:
+PastRoute2Gate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
 
 MaplesLab_Blocks:
@@ -934,6 +945,9 @@ CyberspaceWorld1_Blocks:
 CyberspaceWorld2_Blocks:
 	INCBIN "maps/battle-simulation/CyberspaceWorld2.ablk"
 
+;CyberspaceWorld3_Blocks:
+;	INCBIN "maps/battle-simulation/CyberspaceWorld3.ablk"
+
 GraveyardWorld1_Blocks:
 	INCBIN "maps/battle-simulation/GraveyardWorld1.ablk"
 
@@ -973,6 +987,11 @@ LavaWorld3_Blocks:
 ForestWorld1_Blocks:
 	INCBIN "maps/battle-simulation/ForestWorld1.ablk"
 
+ForestWorld2_Blocks:
+	INCBIN "maps/battle-simulation/ForestWorld2.ablk"
+
+ForestWorld3_Blocks:
+	INCBIN "maps/battle-simulation/ForestWorld3.ablk"
+
 BattleSimulationFinalRoom_Blocks:
 	INCBIN "maps/battle-simulation/BattleSimulationFinalRoom.ablk"
-

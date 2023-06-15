@@ -50,3 +50,4 @@
 	enum emilycompanion
 	enum battlesimexitwarp
 	enum timetravelwarp
+	enum battlesimencounter

@@ -174,8 +174,9 @@ CHRIS EQU __enum__
 	const SETH
 	const PETER
 	const MILTON
-	const COMP1_TRAINER_1
-	const COMP2_TRAINER_1
+	const COMP1_TRAINER1
+	const COMP2_TRAINER1
+	const COMP3_TRAINER1
 
 	trainerclass POSEY ; 15
 	const POSEY1
@@ -213,6 +214,9 @@ CHRIS EQU __enum__
 	const HUGH
 	const RILEY
 	const COREY
+	const SKY1_TRAINER1
+	const SKY2_TRAINER1
+	const SKY3_TRAINER1
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -240,6 +244,7 @@ CHRIS EQU __enum__
 	const ALBERT
 	const CASTLE1_TRAINER3
 	const CASTLE2_TRAINER3
+	const CASTLE3_TRAINER3
 
 	trainerclass COOLTRAINERF ; 1c
 	const ANYA
@@ -253,6 +258,7 @@ CHRIS EQU __enum__
 	const ALICE
 	const CASTLE1_TRAINER2
 	const CASTLE2_TRAINER2
+	const CASTLE3_TRAINER2
 
 	trainerclass BEAUTY ; 1d
 	const LILY
@@ -268,6 +274,10 @@ CHRIS EQU __enum__
 	const CHELLE
 	const ERIN
 	const GRACE
+	const SKY1_TRAINER2
+	const SKY2_TRAINER2
+	const SKY3_TRAINER2
+	const CASTLE3_BONUS
 
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -278,6 +288,7 @@ CHRIS EQU __enum__
 	const DEXTER
 	const GRAVE1_TRAINER3
 	const GRAVE2_TRAINER3
+	const GRAVE3_TRAINER3
 
 	trainerclass GRUNTM ; 1f
 
@@ -285,10 +296,14 @@ CHRIS EQU __enum__
 	const WINFRED
 	const CHARLES
 	const RON
+	const SKY1_TRAINER3
+	const SKY2_TRAINER3
+	const SKY3_TRAINER3
 	
 	trainerclass SKIER ; 21
 	const ICE1_TRAINER1
 	const ICE2_TRAINER1
+	const ICE3_TRAINER1
 	
 	trainerclass TEACHER ; 22
 	const ANDREA
@@ -297,6 +312,7 @@ CHRIS EQU __enum__
 	const BEA
 	const ILENE
 	const CECELIA
+	const COMP3_BONUS
 
 	trainerclass SABRINA ; 23
 
@@ -310,6 +326,7 @@ CHRIS EQU __enum__
 	const TROY
 	const FOREST1_TRAINER3
 	const FOREST2_TRAINER1
+	const FOREST3_TRAINER1
 
 	trainerclass FISHER ; 25
 	const BRADY
@@ -322,7 +339,9 @@ CHRIS EQU __enum__
 	const CODY
 	const ICE1_TRAINER3
 	const ICE2_TRAINER3
-	
+	const ICE3_TRAINER3
+	const SKY3_BONUS
+
 	trainerclass SWIMMERM ; 26
 	const VINNY
 	const JIMMY1
@@ -362,6 +381,7 @@ CHRIS EQU __enum__
 	const TAYLOR_REMATCH3
 	const TAYLOR_REMATCH4
 	const TAYLOR_REMATCH5
+	const ICE3_BONUS
 
 	trainerclass SUPER_NERD ; 29
 	const SHANE
@@ -373,8 +393,9 @@ CHRIS EQU __enum__
 	const HERBERT
 	const MAX
 	const NORBERT
-	const COMP1_TRAINER_3
-	const COMP2_TRAINER_3
+	const COMP1_TRAINER3
+	const COMP2_TRAINER3
+	const COMP3_TRAINER3
 
 	trainerclass RIVAL2 ; 2a
 	const RIVAL2_1_CHIKORITA
@@ -399,6 +420,7 @@ CHRIS EQU __enum__
 	const IVAN
 	const CONRAD
 	const BOBBY
+	const GRAVE3_BONUS
 
 	trainerclass HIKER ; 2c
 	const ADAM
@@ -419,6 +441,7 @@ CHRIS EQU __enum__
 	const NOAH
 	const LAVA1_TRAINER3
 	const LAVA2_TRAINER3
+	const LAVA3_TRAINER3
 	
 	trainerclass BIKER ; 2d
 	const JERRY
@@ -434,6 +457,7 @@ CHRIS EQU __enum__
 	const DANTE
 	const LAVA1_TRAINER2
 	const LAVA2_TRAINER2
+	const LAVA3_TRAINER2
 	
 	trainerclass JADE_LINK ; 2e
 	const JADE_LINK1
@@ -465,6 +489,7 @@ CHRIS EQU __enum__
 	const AIDEN
 	const LAVA1_TRAINER1
 	const LAVA2_TRAINER1
+	const LAVA3_TRAINER1
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
@@ -473,6 +498,7 @@ CHRIS EQU __enum__
 	const KAI
 	const CASTLE1_TRAINER1
 	const CASTLE2_TRAINER1
+	const CASTLE3_TRAINER1
 
 	trainerclass BLACKBELT_T ; 32
 	const AXEL
@@ -487,6 +513,7 @@ CHRIS EQU __enum__
 	const TOURNAMENT_5
 	const TOURNAMENT_6
 	const TOURNAMENT_7
+	const LAVA3_BONUS
 
 	trainerclass EXECUTIVEM ; 33
 	const ABBOT
@@ -500,7 +527,7 @@ CHRIS EQU __enum__
 	const WES
 	const FREDDIE
 	const CHAZ
-	
+
 	trainerclass PICNICKER ; 35
 	const JAMIE
 	const CINDY
@@ -511,6 +538,7 @@ CHRIS EQU __enum__
 	const TAMMY
 	const FOREST1_TRAINER2
 	const FOREST2_TRAINER2
+	const FOREST3_TRAINER2
 
 	trainerclass CAMPER ; 36
 	const NICHOLAS
@@ -522,6 +550,7 @@ CHRIS EQU __enum__
 	const NORRIS
 	const FOREST1_TRAINER1
 	const FOREST2_TRAINER3
+	const FOREST3_TRAINER3
 
 	trainerclass ENGINEER ; 37
 	const ENRIQUE
@@ -529,8 +558,9 @@ CHRIS EQU __enum__
 	const ARNIE
 	const BERNARD
 	const ROCCO
-	const COMP1_TRAINER_2
-	const COMP2_TRAINER_2
+	const COMP1_TRAINER2
+	const COMP2_TRAINER2
+	const COMP3_TRAINER2
 
 	trainerclass SAGE ; 38
 	const CALEB
@@ -542,10 +572,12 @@ CHRIS EQU __enum__
 	const ANNABELLE
 	const GRAVE1_TRAINER1
 	const GRAVE2_TRAINER1
+	const GRAVE3_TRAINER1
 
 	trainerclass BOARDER ; 3a
 	const ICE1_TRAINER2
 	const ICE2_TRAINER2
+	const ICE3_TRAINER2
 	
 	trainerclass POKEFANM ; 3b
 	const LESTER
@@ -557,6 +589,7 @@ CHRIS EQU __enum__
 	
 	trainerclass KIMONO_GIRL ; 3c
 	const ANRI
+	const FOREST3_BONUS
 	
 	trainerclass TWINS ; 3d
 	const FAYEANDMAE1
@@ -592,6 +625,7 @@ CHRIS EQU __enum__
 	const MATTHEW
 	const GRAVE1_TRAINER2
 	const GRAVE2_TRAINER2
+	const GRAVE3_TRAINER2
 
 	trainerclass JADE ; 42
 

@@ -5,8 +5,23 @@ PastPectiniaApartment1F_MapScripts:
 
 	db 0 ; callbacks
 
-; Pectinia City is growing larger by the day. It's a real vision of the future!
-; There are still some vacant rooms currently, but I can't imagine they will remain that way for long.
+PastPectiniaApartmentGuardMScript:
+	jumptextfaceplayer PastPectiniaApartmentGuardMText
+
+PastPectiniaApartmentGuardMText:
+	text "PECTINIA CITY is a"
+	line "real vision of the"
+	cont "future!"
+
+	para "This city is grow-"
+	line "ing larger by the"
+	cont "day! There are"
+	cont "still some vacant"
+	cont "rooms in this"
+	cont "building, but they"
+	cont "are quickly being"
+	cont "filled up."
+	done
 
 PastPectiniaApartment1F_MapEvents:
 	db 0, 0 ; filler
@@ -20,4 +35,5 @@ PastPectiniaApartment1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event  2,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastPectiniaApartmentGuardMScript, -1

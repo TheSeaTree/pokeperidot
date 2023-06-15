@@ -605,6 +605,7 @@ ENDM
 	map_attributes SkyWorld3, BATTLE_SIM_SKY_3, $04, 0
 	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
 	map_attributes CyberspaceWorld2, BATTLE_SIM_COMP_2, $00, 0
+;	map_attributes CyberspaceWorld3, BATTLE_SIM_COMP_3, $00, 0
 	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
 	map_attributes GraveyardWorld2, BATTLE_SIM_GRAVE_2, $6d, 0
 	map_attributes GraveyardWorld3, BATTLE_SIM_GRAVE_3, $6d, 0
@@ -618,4 +619,15 @@ ENDM
 	map_attributes LavaWorld2, BATTLE_SIM_LAVA_2, $8c, 0
 	map_attributes LavaWorld3, BATTLE_SIM_LAVA_3, $8c, 0
 	map_attributes ForestWorld1, BATTLE_SIM_FOREST_1, $07, 0
+	map_attributes ForestWorld2, BATTLE_SIM_FOREST_2, $07, 0
+	map_attributes ForestWorld3, BATTLE_SIM_FOREST_3, $06, 0
 	map_attributes BattleSimulationFinalRoom, BATTLE_SIMULATION_FINAL_ROOM, $00, 0
+	map_attributes PastElkhornMomsHouse, PAST_ELKHORN_MOMS_HOUSE, $00, 0
+	map_attributes PastElkhornLakesideHouse, PAST_ELKHORN_LAKESIDE_HOUSE, $00, 0
+	map_attributes PastElkhornRichardsHouse, PAST_ELKHORN_RICHARDS_HOUSE, $00, 0
+	map_attributes PastForestGate, PAST_FOREST_GATE, $00, 0
+	map_attributes PastPectiniaGate, PAST_PECTINIA_GATE, $00, 0
+	map_attributes PastFaviaDayCare, PAST_FAVIA_DAY_CARE, $00, 0
+	map_attributes PastRoute2Gate, PAST_ROUTE_2_GATE, $00, 0
+	map_attributes PastFaviaCelestesHouse, PAST_FAVIA_CELESTES_HOUSE, $00, 0
+	map_attributes PastFaviaFriendshipHouse, PAST_FAVIA_FRIENDSHIP_HOUSE, $00, 0

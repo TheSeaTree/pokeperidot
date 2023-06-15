@@ -180,12 +180,6 @@ ENDM
 	map_const PECTINIA_BERRY_HOUSE,                           4,  4
 	map_const ROUTE_4_FOREST_GATE,                            5,  4
 	map_const ROUTE_4_PECTINIA_GATE,                          5,  4
-	map_const PAST_PECTINIA_CITY,                            28, 15
-	map_const PAST_PECTINIA_GYM,                              9, 11
-	map_const PAST_PECTINIA_APARTMENT_1F,                     6,  4
-	map_const PAST_PECTINIA_APARTMENT_2F,                     6,  4
-	map_const PAST_PECTINIA_APARTMENT_3F,                     6,  4
-	map_const PAST_ROUTE_3,                                  20, 24
 
 	newgroup                                                      ;  9
 
@@ -236,8 +230,6 @@ ENDM
 	map_const PECTINIA_COMIC_STORE,                        6,  6
 	map_const PECTINIA_BATTLE_ITEM_STORE,                  7,  4
 	map_const PECTINIA_ARCADE,                             8,  9
-	map_const PAST_FAVIA_TOWN,							  15, 14
-	map_const PAST_FAVIA_INN,							   5,  4
 
 	newgroup                                                      ; 12
 
@@ -256,14 +248,6 @@ ENDM
 	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
 	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
 	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
-	map_const PAST_ROUTE_11,                               31, 16
-	map_const PAST_ROUTE_11_GATE,                           5,  4
-	map_const PAST_ROUTE_11_INN,                            5,  4
-	map_const PAST_ROUTE_11_HOUSE_1,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_2,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_3,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
@@ -309,6 +293,7 @@ ENDM
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 	map_const MOON_BALL_CAVE,			                   10,  9
 	map_const PAST_ILEX_FOREST,                            37, 21
+	map_const PAST_FOREST_GATE,                             5,  4
 
 	newgroup                                                      ; 18
 
@@ -403,7 +388,6 @@ ENDM
 	map_const PLAYERS_NEIGHBORS_HOUSE,                     4,  4 ;  8
 	map_const ELMS_HOUSE,                                  4,  4 ;  9
 	map_const ROUTE_1_ELKHORN_GATE,                        5,  4 ; 13
-	map_const PAST_ELKHORN_TOWN,						  15, 11 
 
 	newgroup                                                      ; 25
 
@@ -431,9 +415,6 @@ ENDM
 	map_const ROUTE_2_PECTINIA_GATE,                        5,  4 ; 11
 	map_const ROUTE_9,                                     20, 13 ; 13
 	map_const SUICUNE_LAIR,	    							7,  3
-	map_const PAST_PAVONA_VILLAGE,                         16, 10 ;  3
-	map_const PAST_ROUTE_1,						  		   26, 16
-	map_const PAST_ROUTE_2,                                23, 18 ;  1
 
 	newgroup													  ; 27
 	
@@ -477,6 +458,7 @@ ENDM
 
 	map_const BATTLE_SIM_COMP_1,							 9, 10
 	map_const BATTLE_SIM_COMP_2,							12, 13
+;	map_const BATTLE_SIM_COMP_3,							12, 13
 
 	map_const BATTLE_SIM_GRAVE_1,							10, 10
 	map_const BATTLE_SIM_GRAVE_2,							16, 14
@@ -495,6 +477,50 @@ ENDM
 	map_const BATTLE_SIM_LAVA_3,							20, 18
 
 	map_const BATTLE_SIM_FOREST_1,							10, 10
+	map_const BATTLE_SIM_FOREST_2,							15, 14
+	map_const BATTLE_SIM_FOREST_3,							21, 19
 
 	map_const BATTLE_SIMULATION_FINAL_ROOM,				  	 3,  4
 
+	newgroup
+
+	map_const PAST_FAVIA_TOWN,							  15, 14
+	map_const PAST_FAVIA_INN,							   5,  4
+	map_const PAST_FAVIA_DAY_CARE,						   4,  4
+	map_const PAST_FAVIA_CELESTES_HOUSE,				   4,  4
+	map_const PAST_FAVIA_FRIENDSHIP_HOUSE,				   4,  4
+
+	newgroup
+
+	map_const PAST_PECTINIA_CITY,                            28, 15
+	map_const PAST_PECTINIA_GYM,                              8, 10
+	map_const PAST_PECTINIA_APARTMENT_1F,                     6,  4
+	map_const PAST_PECTINIA_APARTMENT_2F,                     6,  4
+	map_const PAST_PECTINIA_APARTMENT_3F,                     6,  4
+	map_const PAST_ROUTE_3,                                  20, 24
+	map_const PAST_PECTINIA_GATE,                             5,  4
+
+	newgroup
+
+	map_const PAST_ROUTE_11,                               31, 16
+	map_const PAST_ROUTE_11_GATE,                           5,  4
+	map_const PAST_ROUTE_11_INN,                            5,  4
+	map_const PAST_ROUTE_11_HOUSE_1,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_2,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_3,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
+	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
+
+	newgroup
+
+	map_const PAST_ELKHORN_TOWN,						  15, 11
+	map_const PAST_ELKHORN_MOMS_HOUSE,					   4,  4
+	map_const PAST_ELKHORN_LAKESIDE_HOUSE,				   4,  4
+	map_const PAST_ELKHORN_RICHARDS_HOUSE,				   4,  4
+	map_const PAST_ROUTE_1,						  		  26, 16
+
+	newgroup
+
+	map_const PAST_PAVONA_VILLAGE,                         16, 10 ;  3
+	map_const PAST_ROUTE_2,                                23, 18 ;  1
+	map_const PAST_ROUTE_2_GATE,                            5,  4

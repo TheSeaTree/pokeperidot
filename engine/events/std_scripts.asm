@@ -49,6 +49,7 @@ StdScripts::
 	dba EmilyCompanionScript
 	dba BattleSimExitWarpScript
 	dba TimeTravelWarpScript
+	dba SelectSimulationItemballEncounter
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -843,4 +844,58 @@ TimeTravelWarpScript:
 	waitsfx
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	warpfacing DOWN, BATTLE_SIMULATION, 2, 9
+	end
+
+SelectSimulationItemballEncounter:
+	random 28
+	ifequal 0, .Feraligatr
+	ifequal 1, .Typhlosion
+	ifequal 2, .Meganium
+	ifless  5, .Dragonair
+	ifless  7, .Kadabra
+	ifless 10, .Weezing
+	ifless 14, .Yanma
+	ifless 17, .Ancor
+	ifless 21, .Slowbro
+	ifless 25, .Scyther
+; Common
+.Furret
+	loadwildmon FURRET, 50
+	jump .DoBattle
+.Slowbro
+	loadwildmon SLOWBRO, 50
+	jump .DoBattle
+.Scyther
+	loadwildmon SCYTHER, 50
+	jump .DoBattle
+.Yanma
+	loadwildmon YANMA, 50
+	jump .DoBattle
+; Uncommon
+.Ancor
+	loadwildmon ANCOR, 50
+	jump .DoBattle
+.Weezing
+	loadwildmon WEEZING, 50
+	jump .DoBattle
+; Rare
+.Dragonair
+	loadwildmon DRAGONAIR, 50
+	jump .DoBattle
+.Kadabra
+	loadwildmon KADABRA, 50
+	jump .DoBattle
+; Ultra Rare
+.Typhlosion
+	loadwildmon TYPHLOSION, 50
+	jump .DoBattle
+.Feraligatr
+	loadwildmon FERALIGATR, 50
+	jump .DoBattle
+.Meganium
+	loadwildmon MEGANIUM, 50
+.DoBattle
+	writecode VAR_BATTLETYPE, BATTLETYPE_SIMULATION
+	startbattle
+	reloadmapafterbattle
 	end

@@ -18,22 +18,19 @@ IceWorld1_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_1
-;	warpmod 1, BATTLE_SIM_CASTLE_2
+	warpmod 1, BATTLE_SIM_CASTLE_2
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_1
-;	warpmod 1, BATTLE_SIM_COMP_2
+	warpmod 1, BATTLE_SIM_COMP_2
 	return
 
 .WarpGraveyard:
 	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_GRAVE_1
-;	warpmod 1, BATTLE_SIM_GRAVE_2
+	warpmod 1, BATTLE_SIM_GRAVE_2
 	return
 
 .WarpSky:
@@ -45,22 +42,28 @@ IceWorld1_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_1
-;	warpmod 1, BATTLE_SIM_LAVA_2
+	warpmod 1, BATTLE_SIM_LAVA_2
 	return
 
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_1
-;	warpmod 1, BATTLE_SIM_FOREST_2
+	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
 BattleSimIce1Trainer1:
 	trainer SKIER, ICE1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+	end
+.After
 	opentext
 	writetext BattleSimTrainerAfterText
 	waitbutton
@@ -71,7 +74,15 @@ BattleSimIce1Trainer2:
 	trainer BOARDER, ICE1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
 
 .Script:
-	endifjustbattled
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+	end
+.After
 	opentext
 	writetext BattleSimTrainerAfterText
 	waitbutton

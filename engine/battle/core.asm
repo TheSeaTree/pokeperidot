@@ -2522,7 +2522,7 @@ FaintEnemyPokemon:
 	jp z, .BossBattle
 	ld hl, BattleText_EnemyMonFainted
 	jp StdBattleTextBox
-	
+
 .BossBattle
 	ld hl, BattleText_EnemyMonRanAway
 	jp StdBattleTextBox
@@ -6803,8 +6803,11 @@ LoadEnemyMon:
 .CheckBoss:
 	ld a, [wBattleType]
 	cp BATTLETYPE_BOSS
+	jr z, .IsBoss
+	cp BATTLETYPE_SIMULATION
 	jr nz, .GenerateDVs
 
+.IsBoss
 	ld b, ATKDEFDV_BOSS ; $ea
 	ld c, SPDSPCDV_BOSS ; $aa
 	jr .UpdateDVs

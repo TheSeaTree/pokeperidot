@@ -30,7 +30,7 @@ OverworldSprites:
 	overworld_sprite DuaneSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite BigAerodactylSpriteGFX, 12, STANDING_SPRITE, PAL_OW_SILVER
 	overworld_sprite JasmineSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
-	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
+	overworld_sprite SimNurseSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite ClairSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite DadSpriteGFX, 12, STANDING_SPRITE, PAL_OW_RED
 	overworld_sprite DadSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE

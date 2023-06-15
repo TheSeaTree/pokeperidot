@@ -18,29 +18,25 @@ ForestWorld1_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_1
-;	warpmod 1, BATTLE_SIM_CASTLE_2
+	warpmod 1, BATTLE_SIM_CASTLE_2
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_1
-;	warpmod 1, BATTLE_SIM_COMP_2
+	warpmod 1, BATTLE_SIM_COMP_2
 	return
 
 .WarpGraveyard:
 	checkevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_GRAVE_1
-;	warpmod 1, BATTLE_SIM_GRAVE_2
+	warpmod 1, BATTLE_SIM_GRAVE_2
 	return
 
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_1
-;	warpmod 1, BATTLE_SIM_LAVA_2
+	warpmod 1, BATTLE_SIM_LAVA_2
 	return
 
 .WarpIceCave:
@@ -60,7 +56,7 @@ ForestWorld1_MapEvents:
 
 	db 2 ; warp events
 	warp_event  6, 17, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event 16, 14, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 18, 14, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

@@ -19,15 +19,13 @@ GraveyardWorld1_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_1
-;	warpmod 1, BATTLE_SIM_CASTLE_2
+	warpmod 1, BATTLE_SIM_CASTLE_2
 	return
 
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_1
-;	warpmod 1, BATTLE_SIM_COMP_2
+	warpmod 1, BATTLE_SIM_COMP_2
 	return
 
 .WarpSky:
@@ -39,8 +37,7 @@ GraveyardWorld1_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_1
-;	warpmod 1, BATTLE_SIM_LAVA_2
+	warpmod 1, BATTLE_SIM_LAVA_2
 	return
 
 .WarpIceCave:
@@ -52,8 +49,7 @@ GraveyardWorld1_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_1
-;	warpmod 1, BATTLE_SIM_FOREST_2
+	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
 .Gates:

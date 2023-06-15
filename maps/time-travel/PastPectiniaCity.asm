@@ -4,15 +4,46 @@ PastPectiniaCity_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
+PastPectiniaCityWorker:
+	jumptextfaceplayer PastPectiniaCityWorkerText
+
+PastPectiniaCityLicensePlate:
+	jumptext PastPectiniaCityLicensePlateText
+
+PastPectiniaCityWorkerText:
+	text "PECTINIA CITY is"
+	line "growing at such a"
+	cont "rate that we will"
+	cont "need a new"
+	cont "apartment complex"
+	cont "just to house the"
+	cont "influx of people"
+	cont "moving here."
+
+	para "My crew is helping"
+	line "build this city"
+	cont "into something"
+	cont "real big."
+
+	para "Maybe we will even"
+	line "rival RUGOSA."
+	done
+
+PastPectiniaCityLicensePlateText:
+	text "The license plate"
+	line "this truck says"
+	cont "“OUTATIME”"
+	done
+
 PastPectiniaCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 10 ; warp events
 	warp_event 31, 11, PAST_PECTINIA_CITY,  1 ; Mart
-	warp_event  4, 26, PAST_PECTINIA_CITY,  2 ; Route 2 Gate
-	warp_event  4, 27, PAST_PECTINIA_CITY,  3 ; Route 2 Gate
-	warp_event  9,  5, PAST_ROUTE_3,  		1 ; Route 3 Gate
+	warp_event  4, 26, PAST_ROUTE_2_GATE,   2 ; Route 2 Gate
+	warp_event  4, 27, PAST_ROUTE_2_GATE,   3 ; Route 2 Gate
+	warp_event  9,  5, PAST_PECTINIA_GATE,	3 ; Route 3 Gate
 	warp_event 11, 25, PAST_PECTINIA_CITY,  5 ; Gym Guy's House
 	warp_event 17, 25, PAST_PECTINIA_CITY,  6 ; Bike House
 	warp_event 51, 25, PAST_PECTINIA_CITY,  7 ; Berry House
@@ -22,6 +53,11 @@ PastPectiniaCity_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 20, 10, BGEVENT_RIGHT, PastPectiniaCityLicensePlate
 
-	db 0 ; object events
+	db 4 ; object events
+	object_event 18, 20, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaCityWorker, -1
+	object_event 12, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 19, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 14, 17, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

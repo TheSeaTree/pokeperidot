@@ -40,6 +40,12 @@ MapGroupRoofs:
 	db ROOF_SNOWY	  ; 26 (Palerock)
 	db -1			  ; 27 (North Forest)
 	db ROOF_OLIVINE   ; 28 (Sea Route 7)
+	db -1			  ; 29 (Battle Sim)
+	db ROOF_AZALEA	  ; 29 (Past Favia)
+	db ROOF_GOLDENROD ; 29 (Past Pectinia)
+	db ROOF_AZALEA	  ; 29 (Past Route 11)
+	db ROOF_AZALEA	  ; 29 (Past Elkhorn)
+	db ROOF_NEW_BARK  ; 29 (Past Pavona)
 
 Roofs:
 ; entries correspond to ROOF_* constants

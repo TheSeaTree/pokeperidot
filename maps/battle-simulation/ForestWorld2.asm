@@ -7,6 +7,12 @@ ForestWorld2_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .SetRandomWarps
 
 .SetRandomWarps
+	; Make sure this only gives points once.
+	; Adjust the amount of points gained later.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+
 	setevent EVENT_BATTLE_SIM_VISITED_FOREST
 .Reroll
 	random 6
@@ -24,7 +30,7 @@ ForestWorld2_MapScripts:
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_COMP_3
+;	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpGraveyard:
@@ -55,8 +61,8 @@ ForestWorld2_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  6, 17, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event 16, 14, BATTLE_SIMULATION, -1 ; Exit
+	warp_event  2,  2, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event 28, 24, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 

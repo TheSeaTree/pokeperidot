@@ -7,6 +7,12 @@ CastleWorld2_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .SetRandomWarps
 
 .SetRandomWarps
+	; Make sure this only gives points once.
+	; Adjust the amount of points gained later.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+
 	setevent EVENT_BATTLE_SIM_VISITED_CASTLE
 .Reroll
 	random 6
@@ -42,14 +48,104 @@ CastleWorld2_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_LAVA_3
+	warpmod 1, BATTLE_SIM_LAVA_3
 	return
 
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_FOREST_3
+	warpmod 1, BATTLE_SIM_FOREST_3
 	return
+
+BattleSimCastle2Trainer1:
+	trainer JUGGLER, CASTLE2_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCastle2Trainer2:
+	trainer COOLTRAINERF, CASTLE2_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCastle2Trainer3:
+	trainer COOLTRAINERM, CASTLE2_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCastle2Itemball1:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
+	end
+
+BattleSimCastle2Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	end
+
+BattleSimCastle2Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
+	end
 
 CastleWorld2_MapEvents:
 	db 0, 0 ; filler
@@ -62,4 +158,11 @@ CastleWorld2_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 7 ; object events
+	object_event 24,  9, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer1, -1
+	object_event  8, 21, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer2, -1
+	object_event 16,  9, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer3, -1
+	object_event  2, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event 11, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event 15,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event 12, 12, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1

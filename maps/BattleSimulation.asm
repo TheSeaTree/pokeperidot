@@ -47,7 +47,20 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene3:
+	applymovement PLAYER, BattleSimulationPlayerStepDown
+	turnobject BATTLESIMULATION_SCIENTIST4, LEFT
+	showemote EMOTE_SHOCK, BATTLESIMULATION_SCIENTIST4, 15
+	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationBlockEntrance
+	applymovement PLAYER, BattleSimulationPlayerLeaveTimeMachine
+	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationTimeMachineBlock
 	; Do the re-entry scene after the Celebi boss.
+	checkevent EVENT_FOUGHT_BOSS_CELEBI
+	iffalse .Fainted
+	setscene SCENE_BATTLESIMULATION_DEFAULT
+	end
+
+.Fainted:
+	setscene SCENE_BATTLESIMULATION_DEFAULT
 	end
 
 .Scientist
@@ -60,6 +73,9 @@ BattleSimulation_MapScripts:
 
 BattleSimulationGuy:
 	opentext
+	writebyte EGG
+	special FindPartyMonThatSpecies
+	iftrue .Decline
 	setscene SCENE_BATTLESIMULATION_CHALLENGE
 ;	special TryQuickSave
 ;	iffalse .Decline
@@ -73,8 +89,8 @@ BattleSimulationGuy:
 	setflag ENGINE_BATTLE_SIMULATION_ACTIVE
 	special UpdatePartyStats
 	special DropOffParty
-	givepoke MEWTWO, 100
-;	special GiveShuckle
+;	givepoke MEWTWO, 100
+	special GiveShuckle
 	loadvar wParkBallsRemaining, 30
 	playsound SFX_MENU
 	writecode VAR_MOVEMENT, PLAYER_HEADSET
@@ -152,6 +168,115 @@ BattleSimulationBPExchange:
 	closetext
 	end
 
+BattleSimItemball:
+	random 15
+	ifgreater 10, .WildEncounter
+	ifgreater  4, .Found5Balls
+	ifgreater  6, .Found10Balls
+	ifequal 7, .Found20Balls
+	writetext BattleSimFoundSacredAshText
+	special HealParty
+	playsound SFX_FULL_HEAL
+	waitsfx
+	writetext BattleSimPlayerUsedSacredAshText
+	waitbutton
+	jump .Done
+.Found5Balls
+	copybytetovar wParkBallsRemaining
+	addvar 5
+	copyvartobyte wParkBallsRemaining
+	writetext BattleSimFound5CyberBallsText
+	waitbutton
+	jump .Done
+.Found10Balls
+	copybytetovar wParkBallsRemaining
+	addvar 10
+	copyvartobyte wParkBallsRemaining
+	writetext BattleSimFound10CyberBallsText
+	waitbutton
+	jump .Done
+.Found20Balls	
+	copybytetovar wParkBallsRemaining
+	addvar 20
+	copyvartobyte wParkBallsRemaining
+	writetext BattleSimFound20CyberBallsText
+	waitbutton
+.Done
+	closetext
+	end
+
+.WildEncounter:
+	writetext BattleSimItemballEncounterText
+	waitbutton
+	closetext
+	jumpstd battlesimencounter
+
+BattleSimMoveRelearner:
+	faceplayer
+	opentext
+	special SpecialMoveRelearner
+	waitbutton
+	closetext
+	end
+
+BattleSimHealer:
+	faceplayer
+	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	iftrue .NotFirstTime
+	writetext BattleSimHealerFirstTimeText
+	yesorno
+	iffalse .Decline
+.DoHeal
+	closetext
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	special StubbedTrainerRankings_Healings
+	playmusic MUSIC_HEAL
+	special HealParty
+	pause 60
+	special FadeInQuickly
+	special RestartMapMusic
+	opentext
+	writetext BattleSimHealerAllSetText
+	waitbutton
+	writetext BattleSimHealerDeclineText
+	waitbutton
+	closetext
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	end
+
+.NotFirstTime
+	writetext BattleSimHealerCostText
+	yesorno
+	iffalse .Decline
+	copybytetovar wSimulationPoints
+	ifless 10, .NotEnoughPoints
+	copybytetovar wSimulationPoints
+	addvar -10
+	copyvartobyte wSimulationPoints
+	jump .DoHeal
+
+.NotEnoughPoints
+	writetext BattleSimHealerNotEnoughPointsText
+	waitbutton
+	closetext
+	end
+
+.Decline
+	writetext BattleSimHealerDeclineText
+	waitbutton
+	closetext
+	end
+
+SimulationMoveReminder:
+	faceplayer
+	opentext
+	special SimulationMoveRelearner
+	waitbutton
+	closetext
+	end
+
 BattleSimulationEntrance:
 	step UP
 	step RIGHT
@@ -178,8 +303,26 @@ BattleSimulationPlayerLeaveMachine:
 	step DOWN
 	step DOWN
 	step DOWN
-	step DOWN
 	turn_head UP
+	step_end
+
+BattleSimulationPlayerStepDown:
+	step DOWN
+	step_resume
+
+BattleSimulationPlayerLeaveTimeMachine:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head LEFT
+	step_end
+
+BattleSimulationTimeMachineBlock:
+	step UP
+	step RIGHT
 	step_end
 
 BattleSimulationTakeASeatText:
@@ -197,6 +340,103 @@ BattleSimulationChallengeCancelled:
 	para "We're sorry, but"
 	line "your challenge has"
 	cont "been forfeit."
+	done
+
+BattleSimItemBallText:
+	text "It's an ITEM"
+	line "CAPSULE."
+
+	para "Open it?"
+	done
+
+BattleSimFoundSacredAshText:
+	text "<PLAYER> found"
+	line "some SACRED ASH!"
+	done
+
+BattleSimPlayerUsedSacredAshText:
+	text "<PLAYER>'s #MON"
+	line "were restored to"
+	cont "full health!"
+	done
+
+BattleSimFound5CyberBallsText:
+	text "<PLAYER> found"
+	line "5 CYBER BALLs!"
+	done
+
+BattleSimFound10CyberBallsText:
+	text "<PLAYER> found"
+	line "10 CYBER BALLs!"
+	done
+
+BattleSimFound20CyberBallsText:
+	text "<PLAYER> found"
+	line "20 CYBER BALLs!"
+	done
+
+BattleSimFound5PointsText:
+	text "<PLAYER> found"
+	line "5 points!"
+	done
+
+BattleSimHealerFirstTimeText:
+	text "Would you like to"
+	line "heal your #MON?"
+
+	para "The first time is"
+	line "free."
+	done
+
+BattleSimHealerCostText:
+	text "Would you like to"
+	line "heal your #MON?"
+
+	para "It will cost you"
+	line "10 points."
+	done
+
+BattleSimHealerDeclineText:
+	text "Good luck,"
+	line "<PLAYER>!"
+	done
+
+BattleSimHealerNotEnoughPointsText:
+	text "Oh, I'm sorry…"
+
+	para "You don't have"
+	line "enough points to"
+	cont "heal your #MON."
+	done
+
+BattleSimHealerAllSetText:
+	text "All done!"
+
+	para "Your #MON are"
+	line "fighting fit!"
+	done
+
+BattleSimItemballEncounterText:
+	text "There is a wild"
+	line "#MON inside!"
+
+	para "The wild #MON"
+	line "attacked!"
+	done
+
+BattleSimTrainerText:
+	text "Battle protocol"
+	line "initiated."
+	done
+
+BattleSimTrainerWinText:
+	text "Battle complete."
+	
+	para "Winner: <PLAYER>."
+	done
+
+BattleSimTrainerAfterText:
+	text "Unable to battle."
 	done
 
 ;	setflag ENGINE_BATTLE_SIMULATION_ACTIVE

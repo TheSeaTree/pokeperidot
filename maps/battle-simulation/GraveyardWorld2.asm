@@ -8,6 +8,12 @@ GraveyardWorld2_MapScripts:
 	callback MAPCALLBACK_TILES, .Gates
 
 .SetRandomWarps
+	; Make sure this only gives points once.
+	; Adjust the amount of points gained later.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+
 	setevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 .Reroll
 	random 6
@@ -37,7 +43,7 @@ GraveyardWorld2_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_LAVA_3
+	warpmod 1, BATTLE_SIM_LAVA_3
 	return
 
 .WarpIceCave:
@@ -49,7 +55,7 @@ GraveyardWorld2_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_FOREST_3
+	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 .Gates:

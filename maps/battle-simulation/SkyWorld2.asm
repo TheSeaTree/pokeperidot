@@ -7,6 +7,12 @@ SkyWorld2_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .SetRandomWarps
 
 .SetRandomWarps
+	; Make sure this only gives points once.
+	; Adjust the amount of points gained later.
+	copybytetovar wSimulationPoints
+	addvar 1
+	copyvartobyte wSimulationPoints
+
 	setevent EVENT_BATTLE_SIM_VISITED_SKY
 .Reroll
 	random 6
@@ -18,7 +24,6 @@ SkyWorld2_MapScripts:
 
 	checkevent EVENT_BATTLE_SIM_VISITED_CASTLE
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_CASTLE_1
 	warpmod 1, BATTLE_SIM_CASTLE_3
 	return
 
@@ -38,8 +43,7 @@ SkyWorld2_MapScripts:
 .WarpVolcano:
 	checkevent EVENT_BATTLE_SIM_VISITED_VOLCANO
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_LAVA_1
-;	warpmod 1, BATTLE_SIM_LAVA_3
+	warpmod 1, BATTLE_SIM_LAVA_3
 	return
 
 .WarpIceCave:
@@ -51,8 +55,7 @@ SkyWorld2_MapScripts:
 .WarpForest:
 	checkevent EVENT_BATTLE_SIM_VISITED_FOREST
 	iftrue .Reroll
-	warpmod 1, BATTLE_SIM_FOREST_1
-;	warpmod 1, BATTLE_SIM_FOREST_3
+	warpmod 1, BATTLE_SIM_FOREST_3
 	return
 
 SkyWorld2_MapEvents:
