@@ -10,7 +10,7 @@ SeaRoute5_MapScripts:
 
 	db 3 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .LugiaGirl
-	callback MAPCALLBACK_NEWMAP, .SetEvents
+	callback MAPCALLBACK_NEWMAP, .ResetBoulders
 	callback MAPCALLBACK_TILES, .SmashWall
 	
 .LugiaGirl
@@ -19,15 +19,26 @@ SeaRoute5_MapScripts:
 	moveobject SEAROUTE5_LASS2, 6, 13
 	appear SEAROUTE5_LASS2
 	return
-	
-.SetEvents
-	checkevent EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN
-	iftrue .done
+
+.ResetBoulders
+	checkevent EVENT_LUGIA_CAVE_GATE_1
+	iftrue .CheckBoulder5
+	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_1
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_1
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_2
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_3
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_4
+
+.CheckBoulder5
+	checkevent EVENT_LUGIA_CAVE_GATE_2
+	iftrue .CheckBoulder6
+	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_2
+	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_2
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_5
+
+.CheckBoulder6
+	checkevent EVENT_LUGIA_CAVE_GATE_3
+	iftrue .done
+	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_3
+	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_3
 	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_6
 	return
 
@@ -37,7 +48,7 @@ SeaRoute5_MapScripts:
 	changeblock  4, 10, $73
 .done
 	return
-	
+
 TrainerSwimmerMiranda:
 	trainer SWIMMERF, MIRANDA, EVENT_BEAT_SWIMMERF_MIRANDA, SwimmerMirandaText, SwimmerMirandaWinText, 0, .Script
 

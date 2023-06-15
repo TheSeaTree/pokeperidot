@@ -30,16 +30,19 @@ LugiaCaveB1F_MapScripts:
 	
 .Boulder1:
 	disappear LUGIA_CAVE_B1F_BOULDER1
+	setevent EVENT_LUGIA_CAVE_B1F_BOULDER_1
 	clearevent EVENT_LUGIA_CAVE_B2F_BOULDER_1
 	jump .Fall
 
 .Boulder2:
 	disappear LUGIA_CAVE_B1F_BOULDER2
+	setevent EVENT_LUGIA_CAVE_B1F_BOULDER_2
 	clearevent EVENT_LUGIA_CAVE_B2F_BOULDER_2
 	jump .Fall
 
 .Boulder3:
 	disappear LUGIA_CAVE_B1F_BOULDER3
+	setevent EVENT_LUGIA_CAVE_B1F_BOULDER_3
 	clearevent EVENT_LUGIA_CAVE_B2F_BOULDER_3
 	jump .Fall
 	
