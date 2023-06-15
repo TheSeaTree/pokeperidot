@@ -221,7 +221,7 @@ Moves: ; 41afb
 	move SWAGGER,      EFFECT_SWAGGER,             0, DARK,      85, 15, 100
 	move MILK_DRINK,   EFFECT_HEAL,                0, NORMAL,     1, 10,   0
 	move SPARK,        EFFECT_PARALYZE_HIT,       65, ELECTRIC, 100, 20,  30
-	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        20, BUG,       95, 20,   0
+	move FURY_CUTTER,  EFFECT_FURY_CUTTER,        40, BUG,       95, 20,   0
 	move STEEL_WING,   EFFECT_DEFENSE_UP_HIT,     85, STEEL,     95, 10,  20
 	move MEAN_LOOK,    EFFECT_MEAN_LOOK,           0, NORMAL,     1,  5,   0
 	move ATTRACT,      EFFECT_ATTRACT,             0, NORMAL,   100, 15,   0

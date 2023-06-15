@@ -202,11 +202,12 @@ MetapodEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HARDEN
 	db 7, HARDEN
+	db 25, BIDE
 	db 0 ; no more level-up moves
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, CONFUSION
+	db 1, PSYWAVE
 	db 10, GUST
 	db 11, CONFUSION
 	db 13, POISONPOWDER
@@ -236,11 +237,12 @@ KakunaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HARDEN
 	db 7, HARDEN
+	db 25, BIDE
 	db 0 ; no more level-up moves
 
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, FURY_ATTACK
+	db 1, SHARPEN
 	db 10, WING_ATTACK
 	db 11, FURY_ATTACK
 	db 14, RAGE
@@ -2043,6 +2045,7 @@ ScytherEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, QUICK_ATTACK
 	db 1, LEER
+	db 4, FURY_CUTTER
 	db 5, FOCUS_ENERGY
 	db 9, PURSUIT
 	db 13, FALSE_SWIPE
@@ -2332,6 +2335,7 @@ KabutopsEvosAttacks:
 	db 1, SCRATCH
 	db 1, HARDEN
 	db 1, STONE_EDGE
+	db 1, FURY_CUTTER
 	db 6, ABSORB
 	db 11, LEER
 	db 16, DIG
@@ -3555,6 +3559,7 @@ ScizorEvosAttacks:
 	db 1, QUICK_ATTACK
 	db 1, BULLET_PUNCH
 	db 1, LEER
+	db 4, FURY_CUTTER
 	db 6, FOCUS_ENERGY
 	db 12, PURSUIT
 	db 18, FALSE_SWIPE

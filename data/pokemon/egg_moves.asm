@@ -487,6 +487,7 @@ KrabbyEggMoves:
 	db X_SCISSOR
 	db BRICK_BREAK
 	db BODY_PRESS
+	db FURY_CUTTER
 	db -1 ; end
 
 ExeggcuteEggMoves:
@@ -750,6 +751,7 @@ ChikoritaEggMoves:
 	db SLEEP_POWDER
 	db STUN_SPORE
 	db BODY_PRESS
+	db FURY_CUTTER
 	db -1 ; end
 
 CyndaquilEggMoves:
