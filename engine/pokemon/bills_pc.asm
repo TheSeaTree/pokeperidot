@@ -185,6 +185,8 @@ BillsPCDepositFuncRelease:
 	jr c, BillsPCDepositFuncCancel
 	call BillsPC_IsMonAnEgg
 	jr c, BillsPCDepositFuncCancel
+	call BillsPC_IsPlayerInPast
+	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
 	ld a, [wMapGroup]
@@ -442,6 +444,8 @@ BillsPC_Withdraw:
 	ld a, [wMenuCursorY]
 	push af
 	call BillsPC_IsMonAnEgg
+	jr c, .FailedRelease
+	call BillsPC_IsPlayerInPast
 	jr c, .FailedRelease
 	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
@@ -1695,6 +1699,25 @@ BillsPC_IsMonAnEgg:
 	scf
 	ret
 
+BillsPC_IsPlayerInPast:
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	jr z, .past
+	and a
+	ret
+
+.past
+	ld de, PCString_NoReleasingInPast
+	call BillsPC_PlaceString
+	ld de, SFX_WRONG
+	call WaitPlaySFX
+	call WaitSFX
+	ld c, 50
+	call DelayFrames
+	scf
+	ret
+
 BillsPC_StatsScreen:
 	call LowVolume
 	call BillsPC_CopyMon
@@ -2291,6 +2314,7 @@ PCString_Non: db "Non.@"
 PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
+PCString_NoReleasingInPast: db "Can't release now!@"
 
 _ChangeBox:
 	call LoadStandardMenuHeader

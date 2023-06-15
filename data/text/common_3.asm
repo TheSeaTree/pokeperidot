@@ -305,6 +305,18 @@ PokeSeer_PalerockLocationText::
 	cont "PALEROCK MOUNTAIN!"
 	prompt
 
+PokeSeer_PastLocationText::
+	text "Hm…"
+
+	para "Oh my…"
+
+	para "@"
+	text_ram wSeerNickname
+	text " must"
+	line "have come from"
+	cont "the distant past!"
+	prompt
+
 UnknownText_0x1c47fa::
 	text "The time was"
 	line "@"

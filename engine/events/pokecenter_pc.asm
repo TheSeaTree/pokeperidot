@@ -1,9 +1,16 @@
+PokePDA:
+	call PC_PlayBootSound
+	ld hl, PokePDAText_BootedUpPDA
+	call PC_DisplayText
+	jr PokemonCenterPC.PC_Access_Menu
+
 PokemonCenterPC:
 	call PC_CheckPartyForPokemon
 	ret c
 	call PC_PlayBootSound
 	ld hl, PokecenterPCText_BootedUpPC
 	call PC_DisplayText
+.PC_Access_Menu
 	ld hl, PokecenterPCText_AccessWhosePC
 	call PC_DisplayTextWaitMenu
 	ld hl, .TopMenu
@@ -84,7 +91,20 @@ PCPC_TURN_OFF     EQU 4
 	db PCPC_TURN_OFF
 	db -1 ; end
 
+	; while in the past
+	db 2
+	db PCPC_BILLS_PC
+	db PCPC_TURN_OFF
+	db -1 ; end
+
 .ChooseWhichPCListToUse:
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	jr nz, .not_in_past
+	ld a, 3 ; while in the past
+	ret
+.not_in_past
 	call CheckReceivedDex
 	jr nz, .got_dex
 	ld a, 0 ; before Pokédex
@@ -652,6 +672,10 @@ PC_DisplayText:
 PokecenterPCText_BootedUpPC:
 	; turned on the PC.
 	text_far UnknownText_0x1c144d
+	text_end
+
+PokePDAText_BootedUpPDA:
+	text_far PokePDA_BootedUpPDAText
 	text_end
 
 PokecenterPCText_AccessWhosePC:

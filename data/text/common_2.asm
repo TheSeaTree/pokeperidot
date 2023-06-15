@@ -1173,6 +1173,11 @@ UnknownText_0x1c1505::
 	line "Link closed…"
 	done
 
+PokePDA_BootedUpPDAText::
+	text "<PLAYER> turned on"
+	line "the # PDA."
+	prompt
+
 _OakPCText1::
 	text "Want to get your"
 	line "#DEX rated?"

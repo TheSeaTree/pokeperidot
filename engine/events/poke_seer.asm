@@ -9,6 +9,7 @@
 	const SEER_LEVEL_ONLY
 	const SEER_TIME_ONLY
 	const SEER_PALEROCK
+	const SEER_THE_PAST
 
 	const_def
 	const SEERACTION_MET
@@ -72,6 +73,9 @@ SeerAction0:
 	ld a, [wSeerCaughtGender]
 	cp PALEROCK_MOUNTAIN
 	jr z, SeerAction6
+	ld a, [wSeerCaughtGender]
+	cp THE_PAST
+	jr z, SeerAction7
 
 	ld a, SEER_MET_AT
 	call PrintSeerText
@@ -122,6 +126,15 @@ SeerAction5:
 
 SeerAction6:
 	ld a, SEER_PALEROCK
+	call PrintSeerText
+	
+	ld a, SEER_TIME_LEVEL
+	call PrintSeerText
+	call SeerAdvice
+	ret
+
+SeerAction7:
+	ld a, SEER_THE_PAST
 	call PrintSeerText
 	
 	ld a, SEER_TIME_LEVEL
@@ -332,6 +345,7 @@ SeerTexts:
 	dw SeerLevelOnlyText
 	dw SeerTimeOnlyText
 	dw SeerPalerockMountainText
+	dw SeerThePastText
 
 SeerIntroText:
 	; I see all. I know all… Certainly, I know of your #MON!
@@ -379,6 +393,10 @@ SeerCancelText:
 
 SeerPalerockMountainText:
 	text_far PokeSeer_PalerockLocationText
+	text_end
+
+SeerThePastText:
+	text_far PokeSeer_PastLocationText
 	text_end
 
 SeerAdvice:

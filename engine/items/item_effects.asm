@@ -199,6 +199,8 @@ ItemEffects:
 	dw NoEffect        	   ; SAFARI_PACK
 	dw NoEffect		       ; SKILL_BELT
 	dw PokeBallEffect      ; CYBER_BALL
+	dw NoEffect		       ; LIGHT_CLAY
+	dw PokePDAEffect       ; POKE_PDA
 
 PokeBallEffect:
 	ld a, [wBattleMode]
@@ -2473,6 +2475,10 @@ UseRod:
 
 ItemfinderEffect:
 	farcall ItemFinder
+	ret
+
+PokePDAEffect:
+	farcall PokePDAFunction
 	ret
 
 RestorePPEffect:

@@ -186,7 +186,7 @@ ItemNames::
 	db "SKILL BELT@"
 	db "CYBER BALL@"
 	db "LIGHT CLAY@"
-	db "TERU-SAMA@"
+	db "# PDA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"
 	db "TERU-SAMA@"

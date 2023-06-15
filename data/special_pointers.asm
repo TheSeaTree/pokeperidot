@@ -202,3 +202,4 @@ SpecialsPointers::
 	add_special SnorlaxEvent_SetBattleType
 	add_special LegendaryEvent_SetBattleType
 	add_special CheckOtherPlayerGender
+	add_special PokePDA

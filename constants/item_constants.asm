@@ -193,7 +193,7 @@
 	const SKILL_BELT   ; b9
 	const CYBER_BALL   ; ba
 	const LIGHT_CLAY   ; bb
-	const ITEM_BC      ; bc
+	const POKE_PDA     ; bc
 	const ITEM_BD      ; bd
 	const ITEM_BE      ; be
 	const ITEM_C3      ; c3

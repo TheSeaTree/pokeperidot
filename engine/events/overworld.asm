@@ -1794,6 +1794,38 @@ UnknownText_0xd0ae: ; unused
 	text_jump UnknownText_0x1c0979
 	db "@"
 
+PokePDAFunction:
+	call .LoadPokePDA
+	and $7f
+	ld [wFieldMoveSucceeded], a
+	ret
+
+.LoadPokePDA
+	call .CheckEnvironment
+	jr c, .CannotUsePC
+	ld hl, Script_LoadPokePDA
+	call QueueScript
+	ld a, TRUE
+	ret
+
+.CannotUsePC
+	ld a, $0
+	ret
+
+.CheckEnvironment:
+	call GetMapEnvironment
+	call CheckOutdoorMap
+	ret z
+	scf
+	ret
+
+Script_LoadPokePDA:
+	reloadmappart
+	special UpdateTimePals
+	special PokePDA
+	reloadmappart
+	end
+
 BikeFunction:
 	call .TryBike
 	and $7f

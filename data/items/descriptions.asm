@@ -187,7 +187,7 @@ ItemDescriptions:
 	dw SkillBeltDesc
 	dw InvalidItemDesc
 	dw LightClayDesc
-	dw InvalidItemDesc
+	dw PocketPCDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -998,6 +998,10 @@ SkillBeltDesc:
 LightClayDesc:
 	db	 "Extends SCREEN"
 	next "duration. (HOLD)@"
+
+PocketPCDesc:
+	db	 "Access <PK><MN> STORAGE"
+	next "through time.@"
 
 InvalidItemDesc:
 	db   "You should not"
