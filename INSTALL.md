@@ -4,6 +4,8 @@ These instructions explain how to set up the tools required to build **pokecryst
 
 If you run into trouble, ask for help on IRC or Discord (see [README.md](README.md)).
 
+## Important note: Pokémon Peridot uses RGBDS version 0.3.7.
+
 
 ## Windows 10
 
