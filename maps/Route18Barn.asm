@@ -10,9 +10,9 @@ Route18Barn_MapScripts:
 	db 0 ; callbacks
 
 Route18BarnCooltrainerScript:
-	opentext
 	checkevent EVENT_MARIE_GONE_HOME
 	iftrue .AfterMarie
+	opentext
 	checkevent EVENT_TALKED_TO_MARIES_SISTER
 	iftrue .FindMarie
 	writetext Route18BarnCooltrainerText
