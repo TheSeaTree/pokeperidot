@@ -386,7 +386,7 @@ RareCandyDesc:
 
 XAccuracyDesc:
 	db   "Raises accuracy."
-	next "(1 BTL)@"
+	next "(HOLD)@"
 
 LeafStoneDesc:
 	db   "Evolves certain"
