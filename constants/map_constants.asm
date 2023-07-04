@@ -489,6 +489,7 @@ ENDM
 	map_const PAST_FAVIA_DAY_CARE,						   4,  4
 	map_const PAST_FAVIA_CELESTES_HOUSE,				   4,  4
 	map_const PAST_FAVIA_FRIENDSHIP_HOUSE,				   4,  4
+	map_const PAST_FAVIA_MART,                             5,  3
 
 	newgroup
 
@@ -499,6 +500,9 @@ ENDM
 	map_const PAST_PECTINIA_APARTMENT_3F,                     6,  4
 	map_const PAST_ROUTE_3,                                  20, 24
 	map_const PAST_PECTINIA_GATE,                             5,  4
+	map_const PAST_PECTINIA_MART,                             5,  3
+	map_const PAST_PECTINIA_BERRY_HOUSE,                      4,  4
+	map_const PAST_PECTINIA_GYM_SPEECH_HOUSE,                 4,  4
 
 	newgroup
 
@@ -510,6 +514,7 @@ ENDM
 	map_const PAST_ROUTE_11_HOUSE_3,						4,  4
 	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
 	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
+	map_const PAST_ROUTE_11_SCHOOLHOUSE,					6,  5
 
 	newgroup
 
@@ -522,5 +527,8 @@ ENDM
 	newgroup
 
 	map_const PAST_PAVONA_VILLAGE,                         16, 10 ;  3
+	map_const PAST_PAVONA_INN,								5,  4
+	map_const PAST_PAVONA_HOUSE_1,							4,  4
+	map_const PAST_PAVONA_HOUSE_2,							4,  4
 	map_const PAST_ROUTE_2,                                23, 18 ;  1
 	map_const PAST_ROUTE_2_GATE,                            5,  4

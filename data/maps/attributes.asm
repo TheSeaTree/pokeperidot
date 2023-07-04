@@ -305,6 +305,7 @@ ENDM
 	map_attributes PastPectiniaCity, PAST_PECTINIA_CITY, $05, 0
 	map_attributes PastPectiniaGym, PAST_PECTINIA_GYM, $00, 0
 	map_attributes PastFaviaInn, PAST_FAVIA_INN, $00, 0
+	map_attributes PastPavonaInn, PAST_FAVIA_INN, $00, 0
 	map_attributes PastRoute11Inn, PAST_ROUTE_11_INN, $00, 0
 	map_attributes PastIlexForest, PAST_ILEX_FOREST, $05, 0
 	map_attributes PastPectiniaApartment1F, PAST_PECTINIA_APARTMENT_1F, $00, 0
@@ -631,3 +632,10 @@ ENDM
 	map_attributes PastRoute2Gate, PAST_ROUTE_2_GATE, $00, 0
 	map_attributes PastFaviaCelestesHouse, PAST_FAVIA_CELESTES_HOUSE, $00, 0
 	map_attributes PastFaviaFriendshipHouse, PAST_FAVIA_FRIENDSHIP_HOUSE, $00, 0
+	map_attributes PastPectiniaMart, PAST_PECTINIA_MART, $00, 0
+	map_attributes PastFaviaMart, PAST_FAVIA_MART, $00, 0
+	map_attributes PastRoute11Schoolhouse, PAST_ROUTE_11_SCHOOLHOUSE, $00, 0
+	map_attributes PastPavonaHouse1, PAST_PAVONA_HOUSE_1, $00, 0
+	map_attributes PastPavonaHouse2, PAST_PAVONA_HOUSE_2, $00, 0
+	map_attributes PastPectiniaBerryHouse, PAST_PECTINIA_BERRY_HOUSE, $00, 0
+	map_attributes PastPectiniaGymSpeechHouse, PAST_PECTINIA_GYM_SPEECH_HOUSE, $00, 0

@@ -11,7 +11,7 @@ PastRoute11_MapEvents:
 	db 9 ; warp events
 	warp_event 27, 27, PAST_ROUTE_11_GATE, 1 ; Favia Gate
 	warp_event 28, 27, PAST_ROUTE_11_GATE, 2 ; Favia Gate
-	warp_event 47, 17, PAST_ROUTE_11, 3 ; Battle House/School
+	warp_event 47, 17, PAST_ROUTE_11_SCHOOLHOUSE, 1 ; Battle House/School
 	warp_event 49, 21, PAST_ROUTE_11_HOUSE_5, 1 ; Curse House
 	warp_event 37,  7, PAST_ROUTE_11_HOUSE_1, 1 ; Misc House 1
 	warp_event 29, 11, PAST_ROUTE_11_INN, 1

@@ -67,7 +67,7 @@ MaplesLab_MapScripts:
 	iffalse .WateredPlant
 	changeblock 0, 0, $31
 	changeblock 2, 0, $32
-	
+
 .WateredPlant:
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .WaterPlant
@@ -956,7 +956,7 @@ MaplesLab_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 11, PAVONA_VILLAGE, 3
 	warp_event  5, 11, PAVONA_VILLAGE, 3
-	warp_event  3,  0, MAPLES_LAB_ELEVATOR, 1
+	warp_event  2,  0, MAPLES_LAB_ELEVATOR, 1
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript

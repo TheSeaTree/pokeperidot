@@ -90,11 +90,18 @@ PastElkhornLakesideHouse_Blocks:
 PastElkhornRichardsHouse_Blocks:
 PastFaviaDayCare_Blocks:
 PastFaviaFriendshipHouse_Blocks:
+PastPavonaHouse1_Blocks:
+PastPavonaHouse2_Blocks:
+PastPectiniaGymSpeechHouse_Blocks:
 	INCBIN "maps/time-travel/PastHouse1.4x4.house.ablk"
 
 PastElkhornMomsHouse_Blocks:
 PastFaviaCelestesHouse_Blocks:
+PastPectiniaBerryHouse_Blocks:
 	INCBIN "maps/time-travel/PastHouse2.4x4.players_house.ablk"
+
+PastRoute11Schoolhouse_Blocks:
+	INCBIN "maps/time-travel/PastRoute11Schoolhouse.ablk"
 
 VitaminShop_Blocks:
 	INCBIN "maps/VitaminShop.ablk"
@@ -875,6 +882,7 @@ SECTION "Map Blocks 6", ROMX
 
 PastFaviaInn_Blocks:
 PastRoute11Inn_Blocks:
+PastPavonaInn_Blocks:
 	INCBIN "maps/time-travel/PastInn.5x4.players_house.ablk"
 
 PastPectiniaCity_Blocks:
@@ -927,6 +935,10 @@ MewtwoLab2F_Blocks:
 
 VictoryCoastOfficersHouse_Blocks:
 	INCBIN "maps/VictoryCoastOfficersHouse.ablk"
+
+PastPectiniaMart_Blocks:
+PastFaviaMart_Blocks:
+	INCBIN "maps/time-travel/PastMart.5x3.mart.ablk"
 
 SECTION "Map Blocks 7", ROMX
 

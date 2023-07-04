@@ -40,13 +40,13 @@ PastPectiniaCity_MapEvents:
 	db 0, 0 ; filler
 
 	db 10 ; warp events
-	warp_event 31, 11, PAST_PECTINIA_CITY,  1 ; Mart
+	warp_event 31, 11, PAST_PECTINIA_MART,  1 ; Mart
 	warp_event  4, 26, PAST_ROUTE_2_GATE,   2 ; Route 2 Gate
 	warp_event  4, 27, PAST_ROUTE_2_GATE,   3 ; Route 2 Gate
 	warp_event  9,  5, PAST_PECTINIA_GATE,	3 ; Route 3 Gate
-	warp_event 11, 25, PAST_PECTINIA_CITY,  5 ; Gym Guy's House
+	warp_event 11, 25, PAST_PECTINIA_GYM_SPEECH_HOUSE,  1 ; Gym Guy's House
 	warp_event 17, 25, PAST_PECTINIA_CITY,  6 ; Bike House
-	warp_event 51, 25, PAST_PECTINIA_CITY,  7 ; Berry House
+	warp_event 51, 25, PAST_PECTINIA_BERRY_HOUSE, 1 ; Berry House
 	warp_event 40, 17, PAST_PECTINIA_GYM,   1 ; Police Station
 	warp_event 37, 11, PAST_PECTINIA_CITY,  9 ; Evolution House
 	warp_event 23, 11, PAST_PECTINIA_APARTMENT_1F, 1

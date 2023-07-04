@@ -12,6 +12,8 @@ PastIlexForest_MapScripts:
 	return
 
 PastCelebiTest:
+	checkitem GS_BALL
+	iffalse .OldShrine
 	moveobject PASTILEXFOREST_CELEBI, 47, 3
 	special CelebiShrineEvent
 	appear PASTILEXFOREST_CELEBI
@@ -39,10 +41,21 @@ PastCelebiTest:
 	jumpstd darkenroom
 	end
 
+.OldShrine
+	writetext PastForestShrineText
+	waitbutton
+	closetext
+	end
+
 PastCelebiEnergyText:
 	text "CELEBI unleashed"
 	line "a huge amount of"
 	cont "PSYCHIC power!"
+	done
+
+PastForestShrineText:
+	text "It looks like an"
+	line "old shrine."
 	done
 
 PastIlexForest_MapEvents:

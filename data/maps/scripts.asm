@@ -45,6 +45,8 @@ INCLUDE "maps/BurglarHideoutB2F.asm"
 INCLUDE "maps/Route28Gate.asm"
 INCLUDE "maps/NorthForest.asm"
 INCLUDE "maps/DevelopersHouse.asm"
+INCLUDE "maps/time-travel/PastPectiniaMart.asm"
+INCLUDE "maps/time-travel/PastFaviaMart.asm"
 
 
 SECTION "Map Scripts 4", ROMX
@@ -435,6 +437,8 @@ INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
 INCLUDE "maps/SSMakoDeck.asm"
 INCLUDE "maps/MaplesLabElevator.asm"
+INCLUDE "maps/time-travel/PastPavonaHouse1.asm"
+INCLUDE "maps/time-travel/PastPavonaHouse2.asm"
 
 
 SECTION "Map Scripts 27", ROMX
@@ -449,6 +453,7 @@ INCLUDE "maps/time-travel/PastIlexForest.asm"
 INCLUDE "maps/time-travel/PastElkhornTown.asm"
 INCLUDE "maps/time-travel/PastRoute1.asm"
 INCLUDE "maps/time-travel/PastPavonaVillage.asm"
+INCLUDE "maps/time-travel/PastPavonaInn.asm"
 INCLUDE "maps/time-travel/PastRoute2.asm"
 INCLUDE "maps/time-travel/PastFaviaInn.asm"
 INCLUDE "maps/time-travel/PastRoute11Inn.asm"
@@ -460,6 +465,7 @@ INCLUDE "maps/time-travel/PastRoute11House2.asm"
 INCLUDE "maps/time-travel/PastRoute11House3.asm"
 INCLUDE "maps/time-travel/PastRoute11House4.asm"
 INCLUDE "maps/time-travel/PastRoute11House5.asm"
+INCLUDE "maps/time-travel/PastRoute11Schoolhouse.asm"
 INCLUDE "maps/time-travel/PastElkhornMomsHouse.asm"
 INCLUDE "maps/time-travel/PastElkhornLakesideHouse.asm"
 INCLUDE "maps/time-travel/PastElkhornRichardsHouse.asm"
@@ -469,6 +475,8 @@ INCLUDE "maps/time-travel/PastFaviaDayCare.asm"
 INCLUDE "maps/time-travel/PastFaviaCelestesHouse.asm"
 INCLUDE "maps/time-travel/PastFaviaFriendshipHouse.asm"
 INCLUDE "maps/time-travel/PastRoute2Gate.asm"
+INCLUDE "maps/time-travel/PastPectiniaBerryHouse.asm"
+INCLUDE "maps/time-travel/PastPectiniaGymSpeechHouse.asm"
 
 SECTION "Map Scripts 28", ROMX
 

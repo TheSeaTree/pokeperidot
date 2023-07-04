@@ -69,7 +69,7 @@ PavonaInnNurseText:
 	line "tired, please take"
 	cont "a rest here."
 	done
-	
+
 PavonaInnNurseAfterText:
 	text "There, your"
 	line "#MON look much"
