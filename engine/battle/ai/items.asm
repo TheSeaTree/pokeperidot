@@ -704,6 +704,7 @@ AI_Switch:
 	callfar ResetEnemyStatLevels
 	ld hl, wPlayerSubStatus1
 	res SUBSTATUS_IN_LOVE, [hl]
+	res SUBSTATUS_IDENTIFIED, [hl]
 	farcall EnemySwitch
 	farcall ResetBattleParticipants
 	xor a

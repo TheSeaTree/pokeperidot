@@ -4177,21 +4177,6 @@ CheckIfTargetIsElectricType:
 	ld a, [de]
 	cp ELECTRIC
 	ret
-	
-CheckIfTargetIsGhostType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp GHOST
-	ret z
-	ld a, [de]
-	cp GHOST
-	ret
 
 BattleCommand_AttackUp:
 ; attackup
@@ -5779,10 +5764,10 @@ BattleCommand_TrapTarget:
 	jp StdBattleTextBox
 
 .Traps:
-	dbw BIND,      UsedBindText      ; 'used BIND on'
-	dbw WRAP,      WrappedByText     ; 'was WRAPPED by'
-	dbw FIRE_SPIN, FireSpinTrapText  ; 'was trapped!'
-	dbw WHIRLPOOL, WhirlpoolTrapText ; 'was trapped!'
+	dbw BIND,      UsedBindText		; 'used BIND on'
+	dbw WRAP,      WrappedByText	; 'was WRAPPED by'
+	dbw FIRE_SPIN, WasTrappedText	; 'was trapped!'
+	dbw WHIRLPOOL, WasTrappedText	; 'was trapped!'
 
 INCLUDE "engine/battle/move_effects/mist.asm"
 
@@ -6320,7 +6305,7 @@ BattleCommand_Screen:
 	jr nz, .Reflect
 
 	bit SCREENS_LIGHT_SCREEN, [hl]
-	jp nz, CheckIfTargetIsGhostType
+	jp nz, .failed
 	set SCREENS_LIGHT_SCREEN, [hl]
 
 	call CheckLightClay
@@ -6331,7 +6316,7 @@ BattleCommand_Screen:
 
 .Reflect:
 	bit SCREENS_REFLECT, [hl]
-	jp nz, CheckIfTargetIsGhostType
+	jp nz, .failed
 	set SCREENS_REFLECT, [hl]
 
 	; LightScreenCount -> ReflectCount
@@ -6345,6 +6330,10 @@ BattleCommand_Screen:
 .good
 	call AnimateCurrentMove
 	jp StdBattleTextBox
+
+.failed
+	call AnimateFailedMove
+	jp PrintButItFailed
 
 CheckLightClay:
 	push bc
@@ -6492,7 +6481,7 @@ BattleCommand_ArenaTrap:
 
 ; Doesn't work on Ghost-types.
 
-	call CheckIfTargetIsGhostType
+	farcall CheckIfTargetIsGhostType
 	jp z, BattleEffect_ButItFailed
 
 ; Doesn't work on an absent opponent.

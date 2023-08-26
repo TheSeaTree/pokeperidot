@@ -3946,6 +3946,8 @@ TryToRunAwayFromBattle:
 	jp z, .cant_escape
 	cp BATTLETYPE_BOSS
 	jp z, .cant_escape
+	cp BATTLETYPE_SIMULATION
+	jp z, .fled
 
 	ld a, [wLinkMode]
 	and a
@@ -4474,8 +4476,22 @@ PursuitSwitch:
 	call GetMoveEffect
 	ld a, b
 	cp EFFECT_PURSUIT
-	jr nz, .done
+	jr z, .do_pursuit
+	
+	ld a, BATTLE_VARS_MOVE
+	call GetBattleVar
+	ld b, a
+	call GetMoveEffect
+	ld a, b
+	cp EFFECT_FLY
+	jp nz, .done
 
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVar
+	and 1 << SUBSTATUS_FLYING | 1 << SUBSTATUS_UNDERGROUND
+	jr z, .done
+
+.do_pursuit
 	ld a, [wCurBattleMon]
 	push af
 
@@ -5736,6 +5752,8 @@ TryPlayerSwitch:
 	jp BattleMenuPKMN_Loop
 
 .check_trapped
+	call CheckIfTargetIsGhostType
+	jr z, .try_switch
 	ld a, [wPlayerWrapCount]
 	and a
 	jr nz, .trapped
@@ -5811,6 +5829,21 @@ PlayerSwitch:
 	call EnemyMonEntrance
 	call BattleMonEntrance
 	and a
+	ret
+
+CheckIfTargetIsGhostType:
+	ld de, wEnemyMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp GHOST
+	ret z
+	ld a, [de]
+	cp GHOST
 	ret
 
 EnemyMonEntrance:

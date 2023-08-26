@@ -30,7 +30,7 @@ Moves: ; 41afb
 	move GUST,         EFFECT_GUST,               40, FLYING,   100, 35,   0
 	move WING_ATTACK,  EFFECT_NORMAL_HIT,         60, FLYING,   100, 35,   0
 	move WHIRLWIND,    EFFECT_FORCE_SWITCH,        0, NORMAL,   100, 20,   0
-	move FLY,          EFFECT_FLY,                90, FLYING,    95, 15,   0
+	move FLY,          EFFECT_FLY,                80, FLYING,    90, 10,   0
 	move BIND,    	   EFFECT_TRAP_TARGET,        60, BUG,       85, 15,   0
 	move SILVER_WIND,  EFFECT_ALL_UP_HIT,         60, BUG,      100,  5,  10
 	move VINE_WHIP,    EFFECT_NORMAL_HIT,         45, GRASS,    100, 10,   0
@@ -76,7 +76,7 @@ Moves: ; 41afb
 	move AURORA_BEAM,  EFFECT_ATTACK_DOWN_HIT,    65, ICE,      100, 20,  10
 	move HYPER_BEAM,   EFFECT_HYPER_BEAM,        150, NORMAL,    90,  5,   0
 	move PECK,         EFFECT_FLINCH_HIT,         40, FLYING,   100, 35,  10
-	move DRILL_PECK,   EFFECT_NORMAL_HIT,         80, FLYING,   100, 20,   0
+	move DRILL_PECK,   EFFECT_NORMAL_HIT,         90, FLYING,   100, 15,   0
 	move SUBMISSION,   EFFECT_RECOIL_HIT,        120, FIGHTING,  90,  5,   0
 	move BRICK_BREAK,  EFFECT_BRICK_BREAK,        75, FIGHTING, 100, 15,   0
 	move COUNTER,      EFFECT_COUNTER,             1, FIGHTING,   1, 20,   0

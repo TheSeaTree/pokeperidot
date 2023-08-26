@@ -595,14 +595,9 @@ UsedBindText:
 	cont "<TARGET>!"
 	prompt
 
-WhirlpoolTrapText:
+WasTrappedText:
 	text "<TARGET>"
-	line "was trapped!"
-	prompt
-
-FireSpinTrapText:
-	text "<TARGET>"
-	line "was trapped!"
+	line "is in a vortex!"
 	prompt
 
 WrappedByText:
