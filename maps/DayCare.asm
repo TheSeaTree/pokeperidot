@@ -158,7 +158,7 @@ DayCareText_ComeAgain:
 
 DayCareText_GotOddEgg:
 	text "<PLAYER> received"
-	line "ODD EGG!"
+	line "an EGG!"
 	done
 
 DayCareText_DescribeOddEgg:
