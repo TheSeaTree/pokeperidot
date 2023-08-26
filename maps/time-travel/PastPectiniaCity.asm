@@ -11,6 +11,9 @@ PastPectiniaCityWorker:
 PastPectiniaCityLicensePlate:
 	jumptext PastPectiniaCityLicensePlateText
 
+PastPectiniaFruitTree:
+	jumptext PastPectiniaFruitTreeText
+
 PastPectiniaCityWorkerText:
 	text "PECTINIA CITY is"
 	line "growing at such a"
@@ -36,6 +39,15 @@ PastPectiniaCityLicensePlateText:
 	cont "“OUTATIME”"
 	done
 
+PastPectiniaFruitTreeText:
+	text "It's a fruit-"
+	line "bearing tree."
+
+	para "…But it would be"
+	line "best to leave it"
+	cont "undisturbed."
+	done
+
 PastPectiniaCity_MapEvents:
 	db 0, 0 ; filler
 
@@ -56,8 +68,12 @@ PastPectiniaCity_MapEvents:
 	db 1 ; bg events
 	bg_event 20, 10, BGEVENT_RIGHT, PastPectiniaCityLicensePlate
 
-	db 4 ; object events
+	db 8 ; object events
 	object_event 18, 20, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaCityWorker, -1
 	object_event 12, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 14, 17, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event 49, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1
+	object_event 50, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1
+	object_event 53, 21, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1
+	object_event 52, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1

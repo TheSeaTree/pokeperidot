@@ -15,8 +15,8 @@ PastPectiniaMart_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  5, PAST_PECTINIA_CITY, 1
 	warp_event  3,  5, PAST_PECTINIA_CITY, 1
+	warp_event  4,  5, PAST_PECTINIA_CITY, 1
 
 	db 0 ; coord events
 

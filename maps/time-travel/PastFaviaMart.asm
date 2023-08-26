@@ -15,8 +15,8 @@ PastFaviaMart_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  5, PAST_FAVIA_TOWN, 6
 	warp_event  3,  5, PAST_FAVIA_TOWN, 6
+	warp_event  4,  5, PAST_FAVIA_TOWN, 6
 
 	db 0 ; coord events
 
