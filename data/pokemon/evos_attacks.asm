@@ -292,7 +292,8 @@ GolduckEvosAttacks:
 	db 25, SIGNAL_BEAM
 	db 28, WATERFALL
 	db 31, AGILITY
-	db 36, PSYCH_UP
+	db 34, PSYBEAM
+	db 38, PSYCH_UP
 	db 41, AMNESIA
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
