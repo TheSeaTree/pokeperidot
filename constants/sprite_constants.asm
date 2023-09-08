@@ -30,8 +30,8 @@
 	const SPRITE_CLAIR ; 19
 	const SPRITE_RED_DAD ; 1a
 	const SPRITE_BLUE_DAD ; 1b
-	const SPRITE_UNUSED_1C ; 1c
-	const SPRITE_UNUSED_1D ; 1d
+	const SPRITE_RED_PAST_MOM ; 1c
+	const SPRITE_BLUE_PAST_MOM ; 1d
 	const SPRITE_JOSEPH ; 1e
 	const SPRITE_UNUSED_1F ; 1f
 	const SPRITE_UNUSED_20 ; 20
@@ -198,3 +198,4 @@ SPRITE_VARS EQU const_value
 	const SPRITE_VARIABLE_MOM ; fa
 	const SPRITE_HOF_CHAMPION ; fb
 	const SPRITE_LEAGUE_PLAYER ; fc
+	const SPRITE_PAST_MOM ; fd
