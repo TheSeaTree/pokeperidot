@@ -10,7 +10,7 @@ HepaticaChurch_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
 SageScript:
 	opentext
 	writetext Sage2Text
@@ -32,6 +32,7 @@ SageScript:
 	loadtrainer BURGLAR, MARCUS
 	startbattle
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR1, BurglarRetreat
 	disappear CIANWOODCHURCH_BURGLAR1
 	applymovement CIANWOODCHURCH_BURGLAR2, Burglar2Approach
@@ -44,6 +45,7 @@ SageScript:
 	loadtrainer BURGLAR, HARVEY
 	startbattle
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR2, BurglarRetreat
 	disappear CIANWOODCHURCH_BURGLAR2
 	applymovement CIANWOODCHURCH_BURGLAR3, Burglar3Approach
@@ -56,6 +58,7 @@ SageScript:
 	loadtrainer BURGLAR, MANUEL
 	startbattle
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR3, BurglarRetreat
 	disappear CIANWOODCHURCH_BURGLAR3
 	applymovement CIANWOODCHURCH_BURGLAR4, Burglar4Approach
@@ -68,6 +71,7 @@ SageScript:
 	loadtrainer BURGLAR, SHAWN
 	startbattle
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR4, BurglarRetreat
 	disappear CIANWOODCHURCH_BURGLAR4
 	applymovement CIANWOODCHURCH_SAGE2, Sage2Approach
@@ -97,6 +101,7 @@ SageScript:
 	loadtrainer EXECUTIVEM, ABBOT
 	startbattle
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	opentext
 	writetext Sage1AfterText
 	waitbutton
@@ -109,8 +114,9 @@ SageScript:
 	setevent EVENT_CLEARED_CHURCH
 	clearevent EVENT_CIANWOOD_FLY_GUY
 	special FadeInQuickly
+.Lost
 	end
-	
+
 Burglar1:
 	jumptextfaceplayer Burglar1BeforeText
 

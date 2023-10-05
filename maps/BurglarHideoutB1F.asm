@@ -158,6 +158,7 @@ BurglarHideoutB1FScientist:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	turnobject PLAYER, LEFT
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
@@ -169,6 +170,7 @@ BurglarHideoutB1FScientist:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	turnobject PLAYER, RIGHT
 	playmusic MUSIC_ROCKET_ENCOUNTER
 	opentext
@@ -180,6 +182,7 @@ BurglarHideoutB1FScientist:
 	startbattle
 	dontrestartmapmusic
 	reloadmapafterbattle
+	ifnotequal $0, .Lost
 	turnobject PLAYER, LEFT
 	opentext
 	writetext BikerGuard1AfterText
@@ -203,6 +206,7 @@ BurglarHideoutB1FScientist:
 	disappear BURGLARHIDEOUTB1F_BIKER3
 	setevent EVENT_HIDEOUT_BEAT_BIKERS
 	special FadeInQuickly
+.Lost
 	end
 
 BurglarHideoutRivalScript:
