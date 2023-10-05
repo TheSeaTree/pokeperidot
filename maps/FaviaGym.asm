@@ -192,18 +192,32 @@ FaviaGymGuyScript:
 	waitbutton
 	closetext
 	end
-	
+
 FaviaGymStatue:
 	trainertotext CELESTE, CELESTE1, MEM_BUFFER_1
 	checkflag ENGINE_MYSTICBADGE
 	iftrue .Beaten
-	jumpstd gymstatue1
+	opentext 
+	writetext FaviaGymStatueWinningTrainers1Text
+	waitbutton
+	closetext
+	showemote EMOTE_SHOCK, PLAYER, 15
+	opentext
+	writetext FaviaGymStatueNoWinnersText
+	waitbutton
+	closetext
+	end
 .Beaten:
 	checkflag ENGINE_SKULLBADGE
 	iftrue .RivalBeaten
+	checkevent EVENT_FIRST_FANGIRL_FIGHT
+	iftrue .FangirlBeaten
+	jumptext FaviaGymStatueWinningTrainers2Text
+.FangirlBeaten
 	jumpstd gymstatue2
 .RivalBeaten
 	jumpstd gymstatue3
+	
 	
 FaviaCantLeave:
 	checkflag ENGINE_MYSTICBADGE
@@ -488,6 +502,27 @@ FaviaGymGuyWinText:
 	para "I have never seen"
 	line "CELESTE smile"
 	cont "before."
+	done
+
+FaviaGymStatueWinningTrainers1Text:
+	text "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
+	para "WINNING TRAINERS:"
+	line "…"
+	done
+
+FaviaGymStatueNoWinnersText:
+	text "There are no"
+	line "winners listed!"
+	done
+
+FaviaGymStatueWinningTrainers2Text:
+	text "LEADER: @"
+	text_ram wStringBuffer4
+	text_start
+	para "WINNING TRAINERS:"
+	cont "<PLAYER>"
 	done
 
 FaviaGym_MapEvents:

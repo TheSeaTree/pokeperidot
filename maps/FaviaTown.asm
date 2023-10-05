@@ -222,6 +222,7 @@ FaviaFangirlScene:
 	applymovement FAVIA_FANGIRL, FaviaFangirlLeave
 	disappear FAVIA_FANGIRL
 	setscene SCENE_DEFAULT
+	setevent EVENT_FIRST_FANGIRL_FIGHT
 	playmapmusic
 	end
 
@@ -401,9 +402,11 @@ FaviaTown_MapEvents:
 	db 11 ; warp events
 	warp_event 19, 15, FAVIA_POKECENTER_1F, 1
 	warp_event 21, 25, FAVIA_MART, 1
-	warp_event 13,  6, FAVIA_GYM, 1 ;	warp_event 12,  7, GOLDENROD_GYM, 1
+	warp_event 13,  6, FAVIA_GYM, 1
 	warp_event  9, 17, DAY_CARE, 1
 	warp_event 14, 21, FAVIA_HAPPINESS_RATER, 1
+;	warp_event 14, 21, PAST_FAVIA_TOWN, 1
+;	warp_event 14, 21, BATTLE_SIM_CASTLE_2, 1
 	warp_event 27, 29, ROUTE_1_FAVIA_GATE, 1
 	warp_event 28, 29, ROUTE_1_FAVIA_GATE, 2
 	warp_event 25, 18, ROUTE_8_FAVIA_GATE, 1
