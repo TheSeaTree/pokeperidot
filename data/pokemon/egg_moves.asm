@@ -805,6 +805,7 @@ HoothootEggMoves:
 	db AGILITY
 	db NIGHT_SHADE
 	db FUTURE_SIGHT
+	db MOONLIGHT
 	db -1 ; end
 
 CubboltEggMoves:

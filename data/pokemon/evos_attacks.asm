@@ -2762,6 +2762,7 @@ NoctowlEvosAttacks:
 	db 1, TACKLE
 	db 1, GROWL
 	db 1, FORESIGHT
+	db 1, MOONLIGHT
 	db 4, HYPNOSIS
 	db 7, PECK
 	db 10, CONFUSION
