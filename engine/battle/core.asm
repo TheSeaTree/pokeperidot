@@ -1494,7 +1494,7 @@ HandleLeftovers:
 	ret nz
 
 	call SwitchTurnCore
-	farcall CheckIfTargetIsPoisonType
+	farcall BattleCore_CheckPosionType
 	jr nz, .subtract
 	call SwitchTurnCore
 
@@ -5752,7 +5752,7 @@ TryPlayerSwitch:
 	jp BattleMenuPKMN_Loop
 
 .check_trapped
-	call CheckIfTargetIsGhostType
+	farcall BattleCore_CheckGhostType
 	jr z, .try_switch
 	ld a, [wPlayerWrapCount]
 	and a
@@ -5829,21 +5829,6 @@ PlayerSwitch:
 	call EnemyMonEntrance
 	call BattleMonEntrance
 	and a
-	ret
-
-CheckIfTargetIsGhostType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp GHOST
-	ret z
-	ld a, [de]
-	cp GHOST
 	ret
 
 EnemyMonEntrance:

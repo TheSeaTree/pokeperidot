@@ -3879,7 +3879,8 @@ BattleCommand_PoisonTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsPoisonType
+	ld a, POISON
+	call CheckIfTargetIsGivenType
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -3975,7 +3976,13 @@ BattleCommand_Poison:
 	cp EFFECT_TOXIC
 	ret
 
-CheckIfTargetIsPoisonType:
+BattleCore_CheckGhostType:
+	ld a, GHOST
+	jr CheckIfTargetIsGivenType
+BattleCore_CheckPosionType:
+	ld a, POISON
+CheckIfTargetIsGivenType:
+	ld b, a
 	ld de, wEnemyMonType1
 	ldh a, [hBattleTurn]
 	and a
@@ -3984,10 +3991,10 @@ CheckIfTargetIsPoisonType:
 .ok
 	ld a, [de]
 	inc de
-	cp POISON
+	cp b
 	ret z
 	ld a, [de]
-	cp POISON
+	cp b
 	ret
 
 PoisonOpponent:
@@ -4034,7 +4041,8 @@ BattleCommand_BurnTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't burn a Fire-type
+	ld a, FIRE
+	call CheckIfTargetIsGivenType ; Don't burn a Fire-type
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4097,7 +4105,8 @@ BattleCommand_FreezeTarget:
 	ld a, [wBattleWeather]
 	cp WEATHER_SUN
 	ret z
-	call CheckMoveTypeMatchesTarget ; Don't freeze an Ice-type
+	ld a, ICE
+	call CheckIfTargetIsGivenType ; Don't freeze an Ice-type
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4143,7 +4152,8 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wTypeModifier]
 	and $7f
 	ret z
-	call CheckIfTargetIsElectricType
+	ld a, ELECTRIC
+	call CheckIfTargetIsGivenType
 	ret z
 	ld a, [wEffectFailed]
 	and a
@@ -4162,21 +4172,6 @@ BattleCommand_ParalyzeTarget:
 	call PrintParalyze
 	ld hl, UseHeldStatusHealingItem
 	jp CallBattleCore
-	
-CheckIfTargetIsElectricType:
-	ld de, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld de, wBattleMonType1
-.ok
-	ld a, [de]
-	inc de
-	cp ELECTRIC
-	ret z
-	ld a, [de]
-	cp ELECTRIC
-	ret
 
 BattleCommand_AttackUp:
 ; attackup
@@ -5958,7 +5953,8 @@ BattleCommand_Paralyze:
 	ld a, [wTypeModifier]
 	and $7f
 	jp z, BattleEffect_DoesntAffect
-	call CheckIfTargetIsElectricType
+	ld a, ELECTRIC
+	call CheckIfTargetIsGivenType
 	jp z, BattleEffect_DoesntAffect
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -6035,41 +6031,6 @@ BattleCommand_Burn:
 	call AnimateFailedMove
 	ld hl, AlreadyBurnedText
 	jp StdBattleTextBox
-
-CheckMoveTypeMatchesTarget:
-; Compare move type to opponent type.
-; Return z if matching the opponent type,
-; unless the move is Normal (Tri Attack).
-
-	push hl
-
-	ld hl, wEnemyMonType1
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .ok
-	ld hl, wBattleMonType1
-.ok
-
-	ld a, BATTLE_VARS_MOVE_TYPE
-	call GetBattleVar
-	cp NORMAL
-	jr z, .normal
-
-	cp [hl]
-	jr z, .return
-
-	inc hl
-	cp [hl]
-
-.return
-	pop hl
-	ret
-
-.normal
-	ld a, 1
-	and a
-	pop hl
-	ret
 
 INCLUDE "engine/battle/move_effects/substitute.asm"
 
@@ -6481,7 +6442,8 @@ BattleCommand_ArenaTrap:
 
 ; Doesn't work on Ghost-types.
 
-	farcall CheckIfTargetIsGhostType
+	ld a, GHOST
+	call CheckIfTargetIsGivenType
 	jp z, BattleEffect_ButItFailed
 
 ; Doesn't work on an absent opponent.
