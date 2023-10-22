@@ -302,10 +302,55 @@ DoPlayerMovement::
 	jp nc, .ice
 
 ; Downhill riding is slower when not moving down.
-	call .RunCheck
-	jr z, .walk
 	call .BikeCheck
-	jr z, .fast
+	jp z, .fast
+
+	ld hl, wPokegearFlags
+	bit RUNNING_SHOES_F, [hl]
+	jr z, .walk
+	ld a, [wPlayerState]
+	cp PLAYER_NORMAL
+	jr nz, .running
+	call GetMapEnvironment
+	cp INDOOR
+	jr z, .walk
+	cp DUNGEON
+	jr z, .walk
+	cp GYM_CAVE
+	jr z, .walk
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr nz, .walk
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .walk
+	ld a, PLAYER_RUN
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	jr .walk
+.running
+	call GetMapEnvironment
+	cp INDOOR
+	jr z, .runningstand
+	cp DUNGEON
+	jr z, .runningstand
+	cp GYM_CAVE
+	jr z, .runningstand
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr nz, .walk
+	ld a, [wWalkingDirection]
+	cp STANDING
+	jr z, .runningstand
+	ld a, [hJoypadDown]
+	and B_BUTTON
+	cp B_BUTTON
+	jr z, .walk
+.runningstand
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
 
 .walk
 	ld hl, wPokegearFlags
@@ -817,55 +862,6 @@ ENDM
 .BikeCheck:
 	ld a, [wPlayerState]
 	cp PLAYER_BIKE
-	ret
-
-.RunCheck:
-	ld hl, wPokegearFlags
-	bit RUNNING_SHOES_F, [hl]
-	ret z
-	ld a, [wPlayerState]
-	cp PLAYER_NORMAL
-	jr nz, .running
-	call GetMapEnvironment
-	cp INDOOR
-	ret z
-	cp DUNGEON
-	ret z
-	cp GYM_CAVE
-	ret z
-	ld a, [hJoypadDown]
-	and B_BUTTON
-	cp B_BUTTON
-	ret nz
-	ld a, [wWalkingDirection]
-	cp STANDING
-	ret z
-	ld a, PLAYER_RUN
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
-	ret
-.running
-	call GetMapEnvironment
-	cp INDOOR
-	jp z, .runningstand
-	cp DUNGEON
-	jp z, .runningstand
-	cp GYM_CAVE
-	jp z, .runningstand
-	ld a, [wPlayerState]
-	cp PLAYER_RUN
-	ret nz
-	ld a, [wWalkingDirection]
-	cp STANDING
-	jr z, .runningstand
-	ld a, [hJoypadDown]
-	and B_BUTTON
-	cp B_BUTTON
-	ret z
-.runningstand
-	ld a, PLAYER_NORMAL
-	ld [wPlayerState], a
-	call ReplaceKrisSprite
 	ret
 
 .CheckWalkable:
