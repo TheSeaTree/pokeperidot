@@ -294,8 +294,8 @@ GrassWildMons:
 	db 12, HOOTHOOT
 	db 11, MANKEY
 	db 11, EKANS
-	db 11, HOUNDOUR
-	db 12, HOUNDOUR
+	db 11, VULPIX
+	db 12, VULPIX
 	db 12, TEDDIURSA
 	db 12, TEDDIURSA
 	
@@ -846,15 +846,15 @@ GrassWildMons:
 	db 21, EKANS
 	db 21, SKIPLOOM
 	db 20, PHANPY
-	db 19, VULPIX
-	db 20, VULPIX
-	db 23, VULPIX
+	db 19, GROWLITHE
+	db 20, GROWLITHE
+	db 23, GROWLITHE
 	; day
 	db 20, BELLSPROUT
 	db 21, EKANS
 	db 21, WEEPINBELL
 	db 20, PHANPY
-	db 19, VULPIX
+	db 19, GROWLITHE
 	db 20, VULPIX
 	db 23, VULPIX
 	; nite
@@ -863,8 +863,8 @@ GrassWildMons:
 	db 21, GLOOM
 	db 20, PHANPY
 	db 19, VULPIX
-	db 20, VULPIX
-	db 23, VULPIX
+	db 20, HOUNDOUR
+	db 23, HOUNDOUR
 
 	map_id ROUTE_30
 	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
@@ -995,12 +995,12 @@ GrassWildMons:
 	; nite
 	db 16, MURKROW
 	db 17, JIGGLYPUFF
-	db 14, GASTLY
 	db 16, PIKACHU
+	db 14, HOUNDOUR
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
-	
+
 	map_id ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1024,10 +1024,10 @@ GrassWildMons:
 	db 16, HOOTHOOT
 	db 16, PSYDUCK
 	db 13, BUTTERFREE
-	db 14, ABRA
+	db 14, GASTLY
 	db 15, BUTTERFREE
-	db 16, BUTTERFREE
-	
+	db 16, MISDREAVUS
+
 	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
