@@ -27,7 +27,7 @@ Route21StaghornGateOfficerText:
 	cont "road up ahead."
 	
 	para "There's nothing I"
-	line "can do. ROUTE 18"
+	line "can do. ROUTE 17"
 	cont "is not in my" 
 	cont "jurisdiction."
 	done
@@ -35,7 +35,7 @@ Route21StaghornGateOfficerText:
 Route21StaghornGateOfficerAfterText:
 	text "Did you clear out"
 	line "the punks blocking"
-	cont "ROUTE 18?"
+	cont "ROUTE 17?"
 	
 	para "Wow kid, you're"
 	line "good!"
