@@ -162,7 +162,7 @@ TrainerCooltrainerFAnya:
 	setevent EVENT_BEAT_COOLTRAINERF_ANYA
 	opentext
 	jump .FightDone
-	
+
 .FightDone
 	checkevent GOT_TOTODILE
 	iftrue .Totodile

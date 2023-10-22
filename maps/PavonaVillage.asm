@@ -89,7 +89,7 @@ CherrygroveYoungsterBattle:
 	special HealParty
 	setscene SCENE_PAVONAVILLAGE_FINISHED
 	end	
-	
+
 CherrygroveTeacherScript:
 	jumptextfaceplayer CherrygroveTeacherText_HaveMapCard
 

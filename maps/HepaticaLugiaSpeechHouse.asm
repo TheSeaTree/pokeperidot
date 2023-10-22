@@ -26,13 +26,13 @@ HepaticaLugiaSpeechHouseTeacherScript:
 	waitbutton
 	closetext
 	end
-	
+
 .BoyfriendGone:
 	writetext HepaticaLugiaSpeechHouseTeacherText
 	waitbutton
 	closetext
 	end
-	
+
 .NoRobbery:
 	writetext HepaticaFlyHouseTeacherBeforeText
 	waitbutton
