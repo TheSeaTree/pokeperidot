@@ -2931,7 +2931,7 @@ BattleTowerMons6:
 	db "SO-NANSU@@@"
 
 	db AERODACTYL
-	db X_ACCURACY
+	db X_ATTACK
 	db HYPER_BEAM, DIVE_BOMB, EARTHQUAKE, STONE_EDGE
 	dw 0 ; OT ID
 	dt 216000 ; Exp

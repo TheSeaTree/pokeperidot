@@ -1641,6 +1641,9 @@ BattleCommand_CheckHit:
 	call .FlyDigMoves
 	jp nz, .Miss
 
+	call .Toxic
+	ret z
+
 	call .ThunderRain
 	ret z
 
@@ -1689,6 +1692,30 @@ BattleCommand_CheckHit:
 	ld b, 0
 
 .skip_brightpowder
+	; If the user is a rock-type using a rock-type move, boost its accuracy by 16%.
+	push bc
+	ld a, ROCK
+	call CheckIfUserIsGivenType
+	ld a, c ; % hit
+	pop bc
+	jr nz, .skip_rockaccuracybonus
+
+	ld a, BATTLE_VARS_MOVE_TYPE
+	call GetBattleVarAddr
+	ld [wCurType], a
+	cp ROCK
+	jr nz, .skip_rockaccuracybonus
+
+	ld c, a
+	ld a, b
+	add c
+	add c
+	ld b, a
+	jr nc, .skip_rockaccuracybonus
+	ld c, a
+	ld b, 0
+
+.skip_rockaccuracybonus
 	ld a, b
 	cp -1
 	ret z
@@ -1805,6 +1832,16 @@ BattleCommand_CheckHit:
 	ret z
 	cp FISSURE
 	ret z
+
+.Toxic:
+; Return z if the user is a Poison-type.
+	ld a, BATTLE_VARS_MOVE_EFFECT
+	call GetBattleVar
+	cp EFFECT_TOXIC
+	ret nz
+
+	ld a, POISON
+	jp CheckIfUserIsGivenType
 
 .ThunderRain:
 ; Return z if the current move always hits in rain, and it is raining.
@@ -3988,6 +4025,22 @@ CheckIfTargetIsGivenType:
 	and a
 	jr z, .ok
 	ld de, wBattleMonType1
+.ok
+	ld a, [de]
+	inc de
+	cp b
+	ret z
+	ld a, [de]
+	cp b
+	ret
+
+CheckIfUserIsGivenType:
+	ld b, a
+	ld de, wBattleMonType1
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .ok
+	ld de, wEnemyMonType1
 .ok
 	ld a, [de]
 	inc de

@@ -103,7 +103,7 @@ Moves: ; 41afb
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,   100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                0, GROUND,    30,  5,   0
 	move DIG,          EFFECT_FLY,                80, GROUND,   100, 10,   0
-	move TOXIC,        EFFECT_TOXIC,               0, POISON,    85, 10,   0
+	move TOXIC,        EFFECT_TOXIC,               0, POISON,    75, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC,  100, 10,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC,   60, 20,   0
@@ -168,7 +168,7 @@ Moves: ; 41afb
 	move FURY_SWIPES,  EFFECT_MULTI_HIT,          18, NORMAL,    80, 15,   0
 	move BONEMERANG,   EFFECT_BONEMERANG,         50, GROUND,    90, 10,   0
 	move REST,         EFFECT_HEAL,                0, PSYCHIC,    1, 10,   0
-	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,      95, 10,  10
+	move ROCK_SLIDE,   EFFECT_FLINCH_HIT,         80, ROCK,      90, 10,  10
 	move CALM_MIND,    EFFECT_CALM_MIND,           0, PSYCHIC,    1, 20,   0
 	move SHARPEN,      EFFECT_ATTACK_UP,           0, NORMAL,     1, 10,   0
 	move CONVERSION,   EFFECT_CONVERSION,          0, NORMAL,     1, 30,   0
@@ -176,7 +176,7 @@ Moves: ; 41afb
 	move WILD_CHARGE,  EFFECT_PARA_RECOIL_HIT,   120, ELECTRIC, 100, 10,  10
 	move GUNK_SHOT,    EFFECT_POISON_HIT,        120, POISON,    80,  5,  30
 	move SUBSTITUTE,   EFFECT_SUBSTITUTE,          0, NORMAL,     1, 10,   0
-	move STONE_EDGE,   EFFECT_NORMAL_HIT,        110, ROCK,      80,  5,   0
+	move STONE_EDGE,   EFFECT_NORMAL_HIT,        100, ROCK,      80,  5,   0
 	move SKETCH,       EFFECT_SKETCH,              0, NORMAL,     1,  1,   0
 	move BULLET_PUNCH, EFFECT_PRIORITY_HIT,       40, STEEL,    100, 30,   0
 	move THIEF,        EFFECT_THIEF,              50, DARK,     100, 20, 100
