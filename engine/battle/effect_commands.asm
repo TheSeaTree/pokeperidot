@@ -1709,7 +1709,9 @@ BattleCommand_CheckHit:
 	ld c, a
 	ld a, b
 	add c
+	jr c, .skip_rockaccuracybonus
 	add c
+	jr c, .skip_rockaccuracybonus
 	ld b, a
 	jr nc, .skip_rockaccuracybonus
 	ld c, a
