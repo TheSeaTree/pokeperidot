@@ -41,11 +41,10 @@ SetSeenMon:
 	dec a
 	call _SetSeenMon
 	ret
-	
+
 CheckOwnedMon:
 	ld a, [wScriptVar]
-	dec a
-	call CheckSeenMon
+	call CheckCaughtMon
 	jr z, FoundNone
 	jr FoundOne
 

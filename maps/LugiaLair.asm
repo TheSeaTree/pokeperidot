@@ -29,14 +29,11 @@ Lugia:
 	waitsfx
 	waitbutton
 	closetext
-	writebyte ARTICUNO
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ARTICUNO
 	iffalse .BossLugia
-	writebyte ZAPDOS
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_ZAPDOS
 	iffalse .BossLugia
-	writebyte MOLTRES
-	special CheckOwnedMon
+	checkevent EVENT_CAUGHT_MOLTRES
 	iffalse .BossLugia
 	special LegendaryEvent_SetBattleType
 	loadwildmon LUGIA, 70
@@ -48,9 +45,6 @@ Lugia:
 	iffalse .FailedCapture
 	setevent EVENT_CAUGHT_LUGIA
 .FailedCapture
-;	special InitRoamArticuno
-;	special InitRoamZapdos
-;	special InitRoamMoltres
 	end
 
 .BossLugia:
@@ -65,7 +59,7 @@ Lugia:
 	setevent EVENT_FOUGHT_LUGIA
 	setevent EVENT_ROAMING_BIRDS
 	end
-	
+
 LugiaText:
 	text "Gyaaas!"
 	done
