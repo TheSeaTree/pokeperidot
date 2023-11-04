@@ -5,7 +5,7 @@ BattleCommand_BrickBreak:
 	call BrickBreak_CheckEnemyScreens
 
 	bit SCREENS_LIGHT_SCREEN, [hl]
-	jp nz, .Shattered
+	jr nz, .Shattered
 	bit SCREENS_REFLECT, [hl]
 	ret z
 .Shattered
@@ -19,7 +19,7 @@ BrickBreak_Anim:
 	call BrickBreak_CheckEnemyScreens
 
 	bit SCREENS_LIGHT_SCREEN, [hl]
-	jp nz, .Shattered
+	jr nz, .Shattered
 	bit SCREENS_REFLECT, [hl]
 	jp z, BattleCommand_MoveAnim
 .Shattered

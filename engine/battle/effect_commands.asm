@@ -5169,7 +5169,7 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_TRAP
 	jp z, .fail
-	cp BATTLETYPE_CELEBI
+	cp BATTLETYPE_LEGENDARY
 	jp z, .fail
 	cp BATTLETYPE_BOSS
 	jp z, .fail
@@ -6782,6 +6782,7 @@ BattleCommand_CheckLegendaryBattle:
 	cp BATTLETYPE_LEGENDARY
 	ret nz
 
+BattleCommand_EndMoveEffect:
 	call AnimateFailedMove
 	call PrintButItFailed
 	jp EndMoveEffect

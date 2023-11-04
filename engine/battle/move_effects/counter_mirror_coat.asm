@@ -5,24 +5,23 @@ BattleCommand_Counter:
 	cp EFFECT_COUNTER
 	ret z
 	call CounterMirrorCoat2
-	cp SPECIAL
 	ret nc
-	jp FinishCounterMirrorCoat
+	jr FinishCounterMirrorCoat
 
 BattleCommand_MirrorCoat:
 ; mirrorcoat
+
 	call CounterMirrorCoat1
 	cp EFFECT_MIRROR_COAT
 	ret z
 	call CounterMirrorCoat2
-	cp SPECIAL
 	ret c
 
 FinishCounterMirrorCoat:
 	ld hl, wCurDamage
 	ld a, [hli]
 	or [hl]
-	jr z, .failed
+	jp z, BattleCommand_EndMoveEffect
 
 	ld a, [hl]
 	add a
@@ -35,15 +34,8 @@ FinishCounterMirrorCoat:
 	ld [hli], a
 	ld [hl], a
 .capped
-
 	xor a
 	ld [wAttackMissed], a
-	ret
-
-.failed
-	ld a, 1
-	ld [wEffectFailed], a
-	and a
 	ret
 
 CounterMirrorCoat1:
@@ -52,7 +44,7 @@ CounterMirrorCoat1:
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
 	and a
-	ret z
+	jp z, BattleCommand_EndMoveEffect
 
 	ld b, a
 	callfar GetMoveEffect
@@ -63,10 +55,10 @@ CounterMirrorCoat2:
 	call BattleCommand_ResetTypeMatchup
 	ld a, [wTypeMatchup]
 	and a
-	ret z
+	jp z, BattleCommand_EndMoveEffect
 
 	call CheckOpponentWentFirst
-	ret z
+	jp z, BattleCommand_EndMoveEffect
 
 	ld a, BATTLE_VARS_LAST_COUNTER_MOVE_OPP
 	call GetBattleVar
@@ -76,7 +68,8 @@ CounterMirrorCoat2:
 
 	ld a, [wStringBuffer1 + MOVE_POWER]
 	and a
-	ret z
+	jp z, BattleCommand_EndMoveEffect
 
 	ld a, [wStringBuffer1 + MOVE_TYPE]
+	cp SPECIAL
 	ret

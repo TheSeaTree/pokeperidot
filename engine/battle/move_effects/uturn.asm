@@ -51,7 +51,7 @@ BattleCommand_UTurnAnim:
 
 	farcall CheckPlayerHasMonToSwitchTo
 	jp nz, BattleCommand_MoveAnim
-	jp .reappear
+	jr .reappear
 
 .enemy_turn:	
 	farcall FindAliveEnemyMons
