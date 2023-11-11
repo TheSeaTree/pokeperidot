@@ -117,6 +117,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext PokefanFeliciaWinText, PokefanFeliciaLossText
     loadtrainer POKEFANF, FELICIA
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER1, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -136,6 +137,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext PokefanIrvingWinText, PokefanIrvingLossText
     loadtrainer POKEFANM, IRVING
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER2, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -155,6 +157,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext GentlemanRonWinText, GentlemanRonLossText
     loadtrainer GENTLEMAN, RON
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER3, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -174,6 +177,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext TeacherCeceliaWinText, TeacherCeceliaLossText
     loadtrainer TEACHER, CECELIA
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER4, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -193,6 +197,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext SuperNerdNorbertWinText, SuperNerdNorbertLossText
     loadtrainer SUPER_NERD, NORBERT
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER5, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -212,6 +217,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext BeautyGraceWinText, BeautyGraceLossText
     loadtrainer BEAUTY, GRACE
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER6, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -231,6 +237,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext CooltrainerEdgarWinText, CooltrainerEdgarLossText
     loadtrainer COOLTRAINERM, EDGAR
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER7, TrainerHouseTrainerLeaveMovement
 	jump .CheckStreak
 
@@ -250,6 +257,7 @@ TrainerHouse_LoadTrainer:
 	winlosstext CooltrainerAbbyWinText, CooltrainerAbbyLossText
     loadtrainer COOLTRAINERF, ABBY
 	scall .DoBattle
+	ifnotequal $0, .ChallengeDefeat
 	applymovement TRAINERHOUSE_TRAINER8, TrainerHouseTrainerLeaveMovement
 
 .CheckStreak
@@ -265,7 +273,6 @@ TrainerHouse_LoadTrainer:
 	writecode VAR_BATTLETYPE, BATTLETYPE_NOCASH
 	startbattle
 	reloadmap
-	ifnotequal $0, .ChallengeDefeat
 	end
 
 .ChallengeDefeat
@@ -594,7 +601,10 @@ TrainerHouseDeclineText:
 	done
 
 TrainerHouseChallengeOverText:
-	text "Your knockout"
+	text "Attention, CHALL-"
+	line "ENGER <PLAYER>."
+	
+	para "Your knockout"
 	line "challenge is over."
 
 	para "Please return to"
