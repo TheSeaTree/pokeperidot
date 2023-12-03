@@ -6,8 +6,6 @@ BattleCommand_Teleport:
 	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_TRAP
 	jp z, BattleEffect_ButItFailed
-	cp BATTLETYPE_LEGENDARY
-	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_BOSS
 	jp z, BattleEffect_ButItFailed
 
