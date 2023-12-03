@@ -3,7 +3,16 @@
 PastElkhornTown_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .VariableSprites
+
+.VariableSprites
+	variablesprite SPRITE_PAST_MOM, SPRITE_RED_PAST_MOM
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iffalse .Done
+	variablesprite SPRITE_PAST_MOM, SPRITE_BLUE_PAST_MOM
+.Done
+	return
 	
 PastElkhornTown_MapEvents:
 	db 0, 0 ; filler
