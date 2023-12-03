@@ -44,6 +44,7 @@ SetSeenMon:
 
 CheckOwnedMon:
 	ld a, [wScriptVar]
+	dec a
 	call CheckCaughtMon
 	jr z, FoundNone
 	jr FoundOne
