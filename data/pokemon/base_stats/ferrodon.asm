@@ -9,7 +9,7 @@
 	db NO_ITEM, METAL_COAT ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1
-	db 1 ; step cycles to hatch
+	db 20 ; step cycles to hatch
 	db 5 ; unknown 2
 	INCBIN "gfx/pokemon/ferrodon/front.dimensions"
 	db 0, 0, 0, 0 ; padding
