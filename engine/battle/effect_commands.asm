@@ -5169,8 +5169,6 @@ BattleCommand_ForceSwitch:
 	jp z, .fail
 	cp BATTLETYPE_TRAP
 	jp z, .fail
-	cp BATTLETYPE_LEGENDARY
-	jp z, .fail
 	cp BATTLETYPE_BOSS
 	jp z, .fail
 	ldh a, [hBattleTurn]
@@ -6835,36 +6833,10 @@ GetItemHeldEffect:
 	ret
 
 AnimateCurrentMoveEitherSide:
-	push hl
-	push de
-	push bc
-	ld a, [wKickCounter]
-	push af
-	call BattleCommand_LowerSub
-	pop af
-	ld [wKickCounter], a
-	call PlayDamageAnim
-	call BattleCommand_RaiseSub
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp _AnimateCurrentMoveEitherSide
 
 AnimateCurrentMove:
-	push hl
-	push de
-	push bc
-	ld a, [wKickCounter]
-	push af
-	call BattleCommand_LowerSub
-	pop af
-	ld [wKickCounter], a
-	call LoadMoveAnim
-	call BattleCommand_RaiseSub
-	pop bc
-	pop de
-	pop hl
-	ret
+	jp _AnimateCurrentMove
 
 PlayDamageAnim:
 	xor a
