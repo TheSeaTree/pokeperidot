@@ -9,6 +9,8 @@ SafariZoneArea1_MapScripts:
 .Fence:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Change
+	changeblock  2, 12, $7c
+	changeblock  2, 20, $97
 	return
 
 .Change:
@@ -16,8 +18,6 @@ SafariZoneArea1_MapScripts:
 	changeblock  0, 12, $02
 	changeblock  0, 20, $7e
 	changeblock  0, 22, $02
-	changeblock  2, 12, $7e
-	changeblock  2, 20, $7d
 	return
 
 SafariZoneArea1MoonStone:

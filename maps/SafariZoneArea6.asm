@@ -29,7 +29,7 @@ SafariZoneArea6_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 14, 22, BGEVENT_READ, SafariZoneArea6Sign
+	bg_event 15, 11, BGEVENT_READ, SafariZoneArea6Sign
 	bg_event  6, 10, BGEVENT_READ, SafariZoneArea6RestHouseSign
 
 	db 0 ; object events
