@@ -1466,6 +1466,8 @@ CalcMonStatC:
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jr nz, .MaxDVs
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .MaxDVs
 
 ; Also during link battles.
 	ld a, [wLinkMode]
@@ -1829,6 +1831,10 @@ GivePoke::
 .set_caught_data
 	ld a, [wOptions2]
 	and 1 << NICKNAME_TOGGLE
+	jr nz, .skip_nickname
+	
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jr nz, .skip_nickname
 
 	farcall GiveANickname_YesNo

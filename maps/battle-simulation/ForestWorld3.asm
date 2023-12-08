@@ -9,9 +9,9 @@ ForestWorld3_MapScripts:
 .GrantPoints
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 5
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	return
 
 BattleSimForest3Trainer1:
@@ -22,9 +22,9 @@ BattleSimForest3Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -41,9 +41,9 @@ BattleSimForest3Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -60,9 +60,9 @@ BattleSimForest3Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -79,9 +79,9 @@ BattleSimForest3BonusTrainer:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 10
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -99,6 +99,7 @@ BattleSimForest3Itemball1:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 .No
+	closetext
 	end
 
 BattleSimForest3Itemball2:
@@ -110,6 +111,7 @@ BattleSimForest3Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimForest3Itemball3:
@@ -121,6 +123,7 @@ BattleSimForest3Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 BattleSimForest3Itemball4:
@@ -132,6 +135,7 @@ BattleSimForest3Itemball4:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 .No
+	closetext
 	end
 
 ForestWorld3_MapEvents:
@@ -146,10 +150,10 @@ ForestWorld3_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	object_event 30,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer1, -1
-	object_event 24, 24, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, BattleSimForest3Trainer2, -1
-	object_event 10, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer3, -1
-	object_event 10, 23, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimForest3BonusTrainer, -1
+	object_event 30,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer1, -1
+	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, BattleSimForest3Trainer2, -1
+	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer3, -1
+	object_event 10, 23, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimForest3BonusTrainer, -1
 	object_event 29, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 32, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event  7,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

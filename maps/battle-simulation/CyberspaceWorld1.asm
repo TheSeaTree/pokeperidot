@@ -1,5 +1,4 @@
 	const_def 2 ; object constants
-	const CYBERSPACE_VOLTORB
 
 CyberspaceWorld1_MapScripts:
 	db 0 ; scene scripts
@@ -52,16 +51,98 @@ CyberspaceWorld1_MapScripts:
 	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
-VoltorbTest:
-	cry VOLTORB
-	applymovement CYBERSPACE_VOLTORB, VoltorbTestWalk
+BattleSimCyberspace1Trainer1
+	trainer SCIENTIST, COMP1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
 	end
 
-VoltorbTestWalk:
-	run_step RIGHT
-	run_step RIGHT
-	run_step RIGHT
-	step_resume
+BattleSimCyberspace1Trainer2:
+	trainer ENGINEER, COMP1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCyberspace1Trainer3:
+	trainer SUPER_NERD, COMP1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimCyberspace1Itemball1:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
+	closetext
+	end
+
+BattleSimCyberspace1Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	closetext
+	end
+
+BattleSimCyberspace1Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
+	closetext
+	end
 
 CyberspaceWorld1_MapEvents:
 	db 0, 0 ; filler
@@ -74,5 +155,10 @@ CyberspaceWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  9, 15, SPRITE_VOLTORB, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VoltorbTest, -1
+	db 6 ; object events
+	object_event  6, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer1, -1
+	object_event 10, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer2, -1
+	object_event  3,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer3, -1
+	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  2,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event 17, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

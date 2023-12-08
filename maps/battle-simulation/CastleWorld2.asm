@@ -9,9 +9,9 @@ CastleWorld2_MapScripts:
 .SetRandomWarps
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 
 	setevent EVENT_BATTLE_SIM_VISITED_CASTLE
 .Reroll
@@ -30,7 +30,7 @@ CastleWorld2_MapScripts:
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_COMP_3
+	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpGraveyard:
@@ -65,9 +65,9 @@ BattleSimCastle2Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -84,9 +84,9 @@ BattleSimCastle2Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -103,9 +103,9 @@ BattleSimCastle2Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -123,6 +123,7 @@ BattleSimCastle2Itemball1:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 .No
+	closetext
 	end
 
 BattleSimCastle2Itemball2:
@@ -134,6 +135,7 @@ BattleSimCastle2Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimCastle2Itemball3:
@@ -145,6 +147,7 @@ BattleSimCastle2Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 CastleWorld2_MapEvents:
@@ -159,9 +162,9 @@ CastleWorld2_MapEvents:
 	db 0 ; bg events
 
 	db 7 ; object events
-	object_event 24,  9, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer1, -1
-	object_event  8, 21, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer2, -1
-	object_event 16,  9, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer3, -1
+	object_event 24,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer1, -1
+	object_event  8, 21, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer2, -1
+	object_event 16,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimCastle2Trainer3, -1
 	object_event  2, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 11, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event 15,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimCastle2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

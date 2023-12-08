@@ -10,9 +10,9 @@ GraveyardWorld3_MapScripts:
 .GrantPoints
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 5
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	return
 
 .Gates:
@@ -56,9 +56,9 @@ BattleSimGraveyard3Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -75,9 +75,9 @@ BattleSimGraveyard3Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -94,9 +94,9 @@ BattleSimGraveyard3Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -113,9 +113,9 @@ BattleSimGraveyard3BonusTrainer:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 10
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -133,6 +133,7 @@ BattleSimGraveyard3Itemball1:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 .No
+	closetext
 	end
 
 BattleSimGraveyard3Itemball2:
@@ -144,6 +145,7 @@ BattleSimGraveyard3Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimGraveyard3Itemball3:
@@ -155,6 +157,7 @@ BattleSimGraveyard3Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 BattleSimGraveyard3Itemball4:
@@ -166,6 +169,7 @@ BattleSimGraveyard3Itemball4:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 .No
+	closetext
 	end
 
 GraveyardWorld3_MapEvents:
@@ -181,10 +185,10 @@ GraveyardWorld3_MapEvents:
 	bg_event 12, 10, BGEVENT_UP, Graveyard3Switch
 
 	db 9 ; object events
-	object_event  9, 30, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard3Trainer1, -1
-	object_event 20, 22, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, BattleSimGraveyard3Trainer2, -1
-	object_event 52, 23, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard3Trainer3, -1
-	object_event 37, 31, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimGraveyard3BonusTrainer, -1
+	object_event  9, 30, SPRITE_GRANNY, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, BattleSimGraveyard3Trainer1, -1
+	object_event 20, 22, SPRITE_OFFICER_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, BattleSimGraveyard3Trainer2, -1
+	object_event 52, 23, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, BattleSimGraveyard3Trainer3, -1
+	object_event 37, 31, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimGraveyard3BonusTrainer, -1
 	object_event  9, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 26, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event 46, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

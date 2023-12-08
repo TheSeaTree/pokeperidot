@@ -203,3 +203,4 @@ SpecialsPointers::
 	add_special LegendaryEvent_SetBattleType
 	add_special CheckOtherPlayerGender
 	add_special PokePDA
+	add_special BattleSimGiftMon

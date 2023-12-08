@@ -10,9 +10,9 @@ GraveyardWorld2_MapScripts:
 .SetRandomWarps
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 
 	setevent EVENT_BATTLE_SIM_VISITED_GRAVEYARD
 .Reroll
@@ -31,7 +31,7 @@ GraveyardWorld2_MapScripts:
 .WarpComputer:
 	checkevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 	iftrue .Reroll
-;	warpmod 1, BATTLE_SIM_COMP_3
+	warpmod 1, BATTLE_SIM_COMP_3
 	return
 
 .WarpSky:
@@ -193,6 +193,99 @@ Graveyard2Switch4:
 	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_4
 	end
 
+BattleSimGraveyard2Trainer1:
+	trainer MEDIUM, GRAVE2_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimGraveyard2Trainer2:
+	trainer OFFICER, GRAVE2_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimGraveyard2Trainer3:
+	trainer POKEMANIAC, GRAVE2_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimGraveyard2Itemball1:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
+	closetext
+	end
+
+BattleSimGraveyard2Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	closetext
+	end
+
+BattleSimGraveyard2Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
+	closetext
+	end
+
 GraveyardWorld2_MapEvents:
 	db 0, 0 ; filler
 
@@ -208,4 +301,11 @@ GraveyardWorld2_MapEvents:
 	bg_event  4,  4, BGEVENT_UP, Graveyard2Switch3
 	bg_event 28,  8, BGEVENT_UP, Graveyard2Switch4
 
-	db 0 ; object events
+	db 7 ; object events
+	object_event 21, 14, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard2Trainer1, -1
+	object_event  2, 15, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard2Trainer2, -1
+	object_event  9, 11, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 3, BattleSimGraveyard2Trainer3, -1
+	object_event  5, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimGraveyard2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  0, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimGraveyard2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event  5,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimGraveyard2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event 10,  2, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1

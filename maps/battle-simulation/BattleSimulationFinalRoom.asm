@@ -13,10 +13,42 @@ BattleSimulationFinalRoom_MapScripts:
 BattleSimulationMaple:
 	opentext
 	faceplayer
+	writetext BattleSimulationMapleChallengeText
+	winlosstext BattleSimulationMapleWinText, 0
 	loadtrainer PROFESSOR, MAPLE
 	startbattle
-	closetext
+	reloadmap
+	ifnotequal $0, .Loss
+	copybytetovar wBlueCardBalance
+	addvar 25
+	copyvartobyte wBlueCardBalance
+.Loss
+	special FadeOutPalettes
+	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
 	end
+
+BattleSimulationMapleChallengeText:
+	text "MAPLE: Oh!"
+	line "You made it!"
+
+	para "I'm not the real"
+	line "PROF. MAPLE, I am"
+	cont "an AI used to"
+	cont "battle."
+
+	para "If you can defeat"
+	line "me, you will have"
+	cont "won the BATTLE"
+	cont "SIMULATION!"
+	done
+
+BattleSimulationMapleWinText:
+	text "Congratulations,"
+	line "<PLAYER>!"
+
+	para "You have won the"
+	line "BATTLE SIMULATION!"
+	done
 
 BattleSimulationFinalRoom_MapEvents:
 	db 0, 0 ; filler

@@ -7,6 +7,7 @@ IceWorld1_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .SetRandomWarps
 
 .SetRandomWarps
+	special UpdatePartyStats
 	setevent EVENT_BATTLE_SIM_VISITED_ICE_CAVE
 .Reroll
 	random 6
@@ -59,9 +60,9 @@ BattleSimIce1Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -78,14 +79,69 @@ BattleSimIce1Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
 	waitbutton
+	closetext
+	end
+
+BattleSimIce1Trainer3:
+	trainer FISHER, ICE1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimIce1Itemball1:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
+	closetext
+	end
+
+BattleSimIce1Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	closetext
+	end
+
+BattleSimIce1Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
 	closetext
 	end
 
@@ -100,6 +156,10 @@ IceWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  2, 15, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimIce1Trainer1, -1
-	object_event 15, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimIce1Trainer2, -1
+	db 6 ; object events
+	object_event 10,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimIce1Trainer1, -1
+	object_event  3,  8, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimIce1Trainer2, -1
+	object_event  5, 17, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimIce1Trainer3, -1
+	object_event 17,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  3, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event  2,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

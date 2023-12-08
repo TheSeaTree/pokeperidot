@@ -169,7 +169,7 @@ StartMenu_PrintSimulationStatus:
 	ld de, .SimulationPoints
 	call PlaceString
 	hlcoord 16, 2
-	ld de, wSimulationPoints
+	ld de, wBlueCardBalance
 	lb bc, 1, 3
 	call PrintNum
 	pop af

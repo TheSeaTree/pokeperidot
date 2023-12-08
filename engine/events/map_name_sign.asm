@@ -78,6 +78,8 @@ ReturnFromMapSetupScript::
 	ret z
 	cp THE_PAST
 	ret z
+	cp BATTLE_SIM
+	ret z
 	cp LOST_LAND
 	jr nz, .DisplayMapName
 	; Lost Land will only display the map name if the player has visited previously.

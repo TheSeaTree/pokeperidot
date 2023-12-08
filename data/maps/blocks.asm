@@ -957,8 +957,8 @@ CyberspaceWorld1_Blocks:
 CyberspaceWorld2_Blocks:
 	INCBIN "maps/battle-simulation/CyberspaceWorld2.ablk"
 
-;CyberspaceWorld3_Blocks:
-;	INCBIN "maps/battle-simulation/CyberspaceWorld3.ablk"
+CyberspaceWorld3_Blocks:
+	INCBIN "maps/battle-simulation/CyberspaceWorld3.ablk"
 
 GraveyardWorld1_Blocks:
 	INCBIN "maps/battle-simulation/GraveyardWorld1.ablk"

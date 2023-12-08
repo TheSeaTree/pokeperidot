@@ -236,3 +236,7 @@
 	tilecoll FLOOR, WALL, FLOOR, WALL ; eb
 	tilecoll WALL, WALL, WALL, WALL ; ec
 	tilecoll WALL, WALL, WALL, WALL ; ed
+	tilecoll FLOOR, FLOOR, HOP_DOWN, HOP_DOWN ; ee
+	tilecoll FLOOR, FLOOR, HOP_DOWN, HOP_DOWN ; ef
+	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f0
+	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f1

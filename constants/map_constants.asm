@@ -458,7 +458,7 @@ ENDM
 
 	map_const BATTLE_SIM_COMP_1,							 9, 10
 	map_const BATTLE_SIM_COMP_2,							12, 13
-;	map_const BATTLE_SIM_COMP_3,							12, 13
+	map_const BATTLE_SIM_COMP_3,							15, 15
 
 	map_const BATTLE_SIM_GRAVE_1,							10, 10
 	map_const BATTLE_SIM_GRAVE_2,							16, 14

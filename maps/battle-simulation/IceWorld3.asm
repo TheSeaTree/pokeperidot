@@ -9,9 +9,9 @@ IceWorld3_MapScripts:
 .GrantPoints
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 5
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	return
 
 BattleSimIce3Trainer1:
@@ -22,9 +22,9 @@ BattleSimIce3Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -41,9 +41,9 @@ BattleSimIce3Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -60,9 +60,9 @@ BattleSimIce3Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -79,9 +79,9 @@ BattleSimIce3BonusTrainer:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 10
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -110,6 +110,7 @@ BattleSimIce3Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimIce3Itemball3:
@@ -121,6 +122,7 @@ BattleSimIce3Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 BattleSimIce3Itemball4:
@@ -132,6 +134,7 @@ BattleSimIce3Itemball4:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 .No
+	closetext
 	end
 
 IceWorld3_MapEvents:
@@ -146,10 +149,10 @@ IceWorld3_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	object_event 27, 16, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimIce3Trainer1, -1
-	object_event 13, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, BattleSimIce3Trainer2, -1
-	object_event  3, 10, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimIce3Trainer3, -1
-	object_event 19, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimIce3BonusTrainer, -1
+	object_event 32, 23, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimIce3Trainer1, -1
+	object_event 10, 13, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, BattleSimIce3Trainer2, -1
+	object_event  4,  9, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimIce3Trainer3, -1
+	object_event 19, 13, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, BattleSimIce3BonusTrainer, -1
 	object_event  4,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 39,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event 29,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimIce3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

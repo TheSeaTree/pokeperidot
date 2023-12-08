@@ -576,7 +576,7 @@ PokeBallEffect:
 .done_legend
 	ld a, [wPartyCount]
 	cp PARTY_LENGTH
-	jr z, .SendToPC
+	jp z, .SendToPC
 
 	xor a ; PARTYMON
 	ld [wMonType], a
@@ -600,6 +600,17 @@ PokeBallEffect:
 	ld [hl], a
 
 .SkipPartyMonFriendBall:
+	ld a, [wCurItem]
+	cp CYBER_BALL
+	jr nz, .SkipPartyMonCyberBall
+
+	ld a, [wPartyCount]
+	dec a
+	ld [wCurPartyMon], a
+	call HealPartyMon
+	jp .return_from_capture
+
+.SkipPartyMonCyberBall:
 	ld a, [wOptions2]
 	and 1 << NICKNAME_TOGGLE
 	jp nz, .return_from_capture

@@ -30,8 +30,36 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
+
+	if DEF(_SIMTEST)
+; Skip the intro dialogue for this test.
+; The player chooses their name and gender, and starts right away.
+	ld b, SCGB_GENDER_SELECTION
+	call GetSGBLayout
+	call SetPalettes
+
+	xor a
+	ld [wCurPartySpecies], a
+	farcall InitGender
+	farcall Intro_GetPlayerClass
+
+	ld b, SCGB_GENDER_SELECTION
+	call GetSGBLayout
+	call SetPalettes
+	call NamePlayer
+
+; Force every Pokemon to obey
+	ld hl, wStatusFlags
+	set STATUSFLAGS_HALL_OF_FAME_F, [hl]
+
+; Show BP display on trainer card
+	ld hl, wPokegearFlags
+	set TRAINER_CARD_BP_F, [hl]
+	else
+
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
+	endc
 	call InitializeWorld
 	ld a, 1
 	ld [wPrevLandmark], a

@@ -9,9 +9,9 @@ LavaWorld3_MapScripts:
 .GrantPoints
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 5
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	return
 
 BattleSimLava3Trainer1:
@@ -22,9 +22,9 @@ BattleSimLava3Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -41,9 +41,9 @@ BattleSimLava3Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -60,9 +60,9 @@ BattleSimLava3Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -79,9 +79,9 @@ BattleSimLava3BonusTrainer:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 10
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -99,6 +99,7 @@ BattleSimLava3Itemball1:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 .No
+	closetext
 	end
 
 BattleSimLava3Itemball2:
@@ -110,6 +111,7 @@ BattleSimLava3Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimLava3Itemball3:
@@ -121,6 +123,7 @@ BattleSimLava3Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 BattleSimLava3Itemball4:
@@ -132,6 +135,7 @@ BattleSimLava3Itemball4:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
 .No
+	closetext
 	end
 
 LavaWorld3_MapEvents:
@@ -146,10 +150,10 @@ LavaWorld3_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	object_event 30,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer1, -1
-	object_event 25, 28, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, BattleSimLava3Trainer2, -1
-	object_event 19, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer3, -1
-	object_event 38, 16, SPRITE_GYM_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimLava3BonusTrainer, -1
+	object_event 30,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer1, -1
+	object_event 25, 28, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, BattleSimLava3Trainer2, -1
+	object_event 19, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer3, -1
+	object_event 38, 16, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, BattleSimLava3BonusTrainer, -1
 	object_event 38,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 38, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event  8,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

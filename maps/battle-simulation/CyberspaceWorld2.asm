@@ -9,9 +9,9 @@ CyberspaceWorld2_MapScripts:
 .SetRandomWarps
 	; Make sure this only gives points once.
 	; Adjust the amount of points gained later.
-	copybytetovar wSimulationPoints
+	copybytetovar wBlueCardBalance
 	addvar 1
-	copyvartobyte wSimulationPoints
+	copyvartobyte wBlueCardBalance
 
 	setevent EVENT_BATTLE_SIM_VISITED_COMPUTER
 .Reroll
@@ -65,9 +65,9 @@ BattleSimCyberspace2Trainer1:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
-	addvar 1
-	copyvartobyte wSimulationPoints
+	copybytetovar wBlueCardBalance
+	addvar 3
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -84,9 +84,9 @@ BattleSimCyberspace2Trainer2:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
-	addvar 1
-	copyvartobyte wSimulationPoints
+	copybytetovar wBlueCardBalance
+	addvar 3
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -103,9 +103,9 @@ BattleSimCyberspace2Trainer3:
 	iffalse .After
 	; Text telling the player they gained points
 	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wSimulationPoints
-	addvar 1
-	copyvartobyte wSimulationPoints
+	copybytetovar wBlueCardBalance
+	addvar 3
+	copyvartobyte wBlueCardBalance
 	end
 .After
 	opentext
@@ -123,6 +123,7 @@ BattleSimCyberspace2Itemball1:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 .No
+	closetext
 	end
 
 BattleSimCyberspace2Itemball2:
@@ -134,6 +135,7 @@ BattleSimCyberspace2Itemball2:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 .No
+	closetext
 	end
 
 BattleSimCyberspace2Itemball3:
@@ -145,6 +147,7 @@ BattleSimCyberspace2Itemball3:
 	disappear LAST_TALKED
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 .No
+	closetext
 	end
 
 CyberspaceWorld2_MapEvents:
@@ -159,10 +162,10 @@ CyberspaceWorld2_MapEvents:
 	db 0 ; bg events
 
 	db 7 ; object events
-	object_event  2, 13, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace2Trainer1, -1
-	object_event 21, 16, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, BattleSimCyberspace2Trainer2, -1
-	object_event  7, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace2Trainer3, -1
-	object_event 23, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  8,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace2Trainer1, -1
+	object_event 17,  9, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, BattleSimCyberspace2Trainer2, -1
+	object_event  7, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimCyberspace2Trainer3, -1
+	object_event 16, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 14, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	object_event 16, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	object_event  7,  3, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1
+	object_event 23, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event  8,  9, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1

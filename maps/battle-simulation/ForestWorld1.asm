@@ -51,15 +51,114 @@ ForestWorld1_MapScripts:
 	warpmod 1, BATTLE_SIM_SKY_2
 	return
 
+BattleSimForest1Trainer1:
+	trainer CAMPER, FOREST1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimForest1Trainer2:
+	trainer PICNICKER, FOREST1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimForest1Trainer3:
+	trainer BUG_CATCHER, FOREST1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimForest1Itemball1:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
+	closetext
+	end
+
+BattleSimForest1Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	closetext
+	end
+
+BattleSimForest1Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
+	closetext
+	end
+
 ForestWorld1_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  6, 17, BATTLE_SIMULATION, -1 ; Entrance
-	warp_event 18, 14, BATTLE_SIMULATION, -1 ; Exit
+	warp_event 12, 16, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event 14, 12, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 6 ; object events
+	object_event 12,  9, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimForest1Trainer1, -1
+	object_event  2, 12, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, BattleSimForest1Trainer2, -1
+	object_event  9,  3, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, BattleSimForest1Trainer3, -1
+	object_event 19, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  6,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event  5, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

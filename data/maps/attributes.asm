@@ -606,7 +606,7 @@ ENDM
 	map_attributes SkyWorld3, BATTLE_SIM_SKY_3, $04, 0
 	map_attributes CyberspaceWorld1, BATTLE_SIM_COMP_1, $00, 0
 	map_attributes CyberspaceWorld2, BATTLE_SIM_COMP_2, $00, 0
-;	map_attributes CyberspaceWorld3, BATTLE_SIM_COMP_3, $00, 0
+	map_attributes CyberspaceWorld3, BATTLE_SIM_COMP_3, $00, 0
 	map_attributes GraveyardWorld1, BATTLE_SIM_GRAVE_1, $6d, 0
 	map_attributes GraveyardWorld2, BATTLE_SIM_GRAVE_2, $6d, 0
 	map_attributes GraveyardWorld3, BATTLE_SIM_GRAVE_3, $6d, 0

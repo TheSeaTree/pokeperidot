@@ -51,27 +51,98 @@ SkyWorld1_MapScripts:
 	warpmod 1, BATTLE_SIM_FOREST_2
 	return
 
-ReturnToReality:
+BattleSimSky1Trainer1:
+	trainer BIRD_KEEPER, SKY1_TRAINER1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
 	opentext
-	writetext ReturnToRealityText
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimSky1Trainer2:
+	trainer BEAUTY, SKY1_TRAINER2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimSky1Trainer3:
+	trainer GENTLEMAN, SKY1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+
+.Script:
+	checkjustbattled
+	iffalse .After
+	; Text telling the player they gained points
+	; Alternatively, this text should be shown in the victory screen.
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
+	end
+.After
+	opentext
+	writetext BattleSimTrainerAfterText
+	waitbutton
+	closetext
+	end
+
+BattleSimSky1Itemball1:
+	opentext
+	writetext BattleSimItemBallText
 	yesorno
-	iffalse .Decline
-	closetext
-	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
-	playsound SFX_WARP_FROM
-	special FadeOutPalettes
-	waitsfx
-	writecode VAR_MOVEMENT, PLAYER_HEADSET
-	warpfacing DOWN, BATTLE_SIMULATION, 8, 5
-	end
-
-.Decline
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+.No
 	closetext
 	end
 
-ReturnToRealityText:
-	text "Return to reality?"
-	done
+BattleSimSky1Itemball2:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+.No
+	closetext
+	end
+
+BattleSimSky1Itemball3:
+	opentext
+	writetext BattleSimItemBallText
+	yesorno
+	iffalse .No
+	scall BattleSimItemball
+	disappear LAST_TALKED
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+.No
+	closetext
+	end
 
 SkyWorld1_MapEvents:
 	db 0, 0 ; filler
@@ -84,4 +155,10 @@ SkyWorld1_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 6 ; object events
+	object_event 19,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky1Trainer1, -1
+	object_event 12, 16, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky1Trainer2, -1
+	object_event  4, 10, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky1Trainer3, -1
+	object_event 14,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimSky1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event 19, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimSky1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event 18, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimSky1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
