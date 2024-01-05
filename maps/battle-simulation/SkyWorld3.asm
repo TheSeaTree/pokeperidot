@@ -20,12 +20,7 @@ BattleSimSky3Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -39,12 +34,7 @@ BattleSimSky3Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -58,12 +48,7 @@ BattleSimSky3Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -152,7 +137,7 @@ SkyWorld3_MapEvents:
 	db 9 ; object events
 	object_event 29, 11, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky3Trainer1, -1
 	object_event 23, 26, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, BattleSimSky3Trainer2, -1
-	object_event  5,  0, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky3Trainer3, -1
+	object_event  5,  0, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimSky3Trainer3, -1
 	object_event 38, 16, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, BattleSimSky3BonusTrainer, -1
 	object_event 29, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimSky3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event  1,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimSky3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5

@@ -56,7 +56,7 @@ GraveyardWorld1_MapScripts:
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	iffalse .Gate2
 	changeblock 14, 16, $1e
-	changeblock 16, 18, $6f
+	changeblock  0, 14, $6f
 .Gate2
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_2
 	iffalse .Gate3
@@ -81,12 +81,7 @@ BattleSimGraveyard1Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -100,12 +95,7 @@ BattleSimGraveyard1Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -119,12 +109,7 @@ BattleSimGraveyard1Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -178,7 +163,7 @@ GraveyardSwitch1:
 	checkevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 	iftrue .Reset
 	changeblock 14, 16, $1e
-	changeblock 16, 18, $6f
+	changeblock  0, 14, $6f
 	reloadmappart
 	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
@@ -187,7 +172,7 @@ GraveyardSwitch1:
 
 .Reset
 	changeblock 14, 16, $38
-	changeblock 16, 18, $6e
+	changeblock  0, 14, $6e
 	reloadmappart
 	closetext
 	clearevent EVENT_BATTLE_SIM_GRAVE_GATE_1
@@ -298,7 +283,7 @@ GraveyardWorld1_MapEvents:
 	db 6 ; object events
 	object_event  8,  7, SPRITE_GRANNY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard1Trainer1, -1
 	object_event 12, 11, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimGraveyard1Trainer2, -1
-	object_event  4, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, BattleSimGraveyard1Trainer3, -1
-	object_event  3, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event  4, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 1, BattleSimGraveyard1Trainer3, -1
+	object_event  3, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event 18,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event  3,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimGraveyard1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

@@ -2638,6 +2638,10 @@ WinTrainerBattle:
 	cp BATTLETYPE_NOCASH
 	ret z
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	ret nz
+
 .skip_win_loss_text
 	jp .GiveMoney
 

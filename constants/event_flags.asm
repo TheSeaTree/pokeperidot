@@ -957,6 +957,9 @@
 	const EVENT_ROUTE_23_STAR_PIECE
 	const EVENT_ROUTE_8_HIDDEN_CAVE_X_ATTACK
 	const EVENT_ROUTE_8_HIDDEN_CAVE_X_SP_ATK
+	if DEF(_SIMTEST)
+	const BREAK_SAVE_COMPATIBILITY
+	else
 	const EVENT_3C3
 	const EVENT_3C4
 	const EVENT_3C5
@@ -995,6 +998,7 @@
 	const EVENT_3E6
 	const EVENT_3E7
 
+	endc
 ; Unknown
 	const EVENT_430
 

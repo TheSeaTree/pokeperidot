@@ -57,12 +57,7 @@ BattleSimForest1Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -76,12 +71,7 @@ BattleSimForest1Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -95,12 +85,7 @@ BattleSimForest1Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText

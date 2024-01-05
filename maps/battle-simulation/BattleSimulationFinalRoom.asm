@@ -4,26 +4,39 @@
 BattleSimulationFinalRoom_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .Callback
-
-.Callback
-	return
+	db 0 ; callbacks
 
 BattleSimulationMaple:
 	opentext
 	faceplayer
+	special HealParty
 	writetext BattleSimulationMapleChallengeText
 	winlosstext BattleSimulationMapleWinText, 0
-	loadtrainer PROFESSOR, MAPLE
+	random 4
+	ifequal 1, .Maple2
+	ifequal 2, .Maple3
+	ifequal 3, .Maple4
+	loadtrainer PROFESSOR, MAPLE1
+	jump .DoBattle
+.Maple2
+	loadtrainer PROFESSOR, MAPLE2
+	jump .DoBattle
+.Maple3
+	loadtrainer PROFESSOR, MAPLE3
+	jump .DoBattle
+.Maple4
+	loadtrainer PROFESSOR, MAPLE4
+.DoBattle
+	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
 	reloadmap
 	ifnotequal $0, .Loss
-	copybytetovar wBlueCardBalance
-	addvar 25
-	copyvartobyte wBlueCardBalance
+	setevent EVENT_BATTLE_SIM_DEFEATED_BOSS
 .Loss
 	special FadeOutPalettes
+	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	special ReplaceKrisSprite
 	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
 	end
 

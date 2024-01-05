@@ -1827,14 +1827,14 @@ GivePoke::
 	jr .set_caught_data
 
 .party
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .skip_nickname
+
 	farcall SetCaughtData
 .set_caught_data
 	ld a, [wOptions2]
 	and 1 << NICKNAME_TOGGLE
-	jr nz, .skip_nickname
-	
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jr nz, .skip_nickname
 
 	farcall GiveANickname_YesNo

@@ -51,25 +51,21 @@ BattleSimulation_MapScripts:
 	clearevent EVENT_BATTLE_SIM_CLEARED_1
 	clearevent EVENT_BATTLE_SIM_CLEARED_2
 	clearevent EVENT_BATTLE_SIM_CLEARED_3
-
 	applymovement PLAYER, BattleSimulationPlayerLeaveMachine
 	applymovement BATTLESIMULATION_SCIENTIST1, BattleSimulationBlockEntrance
 	special LoadPokemonData
 	clearflag ENGINE_BATTLE_SIMULATION_ACTIVE
 	setscene SCENE_BATTLESIMULATION_DEFAULT
 	turnobject PLAYER, UP
-	opentext
-	writetext BattleSimulationChallengeEndedText
-	waitbutton
-	closetext
-
-	; Find a way to directly add the player's final score to the coin amount.
-	; This may need to meet thresholds.
-
+; Reward the player BP depending on their final score
+	scall BattleSimGrantBP
 	loadvar wBlueCardBalance, 0
 	opentext
 	special DoQuickSave
+	writetext BattleSimulationComeAgainText
+	waitbutton
 	closetext
+	clearevent EVENT_BATTLE_SIM_DEFEATED_BOSS
 	end
 
 .Scene3:
@@ -79,7 +75,7 @@ BattleSimulation_MapScripts:
 	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationBlockEntrance
 	applymovement PLAYER, BattleSimulationPlayerLeaveTimeMachine
 	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationTimeMachineBlock
-	; Do the re-entry scene after the Celebi boss.
+; Do the re-entry scene after the Celebi boss.
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iffalse .Fainted
 	setscene SCENE_BATTLESIMULATION_DEFAULT
@@ -161,9 +157,31 @@ BattleSimulationGuy:
 
 .Explain
 	writetext BattleSimulationExplainationText
-	waitbutton
-	closetext
+.ExplainMenuLoop
+	loadmenu .ExplainationMenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .Stages
+	ifequal 2, .Pokemon
+	ifequal 3, .Rewards
 	jump .MenuLoop
+
+.Stages
+	writetext BattleSimulationExplainStagesText
+	waitbutton
+	jump .KnowMore
+.Pokemon
+	writetext BattleSimulationExplainPokemonText
+	waitbutton
+	jump .KnowMore
+.Rewards
+	writetext BattleSimulationExplainRewardsText
+	waitbutton
+	jump .KnowMore
+
+.KnowMore
+	writetext BattleSimulationExplainKnowMoreText
+	jump .ExplainMenuLoop
 
 .Decline
 	closetext
@@ -219,6 +237,20 @@ BattleSimulationGuy:
 	db "EXPLAIN@"
 	db "CANCEL@"
 
+.ExplainationMenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0 , 0, 9, 9
+	dw .ExplainationMenuData
+	db 1 ; default option
+
+.ExplainationMenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "STAGES@"
+	db "#MON@"
+	db "REWARDS@"
+	db "CANCEL@"
+
 BattleSimulationBPExchange:
 	faceplayer
 	opentext
@@ -227,17 +259,9 @@ BattleSimulationBPExchange:
 	end
 
 BattleSimulationScientist1:
-;	givecoins 20
-
-	copybytetovar wBlueCardBalance
-	addvar 40
-	copyvartobyte wBlueCardBalance
-	setflag ENGINE_BATTLE_SIMULATION_ACTIVE
 	jumptextfaceplayer BattleSimulationScientist1Text
 
 BattleSimulationScientist2:
-;	givecoins 20
-	scall BattleSimGrantBP
 	jumptextfaceplayer BattleSimulationScientist2Text
 
 BattleSimulationRocker:
@@ -348,82 +372,144 @@ BattleSimHealer:
 	end
 
 BattleSimGrantBP:
+	opentext
 	copybytetovar wBlueCardBalance
+	ifequal 1, .SinglePoint
+	writetext BattleSimulationChallengeEndedText
+	waitbutton
 	ifless 40, .Check35
 	givecoins 9
+	writebyte 9
+	jump .CheckBoss
 .Check35
 	ifless 35, .Check30
 	givecoins 8
+	writebyte 8
+	jump .CheckBoss
 .Check30
 	ifless 30, .Check25
 	givecoins 7
+	writebyte 7
+	jump .CheckBoss
 .Check25
 	ifless 25, .Check20
 	givecoins 6
+	writebyte 6
+	jump .CheckBoss
 .Check20
 	ifless 20, .Check15
 	givecoins 5
+	writebyte 5
+	jump .CheckBoss
 .Check15
 	ifless 15, .Check10
 	givecoins 4
+	writebyte 4
+	jump .CheckBoss
 .Check10
 	ifless 10, .Check5
 	givecoins 3
+	writebyte 3
+	jump .CheckBoss
 .Check5
 	ifless  5, .LessThan5
 	givecoins 2
+	writebyte 2
+	jump .CheckBoss
+.SinglePoint
+	writetext BattleSimulationChallengeEndedSinglePointText
+	waitbutton
 .LessThan5
 	givecoins 1
+	writebyte 1
+.CheckBoss
+	writetext BattleSimulationRewardText
+	waitbutton
 	checkevent EVENT_BATTLE_SIM_DEFEATED_BOSS
 	iffalse .End
+	writetext BattleSimulationBossRewardText
+	waitbutton
 	givecoins 11
 .End
+	closetext
 	end
 
 SimulationStage1TrainerCheck:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .end
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .end
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iffalse .end
-	setevent EVENT_BATTLE_SIM_CLEARED_1
 	opentext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iffalse .SinglePoint
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iffalse .SinglePoint
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
+	iffalse .SinglePoint
+	setevent EVENT_BATTLE_SIM_CLEARED_1
 	writetext BattleSimDefeatedAllTrainersText
 	waitbutton
 	closetext
 	copybytetovar wBlueCardBalance
 	addvar 5
 	copyvartobyte wBlueCardBalance
-.end
+	end
+
+.SinglePoint
+	writetext BattleSimTrainerRewardText
+	waitbutton
+	closetext
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
 	end
 
 SimulationStage2TrainerCheck:
+	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .end
+	iffalse .SinglePoint
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .end
+	iffalse .SinglePoint
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iffalse .end
+	iffalse .SinglePoint
 	setevent EVENT_BATTLE_SIM_CLEARED_2
+	writetext BattleSimDefeatedAllTrainersText
+	waitbutton
+	closetext
 	copybytetovar wBlueCardBalance
 	addvar 5
 	copyvartobyte wBlueCardBalance
-.end
+	end
+
+.SinglePoint
+	writetext BattleSimTrainerRewardText
+	waitbutton
+	closetext
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
 	end
 
 SimulationStage3TrainerCheck:
+	opentext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
-	iffalse .end
+	iffalse .SinglePoint
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
-	iffalse .end
+	iffalse .SinglePoint
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
-	iffalse .end
+	iffalse .SinglePoint
 	setevent EVENT_BATTLE_SIM_CLEARED_3
+	writetext BattleSimDefeatedAllTrainersText
+	waitbutton
+	closetext
 	copybytetovar wBlueCardBalance
 	addvar 5
 	copyvartobyte wBlueCardBalance
-.end
+	end
+
+.SinglePoint
+	writetext BattleSimTrainerRewardText
+	waitbutton
+	closetext
+	copybytetovar wBlueCardBalance
+	addvar 1
+	copyvartobyte wBlueCardBalance
 	end
 
 SimulationMoveReminder:
@@ -509,19 +595,57 @@ BattleSimulationMenuText:
 	done
 
 BattleSimulationExplainationText:
-	text "In the BATTLE"
-	line "SIMULATION, you"
-	cont "will use a rental"
-	cont "#MON in order"
-	cont "to complete 3"
-	cont "stages."
+	text "What would you"
+	line "like to know?"
+	done
 
-	para "BP will be awarded"
+BattleSimulationExplainStagesText:
+	text "Players will expl-"
+	line "ore 3 randomly-"
+	cont "selected stages in"
+	cont "each run, with"
+	cont "each stage becom-"
+	cont "ing more difficult"
+	cont "than the last."
+
+	para "If a player has no"
+	line "more #MON to"
+	cont "battle with, their"
+	cont "run will end and"
+	cont "their final score"
+	cont "tallied up."
+	done
+
+BattleSimulationExplainPokemonText:
+	text "Players will be"
+	line "loaned a PORYGON2"
+	cont "for each BATTLE"
+	cont "SIMULATION run."
+
+	para "Players can catch"
+	line "more #MON with"
+	cont "their CYBER BALLs"
+	cont "given at the start"
+	cont "of a run."
+
+	para "Do note that all"
+	line "#MON will be"
+	cont "returned at the"
+	cont "end of a run."
+	done
+
+BattleSimulationExplainRewardsText:
+	text "BP will be awarded"
 	line "for each completed"
 	cont "stage, with a"
 	cont "bonus for defeat-"
 	cont "ing every trainer"
-	cont "in a stage."
+	cont "within that stage."
+	done
+
+BattleSimulationExplainKnowMoreText:
+	text "Would you like to"
+	line "know more?"
 	done
 
 BattleSimulationPrepareSaveText:
@@ -538,10 +662,19 @@ BattleSimulationTakeASeatText:
 	done
 
 BattleSimulationChallengeEndedText:
-	text "You gained @"
+	text "Your run ended"
+	line "with you gaining"
+	cont "@"
 	text_decimal wBlueCardBalance, 1, 2
-	line "POINTs during that"
-	cont "run."
+	text " POINTs."
+	done
+
+BattleSimulationChallengeEndedSinglePointText:
+	text "Your run ended"
+	line "with you gaining"
+	cont "@"
+	text_decimal wBlueCardBalance, 1, 2
+	text " POINT."
 	done
 
 BattleSimulationRewardText:
@@ -557,6 +690,12 @@ BattleSimulationBossRewardText:
 	cont "PROF. MAPLE, you"
 	cont "have earned 11"
 	cont "additional BP!"
+	done
+
+BattleSimulationComeAgainText:
+	text "We hope you take"
+	line "on the BATTLE"
+	cont "SIMULATION again."
 	done
 
 BattleSimulationChallengeCancelled:
@@ -662,6 +801,12 @@ BattleSimTrainerWinText:
 	para "Winner: <PLAYER>."
 	done
 
+BattleSimTrainerRewardText:
+	text "For defeating a"
+	line "trainer, you have"
+	cont "gained 1 point."
+	done
+
 BattleSimTrainerAfterText:
 	text "Unable to battle."
 	done
@@ -739,8 +884,8 @@ BattleSimulation_MapEvents:
 
 	db 7 ; object events
 	object_event  8,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimulationGuy, -1
-	object_event 16,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist1, -1
-	object_event 19,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist2, -1
+	object_event 16,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist1, -1
+	object_event 19,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist2, -1
 	object_event 19,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationBPExchange, -1
 	object_event  6, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationTimeMachineGuy, -1
 	object_event 11, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationRocker, -1

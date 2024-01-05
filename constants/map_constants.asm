@@ -478,7 +478,7 @@ ENDM
 
 	map_const BATTLE_SIM_FOREST_1,							10, 10
 	map_const BATTLE_SIM_FOREST_2,							15, 14
-	map_const BATTLE_SIM_FOREST_3,							21, 19
+	map_const BATTLE_SIM_FOREST_3,							21, 18
 
 	map_const BATTLE_SIMULATION_FINAL_ROOM,				  	 3,  4
 

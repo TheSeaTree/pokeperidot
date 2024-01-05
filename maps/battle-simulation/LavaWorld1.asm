@@ -57,12 +57,7 @@ BattleSimLava1Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -76,12 +71,7 @@ BattleSimLava1Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -90,17 +80,12 @@ BattleSimLava1Trainer2:
 	end
 
 BattleSimLava1Trainer3:
-	trainer HIKER, LAVA1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
+	trainer HIKER, LAVA1_TRAINER3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3, BattleSimTrainerText, BattleSimTrainerWinText, 0, .Script
 
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText

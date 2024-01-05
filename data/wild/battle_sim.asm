@@ -1,7 +1,7 @@
 SimulationWildMons:
 
 	map_id BATTLE_SIM_SKY_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, FEAROW
 	db 50, JUMPLUFF
@@ -28,7 +28,7 @@ SimulationWildMons:
 	db 50, DUNSPARCE
 
 	map_id BATTLE_SIM_SKY_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, FEAROW
 	db 50, JUMPLUFF
@@ -55,7 +55,7 @@ SimulationWildMons:
 	db 50, DUNSPARCE
 
 	map_id BATTLE_SIM_SKY_3
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, FEAROW
 	db 50, JUMPLUFF
@@ -82,7 +82,7 @@ SimulationWildMons:
 	db 50, DUNSPARCE
 
 	map_id BATTLE_SIM_COMP_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAGNETON
 	db 50, ELECTRODE
@@ -109,7 +109,7 @@ SimulationWildMons:
 	db 50, STARMIE
 
 	map_id BATTLE_SIM_COMP_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAGNETON
 	db 50, ELECTRODE
@@ -135,35 +135,35 @@ SimulationWildMons:
 	db 50, STARMIE
 	db 50, STARMIE
 
-;	map_id BATTLE_SIM_COMP_3
-;	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	map_id BATTLE_SIM_COMP_3
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
-;	db 50, MAGNETON
-;	db 50, ELECTRODE
-;	db 50, SCIZOR
-;	db 50, ELECTABUZZ
-;	db 50, JOLTEON
-;	db 50, STARMIE
-;	db 50, STARMIE
+	db 50, MAGNETON
+	db 50, ELECTRODE
+	db 50, SCIZOR
+	db 50, ELECTABUZZ
+	db 50, JOLTEON
+	db 50, STARMIE
+	db 50, STARMIE
 	; day
-;	db 50, MAGNETON
-;	db 50, ELECTRODE
-;	db 50, SCIZOR
-;	db 50, ELECTABUZZ
-;	db 50, JOLTEON
-;	db 50, STARMIE
-;	db 50, STARMIE
+	db 50, MAGNETON
+	db 50, ELECTRODE
+	db 50, SCIZOR
+	db 50, ELECTABUZZ
+	db 50, JOLTEON
+	db 50, STARMIE
+	db 50, STARMIE
 	; nite
-;	db 50, MAGNETON
-;	db 50, ELECTRODE
-;	db 50, SCIZOR
-;	db 50, ELECTABUZZ
-;	db 50, JOLTEON
-;	db 50, STARMIE
-;	db 50, STARMIE
+	db 50, MAGNETON
+	db 50, ELECTRODE
+	db 50, SCIZOR
+	db 50, ELECTABUZZ
+	db 50, JOLTEON
+	db 50, STARMIE
+	db 50, STARMIE
 
 	map_id BATTLE_SIM_GRAVE_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAROWAK
 	db 50, MISDREAVUS
@@ -190,7 +190,7 @@ SimulationWildMons:
 	db 50, CURSTRAW
 
 	map_id BATTLE_SIM_GRAVE_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAROWAK
 	db 50, MISDREAVUS
@@ -244,7 +244,7 @@ SimulationWildMons:
 	db 50, CURSTRAW
 
 	map_id BATTLE_SIM_ICE_1
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PILOSWINE
 	db 50, JYNX
@@ -271,7 +271,7 @@ SimulationWildMons:
 	db 50, VAPOREON
 
 	map_id BATTLE_SIM_ICE_2
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PILOSWINE
 	db 50, JYNX
@@ -298,7 +298,7 @@ SimulationWildMons:
 	db 50, VAPOREON
 
 	map_id BATTLE_SIM_ICE_3
-	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PILOSWINE
 	db 50, JYNX
@@ -325,7 +325,7 @@ SimulationWildMons:
 	db 50, VAPOREON
 
 	map_id BATTLE_SIM_CASTLE_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MR__MIME
 	db 50, CLEFABLE
@@ -352,7 +352,7 @@ SimulationWildMons:
 	db 50, SLOWKING
 
 	map_id BATTLE_SIM_CASTLE_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MR__MIME
 	db 50, CLEFABLE
@@ -379,7 +379,7 @@ SimulationWildMons:
 	db 50, SLOWKING
 
 	map_id BATTLE_SIM_CASTLE_3
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MR__MIME
 	db 50, CLEFABLE
@@ -406,7 +406,7 @@ SimulationWildMons:
 	db 50, SLOWKING
 
 	map_id BATTLE_SIM_LAVA_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAGCARGO
 	db 50, ONIX
@@ -433,7 +433,7 @@ SimulationWildMons:
 	db 50, AERODACTYL
 
 	map_id BATTLE_SIM_LAVA_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAGCARGO
 	db 50, ONIX
@@ -460,7 +460,7 @@ SimulationWildMons:
 	db 50, AERODACTYL
 
 	map_id BATTLE_SIM_LAVA_3
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAGCARGO
 	db 50, ONIX
@@ -487,7 +487,7 @@ SimulationWildMons:
 	db 50, AERODACTYL
 
 	map_id BATTLE_SIM_FOREST_1
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PARASECT
 	db 50, HERACROSS
@@ -514,7 +514,7 @@ SimulationWildMons:
 	db 50, PRIMEAPE
 
 	map_id BATTLE_SIM_FOREST_2
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PARASECT
 	db 50, HERACROSS
@@ -541,7 +541,7 @@ SimulationWildMons:
 	db 50, PRIMEAPE
 
 	map_id BATTLE_SIM_FOREST_3
-	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, PARASECT
 	db 50, HERACROSS

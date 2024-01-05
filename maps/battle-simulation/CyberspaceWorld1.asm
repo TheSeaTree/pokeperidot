@@ -57,12 +57,7 @@ BattleSimCyberspace1Trainer1
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -76,12 +71,7 @@ BattleSimCyberspace1Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -95,12 +85,7 @@ BattleSimCyberspace1Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage1TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -156,9 +141,9 @@ CyberspaceWorld1_MapEvents:
 	db 0 ; bg events
 
 	db 6 ; object events
-	object_event  6, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer1, -1
-	object_event 10, 14, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer2, -1
-	object_event  3,  9, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer3, -1
+	object_event  6, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer1, -1
+	object_event 10, 14, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer2, -1
+	object_event  3,  9, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimCyberspace1Trainer3, -1
 	object_event  9,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	object_event  2,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	object_event 17, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimCyberspace1Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6

@@ -116,8 +116,10 @@ CHRIS EQU __enum__
 	const EMILY3 ; Safari Zone Encounter
 
 	trainerclass PROFESSOR ; a
-	const TEST
-	const MAPLE
+	const MAPLE1
+	const MAPLE2
+	const MAPLE3
+	const MAPLE4
 
 	trainerclass CAL ; c
 	const CAL1

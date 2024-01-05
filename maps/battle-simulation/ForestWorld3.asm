@@ -20,12 +20,7 @@ BattleSimForest3Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -39,12 +34,7 @@ BattleSimForest3Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -58,12 +48,7 @@ BattleSimForest3Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -150,12 +135,12 @@ ForestWorld3_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	object_event 30,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer1, -1
-	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, BattleSimForest3Trainer2, -1
-	object_event 10, 14, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer3, -1
-	object_event 10, 23, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimForest3BonusTrainer, -1
-	object_event 29, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	object_event 32, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	object_event  7,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	object_event  7, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball4, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	object_event 18,  5, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1
+	object_event 27,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimForest3Trainer1, -1
+	object_event 24, 24, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, BattleSimForest3Trainer2, -1
+	object_event 13, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, BattleSimForest3Trainer3, -1
+	object_event 11, 16, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, BattleSimForest3BonusTrainer, -1
+	object_event 32, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event 27, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event 11, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event  4,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimForest3Itemball4, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	object_event 28, 14, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1

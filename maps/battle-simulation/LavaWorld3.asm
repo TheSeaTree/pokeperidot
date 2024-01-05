@@ -20,12 +20,7 @@ BattleSimLava3Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -39,12 +34,7 @@ BattleSimLava3Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -58,12 +48,7 @@ BattleSimLava3Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -150,12 +135,12 @@ LavaWorld3_MapEvents:
 	db 0 ; bg events
 
 	db 9 ; object events
-	object_event 30,  4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer1, -1
-	object_event 25, 28, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, BattleSimLava3Trainer2, -1
-	object_event 19, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimLava3Trainer3, -1
-	object_event 38, 16, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, BattleSimLava3BonusTrainer, -1
-	object_event 38,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	object_event 38, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	object_event  8,  9, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	object_event  3, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball4, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
-	object_event 16, 22, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1
+	object_event 10, 31, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, BattleSimLava3Trainer1, -1
+	object_event 25, 26, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, BattleSimLava3Trainer2, -1
+	object_event 23, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, BattleSimLava3Trainer3, -1
+	object_event 36,  7, SPRITE_BLACK_BELT, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 0, BattleSimLava3BonusTrainer, -1
+	object_event 37, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event 36, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event 11, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event 15, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimLava3Itemball4, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_7
+	object_event 10,  4, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimMoveRelearner, -1

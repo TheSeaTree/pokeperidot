@@ -63,12 +63,7 @@ BattleSimLava2Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage2TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -82,12 +77,7 @@ BattleSimLava2Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage2TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -101,12 +91,7 @@ BattleSimLava2Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage2TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -154,7 +139,7 @@ LavaWorld2_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 16, 10, BATTLE_SIMULATION, -1 ; Entrance
+	warp_event 32, 24, BATTLE_SIMULATION, -1 ; Entrance
 	warp_event 29,  1, BATTLE_SIMULATION, -1 ; Exit
 
 	db 0 ; coord events
@@ -163,9 +148,9 @@ LavaWorld2_MapEvents:
 
 	db 7 ; object events
 	object_event 24,  9, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, BattleSimLava2Trainer1, -1
-	object_event 28, 25, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_UP, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, BattleSimLava2Trainer2, -1
-	object_event 13, 18, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimLava2Trainer3, -1
-	object_event 32, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	object_event 23, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
-	object_event  8,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
-	object_event 28, 19, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1
+	object_event 28, 20, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, BattleSimLava2Trainer2, -1
+	object_event  9, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BattleSimLava2Trainer3, -1
+	object_event 33, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball1, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	object_event 10,  1, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball2, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	object_event  3, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 3, BattleSimLava2Itemball3, EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	object_event 15,  9, SPRITE_SIM_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSimHealer, -1

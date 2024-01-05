@@ -54,12 +54,7 @@ BattleSimGraveyard3Trainer1:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -73,12 +68,7 @@ BattleSimGraveyard3Trainer2:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
@@ -92,12 +82,7 @@ BattleSimGraveyard3Trainer3:
 .Script:
 	checkjustbattled
 	iffalse .After
-	; Text telling the player they gained points
-	; Alternatively, this text should be shown in the victory screen.
-	copybytetovar wBlueCardBalance
-	addvar 1
-	copyvartobyte wBlueCardBalance
-	end
+	jump SimulationStage3TrainerCheck
 .After
 	opentext
 	writetext BattleSimTrainerAfterText
