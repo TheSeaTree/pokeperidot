@@ -428,7 +428,7 @@ INCLUDE "engine/battle/sap_health.asm"
 INCLUDE "engine/battle/check_gender.asm"
 INCLUDE "engine/battle/rapid_spin.asm"
 INCLUDE "engine/battle/return.asm"
-INCLUDE "engine/battle/anim_moves.asm"
+INCLUDE "engine/battle/reset_stats.asm"
 INCLUDE "engine/battle/misc.asm"
 
 

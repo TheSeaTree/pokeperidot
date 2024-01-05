@@ -6153,23 +6153,17 @@ BattleCommand_ResetStats:
 	call .Fill
 	ld hl, wEnemyStatLevels
 	call .Fill
-
 	ldh a, [hBattleTurn]
 	push af
-
 	call SetPlayerTurn
 	call CalcPlayerStats
 	call SetEnemyTurn
 	call CalcEnemyStats
-
 	pop af
 	ldh [hBattleTurn], a
-
 	call AnimateCurrentMove
-
 	ld hl, EliminatedStatsText
 	jp StdBattleTextBox
-
 .Fill:
 	ld b, wPlayerStatLevelsEnd - wPlayerStatLevels
 .next
@@ -6177,9 +6171,6 @@ BattleCommand_ResetStats:
 	dec b
 	jr nz, .next
 	ret
-	
-.fail
-	jp BattleEffect_ButItFailed
 
 BattleCommand_Heal:
 ; heal
@@ -6833,10 +6824,36 @@ GetItemHeldEffect:
 	ret
 
 AnimateCurrentMoveEitherSide:
-	jp _AnimateCurrentMoveEitherSide
+	push hl
+	push de
+	push bc
+	ld a, [wKickCounter]
+	push af
+	farcall BattleCommand_LowerSub
+	pop af
+	ld [wKickCounter], a
+	farcall PlayDamageAnim
+	farcall BattleCommand_RaiseSub
+	pop bc
+	pop de
+	pop hl
+	ret
 
 AnimateCurrentMove:
-	jp _AnimateCurrentMove
+	push hl
+	push de
+	push bc
+	ld a, [wKickCounter]
+	push af
+	farcall BattleCommand_LowerSub
+	pop af
+	ld [wKickCounter], a
+	farcall LoadMoveAnim
+	farcall BattleCommand_RaiseSub
+	pop bc
+	pop de
+	pop hl
+	ret
 
 PlayDamageAnim:
 	xor a
