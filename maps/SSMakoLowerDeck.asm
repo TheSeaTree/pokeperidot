@@ -143,5 +143,5 @@ SSMakoLowerDeck_MapEvents:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event -1, -1, SPRITE_FANGIRL, SPRITEMOVEDATA_FOLLOWING, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoLowerDeckFangirl, -1
+	object_event -1, -1, SPRITE_FANGIRL, SPRITEMOVEDATA_COMPANION, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoLowerDeckFangirl, -1
 	object_event  9,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoLowerDeckFisherman, -1

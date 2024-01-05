@@ -534,7 +534,7 @@ SSMakoB1F_MapEvents:
 	bg_event  3, 14, BGEVENT_ITEM, SSMakoB1FHiddenUltraBall
 
 	db 15 ; object events
-	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoB1FFangirl, -1
+	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_COMPANION, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoB1FFangirl, -1
 	object_event 36,  2, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSailorNathan, -1
 	object_event 22, 12, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSailorDarius, -1
 	object_event 42,  5, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 1, TrainerEngineerBernard, -1

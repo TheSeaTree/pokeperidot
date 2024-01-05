@@ -193,5 +193,5 @@ SSMakoEngineRoom_MapEvents:
 	db 0 ; bg events
 
 	db 2 ; object events
-	object_event -1, -1, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoEngineRoomFangirl, -1
+	object_event -1, -1, SPRITE_FANGIRL, SPRITEMOVEDATA_COMPANION, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoEngineRoomFangirl, -1
 	object_event  6,  4, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMakoB1FGiveTicket, -1

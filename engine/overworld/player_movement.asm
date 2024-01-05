@@ -767,6 +767,12 @@ ENDM
 	ld bc, wObjectStructs ; redundant
 	farcall IsNPCAtCoord
 	jr nc, .is_npc
+
+	ld hl, OBJECT_FLAGS1
+	add hl, bc
+	bit NOCLIP_OBJS_F, [hl]
+	jr nz, .is_npc
+
 	call .CheckStrengthBoulder
 	jr c, .no_bump
 
