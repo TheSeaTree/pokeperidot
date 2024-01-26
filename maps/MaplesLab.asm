@@ -924,7 +924,7 @@ MaplesLabLassText:
 	done
 	
 MaplesLabBugCatcherText1:
-	text "Hmm..."
+	text "Hmm…"
 	
 	para "It says here that"
 	line "SHIFUR is weak to"

@@ -146,7 +146,7 @@ NoMysteryGiftText:
 	done
 	
 DeclineMysteryGiftText:
-	text "Oh..."
+	text "Oh…"
 	
 	para "Some other time,"
 	line "okay?"
