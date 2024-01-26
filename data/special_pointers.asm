@@ -35,7 +35,7 @@ SpecialsPointers::
 	add_special InitializeSafariZone ; $18
 	add_special InitializeExtendedSafariZone
 	add_special SetFireGymSteps
-	add_special CheckMagikarpLength
+	add_special CheckMagikarpHappiness
 	add_special MagikarpHouseSign
 	add_special HealParty ; this is both a special and a predef
 	add_special PokemonCenterPC

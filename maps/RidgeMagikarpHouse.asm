@@ -15,26 +15,12 @@ CheckMagikarp:
 	writetext MagikarpGuruIntroText
 	yesorno
 	iffalse .Decline
-
-	writebyte MAGIKARP
-	special FindPartyMonThatSpecies
-	iffalse .NoMagikarp
-	checkflag ENGINE_PLAYER_IS_FEMALE
-	iftrue .Girl
-	writetext MagikapGuruShowMagikarpMaleText
-	jump .continue
-.Girl
-	writetext MagikapGuruShowMagikarpFemaleText
-.continue
-	waitbutton
-	writebyte MAGIKARP
-	special FindPartyMonThatSpeciesYourTrainerID
-	iffalse .NotYourMagikarp
-
-	waitbutton
-	special GetFirstPokemonHappiness
-	ifless 250 - 1, .MagikarpInProgress
-	ifless  50 - 1, .UnhappyMagikarp
+	special CheckMagikarpHappiness
+	ifequal MAGIKARPHAPPINESS_NOT_YOURS, .NotYourMagikarp
+	ifequal MAGIKARPHAPPINESS_NOT_MAGIKARP, .NotAMagikarp
+	ifequal MAGIKARPHAPPINESS_UNHAPPY, .UnhappyMagikarp
+	ifequal MAGIKARPHAPPINESS_IN_PROGRESS, .MagikarpInProgress
+; If nothing is set, Magikarp is happy.
 	writetext MagikarpGuruHaveMagikarpText
 	waitbutton
 .DiveBombUnlocked
@@ -44,12 +30,12 @@ CheckMagikarp:
 	setevent EVENT_DIVE_BOMB_MAGIKARP
 	end
 
-.NoMagikarp
-	writetext MagikarpGuruNoMagikarpText
+.NotAMagikarp
+	writetext MagikarpGuruNotAMagikarpText
 	waitbutton
 	closetext
 	end
-	
+
 .NotYourMagikarp
 	writetext MagikarpGuruNotYourMagikarpText
 	waitbutton
@@ -61,7 +47,7 @@ CheckMagikarp:
 	waitbutton
 	closetext
 	end
-	
+
 .UnhappyMagikarp
 	writetext MagikarpGuruUnhappyText
 	waitbutton
@@ -142,16 +128,6 @@ MagikarpGuruIntroText:
 	cont "fan too?"
 	done
 	
-MagikapGuruShowMagikarpMaleText:
-	text "<PLAYER> showed the"
-	line "man his MAGIKARP."
-	done
-	
-MagikapGuruShowMagikarpFemaleText:
-	text "<PLAYER> showed the"
-	line "man her MAGIKARP."
-	done
-	
 MagikarpGuruHaveMagikarpText:
 	text "Wow! What a perf-"
 	line "ect example of a"
@@ -167,11 +143,10 @@ GiftMagikarpText:
 	line "MAGIKARP!"
 	done
 
-MagikarpGuruNoMagikarpText:
-	text "Hm… You don't seem"
-	line "to have a MAGIKARP"
-	cont "on you right now."
-	
+MagikarpGuruNotAMagikarpText:
+	text "Hm… That's not a"
+	line "MAGIKARP…"
+
 	para "I love to see all"
 	line "of the MAGIKARP I"
 	cont "can, so please"

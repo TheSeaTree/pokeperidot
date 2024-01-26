@@ -1,6 +1,7 @@
-CheckMagikarpLength:
-	; Returns 3 if you select a Magikarp that beats the previous record.
-	; Returns 2 if you select a Magikarp, but the current record is longer.
+CheckMagikarpHappiness:
+	; Returns 4 if you select a Magikarp that does not match your OT.
+	; Returns 3 if you select a Magikarp that has under 50 happiness.
+	; Returns 2 if you select a Magikarp between 51 and 199 happiness.
 	; Returns 1 if you press B in the Pokemon selection menu.
 	; Returns 0 if the Pokemon you select is not a Magikarp.
 
@@ -11,63 +12,36 @@ CheckMagikarpLength:
 	cp MAGIKARP
 	jr nz, .not_magikarp
 
-	; Now let's compute its length based on its DVs and ID.
+	; Before going any further, make sure it is yours.
+	farcall CheckIfMonIsYourOT
+	ld a, MAGIKARPHAPPINESS_NOT_YOURS
+	jr c, .DoneMagikarpHappiness
+
+	; Now let's compute its happiness.
 	ld a, [wCurPartyMon]
-	ld hl, wPartyMon1Species
+	ld hl, wPartyMon1Happiness
 	ld bc, PARTYMON_STRUCT_LENGTH
 	call AddNTimes
-	push hl
-	ld bc, MON_DVS
-	add hl, bc
-	ld d, h
-	ld e, l
-	pop hl
-	ld bc, MON_ID
-	add hl, bc
-	ld b, h
-	ld c, l
-	call CalcMagikarpLength
-	call PrintMagikarpLength
-	farcall StubbedTrainerRankings_MagikarpLength
-	ld hl, .MeasureItText
-	call PrintText
-
-	; Did we beat the record?
-	ld hl, wMagikarpLength
-	ld de, wBestMagikarpLengthFeet
-	ld c, 2
-	call CompareBytes
-	jr nc, .not_long_enough
-
-	; NEW RECORD!!! Let's save that.
-	ld hl, wMagikarpLength
-	ld de, wBestMagikarpLengthFeet
-	ld a, [hli]
-	ld [de], a
-	inc de
 	ld a, [hl]
-	ld [de], a
-	inc de
-	ld a, [wCurPartyMon]
-	ld hl, wPartyMonOT
-	call SkipNames
-	call CopyBytes
-	ld a, MAGIKARPLENGTH_BEAT_RECORD
-	ld [wScriptVar], a
-	ret
-
-.not_long_enough
-	ld a, MAGIKARPLENGTH_TOO_SHORT
+	cp 200
+	jr nc, .DoneMagikarpHappiness
+	cp 50
+	ld a, MAGIKARPHAPPINESS_UNHAPPY
+	jr c, .DoneMagikarpHappiness
+	ld a, MAGIKARPHAPPINESS_IN_PROGRESS
+	jr .DoneMagikarpHappiness
+	
+.DoneMagikarpHappiness
 	ld [wScriptVar], a
 	ret
 
 .declined
-	ld a, MAGIKARPLENGTH_REFUSED
+	ld a, MAGIKARPHAPPINESS_REFUSED
 	ld [wScriptVar], a
 	ret
 
 .not_magikarp
-	xor a ; MAGIKARPLENGTH_NOT_MAGIKARP
+	xor a ; MAGIKARPHAPPINESS_NOT_MAGIKARP
 	ld [wScriptVar], a
 	ret
 

@@ -231,12 +231,13 @@ NUM_FRUIT_TREES EQU const_value + -1
 	const GBCHECK_SGB ; 1
 	const GBCHECK_CGB ; 2
 
-; CheckMagikarpLength return values
+; CheckMagikarpHappiness return values
 	const_def
-	const MAGIKARPLENGTH_NOT_MAGIKARP ; 0
-	const MAGIKARPLENGTH_REFUSED      ; 1
-	const MAGIKARPLENGTH_TOO_SHORT    ; 2
-	const MAGIKARPLENGTH_BEAT_RECORD  ; 3
+	const MAGIKARPHAPPINESS_NOT_MAGIKARP ; 0
+	const MAGIKARPHAPPINESS_REFUSED      ; 1
+	const MAGIKARPHAPPINESS_IN_PROGRESS  ; 2
+	const MAGIKARPHAPPINESS_UNHAPPY      ; 3
+	const MAGIKARPHAPPINESS_NOT_YOURS    ; 3
 
 ; SpecialReturnShuckle return values
 	const_def
