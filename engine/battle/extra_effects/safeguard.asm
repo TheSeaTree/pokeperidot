@@ -1,4 +1,4 @@
-BattleCommand_Safeguard:
+_Safeguard:
 ; safeguard
 
 	ld hl, wPlayerScreens

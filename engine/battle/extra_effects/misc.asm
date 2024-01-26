@@ -151,3 +151,16 @@ ItemIsValuable:
 	jp IsInArray
 
 INCLUDE "data/items/valuable_items.asm"
+
+SafeCheckSafeguard:
+	push hl
+	ld hl, wEnemyScreens
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .got_turn
+	ld hl, wPlayerScreens
+
+.got_turn
+	bit SCREENS_SAFEGUARD, [hl]
+	pop hl
+	ret

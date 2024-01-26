@@ -2201,8 +2201,7 @@ BattleCommand_FailureText:
 	cp EFFECT_BONEMERANG
 	jr z, .multihit
 	cp EFFECT_POISON_MULTI_HIT
-	jr z, .multihit
-	jp EndMoveEffect
+	jp nz, EndMoveEffect
 
 .multihit
 	call BattleCommand_RaiseSub
@@ -2997,6 +2996,17 @@ AttackItemBoost:
 	jr z, .ok
 	lb bc, CUBONE, MAROWAK
 	ld d, THICK_CLUB
+	jr z, .ok
+	cp PIKACHU
+	lb bc, PIKACHU, PIKACHU
+	ld d, LIGHT_BALL
+	jr z, .ok
+	lb bc, RAICHU, RAICHU
+	ld d, LIGHT_BALL
+	call LightBallItemBoost
+	pop de
+	pop bc
+	ret
 .ok
 	call SpeciesItemBoost
 	pop de
@@ -3038,7 +3048,7 @@ SpecialItemBoost:
 	call SpeciesItemBoost
 	pop de
 	pop bc
-	ret	
+	ret
 
 SpeciesItemBoost:
 ; Return in hl the stat value at hl.
@@ -3608,6 +3618,15 @@ BattleCommand_HappinessPower:
 	farcall ReturnEffect
 	ret
 
+BattleCommand_Safeguard:
+; payday
+
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+	farcall _Safeguard
+	ret
+
 INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
 
 INCLUDE "engine/battle/move_effects/encore.asm"
@@ -3924,7 +3943,7 @@ BattleCommand_PoisonTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	ret nz
 
 	call PoisonOpponent
@@ -4102,7 +4121,7 @@ BattleCommand_BurnTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -4166,7 +4185,7 @@ BattleCommand_FreezeTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -4213,7 +4232,7 @@ BattleCommand_ParalyzeTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	ret nz
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
@@ -5108,7 +5127,7 @@ BattleCommand_CheckRampage:
 
 	res SUBSTATUS_RAMPAGE, [hl]
 	call BattleCommand_SwitchTurn
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	push af
 	call BattleCommand_SwitchTurn
 	pop af
@@ -5913,7 +5932,7 @@ BattleCommand_ConfuseTarget:
 	ld a, [wEffectFailed]
 	and a
 	ret nz
-	call SafeCheckSafeguard
+	farcall SafeCheckSafeguard
 	ret nz
 	call CheckSubstituteOpp
 	ret nz
@@ -6562,20 +6581,6 @@ INCLUDE "engine/battle/move_effects/attract.asm"
 
 INCLUDE "engine/battle/move_effects/present.asm"
 
-INCLUDE "engine/battle/move_effects/safeguard.asm"
-
-SafeCheckSafeguard:
-	push hl
-	ld hl, wEnemyScreens
-	ldh a, [hBattleTurn]
-	and a
-	jr z, .got_turn
-	ld hl, wPlayerScreens
-
-.got_turn
-	bit SCREENS_SAFEGUARD, [hl]
-	pop hl
-	ret
 
 BattleCommand_CheckSafeguard:
 ; checksafeguard
