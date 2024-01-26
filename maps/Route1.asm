@@ -175,6 +175,9 @@ TrainerCooltrainerMLeon:
 	closetext
 	end
 
+Route1Beauty:
+	jumptextfaceplayer Route1BeautyText
+
 Route1Sign:
 	jumptext Route1SignText
 	
@@ -455,7 +458,20 @@ AlreadyGotHeadbutt:
 	cont "might knock a"
 	cont "#MON out of it."
 	done
-	
+
+Route1BeautyText:
+	text "I wanted to go"
+	line "hiking on PALEROCK"
+	cont "MOUNTAIN, but the"
+	cont "path on ROUTE 2"
+	cont "has been blocked"
+	cont "by a tree!"
+
+	para "None of my #MON"
+	line "know how to CUT"
+	cont "it down either…"
+	done
+
 Route1SignText:
 	text "ROUTE 1"
 
@@ -480,7 +496,7 @@ Route1_MapEvents:
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
 	bg_event   4,  5, BGEVENT_READ, Route1HiddenPowerHerb
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event  18, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Lass, -1
 	object_event  28,  9, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 2, Route1LedgeGirl, -1
 	object_event   7,  4, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdSteven, -1
@@ -491,6 +507,7 @@ Route1_MapEvents:
 	object_event   0,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBeautyJill, -1
 	object_event  19,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerMLeon, -1
 	object_event  40, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherMarshall, -1
-	object_event  62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
+	object_event 62, 13, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherLeo, -1
+	object_event 37, 10, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route1Beauty, -1
 	object_event  57, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route1FruitTree, -1
 	object_event  50,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route1TMPlayRough, EVENT_GOT_TM_PLAY_ROUGH
