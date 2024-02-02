@@ -416,6 +416,8 @@ BillsPC_Withdraw:
 .withdraw
 	call BillsPC_CheckMail_PreventBlackout
 	jp c, .cancel
+	call BillsPC_CheckLevelInPast
+	jp c, .cancel
 	call TryWithdrawPokemon
 	jr c, .FailedWithdraw
 	ld a, $0
@@ -673,6 +675,8 @@ _MovePKMNWithoutMail:
 
 .Move:
 	call BillsPC_CheckMail_PreventBlackout
+	jp c, .Cancel
+	call BillsPC_CheckLevelInPast
 	jp c, .Cancel
 	ld a, [wBillsPC_ScrollPosition]
 	ld [wBillsPC_BackupScrollPosition], a
@@ -1681,6 +1685,34 @@ BillsPC_CheckMail_PreventBlackout:
 	scf
 	ret
 
+BillsPC_CheckLevelInPast:
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	jr nz, .done
+
+	ld a, [wTempMonLevel]
+	push af
+	cp PAST_LEVEL
+
+	jr nc, .invalid
+	pop af
+.done
+	and a
+	ret
+
+.invalid
+	pop af
+	ld de, PCString_NoWithdrawingInPast
+	call BillsPC_PlaceString
+	ld de, SFX_WRONG
+	call WaitPlaySFX
+	call WaitSFX
+	ld c, 50
+	call DelayFrames
+	scf
+	ret
+
 BillsPC_IsMonAnEgg:
 	ld a, [wCurPartySpecies]
 	cp EGG
@@ -2315,6 +2347,7 @@ PCString_BoxFull: db "The BOX is full.@"
 PCString_PartyFull: db "The party's full!@"
 PCString_NoReleasingEGGS: db "No releasing EGGS!@"
 PCString_NoReleasingInPast: db "Can't release now!@"
+PCString_NoWithdrawingInPast: db "Level too high!@"
 
 _ChangeBox:
 	call LoadStandardMenuHeader

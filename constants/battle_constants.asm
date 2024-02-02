@@ -2,6 +2,7 @@
 MAX_LEVEL EQU 100
 MIN_LEVEL EQU 2
 EGG_LEVEL EQU 5
+PAST_LEVEL EQU 20
 
 ; maximum moves known per mon
 NUM_MOVES EQU 4

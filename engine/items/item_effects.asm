@@ -1368,6 +1368,18 @@ RareCandyEffect:
 	call RareCandy_StatBooster_GetParameters
 
 	ld a, MON_LEVEL
+	call GetPartyParamLocation	
+	ld a, [hl]
+	cp PAST_LEVEL
+	jr c, .Continue
+
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	jp z, NoEffectMessage
+
+.Continue
+	ld a, MON_LEVEL
 	call GetPartyParamLocation
 
 	ld a, [hl]
