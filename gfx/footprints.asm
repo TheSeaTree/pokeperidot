@@ -478,8 +478,8 @@ INCBIN "gfx/types/normal.1bpp",        secondary_type ;Dunsparce
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Gligar
 INCBIN "gfx/types/ground.1bpp",      secondary_type ;Steelix
 ; 209-216 first type
-INCBIN "gfx/types/none.1bpp",       primary_type ;Snubbull
-INCBIN "gfx/types/none.1bpp",       primary_type ;Granbull
+INCBIN "gfx/types/normal.1bpp",       primary_type ;Snubbull
+INCBIN "gfx/types/normal.1bpp",       primary_type ;Granbull
 INCBIN "gfx/types/water.1bpp",       primary_type ;Qwilfish
 INCBIN "gfx/types/bug.1bpp",         primary_type ;Scizor
 INCBIN "gfx/types/bug.1bpp",         primary_type ;Shuckle
