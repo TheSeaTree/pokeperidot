@@ -596,9 +596,9 @@ VulpixEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, EMBER
 	db 4, TAIL_WHIP
-	db 7, ROAR
+	db 7, CONFUSE_RAY
 	db 10, QUICK_ATTACK
-	db 12, CONFUSE_RAY
+	db 12, ROAR
 	db 15, FIRE_SPIN
 	db 20, WILL_O_WISP
 	db 23, FAINT_ATTACK
@@ -3838,7 +3838,7 @@ HoundourEvosAttacks:
 	db 1, EMBER
 	db 7, ROAR
 	db 13, SMOG
-	db 26, BITE
+	db 16, BITE
 	db 18, FIRE_SPIN
 	db 25, SCARY_FACE
 	db 27, FAINT_ATTACK
@@ -3853,7 +3853,7 @@ HoundoomEvosAttacks:
 	db 1, EMBER
 	db 7, ROAR
 	db 13, SMOG
-	db 26, BITE
+	db 16, BITE
 	db 18, FIRE_SPIN
 	db 25, FLAME_WHEEL
 	db 28, SCARY_FACE
