@@ -24,7 +24,7 @@ UNUSED_TYPES EQU const_value
 	const TYPE_12
 	const TYPE_13
 	const TYPE_14
-	const TYPE_15
+	const TOXIC_T
 	const WILLOWISP
 	const POWDER
 	const PSNPOWDER

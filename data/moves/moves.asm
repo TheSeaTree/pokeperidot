@@ -103,7 +103,7 @@ Moves: ; 41afb
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,   100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                0, GROUND,    30,  5,   0
 	move DIG,          EFFECT_FLY,                80, GROUND,   100, 10,   0
-	move TOXIC,        EFFECT_TOXIC,               0, POISON,    75, 10,   0
+	move TOXIC,        EFFECT_TOXIC,               0, TOXIC_T,    75, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC,  100, 10,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC,   60, 20,   0
