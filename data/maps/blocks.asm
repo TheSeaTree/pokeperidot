@@ -82,7 +82,6 @@ FastEddiesHouse_Blocks:
 	INCBIN "maps/House3.ablk"
 
 PastRoute11House1_Blocks:
-PastRoute11House2_Blocks:
 PastRoute11House3_Blocks:
 PastRoute11House4_Blocks:
 PastRoute11House5_Blocks:
@@ -98,6 +97,7 @@ PastPectiniaGymSpeechHouse_Blocks:
 PastElkhornMomsHouse_Blocks:
 PastFaviaCelestesHouse_Blocks:
 PastPectiniaBerryHouse_Blocks:
+PastRoute11House2_Blocks:
 	INCBIN "maps/time-travel/PastHouse2.4x4.players_house.ablk"
 
 PastRoute11Schoolhouse_Blocks:

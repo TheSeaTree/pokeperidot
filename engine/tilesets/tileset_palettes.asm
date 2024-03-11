@@ -11,10 +11,10 @@ LoadSpecialMapPalette:
 	jp z, .house
 	cp TILESET_RADIO_TOWER
 	jp z, .radio_tower
-	cp TILESET_LAB
-	jp z, .lab
 	cp TILESET_MANSION
 	jp z, .mansion_mobile
+	cp  TILESET_POKECOM_CENTER
+	jp z, .pokecom
 	cp TILESET_TOWER
 	jp z, .tower
 	cp TILESET_MOUNTAIN
@@ -27,6 +27,8 @@ LoadSpecialMapPalette:
 	jp z, .facility
 	cp  TILESET_LIGHTHOUSE
 	jp z, .lighthouse
+	cp TILESET_LAB
+	jp z, .lab
 	cp  TILESET_PORT
 	jp z, .port
 	cp  TILESET_GATE
@@ -47,7 +49,10 @@ LoadSpecialMapPalette:
 	jp z, .gamecorner
 	cp  TILESET_CYBERSPACE
 	jp z, .cyberspace
-	jp .do_nothing
+
+.do_nothing
+	and a
+	ret
 
 .battle_tower
 	call LoadBattleTowerPalette
@@ -83,16 +88,20 @@ LoadSpecialMapPalette:
 	scf
 	ret
 
-.lab
-	call LoadLabPalette
-	scf
-	ret
-
 .mansion_mobile
 	call LoadMansionPalette
 	scf
 	ret
-	
+
+.pokecom
+	call LoadPokecomPalette
+	scf
+	ret
+
+.lab
+	ld hl, LabPalette
+	jp LoadEightTimeOfDayBGPalettes
+
 .port
 	ld hl, PortPalette
 	jp LoadEightTimeOfDayBGPalettes
@@ -154,10 +163,6 @@ LoadSpecialMapPalette:
 .cyberspace
 	ld hl, CyberspacePalette
 	jp LoadEightTimeOfDayBGPalettes
-
-.do_nothing
-	and a
-	ret
 
 LoadBattleTowerPalette:
 	ld a, BANK(wBGPals1)
@@ -225,14 +230,6 @@ LoadRadioTowerPalette:
 RadioTowerPalette:
 INCLUDE "gfx/tilesets_pals/radio_tower.pal"
 
-LoadLabPalette:
-	ld a, BANK(wBGPals1)
-	ld de, wBGPals1
-	ld hl, LabPalette
-	ld bc, 8 palettes
-	call FarCopyWRAM
-	ret
-
 LabPalette:
 INCLUDE "gfx/tilesets_pals/lab.pal"
 
@@ -252,6 +249,17 @@ LoadGatePalette:
 	
 GatePalette:
 INCLUDE "gfx/tilesets_pals/gate.pal"
+
+LoadPokecomPalette:
+	ld a, BANK(wBGPals1)
+	ld de, wBGPals1
+	ld hl, PokecomPalette
+	ld bc, 8 palettes
+	call FarCopyWRAM
+	ret
+	
+PokecomPalette:
+INCLUDE "gfx/tilesets_pals/pokecom_center.pal"
 
 LoadMansionPalette:
 	ld a, BANK(wBGPals1)

@@ -43,6 +43,7 @@ StdScripts::
 	dba MysteryGiftGirl
 	dba LightUpRoomScript
 	dba DarkenRoomScript
+	dba DarkenRoomNoFlashScript
 	dba TeleportGuyScript
 	dba StolenItemsBoxScript
 	dba WishingFountainScript
@@ -552,6 +553,12 @@ DarkenRoomScript:
 	reloadmappart
 	special UpdateTimePals
 	callasm TotalDarkness
+	end
+
+DarkenRoomNoFlashScript:
+	reloadmappart
+	special UpdateTimePals
+	callasm TotalDarknessNoFlash
 	end
 
 TeleportGuyScript:

@@ -44,6 +44,7 @@
 	enum mysterygiftgirl
 	enum lightuproom
 	enum darkenroom
+	enum darkenroomnoflash
 	enum teleportguy
 	enum stolenitemboxes
 	enum wishingfountain

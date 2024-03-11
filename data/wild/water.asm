@@ -474,4 +474,52 @@ WaterWildMons:
 	db 35, KABUTO
 	db 35, KABUTO
 
+	map_id PAST_ELKHORN_TOWN
+	db 2 percent ; encounter rate
+	db 17, GOLDEEN
+	db 17, POLIWAG
+	db 18, PSYDUCK
+	db 17, POLIWAG
+	db 18, POLIWAG
+
+	map_id PAST_PAVONA_VILLAGE
+	db 2 percent ; encounter rate
+	db 17, GOLDEEN
+	db 17, POLIWAG
+	db 18, POLIWAG
+	db 17, POLIWAG
+	db 18, POLIWAG
+
+	map_id PAST_ROUTE_1
+	db 4 percent ; encounter rate
+	db 17, GOLDEEN
+	db 17, POLIWAG
+	db 17, POLIWAG
+	db 16, MARILL
+	db 17, FARFETCH_D
+
+	map_id PAST_ROUTE_3
+	db 4 percent ; encounter rate
+	db 18, GOLDEEN
+	db 17, POLIWAG
+	db 17, YANMA
+	db 18, YANMA
+	db 17, POLIWAG
+
+	map_id PAST_ILEX_FOREST
+	db 6 percent ; encounter rate
+	db 16, POLIWAG
+	db 17, POLIWAG
+	db 17, GOLDEEN
+	db 19, GOLDEEN
+	db 18, WOOPER
+
+	map_id PAST_ROUTE_11
+	db 4 percent ; encounter rate
+	db 17, PSYDUCK
+	db 18, GOLDEEN
+	db 17, MARILL
+	db 18, MAGIKARP
+	db 17, POLIWAG
+
 	db -1 ; end

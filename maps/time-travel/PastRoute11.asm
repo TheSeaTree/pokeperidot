@@ -3,7 +3,16 @@
 PastRoute11_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .LightsOff
+
+.LightsOff
+	checktime NITE
+	iffalse .LightsOn
+	changeblock		46, 16, $cd
+	changeblock		48, 16, $ce
+.LightsOn
+	return
 	
 PastRoute11_MapEvents:
 	db 0, 0 ; filler
@@ -15,7 +24,7 @@ PastRoute11_MapEvents:
 	warp_event 49, 21, PAST_ROUTE_11_HOUSE_5, 1 ; Curse House
 	warp_event 37,  7, PAST_ROUTE_11_HOUSE_1, 1 ; Misc House 1
 	warp_event 29, 11, PAST_ROUTE_11_INN, 1
-	warp_event 19,  7, PAST_ROUTE_11_HOUSE_2, 1 ; Misc House 2
+	warp_event 19,  7, PAST_ROUTE_11_HOUSE_2, 1 ; Pokemon Shelter
 	warp_event 17, 17, PAST_ROUTE_11_HOUSE_3, 1 ; Misc House 3
 	warp_event  7, 11, PAST_ROUTE_11_HOUSE_4, 1 ; Cleanse Tag House
 

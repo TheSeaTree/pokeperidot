@@ -1282,7 +1282,11 @@ LoadMapPals:
 	jr z, .volcano
 	cp TILESET_LOST_LAND
 	jr z, .volcano
-	
+
+	ld a, [wCurLandmark]
+	cp THE_PAST
+	jr z, .past
+
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
@@ -1294,6 +1298,13 @@ LoadMapPals:
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
 	ld hl, VolcanoObjectPals
+	jr .got_pals_2
+	
+.past
+	ld a, [wTimeOfDayPal]
+	maskbits NUM_DAYTIMES
+	ld bc, 8 palettes
+	ld hl, PastObjectPals
 
 .got_pals_2
 	call AddNTimes
@@ -1331,7 +1342,7 @@ endr
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	ret
-	
+
 LoadSignPals::
 	farcall LoadSpecialMapPalette
 	jr c, .got_pals
@@ -1413,6 +1424,9 @@ INCLUDE "gfx/overworld/npc_sprites.pal"
 
 VolcanoObjectPals::
 INCLUDE "gfx/overworld/npc_sprites_volcano.pal"
+
+PastObjectPals::
+INCLUDE "gfx/overworld/npc_sprites_past.pal"
 
 RoofPals:
 INCLUDE "gfx/tilesets_pals/roofs.pal"

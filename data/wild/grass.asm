@@ -2442,4 +2442,112 @@ GrassWildMons:
 	db 59, WEEZING
 	db 60, WEEZING
 
+	map_id PAST_ROUTE_1
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 15, JIGGLYPUFF
+	db 16, NATU
+	db 15, MAREEP
+	db 16, STANTLER
+	db 16, FARFETCH_D
+	db 17, FARFETCH_D
+	db 17, FARFETCH_D
+	; day
+	db 15, JIGGLYPUFF
+	db 16, NATU
+	db 15, MAREEP
+	db 16, NATU
+	db 16, STANTLER
+	db 17, FARFETCH_D
+	db 17, FARFETCH_D
+	; nite
+	db 15, JIGGLYPUFF
+	db 16, MURKROW
+	db 15, ABRA
+	db 16, STANTLER
+	db 16, HOOTHOOT
+	db 17, HOOTHOOT
+	db 17, HOOTHOOT
+
+	map_id PAST_ROUTE_2
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 15, SENTRET
+	db 16, MEOWTH
+	db 15, NIDORAN_F
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	; day
+	db 15, SENTRET
+	db 16, MEOWTH
+	db 15, NIDORAN_F
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	; nite
+	db 15, SENTRET
+	db 16, SPINARAK
+	db 15, VENONAT
+	db 15, NIDORAN_F
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+	db 15, NIDORAN_M
+
+	map_id PAST_ROUTE_3
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 11, SPEAROW
+	db 11, MACHOP
+	db 11, EKANS
+	db 12, SPEAROW
+	db 11, HOPPIP
+	db 12, HOPPIP
+	db 12, HOPPIP
+	; day
+	db 12, SPEAROW
+	db 11, MACHOP
+	db 11, EKANS
+	db 11, GROWLITHE
+	db 12, GROWLITHE
+	db 12, HOPPIP
+	db 12, HOPPIP
+	; nite
+	db 12, HOOTHOOT
+	db 11, MACHOP
+	db 11, EKANS
+	db 11, HOUNDOUR
+	db 12, HOUNDOUR
+	db 12, TEDDIURSA
+	db 12, TEDDIURSA
+
+	map_id PAST_ILEX_FOREST
+	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
+	; morn
+	db 18, BEEDRILL
+	db 17, SKIPLOOM
+	db 19, SKIPLOOM
+	db 17, GLOOM
+	db 18, TANGELA
+	db 17, SCYTHER
+	db 19, SCYTHER
+	; day
+	db 18, BEEDRILL
+	db 17, WEEPINBELL
+	db 19, WEEPINBELL
+	db 17, SKIPLOOM
+	db 18, TANGELA
+	db 17, SCYTHER
+	db 19, SCYTHER
+	; nite
+	db 18, VENONAT
+	db 17, GLOOM
+	db 19, GLOOM
+	db 17, WEEPINBELL
+	db 18, TANGELA
+	db 17, SCYTHER
+	db 19, SCYTHER
+
 	db -1 ; end

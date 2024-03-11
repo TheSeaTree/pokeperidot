@@ -3,7 +3,31 @@
 PastRoute11Schoolhouse_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .Chair
+	callback MAPCALLBACK_NEWMAP, .Lights
+
+.Chair
+	checkcode VAR_HOUR
+;	ifless 16, .done
+;	ifless 7, .done
+	ifless 16, .done
+	ifgreater 17, .done
+	changeblock	8, 0, $3c
+	changeblock	8, 2, $3d
+.done
+	return
+
+.Lights
+	checkcode VAR_HOUR
+	ifless 17, .nothing
+	scall .lights
+.nothing
+	return
+
+.lights
+	jumpstd darkenroomnoflash
+	end
 
 PastRoute11SchoolhouseTeacher:
 	faceplayer
@@ -97,8 +121,9 @@ PastRoute11Schoolhouse_MapEvents:
 	bg_event  6,  0, BGEVENT_UP, PastRoute11SchoolhouseChalkboard
 	bg_event  5,  0, BGEVENT_UP, PastRoute11SchoolhouseChalkboard
 
-	db 8 ; object events
+	db 9 ; object events
 	object_event  5,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, 7, 15, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PastRoute11SchoolhouseTeacher, -1
+	object_event  9,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, 16, 17, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PastRoute11SchoolhouseTeacher, -1
 	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  8,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

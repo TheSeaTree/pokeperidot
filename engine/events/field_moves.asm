@@ -22,6 +22,7 @@ BlindingFlash:
 
 TotalDarkness:
 	farcall FadeBlackQuickly
+TotalDarknessNoFlash:
 	ld b, SCGB_DARKNESS
 	call GetSGBLayout
 	farcall LoadOW_BGPal7

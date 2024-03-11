@@ -32,7 +32,7 @@ PastRoute11House4FisherText:
 	line "kind of wickedness"
 	cont "they may bring…"
 	done
-	
+
 PastRoute11House4_MapEvents:
 	db 0, 0 ; filler
 
