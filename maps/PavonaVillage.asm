@@ -184,7 +184,7 @@ CherrygroveIrresponsible:
 	
 	para "There are a lot"
 	line "of trainers out"
-	cont "there on Route 2."
+	cont "there on ROUTE 2."
 	done
 	
 CherrygroveYoungsterChallenge:
@@ -219,7 +219,7 @@ CherrygroveScientistCantGoText:
 
 	para "Lots of trainers"
 	line "and wild #MON"
-	cont "reside on Route 2."
+	cont "reside on ROUTE 2."
 	done
 
 SchoolboyTimmyBeatenText:

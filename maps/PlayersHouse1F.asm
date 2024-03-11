@@ -556,7 +556,7 @@ MaplesLabDirections:
 	text "Her lab is in"
 	line "PAVONA VILLAGE,"
 	cont "right at the other"
-	cont "end of Route 1."
+	cont "end of ROUTE 1."
 	
 	para "Good luck, honey!"
 	
