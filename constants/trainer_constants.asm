@@ -161,7 +161,8 @@ CHRIS EQU __enum__
 	trainerclass CHAMPION ; 10
 	const JOSEPH
 
-	trainerclass BROCK
+	trainerclass YOUNG_CHAMPION
+	const JOSEPH_PAST
 
 	trainerclass MISTY
 

@@ -19,7 +19,7 @@ BTTrainerClassGenders:
 	db FEMALE ; AMBER
 	db MALE   ; BREDE
 	db MALE   ; CHAMPION
-	db MALE   ; BROCK
+	db MALE   ; YOUNG_CHAMPION
 	db FEMALE ; MISTY
 	db MALE   ; LT_SURGE
 	db MALE   ; SCIENTIST

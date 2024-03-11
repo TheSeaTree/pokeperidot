@@ -19,7 +19,7 @@ TrainerPicPointers::
 	dba AmberPic
 	dba BredePic
 	dba ChampionPic
-	dba BrockPic
+	dba ChampionPastPic
 	dba MistyPic
 	dba LtSurgePic
 	dba ScientistPic
