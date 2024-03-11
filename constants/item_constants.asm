@@ -194,8 +194,8 @@
 	const CYBER_BALL   ; ba
 	const LIGHT_CLAY   ; bb
 	const POKE_PDA     ; bc
-	const ITEM_BD      ; bd
-	const ITEM_BE      ; be
+	const GLOW_SCALES  ; bd
+	const BARBED_SPEAR ; be
 	const ITEM_C3      ; c3
 	const ITEM_DC      ; dc
 

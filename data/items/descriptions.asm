@@ -188,8 +188,8 @@ ItemDescriptions:
 	dw InvalidItemDesc
 	dw LightClayDesc
 	dw PocketPCDesc
-	dw InvalidItemDesc
-	dw InvalidItemDesc
+	dw GlowScalesDesc
+	dw BarbedSpearDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
 	dw InvalidItemDesc
@@ -1002,6 +1002,14 @@ LightClayDesc:
 PocketPCDesc:
 	db	 "Access <PK><MN> STORAGE"
 	next "through time.@"
+
+GlowScalesDesc:
+	db   "Boosts accuracy"
+	next "of BUTTERFREE.@"
+
+BarbedSpearDesc:
+	db   "Boosts crit ratio"
+	next "of BEEDRILL.@"
 
 InvalidItemDesc:
 	db   "You should not"

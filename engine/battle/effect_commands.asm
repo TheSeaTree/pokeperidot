@@ -1186,10 +1186,18 @@ BattleCommand_Critical:
 	jr z, .checkstick
 .Sirfetchd:
 	cp SIRFETCH_D
-	jr nz, .Smeargle
+	jr nz, .Beedrill
 .checkstick
 	ld a, [hl]
 	cp STICK
+	jr nz, .FocusEnergy
+	jr .docritlevel
+
+.Beedrill:
+	cp BEEDRILL
+	jr nz, .Smeargle
+	ld a, [hl]
+	cp BARBED_SPEAR
 	jr nz, .FocusEnergy
 	jr .docritlevel
 
@@ -1235,10 +1243,8 @@ BattleCommand_Critical:
 	jr nz, .ScopeLens
 
 ; +4 critical level
-	inc c
-	inc c
-	inc c
-	inc c
+	ld c, 4
+	jr .Tally
 
 .ScopeLens:
 	push bc
@@ -1337,7 +1343,7 @@ BattleCommand_Stab:
 	set 7, [hl]
 
 .SkipStab:
-	call CheckSpecialMatchupMoves
+	farcall CheckSpecialMatchupMoves
 	jr z, .alternate
 
 	ld a, BATTLE_VARS_MOVE_TYPE
@@ -1474,7 +1480,7 @@ CheckTypeMatchup:
 	ld a, 10 ; 1.0
 	ld [wTypeMatchup], a
 
-	call CheckSpecialMatchupMoves
+	farcall CheckSpecialMatchupMoves
 	jr z, .alternate
 
 	ld hl, TypeMatchups
@@ -1534,21 +1540,6 @@ CheckTypeMatchup:
 	pop bc
 	pop de
 	pop hl
-	ret
-
-CheckSpecialMatchupMoves:
-	; Bonemerang ignores Flying's immunity to Ground.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BONEMERANG
-	jr z, .alternate
-	; Freeze-Dry is super-effective against Water.
-	cp EFFECT_FREEZE_DRY
-	jr z, .alternate
-	ret
-
-.alternate
-	ld a, 1
 	ret
 
 BattleCommand_ResetTypeMatchup:
@@ -1710,14 +1701,54 @@ BattleCommand_CheckHit:
 	ld a, b
 	add c
 	jr c, .skip_rockaccuracybonus
-	add c
-	jr c, .skip_rockaccuracybonus
 	ld b, a
 	jr nc, .skip_rockaccuracybonus
 	ld c, a
 	ld b, 0
 
 .skip_rockaccuracybonus
+	; If a Butterfree is holding a [CHANGE THIS], boost its accuracy by 16%.
+	
+	ld a, [hli]
+	ld l, [hl]
+	ld h, a
+
+	push hl
+	ld a, MON_SPECIES
+	call BattlePartyAttr
+	ldh a, [hBattleTurn]
+	and a
+	ld a, [hl]
+	jr nz, .Butterfree
+	ld a, [wTempEnemyMonSpecies]
+.Butterfree:
+	pop hl
+	cp BUTTERFREE
+	jr z, .skip_butterfreeaccuracybonus
+
+	push bc
+	call GetUserItem
+	ld a, [hl]
+	pop bc
+	cp GLOW_SCALES
+	jr nz, .skip_butterfreeaccuracybonus
+
+	ld c, a
+	ld a, b
+	add c
+	jr c, .skip_butterfreeaccuracybonus
+	add c
+	jr c, .skip_butterfreeaccuracybonus
+	add c
+	jr c, .skip_butterfreeaccuracybonus
+	add c
+	jr c, .skip_butterfreeaccuracybonus
+	ld b, a
+	jr nc, .skip_butterfreeaccuracybonus
+	ld c, a
+	ld b, 0
+
+.skip_butterfreeaccuracybonus
 	ld a, b
 	cp -1
 	ret z
@@ -1727,14 +1758,6 @@ BattleCommand_CheckHit:
 	ret c
 
 .Miss:
-; Keep the damage value intact if we're using (Hi) Jump Kick.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_JUMP_KICK
-	jr z, .Missed
-	call ResetDamage
-
-.Missed:
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
@@ -1814,17 +1837,13 @@ BattleCommand_CheckHit:
 
 	ld a, BATTLE_VARS_MOVE_ANIM
 	call GetBattleVar
-
-	cp GUST
-	ret z
-	cp WHIRLWIND
-	ret z
-	cp THUNDER
-	ret z
-	cp HURRICANE
-	ret z
-	cp TWISTER
-	ret
+	
+	ld de, 1
+	ld hl, FlyHitMoves
+	push bc
+	call IsInArray
+	pop bc
+	ret c
 
 .DigMoves:
 	ld a, BATTLE_VARS_MOVE_ANIM
@@ -1940,6 +1959,8 @@ BattleCommand_CheckHit:
 	ret
 
 INCLUDE "data/battle/accuracy_multipliers.asm"
+
+INCLUDE "data/moves/fly_hit_moves.asm"
 
 BattleCommand_EffectChance:
 ; effectchance
@@ -3243,7 +3264,7 @@ EnemyAttackDamage:
 	ld a, [wEnemyMonSpecies]
 	call CheckLightBuoy
 	jr z, .continuephysical
-	
+
 .continuespecial
 	ld hl, wBattleMonSpclDef
 	ld a, [hli]
