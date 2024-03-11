@@ -26,6 +26,7 @@ TossItemFromPC:
 	push de
 	call PartyMonItemName
 	farcall _CheckTossableItem
+	farcall _CheckSellableItem
 	ld a, [wItemAttributeParamBuffer]
 	and a
 	jr nz, .key_item
