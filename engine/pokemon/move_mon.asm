@@ -196,6 +196,10 @@ endr
 	call SetSeenAndCaughtMon
 	pop de
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jp nz, .staticsimDVs
+
 	pop hl
 	push hl
 	ld a, [wBattleMode]
@@ -206,6 +210,7 @@ endr
 	ld b, a
 	call Random
 	ld c, a
+
 .initializeDVs
 	ld a, b
 	ld [de], a
@@ -362,6 +367,13 @@ endr
 .done
 	scf ; When this function returns, the carry flag indicates success vs failure.
 	ret
+
+.staticsimDVs
+	pop hl
+	push hl
+	ld b, $ff
+	ld c, $fe
+	jp .initializeDVs
 
 FillPP:
 	push bc
