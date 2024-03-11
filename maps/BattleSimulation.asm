@@ -266,9 +266,21 @@ BattleSimulationScientist2:
 
 BattleSimulationRocker:
 	jumptextfaceplayer BattleSimulationRockerText
-	
+
 BattleSimulationTimeMachineGuy:
 	jumptextfaceplayer BattleSimulationTimeMachineGuyUnavailableText
+; Only let the player bring Pokemon that are lower than level 20
+; PAST_LEVEL is defined in constants\battle_constants.asm
+; This check is awkward, make sure to test many possible outcomes.
+; It must check for something false to continue.
+; Try to look at RetroactivelyIgnoreEggs in the event of higher level Pokemon passing through.
+	writebyte PAST_LEVEL
+	special FindPartyMonAboveLevel
+	iffalse .PartyTooHigh
+
+;	loadvar wLevelCap, 20
+;	loadvar wLevelCap, 100
+.PartyTooHigh
 
 BattleSimItemball:
 	random 15
@@ -857,6 +869,54 @@ BattleSimulationTimeMachineGuyUnavailableText:
 	para "Without it, this"
 	line "MACHINE is comp-"
 	cont "letely useless."
+	done
+
+TimeMachineGiveMachinePart:
+	text "Is that…?"
+
+	para "Yes, it is!"
+
+	para "That is the"
+	line "MACHINE PART we"
+	cont "need to complete"
+	cont "the TIME MACHINE!"
+
+	para "Allow me a moment"
+	line "to install it."
+	cont "Wait here please."
+	done
+
+TimeMachineReadyText:
+	text "Finally! The"
+	line "TIME MACHINE is up"
+	cont "and running!"
+
+	para "Would you like the"
+	line "honors of taking"
+	cont "her on her maiden"
+	cont "voyage, CHAMPION"
+	cont "<PLAYER>?"
+	done
+
+TimeMachinePartyTooStrongText:
+	text "I'm sorry, <PLAYER>."
+
+	para "I cannot let you"
+	line "into the TIME"
+	cont "MACHINE with your"
+	cont "current #MON."
+
+	para "We cannot risk"
+	line "you bringing"
+	cont "#MON that"
+	cont "greatly over-"
+	cont "power anything in"
+	cont "the past."
+
+	para "No #MON beyond"
+	line "this point can"
+	cont "be higher than"
+	cont "level 20!"
 	done
 
 ;	setflag ENGINE_BATTLE_SIMULATION_ACTIVE
