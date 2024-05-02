@@ -6758,15 +6758,15 @@ LoadEnemyMon:
 .CheckBoss:
 	ld a, [wBattleType]
 	cp BATTLETYPE_BOSS
-	jr z, .IsBoss
-	cp BATTLETYPE_SIMULATION
+;	jr z, .IsBoss
+;	cp BATTLETYPE_SIMULATION
 	jr nz, .GenerateDVs
 
 .IsBoss
 	ld b, ATKDEFDV_BOSS ; $ea
 	ld c, SPDSPCDV_BOSS ; $aa
 	jr .UpdateDVs
-	
+
 .GenerateDVs:
 ; Generate new random DVs
 	call BattleRandom
@@ -7653,10 +7653,6 @@ GiveExperiencePoints:
 	cp MAX_LEVEL
 	jp nc, .skip_stats
 	cp d
-	jp z, .skip_stats
-
-	cp PAST_LEVEL
-	call nc, .check_past
 	jp z, .skip_stats
 
 ; <NICKNAME> grew to level ##!
