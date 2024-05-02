@@ -86,9 +86,9 @@ Moves: ; 41afb
 	move MEGA_DRAIN,   EFFECT_LEECH_HIT,          75, GRASS,    100, 10,   0
 	move LEECH_SEED,   EFFECT_LEECH_SEED,          0, POWDER,    90, 10,   0
 	move GROWTH,       EFFECT_GROWTH,              0, GRASS,      1, 40,   0
-	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         55, GRASS,     95, 25,   0
+	move RAZOR_LEAF,   EFFECT_NORMAL_HIT,         65, GRASS,     95, 25,   0
 	move SOLARBEAM,    EFFECT_SOLARBEAM,         120, GRASS,    100, 10,   0
-	move POISONPOWDER, EFFECT_POISONPOWDER,   	   0, PSNPOWDER, 75, 35,   0
+	move POISONPOWDER, EFFECT_POISONPOWDER,   	   0, POWDER,	 75, 35,   0
 	move STUN_SPORE,   EFFECT_STUN_SPORE,          0, POWDER,    75, 30,   0
 	move SLEEP_POWDER, EFFECT_SLEEP_POWDER,    	   0, POWDER,    75, 15,   0
 	move PETAL_DANCE,  EFFECT_RAMPAGE,           120, GRASS,    100, 10,   0
@@ -103,7 +103,7 @@ Moves: ; 41afb
 	move EARTHQUAKE,   EFFECT_EARTHQUAKE,        100, GROUND,   100, 10,   0
 	move FISSURE,      EFFECT_OHKO,                0, GROUND,    30,  5,   0
 	move DIG,          EFFECT_FLY,                80, GROUND,   100, 10,   0
-	move TOXIC,        EFFECT_TOXIC,               0, TOXIC_T,    75, 10,   0
+	move TOXIC,        EFFECT_TOXIC,               0, POISON,    75, 10,   0
 	move CONFUSION,    EFFECT_CONFUSE_HIT,        50, PSYCHIC,  100, 25,  10
 	move PSYCHIC_M,    EFFECT_SP_DEF_DOWN_HIT,    90, PSYCHIC,  100, 10,  10
 	move HYPNOSIS,     EFFECT_SLEEP,               0, PSYCHIC,   60, 20,   0
@@ -150,16 +150,16 @@ Moves: ; 41afb
 	move HI_JUMP_KICK, EFFECT_JUMP_KICK,         130, FIGHTING,  90, 10,   0
 	move GLARE,        EFFECT_GLARE,               0, NORMAL,    95, 30,   0
 	move DREAM_EATER,  EFFECT_DREAM_EATER,       100, PSYCHIC,  100, 15,   0
-	move POISON_GAS,   EFFECT_POISON,              0, PSNPOWDER, 55, 40,   0
+	move POISON_GAS,   EFFECT_POISON,              0, POISON,	 55, 40,   0
 	move BARRAGE,      EFFECT_MULTI_HIT,          20, GRASS,     95, 10,   5
 	move LEECH_LIFE,   EFFECT_LEECH_HIT,          80, BUG,      100, 15,   0
 	move LOVELY_KISS,  EFFECT_SLEEP,               0, NORMAL,    75, 10,   0
 	move BRAVE_BIRD,   EFFECT_RECOIL_HIT,        120, FLYING,   100, 10,   0
 	move TRANSFORM,    EFFECT_TRANSFORM,           0, NORMAL,     1, 10,   0
 	move BUBBLE,       EFFECT_SPEED_DOWN_HIT,     40, WATER,    100, 30,  10
-	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        70, NORMAL,   100, 10,  20
+	move DIZZY_PUNCH,  EFFECT_CONFUSE_HIT,        90, NORMAL,    90, 10,  30
 	move SPORE,        EFFECT_SLEEP_POWDER,        0, POWDER,   100, 15,   0
-	move WILL_O_WISP,  EFFECT_BURN,			       0, WILLOWISP, 85, 15,   0
+	move WILL_O_WISP,  EFFECT_BURN,			       0, FIRE,		 85, 15,   0
 	move PSYWAVE,      EFFECT_PSYWAVE,             1, PSYCHIC,   80, 15,   0
 	move SPLASH,       EFFECT_SPLASH,              0, WATER,      1, 40,   0
 	move ACID_ARMOR,   EFFECT_DEFENSE_UP_2,        0, POISON,     1, 40,   0
