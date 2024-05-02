@@ -4,7 +4,7 @@ PastRoute11_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .LightsOff
+	callback MAPCALLBACK_TILES, .LightsOff
 
 .LightsOff
 	checktime NITE
@@ -25,7 +25,7 @@ PastRoute11_MapEvents:
 	warp_event 37,  7, PAST_ROUTE_11_HOUSE_1, 1 ; Misc House 1
 	warp_event 29, 11, PAST_ROUTE_11_INN, 1
 	warp_event 19,  7, PAST_ROUTE_11_HOUSE_2, 1 ; Pokemon Shelter
-	warp_event 17, 17, PAST_ROUTE_11_HOUSE_3, 1 ; Misc House 3
+	warp_event 17, 17, PAST_ROUTE_11_HOUSE_3, 1 ; Regan's House
 	warp_event  7, 11, PAST_ROUTE_11_HOUSE_4, 1 ; Cleanse Tag House
 
 	db 0 ; coord events

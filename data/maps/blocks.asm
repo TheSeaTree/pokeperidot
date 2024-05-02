@@ -85,7 +85,6 @@ PastRoute11House1_Blocks:
 PastRoute11House3_Blocks:
 PastRoute11House4_Blocks:
 PastRoute11House5_Blocks:
-PastElkhornLakesideHouse_Blocks:
 PastElkhornRichardsHouse_Blocks:
 PastFaviaDayCare_Blocks:
 PastFaviaFriendshipHouse_Blocks:
@@ -94,11 +93,14 @@ PastPavonaHouse2_Blocks:
 PastPectiniaGymSpeechHouse_Blocks:
 	INCBIN "maps/time-travel/PastHouse1.4x4.house.ablk"
 
-PastElkhornMomsHouse_Blocks:
 PastFaviaCelestesHouse_Blocks:
 PastPectiniaBerryHouse_Blocks:
 PastRoute11House2_Blocks:
+PastElkhornLakesideHouse_Blocks:
 	INCBIN "maps/time-travel/PastHouse2.4x4.players_house.ablk"
+
+PastElkhornMomsHouse_Blocks:
+	INCBIN "maps/time-travel/PastElkhornMomsHouse.ablk"
 
 PastRoute11Schoolhouse_Blocks:
 	INCBIN "maps/time-travel/PastRoute11Schoolhouse.ablk"
@@ -572,7 +574,8 @@ EastForest_Blocks:
 	INCBIN "maps/EastForest.ablk"	
 
 HiddenPowerCave_Blocks:
-	INCBIN "maps/SmallCave.ablk"
+PastHiddenPowerCave_Blocks:
+	INCBIN "maps/HiddenPowerCave.ablk"
 	
 Factory1F_Blocks:
 	INCBIN "maps/Factory1F.ablk"

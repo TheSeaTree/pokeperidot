@@ -5,23 +5,290 @@ PastRoute3_MapScripts:
 
 	db 0 ; callbacks
 
-; Bug Catcher & Camper are absolutely brothers
-; Lad might also be a brother, or just a friend.
-;		Probably just a friend, or unrelated.
+TrainerBeautyLina:
+	trainer BEAUTY, LINA, EVENT_BEAT_BEAUTY_LINA, BeautyLinaText, BeautyLinaWinText, 0, .Script
 
-; "It's way easier to camp out where there's no grass. And that's why I need to defend my spot!"
+.Script:
+	endifjustbattled
+	opentext
+	writetext BeautyLinaAfterText
+	waitbutton
+	closetext
+	end
 
-; "Our grandpa doesn't like us camping out overnight. That's when all the best BUG-types come out!"
+TrainerLassCathy:
+	trainer LASS, CATHY, EVENT_BEAT_LASS_CATHY, LassCathyText, LassCathyWinText, 0, .Script
 
-; Hiker mentions how tough it is to break up this rock.
-;		Maybe retcon another hiker in the present to mention his work many years ago?
+.Script:
+	endifjustbattled
+	opentext
+	writetext LassCathyAfterText
+	waitbutton
+	closetext
+	end
 
-; Beauty mentions needing a boyfriend to find rare Pokemon for her.
+TrainerCamperWilson:
+	trainer CAMPER, WILSON, EVENT_BEAT_CAMPER_WILSON, CamperWilsonText, CamperWilsonWinText, 0, .Script
 
-; Lass complains about her stupid brothers(cousins?) hogging the best spot in the trees.
+.Script:
+	endifjustbattled
+	opentext
+	writetext CamperWilsonAfterText
+	waitbutton
+	closetext
+	end
 
-; Gentleman mentions keeping an eye on his grandkids, but can spare a moment to battle.
-; "#MON can be dangerous, that's why I'm here to make sure everything is okay."
+TrainerBugCatcherKevin:
+	trainer BUG_CATCHER, KEVIN, EVENT_BEAT_BUG_CATCHER_KEVIN, BugCatcherKevinText, BugCatcherKevinWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext BugCatcherKevinAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerLadDarren:
+	trainer LAD, DARREN, EVENT_BEAT_LAD_DARREN, LadDarrenText, LadDarrenWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext LadDarrenAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerHikerWarrenSr:
+	trainer HIKER, WARREN_SR, EVENT_BEAT_HIKER_WARREN_SR, HikerWarrenSrText, HikerWarrenSrWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext HikerWarrenSrAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerGentlemanNigel:
+	trainer GENTLEMAN, NIGEL, EVENT_BEAT_GENTLEMAN_NIGEL, GentlemanNigelText, GentlemanNigelWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext GentlemanNigelAfterText
+	waitbutton
+	closetext
+	end
+
+PastRoute3Lemonade:
+	itemball LEMONADE
+
+PastRoute3MiracleSeed:
+	itemball MIRACLE_SEED
+
+PastRoute3Stick:
+	itemball STICK
+
+PastRoute3HiddenHeatCharm:
+	hiddenitem HEAT_CHARM, EVENT_ROUTE_3_PAST_HIDDEN_HEAT_CHARM
+
+PastRoute3HiddenPsnCureBerry:
+	hiddenitem  PSNCUREBERRY, EVENT_ROUTE_3_PAST_HIDDEN_PSNCUREBERRY
+
+PastRoute3HiddenSilverBerry:
+	hiddenitem SILVER_BERRY, EVENT_ROUTE_3_PAST_HIDDEN_SILVER_BERRY
+
+PastRoute3HiddenPowerHerb:
+	hiddenitem POWER_HERB, EVENT_ROUTE_3_PAST_HIDDEN_POWER_HERB
+
+BeautyLinaText:
+	text "I plan on going"
+	line "shopping in the"
+	cont "with all the prize"
+	cont "money I've won."
+
+	para "I'll have plenty of"
+	line "money after I win"
+	cont "against you!"
+	done
+
+BeautyLinaWinText:
+	text "Hey, that's not"
+	line "fair!"
+
+	para "How do you expect"
+	line "me to go shopping"
+	cont "if I have to give"
+	cont "you my money?"
+	done
+
+BeautyLinaAfterText:
+	text "I need a boyfriend"
+	line "who will find the"
+	cont "rarest #MON for"
+	cont "me to use."
+	done
+
+LassCathyText:
+	text "My cousins are"
+	line "hogging the best"
+	cont "spot in the trees."
+
+	para "There's too much"
+	line "grass here!"
+	done
+
+LassCathyWinText:
+	text "Eek!"
+
+	para "There was an EKANS"
+	line "in the grass that"
+	cont "distracted me!"
+	done
+
+LassCathyAfterText:
+	text "I just want to go"
+	line "camping with my"
+	cont "cousins, but those"
+	cont "dumb boys won't let"
+	cont "any girls hang out"
+	cont "with them."
+	done
+
+CamperWilsonText:
+	text "This is the best"
+	line "spot to camp out."
+
+	para "I set up the tent,"
+	line "while my brother"
+	cont "finds some new"
+	cont "#MON to catch."
+	done
+
+CamperWilsonWinText:
+	text "No way I lost!"
+
+	para "I was supposed to"
+	line "protect our camp!"
+	done
+
+CamperWilsonAfterText:
+	text "At least my"
+	line "#MON can keep"
+	cont "CATHY from"
+	cont "bothering us."
+	done
+
+BugCatcherKevinText:
+	text "Hey! You can't be"
+	line "here!"
+
+	para "My brother and I"
+	line "found this spot,"
+	cont "so that means it's"
+	cont "all ours!"
+	done
+
+BugCatcherKevinWinText:
+	text "Okay, you won. Now"
+	line "will you quit"
+	cont "bugging us?"
+	done
+
+BugCatcherKevinAfterText:
+	text "Our grandpa doesn't"
+	line "like us staying"
+	cont "out past dark, but"
+	cont "that's when all the"
+	cont "best BUG-types are"
+	cont "active!"
+	done
+
+LadDarrenText:
+	text "Do you think a"
+	line "regular person"
+	cont "could have"
+	cont "PSYCHIC abilities?"
+	done
+
+LadDarrenWinText:
+	text "I had a feeling"
+	line "that you would"
+	cont "beat me, but I"
+	cont "wanted to change"
+	cont "the outcome."
+	done
+
+LadDarrenAfterText:
+	text "FAVIA TOWN"
+	line "attracts a lot of"
+	cont "#MON with"
+	cont "PSYCHIC powers."
+
+	para "I need to find"
+	line "more to train."
+	done
+
+HikerWarrenSrText:
+	text "I'm trying to clear"
+	line "a path through"
+	cont "this rock."
+
+	para "A battle will get"
+	line "my #MON fired"
+	cont "up so they can"
+	cont "work even harder!"
+	done
+
+HikerWarrenSrWinText:
+	text "Ah! I need a rest."
+
+	para "I didn't expect"
+	line "someone to push"
+	cont "me so hard."
+	done
+
+HikerWarrenSrAfterText:
+	text "When I'm done,"
+	line "people will be"
+	cont "able to reach"
+	cont "PALEROCK MOUNTAIN"
+	cont "from this side of"
+	cont "the region."
+
+	para "I think it will"
+	line "really help bring"
+	cont "people together."
+	done
+
+GentlemanNigelText:
+	text "I'm keeping an eye"
+	line "on my grandkids"
+	cont "while they play."
+
+	para "But I'm sure I"
+	line "could spare a"
+	cont "moment to battle."
+	done
+
+GentlemanNigelWinText:
+	text "Wow! Some of you"
+	line "kids have gotten"
+	cont "really good at"
+	cont "raising #MON!"
+	done
+
+GentlemanNigelAfterText:
+	text "Wild #MON can"
+	line "be dangerous."
+
+	para "I've trained some"
+	line "#MON of my own"
+	cont "to keep my grand-"
+	cont "children safe."
+	done
 
 PastRoute3_MapEvents:
 	db 0, 0 ; filler
@@ -33,19 +300,19 @@ PastRoute3_MapEvents:
 	db 0 ; coord events
 
 	db 4 ; bg events
-	bg_event 16, 19, BGEVENT_ITEM, LugiaCaveB2FHiddenCoarseCharm
-	bg_event 25, 33, BGEVENT_ITEM, LugiaCaveB2FHiddenCoarseCharm
-	bg_event 17, 41, BGEVENT_ITEM, LugiaCaveB2FHiddenCoarseCharm
-	bg_event 26, 18, BGEVENT_ITEM, LugiaCaveB2FHiddenCoarseCharm
+	bg_event 16, 19, BGEVENT_ITEM, PastRoute3HiddenHeatCharm
+	bg_event 25, 33, BGEVENT_ITEM, PastRoute3HiddenPsnCureBerry
+	bg_event 17, 41, BGEVENT_ITEM, PastRoute3HiddenSilverBerry
+	bg_event 26, 18, BGEVENT_ITEM, PastRoute3HiddenPowerHerb
 
 	db 10 ; object events
-	object_event 12,  8, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyReggie, -1 ; Beauty
-	object_event 27, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyReggie, -1 ; Lass
-	object_event 10, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerBeautyReggie, -1 ; Camper (Brother 1)
-	object_event 15, 31, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBeautyReggie, -1 ; Bug Catcher (Brother 2)
-	object_event 13, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyReggie, -1 ; Lad (Brother 3?)
-	object_event 33, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerBeautyReggie, -1 ; Hiker
-	object_event 27, 38, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyReggie, -1 ; Gentleman
-	object_event 31, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryB1Lemonade, EVENT_FACTORY_B1_LEMONADE
-	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryB1Lemonade, EVENT_FACTORY_B1_LEMONADE
-	object_event  1, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, FactoryB1Lemonade, EVENT_FACTORY_B1_LEMONADE
+	object_event 12,  8, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyLina, -1
+	object_event 27, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassCathy, -1
+	object_event 10, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperWilson, -1
+	object_event 15, 31, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherKevin, -1
+	object_event 13, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLadDarren, -1
+	object_event 33, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerHikerWarrenSr, -1
+	object_event 27, 38, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanNigel, -1
+	object_event  1, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3Lemonade, EVENT_ROUTE_3_PAST_LEMONADE
+	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3MiracleSeed, EVENT_ROUTE_3_PAST_MIRACLE_SEED
+	object_event 31, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3Stick, EVENT_ROUTE_3_PAST_STICK

@@ -176,7 +176,7 @@ CeladonGroupSprites:
 ; Route8, Route12, Route10South, LavenderTown
 LavenderGroupSprites:
 	db SPRITE_POKEFAN_M
-	db SPRITE_BUENA	
+	db SPRITE_BUENA
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
 	db SPRITE_TEACHER
@@ -283,7 +283,6 @@ StaghornGroupSprites:
 	; 9 of max 9 walking sprites
 	db SPRITE_GYM_GUY
 	db SPRITE_MOLTRES
-	db SPRITE_WEIRD_TREE ; variable sprite: becomes SPRITE_SUDOWOODO and SPRITE_TWIN
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
@@ -525,13 +524,29 @@ BattleSimGroupSprites:
 	db 0
 
 PastFaviaGroupSprites:
+	db SPRITE_POKEFAN_M
+	db SPRITE_SAILOR
+	db SPRITE_BUENA
+	db SPRITE_LASS
+	db SPRITE_YOUNGSTER
+	db SPRITE_BUG_CATCHER
+	db SPRITE_GENTLEMAN
 	db SPRITE_TWIN
+	; 8 of max 9 walking sprites
 	db 0
 
 PastPectiniaGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_SAILOR
+	db SPRITE_BUENA
+	db SPRITE_LASS
+	db SPRITE_YOUNGSTER
+	db SPRITE_BUG_CATCHER
+	db SPRITE_GENTLEMAN
+	db SPRITE_TWIN
+	; 8 of max 9 walking sprites
 	db SPRITE_MACHOP
+	db SPRITE_POKE_BALL
 	db 0
 
 PastRoute11GroupSprites:

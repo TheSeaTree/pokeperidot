@@ -70,7 +70,54 @@ TrainerSchoolboyMartin:
 	waitbutton
 	closetext
 	end
-	
+
+SootheBellLady:
+	faceplayer
+	opentext
+	checkevent EVENT_GOT_SOOTHE_BELL
+	iftrue .After
+	checkevent EVENT_SOOTHE_BELL_GIFT_PENDING
+	iftrue .GiveSootheBell
+	checkevent EVENT_MET_SOOTHE_BELL_LADY
+	iftrue .Waiting
+
+	writetext SootheBellLadyIntroText
+	waitbutton
+	setevent EVENT_MET_SOOTHE_BELL_LADY
+	jump .CheckRinring
+
+.Waiting
+	writetext SootheBellLadyWaitingText
+	waitbutton
+.CheckRinring
+	writebyte RINRING
+	special FindPartyMonThatSpecies
+	iffalse .No
+	showemote EMOTE_HEART, LAST_TALKED, 15
+	writetext SootheBellLadyShowRinringText
+	waitbutton
+
+.GiveSootheBell
+	writetext SootheBellLadyTryGiveItemText
+	waitbutton
+	verbosegiveitem SOOTHE_BELL
+	iffalse .NoRoom
+	setevent EVENT_GOT_SOOTHE_BELL
+
+.After
+	writetext SootheBellLadyAfterText
+	waitbutton
+	closetext
+	end
+
+.NoRoom
+	setevent EVENT_SOOTHE_BELL_GIFT_PENDING
+	writetext SootheBellLadyBagFullText
+	waitbutton
+.No
+	closetext
+	end
+
 Route12FruitTree:
 	fruittree FRUITTREE_ROUTE_12_1
 
@@ -227,6 +274,72 @@ SchoolboyMartinAfterText:
 	cont "real trainers."
 	done
 
+SootheBellLadyIntroText:
+	text "There's a #MON"
+	line "that is the most"
+	cont "adorable little"
+	cont "kitty with a bell"
+	cont "on its tail!"
+
+	para "It's my favorite,"
+	line "but I've never been"
+	cont "able to see one in"
+	cont "the wild."
+
+	para "You're a trainer,"
+	line "could you catch"
+	cont "one to show me?"
+	done
+
+SootheBellLadyWaitingText:
+	text "Have you found my"
+	line "favorite #MON?"
+
+	para "It has black fur,"
+	line "a bell on the tip"
+	cont "of its tail, and"
+	cont "is the prettiest"
+	cont "#MON ever!"
+	done
+
+SootheBellLadyShowRinringText:
+	text "Aaaaah!"
+	line "Oh my goodness!"
+
+	para "It's way more prec-"
+	line "ious in person!"
+	done
+
+SootheBellLadyTryGiveItemText:
+	text "Here, you must"
+	line "take this, it"
+	cont "would look so cute"
+	cont "on your RINRING!"
+	done
+
+SootheBellLadyBagFullText:
+	text "Aww! Your PACK"
+	line "is full…"
+
+	para "Please make some"
+	line "room? This is the"
+	cont "perfect accessory"
+	cont "for your RINRING."
+	done
+
+SootheBellLadyAfterText:
+	text "Letting a #MON"
+	line "hold a SOOTHE BELL"
+	cont "is one of the"
+	cont "quickest ways to"
+	cont "have it grow fond"
+	cont "of you."
+
+	para "Thank you so very"
+	line "much again for"
+	cont "showing me your"
+	cont "precious RINRING!"
+	done
 
 Route12_MapEvents:
 	db 0, 0 ; filler
@@ -245,13 +358,14 @@ Route12_MapEvents:
 	bg_event 54, 21, BGEVENT_ITEM, Route12HiddenFreshWater
 	bg_event 25,  5, BGEVENT_ITEM, Route12HiddenSuperRepel
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 16, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperRusty, -1
 	object_event 17,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerLeslie, -1
 	object_event 34, 14, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyRebecca, -1
 	object_event 39, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicSolomon, -1
 	object_event 37,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherSharon, -1
 	object_event 34,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMartin, -1
+	object_event 61, 18, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SootheBellLady, -1
 	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree, -1
 	object_event 65,  8, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12ItemBush, -1
 	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_12_FIRE_STONE

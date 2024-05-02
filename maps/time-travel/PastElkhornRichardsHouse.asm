@@ -66,6 +66,6 @@ PastElkhornRichardsHouse_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornRichardScript, -1 ; Gym Guy sprite if he doesn't get a battle.
-	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornPeggyScript, -1
+	object_event  5,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornRichardScript, -1 ; Gym Guy sprite if he doesn't get a battle.
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornPeggyScript, -1
 	object_event  4,  1, SPRITE_MOLTRES, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornFarfetchdScript, -1

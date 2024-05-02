@@ -20,9 +20,8 @@ PastElkhornGymGuyText:
 	cont "RIDGE COAST."
 
 	para "My wife wants to"
-	line "move our family"
-	cont "there as soon as"
-	cont "possible."
+	line "raise a family by"
+	cont "the sea."
 	done
 
 PastElkhornTeacherText:
@@ -43,8 +42,8 @@ PastElkhornLakesideHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 2,  7, PAST_ELKHORN_TOWN, 1
-	warp_event 3,  7, PAST_ELKHORN_TOWN, 1
+	warp_event 2,  7, PAST_ELKHORN_TOWN, 2
+	warp_event 3,  7, PAST_ELKHORN_TOWN, 2
 
 	db 0 ; coord events
 

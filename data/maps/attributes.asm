@@ -639,3 +639,4 @@ ENDM
 	map_attributes PastPavonaHouse2, PAST_PAVONA_HOUSE_2, $00, 0
 	map_attributes PastPectiniaBerryHouse, PAST_PECTINIA_BERRY_HOUSE, $00, 0
 	map_attributes PastPectiniaGymSpeechHouse, PAST_PECTINIA_GYM_SPEECH_HOUSE, $00, 0
+	map_attributes PastHiddenPowerCave, PAST_HIDDEN_POWER_CAVE, $09, 0

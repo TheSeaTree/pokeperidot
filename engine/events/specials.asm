@@ -91,7 +91,7 @@ NameRival:
 	ld b, NAME_RIVAL
 	ld de, wRivalName
 	farcall _NamingScreen
-	; default to "SILVER"
+	; default to "MIKE"
 	ld hl, wRivalName
 	ld de, .default
 	call InitName
@@ -406,7 +406,28 @@ SetFireGymSteps:
 	ld [wFireGymStepsRemaining], a
 	ret
 
+CompareTrickMirrors:
+	ld a, [wTrickMirrorCount]
+	ld b, a
+	ld a, [wTrickMirrorCompare]
+	sbc b
+
+	jr nc, .False
+	jr z, .False
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
+
+.False
+	ld a, FALSE
+	ld [wScriptVar], a
+	ret
+
 CheckStolenTrickMirror:
+	xor a
+	ld a, 1
+	ld [wTrickMirrorCount], a
+
 	ld hl, wPartyMon1Item
 	ld de, PARTYMON_STRUCT_LENGTH
 	ld a, [wPartyCount]
@@ -414,7 +435,8 @@ CheckStolenTrickMirror:
 .loop
 	ld a, [hl]
 	cp TRICK_MIRROR
-	jr z, .stolen
+;	jr z, .stolen
+	call z, .stolen
 	add hl, de
 	dec c
 	jr nz, .loop
@@ -423,9 +445,12 @@ CheckStolenTrickMirror:
 	ret
 
 .stolen
-	ld a, TRUE
-	ld [wScriptVar], a
-	ret
+	ld a, [wTrickMirrorCount]
+	and a
+	ret z
+	inc a
+	ld [wTrickMirrorCount], a
+	ret nz
 
 DropOffParty:
 ; Mask the whole party by setting the count to 0...
@@ -435,4 +460,8 @@ DropOffParty:
 	inc hl
 ; ... and replacing it with the terminator byte
 	ld [hl], -1
+	ret
+
+ReloadEmotes:
+	farcall RefreshSprites
 	ret

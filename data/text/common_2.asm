@@ -1142,7 +1142,7 @@ _NoTMHMinPC::
 	text "This item can't be"
 	line "deposited."
 	prompt
-	
+
 UnknownText_0x1c144d::
 	text "<PLAYER> turned on"
 	line "the PC."

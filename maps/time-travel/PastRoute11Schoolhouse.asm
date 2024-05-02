@@ -63,6 +63,9 @@ PastRoute11SchoolhouseTeacher:
 PastRoute11SchoolhouseEmptyDesk:
 	jumptext PastRoute11SchoolhouseEmptyDeskText
 
+PastRoute11SchoolhouseTidyDesk:
+	jumptext PastRoute11SchoolhouseTidyDeskText
+
 PastRoute11SchoolhouseChalkboard:
 	jumptext PastRoute11SchoolhouseChalkboardText
 
@@ -101,6 +104,12 @@ PastRoute11SchoolhouseEmptyDeskText:
 	cont "this desk."
 	done
 
+PastRoute11SchoolhouseTidyDeskText:
+	text "The inside of this"
+	line "desk is very neat"
+	cont "and tidy."
+	done
+
 PastRoute11SchoolhouseChalkboardText:
 	text "The board is full"
 	line "of battle theory"
@@ -116,8 +125,15 @@ PastRoute11Schoolhouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event 6, 6, BGEVENT_UP, PastRoute11SchoolhouseEmptyDesk
+	db 10 ; bg events
+	bg_event  6,  6, BGEVENT_UP, PastRoute11SchoolhouseEmptyDesk
+	bg_event  2,  4, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  4,  4, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  6,  4, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  8,  4, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  2,  6, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  4,  6, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
+	bg_event  8,  6, BGEVENT_UP, PastRoute11SchoolhouseTidyDesk
 	bg_event  6,  0, BGEVENT_UP, PastRoute11SchoolhouseChalkboard
 	bg_event  5,  0, BGEVENT_UP, PastRoute11SchoolhouseChalkboard
 

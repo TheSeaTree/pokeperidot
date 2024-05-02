@@ -519,10 +519,11 @@ ENDM
 	newgroup
 
 	map_const PAST_ELKHORN_TOWN,						  15, 11
-	map_const PAST_ELKHORN_MOMS_HOUSE,					   4,  4
+	map_const PAST_ELKHORN_MOMS_HOUSE,					   6,  4
 	map_const PAST_ELKHORN_LAKESIDE_HOUSE,				   4,  4
 	map_const PAST_ELKHORN_RICHARDS_HOUSE,				   4,  4
 	map_const PAST_ROUTE_1,						  		  26, 16
+	map_const PAST_HIDDEN_POWER_CAVE,			  		   6,  5
 
 	newgroup
 

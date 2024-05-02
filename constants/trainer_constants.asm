@@ -184,8 +184,6 @@ CHRIS EQU __enum__
 	trainerclass POSEY ; 15
 	const POSEY1
 	const POSEY2
-	const POSEY3
-	const POSEY4
 	const POSEY_REMATCH1
 	const POSEY_REMATCH2
 	const POSEY_REMATCH3
@@ -199,6 +197,7 @@ CHRIS EQU __enum__
 	const DEVIN
 	const JULES
 	const LAWRENCE
+	const DARREN
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -233,6 +232,7 @@ CHRIS EQU __enum__
 	const KELLY
 	const DANNI
 	const JODIE
+	const CATHY
 
 	trainerclass JANINE ; 1a
 
@@ -281,6 +281,7 @@ CHRIS EQU __enum__
 	const SKY2_TRAINER2
 	const SKY3_TRAINER2
 	const CASTLE3_BONUS
+	const LINA
 
 	trainerclass POKEMANIAC ; 1e
 	const CHARLIE
@@ -302,6 +303,7 @@ CHRIS EQU __enum__
 	const SKY1_TRAINER3
 	const SKY2_TRAINER3
 	const SKY3_TRAINER3
+	const NIGEL
 	
 	trainerclass SKIER ; 21
 	const ICE1_TRAINER1
@@ -330,6 +332,7 @@ CHRIS EQU __enum__
 	const FOREST1_TRAINER3
 	const FOREST2_TRAINER1
 	const FOREST3_TRAINER1
+	const KEVIN
 
 	trainerclass FISHER ; 25
 	const BRADY
@@ -445,7 +448,8 @@ CHRIS EQU __enum__
 	const LAVA1_TRAINER3
 	const LAVA2_TRAINER3
 	const LAVA3_TRAINER3
-	
+	const WARREN_SR
+
 	trainerclass BIKER ; 2d
 	const JERRY
 	const JARED
@@ -554,6 +558,7 @@ CHRIS EQU __enum__
 	const FOREST1_TRAINER1
 	const FOREST2_TRAINER3
 	const FOREST3_TRAINER3
+	const WILSON
 
 	trainerclass ENGINEER ; 37
 	const ENRIQUE

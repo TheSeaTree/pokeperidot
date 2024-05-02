@@ -31,6 +31,27 @@ PastElkhornMomScript:
 	pokenamemem CHARMANDER, MEM_BUFFER_0
 	jump .MonNameLoaded
 
+PastElkhornDollScript:
+	opentext
+	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
+	iftrue .Squirtle
+	checkevent EVENT_GOT_CHARMANDER_FROM_MAPLE
+	iftrue .Charmander
+	pokenamemem BULBASAUR, MEM_BUFFER_0
+.MonNameLoaded
+	writetext PastElkhornDollText
+	waitbutton
+	closetext
+	end
+
+.Squirtle
+	pokenamemem SQUIRTLE, MEM_BUFFER_0
+	jump .MonNameLoaded
+
+.Charmander
+	pokenamemem CHARMANDER, MEM_BUFFER_0
+	jump .MonNameLoaded
+
 PastElkhornMomText:
 	text "I'd really love to"
 	line "see my favorite"
@@ -47,6 +68,13 @@ PastElkhornMomText:
 	line "one?"
 	done
 
+PastElkhornDollText:
+	text "It's an adorable"
+	line "@"
+	text_ram wStringBuffer3
+	text " DOLL!"
+	done
+
 PastElkhornMomsHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -58,5 +86,6 @@ PastElkhornMomsHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  4,  5, SPRITE_PAST_MOM, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornMomScript, -1
+	object_event 10,  3, SPRITE_PAST_MOM_DOLL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornDollScript, -1

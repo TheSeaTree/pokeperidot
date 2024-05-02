@@ -67,4 +67,5 @@ MapScenes::
 	scene_var BATTLE_SUBWAY_BOSS_TRAIN,                 wBattleSubwayBossTrainSceneID
 	scene_var BATTLE_SIMULATION,                 		wBattleSimulationSceneID
 	scene_var TRAINER_HOUSE,							wTrainerHouseSceneID
+	scene_var PAST_HIDDEN_POWER_CAVE,					wPastHiddenPowerCaveSceneID
 	db -1

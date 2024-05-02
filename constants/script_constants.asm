@@ -68,7 +68,9 @@ NUM_MEM_BUFFERS EQU const_value
 	const VAR_BALL_POCKET      ; 1c
 	const VAR_SUBWAY_SET       ; 1d
 	const VAR_MUSHROOMS_SOLD   ; 1e
-NUM_VARS EQU const_value       ; 1f
+	const VAR_MIRRORS_HELD     ; 1f
+	const VAR_MIRRORS_COMPARE  ; 20
+NUM_VARS EQU const_value       ; 21
 
 ; variable action types
 RETVAR_STRBUF2 EQU (0 << 6)

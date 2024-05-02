@@ -1279,6 +1279,7 @@ ShowEmoteScript:
 	applymovement2 .Show
 	pause 0
 	applymovement2 .Hide
+	special ReloadEmotes
 	end
 
 .Show:

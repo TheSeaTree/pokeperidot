@@ -193,6 +193,7 @@ SpecialsPointers::
 	add_special InitialClearDSTFlag
 	add_special SelectTreasureMenu ; $a8
 	add_special UpdatePartyStats
+	add_special CompareTrickMirrors
 	add_special CheckStolenTrickMirror
 	add_special LoadPokemonData
 	add_special DropOffParty
@@ -204,3 +205,4 @@ SpecialsPointers::
 	add_special CheckOtherPlayerGender
 	add_special PokePDA
 	add_special BattleSimGiftMon
+	add_special ReloadEmotes

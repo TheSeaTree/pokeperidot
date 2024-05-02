@@ -86,7 +86,7 @@ EvolveAfterBattle_MasterLoop:
 
 	cp EVOLVE_HAPPINESS
 	jr z, .happiness
-	
+
 	cp EVOLVE_HOLD
 	jp z, .hold
 

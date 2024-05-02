@@ -351,7 +351,9 @@ INCLUDE "maps/Route18Barn.asm"
 INCLUDE "maps/Route18Farmhouse.asm"
 INCLUDE "maps/Route18CarnationGate.asm"
 INCLUDE "maps/TreasureHuntersHouse.asm"
-
+INCLUDE "maps/Route20AcroporaGate.asm"
+INCLUDE "maps/Route20HeavyBallHouse.asm"
+INCLUDE "maps/Route21StaghornGate.asm"
 
 SECTION "Map Scripts 22", ROMX
 
@@ -367,9 +369,6 @@ INCLUDE "maps/CarnationPokecenter1F.asm"
 INCLUDE "maps/CarnationZoo.asm"
 INCLUDE "maps/Route19.asm"
 INCLUDE "maps/Route20.asm"
-INCLUDE "maps/Route20AcroporaGate.asm"
-INCLUDE "maps/Route20HeavyBallHouse.asm"
-INCLUDE "maps/Route21StaghornGate.asm"
 
 
 SECTION "Map Scripts 23", ROMX
@@ -477,6 +476,7 @@ INCLUDE "maps/time-travel/PastFaviaFriendshipHouse.asm"
 INCLUDE "maps/time-travel/PastRoute2Gate.asm"
 INCLUDE "maps/time-travel/PastPectiniaBerryHouse.asm"
 INCLUDE "maps/time-travel/PastPectiniaGymSpeechHouse.asm"
+INCLUDE "maps/time-travel/PastHiddenPowerCave.asm"
 
 SECTION "Map Scripts 28", ROMX
 

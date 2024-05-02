@@ -48,6 +48,10 @@ Route27OfficerScript:
 	winlosstext Route27OffficerWinText, 0
 	checkevent EVENT_STOLE_TRICK_MIRROR
 	iftrue .StoleMirror
+	; Make a note of how many Trick Mirrors the player has prior to the battle.
+	special CheckStolenTrickMirror
+	checkcode VAR_MIRRORS_HELD
+	writevarcode VAR_MIRRORS_COMPARE
 	loadtrainer OFFICER, DANIEL1
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
@@ -66,7 +70,9 @@ Route27OfficerScript:
 	setflag ENGINE_BATTLED_OFFICER_DANIEL
 
 .CheckStolenMirror
+	; Compare the current amount of Trick Mirrors with how many the player had before the battle.
 	special CheckStolenTrickMirror
+	special CompareTrickMirrors
 	iffalse .Nope
  	setevent EVENT_STOLE_TRICK_MIRROR
 .Nope

@@ -70,11 +70,11 @@ BattleSimulation_MapScripts:
 
 .Scene3:
 	applymovement PLAYER, BattleSimulationPlayerStepDown
-	turnobject BATTLESIMULATION_SCIENTIST4, LEFT
-	showemote EMOTE_SHOCK, BATTLESIMULATION_SCIENTIST4, 15
-	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationBlockEntrance
+	turnobject BATTLESIMULATION_SCIENTIST5, LEFT
+	showemote EMOTE_SHOCK, BATTLESIMULATION_SCIENTIST5, 15
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationBlockEntrance
 	applymovement PLAYER, BattleSimulationPlayerLeaveTimeMachine
-	applymovement BATTLESIMULATION_SCIENTIST4, BattleSimulationTimeMachineBlock
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineBlock
 ; Do the re-entry scene after the Celebi boss.
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iffalse .Fainted
@@ -268,19 +268,90 @@ BattleSimulationRocker:
 	jumptextfaceplayer BattleSimulationRockerText
 
 BattleSimulationTimeMachineGuy:
-	jumptextfaceplayer BattleSimulationTimeMachineGuyUnavailableText
+;	jumptextfaceplayer BattleSimulationTimeMachineGuyUnavailableText
+
 ; Only let the player bring Pokemon that are lower than level 20
 ; PAST_LEVEL is defined in constants\battle_constants.asm
 ; This check is awkward, make sure to test many possible outcomes.
 ; It must check for something false to continue.
 ; Try to look at RetroactivelyIgnoreEggs in the event of higher level Pokemon passing through.
+
+	checkevent EVENT_MACHINE_PART_USED
+	opentext
+	iftrue .AskTimeTravel
+	checkitem MACHINE_PART
+	iffalse .Unavailable
+
+	writetext TimeMachineGiveMachinePart
+	waitbutton
+	closetext
+	setevent EVENT_MACHINE_PART_USED
+	takeitem MACHINE_PART
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineInstallPart
+	; Play a sound here or something.
+	; Instead of animated tiles, change the blocks so the screens appear activated?
+	wait 10
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineReturnInstallation
+	opentext
+	writetext TimeMachineFirstTimeText
+	yesorno
+	iftrue .TryUseTimeMachine
+	jump .Decline
+
+.AskTimeTravel
+	opentext
+	writetext TimeMachineReadyText
+	yesorno
+	iffalse .Decline
+
+.TryUseTimeMachine
+	writetext TimeMachineAcceptText
+	waitbutton
 	writebyte PAST_LEVEL
 	special FindPartyMonAboveLevel
 	iffalse .PartyTooHigh
+	writetext TimeMachinePartyElligibleText
+	waitbutton
+	closetext
 
-;	loadvar wLevelCap, 20
-;	loadvar wLevelCap, 100
+	follow BATTLESIMULATION_SCIENTIST5, PLAYER
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineInstallPart
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineApproachDoors
+	stopfollow
+	; Some text here wishing the player well?
+	applymovement PLAYER, BattleSimulationTimeMachineEnterMovement
+	; Hide the player sprite? See if it shows up again after a warp.
+
+	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineActivate
+	playsound SFX_BOOT_PC
+	wait 15
+	playsound SFX_WARP_TO
+	waitsfx
+	special FadeOutPalettes
+	; This could be the hidden power cave, since it's otherwise unused and would be discreet.
+	; There can be an NPC in there after the Celebi quest that sends the player back.
+
+	; The machine part could be for the tether rather than the machine itself. The NPC is always there.
+	warpfacing DOWN, PAST_HIDDEN_POWER_CAVE, 4, 4
+	end
+
+.Decline
+	writetext TimeMachineDeclineText
+	jump .Finish
+
 .PartyTooHigh
+	writetext TimeMachinePartyTooStrongText
+	jump .Finish
+
+.Unavailable
+	writetext BattleSimulationTimeMachineGuyUnavailableText
+.Finish
+	waitbutton
+	closetext
+	end
+
+BattleSimComputerScreen:
+	jumptext BattleSimComputerScreenText
 
 BattleSimItemball:
 	random 15
@@ -578,6 +649,35 @@ BattleSimulationPlayerLeaveTimeMachine:
 BattleSimulationTimeMachineBlock:
 	step UP
 	step RIGHT
+	step_resume
+
+BattleSimulationTimeMachineInstallPart:
+	step LEFT
+	step LEFT
+	step UP
+	step_end
+
+BattleSimulationTimeMachineReturnInstallation:
+	step DOWN
+	step RIGHT
+	step RIGHT
+	step_resume
+
+BattleSimulationTimeMachineApproachDoors:
+	step LEFT
+	step LEFT
+	turn_head RIGHT
+	step_resume
+
+BattleSimulationTimeMachineEnterMovement:
+	step UP
+	hide_person
+	step_resume
+
+BattleSimulationTimeMachineActivate:
+	step RIGHT
+	step RIGHT
+	turn_head UP
 	step_end
 
 BattleSimBlockerGuy:
@@ -867,8 +967,8 @@ BattleSimulationTimeMachineGuyUnavailableText:
 	cont "key component."
 
 	para "Without it, this"
-	line "MACHINE is comp-"
-	cont "letely useless."
+	line "MACHINE is not"
+	cont "safe to use."
 	done
 
 TimeMachineGiveMachinePart:
@@ -879,23 +979,65 @@ TimeMachineGiveMachinePart:
 	para "That is the"
 	line "MACHINE PART we"
 	cont "need to complete"
-	cont "the TIME MACHINE!"
+	cont "the TIME MACHINE's"
+	cont "thether system!"
 
 	para "Allow me a moment"
 	line "to install it."
 	cont "Wait here please."
 	done
 
+TimeMachineFirstTimeText:
+
+	; Make this about the machine part being used to create a tether instead.
+	; Then mention that this tether will be used if the player's Pokemon faint.
+
+	text "Finally! We have a"
+	line "way to bring"
+	cont "people back to the"
+	cont "present day!"
+
+	para "Would you like to"
+	line "visit the past,"
+	cont "CHAMPION <PLAYER>?"
+	done
+
 TimeMachineReadyText:
 	text "Finally! The"
-	line "TIME MACHINE is up"
-	cont "and running!"
+	line "TIME MACHINE is"
+	cont "fully functional!"
 
-	para "Would you like the"
-	line "honors of taking"
-	cont "her on her maiden"
-	cont "voyage, CHAMPION"
-	cont "<PLAYER>?"
+	para "Would you like to"
+	line "return to the"
+	cont "past, <PLAYER>?"
+	done
+
+TimeMachineAcceptText:
+	text "Great!"
+
+	para "I will just need"
+	line "to quickly inspect"
+	cont "your #MON…"
+	done
+
+TimeMachineDeclineText:
+	text "Not now?"
+	line "Understood."
+
+	para "You are always"
+	line "welcome to use"
+	cont "the TIME MACHINE."
+	done
+
+TimeMachinePartyElligibleText:
+	text "I see no anomalies"
+	line "with your #MON."
+
+	para "I will begin prep-"
+	line "arations for your"
+	cont "trip now."
+
+	para "Please, follow me."
 	done
 
 TimeMachinePartyTooStrongText:
@@ -919,6 +1061,19 @@ TimeMachinePartyTooStrongText:
 	cont "level 20!"
 	done
 
+BattleSimComputerScreenText:
+	text "There's an opened"
+	cont "document about the"
+	cont "potential exist-"
+	cont "ence of a #MON"
+	cont "that can travel"
+	cont "through time."
+
+	para "It seems to be an"
+	line "article from many"
+	cont "years ago."
+	done
+
 ;	setflag ENGINE_BATTLE_SIMULATION_ACTIVE
 ;	special DropOffParty
 ;	special GiveShuckle
@@ -934,13 +1089,15 @@ TimeMachinePartyTooStrongText:
 BattleSimulation_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 3 ; warp events
 	warp_event  8,  6, BATTLE_SIMULATION, -1
 	warp_event 13,  0, MAPLES_LAB_ELEVATOR, 1
+	warp_event  3,  9, BATTLE_SIMULATION, -1
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 15,  7, BGEVENT_UP, BattleSimComputerScreen
 
 	db 7 ; object events
 	object_event  8,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimulationGuy, -1

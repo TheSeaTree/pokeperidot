@@ -2474,16 +2474,16 @@ GrassWildMons:
 	; morn
 	db 15, SENTRET
 	db 16, MEOWTH
+	db 15, BUTTERFREE
 	db 15, NIDORAN_F
-	db 15, NIDORAN_M
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
 	; day
 	db 15, SENTRET
 	db 16, MEOWTH
+	db 15, BUTTERFREE
 	db 15, NIDORAN_F
-	db 15, NIDORAN_M
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M

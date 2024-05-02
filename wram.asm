@@ -2634,8 +2634,9 @@ wBattleSubwayBossTrainSceneID::					  db
 wBattleSimulationSceneID::					  	  db
 wTrainerHouseSceneID::					  	  	  db
 wOrchidEnteiShrineSceneID::				  	  	  db
+wPastHiddenPowerCaveSceneID::				  	  db
 
-	ds 37
+	ds 36
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2
@@ -2670,8 +2671,10 @@ wParryFightCount::   	db ; unused
 wErinFightCount::    	db ; unused
 ; da0e
 wTreasuresTraded::		db
+wTrickMirrorCount::    	db
+wTrickMirrorCompare::  	db
 
-	ds 99
+	ds 97
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

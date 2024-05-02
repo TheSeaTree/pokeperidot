@@ -57,7 +57,7 @@ PastRoute11InnCooltrainerText:
 	line "could touch it."
 
 	para "It's a little scary"
-	line "a #MON like that"
+	line "that a #MON"
 	cont "can be so strong."
 	done
 
