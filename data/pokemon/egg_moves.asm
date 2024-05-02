@@ -435,6 +435,7 @@ GrimerEggMoves:
 	db STONE_EDGE
 	db BODY_PRESS
 	db BIND
+	db EXPLOSION
 	db -1 ; end
 
 ShellderEggMoves:
@@ -445,6 +446,7 @@ ShellderEggMoves:
 	db SCREECH
 	db LICK
 	db PIN_MISSILE
+	db EXPLOSION
 	db -1 ; end
 
 GastlyEggMoves:
@@ -457,6 +459,7 @@ GastlyEggMoves:
 	db SMOG
 	db ENCORE
 	db BIND
+	db EXPLOSION
 	db -1 ; end
 
 OnixEggMoves:
@@ -465,6 +468,7 @@ OnixEggMoves:
 	db ROLLOUT
 	db MUD_SLAP
 	db BODY_PRESS
+	db EXPLOSION
 	db -1 ; end
 
 DrowzeeEggMoves:
@@ -497,6 +501,7 @@ ExeggcuteEggMoves:
 	db ANCIENTPOWER
 	db AGILITY
 	db MEAN_LOOK
+	db EXPLOSION
 	db -1 ; end
 
 CuboneEggMoves:
@@ -992,7 +997,6 @@ GirafarigEggMoves:
 	db -1 ; end
 
 PinecoEggMoves:
-	db PIN_MISSILE
 	db FLAIL
 	db SWIFT
 	db COUNTER
@@ -1115,6 +1119,7 @@ CorsolaEggMoves:
 	db ICICLE_SPEAR
 	db BIDE
 	db BODY_PRESS
+	db EXPLOSION
 	db -1 ; end
 
 RemoraidEggMoves:

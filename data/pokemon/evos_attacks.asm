@@ -1321,6 +1321,7 @@ MagnemiteEvosAttacks:
 	db 37, THUNDERBOLT
 	db 41, LOCK_ON
 	db 49, ZAP_CANNON
+	db 56, EXPLOSION
 	db 0 ; no more level-up moves
 
 MagnetonEvosAttacks:
@@ -1339,6 +1340,7 @@ MagnetonEvosAttacks:
 	db 43, THUNDERBOLT
 	db 49, LOCK_ON
 	db 63, ZAP_CANNON
+	db 68, EXPLOSION
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
@@ -1707,6 +1709,7 @@ ExeggcuteEvosAttacks:
 	db 35, SOFTBOILED
 	db 43, SOLARBEAM
 	db 47, PSYCHIC_M
+	db 50, EXPLOSION
 	db 0 ; no more level-up moves
 
 ExeggutorEvosAttacks:
@@ -2527,14 +2530,16 @@ MewtwoEvosAttacks:
 MewEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
+	db 1, CONVERSION
 	db 1, TRANSFORM
+	db 1, METRONOME
 	db 10, RETURN
-	db 10, METRONOME
-	db 30, PSYCHIC_M
-	db 40, BARRIER
+	db 20, BARRIER
+	db 30, AMNESIA
+	db 40, RECOVER
 	db 50, U_TURN
 	db 60, ANCIENTPOWER
-	db 70, AMNESIA
+	db 70, PSYCHIC_M
 	db 80, BATON_PASS
 	db 90, NASTY_PLOT
 	db 0 ; no more level-up moves
@@ -3426,7 +3431,7 @@ PinecoEvosAttacks:
 	db 1, TACKLE
 	db 1, PROTECT
 	db 8, EXPLOSION
-	db 12, DOUBLE_EDGE
+	db 12, PIN_MISSILE
 	db 17, RAPID_SPIN
 	db 20, BIDE
 	db 28, SPIKES
@@ -3439,7 +3444,7 @@ ForretressEvosAttacks:
 	db 1, TACKLE
 	db 1, PROTECT
 	db 8, EXPLOSION
-	db 12, DOUBLE_EDGE
+	db 12, PIN_MISSILE
 	db 17, RAPID_SPIN
 	db 20, BIDE
 	db 28, SPIKES
@@ -3555,6 +3560,7 @@ QwilfishEvosAttacks:
 	db 52, TOXIC
 	db 56, WATERFALL
 	db 60, DESTINY_BOND
+	db 64, EXPLOSION
 	db 0 ; no more level-up moves
 
 ScizorEvosAttacks:
@@ -3677,6 +3683,7 @@ SlugmaEvosAttacks:
 	db 43, RECOVER
 	db 48, FIRE_BLAST
 	db 50, EARTHQUAKE
+	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
 MagcargoEvosAttacks:
@@ -3698,6 +3705,7 @@ MagcargoEvosAttacks:
 	db 50, STONE_EDGE
 	db 54, FIRE_BLAST
 	db 58, EARTHQUAKE
+	db 62, EXPLOSION
 	db 0 ; no more level-up moves
 
 SwinubEvosAttacks:
@@ -4236,7 +4244,7 @@ CelebiEvosAttacks:
 	db 60, U_TURN
 	db 70, RECOVER
 	db 0 ; no more level-up moves
-	
+
 OctankEvosAttacks:
 	db 0 ; no more evolutions
 	db  1, WATER_GUN
