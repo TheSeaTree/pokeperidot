@@ -53,7 +53,7 @@ ItemEffects:
 	dw StatusHealingEffect ; FULL_HEAL
 	dw ReviveEffect        ; REVIVE
 	dw ReviveEffect        ; MAX_REVIVE
-	dw GuardSpecEffect     ; GUARD_SPEC
+	dw NoEffect     	   ; SOOTHE_BELL
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
 	dw DireHitEffect       ; DIRE_HIT

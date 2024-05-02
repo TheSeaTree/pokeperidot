@@ -39,7 +39,7 @@ ItemNames::
 	db "FULL HEAL@"
 	db "REVIVE@"
 	db "MAX REVIVE@"
-	db "GUARD SPEC.@"
+	db "SOOTHE BELL@"
 	db "SUPER REPEL@"
 	db "MAX REPEL@"
 	db "DIRE HIT@"

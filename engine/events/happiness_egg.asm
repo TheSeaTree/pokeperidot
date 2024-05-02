@@ -75,13 +75,32 @@ ChangeHappiness:
 	ld a, [hl]
 	cp $64 ; why not $80?
 	pop de
-
-	ld a, [de]
-	jr nc, .negative
-	add [hl]
-	jr nc, .done
-	ld a, -1
-	jr .done
+    ; If happiness change is 0, don't modify anything.
+    ld a, [hl]
+    and a
+    jr z, .done2
+    ld b, a
+    add a
+    jr c, .negative
+ 
+    ld a, MON_ITEM
+    call GetPartyParamLocation
+    ld a, [hl]
+    cp SOOTHE_BELL
+    jr nz, .continue
+ 
+    ld a, b
+    inc a
+    srl a
+    add b
+    ld b, a
+    ; fallthrough
+.continue
+    ld a, [de]
+    add b
+    jr nc, .done
+    ld a, $ff
+    jr .done
 
 .negative
 	add [hl]
@@ -90,6 +109,7 @@ ChangeHappiness:
 
 .done
 	ld [de], a
+.done2
 	ld a, [wBattleMode]
 	and a
 	ret z

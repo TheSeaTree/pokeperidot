@@ -13,12 +13,10 @@ BattleCommand_Curse:
 
 ; Curse is different for Ghost-types.
 
-	ld a, [de]
-	cp GHOST
-	jr z, .ghost
-	inc de
-	ld a, [de]
-	cp GHOST
+	push bc
+	ld a, GHOST
+	call CheckIfUserIsGivenType
+	pop bc
 	jr z, .ghost
 
 ; If no stats can be increased, don't.

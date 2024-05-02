@@ -46,6 +46,8 @@ BattleCommand_Conversion:
 	ld a, [hl]
 	cp -1
 	jp z, BattleEffect_ButItFailed
+	cp POWDER
+	jr z, .next
 	cp CURSE_T
 	jr z, .next
 	ld a, [de]
@@ -70,6 +72,8 @@ BattleCommand_Conversion:
 	add hl, bc
 	ld a, [hl]
 	cp -1
+	jr z, .loop3
+	cp POWDER
 	jr z, .loop3
 	cp CURSE_T
 	jr z, .loop3

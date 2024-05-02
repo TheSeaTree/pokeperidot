@@ -323,9 +323,8 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 7 ; # items
+	db 6 ; # items
 	db X_ACCURACY
-	db GUARD_SPEC
 	db DIRE_HIT
 	db X_ATTACK
 	db X_DEFEND

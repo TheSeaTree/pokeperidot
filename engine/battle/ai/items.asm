@@ -275,7 +275,6 @@ AI_Items:
 	dbw POTION,       .Potion
 	dbw X_ACCURACY,   .XAccuracy
 	dbw FULL_HEAL,    .FullHeal
-	dbw GUARD_SPEC,   .GuardSpec
 	dbw DIRE_HIT,     .DireHit
 	dbw X_ATTACK,     .XAttack
 	dbw X_DEFEND,     .XDefend
@@ -445,12 +444,6 @@ AI_Items:
 	call .XItem
 	jp c, .DontUse
 	call EnemyUsedXAccuracy
-	jp .Use
-
-.GuardSpec:
-	call .XItem
-	jp c, .DontUse
-	call EnemyUsedGuardSpec
 	jp .Use
 
 .DireHit:
@@ -746,13 +739,6 @@ EnemyUsedXAccuracy:
 	ld hl, wEnemySubStatus4
 	set SUBSTATUS_X_ACCURACY, [hl]
 	ld a, X_ACCURACY
-	jp PrintText_UsedItemOn_AND_AIUpdateHUD
-
-EnemyUsedGuardSpec:
-	call AIUsedItemSound
-	ld hl, wEnemySubStatus4
-	set SUBSTATUS_MIST, [hl]
-	ld a, GUARD_SPEC
 	jp PrintText_UsedItemOn_AND_AIUpdateHUD
 
 EnemyUsedDireHit:

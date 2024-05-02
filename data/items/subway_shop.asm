@@ -36,9 +36,10 @@ BattleSubwayBattleShopData:
 	db -1
 
 BattleSimulationShopData:
-	db 10
+	db 11
 	dbw BERSERK_GENE,	 8
 	dbw BLACK_SLUDGE,	16
+	dbw SOOTHE_BELL,	16
 	dbw CRASH_HELMET,	16
 	dbw PALETTE,		16
 	dbw METAL_POWDER,	24

@@ -40,7 +40,7 @@ ItemDescriptions:
 	dw FullHealDesc
 	dw ReviveDesc
 	dw MaxReviveDesc
-	dw GuardSpecDesc
+	dw SootheBellDesc
 	dw SuperRepelDesc
 	dw MaxRepelDesc
 	dw DireHitDesc
@@ -416,9 +416,9 @@ MaxReviveDesc:
 	db   "Fully restores a"
 	next "fainted #MON.@"
 
-GuardSpecDesc:
-	db   "Prevents stats"
-	next "reduction. (1 BTL)@"
+SootheBellDesc:
+	db   "Makes #MON more"
+	next "friendly. (HOLD)@"
 
 SuperRepelDesc:
 	db   "Repels weak #-"

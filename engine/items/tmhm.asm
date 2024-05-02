@@ -152,9 +152,6 @@ TeachTMHM:
 	ld a, [wCurItem]
 	call IsHM
 	ret c
-
-	ld c, HAPPINESS_LEARNMOVE
-	callfar ChangeHappiness
 	jr .learned_move
 
 .nope

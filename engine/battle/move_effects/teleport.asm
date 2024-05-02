@@ -81,7 +81,7 @@ BattleCommand_Teleport:
 
 	ld hl, FledFromBattleText
 	jp StdBattleTextBox
-	
+
 .switchout
 	call CheckPlayerHasMonToSwitchTo
 	jp c, BattleEffect_ButItFailed

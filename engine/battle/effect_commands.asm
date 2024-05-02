@@ -3640,13 +3640,24 @@ BattleCommand_HappinessPower:
 	ret
 
 BattleCommand_Safeguard:
-; payday
+; safeguard
 
-	ld a, [wAttackMissed]
+	ld hl, wPlayerScreens
+	ld de, wPlayerSafeguardCount
+	ldh a, [hBattleTurn]
 	and a
-	ret nz
-	farcall _Safeguard
-	ret
+	jr z, .ok
+	ld hl, wEnemyScreens
+	ld de, wEnemySafeguardCount
+.ok
+	bit SCREENS_SAFEGUARD, [hl]
+	jP nz, BattleEffect_ButItFailed
+	set SCREENS_SAFEGUARD, [hl]
+	ld a, 5
+	ld [de], a
+	call AnimateCurrentMove
+	ld hl, CoveredByVeilText
+	jp StdBattleTextBox
 
 INCLUDE "engine/battle/move_effects/counter_mirror_coat.asm"
 
@@ -3984,6 +3995,12 @@ BattleCommand_Poison:
 	ld hl, DoesntAffectText
 	ld a, [wTypeModifier]
 	and $7f
+	jp z, .failed
+	ld a, POISON
+	call CheckIfTargetIsGivenType
+	jp z, .failed
+	ld a, STEEL
+	call CheckIfTargetIsGivenType
 	jp z, .failed
 
 	ld a, BATTLE_VARS_STATUS_OPP
@@ -6093,6 +6110,9 @@ BattleCommand_Burn:
 	jr nz, .burned
 	ld a, [wTypeModifier]
 	and $7f
+	jp z, BattleEffect_DoesntAffect
+	ld a, FIRE
+	call CheckIfTargetIsGivenType
 	jp z, BattleEffect_DoesntAffect
 
 	ld a, BATTLE_VARS_STATUS_OPP

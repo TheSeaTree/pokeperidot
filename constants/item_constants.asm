@@ -46,7 +46,7 @@
 	const FULL_HEAL    ; 26
 	const REVIVE       ; 27
 	const MAX_REVIVE   ; 28
-	const GUARD_SPEC   ; 29
+	const SOOTHE_BELL  ; 29
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
 	const DIRE_HIT     ; 2c
