@@ -422,6 +422,9 @@ BattleSubwayPlatformBugCatcherScript:
 BattleSubwayPlatformPokefanFScript:
 	jumptextfaceplayer BattleSubwayPlatformPokefanFText
 
+BattleSubwayPlatformCooltrainerMScript:
+	jumptextfaceplayer BattleSubwayPlatformCooltrainerMText
+
 MovementData_BattleTower1FWalkToElevator:
 	step RIGHT
 	step RIGHT
@@ -787,15 +790,28 @@ BattleSubwayPlatformBugCatcherText:
 	cont "I earn for some-"
 	cont "thing good!"
 	done
-	
+
 BattleSubwayPlatformPokefanFText:
 	text "The BATTLE SUBWAY"
 	line "has lots of tough"
 	cont "competition."
-	
+
 	para "The trainers who"
 	line "ride it take batt-"
-	cont "les very serious."
+	cont "les seriously."
+	done
+
+BattleSubwayPlatformCooltrainerMText:
+	text "It's hard to find"
+	line "#MON that aren't"
+	cont "too strong for the"
+	cont "BATTLE SUBWAY."
+
+	para "I heard that if"
+	line "you can win a set,"
+	cont "they let you bring"
+	cont "stronger #MON"
+	cont "on board."
 	done
 
 Text_PeridotTrophyGift:
@@ -844,11 +860,12 @@ BattleSubwayPlatform_MapEvents:
 	bg_event  0,  3, BGEVENT_READ, BattleSubwayBestStreak
 	bg_event  1,  3, BGEVENT_READ, BattleSubwayCurStreak
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event  7,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
 	object_event  8,  5, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BattleSubwayPrizeGirl, -1
 	object_event 10,  7, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Script_Conductor, -1
 	object_event 23,  6, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  2,  8, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformBugCatcherScript, -1
 	object_event  4,  5, SPRITE_POKEFAN_F, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformPokefanFScript, -1
+	object_event  0,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSubwayPlatformCooltrainerMScript, -1
 	object_event 13,  8, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
