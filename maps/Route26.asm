@@ -52,7 +52,7 @@ Route26_MapEvents:
 	bg_event 36, 28, BGEVENT_ITEM, Route26HiddenGoldLeaf
 	bg_event 24, 27, BGEVENT_ITEM, Route26HiddenSilverLeaf
 	bg_event  3, 14, BGEVENT_ITEM, Route26HiddenPowerHerb
-	bg_event  3, 14, BGEVENT_READ, Route26Sign
+	bg_event 15, 25, BGEVENT_READ, Route26Sign
 
 	db 2 ; object events
 	object_event 39, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route26XAccuracy, EVENT_ROUTE_26_X_ACCURACY
