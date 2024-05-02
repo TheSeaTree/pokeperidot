@@ -29,7 +29,7 @@ OrchidMartCooltrainerMText:
 	line "more, my friend."
 
 	para "Some day I hope"
-	cont "we can meet at the"
+	line "we can meet at the"
 	cont "#MON LEAGUE!"
 	done
 
