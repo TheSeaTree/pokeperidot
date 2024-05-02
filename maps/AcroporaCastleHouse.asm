@@ -32,7 +32,7 @@ AcroporaCastleHouseSuperNerdText:
 	
 	para "I don't know what"
 	line "is really on ROUTE"
-	cont "25, but I can say"
+	cont "20, but I can say"
 	cont "it is something"
 	cont "truly magical!"
 	done
