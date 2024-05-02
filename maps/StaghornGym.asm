@@ -86,33 +86,16 @@ StaghornGymLeader:
 	waitbutton
 	checkflag ENGINE_FLYPOINT_RUGOSA
 	iftrue .Team2
-	checkflag ENGINE_FLYPOINT_ACROPORA
-	iftrue .Team3
-	checkflag ENGINE_FLYPOINT_ORCHID
-	iftrue .Team4
 	winlosstext PoseyWinText, 0
 	loadtrainer POSEY, POSEY1
-	startbattle
-	reloadmapafterbattle
-	jump .After
+	jump .DoBattle
 .Team2:
 	winlosstext PoseyWinText, 0
 	loadtrainer POSEY, POSEY2
+	jump .DoBattle
+.DoBattle
 	startbattle
 	reloadmapafterbattle
-	jump .After
-.Team3:
-	winlosstext PoseyWinText, 0
-	loadtrainer POSEY, POSEY3
-	startbattle
-	reloadmapafterbattle
-	jump .After
-.Team4:
-	winlosstext PoseyWinText, 0
-	loadtrainer POSEY, POSEY4
-	startbattle
-	reloadmapafterbattle
-
 .After:
 	setmapscene STAGHORN_TOWN, SCENE_STAGHORNTOWN_DONE
 	setevent EVENT_BEAT_CAMPER_JEFF
