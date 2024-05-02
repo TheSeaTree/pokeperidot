@@ -120,7 +120,18 @@ SSMakoDeckBurglar:
 	disappear SSMAKODECK_OFFICER
 	disappear SSMAKODECK_BURGLAR
 
-	scall SSMakoDeckFangirlScript
+	checkcode VAR_YCOORD
+	ifequal 4, .Continue_Leaving
+	applymovement SSMAKODECK_FANGIRL, SSMakoFangirlApproachPlayer
+.Continue_Leaving
+	turnobject SSMAKODECK_FANGIRL, LEFT
+	turnobject PLAYER, RIGHT
+	opentext
+	writetext SSMakoDeckEmilyAfterText
+	waitbutton
+	closetext
+	applymovement SSMAKODECK_FANGIRL, SSMakoLeaveMovement
+	disappear SSMAKODECK_FANGIRL
 
 	disappear SSMAKODECK_CHAMPION
 	setevent EVENT_SS_MAKO_DEFEATED_BURGLAR
@@ -134,9 +145,6 @@ SSMakoDeckBurglar:
 	setmapscene SS_MAKO_ENGINE_ROOM, SCENE_SSMAKOENGINEROOM_FINISHED
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_FINISHED
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_FINISHED
-; To prevent freezing after the scene?
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	special ReplaceKrisSprite
 	end
 
 SSMakoDeckBurglarArrestScript:
@@ -146,7 +154,7 @@ SSMakoDeckBurglarArrestScript:
 	writetext SSMakoDeckFangirlExplainText
 	waitbutton
 	closetext
-	
+
 	checkcode VAR_YCOORD
 	ifequal 4, .Above
 
@@ -230,21 +238,6 @@ SSMakoDeckBurglarArrestScript:
 	follow SSMAKODECK_OFFICER, SSMAKODECK_BURGLAR
 	end
 
-SSMakoDeckFangirlScript:
-	checkcode VAR_YCOORD
-	ifequal 4, .Continue
-	applymovement SSMAKODECK_FANGIRL, SSMakoFangirlApproachPlayer
-.Continue
-	turnobject SSMAKODECK_FANGIRL, LEFT
-	turnobject PLAYER, RIGHT
-	opentext
-	writetext SSMakoDeckEmilyAfterText
-	waitbutton
-	closetext
-	applymovement SSMAKODECK_FANGIRL, SSMakoLeaveMovement
-	disappear SSMAKODECK_FANGIRL
-	end
-	
 SSMakoDeckSetTempEvent1:
 	scall SSMakoDeckClearTempEvents
 	checkcode VAR_FACING
@@ -332,9 +325,6 @@ SSMakoDeckOfficerArrestAbove:
 	step_resume
 
 SSMakoLeaveMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
 	step RIGHT
 	step RIGHT
 	step RIGHT
