@@ -1,4 +1,6 @@
 	const_def 2 ; object constants
+	const MOLTENPEAKB2F_FISHER
+	const MOLTENPEAKB2F_COOLTRAINERF
 	const MOLTENPEAKB2F_POKEFAN
 
 MoltenPeakB2F_MapScripts:
