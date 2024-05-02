@@ -15,7 +15,7 @@ RugosaDeptStoreRoof_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .Morning
-	
+
 .Morning:
 	checktime MORN
 	iffalse .CheckNight

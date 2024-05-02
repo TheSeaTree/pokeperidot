@@ -92,7 +92,7 @@ OrchidTeachersHouseMeowth:
 	waitbutton
 	closetext
 	end
-	
+
 OrchidTeachersHouseBookshelf:
 	jumpstd difficultbookshelf
 

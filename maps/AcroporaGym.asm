@@ -121,11 +121,11 @@ AcroporaCantLeave:
 	wait 4
 	warpfacing DOWN, ACROPORA_CITY, 14, 7
 	end
-	
+
 AcroporaLeaveGym:
 	turn_step DOWN
 	step_end
-	
+
 AcroporaGymHaveBadge:
 	text "<PLAYER> used"
 	line "the TERRABADGE to"

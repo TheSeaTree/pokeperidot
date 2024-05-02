@@ -20,7 +20,7 @@ HepaticaTown_MapScripts:
 .FlyPoint:
 	setflag ENGINE_FLYPOINT_HEPATICA
 	return
-	
+
 HepaticaTownBurglar:
 	playsound SFX_EXIT_BUILDING
 	moveobject HEPATICATOWN_BURGLAR2, 19, 21

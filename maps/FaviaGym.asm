@@ -217,8 +217,7 @@ FaviaGymStatue:
 	jumpstd gymstatue2
 .RivalBeaten
 	jumpstd gymstatue3
-	
-	
+
 FaviaCantLeave:
 	checkflag ENGINE_MYSTICBADGE
 	iftrue .Leave

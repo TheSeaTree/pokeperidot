@@ -5,7 +5,7 @@ HoOhCastle1FCentralRoom_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .OpenGates
-	
+
 .OpenGates:
 	writebyte RAIKOU
 	special CheckOwnedMon

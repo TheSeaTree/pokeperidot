@@ -50,7 +50,7 @@ TrainerFirebreatherBrian:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerLassStephanie:
 	trainer LASS, STEPHANIE, EVENT_BEAT_LASS_STEPHANIE, LassStephanieText, LassStephanieWinText, 0, .Script
 
@@ -72,7 +72,7 @@ TrainerJugglerRobert:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerLassDanni:
 	trainer LASS, DANNI, EVENT_BEAT_LASS_DANNI, LassDanniText, LassDanniWinText, 0, .Script
 

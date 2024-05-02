@@ -298,13 +298,13 @@ CamperNateAfterText:
 	text "I'm camping out to"
 	line "find a TEDDIURSA!"
 	done
-	
+
 HikerEarlText:
 	text "You're just one"
 	line "stepping stone on"
 	cont "my way to the top!"
 	done
-	
+
 HikerEarlWinText:
 	text "Taken down before"
 	line "I could begin…"
@@ -316,18 +316,18 @@ HikerEarlAfterText:
 	cont "climbing other"
 	cont "mountains, kid."
 	done
-	
+
 HikerGrantText:
 	text "This isn't any"
 	line "place for a kid to"
 	cont "be playing around!"
 	done
-	
+
 HikerGrantWinText:
 	text "Careful! This is"
 	line "my dig site!"
 	done
-	
+
 HikerGrantAfterText:
 	text "These are the"
 	line "remains of ancient"
@@ -340,7 +340,7 @@ HikerGrantAfterText:
 	cont "you can take one"
 	cont "of them."
 	done
-	
+
 HikerGrantSelectFossilText:
 	text "I'll pick up this"
 	line "other FOSSIL, just"
@@ -349,24 +349,24 @@ HikerGrantSelectFossilText:
 	cont "here to disturb my"
 	cont "work."
 	done
-	
+
 HikerGrantPickUpHelixFossil:
 	text "GRANT received"
 	line "HELIX FOSSIL."
 	done
-	
+
 HikerGrantPickUpDomeFossil:
 	text "GRANT received"
 	line "DOME FOSSIL."
 	done
-	
+
 HikerGrantFossilTakenText:
 	text "I hope to one day"
 	line "learn what #MON"
 	cont "lived like in the"
 	cont "past."
 	done
-	
+
 HikerWarrenText:
 	text "I'm taking a short"
 	line "rest before taking"
@@ -375,19 +375,25 @@ HikerWarrenText:
 	para "I'm sure I could"
 	line "fit in a battle!"
 	done
-	
+
 HikerWarrenWinText:
 	text "My rest is going"
 	line "to last longer"
 	cont "than I thought…"
 	done
-	
+
 HikerWarrenAfterText:
-	text "At least this lake"
-	line "is a beautiful"
-	cont "sight."
+	text "My dad spent so"
+	line "long carving out"
+	cont "this path to"
+	cont "PALEROCK MOUNTAIN."
+
+	para "I'll make it to the"
+	line "top."
+
+	para "It's my destiny!"
 	done
-	
+
 CamperRalphText:
 	text "Hey! Don't try and"
 	line "sneak up on my"
@@ -406,7 +412,7 @@ CamperRalphAfterText:
 	cont "of the lake is"
 	cont "wonderful."
 	done
-	
+
 Route3TutorText:
 	text "Howdy, stranger!"
 	
