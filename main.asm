@@ -429,7 +429,6 @@ INCLUDE "engine/battle/extra_effects/rapid_spin.asm"
 INCLUDE "engine/battle/extra_effects/return.asm"
 INCLUDE "engine/battle/extra_effects/reset_stats.asm"
 INCLUDE "engine/battle/extra_effects/misc.asm"
-INCLUDE "engine/battle/extra_effects/safeguard.asm"
 
 SECTION "bank3F", ROMX
 
