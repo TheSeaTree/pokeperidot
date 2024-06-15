@@ -6,7 +6,7 @@
 	db PSYCHIC, GRASS ; type
 	db 45 ; catch rate
 	db 64 ; base exp
-	db LEGENDS_AURA, MIRACLEBERRY ; items
+	db LEGENDS_AURA, GOLD_BERRY ; items
 	db GENDER_UNKNOWN ; gender ratio
 	db 100 ; unknown 1
 	db 120 ; step cycles to hatch

@@ -28,11 +28,11 @@ PokemonFellFromTreeText:
 	line "out of the tree!"
 	prompt
 
-WildCelebiAppearedText:
+WildLegendaryAppearedText:
 	text "Wild @"
 	text_ram wEnemyMonNick
 	text_start
-	line "appeared!"
+	line "wants to battle!"
 	prompt
 	
 WildBossAppearedText:
@@ -99,6 +99,12 @@ TentacruelBossText::
 MachampBossText::
 	text "FOUR-ARMED FLEXER"
 	line "MACHAMP"
+	cont "challenges you!"
+	prompt
+
+CelebiBossText::
+	text "TIME HOPPER"
+	line "CELEBI"
 	cont "challenges you!"
 	prompt
 

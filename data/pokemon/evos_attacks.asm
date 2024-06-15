@@ -17,6 +17,10 @@ SECTION "Evolutions and Attacks", ROMX
 
 INCLUDE "data/pokemon/evos_attacks_pointers.asm"
 
+INCLUDE "data/pokemon/boss_attacks.asm"
+
+INCLUDE "data/pokemon/boss_attacks_pointers.asm"
+
 EvoTypeSizes::
 	db 2 ; EVOLVE_LEVEL
 	db 2 ; EVOLVE_ITEM
@@ -1747,9 +1751,15 @@ CuboneEvosAttacks:
 
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, ROCK_THROW
-	db 1, BONEMERANG
-	db 1, LEER
+	db 1, GROWL
+	db 3, TAIL_WHIP
+	db 7, BONE_CLUB
+	db 11, HEADBUTT
+	db 13, LEER
+	db 17, FOCUS_ENERGY
+	db 21, BONEMERANG
+	db 23, RAGE
+	db 27, ROCK_THROW
 	db 33, THRASH
 	db 43, EARTHQUAKE
 	db 53, DOUBLE_EDGE
@@ -4236,6 +4246,7 @@ CelebiEvosAttacks:
 	db 10, SAFEGUARD
 	db 19, RAZOR_LEAF
 	db 28, ANCIENTPOWER
+	db 33, COSMIC_POWER
 	db 37, BATON_PASS
 	db 46, PERISH_SONG
 	db 50, PSYCHIC_M

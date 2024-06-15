@@ -481,11 +481,20 @@ FillMoves:
 	ld hl, EvosAttacksPointers
 	ld b, 0
 	ld a, [wCurPartySpecies]
+	ld c, a
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, .BossCheck
+	cp BATTLETYPE_LEGENDARY
+	jp z, .BossCheck
+.got_pointers
+	ld a, c
 	dec a
 	add a
 	rl b
 	ld c, a
 	add hl, bc
+.got_boss_moves
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
@@ -581,6 +590,57 @@ FillMoves:
 	pop de
 	pop hl
 	ret
+
+.BossCheck:
+	ld a, [wCurPartySpecies]
+	ld hl, EvosAttacksPointers
+	ld c, a
+	cp AERODACTYL
+	jr z, .aerodactyl
+	cp MAROWAK
+	jr z, .marowak
+	cp MUK
+	jr z, .muk
+	cp GENGAR
+	jr z, .gengar
+	cp SKARMORY
+	jr z, .skarmory
+	cp TENTACRUEL
+	jr z, .tentacruel
+	cp MACHAMP
+	jr z, .machamp
+	cp CELEBI
+	jp nz, .got_pointers
+	ld hl, CelebiBossPointers
+    jp .got_boss_moves
+
+.aerodactyl
+	ld hl, AerodactylBossPointers
+    jp .got_boss_moves
+
+.marowak
+	ld hl, MarowakBossPointers
+    jp .got_boss_moves
+
+.muk
+	ld hl, MukBossPointers
+    jp .got_boss_moves
+
+.gengar
+	ld hl, GengarBossPointers
+    jp .got_boss_moves
+
+.skarmory
+	ld hl, SkarmoryBossPointers
+    jp .got_boss_moves
+
+.tentacruel
+	ld hl, TentacruelBossPointers
+    jp .got_boss_moves
+
+.machamp
+	ld hl, MachampBossPointers
+    jp .got_boss_moves
 
 ShiftMoves:
 	ld c, NUM_MOVES - 1

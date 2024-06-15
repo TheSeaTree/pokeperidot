@@ -3896,8 +3896,6 @@ TryToRunAwayFromBattle:
 	jp z, .can_escape
 	cp BATTLETYPE_TRAP
 	jp z, .cant_escape
-	cp BATTLETYPE_CELEBI
-	jp z, .cant_escape
 	cp BATTLETYPE_SHINY
 	jp z, .cant_escape
 	cp BATTLETYPE_LEGENDARY
@@ -6916,6 +6914,7 @@ LoadEnemyMon:
 
 ; Get moves
 	ld de, wEnemyMonMoves
+
 ; Are we in a trainer battle?
 	ld a, [wBattleMode]
 	cp TRAINER_BATTLE
@@ -9307,8 +9306,8 @@ BattleStartMessage:
 	ld hl, PokemonFellFromTreeText
 	cp BATTLETYPE_TREE
 	jr z, .PlaceBattleStartText
-	ld hl, WildCelebiAppearedText
-	cp BATTLETYPE_CELEBI
+	ld hl, WildLegendaryAppearedText
+	cp BATTLETYPE_LEGENDARY
 	jr z, .PlaceBattleStartText
 	ld hl, WildBossAppearedText
 	cp BATTLETYPE_TRAP
@@ -9346,6 +9345,8 @@ BattleStartMessage:
 	jr z, .Skarmory
 	cp TENTACRUEL
 	jr z, .Tentacruel
+	cp CELEBI
+	jr z, .Celebi
 	cp MACHAMP
 	jr nz, .Unspecified
 
@@ -9377,6 +9378,9 @@ BattleStartMessage:
 	jr .DoneBossText
 .Tentacruel
 	ld hl, TentacruelBossText
+	jr .DoneBossText
+.Celebi
+	ld hl, CelebiBossText
 	jr .DoneBossText
 .Unspecified
 	ld hl, WildBossAppearedText
