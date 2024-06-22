@@ -62,6 +62,7 @@ BattleSimulation_MapScripts:
 	loadvar wBlueCardBalance, 0
 	opentext
 	special DoQuickSave
+	moveobject BATTLESIMULATION_SCIENTIST1, 8, 8
 	writetext BattleSimulationComeAgainText
 	waitbutton
 	closetext
