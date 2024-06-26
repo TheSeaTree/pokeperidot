@@ -2116,6 +2116,10 @@ Script_checkitem:
 	ld [wScriptVar], a
 	call GetScriptByte
 	ld [wCurItem], a
+	call GetScriptByte
+	ld [wItemQuantityChangeBuffer], a
+	ld a, -1
+	ld [wCurItemQuantity], a
 	ld hl, wNumItems
 	call CheckItem
 	ret nc
