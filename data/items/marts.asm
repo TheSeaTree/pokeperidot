@@ -240,7 +240,7 @@ MartPewter:
 	db -1 ; end
 
 MartCerulean:
-	db 8 ; # items
+	db 7 ; # items
 	db GREAT_BALL
 	db ULTRA_BALL
 	db SUPER_POTION
@@ -248,7 +248,6 @@ MartCerulean:
 	db FULL_HEAL
 	db X_DEFEND
 	db X_ATTACK
-	db DIRE_HIT
 	db -1 ; end
 
 MartLavender:
@@ -323,9 +322,8 @@ MartCeladon5F1:
 	db -1 ; end
 
 MartCeladon5F2:
-	db 6 ; # items
+	db 5 ; # items
 	db X_ACCURACY
-	db DIRE_HIT
 	db X_ATTACK
 	db X_DEFEND
 	db X_SPEED

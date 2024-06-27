@@ -49,7 +49,7 @@
 	const SOOTHE_BELL  ; 29
 	const SUPER_REPEL  ; 2a
 	const MAX_REPEL    ; 2b
-	const DIRE_HIT     ; 2c
+	const DIRECT_BALL  ; 2c
 	const DOME_FOSSIL  ; 2d
 	const FRESH_WATER  ; 2e
 	const SODA_POP     ; 2f

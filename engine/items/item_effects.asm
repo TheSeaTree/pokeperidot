@@ -56,7 +56,7 @@ ItemEffects:
 	dw NoEffect     	   ; SOOTHE_BELL
 	dw SuperRepelEffect    ; SUPER_REPEL
 	dw MaxRepelEffect      ; MAX_REPEL
-	dw DireHitEffect       ; DIRE_HIT
+	dw PokeBallEffect      ; DIRECT_BALL
 	dw NoEffect            ; ITEM_2D
 	dw RestoreHPEffect     ; FRESH_WATER
 	dw RestoreHPEffect     ; SODA_POP
@@ -268,7 +268,7 @@ PokeBallEffect:
 
 .skip_or_return_from_ball_fn
 	ld a, [wCurItem]
-	cp LEVEL_BALL
+	cp DIRECT_BALL
 	ld a, b
 	jp z, .skip_hp_calc
 
@@ -783,6 +783,7 @@ BallMultiplierFunctionTable:
 	dbw LOVE_BALL,   LoveBallMultiplier
 	dbw SAFARI_BALL, SafariBallMultiplier
 	dbw CYBER_BALL,  CyberBallMultiplier
+	dbw DIRECT_BALL, DirectBallMultiplier
 	db -1 ; end
 
 UltraBallMultiplier:
@@ -813,6 +814,19 @@ ParkBallMultiplier:
 	ld b, a
 	ret nc
 	ld b, $ff
+	ret
+
+DirectBallMultiplier:
+; multiply the catch rate by 1.6
+	ld a, b
+	ld c, -1
+.loop
+	inc c
+	sub 3
+	jr nc, .loop
+	ld a, c
+	add a
+	ld b, a
 	ret
 
 GetPokedexEntryBank:

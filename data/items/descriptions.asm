@@ -43,7 +43,7 @@ ItemDescriptions:
 	dw SootheBellDesc
 	dw SuperRepelDesc
 	dw MaxRepelDesc
-	dw DireHitDesc
+	dw DirectBallDesc
 	dw DomeFossilDesc
 	dw FreshWaterDesc
 	dw SodaPopDesc
@@ -428,9 +428,9 @@ MaxRepelDesc:
 	db   "Repels weak #-"
 	next "MON for 250 steps.@"
 
-DireHitDesc:
-	db   "Ups critical hit"
-	next "ratio. (1 BTL)@"
+DirectBallDesc:
+	db   "Ignores enemy HP"
+	next "when catching.@"
 
 DomeFossilDesc:
 	db   "The remains of an"

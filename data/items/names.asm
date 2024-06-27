@@ -42,7 +42,7 @@ ItemNames::
 	db "SOOTHE BELL@"
 	db "SUPER REPEL@"
 	db "MAX REPEL@"
-	db "DIRE HIT@"
+	db "DIRECT BALL@"
 	db "DOME FOSSIL@"
 	db "FRESH WATER@"
 	db "SODA POP@"
