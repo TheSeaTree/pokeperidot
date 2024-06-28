@@ -136,6 +136,7 @@ CharizardEvosAttacks:
 	db 36, WING_ATTACK
 	db 41, CUT
 	db 47, FLAMETHROWER
+	db 52, HEAT_WAVE
 	db 56, FIRE_SPIN
 	db 62, FLARE_BLITZ
 	db 0 ; no more level-up moves
@@ -954,6 +955,7 @@ GrowlitheEvosAttacks:
 	db 28, DOUBLE_EDGE
 	db 30, AGILITY
 	db 34, FLAMETHROWER
+	db 37, HEAT_WAVE
 	db 39, CRUNCH
 	db 43, OUTRAGE
 	db 45, FLARE_BLITZ
@@ -2410,7 +2412,8 @@ ArticunoEvosAttacks:
 	db 1,  ICY_WIND
 	db 1,  MIST
 	db 3,  TRI_ATTACK
-	db 13, FREEZE_DRY
+	db 10, FREEZE_DRY
+	db 13, AURORA_BEAM
 	db 25, AGILITY
 	db 30, WHIRLWIND
 	db 37, MIND_READER
@@ -2429,6 +2432,7 @@ ZapdosEvosAttacks:
 	db 1,  THUNDERSHOCK
 	db 1,  THUNDER_WAVE
 	db 3,  TRI_ATTACK
+	db 10, HEAT_WAVE
 	db 13, SPARK
 	db 25, AGILITY
 	db 30, WHIRLWIND
@@ -2448,6 +2452,7 @@ MoltresEvosAttacks:
 	db 1,  EMBER
 	db 1,  WILL_O_WISP
 	db 3,  TRI_ATTACK
+	db 10, HEAT_WAVE
 	db 13, FIRE_SPIN
 	db 25, AGILITY
 	db 30, WHIRLWIND
@@ -3693,6 +3698,7 @@ SlugmaEvosAttacks:
 	db 43, RECOVER
 	db 48, FIRE_BLAST
 	db 50, EARTHQUAKE
+	db 52, HEAT_WAVE
 	db 55, EXPLOSION
 	db 0 ; no more level-up moves
 
@@ -3715,6 +3721,7 @@ MagcargoEvosAttacks:
 	db 50, STONE_EDGE
 	db 54, FIRE_BLAST
 	db 58, EARTHQUAKE
+	db 60, HEAT_WAVE
 	db 62, EXPLOSION
 	db 0 ; no more level-up moves
 

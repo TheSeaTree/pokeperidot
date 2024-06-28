@@ -177,7 +177,7 @@ MoveDescriptions::
 	dw FlailDescription
 	dw Conversion2Description
 	dw AeroblastDescription
-	dw CottonSporeDescription
+	dw HeatWaveDescription
 	dw ReversalDescription
 	dw SpiteDescription
 	dw FreezeDryDescription
@@ -838,7 +838,7 @@ SporeDescription:
 	next "induces sleep.@"
 
 WillOWispDescription:
-	db   "Inflicts BURN with"
+	db   "Inflicts burn with"
 	next "a sinister flame.@"
 
 PsywaveDescription:
@@ -949,9 +949,9 @@ Conversion2Description:
 	db   "The user's type is"
 	next "made resistant.@"
 
-CottonSporeDescription:
-	db   "Sharply reduces"
-	next "the foe's SPEED.@"
+HeatWaveDescription:
+	db   "Fiery winds that"
+	next "may cause a burn.@"
 
 ReversalDescription:
 	db   "Stronger if the"

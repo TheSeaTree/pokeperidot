@@ -176,7 +176,7 @@ MoveNames::
 	db "FLAIL@"
 	db "CONVERSION2@"
 	db "AEROBLAST@"
-	db "COTTON SPORE@"
+	db "HEAT WAVE@"
 	db "REVERSAL@"
 	db "SPITE@"
 	db "FREEZE-DRY@"

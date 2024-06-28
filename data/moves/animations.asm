@@ -178,7 +178,7 @@ BattleAnimations::
 	dw BattleAnim_Flail
 	dw BattleAnim_Conversion2
 	dw BattleAnim_Aeroblast
-	dw BattleAnim_CottonSpore
+	dw BattleAnim_HeatWave
 	dw BattleAnim_Reversal
 	dw BattleAnim_Spite
 	dw BattleAnim_FreezeDry
@@ -3398,15 +3398,27 @@ BattleAnim_Aeroblast:
 	anim_wait 48
 	anim_ret
 
-BattleAnim_CottonSpore:
-	anim_obp0 $54
-	anim_1gfx ANIM_GFX_MISC
-	anim_sound 0, 1, SFX_POWDER
+BattleAnim_HeatWave:
+	anim_2gfx ANIM_GFX_WATER, ANIM_GFX_FIRE
+	anim_bgp $90
+	anim_bgeffect ANIM_BG_WHIRLPOOL, $0, $0, $0
+	anim_sound 0, 0, SFX_MORNING_SUN
+	anim_wait 32
 .loop
-	anim_obj ANIM_OBJ_COTTON_SPORE, 132, 32, $0
-	anim_wait 8
-	anim_loop 5, .loop
-	anim_wait 96
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FIRE_SPIN, 64, 88, $4
+	anim_wait 6
+	anim_obj ANIM_OBJ_FIRE_SPIN, 64, 96, $3
+	anim_wait 6
+	anim_sound 0, 1, SFX_MEGA_PUNCH
+	anim_obj ANIM_OBJ_FIRE_SPIN, 64, 80, $3
+	anim_wait 6
+	anim_obj ANIM_OBJ_FIRE_SPIN, 64, 104, $4
+	anim_wait 6
+	anim_loop 2, .loop
+	anim_wait 64
+	anim_incbgeffect ANIM_BG_WHIRLPOOL
+	anim_wait 1
 	anim_ret
 
 BattleAnim_Reversal:

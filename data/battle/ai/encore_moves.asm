@@ -29,7 +29,6 @@ EncoreMoves:
 	db MIND_READER
 	db FLAME_WHEEL
 	db AEROBLAST
-	db COTTON_SPORE
 	db COIL
 	db WILL_O_WISP
 	db -1 ; end

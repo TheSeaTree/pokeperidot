@@ -183,7 +183,7 @@
 	const FLAIL        ; af
 	const CONVERSION2  ; b0
 	const AEROBLAST    ; b1
-	const COTTON_SPORE ; b2
+	const HEAT_WAVE    ; b2
 	const REVERSAL     ; b3
 	const SPITE        ; b4
 	const FREEZE_DRY   ; b5

@@ -189,7 +189,7 @@ Moves: ; 41afb
 	move FLAIL,        EFFECT_REVERSAL,            1, NORMAL,   100, 15,   0
 	move CONVERSION2,  EFFECT_CONVERSION2,         0, NORMAL,     1, 30,   0
 	move AEROBLAST,    EFFECT_NORMAL_HIT,        100, FLYING,    95,  5,   0
-	move COTTON_SPORE, EFFECT_SPEED_DOWN_2,        0, GRASS,     85, 40,   0
+	move HEAT_WAVE,    EFFECT_BURN_HIT,          100, FIRE,      90, 10,  10
 	move REVERSAL,     EFFECT_REVERSAL,            1, FIGHTING, 100, 15,   0
 	move SPITE,        EFFECT_SPITE,               0, GHOST,    100, 10,   0
 	move FREEZE_DRY,   EFFECT_FREEZE_DRY,         70, ICE,      100, 20,  10
