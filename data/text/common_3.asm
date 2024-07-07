@@ -1449,6 +1449,9 @@ Text_SmackedTheBall::
 	text_ram wEnemyMonNick
 	text " smacked" 
 	line "the BALL away!"
+
+	para "This #MON"
+	line "can't be caught!"
 	prompt
 
 UnknownText_0x1c5def::
@@ -1594,7 +1597,7 @@ UnknownText_0x1c60d1::
 	text "The time can't be"
 	line "changed right now."
 	prompt
-	
+
 MoveReminderIntroText::
 	text "People call me the"
 	line "MOVE MANIAC."
@@ -1674,6 +1677,82 @@ SimulationMoveReminderIntrroText::
 	para "Would you like to"
 	line "change your"
 	cont "#MON's moveset?"
+	done
+
+EggMoveTutorIntroText::
+	text "Hello! I am the"
+	line "MOVE FANATIC."
+
+	para "I study the most"
+	line "rare moves that"
+	cont "#MON can learn."
+
+	para "I can teach your"
+	line "#MON how to use"
+	cont "these rare moves"
+	cont "if you trade me"
+;	cont "5 BRICK PIECEs."
+;	cont "10 BRICK PIECEs."
+	cont "a STAR PIECE."
+	done
+
+EggMoveTutorWhichMonText::
+	text "Which #MON will"
+	line "you have me tutor?"
+	done
+
+EggMoveTutorWhichMoveText::
+	text "Which move will I"
+	line "be teaching it?"
+	done
+
+EggMoveTutorNoItemText::
+	text "You don't have a"
+	line "STAR PIECE for me?"
+
+	para "I understand they"
+	line "are hard to find,"
+	cont "but it's difficult"
+	cont "work documenting"
+	cont "what can learn"
+	cont "these moves."
+
+;	text "Apologies, but you"
+;	line "don't have enough"
+;	cont "BRICK PIECEs."
+
+;	para "I will need 5(10) of"
+;	line "them to teach your"
+;	cont "#MON new moves."
+	done
+
+EggMoveTutorNoMovesText::
+	text "I'm sorry, that"
+	line "#MON does not"
+	cont "have any rare"
+	cont "moves to learn."
+
+	para "Try another,"
+	line "please."
+	done
+
+EggMoveTutorNotHappyText::
+	text "I can only tutor a"
+	line "#MON that has a"
+	cont "strong bond with"
+	cont "its trainer."
+
+	para "I do apologize for"
+	line "any inconvenience."
+	done
+
+EggMoveTutorCancelText::
+	text "Take care now!"
+
+	para "Come see me if you"
+	line "want your #MON"
+	cont "to learn some new"
+	cont "rare moves."
 	done
 
 SimulationMoveReminderCancelText::

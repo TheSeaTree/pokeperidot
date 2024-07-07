@@ -400,6 +400,10 @@ SimulationMoveRelearner:
 	farcall MoveReminder_Simulation
 	ret
 
+SpecialEggTutor:
+	farcall EggMoveTutor
+	ret
+
 SetFireGymSteps:
 	xor a
 	ld a, 50

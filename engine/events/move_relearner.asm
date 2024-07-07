@@ -59,6 +59,9 @@ MoveRelearner:
 	and a
 	jr z, .skip_learn
 
+	ld c, HAPPINESS_LEARNMOVE
+	callfar ChangeHappiness
+
 	ld a, BRICK_PIECE
 	ld [wCurItem], a
 	ld a, 1
@@ -136,6 +139,116 @@ MoveReminder_Simulation:
 	ld hl, Text_MoveReminderNoMoves
 	jp PrintText
 
+EggMoveTutor:
+	ld hl, Text_EggMoveTutorIntro
+	call PrintText
+	call YesNoBox
+	jp c, .cancel
+
+	ld a, BRICK_PIECE
+	ld [wCurItem], a
+	ld a, 5
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wNumItems
+	call CheckItem
+	jp nc, .no_item
+
+	ld hl, Text_MoveReminderPrompt
+	call PrintText
+	call YesNoBox
+	jp c, .cancel
+
+	ld hl, Text_EggMoveTutorWhichMon
+	call PrintText
+	call JoyWaitAorB
+
+	ld b, 6
+	farcall SelectMonFromParty
+	jp c, .cancel
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jp z, .egg
+	; The list is just too long with Smeargle.
+	cp SMEARGLE
+	jr z, .no_moves
+
+	call IsAPokemon
+	jp c, .no_mon
+
+	call GetValidEggMoves
+	jr z, .no_moves
+
+	ld a, [wCurPartyMon]
+	ld hl, wPartyMon1Happiness
+	ld bc, PARTYMON_STRUCT_LENGTH
+	call AddNTimes
+	ld a, [hl]
+	cp 170
+	jr c, .not_happy_enough
+
+	ld hl, Text_EggMoveTutorWhichMove
+	call PrintText
+	call JoyWaitAorB
+
+	call ChooseMoveToLearn
+	jr c, .skip_learn
+
+	ld a, [wMenuSelection]
+	ld [wd265], a
+	call GetMoveName
+	ld hl, wStringBuffer1
+	ld de, wStringBuffer2
+	ld bc, wStringBuffer2 - wStringBuffer1
+	call CopyBytes
+	ld b, 0
+	predef LearnMove
+	ld a, b
+	and a
+	jr z, .skip_learn
+
+	ld c, HAPPINESS_LEARNMOVE
+	callfar ChangeHappiness
+
+	ld a, BRICK_PIECE
+	ld [wCurItem], a
+	ld a, 5
+	ld [wItemQuantityChangeBuffer], a
+	ld a, -5
+	ld [wCurItemQuantity], a
+	ld hl, wNumItems
+	call TossItem
+
+	ld de, SFX_TRANSACTION
+	call PlaySFX
+	call WaitSFX
+
+.skip_learn
+	call ReturnToMapWithSpeechTextbox
+.cancel
+	ld hl, Text_MoveReminderCancel
+	jp PrintText
+
+.not_happy_enough
+	ld hl, Text_EggMoveTutorNotHappy
+	jp PrintText
+
+.no_moves
+	ld hl, Text_EggMoveTutorNoMoves
+	jp PrintText
+
+.egg
+	ld hl, Text_MoveReminderEgg
+	jp PrintText
+
+.no_item
+	ld hl, Text_EggMoveTutorNoItem
+	jp PrintText
+
+.no_mon
+	ld hl, Text_MoveReminderNoMon
+	jp PrintText
+
 GetRemindableMoves:
 ; Get moves remindable by CurPartyMon
 ; Returns z if no moves can be reminded.
@@ -193,6 +306,72 @@ ENDR
 	jr c, .loop_moves
 
 	ld c, a
+	call CheckAlreadyInList
+	jr c, .loop_moves
+	call CheckPokemonAlreadyKnowsMove
+	jr c, .loop_moves
+	ld a, c
+	ld [de], a
+	inc de
+	ld a, $ff
+	ld [de], a
+	pop bc
+	inc b
+	push bc
+	jr .loop_moves
+
+.done
+	pop bc
+	pop af
+	ld [wCurPartySpecies], a
+	ld a, b
+	ld [wd002], a
+	and a
+	ret
+
+GetValidEggMoves:
+; Get moves remindable by CurPartyMon
+; Returns z if no moves can be reminded.
+
+	ld hl, wd002
+	xor a
+	ld [hli], a
+	ld [hl], $ff
+
+	ld a, MON_SPECIES
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld [wCurPartySpecies], a
+
+	push af
+	call GetPartyParamLocation
+	ld a, [hl]
+
+	ld b, 0
+	ld de, wd002 + 1
+
+; Based on GetEggMove in engine/breeding/egg.asm
+	ld a, [wCurPartySpecies]
+	dec a
+	push bc
+	ld b, 0
+	ld c, a
+	ld hl, EggMovePointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EggMovePointers)
+	call GetFarHalfword
+
+.loop_moves
+	ld a, BANK("Egg Moves")
+	call GetFarByte
+	inc hl
+	cp -1 ; last entry in egg move table is -1
+	jr z, .done
+	cp DIVE_BOMB ; Dive Bomb is a secret move, skip it.
+	jr z, .loop_moves
+	ld c, a
+
 	call CheckAlreadyInList
 	jr c, .loop_moves
 	call CheckPokemonAlreadyKnowsMove
@@ -340,9 +519,9 @@ ChooseMoveToLearn:
 	call GetFarByte
 	ld hl, wStringBuffer1 + 11
 	and a
-;	jr z, .no_power
 	cp 2
 	jr c, .no_power
+;	jr z, .no_power
 	ld [wBuffer1], a
 	ld de, wBuffer1
 	lb bc, 1, 3
@@ -423,7 +602,6 @@ ChooseMoveToLearn:
 	call AddNTimes
 	ld a, BANK(Moves)
 	call GetFarByte
-
 	; display accuracy out of 100
 	ld [hMultiplicand], a
 	ld a, 100
@@ -465,12 +643,12 @@ ChooseMoveToLearn:
 	hlcoord 1, 14
 	ld de, .CancelDescription
 	jp PlaceString
-	
+
 .Perfect_Accuracy
 	hlcoord 16, 12
 	ld de, .String_PerfectAccuracy
 	jp PlaceString
-	
+
 .CancelDescription
 	db   "Do not relearn a"
 	next "previous move.@"
@@ -531,4 +709,28 @@ Text_SimulationMoveReminderIntro:
 
 Text_SimulationMoveReminderCancel:
 	text_jump SimulationMoveReminderCancelText
+	db "@"
+
+Text_EggMoveTutorIntro:
+	text_jump EggMoveTutorIntroText
+	db "@"
+
+Text_EggMoveTutorWhichMon:
+	text_jump EggMoveTutorWhichMonText
+	db "@"
+
+Text_EggMoveTutorWhichMove:
+	text_jump EggMoveTutorWhichMoveText
+	db "@"
+
+Text_EggMoveTutorNoItem:
+	text_jump EggMoveTutorNoItemText
+	db "@"
+
+Text_EggMoveTutorNoMoves:
+	text_jump EggMoveTutorNoMovesText
+	db "@"
+
+Text_EggMoveTutorNotHappy:
+	text_jump EggMoveTutorNotHappyText
 	db "@"
