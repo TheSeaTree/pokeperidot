@@ -180,7 +180,7 @@
 	const UP_GRADE     ; ac
 	const BERRY        ; ad
 	const GOLD_BERRY   ; ae
-	const SQUIRTBOTTLE ; af
+	const SCHOOLWORK   ; af
 	const SILVER_BERRY ; b0
 	const SAFARI_BALL  ; b1
 	const RAINBOW_WING ; b2

@@ -173,7 +173,7 @@ ItemNames::
 	db "UP-GRADE@"
 	db "BERRY@"
 	db "GOLD BERRY@"
-	db "SQUIRTBOTTLE@"
+	db "SCHOOLWORK@"
 	db "SILVER BERRY@"
 	db "SAFARI BALL@"
 	db "RAINBOW WING@"

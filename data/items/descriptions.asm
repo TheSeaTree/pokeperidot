@@ -174,7 +174,7 @@ ItemDescriptions:
 	dw UpGradeDesc
 	dw BerryDesc
 	dw GoldBerryDesc
-	dw SquirtBottleDesc
+	dw SchoolworkDesc
 	dw SilverBerryDesc
 	dw ParkBallDesc
 	dw RainbowWingDesc
@@ -951,9 +951,9 @@ GoldBerryDesc:
 	db   "A self-restore"
 	next "item.(1/2HP, HOLD)@"
 
-SquirtBottleDesc:
-	db   "A bottle used for"
-	next "watering plants.@"
+SchoolworkDesc:
+	db   "A bundle of class"
+	next "assignments.@"
 
 SilverBerryDesc:
 	db   "A self-resore"
