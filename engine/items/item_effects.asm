@@ -214,6 +214,10 @@ PokeBallEffect:
 	cp PARTY_LENGTH
 	jr nz, .room_in_party
 
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jp z, UseBallInBossBattle
+
 	ld a, BANK(sBoxCount)
 	call GetSRAMBank
 	ld a, [sBoxCount]
@@ -1258,7 +1262,7 @@ EvoStoneEffect:
 VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
-
+.loop
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
@@ -1296,7 +1300,12 @@ VitaminEffect:
 	ld c, HAPPINESS_USEDITEM
 	farcall ChangeHappiness
 
-	jp UseDisposableItem
+	call UseDisposableItem
+	call LoopDisposableItem
+	ret nc
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMonNoWhiteout
+	jp .loop
 
 NoEffectMessage:
 	ld hl, WontHaveAnyEffectText
@@ -1376,7 +1385,7 @@ RareCandy_StatBooster_GetParameters:
 RareCandyEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMon
-
+.loop
 	jp c, RareCandy_StatBooster_ExitMenu
 
 	call RareCandy_StatBooster_GetParameters
@@ -1473,7 +1482,30 @@ RareCandyEffect:
 	ld [wForceEvolution], a
 	farcall EvolvePokemon
 
-	jp UseDisposableItem
+	call UseDisposableItem
+	call LoopDisposableItem
+	ret nc
+	ld b, PARTYMENUACTION_HEALING_ITEM
+	call UseItem_SelectMonNoWhiteout
+	jp .loop
+
+LoopDisposableItem:
+	; Continue using the item until none remain.
+	ld a, [wCurItem]
+	ld hl, wNumItems
+	call CheckItem
+	ret c
+	xor a
+	ld a, [wCurItem]
+	ld [wNamedObjectIndexBuffer], a
+	call GetItemName
+	ld hl, Text_LastItem
+	jp PrintText
+
+Text_LastItem:
+	; You used your last @.
+	text_far UsedLastItemText
+	text_end
 
 HealPowderEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
@@ -1825,6 +1857,34 @@ UseItem_SelectMon:
 	push de
 	push bc
 	call ClearBGPalettes
+	call ChooseMonToUseItemOn
+	pop bc
+	pop de
+	pop hl
+	ret
+
+UseItem_SelectMonNoWhiteout:
+	call .SelectMon
+	ret c
+
+	ld a, [wCurPartySpecies]
+	cp EGG
+	jr nz, .not_egg
+
+	call CantUseOnEggMessage
+	scf
+	ret
+
+.not_egg
+	and a
+	ret
+
+.SelectMon:
+	ld a, b
+	ld [wPartyMenuActionText], a
+	push hl
+	push de
+	push bc
 	call ChooseMonToUseItemOn
 	pop bc
 	pop de

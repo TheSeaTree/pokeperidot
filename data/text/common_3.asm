@@ -1693,3 +1693,10 @@ ExpAll_TurnOffText::
 	text "The EXP. ALL has"
 	line "been enabled."
 	done
+
+UsedLastItemText::
+	text "You used your last"
+	line "@"
+	text_ram wStringBuffer1
+	text "."
+	prompt
