@@ -18,8 +18,8 @@ Marts:
 	dw MartBlackthornTM
 	dw MartFavia
 	dw MartFaviaTM
-	dw MartPewter
-	dw MartCerulean
+	dw MartPastFavia
+	dw MartPastPectinia
 	dw MartLavender
 	dw MartVermilion
 	dw MartCeladon2F1
@@ -228,10 +228,10 @@ MartFaviaTM:
 	db TM_PSYCH_UP
 	db -1
 
-MartPewter:
+MartPastFavia:
 	db 7 ; # items
-	db GREAT_BALL
-	db SUPER_POTION
+	db POTION
+	db REPEL
 	db SUPER_REPEL
 	db ANTIDOTE
 	db PARLYZ_HEAL
@@ -239,12 +239,14 @@ MartPewter:
 	db BURN_HEAL
 	db -1 ; end
 
-MartCerulean:
+MartPastPectinia:
 	db 7 ; # items
+	db POKE_BALL
 	db GREAT_BALL
-	db ULTRA_BALL
+	db ETHER
 	db SUPER_POTION
 	db SUPER_REPEL
+	db MAX_REPEL
 	db FULL_HEAL
 	db X_DEFEND
 	db X_ATTACK
