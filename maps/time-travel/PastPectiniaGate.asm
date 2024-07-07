@@ -10,6 +10,21 @@ PastPectiniaGate_MapScripts:
 	changeblock 0, 2, $92
 	return
 
+PastPectiniaGateOfficer:
+	jumptext PastPectiniaGateOfficerText
+
+PastPectiniaGateOfficerText:
+	text "I've never seen"
+	line "someone like you"
+	cont "around here. Are"
+	cont "you from up north?"
+
+	para "Those people are"
+	line "ahead of the"
+	cont "curve when it"
+	cont "comes to fashion."
+	done
+
 PastPectiniaGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -24,4 +39,4 @@ PastPectiniaGate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  0,  4, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  0,  4, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastPectiniaGateOfficer, -1

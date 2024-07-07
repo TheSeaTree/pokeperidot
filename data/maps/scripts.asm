@@ -355,6 +355,7 @@ INCLUDE "maps/Route20AcroporaGate.asm"
 INCLUDE "maps/Route20HeavyBallHouse.asm"
 INCLUDE "maps/Route21StaghornGate.asm"
 
+
 SECTION "Map Scripts 22", ROMX
 
 INCLUDE "maps/StaghornTown.asm"
@@ -436,8 +437,6 @@ INCLUDE "maps/SSMako2F.asm"
 INCLUDE "maps/SSMako2FRooms.asm"
 INCLUDE "maps/SSMakoDeck.asm"
 INCLUDE "maps/MaplesLabElevator.asm"
-INCLUDE "maps/time-travel/PastPavonaHouse1.asm"
-INCLUDE "maps/time-travel/PastPavonaHouse2.asm"
 
 
 SECTION "Map Scripts 27", ROMX
@@ -464,19 +463,7 @@ INCLUDE "maps/time-travel/PastRoute11House2.asm"
 INCLUDE "maps/time-travel/PastRoute11House3.asm"
 INCLUDE "maps/time-travel/PastRoute11House4.asm"
 INCLUDE "maps/time-travel/PastRoute11House5.asm"
-INCLUDE "maps/time-travel/PastRoute11Schoolhouse.asm"
-INCLUDE "maps/time-travel/PastElkhornMomsHouse.asm"
-INCLUDE "maps/time-travel/PastElkhornLakesideHouse.asm"
-INCLUDE "maps/time-travel/PastElkhornRichardsHouse.asm"
-INCLUDE "maps/time-travel/PastForestGate.asm"
-INCLUDE "maps/time-travel/PastPectiniaGate.asm"
-INCLUDE "maps/time-travel/PastFaviaDayCare.asm"
-INCLUDE "maps/time-travel/PastFaviaCelestesHouse.asm"
-INCLUDE "maps/time-travel/PastFaviaFriendshipHouse.asm"
-INCLUDE "maps/time-travel/PastRoute2Gate.asm"
-INCLUDE "maps/time-travel/PastPectiniaBerryHouse.asm"
-INCLUDE "maps/time-travel/PastPectiniaGymSpeechHouse.asm"
-INCLUDE "maps/time-travel/PastHiddenPowerCave.asm"
+
 
 SECTION "Map Scripts 28", ROMX
 
@@ -503,3 +490,25 @@ INCLUDE "maps/battle-simulation/ForestWorld1.asm"
 INCLUDE "maps/battle-simulation/ForestWorld2.asm"
 INCLUDE "maps/battle-simulation/ForestWorld3.asm"
 INCLUDE "maps/battle-simulation/BattleSimulationFinalRoom.asm"
+
+SECTION "Map Scripts 29", ROMX
+
+INCLUDE "maps/time-travel/PastPavonaHouse1.asm"
+INCLUDE "maps/time-travel/PastPavonaHouse2.asm"
+INCLUDE "maps/time-travel/PastRoute11Schoolhouse.asm"
+INCLUDE "maps/time-travel/PastElkhornMomsHouse.asm"
+INCLUDE "maps/time-travel/PastElkhornLakesideHouse.asm"
+INCLUDE "maps/time-travel/PastElkhornRichardsHouse.asm"
+INCLUDE "maps/time-travel/PastForestGate.asm"
+INCLUDE "maps/time-travel/PastPectiniaGate.asm"
+INCLUDE "maps/time-travel/PastFaviaDayCare.asm"
+INCLUDE "maps/time-travel/PastFaviaEggTutorHouse.asm"
+INCLUDE "maps/time-travel/PastFaviaFriendshipHouse.asm"
+INCLUDE "maps/time-travel/PastRoute2Gate.asm"
+INCLUDE "maps/time-travel/PastPectiniaBerryHouse.asm"
+INCLUDE "maps/time-travel/PastPectiniaGymSpeechHouse.asm"
+INCLUDE "maps/time-travel/PastPectiniaEggMoveHouse.asm"
+INCLUDE "maps/time-travel/PastPectiniaBikeHouse.asm"
+INCLUDE "maps/time-travel/PastHiddenPowerCave.asm"
+INCLUDE "maps/time-travel/PastRoute8.asm"
+INCLUDE "maps/time-travel/PastRoute1House.asm"

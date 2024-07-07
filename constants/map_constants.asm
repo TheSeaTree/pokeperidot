@@ -487,22 +487,25 @@ ENDM
 	map_const PAST_FAVIA_TOWN,							  15, 14
 	map_const PAST_FAVIA_INN,							   5,  4
 	map_const PAST_FAVIA_DAY_CARE,						   4,  4
-	map_const PAST_FAVIA_CELESTES_HOUSE,				   4,  4
+	map_const PAST_FAVIA_EGG_TUTOR_HOUSE,				   4,  4
 	map_const PAST_FAVIA_FRIENDSHIP_HOUSE,				   4,  4
 	map_const PAST_FAVIA_MART,                             5,  3
+	map_const PAST_ROUTE_3,                               20, 24
+	map_const PAST_ROUTE_8, 							  19, 11
 
 	newgroup
 
-	map_const PAST_PECTINIA_CITY,                            28, 15
-	map_const PAST_PECTINIA_GYM,                              8, 10
-	map_const PAST_PECTINIA_APARTMENT_1F,                     6,  4
-	map_const PAST_PECTINIA_APARTMENT_2F,                     6,  4
-	map_const PAST_PECTINIA_APARTMENT_3F,                     6,  4
-	map_const PAST_ROUTE_3,                                  20, 24
-	map_const PAST_PECTINIA_GATE,                             5,  4
-	map_const PAST_PECTINIA_MART,                             5,  3
-	map_const PAST_PECTINIA_BERRY_HOUSE,                      4,  4
-	map_const PAST_PECTINIA_GYM_SPEECH_HOUSE,                 4,  4
+	map_const PAST_PECTINIA_CITY,                         28, 15
+	map_const PAST_PECTINIA_GYM,                           8, 10
+	map_const PAST_PECTINIA_APARTMENT_1F,                  6,  4
+	map_const PAST_PECTINIA_APARTMENT_2F,                  6,  4
+	map_const PAST_PECTINIA_APARTMENT_3F,                  6,  4
+	map_const PAST_PECTINIA_GATE,                          5,  4
+	map_const PAST_PECTINIA_MART,                          5,  3
+	map_const PAST_PECTINIA_BERRY_HOUSE,                   4,  4
+	map_const PAST_PECTINIA_GYM_SPEECH_HOUSE,              4,  4
+	map_const PAST_PECTINIA_EGG_MOVE_HOUSE,                4,  4
+	map_const PAST_PECTINIA_BIKE_HOUSE,                	   4,  4
 
 	newgroup
 
@@ -524,6 +527,7 @@ ENDM
 	map_const PAST_ELKHORN_RICHARDS_HOUSE,				   4,  4
 	map_const PAST_ROUTE_1,						  		  26, 16
 	map_const PAST_HIDDEN_POWER_CAVE,			  		   6,  5
+	map_const PAST_ROUTE_1_HOUSE,				  		   4,  4
 
 	newgroup
 

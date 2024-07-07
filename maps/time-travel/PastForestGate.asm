@@ -10,6 +10,35 @@ PastForestGate_MapScripts:
 	changeblock 6, 2, $0d
 	return
 
+PastForestGateOfficer:
+	jumptext PastForestGateOfficerText
+
+PastForestGateElder:
+	jumptextfaceplayer PastForestGateElderText
+
+PastForestGateOfficerText:
+	text "Careful you don't"
+	line "get lost, kid."
+
+	para "OCCIDENT FOREST is"
+	line "rather large, and"
+	cont "has many dead ends"
+	cont "among the trees."
+	done
+
+PastForestGateElderText:
+	text "There was once a"
+	line "GUARDIAN who would"
+	cont "act as a protector"
+	cont "of the FOREST."
+
+	para "It has not been"
+	line "seen since I was a"
+	cont "boy, but a shrine"
+	cont "still stands in"
+	cont "its honor."
+	done
+
 PastForestGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -24,4 +53,5 @@ PastForestGate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  2, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastForestGateOfficer, -1
+	object_event  8,  7, SPRITE_ELDER, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastForestGateElder, -1

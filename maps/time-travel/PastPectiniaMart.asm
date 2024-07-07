@@ -54,6 +54,6 @@ PastPectiniaMart_MapEvents:
 	db 0 ; bg events
 
 	db 3 ; object events
-	object_event  4,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaMartClerkScript, -1
+	object_event  4,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaMartClerkScript, -1
 	object_event  1,  2, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaMartBugCatcherScript, -1
 	object_event  8,  4, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPectiniaMartTeacherScript, -1

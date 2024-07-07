@@ -5,8 +5,22 @@ PastPectiniaApartment3F_MapScripts:
 
 	db 0 ; callbacks
 
-PastPectiniaApartments3FYoungster:
+PastPectiniaApartmentBlockingTV:
+	opentext
+	writetext PastPectiniaApartments3FBlockingTVText
+	waitbutton
+	closetext
+	applymovement PLAYER, PastPectiniaApartments3FBlockingTVMovement
+	end
 
+PastPectiniaApartments3FYoungster:
+	faceplayer
+	opentext
+	writetext PastPectiniaApartments3FYoungsterText
+	waitbutton
+	closetext
+	turnobject LAST_TALKED, UP
+	end
 
 PastPectiniaApartments3FLass:
 	faceplayer
@@ -17,12 +31,16 @@ PastPectiniaApartments3FLass:
 	turnobject LAST_TALKED, UP
 	end
 
+PastPectiniaApartments3FBlockingTVMovement:
+	step RIGHT
+	step_end
+
 PastPectiniaApartments3FYoungsterText:
 	text "Our DAD just got"
 	line "us CABLE TV."
 
-	para "Nobody else in town"
-	line "has it."
+	para "Nobody else in"
+	line "town has it."
 
 	para "They always want"
 	line "to come by and"
@@ -41,13 +59,23 @@ PastPectiniaApartments3FLassText:
 	cont "my brother."
 	done
 
+PastPectiniaApartments3FBlockingTVText:
+	text "Can you move,"
+	line "please?"
+
+	para "You're blocking the"
+	line "television set!"
+	done
+
 PastPectiniaApartment3F_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
 	warp_event  7,  0, PAST_PECTINIA_APARTMENT_2F, 2
 
-	db 0 ; coord events
+	db 2 ; coord events
+	coord_event 1, 3, -1, PastPectiniaApartmentBlockingTV
+	coord_event  1,  4, -1, PastPectiniaApartmentBlockingTV
 
 	db 0 ; bg events
 

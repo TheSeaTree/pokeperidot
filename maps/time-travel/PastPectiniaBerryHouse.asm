@@ -6,9 +6,28 @@ PastPectiniaBerryHouse_MapScripts:
 	db 0 ; callbacks
 
 PastPectiniaBerryHouseCooltrainer:
+	checkevent EVENT_BOSS_CELEBI_AVAILABLE
+	iffalse .no_fruit
 	jumptextfaceplayer PastPectiniaBerryHouseCooltrainerText
 
+.no_fruit
+	jumptextfaceplayer PastPectiniaBerryHouseCooltrainerNoFruitText
+
+PastPectiniaBerryHouseCooltrainerNoFruitText:
+	text "I don't get it."
+
+	para "Nothing I plant"
+	line "will grow, no"
+	cont "matter how hard I"
+	cont "tend to the crops…"
+
+	para "Maybe I'm not cut"
+	line "out for this kind"
+	cont "of life…"
+	done
+
 PastPectiniaBerryHouseCooltrainerText:
+;	Probably rewrite this to thank the player again for helping with the flowers.
 	text "Some day I hope to"
 	line "grow an entire"
 	cont "orchard!"

@@ -22,7 +22,7 @@ PastPectiniaApartment2FPokefanText:
 
 	para "That's why I'm"
 	line "never getting rid"
-	cont "of my radio!"
+	cont "of my turntable!"
 	done
 
 PastPectiniaApartment2F_MapEvents:

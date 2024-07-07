@@ -284,20 +284,24 @@ ENDM
 
 	map_attributes PastRoute1, PAST_ROUTE_1, $05, NORTH | SOUTH
 	connection north, PastElkhornTown, PAST_ELKHORN_TOWN, 4
-	connection south, PastPavonaVillage, PAST_PAVONA_VILLAGE, 1
+	connection south, PastPavonaVillage, PAST_PAVONA_VILLAGE, 0
 
 	map_attributes PastPavonaVillage, PAST_PAVONA_VILLAGE, $05, NORTH | EAST
-	connection north, PastRoute1, PAST_ROUTE_1, -1
-	connection east, PastRoute2, PAST_ROUTE_2, 3
+	connection north, PastRoute1, PAST_ROUTE_1, 0
+	connection east, PastRoute2, PAST_ROUTE_2, 5
 
 	map_attributes PastRoute2, PAST_ROUTE_2, $05, WEST
-	connection west, PastPavonaVillage, PAST_PAVONA_VILLAGE, -3
+	connection west, PastPavonaVillage, PAST_PAVONA_VILLAGE, -5
 
-	map_attributes PastFaviaTown, PAST_FAVIA_TOWN, $05, SOUTH
+	map_attributes PastFaviaTown, PAST_FAVIA_TOWN, $05, SOUTH | EAST
 	connection south, PastRoute3, PAST_ROUTE_3, 7
+	connection east, PastRoute8, PAST_ROUTE_8, 2
 
 	map_attributes PastRoute3, PAST_ROUTE_3, $05, NORTH
 	connection north, PastFaviaTown, PAST_FAVIA_TOWN, -7
+
+	map_attributes PastRoute8, PAST_ROUTE_8, $05, WEST
+	connection west, PastFaviaTown, PAST_FAVIA_TOWN, -2
 
 	map_attributes PastRoute11, PAST_ROUTE_11, $05, SOUTH
 	connection south, PastElkhornTown, PAST_ELKHORN_TOWN, -5
@@ -630,7 +634,7 @@ ENDM
 	map_attributes PastPectiniaGate, PAST_PECTINIA_GATE, $00, 0
 	map_attributes PastFaviaDayCare, PAST_FAVIA_DAY_CARE, $00, 0
 	map_attributes PastRoute2Gate, PAST_ROUTE_2_GATE, $00, 0
-	map_attributes PastFaviaCelestesHouse, PAST_FAVIA_CELESTES_HOUSE, $00, 0
+	map_attributes PastFaviaEggTutorHouse, PAST_FAVIA_EGG_TUTOR_HOUSE, $00, 0
 	map_attributes PastFaviaFriendshipHouse, PAST_FAVIA_FRIENDSHIP_HOUSE, $00, 0
 	map_attributes PastPectiniaMart, PAST_PECTINIA_MART, $00, 0
 	map_attributes PastFaviaMart, PAST_FAVIA_MART, $00, 0
@@ -639,4 +643,7 @@ ENDM
 	map_attributes PastPavonaHouse2, PAST_PAVONA_HOUSE_2, $00, 0
 	map_attributes PastPectiniaBerryHouse, PAST_PECTINIA_BERRY_HOUSE, $00, 0
 	map_attributes PastPectiniaGymSpeechHouse, PAST_PECTINIA_GYM_SPEECH_HOUSE, $00, 0
+	map_attributes PastPectiniaEggMoveHouse, PAST_PECTINIA_EGG_MOVE_HOUSE, $00, 0
+	map_attributes PastPectiniaBikeHouse, PAST_PECTINIA_BIKE_HOUSE, $00, 0
 	map_attributes PastHiddenPowerCave, PAST_HIDDEN_POWER_CAVE, $09, 0
+	map_attributes PastRoute1House, PAST_ROUTE_1_HOUSE, $00, 0

@@ -51,6 +51,9 @@ StdScripts::
 	dba BattleSimExitWarpScript
 	dba TimeTravelWarpScript
 	dba SelectSimulationItemballEncounter
+	dba BossCelebiIntroScript
+	dba BossCelebiBattleScript
+	dba WeakCelebiEncounterScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -905,4 +908,30 @@ SelectSimulationItemballEncounter:
 	writecode VAR_BATTLETYPE, BATTLETYPE_SIMULATION
 	startbattle
 	reloadmapafterbattle
+	end
+
+BossCelebiIntroScript:
+	opentext
+	farwritetext CelebiBossIntroText
+	cry CELEBI
+	waitbutton
+	closetext
+	end
+
+BossCelebiBattleScript:
+	opentext
+	farwritetext CelebiBossDisappearedText
+	waitbutton
+	closetext
+	end
+
+WeakCelebiEncounterScript
+	opentext
+	farwritetext CelebiEncounterText
+	writebyte CELEBI
+	special PlaySlowCry
+	waitbutton
+	farwritetext CelebiWeakText
+	waitbutton
+	closetext
 	end

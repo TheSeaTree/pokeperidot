@@ -52,3 +52,6 @@
 	enum battlesimexitwarp
 	enum timetravelwarp
 	enum battlesimencounter
+	enum bosscelebiintro
+	enum bosscelebibattle
+	enum weakcelebiencounter

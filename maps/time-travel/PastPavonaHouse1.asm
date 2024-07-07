@@ -4,7 +4,7 @@ PastPavonaHouse1_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
 PastPavonaHouse1_MapEvents:
 	db 0, 0 ; filler
 

@@ -4,7 +4,27 @@ PastPavonaVillage_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
+PastPavonaVillageHiker:
+	jumptextfaceplayer PastPavonaVillageHikerText
+
+PastPavonaVillageSmashRock:
+	jumpstd smashrock
+
+PastPavonaVillageHikerText:
+	text "I've always been"
+	line "curious about what"
+	cont "these rocks are"
+	cont "blocking."
+
+	para "I even tried to"
+	line "climb them once."
+
+	para "…I didn't get very"
+	line "far because I'm"
+	line "afraid of heights."
+	done
+
 PastPavonaVillage_MapEvents:
 	db 0, 0 ; filler
 
@@ -17,4 +37,9 @@ PastPavonaVillage_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 5 ; object events
+	object_event  7, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageHiker, -1
+	object_event  4,  8, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageSmashRock, -1
+	object_event  5, 10, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageSmashRock, -1
+	object_event  6,  9, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageSmashRock, -1
+	object_event  7, 11, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageSmashRock, -1

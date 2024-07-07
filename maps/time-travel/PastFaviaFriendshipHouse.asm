@@ -5,27 +5,20 @@ PastFaviaFriendshipHouse_MapScripts:
 
 	db 0 ; callbacks
 
-PastFaviaFriendshipHouseBeauty:
-	jumptextfaceplayer PastFaviaFriendshipHouseBeautyText
+PastFaviaFriendshipHouseTeacher:
+	jumptextfaceplayer PastFaviaFriendshipHouseTeacherText
 
-PastFaviaFriendshipHouseBeautyText:
-	text "Our neighbors to"
-	line "the north are ex-"
-	cont "cellent #MON"
-	cont "trainers."
+PastFaviaFriendshipHouseTeacherText:
+	text "My husband is an"
+	line "excellnt #MON"
+	cont "trainer."
 
-	para "Their schoolhouse"
+	para "His schoolhouse"
 	line "teaches all about"
 	cont "the different"
-	cont "#MON types."
-
-	para "It feels a little"
-	line "bit silly to be in"
-	cont "a class with so"
-	cont "many children, but"
-	cont "there are some"
-	cont "other adults in"
-	cont "those classes!"
+	cont "#MON types and"
+	cont "how to best use"
+	cont "them in battle."
 	done
 
 PastFaviaFriendshipHouse_MapEvents:
@@ -40,4 +33,4 @@ PastFaviaFriendshipHouse_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  2,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastFaviaFriendshipHouseBeauty, -1
+	object_event  2,  3, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastFaviaFriendshipHouseTeacher, -1

@@ -88,15 +88,18 @@ PastRoute11House5_Blocks:
 PastElkhornRichardsHouse_Blocks:
 PastFaviaDayCare_Blocks:
 PastFaviaFriendshipHouse_Blocks:
-PastPavonaHouse1_Blocks:
-PastPavonaHouse2_Blocks:
 PastPectiniaGymSpeechHouse_Blocks:
+PastPectiniaEggMoveHouse_Blocks:
+PastPectiniaBikeHouse_Blocks:
+PastRoute1House_Blocks:
 	INCBIN "maps/time-travel/PastHouse1.4x4.house.ablk"
 
-PastFaviaCelestesHouse_Blocks:
+PastFaviaEggTutorHouse_Blocks:
 PastPectiniaBerryHouse_Blocks:
 PastRoute11House2_Blocks:
 PastElkhornLakesideHouse_Blocks:
+PastPavonaHouse1_Blocks:
+PastPavonaHouse2_Blocks:
 	INCBIN "maps/time-travel/PastHouse2.4x4.players_house.ablk"
 
 PastElkhornMomsHouse_Blocks:
@@ -899,6 +902,9 @@ PastRoute3_Blocks:
 
 PastFaviaTown_Blocks:
 	INCBIN "maps/time-travel/PastFaviaTown.ablk"
+
+PastRoute8_Blocks:
+	INCBIN "maps/time-travel/PastRoute8.ablk"
 
 PastRoute11_Blocks:
 	INCBIN "maps/time-travel/PastRoute11.ablk"

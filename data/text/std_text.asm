@@ -591,3 +591,21 @@ TeleportGuyDeclineText:
 	text "OK, OK. The best"
 	line "of luck to you!"
 	prompt
+
+CelebiBossIntroText:
+	text "CELEBI: Biriiii!"
+	done
+
+CelebiBossDisappearedText:
+	text "CELEBI teleported"
+	line "away!"
+	done
+
+CelebiEncounterText:
+	text "CELEBI: Birii……"
+	done
+
+CelebiWeakText:
+	text "CELEBI looks too"
+	line "weak to battle."
+	done

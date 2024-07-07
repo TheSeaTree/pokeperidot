@@ -19,7 +19,11 @@ PastHiddenPowerCave_MapScripts:
 	writetext PastHiddenPowerCaveScientistText
 	waitbutton
 	closetext
-
+	variablesprite SPRITE_PAST_MOM, SPRITE_RED_PAST_MOM
+	checkflag ENGINE_PLAYER_IS_FEMALE
+	iffalse .CheckStarter
+	variablesprite SPRITE_PAST_MOM, SPRITE_BLUE_PAST_MOM
+.CheckStarter
 	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
 	iftrue .Squirtle
 	checkevent EVENT_GOT_CHARMANDER_FROM_MAPLE
@@ -51,6 +55,7 @@ PastHiddenPowerCaveScientist1:
 	writetext PastHiddenPowerCaveScientistReturnText
 	waitbutton
 	closetext
+	special FadeOutPalettes
 	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
 	playsound SFX_WARP_FROM
 	special FadeOutPalettes
@@ -66,6 +71,7 @@ PastHiddenPowerCaveScientist1:
 	end
 
 PastHiddenPowerCaveScientist2:
+	givepoke CROBAT, 20
 	jumptextfaceplayer PastHiddenPowerCaveScientist2Text
 
 PastHiddenPowerCaveScientistIntroText:
@@ -95,7 +101,7 @@ PastHiddenPowerCaveScientistText:
 	cont "you wish to return"
 	cont "to the present."
 	done
-	
+
 PastHiddenPowerCaveScientistAskText:
 	text "Would you like to"
 	line "return to the"
@@ -136,7 +142,8 @@ PastHiddenPowerCave_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  9,  7, PAST_ROUTE_1, 2
+;	warp_event  9,  7, PAST_ROUTE_1, 2
+	warp_event  9,  7, PAST_PECTINIA_CITY, 7
 
 	db 0 ; coord events
 
