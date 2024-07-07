@@ -38,7 +38,7 @@ INCBIN "gfx/trainers/cooltrainer_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/cooltrainer_f.gbcpal", middle_colors
 INCBIN "gfx/trainers/beauty.gbcpal", middle_colors
 INCBIN "gfx/trainers/pokemaniac.gbcpal", middle_colors
-INCBIN "gfx/trainers/grunt_m.gbcpal", middle_colors
+INCBIN "gfx/trainers/teacher_m.gbcpal", middle_colors
 INCBIN "gfx/trainers/gentleman.gbcpal", middle_colors
 INCBIN "gfx/trainers/skier.gbcpal", middle_colors
 INCBIN "gfx/trainers/teacher.gbcpal", middle_colors

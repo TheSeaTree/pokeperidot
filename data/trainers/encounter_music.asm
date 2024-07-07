@@ -34,7 +34,7 @@ TrainerEncounterMusic::
 	db MUSIC_BEAUTY_ENCOUNTER      ; cooltrainerf
 	db MUSIC_BEAUTY_ENCOUNTER      ; beauty
 	db MUSIC_POKEMANIAC_ENCOUNTER  ; pokemaniac
-	db MUSIC_ROCKET_ENCOUNTER      ; gruntm
+	db MUSIC_HIKER_ENCOUNTER       ; teacherm
 	db MUSIC_HIKER_ENCOUNTER       ; gentleman
 	db MUSIC_BEAUTY_ENCOUNTER      ; skier
 	db MUSIC_BEAUTY_ENCOUNTER      ; teacher

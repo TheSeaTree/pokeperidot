@@ -33,7 +33,7 @@ TrainerGroups:
 	dba CooltrainerFGroup
 	dba BeautyGroup
 	dba PokemaniacGroup
-	dba GruntMGroup
+	dba TeacherMGroup
 	dba GentlemanGroup
 	dba SkierGroup
 	dba TeacherGroup

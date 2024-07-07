@@ -33,7 +33,7 @@ TrainerPicPointers::
 	dba CooltrainerfPic
 	dba BeautyPic
 	dba PokemaniacPic
-	dba GruntmPic
+	dba TeachermPic
 	dba GentlemanPic
 	dba SkierPic
 	dba TeacherPic
