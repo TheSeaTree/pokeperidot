@@ -1,6 +1,6 @@
 TreeMons:
 ; entries correspond to TREEMON_SET_* constants
-	dw TreeMonSet_Canyon
+	dw TreeMonSet_Past
 	dw TreeMonSet_City
 	dw TreeMonSet_Town
 	dw TreeMonSet_Route
@@ -13,7 +13,24 @@ TreeMons:
 ; Structure:
 ;	db  %, species, level
 
-TreeMonSet_Canyon:
+TreeMonSet_Past:
+; common
+	db 30, HOOTHOOT,   16
+	db 20, SPINARAK,   16
+	db 15, METAPOD,    17
+	db 15, KAKUNA,     14
+	db 10, AIPOM,	   14
+	db 10, GOLBAT,	   18
+	db -1
+; rare
+	db 30, NOCTOWL,    16
+	db 20, ZUBAT,      17
+	db 15, PINECO,     17
+	db 15, PINECO,     17
+	db 10, AIPOM,	   17
+	db 10, GOLBAT,     18
+	db -1
+
 TreeMonSet_City:
 ; common
 	db 40, SPEAROW,    16
@@ -73,7 +90,7 @@ TreeMonSet_Lake:
 	db 50, HOOTHOOT,   16
 	db 15, VENONAT,    18
 	db 15, HOOTHOOT,   17
-	db 10, EXEGGCUTE,  13
+	db 10, NATU,	   13
 	db  5, EXEGGCUTE,  13
 	db  5, EXEGGCUTE,  18
 	db -1
@@ -89,7 +106,7 @@ TreeMonSet_Lake:
 TreeMonSet_Forest:
 ; common
 	db 50, PINECO,     16
-	db 15, HOOTHOOT,   18
+	db 15, SPEAROW,    18
 	db 15, HOOTHOOT,   19
 	db 10, HERACROSS,  17
 	db  5, HERACROSS,  14
@@ -97,8 +114,8 @@ TreeMonSet_Forest:
 	db -1
 ; rare
 	db 50, PINECO,     16
-	db 15, HOOTHOOT,   18
-	db 15, HOOTHOOT,   19
+	db 15, TANGELA,    18
+	db 15, TANGELA,    19
 	db 10, AIPOM,      17
 	db  5, AIPOM,      16
 	db  5, AIPOM,      17

@@ -995,12 +995,12 @@ GrassWildMons:
 	; nite
 	db 16, MURKROW
 	db 17, JIGGLYPUFF
-	db 16, PIKACHU
 	db 14, HOUNDOUR
+	db 16, PIKACHU
 	db 16, NIDORINO
 	db 16, NIDORINA
 	db 16, NIDORINA
-
+	
 	map_id ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1027,7 +1027,7 @@ GrassWildMons:
 	db 14, GASTLY
 	db 15, BUTTERFREE
 	db 16, MISDREAVUS
-
+	
 	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -2144,7 +2144,7 @@ GrassWildMons:
 	db 36, KINGLER
 	db 35, DUGTRIO
 	db 37, DUGTRIO
-	
+
 	map_id REMNANT_CAVE_2F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
@@ -2522,6 +2522,33 @@ GrassWildMons:
 	db 12, HOUNDOUR
 	db 12, TEDDIURSA
 	db 12, TEDDIURSA
+
+	map_id PAST_ROUTE_8
+	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
+	; morn
+	db 16, BUTTERFREE
+	db 14, PIKACHU
+	db 15, JIGGLYPUFF
+	db 16, DROWZEE
+	db 16, HERACROSS
+	db 16, EEVEE
+	db 17, EEVEE
+	; day
+	db 16, BUTTERFREE
+	db 14, PIKACHU
+	db 15, JIGGLYPUFF
+	db 16, DROWZEE
+	db 16, HERACROSS
+	db 16, EEVEE
+	db 17, EEVEE
+	; nite
+	db 16, ZUBAT
+	db 14, PIKACHU
+	db 15, CLEFAIRY
+	db 16, BUTTERFREE
+	db 16, HERACROSS
+	db 16, EEVEE
+	db 17, EEVEE
 
 	map_id PAST_ILEX_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

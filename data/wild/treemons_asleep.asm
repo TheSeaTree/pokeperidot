@@ -1,17 +1,13 @@
 ; Used by CheckSleepingTreeMon
 
 AsleepTreeMonsNite:
-	db CATERPIE
 	db METAPOD
-	db BUTTERFREE
-	db WEEDLE
 	db KAKUNA
-	db BEEDRILL
 	db SPEAROW
 	db EKANS
 	db EXEGGCUTE
-	db CUBBOLT
 	db AIPOM
+	db NATU
 	db -1 ; end
 
 AsleepTreeMonsDay:
@@ -20,6 +16,7 @@ AsleepTreeMonsDay:
 	db NOCTOWL
 	db SPINARAK
 	db RINRING
+	db GOLBAT
 	db -1 ; end
 
 AsleepTreeMonsMorn:
@@ -28,4 +25,5 @@ AsleepTreeMonsMorn:
 	db NOCTOWL
 	db SPINARAK
 	db RINRING
+	db GOLBAT
 	db -1 ; end

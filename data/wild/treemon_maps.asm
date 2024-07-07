@@ -41,6 +41,16 @@ TreeMonMaps:
 	treemon_map ROUTE_27,	               TREEMON_SET_ROUTE
 	treemon_map ROUTE_28,	               TREEMON_SET_FOREST
 	treemon_map NORTH_FOREST,              TREEMON_SET_FOREST
+	treemon_map PAST_ROUTE_1,			   TREEMON_SET_PAST
+	treemon_map PAST_ROUTE_2,			   TREEMON_SET_PAST
+	treemon_map PAST_ROUTE_3,			   TREEMON_SET_PAST
+	treemon_map PAST_ROUTE_8,			   TREEMON_SET_PAST
+	treemon_map PAST_ROUTE_11,			   TREEMON_SET_PAST
+	treemon_map PAST_ELKHORN_TOWN,		   TREEMON_SET_TOWN
+	treemon_map PAST_PAVONA_VILLAGE,	   TREEMON_SET_LAKE
+	treemon_map PAST_FAVIA_TOWN,		   TREEMON_SET_TOWN
+	treemon_map PAST_PECTINIA_CITY,		   TREEMON_SET_TOWN
+	treemon_map PAST_ILEX_FOREST,		   TREEMON_SET_FOREST
 	db -1
 
 RockMonMaps:
@@ -60,4 +70,5 @@ RockMonMaps:
 	treemon_map ROUTE_13,		    	   TREEMON_SET_ROCK
 	treemon_map ROUTE_26_CAVE_B1F,    	   TREEMON_SET_ROCK
 	treemon_map UNION_CAVE_1F,      	   TREEMON_SET_ROCK
+	treemon_map PAST_PAVONA_VILLAGE,	   TREEMON_SET_ROCK
 	db -1

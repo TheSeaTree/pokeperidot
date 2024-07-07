@@ -13,9 +13,9 @@ FishGroups:
 	fishgroup 50 percent + 1, .Pond_Old,             .Pond_Good,             .Pond_Super
 	fishgroup 50 percent + 1, .Dratini_Old,          .Dratini_Good,          .Dratini_Super
 	fishgroup 50 percent + 1, .Qwilfish_Swarm_Old,   .Qwilfish_Swarm_Good,   .Qwilfish_Swarm_Super
-	fishgroup 50 percent + 1, .Remoraid_Swarm_Old,   .Remoraid_Swarm_Good,   .Remoraid_Swarm_Super
-	fishgroup 50 percent + 1, .Gyarados_Old,         .Gyarados_Good,         .Gyarados_Super
-	fishgroup 50 percent + 1, .Dratini_2_Old,        .Dratini_2_Good,        .Dratini_2_Super
+	fishgroup 50 percent + 1, .Past_Old,   			 .Past_Good,   			 .Past_Super
+	fishgroup 50 percent + 1, .Past_2_Old,         	 .Past_2_Good,         	 .Past_2_Super
+	fishgroup 50 percent + 1, .Past_3_Old,           .Past_3_Good,        	 .Past_3_Super
 	fishgroup 50 percent + 1, .Grimer_Old,     		 .Grimer_Good,     		 .Grimer_Super
 	fishgroup 50 percent + 1, .Qwilfish_Old,         .Qwilfish_Good,         .Qwilfish_Super
 	fishgroup 50 percent + 1, .Fossil_Old,           .Fossil_Good,           .Fossil_Super
@@ -110,50 +110,48 @@ FishGroups:
 	db  90 percent + 1, QWILFISH,   40
 	db 100 percent,     QWILFISH,   40
 
-.Remoraid_Swarm_Old:
+.Past_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     REMORAID,   10
-.Remoraid_Swarm_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     REMORAID,   20
-	db  90 percent + 1, REMORAID,   20
-	db 100 percent,     time_group 12
-.Remoraid_Swarm_Super:
-	db  40 percent,     REMORAID,   40
-	db  70 percent,     time_group 13
-	db  90 percent + 1, REMORAID,   40
-	db 100 percent,     REMORAID,   40
+	db 100 percent,     GOLDEEN,    10
+.Past_Good:
+	db  35 percent,     MAGIKARP,   15
+	db  70 percent+ 1,  GOLDEEN,    16
+	db 100 percent,     POLIWAG,	18
+.Past_Super:
+	db  40 percent,     GOLDEEN,    18
+	db  90 percent + 1, GOLDEEN,    20
+	db 100 percent,     SEAKING,    19
 
-.Gyarados_Old:
+.Past_2_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
 	db 100 percent,     MAGIKARP,   10
-.Gyarados_Good:
-	db  35 percent,     MAGIKARP,   20
-	db  70 percent,     MAGIKARP,   20
-	db  90 percent + 1, MAGIKARP,   20
+.Past_2_Good:
+	db  35 percent,     MAGIKARP,   12
+	db  70 percent,     POLIWAG,    14
+	db  95 percent + 1, POLIWAG,    15
 	db 100 percent,     time_group 14
-.Gyarados_Super:
-	db  40 percent,     MAGIKARP,   40
-	db  70 percent,     time_group 15
-	db  90 percent + 1, MAGIKARP,   40
-	db 100 percent,     MAGIKARP,   40
+.Past_2_Super:
+	db  40 percent,     POLIWAG,    16
+	db  70 percent + 1, MAGIKARP,   16
+	db  90 percent,     time_group 14
+	db 100 percent,     POLIWHIRL,  18
 
-.Dratini_2_Old:
+.Past_3_Old:
 	db  70 percent + 1, MAGIKARP,   10
 	db  85 percent + 1, MAGIKARP,   10
-	db 100 percent,     MAGIKARP,   10
-.Dratini_2_Good:
-	db  35 percent,     MAGIKARP,   10
-	db  70 percent,     MAGIKARP,   10
-	db  90 percent + 1, MAGIKARP,   10
+	db 100 percent,     GOLDEEN,    10
+.Past_3_Good:
+	db  35 percent,     MAGIKARP,   15
+	db  70 percent,     GOLDEEN,    16
+	db  90 percent + 1, GOLDEEN,    15
 	db 100 percent,     time_group 16
-.Dratini_2_Super:
-	db  40 percent,     MAGIKARP,   10
-	db  70 percent,     time_group 17
-	db  90 percent + 1, MAGIKARP,   10
-	db 100 percent,     DRAGONAIR,  10
+.Past_3_Super:
+	db  40 percent,     GOLDEEN,    18
+	db  70 percent,     time_group 8
+	db  90 percent + 1, GOLDEEN,    20
+	db 100 percent,     SEAKING,    19
 
 .Grimer_Old:
 	db  70 percent + 1, GRIMER,   10
