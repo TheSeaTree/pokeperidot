@@ -71,15 +71,16 @@ Route20SnorlaxEvent:
 	writetext SnorlaxSleepingText
 	waitbutton
 	checkitem POKE_FLUTE
-	iffalse .noflute
+	iffalse No_PokeFlute
 	writetext UseFluteText
 	yesorno
-	iffalse .noflute
+	iffalse No_PokeFlute
 	writetext PlayerPlayedFluteText
 	playsound SFX_POKEFLUTE
 	waitsfx
-;	closetext
-;	opentext
+	closetext
+AwokenSnorlaxScript::  ; export (for when you use Poke Flute from pack)
+	opentext
 	writetext SnorlaxWokeUpText
 	waitbutton
 	cry SNORLAX
@@ -100,7 +101,8 @@ Route20SnorlaxEvent:
 .NoSnorlax
 	jumptext SnorlaxReturnedHomeText
 	end
-.noflute
+
+No_PokeFlute:
 	closetext
 	end
 
