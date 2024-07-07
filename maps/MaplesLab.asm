@@ -67,7 +67,7 @@ MaplesLab_MapScripts:
 	iffalse .WateredPlant
 	changeblock 0, 0, $31
 	changeblock 2, 0, $32
-
+	
 .WateredPlant:
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .WaterPlant
@@ -321,6 +321,7 @@ AideScript_GivePotion:
 	waitbutton
 	closetext
 	setscene SCENE_MAPLESLAB_NOTHING
+	blackoutmod PAVONA_VILLAGE
 	end
 
 AideScript_ReceiveTheBalls:
@@ -482,7 +483,7 @@ MapleText_ChooseAPokemon:
 	line "one of the"
 
 	para "#MON contained"
-	line "in these BALLS."
+	line "in these BALLs."
 
 	para "You'll be that"
 	line "#MON's first"
@@ -825,64 +826,6 @@ AideText_Postgame:
 	para "I can't blame her,"
 	line "I'm excited too!"
 	done
-
-MaplesLabTravelTip1Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 1:"
-
-	para "Press START to"
-	line "open the MENU."
-	done
-
-MaplesLabTravelTip2Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 2:"
-
-	para "Record your trip"
-	line "with SAVE!"
-	done
-
-MaplesLabTravelTip3Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 3:"
-
-	para "Open your PACK and"
-	line "press SELECT to"
-	cont "move items."
-	done
-
-MaplesLabTravelTip4Text:
-	text "<PLAYER> opened a"
-	line "book."
-
-	para "Travel Tip 4:"
-
-	para "Check your #MON"
-	line "moves. Press the"
-
-	para "A Button to switch"
-	line "moves."
-	done
-
-MaplesLabTrashcanText:
-	text "The wrapper from"
-	line "the snack PROF.MAPLE"
-	cont "ate is in there…"
-	done
-
-MaplesLabPCText:
-	text "OBSERVATIONS ON"
-	line "#MON EVOLUTION"
-
-	para "…It says on the"
-	line "screen…"
-	done
 	
 MaplesLabBookText:
 	text "It looks like a"
@@ -956,7 +899,7 @@ MaplesLab_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 11, PAVONA_VILLAGE, 3
 	warp_event  5, 11, PAVONA_VILLAGE, 3
-	warp_event  2,  0, MAPLES_LAB_ELEVATOR, 1
+	warp_event  3,  0, MAPLES_LAB_ELEVATOR, 1
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript
