@@ -2278,44 +2278,9 @@ XItemEffect:
 INCLUDE "data/items/x_stats.asm"
 
 PokeFluteEffect:
-	; Poke Flute can only be used outside of battle.
-	ld hl, .PokefluteScript
-	call QueueScript
-	ld a, $1
-	ld [wItemEffectSucceeded], a
+	farcall _PokeFlute
 	ret
 
-.PokefluteScript:
-	opentext
-	farwritetext UnknownText_0x1c5c44
-	playsound SFX_POKEFLUTE
-	waitsfx
-	buttonsound
-	farwritetext UnknownText_0x1c5bf9
-	closetext
-	end
-
-.CatchyTune:
-	; Played the # FLUTE. Now, that's a catchy tune!
-	text_far UnknownText_0x1c5bf9
-	text_end
-
-.AllSleepingMonWokeUp:
-	; All sleeping #MON woke up.
-	text_far UnknownText_0x1c5c28
-	text_end
-
-.PlayedTheFlute:
-	; played the # FLUTE.@ @
-	text_far UnknownText_0x1c5c44
-	text_asm
-	ld a, [wBattleMode]
-	and a
-	jr nz, .battle
-
-.battle
-	jp PokeFluteTerminatorCharacter
-	
 ExpAllEffect:
 	ld hl, wStatusFlags
 	bit STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
