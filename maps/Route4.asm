@@ -50,6 +50,9 @@ Route4HPUp:
 Route4UltraBall:
 	itemball ULTRA_BALL
 
+Route4TrainerTipsSign:
+	jumptext Route4TrainerTipsSignText
+
 Route4HiddenUltraBall:
 	hiddenitem ULTRA_BALL, EVENT_ROUTE_4_HIDDEN_ULTRA_BALL
 	
@@ -92,6 +95,18 @@ LadLawrenceAfterText:
 	cont "on this route."
 	done
 
+Route4TrainerTipsSignText:
+	text "TRAINER TIPS"
+
+	para "While in battle,"
+	line "the START and"
+	cont "SELECT buttons"
+	cont "will display the"
+	cont "current stat"
+	cont "changes of each"
+	cont "active #MON."
+	done
+
 Route4_MapEvents:
 	db 0, 0 ; filler
 
@@ -106,8 +121,9 @@ Route4_MapEvents:
 	
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 20, 23, BGEVENT_ITEM, Route4HiddenUltraBall
+	bg_event 12,  9, BGEVENT_READ, Route4TrainerTipsSign
 
 	db 8 ; object events
 	object_event 17,  6, SPRITE_LASS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 5, TrainerLassMelissa, -1
