@@ -395,7 +395,7 @@ TrainerHouse:
 SpecialMoveRelearner:
 	farcall MoveRelearner
 	ret
-	
+
 SimulationMoveRelearner:
 	farcall MoveReminder_Simulation
 	ret
@@ -439,7 +439,6 @@ CheckStolenTrickMirror:
 .loop
 	ld a, [hl]
 	cp TRICK_MIRROR
-;	jr z, .stolen
 	call z, .stolen
 	add hl, de
 	dec c
@@ -454,7 +453,7 @@ CheckStolenTrickMirror:
 	ret z
 	inc a
 	ld [wTrickMirrorCount], a
-	ret nz
+	ret
 
 DropOffParty:
 ; Mask the whole party by setting the count to 0...
