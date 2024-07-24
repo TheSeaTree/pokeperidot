@@ -136,9 +136,9 @@ CharizardEvosAttacks:
 	db 36, WING_ATTACK
 	db 41, CUT
 	db 47, FLAMETHROWER
-	db 52, HEAT_WAVE
-	db 56, FIRE_SPIN
-	db 62, FLARE_BLITZ
+	db 54, FIRE_SPIN
+	db 60, HEAT_WAVE
+	db 64, FLARE_BLITZ
 	db 0 ; no more level-up moves
 
 SquirtleEvosAttacks:
