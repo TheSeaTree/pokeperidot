@@ -63,7 +63,7 @@ TrainerClassNames::
 	db "KIMONO GIRL@"
 	db "TWINS@"
 	db "#FAN@"
-	db "<PKMN> TRAINER@"
+	db "DEVELOPER@"
 	db "CHAMPION@"
 	db "OFFICER@"
 	db "SUBWAY ACE@" ; Jade

@@ -6,8 +6,148 @@ DevelopersHouse_MapScripts:
 	db 0 ; callbacks
 
 DeveloperScript:
-	; ENGINE_BATTLED_DEVELOPER for the eventual battle.
-	jumptextfaceplayer DeveloperText
+	faceplayer
+	opentext
+	checkcode VAR_DEXCAUGHT
+	ifless NUM_POKEMON - 1, .Nothing
+	checkflag ENGINE_BATTLED_DEVELOPER
+	iftrue .AfterBattle
+
+	winlosstext DeveloperWinText, 0
+	loadtrainer DEVELOPER, FRANK1
+	random 4
+	ifequal 0, .DoBattle
+	ifequal 1, .Team2
+	ifequal 2, .Team3
+	ifequal 3, .Team4
+
+.Team2
+	loadtrainer DEVELOPER, FRANK2
+	jump .DoBattle
+.Team3
+	loadtrainer DEVELOPER, FRANK3
+	jump .DoBattle
+.Team4
+	loadtrainer DEVELOPER, FRANK4
+	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
+	iftrue .DoBattle
+
+	loadtrainer DEVELOPER, FRANK5
+	checkevent EVENT_GOT_BULBASAUR_FROM_MAPLE
+	iftrue .DoBattle
+.Charmander
+	loadtrainer DEVELOPER, FRANK6
+.DoBattle
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_BATTLED_DEVELOPER
+.Loop
+	random 11
+	ifequal  1, .Zapdos
+	ifequal  2, .Moltres
+	ifequal  3, .Mewtwo
+	ifequal  4, .Mew
+	ifequal  5, .Entei
+	ifequal  6, .Raikou
+	ifequal  7, .Suicune
+	ifequal  8, .HoOh
+	ifequal  9, .Lugia
+	ifequal 10, .Celebi
+
+	special InitRoamArticuno
+	pokenamemem ARTICUNO, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Zapdos
+	special InitRoamZapdos
+	pokenamemem ZAPDOS, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Moltres
+	special InitRoamMoltres
+	pokenamemem MOLTRES, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Mewtwo
+	checkevent EVENT_CAUGHT_MEWTWO
+	iftrue .Loop
+	clearevent EVENT_FOUGHT_MEWTWO
+	clearevent EVENT_CAUGHT_MEWTWO
+	pokenamemem MEWTWO, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Mew
+	checkevent EVENT_CAUGHT_MEW
+	iftrue .Loop
+	clearevent EVENT_FOUGHT_MEW
+	clearevent EVENT_CAUGHT_MEW
+	pokenamemem MEW, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Raikou
+	checkevent EVENT_CAUGHT_RAIKOU
+	iftrue .Loop
+	clearevent EVENT_HIDE_RAIKOU
+	clearevent EVENT_CAUGHT_RAIKOU
+	pokenamemem RAIKOU, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Entei
+	checkevent EVENT_CAUGHT_ENTEI
+	iftrue .Loop
+	clearevent EVENT_HIDE_ENTEI
+	clearevent EVENT_CAUGHT_ENTEI
+	pokenamemem ENTEI, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Suicune
+	checkevent EVENT_CAUGHT_SUICUNE
+	iftrue .Loop
+	clearevent EVENT_HIDE_SUICUNE
+	clearevent EVENT_CAUGHT_SUICUNE
+	pokenamemem SUICUNE, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.HoOh
+	checkevent EVENT_CAUGHT_HO_OH
+	iftrue .Loop
+	clearevent EVENT_FOUGHT_HO_OH
+	clearevent EVENT_CAUGHT_HO_OH
+	pokenamemem HO_OH, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Lugia
+	checkevent EVENT_CAUGHT_LUGIA
+	iftrue .Loop
+	clearevent EVENT_FOUGHT_LUGIA
+	clearevent EVENT_CAUGHT_LUGIA
+	pokenamemem LUGIA, MEM_BUFFER_0
+	jump .RespawnLegendary
+
+.Celebi
+	checkevent EVENT_CAUGHT_CELEBI
+	iftrue .Loop
+	clearevent EVENT_FOUGHT_CELEBI
+	clearevent EVENT_CAUGHT_CELEBI
+	pokenamemem CELEBI, MEM_BUFFER_0
+.RespawnLegendary
+	opentext
+	writetext DeveloperLegendaryRespawnText
+	waitbutton
+	closetext
+	end
+
+.AfterBattle
+	writetext DeveloperAfterText
+	waitbutton
+	closetext
+	end
+
+.Nothing
+	writetext DeveloperText
+	waitbutton
+	closetext
+	end
 
 DevelopersPeridotTrophy:
 	jumptext DevelopersPeridotTrophyText
@@ -34,13 +174,66 @@ DeveloperText:
 	text "Hello! I made this"
 	line "game."
 
-	para "Do you think you"
-	line "can beat all of"
-	cont "the GYM and LEAGUE"
-	cont "rematches?"
+	para "Have you caught"
+	line "every kind of"
+	cont "#MON yet?"
 
-	para "They go all the"
-	line "way to LEVEL 100!"
+	para "Let's have a battle"
+	line "when you do!"
+	done
+
+DeveloperBeatLeadersText:
+	text "Whoa! You complet-"
+	line "ted your #DEX?"
+
+	para "You must have a"
+	line "good team! Do you"
+	cont "want to battle?"
+	done
+
+DeveloperChallengeText:
+	text "Hey again!"
+
+	para "Do you want to"
+	line "have a battle?"
+	done
+
+DeveloperChallengeAcceptText:
+	text "Nice! Let's go!"
+	done
+
+DeveloperChallengeDeclineText:
+	text "No? Alright."
+
+	para "Whenever you're"
+	line "ready. I'm down to"
+	cont "battle every day!"
+	done
+
+DeveloperWinText:
+	text "Impressive!"
+
+	para "Come back tomorrow"
+	line "and we can have"
+	cont "another battle!"
+	done
+
+DeveloperLegendaryRespawnText:
+	text "Have you heard"
+	line "that a @"
+	text_ram wStringBuffer3
+	text "<CONT>was spotted in the"
+	cont "wild recently?"
+
+	para "I thought you"
+	line "might want to"
+	cont "check it out."
+	done
+
+DeveloperAfterText:
+	text "I hope you'll stop"
+	line "by again to have"
+	cont "another battle."
 	done
 
 DevelopersPeridotTrophyText:
@@ -65,6 +258,10 @@ DevelopersNoteText:
 	text "There's note, too…"
 
 	para "“Check out my DOOM"
+	line "megawad, TERROR"
+	cont "SIGNAL."
+
+	para "Also check out my"
 	line "maps featured in"
 	cont "AD MORTEM, 400"
 	cont "Minutes of /vr/,"

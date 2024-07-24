@@ -78,7 +78,7 @@ PlayBattleMusic:
 	jr z, .done
 	cp CHAMPIONF
 	jr z, .done
-	cp RED
+	cp DEVELOPER
 	jr z, .done
 	ld a, [wMapGroup]
 	cp GROUP_NORTH_FOREST

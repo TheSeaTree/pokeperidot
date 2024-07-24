@@ -65,7 +65,7 @@ TrainerPicPointers::
 	dba KimonoGirlPic
 	dba TwinsPic
 	dba PokefanfPic
-	dba RedPic
+	dba SuperNerdPic
 	dba ChampionFPic
 	dba OfficerPic
 	dba GruntfPic

@@ -21,5 +21,5 @@ PnP_HiddenPeople_BeatKanto:
 	db PROFESSOR
 	db CAL
 	db RIVAL2
-	db RED
+	db DEVELOPER
 	db -1

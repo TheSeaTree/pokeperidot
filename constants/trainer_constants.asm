@@ -165,7 +165,6 @@ CHRIS EQU __enum__
 	const JOSEPH_PAST
 
 	trainerclass MISTY
-	const TEST
 
 	trainerclass LT_SURGE ; 13
 
@@ -640,8 +639,13 @@ CHRIS EQU __enum__
 	const ZOEY
 	const PATRICIA
 
-	trainerclass RED ; 3f
-	const RED1
+	trainerclass DEVELOPER ; 3f
+	const FRANK1
+	const FRANK2
+	const FRANK3
+	const FRANK4
+	const FRANK5
+	const FRANK6
 
 	trainerclass CHAMPIONF ; 40
 	const EMILY_CHAMPION1
