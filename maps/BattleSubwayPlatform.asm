@@ -638,9 +638,8 @@ Text_BattleTowerIntroduction_2:
 	line "session, you must"
 	cont "SAVE. If not, you"
 	cont "won't be able to"
-
-	para "resume your ROOM"
-	line "challenge."
+	cont "resume your TRAIN"
+	cont "challenge."
 
 	para ""
 	done
