@@ -1327,7 +1327,7 @@ Text_RepelUsedEarlierIsStillInEffect::
 UnknownText_0x1c5bf9::
 	text "Now, that's a"
 	line "catchy tune!"
-	prompt
+	done
 
 UnknownText_0x1c5c28::
 	text "All sleeping"
@@ -1340,7 +1340,11 @@ UnknownText_0x1c5c44::
 ;	text_waitbutton
 	text_end
 
-	text_end ; unused
+PlayerPlayedTimeBell_Text::
+	text "<PLAYER> rang the"
+	line "TIME BELL.@"
+	text_waitbutton
+	text_end
 
 UnknownText_0x1c5c5e::
 	text "You now have"
@@ -1348,13 +1352,13 @@ UnknownText_0x1c5c5e::
 	text_decimal wBlueCardBalance, 1, 2
 	text " points."
 	done
-	
+
 AncientTomeRead_Text::
 	text "<PLAYER> read"
 	line "aloud from the"
 	cont "ANCIENT TOME…"
 	done
-	
+
 AncientTomeNothingHappened_Text::
 	text "…But nothing"
 	line "happened."

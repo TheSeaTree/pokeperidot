@@ -512,3 +512,8 @@ INCLUDE "maps/time-travel/PastPectiniaBikeHouse.asm"
 INCLUDE "maps/time-travel/PastHiddenPowerCave.asm"
 INCLUDE "maps/time-travel/PastRoute8.asm"
 INCLUDE "maps/time-travel/PastRoute1House.asm"
+
+SECTION "Map Scripts 30", ROMX
+
+INCLUDE "maps/GenesisIsland.asm"
+INCLUDE "maps/GenesisIslandInside.asm"

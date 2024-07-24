@@ -1284,9 +1284,12 @@ LoadMapPals:
 	jr z, .volcano
 
 	ld a, [wCurLandmark]
+	cp GENESIS_ISLAND
+	jr z, .genesis_island
 	cp THE_PAST
 	jr z, .past
 
+.regular_pals
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
@@ -1301,6 +1304,10 @@ LoadMapPals:
 	jr .got_pals_2
 	
 .past
+	ld a, [wMapTileset]
+	cp TILESET_PLAYERS_HOUSE
+	jr nz, .regular_pals
+.genesis_island
 	ld a, [wTimeOfDayPal]
 	maskbits NUM_DAYTIMES
 	ld bc, 8 palettes
@@ -1430,6 +1437,9 @@ INCLUDE "gfx/overworld/npc_sprites_past.pal"
 
 RoofPals:
 INCLUDE "gfx/tilesets_pals/roofs.pal"
+
+VictoryPortPal:
+INCLUDE "gfx/tilesets_pals/victory_port.pal"
 
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"

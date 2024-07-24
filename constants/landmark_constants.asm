@@ -66,6 +66,7 @@ KANTO_LANDMARK EQU const_value
 	const LOST_LAND
 	const THE_PAST
 	const BATTLE_SIM
+	const GENESIS_ISLAND
 
 ; used in CaughtData
 GIFT_LOCATION  EQU $7e

@@ -139,7 +139,7 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const PASS         ; 86
+	const SEA_MAP      ; 86
 	const HEAT_CHARM   ; 87
 	const COARSE_CHARM ; 88
 	const POWER_HERB   ; 89

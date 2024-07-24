@@ -949,6 +949,12 @@ PastPectiniaMart_Blocks:
 PastFaviaMart_Blocks:
 	INCBIN "maps/time-travel/PastMart.5x3.mart.ablk"
 
+GenesisIsland_Blocks:
+	INCBIN "maps/GenesisIsland.ablk"
+
+GenesisIslandInside_Blocks:
+	INCBIN "maps/GenesisIslandInside.ablk"
+
 SECTION "Map Blocks 7", ROMX
 
 SkyWorld1_Blocks:

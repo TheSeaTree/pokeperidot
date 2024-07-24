@@ -87,6 +87,10 @@ SeerAction0:
 	jr z, SeerAction5
 	cp LUGIA
 	jr z, SeerAction5
+	cp MEW
+	jr z, SeerAction5
+	cp CELEBI
+	jr z, SeerAction5
 
 	ld a, SEER_TIME_LEVEL
 	call PrintSeerText

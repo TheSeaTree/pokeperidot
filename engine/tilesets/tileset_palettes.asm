@@ -49,6 +49,9 @@ LoadSpecialMapPalette:
 	jp z, .gamecorner
 	cp  TILESET_CYBERSPACE
 	jp z, .cyberspace
+	ld a, [wCurLandmark]
+	cp GENESIS_ISLAND
+	jp z, .genesisisland
 
 .do_nothing
 	and a
@@ -103,6 +106,13 @@ LoadSpecialMapPalette:
 	jp LoadEightTimeOfDayBGPalettes
 
 .port
+	ld a, [wMapGroup]
+	cp GROUP_VICTORY_PORT
+	jr z, .genesisisland
+	ld a, [wMapNumber]
+	cp GROUP_VICTORY_PORT
+	jr z, .genesisisland
+
 	ld hl, PortPalette
 	jp LoadEightTimeOfDayBGPalettes
 
@@ -162,6 +172,10 @@ LoadSpecialMapPalette:
 
 .cyberspace
 	ld hl, CyberspacePalette
+	jp LoadEightTimeOfDayBGPalettes
+
+.genesisisland
+	ld hl, GenesisIslandPalette
 	jp LoadEightTimeOfDayBGPalettes
 
 LoadBattleTowerPalette:
@@ -333,6 +347,9 @@ INCLUDE "gfx/tilesets_pals/lost_land.pal"
 
 CyberspacePalette:
 INCLUDE "gfx/tilesets_pals/cyberspace.pal"
+
+GenesisIslandPalette:
+INCLUDE "gfx/tilesets_pals/genesis_island.pal"
 
 LoadEightTimeOfDayBGPalettes:
     ld a, [wTimeOfDayPal]

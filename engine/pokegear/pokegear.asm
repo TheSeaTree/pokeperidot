@@ -656,9 +656,12 @@ PokegearMap_UpdateLandmarkName:
 	call ClearBox
 
 	; Display the "No Signal" string when in the Lost Land
+	; Or on Genesis Island
 	ld a, [wCurLandmark]
 	ld [wPrevLandmark], a
 	cp LOST_LAND
+	jr z, .NoSignal
+	cp GENESIS_ISLAND
 	jr z, .NoSignal
 	pop af
 

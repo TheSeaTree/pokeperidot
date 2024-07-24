@@ -133,7 +133,7 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw PassDesc
+	dw SeaMapDesc
 	dw HeatRockDesc
 	dw SmoothRockDesc
 	dw PowerHerbDesc
@@ -788,9 +788,9 @@ BasementKeyDesc:
 	db   "A key marked with"
 	next "a lightning bolt.@"
 
-PassDesc:
-	db   "A ticket for the"
-	next "MAGNET TRAIN.@"
+SeaMapDesc:
+	db   "Directions to find"
+	next "a far away island.@"
 
 HeatRockDesc:
 	db   "Summons harsh"

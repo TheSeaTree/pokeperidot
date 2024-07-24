@@ -132,7 +132,7 @@ ItemNames::
 	db "STARDUST@"
 	db "STAR PIECE@"
 	db "BASEMENT KEY@"
-	db "PASS@"
+	db "SEA MAP@"
 	db "HEAT CHARM@"
 	db "COARSE CHARM@"
 	db "POWER HERB@"

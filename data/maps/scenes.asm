@@ -68,4 +68,5 @@ MapScenes::
 	scene_var BATTLE_SIMULATION,                 		wBattleSimulationSceneID
 	scene_var TRAINER_HOUSE,							wTrainerHouseSceneID
 	scene_var PAST_HIDDEN_POWER_CAVE,					wPastHiddenPowerCaveSceneID
+	scene_var GENESIS_ISLAND_INSIDE,					wGenesisIslandInsideSceneID
 	db -1

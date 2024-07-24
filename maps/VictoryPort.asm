@@ -1,5 +1,6 @@
 	const_def 2 ; object constants
 	const VICTORYPORT_SAILOR1
+	const VICTORYPORT_CAPTAIN
 
 VictoryPort_MapScripts:
 	db 2 ; scene scripts
@@ -9,7 +10,7 @@ VictoryPort_MapScripts:
 	db 2 ; callbacks
 	callback MAPCALLBACK_NEWMAP, .FlyPoint
 	callback MAPCALLBACK_TILES, .HideShip
-	
+
 .DummyScene0:
 	end
 
@@ -32,7 +33,7 @@ VictoryPort_MapScripts:
 
 .HideShip
 	checkevent EVENT_COMING_FROM_LEAGUE
-	iftrue .Nope
+	iftrue .CheckSeaMap
 	changeblock  0, 16, $0a
 	changeblock  2, 16, $85
 	changeblock  4, 16, $27
@@ -41,6 +42,17 @@ VictoryPort_MapScripts:
 	changeblock  2, 18, $0a
 	changeblock  4, 18, $0a
 	changeblock  6, 18, $0a
+.CheckSeaMap
+	checkevent EVENT_SHOWED_SEA_MAP_TO_CAPTAIN
+	iftrue .ShowShip
+	checkevent EVENT_FOUND_SEA_MAP
+	iffalse .Nope
+	checkitem SEA_MAP
+	iffalse .Nope
+.ShowShip
+	changeblock  4,  8, $8c
+	changeblock  6,  8, $8d
+;	reloadmappart
 .Nope
 	return
 
@@ -110,23 +122,47 @@ VictoryPortCaptainScript:
 VictoryPortCaptain2Script:
 	faceplayer
 	opentext
-	checkitem PASS
-	iftrue .HavePass
+	checkevent EVENT_FOUND_SEA_MAP
+	iffalse .NoShip
+	checkevent EVENT_SHOWED_SEA_MAP_TO_CAPTAIN
+	iftrue .AlreadyMet
+	checkitem SEA_MAP
+	iffalse .NoShip
+	writetext VictoryPortCaptainIntroText
+	waitbutton
+	setevent EVENT_SHOWED_SEA_MAP_TO_CAPTAIN
+.AlreadyMet
+	writetext VictoryPortSetSailText
+	yesorno
+	iffalse .Decline
+	checkitem SEA_MAP
+	iffalse .NoMap
+	writetext VictoryPortMapAcceptText
+	waitbutton
+	closetext
+	follow VICTORYPORT_CAPTAIN, PLAYER
+	applymovement VICTORYPORT_CAPTAIN, VictoryPortBoardSmallShipMovement
+	stopfollow
+	special FadeOutPalettes
+	playsound SFX_RAIN_DANCE
+	waitsfx
+	warpfacing LEFT, GENESIS_ISLAND, 33, 31
+	end
+
+.Decline
+	writetext VictoryPortMapDeclineText
+	waitbutton
+	closetext
+	end
+
+.NoShip
 	writetext VictoryPortShipNotHereText
 	waitbutton
 	closetext
 	end
 
-.HavePass
-	writetext VictoryPortHavePassText
-	yesorno
-	iffalse .Decline
-	waitbutton
-	closetext
-	end
-
-.Decline
-	writetext VictoryPortPassDeclineText
+.NoMap
+	writetext VictoryPortNoMapText
 	waitbutton
 	closetext
 	end
@@ -141,6 +177,11 @@ VictoryPortPlayerBoardShipMovement:
 
 VictoryPortPlayerLeaveShipMovement:
 	step UP
+	step_resume
+
+VictoryPortBoardSmallShipMovement:
+	step DOWN
+	hide_person
 	step_resume
 	
 VictoryPortCaptainText:
@@ -199,28 +240,49 @@ VictoryPortShipNotHereText:
 	cont "future."
 	done
 
-VictoryPortHavePassText:
-	text "That PASS you have"
+VictoryPortCaptainIntroText:
+	text "That MAP you have"
 	line "there…"
-	
+
 	para "Could it be?"
 	line "No…"
-	
+
 	para "I hadn't seen one"
 	line "of those since I"
 	cont "was a wee lad."
-	
+
 	para "Wherever did you"
 	line "find it?"
-	
+
 	para "Ah, that doesn't"
 	line "matter!"
-	
-	para "Shall I ferry ye'"
-	line "to the island?"
 	done
 
-VictoryPortPassDeclineText:
+VictoryPortSetSailText:
+	text "Shall I ferry ye'"
+	line "to GENESIS ISLAND?"
+	done
+
+VictoryPortNoMapText:
+	text "Where did ye' map"
+	line "go?"
+
+	para "Me memory ain't"
+	line "it used to be."
+
+	para "I need a map to"
+	line "get you over to"
+	cont "GENESIS ISLAND."
+	done
+
+VictoryPortMapAcceptText:
+	text "Aye, aye! Off we"
+	line "go!"
+
+	para "To GENESIS ISLAND!"
+	done
+
+VictoryPortMapDeclineText:
 	text "Do ye' need more"
 	line "time to prepare?"
 
@@ -244,4 +306,4 @@ VictoryPort_MapEvents:
 
 	db 2 ; object events
 	object_event  4, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryPortCaptainScript, EVENT_SS_MAKO_DOCKED
-	object_event  6,  7, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryPortCaptain2Script, -1
+	object_event  6,  7, SPRITE_CAPTAIN, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VictoryPortCaptain2Script, -1

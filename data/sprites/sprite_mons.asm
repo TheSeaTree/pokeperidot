@@ -39,6 +39,7 @@ SpriteMons:
 	db SHIFUR
 	db EGG
 	db MEWTWO
+	db MEW
 	db RAIKOU
 	db ENTEI
 	db SUICUNE

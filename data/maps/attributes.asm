@@ -647,3 +647,5 @@ ENDM
 	map_attributes PastPectiniaBikeHouse, PAST_PECTINIA_BIKE_HOUSE, $00, 0
 	map_attributes PastHiddenPowerCave, PAST_HIDDEN_POWER_CAVE, $09, 0
 	map_attributes PastRoute1House, PAST_ROUTE_1_HOUSE, $00, 0
+	map_attributes GenesisIsland, GENESIS_ISLAND, $35, 0
+	map_attributes GenesisIslandInside, GENESIS_ISLAND_INSIDE, $07, 0

@@ -146,7 +146,7 @@ ItemEffects:
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw NoEffect            ; BASEMENT_KEY
-	dw NoEffect            ; PASS
+	dw NoEffect            ; SEA MAP
 	dw NoEffect            ; HEAT_CHARM
 	dw NoEffect            ; COARSE_CHARM
 	dw NoEffect            ; ITEM_89
@@ -2339,6 +2339,10 @@ INCLUDE "data/items/x_stats.asm"
 
 PokeFluteEffect:
 	farcall _PokeFlute
+	ret
+
+TimeBellEffect:
+	farcall _TimeBell
 	ret
 
 ExpAllEffect:

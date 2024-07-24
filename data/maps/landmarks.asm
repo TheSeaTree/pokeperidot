@@ -67,6 +67,7 @@ Landmarks:
 	landmark  -8,  -8, LostLandName
 	landmark  -8,  -8, PastMapName
 	landmark  -8,  -8, PastMapName ; BATTLE_SIM
+	landmark  -8,  -8, GenesisIslandName
 
 NewBarkTownName:      db "ELKHORN¯TOWN@"
 CherrygroveCityName:  db "PAVONA¯VILLAGE@"
@@ -150,6 +151,7 @@ ViridianForestName:   db "ORIENTEM¯FOREST@"
 DiglettsCaveName:     db "MACHOP'S¯DEN@"
 RemnantCaveName:	  db "REMNANT¯CAVE@"
 MoltenPeakName:		  db "MOLTEN¯PEAK@"
+GenesisIslandName:	  db "GENESIS¯ISLAND@"
 UndergroundName:      db "UNDERGROUND@"
 LostLandName:		  db "LOST LAND@"
 PastMapName:		  db "NO SIGNAL@"

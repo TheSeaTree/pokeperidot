@@ -583,7 +583,7 @@ UnknownText_0x1c0b65::
 	text "<PLAYER>'s #MON"
 	line "were all healed!"
 	done
-	
+
 DollCapsule_OpenText::
 	text "@"
 	text_ram wPlayerName

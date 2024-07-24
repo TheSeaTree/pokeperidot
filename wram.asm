@@ -2538,8 +2538,9 @@ wBattleSubwaySet:: db
 wBattleSubwayCurStreak:: dw
 wBattleSubwayBestStreak:: dw
 wSimulationPoints:: db ; d855
+wMewPosition:: db
 
-	ds 7
+	ds 6
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
@@ -2635,8 +2636,9 @@ wBattleSimulationSceneID::					  	  db
 wTrainerHouseSceneID::					  	  	  db
 wOrchidEnteiShrineSceneID::				  	  	  db
 wPastHiddenPowerCaveSceneID::				  	  db
+wGenesisIslandInsideSceneID::   				  db
 
-	ds 36
+	ds 35
 
 ; fight counts
 wMurphyFightCount::  	db ; d9f2

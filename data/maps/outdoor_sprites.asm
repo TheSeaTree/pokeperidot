@@ -208,7 +208,8 @@ FuchsiaGroupSprites:
 	db SPRITE_POKEFAN_F
 	db SPRITE_LASS
 	db SPRITE_SWIMMER_GIRL_LAND
-	; 8 of max 9 walking sprites
+	db SPRITE_BLUE
+	; 9 of max 9 walking sprites
 	db SPRITE_TWIN
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCK
@@ -512,6 +513,8 @@ PalerockGroupSprites:
 NorthForestGroupSprites:
 	db SPRITE_SILVER
 	db SPRITE_MEWTWO
+	db SPRITE_MEW
+	db SPRITE_CAPTAIN
 	db 0
 
 SeaRoute7GroupSprites:

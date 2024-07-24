@@ -42,6 +42,7 @@ IconPointers:
 	dw OmanyteIcon
 	dw ShifurIcon
 	dw MewtwoIcon
+	dw MewIcon
 	dw RaikouIcon
 	dw EnteiIcon
 	dw SuicuneIcon

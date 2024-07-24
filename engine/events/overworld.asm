@@ -594,6 +594,8 @@ FlyFunction:
 	jr z, .indoors
 	cp THE_PAST
 	jr z, .indoors
+	cp GENESIS_ISLAND
+	jr z, .indoors
 	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .indoors
