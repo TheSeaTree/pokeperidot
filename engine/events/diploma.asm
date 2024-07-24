@@ -11,7 +11,12 @@ PlaceDiplomaOnScreen:
 	ld hl, DiplomaGFX
 	ld de, vTiles2
 	call Decompress
-	ld hl, DiplomaPage1Tilemap
+	ld hl, DiplomaMaleTilemap
+	ld a, [wPlayerGender]
+	bit PLAYERGENDER_FEMALE_F, a
+	jr z, .draw
+	ld hl, DiplomaFemaleTilemap
+.draw
 	decoord 0, 0
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call CopyBytes
@@ -29,14 +34,14 @@ PlaceDiplomaOnScreen:
 	call PlaceString
 	call EnableLCD
 	call WaitBGMap
-	ld b, SCGB_DIPLOMA
+	ld b, SCGB_BETA_POKER
 	call GetSGBLayout
 	call SetPalettes
 	call DelayFrame
 	ret
 
 .Player:
-	db "PLAYER@"
+	db "PLAYER:@"
 
 .EmptyString:
 	db "@"
@@ -45,8 +50,7 @@ PlaceDiplomaOnScreen:
 	db   "This certifies"
 	next "that you have"
 	next "completed the"
-	next "new #DEX."
-	next "Congratulations!"
+	next "#DEX."
 	db   "@"
 
 PrintDiplomaPage2:
@@ -81,8 +85,11 @@ PrintDiplomaPage2:
 DiplomaGFX:
 INCBIN "gfx/diploma/diploma.2bpp.lz"
 
-DiplomaPage1Tilemap:
-INCBIN "gfx/diploma/page1.tilemap"
+DiplomaMaleTilemap:
+INCBIN "gfx/diploma/male.tilemap"
+
+DiplomaFemaleTilemap:
+INCBIN "gfx/diploma/female.tilemap"
 
 DiplomaPage2Tilemap:
 INCBIN "gfx/diploma/page2.tilemap"

@@ -541,14 +541,26 @@ _CGB_GSIntro:
 	ret
 
 _CGB_BetaPoker:
-	ld hl, BetaPokerPals
+	ld hl, DiplomaPalettes
 	ld de, wBGPals1
-	ld bc, 5 palettes
+	ld bc, 16 palettes
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
-	call ApplyPals
 	call WipeAttrMap
+	hlcoord 3, 2, wAttrMap
+	lb bc, 2, 2
+	ld a, $3
+	call FillBoxCGB
+	hlcoord 5, 2, wAttrMap
+	lb bc, 2, 12
+	ld a, $2
+	call FillBoxCGB
+	hlcoord 15, 10, wAttrMap
+	lb bc, 7, 4
+	ld a, $1
+	call FillBoxCGB
 	call ApplyAttrMap
+	call ApplyPals
 	ret
 
 _CGB_Diploma:
