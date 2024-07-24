@@ -18,7 +18,7 @@ MaplesLabElevatorScript:
 
 MaplesLabElevatorData:
 	db 2 ; floors
-	elevfloor FLOOR_B1F, 1, BATTLE_SIMULATION
+	elevfloor FLOOR_B1F, 2, BATTLE_SIMULATION
 	elevfloor FLOOR_1F,  3, MAPLES_LAB
 	db -1 ; end
 

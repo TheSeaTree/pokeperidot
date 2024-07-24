@@ -19,9 +19,8 @@ MaplesLab_MapScripts:
 	scene_script .DummyScene4 ; SCENE_MAPLESLAB_UNUSED
 	scene_script .DummyScene5 ; SCENE_MAPLESLAB_AIDE_GIVES_POTION
 
-	db 2 ; callbacks
+	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .ChangeTiles
-	callback MAPCALLBACK_OBJECTS, .BlockElevator
 
 .MeetMaple:
 	priorityjump .WalkUpToMaple
@@ -67,7 +66,7 @@ MaplesLab_MapScripts:
 	iffalse .WateredPlant
 	changeblock 0, 0, $31
 	changeblock 2, 0, $32
-	
+
 .WateredPlant:
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .WaterPlant
@@ -77,17 +76,13 @@ MaplesLab_MapScripts:
 	changeblock 8, 0, $30
 	return
 
-.BlockElevator
-	checkevent EVENT_BEAT_ELITE_FOUR
-	iffalse .Nothing
-	moveobject MAPLESLAB_MAPLES_AIDE, 2, 1
-	appear MAPLESLAB_MAPLES_AIDE
-.Nothing
-	return
-
 ProfMapleScript:
 	faceplayer
 	opentext
+	checkevent EVENT_DECO_POSTER_7
+	iftrue .AfterDiploma
+	checkcode VAR_DEXCAUGHT
+	ifgreater NUM_POKEMON - 1, .CompletedPokedex
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Postgame
 	checkevent EVENT_SHOWED_MAPLE_COGBADGE
@@ -132,6 +127,20 @@ ProfMapleScript:
 
 .Postgame:
 	writetext MaplePostgameText
+	waitbutton
+	closetext
+	end
+
+.CompletedPokedex
+	writetext MapleDiplomaText
+	playsound SFX_DEX_FANFARE_230_PLUS
+	waitsfx
+	special Diploma
+	writetext MapleSendDiplomaHomeText
+	waitbutton
+	setevent EVENT_DECO_POSTER_7
+.AfterDiploma
+	writetext MapleAfterDiplomaText
 	waitbutton
 	closetext
 	end
@@ -709,22 +718,52 @@ MapleAfterCogbadgeText:
 MaplePostgameText:
 	text "<PLAYER>! Hello!"
 
-	para "Have you come to"
-	line "see what we have"
-	cont "been working on"
-	cont "in the LAB?"
+	para "The BATTLE"
+	line "SIMULATION is"
+	cont "realy to use!"
 
-	para "I'm sorry to dis-"
-	line "appoint, but there"
-	cont "is still so much"
-	cont "more to do."
+	para "It has taken a lot"
+	line "of hard work and"
+	cont "determination, but"
+	cont "my AIDE has"
+	cont "created a wonder-"
+	cont "ful tool for help-"
+	cont "ing people learn"
+	cont "about #MON!"
+	done
 
-	para "But thank you for"
-	line "checking up on us."
+MapleDiplomaText:
+	text "Hello, <PLAYER>!"
+	line "Do you have some-"
+	cont "thing to tell me?"
 
-	para "Have you challen-"
-	line "ged the BATTLE"
-	cont "SUBWAY yet?"
+	para "……………………"
+
+	para "You completed the"
+	line "#DEX?"
+
+	para "That's marvelous!"
+
+	para "You have earned"
+	line "your DIPLOMA!"
+	done
+
+MapleSendDiplomaHomeText:
+	text "I will send your"
+	line "DIPLOMA home so"
+	cont "you can hang it up"
+	cont "in your room."
+	done
+
+MapleAfterDiplomaText:
+	text "It's incredible"
+	line "that you have"
+	cont "captured every"
+	cont "kind of #MON!"
+
+	para "I hope this doesn't"
+	line "mean you will stop"
+	cont "visiting the LAB."
 	done
 
 MaplePokeBallText:
@@ -899,7 +938,7 @@ MaplesLab_MapEvents:
 	db 3 ; warp events
 	warp_event  4, 11, PAVONA_VILLAGE, 3
 	warp_event  5, 11, PAVONA_VILLAGE, 3
-	warp_event  3,  0, MAPLES_LAB_ELEVATOR, 1
+	warp_event  2,  0, MAPLES_LAB_ELEVATOR, 1
 
 	db 4 ; coord events
 	coord_event  4, 11, SCENE_MAPLESLAB_CANT_LEAVE, LabTryToLeaveScript
@@ -925,7 +964,7 @@ MaplesLab_MapEvents:
 
 	db 8 ; object events
 	object_event  3,  6, SPRITE_PROFESSOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, ProfMapleScript, -1
-	object_event  2, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MaplesAideScript, -1
+	object_event  2, 10, SPRITE_SCIENTIST, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MaplesAideScript, EVENT_BEAT_ELITE_FOUR
 	object_event  0,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CharmanderPokeBallScript, EVENT_CHARMANDER_POKEBALL_IN_MAPLES_LAB
 	object_event  1,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, SquirtlePokeBallScript, EVENT_SQUIRTLE_POKEBALL_IN_MAPLES_LAB
 	object_event  2,  7, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, BulbasaurPokeBallScript, EVENT_BULBASAUR_POKEBALL_IN_MAPLES_LAB
