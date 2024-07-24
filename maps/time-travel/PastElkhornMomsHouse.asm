@@ -5,10 +5,6 @@ PastElkhornMomsHouse_MapScripts:
 
 	db 0 ; callbacks
 
-; Put a doll of the player's starter on the table.
-; Use a modified versionn of the player's house for this?
-; Set the mom's sprite color to match the player.
-
 PastElkhornMomScript:
 	faceplayer
 	opentext

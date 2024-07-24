@@ -64,7 +64,7 @@ PastPectiniaNidoran:
 	closetext
 	end
 
-CelebiEncounter2:
+CelebiEncounter:
 	showemote EMOTE_SHOCK, PASTPECTINIACITY_CELEBI, 15
 	scall PastPectiniaCelebiEncounter
 	special FadeOutPalettes
@@ -81,12 +81,16 @@ CelebiEncounter2:
 	reloadmap
 	waitsfx
 
+	opentext
+	writetext PastPectiniaCityCelebiFlowersText
+	waitbutton
+	closetext
+
 ;	Text box mentioning a white flash/the flowers coming to life?
 ;	Flowers already in bloom even before the event?
 
 ;	special FadeInPalettes
 	applymovement PASTPECTINIACITY_CELEBI, PastRoute11CelebiTeleportMovement
-	setevent EVENT_HIDE_AND_SEEK_CELEBI_4
 ;	clearevent EVENT_HIDE_AND_SEEK_CELEBI_3
 	disappear PASTPECTINIACITY_CELEBI
 	waitsfx
@@ -105,13 +109,13 @@ CelebiEncounter2:
 	faceobject PLAYER, PASTPECTINIACITY_COOLTRAINERM
 	faceobject PASTPECTINIACITY_COOLTRAINERM, PLAYER
 	opentext
-;	Berry master mentions the bright light bringing his attention to the flowers being in bloom.
-;	"I never bother to look, it's too saddening."
-;	Thanks the player, believing he did it.
+	writetext PastPectiniaCityBerryGuyText
+	waitbutton
 
-;	Gives the player the GS ball because he thought it could be used to make his garden flourish.
-;	Believes it didn't help so the player can take it.
-	verbosegiveitem GS_BALL
+	verbosegiveitem TIME_BELL
+
+	writetext PastPectiniaCityBerryGuyLeaveText
+	waitbutton
 	closetext
 	checkcode VAR_FACING
 	ifequal DOWN, .FacingDown_Leaving
@@ -124,14 +128,15 @@ CelebiEncounter2:
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	setevent EVENT_BOSS_CELEBI_AVAILABLE
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_4
 	end
 
 PastPectiniaCelebiEncounter:
-	jumpstd weakcelebiencounter
+	jumpstd celebiencounter_nobattle
 	end
 
 PastPectiniaCelebiAfterEncounter:
-	jumpstd bosscelebibattle
+	jumpstd bosscelebidisappear
 	end
 
 PastPectiniaCitySign:
@@ -305,6 +310,56 @@ PastPectiniaCityLicensePlateText:
 	cont "“OUTATIME”"
 	done
 
+PastPectiniaCityCelebiFlowersText:
+	text "Everything came to"
+	line "life!"
+	done
+
+PastPectiniaCityBerryGuyText:
+	text "I saw the bright"
+	line "flash from the"
+	cont "window and came"
+	cont "to check it out."
+
+	para "Did you have any-"
+	line "thing to do with"
+	cont "my flowers coming"
+	cont "into bloom?"
+
+	para "It was so depress-"
+	line "ing to see how"
+	cont "barren my garden"
+	cont "was, but every-"
+	cont "thing is so beaut-"
+	cont "iful now!"
+
+	para "I have this lucky"
+	line "charm I thought"
+	cont "would help, but it"
+	cont "did nothing!"
+
+	para "Here, you can have"
+	line "it. It must be"
+	cont "worth something."
+	done
+
+PastPectiniaCityBerryGuyLeaveText:
+	text "Don't be so modest!"
+
+	para "You must have had"
+	line "something to do"
+	cont "with my garden"
+	cont "suddenly becoming"
+	cont "so full of life!"
+
+	para "Excuse me, I need"
+	line "to get back inside"
+	cont "and sit down."
+
+	para "This has made me"
+	line "so happy!"
+	done
+
 PastPectiniaBarrenFruitTreeText:
 	text "It's a fruit-"
 	line "bearing tree."
@@ -328,8 +383,8 @@ PastPectiniaCity_MapEvents:
 
 	db 10 ; warp events
 	warp_event 31, 11, PAST_PECTINIA_MART,  1
-	warp_event  4, 26, PAST_ROUTE_2_GATE,   2
-	warp_event  4, 27, PAST_ROUTE_2_GATE,   3
+	warp_event  4, 26, PAST_ROUTE_2_GATE,   3
+	warp_event  4, 27, PAST_ROUTE_2_GATE,   4
 	warp_event  9,  5, PAST_PECTINIA_GATE,	3
 	warp_event 11, 25, PAST_PECTINIA_GYM_SPEECH_HOUSE,  1
 	warp_event 17, 25, PAST_PECTINIA_BIKE_HOUSE,  1
@@ -341,10 +396,10 @@ PastPectiniaCity_MapEvents:
 	db 0 ; coord events
 
 	db 11 ; bg events
-	bg_event  6, 25, BGEVENT_RIGHT, PastPectiniaCitySign
-	bg_event 29, 23, BGEVENT_RIGHT, PastPectiniaSquareSign
-	bg_event 16, 19, BGEVENT_RIGHT, PastPectiniaCityConstructionSign
-	bg_event 32, 11, BGEVENT_RIGHT, PastPectiniaCityMartSign
+	bg_event  6, 25, BGEVENT_READ, PastPectiniaCitySign
+	bg_event 29, 23, BGEVENT_READ, PastPectiniaSquareSign
+	bg_event 16, 19, BGEVENT_READ, PastPectiniaCityConstructionSign
+	bg_event 32, 11, BGEVENT_READ, PastPectiniaCityMartSign
 	bg_event 20, 10, BGEVENT_RIGHT, PastPectiniaCityLicensePlate
 	bg_event 21, 16, BGEVENT_ITEM, PastPectiniaCityHiddenBrickPiece1
 	bg_event 10, 18, BGEVENT_ITEM, PastPectiniaCityHiddenBrickPiece2
@@ -363,8 +418,8 @@ PastPectiniaCity_MapEvents:
 	object_event 12, 16, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 19, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event 14, 17, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event 53, 18, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CelebiEncounter2, EVENT_HIDE_AND_SEEK_CELEBI_4
-	object_event 55,  0, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BOSS_CELEBI_AVAILABLE
+	object_event 53, 18, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CelebiEncounter, EVENT_HIDE_AND_SEEK_CELEBI_4
+	object_event 55,  0, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_HIDE_AND_SEEK_CELEBI_4
 	object_event 49, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1
 	object_event 50, 20, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1
 	object_event 53, 21, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, PastPectiniaFruitTree, -1

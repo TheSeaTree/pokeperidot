@@ -197,7 +197,7 @@ LavenderGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db SPRITE_BUSH
 	db 0 ; end
-	
+
 FuchsiaGroupSprites:
 ; Route13, Route14, Route15, Route18, FuchsiaCity
 	db SPRITE_POKEFAN_M
@@ -207,7 +207,8 @@ FuchsiaGroupSprites:
 	db SPRITE_SUPER_NERD
 	db SPRITE_POKEFAN_F
 	db SPRITE_LASS
-	; 9 of max 9 walking sprites
+	db SPRITE_SWIMMER_GIRL_LAND
+	; 8 of max 9 walking sprites
 	db SPRITE_TWIN
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_ROCK

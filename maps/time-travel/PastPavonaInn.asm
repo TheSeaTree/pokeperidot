@@ -25,6 +25,9 @@ PastPavonaNurse:
 	closetext
 	end
 
+PastPavonaInnFisher:
+	jumptextfaceplayer PastPavonaInnFisherText
+
 PastPavonaInnNurseText:
 	text "Hello, stranger."
 	
@@ -42,6 +45,21 @@ PastPavonaInnNurseAfterText:
 	line "feel rested too!"
 	done
 
+PastPavonaInnFisherText:
+	text "Have you heard of"
+	line "a #MON being"
+	cont "able to travel"
+	cont "through time?"
+
+	para "I met a young"
+	line "man who was talk-"
+	cont "ing about one."
+
+	para "He was heading to"
+	line "OCCIENT FOREST to"
+	cont "go find it."
+	done
+
 PastPavonaInn_MapEvents:
 	db 0, 0 ; filler
 
@@ -53,5 +71,6 @@ PastPavonaInn_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event  2, 1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastPavonaNurse, -1
+	object_event  7, 4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PastPavonaInnFisher, -1

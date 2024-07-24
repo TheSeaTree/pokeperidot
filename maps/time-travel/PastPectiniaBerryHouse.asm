@@ -27,14 +27,15 @@ PastPectiniaBerryHouseCooltrainerNoFruitText:
 	done
 
 PastPectiniaBerryHouseCooltrainerText:
-;	Probably rewrite this to thank the player again for helping with the flowers.
 	text "Some day I hope to"
 	line "grow an entire"
 	cont "orchard!"
 
-	para "It's satisfying to"
-	line "only need to rely"
-	cont "on myself."
+	para "I'll work so hard"
+	line "to make sure the"
+	cont "flowers and BERRIES"
+	cont "last for as long"
+	cont "as possible!"
 	done
 
 PastPectiniaBerryHouse_MapEvents:

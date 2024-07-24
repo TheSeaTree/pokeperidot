@@ -520,6 +520,6 @@ WaterWildMons:
 	db 18, GOLDEEN
 	db 17, MARILL
 	db 18, MAGIKARP
-	db 17, POLIWAG
+	db 17, MISDREAVUS
 
 	db -1 ; end

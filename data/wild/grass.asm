@@ -568,7 +568,7 @@ GrassWildMons:
 	db 34, FERRODON
 	db 35, ONIX
 	db 36, FERRODON
-	
+
 	map_id HEPATICA_TOWN
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
@@ -622,7 +622,7 @@ GrassWildMons:
 	db 19, GREMINI
 	db 18, SMOOCHUM
 	db 21, SMOOCHUM
-	
+
 	map_id HEPATICA_CAVE_B1F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -649,7 +649,7 @@ GrassWildMons:
 	db 20, DIGLETT
 	db 20, DUNSPARCE
 	db 21, DUNSPARCE
-	
+
 	map_id HEPATICA_CAVE_B2F
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -757,7 +757,7 @@ GrassWildMons:
 	db 14, KRABBY
 	db 13, SHUCKLE
 	db 15, SHUCKLE
-	
+
 	map_id SEA_ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -1027,7 +1027,7 @@ GrassWildMons:
 	db 14, GASTLY
 	db 15, BUTTERFREE
 	db 16, MISDREAVUS
-	
+
 	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
@@ -2462,7 +2462,7 @@ GrassWildMons:
 	db 17, FARFETCH_D
 	; nite
 	db 15, JIGGLYPUFF
-	db 16, MURKROW
+	db 16, HOOTHOOT
 	db 15, ABRA
 	db 16, STANTLER
 	db 16, HOOTHOOT
@@ -2478,7 +2478,7 @@ GrassWildMons:
 	db 15, NIDORAN_F
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
-	db 15, NIDORAN_M
+	db 17, GLIGAR
 	; day
 	db 15, SENTRET
 	db 16, MEOWTH
@@ -2486,7 +2486,7 @@ GrassWildMons:
 	db 15, NIDORAN_F
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
-	db 15, NIDORAN_M
+	db 17, GLIGAR
 	; nite
 	db 15, SENTRET
 	db 16, SPINARAK
@@ -2494,7 +2494,7 @@ GrassWildMons:
 	db 15, NIDORAN_F
 	db 15, NIDORAN_M
 	db 15, NIDORAN_M
-	db 15, NIDORAN_M
+	db 17, GLIGAR
 
 	map_id PAST_ROUTE_3
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
@@ -2549,6 +2549,33 @@ GrassWildMons:
 	db 16, HERACROSS
 	db 16, EEVEE
 	db 17, EEVEE
+
+	map_id PAST_ROUTE_11
+	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
+	; morn
+	db 15, HOPPIP
+	db 16, NATU
+	db 16, MANKEY
+	db 13, SPEAROW
+	db 14, ABRA
+	db 15, MR__MIME
+	db 16, MR__MIME
+	; day
+	db 15, BELLSPROUT
+	db 14, NATU
+	db 16, MANKEY
+	db 13, SPEAROW
+	db 14, ABRA
+	db 15, MR__MIME
+	db 16, MR__MIME
+	; nite
+	db 15, ODDISH
+	db 16, MURKROW
+	db 16, MANKEY
+	db 13, ZUBAT
+	db 14, GASTLY
+	db 15, ZUBAT
+	db 16, MISDREAVUS
 
 	map_id PAST_ILEX_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite

@@ -25,7 +25,7 @@ TreeMonSet_Past:
 ; rare
 	db 30, NOCTOWL,    16
 	db 20, ZUBAT,      17
-	db 15, PINECO,     17
+	db 15, ARIADOS,    19
 	db 15, PINECO,     17
 	db 10, AIPOM,	   17
 	db 10, GOLBAT,     18
@@ -125,7 +125,7 @@ TreeMonSet_Rock:
 	db 50, GEODUDE,    10
 	db 35, DIGLETT,    11
 	db 10, SHUCKLE,    13
-	db  5, DUNSPARCE,  12
+	db  5, SLUGMA,     14
 
 TreeMonSet_Kanto:
 	db 90, KRABBY,     16

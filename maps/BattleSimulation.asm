@@ -13,7 +13,8 @@ BattleSimulation_MapScripts:
 	scene_script .Scene2 ; SCENE_BATTLESIMULATION_FINISHED
 	scene_script .Scene3 ; SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_TILES, .Screen
 	callback MAPCALLBACK_OBJECTS, .Scientist
 
 .Scene0:
@@ -70,25 +71,45 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene3:
+	moveobject BATTLESIMULATION_SCIENTIST1, 8, 8
+	appear BATTLESIMULATION_SCIENTIST1
 	applymovement PLAYER, BattleSimulationPlayerStepDown
 	turnobject BATTLESIMULATION_SCIENTIST5, LEFT
 	showemote EMOTE_SHOCK, BATTLESIMULATION_SCIENTIST5, 15
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationBlockEntrance
 	applymovement PLAYER, BattleSimulationPlayerLeaveTimeMachine
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineBlock
-; Do the re-entry scene after the Celebi boss.
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iffalse .Fainted
+	opentext
+	writetext TimeMachineReturnFromCelebiText
+	waitbutton
+	writetext TimeMachineMaintenanceText
+	waitbutton
+	closetext
 	setscene SCENE_BATTLESIMULATION_DEFAULT
 	end
 
 .Fainted:
+	opentext
+	writetext TimeMachineReturnFromPastText
+	waitbutton
+	closetext
 	setscene SCENE_BATTLESIMULATION_DEFAULT
 	end
 
+.Screen
+	checkevent EVENT_MACHINE_PART_USED
+	iffalse .nothing
+	changeblock 2, 8, $30
+	return
+
 .Scientist
 	checkscene SCENE_BATTLESIMULATION_FINISHED
+	iftrue .something
+	checkscene SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
 	iffalse .nothing
+.something
 	moveobject BATTLESIMULATION_SCIENTIST1, 9, 7
 	turnobject BATTLESIMULATION_SCIENTIST1, RIGHT
 .nothing
@@ -152,7 +173,6 @@ BattleSimulationGuy:
 	waitsfx
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
 	scall .ChooseRandomSpawn
-;	warpfacing UP, BATTLE_SIMULATION_FINAL_ROOM, 2, 7
 	warpcheck
 	end
 
@@ -269,16 +289,13 @@ BattleSimulationRocker:
 	jumptextfaceplayer BattleSimulationRockerText
 
 BattleSimulationTimeMachineGuy:
-;	jumptextfaceplayer BattleSimulationTimeMachineGuyUnavailableText
-
-; Only let the player bring Pokemon that are lower than level 20
-; PAST_LEVEL is defined in constants\battle_constants.asm
-; This check is awkward, make sure to test many possible outcomes.
-; It must check for something false to continue.
-; Try to look at RetroactivelyIgnoreEggs in the event of higher level Pokemon passing through.
-
-	checkevent EVENT_MACHINE_PART_USED
 	opentext
+	checkevent EVENT_FOUGHT_BOSS_CELEBI
+	iffalse .CheckPart
+	checkevent EVENT_CAUGHT_CELEBI
+	iffalse .Maintenance
+.CheckPart
+	checkevent EVENT_MACHINE_PART_USED
 	iftrue .AskTimeTravel
 	checkitem MACHINE_PART
 	iffalse .Unavailable
@@ -289,9 +306,12 @@ BattleSimulationTimeMachineGuy:
 	setevent EVENT_MACHINE_PART_USED
 	takeitem MACHINE_PART
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineInstallPart
-	; Play a sound here or something.
-	; Instead of animated tiles, change the blocks so the screens appear activated?
-	wait 10
+	playsound SFX_MENU
+	wait 5
+	playsound SFX_BOOT_PC
+	changeblock 2, 8, $30
+	reloadmappart
+	wait 15
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineReturnInstallation
 	opentext
 	writetext TimeMachineFirstTimeText
@@ -300,10 +320,13 @@ BattleSimulationTimeMachineGuy:
 	jump .Decline
 
 .AskTimeTravel
-	opentext
 	writetext TimeMachineReadyText
 	yesorno
 	iffalse .Decline
+	checkevent EVENT_GIVEN_POKE_PDA
+	iffalse .TryUseTimeMachine
+	checkitem POKE_PDA
+	iffalse .No_PDA
 
 .TryUseTimeMachine
 	writetext TimeMachineAcceptText
@@ -319,9 +342,22 @@ BattleSimulationTimeMachineGuy:
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineInstallPart
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineApproachDoors
 	stopfollow
-	; Some text here wishing the player well?
+
+	opentext
+	checkevent EVENT_GIVEN_POKE_PDA
+	iftrue .NotFirstTime
+	writetext TimeMachineGivePokePDAText
+	waitbutton
+	verbosegiveitem POKE_PDA
+	setevent EVENT_GIVEN_POKE_PDA
+	writetext TimeMachineExplainPokePDAText
+	waitbutton
+.NotFirstTime
+	writetext TimeMachineSafeVoyageText
+	waitbutton
+	closetext
+
 	applymovement PLAYER, BattleSimulationTimeMachineEnterMovement
-	; Hide the player sprite? See if it shows up again after a warp.
 
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineActivate
 	playsound SFX_BOOT_PC
@@ -329,10 +365,8 @@ BattleSimulationTimeMachineGuy:
 	playsound SFX_WARP_TO
 	waitsfx
 	special FadeOutPalettes
-	; This could be the hidden power cave, since it's otherwise unused and would be discreet.
-	; There can be an NPC in there after the Celebi quest that sends the player back.
-
-	; The machine part could be for the tether rather than the machine itself. The NPC is always there.
+	playsound SFX_WARP_FROM
+	waitsfx
 	warpfacing DOWN, PAST_HIDDEN_POWER_CAVE, 4, 4
 	end
 
@@ -340,8 +374,16 @@ BattleSimulationTimeMachineGuy:
 	writetext TimeMachineDeclineText
 	jump .Finish
 
+.No_PDA
+	writetext TimeMachineNoPokePDAText
+	jump .Finish
+
 .PartyTooHigh
 	writetext TimeMachinePartyTooStrongText
+	jump .Finish
+
+.Maintenance
+	writetext TimeMachineMaintenanceText
 	jump .Finish
 
 .Unavailable
@@ -981,7 +1023,7 @@ TimeMachineGiveMachinePart:
 	line "MACHINE PART we"
 	cont "need to complete"
 	cont "the TIME MACHINE's"
-	cont "thether system!"
+	cont "TETHER SYSTEM!"
 
 	para "Allow me a moment"
 	line "to install it."
@@ -989,10 +1031,6 @@ TimeMachineGiveMachinePart:
 	done
 
 TimeMachineFirstTimeText:
-
-	; Make this about the machine part being used to create a tether instead.
-	; Then mention that this tether will be used if the player's Pokemon faint.
-
 	text "Finally! We have a"
 	line "way to bring"
 	cont "people back to the"
@@ -1011,6 +1049,37 @@ TimeMachineReadyText:
 	para "Would you like to"
 	line "return to the"
 	cont "past, <PLAYER>?"
+	done
+
+TimeMachineReturnFromPastText:
+	text "It's good to see"
+	line "our thether system"
+	cont "is successful!"
+
+	para "Whenever you are"
+	line "ready to jump back"
+	cont "in, let me know."
+	done
+
+TimeMachineReturnFromCelebiText:
+	text "<PLAYER>! We're glad"
+	line "you've returned!"
+
+	para "There was a sudden"
+	line "power surge and we"
+	cont "weren't sure the"
+	cont "TIME MACHINE would"
+	cont "be functional!"
+	done
+
+TimeMachineMaintenanceText:
+	text "I'm sorry, but we"
+	line "will need to run"
+	cont "thorough diagnost-"
+	cont "ics on the TIME"
+	cont "MACHINE before we"
+	cont "can allow it to be"
+	cont "used once again."
 	done
 
 TimeMachineAcceptText:
@@ -1039,6 +1108,46 @@ TimeMachinePartyElligibleText:
 	cont "trip now."
 
 	para "Please, follow me."
+	done
+
+TimeMachineGivePokePDAText:
+	text "First, you will be"
+	line "needing this."
+	done
+
+TimeMachineExplainPokePDAText:
+	text "Here is the"
+	line "# PDA."
+
+	para "This will allow"
+	line "you to access the"
+	cont "#MON STORAGE"
+	cont "system when there"
+	cont "is no PC access."
+
+	para "It will also allow"
+	line "us to keep track"
+	cont "of your #MON"
+	cont "while in the past"
+	cont "and pull you back"
+	cont "if need be."
+	done
+
+TimeMachineNoPokePDAText:
+	text "You do not seem to"
+	line "have your # PDA"
+	cont "on you."
+
+	para "It would be impos-"
+	line "sible to bring you"
+	cont "back to the pres-"
+	cont "ent without one."
+	done
+
+TimeMachineSafeVoyageText:
+	text "I wish you well on"
+	line "your journey to"
+	cont "the past, <PLAYER>!"
 	done
 
 TimeMachinePartyTooStrongText:
@@ -1075,24 +1184,12 @@ BattleSimComputerScreenText:
 	cont "years ago."
 	done
 
-;	setflag ENGINE_BATTLE_SIMULATION_ACTIVE
-;	special DropOffParty
-;	special GiveShuckle
-;	loadvar wParkBallsRemaining, 30
-
-; When leaving...
-;	special LoadPokemonData
-
-; For the interior maps, make sure to set a random warp with a callback.
-; 1F-4F will be randomized between 4 different maps each time.
-; 5F will contain a boss battle and always be the same.
-
 BattleSimulation_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
 	warp_event  8,  6, BATTLE_SIMULATION, -1
-	warp_event 13,  0, MAPLES_LAB_ELEVATOR, 1
+	warp_event 13,  1, MAPLES_LAB_ELEVATOR, 1
 	warp_event  3,  9, BATTLE_SIMULATION, -1
 
 	db 0 ; coord events
@@ -1100,11 +1197,10 @@ BattleSimulation_MapEvents:
 	db 1 ; bg events
 	bg_event 15,  7, BGEVENT_UP, BattleSimComputerScreen
 
-	db 7 ; object events
+	db 6 ; object events
 	object_event  8,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimulationGuy, -1
 	object_event 16,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist1, -1
 	object_event 19,  4, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, BattleSimulationScientist2, -1
 	object_event 19,  8, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationBPExchange, -1
 	object_event  6, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationTimeMachineGuy, -1
 	object_event 11, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, BattleSimulationRocker, -1
-	object_event 13,  2, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, BattleSimBlockerGuy, -1

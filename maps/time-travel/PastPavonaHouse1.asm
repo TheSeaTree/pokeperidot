@@ -5,6 +5,21 @@ PastPavonaHouse1_MapScripts:
 
 	db 0 ; callbacks
 
+PastPavonaHouse1Rocker:
+	jumptextfaceplayer PastPavonaHouse1RockerText
+
+PastPavonaHouse1RockerText:
+	text "I need to catch a"
+	line "#MON so I can"
+	cont "make it through"
+	cont "ROUTE 2."
+
+	para "I need something"
+	line "to do, I'm going"
+	cont "crazy being cooped"
+	cont "up inside all day!"
+	done
+
 PastPavonaHouse1_MapEvents:
 	db 0, 0 ; filler
 
@@ -16,4 +31,5 @@ PastPavonaHouse1_MapEvents:
 
 	db 0 ; bg events
 
-	db 0 ; object events
+	db 1 ; object events
+	object_event 5,  6, SPRITE_ROCKER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaHouse1Rocker, -1

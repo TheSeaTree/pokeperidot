@@ -145,10 +145,8 @@ EggMoveTutor:
 	call YesNoBox
 	jp c, .cancel
 
-	ld a, BRICK_PIECE
+	ld a, STAR_PIECE
 	ld [wCurItem], a
-	ld a, 5
-	ld [wItemQuantityChangeBuffer], a
 	ld hl, wNumItems
 	call CheckItem
 	jp nc, .no_item
@@ -210,11 +208,11 @@ EggMoveTutor:
 	ld c, HAPPINESS_LEARNMOVE
 	callfar ChangeHappiness
 
-	ld a, BRICK_PIECE
+	ld a, STAR_PIECE
 	ld [wCurItem], a
-	ld a, 5
+	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
-	ld a, -5
+	ld a, -1
 	ld [wCurItemQuantity], a
 	ld hl, wNumItems
 	call TossItem
@@ -226,7 +224,7 @@ EggMoveTutor:
 .skip_learn
 	call ReturnToMapWithSpeechTextbox
 .cancel
-	ld hl, Text_MoveReminderCancel
+	ld hl, Text_EggMoveTutorCancel
 	jp PrintText
 
 .not_happy_enough
@@ -721,6 +719,10 @@ Text_EggMoveTutorWhichMon:
 
 Text_EggMoveTutorWhichMove:
 	text_jump EggMoveTutorWhichMoveText
+	db "@"
+
+Text_EggMoveTutorCancel:
+	text_jump EggMoveTutorCancelText
 	db "@"
 
 Text_EggMoveTutorNoItem:

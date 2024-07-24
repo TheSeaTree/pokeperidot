@@ -20,7 +20,7 @@ CelebiShrineEvent:
 	add hl, bc
 	ld a, $80
 	ld [hl], a
-	ld a, 160 ; frame count
+	ld a, 120 ; frame count
 	ld [wFrameCounter], a
 	ld d, $0
 .loop
@@ -44,26 +44,7 @@ CelebiShrineEvent:
 .done
 	pop af
 	ld [wVramState], a
-	call .RestorePlayerSprite_DespawnLeaves
 	call LegendaryEvent_SetBattleType
-	ret
-
-.RestorePlayerSprite_DespawnLeaves:
-	ld hl, wVirtualOAMSprite00TileID
-	xor a
-	ld c, 4
-.OAMloop:
-	ld [hli], a ; tile id
-rept SPRITEOAMSTRUCT_LENGTH + -1
-	inc hl
-endr
-	inc a
-	dec c
-	jr nz, .OAMloop
-	ld hl, wVirtualOAMSprite04
-	ld bc, wVirtualOAMEnd - wVirtualOAMSprite04
-	xor a
-	call ByteFill
 	ret
 
 LoadCelebiGFX:
@@ -130,7 +111,7 @@ UpdateCelebiPosition:
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
 	ld a, [hl]
-	cp 8 * 10 + 2
+	cp 8 * 8 + 4
 	jp nc, .FreezeCelebiPosition
 	ld hl, SPRITEANIMSTRUCT_YCOORD
 	add hl, bc
@@ -220,7 +201,7 @@ UpdateCelebiPosition:
 	pop af
 	ld hl, SPRITEANIMSTRUCT_FRAMESET_ID
 	add hl, bc
-	ld a, SPRITE_ANIM_FRAMESET_CELEBI_LEFT
+	ld a, SPRITE_ANIM_FRAMESET_CELEBI_RIGHT
 	call ReinitSpriteAnimFrame
 	ret
 

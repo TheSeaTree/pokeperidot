@@ -959,6 +959,10 @@ TeleportFunction:
 	ld de, ENGINE_SAFARI_GAME_ACTIVE
 	call CheckEngineFlag
 	jr nc, .nope
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	jr z, .nope
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .CheckIfSpawnPoint

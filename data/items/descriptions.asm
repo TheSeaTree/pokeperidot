@@ -114,7 +114,7 @@ ItemDescriptions:
 	dw EverStoneDesc
 	dw SpellTagDesc
 	dw RageCandyBarDesc
-	dw GSBallDesc
+	dw TimeBellDesc
 	dw BlueCardDesc
 	dw MiracleSeedDesc
 	dw ThickClubDesc
@@ -712,9 +712,9 @@ RageCandyBarDesc:
 	db   "Eliminates all"
 	next "status problems.@"
 
-GSBallDesc:
-	db   "The mysterious"
-	next "BALL.@"
+TimeBellDesc:
+	db   "An old, delicate"
+	next "hand bell.@"
 
 BlueCardDesc:
 	db   "Card to save"

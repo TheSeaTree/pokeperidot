@@ -28,6 +28,9 @@ PastRoute11Nurse:
 PastRoute11InnCooltrainer:
 	jumptextfaceplayer PastRoute11InnCooltrainerText
 
+PastRoute11InnRocker:
+	jumptextfaceplayer PastRoute11InnRockerText
+
 PastRoute11InnNurseText:
 	text "Hello, stranger."
 	
@@ -61,6 +64,15 @@ PastRoute11InnCooltrainerText:
 	cont "can be so strong."
 	done
 
+PastRoute11InnRockerText:
+	text "I had such a good"
+	line "nap just now!"
+
+	para "I need a nice"
+	line "stretch before I"
+	cont "head out."
+	done
+
 PastRoute11Inn_MapEvents:
 	db 0, 0 ; filler
 
@@ -72,6 +84,7 @@ PastRoute11Inn_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2, 1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastRoute11Nurse, -1
 	object_event  4,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastRoute11InnCooltrainer, -1
+	object_event  5,  1, SPRITE_ROCKER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PastRoute11InnRocker, -1

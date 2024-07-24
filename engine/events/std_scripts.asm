@@ -54,6 +54,8 @@ StdScripts::
 	dba BossCelebiIntroScript
 	dba BossCelebiBattleScript
 	dba WeakCelebiEncounterScript
+	dba BossCelebiDisappearedScript
+	dba CelebiEncounterNoBattleScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -918,20 +920,19 @@ BossCelebiIntroScript:
 	closetext
 	end
 
-BossCelebiBattleScript:
+BossCelebiDisappearedScript:
 	opentext
 	farwritetext CelebiBossDisappearedText
 	waitbutton
 	closetext
 	end
 
-WeakCelebiEncounterScript
+CelebiEncounterNoBattleScript:
 	opentext
-	farwritetext CelebiEncounterText
+	farwritetext CelebiBossIntroText
 	writebyte CELEBI
-	special PlaySlowCry
 	waitbutton
-	farwritetext CelebiWeakText
+	farwritetext CelebiNoBattleText
 	waitbutton
 	closetext
 	end

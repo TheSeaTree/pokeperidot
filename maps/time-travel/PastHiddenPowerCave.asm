@@ -41,6 +41,11 @@ PastHiddenPowerCave_MapScripts:
 
 .Done
 	setscene SCENE_FINISHED
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_1
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_2
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_3
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_4
+	setevent EVENT_HIDE_CELEBI_BOOK
 .DummyScene
 	end
 
@@ -71,7 +76,6 @@ PastHiddenPowerCaveScientist1:
 	end
 
 PastHiddenPowerCaveScientist2:
-	givepoke CROBAT, 20
 	jumptextfaceplayer PastHiddenPowerCaveScientist2Text
 
 PastHiddenPowerCaveScientistIntroText:
@@ -118,7 +122,7 @@ PastHiddenPowerCaveScientistDeclineText:
 	text "Understood."
 
 	para "If your #MON"
-	line "faint, the tether"
+	line "faint, the TETHER"
 	cont "will activate au-"
 	cont "tomatically."
 	done
@@ -142,8 +146,7 @@ PastHiddenPowerCave_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-;	warp_event  9,  7, PAST_ROUTE_1, 2
-	warp_event  9,  7, PAST_PECTINIA_CITY, 7
+	warp_event  9,  7, PAST_ROUTE_1, 2
 
 	db 0 ; coord events
 

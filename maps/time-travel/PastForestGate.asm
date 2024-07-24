@@ -45,8 +45,8 @@ PastForestGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, PAST_ILEX_FOREST, 1
 	warp_event  0,  5, PAST_ILEX_FOREST, 2
-	warp_event  9,  4, PAST_ELKHORN_TOWN, 3
-	warp_event  9,  5, PAST_ELKHORN_TOWN, 4
+	warp_event  9,  4, PAST_ELKHORN_TOWN, 4
+	warp_event  9,  5, PAST_ELKHORN_TOWN, 5
 
 	db 0 ; coord events
 

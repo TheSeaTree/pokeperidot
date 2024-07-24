@@ -601,11 +601,8 @@ CelebiBossDisappearedText:
 	line "away!"
 	done
 
-CelebiEncounterText:
-	text "CELEBI: Birii……"
-	done
-
-CelebiWeakText:
-	text "CELEBI looks too"
-	line "weak to battle."
+CelebiNoBattleText:
+	text "CELEBI does not"
+	line "look interested in"
+	cont "a battle."
 	done

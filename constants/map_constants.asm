@@ -525,7 +525,6 @@ ENDM
 	map_const PAST_ELKHORN_MOMS_HOUSE,					   6,  4
 	map_const PAST_ELKHORN_LAKESIDE_HOUSE,				   4,  4
 	map_const PAST_ELKHORN_RICHARDS_HOUSE,				   4,  4
-	map_const PAST_ROUTE_1,						  		  26, 16
 	map_const PAST_HIDDEN_POWER_CAVE,			  		   6,  5
 	map_const PAST_ROUTE_1_HOUSE,				  		   4,  4
 
@@ -535,5 +534,6 @@ ENDM
 	map_const PAST_PAVONA_INN,								5,  4
 	map_const PAST_PAVONA_HOUSE_1,							4,  4
 	map_const PAST_PAVONA_HOUSE_2,							4,  4
-	map_const PAST_ROUTE_2,                                23, 18 ;  1
+	map_const PAST_ROUTE_1,						  		   26, 16
+	map_const PAST_ROUTE_2,                                23, 21 ;  1
 	map_const PAST_ROUTE_2_GATE,                            5,  4

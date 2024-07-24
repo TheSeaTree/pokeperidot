@@ -86,10 +86,10 @@ CelebiBossAttacks:
 	db  21, COSMIC_POWER
 	db  21, FUTURE_SIGHT
 	; Fourth Encounter
-	db  21, NASTY_PLOT
-	db  21, GIGA_DRAIN
-	db  21, SHADOW_BALL
-	db  21, PLAY_ROUGH
+	db  23, NASTY_PLOT
+	db  23, GIGA_DRAIN
+	db  23, SHADOW_BALL
+	db  23, PLAY_ROUGH
 	; Final Encounter
 	db 70, FUTURE_SIGHT
 	db 70, GIGA_DRAIN

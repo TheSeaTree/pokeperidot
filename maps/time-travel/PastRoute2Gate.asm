@@ -10,6 +10,19 @@ PastRoute2Gate_MapScripts:
 	changeblock 6, 2, $0d
 	return
 
+PastRoute2GateOfficer:
+	jumptextfaceplayer PastRoute2GateOfficerText
+
+PastRoute2GateOfficerText:
+	text "This is such a"
+	line "relaxing position."
+
+	para "I can read my"
+	line "book all day beca-"
+	cont "use people rarely"
+	cont "use this gate."
+	done
+
 PastRoute2Gate_MapEvents:
 	db 0, 0 ; filler
 
@@ -24,4 +37,4 @@ PastRoute2Gate_MapEvents:
 	db 0 ; bg events
 
 	db 1 ; object events
-	object_event  5,  2, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	object_event  5,  2, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastRoute2GateOfficer, -1

@@ -120,7 +120,7 @@
 	const EVERSTONE    ; 70
 	const SPELL_TAG    ; 71
 	const RAGECANDYBAR ; 72
-	const GS_BALL      ; 73
+	const TIME_BELL    ; 73
 	const BLUE_CARD    ; 74
 	const MIRACLE_SEED ; 75
 	const THICK_CLUB   ; 76

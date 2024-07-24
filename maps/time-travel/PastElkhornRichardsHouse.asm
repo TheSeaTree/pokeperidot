@@ -29,7 +29,7 @@ PastElkhornRichardText:
 	line "ing battles with"
 	cont "my son and the"
 	cont "the students from"
-	cont "FURCATA SCHOOL."
+	cont "TABULATA SCHOOL."
 
 	para "Other parts of the"
 	line "world have started"
@@ -45,9 +45,9 @@ PastElkhornPeggyText:
 	text "I'm training to be"
 	line "a #MON NURSE."
 
-	para "I help out my boy-"
-	line "friend's #MON as"
-	cont "he is training!"
+	para "I help out my hus-"
+	line "band's #MON as"
+	cont "he trains!"
 	done
 
 PastElkhornFarfetchdText:

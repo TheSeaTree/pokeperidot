@@ -284,14 +284,14 @@ ENDM
 
 	map_attributes PastRoute1, PAST_ROUTE_1, $05, NORTH | SOUTH
 	connection north, PastElkhornTown, PAST_ELKHORN_TOWN, 4
-	connection south, PastPavonaVillage, PAST_PAVONA_VILLAGE, 0
+	connection south, PastPavonaVillage, PAST_PAVONA_VILLAGE, 1
 
 	map_attributes PastPavonaVillage, PAST_PAVONA_VILLAGE, $05, NORTH | EAST
-	connection north, PastRoute1, PAST_ROUTE_1, 0
-	connection east, PastRoute2, PAST_ROUTE_2, 5
+	connection north, PastRoute1, PAST_ROUTE_1, -1
+	connection east, PastRoute2, PAST_ROUTE_2, 3
 
 	map_attributes PastRoute2, PAST_ROUTE_2, $05, WEST
-	connection west, PastPavonaVillage, PAST_PAVONA_VILLAGE, -5
+	connection west, PastPavonaVillage, PAST_PAVONA_VILLAGE, -3
 
 	map_attributes PastFaviaTown, PAST_FAVIA_TOWN, $05, SOUTH | EAST
 	connection south, PastRoute3, PAST_ROUTE_3, 7

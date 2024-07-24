@@ -25,7 +25,7 @@ PastPectiniaApartments3FYoungster:
 PastPectiniaApartments3FLass:
 	faceplayer
 	opentext
-	writetext PastPectiniaApartments3FLass
+	writetext PastPectiniaApartments3FLassText
 	waitbutton
 	closetext
 	turnobject LAST_TALKED, UP

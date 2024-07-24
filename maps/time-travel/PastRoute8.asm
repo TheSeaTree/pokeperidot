@@ -55,22 +55,97 @@ PastRoute8GlowScales:
 PastRoute8SodaPop:
 	itemball SODA_POP
 
+PastRoute8HiddenLeafStone:
+	hiddenitem LEAF_STONE, EVENT_ROUTE_8_PAST_HIDDEN_LEAF_STONE
+
+PastRoute8HiddenBigMushroom:
+	hiddenitem BIG_MUSHROOM, EVENT_ROUTE_8_PAST_HIDDEN_BIG_MUSHROOM
+
+PastRoute8HiddenKingsRock:
+	hiddenitem KINGS_ROCK, EVENT_ROUTE_8_PAST_HIDDEN_KINGS_ROCK
+
 BeautyVioletText:
+	text "My team matches my"
+	line "favorite color!"
+	done
+
 BeautyVioletWinText:
+	text "You may have won,"
+	line "but your #MON"
+	cont "lack style."
+	done
+
 BeautyVioletAfterText:
+	text "I don't normally"
+	line "like BUG-types,"
+	cont "but I just had to"
+	cont "have my HERACROSS!"
+
+	para "I fell in love"
+	line "with its glittery"
+	cont "shell right away!"
+	done
 
 SailorDaleText:
+	text "The trees here are"
+	line "too thick!"
+	done
+
 SailorDaleWinText:
+	text "…Like a fish out"
+	line "of water."
+	done
+
 SailorDaleAfterText:
+	text "I need to be near"
+	line "the ocean!"
+
+	para "It's right on the"
+	line "other side of"
+	cont "these woods!"
 
 PsychicRossText:
+	text "Some strange new"
+	line "#MON have been"
+	cont "appearing around"
+	cont "these parts."
+	done
+
 PsychicRossWinText:
+	text "Take care of your-"
+	line "self out here."
+	done
+
 PsychicRossAfterText:
+	text "I fear that"
+	line "spirits may be"
+	cont "wandering among"
+	cont "the living."
+
+	para "They are rare, but"
+	line "I suspect they"
+	cont "won't be forever."
+	done
 
 BikerZacharyText:
+	text "FAVIA TOWN is too"
+	line "quiet."
+
+	para "I want someone to"
+	line "make some noise!"
+	done
+
 BikerZacharyWinText:
+	text "That got my ears"
+	line "ringing!"
+	done
+
 BikerZacharyAfterText:
-	text ""
+	text "That was intense!"
+
+	para "Now I just want to"
+	line "sit back and crack"
+	cont "open a SODA POP."
 	done
 
 PastRoute8_MapEvents:
@@ -80,7 +155,10 @@ PastRoute8_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 3 ; bg events
+	bg_event  4,  5, BGEVENT_ITEM, PastRoute8HiddenLeafStone
+	bg_event 27, 14, BGEVENT_ITEM, PastRoute8HiddenBigMushroom
+	bg_event 30,  0, BGEVENT_ITEM, PastRoute8HiddenKingsRock
 
 	db 6 ; object events
 	object_event  5, 15, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyViolet, -1

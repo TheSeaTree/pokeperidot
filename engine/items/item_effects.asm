@@ -127,7 +127,7 @@ ItemEffects:
 	dw NoEffect            ; EVERSTONE
 	dw NoEffect            ; SPELL_TAG
 	dw StatusHealingEffect ; RAGECANDYBAR
-	dw NoEffect            ; GS_BALL
+	dw TimeBellEffect      ; TIME_BELL
 	dw BlueCardEffect      ; BLUE_CARD
 	dw NoEffect            ; MIRACLE_SEED
 	dw NoEffect            ; THICK_CLUB
@@ -142,7 +142,7 @@ ItemEffects:
 	dw NoEffect            ; CARD_KEY
 	dw NoEffect            ; MACHINE_PART
 	dw NoEffect            ; EGG_TICKET
-	dw NoEffect            ; LOST_ITEM
+	dw NoEffect            ; LAB_KEY
 	dw NoEffect            ; STARDUST
 	dw NoEffect            ; STAR_PIECE
 	dw NoEffect            ; BASEMENT_KEY
@@ -187,7 +187,7 @@ ItemEffects:
 	dw NoEffect            ; UP_GRADE
 	dw RestoreHPEffect     ; BERRY
 	dw RestoreHPEffect     ; GOLD_BERRY
-	dw NoEffect            ; SQUIRTBOTTLE
+	dw NoEffect            ; SCHOOLWORK
 	dw RestoreHPEffect     ; SILVER_BERRY
 	dw PokeBallEffect      ; SAFARI_BALL
 	dw NoEffect            ; RAINBOW_WING

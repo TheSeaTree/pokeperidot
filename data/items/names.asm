@@ -113,7 +113,7 @@ ItemNames::
 	db "EVERSTONE@"
 	db "SPELL TAG@"
 	db "RAGECANDYBAR@"
-	db "GS BALL@"
+	db "TIME BELL@"
 	db "BLUE CARD@"
 	db "MIRACLE SEED@"
 	db "THICK CLUB@"

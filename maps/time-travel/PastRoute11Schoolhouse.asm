@@ -39,9 +39,7 @@ PastRoute11SchoolhouseTeacher:
 	writetext PastRoute11SchoolhouseTeacherIntroText
 	setevent EVENT_INTRODUCED_SCHOOLHOUSE_TEACHER
 	waitbutton
-
 .Battle
-	; Replace the Kanto gym flags and check them here.
 	checkevent EVENT_BEAT_SCHOOLBOY_PATRICK
 	iffalse .Introduced
 	checkevent EVENT_BEAT_LASS_JEAN
@@ -56,17 +54,11 @@ PastRoute11SchoolhouseTeacher:
 	iffalse .Introduced
 	writetext PastRoute11SchoolhouseTeacherChallengeText
 	waitbutton
-	; Give the player some school work to bring to the
-	; girl in Favia Town, for some kind of reward.
-	;	This could maybe be a young Maple who will tell you about Celebi.
-	;	Giving you access to her dad's research.
-	;		No, the timeline wouldn't make sense.
-	;		Maybe she could be implied to be Maple's mother? And offer her boyfriend's research.
-	;		Instead of Favia, it can be Pavona.
 	winlosstext PastRoute11SchoolhouseTeacherWinText, 0
 	loadtrainer TEACHERM, MASON
 	startbattle
 	reloadmapafterbattle
+	opentext
 	writetext PastRoute11SchoolhouseTeacherGiveHomeworkText
 	yesorno
 	iffalse .Decline
@@ -104,6 +96,9 @@ PastRoute11SchoolhouseTeacher:
 	closetext
 	end
 
+PastRoute11SchoolhouseTeacherAfterHours:
+	jumptextfaceplayer PastRoute11SchoolhouseTeacherAfterHoursText
+
 TrainerSchoolboyPatrick:
 	checkevent EVENT_BEAT_SCHOOLBOY_PATRICK
 	iftrue .AfterBattle
@@ -111,7 +106,9 @@ TrainerSchoolboyPatrick:
 	iftrue .DoBattle
 	jumptextfaceplayer TrainerSchoolboyPatrickText
 .DoBattle
+	faceplayer
 	opentext
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
 	writetext TrainerSchoolboyPatrickBattleText
 	waitbutton
 	closetext
@@ -132,8 +129,10 @@ TrainerLassJean:
 	iftrue .DoBattle
 	jumptextfaceplayer TrainerLassJeanText
 .DoBattle
+	faceplayer
 	opentext
-	writetext TrainerSchoolboyPatrickBattleText
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext TrainerLassJeanBattleText
 	waitbutton
 	closetext
 	winlosstext TrainerLassJeanWinText, 0
@@ -153,8 +152,10 @@ TrainerBugCatcherTony:
 	iftrue .DoBattle
 	jumptextfaceplayer TrainerBugCatcherTonyText
 .DoBattle
+	faceplayer
 	opentext
-	writetext TrainerSchoolboyPatrickBattleText
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext TrainerBugCatcherTonyBattleText
 	waitbutton
 	closetext
 	winlosstext TrainerBugCatcherTonyWinText, 0
@@ -174,8 +175,10 @@ TrainerCooltrainerMMitch:
 	iftrue .DoBattle
 	jumptextfaceplayer TrainerCooltrainerMMitchText
 .DoBattle
+	faceplayer
 	opentext
-	writetext TrainerSchoolboyPatrickBattleText
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext TrainerCooltrainenrMMitchBattleText
 	waitbutton
 	closetext
 	winlosstext TrainerCooltrainerMMitchWinText, 0
@@ -195,8 +198,10 @@ TrainerPicnickerGia:
 	iftrue .DoBattle
 	jumptextfaceplayer TrainerPicnickerGiaText
 .DoBattle
+	faceplayer
 	opentext
-	writetext TrainerSchoolboyPatrickBattleText
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext TrainerPicnickerGiaBattleText
 	waitbutton
 	closetext
 	winlosstext TrainerPicnickerGiaWinText, 0
@@ -214,11 +219,12 @@ TrainerCooltrainerFHannah:
 	iftrue .AfterBattle
 	checkevent EVENT_INTRODUCED_SCHOOLHOUSE_TEACHER
 	iftrue .DoBattle
-	; misc text here
 	jumptextfaceplayer TrainerCooltrainerFHannaText
 .DoBattle
+	faceplayer
 	opentext
-	writetext TrainerSchoolboyPatrickBattleText
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	writetext TrainerCooltrainerFHannaText
 	waitbutton
 	closetext
 	winlosstext TrainerCooltrainerFHannaWinText, 0
@@ -340,6 +346,15 @@ PastRoute11SchoolhouseTeacherAfterText:
 	cont "and give lessons"
 	cont "on battling, you're"
 	cont "more than welcome!"
+	done
+
+PastRoute11SchoolhouseTeacherAfterHoursText:
+	text "I'm sorry, but"
+	line "class is not in"
+	cont "session right now."
+
+	para "Please come back"
+	line "in the morning."
 	done
 
 TrainerSchoolboyPatrickText:
@@ -564,7 +579,7 @@ PastRoute11Schoolhouse_MapEvents:
 
 	db 9 ; object events
 	object_event  5,  3, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, 7, 15, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastRoute11SchoolhouseTeacher, -1
-	object_event  9,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, 16, 17, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastRoute11SchoolhouseTeacher, -1
+	object_event  9,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, 16, 17, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastRoute11SchoolhouseTeacherAfterHours, -1
 	object_event  4,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerSchoolboyPatrick, -1
 	object_event  2,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerLassJean, -1
 	object_event  8,  5, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 1, 0, 7, 15, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerBugCatcherTony, -1

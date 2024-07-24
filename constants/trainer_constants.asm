@@ -238,6 +238,7 @@ CHRIS EQU __enum__
 	const JODIE
 	const CATHY
 	const JEAN
+	const PAIGE
 
 	trainerclass JANINE ; 1a
 
@@ -301,6 +302,7 @@ CHRIS EQU __enum__
 	const GRAVE1_TRAINER3
 	const GRAVE2_TRAINER3
 	const GRAVE3_TRAINER3
+	const ANDREW
 
 	trainerclass TEACHERM ; 1f
 	const MASON
@@ -381,6 +383,7 @@ CHRIS EQU __enum__
 	const MIRANDA
 	const LAUREN
 	const KARLA
+	const MORGAN
 
 	trainerclass SAILOR ; 28
 	const CALVIN
@@ -512,6 +515,7 @@ CHRIS EQU __enum__
 	const LAVA1_TRAINER1
 	const LAVA2_TRAINER1
 	const LAVA3_TRAINER1
+	const RUSH
 	
 	trainerclass JUGGLER ; 31
 	const ROBERT
@@ -550,6 +554,7 @@ CHRIS EQU __enum__
 	const FREDDIE
 	const CHAZ
 	const ROSS
+	const LENNY
 
 	trainerclass PICNICKER ; 35
 	const JAMIE

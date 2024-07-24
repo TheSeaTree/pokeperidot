@@ -8,13 +8,6 @@ PastFaviaEggTutorHouse_MapScripts:
 EggMoveTutor:
 	faceplayer
 	opentext
-;	checkcode VAR_PARTYCOUNT
-;	ifgreater 0, .DontGive
-;	givepoke PSYDUCK, 10
-;	givepoke PSYDUCK, 10
-;	giveitem CARBOS, 50
-;	giveitem BRICK_PIECE, 50
-;.DontGive
 	special SpecialEggTutor
 	waitbutton
 	closetext

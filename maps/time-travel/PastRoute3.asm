@@ -1,4 +1,15 @@
 	const_def 2 ; object constants
+	const PASTROUTE3_BUENA
+	const PASTROUTE3_LASS
+	const PASTROUTE3_YOUNGSTER1
+	const PASTROUTE3_BUG_CATCHER
+	const PASTROUTE3_YOUNGSTER2
+	const PASTROUTE3_POKEFAN
+	const PASTROUTE3_GENTLEMAN
+	const PASTROUTE3_POKE_BALL1
+	const PASTROUTE3_POKE_BALL2
+	const PASTROUTE3_POKE_BALL3
+	const PASTROUTE3_CELEBI
 
 PastRoute3_MapScripts:
 	db 0 ; scene scripts
@@ -81,6 +92,40 @@ TrainerGentlemanNigel:
 	waitbutton
 	closetext
 	end
+
+CelebiBoss2:
+	scall CelebiBoss2Intro
+	loadwildmon CELEBI, 18
+	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
+	startbattle
+	reloadmapafterbattle
+	playsound SFX_WARP_TO
+	applymovement PASTROUTE3_CELEBI, PastRoute3CelebiTeleportMovement
+	setevent EVENT_HIDE_AND_SEEK_CELEBI_2
+	clearevent EVENT_HIDE_AND_SEEK_CELEBI_3
+	disappear PASTROUTE3_CELEBI
+	waitsfx
+	jumpstd bosscelebidisappear
+
+CelebiBoss2Intro:
+	jumpstd bosscelebiintro
+	end
+
+PastRoute3CelebiTeleportMovement:
+	hide_person
+	step_sleep 2
+	show_person
+	step_sleep 2
+	hide_person
+	step_sleep 2
+	show_person
+	step_sleep 2
+	hide_person
+	step_sleep 2
+	show_person
+	step_sleep 2
+	hide_person
+	step_end
 
 PastRoute3Lemonade:
 	itemball LEMONADE
@@ -305,7 +350,7 @@ PastRoute3_MapEvents:
 	bg_event 17, 41, BGEVENT_ITEM, PastRoute3HiddenSilverBerry
 	bg_event 26, 18, BGEVENT_ITEM, PastRoute3HiddenPowerHerb
 
-	db 10 ; object events
+	db 11 ; object events
 	object_event 12,  8, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBeautyLina, -1
 	object_event 27, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassCathy, -1
 	object_event 10, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperWilson, -1
@@ -316,3 +361,4 @@ PastRoute3_MapEvents:
 	object_event  1, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3Lemonade, EVENT_ROUTE_3_PAST_LEMONADE
 	object_event  6,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3MiracleSeed, EVENT_ROUTE_3_PAST_MIRACLE_SEED
 	object_event 31, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3Stick, EVENT_ROUTE_3_PAST_STICK
+	object_event  5, 42, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, CelebiBoss2, EVENT_HIDE_AND_SEEK_CELEBI_2

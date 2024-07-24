@@ -13,15 +13,21 @@ MaplesMother:
 	opentext
 	checkevent EVENT_HIDE_MAPLES_MOTHER
 	iftrue .Studying
-	checkitem SCHOOLWORK
-	iffalse .NormalText
-	setevent EVENT_HIDE_MAPLES_MOTHER
-	clearevent EVENT_HIDE_CELEBI_BOOK
-	appear PASTPAVONA_NOTEBOOK
-
-.NormalText
 	writetext MaplesMotherIntroText
 	waitbutton
+	checkitem SCHOOLWORK
+	iffalse .NoSchoolwork
+	writetext MaplesMotherGiveSchoolworkText
+	turnobject PASTPAVONA_MAPLESMOM2, RIGHT
+	setevent EVENT_HIDE_MAPLES_MOTHER
+	clearevent EVENT_HIDE_CELEBI_BOOK
+	moveobject PASTPAVONA_NOTEBOOK, 3, 3
+	appear PASTPAVONA_NOTEBOOK
+	closetext
+	opentext
+	writetext MaplesMotherAfterSchoolworkText
+	waitbutton
+.NoSchoolwork
 	closetext
 	end
 
@@ -79,6 +85,13 @@ MaplesMotherGiveSchoolworkText:
 	cont "take a look at my"
 	cont "boyfriend's note-"
 	cont "book."
+	done
+
+MaplesMotherAfterSchoolworkText:
+	text "Now if you'll ex-"
+	line "cuse me, I should"
+	cont "catch up on my"
+	cont "assignments."
 	done
 
 MaplesMotherStudyingText:
@@ -142,8 +155,7 @@ PastPavonaCelebiBookText:
 
 	para "It was seen along"
 	line "ROUTE 1, causing"
-	cont "tall grass to"
-	cont "wildly sprout."
+	cont "flowers to bloom."
 	done
 
 PastPavonaHouse2_MapEvents:
@@ -157,7 +169,7 @@ PastPavonaHouse2_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
-	object_event  2,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MaplesMother, EVENT_HIDE_CELEBI_BOOK
+	db 3 ; object events
+	object_event  5,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MaplesMother, EVENT_HIDE_CELEBI_BOOK
 	object_event  2,  3, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, MaplesMother, EVENT_HIDE_MAPLES_MOTHER
-	object_event  4,  1, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PastPavonaHouseNotebook, EVENT_HIDE_CELEBI_BOOK
+	object_event  3,  3, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PastPavonaHouseNotebook, EVENT_HIDE_CELEBI_BOOK

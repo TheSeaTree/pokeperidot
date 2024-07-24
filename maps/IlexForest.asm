@@ -288,7 +288,7 @@ PokefanFElaneAfterText:
 	cont "strong trainer"
 	cont "like yourself."
 	done
-	
+
 TwinFayeText:
 	text "FAYE: My sister"
 	line "and I always"
@@ -298,7 +298,7 @@ TwinFayeText:
 TwinsFayeAndMaeWinText:
 	text "FAYE: You play too"
 	line "rough!"
-	
+
 	para "MAE: Yeah, you big"
 	line "bully!"
 	done
@@ -458,6 +458,6 @@ IlexForest_MapEvents:
 	object_event 40, 25, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerPokefanFElane, -1
 	object_event 36, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
 	object_event 37, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
-	object_event 53,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 1, TrainerCooltrainerFSasha, -1
+	object_event 53,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerFSasha, -1
 	object_event 34, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, IlexForestFruitTree, -1
 	object_event 66,  0, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Celebi, EVENT_HIDE_PRESENT_CELEBI
