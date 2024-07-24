@@ -496,6 +496,7 @@ SECTION "Map Scripts 29", ROMX
 INCLUDE "maps/time-travel/PastPavonaHouse1.asm"
 INCLUDE "maps/time-travel/PastPavonaHouse2.asm"
 INCLUDE "maps/time-travel/PastRoute11Schoolhouse.asm"
+INCLUDE "maps/time-travel/PastRoute11Schoolhouse2.asm"
 INCLUDE "maps/time-travel/PastElkhornMomsHouse.asm"
 INCLUDE "maps/time-travel/PastElkhornLakesideHouse.asm"
 INCLUDE "maps/time-travel/PastElkhornRichardsHouse.asm"

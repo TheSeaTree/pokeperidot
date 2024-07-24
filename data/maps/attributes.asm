@@ -639,6 +639,7 @@ ENDM
 	map_attributes PastPectiniaMart, PAST_PECTINIA_MART, $00, 0
 	map_attributes PastFaviaMart, PAST_FAVIA_MART, $00, 0
 	map_attributes PastRoute11Schoolhouse, PAST_ROUTE_11_SCHOOLHOUSE, $00, 0
+	map_attributes PastRoute11Schoolhouse2, PAST_ROUTE_11_SCHOOLHOUSE_2, $00, 0
 	map_attributes PastPavonaHouse1, PAST_PAVONA_HOUSE_1, $00, 0
 	map_attributes PastPavonaHouse2, PAST_PAVONA_HOUSE_2, $00, 0
 	map_attributes PastPectiniaBerryHouse, PAST_PECTINIA_BERRY_HOUSE, $00, 0

@@ -106,6 +106,7 @@ PastElkhornMomsHouse_Blocks:
 	INCBIN "maps/time-travel/PastElkhornMomsHouse.ablk"
 
 PastRoute11Schoolhouse_Blocks:
+PastRoute11Schoolhouse2_Blocks:
 	INCBIN "maps/time-travel/PastRoute11Schoolhouse.ablk"
 
 VitaminShop_Blocks:

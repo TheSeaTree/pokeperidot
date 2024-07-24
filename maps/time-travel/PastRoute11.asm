@@ -10,15 +10,27 @@
 PastRoute11_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
+	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .LightsOff
+	callback MAPCALLBACK_NEWMAP, .ChangeWarp
 
 .LightsOff
+	checkevent EVENT_DEFEATED_SCHOOLHOUSE_TEACHER
+	iffalse .LightsOn
 	checktime NITE
 	iffalse .LightsOn
 	changeblock		46, 16, $cd
 	changeblock		48, 16, $ce
 .LightsOn
+	return
+
+.ChangeWarp
+	checkevent EVENT_DEFEATED_SCHOOLHOUSE_TEACHER
+	iftrue .DontChange
+	warpmod 1, PAST_ROUTE_11_SCHOOLHOUSE
+	return
+.DontChange
+	warpmod 1, PAST_ROUTE_11_SCHOOLHOUSE_2
 	return
 
 PastRoute11Teacher:
@@ -139,9 +151,9 @@ PastRoute11_MapEvents:
 	db 0, 0 ; filler
 
 	db 9 ; warp events
+	warp_event 47, 17, PAST_ROUTE_11, -1 ; Schoolhouse
 	warp_event 27, 27, PAST_ROUTE_11_GATE, 1
 	warp_event 28, 27, PAST_ROUTE_11_GATE, 2
-	warp_event 47, 17, PAST_ROUTE_11_SCHOOLHOUSE, 1
 	warp_event 49, 21, PAST_ROUTE_11_HOUSE_5, 1
 	warp_event 37,  7, PAST_ROUTE_11_HOUSE_1, 1
 	warp_event 29, 11, PAST_ROUTE_11_INN, 1

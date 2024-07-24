@@ -520,6 +520,7 @@ ENDM
 	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
 	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
 	map_const PAST_ROUTE_11_SCHOOLHOUSE,					6,  5
+	map_const PAST_ROUTE_11_SCHOOLHOUSE_2,					6,  5
 
 	newgroup
 
