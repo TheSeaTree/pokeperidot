@@ -52,10 +52,9 @@ StdScripts::
 	dba TimeTravelWarpScript
 	dba SelectSimulationItemballEncounter
 	dba BossCelebiIntroScript
-	dba BossCelebiBattleScript
-	dba WeakCelebiEncounterScript
 	dba BossCelebiDisappearedScript
 	dba CelebiEncounterNoBattleScript
+	dba TurntableScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -231,6 +230,13 @@ WindowScript:
 TVScript:
 	opentext
 	farwritetext TVText
+	waitbutton
+	closetext
+	end
+
+TurntableScript:
+	opentext
+	farwritetext TurntableText
 	waitbutton
 	closetext
 	end
