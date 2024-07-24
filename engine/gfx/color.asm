@@ -1438,9 +1438,6 @@ INCLUDE "gfx/overworld/npc_sprites_past.pal"
 RoofPals:
 INCLUDE "gfx/tilesets_pals/roofs.pal"
 
-VictoryPortPal:
-INCLUDE "gfx/tilesets_pals/victory_port.pal"
-
 DiplomaPalettes:
 INCLUDE "gfx/diploma/diploma.pal"
 
