@@ -117,8 +117,8 @@ Route24NorthMaxRepel:
 	itemball MAX_REPEL
 
 Route24SouthFruitTree1:
-	fruittree FRUITTREE_ROUTE_24_SOUTH_1
-	
+	itembush FRUITTREE_ROUTE_24_SOUTH_1
+
 Route24SouthFruitTree2:
 	fruittree FRUITTREE_ROUTE_24_SOUTH_2
 
