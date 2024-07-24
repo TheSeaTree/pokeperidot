@@ -117,15 +117,15 @@ FossilResurrectionGuy:
 .DoneFossil
 	writetext PowerPlantFossilGuyThanks
 	jump .end
-	
+
 .NotDone
 	writetext PowerPlantFossilGuyWorking
 	jump .end
-	
+
 .NoRoom
 	writetext NoRoomForFossil
 	jump .end
-	
+
 .NoFossils
 	writetext NoFossilsText
 .end
@@ -133,7 +133,7 @@ FossilResurrectionGuy:
 	closetext
 	turnobject LAST_TALKED, UP
 	end
-	
+
 ResurrectHelixFossil:
 	itemtotext HELIX_FOSSIL, MEM_BUFFER_0
 	writetext IdentifyFossilText
@@ -145,7 +145,7 @@ ResurrectHelixFossil:
 	setevent EVENT_GAVE_HELIX_FOSSIL
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	jump FossilResurrectionGuy.NotDone
-	
+
 ResurrectDomeFossil:
 	itemtotext DOME_FOSSIL, MEM_BUFFER_0
 	writetext IdentifyFossilText
@@ -157,7 +157,7 @@ ResurrectDomeFossil:
 	setevent EVENT_GAVE_DOME_FOSSIL
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	jump FossilResurrectionGuy.NotDone
-	
+
 ResurrectOldAmber:
 	itemtotext OLD_AMBER, MEM_BUFFER_0
 	writetext IdentifyOldAmberText
@@ -171,7 +171,6 @@ ResurrectOldAmber:
 	jump FossilResurrectionGuy.NotDone
 
 ResurrectSabreFossil:
-	
 	itemtotext SABRE_FOSSIL, MEM_BUFFER_0
 	writetext IdentifyFossilText
 	waitbutton

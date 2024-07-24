@@ -24,7 +24,7 @@ Route14Cave1F_MapScripts:
 
 .Disappear:
 	return
-	
+
 .PositionOne:
 	moveobject ROUTE_14_CAVE_1F_MAROWAK,  8,  8
 	return
@@ -59,7 +59,7 @@ Route14Cave1FMarowakScript:
 	ifequal  4, .Position4
 	ifequal  5, .Position5
 	ifequal  6, .Position6
-	
+
 .Position1:
 	faceplayer
 	opentext
@@ -80,7 +80,7 @@ Route14Cave1FMarowakScript:
 	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 5
 	loadvar wFarfetchdPosition, 2
 	end
-	
+
 .Position1_Down:
 	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3
 	iffalse .Position1_Down2

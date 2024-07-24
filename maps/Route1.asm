@@ -219,7 +219,7 @@ FisherLeoText:
 	line "just to battle"
 	cont "with you!"
 	done
-	
+
 FisherLeoWinText:
 	text "I am done!"
 	line "But that was fun!"

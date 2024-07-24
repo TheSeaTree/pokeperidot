@@ -452,7 +452,7 @@ RidgeVillageFisher2Text:
 	para "This stupid OLD"
 	line "ROD I have won't"
 	cont "catch any #MON!"
-	
+
 	para "There's a guy on"
 	line "ROUTE 5 that is"
 	cont "giving away a GOOD"

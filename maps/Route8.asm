@@ -28,7 +28,7 @@ TrainerSwimmerKait:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerBirdKeeperAlex:
 	trainer BIRD_KEEPER, ALEX, EVENT_BEAT_BIRD_KEEPER_ALEX, BirdkeeperAlexText, BirdkeeperAlexWinText, 0, .Script
 
@@ -39,7 +39,7 @@ TrainerBirdKeeperAlex:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerFirebreatherBrian:
 	trainer FIREBREATHER, BRIAN, EVENT_BEAT_FIREBREATHER_BRIAN, FirebreatherBrianText, FirebreatherBrianWinText, 0, .Script
 
@@ -61,7 +61,7 @@ TrainerLassStephanie:
 	waitbutton
 	closetext
 	end
-	
+
 TrainerJugglerRobert:
 	trainer JUGGLER, ROBERT, EVENT_BEAT_JUGGLER_ROBERT, JugglerRobertText, JugglerRobertWinText, 0, .Script
 
@@ -89,22 +89,22 @@ Route8UndergroundPathSign:
 
 Route8FruitTree:
 	fruittree FRUITTREE_ROUTE_8
-	
+
 Route8SunStone:
 	itemball SUN_STONE
-	
+
 Route8RareCandy:
 	itemball RARE_CANDY
 
 Route8Revive:
 	itemball REVIVE
-	
+
 Route8DampCharm:
 	itemball DAMP_CHARM
-	
+
 Route8Rock:
-	jumpstd smashrock	
-	
+	jumpstd smashrock
+
 SwimmerKaitText:
 	text "Nothing beats a"
 	line "#MON battle as"
@@ -116,12 +116,12 @@ SwimmerKaitWinText:
 	text "I could still beat"
 	line "you at swimming!"
 	done
-	
+
 SwimmerKaitAfterText:
 	text "I can swim a mile"
 	line "in 5 minutes!"
 	done
-	
+
 BirdkeeperAlexText:
 	text "Day or night, my"
 	line "#MON are always"
@@ -132,63 +132,63 @@ BirdkeeperAlexWinText:
 	text "No! They must have"
 	line "been jet-lagged!"
 	done
-	
+
 BirdkeeperAlexAfterText:
 	text "If you came later,"
 	line "my #MON would"
 	cont "have had a better"
 	cont "chance!"
 	done
-	
+
 FirebreatherBrianText:
 	text "Augh…"
 	line "WHOOSH!"
 	done
-	
+
 FirebreatherBrianWinText:
 	text "My, that was"
 	line "concerning."
 	done
-	
+
 FirebreatherBrianAfterText:
 	text "I'm feeling a lot"
 	line "better after our"
 	cont "battle."
-	
+
 	para "I just had a case"
 	line "of indigestion."
 	done
-	
+
 LassStephanieText:
 	text "Cute, round, and"
 	line "cuddly."
-	
+
 	para "That is all I want"
 	line "from my #MON!"
 	done
 
 LassStephanieWinText:
 	text "Humph!"
-	
+
 	para "No fair!"
 	done
-	
+
 LassStephanieAfterText:
 	text "You're nothing"
 	line "like the #MON"
 	cont "I train."
-	
+
 	para "But your #MON"
 	line "seem to love you"
 	cont "anyway."
 	done
-	
+
 LassDanniText:
 	text "I just got done"
 	line "changing back into"
 	cont "my clothes after a"
 	cont "swim."
-	
+
 	para "Oh, a battle?"
 	line "Sure!"
 	done
@@ -203,28 +203,27 @@ LassDanniAfterText:
 	line "so that I could"
 	cont "find new #MON."
 	done
-	
+
 JugglerRobertText:
 	text "Gaze at my mastery"
 	line "of gravity!"
 	done
-	
+
 JugglerRobertWinText:
 	text "No! You made me"
 	line "drop my BALLs!"
 	done
-	
+
 JugglerRobertAfterText:
 	text "…Okay, fine."
-	
+
 	para "I had my #MON"
 	line "do the juggling"
 	cont "for me…"
 	done
-	
+
 Route8UndergroundPathSignText:
 	text "UNDERGROUND PATH"
-	
 	para "ROUTE 7-"
 	line "ROUTE 6"
 	done
@@ -241,7 +240,6 @@ Route8_MapEvents:
 	warp_event 15, 45, ROUTE_8_SILK_SCARF_HOUSE, 1
 	warp_event 22,  5, ROUTE_8_HIDDEN_CAVE, 1
 	warp_event 16, 59, FAVIA_TOWN, 11
-	
 	db 0 ; coord events
 
 	db 1 ; bg events

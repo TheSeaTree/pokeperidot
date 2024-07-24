@@ -27,7 +27,7 @@ ContinueApproachRegan:
 	appear REGANSROOM_PLAYER
 
 	applymovement PLAYER, E4StartBattle
-	
+
 	refreshscreen $86
 	playsound SFX_ENTER_DOOR
 	changeblock 4,  8, $09 ; wall

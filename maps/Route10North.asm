@@ -5,7 +5,7 @@ Route10North_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
 Route10DigGuy:
 	checkevent EVENT_GOT_TM_DIG
 	iftrue .GotDig

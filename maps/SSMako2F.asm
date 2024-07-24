@@ -13,7 +13,7 @@ SSMako2F_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .UnlockDoors
-	
+
 .DummyScene0:
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_DEFAULT
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
