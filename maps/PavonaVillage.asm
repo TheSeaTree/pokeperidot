@@ -326,13 +326,17 @@ MysticWaterGuyTextAfter:
 	done
 
 CherrygroveCitySignText:
-	text "PAVONA VILLAGE"
+	text "PAVONA VILLAGE-"
+
+	para "The little place"
+	line "full of new oppor-"
+	cont "tunities!"
 	done
 
 GuideGentsHouseSignText:
 	text "MAPLE #MON LAB"
 	done
-	
+
 CherrygroveInnSignText:
 	text "PAVONA INN"
 	
