@@ -361,6 +361,10 @@ TVText:
 	text "It's a TV."
 	done
 
+TurntableText:
+	text "It's a turntable."
+	done
+
 HomepageText:
 	text "#MON JOURNAL"
 	line "HOME PAGE…"

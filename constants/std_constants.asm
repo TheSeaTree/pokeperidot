@@ -55,3 +55,4 @@
 	enum bosscelebiintro
 	enum bosscelebidisappear
 	enum celebiencounter_nobattle
+	enum turntable

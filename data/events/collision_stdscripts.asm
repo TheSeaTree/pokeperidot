@@ -17,4 +17,5 @@ TileCollisionStdScripts:
 	dbw COLL_CAPSULE_MACHINE,	capsulemachine
 	dbw COLL_STOLEN_ITEMS,		stolenitemboxes
 	dbw COLL_FOUNTAIN,			wishingfountain
+	dbw COLL_TURNTABLE,        	turntable
 	db -1 ; end
