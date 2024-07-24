@@ -547,16 +547,28 @@ _CGB_BetaPoker:
 	ld a, BANK(wBGPals1)
 	call FarCopyWRAM
 	call WipeAttrMap
+	; Poke Ball
 	hlcoord 3, 2, wAttrMap
 	lb bc, 2, 2
 	ld a, $3
 	call FillBoxCGB
+	; Header
 	hlcoord 5, 2, wAttrMap
 	lb bc, 2, 12
 	ld a, $2
 	call FillBoxCGB
+	; Player
 	hlcoord 15, 10, wAttrMap
 	lb bc, 7, 4
+	ld a, $1
+	call FillBoxCGB
+	; Signature
+	hlcoord 10, 14, wAttrMap
+	lb bc, 3, 5
+	ld a, $1
+	call FillBoxCGB
+	hlcoord 9, 15, wAttrMap
+	lb bc, 2, 1
 	ld a, $1
 	call FillBoxCGB
 	call ApplyAttrMap
