@@ -217,7 +217,7 @@ ENDM
 	enum checkitem_command ; $21
 checkitem: MACRO
 if _NARG == 1
-	takeitem \1, 1
+	checkitem \1, 1
 else
 	db checkitem_command
 	db \1 ; item
