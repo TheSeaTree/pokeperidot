@@ -82,7 +82,7 @@ ProfMapleScript:
 	checkevent EVENT_DECO_POSTER_7
 	iftrue .AfterDiploma
 	checkcode VAR_DEXCAUGHT
-	ifgreater NUM_POKEMON - 1, .CompletedPokedex
+	ifequal NUM_POKEMON, .CompletedPokedex
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Postgame
 	checkevent EVENT_SHOWED_MAPLE_COGBADGE

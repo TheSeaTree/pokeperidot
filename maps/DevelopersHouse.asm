@@ -9,10 +9,17 @@ DeveloperScript:
 	faceplayer
 	opentext
 	checkcode VAR_DEXCAUGHT
-	ifless NUM_POKEMON - 1, .Nothing
+	ifnotequal NUM_POKEMON, .Nothing
 	checkflag ENGINE_BATTLED_DEVELOPER
 	iftrue .AfterBattle
 
+	writetext DeveloperBeatLeadersText
+	yesorno
+	iffalse .Decline
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext DeveloperChallengeAcceptText
+	waitbutton
+	closetext
 	winlosstext DeveloperWinText, 0
 	loadtrainer DEVELOPER, FRANK1
 	random 4
@@ -139,6 +146,12 @@ DeveloperScript:
 
 .AfterBattle
 	writetext DeveloperAfterText
+	waitbutton
+	closetext
+	end
+
+.Decline
+	writetext DeveloperChallengeDeclineText
 	waitbutton
 	closetext
 	end
