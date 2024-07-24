@@ -21,5 +21,5 @@ EliteFour:
 	db AMBER
 	db CHAMPION
 	db CHAMPIONF
-	db RED
+	db DEVELOPER
 	db -1
