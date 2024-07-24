@@ -54,6 +54,9 @@ MewtwoLab2FPokeDoll:
 MewtwoLab2FUltraBall:
 	itemball ULTRA_BALL
 
+MewtwoLab2FSeaMap:
+	itemball SEA_MAP
+
 MewtwoLab1FHiddenXDefend:
 	hiddenitem X_DEFEND, EVENT_MEWTWO_LAB_HIDDEN_X_DEFEND
 
@@ -107,6 +110,7 @@ MewtwoLab2F_MapEvents:
 	bg_event  4, 15, BGEVENT_ITEM, MewtwoLab1FHiddenXDefend
 	bg_event 25,  1, BGEVENT_ITEM, MewtwoLab1FHiddenXSpDef
 
-	db 2 ; object events
-	object_event 16, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FPokeDoll, EVENT_MEWTWO_LAB_POKE_DOLL
+	db 3 ; object events
+	object_event 12,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FPokeDoll, EVENT_MEWTWO_LAB_POKE_DOLL
 	object_event 25, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FUltraBall, EVENT_MEWTWO_LAB_ULTRA_BALL
+	object_event 16, 10, SPRITE_PAPER, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_ITEMBALL, 0, MewtwoLab2FSeaMap, EVENT_FOUND_SEA_MAP
