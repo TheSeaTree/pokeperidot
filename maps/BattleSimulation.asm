@@ -79,6 +79,9 @@ BattleSimulation_MapScripts:
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationBlockEntrance
 	applymovement PLAYER, BattleSimulationPlayerLeaveTimeMachine
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineBlock
+	clearevent EVENT_FOUGHT_CHAMPION_IN_PAST
+	checkevent EVENT_CAUGHT_CELEBI
+	iftrue .AfterMaintenance
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iffalse .Fainted
 	opentext
@@ -93,6 +96,14 @@ BattleSimulation_MapScripts:
 .Fainted:
 	opentext
 	writetext TimeMachineReturnFromPastText
+	waitbutton
+	closetext
+	setscene SCENE_BATTLESIMULATION_DEFAULT
+	end
+
+.AfterMaintenance:
+	opentext
+	writetext TimeMachineReturnAfterMaintenanceText
 	waitbutton
 	closetext
 	setscene SCENE_BATTLESIMULATION_DEFAULT
@@ -1080,6 +1091,16 @@ TimeMachineMaintenanceText:
 	cont "MACHINE before we"
 	cont "can allow it to be"
 	cont "used once again."
+	done
+
+TimeMachineReturnAfterMaintenanceText:
+	text "Welcome back,"
+	line "<PLAYER>."
+
+	para "Whenever you are"
+	line "ready to jump back"
+	cont "into the past,"
+	cont "let me know."
 	done
 
 TimeMachineAcceptText:
