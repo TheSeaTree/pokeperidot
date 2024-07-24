@@ -4,7 +4,7 @@
 	;   hp  atk  def  spd  sat  sdf
 
 	db PSYCHIC, PSYCHIC ; type
-	db 45 ; catch rate
+	db 3 ; catch rate
 	db 64 ; base exp
 	db LEGENDS_AURA, LEGENDS_AURA ; items
 	db GENDER_UNKNOWN ; gender ratio
