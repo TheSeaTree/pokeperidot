@@ -27,7 +27,7 @@ DirectBallMerchant:
 .OneBall:
 	checkmoney YOUR_MONEY, 700
 	ifequal HAVE_LESS, .NotEnoughMoney
-	itemtotext HEAVY_BALL, MEM_BUFFER_0
+	itemtotext DIRECT_BALL, MEM_BUFFER_0
 	jump .AskToVend1
 
 .TenBalls:
