@@ -62,7 +62,7 @@ CherrygroveNoMonBottom:
 	closetext
 	stopfollow	
 	end
-	
+
 CherrygroveYoungsterBattle:
 	turnobject PAVONAVILLAGE_YOUNGSTER, LEFT
 	showemote EMOTE_QUESTION, PAVONAVILLAGE_YOUNGSTER, 15
@@ -95,11 +95,49 @@ CherrygroveTeacherScript:
 
 CherrygroveYoungsterScript:
 	faceplayer
+	checkevent EVENT_BEAT_SCHOOLBOY_TIMMY_REMATCH
+	iftrue .AfterRematch
 	opentext
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Rematch
 	writetext CherrygroveYoungsterNoMon
 	waitbutton
 	closetext
 	end
+
+.Rematch:
+	writetext SchoolboyTimmyRematchIntroText
+	waitbutton
+	playmusic MUSIC_YOUNGSTER_ENCOUNTER
+	writetext SchoolboyTimmyRematchChallengeText
+	waitbutton
+	checkevent EVENT_GOT_CHARMANDER_FROM_MAPLE
+	iftrue .CheckCharmander
+	checkevent EVENT_GOT_SQUIRTLE_FROM_MAPLE
+	iftrue .CheckSquirtle
+	writebyte VENUSAUR
+.CheckForStarter
+	special FindPartyMonThatSpecies
+	iftrue .StartBattle
+	writetext SchoolboyTimmyNoStarterText
+	waitbutton
+.StartBattle
+	closetext
+	winlosstext SchoolboyTimmyRematchBeatenText, SchoolboyTimmyRematchWinText
+	loadtrainer SCHOOLBOY, TIMMY_REMATCH
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_SCHOOLBOY_TIMMY_REMATCH
+.AfterRematch:
+	jumptext SchoolboyTimmyAfterRematchText
+
+.CheckCharmander:
+	writebyte CHARIZARD
+	jump .CheckForStarter
+
+.CheckSquirtle:
+	writebyte BLASTOISE
+	jump .CheckForStarter
 
 CherrygroveFisherScript:
 	faceplayer
@@ -242,87 +280,58 @@ SchoolboyTimmyAfterText:
 	para "Until then, I will"
 	line "train every day!"
 	done
-	
-SilverCherrygroveWinText:
-	text "Humph. Are you"
-	line "happy you won?"
+
+SchoolboyTimmyRematchIntroText:
+	text "Hey, <PLAYER>!"
+
+	para "Congrats on becom-"
+	line "ing the CHAMPION!"
+
+	para "I've been training"
+	line "every day, too!"
 	done
 
-CherrygroveRivalText_YouLost:
-	text "<……> <……> <……>"
-
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+SchoolboyTimmyRematchChallengeText:
+	text "Let me show you"
+	line "my progress!"
 	done
 
-SilverCherrygroveLossText:
-	text "Humph. That was a"
-	line "waste of time."
+SchoolboyTimmyRematchBeatenText:
+	text "I thought FURRET"
+	line "could do it alone…"
 	done
 
-CherrygroveRivalText_YouWon:
-	text "<……> <……> <……>"
+SchoolboyTimmyRematchWinText:
+	text "I did it!"
 
-	para "My name's ???."
-
-	para "I'm going to be"
-	line "the world's great-"
-	cont "est #MON"
-	cont "trainer."
+	para "I knew I didn't"
+	line "need a #MON"
+	cont "from PROF. MAPLE!"
 	done
 
-CherrygroveTeacherText_NoMapCard:
-	text "Did you talk to"
-	line "the old man by the"
-	cont "#MON CENTER?"
+SchoolboyTimmyNoStarterText:
+	text "Heh! You don't even"
+	line "have the #MON"
+	cont "from PROF. MAPLE."
 
-	para "He'll put a MAP of"
-	line "JOHTO on your"
-	cont "#GEAR."
+	para "This will be so"
+	line "easy!"
+	done
+
+SchoolboyTimmyAfterRematchText:
+	text "My FURRET & I have"
+	line "been through so"
+	cont "much together."
+
+	para "But we can't take"
+	line "on everything"
+	cont "alone, it seems."
 	done
 
 CherrygroveTeacherText_HaveMapCard:
 	text "When you're with"
 	line "#MON, going"
 	cont "anywhere is fun."
-	done
-
-CherrygroveYoungsterText_NoPokedex:
-	text "MR.#MON's house"
-	line "is still farther"
-	cont "up ahead."
-	done
-
-CherrygroveYoungsterText_HavePokedex:
-	text "I battled the"
-	line "trainers on the"
-	cont "road."
-
-	para "My #MON lost."
-	line "They're a mess! I"
-
-	para "must take them to"
-	line "a #MON CENTER."
-	done
-
-MysticWaterGuyTextBefore:
-	text "A #MON I caught"
-	line "had an item."
-
-	para "I think it's"
-	line "MYSTIC WATER."
-
-	para "I don't need it,"
-	line "so do you want it?"
-	done
-
-MysticWaterGuyTextAfter:
-	text "Back to fishing"
-	line "for me, then."
 	done
 
 CherrygroveCitySignText:

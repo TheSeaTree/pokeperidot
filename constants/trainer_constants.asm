@@ -208,6 +208,7 @@ CHRIS EQU __enum__
 	const OLIVER
 	const JASPER
 	const PATRICK
+	const TIMMY_REMATCH
 
 	trainerclass BIRD_KEEPER ; 18
 	const PHIL
