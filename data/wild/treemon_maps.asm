@@ -51,6 +51,7 @@ TreeMonMaps:
 	treemon_map PAST_FAVIA_TOWN,		   TREEMON_SET_TOWN
 	treemon_map PAST_PECTINIA_CITY,		   TREEMON_SET_TOWN
 	treemon_map PAST_ILEX_FOREST,		   TREEMON_SET_FOREST
+	treemon_map PAST_GENESIS_ISLAND,	   TREEMON_SET_FOREST
 	db -1
 
 RockMonMaps:

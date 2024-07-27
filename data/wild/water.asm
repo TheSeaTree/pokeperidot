@@ -522,4 +522,12 @@ WaterWildMons:
 	db 18, MAGIKARP
 	db 17, MISDREAVUS
 
+	map_id GENESIS_ISLAND
+	db 6 percent ; encounter rate
+	db 58, ANCOR
+	db 57, STARMIE
+	db 59, OCTILLERY
+	db 58, SEADRA
+	db 59, SEADRA
+
 	db -1 ; end
