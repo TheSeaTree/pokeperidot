@@ -385,6 +385,7 @@ AI_Smart:
 	dbw EFFECT_FLY,              AI_Smart_Fly
 	dbw EFFECT_BURN,             AI_Smart_Burn
 	dbw EFFECT_EXTREMESPEED,     AI_Smart_PriorityHit
+	dbw EFFECT_TELEPORT,         AI_Smart_BatonPass
 	db -1 ; end
 
 AI_Smart_Sleep:
