@@ -35,13 +35,13 @@ OutdoorSprites:
 	dw BattleSimGroupSprites
 	dw PastFaviaGroupSprites
 	dw PastPectiniaGroupSprites
-	dw PastRoute11GroupSprites
+	dw PastRoute10GroupSprites
 	dw PastElkhornGroupSprites
 	dw PastPavonaGroupSprites
 
 ; Route1 and ViridianCity are connected
 ; Route2 and PewterCity are connected
-; PalletTown and Route21 are connected
+; PalletTown and Route17 are connected
 PalletGroupSprites:
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
@@ -78,7 +78,7 @@ PewterGroupSprites:
 	db 0 ; end
 
 CinnabarGroupSprites:
-; Route19, Route20, Route21, CinnabarIsland
+; Route15, Route16, Route17, CinnabarIsland
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -122,7 +122,7 @@ CeruleanGroupSprites:
 	db SPRITE_BIG_SNORLAX
 	db 0
 
-; Route4, Route9, Route10North, Route24, Route25, CeruleanCity
+; Route4, Route9, Route10North, Route18, Route19, CeruleanCity
 SaffronGroupSprites:
 ; Route5, SaffronCity
 	db SPRITE_COOLTRAINER_M
@@ -145,7 +145,7 @@ SaffronGroupSprites:
 	db 0 ; end
 
 VermilionGroupSprites:
-; Route6, Route11, VermilionCity
+; Route6, Route10, VermilionCity
 	db SPRITE_POKEFAN_M
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
@@ -173,7 +173,7 @@ CeladonGroupSprites:
 	db 0 ; end
 
 ; Route12 and Route13 are connected
-; Route8, Route12, Route10South, LavenderTown
+; Route7, Route12, Route10South, LavenderTown
 LavenderGroupSprites:
 	db SPRITE_POKEFAN_M
 	db SPRITE_BUENA
@@ -199,7 +199,7 @@ LavenderGroupSprites:
 	db 0 ; end
 
 FuchsiaGroupSprites:
-; Route13, Route14, Route15, Route18, FuchsiaCity
+; Route13, Route13, Route15, Route14, FuchsiaCity
 	db SPRITE_POKEFAN_M
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
@@ -220,7 +220,7 @@ FuchsiaGroupSprites:
 	db 0 ; end
 
 IndigoGroupSprites:
-; Route23
+; Route21
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
@@ -446,7 +446,7 @@ AcroporaGroupSprites:
 	db 0 ; end
 
 SilverGroupSprites:
-; Route28, SilverCaveOutside
+; Route24, SilverCaveOutside
 	db SPRITE_SCIENTIST
 	; 1 of max 9 walking sprites
 	db SPRITE_EGG
@@ -560,7 +560,7 @@ PastPectiniaGroupSprites:
 	db SPRITE_CELEBI
 	db 0
 
-PastRoute11GroupSprites:
+PastRoute10GroupSprites:
 	db SPRITE_LASS
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER

@@ -10,7 +10,7 @@ Landmarks:
 	landmark  68,  84, NewBarkTownName
 	landmark  68,  96, Route1Name
 	landmark  68, 108, CherrygroveCityName
-	landmark  60, 108, Route30Name ;Oasis
+	landmark  60, 108, PavonaOasisName
 	landmark  84, 116, Route2Name
 	landmark 100, 124, AzaleaTownName
 	landmark 108, 116, Route3Name
@@ -19,9 +19,9 @@ Landmarks:
 	landmark 128,  92, Route5Name
 	landmark 132,  84, VioletCityName
 	landmark 128,  76, Route6Name
-	landmark 100,  80, Route7Name ; ROUTE_8
+	landmark 100,  80, Route7Name
 	landmark  84,  84, GoldenrodCityName
-	landmark 108,  84, Route8Name ; ROUTE_10_NORTH
+	landmark 108,  84, Route8Name
 	landmark 100, 110, DiglettsCaveName
 	landmark 100, 108, PalerockMountainName
 	landmark 100, 100, CianwoodCityName
@@ -37,17 +37,17 @@ Landmarks:
 	landmark  72,  42, BoneyardName
 	landmark  84,  44, OlivineCityName
 	landmark  84,  36, MahoganyTownName
-	landmark  64,  36, Route14Name ; ROUTE_18
+	landmark  64,  36, Route14Name
 	landmark  52,  36, CarnationTownName
 	landmark  44,  36, SafariZoneName
-	landmark  44,  44, Route15Name ; ROUTE_19
-	landmark  36,  52, Route16Name ; ROUTE_20
+	landmark  44,  44, Route15Name
+	landmark  36,  52, Route16Name
 	landmark  36,  60, BlackthornCityName
-	landmark  42,  68, Route17Name ; ROUTE_21
-	landmark  28,  68, Route18Name ; ROUTE_24
-	landmark  28,  76, Route19Name ; ROUTE_25
+	landmark  42,  68, Route17Name
+	landmark  28,  68, Route18Name
+	landmark  28,  76, Route19Name
 	landmark  26,  60, MoltenPeakName
-	landmark  20,  60, Route20Name ; ROUTE_22
+	landmark  20,  60, Route20Name
 	landmark  20,  52, OrchidCityName
 	landmark  96,  44, SeaRoute1Name
 	landmark 100,  58, SeaRoute2Name
@@ -56,12 +56,12 @@ Landmarks:
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
 	landmark 132,  44, SeaRoute6Name
-	landmark 140,  44, Route21Name ; ROUTE_23
-	landmark 140,  36, Route22Name ; ROUTE_27
-	landmark 148,  36, Route23Name ; ROUTE_26
+	landmark 140,  44, Route21Name
+	landmark 140,  36, Route22Name
+	landmark 148,  36, Route23Name
 	landmark 132,  36, VictoryRoadName
 	landmark 121,  36, SeaRoute7Name
-	landmark 116,  24, Route24Name ; ROUTE_28
+	landmark 116,  24, Route24Name
 	landmark 132,  28, PokemonLeagueName
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
@@ -141,7 +141,7 @@ SeaRoute4Name:        db "SEA ROUTE 4@"
 SeaRoute5Name:        db "SEA ROUTE 5@"
 SeaRoute6Name:        db "SEA ROUTE 6@"
 SeaRoute7Name:        db "SEA ROUTE 7@"
-Route30Name:	      db "PAVONA¯OASIS@"
+PavonaOasisName:      db "PAVONA¯OASIS@"
 CarnationZooName:     db "CARNATION¯ZOO@"
 DarkCaveName:         db "DARK CAVE@"
 IlexForestName:       db "OCCIDENT¯FOREST@"

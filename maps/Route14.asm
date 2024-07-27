@@ -1,700 +1,468 @@
 	const_def 2 ; object constants
-	const ROUTE_13_TUTOR
-	const ROUTE_13_ODDISH
+	const ROUTE14_TRAINER1
+	const ROUTE14_TRAINER2
+	const ROUTE14_TRAINER3
+	const ROUTE14_TRAINER4
+	const ROUTE14_TRAINER5
+	const ROUTE14_TAUROS1
+	const ROUTE14_TAUROS2
+	const ROUTE14_MARIE1
+	const ROUTE14_BESSIE1
+	const ROUTE14_MARIE2
+	const ROUTE14_BESSIE2
+	const ROUTE14_GRAMPS
+	const ROUTE14_POKEBALL1
+	const ROUTE14_POKEBALL2
 
 Route14_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
-TrainerLadTristan:
-	trainer LAD, TRISTAN, EVENT_BEAT_LAD_TRISTAN, LadTristanText, LadTristanWinText, 0, .AfterScript
+
+TrainerBirdKeeperRicky:
+	trainer BIRD_KEEPER, RICKY, EVENT_BEAT_BIRD_KEEPER_RICKY, BirdKeeperRickyText, BirdKeeperRickyWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext LadTristanAfterText
+	writetext BirdKeeperRickyAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPokefanFMarci:
+	trainer POKEFANF, MARCI, EVENT_BEAT_POKEFANF_MARCI, PokefanFMarciText, PokefanFMarciWinText, 0, .Script
+
+.Script:
+	endifjustbattled
+	opentext
+	writetext PokefanFMarciAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerBeautyBrianna:
+	trainer BEAUTY, BRIANNA, EVENT_BEAT_BEAUTY_BRIANNA, BeautyBriannaText, BeautyBriannaWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext BeautyBriannaAfterText
+	waitbutton
+	closetext
+	end
+
+TrainerPicnickerTammy:
+	trainer PICNICKER, TAMMY, EVENT_BEAT_PICNICKER_TAMMY, PicnickerTammyText, PicnickerTammyWinText, 0, .AfterScript
+
+.AfterScript:
+	endifjustbattled
+	opentext
+	writetext PicnickerTammyAfterText
 	waitbutton
 	closetext
 	end
 	
-TrainerTwinLeah:
-	trainer TWINS, LEAHANDMIA1, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinLeahText, TwinLeahWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext TwinLeahAfterText
-	waitbutton
-	closetext
-	end
-
-TrainerTwinMia:
-	trainer TWINS, LEAHANDMIA2, EVENT_BEAT_TWINS_LEAH_AND_MIA, TwinMiaText, TwinMiaWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext TwinMiaAfterText
-	waitbutton
-	closetext
-	end
+TrainerFisherFisher:
+	trainer FISHER, FISHER_TRAINER, EVENT_BEAT_FISHER_FISHER, FisherFisherText, FisherFisherWinText, 0, .AfterScript
 	
-TrainerBugCatcherCarlos:
-	trainer BUG_CATCHER, CARLOS, EVENT_BEAT_BUG_CATCHER_CARLOS, BugCatcherCarlosText, BugCatcherCarlosWinText, 0, .AfterScript
-
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherCarlosAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerLassGinger:
-	trainer LASS, GINGER, EVENT_BEAT_LASS_GINGER, LassGingerText, LassGingerWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext LassGingerAfterText
+	writetext FisherFisherAfterText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicWes:
-	trainer PSYCHIC_T, WES, EVENT_BEAT_PSYCHIC_WES, PsychicWesText, PsychicWesWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext PsychicWesAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerLassKelly:
-	trainer LASS, KELLY, EVENT_BEAT_LASS_KELLY, LassKellyText, LassKellyWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext LassKellyAfterText
-	waitbutton
-	closetext
-	end
-
-TrainerTeacherLisa:
-	trainer TEACHER, LISA, EVENT_BEAT_TEACHER_LISA, TeacherLisaText, TeacherLisaWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext TeacherLisaAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerSuperNerdSandy:
-	trainer SUPER_NERD, SANDY, EVENT_BEAT_SUPER_NERD_SANDY, SuperNerdSandyText, SuperNerdSandyWinText, 0, .AfterScript
-
-.AfterScript:
-	endifjustbattled
-	opentext
-	writetext SuperNerdSandyAfterText
-	waitbutton
-	closetext
-	end
-	
-Route14MoveTutor:
-	applymovement ROUTE_13_TUTOR, Route14TutorDance
+TrainerMarieScript:
 	faceplayer
 	opentext
-	checkevent EVENT_LOVE_BALLS_FOR_SALE
-	iftrue .SellBalls
-	writetext Route14TutorText
+	writetext Route14DaughterText
 	waitbutton
-	applymovement ROUTE_13_TUTOR, Route14TutorDance
-	faceplayer
-	writetext Route14TutorDanceText
+	checkevent EVENT_TALKED_TO_MARIES_GRANDFATHER
+	iffalse .No
+	writetext Route14DaughterNoticeBadges
 	waitbutton
-	yesorno
-	iffalse .Refused
-	writetext Route14DancerAcceptText
+	playmusic MUSIC_LASS_ENCOUNTER
+	writetext Route14DaughterChallengeText
 	waitbutton
 	closetext
-	winlosstext Route14DancerWinText, -1
-	loadtrainer KIMONO_GIRL, ANRI
+	winlosstext Route14DaughterWinText, 0
+    loadtrainer BEAUTY, MARIE1
 	startbattle
 	reloadmapafterbattle
-	setevent EVENT_LOVE_BALLS_FOR_SALE
-	applymovement ROUTE_13_TUTOR, Route14TutorDance
+	opentext
+	writetext Route14DaughterAfterText
+	waitbutton
+	closetext
+	setevent EVENT_MARIE_GONE_HOME
+	special FadeBlackQuickly
+	special ReloadSpritesNoPalettes
+	pause 12
+	disappear ROUTE14_MARIE1
+	disappear ROUTE14_BESSIE1
+	disappear ROUTE14_GRAMPS
+	setmapscene ROUTE_14_FARMHOUSE, SCENE_FINISHED
+	special FadeInQuickly
+	end
+	
+.No
+	closetext
+	end
+
+TrainerMarieAfterScript:
+	checkevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+	iftrue .AfterBattle
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .Postgame
+	jumptextfaceplayer TrainerMarieBackHomeText
+
+.Postgame
 	faceplayer
 	opentext
-	writetext Route14DancerAfterText
-	waitbutton
-	jump .Start
-	
-.SellBalls
-	writetext MerchantSellLoveBall
-	jump .Start
-.PurchaseMore:
-	writetext LoveBallMerchantMoreSelection
-.Start:
-	special PlaceMoneyTopRight
-	loadmenu .MenuHeader
-	verticalmenu
-	closewindow
-	ifequal 1, .OneBall
-	ifequal 2, .TenBalls
-	applymovement ROUTE_13_TUTOR, Route14TutorDance
-	faceplayer
-	writetext LoveBallMerchantComeBack
+	writetext TrainerMariePostgameChallengeText
+	yesorno
+	iffalse .Decline
+	writetext TrainerMariePostgameAcceptText
 	waitbutton
 	closetext
-	end
-	
-.Refused:
-	writetext Route14TutorRefused
-	waitbutton
-	closetext
-	end
-	
-.OneBall:
-	checkmoney YOUR_MONEY, 300
-	ifequal HAVE_LESS, .NotEnoughMoney
-	itemtotext LOVE_BALL, MEM_BUFFER_0
-	jump .AskToVend1
-
-.TenBalls:
-	checkmoney YOUR_MONEY, 3000
-	ifequal HAVE_LESS, .NotEnoughMoney
-	jump .AskToVend10
-	
-.AskToVend1:
-	writetext LoveBallMerchantBuy1Text
-	yesorno
-	iffalse .No
-	giveitem LOVE_BALL
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 300
-	jump .VendItem
-.AskToVend10:
-	writetext LoveBallMerchantBuy10Text
-	yesorno
-	iffalse .No
-	giveitem LOVE_BALL, 10
-	iffalse .NotEnoughSpace
-	takemoney YOUR_MONEY, 3000
-.VendItem
-	playsound SFX_TRANSACTION
-	waitsfx
-	special PlaceMoneyTopRight
-	itemnotify
-	jump .PurchaseMore
-
-.NotEnoughMoney:
-	writetext LoveBallMerchantNoMoneyText
-	waitbutton
-	jump .Start
-
-.NotEnoughSpace:
-	writetext LoveBallMerchantNoSpaceText
-	waitbutton
-	jump .PurchaseMore
-	
-.No:
-	writetext LoveBallMerchantNo
-	waitbutton
-	jump .Start
-
-.MenuHeader:
-	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 10, TEXTBOX_Y - 2
-	dw .MenuData
-	db 1 ; default option
-
-.MenuData:
-	db STATICMENU_CURSOR ; flags
-	db 3 ; items
-	db "1   ¥300@"
-	db "10 ¥3000@"
-	db "CANCEL@"
-
-BlackGlassesGuy:
+	winlosstext TrainerMariePostgameWinText, 0
+    loadtrainer BEAUTY, MARIE2
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BEAUTY_MARIE_POSTGAME
+.AfterBattle
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_BLACKGLASSES
-	iftrue .GotGlasses
-	writetext Route14BlackGlassesGuy
-	checkevent EVENT_GOT_TM_SUNNY_DAY
-	waitbutton
-	iftrue .GiveGlasses
-	closetext
-	end
-
-.GiveGlasses:
-	writetext Route14GiveBlackGlasses
-	waitbutton
-	verbosegiveitem BLACKGLASSES
-	iffalse .NoRoom
-	waitbutton
-	closetext
-	setevent EVENT_GOT_BLACKGLASSES
-	end
-	
-.GotGlasses:
-	writetext Route14ExplainBlackGlasses
+	writetext TrainerMariePostgameAfterText
 	waitbutton
 	closetext
 	end
 
-.NoRoom:
-	writetext Route14BlackGlassesGuyBagFullText
+.Decline
+	writetext TrainerMariePostgameDeclineText
+	waitbutton
+	closetext
+	end
+	
+MariesGrandfatherScript:
+	faceplayer
+	opentext
+	writetext Route14GrandfatherText
+	waitbutton
+	closetext
+	setevent EVENT_TALKED_TO_MARIES_GRANDFATHER
+	end
+
+Route14MiltankScript:
+	opentext
+	writetext Route14MiltankText
+	cry MILTANK
 	waitbutton
 	closetext
 	end
 
-Route14CaveGuard:
-	jumptextfaceplayer Route14CaveGuardText
+Route14FarmSign:
+	jumptext Route14FarmSignText
 	
-Route14UltraBall:
-	itemball ULTRA_BALL
-	
-Route14Nugget:
-	itemball NUGGET
+Route14HiddenUltraBall:
+	hiddenitem ULTRA_BALL, EVENT_ROUTE_14_HIDDEN_ULTRA_BALL
 	
 Route14HiddenPowerHerb:
-	hiddenitem POWER_HERB, EVENT_ROUTE_13_HIDDEN_POWER_HERB
+	hiddenitem POWER_HERB, EVENT_ROUTE_14_HIDDEN_POWER_HERB
+
+Route14LeafStone:
+	itemball LEAF_STONE
+
+Route14MaxRepel:
+	itemball MAX_REPEL
 	
-Route14HiddenEnergyRoot:
-	hiddenitem ENERGY_ROOT, EVENT_ROUTE_13_HIDDEN_ENERGY_ROOT
+BirdKeeperRickyText:
+	text "Going around the"
+	line "world finding new"
+	cont "bird #MON."
 	
-Route14HiddenMaxEther:
-	hiddenitem MAX_ETHER, EVENT_ROUTE_13_HIDDEN_MAX_ETHER
-	
-Route14TutorDance:
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	turn_head LEFT
-	turn_head UP
-	turn_head RIGHT
-	turn_head DOWN
-	step_end
-	
-LadTristanText:
-	text "I saw a really"
-	line "rare #MON enter"
-	cont "the cave!"
+	para "That's the life!"
 	done
 	
-LadTristanWinText:
-	text "That was the first"
-	line "time I ever lost…"
+BirdKeeperRickyWinText:
+	text "Prepare for a"
+	line "crash landing!"
 	done
 	
-LadTristanAfterText:
-	text "If I catch some"
-	line "rare #MON my-"
-	cont "self, I won't lose"
-	cont "ever again."
+BirdKeeperRickyAfterText:
+	text "My loss is no"
+	line "matter. I will"
+	cont "find even better"
+	cont "bird #MON"
+	cont "somewhere else!"
+	done
+	
+PokefanFMarciText:
+	text "My children are"
+	line "#MON trainers"
+	cont "just like their"
+	cont "mother!"
+	done
+	
+PokefanFMarciWinText:
+	text "It seems like time"
+	line "for a new generat-"
+	cont "ion of trainers."
+	done
+	
+PokefanFMarciAfterText:
+	text "I taught my"
+	line "daughter how to"
+	cont "evolve #MON"
+	cont "using a stone!"
+	done
+	
+BeautyBriannaText:
+	text "I love to take my"
+	line "pet #MON for"
+	cont "walks out here."
+	done
+	
+BeautyBriannaWinText:
+	text "That's okay,"
+	line "babies. Mommy will"
+	cont "carry you home!"
+	done
+	
+BeautyBriannaAfterText:
+	text "This farm is so"
+	line "cozy!"
+	done
+	
+PicnickerTammyText:
+	text "My mom taught me"
+	line "how to evolve my"
+	cont "#MON!"
+	done
+	
+PicnickerTammyWinText:
+	text "Wah! Why didn't"
+	line "they get stronger!"
+	done
+	
+PicnickerTammyAfterText:
+	text "I don't get it."
+	line "All of my #MON"
+	cont "are fully evolved."
+	done
+	
+FisherFisherText:
+	text "Hey, that's my"
+	line "item!"
+	
+	para "I saw it first!"
+	done
+	
+FisherFisherWinText:
+	text "Okay, okay."
+	line "You can take it."
 	done
 
-TwinLeahText:
-	text "LEAH: We may be"
-	line "little,"
-	
-	para "MIA: But we have"
-	line "strong #MON!"
-	done
-	
-TwinLeahWinText:
-	text "MIA: I told you we"
-	line "should have led"
-	cont "with my #MON,"
-	cont "LEAH!"
-	
-	para "LEAH: Sorry!"
-	done
-	
-TwinLeahAfterText:
-	text "LEAH: Wouldn't it"
-	line "have been neat if"
-	cont "we could have a"
-	cont "two-on-two battle?"
-	
-	para "MIA: LEAH, you"
-	line "know those are"
-	cont "against the rules!"
+FisherFisherAfterText:
+	text "My parents must be"
+	line "PSYCHIC-types to"
+	cont "choose my name the"
+	cont "way they did."
 	done
 
-TwinMiaText:
-	text "MIA: My sister and"
-	line "I can read each"
-	cont "others' mind."
-
-	para "LEAH: Yeah! So you"
-	line "had better watch"
-	cont "out!"
+Route14MiltankText:
+	text "MILTANK: Moo!"
 	done
 	
-TwinMiaWinText:
-	text "LEAH: Cheer up,"
-	line "MIA. We'll win"
-	cont "the next one."
+Route14GrandfatherText:
+	text "My granddaughter"
+	line "has been shirking"
+	cont "out of her respon-"
+	cont "sibilities on this"
+	cont "farm."
 	
-	para "MIA: For sure!"
+	para "She even snuck off"
+	line "with our best"
+	cont "MILTANK!"
+	
+	para "She is always"
+	line "talking about"
+	cont "making it big as a"
+	cont "#MON trainer,"
+	cont "but she never"
+	cont "thinks about the"
+	cont "well-being of her"
+	cont "family!"
 	done
 	
-TwinMiaAfterText:
-	text "MIA: Not only do"
-	line "LEAH and I have a"
-	cont "special bond, but"
-	cont "our #MON know"
-	cont "what we're think-"
-	cont "ing too."
+Route14DaughterText:
+	text "Isn't this"
+	line "amazing? I taught"
+	cont "BESSIE how to swim"
+	cont "all on my own!"
 	
-	para "LEAH: It's like"
-	line "all of our minds"
-	cont "are synced up!"
-	done
+	para "I take her out"
+	line "here to get away"
+	cont "from the farm."
 	
-LassGingerText:
-	text "My #MON have"
-	line "all become so"
-	cont "unique!"
-	done
-	
-LassGingerWinText:
-	text "My team wasn't"
-	line "diverse enough."
-	done
-	
-LassGingerAfterText:
-	text "I was always told"
-	line "that training a"
-	cont "diverse team was"
-	cont "important."
-	
-	para "Even if they have"
-	line "the same starting"
-	cont "point!"
-	done
-	
-BugCatcherCarlosText:
-	text "Some people think"
-	line "BUG-type #MON"
-	cont "are weak."
-	done
-	
-BugCatcherCarlosWinText:
-	text "Oh no!"
-	line "They were right!"
-	done
-	
-PsychicWesText:
-	text "I have trained my"
-	line "mind over many"
-	cont "years to reach"
-	cont "this level!"
-	done
-	
-PsychicWesWinText:
-	text "My #MON's minds"
-	line "were not strong"
-	cont "enough."
-	done
-	
-PsychicWesAfterText:
-	text "I will train my"
-	line "#MON as strict"
-	cont "as I train myself."
-	
-	para "Then we will be"
-	line "unstoppable!"
-	done
-	
-BugCatcherCarlosAfterText:
-	text "I traveled all the"
-	line "way out here to"
-	cont "show people my BUG"
-	cont "#MON."
-	
-	para "…They didn't care."
+	para "I wasn't meant to"
+	line "stay cooped up"
+	cont "there forever! I"
+	cont "want to travel the"
+	cont "world with #MON"
+	cont "that I caught!"
 	done
 
-LassKellyText:
-	text "I skipped class to"
-	line "be out here."
+Route14DaughterNoticeBadges:
+	text "Those things you"
+	line "have pinned to"
+	cont "your jacket…"
+	
+	para "Are those badges?"
+	
+	para "Grandpa would have"
+	line "to let me go out"
+	cont "on an adventure if"
+	cont "I was able to beat"
+	cont "someone who bested"
+	cont "GYM LEADERs!"
 	done
 	
-LassKellyWinText:
-	text "Don't tell on me!"
+Route14DaughterChallengeText:
+	text "Come on, BESSIE!"
+	
+	para "Let's prove that I"
+	line "deserve to be a"
+	cont "#MON trainer!"
 	done
 	
-LassKellyAfterText:
-	text "Sometimes you just"
-	line "need to take a"
-	cont "break to relieve"
-	cont "some stress."
+Route14BessieText:
+	text "BESSIE: Moo!"
 	done
 	
-TeacherLisaText:
-	text "Normally I don't"
-	line "encourage battles"
-	cont "around students."
+Route14DaughterWinText:
+	text "I will never give"
+	line "up!"
 	
-	para "Today is my day"
-	line "off, though."
-	done
-	
-TeacherLisaWinText:
-	text "Thankfully none of"
-	line "my students were"
-	cont "around to see my"
-	cont "loss."
-	done
-	
-TeacherLisaAfterText:
-	text "Respect is key in"
-	line "running a class-"
-	cont "room."
-	done
-	
-SuperNerdSandyText:
-	text "Ha! Sneak attack!"
-	
-	para "Roll with dis-"
-	line "advantage!"
-	done
-	
-SuperNerdSandyWinText:
-	text "I needed my"
-	line "saving throw!"
-	done
-	
-SuperNerdSandyAfterText:
-	text "That was a fun"
-	line "encounter. I will"
-	cont "reference it the"
-	cont "next time I run a"
-	cont "campaign."
+	para "My dream will not"
+	line "die!"
 	done
 
-Route14TutorText:
-	text "Hello there."
+Route14DaughterAfterText:
+	text "You won, but you"
+	line "have a lot more"
+	cont "experience than"
+	cont "I do!"
 	
-	para "I'm sorry, you"
-	line "caught me right in"
-	cont "the middle of my"
-	cont "dance routine."
-	done
+	para "I will catch more"
+	line "#MON."
 	
-Route14TutorDanceText:
-	text "I love to dance"
-	line "with my #MON."
-	
-	para "I also adore comb-"
-	line "ining dance with"
-	cont "battle."
-	
-	para "Would you care to"
-	line "perform with us?"
+	para "When I do, we will"
+	line "battle again!"
 	done
 
-Route14TutorRefused:
-	text "No matter. You may"
-	line "always find me"
-	cont "right here."
+TrainerMarieBackHomeText:
+	text "Heya, <PLAYER>!"
+	
+	para "I've put my dreams"
+	line "of being a #MON"
+	cont "trainer on hold"
+	cont "for a while, but I"
+	cont "promise we will"
+	cont "battle again!"
 	done
 
-Route14DancerAcceptText:
-	text "Wonderful!"
+TrainerMariePostgameChallengeText:
+	text "Oh! <PLAYER>!"
 	
-	para "I hope you can"
-	line "keep up!"
-	done
-	
-Route14DancerWinText:
-	text "Oh my…"
-	
-	para "I did not expect"
-	line "such moves out of"
-	cont "you. You're good."
-	done
+	para "I saw on the TV"
+	line "that you and your"
+	cont "#MON became the"
+	cont "CHAMPION!"
 
-Route14DancerAfterText:
-	text "Dance has been so"
-	line "often used in cou-"
-	cont "rtship between"
-	cont "members of the"
-	cont "opposite gender."
-	
-	para "…While I don't have"
-	line "feelings for you"
-	cont "in that way, I'd be"
-	cont "happy to share"
-	cont "some LOVE with you"
-	cont "in the form of the"
-	cont "LOVE BALL!"
-	
-	para "Would you care to"
-	line "buy some from me?"
-	done
-	
-MerchantSellLoveBall:
-	text "Ah! It's you!"
+	para "You know, grandpa"
+	line "has allowed me to"
+	cont "train some with"
+	cont "BESSIE!"
 
-	para "Do you need more"
-	line "LOVE BALLs?"
+	para "Can I show you"
+	line "what I've learned?"
 	done
 
-LoveBallMerchantMoreSelection:
-	text "Would you like any"
-	line "more LOVE BALLs?"
-	done
-	
-LoveBallMerchantNoMoneyText:
-	text "Sorry, but you can"
-	line "not afford that"
-	cont "many right now…"
+TrainerMariePostgameAcceptText:
+	text "Yipee!"
+
+	para "I won't waste your"
+	line "time, I promise!"
 	done
 
-LoveBallMerchantNoSpaceText:
-	text "How could you"
-	line "dance so well with"
-	cont "your PACK stuffed"
-	cont "so full?"
-	
-	para "Please clear up"
-	line "some space for an"
-	cont "item."
-	done
-	
-LoveBallMerchantBuy1Text:
-	text "A @"
-	text_from_ram wStringBuffer3
-	text_start
-	line "will cost ¥300,"
-	cont "okay?"
-	done	
+TrainerMariePostgameWinText:
+	text "Gah! I'm not quite"
+	line "there yet!"
 
-LoveBallMerchantBuy10Text:
-	text "10 LOVE BALLs will"
-	line "cost ¥3000, okay?"
+	para "Good battle!"
 	done
 
-LoveBallMerchantNo:
-	text "Would you prefer a"
-	line "different amount?"
-	done
+TrainerMariePostgameAfterText:
+	text "I don't feel bad"
+	line "about losing to a"
+	cont "CHAMPION, not one"
+	cont "bit!"
 	
-LoveBallMerchantComeBack:
-	text "Take care!"
-	
-	para "Also."
-	
-	para "You don't need to"
-	line "see me just to buy"
-	cont "LOVE BALLs."
-	
-	para "You may also be my"
-	line "dance partner any"
-	cont "time."
+	para "The fact I stood"
+	line "any chance gives"
+	cont "me so much hope!"
 	done
 
-Route14CaveGuardText:
-	text "Groan…"
+TrainerMariePostgameDeclineText:
+	text "…Oh, I see."
 
-	para "A #MON in there"
-	line "clobbered me and"
-	cont "my team!"
+	para "You must be so"
+	line "busy these days."
 
-	para "If I can't take it"
-	line "on, there's no way"
-	cont "some kid could."
-	
-	para "… … …"
-	line "Ouch!"
-	done
-	
-Route14BlackGlassesGuy:
-	text "You like these"
-	line "glasses I have on?"
-	
-	para "Thanks, I wear"
-	line "them to protect my"
-	cont "eyes from the sun-"
-	cont "light."
+	para "If you find the"
+	line "time for me, I"
+	cont "would love to show"
+	cont "you my #MON!"
 	done
 
-Route14GiveBlackGlasses:
-	text "The sun seems a"
-	line "lot brighter with"
-	cont "you around."
-
-	para "Here, I have an"
-	line "extra pair you can"
-	cont "have."
-	done
-
-Route14ExplainBlackGlasses:
-	text "Those glasses"
-	line "aren't just for"
-	cont "looking cool, they"
-	cont "also boost DARK-"
-	cont "type moves."
+Route14FarmSignText:
+	text "MOOMOO FARMS"
 	
-	para "You might want to"
-	line "use them yourself"
-	cont "when SUNNY DAY is"
-	cont "active."
-	done
-
-Route14BlackGlassesGuyBagFullText:
-	text "Woah, there!"
-
-	para "It ain't cool to"
-	line "have a BAG overfl-"
-	cont "owing with items."
+	para "Fresh milk daily!"
 	done
 
 Route14_MapEvents:
 	db 0, 0 ; filler
 
-	db 4 ; warp events
-	warp_event 40,  7, THE_BONEYARD_1F, 5
-	warp_event 55, 10, ROUTE_13_RUGOSA_GATE, 1
-	warp_event 55, 11, ROUTE_13_RUGOSA_GATE, 2
-	warp_event 17,  5, ROUTE_13_GATE, 1
+	db 6 ; warp events
+	warp_event 27, 35, ROUTE_13_GATE, 3
+	warp_event 28, 35, ROUTE_13_GATE, 4
+	warp_event  4, 18, ROUTE_14_CARNATION_GATE, 3
+	warp_event  4, 19, ROUTE_14_CARNATION_GATE, 4
+	warp_event 27,  3, ROUTE_14_BARN, 1
+	warp_event 31,  3, ROUTE_14_FARMHOUSE, 1
 
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event 54, 23, BGEVENT_ITEM, Route14HiddenPowerHerb
-	bg_event 49, 17, BGEVENT_ITEM, Route14HiddenEnergyRoot
-	bg_event 34, 13, BGEVENT_ITEM, Route14HiddenMaxEther
+	bg_event 23,  9, BGEVENT_READ, Route14FarmSign
+	bg_event 20, 19, BGEVENT_ITEM, Route14HiddenUltraBall
+	bg_event 19,  8, BGEVENT_ITEM, Route14HiddenPowerHerb
 
-	db 14 ; object events
-	object_event 26,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
-	object_event 40,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_11_LEADER
-	object_event 42, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
-	object_event 43, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMia, -1
-	object_event 39, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherCarlos, -1
-	object_event 41, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassGinger, -1
-	object_event 53, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicWes, -1
-	object_event 37, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLadTristan, -1
-	object_event 20,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, BlackGlassesGuy, -1
-	object_event 47,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_13_ULTRA_BALL
-	object_event 26, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_13_NUGGET
-	object_event 12, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassKelly, -1
-	object_event 14, 12, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherLisa, -1
-	object_event  6, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdSandy, -1
-	
+	db 14 ; object events 
+	object_event 25, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperRicky, -1
+	object_event 22, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerPokefanFMarci, -1
+	object_event 10, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBrianna, -1
+	object_event 16, 15, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerPicnickerTammy, -1
+	object_event 11, 25, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherFisher, -1
+	object_event 20,  3, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14MiltankScript, -1
+	object_event 14,  7, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14MiltankScript, -1
+	object_event 16, 33, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieScript, EVENT_MARIE_GONE_HOME
+	object_event 15, 33, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14MiltankScript, EVENT_MARIE_GONE_HOME
+	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieAfterScript, -1 ; Runaway Daughter After
+	object_event 11,  5, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14MiltankScript, -1 ; Her Miltank After
+	object_event 24,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MariesGrandfatherScript, EVENT_MARIE_GONE_HOME
+	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14LeafStone, EVENT_ROUTE_14_LEAF_STONE
+	object_event 12, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14MaxRepel, EVENT_ROUTE_14_MAX_REPEL

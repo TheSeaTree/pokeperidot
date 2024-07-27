@@ -3,7 +3,7 @@ BrentBillTriviaScript:
 	ifequal 0, .Father
 	ifequal 1, .Grandpa
 	ifequal 2, .Goldenrod
-	ifequal 3, .Route25
+	ifequal 3, .Route19
 	ifequal 4, .Abra
 	ifequal 5, .Sister
 	ifequal 6, .Milk
@@ -26,7 +26,7 @@ BrentBillTriviaScript:
 	buttonsound
 	jump PhoneScript_HangupText_Male
 
-.Route25:
+.Route19:
 	farwritetext UnknownText_0x66366
 	buttonsound
 	jump PhoneScript_HangupText_Male

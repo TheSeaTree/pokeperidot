@@ -16,7 +16,7 @@ TreeMonMaps:
 	treemon_map ROUTE_5,                   TREEMON_SET_ROUTE
 	treemon_map RIDGE_VILLAGE,             TREEMON_SET_TOWN
 	treemon_map ROUTE_7,                   TREEMON_SET_FOREST
-	treemon_map ROUTE_8_NORTH,             TREEMON_SET_FOREST
+	treemon_map ROUTE_8,                   TREEMON_SET_FOREST
 	treemon_map ROUTE_9,                   TREEMON_SET_ROUTE
 	treemon_map ROUTE_10,                  TREEMON_SET_ROUTE
 	treemon_map ILEX_FOREST,               TREEMON_SET_FOREST

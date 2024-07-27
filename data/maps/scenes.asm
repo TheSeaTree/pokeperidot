@@ -9,7 +9,7 @@ MapScenes::
 	scene_var TRADE_CENTER,                             wTradeCenterSceneID
 	scene_var COLOSSEUM,                                wColosseumSceneID
 	scene_var SEA_ROUTE_2,                              wRoute16GateSceneID
-	scene_var ROUTE_7_ROUTE_8_GATE,                     wRoute17Route18GateSceneID
+	scene_var ROUTE_7_ROUTE_8_GATE,                     wRoute17Route14GateSceneID
 	scene_var POKEMON_LEAGUE_POKECENTER_1F,             wPokemonLeaguePokecenter1FSceneID
 	scene_var WILBURS_ROOM,                             wWilbursRoomSceneID
 	scene_var REGANS_ROOM,                              wRegansRoomSceneID
@@ -33,7 +33,7 @@ MapScenes::
 	scene_var HEPATICA_TOWN,                            wCianwoodCitySceneID
 	scene_var PALEROCK_MOUNTAIN_3F,                     wBattleTowerOutsideSceneID ; unused
 	scene_var NORTH_FOREST,                             wNorthForestSceneID
-	scene_var ROUTE_24_GATE,                            wRoute28GateSceneID
+	scene_var ROUTE_24_GATE,                            wRoute24GateSceneID
 	scene_var RUGOSA_CITY,                              wMahoganyMart1FSceneID ; unused
 	scene_var ROUTE_1,                                 	wRoute1SceneID
 	scene_var RIDGE_VILLAGE,							wVioletCitySceneID
@@ -41,14 +41,14 @@ MapScenes::
 	scene_var VICTORY_PORT,								wVictoryPortSceneID
 	scene_var STAGHORN_GYM,                             wEcruteakGymSceneID
 	scene_var STAGHORN_TOWN,                            wEcruteakCitySceneID
-	scene_var ROUTE_11_SHELTER,							wRoute12ShelterSceneID
+	scene_var ROUTE_11_SHELTER,							wRoute11ShelterSceneID
 	scene_var LOST_LAND,								wLostLandSceneID
 	scene_var FLUTE_MASTER_HOUSE,						wFluteMasterHouseSceneID
 	scene_var BURGLAR_HIDEOUT_B1F,						wBurglarHideoutB1FSceneID
 	scene_var UNOWN_CHAMBER_HN,							wUnownChamberHNSceneID
 	scene_var UNOWN_CHAMBER_OU,							wUnownChamberOUSceneID
 	scene_var UNOWN_CHAMBER_VZ,							wUnownChamberVZSceneID
-	scene_var ROUTE_14_FARMHOUSE,						wRoute18FarmhouseSceneID
+	scene_var ROUTE_14_FARMHOUSE,						wRoute14FarmhouseSceneID
 	scene_var CARNATION_ZOO,							wCarnationZooSceneID
 	scene_var ORCHID_GYM_1F,						   	wOrchidGym1FSceneID
 	scene_var BATTLE_SUBWAY_PLATFORM,                   wBattleSubwayPlatformSceneID

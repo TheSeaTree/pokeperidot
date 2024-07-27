@@ -91,11 +91,11 @@ endc
 ENDM
 
 	map_attributes ElkhornTown, ELKHORN_TOWN, $05, NORTH | SOUTH
-	connection north, Route11, ROUTE_10, 2
+	connection north, Route10, ROUTE_10, 2
 	connection south, Route1, ROUTE_1, -3
 
 	map_attributes PavonaVillage, PAVONA_VILLAGE, $05, WEST | EAST
-	connection west, Route30, PAVONA_OASIS, -1
+	connection west, PavonaOasis, PAVONA_OASIS, -1
 	connection east, Route2, ROUTE_2, 7
 
 	map_attributes RidgeVillage, RIDGE_VILLAGE, $05, NORTH | SOUTH
@@ -120,27 +120,27 @@ ENDM
 	map_attributes RugosaCity, RUGOSA_CITY, $05, 0
 
 	map_attributes AcroporaCity, ACROPORA_CITY, $05, SOUTH | WEST
-	connection south, Route21, ROUTE_17, 8
-	connection west, Route24North, ROUTE_18_NORTH, 2
+	connection south, Route17, ROUTE_17, 8
+	connection west, Route18North, ROUTE_18_NORTH, 2
 
-	map_attributes Route21, ROUTE_17, $05, NORTH | WEST
+	map_attributes Route17, ROUTE_17, $05, NORTH | WEST
 	connection north, AcroporaCity, ACROPORA_CITY, -8
-	connection west, Route24South, ROUTE_18_SOUTH, 0
+	connection west, Route18South, ROUTE_18_SOUTH, 0
 
-	map_attributes Route24North, ROUTE_18_NORTH, $20, SOUTH | EAST
-	connection south, Route24South, ROUTE_18_SOUTH, 1
+	map_attributes Route18North, ROUTE_18_NORTH, $20, SOUTH | EAST
+	connection south, Route18South, ROUTE_18_SOUTH, 1
 	connection east, AcroporaCity, ACROPORA_CITY, -2
 
-	map_attributes Route24South, ROUTE_18_SOUTH, $20, NORTH | EAST
-	connection north, Route24North, ROUTE_18_NORTH, -1
-	connection east, Route21, ROUTE_17, 0
+	map_attributes Route18South, ROUTE_18_SOUTH, $20, NORTH | EAST
+	connection north, Route18North, ROUTE_18_NORTH, -1
+	connection east, Route17, ROUTE_17, 0
 
-	map_attributes Route30, PAVONA_OASIS, $05, NORTH | EAST
+	map_attributes PavonaOasis, PAVONA_OASIS, $05, NORTH | EAST
 	connection north, Route9, ROUTE_9, 0
 	connection east, PavonaVillage, PAVONA_VILLAGE, 1
 	
 	map_attributes Route9, ROUTE_9, $20, SOUTH | WEST
-	connection south, Route30, PAVONA_OASIS, 0
+	connection south, PavonaOasis, PAVONA_OASIS, 0
 	connection west, SuicuneLair, SUICUNE_LAIR, 4
 	
 	map_attributes SuicuneLair, SUICUNE_LAIR, $20, EAST
@@ -158,10 +158,10 @@ ENDM
 
 	map_attributes SeaRoute2, SEA_ROUTE_2, $35, NORTH | SOUTH
 	connection north, SeaRoute1, SEA_ROUTE_1, -3
-	connection south, Route8, ROUTE_7, -6
+	connection south, Route7, ROUTE_7, -6
 
 	map_attributes SeaRoute4, SEA_ROUTE_4, $35, WEST | EAST
-	connection west, Route8, ROUTE_7, 2
+	connection west, Route7, ROUTE_7, 2
 	connection east, Route6, ROUTE_6, -2
 
 	map_attributes SeaRoute1, SEA_ROUTE_1, $35, SOUTH | WEST | EAST
@@ -169,21 +169,21 @@ ENDM
 	connection west, RugosaCoast, RUGOSA_COAST, -5
 	connection east, SeaRoute3, SEA_ROUTE_3, 1
 	
-	map_attributes Route18, ROUTE_14, $13, 0
+	map_attributes Route14, ROUTE_14, $13, 0
 	
-	map_attributes Route14, ROUTE_13, $05, SOUTH
-	connection south, Route13, ROUTE_12, 0
+	map_attributes Route13, ROUTE_13, $05, SOUTH
+	connection south, Route12, ROUTE_12, 0
 
-	map_attributes Route13, ROUTE_12, $05, NORTH | SOUTH
-	connection north, Route14, ROUTE_13, 0
-	connection south, Route12, ROUTE_11, 5
+	map_attributes Route12, ROUTE_12, $05, NORTH | SOUTH
+	connection north, Route13, ROUTE_13, 0
+	connection south, Route11, ROUTE_11, 5
 
-	map_attributes Route12, ROUTE_11, $05, NORTH | SOUTH
-	connection north, Route13, ROUTE_12,  -5
-	connection south, Route11, ROUTE_10, 18
+	map_attributes Route11, ROUTE_11, $05, NORTH | SOUTH
+	connection north, Route12, ROUTE_12,  -5
+	connection south, Route10, ROUTE_10, 18
 
-	map_attributes Route11, ROUTE_10, $05, NORTH | SOUTH
-	connection north, Route12, ROUTE_11, -18
+	map_attributes Route10, ROUTE_10, $05, NORTH | SOUTH
+	connection north, Route11, ROUTE_11, -18
 	connection south, ElkhornTown, ELKHORN_TOWN, -2
 
 	map_attributes Route6, ROUTE_6, $35, SOUTH | WEST
@@ -196,18 +196,18 @@ ENDM
 	map_attributes SeaRoute6, SEA_ROUTE_6, $35, SOUTH | WEST | EAST 
 	connection south, SeaRoute5, SEA_ROUTE_5, -4
 	connection west, SeaRoute3, SEA_ROUTE_3, 5
-	connection east, Route23, ROUTE_21, -5
+	connection east, Route21, ROUTE_21, -5
 
-	map_attributes Route23, ROUTE_21, $05, NORTH | WEST
-	connection north, Route27, ROUTE_22, -10
+	map_attributes Route21, ROUTE_21, $05, NORTH | WEST
+	connection north, Route22, ROUTE_22, -10
 	connection west, SeaRoute6, SEA_ROUTE_6, 5
 
-	map_attributes Route26, ROUTE_23, $05, 0
+	map_attributes Route23, ROUTE_23, $05, 0
 
-	map_attributes Route27Gate, ROUTE_22_GATE, $00, 0
+	map_attributes Route22Gate, ROUTE_22_GATE, $00, 0
 	
-	map_attributes Route27, ROUTE_22, $05, SOUTH
-	connection south, Route23, ROUTE_21, 10
+	map_attributes Route22, ROUTE_22, $05, SOUTH
+	connection south, Route21, ROUTE_21, 10
 
 	map_attributes PokemonLeague, POKEMON_LEAGUE, $05, 0
 
@@ -220,13 +220,11 @@ ENDM
 	map_attributes Route4, ROUTE_4, $05, NORTH
 	connection north, Route5, ROUTE_5, 8
 
-	map_attributes Route8, ROUTE_7, $05, NORTH | EAST
+	map_attributes Route7, ROUTE_7, $05, NORTH | EAST
 	connection north, SeaRoute2, SEA_ROUTE_2, 6
 	connection east, SeaRoute4, SEA_ROUTE_4, -2
 
-	map_attributes Route10North, ROUTE_8_NORTH, $05, 0
-
-	map_attributes Route10South, ROUTE_8_SOUTH, $2c, 0
+	map_attributes Route8, ROUTE_8, $05, 0
 	
 	map_attributes SafariZoneArea1, SAFARI_ZONE_AREA_1, $00, NORTH | WEST | EAST
 	connection north, SafariZoneArea3, SAFARI_ZONE_AREA_3, 4
@@ -253,33 +251,33 @@ ENDM
 	connection south, SafariZoneArea5, SAFARI_ZONE_AREA_5, 7
 	
 	map_attributes CarnationTown, CARNATION_TOWN, $20, SOUTH
-	connection south, Route19, ROUTE_15, -15
+	connection south, Route15, ROUTE_15, -15
 	
-	map_attributes Route19, ROUTE_15, $05, NORTH | SOUTH
+	map_attributes Route15, ROUTE_15, $05, NORTH | SOUTH
 	connection north, CarnationTown, CARNATION_TOWN, 15
-	connection south, Route20, ROUTE_16, 0
+	connection south, Route16, ROUTE_16, 0
 	
-	map_attributes Route20, ROUTE_16, $05, NORTH
-	connection north, Route19, ROUTE_15, 0
+	map_attributes Route16, ROUTE_16, $05, NORTH
+	connection north, Route15, ROUTE_15, 0
 	
 	map_attributes OrchidCity, ORCHID_CITY, $35, SOUTH
-	connection south, Route22, ROUTE_20, 4
+	connection south, Route20, ROUTE_20, 4
 	
-	map_attributes Route22, ROUTE_20, $35, NORTH
+	map_attributes Route20, ROUTE_20, $35, NORTH
 	connection north, OrchidCity, ORCHID_CITY, -4
 
 	map_attributes VictoryCoast, VICTORY_COAST, $35, WEST
 	connection west, SeaRoute7, SEA_ROUTE_7, 0
 
 	map_attributes SeaRoute7, SEA_ROUTE_7, $35, NORTH | EAST
-	connection north, Route28, ROUTE_24, 0
+	connection north, Route24, ROUTE_24, 0
 	connection east, VictoryCoast, VICTORY_COAST, 0
 
-	map_attributes Route28, ROUTE_24, $05, SOUTH
+	map_attributes Route24, ROUTE_24, $05, SOUTH
 	connection south, SeaRoute7, SEA_ROUTE_7, 0
 
 	map_attributes PastElkhornTown, PAST_ELKHORN_TOWN, $05, NORTH | SOUTH
-	connection north, PastRoute11, PAST_ROUTE_10, 5
+	connection north, PastRoute10, PAST_ROUTE_10, 5
 	connection south, PastRoute1, PAST_ROUTE_1, -4
 
 	map_attributes PastRoute1, PAST_ROUTE_1, $05, NORTH | SOUTH
@@ -295,22 +293,22 @@ ENDM
 
 	map_attributes PastFaviaTown, PAST_FAVIA_TOWN, $05, SOUTH | EAST
 	connection south, PastRoute3, PAST_ROUTE_3, 7
-	connection east, PastRoute8, PAST_ROUTE_7, 2
+	connection east, PastRoute7, PAST_ROUTE_7, 2
 
 	map_attributes PastRoute3, PAST_ROUTE_3, $05, NORTH
 	connection north, PastFaviaTown, PAST_FAVIA_TOWN, -7
 
-	map_attributes PastRoute8, PAST_ROUTE_7, $05, WEST
+	map_attributes PastRoute7, PAST_ROUTE_7, $05, WEST
 	connection west, PastFaviaTown, PAST_FAVIA_TOWN, -2
 
-	map_attributes PastRoute11, PAST_ROUTE_10, $05, SOUTH
+	map_attributes PastRoute10, PAST_ROUTE_10, $05, SOUTH
 	connection south, PastElkhornTown, PAST_ELKHORN_TOWN, -5
 
 	map_attributes PastPectiniaCity, PAST_PECTINIA_CITY, $05, 0
 	map_attributes PastPectiniaGym, PAST_PECTINIA_GYM, $00, 0
 	map_attributes PastFaviaInn, PAST_FAVIA_INN, $00, 0
 	map_attributes PastPavonaInn, PAST_FAVIA_INN, $00, 0
-	map_attributes PastRoute11Inn, PAST_ROUTE_10_INN, $00, 0
+	map_attributes PastRoute10Inn, PAST_ROUTE_10_INN, $00, 0
 	map_attributes PastIlexForest, PAST_ILEX_FOREST, $05, 0
 	map_attributes PastPectiniaApartment1F, PAST_PECTINIA_APARTMENT_1F, $00, 0
 	map_attributes PastPectiniaApartment2F, PAST_PECTINIA_APARTMENT_2F, $00, 0
@@ -373,7 +371,7 @@ ENDM
 	map_attributes Pokecenter2F, POKECENTER_2F, $00, 0
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
-	map_attributes Route8Route10Gate, ROUTE_7_ROUTE_8_GATE, $00, 0
+	map_attributes Route7Route8Gate, ROUTE_7_ROUTE_8_GATE, $00, 0
 	map_attributes FaviaGym, FAVIA_GYM, $79, 0
 	map_attributes HepaticaPokecenter1F, HEPATICA_POKECENTER_1F, $00, 0
 	map_attributes HepaticaMart, HEPATICA_MART, $00, 0
@@ -403,7 +401,7 @@ ENDM
 	map_attributes PalerockMountainStrengthRoom, PALEROCK_MOUNTAIN_STRENGTH_ROOM, $09, 0
 	map_attributes Route9ForestGate, ROUTE_9_FOREST_GATE, $00, 0
 	map_attributes StaghornForestGate, STAGHORN_FOREST_GATE, $00, 0
-	map_attributes Route8FaviaGate, ROUTE_7_FAVIA_GATE, $00, 0
+	map_attributes Route7FaviaGate, ROUTE_7_FAVIA_GATE, $00, 0
 	map_attributes EastForest, EAST_FOREST, $05, 0
 	map_attributes Route4ForestGate, ROUTE_4_FOREST_GATE, $00, 0
 	map_attributes Route4PectiniaGate, ROUTE_4_PECTINIA_GATE, $00, 0
@@ -422,21 +420,21 @@ ENDM
 	map_attributes RidgeMoveTutor, RIDGE_MOVE_TUTOR, $00, 0
 	map_attributes RidgeWeatherHouse, RIDGE_WEATHER_HOUSE, $00, 0
 	map_attributes RidgeTradeHouse, RIDGE_TRADE_HOUSE, $00, 0
-	map_attributes Route8SilkScarfHouse, ROUTE_7_SILK_SCARF_HOUSE, $00, 0
+	map_attributes Route7SilkScarfHouse, ROUTE_7_SILK_SCARF_HOUSE, $00, 0
 	map_attributes PaintersHouse, PAINTERS_HOUSE, $00, 0
-	map_attributes Route11FaviaGate, ROUTE_10_FAVIA_GATE, $00, 0	
-	map_attributes Route11Route12Gate, ROUTE_10_ROUTE_11_GATE, $00, 0	
+	map_attributes Route10FaviaGate, ROUTE_10_FAVIA_GATE, $00, 0	
+	map_attributes Route10Route11Gate, ROUTE_10_ROUTE_11_GATE, $00, 0	
 	map_attributes HepaticaCave1F, HEPATICA_CAVE_1F, $6D, 0
 	map_attributes HepaticaCaveB1F, HEPATICA_CAVE_B1F, $09, 0
 	map_attributes HepaticaCaveB2F, HEPATICA_CAVE_B2F, $09, 0
 	map_attributes OverlookMaze, OVERLOOK_MAZE, $05, 0
 	map_attributes LostLand, LOST_LAND, $01, 0
-	map_attributes Route12StaghornGate, ROUTE_11_STAGHORN_GATE, $00, 0
-	map_attributes Route12Shelter, ROUTE_11_SHELTER, $00, 0
-	map_attributes Route14Cave1F, THE_BONEYARD_1F, $09, 0
-	map_attributes Route14Cave2F, THE_BONEYARD_2F, $09, 0
+	map_attributes Route11StaghornGate, ROUTE_11_STAGHORN_GATE, $00, 0
+	map_attributes Route11Shelter, ROUTE_11_SHELTER, $00, 0
+	map_attributes TheBoneyard1F, THE_BONEYARD_1F, $09, 0
+	map_attributes TheBoneyard2F, THE_BONEYARD_2F, $09, 0
 	map_attributes StaghornThiefHouse, STAGHORN_THIEF_HOUSE, $00, 0
-	map_attributes Route14RugosaGate, ROUTE_13_RUGOSA_GATE, $00, 0
+	map_attributes Route13RugosaGate, ROUTE_13_RUGOSA_GATE, $00, 0
 	map_attributes PowerPlant1F, POWER_PLANT_1F, $00, 0
 	map_attributes PowerPlant2F, POWER_PLANT_2F, $00, 0
 	map_attributes PowerPlant1FB, POWER_PLANT_1F_B, $00, 0
@@ -450,7 +448,7 @@ ENDM
 	map_attributes CarnationPokecenter1F, CARNATION_POKECENTER_1F, $00, 0
 	map_attributes CarnationWobbuffetHouse, WOBBUFFET_HOUSE, $00, 0
 	map_attributes CarnationZoo, CARNATION_ZOO, $05, 0
-	map_attributes Route21StaghornGate, ROUTE_17_STAGHORN_GATE, $00, 0
+	map_attributes Route17StaghornGate, ROUTE_17_STAGHORN_GATE, $00, 0
 	map_attributes AcroporaRestTalkHouse, ACROPORA_REST_TALK_HOUSE, $00, 0
 	map_attributes AcroporaLassHouse, ACROPORA_LASS_HOUSE, $00, 0
 	map_attributes AcroporaCastleHouse, ACROPORA_CASTLE_HOUSE, $00, 0
@@ -476,8 +474,8 @@ ENDM
 	map_attributes StaghornRichardsHouse, RICHARDS_HOUSE, $00, 0
 	map_attributes RaikouLair, RAIKOU_LAIR, $00, 0
 	map_attributes EnteiLair, ENTEI_LAIR, $09, 0
-	map_attributes Route30Cave1F, PAVONA_OASIS_CAVE_1F, $09, 0
-	map_attributes Route30CaveB1F, PAVONA_OASIS_CAVE_B1F, $09, 0
+	map_attributes PavonaOasisCave1F, PAVONA_OASIS_CAVE_1F, $09, 0
+	map_attributes PavonaOasisCaveB1F, PAVONA_OASIS_CAVE_B1F, $09, 0
 	map_attributes Route9Cave1F, ROUTE_9_CAVE_1F, $09, 0
 	map_attributes DrainPunchChamber, DRAIN_PUNCH_CHAMBER, $09, 0
 	map_attributes OrchidPokecenter1F, ORCHID_POKECENTER_1F, $00, 0
@@ -490,30 +488,30 @@ ENDM
 	map_attributes HepaticaGymWestChamber, HEPATICA_GYM_WEST_CHAMBER, $00, 0
 	map_attributes LugiaLair, LUGIA_LAIR, $0F, 0
 	map_attributes MoltenPeakHiddenCave, MOLTEN_PEAK_HIDDEN_CAVE, $09, 0
-	map_attributes Route11CurseHouse, ROUTE_10_CURSE_HOUSE, $00, 0
+	map_attributes Route10CurseHouse, ROUTE_10_CURSE_HOUSE, $00, 0
 	map_attributes NevermelticeChamber, NEVERMELTICE_CHAMBER, $09, 0
-	map_attributes Route20HeavyBallHouse, HEAVY_BALL_HOUSE, $00, 0
+	map_attributes Route16HeavyBallHouse, HEAVY_BALL_HOUSE, $00, 0
 	map_attributes UnownChamberAG, UNOWN_CHAMBER_AG, $00, 0
 	map_attributes UnownChamberHN, UNOWN_CHAMBER_HN, $00, 0
 	map_attributes UnownChamberOU, UNOWN_CHAMBER_OU, $00, 0
 	map_attributes UnownChamberVZ, UNOWN_CHAMBER_VZ, $00, 0
 	map_attributes CoastalLab, COASTAL_LAB, $00, 0
 	map_attributes RugosaPort, RUGOSA_PORT, $00, 0
-	map_attributes Route11CleanseTagHouse, ROUTE_10_CLEANSE_TAG_HOUSE, $00, 0
+	map_attributes Route10CleanseTagHouse, ROUTE_10_CLEANSE_TAG_HOUSE, $00, 0
 	map_attributes RugosaCafe, RUGOSA_CAFE, $00, 0
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0
 	map_attributes Route7Cave1F, ROUTE_7_CAVE_1F, $09, 0
 	map_attributes Route7CaveB1F, ROUTE_7_CAVE_B1F, $09, 0
-	map_attributes Route8HiddenCave, ROUTE_7_HIDDEN_CAVE, $09, 0
+	map_attributes Route7HiddenCave, ROUTE_7_HIDDEN_CAVE, $09, 0
 	map_attributes PalerockMountainB2, PALEROCK_MOUNTAIN_B2, $09, 0
 	map_attributes PalerockCaveB2F, PALEROCK_CAVE_B2F, $09, 0
 	map_attributes PalerockMountainB3, PALEROCK_MOUNTAIN_B3, $09, 0
 	map_attributes PalerockMountainWaterfallChamber, PALEROCK_MOUNTAIN_WATERFALL_CHAMBER, $09, 0
-	map_attributes Route18Barn, ROUTE_14_BARN, $00, 0
-	map_attributes Route18Farmhouse, ROUTE_14_FARMHOUSE, $00, 0
-	map_attributes Route18CarnationGate, ROUTE_14_CARNATION_GATE, $00, 0
+	map_attributes Route14Barn, ROUTE_14_BARN, $00, 0
+	map_attributes Route14Farmhouse, ROUTE_14_FARMHOUSE, $00, 0
+	map_attributes Route14CarnationGate, ROUTE_14_CARNATION_GATE, $00, 0
 	map_attributes RidgeMagikarpHouse, RIDGE_MAGIKARP_HOUSE, $00, 0
 	map_attributes SafariZoneArea1RestHouse, SAFARI_ZONE_AREA_1_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea2RestHouse, SAFARI_ZONE_AREA_2_REST_HOUSE, $00, 0
@@ -521,7 +519,7 @@ ENDM
 	map_attributes SafariZoneArea4RestHouse, SAFARI_ZONE_AREA_4_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea5RestHouse, SAFARI_ZONE_AREA_5_REST_HOUSE, $00, 0
 	map_attributes SafariZoneArea6RestHouse, SAFARI_ZONE_AREA_6_REST_HOUSE, $00, 0
-	map_attributes Route11HiddenCave, ROUTE_10_HIDDEN_CAVE, $09, 0
+	map_attributes Route10HiddenCave, ROUTE_10_HIDDEN_CAVE, $09, 0
 	map_attributes Route6Gate, ROUTE_6_GATE, $00, 0
 	map_attributes Route6WaterfallHouse, ROUTE_6_WATERFALL_HOUSE, $00, 0
 	map_attributes LugiaCave1F, LUGIA_CAVE_1F, $09, 0
@@ -532,15 +530,15 @@ ENDM
 	map_attributes BattleSubwayTrain, BATTLE_SUBWAY_TRAIN, $00, 0
 	map_attributes BattleSubwayPlatform, BATTLE_SUBWAY_PLATFORM, $00, 0
 	map_attributes BattleSubwayBossTrain, BATTLE_SUBWAY_BOSS_TRAIN, $00, 0
-	map_attributes Route14Gate, ROUTE_13_GATE, $00, 0
+	map_attributes Route13Gate, ROUTE_13_GATE, $00, 0
 	map_attributes PectiniaBedStore, PECTINIA_BED_STORE, $00, 0
 	map_attributes PectiniaDollStore, PECTINIA_DOLL_STORE, $00, 0
 	map_attributes HoOhCastle1FCentralRoom, HO_OH_CASTLE_1F_CENTER_ROOM, $00, 0
 	map_attributes HoOhCastle1FSideRooms, HO_OH_CASTLE_1F_SIDE_ROOMS, $00, 0
 	map_attributes HoOhCastle2F, HO_OH_CASTLE_2F, $00, 0
 	map_attributes HoOhCastle3F, HO_OH_CASTLE_3F, $00, 0
-	map_attributes Route20AcroporaGate, ROUTE_16_ACROPORA_GATE, $00, 0
-	map_attributes Route25, ROUTE_19, $05, 0
+	map_attributes Route16AcroporaGate, ROUTE_16_ACROPORA_GATE, $00, 0
+	map_attributes Route19, ROUTE_19, $05, 0
 	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0
 	map_attributes RemnantCave1F, REMNANT_CAVE_1F, $09, 0
 	map_attributes RemnantCave2F, REMNANT_CAVE_2F, $09, 0
@@ -571,15 +569,15 @@ ENDM
 	map_attributes TrainerHouse, TRAINER_HOUSE, $00, 0
 	map_attributes PokemonLeagueHotel1F, POKEMON_LEAGUE_HOTEL_1F, $00, 0
 	map_attributes PokemonLeagueHotel2F, POKEMON_LEAGUE_HOTEL_2F, $00, 0
-	map_attributes Route23HiddenCave, ROUTE_21_HIDDEN_CAVE, $09, 0
+	map_attributes Route21HiddenCave, ROUTE_21_HIDDEN_CAVE, $09, 0
 	map_attributes BattleSimulation, BATTLE_SIMULATION, $00, 0
-	map_attributes Route25Gate, ROUTE_19_GATE, $00, 0
+	map_attributes Route19Gate, ROUTE_19_GATE, $00, 0
 	map_attributes PectiniaCarpetStore, PECTINIA_CARPET_STORE, $00, 0
 	map_attributes PectiniaComicStore, PECTINIA_COMIC_STORE, $00, 0
 	map_attributes PectiniaBattleItemStore, PECTINIA_BATTLE_ITEM_STORE, $00, 0
 	map_attributes PectiniaArcade, PECTINIA_ARCADE, $00, 0
-	map_attributes Route24HiddenCave1F, ROUTE_18_HIDDEN_CAVE_1F, $09, 0
-	map_attributes Route24HiddenCaveB1F, ROUTE_18_HIDDEN_CAVE_B1F, $09, 0
+	map_attributes Route18HiddenCave1F, ROUTE_18_HIDDEN_CAVE_1F, $09, 0
+	map_attributes Route18HiddenCaveB1F, ROUTE_18_HIDDEN_CAVE_B1F, $09, 0
 	map_attributes DugtriosDen, DUGTRIOS_DEN, $09, 0
 	map_attributes PalerockMountainHiddenCave, PALEROCK_MOUNTAIN_HIDDEN_CAVE, $6d, 0
 	map_attributes SkarmorysDen, SKARMORYS_DEN, $6d, 0
@@ -587,19 +585,19 @@ ENDM
 	map_attributes MaplesLabElevator, MAPLES_LAB_ELEVATOR, $00, 0
 	map_attributes TreasureHuntersHouse, TREASURE_HUNTERS_HOUSE, $09, 0
 	map_attributes OrchidEnteiShrine, ORCHID_ENTEI_SHRINE, $59, 0
-	map_attributes Route26Cave1F, ROUTE_23_CAVE_1F, $09, 0
-	map_attributes Route26CaveB1F, ROUTE_23_CAVE_B1F, $09, 0
-	map_attributes Route23Gate, ROUTE_21_GATE, $00, 0
-	map_attributes Route26Gate, ROUTE_23_GATE, $00, 0
-	map_attributes Route28Gate, ROUTE_24_GATE, $00, 0
+	map_attributes Route23Cave1F, ROUTE_23_CAVE_1F, $09, 0
+	map_attributes Route23CaveB1F, ROUTE_23_CAVE_B1F, $09, 0
+	map_attributes Route21Gate, ROUTE_21_GATE, $00, 0
+	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
+	map_attributes Route24Gate, ROUTE_24_GATE, $00, 0
 	map_attributes NorthForest, NORTH_FOREST, $07, 0
 	map_attributes DevelopersHouse, DEVELOPERS_HOUSE, $00, 0
-	map_attributes PastRoute11Gate, PAST_ROUTE_10_GATE, $00, 0
-	map_attributes PastRoute11House1, PAST_ROUTE_10_HOUSE_1, $00, 0
-	map_attributes PastRoute11House2, PAST_ROUTE_10_HOUSE_2, $00, 0
-	map_attributes PastRoute11House3, PAST_ROUTE_10_HOUSE_3, $00, 0
-	map_attributes PastRoute11House4, PAST_ROUTE_10_HOUSE_4, $00, 0
-	map_attributes PastRoute11House5, PAST_ROUTE_10_HOUSE_5, $00, 0
+	map_attributes PastRoute10Gate, PAST_ROUTE_10_GATE, $00, 0
+	map_attributes PastRoute10House1, PAST_ROUTE_10_HOUSE_1, $00, 0
+	map_attributes PastRoute10House2, PAST_ROUTE_10_HOUSE_2, $00, 0
+	map_attributes PastRoute10House3, PAST_ROUTE_10_HOUSE_3, $00, 0
+	map_attributes PastRoute10House4, PAST_ROUTE_10_HOUSE_4, $00, 0
+	map_attributes PastRoute10House5, PAST_ROUTE_10_HOUSE_5, $00, 0
 	map_attributes MewtwoLab1F, MEWTWO_LAB_1F, $00, 0
 	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
 	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0
@@ -638,8 +636,8 @@ ENDM
 	map_attributes PastFaviaFriendshipHouse, PAST_FAVIA_FRIENDSHIP_HOUSE, $00, 0
 	map_attributes PastPectiniaMart, PAST_PECTINIA_MART, $00, 0
 	map_attributes PastFaviaMart, PAST_FAVIA_MART, $00, 0
-	map_attributes PastRoute11Schoolhouse, PAST_ROUTE_10_SCHOOLHOUSE, $00, 0
-	map_attributes PastRoute11Schoolhouse2, PAST_ROUTE_10_SCHOOLHOUSE_2, $00, 0
+	map_attributes PastRoute10Schoolhouse, PAST_ROUTE_10_SCHOOLHOUSE, $00, 0
+	map_attributes PastRoute10Schoolhouse2, PAST_ROUTE_10_SCHOOLHOUSE_2, $00, 0
 	map_attributes PastPavonaHouse1, PAST_PAVONA_HOUSE_1, $00, 0
 	map_attributes PastPavonaHouse2, PAST_PAVONA_HOUSE_2, $00, 0
 	map_attributes PastPectiniaBerryHouse, PAST_PECTINIA_BERRY_HOUSE, $00, 0

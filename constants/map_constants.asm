@@ -195,7 +195,7 @@ ENDM
 	map_const ROUTE_4,                                    25, 24 ; 12
 	map_const ROUTE_5,                                    27, 13 ;  1
 	map_const ROUTE_6,                                    37, 16 ;  1
-	map_const ROUTE_8_NORTH,                             16, 14 ; 14
+	map_const ROUTE_8,                                    16, 14 ; 14
 	map_const RIDGE_VILLAGE,                              27, 12 ;  5
 	map_const RIDGE_CAFE,                                  7,  4 ;  6
 	map_const RIDGE_GYM,                                   5,  4 ;  7
@@ -304,7 +304,6 @@ ENDM
 	map_const ROUTE_13_GATE,                                5,  4 ;  2
 	map_const THE_BONEYARD_1F,  							9, 11
 	map_const THE_BONEYARD_2F,							   10, 10
-	map_const ROUTE_8_SOUTH,                               10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14
 

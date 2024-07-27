@@ -2549,12 +2549,12 @@ wColosseumSceneID::                               db ; d974
 wTimeCapsuleSceneID::                             db ; d975
 wRoute1SceneID::                                  db ; d976
 wCeruleanGymSceneID::                             db ; d977
-wRoute25SceneID::                                 db ; d978
+wRoute19SceneID::                                 db ; d978
 wTrainerHouseB1FSceneID::                         db ; d979
 wVictoryRoadGateSceneID::                         db ; d97a
 wSaffronMagnetTrainStationSceneID::               db ; d97b
 wRoute16GateSceneID::                             db ; d97c
-wRoute17Route18GateSceneID::                      db ; d97d
+wRoute17Route14GateSceneID::                      db ; d97d
 wPokemonLeaguePokecenter1FSceneID::               db ; d97e
 wWilbursRoomSceneID::                             db ; d97f
 wRegansRoomSceneID::                              db ; d980
@@ -2582,11 +2582,11 @@ wSafariZoneGateSceneID::                          db ; d995
 wVioletGymSceneID::
 wRoute34IlexForestGateSceneID::                   db ; d996
 wEcruteakCitySceneID::				              db ; d997
-wRoute12ShelterSceneID::                          db ; d998
+wRoute11ShelterSceneID::                          db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
 wEcruteakGymSceneID::                             db ; d99a
 wMahoganyTownSceneID::                            db ; d99b
-wRoute18FarmhouseSceneID::                        db ; d99c
+wRoute14FarmhouseSceneID::                        db ; d99c
 wCianwoodCitySceneID::                            db ; d99d
 wBattleSubwayInsideSceneID::                      db ; d99e
 wBattleSubwayTrainSceneID::                       db ; d99f
@@ -2599,7 +2599,7 @@ wFluteMasterHouseSceneID::                        db ; d9a5
 wLostLandSceneID::                                db ; d9a6
 wOrchidGym1FSceneID::                             db ; d9a7
 wBurnedTowerB1FSceneID::                          db ; d9a8
-wRoute28GateSceneID::                             db ; d9a9
+wRoute24GateSceneID::                             db ; d9a9
 wRuinsOfAlphOutsideSceneID::                      db ; d9aa
 wRuinsOfAlphResearchCenterSceneID::               db ; d9ab
 wUnownChamberAGSceneID::               			  db ; d9ac

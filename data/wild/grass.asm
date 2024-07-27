@@ -974,7 +974,7 @@ GrassWildMons:
 	db 28, QUAGSIRE
 	db 30, QUAGSIRE
 
-	map_id ROUTE_8_NORTH
+	map_id ROUTE_8
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, SPEAROW

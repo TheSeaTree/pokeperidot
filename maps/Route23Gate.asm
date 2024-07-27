@@ -1,69 +1,76 @@
 	const_def 2 ; object constants
 	const ROUTE23GATE_OFFICER
-	const ROUTE23GATE_COOLTRAINERF
 
 Route23Gate_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .Computer
 
-Route23GateOfficerScript:
-	jumptextfaceplayer Route23GateOfficerText
+.Computer
+	changeblock 6, 2, $27
+	return
 
-Route23GateCooltrainerFScript:
-	jumptextfaceplayer Route23GateCooltrainerFText
-
-Route27GateNidoqueen:
-	faceplayer
+Route23GateOfficerMScript:
 	opentext
-	writetext Route27GateNidoqueenText
-	cry NIDOQUEEN
+	writetext Route23GateOfficerMText
 	waitbutton
 	closetext
+	showemote EMOTE_QUESTION, ROUTE23GATE_OFFICER, 15
+	faceplayer
+	opentext
+	writetext Route23GateOfficerMNoticeText
+	waitbutton
+	closetext
+	turnobject ROUTE23GATE_OFFICER, RIGHT
 	end
 
-Route23GateOfficerText:
-	text "A HIKER friend of"
-	line "mine made the"
-	cont "ledge on ROUTE 19."
+Route23GateComputer:
+	jumptext Route23GateComputerText
 
-	para "Haha! It saves me"
-	line "the trouble of"
-	cont "checking for"
-	cont "trainers' BADGEs."
+Route23GateOfficerMText:
+	text "……………"
 	done
 
-Route23GateCooltrainerFText:
-	text "Did you see the"
-	line "#MON battle"
-	cont "NIDOQUEEN and I"
-	cont "had on ROUTE 21?"
+Route23GateOfficerMNoticeText:
+	text "Oh! I didn't notice"
+	line "you there."
 
-	para "It was totally"
-	line "cool! We won even"
-	cont "though we were"
-	cont "against a FLYING-"
-	cont "type #MON!"
+	para "This GATE has such"
+	line "little foot"
+	cont "traffic that I"
+	cont "spend most of my"
+	cont "day just playing"
+	cont "computer games."
+
+	para "You can go on"
+	line "ahead, I'm busy"
+	cont "right now."
 	done
 
-Route27GateNidoqueenText:
-	text "NIDOQUEEN: BARAUA!"
+Route23GateComputerText:
+	text "The computer's"
+	line "speakers are"
+	cont "turned way up."
+
+	para "There's sounds of"
+	line "monsters hissing"
+	cont "and explosions."
 	done
 
 Route23Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, ROUTE_22, 3
-	warp_event  5,  0, ROUTE_22, 4
-	warp_event  4,  7, ROUTE_21, 2
-	warp_event  5,  7, ROUTE_21, 2
+	warp_event  0,  4, ROUTE_22, 5
+	warp_event  0,  5, ROUTE_22, 6
+	warp_event  9,  4, ROUTE_23, 3
+	warp_event  9,  5, ROUTE_23, 4
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event  7,  2, BGEVENT_READ, Route23GateComputer
 
-	db 3 ; object events
-	object_event  0,  4, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route23GateOfficerScript, -1
-	object_event  7,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route23GateCooltrainerFScript, -1
-	object_event  7,  4, SPRITE_MONSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route27GateNidoqueen, EVENT_BEAT_ELITE_FOUR
+	db 1 ; object events
+	object_event  6,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route23GateOfficerMScript, -1

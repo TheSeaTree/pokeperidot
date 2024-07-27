@@ -72,6 +72,8 @@ SSMakoDeckBurglar:
 .Battle
 	waitbutton
 	closetext
+;	writecode VAR_MOVEMENT, PLAYER_SURF
+;	special ReplaceKrisSprite
 	winlosstext SSMakoDeckBurglarWinText, 0
 	loadtrainer BURGLAR, RANDY
 	startbattle

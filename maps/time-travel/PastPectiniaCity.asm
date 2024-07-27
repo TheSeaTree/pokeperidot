@@ -90,7 +90,7 @@ CelebiEncounter:
 ;	Flowers already in bloom even before the event?
 
 ;	special FadeInPalettes
-	applymovement PASTPECTINIACITY_CELEBI, PastRoute11CelebiTeleportMovement
+	applymovement PASTPECTINIACITY_CELEBI, PastRoute10CelebiTeleportMovement
 ;	clearevent EVENT_HIDE_AND_SEEK_CELEBI_3
 	disappear PASTPECTINIACITY_CELEBI
 	waitsfx

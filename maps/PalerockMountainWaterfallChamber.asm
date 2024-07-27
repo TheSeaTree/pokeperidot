@@ -14,10 +14,10 @@ PalerockMountainWaterfallChamberHPUp:
 PalerockMountainWaterfallChamberBigPearl:
 	itemball BIG_PEARL
 
-Route24HiddenCave1FHiddenCarbos:
+Route18HiddenCave1FHiddenCarbos:
 	hiddenitem CARBOS, EVENT_PALEROCK_WATERFALL_HIDDEN_CARBOS
 
-Route24HiddenCave1FHiddenPPUp:
+Route18HiddenCave1FHiddenPPUp:
 	hiddenitem PP_UP, EVENT_PALEROCK_WATERFALL_HIDDEN_PP_UP
 
 PalerockMountainWaterfallChamberBoulder:
@@ -33,8 +33,8 @@ PalerockMountainWaterfallChamber_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event  4, 21, BGEVENT_ITEM, Route24HiddenCave1FHiddenPPUp
-	bg_event  7,  7, BGEVENT_ITEM, Route24HiddenCave1FHiddenCarbos
+	bg_event  4, 21, BGEVENT_ITEM, Route18HiddenCave1FHiddenPPUp
+	bg_event  7,  7, BGEVENT_ITEM, Route18HiddenCave1FHiddenCarbos
 
 	db 4 ; object events
 	object_event 23, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainWaterfallChamberBoulder, -1

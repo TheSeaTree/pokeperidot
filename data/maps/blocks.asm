@@ -3,14 +3,11 @@ SECTION "Map Blocks 1", ROMX
 Route2_Blocks:
 	INCBIN "maps/Route2.ablk"
 
-Route11_Blocks:
-	INCBIN "maps/Route11.ablk"
+Route10_Blocks:
+	INCBIN "maps/Route10.ablk"
 
 SeaRoute1_Blocks:
 	INCBIN "maps/SeaRoute1.ablk"
-
-Route10South_Blocks:
-	INCBIN "maps/Route10South.ablk"
 
 Pokecenter2F_Blocks:
 	INCBIN "maps/Pokecenter2F.ablk"
@@ -18,8 +15,8 @@ Pokecenter2F_Blocks:
 Route3_Blocks:
 	INCBIN "maps/Route3.ablk"
 
-Route12_Blocks:
-	INCBIN "maps/Route12.ablk"
+Route11_Blocks:
+	INCBIN "maps/Route11.ablk"
 
 BattleSubwayTrain_Blocks:
 BattleSubwayBossTrain_Blocks:
@@ -56,9 +53,9 @@ PectiniaBerryHouse_Blocks:
 RidgeMoveTutor_Blocks:
 RidgeWeatherHouse_Blocks:
 RidgeTradeHouse_Blocks:
-Route8SilkScarfHouse_Blocks:
+Route7SilkScarfHouse_Blocks:
 Route6SurfersHouse_Blocks:
-Route12Shelter_Blocks:
+Route11Shelter_Blocks:
 StaghornThiefHouse_Blocks:
 StaghornFriendBallHouse_Blocks:
 CarnationWobbuffetHouse_Blocks:
@@ -68,8 +65,8 @@ OrchidDragonbreathHouse_Blocks:
 StaghornRichardsHouse_Blocks:
 AcroporaLassHouse_Blocks:
 AcroporaCastleHouse_Blocks:
-Route20HeavyBallHouse_Blocks:
-Route11CleanseTagHouse_Blocks:
+Route16HeavyBallHouse_Blocks:
+Route10CleanseTagHouse_Blocks:
 RidgeMagikarpHouse_Blocks:
 Route6WaterfallHouse_Blocks:
 	INCBIN "maps/House1.4x4.house.ablk"
@@ -81,10 +78,10 @@ PavonaGymSpeechHouse_Blocks:
 FastEddiesHouse_Blocks:
 	INCBIN "maps/House3.ablk"
 
-PastRoute11House1_Blocks:
-PastRoute11House3_Blocks:
-PastRoute11House4_Blocks:
-PastRoute11House5_Blocks:
+PastRoute10House1_Blocks:
+PastRoute10House3_Blocks:
+PastRoute10House4_Blocks:
+PastRoute10House5_Blocks:
 PastElkhornRichardsHouse_Blocks:
 PastFaviaDayCare_Blocks:
 PastFaviaFriendshipHouse_Blocks:
@@ -96,7 +93,7 @@ PastRoute1House_Blocks:
 
 PastFaviaEggTutorHouse_Blocks:
 PastPectiniaBerryHouse_Blocks:
-PastRoute11House2_Blocks:
+PastRoute10House2_Blocks:
 PastElkhornLakesideHouse_Blocks:
 PastPavonaHouse1_Blocks:
 PastPavonaHouse2_Blocks:
@@ -105,14 +102,13 @@ PastPavonaHouse2_Blocks:
 PastElkhornMomsHouse_Blocks:
 	INCBIN "maps/time-travel/PastElkhornMomsHouse.ablk"
 
-PastRoute11Schoolhouse_Blocks:
-PastRoute11Schoolhouse2_Blocks:
-	INCBIN "maps/time-travel/PastRoute11Schoolhouse.ablk"
+PastRoute10Schoolhouse_Blocks:
+PastRoute10Schoolhouse2_Blocks:
+	INCBIN "maps/time-travel/PastRoute10Schoolhouse.ablk"
 
 VitaminShop_Blocks:
 	INCBIN "maps/VitaminShop.ablk"
 
-Route19FuchsiaGate_Blocks:
 Route43Gate_Blocks:
 Route36RuinsOfAlphGate_Blocks:
 Route3PectiniaGate_Blocks:
@@ -120,20 +116,20 @@ Route40BattleTowerGate_Blocks:
 Route1PavonaGate_Blocks:
 Route1ElkhornGate_Blocks:
 Route1FaviaGate_Blocks:
-Route11FaviaGate_Blocks:
-Route11Route12Gate_Blocks:
+Route10FaviaGate_Blocks:
+Route10Route11Gate_Blocks:
 RugosaGate_Blocks:
 Route6Gate_Blocks:
-Route14Gate_Blocks:
-Route20AcroporaGate_Blocks:
-Route25Gate_Blocks:
-Route23Gate_Blocks:
-PastRoute11Gate_Blocks:
+Route13Gate_Blocks:
+Route16AcroporaGate_Blocks:
+Route19Gate_Blocks:
+Route21Gate_Blocks:
+PastRoute10Gate_Blocks:
 PastPectiniaGate_Blocks:
 	INCBIN "maps/NorthSouthGate.5x4.gate.ablk"
 
-Route28Gate_Blocks:
-	INCBIN "maps/Route28Gate.ablk"
+Route24Gate_Blocks:
+	INCBIN "maps/Route24Gate.ablk"
 	
 PokemonLeagueGate1F_Blocks:
 	INCBIN "maps/PokemonLeagueGate1F.ablk"
@@ -150,8 +146,8 @@ PokemonLeagueHotel2F_Blocks:
 Route4_Blocks:
 	INCBIN "maps/Route4.ablk"
 
-Route13_Blocks:
-	INCBIN "maps/Route13.ablk"
+Route12_Blocks:
+	INCBIN "maps/Route12.ablk"
 	
 SeaRoute3_Blocks:
 	INCBIN "maps/SeaRoute3.ablk"
@@ -172,21 +168,20 @@ EmilysHouse1F_Blocks:
 Route38StaghornGate_Blocks:
 Route42StaghornGate_Blocks:
 Route32RuinsOfAlphGate_Blocks:
-Route15FuchsiaGate_Blocks:
-Route8Route10Gate_Blocks:
+Route7Route8Gate_Blocks:
 Route2PectiniaGate_Blocks:
 Route3Route4Gate_Blocks:
-Route8FaviaGate_Blocks:
+Route7FaviaGate_Blocks:
 Route4ForestGate_Blocks:
 Route4PectiniaGate_Blocks:
 Route2Gate_Blocks:
-Route12StaghornGate_Blocks:
-Route14RugosaGate_Blocks:
-Route21StaghornGate_Blocks:
-Route18CarnationGate_Blocks:
+Route11StaghornGate_Blocks:
+Route13RugosaGate_Blocks:
+Route17StaghornGate_Blocks:
+Route14CarnationGate_Blocks:
 CarnationZooGate_Blocks:
-Route27Gate_Blocks:
-Route26Gate_Blocks:
+Route22Gate_Blocks:
+Route23Gate_Blocks:
 PastForestGate_Blocks:
 PastRoute2Gate_Blocks:
 	INCBIN "maps/EastWestGate.5x4.gate.ablk"
@@ -206,8 +201,8 @@ Route9_Blocks:
 
 SECTION "Map Blocks 2", ROMX
 
-Route14_Blocks:
-	INCBIN "maps/Route14.ablk"
+Route13_Blocks:
+	INCBIN "maps/Route13.ablk"
 
 EnteiCaveB1F_Blocks:
 	INCBIN "maps/EnteiCaveB1F.ablk"
@@ -220,7 +215,6 @@ AcroporaMart_Blocks:
 CeruleanMart_Blocks:
 PectiniaMart_Blocks:
 PewterMart_Blocks:
-FuchsiaMart_Blocks:
 LavenderMart_Blocks:
 SaffronMart_Blocks:
 OrchidMart_Blocks:
@@ -233,21 +227,19 @@ RugosaCafe_Blocks:
 PokemonLeagueCafe_Blocks:
 	INCBIN "maps/RidgeCafe.ablk"
 
-Route10North_Blocks:
-	INCBIN "maps/Route10North.ablk"
+Route8_Blocks:
+	INCBIN "maps/Route8.ablk"
 
 RugosaPokecenter1F_Blocks:
 StaghornPokecenter1F_Blocks:
 AcroporaPokecenter1F_Blocks:
 CinnabarPokecenter1F_Blocks:
 CeruleanPokecenter1F_Blocks:
-Route10Pokecenter1F_Blocks:
 PectiniaPokecenter1F_Blocks:
 RidgePokecenter1F_Blocks:
 Route32Pokecenter1F_Blocks:
 FaviaPokecenter1F_Blocks:
 PewterPokecenter1F_Blocks:
-FuchsiaPokecenter1F_Blocks:
 LavenderPokecenter1F_Blocks:
 HepaticaPokecenter1F_Blocks:
 ViridianPokecenter1F_Blocks:
@@ -297,8 +289,8 @@ PaintersHouse_Blocks:
 RugosaSurfHouse_Blocks:
 AcroporaRestTalkHouse_Blocks:
 IlexForestSwordsDanceHouse_Blocks:
-Route11CurseHouse_Blocks:
-Route18Farmhouse_Blocks:
+Route10CurseHouse_Blocks:
+Route14Farmhouse_Blocks:
 OrchidGrannysHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
@@ -368,17 +360,17 @@ Route7CaveB1F_Blocks:
 TentacruelsDen_Blocks:
 	INCBIN "maps/TentacruelsDen.ablk"
 
-Route30_Blocks:
-	INCBIN "maps/Route30.ablk"
+PavonaOasis_Blocks:
+	INCBIN "maps/PavonaOasis.ablk"
 
 SeaRoute2_Blocks:
 	INCBIN "maps/SeaRoute2.ablk"
 	
-Route18_Blocks:	
-	INCBIN "maps/Route18.ablk"
+Route14_Blocks:	
+	INCBIN "maps/Route14.ablk"
 
-Route18Barn_Blocks:	
-	INCBIN "maps/Route18Barn.ablk"
+Route14Barn_Blocks:	
+	INCBIN "maps/Route14Barn.ablk"
 
 Route6Underground_Blocks:
 	INCBIN "maps/Route6Underground.ablk"
@@ -571,8 +563,8 @@ Route9ForestGate_Blocks:
 StaghornForestGate_Blocks:
 	INCBIN "maps/Route9ForestGate.ablk"
 	
-Route8_Blocks:
-	INCBIN "maps/Route8.ablk"
+Route7_Blocks:
+	INCBIN "maps/Route7.ablk"
 
 EastForest_Blocks:
 	INCBIN "maps/EastForest.ablk"	
@@ -619,11 +611,11 @@ OverlookMaze_Blocks:
 LostLand_Blocks:
 	INCBIN "maps/LostLand.ablk"
 
-Route14Cave1F_Blocks:
-	INCBIN "maps/Route14Cave1F.ablk"
+TheBoneyard1F_Blocks:
+	INCBIN "maps/TheBoneyard1F.ablk"
 	
-Route14Cave2F_Blocks:
-	INCBIN "maps/Route14Cave2F.ablk"	
+TheBoneyard2F_Blocks:
+	INCBIN "maps/TheBoneyard2F.ablk"	
 
 PowerPlant1F_Blocks:
 PowerPlant1FB_Blocks:
@@ -671,32 +663,32 @@ CarnationTown_Blocks:
 CarnationZoo_Blocks:
 	INCBIN "maps/CarnationZoo.ablk"
 	
-Route19_Blocks:
-	INCBIN "maps/Route19.ablk"
+Route15_Blocks:
+	INCBIN "maps/Route15.ablk"
 
-Route20_Blocks:
-	INCBIN "maps/Route20.ablk"
+Route16_Blocks:
+	INCBIN "maps/Route16.ablk"
 	
 OrchidCity_Blocks:
 	INCBIN "maps/OrchidCity.ablk"
 
-Route21_Blocks:
-	INCBIN "maps/Route21.ablk"	
+Route17_Blocks:
+	INCBIN "maps/Route17.ablk"	
 
-Route24North_Blocks:
-	INCBIN "maps/Route24North.ablk"	
+Route18North_Blocks:
+	INCBIN "maps/Route18North.ablk"	
 
-Route24South_Blocks:
-	INCBIN "maps/Route24South.ablk"	
+Route18South_Blocks:
+	INCBIN "maps/Route18South.ablk"	
 
-Route24HiddenCave1F_Blocks:
-	INCBIN "maps/Route24HiddenCave1F.ablk"
+Route18HiddenCave1F_Blocks:
+	INCBIN "maps/Route18HiddenCave1F.ablk"
 
-Route24HiddenCaveB1F_Blocks:
-	INCBIN "maps/Route24HiddenCaveB1F.ablk"
+Route18HiddenCaveB1F_Blocks:
+	INCBIN "maps/Route18HiddenCaveB1F.ablk"
 
-Route25_Blocks:
-	INCBIN "maps/Route25.ablk"	
+Route19_Blocks:
+	INCBIN "maps/Route19.ablk"	
 
 AcroporaCave1F_Blocks:
 	INCBIN "maps/AcroporaCave1F.ablk"
@@ -741,11 +733,11 @@ EnteiLair_Blocks:
 SuicuneLair_Blocks:
 	INCBIN "maps/SuicuneLair.ablk"
 
-Route30Cave1F_Blocks:
-	INCBIN "maps/Route30Cave1F.ablk"
+PavonaOasisCave1F_Blocks:
+	INCBIN "maps/PavonaOasisCave1F.ablk"
 
-Route30CaveB1F_Blocks:
-	INCBIN "maps/Route30CaveB1F.ablk"
+PavonaOasisCaveB1F_Blocks:
+	INCBIN "maps/PavonaOasisCaveB1F.ablk"
 
 Route9Cave1F_Blocks:
 	INCBIN "maps/Route9Cave1F.ablk"
@@ -753,29 +745,29 @@ Route9Cave1F_Blocks:
 DrainPunchChamber_Blocks:
 	INCBIN "maps/DrainPunchChamber.ablk"
 
-Route22_Blocks:
-	INCBIN "maps/Route22.ablk"
+Route20_Blocks:
+	INCBIN "maps/Route20.ablk"
 
 MoltenPeakOutside_Blocks:
 	INCBIN "maps/MoltenPeakOutside.ablk"
 	
+Route21_Blocks:
+	INCBIN "maps/Route21.ablk"
+
 Route23_Blocks:
 	INCBIN "maps/Route23.ablk"
 
-Route26_Blocks:
-	INCBIN "maps/Route26.ablk"
+Route23Cave1F_Blocks:
+	INCBIN "maps/Route23Cave1F.ablk"
 
-Route26Cave1F_Blocks:
-	INCBIN "maps/Route26Cave1F.ablk"
+Route23CaveB1F_Blocks:
+	INCBIN "maps/Route23CaveB1F.ablk"
 
-Route26CaveB1F_Blocks:
-	INCBIN "maps/Route26CaveB1F.ablk"
+Route22_Blocks:
+	INCBIN "maps/Route22.ablk"
 
-Route27_Blocks:
-	INCBIN "maps/Route27.ablk"
-
-Route28_Blocks:
-	INCBIN "maps/Route28.ablk"
+Route24_Blocks:
+	INCBIN "maps/Route24.ablk"
 
 MoltenPeak1F_Blocks:
 	INCBIN "maps/MoltenPeak1F.ablk"
@@ -789,9 +781,9 @@ MoltenPeakB2F_Blocks:
 NevermelticeChamber_Blocks:
 Route4HiddenCave_Blocks:
 KinglersDen_Blocks:
-Route8HiddenCave_Blocks:
-Route11HiddenCave_Blocks:
-Route23HiddenCave_Blocks:
+Route7HiddenCave_Blocks:
+Route10HiddenCave_Blocks:
+Route21HiddenCave_Blocks:
 DugtriosDen_Blocks:
 	INCBIN "maps/HiddenCave.5x7.cave.ablk"
 
@@ -888,7 +880,7 @@ TreasureHuntersHouse_Blocks:
 SECTION "Map Blocks 6", ROMX
 
 PastFaviaInn_Blocks:
-PastRoute11Inn_Blocks:
+PastRoute10Inn_Blocks:
 PastPavonaInn_Blocks:
 	INCBIN "maps/time-travel/PastInn.5x4.players_house.ablk"
 
@@ -904,11 +896,11 @@ PastRoute3_Blocks:
 PastFaviaTown_Blocks:
 	INCBIN "maps/time-travel/PastFaviaTown.ablk"
 
-PastRoute8_Blocks:
-	INCBIN "maps/time-travel/PastRoute8.ablk"
+PastRoute7_Blocks:
+	INCBIN "maps/time-travel/PastRoute7.ablk"
 
-PastRoute11_Blocks:
-	INCBIN "maps/time-travel/PastRoute11.ablk"
+PastRoute10_Blocks:
+	INCBIN "maps/time-travel/PastRoute10.ablk"
 
 PastIlexForest_Blocks:
 	INCBIN "maps/time-travel/PastIlexForest.ablk"

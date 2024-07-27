@@ -3,370 +3,511 @@
 Route12_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
-
-TrainerCamperRusty:
-	trainer CAMPER, RUSTY, EVENT_BEAT_CAMPER_RUSTY, CamperRustyText, CamperRustyWinText, 0, .AfterScript
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .SmashWall
+	
+.SmashWall:
+	checkevent EVENT_UNOWN_CHAMBER_OU_OPEN
+	iffalse .skip
+	changeblock  2, 24, $73
+.skip
+	return
+	
+TrainerPokefanMGerald:
+	trainer POKEFANM, GERALD, EVENT_BEAT_POKEFANM_GERALD, PokefanMGeraldText, PokefanMGeraldWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext CamperRustyAfterText
+	writetext PokefanMGeraldAfterText
 	waitbutton
 	closetext
 	end
 	
-TrainerPicnickerLeslie:
-	trainer PICNICKER, LESLIE, EVENT_BEAT_PICNICKER_LESLIE, PicnickerLeslieText, PicnickerLeslieWinText, 0, .AfterScript
+TrainerFirebreatherWayne:
+	trainer FIREBREATHER, WAYNE, EVENT_BEAT_FIREBREATHER_WAYNE, FirebreatherWayneText, FirebreatherWayneWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext PicnickerLeslieAfterText
+	writetext FirebreatherWayneAfterText
 	waitbutton
 	closetext
 	end
 	
-TrainerBeautyRebecca:
-	trainer BEAUTY, REBECCA, EVENT_BEAT_BEAUTY_REBECCA, BeautyRebeccaText, BeautyRebeccaWinText, 0, .AfterScript
+TrainerPokemaniacTyler:
+	trainer POKEMANIAC, TYLER, EVENT_BEAT_POKEMANIAC_TYLER, PokemaniacTylerText, PokemaniacTylerWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BeautyRebeccaAfterText
+	writetext PokemaniacTylerAfterText
 	waitbutton
 	closetext
 	end
 
-TrainerPsychicSolomon:
-	trainer PSYCHIC_T, SOLOMON, EVENT_BEAT_PSYCHIC_SOLOMON, PsychicSolomonText, PsychicSolomonWinText, 0, .AfterScript
+BirdKeeperRoy:
+	trainer BIRD_KEEPER, ROY, EVENT_BEAT_BIRD_KEEPER_ROY, BirdKeeperRoyText, BirdKeeperRoyWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext PsychicSolomonAfterText
+	writetext BirdKeeperRoyAfterText
 	waitbutton
 	closetext
 	end
 
-TrainerTeacherSharon:
-	trainer TEACHER, SHARON, EVENT_BEAT_TEACHER_SHARON, TeacherSharonText, TeacherSharonWinText, 0, .AfterScript
+BikerJesse:
+	trainer BIKER, JESSE, EVENT_BEAT_BIKER_JESSE, BikerJesseText, BikerJesseWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext TeacherSharonAfterText
+	writetext BikerJesseAfterText
 	waitbutton
 	closetext
 	end
-
-TrainerSchoolboyMartin:
-	trainer SCHOOLBOY, MARTIN, EVENT_BEAT_SCHOOLBOY_MARTIN, SchoolboyMartinText, SchoolboyMartinWinText, 0, .AfterScript
+	
+TrainerSwimmerAngie:
+	trainer SWIMMERF, ANGIE, EVENT_BEAT_SWIMMER_ANGIE, SwimmerAngieText, SwimmerAngieWinText, 0, .AfterScript
+	
+.AfterScript
+	endifjustbattled
+	opentext
+	writetext SwimmerAngieAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerFisherDerrick:
+	trainer FISHER, DERRICK, EVENT_BEAT_FISHER_DERRICK, FisherDerrickText, FisherDerrickWinText, 0, .AfterScript
+	
+.AfterScript
+	endifjustbattled
+	opentext
+	writetext FisherDerrickAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerLadDevin:
+	trainer LAD, DEVIN, EVENT_BEAT_LAD_DEVIN, LadDevinText, LadDevinWinText, 0, .AfterScript
+	
+.AfterScript
+	endifjustbattled
+	opentext
+	writetext LadDevinAfterText
+	waitbutton
+	closetext
+	end
+	
+TrainerPokefanMRichard:
+	trainer POKEFANM, RICHARD, EVENT_BEAT_POKEFANM_RICHARD, PokefanMRichardText, PokefanMRichardWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext SchoolboyMartinAfterText
+	writetext PokefanMRichardAfterText
 	waitbutton
 	closetext
 	end
-
-SootheBellLady:
+	
+TrainerCooltrainerMLucas:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_SOOTHE_BELL
-	iftrue .After
-	checkevent EVENT_SOOTHE_BELL_GIFT_PENDING
-	iftrue .GiveSootheBell
-	checkevent EVENT_MET_SOOTHE_BELL_LADY
+	checkevent EVENT_BEAT_COOLTRAINERM_LUCAS
+	iftrue .FightDone
+	checkevent EVENT_BEAT_FIREBREATHER_WAYNE
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEMANIAC_TYLER
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEFANM_GERALD
+	iffalse .Explain
+	checkevent EVENT_BEAT_BIRD_KEEPER_ROY
+	iffalse .Explain
+	checkevent EVENT_BEAT_BIKER_JESSE
+	iffalse .Explain
+	checkevent EVENT_BEAT_SWIMMER_ANGIE
+	iffalse .Explain
+	checkevent EVENT_BEAT_FISHER_DERRICK
+	iffalse .Explain
+	checkevent EVENT_BEAT_LAD_DEVIN
+	iffalse .Explain
+	checkevent EVENT_BEAT_POKEFANM_RICHARD
+	iffalse .Explain
+	writetext LucasYouDidIt
+	waitbutton
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext LucasChallengeText
+	waitbutton
+	closetext
+	winlosstext CooltrainerLucasWin, CooltrainerLucasLoss
+	loadtrainer COOLTRAINERM, LUCAS
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_COOLTRAINERM_LUCAS
+	opentext
+	jump .FightDone
+	
+.FightDone
+	checkevent GOT_CYNDAQUIL
+	iftrue .Cyndaquil
+	writetext LucasAfterBattleText
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .PartyFull
+	writetext LucasGaveCyndaquil
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	givepoke CYNDAQUIL, 10
+	special CyndaquilGiftMon
+	setevent GOT_CYNDAQUIL
+	closetext
+	end
+	
+.PartyFull
+	writetext LucasNotEnoughRoom
+	waitbutton
+	closetext
+	end
+	
+.Cyndaquil
+	writetext AlreadyGotCyndaquil
+	waitbutton
+	closetext
+	end
+	
+.Explain
+	checkevent ROUTE_12_TALKED_TO_LUCAS
 	iftrue .Waiting
-
-	writetext SootheBellLadyIntroText
+	writetext LucasExplaination
+	setevent ROUTE_12_TALKED_TO_LUCAS
 	waitbutton
-	setevent EVENT_MET_SOOTHE_BELL_LADY
-	jump .CheckRinring
-
+	closetext
+	end
+	
 .Waiting
-	writetext SootheBellLadyWaitingText
-	waitbutton
-.CheckRinring
-	writebyte RINRING
-	special FindPartyMonThatSpecies
-	iffalse .No
-	showemote EMOTE_HEART, LAST_TALKED, 15
-	writetext SootheBellLadyShowRinringText
-	waitbutton
-
-.GiveSootheBell
-	writetext SootheBellLadyTryGiveItemText
-	waitbutton
-	verbosegiveitem SOOTHE_BELL
-	iffalse .NoRoom
-	setevent EVENT_GOT_SOOTHE_BELL
-
-.After
-	writetext SootheBellLadyAfterText
+	writetext LucasMoreToGo
 	waitbutton
 	closetext
 	end
 
-.NoRoom
-	setevent EVENT_SOOTHE_BELL_GIFT_PENDING
-	writetext SootheBellLadyBagFullText
-	waitbutton
-.No
-	closetext
-	end
+Route12SharpBeak:
+	itemball SHARP_BEAK
 
-Route12FruitTree:
-	fruittree FRUITTREE_ROUTE_11_1
+Route12FruitTree1:
+	fruittree FRUITTREE_ROUTE_12_1
 
-Route12ItemBush:
-	itembush FRUITTREE_ROUTE_11_2
-
-Route12FireStone:
-	itemball FIRE_STONE
+Route12FruitTree2:
+	fruittree FRUITTREE_ROUTE_12_2
 	
-Route12HiddenFreshWater:
-	hiddenitem FRESH_WATER, EVENT_ROUTE_11_HIDDEN_FRESH_WATER
+Route12Rock:
+	jumpstd smashrock
 	
-Route12HiddenSuperRepel:
-	hiddenitem SUPER_REPEL, EVENT_ROUTE_11_HIDDEN_SUPER_REPEL
-
-Route12ShelterSign:
-	jumptext ShelterSignText
-
-ShelterSignText:
-	text "#MON SHELTER-"
-	
-	para "Pledging to take"
-	line "care of any"
-	cont "#MON in need."
+PokefanMGeraldText:
+	text "Do you cook for"
+	line "your #MON?"
 	done
 	
-CamperRustyText:
-	text "There is so much"
-	line "to explore!"
-	
-	para "Let's explore each"
-	line "other's #MON!"
-	done
-
-PicnickerLeslieText:
-	text "Hi…"
-	line "um…"
-	
-	para "Battle me!"
-	
-	para "…Please?"
+PokefanMGeraldWinText:
+	text "The BERRIES were"
+	line "just a snack."
 	done
 	
-BeautyRebeccaText:
-	text "Hey there, cutie!"
+PokefanMGeraldAfterText:
+	text "I'm kinda hungry"
+	line "myself."
 	
-	para "If you let me win,"
-	line "I might give you"
-	cont "something nice."
-	done
-	
-PsychicSolomonText:
-	text "Want to see a"
-	line "magic trick?"
-	
-	para "I can make your"
-	line "POTIONs disappear!"
+	para "It's been so long"
+	line "since I've been"
+	cont "able to afford"
+	cont "any real food."
 	done
 	
-TeacherSharonText:
-	text "I am giving my"
-	line "students first-"
-	cont "hand battling exp-"
-	cont "erience."
+FirebreatherWayneText:
+	text "Stand clear!"
+	
+	para "I don't want any-"
+	line "one to get burned!"
 	done
 	
-SchoolboyMartinText:
-	text "My assignment for"
-	line "today is to win a"
-	cont "battle against the"
-	cont "first trainer I"
-	cont "see!"
+FirebreatherWayneWinText:
+	text "All of that"
+	line "practice, it was"
+	cont "all for naught!"
 	done
 	
-CamperRustyWinText:
-	text "I took a wrong"
-	line "turn somewhere!"
-	done
-
-PicnickerLeslieWinText:
-	text "I was too nervous"
-	line "to win…"
-	done
-
-BeautyRebeccaWinText:
-	text "Hmph! You had your"
-	line "chance, and you"
-	cont "blew it!"
-	done
-
-PsychicSolomonWinText:
-	text "You tried your"
-	line "best, partners."
-	done
-
-TeacherSharonWinText:
-	text "I may need you to"
-	line "become my teaching"
-	cont "aide."
-	done
-
-SchoolboyMartinWinText:
-	text "This will affect"
-	line "my marks for sure!"
-	done
-
-CamperRustyAfterText:
-	text "I really need to"
-	line "take a rest after"
-	cont "that battle."
+FirebreatherWayneAfterText:
+	text "I like to practice"
+	line "my technique on"
+	cont "this hill."
 	
-	para "I won't be able to"
-	line "move from this"
-	cont "spot until then!"
+	para "There is no grass"
+	line "to accidentally"
+	cont "set on fire."
 	done
-
-PicnickerLeslieAfterText:
-	text "I thought the way"
-	line "you battled was"
-	cont "kind of cute…"
 	
-	para "……………"
-
-	para "…I'm sorry!"
+PokemaniacTylerText:
+	text "Can you match my"
+	line "team's variety?"
 	done
-
-BeautyRebeccaAfterText:
-	text "Wipe that smirk"
-	line "off your face!"
-	done
-
-PsychicSolomonAfterText:
-	text "My #MON have"
-	line "taught me some"
-	cont "real neat tricks."
 	
-	para "I feel bad for"
-	line "losing a battle"
-	cont "with them."
+PokemaniacTylerWinText:
+	text "That was my last"
+	line "#MON?"
+	
+	para "Impossible!"
+	done
+	
+PokemaniacTylerAfterText:
+	text "I have so many"
+	line "#MON, but I"
+	cont "need more."
+	
+	para "I need all of"
+	line "them!"
 	done
 
-TeacherSharonAfterText:
-	text "Not everything can"
-	line "be taught in a"
-	cont "classroom."
+BirdKeeperRoyText:
+	text "Are you a travel-"
+	line "er?"
+	
+	para "Me too! Do you"
+	line "have any exotic"
+	cont "#MON?"
+	done
+	
+BirdKeeperRoyWinText:
+	text "My head was in the"
+	line "clouds."
+	done
+	
+BirdKeeperRoyAfterText:
+	text "Nothing compares"
+	line "to the rush I get"
+	cont "seeing this whole"
+	cont "region from above."
+	done
+	
+BikerJesseText:
+	text "I'm gonna tear up"
+	line "your team like I"
+	cont "tear up this"
+	cont "trail!"
+	done
+	
+BikerJesseWinText:
+	text "Oh man, wipeout!"
+	done
+	
+BikerJesseAfterText:
+	text "Burn rubber and"
+	line "leave smoke. That"
+	cont "is what I live by!"
+	done
+	
+SwimmerAngieText:
+	text "You creep! Can't"
+	line "you see I'm"
+	cont "changing into my"
+	cont "swimsuit?"
+	done
+	
+SwimmerAngieWinText:
+	text "Just because you"
+	line "won, it doesn't"
+	cont "mean you can still"
+	cont "look!"
 	done
 
-SchoolboyMartinAfterText:
-	text "Ms. SHARON is the"
-	line "best! None of my"
-	cont "other TEACHERs"
-	cont "let us take field"
-	cont "trips to battle"
-	cont "real trainers."
+SwimmerAngieAfterText:
+	text "What are you still"
+	line "doing here?"
+	cont "Get lost!"
+	done
+	
+FisherDerrickText:
+	text "My SLOWPOKE love"
+	line "helping me fish"
+	cont "for new #MON."
 	done
 
-SootheBellLadyIntroText:
-	text "There's a #MON"
-	line "that is the most"
-	cont "adorable little"
-	cont "kitty with a bell"
-	cont "on its tail!"
-
-	para "It's my favorite,"
-	line "but I've never been"
-	cont "able to see one in"
-	cont "the wild."
-
-	para "You're a trainer,"
-	line "could you catch"
-	cont "one to show me?"
+FisherDerrickWinText:
+	text "Argh! I can't do"
+	line "anything with"
+	cont "these dumb fish!"
 	done
 
-SootheBellLadyWaitingText:
-	text "Have you found my"
-	line "favorite #MON?"
-
-	para "It has black fur,"
-	line "a bell on the tip"
-	cont "of its tail, and"
-	cont "is the prettiest"
-	cont "#MON ever!"
+FisherDerrickAfterText:
+	text "I should go visit"
+	line "RUGOSA COAST if" 
+	cont "I want some really"
+	cont "strong #MON."
+	done
+	
+LadDevinText:
+	text "Everyone I've"
+	line "battled has been"
+	cont "too distracted by"
+	cont "ANGIE's swimsuit"
+	cont "to focus!"
+	done
+	
+LadDevinWinText: 
+	text "Your laser focus!"
+	line "I didn't stand a"
+	cont "chance!"
+	done
+	
+LadDevinAfterText:
+	text "At least I still"
+	line "get to see ANGIE"
+	cont "myself."
 	done
 
-SootheBellLadyShowRinringText:
-	text "Aaaaah!"
-	line "Oh my goodness!"
-
-	para "It's way more prec-"
-	line "ious in person!"
+PokefanMRichardText:
+	text "How could you cut"
+	line "down these trees!"
+	
+	para "My #MON helped"
+	line "me grow them!"
 	done
-
-SootheBellLadyTryGiveItemText:
-	text "Here, you must"
-	line "take this, it"
-	cont "would look so cute"
-	cont "on your RINRING!"
+	
+PokefanMRichardWinText:
+	text "You're a real"
+	line "jerk, kid!"
 	done
-
-SootheBellLadyBagFullText:
-	text "Aww! Your PACK"
-	line "is full…"
-
-	para "Please make some"
-	line "room? This is the"
-	cont "perfect accessory"
-	cont "for your RINRING."
+	
+PokefanMRichardAfterText:
+	text "I need to heal my"
+	line "#MON before the"
+	cont "trees will grow"
+	cont "back."
 	done
-
-SootheBellLadyAfterText:
-	text "Letting a #MON"
-	line "hold a SOOTHE BELL"
-	cont "is one of the"
-	cont "quickest ways to"
-	cont "have it grow fond"
-	cont "of you."
-
-	para "Thank you so very"
-	line "much again for"
-	cont "showing me your"
-	cont "precious RINRING!"
+	
+LucasExplaination:
+	text "Hey, kid. I'm"
+	line "LUCAS."
+	
+	para "I want to battle"
+	line "only the strongest"
+	cont "trainers I can on"
+	cont "my way to the top."
+	
+	para "Since you made it"
+	line "to this secluded"
+	cont "little area, you"	
+	cont "might be worthy"
+	cont "of my time."
+	
+	para "Just to be sure, I"
+	line "want you to beat"
+	cont "every trainer on"
+	cont "ROUTE 12."
+	
+	para "Then we'll see how"
+	line "you stack up in"
+	cont "comparison to me!"
+	done
+	
+LucasMoreToGo:
+	text "Some trainers are"
+	line "telling me they"
+	cont "haven't had the"
+	cont "chance to battle"
+	cont "you. What are you"
+	cont "waiting for?"
+	done
+	
+LucasYouDidIt:
+	text "Seems you've won"
+	line "against everyone"
+	cont "here."
+	
+	para "I hope you've"
+	line "prepared yourself."
+	done
+	
+LucasChallengeText:	
+	text "I won't hold back!"
+	done
+	
+CooltrainerLucasWin:
+	text "Is this what it's"
+	line "like to actually"
+	cont "lose?"
+	
+	para "I'm not mad, just…"
+	
+	para "I feel a drive to"
+	line "improve."
+	
+	para "Thank you for this"
+	line "experience."
+	done
+	
+CooltrainerLucasLoss:
+	text "Just who the heck"
+	line "do you think I am?"
+	done
+	
+LucasAfterBattleText:
+	text "I've never lost a"
+	line "battle before, so"
+	cont "I'm not sure what"
+	cont "to say here."
+	
+	para "…So just take my"
+	line "CYNDAQUIL, okay?"
+	done
+	
+LucasGaveCyndaquil:
+	text "<PLAYER> received"
+	line "CYNDAQUIL!"
+	done
+	
+LucasNotEnoughRoom:
+	text "You can't have"
+	line "more than 6"
+	cont "#MON at a time."
+	
+	para "Drop one off in"
+	line "the PC and you"
+	cont "can have my gift."
+	done
+	
+AlreadyGotCyndaquil:
+	text "Just you wait!"
+	
+	para "When my #MON"
+	line "get stronger, I'll"
+	cont "be coming for you!"
 	done
 
 Route12_MapEvents:
 	db 0, 0 ; filler
 
-	db 5 ; warp events
-	warp_event  4, 12, ROUTE_11_STAGHORN_GATE, 3
-	warp_event  4, 13, ROUTE_11_STAGHORN_GATE, 4
-	warp_event 49,  5, ROUTE_11_SHELTER, 1
-	warp_event 57, 21, ROUTE_10_ROUTE_11_GATE, 3
-	warp_event 58, 21, ROUTE_10_ROUTE_11_GATE, 4
+	db 1 ; warp events
+	warp_event  2, 25, UNOWN_CHAMBER_OU, 1
 
 	db 0 ; coord events
 
-	db 3 ; bg events
-	bg_event 48,  6, BGEVENT_READ, Route12ShelterSign
-	bg_event 54, 21, BGEVENT_ITEM, Route12HiddenFreshWater
-	bg_event 25,  5, BGEVENT_ITEM, Route12HiddenSuperRepel
+	db 0 ; bg events
 
-	db 11 ; object events
-	object_event 16, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 4, TrainerCamperRusty, -1
-	object_event 17,  8, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerPicnickerLeslie, -1
-	object_event 34, 14, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyRebecca, -1
-	object_event 39, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicSolomon, -1
-	object_event 37,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerTeacherSharon, -1
-	object_event 34,  7, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSchoolboyMartin, -1
-	object_event 61, 18, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SootheBellLady, -1
-	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree, -1
-	object_event 65,  8, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12ItemBush, -1
-	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_11_FIRE_STONE
-	object_event 12, -3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
+	db 16 ; object events
+	object_event 40, 25, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerPokefanMGerald, -1
+	object_event 47, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacTyler, -1
+	object_event 50, 20, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, BirdKeeperRoy, -1
+	object_event 46,  9, SPRITE_POKEFAN_M, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherWayne, -1
+	object_event 39,  6, SPRITE_BIKER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, BikerJesse, -1
+	object_event 39, 16, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12Rock, -1
+	object_event 50,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12Rock, -1
+	object_event 51,  6, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12Rock, -1
+	object_event 47, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree1, -1
+	object_event 22, 29, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree2, -1
+	object_event 27, 14, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSwimmerAngie, -1
+	object_event 27, 28, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerPokefanMRichard, -1
+	object_event 31,  5, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerMLucas, -1
+	object_event 12, 17, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLadDevin, -1
+	object_event 34, 19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerFisherDerrick, -1
+	object_event 50, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12SharpBeak, EVENT_ROUTE_12_SHARP_BEAK
