@@ -248,8 +248,8 @@ Route18Farmhouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  3,  7, ROUTE_18, 6
-	warp_event  4,  7, ROUTE_18, 6
+	warp_event  3,  7, ROUTE_14, 6
+	warp_event  4,  7, ROUTE_14, 6
 
 	db 0 ; coord events
 

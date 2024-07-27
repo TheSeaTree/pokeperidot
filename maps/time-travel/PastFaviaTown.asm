@@ -79,7 +79,7 @@ PastFaviaTown_MapEvents:
 	warp_event 19, 15, PAST_FAVIA_INN, 1 ; Inn
 	warp_event 13, 21, PAST_FAVIA_FRIENDSHIP_HOUSE, 1 ; Friendship House
 	warp_event  9, 17, PAST_FAVIA_DAY_CARE, 1 ; Day Care
-	warp_event  5,  5, PAST_ROUTE_11_GATE, 3 ; Route 11 Gate
+	warp_event  5,  5, PAST_ROUTE_10_GATE, 3 ; Route 11 Gate
 	warp_event 21, 25, PAST_FAVIA_MART, 1 ; Mart
 
 	db 0 ; coord events

@@ -46,8 +46,8 @@ BurglarHideout1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  9, ROUTE_21, 3
-	warp_event  5,  9, ROUTE_21, 3
+	warp_event  4,  9, ROUTE_17, 3
+	warp_event  5,  9, ROUTE_17, 3
 	warp_event  9,  2, BURGLAR_HIDEOUT_B1F, 1
 	warp_event  3,  2, BURGLAR_HIDEOUT_B1F, 2
 

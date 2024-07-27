@@ -6,7 +6,7 @@ Route25_MapScripts:
 	db 0 ; callbacks
 
 Route25FruitTree:
-	fruittree FRUITTREE_ROUTE_25
+	fruittree FRUITTREE_ROUTE_19
 
 Route25Nugget:
 	itemball NUGGET
@@ -29,7 +29,7 @@ Route25_MapEvents:
 	db 3 ; warp events
 	warp_event 18,  5, HO_OH_CASTLE_1F_CENTER_ROOM, 1 ; Entei Cave
 	warp_event 19,  5, HO_OH_CASTLE_1F_CENTER_ROOM, 2 ; Hidden Cave
-	warp_event 53, 15, ROUTE_25_GATE, 3
+	warp_event 53, 15, ROUTE_19_GATE, 3
 
 	db 0 ; coord events
 
@@ -38,4 +38,4 @@ Route25_MapEvents:
 
 	db 2 ; object events
 	object_event 46, 27, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route25FruitTree, -1
-	object_event 43, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Nugget, EVENT_ROUTE_25_NUGGET
+	object_event 43, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route25Nugget, EVENT_ROUTE_19_NUGGET

@@ -19,10 +19,10 @@ Route8Route10Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  0,  4, ROUTE_8, 4
-	warp_event  0,  5, ROUTE_8, 5
-	warp_event  9,  4, ROUTE_10_NORTH, 1
-	warp_event  9,  5, ROUTE_10_NORTH, 2
+	warp_event  0,  4, ROUTE_7, 4
+	warp_event  0,  5, ROUTE_7, 5
+	warp_event  9,  4, ROUTE_8_NORTH, 1
+	warp_event  9,  5, ROUTE_8_NORTH, 2
 
 	db 0 ; coord events
 

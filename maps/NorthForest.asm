@@ -264,8 +264,8 @@ NorthForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 17, 25, ROUTE_28_GATE, 1
-	warp_event 18, 25, ROUTE_28_GATE, 2
+	warp_event 17, 25, ROUTE_24_GATE, 1
+	warp_event 18, 25, ROUTE_24_GATE, 2
 	warp_event 24,  4, MEWTWO_LAB_1F, 1
 	warp_event 25,  4, MEWTWO_LAB_1F, 2
 

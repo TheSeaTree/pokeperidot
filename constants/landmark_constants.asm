@@ -6,7 +6,7 @@
 	const ELKHORN_TOWN      ; 01
 	const ROUTE_1           ; 30
 	const PAVONA_VILLAGE    ; 03
-	const ROUTE_30          ; 04
+	const PAVONA_OASIS      ; 04
 	const ROUTE_2           ; 32
 	const PECTINIA_CITY     ; 0c
 	const ROUTE_3           ; 34

@@ -51,8 +51,8 @@ Route21StaghornGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  0,  4, ROUTE_21, 1
-	warp_event  0,  5, ROUTE_21, 2
+	warp_event  0,  4, ROUTE_17, 1
+	warp_event  0,  5, ROUTE_17, 2
 	warp_event  9,  4, STAGHORN_TOWN, 10
 	warp_event  9,  5, STAGHORN_TOWN, 11
 

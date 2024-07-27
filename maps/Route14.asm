@@ -1,6 +1,6 @@
 	const_def 2 ; object constants
-	const ROUTE_14_TUTOR
-	const ROUTE_14_ODDISH
+	const ROUTE_13_TUTOR
+	const ROUTE_13_ODDISH
 
 Route14_MapScripts:
 	db 0 ; scene scripts
@@ -107,14 +107,14 @@ TrainerSuperNerdSandy:
 	end
 	
 Route14MoveTutor:
-	applymovement ROUTE_14_TUTOR, Route14TutorDance
+	applymovement ROUTE_13_TUTOR, Route14TutorDance
 	faceplayer
 	opentext
 	checkevent EVENT_LOVE_BALLS_FOR_SALE
 	iftrue .SellBalls
 	writetext Route14TutorText
 	waitbutton
-	applymovement ROUTE_14_TUTOR, Route14TutorDance
+	applymovement ROUTE_13_TUTOR, Route14TutorDance
 	faceplayer
 	writetext Route14TutorDanceText
 	waitbutton
@@ -128,7 +128,7 @@ Route14MoveTutor:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_LOVE_BALLS_FOR_SALE
-	applymovement ROUTE_14_TUTOR, Route14TutorDance
+	applymovement ROUTE_13_TUTOR, Route14TutorDance
 	faceplayer
 	opentext
 	writetext Route14DancerAfterText
@@ -147,7 +147,7 @@ Route14MoveTutor:
 	closewindow
 	ifequal 1, .OneBall
 	ifequal 2, .TenBalls
-	applymovement ROUTE_14_TUTOR, Route14TutorDance
+	applymovement ROUTE_13_TUTOR, Route14TutorDance
 	faceplayer
 	writetext LoveBallMerchantComeBack
 	waitbutton
@@ -265,13 +265,13 @@ Route14Nugget:
 	itemball NUGGET
 	
 Route14HiddenPowerHerb:
-	hiddenitem POWER_HERB, EVENT_ROUTE_14_HIDDEN_POWER_HERB
+	hiddenitem POWER_HERB, EVENT_ROUTE_13_HIDDEN_POWER_HERB
 	
 Route14HiddenEnergyRoot:
-	hiddenitem ENERGY_ROOT, EVENT_ROUTE_14_HIDDEN_ENERGY_ROOT
+	hiddenitem ENERGY_ROOT, EVENT_ROUTE_13_HIDDEN_ENERGY_ROOT
 	
 Route14HiddenMaxEther:
-	hiddenitem MAX_ETHER, EVENT_ROUTE_14_HIDDEN_MAX_ETHER
+	hiddenitem MAX_ETHER, EVENT_ROUTE_13_HIDDEN_MAX_ETHER
 	
 Route14TutorDance:
 	turn_head DOWN
@@ -670,10 +670,10 @@ Route14_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 40,  7, ROUTE_14_CAVE_1F, 5
-	warp_event 55, 10, ROUTE_14_RUGOSA_GATE, 1
-	warp_event 55, 11, ROUTE_14_RUGOSA_GATE, 2
-	warp_event 17,  5, ROUTE_14_GATE, 1
+	warp_event 40,  7, THE_BONEYARD_1F, 5
+	warp_event 55, 10, ROUTE_13_RUGOSA_GATE, 1
+	warp_event 55, 11, ROUTE_13_RUGOSA_GATE, 2
+	warp_event 17,  5, ROUTE_13_GATE, 1
 
 	db 0 ; coord events
 
@@ -684,7 +684,7 @@ Route14_MapEvents:
 
 	db 14 ; object events
 	object_event 26,  7, SPRITE_KIMONO_GIRL, SPRITEMOVEDATA_SPINCOUNTERCLOCKWISE, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14MoveTutor, -1
-	object_event 40,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_12_LEADER
+	object_event 40,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route14CaveGuard, EVENT_HEARD_ROUTE_11_LEADER
 	object_event 42, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
 	object_event 43, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMia, -1
 	object_event 39, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherCarlos, -1
@@ -692,8 +692,8 @@ Route14_MapEvents:
 	object_event 53, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicWes, -1
 	object_event 37, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLadTristan, -1
 	object_event 20,  8, SPRITE_PHARMACIST, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 1, BlackGlassesGuy, -1
-	object_event 47,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_14_ULTRA_BALL
-	object_event 26, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_14_NUGGET
+	object_event 47,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14UltraBall, EVENT_ROUTE_13_ULTRA_BALL
+	object_event 26, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14Nugget, EVENT_ROUTE_13_NUGGET
 	object_event 12, 16, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerLassKelly, -1
 	object_event 14, 12, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherLisa, -1
 	object_event  6, 17, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSuperNerdSandy, -1

@@ -37,8 +37,8 @@ PastRoute11House4_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 2,  7, PAST_ROUTE_11, 9
-	warp_event 3,  7, PAST_ROUTE_11, 9
+	warp_event 2,  7, PAST_ROUTE_10, 9
+	warp_event 3,  7, PAST_ROUTE_10, 9
 
 	db 0 ; coord events
 

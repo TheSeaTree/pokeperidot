@@ -8,9 +8,9 @@ Route14Gate_MapScripts:
 Route14GateOfficer1Script:
 	faceplayer
 	opentext
-	checkevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_14_GUARD
+	checkevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_13_GUARD
 	iftrue .AfterReward
-	checkevent EVENT_ROUTE_14_GATE_STARING_CONTEST
+	checkevent EVENT_ROUTE_13_GATE_STARING_CONTEST
 	iftrue .Guard1Won
 	checkcode VAR_FACING
 	ifequal UP, .Guard1Lost
@@ -35,7 +35,7 @@ Route14GateOfficer1Script:
 	writetext Route14GatePlayerPutAway
 	waitbutton
 	closetext
-	setevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_14_GUARD
+	setevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_13_GUARD
 	end
 	
 .AfterReward
@@ -55,9 +55,9 @@ Route14GateOfficer2Script:
 	opentext
 	checkevent EVENT_BEAT_OFFICER_HARRY
 	iftrue .FightDone
-	checkevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_14_GUARD
+	checkevent EVENT_GOT_RARE_CANDY_FROM_ROUTE_13_GUARD
 	iftrue .AfterReward
-	checkevent EVENT_ROUTE_14_GATE_STARING_CONTEST
+	checkevent EVENT_ROUTE_13_GATE_STARING_CONTEST
 	iftrue .Guard2Lost
 	checkcode VAR_FACING
 	ifequal UP, .Guard2Lost
@@ -70,7 +70,7 @@ Route14GateOfficer2Script:
 	writetext Route14GateOfficer2LostText
 	waitbutton
 	closetext
-	setevent EVENT_ROUTE_14_GATE_STARING_CONTEST
+	setevent EVENT_ROUTE_13_GATE_STARING_CONTEST
 	end
 	
 .AfterReward
@@ -197,10 +197,10 @@ Route14Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  7, ROUTE_14, 4
-	warp_event  5,  7, ROUTE_14, 4
-	warp_event  4,  0, ROUTE_18, 1
-	warp_event  5,  0, ROUTE_18, 2
+	warp_event  4,  7, ROUTE_13, 4
+	warp_event  5,  7, ROUTE_13, 4
+	warp_event  4,  0, ROUTE_14, 1
+	warp_event  5,  0, ROUTE_14, 2
 
 	db 0 ; coord events
 

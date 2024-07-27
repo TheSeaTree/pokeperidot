@@ -8,7 +8,7 @@ Route8_MapScripts:
 	callback MAPCALLBACK_TILES, .SmashWallWarpPanel
 
 .SmashWallWarpPanel:
-	checkevent EVENT_ROUTE_8_HIDDEN_CAVE_OPEN
+	checkevent EVENT_ROUTE_7_HIDDEN_CAVE_OPEN
 	iffalse .skipcave
 	changeblock  22,  4, $73
 .skipcave
@@ -88,7 +88,7 @@ Route8UndergroundPathSign:
 	jumptext Route8UndergroundPathSignText
 
 Route8FruitTree:
-	fruittree FRUITTREE_ROUTE_8
+	fruittree FRUITTREE_ROUTE_7
 
 Route8SunStone:
 	itemball SUN_STONE
@@ -233,12 +233,12 @@ Route8_MapEvents:
 
 	db 8 ; warp events
 	warp_event 31, 21, ROUTE_6_UNDERGROUND, 7
-	warp_event  4, 58, ROUTE_8_FAVIA_GATE, 3
-	warp_event  4, 59, ROUTE_8_FAVIA_GATE, 4
-	warp_event 33, 50, ROUTE_8_ROUTE_10_GATE, 1
-	warp_event 33, 51, ROUTE_8_ROUTE_10_GATE, 2
-	warp_event 15, 45, ROUTE_8_SILK_SCARF_HOUSE, 1
-	warp_event 22,  5, ROUTE_8_HIDDEN_CAVE, 1
+	warp_event  4, 58, ROUTE_7_FAVIA_GATE, 3
+	warp_event  4, 59, ROUTE_7_FAVIA_GATE, 4
+	warp_event 33, 50, ROUTE_7_ROUTE_8_GATE, 1
+	warp_event 33, 51, ROUTE_7_ROUTE_8_GATE, 2
+	warp_event 15, 45, ROUTE_7_SILK_SCARF_HOUSE, 1
+	warp_event 22,  5, ROUTE_7_HIDDEN_CAVE, 1
 	warp_event 16, 59, FAVIA_TOWN, 11
 	db 0 ; coord events
 
@@ -247,10 +247,10 @@ Route8_MapEvents:
 
 	db 15 ; object events
 	object_event 20, 45, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route8FruitTree, -1
-	object_event  4, 46, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8SunStone, EVENT_ROUTE_8_SUN_STONE
-	object_event 10, 69, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8RareCandy, EVENT_ROUTE_8_RARE_CANDY
-	object_event 12, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8Revive, EVENT_ROUTE_8_REVIVE
-	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8DampCharm, EVENT_ROUTE_8_DAMP_CHARM
+	object_event  4, 46, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8SunStone, EVENT_ROUTE_7_SUN_STONE
+	object_event 10, 69, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8RareCandy, EVENT_ROUTE_7_RARE_CANDY
+	object_event 12, 36, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8Revive, EVENT_ROUTE_7_REVIVE
+	object_event  6,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route8DampCharm, EVENT_ROUTE_7_DAMP_CHARM
 	object_event 24, 21, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerKait, -1
 	object_event 18, 35, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_RIGHT, 2, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerBirdKeeperAlex, -1
 	object_event 17, 53, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 2, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerFirebreatherBrian, -1

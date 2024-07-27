@@ -229,25 +229,25 @@ Route27SuperNerd:
 	jumptextfaceplayer Route27SuperNerdText
 
 Route27HiddenRevive:
-	hiddenitem REVIVE, EVENT_ROUTE_27_HIDDEN_REVIVE
+	hiddenitem REVIVE, EVENT_ROUTE_22_HIDDEN_REVIVE
 
 Route27HiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_ROUTE_27_HIDDEN_FULL_RESTORE
+	hiddenitem FULL_RESTORE, EVENT_ROUTE_22_HIDDEN_FULL_RESTORE
 
 Route27HiddenMaxRevive:
-	hiddenitem MAX_REVIVE, EVENT_ROUTE_27_HIDDEN_MAX_REVIVE
+	hiddenitem MAX_REVIVE, EVENT_ROUTE_22_HIDDEN_MAX_REVIVE
 
 Route27HiddenPPUp:
-	hiddenitem PP_UP, EVENT_ROUTE_27_HIDDEN_PP_UP
+	hiddenitem PP_UP, EVENT_ROUTE_22_HIDDEN_PP_UP
 
 Route27HiddenRareCandy1:
-	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_1
+	hiddenitem RARE_CANDY, EVENT_ROUTE_22_HIDDEN_RARE_CANDY_1
 
 Route27HiddenRareCandy2:
-	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_2
+	hiddenitem RARE_CANDY, EVENT_ROUTE_22_HIDDEN_RARE_CANDY_2
 
 Route27HiddenRareCandy3:
-	hiddenitem RARE_CANDY, EVENT_ROUTE_27_HIDDEN_RARE_CANDY_3
+	hiddenitem RARE_CANDY, EVENT_ROUTE_22_HIDDEN_RARE_CANDY_3
 
 Route27NidoqueenStomping:
 	turn_step LEFT
@@ -586,12 +586,12 @@ Route27_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event  4, 34, ROUTE_27_GATE, 3
-	warp_event  4, 35, ROUTE_27_GATE, 4
-	warp_event 31, 43, ROUTE_23_GATE, 1
-	warp_event 32, 43, ROUTE_23_GATE, 2
-	warp_event 33, 30, ROUTE_26_GATE, 1
-	warp_event 33, 31, ROUTE_26_GATE, 2
+	warp_event  4, 34, ROUTE_22_GATE, 3
+	warp_event  4, 35, ROUTE_22_GATE, 4
+	warp_event 31, 43, ROUTE_21_GATE, 1
+	warp_event 32, 43, ROUTE_21_GATE, 2
+	warp_event 33, 30, ROUTE_23_GATE, 1
+	warp_event 33, 31, ROUTE_23_GATE, 2
 	warp_event  5,  1, DEVELOPERS_HOUSE, 1
 
 	db 0 ; coord events

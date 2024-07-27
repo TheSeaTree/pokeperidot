@@ -60,8 +60,8 @@ Route12StaghornGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, STAGHORN_TOWN, 5
 	warp_event  0,  5, STAGHORN_TOWN, 6
-	warp_event  9,  4, ROUTE_12, 1
-	warp_event  9,  5, ROUTE_12, 2
+	warp_event  9,  4, ROUTE_11, 1
+	warp_event  9,  5, ROUTE_11, 2
 
 	db 0 ; coord events
 

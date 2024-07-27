@@ -86,8 +86,8 @@ Route27Gate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, VICTORY_COAST, 3
 	warp_event  0,  5, VICTORY_COAST, 4
-	warp_event  9,  4, ROUTE_27, 1
-	warp_event  9,  5, ROUTE_27, 2
+	warp_event  9,  4, ROUTE_22, 1
+	warp_event  9,  5, ROUTE_22, 2
 
 	db 0 ; coord events
 

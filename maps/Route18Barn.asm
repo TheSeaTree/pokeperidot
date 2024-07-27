@@ -52,7 +52,7 @@ Route18BarnMiltankScript:
 	end
 	
 Route18BarnHiddenMoomooMilk:
-	hiddenitem MOOMOO_MILK, EVENT_ROUTE_18_BARN_HIDDEN_MOOMOO_MILK
+	hiddenitem MOOMOO_MILK, EVENT_ROUTE_14_BARN_HIDDEN_MOOMOO_MILK
 
 Route18BarnCooltrainerText:
 	text "…Where could she"
@@ -123,8 +123,8 @@ Route18Barn_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  5,  5, ROUTE_18, 5
-	warp_event  6,  5, ROUTE_18, 5
+	warp_event  5,  5, ROUTE_14, 5
+	warp_event  6,  5, ROUTE_14, 5
 
 	db 0 ; coord events
 

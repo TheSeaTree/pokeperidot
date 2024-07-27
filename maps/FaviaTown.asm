@@ -409,10 +409,10 @@ FaviaTown_MapEvents:
 ;	warp_event 14, 21, BATTLE_SIM_CASTLE_2, 1
 	warp_event 27, 29, ROUTE_1_FAVIA_GATE, 1
 	warp_event 28, 29, ROUTE_1_FAVIA_GATE, 2
-	warp_event 25, 18, ROUTE_8_FAVIA_GATE, 1
-	warp_event 25, 19, ROUTE_8_FAVIA_GATE, 2
-	warp_event  5,  5, ROUTE_11_FAVIA_GATE, 3
-	warp_event  3, 19, ROUTE_8, 8
+	warp_event 25, 18, ROUTE_7_FAVIA_GATE, 1
+	warp_event 25, 19, ROUTE_7_FAVIA_GATE, 2
+	warp_event  5,  5, ROUTE_10_FAVIA_GATE, 3
+	warp_event  3, 19, ROUTE_7, 8
 
 	db 3 ; coord events
 	coord_event 24, 26, SCENE_FINISHED, FaviaFangirlScene

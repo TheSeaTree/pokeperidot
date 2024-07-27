@@ -109,8 +109,8 @@ Route8FaviaGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, FAVIA_TOWN, 8
 	warp_event  0,  5, FAVIA_TOWN, 9
-	warp_event  9,  4, ROUTE_8, 2
-	warp_event  9,  5, ROUTE_8, 3
+	warp_event  9,  4, ROUTE_7, 2
+	warp_event  9,  5, ROUTE_7, 3
 
 	db 0 ; coord events
 

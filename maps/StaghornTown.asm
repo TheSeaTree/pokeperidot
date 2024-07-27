@@ -183,13 +183,13 @@ StaghornTown_MapEvents:
 	warp_event 20, 25, STAGHORN_FOREST_GATE, 3
 	warp_event 13, 19, STAGHORN_POKECENTER_1F, 1
 	warp_event 29,  9, STAGHORN_MART, 1
-	warp_event 37,  8, ROUTE_12_STAGHORN_GATE, 1
-	warp_event 37,  9, ROUTE_12_STAGHORN_GATE, 2
+	warp_event 37,  8, ROUTE_11_STAGHORN_GATE, 1
+	warp_event 37,  9, ROUTE_11_STAGHORN_GATE, 2
 	warp_event  5,  7, STAGHORN_THIEF_HOUSE, 1
 	warp_event 31, 15, FRIEND_BALL_HOUSE, 1
 	warp_event 27, 19, RICHARDS_HOUSE, 1
-	warp_event  4, 22, ROUTE_21_STAGHORN_GATE, 3
-	warp_event  4, 23, ROUTE_21_STAGHORN_GATE, 4
+	warp_event  4, 22, ROUTE_17_STAGHORN_GATE, 3
+	warp_event  4, 23, ROUTE_17_STAGHORN_GATE, 4
 	warp_event 21, 13, EMILYS_HOUSE_1F, 1
 
 	db 0 ; coord events

@@ -12,7 +12,7 @@ PalerockCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event  5,  5, ROUTE_10_NORTH, 3
+	warp_event  5,  5, ROUTE_8_NORTH, 3
 	warp_event 21, 25, ROUTE_3, 10
 	warp_event 12,  7, PALEROCK_CAVE_B1F, 1
 	warp_event 19, 15, PALEROCK_CAVE_B1F, 2

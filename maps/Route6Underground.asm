@@ -191,8 +191,8 @@ Route6Underground_MapEvents:
 	warp_event 31,  4, ROUTE_6_UNDERGROUND, 3
 	warp_event  3, 10, ROUTE_6_UNDERGROUND, 6
 	warp_event 18, 15, ROUTE_6_UNDERGROUND, 5
-	warp_event 17, 19, ROUTE_8, 1
-	warp_event 18, 19, ROUTE_8, 1
+	warp_event 17, 19, ROUTE_7, 1
+	warp_event 18, 19, ROUTE_7, 1
 
 	db 0 ; coord events
 

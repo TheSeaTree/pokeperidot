@@ -119,19 +119,19 @@ SootheBellLady:
 	end
 
 Route12FruitTree:
-	fruittree FRUITTREE_ROUTE_12_1
+	fruittree FRUITTREE_ROUTE_11_1
 
 Route12ItemBush:
-	itembush FRUITTREE_ROUTE_12_2
+	itembush FRUITTREE_ROUTE_11_2
 
 Route12FireStone:
 	itemball FIRE_STONE
 	
 Route12HiddenFreshWater:
-	hiddenitem FRESH_WATER, EVENT_ROUTE_12_HIDDEN_FRESH_WATER
+	hiddenitem FRESH_WATER, EVENT_ROUTE_11_HIDDEN_FRESH_WATER
 	
 Route12HiddenSuperRepel:
-	hiddenitem SUPER_REPEL, EVENT_ROUTE_12_HIDDEN_SUPER_REPEL
+	hiddenitem SUPER_REPEL, EVENT_ROUTE_11_HIDDEN_SUPER_REPEL
 
 Route12ShelterSign:
 	jumptext ShelterSignText
@@ -345,11 +345,11 @@ Route12_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event  4, 12, ROUTE_12_STAGHORN_GATE, 3
-	warp_event  4, 13, ROUTE_12_STAGHORN_GATE, 4
-	warp_event 49,  5, ROUTE_12_SHELTER, 1
-	warp_event 57, 21, ROUTE_11_ROUTE_12_GATE, 3
-	warp_event 58, 21, ROUTE_11_ROUTE_12_GATE, 4
+	warp_event  4, 12, ROUTE_11_STAGHORN_GATE, 3
+	warp_event  4, 13, ROUTE_11_STAGHORN_GATE, 4
+	warp_event 49,  5, ROUTE_11_SHELTER, 1
+	warp_event 57, 21, ROUTE_10_ROUTE_11_GATE, 3
+	warp_event 58, 21, ROUTE_10_ROUTE_11_GATE, 4
 
 	db 0 ; coord events
 
@@ -368,5 +368,5 @@ Route12_MapEvents:
 	object_event 61, 18, SPRITE_BUENA, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, SootheBellLady, -1
 	object_event 56,  4, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12FruitTree, -1
 	object_event 65,  8, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route12ItemBush, -1
-	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_12_FIRE_STONE
+	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route12FireStone, EVENT_ROUTE_11_FIRE_STONE
 	object_event 12, -3, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

@@ -497,9 +497,9 @@ InitRoamMoltres:
 	ld [wRoamMon3Level], a
 
 ; moltres starting map
-	ld a, GROUP_ROUTE_22
+	ld a, GROUP_ROUTE_20
 	ld [wRoamMon3MapGroup], a
-	ld a, MAP_ROUTE_22
+	ld a, MAP_ROUTE_20
 	ld [wRoamMon3MapNumber], a
 
 ; hp

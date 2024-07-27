@@ -14,7 +14,7 @@ MoveDeleter:
 	waitbutton
 	closetext
 	end
-	
+
 MoveReminder:
 	faceplayer
 	opentext

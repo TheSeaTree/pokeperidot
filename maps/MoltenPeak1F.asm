@@ -12,7 +12,7 @@ MoltenPeak1F_MapEvents:
 	warp_event 17, 17, MOLTEN_PEAK_OUTSIDE, 2
 	warp_event 24, 11, MOLTEN_PEAK_B1F, 1
 	warp_event 14,  7, MOLTEN_PEAK_B1F, 6
-	warp_event  7, 11, ROUTE_22, 1
+	warp_event  7, 11, ROUTE_20, 1
 
 	db 0 ; coord events
 

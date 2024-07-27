@@ -1,5 +1,5 @@
 	const_def 2 ; object constants
-	const ROUTE_10_TUTOR
+	const ROUTE_8_TUTOR
 
 Route10North_MapScripts:
 	db 0 ; scene scripts
@@ -14,7 +14,7 @@ Route10DigGuy:
 	waitbutton
 	closetext
 	wait 5
-	showemote EMOTE_SHOCK, ROUTE_10_TUTOR, 15
+	showemote EMOTE_SHOCK, ROUTE_8_TUTOR, 15
 	faceplayer
 	opentext
 	writetext Route10DigGuyNoticeText
@@ -47,7 +47,7 @@ Route10DigGuy:
 	
 .NoWater
 	closetext
-	turnobject ROUTE_10_TUTOR, LEFT
+	turnobject ROUTE_8_TUTOR, LEFT
 	end
 
 .GotDig
@@ -163,8 +163,8 @@ Route10North_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  4,  2, ROUTE_8_ROUTE_10_GATE, 3
-	warp_event  4,  3, ROUTE_8_ROUTE_10_GATE, 4
+	warp_event  4,  2, ROUTE_7_ROUTE_8_GATE, 3
+	warp_event  4,  3, ROUTE_7_ROUTE_8_GATE, 4
 	warp_event 22, 13, PALEROCK_CAVE_1F, 1
 
 	db 0 ; coord events

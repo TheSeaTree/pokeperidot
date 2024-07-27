@@ -9,10 +9,10 @@ Route24HiddenCave1F_MapScripts:
 .OpenCave
 	checkcode VAR_XCOORD
 	ifequal 30, .Entrance2
-	setevent EVENT_ROUTE_24_HIDDEN_CAVE_1_OPEN
+	setevent EVENT_ROUTE_18_HIDDEN_CAVE_1_OPEN
 	return
 .Entrance2
-	setevent EVENT_ROUTE_24_HIDDEN_CAVE_2_OPEN
+	setevent EVENT_ROUTE_18_HIDDEN_CAVE_2_OPEN
 	return
 
 Route24HiddenCave1FCarbos:
@@ -22,22 +22,22 @@ Route24HiddenCave1FSuperPotion:
 	itemball SUPER_POTION
 
 Route24HiddenCave1FHiddenHpUp:
-	hiddenitem HP_UP, EVENT_ROUTE_24_CAVE_1F_HIDDEN_HP_UP
+	hiddenitem HP_UP, EVENT_ROUTE_18_CAVE_1F_HIDDEN_HP_UP
 
 Route24HiddenCave1FHiddenMaxPotion:
-	hiddenitem MAX_POTION, EVENT_ROUTE_24_CAVE_1F_HIDDEN_MAX_POTION
+	hiddenitem MAX_POTION, EVENT_ROUTE_18_CAVE_1F_HIDDEN_MAX_POTION
 
 Route24HiddenCave1FHiddenMaxRepel:
-	hiddenitem MAX_REPEL, EVENT_ROUTE_24_CAVE_1F_HIDDEN_MAX_REPEL
+	hiddenitem MAX_REPEL, EVENT_ROUTE_18_CAVE_1F_HIDDEN_MAX_REPEL
 
 Route24HiddenCave1FHiddenRevive:
-	hiddenitem REVIVE, EVENT_ROUTE_24_CAVE_1F_HIDDEN_REVIVE
+	hiddenitem REVIVE, EVENT_ROUTE_18_CAVE_1F_HIDDEN_REVIVE
 
 Route24HiddenCave1FHiddenNugget:
-	hiddenitem NUGGET, EVENT_ROUTE_24_CAVE_1F_HIDDEN_NUGGET
+	hiddenitem NUGGET, EVENT_ROUTE_18_CAVE_1F_HIDDEN_NUGGET
 
 Route24HiddenCave1FHiddenProtein:
-	hiddenitem PROTEIN, EVENT_ROUTE_24_CAVE_1F_HIDDEN_PROTEIN
+	hiddenitem PROTEIN, EVENT_ROUTE_18_CAVE_1F_HIDDEN_PROTEIN
 
 Route24HiddenCave1FBoulder:
 	jumpstd strengthboulder
@@ -49,13 +49,13 @@ Route24HiddenCave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 7 ; warp events
-	warp_event 20, 27, ROUTE_24_NORTH, 1
-	warp_event 30, 23, ROUTE_24_NORTH, 2
+	warp_event 20, 27, ROUTE_18_NORTH, 1
+	warp_event 30, 23, ROUTE_18_NORTH, 2
 	warp_event 25, 11, DUGTRIOS_DEN, 1
-	warp_event  3, 13, ROUTE_24_HIDDEN_CAVE_B1F, 1
-	warp_event 31,  3, ROUTE_24_HIDDEN_CAVE_B1F, 2
-	warp_event 19, 11, ROUTE_24_HIDDEN_CAVE_B1F, 3
-	warp_event 20,  5, ROUTE_24_HIDDEN_CAVE_B1F, 4
+	warp_event  3, 13, ROUTE_18_HIDDEN_CAVE_B1F, 1
+	warp_event 31,  3, ROUTE_18_HIDDEN_CAVE_B1F, 2
+	warp_event 19, 11, ROUTE_18_HIDDEN_CAVE_B1F, 3
+	warp_event 20,  5, ROUTE_18_HIDDEN_CAVE_B1F, 4
 
 	db 0 ; coord events
 
@@ -81,5 +81,5 @@ Route24HiddenCave1F_MapEvents:
 	object_event 37,  8, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24HiddenCave1FBoulder, -1
 	object_event 35,  6, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24HiddenCave1FBoulder, -1
 	object_event 37,  7, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24HiddenCave1FSmashRock, -1
-	object_event 25, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24HiddenCave1FSuperPotion, EVENT_ROUTE_24_CAVE_1F_SUPER_POTION
-	object_event  4,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24HiddenCave1FCarbos, EVENT_ROUTE_24_CAVE_1F_CARBOS
+	object_event 25, 26, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24HiddenCave1FSuperPotion, EVENT_ROUTE_18_CAVE_1F_SUPER_POTION
+	object_event  4,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24HiddenCave1FCarbos, EVENT_ROUTE_18_CAVE_1F_CARBOS

@@ -34,8 +34,8 @@ Route20AcroporaGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, ROUTE_20, 1
-	warp_event  5,  0, ROUTE_20, 2
+	warp_event  4,  0, ROUTE_16, 1
+	warp_event  5,  0, ROUTE_16, 2
 	warp_event  4,  7, ACROPORA_CITY, 1
 	warp_event  5,  7, ACROPORA_CITY, 1
 

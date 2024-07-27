@@ -7,11 +7,11 @@ Route11_MapScripts:
 	callback MAPCALLBACK_TILES, .Tiles
 	
 .Tiles:
-	checkevent EVENT_ROUTE_11_LEDGE
+	checkevent EVENT_ROUTE_10_LEDGE
 	iffalse .checkcave
 	changeblock  28, 20, $4b
 .checkcave
-	checkevent EVENT_ROUTE_11_HIDDEN_CAVE_OPEN
+	checkevent EVENT_ROUTE_10_HIDDEN_CAVE_OPEN
 	iffalse .skip
 	changeblock  58,  6, $73
 .skip
@@ -72,13 +72,13 @@ Route11TMGigaDrain:
 	itemball TM_GIGA_DRAIN
 	
 Route11HiddenRevivalHerb:
-	hiddenitem REVIVAL_HERB, EVENT_ROUTE_11_HIDDEN_REVIVAL_HERB
+	hiddenitem REVIVAL_HERB, EVENT_ROUTE_10_HIDDEN_REVIVAL_HERB
 
 Route11HiddenGoldLeaf:
-	hiddenitem GOLD_LEAF, EVENT_ROUTE_11_HIDDEN_GOLD_LEAF
+	hiddenitem GOLD_LEAF, EVENT_ROUTE_10_HIDDEN_GOLD_LEAF
 
 Route11FruitTree:
-	fruittree FRUITTREE_ROUTE_11
+	fruittree FRUITTREE_ROUTE_10
 
 Route11GoldenrodSign:
 	jumptext Route11GoldenrodSignText
@@ -181,12 +181,12 @@ Route11_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event 29, 27, ROUTE_11_FAVIA_GATE, 1
-	warp_event 30, 27, ROUTE_11_FAVIA_GATE, 2
-	warp_event 21,  3, ROUTE_11_ROUTE_12_GATE, 1
-	warp_event 51, 21, ROUTE_11_CURSE_HOUSE, 1
-	warp_event  9, 11, ROUTE_11_CLEANSE_TAG_HOUSE, 1
-	warp_event 58,  7, ROUTE_11_HIDDEN_CAVE, 1
+	warp_event 29, 27, ROUTE_10_FAVIA_GATE, 1
+	warp_event 30, 27, ROUTE_10_FAVIA_GATE, 2
+	warp_event 21,  3, ROUTE_10_ROUTE_11_GATE, 1
+	warp_event 51, 21, ROUTE_10_CURSE_HOUSE, 1
+	warp_event  9, 11, ROUTE_10_CLEANSE_TAG_HOUSE, 1
+	warp_event 58,  7, ROUTE_10_HIDDEN_CAVE, 1
 
 	db 0 ; coord events
 
@@ -199,8 +199,8 @@ Route11_MapEvents:
 	db 7 ; object events
 	object_event 41, 20, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route11MoveTutor, -1
 	object_event 23, 10, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route11CooltrainerFScript, -1
-	object_event 29, 23, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route11HikerScript, EVENT_ROUTE_11_LEDGE
+	object_event 29, 23, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route11HikerScript, EVENT_ROUTE_10_LEDGE
 	object_event 53,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route11TMGigaDrain, EVENT_GOT_TM_GIGA_DRAIN
-	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_11_SPELL_TAG
-	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11LeafStone, EVENT_ROUTE_11_LEAF_STONE
+	object_event  0, 20, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11SpellTag, EVENT_ROUTE_10_SPELL_TAG
+	object_event 44,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route11LeafStone, EVENT_ROUTE_10_LEAF_STONE
 	object_event 39, 27, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route11FruitTree, -1

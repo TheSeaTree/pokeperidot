@@ -139,13 +139,13 @@ Route12ShelterAssistant:
 	iffalse .Rescued
 	checkevent EVENT_ECRUTEAK_GYM_ACCESS
 	iftrue .MissMarowak
-	checkevent EVENT_HEARD_ROUTE_12_LEADER
+	checkevent EVENT_HEARD_ROUTE_11_LEADER
 	iftrue .HeardIntro
 	writetext Route12AssistantIntro
 	yesorno
 	iffalse .No
 .Yes
-	setevent EVENT_HEARD_ROUTE_12_LEADER
+	setevent EVENT_HEARD_ROUTE_11_LEADER
 	writetext Route12AssistantYes
 	buttonsound
 .HeardIntro
@@ -190,7 +190,7 @@ Route12ShelterKangaskhan:
 	iftrue .end
 	checkevent EVENT_BEAT_POSEY
 	iftrue .KangaskhanGift
-	checkevent EVENT_ROUTE_14_CAVE_MAROWAK
+	checkevent EVENT_THE_BONEYARD_MAROWAK
 	iftrue .end
 	writetext Route12KangaskhanUpset
 	waitbutton
@@ -744,8 +744,8 @@ Route12Shelter_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_12, 3
-	warp_event  3,  7, ROUTE_12, 3
+	warp_event  2,  7, ROUTE_11, 3
+	warp_event  3,  7, ROUTE_11, 3
 
 	db 0 ; coord events
 

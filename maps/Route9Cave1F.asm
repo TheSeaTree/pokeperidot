@@ -10,7 +10,7 @@ Route9Cave1F_MapEvents:
 
 	db 2 ; warp events
 	warp_event  3,  5, ROUTE_9, 3
-	warp_event  9,  7, ROUTE_30_CAVE_B1F, 2
+	warp_event  9,  7, PAVONA_OASIS_CAVE_B1F, 2
 
 	db 0 ; coord events
 

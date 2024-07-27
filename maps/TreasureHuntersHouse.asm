@@ -405,7 +405,7 @@ TreasureHuntersHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  5,  7, ROUTE_26, 5
+	warp_event  5,  7, ROUTE_23, 5
 
 	db 0 ; coord events
 

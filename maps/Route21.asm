@@ -69,7 +69,7 @@ TrainerBikerFlynn:
 	end
 	
 Route21ItemBush:
-	itembush FRUITTREE_ROUTE_21
+	itembush FRUITTREE_ROUTE_17
 
 Route21BikerText:
 	text "Bet you'd like to"
@@ -173,8 +173,8 @@ Route21_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 47,  2, ROUTE_21_STAGHORN_GATE, 1
-	warp_event 47,  3, ROUTE_21_STAGHORN_GATE, 2
+	warp_event 47,  2, ROUTE_17_STAGHORN_GATE, 1
+	warp_event 47,  3, ROUTE_17_STAGHORN_GATE, 2
 	warp_event 13, 15, BURGLAR_HIDEOUT_1F, 1
 
 	db 0 ; coord events

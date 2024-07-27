@@ -54,10 +54,10 @@ Route23Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, ROUTE_27, 3
-	warp_event  5,  0, ROUTE_27, 4
-	warp_event  4,  7, ROUTE_23, 2
-	warp_event  5,  7, ROUTE_23, 2
+	warp_event  4,  0, ROUTE_22, 3
+	warp_event  5,  0, ROUTE_22, 4
+	warp_event  4,  7, ROUTE_21, 2
+	warp_event  5,  7, ROUTE_21, 2
 
 	db 0 ; coord events
 

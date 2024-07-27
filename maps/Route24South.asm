@@ -117,19 +117,19 @@ Route24NorthMaxRepel:
 	itemball MAX_REPEL
 
 Route24SouthFruitTree1:
-	itembush FRUITTREE_ROUTE_24_SOUTH_1
+	itembush FRUITTREE_ROUTE_18_SOUTH_1
 
 Route24SouthFruitTree2:
-	fruittree FRUITTREE_ROUTE_24_SOUTH_2
+	fruittree FRUITTREE_ROUTE_18_SOUTH_2
 
 Route24SouthHiddenTinyMushroom:
-	hiddenitem TINYMUSHROOM, EVENT_ROUTE_24_HIDDEN_TINYMUSHROOM
+	hiddenitem TINYMUSHROOM, EVENT_ROUTE_18_HIDDEN_TINYMUSHROOM
 
 Route24SouthHiddenHeatCharm:
-	hiddenitem HEAT_CHARM, EVENT_ROUTE_24_HIDDEN_HEAT_CHARM
+	hiddenitem HEAT_CHARM, EVENT_ROUTE_18_HIDDEN_HEAT_CHARM
 
 Route24SouthHiddenXDefend:
-	hiddenitem X_DEFEND, EVENT_ROUTE_24_HIDDEN_X_DEFEND
+	hiddenitem X_DEFEND, EVENT_ROUTE_18_HIDDEN_X_DEFEND
 
 Route24SouthWeatherCharmGuyText:
 	text "Did you know that"
@@ -224,8 +224,8 @@ Route24South_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 23, 13, ROUTE_25_GATE, 1
-	warp_event 24, 13, ROUTE_25_GATE, 2
+	warp_event 23, 13, ROUTE_19_GATE, 1
+	warp_event 24, 13, ROUTE_19_GATE, 2
 
 	db 0 ; coord events
 
@@ -237,7 +237,7 @@ Route24South_MapEvents:
 
 	db 5 ; object events
 	object_event 39,  5, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24SouthWeatherCharmGuy, -1
-	object_event  0, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthBigMushroom, EVENT_ROUTE_24_BIG_MUSHROOM
-	object_event 33, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthMaxRepel, EVENT_ROUTE_24_MAX_REPEL
+	object_event  0, 11, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthBigMushroom, EVENT_ROUTE_18_BIG_MUSHROOM
+	object_event 33, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route24NorthMaxRepel, EVENT_ROUTE_18_MAX_REPEL
 	object_event 47, 14, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24SouthFruitTree1, -1
 	object_event 48, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route24SouthFruitTree2, -1

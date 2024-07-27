@@ -22,8 +22,8 @@ Route11FaviaGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, ROUTE_11, 1
-	warp_event  5,  0, ROUTE_11, 2
+	warp_event  4,  0, ROUTE_10, 1
+	warp_event  5,  0, ROUTE_10, 2
 	warp_event  4,  7, FAVIA_TOWN, 10
 	warp_event  5,  7, FAVIA_TOWN, 10
 

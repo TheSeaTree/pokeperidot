@@ -116,19 +116,19 @@ Route20PoisonBarb:
 	itemball POISON_BARB
 	
 Route20HiddenNugget:
-	hiddenitem NUGGET, EVENT_ROUTE_20_HIDDEN_NUGGET
+	hiddenitem NUGGET, EVENT_ROUTE_16_HIDDEN_NUGGET
 	
 Route20HiddenXSpeed:
-	hiddenitem X_SPEED, EVENT_ROUTE_20_HIDDEN_X_SPEED
+	hiddenitem X_SPEED, EVENT_ROUTE_16_HIDDEN_X_SPEED
 	
 Route20HiddenSunStone:
-	hiddenitem SUN_STONE, EVENT_ROUTE_20_HIDDEN_SUN_STONE
+	hiddenitem SUN_STONE, EVENT_ROUTE_16_HIDDEN_SUN_STONE
 
 Route20FruitTree1:
-	fruittree FRUITTREE_ROUTE_20_1
+	fruittree FRUITTREE_ROUTE_16_1
 
 Route20FruitTree2:
-	fruittree FRUITTREE_ROUTE_20_2
+	fruittree FRUITTREE_ROUTE_16_2
 
 SnorlaxSleepingText:
 	text "This #MON is"
@@ -310,8 +310,8 @@ Route20_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  9, 39, ROUTE_20_ACROPORA_GATE, 1
-	warp_event 10, 39, ROUTE_20_ACROPORA_GATE, 2
+	warp_event  9, 39, ROUTE_16_ACROPORA_GATE, 1
+	warp_event 10, 39, ROUTE_16_ACROPORA_GATE, 2
 	warp_event 37,  5, HEAVY_BALL_HOUSE, 1
 
 	db 0 ; coord events
@@ -332,4 +332,4 @@ Route20_MapEvents:
 	object_event 29, 11, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route20Teacher, -1
 	object_event 43, 22, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree1, -1
 	object_event  6, 19, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route20FruitTree2, -1
-	object_event 25, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route20PoisonBarb, EVENT_ROUTE_20_POISON_BARB
+	object_event 25, 23, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route20PoisonBarb, EVENT_ROUTE_16_POISON_BARB

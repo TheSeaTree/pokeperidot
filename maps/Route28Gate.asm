@@ -92,8 +92,8 @@ Route28Gate_MapEvents:
 	db 4 ; warp events
 	warp_event  2,  0, NORTH_FOREST, 1
 	warp_event  3,  0, NORTH_FOREST, 2
-	warp_event  2,  7, ROUTE_28, 1
-	warp_event  3,  7, ROUTE_28, 1
+	warp_event  2,  7, ROUTE_24, 1
+	warp_event  3,  7, ROUTE_24, 1
 
 	db 2 ; coord events
 	coord_event  2,  3, SCENE_DEFAULT, Route28OfficerBattleLeft

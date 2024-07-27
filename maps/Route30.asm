@@ -102,7 +102,7 @@ Route30LevelBallGuy:
 	db "CANCEL@"
 
 Route30ItemBush:
-	itembush FRUITTREE_ROUTE_30
+	itembush FRUITTREE_PAVONA_OASIS
 
 Route30WaterStone:
 	itemball WATER_STONE
@@ -111,7 +111,7 @@ Route30MysticWater:
 	itemball MYSTIC_WATER
 	
 Route30HiddenXSpAtk:
-	hiddenitem X_SP_ATK, EVENT_ROUTE_30_HIDDEN_X_SP_ATK
+	hiddenitem X_SP_ATK, EVENT_PAVONA_OASIS_HIDDEN_X_SP_ATK
 
 LevelBallGuyIntro:
 	text "I love collecting"
@@ -215,7 +215,7 @@ Route30_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 14, 23, ROUTE_30_CAVE_1F, 1
+	warp_event 14, 23, PAVONA_OASIS_CAVE_1F, 1
 
 	db 0 ; coord events
 
@@ -225,5 +225,5 @@ Route30_MapEvents:
 	db 4 ; object events
 	object_event 30, 21, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30LevelBallGuy, -1
 	object_event  9, 34, SPRITE_BUSH, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30ItemBush, -1
-	object_event 24, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30WaterStone, EVENT_ROUTE_30_WATER_STONE
-	object_event  4,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30MysticWater, EVENT_ROUTE_30_MYSTIC_WATER
+	object_event 24, 35, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30WaterStone, EVENT_PAVONA_OASIS_WATER_STONE
+	object_event  4,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route30MysticWater, EVENT_PAVONA_OASIS_MYSTIC_WATER

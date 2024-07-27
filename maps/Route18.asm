@@ -102,7 +102,7 @@ TrainerMarieScript:
 	disappear ROUTE18_MARIE1
 	disappear ROUTE18_BESSIE1
 	disappear ROUTE18_GRAMPS
-	setmapscene ROUTE_18_FARMHOUSE, SCENE_FINISHED
+	setmapscene ROUTE_14_FARMHOUSE, SCENE_FINISHED
 	special FadeInQuickly
 	end
 	
@@ -166,10 +166,10 @@ Route18FarmSign:
 	jumptext Route18FarmSignText
 	
 Route18HiddenUltraBall:
-	hiddenitem ULTRA_BALL, EVENT_ROUTE_18_HIDDEN_ULTRA_BALL
+	hiddenitem ULTRA_BALL, EVENT_ROUTE_14_HIDDEN_ULTRA_BALL
 	
 Route18HiddenPowerHerb:
-	hiddenitem POWER_HERB, EVENT_ROUTE_18_HIDDEN_POWER_HERB
+	hiddenitem POWER_HERB, EVENT_ROUTE_14_HIDDEN_POWER_HERB
 
 Route18LeafStone:
 	itemball LEAF_STONE
@@ -437,12 +437,12 @@ Route18_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event 27, 35, ROUTE_14_GATE, 3
-	warp_event 28, 35, ROUTE_14_GATE, 4
-	warp_event  4, 18, ROUTE_18_CARNATION_GATE, 3
-	warp_event  4, 19, ROUTE_18_CARNATION_GATE, 4
-	warp_event 27,  3, ROUTE_18_BARN, 1
-	warp_event 31,  3, ROUTE_18_FARMHOUSE, 1
+	warp_event 27, 35, ROUTE_13_GATE, 3
+	warp_event 28, 35, ROUTE_13_GATE, 4
+	warp_event  4, 18, ROUTE_14_CARNATION_GATE, 3
+	warp_event  4, 19, ROUTE_14_CARNATION_GATE, 4
+	warp_event 27,  3, ROUTE_14_BARN, 1
+	warp_event 31,  3, ROUTE_14_FARMHOUSE, 1
 
 	db 0 ; coord events
 
@@ -464,5 +464,5 @@ Route18_MapEvents:
 	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TrainerMarieAfterScript, -1 ; Runaway Daughter After
 	object_event 11,  5, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route18MiltankScript, -1 ; Her Miltank After
 	object_event 24,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, MariesGrandfatherScript, EVENT_MARIE_GONE_HOME
-	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18LeafStone, EVENT_ROUTE_18_LEAF_STONE
-	object_event 12, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18MaxRepel, EVENT_ROUTE_18_MAX_REPEL
+	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18LeafStone, EVENT_ROUTE_14_LEAF_STONE
+	object_event 12, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route18MaxRepel, EVENT_ROUTE_14_MAX_REPEL

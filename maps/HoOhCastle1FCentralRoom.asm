@@ -39,8 +39,8 @@ HoOhCastle1FCentralRoom_MapEvents:
 	db 0, 0 ; filler
 
 	db 12 ; warp events
-	warp_event 14, 35, ROUTE_25, 1
-	warp_event 15, 35, ROUTE_25, 2
+	warp_event 14, 35, ROUTE_19, 1
+	warp_event 15, 35, ROUTE_19, 2
 	warp_event  8, 21, HO_OH_CASTLE_1F_SIDE_ROOMS, 1
 	warp_event 21, 21, HO_OH_CASTLE_1F_SIDE_ROOMS, 2
 	warp_event  2,  9, HO_OH_CASTLE_1F_SIDE_ROOMS, 3

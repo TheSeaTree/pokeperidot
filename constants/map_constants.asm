@@ -29,41 +29,41 @@ ENDM
 	newgroup                                                      ;  1
 
 	map_const RUGOSA_COAST,                                23, 17 ; 14
-	map_const ROUTE_14_RUGOSA_GATE,							5,  4
+	map_const ROUTE_13_RUGOSA_GATE,							5,  4
 	map_const RUGOSA_SURF_HOUSE,							4,  4
 	map_const COASTAL_LAB,									5,  4
 	map_const RUGOSA_PORT,                                 10,  9 ; 14
 	map_const SEA_ROUTE_4,                                 17, 14 ;  1
-	map_const ROUTE_8,                                     20, 37 ;  1
+	map_const ROUTE_7,                                     20, 37 ;  1
 	map_const SEA_ROUTE_1,                                 21, 17 ;  3
 	map_const SEA_ROUTE_2,                                 24, 14 ;  2
 	map_const SEA_ROUTE_3,                                 20, 19 ;  3
 	map_const SEA_ROUTE_5,                                 22, 17 ;  3
 	map_const SEA_ROUTE_6,                                 19, 19 ;  3
 	map_const ROUTE_6_GATE,                                 5,  4 ;  3
-	map_const ROUTE_23,					                   19, 20 ; 15
-	map_const ROUTE_23_GATE,					           	5,  4
-	map_const ROUTE_23_HIDDEN_CAVE,		                    5,  7
+	map_const ROUTE_21,					                   19, 20 ; 15
+	map_const ROUTE_21_GATE,					           	5,  4
+	map_const ROUTE_21_HIDDEN_CAVE,		                    5,  7
 
 	newgroup                                                      ;  2
 
-	map_const RUGOSA_GYM,                                13, 16 ;  2
-	map_const RUGOSA_POKECENTER_1F,                       5,  4 ;  3
-	map_const RUGOSA_CITY,                               23, 19 ;  7
+	map_const RUGOSA_GYM,                                  13, 16 ;  2
+	map_const RUGOSA_POKECENTER_1F,                         5,  4 ;  3
+	map_const RUGOSA_CITY,                                 23, 19 ;  7
 	map_const POWER_PLANT_1F,							   16, 11
 	map_const POWER_PLANT_2F,							   16,  8
 	map_const POWER_PLANT_1F_B,							   16, 11
 	map_const POWER_PLANT_2F_B,							   16,  8
-	map_const RUGOSA_GATE,							    5,  4
+	map_const RUGOSA_GATE,								    5,  4
 	map_const EMYS_HOUSE,									4,  4
 	map_const MOVE_DELETERS_HOUSE,                          4,  4 ;  7
 	map_const SUBSTITUTE_HOUSE,                             4,  4 ;  7
-	map_const RUGOSA_APARTMENT_1F,                        6,  4
-	map_const RUGOSA_APARTMENT_2F,                        6,  4
-	map_const RUGOSA_APARTMENT_3F,                        6,  4
-	map_const RUGOSA_CAFE,                                7,  4 ;  6
-	map_const ROUTE_30_CAVE_1F,								8,  7
-	map_const ROUTE_30_CAVE_B1F,						   13, 18
+	map_const RUGOSA_APARTMENT_1F,                          6,  4
+	map_const RUGOSA_APARTMENT_2F,                          6,  4
+	map_const RUGOSA_APARTMENT_3F,  	                    6,  4
+	map_const RUGOSA_CAFE,                                  7,  4 ;  6
+	map_const PAVONA_OASIS_CAVE_1F,							8,  7
+	map_const PAVONA_OASIS_CAVE_B1F,					   13, 18
 	map_const ROUTE_9_CAVE_1F,								6,  5
 
 	newgroup                                                      ;  3
@@ -97,7 +97,7 @@ ENDM
 	map_const STAGHORN_FOREST_GATE,                         6,  4 ; 10
 	map_const PAINTERS_FOREST,                              7,  9
 	map_const PAINTERS_HOUSE,                               4,  4
-	map_const ROUTE_12_STAGHORN_GATE,						5,  4
+	map_const ROUTE_11_STAGHORN_GATE,						5,  4
 	map_const STAGHORN_THIEF_HOUSE,							4,  4
 	map_const FRIEND_BALL_HOUSE,							4,  4
 	map_const RICHARDS_HOUSE,		    					4,  4
@@ -110,19 +110,19 @@ ENDM
 	map_const ACROPORA_MART,                              6,  4 ;  5
 	map_const ACROPORA_POKECENTER_1F,                     5,  4 ;  6
 	map_const ACROPORA_CITY,                             29, 16 ; 10
-	map_const ROUTE_20_ACROPORA_GATE,					  5,  4
-	map_const ROUTE_21,									 27, 10
-	map_const ROUTE_21_STAGHORN_GATE,					  5,  4
+	map_const ROUTE_16_ACROPORA_GATE,					  5,  4
+	map_const ROUTE_17,									 27, 10
+	map_const ROUTE_17_STAGHORN_GATE,					  5,  4
 	map_const ACROPORA_REST_TALK_HOUSE,                   4,  4
 	map_const ACROPORA_LASS_HOUSE,                        4,  4
 	map_const ACROPORA_CASTLE_HOUSE,                      4,  4
 	map_const FLUTE_MASTER_HOUSE,                         4,  4
-	map_const ROUTE_24_NORTH,							 18, 14
-	map_const ROUTE_24_SOUTH,							 25, 12
-	map_const ROUTE_24_HIDDEN_CAVE_1F,	                 22, 15
-	map_const ROUTE_24_HIDDEN_CAVE_B1F,	                 20, 14
+	map_const ROUTE_18_NORTH,							 18, 14
+	map_const ROUTE_18_SOUTH,							 25, 12
+	map_const ROUTE_18_HIDDEN_CAVE_1F,	                 22, 15
+	map_const ROUTE_18_HIDDEN_CAVE_B1F,	                 20, 14
 	map_const DUGTRIOS_DEN,		                  		  5,  7
-	map_const ROUTE_25_GATE,							  5,  4
+	map_const ROUTE_19_GATE,							  5,  4
 	map_const ACROPORA_CAVE_1F,                          19, 15
 	map_const ACROPORA_CAVE_2F,                          10,  7
 	map_const ACROPORA_CAVE_B1F,                         18, 14
@@ -147,16 +147,16 @@ ENDM
 
 	newgroup                                                      ;  7
 	
-	map_const ROUTE_18,                                    18, 20 ;  4
-	map_const ROUTE_18_BARN,                                7,  3 ;  4
-	map_const ROUTE_18_FARMHOUSE,                           4,  4 ;  4
-	map_const ROUTE_18_CARNATION_GATE,						5,  4
+	map_const ROUTE_14,                                    18, 20 ;  4
+	map_const ROUTE_14_BARN,                                7,  3 ;  4
+	map_const ROUTE_14_FARMHOUSE,                           4,  4 ;  4
+	map_const ROUTE_14_CARNATION_GATE,						5,  4
 	map_const CARNATION_TOWN,        					   17, 10
 	map_const CARNATION_ZOO_GATE,        				    5,  4
 	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1
 	map_const WOBBUFFET_HOUSE,   							4,  4
-	map_const ROUTE_19,									   27, 12
-	map_const ROUTE_20,                                    31, 22
+	map_const ROUTE_15,									   27, 12
+	map_const ROUTE_16,                                    31, 22
 	map_const HEAVY_BALL_HOUSE,                             4,  4 ; 13
 
 	newgroup                                                      ;  8
@@ -195,7 +195,7 @@ ENDM
 	map_const ROUTE_4,                                    25, 24 ; 12
 	map_const ROUTE_5,                                    27, 13 ;  1
 	map_const ROUTE_6,                                    37, 16 ;  1
-	map_const ROUTE_10_NORTH,                             16, 14 ; 14
+	map_const ROUTE_8_NORTH,                             16, 14 ; 14
 	map_const RIDGE_VILLAGE,                              27, 12 ;  5
 	map_const RIDGE_CAFE,                                  7,  4 ;  6
 	map_const RIDGE_GYM,                                   5,  4 ;  7
@@ -205,9 +205,9 @@ ENDM
 	map_const RIDGE_WEATHER_HOUSE,                         4,  4
 	map_const RIDGE_TRADE_HOUSE,                           4,  4
 	map_const RIDGE_MAGIKARP_HOUSE,                        4,  4 ; 13
-	map_const ROUTE_8_SILK_SCARF_HOUSE,                    4,  4
+	map_const ROUTE_7_SILK_SCARF_HOUSE,                    4,  4
 	map_const ROUTE_4_HIDDEN_CAVE,                         5,  7
-	map_const ROUTE_8_HIDDEN_CAVE,                         5,  7
+	map_const ROUTE_7_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 11
 
@@ -218,12 +218,12 @@ ENDM
 	map_const CARNATION_FLOWER_SHOP,                       4,  4 ;  8
 	map_const NAME_RATER,                      		       4,  4 ; 10
 	map_const FAVIA_POKECENTER_1F,						   5,  4 ; 20
-	map_const ROUTE_8_FAVIA_GATE,                          5,  4 ; 21
+	map_const ROUTE_7_FAVIA_GATE,                          5,  4 ; 21
 	map_const DAY_CARE,                                    4,  4 ; 24
 	map_const ROUTE_1_FAVIA_GATE,                          5,  4 ; 13
 	map_const FAVIA_MART,                                  6,  4
-	map_const ROUTE_11_FAVIA_GATE,                         5,  4
-	map_const ROUTE_11_ROUTE_12_GATE,                      5,  4
+	map_const ROUTE_10_FAVIA_GATE,                         5,  4
+	map_const ROUTE_10_ROUTE_11_GATE,                      5,  4
 	map_const PECTINIA_BED_STORE,                    	   7,  3
 	map_const PECTINIA_DOLL_STORE,                         8,  4
 	map_const PECTINIA_CARPET_STORE,                       5,  3
@@ -244,17 +244,17 @@ ENDM
 	map_const ROUTE_6_WATERFALL_HOUSE,                     4,  4 ; 13
 
 	newgroup                                                      ; 13
-	map_const ROUTE_11,                                    32, 16	
-	map_const ROUTE_11_CURSE_HOUSE,                         4,  4	
-	map_const ROUTE_11_CLEANSE_TAG_HOUSE,                   4,  4	
-	map_const ROUTE_11_HIDDEN_CAVE,                         5,  7
+	map_const ROUTE_10,                                    32, 16	
+	map_const ROUTE_10_CURSE_HOUSE,                         4,  4	
+	map_const ROUTE_10_CLEANSE_TAG_HOUSE,                   4,  4	
+	map_const ROUTE_10_HIDDEN_CAVE,                         5,  7
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
 	map_const HO_OH_CASTLE_ROOF,                            7,  9 ; 18
 
 	newgroup                                                      ; 15
-	map_const ROUTE_25,									   	31, 14
+	map_const ROUTE_19,									   	31, 14
 	map_const SS_MAKO_1F,								   	12, 11
 	map_const SS_MAKO_1F_ROOMS,						   		12,  8
 	map_const SS_MAKO_B1F,							   		24,  8
@@ -297,14 +297,14 @@ ENDM
 
 	newgroup                                                      ; 18
 
-	map_const ROUTE_12,                                    35, 11 ;  2
-	map_const ROUTE_12_SHELTER,								4,  4
-	map_const ROUTE_13,                                    29, 16 ;  1
-	map_const ROUTE_14,                                    31, 14 ;  2
-	map_const ROUTE_14_GATE,                                5,  4 ;  2
-	map_const ROUTE_14_CAVE_1F, 							9, 11
-	map_const ROUTE_14_CAVE_2F,							   10, 10
-	map_const ROUTE_10_SOUTH,                              10,  9 ;  3
+	map_const ROUTE_11,                                    35, 11 ;  2
+	map_const ROUTE_11_SHELTER,								4,  4
+	map_const ROUTE_12,                                    29, 16 ;  1
+	map_const ROUTE_13,                                    31, 14 ;  2
+	map_const ROUTE_13_GATE,                                5,  4 ;  2
+	map_const THE_BONEYARD_1F,  							9, 11
+	map_const THE_BONEYARD_2F,							   10, 10
+	map_const ROUTE_8_SOUTH,                               10,  9 ;  3
 	map_const ROUTE_3_ROUTE_4_GATE,                         5,  4 ; 13
 	map_const ROUTE_5_SUPER_ROD_HOUSE,                      4,  4 ; 14
 
@@ -329,7 +329,7 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const ROUTE_8_ROUTE_10_GATE,                        5,  4 ; 26
+	map_const ROUTE_7_ROUTE_8_GATE,                        5,  4 ; 26
 	map_const LUGIA_CAVE_1F,                                5,  4 ;  3
 	map_const LUGIA_CAVE_B1F,                              16, 13 ;  3
 	map_const LUGIA_CAVE_B2F,                              22, 16 ;  3
@@ -371,7 +371,7 @@ ENDM
 	map_const MOLTEN_PEAK_1F,							   14, 10
 	map_const MOLTEN_PEAK_B1F,							   23, 17
 	map_const MOLTEN_PEAK_B2F,							   21, 24
-	map_const ROUTE_22,									   19,  8
+	map_const ROUTE_20,									   19,  8
 	map_const MOLTEN_PEAK_OUTSIDE,						   20, 19
 	map_const MOLTEN_PEAK_HIDDEN_CAVE,					    7,  8
 	map_const ENTEI_CAVE_1F,							   16, 18
@@ -391,12 +391,12 @@ ENDM
 
 	newgroup                                                      ; 25
 
-	map_const ROUTE_26,					                   21, 16
-	map_const ROUTE_26_GATE,					           	5,  4
-	map_const ROUTE_26_CAVE_1F,			                   13,  5
-	map_const ROUTE_26_CAVE_B1F,		                   15, 10
-	map_const ROUTE_27_GATE,					           	5,  4
-	map_const ROUTE_27,					           		   20, 22
+	map_const ROUTE_23,					                   21, 16
+	map_const ROUTE_23_GATE,					           	5,  4
+	map_const ROUTE_23_CAVE_1F,			                   13,  5
+	map_const ROUTE_23_CAVE_B1F,		                   15, 10
+	map_const ROUTE_22_GATE,					           	5,  4
+	map_const ROUTE_22,					           		   20, 22
 	map_const BATTLE_SUBWAY_TRAIN,							4,  3
 	map_const BATTLE_SUBWAY_PLATFORM,					   15,  5
 	map_const BATTLE_SUBWAY_BOSS_TRAIN,					    4,  3
@@ -406,7 +406,7 @@ ENDM
 
 	newgroup                                                      ; 26
 
-	map_const ROUTE_30,                                    18, 18 ;  1
+	map_const PAVONA_OASIS,                                18, 18 ;  1
 	map_const ROUTE_1_PAVONA_GATE,                     		5,  4 ; 14
 	map_const ROUTE_2,                                     23, 20 ;  1
 	map_const PAVONA_VILLAGE,                              17, 16 ;  3
@@ -449,8 +449,8 @@ ENDM
 	newgroup
 	
 	map_const SEA_ROUTE_7,                                 14, 15
-	map_const ROUTE_28,					           		   16, 16
-	map_const ROUTE_28_GATE,					            3,  4
+	map_const ROUTE_24,					           		   16, 16
+	map_const ROUTE_24_GATE,					            3,  4
 
 	newgroup
 
@@ -493,7 +493,7 @@ ENDM
 	map_const PAST_FAVIA_FRIENDSHIP_HOUSE,				   4,  4
 	map_const PAST_FAVIA_MART,                             5,  3
 	map_const PAST_ROUTE_3,                               20, 24
-	map_const PAST_ROUTE_8, 							  19, 11
+	map_const PAST_ROUTE_7, 							  19, 11
 
 	newgroup
 
@@ -511,16 +511,16 @@ ENDM
 
 	newgroup
 
-	map_const PAST_ROUTE_11,                               31, 16
-	map_const PAST_ROUTE_11_GATE,                           5,  4
-	map_const PAST_ROUTE_11_INN,                            5,  4
-	map_const PAST_ROUTE_11_HOUSE_1,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_2,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_3,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_4,						4,  4
-	map_const PAST_ROUTE_11_HOUSE_5,						4,  4
-	map_const PAST_ROUTE_11_SCHOOLHOUSE,					6,  5
-	map_const PAST_ROUTE_11_SCHOOLHOUSE_2,					6,  5
+	map_const PAST_ROUTE_10,                               31, 16
+	map_const PAST_ROUTE_10_GATE,                           5,  4
+	map_const PAST_ROUTE_10_INN,                            5,  4
+	map_const PAST_ROUTE_10_HOUSE_1,						4,  4
+	map_const PAST_ROUTE_10_HOUSE_2,						4,  4
+	map_const PAST_ROUTE_10_HOUSE_3,						4,  4
+	map_const PAST_ROUTE_10_HOUSE_4,						4,  4
+	map_const PAST_ROUTE_10_HOUSE_5,						4,  4
+	map_const PAST_ROUTE_10_SCHOOLHOUSE,					6,  5
+	map_const PAST_ROUTE_10_SCHOOLHOUSE_2,					6,  5
 
 	newgroup
 

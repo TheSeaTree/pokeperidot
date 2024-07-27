@@ -812,7 +812,7 @@ GrassWildMons:
 	db 36, PSYDUCK
 	db 37, PSYDUCK
 
-	map_id ROUTE_8
+	map_id ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, SPEAROW
@@ -866,7 +866,7 @@ GrassWildMons:
 	db 20, HOUNDOUR
 	db 23, HOUNDOUR
 
-	map_id ROUTE_30
+	map_id PAVONA_OASIS
 	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, HOPPIP
@@ -893,7 +893,7 @@ GrassWildMons:
 	db 28, AZUMARILL
 	db 30, AZUMARILL
 
-	map_id ROUTE_30_CAVE_1F
+	map_id PAVONA_OASIS_CAVE_1F
 	db 3 percent, 3 percent, 3 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, PARASECT
@@ -920,7 +920,7 @@ GrassWildMons:
 	db 28, QUAGSIRE
 	db 30, QUAGSIRE
 
-	map_id ROUTE_30_CAVE_B1F
+	map_id PAVONA_OASIS_CAVE_B1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 24, PARASECT
@@ -974,7 +974,7 @@ GrassWildMons:
 	db 28, QUAGSIRE
 	db 30, QUAGSIRE
 
-	map_id ROUTE_10_NORTH
+	map_id ROUTE_8_NORTH
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, SPEAROW
@@ -1001,7 +1001,7 @@ GrassWildMons:
 	db 16, NIDORINA
 	db 16, NIDORINA
 	
-	map_id ROUTE_11
+	map_id ROUTE_10
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, HOPPIP
@@ -1028,7 +1028,7 @@ GrassWildMons:
 	db 15, BUTTERFREE
 	db 16, MISDREAVUS
 
-	map_id ROUTE_12
+	map_id ROUTE_11
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 23, SKIPLOOM
@@ -1055,7 +1055,7 @@ GrassWildMons:
 	db 23, EEVEE
 	db 25, EEVEE
 
-	map_id ROUTE_13
+	map_id ROUTE_12
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, DODUO
@@ -1082,7 +1082,7 @@ GrassWildMons:
 	db 25, SLUGMA
 	db 27, SLUGMA
 	
-	map_id ROUTE_14
+	map_id ROUTE_13
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, DODUO
@@ -1109,7 +1109,7 @@ GrassWildMons:
 	db 26, YANMA
 	db 27, YANMA
 
-	map_id ROUTE_18
+	map_id ROUTE_14
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 27, FLAAFFY
@@ -1136,7 +1136,7 @@ GrassWildMons:
 	db 32, TAUROS
 	db 32, TAUROS
 
-	map_id ROUTE_19
+	map_id ROUTE_15
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, BEEDRILL
@@ -1163,7 +1163,7 @@ GrassWildMons:
 	db 36, JIGGLYPUFF
 	db 38, JIGGLYPUFF
 
-	map_id ROUTE_20
+	map_id ROUTE_16
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, FEAROW
@@ -1479,7 +1479,7 @@ GrassWildMons:
 	db 38, JIGGLYPUFF
 	db 38, JIGGLYPUFF
 
-	map_id ROUTE_21
+	map_id ROUTE_17
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, GRANBULL
@@ -1506,7 +1506,7 @@ GrassWildMons:
 	db 35, JIGGLYPUFF
 	db 35, JIGGLYPUFF
 
-	map_id ROUTE_23
+	map_id ROUTE_21
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, AZUMARILL
@@ -1533,7 +1533,7 @@ GrassWildMons:
 	db 36, SLOWPOKE
 	db 37, SLOWPOKE
 
-	map_id ROUTE_24_NORTH
+	map_id ROUTE_18_NORTH
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, GRANBULL
@@ -1560,7 +1560,7 @@ GrassWildMons:
 	db 35, PARASECT
 	db 35, PARASECT
 
-	map_id ROUTE_24_HIDDEN_CAVE_1F
+	map_id ROUTE_18_HIDDEN_CAVE_1F
 	db 3 percent, 3 percent, 3 percent
 	db 39, GRAVELER
 	db 38, DIGLETT
@@ -1586,7 +1586,7 @@ GrassWildMons:
 	db 39, GOLBAT
 	db 40, GRAVELER
 
-	map_id ROUTE_24_HIDDEN_CAVE_B1F
+	map_id ROUTE_18_HIDDEN_CAVE_B1F
 	db 3 percent, 3 percent, 3 percent
 	db 39, GRAVELER
 	db 38, DIGLETT
@@ -1612,7 +1612,7 @@ GrassWildMons:
 	db 39, GOLBAT
 	db 40, GRAVELER
 
-	map_id ROUTE_24_SOUTH
+	map_id ROUTE_18_SOUTH
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, GRANBULL
@@ -1639,7 +1639,7 @@ GrassWildMons:
 	db 35, PARASECT
 	db 35, PARASECT
 
-	map_id ROUTE_25
+	map_id ROUTE_19
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, VULPIX
@@ -1666,7 +1666,7 @@ GrassWildMons:
 	db 35, MR__MIME
 	db 35, MR__MIME
 
-	map_id ROUTE_26
+	map_id ROUTE_23
 	db 8 percent, 8 percent, 8 percent
 	; morn
 	db 35, VULPIX
@@ -1693,7 +1693,7 @@ GrassWildMons:
 	db 36, SLOWPOKE
 	db 37, SLOWPOKE
 
-	map_id ROUTE_26_CAVE_1F
+	map_id ROUTE_23_CAVE_1F
 	db 3 percent, 3 percent, 3 percent
 	db 39, ONIX
 	db 38, ONIX
@@ -1719,7 +1719,7 @@ GrassWildMons:
 	db 39, DUGTRIO
 	db 40, DUGTRIO
 
-	map_id ROUTE_26_CAVE_B1F
+	map_id ROUTE_23_CAVE_B1F
 	db 3 percent, 3 percent, 3 percent
 	db 39, ONIX
 	db 38, ONIX
@@ -1875,7 +1875,7 @@ GrassWildMons:
 	db 45, WEEZING
 	db 46, WEEZING
 	
-	map_id ROUTE_22
+	map_id ROUTE_20
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 37, SLUGMA
@@ -2307,7 +2307,7 @@ GrassWildMons:
 	db 42, UNOWN
 	db 42, UNOWN
 
-	map_id ROUTE_28
+	map_id ROUTE_24
 	db 8 percent, 8 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 58, JIGGLYPUFF
@@ -2523,7 +2523,7 @@ GrassWildMons:
 	db 12, TEDDIURSA
 	db 12, TEDDIURSA
 
-	map_id PAST_ROUTE_8
+	map_id PAST_ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 16, BUTTERFREE
@@ -2550,7 +2550,7 @@ GrassWildMons:
 	db 16, EEVEE
 	db 17, EEVEE
 
-	map_id PAST_ROUTE_11
+	map_id PAST_ROUTE_10
 	db 5 percent, 5 percent, 5 percent ; encounter rates: morn/day/nite
 	; morn
 	db 15, HOPPIP

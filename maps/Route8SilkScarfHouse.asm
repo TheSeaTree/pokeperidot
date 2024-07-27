@@ -8,13 +8,13 @@ Route8SilkScarfHouse_MapScripts:
 Route8SilkScarfLady:
 	faceplayer
 	opentext
-	checkevent ROUTE_8_SILK_SCARF
+	checkevent ROUTE_7_SILK_SCARF
 	iftrue .After
-	checkevent ROUTE_8_ASKED_FOR_TEDDIURSA
+	checkevent ROUTE_7_ASKED_FOR_TEDDIURSA
 	iftrue .TeddiursaCheck
 	writetext Route8SilkScarfLadyText
 	waitbutton
-	setevent ROUTE_8_ASKED_FOR_TEDDIURSA
+	setevent ROUTE_7_ASKED_FOR_TEDDIURSA
 	closetext
 	end
 	
@@ -28,7 +28,7 @@ Route8SilkScarfLady:
 	waitbutton
 	verbosegiveitem SILK_SCARF
 	iffalse .NoRoom
-	setevent ROUTE_8_SILK_SCARF
+	setevent ROUTE_7_SILK_SCARF
 	writetext Route8SilkScarfLadyAfterText
 	waitbutton
 	closetext
@@ -121,8 +121,8 @@ Route8SilkScarfHouse_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  2,  7, ROUTE_8, 6
-	warp_event  3,  7, ROUTE_8, 6
+	warp_event  2,  7, ROUTE_7, 6
+	warp_event  3,  7, ROUTE_7, 6
 
 	db 0 ; coord events
 

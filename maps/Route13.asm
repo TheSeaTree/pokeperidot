@@ -178,10 +178,10 @@ TrainerCooltrainerMLucas:
 	end
 	
 .Explain
-	checkevent ROUTE_13_TALKED_TO_LUCAS
+	checkevent ROUTE_12_TALKED_TO_LUCAS
 	iftrue .Waiting
 	writetext LucasExplaination
-	setevent ROUTE_13_TALKED_TO_LUCAS
+	setevent ROUTE_12_TALKED_TO_LUCAS
 	waitbutton
 	closetext
 	end
@@ -196,10 +196,10 @@ Route13SharpBeak:
 	itemball SHARP_BEAK
 
 Route13FruitTree1:
-	fruittree FRUITTREE_ROUTE_13_1
+	fruittree FRUITTREE_ROUTE_12_1
 
 Route13FruitTree2:
-	fruittree FRUITTREE_ROUTE_13_2
+	fruittree FRUITTREE_ROUTE_12_2
 	
 Route13Rock:
 	jumpstd smashrock

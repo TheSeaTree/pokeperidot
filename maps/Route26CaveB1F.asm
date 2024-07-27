@@ -33,7 +33,7 @@ Route26CaveB1F_MapScripts:
 	moveobject ROUTE26CAVEB1F_BOULDER2, 26, 10
 	appear ROUTE26CAVEB1F_BOULDER2
 	changeblock 6, 8, $cf ; open door
-	setevent EVENT_ROUTE_26_CAVE_BOULDER
+	setevent EVENT_ROUTE_23_CAVE_BOULDER
 	disappear ROUTE26CAVEB1F_BOULDER1
 
 	earthquake 10
@@ -48,27 +48,27 @@ Route26CaveB1F_MapScripts:
 	end
 
 .PressedButton:
-	checkevent EVENT_ROUTE_26_CAVE_BOULDER
+	checkevent EVENT_ROUTE_23_CAVE_BOULDER
 	iffalse .skip
 	moveobject ROUTE26CAVEB1F_BOULDER2, 26, 10
 	appear ROUTE26CAVEB1F_BOULDER2
 	return
 
 .OpenGate:
-	checkevent EVENT_ROUTE_26_CAVE_BOULDER
+	checkevent EVENT_ROUTE_23_CAVE_BOULDER
 	iffalse .skip
 	changeblock 6, 8, $cf ; open door
 .skip
 	return
 
 Route26CaveB1FHiddenCoarseCharm:
-	hiddenitem COARSE_CHARM, EVENT_ROUTE_26_CAVE_HIDDEN_COARSE_CHARM
+	hiddenitem COARSE_CHARM, EVENT_ROUTE_23_CAVE_HIDDEN_COARSE_CHARM
 
 Route26CaveB1FHiddenStarPiece:
-	hiddenitem STAR_PIECE, EVENT_ROUTE_26_CAVE_HIDDEN_STAR_PIECE
+	hiddenitem STAR_PIECE, EVENT_ROUTE_23_CAVE_HIDDEN_STAR_PIECE
 
 Route26CaveB1FHiddenMetalCoat:
-	hiddenitem METAL_COAT, EVENT_ROUTE_26_CAVE_HIDDEN_METAL_COAT
+	hiddenitem METAL_COAT, EVENT_ROUTE_23_CAVE_HIDDEN_METAL_COAT
 
 Route26CaveB1FStuckBoulder:
 	jumptext Route26CaveB1FStuckBoulderText
@@ -92,9 +92,9 @@ Route26CaveB1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  3, 11, ROUTE_26_CAVE_1F, 3
-	warp_event 21,  3, ROUTE_26_CAVE_1F, 4
-	warp_event 26, 10, ROUTE_26_CAVE_B1F, 3
+	warp_event  3, 11, ROUTE_23_CAVE_1F, 3
+	warp_event 21,  3, ROUTE_23_CAVE_1F, 4
+	warp_event 26, 10, ROUTE_23_CAVE_B1F, 3
 
 	db 0 ; coord events
 
@@ -104,7 +104,7 @@ Route26CaveB1F_MapEvents:
 	bg_event  6,  4, BGEVENT_ITEM, Route26CaveB1FHiddenMetalCoat
 
 	db 10 ; object events
-	object_event 14, 13, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26CaveB1FBoulder, EVENT_ROUTE_26_CAVE_BOULDER
+	object_event 14, 13, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26CaveB1FBoulder, EVENT_ROUTE_23_CAVE_BOULDER
 	object_event  0,  0, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26CaveB1FStuckBoulder, -1
 	object_event 17, 12, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26CaveB1FRock, -1
 	object_event  7,  4, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route26CaveB1FRock, -1

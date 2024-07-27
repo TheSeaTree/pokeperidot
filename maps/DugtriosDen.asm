@@ -135,7 +135,7 @@ DugtriosDen_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 5, 11, ROUTE_24_HIDDEN_CAVE_1F, 3
+	warp_event 5, 11, ROUTE_18_HIDDEN_CAVE_1F, 3
 
 	db 2 ; coord events
 	coord_event 4,  5, SCENE_DEFAULT, DugtriosDenDiglettLeft
@@ -147,4 +147,4 @@ DugtriosDen_MapEvents:
 	object_event  -3, -3, SPRITE_DIGLETT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  -3, -3, SPRITE_DIGLETT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  -3, -3, SPRITE_DIGLETT, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
-	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DugtriosDenXSpeed, EVENT_ROUTE_24_CAVE_X_SPEED
+	object_event  5,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, DugtriosDenXSpeed, EVENT_ROUTE_18_CAVE_X_SPEED

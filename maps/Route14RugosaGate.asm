@@ -23,8 +23,8 @@ Route14RugosaGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  0,  4, ROUTE_14, 2
-	warp_event  0,  5, ROUTE_14, 3
+	warp_event  0,  4, ROUTE_13, 2
+	warp_event  0,  5, ROUTE_13, 3
 	warp_event  9,  4, RUGOSA_COAST, 1
 	warp_event  9,  5, RUGOSA_COAST, 2
 

@@ -23,8 +23,8 @@ Route18CarnationGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, CARNATION_TOWN, 1
 	warp_event  0,  5, CARNATION_TOWN, 2
-	warp_event  9,  4, ROUTE_18, 3
-	warp_event  9,  5, ROUTE_18, 4
+	warp_event  9,  4, ROUTE_14, 3
+	warp_event  9,  5, ROUTE_14, 4
 
 	db 0 ; coord events
 

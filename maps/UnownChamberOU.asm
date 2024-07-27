@@ -79,8 +79,8 @@ UnownChamberOU_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  5, 13, ROUTE_13, 1
-	warp_event  6, 13, ROUTE_13, 1
+	warp_event  5, 13, ROUTE_12, 1
+	warp_event  6, 13, ROUTE_12, 1
 
 	db 21 ; coord events
 	coord_event  4,  5, SCENE_FINISHED, UnownChamberOULapCheck

@@ -7,7 +7,7 @@ Route11Route12Gate_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .Route11Ledge
 	
 .Route11Ledge
-	setevent EVENT_ROUTE_11_LEDGE
+	setevent EVENT_ROUTE_10_LEDGE
 	return
 
 Route11Route12GateOfficerScript:
@@ -40,10 +40,10 @@ Route11Route12Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  7, ROUTE_11, 3
-	warp_event  5,  7, ROUTE_11, 3
-	warp_event  4,  0, ROUTE_12, 4
-	warp_event  5,  0, ROUTE_12, 5
+	warp_event  4,  7, ROUTE_10, 3
+	warp_event  5,  7, ROUTE_10, 3
+	warp_event  4,  0, ROUTE_11, 4
+	warp_event  5,  0, ROUTE_11, 5
 
 	db 0 ; coord events
 

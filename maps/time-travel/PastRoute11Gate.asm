@@ -39,8 +39,8 @@ PastRoute11Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  4,  0, PAST_ROUTE_11, 2
-	warp_event  5,  0, PAST_ROUTE_11, 3
+	warp_event  4,  0, PAST_ROUTE_10, 2
+	warp_event  5,  0, PAST_ROUTE_10, 3
 	warp_event  4,  7, PAST_FAVIA_TOWN, 5
 	warp_event  5,  7, PAST_FAVIA_TOWN, 5
 

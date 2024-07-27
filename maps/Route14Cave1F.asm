@@ -1,9 +1,9 @@
 	const_def 2 ; object constants
-	const ROUTE_14_CAVE_1F_BOULDER1
-	const ROUTE_14_CAVE_1F_BOULDER2
-	const ROUTE_14_CAVE_1F_BOULDER3
-	const ROUTE_14_CAVE_1F_MAROWAK
-	const ROUTE_14_CAVE_1F_TEACHER
+	const THE_BONEYARD_1F_BOULDER1
+	const THE_BONEYARD_1F_BOULDER2
+	const THE_BONEYARD_1F_BOULDER3
+	const THE_BONEYARD_1F_MAROWAK
+	const THE_BONEYARD_1F_TEACHER
 
 Route14Cave1F_MapScripts:
 	db 0 ; scene scripts
@@ -12,7 +12,7 @@ Route14Cave1F_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .MarowakCallback
 
 .MarowakCallback:
-	checkevent EVENT_ROUTE_14_CAVE_MAROWAK
+	checkevent EVENT_THE_BONEYARD_MAROWAK
 	iftrue .Disappear
 	copybytetovar wFarfetchdPosition
 	ifequal  1, .PositionOne
@@ -26,29 +26,29 @@ Route14Cave1F_MapScripts:
 	return
 
 .PositionOne:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK,  8,  8
+	moveobject THE_BONEYARD_1F_MAROWAK,  8,  8
 	return
 	
 .PositionTwo:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK,  8,  5
+	moveobject THE_BONEYARD_1F_MAROWAK,  8,  5
 	return
 	
 .PositionThree:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK,  5, 12
-	appear ROUTE_14_CAVE_1F_MAROWAK
+	moveobject THE_BONEYARD_1F_MAROWAK,  5, 12
+	appear THE_BONEYARD_1F_MAROWAK
 	return	
 	
 .PositionFour:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK,  2,  7
-	appear ROUTE_14_CAVE_1F_MAROWAK
+	moveobject THE_BONEYARD_1F_MAROWAK,  2,  7
+	appear THE_BONEYARD_1F_MAROWAK
 	return
 	
 .PositionFive:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 13,  9
+	moveobject THE_BONEYARD_1F_MAROWAK, 13,  9
 	return
 	
 .PositionSix:
-	moveobject ROUTE_14_CAVE_1F_MAROWAK,  8,  4
+	moveobject THE_BONEYARD_1F_MAROWAK,  8,  4
 	return
 
 Route14Cave1FMarowakScript:
@@ -67,39 +67,39 @@ Route14Cave1FMarowakScript:
 	cry MAROWAK
 	waitbutton
 	closetext
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_1
 	iftrue .Position1_Continue
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_2
 	iftrue .Position1_Continue
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_3
 	iftrue .Position1_Down2
 .Position1_Continue:
 	scall .CheckFacing
 	ifequal DOWN, .Position1_Down
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos1
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 5
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos1
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 5
 	loadvar wFarfetchdPosition, 2
 	end
 
 .Position1_Down:
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_3
 	iffalse .Position1_Down2
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos1Down
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 5, 12
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos1Down
+	moveobject THE_BONEYARD_1F_MAROWAK, 5, 12
 	loadvar wFarfetchdPosition, 3
 	end
 	
 .Position1_Down2:
 	scall .CheckFacing
 	ifequal LEFT, .Position1_DownLeft
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos1Down2
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 13, 9
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos1Down2
+	moveobject THE_BONEYARD_1F_MAROWAK, 13, 9
 	loadvar wFarfetchdPosition, 5
 	end
 	
 .Position1_DownLeft:
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos1Down3
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 13, 9
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos1Down3
+	moveobject THE_BONEYARD_1F_MAROWAK, 13, 9
 	loadvar wFarfetchdPosition, 5
 	end
 	
@@ -110,39 +110,39 @@ Route14Cave1FMarowakScript:
 	cry MAROWAK
 	waitbutton
 	closetext
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_1
 	iffalse .Position2_DeadEnd
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_2
 	iffalse .Position2_DeadEnd
 .Position2_Continue:
 	scall .CheckFacing
 	ifequal RIGHT, .Position2_Right
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos2
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos2
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 
 .Position2_Right:
 	scall .CheckFacing
 	ifequal UP, .Position2_Left
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos2Right
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos2Right
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 
 .Position2_Left:
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos2Left
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 13, 9
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos2Left
+	moveobject THE_BONEYARD_1F_MAROWAK, 13, 9
 	loadvar wFarfetchdPosition, 5
 	end	
 
 .Position2_DeadEnd:
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_1
 	iftrue .Position2_Right
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_2
 	iftrue .Position2_Continue
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakDeadEnd
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 4
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakDeadEnd
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 4
 	loadvar wFarfetchdPosition, 6
 	end
 
@@ -153,8 +153,8 @@ Route14Cave1FMarowakScript:
 	cry MAROWAK
 	waitbutton
 	closetext
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos3
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 2, 7
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos3
+	moveobject THE_BONEYARD_1F_MAROWAK, 2, 7
 	loadvar wFarfetchdPosition, 4
 	end
 
@@ -165,16 +165,16 @@ Route14Cave1FMarowakScript:
 	cry MAROWAK
 	waitbutton
 	closetext
-	checkevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
+	checkevent EVENT_THE_BONEYARD_1F_BOULDER_2
 	iffalse .Position4_Up
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos4
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 	
 .Position4_Up:
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos4Up
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4Up
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 	
@@ -187,19 +187,19 @@ Route14Cave1FMarowakScript:
 	closetext
 	scall .CheckFacing
 	ifequal DOWN, .Position5_Down	
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos5
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos5
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 	
 .Position5_Down:
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakPos5Down
-	moveobject ROUTE_14_CAVE_1F_MAROWAK, 8, 8
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos5Down
+	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 	
 .Position6:
-	applymovement ROUTE_14_CAVE_1F_MAROWAK, MarowakCornered
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakCornered
 	opentext
 	writetext MarowakCorneredText
 	waitbutton
@@ -215,36 +215,36 @@ Route14Cave1FMarowakScript:
 	writetext Route14TeacherApproachText
 	waitbutton
 	closetext
-	moveobject ROUTE_14_CAVE_1F_TEACHER, 12, 10
-	appear ROUTE_14_CAVE_1F_TEACHER
-	applymovement ROUTE_14_CAVE_1F_TEACHER, Route14Cave1FTeacherApproach
+	moveobject THE_BONEYARD_1F_TEACHER, 12, 10
+	appear THE_BONEYARD_1F_TEACHER
+	applymovement THE_BONEYARD_1F_TEACHER, Route14Cave1FTeacherApproach
 	applymovement PLAYER, Route14Cave1FPlayerStepAside
-	applymovement ROUTE_14_CAVE_1F_TEACHER, Route14Cave1FTeacherApproach2
+	applymovement THE_BONEYARD_1F_TEACHER, Route14Cave1FTeacherApproach2
 	opentext
 	writetext Route14Cave1FTeacherWorried
 	waitbutton
 	closetext
-	showemote EMOTE_SHOCK, ROUTE_14_CAVE_1F_TEACHER, 15
+	showemote EMOTE_SHOCK, THE_BONEYARD_1F_TEACHER, 15
 	opentext
 	writetext Route14Cave1FTeacherBattle
 	waitbutton
 	closetext
-	turnobject ROUTE_14_CAVE_1F_TEACHER, LEFT
+	turnobject THE_BONEYARD_1F_TEACHER, LEFT
 	opentext
 	writetext Route14Cave1FTeacherThankPlayer
 	waitbutton
 	closetext
-	turnobject ROUTE_14_CAVE_1F_TEACHER, UP
+	turnobject THE_BONEYARD_1F_TEACHER, UP
 	opentext
 	writetext Route14Cave1FTeacherLetsGoText
 	waitbutton
 	closetext
-	follow ROUTE_14_CAVE_1F_TEACHER, ROUTE_14_CAVE_1F_MAROWAK
-	applymovement ROUTE_14_CAVE_1F_TEACHER, Route14Cave1FTeacherLeave
-	disappear ROUTE_14_CAVE_1F_MAROWAK
-	disappear ROUTE_14_CAVE_1F_TEACHER
+	follow THE_BONEYARD_1F_TEACHER, THE_BONEYARD_1F_MAROWAK
+	applymovement THE_BONEYARD_1F_TEACHER, Route14Cave1FTeacherLeave
+	disappear THE_BONEYARD_1F_MAROWAK
+	disappear THE_BONEYARD_1F_TEACHER
 	clearevent EVENT_HIDE_SHELTER_MAROWAK
-	setevent EVENT_ROUTE_14_CAVE_MAROWAK
+	setevent EVENT_THE_BONEYARD_MAROWAK
 	end
 	
 .CheckFacing:
@@ -255,13 +255,13 @@ Route14Cave1FBoulder:
 	jumptext Route14Cave1FWontBudge
 	
 Route14CaveReset:
-	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_1
-	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_2
-	setevent EVENT_ROUTE_14_CAVE_1F_BOULDER_3
-	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_1
-	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_2
-	clearevent EVENT_ROUTE_14_CAVE_2F_BOULDER_3
-	clearevent EVENT_HEARD_ROUTE_12_LEADER
+	setevent EVENT_THE_BONEYARD_1F_BOULDER_1
+	setevent EVENT_THE_BONEYARD_1F_BOULDER_2
+	setevent EVENT_THE_BONEYARD_1F_BOULDER_3
+	clearevent EVENT_THE_BONEYARD_2F_BOULDER_1
+	clearevent EVENT_THE_BONEYARD_2F_BOULDER_2
+	clearevent EVENT_THE_BONEYARD_2F_BOULDER_3
+	clearevent EVENT_HEARD_ROUTE_11_LEADER
 	loadvar wFarfetchdPosition, 1
 	end
 	
@@ -508,11 +508,11 @@ Route14Cave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 5 ; warp events
-	warp_event 11,  3, ROUTE_14_CAVE_2F, 1
-	warp_event 10,  6, ROUTE_14_CAVE_1F, 2
-	warp_event 10, 12, ROUTE_14_CAVE_1F, 2
-	warp_event  6,  8, ROUTE_14_CAVE_1F, 2
-	warp_event  9, 19, ROUTE_14, 1
+	warp_event 11,  3, THE_BONEYARD_2F, 1
+	warp_event 10,  6, THE_BONEYARD_1F, 2
+	warp_event 10, 12, THE_BONEYARD_1F, 2
+	warp_event  6,  8, THE_BONEYARD_1F, 2
+	warp_event  9, 19, ROUTE_13, 1
 
 	db 0 ; coord events
 
@@ -520,9 +520,9 @@ Route14Cave1F_MapEvents:
 ;	bg_event  9, 19, BGEVENT_READ, Route14CaveReset
 
 	db 5 ; object events
-	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_ROUTE_14_CAVE_1F_BOULDER_1
-	object_event  6,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_ROUTE_14_CAVE_1F_BOULDER_2
-	object_event 10, 11, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_ROUTE_14_CAVE_1F_BOULDER_3
-	object_event  8,  8, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route14Cave1FMarowakScript, EVENT_ROUTE_14_CAVE_MAROWAK
-	object_event  0,  0, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROUTE_14_CAVE_MAROWAK
+	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_THE_BONEYARD_1F_BOULDER_1
+	object_event  6,  7, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_THE_BONEYARD_1F_BOULDER_2
+	object_event 10, 11, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14Cave1FBoulder, EVENT_THE_BONEYARD_1F_BOULDER_3
+	object_event  8,  8, SPRITE_MONSTER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Route14Cave1FMarowakScript, EVENT_THE_BONEYARD_MAROWAK
+	object_event  0,  0, SPRITE_POSEY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_THE_BONEYARD_MAROWAK
 	

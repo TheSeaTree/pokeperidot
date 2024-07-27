@@ -34,7 +34,7 @@ WaterWildMons:
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 
-	map_id ROUTE_30
+	map_id PAVONA_OASIS
 	db 6 percent ; encounter rate
 	db 26, GOLDEEN
 	db 25, PSYDUCK
@@ -42,7 +42,7 @@ WaterWildMons:
 	db 24, POLIWAG
 	db 25, POLIWHIRL
 
-	map_id ROUTE_30_CAVE_B1F
+	map_id PAVONA_OASIS_CAVE_B1F
 	db 5 percent ; encounter rate
 	db 26, GOLDEEN
 	db 25, QUAGSIRE
@@ -242,7 +242,7 @@ WaterWildMons:
 	db 49, DEWGONG
 	db 50, DEWGONG
 
-	map_id ROUTE_28
+	map_id ROUTE_24
 	db 4 percent ; encounter rate
 	db 48, ANCOR
 	db 47, OCTILLERY
@@ -250,7 +250,7 @@ WaterWildMons:
 	db 48, SEADRA
 	db 50, SEADRA
 
-	map_id ROUTE_8
+	map_id ROUTE_7
 	db 4 percent ; encounter rate
 	db 30, CORSOLA
 	db 30, SEEL
@@ -290,10 +290,18 @@ WaterWildMons:
 	db 26, GOLDEEN
 	db 25, QUAGSIRE
 	
-	map_id ROUTE_11
+	map_id ROUTE_10
 	db 4 percent ; encounter rate
 	db 25, PSYDUCK
 	db 26, GOLDEEN
+	db 24, AZUMARILL
+	db 24, AZUMARILL
+	db 25, POLIWHIRL
+
+	map_id ROUTE_11
+	db 4 percent ; encounter rate
+	db 26, GOLDEEN
+	db 25, QUAGSIRE
 	db 24, AZUMARILL
 	db 24, AZUMARILL
 	db 25, POLIWHIRL
@@ -304,25 +312,17 @@ WaterWildMons:
 	db 25, QUAGSIRE
 	db 24, AZUMARILL
 	db 24, AZUMARILL
-	db 25, POLIWHIRL
-
+	db 25, SLOWPOKE
+	
 	map_id ROUTE_13
 	db 4 percent ; encounter rate
 	db 26, GOLDEEN
 	db 25, QUAGSIRE
 	db 24, AZUMARILL
 	db 24, AZUMARILL
-	db 25, SLOWPOKE
-	
-	map_id ROUTE_14
-	db 4 percent ; encounter rate
-	db 26, GOLDEEN
-	db 25, QUAGSIRE
-	db 24, AZUMARILL
-	db 24, AZUMARILL
 	db 25, POLIWHIRL
 
-	map_id ROUTE_18
+	map_id ROUTE_14
 	db 8 percent ; encounter rate
 	db 30, AZUMARILL
 	db 31, AZUMARILL
@@ -346,7 +346,7 @@ WaterWildMons:
 	db 37, YANMA
 	db 38, AZUMARILL
 
-	map_id ROUTE_21
+	map_id ROUTE_17
 	db 4 percent ; encounter rate
 	db 36, GOLDUCK
 	db 35, POLIWHIRL
@@ -354,7 +354,7 @@ WaterWildMons:
 	db 37, YANMA
 	db 38, AZUMARILL
 
-	map_id ROUTE_23
+	map_id ROUTE_21
 	db 4 percent ; encounter rate
 	db 35, TENTACRUEL
 	db 35, KINGLER
@@ -362,7 +362,7 @@ WaterWildMons:
 	db 35, SHELLDER
 	db 36, ANCOR
 
-	map_id ROUTE_26
+	map_id ROUTE_23
 	db 4 percent ; encounter rate
 	db 35, AZUMARILL
 	db 35, QUAGSIRE
@@ -514,7 +514,7 @@ WaterWildMons:
 	db 19, GOLDEEN
 	db 18, WOOPER
 
-	map_id PAST_ROUTE_11
+	map_id PAST_ROUTE_10
 	db 4 percent ; encounter rate
 	db 17, PSYDUCK
 	db 18, GOLDEEN

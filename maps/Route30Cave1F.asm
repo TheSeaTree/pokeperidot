@@ -12,8 +12,8 @@ Route30Cave1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event  7, 11, ROUTE_30, 1
-	warp_event 13,  5, ROUTE_30_CAVE_B1F, 1
+	warp_event  7, 11, PAVONA_OASIS, 1
+	warp_event 13,  5, PAVONA_OASIS_CAVE_B1F, 1
 
 	db 0 ; coord events
 

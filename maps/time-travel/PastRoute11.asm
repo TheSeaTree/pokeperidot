@@ -27,10 +27,10 @@ PastRoute11_MapScripts:
 .ChangeWarp
 	checkevent EVENT_DEFEATED_SCHOOLHOUSE_TEACHER
 	iftrue .DontChange
-	warpmod 1, PAST_ROUTE_11_SCHOOLHOUSE
+	warpmod 1, PAST_ROUTE_10_SCHOOLHOUSE
 	return
 .DontChange
-	warpmod 1, PAST_ROUTE_11_SCHOOLHOUSE_2
+	warpmod 1, PAST_ROUTE_10_SCHOOLHOUSE_2
 	return
 
 PastRoute11Teacher:
@@ -80,13 +80,13 @@ PastRoute11RageCandyBar:
 	itemball RAGECANDYBAR
 
 PastRoute11HiddenDampCharm:
-	hiddenitem DAMP_CHARM, EVENT_ROUTE_11_PAST_HIDDEN_DAMP_CHARM
+	hiddenitem DAMP_CHARM, EVENT_ROUTE_10_PAST_HIDDEN_DAMP_CHARM
 
 PastRoute11HiddenMintBerry:
-	hiddenitem MINT_BERRY, EVENT_ROUTE_11_PAST_HIDDEN_MINT_BERRY
+	hiddenitem MINT_BERRY, EVENT_ROUTE_10_PAST_HIDDEN_MINT_BERRY
 
 PastRoute11HiddenStarPiece:
-	hiddenitem STAR_PIECE, EVENT_ROUTE_11_PAST_HIDDEN_STAR_PIECE
+	hiddenitem STAR_PIECE, EVENT_ROUTE_10_PAST_HIDDEN_STAR_PIECE
 
 PastRoute11TeacherText:
 	text "It's so cozy to"
@@ -151,15 +151,15 @@ PastRoute11_MapEvents:
 	db 0, 0 ; filler
 
 	db 9 ; warp events
-	warp_event 47, 17, PAST_ROUTE_11, -1 ; Schoolhouse
-	warp_event 27, 27, PAST_ROUTE_11_GATE, 1
-	warp_event 28, 27, PAST_ROUTE_11_GATE, 2
-	warp_event 49, 21, PAST_ROUTE_11_HOUSE_5, 1
-	warp_event 37,  7, PAST_ROUTE_11_HOUSE_1, 1
-	warp_event 29, 11, PAST_ROUTE_11_INN, 1
-	warp_event 19,  7, PAST_ROUTE_11_HOUSE_2, 1
-	warp_event 17, 17, PAST_ROUTE_11_HOUSE_3, 1
-	warp_event  7, 11, PAST_ROUTE_11_HOUSE_4, 1
+	warp_event 47, 17, PAST_ROUTE_10, -1 ; Schoolhouse
+	warp_event 27, 27, PAST_ROUTE_10_GATE, 1
+	warp_event 28, 27, PAST_ROUTE_10_GATE, 2
+	warp_event 49, 21, PAST_ROUTE_10_HOUSE_5, 1
+	warp_event 37,  7, PAST_ROUTE_10_HOUSE_1, 1
+	warp_event 29, 11, PAST_ROUTE_10_INN, 1
+	warp_event 19,  7, PAST_ROUTE_10_HOUSE_2, 1
+	warp_event 17, 17, PAST_ROUTE_10_HOUSE_3, 1
+	warp_event  7, 11, PAST_ROUTE_10_HOUSE_4, 1
 
 	db 0 ; coord events
 
@@ -176,6 +176,6 @@ PastRoute11_MapEvents:
 	object_event 14, 15, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastRoute11PokefanM, -1
 	object_event 34, 23, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastRoute11SuperNerd, -1
 	object_event  6, 24, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PastRoute11Youngster, -1
-	object_event 58, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11QuickClaw, EVENT_ROUTE_11_PAST_QUICK_CLAW
-	object_event 51,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11FocusSash, EVENT_ROUTE_11_PAST_FOCUS_SASH
-	object_event  1, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11RageCandyBar, EVENT_ROUTE_11_PAST_RAGECANDYBAR
+	object_event 58, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11QuickClaw, EVENT_ROUTE_10_PAST_QUICK_CLAW
+	object_event 51,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11FocusSash, EVENT_ROUTE_10_PAST_FOCUS_SASH
+	object_event  1, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute11RageCandyBar, EVENT_ROUTE_10_PAST_RAGECANDYBAR

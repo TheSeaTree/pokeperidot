@@ -368,8 +368,8 @@ RugosaCoast_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
-	warp_event  4, 14, ROUTE_14_RUGOSA_GATE, 3
-	warp_event  4, 15, ROUTE_14_RUGOSA_GATE, 4
+	warp_event  4, 14, ROUTE_13_RUGOSA_GATE, 3
+	warp_event  4, 15, ROUTE_13_RUGOSA_GATE, 4
 	warp_event 17,  5, RUGOSA_GATE, 3
 	warp_event 13, 17, RUGOSA_SURF_HOUSE, 1
 	warp_event 10, 11, COASTAL_LAB, 1
