@@ -1,8 +1,8 @@
 	const_def 2 ; object constants
-	const NORTHFOREST_RIVAL
-	const NORTHFOREST_MEWTWO
+	const BOREASFOREST_RIVAL
+	const BOREASFOREST_MEWTWO
 
-NorthForest_MapScripts:
+BoreasForest_MapScripts:
 	db 2 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
 	scene_script .DummyScene ; SCENE_FINSIHED
@@ -12,47 +12,47 @@ NorthForest_MapScripts:
 .DummyScene:
 	end
 
-NorthForestRivalBattleLeft:
-	scall NorthForestRivalNoticePlayer
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalApproachPlayerLeft
-	scall NorthForestRivalBattleCommon
+BoreasForestRivalBattleLeft:
+	scall BoreasForestRivalNoticePlayer
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalApproachPlayerLeft
+	scall BoreasForestRivalBattleCommon
 	playsound SFX_BALL_POOF
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalMewtwoBreakFree
-	moveobject NORTHFOREST_MEWTWO, 17, 23
-	appear NORTHFOREST_MEWTWO
-	scall NorthForestRivalAfterBattle
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalExitLeft
-	jump NorthForestRivalEndScene
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalMewtwoBreakFree
+	moveobject BOREASFOREST_MEWTWO, 17, 23
+	appear BOREASFOREST_MEWTWO
+	scall BoreasForestRivalAfterBattle
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalExitLeft
+	jump BoreasForestRivalEndScene
 
-NorthForestRivalBattleRight:
-	scall NorthForestRivalNoticePlayer
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalApproachPlayerRight
-	scall NorthForestRivalBattleCommon
+BoreasForestRivalBattleRight:
+	scall BoreasForestRivalNoticePlayer
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalApproachPlayerRight
+	scall BoreasForestRivalBattleCommon
 	playsound SFX_BALL_POOF
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalMewtwoBreakFree
-	moveobject NORTHFOREST_MEWTWO, 18, 23
-	appear NORTHFOREST_MEWTWO
-	scall NorthForestRivalAfterBattle
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalExitRight
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalMewtwoBreakFree
+	moveobject BOREASFOREST_MEWTWO, 18, 23
+	appear BOREASFOREST_MEWTWO
+	scall BoreasForestRivalAfterBattle
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalExitRight
 
-NorthForestRivalEndScene:
+BoreasForestRivalEndScene:
 	playsound SFX_EXIT_BUILDING
-	disappear NORTHFOREST_RIVAL
+	disappear BOREASFOREST_RIVAL
 	waitsfx
 	setscene SCENE_FINISHED
 	setevent EVENT_BEAT_RIVAL_IN_POSTGAME
 	playmusic MUSIC_UNION_CAVE
 	end
 
-NorthForestRivalNoticePlayer:
-	setlasttalked NORTHFOREST_RIVAL
+BoreasForestRivalNoticePlayer:
+	setlasttalked BOREASFOREST_RIVAL
 	special FadeOutMusic
 	faceplayer
-	showemote EMOTE_QUESTION, NORTHFOREST_RIVAL, 15
+	showemote EMOTE_QUESTION, BOREASFOREST_RIVAL, 15
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	end
 
-NorthForestRivalBattleCommon:
+BoreasForestRivalBattleCommon:
 	opentext
 	writetext PostgameRivalIntroText
 	waitbutton
@@ -64,7 +64,7 @@ NorthForestRivalBattleCommon:
 	reloadmapafterbattle
 	end
 	
-NorthForestRivalAfterBattle:
+BoreasForestRivalAfterBattle:
 	opentext
 	writetext MewtwoEscapedItsBallText
 	waitbutton
@@ -72,16 +72,16 @@ NorthForestRivalAfterBattle:
 	cry MEWTWO
 	waitsfx
 	playsound SFX_WARP_TO
-	applymovement NORTHFOREST_MEWTWO, NorthForestMewtwoTeleportAway
-	disappear NORTHFOREST_MEWTWO
+	applymovement BOREASFOREST_MEWTWO, BoreasForestMewtwoTeleportAway
+	disappear BOREASFOREST_MEWTWO
 	waitsfx
 	opentext
 	writetext MewtwoTeleportedText
 	waitbutton
 	closetext
 
-	showemote EMOTE_SHOCK, NORTHFOREST_RIVAL, 15
-	applymovement NORTHFOREST_RIVAL, NorthForestRivalLookLeftRight
+	showemote EMOTE_SHOCK, BOREASFOREST_RIVAL, 15
+	applymovement BOREASFOREST_RIVAL, BoreasForestRivalLookLeftRight
 
 	opentext
 	writetext PostgameRivalAfterText
@@ -89,29 +89,29 @@ NorthForestRivalAfterBattle:
 	closetext
 	end
 
-NorthForestHiddenRevivalHerb:
-	hiddenitem REVIVAL_HERB, EVENT_NORTH_FOREST_HIDDEN_REVIVAL_HERB
+BoreasForestHiddenRevivalHerb:
+	hiddenitem REVIVAL_HERB, EVENT_BOREAS_FOREST_HIDDEN_REVIVAL_HERB
 
-NorthForestHiddenXAttack:
-	hiddenitem REVIVAL_HERB, EVENT_NORTH_FOREST_HIDDEN_X_ATTACK
+BoreasForestHiddenXAttack:
+	hiddenitem REVIVAL_HERB, EVENT_BOREAS_FOREST_HIDDEN_X_ATTACK
 
-NorthForestHiddenXSpAtk:
-	hiddenitem X_SP_ATK, EVENT_NORTH_FOREST_HIDDEN_X_SP_ATK
+BoreasForestHiddenXSpAtk:
+	hiddenitem X_SP_ATK, EVENT_BOREAS_FOREST_HIDDEN_X_SP_ATK
 
-NorthForestRivalApproachPlayerRight:
+BoreasForestRivalApproachPlayerRight:
 	step RIGHT
-NorthForestRivalApproachPlayerLeft:
+BoreasForestRivalApproachPlayerLeft:
 	step DOWN
 	step DOWN
 	step_end
 
-NorthForestRivalMewtwoBreakFree:
+BoreasForestRivalMewtwoBreakFree:
 	fix_facing
 	run_step UP
 	remove_fixed_facing
 	step_end
 
-NorthForestMewtwoTeleportAway:
+BoreasForestMewtwoTeleportAway:
 	hide_person
 	step_sleep 1
 	show_person
@@ -131,7 +131,7 @@ NorthForestMewtwoTeleportAway:
 	hide_person
 	step_end
 
-NorthForestRivalLookLeftRight:
+BoreasForestRivalLookLeftRight:
 	turn_head LEFT
 	step_sleep 16
 	turn_head RIGHT
@@ -143,14 +143,14 @@ NorthForestRivalLookLeftRight:
 	step DOWN
 	step_end
 
-NorthForestRivalExitLeft:
+BoreasForestRivalExitLeft:
 	step RIGHT
 	step DOWN
 	step DOWN
 	turn_step DOWN
 	step_resume
 
-NorthForestRivalExitRight:
+BoreasForestRivalExitRight:
 	step LEFT
 	step DOWN
 	step DOWN
@@ -260,7 +260,7 @@ PostgameRivalAfterText:
 	line "<PLAYER>."
 	done
 
-NorthForest_MapEvents:
+BoreasForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
@@ -270,13 +270,13 @@ NorthForest_MapEvents:
 	warp_event 25,  4, MEWTWO_LAB_1F, 2
 
 	db 2 ; coord events
-	coord_event 17, 24, SCENE_DEFAULT, NorthForestRivalBattleLeft
-	coord_event 18, 24, SCENE_DEFAULT, NorthForestRivalBattleRight
+	coord_event 17, 24, SCENE_DEFAULT, BoreasForestRivalBattleLeft
+	coord_event 18, 24, SCENE_DEFAULT, BoreasForestRivalBattleRight
 
 	db 3 ; bg events
-	bg_event 32, 21, BGEVENT_ITEM, NorthForestHiddenRevivalHerb
-	bg_event 31,  7, BGEVENT_ITEM, NorthForestHiddenXAttack
-	bg_event 11,  3, BGEVENT_ITEM, NorthForestHiddenXSpAtk
+	bg_event 32, 21, BGEVENT_ITEM, BoreasForestHiddenRevivalHerb
+	bg_event 31,  7, BGEVENT_ITEM, BoreasForestHiddenXAttack
+	bg_event 11,  3, BGEVENT_ITEM, BoreasForestHiddenXSpAtk
 
 	db 2 ; object events
 	object_event 17, 21, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_POSTGAME

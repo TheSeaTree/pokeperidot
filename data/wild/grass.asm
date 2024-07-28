@@ -2,7 +2,7 @@
 
 GrassWildMons:
 
-	map_id UNION_CAVE_1F
+	map_id PAVONA_PASS_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 11, GEODUDE
@@ -29,7 +29,7 @@ GrassWildMons:
 	db 10, PARAS
 	db 13, PARAS
 
-	map_id UNION_CAVE_B1F
+	map_id PAVONA_PASS_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, GEODUDE
@@ -56,7 +56,7 @@ GrassWildMons:
 	db 18, KANGASKHAN
 	db 20, KANGASKHAN
 
-	map_id ILEX_FOREST
+	map_id OCCIDENT_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 21, BEEDRILL
@@ -83,7 +83,7 @@ GrassWildMons:
 	db 20, SCYTHER
 	db 22, SCYTHER
 
-	map_id EAST_FOREST
+	map_id ORIENTEM_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, BEEDRILL
@@ -2334,7 +2334,7 @@ GrassWildMons:
 	db 59, VULPIX
 	db 60, VULPIX
 
-	map_id NORTH_FOREST
+	map_id BOREAS_FOREST
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	db 58, LICKITUNG
@@ -2577,7 +2577,7 @@ GrassWildMons:
 	db 15, ZUBAT
 	db 16, MISDREAVUS
 
-	map_id PAST_ILEX_FOREST
+	map_id PAST_OCCIDENT_FOREST
 	db 15 percent, 15 percent, 15 percent ; encounter rates: morn/day/nite
 	; morn
 	db 18, BEEDRILL

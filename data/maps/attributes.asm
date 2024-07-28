@@ -309,15 +309,14 @@ ENDM
 	map_attributes PastFaviaInn, PAST_FAVIA_INN, $00, 0
 	map_attributes PastPavonaInn, PAST_FAVIA_INN, $00, 0
 	map_attributes PastRoute10Inn, PAST_ROUTE_10_INN, $00, 0
-	map_attributes PastIlexForest, PAST_ILEX_FOREST, $05, 0
+	map_attributes PastOccidentForest, PAST_OCCIDENT_FOREST, $05, 0
 	map_attributes PastPectiniaApartment1F, PAST_PECTINIA_APARTMENT_1F, $00, 0
 	map_attributes PastPectiniaApartment2F, PAST_PECTINIA_APARTMENT_2F, $00, 0
 	map_attributes PastPectiniaApartment3F, PAST_PECTINIA_APARTMENT_3F, $00, 0
 
-	map_attributes UnionCave1F, UNION_CAVE_1F, $09, 0
-	map_attributes UnionCaveB1F, UNION_CAVE_B1F, $09, 0
-	map_attributes UnionCaveB2F, UNION_CAVE_B2F, $09, 0
-	map_attributes IlexForest, ILEX_FOREST, $05, 0
+	map_attributes PavonaPass1F, PAVONA_PASS_1F, $09, 0
+	map_attributes PavonaPassB1F, PAVONA_PASS_B1F, $09, 0
+	map_attributes OccidentForest, OCCIDENT_FOREST, $05, 0
 	map_attributes Route6Underground, ROUTE_6_UNDERGROUND, $00, 0
 	map_attributes AcroporaGym, ACROPORA_GYM, $00, 0
 	map_attributes RugosaGym, RUGOSA_GYM, $00, 0
@@ -402,7 +401,7 @@ ENDM
 	map_attributes Route9ForestGate, ROUTE_9_FOREST_GATE, $00, 0
 	map_attributes StaghornForestGate, STAGHORN_FOREST_GATE, $00, 0
 	map_attributes Route7FaviaGate, ROUTE_7_FAVIA_GATE, $00, 0
-	map_attributes EastForest, EAST_FOREST, $05, 0
+	map_attributes OrientemForest, ORIENTEM_FOREST, $05, 0
 	map_attributes Route4ForestGate, ROUTE_4_FOREST_GATE, $00, 0
 	map_attributes Route4PectiniaGate, ROUTE_4_PECTINIA_GATE, $00, 0
 	map_attributes HiddenPowerCave, HIDDEN_POWER_CAVE, $09, 0
@@ -467,7 +466,7 @@ ENDM
 	map_attributes OrchidDragonbreathHouse, DRAGONBREATH_HOUSE, $00, 0
 	map_attributes OrchidTeachersHouse, ORCHID_TEACHERS_HOUSE, $00, 0
 	map_attributes OrchidGrannysHouse, ORCHID_GRANNYS_HOUSE, $00, 0
-	map_attributes IlexForestSwordsDanceHouse, SWORDS_DANCE_HOUSE, $00, 0
+	map_attributes OccidentForestSwordsDanceHouse, SWORDS_DANCE_HOUSE, $00, 0
 	map_attributes BurglarHideout1F,  BURGLAR_HIDEOUT_1F, $00, 0
 	map_attributes BurglarHideoutB1F, BURGLAR_HIDEOUT_B1F, $00, 0
 	map_attributes BurglarHideoutB2F, BURGLAR_HIDEOUT_B2F, $00, 0
@@ -590,7 +589,7 @@ ENDM
 	map_attributes Route21Gate, ROUTE_21_GATE, $00, 0
 	map_attributes Route23Gate, ROUTE_23_GATE, $00, 0
 	map_attributes Route24Gate, ROUTE_24_GATE, $00, 0
-	map_attributes NorthForest, NORTH_FOREST, $07, 0
+	map_attributes BoreasForest, BOREAS_FOREST, $07, 0
 	map_attributes DevelopersHouse, DEVELOPERS_HOUSE, $00, 0
 	map_attributes PastRoute10Gate, PAST_ROUTE_10_GATE, $00, 0
 	map_attributes PastRoute10House1, PAST_ROUTE_10_HOUSE_1, $00, 0

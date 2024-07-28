@@ -1,6 +1,6 @@
 	const_def 2 ; object constants
 
-EastForest_MapScripts:
+OrientemForest_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -26,15 +26,15 @@ TrainerTeacherBea:
 	closetext
 	end
 
-EastForestMoveTutor:
+OrientemForestMoveTutor:
 	faceplayer
 	opentext
-	writetext EastForestTutorText
+	writetext OrientemForestTutorText
 	yesorno
 	iffalse .Refused
 	checkitem GOLD_LEAF
 	iffalse .NoLeaf
-	writetext EastForestTutorTeach
+	writetext OrientemForestTutorTeach
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
@@ -69,45 +69,45 @@ EastForestMoveTutor:
 
 .TeachMove
 	takeitem GOLD_LEAF
-	writetext EastForestTutorThankYou
+	writetext OrientemForestTutorThankYou
 	waitbutton
 	closetext
 	end
 	
 .Refused
-	writetext EastForestTutorRefused
+	writetext OrientemForestTutorRefused
 	waitbutton
 	closetext
 	end
 	
 .NoLeaf
-	writetext EastForestTutorExplainGoldLeaf
+	writetext OrientemForestTutorExplainGoldLeaf
 	waitbutton
 	closetext
 	end
 
-EastForestHypnoScript:
+OrientemForestHypnoScript:
 	opentext
-	writetext EastForestHypnoText
+	writetext OrientemForestHypnoText
 	cry HYPNO
 	waitsfx
 	waitbutton
-	writetext EastForestHypnoAfterText
+	writetext OrientemForestHypnoAfterText
 	waitbutton
 	closetext
 	end
 
-EastForestBrightpowder:
+OrientemForestBrightpowder:
 	itemball BRIGHTPOWDER
 
-EastForestFruitTree:
-	fruittree FRUITTREE_EAST_FOREST
+OrientemForestFruitTree:
+	fruittree FRUITTREE_ORIENTEM_FOREST
 
-EastForestPowerPlantSign:
-	jumptext EastForestPowerPlantSignText
+OrientemForestPowerPlantSign:
+	jumptext OrientemForestPowerPlantSignText
 	
-EastForestPowerPlantFence:
-	jumptext EastForestPowerPlantFenceText
+OrientemForestPowerPlantFence:
+	jumptext OrientemForestPowerPlantFenceText
 
 TeacherBeaText:
 	text "Yaaaaawn…"
@@ -133,7 +133,7 @@ TeacherBeaAfterText:
 	line "feel it too."
 	done
 
-EastForestTutorText:
+OrientemForestTutorText:
 	text "I can teach your"
 	line "#MON some moves"
 	cont "that work great on"
@@ -146,7 +146,7 @@ EastForestTutorText:
 	line "each. Deal?"
 	done
 
-EastForestTutorExplainGoldLeaf:
+OrientemForestTutorExplainGoldLeaf:
 	text "No payment?"
 
 	para "I hope you don't"
@@ -158,12 +158,12 @@ EastForestTutorExplainGoldLeaf:
 	cont "moves first hand…"
 	done
 
-EastForestTutorTeach:
+OrientemForestTutorTeach:
 	text "What move shall I"
 	line "teach?"
 	done
 
-EastForestTutorRefused:
+OrientemForestTutorRefused:
 	text "You aren't inter-"
 	line "ested in causing"
 	cont "trouble to any-"
@@ -174,7 +174,7 @@ EastForestTutorRefused:
 	para "Shame…"
 	done
 
-EastForestTutorThankYou:
+OrientemForestTutorThankYou:
 	text "It's always dark"
 	line "in this forest."
 
@@ -188,7 +188,7 @@ EastForestTutorThankYou:
 	para "Hehehe…"
 	done
 
-EastForestHypnoText:
+OrientemForestHypnoText:
 	text "HYPNO: Hiiiip…"
 	line "no…"
 
@@ -196,7 +196,7 @@ EastForestHypnoText:
 	line "no…"
 	done
 
-EastForestHypnoAfterText:
+OrientemForestHypnoAfterText:
 	text "The way HYPNO is" 
 	line "swinging its"
 	cont "pendulum…"
@@ -205,7 +205,7 @@ EastForestHypnoAfterText:
 	line "mesmerizing…"
 	done
 
-EastForestPowerPlantSignText:
+OrientemForestPowerPlantSignText:
 	text "No tr…  pas…  g!"
 
 	para "…This sign is too"
@@ -214,7 +214,7 @@ EastForestPowerPlantSignText:
 	cont "very old."
 	done
 
-EastForestPowerPlantFenceText:
+OrientemForestPowerPlantFenceText:
 	text "Something must"
 	line "have torn this"
 	cont "fence open."
@@ -222,7 +222,7 @@ EastForestPowerPlantFenceText:
 	para "…But what?"
 	done
 
-EastForest_MapEvents:
+OrientemForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
@@ -236,12 +236,12 @@ EastForest_MapEvents:
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 47, 14, BGEVENT_UP, EastForestPowerPlantSign
-	bg_event 45, 13, BGEVENT_READ, EastForestPowerPlantFence
+	bg_event 47, 14, BGEVENT_UP, OrientemForestPowerPlantSign
+	bg_event 45, 13, BGEVENT_READ, OrientemForestPowerPlantFence
 
 	db 5 ; object events
 	object_event 16, 10, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerTeacherBea, -1
-	object_event 12, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestMoveTutor, -1
-	object_event 13, 18, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestHypnoScript, -1
-	object_event 24, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, EastForestBrightpowder, EVENT_EAST_FOREST_BRIGHTPOWDER
-	object_event 27, 11, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, EastForestFruitTree, -1
+	object_event 12, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrientemForestMoveTutor, -1
+	object_event 13, 18, SPRITE_JYNX, SPRITEMOVEDATA_POKEMON, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrientemForestHypnoScript, -1
+	object_event 24, 28, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OrientemForestBrightpowder, EVENT_ORIENTEM_FOREST_BRIGHTPOWDER
+	object_event 27, 11, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, OrientemForestFruitTree, -1

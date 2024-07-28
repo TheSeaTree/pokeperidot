@@ -1,12 +1,12 @@
 	const_def 2 ; object constants
-	const PASTILEXFOREST_FISHER
-	const PASTILEXFOREST_SUPERNERD1
-	const PASTILEXFOREST_SUPERNERD2
-	const PASTILEXFOREST_SWIMMER
-	const PASTILEXFOREST_CHAMPION
-	const PASTILEXFOREST_CELEBI
+	const PASTOCCIDENTFOREST_FISHER
+	const PASTOCCIDENTFOREST_SUPERNERD1
+	const PASTOCCIDENTFOREST_SUPERNERD2
+	const PASTOCCIDENTFOREST_SWIMMER
+	const PASTOCCIDENTFOREST_CHAMPION
+	const PASTOCCIDENTFOREST_CELEBI
 
-PastIlexForest_MapScripts:
+PastOccidentForest_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -60,40 +60,40 @@ TrainerSwimmerFMorgan:
 	closetext
 	end
 
-PastIlexForestChampion:
+PastOccidentForestChampion:
 	faceplayer
 	opentext
 	checkevent EVENT_FOUGHT_CHAMPION_IN_PAST
 	iftrue .Battled
 	checkevent EVENT_CAUGHT_CELEBI
 	iftrue .Caught
-	writetext PastIlexForestChampionIntroText
+	writetext PastOccidentForestChampionIntroText
 	waitbutton
 	closetext
 	end
 
 .Caught
-	writetext PastIlexForestChampionAfterCelebiText
+	writetext PastOccidentForestChampionAfterCelebiText
 	waitbutton
 	playmusic MUSIC_RIVAL_ENCOUNTER
-	writetext PastIlexForestChampionChallengeText
+	writetext PastOccidentForestChampionChallengeText
 	waitbutton
 	closetext
-	winlosstext PastIlexForestChampionWinText, -1
+	winlosstext PastOccidentForestChampionWinText, -1
 	loadtrainer YOUNG_CHAMPION, JOSEPH_PAST
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_FOUGHT_CHAMPION_IN_PAST
 	opentext 
 .Battled
-	writetext PastIlexForestChampionAfterText
+	writetext PastOccidentForestChampionAfterText
 	waitbutton
 	closetext
 	end
 
-PastIlexForestShrine:
+PastOccidentForestShrine:
 	opentext
-	writetext PastIlexForestShrineText
+	writetext PastOccidentForestShrineText
 	waitbutton
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iftrue No_TimeBell
@@ -107,10 +107,10 @@ PastIlexForestShrine:
 	waitsfx
 	closetext
 CelebiBoss4::
-	moveobject PASTILEXFOREST_CELEBI, 48, 2
+	moveobject PASTOCCIDENTFOREST_CELEBI, 48, 2
 	special CelebiShrineEvent
-	appear PASTILEXFOREST_CELEBI
-	setlasttalked PASTILEXFOREST_CELEBI
+	appear PASTOCCIDENTFOREST_CELEBI
+	setlasttalked PASTOCCIDENTFOREST_CELEBI
 	scall CelebiBoss4Intro
 	loadwildmon CELEBI, 25
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
@@ -137,10 +137,10 @@ No_TimeBell:
 	closetext
 	end
 
-PastIlexForestBarbedSpear:
+PastOccidentForestBarbedSpear:
 	itemball BARBED_SPEAR
 
-PastIlexForestRock:
+PastOccidentForestRock:
 	jumpstd smashrock
 
 FirebreatherRushText:
@@ -232,7 +232,7 @@ SwimmerFMorganAfterText:
 	line "please go?"
 	done
 
-PastIlexForestChampionIntroText:
+PastOccidentForestChampionIntroText:
 	text "I heard there's"
 	line "been a powerful"
 	cont "#MON spotted"
@@ -243,7 +243,7 @@ PastIlexForestChampionIntroText:
 	cont "for it."
 	done
 
-PastIlexForestChampionAfterCelebiText:
+PastOccidentForestChampionAfterCelebiText:
 	text "Hmph!"
 
 	para "That powerful"
@@ -257,7 +257,7 @@ PastIlexForestChampionAfterCelebiText:
 	para "You captured it?"
 	done
 
-PastIlexForestChampionChallengeText:
+PastOccidentForestChampionChallengeText:
 	text "You must be a"
 	line "strong trainer."
 
@@ -265,13 +265,13 @@ PastIlexForestChampionChallengeText:
 	line "your #MON are!"
 	done
 
-PastIlexForestChampionWinText:
+PastOccidentForestChampionWinText:
 	text "So there are"
 	line "better trainers"
 	cont "out there."
 	done
 
-PastIlexForestChampionAfterText:
+PastOccidentForestChampionAfterText:
 	text "Losing will not be"
 	line "an option in my"
 	cont "future battles."
@@ -282,7 +282,7 @@ PastIlexForestChampionAfterText:
 	cont "#MON against."
 	done
 
-PastIlexForestShrineText:
+PastOccidentForestShrineText:
 	text "It seems to be a"
 	line "shrine dedicated"
 	cont "to the guardian of"
@@ -305,7 +305,7 @@ PastCelebiEnergyText:
 	cont "PSYCHIC power!"
 	done
 
-PastIlexForest_MapEvents:
+PastOccidentForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
@@ -315,16 +315,16 @@ PastIlexForest_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 48,  2, BGEVENT_UP, PastIlexForestShrine
+	bg_event 48,  2, BGEVENT_UP, PastOccidentForestShrine
 
 	db 10 ; object events
 	object_event 39, 18, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerFirebreatherRush, -1
 	object_event 47, 29, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPokemaniacAndrew, -1
 	object_event 20, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 2, TrainerPsychicLenny, -1
 	object_event  3, 13, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 3, TrainerSwimmerFMorgan, -1
-	object_event 26, 15, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PastIlexForestChampion, -1
+	object_event 26, 15, SPRITE_BLUE, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PastOccidentForestChampion, -1
 	object_event -1, -1, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOUGHT_BOSS_CELEBI
-	object_event  1,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastIlexForestBarbedSpear, EVENT_ILEX_FOREST_PAST_BARBED_SPEAR
-	object_event 26, 31, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastIlexForestRock, -1
-	object_event 24, 34, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastIlexForestRock, -1
-	object_event 23, 32, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastIlexForestRock, -1
+	object_event  1,  4, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastOccidentForestBarbedSpear, EVENT_OCCIDENT_FOREST_PAST_BARBED_SPEAR
+	object_event 26, 31, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastOccidentForestRock, -1
+	object_event 24, 34, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastOccidentForestRock, -1
+	object_event 23, 32, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastOccidentForestRock, -1

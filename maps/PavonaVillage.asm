@@ -360,7 +360,7 @@ PavonaVillage_MapEvents:
 	warp_event 25, 23, PAVONA_GYM_SPEECH_HOUSE, 1
 	warp_event 15, 11, ROUTE_1_PAVONA_GATE, 3
 	warp_event 24, 15, MAPLES_LAB, 1
-	warp_event  6, 13, UNION_CAVE_1F, 1
+	warp_event  6, 13, PAVONA_PASS_1F, 1
 	warp_event  4,  3, HIDDEN_POWER_CAVE, 1
 	warp_event 15, 21, PAVONA_INN, 1
 

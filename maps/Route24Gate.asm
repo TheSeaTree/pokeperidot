@@ -90,8 +90,8 @@ Route24Gate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event  2,  0, NORTH_FOREST, 1
-	warp_event  3,  0, NORTH_FOREST, 2
+	warp_event  2,  0, BOREAS_FOREST, 1
+	warp_event  3,  0, BOREAS_FOREST, 2
 	warp_event  2,  7, ROUTE_24, 1
 	warp_event  3,  7, ROUTE_24, 1
 

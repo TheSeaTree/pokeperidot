@@ -94,11 +94,11 @@ _TimeBell:
 .CheckTimeBellDoesAnything:
 ; Are we even in the right map to use this?
 	ld a, [wMapGroup]
-	cp GROUP_PAST_ILEX_FOREST
+	cp GROUP_PAST_OCCIDENT_FOREST
 	jr nz, .nope
 
 	ld a, [wMapNumber]
-	cp MAP_PAST_ILEX_FOREST
+	cp MAP_PAST_OCCIDENT_FOREST
 	jr nz, .nope
 
 ; Are we facing the shrine?

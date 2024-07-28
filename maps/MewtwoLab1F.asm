@@ -205,8 +205,8 @@ MewtwoLab1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 13 ; warp events
-	warp_event 16, 25, NORTH_FOREST, 3
-	warp_event 17, 25, NORTH_FOREST, 4
+	warp_event 16, 25, BOREAS_FOREST, 3
+	warp_event 17, 25, BOREAS_FOREST, 4
 	warp_event 35, 25, MEWTWO_LAB_B1F, 1
 	warp_event 22, 18, MEWTWO_LAB_B1F, 2
 	warp_event 14, 14, MEWTWO_LAB_B1F, 3

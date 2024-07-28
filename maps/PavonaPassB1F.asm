@@ -1,11 +1,11 @@
 	const_def 2 ; object constants
 
-UnionCaveB1F_MapScripts:
+PavonaPassB1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
 
-UnionCaveB1FBulldozeGuy:
+PavonaPassB1FBulldozeGuy:
 	faceplayer
 	opentext
 	checkevent EVENT_GOT_TM_BULLDOZE
@@ -88,20 +88,20 @@ TrainerHikerCarter:
 	closetext
 	end	
 	
-UnionCaveTiredHiker:
-	jumptextfaceplayer UnionCaveTiredHikerText
+PavonaPassTiredHiker:
+	jumptextfaceplayer PavonaPassTiredHikerText
 	
-UnionCaveB1FFocusBand:
+PavonaPassB1FFocusBand:
 	itemball FOCUS_BAND
 	
-UnionCaveB1FMoonStone:
+PavonaPassB1FMoonStone:
 	itemball MOON_STONE
 	
-UnionCaveB1FHiddenRevive:
-	hiddenitem REVIVE, EVENT_UNION_CAVE_B1F_HIDDEN_REVIVE
+PavonaPassB1FHiddenRevive:
+	hiddenitem REVIVE, EVENT_PAVONA_PASS_B1F_HIDDEN_REVIVE
 	
-UnionCaveB1FHiddenDragonScale:
-	hiddenitem DRAGON_SCALE, EVENT_UNION_CAVE_B1F_HIDDEN_DRAGON_SCALE
+PavonaPassB1FHiddenDragonScale:
+	hiddenitem DRAGON_SCALE, EVENT_PAVONA_PASS_B1F_HIDDEN_DRAGON_SCALE
 
 BulldozeGuyLookingForDiglett:
 	text "Augh…"
@@ -166,7 +166,7 @@ BulldozeGuyNo:
 	line "on this tunnel."
 	done
 	
-UnionCaveTiredHikerText:
+PavonaPassTiredHikerText:
 	text "You want a battle?"
 	
 	para "I'm sorry, I don't"
@@ -264,25 +264,25 @@ HikerCarterAfterText:
 	line "do!"
 	done
 	
-UnionCaveB1F_MapEvents:
+PavonaPassB1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 37, 23, UNION_CAVE_1F, 2
-	warp_event 25, 23, UNION_CAVE_1F, 3
+	warp_event 37, 23, PAVONA_PASS_1F, 2
+	warp_event 25, 23, PAVONA_PASS_1F, 3
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event 22, 19, BGEVENT_ITEM, UnionCaveB1FHiddenRevive
-	bg_event 22, 20, BGEVENT_ITEM, UnionCaveB1FHiddenDragonScale
+	bg_event 22, 19, BGEVENT_ITEM, PavonaPassB1FHiddenRevive
+	bg_event 22, 20, BGEVENT_ITEM, PavonaPassB1FHiddenDragonScale
 
 	db 8 ; object events
-	object_event 32,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, UnionCaveB1FBulldozeGuy, -1
+	object_event 32,  4, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PavonaPassB1FBulldozeGuy, -1
 	object_event 16, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerFirebreatherDrew, -1
 	object_event 35, 15, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 1, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacDexter, -1
 	object_event 18, 21, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerSuperNerdPat, -1
 	object_event 17,  5, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerHikerCarter, -1
-	object_event  7, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, UnionCaveTiredHiker, -1
-	object_event 19, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FFocusBand, EVENT_UNION_CAVE_B1F_FOCUS_BAND
-	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, UnionCaveB1FMoonStone, EVENT_UNION_CAVE_B1F_MOON_STONE
+	object_event  7, 22, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PavonaPassTiredHiker, -1
+	object_event 19, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PavonaPassB1FFocusBand, EVENT_PAVONA_PASS_B1F_FOCUS_BAND
+	object_event  8,  3, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PavonaPassB1FMoonStone, EVENT_PAVONA_PASS_B1F_MOON_STONE

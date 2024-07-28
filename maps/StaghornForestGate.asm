@@ -197,8 +197,8 @@ StaghornForestGate_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 3, 7, ILEX_FOREST, 3
-	warp_event 4, 7, ILEX_FOREST, 3
+	warp_event 3, 7, OCCIDENT_FOREST, 3
+	warp_event 4, 7, OCCIDENT_FOREST, 3
 	warp_event 2, 0, STAGHORN_TOWN, 1
 	warp_event 3, 0, STAGHORN_TOWN, 2
 

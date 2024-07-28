@@ -81,7 +81,7 @@ PlayBattleMusic:
 	cp DEVELOPER
 	jr z, .done
 	ld a, [wMapGroup]
-	cp GROUP_NORTH_FOREST
+	cp GROUP_BOREAS_FOREST
 	jr z, .done
 
 	ld a, [wOtherTrainerClass]

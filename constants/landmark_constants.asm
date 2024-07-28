@@ -11,7 +11,7 @@
 	const PECTINIA_CITY     ; 0c
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
-	const VIRIDIAN_FOREST   ; 0e
+	const ORIENTEM_FOREST   ; 0e
 	const ROUTE_5           ; 3a
 	const RIDGE_VILLAGE     ; 06
 	const ROUTE_6           ; 3c
@@ -21,9 +21,9 @@
 	const DIGLETTS_CAVE     ; 3e
 	const PALEROCK_MOUNTAIN
 	const HEPATICA_TOWN     ; 21
-	const UNION_CAVE        ; 0a
+	const PAVONA_PASS       ; 0a
 	const ROUTE_9           ; 41
-	const ILEX_FOREST       ; 0e
+	const OCCIDENT_FOREST   ; 0e
 	const STAGHORN_TOWN     ; 16
 	const PAINTERS_FOREST
 	const ROUTE_10          ; 49
@@ -58,6 +58,7 @@
 	const VICTORY_ROAD      ; 58
 	const SEA_ROUTE_7       ; 3f
 	const ROUTE_24
+	const BOREAS_FOREST
 	const POKEMON_LEAGUE    ; 5a
 	
 KANTO_LANDMARK EQU const_value

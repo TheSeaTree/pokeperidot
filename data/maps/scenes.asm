@@ -32,7 +32,7 @@ MapScenes::
 	scene_var POWER_PLANT_1F_B,                         wMahoganyTownSceneID
 	scene_var HEPATICA_TOWN,                            wCianwoodCitySceneID
 	scene_var PALEROCK_MOUNTAIN_3F,                     wBattleTowerOutsideSceneID ; unused
-	scene_var NORTH_FOREST,                             wNorthForestSceneID
+	scene_var BOREAS_FOREST,                            wBoreasForestSceneID
 	scene_var ROUTE_24_GATE,                            wRoute24GateSceneID
 	scene_var RUGOSA_CITY,                              wMahoganyMart1FSceneID ; unused
 	scene_var ROUTE_1,                                 	wRoute1SceneID

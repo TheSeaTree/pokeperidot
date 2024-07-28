@@ -138,8 +138,8 @@ Route4ForestGate_MapEvents:
 	db 4 ; warp events
 	warp_event  0,  4, ROUTE_4, 3
 	warp_event  0,  5, ROUTE_4, 4
-	warp_event  9,  4, EAST_FOREST, 1
-	warp_event  9,  5, EAST_FOREST, 2
+	warp_event  9,  4, ORIENTEM_FOREST, 1
+	warp_event  9,  5, ORIENTEM_FOREST, 2
 
 	db 0 ; coord events
 

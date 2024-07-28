@@ -2,7 +2,7 @@
 
 WaterWildMons:
 
-	map_id UNION_CAVE_1F
+	map_id PAVONA_PASS_1F
 	db 2 percent ; encounter rate
 	db 15, WOOPER
 	db 20, QUAGSIRE
@@ -10,7 +10,7 @@ WaterWildMons:
 	db 15, QUAGSIRE
 	db 15, QUAGSIRE
 
-	map_id UNION_CAVE_B1F
+	map_id PAVONA_PASS_B1F
 	db 2 percent ; encounter rate
 	db 15, WOOPER
 	db 20, QUAGSIRE
@@ -18,14 +18,6 @@ WaterWildMons:
 	db 20, QUAGSIRE
 	db 15, QUAGSIRE
 
-	map_id UNION_CAVE_B2F
-	db 4 percent ; encounter rate
-	db 15, TENTACOOL
-	db 20, QUAGSIRE
-	db 20, QUAGSIRE
-	db 20, QUAGSIRE
-	db 20, TENTACRUEL
-	
 	map_id ELKHORN_TOWN
 	db 2 percent ; encounter rate
 	db 26, GOLDEEN
@@ -138,7 +130,7 @@ WaterWildMons:
 	db 24, YANMA
 	db 25, YANMA
 	
-	map_id EAST_FOREST
+	map_id ORIENTEM_FOREST
 	db 6 percent ; encounter rate
 	db 24, POLIWHIRL
 	db 24, POLIWHIRL
@@ -282,7 +274,7 @@ WaterWildMons:
 	db 26, GOLDEEN
 	db 25, QUAGSIRE
 
-	map_id ILEX_FOREST
+	map_id OCCIDENT_FOREST
 	db 6 percent ; encounter rate
 	db 24, POLIWHIRL
 	db 24, POLIWHIRL
@@ -506,7 +498,7 @@ WaterWildMons:
 	db 18, YANMA
 	db 17, POLIWAG
 
-	map_id PAST_ILEX_FOREST
+	map_id PAST_OCCIDENT_FOREST
 	db 6 percent ; encounter rate
 	db 16, POLIWAG
 	db 17, POLIWAG

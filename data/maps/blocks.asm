@@ -288,20 +288,17 @@ FaviaHappinessRater_Blocks:
 PaintersHouse_Blocks:
 RugosaSurfHouse_Blocks:
 AcroporaRestTalkHouse_Blocks:
-IlexForestSwordsDanceHouse_Blocks:
+OccidentForestSwordsDanceHouse_Blocks:
 Route10CurseHouse_Blocks:
 Route14Farmhouse_Blocks:
 OrchidGrannysHouse_Blocks:
 	INCBIN "maps/House2.4x4.traditional_house.ablk"
 
-UnionCaveB1F_Blocks:
-	INCBIN "maps/UnionCaveB1F.ablk"
+PavonaPassB1F_Blocks:
+	INCBIN "maps/PavonaPassB1F.ablk"
 
-UnionCaveB2F_Blocks:
-	INCBIN "maps/UnionCaveB2F.ablk"
-
-UnionCave1F_Blocks:
-	INCBIN "maps/UnionCave1F.ablk"
+PavonaPass1F_Blocks:
+	INCBIN "maps/PavonaPass1F.ablk"
 
 PectiniaMall_Blocks:
 	INCBIN "maps/PectiniaMall.ablk"
@@ -441,8 +438,8 @@ OrchidGymLeaderRoom_Blocks:
 
 SECTION "Map Blocks 3", ROMX
 
-IlexForest_Blocks:
-	INCBIN "maps/IlexForest.ablk"
+OccidentForest_Blocks:
+	INCBIN "maps/OccidentForest.ablk"
 	
 MoonBallCave_Blocks:
 	INCBIN "maps/MoonBallCave.ablk"
@@ -454,8 +451,8 @@ EmilysHouse2F_Blocks:
 DayCare_Blocks:
 	INCBIN "maps/DayCare.ablk"
 
-NorthForest_Blocks
-	INCBIN "maps/NorthForest.ablk"
+BoreasForest_Blocks
+	INCBIN "maps/BoreasForest.ablk"
 
 PalerockCave1F_Blocks:
 	INCBIN "maps/PalerockCave1F.ablk"
@@ -566,8 +563,8 @@ StaghornForestGate_Blocks:
 Route7_Blocks:
 	INCBIN "maps/Route7.ablk"
 
-EastForest_Blocks:
-	INCBIN "maps/EastForest.ablk"	
+OrientemForest_Blocks:
+	INCBIN "maps/OrientemForest.ablk"	
 
 HiddenPowerCave_Blocks:
 PastHiddenPowerCave_Blocks:
@@ -902,8 +899,8 @@ PastRoute7_Blocks:
 PastRoute10_Blocks:
 	INCBIN "maps/time-travel/PastRoute10.ablk"
 
-PastIlexForest_Blocks:
-	INCBIN "maps/time-travel/PastIlexForest.ablk"
+PastOccidentForest_Blocks:
+	INCBIN "maps/time-travel/PastOccidentForest.ablk"
 
 PastElkhornTown_Blocks:
 	INCBIN "maps/time-travel/PastElkhornTown.ablk"

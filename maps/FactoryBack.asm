@@ -55,7 +55,7 @@ FactoryBack_MapEvents:
 	db 3 ; warp events
 	warp_event  3, 15, FACTORY_1F, 8
 	warp_event  4, 15, FACTORY_1F, 9
-	warp_event  7,  0, EAST_FOREST, 5
+	warp_event  7,  0, ORIENTEM_FOREST, 5
 
 	db 1 ; coord events
 	bg_event  4,  1, BGEVENT_UP, FactoryBackVendingMachine

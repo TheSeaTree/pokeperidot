@@ -15,7 +15,7 @@ Landmarks:
 	landmark 100, 124, AzaleaTownName
 	landmark 108, 116, Route3Name
 	landmark 124, 100, Route4Name
-	landmark 132, 108, ViridianForestName
+	landmark 132, 108, OrientemForestName
 	landmark 128,  92, Route5Name
 	landmark 132,  84, VioletCityName
 	landmark 128,  76, Route6Name
@@ -25,9 +25,9 @@ Landmarks:
 	landmark 100, 110, DiglettsCaveName
 	landmark 100, 108, PalerockMountainName
 	landmark 100, 100, CianwoodCityName
-	landmark  60, 108, UnionCaveName
+	landmark  60, 108, PavonaPassName
 	landmark  52,  92, Route9Name
-	landmark  52,  84, IlexForestName
+	landmark  52,  84, OccidentForestName
 	landmark  52,  68, EcruteakCityName
 	landmark  52,  60, PaintersForestName
 	landmark  76,  76, Route10Name
@@ -62,6 +62,7 @@ Landmarks:
 	landmark 132,  36, VictoryRoadName
 	landmark 121,  36, SeaRoute7Name
 	landmark 116,  24, Route24Name
+	landmark 116,  22, BoreasForestName
 	landmark 132,  28, PokemonLeagueName
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
@@ -87,7 +88,7 @@ LakeOfRageName:       db "LAKE OF¯RAGE@"
 SilverCaveName:       db "SILVER CAVE@"
 SproutTowerName:      db "SPROUT¯TOWER@"
 RuinsOfAlphName:      db "RUINS¯OF ALPH@"
-UnionCaveName:        db "PAVONA¯PASS@"
+PavonaPassName:       db "PAVONA¯PASS@"
 SlowpokeWellName:     db "SLOWPOKE¯WELL@"
 RadioTowerName:       db "RADIO TOWER@"
 PowerPlantName:       db "POWER PLANT@"
@@ -144,10 +145,10 @@ SeaRoute7Name:        db "SEA ROUTE 7@"
 PavonaOasisName:      db "PAVONA¯OASIS@"
 CarnationZooName:     db "CARNATION¯ZOO@"
 DarkCaveName:         db "DARK CAVE@"
-IlexForestName:       db "OCCIDENT¯FOREST@"
-BurnedTowerName:      db "BURNED¯TOWER@"
+OccidentForestName:   db "OCCIDENT¯FOREST@"
+BoreasForestName:     db "BOREAS¯FOREST@"
 FastShipName:         db "S.S. MAKO@"
-ViridianForestName:   db "ORIENTEM¯FOREST@"
+OrientemForestName:   db "ORIENTEM¯FOREST@"
 DiglettsCaveName:     db "MACHOP'S¯DEN@"
 RemnantCaveName:	  db "REMNANT¯CAVE@"
 MoltenPeakName:		  db "MOLTEN¯PEAK@"

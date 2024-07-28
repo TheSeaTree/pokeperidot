@@ -30,7 +30,7 @@ OutdoorSprites:
 	dw SaffronGroupSprites
 	dw PavonaGroupSprites
 	dw PalerockGroupSprites
-	dw NorthForestGroupSprites
+	dw BoreasForestGroupSprites
 	dw SeaRoute7GroupSprites
 	dw BattleSimGroupSprites
 	dw PastFaviaGroupSprites
@@ -510,7 +510,7 @@ PalerockGroupSprites:
 	db SPRITE_BOULDER
 	db 0 ; end
 
-NorthForestGroupSprites:
+BoreasForestGroupSprites:
 	db SPRITE_SILVER
 	db SPRITE_MEWTWO
 	db SPRITE_MEW

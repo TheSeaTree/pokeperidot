@@ -68,9 +68,8 @@ ENDM
 
 	newgroup                                                      ;  3
 
-	map_const UNION_CAVE_1F,                               23, 10 ; 37
-	map_const UNION_CAVE_B1F,                              20, 16 ; 38
-	map_const UNION_CAVE_B2F,                              10, 18 ; 39
+	map_const PAVONA_PASS_1F,                              23, 10 ; 37
+	map_const PAVONA_PASS_B1F,                             20, 16 ; 38
 	map_const DIGLETTS_CAVE,                               13,  9 ; 84
 	map_const DRAIN_PUNCH_CHAMBER,							5,  4
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
@@ -183,7 +182,7 @@ ENDM
 
 	newgroup                                                      ;  9
 
-	map_const EAST_FOREST,                                 30, 15
+	map_const ORIENTEM_FOREST,                             30, 15
 	map_const FACTORY_1F,                                  16, 12
 	map_const FACTORY_B1,                                   7,  8
 	map_const FACTORY_2F,                                  14,  8
@@ -288,11 +287,11 @@ ENDM
 
 	newgroup                                                      ; 17
 
-	map_const ILEX_FOREST,                                 35, 25 ; 52
+	map_const OCCIDENT_FOREST,                             35, 25 ; 52
 	map_const SWORDS_DANCE_HOUSE,							4,  4
 	map_const ROUTE_9_FOREST_GATE,                          6,  4 ; 18
 	map_const MOON_BALL_CAVE,			                   10,  9
-	map_const PAST_ILEX_FOREST,                            37, 21
+	map_const PAST_OCCIDENT_FOREST,                        37, 21
 	map_const PAST_FOREST_GATE,                             5,  4
 
 	newgroup                                                      ; 18
@@ -438,7 +437,7 @@ ENDM
 	
 	newgroup
 
-	map_const NORTH_FOREST,					           	   20, 15
+	map_const BOREAS_FOREST,					           20, 15
 	map_const MEWTWO_LAB_1F,						       18, 13
 	map_const MEWTWO_LAB_B1F,						       18,  8
 	map_const MEWTWO_LAB_2F,						       13,  8

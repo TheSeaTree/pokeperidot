@@ -24,8 +24,8 @@ RoamMaps:
 	; Zapdos
 	roam_map RUGOSA_CITY, ROUTE_13
 	roam_map ROUTE_13, ROUTE_11
-	roam_map ROUTE_11, ILEX_FOREST
-	roam_map ILEX_FOREST, ROUTE_9
+	roam_map ROUTE_11, OCCIDENT_FOREST
+	roam_map OCCIDENT_FOREST, ROUTE_9
 	roam_map ROUTE_9, ROUTE_13
 	
 	; Moltres

@@ -398,8 +398,8 @@ Factory1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 18 ; warp events
-	warp_event 24, 23, EAST_FOREST, 3
-	warp_event 25, 23, EAST_FOREST, 4
+	warp_event 24, 23, ORIENTEM_FOREST, 3
+	warp_event 25, 23, ORIENTEM_FOREST, 4
 	warp_event 16, 14, FACTORY_B1, 1
 	warp_event 11,  4, FACTORY_B1, 2
 	warp_event  6, 22, FACTORY_2F, 1

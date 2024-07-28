@@ -2580,7 +2580,7 @@ wGoldenrodPokecenter1FSceneID::                   db ; d993
 wOlivineCitySceneID::                             db ; d994
 wSafariZoneGateSceneID::                          db ; d995
 wVioletGymSceneID::
-wRoute34IlexForestGateSceneID::                   db ; d996
+wRoute34OccidentForestGateSceneID::               db ; d996
 wEcruteakCitySceneID::				              db ; d997
 wRoute11ShelterSceneID::                          db ; d998
 wEcruteakPokecenter1FSceneID::                    db ; d999
@@ -2594,7 +2594,7 @@ wBattleTowerElevatorSceneID::                     db ; d9a0
 wBattleSubwayPlatformSceneID::                    db ; d9a1
 wBattleTowerOutsideSceneID::                      db ; d9a2
 wRoute43GateSceneID::                             db ; d9a3
-wNorthForestSceneID::                             db ; d9a4
+wBoreasForestSceneID::                            db ; d9a4
 wFluteMasterHouseSceneID::                        db ; d9a5
 wLostLandSceneID::                                db ; d9a6
 wOrchidGym1FSceneID::                             db ; d9a7

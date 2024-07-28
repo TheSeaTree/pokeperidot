@@ -1,19 +1,19 @@
 	const_def 2 ; object constants
-	const ILEXFOREST_POKE_BALL1
-	const ILEXFOREST_POKE_BALL2
-	const ILEXFOREST_POKE_BALL3
-	const ILEXFOREST_POKE_BALL4
-	const ILEXFOREST_POKEFAN_M
-	const ILEXFOREST_LASS
-	const ILEXFOREST_YOUNGSTER
-	const ILEXFOREST_POKEFAN_F
-	const ILEXFOREST_TWIN1
-	const ILEXFOREST_TWIN2
-	const ILEXFOREST_COOLTRAINER_F
-	const ILEXFOREST_FRUITTREE	
-	const ILEXFOREST_CELEBI
+	const OCCIDENTFOREST_POKE_BALL1
+	const OCCIDENTFOREST_POKE_BALL2
+	const OCCIDENTFOREST_POKE_BALL3
+	const OCCIDENTFOREST_POKE_BALL4
+	const OCCIDENTFOREST_POKEFAN_M
+	const OCCIDENTFOREST_LASS
+	const OCCIDENTFOREST_YOUNGSTER
+	const OCCIDENTFOREST_POKEFAN_F
+	const OCCIDENTFOREST_TWIN1
+	const OCCIDENTFOREST_TWIN2
+	const OCCIDENTFOREST_COOLTRAINER_F
+	const OCCIDENTFOREST_FRUITTREE	
+	const OCCIDENTFOREST_CELEBI
 
-IlexForest_MapScripts:
+OccidentForest_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -153,10 +153,10 @@ TrainerCooltrainerFSasha:
 	end
 	
 .Explain
-	checkevent ILEX_FOREST_TALKED_TO_SASHA
+	checkevent OCCIDENT_FOREST_TALKED_TO_SASHA
 	iftrue .Waiting
 	writetext SashaExplaination
-	setevent ILEX_FOREST_TALKED_TO_SASHA
+	setevent OCCIDENT_FOREST_TALKED_TO_SASHA
 	waitbutton
 	closetext
 	end
@@ -177,7 +177,7 @@ Celebi:
 	loadwildmon CELEBI, 70
 	startbattle
 	reloadmapafterbattle
-	disappear ILEXFOREST_CELEBI
+	disappear OCCIDENTFOREST_CELEBI
 	setevent EVENT_HIDE_PRESENT_CELEBI
 	special CheckCaughtCelebi
 	iffalse .FailedCapture
@@ -186,29 +186,29 @@ Celebi:
 	clearflag ENGINE_FOREST_IS_RESTLESS
 	end
 
-IlexForestHardStone:
+OccidentForestHardStone:
 	itemball HARD_STONE
 
-IlexForestSunStone:
+OccidentForestSunStone:
 	itemball SUN_STONE
 
-IlexForestSuperPotion:
+OccidentForestSuperPotion:
 	itemball SUPER_POTION
 
-IlexForestEther:
+OccidentForestEther:
 	itemball ETHER
 
-IlexForestHiddenEther:
-	hiddenitem ETHER, EVENT_ILEX_FOREST_HIDDEN_ETHER
+OccidentForestHiddenEther:
+	hiddenitem ETHER, EVENT_OCCIDENT_FOREST_HIDDEN_ETHER
 
-IlexForestHiddenSuperPotion:
-	hiddenitem SUPER_POTION, EVENT_ILEX_FOREST_HIDDEN_SUPER_POTION
+OccidentForestHiddenSuperPotion:
+	hiddenitem SUPER_POTION, EVENT_OCCIDENT_FOREST_HIDDEN_SUPER_POTION
 
-IlexForestHiddenFullHeal:
-	hiddenitem FULL_HEAL, EVENT_ILEX_FOREST_HIDDEN_FULL_HEAL
+OccidentForestHiddenFullHeal:
+	hiddenitem FULL_HEAL, EVENT_OCCIDENT_FOREST_HIDDEN_FULL_HEAL
 
-IlexForestFruitTree:
-	fruittree FRUITTREE_ILEX_FOREST
+OccidentForestFruitTree:
+	fruittree FRUITTREE_OCCIDENT_FOREST
 
 HikerRayText:
 	text "Ho ho!"
@@ -429,7 +429,7 @@ CelebiText:
 	text "Ceeeel!"
 	done
 
-IlexForest_MapEvents:
+OccidentForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 6 ; warp events
@@ -443,15 +443,15 @@ IlexForest_MapEvents:
 	db 0 ; coord events
 
 	db 3 ; bg events
-	bg_event 38, 25, BGEVENT_ITEM, IlexForestHiddenSuperPotion
-	bg_event 37,  7, BGEVENT_ITEM, IlexForestHiddenEther
-	bg_event 16, 19, BGEVENT_ITEM, IlexForestHiddenFullHeal
+	bg_event 38, 25, BGEVENT_ITEM, OccidentForestHiddenSuperPotion
+	bg_event 37,  7, BGEVENT_ITEM, OccidentForestHiddenEther
+	bg_event 16, 19, BGEVENT_ITEM, OccidentForestHiddenFullHeal
 
 	db 13 ; object events
-	object_event 14, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestHardStone, EVENT_ILEX_FOREST_HARD_STONE
-	object_event 46, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSunStone, EVENT_ILEX_FOREST_SUN_STONE
-	object_event 16, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestEther, EVENT_ILEX_FOREST_ETHER
-	object_event 57, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, IlexForestSuperPotion, EVENT_ILEX_FOREST_SUPER_POTION
+	object_event 14, 41, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OccidentForestHardStone, EVENT_OCCIDENT_FOREST_HARD_STONE
+	object_event 46, 10, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OccidentForestSunStone, EVENT_OCCIDENT_FOREST_SUN_STONE
+	object_event 16, 31, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OccidentForestEther, EVENT_OCCIDENT_FOREST_ETHER
+	object_event 57, 27, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, OccidentForestSuperPotion, EVENT_OCCIDENT_FOREST_SUPER_POTION
 	object_event 18, 40, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerHikerRay, -1
 	object_event 35, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassAmanda, -1
 	object_event 52, 31, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperEllis, -1
@@ -459,5 +459,5 @@ IlexForest_MapEvents:
 	object_event 36, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinFaye, -1
 	object_event 37, 28, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMae, -1
 	object_event 53,  6, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TrainerCooltrainerFSasha, -1
-	object_event 34, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, IlexForestFruitTree, -1
+	object_event 34, 16, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, OccidentForestFruitTree, -1
 	object_event 66,  0, SPRITE_CELEBI, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Celebi, EVENT_HIDE_PRESENT_CELEBI
