@@ -1350,7 +1350,7 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
-	db EVOLVE_HAPPINESS, TR_MORNDAY, SIRFETCH_D
+	db EVOLVE_HAPPINESS, TR_MORNDAY, MALLARK_Y
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FURY_CUTTER
@@ -1902,7 +1902,7 @@ ChanseyEvosAttacks:
 	db 0 ; no more level-up moves
 
 TangelaEvosAttacks:
-	db EVOLVE_LEVEL, 33, TANGROWTH
+	db EVOLVE_LEVEL, 33, GORGROWTH
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, MEAN_LOOK
@@ -2800,7 +2800,7 @@ NoctowlEvosAttacks:
 	db 0 ; no more level-up moves
 
 CubboltEvosAttacks: ; Little Tiger
-	db EVOLVE_LEVEL, 33, ELECTIGER
+	db EVOLVE_LEVEL, 33, RAIGER
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
@@ -2816,7 +2816,7 @@ CubboltEvosAttacks: ; Little Tiger
 	db 46, WILD_CHARGE
 	db 0 ; no more level-up moves
 
-ElectigerEvosAttacks: ; Big Tiger
+RaigerEvosAttacks: ; Big Tiger
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, LEER
@@ -2928,7 +2928,7 @@ LanturnEvosAttacks:
 	db 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
-SirfetchDEvosAttacks:
+MallarkYEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FURY_CUTTER
@@ -2956,7 +2956,7 @@ MandrabelEvosAttacks:
 	db 50, MOONBLAST
 	db 0 ; no more level-up moves
 
-IgglybuffEvosAttacks: ; Curstraw
+CurstrawEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, CURSE
 	db 1, DESTINY_BOND
@@ -3986,7 +3986,7 @@ SmeargleEvosAttacks:
 	db 91, SKETCH
 	db 0 ; no more level-up moves
 
-TangrowthEvosAttacks:
+GorgrowthEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, POUND
 	db 1, MEAN_LOOK

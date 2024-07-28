@@ -1,4 +1,4 @@
-	db TANGROWTH ; 236
+	db GORGROWTH ; 236
 
 	db  100,  100,  125,  50,  110,  50
 	;   hp  atk  def  spd  sat  sdf
@@ -11,7 +11,7 @@
 	db 100 ; unknown 1
 	db 25 ; step cycles to hatch
 	db 5 ; unknown 2
-	INCBIN "gfx/pokemon/tyrogue/front.dimensions"
+	INCBIN "gfx/pokemon/gorgrowth/front.dimensions"
 	db 0, 0, 0, 0 ; padding
 	db GROWTH_MEDIUM_FAST ; growth rate
 	dn EGG_PLANT, EGG_PLANT ; egg groups

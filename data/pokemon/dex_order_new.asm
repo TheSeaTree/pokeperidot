@@ -120,7 +120,7 @@ NewPokedexOrder:
 	db PIKACHU
 	db RAICHU
 	db CUBBOLT
-	db ELECTIGER
+	db RAIGER
 	db CATERPIE
 	db METAPOD
 	db BUTTERFREE
@@ -132,7 +132,7 @@ NewPokedexOrder:
 	db STANTLER
 	db MR__MIME
 	db FARFETCH_D
-	db SIRFETCH_D
+	db MALLARK_Y
 	db NATU
 	db XATU
 	db MAREEP
@@ -184,7 +184,7 @@ NewPokedexOrder:
 	db AZUMARILL
 	db GIRAFARIG
 	db TANGELA
-	db TANGROWTH
+	db GORGROWTH
 	db DODUO
 	db DODRIO
 	db SMEARGLE

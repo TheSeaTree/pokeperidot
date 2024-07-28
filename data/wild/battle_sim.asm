@@ -7,7 +7,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; day
@@ -15,7 +15,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; nite
@@ -23,7 +23,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 
@@ -34,7 +34,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; day
@@ -42,7 +42,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; nite
@@ -50,7 +50,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 
@@ -61,7 +61,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; day
@@ -69,7 +69,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 	; nite
@@ -77,7 +77,7 @@ SimulationWildMons:
 	db 50, JUMPLUFF
 	db 50, SKARMORY
 	db 50, RAICHU
-	db 50, SIRFETCH_D
+	db 50, MALLARK_Y
 	db 50, DUNSPARCE
 	db 50, DUNSPARCE
 

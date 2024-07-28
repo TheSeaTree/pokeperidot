@@ -79,7 +79,7 @@ AlphabeticalPokedexOrder:
 	db GOLDEEN
 	db GOLDUCK
 	db GOLEM
-	db TANGROWTH
+	db GORGROWTH
 	db GRANBULL
 	db GRAVELER
 	db GREMINI
@@ -123,7 +123,7 @@ AlphabeticalPokedexOrder:
 	db MAGMAR
 	db MAGNEMITE
 	db MAGNETON
-	db SIRFETCH_D
+	db MALLARK_Y
 	db MANDRABEL
 	db MANKEY
 	db MANTINE
@@ -179,7 +179,7 @@ AlphabeticalPokedexOrder:
 	db QUILAVA
 	db QWILFISH
 	db RAICHU
-	db ELECTIGER
+	db RAIGER
 	db RAIKOU
 	db RAPIDASH
 	db REMORAID

@@ -164,15 +164,15 @@ AnimationIdlePointers:
 	dw HoothootAnimationIdle
 	dw NoctowlAnimationIdle
 	dw CubboltAnimationIdle
-	dw ElectigerAnimationIdle
+	dw RaigerAnimationIdle
 	dw SpinarakAnimationIdle
 	dw AriadosAnimationIdle
 	dw CrobatAnimationIdle
 	dw ChinchouAnimationIdle
 	dw LanturnAnimationIdle
-	dw SirfetchDAnimationIdle
+	dw MallarkYAnimationIdle
 	dw MandrabelAnimationIdle
-	dw IgglybuffAnimationIdle
+	dw CurstrawAnimationIdle
 	dw TogepiAnimationIdle
 	dw TogeticAnimationIdle
 	dw NatuAnimationIdle

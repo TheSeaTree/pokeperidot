@@ -165,13 +165,13 @@ PokedexDataPointerTable:
 	dw HoothootPokedexEntry
 	dw NoctowlPokedexEntry
 	dw CubboltPokedexEntry
-	dw ElectigerPokedexEntry
+	dw RaigerPokedexEntry
 	dw SpinarakPokedexEntry
 	dw AriadosPokedexEntry
 	dw CrobatPokedexEntry
 	dw ChinchouPokedexEntry
 	dw LanturnPokedexEntry
-	dw SirfetchDPokedexEntry
+	dw MallarkYPokedexEntry
 	dw MandrabelPokedexEntry
 	dw CurstrawPokedexEntry
 	dw ShifurPokedexEntry
@@ -235,7 +235,7 @@ PokedexDataPointerTable:
 	dw Porygon2PokedexEntry
 	dw StantlerPokedexEntry
 	dw SmearglePokedexEntry
-	dw TangrowthPokedexEntry
+	dw GorgrowthPokedexEntry
 	dw GreminiPokedexEntry
 	dw SmoochumPokedexEntry
 	dw ElekidPokedexEntry

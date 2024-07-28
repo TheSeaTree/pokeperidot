@@ -375,7 +375,7 @@ INCBIN "gfx/types/none.1bpp",      primary_type ;Furret
 INCBIN "gfx/types/normal.1bpp",      primary_type ;Hoothoot
 INCBIN "gfx/types/normal.1bpp",      primary_type ;Noctowl
 INCBIN "gfx/types/none.1bpp",    primary_type ;Cubbolt
-INCBIN "gfx/types/electric.1bpp",    primary_type ;Electiger
+INCBIN "gfx/types/electric.1bpp",    primary_type ;Raiger
 INCBIN "gfx/types/bug.1bpp",         primary_type ;Spinarak
 INCBIN "gfx/types/bug.1bpp",         primary_type ;Ariados
 ; 161-168 second type
@@ -384,7 +384,7 @@ INCBIN "gfx/types/normal.1bpp",        secondary_type ;Furret
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Hoothoot
 INCBIN "gfx/types/flying.1bpp",      secondary_type ;Noctowl
 INCBIN "gfx/types/electric.1bpp",        secondary_type ;Cubbolt
-INCBIN "gfx/types/dark.1bpp",     	 secondary_type ;Electiger
+INCBIN "gfx/types/dark.1bpp",     	 secondary_type ;Raiger
 INCBIN "gfx/types/poison.1bpp",      secondary_type ;Spinarak
 INCBIN "gfx/types/poison.1bpp",      secondary_type ;Ariados
 ; 169-176 first type
@@ -535,7 +535,7 @@ INCBIN "gfx/types/ground.1bpp",        secondary_type ;Donphan
 INCBIN "gfx/types/none.1bpp",      primary_type ;Porygon2
 INCBIN "gfx/types/none.1bpp",      primary_type ;Stantler
 INCBIN "gfx/types/none.1bpp",      primary_type ;Smeargle
-INCBIN "gfx/types/none.1bpp",       primary_type ;Tangrowth
+INCBIN "gfx/types/none.1bpp",       primary_type ;Gorgrowth
 INCBIN "gfx/types/ghost.1bpp",       primary_type ;Gremini
 INCBIN "gfx/types/ice.1bpp",         primary_type ;Smoochum
 INCBIN "gfx/types/none.1bpp",    primary_type ;Elekid
@@ -544,7 +544,7 @@ INCBIN "gfx/types/none.1bpp",        primary_type ;Magby
 INCBIN "gfx/types/normal.1bpp",        secondary_type ;Porygon2
 INCBIN "gfx/types/normal.1bpp",        secondary_type ;Stantler
 INCBIN "gfx/types/normal.1bpp",        secondary_type ;Smeargle
-INCBIN "gfx/types/grass.1bpp",        secondary_type ;Tangrowth
+INCBIN "gfx/types/grass.1bpp",        secondary_type ;Gorgrowth
 INCBIN "gfx/types/dark.1bpp",        secondary_type ;Gremini
 INCBIN "gfx/types/psychic.1bpp",     secondary_type ;Smoochum
 INCBIN "gfx/types/electric.1bpp",        secondary_type ;Elekid

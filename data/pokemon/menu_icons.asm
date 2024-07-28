@@ -166,13 +166,13 @@ MonMenuIcons:
 	db ICON_BIRD        ; HOOTHOOT
 	db ICON_BIRD        ; NOCTOWL
 	db ICON_FOX         ; CUBBOLT
-	db ICON_FOX         ; ELECTIGER
+	db ICON_FOX         ; RAIGER
 	db ICON_BUG         ; SPINARAK
 	db ICON_BUG         ; ARIADOS
 	db ICON_BAT         ; CROBAT
 	db ICON_FISH        ; CHINCHOU
 	db ICON_FISH        ; LANTURN
-	db ICON_BIRD        ; SIRFETCH_D
+	db ICON_BIRD        ; MALLARK_Y
 	db ICON_ODDISH      ; MANDRABEL
 	db ICON_GHOST       ; CURSTRAW
 	db ICON_SHIFUR      ; SHIFUR

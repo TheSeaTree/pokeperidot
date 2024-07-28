@@ -332,8 +332,8 @@ PokemonPicPointers::
 	dba NoctowlBackpic
 	dba CubboltFrontpic
 	dba CubboltBackpic
-	dba ElectigerFrontpic
-	dba ElectigerBackpic
+	dba RaigerFrontpic
+	dba RaigerBackpic
 	dba SpinarakFrontpic
 	dba SpinarakBackpic
 	dba AriadosFrontpic
@@ -344,12 +344,12 @@ PokemonPicPointers::
 	dba ChinchouBackpic
 	dba LanturnFrontpic
 	dba LanturnBackpic
-	dba SirfetchDFrontpic
-	dba SirfetchDBackpic
+	dba MallarkYFrontpic
+	dba MallarkYBackpic
 	dba MandrabelFrontpic
 	dba MandrabelBackpic
-	dba IgglybuffFrontpic
-	dba IgglybuffBackpic
+	dba CurstrawFrontpic
+	dba CurstrawBackpic
 	dba ShifurFrontpic
 	dba ShifurBackpic
 	dba SnowmadFrontpic
@@ -475,8 +475,8 @@ PokemonPicPointers::
 	dba StantlerBackpic
 	dba SmeargleFrontpic
 	dba SmeargleBackpic
-	dba TangrowthFrontpic
-	dba TangrowthBackpic
+	dba GorgrowthFrontpic
+	dba GorgrowthBackpic
 	dba GreminiFrontpic
 	dba GreminiBackpic
 	dba SmoochumFrontpic

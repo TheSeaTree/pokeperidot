@@ -1702,7 +1702,7 @@ BattleTowerMons4:
 	bigdw 118 ; SDef
 	db "KINGUDORA@@"
 
-	db TANGROWTH
+	db GORGROWTH
 	db QUICK_CLAW
 	db LEECH_SEED, GIGA_DRAIN, GLARE, EARTHQUAKE
 	dw 0 ; OT ID
@@ -2251,7 +2251,7 @@ BattleTowerMons5:
 	bigdw 131 ; SDef
 	db "HERUGA-@@@@"
 
-	db ELECTIGER
+	db RAIGER
 	db CRASH_HELMET
 	db WILD_CHARGE, FLARE_BLITZ, WATERFALL, PLAY_ROUGH
 	dw 0 ; OT ID
@@ -3609,7 +3609,7 @@ BattleTowerMons7:
 	bigdw 161 ; SDef
 	db "NUO-@@@@@@@"
 
-	db SIRFETCH_D
+	db MALLARK_Y
 	db STICK
 	db CUT, RAZOR_WIND, BRICK_BREAK, STEEL_WING
 	dw 0 ; OT ID

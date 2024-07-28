@@ -235,7 +235,7 @@ OldPokedexOrder:
 	db LUGIA
 	db HO_OH
 	db CELEBI
-	db TANGROWTH
+	db GORGROWTH
 	db SMOLA
 	db ANCOR
 	db GREMINI
@@ -246,8 +246,8 @@ OldPokedexOrder:
 	db MANDRABEL
 	db SEARION
 	db CUBBOLT
-	db ELECTIGER
-	db SIRFETCH_D
+	db RAIGER
+	db MALLARK_Y
 	db CURSTRAW
 	db SHIFUR
 	db SNOWMAD

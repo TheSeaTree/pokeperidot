@@ -1184,8 +1184,8 @@ BattleCommand_Critical:
 .Farfetchd:
 	cp FARFETCH_D
 	jr z, .checkstick
-.Sirfetchd:
-	cp SIRFETCH_D
+.MallarkY:
+	cp MALLARK_Y
 	jr nz, .Beedrill
 .checkstick
 	ld a, [hl]

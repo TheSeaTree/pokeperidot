@@ -166,15 +166,15 @@ EvosAttacksPointers::
 	dw HoothootEvosAttacks
 	dw NoctowlEvosAttacks
 	dw CubboltEvosAttacks
-	dw ElectigerEvosAttacks
+	dw RaigerEvosAttacks
 	dw SpinarakEvosAttacks
 	dw AriadosEvosAttacks
 	dw CrobatEvosAttacks
 	dw ChinchouEvosAttacks
 	dw LanturnEvosAttacks
-	dw SirfetchDEvosAttacks
+	dw MallarkYEvosAttacks
 	dw MandrabelEvosAttacks
-	dw IgglybuffEvosAttacks
+	dw CurstrawEvosAttacks
 	dw ShifurEvosAttacks
 	dw SnowmadEvosAttacks
 	dw NatuEvosAttacks
@@ -236,7 +236,7 @@ EvosAttacksPointers::
 	dw Porygon2EvosAttacks
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
-	dw TangrowthEvosAttacks
+	dw GorgrowthEvosAttacks
 	dw GreminiEvosAttacks
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks

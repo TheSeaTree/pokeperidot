@@ -181,13 +181,13 @@ JOHTO_POKEMON EQU const_value
 	const HOOTHOOT   ; a3
 	const NOCTOWL    ; a4
 	const CUBBOLT    ; a5
-	const ELECTIGER  ; a6
+	const RAIGER     ; a6
 	const SPINARAK   ; a7
 	const ARIADOS    ; a8
 	const CROBAT     ; a9
 	const CHINCHOU   ; aa
 	const LANTURN    ; ab
-	const SIRFETCH_D ; ac
+	const MALLARK_Y  ; ac
 	const MANDRABEL  ; ad
 	const CURSTRAW   ; ae
 	const SHIFUR     ; af
@@ -251,7 +251,7 @@ JOHTO_POKEMON EQU const_value
 	const PORYGON2   ; e9
 	const STANTLER   ; ea
 	const SMEARGLE   ; eb
-	const TANGROWTH  ; ec
+	const GORGROWTH  ; ec
 	const GREMINI    ; ed
 	const SMOOCHUM   ; ee
 	const ELEKID     ; ef
