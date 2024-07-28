@@ -21,11 +21,6 @@ _TitleScreen:
 	ld a, 1
 	ldh [rVBK], a
 
-; Decompress running Suicune gfx
-	ld hl, TitleSuicuneGFX
-	ld de, vTiles1
-	call Decompress
-
 ; Clear screen palettes
 	hlbgcoord 0, 0
 	ld bc, 20 * BG_MAP_WIDTH
@@ -107,16 +102,6 @@ _TitleScreen:
 ; Back to VRAM bank 0
 	ld a, $0
 	ldh [rVBK], a
-
-; Decompress logo
-	ld hl, TitleLogoGFX
-	ld de, vTiles1
-	call Decompress
-
-; Decompress background crystal
-	ld hl, TitleCrystalGFX
-	ld de, vTiles0
-	call Decompress
 
 ; Clear screen tiles
 	hlbgcoord 0, 0
@@ -349,15 +334,6 @@ endr
 	jr nz, .loop
 
 	ret
-
-TitleSuicuneGFX:
-INCBIN "gfx/title/suicune.2bpp.lz"
-
-TitleLogoGFX:
-INCBIN "gfx/title/logo.2bpp.lz"
-
-TitleCrystalGFX:
-INCBIN "gfx/title/crystal.2bpp.lz"
 
 TitleScreenPalettes:
 INCLUDE "gfx/title/title.pal"
