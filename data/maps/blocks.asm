@@ -348,11 +348,11 @@ AcroporaCity_Blocks:
 SeaRoute4_Blocks:
 	INCBIN "maps/SeaRoute4.ablk"
 
-Route7Cave1F_Blocks:
-	INCBIN "maps/Route7Cave1F.ablk"
+SeaRoute4Cave1F_Blocks:
+	INCBIN "maps/SeaRoute4Cave1F.ablk"
 
-Route7CaveB1F_Blocks:
-	INCBIN "maps/Route7CaveB1F.ablk"
+SeaRoute4CaveB1F_Blocks:
+	INCBIN "maps/SeaRoute4CaveB1F.ablk"
 
 TentacruelsDen_Blocks:
 	INCBIN "maps/TentacruelsDen.ablk"

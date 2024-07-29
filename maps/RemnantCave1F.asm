@@ -32,4 +32,4 @@ RemnantCave1F_MapEvents:
 	bg_event 26, 18, BGEVENT_ITEM, RemnantCave1FHiddenXDefend
 
 	db 1 ; object events
-	object_event 31, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RemnantCave1FLightClay, EVENT_ROUTE_7_CAVE_B1F_LIGHT_CLAY
+	object_event 31, 12, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RemnantCave1FLightClay, EVENT_REMNANT_CAVE_B1F_LIGHT_CLAY

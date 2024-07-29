@@ -83,8 +83,8 @@ ENDM
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
-	map_const ROUTE_7_CAVE_1F,							   13, 10
-	map_const ROUTE_7_CAVE_B1F,							   21, 19
+	map_const SEA_ROUTE_4_CAVE_1F,						   13, 10
+	map_const SEA_ROUTE_4_CAVE_B1F,						   21, 19
 	map_const TENTACRUELS_DEN,						        8,  8
 
 	newgroup                                                      ;  4

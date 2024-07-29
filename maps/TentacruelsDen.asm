@@ -10,12 +10,12 @@ TentacruelsDen_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .ItemBall
 	
 .OpenCave
-	setevent EVENT_KINGERS_DEN_OPEN
+	setevent EVENT_TENTACRUELS_DEN_OPEN
 	return
 
 	
 .ItemBall
-	checkevent EVENT_KINGERS_DEN_DEFEATED
+	checkevent EVENT_BOSS_TENTACRUEL_DEFEATED
 	iftrue .Appear
 	return
 
@@ -51,7 +51,7 @@ TentacruelsDenBossFight:
 	waitbutton
 	closetext
 
-	setevent EVENT_KINGERS_DEN_DEFEATED
+	setevent EVENT_BOSS_TENTACRUEL_DEFEATED
 	end
 
 TentacruelsDenTreasure:
@@ -71,12 +71,12 @@ TentacruelsDen_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  6, 13, ROUTE_7_CAVE_B1F, 5
+	warp_event  6, 13, SEA_ROUTE_4_CAVE_B1F, 5
 
 	db 0 ; coord events
 
 	db 0 ; bg events
 	
 	db 2 ; object events
-	object_event  7,  2, SPRITE_TENTACOOL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TentacruelsDenBossFight, EVENT_KINGERS_DEN_DEFEATED
+	object_event  7,  2, SPRITE_TENTACOOL, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TentacruelsDenBossFight, EVENT_BOSS_TENTACRUEL_DEFEATED
 	object_event  0,  0, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, TentacruelsDenTreasure, EVENT_TENTACRUELS_DEN_TREASURE

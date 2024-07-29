@@ -256,7 +256,7 @@ Route6_MapEvents:
 	warp_event 37, 15, ROUTE_6_SURFERS_HOUSE, 1
 	warp_event 21,  9, ROUTE_6_GATE, 3
 	warp_event 11,  7, ROUTE_6_WATERFALL_HOUSE, 1
-	warp_event  0, 13, ROUTE_7_CAVE_1F, 1
+	warp_event  0, 13, SEA_ROUTE_4_CAVE_1F, 1
 
 	db 0 ; coord events
 

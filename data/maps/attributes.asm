@@ -501,8 +501,8 @@ ENDM
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0
-	map_attributes Route7Cave1F, ROUTE_7_CAVE_1F, $09, 0
-	map_attributes Route7CaveB1F, ROUTE_7_CAVE_B1F, $09, 0
+	map_attributes SeaRoute4Cave1F, SEA_ROUTE_4_CAVE_1F, $09, 0
+	map_attributes SeaRoute4CaveB1F, SEA_ROUTE_4_CAVE_B1F, $09, 0
 	map_attributes Route7HiddenCave, ROUTE_7_HIDDEN_CAVE, $09, 0
 	map_attributes PalerockMountainB2, PALEROCK_MOUNTAIN_B2, $09, 0
 	map_attributes PalerockCaveB2F, PALEROCK_CAVE_B2F, $09, 0
