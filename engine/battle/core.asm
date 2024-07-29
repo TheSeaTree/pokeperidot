@@ -4916,9 +4916,14 @@ HandleStatBoostingHeldItems:
 	ld [bc], a
 	ld [de], a
 	call GetItemName
+	push de
+	ld de, GROWTH
+	call Call_PlayBattleAnim
+	pop de
 	ld hl, BattleText_UsersStringBuffer1Activated
 	call StdBattleTextBox
-	jp BattleCommand_StatUpMessage
+	callfar BattleCommand_StatUpMessage
+	ret
 
 .finish
 	pop bc
