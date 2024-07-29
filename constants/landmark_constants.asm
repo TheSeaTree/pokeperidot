@@ -40,10 +40,10 @@
 	const ROUTE_16          ; 53
 	const ACROPORA_CITY     ; 29
 	const ROUTE_17          ; 53
-	const ROUTE_20          ; 53
-	const ROUTE_21          ; 53
-	const MOLTEN_PEAK
 	const ROUTE_18          ; 53
+	const ROUTE_19          ; 53
+	const MOLTEN_PEAK
+	const ROUTE_20          ; 53
 	const ORCHID_CITY
 	const SEA_ROUTE_1       ; 4d
 	const SEA_ROUTE_2       ; 4e
@@ -52,7 +52,7 @@
 	const SEA_ROUTE_4       ; 3f
 	const SEA_ROUTE_5       ; 3f
 	const SEA_ROUTE_6       ; 3f
-	const ROUTE_19       	; 3f
+	const ROUTE_21       	; 3f
 	const ROUTE_22
 	const ROUTE_23
 	const VICTORY_ROAD      ; 58

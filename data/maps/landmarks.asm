@@ -7,42 +7,42 @@ ENDM
 Landmarks:
 ; entries correspond to constants/landmark_constants.asm
 	dbbw       0,   0, SpecialMapName
-	landmark  68,  84, NewBarkTownName
+	landmark  68,  84, ElkhornTownName
 	landmark  68,  96, Route1Name
-	landmark  68, 108, CherrygroveCityName
+	landmark  68, 108, PavonaVillageName
 	landmark  60, 108, PavonaOasisName
 	landmark  84, 116, Route2Name
-	landmark 100, 124, AzaleaTownName
+	landmark 100, 124, PectiniaCityName
 	landmark 108, 116, Route3Name
 	landmark 124, 100, Route4Name
 	landmark 132, 108, OrientemForestName
 	landmark 128,  92, Route5Name
-	landmark 132,  84, VioletCityName
+	landmark 132,  84, RidgeVillageName
 	landmark 128,  76, Route6Name
 	landmark 100,  80, Route7Name
-	landmark  84,  84, GoldenrodCityName
+	landmark  84,  84, FaviaTownName
 	landmark 108,  84, Route8Name
-	landmark 100, 110, DiglettsCaveName
+	landmark 100, 110, MachopsDenName
 	landmark 100, 108, PalerockMountainName
-	landmark 100, 100, CianwoodCityName
+	landmark 100, 100, HepaticaTownName
 	landmark  60, 108, PavonaPassName
 	landmark  52,  92, Route9Name
 	landmark  52,  84, OccidentForestName
-	landmark  52,  68, EcruteakCityName
+	landmark  52,  68, StaghornTownName
 	landmark  52,  60, PaintersForestName
 	landmark  76,  76, Route10Name
 	landmark  64,  68, Route11Name
 	landmark  68,  58, Route12Name
 	landmark  72,  44, Route13Name
 	landmark  72,  42, BoneyardName
-	landmark  84,  44, OlivineCityName
-	landmark  84,  36, MahoganyTownName
+	landmark  84,  44, RugosaCoastName
+	landmark  84,  36, RugosaCityName
 	landmark  64,  36, Route14Name
 	landmark  52,  36, CarnationTownName
 	landmark  44,  36, SafariZoneName
 	landmark  44,  44, Route15Name
 	landmark  36,  52, Route16Name
-	landmark  36,  60, BlackthornCityName
+	landmark  36,  60, AcroporaCityName
 	landmark  42,  68, Route17Name
 	landmark  28,  68, Route18Name
 	landmark  28,  76, Route19Name
@@ -70,46 +70,26 @@ Landmarks:
 	landmark  -8,  -8, PastMapName ; BATTLE_SIM
 	landmark  -8,  -8, GenesisIslandName
 
-NewBarkTownName:      db "ELKHORN¯TOWN@"
-CherrygroveCityName:  db "PAVONA¯VILLAGE@"
-VioletCityName:       db "RIDGE¯VILLAGE@"
-AzaleaTownName:       db "PECTINIA¯CITY@"
-GoldenrodCityName:    db "FAVIA¯TOWN@"
-EcruteakCityName:     db "STAGHORN¯TOWN@"
+ElkhornTownName:      db "ELKHORN¯TOWN@"
+PavonaVillageName:    db "PAVONA¯VILLAGE@"
+RidgeVillageName:     db "RIDGE¯VILLAGE@"
+PectiniaCityName:     db "PECTINIA¯CITY@"
+FaviaTownName:        db "FAVIA¯TOWN@"
+StaghornTownName:     db "STAGHORN¯TOWN@"
 PaintersForestName:   db "PAINTER'S¯FOREST@"
-OlivineCityName:      db "RUGOSA¯COAST@"
+RugosaCoastName:      db "RUGOSA¯COAST@"
 PalerockMountainName: db "PALEROCK¯MOUNTAIN@"
-CianwoodCityName:     db "HEPATICA¯TOWN@"
-MahoganyTownName:     db "RUGOSA¯CITY@"
+HepaticaTownName:     db "HEPATICA¯TOWN@"
+RugosaCityName:       db "RUGOSA¯CITY@"
 CarnationTownName:    db "CARNATION¯TOWN@"
-BlackthornCityName:   db "ACROPORA¯CITY@"
+AcroporaCityName:     db "ACROPORA¯CITY@"
 OrchidCityName:       db "ORCHID¯CITY@"
-LakeOfRageName:       db "LAKE OF¯RAGE@"
-SilverCaveName:       db "SILVER CAVE@"
-SproutTowerName:      db "SPROUT¯TOWER@"
-RuinsOfAlphName:      db "RUINS¯OF ALPH@"
 PavonaPassName:       db "PAVONA¯PASS@"
-SlowpokeWellName:     db "SLOWPOKE¯WELL@"
-RadioTowerName:       db "RADIO TOWER@"
-PowerPlantName:       db "POWER PLANT@"
-NationalParkName:     db "NATIONAL¯PARK@"
-TinTowerName:         db "TIN TOWER@"
-LighthouseName:       db "LIGHTHOUSE@"
-WhirlIslandsName:     db "WHIRL¯ISLANDS@"
-MtMortarName:         db "MT.MORTAR@"
-DragonsDenName:       db "DRAGON'S¯DEN@"
-IcePathName:          db "ICE PATH@"
-NotApplicableName:    db "N/A@" ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
 PokemonLeagueName:    db "#MON¯LEAGUE@"
 VictoryRoadName:      db "VICTORY¯PORT@"
 MtMoonName:           db "MT.MOON@"
-RockTunnelName:       db "ROCK TUNNEL@"
-LavRadioTowerName:    db "LAV¯RADIO TOWER@"
-SilphCoName:          db "SILPH CO.@"
 SafariZoneName:       db "SAFARI ZONE@"
 SeafoamIslandsName:   db "SEAFOAM¯ISLANDS@"
-PokemonMansionName:   db "#MON¯MANSION@"
-CeruleanCaveName:     db "CERULEAN¯CAVE@"
 BoneyardName:		  db "THE¯BONEYARD@"
 Route1Name:           db "ROUTE 1@"
 Route2Name:           db "ROUTE 2@"
@@ -149,7 +129,7 @@ OccidentForestName:   db "OCCIDENT¯FOREST@"
 BoreasForestName:     db "BOREAS¯FOREST@"
 FastShipName:         db "S.S. MAKO@"
 OrientemForestName:   db "ORIENTEM¯FOREST@"
-DiglettsCaveName:     db "MACHOP'S¯DEN@"
+MachopsDenName:       db "MACHOP'S¯DEN@"
 RemnantCaveName:	  db "REMNANT¯CAVE@"
 MoltenPeakName:		  db "MOLTEN¯PEAK@"
 GenesisIslandName:	  db "GENESIS¯ISLAND@"
