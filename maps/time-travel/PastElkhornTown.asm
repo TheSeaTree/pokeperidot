@@ -14,6 +14,9 @@ PastElkhornTownSuperNerd:
 PastElkhornTownSign:
 	jumptext PastElkhornTownSignText
 
+PastElkhornTownMailbox:
+	jumpstd mailbox
+
 PastElkhornTownLassText:
 	text "My dad has a big"
 	line "collection of"
@@ -63,8 +66,9 @@ PastElkhornTown_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 13, 10, BGEVENT_READ, PastElkhornTownSign
+	bg_event 11, 11, BGEVENT_UP,   PastElkhornTownMailbox
 
 	db 2 ; object events
 	object_event  7,  7, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornTownLass, -1

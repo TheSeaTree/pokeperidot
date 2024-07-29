@@ -159,10 +159,10 @@ OrchidCityCooltrainerText:
 
 OrchidCitySignText:
 	text "ORCHID CITY"
-	
+
 	para "Where the ever-"
 	line "lasting flame of"
-	cont "victory burns."
+	cont "victory shines."
 	done
 
 OrchidCityBouldersSignText:
@@ -193,8 +193,8 @@ OrchidCity_MapEvents:
 
 	db 3 ; bg events
 	bg_event 26,  7, BGEVENT_UP, OrchidGymEvent
-	bg_event 17, 29, BGEVENT_UP, OrchidCitySign
-	bg_event 11, 15, BGEVENT_UP, OrchidCityBouldersSign
+	bg_event 17, 29, BGEVENT_READ, OrchidCitySign
+	bg_event 11, 15, BGEVENT_READ, OrchidCityBouldersSign
 
 	db 3 ; object events
 	object_event 29, 18, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 1, 2, -1, NITE, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, OrchidCityTeacher, -1

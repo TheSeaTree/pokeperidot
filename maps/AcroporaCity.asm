@@ -196,6 +196,10 @@ FluteMasterText:
 	
 AcroporaCitySignText:
 	text "ACROPORA CITY"
+
+	para "Prosperous grounds"
+	line "carved out from"
+	cont "the mountainside."
 	done
 	
 AcroporaCityGymSignText:

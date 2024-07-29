@@ -82,15 +82,15 @@ CarnationTownSignText:
 	para "A quiet detour to"
 	line "admire nature."
 	done
-	
+
 CarnationFloristSignText:
 	text "CARNATION FLORIST"
-	
+
 	para "Decorate your home"
 	line "with our lovely"
 	cont "plants."
 	done
-	
+
 CarnationZooSignText:
 	text "CARNATION ZOO-"
 	line "SAFARI ZONE"

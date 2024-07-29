@@ -17,6 +17,9 @@ PastPavonaVillageHiker:
 PastPavonaVillageSign:
 	jumptext PastPavonaVillageSignText
 
+PastPavonaVillageMailbox:
+	jumpstd mailbox
+
 PastPavonaVillageSmashRock:
 	jumpstd smashrock
 
@@ -68,8 +71,9 @@ PastPavonaVillage_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 16,  5, BGEVENT_READ, PastPavonaVillageSign
+	bg_event 11, 11, BGEVENT_UP,   PastPavonaVillageMailbox
 
 	db 6 ; object events
 	object_event 13,  7, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageLass, -1

@@ -12,8 +12,11 @@ OrchidGym1F_MapScripts:
 	callback MAPCALLBACK_NEWMAP, .SetSteps
 
 .Scene1:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	turnobject ORCHIDGYM_GYM_GUY, LEFT
 	moveobject ORCHIDGYM_GYM_GUY,  9, 3
+	setscene SCENE_ORCHIDGYM1F_RIVAL
+	
 	priorityjump BlackthornGymGuy
 .Scene0:
 	end
@@ -28,6 +31,7 @@ OrchidRivalBattle:
 	playsound SFX_ENTER_DOOR
 	moveobject ORCHIDGYM_RIVAL, 8, 2
 	appear ORCHIDGYM_RIVAL
+	waitsfx
 	showemote EMOTE_QUESTION, ORCHIDGYM_RIVAL, 15
 	applymovement ORCHIDGYM_RIVAL, OrchidGymRivalStepDown
 	faceobject PLAYER, ORCHIDGYM_RIVAL
@@ -92,10 +96,10 @@ OrchidRivalBattle:
 	end
 
 BlackthornGymGuy:
-	checkscene SCENE_ORCHIDGYM1F_FAINTED
-	iftrue .RevivedPlayer
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .JustBeatRival
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .RevivedPlayer
 	jumptextfaceplayer BlackthornGymGuyText
 
 .JustBeatRival
