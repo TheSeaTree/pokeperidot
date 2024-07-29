@@ -746,6 +746,7 @@ DratiniEggMoves:
 	db HYDRO_PUMP
 	db IRON_TAIL
 	db MIST
+	db PAY_DAY
 	db STONE_EDGE
 	db SUPERSONIC
 	db -1 ; end
@@ -1548,6 +1549,7 @@ FerrodonEggMoves:
 	db FLAIL
 	db FOCUS_ENERGY
 	db MUD_SLAP
+	db PAY_DAY
 	db RAGE
 	db ROLLOUT
 	db SKULL_BASH
