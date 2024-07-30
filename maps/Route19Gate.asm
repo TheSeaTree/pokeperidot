@@ -11,7 +11,7 @@ Route19GateGuardScript:
 Route19GateGuardText:
 	text "Have you heard the"
 	line "rumors about the"
-	cont "GUILDED HALL?"
+	cont "GILDED HALL?"
 
 	para "You must have."
 	line "There's no reason"
