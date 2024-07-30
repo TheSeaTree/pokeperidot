@@ -8,26 +8,26 @@ OutdoorSprites:
 	dw DungeonsGroupSprites
 	dw StaghornGroupSprites
 	dw AcroporaGroupSprites
-	dw CinnabarGroupSprites
-	dw CeruleanGroupSprites
+	dw SafariZoneGroupSprites
+	dw CarnationGroupSprites
 	dw PectiniaGroupSprites
-	dw LakeOfRageGroupSprites
+	dw OrientemGroupSprites
 	dw RidgeGroupSprites
 	dw FaviaGroupSprites
-	dw VermilionGroupSprites
-	dw PalletGroupSprites
-	dw PewterGroupSprites
-	dw FastShipGroupSprites
-	dw IndigoGroupSprites
-	dw FuchsiaGroupSprites
-	dw LavenderGroupSprites
-	dw SilverGroupSprites
+	dw DeptStoreGroupSprites
+	dw Route10GroupSprites
+	dw RoofsGroupSprites
+	dw SSMakoGroupSprites
+	dw LeagueGroupSprites
+	dw OccidentGroupSprites
+	dw Route11GroupSprites
+	dw LostLandGroupSprites
 	dw CableClubGroupSprites
-	dw CeladonGroupSprites
-	dw CianwoodGroupSprites
+	dw CastleGroupSprites
+	dw HepaticaGroupSprites
 	dw OrchidGroupSprites
-	dw NewBarkGroupSprites
-	dw SaffronGroupSprites
+	dw ElkhornGroupSprites
+	dw PostgameGroupSprites
 	dw PavonaGroupSprites
 	dw PalerockGroupSprites
 	dw BoreasForestGroupSprites
@@ -39,10 +39,9 @@ OutdoorSprites:
 	dw PastElkhornGroupSprites
 	dw PastPavonaGroupSprites
 
-; Route1 and ViridianCity are connected
-; Route2 and PewterCity are connected
-; PalletTown and Route17 are connected
-PalletGroupSprites:
+Route10GroupSprites:
+; Route 10
+; Connected to Elkhorn
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -60,9 +59,8 @@ PalletGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-; Route1, PalletTown
-PewterGroupSprites:
-; Route3, PewterCity
+RoofsGroupSprites:
+; Rugosa Dept Store Roof, Gilded Hall Roof
 	db SPRITE_BUG_CATCHER
 	db SPRITE_SCIENTIST
 	db SPRITE_SUPER_NERD
@@ -77,8 +75,8 @@ PewterGroupSprites:
 	db SPRITE_HO_OH
 	db 0 ; end
 
-CinnabarGroupSprites:
-; Route15, Route16, Route17, CinnabarIsland
+SafariZoneGroupSprites:
+; Safari Zone, Carnation Zoo
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -101,8 +99,8 @@ CinnabarGroupSprites:
 	db SPRITE_ROCK
 	db 0 ; end
 
-; CeruleanCity and Route5 are connected
-CeruleanGroupSprites:
+CarnationGroupSprites:
+; Carnation Town, Roputes 14-16
 	db SPRITE_LASS
 	db SPRITE_BUENA
 	db SPRITE_POKEFAN_F
@@ -122,9 +120,8 @@ CeruleanGroupSprites:
 	db SPRITE_BIG_SNORLAX
 	db 0
 
-; Route4, Route9, Route10North, Route18, Route19, CeruleanCity
-SaffronGroupSprites:
-; Route5, SaffronCity
+PostgameGroupSprites:
+; Routes 22, 23
 	db SPRITE_COOLTRAINER_M
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
@@ -144,8 +141,8 @@ SaffronGroupSprites:
 	db SPRITE_SLOWPOKE
 	db 0 ; end
 
-VermilionGroupSprites:
-; Route6, Route10, VermilionCity
+DeptStoreGroupSprites:
+; Rugosa Department Store
 	db SPRITE_POKEFAN_M
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
@@ -158,8 +155,8 @@ VermilionGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-CeladonGroupSprites:
-; Route7, Route16, Route17, CeladonCity
+CastleGroupSprites:
+; Gilded Hall, Lugia's Cave
 	db SPRITE_FISHER
 	db SPRITE_TEACHER
 	db SPRITE_GRAMPS
@@ -172,9 +169,8 @@ CeladonGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-; Route12 and Route13 are connected
-; Route7, Route12, Route10South, LavenderTown
-LavenderGroupSprites:
+Route11GroupSprites:
+; Routes 11-13
 	db SPRITE_POKEFAN_M
 	db SPRITE_BUENA
 	db SPRITE_YOUNGSTER
@@ -198,8 +194,8 @@ LavenderGroupSprites:
 	db SPRITE_BUSH
 	db 0 ; end
 
-FuchsiaGroupSprites:
-; Route13, Route13, Route15, Route14, FuchsiaCity
+OccidentGroupSprites:
+; Occident Forest, past Occident Forest
 	db SPRITE_POKEFAN_M
 	db SPRITE_YOUNGSTER
 	db SPRITE_FISHER
@@ -219,8 +215,8 @@ FuchsiaGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-IndigoGroupSprites:
-; Route21
+LeagueGroupSprites:
+; Pokemon League
 	db SPRITE_SUPER_NERD
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_YOUNGSTER
@@ -232,8 +228,10 @@ IndigoGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-NewBarkGroupSprites:
+ElkhornGroupSprites:
+; Elkhorn Town, Route 1
 PavonaGroupSprites:
+; Pavona Village, Pavona Oasis, Route 9
 	db SPRITE_TEACHER
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
@@ -253,6 +251,7 @@ PavonaGroupSprites:
 	db 0 ; end
 	
 OrchidGroupSprites:
+; Orchid City, Route 20, Molten Peak
 	db SPRITE_TEACHER
 	db SPRITE_POKEFAN_M
 	db SPRITE_YOUNGSTER
@@ -270,9 +269,8 @@ OrchidGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
-; Route37 and StaghornCity are connected
 StaghornGroupSprites:
-; StaghornCity
+; Staghorn Town, Painter's Forest
 	db SPRITE_FISHER
 	db SPRITE_LASS
 	db SPRITE_OFFICER_M
@@ -290,7 +288,7 @@ StaghornGroupSprites:
 	db 0 ; end
 
 PectiniaGroupSprites:
-; Route33, PectiniaTown
+; Pectinia City, Route 3
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
 	db SPRITE_POKEFAN_M
@@ -313,6 +311,7 @@ PectiniaGroupSprites:
 	db 0 ; end
 
 RidgeGroupSprites:
+; Ridge Village, Routes 4-6, 8
 	db SPRITE_SUPER_NERD
 	db SPRITE_FANGIRL
 	db SPRITE_YOUNGSTER
@@ -334,7 +333,7 @@ RidgeGroupSprites:
 	db 0 ; end
 	
 FaviaGroupSprites:
-; Route34, FaviaCity
+; Favia Townn
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER
@@ -352,9 +351,8 @@ FaviaGroupSprites:
 	db SPRITE_SCIENTIST
 	db 0 ; end
 
-; OceanCity and Route40 are connected
 OceanGroupSprites:
-; Route38, Route39, OceanCity
+; Rugosa Coast, Routes 7 and 21, Sea Routes 1-3, 5, 6
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUENA
@@ -377,8 +375,8 @@ OceanGroupSprites:
 	db SPRITE_MOLTRES
 	db 0 ; end
 
-CianwoodGroupSprites:
-; Route40, Route41, CianwoodCity, BattleTowerOutside
+HepaticaGroupSprites:
+; Hepatica Town
 	db SPRITE_OLIVINE_RIVAL ; variable sprite: becomes SPRITE_SILVER and SPRITE_SWIMMER_GUY
 	db SPRITE_POKEFAN_M
 	db SPRITE_LASS
@@ -397,7 +395,7 @@ CianwoodGroupSprites:
 	db 0 ; end
 
 RugosaGroupSprites:
-; Route42, Route44, RugosaTown
+; Rugosa City
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -416,8 +414,8 @@ RugosaGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-LakeOfRageGroupSprites:
-; Route43, LakeOfRage
+OrientemGroupSprites:
+; Orientem Forest
 	db SPRITE_SUPER_NERD
 	db SPRITE_TEACHER
 	; 2 of max 9 walking sprites
@@ -427,7 +425,7 @@ LakeOfRageGroupSprites:
 	db 0 ; end
 
 AcroporaGroupSprites:
-; Route45, Route46, AcroporaCity
+; Acropora City, Eoutes 17-19
 	db SPRITE_FISHER
 	db SPRITE_YOUNGSTER
 	db SPRITE_LASS
@@ -445,8 +443,8 @@ AcroporaGroupSprites:
 	db SPRITE_BIG_SNORLAX
 	db 0 ; end
 
-SilverGroupSprites:
-; Route24, SilverCaveOutside
+LostLandGroupSprites:
+; Remnant Cave, Lost Land
 	db SPRITE_SCIENTIST
 	; 1 of max 9 walking sprites
 	db SPRITE_EGG
@@ -455,7 +453,7 @@ SilverGroupSprites:
 	db 0 ; end
 
 DungeonsGroupSprites:
-; NationalPark, NationalParkBugContest, RuinsOfAlphOutside
+; Pavona Pass, Palerock Cave, Hepatica Cave, Burglar Hideout, Sea Route 4 Cave
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
 	db SPRITE_TEACHER
@@ -473,8 +471,8 @@ DungeonsGroupSprites:
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
-FastShipGroupSprites:
-; OceanPort, VermilionPort, MountMoonSquare, TinTowerRoof
+SSMakoGroupSprites:
+; SS Mako, Route 19
 	db SPRITE_SAILOR
 	db SPRITE_FISHING_GURU
 	db SPRITE_SUPER_NERD
@@ -495,6 +493,7 @@ CableClubGroupSprites:
 	db 0 ; end
 	
 PalerockGroupSprites:
+; Palerock Mountain
 	db SPRITE_NURSE
 	db SPRITE_LASS
 	db SPRITE_POKEFAN_F
@@ -511,6 +510,7 @@ PalerockGroupSprites:
 	db 0 ; end
 
 BoreasForestGroupSprites:
+; Boreas Forest, Genesis Island
 	db SPRITE_SILVER
 	db SPRITE_MEWTWO
 	db SPRITE_MEW
@@ -518,16 +518,19 @@ BoreasForestGroupSprites:
 	db 0
 
 SeaRoute7GroupSprites:
-; Sea Route 7
+; Sea Route 7, Route 24
 	db SPRITE_POKEFAN_M
-	; 0 of max 9 walking sprites
+	; 1 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
 
 BattleSimGroupSprites:
+; (no outdoor maps)
+	; 0 of max 9 walking sprites
 	db 0
 
 PastFaviaGroupSprites:
+; Favia Town(Past), Routes 3, 7(Past)
 	db SPRITE_SAILOR
 	db SPRITE_BUENA
 	db SPRITE_LASS
@@ -544,6 +547,7 @@ PastFaviaGroupSprites:
 	db 0
 
 PastPectiniaGroupSprites:
+; Pectinia City(Past)
 	db SPRITE_POKEFAN_M
 	db SPRITE_SAILOR
 	db SPRITE_COOLTRAINER_M
@@ -561,38 +565,11 @@ PastPectiniaGroupSprites:
 	db 0
 
 PastRoute10GroupSprites:
-	db SPRITE_LASS
-	db SPRITE_SUPER_NERD
-	db SPRITE_YOUNGSTER
-	db SPRITE_FISHER
-	db SPRITE_OFFICER_M
-	db SPRITE_POKEFAN_M
-	db SPRITE_POKEFAN_F
-	db SPRITE_TEACHER
-	; 9 of max 9 walking sprites
-	db SPRITE_TWIN
-	db SPRITE_ROCK
-	db SPRITE_POKE_BALL
-	db SPRITE_CELEBI
-	db 0
-
+; Route 10(Past)
 PastElkhornGroupSprites:
-	db SPRITE_LASS
-	db SPRITE_SUPER_NERD
-	db SPRITE_YOUNGSTER
-	db SPRITE_FISHER
-	db SPRITE_OFFICER_M
-	db SPRITE_POKEFAN_M
-	db SPRITE_POKEFAN_F
-	db SPRITE_TEACHER
-	; 9 of max 9 walking sprites
-	db SPRITE_TWIN
-	db SPRITE_ROCK
-	db SPRITE_POKE_BALL
-	db SPRITE_CELEBI
-	db 0
-
+; Elkhorn Town(Past)
 PastPavonaGroupSprites:
+; Pavona Village(Past), Routes 1, 2(Past)
 	db SPRITE_LASS
 	db SPRITE_SUPER_NERD
 	db SPRITE_YOUNGSTER
