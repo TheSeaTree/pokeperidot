@@ -60,6 +60,14 @@ NewGame:
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
 	endc
+
+	ld a, POTION
+	ld [wCurItem], a
+	ld a, 1
+	ld [wItemQuantityChangeBuffer], a
+	ld hl, wPCItems
+	call ReceiveItem
+
 	call InitializeWorld
 	ld a, 1
 	ld [wPrevLandmark], a
