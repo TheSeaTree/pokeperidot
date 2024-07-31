@@ -956,7 +956,7 @@ SchoolworkDesc:
 	next "assignments.@"
 
 SilverBerryDesc:
-	db   "A self-resore"
+	db   "A self-restore"
 	next "item.(1/4HP, HOLD)@"
 
 ParkBallDesc:
