@@ -8,6 +8,9 @@ MainMenu:
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	call SetPalettes
+	hlcoord 14, 0
+	ld de, .VersionString
+	call PlaceString
 	ld hl, wGameTimerPause
 	res GAMETIMERPAUSE_TIMER_PAUSED_F, [hl]
 	call MainMenu_GetWhichMenu
@@ -26,6 +29,10 @@ MainMenu:
 
 .quit
 	ret
+
+.VersionString:
+	db "v2.0.0"
+	next "   RC2@"
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
