@@ -37,6 +37,7 @@ FangirlBagStolenLeft:
 	appear SSMAKO_FANGIRL
 	
 	applymovement SSMAKO_BURGLAR, ShipBurglarCrash
+	playsound SFX_TACKLE
 	applymovement PLAYER, ShipPlayerCrashLeft
 	applymovement SSMAKO_BURGLAR, ShipBurglarGetaway
 	jump ContinueFangirlBagStolen
@@ -52,6 +53,7 @@ FangirlBagStolenRight:
 	appear SSMAKO_FANGIRL
 	
 	applymovement SSMAKO_BURGLAR, ShipBurglarCrash
+	playsound SFX_TACKLE
 	applymovement PLAYER, ShipPlayerCrashRight
 	applymovement SSMAKO_BURGLAR, ShipBurglarGetaway
 	
