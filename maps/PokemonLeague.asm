@@ -58,10 +58,10 @@ PokemonLeagueSuperNerdText:
 
 PokemonLeagueCooltrainerFText:
 	text "There's rumors of"
-	line "an abandoned lab-"
-	cont "oratory on ROUTE"
-	cont "23 that was used"
-	cont "to create a super"
+	line "an abandoned LAB"
+	cont "in BOREAS FOREST"
+	cont "that was used to"
+	cont "create a super"
 	cont "powerful #MON."
 
 	para "Do you think it"
