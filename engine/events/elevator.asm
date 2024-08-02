@@ -119,6 +119,12 @@ Elevator_AskWhichFloor:
 	call PrintText
 	call Elevator_GetCurrentFloorText
 	ld hl, Elevator_MenuHeader
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp PAVONA_VILLAGE
+	jr nz, .continue
+	ld hl, MaplesLabElevator_MenuHeader
+.continue
 	call CopyMenuHeader
 	call InitScrollingMenu
 	call UpdateSprites
@@ -178,6 +184,12 @@ Elevator_GetCurrentFloorString:
 Elevator_MenuHeader:
 	db MENU_BACKUP_TILES ; flags
 	menu_coords 12, 1, 18, 9
+	dw Elevator_MenuData
+	db 1 ; default option
+
+MaplesLabElevator_MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 12, 1, 18, 6
 	dw Elevator_MenuData
 	db 1 ; default option
 
