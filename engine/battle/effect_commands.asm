@@ -2431,10 +2431,8 @@ BattleCommand_BideFailText:
 	and a
 	ret z
 
-	ld a, [wTypeModifier]
-	and $7f
-	jp z, PrintDoesntAffect
-	jp PrintButItFailed
+	call PrintButItFailed
+	jp EndMoveEffect
 
 BattleCommand_CriticalText:
 ; criticaltext

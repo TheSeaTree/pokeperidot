@@ -45,6 +45,10 @@ BattleCommand_UTurnAnim:
 ;	dec a
 ;	jr nz, .reappear
 
+	ld a, [wAttackMissed]
+	and a
+	ret nz
+
 	ldh a, [hBattleTurn]
 	and a
 	jr nz, .enemy_turn
