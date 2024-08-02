@@ -2047,12 +2047,23 @@ BattleAnim_Headbutt:
 	anim_ret
 
 BattleAnim_WildCharge:
-	anim_1gfx ANIM_GFX_LIGHTNING
-	anim_call BattleAnim_TargetObj_2Row
+	anim_2gfx ANIM_GFX_LIGHTNING, ANIM_GFX_EXPLOSION
+	anim_sound 6, 2, SFX_ZAP_CANNON
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
+	anim_obj ANIM_OBJ_31, 48, 92, $0
+	anim_wait 24
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_incobj  1
+	anim_call BattleAnim_TargetObj_1Row
 	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
-	anim_wait 4
 	anim_sound 0, 1, SFX_TACKLE
-	anim_wait 16
+	anim_wait 6
+	anim_sound 0, 1, SFX_TACKLE
+	anim_wait 6
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $0, $0
+	anim_wait 4
+	anim_incobj  2
+	anim_wait 6
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $4, $3
 	anim_sound 0, 1, SFX_THUNDERSHOCK
 	anim_obj ANIM_OBJ_THUNDER_WAVE, 136, 56, $0
@@ -2060,7 +2071,6 @@ BattleAnim_WildCharge:
 	anim_bgp $1b
 	anim_incobj  1
 	anim_wait 32
-	anim_wait 8
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
 	
@@ -2351,6 +2361,7 @@ BattleAnim_PetalDance:
 	anim_loop 8, .loop
 	anim_wait 128
 	anim_wait 64
+	anim_call BattleAnim_TailWhip
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_00, 136, 56, $0
 	anim_wait 16
@@ -2692,15 +2703,7 @@ BattleAnim_DrainPunch:
 	anim_wait 6
 	anim_obj ANIM_OBJ_06, 136, 56, $0
 	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 64, $3
-	anim_wait 6
-	anim_sound 6, 3, SFX_WATER_GUN
-	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
-	anim_wait 6
+	anim_call BattleAnim_Leech_Common
 	anim_wait 32
 	anim_ret
 
@@ -2710,6 +2713,12 @@ BattleAnim_LeechLife:
 	anim_obj ANIM_OBJ_00, 136, 56, $0
 	anim_wait 8
 .loop
+	anim_call BattleAnim_Leech_Common
+	anim_loop 2, .loop
+	anim_wait 32
+	anim_ret
+
+BattleAnim_Leech_Common:
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj ANIM_OBJ_ABSORB, 128, 48, $2
 	anim_wait 6
@@ -2719,8 +2728,6 @@ BattleAnim_LeechLife:
 	anim_sound 6, 3, SFX_WATER_GUN
 	anim_obj ANIM_OBJ_ABSORB, 136, 32, $4
 	anim_wait 6
-	anim_loop 2, .loop
-	anim_wait 32
 	anim_ret
 
 BattleAnim_Harden:
