@@ -425,6 +425,8 @@ BattleSimItemball:
 	addvar 5
 	copyvartobyte wParkBallsRemaining
 	writetext BattleSimFound5CyberBallsText
+	playsound SFX_ITEM
+	waitsfx
 	waitbutton
 	jump .Done
 .Found10Balls
@@ -432,6 +434,8 @@ BattleSimItemball:
 	addvar 10
 	copyvartobyte wParkBallsRemaining
 	writetext BattleSimFound10CyberBallsText
+	playsound SFX_ITEM
+	waitsfx
 	waitbutton
 	jump .Done
 .Found20Balls	
@@ -439,6 +443,8 @@ BattleSimItemball:
 	addvar 20
 	copyvartobyte wParkBallsRemaining
 	writetext BattleSimFound20CyberBallsText
+	playsound SFX_KEY_ITEM
+	waitsfx
 	waitbutton
 .Done
 	closetext
