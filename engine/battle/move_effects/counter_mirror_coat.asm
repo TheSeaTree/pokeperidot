@@ -5,7 +5,7 @@ BattleCommand_Counter:
 	cp EFFECT_COUNTER
 	ret z
 	call CounterMirrorCoat2
-	ret nc
+	jr nc, CounterMirrorCoatFailed
 	jr FinishCounterMirrorCoat
 
 BattleCommand_MirrorCoat:
@@ -15,13 +15,13 @@ BattleCommand_MirrorCoat:
 	cp EFFECT_MIRROR_COAT
 	ret z
 	call CounterMirrorCoat2
-	ret c
+	jr c, CounterMirrorCoatFailed
 
 FinishCounterMirrorCoat:
 	ld hl, wCurDamage
 	ld a, [hli]
 	or [hl]
-	jp z, BattleCommand_EndMoveEffect
+	jp z, CounterMirrorCoatFailed
 
 	ld a, [hl]
 	add a
@@ -36,6 +36,12 @@ FinishCounterMirrorCoat:
 .capped
 	xor a
 	ld [wAttackMissed], a
+	ret
+
+CounterMirrorCoatFailed:
+	ld a, 1
+	ld [wEffectFailed], a
+	and a
 	ret
 
 CounterMirrorCoat1:
