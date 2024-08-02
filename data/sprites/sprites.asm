@@ -41,7 +41,7 @@ OverworldSprites:
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_GREEN ; Unused
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_BROWN ; Unused
 	overworld_sprite UnusedGuySpriteGFX, 4, STILL_SPRITE, PAL_OW_RED ; Unused
-	overworld_sprite CooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite CooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite CooltrainerFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite BugCatcherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite TwinSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
@@ -49,7 +49,7 @@ OverworldSprites:
 	overworld_sprite LassSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite TeacherSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite BuenaSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite SuperNerdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite SuperNerdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite RockerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_GREEN
 	overworld_sprite PokefanMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
 	overworld_sprite PokefanFSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
@@ -80,7 +80,7 @@ OverworldSprites:
 	overworld_sprite BigLaprasSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
 	overworld_sprite GymGuySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite SailorSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
-	overworld_sprite BikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite BikerSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite PharmacistSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
 	overworld_sprite MonsterSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
 	overworld_sprite FairySpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
