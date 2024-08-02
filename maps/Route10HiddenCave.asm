@@ -48,7 +48,7 @@ Route10CaveGengar:
 	cry GENGAR
 	waitbutton
 	closetext
-	loadwildmon GENGAR, 45
+	loadwildmon GENGAR, 60
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
 	startbattle
 	reloadmapafterbattle
