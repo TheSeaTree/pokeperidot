@@ -15,7 +15,7 @@ PlayersHouse1F_MapScripts:
 	scene_script .PostGameScene ; SCENE_PLAYERSHOUSE1F_POSTGAME
 
 	db 1 ; callbacks
-	callback MAPCALLBACK_OBJECTS, .Dad
+	callback MAPCALLBACK_OBJECTS, .HideObjects
 
 .DummyScene0:
 	end
@@ -115,6 +115,10 @@ PlayersHouse1F_MapScripts:
 	setevent EVENT_DECO_SILVER_TROPHY
 	jump .DonePostgameScene
 
+.HideObjects:
+	checkscene
+	ifnotequal SCENE_PLAYERSHOUSE1F_POSTGAME, .Dad
+	disappear PLAYERSHOUSE1F_MOM2
 .Dad:
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .NoHide
