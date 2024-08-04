@@ -188,9 +188,9 @@ PickupHelixFossilEvent:
 	writetext TryTakeFossil
 	yesorno
 	iffalse .no
-	giveitem HELIX_FOSSIL
-	iffalse .noroom
-	itemnotify
+	verbosegiveitem HELIX_FOSSIL
+	iffalse .no
+	waitbutton
 	closetext
 	disappear ROUTE3_OMANYTE
 	applymovement ROUTE3_GRANT, HikerGrantTakeDomeFossil
@@ -206,10 +206,6 @@ PickupHelixFossilEvent:
 	disappear ROUTE3_KABUTO
 	setevent EVENT_TAKE_FOSSIL
 	end
-
-.noroom
-	writetext Route3NoRoomForFossil
-	waitbutton
 .no
 	closetext
 	end
@@ -219,9 +215,9 @@ PickupDomeFossilEvent:
 	writetext TryTakeFossil
 	yesorno
 	iffalse .no
-	giveitem DOME_FOSSIL
-	iffalse .noroom
-	itemnotify
+	verbosegiveitem DOME_FOSSIL
+	iffalse .no
+	waitbutton
 	closetext
 	disappear ROUTE3_KABUTO
 	applymovement ROUTE3_GRANT, HikerGrantTakeHelixFossil
@@ -237,10 +233,6 @@ PickupDomeFossilEvent:
 	disappear ROUTE3_OMANYTE
 	setevent EVENT_TAKE_FOSSIL
 	end
-
-.noroom
-	writetext Route3NoRoomForFossil
-	waitbutton
 .no
 	closetext
 	end
