@@ -884,10 +884,10 @@ CountStep:
 	ld a, [wStepCount]
 	cp $80
 	jr nz, .skip_egg
-
+rept 4
 	farcall DoEggStep
 	jr nz, .hatch
-
+endr
 .skip_egg
 	; Increase the EXP of (both) DayCare Pokemon by 1.
 	farcall DayCareStep
