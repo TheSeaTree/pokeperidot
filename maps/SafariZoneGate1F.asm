@@ -86,6 +86,7 @@ SafariGuardScript:
 	checkitem SAFARI_PACK
 	iftrue .GotSafariBalls
 	writetext ExplainSafariBalls
+	waitbutton
 	jump .GotSafariBalls
 .NoExplaination
 	writetext SafariPackBallText

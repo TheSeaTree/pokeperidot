@@ -6,9 +6,10 @@ SafariZoneArea6RestHouse_MapScripts:
 	db 0 ; callbacks
 	
 SafariArea6RestHouseReceptionist:
-	jumptextfaceplayer SafariArea5RestHouseReceptionistText
+	jumptextfaceplayer SafariArea6RestHouseReceptionistText
 
 SafariArea6RestHouseGramps:
+	faceplayer
 	opentext
 	checkevent EVENT_GOT_SAFARI_PACK
 	iftrue .GotPack

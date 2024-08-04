@@ -134,6 +134,8 @@ SSMakoDeckBurglar:
 	closetext
 	applymovement SSMAKODECK_FANGIRL, SSMakoLeaveMovement
 	disappear SSMAKODECK_FANGIRL
+	setmapscene CARNATION_ZOO, SCENE_FINISHED
+	setevent EVENT_BEAT_EMILYS_HOUSE
 
 	disappear SSMAKODECK_CHAMPION
 	setevent EVENT_SS_MAKO_DEFEATED_BURGLAR
