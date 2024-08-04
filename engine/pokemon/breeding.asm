@@ -861,7 +861,7 @@ DayCareMon1:
 	ld hl, DayCareMon1Text
 	call PrintText
 	ld a, [wBreedMon1Species]
-	call PlayMonCry
+;	call PlayMonCry
 	ld a, [wDayCareLady]
 	bit DAYCARELADY_HAS_MON_F, a
 	jr z, DayCareMonCursor
