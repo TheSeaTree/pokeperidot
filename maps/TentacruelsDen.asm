@@ -40,9 +40,15 @@ TentacruelsDenBossFight:
 
 	pause 4
 	special FadeBlackQuickly
+	playsound SFX_TOXIC
+	waitsfx
+	playsound SFX_TOXIC
+	waitsfx
+	playsound SFX_TOXIC
 	disappear TENTACRUELSDEN_TENTACRUEL
 	moveobject TENTACRUELSDEN_ITEMBALL,   7,  2
 	appear TENTACRUELSDEN_ITEMBALL
+	waitsfx
 	pause 4
 	special FadeInQuickly
 
