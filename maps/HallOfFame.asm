@@ -66,6 +66,10 @@ HallOfFame_Approach:
 	opentext
 
 RespawnLegendaries:
+	checkevent EVENT_SKELEGON_BATTLED
+	iffalse .CheckRaikou
+	clearevent EVENT_MOLTEN_PEAK_SABRE_FOSSIL
+.CheckRaikou
 	checkevent EVENT_CAUGHT_RAIKOU
 	iftrue .CheckSuicune
 	clearevent EVENT_HIDE_RAIKOU
