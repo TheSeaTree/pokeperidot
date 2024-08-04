@@ -87,6 +87,9 @@ RockItemEncounter:
 	ld b, CHECK_FLAG
 	call EventFlagAction
 	jr nz, .OldAmber
+	ld de, ENGINE_MYSTICBADGE
+	farcall CheckEngineFlag
+	jr nc, .EvoStones
 	ld hl, .RockItems
 	call Random
 .loop
@@ -106,17 +109,33 @@ endr
 	ld [wScriptVar], a
 	ret
 
-.OldAmber
+.EvoStones
 	ld hl, .RockItems2
+	call Random
+	jr .loop
+
+.OldAmber
+	ld hl, .RockItems3
 	call Random
 	jr .loop
 
 .RockItems:
 	db 1, MAX_REVIVE
 	db 1, NUGGET
-	db 2, STARDUST
+	db 2, STAR_PIECE
 	db 4, THICK_CLUB
-	db 6, STAR_PIECE
+	db 6, STARDUST
+	db 12, BIG_PEARL
+	db 48, BRICK_PIECE
+	db 96, NO_ITEM
+	db -1
+
+.RockItems2:
+	db 1, MAX_REVIVE
+	db 1, NUGGET
+	db 2, STAR_PIECE
+	db 4, THICK_CLUB
+	db 6, STARDUST
 	db 8, FIRE_STONE
 	db 8, WATER_STONE
 	db 8, LEAF_STONE
@@ -128,12 +147,12 @@ endr
 	db 48, NO_ITEM
 	db -1
 
-.RockItems2:
+.RockItems3:
 	db 1, MAX_REVIVE
 	db 1, NUGGET
-	db 2, STARDUST
+	db 2, STAR_PIECE
 	db 4, THICK_CLUB
-	db 6, STAR_PIECE
+	db 6, STARDUST
 	db 8, OLD_AMBER
 	db 8, FIRE_STONE
 	db 8, WATER_STONE
