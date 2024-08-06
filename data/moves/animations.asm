@@ -787,12 +787,9 @@ BattleAnim_RunicPower:
 	anim_bgeffect ANIM_BG_1A, $0, $1, $20
 	anim_bgeffect ANIM_BG_07, $0, $2, $0
 	anim_obj ANIM_OBJ_UNOWN, 44, 88, $0
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $8
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $10
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $18
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $20
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $28
-	anim_obj ANIM_OBJ_UNOWN, 44, 88, $30
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $e
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $1c
+	anim_obj ANIM_OBJ_UNOWN, 44, 88, $2a
 	anim_obj ANIM_OBJ_UNOWN, 44, 88, $38
 .loop
 	anim_sound 0, 4, SFX_SWORDS_DANCE
