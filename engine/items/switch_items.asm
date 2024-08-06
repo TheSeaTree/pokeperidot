@@ -1,6 +1,11 @@
 SwitchItemsInBag:
 	ld a, [wSwitchItem]
 	and a
+	jr nz, .no_sound
+	call PlayClickSFX
+.no_sound
+	ld a, [wSwitchItem]
+	and a
 	jr z, .init
 	ld b, a
 	ld a, [wScrollingMenuCursorPosition]

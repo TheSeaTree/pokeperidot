@@ -450,11 +450,12 @@ _2DMenuInterpretJoypad:
 	cp BATTLETYPE_SAFARI
 	jr z, .finish
 
-	call PlayClickSFX
-
 	ld a, [wBattleMenuFlags]
 	and QUICK_SELECT
 	jr z, .finish
+
+	call PlayClickSFX
+
 	ld a, $3
 	ld [wMenuCursorX], a
 	ld a, $2
@@ -466,11 +467,12 @@ _2DMenuInterpretJoypad:
 	cp BATTLETYPE_SAFARI
 	jr z, .finish
 
-	call PlayClickSFX
-
 	ld a, [wBattleMenuFlags]
 	and QUICK_START
 	jr z, .finish
+
+	call PlayClickSFX
+
 	ld a, $4
 	ld [wMenuCursorX], a
 	ld a, $4

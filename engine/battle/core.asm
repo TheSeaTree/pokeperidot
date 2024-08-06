@@ -6119,7 +6119,13 @@ MoveSelectionScreen:
 .pressed_select
 	ld a, [wMoveSwapBuffer]
 	and a
-	jr z, .start_swap
+	jp z, .start_swap
+	push de
+	ld de, SFX_SWITCH_POKEMON
+	call WaitPlaySFX
+	ld de, SFX_SWITCH_POKEMON
+	call WaitPlaySFX
+	pop de
 	ld hl, wBattleMonMoves
 	call .swap_bytes
 	ld hl, wBattleMonPP
@@ -6196,6 +6202,7 @@ MoveSelectionScreen:
 	ret
 
 .start_swap
+	call PlayClickSFX
 	ld a, [wMenuCursorY]
 	ld [wMoveSwapBuffer], a
 	jp MoveSelectionScreen
