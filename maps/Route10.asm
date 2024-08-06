@@ -28,7 +28,7 @@ Route10MoveTutor:
 	yesorno
 	iftrue .Bubblebeam
 	jump .Refused
-	
+
 .Bubblebeam
 	writetext Route10TutorWhichOne
 	buttonsound

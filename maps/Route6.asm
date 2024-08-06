@@ -142,7 +142,7 @@ FisherBradyWinText:
 FisherBradyAfterText:
 	text "Fishing is unpred-"
 	line "ictable. Sometimes"
-	cont "you catch nothinng"
+	cont "you catch nothing"
 	cont "while other times"
 	cont "you can't go a"
 	cont "minute without a"

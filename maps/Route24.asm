@@ -25,7 +25,6 @@ TrainerHikerNoah:
 	closetext
 	end	
 
-
 Route24Foreman:
 	jumptextfaceplayer Route24ForemanText
 
@@ -144,11 +143,14 @@ HikerNoahAfterText:
 	done
 
 Route24SignText:
-	text "ROUTE 22"
+	text "ROUTE 24"
+
+	para "BOREAS FOREST"
+	line "ahead."
 	done
 
 Route24ConstructionSignText:
-	text "ROUTE 22"
+	text "ROUTE 24"
 	
 	para "Temporarily"
 	line "blocked due to"
