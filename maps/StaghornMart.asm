@@ -45,7 +45,7 @@ StaghornMartLassText:
 	cont "TMs that don't"
 	cont "break."
 	
-	para "How to they make"
+	para "How do they make"
 	line "money on them?"
 	done
 

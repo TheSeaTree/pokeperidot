@@ -376,9 +376,9 @@ FaviaFangirlLossText:
 FaviaFangirlAfterText:
 	text "Y'know, there is"
 	line "a man on ROUTE 1"
-	cont "that gives out a"
-	cont "prize to winners"
-	cont "the MYSTICBADGE."
+	cont "who gives a prize"
+	cont "to winners of the"
+	cont "MYSTICBADGE."
 	
 	para "You should check"
 	line "it out. In the"

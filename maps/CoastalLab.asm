@@ -398,7 +398,7 @@ ProfessorMapleSrAdieText:
 
 	para "The glyphs UNOWN"
 	line "uses bear an unca-"
-	cont "nny reselblance to"
+	cont "nny resemblance to"
 	cont "the characters we"
 	cont "use to write with"
 	cont "every day."

@@ -88,7 +88,7 @@ StaghornGymGuyOutside:
 	jumptextfaceplayer StaghornGymLeaderAwayText
 
 StaghornTownFruitTree:
-	fruittree STAGHORN_TOWN
+	fruittree FRUITTREE_STAGHORN_TOWN
 	
 StaghornTownSilverPowder:
 	itemball SILVERPOWDER

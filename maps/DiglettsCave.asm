@@ -81,7 +81,7 @@ BlackbeltAxelText:
 	text "We've all trained"
 	line "with MURPHY, and"
 	cont "have learned his"
-	cont "his special move."
+	cont "special move."
 	done
 
 BlackbeltAxelWinText:
