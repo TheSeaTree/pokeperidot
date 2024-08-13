@@ -375,7 +375,7 @@ PowerPlant2FNoTimeText:
 PowerPlant2FGoofOffText:
 	text "The worst part"
 	line "about having my"
-	cont "desk to close to"
+	cont "desk too close to"
 	cont "the ADMIN's office"
 	cont "is that I can"
 	cont "never get away"

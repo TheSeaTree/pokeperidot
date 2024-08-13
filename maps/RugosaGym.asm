@@ -1387,12 +1387,12 @@ ScientistAndreWinText:
 
 ScientistAndreAfterText:
 	text "We have not yet"
-	line "run any tests to"
-	cont "see what happens"
+	line "run any tests on"
+	cont "the effects of"
 	cont "multiple objects"
-	cont "enter a pod at the"
-	cont "same time."
-	
+	cont "entering a pod at"
+	cont "the same time."
+
 	para "The results could"
 	line "be disastrous!"
 	done
