@@ -165,21 +165,6 @@ SafeCheckSafeguard:
 	pop hl
 	ret
 
-CheckSpecialMatchupMoves:
-	; Bonemerang ignores Flying's immunity to Ground.
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_BONEMERANG
-	jr z, .alternate
-	; Freeze-Dry is super-effective against Water.
-	cp EFFECT_FREEZE_DRY
-	jr z, .alternate
-	ret
-
-.alternate
-	ld a, 1
-	ret
-
 SelfdestructEffect:
 	farcall StubbedTrainerRankings_Selfdestruct
 	ld a, BATTLEANIM_PLAYER_DAMAGE
