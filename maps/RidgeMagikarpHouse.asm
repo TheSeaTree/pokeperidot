@@ -15,11 +15,14 @@ CheckMagikarp:
 	writetext MagikarpGuruIntroText
 	yesorno
 	iffalse .Decline
+	writetext MagikarpGuruShowText
+	waitbutton
 	special CheckMagikarpHappiness
 	ifequal MAGIKARPHAPPINESS_NOT_YOURS, .NotYourMagikarp
 	ifequal MAGIKARPHAPPINESS_NOT_MAGIKARP, .NotAMagikarp
 	ifequal MAGIKARPHAPPINESS_UNHAPPY, .UnhappyMagikarp
 	ifequal MAGIKARPHAPPINESS_IN_PROGRESS, .MagikarpInProgress
+	ifequal MAGIKARPHAPPINESS_REFUSED, .Decline
 ; If nothing is set, Magikarp is happy.
 	writetext MagikarpGuruHaveMagikarpText
 	waitbutton
@@ -127,7 +130,12 @@ MagikarpGuruIntroText:
 	line "to be a MAGIKARP"
 	cont "fan too?"
 	done
-	
+
+MagikarpGuruShowText:
+	text "Please, let me see"
+	line "your MAGIKARP!"
+	done
+
 MagikarpGuruHaveMagikarpText:
 	text "Wow! What a perf-"
 	line "ect example of a"
@@ -194,7 +202,7 @@ MagikarpGuruUnhappyText:
 	para "I want you out of"
 	line "my home now!"
 	done
-	
+
 DoNotShowMagikarpText:
 	text "No…?"
 	
