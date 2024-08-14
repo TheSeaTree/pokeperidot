@@ -330,7 +330,7 @@ SuperNerdHerbertAfterText:
 	line "me, I must go back"
 	cont "to work."
 
-	para "I musn't waste any"
+	para "I mustn't waste any"
 	line "time on this trip."
 	done
 

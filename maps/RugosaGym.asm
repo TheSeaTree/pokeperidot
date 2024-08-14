@@ -1408,7 +1408,7 @@ ScientistKurtText:
 	
 ScientistKurtWinText:
 	text "You've fried my"
-	line "circuts!"
+	line "circuits!"
 	done
 	
 ScientistKurtAfterText:

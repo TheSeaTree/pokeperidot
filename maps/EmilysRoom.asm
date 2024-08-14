@@ -223,8 +223,8 @@ EmilyRematchIntroText:
 	line "ready?"
 
 	para "Let's make this"
-	line "battle as memoable"
-	cont "as our last one!"
+	line "battle as memorab-"
+	cont "le as our last!"
 	done
 
 EmilyBattleWinText:

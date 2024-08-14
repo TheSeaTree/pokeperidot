@@ -140,9 +140,9 @@ PokemaniacTrentAfterText:
 	
 	para "………"
 	
-	para "Oh, I didnd't need"
+	para "Oh, I didn't need"
 	line "that after all."
-	done	
+	done
 	
 LassVickyText:
 	text "You'd be surprised"

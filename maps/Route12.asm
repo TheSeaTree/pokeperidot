@@ -271,7 +271,7 @@ PokemaniacTylerAfterText:
 BirdKeeperRoyText:
 	text "Are you a travel-"
 	line "er?"
-	
+
 	para "Me too! Do you"
 	line "have any exotic"
 	cont "#MON?"
@@ -299,7 +299,7 @@ BikerJesseText:
 BikerJesseWinText:
 	text "Oh man, wipeout!"
 	done
-	
+
 BikerJesseAfterText:
 	text "Burn rubber and"
 	line "leave smoke. That"

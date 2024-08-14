@@ -1004,7 +1004,7 @@ BattleSimulationScientist1Text:
 
 BattleSimulationScientist2Text:
 	text "We have been work-"
-	line "ing dilligently to"
+	line "ing diligently to"
 	cont "get the BATTLE"
 	cont "SIMULATION online."
 	done
@@ -1070,7 +1070,7 @@ TimeMachineReadyText:
 
 TimeMachineReturnFromPastText:
 	text "It's good to see"
-	line "our thether system"
+	line "our tether system"
 	cont "is successful!"
 
 	para "Whenever you are"

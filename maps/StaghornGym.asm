@@ -580,7 +580,7 @@ CamperJeffAfterText:
 	
 	para "POSEY has really"
 	line "captured the true"
-	cont "essense of the"
+	cont "essence of the"
 	cont "outdoors."
 	done
 	

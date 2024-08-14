@@ -177,7 +177,7 @@ SailorJeremyAfterText:
 	done
 	
 SailorRolandText:
-	text "I've travelled far"
+	text "I've traveled far"
 	line "and wide across"
 	cont "the sea in search"
 	cont "of #MON."

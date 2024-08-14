@@ -210,8 +210,8 @@ SSMako2FLockedDoorText:
 	line "hanging on the"
 	cont "doorknob."
 	
-	para "It reads 'DO NOT"
-	line "DISTURB.'"
+	para "It reads “DO NOT"
+	line "DISTURB.”"
 	done
 	
 SSMako2FLowerDoorsLockedText:

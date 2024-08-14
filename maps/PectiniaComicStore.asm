@@ -69,7 +69,7 @@ PectiniaComicStoreClerkText:
 
 	para "I would feel awful"
 	line "if any of these"
-	cont "rare collectables"
+	cont "rare collectibles"
 	cont "were damaged in"
 	cont "your PACK."
 	done

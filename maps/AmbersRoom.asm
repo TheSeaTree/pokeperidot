@@ -257,7 +257,7 @@ AmberScript_AmberDefeatText:
 	para "The CHAMPION"
 	line "awaits, <PLAYER>."
 
-	para "Don't embarass me"
+	para "Don't embarrass me"
 	line "by losing now!"
 	done
 

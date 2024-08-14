@@ -303,7 +303,7 @@ ReganScript_RematchBeatenText:
 	para "It makes me happy"
 	line "to know you've"
 	cont "started to accept"
-	cont "the existance of"
+	cont "the existence of"
 	cont "spirits in our"
 	cont "world!"
 	done

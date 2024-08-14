@@ -204,7 +204,7 @@ UnknownText_0x1c0421::
 
 UnknownText_0x1c0436::
 	text "The link has been"
-	line "cancelled."
+	line "canceled."
 	prompt
 
 UnknownText_0x1c0454::
@@ -273,7 +273,7 @@ UnknownText_0x1c0555::
 
 UnknownText_0x1c0573::
 	text "The link has been"
-	line "cancelled."
+	line "canceled."
 	prompt
 
 UnknownText_0x1c0591::
@@ -1534,7 +1534,7 @@ _OakText1::
 
 _OakText2::
 	text "#MON are magni-"
-	line "ficent creatues"
+	line "ficent creatures"
 	cont "that live all"
 	cont "around us!@@"
 

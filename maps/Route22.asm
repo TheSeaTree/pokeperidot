@@ -388,7 +388,7 @@ LassJodieText:
 	text "My big sister is"
 	line "a COOLTRAINER."
 
-	para "She tought me how"
+	para "She taught me how"
 	line "to make my #MON"
 	cont "grow up strong!"
 	done

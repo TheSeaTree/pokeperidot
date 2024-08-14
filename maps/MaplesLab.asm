@@ -720,7 +720,7 @@ MaplePostgameText:
 
 	para "The BATTLE"
 	line "SIMULATION is"
-	cont "realy to use!"
+	cont "ready to use!"
 
 	para "It has taken a lot"
 	line "of hard work and"

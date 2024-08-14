@@ -297,7 +297,7 @@ FluteMasterWantsFluteText:
 	done
 
 PlayerReturnsFluteText:
-	text "<PLAYER> reutned"
+	text "<PLAYER> returned"
 	line "the # FLUTE."
 	done
 	

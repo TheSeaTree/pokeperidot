@@ -15,12 +15,12 @@ HepaticaPokecenter1FSuperNerdScript:
 	jumptextfaceplayer HepaticaPokecenter1FSuperNerdText
 
 HepaticaPokecenter1FLassText:
-	text "Did you meet the"
-	line "#MANIAC?"
+	text "Have you met the"
+	line "# SEER?"
 
-	para "He's always brag-"
-	line "ging about his"
-	cont "rare #MON."
+	para "She will tell you"
+	line "all about your"
+	cont "#MON."
 	done
 
 HepaticaPokecenter1FSuperNerdText:

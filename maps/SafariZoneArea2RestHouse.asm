@@ -37,7 +37,7 @@ SafariArea2RestHouseLassText:
 	done
 
 SafariArea2RestHouseHikerText:
-	text "I tried climing"
+	text "I tried climbing"
 	line "ledges in this"
 	cont "AREA, but was"
 	cont "scolded by the"

@@ -677,7 +677,7 @@ Blackbelt4WinText:
 
 Blackbelt4AfterText:
 	text "FIGHTING #MON"
-	line "are resilliant to"
+	line "are resilient to"
 	cont "PHYSICAL moves, so"
 	cont "I am hesitant to"
 	cont "rely on them."
@@ -751,7 +751,7 @@ Blackbelt7AfterText:
 	cont "encouragement to"
 	cont "grow stronger."
 
-	para "I musn't become"
+	para "I mustn't become"
 	line "soft!"
 	done
 
@@ -804,7 +804,7 @@ OrchidEnteiShrineAskTournamentText:
 	done
 
 OrchidEnteiShrineAcceptTournamentText:
-	text "Don't dissapoint"
+	text "Don't disappoint"
 	line "me. ENTEI must"
 	cont "have seen some-"
 	cont "thing in you to"

@@ -241,7 +241,7 @@ FastEddieSellingFastBallsText:
 	para "Boy, do I have"
 	line "something for you!"
 	
-	para "For a measy ¥750,"
+	para "For a measly ¥750,"
 	line "you too can have"
 	cont "your very own FAST"
 	cont "BALL, best used"

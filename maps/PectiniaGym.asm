@@ -297,7 +297,7 @@ MurphyText_FuryCutterSpeech:
 	para "It hits hard, and"
 	line "will hit even"
 	cont "harder on subsequ-"
-	cont "quent strikes!"
+	cont "ent strikes!"
 
 	para "You can also use"
 	line "ROCK SMASH to"

@@ -316,7 +316,7 @@ CelesteAfterText:
 	done
 
 CelesteRematchText:
-	text "I forsaw your"
+	text "I foresaw your"
 	line "return, <PLAYER>."
 
 	para "Have you come to"
@@ -453,7 +453,7 @@ GuitaristXavierText:
 	text "I've been having"
 	line "writer's block, so"
 	cont "I came to this gym"
-	cont "for inspriation."
+	cont "for inspiration."
 	done
 	
 GuitaristXavierWinText:

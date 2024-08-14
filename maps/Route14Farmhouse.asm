@@ -211,7 +211,7 @@ Route14FarmhouseFatherHomeText:
 	cont "in the past."
 	
 	para "Maybe she wants to"
-	line "take after he old"
+	line "take after the old"
 	cont "man."
 	done
 	

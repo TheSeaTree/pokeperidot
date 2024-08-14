@@ -599,7 +599,7 @@ BikerGuard3AfterText:
 	
 SecretPasswordText:
 	text "The secret phrase"
-	line "is 'please open'."
+	line "is “please open”."
 	done
 	
 BurglarHideoutB1FGotPassword:

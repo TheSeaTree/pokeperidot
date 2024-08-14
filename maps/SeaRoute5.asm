@@ -110,7 +110,7 @@ SwimmerGlennAfterText:
 	line "sea water, kid!"
 	
 	para "I just got a"
-	line "mouthfull…"
+	line "mouthful…"
 	done
 	
 SwimmerMirandaText:
@@ -160,12 +160,12 @@ TMSandstormExplaination:
 	cont "around out here"
 	cont "all day."
 	done
-	
+
 SeaRoute5LugiaGirlText:
-	text "You'll never beli"
-	line "ieve what I saw"
+	text "You'll never beli-"
+	line "eve what I saw"
 	cont "just now!"
-	
+
 	para "Right after the"
 	line "big SILVER #MON"
 	cont "emerged from the"
