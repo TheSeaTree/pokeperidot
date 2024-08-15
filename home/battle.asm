@@ -1,3 +1,22 @@
+; *PartyAttr returns address to attribute in hl, content
+; in a. Always returns nz (used to return z for wildmon).
+TrueUserPartyAttr::
+	push bc
+	ld c, a
+	ldh a, [hBattleTurn]
+	and a
+	ld hl, wPartyMons
+	jr z, .got_partymons
+	ld hl, wOTPartyMons
+.got_partymons
+	ld b, 0
+	add hl, bc
+	call GetPartyLocation
+	or 1
+	ld a, [hl]
+	pop bc
+	ret
+
 UserPartyAttr::
 	push af
 	ldh a, [hBattleTurn]

@@ -3008,41 +3008,34 @@ AttackItemBoost:
 	push de
 	push hl
 	ld a, MON_SPECIES
-	call UserPartyAttr
-	ld a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr z, .checksmeargle
-	ld a, [wTempEnemyMonSpecies]
-.checksmeargle:
+	call TrueUserPartyAttr
 	pop hl
+	cp PIKACHU
+	lb bc, PIKACHU, PIKACHU
+	ld d, LIGHT_BALL
+	jr z, .ok
 	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
 	ld d, PALETTE
 	jr z, .ok
 	cp MARILL
-	lb bc, MARILL, MARILL
+	lb bc, MARILL, AZUMARILL
 	ld d, LIGHT_BUOY
 	jr z, .ok
-	cp AZUMARILL
-	lb bc, AZUMARILL, AZUMARILL
-	ld d, LIGHT_BUOY
-	jr z, .ok
-	lb bc, CUBONE, MAROWAK
-	ld d, THICK_CLUB
-	jr z, .ok
-	cp PIKACHU
-	lb bc, PIKACHU, PIKACHU
-	ld d, LIGHT_BALL
-	jr z, .ok
+	cp RAICHU
 	lb bc, RAICHU, RAICHU
 	ld d, LIGHT_BALL
-	call LightBallItemBoost
+	jr z, .light_ball
+	lb bc, CUBONE, MAROWAK
+	ld d, THICK_CLUB
+.ok
+	call SpeciesItemBoost
 	pop de
 	pop bc
 	ret
-.ok
-	call SpeciesItemBoost
+
+.light_ball
+	call LightBallItemBoost
 	pop de
 	pop bc
 	ret
@@ -3056,13 +3049,7 @@ SpecialItemBoost:
 	push de
 	push hl
 	ld a, MON_SPECIES
-	call UserPartyAttr
-	ld a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr z, .checksmeargle
-	ld a, [wTempEnemyMonSpecies]
-.checksmeargle:
+	call TrueUserPartyAttr
 	pop hl
 	cp SMEARGLE
 	lb bc, SMEARGLE, SMEARGLE
@@ -3096,14 +3083,7 @@ SpeciesItemBoost:
 
 	push hl
 	ld a, MON_SPECIES
-	call BattlePartyAttr
-
-	ldh a, [hBattleTurn]
-	and a
-	ld a, [hl]
-	jr z, .CompareSpecies
-	ld a, [wTempEnemyMonSpecies]
-.CompareSpecies:
+	call TrueUserPartyAttr
 	pop hl
 
 	cp b
@@ -3120,19 +3100,7 @@ SpeciesItemBoost:
 	ret nz
 
 ; Double the stat
-	sla l
-	rl h
-
-	ld a, HIGH(MAX_STAT_VALUE)
-	cp h
-	jr c, .cap
-	ld a, LOW(MAX_STAT_VALUE)
-	cp l
-	ret nc
-
-.cap
-	ld h, HIGH(MAX_STAT_VALUE)
-	ld l, LOW(MAX_STAT_VALUE)
+	add hl, hl
 	ret
 
 LightBallItemBoost:
