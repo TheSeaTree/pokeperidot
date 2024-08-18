@@ -330,10 +330,10 @@ RinringEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 6, BITE
+	db 6, FAINT_ATTACK
 	db 14, FURY_SWIPES
 	db 17, SCREECH
-	db 22, FAINT_ATTACK
+	db 22, BITE
 	db 27, HEAL_BELL
 	db 33, CUT
 	db 38, PURSUIT
@@ -344,10 +344,10 @@ NyanellEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
-	db 6, BITE
+	db 6, FAINT_ATTACK
 	db 14, FURY_SWIPES
 	db 17, SCREECH
-	db 22, FAINT_ATTACK
+	db 22, BITE
 	db 27, HEAL_BELL
 	db 33, CUT
 	db 38, PURSUIT
