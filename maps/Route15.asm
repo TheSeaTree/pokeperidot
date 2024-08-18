@@ -144,7 +144,7 @@ BikerMortonAfterText:
 	line "be seen with a BUG"
 	cont "CATCHER, but this"
 	cont "little dude taught"
-	cont "how to make my"
+	cont "me how to make my"
 	cont "POISON #MON"
 	cont "strong!"
 	done

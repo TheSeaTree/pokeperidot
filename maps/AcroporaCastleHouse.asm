@@ -12,7 +12,7 @@ AcroporaCastleHouseSuperNerdText:
 	text "Have you heard the"
 	line "rumors of the gold"
 	cont "castle on ROUTE"
-	cont "25?"
+	cont "19?"
 	
 	para "I tried to find it"
 	line "once, but I got"
@@ -32,7 +32,7 @@ AcroporaCastleHouseSuperNerdText:
 	
 	para "I don't know what"
 	line "is really on ROUTE"
-	cont "20, but I can say"
+	cont "19, but I can say"
 	cont "it is something"
 	cont "truly magical!"
 	done
