@@ -2422,6 +2422,10 @@ CheckExpAll:
 	ret
 
 IsAnyMonHoldingExpShare:
+	ld hl, wStatusFlags
+	bit STATUSFLAGS_EXP_ALL_ACTIVE_F, [hl]
+	ret nz
+
 	ld a, [wPartyCount]
 	ld b, a
 	ld hl, wPartyMon1
