@@ -98,6 +98,7 @@ PlayersHouse1F_MapScripts:
 	setscene SCENE_FINISHED
 	setmapscene ELKHORN_TOWN, SCENE_FINISHED
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
+	setevent EVENT_GOT_A_POKEMON_FROM_MAPLE
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
 	disappear PLAYERSHOUSE1F_MOM3
 	end
@@ -1029,7 +1030,7 @@ PostgameMomGotMailText:
 	line "forgot!"
 
 	para "There was a"
-	line "packaged delivered"
+	line "package delivered"
 	cont "for you earlier."
 
 	para "I wonder what it"
