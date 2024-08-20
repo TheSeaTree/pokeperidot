@@ -1200,7 +1200,7 @@ TimeMachinePartyTooStrongText:
 
 BattleSimComputerScreenText:
 	text "There's an opened"
-	cont "document about the"
+	line "document about the"
 	cont "potential exist-"
 	cont "ence of a #MON"
 	cont "that can travel"

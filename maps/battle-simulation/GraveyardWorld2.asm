@@ -97,9 +97,9 @@ Graveyard2Switch1:
 	changeblock 22, 22, $71 ; open gate 1
 	changeblock 30, 18, $6f ; switch
 	reloadmappart
-	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 .Decline
+	closetext
 	end
 
 .Reset
@@ -124,9 +124,9 @@ Graveyard2Switch2:
 	changeblock 14, 14, $38 ; close gate 5
 	changeblock  4, 20, $6f ; switch
 	reloadmappart
-	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_2
 .Decline
+	closetext
 	end
 
 .Reset
@@ -152,9 +152,9 @@ Graveyard2Switch3:
 	changeblock 20, 12, $70 ; close gate 2
 	changeblock  4,  4, $6f ; switch
 	reloadmappart
-	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_3
 .Decline
+	closetext
 	end
 
 .Reset
@@ -179,9 +179,9 @@ Graveyard2Switch4:
 	changeblock 14,  4, $6c ; close gate 3
 	changeblock 28,  8, $6f ; switch
 	reloadmappart
-	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_4
 .Decline
+	closetext
 	end
 
 .Reset

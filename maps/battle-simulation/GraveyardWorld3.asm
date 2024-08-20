@@ -35,9 +35,9 @@ Graveyard3Switch:
 	changeblock 12, 10, $6f
 	changeblock 30,  2, $35
 	reloadmappart
-	closetext
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 .Decline
+	closetext
 	end
 
 .Reset

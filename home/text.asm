@@ -362,6 +362,7 @@ PlaceEnemysName::
 	ld h, b
 	ld l, c
 	ld de, String_Space
+.continueclassnamenospace
 	call PlaceString
 	push bc
 	callfar Battle_GetTrainerName
@@ -387,7 +388,7 @@ PlaceEnemysName::
 
 .battlesim
 	ld de, .BattleSimTrainer
-	jr .continueclassname
+	jr .continueclassnamenospace
 
 .SubwayJadeName
 	db "SUBWAY ACE JADE@"
