@@ -163,7 +163,7 @@ SimulationWildMons:
 	db 50, STARMIE
 
 	map_id BATTLE_SIM_GRAVE_1
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAROWAK
 	db 50, MISDREAVUS
@@ -190,7 +190,7 @@ SimulationWildMons:
 	db 50, CURSTRAW
 
 	map_id BATTLE_SIM_GRAVE_2
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAROWAK
 	db 50, MISDREAVUS
@@ -217,7 +217,7 @@ SimulationWildMons:
 	db 50, CURSTRAW
 
 	map_id BATTLE_SIM_GRAVE_3
-	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	db 1 percent, 1 percent, 1 percent ; encounter rates: morn/day/nite
 	; morn
 	db 50, MAROWAK
 	db 50, MISDREAVUS
