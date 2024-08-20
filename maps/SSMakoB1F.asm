@@ -413,7 +413,7 @@ EngineerEnriqueAfterText:
 	line "lock for the"
 	cont "ENGINE ROOM."
 	
-	para "It's nearly inpene-"
+	para "It's nearly impene-"
 	line "trable without the"
 	cont "matching KEY."
 	done

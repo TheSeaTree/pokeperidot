@@ -126,7 +126,7 @@ PokemonLeagueRockerText:
 PokemonLeagueTeacherText:
 	text "Every time I lose"
 	line "a battle here, I"
-	cont "planted a flower."
+	cont "plant a flower."
 
 	para "As you can see, I"
 	line "really need to"
