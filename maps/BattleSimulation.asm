@@ -740,16 +740,6 @@ BattleSimulationTimeMachineActivate:
 	turn_head UP
 	step_end
 
-BattleSimBlockerGuy:
-	jumptextfaceplayer BattleSimBlockerGuyText
-
-BattleSimBlockerGuyText:
-	text "For the purposes"
-	line "of this test, I"
-	cont "can't allow you to"
-	cont "leave this area."
-	done
-
 SimPorygon2Name:
 	db "PORYGON2@"
 
