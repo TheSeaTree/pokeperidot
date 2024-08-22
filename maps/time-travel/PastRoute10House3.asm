@@ -17,7 +17,7 @@ PastRoute10House3Cards:
 	jumptext PastRoute10House3CardsText
 
 PastRoute10House3BeautyText:
-	text "I bet an adorable"
+	text "I saw an adorable"
 	line "new #MON the"
 	cont "other night."
 

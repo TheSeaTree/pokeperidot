@@ -60,13 +60,13 @@ TrainerBugCatcherKevin:
 	closetext
 	end
 
-TrainerLadDarren:
-	trainer LAD, DARREN, EVENT_BEAT_LAD_DARREN, LadDarrenText, LadDarrenWinText, 0, .Script
+TrainerLadChester:
+	trainer LAD, CHESTER, EVENT_BEAT_LAD_CHESTER, LadChesterText, LadChesterWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext LadDarrenAfterText
+	writetext LadChesterAfterText
 	waitbutton
 	closetext
 	end
@@ -149,13 +149,13 @@ PastRoute3HiddenPowerHerb:
 	hiddenitem POWER_HERB, EVENT_ROUTE_3_PAST_HIDDEN_POWER_HERB
 
 BeautyLinaText:
-	text "I plan on going"
-	line "shopping in the"
-	cont "with all the prize"
+	text "I'm going shopping"
+	line "in the city with"
+	cont "all the prize"
 	cont "money I've won."
 
-	para "I'll have plenty of"
-	line "money after I win"
+	para "I'll have plenty"
+	line "after I win"
 	cont "against you!"
 	done
 
@@ -251,14 +251,14 @@ BugCatcherKevinAfterText:
 	cont "active!"
 	done
 
-LadDarrenText:
+LadChesterText:
 	text "Do you think a"
 	line "regular person"
 	cont "could have"
 	cont "PSYCHIC abilities?"
 	done
 
-LadDarrenWinText:
+LadChesterWinText:
 	text "I had a feeling"
 	line "that you would"
 	cont "beat me, but I"
@@ -266,7 +266,7 @@ LadDarrenWinText:
 	cont "the outcome."
 	done
 
-LadDarrenAfterText:
+LadChesterAfterText:
 	text "FAVIA TOWN"
 	line "attracts a lot of"
 	cont "#MON with"
@@ -355,7 +355,7 @@ PastRoute3_MapEvents:
 	object_event 27, 28, SPRITE_LASS, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassCathy, -1
 	object_event 10, 33, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerCamperWilson, -1
 	object_event 15, 31, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherKevin, -1
-	object_event 13, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLadDarren, -1
+	object_event 13, 22, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLadChester, -1
 	object_event 33, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 0, TrainerHikerWarrenSr, -1
 	object_event 27, 38, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerGentlemanNigel, -1
 	object_event  1, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PastRoute3Lemonade, EVENT_ROUTE_3_PAST_LEMONADE

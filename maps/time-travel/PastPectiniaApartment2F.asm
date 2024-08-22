@@ -9,10 +9,9 @@ PastPectiniaApartment2FPokefan:
 	jumptextfaceplayer PastPectiniaApartment2FPokefanText
 
 PastPectiniaApartment2FPokefanText:
-	text "Do you know what"
-	line "the problem is"
-	cont "with people these"
-	cont "days is?"
+	text "Do you know the"
+	line "problem with"
+	cont "people these days?"
 
 	para "Nobody ever talks"
 	line "anymore. They'd"

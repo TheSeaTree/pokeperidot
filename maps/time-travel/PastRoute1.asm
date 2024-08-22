@@ -12,13 +12,13 @@ PastRoute1_MapScripts:
 
 	db 0 ; callbacks
 
-TrainerBirdKeeperChester:
-	trainer BIRD_KEEPER, CHESTER, EVENT_BEAT_BIRD_KEEPER_CHESTER, BirdKeeperChesterText, BirdKeeperChesterWinText, 0, .Script
+TrainerBirdKeeperDarren:
+	trainer BIRD_KEEPER, DARREN, EVENT_BEAT_BIRD_KEEPER_DARREN, BirdKeeperDarrenText, BirdKeeperDarrenWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext BirdKeeperChesterAfterText
+	writetext BirdKeeperDarrenAfterText
 	waitbutton
 	closetext
 	end	
@@ -105,19 +105,19 @@ PastRoute1HiddenMysteryBerry:
 PastRoute1HiddenCoarseCharm:
 	hiddenitem COARSE_CHARM, EVENT_ROUTE_1_PAST_HIDDEN_COARSE_CHARM
 
-BirdKeeperChesterText:
+BirdKeeperDarrenText:
 	text "I hatched all of"
 	line "my bird #MON"
 	cont "from EGGs!"
 	done
 
-BirdKeeperChesterWinText:
+BirdKeeperDarrenWinText:
 	text "Don't worry, I've"
 	line "got more EGGs"
 	cont "ready to hatch!"
 	done
 
-BirdKeeperChesterAfterText:
+BirdKeeperDarrenAfterText:
 	text "My prized NATU"
 	line "came out of its"
 	cont "EGG knowing some"
@@ -197,7 +197,7 @@ PastRoute1_MapEvents:
 	bg_event  9, 29, BGEVENT_ITEM, PastRoute1HiddenCoarseCharm
 
 	db 7 ; object events
-	object_event 17, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperChester, -1
+	object_event 17, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperDarren, -1
 	object_event 36, 14, SPRITE_FISHER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerFisherMark, -1
 	object_event 19, 19, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinAli, -1
 	object_event 19, 18, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLia, -1

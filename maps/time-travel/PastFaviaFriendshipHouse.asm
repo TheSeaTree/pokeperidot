@@ -10,7 +10,7 @@ PastFaviaFriendshipHouseTeacher:
 
 PastFaviaFriendshipHouseTeacherText:
 	text "My husband is an"
-	line "excellnt #MON"
+	line "excellent #MON"
 	cont "trainer."
 
 	para "His schoolhouse"

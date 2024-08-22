@@ -26,7 +26,7 @@ Route21GateNidoqueen:
 Route21GateOfficerText:
 	text "A HIKER friend of"
 	line "mine made the"
-	cont "ledge on ROUTE 19."
+	cont "ledge on ROUTE 21."
 
 	para "Haha! It saves me"
 	line "the trouble of"
@@ -38,7 +38,7 @@ Route21GateCooltrainerFText:
 	text "Did you see the"
 	line "#MON battle"
 	cont "NIDOQUEEN and I"
-	cont "had on ROUTE 21?"
+	cont "had on ROUTE 22?"
 
 	para "It was totally"
 	line "cool! We won even"

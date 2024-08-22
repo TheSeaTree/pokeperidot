@@ -447,7 +447,8 @@ TrainerCooltrainenrMMitchAfterText:
 
 TrainerPicnickerGiaText:
 	text "I wish we could"
-	line "outdoor classes."
+	line "have some classes"
+	cont "outside."
 
 	para "It would feel so"
 	line "much nicer to"

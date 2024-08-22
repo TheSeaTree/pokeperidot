@@ -103,6 +103,7 @@ SailorDaleAfterText:
 	para "It's right on the"
 	line "other side of"
 	cont "these woods!"
+	done
 
 PsychicRossText:
 	text "Some strange new"

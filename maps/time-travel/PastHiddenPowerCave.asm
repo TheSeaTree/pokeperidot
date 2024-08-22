@@ -114,7 +114,7 @@ PastHiddenPowerCaveScientistAskText:
 	
 PastHiddenPowerCaveScientistReturnText:
 	text "Okay! I will acti-"
-	line "vate your thether"
+	line "vate your tether"
 	cont "right away!"
 	done
 	

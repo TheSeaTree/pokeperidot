@@ -197,7 +197,7 @@ CHRIS EQU __enum__
 	const DEVIN
 	const JULES
 	const LAWRENCE
-	const DARREN
+	const CHESTER
 
 	trainerclass SCHOOLBOY ; 17
 	const TIMMY
@@ -222,7 +222,7 @@ CHRIS EQU __enum__
 	const SKY1_TRAINER1
 	const SKY2_TRAINER1
 	const SKY3_TRAINER1
-	const CHESTER
+	const DARREN
 
 	trainerclass LASS ; 19
 	const NICOLE
