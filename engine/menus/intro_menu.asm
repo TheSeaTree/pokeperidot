@@ -30,36 +30,8 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
-
-	if DEF(_SIMTEST)
-; Skip the intro dialogue for this test.
-; The player chooses their name and gender, and starts right away.
-	ld b, SCGB_GENDER_SELECTION
-	call GetSGBLayout
-	call SetPalettes
-
-	xor a
-	ld [wCurPartySpecies], a
-	farcall InitGender
-	farcall Intro_GetPlayerClass
-
-	ld b, SCGB_GENDER_SELECTION
-	call GetSGBLayout
-	call SetPalettes
-	call NamePlayer
-
-; Force every Pokemon to obey
-	ld hl, wStatusFlags
-	set STATUSFLAGS_HALL_OF_FAME_F, [hl]
-
-; Show BP display on trainer card
-	ld hl, wPokegearFlags
-	set TRAINER_CARD_BP_F, [hl]
-	else
-
 	call AreYouABoyOrAreYouAGirl
 	call OakSpeech
-	endc
 
 	ld a, POTION
 	ld [wCurItem], a
@@ -1412,7 +1384,6 @@ Copyright:
 	ld hl, vTiles1
 	lb bc, BANK(BoldFontGFX), $80
 	call Get1bpp
-	
 	xor a ; Display a warning screen on inaccurate emulators.
 	ldh [rSC], a
 	ldh a, [rSC]
@@ -1445,7 +1416,6 @@ Copyright:
 	ld b, SCGB_GAMEFREAK_LOGO
 	call GetSGBLayout
 	call SetPalettes
-	
 .skip_warning
 	hlcoord 1, 7
 	ld de, CopyrightString

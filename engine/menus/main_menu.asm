@@ -117,16 +117,6 @@ MainMenuJoypadLoop:
 	ret
 
 MainMenu_PrintCurrentTimeAndDay:
-if DEF(_SIMTEST)
-	hlcoord 4, 14
-	ld b, 2
-	ld c, 9
-	call TextBox
-	hlcoord 5, 16
-	ld de, .SimTest
-	call PlaceString
-	ret
-else
 	ld a, [wSaveFileExists]
 	and a
 	ret z
@@ -174,7 +164,6 @@ else
 	decoord 6, 16
 	farcall PrintHoursMins
 	ret
-endc
 
 .min
 ; unused
@@ -194,9 +183,6 @@ endc
 
 .TimeNotSet:
 	db "TIME NOT SET@"
-
-.SimTest:
-	db "SIMTEST 2@"
 
 .UnusedText:
 	; Clock time unknown
