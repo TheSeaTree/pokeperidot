@@ -1,10 +1,12 @@
 	const_def 2 ; object constants
+	const RESTTALKHOUSE_GRAMPS
+	const RESTTALKHOUSE_GRANNY
 
 AcroporaRestTalkHouse_MapScripts:
 	db 0 ; scene scripts
 
 	db 0 ; callbacks
-	
+
 RestTalkGrannyScript:
 	checktime NITE
 	iftrue .NiteScript
@@ -16,17 +18,17 @@ RestTalkGrannyScript:
 	waitbutton
 	verbosegiveitem TM_REST
 	setevent EVENT_GOT_TM_REST
-	waitbutton
-	
+
 .GotTM
 	writetext RestTalkGrannyAfter
 	waitbutton
 	closetext
 	end
-	
+
 .NiteScript:
+	showemote EMOTE_SLEEP, RESTTALKHOUSE_GRANNY, 15
 	jumptext RestTalkGrannyNiteText
-	
+
 RestTalkGrampsScript:
 	checktime NITE
 	iffalse .NotNite
@@ -41,18 +43,18 @@ RestTalkGrampsScript:
 	writetext RestTalkGrampsGiveTMSleepTalk
 	verbosegiveitem TM_SLEEP_TALK
 	setevent EVENT_GOT_TM_SLEEP_TALK
-	waitbutton
-	
+
 .GotTM
 	writetext RestTalkGrampsAfter
 	waitbutton
 .NoRest
 	closetext
 	end
-	
+
 .NotNite:
+	showemote EMOTE_SLEEP, RESTTALKHOUSE_GRAMPS, 15
 	jumptext RestTalkGrampsDayText
-	
+
 RestTalkGrannyDayText:
 	text "My lazy, good-for-"
 	line "nothing husband"

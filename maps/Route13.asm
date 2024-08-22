@@ -238,7 +238,6 @@ BlackGlassesGuy:
 	waitbutton
 	verbosegiveitem BLACKGLASSES
 	iffalse .NoRoom
-	waitbutton
 	closetext
 	setevent EVENT_GOT_BLACKGLASSES
 	end

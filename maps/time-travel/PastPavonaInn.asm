@@ -28,6 +28,23 @@ PastPavonaNurse:
 PastPavonaInnFisher:
 	jumptextfaceplayer PastPavonaInnFisherText
 
+PastPavonaInnSuperNerd:
+	faceplayer
+	opentext
+	writetext TimeTravelGuyAskText
+	yesorno
+	iffalse .Decline
+	writetext TimeTravelGuyAcceptText
+	waitbutton
+	closetext
+	end
+
+.Decline
+	writetext TimeTravelGuyDeclineText
+	waitbutton
+	closetext
+	end
+
 PastPavonaInnNurseText:
 	text "Hello, stranger."
 	
@@ -60,6 +77,26 @@ PastPavonaInnFisherText:
 	cont "go find it."
 	done
 
+TimeTravelGuyAskText:
+	text "You're a time trav-"
+	line "eler, aren't you?"
+	done
+
+TimeTravelGuyAcceptText:
+	text "Ha! Yes!"
+	line "I knew it!"
+	done
+
+TimeTravelGuyDeclineText:
+	text "Of course you are!"
+
+	para "You are traveling"
+	line "through time now!"
+
+	para "…At the speed of"
+	line "regular time."
+	done
+
 PastPavonaInn_MapEvents:
 	db 0, 0 ; filler
 
@@ -71,6 +108,7 @@ PastPavonaInn_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2, 1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastPavonaNurse, -1
 	object_event  7, 4, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PastPavonaInnFisher, -1
+	object_event  0,  5, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastPavonaInnSuperNerd, -1

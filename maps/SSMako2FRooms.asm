@@ -8,6 +8,7 @@
 	const SSMAKO2FROOMS_SUPER_NERD
 	const SSMAKO2FROOMS_BUENA_SLEEPING
 	const SSMAKO2FROOMS_CHAMPION
+	const SSMAKO2FROOMS_BUENA
 	const SSMAKO2FROOMS_COOLTRAINER_F_2
 	const SSMAKO2FROOMS_COOLTRAINER_M
 
@@ -70,8 +71,19 @@ TrainerCooltrainerFHeidy:
 	end
 
 TrainerBeautyErin:
-	trainer BEAUTY, ERIN, EVENT_BEAT_BEAUTY_ERIN, BeautyErinText, BeautyErinWinText, 0, .Script
-
+	checkevent EVENT_BEAT_BEAUTY_ERIN
+	iftrue .After
+	playmusic MUSIC_BEAUTY_ENCOUNTER
+	showemote EMOTE_SLEEP, SSMAKO2FROOMS_BUENA_SLEEPING, 30
+	opentext
+	writetext BeautyErinText
+	waitbutton
+	closetext
+	winlosstext BeautyErinWinText, 0
+	loadtrainer BEAUTY, ERIN
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_BEAUTY_ERIN
 .Script:
 	checkjustbattled
 	iffalse .After
@@ -553,7 +565,7 @@ SSMako2FRooms_MapEvents:
 	object_event  4, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerPokefanMHans, -1
 	object_event 16, 3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerCooltrainerFHeidy, -1
 	object_event 30, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerSuperNerdMax, -1
-	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 0, TrainerBeautyErin, -1
+	object_event 14, 14, SPRITE_BUENA_SLEEPING, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TrainerBeautyErin, -1
 	object_event 45,  5, SPRITE_JOSEPH, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsChampion, EVENT_BEAT_ELITE_FOUR
 	object_event 42,  4, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsBeauty, EVENT_BEAT_ELITE_FOUR
 	object_event 47,  8, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako2FRoomsCooltrainerF, EVENT_BEAT_ELITE_FOUR

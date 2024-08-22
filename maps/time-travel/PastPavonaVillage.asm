@@ -75,7 +75,7 @@ PastPavonaVillage_MapEvents:
 	bg_event 16,  5, BGEVENT_READ, PastPavonaVillageSign
 	bg_event 11, 11, BGEVENT_UP,   PastPavonaVillageMailbox
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 13,  7, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageLass, -1
 	object_event 23,  6, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageFisher, -1
 	object_event  7, 13, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastPavonaVillageHiker, -1

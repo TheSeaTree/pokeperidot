@@ -190,7 +190,6 @@ PickupHelixFossilEvent:
 	iffalse .no
 	verbosegiveitem HELIX_FOSSIL
 	iffalse .no
-	waitbutton
 	closetext
 	disappear ROUTE3_OMANYTE
 	applymovement ROUTE3_GRANT, HikerGrantTakeDomeFossil
@@ -217,7 +216,6 @@ PickupDomeFossilEvent:
 	iffalse .no
 	verbosegiveitem DOME_FOSSIL
 	iffalse .no
-	waitbutton
 	closetext
 	disappear ROUTE3_KABUTO
 	applymovement ROUTE3_GRANT, HikerGrantTakeHelixFossil

@@ -266,7 +266,6 @@ BurglarHideoutB2FScientist:
 	waitbutton
 	verbosegiveitem MASTER_BALL
 	iffalse .NoRoom
-	waitbutton
 	setevent EVENT_GOT_MASTER_BALL
 .GotMasterBall
 	writetext BurglarHideoutB2FScientistAfterText

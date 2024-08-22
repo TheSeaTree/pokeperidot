@@ -23,7 +23,6 @@ Route7FaviaGateScientistScript:
 	waitbutton
 	verbosegiveitem EXP_SHARE
 	iffalse .noroom
-	waitbutton
 	setevent EVENT_GOT_EXP_SHARE
 .gotit
 	writetext Route7FaviaGateScientistAfterText

@@ -65,7 +65,6 @@ FaviaHappinessRaterPokefanMScript:
 	writetext FaviaHappinessRaterGiveTMReturn
 	waitbutton
 	verbosegiveitem TM_RETURN
-	waitbutton
 	setevent EVENT_GOT_TM_RETURN
 	writetext FaviaHappinessRaterPokefanMText
 	waitbutton
