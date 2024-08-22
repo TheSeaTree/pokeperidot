@@ -69,7 +69,7 @@ ItemDescriptions:
 	dw BackdoorKeyDesc
 	dw VIPTicketDesc
 	dw EngineKeyDesc
-	dw ClearBellDesc
+	dw SeaMapDesc
 	dw SilverWingDesc
 	dw MoomooMilkDesc
 	dw QuickClawDesc
@@ -133,7 +133,7 @@ ItemDescriptions:
 	dw StardustDesc
 	dw StarPieceDesc
 	dw BasementKeyDesc
-	dw SeaMapDesc
+	dw OldSeaMapDesc
 	dw HeatRockDesc
 	dw SmoothRockDesc
 	dw PowerHerbDesc
@@ -532,9 +532,9 @@ EngineKeyDesc:
 	db   "S.S. MAKO engine"
 	next "access key.@"
 
-ClearBellDesc:
-	db   "Makes a gentle"
-	next "ringing.@"
+OldSeaMapDesc:
+	db   "A barely-legible"
+	next "map.@"
 
 SilverWingDesc:
 	db   "A strange, silver-"

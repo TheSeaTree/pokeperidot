@@ -28,6 +28,32 @@ PastFaviaNurse:
 PastFaviaInnYoungster:
 	jumptextfaceplayer PastFaviaInnYoungsterText
 
+PastFaviaInnSailor:
+	faceplayer
+	opentext
+	checkevent EVENT_EXCHANGED_SEA_MAP
+	iftrue .AlreadyTraded
+	checkitem OLD_SEA_MAP
+	iffalse .NoSeaMap
+	writetext PastFaviaInnSailorNoticeMapText
+	waitbutton
+	writetext PastFaviaInnPlayerExchangeMapText
+	waitbutton
+	takeitem OLD_SEA_MAP
+	setevent EVENT_EXCHANGED_SEA_MAP
+	verbosegiveitem SEA_MAP
+.AlreadyTraded
+	writetext PastFaviaInnSailorAfterMapText
+	waitbutton
+	closetext
+	end
+
+.NoSeaMap
+	writetext PastFaviaInnSailorNoMapText
+	waitbutton
+	closetext
+	end
+
 PastFaviaInnNurseText:
 	text "Hello, stranger."
 	
@@ -57,6 +83,65 @@ PastFaviaInnYoungsterText:
 	cont "ing."
 	done
 
+PastFaviaInnSailorNoMapText:
+	text "I be landlocked"
+	line "right now."
+
+	para "I dream of seeing"
+	line "the open sea with"
+	cont "me own two eyes."
+
+	para "Some day I will"
+	line "have a ship of"
+	cont "me very own, and I"
+	cont "will go where me"
+	cont "SEA MAP points to."
+	done
+
+PastFaviaInnSailorNoticeMapText:
+	text "Hm… That map ye'"
+	line "got there…"
+
+	para "I think I have one"
+	line "just like it!"
+
+	para "Have ye' ever"
+	line "sailed upon the"
+	cont "open sea?"
+
+	para "……………………"
+
+	para "Aye? Since I be"
+	line "landlocked, I"
+	cont "insist ye' take my"
+	cont "SEA MAP."
+
+	para "This old one ain't"
+	line "gonna be doin' ye'"
+	cont "any good!"
+
+	para "Allow me to take"
+	line "it off ye' hands."
+	done
+
+PastFaviaInnPlayerExchangeMapText:
+	text "<PLAYER> gave away"
+	line "the OLD SEA MAP."
+
+	para "In exchange…"
+	done
+
+PastFaviaInnSailorAfterMapText:
+	text "I hope ye' can get"
+	line "plenty 'a use out"
+	cont "of my old SEA MAP."
+
+	para "You wouldn't 'a"
+	line "gotten very far"
+	cont "with that ragged"
+	cont "old one."
+	done
+
 PastFaviaInn_MapEvents:
 	db 0, 0 ; filler
 
@@ -68,6 +153,7 @@ PastFaviaInn_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  2, 1, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastFaviaNurse, -1
-	object_event  7,  5, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastFaviaInnYoungster, -1
+	object_event  7,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PastFaviaInnYoungster, -1
+	object_event  4,  5, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PastFaviaInnSailor, -1

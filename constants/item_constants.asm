@@ -75,7 +75,7 @@
 	const BACKDOOR_KEY ; 43
 	const VIP_TICKET   ; 44
 	const ENGINE_KEY   ; 45
-	const CLEAR_BELL   ; 46
+	const SEA_MAP      ; 46
 	const SILVER_WING  ; 47
 	const MOOMOO_MILK  ; 48
 	const QUICK_CLAW   ; 49
@@ -139,7 +139,7 @@
 	const STARDUST     ; 83
 	const STAR_PIECE   ; 84
 	const BASEMENT_KEY ; 85
-	const SEA_MAP      ; 86
+	const OLD_SEA_MAP  ; 86
 	const HEAT_CHARM   ; 87
 	const COARSE_CHARM ; 88
 	const POWER_HERB   ; 89

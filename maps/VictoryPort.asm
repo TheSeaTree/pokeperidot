@@ -45,7 +45,7 @@ VictoryPort_MapScripts:
 .CheckSeaMap
 	checkevent EVENT_SHOWED_SEA_MAP_TO_CAPTAIN
 	iftrue .ShowShip
-	checkevent EVENT_FOUND_SEA_MAP
+	checkevent EVENT_EXCHANGED_SEA_MAP
 	iffalse .Nope
 	checkitem SEA_MAP
 	iffalse .Nope
@@ -122,7 +122,7 @@ VictoryPortCaptainScript:
 VictoryPortCaptain2Script:
 	faceplayer
 	opentext
-	checkevent EVENT_FOUND_SEA_MAP
+	checkevent EVENT_EXCHANGED_SEA_MAP
 	iffalse .NoShip
 	checkevent EVENT_SHOWED_SEA_MAP_TO_CAPTAIN
 	iftrue .AlreadyMet
