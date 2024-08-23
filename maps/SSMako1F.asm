@@ -14,6 +14,8 @@ SSMako1F_MapScripts:
 	db 0 ; callbacks
 	
 .DummyScene0:
+;	writecode VAR_MOVEMENT, PLAYER_NORMAL
+;	special ReplaceKrisSprite
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
 	setmapscene SS_MAKO_LOWER_DECK, SCENE_SSMAKOLOWERDECK_DEFAULT
@@ -35,7 +37,7 @@ FangirlBagStolenLeft:
 	appear SSMAKO_BURGLAR	
 	moveobject SSMAKO_FANGIRL, 14, 2
 	appear SSMAKO_FANGIRL
-	
+
 	applymovement SSMAKO_BURGLAR, ShipBurglarCrash
 	playsound SFX_TACKLE
 	applymovement PLAYER, ShipPlayerCrashLeft
@@ -338,12 +340,12 @@ ShipFangirlApproach:
 	step DOWN
 	step DOWN
 	step DOWN
-	step_resume
+	step_end
 	
 ShipFangirlApproach2:
 	run_step DOWN
 	run_step DOWN
-	step_resume
+	step_end
 
 SSMakoSailorStepDown:
 	step DOWN
