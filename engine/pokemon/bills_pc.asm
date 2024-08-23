@@ -1693,7 +1693,7 @@ BillsPC_CheckLevelInPast:
 
 	ld a, [wTempMonLevel]
 	push af
-	cp PAST_LEVEL
+	cp PAST_LEVEL + 1
 
 	jr nc, .invalid
 	pop af
