@@ -33,6 +33,6 @@ RoamMaps:
 	roam_map MOLTEN_PEAK_OUTSIDE, ROUTE_17
 	roam_map ROUTE_17, ROUTE_16
 	roam_map ROUTE_16, ROUTE_12
-	roam_map ROUTE_12, ACROPORA_CITY
-	roam_map ACROPORA_CITY, ROUTE_17
+	roam_map ROUTE_12, ROUTE_15
+	roam_map ROUTE_15, ROUTE_17
 	db -1 ; end
