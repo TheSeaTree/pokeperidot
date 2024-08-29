@@ -256,7 +256,7 @@ DevelopersPeridotTrophyText:
 	para "It says here it is"
 	line "awarded for win-"
 	cont "ning against a"
-	cont "SUBWAY ACE at the"
+	cont "SUBWAY ACE on the"
 	cont "BATTLE SUBWAY."
 	done
 
@@ -276,9 +276,10 @@ DevelopersNoteText:
 
 	para "Also check out my"
 	line "maps featured in"
-	cont "AD MORTEM, 400"
-	cont "Minutes of /vr/,"
-	cont "and HFFM.”"
+	cont "2048 Units of"
+	cont "/vr/, AD MORTEM,"
+	cont "400 Minutes of"
+	cont "/vr/, and HFFM.”"
 	done
 
 DevelopersTVText:
