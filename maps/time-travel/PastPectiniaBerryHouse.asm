@@ -33,7 +33,7 @@ PastPectiniaBerryHouseCooltrainerText:
 
 	para "I'll work so hard"
 	line "to make sure the"
-	cont "flowers and BERRIES"
+	cont "flowers and trees"
 	cont "last for as long"
 	cont "as possible!"
 	done

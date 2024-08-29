@@ -300,9 +300,9 @@ DuaneRematchText:
 	para "Do not waste my"
 	line "time with talk…"
 
-	para "It is time for me"
-	line "to see how strong"
-	cont "CHAMPION truly is!"
+	para "Let me see how"
+	line "strong a CHAMPION"
+	cont "truly is!"
 	done
 
 DuaneRematchWinText:

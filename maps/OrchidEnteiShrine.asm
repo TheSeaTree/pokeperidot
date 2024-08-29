@@ -287,8 +287,6 @@ MachampTournamentTest:
 	writetext OrchidEnteiShrineRematchRewardText
 	waitbutton
 	verbosegiveitem STARDUST, 3
-	playsound SFX_ITEM
-	waitsfx
 	iffalse .NoRoom
 	closetext
 	end

@@ -227,14 +227,14 @@ Route6LassText:
 	line "was standing here,"
 	cont "I saw the most am-"
 	cont "azing thing!"
-	
+
 	para "A gigantic #MON"
 	line "emerged from the"
 	cont "ocean and flew"
 	cont "away with sparkl-"
 	cont "ing wings of"
 	cont "SILVER."
-	
+
 	para "I have vowed to"
 	line "stay right here"
 	cont "until I see that"
@@ -271,7 +271,7 @@ Route6_MapEvents:
 	object_event 48, 13, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorJeremy, -1
 	object_event 50, 15, SPRITE_SAILOR, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorMiles, -1
 	object_event 57, 14, SPRITE_SAILOR, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSailorRoland, -1
-	object_event 18,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route6LassScript, EVENT_FOUGHT_LUGIA
+	object_event 18,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Route6LassScript, EVENT_ROAMING_BIRDS
 	object_event 14, 27, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, EVENT_GOT_TM_TELEPORT
 	object_event 13, 26, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1
 	object_event 14, 24, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route6Rock, -1

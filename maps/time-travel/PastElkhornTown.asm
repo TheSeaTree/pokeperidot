@@ -72,4 +72,4 @@ PastElkhornTown_MapEvents:
 
 	db 2 ; object events
 	object_event  7,  7, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornTownLass, -1
-	object_event 20, 18, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornTownSuperNerd, -1
+	object_event 17, 12, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 3, 3, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PastElkhornTownSuperNerd, -1

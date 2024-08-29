@@ -265,7 +265,7 @@ PastRoute10SchoolhouseTeacherWinText:
 
 PastRoute10SchoolhouseTeacherGiveHomeworkText:
 	text "Could I ask a"
-	line "a favor of you?"
+	line "favor of you?"
 
 	para "I have a student"
 	line "who hasn't been in"

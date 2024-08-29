@@ -12,9 +12,9 @@ SeaRoute5_MapScripts:
 	callback MAPCALLBACK_OBJECTS, .LugiaGirl
 	callback MAPCALLBACK_NEWMAP, .ResetBoulders
 	callback MAPCALLBACK_TILES, .SmashWall
-	
+
 .LugiaGirl
-	checkevent EVENT_FOUGHT_LUGIA
+	checkevent EVENT_ROAMING_BIRDS
 	iffalse .done
 	moveobject SEAROUTE5_LASS2, 6, 13
 	appear SEAROUTE5_LASS2
@@ -88,7 +88,24 @@ SandstormGuy:
 	end
 	
 SeaRoute5LugiaGirl:
-	jumptextfaceplayer SeaRoute5LugiaGirlText
+	faceplayer
+	opentext
+	checkevent EVENT_CAUGHT_ARTICUNO
+	iffalse .NoLugia
+	checkevent EVENT_CAUGHT_ZAPDOS
+	iffalse .NoLugia
+	checkevent EVENT_CAUGHT_MOLTRES
+	iffalse .NoLugia
+	writetext SeaRoute5LugiaGirlAfterText
+	waitbutton
+	closetext
+	end
+
+.NoLugia
+	writetext SeaRoute5LugiaGirlText
+	waitbutton
+	closetext
+	end
 
 SwimmerGlennText:
 	text "Careful, kid!"
@@ -186,6 +203,19 @@ SeaRoute5LugiaGirlText:
 	cont "COAST."
 	done
 
+SeaRoute5LugiaGirlAfterText:
+	text "I saw it!"
+
+	para "I saw the #MON"
+	line "with the SILVER"
+	cont "WINGS dive back"
+	cont "into the sea!"
+
+	para "I wish I had my"
+	line "camera! No one"
+	cont "will believe me!"
+	done
+
 SeaRoute5_MapEvents:
 	db 0, 0 ; filler
 
@@ -202,5 +232,5 @@ SeaRoute5_MapEvents:
 	object_event 17,  9, SPRITE_SWIMMER_GIRL, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerSwimmerMiranda, -1
 	object_event 22, 22, SPRITE_SWIMMER_GUY, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 4, TrainerSwimmerGlenn, -1
 	object_event 32, 12, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SandstormGuy, -1
-	object_event 12, 30, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_FOUGHT_LUGIA
+	object_event 12, 30, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_ROAMING_BIRDS
 	object_event 43,  0, SPRITE_BUENA, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, SeaRoute5LugiaGirl, -1

@@ -19,9 +19,9 @@ PectiniaGym_MapScripts:
 	
 PectiniaGymMurphyScript:
 	faceplayer
-	opentext
 	checkevent EVENT_BEAT_ELITE_FOUR
 	iftrue .Rematch
+	opentext
 	checkevent EVENT_BEAT_MURPHY
 	iftrue .FightDone
 	writetext MurphyText_INeverLose
