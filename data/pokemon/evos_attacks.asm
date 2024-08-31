@@ -1640,9 +1640,9 @@ KrabbyEvosAttacks:
 	db 21, METAL_CLAW
 	db 25, HEADBUTT
 	db 29, PROTECT
-	db 31, GUILLOTINE
+	db 31, CRABHAMMER
 	db 35, BODY_SLAM
-	db 41, CRABHAMMER
+	db 41, GUILLOTINE
 	db 45, FLAIL
 	db 0 ; no more level-up moves
 
@@ -1767,7 +1767,7 @@ MarowakEvosAttacks:
 	db 53, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
-HitmonleeEvosAttacks: ; Concher
+ConcherEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, HARDEN
 	db 1, SUPERSONIC
