@@ -49,6 +49,9 @@ DeveloperScript:
 	reloadmapafterbattle
 	setflag ENGINE_BATTLED_DEVELOPER
 .Loop
+	copybytetovar wLegendariesSpawned
+	ifequal 11, .NoLegendaries
+
 	random 11
 	ifequal  1, .Zapdos
 	ifequal  2, .Moltres
@@ -61,23 +64,29 @@ DeveloperScript:
 	ifequal  9, .Lugia
 	ifequal 10, .Celebi
 
+	copybytetovar wRoamMon1MapGroup
+	ifnotequal GROUP_N_A, .IncreaseCount
 	special InitRoamArticuno
 	pokenamemem ARTICUNO, MEM_BUFFER_0
-	jump .RespawnLegendary
+	jump .RespawnArticunoEntei
 
 .Zapdos
+	copybytetovar wRoamMon2MapGroup
+	ifnotequal GROUP_N_A, .IncreaseCount
 	special InitRoamZapdos
 	pokenamemem ZAPDOS, MEM_BUFFER_0
 	jump .RespawnLegendary
 
 .Moltres
+	copybytetovar wRoamMon3MapGroup
+	ifnotequal GROUP_N_A, .IncreaseCount
 	special InitRoamMoltres
 	pokenamemem MOLTRES, MEM_BUFFER_0
 	jump .RespawnLegendary
 
 .Mewtwo
 	checkevent EVENT_CAUGHT_MEWTWO
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_FOUGHT_MEWTWO
 	clearevent EVENT_CAUGHT_MEWTWO
 	pokenamemem MEWTWO, MEM_BUFFER_0
@@ -85,7 +94,7 @@ DeveloperScript:
 
 .Mew
 	checkevent EVENT_CAUGHT_MEW
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_FOUGHT_MEW
 	clearevent EVENT_CAUGHT_MEW
 	pokenamemem MEW, MEM_BUFFER_0
@@ -93,7 +102,7 @@ DeveloperScript:
 
 .Raikou
 	checkevent EVENT_CAUGHT_RAIKOU
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_HIDE_RAIKOU
 	clearevent EVENT_CAUGHT_RAIKOU
 	pokenamemem RAIKOU, MEM_BUFFER_0
@@ -101,15 +110,15 @@ DeveloperScript:
 
 .Entei
 	checkevent EVENT_CAUGHT_ENTEI
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_HIDE_ENTEI
 	clearevent EVENT_CAUGHT_ENTEI
 	pokenamemem ENTEI, MEM_BUFFER_0
-	jump .RespawnLegendary
+	jump .RespawnArticunoEntei
 
 .Suicune
 	checkevent EVENT_CAUGHT_SUICUNE
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_HIDE_SUICUNE
 	clearevent EVENT_CAUGHT_SUICUNE
 	pokenamemem SUICUNE, MEM_BUFFER_0
@@ -117,7 +126,7 @@ DeveloperScript:
 
 .HoOh
 	checkevent EVENT_CAUGHT_HO_OH
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_FOUGHT_HO_OH
 	clearevent EVENT_CAUGHT_HO_OH
 	pokenamemem HO_OH, MEM_BUFFER_0
@@ -125,7 +134,7 @@ DeveloperScript:
 
 .Lugia
 	checkevent EVENT_CAUGHT_LUGIA
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_FOUGHT_LUGIA
 	clearevent EVENT_CAUGHT_LUGIA
 	pokenamemem LUGIA, MEM_BUFFER_0
@@ -133,17 +142,35 @@ DeveloperScript:
 
 .Celebi
 	checkevent EVENT_CAUGHT_CELEBI
-	iftrue .Loop
+	iffalse .IncreaseCount
 	clearevent EVENT_FOUGHT_CELEBI
 	clearevent EVENT_CAUGHT_CELEBI
 	pokenamemem CELEBI, MEM_BUFFER_0
 .RespawnLegendary
+	loadvar wLegendariesSpawned, 0
 	opentext
 	writetext DeveloperLegendaryRespawnText
 	waitbutton
 	closetext
 	end
 
+.RespawnArticunoEntei
+	loadvar wLegendariesSpawned, 0
+	opentext
+	writetext DeveloperArticunoEnteiRespawnText
+	waitbutton
+	closetext
+	end
+
+.IncreaseCount
+	copybytetovar wLegendariesSpawned
+	addvar 1
+	copyvartobyte wLegendariesSpawned
+	jump .Loop
+
+.NoLegendaries
+	loadvar wLegendariesSpawned, 0
+	opentext
 .AfterBattle
 	writetext DeveloperAfterText
 	waitbutton
@@ -234,6 +261,18 @@ DeveloperWinText:
 DeveloperLegendaryRespawnText:
 	text "Have you heard"
 	line "that a @"
+	text_ram wStringBuffer3
+	text "<CONT>was spotted in the"
+	cont "wild recently?"
+
+	para "I thought you"
+	line "might want to"
+	cont "check it out."
+	done
+
+DeveloperArticunoEnteiRespawnText:
+	text "Have you heard"
+	line "that an @"
 	text_ram wStringBuffer3
 	text "<CONT>was spotted in the"
 	cont "wild recently?"

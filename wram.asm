@@ -2675,8 +2675,9 @@ wErinFightCount::    	db ; unused
 wTreasuresTraded::		db
 wTrickMirrorCount::    	db
 wTrickMirrorCompare::  	db
+wLegendariesSpawned::	db
 
-	ds 97
+	ds 96
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c
