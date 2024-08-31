@@ -1,5 +1,6 @@
 GivePokerusAndConvertBerries:
 	call ConvertBerriesToBerryJuice
+	call ConvertBerriesToBlackSludge
 	ld hl, wPartyMon1PokerusStatus
 	ld a, [wPartyCount]
 	ld b, a
@@ -125,11 +126,6 @@ GivePokerusAndConvertBerries:
 	ret
 
 ConvertBerriesToBerryJuice:
-; If we haven't been to Goldenrod City at least once,
-; prevent Shuckle from turning held Berry into Berry Juice.
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS_POKEDEX_F, [hl]
-	ret z
 	call Random
 	cp 6 percent + 1 ; 1/16 chance
 	ret nc
@@ -158,6 +154,40 @@ ConvertBerriesToBerryJuice:
 
 .convertToJuice
 	ld a, BERRY_JUICE
+	ld [hl], a
+	pop hl
+	pop af
+	ret
+
+ConvertBerriesToBlackSludge:
+	call Random
+	cp 6 percent + 1 ; 1/16 chance
+	ret nc
+	ld hl, wPartyMons
+	ld a, [wPartyCount]
+.partyMonLoop
+	push af
+	push hl
+	ld a, [hl]
+	cp MUK
+	jr nz, .loopMon
+	ld bc, MON_ITEM
+	add hl, bc
+	ld a, [hl]
+	cp BERRY
+	jr z, .convertToJuice
+
+.loopMon
+	pop hl
+	ld bc, PARTYMON_STRUCT_LENGTH
+	add hl, bc
+	pop af
+	dec a
+	jr nz, .partyMonLoop
+	ret
+
+.convertToJuice
+	ld a, BLACK_SLUDGE
 	ld [hl], a
 	pop hl
 	pop af
