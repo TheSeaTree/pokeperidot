@@ -1,12 +1,12 @@
 	const_def 2 ; object constants
 	const ORCHIDENTEISHRINE_GYM_GUY
 	const ORCHIDENTEISHRINE_BLACKBELT1
-	const ORCHIDENTEISHRINE_BLACKBELT2 ; Nicholas
-	const ORCHIDENTEISHRINE_BLACKBELT3 ; Jamie
-	const ORCHIDENTEISHRINE_BLACKBELT4 ; Liam
-	const ORCHIDENTEISHRINE_BLACKBELT5 ; Lily
-	const ORCHIDENTEISHRINE_BLACKBELT6 ; Melissa
-	const ORCHIDENTEISHRINE_BLACKBELT7 ; Gus
+	const ORCHIDENTEISHRINE_BLACKBELT2
+	const ORCHIDENTEISHRINE_BLACKBELT3
+	const ORCHIDENTEISHRINE_BLACKBELT4
+	const ORCHIDENTEISHRINE_BLACKBELT5
+	const ORCHIDENTEISHRINE_BLACKBELT6
+	const ORCHIDENTEISHRINE_BLACKBELT7
 	const ORCHIDENTEISHRINE_MACHAMP
 	const ORCHIDENTEISHRINE_ELDER
 	const ORCHIDENTEISHRINE_BLACKBELT_DUMMY_2
@@ -269,12 +269,20 @@ MachampTournamentTest:
 	writetext OrchidEnteiShrineDeclinedText
 	waitbutton
 	closetext
+	checkcode VAR_YCOORD
+	ifequal 21, .PlayerStepDown
 	end
 
 .RematchDeclined:
 	writetext OrchidEnteiShrineRematchDeclinedText
 	waitbutton
 	closetext
+	checkcode VAR_YCOORD
+	ifequal 21, .PlayerStepDown
+	end
+
+.PlayerStepDown
+	applymovement PLAYER, EnteiShinePlayerStepDownMovement
 	end
 
 .WonRematch:
@@ -356,7 +364,6 @@ EnteiShrineGymGuyReEnterTournament:
 	turnobject ORCHIDENTEISHRINE_GYM_GUY, LEFT
 	turnobject PLAYER, RIGHT
 	scall MachampTournamentTest
-	applymovement PLAYER, EnteiShinePlayerStepDownMovement
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	end
 
@@ -542,7 +549,7 @@ EnteiShrineBlackbelt6Movement:
 	step LEFT
 	step DOWN
 	step DOWN
-	step_end
+	step_resume
 
 EnteiShrineBlackbelt7Movement:
 	step LEFT
