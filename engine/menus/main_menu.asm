@@ -31,8 +31,7 @@ MainMenu:
 	ret
 
 .VersionString:
-	db "v2.0.0"
-	next "   RC2@"
+	db "v2.0.0@"
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
