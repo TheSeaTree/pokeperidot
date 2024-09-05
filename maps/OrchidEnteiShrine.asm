@@ -257,6 +257,9 @@ MachampTournamentTest:
 	writetext OrchidEnteiShrineAfterTournamentText
 	waitbutton
 	closetext
+	checkcode VAR_FACING
+	ifnotequal RIGHT, .NoEntei
+	applymovement PLAYER, EnteiShinePlayerStepDownMovement
 	end
 
 .NoEntei:
@@ -286,6 +289,7 @@ MachampTournamentTest:
 	end
 
 .WonRematch:
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
 	setscene SCENE_ORCHIDENTEISHRINE_FINISHED
 	writetext OrchidEnteiShrineWonRematchText
 	waitbutton
@@ -972,7 +976,7 @@ OrchidEnteiShrine_MapEvents:
 	coord_event 11, 22, SCENE_ORCHIDENTEISHRINE_DEFAULT, EnteiShrineGymGuyBlockLeft
 	coord_event 12, 22, SCENE_ORCHIDENTEISHRINE_DEFAULT, EnteiShrineGymGuyBlockRight
 	coord_event 11, 21, SCENE_ORCHIDENTEISHRINE_CHALLENGE, EnteiShrineGymGuyReEnterTournament
-	coord_event 11, 21, SCENE_ORCHIDENTEISHRINE_FINISHED, EnteiShrineResetScene
+	coord_event 11, 22, SCENE_ORCHIDENTEISHRINE_FINISHED, EnteiShrineResetScene
 	coord_event 10,  4, SCENE_ORCHIDENTEISHRINE_CHALLENGE, OrchidEnteiShrineCantLeave
 	coord_event 11,  4, SCENE_ORCHIDENTEISHRINE_CHALLENGE, OrchidEnteiShrineCantLeave
 	coord_event 12,  4, SCENE_ORCHIDENTEISHRINE_CHALLENGE, OrchidEnteiShrineCantLeave
