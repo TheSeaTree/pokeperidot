@@ -10,9 +10,9 @@ InitializeSafariZone:
 InitializeExtendedSafariZone:
 	ld a, 45
 	ld [wSafariBallsRemaining], a
-	ld a, 999 / $100
+	ld a, 500 / $100
 	ld [wSafariStepsRemaining], a
-	ld a, 999 % $100
+	ld a, 500 % $100
 	ld [wSafariStepsRemaining + 1], a
 	; fallthrough
 ContinueInitializeSafariZone:
