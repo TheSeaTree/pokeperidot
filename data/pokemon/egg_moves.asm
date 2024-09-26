@@ -741,6 +741,7 @@ DratiniEggMoves:
 	db COIL
 	db DIVE_BOMB
 	db DRAGON_RAGE
+	db EXTREMESPEED
 	db FIRE_SPIN
 	db HAZE
 	db HYDRO_PUMP
