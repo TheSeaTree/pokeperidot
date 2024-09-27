@@ -3712,6 +3712,7 @@ MagcargoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SMOG
 	db 1, BODY_PRESS
+	db 1, FIRE_SPIN
 	db 6, EMBER
 	db 8, ROCK_THROW
 	db 13, HARDEN
