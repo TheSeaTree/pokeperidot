@@ -65,7 +65,10 @@ TrainerHouseBattleRegistration:
 	stopfollow
 	applymovement PLAYER, TrainerHousePlayerApproachMovement
 	setscene SCENE_FINISHED
-	warpcheck
+	playsound SFX_ENTER_DOOR
+	special FadeOutPalettes
+	waitsfx
+	warpfacing UP, TRAINER_HOUSE, 2, 9
 	end
 	
 .NotEnoughMoney

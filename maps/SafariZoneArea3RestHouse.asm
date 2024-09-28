@@ -41,7 +41,7 @@ SafariArea3RestHouseCooltrainerF:
 	waitbutton
 	playsound SFX_GOT_SAFARI_BALLS
 	writetext SafariArea3RestHousePlayerReturnItemsText
-	waitsfx
+	waitbutton
 	takeitem X_SPEED
 	takeitem MAX_ETHER
 	takeitem FULL_RESTORE

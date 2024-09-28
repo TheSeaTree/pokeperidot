@@ -83,10 +83,13 @@ FaviaTown_MapScripts:
 DayCareManStopPlayer:
 	faceobject PLAYER, ROUTE34_GRAMPS
 	scall DayCareManScript_Outside
-	setscene SCENE_DEFAULT
 	end
 
 DayCareManScript_Outside:
+	checkscene
+	ifequal SCENE_FINISHED, .DontChangeScene
+	setscene SCENE_DEFAULT
+.DontChangeScene
 	faceplayer
 	opentext
 	special DayCareManOutside
