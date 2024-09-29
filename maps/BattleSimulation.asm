@@ -369,6 +369,8 @@ BattleSimulationTimeMachineGuy:
 	closetext
 
 	applymovement PLAYER, BattleSimulationTimeMachineEnterMovement
+	playsound SFX_ENTER_DOOR
+	waitsfx
 
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationTimeMachineActivate
 	playsound SFX_BOOT_PC
