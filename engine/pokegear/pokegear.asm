@@ -663,6 +663,8 @@ PokegearMap_UpdateLandmarkName:
 	jr z, .NoSignal
 	cp GENESIS_ISLAND
 	jr z, .NoSignal
+	cp THE_PAST
+	jr z, .NoSignal
 	pop af
 
 	ld e, a
