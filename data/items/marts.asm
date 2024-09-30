@@ -354,12 +354,10 @@ MartSaffron:
 	db -1 ; end
 
 MartMtMoon:
-	db 5 ; # items
-	db POKE_DOLL
-	db FRESH_WATER
-	db SODA_POP
-	db LEMONADE
-	db REPEL
+	db 3 ; # items
+	db BLACKGLASSES
+	db BLACKBELT
+	db SOFT_SAND
 	db -1 ; end
 
 MartPokemonLeague:
