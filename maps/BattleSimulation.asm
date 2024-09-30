@@ -572,10 +572,12 @@ BattleSimGrantBP:
 .CheckBoss
 	writetext BattleSimulationRewardText
 	waitbutton
+	writetext BattleSimPlayerGotBPText
 	checkevent EVENT_BATTLE_SIM_DEFEATED_BOSS
 	iffalse .End
 	writetext BattleSimulationBossRewardText
 	waitbutton
+	writetext BattleSimPlayerGotBossBPText
 	givecoins 11
 .End
 	closetext
@@ -850,6 +852,15 @@ BattleSimulationRewardText:
 	text " BP."
 	done
 
+BattleSimPlayerGotBPText:
+	text "<PLAYER> received"
+	line "@"
+	deciram wScriptVar, 1, 3
+	text " BP!@"
+	sound_item
+	text_waitbutton
+	text_end
+
 BattleSimulationBossRewardText:
 	text "And for clearing"
 	line "the battle against"
@@ -857,6 +868,13 @@ BattleSimulationBossRewardText:
 	cont "have earned 11"
 	cont "additional BP!"
 	done
+
+BattleSimPlayerGotBossBPText:
+	text "<PLAYER> received"
+	line "11 BP!"
+	sound_item
+	text_waitbutton
+	text_end
 
 BattleSimulationComeAgainText:
 	text "We hope you take"

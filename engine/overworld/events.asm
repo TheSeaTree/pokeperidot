@@ -341,9 +341,16 @@ CheckTileEvent:
 
 .warp_tile
 	ld a, [wPlayerStandingTile]
+	cp COLL_TERMINAL
+	jr z, .no_sound
 	call CheckPitTile
 	jr nz, .not_pit
 	ld a, PLAYEREVENT_FALL
+	scf
+	ret
+
+.no_sound
+	ld a, PLAYEREVENT_WARP_SILENT
 	scf
 	ret
 
@@ -1050,6 +1057,7 @@ PlayerEventScriptPointers:
 	dba Script_OverworldWhiteout ; PLAYEREVENT_WHITEOUT
 	dba HatchEggScript           ; PLAYEREVENT_HATCH
 	dba ChangeDirectionScript    ; PLAYEREVENT_JOYCHANGEFACING
+	dba WapToNewMapSilentScript  ; PLAYEREVENT_WARP_SILENT
 	dba Invalid_0x96c2d          ; (NUM_PLAYER_EVENTS)
 
 Invalid_0x96c2d:
@@ -1064,6 +1072,10 @@ HatchEggScript:
 
 WarpToNewMapScript:
 	warpsound
+	newloadmap MAPSETUP_DOOR
+	end
+
+WapToNewMapSilentScript:
 	newloadmap MAPSETUP_DOOR
 	end
 

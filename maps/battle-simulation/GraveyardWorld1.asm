@@ -164,6 +164,7 @@ GraveyardSwitch1:
 	iftrue .Reset
 	changeblock 14, 16, $1e
 	changeblock  0, 14, $6f
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	reloadmappart
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_1
 .Decline
@@ -189,6 +190,7 @@ GraveyardSwitch2:
 	iftrue .Reset
 	changeblock 14,  4, $71
 	changeblock  6,  6, $6f
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	reloadmappart
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_2
 .Decline
@@ -215,6 +217,7 @@ GraveyardSwitch3:
 	iftrue .Reset
 	changeblock  6, 12, $35
 	changeblock 10, 10, $6f
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	reloadmappart
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_3
 .Decline
@@ -240,6 +243,7 @@ GraveyardSwitch4:
 	iftrue .Reset
 	changeblock 12,  2, $1e
 	changeblock  6, 16, $6f
+	playsound SFX_PLACE_PUZZLE_PIECE_DOWN
 	reloadmappart
 	setevent EVENT_BATTLE_SIM_GRAVE_GATE_4
 .Decline

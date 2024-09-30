@@ -66,7 +66,7 @@ COLL_BUTTON            EQU $68 ; unused
 COLL_WARP_CARPET_DOWN  EQU $70
 COLL_DOOR              EQU $71
 COLL_LADDER            EQU $72
-COLL_STAIRCASE_73      EQU $73 ; unused
+COLL_TERMINAL          EQU $73
 COLL_CAVE_74           EQU $74 ; unused
 COLL_DOOR_75           EQU $75 ; unused
 COLL_WARP_CARPET_LEFT  EQU $76
