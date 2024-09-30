@@ -71,6 +71,8 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene3:
+	playsound SFX_EXIT_BUILDING
+	waitsfx
 	moveobject BATTLESIMULATION_SCIENTIST1, 8, 8
 	appear BATTLESIMULATION_SCIENTIST1
 	applymovement PLAYER, BattleSimulationPlayerStepDown
