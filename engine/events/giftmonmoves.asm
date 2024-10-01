@@ -415,7 +415,7 @@ BattleSimGiftMon:
 .Moveset4:
 	db LOCK_ON
 	db BLIZZARD
-	db ZAP_CANNON
+	db THUNDER
 	db RECOVER
 	db 0
 
