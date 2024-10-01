@@ -848,10 +848,10 @@ Movement_SafariZone_Leave:
 
 BattleSimExitWarpScript:
 	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
-	playsound SFX_WARP_FROM
 	special FadeOutPalettes
-	waitsfx
 	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	playsound SFX_WARP_FROM
+	waitsfx
 	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
 	end
 

@@ -9,17 +9,15 @@ Script_OverworldWhiteout::
 Script_Whiteout:
 	writetext .WhitedOutText
 	waitbutton
+	checkflag ENGINE_BATTLE_SIMULATION_ACTIVE
+	iftrue .battle_sim
+	callasm CheckTimeTravel
+	iftrue .time_travel
 	special FadeOutPalettes
 	pause 40
 	special HealParty
 ;	checkflag ENGINE_SAFARI_GAME_ACTIVE
 ;	iftrue .safari_zone
-
-	checkflag ENGINE_BATTLE_SIMULATION_ACTIVE
-	iftrue .battle_sim
-
-	callasm CheckTimeTravel
-	iftrue .time_travel
 
 	checkcode VAR_BATTLETYPE
 	ifequal BATTLETYPE_NOCASH, .NoMoney
@@ -40,6 +38,7 @@ Script_Whiteout:
 	jumpstd battlesimexitwarp
 
 .time_travel
+	special HealParty
 	jumpstd timetravelwarp
 
 .WhitedOutText:

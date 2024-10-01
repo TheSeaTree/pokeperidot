@@ -29,10 +29,8 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene2:
-	playsound SFX_WARP_FROM
-	waitsfx
 	playsound SFX_SHUT_DOWN_PC
-	waitsfx
+	wait 6
 	playsound SFX_MENU
 	waitsfx
 	writecode VAR_MOVEMENT, PLAYER_NORMAL
@@ -463,7 +461,7 @@ BattleSimItemball:
 BattleSimMoveRelearner:
 	faceplayer
 	opentext
-	special SpecialMoveRelearner
+	special SimulationMoveRelearner
 	waitbutton
 	closetext
 	end
@@ -521,6 +519,7 @@ BattleSimHealer:
 BattleSimGrantBP:
 	opentext
 	copybytetovar wBlueCardBalance
+	ifequal 0, .NoPoints
 	ifequal 1, .SinglePoint
 	writetext BattleSimulationChallengeEndedText
 	waitbutton
@@ -579,7 +578,16 @@ BattleSimGrantBP:
 	waitbutton
 	writetext BattleSimPlayerGotBossBPText
 	givecoins 11
+	playsound SFX_ITEM
+	waitbutton
 .End
+	closetext
+	end
+
+.NoPoints
+	writetext BattleSimulationChallengeEndedNoPointsText
+	playsound SFX_QUIT_SLOTS
+	waitsfx
 	closetext
 	end
 
@@ -845,6 +853,15 @@ BattleSimulationChallengeEndedSinglePointText:
 	text " POINT."
 	done
 
+BattleSimulationChallengeEndedNoPointsText:
+	text "Your run ended"
+	line "with you gaining"
+	cont "0 POINTs…"
+
+	para "Sorry, better luck"
+	line "next time."
+	done
+
 BattleSimulationRewardText:
 	text "Meaning you have"
 	line "earned @"
@@ -872,9 +889,7 @@ BattleSimulationBossRewardText:
 BattleSimPlayerGotBossBPText:
 	text "<PLAYER> received"
 	line "11 BP!"
-	sound_item
-	text_waitbutton
-	text_end
+	done
 
 BattleSimulationComeAgainText:
 	text "We hope you take"

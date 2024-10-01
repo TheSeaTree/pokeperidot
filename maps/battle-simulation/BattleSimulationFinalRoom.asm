@@ -11,6 +11,7 @@ BattleSimulationMaple:
 	faceplayer
 	special HealParty
 	writetext BattleSimulationMapleChallengeText
+	waitbutton
 	winlosstext BattleSimulationMapleWinText, 0
 	random 4
 	ifequal 1, .Maple2
@@ -33,10 +34,14 @@ BattleSimulationMaple:
 	ifnotequal $0, .Loss
 	setevent EVENT_BATTLE_SIM_DEFEATED_BOSS
 .Loss
+	playsound SFX_WARP_TO
 	special FadeOutPalettes
+	waitsfx
 	setmapscene BATTLE_SIMULATION, SCENE_BATTLESIMULATION_FINISHED
 	writecode VAR_MOVEMENT, PLAYER_HEADSET
 	special ReplaceKrisSprite
+	playsound SFX_WARP_FROM
+	waitsfx
 	warpfacing DOWN, BATTLE_SIMULATION, 8, 6
 	end
 
@@ -53,6 +58,8 @@ BattleSimulationMapleChallengeText:
 	line "me, you will have"
 	cont "won the BATTLE"
 	cont "SIMULATION!"
+
+	para "Get ready!"
 	done
 
 BattleSimulationMapleWinText:
