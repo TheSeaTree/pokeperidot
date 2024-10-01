@@ -2231,6 +2231,12 @@ AI_Smart_Earthquake:
 	ret
 
 AI_Smart_BatonPass:
+; Never use this move if there is nothing to switch to.
+	push hl
+	farcall FindAliveEnemyMons
+	pop hl
+	jp c, AIBadWeatherType
+
 ; 80% chance to discourage this move during the first turn of enemy's Pokemon.
 	ld a, [wEnemyTurnsTaken]
 	and a
