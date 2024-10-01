@@ -6665,6 +6665,12 @@ BattleCommand_TimeBasedHealContinue:
 	ld a, [wLinkMode]
 	and a
 	jr nz, .Weather
+; Don't factor in time of day during the Battle Subway or Simulation either.
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
+	jr nz, .Weather
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .Weather
 
 	ld a, [wTimeOfDay]
 	cp b

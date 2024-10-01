@@ -22,6 +22,11 @@ ReturnFromMapSetupScript::
 	ld [wCurLandmark], a
 
 .not_gate
+	; Do not display the map sign in the Battle Simulation room.
+	ld a, [wMapMusic]
+	cp MUSIC_MOBILE_CENTER
+	jr .dont_do_map_sign
+
 	ld hl, wEnteredMapFromContinue
 	bit 1, [hl]
 	res 1, [hl]

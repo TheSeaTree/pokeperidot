@@ -29,6 +29,8 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene2:
+	moveobject BATTLESIMULATION_SCIENTIST5, 6, 11
+	appear BATTLESIMULATION_SCIENTIST5
 	playsound SFX_SHUT_DOWN_PC
 	wait 6
 	playsound SFX_MENU
