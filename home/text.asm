@@ -350,12 +350,14 @@ PlaceEnemysName::
 	jr z, .subwayacejade
 	cp PERRY
 	jr z, .subwayaceperry
-	
+	cp PROFESSOR
+	jr z, .battlesimmaple
+
 	ld a, [wCurLandmark]
 	ld [wPrevLandmark], a
 	cp BATTLE_SIM
 	jr z, .battlesim
-
+.battlesimmaple
 	ld de, wOTClassName
 .continueclassname
 	call PlaceString
