@@ -72,10 +72,12 @@ BattleSimulation_MapScripts:
 
 .Scene3:
 	playsound SFX_EXIT_BUILDING
-	waitsfx
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	turnobject PLAYER, DOWN
+	special ReplaceKrisSprite
+	applymovement PLAYER, BattleSimulationPlayerStepDown
 	moveobject BATTLESIMULATION_SCIENTIST1, 8, 8
 	appear BATTLESIMULATION_SCIENTIST1
-	applymovement PLAYER, BattleSimulationPlayerStepDown
 	turnobject BATTLESIMULATION_SCIENTIST5, LEFT
 	showemote EMOTE_SHOCK, BATTLESIMULATION_SCIENTIST5, 15
 	applymovement BATTLESIMULATION_SCIENTIST5, BattleSimulationBlockEntrance

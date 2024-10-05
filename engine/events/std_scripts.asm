@@ -860,8 +860,8 @@ TimeTravelWarpScript:
 	playsound SFX_WARP_FROM
 	special FadeOutPalettes
 	waitsfx
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	warpfacing DOWN, BATTLE_SIMULATION, 2, 9
+	writecode VAR_MOVEMENT, PLAYER_HEADSET
+	warpfacing UP, BATTLE_SIMULATION, 2, 9
 	end
 
 SelectSimulationItemballEncounter:
