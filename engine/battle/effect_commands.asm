@@ -1773,6 +1773,7 @@ BattleCommand_CheckHit:
 	ret c
 
 .Miss:
+	call ResetDamage
 	ld a, 1
 	ld [wAttackMissed], a
 	ret
