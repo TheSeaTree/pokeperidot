@@ -190,7 +190,7 @@ TrainerClassAttributes:
 ; Teacherm
 	db NO_ITEM, NO_ITEM ; items
 	db 18 ; base reward
-	dw AI_BASIC | AI_OPPORTUNIST | AI_AGGRESSIVE | AI_STATUS
+	dw AI_BASIC | AI_OPPORTUNIST | AI_AGGRESSIVE | AI_STATUS | AI_SMART
 	dw CONTEXT_USE | SWITCH_SOMETIMES
 
 ; Gentleman

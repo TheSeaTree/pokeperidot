@@ -18,12 +18,15 @@ MaplesMother:
 	checkitem SCHOOLWORK
 	iffalse .NoSchoolwork
 	writetext MaplesMotherGiveSchoolworkText
+	waitbutton
 	turnobject PASTPAVONA_MAPLESMOM2, RIGHT
 	setevent EVENT_HIDE_MAPLES_MOTHER
 	clearevent EVENT_HIDE_CELEBI_BOOK
 	moveobject PASTPAVONA_NOTEBOOK, 3, 3
+	playsound SFX_GOT_SAFARI_BALLS
 	appear PASTPAVONA_NOTEBOOK
 	closetext
+	faceplayer
 	opentext
 	writetext MaplesMotherAfterSchoolworkText
 	waitbutton

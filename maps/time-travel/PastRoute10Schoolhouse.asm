@@ -28,6 +28,9 @@ PastRoute10SchoolhouseTeacher:
 	iffalse .Introduced
 	checkevent EVENT_BEAT_COOLTRAINERF_HANNAH
 	iffalse .Introduced
+	writetext PastRoute10SchoolhouseTeacherBeatenStudentsText
+	waitbutton
+	playmusic MUSIC_HIKER_ENCOUNTER
 	writetext PastRoute10SchoolhouseTeacherChallengeText
 	waitbutton
 	winlosstext PastRoute10SchoolhouseTeacherWinText, 0
@@ -248,10 +251,16 @@ PastRoute10SchoolhouseTeacherWaitingText:
 	cont "learned from me!"
 	done
 
-PastRoute10SchoolhouseTeacherChallengeText:
+PastRoute10SchoolhouseTeacherBeatenStudentsText:
 	text "Oh my! You've won"
 	line "against all of my"
 	cont "students!"
+	done
+
+PastRoute10SchoolhouseTeacherChallengeText:
+	text "Your last test"
+	line "will be a battle"
+	cont "against me!"
 	done
 
 PastRoute10SchoolhouseTeacherWinText:
@@ -268,8 +277,8 @@ PastRoute10SchoolhouseTeacherGiveHomeworkText:
 	line "favor of you?"
 
 	para "I have a student"
-	line "who hasn't been in"
-	cont "class for quite"
+	line "who has been"
+	cont "absent for quite"
 	cont "some time now."
 
 	para "Could you deliver"
