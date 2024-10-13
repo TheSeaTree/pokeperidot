@@ -1343,7 +1343,6 @@ UnknownText_0x1c5c44::
 PlayerPlayedTimeBell_Text::
 	text "<PLAYER> rang the"
 	line "TIME BELL.@"
-	text_waitbutton
 	text_end
 
 UnknownText_0x1c5c5e::

@@ -936,7 +936,7 @@ BossCelebiDisappearedScript:
 CelebiEncounterNoBattleScript:
 	opentext
 	farwritetext CelebiBossIntroText
-	writebyte CELEBI
+	cry CELEBI
 	waitbutton
 	farwritetext CelebiNoBattleText
 	waitbutton

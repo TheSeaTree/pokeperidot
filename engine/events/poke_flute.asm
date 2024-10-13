@@ -72,6 +72,7 @@ _TimeBell:
 	iffalse .NothingHappenedScript
 	checkevent EVENT_FOUGHT_BOSS_CELEBI
 	iftrue .NothingHappenedScript
+	closetext
 	farjump CelebiBoss4
 
 .NothingHappenedScript:
