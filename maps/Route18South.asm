@@ -33,7 +33,6 @@ Route18SouthWeatherCharmGuy:
 	waitbutton
 .BuyMenu
 	writetext Route18SouthWeatherCharmGuySellText
-	waitbutton
 	special PlaceMoneyTopRight
 	loadmenu .MenuHeader
 	verticalmenu
@@ -41,38 +40,56 @@ Route18SouthWeatherCharmGuy:
 	ifequal 1, .Heat
 	ifequal 2, .Damp
 	ifequal 3, .Coarse
-	jump .Goodbye
+	jump .Decline
 
 .Heat
 	checkmoney YOUR_MONEY, 1500
 	ifequal HAVE_LESS, .NotEnoughMoney
+
+	itemtotext HEAT_CHARM, MEM_BUFFER_0
+	writetext Route18SouthWeatherCharmGuyConfirmText
+	yesorno
+	iffalse .Decline
+
 	giveitem HEAT_CHARM, 5
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 1500
-	itemtotext HEAT_CHARM, MEM_BUFFER_0
+	special PlaceMoneyTopRight
 	jump .VendItem
 
 .Damp
 	checkmoney YOUR_MONEY, 1500
 	ifequal HAVE_LESS, .NotEnoughMoney
+
+	itemtotext DAMP_CHARM, MEM_BUFFER_0
+	writetext Route18SouthWeatherCharmGuyConfirmText
+	yesorno
+	iffalse .Decline
+
 	giveitem DAMP_CHARM, 5
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 1500
-	itemtotext DAMP_CHARM, MEM_BUFFER_0
+	special PlaceMoneyTopRight
 	jump .VendItem
 
 .Coarse
 	checkmoney YOUR_MONEY, 1500
 	ifequal HAVE_LESS, .NotEnoughMoney
+
+	itemtotext COARSE_CHARM, MEM_BUFFER_0
+	writetext Route18SouthWeatherCharmGuyConfirmText
+	yesorno
+	iffalse .Decline
+
 	giveitem COARSE_CHARM, 5
 	iffalse .NotEnoughSpace
 	takemoney YOUR_MONEY, 1500
-	itemtotext COARSE_CHARM, MEM_BUFFER_0
-	jump .VendItem
+	special PlaceMoneyTopRight
 
 .VendItem
 	writetext Route18SouthBuyCharmsText
-	waitbutton
+	playsound SFX_ITEM
+	waitsfx
 	setflag ENGINE_BOUGHT_CHARM_TODAY
 	jump .NotToday
 
@@ -93,18 +110,23 @@ Route18SouthWeatherCharmGuy:
 	closetext
 	end
 
+.Decline
+	writetext Route18SouthWeatherCharmGuyDeclineText
+	waitbutton
+	jump .Goodbye
+
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 2, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	menu_coords 4, 2, TEXTBOX_WIDTH - 1, TEXTBOX_Y - 1
 	dw .MenuData
 	db 1 ; default option
 
 .MenuData:
 	db STATICMENU_CURSOR ; flags
 	db 4 ; items
-	db "HEAT CHARM   ¥1500@"
-	db "DAMP CHARM   ¥1500@"
-	db "COARSE CHARM ¥1500@"
+	db "HEAT CHARM@"
+	db "DAMP CHARM@"
+	db "COARSE CHARM@"
 	db "CANCEL@"
 
 Route18SouthSign:
@@ -180,6 +202,28 @@ Route18SouthWeatherCharmGuySellText:
 	line "to make you some"
 	cont "CHARMs to change"
 	cont "the weather?"
+
+	para "A set of 5 will"
+	line "cost ¥1500."
+	done
+
+Route18SouthWeatherCharmGuyConfirmText:
+	text "You want the"
+	line "@"
+	text_from_ram wStringBuffer3
+	text "s?"
+
+	para "I can only make"
+	line "one set today."
+	done
+
+Route18SouthWeatherCharmGuyDeclineText:
+	text "Okay, but you'd"
+	line "better not wait"
+	cont "too long."
+
+	para "Someone else might"
+	line "want my CHARMs."
 	done
 
 Route18SouthWeatherCharmGuyNotEnoughMoneyText:
@@ -209,7 +253,6 @@ Route18SouthBuyCharmsText:
 	text "<PLAYER> received"
 	line "5 @"
 	text_from_ram wStringBuffer3
-	text_start
 	text "s!"
 	done
 
