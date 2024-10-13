@@ -19,6 +19,7 @@ MaplesMother:
 	iffalse .NoSchoolwork
 	writetext MaplesMotherGiveSchoolworkText
 	waitbutton
+	takeitem SCHOOLWORK
 	turnobject PASTPAVONA_MAPLESMOM2, RIGHT
 	setevent EVENT_HIDE_MAPLES_MOTHER
 	clearevent EVENT_HIDE_CELEBI_BOOK
