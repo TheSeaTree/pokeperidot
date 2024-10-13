@@ -147,12 +147,15 @@ LostLandScientist:
 	setflag ENGINE_LOST_LAND_VISITED
 	setscene SCENE_LOSTLAND_AERODACTYL
 	end
-	
+
 LostLandScientistAfter:
 	faceplayer
 	opentext
+	checkevent EVENT_LOST_LAND_GOT_OLD_AMBER
+	iftrue .GotOldAmber
 	checkevent EVENT_LOST_LAND_WAITING_OLD_AMBER
 	iftrue .TryGiveOldAmber
+.GotOldAmber
 	writetext LostLandScientistAfterText
 	waitbutton
 	closetext
