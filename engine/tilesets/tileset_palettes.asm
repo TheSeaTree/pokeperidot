@@ -49,8 +49,12 @@ LoadSpecialMapPalette:
 	jp z, .gamecorner
 	cp  TILESET_CYBERSPACE
 	jp z, .cyberspace
-	ld a, [wCurLandmark]
-	cp GENESIS_ISLAND
+
+	ld a, [wMapGroup]
+	cp GROUP_GENESIS_ISLAND
+	jr nz, .do_nothing
+	ld a, [wMapNumber]
+	cp MAP_GENESIS_ISLAND
 	jp z, .genesisisland
 
 .do_nothing

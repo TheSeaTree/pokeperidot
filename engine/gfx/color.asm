@@ -1283,10 +1283,21 @@ LoadMapPals:
 	cp TILESET_LOST_LAND
 	jr z, .volcano
 
-	ld a, [wCurLandmark]
-	cp GENESIS_ISLAND
+	ld a, [wMapGroup]
+	cp GROUP_GENESIS_ISLAND_INSIDE
+	jr nz, .next
+
+	ld a, [wMapNumber]
+	cp MAP_GENESIS_ISLAND_INSIDE
 	jr z, .genesis_island
-	cp THE_PAST
+
+.next
+	ld a, [wMapGroup]
+	cp GROUP_PAST_ROUTE_10_HOUSE_2
+	jr nz, .regular_pals
+
+	ld a, [wMapNumber]
+	cp MAP_PAST_ROUTE_10_HOUSE_2
 	jr z, .past
 
 .regular_pals
