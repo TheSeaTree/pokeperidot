@@ -3,7 +3,7 @@
 
 	db   "Said to rest qui-"
 	next "etly in an"
-	next "undiscovered cave,"
+	next "abandoned lab,"
 
 	page "this #MON was"
 	next "created solely for"
