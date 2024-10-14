@@ -23,10 +23,15 @@ ReturnFromMapSetupScript::
 
 .not_gate
 	; Do not display the map sign in the Battle Simulation room.
-	ld a, [wMapMusic]
-	cp MUSIC_MOBILE_CENTER
-	jr .dont_do_map_sign
+	ld a, [wMapGroup]
+	cp GROUP_BATTLE_SIMULATION
+	jr nz, .not_battle_sim
 
+	ld a, [wMapNumber]
+	cp MAP_BATTLE_SIMULATION
+	jr z, .dont_do_map_sign
+
+.not_battle_sim
 	ld hl, wEnteredMapFromContinue
 	bit 1, [hl]
 	res 1, [hl]
