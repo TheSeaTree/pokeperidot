@@ -31,7 +31,7 @@ TentacruelsDenBossFight:
 	opentext
 	writetext TentacruelsDenBossText
 	cry TENTACRUEL
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon TENTACRUEL, 60
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS

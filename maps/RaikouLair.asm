@@ -11,7 +11,6 @@ Raikou:
 	writetext RaikouText
 	cry RAIKOU
 	waitsfx
-;	waitbutton
 	closetext
 	special LegendaryEvent_SetBattleType
 	loadwildmon RAIKOU, 40

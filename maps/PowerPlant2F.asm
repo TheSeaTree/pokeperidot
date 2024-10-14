@@ -83,7 +83,7 @@ PowerPlant2FGrimer7:
 	opentext
 	writetext PowerPlant1FGrimerText
 	cry GRIMER
-	waitbutton
+	waitsfx
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 25
@@ -98,7 +98,7 @@ PowerPlant2FGrimerBattle:
 	opentext
 	writetext PowerPlant1FGrimerText
 	cry GRIMER
-	waitbutton
+	waitsfx
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 28

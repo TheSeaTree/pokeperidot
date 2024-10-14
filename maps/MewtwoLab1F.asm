@@ -29,7 +29,6 @@ Mewtwo:
 	writetext MewtwoText
 	cry MEWTWO
 	waitsfx
-	waitbutton
 	closetext
 	special LegendaryEvent_SetBattleType
 	loadwildmon MEWTWO, 70

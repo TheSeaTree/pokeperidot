@@ -636,7 +636,7 @@ Route11AssistantGotRootBadge:
 	para "I think KANGASKHAN"
 	line "could smell"
 	cont "POSEY's scent on"
-	cont "your badge-"
+	cont "your BADGE-"
 	done
 	
 Route11KangaskhanWantsSomething:

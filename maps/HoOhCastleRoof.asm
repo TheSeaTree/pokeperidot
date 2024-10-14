@@ -40,7 +40,6 @@ HoOh:
 	writetext HoOhText
 	cry HO_OH
 	waitsfx
-	waitbutton
 	closetext
 	special LegendaryEvent_SetBattleType
 	loadwildmon HO_OH, 70

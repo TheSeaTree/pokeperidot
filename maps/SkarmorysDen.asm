@@ -21,7 +21,7 @@ SkarmorysDenSkarmory:
 	opentext
 	writetext SkarmorysDenSkarmoryText
 	cry SKARMORY
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon SKARMORY, 60
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS

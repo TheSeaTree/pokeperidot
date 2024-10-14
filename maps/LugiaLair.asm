@@ -27,7 +27,6 @@ Lugia:
 	writetext LugiaText
 	cry LUGIA
 	waitsfx
-	waitbutton
 	closetext
 	checkevent EVENT_CAUGHT_ARTICUNO
 	iffalse .BossLugia

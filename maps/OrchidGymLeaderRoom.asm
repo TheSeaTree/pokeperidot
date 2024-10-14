@@ -197,7 +197,7 @@ EnyaExplainTMText:
 	done
 
 EnyaAfterText:
-	text "With my badge, you"
+	text "With my BADGE, you"
 	line "now have enough to"
 	cont "travel to the"
 	cont "#MON LEAGUE."

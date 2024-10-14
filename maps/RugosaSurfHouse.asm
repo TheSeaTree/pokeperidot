@@ -68,7 +68,7 @@ RugosaSurfGuyGiveSurf:
 	line "I told you no-"
 	
 	para "…Hang on. You have"
-	line "how many badges?"
+	line "how many BADGEs?"
 	
 	para "6? That's more than"
 	line "me!"
@@ -96,7 +96,7 @@ RugosaSurfGuyExplain:
 	
 	para "Head back east if"
 	line "you want to coll-"
-	cont "ect more badges."
+	cont "ect more BADGEs."
 	done
 	
 RugosaSurfHouseFisher1:

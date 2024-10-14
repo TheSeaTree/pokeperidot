@@ -183,7 +183,6 @@ Mew:
 	writetext MewText
 	cry MEW
 	waitsfx
-	waitbutton
 	closetext
 	special LegendaryEvent_SetBattleType
 	loadwildmon MEW, 70

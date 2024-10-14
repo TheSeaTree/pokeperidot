@@ -256,7 +256,7 @@ WhitneyShouldntBeSoSeriousText:
 	line "exceeded my expec-"
 	cont "tations."
 	
-	para "Take my badge and"
+	para "Take my BADGE and"
 	line "leave this place."
 	done
 

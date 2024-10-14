@@ -205,7 +205,7 @@ TheBoneyard1FMarowakScript:
 	waitbutton
 	writetext TheBoneyard1FMarowakText
 	cry MAROWAK
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon MAROWAK, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS

@@ -42,7 +42,7 @@ LostLandAerodactyl:
 	opentext
 	writetext LostLandAerodactylText
 	cry AERODACTYL
-	waitbutton
+	waitsfx
 	closetext
 	setlasttalked LOSTLAND_AERODACTYL
 	loadwildmon AERODACTYL, 65

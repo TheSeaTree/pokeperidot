@@ -180,7 +180,7 @@ RugosaCityGrimerBattle:
 	opentext
 	writetext RugosaCityGrimerText
 	cry GRIMER
-	waitbutton
+	waitsfx
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 35

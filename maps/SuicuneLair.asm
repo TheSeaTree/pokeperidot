@@ -11,7 +11,6 @@ Suicune:
 	writetext SuicuneText
 	cry SUICUNE
 	waitsfx
-;	waitbutton
 	closetext
 	special LegendaryEvent_SetBattleType
 	loadwildmon SUICUNE, 40

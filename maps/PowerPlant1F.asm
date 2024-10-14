@@ -50,7 +50,7 @@ PowerPlant1FGrimerBattle:
 	opentext
 	writetext PowerPlant1FGrimerText
 	cry GRIMER
-	waitbutton
+	waitsfx
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 28
@@ -62,7 +62,7 @@ PowerPlant1FMuk:
 	opentext
 	writetext PowerPlant1FMukText
 	cry MUK
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon MUK, 35
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS

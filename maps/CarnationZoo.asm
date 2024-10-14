@@ -480,7 +480,7 @@ CarnationZooFangirlVisitedSafariText:
 	line "short break before"
 	cont "heading to ORCHID"
 	cont "CITY for my final"
-	cont "badge."
+	cont "BADGE."
 	
 	para "Have you been to"
 	line "the SAFARI ZONE?"

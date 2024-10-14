@@ -739,7 +739,7 @@ MomTerraBadgeText:
 
 	para "Be careful, babe!"
 	line "I know you can win"
-	cont "that city's badge!"
+	cont "that city's BADGE!"
 	done
 
 MomAllBadgesText:

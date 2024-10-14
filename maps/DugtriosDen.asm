@@ -70,7 +70,7 @@ DugtriosDenDugtrioBoss:
 	opentext
 	writetext DugtriosDenDugtrioText
 	cry DUGTRIO
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon DUGTRIO, 60
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
@@ -108,7 +108,7 @@ DugtriosDenDiglettBattle:
 	opentext
 	writetext DugtriosDenDiglettText
 	cry DIGLETT
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon DIGLETT, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS

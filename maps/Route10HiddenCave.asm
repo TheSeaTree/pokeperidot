@@ -86,7 +86,7 @@ Route10CaveGengar:
 	opentext
 	writetext Route10CaveGengarText
 	cry GENGAR
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon GENGAR, 60
 	writecode VAR_BATTLETYPE, BATTLETYPE_BOSS
@@ -127,7 +127,7 @@ LoadHaunterBattle:
 	opentext
 	writetext Route10CaveHaunterText
 	cry HAUNTER
-	waitbutton
+	waitsfx
 	closetext
 	loadwildmon HAUNTER, 40
 	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP

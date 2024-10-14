@@ -319,7 +319,7 @@ Route14DaughterNoticeBadges:
 	line "have pinned to"
 	cont "your jacket…"
 	
-	para "Are those badges?"
+	para "Are those BADGEs?"
 	
 	para "Grandpa would have"
 	line "to let me go out"

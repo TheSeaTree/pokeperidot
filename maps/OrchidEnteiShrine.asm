@@ -317,7 +317,7 @@ OrchidEnteiShineBossMachamp:
 	opentext
 	writetext OrchidEnteiShrineMachampText
 	cry MACHAMP
-	waitbutton
+	waitsfx
 	closetext
 	checkevent EVENT_ENTEI_SHRINE_RUBY_PENDANT
 	iftrue .FoughtMachamp

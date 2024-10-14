@@ -271,7 +271,7 @@ Text_ReceivedFistBadge:
 	done
 
 MurphyText_FistBadgeSpeech:
-	text "With that badge,"
+	text "With that BADGE,"
 	line "any #MON up to"
 	cont "Lv30 will obey"
 	cont "your orders."

@@ -11,6 +11,9 @@ Route2PectiniaGateOfficerScript:
 Route2PectiniaGateCooltrainerFScript:
 	jumptextfaceplayer Route2PectiniaGateCooltrainerFText
 
+Route2PectiniaGateYoungsterScript:
+	jumptextfaceplayer Route2PectiniaGateYoungsterText
+
 Route2PectiniaGateOfficerText:
 	text "Up ahead is"
 	line "PECTINIA CITY."
@@ -32,6 +35,17 @@ Route2PectiniaGateCooltrainerFText:
 	cont "#MON!"
 	done
 
+Route2PectiniaGateYoungsterText:
+	text "My #MON has"
+	line "gotten strong, but"
+	cont "it doesn't listen"
+	cont "to me anymore!"
+
+	para "I bet it will"
+	line "respect me when"
+	cont "I get a new BADGE!"
+	done
+
 Route2PectiniaGate_MapEvents:
 	db 0, 0 ; filler
 
@@ -45,6 +59,7 @@ Route2PectiniaGate_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  5,  2, SPRITE_OFFICER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route2PectiniaGateOfficerScript, -1
 	object_event  1,  2, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route2PectiniaGateCooltrainerFScript, -1
+	object_event  8,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route2PectiniaGateYoungsterScript, -1
