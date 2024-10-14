@@ -922,7 +922,7 @@ BossCelebiIntroScript:
 	opentext
 	farwritetext CelebiBossIntroText
 	cry CELEBI
-	waitbutton
+	waitsfx
 	closetext
 	end
 
@@ -937,7 +937,7 @@ CelebiEncounterNoBattleScript:
 	opentext
 	farwritetext CelebiBossIntroText
 	cry CELEBI
-	waitbutton
+	waitsfx
 	farwritetext CelebiNoBattleText
 	waitbutton
 	closetext
