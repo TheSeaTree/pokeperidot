@@ -511,7 +511,7 @@ ProfessorMapleSrAideCheckAllUnown:
 
 ProfessorMapleSrAideAllUnownText:
 	text "Oh my! Have you"
-	cont "done it? You have!"
+	line "done it? You have!"
 
 	para "You have cataloged"
 	line "every UNOWN form!"
