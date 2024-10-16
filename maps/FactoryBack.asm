@@ -57,7 +57,7 @@ FactoryBack_MapEvents:
 	warp_event  4, 15, FACTORY_1F, 9
 	warp_event  7,  0, ORIENTEM_FOREST, 5
 
-	db 1 ; coord events
+	db 2 ; coord events
 	bg_event  4,  1, BGEVENT_UP, FactoryBackVendingMachine
 	bg_event  8, 14, BGEVENT_ITEM, FactoryBackHiddenLureBall
 

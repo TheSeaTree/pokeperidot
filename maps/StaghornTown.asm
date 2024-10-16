@@ -159,7 +159,7 @@ StaghornGymLeaderAwayText:
 	line "try paying a visit"
 	cont "to her #MON"
 	cont "shelter, it's"
-	cont "right on ROUTE 12,"
+	cont "right on ROUTE 11,"
 	cont "you can't miss it!"
 	done
 
