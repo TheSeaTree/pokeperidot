@@ -4895,9 +4895,6 @@ BattleCommand_LegendaryStatsBoost:
 ; Speed
 	call BattleCommand_SpeedUp2
 
-; Evasion
-	jp BattleCommand_EvasionUp
-
 ResetMiss:
 	xor a
 	ld [wAttackMissed], a
