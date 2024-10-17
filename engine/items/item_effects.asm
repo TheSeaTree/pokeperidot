@@ -243,8 +243,13 @@ PokeBallEffect:
 	ld a, [wEnemyMonCatchRate]
 	ld b, a
 	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, .catch_without_fail
+	cp BATTLETYPE_SAFARI
+	jr nz, .check_master_ball
+	push hl
+	farcall BattleCheckEnemyShininess
+	pop hl
+	jp c, .catch_without_fail
+.check_master_ball
 	ld a, [wCurItem]
 	cp MASTER_BALL
 	jp z, .catch_without_fail
@@ -809,6 +814,8 @@ CyberBallMultiplier:
 	ret
 
 SafariBallMultiplier:
+	
+	jp c, Reset
 GreatBallMultiplier:
 ParkBallMultiplier:
 ; multiply catch rate by 1.5
