@@ -3340,13 +3340,13 @@ BattleTowerMons7:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 70 ; Level
 	db 0, 0 ; Status
-	bigdw 237 ; HP
-	bigdw 237 ; Max HP
+	bigdw 257 ; HP
+	bigdw 257 ; Max HP
 	bigdw 200 ; Atk
 	bigdw 205 ; Def
-	bigdw 161 ; Spd
+	bigdw 140 ; Spd
 	bigdw 182 ; SAtk
-	bigdw 140 ; SDef
+	bigdw 168 ; SDef
 	db "SIyaWA-ZU@@"
 
 	db UMBREON

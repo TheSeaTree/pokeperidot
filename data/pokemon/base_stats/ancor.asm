@@ -1,6 +1,6 @@
 	db ANCOR ; 055
 
-	db  70,  95, 100,  65,  80,  50
+	db  80,  95, 100,  50,  80,  70
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, STEEL ; type
