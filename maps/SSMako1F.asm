@@ -388,8 +388,8 @@ SSMako1F_MapEvents:
 	coord_event 15,  2, SCENE_SSMAKO1F_FINISHED, PlayerBoardSSMako
 	coord_event 14,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenLeft
 	coord_event 15,  7, SCENE_SSMAKO1F_DEFAULT, FangirlBagStolenRight
-	coord_event 14,  7, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
-	coord_event 15,  7, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
+	coord_event 14,  6, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
+	coord_event 15,  6, SCENE_SSMAKO1F_FOLLOWING, SSMakoNoTurningBack
 	coord_event 20, 17, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport1
 	coord_event 21, 16, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport1
 	coord_event 20, 15, SCENE_SSMAKO1F_DEFAULT, FangirlTeleport1
