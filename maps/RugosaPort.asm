@@ -52,6 +52,9 @@ RugosaPortCaptainScript:
 	iftrue .Postgame
 	checkevent EVENT_RUGOSA_COAST_SHOWED_BADGES
 	iftrue .Boarding
+;	These two lines are a failsafe for the Emily follower.
+	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_DEFAULT
+	clearevent EVENT_SS_MAKO_RESPAWN
 	checkcode VAR_BADGES
 	ifequal 8, .FirstTime
 	writetext RugosaPortCaptainText

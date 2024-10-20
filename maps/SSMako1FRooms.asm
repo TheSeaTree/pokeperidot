@@ -15,12 +15,10 @@ SSMako1FRooms_MapScripts:
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_OBJECTS, .Respawn
-	
+
 .DummyScene0:
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
-	checkevent EVENT_BEAT_TEACHER_ILENE
-	iffalse .DummyScene1
-	turnobject SSMAKO1FROOMS_TEACHER, RIGHT
+	end
 
 .DummyScene1:
 .DummyScene2:
@@ -30,43 +28,47 @@ SSMako1FRooms_MapScripts:
 	checkevent EVENT_SS_MAKO_RESPAWN
 	iffalse .End
 	moveobject SSMAKO1FROOMS_FANGIRL, 1, 1
-	jump RoomsFangirlContinueFolow
+	jump RoomsFangirlContinueFollow
 .End
 	return
 
 RoomsFangirlTeleport1:
+; Set scene for each of these because it won't work otherwise.
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 1, 0
-	jump RoomsFangirlContinueFolow
-	
+	jump RoomsFangirlContinueFollow
+
 RoomsFangirlTeleport2:
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 10, 0
-	jump RoomsFangirlContinueFolow
+	jump RoomsFangirlContinueFollow
 	
 RoomsFangirlTeleport3:
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 20, 0
-	jump RoomsFangirlContinueFolow
+	jump RoomsFangirlContinueFollow
 	
 RoomsFangirlTeleport4:
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 0, 15
-	jump RoomsFangirlContinueFolow
+	jump RoomsFangirlContinueFollow
 	
 RoomsFangirlTeleport5:
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 10, 15
-	jump RoomsFangirlContinueFolow
+	jump RoomsFangirlContinueFollow
 	
 RoomsFangirlTeleport6:
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	moveobject SSMAKO1FROOMS_FANGIRL, 20, 15
-	jump RoomsFangirlContinueFolow
 
-RoomsFangirlContinueFolow:
+RoomsFangirlContinueFollow:
 	appear SSMAKO1FROOMS_FANGIRL
 	follow PLAYER, SSMAKO1FROOMS_FANGIRL
-	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_SS_MAKO_RESPAWN
 	end
-	
+
 SSMako1FRoomsFangirl:
 	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
 	iftrue .After
@@ -588,4 +590,4 @@ SSMako1FRooms_MapEvents:
 	object_event 20, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinJan, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 21, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinAnne, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event  1, 13, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerSuperNerdHerbert, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
-	object_event 11, 12, SPRITE_FANGIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 1, SSMako1FRoomsFangirl, EVENT_HIDE_SS_MAKO_FANGIRL
+	object_event 11, 12, SPRITE_FANGIRL, SPRITEMOVEDATA_WANDER, 1, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FRoomsFangirl, EVENT_HIDE_SS_MAKO_FANGIRL
