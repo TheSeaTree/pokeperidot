@@ -411,6 +411,9 @@ CooltrainerLeonWin:
 	line "finally see"
 	cont "defeat. Good job,"
 	cont "<PLAYER>."
+
+	para "Here, I have a"
+	line "reward for you."
 	done
 
 CooltrainerLeonLoss:
