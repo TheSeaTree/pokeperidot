@@ -79,7 +79,7 @@ CherrygroveYoungsterBattle:
     loadtrainer SCHOOLBOY, TIMMY
 	writecode VAR_BATTLETYPE, BATTLETYPE_CANLOSE
 	startbattle
-	reloadmapafterbattle
+	reloadmap
 	setevent EVENT_BEAT_SCHOOLBOY_TIMMY
 	opentext
 	writetext SchoolboyTimmyAfterText
