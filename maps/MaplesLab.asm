@@ -565,11 +565,11 @@ ChoseCharmanderText:
 	done
 	
 ChoseSquirtleText:
-	text "MAPLE: Hm… I did"
-	line "not expect you to"
-	cont "pick that #MON."
+	text "MAPLE: Oh! That"
+	line "one gets along"
+	cont "great with kids!"
 	done
-	
+
 ChoseBulbasaurText:
 	text "MAPLE: You must"
 	line "have aspirations"
