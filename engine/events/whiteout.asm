@@ -11,6 +11,11 @@ Script_Whiteout:
 	waitbutton
 	checkflag ENGINE_BATTLE_SIMULATION_ACTIVE
 	iftrue .battle_sim
+
+	; In expert mode, the game will reset to the title screen.
+	copybytetovar wDifficultyMode
+	ifequal DIFFICULTY_EXPERT_F, .expert_mode
+
 	callasm CheckTimeTravel
 	iftrue .time_travel
 	special FadeOutPalettes
@@ -36,6 +41,9 @@ Script_Whiteout:
 
 .battle_sim
 	jumpstd battlesimexitwarp
+
+.expert_mode
+	special Reset
 
 .time_travel
 	special HealParty

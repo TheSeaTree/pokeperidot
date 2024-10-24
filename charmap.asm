@@ -35,7 +35,9 @@
 	charmap "<TRAINER>", $5d ; "TRAINER"
 	charmap "<S_BASH>",  $5e ; "SKULL BASH"
 	charmap "<DEXEND>",  $5f
+	charmap "<EASY>",	 $c4
 	charmap "<RS>",		 $c5
+	charmap "<EXPERT>",	 $cd
 
 ; Actual characters (from gfx/font/font_battle_extra.png)
 

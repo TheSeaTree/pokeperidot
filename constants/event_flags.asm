@@ -1647,7 +1647,8 @@
 	const EVENT_FOUGHT_BOSS_CELEBI
 	const EVENT_HIDE_PRESENT_CELEBI
 	const EVENT_ICE_PATH_1F_PROTEIN
-	const EVENT_DRAGONS_DEN_B1F_CALCIUM
+; Hide the obedience youngster if playing on easy mode.
+	const EVENT_HIDE_OBEDIENCE_YOUNGSTER
 ; Arcade High Score Rewards
 	const EVENT_ARCADE_REWARD_1 ; 7c0
 	const EVENT_ARCADE_REWARD_2

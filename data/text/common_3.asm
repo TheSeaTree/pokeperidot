@@ -980,6 +980,54 @@ UnknownText_0x1c564a::
 	line "data?"
 	done
 
+Text_DifficultySelect::
+	text "Select a mode."
+	line "Explain: B Button"
+	done
+
+Text_DifficultSelectConfirmation::
+	text "This can not be"
+	line "changed later."
+	
+	para "Are you sure?"
+	done
+
+Text_AskChangeDifficulty::
+	text "Would you like to"
+	line "change the current"
+	cont "difficulty mode?"
+	done
+
+Text_CannotChangeDifficulty::
+	text "The difficulty"
+	line "mode can not be"
+	cont "changed now."
+	prompt
+
+Text_DifficultyExplain::
+	text "RELAXED mode will"
+	line "only make traded"
+	cont "#MON disobey."
+
+	para "EXPERT mode will"
+	line "disable the SHIFT"
+	cont "battle style,"
+	cont "only allow saving"
+	cont "from the PC, and"
+	cont "the game will"
+	cont "return to the"
+	cont "title screen if a"
+	cont "battle is lost."
+	cont "Additionally,"
+	cont "items may not be"
+	cont "used when in a"
+	cont "TRAINER battle."
+
+	para "The mode can not"
+	line "be changed once"
+	cont "it is selected."
+	prompt
+
 UnknownText_0x1c5660::
 	text_ram wMonOrItemNameBuffer
 	text " learned"

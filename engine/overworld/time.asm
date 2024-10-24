@@ -139,7 +139,7 @@ StartShinyEncounterTimer:
 	ld hl, wBugContestStartTime
 	call CopyDayHourMinSecToHL
 	ret
-	
+
 CheckShinyEncounterTimer::
 	ld hl, wBugContestStartTime
 	call CalcSecsMinsHoursDaysSince

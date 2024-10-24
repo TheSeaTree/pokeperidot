@@ -294,6 +294,10 @@ endr
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jr nz, .no_save
+	; No saving from the menu in expert mode.
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jr z, .no_save
 
 	ld a, STARTMENUITEM_SAVE
 .write

@@ -430,6 +430,12 @@ BattleText_NoItemsInLeagueBattle:
 	cont "battles!"
 	prompt
 
+BattleText_NoItemsInTrainerBattle:
+	text "Items can't be"
+	line "used in TRAINER"
+	cont "battles!"
+	prompt
+
 BattleText_PartyIsFullText::
 	text "The PARTY is full."
 	line "That can't be used."

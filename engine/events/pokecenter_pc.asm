@@ -51,6 +51,7 @@ PCPC_BILLS_PC     EQU 1
 PCPC_OAKS_PC      EQU 2
 PCPC_HALL_OF_FAME EQU 3
 PCPC_TURN_OFF     EQU 4
+PCPC_SAVE_GAME    EQU 5
 
 .JumpTable:
 ; entries correspond to PCPC_* constants
@@ -59,12 +60,14 @@ PCPC_TURN_OFF     EQU 4
 	dw OaksPC,       .String_OaksPC
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC,    .String_TurnOff
+	dw SaveGamePC,   .String_SaveGame
 
 .String_PlayersPC:  db "ITEM STORAGE@"
 .String_BillsPC:    db "#MON STORAGE@"
 .String_OaksPC:     db "#DEX RATING@"
 .String_HallOfFame: db "HALL OF FAME@"
 .String_TurnOff:    db "TURN OFF@"
+.String_SaveGame:   db "SAVE GAME@"
 
 .WhichPC:
 	; before Pokédex
@@ -97,6 +100,24 @@ PCPC_TURN_OFF     EQU 4
 	db PCPC_TURN_OFF
 	db -1 ; end
 
+	; before Hall Of Fame (Expert)
+	db 5
+	db PCPC_BILLS_PC
+	db PCPC_PLAYERS_PC
+	db PCPC_OAKS_PC
+	db PCPC_SAVE_GAME
+	db PCPC_TURN_OFF
+	db -1 ; end
+
+	; postgame (Expert)
+	db 5
+	db PCPC_BILLS_PC
+	db PCPC_PLAYERS_PC
+	db PCPC_OAKS_PC
+	db PCPC_HALL_OF_FAME
+	db PCPC_SAVE_GAME
+	db -1 ; end
+
 .ChooseWhichPCListToUse:
 	ld a, [wCurLandmark]
 	ld [wPrevLandmark], a
@@ -105,6 +126,9 @@ PCPC_TURN_OFF     EQU 4
 	ld a, 3 ; while in the past
 	ret
 .not_in_past
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jr z, .expert_mode
 	call CheckReceivedDex
 	jr nz, .got_dex
 	ld a, 0 ; before Pokédex
@@ -116,6 +140,14 @@ PCPC_TURN_OFF     EQU 4
 	ld a, 1 ; before Hall Of Fame
 	ret z
 	ld a, 2 ; postgame
+	ret
+
+.expert_mode
+	ld a, [wHallOfFameCount]
+	and a
+	ld a, 4 ; before Hall Of Fame
+	ret z
+	ld a, 5 ; postgame
 	ret
 
 PC_CheckPartyForPokemon:
@@ -165,6 +197,10 @@ HallOfFamePC:
 	farcall _HallOfFamePC
 	call CloseSubmenu
 	and a
+	ret
+
+SaveGamePC:
+	farcall StartMenu_Save
 	ret
 
 TurnOffPC:

@@ -664,21 +664,23 @@ BattleCommand_CheckObedience:
 
 	; If the monster's id doesn't match the player's,
 	; some conditions need to be met.
-;	ld a, MON_ID
-;	call BattlePartyAttr
+	; ...But only in easy mode.
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_RELAXED_F
+	jp nz, .obeylevel
+	
+	ld a, MON_ID
+	call BattlePartyAttr
 
-;	ld a, [wPlayerID]
-;	cp [hl]
-;	jr nz, .obeylevel
-;	inc hl
-;	ld a, [wPlayerID + 1]
-;	cp [hl]
-;	ret z
+	ld a, [wPlayerID]
+	cp [hl]
+	jr nz, .obeylevel
+	inc hl
+	ld a, [wPlayerID + 1]
+	cp [hl]
+	ret z
 
 .obeylevel
-
-	ld a, MAX_LEVEL + 1
-	jr nz, .getlevel
 	; The maximum obedience level is constrained by owned badges:
 	ld hl, wJohtoBadges
 

@@ -3682,6 +3682,10 @@ LoadEnemyMonToSwitchTo:
 	ret
 
 CheckWhetherToAskSwitch:
+	; Shift mode is disabled on expert mode.
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jp z, .return_nc
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jp nz, .return_nc
@@ -5473,6 +5477,15 @@ BattleMenu_Pack:
 	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
 	jp nz, .ItemsCantBeUsed
 
+	ld a, [wBattleMode]
+	dec a
+	jp z, .not_trainer
+
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jp z, .NoItemsInTrainerBattle
+
+.not_trainer
 	farcall BattlePack
 	ld a, [wBattlePlayerAction]
 	and a ; BATTLEPLAYERACTION_USEMOVE?
@@ -5526,6 +5539,11 @@ BattleMenu_Pack:
 	
 .NoItemsInLeaderBattle:
 	ld hl, BattleText_NoItemsInLeaderBattle
+	call StdBattleTextBox
+	jp BattleMenu
+	
+.NoItemsInTrainerBattle:
+	ld hl, BattleText_NoItemsInTrainerBattle
 	call StdBattleTextBox
 	jp BattleMenu
 

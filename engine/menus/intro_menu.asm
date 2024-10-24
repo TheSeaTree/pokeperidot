@@ -21,6 +21,127 @@ NewGame_ClearTileMapEtc:
 	call ClearWindowData
 	ret
 
+DifficultySelect:
+	ld a, $0
+	ld [wSpriteUpdatesEnabled], a
+	ld a, $10
+	ld [wMusicFade], a
+	ld a, LOW(MUSIC_NONE)
+	ld [wMusicFadeID], a
+	ld a, HIGH(MUSIC_NONE)
+	ld [wMusicFadeID + 1], a
+	ld c, 8
+	call DelayFrames
+	call RotateFourPalettesLeft
+	call ClearTileMap
+	call ClearSprites
+	ld b, SCGB_DIPLOMA
+	call GetSGBLayout
+	xor a
+	ldh [hBGMapMode], a
+	call LoadStandardFont
+	ld de, TimeSetBackgroundGFX
+	ld hl, vTiles2 tile $00
+	lb bc, BANK(TimeSetBackgroundGFX), 1
+	call Request1bpp
+	ld de, TimeSetUpArrowGFX
+	ld hl, vTiles2 tile $01
+	lb bc, BANK(TimeSetUpArrowGFX), 1
+	call Request1bpp
+	ld de, TimeSetDownArrowGFX
+	ld hl, vTiles2 tile $02
+	lb bc, BANK(TimeSetDownArrowGFX), 1
+	call Request1bpp
+	call .ClearScreen
+	call WaitBGMap
+	call RotateFourPalettesRight
+	xor a
+	call ByteFill
+.Loop
+	ld hl, .Text_DifficultySelect
+	call PrintText
+	ld hl, .MenuHeader
+	call CopyMenuHeader
+	call VerticalMenu
+	jr c, .Difficulty_Explain
+	ld a, [wMenuCursorY]
+	cp $3
+	jp z, .Difficulty_Expert
+	cp $2
+	jp z, .Difficulty_Easy
+	xor a
+	ld a, DIFFICULTY_NORMAL_F
+	ld [wDifficultyMode], a
+	jr .ClearScreen
+
+.ClearScreen:
+	xor a
+	ldh [hBGMapMode], a
+	hlcoord 0, 0
+	ld bc, SCREEN_HEIGHT * SCREEN_WIDTH
+	xor a
+	call ByteFill
+	ld a, $1
+	ldh [hBGMapMode], a
+	ret
+
+.Difficulty_Explain:
+	call .ClearScreen
+	ld hl, .Text_DifficultyExplain
+	call PrintText
+	jr .Loop
+
+.Difficulty_Easy:
+	call .Difficulty_YesNoBox
+	xor a
+	ld a, DIFFICULTY_RELAXED_F
+	ld [wDifficultyMode], a
+	ld de, EVENT_HIDE_OBEDIENCE_YOUNGSTER
+	ld b, SET_FLAG
+	call EventFlagAction
+	jr .ClearScreen
+
+.Difficulty_Expert:
+	call .Difficulty_YesNoBox
+	xor a
+	ld a, DIFFICULTY_EXPERT_F
+	ld [wDifficultyMode], a
+	jr .ClearScreen
+
+.Difficulty_YesNoBox
+	ld hl, .Text_AskConfirmation
+	call PrintText
+	lb bc, 0, 7
+	call PlaceNoYesBox
+	ld a, [wMenuCursorY]
+	jr c, .Loop
+	ret
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 5, 3, 14, 10
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 3 ; items
+	db "NORMAL@"
+	db "RELAXED@"
+	db "EXPERT@"
+
+.Text_DifficultySelect:
+	text_far Text_DifficultySelect
+	text_end
+
+.Text_AskConfirmation:
+	text_far Text_DifficultSelectConfirmation
+	text_end
+
+.Text_DifficultyExplain:
+	text_far Text_DifficultyExplain
+	text_end
+
 OptionsMenu:
 	farcall _OptionsMenu
 	ret
@@ -30,7 +151,7 @@ NewGame:
 	ld [wDebugFlags], a
 	call ResetWRAM
 	call NewGame_ClearTileMapEtc
-	call AreYouABoyOrAreYouAGirl
+	call DifficultySelect
 	call OakSpeech
 
 	ld a, POTION
@@ -50,17 +171,6 @@ NewGame:
 	ld a, MAPSETUP_WARP
 	ldh [hMapEntryMethod], a
 	jp FinishContinueFunction
-
-AreYouABoyOrAreYouAGirl:
-	farcall Mobile_AlwaysReturnNotCarry ; some mobile stuff
-	jr c, .ok
-;	farcall InitGender
-	ret
-
-.ok
-	ld c, 0
-	farcall InitMobileProfile ; mobile
-	ret
 
 ResetWRAM:
 	xor a
@@ -310,6 +420,14 @@ Continue:
 	ldh [hBGMapMode], a
 	ld c, 20
 	call DelayFrames
+
+	call GetJoypad
+	ld hl, hJoyDown
+	ld a, [hl]
+	and D_RIGHT + D_DOWN + START + SELECT
+	cp  D_RIGHT + D_DOWN + START + SELECT
+	jp z, .DifficultySelect
+
 	call ConfirmContinue
 	jr nc, .Check1Pass
 	call CloseWindow
@@ -351,6 +469,39 @@ Continue:
 	ld [wDefaultSpawnpoint], a
 	call PostCreditsSpawn
 	jp FinishContinueFunction
+
+.DifficultySelect
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_NORMAL_F
+	jr nz, .CannotChange
+
+	ld hl, .Text_AskChangeDifficulty
+	call PrintText
+	lb bc, 0, 7
+	call PlaceYesNoBox
+	ld a, [wMenuCursorY]
+	ret c
+
+	call DifficultySelect
+	ld de, SFX_SAVE
+	call PlaySFX
+	farcall SaveGameData
+	ret
+
+.AskChange
+	ld hl, .Text_AskChangeDifficulty
+
+.CannotChange
+	ld hl, .Text_CannotChangeDifficulty
+	jp PrintText
+
+.Text_AskChangeDifficulty
+	text_far Text_AskChangeDifficulty
+	text_end
+
+.Text_CannotChangeDifficulty
+	text_far Text_CannotChangeDifficulty
+	text_end
 
 SpawnAfterRed:
 	ld a, SPAWN_HOME
@@ -466,6 +617,7 @@ DisplayNormalContinueData:
 	call Continue_PrintGameTime
 	call LoadFontsExtra
 	call UpdateSprites
+	call DisplayDifficultyIcon
 	ret
 
 DisplayContinueDataWithRTCError:
@@ -474,7 +626,30 @@ DisplayContinueDataWithRTCError:
 	call Continue_UnknownGameTime
 	call LoadFontsExtra
 	call UpdateSprites
+	call DisplayDifficultyIcon
 	ret
+
+DisplayDifficultyIcon:
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_RELAXED_F
+	jr nz, .Expert
+	hlcoord 18, 1
+	ld de, .RelaxedIcon
+	jp PlaceString
+
+.Expert
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	ret nz
+	hlcoord 18, 1
+	ld de, .ExpertIcon
+	jp PlaceString
+
+.RelaxedIcon
+	db "<EASY>@"
+
+.ExpertIcon
+	db "<EXPERT>@"
 
 Continue_LoadMenuHeader:
 	xor a

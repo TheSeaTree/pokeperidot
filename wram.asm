@@ -2676,8 +2676,9 @@ wTreasuresTraded::		db
 wTrickMirrorCount::    	db
 wTrickMirrorCompare::  	db
 wLegendariesSpawned::	db
+wDifficultyMode::		db
 
-	ds 96
+	ds 95
 
 wEventFlags:: flag_array NUM_EVENTS ; da72
 ; db6c

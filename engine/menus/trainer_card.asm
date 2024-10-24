@@ -237,6 +237,7 @@ TrainerCard_PrintTopHalfOfCard:
 	hlcoord 7, 2
 	ld de, wPlayerName
 	call PlaceString
+	call TrainerCard_DisplayDifficultyIcon
 
 	hlcoord 5, 4
 	ld de, wPlayerID
@@ -306,7 +307,7 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 
 .Dex:
 	db   "#DEX@"
-	
+
 .Total_BP:
 	db "BP@"
 
@@ -315,6 +316,28 @@ TrainerCard_Page1_PrintDexCaught_GameTime:
 
 .StatusTilemap:
 	db  "♥─", $29, $2a, $2b, $2c, $2d, "────────────♦", -1
+
+TrainerCard_DisplayDifficultyIcon:
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_RELAXED_F
+	jr nz, .Expert
+	hlcoord 10, 4
+	ld de, .RelaxedIcon
+	jp PlaceString
+
+.Expert
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	ret nz
+	hlcoord 10, 4
+	ld de, .ExpertIcon
+	jp PlaceString
+
+.RelaxedIcon
+	db "<EASY>@"
+
+.ExpertIcon
+	db "<EXPERT>@"
 
 TrainerCard_Page2_3_InitObjectsAndStrings:
 	hlcoord 0, 8
