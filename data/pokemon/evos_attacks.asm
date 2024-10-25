@@ -757,6 +757,7 @@ ParasectEvosAttacks:
 	db 11, ABSORB
 	db 17, FURY_CUTTER
 	db 22, SPORE
+	db 24, RAGE
 	db 29, LEECH_LIFE
 	db 37, GROWTH
 	db 44, GIGA_DRAIN
@@ -3268,6 +3269,7 @@ SunkernEvosAttacks:
 
 SunfloraEvosAttacks:
 	db 0 ; no more evolutions
+	db 1, FLAMETHROWER
 	db 1, ABSORB
 	db 1, GROWTH
 	db 10, MEGA_DRAIN
