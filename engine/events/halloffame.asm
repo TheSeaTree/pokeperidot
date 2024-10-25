@@ -574,6 +574,7 @@ HOF_AnimatePlayerPic:
 	ld de, wPlayerID
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	call PrintNum
+	call HOF_DifficultyIcons
 	hlcoord 1, 8
 	ld de, .PlayTime
 	call PlaceString
@@ -592,6 +593,28 @@ HOF_AnimatePlayerPic:
 
 .PlayTime:
 	db "PLAY TIME@"
+
+HOF_DifficultyIcons:
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_RELAXED_F
+	jr nz, .Expert
+	hlcoord 9, 3
+	ld de, .RelaxedIcon
+	jp PlaceString
+
+.Expert
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	ret nz
+	hlcoord 9, 3
+	ld de, .ExpertIcon
+	jp PlaceString
+
+.RelaxedIcon
+	db "<EASY>@"
+
+.ExpertIcon
+	db "<EXPERT>@"
 
 HOF_PlayCry::
 	ld a, [wCurPartySpecies]
