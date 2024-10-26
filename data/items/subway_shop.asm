@@ -36,7 +36,8 @@ BattleSubwayBattleShopData:
 	db -1
 
 BattleSimulationShopData:
-	db 15
+	db 16
+	dbw UP_GRADE,		 5
 	dbw BERSERK_GENE,	 8
 	dbw BLACK_SLUDGE,	16
 	dbw SOOTHE_BELL,	16

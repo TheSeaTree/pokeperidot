@@ -940,7 +940,7 @@ LightBuoyDesc:
 	next "on water. (HOLD)@"
 
 UpGradeDesc:
-	db   "A mysterious box"
+	db   "A mysterious disk"
 	next "made by SILPH CO.@"
 
 BerryDesc:
