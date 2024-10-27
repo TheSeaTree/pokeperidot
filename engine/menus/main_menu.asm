@@ -8,7 +8,11 @@ MainMenu:
 	ld b, SCGB_DIPLOMA
 	call GetSGBLayout
 	call SetPalettes
-	hlcoord 14, 0
+	farcall MainMenu_LoadVersionNumber
+	hlcoord 17, 16
+	ld de, .BetaString
+	call PlaceString
+	hlcoord 17, 17
 	ld de, .VersionString
 	call PlaceString
 	ld hl, wGameTimerPause
@@ -30,8 +34,10 @@ MainMenu:
 .quit
 	ret
 
+.BetaString:
+	db "ねのは@"
 .VersionString:
-	db "v2.0.0@"
+	db "なにぬ@"
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags

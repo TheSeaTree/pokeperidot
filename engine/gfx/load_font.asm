@@ -58,6 +58,13 @@ _LoadFontsOptionsExtra::
 	call Get1bpp_2
 	jr LoadFrame
 
+MainMenu_LoadVersionNumber:
+	ld de, MainMenuVersionNumberGFX
+	ld hl, vTiles0 tile $c5
+	lb bc, BANK(MainMenuVersionNumberGFX), 6
+	call Get2bpp_2
+	jr LoadFrame
+
 LoadFrame:
 	ld a, [wTextBoxFrame]
 	maskbits NUM_FRAMES
