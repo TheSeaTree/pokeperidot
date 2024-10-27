@@ -156,7 +156,7 @@ BattleSimulationGuy:
 .Challenge
 	writebyte EGG
 	special FindPartyMonThatSpecies
-	iftrue .Decline
+	iftrue .HaveEgg
 	writetext BattleSimulationPrepareSaveText
 	yesorno
 	iffalse .Decline
@@ -226,6 +226,10 @@ BattleSimulationGuy:
 .KnowMore
 	writetext BattleSimulationExplainKnowMoreText
 	jump .ExplainMenuLoop
+
+.HaveEgg
+	writetext BattleSimulationCantEnterEggText
+	waitbutton
 
 .Decline
 	closetext
@@ -834,6 +838,17 @@ BattleSimulationExplainRewardsText:
 BattleSimulationExplainKnowMoreText:
 	text "Would you like to"
 	line "know more?"
+	done
+
+BattleSimulationCantEnterEggText:
+	text "I'm sorry, but you"
+	line "can't enter while"
+	cont "carrying an EGG."
+
+	para "You will need to"
+	line "deposit it before"
+	cont "I allow you into"
+	cont "the SIMULATION."
 	done
 
 BattleSimulationPrepareSaveText:
