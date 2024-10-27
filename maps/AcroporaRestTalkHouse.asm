@@ -41,6 +41,7 @@ RestTalkGrampsScript:
 	checkevent EVENT_GOT_TM_REST
 	iffalse .NoRest
 	writetext RestTalkGrampsGiveTMSleepTalk
+	waitbutton
 	verbosegiveitem TM_SLEEP_TALK
 	setevent EVENT_GOT_TM_SLEEP_TALK
 
