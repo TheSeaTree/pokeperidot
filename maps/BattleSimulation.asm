@@ -7,11 +7,12 @@
 	const BATTLESIMULATION_SUPER_NERD
 
 BattleSimulation_MapScripts:
-	db 4 ; scene scripts
+	db 5 ; scene scripts
 	scene_script .Scene0 ; SCENE_BATTLESIMULATION_DEFAULT
 	scene_script .Scene1 ; SCENE_BATTLESIMULATION_CHALLENGE
 	scene_script .Scene2 ; SCENE_BATTLESIMULATION_FINISHED
 	scene_script .Scene3 ; SCENE_BATTLESIMULATION_RETURNED_TO_PRESENT
+	scene_script .Scene4 ; SCENE_BATTLESIMULATION_CLEAR_TEMP_EVENT
 
 	db 2 ; callbacks
 	callback MAPCALLBACK_TILES, .Screen
@@ -25,7 +26,8 @@ BattleSimulation_MapScripts:
 	writetext BattleSimulationChallengeCancelled
 	waitbutton
 	closetext
-	setscene SCENE_BATTLESIMULATION_DEFAULT
+	setscene SCENE_BATTLESIMULATION_CLEAR_TEMP_EVENT
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	end
 
 .Scene2:
@@ -130,7 +132,14 @@ BattleSimulation_MapScripts:
 .nothing
 	return
 
+.Scene4:
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	setscene SCENE_BATTLESIMULATION_DEFAULT
+	end
+
 BattleSimulationGuy:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	iftrue .Decline
 	opentext
 	writetext BattleSimulationIntroductionText
 	waitbutton
@@ -213,7 +222,6 @@ BattleSimulationGuy:
 .Rewards
 	writetext BattleSimulationExplainRewardsText
 	waitbutton
-	jump .KnowMore
 
 .KnowMore
 	writetext BattleSimulationExplainKnowMoreText
