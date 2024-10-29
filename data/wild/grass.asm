@@ -2574,7 +2574,7 @@ GrassWildMons:
 	db 16, MANKEY
 	db 13, ZUBAT
 	db 14, GASTLY
-	db 15, ZUBAT
+	db 15, WOBBUFFET
 	db 16, MISDREAVUS
 
 	map_id PAST_OCCIDENT_FOREST
