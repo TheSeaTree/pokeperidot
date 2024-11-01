@@ -13,8 +13,8 @@ Script_Whiteout:
 	iftrue .battle_sim
 
 	; In expert mode, the game will reset to the title screen.
-	copybytetovar wDifficultyMode
-	ifequal DIFFICULTY_EXPERT_F, .expert_mode
+	callasm CheckExpertMode
+	iftrue .expert_mode
 
 	callasm CheckTimeTravel
 	iftrue .time_travel
@@ -53,6 +53,14 @@ Script_Whiteout:
 	; is out of useable #MON!  whited out!
 	text_far UnknownText_0x1c0a4e
 	text_end
+
+CheckExpertMode:
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	ret nz
+	ld a, TRUE
+	ld [wScriptVar], a
+	ret
 
 CheckTimeTravel:
 	ld a, [wCurLandmark]
