@@ -305,7 +305,7 @@ BlackthornGymGuyText:
 	para "The trainers down"
 	line "there are used to"
 	cont "the extreme heat,"
-	cont "bur you're not!"
+	cont "but you're not!"
 
 	para "Plan your steps"
 	line "carefully, or else"

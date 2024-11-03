@@ -667,7 +667,7 @@ CoastalLabBeastsBookText:
 
 CoastalLabRaikouBookText:
 	text "RAIKOU is as fast"
-	line "as the lighting"
+	line "as the lightning"
 	cont "which trails it."
 
 	para "There are no repo-"

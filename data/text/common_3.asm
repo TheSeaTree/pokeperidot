@@ -248,7 +248,7 @@ UnknownText_0x1c4706::
 	done
 
 GiveItemText::
-	text "<PLAYER> received a"
+	text "<PLAYER> received"
 	line "@"
 	text_ram wStringBuffer4
 	text "."

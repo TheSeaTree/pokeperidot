@@ -386,11 +386,11 @@ LostLandScientistCantTakeEggText:
 	done
 
 LostLandScientistExplainOldAmber:
-	text "There is a college"
-	line "of ours in RUGOSA"
-	cont "CITY who speciali-"
-	cont "zes in FOSSILs of"
-	cont "extinct #MON."
+	text "There is a coll-"
+	line "eague of ours in"
+	cont "RUGOSA CITY who"
+	cont "specializes in"
+	cont "#MON FOSSILs."
 
 	para "Last I heard, he"
 	line "was working on a"

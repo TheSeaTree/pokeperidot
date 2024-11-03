@@ -89,10 +89,10 @@ OrchidCityTeacherText:
 	line "bright after dark."
 	
 	para "I'd love to have"
-	line "someone stay here"
-	cont "and watch it with."
+	line "someone here to"
+	cont "watch it with me."
 	done
-	
+
 OrchidCityTeacherAlreadyMetText:
 	text "Oh! Hi there!"
 	

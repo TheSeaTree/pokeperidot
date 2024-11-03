@@ -67,7 +67,7 @@ AwakeningGuyText:
 	text "How well do you"
 	line "sleep at night?"
 
-	para "DOWZEE's SLUMBER"
+	para "DROWZEE's SLUMBER"
 	line "SHACK guarantees"
 	cont "you will sleep so"
 	cont "soundly, you will"
