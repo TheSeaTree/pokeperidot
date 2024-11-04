@@ -37,8 +37,9 @@ Route22GateNurseScript:
 	waitbutton
 	closetext
 	turnobject ROUTE22GATE_NURSE, UP
-	pause 4
+	pause 10
 	turnobject ROUTE22GATE_NURSE, DOWN
+	pause 10
 	end
 
 Route22GateOfficerMText:
