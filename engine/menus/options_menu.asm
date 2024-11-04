@@ -247,6 +247,11 @@ Options_BattleStyle:
 .ToggleShift:
 	res BATTLE_SHIFT, [hl]
 	ld de, .Shift
+	; Expert mode is always on Set anyway.
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jr nz, .Display
+	ld de, .Set
 	jr .Display
 
 .ToggleSet:
