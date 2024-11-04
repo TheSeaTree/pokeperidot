@@ -1207,47 +1207,42 @@ _OakRating01::
 _OakRating02::
 	text "Good. I see you"
 	line "understand how to"
-	cont "use # BALLS."
+	cont "use # BALLs."
 	done
 
 _OakRating03::
 	text "You're getting"
 	line "good at this."
-
-	para "But you have a"
-	line "long way to go."
+	cont "But you have a"
+	cont "long way to go."
 	done
 
 _OakRating04::
 	text "You need to fill"
 	line "up the #DEX."
-
-	para "Catch different"
-	line "kinds of #MON!"
+	cont "Catch different"
+	cont "kinds of #MON!"
 	done
 
 _OakRating05::
 	text "You're trying--I"
 	line "can see that."
-
-	para "Your #DEX is"
-	line "coming together."
+	cont "Your #DEX is"
+	cont "coming together."
 	done
 
 _OakRating06::
 	text "To evolve, some"
 	line "#MON grow,"
-
-	para "others use the"
-	line "effects of STONES."
+	cont "others use the"
+	cont "effects of STONES."
 	done
 
 _OakRating07::
 	text "Have you gotten a"
 	line "fishing ROD? You"
-
-	para "can catch #MON"
-	line "by fishing."
+	cont "can catch #MON"
+	cont "by fishing."
 	done
 
 _OakRating08::
@@ -1259,9 +1254,8 @@ _OakRating08::
 _OakRating09::
 	text "Some #MON only"
 	line "appear during"
-
-	para "certain times of"
-	line "the day."
+	cont "certain times of"
+	cont "the day."
 	done
 
 _OakRating10::
@@ -1279,17 +1273,16 @@ _OakRating11::
 	done
 
 _OakRating12::
-	text "Have you met KURT?"
-	line "His custom BALLS"
-	cont "should help."
+	text "Have you met any-"
+	line "one who sells"
+	cont "custom #BALLs?"
 	done
 
 _OakRating13::
 	text "Wow. You've found"
 	line "more #MON than"
-
-	para "the last #DEX"
-	line "research project."
+	cont "the last #DEX"
+	cont "research project."
 	done
 
 _OakRating14::
@@ -1311,36 +1304,33 @@ _OakRating16::
 	line "many #MON!"
 
 	para "You've really"
-	line "helped my studies!"
+	line "been studying!"
 	done
 
 _OakRating17::
 	text "Magnificent! You"
 	line "could become a"
-
-	para "#MON professor"
-	line "right now!"
+	cont "#MON professor"
+	cont "right now!"
 	done
 
 _OakRating18::
 	text "Your #DEX is"
 	line "amazing! You're"
-
-	para "ready to turn"
-	line "professional!"
+	cont "ready to turn"
+	cont "professional!"
 	done
 
 _OakRating19::
 	text "Whoa! A perfect"
-	line "#DEX! I've"
+	line "#DEX!"
 
-	para "dreamt about this!"
-	line "Congratulations!"
+	cont "Congratulations!"
 	done
 
 _OakPCText4::
-	text "The link to PROF."
-	line "OAK's PC closed."
+	text "Closed link to"
+	line "#DEX rating."
 	done
 
 UnknownText_0x1c19cd::
