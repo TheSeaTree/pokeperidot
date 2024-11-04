@@ -61,8 +61,8 @@ SafariReceptionistScript:
 	db STATICMENU_CURSOR ; flags
 	db 5 ; items
 	db "SAFARI@"
-	db "BALLS@"
-	db "ROCKS@"
+	db "BALLs@"
+	db "ROCKs@"
 	db "BAIT@"
 	db "CANCEL@"
 

@@ -169,7 +169,7 @@ OfficerTommyWinText:
 OfficerTommyAfterText:
 	text "They have me pat-"
 	line "rol this part of"
-	cont "the route that"
+	cont "ROUTE 2 that"
 	cont "nobody visits."
 	done
 
@@ -246,7 +246,7 @@ PokefanMBradleyWinText:
 
 PokefanMBradleyAfterText:
 	text "I had to travel to"
-	line "a far away ROUTE"
+	line "a far away route"
 	cont "for my PIKACHU."
 	done
 

@@ -291,7 +291,7 @@ Route22OfficerGoodJobText:
 	text "You beat every"
 	line "trainer here with-"
 	cont "out visiting the"
-	cont "nurse?"
+	cont "NURSE?"
 
 	para "That's admirable."
 	done
@@ -569,7 +569,7 @@ Route22FocusedPokemonText:
 
 Route22SuperNerdText:
 	text "Don't you think the"
-	line "nurse in the gate"
+	line "NURSE in the gate"
 	cont "is kinda cute?"
 
 	para "Something about"

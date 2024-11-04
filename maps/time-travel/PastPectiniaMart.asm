@@ -31,7 +31,7 @@ PastPectiniaMartTeacherText:
 	done
 
 PastPectiniaMartBugCatcherText:
-	text "Ugh! #BALLS get"
+	text "Ugh! #BALLs get"
 	line "to be so expen-"
 	cont "sive!"
 

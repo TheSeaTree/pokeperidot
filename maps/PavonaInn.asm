@@ -55,7 +55,7 @@ PavonaInnPC:
 	
 PavonaInnNoMonsText:
 	text "Hello! I am a"
-	line "nurse in training."
+	line "NURSE in training."
 	
 	para "Please do return"
 	line "if you get a"
