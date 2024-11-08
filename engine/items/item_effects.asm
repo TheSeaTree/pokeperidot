@@ -1283,8 +1283,12 @@ VitaminEffect:
 	ld a, [hl]
 	cp 250
 	jr nc, NoEffectMessage
+	; For compatibility when vitamins only gave 10 points.
+	cp 225
+	jr nc, .OldVersionCompatibility
 
-	add 10
+	add 25
+.Calculate
 	ld [hl], a
 	call UpdateStatsAfterItem
 
@@ -1313,6 +1317,11 @@ VitaminEffect:
 	ld b, PARTYMENUACTION_HEALING_ITEM
 	call UseItem_SelectMonNoWhiteout
 	jp .loop
+
+.OldVersionCompatibility
+	; Max out the stat if it is over 225, to prevent overflowing.
+	ld a, 250
+	jp .Calculate
 
 NoEffectMessage:
 	ld hl, WontHaveAnyEffectText
