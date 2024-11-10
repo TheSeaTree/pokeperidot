@@ -2653,6 +2653,7 @@ WinTrainerBattle:
 	inc hl
 	or [hl]
 	ret nz
+	call RotateThreePalettesRight
 	call ClearTileMap
 	call ClearBGPalettes
 	ret
@@ -3194,6 +3195,7 @@ LostBattle:
 	ld c, BATTLETOWERTEXT_WIN_TEXT
 	farcall BattleTowerText
 	call WaitPressAorB_BlinkCursor
+	call RotateThreePalettesRight
 	call ClearTileMap
 	call ClearBGPalettes
 	ret

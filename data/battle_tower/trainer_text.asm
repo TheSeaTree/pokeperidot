@@ -578,8 +578,8 @@ UnknownText_0x1ecdcf:
 	done
 
 UnknownText_0x1ecded:
-	text "BATTLE TOWER is a"
-	line "tough place!"
+	text "The BATTLE SUBWAY"
+	line "is a tough place!"
 	done
 
 UnknownText_0x1ece0d:

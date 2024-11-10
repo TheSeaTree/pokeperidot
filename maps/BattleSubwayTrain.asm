@@ -94,6 +94,9 @@ Script_DontBattleNextOpponent:
 	end
 
 Script_BeatenAllTrainers:
+	playmusic MUSIC_NONE
+	playsound SFX_TRAIN_ARRIVED
+	waitsfx
 ;	jump Script_SubwayBossFight
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
 	

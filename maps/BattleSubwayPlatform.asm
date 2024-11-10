@@ -174,7 +174,6 @@ Script_ResumeBattleTowerChallenge:
 	closetext
 	writebyte BATTLETOWERACTION_LOADLEVELGROUP ; load choice of level group
 	special BattleTowerAction
-	musicfadeout MUSIC_NONE, 8
 	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
 	setmapscene BATTLE_SUBWAY_BOSS_TRAIN, SCENE_DEFAULT
 	follow BATTLESUBWAYPLATFORM_OFFICER2, PLAYER
@@ -188,7 +187,6 @@ Script_ResumeBattleTowerChallenge:
 	end
 
 Script_WalkToBattleTowerElevator:
-	musicfadeout MUSIC_NONE, 8
 	setmapscene BATTLE_SUBWAY_TRAIN, SCENE_DEFAULT
 	setmapscene BATTLE_SUBWAY_BOSS_TRAIN, SCENE_DEFAULT
 	follow BATTLESUBWAYPLATFORM_OFFICER1, PLAYER
@@ -396,6 +394,8 @@ CheckLevelGroup:
 	ret
 
 Script_FailedBattleTowerChallenge:
+	playmusic MUSIC_NONE
+	playsound SFX_TRAIN_ARRIVED
 	pause 60
 	special BattleTowerFade
 	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
@@ -414,6 +414,7 @@ Script_FailedBattleTowerChallenge:
 	special BattleSubway_CompareStreaks
 	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
+	setscene SCENE_FINISHED
 	end
 
 BattleSubwayPlatformBugCatcherScript:
@@ -494,8 +495,8 @@ MovementData_BattleTowerBattleRoomOpponentWalksIn:
 	step_end
 
 MovementData_BattleTowerBattleRoomOpponentWalksOut:
-	slow_step UP
-	slow_step UP
+	step UP
+	step UP
 	turn_head DOWN
 	step_end
 
@@ -759,8 +760,8 @@ Text_MayNotEnterABattleRoomUnderL70:
 	done
 
 Text_ReadBattleTowerRules:
-	text "BATTLE TOWER rules"
-	line "are written here."
+	text "It's the BATTLE"
+	line "SUBWAY rules."
 
 	para "Read the rules?"
 	done
