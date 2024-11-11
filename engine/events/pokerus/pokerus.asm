@@ -31,7 +31,11 @@ GivePokerusAndConvertBerries:
 	ldh a, [hRandomSub]
 	cp $3
 	ret nc                 ; 3/65536 chance (00 00, 00 01 or 00 02)
+	ld a, [wPartyCount]
+	ld b, a
+	jr .randomMonSelectLoop
 .force_pokerus
+	call Random
 	ld a, [wPartyCount]
 	ld b, a
 .randomMonSelectLoop
