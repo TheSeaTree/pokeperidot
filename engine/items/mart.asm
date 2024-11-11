@@ -106,8 +106,9 @@ BPShop:
 	ld b, BANK(BattleSubwayBattleShopData)
 	ld de, BattleSubwayBattleShopData
 
-	ld a, [wMapGroup]
-	cp GROUP_BATTLE_SIMULATION
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp PAVONA_VILLAGE
 	jr nz, .ok
 
 	ld b, BANK(BattleSimulationShopData)
