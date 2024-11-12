@@ -143,10 +143,14 @@ DrawEnemyHUDBorder:
 	ld a, [wBattleMode]
 	dec a
 	ret nz
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	jr z, .boss_icon
 	ld a, [wTempEnemyMonSpecies]
 	dec a
 	call CheckCaughtMon
 	ret z
+.boss_icon
 	hlcoord 1, 2
 	ld [hl], $5d
 	ret

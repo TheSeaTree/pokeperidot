@@ -110,6 +110,15 @@ LoadHPBar:
 	ld hl, vTiles2 tile $7c
 	lb bc, BANK(StatArrowGFX), 2
 	call Get2bpp_2
+
+	ld a, [wBattleType]
+	cp BATTLETYPE_BOSS
+	ret nz
+	ld de, BossIconGFX
+	ld hl, vTiles2 tile $5d
+	lb bc, BANK(BossIconGFX), 1
+	call Get2bpp_2
+	
 ;	ld de, MobilePhoneTilesGFX + 6 tiles ; mobile phone icon
 ;	ld hl, vTiles2 tile $7c
 ;	lb bc, BANK(MobilePhoneTilesGFX), 3

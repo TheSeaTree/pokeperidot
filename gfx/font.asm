@@ -36,6 +36,9 @@ INCBIN "gfx/battle/expbar.2bpp"
 StatArrowGFX:
 INCBIN "gfx/battle/stat_arrows.2bpp"
 
+BossIconGFX:
+INCBIN "gfx/battle/bossmon_icon.2bpp"
+
 TownMapGFX:
 INCBIN "gfx/pokegear/town_map.2bpp.lz"
 
