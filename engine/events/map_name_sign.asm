@@ -142,6 +142,7 @@ LoadMapNameSignGFX:
 	ld hl, vTiles0 tile MAP_NAME_SIGN_START
 	lb bc, BANK(MapEntryFrameGFX), 14
 	call Get2bpp
+	farcall UpdateRoamMons
 	ret
 
 InitMapNameFrame:

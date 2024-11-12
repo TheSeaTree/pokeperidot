@@ -82,7 +82,6 @@ MapSetupScript_Connection:
 	db map_stop_script
 	db map_keep_palettes
 	db map_wildmons
-	db map_update_roam
 	db map_animations_on
 	db map_end
 
@@ -110,7 +109,6 @@ MapSetupScript_Train:
 	db map_fade_in_palettes
 	db map_animations_on
 	db map_wildmons
-	db map_update_roam
 	db map_end
 
 MapSetupScript_ReloadMap:
