@@ -9033,14 +9033,15 @@ ReadAndPrintLinkBattleRecord:
 BattleEnd_HandleRoamMons:
 	ld a, [wBattleType]
 	cp BATTLETYPE_ROAMING
-	jr nz, .not_roaming
+	ret nz
 	ld a, [wBattleResult]
 	and $f
 	jr z, .caught_or_defeated_roam_mon ; WIN
 	call GetRoamMonHP
 	ld a, [wEnemyMonHP + 1]
 	ld [hl], a
-	jr .update_roam_mons
+	callfar JumpRoamMons
+	ret
 
 .caught_or_defeated_roam_mon
 	call GetRoamMonHP
@@ -9051,15 +9052,6 @@ BattleEnd_HandleRoamMons:
 	ld [hl], MAP_N_A
 	call GetRoamMonSpecies
 	ld [hl], 0
-	ret
-
-.not_roaming
-	call BattleRandom
-	and $f
-	ret nz
-
-.update_roam_mons
-	callfar UpdateRoamMons
 	ret
 
 GetRoamMonMapGroup:

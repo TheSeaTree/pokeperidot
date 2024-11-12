@@ -633,8 +633,8 @@ UpdateRoamMons:
 	ld l, e
 ; Choose which map to warp to.
 	call Random
-	and %00011111 ; 1/8n chance it moves to a completely random map, where n is the number of roaming connections from the current map.
-	jr z, JumpRoamMon
+	and %00011111 ; 1/8n chance it does not move, where n is the number of roaming connections from the current map.
+	ret z
 	and %11
 	cp [hl]
 	jr nc, .update_loop ; invalid index, try again
