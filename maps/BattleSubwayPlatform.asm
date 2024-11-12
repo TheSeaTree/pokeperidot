@@ -414,7 +414,6 @@ Script_FailedBattleTowerChallenge:
 	special BattleSubway_CompareStreaks
 	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
-	setscene SCENE_FINISHED
 	end
 
 BattleSubwayPlatformBugCatcherScript:
