@@ -633,9 +633,9 @@ UpdateRoamMons:
 	ld l, e
 ; Choose which map to warp to.
 	call Random
-	and %00011111 ; 1/8n chance it does not move, where n is the number of roaming connections from the current map.
-	ret z
-	and %11
+	cp $01 ; 1/256 chance it moves to a completely random map.
+	jr z, JumpRoamMon
+	and 3
 	cp [hl]
 	jr nc, .update_loop ; invalid index, try again
 	inc hl
@@ -661,24 +661,24 @@ UpdateRoamMons:
 JumpRoamMons:
 	ld a, [wRoamMon1MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipRaikou
+	jr z, .SkipArticuno
 	call JumpRoamMon
 	ld a, b
 	ld [wRoamMon1MapGroup], a
 	ld a, c
 	ld [wRoamMon1MapNumber], a
 
-.SkipRaikou:
+.SkipArticuno:
 	ld a, [wRoamMon2MapGroup]
 	cp GROUP_N_A
-	jr z, .SkipEntei
+	jr z, .SkipZapdos
 	call JumpRoamMon
 	ld a, b
 	ld [wRoamMon2MapGroup], a
 	ld a, c
 	ld [wRoamMon2MapNumber], a
 
-.SkipEntei:
+.SkipZapdos:
 	ld a, [wRoamMon3MapGroup]
 	cp GROUP_N_A
 	jr z, .Finished
@@ -694,21 +694,19 @@ JumpRoamMons:
 JumpRoamMon:
 .loop
 	ld hl, RoamMaps
-.innerloop1                   ; This loop happens to be unnecessary.
 	call Random               ; Choose a random number.
-	maskbits NUM_ROAMMON_MAPS ; Mask the number to limit it between 0 and 15.
 	cp NUM_ROAMMON_MAPS       ; If the number is not less than 16, try again.
-	jr nc, .innerloop1        ; I'm sure you can guess why this check is bogus.
+	jr nc, .loop
 	inc a
 	ld b, a
-.innerloop2 ; Loop to get hl to the address of the chosen roam map.
+.innerloop ; Loop to get hl to the address of the chosen roam map.
 	dec b
 	jr z, .ok
-.innerloop3 ; Loop to skip the current roam map, which is terminated by a 0.
+.innerloop2 ; Loop to skip the current roam map, which is terminated by a 0.
 	ld a, [hli]
 	and a
-	jr nz, .innerloop3
-	jr .innerloop2
+	jr nz, .innerloop2
+	jr .innerloop
 ; Check to see if the selected map is the one the player is currently in.  If so, try again.
 .ok
 	ld a, [wMapGroup]
