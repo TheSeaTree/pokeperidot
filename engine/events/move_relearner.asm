@@ -7,8 +7,7 @@
 MoveRelearner:
 	ld hl, Text_MoveReminderIntro
 	call PrintText
-	call YesNoBox
-	jp c, .cancel
+	call JoyWaitAorB
 
 	ld a, BRICK_PIECE
 	ld [wCurItem], a
@@ -142,8 +141,7 @@ MoveReminder_Simulation:
 EggMoveTutor:
 	ld hl, Text_EggMoveTutorIntro
 	call PrintText
-	call YesNoBox
-	jp c, .cancel
+	call JoyWaitAorB
 
 	ld a, STAR_PIECE
 	ld [wCurItem], a
