@@ -21,14 +21,11 @@ Script_Whiteout:
 	special FadeOutPalettes
 	pause 40
 	special HealParty
-;	checkflag ENGINE_SAFARI_GAME_ACTIVE
-;	iftrue .safari_zone
 
 	checkcode VAR_BATTLETYPE
 	ifequal BATTLETYPE_NOCASH, .NoMoney
 	callasm HalveMoney
 	callasm GetWhiteoutSpawn
-;	clearflag ENGINE_SAFARI_ZONE
 	setevent EVENT_SS_MAKO_RESPAWN
 
 	special WarpToSpawnPoint
