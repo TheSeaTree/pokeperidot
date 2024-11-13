@@ -1,5 +1,5 @@
 BattleSubwayStatShopData:
-	db 13
+	db 14
 	dbw PROTEIN,          1
 	dbw CARBOS,           1
 	dbw CALCIUM,          1
@@ -8,6 +8,7 @@ BattleSubwayStatShopData:
 	dbw PP_UP,			  5
 	dbw EXP_SHARE,	 	 15
 	dbw RARE_CANDY,		 20
+	dbw LUCKY_EGG,		50
 	dbw TM_CALM_MIND, 	 50
 	dbw TM_BULK_UP, 	 50
 	dbw TM_TOXIC,		 50
@@ -42,6 +43,7 @@ BattleSimulationShopData:
 	dbw BLACK_SLUDGE,	16
 	dbw SOOTHE_BELL,	16
 	dbw CRASH_HELMET,	16
+	dbw BINDING_BAND,	16
 	dbw PALETTE,		16
 	dbw GLOW_SCALES,	16
 	dbw BARBED_SPEAR,	16
@@ -52,5 +54,4 @@ BattleSimulationShopData:
 	dbw TRICK_MIRROR,	32
 	dbw LIGHT_BALL,		32
 	dbw LIGHT_BUOY,		32
-	dbw LUCKY_EGG,		50
 	db -1
