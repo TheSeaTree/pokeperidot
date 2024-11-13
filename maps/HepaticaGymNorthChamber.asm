@@ -60,6 +60,7 @@ HepaticaGymNorthChamberLightsOn:
 	writetext HepaticaGymNorthChamberLightsOnText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	scall NorthChamberLightsOnSTD
 	moveobject GOLDENRODNORTHROOM_ROCKER1, 	  13, 13
 	moveobject GOLDENRODNORTHROOM_ROCKER2,    12,  5
@@ -81,6 +82,9 @@ HepaticaGymNorthChamberLightsOn:
 	end
 
 NorthChamberLightsOnSTD:
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	closetext
 	jumpstd lightuproom
 	end
 	
@@ -91,6 +95,7 @@ HepaticaGymNorthChamberLeaderSwitch:
 	writetext HepaticaGymNorthChamberLeaderSwitchText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	setevent GOLDENROD_LEADER_DOOR_2
@@ -199,6 +204,10 @@ HepaticaGymNorthChamberLeaderSwitchText:
 HepaticaGymNorthChamberLeaderSwitchStuckText:
 	text "The switch won't"
 	line "budge anymore!"
+	done
+
+HeptaicaGymWhoWouldntText:
+	text "Who wouldn't?"
 	done
 
 HepaticaGymNorthChamber_MapEvents:

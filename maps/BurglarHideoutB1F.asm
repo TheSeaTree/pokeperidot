@@ -206,6 +206,7 @@ BurglarHideoutB1FScientist:
 	disappear BURGLARHIDEOUTB1F_BIKER3
 	setevent EVENT_HIDEOUT_BEAT_BIKERS
 	special FadeInQuickly
+	special RestartMapMusic
 .Lost
 	end
 

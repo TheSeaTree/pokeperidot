@@ -48,6 +48,7 @@ HepaticaGymEastChamberLightsOn:
 	writetext HepaticaGymEastChamberLightsOnText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	scall EastChamberLightsOnSTD
 	moveobject GOLDENRODEASTROOM_ROCKER1, 13,  4
 	moveobject GOLDENRODEASTROOM_ROCKER2,  4, 12
@@ -67,9 +68,12 @@ HepaticaGymEastChamberLightsOn:
 	end
 
 EastChamberLightsOnSTD:
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	closetext
 	jumpstd lightuproom
 	end
-	
+
 HepaticaGymEastChamberLeaderSwitch:
 	checkevent GOLDENROD_LEADER_DOOR_1
 	iftrue .flipped
@@ -77,6 +81,7 @@ HepaticaGymEastChamberLeaderSwitch:
 	writetext HepaticaGymEastChamberLeaderSwitchText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	setevent GOLDENROD_LEADER_DOOR_1
@@ -164,7 +169,7 @@ HepaticaGymEastChamberLeaderSwitchText:
 	
 	para "Flip it?"
 	done
-	
+
 HepaticaGymEastChamberLeaderSwitchStuckText:
 	text "The switch won't"
 	line "budge anymore!"

@@ -78,12 +78,11 @@ BurglarHideoutB2FDoor1:
 	yesorno
 	iffalse .No
 	writetext HideoutStatueSwitchYesText
-	waitbutton
+	playsound SFX_ENTER_DOOR
+	wait 4
 	changeblock  2, 6, $1e ; open shutter
 	changeblock  4, 6, $1c ; open shutter
-	playsound SFX_ENTER_DOOR
 	reloadmappart
-	waitsfx
 	setevent EVENT_HIDEOUT_SWITCH_1
 .No
 	closetext
@@ -97,12 +96,11 @@ BurglarHideoutB2FDoor2:
 	yesorno
 	iffalse .No
 	writetext HideoutStatueSwitchYesText
-	waitbutton
+	playsound SFX_ENTER_DOOR
+	wait 4
 	changeblock  12, 6, $0d ; open shutter
 	changeblock  22, 8, $0d ; open shutter
-	playsound SFX_ENTER_DOOR
 	reloadmappart
-	waitsfx
 	setevent EVENT_HIDEOUT_SWITCH_2
 .No
 	closetext
@@ -116,13 +114,12 @@ BurglarHideoutB2FDoor3:
 	yesorno
 	iffalse .No
 	writetext HideoutStatueSwitchYesText
-	waitbutton
+	playsound SFX_ENTER_DOOR
+	wait 4
 	changeblock  12,  6, $47 ; open shutter
 	changeblock  30, 14, $1e ; open shutter
 	changeblock  32, 14, $1c ; open shutter
-	playsound SFX_ENTER_DOOR
 	reloadmappart
-	waitsfx
 	setevent EVENT_HIDEOUT_SWITCH_3
 .No
 	closetext
@@ -136,11 +133,10 @@ BurglarHideoutB2FDoor4:
 	yesorno
 	iffalse .No
 	writetext HideoutStatueSwitchYesText
-	waitbutton
-	changeblock  14, 12, $0d ; open shutter
 	playsound SFX_ENTER_DOOR
+	wait 4
+	changeblock  14, 12, $0d ; open shutter
 	reloadmappart
-	waitsfx
 	setevent EVENT_HIDEOUT_SWITCH_4
 .No
 	closetext
@@ -156,16 +152,15 @@ BurglarHideoutB2FDoor5:
 	checkevent EVENT_BEAT_BURGLAR_DUKE2
 	iffalse .WontBudge
 	writetext HideoutStatueSwitchYesText
-	waitbutton
+	playsound SFX_ENTER_DOOR
+	wait 4
 	changeblock  14, 12, $0d ; open shutter
 	changeblock  30, 14, $1e ; open shutter
 	changeblock  32, 14, $1c ; open shutter
 	changeblock  22,  8, $0d ; open shutter
 	changeblock  2, 6, $1e ; open shutter
 	changeblock  4, 6, $1c ; open shutter
-	playsound SFX_ENTER_DOOR
 	reloadmappart
-	waitsfx
 	setevent EVENT_HIDEOUT_SWITCH_5
 .No
 	closetext

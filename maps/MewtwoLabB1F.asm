@@ -22,11 +22,10 @@ MewtwoLabPowerSwitch:
 	iffalse .no
 	writetext MewtwoLabFlipPowerSwitchText
 	waitbutton
-	closetext
+	playsound SFX_ENTER_DOOR
 	changeblock 10, 12, $c3
 	reloadmappart
-	playsound SFX_ENTER_DOOR
-	waitsfx
+	closetext
 	earthquake 24
 	playsound SFX_WARP_TO
 	scall MewtwoLabLightUpRoom

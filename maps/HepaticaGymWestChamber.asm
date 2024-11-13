@@ -49,6 +49,7 @@ HepaticaGymWestChamberLightsOn:
 	writetext HepaticaGymWestChamberLightsOnText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	scall WestChamberLightsOnSTD
 	moveobject GOLDENRODWESTROOM_ROCKER1, 11, 18
 	moveobject GOLDENRODWESTROOM_BIKER,    2, 12
@@ -68,6 +69,9 @@ HepaticaGymWestChamberLightsOn:
 	end
 
 WestChamberLightsOnSTD:
+	playsound SFX_ENTER_DOOR
+	waitsfx
+	closetext
 	jumpstd lightuproom
 	end
 	
@@ -78,6 +82,7 @@ HepaticaGymWestChamberLeaderSwitch:
 	writetext HepaticaGymWestChamberLeaderSwitchText
 	yesorno
 	iffalse .no
+	writetext HeptaicaGymWhoWouldntText
 	playsound SFX_ENTER_DOOR
 	waitsfx
 	setevent GOLDENROD_LEADER_DOOR_3

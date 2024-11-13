@@ -395,24 +395,6 @@ Door1OpenedText:
 	cont "on."
 	done
 
-Door2OpenedText:
-	text "What else do you"
-	line "want? The door is"
-	cont "already opened!"
-	done
-	
-DoorGuard2Text:
-	text "There are two"
-	line "choices ahead now."
-	
-	para "You didn't hear it"
-	line "from me, but the"
-	cont "leader's room is"
-	cont "to the left of"
-	cont "where we currently"
-	cont "are standing."
-	done
-
 HepaticaGym_MapEvents:
 	db 0, 0 ; filler
 
