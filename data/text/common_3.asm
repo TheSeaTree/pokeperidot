@@ -221,6 +221,11 @@ UnknownText_0x1c465f::
 	cont "will be saved. OK?"
 	done
 
+CannotAccessPCFeatureText::
+	text "This menu cannot"
+	line "be accessed now."
+	done
+
 UnknownText_0x1c4693::
 	text "The window save"
 	line "area was exceeded."

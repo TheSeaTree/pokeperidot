@@ -109,14 +109,9 @@ BillsPC_SeeYa:
 	ret
 
 BillsPC_MovePKMNMenu:
+	call CheckExpertModePDA
+	jp z, CantAccessMenu
 	call LoadStandardMenuHeader
-	farcall IsAnyMonHoldingMail
-	jr nc, .no_mail
-	ld hl, .Text_MonHoldingMail
-	call PrintText
-	jr .quit
-
-.no_mail
 	farcall StartMoveMonWOMail_SaveGame
 	jr c, .quit
 	farcall _MovePKMNWithoutMail
@@ -127,6 +122,7 @@ BillsPC_MovePKMNMenu:
 	call CloseWindow
 	and a
 	ret
+
 
 .Text_MonHoldingMail:
 	; There is a #MON holding MAIL. Please remove the MAIL.
@@ -230,9 +226,43 @@ UnknownText_0xe57e:
 	text_end
 
 BillsPC_ChangeBoxMenu:
+	call CheckExpertModePDA
+	jr z, CantAccessMenu
 	farcall _ChangeBox
 	and a
 	ret
+
+CheckExpertModePDA:
+	ld a, [wDifficultyMode]
+	cp DIFFICULTY_EXPERT_F
+	jr nz, .not_expert_mode
+	call GetMapEnvironment
+	call CheckOutdoorMap
+	jr z, .not_expert_mode
+	and a
+	ret
+
+.not_expert_mode
+	scf
+	ret
+
+CantAccessMenu:
+	call LoadStandardMenuHeader
+	ld hl, Text_CannotChangeBoxOrMove
+	call PrintText
+	ld de, SFX_WRONG
+	call WaitPlaySFX
+	call WaitSFX
+	ld c, 50
+	call DelayFrames
+	call CloseWindow
+	and a
+	ret
+
+Text_CannotChangeBoxOrMove:
+	; You cannot access this menu now.
+	text_far CannotAccessPCFeatureText
+	text_end
 
 ClearPCItemScreen:
 	call DisableSpriteUpdates

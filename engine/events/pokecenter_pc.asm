@@ -94,7 +94,7 @@ PCPC_SAVE_GAME    EQU 5
 	db PCPC_TURN_OFF
 	db -1 ; end
 
-	; while in the past
+	; using the Poke PDA
 	db 2
 	db PCPC_BILLS_PC
 	db PCPC_TURN_OFF
@@ -119,18 +119,18 @@ PCPC_SAVE_GAME    EQU 5
 	db -1 ; end
 
 .ChooseWhichPCListToUse:
-	ld a, [wCurLandmark]
-	ld [wPrevLandmark], a
-	cp THE_PAST
-	jr nz, .not_in_past
-	ld a, 3 ; while in the past
+	call GetMapEnvironment
+	call CheckOutdoorMap
+	jr nz, .not_outside
+	ld a, 3 ; using the Poke PDA
 	ret
-.not_in_past
+.not_outside
 	ld a, [wDifficultyMode]
 	cp DIFFICULTY_EXPERT_F
 	jr z, .expert_mode
 	call CheckReceivedDex
 	jr nz, .got_dex
+.outside
 	ld a, 0 ; before Pokédex
 	ret
 

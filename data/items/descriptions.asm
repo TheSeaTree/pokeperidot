@@ -1000,8 +1000,8 @@ LightClayDesc:
 	next "duration. (HOLD)@"
 
 PocketPCDesc:
-	db	 "Access <PK><MN> STORAGE"
-	next "through time.@"
+	db	 "Remote <PK><MN> STORAGE"
+	next "access.@"
 
 GlowScalesDesc:
 	db   "Boosts accuracy"

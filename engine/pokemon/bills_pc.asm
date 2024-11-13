@@ -185,7 +185,7 @@ BillsPCDepositFuncRelease:
 	jr c, BillsPCDepositFuncCancel
 	call BillsPC_IsMonAnEgg
 	jr c, BillsPCDepositFuncCancel
-	call BillsPC_IsPlayerInPast
+	call BillsPC_IsPlayerOutside
 	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
@@ -447,7 +447,7 @@ BillsPC_Withdraw:
 	push af
 	call BillsPC_IsMonAnEgg
 	jr c, .FailedRelease
-	call BillsPC_IsPlayerInPast
+	call BillsPC_IsPlayerOutside
 	jr c, .FailedRelease
 	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
@@ -1731,15 +1731,14 @@ BillsPC_IsMonAnEgg:
 	scf
 	ret
 
-BillsPC_IsPlayerInPast:
-	ld a, [wCurLandmark]
-	ld [wPrevLandmark], a
-	cp THE_PAST
-	jr z, .past
+BillsPC_IsPlayerOutside:
+	call GetMapEnvironment
+	call CheckOutdoorMap
+	jr z, .outside
 	and a
 	ret
 
-.past
+.outside
 	ld de, PCString_NoReleasingInPast
 	call BillsPC_PlaceString
 	ld de, SFX_WRONG
