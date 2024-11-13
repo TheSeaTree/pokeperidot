@@ -2,11 +2,11 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
 	dn  9, 10,  7,  7 ; CECIL
-	dn  8,  8,  8,  4 ; MURPHY
 	dn  7,  9,  9,  9 ; CELESTE
+	dn  8,  8,  8,  4 ; MURPHY
 	dn  9,  9,  9,  9 ; DUANE
 	dn 10, 10, 10, 10 ; PRYCE
-	dn 10, 10, 10, 10 ; JASMINE
+	dn 10, 10, 10, 10 ; ALAN
 	dn 10, 10, 10, 10 ; JOEL
 	dn 14, 14, 14, 14 ; ENYA
 	dn 13, 13, 13, 13 ; RIVAL1
@@ -18,7 +18,7 @@ TrainerClassDVs:
 	dn  7, 15, 15, 14 ; AMBER
 	dn 14, 14, 15, 14 ; BREDE
 	dn 15, 14, 15, 14 ; CHAMPION
-	dn  9,  8,  8,  8 ; BROCK
+	dn 15, 14, 15, 14 ; YOUNG_CHAMPION
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
@@ -47,7 +47,7 @@ TrainerClassDVs:
 	dn  9,  8,  8,  8 ; GUITARIST
 	dn 10,  8,  8,  8 ; HIKER
 	dn  9,  8,  8,  8 ; BIKER
-	dn  9,  8,  8,  8 ; BLAINE
+	dn  9,  8,  8,  8 ; JADE_LINK
 	dn  9,  8,  8,  8 ; BURGLAR
 	dn  9,  8,  8,  8 ; FIREBREATHER
 	dn  9,  8,  8,  8 ; JUGGLER
@@ -64,8 +64,8 @@ TrainerClassDVs:
 	dn  6,  8,  8, 10 ; KIMONO_GIRL
 	dn  6,  8, 10,  8 ; TWINS
 	dn  6, 13,  8,  8 ; POKEFANF
-	dn 15, 14, 15, 15 ; RED
+	dn 15, 14, 15, 15 ; DEVELOPER
 	dn  7, 15, 15, 14 ; CHAMPIONF
 	dn  9,  8,  8,  8 ; OFFICER
-	dn  7, 14, 10,  8 ; GRUNTF
-	dn  9,  8,  8,  8 ; MYSTICALMAN
+	dn  7, 14, 10,  8 ; JADE
+	dn  9,  8,  8,  8 ; PERRY
