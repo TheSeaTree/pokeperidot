@@ -98,6 +98,20 @@ EmilysRoomEmilyScript:
 	disappear EMILYSROOM_PLAYER
 	applymovement PLAYER, EmilysRoom_PlayerJoinsEmily
 
+	checkevent EVENT_GOT_GORGEOUS_BOX
+	iftrue .EnterHallOfFame
+	copybytetovar wEliteFourFightCount
+	ifless 4, .EnterHallOfFame
+	setevent EVENT_GOT_GORGEOUS_BOX
+	opentext
+	writetext EmilyGiveGorgeousBoxText
+	waitbutton
+	verbosegiveitem GORGEOUS_BOX
+	iffalse .OpenNow
+	writetext EmilyAfterGorgeousBoxText
+	waitbutton
+	closetext
+.EnterHallOfFame
 	follow EMILYSROOM_EMILY, PLAYER
 	applymovement EMILYSROOM_EMILY, EmilysRoomMovementData_EmilyExitsToHallOfFame
 	stopfollow
@@ -107,6 +121,20 @@ EmilysRoomEmilyScript:
 	playsound SFX_EXIT_BUILDING
 	warpcheck
 	end
+
+.OpenNow
+	writetext EmilyGorgeousBoxNoRoomText
+	waitbutton
+	closetext
+	opentext
+	writetext OpenGorgeousBoxText
+	playsound SFX_DEX_FANFARE_50_79
+	waitsfx
+	writetext EmilyAfterTrophyText
+	waitbutton
+	closetext
+	setevent EVENT_DECO_GOLD_TROPHY
+	jump .EnterHallOfFame
 
 EmilyNoTurningBack:
 	opentext
@@ -254,6 +282,49 @@ EmilyBattleAfterText:
 	para "Now come on, I'll"
 	line "race you to the"
 	cont "HALL OF FAME!"
+	done
+
+EmilyGiveGorgeousBoxText:
+	text "Wait, <PLAYER>!"
+
+	para "……………………"
+	
+	para "Before we go into"
+	line "the HALL OF FAME,"
+	cont "I have something"
+	cont "for you."
+	done
+
+EmilyAfterGorgeousBoxText:
+	text "Don't open it now!"
+
+	para "Wait until you get"
+	line "home, okay?"
+	done
+
+EmilyGorgeousBoxNoRoomText:
+	text "Is your BAG full?"
+
+	para "You can open it"
+	line "here, it's okay!"
+	done
+
+OpenGorgeousBoxText:
+	text "Wow! There's a GOLD"
+	line "TROPHY inside!"
+	done
+
+EmilyAfterTrophyText:
+	text "I hope you like"
+	line "it!"
+
+	para "You've beaten the"
+	line "very best the"
+	cont "#MON LEAGUE has"
+	cont "to offer."
+
+	para "You've earned that"
+	line "TROPHY!"
 	done
 
 EmilyCantProgress:
