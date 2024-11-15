@@ -13,6 +13,8 @@ GymLeaders:
 	db ALAN
 	db JOEL
 	db ENYA
+	db JADE
+	db PERRY
 ; fallthrough
 EliteFour:
 	db WILBUR

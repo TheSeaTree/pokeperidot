@@ -108,6 +108,11 @@ Script_BossBoardTrain:
 	reloadmap
 	ifnotequal $0, Script_FailedBattleTowerChallenge
 	special BattleSubway_IncreaseCurrentStreak
+
+	playmusic MUSIC_NONE
+	playsound SFX_TRAIN_ARRIVED
+	waitsfx
+
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
 	warpcheck
 	end

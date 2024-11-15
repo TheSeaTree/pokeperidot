@@ -329,7 +329,7 @@ Script_BeatenAllTrainers2:
 	special BattleSubway_CompareStreaks
 
 	checkcode VAR_SUBWAY_SET
-	ifequal 5, .DefeatedBoss
+	ifequal 4, .DefeatedBoss
 
 	callasm CheckLevelGroup
  	ifgreater  4, .HardMode
@@ -354,24 +354,27 @@ Script_BeatenAllTrainers2:
 	jump .Continue
 
 .DefeatedBoss:
-	checkflag EVENT_DECO_PERIDOT_TROPHY
+	opentext
+	checkevent EVENT_DECO_PERIDOT_TROPHY
 	iftrue .GotTrophy
 	writetext Text_PeridotTrophyGift
-	playsound SFX_DEX_FANFARE_50_79
-	setflag EVENT_DECO_PERIDOT_TROPHY
+	playsound SFX_KEY_ITEM
+	setevent EVENT_DECO_PERIDOT_TROPHY
 	waitsfx
 	writetext Text_SentPeridotTrophyHome
+	waitbutton
+	writetext Text_AfterTrophyBPReward
 	waitbutton
 .GotTrophy
 	callasm CheckLevelGroup
  	ifgreater  4, .HardModeBossReward
 	givecoins 50
 	writebyte 50
-	jump .GetBPReward
+	jump .GetBossBPReward
 .HardModeBossReward
 	givecoins 100
 	writebyte 100
-	opentext
+.GetBossBPReward
 	writetext Text_PlayerGotBP
 	writebyte BATTLETOWERACTION_1D
 	special BattleTowerAction
@@ -817,12 +820,17 @@ Text_PeridotTrophyGift:
 	text "For defeating the"
 	line "SUBWAY ACE, you"
 	cont "have earned the"
-	cont "PERIDOT TROPHY."
+	cont "PERIDOT TROPHY!"
 	done
 
 Text_SentPeridotTrophyHome:
 	text "I will just send"
 	line "home for you."
+	done
+
+Text_AfterTrophyBPReward:
+	text "You have also"
+	line "earned some BP."
 	done
 
 BattleSubwayCurrentStreakText:

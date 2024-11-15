@@ -94,18 +94,18 @@ Script_DontBattleNextOpponent:
 	end
 
 Script_BeatenAllTrainers:
-	playmusic MUSIC_NONE
-	playsound SFX_TRAIN_ARRIVED
-	waitsfx
-;	jump Script_SubwayBossFight
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
-	
+
 	checkcode VAR_SUBWAY_SET
 	addvar 1
 	writevarcode VAR_SUBWAY_SET
 
 	checkcode VAR_SUBWAY_SET
 	ifequal 4, Script_SubwayBossFight
+
+	playmusic MUSIC_NONE
+	playsound SFX_TRAIN_ARRIVED
+	waitsfx
 
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
 	warpcheck
