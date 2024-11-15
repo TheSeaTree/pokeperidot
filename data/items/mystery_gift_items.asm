@@ -37,6 +37,7 @@ MysteryGiftItems:
 	db 4, X_ATTACK
 	db 4, X_SP_ATK
 	db 4, X_SP_DEF
+	db 4, TRICK_MIRROR
 	db 2, X_ACCURACY
 	db 2, GOLD_BERRY
 	db 1, HP_UP
