@@ -2451,6 +2451,16 @@ IsAnyMonHoldingExpShare:
 
 	push hl
 	push bc
+	ld bc, MON_LEVEL
+	add hl, bc
+	ld a, [hl]
+	cp MAX_LEVEL
+	pop bc
+	pop hl
+	jr nc, .next
+
+	push hl
+	push bc
 	ld bc, MON_ITEM
 	add hl, bc
 	pop bc
@@ -7878,23 +7888,18 @@ GiveExperiencePoints:
 	ld a, [wBattleParticipantsNotFainted]
 	ld b, a
 	ld c, PARTY_LENGTH
-	ld d, 0
+	ld de, 0
 .count_loop
 	push bc
 	push de
-	ld a, [wPartyCount]
-	cp c
-	jr c, .no_mon
-	ld a, c
-	dec a
+	ld a, e
 	ld hl, wPartyMon1Level
 	call GetPartyLocation
 	ld a, [hl]
-.no_mon
 	cp MAX_LEVEL
 	pop de
 	pop bc
-	jr nz, .gains_exp
+	jr c, .gains_exp
 	srl b
 	ld a, d
 	jr .no_exp
@@ -7904,6 +7909,7 @@ GiveExperiencePoints:
 	adc d
 	ld d, a
 .no_exp
+	inc e
 	dec c
 	jr nz, .count_loop
 	cp 2
