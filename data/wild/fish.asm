@@ -28,12 +28,12 @@ FishGroups:
 .Shore_Good:
 	db  35 percent,     MAGIKARP,   10
 	db  70 percent,     KRABBY,     15
-	db  90 percent + 1, KRABBY,     15
+	db  90 percent + 1, HORSEA,     15
 	db 100 percent,     time_group 0
 .Shore_Super:
 	db  40 percent,     KRABBY,     44
 	db  70 percent,     time_group 1
-	db  90 percent + 1, KRABBY,     46
+	db  90 percent + 1, SEADRA,     46
 	db 100 percent,     KINGLER,    50
 
 .Ocean_Old:
