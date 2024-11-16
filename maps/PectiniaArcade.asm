@@ -55,7 +55,7 @@ PectiniaArcadeSubwayRewardGuy:
 .GiveReward4:
 	copybytetovar wBattleSubwayBestStreak
 	ifless  40, .NoMoreRewards
-	giveitem HP_UP, 25
+	giveitem HP_UP, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_4
 	writebyte 40
@@ -73,7 +73,7 @@ PectiniaArcadeSubwayRewardGuy:
 .GiveReward6:
 	copybytetovar wBattleSubwayBestStreak
 	ifless  60, .NoMoreRewards
-	giveitem PROTEIN, 25
+	giveitem PROTEIN, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_6
 	writebyte 60
@@ -91,7 +91,7 @@ PectiniaArcadeSubwayRewardGuy:
 .GiveReward8:
 	copybytetovar wBattleSubwayBestStreak
 	ifless  80, .NoMoreRewards
-	giveitem CALCIUM, 25
+	giveitem CALCIUM, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_8
 	writebyte 80
@@ -109,7 +109,7 @@ PectiniaArcadeSubwayRewardGuy:
 .GiveReward10:
 	copybytetovar wBattleSubwayBestStreak
 	ifless 100, .NoMoreRewards
-	giveitem IRON, 25
+	giveitem IRON, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_10
 	writebyte 100
@@ -127,7 +127,7 @@ PectiniaArcadeSubwayRewardGuy:
 .GiveReward12:
 	copybytetovar wBattleSubwayBestStreak
 	ifless 120, .NoMoreRewards
-	giveitem CARBOS, 25
+	giveitem CARBOS, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_12
 	writebyte 120
@@ -217,7 +217,7 @@ PectiniaArcadeSubwayRewardGuy:
 	writetext PectiniaArcadeMaxStreakText
 	waitbutton
 	writetext PectiniaArcadeReceiveMasterBallText
-	playsound SFX_ITEM
+	playsound SFX_DEX_FANFARE_200_229
 	pause 60
 	writetext PectiniaArcadePutAwayMasterBallText
 	waitbutton
