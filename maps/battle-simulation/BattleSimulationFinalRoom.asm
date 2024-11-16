@@ -7,8 +7,8 @@ BattleSimulationFinalRoom_MapScripts:
 	db 0 ; callbacks
 
 BattleSimulationMaple:
-	opentext
 	faceplayer
+	opentext
 	special HealParty
 	writetext BattleSimulationMapleChallengeText
 	waitbutton

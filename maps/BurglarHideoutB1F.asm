@@ -122,7 +122,7 @@ BurglarHideoutB1FScientist:
 	turnobject BURGLARHIDEOUTB1F_SCIENTIST, UP
 	scall PlaySecurityAlarm
 	faceplayer
-	opentext 
+	opentext
 	writetext BurglarHideoutB1FScientistWarning
 	waitbutton
 	closetext

@@ -23,7 +23,7 @@ VictoryCoastSnubbullMorning:
 
 VictoryCoastSnubbullDay:
 	faceplayer
-	opentext 
+	opentext
 	writetext VictoryCoastSnubbleCryText
 	cry SNUBBULL
 	waitbutton

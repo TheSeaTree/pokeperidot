@@ -168,8 +168,8 @@ RugosaCityOfficer2Script:
 	jumptextfaceplayer RugosaCityOfficerBeforeText
 	
 .Backup
-	opentext
 	faceplayer
+	opentext
 	writetext RugosaCityOfficer2Text
 	waitbutton
 	closetext

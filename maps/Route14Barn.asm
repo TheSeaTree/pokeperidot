@@ -12,9 +12,9 @@ Route14Barn_MapScripts:
 Route14BarnCooltrainerScript:
 	checkevent EVENT_MARIE_GONE_HOME
 	iftrue .AfterMarie
-	opentext
 	checkevent EVENT_TALKED_TO_MARIES_SISTER
 	iftrue .FindMarie
+	opentext
 	writetext Route14BarnCooltrainerText
 	waitbutton
 	closetext
@@ -33,6 +33,7 @@ Route14BarnCooltrainerScript:
 	
 .FindMarie
 	faceplayer
+	opentext
 	jump .continue
 	
 .AfterMarie
