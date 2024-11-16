@@ -417,37 +417,37 @@ HandleWeatherItem:
 	call GetItemName
 	ld hl, BattleText_UsersStringBuffer1Activated
 	call StdBattleTextBox
+
+	push hl
+	push de
+	push bc
 	ld a, [wBattleWeather]
-	cp WEATHER_RAIN
-	jr z, .RainAnim
 	cp WEATHER_SUN
 	jr z, .SunAnim
 	cp WEATHER_SANDSTORM
 	jr z, .SandstormAnim
-	ret
-
+	ld a, RAIN_DANCE
+	call BattleItemAnimCommon
+	ld hl, DownpourText
+	call StdBattleTextBox
+	jr .FinishAnim
+.SunAnim
+	ld a, SUNNY_DAY
+	call BattleItemAnimCommon
+	ld hl, SunGotBrightText
+	call StdBattleTextBox
+	jr .FinishAnim
+.SandstormAnim
+	ld a, SANDSTORM
+	call BattleItemAnimCommon
+	ld hl, SandstormBrewedText
+	call StdBattleTextBox
+.FinishAnim
+	pop hl
 .finish
 	pop bc
 	pop de
 	ret
-
-.RainAnim
-	ld de, RAIN_DANCE
-	call Call_PlayBattleAnim
-	ld hl, DownpourText
-	jp StdBattleTextBox
-	
-.SunAnim
-	ld de, SUNNY_DAY
-	call Call_PlayBattleAnim
-	ld hl, SunGotBrightText
-	jp StdBattleTextBox
-	
-.SandstormAnim
-	ld de, SANDSTORM
-	call Call_PlayBattleAnim
-	ld hl, SandstormBrewedText
-	jp StdBattleTextBox
 
 HandleBerserkGene:
 	ldh a, [hSerialConnectionStatus]
@@ -566,8 +566,15 @@ HandleLegendaryStatBoost:
 	push af
 	pop hl
 	ld [hl], a
-	ld de, FOCUS_ENERGY
-	call Call_PlayBattleAnim
+	push hl
+	push de
+	push bc
+	call EmptyBattleTextBox
+	ld a, FOCUS_ENERGY
+	call BattleItemAnimCommon
+	pop bc
+	pop de
+	pop hl
 	ld hl, BattleText_LegendaryAura
 	call StdBattleTextBox
 	pop af
@@ -4768,6 +4775,14 @@ ItemRecoveryAnim:
 	pop hl
 	ret
 
+BattleItemAnimCommon:
+	ld [wFXAnimID], a
+	xor a
+	ld [wNumHits], a
+	ld [wFXAnimID + 1], a
+	predef PlayBattleAnim
+	ret
+
 UseHeldStatusHealingItem:
 	callfar GetOpponentItem
 	ld hl, HeldStatusHealingEffects
@@ -4926,10 +4941,14 @@ HandleStatBoostingHeldItems:
 	ld [bc], a
 	ld [de], a
 	call GetItemName
+	push hl
 	push de
-	ld de, GROWTH
-	call Call_PlayBattleAnim
+	push bc
+	ld a, GROWTH
+	call BattleItemAnimCommon
+	pop bc
 	pop de
+	pop hl
 	ld hl, BattleText_UsersStringBuffer1Activated
 	call StdBattleTextBox
 	callfar BattleCommand_StatUpMessage
