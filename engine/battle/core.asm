@@ -5405,6 +5405,7 @@ BattleMenu_Rock:
 	ld a, $FF
 .noCarry
 	ld [hl], a
+	call SetPlayerTurn
 	ld de, ANIM_THROW_ROCK
 	call Call_PlayBattleAnim
 	ld hl, wSafariMonAngerCount
@@ -5514,6 +5515,7 @@ BattleMenu_Pack:
 	jr .got_item
 
 .contest
+	call SetPlayerTurn
 	ld a, SAFARI_BALL
 	ld [wCurItem], a
 	call DoItemEffect
@@ -5687,6 +5689,7 @@ BattleMenu_Bait:
 	call StdBattleTextBox
 	ld hl, wEnemyMonCatchRate
 	srl [hl] ; halve catch rate
+	call SetPlayerTurn
 	ld de, ANIM_THROW_BAIT
 	call Call_PlayBattleAnim
 	ld hl, wSafariMonEating
