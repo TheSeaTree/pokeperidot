@@ -131,7 +131,7 @@ GivePokerusAndConvertBerries:
 
 ConvertBerriesToBerryJuice:
 	call Random
-	cp 6 percent + 1 ; 1/16 chance
+	cp 20 percent + 1 ; 1/5 chance
 	ret nc
 	ld hl, wPartyMons
 	ld a, [wPartyCount]
@@ -165,7 +165,7 @@ ConvertBerriesToBerryJuice:
 
 ConvertBerriesToBlackSludge:
 	call Random
-	cp 6 percent + 1 ; 1/16 chance
+	cp 20 percent + 1 ; 1/5 chance
 	ret nc
 	ld hl, wPartyMons
 	ld a, [wPartyCount]
