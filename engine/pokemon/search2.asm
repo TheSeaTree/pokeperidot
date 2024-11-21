@@ -70,32 +70,50 @@ FindAtLeastThatHappy:
 	ret
 
 FindAboveLevel:
-	ld c, $0
-	ld a, [wPartyCount]
-	ld d, a
-.loop
-	ld a, d
-	dec a
-	push hl
-	push bc
+	ldh a, [rSVBK]
+	push af
+	ld a, $1
+	ldh [rSVBK], a
+	ld a, [wcd4f]
+	ld c, 10
+	call SimpleMultiply
+	ld hl, wcd50
+	ld [hl], a
 	ld bc, PARTYMON_STRUCT_LENGTH
-	call AddNTimes
-	pop bc
-	ld a, b
-	cp [hl]
+	ld de, wPartyMon1Level
+	ld a, [wPartyCount]
+.party_loop
+	push af
+	ld a, [de]
+	push hl
+	push de
 	pop hl
-	jr c, .greater
-	ld a, c
-	or $1
-	ld c, a
-
-.greater
-	sla c
-	dec d
-	jr nz, .loop
-	call RetroactivelyIgnoreEggs
-	ld a, c
+	add hl, bc
+	push hl
+	pop de
+	pop hl
+	cp PAST_LEVEL
+	jr z, .equal
+	jr nc, .exceeds
+.equal
+	pop af
+	dec a
+	jr nz, .party_loop
+	pop af
+	ldh [rSVBK], a
 	and a
+	ret
+
+.exceeds
+	pop af
+	ld a, $4
+	ld [wcf66], a
+	pop af
+	ldh [rSVBK], a
+	scf
+	call RetroactivelyIgnoreEggs
+	ld a, $1
+	ld [wScriptVar], a
 	ret
 
 FindThatSpecies:
