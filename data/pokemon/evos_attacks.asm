@@ -3297,8 +3297,8 @@ SunfloraEvosAttacks:
 YanmaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, FORESIGHT
-	db 4, WING_ATTACK
+	db 1, WING_ATTACK
+	db 4, FORESIGHT
 	db 6, QUICK_ATTACK
 	db 11, PROTECT
 	db 14, SONICBOOM
