@@ -1,5 +1,4 @@
 FlyHitMoves:
-	db GUST
 	db WHIRLWIND
 	db THUNDER
 	db HURRICANE

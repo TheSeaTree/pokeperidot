@@ -16,7 +16,7 @@ BattleAnimations::
 	dw BattleAnim_RazorWind
 	dw BattleAnim_SwordsDance
 	dw BattleAnim_Cut
-	dw BattleAnim_Gust
+	dw BattleAnim_AerialAce
 	dw BattleAnim_WingAttack
 	dw BattleAnim_Whirlwind
 	dw BattleAnim_Fly
@@ -1294,7 +1294,18 @@ BattleAnim_Sonicboom_JP:
 	anim_wait 16
 	anim_ret
 
-BattleAnim_Gust:
+BattleAnim_AerialAce:
+	anim_1gfx ANIM_GFX_CUT
+	anim_call BattleAnim_TargetObj_2Row
+	anim_bgeffect ANIM_BG_TACKLE, $0, $1, $0
+	anim_wait 4
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 40, $0
+	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
+	anim_wait 8
+	anim_call BattleAnim_ShowMon_0
+	anim_ret
+
 BattleAnim_Sonicboom:
 	anim_2gfx ANIM_GFX_WIND, ANIM_GFX_HIT
 .loop

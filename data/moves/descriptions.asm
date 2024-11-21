@@ -15,7 +15,7 @@ MoveDescriptions::
 	dw RazorWindDescription
 	dw SwordsDanceDescription
 	dw CutDescription
-	dw GustDescription
+	dw AerialAceDescription
 	dw WingAttackDescription
 	dw WhirlwindDescription
 	dw FlyDescription
@@ -321,9 +321,9 @@ CutDescription:
 	db   "Cuts using claws,"
 	next "scythes, etc.@"
 
-GustDescription:
-	db   "Whips up a strong"
-	next "gust of wind.@"
+AerialAceDescription:
+	db   "An attack that"
+	next "never misses.@"
 
 WingAttackDescription:
 	db   "Strikes the target"

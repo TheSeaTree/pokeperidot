@@ -213,7 +213,7 @@ MetapodEvosAttacks:
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PSYWAVE
-	db 10, GUST
+	db 10, AERIAL_ACE
 	db 11, CONFUSION
 	db 13, POISONPOWDER
 	db 13, STUN_SPORE
@@ -248,7 +248,7 @@ KakunaEvosAttacks:
 BeedrillEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, SHARPEN
-	db 10, WING_ATTACK
+	db 10, AERIAL_ACE
 	db 11, FURY_ATTACK
 	db 14, RAGE
 	db 17, PURSUIT
@@ -364,6 +364,7 @@ SpearowEvosAttacks:
 	db 11, FURY_ATTACK
 	db 15, WING_ATTACK
 	db 18, MIRROR_MOVE
+	db 21, AERIAL_ACE
 	db 25, AGILITY
 	db 29, FOCUS_ENERGY
 	db 32, DOUBLE_TEAM
@@ -380,6 +381,7 @@ FearowEvosAttacks:
 	db 11, FURY_ATTACK
 	db 15, WING_ATTACK
 	db 18, MIRROR_MOVE
+	db 24, AERIAL_ACE
 	db 27, AGILITY
 	db 32, FOCUS_ENERGY
 	db 38, DOUBLE_TEAM
@@ -1739,6 +1741,7 @@ CuboneEvosAttacks:
 	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
 	db 1, GROWL
+	db 1, AERIAL_ACE
 	db 3, TAIL_WHIP
 	db 7, BONE_CLUB
 	db 11, HEADBUTT
@@ -1755,6 +1758,7 @@ CuboneEvosAttacks:
 MarowakEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, GROWL
+	db 1, AERIAL_ACE
 	db 3, TAIL_WHIP
 	db 7, BONE_CLUB
 	db 11, HEADBUTT
@@ -2065,9 +2069,10 @@ ScytherEvosAttacks:
 	db 4, FURY_CUTTER
 	db 5, FOCUS_ENERGY
 	db 9, PURSUIT
+	db 11, WING_ATTACK
 	db 13, FALSE_SWIPE
 	db 21, AGILITY
-	db 25, WING_ATTACK
+	db 25, AERIAL_ACE
 	db 29, U_TURN
 	db 33, RAZOR_WIND
 	db 37, DOUBLE_TEAM
@@ -2409,7 +2414,7 @@ SnorlaxEvosAttacks:
 
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
-	db 1,  GUST
+	db 1,  AERIAL_ACE
 	db 1,  ICY_WIND
 	db 1,  MIST
 	db 3,  TRI_ATTACK
@@ -2980,6 +2985,7 @@ ShifurEvosAttacks:
 	db 8, QUICK_ATTACK
 	db 14, ICY_WIND
 	db 16, FURY_SWIPES
+	db 18, AERIAL_ACE
 	db 20, AGILITY
 	db 22, METAL_CLAW
 	db 28, AURORA_BEAM
@@ -2996,6 +3002,7 @@ SnowmadEvosAttacks:
 	db 1, LEER
 	db 8, QUICK_ATTACK
 	db 14, ICY_WIND
+	db 18, AERIAL_ACE
 	db 16, FURY_SWIPES
 	db 20, AGILITY
 	db 22, METAL_CLAW
@@ -3203,6 +3210,7 @@ SkiploomEvosAttacks:
 	db 12, POISONPOWDER
 	db 14, STUN_SPORE
 	db 16, SLEEP_POWDER
+	db 18, AERIAL_ACE
 	db 20, RAZOR_LEAF
 	db 24, LEECH_SEED
 	db 28, MEGA_DRAIN
@@ -3224,6 +3232,7 @@ JumpluffEvosAttacks:
 	db 12, POISONPOWDER
 	db 14, STUN_SPORE
 	db 16, SLEEP_POWDER
+	db 18, AERIAL_ACE
 	db 20, RAZOR_LEAF
 	db 24, LEECH_SEED
 	db 29, MEGA_DRAIN
@@ -3289,12 +3298,13 @@ YanmaEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, FORESIGHT
+	db 4, WING_ATTACK
 	db 6, QUICK_ATTACK
 	db 11, PROTECT
 	db 14, SONICBOOM
 	db 17, DOUBLE_TEAM
 	db 20, SILVER_WIND
-	db 25, WING_ATTACK
+	db 25, AERIAL_ACE
 	db 28, SUPERSONIC
 	db 30, PURSUIT
 	db 33, ANCIENTPOWER
@@ -3497,10 +3507,11 @@ GligarEvosAttacks:
 	db 1, POISON_STING
 	db 4, SAND_ATTACK
 	db 7, HARDEN
+	db 11, WING_ATTACK
 	db 13, QUICK_ATTACK
 	db 16, FURY_CUTTER
 	db 19, FAINT_ATTACK
-	db 22, WING_ATTACK
+	db 22, AERIAL_ACE
 	db 27, CUT
 	db 30, U_TURN
 	db 35, SCREECH
@@ -3837,7 +3848,7 @@ MantineEvosAttacks:
 	db 3, SUPERSONIC
 	db 7, BUBBLEBEAM
 	db 11, CONFUSE_RAY
-	db 14, WING_ATTACK
+	db 14, AERIAL_ACE
 	db 16, HEADBUTT
 	db 23, PROTECT
 	db 27, DOUBLE_EDGE
@@ -4152,7 +4163,7 @@ EnteiEvosAttacks:
 
 SuicuneEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, GUST
+	db 1, AERIAL_ACE
 	db 1, LEER
 	db 1, ROAR
 	db 1, MIST
@@ -4223,7 +4234,7 @@ TyranitarEvosAttacks:
 
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
-	db  1, GUST
+	db  1, AERIAL_ACE
 	db  1, ANCIENTPOWER
 	db  1, PSYCHIC_M
 	db 11, SWIFT
@@ -4239,7 +4250,7 @@ LugiaEvosAttacks:
 
 HoOhEvosAttacks:
 	db 0 ; no more evolutions
-	db  1, GUST
+	db  1, AERIAL_ACE
 	db  1, ANCIENTPOWER
 	db  1, FLAMETHROWER
 	db 11, SWIFT

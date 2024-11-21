@@ -14,7 +14,7 @@ MoveNames::
 	db "RAZOR WIND@"
 	db "SWORDS DANCE@"
 	db "CUT@"
-	db "GUST@"
+	db "AERIAL ACE@"
 	db "WING ATTACK@"
 	db "WHIRLWIND@"
 	db "FLY@"

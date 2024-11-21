@@ -50,6 +50,7 @@ SquirtleEggMoves:
 	db -1 ; end
 
 PsyduckEggMoves:
+	db AERIAL_ACE
 	db BIDE
 	db BRICK_BREAK
 	db CONFUSE_RAY
@@ -73,6 +74,7 @@ PsyduckEggMoves:
 	db -1 ; end
 
 RinringEggMoves:
+	db AERIAL_ACE
 	db AMNESIA
 	db BATON_PASS
 	db COUNTER
@@ -134,6 +136,7 @@ PikachuEggMoves:
 	db -1 ; end
 
 SandshrewEggMoves:
+	db AERIAL_ACE
 	db AGILITY
 	db AMNESIA
 	db BRICK_BREAK
@@ -148,6 +151,7 @@ SandshrewEggMoves:
 	db -1 ; end
 
 NidoranFEggMoves:
+	db AERIAL_ACE
 	db AMNESIA
 	db COUNTER
 	db DISABLE
@@ -211,7 +215,7 @@ JigglypuffEggMoves:
 ZubatEggMoves:
 	db AGILITY
 	db FAINT_ATTACK
-	db GUST
+	db AERIAL_ACE
 	db HEAT_WAVE
 	db HYPNOSIS
 	db PURSUIT
@@ -231,6 +235,7 @@ OddishEggMoves:
 	db -1 ; end
 
 ParasEggMoves:
+	db AERIAL_ACE
 	db BRICK_BREAK
 	db COUNTER
 	db CRABHAMMER
@@ -246,12 +251,14 @@ ParasEggMoves:
 	db -1 ; end
 
 VenonatEggMoves:
+	db AERIAL_ACE
 	db GIGA_DRAIN
 	db SCREECH
 	db U_TURN
 	db -1 ; end
 
 DiglettEggMoves:
+	db AERIAL_ACE
 	db ANCIENTPOWER
 	db EXPLOSION
 	db FAINT_ATTACK
@@ -261,6 +268,7 @@ DiglettEggMoves:
 	db -1 ; end
 
 MeowthEggMoves:
+	db AERIAL_ACE
 	db AMNESIA
 	db CHARM
 	db COUNTER
@@ -286,6 +294,7 @@ SMolaEggMoves:
 	db -1 ; end
 
 MankeyEggMoves:
+	db AERIAL_ACE
 	db BRICK_BREAK
 	db BULLET_PUNCH
 	db COUNTER
@@ -300,6 +309,7 @@ MankeyEggMoves:
 	db -1 ; end
 
 GrowlitheEggMoves:
+	db AERIAL_ACE
 	db FIRE_SPIN
 	db MORNING_SUN
 	db THRASH
@@ -390,7 +400,7 @@ FarfetchDEggMoves:
 	db EXPLOSION
 	db FLAIL
 	db FORESIGHT
-	db GUST
+	db AERIAL_ACE
 	db HEAT_WAVE
 	db MIRROR_MOVE
 	db MUD_SLAP
@@ -588,6 +598,7 @@ TangelaEggMoves:
 	db -1 ; end
 
 KangaskhanEggMoves:
+	db AERIAL_ACE
 	db BRICK_BREAK
 	db COUNTER
 	db DISABLE
@@ -705,6 +716,7 @@ OmanyteEggMoves:
 	db -1 ; end
 
 KabutoEggMoves:
+	db AERIAL_ACE
 	db AURORA_BEAM
 	db BUBBLEBEAM
 	db CONFUSE_RAY
@@ -753,6 +765,7 @@ DratiniEggMoves:
 	db -1 ; end
 
 ChikoritaEggMoves:
+	db AERIAL_ACE
 	db ANCIENTPOWER
 	db BODY_PRESS
 	db COUNTER
@@ -767,6 +780,7 @@ ChikoritaEggMoves:
 	db -1 ; end
 
 CyndaquilEggMoves:
+	db AERIAL_ACE
 	db BRICK_BREAK
 	db DOUBLE_EDGE
 	db DOUBLE_KICK
@@ -783,6 +797,7 @@ CyndaquilEggMoves:
 	db -1 ; end
 
 TotodileEggMoves:
+	db AERIAL_ACE
 	db ANCIENTPOWER
 	db AQUA_JET
 	db BRICK_BREAK
@@ -875,6 +890,7 @@ ShifurEggMoves:
 	db -1 ; end
 
 NatuEggMoves:
+	db AERIAL_ACE
 	db BATON_PASS
 	db DESTINY_BOND
 	db DRILL_PECK
@@ -934,6 +950,7 @@ HoppipEggMoves:
 	db -1 ; end
 
 AipomEggMoves:
+	db AERIAL_ACE
 	db AGILITY
 	db BRICK_BREAK
 	db COUNTER
@@ -976,6 +993,7 @@ WooperEggMoves:
 	db -1 ; end
 
 MurkrowEggMoves:
+	db AERIAL_ACE
 	db BRAVE_BIRD
 	db CONFUSE_RAY
 	db DRILL_PECK
@@ -1077,6 +1095,7 @@ ShuckleEggMoves:
 	db -1 ; end
 
 HeracrossEggMoves:
+	db AERIAL_ACE
 	db BIDE
 	db COUNTER
 	db DOUBLE_EDGE
@@ -1091,6 +1110,7 @@ HeracrossEggMoves:
 	db -1 ; end
 
 TeddiursaEggMoves:
+	db AERIAL_ACE
 	db BELLY_DRUM
 	db BITE
 	db COUNTER
@@ -1148,6 +1168,7 @@ RemoraidEggMoves:
 	db -1 ; end
 
 DelibirdEggMoves:
+	db AERIAL_ACE
 	db AURORA_BEAM
 	db BODY_SLAM
 	db BRAVE_BIRD
@@ -1177,6 +1198,7 @@ MantineEggMoves:
 	db -1 ; end
 
 SkarmoryEggMoves:
+	db AERIAL_ACE
 	db BRAVE_BIRD
 	db DOUBLE_EDGE
 	db DRILL_PECK
@@ -1317,7 +1339,7 @@ SmeargleEggMoves:
 	db GROWL
 	db GROWTH
 	db GUILLOTINE
-	db GUST
+	db AERIAL_ACE
 	db HARDEN
 	db HAZE
 	db HEADBUTT
@@ -1532,6 +1554,7 @@ MiltankEggMoves:
 	db -1 ; end
 
 LarvitarEggMoves:
+	db AERIAL_ACE
 	db ANCIENTPOWER
 	db BODY_PRESS
 	db BRICK_BREAK
