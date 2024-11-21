@@ -73,7 +73,7 @@ PastPavonaInnFisherText:
 	cont "ing about one."
 
 	para "He was heading to"
-	line "OCCIENT FOREST to"
+	line "OCCIDENT FOREST to"
 	cont "go find it."
 	done
 

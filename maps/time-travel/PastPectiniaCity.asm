@@ -306,7 +306,7 @@ PastPectiniaCityConstructionSignText:
 
 PastPectiniaCityLicensePlateText:
 	text "The license plate"
-	line "this truck says"
+	line "on this truck says"
 	cont "“OUTATIME”"
 	done
 
