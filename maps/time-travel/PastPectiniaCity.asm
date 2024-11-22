@@ -86,12 +86,7 @@ CelebiEncounter:
 	waitbutton
 	closetext
 
-;	Text box mentioning a white flash/the flowers coming to life?
-;	Flowers already in bloom even before the event?
-
-;	special FadeInPalettes
 	applymovement PASTPECTINIACITY_CELEBI, PastRoute10CelebiTeleportMovement
-;	clearevent EVENT_HIDE_AND_SEEK_CELEBI_3
 	disappear PASTPECTINIACITY_CELEBI
 	waitsfx
 	scall PastPectiniaCelebiAfterEncounter

@@ -158,6 +158,10 @@ FirebreatherRushAfterText:
 	text "I always need to"
 	line "be careful around"
 	cont "all of the trees."
+
+	para "I don't want to be"
+	line "responsible for"
+	cont "such a disaster!"
 	done
 
 PokemaniacAndrewText:

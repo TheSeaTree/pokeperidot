@@ -87,15 +87,15 @@ PastFaviaInnSailorNoMapText:
 	text "I be landlocked"
 	line "right now."
 
-	para "I dream of seeing"
+	para "I dream of seein'"
 	line "the open sea with"
 	cont "me own two eyes."
 
 	para "Some day I will"
-	line "have a ship of"
+	line "have a ship 'a"
 	cont "me very own, and I"
 	cont "will go where me"
-	cont "SEA MAP points to."
+	cont "SEA MAP points to!"
 	done
 
 PastFaviaInnSailorNoticeMapText:
@@ -113,7 +113,7 @@ PastFaviaInnSailorNoticeMapText:
 
 	para "Aye? Since I be"
 	line "landlocked, I"
-	cont "insist ye' take my"
+	cont "insist ye' take me"
 	cont "SEA MAP."
 
 	para "This old one ain't"
@@ -134,7 +134,7 @@ PastFaviaInnPlayerExchangeMapText:
 PastFaviaInnSailorAfterMapText:
 	text "I hope ye' can get"
 	line "plenty 'a use out"
-	cont "of my old SEA MAP."
+	cont "'a me old SEA MAP."
 
 	para "You wouldn't 'a"
 	line "gotten very far"
