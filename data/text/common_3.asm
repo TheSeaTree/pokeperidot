@@ -1835,3 +1835,44 @@ UsedLastItemText::
 	text_ram wStringBuffer1
 	text "."
 	prompt
+
+_HiddenPowerGirlIntroText::
+	text "A #MON's genes"
+	line "will determine"
+	cont "many things."
+
+	para "One of which"
+	line "determines the"
+	cont "type it has a"
+	cont "strong bond with."
+
+	para "Please, allow me"
+	line "to demonstrate."
+	done
+
+_HiddenPowerGirlDeclineText::
+	text "Do you not trust"
+	line "my judgement?"
+
+	para "I have no reason"
+	line "to deceive you."
+	prompt
+
+_HiddenPowerGirlEggText::
+	text "Sorry, I cannot"
+	line "predict what an"
+	cont "EGG's capabilities"
+	cont "will be."
+	prompt
+
+_HiddenPowerGirlAnswerText::
+	text "Ah, I see…"
+
+	para "Yes!"
+
+	para "This #MON has"
+	line "an affinity for"
+	cont "the @"
+	text_ram wStringBuffer1
+	text "-type!"
+	prompt

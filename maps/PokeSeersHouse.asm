@@ -14,6 +14,13 @@ SeerScript:
 	closetext
 	end
 
+HiddenPowerGirlScript:
+	faceplayer
+	opentext
+	special HiddenPowerGirl
+	closetext
+	end
+
 PokeSeersHouse_MapEvents:
 	db 0, 0 ; filler
 
@@ -25,5 +32,6 @@ PokeSeersHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 1 ; object events
-	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
+	db 2 ; object events
+	object_event  2,  3, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeerScript, -1
+	object_event  5,  4, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, HiddenPowerGirlScript, -1

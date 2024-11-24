@@ -207,3 +207,4 @@ SpecialsPointers::
 	add_special PokePDA
 	add_special BattleSimGiftMon
 	add_special ReloadEmotes
+	add_special HiddenPowerGirl
