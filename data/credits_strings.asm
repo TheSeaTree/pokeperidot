@@ -119,6 +119,8 @@ CreditsStrings:
 	dw .rheg
 	dw .Frank
 	dw .SeaTree
+	dw .InLovingMemory
+	dw .OfMyMom
 
 .SatoshiTajiri:       db "   SATOSHI TAJIRI@"         ; "たじり　さとし@"
 .JunichiMasuda:       db "   JUNICHI MASUDA@"         ; "ますだ　じゅんいち@"
@@ -232,15 +234,17 @@ CreditsStrings:
 .Pfero:               db "       PFERO@"
 .MayoRaptor:          db "     MAYORAPTOR@"
 .HyperDriveGuy:       db "    HYPERDRIVEGUY@"
-.Elko:                db "        ELKO@"
+.Elko:                db "       ELKO@"
 .Fredriq:             db "      FREDRIQ@"
 .FIQ:                 db "        FIQ@"
 .Darsh:               db "       DARSH@"
-.DaHavoc			  db "       DAHAVOC@"
+.DaHavoc			  db "      DAHAVOC@"
 .YeahhhChat:          db "    YEAHHH CHAT@"
 .rheg:                db "       /rheg/@"
 .Frank:			      db "       FRANK@"
 .SeaTree:			  db "     “SEA TREE”@"
+.InLovingMemory:	  db "  In loving memory@"
+.OfMyMom:			  db "     of my Mom.@"
 
 .Copyright:
 	;    (C) 1  9  9  5 - 2  0  0  1     N  i  n  t  e  n  d  o

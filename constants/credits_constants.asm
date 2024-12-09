@@ -120,6 +120,8 @@
 	const RHEG
 	const FRANK
 	const SEATREE
+	const INLOVINGMEMORY
+	const OFMYMOM
 
 ; CreditsScript indexes (see data/credits_script.asm)
 	const_def -7

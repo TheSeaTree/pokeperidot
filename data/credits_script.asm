@@ -285,7 +285,12 @@ CreditsScript:
 	db     FRANK, 2
 	db     SEATREE, 3
 
-	db CREDITS_WAIT, 13
+	db CREDITS_WAIT, 7
+
+	db INLOVINGMEMORY, 2
+	db OFMYMOM, 3
+
+	db CREDITS_WAIT, 7
 
 ; Display "The End" graphic.
 	db CREDITS_THEEND
