@@ -25,12 +25,16 @@ SSMako1FRooms_MapScripts:
 	end
 
 .Respawn:
+	checkevent EVENT_SS_MAKO_DEFEATED_BURGLAR
+	iftrue .End
 	checkevent EVENT_SS_MAKO_RESPAWN
-	iffalse .End
-	moveobject SSMAKO1FROOMS_FANGIRL, 1, 1
-	jump RoomsFangirlContinueFollow
+	iftrue .ShowEmily
 .End
 	return
+.ShowEmily
+	setscene SCENE_SSMAKO1FROOMS_FOLLOWING
+	moveobject SSMAKO1FROOMS_FANGIRL, 1, 1
+	jump RoomsFangirlContinueFollow
 
 RoomsFangirlTeleport1:
 ; Set scene for each of these because it won't work otherwise.
