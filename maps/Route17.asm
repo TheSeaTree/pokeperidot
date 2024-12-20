@@ -123,7 +123,7 @@ Route17Burglar3BeginStoryText:
 	cont "so much more…"
 	
 	para "Frankly, it's a"
-	line "but dull…"
+	line "bit dull…"
 	done
 	
 Route17Biker2ConcernedText:
