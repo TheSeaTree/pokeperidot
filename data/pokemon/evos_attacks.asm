@@ -162,8 +162,6 @@ WartortleEvosAttacks:
 	db EVOLVE_LEVEL, 36, BLASTOISE
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 1, WATER_GUN
 	db 4, TAIL_WHIP
 	db 7, WATER_GUN
 	db 10, DEFENSE_CURL
@@ -171,6 +169,7 @@ WartortleEvosAttacks:
 	db 17, BITE
 	db 21, RAPID_SPIN
 	db 25, PROTECT
+	db 27, BUBBLEBEAM
 	db 37, SKULL_BASH
 	db 45, RAIN_DANCE
 	db 49, HYDRO_PUMP
@@ -179,9 +178,6 @@ WartortleEvosAttacks:
 BlastoiseEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 1, WATER_GUN
-	db 1, DEFENSE_CURL
 	db 1, BODY_PRESS
 	db 4, TAIL_WHIP
 	db 7, WATER_GUN
@@ -190,6 +186,7 @@ BlastoiseEvosAttacks:
 	db 17, BITE
 	db 21, RAPID_SPIN
 	db 25, PROTECT
+	db 27, BUBBLEBEAM
 	db 40, SKULL_BASH
 	db 54, RAIN_DANCE
 	db 60, HYDRO_PUMP
@@ -2822,6 +2819,7 @@ CubboltEvosAttacks: ; Little Tiger
 	db 15, SCARY_FACE
 	db 20, BITE
 	db 23, SPARK
+	db 29, HEAL_BELL
 	db 33, DOUBLE_EDGE
 	db 36, THUNDERBOLT
 	db 39, CRUNCH
@@ -2838,6 +2836,7 @@ RaigerEvosAttacks: ; Big Tiger
 	db 15, SCARY_FACE
 	db 20, BITE
 	db 23, SPARK
+	db 29, HEAL_BELL
 	db 33, DOUBLE_EDGE
 	db 38, THUNDERBOLT
 	db 42, CRUNCH
