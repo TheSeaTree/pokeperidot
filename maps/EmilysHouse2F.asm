@@ -41,7 +41,7 @@ Emily:
 .Battle
 	writetext EmilyChallengeText
 	waitbutton
-	winlosstext EmilyWinText, -1
+	winlosstext EmilyWinText, 0
 	setlasttalked EMILYSHOUSE2F_EMILY
 	loadtrainer FANGIRL, EMILY2
 	startbattle

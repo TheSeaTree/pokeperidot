@@ -123,7 +123,7 @@ Route13MoveTutor:
 	writetext Route13DancerAcceptText
 	waitbutton
 	closetext
-	winlosstext Route13DancerWinText, -1
+	winlosstext Route13DancerWinText, 0
 	loadtrainer KIMONO_GIRL, ANRI
 	startbattle
 	reloadmapafterbattle

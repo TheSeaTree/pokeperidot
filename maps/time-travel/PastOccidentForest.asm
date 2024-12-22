@@ -79,7 +79,7 @@ PastOccidentForestChampion:
 	writetext PastOccidentForestChampionChallengeText
 	waitbutton
 	closetext
-	winlosstext PastOccidentForestChampionWinText, -1
+	winlosstext PastOccidentForestChampionWinText, 0
 	loadtrainer YOUNG_CHAMPION, JOSEPH_PAST
 	startbattle
 	reloadmapafterbattle
