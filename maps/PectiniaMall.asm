@@ -4,10 +4,18 @@ PectiniaMall_MapScripts:
 	db 1 ; scene scripts
 	scene_script .DummyScene ; SCENE_DEFAULT
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .BattleItemShopDoor
 
 .DummyScene:
 	end
+
+.BattleItemShopDoor:
+	checkevent EVENT_GOT_HM_SURF
+	iftrue .Nothing
+	changeblock  2,  8, $98
+.Nothing
+	return
 
 PectiniaMallLass:
 	jumptextfaceplayer PectiniaMallLassText
@@ -58,10 +66,25 @@ PectiniaComicStoreSign:
 	jumptext PectiniaComicStoreSignText
 
 PectiniaBattleItemStoreSign:
-	jumptext PectiniaBattleItemStoreSignText
+	opentext
+	checkevent EVENT_GOT_HM_SURF
+	iftrue .Open
+	writetext PectiniaBattleItemStoreOpeningSoonSignText
+	waitbutton
+.Open
+	writetext PectiniaBattleItemStoreSignText
+	waitbutton
+	closetext
+	end
 
 PectiniaArcadeSign:
 	jumptext PectiniaArcadeSignText
+
+PectiniaBattleItemStoreClosedSign:
+	conditional_event EVENT_GOT_HM_SURF, .Script
+
+.Script:
+	jumptext PectiniaBattleItemStoreClosedSignText
 
 AwakeningGuyText:
 	text "How well do you"
@@ -220,6 +243,10 @@ PectiniaComicStoreSignText:
 	line "& COLLECTABLES"
 	done
 
+PectiniaBattleItemStoreOpeningSoonSignText:
+	text "OPENING SOON-"
+	done
+
 PectiniaBattleItemStoreSignText:
 	text "DODRIO'S ROOST"
 	done
@@ -227,6 +254,12 @@ PectiniaBattleItemStoreSignText:
 PectiniaArcadeSignText:
 	text "PORYGON's VIRTUAL"
 	line "PLAYGROUND"
+	done
+
+PectiniaBattleItemStoreClosedSignText:
+	text "The door is"
+	line "locked and the"
+	cont "lights are off."
 	done
 
 PectiniaMall_MapEvents:
@@ -245,14 +278,15 @@ PectiniaMall_MapEvents:
 
 	db 0 ; coord events
 
-	db 7 ; bg events
+	db 8 ; bg events
 	bg_event 16, 10, BGEVENT_READ, BattleSubwayEntranceSign
 	bg_event 21,  2, BGEVENT_READ, PectiniaBedStoreSign
 	bg_event 12,  2, BGEVENT_READ, PectiniaDollStoreSign
 	bg_event 28, 14, BGEVENT_READ, PectiniaCarpetStoreSign
 	bg_event  5, 14, BGEVENT_READ, PectiniaComicStoreSign
-	bg_event  1,  8, BGEVENT_READ, PectiniaBattleItemStoreSign
+	bg_event  1,  8, BGEVENT_UP,   PectiniaBattleItemStoreSign
 	bg_event 32,  8, BGEVENT_READ, PectiniaArcadeSign
+	bg_event  2,  8, BGEVENT_IFNOTSET, PectiniaBattleItemStoreClosedSign
 
 	db 11 ; object events
 	object_event 16,  7, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PectiniaMallLass, -1

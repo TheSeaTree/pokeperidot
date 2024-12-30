@@ -675,8 +675,15 @@ WishingFountainScript:
 ; Change the  random amount depending on how much money is spent(255, 100, 75).
 	opentext
 	farwritetext FountainIntroText
-.Start:
 	special PlaceMoneyTopRight
+	checkevent EVENT_GOT_HM_SURF
+	iftrue .good_odds
+	yesorno
+	iftrue .roll_10
+	closetext
+	end
+
+.good_odds
 	loadmenu .MenuHeader
 	verticalmenu
 	closewindow
