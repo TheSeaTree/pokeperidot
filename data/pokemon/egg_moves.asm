@@ -301,6 +301,8 @@ MankeyEggMoves:
 	db DYNAMICPUNCH
 	db ENCORE	
 	db FORESIGHT
+	db GUNK_SHOT
+	db IRON_TAIL
 	db MACH_PUNCH
 	db PAY_DAY
 	db REVERSAL
