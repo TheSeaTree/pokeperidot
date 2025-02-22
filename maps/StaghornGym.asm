@@ -599,10 +599,10 @@ BugCatcherGregWinText:
 	done
 
 BugCatcherGregAfterText:
-	text "My #MON are"
-	line "more scared of you"
-	cont "than you are them!"
-	done	
+	text "My party is more"
+	line "scared of you than"
+	cont "you are of them!"
+	done
 
 PicnickerTerryText:
 	text "Eek!"
