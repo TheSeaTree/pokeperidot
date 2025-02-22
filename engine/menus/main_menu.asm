@@ -9,9 +9,9 @@ MainMenu:
 	call GetSGBLayout
 	call SetPalettes
 	farcall MainMenu_LoadVersionNumber
-	hlcoord 17, 16
-	ld de, .BetaString
-	call PlaceString
+;	hlcoord 17, 16
+;	ld de, .BetaString
+;	call PlaceString
 	hlcoord 17, 17
 	ld de, .VersionString
 	call PlaceString
