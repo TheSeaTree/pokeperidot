@@ -1122,10 +1122,11 @@ BellsproutEvosAttacks:
 	db 13, SLEEP_POWDER
 	db 15, POISONPOWDER
 	db 17, STUN_SPORE
-	db 23, ACID
+	db 20, ACID
+	db 23, RAZOR_LEAF
 	db 29, SWEET_SCENT
 	db 33, FALSE_SWIPE
-	db 39, RAZOR_LEAF
+	db 39, SOLARBEAM
 	db 41, SLUDGE_BOMB
 	db 45, BODY_SLAM
 	db 0 ; no more level-up moves
@@ -1140,10 +1141,11 @@ WeepinbellEvosAttacks:
 	db 13, SLEEP_POWDER
 	db 15, POISONPOWDER
 	db 17, STUN_SPORE
-	db 24, ACID
+	db 20, ACID
+	db 24, RAZOR_LEAF
 	db 32, SWEET_SCENT
 	db 41, FALSE_SWIPE
-	db 44, RAZOR_LEAF
+	db 44, SOLARBEAM
 	db 47, SLUDGE_BOMB
 	db 54, BODY_SLAM
 	db 0 ; no more level-up moves
