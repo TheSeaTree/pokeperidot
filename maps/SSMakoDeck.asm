@@ -45,6 +45,7 @@ SSMakoDeckFangirl:
 	jumpstd emilycompanion
 
 SSMakoDeckBurglar:
+	stopfollow
 	opentext
 	writetext SSMakoDeckBurglarText
 	waitbutton
@@ -308,7 +309,7 @@ SSMakoFangirlApproachOfficer2:
 	step RIGHT
 	step RIGHT
 	step DOWN
-	step_resume
+	step_end
 
 SSMakoFangirlApproachOfficer3:
 	step RIGHT
@@ -358,7 +359,7 @@ SSMakoDeckOfficerContinueLeaveLeft:
 	
 SSMakoFangirlApproachPlayer:
 	step LEFT
-	step_resume
+	step_end
 
 SSMakoDeckEmilyCrowdText:
 	text "There's no way we"
