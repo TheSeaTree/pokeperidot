@@ -30,7 +30,6 @@ AI_Redundant:
 	dbw EFFECT_SLEEP_TALK,   .SleepTalk
 	dbw EFFECT_MEAN_LOOK,    .MeanLook
 	dbw EFFECT_NIGHTMARE,    .Nightmare
-	dbw EFFECT_SPIKES,       .Spikes
 	dbw EFFECT_FORESIGHT,    .Foresight
 	dbw EFFECT_PERISH_SONG,  .PerishSong
 	dbw EFFECT_SANDSTORM,    .Sandstorm
@@ -66,6 +65,9 @@ AI_Redundant:
 	ret nz
 	ld a, [wPlayerScreens]
 	bit SCREENS_SAFEGUARD, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Transform:
@@ -86,6 +88,9 @@ AI_Redundant:
 .LeechSeed:
 	ld a, [wPlayerSubStatus4]
 	bit SUBSTATUS_LEECH_SEED, a
+	ret nz
+	ld a, [wPlayerSubStatus4]
+	bit SUBSTATUS_SUBSTITUTE, a
 	ret
 
 .Disable:
@@ -116,11 +121,6 @@ AI_Redundant:
 	jr z, .Redundant
 	ld a, [wPlayerSubStatus1]
 	bit SUBSTATUS_NIGHTMARE, a
-	ret
-
-.Spikes:
-	ld a, [wPlayerScreens]
-	bit SCREENS_SPIKES, a
 	ret
 
 .Foresight:

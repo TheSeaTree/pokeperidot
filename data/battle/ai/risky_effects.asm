@@ -3,6 +3,5 @@
 
 RiskyEffects:
 	db EFFECT_SELFDESTRUCT
-	db EFFECT_OHKO
 	db EFFECT_TELEPORT
 	db -1 ; end

@@ -13,4 +13,5 @@ SunnyDayMoves:
 	db SYNTHESIS
 	db GROWTH
 	db SOLARBEAM
+	db HEAT_WAVE
 	db -1 ; end
