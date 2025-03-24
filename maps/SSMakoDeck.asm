@@ -10,8 +10,13 @@ SSMakoDeck_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKODECK_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKODECK_FINISHED
 
-	db 0 ; callbacks
-	
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
+
 .DummyScene0:
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
 

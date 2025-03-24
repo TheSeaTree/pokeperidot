@@ -18,8 +18,13 @@ SSMako2FRooms_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKO2FROOMS_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKO2FROOMS_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
 	callback MAPCALLBACK_OBJECTS, .Doll
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
 	
 .DummyScene0:
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT

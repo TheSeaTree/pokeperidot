@@ -1825,7 +1825,8 @@ wFacingDirection:: db
 wWalkingX:: db
 wWalkingY:: db
 wWalkingTile:: db
-	ds 6
+wPrevFacingDirection:: db
+	ds 5
 wPlayerTurningDirection:: db
 
 NEXTU ; d03e

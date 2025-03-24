@@ -11,8 +11,13 @@ SSMako2F_MapScripts:
 	scene_script .DummyScene2 ; SCENE_SSMAKO2F_UNLOCKED
 	scene_script .DummyScene3 ; SCENE_SSMAKO2F_FINISHED
 
-	db 1 ; callbacks
+	db 2 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
 	callback MAPCALLBACK_TILES, .UnlockDoors
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
 
 .DummyScene0:
 	setmapscene SS_MAKO_2F_ROOMS, SCENE_SSMAKO2FROOMS_DEFAULT

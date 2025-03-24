@@ -11,8 +11,13 @@ SSMako1F_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKO1F_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKO1F_FINISHED
 
-	db 0 ; callbacks
-	
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
+
 .DummyScene0:
 ;	writecode VAR_MOVEMENT, PLAYER_NORMAL
 ;	special ReplaceKrisSprite

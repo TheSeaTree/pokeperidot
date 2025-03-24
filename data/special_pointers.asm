@@ -208,3 +208,4 @@ SpecialsPointers::
 	add_special BattleSimGiftMon
 	add_special ReloadEmotes
 	add_special HiddenPowerGirl
+	add_special RestorePlayerSprite

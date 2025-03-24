@@ -7,7 +7,12 @@ SSMakoEngineRoom_MapScripts:
 	scene_script .DummyScene1 ; SCENE_SSMAKOENGINEROOM_FOLLOWING
 	scene_script .DummyScene2 ; SCENE_SSMAKOENGINEROOM_FINISHED
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
 	
 .DummyScene0:
 .DummyScene1:

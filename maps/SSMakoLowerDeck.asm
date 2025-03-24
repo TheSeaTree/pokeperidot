@@ -9,7 +9,12 @@ SSMakoLowerDeck_MapScripts:
 	scene_script .DummyScene2 ; SCENE_SSMAKOLOWERDECK_FINISHED
 	scene_script .DummyScene3 ; SCENE_SSMAKOLOWERDECK_FISHING
 
-	db 0 ; callbacks
+	db 1 ; callbacks
+	callback MAPCALLBACK_NEWMAP, .RestorePlayerSprite
+
+.RestorePlayerSprite:
+	special RestorePlayerSprite
+	return
 
 .DummyScene0:
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_FOLLOWING

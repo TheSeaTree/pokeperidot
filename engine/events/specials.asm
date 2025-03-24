@@ -410,6 +410,17 @@ SetFireGymSteps:
 	ld [wFireGymStepsRemaining], a
 	ret
 
+RestorePlayerSprite:
+; Sometimes the player's sprite will become corrupted on the SS Mako.
+; I have never been able to reproduce it and don't know the cause.
+; This will fix the player's sprite for each warp.
+	ld a, [wPlayerDirection]
+	ld [wPrevFacingDirection], a
+	farcall SpawnPlayer
+	ld a, [wPrevFacingDirection]
+	ld [wPlayerDirection], a
+	ret
+
 CompareTrickMirrors:
 	ld a, [wTrickMirrorCount]
 	ld b, a
