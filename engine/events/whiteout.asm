@@ -40,6 +40,8 @@ Script_Whiteout:
 	jumpstd battlesimexitwarp
 
 .expert_mode
+	special FadeOutMusic
+	special FadeOutPalettes
 	special Reset
 
 .time_travel
