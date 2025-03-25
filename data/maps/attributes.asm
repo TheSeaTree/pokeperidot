@@ -371,7 +371,7 @@ ENDM
 	map_attributes TradeCenter, TRADE_CENTER, $00, 0
 	map_attributes Colosseum, COLOSSEUM, $00, 0
 	map_attributes Route7Route8Gate, ROUTE_7_ROUTE_8_GATE, $00, 0
-	map_attributes FaviaGym, FAVIA_GYM, $79, 0
+	map_attributes FaviaGym, FAVIA_GYM, $3c, 0
 	map_attributes HepaticaPokecenter1F, HEPATICA_POKECENTER_1F, $00, 0
 	map_attributes HepaticaMart, HEPATICA_MART, $00, 0
 	map_attributes HepaticaLugiaSpeechHouse, HEPATICA_LUGIA_SPEECH_HOUSE, $00, 0
