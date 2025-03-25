@@ -26,6 +26,9 @@ FaviaMartSuperNerdScript:
 FaviaMartGrannyScript:
 	jumptextfaceplayer FaviaMartGrannyText
 
+FaviaMartFangirlScript:
+	jumptextfaceplayer FaviaMartFangirlText
+
 FaviaMartSuperNerdText:
 	text "When my #MON"
 	line "used HEADBUTT on a"
@@ -45,6 +48,20 @@ FaviaMartGrannyText:
 	line "right up."
 	done
 
+FaviaMartFangirlText:
+	text "Hey, again!"
+
+	para "It's <PLAYER>,"
+	line "right?"
+
+	para "I'm getting some"
+	cont "supplies for the"
+	cont "FAVIA GYM."
+
+	para "I can never make"
+	line "it to the leader!"
+	done
+
 FaviaMart_MapEvents:
 	db 0, 0 ; filler
 
@@ -56,8 +73,9 @@ FaviaMart_MapEvents:
 
 	db 0 ; bg events
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event  1,  3, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaMartClerkScript, -1
 	object_event  1,  2, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FaviaMartTMClerkScript, -1
 	object_event  5,  2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FaviaMartSuperNerdScript, -1
 	object_event  6,  6, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaMartGrannyScript, -1
+	object_event 10,  2, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaMartFangirlScript, EVENT_FIRST_FANGIRL_FIGHT
