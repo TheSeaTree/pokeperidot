@@ -394,7 +394,7 @@ ExplainRunningShoes:
 	line "you will be able"
 	cont "to move faster as"
 	cont "long as you hold"
-	cont "the B button."
+	cont "the B Button."
 	done
 	
 RunningShoesCaution:

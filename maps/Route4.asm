@@ -100,7 +100,7 @@ Route4TrainerTipsSignText:
 
 	para "While in battle,"
 	line "the START and"
-	cont "SELECT buttons"
+	cont "SELECT Buttons"
 	cont "will display the"
 	cont "current stat"
 	cont "changes of each"
