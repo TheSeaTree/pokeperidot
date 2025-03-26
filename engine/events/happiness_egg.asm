@@ -34,21 +34,16 @@ ChangeHappiness:
 ; Perform happiness action c on wCurPartyMon
 
 	ld a, [wCurPartyMon]
-	inc a
 	ld e, a
 	ld d, 0
-	ld hl, wPartySpecies - 1
+	ld hl, wPartySpecies
 	add hl, de
 	ld a, [hl]
 	cp EGG
 	ret z
 
-	push bc
-	ld hl, wPartyMon1Happiness
-	ld bc, PARTYMON_STRUCT_LENGTH
-	ld a, [wCurPartyMon]
-	call AddNTimes
-	pop bc
+	ld a, MON_HAPPINESS
+	call GetPartyParamLocation
 
 	ld d, h
 	ld e, l
@@ -72,41 +67,40 @@ ChangeHappiness:
 	add hl, bc
 	ld d, 0
 	add hl, de
-	ld a, [hl]
-	cp $64 ; why not $80?
 	pop de
-    ; If happiness change is 0, don't modify anything.
-    ld a, [hl]
-    and a
-    jr z, .done2
-    ld b, a
-    add a
-    jr c, .negative
- 
-    ld a, MON_ITEM
-    call GetPartyParamLocation
-    ld a, [hl]
-    cp SOOTHE_BELL
-    jr nz, .continue
- 
-    ld a, b
-    inc a
-    srl a
-    add b
-    ld b, a
-    ; fallthrough
+	; If happiness change is 0, don't modify anything.
+	ld a, [hl]
+	and a
+	jr z, .done2
+	ld b, a
+	add a
+	jr c, .negative
+
+	ld a, MON_ITEM
+	call GetPartyParamLocation
+	ld a, [hl]
+	cp SOOTHE_BELL
+	jr nz, .continue
+
+	ld a, b
+	inc a
+	srl a
+	add b
+	ld b, a
+	; fallthrough
 .continue
-    ld a, [de]
-    add b
-    jr nc, .done
-    ld a, $ff
-    jr .done
+	ld a, [de]
+	add b
+	jr nc, .done
+	ld a, $ff
+	jr .done
 
 .negative
-	add [hl]
+	ld a, [de]
+	add b
 	jr c, .done
 	xor a
-
+	; fallthrough
 .done
 	ld [de], a
 .done2
