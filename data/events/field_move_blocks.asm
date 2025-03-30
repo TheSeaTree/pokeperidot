@@ -43,6 +43,7 @@ CutTreeBlockPointers:
 	db $8d, $7e, 0 ; tree
 	db $83, $87, 1 ; grass
 	db $9e, $9f, 1 ; grass
+	db $a9, $89, 1 ; grass
 	db -1 ; end
 	
 .volcano
