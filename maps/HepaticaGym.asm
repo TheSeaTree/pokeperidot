@@ -174,6 +174,7 @@ HepaticaGymDoorGuard:
 	jump .Battle
 	
 .Battle
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
 	writetext DoorGuard1Challenge
 	waitbutton
 	closetext

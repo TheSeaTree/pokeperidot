@@ -142,6 +142,10 @@ PectiniaBurglar:
 	iffalse .GetLost
 	writetext PectiniaBurglarText
 	waitbutton
+	playmusic MUSIC_POKEMANIAC_ENCOUNTER
+	writetext PectiniaBurglarChallengeText
+	waitbutton
+	closetext
 	winlosstext PectiniaBurglarWinText, 0
 	loadtrainer BURGLAR, LAMAAR
 	startbattle
@@ -655,8 +659,10 @@ PectiniaBurglarText:
 	para "You want me to"
 	line "just give it back"
 	cont "to you?"
-	
-	para "No chance! You'll"
+	done
+
+PectiniaBurglarChallengeText:
+	text "No chance! You'll"
 	line "need to battle me"
 	cont "for it!"
 	done
