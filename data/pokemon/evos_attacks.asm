@@ -724,8 +724,8 @@ VileplumeEvosAttacks:
 	db 1, HEAL_BELL
 	db 1, STUN_SPORE
 	db 1, POISONPOWDER
-	db 59, PETAL_DANCE
-	db 69, SOLARBEAM
+	db 49, PETAL_DANCE
+	db 59, SOLARBEAM
 	db 0 ; no more level-up moves
 
 ParasEvosAttacks:
