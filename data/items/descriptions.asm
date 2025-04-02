@@ -842,15 +842,15 @@ LeftoversDesc:
 
 GenKeyDesc:
 	db   "A red key labeled"
-	next "'GENERATOR'.@"
+	next "“GENERATOR”.@"
 
 OfficeKeyDesc:
 	db   "A yellow key"
-	next "labeled 'OFFICE'.@"
+	next "labeled “OFFICE”.@"
 
 AdminKeyDesc:
 	db   "A blue key labeled"
-	next "'ADMIN'.@"
+	next "“ADMIN”.@"
 
 MysteryBerryDesc:
 	db   "A self-restore"
