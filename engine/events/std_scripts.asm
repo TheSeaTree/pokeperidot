@@ -140,7 +140,11 @@ PokecenterNurseScript:
 	turnobject LAST_TALKED, DOWN
 	pause 10
 	closetext
+
+	callasm PokeCenterCheckHoldingDirection
+	iftrue .end_script
 	applymovement PLAYER, CenterTurnDown
+.end_script
 	end
 
 .pokerus
@@ -149,6 +153,19 @@ PokecenterNurseScript:
 	closetext
 	setflag ENGINE_CAUGHT_POKERUS
 	end
+
+PokeCenterCheckHoldingDirection:
+	call GetJoypad
+	ld hl, hJoyDown
+	ld a, [hl]
+	cp  D_RIGHT
+	ret z
+	cp  D_UP
+	ret z
+	cp  D_LEFT
+	ret z
+	ld [wScriptVar], a
+	ret
 
 CenterTurnDown:
 	turn_step DOWN
