@@ -31,6 +31,11 @@ RugosaCoastRivalSceneTop:
 	special FadeOutMusic
 	playsound SFX_ENTER_DOOR
 	appear OLIVINECITY_OLIVINE_RIVAL
+	checkcode VAR_MOVEMENT
+	ifnotequal PLAYER_RUN, .NotRunning
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
+.NotRunning
 	applymovement OLIVINECITY_OLIVINE_RIVAL, MovementData_0x1a88d2
 	applymovement PLAYER, RugosaCoastPlayerPushedBack
 	playmusic MUSIC_RIVAL_ENCOUNTER

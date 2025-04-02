@@ -358,8 +358,8 @@ StaghorngymIntroText:
 	
 	para "My GYM is an"
 	line "extension to my"
-	cont "shelter on ROUTE"
-	cont "12."
+	cont "SHELTER on ROUTE"
+	cont "11."
 	
 	para "There are some"
 	line "wild #MON here"

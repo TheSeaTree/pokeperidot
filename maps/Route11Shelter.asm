@@ -425,7 +425,7 @@ Route11AssistantIntro:
 	para "She has taken care"
 	line "of CUBONE ever"
 	cont "since it came out"
-	cont "of an egg."
+	cont "of an EGG."
 	
 	para "If I were a"
 	line "trainer, I would"

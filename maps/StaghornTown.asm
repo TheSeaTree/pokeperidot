@@ -158,7 +158,7 @@ StaghornGymLeaderAwayText:
 	para "Maybe you could"
 	line "try paying a visit"
 	cont "to her #MON"
-	cont "shelter, it's"
+	cont "SHELTER, it's"
 	cont "right on ROUTE 11,"
 	cont "you can't miss it!"
 	done

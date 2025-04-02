@@ -32,9 +32,12 @@ Emily:
 	waitbutton
 	closetext
 	setevent EVENT_TALKED_TO_EMILY
+	turnobject LAST_TALKED, UP
+	playmusic MUSIC_ECRUTEAK_CITY
 	end
 
 .AlreadyAskedBattle
+	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
 	writetext EmilyAskBattleText
 	waitbutton
 
@@ -77,6 +80,8 @@ Emily:
 .Disappear
 	setevent EVENT_BEAT_EMILYS_HOUSE
 	disappear EMILYSHOUSE2F_EMILY
+	playsound SFX_ENTER_DOOR
+	waitsfx
 	playmapmusic
 	end
 	
@@ -202,7 +207,7 @@ EmilyAfterText:
 	line "get going now!"
 	
 	para "Before I go, take"
-	line "this item. It's"
+	line "this item."
 	done
 	
 EmilyLuckyEggDescribeText:

@@ -40,5 +40,5 @@ PaintersForest_MapEvents:
 	bg_event 14,  4, BGEVENT_ITEM, PaintersForestHiddenPalette
 
 	db 2 ; object events
-	object_event  5, 13, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PaintersForestBeautyScript, -1
+	object_event  6, 12, SPRITE_LASS, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PaintersForestBeautyScript, -1
 	object_event  6,  0, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PaintersForestFruitTree, -1

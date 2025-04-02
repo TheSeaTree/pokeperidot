@@ -167,12 +167,18 @@ TheBoneyard1FMarowakScript:
 	closetext
 	checkevent EVENT_THE_BONEYARD_1F_BOULDER_2
 	iffalse .Position4_Up
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4Jump
+	waitsfx
 	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4
 	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
 	end
 	
 .Position4_Up:
+	playsound SFX_JUMP_OVER_LEDGE
+	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4UpJump
+	waitsfx
 	applymovement THE_BONEYARD_1F_MAROWAK, MarowakPos4Up
 	moveobject THE_BONEYARD_1F_MAROWAK, 8, 8
 	loadvar wFarfetchdPosition, 1
@@ -348,17 +354,23 @@ MarowakPos3:
 	run_step UP
 	step_resume
 	
-MarowakPos4:
+MarowakPos4Jump:
 	jump_step RIGHT
+	step_resume
+
+MarowakPos4:
 	run_step RIGHT
 	run_step RIGHT
 	run_step DOWN
 	run_step RIGHT
 	run_step RIGHT	
-	step_resume	
+	step_resume
 	
-MarowakPos4Up:
+MarowakPos4UpJump:
 	jump_step RIGHT
+	step_resume
+
+MarowakPos4Up:
 	run_step RIGHT
 	run_step UP
 	run_step UP

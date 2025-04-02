@@ -149,7 +149,7 @@ Route10CooltrainerFText:
 	text "Rumor has it that"
 	line "an evil spirit"
 	cont "dwells on this"
-	cont "ROUTE."
+	cont "route."
 	
 	para "But the only other"
 	line "person I've seen"

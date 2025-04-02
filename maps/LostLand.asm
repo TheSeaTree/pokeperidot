@@ -283,7 +283,7 @@ LostLandScientistExplainText:
 LostLandScientistAfterText:
 	text "Our biggest disco-"
 	line "very has been an"
-	cont "AERODACTYL egg."
+	cont "AERODACTYL EGG."
 
 	para "Can you imagine?"
 	line "A brand-new EGG"

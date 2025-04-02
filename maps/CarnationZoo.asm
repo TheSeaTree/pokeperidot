@@ -549,7 +549,7 @@ CarnationZooFangirlGiveLuckyEggText:
 	line "one, so you can"
 	cont "take my spare!"
 	done
-	
+
 CarnationZooFangirlAfterLuckyEggText:
 	text "A LUCKY EGG really"
 	line "comes in handy if"

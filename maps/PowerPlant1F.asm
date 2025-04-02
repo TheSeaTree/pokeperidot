@@ -107,6 +107,7 @@ PowerPlant1FMuk:
 	closetext
 	special FadeOutPalettes
 	special FadeOutMusic
+	playsound SFX_EXIT_BUILDING
 	waitsfx
 	warpfacing RIGHT, POWER_PLANT_1F_B, 5, 20
 	end

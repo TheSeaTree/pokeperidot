@@ -25,9 +25,10 @@ Route11StaghornGateYoungsterScript:
 	
 Route11StaghornGateOfficerText:
 	text "You look like a"
-	line "trainer. Were you"
-	cont "looking for LEADER"
-	cont "POSEY?"
+	line "trainer."
+
+	para "Were you looking"
+	line "for LEADER POSEY?"
 	
 	para "She passed by here"
 	line "not long ago."
