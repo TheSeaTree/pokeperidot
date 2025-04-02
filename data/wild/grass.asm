@@ -8,7 +8,7 @@ GrassWildMons:
 	db 11, GEODUDE
 	db  9, SANDSHREW
 	db 10, ZUBAT
-	db 10, CUBONE
+	db 11, CUBONE
 	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS
@@ -16,7 +16,7 @@ GrassWildMons:
 	db 11, GEODUDE
 	db  9, SANDSHREW
 	db 10, ZUBAT
-	db 10, CUBONE
+	db 11, CUBONE
 	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS
@@ -24,7 +24,7 @@ GrassWildMons:
 	db 11, GEODUDE
 	db  9, SANDSHREW
 	db 10, ZUBAT
-	db 10, CUBONE
+	db 11, CUBONE
 	db 11, PHANPY
 	db 10, PARAS
 	db 13, PARAS

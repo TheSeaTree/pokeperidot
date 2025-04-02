@@ -825,6 +825,7 @@ DugtrioEvosAttacks:
 	db 4, GROWL
 	db 10, MUD_SLAP
 	db 16, BULLDOZE
+	db 26, AERIAL_ACE
 	db 30, CUT
 	db 35, DIG
 	db 41, IRON_HEAD
@@ -1739,9 +1740,11 @@ ExeggutorEvosAttacks:
 CuboneEvosAttacks:
 	db EVOLVE_LEVEL, 28, MAROWAK
 	db 0 ; no more evolutions
+	db 1, TACKLE
 	db 1, GROWL
 	db 1, AERIAL_ACE
 	db 3, TAIL_WHIP
+	db 5, GROWL
 	db 7, BONE_CLUB
 	db 11, HEADBUTT
 	db 13, LEER
