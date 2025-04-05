@@ -59,7 +59,7 @@ PokemonCries::
 	mon_cry CRY_CLEFAIRY,    $077,  $090 ; MEOWTH
 	mon_cry CRY_CLEFAIRY,    $099,  $17f ; PERSIAN
 	mon_cry CRY_PSYDUCK,     $020,  $0e0 ; S'MOLA
-	mon_cry CRY_PSYDUCK,     $0ff,  $0c0 ; ANCOR
+	mon_cry CRY_GOLEM,       $0f0,  $0e0 ; ANCOR
 	mon_cry CRY_NIDOQUEEN,   $0dd,  $0e0 ; MANKEY
 	mon_cry CRY_NIDOQUEEN,   $0af,  $0c0 ; PRIMEAPE
 	mon_cry CRY_GROWLITHE,   $020,  $0c0 ; GROWLITHE
@@ -177,7 +177,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $3c9,  $140 ; CHINCHOU
 	mon_cry CRY_CYNDAQUIL,   $2d0,  $110 ; LANTURN
 	mon_cry CRY_SPEAROW,     $0c9,  $081 ; MALLARK_Y
-	mon_cry CRY_WEEPINBELL,  $066,  $0a0 ; MANDRABEL
+	mon_cry CRY_WEEPINBELL,  $066,  $0a9 ; MANDRABEL
 	mon_cry CRY_CHIKORITA,   $0e8,  $0e8 ; CURSTRAW
 	mon_cry CRY_CLEFAIRY,    $061,  $0af ; SHIFUR
 	mon_cry CRY_WEEDLE,     -$067,  $100 ; SNOWMAD
