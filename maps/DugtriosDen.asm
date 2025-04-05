@@ -15,11 +15,7 @@ DugtriosDen_MapScripts:
 	end
 
 DugtriosDenDiglettLeft:
-	checkcode VAR_MOVEMENT
-	ifnotequal PLAYER_RUN, .NotRunning
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	special ReplaceKrisSprite
-.NotRunning
+	special StopPlayerRunning
 	scall DugtriosDenDiglettAppear
 
 	moveobject DUGTRIOSDEN_DIGLETT1, 3, 5

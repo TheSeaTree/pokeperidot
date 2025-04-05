@@ -209,3 +209,4 @@ SpecialsPointers::
 	add_special ReloadEmotes
 	add_special HiddenPowerGirl
 	add_special RestorePlayerSprite
+	add_special StopPlayerRunning

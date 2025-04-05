@@ -60,6 +60,11 @@ CarnationZooMotherSon:
 CarnationZooEmilyBattleLeft:
 	playsound SFX_EXIT_BUILDING
 	special FadeOutMusic
+	checkcode VAR_MOVEMENT
+	ifnotequal PLAYER_RUN, .NotRunning
+	writecode VAR_MOVEMENT, PLAYER_NORMAL
+	special ReplaceKrisSprite
+.NotRunning
 	moveobject CARNATIONZOO_FANGIRL, 12, 5
 	appear CARNATIONZOO_FANGIRL
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER
@@ -82,6 +87,7 @@ CarnationZooEmilyBattleLeft:
 CarnationZooEmilyBattleRight:
 	playsound SFX_EXIT_BUILDING
 	special FadeOutMusic
+	special StopPlayerRunning
 	moveobject CARNATIONZOO_FANGIRL, 12, 5
 	appear CARNATIONZOO_FANGIRL
 	playmusic MUSIC_MYSTICALMAN_ENCOUNTER

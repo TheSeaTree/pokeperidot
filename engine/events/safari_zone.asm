@@ -33,11 +33,7 @@ SafariZoneEncounterScript::
 	end
 
 SafariGameOverScript::
-	checkcode VAR_MOVEMENT
-	ifnotequal PLAYER_RUN, .NotRunning
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	special ReplaceKrisSprite
-.NotRunning
+	special StopPlayerRunning
 	playsound SFX_ELEVATOR_END
 	opentext
 	writetext SafariGameText_TimesUp

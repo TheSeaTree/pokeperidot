@@ -479,3 +479,12 @@ DropOffParty:
 ReloadEmotes:
 	farcall RefreshSprites
 	ret
+
+StopPlayerRunning:
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	ret nz
+	ld a, PLAYER_NORMAL
+	ld [wPlayerState], a
+	call ReplaceKrisSprite
+	ret

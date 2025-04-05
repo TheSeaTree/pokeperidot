@@ -31,11 +31,7 @@ RugosaCoastRivalSceneTop:
 	special FadeOutMusic
 	playsound SFX_ENTER_DOOR
 	appear OLIVINECITY_OLIVINE_RIVAL
-	checkcode VAR_MOVEMENT
-	ifnotequal PLAYER_RUN, .NotRunning
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	special ReplaceKrisSprite
-.NotRunning
+	special StopPlayerRunning
 	applymovement OLIVINECITY_OLIVINE_RIVAL, MovementData_0x1a88d2
 	applymovement PLAYER, RugosaCoastPlayerPushedBack
 	playmusic MUSIC_RIVAL_ENCOUNTER
@@ -133,6 +129,9 @@ RugosaCoastMoveTutor:
 	waitbutton
 	closetext
 	end
+
+RugosaCoastSwimmer:
+	jumptextfaceplayer RugosaCoastSwimmerText
 
 RugosaCoastSailor2Script:
 	jumptextfaceplayer RugosaCoastSailor2Text
@@ -279,6 +278,21 @@ RugosaCoastBeautyText:
 	cont "ame a trainer!"
 	done
 
+RugosaCoastSwimmerText:
+	text "I can't stand the"
+	line "guys who run the"
+	cont "SURF HOUSE."
+
+	para "They won't teach"
+	line "anyone how to SURF"
+	cont "unless they've"
+	cont "earn more BADGEs"
+	cont "than the owner."
+
+	para "I'm no good at"
+	line "#MON battles…"
+	done
+
 RugosaCoastSailor2Text:
 	text "I love the sea!"
 	
@@ -390,7 +404,7 @@ RugosaCoast_MapEvents:
 	bg_event 12, 18, BGEVENT_READ, RugosaCoastSurfHouseSign
 	bg_event 11, 27, BGEVENT_ITEM, RugosaCoastHiddenMaxRevive
 
-	db 13 ; object events
+	db 14 ; object events
 	object_event 22, 11, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCoastSailor1Script, -1
 	object_event 21, 16, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RugosaCoastStandingYoungsterScript, -1
 	object_event 15, 12, SPRITE_BUENA, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, RugosaCoastBeautyScript, -1
@@ -398,6 +412,7 @@ RugosaCoast_MapEvents:
 	object_event 13, 22, SPRITE_MACHOP, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RugosaCoastMachokeScript, -1
 	object_event 17,  5, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_RIVAL_OLIVINE_CITY
 	object_event 25, 24, SPRITE_SWIMMER_GIRL_LAND, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RugosaCoastMoveTutor, -1 ; Icy Wind tutor
+	object_event 11, 17, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, RugosaCoastSwimmer, -1
 	object_event  6, 29, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, RugosaCoastStarPiece, EVENT_OLIVINE_CITY_STAR_PIECE
 	object_event 15, 24, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCoastSmashRock, -1
 	object_event 12, 25, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCoastSmashRock, -1

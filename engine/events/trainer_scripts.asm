@@ -9,11 +9,7 @@ TalkToTrainerScript::
 SeenByTrainerScript::
 	loadmemtrainer
 	encountermusic
-	checkcode VAR_MOVEMENT
-	ifnotequal PLAYER_RUN, .NotRunning
-	writecode VAR_MOVEMENT, PLAYER_NORMAL
-	special ReplaceKrisSprite
-.NotRunning
+	special StopPlayerRunning
 	showemote EMOTE_SHOCK, LAST_TALKED, 30
 	callasm TrainerWalkToPlayer
 	applymovement2 wMovementBuffer
