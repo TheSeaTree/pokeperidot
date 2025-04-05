@@ -94,7 +94,7 @@ RugosaSurfGuyExplain:
 	cont "you won't find any"
 	cont "GYMs out there."
 	
-	para "Head back east if"
+	para "Head back west if"
 	line "you want to coll-"
 	cont "ect more BADGEs."
 	done

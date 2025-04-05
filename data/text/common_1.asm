@@ -44,7 +44,7 @@ UnknownText_0x1bc06b::
 
 UnknownText_0x1bc089::
 	text "How many should I"
-	line "make?"
+	line "use?"
 	done
 
 MushroomManText_WhichMushroom::
