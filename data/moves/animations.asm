@@ -470,10 +470,12 @@ BattleAnim_SendOutMon:
 	anim_ret
 
 BattleAnim_ReturnMon:
+	anim_if_param_equal $5, BattleAnim_End
 	anim_sound 0, 0, SFX_BALL_POOF
 BattleAnim_BatonPass_branch_c9486:
 	anim_bgeffect ANIM_BG_RETURN_MON, $0, $1, $0
 	anim_wait 32
+BattleAnim_End:
 	anim_ret
 
 BattleAnim_Confused:
@@ -1825,10 +1827,7 @@ BattleAnim_Roar:
 	anim_wait 16
 	anim_loop 3, .loop
 	anim_wait 16
-	anim_if_param_equal $0, .done
-	anim_bgeffect ANIM_BG_27, $0, $0, $0
-	anim_wait 64
-.done
+	anim_call BattleAnim_Whirlwind_branch
 	anim_ret
 
 BattleAnim_Supersonic:
@@ -2160,6 +2159,7 @@ BattleAnim_Whirlwind:
 	anim_incobj  9
 	anim_sound 16, 2, SFX_WHIRLWIND
 	anim_wait 128
+BattleAnim_Whirlwind_branch:
 	anim_if_param_equal $0, .done
 	anim_bgeffect ANIM_BG_27, $0, $0, $0
 	anim_wait 64
@@ -2775,6 +2775,7 @@ BattleAnim_Glare:
 
 BattleAnim_DiveBomb:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
+	anim_if_param_equal $1, BattleAnim_HiJumpKick
 	anim_bgeffect ANIM_BG_06, $0, $1, $0
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
 	anim_sound 0, 0, SFX_OUTRAGE
@@ -4283,7 +4284,7 @@ BattleAnim_Encore:
 
 BattleAnim_Pursuit:
 	anim_2gfx ANIM_GFX_PURSUIT, ANIM_GFX_HIT
-	anim_if_param_equal $1, BattleAnim_Pursuit_branch_cb62b
+	anim_if_param_equal $5, BattleAnim_Pursuit_branch_cb62b
 	anim_sound 0, 1, SFX_COMET_PUNCH
 	anim_obj ANIM_OBJ_01, 136, 56, $0
 	anim_wait 16
@@ -4304,10 +4305,9 @@ BattleAnim_Pursuit_branch_cb62b:
 	anim_wait 16
 	anim_sound 0, 1, SFX_MEGA_PUNCH
 	anim_obj ANIM_OBJ_00, 120, 56, $0
-	anim_bgeffect ANIM_BG_27, $0, $0, $0
-	anim_wait 32
 	anim_call BattleAnim_ShowMon_1
-	anim_wait 1
+	anim_bgeffect ANIM_BG_27, $0, $0, $0
+	anim_wait 48
 	anim_ret
 
 BattleAnim_RapidSpin:

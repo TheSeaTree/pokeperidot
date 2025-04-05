@@ -2406,7 +2406,7 @@ GetFailureResultText:
 
 	ld a, [wTypeModifier]
 	and $7f
-	ret z
+	jr z, .jump_kick_recoil
 
 	ld hl, wCurDamage
 	ld a, [hli]
@@ -2427,6 +2427,9 @@ endr
 ; High Jump Kick reduces HP by 50% on a miss.
 	ld hl, CrashedText
 	call StdBattleTextBox
+
+	ld a, 1
+	ld [wBattleAnimParam], a 
 
 	call LoadMoveAnim
 	

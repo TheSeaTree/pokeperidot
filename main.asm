@@ -371,7 +371,6 @@ SECTION "bank32", ROMX
 
 INCLUDE "engine/battle_anims/bg_effects.asm"
 INCLUDE "data/moves/animations.asm"
-INCLUDE "engine/events/poisonstep_pals.asm"
 
 
 SECTION "Move Animations", ROMX
@@ -455,6 +454,7 @@ INCLUDE "engine/gfx/load_overworld_font.asm"
 SECTION "Mobile 42", ROMX
 
 INCLUDE "mobile/mobile_42.asm"
+INCLUDE "engine/events/poisonstep_pals.asm"
 
 
 SECTION "Intro Logo", ROMX

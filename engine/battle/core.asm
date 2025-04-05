@@ -4460,12 +4460,6 @@ PursuitSwitch:
 	ld a, b
 	cp EFFECT_PURSUIT
 	jr z, .do_pursuit
-	
-	ld a, BATTLE_VARS_MOVE
-	call GetBattleVar
-	ld b, a
-	call GetMoveEffect
-	ld a, b
 	cp EFFECT_FLY
 	jp nz, .done
 
