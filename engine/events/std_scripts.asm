@@ -155,14 +155,10 @@ PokecenterNurseScript:
 	end
 
 PokeCenterCheckHoldingDirection:
+	; If the player is holding Up, Right, or Left when the Center script ends, do not turn the player away.
 	call GetJoypad
-	ld hl, hJoyDown
-	ld a, [hl]
-	cp  D_RIGHT
-	ret z
-	cp  D_UP
-	ret z
-	cp  D_LEFT
+	ldh a, [hJoyDown]
+	and D_RIGHT | D_UP | D_LEFT
 	ret z
 	ld [wScriptVar], a
 	ret
