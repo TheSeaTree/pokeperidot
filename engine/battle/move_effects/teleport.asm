@@ -104,6 +104,8 @@ BattleCommand_Teleport:
 
 .PlayerUTurn:
 ; Transition into switchmon menu
+	call UpdateBattleMonInParty
+
 	call LoadStandardMenuHeader
 	
 	farcall SetUpBattlePartyMenu_NoLoop
