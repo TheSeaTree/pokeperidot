@@ -1472,16 +1472,16 @@ BattleAnim_BodyPress:
 	anim_bgeffect ANIM_BG_BOUNCE_DOWN, $0, $1, $0
 	anim_wait 32
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
-	anim_wait 4
+	anim_wait 1
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_wait 3
+	anim_wait 2
 	anim_sound 0, 1, SFX_TACKLE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_obj ANIM_OBJ_01, 136, 48, $0
+	anim_obj ANIM_OBJ_01, 120, 52, $0
 	anim_wait 6
 	anim_sound 0, 1, SFX_TACKLE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_obj ANIM_OBJ_01, 144, 48, $0
+	anim_obj ANIM_OBJ_01, 144, 56, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
@@ -4628,8 +4628,6 @@ BattleAnim_Hurricane:
 	anim_sound 0, 1, SFX_RAIN_DANCE
 	anim_obj ANIM_OBJ_RAIN, 88, 0, $0
 	anim_wait 8
-	anim_obj ANIM_OBJ_RAIN, 88, 0, $1
-	anim_wait 8
 	anim_obj ANIM_OBJ_RAIN, 88, 0, $2
 	anim_wait 8
 .loop
@@ -4637,9 +4635,6 @@ BattleAnim_Hurricane:
 	anim_obj ANIM_OBJ_GUST, 136, 72, $0
 	anim_wait 6
 	anim_loop 6, .loop
-	anim_obj ANIM_OBJ_01, 144, 64, $18
-	anim_wait 8
-	anim_obj ANIM_OBJ_01, 128, 32, $18
 	anim_wait 16
 	anim_ret
 	
