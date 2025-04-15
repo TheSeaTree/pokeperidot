@@ -4683,12 +4683,6 @@ BattleCommand_StatUpMessage:
 	ld a, [wFailedMessage]
 	and a
 	ret nz
-
-	ld a, BATTLE_VARS_MOVE_EFFECT
-	call GetBattleVar
-	cp EFFECT_ALL_UP_HIT
-	jr z, .allstats
-
 	ld a, [wLoweredStat]
 	and $f
 	ld b, a
@@ -4714,10 +4708,6 @@ BattleCommand_StatUpMessage:
 .up
 	text_far UnknownText_0x1c0ce0
 	text_end
-
-.allstats
-	ld hl, BattleText_AllStatsRose
-	jp StdBattleTextBox
 
 BattleCommand_StatDownMessage:
 	ld a, [wFailedMessage]
@@ -4874,7 +4864,12 @@ BattleCommand_AllStatsUp:
 ; Speed
 	call ResetMiss
 	call BattleCommand_SpeedUp
-	jp   BattleCommand_StatUpMessage
+
+	ld a, [wFailedMessage]
+	and a
+	ret nz
+	ld hl, BattleText_AllStatsRose
+	jp StdBattleTextBox
 	
 BattleCommand_LegendaryStatsBoost:
 ; allstatsup
