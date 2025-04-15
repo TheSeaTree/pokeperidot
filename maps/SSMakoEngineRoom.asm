@@ -15,10 +15,11 @@ SSMakoEngineRoom_MapScripts:
 	return
 	
 .DummyScene0:
+	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
 .DummyScene1:
 .DummyScene2:
 	end
-	
+
 	db 0 ; callbacks
 
 FangirlEngineRoomTeleport:
@@ -26,7 +27,7 @@ FangirlEngineRoomTeleport:
 	appear SSMAKOENGINEROOM_FANGIRL
 	follow PLAYER, SSMAKOENGINEROOM_FANGIRL
 	setscene SCENE_SSMAKOENGINEROOM_FOLLOWING
-	setmapscene SS_MAKO_B1F, SCENE_SSMAKOB1F_DEFAULT
+	faceobject SSMAKOENGINEROOM_FANGIRL, PLAYER
 	end
 
 SSMakoEngineRoomFangirl:

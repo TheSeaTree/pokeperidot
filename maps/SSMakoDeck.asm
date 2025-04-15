@@ -19,7 +19,6 @@ SSMakoDeck_MapScripts:
 
 .DummyScene0:
 	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
-
 .DummyScene1:
 .DummyScene2:
 	end
@@ -33,7 +32,7 @@ FangirlDeckTeleportContinue:
 	appear SSMAKODECK_FANGIRL
 	follow PLAYER, SSMAKODECK_FANGIRL
 	setscene SCENE_SSMAKODECK_FOLLOWING
-	setmapscene SS_MAKO_2F, SCENE_SSMAKO2F_DEFAULT
+	faceobject SSMAKOENGINEROOM_FANGIRL, PLAYER
 	end
 
 SSMakoDeckFangirl:

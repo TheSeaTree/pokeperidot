@@ -81,6 +81,10 @@ TMRainDanceExplaination:
 	cont "so you can make"
 	cont "better use of it"
 	cont "than I could."
+
+	para "Now you can make a"
+	line "rainy day any time"
+	cont "you want!"
 	done
 	
 Route9LegendaryGuyText:

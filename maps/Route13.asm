@@ -450,8 +450,8 @@ TeacherLisaText:
 	line "encourage battles"
 	cont "around students."
 	
-	para "Today is my day"
-	line "off, though."
+	para "However, today is"
+	line "is my day off."
 	done
 	
 TeacherLisaWinText:

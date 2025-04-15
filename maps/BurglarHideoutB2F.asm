@@ -38,7 +38,8 @@ BurglarHideoutB2F_MapScripts:
 	changeblock  30, 14, $1e ; open shutter
 	changeblock  32, 14, $1c ; open shutter
 .Open2:
-	changeblock  22,  8, $0d ; open shutter
+	changeblock  12, 6, $0d ; open shutter
+	changeblock  22, 8, $0d ; open shutter
 .Open1:
 	changeblock   2,  6, $1e ; open shutter
 	changeblock   4,  6, $1c ; open shutter

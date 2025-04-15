@@ -17,10 +17,11 @@ SSMakoB1F_MapScripts:
 	
 .DummyScene0:
 	setmapscene SS_MAKO_1F_ROOMS, SCENE_SSMAKO1FROOMS_FOLLOWING
+	setmapscene SS_MAKO_ENGINE_ROOM, SCENE_SSMAKOENGINEROOM_DEFAULT
 .DummyScene1:
 .DummyScene2:
 	end
-	
+
 .UnlockDoor:
 	checkevent EVENT_USED_ENGINE_KEY
 	iftrue .Change
@@ -36,6 +37,7 @@ FangirlBasementTeleport1:
 	follow PLAYER, SSMAKOBASEMENT_FANGIRL
 	setscene SCENE_SSMAKOB1F_FOLLOWING
 	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
+	faceobject SSMAKOBASEMENT_FANGIRL, PLAYER
 	end
 
 FangirlBasementTeleport2:
@@ -43,9 +45,8 @@ FangirlBasementTeleport2:
 	appear SSMAKOBASEMENT_FANGIRL
 	follow PLAYER, SSMAKOBASEMENT_FANGIRL
 	setscene SCENE_SSMAKOB1F_FOLLOWING
-	setmapscene SS_MAKO_ENGINE_ROOM, SCENE_SSMAKOENGINEROOM_DEFAULT
 	end
-	
+
 SSMakoB1FFangirl:
 	jumpstd emilycompanion
 	
@@ -445,10 +446,12 @@ EngineerRudolphWinText:
 	done
 	
 EngineerRudolphAfterText:
-	text "My shift is coming"
-	line "up soon. If I can't"
-	cont "find that KEY"
-	cont "soon, I'm toast!"
+	text "My shift is ending"
+	line "soon."
+
+	para "If I can't"
+	cont "find that KEY,"
+	cont "I'm toast!"
 	done
 
 EngineerBernardText:

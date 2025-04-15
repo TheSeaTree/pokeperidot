@@ -74,8 +74,8 @@ RoomsFangirlTeleport6:
 RoomsFangirlContinueFollow:
 	appear SSMAKO1FROOMS_FANGIRL
 	follow PLAYER, SSMAKO1FROOMS_FANGIRL
-	setmapscene SS_MAKO_1F, SCENE_SSMAKO1F_DEFAULT
 	clearevent EVENT_SS_MAKO_RESPAWN
+	faceobject SSMAKO1FROOMS_FANGIRL, PLAYER
 	end
 
 SSMako1FRoomsFangirl:
@@ -125,7 +125,6 @@ TrainerTeacherIlene:
 	writetext TeacherIleneTicketText
 	waitbutton
 	closetext
-	applymovement SSMAKO1FROOMS_TEACHER, SSMako1FRoomsTeacherMovement
 	scall RoomsFangirlTeleport2
 	end
 .After
@@ -593,7 +592,7 @@ SSMako1FRooms_MapEvents:
 	bg_event 3, 2, BGEVENT_RIGHT, SSMakoPlayerBedScript
 
 	db 7 ; object events
-	object_event -4, -4, SPRITE_FANGIRL, SPRITEMOVEDATA_COMPANION, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FRoomsFangirl, -1
+	object_event -6, -6, SPRITE_FANGIRL, SPRITEMOVEDATA_COMPANION, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, SSMako1FRoomsFangirl, -1
 	object_event 12,  1, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerTeacherIlene, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 21,  3, SPRITE_GENTLEMAN, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerGentlemanWinfred, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME
 	object_event 20, 12, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerTwinJan, EVENT_OLIVINE_PORT_SPRITES_BEFORE_HALL_OF_FAME

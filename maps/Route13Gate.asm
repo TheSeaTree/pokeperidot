@@ -76,6 +76,9 @@ Route13GateOfficer2Script:
 .AfterReward
 	writetext Route13GateOfficer2AfterText
 	waitbutton
+	playmusic MUSIC_HIKER_ENCOUNTER
+	writetext Route13GateOfficer2ChellengeText
+	waitbutton
 	winlosstext Route13GateOfficer2WinText, 0
 	loadtrainer OFFICER, HARRY
 	startbattle
@@ -174,9 +177,14 @@ Route13GateOfficer2AfterText:
 	para "…Lucky for you I"
 	line "don't have that"
 	cont "kind of power."
-	
-	para "But what I do have"
-	line "are #MON!"
+	done
+
+
+Route13GateOfficer2ChellengeText:
+	text "But what I do have"
+	line "are #MON that"
+	cont "can teach you a"
+	cont "lesson!"
 	done
 	
 Route13GateOfficer2WinText:
