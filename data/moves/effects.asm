@@ -919,7 +919,6 @@ OHKOHit:
 	failuretext
 	applydamage
 	criticaltext
-	supereffectivetext
 	checkfaint
 	buildopponentrage
 	endmove
