@@ -200,13 +200,13 @@ BurglarHideoutB1FScientist:
 	closetext
 	special FadeBlackQuickly
 	special ReloadSpritesNoPalettes
-	pause 12
+	pause 36
 	disappear BURGLARHIDEOUTB1F_BIKER1
 	disappear BURGLARHIDEOUTB1F_BIKER2
 	disappear BURGLARHIDEOUTB1F_BIKER3
 	setevent EVENT_HIDEOUT_BEAT_BIKERS
 	special FadeInQuickly
-	special RestartMapMusic
+	playmusic MUSIC_ROCKET_HIDEOUT
 .Lost
 	end
 
@@ -215,6 +215,7 @@ BurglarHideoutRivalScript:
 	moveobject BURGLARHIDEOUTB1F_RIVAL, 3, 12
 	appear BURGLARHIDEOUTB1F_RIVAL
 	applymovement BURGLARHIDEOUTB1F_RIVAL, HideoutRivalStepDown
+	wait 8
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	opentext
 	writetext HideoutRivalStopPlayerText
