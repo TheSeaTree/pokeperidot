@@ -103,7 +103,7 @@ ItemDescriptions:
 	dw BindingBandDesc
 	dw BlackGlassesDesc
 	dw SlowpokeTailDesc
-	dw PinkBowDesc
+	dw SilkScarfDesc
 	dw StickDesc
 	dw SmokeBallDesc
 	dw NeverMeltIceDesc
@@ -169,7 +169,7 @@ ItemDescriptions:
 	dw NormalBoxDesc
 	dw GorgeousBoxDesc
 	dw SunStoneDesc
-	dw PolkadotBowDesc
+	dw PinkBowDesc
 	dw LightBuoyDesc
 	dw UpGradeDesc
 	dw BerryDesc
@@ -668,7 +668,7 @@ SlowpokeTailDesc:
 	db   "Very tasty. Sell"
 	next "high.@"
 
-PinkBowDesc:
+SilkScarfDesc:
 	db   "Powers up normal-"
 	next "type moves. (HOLD)@"
 
@@ -928,8 +928,8 @@ SunStoneDesc:
 	db   "Evolves certain"
 	next "kinds of #MON.@"
 
-PolkadotBowDesc:
-	db   "Powers up normal-"
+PinkBowDesc:
+	db   "Powers up fairy-"
 	next "type moves. (HOLD)@"
 
 TeruSama22Desc:
