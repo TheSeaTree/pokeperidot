@@ -4565,6 +4565,14 @@ BattleAnim_HiddenPower:
 	anim_ret
 
 BattleAnim_XScissor:
+	anim_1gfx ANIM_GFX_CUT
+	anim_sound 0, 1, SFX_CUT
+	anim_obj ANIM_OBJ_3A, 152, 32, $0
+	anim_obj ANIM_OBJ_3B, 120, 32, $0
+	anim_bgeffect ANIM_BG_1F, $58, $2, $0
+	anim_wait 32
+	anim_ret
+
 BattleAnim_CrossChop:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
