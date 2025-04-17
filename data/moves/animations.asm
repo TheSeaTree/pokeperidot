@@ -2918,7 +2918,36 @@ BattleAnim_AquaJet:
 	anim_ret
 
 BattleAnim_BulletPunch:
+	anim_call BattleAnim_QuickAttack_Common
+.loop
+	anim_sound 0, 1, SFX_PECK
+	anim_obj ANIM_OBJ_02, 124, 56, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_PECK
+	anim_obj ANIM_OBJ_02, 132, 48, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_PECK
+	anim_obj ANIM_OBJ_02, 140, 56, $0
+	anim_wait 3
+	anim_sound 0, 1, SFX_PECK
+	anim_obj ANIM_OBJ_02, 132, 64, $0
+	anim_wait 3
+	anim_loop 3, .loop
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
 BattleAnim_QuickAttack:
+	anim_call BattleAnim_QuickAttack_Common
+	anim_sound 0, 1, SFX_COMET_PUNCH
+	anim_obj ANIM_OBJ_01, 136, 56, $0
+	anim_wait 8
+	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_QuickAttack_Common:
 	anim_2gfx ANIM_GFX_SPEED, ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_MENU
 	anim_bgeffect ANIM_BG_HIDE_MON, $0, $1, $0
@@ -2929,11 +2958,6 @@ BattleAnim_QuickAttack:
 	anim_obj ANIM_OBJ_SPEED_LINE, 56, 88, $81
 	anim_obj ANIM_OBJ_SPEED_LINE, 64, 88, $82
 	anim_wait 12
-	anim_sound 0, 1, SFX_COMET_PUNCH
-	anim_obj ANIM_OBJ_01, 136, 56, $0
-	anim_wait 8
-	anim_bgeffect ANIM_BG_SHOW_MON, $0, $1, $0
-	anim_wait 16
 	anim_ret
 
 BattleAnim_Sharpen:
