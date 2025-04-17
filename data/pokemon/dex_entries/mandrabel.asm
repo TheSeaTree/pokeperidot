@@ -1,8 +1,10 @@
 	db "FLYCATCHER@" ; species name
 	dw 407, 156 ; height, weight
 
-	db   "It absorbs" 
-	next "nutrients in the"
-	next "ground through its"
+	db   "If unable to lure" 
+	next "in prey, MANDRABEL"
+	next "will sprint toward"
 
-	page "root-like feet.@"
+	page "the nearest thing"
+	next "that it believes"
+	next "it can digest.@"

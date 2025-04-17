@@ -3,8 +3,8 @@
 
 	db   "Every time it ya-"
 	next "wns, CONCHER"
-	next "injects more poi-"
+	next "injects more venom"
 
-	page "son into it. The"
-	next "poison makes it"
+	page "into SLOWKING. The"
+	next "venom makes it"
 	next "more intelligent.@"

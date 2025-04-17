@@ -1,5 +1,5 @@
 	db "JET@" ; species name
-	dw 211, 630 ; height, weight
+	dw 214, 960 ; height, weight
 
 	db   "OCTANK can survive"
 	next "on land for days"
