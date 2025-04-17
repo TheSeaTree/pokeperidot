@@ -1473,15 +1473,13 @@ BattleAnim_BodyPress:
 	anim_wait 32
 	anim_incbgeffect ANIM_BG_BOUNCE_DOWN
 	anim_wait 1
-	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_wait 2
 	anim_sound 0, 1, SFX_TACKLE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_obj ANIM_OBJ_01, 120, 52, $0
+	anim_obj ANIM_OBJ_01, 128, 40, $0
 	anim_wait 6
 	anim_sound 0, 1, SFX_TACKLE
 	anim_bgeffect ANIM_BG_FLASH_INVERTED, $0, $8, $3
-	anim_obj ANIM_OBJ_01, 144, 56, $0
+	anim_obj ANIM_OBJ_01, 144, 48, $0
 	anim_wait 3
 	anim_call BattleAnim_ShowMon_0
 	anim_ret
@@ -4567,8 +4565,8 @@ BattleAnim_HiddenPower:
 BattleAnim_XScissor:
 	anim_1gfx ANIM_GFX_CUT
 	anim_sound 0, 1, SFX_CUT
-	anim_obj ANIM_OBJ_3A, 152, 32, $0
-	anim_obj ANIM_OBJ_3B, 120, 32, $0
+	anim_obj ANIM_OBJ_3A, 152, 33, $0
+	anim_obj ANIM_OBJ_3B, 120, 33, $0
 	anim_bgeffect ANIM_BG_1F, $58, $2, $0
 	anim_wait 32
 	anim_ret
