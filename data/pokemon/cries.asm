@@ -256,7 +256,7 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION,  $000,  $100 ; LUGIA
 	mon_cry CRY_AIPOM,       $000,  $180 ; HO_OH
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
-	mon_cry CRY_TOTODILE,    $000,  $140 ; OCTANK
+	mon_cry CRY_TOTODILE,   -$100,  $140 ; OCTANK
 	mon_cry CRY_DUNSPARCE,   $000,  $0d0 ; FERRODON
 	mon_cry CRY_NIDORAN_M,      0,     0 ; 254
 	mon_cry CRY_NIDORAN_M,      0,     0 ; 255
