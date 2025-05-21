@@ -703,8 +703,8 @@ MomCogBadgeText:
 	line "brother still the"
 	cont "leader there?"
 
-	para "I used to go to"
-	line "school with him."
+	para "I used to babysit"
+	line "him!"
 	done
 
 MomTerraBadgeBoyText:
