@@ -2727,6 +2727,7 @@ FeraligatrEvosAttacks:
 	db 15, SCARY_FACE
 	db 21, ICE_PUNCH
 	db 24, FLAIL
+	db 30, AGILITY
 	db 32, CRUNCH
 	db 45, CUT
 	db 50, SCREECH
