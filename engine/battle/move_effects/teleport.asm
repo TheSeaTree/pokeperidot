@@ -149,7 +149,7 @@ BattleCommand_Teleport:
 	hlcoord 1, 0
 	lb bc, 4, 10
 	call ClearBox
-	hlcoord 13, 0
+	hlcoord 12, 0
 	lb bc, 7, 7
 	call ClearBox
 	ld c, 20
@@ -167,7 +167,7 @@ BattleCommand_Teleport:
 	ld a, [wLinkMode]
 	and a
 	jr z, .AI_trainer ; If not a link battle.
-	
+
 	call UpdateEnemyMonInParty
 	call BatonPass_LinkEnemySwitch
 	
