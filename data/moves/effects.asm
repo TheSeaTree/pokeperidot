@@ -75,6 +75,7 @@ LeechHit:
 
 BurnHit:
 	checkobedience
+	defrost
 	usedmovetext
 	doturn
 	critical
@@ -89,7 +90,6 @@ BurnHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrost
 	checkfaint
 	buildopponentrage
 	burntarget
@@ -1449,6 +1449,7 @@ Nightmare:
 
 FlameWheel:
 	checkobedience
+	defrost
 	usedmovetext
 	doturn
 	critical
@@ -1463,7 +1464,6 @@ FlameWheel:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrost
 	checkfaint
 	buildopponentrage
 	burntarget
@@ -1639,6 +1639,7 @@ Safeguard:
 
 SacredFire:
 	checkobedience
+	defrost
 	usedmovetext
 	doturn
 	critical
@@ -1653,7 +1654,6 @@ SacredFire:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrost
 	checkfaint
 	buildopponentrage
 	burntarget
@@ -2055,6 +2055,7 @@ SpeedUpHit:
 	
 BurnRecoilHit:
 	checkobedience
+	defrost
 	usedmovetext
 	doturn
 	critical
@@ -2068,7 +2069,6 @@ BurnRecoilHit:
 	applydamage
 	criticaltext
 	supereffectivetext
-	defrost
 	recoil
 	checkfaint
 	buildopponentrage
