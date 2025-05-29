@@ -19,8 +19,8 @@ PectiniaBerrySpeechHouseCheckTreesText:
 	
 	para "If you find a good"
 	line "one, remember"
-	cont "you picked it"
-	cont "from!"
+	cont "where you picked"
+	cont "it from!"
 	done
 
 PectiniaBerryHouse_MapEvents:
