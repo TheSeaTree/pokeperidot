@@ -77,8 +77,6 @@ SSMakoDeckBurglar:
 .Battle
 	waitbutton
 	closetext
-;	writecode VAR_MOVEMENT, PLAYER_SURF
-;	special ReplaceKrisSprite
 	winlosstext SSMakoDeckBurglarWinText, 0
 	loadtrainer BURGLAR, RANDY
 	startbattle
@@ -100,22 +98,32 @@ SSMakoDeckBurglar:
 	writetext SSMakoDeckOfficerText
 	waitbutton
 	closetext
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .EmilyAbove
 	checkcode VAR_FACING
 	ifequal LEFT, .FacingLeft
+.EmilyAbove
 	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerApproach
 	scall SSMakoDeckBurglarArrestScript
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .ArrestLeft
+	faceobject PLAYER, SSMAKODECK_OFFICER
 	faceobject SSMAKODECK_OFFICER, PLAYER
 	opentext
 	writetext SSMakoDeckOfficerStayOutOfTrouble
 	waitbutton
 	closetext
-	applymovement SSMAKODECK_OFFICER, SSMakoLeaveMovement
+	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerContinueLeave
 	jump .Done
 
 .FacingLeft
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .Done
 	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerApproachLeft
 	scall SSMakoDeckBurglarArrestScript
+.ArrestLeft
 	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerLeaveLeft
+	faceobject PLAYER, SSMAKODECK_OFFICER
 	faceobject SSMAKODECK_OFFICER, PLAYER
 	opentext
 	writetext SSMakoDeckOfficerStayOutOfTrouble
@@ -131,8 +139,8 @@ SSMakoDeckBurglar:
 	ifequal 4, .Continue_Leaving
 	applymovement SSMAKODECK_FANGIRL, SSMakoFangirlApproachPlayer
 .Continue_Leaving
-	turnobject SSMAKODECK_FANGIRL, LEFT
-	turnobject PLAYER, RIGHT
+	faceobject SSMAKOENGINEROOM_FANGIRL, PLAYER
+	faceobject PLAYER, SSMAKOENGINEROOM_FANGIRL
 	opentext
 	writetext SSMakoDeckEmilyAfterText
 	waitbutton
@@ -180,6 +188,7 @@ SSMakoDeckBurglarArrestScript:
 	writetext SSMakoDeckPlayerReturnTrainerCardText
 	waitbutton
 	closetext
+	faceobject PLAYER, SSMAKODECK_OFFICER
 	
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .Up1
@@ -213,7 +222,7 @@ SSMakoDeckBurglarArrestScript:
 	closetext
 	faceobject SSMAKODECK_BURGLAR, SSMAKODECK_OFFICER
 	faceobject SSMAKODECK_OFFICER, SSMAKODECK_BURGLAR
-	
+
 	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerArrest
 	jump .Continue
 	
@@ -235,8 +244,15 @@ SSMakoDeckBurglarArrestScript:
 	waitbutton
 	closetext
 
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	iftrue .ArrestBelow
 	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerArrestAbove
+	jump .ContinueArrest
 
+.ArrestBelow
+	applymovement SSMAKODECK_OFFICER, SSMakoDeckOfficerArrestBelow
+
+.ContinueArrest
 	faceobject SSMAKODECK_BURGLAR, SSMAKODECK_OFFICER
 
 .Continue
@@ -269,11 +285,24 @@ SSMakoDeckSetTempEvent2:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
 	end
 	
+SSMakoDeckSetTempEvent3:
+	scall SSMakoDeckClearTempEvents
+	checkcode VAR_FACING
+	ifequal DOWN, .DownFacing
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	end
+
+.DownFacing
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
+	end
+
 SSMakoDeckClearTempEvents:
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_3
 	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_5
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_6
 	end
 
 SSMakoDeckReceptionist:
@@ -333,12 +362,11 @@ SSMakoDeckOfficerArrestAbove:
 	turn_head DOWN
 	step_resume
 
-SSMakoLeaveMovement:
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
-	step RIGHT
+SSMakoDeckOfficerArrestBelow:
+	step DOWN
+	step LEFT
+	step LEFT
+	turn_head UP
 	step_resume
 	
 SSMakoDeckOfficerLeaveLeft:
@@ -347,9 +375,10 @@ SSMakoDeckOfficerLeaveLeft:
 	
 SSMakoDeckOfficerContinueLeaveLeft:
 	step RIGHT
+SSMakoDeckOfficerContinueLeave:
 	step RIGHT
+SSMakoLeaveMovement:
 	step RIGHT
-	step DOWN
 	step RIGHT
 	step RIGHT
 	step RIGHT
@@ -605,7 +634,7 @@ SSMakoDeck_MapEvents:
 	coord_event 13,  4, SCENE_SSMAKODECK_DEFAULT, FangirlDeckTeleport2
 	coord_event  4,  3, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckSetTempEvent1
 	coord_event  4,  5, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckSetTempEvent2
-	coord_event  5,  4, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckClearTempEvents
+	coord_event  5,  4, SCENE_SSMAKODECK_FOLLOWING, SSMakoDeckSetTempEvent3
 
 	db 4 ; bg events
 	bg_event 11,  2, BGEVENT_ITEM, SSMakoDeckHiddenSodaPop1
