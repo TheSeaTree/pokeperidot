@@ -2,12 +2,12 @@ TrainerClassDVs:
 ; entries correspond to trainer classes (see constants/trainer_constants.asm)
 	;  atk,def,spd,spc
 	dn  9, 10,  7,  7 ; CECIL
-	dn  7,  9,  9,  9 ; CELESTE
+	dn  7, 10,  9, 10 ; CELESTE
 	dn  8,  8,  8,  4 ; MURPHY
-	dn  9,  9,  9,  9 ; DUANE
+	dn 10,  9,  9, 10 ; DUANE
 	dn 10, 10, 10, 10 ; PRYCE
-	dn 10, 10, 10, 10 ; ALAN
-	dn 10, 10, 10, 10 ; JOEL
+	dn 14, 13, 10, 13 ; ALAN
+	dn 10, 10, 10, 11 ; JOEL
 	dn 14, 14, 14, 14 ; ENYA
 	dn 13, 13, 13, 13 ; RIVAL1
 	dn  7, 13, 13, 13 ; FANGIRL
@@ -22,7 +22,7 @@ TrainerClassDVs:
 	dn  7,  8,  8,  8 ; MISTY
 	dn  9,  8,  8,  8 ; LT_SURGE
 	dn  9,  8,  8,  8 ; SCIENTIST
-	dn  7,  8,  8,  8 ; POSEY
+	dn  7, 10, 11, 10 ; POSEY
 	dn  9,  8,  8,  8 ; LAD
 	dn  9,  8,  8,  8 ; SCHOOLBOY
 	dn  9,  8,  8,  8 ; BIRD_KEEPER
