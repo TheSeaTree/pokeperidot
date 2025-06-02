@@ -182,6 +182,7 @@ ClefairyEggMoves:
 	db MIMIC
 	db PETAL_DANCE
 	db PRESENT
+	db SEISMIC_TOSS
 	db SIGNAL_BEAM
 	db -1 ; end
 
@@ -210,6 +211,7 @@ JigglypuffEggMoves:
 	db PETAL_DANCE
 	db PRESENT
 	db SCREECH
+	db SEISMIC_TOSS
 	db -1 ; end
 
 ZubatEggMoves:
@@ -586,6 +588,7 @@ ChanseyEggMoves:
 	db DYNAMICPUNCH
 	db METRONOME
 	db PRESENT
+	db SEISMIC_TOSS
 	db -1 ; end
 
 TangelaEggMoves:
@@ -928,6 +931,7 @@ MarillEggMoves:
 	db FUTURE_SIGHT
 	db PERISH_SONG
 	db PRESENT
+	db SEISMIC_TOSS
 	db SUPERSONIC
 	db -1 ; end
 
@@ -1073,6 +1077,7 @@ SnubbullEggMoves:
 	db METRONOME
 	db MIMIC
 	db PRESENT
+	db SEISMIC_TOSS
 	db STONE_EDGE
 	db WILD_CHARGE
 	db -1 ; end
