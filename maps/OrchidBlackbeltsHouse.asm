@@ -221,7 +221,7 @@ CrashHelmetGuyDeclineText:
 CrashHelmetGuyNoRoomText:
 	text "I can't give you"
 	line "this item. Your"
-	line "PACK is too full."
+	cont "PACK is too full."
 	done
 
 CrashHelmetGuyAfterText:

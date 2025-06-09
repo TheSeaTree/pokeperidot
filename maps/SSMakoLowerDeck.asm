@@ -101,7 +101,7 @@ SSMakoLowerDeckFishermanNoBallText:
 
 SSMakoLowerDeckFishermanAfterBallText:
 	text "I have plenty of"
-	line "# BALLs. If you"
+	line "#BALLs. If you"
 	cont "need any more,"
 	cont "just ask!"
 

@@ -105,7 +105,7 @@ MoonBallLadySellText:
 	
 	para "I caught them all"
 	line "using a special"
-	cont "kind of # BALL."
+	cont "kind of #BALL."
 	
 	para "I have lots if you"
 	line "want to buy them."

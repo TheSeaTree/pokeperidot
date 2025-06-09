@@ -248,7 +248,7 @@ PastPectiniaSuperNerdText:
 	para "I make sure to"
 	line "give him plenty of"
 	cont "time outside his"
-	cont "# BALL."
+	cont "#BALL."
 	done
 
 PastPectiniaCityWorkerText:

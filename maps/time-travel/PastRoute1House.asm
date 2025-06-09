@@ -98,7 +98,7 @@ DirectBallMerchantSellText:
 	line "trainer, would you"
 	cont "be interested in"
 	cont "my special kind of"
-	cont "# BALL?"
+	cont "#BALL?"
 
 	para "I can sell them"
 	line "for ¥700 each."
@@ -146,7 +146,7 @@ DirectBallMerchantMoreSelection:
 	done
 
 DirectBallMerchantComeBack:
-	text "My # BALL will"
+	text "My #BALL will"
 	line "ignore how healthy"
 	cont "a #MON is when"
 	cont "it is thrown."
