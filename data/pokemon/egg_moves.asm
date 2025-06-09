@@ -505,6 +505,7 @@ KrabbyEggMoves:
 	db AGILITY
 	db AMNESIA
 	db ANCIENTPOWER
+	db AQUA_JET
 	db BODY_PRESS
 	db BRICK_BREAK
 	db FLAIL
