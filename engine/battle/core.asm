@@ -945,22 +945,16 @@ TryEnemyFlee:
 	cp 50 percent + 1
 	jr nc, .Stay
 
+.CheckFleemonShininess
+	call BattleCheckEnemyShininess
+	jr c, .Stay
+
 	push bc
 	ld a, [wTempEnemyMonSpecies]
 	ld de, 1
 	ld hl, OftenFleeMons
 	call IsInArray
 	pop bc
-	jr c, .Flee
-
-	ld a, b
-	cp 10 percent + 1
-	jr nc, .Stay
-
-	ld a, [wTempEnemyMonSpecies]
-	ld de, 1
-	ld hl, SometimesFleeMons
-	call IsInArray
 	jr c, .Flee
 
 .Stay:
