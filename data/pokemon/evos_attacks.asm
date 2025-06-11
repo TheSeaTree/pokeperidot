@@ -3468,8 +3468,8 @@ PinecoEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, PROTECT
-	db 8, EXPLOSION
-	db 12, PIN_MISSILE
+	db 8, PIN_MISSILE
+	db 12, DOUBLE_EDGE
 	db 17, RAPID_SPIN
 	db 20, BIDE
 	db 28, SPIKES
