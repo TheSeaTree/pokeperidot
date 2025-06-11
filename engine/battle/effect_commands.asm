@@ -5323,6 +5323,9 @@ BattleCommand_ForceSwitch:
 	jr .fail
 
 .wild_succeed_playeristarget
+; This move fails if the wild user is shiny.
+	farcall BattleCheckEnemyShininess
+	jr c, .fail
 	call UpdateBattleMonInParty
 	xor a
 	ld [wNumHits], a

@@ -45,6 +45,10 @@ BattleCommand_Teleport:
 	ld a, [wBattleMode]
 	dec a
 	jp nz, .enemyswitch
+; Teleport fails if the wild user is shiny.
+	farcall BattleCheckEnemyShininess
+	jp c, BattleEffect_ButItFailed
+
 	ld a, [wBattleMonLevel]
 	ld b, a
 	ld a, [wCurPartyLevel]
