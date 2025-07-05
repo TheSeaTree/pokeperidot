@@ -408,7 +408,7 @@ WillNotBattle:
 	text "I can't battle you"
 	line "yet. There are"
 	cont "still wild #MON"
-	cont "in the gym!"
+	cont "in the GYM!"
 	done
 	
 PoseyChallengeText:
@@ -462,16 +462,17 @@ PoseySolarbeamText:
 	
 PoseyAfterText:
 	text "You have battled"
-	line "so well, but I can"
+	line "so well! I can"
 	cont "feel the love and"
 	cont "care you have for"
 	cont "your #MON."
-	
-	para "I know that will"
-	line "continue to grow"
-	cont "stronger. I'll be"
-	cont "rooting for you,"
-	cont "<PLAYER>!"
+
+	para "That bond will"
+	line "grow even stronger"
+	cont "over time."
+
+	para "I believe in you,"
+	line "<PLAYER>!"
 	done
 
 PlayerReceivedRootBadgeText:

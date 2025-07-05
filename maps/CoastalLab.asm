@@ -732,7 +732,7 @@ CoastalLabLugiaBookText:
 	cont "distress, LUGIA"
 	cont "will emerge from"
 	cont "the sea and come"
-	cont "their aide."
+	cont "to their aid."
 
 	para "Continue reading?"
 	done

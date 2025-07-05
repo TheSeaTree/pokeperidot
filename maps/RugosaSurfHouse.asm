@@ -66,34 +66,33 @@ RugosaSurfGuyText:
 RugosaSurfGuyGiveSurf:
 	text "Hey man, I thought"
 	line "I told you no-"
-	
-	para "…Hang on. You have"
+
+	para "…Hang on, you have"
 	line "how many BADGEs?"
-	
+
 	para "6? That's more than"
 	line "me!"
-	
-	para "Sorry for the hos-"
-	line "tility, then."
-	
-	para "I still can't have"
-	line "you join the club,"
-	cont "but you can try"
-	cont "teaching your"
-	cont "#MON this HM."
+
+	para "I'm sorry for the"
+	line "hostility."
+
+	para "I can't let you"
+	line "join the club,"
+	cont "but I can give you"
+	cont "this HM."
 	done
-	
+
 RugosaSurfGuyExplain:
 	text "SURF will let your"
 	line "#MON carry you"
 	cont "across most bodies"
 	cont "of water."
-	
+
 	para "While you can go"
 	line "explore the ocean,"
 	cont "you won't find any"
 	cont "GYMs out there."
-	
+
 	para "Head back west if"
 	line "you want to coll-"
 	cont "ect more BADGEs."

@@ -377,14 +377,14 @@ PokefanMRichardWinText:
 	text "You're a real"
 	line "jerk, kid!"
 	done
-	
+
 PokefanMRichardAfterText:
-	text "I need to heal my"
-	line "#MON before the"
-	cont "trees will grow"
-	cont "back."
+	text "My #MON are in"
+	line "no condition to"
+	cont "help me plant a"
+	cont "new tree!"
 	done
-	
+
 LucasExplaination:
 	text "Hey, kid. I'm"
 	line "LUCAS."

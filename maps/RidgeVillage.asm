@@ -265,7 +265,7 @@ RidgeVillageRivalBeforeText:
 
 	para "I already had an"
 	line "appointment with"
-	cont "the gym leader!"
+	cont "the GYM LEADER!"
 
 	para "What's that?"
 
@@ -276,7 +276,7 @@ RidgeVillageRivalBeforeText:
 	para "And you think"
 	line "you're good enough"
 	cont "to even set foot"
-	cont "in a gym?"
+	cont "in a GYM?"
 	
 	para "Don't make"
 	line "me laugh!"
@@ -292,7 +292,7 @@ RidgeVillageRivalWinText:
 	text "Argh!"
 
 	para "Fine. You can"
-	line "challenge this gym"
+	line "challenge this GYM"
 	cont "before me."
 	done
 
@@ -353,7 +353,7 @@ ShoeGuyText1:
 	
 ShoeGuyText2:
 	text "You just defeated"
-	line "that gym, right?"
+	line "that GYM, right?"
 	
 	para "Congrats!"
 	

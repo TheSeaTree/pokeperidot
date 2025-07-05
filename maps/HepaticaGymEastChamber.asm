@@ -95,7 +95,7 @@ HepaticaGymEastChamberLeaderSwitch:
 GuitaristAndyText:
 	text "I feel on top of"
 	line "the world in this"
-	cont "gym!"
+	cont "GYM!"
 	done
 	
 GuitaristAndyWinText:

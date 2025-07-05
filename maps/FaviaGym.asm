@@ -452,7 +452,7 @@ PsychicDamienAfterText:
 GuitaristXavierText:
 	text "I've been having"
 	line "writer's block, so"
-	cont "I came to this gym"
+	cont "I came to this GYM"
 	cont "for inspiration."
 	done
 	

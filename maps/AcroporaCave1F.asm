@@ -88,24 +88,23 @@ AcroporaGymGuyText:
 	text "Yo! I got some"
 	line "tips right here"
 	cont "for you to hear."
-	
+
 	para "This looks like a"
 	line "cave, right?"
-	
+
 	para "Well, this is act-"
-	line "ually serves as"
-	cont "the GYM of this"
-	cont "CITY."
-	
+	line "ually the GYM of"
+	cont "this CITY!"
+
 	para "LEADER ALAN loves"
 	line "to dig, and wants"
 	cont "all of this chall-"
-	cont "engers admire his"
-	cont "hard work."
-	
-	para "I got another tip"
+	cont "engers to admire"
+	cont "his hard work."
+
+	para "I got one more tip"
 	line "for you, too."
-	
+
 	para "The trainers here"
 	line "all prefer GROUND"
 	cont "and ROCK #MON."
@@ -113,8 +112,8 @@ AcroporaGymGuyText:
 	para "You're gonna want"
 	line "some GRASS or"
 	cont "WATER-type #MON"
-	cont "for this gym."
-	
+	cont "for this GYM."
+
 	para "Best of luck out"
 	line "there!"
 	done

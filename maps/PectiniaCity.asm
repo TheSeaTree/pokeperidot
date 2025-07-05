@@ -434,7 +434,7 @@ PectiniaCityRivalBeforeText:
 
 	para "I already had an"
 	line "appointment with"
-	cont "the gym leader!"
+	cont "the GYM LEADER!"
 
 	para "What's that?"
 
@@ -445,7 +445,7 @@ PectiniaCityRivalBeforeText:
 	para "And you think"
 	line "you're good enough"
 	cont "to even set foot"
-	cont "in a gym?"
+	cont "in a GYM?"
 	
 	para "Don't make"
 	line "me laugh!"
@@ -461,7 +461,7 @@ PectiniaCityRivalWinText:
 	text "Argh!"
 
 	para "Fine. You can"
-	line "challenge this gym"
+	line "challenge this GYM"
 	cont "before me."
 	done
 

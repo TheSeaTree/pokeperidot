@@ -465,7 +465,7 @@ Route3GymText:
 	text "Greetings!"
 	
 	para "It seems that you"
-	line "are without a gym"
+	line "are without a GYM"
 	cont "badge."
 	
 	para "That is no issue"
@@ -484,7 +484,7 @@ Route3GymText:
 	cont "ocean."
 
 	para "Many trainers will"
-	line "visit this gym for"
+	line "visit this GYM for"
 	cont "their second"
 	cont "badge, but the"
 	cont "leader welcomes"

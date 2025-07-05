@@ -47,7 +47,7 @@ RugosaDeptStore2FTeacherText:
 
 RugosaDeptStore2FCooltrainerFText:
 	text "This DEPT.STORE is"
-	line "huge. but it is"
+	line "huge, but it is"
 	cont "really lacking in"
 	cont "specialty items."
 

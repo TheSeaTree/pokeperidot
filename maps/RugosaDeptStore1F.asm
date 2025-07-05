@@ -41,8 +41,8 @@ RugosaDeptStore1FGentlemanText:
 	para "You'll need to"
 	line "visit at different"
 	cont "times of day if"
-	cont "want to see each"
-	cont "of them."
+	cont "you want to see"
+	cont "each of them."
 	done
 
 RugosaDeptStore1FPokefanFText:

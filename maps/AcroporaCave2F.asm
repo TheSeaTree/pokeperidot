@@ -83,7 +83,7 @@ HikerZekeAfterText:
 	line "understand that"
 	cont "this cave is"
 	cont "pretty much a"
-	cont "legitimate gym!"
+	cont "legitimate GYM!"
 	done
 	
 PokefanMDougText:

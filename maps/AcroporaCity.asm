@@ -145,8 +145,8 @@ AcroporaLassClearedHideoutText:
 	cont "and quiet again!"
 
 	para "I wonder what made"
-	line "them leave here"
-	cont "so suddenly."
+	line "them leave so sud-"
+	cont "denly."
 	done
 
 AcroporaRockerText:
