@@ -155,7 +155,7 @@ ENDM
 	map_const CARNATION_POKECENTER_1F,                      5,  4 ;  1
 	map_const WOBBUFFET_HOUSE,   							4,  4
 	map_const ROUTE_15,									   27, 12
-	map_const ROUTE_16,                                    31, 22
+	map_const ROUTE_16,                                    33, 22
 	map_const HEAVY_BALL_HOUSE,                             4,  4 ; 13
 
 	newgroup                                                      ;  8

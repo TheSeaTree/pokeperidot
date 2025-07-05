@@ -255,10 +255,10 @@ ENDM
 	
 	map_attributes Route15, ROUTE_15, $05, NORTH | SOUTH
 	connection north, CarnationTown, CARNATION_TOWN, 15
-	connection south, Route16, ROUTE_16, 0
+	connection south, Route16, ROUTE_16, -2
 	
 	map_attributes Route16, ROUTE_16, $05, NORTH
-	connection north, Route15, ROUTE_15, 0
+	connection north, Route15, ROUTE_15, 2
 	
 	map_attributes OrchidCity, ORCHID_CITY, $35, SOUTH
 	connection south, Route20, ROUTE_20, 4
