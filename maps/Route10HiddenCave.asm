@@ -130,7 +130,7 @@ LoadHaunterBattle:
 	waitsfx
 	closetext
 	loadwildmon HAUNTER, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
 	end

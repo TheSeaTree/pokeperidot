@@ -18,4 +18,6 @@ TileCollisionStdScripts:
 	dbw COLL_STOLEN_ITEMS,		stolenitemboxes
 	dbw COLL_FOUNTAIN,			wishingfountain
 	dbw COLL_TURNTABLE,        	turntable
+	dbw COLL_TUBE,          	incubator
+	dbw COLL_EMPTY_TUBE,       	emptyincubator
 	db -1 ; end

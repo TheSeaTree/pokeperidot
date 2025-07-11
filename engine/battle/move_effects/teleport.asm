@@ -4,7 +4,7 @@ BattleCommand_Teleport:
 	ld a, [wBattleType]
 	cp BATTLETYPE_SHINY
 	jp z, BattleEffect_ButItFailed
-	cp BATTLETYPE_TRAP
+	cp BATTLETYPE_FORCEITEM
 	jp z, BattleEffect_ButItFailed
 	cp BATTLETYPE_BOSS
 	jp z, BattleEffect_ButItFailed

@@ -113,6 +113,8 @@ COLL_OLD_STATUE		   EQU $b7
 COLL_UNOWN_X		   EQU $b8
 COLL_STOLEN_ITEMS	   EQU $b9
 COLL_TURNTABLE  	   EQU $ba
+COLL_TUBE  	   		   EQU $bb
+COLL_EMPTY_TUBE  	   EQU $bc
 COLL_FF                EQU $ff ; garbage
 
 ; collision data type nybbles

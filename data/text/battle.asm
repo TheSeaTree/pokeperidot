@@ -34,12 +34,19 @@ WildLegendaryAppearedText:
 	text_start
 	line "wants to battle!"
 	prompt
-	
+
 WildBossAppearedText:
 	text "@"
 	text_ram wEnemyMonNick
 	text_start
 	line "challenges you!"
+	prompt
+
+WildTrapAppearedText:
+	text "Wild @"
+	text_ram wEnemyMonNick
+	text_start
+	line "attacked!"
 	prompt
 
 DugtrioBossText::

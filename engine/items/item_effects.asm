@@ -551,6 +551,8 @@ PokeBallEffect:
 	cp BATTLETYPE_LEGENDARY
 	jr z, .check_caught_legendary
 	cp BATTLETYPE_FORCEITEM
+	jr z, .check_caught_legendary
+	cp BATTLETYPE_FORCEITEM
 	jr nz, .check_articuno
 .check_caught_legendary
 	ld hl, wBattleResult

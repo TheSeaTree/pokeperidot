@@ -83,7 +83,7 @@ HoOhCastle2FTreasureChest1:
 	takeitem SMALL_KEY
 	opentext
 	loadwildmon EEVEE, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
 	givemoney YOUR_MONEY, 851
@@ -112,7 +112,7 @@ HoOhCastle2FTreasureChest2:
 	waitbutton
 	closetext
 	loadwildmon DROWZEE, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
 	opentext

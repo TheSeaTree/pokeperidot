@@ -184,7 +184,7 @@ RugosaCityGrimerBattle:
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 35
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	disappear MAHOGANYTOWN_GRIMER1
 	disappear MAHOGANYTOWN_OFFICER1

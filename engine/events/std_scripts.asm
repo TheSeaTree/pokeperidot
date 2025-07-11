@@ -55,6 +55,8 @@ StdScripts::
 	dba BossCelebiDisappearedScript
 	dba CelebiEncounterNoBattleScript
 	dba TurntableScript
+	dba IncubatorScript
+	dba EmptyIncubatorScript
 
 PokecenterNurseScript:
 ; EVENT_WELCOMED_TO_POKECOM_CENTER is never set
@@ -250,6 +252,18 @@ TVScript:
 TurntableScript:
 	opentext
 	farwritetext TurntableText
+	waitbutton
+	closetext
+	end
+
+IncubatorScript:
+	farjumptext IncubatorText
+
+EmptyIncubatorScript:
+	opentext
+	farwritetext IncubatorText
+	waitbutton
+	farwritetext EmptyIncubatorText
 	waitbutton
 	closetext
 	end

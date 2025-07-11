@@ -121,7 +121,7 @@ HoOhCastle3FTreasureChest2:
 	waitbutton
 	closetext
 	loadwildmon MEOWTH, 40
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
 	opentext

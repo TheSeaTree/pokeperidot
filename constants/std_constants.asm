@@ -56,3 +56,5 @@
 	enum bosscelebidisappear
 	enum celebiencounter_nobattle
 	enum turntable
+	enum incubator
+	enum emptyincubator

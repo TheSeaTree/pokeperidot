@@ -365,6 +365,15 @@ TurntableText:
 	text "It's a turntable."
 	done
 
+IncubatorText:
+	text "It's some kind of"
+	line "an incubator."
+	done
+
+EmptyIncubatorText:
+	text "…But it's empty."
+	done
+
 HomepageText:
 	text "#MON JOURNAL"
 	line "HOME PAGE…"

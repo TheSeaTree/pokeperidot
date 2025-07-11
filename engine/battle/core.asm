@@ -3915,7 +3915,7 @@ TryToRunAwayFromBattle:
 	jp z, .can_escape
 	cp BATTLETYPE_SAFARI
 	jp z, .can_escape
-	cp BATTLETYPE_TRAP
+	cp BATTLETYPE_FORCEITEM
 	jp z, .cant_escape
 	cp BATTLETYPE_SHINY
 	jp z, .cant_escape
@@ -6683,7 +6683,7 @@ LoadEnemyMon:
 ; In a wild battle, we pull from the item slots in BaseData
 
 ; Force Item1
-; Used for Ho-Oh, Lugia and Snorlax encounters
+; Used for Snorlax and trap encounters
 	ld a, [wBattleType]
 	cp BATTLETYPE_FORCEITEM
 	ld a, [wBaseItem1]
@@ -9353,8 +9353,8 @@ BattleStartMessage:
 	ld hl, WildLegendaryAppearedText
 	cp BATTLETYPE_LEGENDARY
 	jr z, .PlaceBattleStartText
-	ld hl, WildBossAppearedText
-	cp BATTLETYPE_TRAP
+	ld hl, WildTrapAppearedText
+	cp BATTLETYPE_FORCEITEM
 	jr z, .PlaceBattleStartText
 	ld hl, WildPokemonAppearedText
 	cp BATTLETYPE_SAFARI

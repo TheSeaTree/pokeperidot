@@ -102,7 +102,7 @@ PowerPlant2FGrimerBattle:
 	closetext
 	setlasttalked -1
 	loadwildmon GRIMER, 28
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	end
 	

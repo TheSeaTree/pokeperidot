@@ -29,16 +29,20 @@ PowerPlant1FB_MapScripts:
 	changeblock  4,  8, $07 ; open shutter
 	changeblock  4, 16, $72 ; open shutter
 	changeblock  6, 16, $73 ; open shutter
+	checkevent EVENT_HANDED_OVER_FOSSIL
+	iftrue .WaitingFossil
+	return
+.WaitingFossil
+	changeblock 18,  6, $cf ; something in tube
+	changeblock 18,  8, $d0 ; something in tube
 	return
 
 FossilResurrectionGuy:
 	faceplayer
 	opentext
-	checkevent EVENT_GAVE_HELIX_FOSSIL
-	iftrue .WaitingFossil
-	checkevent EVENT_GAVE_DOME_FOSSIL
-	iftrue .WaitingFossil
-	checkevent EVENT_GAVE_OLD_AMBER
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	iftrue .AfterFossil
+	checkevent EVENT_HANDED_OVER_FOSSIL
 	iftrue .WaitingFossil
 	writetext PowerPlantFossilGuyIntroText
 	waitbutton
@@ -64,66 +68,31 @@ FossilResurrectionGuy:
 .WaitingFossil
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
 	iftrue .NotDone
-	writetext PowerPlantFossilGuyWaiting
-	waitbutton
+
 	checkevent EVENT_GAVE_DOME_FOSSIL
-	iftrue .GiveKabuto
+	iftrue .KabutoReady
 	checkevent EVENT_GAVE_OLD_AMBER
-	iftrue .GiveAerodactyl	
+	iftrue .AerodactylReady
 
-;.GiveOmanyte
 	pokenamemem OMANYTE, MEM_BUFFER_0
-	writetext GiveRevivedFossilText
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	pokenamemem OMANYTE, MEM_BUFFER_0
-	writetext ReceiveRevivedFossilText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	buttonsound
-	givepoke OMANYTE, 30
-	clearevent EVENT_GAVE_HELIX_FOSSIL
-	jump .DoneFossil
-
-.GiveKabuto
+	jump .ContinueWaitingFossil
+.KabutoReady
 	pokenamemem KABUTO, MEM_BUFFER_0
-	writetext GiveRevivedFossilText
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	pokenamemem KABUTO, MEM_BUFFER_0
-	writetext ReceiveRevivedFossilText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	buttonsound
-	givepoke KABUTO, 30
-	clearevent EVENT_GAVE_DOME_FOSSIL
-	jump .DoneFossil
-	
-.GiveAerodactyl
+	jump .ContinueWaitingFossil
+.AerodactylReady
 	pokenamemem AERODACTYL, MEM_BUFFER_0
-	writetext GiveRevivedFossilText
-	waitbutton
-	checkcode VAR_PARTYCOUNT
-	ifequal PARTY_LENGTH, .NoRoom
-	pokenamemem AERODACTYL, MEM_BUFFER_0
-	writetext ReceiveRevivedFossilText
-	playsound SFX_CAUGHT_MON
-	waitsfx
-	buttonsound
-	givepoke AERODACTYL, 40
-	clearevent EVENT_GAVE_OLD_AMBER
-.DoneFossil
-	writetext PowerPlantFossilGuyThanks
+.ContinueWaitingFossil
+	writetext PowerPlantFossilGuyWaiting
 	jump .end
 
 .NotDone
+	setevent EVENT_HANDED_OVER_FOSSIL
 	writetext PowerPlantFossilGuyWorking
 	jump .end
 
-.NoRoom
-	writetext NoRoomForFossil
+.AfterFossil
+	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	writetext PowerPlantFossilGuyThanks
 	jump .end
 
 .NoFossils
@@ -206,9 +175,15 @@ ResurrectSabreFossil:
 	cry SKELEGON
 	waitsfx
 	loadwildmon SKELEGON, 45
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
+	special CheckCaughtCelebi
+	iftrue .Captured
+	clearevent EVENT_MOLTEN_PEAK_SABRE_FOSSIL
+	opentext
+	writetext SabreFossilGetReadyText
+.Captured
 	takeitem SABRE_FOSSIL
 	setevent EVENT_SKELEGON_BATTLED
 	faceplayer
@@ -249,7 +224,7 @@ ResurrectSabreFossil:
 	cry SKELEGON
 	waitsfx
 	loadwildmon SKELEGON, 60
-	writecode VAR_BATTLETYPE, BATTLETYPE_TRAP
+	writecode VAR_BATTLETYPE, BATTLETYPE_FORCEITEM
 	startbattle
 	reloadmapafterbattle
 	takeitem SABRE_FOSSIL
@@ -260,6 +235,66 @@ ResurrectSabreFossil:
 	closetext
 	turnobject LAST_TALKED, UP
 	end
+
+PowerPlantFossilTube:
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
+	iftrue .EmptyTube
+	checkevent EVENT_HANDED_OVER_FOSSIL
+	iffalse .EmptyTube
+	opentext
+	checkevent EVENT_GAVE_DOME_FOSSIL
+	iftrue .GiveKabuto
+	checkevent EVENT_GAVE_OLD_AMBER
+	iftrue .GiveAerodactyl
+
+	pokenamemem OMANYTE, MEM_BUFFER_0
+	scall .TakeFossilMon
+	givepoke OMANYTE, 30
+	clearevent EVENT_GAVE_HELIX_FOSSIL
+	jump .DoneFossil
+
+.GiveKabuto
+	pokenamemem KABUTO, MEM_BUFFER_0
+	scall .TakeFossilMon
+	givepoke KABUTO, 30
+	clearevent EVENT_GAVE_DOME_FOSSIL
+	jump .DoneFossil
+
+.GiveAerodactyl
+	pokenamemem AERODACTYL, MEM_BUFFER_0
+	scall .TakeFossilMon
+	givepoke AERODACTYL, 40
+	clearevent EVENT_GAVE_OLD_AMBER
+.DoneFossil
+	changeblock 18,  6, $cd ; empty tube
+	changeblock 18,  8, $ce ; empty tube
+	closetext
+	clearevent EVENT_HANDED_OVER_FOSSIL
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_2
+	end
+
+.NoRoom
+	writetext NoRoomForFossil
+	waitbutton
+	closetext
+	endall
+
+.TakeFossilMon
+	writetext TakeRevivedFossilText
+	waitbutton
+	checkcode VAR_PARTYCOUNT
+	ifequal PARTY_LENGTH, .NoRoom
+	writetext ReceiveRevivedFossilText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	end
+
+.EmptyTube
+	jumptext EmptyFossilTubeText
+
+PowerPlantFossilTubeWrongSide:
+	jumptext FossilTubeWrongSideText
 
 PowerPlantItemfinderEvent:
 	pause 8
@@ -353,13 +388,13 @@ PowerPlantFossilGuyIntroText:
 	
 	para "I am researching"
 	line "a method to revive"
-	cont "an extinct #MON"
-	cont "using DNA found in"
-	cont "its FOSSIL."
+	cont "extinct #MON"
+	cont "using DNA found"
+	cont "within FOSSILs!"
 	done
-	
+
 NoFossilsText:
-	text "FOSSILS can be"
+	text "FOSSILs can be"
 	line "very rare. I have"
 	cont "only seen a few in"
 	cont "my entire life!"
@@ -369,7 +404,7 @@ IdentifyOldAmberText:
 	text "Oh, you have an"
 	line "OLD AMBER?"
 	done
-	
+
 IdentifyFossilText:
 	text "Oh, you have a"
 	line "@"
@@ -385,19 +420,19 @@ AskResurrectFossilText:
 
 FossilMenuText:
 	text "Do you have any"
-	line "FOSSILS you could"
+	line "FOSSILs you could"
 	cont "give to me?"
-	
+
 	para "Please note that"
 	line "I can only revive"
 	cont "one at a time."
 	done
-	
+
 MaybeLaterText:
 	text "Do you still want"
 	line "to hold onto your"
 	cont "FOSSIL?"
-	
+
 	para "No problem. If you"
 	line "change your mind,"
 	cont "come see me."
@@ -479,18 +514,27 @@ PowerPlantFossilGuyWaiting:
 	
 	para "My experiment was"
 	line "a success!"
-	done
 
-GiveRevivedFossilText:
-	text "I resurrected your"
+	para "I resurrected your"
 	line "FOSSIL into a"
 	cont "living @"
 	text_ram wStringBuffer3
 	text "!"
 	
-	para "Isn't that amazi-"
-	line "ng? I'm sure you"
-	cont "will want it now."
+	para "Isn't that"
+	line "amazing?" 
+
+	para "You can collect it"
+	line "from the incubator"
+	cont "beside my PC."
+	done
+
+TakeRevivedFossilText:
+	text "The newly-revived"
+	line "@"
+	text_ram wStringBuffer3
+	text_start
+	cont "is ready!"
 	done
 
 ReceiveRevivedFossilText:
@@ -501,22 +545,34 @@ ReceiveRevivedFossilText:
 	done
 
 NoRoomForFossil:
-	text "…But you have no"
-	line "room to take this"
-	cont "#MON with you."
-	
-	para "Go deposit"
-	line "something in the"
-	cont "PC. Your #MON"
-	cont "is safe with me"
-	cont "until then."
+	text "<PLAYER> tried to"
+	line "take it…"
+
+	para "…But the PARTY"
+	line "is full."
 	done
-	
+
+EmptyFossilTubeText:
+	text "It's some kind of"
+	line "an incubator."
+
+	para "…But it's empty."
+	done
+
+FossilTubeWrongSideText:
+	text "It's some kind of"
+	line "an incubator."
+
+	para "…But it can't be"
+	line "accessed from"
+	cont "this side."
+	done
+
 PowerPlantFossilGuyThanks:
 	text "I can not thank"
 	line "you enough for the"
 	cont "help you have"
-	cont "given me for my"
+	cont "given me with my"
 	cont "research!"
 	done
 
@@ -623,7 +679,9 @@ PowerPlant1FB_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 2 ; bg events
+	bg_event 18,  8, BGEVENT_UP, PowerPlantFossilTube
+	bg_event 18,  7, BGEVENT_READ, PowerPlantFossilTubeWrongSide
 
 	db 10 ; object events
 	object_event  6, 20, SPRITE_GENTLEMAN, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlantAdmin, EVENT_POWER_PLANT_1F_MUK
@@ -635,4 +693,4 @@ PowerPlant1FB_MapEvents:
 	object_event 24, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FNamelessScript, -1
 	object_event 28, 13, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FHardWorkerScript, -1
 	object_event 16, 21, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FMonitorScript, -1
-	object_event 14, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FWaterCoolingGuy, -1
+	object_event 13, 11, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, PowerPlant1FWaterCoolingGuy, -1
