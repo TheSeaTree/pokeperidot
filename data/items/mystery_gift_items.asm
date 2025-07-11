@@ -9,10 +9,8 @@ MysteryGiftItems:
 	db 8, REVIVE
 	db 8, GREAT_BALL
 	db 8, SUPER_REPEL
-	db 8, MAX_REPEL
 	db 8, ELIXER
 	db 8, ETHER
-	db 8, MAX_ETHER
 	db 8, MOOMOO_MILK
 	db 8, HEAVY_BALL
 	db 8, LEVEL_BALL
@@ -20,9 +18,11 @@ MysteryGiftItems:
 	db 8, FAST_BALL
 	db 8, LOVE_BALL
 	db 8, MOON_BALL
+	db 6, MAX_REPEL
 	db 6, SILVER_LEAF
 	db 6, GOLD_LEAF
 	db 6, SILVER_BERRY
+	db 4, MAX_ETHER
 	db 4, FOCUS_SASH
 	db 4, POWER_HERB
 	db 4, WATER_STONE
@@ -38,6 +38,7 @@ MysteryGiftItems:
 	db 4, X_SP_ATK
 	db 4, X_SP_DEF
 	db 4, TRICK_MIRROR
+	db 2, SMALL_KEY
 	db 2, X_ACCURACY
 	db 2, GOLD_BERRY
 	db 1, HP_UP
