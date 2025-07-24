@@ -760,7 +760,7 @@ Blackbelt7AfterText:
 	cont "encouragement to"
 	cont "grow stronger."
 
-	para "I mustn't become"
+	para "I must not become"
 	line "soft!"
 	done
 

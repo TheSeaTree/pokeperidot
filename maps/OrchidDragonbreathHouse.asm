@@ -22,21 +22,21 @@ OrchidDragonbreathTMGuy:
 
 OrchidDragonbreathHouseBookshelf:
 	jumpstd difficultbookshelf
-	
+
 OrchidDragonbreathTMGuyText:
 	text "Has ENYA's GYM"
 	line "given you trouble?"
-	
+
 	para "Take this TM,"
 	line "and use it well."
-	
+
 	para "It is one of the"
 	line "few moves that is"
 	cont "powerful enough to"
-	cont "pierce a DRAGON's"
-	cont "scales."
+	cont "pierce the scales"
+	cont "of a DRAGON."
 	done
-	
+
 OrchidDragonbreathTMGuyAfterText:
 	text "How ironic that a"
 	line "DRAGON's own move"

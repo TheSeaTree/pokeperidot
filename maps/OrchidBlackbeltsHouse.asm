@@ -138,7 +138,7 @@ CrashHelmetGuyRecoil:
 	step_end
 
 OrchidBlackbelt1Text:
-	text "Have you heard the"
+	text "Have you heard any"
 	line "legends of the"
 	cont "powerful #MON"
 	cont "that used to live"
@@ -152,8 +152,8 @@ OrchidBlackbelt1ShowEnteiText:
 	text "No way? You caught"
 	line "the GUARDIAN?"
 
-	para "…And it's FIRE,"
-	line "not FIGHTING-type?"
+	para "…And it's a FIRE-"
+	line "type?"
 
 	para "My life has been a"
 	line "lie! FIGHTING-"
@@ -214,7 +214,7 @@ CrashHelmetGuyGiftCrashHelmetText:
 	done
 
 CrashHelmetGuyDeclineText:
-	text "You sure? You"
+	text "Are you sure? You"
 	line "could learn a lot."
 	done
 

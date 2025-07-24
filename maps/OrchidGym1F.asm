@@ -219,12 +219,12 @@ OrchidGymRivalIntroText:
 OrchidGymRivalWinText:
 	text "I can't stand"
 	line "this!"
-	
+
 	para "You got a lucky"
 	line "handout at the"
 	cont "start of your"
 	cont "journey!"
-	
+
 	para "I had to catch my"
 	line "own #MON!"
 	done
@@ -244,10 +244,10 @@ OrchidGymRivalLossText:
 OrchidGymRivalAfterText:
 	text "Fine! Go challenge"
 	line "this GYM!"
-	
+
 	para "Do whatever you"
 	line "want! I don't care!"
-	
+
 	para "Clearly you are"
 	line "the only trainer I"
 	cont "simply can't beat!"

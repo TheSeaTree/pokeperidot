@@ -60,12 +60,12 @@ OrchidGrannysHouseBookshelf:
 	
 OrchidGrannyAskText:
 	text "Hello, young one."
-	
+
 	para "When I was a young"
 	line "girl, my grandma"
 	cont "would tell me all"
 	cont "kinds of stories."
-	
+
 	para "Would you care if"
 	line "I passed a story"
 	cont "down to you?"
@@ -80,7 +80,7 @@ OrchidGrannyStoryText:
 	cont "of the strong wild"
 	cont "#MON away with"
 	cont "its loud roar."
-	
+
 	para "The elders saw it"
 	line "as a guardian to"
 	cont "us, and even beli-"
@@ -88,12 +88,12 @@ OrchidGrannyStoryText:
 	cont "one who stopped"
 	cont "the volcano from"
 	cont "erupting."
-	
+
 	para "One day, the GUAR-"
 	line "DIAN mysteriously"
 	cont "vanished without a"
 	cont "trace!"
-	
+
 	para "The elders feared"
 	line "this was a bad"
 	cont "omen, but I think"
@@ -101,7 +101,7 @@ OrchidGrannyStoryText:
 	cont "we could handle"
 	cont "ourselves against"
 	cont "the wild #MON."
-	
+
 	para "…I'm afraid I'm the"
 	line "only one in ORCHID"
 	cont "who is old enough"
@@ -127,7 +127,7 @@ OrchidGrannyGiveGuardianKeyText:
 	text "I only have a"
 	line "little more to"
 	cont "tell you."
-	
+
 	para "There is a cave"
 	line "deep within MOLTEN"
 	cont "PEAK which has"
@@ -146,10 +146,9 @@ OrchidGrannyGiveGuardianKeyText:
 
 	para "I am in no shape"
 	line "to be exploring"
-	cont "caves at my age,"
-	cont "so you should"
-	cont "take this KEY and"
-	cont "look for me."
+	cont "caves, take this"
+	cont "KEY and search in"
+	cont "place of me."
 
 	para "You have been so"
 	line "patient with me,"
@@ -196,7 +195,7 @@ OrchidGrannyDeclineText:
 	line "always in such a"
 	cont "hurry these days,"
 	cont "but I understand."
-	
+
 	para "Times change, I"
 	line "suppose…"
 	done
