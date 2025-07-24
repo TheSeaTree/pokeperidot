@@ -359,6 +359,77 @@ WindowText:
 
 TVText:
 	text "It's a TV."
+
+	para "There's nothing"
+	line "good on…"
+	done
+
+TVCommercialsText:
+	text "It's a TV."
+
+	para "There's commercials"
+	line "on now."
+	done
+
+TVMovieIntroText:
+	text "A movie is playing"
+	line "on the TV."
+	done
+
+TVMovie1Text:
+	text "A man fastens his"
+	line "seatbelt and…"
+
+	para "Woah!"
+
+	para "This is a really"
+	line "fast car chase!"
+	done
+
+TVMovie2Text:
+	text "A pair of kids run"
+	line "and hide inside a"
+	cont "big kitchen."
+
+	para "Something is look-"
+	line "ing in through the"
+	cont "glass on the door."
+
+	para "It's opening the"
+	line "door…"
+	done
+
+TVMovie3Text:
+	text "A large creature"
+	line "rams into the side"
+	cont "of a ship."
+
+	para "They're gonna need"
+	line "a bigger boat!"
+	done
+
+TVMovie4Text:
+	text "There's a robbery"
+	line "at a store!"
+
+	para "A big robot man"
+	line "stopped the bad"
+	cont "guy just in time!"
+
+	para "I'd buy this for"
+	line "¥100!"
+	done
+
+TVMovie5Text:
+	text "This scientist"
+	line "has so much more"
+	cont "energy after his"
+	cont "teleportation ex-"
+	cont "periment."
+
+	para "He thinks his"
+	line "girlfriend should"
+	cont "try it too!"
 	done
 
 TurntableText:

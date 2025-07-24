@@ -244,7 +244,51 @@ WindowScript:
 
 TVScript:
 	opentext
+	random 8
+	ifequal 1, .Commercials
+	checkcode VAR_HOUR
+	ifequal  1, .Movie5
+	ifequal  8, .Movie1
+	ifequal  9, .Movie1
+	ifequal 12, .Movie2
+	ifequal 13, .Movie2
+	ifequal 16, .Movie3
+	ifequal 17, .Movie3
+	ifequal 20, .Movie4
+	ifequal 21, .Movie4
+	ifequal 24, .Movie5
 	farwritetext TVText
+	jump .FinishTV
+
+.Commercials
+	farwritetext TVCommercialsText
+	jump .FinishTV
+
+.Movie1
+	farwritetext TVMovieIntroText
+	waitbutton
+	farwritetext TVMovie1Text
+	jump .FinishTV
+.Movie2
+	farwritetext TVMovieIntroText
+	waitbutton
+	farwritetext TVMovie2Text
+	jump .FinishTV
+.Movie3
+	farwritetext TVMovieIntroText
+	waitbutton
+	farwritetext TVMovie3Text
+	jump .FinishTV
+.Movie4
+	farwritetext TVMovieIntroText
+	waitbutton
+	farwritetext TVMovie4Text
+	jump .FinishTV
+.Movie5
+	farwritetext TVMovieIntroText
+	waitbutton
+	farwritetext TVMovie5Text
+.FinishTV
 	waitbutton
 	closetext
 	end

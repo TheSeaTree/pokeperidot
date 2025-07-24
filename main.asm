@@ -528,17 +528,6 @@ INCLUDE "mobile/mobile_5f.asm"
 SECTION "Phone Text 2", ROMX
 
 INCLUDE "data/text/std_text.asm"
-INCLUDE "data/phone/text/jack_overworld.asm"
-INCLUDE "data/phone/text/beverly_overworld.asm"
-INCLUDE "data/phone/text/huey_overworld.asm"
-INCLUDE "data/phone/text/gaven_overworld.asm"
-INCLUDE "data/phone/text/beth_overworld.asm"
-INCLUDE "data/phone/text/jose_overworld.asm"
-INCLUDE "data/phone/text/reena_overworld.asm"
-INCLUDE "data/phone/text/joey_overworld.asm"
-INCLUDE "data/phone/text/wade_overworld.asm"
-INCLUDE "data/phone/text/ralph_overworld.asm"
-INCLUDE "data/phone/text/liz_overworld.asm"
 
 
 SECTION "Special Phone Text", ROMX
