@@ -210,16 +210,12 @@ SSMakoWorker1:
 
 SSMakoWorker2:
 	jumptextfaceplayer SSMakoWorker2Text
-	
-SSMakoB1FHiddenItem:
-	; Placeholder
-	end
 
 SSMakoWorker1Text:
 	text "Can't you see that" 
 	line "we've got stuff to"
 	cont "move here?"
-	
+
 	para "If you don't want"
 	line "to pick up a crate" 
 	cont "yourself, just go"
@@ -230,7 +226,7 @@ SSMakoWorker2Text:
 	text "Quit distractin'"
 	line "me! I got a job"
 	cont "to do here!"
-	
+
 	para "If you wanna"
 	line "battle, come back"
 	cont "on my break!"
@@ -252,7 +248,7 @@ SailorDariusWinText:
 SailorDariusAfterText:
 	text "You wanna hear a"
 	line "secret?"
-	
+
 	para "Some of these"
 	line "crates ain't packed"
 	cont "right. Sometimes"
@@ -265,7 +261,7 @@ SailorNathanText:
 	line "move these crates"
 	cont "with their PSYCHIC"
 	cont "powers."
-	
+
 	para "Mind over matter!"
 	done
 	
@@ -280,7 +276,7 @@ SailorNathanAfterText:
 	line "will no longer use"
 	cont "my #MON to get"
 	cont "out of doing work!"
-	
+
 	para "My mind will be"
 	line "just as strong as"
 	cont "my body!"
@@ -298,7 +294,7 @@ SailorGeneText:
 
 SailorGeneWinText:
 	text "Weaklings!"
-	
+
 	para "They must have"
 	line "skipped out on"
 	cont "their jobs just"
@@ -311,21 +307,21 @@ SailorGeneAfterText:
 	cont "ing fit once more,"
 	cont "I will work them"
 	cont "so hard!"
-	
+
 	para "I ain't raising a"
 	line "buncha' wimps!"
 	done
-	
+
 SailorRoscoeText:
 	text "Yo, ho!"
-	
+
 	para "You won't blow this"
 	line "man down!"
 	done
 
 SailorRoscoeWinText:
 	text "Woah! Watch it!"
-	
+
 	para "I nearly lost my"
 	line "balance!"
 	done
@@ -333,10 +329,10 @@ SailorRoscoeWinText:
 SailorRoscoeAfterText:
 	text "I got a confession"
 	line "to make…"
-	
+
 	para "I ain't got my sea"
 	line "legs yet…"
-	
+
 	para "OCTILLERY & ANCOR"
 	line "were helping keep"
 	cont "me firmly on my"
@@ -347,7 +343,7 @@ SailorHermanText:
 	text "These crates are"
 	line "so intimately"
 	cont "packed."
-	
+
 	para "I left no room for"
 	line "wandering kids to"
 	cont "run!"
@@ -364,7 +360,7 @@ SailorHermanAfterText:
 	text "I know my #MON"
 	line "are all fainted,"
 	cont "but I can't leave."
-	
+
 	para "The crates were"
 	line "packed too tight"
 	cont "for me to get out!"
@@ -375,7 +371,7 @@ EngineerRoccoText:
 	line "close-quarters"
 	cont "this part of the"
 	cont "ship is."
-	
+
 	para "But I think this"
 	line "part is just wide"
 	cont "enough for a"
@@ -391,7 +387,7 @@ EngineerRoccoAfterText:
 	text "This part of the"
 	line "ship is just so"
 	cont "cramped."
-	
+
 	para "It really messes"
 	line "with my claustro-"
 	cont "phobia."
@@ -401,7 +397,7 @@ EngineerEnriqueText:
 	text "Ain't nobody is"
 	line "supposed to be in"
 	cont "the ENGINE ROOM."
-	
+
 	para "Not like you'll"
 	line "get in without"
 	cont "the right KEY!"
@@ -418,7 +414,7 @@ EngineerEnriqueAfterText:
 	text "I designed the"
 	line "lock for the"
 	cont "ENGINE ROOM."
-	
+
 	para "It's nearly impene-"
 	line "trable without the"
 	cont "matching KEY."
@@ -427,7 +423,7 @@ EngineerEnriqueAfterText:
 EngineerRudolphText:
 	text "Hey! You can't go"
 	line "past this point!"
-	
+
 	para "I dropped the"
 	line "ENGINE KEY."
 
@@ -440,7 +436,7 @@ EngineerRudolphText:
 EngineerRudolphWinText:
 	text "Why did you have"
 	line "to be so rough?"
-	
+
 	para "Look, you've made"
 	line "such a mess!"
 	done
@@ -469,7 +465,7 @@ EngineerBernardWinText:
 EngineerBernardAfterText:
 	text "I've been all over"
 	line "the world."
-	
+
 	para "That means I get"
 	line "to trade #MON"
 	cont "with people from"
@@ -479,7 +475,7 @@ EngineerBernardAfterText:
 EngineerArnieText:
 	text "Where are you"
 	line "going?"
-	
+
 	para "Don't you have"
 	line "enough time to"
 	cont "entertain me while"
@@ -496,7 +492,7 @@ EngineerArnieAfterText:
 	line "needed to get away"
 	cont "from the ENGINE"
 	cont "ROOM for a while."
-	
+
 	para "That loud noise"
 	line "drives me crazy!"
 	done
