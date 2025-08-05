@@ -211,7 +211,7 @@ RugosaCoastRivalText:
 	
 	para "It's not my"
 	line "problem, I can"
-	cont "get other badges"
+	cont "get other BADGEs"
 	cont "elsewhere."
 	
 	para "But you being in"

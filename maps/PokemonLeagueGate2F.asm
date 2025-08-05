@@ -68,10 +68,9 @@ PokemonLeagueGate2FBeautyText:
 	cont "sure is big."
 	
 	para "They must make a"
-	line "line lot of money"
-	cont "from trainers"
-	cont "losing to the"
-	cont "ELITE FOUR."
+	line "lot of money from"
+	cont "trainers losing to"
+	cont "the ELITE FOUR."
 	done
 
 PokemonLeagueGate2F_MapEvents:
