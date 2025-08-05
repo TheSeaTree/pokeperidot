@@ -2208,6 +2208,8 @@ GetMapMusic::
 	ld de, MAP_MUSIC
 	call GetMapField
 	ld a, c
+	cp MUSIC_MAHOGANY_MART
+	jr z, .mahoganymart
 	bit RADIO_TOWER_MUSIC_F, c
 	jr nz, .radiotower
 	farcall Function8b342
@@ -2233,8 +2235,15 @@ GetMapMusic::
 	ld d, 0
 	jr .done
 
-.clearedmahogany
-	ld de, MUSIC_CHERRYGROVE_CITY
+.mahoganymart
+	ld a, [wCelebiEvent]
+	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
+	jr z, .celebigone
+	ld de, MUSIC_RUINS_OF_ALPH_INTERIOR
+	jr .done
+
+.celebigone
+	ld de, MUSIC_UNION_CAVE
 	jr .done
 
 GetMapTimeOfDay::

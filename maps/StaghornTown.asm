@@ -179,8 +179,8 @@ StaghornTown_MapEvents:
 	db 0, 0 ; filler
 
 	db 12 ; warp events
-	warp_event 19, 25, STAGHORN_FOREST_GATE, 4
-	warp_event 20, 25, STAGHORN_FOREST_GATE, 3
+	warp_event 19, 25, STAGHORN_FOREST_GATE, 3
+	warp_event 20, 25, STAGHORN_FOREST_GATE, 4
 	warp_event 13, 19, STAGHORN_POKECENTER_1F, 1
 	warp_event 29,  9, STAGHORN_MART, 1
 	warp_event 37,  8, ROUTE_11_STAGHORN_GATE, 1

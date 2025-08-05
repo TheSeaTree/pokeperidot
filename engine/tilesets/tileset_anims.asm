@@ -36,7 +36,6 @@ _AnimateTileset::
 Tileset0Anim:
 TilesetKantoAnim:
 TilesetJohtoCityAnim:
-TilesetForestAnim:
 TilesetMountainAnim:
 	dw vTiles2 tile $49, AnimateWaterTile
 	dw NULL,  LavaBubbleAnim2
@@ -49,6 +48,20 @@ TilesetMountainAnim:
 	dw NULL,  AnimateFlowerTile
 	dw NULL,  WaitTileAnimation
 	dw NULL,  WaitTileAnimation
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
+TilesetForestAnim:
+	dw NULL,  ForestTreeLeftAnimation
+	dw NULL,  ForestTreeRightAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  WaitTileAnimation
+	dw NULL,  ForestTreeLeftAnimation2
+	dw NULL,  ForestTreeRightAnimation2
+	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $49, AnimateWaterTile
+	dw NULL,  AnimateWaterPalette
 	dw NULL,  StandingTileFrame8
 	dw NULL,  DoneTileAnimation
 
@@ -575,7 +588,7 @@ AnimateLeftGeyserTile:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -598,7 +611,7 @@ WallCandleTileAnim:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -621,7 +634,7 @@ AnimateLeftGeyserTile2:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -644,7 +657,7 @@ AnimateLeftGeyserTile3:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -667,7 +680,7 @@ AnimateRightGeyserTile:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -690,7 +703,7 @@ AnimateRightGeyserTile2:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -713,7 +726,7 @@ AnimateRightGeyserTile3:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -911,7 +924,7 @@ AnimateLeftArcadeScreenTile:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -934,7 +947,7 @@ AnimateRightArcadeScreenTile:
 	ld b, h
 	ld c, l
 	ld a, [wTileAnimationTimer]
-	call GetForestTreeFrame
+	call GetTileAnimFrame
 	add a
 	add a
 	add a
@@ -1237,10 +1250,16 @@ ForestTreeLeftAnimation:
 	ld b, h
 	ld c, l
 
+; Only in Occident Forest
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp OCCIDENT_FOREST
+	jr nz, .nope
 ; Only during the Celebi event.
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .asm_fc46c
+.nope
 	ld hl, ForestTreeLeftFrames
 	jr .asm_fc47d
 
@@ -1258,7 +1277,7 @@ ForestTreeLeftAnimation:
 
 .asm_fc47d
 	ld sp, hl
-	ld hl, vTiles2 tile $0c
+	ld hl, vTiles2 tile $03
 	jp WriteTile
 
 ForestTreeLeftFrames:
@@ -1274,10 +1293,16 @@ ForestTreeRightAnimation:
 	ld b, h
 	ld c, l
 
+; Only in Occident Forest
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp OCCIDENT_FOREST
+	jr nz, .nope
 ; Only during the Celebi event.
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .asm_fc4d4
+.nope
 	ld hl, ForestTreeRightFrames
 	jr .asm_fc4eb
 
@@ -1299,7 +1324,7 @@ ForestTreeRightAnimation:
 
 .asm_fc4eb
 	ld sp, hl
-	ld hl, vTiles2 tile $0f
+	ld hl, vTiles2 tile $06
 	jp WriteTile
 
 ForestTreeLeftAnimation2:
@@ -1307,10 +1332,16 @@ ForestTreeLeftAnimation2:
 	ld b, h
 	ld c, l
 
+; Only in Occident Forest
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp OCCIDENT_FOREST
+	jr nz, .nope
 ; Only during the Celebi event.
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .asm_fc502
+.nope
 	ld hl, ForestTreeLeftFrames
 	jr .asm_fc515
 
@@ -1329,7 +1360,7 @@ ForestTreeLeftAnimation2:
 
 .asm_fc515
 	ld sp, hl
-	ld hl, vTiles2 tile $0c
+	ld hl, vTiles2 tile $03
 	jp WriteTile
 
 ForestTreeRightAnimation2:
@@ -1337,10 +1368,16 @@ ForestTreeRightAnimation2:
 	ld b, h
 	ld c, l
 
+; Only in Occident Forest
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp OCCIDENT_FOREST
+	jr nz, .nope
 ; Only during the Celebi event.
 	ld a, [wCelebiEvent]
 	bit CELEBIEVENT_FOREST_IS_RESTLESS_F, a
 	jr nz, .asm_fc52c
+.nope
 	ld hl, ForestTreeRightFrames
 	jr .asm_fc545
 
@@ -1363,10 +1400,34 @@ ForestTreeRightAnimation2:
 
 .asm_fc545
 	ld sp, hl
-	ld hl, vTiles2 tile $0f
+	ld hl, vTiles2 tile $06
 	jp WriteTile
 
 GetForestTreeFrame:
+; Return 0 if a is even, or 2 if odd.
+	and a
+	jr z, .even
+	cp 1
+	jr z, .odd
+	cp 2
+	jr z, .even
+	cp 3
+	jr z, .odd
+	cp 4
+	jr z, .even
+	cp 5
+	jr z, .odd
+	cp 6
+	jr z, .even
+.odd
+	ld a, 2
+	scf
+	ret
+.even
+	xor a
+	ret
+
+GetTileAnimFrame:
 ; Return 0 if a is even, or 2 if odd.
 	and 1
 	add a
