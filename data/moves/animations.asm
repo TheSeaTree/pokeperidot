@@ -3984,7 +3984,7 @@ BattleAnim_FuryCutter:
 	anim_jump .okay
 
 .obj1
-	anim_obj ANIM_OBJ_3B, 112, 40, $0
+	anim_obj ANIM_OBJ_3A, 112, 40, $0
 .okay
 	anim_wait 16
 	anim_jumpuntil .loop
