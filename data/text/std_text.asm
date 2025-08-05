@@ -602,21 +602,47 @@ HappinessText1:
 	para "If you aren't"
 	line "nice, it'll pout."
 	done
-	
-AskEnterGymText:
-	text "You will be unable"
+
+FirstTimeEnterGymText:
+	text "This GYM's #MON"
+	line "range from level"
+	cont "@"
+	text_ram wStringBuffer3
+	text " to level @"
+	text_ram wStringBuffer4
+	text "."
+
+	para "You will be unable"
 	line "to leave this GYM"
 	cont "without its BADGE."
-	
+
 	para "Would you like to"
 	line "enter?"
 	done
-	
+
+AskEnterGymText:
+	text "This GYM's #MON"
+	line "range from level"
+	cont "@"
+	text_ram wStringBuffer3
+	text " to level @"
+	text_ram wStringBuffer4
+	text "."
+
+	para "Would you like to"
+	line "enter?"
+	done
+
+ExpertAskEnterGymText:
+	text "Are you ready to"
+	line "enter this GYM?"
+	done
+
 CantLeaveGymText:
 	text "You can't abandon"
 	line "a GYM challenge!"
 	done
-	
+
 MailboxText:
 	text "I shouldn't go"
 	line "through other"

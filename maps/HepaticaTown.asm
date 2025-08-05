@@ -96,6 +96,26 @@ HepaticaGymEvent:
 	clearevent GOLDENROD_LEADER_DOOR_1
 	clearevent GOLDENROD_LEADER_DOOR_2
 	clearevent GOLDENROD_LEADER_DOOR_3
+
+	writebyte 22
+	vartomem MEM_BUFFER_0
+
+	; Party 3
+	writebyte 36
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_RUGOSA
+	iftrue .askenter
+
+	; Party 2
+	writebyte 34
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_STAGHORN
+	iftrue .askenter
+
+	; Party 1
+	writebyte 27
+	vartomem MEM_BUFFER_1
+.askenter
 	scall HepaticaGymEntrance
 	iffalse .no
 .warp

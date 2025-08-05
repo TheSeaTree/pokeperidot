@@ -168,10 +168,15 @@ PokeCenterCheckHoldingDirection:
 CenterTurnDown:
 	turn_step DOWN
 	step_end
-	
+
 GymDoorScript:
 	opentext
+	copybytetovar wDifficultyMode
+	ifequal 2, .expert
+	checkcode VAR_BADGES
+	ifequal 0, .firsttime
 	farwritetext AskEnterGymText
+.ask
 	yesorno
 	iffalse .no
 	closetext
@@ -180,7 +185,15 @@ GymDoorScript:
 .no
 	closetext
 	end
-	
+
+.firsttime
+	farwritetext FirstTimeEnterGymText
+	jump .ask
+
+.expert
+	farwritetext ExpertAskEnterGymText
+	jump .ask
+
 EnterGymDoorScript:
 	applymovement PLAYER, GymTurnBackMovement
 	playsound SFX_ENTER_DOOR

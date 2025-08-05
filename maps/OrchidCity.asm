@@ -28,6 +28,13 @@ OrchidGymEvent:
 	clearevent EVENT_BEAT_BIKER_DANTE
 	clearevent EVENT_BEAT_COOLTRAINERF_KARI
 	clearevent EVENT_BEAT_COOLTRAINERM_TORY
+
+	writebyte 44
+	vartomem MEM_BUFFER_0
+	; Only one party
+	writebyte 51
+	vartomem MEM_BUFFER_1
+
 	scall OrchidGymEntrance
 	iffalse .no
 .warp

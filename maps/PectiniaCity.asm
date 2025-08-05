@@ -182,6 +182,19 @@ PectiniaGymEvent:
 	clearevent EVENT_BEAT_OFFICER_BILLY
 	clearevent EVENT_BEAT_OFFICER_JIMMY
 	clearevent EVENT_BEAT_OFFICER_GORDON
+
+	writebyte 13
+	vartomem MEM_BUFFER_0
+	; Party 2
+	writebyte 19
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_RIDGE
+	iftrue .askenter
+
+	; Party 1
+	writebyte 16
+	vartomem MEM_BUFFER_1
+.askenter
 	scall PectiniaGymEntrance
 	iffalse .no
 .warp
@@ -633,7 +646,7 @@ PectiniaGymFirstTimeText:
 	
 	para "It doesn't look"
 	line "like you have any"
-	cont "badges, so you"
+	cont "BADGEs, so you"
 	cont "must be a newbie."
 	
 	para "Anyway, you should"
@@ -645,12 +658,7 @@ PectiniaGymFirstTimeText:
 	para "I'll see you in-"
 	line "side, trainer!"
 	done
-	
-PectiniaAskEnterText:
-	text "Would you like to"
-	line "enter the GYM?"
-	done
-	
+
 PectiniaBurglarText:
 	text "Yeah, I stole a"
 	line "BICYCLE, what"

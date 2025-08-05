@@ -155,6 +155,38 @@ RidgeGymEvent:
 	clearevent EVENT_BEAT_SWIMMERM_JIMMY
 	clearevent EVENT_BEAT_SWIMMERF_VIVIAN
 	clearevent EVENT_BEAT_SWIMMERM_RONNIE
+
+	writebyte 15
+	vartomem MEM_BUFFER_0
+
+	; Party 5
+	writebyte 36
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_RUGOSA
+	iftrue .askenter
+
+	; Party 4
+	writebyte 34
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_STAGHORN
+	iftrue .askenter
+
+	; Party 3
+	writebyte 27
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_HEPATICA
+	iftrue .askenter
+
+	; Party 2
+	writebyte 21
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_FAVIA
+	iftrue .askenter
+
+	; Party 1
+	writebyte 18
+	vartomem MEM_BUFFER_1
+.askenter
 	scall RidgeGymEntrance
 	iffalse .no
 .warp

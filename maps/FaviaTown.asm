@@ -156,6 +156,13 @@ FaviaGymEvent:
 	clearevent EVENT_BEAT_PSYCHIC_DAMIEN
 	clearevent EVENT_BEAT_SCIENTIST_MELVIN
 	clearevent EVENT_BEAT_GUITARIST_XAVIER
+
+	writebyte 16
+	vartomem MEM_BUFFER_0
+	; Only one party
+	writebyte 21
+	vartomem MEM_BUFFER_1
+
 	scall FaviaGymEntrance
 	iffalse .no
 .warp

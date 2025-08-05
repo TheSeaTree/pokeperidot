@@ -93,6 +93,13 @@ RugosaGymEvent:
 	clearevent EVENT_MAHOGANY_GYM_SWITCH_2
 	clearevent EVENT_MAHOGANY_GYM_SWITCH_3
 	clearevent EVENT_MAHOGANY_GYM_SWITCH_4
+
+	writebyte 32
+	vartomem MEM_BUFFER_0
+	; Only one party
+	writebyte 36
+	vartomem MEM_BUFFER_1
+
 	scall RugosaGymEntrance
 	iffalse .no
 .warp

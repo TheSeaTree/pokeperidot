@@ -56,6 +56,19 @@ StaghornGymEvent:
 	clearflag EVENT_BEAT_PICNICKER_TERRY
 	clearflag EVENT_BEAT_PICNICKER_BRITTANY
 	clearflag EVENT_BEAT_POKEFANM_LESTER
+
+	writebyte 28
+	vartomem MEM_BUFFER_0
+	; Party 2
+	writebyte 37
+	vartomem MEM_BUFFER_1
+	checkflag ENGINE_FLYPOINT_RUGOSA
+	iftrue .askenter
+
+	; Party 1
+	writebyte 35
+	vartomem MEM_BUFFER_1
+.askenter
 	scall StaghornGymEntrance
 	iffalse .no
 .warp
@@ -66,14 +79,12 @@ StaghornGymEvent:
 .havebadge
 	scall StaghornEnterGym
 	jump .warp
-	
+
 StaghornGymEntrance:
 	jumpstd gymdoor
-	end
 	
-StaghornEnterGym
+StaghornEnterGym:
 	jumpstd entergym
-	end
 	
 StaghornTownLass:
 	jumptextfaceplayer StaghornTownLassText
