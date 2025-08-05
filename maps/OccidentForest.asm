@@ -29,6 +29,8 @@ OccidentForest_MapScripts:
 	changeblock 58, 14, $34
 	changeblock 60, 14, $37
 	changeblock 62, 14, $3b
+	checkevent EVENT_HIDE_PRESENT_CELEBI
+	iftrue .skip
 	setflag ENGINE_FOREST_IS_RESTLESS
 .skip
 	return
