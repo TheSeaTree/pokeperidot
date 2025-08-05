@@ -3859,6 +3859,7 @@ MantineEvosAttacks:
 	db 27, DOUBLE_EDGE
 	db 32, AGILITY
 	db 36, RAZOR_WIND
+	db 39, RECOVER
 	db 46, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
