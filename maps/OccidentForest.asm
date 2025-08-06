@@ -178,6 +178,7 @@ Celebi:
 	special LegendaryEvent_SetBattleType
 	loadwildmon CELEBI, 70
 	startbattle
+	dontrestartmapmusic
 	reloadmapafterbattle
 	disappear OCCIDENTFOREST_CELEBI
 	setevent EVENT_HIDE_PRESENT_CELEBI
@@ -186,6 +187,7 @@ Celebi:
 	setevent EVENT_CAUGHT_CELEBI
 .FailedCapture
 	clearflag ENGINE_FOREST_IS_RESTLESS
+	playmapmusic
 	end
 
 OccidentForestHardStone:
