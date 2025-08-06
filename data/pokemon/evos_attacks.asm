@@ -2509,6 +2509,7 @@ DragonairEvosAttacks:
 	db 15, DRAGON_RAGE
 	db 21, BODY_SLAM
 	db 25, AGILITY
+	db 30, HORN_ATTACK
 	db 31, ROAR
 	db 39, WATERFALL
 	db 47, DRAGONBREATH
@@ -2528,6 +2529,7 @@ DragoniteEvosAttacks:
 	db 21, BODY_SLAM
 	db 25, AGILITY
 	db 31, ROAR
+	db 30, HORN_ATTACK
 	db 39, WATERFALL
 	db 47, DRAGONBREATH
 	db 53, SAFEGUARD
@@ -3039,6 +3041,7 @@ XatuEvosAttacks:
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, LEER
+	db 1, PSYWAVE
 	db 6, NIGHT_SHADE
 	db 9, TELEPORT
 	db 17, CONFUSION
@@ -4214,6 +4217,7 @@ PupitarEvosAttacks:
 	db 10, SCREECH
 	db 23, SCARY_FACE
 	db 28, THRASH
+	db 30, SKULL_BASH
 	db 41, ROCK_SLIDE
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
@@ -4234,6 +4238,7 @@ TyranitarEvosAttacks:
 	db 41, ROCK_SLIDE
 	db 47, CRUNCH
 	db 54, EARTHQUAKE
+	db 55, ROAR
 	db 63, STONE_EDGE
 	db 73, HYPER_BEAM
 	db 0 ; no more level-up moves

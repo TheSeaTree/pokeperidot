@@ -1224,6 +1224,7 @@ HoundourEggMoves:
 	db RAGE
 	db REVERSAL
 	db SCARY_FACE
+	db SMOKESCREEN
 	db SPITE
 	db WILL_O_WISP
 	db -1 ; end
