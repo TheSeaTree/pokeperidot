@@ -9,12 +9,7 @@
 PastOccidentForest_MapScripts:
 	db 0 ; scene scripts
 
-	db 1 ; callbacks
-	callback MAPCALLBACK_NEWMAP, .Restless
-
-.Restless
-	setflag ENGINE_FOREST_IS_RESTLESS
-	return
+	db 0 ; callbacks
 
 TrainerFirebreatherRush:
 	trainer FIREBREATHER, RUSH, EVENT_BEAT_FIREBREATHER_RUSH, FirebreatherRushText, FirebreatherRushWinText, 0, .Script
@@ -123,6 +118,7 @@ CelebiBoss4::
 	waitsfx
 	closetext
 	setevent EVENT_FOUGHT_BOSS_CELEBI
+	setflag ENGINE_FOREST_IS_RESTLESS
 	jumpstd timetravelwarp
 
 .PitchBlack

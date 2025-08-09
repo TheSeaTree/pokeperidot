@@ -113,9 +113,12 @@ RespawnLegendaries:
 	iftrue .CheckCelebi
 	clearevent EVENT_FOUGHT_MEW
 .CheckCelebi
+	checkevent EVENT_FOUGHT_BOSS_CELEBI
+	iffalse .Done
 	checkevent EVENT_CAUGHT_CELEBI
 	iftrue .Done
-	clearevent EVENT_FOUGHT_CELEBI
+	clearevent EVENT_HIDE_PRESENT_CELEBI
+	setflag ENGINE_FOREST_IS_RESTLESS
 .Done
 	end
 

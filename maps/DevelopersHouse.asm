@@ -143,8 +143,9 @@ DeveloperScript:
 .Celebi
 	checkevent EVENT_CAUGHT_CELEBI
 	iffalse .IncreaseCount
-	clearevent EVENT_FOUGHT_CELEBI
+	clearevent EVENT_HIDE_PRESENT_CELEBI
 	clearevent EVENT_CAUGHT_CELEBI
+	setflag ENGINE_FOREST_IS_RESTLESS
 	pokenamemem CELEBI, MEM_BUFFER_0
 .RespawnLegendary
 	loadvar wLegendariesSpawned, 0
