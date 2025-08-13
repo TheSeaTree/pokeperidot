@@ -174,8 +174,8 @@ OfficerTommyAfterText:
 	done
 
 SuperNerdConnorText:
-	text "I use the rarest"
-	line "most rare #MON!"
+	text "I love to use"
+	line "rare #MON!"
 	done
 
 SuperNerdConnorWinText:
@@ -284,7 +284,7 @@ LassPaigeWinText:
 	done
 
 LassPaigeAfterText:
-	text "The lady in FAVIA"
+	text "A lady in FAVIA"
 	line "TOWN taught my"
 	cont "#MON lots of"
 	cont "special moves."

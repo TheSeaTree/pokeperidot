@@ -45,7 +45,7 @@ CianwooMartRobbed:
 	line "horrible!"
 	
 	para "Someone just held"
-	line "up my mart and"
+	line "up my MART and"
 	cont "stole nearly"
 	cont "everything!"
 	

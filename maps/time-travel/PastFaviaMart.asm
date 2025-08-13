@@ -21,7 +21,7 @@ PastFaviaMartRockerText:
 	text "If you're looking"
 	line "to catch some"
 	cont "#MON, try the"
-	cont "mart in PECTINIA"
+	cont "MART in PECTINIA"
 	cont "CITY."
 
 	para "The one here only"

@@ -237,7 +237,7 @@ TreasureHunterFirstTimeIntroText:
 
 TreasureHunterFirstTimeNoTreasureText:
 	text "No? Well don't let"
-	line "get you down!"
+	line "that get you down!"
 
 	para "You will find"
 	line "something truly"
@@ -261,8 +261,8 @@ TreasureHunterHaveTreasureText:
 	done
 
 TreasureHunterNoTreasureText:
-	text "You just came to"
-	line "say hello?"
+	text "Did you just come"
+	line "to say hello?"
 
 	para "Thanks, that was"
 	line "very kind of you."
@@ -281,7 +281,7 @@ TreasureHunterDeclineTreasureText:
 	line "valuable to you"
 	cont "than I thought."
 
-	para "But thank you for"
+	para "Thank you for"
 	line "showing me!"
 	done
 
@@ -339,9 +339,9 @@ TreasureHunterAllTreasuresText:
 	cont "time ago, but I"
 	cont "haven't been able"
 	cont "to make use of it."
-	
+
 	para "Maybe you could"
-	line "find a use for it!"
+	line "find its purpose!"
 	done
 
 TreasureHunterAfterAllTreasuresText:
@@ -359,7 +359,7 @@ TreasureHunterAfterAllTreasuresText:
 
 TreasureHunterBagFullText:
 	text "My, oh my!"
-	
+
 	para "This is some fine"
 	line "treasure!"
 

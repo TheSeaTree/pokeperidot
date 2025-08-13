@@ -78,7 +78,7 @@ Route24ForemanText:
 	done
 
 Route24Worker1HitRockText:
-	text "HIYA!"
+	text "HI-YA!"
 	done
 
 Route24Worker1NoticePlayerText:
@@ -151,7 +151,7 @@ Route24SignText:
 
 Route24ConstructionSignText:
 	text "ROUTE 24"
-	
+
 	para "Temporarily"
 	line "blocked due to"
 	cont "landslide."

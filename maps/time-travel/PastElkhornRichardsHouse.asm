@@ -48,6 +48,13 @@ PastElkhornPeggyText:
 	para "I help out my hus-"
 	line "band's #MON as"
 	cont "he trains!"
+
+	para "I want to help my"
+	line "son, but he just"
+	cont "spends all his"
+	cont "time in OCCIDENT"
+	cont "FOREST looking for"
+	cont "a rare #MON."
 	done
 
 PastElkhornFarfetchdText:

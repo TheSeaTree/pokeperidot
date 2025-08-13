@@ -103,7 +103,7 @@ PastRoute10PokefanMText:
 
 	para "All of the trees"
 	line "make the air so"
-	cont "much fresher here."
+	cont "much fresher."
 
 	para "Ahhh!"
 	done

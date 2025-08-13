@@ -78,9 +78,8 @@ PastFaviaInnYoungsterText:
 
 	para "The people here"
 	line "are polite, but"
-	cont "you never get that"
-	cont "feeling of belong-"
-	cont "ing."
+	cont "you never feel"
+	cont "you really belong."
 	done
 
 PastFaviaInnSailorNoMapText:

@@ -33,10 +33,11 @@ PastDayCareLadyText:
 
 	para "I didn't see any"
 	line "harm in that."
-	cont "Sometimes her"
-	cont "#MON even get"
-	cont "stronger after"
-	cont "some time!"
+
+	para "Sometimes her"
+	line "#MON will"
+	cont "be stronger when"
+	cont "she picks them up!"
 	done
 
 PastFaviaDayCare_MapEvents:

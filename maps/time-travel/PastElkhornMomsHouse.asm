@@ -49,15 +49,17 @@ PastElkhornDollScript:
 	jump .MonNameLoaded
 
 PastElkhornMomText:
-	text "I'd really love to"
-	line "see my favorite"
-	cont "#MON @"
+	text "I would love to"
+	line "meet a @"
 	text_ram wStringBuffer3
 	text "<CONT>some day."
 
-	para "They are really"
-	line "rare! I've only"
-	cont "read about them"
+	para "It's my favorite"
+	line "#MON, but they"
+	cont "are really rare!"
+
+	para "I've only ever"
+	line "read about them"
 	cont "in books."
 
 	para "Have you ever seen"

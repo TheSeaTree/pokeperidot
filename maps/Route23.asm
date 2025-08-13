@@ -29,10 +29,9 @@ Route23HiddenPowerHerb:
 Route23SignText:
 	text "ROUTE 23"
 
-	para "The sign has more"
-	line "on it, but it's"
-	cont "completely illeg-"
-	cont "ible…"
+	para "The rest of the"
+	line "sign is worn and"
+	cont "illegible…"
 	done
 
 Route23_MapEvents:

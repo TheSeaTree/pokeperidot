@@ -280,7 +280,7 @@ PastPectiniaNidoranText:
 
 PastPectiniaCitySignText:
 	text "PECTINIA CITY"
-	
+
 	para "The humble city,"
 	line "growing daily."
 	done
@@ -294,7 +294,7 @@ PastPectiniaSquareSignText:
 
 PastPectiniaCityConstructionSignText:
 	text "COMING SOON-"
-	
+
 	para "PECTINIA APARTMENT"
 	line "COMPLEX"
 	done

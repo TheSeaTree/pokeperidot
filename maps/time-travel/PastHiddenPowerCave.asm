@@ -111,13 +111,13 @@ PastHiddenPowerCaveScientistAskText:
 	line "return to the"
 	cont "present day?"
 	done
-	
+
 PastHiddenPowerCaveScientistReturnText:
 	text "Okay! I will acti-"
 	line "vate your tether"
 	cont "right away!"
 	done
-	
+
 PastHiddenPowerCaveScientistDeclineText:
 	text "Understood."
 

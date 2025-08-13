@@ -177,7 +177,7 @@ TwinAliAfterText:
 
 TwinLiaAfterText:
 	text "LIA: We found the"
-	line "STONEs to evole"
+	line "STONEs to evolve"
 	cont "our #MON in"
 	cont "PAVONA VILLAGE."
 	done

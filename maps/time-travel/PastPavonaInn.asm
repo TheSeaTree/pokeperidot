@@ -47,7 +47,7 @@ PastPavonaInnSuperNerd:
 
 PastPavonaInnNurseText:
 	text "Hello, stranger."
-	
+
 	para "Your #MON must"
 	line "be tired, please"
 	cont "take a rest here."

@@ -181,7 +181,7 @@ PokemaniacAndrewAfterText:
 
 	para "I wonder why one"
 	line "evolved but not"
-	cont "the other."
+	cont "the other…"
 	done
 
 PsychicLennyText:

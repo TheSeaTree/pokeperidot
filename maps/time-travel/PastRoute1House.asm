@@ -121,7 +121,7 @@ DirectBallMerchantNoSpaceText:
 	para "Come back when you"
 	line "can carry more."
 	done
-	
+
 DirectBallMerchantBuy1Text:
 	text "One @"
 	text_from_ram wStringBuffer3

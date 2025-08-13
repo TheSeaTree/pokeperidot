@@ -28,7 +28,7 @@ Route23CaveB1F_MapScripts:
 .StoneTable:
 	stonetable 3, ROUTE23CAVEB1F_BOULDER1, .Boulder1
 	db -1 ; end
-	
+
 .Boulder1:
 	moveobject ROUTE23CAVEB1F_BOULDER2, 26, 10
 	appear ROUTE23CAVEB1F_BOULDER2

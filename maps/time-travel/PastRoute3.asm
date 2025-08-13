@@ -171,9 +171,8 @@ BeautyLinaWinText:
 
 BeautyLinaAfterText:
 	text "I need a boyfriend"
-	line "who will find the"
-	cont "rarest #MON for"
-	cont "me to use."
+	line "who can win my"
+	cont "battles for me!"
 	done
 
 LassCathyText:

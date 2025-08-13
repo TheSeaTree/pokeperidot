@@ -144,9 +144,9 @@ BikerZacharyWinText:
 BikerZacharyAfterText:
 	text "That was intense!"
 
-	para "Now I just want to"
-	line "sit back and crack"
-	cont "open a SODA POP."
+	para "How about you and"
+	line "get a SODA POP"
+	cont "some time?"
 	done
 
 PastRoute7_MapEvents:

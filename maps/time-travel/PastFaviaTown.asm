@@ -29,11 +29,12 @@ PastFaviaHiddenGoldLeaf:
 PastFaviaTownTwinText:
 	text "My #MON love to"
 	line "spend time with"
-	cont "my neighbors."
+	cont "our neighbors."
 
 	para "Especially the"
 	line "man and lady with"
-	cont "the big yard."
+	cont "the big yard for"
+	cont "them to play in!"
 	done
 
 PastFaviaTownBeautyText:
