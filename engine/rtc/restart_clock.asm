@@ -159,9 +159,9 @@ RestartClock:
 	ld hl, wBuffer1
 	inc [hl]
 	ld a, [hl]
-	cp $2
+	cp $3
 	jr c, .done_scroll
-	ld [hl], $2
+	ld [hl], $1
 
 .done_scroll
 	xor a
