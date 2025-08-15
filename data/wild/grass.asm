@@ -1420,7 +1420,7 @@ GrassWildMons:
 	; nite
 	db 10, CHARMANDER
 	db 10, CYNDAQUIL
-	db 50, WOBBUFFET
+	db 50, SNORLAX
 	db 10, CYNDAQUIL
 	db 10, CHARMANDER
 	db 10, CHARMANDER
@@ -1430,7 +1430,7 @@ GrassWildMons:
 	db 10 percent, 10 percent, 10 percent
 	db 10, BULBASAUR
 	db 10, CHIKORITA
-	db 50, SNORLAX
+	db 50, WOBBUFFET
 	db 10, CHIKORITA
 	db 10, BULBASAUR
 	db 10, BULBASAUR
@@ -1438,7 +1438,7 @@ GrassWildMons:
 	; day
 	db 10, BULBASAUR
 	db 10, CHIKORITA
-	db 50, SNORLAX
+	db 50, WOBBUFFET
 	db 10, CHIKORITA
 	db 10, BULBASAUR
 	db 10, BULBASAUR
