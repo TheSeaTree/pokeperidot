@@ -1,6 +1,6 @@
 	db SEARION ; 107
 
-	db  70,  75,  74,  55,  86, 100
+	db  74,  75,  74,  55,  91, 100
 	;   hp  atk  def  spd  sat  sdf
 
 	db WATER, FIRE ; type

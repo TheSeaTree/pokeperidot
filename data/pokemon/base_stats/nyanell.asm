@@ -1,6 +1,6 @@
 	db NYANELL ; 020
 
-	db  55,  90,  60,  110,  65,  55
+	db  60,  90,  60,  110,  65,  55
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, DARK ; type

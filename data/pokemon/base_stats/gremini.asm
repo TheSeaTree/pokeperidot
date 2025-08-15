@@ -1,6 +1,6 @@
 	db GREMINI ; 237
 
-	db  50,  60,  80,  50,  60,  80
+	db  50,  60,  90,  50,  60,  90
 	;   hp  atk  def  spd  sat  sdf
 
 	db GHOST, DARK ; type

@@ -1,6 +1,6 @@
 	db RINRING ; 019
 
-	db  50,  50,  35,  75,  35,  30
+	db  50,  50,  35,  80,  35,  40
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, DARK ; type
