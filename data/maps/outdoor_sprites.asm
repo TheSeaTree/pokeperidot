@@ -224,6 +224,8 @@ LeagueGroupSprites:
 	db SPRITE_ROCKER
 	db SPRITE_TEACHER
 	db SPRITE_POKEFAN_M
+	db SPRITE_SAILOR
+	db SPRITE_SWIMMER_GUY_LAND
 	; 0 of max 9 walking sprites
 	db SPRITE_POKE_BALL
 	db 0 ; end
