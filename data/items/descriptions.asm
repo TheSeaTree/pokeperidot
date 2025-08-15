@@ -834,7 +834,7 @@ DragonFangDesc:
 
 FocusSashDesc:
 	db   "Prevents fainting"
-	next "at full HP.(1 BTL)@"
+	next "at full HP. (HOLD)@"
 
 LeftoversDesc:
 	db   "Restores HP during"
@@ -992,7 +992,7 @@ SafariPackDesc:
 	next "er SAFARI GAMEs.@"
 
 SkillBeltDesc:
-	db	 "Moves hit maximum"
+	db	 "Moves hit for max"
 	next "amount of strikes.@"
 
 LightClayDesc:
