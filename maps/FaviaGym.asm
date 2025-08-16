@@ -103,6 +103,7 @@ FaviaGymCelesteScript:
 
 	setflag ENGINE_REMATCH_CELESTE
 	copybytetovar wCelesteFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wCelesteFightCount
 
@@ -334,9 +335,9 @@ CelesteRematchText:
 	done
 
 CelesteRematchWinText:
-	text "The stars were not"
-	line "aligned in my"
-	cont "favor today."
+	text "I was not destined"
+	line "to see victory on"
+	cont "this day."
 	done
 
 CelesteAfterRematchText:

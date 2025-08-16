@@ -94,6 +94,7 @@ BlackthornEnyaScript:
 
 	setflag ENGINE_REMATCH_ENYA
 	copybytetovar wEnyaFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wEnyaFightCount
 

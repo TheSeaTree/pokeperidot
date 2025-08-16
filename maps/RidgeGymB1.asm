@@ -141,6 +141,7 @@ RidgeGymB1CecilScript:
 
 	setflag ENGINE_REMATCH_CECIL
 	copybytetovar wCecilFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wCecilFightCount
 

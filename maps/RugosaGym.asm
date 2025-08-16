@@ -187,6 +187,7 @@ ElectricGymLeader:
 
 	setflag ENGINE_REMATCH_JOEL
 	copybytetovar wJoelFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wJoelFightCount
 
@@ -1341,9 +1342,9 @@ JoelRematchText:
 	cont "defeated the"
 	cont "#MON LEAGUE."
 
-	para "Would you like to"
-	line "hear a progress"
-	cont "report on my team?"
+	para "Would you like a"
+	line "progress report on"
+	cont "my team?"
 
 	para "Because I would be"
 	line "happy to show you!"

@@ -163,6 +163,7 @@ StaghornGymLeader:
 
 	setflag ENGINE_REMATCH_POSEY
 	copybytetovar wPoseyFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wPoseyFightCount
 

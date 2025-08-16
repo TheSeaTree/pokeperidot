@@ -136,6 +136,7 @@ HepaticaGymWhitneyScript:
 
 	setflag ENGINE_REMATCH_DUANE
 	copybytetovar wDuaneFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wDuaneFightCount
 

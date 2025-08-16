@@ -109,6 +109,7 @@ PectiniaGymMurphyScript:
 
 	setflag ENGINE_REMATCH_MURPHY
 	copybytetovar wMurphyFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wMurphyFightCount
 

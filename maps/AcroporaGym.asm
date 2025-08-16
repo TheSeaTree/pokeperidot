@@ -86,6 +86,7 @@ GroundGymLeader:
 
 	setflag ENGINE_REMATCH_ALAN
 	copybytetovar wAlanFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wAlanFightCount
 
