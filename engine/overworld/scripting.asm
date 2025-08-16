@@ -238,6 +238,7 @@ endc
 	dw Script_checksave                  ; a9
 	dw Script_trainerpic                 ; aa
 	dw Script_sketchbookmenu             ; ab
+	dw Script_checksubwaystreak          ; ac
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2220,6 +2221,11 @@ LoadCoinAmountToMem:
 	ldh [hMoneyTemp], a
 	ld bc, hMoneyTemp
 	ret
+
+Script_checksubwaystreak:
+	call LoadCoinAmountToMem
+	farcall CheckSubwayStreak
+	jr CompareMoneyAction
 
 Script_checktime:
 ; script command 0x2b

@@ -19,8 +19,8 @@ PectiniaArcadeSubwayRewardGuy:
 	opentext
 	writetext PectiniaArcadeRewardIntroText
 	waitbutton
-	copybytetovar wBattleSubwayBestStreak
-	ifgreater 9, .GiveReward1
+	checksubwaystreak 9
+	ifequal HAVE_MORE, .GiveReward1
 	closetext
 	turnobject LAST_TALKED, LEFT
 	end
@@ -35,8 +35,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext TRICK_MIRROR, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward2:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  20, .NoMoreRewards
+	checksubwaystreak 20
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem PP_UP, 24
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_2
@@ -44,8 +44,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext PP_UP, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward3:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  30, .NoMoreRewards
+	checksubwaystreak 30
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem FOCUS_SASH, 5
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_3
@@ -53,8 +53,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext FOCUS_SASH, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward4:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  40, .NoMoreRewards
+	checksubwaystreak 40
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem HP_UP, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_4
@@ -62,8 +62,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext HP_UP, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward5:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  50, .NoMoreRewards
+	checksubwaystreak 50
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem POWER_HERB, 5
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_5
@@ -71,8 +71,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext POWER_HERB, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward6:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  60, .NoMoreRewards
+	checksubwaystreak 60
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem PROTEIN, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_6
@@ -80,8 +80,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext PROTEIN, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward7:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  70, .NoMoreRewards
+	checksubwaystreak 70
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem SKILL_BELT
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_7
@@ -89,8 +89,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext SKILL_BELT, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward8:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  80, .NoMoreRewards
+	checksubwaystreak 80
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem CALCIUM, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_8
@@ -98,8 +98,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext CALCIUM, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward9:
-	copybytetovar wBattleSubwayBestStreak
-	ifless  90, .NoMoreRewards
+	checksubwaystreak 90
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem HEAT_CHARM, 5
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_9
@@ -107,8 +107,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext HEAT_CHARM, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward10:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 100, .NoMoreRewards
+	checksubwaystreak 100
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem IRON, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_10
@@ -116,8 +116,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext IRON, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward11:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 110, .NoMoreRewards
+	checksubwaystreak 110
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem DAMP_CHARM, 5
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_11
@@ -125,8 +125,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext DAMP_CHARM, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward12:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 120, .NoMoreRewards
+	checksubwaystreak 120
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem CARBOS, 20
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_12
@@ -134,8 +134,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext CARBOS, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward13:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 130, .NoMoreRewards
+	checksubwaystreak 130
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem X_ACCURACY, 5
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_13
@@ -143,8 +143,8 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext X_ACCURACY, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward14:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 140, .NoMoreRewards
+	checksubwaystreak 140
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem RARE_CANDY, 10
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_14
@@ -152,19 +152,20 @@ PectiniaArcadeSubwayRewardGuy:
 	itemtotext RARE_CANDY, MEM_BUFFER_0
 	jump .ReceivedReward
 .GiveReward15:
-	copybytetovar wBattleSubwayBestStreak
-	ifless 150, .NoMoreRewards
+	checksubwaystreak 150
+	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem LEFTOVERS
 	iffalse .NoSpace
 	setevent EVENT_ARCADE_REWARD_15
 	writebyte 150
 	itemtotext LEFTOVERS, MEM_BUFFER_0
 .GiveReward16:
-	copybytetovar wBattleSubwayBestStreak
-	ifgreater 254, .MaxScoreReward
+	checksubwaystreak 999
+	ifequal HAVE_MORE, .MaxScoreReward
 
 .ReceivedReward:
 	writetext PectiniaArcadeRewardReceiveText
+	playsound SFX_ITEM
 	waitbutton
 	itemnotify
 
@@ -523,7 +524,7 @@ PectiniaArcadeRewardReceiveText:
 
 PectiniaArcadeMaxStreakText:
 	text "Woah! You got a"
-	line "streak of 255 on"
+	line "streak of 999 on"
 	cont "the BATTLE SUBWAY?"
 
 	para "You must really"
@@ -547,10 +548,10 @@ PectiniaArcadePutAwayMasterBallText:
 	prompt
 
 PectiniaArcadeRewardNoRoomText:
-	text "Aw, that's too bad…"
-
-	para "You PACK can't fit"
-	line "this ITEM."
+	text "I have more to"
+	line "give you, but your"
+	cont "PACK can't fit any"
+	cont "more ITEMs."
 
 	para "Clear out some"
 	line "space, I'll hold"

@@ -1082,3 +1082,9 @@ ENDM
 sketchbookmenu: MACRO
 	db sketchbookmenu_command
 ENDM
+
+	enum checksubwaystreak_command ; $27
+checksubwaystreak: MACRO
+	db checksubwaystreak_command
+	dw \1 ; subway streak
+ENDM

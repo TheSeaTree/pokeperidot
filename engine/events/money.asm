@@ -207,3 +207,8 @@ CheckCoins::
 	ld a, 2
 	ld de, wCoins
 	jp CompareFunds
+
+CheckSubwayStreak::
+	ld a, 2
+	ld de, wBattleSubwayBestStreak
+	jp CompareFunds
