@@ -99,8 +99,10 @@ SSMakoB1FGiveTicket:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_SAILOR_TAYLOR
 	copybytetovar wTaylorFightCount
+	ifgreater  11, .DoneRematch
 	addvar 1
 	copyvartobyte wTaylorFightCount
+.DoneRematch
 	opentext
 .AfterRematch:
 	writetext SailorTaylorAfterRematchText

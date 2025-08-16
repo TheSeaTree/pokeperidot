@@ -83,9 +83,11 @@ EmilysRoomEmilyScript:
 	setevent EVENT_BEAT_CHAMPION_EMILY
 
 	copybytetovar wEliteFourFightCount
+	ifgreater 3, .DoneRematch
 	addvar 1
 	copyvartobyte wEliteFourFightCount
 
+.DoneRematch
 	opentext
 	writetext EmilyBattleAfterText
 	waitbutton
