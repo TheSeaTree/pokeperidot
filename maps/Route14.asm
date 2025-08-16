@@ -171,12 +171,63 @@ Route14HiddenUltraBall:
 Route14HiddenPowerHerb:
 	hiddenitem POWER_HERB, EVENT_ROUTE_14_HIDDEN_POWER_HERB
 
+Route14HiddenMaxRepel:
+	hiddenitem MAX_REPEL, EVENT_ROUTE_14_HIDDEN_MAX_REPEL
+
+Route14HiddenLemonade:
+	hiddenitem LEMONADE, EVENT_ROUTE_14_HIDDEN_LEMONADE
+
 Route14LeafStone:
-	itemball LEAF_STONE
+	; Collecting this item triggers a battle.
+	giveitem LEAF_STONE
+	iffalse .no_room
+	disappear LAST_TALKED
+	opentext
+	writetext Route14FoundLeafStoneText
+	setevent EVENT_ROUTE_14_LEAF_STONE
+	playsound SFX_ITEM
+	pause 60
+	itemnotify
+	closetext
+	checkevent EVENT_BEAT_PICNICKER_TAMMY
+	iftrue .end
+	playmusic MUSIC_LASS_ENCOUNTER
+	special StopPlayerRunning
+	showemote EMOTE_SHOCK, ROUTE14_TRAINER4, 30
+	applymovement ROUTE14_TRAINER4, TrainerPicnickerTammyMovement
+	faceobject PLAYER, ROUTE14_TRAINER4
+	opentext
+	writetext PicnickerTammyItemballText
+	waitbutton
+	closetext
+	winlosstext PicnickerTammyItemballWinText, 0
+    loadtrainer PICNICKER, TAMMY
+	startbattle
+	reloadmapafterbattle
+	setevent EVENT_BEAT_PICNICKER_TAMMY
+.end
+	end
+
+.no_room
+	opentext
+	writetext Route14FoundLeafStoneText
+	waitbutton
+	writetext Route14LeafStoneBagFullText
+	waitbutton
+	closetext
+	end
 
 Route14MaxRepel:
 	itemball MAX_REPEL
-	
+
+Route14TMDoubleTeam:
+	itemball TM_DOUBLE_TEAM
+
+TrainerPicnickerTammyMovement:
+	step RIGHT
+	step RIGHT
+	step_resume
+
 BirdKeeperRickyText:
 	text "Going around the"
 	line "world finding new"
@@ -240,25 +291,41 @@ PicnickerTammyText:
 	line "how to evolve my"
 	cont "#MON!"
 	done
-	
+
+PicnickerTammyItemballText:
+	text "Hey! I saw that"
+	line "LEAF STONE first!"
+
+	para "I was making room"
+	line "in my BAG for it!"
+	done
+
 PicnickerTammyWinText:
 	text "Wah! Why didn't"
 	line "they get stronger!"
 	done
-	
+
+PicnickerTammyItemballWinText:
+	text "Wah! Why didn't my"
+	line "#MON get"
+	cont "stronger!"
+	done
+
 PicnickerTammyAfterText:
 	text "I don't get it."
 	line "All of my #MON"
 	cont "are fully evolved."
+
+	para "I should have won!"
 	done
-	
+
 FisherFisherText:
 	text "Hey, that's my"
 	line "item!"
-	
+
 	para "I saw it first!"
 	done
-	
+
 FisherFisherWinText:
 	text "Okay, okay."
 	line "You can take it."
@@ -274,7 +341,7 @@ FisherFisherAfterText:
 Route14MiltankText:
 	text "MILTANK: Moo!"
 	done
-	
+
 Route14GrandfatherText:
 	text "My granddaughter"
 	line "has been shirking"
@@ -427,6 +494,17 @@ TrainerMariePostgameDeclineText:
 	cont "you my #MON!"
 	done
 
+Route14FoundLeafStoneText:
+	text "<PLAYER> found"
+	line "LEAF STONE!"
+	done
+
+Route14LeafStoneBagFullText:
+	text "But <PLAYER> can't"
+	line "carry any more"
+	cont "items."
+	done
+
 Route14FarmSignText:
 	text "MOOMOO FARMS"
 	
@@ -446,12 +524,14 @@ Route14_MapEvents:
 
 	db 0 ; coord events
 
-	db 3 ; bg events
+	db 5 ; bg events
 	bg_event 23,  9, BGEVENT_READ, Route14FarmSign
 	bg_event 20, 19, BGEVENT_ITEM, Route14HiddenUltraBall
 	bg_event 19,  8, BGEVENT_ITEM, Route14HiddenPowerHerb
+	bg_event 20, 21, BGEVENT_ITEM, Route14HiddenMaxRepel
+	bg_event 17, 22, BGEVENT_ITEM, Route14HiddenLemonade
 
-	db 14 ; object events 
+	db 15 ; object events 
 	object_event 25, 25, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBirdKeeperRicky, -1
 	object_event 22, 22, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 2, TrainerPokefanFMarci, -1
 	object_event 10, 17, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerBeautyBrianna, -1
@@ -464,5 +544,6 @@ Route14_MapEvents:
 	object_event 12,  5, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, TrainerMarieAfterScript, -1 ; Runaway Daughter After
 	object_event 11,  5, SPRITE_TAUROS, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14MiltankScript, -1 ; Her Miltank After
 	object_event 24,  2, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, MariesGrandfatherScript, EVENT_MARIE_GONE_HOME
-	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14LeafStone, EVENT_ROUTE_14_LEAF_STONE
+	object_event 18, 15, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route14LeafStone, EVENT_ROUTE_14_LEAF_STONE
 	object_event 12, 24, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route14MaxRepel, EVENT_ROUTE_14_MAX_REPEL
+	object_event 15, 19, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_ITEMBALL, 0, Route14TMDoubleTeam, EVENT_GOT_TM_DOUBLE_TEAM
