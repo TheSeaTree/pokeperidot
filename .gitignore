@@ -1,3 +1,8 @@
+# no compiled graphics
+*.1bpp
+*.2bpp
+*.2bpp.lz
+
 # generated
 *.tx
 *.o
@@ -40,8 +45,3 @@ engine/phone/phone_gossip.asm
 engine/phone/phone_scripts.asm
 *.cmap
 Changelog.txt
-
-# no compiled graphics
-*.1bpp
-*.2bpp
-*.2bpp.lz
