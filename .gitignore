@@ -2,6 +2,7 @@
 *.1bpp
 *.2bpp
 *.2bpp.lz
+*.tilemap.lz
 
 # generated
 *.tx
