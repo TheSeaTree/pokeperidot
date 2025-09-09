@@ -309,7 +309,7 @@ SkelegonEvosAttacks:
 	db 9, BITE
 	db 12, SCARY_FACE
 	db 15, ANCIENTPOWER
-	db 18, BULLDOZE
+	db 18, BONE_CLUB
 	db 21, SCREECH
 	db 24, CURSE
 	db 27, CRUNCH
@@ -320,6 +320,7 @@ SkelegonEvosAttacks:
 	db 53, RAZOR_WIND
 	db 57, HYPER_BEAM
 	db 60, STONE_EDGE
+	db 68, BONEMERANG
 	db 0 ; no more level-up moves130
 
 RinringEvosAttacks:
