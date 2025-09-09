@@ -23,6 +23,8 @@ LoadSpecialMapPalette:
 	jp z, .volcano
 	cp 	TILESET_CAVE
 	jp z, .cave
+	cp 	TILESET_TUNNEL
+	jp z, .cave
 	cp  TILESET_FACILITY
 	jp z, .facility
 	cp  TILESET_LIGHTHOUSE

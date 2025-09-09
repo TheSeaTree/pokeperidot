@@ -48,3 +48,4 @@ Tilesets::
 	tileset TilesetPokemonLeague
 	tileset TilesetPokecomCenter
 	tileset TilesetCyberspace
+	tileset TilesetTunnel

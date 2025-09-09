@@ -244,6 +244,7 @@ UnusedTilesetAnim_fc1af:
 
 TilesetCaveAnim:
 TilesetDarkCaveAnim:
+TilesetTunnelAnim:
 	dw vTiles2 tile $14, WriteTileToBuffer
 	dw wTileAnimBuffer, ScrollTileRightLeft
 	dw vTiles2 tile $14, WriteTileFromBuffer

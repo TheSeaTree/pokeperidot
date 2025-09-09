@@ -484,3 +484,15 @@ INCBIN "data/tilesets/cyberspace_metatiles.bin"
 
 TilesetCaveAttr:
 INCBIN "data/tilesets/cave_attributes.bin"
+
+TilesetTunnelAttr:
+INCBIN "data/tilesets/tunnel_attributes.bin"
+
+TilesetTunnelGFX:
+INCBIN "gfx/tilesets/tunnel.2bpp.lz"
+
+TilesetTunnelMeta:
+INCBIN "data/tilesets/tunnel_metatiles.bin"
+
+TilesetTunnelColl:
+INCLUDE "data/tilesets/tunnel_collision.asm"

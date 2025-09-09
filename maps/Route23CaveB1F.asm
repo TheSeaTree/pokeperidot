@@ -32,7 +32,7 @@ Route23CaveB1F_MapScripts:
 .Boulder1:
 	moveobject ROUTE23CAVEB1F_BOULDER2, 26, 10
 	appear ROUTE23CAVEB1F_BOULDER2
-	changeblock 6, 8, $cf ; open door
+	changeblock 6, 8, $03 ; open door
 	setevent EVENT_ROUTE_23_CAVE_BOULDER
 	disappear ROUTE23CAVEB1F_BOULDER1
 

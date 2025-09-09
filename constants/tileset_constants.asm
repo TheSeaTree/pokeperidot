@@ -37,6 +37,7 @@
 	const TILESET_POKEMON_LEAGUE       		; 2c
 	const TILESET_POKECOM_CENTER       		; 2d
 	const TILESET_CYBERSPACE       			; 2e
+	const TILESET_TUNNEL	       			; 2f
 
 ; bg palette values (see gfx/tilesets/*_palette_map.asm)
 ; TilesetBGPalette indexes (see gfx/tilesets_pals/bg_tiles.pal)
