@@ -158,7 +158,7 @@ PainterAlreadyMetText:
 	cont "seur. Welcome!"
 	
 	para "I'm actually work-"
-	line "ing on a a master-"
+	line "ing on a master-"
 	cont "piece as we speak."
 	
 	para "And it is just"
