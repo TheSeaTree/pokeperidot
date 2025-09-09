@@ -105,7 +105,7 @@ ENDM
 
 	newgroup                                                      ;  5
 
-	map_const ACROPORA_GYM,                               5,  6 ;  2
+	map_const ACROPORA_GYM,                               7,  7 ;  2
 	map_const ACROPORA_MART,                              6,  4 ;  5
 	map_const ACROPORA_POKECENTER_1F,                     5,  4 ;  6
 	map_const ACROPORA_CITY,                             29, 16 ; 10

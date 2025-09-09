@@ -273,14 +273,14 @@ AcroporaGym_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 4, 11, ACROPORA_CITY, 10
-	warp_event 5, 11, ACROPORA_CITY, 10
+	warp_event  6, 13, ACROPORA_CITY, 10
+	warp_event  7, 13, ACROPORA_CITY, 10
 
 	db 0 ; coord events
 
 	db 2 ; bg events
-	bg_event  3,  9, BGEVENT_READ, AcroporaGymStatue
-	bg_event  6,  9, BGEVENT_READ, AcroporaGymStatue
+	bg_event  5, 11, BGEVENT_READ, AcroporaGymStatue
+	bg_event  8, 11, BGEVENT_READ, AcroporaGymStatue
 
 	db 1 ; object events
-	object_event  5,  3, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GroundGymLeader, -1
+	object_event  7,  6, SPRITE_JASMINE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, GroundGymLeader, -1
