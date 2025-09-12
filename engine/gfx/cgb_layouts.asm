@@ -896,7 +896,7 @@ INCLUDE "gfx/pack/pack_f.pal"
 _CGB_Pokepic:
 	call _CGB_MapPals
 	ld de, SCREEN_WIDTH
-	hlcoord 0, 0, wAttrMap
+;	hlcoord 0, 0, wAttrMap
 	ld a, [wMenuBorderTopCoord]
 .loop
 	and a
