@@ -33,11 +33,8 @@ VictoryCoastSnubbullDay:
 	end
 
 VictoryCoastSnubbullNight:
-	opentext 
-	writetext VictoryCoastSnubbleCryText
-	writebyte SNUBBULL
-	special PlaySlowCry
-	waitbutton
+	showemote EMOTE_SLEEP, LAST_TALKED, 30
+	opentext
 	writetext VictoryCoastSnubbullNightText
 	waitbutton
 	closetext
