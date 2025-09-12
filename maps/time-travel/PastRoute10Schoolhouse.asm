@@ -258,7 +258,7 @@ PastRoute10SchoolhouseTeacherBeatenStudentsText:
 	done
 
 PastRoute10SchoolhouseTeacherChallengeText:
-	text "Your last test"
+	text "Your final exam"
 	line "will be a battle"
 	cont "against me!"
 	done
@@ -283,8 +283,7 @@ PastRoute10SchoolhouseTeacherGiveHomeworkText:
 
 	para "Could you deliver"
 	line "some of her missed"
-	cont "SCHOOLWORK to her"
-	cont "for me?"
+	cont "SCHOOLWORK for me?"
 
 	para "I'd do it myself,"
 	line "but I am too busy"

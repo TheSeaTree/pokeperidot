@@ -1125,7 +1125,7 @@ TimeMachineReadyText:
 TimeMachineReturnFromPastText:
 	text "It's good to see"
 	line "our tether system"
-	cont "is successful!"
+	cont "is functional!"
 
 	para "Whenever you are"
 	line "ready to jump back"
@@ -1197,7 +1197,7 @@ TimeMachineGivePokePDAText:
 	done
 
 TimeMachineExplainPokePDAText:
-	text "Here is the"
+	text "This is the"
 	line "# PDA."
 
 	para "This will allow"

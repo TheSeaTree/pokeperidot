@@ -159,7 +159,7 @@ SailorTuckerAfterText:
 	done
 	
 SwimmerLaurieText:
-	text "It's so freeing to"
+	text "It's liberating to"
 	line "swim in the ocean!"
 	done
 	
@@ -226,10 +226,10 @@ SwimmerRusselText:
 
 SwimmerRusselWinText:
 	text "Who do you think"
-	line "you are beating"
+	line "you are, beating"
 	cont "me like that?"
 	done
-	
+
 SwimmerRusselAfterText:
 	text "You won't stop me"
 	line "on my goal to be"

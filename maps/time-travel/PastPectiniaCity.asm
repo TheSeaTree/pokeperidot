@@ -302,7 +302,7 @@ PastPectiniaCityConstructionSignText:
 PastPectiniaCityLicensePlateText:
 	text "The license plate"
 	line "on this truck says"
-	cont "“OUTATIME”"
+	cont "“OUTATIME.”"
 	done
 
 PastPectiniaCityCelebiFlowersText:
@@ -324,9 +324,8 @@ PastPectiniaCityBerryGuyText:
 	para "It was so depress-"
 	line "ing to see how"
 	cont "barren my garden"
-	cont "was, but every-"
-	cont "thing is so beaut-"
-	cont "iful now!"
+	cont "was, but it is so"
+	cont "beautiful now!"
 
 	para "I have this lucky"
 	line "charm I thought"

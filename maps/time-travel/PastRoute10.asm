@@ -102,8 +102,10 @@ PastRoute10PokefanMText:
 	line "PECTINIA CITY."
 
 	para "All of the trees"
-	line "make the air so"
-	cont "much fresher."
+	line "help to make the"
+	cont "air much more"
+	cont "fresh than in the"
+	cont "city."
 
 	para "Ahhh!"
 	done

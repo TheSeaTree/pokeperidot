@@ -212,9 +212,9 @@ Palerock1RockerText:
 	cont "nothin'!"
 	
 	para "That's a pretty"
-	line "brutal task"
+	line "brutal task,"
 	cont "my dude."
-	
+
 	para "How about I put in"
 	line "a good word for"
 	cont "with the guys out-"

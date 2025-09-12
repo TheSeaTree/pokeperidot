@@ -55,7 +55,7 @@ FaviaMartFangirlText:
 	line "right?"
 
 	para "I'm getting some"
-	cont "supplies for the"
+	line "supplies for the"
 	cont "FAVIA GYM."
 
 	para "I can never make"

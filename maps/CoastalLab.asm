@@ -585,7 +585,7 @@ CoastalLabOpenWindowText:
 CoastalLabBirdsBookText:
 	text "This notebook is"
 	line "titled “LEGENDARY"
-	cont "BIRDS”…"
+	cont "BIRDS…”"
 	
 	para "Open it?"
 	done
@@ -660,7 +660,7 @@ CoastalLabMoltresBookText:
 CoastalLabBeastsBookText:
 	text "This notebook is"
 	line "titled “LEGENDARY"
-	cont "BEASTS”…"
+	cont "BEASTS…”"
 
 	para "Open it?"
 	done
@@ -713,7 +713,7 @@ CoastalLabSuicuneBookText:
 CoastalLabLugiaHoOhBookText:
 	text "This notebook is"
 	line "titled “MASTERS OF"
-	cont "THE TRIOS”…"
+	cont "THE TRIOS…”"
 
 	para "Open it?"
 	done

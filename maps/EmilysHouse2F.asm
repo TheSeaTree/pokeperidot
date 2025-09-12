@@ -230,7 +230,7 @@ EmilyNoRoomText:
 	text "Is your PACK full?"
 	
 	para "I'll leave the"
-	line "item with my MOM."
+	line "item with my mom."
 	
 	para "Just talk to her"
 	line "when you get a"

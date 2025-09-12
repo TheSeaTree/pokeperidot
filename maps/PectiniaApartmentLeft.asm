@@ -50,8 +50,8 @@ PectiniaApartmentLeftGameboyKidText:
 	
 	para "With PIKACHU here,"
 	line "the batteries on"
-	cont "my game will never"
-	cont "run out!"
+	cont "my GAME BOY will"
+	cont "never run out!"
 	done
 	
 PectiniaApartmentLeftPikachuText:

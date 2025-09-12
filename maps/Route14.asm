@@ -266,7 +266,7 @@ PokefanFMarciAfterText:
 	text "I taught my"
 	line "daughter how to"
 	cont "evolve #MON"
-	cont "using a stone!"
+	cont "by using a stone!"
 	done
 	
 BeautyBriannaText:

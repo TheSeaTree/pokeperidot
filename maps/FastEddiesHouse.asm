@@ -210,8 +210,8 @@ FastEddiePlayerHaveSodaPopText:
 	text "Aww yeah! That's"
 	line "the stuff!"
 	
-	para "Thanks kid, but I'm"
-	line "gonna need more"
+	para "Thanks, kid, but"
+	line "I'm gonna need more"
 	cont "than that to keep"
 	cont "up my FAST life-"
 	cont "style!"
@@ -248,7 +248,7 @@ FastEddieSellingFastBallsText:
 	cont "against only the"
 	cont "quickest #MON!"
 
-	para "So how's about it? "
+	para "So how's about it?"
 
 	para "You wanna buy some"
 	line "FAST BALLs?"

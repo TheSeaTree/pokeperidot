@@ -57,7 +57,6 @@ ItLooksStuck:
 HM04Text:
 	text "<PLAYER> got"
 	line "TM24!"
-	line "TM24!"
 	done
 	
 HM04PutAwayText:

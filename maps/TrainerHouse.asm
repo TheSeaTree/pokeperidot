@@ -757,7 +757,7 @@ GentlemanRonText:
 GentlemanRonWinText:
 	text "I didn't want the"
 	line "fight to end that"
-	cont "quick."
+	cont "quickly."
 	done
 
 GentlemanRonLossText:
@@ -786,8 +786,8 @@ TeacherCeceliaWinText:
 	done
 
 TeacherCeceliaLossText:
-	text "Have your MOM sign"
-	line "this form and"
+	text "Have your mother"
+	line "sign this form and"
 	cont "return it to me."
 	done
 

@@ -456,9 +456,9 @@ PoseySolarbeamText:
 	cont "it when it's ready"
 	cont "to go!"
 	
-	para "If it's sunny, it"
-	line "won't even need to"
-	cont "be charged!"
+	para "If it's sunny out,"
+	line "it can even be"
+	cont "used immediately!"
 	done
 	
 PoseyAfterText:
@@ -595,9 +595,8 @@ BugCatcherGregText:
 	done
 
 BugCatcherGregWinText:
-	text "Quick! Hide in the"
-	line "grass where he"
-	cont "can't get you!"
+	text "Quick, team! Hide"
+	line "in the grass!"
 	done
 
 BugCatcherGregAfterText:

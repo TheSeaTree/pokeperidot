@@ -124,8 +124,9 @@ PsychicRossAfterText:
 	cont "the living."
 
 	para "They are rare, but"
-	line "I suspect they"
-	cont "won't be forever."
+	line "I suspect that"
+	cont "won't be true"
+	cont "forever."
 	done
 
 BikerZacharyText:

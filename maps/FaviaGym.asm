@@ -522,7 +522,7 @@ FaviaGymStatueWinningTrainers2Text:
 	text_ram wStringBuffer4
 	text_start
 	para "WINNING TRAINERS:"
-	cont "<PLAYER>"
+	line "<PLAYER>"
 	done
 
 FaviaGym_MapEvents:

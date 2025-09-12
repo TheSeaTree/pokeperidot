@@ -203,9 +203,9 @@ FriendBallMerchantLassText:
 FriendBallMerchantText_LovesYouALot:
 	text "My, oh my! It must"
 	line "have taken a lot"
-	cont "of work to become"
-	cont "your #MON to"
-	cont "love you so much!"
+	cont "of work for your"
+	cont "#MON to love"
+	cont "you so much!"
 	done
 
 FriendBallMerchantText_ReallyTrustsYou:

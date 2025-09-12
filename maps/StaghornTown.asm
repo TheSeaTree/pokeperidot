@@ -162,14 +162,14 @@ StaghornGymLeaderAwayText:
 	
 	para "I'm sorry, but she"
 	line "isn't in at the"
-	cont "moment, she had"
+	cont "moment. She had"
 	cont "to leave for an"
 	cont "emergency."
 	
 	para "Maybe you could"
 	line "try paying a visit"
 	cont "to her #MON"
-	cont "SHELTER, it's"
+	cont "SHELTER. It's"
 	cont "right on ROUTE 11,"
 	cont "you can't miss it!"
 	done

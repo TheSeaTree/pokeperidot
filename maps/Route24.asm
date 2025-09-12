@@ -92,7 +92,7 @@ Route24Worker1NoticePlayerText:
 	line "why we're clearing"
 	cont "this route. There's"
 	cont "nothing but an"
-	cont "abandoned lab on"
+	cont "abandoned LAB on"
 	cont "the other end."
 	done
 

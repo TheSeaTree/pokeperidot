@@ -171,14 +171,13 @@ Route13GateOfficer2AfterText:
 	line "how you distracted"
 	cont "me like that!"
 	
-	para "I'd oughta arrest"
+	para "I'd ought to arrest"
 	line "you for that."
 	
 	para "…Lucky for you I"
 	line "don't have that"
 	cont "kind of power."
 	done
-
 
 Route13GateOfficer2ChellengeText:
 	text "But what I do have"

@@ -10,26 +10,26 @@ AcroporaCastleHouseSuperNerd:
 	
 AcroporaCastleHouseSuperNerdText:
 	text "Have you heard the"
-	line "rumors of the gold"
-	cont "castle on ROUTE"
-	cont "19?"
-	
+	line "rumors about the"
+	cont "gold castle on"
+	cont "ROUTE 19?"
+
 	para "I tried to find it"
 	line "once, but I got"
 	cont "lost in a maze of"
 	cont "trees."
-	
+
 	para "I was exhausted,"
 	line "and was about to"
 	cont "collapse when a"
 	cont "brilliant light"
 	cont "shone in the sky!"
-	
+
 	para "Next thing I knew,"
 	line "I was at the entr-"
 	cont "ance of the maze,"
 	cont "but I felt great!"
-	
+
 	para "I don't know what"
 	line "is really on ROUTE"
 	cont "19, but I can say"

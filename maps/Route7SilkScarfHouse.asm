@@ -101,7 +101,7 @@ Route7SilkScarfLadyHaveTeddiursaText:
 
 Route7SilkScarfLadyAfterText
 	text "The SILK SCARF"
-	line "boost NORMAL-TYPE"
+	line "boosts NORMAL-type"
 	cont "moves."
 	
 	para "It's a perfect fit"

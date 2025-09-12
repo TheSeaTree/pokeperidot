@@ -96,11 +96,11 @@ SuperNerdHalWinText:
 	done
 	
 SuperNerdHalAfterText:
-	text "Some guy near the"
-	line "old PORYGON"
-	cont "factory offered an"
-	cont "UP-GRADE to me."
-	
+	text "Some guy outside"
+	line "ORIENTEM FOREST"
+	cont "offered me a"
+	cont "free UP-GRADE."
+
 	para "I was a fool to"
 	line "not take it!"
 	done

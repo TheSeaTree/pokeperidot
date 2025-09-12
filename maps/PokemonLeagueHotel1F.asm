@@ -39,9 +39,9 @@ LeagueHotelTwin1Text:
 
 LeagueHotelTwin2Text:
 	text "ANNE: They wouldn't"
-	line "let my sister JAN"
-	cont "and me share a"
-	cont "room here."
+	line "let my sister"
+	cont "share a room with"
+	cont "me."
 	done
 
 LeagueHotelGentlemanText:

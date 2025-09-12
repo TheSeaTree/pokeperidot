@@ -36,8 +36,8 @@ PastPectiniaApartments3FBlockingTVMovement:
 	step_end
 
 PastPectiniaApartments3FYoungsterText:
-	text "Our DAD just got"
-	line "us CABLE TV."
+	text "Our dad just got"
+	line "us cable TV."
 
 	para "Nobody else in"
 	line "town has it."
@@ -48,7 +48,7 @@ PastPectiniaApartments3FYoungsterText:
 	done
 
 PastPectiniaApartments3FLassText:
-	text "CABLE is so much"
+	text "Cable is so much"
 	line "better than"
 	cont "regular TV!"
 

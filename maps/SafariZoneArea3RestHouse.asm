@@ -174,8 +174,7 @@ SafariArea3RestHousePokefanText:
 	line "I did it!"
 
 	para "I finally caught a"
-	line "CHANSEY all of my"
-	cont "own!"
+	line "CHANSEY!"
 
 	para "And it was green!"
 	line "I've never seen one"

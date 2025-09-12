@@ -107,9 +107,8 @@ GuitaristTomasWinText:
 GuitaristTomasAfterText:
 	text "Not bad for a kid."
 	
-	para "As far as I care,"
-	line "you can stick"
-	cont "around."
+	para "I don't mind you"
+	line "sticking around."
 	done
 	
 GuitaristPaulText:

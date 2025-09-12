@@ -263,7 +263,7 @@ PectiniaBedSalesmanBoughtText:
 
 PectiniaBedStoreBagFull:
 	text "What a shame. Your"
-	line "bag has no space"
+	line "BAG has no space"
 	cont "for our promo-"
 	cont "tional AWAKENING."
 	done
@@ -386,8 +386,8 @@ PectiniaBedStoreIncludeAwakening:
 	cont "an AWAKENING."
 
 	para "We guarantee you"
-	line "will need it tomm-"
-	cont "orow morning!"
+	line "will need it"
+	cont "tomorrow morning!"
 	done
 
 PectiniaBedStoreDrowzeeText:

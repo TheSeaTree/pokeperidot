@@ -229,7 +229,7 @@ EnyaRematchText:
 	para "My magic may have"
 	line "failed me last"
 	cont "time, but it will"
-	cont "not again!"
+	cont "not happen again!"
 	done
 
 EnyaRematchWinText:

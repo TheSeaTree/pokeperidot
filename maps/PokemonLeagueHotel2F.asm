@@ -62,7 +62,7 @@ LeagueHotelPokefanMText:
 	cont "trying to defeat"
 	cont "the ELITE FOUR."
 
-	para "It's no use, no"
+	para "It's no use! No"
 	line "matter how long I"
 	cont "train my #MON,"
 	cont "I never make it"

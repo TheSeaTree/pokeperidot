@@ -371,7 +371,7 @@ LassHollyAfterText:
 	text "I told GUS that I"
 	line "would hang out if"
 	cont "he would give me"
-	cont "a berry."
+	cont "a SILVER BERRY."
 	done
 	
 SchoolboyGusText:
@@ -388,7 +388,7 @@ SchoolboyGusWinText:
 
 SchoolboyGusAfterText:
 	text "SILVER BERRIES are"
-	line "very rare."
+	line "pretty rare."
 	
 	para "Girls love them."
 	done

@@ -266,13 +266,13 @@ SailorNathanText:
 	done
 	
 SailorNathanWinText:
-	text "Overreliance on"
+	text "Over-reliance on"
 	line "the mind has left"
 	cont "my arms weak…"
 	done
 	
 SailorNathanAfterText:
-	text "From today on, I"
+	text "Starting today, I"
 	line "will no longer use"
 	cont "my #MON to get"
 	cont "out of doing work!"
@@ -304,9 +304,8 @@ SailorGeneWinText:
 SailorGeneAfterText:
 	text "As soon as my"
 	line "#MON are fight-"
-	cont "ing fit once more,"
-	cont "I will work them"
-	cont "so hard!"
+	cont "ing fit, I will"
+	cont "work them so hard!"
 
 	para "I ain't raising a"
 	line "buncha' wimps!"
@@ -394,9 +393,9 @@ EngineerRoccoAfterText:
 	done
 
 EngineerEnriqueText:
-	text "Ain't nobody is"
-	line "supposed to be in"
-	cont "the ENGINE ROOM."
+	text "Kids ain't allowed"
+	line "inside the ENGINE"
+	cont "ROOM."
 
 	para "Not like you'll"
 	line "get in without"
@@ -446,12 +445,12 @@ EngineerRudolphAfterText:
 	line "soon."
 
 	para "If I can't"
-	cont "find that KEY,"
+	line "find that KEY,"
 	cont "I'm toast!"
 	done
 
 EngineerBernardText:
-	text "Check out these"
+	text "Check out this"
 	line "rare #MON I"
 	cont "scored in a trade!"
 	done

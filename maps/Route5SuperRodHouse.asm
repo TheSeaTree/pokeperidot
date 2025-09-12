@@ -98,7 +98,7 @@ DontHaveHiveBadgeText:
 	
 	para "Come back with"
 	line "the BADGE of a"
-	cont "water-type leader."
+	cont "WATER-type leader."
 	
 	para "Then you may have"
 	line "this GOOD ROD"

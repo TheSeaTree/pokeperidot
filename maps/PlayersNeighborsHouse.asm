@@ -18,7 +18,6 @@ PlayersNeighborsHouseRadioScript:
 	writetext PlayerNeighborRadioText1
 	waitbutton
 	playmusic MUSIC_POKEMON_TALK
-	playmusic MUSIC_GAME_CORNER
 	writetext PlayerNeighborRadioText2
 	waitbutton
 	writetext PlayerNeighborRadioText3

@@ -164,7 +164,7 @@ Route10HikerText:
 	cont "from the south."
 	
 	para "It will be my"
-	line "destiny."
+	line "legacy!"
 	done
 	
 Route10GoldenrodSignText:

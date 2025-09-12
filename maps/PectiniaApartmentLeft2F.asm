@@ -78,7 +78,7 @@ PectiniaApartmentLeft2FGameboyKidText:
 	text "Man, even after"
 	line "getting home I"
 	cont "can't put down"
-	cont "this game! Thanks"
+	cont "this game! Thanks,"
 	cont "PIKACHU!"
 	done
 	
@@ -106,8 +106,8 @@ PectiniaApartmentLeft2FGameboyKidAfterText:
 	
 	para "I'm not allowed to"
 	line "battle, so I just"
-	cont "PIKACHU play with"
-	cont "it."
+	cont "let PIKACHU play"
+	cont "with it."
 	done
 	
 NoRoomLightBall:

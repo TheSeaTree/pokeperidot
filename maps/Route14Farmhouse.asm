@@ -187,7 +187,7 @@ BuyMilkNoMoneyText:
 	cont "cash."
 	
 	para "You can come back"
-	line "later, we've never"
+	line "later, we'll never"
 	cont "run out!"
 	done
 	

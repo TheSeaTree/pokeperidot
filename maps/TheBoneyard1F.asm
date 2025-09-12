@@ -468,8 +468,8 @@ MarowakCorneredText:
 	done
 	
 Route13TeacherApproachText:
-	text "That's where you"
-	line "ran off to!"
+	text "???: That's where"
+	line "you ran off to!"
 	done
 	
 TheBoneyard1FTeacherWorried:

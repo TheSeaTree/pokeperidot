@@ -55,7 +55,7 @@ PokemonLeagueGate2FGentlemanText:
 	cont "born!"
 	
 	para "I wonder if the"
-	line "GYM LEADERS have"
+	line "GYM LEADERs have"
 	cont "gotten stronger"
 	cont "since I battled"
 	cont "them last…"

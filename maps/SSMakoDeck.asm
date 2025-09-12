@@ -419,6 +419,7 @@ SSMakoDeckNoticeFemalePlayerText:
 	line "your girlfriend to"
 	cont "try and take back"
 	cont "your #MON?"
+	done
 
 SSMakoDeckDoesntRecognizePlayerText:
 	text "Look, kid. I don't"

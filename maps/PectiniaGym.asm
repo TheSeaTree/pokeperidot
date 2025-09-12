@@ -384,7 +384,7 @@ OfficerBillyAfterText:
 	line "and stop any chal-"
 	cont "lengers from"
 	cont "reaching the"
-	cont "LEADER."
+	cont "leader."
 	done
 	
 OfficerJimmyText:

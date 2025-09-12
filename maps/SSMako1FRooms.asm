@@ -433,7 +433,7 @@ TwinJanText:
 	
 	para "ANNE: Yeah! We won"
 	line "all of our BADGEs"
-	cont "easy peasy!"
+	cont "easy-peasy!"
 	done
 
 TwinJanWinText:
@@ -468,7 +468,7 @@ TwinAnneText:
 	para "JAN: Um, ANNE…"
 	line "I don't think that"
 	cont "other girl has any"
-	cont "#MON."
+	cont "#MON…"
 	done
 
 TwinAnneWinText:
@@ -503,15 +503,18 @@ TwinAnneTicketResponseText:
 	done
 
 TwinJanTicketBoyText:
-	text "JAN: Sorry mister."
-	line "We'd help if we"
-	cont "knew anything…"
+	text "JAN: Sorry,"
+	line "mister."
+
+	para "We'd help if we"
+	line "knew anything…"
 	done
 
 TwinJanTicketGirlText:
-	text "JAN: Sorry miss."
-	line "We'd help if we"
-	cont "knew anything…"
+	text "JAN: Sorry, miss."
+
+	para "We'd help if we"
+	line "knew anything…"
 	done
 
 TwinAnneTicketText:
@@ -527,15 +530,17 @@ TwinJanTicketResponseText:
 
 TwinAnneTicketBoyText:
 	text "ANNE: Sorry,"
-	line "mister. We'd help"
-	cont "if we knew any-"
-	cont "thing…"
+	line "mister."
+
+	para "We'd help if we"
+	line "knew anything…"
 	done
 
 TwinAnneTicketGirlText:
-	text "ANNE: Sorry miss."
-	line "We'd help if we"
-	cont "knew anything…"
+	text "ANNE: Sorry, miss."
+	
+	para "We'd help if we"
+	line "knew anything…"
 	done
 
 SSMako1FRoomsVIPTicketLocationText:

@@ -415,8 +415,6 @@ FaviaTown_MapEvents:
 	warp_event 13,  6, FAVIA_GYM, 1
 	warp_event  9, 17, DAY_CARE, 1
 	warp_event 14, 21, FAVIA_HAPPINESS_RATER, 1
-;	warp_event 14, 21, PAST_FAVIA_TOWN, 1
-;	warp_event 14, 21, BATTLE_SIM_CASTLE_2, 1
 	warp_event 27, 29, ROUTE_1_FAVIA_GATE, 1
 	warp_event 28, 29, ROUTE_1_FAVIA_GATE, 2
 	warp_event 25, 18, ROUTE_7_FAVIA_GATE, 1

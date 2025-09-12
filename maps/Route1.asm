@@ -325,7 +325,7 @@ PokemaniacScottAfterText:
 	text "We keep this path"
 	line "blocked so no"
 	cont "newbie trainers"
-	cont "cramp our styles!"
+	cont "cramp our style!"
 	done
 	
 PokemaniacDylanText:

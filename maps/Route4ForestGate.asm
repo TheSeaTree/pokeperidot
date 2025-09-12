@@ -72,15 +72,15 @@ Route4ForestGateOfficerText:
 Route4ForestGateScientistText:
 	text "There are rumors"
 	line "of an abandoned"
-	cont "lab in the forest"
-	cont "where PORYGON were"
-	cont "produced."
+	cont "FACTORY in the"
+	cont "forest that pro-"
+	cont "duced PORYGON."
 	
 	para "I've always wanted"
 	line "to see a PORYGON,"
 	cont "but I'm not brave"
-	cont "enough to go out"
-	cont "to find that lab."
+	cont "enough to find"
+	cont "that FACTORY."
 	done
 	
 Route4ForestGateScientistNoPorygonText:

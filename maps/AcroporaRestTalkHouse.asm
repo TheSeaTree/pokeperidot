@@ -61,47 +61,47 @@ RestTalkGrannyDayText:
 	line "nothing husband"
 	cont "just sleeps at the"
 	cont "table all day!"
-	
+
 	para "You know, it must"
 	line "have something to"
 	cont "do with this item"
 	cont "he brought home."
-	
+
 	para "Here. It's for the"
 	line "best I get rid of"
 	cont "it."
 	done
-	
+
 RestTalkGrannyAfter:
 	text "That TM contains"
 	line "REST."
-	
+
 	para "It lets your"
 	line "#MON take a nap"
 	cont "and regain its"
 	cont "health."
-	
+
 	para "My husband isn't a"
 	line "#MON, but it is"
 	cont "still affecting"
 	cont "him somehow."
 	done
-	
+
 RestTalkGrannyNiteText:
 	text "…Zzzz…"
-	
+
 	para "She seems to be"
 	line "murmuring in her"
 	cont "sleep."
 	done
-	
+
 RestTalkGrampsDayText:
 	text "…Zzzz…"
-	
+
 	para "He's taking a nap"
 	line "at the table."
 	done
-	
+
 RestTalkGrampsNiteText:
 	text "When my wife talks"
 	line "in her sleep, I"
@@ -111,29 +111,29 @@ RestTalkGrampsNiteText:
 	cont "the day most of"
 	cont "the time."
 	done
-	
+
 RestTalkGrampsGiveTMSleepTalk:
 	text "If she is going to"
 	line "give away my TMs"
 	cont "without asking, I"
-	cont "can do the same."
+	cont "will do the same!"
 	done
-	
+
 RestTalkGrampsAfter:
 	text "That TM will teach"
 	line "your #MON SLEEP"
 	cont "TALK."
-	
+
 	para "It will allow your"
 	line "#MON to use a"
 	cont "move even while"
 	cont "sleeping."
-	
+
 	para "Despite what my"
 	line "wife says, a TM"
 	cont "has no effect on a"
 	cont "person."
-	
+
 	para "Unfortunately,"
 	line "it will not affect"
 	cont "her sleep talking."

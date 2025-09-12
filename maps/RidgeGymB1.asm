@@ -416,7 +416,7 @@ SwimmerVinnyAfterText:
 	line "more trainers you"
 	cont "will need to"
 	cont "defeat before the"
-	cont "LEADER will accept"
+	cont "leader will accept"
 	cont "your challenge."
 	done
 	
@@ -493,7 +493,7 @@ SwimmerRonnieWinText:
 SwimmerRonnieConfirmText:
 	text "I was the last in"
 	line "line on your way"
-	cont "to the LEADER."
+	cont "to the leader."
 	
 	para "Go on, CECIL is"
 	line "waiting."

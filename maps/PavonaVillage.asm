@@ -161,7 +161,7 @@ CherrygroveInnSign:
 
 CherrygroveCityRock:
 	jumpstd smashrock
-	
+
 MovementData_FisherApproachTop:
 	run_step UP
 	run_step UP
@@ -228,7 +228,7 @@ CherrygroveIrresponsible:
 CherrygroveYoungsterChallenge:
 	text "Hey! Did you just"
 	line "get a #MON from"
-	cont "MAPLE's lab?"
+	cont "MAPLE's LAB?"
 	
 	para "That's so cool!"
 	done
@@ -311,7 +311,7 @@ SchoolboyTimmyRematchWinText:
 
 SchoolboyTimmyNoStarterText:
 	text "Heh! You don't even"
-	line "have the #MON"
+	line "have your #MON"
 	cont "from PROF. MAPLE."
 
 	para "This will be so"

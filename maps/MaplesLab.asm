@@ -603,8 +603,8 @@ MapleDescribesLeagueText:
 
 	para "To qualify, you"
 	line "must collect 8"
-	cont "BADGES from GYM"
-	cont "LEADERS."
+	cont "BADGEs from GYM"
+	cont "LEADERs."
 	
 	para "The closest GYM"
 	line "is in PECTINIA"

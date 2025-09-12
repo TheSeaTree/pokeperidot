@@ -82,7 +82,7 @@ PavonaInnNurseAfterText:
 PavonaInnLassText:
 	text "I'm not a trainer,"
 	line "but I love our"
-	cont "cozy little inn."
+	cont "cozy little INN."
 	
 	para "You meet so many"
 	line "interesting"

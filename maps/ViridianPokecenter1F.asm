@@ -31,7 +31,7 @@ ViridianPokecenter1FCooltrainerMText_BlueReturned:
 	text "The #MON CENTER"
 	line "in this town was"
 	cont "built for trainers"
-	cont "crossing ROUTE 11."
+	cont "crossing ROUTE 10."
 	
 	para "That's where I"
 	line "came from!"

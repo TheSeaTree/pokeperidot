@@ -23,7 +23,7 @@ PastPectiniaBerryHouseCooltrainerNoFruitText:
 
 	para "Maybe I'm not cut"
 	line "out for this kind"
-	cont "of life…"
+	cont "of thing…"
 	done
 
 PastPectiniaBerryHouseCooltrainerText:

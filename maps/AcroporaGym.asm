@@ -135,24 +135,24 @@ AcroporaGymHaveBadge:
 	
 GroundLeaderChallengeText:
 	text "Ahahaha!"
-	
+
 	para "Someone else has"
 	line "navigated the"
 	cont "tunnels I dug out"
 	cont "with the help of"
 	cont "my #MON!"
-	
+
 	para "I prefer to make"
 	line "trainers prove"
 	cont "themselves in my"
 	cont "cave before I"
 	cont "accept their"
 	cont "challenge."
-	
+
 	para "Now, trainer."
-	
+
 	para "Get psyched!"
-	
+
 	para "We will make the"
 	line "foundation of this"
 	cont "GYM quake!"
@@ -162,7 +162,7 @@ GroundLeaderWinText:
 	text "Ah! You have with-"
 	line "stood my ferocious"
 	cont "tremors!"
-	
+
 	para "You have earned"
 	line "my TERRABADGE."
 	done
@@ -192,7 +192,7 @@ AlanFirstRematchText:
 	cont "of your own."
 
 	para "Let's share our"
-	line "experiences!"
+	line "findings!"
 	done
 
 AlanRematchText:
@@ -212,7 +212,7 @@ AlanRematchText:
 AlanRematchWinText:
 	text "Aha! What a good"
 	line "battle that was!"
-	
+
 	para "You've knocked me"
 	line "off my feet again!"
 
@@ -249,17 +249,17 @@ TerraBadgeText:
 	cont "#MON up to Lv60"
 	cont "without them"
 	cont "second guessing"
-	cont "your decisions."
+	cont "your orders."
 
 	para "I must also reward"
 	line "you with my sig-"
 	cont "nature move."
-	
+
 	para "One of the most"
 	line "powerful moves of"
 	cont "them all!"
 	done
-	
+
 EarthquakeTMText:
 	text "EARTHQUAKE may not"
 	line "have any special"
@@ -268,7 +268,7 @@ EarthquakeTMText:
 	cont "doom for any foe"
 	cont "on the ground."
 	done
-	
+
 AcroporaGym_MapEvents:
 	db 0, 0 ; filler
 

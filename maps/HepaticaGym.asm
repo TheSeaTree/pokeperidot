@@ -353,7 +353,7 @@ DoorGuard1TextQuestion:
 	done
 	
 DoorGuard1ThankYou:
-	text "Hehe, thanks kid!"
+	text "Hehe! Thanks, kid!"
 	
 	para "You can go now."
 	done

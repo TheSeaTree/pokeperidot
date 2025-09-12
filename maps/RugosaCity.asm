@@ -671,9 +671,9 @@ RugosaCitySailorText:
 	line "touch my truck. I"
 	cont "just paid it off!"
 	
-	para "If the paint job"
-	line "gets scratched up,"
-	cont "I will be livid!"
+	para "If the paint gets"
+	line "scratched up, I'll"
+	cont "be livid!"
 	done
 	
 RugosaCityCooltrainerMText:

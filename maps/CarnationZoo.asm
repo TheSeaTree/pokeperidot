@@ -399,7 +399,7 @@ CarnationZooChildText3:
 	para "That would be the"
 	line "best!"
 	
-	para "Thanks Mommy!"
+	para "Thanks, Mommy!"
 	done
 	
 ZooVendingText:
@@ -578,7 +578,7 @@ CarnationZooFangirlNoRoomText:
 	cont "for this item."
 	
 	para "I'll just leave it"
-	line "with my MOM in"
+	line "with my mom in"
 	cont "STAGHORN TOWN."
 	
 	para "I was going to go"

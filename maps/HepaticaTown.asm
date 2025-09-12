@@ -261,7 +261,7 @@ HepaticaTownSignText:
 	done
 	
 HepaticaChurchSignText:
-	text "No tresspassing"
+	text "No trespassing"
 	line "beyond this point!"
 	done
 

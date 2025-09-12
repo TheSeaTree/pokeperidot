@@ -550,13 +550,13 @@ PectiniaArcadePutAwayMasterBallText:
 PectiniaArcadeRewardNoRoomText:
 	text "I have more to"
 	line "give you, but your"
-	cont "PACK can't fit any"
-	cont "more ITEMs."
+	cont "PACK can't hold"
+	cont "anything else."
 
 	para "Clear out some"
 	line "space, I'll hold"
 	cont "onto it for you."
-	done	
+	done
 
 PectiniaArcadeRewardAfterText:
 	text "Next time you get"

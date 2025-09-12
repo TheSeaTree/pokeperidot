@@ -467,7 +467,7 @@ SabreFossilExaminationText:
 	done
 	
 SabreFossilAlarmText:
-	text "…Something's not"
+	text "…Something is not"
 	line "right here-"
 	done
 

@@ -111,7 +111,7 @@ MaplesMotherStudyingText:
 PastPavonaHouseNotebookText:
 	text "This notebook is"
 	line "titled “OF MYTHS"
-	cont "& LEGENDS”…"
+	cont "& LEGENDS…”"
 
 	para "Open it?"
 	done

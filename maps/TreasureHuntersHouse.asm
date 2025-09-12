@@ -365,14 +365,14 @@ TreasureHunterBagFullText:
 
 	para "I'd love to trade"
 	line "for it, but I can"
-	cont "see your bag is"
+	cont "see your BAG is"
 	cont "nearly overflowing"
 	cont "with items."
 
 	para "Before I take your"
 	line "treasure, how"
 	cont "about you free up"
-	cont "some bag space?"
+	cont "some BAG space?"
 	done
 
 TreasureHunterWorkbenchText:

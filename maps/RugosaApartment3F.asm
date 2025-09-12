@@ -66,7 +66,7 @@ RugosaApartment3FGirlText:
 	
 	para "I wanted a normal"
 	line "DOLLY, but this is"
-	cont "the only one MOMMY"
+	cont "the only one mommy"
 	cont "could buy."
 	done
 	

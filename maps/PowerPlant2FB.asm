@@ -267,7 +267,7 @@ PowerPlantComeBackTomorrow:
 VitaminCancelText:
 	text "You don't want to"
 	line "help me further"
-	cont "our research…?"
+	cont "my research…?"
 	done
 	
 XItemGiftText:

@@ -554,11 +554,11 @@ HurryUpMapleIsWaitingText:
 	cont "be expecting you."
 
 	para "Do you remember"
-	line "where her lab is?"
+	line "where her LAB is?"
 	done
 	
 MaplesLabDirections:	
-	text "Her lab is in"
+	text "Her LAB is in"
 	line "PAVONA VILLAGE,"
 	cont "right at the other"
 	cont "end of ROUTE 1."
@@ -739,7 +739,7 @@ MomTerraBadgeText:
 
 	para "Be careful, babe!"
 	line "I know you can win"
-	cont "that city's BADGE!"
+	cont "your final BADGE!"
 	done
 
 MomAllBadgesText:
@@ -803,7 +803,7 @@ MomAfterCreditsVisitorText:
 	cont "while you were"
 	cont "still asleep."
 
-	para "Go visit her lab"
+	para "Go visit her LAB"
 	line "when you get the"
 	cont "chance. I know you"
 	cont "must be rather"
@@ -948,7 +948,7 @@ PostgameMapleInterruptText:
 
 PostgameMomGreetMapleText:
 	text "MOM: Oh, PROF."
-	line "MAPLE. Welcome!"
+	line "MAPLE! Welcome!"
 
 	para "I was just congra-"
 	line "tulating <PLAYER>"

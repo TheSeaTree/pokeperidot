@@ -247,10 +247,10 @@ PainterNotEnoughMoneyText:
 	cont "of your budget…"
 
 	para "Sorry, but I can't"
-	line "give these away"
+	line "give my work away"
 	cont "for free."
 	done
-	
+
 GiveMewPosterText:
 	text "This #MON came"
 	line "to me in a dream"

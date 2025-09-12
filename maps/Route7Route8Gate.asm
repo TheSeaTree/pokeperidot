@@ -10,9 +10,9 @@ Route7Route8GateOfficerScript:
 	jumptextfaceplayer Route7Route8OfficerText
 
 Route7Route8OfficerText:
-	text "PALEROCK CAVE will"
-	line "take you back to"
-	cont "ROUTE 3."
+	text "PALEROCK CAVERN"
+	line "will lead you back"
+	cont "to ROUTE 3."
 	done
 
 Route7Route8Gate_MapEvents:

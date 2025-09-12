@@ -251,8 +251,7 @@ BredeScript_RematchDefeatText:
 	text "My #MON will"
 	line "hone their skills"
 	cont "until they are as"
-	cont "sharp as my axe's"
-	cont "blade!"
+	cont "sharp as my axe!"
 
 	para "Then, we will meet"
 	line "in this frozen"
@@ -266,7 +265,7 @@ BredeCantProgress:
 	text "There is no"
 	line "turning back now."
 	done
-	
+
 FreezingColdWaterText:
 	text "This water is"
 	line "freezing cold!"

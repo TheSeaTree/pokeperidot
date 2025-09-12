@@ -116,7 +116,7 @@ SailorTaylorText:
 	cont "someone lose their"
 	cont "ENGINE KEY again?"
 
-	para "Huh? Yeah. I have"
+	para "Huh? Yeah, I have"
 	line "a VIP TICKET, but"
 	cont "I won't give it to"
 	cont "you that easily."

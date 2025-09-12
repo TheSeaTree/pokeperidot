@@ -212,7 +212,7 @@ CamperWilsonText:
 	done
 
 CamperWilsonWinText:
-	text "No way I lost!"
+	text "No way! I lost!"
 
 	para "I was supposed to"
 	line "protect our camp!"

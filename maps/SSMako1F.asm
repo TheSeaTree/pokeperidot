@@ -239,8 +239,8 @@ ShipEmilyExplainBagStolen:
 	line "by stole my PACK!"
 
 	para "It had all of my"
-	line "#BALLS and"
-	cont "BADGES in it!"
+	line "#BALLs and"
+	cont "BADGEs in it!"
 	
 	para "Can you please"
 	line "help me track him"

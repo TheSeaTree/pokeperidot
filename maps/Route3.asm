@@ -457,7 +457,7 @@ Route3TrainerTipsSignText:
 	para "It is wise to"
 	line "stock up on"
 	cont "items before"
-	cont "going on a long"
+	cont "exploring a long"
 	cont "route."
 	done
 

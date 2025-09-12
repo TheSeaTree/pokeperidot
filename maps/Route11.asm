@@ -221,7 +221,7 @@ TeacherSharonWinText:
 
 SchoolboyMartinWinText:
 	text "This will affect"
-	line "my marks for sure!"
+	line "my grade for sure!"
 	done
 
 CamperRustyAfterText:

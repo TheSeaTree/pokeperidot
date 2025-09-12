@@ -77,7 +77,7 @@ PectiniaComicStoreClerkText:
 PectiniaComicStoreOfficerText:
 	text "Sorry kid, but the"
 	line "back room is for"
-	cont "employees only."
+	cont "grown-ups only."
 
 	para "Move along,"
 	line "please."

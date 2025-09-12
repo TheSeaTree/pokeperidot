@@ -478,179 +478,179 @@ SomeBurglarText:
 	text "You didn't think"
 	line "HEPATICA was our"
 	cont "only gig, did you?"
-	
+
 	para "Fufufu! Nope!"
-	
+
 	para "We've been doing"
 	line "this for years!"
 	done
-	
+
 SomeOtherBurglarText:
 	text "Did the stairs"
 	line "deceive you?"
-	
+
 	para "C'mon kid, think!"
-	
+
 	para "We would never"
 	line "store our CARD KEY"
 	cont "in plain sight!"
 	done
-	
+
 PasswordGateText:
 	text "There doesn't seem"
 	line "to be a spot for a"
 	cont "key."
-	
+
 	para "How else does this"
 	line "open?"
 	done
-	
+
 PlayerUsedPassword:
 	text "Maybe…"
 
 	para "<PLAYER> said the"
 	line "password aloud."
 	done
-	
+
 PasswordGateOpenText:
 	text "Success! The door"
 	line "has opened."
 	done
-	
+
 BurglarHideoutB1FScientistText:
 	text "What do you want?"
-	
+
 	para "I'm very busy-"
 	done
-	
+
 BurglarHideoutB1FScientistNoticeText:
 	text "Wait a second…"
-	
+
 	para "You're the kid who"
-	line "beat the boss up"
-	cont "at HEPTAICA TOWN!"
-	
+	line "beat the boss in"
+	cont "HEPTAICA TOWN!"
+
 	para "You made a big"
 	line "mistake coming"
 	cont "here alone, kid!"
 	done
-	
+
 BurglarHideoutB1FScientistWarning:
 	text "The guards will"
 	line "take care of you!"
 	done
-	
+
 BikerGuard1ChallengeText:
 	text "I get paid too"
 	line "well to just let"
 	cont "some kid wander"
 	cont "around in here."
 	done
-	
+
 BikerGuard1WinText:
 	text "Don't get cocky,"
 	line "child."
-	
+
 	para "I'm not the only"
 	line "one you will need"
 	cont "to fight."
 	done
-	
+
 BikerGuard2ChallengeText:
 	text "Trying to play"
 	line "hero?"
-	
+
 	para "The # FLUTE"
 	line "belongs to us now!"
 	done
-	
+
 BikerGuard2WinText:
 	text "How are your"
 	line "#MON feeling"
 	cont "now, kid?"
 	done
-	
+
 BikerGuard3ChallengeText:
 	text "Don't cry when"
 	line "your #MON can't"
 	cont "handle all of"
 	cont "these battles."
 	done
-	
+
 BikerGuard3WinText:
 	text "The boss wasn't"
 	line "kidding when he"
 	cont "said to not take"
 	cont "you lightly."
 	done
-	
+
 BikerGuard1AfterText:
 	text "Well, you won."
 	done
-	
+
 BikerGuard2AfterText:
 	text "Unfortunately,"
 	line "you'll never get"
 	cont "any further with-"
 	cont "out the password."
 	done
-	
+
 BikerGuard3AfterText:
 	text "Ahahaha!"
 	done
-	
+
 SecretPasswordText:
 	text "The secret phrase"
-	line "is “please open”."
+	line "is “please open.”"
 	done
-	
+
 BurglarHideoutB1FGotPassword:
 	text "The password must"
 	line "be useful for"
 	cont "something around"
 	cont "here."
 	done
-	
+
 SageLo2Text:
 	text "Did our dead end"
 	line "deceive you?"
-	
+
 	para "It doesn't matter."
-	
+
 	para "I will be the dead"
 	line "end now!"
 	done
-	
+
 SageLo2WinText:
 	text "No!"
-	
+
 	para "I refuse to lose"
 	line "to a child after"
 	cont "my training!"
 	done
-	
+
 SageLo2AfterText:
 	text "Master ABBOT is"
 	line "going to be"
 	cont "furious!"
 	done
-	
+
 HideoutRivalStopPlayerText:
 	text "Hey! Stop!"
 	done
-	
+
 HideoutRivalText:
 	text "I see you've heard"
 	line "about the stolen"
 	cont "# FLUTE."
-	
+
 	para "You probably don't"
 	line "even care about"
 	cont "capturing that"
 	cont "SNORLAX."
-	
+
 	para "What a waste."
-	
+
 	para "However, you won't"
 	line "be able to get the"
 	cont "# FLUTE when I"
@@ -682,10 +682,10 @@ HideoutRivalWinText:
 HideoutRivalAfterText:
 	text "Fine! Go win back"
 	line "the # FLUTE!"
-	
+
 	para "Be the hero,"
 	line "I don't care!"
-	
+
 	para "Clearly you are"
 	line "the only trainer I"
 	cont "simply can't beat!"
@@ -697,41 +697,41 @@ HideoutRivalAngryText:
 
 BurglarHideoutB1FSageText:
 	text "He…"
-	
+
 	para "Awaits…"
 	done
-	
+
 SageAbbotGreeting:
 	text "YOU!"
 	done
-	
+
 SageAbbotText:
 	text "Are my disciples"
 	line "so useless that"
 	cont "they can't even"
 	cont "handle a mere"
 	cont "child?"
-	
+
 	para "You will not stop"
 	line "my plan to capture"
 	cont "SNORLAX!"
 	done
-	
+
 SageAbbotChallenge:
 	text "HEPATICA TOWN was"
 	line "a fluke."
-	
+
 	para "I will not stand"
 	line "for you ruining my"
 	cont "operation again!"
 	done
-	
+
 SageAbbotWinText:
 	text "IMPOSSIBLE!"
-	
+
 	para "YOU BRING MY BLOOD"
 	line "TO A BOIL, CHILD!"
-	
+
 	para "ARGH!"
 	done
 

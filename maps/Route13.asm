@@ -641,7 +641,7 @@ Route13GiveBlackGlasses:
 
 	para "Here, I have an"
 	line "extra pair you can"
-	cont "have."
+	cont "take."
 	done
 
 Route13ExplainBlackGlasses:
