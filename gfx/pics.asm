@@ -728,6 +728,7 @@ Gen1MoltresPic:		 INCBIN "gfx/trainers/moltres.2bpp.lz"
 SW97RaikouPic:		 INCBIN "gfx/trainers/raikou.2bpp.lz"
 SW97EnteiPic:        INCBIN "gfx/trainers/entei.2bpp.lz"
 SW97SuicunePic:      INCBIN "gfx/trainers/suicune.2bpp.lz"
+LugiaMapPic:      	 INCBIN "gfx/trainers/lugia_map.2bpp.lz"
 
 
 ; Sections "Pics 20" to "Pics 24" are not used for any graphics,

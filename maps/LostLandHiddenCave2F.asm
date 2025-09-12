@@ -59,6 +59,20 @@ LostLandHiddenCave2F_MapScripts:
 LostLandHiddenCave2FTwistedSpoon:
 	itemball TWISTEDSPOON
 
+LostLandHiddenCave2FMap:
+	opentext
+	writetext LostLandHiddenCave2FMapText
+	waitbutton
+	closetext
+	refreshscreen
+	trainerpic LUGIA_MAP
+	waitbutton
+	opentext
+	writetext LostLandHiddenCave2FMapAfterText
+	waitbutton
+	closetext
+	end
+
 LostLandHiddenCave2FHiddenXSpDef:
 	hiddenitem X_SP_DEF, EVENT_LOST_LAND_HIDDEN_CAVE_2F_X_SP_DEF
 
@@ -82,6 +96,15 @@ LostLandHiddenCave2FFarAwaySound:
 	cont "where far away."
 	done
 
+LostLandHiddenCave2FMapText:
+	text "There is something"
+	line "on this sign…"
+	done
+
+LostLandHiddenCave2FMapAfterText:
+	text "Strange…"
+	done
+
 LostLandHiddenCave2F_MapEvents:
 	db 0, 0 ; filler
 
@@ -91,8 +114,9 @@ LostLandHiddenCave2F_MapEvents:
 
 	db 0 ; coord events
 
-	db 1 ; bg events
+	db 2 ; bg events
 	bg_event 13,  5, BGEVENT_ITEM, LostLandHiddenCave2FHiddenXSpDef
+	bg_event  8,  2, BGEVENT_READ, LostLandHiddenCave2FMap
 
 	db 7 ; object events
 	object_event  9,  9, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, LostLandHiddenCave2FBoulder, EVENT_SEA_ROUTE_5_HIDDEN_CAVE_OPEN

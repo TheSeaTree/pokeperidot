@@ -76,3 +76,4 @@ TrainerPicPointers::
 	dba SW97RaikouPic
 	dba SW97EnteiPic
 	dba SW97SuicunePic
+	dba LugiaMapPic

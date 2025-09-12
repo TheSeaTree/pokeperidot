@@ -240,3 +240,4 @@
 	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; ef
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f0
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f1
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; f2

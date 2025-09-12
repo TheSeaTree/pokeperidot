@@ -689,6 +689,7 @@ CHRIS EQU __enum__
 	trainerclass SW97_RAIKOU
 	trainerclass SW97_ENTEI
 	trainerclass SW97_SUICUNE
+	trainerclass LUGIA_MAP
 
 KRIS EQU __enum__
 NUM_TRAINER_CLASSES EQU __enum__
