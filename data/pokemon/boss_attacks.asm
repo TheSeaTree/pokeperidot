@@ -96,3 +96,21 @@ CelebiBossAttacks:
 	db 70, RECOVER
 	db 70, HEAL_BELL
 	db  0 ; no more level-up moves
+
+BoneyardMonAttacks: ; Shared between Cubone and Houndour
+	db 0 ; no more evolutions
+	; Houndour (Egg Moves)
+	db  1, BITE
+	db  1, FIRE_SPIN
+	db  1, BONEMERANG
+	db  1, WILL_O_WISP
+	; Cubone
+	db 26, LEER
+	db 26, FOCUS_ENERGY
+	db 26, BONEMERANG
+	db 26, RAGE
+	; Cubone (Egg Moves)
+	db 27, BRICK_BREAK
+	db 27, FALSE_SWIPE
+	db 27, SKULL_BASH
+	db 0 ; no more level-up moves

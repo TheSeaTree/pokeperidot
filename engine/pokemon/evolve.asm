@@ -487,6 +487,10 @@ FillMoves:
 	jp z, .BossCheck
 	cp BATTLETYPE_LEGENDARY
 	jp z, .BossCheck
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp BONEYARD
+	jp z, .Boneyard
 .got_pointers
 	ld a, c
 	dec a
@@ -640,6 +644,10 @@ FillMoves:
 
 .machamp
 	ld hl, MachampBossPointers
+    jp .got_boss_moves
+
+.Boneyard
+	ld hl, BoneyardMovePointers
     jp .got_boss_moves
 
 ShiftMoves:

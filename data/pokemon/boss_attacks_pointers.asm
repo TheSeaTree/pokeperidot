@@ -1,4 +1,4 @@
-; The following are used for boss encounters, as checked inn engine\pokemon\evolve.asm
+; The following are used for boss encounters, as checked in engine\pokemon\evolve.asm
 CelebiBossPointers::
 	dw CelebiBossAttacks
 
@@ -22,3 +22,6 @@ TentacruelBossPointers::
 
 MachampBossPointers::
 	dw MachampBossAttacks
+
+BoneyardMovePointers::
+	dw BoneyardMonAttacks

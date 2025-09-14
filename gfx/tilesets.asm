@@ -228,9 +228,6 @@ SECTION "Tileset Data 7", ROMX
 TilesetCaveGFX:
 INCBIN "gfx/tilesets/cave.2bpp.lz"
 
-TilesetCaveMeta:
-INCBIN "data/tilesets/cave_metatiles.bin"
-
 TilesetCaveColl:
 INCLUDE "data/tilesets/cave_collision.asm"
 
@@ -496,3 +493,6 @@ INCBIN "data/tilesets/tunnel_metatiles.bin"
 
 TilesetTunnelColl:
 INCLUDE "data/tilesets/tunnel_collision.asm"
+
+TilesetCaveMeta:
+INCBIN "data/tilesets/cave_metatiles.bin"

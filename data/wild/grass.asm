@@ -1109,6 +1109,60 @@ GrassWildMons:
 	db 26, YANMA
 	db 27, YANMA
 
+	map_id THE_BONEYARD_1F
+	db 100 percent, 100 percent, 100 percent ; encounter rates: morn/day/nite
+	; morn
+	db 26, CUBONE
+	db 26, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+	; day
+	db 26, CUBONE
+	db 26, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+	; nite
+	db 26, CUBONE
+	db 26, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+
+	map_id THE_BONEYARD_2F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 26, CUBONE
+	db 27, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+	; day
+	db 26, CUBONE
+	db 27, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+	; nite
+	db 26, CUBONE
+	db 27, CUBONE
+	db 27, CUBONE
+	db 23, HOUNDOUR
+	db 23, HOUNDOUR
+	db 25, HOUNDOUR
+	db 25, HOUNDOUR
+
 	map_id ROUTE_14
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

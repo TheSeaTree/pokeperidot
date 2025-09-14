@@ -192,6 +192,8 @@ FindNest:
 
 TryWildEncounter::
 ; Try to trigger a wild encounter.
+	call BoneyardWildmonCheck
+	jr z, .no_battle
 	call .EncounterRate
 	jr nc, .no_battle
 	call ChooseWildEncounter
@@ -372,6 +374,19 @@ endr
 	ret
 
 .encounter
+	scf
+	ret
+
+BoneyardWildmonCheck:
+; Encounters will appear inside The Boneyard only after the player defeats the boss Marowak.
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp BONEYARD
+	ret nz
+	ld de, EVENT_ECRUTEAK_GYM_ACCESS
+	ld b, CHECK_FLAG
+	call EventFlagAction
+	ret z
 	scf
 	ret
 

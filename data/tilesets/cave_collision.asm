@@ -241,3 +241,11 @@
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f0
 	tilecoll HOP_RIGHT, WALL, HOP_RIGHT, WALL ; f1
 	tilecoll WALL, FLOOR, FLOOR, FLOOR ; f2
+	tilecoll FLOOR, WALL, WALL, WALL ; f3
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f4
+	tilecoll FLOOR, FLOOR, FLOOR, FLOOR ; f5
+	tilecoll WALL, FLOOR, FLOOR, FLOOR ; f6
+	tilecoll FLOOR, FLOOR, WALL, FLOOR ; f7
+	tilecoll FLOOR, WALL, FLOOR, FLOOR ; f8
+	tilecoll WALL, WALL, FLOOR, WALL ; f9
+	tilecoll WALL, WALL, FLOOR, FLOOR ; fa

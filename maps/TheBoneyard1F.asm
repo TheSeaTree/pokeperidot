@@ -260,17 +260,6 @@ TheBoneyard1FMarowakScript:
 TheBoneyard1FBoulder:
 	jumptext TheBoneyard1FWontBudge
 	
-TheBoneyardReset:
-	setevent EVENT_THE_BONEYARD_1F_BOULDER_1
-	setevent EVENT_THE_BONEYARD_1F_BOULDER_2
-	setevent EVENT_THE_BONEYARD_1F_BOULDER_3
-	clearevent EVENT_THE_BONEYARD_2F_BOULDER_1
-	clearevent EVENT_THE_BONEYARD_2F_BOULDER_2
-	clearevent EVENT_THE_BONEYARD_2F_BOULDER_3
-	clearevent EVENT_HEARD_ROUTE_11_LEADER
-	loadvar wFarfetchdPosition, 1
-	end
-	
 MarowakPos1:
 	run_step UP
 	run_step UP
@@ -529,7 +518,6 @@ TheBoneyard1F_MapEvents:
 	db 0 ; coord events
 
 	db 0 ; bg events
-;	bg_event  9, 19, BGEVENT_READ, TheBoneyardReset
 
 	db 5 ; object events
 	object_event 10,  5, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, TheBoneyard1FBoulder, EVENT_THE_BONEYARD_1F_BOULDER_1
