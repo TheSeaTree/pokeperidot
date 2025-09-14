@@ -44,7 +44,7 @@ FishGroups:
 	db  35 percent,     SHELLDER,   12
 	db  70 percent,     SMOLA,	    13
 	db  90 percent + 1, SHELLDER,   13
-	db 100 percent,     time_group 2
+	db 100 percent,     time_group 12
 .Ocean_Super:
 	db  40 percent,     SHELLDER,   44
 	db  80 percent + 1, ANCOR,   	44
@@ -206,7 +206,7 @@ TimeFishGroups:
 	db DRATINI,    46,  DRATINI,    46 ; 9
 	db QWILFISH,   20,  QWILFISH,   20 ; 10
 	db QWILFISH,   40,  QWILFISH,   40 ; 11
-	db REMORAID,   20,  REMORAID,   20 ; 12
+	db REMORAID,   15,  REMORAID,   15 ; 12
 	db REMORAID,   40,  REMORAID,   40 ; 13
 	db GYARADOS,   20,  GYARADOS,   20 ; 14
 	db GYARADOS,   40,  GYARADOS,   40 ; 15
