@@ -17,7 +17,7 @@ _OakText7::
 
 	para "I'll be expecting"
 	line "you to stop by my"
-	cont "lab to select your"
+	cont "LAB to select your"
 	cont "#MON partner!"
 	
 	para "See you soon,"
@@ -1691,7 +1691,7 @@ MoveReminderNoGoldLeafText::
 	cont "a shame…"
 
 	para "I hear you can get"
-	line "them from SMASHING"
+	line "them from breaking"
 	cont "ROCKs sometimes."
 	done
 
@@ -1731,8 +1731,7 @@ SimulationMoveReminderIntrroText::
 	cont "a lower level."
 
 	para "Would you like to"
-	line "change your"
-	cont "#MON's moveset?"
+	line "tutor a #MON?"
 	done
 
 EggMoveTutorIntroText::
@@ -1747,8 +1746,6 @@ EggMoveTutorIntroText::
 	line "#MON how to use"
 	cont "these rare moves"
 	cont "if you trade me"
-;	cont "5 BRICK PIECEs."
-;	cont "10 BRICK PIECEs."
 	cont "a STAR PIECE."
 	done
 
@@ -1770,16 +1767,8 @@ EggMoveTutorNoItemText::
 	line "are hard to find,"
 	cont "but it's difficult"
 	cont "work documenting"
-	cont "what can learn"
-	cont "these moves."
-
-;	text "Apologies, but you"
-;	line "don't have enough"
-;	cont "BRICK PIECEs."
-
-;	para "I will need 5(10) of"
-;	line "them to teach your"
-;	cont "#MON new moves."
+	cont "what moves a"
+	cont "#MON can learn."
 	done
 
 EggMoveTutorNoMovesText::
@@ -1852,7 +1841,7 @@ _HiddenPowerGirlIntroText::
 
 _HiddenPowerGirlDeclineText::
 	text "Do you not trust"
-	line "my judgement?"
+	line "my judgment?"
 
 	para "I have no reason"
 	line "to deceive you."
