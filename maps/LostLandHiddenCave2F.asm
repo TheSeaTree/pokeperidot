@@ -102,7 +102,8 @@ LostLandHiddenCave2FMapText:
 	done
 
 LostLandHiddenCave2FMapAfterText:
-	text "Strange…"
+	text "It seems to be"
+	line "some kind of map…"
 	done
 
 LostLandHiddenCave2F_MapEvents:
