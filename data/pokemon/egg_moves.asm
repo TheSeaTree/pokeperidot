@@ -314,6 +314,7 @@ MankeyEggMoves:
 
 GrowlitheEggMoves:
 	db AERIAL_ACE
+	db DRAGON_RAGE
 	db FIRE_SPIN
 	db MORNING_SUN
 	db THRASH
