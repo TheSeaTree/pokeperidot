@@ -17,6 +17,8 @@ PectiniaArcade_MapScripts:
 PectiniaArcadeSubwayRewardGuy:
 	faceplayer
 	opentext
+	checkevent EVENT_ARCADE_REWARD_16
+	iftrue .GotMasterBall
 	writetext PectiniaArcadeRewardIntroText
 	waitbutton
 	checksubwaystreak 9
@@ -33,8 +35,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_1
 	writebyte 10
 	itemtotext TRICK_MIRROR, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward2:
+	checkevent EVENT_ARCADE_REWARD_2
+	iftrue .GiveReward3
 	checksubwaystreak 20
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem PP_UP, 24
@@ -42,8 +46,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_2
 	writebyte 20
 	itemtotext PP_UP, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward3:
+	checkevent EVENT_ARCADE_REWARD_3
+	iftrue .GiveReward4
 	checksubwaystreak 30
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem FOCUS_SASH, 5
@@ -51,8 +57,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_3
 	writebyte 30
 	itemtotext FOCUS_SASH, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward4:
+	checkevent EVENT_ARCADE_REWARD_4
+	iftrue .GiveReward5
 	checksubwaystreak 40
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem HP_UP, 20
@@ -60,8 +68,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_4
 	writebyte 40
 	itemtotext HP_UP, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward5:
+	checkevent EVENT_ARCADE_REWARD_5
+	iftrue .GiveReward6
 	checksubwaystreak 50
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem POWER_HERB, 5
@@ -69,8 +79,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_5
 	writebyte 50
 	itemtotext POWER_HERB, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward6:
+	checkevent EVENT_ARCADE_REWARD_6
+	iftrue .GiveReward7
 	checksubwaystreak 60
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem PROTEIN, 20
@@ -78,8 +90,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_6
 	writebyte 60
 	itemtotext PROTEIN, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward7:
+	checkevent EVENT_ARCADE_REWARD_7
+	iftrue .GiveReward8
 	checksubwaystreak 70
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem SKILL_BELT
@@ -87,8 +101,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_7
 	writebyte 70
 	itemtotext SKILL_BELT, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward8:
+	checkevent EVENT_ARCADE_REWARD_8
+	iftrue .GiveReward9
 	checksubwaystreak 80
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem CALCIUM, 20
@@ -96,8 +112,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_8
 	writebyte 80
 	itemtotext CALCIUM, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward9:
+	checkevent EVENT_ARCADE_REWARD_9
+	iftrue .GiveReward10
 	checksubwaystreak 90
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem HEAT_CHARM, 5
@@ -105,8 +123,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_9
 	writebyte 90
 	itemtotext HEAT_CHARM, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward10:
+	checkevent EVENT_ARCADE_REWARD_10
+	iftrue .GiveReward11
 	checksubwaystreak 100
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem IRON, 20
@@ -114,8 +134,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_10
 	writebyte 100
 	itemtotext IRON, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward11:
+	checkevent EVENT_ARCADE_REWARD_11
+	iftrue .GiveReward12
 	checksubwaystreak 110
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem DAMP_CHARM, 5
@@ -123,8 +145,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_11
 	writebyte 110
 	itemtotext DAMP_CHARM, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward12:
+	checkevent EVENT_ARCADE_REWARD_12
+	iftrue .GiveReward13
 	checksubwaystreak 120
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem CARBOS, 20
@@ -132,8 +156,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_12
 	writebyte 120
 	itemtotext CARBOS, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward13:
+	checkevent EVENT_ARCADE_REWARD_13
+	iftrue .GiveReward14
 	checksubwaystreak 130
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem X_ACCURACY, 5
@@ -141,8 +167,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_13
 	writebyte 130
 	itemtotext X_ACCURACY, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward14:
+	checkevent EVENT_ARCADE_REWARD_14
+	iftrue .GiveReward15
 	checksubwaystreak 140
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem RARE_CANDY, 10
@@ -150,8 +178,10 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_14
 	writebyte 140
 	itemtotext RARE_CANDY, MEM_BUFFER_0
-	jump .ReceivedReward
+	scall .ReceivedReward
 .GiveReward15:
+	checkevent EVENT_ARCADE_REWARD_15
+	iftrue .GiveReward16
 	checksubwaystreak 150
 	ifequal HAVE_LESS, .NoMoreRewards
 	giveitem LEFTOVERS
@@ -159,52 +189,64 @@ PectiniaArcadeSubwayRewardGuy:
 	setevent EVENT_ARCADE_REWARD_15
 	writebyte 150
 	itemtotext LEFTOVERS, MEM_BUFFER_0
+	scall .ReceivedReward
+;	writetext PectiniaArcadeRewardReceiveText
+;	playsound SFX_ITEM
+;	waitbutton
+;	itemnotify
+;	jump .DoneWithRewards
+
 .GiveReward16:
-	checksubwaystreak 999
+	checksubwaystreak 998
 	ifequal HAVE_MORE, .MaxScoreReward
+.DoneWithRewards
+	writetext PectiniaArcadeRewardAfterText
+	waitbutton
+	closetext
+	end
 
 .ReceivedReward:
 	writetext PectiniaArcadeRewardReceiveText
 	playsound SFX_ITEM
 	waitbutton
 	itemnotify
-
-	checkevent EVENT_ARCADE_REWARD_2
-	iffalse .GiveReward2
-	checkevent EVENT_ARCADE_REWARD_3
-	iffalse .GiveReward3
-	checkevent EVENT_ARCADE_REWARD_4
-	iffalse .GiveReward4
-	checkevent EVENT_ARCADE_REWARD_5
-	iffalse .GiveReward5
-	checkevent EVENT_ARCADE_REWARD_6
-	iffalse .GiveReward6
-	checkevent EVENT_ARCADE_REWARD_7
-	iffalse .GiveReward7
-	checkevent EVENT_ARCADE_REWARD_8
-	iffalse .GiveReward8
-	checkevent EVENT_ARCADE_REWARD_9
-	iffalse .GiveReward9
-	checkevent EVENT_ARCADE_REWARD_10
-	iffalse .GiveReward10
-	checkevent EVENT_ARCADE_REWARD_11
-	iffalse .GiveReward11
-	checkevent EVENT_ARCADE_REWARD_12
-	iffalse .GiveReward12
-	checkevent EVENT_ARCADE_REWARD_13
-	iffalse .GiveReward13
-	checkevent EVENT_ARCADE_REWARD_14
-	iffalse .GiveReward14
-	checkevent EVENT_ARCADE_REWARD_15
-	iffalse .GiveReward15
-	checkevent EVENT_ARCADE_REWARD_16
-	iffalse .GiveReward16
+	end
 
 .NoMoreRewards:
-	writetext PectiniaArcadeRewardAfterText
-	waitbutton
-	closetext
+	checkevent EVENT_ARCADE_REWARD_15
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_14
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_13
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_12
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_11
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_10
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_9
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_8
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_7
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_6
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_5
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_4
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_3
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_2
+	iftrue .DoneWithRewards
+	checkevent EVENT_ARCADE_REWARD_1
+	iftrue .DoneWithRewards
 	end
+
+;	checkevent EVENT_ARCADE_REWARD_16
+;	iffalse .GiveReward16
 
 .NoSpace:
 	writetext PectiniaArcadeRewardNoRoomText
@@ -222,8 +264,13 @@ PectiniaArcadeSubwayRewardGuy:
 	pause 60
 	writetext PectiniaArcadePutAwayMasterBallText
 	waitbutton
-	closetext
+;	closetext
 	setevent EVENT_ARCADE_REWARD_16
+;	end
+.GotMasterBall:
+	writetext PectiniaArcadeGotMasterBallText
+	waitbutton
+	closetext
 	end
 
 PectiniaArcadeClerk:
@@ -545,7 +592,17 @@ PectiniaArcadePutAwayMasterBallText:
 	text "<PLAYER> put the"
 	line "MASTER BALLs in"
 	cont "the BALL POCKET."
-	prompt
+	done
+
+PectiniaArcadeGotMasterBallText:
+	text "Defeating 999"
+	line "trainers in a row"
+	cont "is an incredible"
+	cont "accomplishment!"
+
+	para "I've never seen a"
+	line "streak so high!"
+	done
 
 PectiniaArcadeRewardNoRoomText:
 	text "I have more to"
