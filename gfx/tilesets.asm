@@ -252,6 +252,9 @@ INCLUDE "data/tilesets/game_corner_collision.asm"
 TilesetGameCornerAttr:
 INCBIN "data/tilesets/game_corner_attributes.bin"
 
+TilesetCaveMeta:
+INCBIN "data/tilesets/cave_metatiles.bin"
+
 
 SECTION "Tileset Data 8", ROMX
 
@@ -378,6 +381,7 @@ TilesetCastleAttr:
 INCBIN "data/tilesets/castle_attributes.bin"
 
 
+
 SECTION "Tileset Data 12", ROMX
 
 TilesetPortGFX:
@@ -493,6 +497,3 @@ INCBIN "data/tilesets/tunnel_metatiles.bin"
 
 TilesetTunnelColl:
 INCLUDE "data/tilesets/tunnel_collision.asm"
-
-TilesetCaveMeta:
-INCBIN "data/tilesets/cave_metatiles.bin"
