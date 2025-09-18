@@ -57,7 +57,7 @@ BattleTowerMons1:
 
 	db UMBREON
 	db MINT_BERRY
-	db CHARM, PURSUIT, TOXIC, REST
+	db CHARM, BITE, TOXIC, REST
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -254,12 +254,12 @@ BattleTowerMons1:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 43 ; HP
-	bigdw 43 ; Max HP
+	bigdw 44 ; HP
+	bigdw 44 ; Max HP
 	bigdw 29 ; Atk
 	bigdw 29 ; Def
 	bigdw 25 ; Spd
-	bigdw 31 ; SAtk
+	bigdw 32 ; SAtk
 	bigdw 34 ; SDef
 	db "NIyu-RA@@@@"
 
@@ -890,9 +890,9 @@ BattleTowerMons2:
 	bigdw 55 ; SDef
 	db "HAtuSAMU@@@"
 
-	db MACHAMP
+	db NOCTOWL
 	db X_ATTACK
-	db BULK_UP, MACH_PUNCH, THIEF, DRAIN_PUNCH
+	db BRAVE_BIRD, HYPER_BEAM, RECOVER, HEAT_WAVE
 	dw 0 ; OT ID
 	dt 8000 ; Exp
 	; Stat exp
@@ -902,18 +902,18 @@ BattleTowerMons2:
 	bigdw 50000
 	bigdw 30000
 	dn 15, 11, 15, 13 ; DVs
-	db 32, 48, 32, 16 ; PP
+	db 16,  8, 16, 16 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 20 ; Level
 	db 0, 0 ; Status
-	bigdw 84 ; HP
-	bigdw 84 ; Max HP
-	bigdw 75 ; Atk
-	bigdw 55 ; Def
-	bigdw 45 ; Spd
-	bigdw 49 ; SAtk
-	bigdw 57 ; SDef
+	bigdw 88 ; HP
+	bigdw 88 ; Max HP
+	bigdw 43 ; Atk
+	bigdw 43 ; Def
+	bigdw 51 ; Spd
+	bigdw 54 ; SAtk
+	bigdw 62 ; SDef
 	db "EBIWARA-@@@"
 
 	db TAUROS
@@ -1250,11 +1250,11 @@ BattleTowerMons3:
 	db 0, 0 ; Status
 	bigdw 106 ; HP
 	bigdw 106 ; Max HP
-	bigdw 92 ; Atk
-	bigdw 83 ; Def
+	bigdw 95 ; Atk
+	bigdw 89 ; Def
 	bigdw 95 ; Spd
-	bigdw 86 ; SAtk
-	bigdw 68 ; SDef
+	bigdw 89 ; SAtk
+	bigdw 74 ; SDef
 	db "KIREIHANA@@"
 
 	db BLISSEY
@@ -1930,10 +1930,10 @@ BattleTowerMons4:
 	bigdw 127 ; HP
 	bigdw 127 ; Max HP
 	bigdw 90 ; Atk
-	bigdw 106 ; Def
+	bigdw 114 ; Def
 	bigdw 82 ; Spd
 	bigdw 90 ; SAtk
-	bigdw 106 ; SDef
+	bigdw 114 ; SDef
 	db "DAGUTORIO@@"
 
 	db SLOWBRO
@@ -2372,8 +2372,8 @@ BattleTowerMons5:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 50 ; Level
 	db 0, 0 ; Status
-	bigdw 161 ; HP
-	bigdw 161 ; Max HP
+	bigdw 166 ; HP
+	bigdw 166 ; Max HP
 	bigdw 141 ; Atk
 	bigdw 111 ; Def
 	bigdw 161 ; Spd
@@ -3087,7 +3087,7 @@ BattleTowerMons6:
 	db "HAPINASU@@@"
 
 	db SEARION
-	db SILK_SCARF
+	db MIRACLE_SEED
 	db SURF, FLAMETHROWER, EGG_BOMB, SWAGGER
 	dw 0 ; OT ID
 	dt 216000 ; Exp
@@ -3103,12 +3103,12 @@ BattleTowerMons6:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 60 ; Level
 	db 0, 0 ; Status
-	bigdw 209 ; HP
-	bigdw 209 ; Max HP
+	bigdw 214 ; HP
+	bigdw 214 ; Max HP
 	bigdw 150 ; Atk
 	bigdw 149 ; Def
 	bigdw 126 ; Spd
-	bigdw 164 ; SAtk
+	bigdw 170 ; SAtk
 	bigdw 180 ; SDef
 	db "KABIGON@@@@"
 
@@ -3969,11 +3969,11 @@ BattleTowerMons8:
 	db 0, 0 ; Status
 	bigdw 268 ; HP
 	bigdw 268 ; Max HP
-	bigdw 239 ; Atk
-	bigdw 215 ; Def
+	bigdw 247 ; Atk
+	bigdw 231 ; Def
 	bigdw 247 ; Spd
-	bigdw 223 ; SAtk
-	bigdw 175 ; SDef
+	bigdw 231 ; SAtk
+	bigdw 191 ; SDef
 	db "RAPURASU@@@"
 
 	db STEELIX
@@ -5275,11 +5275,11 @@ BattleTowerMons10:
 	db 0, 0 ; Status
 	bigdw 333 ; HP
 	bigdw 333 ; Max HP
-	bigdw 298 ; Atk
-	bigdw 268 ; Def
+	bigdw 308 ; Atk
+	bigdw 288 ; Def
 	bigdw 308 ; Spd
-	bigdw 278 ; SAtk
-	bigdw 218 ; SDef
+	bigdw 288 ; SAtk
+	bigdw 238 ; SDef
 	db "NIyu-RA@@@@"
 
 	db SCIZOR
