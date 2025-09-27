@@ -264,8 +264,8 @@ BattleTowerMons1:
 	db "NIyu-RA@@@@"
 
 	db PORYGON2
-	db BERRY_JUICE
-	db SHARPEN, TRI_ATTACK, HIDDEN_POWER, AGILITY
+	db X_ATTACK
+	db THIEF, HEADBUTT, HIDDEN_POWER, THUNDER_WAVE
 	dw 0 ; OT ID
 	dt 1000 ; Exp
 	; Stat exp
@@ -275,7 +275,7 @@ BattleTowerMons1:
 	bigdw 30000
 	bigdw 30000
 	dn 15, 11, 15, 15 ; DVs
-	db 16, 16, 24, 48 ; PP
+	db 32, 24, 24, 32 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
@@ -1704,7 +1704,7 @@ BattleTowerMons4:
 
 	db GORGROWTH
 	db QUICK_CLAW
-	db LEECH_SEED, GIGA_DRAIN, GLARE, EARTHQUAKE
+	db LEECH_SEED, GIGA_DRAIN, STUN_SPORE, EARTHQUAKE
 	dw 0 ; OT ID
 	dt 64000 ; Exp
 	; Stat exp

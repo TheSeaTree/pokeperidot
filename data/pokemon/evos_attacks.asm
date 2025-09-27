@@ -1172,6 +1172,7 @@ TentacoolEvosAttacks:
 	db 16, BUBBLEBEAM
 	db 20, SCREECH
 	db 24, BIND
+	db 28, BARRIER
 	db 32, ACID_ARMOR
 	db 36, SLUDGE_BOMB
 	db 40, SURF
@@ -1189,6 +1190,7 @@ TentacruelEvosAttacks:
 	db 16, BUBBLEBEAM
 	db 20, SCREECH
 	db 24, BIND
+	db 28, BARRIER
 	db 30, MEAN_LOOK
 	db 34, ACID_ARMOR
 	db 40, SLUDGE_BOMB
