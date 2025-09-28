@@ -2453,6 +2453,7 @@ DollCapsuleEffect:
 	ifless  20, .Geodude
 	ifless  25, .Machop
 	ifless  30, .Voltorb
+	ifless  35, .Jigglypuff
 	ifless  40, .Tentacool
 
 .Weedle:
@@ -2493,6 +2494,11 @@ DollCapsuleEffect:
 .Voltorb:
 	setevent EVENT_DECO_VOLTORB_DOLL
 	pokenamemem VOLTORB, MEM_BUFFER_0
+	jump .Continue
+
+.Jigglypuff:
+	setevent EVENT_DECO_JIGGLYPUFF_DOLL
+	pokenamemem JIGGLYPUFF, MEM_BUFFER_0
 	jump .Continue
 
 .Tentacool:
