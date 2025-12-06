@@ -70,7 +70,7 @@ HepaticaGymWhitneyScript:
 	setevent EVENT_BEAT_GUITARIST_IVAN
 	setevent EVENT_BEAT_GUITARIST_CONRAD
 	setevent EVENT_BEAT_GUITARIST_BOBBY
-	setevent EVENT_BEAT_POKEMANIAC_CHARLIE
+	setevent EVENT_BEAT_POKEMANIAC_PETER
 	opentext
 	writetext PlayerReceivedSkullBadgeText
 	playsound SFX_GET_BADGE

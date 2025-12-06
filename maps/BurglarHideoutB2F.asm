@@ -223,13 +223,13 @@ TrainerSageCaleb2:
 	closetext
 	end
 	
-TrainerScientistPeter:
-	trainer SCIENTIST, PETER, EVENT_BEAT_SCIENTIST_PETER, ScientistPeterText, ScientistPeterWinText, 0, .Script
+TrainerScientistCharlie:
+	trainer SCIENTIST, CHARLIE, EVENT_BEAT_SCIENTIST_CHARLIE, ScientistCharlieText, ScientistCharlieWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext ScientistPeterAfterText
+	writetext ScientistCharlieAfterText
 	waitbutton
 	closetext
 	end
@@ -406,7 +406,7 @@ SageCaleb2AfterText:
 	para "Good!"
 	done
 	
-ScientistPeterText:
+ScientistCharlieText:
 	text "You found the"
 	line "password?"
 	
@@ -414,14 +414,14 @@ ScientistPeterText:
 	line "than I expected."
 	done
 	
-ScientistPeterWinText:
+ScientistCharlieWinText:
 	text "According to my"
 	line "calculations, your"
 	cont "#MON can't take"
 	cont "on everyone here."
 	done
 	
-ScientistPeterAfterText:
+ScientistCharlieAfterText:
 	text "I got a real sweet"
 	line "deal going on."
 	
@@ -570,7 +570,7 @@ BurglarHideoutB2F_MapEvents:
 	object_event 30, 15, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 2, TrainerBurglarDuke2, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 21, 18, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerSageCaleb2, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event 23, 20, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerScientistMilton, EVENT_CLEARED_BURGLAR_HIDEOUT
-	object_event 10,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerScientistPeter, EVENT_CLEARED_BURGLAR_HIDEOUT
+	object_event 10,  5, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 3, TrainerScientistCharlie, EVENT_CLEARED_BURGLAR_HIDEOUT
 	object_event  9, 18, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, BurglarHideoutB2FScientist, -1
 	object_event 32, 18, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, HideoutCardKey, EVENT_GOT_CARD_KEY
 	object_event 33, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BurglarHideoutB2FNugget, EVENT_HIDEOUT_NUGGET

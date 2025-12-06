@@ -175,7 +175,7 @@ CHRIS EQU __enum__
 	const KURT
 	const DAVID
 	const SETH
-	const PETER
+	const CHARLIE
 	const MILTON
 	const COMP1_TRAINER1
 	const COMP2_TRAINER1
@@ -222,7 +222,7 @@ CHRIS EQU __enum__
 	const SKY1_TRAINER1
 	const SKY2_TRAINER1
 	const SKY3_TRAINER1
-	const DARREN
+	const DARYL
 
 	trainerclass LASS ; 19
 	const NICOLE
@@ -293,7 +293,7 @@ CHRIS EQU __enum__
 	const VIOLET
 
 	trainerclass POKEMANIAC ; 1e
-	const CHARLIE
+	const PETER
 	const SCOTT
 	const DYLAN
 	const TRENT
@@ -339,7 +339,7 @@ CHRIS EQU __enum__
 	const OWEN
 	const LONNIE
 	const GREG
-	const CARLOS
+	const CARL
 	const TROY
 	const FOREST1_TRAINER3
 	const FOREST2_TRAINER1

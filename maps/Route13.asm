@@ -40,13 +40,13 @@ TrainerTwinMia:
 	closetext
 	end
 	
-TrainerBugCatcherCarlos:
-	trainer BUG_CATCHER, CARLOS, EVENT_BEAT_BUG_CATCHER_CARLOS, BugCatcherCarlosText, BugCatcherCarlosWinText, 0, .AfterScript
+TrainerBugCatcherCarl:
+	trainer BUG_CATCHER, CARL, EVENT_BEAT_BUG_CATCHER_CARL, BugCatcherCarlText, BugCatcherCarlWinText, 0, .AfterScript
 
 .AfterScript:
 	endifjustbattled
 	opentext
-	writetext BugCatcherCarlosAfterText
+	writetext BugCatcherCarlAfterText
 	waitbutton
 	closetext
 	end
@@ -387,13 +387,13 @@ LassGingerAfterText:
 	cont "point!"
 	done
 	
-BugCatcherCarlosText:
+BugCatcherCarlText:
 	text "Some people think"
 	line "BUG-type #MON"
 	cont "are weak."
 	done
 	
-BugCatcherCarlosWinText:
+BugCatcherCarlWinText:
 	text "Oh no!"
 	line "They were right!"
 	done
@@ -420,7 +420,7 @@ PsychicWesAfterText:
 	line "unstoppable!"
 	done
 	
-BugCatcherCarlosAfterText:
+BugCatcherCarlAfterText:
 	text "I traveled all the"
 	line "way out here to"
 	cont "show people my BUG"
@@ -686,7 +686,7 @@ Route13_MapEvents:
 	object_event 40,  8, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, TheBoneyardGuard, EVENT_HEARD_ROUTE_11_LEADER
 	object_event 42, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinLeah, -1
 	object_event 43, 14, SPRITE_TWIN, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerTwinMia, -1
-	object_event 39, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherCarlos, -1
+	object_event 39, 17, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 1, TrainerBugCatcherCarl, -1
 	object_event 41, 20, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerLassGinger, -1
 	object_event 53, 13, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 3, TrainerPsychicWes, -1
 	object_event 37, 12, SPRITE_YOUNGSTER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 4, TrainerLadTristan, -1

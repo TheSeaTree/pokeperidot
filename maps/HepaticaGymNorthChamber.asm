@@ -20,17 +20,17 @@ TrainerGuitaristTrevor:
 	closetext
 	end	
 	
-TrainerPokemaniacCharlie:
-	trainer POKEMANIAC, CHARLIE, EVENT_BEAT_POKEMANIAC_CHARLIE, PokemaniacCharlieText, PokemaniacCharlieWinText, 0, .Script
+TrainerPokemaniacPeter:
+	trainer POKEMANIAC, PETER, EVENT_BEAT_POKEMANIAC_PETER, PokemaniacPeterText, PokemaniacPeterWinText, 0, .Script
 
 .Script:
 	endifjustbattled
 	opentext
-	writetext PokemaniaCharlieAfterText
+	writetext PokemaniaPeterAfterText
 	waitbutton
 	closetext
-	end	
-	
+	end
+
 TrainerGuitaristMarcel:
 	trainer GUITARIST, MARCEL, EVENT_BEAT_GUITARIST_MARCEL, GuitaristMarcelText, GuitaristMarcelWinText, 0, .Script
 
@@ -106,21 +106,21 @@ HepaticaGymNorthChamberLeaderSwitch:
 .flipped
 	jumptext HepaticaGymNorthChamberLeaderSwitchStuckText
 
-PokemaniacCharlieText:
+PokemaniacPeterText:
 	text "What are you hop-"
 	line "ing to find, young"
 	cont "trainer?"
 	
 	para "A battle, perhaps?"
 	done
-	
-PokemaniacCharlieWinText:
+
+PokemaniacPeterWinText:
 	text "The bond with my"
 	line "#MON remains"
 	cont "unbroken."
 	done
-	
-PokemaniaCharlieAfterText:
+
+PokemaniaPeterAfterText:
 	text "You show great"
 	line "courage revealing"
 	cont "all of these trai-"
@@ -227,4 +227,4 @@ HepaticaGymNorthChamber_MapEvents:
 	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 4, TrainerGuitaristTrevor, -1
 	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristMarcel, -1
 	object_event 0, -2, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_DOWN , 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerGuitaristIvan, -1
-	object_event 0, -2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacCharlie, -1
+	object_event 0, -2, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_TRAINER, 2, TrainerPokemaniacPeter, -1
