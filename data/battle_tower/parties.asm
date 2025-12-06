@@ -20,13 +20,13 @@ BattleTowerMons1:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 41 ; HP
-	bigdw 41 ; Max HP
-	bigdw 20 ; Atk
-	bigdw 25 ; Def
-	bigdw 36 ; Spd
-	bigdw 33 ; SAtk
-	bigdw 40 ; SDef
+	bigdw 42 ; HP
+	bigdw 42 ; Max HP
+	bigdw 27 ; Atk
+	bigdw 26 ; Def
+	bigdw 40 ; Spd
+	bigdw 36 ; SAtk
+	bigdw 33 ; SDef
 	db "SANDA-SU@@@"
 
 	db ESPEON
@@ -48,11 +48,11 @@ BattleTowerMons1:
 	db 0, 0 ; Status
 	bigdw 39 ; HP
 	bigdw 39 ; Max HP
-	bigdw 20 ; Atk
-	bigdw 25 ; Def
-	bigdw 40 ; Spd
-	bigdw 33 ; SAtk
-	bigdw 36 ; SDef
+	bigdw 21 ; Atk
+	bigdw 26 ; Def
+	bigdw 36 ; Spd
+	bigdw 40 ; SAtk
+	bigdw 33 ; SDef
 	db "E-HUi@@@@@@"
 
 	db UMBREON
@@ -72,8 +72,8 @@ BattleTowerMons1:
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 10 ; Level
 	db 0, 0 ; Status
-	bigdw 47 ; HP
-	bigdw 47 ; Max HP
+	bigdw 48 ; HP
+	bigdw 48 ; Max HP
 	bigdw 27 ; Atk
 	bigdw 36 ; Def
 	bigdw 27 ; Spd
@@ -152,7 +152,7 @@ BattleTowerMons1:
 	db 0, 0 ; Status
 	bigdw 43 ; HP
 	bigdw 43 ; Max HP
-	bigdw 26 ; Atk
+	bigdw 36 ; Atk
 	bigdw 30 ; Def
 	bigdw 35 ; Spd
 	bigdw 25 ; SAtk
@@ -1519,7 +1519,7 @@ BattleTowerMons3:
 
 	db TENTACRUEL
 	db MYSTERYBERRY
-	db BARRIER, GIGA_DRAIN, HYDRO_PUMP, MIRROR_COAT
+	db ACID_ARMOR, GIGA_DRAIN, HYDRO_PUMP, MIRROR_COAT
 	dw 0 ; OT ID
 	dt 27000 ; Exp
 	; Stat exp
@@ -1529,7 +1529,7 @@ BattleTowerMons3:
 	bigdw 47000
 	bigdw 45000
 	dn 15, 14, 15, 14 ; DVs
-	db 48, 8, 8, 32 ; PP
+	db 61, 8, 8, 32 ; PP
 	db 100 ; Happiness
 	db 0, 0, 0 ; Pokerus, Caught data
 	db 30 ; Level
