@@ -20,8 +20,11 @@ UnownAGChamberWallText:
 	waitbutton
 	writebyte UNOWNWORDS_FRIENDS
 	special DisplayUnownWords
+	checkflag ENGINE_UNLOCKED_UNOWNS_A_TO_G
+	iftrue .AlreadyActive
 	special GetFirstPokemonHappiness
 	ifgreater 200 - 1, .UnlockUnown
+.AlreadyActive
 	writetext UnownAGWritingText2
 	waitbutton
 	closetext
