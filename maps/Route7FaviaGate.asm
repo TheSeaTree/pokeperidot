@@ -94,9 +94,9 @@ Route7FaviaGateScientistAfterText:
 	cont "hold my EXP.SHARE,"
 	cont "it will grow"
 	cont "stronger without"
-	cont "needing to battle"
-	cont "itself."
-	
+	cont "needing to enter"
+	cont "battle itself."
+
 	para "It is quite the"
 	line "marvelous little"
 	cont "device, I think!"
