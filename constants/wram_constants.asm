@@ -264,7 +264,7 @@ CELEBIEVENT_FOREST_IS_RESTLESS_F EQU 2
 
 ; wDailyFlags1:: ; dc1e
 	const_def
-	const DAILYFLAGS1_KURT_MAKING_BALLS_F             ; 0
+	const DAILYFLAGS1_DST_CHANGED_F			          ; 0
 	const DAILYFLAGS1_OFFICER_DANIEL_BATTLE_F         ; 1
 	const DAILYFLAGS1_SODA_POP_GUY_F                  ; 2
 	const DAILYFLAGS1_VITAMIN_TIMER_F                 ; 3

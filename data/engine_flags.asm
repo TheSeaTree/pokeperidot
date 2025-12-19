@@ -95,7 +95,7 @@ EngineFlags:
 
 	engine_flag wStatusFlags2, STATUSFLAGS2_BATTLE_SIMULATION_F
 
-	engine_flag wDailyFlags1, DAILYFLAGS1_KURT_MAKING_BALLS_F ; $50
+	engine_flag wDailyFlags1, DAILYFLAGS1_DST_CHANGED_F ; $50
 	engine_flag wDailyFlags1, DAILYFLAGS1_OFFICER_DANIEL_BATTLE_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_SODA_POP_GUY_F
 	engine_flag wDailyFlags1, DAILYFLAGS1_VITAMIN_TIMER_F

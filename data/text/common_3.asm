@@ -1631,8 +1631,8 @@ UnknownText_0x1c6030::
 	prompt
 
 UnknownText_0x1c6056::
-	text "Set the clock"
-	line "back one hour?"
+	text "Do you want to"
+	line "adjust the clock?"
 	done
 
 UnknownText_0x1c6075::
@@ -1642,16 +1642,15 @@ UnknownText_0x1c6075::
 	prompt
 
 UnknownText_0x1c6095::
-	text "Do you want to"
-	line "adjust your clock"
-
-	para "for Daylight"
-	line "Saving Time?"
-	done
+	text "The time can't be"
+	line "changed that way"
+	cont "right now."
+	prompt
 
 UnknownText_0x1c60d1::
-	text "The time can't be"
-	line "changed right now."
+	text "The time has al-"
+	line "ready been changed"
+	cont "today."
 	prompt
 
 MoveReminderIntroText::

@@ -292,66 +292,56 @@ BankOfMom:
 	ret
 
 DSTChecks:
-; check the time; avoid changing DST if doing so would change the current day
-	ld a, [wDST]
-	bit 7, a
-	ldh a, [hHours]
-	jr z, .NotDST
-	and a ; within one hour of 00:00?
-	jr z, .LostBooklet
-	jr .loop
-
-.NotDST:
-	cp 23 ; within one hour of 23:00?
-	jr nz, .loop
-	; fallthrough
-
-.LostBooklet:
 	call .ClearBox
 	bccoord 1, 14
-	ld hl, .Text_AdjustClock
-	call PlaceHLTextAtBC
-	call YesNoBox
-	ret c
-	call .ClearBox
-	bccoord 1, 14
-	ld hl, .Text_LostInstructionBooklet
-	call PlaceHLTextAtBC
-	ret
 
-.loop
-	call .ClearBox
-	bccoord 1, 14
-	ld a, [wDST]
-	bit 7, a
-	jr z, .SetDST
+	ld hl, wDailyFlags1
+	bit DAILYFLAGS1_DST_CHANGED_F, [hl]
+	jp nz, .AlreadyChangedToday
+
 	ld hl, .Text_IsDSTOver
 	call PlaceHLTextAtBC
-	call YesNoBox
+
+	ld hl, .MenuHeader
+	call CopyMenuHeader
+	call VerticalMenu
+	ld a, [wMenuCursorY]
 	ret c
-	ld a, [wDST]
-	res 7, a
-	ld [wDST], a
+	cp $3
+	ret z
+	cp $1
+	jp z, .DST_Forward
+	; fallthrough
+
+.DST_Back
+	ldh a, [hHours]
+	and a ; within one hour of 00:00?
+	jr z, .CantAdjustTimeThatWay
+
 	call .SetClockBack
 	call .ClearBox
 	bccoord 1, 14
 	ld hl, .Text_SetClockBack
 	call PlaceHLTextAtBC
+
+	ld hl, wDailyFlags1
+	set DAILYFLAGS1_DST_CHANGED_F, [hl]
 	ret
 
-.SetDST:
-	ld hl, .Text_SwitchToDST
-	call PlaceHLTextAtBC
-	call YesNoBox
-	ret c
-	ld a, [wDST]
-	set 7, a
-	ld [wDST], a
+.DST_Forward
+	ld a, [wStartHour]
+	add 2
+	sub 23
+	jr z, .CantAdjustTimeThatWay
+
 	call .SetClockForward
 	call .ClearBox
 	bccoord 1, 14
 	ld hl, .Text_SetClockForward
 	call PlaceHLTextAtBC
+
+	ld hl, wDailyFlags1
+	set DAILYFLAGS1_DST_CHANGED_F, [hl]
 	ret
 
 .SetClockForward:
@@ -389,6 +379,20 @@ DSTChecks:
 	call ClearBox
 	ret
 
+.AlreadyChangedToday:
+	call .ClearBox
+	bccoord 1, 14
+	ld hl, .Text_LostInstructionBooklet
+	call PlaceHLTextAtBC
+	ret
+
+.CantAdjustTimeThatWay:
+	call .ClearBox
+	bccoord 1, 14
+	ld hl, .Text_CantSwitchToDST
+	call PlaceHLTextAtBC
+	ret
+
 .Text_AdjustClock:
 	; Do you want to adjust your clock for Daylight Saving Time?
 	text_far UnknownText_0x1c6095
@@ -400,9 +404,9 @@ DSTChecks:
 	text_far UnknownText_0x1c60d1
 	text_end
 
-.Text_SwitchToDST:
+.Text_CantSwitchToDST:
 	; Do you want to switch to Daylight Saving Time?
-	text_far UnknownText_0x1c6000
+	text_far UnknownText_0x1c6095
 	text_end
 
 .Text_SetClockForward:
@@ -419,6 +423,19 @@ DSTChecks:
 	; I put the clock back one hour.
 	text_far UnknownText_0x1c6075
 	text_end
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 10, 5, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR | STATICMENU_NO_TOP_SPACING ; flags
+	db 3 ; items
+	db "FORWARD@"
+	db "BACK@"
+	db "CANCEL@"
 
 Mom_SetUpWithdrawMenu:
 	ld de, Mon_WithdrawString
