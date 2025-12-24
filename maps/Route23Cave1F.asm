@@ -6,7 +6,7 @@ Route23Cave1F_MapScripts:
 	db 0 ; callbacks
 
 Route23Cave1FHiddenStardust:
-	hiddenitem HP_UP, EVENT_ROUTE_23_CAVE_HIDDEN_STARDUST
+	hiddenitem STARDUST, EVENT_ROUTE_23_CAVE_HIDDEN_STARDUST
 
 Route23Cave1FHiddenHPUp:
 	hiddenitem HP_UP, EVENT_ROUTE_23_CAVE_HIDDEN_HP_UP

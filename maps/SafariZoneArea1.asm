@@ -24,7 +24,7 @@ SafariZoneArea1MoonStone:
 	itemball MOON_STONE
 
 SafariZoneArea1WaterStone:
-	itemball MOON_STONE
+	itemball WATER_STONE
 
 SafariZoneArea1ScopeLens:
 	itemball SCOPE_LENS
