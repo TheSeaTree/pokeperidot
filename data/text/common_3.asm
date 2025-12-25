@@ -1631,7 +1631,7 @@ UnknownText_0x1c6030::
 	prompt
 
 UnknownText_0x1c6056::
-	text "Do you want to"
+	text "How do you want to"
 	line "adjust the clock?"
 	done
 
