@@ -51,16 +51,21 @@ StaghornThiefHouseGrampsText:
 	text "Some little punk"
 	line "stole my brand-new"
 	cont "BICYCLE!"
+
+	para "I left it outside"
+	line "last night, and it"
+	cont "was gone when I"
+	cont "woke up."
 	done
-	
+
 StaghornThiefHouseHaveBikeText:
 	text "Oh? A BURGLAR gave"
 	line "you a BICYCLE"
-	cont "after beating him?"
-	
-	para "Let me see it."
+	cont "after a battle?"
+
+	para "Let me see it…"
 	done
-	
+
 StaghornThiefHouseMaleShowBike:
 	text "<PLAYER> showed"
 	line "the man his"
@@ -76,33 +81,32 @@ StaghornThiefHouseFemaleShowBike
 StaghornThiefHouseSurprised:	
 	text "Holy moly! That is"
 	line "my BICYCLE!"
-	
+
 	para "Look, you seem"
 	line "like a good kid so"
 	cont "I won't ask for my"
 	cont "BICYCLE back."
-	
+
 	para "I'm an old man, I"
 	line "don't have much"
 	cont "use for one of"
 	cont "those things any-"
 	cont "way."	
-	
+
 	para "I would like to"
 	line "reward you for"
 	cont "showing that punk"
-	cont "what bike thieves"
-	cont "get."
+	cont "what thieves get."
 	done
-	
+
 StaghornThiefHouseTMText:
 	text "That TM contains"
 	line "THIEF."
-	
-	para "Use it if you want"
-	line "to take any held"
-	cont "items that don't"
-	cont "belong to you."
+
+	para "You can use it to"
+	line "take back items"
+	cont "that were stolen"
+	cont "from you, too."
 	done
 
 StaghornThiefHouse_MapEvents:
@@ -116,5 +120,5 @@ StaghornThiefHouse_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 1 ; object events
 	object_event  2,  3, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, StaghornThiefHouseGrampsScript, -1
