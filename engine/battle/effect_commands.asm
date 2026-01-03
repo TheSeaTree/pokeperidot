@@ -2301,11 +2301,11 @@ BattleCommand_ApplyDamage:
 	cp HELD_FOCUS_BAND
 	ld b, 0
 	jr nz, .damage
-
-.activate
 	call BattleRandom
 	cp c
 	jr nc, .damage
+
+.activate
 	call BattleCommand_FalseSwipe
 	ld b, 0
 	jr nc, .damage
