@@ -3370,10 +3370,25 @@ AIDiscourageMove:
 	ld a, [wEnemyMoveStruct + MOVE_EFFECT]
 	cp EFFECT_BONEMERANG
 	jr z, .skip
+	cp EFFECT_FUTURE_SIGHT
+	jr z, .checkfuturesight
+.discourage
 	ld a, [hl]
 	add 10
 	ld [hl], a
 .skip
+	ret
+
+.checkfuturesight
+; Greatly discourage this move if Future Sight is already active.
+	ld a, [wEnemyFutureSightCount]
+	and a
+	jr nz, .discourage
+; Discourage this move if the player is not dark-type.
+	ld a, [wTypeMatchup]
+	and a
+	ret z
+	inc [hl]
 	ret
 
 AIGetEnemyMove:
