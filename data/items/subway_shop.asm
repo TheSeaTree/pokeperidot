@@ -8,7 +8,7 @@ BattleSubwayStatShopData:
 	dbw PP_UP,			  5
 	dbw EXP_SHARE,	 	 15
 	dbw RARE_CANDY,		 20
-	dbw LUCKY_EGG,		50
+	dbw LUCKY_EGG,	     50
 	dbw TM_CALM_MIND, 	 50
 	dbw TM_BULK_UP, 	 50
 	dbw TM_TOXIC,		 50
