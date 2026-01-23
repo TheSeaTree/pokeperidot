@@ -468,51 +468,51 @@ WaterWildMons:
 
 	map_id PAST_ELKHORN_TOWN
 	db 2 percent ; encounter rate
-	db 17, GOLDEEN
-	db 17, POLIWAG
-	db 18, PSYDUCK
-	db 17, POLIWAG
-	db 18, POLIWAG
+	db 15, GOLDEEN
+	db 15, POLIWAG
+	db 16, PSYDUCK
+	db 15, POLIWAG
+	db 16, POLIWAG
 
 	map_id PAST_PAVONA_VILLAGE
 	db 2 percent ; encounter rate
-	db 17, GOLDEEN
-	db 17, POLIWAG
-	db 18, POLIWAG
-	db 17, POLIWAG
-	db 18, POLIWAG
+	db 15, GOLDEEN
+	db 15, POLIWAG
+	db 16, POLIWAG
+	db 15, POLIWAG
+	db 16, POLIWAG
 
 	map_id PAST_ROUTE_1
 	db 4 percent ; encounter rate
-	db 17, GOLDEEN
-	db 17, POLIWAG
-	db 17, POLIWAG
-	db 16, MARILL
-	db 17, FARFETCH_D
+	db 15, GOLDEEN
+	db 15, POLIWAG
+	db 15, POLIWAG
+	db 14, MARILL
+	db 15, FARFETCH_D
 
 	map_id PAST_ROUTE_3
 	db 4 percent ; encounter rate
-	db 18, GOLDEEN
-	db 17, POLIWAG
-	db 17, YANMA
-	db 18, YANMA
-	db 17, POLIWAG
+	db 16, GOLDEEN
+	db 15, POLIWAG
+	db 15, YANMA
+	db 16, YANMA
+	db 15, POLIWAG
 
 	map_id PAST_OCCIDENT_FOREST
 	db 6 percent ; encounter rate
-	db 16, POLIWAG
-	db 17, POLIWAG
-	db 17, GOLDEEN
-	db 19, GOLDEEN
-	db 18, WOOPER
+	db 15, POLIWAG
+	db 14, POLIWAG
+	db 14, GOLDEEN
+	db 16, GOLDEEN
+	db 15, WOOPER
 
 	map_id PAST_ROUTE_10
 	db 4 percent ; encounter rate
-	db 17, PSYDUCK
-	db 18, GOLDEEN
-	db 17, MARILL
-	db 18, MAGIKARP
-	db 17, MISDREAVUS
+	db 15, PSYDUCK
+	db 16, GOLDEEN
+	db 15, MARILL
+	db 16, MAGIKARP
+	db 15, MISDREAVUS
 
 	map_id GENESIS_ISLAND
 	db 6 percent ; encounter rate
