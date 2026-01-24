@@ -239,6 +239,7 @@ endc
 	dw Script_trainerpic                 ; aa
 	dw Script_sketchbookmenu             ; ab
 	dw Script_checksubwaystreak          ; ac
+	dw Script_overworld_2dmenu           ; ad
 
 StartScript:
 	ld hl, wScriptFlags
@@ -2867,4 +2868,16 @@ Script_trainerpic:
 .ok
 	ld [wTrainerClass], a
 	farcall Trainerpic
+	ret
+
+Script_overworld_2dmenu:
+; script command 0xad
+	ld a, [wScriptBank]
+	ld hl, _SafariSimulationMenu
+	rst FarCall
+	ld a, [wMenuCursorBuffer]
+	jr nc, .ok
+	xor a
+.ok
+	ld [wScriptVar], a
 	ret

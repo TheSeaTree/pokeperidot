@@ -1088,3 +1088,8 @@ checksubwaystreak: MACRO
 	db checksubwaystreak_command
 	dw \1 ; subway streak
 ENDM
+
+	enum overworld_2dmenu_command ; $58
+overworld_2dmenu: MACRO
+	db overworld_2dmenu_command
+ENDM

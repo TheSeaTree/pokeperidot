@@ -211,6 +211,82 @@ TreasureHunter:
 	closetext
 	end
 
+TreasureHunterBook:
+	opentext
+	writetext TreasureHunterBookText
+	yesorno
+	iffalse .Done
+.Loop:
+	writetext TreasureHunterChooseAnEntryText
+	loadmenu .TreasureHunterBookMenuHeader
+	overworld_2dmenu
+	closewindow
+	ifequal 1, .Intro
+	ifequal 2, .Ruby
+	ifequal 3, .Quartz
+	ifequal 4, .Sapphire
+	ifequal 5, .Spinel
+	ifequal 6, .Emerald
+.Done
+	closetext
+	end
+
+.Intro
+	writetext TreasureHunterBookIntroText
+	waitbutton
+	jump .AskContinue
+
+.Ruby
+	writetext TreasureHunterBookRubyText
+	waitbutton
+	jump .AskContinue
+
+.Quartz
+	writetext TreasureHunterBookQuartzText
+	waitbutton
+	jump .AskContinue
+
+.Sapphire
+	writetext TreasureHunterBookSapphireText
+	waitbutton
+	jump .AskContinue
+
+.Spinel
+	writetext TreasureHunterBookSpinelText
+	waitbutton
+	jump .AskContinue
+
+.Emerald
+	writetext TreasureHunterBookEmeraldText
+	waitbutton
+.AskContinue:
+	writetext TreasureHunterContinueReadingText
+	yesorno
+	iffalse .Done
+	jump .Loop
+	
+
+.TreasureHunterBookMenuHeader
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, 18, 7
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	dn 3, 2 ; rows, columns
+	db 8 ; spacing
+	dba .Text
+	dbw BANK(TreasureHunterBook), 0
+
+.Text:
+	db "INTRO@"
+	db "RUBY@"
+	db "QUARTZ@"
+	db "SAPPHIRE@"
+	db "SPINEL@"
+	db "EMERALD@"
+
 TreasureHunterWorkbench:
 	jumptext TreasureHunterWorkbenchText
 
@@ -375,6 +451,111 @@ TreasureHunterBagFullText:
 	cont "some BAG space?"
 	done
 
+TreasureHunterBookText:
+	text "This seems to be a"
+	line "a diary about some"
+	cont "valuable jewelry."
+
+	para "Read it?"
+	done
+
+TreasureHunterChooseAnEntryText:
+	text "Choose an entry to"
+	line "read."
+	done
+
+TreasureHunterContinueReadingText:
+	text "Continue reading?"
+	done
+
+TreasureHunterBookIntroText:
+	text "Five GEMSTONEs,"
+	line "each one guarded"
+	cont "by a #MON much"
+	cont "stronger than"
+	cont "those typically"
+	cont "found in the wild."
+
+	para "Using information"
+	line "shared by other"
+	cont "TREASURE HUNTERs,"
+	cont "I hope to add"
+	cont "these treasures to"
+	cont "my collection."
+	done
+
+TreasureHunterBookRubyText:
+	text "The RUBY is known"
+	line "to be housed at"
+	cont "the summit of a"
+	cont "ferocious VOLCANO."
+
+	para "There's rumors of a"
+	line "group of BLACKBELT"
+	cont "trainers who use"
+	cont "this GEM's guardian"
+	cont "for training their"
+	cont "own #MON."
+	done
+
+TreasureHunterBookQuartzText:
+	text "Conversely, the"
+	line "QUARTZ resides on"
+	cont "a frozen mountain-"
+	cont "top, at a peak"
+	cont "higher than any"
+	cont "human dares to"
+	cont "make their home."
+	done
+
+TreasureHunterBookSapphireText:
+	text "The SAPPHIRE…"
+
+	para "Its location was"
+	line "a lively town just"
+	cont "some 30 years ago."
+
+	para "Now, only two"
+	line "homes remain. The"
+	cont "rest were abandon-"
+	cont "ed and demolished."
+
+	para "Of those two, one"
+	line "house has been"
+	cont "vacant for years."
+	done
+
+TreasureHunterBookSpinelText:
+	text "Information on the"
+	line "SPINEL is hard to"
+	cont "come by, as many"
+	cont "sources claim it"
+	cont "was lost at sea."
+
+	para "Its location is"
+	line "hard to pinpoint,"
+	cont "but a #MON must"
+	cont "have taken it into"
+	cont "a cave somewhere."
+
+	para "REMNANT CAVE can"
+	line "be ruled out, as"
+	cont "it is entirely"
+	cont "above sea level."
+	done
+
+TreasureHunterBookEmeraldText:
+	text "Finally, the"
+	line "EMERALD has been"
+	cont "spotted in a cave"
+	cont "at the base of a"
+	cont "VOLCANO."
+
+	para "Perhaps this is"
+	line "nearby where the"
+	cont "RUBY can be found?"
+	done
+
 TreasureHunterWorkbenchText:
 	text "It's a work bench"
 	line "with lots of tools"
@@ -409,13 +590,13 @@ TreasureHuntersHouse_MapEvents:
 
 	db 0 ; coord events
 
-	db 6 ; bg events
-	bg_event  8,  2, BGEVENT_READ, TreasureHunterWorkbench
+	db 5 ; bg events
 	bg_event  9,  2, BGEVENT_READ, TreasureHunterWorkbench
 	bg_event 10,  2, BGEVENT_READ, TreasureHunterWorkbench
 	bg_event 11,  2, BGEVENT_READ, TreasureHunterToolsDrawer
 	bg_event  3,  2, BGEVENT_UP, TreasureHunterBookshelf
 	bg_event  2,  2, BGEVENT_READ, TreasureHunterDisplayCase
 
-	db 1 ; object events
+	db 2 ; object events
 	object_event 4, 4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, TreasureHunter, -1
+	object_event  8,  2, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, TreasureHunterBook, -1

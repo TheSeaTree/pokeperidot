@@ -14,6 +14,24 @@ VictoryCoastCooltrainerF:
 VictoryCoastSwimmerM:
 	jumptextfaceplayer VictoryCoastSwimmerMText
 
+VictoryCoastPokefanM:
+	faceplayer
+	opentext
+	writetext VictoryCoastPokefanMText
+	waitbutton
+	checkevent EVENT_BEAT_ELITE_FOUR
+	iftrue .postgame
+	writetext VictoryCoastPokefanMRouteBlockedText
+	waitbutton
+	closetext
+	end
+
+.postgame
+	writetext VictoryCoastPokefanMPostgameText
+	waitbutton
+	closetext
+	end
+
 VictoryPortSign:
 	jumptext VictoryPortSignText
 
@@ -49,6 +67,30 @@ VictoryCoastSwimmerMText:
 	cont "must face!"
 	done
 
+VictoryCoastPokefanMText:
+	text "There is a man on"
+	line "ROUTE 23 who loves"
+	cont "collecting all"
+	cont "kinds of treasure."
+	done
+
+VictoryCoastPokefanMRouteBlockedText:
+	text "I was going to pay"
+	line "him a visit, but"
+	cont "some trainers on"
+	cont "ROUTE 22 are"
+	cont "blocking the way"
+	cont "with a battle."
+	done
+
+VictoryCoastPokefanMPostgameText:
+	text "I was going to pay"
+	line "him a visit, but"
+	cont "I got lost in a"
+	cont "cave and had to"
+	cont "turn back…"
+	done
+
 VictoryPortSignText:
 	text "VICTORY PORT"
 
@@ -71,7 +113,8 @@ VictoryCoast_MapEvents:
 	db 1 ; bg events
 	bg_event 13, 19, BGEVENT_READ, VictoryPortSign
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event 21, 17, SPRITE_SAILOR, SPRITEMOVEDATA_WALK_UP_DOWN, 3, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryCoastSailor, -1
-	object_event 29, 18, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, PAL_NPC_RED, VictoryCoastCooltrainerF, -1
+	object_event 29, 18, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, VictoryCoastCooltrainerF, -1
 	object_event 23, 25, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, VictoryCoastSwimmerM, -1
+	object_event 36, 12, SPRITE_POKEFAN_M, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, VictoryCoastPokefanM, -1
