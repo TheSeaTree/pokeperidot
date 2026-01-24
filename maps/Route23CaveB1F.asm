@@ -57,7 +57,7 @@ Route23CaveB1F_MapScripts:
 .OpenGate:
 	checkevent EVENT_ROUTE_23_CAVE_BOULDER
 	iffalse .skip
-	changeblock 6, 8, $cf ; open door
+	changeblock 6, 8, $03 ; open door
 .skip
 	return
 
