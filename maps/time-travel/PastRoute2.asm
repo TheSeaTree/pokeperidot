@@ -275,7 +275,7 @@ PokefanFPatriciaAfterText:
 LassPaigeText:
 	text "My #MON know"
 	line "how to use"
-	line "lots of moves!"
+	cont "lots of moves!"
 	done
 
 LassPaigeWinText:
