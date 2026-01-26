@@ -453,7 +453,7 @@ TreasureHunterBagFullText:
 
 TreasureHunterBookText:
 	text "This seems to be a"
-	line "a diary about some"
+	line "a report about"
 	cont "valuable jewelry."
 
 	para "Read it?"
@@ -479,8 +479,9 @@ TreasureHunterBookIntroText:
 	para "Using information"
 	line "shared by other"
 	cont "TREASURE HUNTERs,"
-	cont "I hope to add"
-	cont "these treasures to"
+	cont "I hope to find"
+	cont "these treasures"
+	cont "and add them to"
 	cont "my collection."
 	done
 
@@ -532,11 +533,10 @@ TreasureHunterBookSpinelText:
 	cont "sources claim it"
 	cont "was lost at sea."
 
-	para "Its location is"
-	line "hard to pinpoint,"
-	cont "but a #MON must"
-	cont "have taken it into"
-	cont "a cave somewhere."
+	para "One theory is that"
+	line "a #MON may have"
+	cont "taken it into a"
+	cont "cave somewhere."
 
 	para "REMNANT CAVE can"
 	line "be ruled out, as"
@@ -599,4 +599,4 @@ TreasureHuntersHouse_MapEvents:
 
 	db 2 ; object events
 	object_event 4, 4, SPRITE_PHARMACIST, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, TreasureHunter, -1
-	object_event  8,  2, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_SILVER, OBJECTTYPE_SCRIPT, 0, TreasureHunterBook, -1
+	object_event 8, 2, SPRITE_POKEDEX, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, TreasureHunterBook, -1
