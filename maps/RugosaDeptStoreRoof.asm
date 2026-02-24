@@ -65,28 +65,37 @@ RugosaDeptStoreRoof_MapScripts:
 
 RugosaDeptStoreRoofMorningClerkScript:
 	faceplayer
+	checktime MORN
+	iffalse RugosaDeptStoreClerkAfterHours
 	opentext
 	writetext RugosaDeptStoreRoofMorningClerkText
 	waitbutton
 	jump RugosaDeptStoreRoofClerkMart
-	
+
 RugosaDeptStoreRoofDayClerkScript:
 	faceplayer
+	checktime DAY
+	iffalse RugosaDeptStoreClerkAfterHours
 	opentext
 	writetext RugosaDeptStoreRoofDayClerkText
 	waitbutton
 	jump RugosaDeptStoreRoofClerkMart
-	
+
 RugosaDeptStoreRoofNightClerkScript:
 	faceplayer
+	checktime NITE
+	iffalse RugosaDeptStoreClerkAfterHours
 	opentext
 	writetext RugosaDeptStoreRoofNightClerkText
 	waitbutton
-	
+
 RugosaDeptStoreRoofClerkMart:
 	pokemart MARTTYPE_ROOFTOP, 0
 	closetext
 	end
+
+RugosaDeptStoreClerkAfterHours:
+	jumptext RugosaDeptStoreClerkAfterHoursText
 
 RugosaDeptStoreRoofScientistScript:
 	jumptextfaceplayer RugosaDeptStoreRoofScientistText
@@ -97,6 +106,8 @@ RugosaDeptStoreRoofPokefanFScript:
 RugosaDeptStoreRoofLassScript:
 	faceplayer
 	opentext
+	checktime NITE
+	iffalse .not_nite
 	writetext RugosaDeptStoreRoofLassText1
 	waitbutton
 	closetext
@@ -104,6 +115,12 @@ RugosaDeptStoreRoofLassScript:
 	turnobject PLAYER, UP
 	opentext
 	writetext RugosaDeptStoreRoofLassText2
+	waitbutton
+	closetext
+	end
+
+.not_nite
+	writetext RugosaDeptStoreRoofLassText3
 	waitbutton
 	closetext
 	end
@@ -179,7 +196,7 @@ RugosaDeptStoreRoofPokefanFText:
 	line "up to the rooftop"
 	cont "to get some fresh"
 	cont "air."
-	
+
 	para "It can get awfully"
 	line "stuffy in those"
 	cont "shops."
@@ -194,12 +211,24 @@ RugosaDeptStoreRoofLassText1:
 	line "about it that"
 	cont "fills me with joy."
 	done
-	
+
 RugosaDeptStoreRoofLassText2:
 	text "Sigh…"
 	
 	para "Some day I hope to"
 	line "explore the stars…"
+	done
+
+RugosaDeptStoreRoofLassText3:
+	text "Sigh…"
+
+	para "Nights always go"
+	line "by so quickly."
+
+	para "There's never"
+	line "enough time to"
+	cont "fully admire the"
+	cont "MOON and stars…"
 	done
 
 RugosaDeptStoreRoofFisherText:
@@ -233,12 +262,12 @@ RugosaDeptStoreRoofSuperNerdText:
 	line "cause a SHELLDER"
 	cont "to evolve."
 	done
-	
+
 RugosaDeptStoreRoofRockerText:
 	text "The items sold up"
 	line "on the roof here"
 	cont "are pretty rare."
-	
+
 	para "They're also expe-"
 	line "nsive, but it sure"
 	cont "beats trying to"
@@ -258,6 +287,16 @@ RugosaDeptStoreRoofNightClerkText:
 	text "Good evening!"
 	done
 
+RugosaDeptStoreClerkAfterHoursText:
+	text "I'm sorry, but I"
+	line "have nothing for"
+	cont "sale right now."
+
+	para "I was just packing"
+	line "up and heading out"
+	cont "to PECTINIA CITY."
+	done
+
 Binoculars1Text:
 	text "These binoculars"
 	line "let me see so far"
@@ -265,7 +304,7 @@ Binoculars1Text:
 	cont "see my own house!"
 
 	para "…Wait, no."
-	
+
 	para "My house in in the"
 	line "other direction…"
 	done
@@ -274,7 +313,7 @@ Binoculars2Text:
 	text "Hey! A man just"
 	line "caught a really"
 	cont "big FISH #MON!"
-	
+
 	para "It almost looked"
 	line "like his ROD was"
 	cont "going to snap"
@@ -293,7 +332,7 @@ Binoculars3Text:
 
 Binoculars4Text:
 	text "Hm…"
-	
+
 	para "Not much is going"
 	line "on right now, it"
 	cont "seems."
