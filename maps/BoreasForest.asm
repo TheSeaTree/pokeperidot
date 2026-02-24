@@ -18,7 +18,7 @@ BoreasForestRivalBattleLeft:
 	scall BoreasForestRivalBattleCommon
 	playsound SFX_BALL_POOF
 	applymovement BOREASFOREST_RIVAL, BoreasForestRivalMewtwoBreakFree
-	moveobject BOREASFOREST_MEWTWO, 17, 23
+	moveobject BOREASFOREST_MEWTWO, 17, 25
 	appear BOREASFOREST_MEWTWO
 	scall BoreasForestRivalAfterBattle
 	applymovement BOREASFOREST_RIVAL, BoreasForestRivalExitLeft
@@ -30,7 +30,7 @@ BoreasForestRivalBattleRight:
 	scall BoreasForestRivalBattleCommon
 	playsound SFX_BALL_POOF
 	applymovement BOREASFOREST_RIVAL, BoreasForestRivalMewtwoBreakFree
-	moveobject BOREASFOREST_MEWTWO, 18, 23
+	moveobject BOREASFOREST_MEWTWO, 18, 25
 	appear BOREASFOREST_MEWTWO
 	scall BoreasForestRivalAfterBattle
 	applymovement BOREASFOREST_RIVAL, BoreasForestRivalExitRight
@@ -48,7 +48,8 @@ BoreasForestRivalNoticePlayer:
 	setlasttalked BOREASFOREST_RIVAL
 	special FadeOutMusic
 	faceplayer
-	showemote EMOTE_QUESTION, BOREASFOREST_RIVAL, 15
+	showemote EMOTE_QUESTION, BOREASFOREST_RIVAL, 30
+	special StopPlayerRunning
 	playmusic MUSIC_RIVAL_ENCOUNTER
 	end
 
@@ -264,20 +265,20 @@ BoreasForest_MapEvents:
 	db 0, 0 ; filler
 
 	db 4 ; warp events
-	warp_event 17, 25, ROUTE_24_GATE, 1
-	warp_event 18, 25, ROUTE_24_GATE, 2
-	warp_event 24,  4, MEWTWO_LAB_1F, 1
-	warp_event 25,  4, MEWTWO_LAB_1F, 2
+	warp_event 17, 27, ROUTE_24_GATE, 1
+	warp_event 18, 27, ROUTE_24_GATE, 2
+	warp_event 24,  6, MEWTWO_LAB_1F, 1
+	warp_event 25,  6, MEWTWO_LAB_1F, 2
 
 	db 2 ; coord events
-	coord_event 17, 24, SCENE_DEFAULT, BoreasForestRivalBattleLeft
-	coord_event 18, 24, SCENE_DEFAULT, BoreasForestRivalBattleRight
+	coord_event 17, 26, SCENE_DEFAULT, BoreasForestRivalBattleLeft
+	coord_event 18, 26, SCENE_DEFAULT, BoreasForestRivalBattleRight
 
 	db 3 ; bg events
-	bg_event 32, 21, BGEVENT_ITEM, BoreasForestHiddenRevivalHerb
-	bg_event 31,  7, BGEVENT_ITEM, BoreasForestHiddenXAttack
-	bg_event 11,  3, BGEVENT_ITEM, BoreasForestHiddenXSpAtk
+	bg_event 32, 23, BGEVENT_ITEM, BoreasForestHiddenRevivalHerb
+	bg_event 31,  9, BGEVENT_ITEM, BoreasForestHiddenXAttack
+	bg_event 11,  5, BGEVENT_ITEM, BoreasForestHiddenXSpAtk
 
 	db 2 ; object events
-	object_event 17, 21, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_POSTGAME
+	object_event 17, 23, SPRITE_SILVER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_POSTGAME
 	object_event  0,  0, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, ObjectEvent, EVENT_BEAT_RIVAL_IN_POSTGAME
