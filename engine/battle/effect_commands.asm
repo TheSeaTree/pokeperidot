@@ -1178,10 +1178,7 @@ BattleCommand_Critical:
 	ld a, [hl]
 	cp LUCKY_PUNCH
 	jr nz, .FocusEnergy
-
-; +4 critical level
-	ld c, 4
-	jr .Tally
+	jr .GuaranteedCrit
 
 .Farfetchd:
 	cp FARFETCH_D
@@ -1193,7 +1190,9 @@ BattleCommand_Critical:
 	ld a, [hl]
 	cp STICK
 	jr nz, .FocusEnergy
-	jr .docritlevel
+; +2 critical level
+	ld c, 2
+	jr .FocusEnergy
 
 .Beedrill:
 	cp BEEDRILL
@@ -1213,7 +1212,6 @@ BattleCommand_Critical:
 .docritlevel
 ; +3 critical level
 	ld c, 3
-	jr .Tally
 
 .FocusEnergy:
 	ld a, BATTLE_VARS_SUBSTATUS4
@@ -1243,7 +1241,7 @@ BattleCommand_Critical:
 	call GetBattleVar
 	cp RUNIC_POWER
 	jr nz, .ScopeLens
-
+.GuaranteedCrit
 ; +4 critical level
 	ld c, 4
 	jr .Tally
