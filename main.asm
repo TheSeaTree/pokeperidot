@@ -24,6 +24,7 @@ INCLUDE "engine/overworld/player_object.asm"
 INCLUDE "engine/math/sine.asm"
 INCLUDE "engine/predef.asm"
 INCLUDE "engine/gfx/color.asm"
+INCLUDE "engine/tilesets/timeofday_pals.asm"
 
 
 SECTION "bank3", ROMX
@@ -319,7 +320,6 @@ INCLUDE "mobile/mobile_22_2.asm"
 
 SECTION "bank23", ROMX
 
-INCLUDE "engine/tilesets/timeofday_pals.asm"
 INCLUDE "engine/battle/battle_transition.asm"
 INCLUDE "engine/events/field_moves.asm"
 INCLUDE "engine/battle/battlestart_copytilemapatonce.asm"

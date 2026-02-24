@@ -27,6 +27,11 @@ _TimeOfDayPals::
 	cp [hl]
 	jr z, .dontchange
 
+; if the current map has the roof tileset, take a detour
+	ld a, [wMapTileset]
+	cp TILESET_ROOF
+	call z, .update_blocks
+
 ; if so, the time of day has changed
 	ld a, [wTimeOfDay]
 	ld [wCurTimeOfDay], a
@@ -108,6 +113,13 @@ _TimeOfDayPals::
 ; no change occurred
 	and a
 	ret
+
+.update_blocks
+; reload all of the blocks on the map to match the time of day
+	ld a, MAPSETUP_TIMEOFDAY
+	ldh [hMapEntryMethod], a
+	ld a, MAPSTATUS_ENTER
+	jp LoadMapStatus
 
 _UpdateTimePals::
 	ld c, $9 ; normal

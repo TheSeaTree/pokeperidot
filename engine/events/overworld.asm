@@ -1900,6 +1900,9 @@ BikeFunction:
 	ret
 
 .CheckEnvironment:
+	ld a, [wMapTileset]
+	cp TILESET_ROOF
+	jr z, .nope
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr z, .ok

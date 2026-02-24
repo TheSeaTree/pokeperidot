@@ -13,6 +13,7 @@
 	const MAPSETUP_SUBMENU    ; fa
 	const MAPSETUP_BADWARP    ; fb
 	const MAPSETUP_FLY        ; fc
+	const MAPSETUP_TIMEOFDAY  ; fd
 
 ; MapSetupCommands indexes (see engine/overworld/map_setup.asm)
 ; Names taken from Condensation water's scripting compendium
