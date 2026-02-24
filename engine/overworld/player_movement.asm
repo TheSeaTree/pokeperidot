@@ -305,6 +305,9 @@ DoPlayerMovement::
 	call .BikeCheck
 	jp z, .fast
 
+	ld a, [wMapTileset]
+	cp TILESET_ROOF
+	jr z, .walk
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
 	jr z, .walk
@@ -353,6 +356,9 @@ DoPlayerMovement::
 	call ReplaceKrisSprite
 
 .walk
+	ld a, [wMapTileset]
+	cp TILESET_ROOF
+	jr z, .holdwalk
 	ld hl, wPokegearFlags
 	bit RUNNING_SHOES_F, [hl]
 	jr z, .holdwalk
