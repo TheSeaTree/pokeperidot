@@ -32,3 +32,6 @@
 *.lz binary   diff=hex
 *.2bpp binary diff=hex
 *.1bpp binary diff=hex
+
+# Github does not like this file, and I do not like Github.
+maps/RemnantCave1F.ablk -text
