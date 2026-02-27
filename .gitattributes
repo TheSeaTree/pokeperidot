@@ -1,5 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text eol=lf
+RemnantCave1F.ablk eol=crlf
 
 # Explicitly declare text files you want to always be normalized and converted
 # to native line endings on checkout.
