@@ -7605,6 +7605,19 @@ GiveExperiencePoints:
 	dec a
 	call nz, BoostExp
 
+; Boost experience for Pokemon hatched from an egg
+	push bc
+	ld a, MON_CAUGHTDATA
+	call GetPartyParamLocation
+	ld a, [hli]
+	ld [wSeerCaughtData], a
+	ld a, [wSeerCaughtData]
+	and CAUGHT_LEVEL_MASK
+	cp CAUGHT_EGG_LEVEL ; egg marker value
+	pop bc
+	call z, BoostEggExp
+
+.pokerus
 ; Boost experience for Pokerus
 	push hl
 	push bc
@@ -7945,6 +7958,32 @@ BoostExp:
 	adc b
 	ldh [hProduct + 2], a
 	pop bc
+	ret
+
+BoostEggExp:
+; Only if the enemy is a higher level
+	push bc
+	ld a, MON_LEVEL
+	call GetPartyParamLocation
+	ld a, [hl]
+	ld b, a
+	ld a, [wEnemyMonLevel]
+	cp b
+	pop bc
+	ret c
+; Multiply experience by 2
+	push bc
+	ldh a, [hProduct + 3]
+	add a
+	ldh [hProduct + 3], a
+
+	ldh a, [hProduct + 2]
+	adc a
+	ldh [hProduct + 2], a
+	pop bc
+; Eggs should get the "boosted" exp text so their benefit is more obvious.
+	ld a, $1
+	ld [wStringBuffer2 + 2], a
 	ret
 
 Text_MonGainedExpPoint:
