@@ -189,7 +189,6 @@ BillsPCDepositFuncRelease:
 	jr c, BillsPCDepositFuncCancel
 	ld a, [wMenuCursorY]
 	push af
-	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
@@ -449,7 +448,6 @@ BillsPC_Withdraw:
 	jr c, .FailedRelease
 	call BillsPC_IsPlayerOutside
 	jr c, .FailedRelease
-	ld a, [wMapGroup]
 	ld de, PCString_ReleasePKMN
 	call BillsPC_PlaceString
 	call LoadStandardMenuHeader
@@ -734,9 +732,6 @@ _MovePKMNWithoutMail:
 	ret
 
 .Joypad2:
-;	hlcoord 8, 2
-;	lb bc,  1, 1
-;	call ClearBox
 	hlcoord 8, 2
 	ld [hl], $5e
 	ld hl, hJoyPressed
