@@ -1474,7 +1474,7 @@ CalcMonStatC:
 	pop de
 
 .no_stat_exp
-; Ignore DVs if in the Battle Subway
+; Ignore DVs if in the Battle Subway and Battle Simulation
 	ld hl, wStatusFlags2
 	bit STATUSFLAGS2_BATTLE_SUBWAY_ACTIVE_F, [hl]
 	jr nz, .MaxDVs

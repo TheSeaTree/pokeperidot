@@ -9,6 +9,10 @@ CheckShininess:
 ; Check if a mon is shiny by DVs at bc.
 ; Return carry if shiny.
 
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .NotShiny
+
 	ld l, c
 	ld h, b
 

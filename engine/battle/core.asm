@@ -6801,24 +6801,20 @@ LoadEnemyMon:
 ; Register a contains wBattleType
 
 ; Forced shiny battle type
-; Used by Red Gyarados at Lake of Rage
 	cp BATTLETYPE_SHINY
 	jr nz, .CheckBoss
 
-	ld b, ATKDEFDV_SHINY ; $ea
-	ld c, SPDSPCDV_SHINY ; $aa
+	ld b, ATKDEFDV_SHINY ; $ff
+	ld c, SPDSPCDV_SHINY ; $ff
 	jr .UpdateDVs
 
 .CheckBoss:
 	ld a, [wBattleType]
 	cp BATTLETYPE_BOSS
-;	jr z, .IsBoss
-;	cp BATTLETYPE_SIMULATION
 	jr nz, .GenerateDVs
 
-.IsBoss
-	ld b, ATKDEFDV_BOSS ; $ea
-	ld c, SPDSPCDV_BOSS ; $aa
+	ld b, ATKDEFDV_BOSS ; $ff
+	ld c, SPDSPCDV_BOSS ; $fe
 	jr .UpdateDVs
 
 .GenerateDVs:
