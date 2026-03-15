@@ -916,7 +916,7 @@ NeighborGivesPotion4:
 	line "plenty of your"
 	cont "own in time."
 
-	para "Good luck on"
+	para "Good luck on your"
 	line "journey! Come"
 	cont "visit any time."
 	done
