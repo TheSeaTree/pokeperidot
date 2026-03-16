@@ -240,6 +240,7 @@ endc
 	dw Script_sketchbookmenu             ; ab
 	dw Script_checksubwaystreak          ; ac
 	dw Script_overworld_2dmenu           ; ad
+	dw Script_randomrockmon				 ; ae
 
 StartScript:
 	ld hl, wScriptFlags
@@ -1334,6 +1335,22 @@ Script_randomwildmon:
 
 	xor a
 	ld [wBattleScriptFlags], a
+	ret
+
+Script_randomrockmon:
+; script command 0x5b
+	xor a
+	ld [wBattleScriptFlags], a
+
+; Levels should not exceed 20 in the past.
+	ld a, [wCurLandmark]
+	ld [wPrevLandmark], a
+	cp THE_PAST
+	ret z
+
+	farcall RockMonsLevels
+	ld a, b
+	ld [wCurPartyLevel], a
 	ret
 
 Script_loadmemtrainer:

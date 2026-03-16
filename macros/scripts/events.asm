@@ -1089,7 +1089,12 @@ checksubwaystreak: MACRO
 	dw \1 ; subway streak
 ENDM
 
-	enum overworld_2dmenu_command ; $58
+	enum overworld_2dmenu_command ; $ad
 overworld_2dmenu: MACRO
 	db overworld_2dmenu_command
+ENDM
+
+	enum randomrockmon_command ; $ae
+randomrockmon: MACRO
+	db randomrockmon_command
 ENDM

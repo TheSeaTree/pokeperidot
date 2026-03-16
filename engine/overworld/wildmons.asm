@@ -298,20 +298,7 @@ ChooseWildEncounter:
 ; If the Pokemon is encountered by surfing, we need to give the levels some variety.
 	call CheckOnWater
 	jr nz, .ok
-; Check if we buff the wild mon, and by how much.
-	call Random
-	cp 35 percent
-	jr c, .ok
-	inc b
-	cp 65 percent
-	jr c, .ok
-	inc b
-	cp 85 percent
-	jr c, .ok
-	inc b
-	cp 95 percent
-	jr c, .ok
-	inc b
+	call RandomWildmonLevelBuff
 ; Store the level
 .ok
 	ld a, b
@@ -345,6 +332,41 @@ ChooseWildEncounter:
 	ret
 
 INCLUDE "data/wild/probabilities.asm"
+
+RockMonsLevels::
+	push hl
+    ; Count how many badges the player has.
+    ld hl, wBadges
+    ld b, 2
+    call CountSetBits
+    ; Get enemy level from list that corresponds to number of badges
+    ld hl, RockMonsLevels_List
+    add l
+    ld l, a
+    adc h
+    sub l
+    ld h, a
+	add [hl]
+    ld b, [hl]
+	pop hl
+RandomWildmonLevelBuff:
+; Check if we buff the wild mon, and by how much.
+	call Random
+	cp 35 percent
+	ret c
+	inc b
+	cp 65 percent
+	ret c
+	inc b
+	cp 85 percent
+	ret c
+	inc b
+	cp 95 percent
+	ret c
+	inc b
+	ret
+
+INCLUDE "data/wild/rockmons_levels.asm"
 
 CheckRepelEffect::
 ; If there is no active Repel, there's no need to be here.

@@ -1461,12 +1461,14 @@ RockSmashScript:
 	callasm RockMonEncounter
 	copybytetovar wTempWildMonSpecies
 	iffalse .item
-	randomwildmon
+	randomrockmon
 	startbattle
 	reloadmapafterbattle
 	end
 
 .item
+	checkcode VAR_ITEM_POCKET
+	ifequal MAX_ITEMS, .no_item
 	callasm RockItemEncounter
 	iffalse .no_item
 	opentext
