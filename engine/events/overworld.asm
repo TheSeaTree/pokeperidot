@@ -1352,11 +1352,18 @@ HeadbuttScript:
 	end
 
 .no_battle
+	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+	iftrue .no_item
 	callasm TreeItemEncounter
 	iffalse .no_item
 	opentext
 	verbosegiveitem ITEM_FROM_MEM
 	closetext
+	loadvar wWildEncounterCooldown, 5
+	random 3 ; 30% chance for no more items to appear each time an item is found
+	ifequal 0, .end
+	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
+.end
 	end
 
 .no_item
