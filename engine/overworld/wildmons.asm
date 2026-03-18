@@ -337,9 +337,16 @@ RockMonsLevels::
 	push hl
     ; Count how many badges the player has.
     ld hl, wBadges
+
     ld b, 2
     call CountSetBits
-    ; Get enemy level from list that corresponds to number of badges
+	; Randomly select a base level from the available badges.
+	call RandomRange
+	inc a
+    ld l, a
+    ld h, a
+
+    ; Get enemy level from list that corresponds to number of badges.
     ld hl, RockMonsLevels_List
     add l
     ld l, a
@@ -347,6 +354,7 @@ RockMonsLevels::
     sub l
     ld h, a
 	add [hl]
+
     ld b, [hl]
 	pop hl
 RandomWildmonLevelBuff:
