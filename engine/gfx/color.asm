@@ -395,10 +395,12 @@ LoadStatsScreenPals:
 	ld [wBGPals1 palette 0], a
 	ld [wBGPals1 palette 2], a
 	ld [wBGPals1 palette 6], a
+	ld [wBGPals1 palette 7], a
 	ld a, [hl]
 	ld [wBGPals1 palette 0 + 1], a
 	ld [wBGPals1 palette 2 + 1], a
 	ld [wBGPals1 palette 6 + 1], a
+	ld [wBGPals1 palette 7 + 1], a
 	pop af
 	ldh [rSVBK], a
 	call ApplyPals

@@ -206,7 +206,7 @@ MonStatsJoypad:
 	ret
 
 .next
-	and D_DOWN | D_UP | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON
+	and D_DOWN | D_UP | D_LEFT | D_RIGHT | A_BUTTON | B_BUTTON | SELECT
 	jp StatsScreen_JoypadAction
 
 StatsScreenWaitCry:
@@ -289,6 +289,8 @@ StatsScreen_JoypadAction:
 	jr nz, .d_up
 	bit D_DOWN_F, a
 	jr nz, .d_down
+	bit SELECT_F, a
+	jr nz, .select_button
 	jr .done
 
 .d_down
@@ -347,6 +349,17 @@ StatsScreen_JoypadAction:
 	jr nz, .set_page
 	ld c, BLUE_PAGE ; last page
 	jr .set_page
+
+.select_button
+	ld a, [wBattleMode]
+	cp $0
+	ret nz
+	ld a, [wcf64]
+	cp $2
+	ret nz
+	ld hl, wJumptableIndex
+	set 7, [hl]
+	farcall ManagePokemonMoves
 
 .done
 	ret
@@ -458,7 +471,7 @@ Unreferenced_Function4df7f:
 StatsScreen_PlaceHorizontalDivider:
 	hlcoord 0, 7
 	ld b, SCREEN_WIDTH
-	ld a, $d9 ; horizontal divider (empty HP/exp bar)
+	ld a, $32 ; horizontal divider (empty HP/exp bar)
 .loop
 	ld [hli], a
 	dec b
@@ -583,6 +596,10 @@ StatsScreen_LoadGFX:
 	hlcoord 11, 8
 	ld bc, 6
 	predef PrintTempMonStats
+	hlcoord 10, 7
+	ld [hl], $33 ; T-shaped divider
+	hlcoord  9, 7
+	ld [hl], $32 ; horizontal divider
 	ret
 	
 .Status_Type:
@@ -596,6 +613,10 @@ StatsScreen_LoadGFX:
 	db "<PK><RS>/@"
 
 .GreenPage:
+	hlcoord  9, 7
+	ld [hl], $32 ; horizontal divider
+	hlcoord 10, 7
+	ld [hl], $32 ; horizontal divider
 	ld de, .Item
 	hlcoord 0, 8
 	call PlaceString
@@ -617,6 +638,28 @@ StatsScreen_LoadGFX:
 	ld a, SCREEN_WIDTH * 2
 	ld [wBuffer1], a
 	predef ListMovePP
+	; Do not display the graphics for move info in battles
+	ld a, [wBattleMode]
+	cp $0
+	ret nz
+	; ...Or in the PC. It will not work in either instance.
+	ld a, [wBillsPC_NumMonsInBox]
+	and a
+	ret nz
+
+	hlcoord 0, 17
+	ld a, $42 ; select button tiles
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hli], a
+	inc a
+	ld [hl], a
 	ret
 
 .GetItemName:
@@ -651,6 +694,10 @@ StatsScreen_LoadGFX:
 	add hl, de
 	dec b
 	jr nz, .BluePageVerticalDivider
+	hlcoord  9, 7
+	ld [hl], $33 ; T-shaped divider
+	hlcoord 10, 7
+	ld [hl], $32 ; horizontal divider
 
 	ld de, .ExpPointStr
 	hlcoord 10, 9
@@ -765,6 +812,13 @@ StatsScreen_LoadGFX:
 	hlcoord 8, 10
 	ld [hl], a
 .done
+	; Display an icon for Pokemon hatched from eggs.
+	ld a, [wTempMonCaughtLevel]
+	and CAUGHT_LEVEL_MASK
+	cp CAUGHT_EGG_LEVEL ; egg marker value
+	ret nz
+	hlcoord 8, 8
+	ld [hl], $35 ; Egg Icon
 	ret
 
 .OTNamePointers:

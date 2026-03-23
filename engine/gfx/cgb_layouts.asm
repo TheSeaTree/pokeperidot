@@ -238,7 +238,7 @@ _CGB_StatsScreenHPPals:
 	call WipeAttrMap
 
 	hlcoord 0, 0, wAttrMap
-	lb bc, 8, SCREEN_WIDTH
+	lb bc, 7, SCREEN_WIDTH
 	ld a, $1 ; mon palette
 	call FillBoxCGB
 
@@ -265,6 +265,11 @@ _CGB_StatsScreenHPPals:
 	hlcoord 0, 9, wAttrMap
 	lb bc, 1, 2
 	ld a, $6 ; blue page palette
+	call FillBoxCGB
+
+	hlcoord 0, 7, wAttrMap
+	lb bc, 1, SCREEN_WIDTH
+	ld a, $7 ; text palette
 	call FillBoxCGB
 
 	call ApplyAttrMap
