@@ -548,7 +548,7 @@ NoRoomForFossil:
 	text "<PLAYER> tried to"
 	line "take it…"
 
-	para "…But the PARTY"
+	para "…But the party"
 	line "is full."
 	done
 

@@ -6,6 +6,7 @@
 	const GOLDENROD_YOUNGSTER
 	const FAVIA_FANGIRL
 	const FAVIA_SCIENTIST
+	const FAVIA_COOLTRAINER
 
 FaviaTown_MapScripts:
 	db 3 ; scene scripts
@@ -143,6 +144,9 @@ FaviaLassScript:
 	
 FaviaLadScript:
 	jumptextfaceplayer FaviaLadText
+
+FaviaCooltrainerFScript:
+	jumptextfaceplayer FaviaCooltrainerFText
 
 FaviaPostgameScientistScript:
 	jumptextfaceplayer FaviaPostgameScientistText
@@ -304,6 +308,25 @@ FaviaLadText:
 	cont "those robes."
 	done
 
+FaviaCooltrainerFText:
+	text "The DAY CARE gave"
+	line "me a #MON EGG."
+
+	para "When it hatched,"
+	line "the #MON inside"
+	cont "grew much faster"
+	cont "than the rest of"
+	cont "my party."
+
+	para "After it became"
+	line "strong enough to"
+	cont "battle on its own,"
+	cont "it stopped growing"
+	cont "so quickly."
+
+	para "How interesting!"
+	done
+
 FaviaPostgameScientistText:
 	text "Hello again!"
 	line "I'm ADRIAN from"
@@ -436,7 +459,7 @@ FaviaTown_MapEvents:
 	bg_event 21,  8, BGEVENT_ITEM, FaviaHiddenRareCandy
 	bg_event 12,  7, BGEVENT_UP,   FaviaGymEvent
 	
-	db 7 ; object events
+	db 8 ; object events
 	object_event  8, 18, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareManScript_Outside, EVENT_DAY_CARE_MAN_ON_ROUTE_34
 	object_event  6, 14, SPRITE_DAY_CARE_MON_1, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon1Script, EVENT_DAY_CARE_MON_1
 	object_event  4, 15, SPRITE_DAY_CARE_MON_2, SPRITEMOVEDATA_POKEMON, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DayCareMon2Script, EVENT_DAY_CARE_MON_2
@@ -444,3 +467,4 @@ FaviaTown_MapEvents:
 	object_event 11, 10, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WANDER, 2, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaLadScript, -1
 	object_event  0,  0, SPRITE_FANGIRL, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1
 	object_event  0,  0, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, FaviaPostgameScientistScript, -1
+	object_event 15, 25, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, FaviaCooltrainerFScript, -1
