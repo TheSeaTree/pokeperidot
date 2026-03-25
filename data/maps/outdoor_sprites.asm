@@ -23,6 +23,7 @@ OutdoorSprites:
 	dw Route11GroupSprites
 	dw LostLandGroupSprites
 	dw CableClubGroupSprites
+	dw DepthsGroupSprites
 	dw CastleGroupSprites
 	dw HepaticaGroupSprites
 	dw OrchidGroupSprites
@@ -155,6 +156,7 @@ DeptStoreGroupSprites:
 	db SPRITE_FRUIT_TREE
 	db 0 ; end
 
+DepthsGroupSprites:
 CastleGroupSprites:
 ; Gilded Hall, Lugia's Cave
 	db SPRITE_FISHER
@@ -335,7 +337,7 @@ RidgeGroupSprites:
 	db 0 ; end
 	
 FaviaGroupSprites:
-; Favia Townn
+; Favia Town
 	db SPRITE_GRAMPS
 	db SPRITE_YOUNGSTER
 	db SPRITE_BUG_CATCHER

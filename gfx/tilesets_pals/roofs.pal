@@ -26,7 +26,7 @@
 	RGB 15,20,01, 09,13,00 ; morn/day
 	RGB 08,13,19, 00,11,13 ; nite
 
-; group 7 (unused)
+; group 7 (Carnation)
 	RGB 31,19,24, 30,10,06 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite
 
@@ -34,7 +34,7 @@
 	RGB 22,20,10, 17,14,03 ; morn/day
 	RGB 11,11,05, 10,09,07 ; nite
 
-; group 9 (East Forest)
+; group 9 (Orientem)
 	RGB 31,08,04, 15,00,00 ; morn/day
 	RGB 14,00,04, 10,08,08 ; nite
 
@@ -46,11 +46,11 @@
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 12 (unused)
+; group 12 (DeptStore)
 	RGB 12,19,00, 06,10,00 ; morn/day
 	RGB 06,09,07, 04,05,06 ; nite
 
-; group 13 (Route 11)
+; group 13 (Route 10)
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
@@ -58,7 +58,7 @@
 	RGB 15,31,31, 05,17,31 ; morn/day
 	RGB 11,11,19, 00,00,05 ; nite
 
-; group 15 (Castle)
+; group 15 (SSMako)
 	RGB 31,28,12, 31,16,01 ; morn/day
 	RGB 16,14,10, 12,07,04 ; nite
 
@@ -66,15 +66,15 @@
 	RGB 21,21,21, 13,13,13 ; morn/day
 	RGB 11,11,19, 07,07,12 ; nite
 
-; group 17 (unused)
+; group 17 (Occident)
 	RGB 31,18,29, 17,13,20 ; morn/day
 	RGB 14,06,12, 11,03,10 ; nite
 
-; group 18 (unused)
+; group 18 (Route11)
 	RGB 23,15,31, 16,05,31 ; morn/day
 	RGB 12,07,17, 08,06,10 ; nite
 
-; group 19 (unused)
+; group 19 (LostLand)
 	RGB 21,21,25, 16,16,16 ; morn/day
 	RGB 13,13,13, 07,07,07 ; nite
 
@@ -82,62 +82,66 @@
 	RGB 21,21,21, 11,11,11 ; morn/day
 	RGB 21,21,21, 11,11,11 ; nite
 
-; group 21 (unused)
-	RGB 07,07,12, 04,03,18 ; nite
+; group 21 (Depths)
+	RGB 24,23,25, 08,08,09 ; morn/day
 	RGB 07,07,12, 04,03,18 ; nite
 
-; group 22 (Hepatica)
+; group 22 (Castle)
+	RGB 29,25,00, 17,10,01 ; morn/day
+	RGB 29,25,00, 15,20,31 ; morn/day
+
+; group 23 (Hepatica)
 	RGB 14,17,31, 07,11,15 ; morn/day
 	RGB 09,09,17, 05,07,13 ; nite
 
-; group 23 (Orchid)
+; group 24 (Orchid)
 	RGB 31,10,00, 18,06,00 ; morn/day
 	RGB 18,05,09, 17,08,07 ; nite
 
-; group 24 (Elkhorn)
+; group 25 (Elkhorn)
 	RGB 20,31,14, 11,23,05 ; morn/day
 	RGB 09,13,08, 06,09,04 ; nite
 
-; group 25 (unused)
+; group 26 (Postgame)
 	RGB 31,26,00, 31,15,00 ; morn/day
 	RGB 13,13,01, 08,08,01 ; nite
 
-; group 26 (Pavona)
+; group 27 (Pavona)
 	RGB 31,14,28, 31,05,21 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite
 
-; group 27 (Palerock)
+; group 28 (Palerock)
 	RGB 14,17,31, 07,11,15 ; morn/day
 	RGB 09,09,17, 05,07,13 ; nite
 
-; group 28 (North Forest)
+; group 29 (Boreas Forest)
 	RGB 31,19,27, 16,05,20 ; morn/day
 	RGB 31,19,27, 16,05,20 ; nite
 
-; group 29 (Sea Route 7)
+; group 30 (Sea Route 7)
 	RGB 15,10,31, 07,05,15 ; morn/day
 	RGB 06,05,17, 02,02,08 ; nite
 
-; group 30 (Battle Sim)
+; group 31 (Battle Sim)
 	RGB 21,21,21, 13,13,13 ; morn/day
 	RGB 11,11,19, 07,07,12 ; nite
 
-; group 31 (Past Favia)
+; group 32 (Past Favia)
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 32 (Past Pectinia)
+; group 33 (Past Pectinia)
 	RGB 22,20,10, 17,14,03 ; morn/day
 	RGB 11,11,05, 10,09,07 ; nite
 
-; group 33 (Past Route 11)
+; group 34 (Past Route 10)
 	RGB 25,25,00, 20,17,08 ; morn/day
 	RGB 12,12,00, 10,09,05 ; nite
 
-; group 34 (Elkhorn)
+; group 35 (Past Elkhorn)
 	RGB 20,31,14, 11,23,05 ; morn/day
 	RGB 09,13,08, 06,09,04 ; nite
 
-; group 35 (Pavona)
+; group 36 (Past Pavona)
 	RGB 31,14,28, 31,05,21 ; morn/day
 	RGB 14,07,17, 13,00,08 ; nite

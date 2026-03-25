@@ -12,6 +12,7 @@
 	const ROUTE_3           ; 34
 	const ROUTE_4           ; 36
 	const ORIENTEM_FOREST   ; 0e
+	const ABANDONED_LAB     ; 0e
 	const ROUTE_5           ; 3a
 	const RIDGE_VILLAGE     ; 06
 	const ROUTE_6           ; 3c
@@ -42,6 +43,7 @@
 	const ROUTE_17          ; 53
 	const ROUTE_18          ; 53
 	const ROUTE_19          ; 53
+	const GILDED_HALL       ; 53
 	const MOLTEN_PEAK
 	const ROUTE_20          ; 53
 	const ORCHID_CITY
@@ -51,6 +53,7 @@
 	const SEA_ROUTE_3       ; 4f
 	const SEA_ROUTE_4       ; 3f
 	const SEA_ROUTE_5       ; 3f
+	const ARGENT_DEPTHS     ; 3f
 	const SEA_ROUTE_6       ; 3f
 	const ROUTE_21       	; 3f
 	const ROUTE_22
@@ -59,6 +62,7 @@
 	const SEA_ROUTE_7       ; 3f
 	const ROUTE_24
 	const BOREAS_FOREST
+	const BOREAS_COMPOUND
 	const POKEMON_LEAGUE    ; 5a
 	
 KANTO_LANDMARK EQU const_value

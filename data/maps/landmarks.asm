@@ -16,6 +16,7 @@ Landmarks:
 	landmark 108, 116, Route3Name
 	landmark 124, 100, Route4Name
 	landmark 132, 108, OrientemForestName
+	landmark 136, 108, AbandonedFactoryName
 	landmark 128,  92, Route5Name
 	landmark 132,  84, RidgeVillageName
 	landmark 128,  76, Route6Name
@@ -46,6 +47,7 @@ Landmarks:
 	landmark  42,  68, Route17Name
 	landmark  28,  68, Route18Name
 	landmark  28,  76, Route19Name
+	landmark  24,  76, GildedHallName
 	landmark  26,  60, MoltenPeakName
 	landmark  20,  60, Route20Name
 	landmark  20,  52, OrchidCityName
@@ -55,6 +57,7 @@ Landmarks:
 	landmark 116,  44, SeaRoute3Name
 	landmark 116,  68, SeaRoute4Name
 	landmark 132,  60, SeaRoute5Name
+	landmark 128,  60, ArgentDepthsName
 	landmark 132,  44, SeaRoute6Name
 	landmark 140,  44, Route21Name
 	landmark 140,  36, Route22Name
@@ -63,6 +66,7 @@ Landmarks:
 	landmark 121,  36, SeaRoute7Name
 	landmark 116,  24, Route24Name
 	landmark 116,  22, BoreasForestName
+	landmark 116,  20, BoreasCompoundName
 	landmark 132,  28, PokemonLeagueName
 	landmark 116,  34, FastShipName
 	landmark  -8,  -8, LostLandName
@@ -135,6 +139,10 @@ MoltenPeakName:		  db "MOLTEN¯PEAK@"
 GenesisIslandName:	  db "GENESIS¯ISLAND@"
 UndergroundName:      db "UNDERGROUND@"
 LostLandName:		  db "LOST LAND@"
+AbandonedFactoryName: db "ABANDONED¯LAB@"
+BoreasCompoundName:	  db "BOREAS¯COMPOUND@"
+GildedHallName:	      db "GILDED¯HALL@"
+ArgentDepthsName:	  db "ARGENT¯DEPTHS@"
 PastMapName:		  db "NO SIGNAL@"
 BattleTowerName:      db "BATTLE¯TOWER@"
 SpecialMapName:       db "SPECIAL@"

@@ -333,6 +333,9 @@ ENDM
 	map_const LUGIA_CAVE_B2F,                              22, 16 ;  3
 	map_const LUGIA_CAVE_GATE_CHAMBER,                      6,  9 ;  3
 	map_const LUGIA_LAIR,                                  14, 12 ;  3
+
+	newgroup
+
 	map_const HO_OH_CASTLE_1F_CENTER_ROOM,                 12, 18 ;  4
 	map_const HO_OH_CASTLE_1F_SIDE_ROOMS,                  15, 12 ;  5
 	map_const HO_OH_CASTLE_2F,                             19, 13 ;  6
