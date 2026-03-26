@@ -382,18 +382,60 @@ MaplesLabAlternateBookshelf:
 MaplesLabBookshelf:
 	jumpstd difficultbookshelf
 
-
 MaplesLabPlant:
 	checkevent EVENT_GOT_TM_CUT
 	iftrue .WateredPlant
 	jumptext MaplesLabPlantText
-	
+
 .WateredPlant:
 	jumptext MaplesLabWateredPlantText
-	
+
 MaplesLabBook:
-	jumptext MaplesLabBookText
-	
+	opentext
+	writetext MaplesLabBookText
+	jump .Start
+.MenuLoop:
+	writetext MaplesLabBookContinueReadingText
+.Start:
+	loadmenu .MenuHeader
+	verticalmenu
+	closewindow
+	ifequal 1, .About
+	ifequal 2, .Physical
+	ifequal 3, .Special
+.Done
+	closetext
+	end
+
+.About
+	writetext MaplesLabBookAboutTypesText
+	waitbutton
+	jump .MenuLoop
+
+.Physical
+	writetext MaplesLabTypeBookPhysicalText
+	waitbutton
+	jump .MenuLoop
+
+.Special
+	writetext MaplesLabTypeBookSpecialText
+	waitbutton
+	jump .MenuLoop
+
+.MenuHeader:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 0, 0, SCREEN_WIDTH - 1, 9
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData:
+	db STATICMENU_CURSOR ; flags
+	db 4 ; items
+	db "ABOUT TYPES@"
+	db "PHYSICAL MOVES@"
+	db "SPECIAL MOVES@"
+	db "CANCEL@"
+
 MaplesLabShifurBook:
 	refreshscreen
 	pokepic SHIFUR
@@ -867,11 +909,58 @@ AideText_Postgame:
 	done
 	
 MaplesLabBookText:
-	text "It looks like a"
-	line "book all about"
-	cont "#MON."
+	text "It's a book about"
+	line "#MON types and"
+	cont "battle strategy."
 	done
-	
+
+MaplesLabBookAboutTypesText:
+	text "The type of move"
+	line "will determine how"
+	cont "a #MON attacks."
+
+	para "Many #MON will"
+	line "be better suited"
+	cont "to using PHYSICAL"
+	cont "or SPECIAL moves."
+
+	para "A move will be"
+	line "stronger if it"
+	cont "matches the type"
+	cont "of its user."
+	done
+
+MaplesLabBookContinueReadingText:
+	text "Continue reading?"
+	done
+
+MaplesLabTypeBookPhysicalText:
+	text "NORMAL, FIGHTING,"
+	line "FLYING, POISON,"
+	cont "GROUND, ROCK, BUG,"
+	cont "DARK, and STEEL"
+	cont "moves are categor-"
+	cont "ized as PHYSICAL."
+
+	para "These moves are"
+	line "best used by a"
+	cont "#MON with high"
+	cont "ATTACK."
+	done
+
+MaplesLabTypeBookSpecialText:
+	text "FIRE, WATER,"
+	line "GRASS, ELECTRIC,"
+	cont "PSYCHIC, ICE,"
+	cont "DRAGON, GHOST, and"
+	cont "FAIRY moves are"
+	cont "all SPECIAL."
+
+	para "The best users of"
+	line "these moves have"
+	cont "higher SP.ATTACK."
+	done
+
 MaplesLabPlantText:
 	text "This plant doesn't"
 	line "look too good."
@@ -894,17 +983,22 @@ MaplesLabPictureBook:
 	line "a newly-discovered"
 	cont "#MON!"
 	done
-	
+
 MaplesLabLassText:
-	text "If your #MON"
-	line "get hurt, you"
-	cont "should visit the"
+	text "This book is"
+	line "teaching me so"
+	cont "much about #MON"
+	cont "battles."
+
+	para "If your #MON"
+	line "are hurt after a"
+	cont "battle, visit the"
 	cont "PAVONA INN."
-	
+
 	para "My big sister runs"
 	line "it!"
 	done
-	
+
 MaplesLabBugCatcherText1:
 	text "Hmm…"
 	
