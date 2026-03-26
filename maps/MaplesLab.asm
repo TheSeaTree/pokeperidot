@@ -424,7 +424,7 @@ MaplesLabBook:
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags
-	menu_coords 0, 0, SCREEN_WIDTH - 1, 9
+	menu_coords 0, 0, 16, 9
 	dw .MenuData
 	db 1 ; default option
 
