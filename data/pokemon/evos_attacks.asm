@@ -3681,7 +3681,6 @@ TeddiursaEvosAttacks:
 	db 1, LEER
 	db 1, LICK
 	db 1, FURY_SWIPES
-	db 8, FURY_SWIPES
 	db 15, FAINT_ATTACK
 	db 22, SWEET_SCENT
 	db 29, CUT
@@ -3698,7 +3697,6 @@ UrsaringEvosAttacks:
 	db 1, LEER
 	db 1, LICK
 	db 1, FURY_SWIPES
-	db 8, FURY_SWIPES
 	db 15, FAINT_ATTACK
 	db 22, SWEET_SCENT
 	db 29, CUT
