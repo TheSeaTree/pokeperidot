@@ -56,6 +56,7 @@ Landmarks:
 	landmark 106,  58, RemnantCaveName
 	landmark 116,  44, SeaRoute3Name
 	landmark 116,  68, SeaRoute4Name
+	landmark 116,  64, TidalPassName
 	landmark 132,  60, SeaRoute5Name
 	landmark 128,  60, ArgentDepthsName
 	landmark 132,  44, SeaRoute6Name
@@ -143,6 +144,7 @@ AbandonedFactoryName: db "ABANDONED¯LAB@"
 BoreasCompoundName:	  db "BOREAS¯COMPOUND@"
 GildedHallName:	      db "GILDED¯HALL@"
 ArgentDepthsName:	  db "ARGENT¯DEPTHS@"
+TidalPassName:	  	  db "TIDAL¯PASS@"
 PastMapName:		  db "NO SIGNAL@"
 BattleTowerName:      db "BATTLE¯TOWER@"
 SpecialMapName:       db "SPECIAL@"

@@ -52,6 +52,7 @@
 	const REMNANT_CAVE      ; 4e
 	const SEA_ROUTE_3       ; 4f
 	const SEA_ROUTE_4       ; 3f
+	const TIDAL_PASS
 	const SEA_ROUTE_5       ; 3f
 	const ARGENT_DEPTHS     ; 3f
 	const SEA_ROUTE_6       ; 3f
