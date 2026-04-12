@@ -88,7 +88,15 @@ Palerock1FRocker:
 	disappear PALEROCK1F_ROCKER
 	setevent EVENT_SAVED_PALEROCK_ROCKER
 	end
-	
+
+Palerock1FCooltrainerF:
+	checkevent EVENT_SAVED_PALEROCK_ROCKER
+	iftrue .Saved
+	jumptextfaceplayer Palerock1CooltrainerFText
+
+.Saved
+	jumptextfaceplayer Palerock1CooltrainerFAfterText
+
 Palerock1PokeBall:
 	itemball POKE_BALL, 3
 	
@@ -230,7 +238,28 @@ Palerock1RockerWontTell:
 	para "I have an image"
 	line "to uphold!"
 	done
-	
+
+Palerock1CooltrainerFText:
+	text "I heard someone"
+	line "trapped behind"
+	cont "some a boulder"
+	cont "on this floor!"
+
+	para "I want to help,"
+	line "but none of my"
+	cont "#MON have the"
+	cont "STRENGTH to push"
+	cont "the boulder aside!"
+	done
+
+Palerock1CooltrainerFAfterText:
+	text "Did you help the"
+	line "man who was trapp-"
+	cont "ed by the boulder?"
+
+	para "You're so selfless!"
+	done
+
 PalerockMountain1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -244,7 +273,7 @@ PalerockMountain1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 15 ; object events
+	db 16 ; object events
 	object_event   9, 21, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
 	object_event  23, 21, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
 	object_event  4, 11, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountain1FBoulder, -1
@@ -260,4 +289,4 @@ PalerockMountain1F_MapEvents:
 	object_event  9, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1Repel, EVENT_PALEROCK_1_REPEL
 	object_event 29, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1PokeBall, EVENT_PALEROCK_1_POKE_BALL
 	object_event  7, 17, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Palerock1SodaPop, EVENT_PALEROCK_1_SODA_POP
-	
+	object_event 19, 19, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Palerock1FCooltrainerF, EVENT_BOULDER_IN_PALEROCK_B
