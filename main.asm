@@ -149,6 +149,7 @@ INCLUDE "data/moves/descriptions.asm"
 INCLUDE "engine/events/pokerus/pokerus.asm"
 INCLUDE "engine/battle/start_battle.asm"
 INCLUDE "engine/gfx/place_graphic.asm"
+INCLUDE "engine/events/fortune_teller.asm"
 
 
 SECTION "Effect Commands", ROMX

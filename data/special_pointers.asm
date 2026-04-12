@@ -210,3 +210,4 @@ SpecialsPointers::
 	add_special HiddenPowerGirl
 	add_special RestorePlayerSprite
 	add_special StopPlayerRunning
+	add_special FortuneTeller

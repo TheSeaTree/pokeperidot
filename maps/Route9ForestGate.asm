@@ -3,8 +3,13 @@
 Route9ForestGate_MapScripts:
 	db 0 ; scene scripts
 
-	db 0 ; callbacks
-	
+	db 1 ; callbacks
+	callback MAPCALLBACK_TILES, .TarotCards
+
+.TarotCards
+	changeblock 8, 6, $99
+	return
+
 Donnie:
 	faceplayer
 	opentext
@@ -42,7 +47,16 @@ Route9ForestGateTeacherScript:
 .SetFlypoint
 	setflag ENGINE_FLYPOINT_ROUTE_9
 	end
-	
+
+FortuneTellerScript:
+	faceplayer
+	opentext
+	special FortuneTeller
+	end
+
+Route9ForestGateCardsScript:
+	jumptext Route9ForestGateCardsText
+
 Route9ForestGateOfficerText:
 	text "The forest up"
 	line "ahead is home to"
@@ -72,7 +86,15 @@ Route9ForestGateKeepAtItText:
 	para "Good luck"
 	line "up ahead!"
 	done
-	
+
+Route9ForestGateCardsText:
+	text "It's a set of cards"
+	line "used to tell some-"
+	cont "one's fortune."
+
+	para "They have very"
+	line "colorful artwork."
+	done
 
 Route9ForestGate_MapEvents:
 	db 0, 0 ; filler
@@ -85,9 +107,11 @@ Route9ForestGate_MapEvents:
 
 	db 0 ; coord events
 
-	db 0 ; bg events
+	db 1 ; bg events
+	bg_event 9, 6, BGEVENT_READ, Route9ForestGateCardsScript
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event 10,  4, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 2, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Donnie, -1
 	object_event  0,  4, SPRITE_OFFICER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route9ForestGateOfficerScript, -1
 	object_event  8,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route9ForestGateTeacherScript, -1
+	object_event  8,  6, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, FortuneTellerScript, -1
