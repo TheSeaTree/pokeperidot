@@ -1006,8 +1006,6 @@ MoonBallMultiplier:
 	ret nz
 
 	inc hl
-	inc hl
-	inc hl
 
 ; Moon Stone's constant from Pokémon Red is used.
 ; No Pokémon evolve with Burn Heal,
