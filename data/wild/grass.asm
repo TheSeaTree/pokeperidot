@@ -487,6 +487,87 @@ GrassWildMons:
 	db 20, MISDREAVUS
 	db 20, ONIX
 	db 21, MISDREAVUS
+	
+	map_id PALEROCK_MOUNTAIN_B2
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, GOLBAT
+	db 34, ONIX
+	db 36, MAROWAK
+	db 34, DUGTRIO
+	db 31, GRAVELER
+	db 30, ONIX
+	db 33, GRAVELER
+	; day
+	db 35, GOLBAT
+	db 34, ONIX
+	db 36, MAROWAK
+	db 34, DUGTRIO
+	db 31, GRAVELER
+	db 30, ONIX
+	db 33, GRAVELER
+	; nite
+	db 35, GOLBAT
+	db 34, ONIX
+	db 36, MAROWAK
+	db 34, DUGTRIO
+	db 31, GRAVELER
+	db 30, ONIX
+	db 33, GRAVELER
+	
+	map_id PALEROCK_MOUNTAIN_B3
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, ONIX
+	db 35, GOLBAT
+	db 34, DUNSPARCE
+	db 36, DUGTRIO
+	db 29, KINGLER
+	db 31, KINGLER
+	db 33, KINGLER
+	; day
+	db 36, ONIX
+	db 35, GOLBAT
+	db 34, DUNSPARCE
+	db 36, DUGTRIO
+	db 29, KINGLER
+	db 31, KINGLER
+	db 33, KINGLER
+	; nite
+	db 36, ONIX
+	db 35, GOLBAT
+	db 34, DUNSPARCE
+	db 36, DUGTRIO
+	db 29, KINGLER
+	db 31, KINGLER
+	db 33, KINGLER
+	
+	map_id PALEROCK_MOUNTAIN_WATERFALL_CHAMBER
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, HAUNTER
+	db 35, GOLBAT
+	db 34, KINGLER
+	db 36, KINGLER
+	db 29, KINGLER
+	db 31, POLIWHIRL
+	db 33, POLIWHIRL
+	; day
+	db 36, HAUNTER
+	db 35, GOLBAT
+	db 34, KINGLER
+	db 36, KINGLER
+	db 29, KINGLER
+	db 31, POLIWHIRL
+	db 33, POLIWHIRL
+	; nite
+	db 36, HAUNTER
+	db 35, GOLBAT
+	db 34, KINGLER
+	db 36, KINGLER
+	db 29, KINGLER
+	db 31, POLIWHIRL
+	db 33, POLIWHIRL
 
 	map_id PALEROCK_CAVE_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite

@@ -342,6 +342,20 @@ StaghornTown_Blocks:
 RugosaCity_Blocks:
 	INCBIN "maps/RugosaCity.ablk"
 
+TheBoneyard1F_Blocks:
+	INCBIN "maps/TheBoneyard1F.ablk"
+	
+TheBoneyard2F_Blocks:
+	INCBIN "maps/TheBoneyard2F.ablk"	
+
+PowerPlant1F_Blocks:
+PowerPlant1FB_Blocks:
+	INCBIN "maps/PowerPlant1F.ablk"
+
+PowerPlant2F_Blocks:
+PowerPlant2FB_Blocks:
+	INCBIN "maps/PowerPlant2F.ablk"
+
 AcroporaCity_Blocks:
 	INCBIN "maps/AcroporaCity.ablk"
 
@@ -608,20 +622,6 @@ OverlookMaze_Blocks:
 LostLand_Blocks:
 	INCBIN "maps/LostLand.ablk"
 
-TheBoneyard1F_Blocks:
-	INCBIN "maps/TheBoneyard1F.ablk"
-	
-TheBoneyard2F_Blocks:
-	INCBIN "maps/TheBoneyard2F.ablk"	
-
-PowerPlant1F_Blocks:
-PowerPlant1FB_Blocks:
-	INCBIN "maps/PowerPlant1F.ablk"
-
-PowerPlant2F_Blocks:
-PowerPlant2FB_Blocks:
-	INCBIN "maps/PowerPlant2F.ablk"
-
 SafariZoneGate1F_Blocks:
 	INCBIN "maps/SafariZoneGate1F.ablk"
 
@@ -699,7 +699,7 @@ AcroporaCaveB1F_Blocks:
 PectiniaApartmentLeft2F_Blocks:
 RugosaApartment2F_Blocks:
 	INCBIN "maps/PectiniaApartmentLeft2F.ablk"
-	
+
 PectiniaApartmentRight2F_Blocks:
 	INCBIN "maps/PectiniaApartmentRight2F.ablk"
 

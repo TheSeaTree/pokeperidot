@@ -30,7 +30,7 @@ PalerockCaveB2F_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
-	warp_event 17, 11, PALEROCK_MOUNTAIN_B2, 1
+	warp_event 17, 11, PALEROCK_MOUNTAIN_B3, 2
 	warp_event 11, 13, PALEROCK_CAVE_B1F, 5
 
 	db 0 ; coord events

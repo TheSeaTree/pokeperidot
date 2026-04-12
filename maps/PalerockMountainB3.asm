@@ -33,8 +33,8 @@ PalerockMountainB3_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event  11,  5, PALEROCK_CAVE_B2F, 1
-	warp_event  37,  7, PALEROCK_MOUNTAIN_B1, 3
+	warp_event  11,  5, PALEROCK_MOUNTAIN_B2, 1
+	warp_event  37,  7, PALEROCK_CAVE_B2F, 1
 	warp_event  35, 19, PALEROCK_MOUNTAIN_WATERFALL_CHAMBER, 1
 
 	db 0 ; coord events

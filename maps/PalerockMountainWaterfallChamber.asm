@@ -14,6 +14,12 @@ PalerockMountainWaterfallChamberHPUp:
 PalerockMountainWaterfallChamberBigPearl:
 	itemball BIG_PEARL
 
+PalerockMountainWaterfallChamberXAttack:
+	itemball X_ATTACK
+
+PalerockMountainWaterfallChamberXSpAtk:
+	itemball X_SP_ATK
+
 Route18HiddenCave1FHiddenCarbos:
 	hiddenitem CARBOS, EVENT_PALEROCK_WATERFALL_HIDDEN_CARBOS
 
@@ -26,9 +32,8 @@ PalerockMountainWaterfallChamberBoulder:
 PalerockMountainWaterfallChamber_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 1 ; warp events
 	warp_event 21, 19, PALEROCK_MOUNTAIN_B3, 3
-	warp_event 11,  5, PALEROCK_MOUNTAIN_B2, 1
 
 	db 0 ; coord events
 
@@ -36,8 +41,10 @@ PalerockMountainWaterfallChamber_MapEvents:
 	bg_event  4, 21, BGEVENT_ITEM, Route18HiddenCave1FHiddenPPUp
 	bg_event  7,  7, BGEVENT_ITEM, Route18HiddenCave1FHiddenCarbos
 
-	db 4 ; object events
+	db 6 ; object events
 	object_event 23, 17, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalerockMountainWaterfallChamberBoulder, -1
 	object_event 25, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberMaxRepel, EVENT_PALEROCK_WATERFALL_MAX_REPEL
 	object_event 24, 14, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberHPUp, EVENT_PALEROCK_WATERFALL_HP_UP
 	object_event  6, 16, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberBigPearl, EVENT_PALEROCK_WATERFALL_BIG_PEARL
+	object_event  9,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberXAttack, EVENT_PALEROCK_WATERFALL_X_ATTACK
+	object_event 12,  5, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, PalerockMountainWaterfallChamberXSpAtk, EVENT_PALEROCK_WATERFALL_X_SP_ATK

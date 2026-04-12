@@ -267,7 +267,7 @@ PalerockMountain1F_MapEvents:
 	warp_event  13, 23, ROUTE_3, 5
 	warp_event   7,  3, PALEROCK_MOUNTAIN_2F, 1
 	warp_event  32, 23, PALEROCK_MOUNTAIN_B1, 1
-	warp_event   3, 23, PALEROCK_MOUNTAIN_B2, 2
+	warp_event   3, 23, PALEROCK_MOUNTAIN_B1, 5
 
 	db 0 ; coord events
 

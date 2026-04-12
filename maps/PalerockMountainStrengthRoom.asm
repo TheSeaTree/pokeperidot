@@ -38,13 +38,7 @@ PalerockMountainStrengthRoomBall:
 	end
 	
 PalerockStrengthRoomSign:
-	checkcode VAR_FACING
-	ifequal UP, .SignText
-	end
-	
-.SignText
 	jumptext PalerockStrengthRoomSignText
-	end
 
 ItLooksStuck:
 	text "The capsule seems"
@@ -91,7 +85,7 @@ PalerockMountainStrengthRoom_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event  4,  2, BGEVENT_READ, PalerockStrengthRoomSign
+	bg_event  4,  2, BGEVENT_UP, PalerockStrengthRoomSign
 
 	db 1 ; object events
 	object_event   5,  2, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, PalerockMountainStrengthRoomBall, EVENT_GOT_TM_STRENGTH

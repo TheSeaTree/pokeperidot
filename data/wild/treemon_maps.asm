@@ -72,4 +72,5 @@ RockMonMaps:
 	treemon_map ROUTE_23_CAVE_B1F,    	   TREEMON_SET_ROCK
 	treemon_map PAVONA_PASS_1F,      	   TREEMON_SET_ROCK
 	treemon_map PAST_PAVONA_VILLAGE,	   TREEMON_SET_ROCK
+	treemon_map PALEROCK_MOUNTAIN_B2,	   TREEMON_SET_ROCK
 	db -1

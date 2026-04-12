@@ -423,8 +423,8 @@ ENDM
 	map_const PALEROCK_MOUNTAIN_2F,  					   15, 11 ;  2
 	map_const PALEROCK_MOUNTAIN_3F,  					    9,  9 ;  3
 	map_const PALEROCK_MOUNTAIN_OUTSIDE,				   17, 13 ;  4
-	map_const PALEROCK_MOUNTAIN_B1,						   17, 12 ;  5
-	map_const PALEROCK_MOUNTAIN_B2,						    6, 11 ;  5
+	map_const PALEROCK_MOUNTAIN_B1,						   18, 15 ;  5
+	map_const PALEROCK_MOUNTAIN_B2,						   11, 19 ;  5
 	map_const PALEROCK_MOUNTAIN_B3,						   22, 16 ;  5
 	map_const PALEROCK_MOUNTAIN_WATERFALL_CHAMBER,	       15, 13 ;  6
 	map_const PALEROCK_MOUNTAIN_STRENGTH_ROOM,		        5,  4 ;  6
