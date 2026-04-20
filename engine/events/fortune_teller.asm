@@ -170,6 +170,9 @@ FortuneTeller:
 	writetext FortuneTeller_NoEvolutionText
 	faceplayer
 	writetext FortuneTeller_CongratulationsText
+	playsound SFX_KEY_ITEM
+	waitsfx
+
 	jump .ScriptsDone
 
 .EggScript:
