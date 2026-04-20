@@ -4,6 +4,8 @@
 	const PALEROCKOUTSIDE_ROCKER3
 	const PALEROCKOUTSIDE_ROCKER4
 	const PALEROCKOUTSIDE_ROCKER5
+	const PALEROCKOUTSIDE_ROCKER6
+	const PALEROCKOUTSIDE_HIKER
 	
 PalerockMountainOutside_MapScripts:
 	db 0 ; scene scripts
@@ -11,6 +13,9 @@ PalerockMountainOutside_MapScripts:
 	db 0 ; callbacks
 
 PalerockOutsideRocker:
+	jumptextfaceplayer PalerockOutsideRockerText
+
+PalerockOutsideRockerBlocking:
 	faceplayer
 	opentext
 	writetext SorryLittleDude
@@ -128,21 +133,26 @@ GuitaristPaulAfterText:
 	done
 
 GuitaristFredrikText:
-	text "I am ready to rip"
-	line "through your team"
-	cont "effortlessly!"
+	text "Hey, you're the"
+	line "kid who broke me"
+	cont "out of that rocky"
+	cont "prison."
+
+	para "We're already even,"
+	line "so I'm not going"
+	cont "easy on you!"
 	done
 
 GuitaristFredrikWinText:
 	text "What a slaughter!"
 	done
-	
+
 GuitaristFredrikAfterText:
 	text "My #MON just"
-	line "wants to THRASH"
-	cont "madly."
+	line "wants to madly"
+	cont "THRASH about!"
 	done
-	
+
 GuitaristBrendonText:
 	text "My #MON will"
 	line "come down on you"
@@ -154,13 +164,13 @@ GuitaristBrendonWinText:
 	line "well, but I blew"
 	cont "that last part!"
 	done
-	
+
 GuitaristBrendonAfterText:
 	text "This is the reason"
 	line "why I can't be in"
 	cont "a one-guitar band."
 	done
-	
+
 PalerockOutsideHikerText:
 	text "I took a break to"
 	line "catch my breath."
@@ -171,7 +181,19 @@ PalerockOutsideHikerText:
 	para "I'm glad I'm not"
 	line "afraid of heights!"
 	done
-	
+
+PalerockOutsideRockerText:
+	text "I wonder when"
+	line "FREDRIK is gonna"
+	cont "get here."
+
+	para "It's not a party"
+	line "until he shows up."
+
+	para "He always brings"
+	line "the SODA POP!"
+	done
+
 PalerockMountainOutside_MapEvents:
 	db 0, 0 ; filler
 	
@@ -184,11 +206,12 @@ PalerockMountainOutside_MapEvents:
 
 	db 0 ; bg events
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event 21, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristTomas, -1
 	object_event 22, 19, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristPaul, -1
 	object_event 26,  9, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 2, TrainerGuitaristFredrik, -1
 	object_event 25, 16, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_FAST, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 3, TrainerGuitaristBrendon, -1
-	object_event 15, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PalerockOutsideRocker, EVENT_SAVED_PALEROCK_ROCKER
+	object_event 15, 16, SPRITE_ROCKER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PalerockOutsideRockerBlocking, EVENT_SAVED_PALEROCK_ROCKER
+	object_event 11, 17, SPRITE_ROCKER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, PalerockOutsideRocker, EVENT_SAVED_PALEROCK_ROCKER
 	object_event  4, 14, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, PalerockOutsideHiker, -1
 	
