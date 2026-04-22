@@ -34,7 +34,6 @@ SageScript:
 	reloadmapafterbattle
 	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR1, BurglarRetreat
-	disappear CIANWOODCHURCH_BURGLAR1
 	applymovement CIANWOODCHURCH_BURGLAR2, Burglar2Approach
 	playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
@@ -47,7 +46,6 @@ SageScript:
 	reloadmapafterbattle
 	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR2, BurglarRetreat
-	disappear CIANWOODCHURCH_BURGLAR2
 	applymovement CIANWOODCHURCH_BURGLAR3, Burglar3Approach
 	playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
@@ -60,7 +58,6 @@ SageScript:
 	reloadmapafterbattle
 	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR3, BurglarRetreat
-	disappear CIANWOODCHURCH_BURGLAR3
 	applymovement CIANWOODCHURCH_BURGLAR4, Burglar4Approach
 	playmusic MUSIC_HIKER_ENCOUNTER
 	opentext
@@ -73,7 +70,6 @@ SageScript:
 	reloadmapafterbattle
 	ifnotequal $0, .Lost
 	applymovement CIANWOODCHURCH_BURGLAR4, BurglarRetreat
-	disappear CIANWOODCHURCH_BURGLAR4
 	applymovement CIANWOODCHURCH_SAGE2, Sage2Approach
 	special HealParty
 	playsound SFX_FULL_HEAL
@@ -111,6 +107,10 @@ SageScript:
 	pause 12
 	disappear CIANWOODCHURCH_SAGE1
 	disappear CIANWOODCHURCH_SAGE2
+	disappear CIANWOODCHURCH_BURGLAR1
+	disappear CIANWOODCHURCH_BURGLAR2
+	disappear CIANWOODCHURCH_BURGLAR3
+	disappear CIANWOODCHURCH_BURGLAR4
 	setevent EVENT_CLEARED_CHURCH
 	clearevent EVENT_CIANWOOD_FLY_GUY
 	special FadeInQuickly
