@@ -1147,6 +1147,7 @@ SwinubEggMoves:
 	db DOUBLE_EDGE
 	db FISSURE
 	db FREEZE_DRY
+	db PAY_DAY
 	db SPIKES
 	db STONE_EDGE
 	db -1 ; end
