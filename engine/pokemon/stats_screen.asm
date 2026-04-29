@@ -663,7 +663,7 @@ StatsScreen_LoadGFX:
 	ret
 
 .GetItemName:
-	ld de, .ThreeDashes
+	ld de, ThreeDashesString
 	ld a, [wTempMonItem]
 	and a
 	ret z
@@ -676,9 +676,6 @@ StatsScreen_LoadGFX:
 
 .Item:
 	db "ITEM@"
-
-.ThreeDashes:
-	db "---@"
 
 .Move:
 	db "MOVE@"
@@ -789,6 +786,9 @@ StatsScreen_LoadGFX:
 	ld de, OTString
 	hlcoord 0,  9
 	call PlaceString
+	ld hl, wStatusFlags2
+	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
+	jr nz, .BattleSimOTInfo
 	hlcoord 1, 13
 	lb bc, PRINTNUM_LEADINGZEROS | 2, 5
 	ld de, wTempMonID
@@ -821,6 +821,15 @@ StatsScreen_LoadGFX:
 	ld [hl], $35 ; Egg Icon
 	ret
 
+.BattleSimOTInfo:
+	ld de, ThreeDashesString
+	hlcoord 1, 13
+	call PlaceString
+	ld de, ThreeDashesString
+	hlcoord 1, 10
+	call PlaceString
+	ret
+
 .OTNamePointers:
 	dw wPartyMonOT
 	dw wOTPartyMonOT
@@ -832,6 +841,9 @@ IDNoString:
 
 OTString:
 	db "OT/@"
+
+ThreeDashesString:
+	db "---@"
 
 StatsScreen_PlaceFrontpic:
 	ld hl, wTempMonDVs
