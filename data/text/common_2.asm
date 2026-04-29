@@ -1575,11 +1575,6 @@ BattleSim_LastPokemon::
 	line "usable #MON!"
 	prompt
 
-BattleSim_CantReleasePorygon2::
-	text "You can't release"
-	line "PORYGON2!"
-	prompt
-
 BattleSim_AskRelease::
 	text "Release your"
 	line "@"

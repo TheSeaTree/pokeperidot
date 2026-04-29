@@ -175,6 +175,10 @@ GetMonSubmenuItems:
 	jr .ok
 
 .simulation
+	; Porygon2 can't be released, so hide this option for it.
+	ld a, [wCurPartySpecies]
+	cp PORYGON2
+	jr z, .skip2
 	ld a, MONMENUITEM_RELEASE
 
 .ok

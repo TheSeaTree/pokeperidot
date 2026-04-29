@@ -22,12 +22,8 @@ BattleSimulation_MapScripts:
 	end
 
 .Scene1:
-	opentext
-	writetext BattleSimulationChallengeCancelled
-	waitbutton
-	closetext
-	setscene SCENE_BATTLESIMULATION_CLEAR_TEMP_EVENT
-	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
+	priorityjump BattleSim_Forfeit
+	setscene SCENE_BATTLESIMULATION_DEFAULT
 	end
 
 .Scene2:
@@ -133,13 +129,17 @@ BattleSimulation_MapScripts:
 	return
 
 .Scene4:
-	clearevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	setscene SCENE_BATTLESIMULATION_DEFAULT
+; Unused
+	end
+
+BattleSim_Forfeit:
+	opentext
+	writetext BattleSimulationChallengeCancelled
+	waitbutton
+	closetext
 	end
 
 BattleSimulationGuy:
-	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_4
-	iftrue .Decline
 	opentext
 	writetext BattleSimulationIntroductionText
 	waitbutton

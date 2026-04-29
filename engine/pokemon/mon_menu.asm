@@ -1362,10 +1362,6 @@ Function132fe:
 	ret
 
 ReleaseFromParty:
-	ld a, [wCurPartySpecies]
-	cp PORYGON2
-	jr z, .CantReleasePorygon2
-
 	farcall CheckCurPartyMonFainted
 	jr c, .LastAliveMon
 
@@ -1392,11 +1388,6 @@ ReleaseFromParty:
 .LastAliveMon
 	ld hl, LastMonText
 	call MenuTextBoxBackup
-	jr .Finish
-
-.CantReleasePorygon2
-	ld hl, CantReleasePorygon2Text
-	call MenuTextBoxBackup
 .Finish
 	ld a, $3
 	ret
@@ -1411,8 +1402,4 @@ ByeByeText:
 
 LastMonText:
 	text_far BattleSim_LastPokemon
-	text_end
-
-CantReleasePorygon2Text:
-	text_far BattleSim_CantReleasePorygon2
 	text_end
