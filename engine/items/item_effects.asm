@@ -506,20 +506,15 @@ PokeBallEffect:
 	ld [wWildMon], a
 	ld [wCurPartySpecies], a
 	ld [wTempSpecies], a
-	ld a, [wBattleType]
-	cp BATTLETYPE_TUTORIAL
-	jp z, .FinishTutorial
-
-	farcall StubbedTrainerRankings_WildMonsCaught
 
 	ld hl, Text_GotchaMonWasCaught
 	call PrintText
 
 	call ClearSprites
 
-	ld hl, wStatusFlags2
-	bit STATUSFLAGS2_BATTLE_SIMULATION_F, [hl]
-	jp nz, .skip_pokedex
+	ld a, [wBattleType]
+	cp BATTLETYPE_SIMULATION
+	jp z, .skip_pokedex
 
 	ld a, [wTempSpecies]
 	dec a
@@ -739,9 +734,6 @@ PokeBallEffect:
 	call RotateThreePalettesRight
 	call LoadStandardFont
 	jr .return_from_capture
-
-.FinishTutorial:
-	ld hl, Text_GotchaMonWasCaught
 
 .shake_and_break_free
 	call PrintText
