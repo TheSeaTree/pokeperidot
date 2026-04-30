@@ -32,21 +32,12 @@ SweetScentNothing:
 SweetScentEncounter:
 	farcall CanUseSweetScent
 	jr nc, .no_battle
-	ld hl, wSafariFlag
-	bit SAFARIFLAGS_SAFARI_GAME_ACTIVE_F, [hl]
-	jr nz, .not_in_bug_contest
 	farcall GetMapEncounterRate
 	ld a, b
 	and a
 	jr z, .no_battle
 	farcall ChooseWildEncounter
 	jr nz, .no_battle
-	jr .start_battle
-
-.not_in_bug_contest
-	farcall ChooseWildEncounter_BugContest
-
-.start_battle
 	ld a, $1
 	ld [wScriptVar], a
 	ret
