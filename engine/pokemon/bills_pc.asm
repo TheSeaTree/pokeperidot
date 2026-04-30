@@ -1027,7 +1027,7 @@ BillsPC_BoxName:
 .gotbox
 	dec a
 	ld hl, wBoxNames
-	ld bc, $8
+	ld bc, BOX_NAME_LENGTH
 	call AddNTimes
 	ld e, l
 	ld d, h
@@ -1273,7 +1273,6 @@ BillsPC_RefreshTextboxes:
 	ld [hl], "♣"
 	hlcoord 8, 1
 	ld [hl], "♦"
-
 
 	ld a, [wBillsPC_ScrollPosition]
 	ld e, a
@@ -2412,12 +2411,25 @@ endr
 	ret
 
 GetBoxName:
-	ld bc, $8
-	ld hl, wBoxNames
-	call AddNTimes
-	ld d, h
-	ld e, l
-	ret
+    ld bc, BOX_NAME_LENGTH
+    ld hl, wBoxNames
+    call AddNTimes
+
+    ; If a box name exceeds 7 characters, truncate it.
+    ; This is for backward compatibility with old saves.
+    push hl
+    ld de, 7
+    add hl, de
+    ld a, [hl]
+    cp "@"
+    jr z, .length_ok
+    ld [hl], "@"
+
+.length_ok
+	pop hl
+    ld d, h
+    ld e, l
+    ret
 
 BillsPC_PrintBoxCountAndCapacity:
 	hlcoord 0, 0
@@ -2566,7 +2578,7 @@ BillsPC_ChangeBoxSubmenu:
 	ld e, l
 	ld d, h
 	ld hl, wd002
-	ld c, $7
+	ld c, BOX_NAME_LENGTH - 1
 	call InitString
 	ld a, [wMenuSelection]
 	dec a
@@ -2574,8 +2586,6 @@ BillsPC_ChangeBoxSubmenu:
 	ld de, wd002
 	call CopyName2
 	ret
-
-	hlcoord 11, 7 ; unused
 
 .MenuHeader:
 	db MENU_BACKUP_TILES ; flags

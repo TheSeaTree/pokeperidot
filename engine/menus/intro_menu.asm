@@ -327,7 +327,7 @@ SetDefaultBoxNames:
 	ld [hli], a
 	ld [hl], "@"
 	pop hl
-	ld de, 8
+	ld de, 9
 	add hl, de
 	inc c
 	ld a, c
