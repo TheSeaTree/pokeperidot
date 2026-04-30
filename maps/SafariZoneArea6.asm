@@ -10,7 +10,10 @@ SafariZoneArea6Sign:
 
 SafariZoneArea6RestHouseSign:
 	jumptext SafariZoneArea6RestHouseSignText
-	
+
+SafariZoneArea6HiddenStick:
+	hiddenitem STICK, EVENT_SAFARI_ZONE_AREA_6_HIDDEN_STICK
+
 SafariZoneArea6SignText:
 	text "SAFARI ZONE-"
 	line "AREA 6"
@@ -28,8 +31,9 @@ SafariZoneArea6_MapEvents:
 
 	db 0 ; coord events
 
-	db 2 ; bg events
+	db 3 ; bg events
 	bg_event 15, 11, BGEVENT_READ, SafariZoneArea6Sign
 	bg_event  6, 10, BGEVENT_READ, SafariZoneArea6RestHouseSign
+	bg_event 22,  1, BGEVENT_ITEM, SafariZoneArea6HiddenStick
 
 	db 0 ; object events
