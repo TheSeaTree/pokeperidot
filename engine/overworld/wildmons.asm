@@ -214,6 +214,7 @@ TryWildEncounter::
 .EncounterRate:
 	call GetMapEncounterRate
 	call ApplyCleanseTagEffectOnEncounterRate
+	call CheckDoubledEncounterRate
 	call Random
 	cp b
 	ret
@@ -249,6 +250,22 @@ ApplyCleanseTagEffectOnEncounterRate::
 .cleansetag
 	srl b
 	ret
+
+CheckDoubledEncounterRate:
+; Double the encounter rate for long grass, running, or biking.
+	ld a, [wPlayerStandingTile]
+	call CheckSuperTallGrassTile
+	jr z, .ok
+	ld a, [wPlayerState]
+	cp PLAYER_RUN
+	jr z, .ok
+	cp PLAYER_BIKE
+	ret nz
+.ok
+; This has potential to overflow
+; But there are no encounter rates high enough to cause that.
+	sla b
+    ret
 
 ChooseWildEncounter:
 	call LoadWildMonDataPointer
