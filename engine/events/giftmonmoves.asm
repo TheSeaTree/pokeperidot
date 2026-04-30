@@ -251,8 +251,6 @@ MagikarpGiftMon:
 
 .Moveset:
 	db SPLASH
-	db TACKLE
-	db FLAIL
 	db DIVE_BOMB
 	db 0
 

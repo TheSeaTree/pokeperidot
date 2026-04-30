@@ -86,6 +86,7 @@ BuyMagikarp:
 	iffalse .NormalEgg
 	giveegg MAGIKARP, 5
 	special MagikarpGiftMon
+	callasm ForceMaleEgg
 	writetext SpecialMagikarpEggText
 	waitbutton
 	jump .SoldToday
@@ -115,6 +116,18 @@ BuyMagikarp:
 	waitbutton
 	closetext
 	end
+
+ForceMaleEgg:
+; Only males can pass on egg moves, so this Magikarp will have an Attack DV of 15.
+    ld a, [wPartyCount]
+    dec a
+    ld hl, wPartyMon1DVs
+    ld bc, PARTYMON_STRUCT_LENGTH
+    call AddNTimes
+    ld a, [hl]
+    or $f0
+    ld [hl], a
+	ret
 
 MagikarpGuruIntroText:
 	text "Have you ever come"

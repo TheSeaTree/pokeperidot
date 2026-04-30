@@ -1263,7 +1263,7 @@ PlaceMoveData:
 	hlcoord 16, 13
 
 	; Display "---" for moves that can't miss.
-	cp 2
+	cp 3
 	jr c, .perfect_accuracy
 
 	ld [wDeciramBuffer], a
