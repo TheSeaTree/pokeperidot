@@ -9,7 +9,7 @@ RGBFIX := rgbfix
 RGBGFX := rgbgfx
 RGBLINK := rgblink
 
-roms := pokeperidot.gbc simtest.gbc
+roms := pokeperidot.gbc peridot_arena.gbc
 
 peridot_obj := \
 audio.o \
@@ -27,23 +27,23 @@ gfx/pics.o \
 gfx/sprites.o \
 lib/mobile/main.o
 
-simtest_obj := $(peridot_obj:.o=11.o)
+peridot_arena_obj := $(peridot_obj:.o=11.o)
 
 
 ### Build targets
 
 .SUFFIXES:
-.PHONY: all peridot simtest clean compare tools
+.PHONY: all peridot arena clean compare tools
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
 
-all: peridot
+all: pokeperidot.gbc peridot_arena.gbc
 peridot: pokeperidot.gbc
-simtest: simtest.gbc
+arena: peridot_arena.gbc
 
 clean:
-	rm -f $(roms) $(peridot_obj) $(simtest_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
+	rm -f $(roms) $(peridot_obj) $(peridot_arena_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym)
 	$(MAKE) clean -C tools/
 
 compare: $(roms)
@@ -54,7 +54,7 @@ tools:
 
 
 $(peridot_obj):   RGBASMFLAGS = -D _PERIDOT
-$(simtest_obj): RGBASMFLAGS = -D _PERIDOT -D _SIMTEST
+$(peridot_arena_obj): RGBASMFLAGS = -D _PERIDOT -D _ARENA
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -70,7 +70,7 @@ ifeq (,$(filter clean tools,$(MAKECMDGOALS)))
 
 $(info $(shell $(MAKE) -C tools))
 
-$(foreach obj, $(simtest_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
+$(foreach obj, $(peridot_arena_obj), $(eval $(call DEP,$(obj),$(obj:11.o=.asm))))
 $(foreach obj, $(peridot_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 
 endif
@@ -81,10 +81,10 @@ pokeperidot.gbc: $(peridot_obj) pokeperidot.link
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_PERIDOT $@
 	tools/sort_symfile.sh pokeperidot.sym
 
-simtest.gbc: $(simtest_obj) pokeperidot.link
-	$(RGBLINK) -n simtest.sym -m simtest.map -l pokeperidot.link -o $@ $(simtest_obj)
+peridot_arena.gbc: $(peridot_arena_obj) pokeperidot.link
+	$(RGBLINK) -n peridot_arena.sym -m peridot_arena.map -l pokeperidot.link -o $@ $(peridot_arena_obj)
 	$(RGBFIX) -Cjv -i BYTE -k 01 -l 0x33 -m 0x10 -n 1 -p 0 -r 3 -t PM_PERIDOT $@
-	tools/sort_symfile.sh simtest.sym
+	tools/sort_symfile.sh peridot_arena.sym
 
 
 # For files that the compressor can't match, there will be a .lz file suffixed with the md5 hash of the correct uncompressed file.

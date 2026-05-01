@@ -4000,6 +4000,7 @@ StantlerEvosAttacks:
 	db 43, HI_JUMP_KICK
 	db 0 ; no more level-up moves
 
+if !DEF(_ARENA)
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
 	db  1, SKETCH
@@ -4013,6 +4014,7 @@ SmeargleEvosAttacks:
 	db 81, SKETCH
 	db 91, SKETCH
 	db 0 ; no more level-up moves
+endc
 
 GorgrowthEvosAttacks:
 	db 0 ; no more evolutions
@@ -4334,3 +4336,117 @@ FerrodonEvosAttacks:
 	db 49, OUTRAGE
 	db 55, FISSURE
 	db  0 ; no more level-up moves
+
+if DEF(_ARENA)
+SmeargleEvosAttacks:
+	db 0 ; no more evolutions
+; Offensive moves go here so the list doesn't overflow.
+	db 1, ABSORB
+	db 1, ACID
+	db 1, AERIAL_ACE
+	db 1, AEROBLAST
+	db 1, ANCIENTPOWER
+	db 1, AQUA_JET
+	db 1, AURORA_BEAM
+	db 1, BARRAGE
+	db 1, BIND
+	db 1, BITE
+	db 1, BODY_PRESS
+	db 1, BONEMERANG
+	db 1, BONE_CLUB
+	db 1, BRAVE_BIRD
+	db 1, BRICK_BREAK
+	db 1, BUBBLE
+	db 1, BULLET_PUNCH
+	db 1, COMET_PUNCH
+	db 1, CONFUSION
+	db 1, CRABHAMMER
+	db 1, CROSS_CHOP
+	db 1, DIVE_BOMB
+	db 1, DIZZY_PUNCH
+	db 1, DOUBLESLAP 
+	db 1, DOUBLE_EDGE
+	db 1, DOUBLE_KICK
+	db 1, DRAGON_RAGE
+	db 1, DRILL_PECK
+	db 1, DYNAMICPUNCH
+	db 1, EGG_BOMB
+	db 1, EMBER
+	db 1, EXPLOSION
+	db 1, EXTREMESPEED
+	db 1, FAINT_ATTACK
+	db 1, FALSE_SWIPE
+	db 1, FIRE_SPIN
+	db 1, FLAIL
+	db 1, FLAME_WHEEL
+	db 1, FLARE_BLITZ
+	db 1, FREEZE_DRY
+	db 1, FURY_ATTACK
+	db 1, FURY_CUTTER
+	db 1, FURY_SWIPES
+	db 1, FUTURE_SIGHT
+	db 1, GUNK_SHOT
+	db 1, HEAT_WAVE
+	db 1, HI_JUMP_KICK
+	db 1, HORN_ATTACK
+	db 1, HYDRO_PUMP
+	db 1, ICICLE_SPEAR 
+	db 1, IRON_TAIL
+	db 1, KARATE_CHOP
+	db 1, LICK
+	db 1, MACH_PUNCH
+	db 1, MEGAHORN
+	db 1, MEGA_DRAIN
+	db 1, METAL_CLAW
+	db 1, MOONBLAST
+	db 1, MUD_SLAP
+	db 1, OCTAZOOKA
+	db 1, OUTRAGE
+	db 1, PAY_DAY
+	db 1, PECK
+	db 1, PETAL_DANCE
+	db 1, PIN_MISSILE
+	db 1, POISON_STING
+	db 1, POUND
+	db 1, PRESENT
+	db 1, PSYBEAM
+	db 1, PSYWAVE
+	db 1, PURSUIT
+	db 1, QUICK_ATTACK
+	db 1, RAGE
+	db 1, RAPID_SPIN
+	db 1, RAZOR_LEAF
+	db 1, RAZOR_WIND
+	db 1, REVERSAL
+	db 1, ROCK_THROW
+	db 1, ROLLOUT
+	db 1, SACRED_FIRE
+	db 1, SCRATCH
+	db 1, SIGNAL_BEAM
+	db 1, SILVER_WIND
+	db 1, SKULL_BASH
+	db 1, SLUDGE
+	db 1, SMOG
+	db 1, SNORE
+	db 1, SPARK
+	db 1, SPIKE_CANNON
+	db 1, STEEL_WING
+	db 1, STONE_EDGE
+	db 1, SWIFT
+	db 1, TACKLE
+	db 1, THRASH
+	db 1, THUNDERSHOCK
+	db 1, TRI_ATTACK
+	db 1, TWINEEDLE
+	db 1, TWISTER
+	db 1, U_TURN
+	db 1, VINE_WHIP
+	db 1, VITAL_THROW
+	db 1, WATER_GUN
+	db 1, WILD_CHARGE
+	db 1, WING_ATTACK
+	db 1, WRAP
+	db 1, X_SCISSOR
+	db 1, ZAP_CANNON
+	db 0 ; no more level-up moves
+endc

@@ -279,6 +279,9 @@ INCLUDE "maps/Pokecenter2F.asm"
 INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/SSMakoLowerDeck.asm"
+if DEF(_ARENA)
+INCLUDE "maps/PVPRoom.asm"
+endc
 
 SECTION "Map Scripts 18", ROMX
 

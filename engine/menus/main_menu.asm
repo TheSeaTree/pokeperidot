@@ -117,6 +117,19 @@ MainMenuJoypadLoop:
 	ret
 
 MainMenu_PrintCurrentTimeAndDay:
+if DEF(_ARENA)
+	hlcoord 5, 15
+	lb bc, 1, 7
+	call TextBox
+	hlcoord 7, 16
+	ld de, .ArenaString
+	call PlaceString
+	ret
+
+.ArenaString
+	db "ARENA@"
+
+endc
 	ld a, [wSaveFileExists]
 	and a
 	ret z

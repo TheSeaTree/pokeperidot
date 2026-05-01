@@ -25,8 +25,22 @@ InitGender:
 	call LoadGenderScreenPal
 	call WaitBGMap2
 	call SetPalettes
+if !DEF(_ARENA)
 	ld hl, TextJump_AreYouABoyOrAreYouAGirl
 	call PrintText
+else
+	ld hl, wOptions2
+	ld a, [hl]
+	set NICKNAME_TOGGLE, [hl]
+	ld hl, wOptions
+	ld a, [hl]
+	push af
+	set NO_TEXT_SCROLL, [hl]
+	ld hl, TextJump_AreYouABoyOrAreYouAGirl
+	call PrintText
+	pop af
+	ld [wOptions], a
+endc
 	farcall DrawGenderSelectionPics
 	ld hl, .MenuHeader
 	call LoadMenuHeader

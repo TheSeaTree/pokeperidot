@@ -541,3 +541,6 @@ ENDM
 	map_const PAST_ROUTE_1,						  		   26, 16
 	map_const PAST_ROUTE_2,                                23, 21 ;  1
 	map_const PAST_ROUTE_2_GATE,                            5,  4
+if DEF(_ARENA)
+	map_const PVP_ROOM,										4,  4
+endc

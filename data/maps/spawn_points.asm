@@ -6,8 +6,11 @@ ENDM
 
 SpawnPoints:
 ; entries correspond to SPAWN_* constants
-
+if DEF(_ARENA)
+	spawn PVP_ROOM,             	   3,  4
+else
 	spawn PLAYERS_HOUSE_2F,            3,  3
+endc
 	spawn SS_MAKO_1F_ROOMS,            2,  1
 
 	spawn ELKHORN_TOWN,               17, 12

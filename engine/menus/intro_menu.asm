@@ -22,6 +22,9 @@ NewGame_ClearTileMapEtc:
 	ret
 
 DifficultySelect:
+if DEF(_ARENA)
+	ret
+endc
 	ld a, $0
 	ld [wSpriteUpdatesEnabled], a
 	ld a, $10
@@ -153,14 +156,14 @@ NewGame:
 	call NewGame_ClearTileMapEtc
 	call DifficultySelect
 	call OakSpeech
-
+if !DEF(_ARENA)
 	ld a, POTION
 	ld [wCurItem], a
 	ld a, 1
 	ld [wItemQuantityChangeBuffer], a
 	ld hl, wPCItems
 	call ReceiveItem
-
+endc
 	call InitializeWorld
 	ld a, 1
 	ld [wPrevLandmark], a
@@ -771,6 +774,7 @@ Continue_DisplayGameTime:
 	jp PrintNum
 
 OakSpeech:
+if !DEF(_ARENA)
 	farcall InitClock
 	call RotateFourPalettesLeft
 	call ClearTileMap
@@ -894,8 +898,8 @@ OakSpeech:
 	ld hl, OakText5
 	call PrintText
 	call RotateThreePalettesRight
+endc
 	call ClearTileMap
-
 	ld b, SCGB_GENDER_SELECTION
 	call GetSGBLayout
 	call SetPalettes
@@ -912,9 +916,10 @@ OakSpeech:
 	ld hl, OakText6
 	call PrintText
 	call NamePlayer
-
+if !DEF(_ARENA)
 	ld hl, OakText7
 	call PrintText
+endc
 	ret
 
 OakText1:

@@ -5,6 +5,9 @@ scene_var: MACRO
 ENDM
 
 MapScenes::
+if DEF(_ARENA)
+	scene_var PVP_ROOM, 	                            wPokecenter2FSceneID
+endc
 	scene_var POKECENTER_2F,                            wPokecenter2FSceneID
 	scene_var TRADE_CENTER,                             wTradeCenterSceneID
 	scene_var COLOSSEUM,                                wColosseumSceneID

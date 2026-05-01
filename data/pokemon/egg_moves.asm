@@ -1259,6 +1259,7 @@ StantlerEggMoves:
 	db WILD_CHARGE
 	db -1 ; end
 
+if !DEF(_ARENA)
 SmeargleEggMoves:
 	db ABSORB
 	db ACID
@@ -1506,6 +1507,7 @@ SmeargleEggMoves:
 	db WRAP
 	db X_SCISSOR
 	db ZAP_CANNON
+endc
 	; fallthrough
 GreminiEggMoves:
 	db CONFUSE_RAY
@@ -1594,3 +1596,80 @@ FerrodonEggMoves:
 
 NoEggMoves:
 	db -1 ; end
+
+if DEF(_ARENA)
+SmeargleEggMoves:
+; Status moves go here so the list doesn't overflow.
+	db ACID_ARMOR
+	db AGILITY
+	db AMNESIA
+	db BARRIER
+	db BATON_PASS
+	db BELLY_DRUM
+	db BIDE
+	db CHARM
+	db COIL
+	db CONFUSE_RAY
+	db CONVERSION
+	db CONVERSION2
+	db COSMIC_POWER
+	db COUNTER
+	db DEFENSE_CURL
+	db DESTINY_BOND
+	db DISABLE
+	db ENCORE
+	db FISSURE
+	db FOCUS_ENERGY
+	db FORESIGHT
+	db GLARE
+	db GROWL
+	db GUILLOTINE
+	db HARDEN
+	db HAZE
+	db HORN_DRILL
+	db HYPNOSIS
+	db LEECH_SEED
+	db LEER
+	db LOCK_ON
+	db MEAN_LOOK
+	db METRONOME
+	db MILK_DRINK
+	db MIMIC
+	db MIND_READER
+	db MINIMIZE
+	db MIRROR_COAT
+	db MIRROR_MOVE
+	db MIST
+	db MOONLIGHT
+	db MORNING_SUN
+	db NIGHT_SHADE
+	db PAIN_SPLIT
+	db PERISH_SONG
+	db POISONPOWDER
+	db POISON_GAS
+	db QUIVER_DANCE
+	db RECOVER
+	db SAND_ATTACK
+	db SCARY_FACE
+	db SCREECH
+	db SEISMIC_TOSS
+	db SHARPEN
+	db SING
+	db SLEEP_POWDER
+	db SMOKESCREEN
+	db SOFTBOILED
+	db SONICBOOM
+	db SPIKES
+	db SPITE
+	db SPORE
+	db STRING_SHOT
+	db STUN_SPORE
+	db SUPERSONIC
+	db SWEET_SCENT
+	db SYNTHESIS
+	db TAIL_WHIP
+	db TRANSFORM
+	db WHIRLWIND
+	db WILL_O_WISP
+	db -1
+endc

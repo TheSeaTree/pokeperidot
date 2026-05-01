@@ -32,6 +32,17 @@ UnusedTitleScreen:
 	ld bc, vTiles1 - vTiles0
 	call CopyBytes
 
+if DEF(_ARENA)
+	ld hl, ArenaVersionBG_GFX
+	ld de, vTiles2 tile $65
+	ld bc, $b tiles
+	call CopyBytes
+	ld hl, ArenaVersionBG_GFX tile $b
+	ld de, vTiles2 tile $75
+	ld bc, $3 tiles
+	call CopyBytes
+endc
+
 	ld hl, UnusedTitleBG_Tilemap
 	debgcoord 0, 1
 	ld bc, BG_MAP_WIDTH * BG_MAP_HEIGHT
@@ -177,6 +188,11 @@ INCBIN "gfx/title/title_bg.2bpp"
 
 UnusedTitleBG_Tilemap:
 ; 32x32 (alternating tiles and attributes)
+if DEF(_ARENA)
+INCBIN "gfx/title/arena_bg.tilemap"
+ArenaVersionBG_GFX:
+INCBIN "gfx/title/arena_bg.2bpp"
+endc
 INCBIN "gfx/title/title_bg.tilemap"
 
 UnusedTitleBG_Palettes:

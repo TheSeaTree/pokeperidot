@@ -1012,3 +1012,8 @@ ForestWorld3_Blocks:
 
 BattleSimulationFinalRoom_Blocks:
 	INCBIN "maps/battle-simulation/BattleSimulationFinalRoom.ablk"
+	
+if DEF(_ARENA)
+PVPRoom_Blocks:
+	INCBIN "maps/PVPRoom.ablk"
+endc

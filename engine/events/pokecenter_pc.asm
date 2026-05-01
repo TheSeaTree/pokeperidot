@@ -52,6 +52,7 @@ PCPC_OAKS_PC      EQU 2
 PCPC_HALL_OF_FAME EQU 3
 PCPC_TURN_OFF     EQU 4
 PCPC_SAVE_GAME    EQU 5
+PCPC_MON_BUILDER  EQU 6
 
 .JumpTable:
 ; entries correspond to PCPC_* constants
@@ -61,6 +62,7 @@ PCPC_SAVE_GAME    EQU 5
 	dw HallOfFamePC, .String_HallOfFame
 	dw TurnOffPC,    .String_TurnOff
 	dw SaveGamePC,   .String_SaveGame
+	dw MonBuilderPC, .String_Builder
 
 .String_PlayersPC:  db "ITEM STORAGE@"
 .String_BillsPC:    db "#MON STORAGE@"
@@ -68,6 +70,7 @@ PCPC_SAVE_GAME    EQU 5
 .String_HallOfFame: db "HALL OF FAME@"
 .String_TurnOff:    db "TURN OFF@"
 .String_SaveGame:   db "SAVE GAME@"
+.String_Builder:    db "#MON BUILDER@"
 
 .WhichPC:
 	; before Pokédex
@@ -118,7 +121,20 @@ PCPC_SAVE_GAME    EQU 5
 	db PCPC_SAVE_GAME
 	db -1 ; end
 
+	; pvp build
+	db 4
+	db PCPC_BILLS_PC
+	db PCPC_MON_BUILDER
+	db PCPC_PLAYERS_PC
+	db PCPC_TURN_OFF
+	db -1 ; end
+
 .ChooseWhichPCListToUse:
+if DEF(_ARENA)
+	ld a, 6 ; arena
+	ret
+endc
+
 	call GetMapEnvironment
 	call CheckOutdoorMap
 	jr nz, .not_outside
@@ -202,6 +218,46 @@ HallOfFamePC:
 SaveGamePC:
 	farcall StartMenu_Save
 	ret
+
+MonBuilderPC:
+if DEF(_ARENA)
+	ld hl, PokecenterPCText_MonBuilderPromptSave
+	call MenuTextBox
+	call YesNoBox
+	jr c, .nosave
+	call ExitMenu
+
+	call PauseGameLogic
+	call _SavingDontTurnOffThePower
+	call ResumeGameLogic
+
+;	call SaveGameData
+
+	call PC_PlayChoosePCSound
+	ld hl, PokecenterPCText_MonBuilder
+	call PC_DisplayText
+
+	scf
+	call FadeToMenu
+	farcall ArenaMenu_PokemonBuilder
+	call CloseSubmenu
+	ret
+
+.nosave
+	xor a
+	call ExitMenu
+	ret
+
+PokecenterPCText_MonBuilder:
+	text "#MON BUILDER"
+	line "accessed."
+	prompt
+
+PokecenterPCText_MonBuilderPromptSave:
+	text "Would you like to"
+	line "save the game?"
+	done
+endc	
 
 TurnOffPC:
 	ld hl, PokecenterPCText_LinkClosed

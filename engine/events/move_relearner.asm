@@ -143,11 +143,13 @@ EggMoveTutor:
 	call PrintText
 	call JoyWaitAorB
 
+if !DEF(_ARENA)
 	ld a, STAR_PIECE
 	ld [wCurItem], a
 	ld hl, wNumItems
 	call CheckItem
 	jp nc, .no_item
+endc
 
 	ld hl, Text_MoveReminderPrompt
 	call PrintText
@@ -165,16 +167,18 @@ EggMoveTutor:
 	ld a, [wCurPartySpecies]
 	cp EGG
 	jp z, .egg
+if !DEF(_ARENA)
 	; The list is just too long with Smeargle.
 	cp SMEARGLE
 	jr z, .no_moves
+endc
 
 	call IsAPokemon
 	jp c, .no_mon
 
 	call GetValidEggMoves
 	jr z, .no_moves
-
+if !DEF(_ARENA)
 	ld a, [wCurPartyMon]
 	ld hl, wPartyMon1Happiness
 	ld bc, PARTYMON_STRUCT_LENGTH
@@ -182,7 +186,7 @@ EggMoveTutor:
 	ld a, [hl]
 	cp 170
 	jr c, .not_happy_enough
-
+endc
 	ld hl, Text_EggMoveTutorWhichMove
 	call PrintText
 	call JoyWaitAorB
@@ -613,7 +617,7 @@ ChooseMoveToLearn:
 
 	; Display "---" for moves that can't miss.
 	cp 2
-	jr c, .Perfect_Accuracy
+	call c, .Perfect_Accuracy
 
 	ld [wDeciramBuffer], a
 	ld de, wDeciramBuffer

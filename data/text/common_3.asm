@@ -1740,12 +1740,13 @@ EggMoveTutorIntroText::
 	para "I study the most"
 	line "rare moves that"
 	cont "#MON can learn."
-
+if !DEF(_ARENA)
 	para "I can teach your"
 	line "#MON how to use"
 	cont "these rare moves"
 	cont "if you trade me"
 	cont "a STAR PIECE."
+endc
 	done
 
 EggMoveTutorWhichMonText::
@@ -1801,10 +1802,15 @@ EggMoveTutorCancelText::
 
 SimulationMoveReminderCancelText::
 	text "All set?"
-
+if !DEF(_ARENA)
 	para "Good luck with the"
 	line "rest of your"
 	cont "SIMULATION run!"
+else
+	para "I hope you can"
+	line "some use in those"
+	cont "old moves."
+endc
 	done
 
 ExpAll_TurnOnText::

@@ -1395,3 +1395,7 @@ Function823c6:
 
 Function823c7:
 	ret
+
+if DEF(_ARENA)
+INCLUDE "engine/menus/debug_room.asm"
+endc

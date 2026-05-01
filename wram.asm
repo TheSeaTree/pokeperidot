@@ -3124,3 +3124,26 @@ wWindowStackBottom:: ds 1
 INCLUDE "sram.asm"
 
 INCLUDE "hram.asm"
+
+if DEF(_ARENA)
+SECTION "Arena Builder RAM", WRAMX
+
+; debug room paged values
+wArenaTempCurPage::        db
+wArenaTempCurValue::       db
+wArenaTempAFunction::      dw
+wArenaTempStartFunction::  dw
+wArenaTempSelectFunction:: dw
+wArenaTempAutoFunction::   dw
+wArenaTempPageCount::      db
+wArenaTempPagesPointer::   dw
+
+wArenaTempROMChecksum:: dw
+wArenaTempCurChecksumBank:: db
+
+UNION
+; debug room new pokemon values
+wArenaTempMon::    box_struct wArenaTempMon
+wArenaTempMonBox:: db
+ENDU
+endc
