@@ -623,7 +623,7 @@ ChooseMoveToLearn:
 	ld de, wDeciramBuffer
 	lb bc, 1, 3
 	call PrintNum
-
+.PlaceType
 	ld bc, MOVE_LENGTH
 	ld hl, Moves + MOVE_TYPE
 	call AddNTimes
@@ -647,11 +647,12 @@ ChooseMoveToLearn:
 .Perfect_Accuracy
 	hlcoord 16, 12
 	ld de, .String_PerfectAccuracy
-	jp PlaceString
+	call PlaceString
+	jr .PlaceType
 
 .CancelDescription
-	db   "Do not relearn a"
-	next "previous move.@"
+	db   "Do not learn any"
+	next "moves.@"
 
 .BP
 	db "<BOLD_B><BOLD_P>/@"
