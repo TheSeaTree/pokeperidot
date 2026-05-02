@@ -7,7 +7,7 @@ ENDM
 SpawnPoints:
 ; entries correspond to SPAWN_* constants
 if DEF(_ARENA)
-	spawn PVP_ROOM,             	   3,  4
+	spawn PVP_ROOM,             	   4,  4
 else
 	spawn PLAYERS_HOUSE_2F,            3,  3
 endc

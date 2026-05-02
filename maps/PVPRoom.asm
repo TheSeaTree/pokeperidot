@@ -74,9 +74,6 @@ PVPRoom_MapScripts:
 	giveitem TM_BULLDOZE
 	giveitem TM_PLAY_ROUGH
 	giveitem HM_SURF
-	opentext
-	special DoQuickSave
-	closetext
 .Nothing
 	end
 
@@ -245,6 +242,14 @@ Arena_MoveTutorRefused:
 	closetext
 	end
 
+Arena_MoveDeleter:
+	faceplayer
+	opentext
+	special MoveDeletion
+	waitbutton
+	closetext
+	end
+
 Arena_TutorIntroText:
 	text "I'm a MOVE TUTOR."
 
@@ -279,10 +284,11 @@ PVPRoom_MapEvents:
 	db 1 ; bg events
 	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
-	db 6 ; object events
+	db 7 ; object events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event  0,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Arena_EggTutor, -1
 	object_event  1,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_Reminder, -1
-	object_event  5,  6, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor1, -1
-	object_event  4,  6, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor2, -1
-	object_event  6,  6, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor3, -1
+	object_event  9,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor1, -1
+	object_event  8,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor2, -1
+	object_event 10,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor3, -1
+	object_event  0,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Arena_MoveDeleter, -1
