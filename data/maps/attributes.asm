@@ -648,5 +648,6 @@ ENDM
 	map_attributes GenesisIsland, GENESIS_ISLAND, $35, 0
 	map_attributes GenesisIslandInside, GENESIS_ISLAND_INSIDE, $07, 0
 if DEF(_ARENA)
-	map_attributes PVPRoom, PVP_ROOM, $00, 0
+	map_attributes PVPArena, PVP_ARENA, $00, 0
+	map_attributes PVPArenaMart, PVP_ARENA_MART, $00, 0
 endc

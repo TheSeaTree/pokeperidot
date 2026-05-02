@@ -25,6 +25,9 @@ OpenMartDialog::
 	dw Robbed
 	dw Drinks
 	dw BPShop
+if DEF(_ARENA)
+	dw ArenaShop
+endc
 
 MartDialog:
 	ld a, 0
@@ -517,6 +520,9 @@ GetMartDialogGroup:
 	dwb .PharmacyPointers, 0
 	dwb .StandardMartPointers, 0
 	dwb .SubwayMartPointers, 1
+if DEF(_ARENA)
+	dwb .ArenaMartPointers, 0
+endc
 
 .StandardMartPointers:
 	dw Text_Mart_HowMany
@@ -557,6 +563,16 @@ GetMartDialogGroup:
 	dw Text_Pharmacy_BagFull
 	dw Text_Pharmacy_HereYouGo
 	dw SubwayBuyMenuLoop
+
+if DEF(_ARENA)
+.ArenaMartPointers:
+	dw Text_Pharmacy_HowMany
+	dw Text_Mart_CostsThisMuch
+	dw Text_Mart_InsufficientFunds
+	dw Text_Mart_BagFull
+	dw Text_Mart_HereYouGo
+	dw Arena_BuyMenuLoop
+endc
 
 BuyMenuLoop:
 	farcall PlaceMoneyTopRight
@@ -1168,3 +1184,104 @@ MartTextBox:
 	call JoyWaitAorB
 	call ExitMenu
 	ret
+
+if DEF(_ARENA)
+ArenaShop:
+	call FarReadMart
+	call LoadStandardMenuHeader
+; Intro text defined in the map script.
+	call Arena_BuyMenu
+	ld hl, Text_Mart_ComeAgain
+	call MartTextBox
+	ret
+
+Arena_BuyMenu:
+	call FadeToMenu
+	farcall BlankScreen
+	xor a
+	ld [wMenuScrollPositionBackup], a
+	ld a, 1
+	ld [wMenuCursorBufferBackup], a
+.loop
+	call Arena_BuyMenuLoop
+	jr nc, .loop
+	call CloseSubmenu
+	ret	
+
+Arena_BuyMenuLoop:
+	call UpdateSprites
+	ld hl, MenuHeader_BuyArena
+	call CopyMenuHeader
+	ld a, [wMenuCursorBufferBackup]
+	ld [wMenuCursorBuffer], a
+	ld a, [wMenuScrollPositionBackup]
+	ld [wMenuScrollPosition], a
+	call ScrollingMenu
+	ld a, [wMenuScrollPosition]
+	ld [wMenuScrollPositionBackup], a
+	ld a, [wMenuCursorY]
+	ld [wMenuCursorBufferBackup], a
+	call SpeechTextBox
+	ld a, [wMenuJoypad]
+	cp B_BUTTON
+	jr z, .set_carry
+
+	call ArenaMartAskPurchaseQuantity
+	jr c, .cancel
+	ld hl, wNumItems
+	call ReceiveItem
+	jr nc, .insufficient_bag_space
+	ld a, [wMartItemID]
+	call WaitSFX
+	ld de, SFX_DEX_FANFARE_50_79
+	call PlaySFX
+	ld a, MARTTEXT_HERE_YOU_GO
+	call LoadBuyMenuText
+	call JoyWaitAorB
+
+.cancel
+	call SpeechTextBox
+	and a
+	ret
+
+.set_carry
+	scf
+	ret
+
+.insufficient_bag_space
+	ld a, MARTTEXT_BAG_FULL
+	call LoadBuyMenuText
+	call JoyWaitAorB
+	and a
+	ret
+
+MenuHeader_BuyArena:
+	db MENU_BACKUP_TILES ; flags
+	menu_coords 1, 0, SCREEN_WIDTH - 1, TEXTBOX_Y - 1
+	dw .MenuData
+	db 1 ; default option
+
+.MenuData
+	db SCROLLINGMENU_DISPLAY_ARROWS | SCROLLINGMENU_ENABLE_FUNCTION3 ; flags
+	db 6, 8 ; rows, columns
+	db 1 ; horizontal spacing
+	dbw 0, wCurMart
+	dba PlaceMenuItemName
+	dba .GetItemDescription
+	dba UpdateItemDescription
+
+.GetItemDescription:
+	ld a, [wScrollingMenuCursorPosition]
+	ld c, a
+	ld b, 0
+	ret
+
+ArenaMartAskPurchaseQuantity:
+	ld a, 99
+	ld [wItemQuantityBuffer], a
+	ld a, MARTTEXT_HOW_MANY
+	call LoadBuyMenuText
+	farcall SelectQuantityToToss
+	call ExitMenu
+	ret
+endc

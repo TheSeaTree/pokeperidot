@@ -1014,6 +1014,9 @@ BattleSimulationFinalRoom_Blocks:
 	INCBIN "maps/battle-simulation/BattleSimulationFinalRoom.ablk"
 	
 if DEF(_ARENA)
-PVPRoom_Blocks:
-	INCBIN "maps/PVPRoom.ablk"
+PVPArena_Blocks:
+	INCBIN "maps/PVPArena.ablk"
+
+PVPArenaMart_Blocks:
+	INCBIN "maps/PVPArenaMart.ablk"
 endc

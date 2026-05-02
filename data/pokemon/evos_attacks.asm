@@ -324,7 +324,11 @@ SkelegonEvosAttacks:
 	db 0 ; no more level-up moves130
 
 RinringEvosAttacks:
+if !DEF(_ARENA)
 	db EVOLVE_HAPPINESS, TR_NITE, NYANELL
+else
+	db EVOLVE_HAPPINESS, TR_ANYTIME, NYANELL
+endc
 	db 0 ; no more evolutions
 	db 1, SCRATCH
 	db 1, GROWL
@@ -1354,7 +1358,11 @@ MagnetonEvosAttacks:
 	db 0 ; no more level-up moves
 
 FarfetchDEvosAttacks:
+if !DEF(_ARENA)
 	db EVOLVE_HAPPINESS, TR_MORNDAY, MALLARK_Y
+else
+	db EVOLVE_HAPPINESS, TR_ANYTIME, MALLARK_Y
+endc
 	db 0 ; no more evolutions
 	db 1, PECK
 	db 1, FURY_CUTTER
@@ -2224,8 +2232,13 @@ EeveeEvosAttacks:
 	db EVOLVE_ITEM, THUNDERSTONE, JOLTEON
 	db EVOLVE_ITEM, WATER_STONE, VAPOREON
 	db EVOLVE_ITEM, FIRE_STONE, FLAREON
+if !DEF(_ARENA)
 	db EVOLVE_HAPPINESS, TR_MORNDAY, ESPEON
 	db EVOLVE_HAPPINESS, TR_NITE, UMBREON
+else
+	db EVOLVE_HOLD, TWISTEDSPOON, ESPEON
+	db EVOLVE_HOLD, BLACKGLASSES, UMBREON
+endc
 	db 0 ; no more evolutions
 	db 1, TACKLE
 	db 1, GROWL

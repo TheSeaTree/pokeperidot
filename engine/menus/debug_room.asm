@@ -471,18 +471,6 @@ Arena_JoyWaitABSelect:
 	jr z, .loop
 	ret
 
-Arena_PrintItemName:
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	call GetItemName
-	pop hl
-	push hl
-	lb bc, 1, 12
-	call ClearBox
-	pop hl
-	ld de, wStringBuffer1
-	jp PlaceString
-
 ArenaMenu_PokemonBuilder:
 	ld hl, .PagedValuesHeader
 	call Arena_EditPagedValues
@@ -666,17 +654,10 @@ Arena_PrintPokemonName:
 	call CopyBytes
 	jr _Arena_FinishGetName
 
-Arena_PrintItemName2:
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	call GetItemName
-	jr _Arena_FinishGetName
-
 Arena_PrintMoveName:
 	ld [wNamedObjectIndexBuffer], a
 	push bc
 	call GetMoveName
-	jr _Arena_FinishGetName
 
 _Arena_FinishGetName:
 	pop hl
@@ -709,14 +690,13 @@ Arena_UpdateExpForLevel:
 	ret
 
 ArenaMenu_PokemonBuilder_Page1Values:
-	db 7
-	paged_value wArenaTempMonBox,		   1,   NUM_BOXES,   $01,			Arena_BoxStructStrings.SendBox,   NULL,					   FALSE
-	paged_value wArenaTempMonSpecies,	   1,   NUM_POKEMON, BULBASAUR,	  Arena_BoxStructStrings.Pokemon,   Arena_PrintPokemonName, FALSE
-	paged_value wArenaTempMonLevel,		 5,   MAX_LEVEL,   MAX_LEVEL,			Arena_BoxStructStrings.Level,	 NULL,					   FALSE
-	paged_value wArenaTempMonItem,		  $03,   $be,		 BRIGHTPOWDER,	Arena_BoxStructStrings.Item,	  Arena_PrintItemName2,   FALSE
-	paged_value wArenaTempMonDVs+0,		 $00, $ff,		 $fe,			Arena_BoxStructStrings.PowerRnd0, NULL,					   TRUE
-	paged_value wArenaTempMonDVs+1,		 $00, $ff,		 $ff,			Arena_BoxStructStrings.PowerRnd1, NULL,					   TRUE
-	paged_value wArenaTempMonHappiness,	 $00, $ff,		 $ff, Arena_BoxStructStrings.Friend,	NULL,					   FALSE
+	db 6
+	paged_value wArenaTempMonBox,		1,   NUM_BOXES,   	$01,			Arena_BoxStructStrings.SendBox,  	NULL,					FALSE
+	paged_value wArenaTempMonSpecies,	1,   NUM_POKEMON, 	BULBASAUR,	  	Arena_BoxStructStrings.Pokemon,  	Arena_PrintPokemonName, FALSE
+	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	NULL,					FALSE
+	paged_value wArenaTempMonDVs+0,		$00, $ff,		 	$fe,			Arena_BoxStructStrings.PowerRnd0,	NULL,					TRUE
+	paged_value wArenaTempMonDVs+1,		$00, $ff,		 	$ff,			Arena_BoxStructStrings.PowerRnd1, 	NULL,					TRUE
+	paged_value wArenaTempMonHappiness,	$00, $ff,		 	$ff, 			Arena_BoxStructStrings.Friend,		NULL,					FALSE
 
 
 ArenaMenu_PokemonBuilder_Page2Values:
@@ -729,7 +709,6 @@ ArenaMenu_PokemonBuilder_Page2Values:
 
 Arena_BoxStructStrings:
 .Pokemon:   db "#MON@"
-.Item:	  db "ITEM@"
 .PowerRnd0: db "DV [ATK/DEF]<LF>  SHINY:FF@"
 .PowerRnd1: db "DV [SPD/SPC]<LF>  SHINY:FF@"
 .PP1:	   db "MOVE 1 PP@"

@@ -1,7 +1,7 @@
 	const_def 2 ; object constants
-	const PVPROOM_BATTLE_RECEPTIONIST
+	const PVPARENA_BATTLE_RECEPTIONIST
 
-PVPRoom_MapScripts:
+PVPArena_MapScripts:
 	db 2 ; scene scripts
 	scene_script .Scene0 ; SCENE_DEFAULT
 	scene_script .Scene2 ; SCENE_POKECENTER2F_LEAVE_COLOSSEUM
@@ -250,6 +250,9 @@ Arena_MoveDeleter:
 	closetext
 	end
 
+Arena_EeveeEvolution:
+	jumptextfaceplayer Arena_EeveeEvolutionText
+
 Arena_TutorIntroText:
 	text "I'm a MOVE TUTOR."
 
@@ -273,22 +276,36 @@ Arena_TutorDeclineText:
 	line "then?"
 	done
 
-PVPRoom_MapEvents:
+Arena_EeveeEvolutionText:
+	text "It seems like time"
+	line "doesn't pass in"
+	cont "this place."
+
+	para "I had to give my"
+	line "2 EEVEE held items"
+	cont "in order for them"
+	cont "to evolve into"
+	cont "ESPEON & UMBREON!"
+	done
+
+PVPArena_MapEvents:
 	db 0, 0 ; filler
 
-	db 1 ; warp events
+	db 2 ; warp events
 	warp_event  5,  0, COLOSSEUM, 1
+	warp_event  9,  0, PVP_ARENA_MART, 1
 
 	db 0 ; coord events
 
 	db 1 ; bg events
 	bg_event  7,  3, BGEVENT_READ, Pokecenter2FLinkRecordSign
 
-	db 7 ; object events
+	db 8 ; object events
 	object_event  5,  2, SPRITE_LINK_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, LinkReceptionistScript_Battle, -1
 	object_event  0,  1, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Arena_EggTutor, -1
 	object_event  1,  1, SPRITE_CLERK, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_Reminder, -1
-	object_event  9,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor1, -1
-	object_event  8,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor2, -1
-	object_event 10,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor3, -1
+	object_event 12,  1, SPRITE_RECEPTIONIST, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor1, -1
+	object_event 11,  1, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor2, -1
+	object_event 13,  1, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Arena_MoveTutor3, -1
 	object_event  0,  7, SPRITE_GRAMPS, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, Arena_MoveDeleter, -1
+	object_event 10,  6, SPRITE_GAMEBOY_KID, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Arena_EeveeEvolution, -1

@@ -39,6 +39,13 @@ Marts:
 	dw MartPectiniaBattleItems1
 	dw MartPectiniaBattleItems2
 	dw MartPectiniaBattleItems3
+if DEF(_ARENA)
+	dw ArenaMartTypeBoostingItems
+	dw ArenaMartGenericHeldItems
+	dw ArenaMartMonSpecificItems
+	dw ArenaMartConsumableItems
+	dw ArenaMartBerries
+endc
 .End
 
 MartOrchid:
@@ -440,3 +447,99 @@ DefaultMart:
 	db POKE_BALL
 	db POTION
 	db -1 ; end
+
+if DEF(_ARENA)
+ArenaMartTypeBoostingItems:
+	db 18 ; # items
+	db SILK_SCARF   ; 68
+	db BLACKBELT    ; 62
+	db SHARP_BEAK   ; 4d
+	db POISON_BARB  ; 51
+	db SOFT_SAND    ; 4c
+	db HARD_STONE   ; 7d
+	db SILVERPOWDER ; 58
+	db BLACKGLASSES ; 66
+	db METAL_COAT   ; 8f
+	db CHARCOAL     ; 8a
+	db MYSTIC_WATER ; 5f
+	db MIRACLE_SEED ; 75
+	db MAGNET       ; 6c
+	db TWISTEDSPOON ; 60
+	db NEVERMELTICE ; 6b
+	db DRAGON_FANG  ; 90
+	db SPELL_TAG    ; 71
+	db PINK_BOW     ; aa
+	db -1
+
+ArenaMartGenericHeldItems:
+	db 12 ; # items
+	db LEFTOVERS    ; 92
+	db TRICK_MIRROR ; b3
+	db BLACK_SLUDGE ; 63
+	db SCOPE_LENS   ; 8c
+	db SKILL_BELT   ; b9
+	db LIGHT_CLAY   ; bb
+	db CRASH_HELMET ; b5
+	db BINDING_BAND ; 65
+	db FOCUS_BAND   ; 77
+	db QUICK_CLAW   ; 49
+	db KINGS_ROCK   ; 52
+	db BRIGHTPOWDER ; 03
+	db -1
+
+ArenaMartMonSpecificItems:
+	db 20 ; # items
+	db GLOW_SCALES  ; bd
+	db BARBED_SPEAR ; be
+	db LIGHT_BALL   ; a3
+	db BIG_MUSHROOM ; 57
+	db THICK_CLUB   ; 76
+	db STICK        ; 69
+	db LUCKY_PUNCH  ; 1e
+	db METAL_POWDER ; 23
+	db LIGHT_BUOY   ; ab
+	db PALETTE      ; a2
+	db RARE_CANDY   ; 20
+	db FIRE_STONE   ; 16
+	db WATER_STONE  ; 18
+	db THUNDERSTONE ; 17
+	db LEAF_STONE   ; 22
+	db MOON_STONE   ; 08
+	db SUN_STONE    ; a9
+	db SLOWPOKETAIL ; 67
+	db DRAGON_SCALE ; 97
+	db UP_GRADE     ; ac
+	db -1
+
+ArenaMartConsumableItems:
+	db 13 ; # items
+	db X_ATTACK     ; 31
+	db X_DEFEND     ; 33
+	db X_SP_ATK     ; 35
+	db X_SP_DEF     ; 32
+	db X_SPEED      ; 34
+	db X_ACCURACY   ; 21
+	db BERSERK_GENE ; 98
+	db DAMP_CHARM   ; 5a
+	db HEAT_CHARM   ; 87
+	db COARSE_CHARM ; 88
+	db FOCUS_SASH   ; 91
+	db POWER_HERB   ; 89
+	db BERRY_JUICE  ; 8b
+	db -1
+
+ArenaMartBerries:
+	db 11 ; # items
+	db BERRY        ; ad
+	db SILVER_BERRY ; b0
+	db GOLD_BERRY   ; ae
+	db MYSTERYBERRY ; 96
+	db PSNCUREBERRY ; 4a
+	db MINT_BERRY   ; 54
+	db PRZCUREBERRY ; 4e
+	db ICE_BERRY    ; 50
+	db BURNT_BERRY  ; 4f
+	db BITTER_BERRY ; 53
+	db MIRACLEBERRY ; 6d
+	db -1
+endc

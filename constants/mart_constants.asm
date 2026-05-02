@@ -8,6 +8,9 @@
 	const MARTTYPE_ROBBED
 	const MARTTYPE_DRINKS
 	const MARTTYPE_SUBWAY
+if DEF(_ARENA)
+	const MARTTYPE_ARENA
+endc
 
 ; Marts indexes (see data/items/marts.asm)
 	const_def
@@ -50,3 +53,10 @@
 	const MART_PECTINIA_BATTLE_1
 	const MART_PECTINIA_BATTLE_2
 	const MART_PECTINIA_BATTLE_3
+if DEF(_ARENA)
+	const MART_ARENA_TYPE_ITEMS
+	const MART_ARENA_HELD_ITEMS
+	const MART_ARENA_SPECIFIC_ITEMS
+	const MART_ARENA_CONSUMABLES
+	const MART_ARENA_BERRIES
+endc

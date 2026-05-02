@@ -280,7 +280,8 @@ INCLUDE "maps/TradeCenter.asm"
 INCLUDE "maps/Colosseum.asm"
 INCLUDE "maps/SSMakoLowerDeck.asm"
 if DEF(_ARENA)
-INCLUDE "maps/PVPRoom.asm"
+INCLUDE "maps/PVPArena.asm"
+INCLUDE "maps/PVPArenaMart.asm"
 endc
 
 SECTION "Map Scripts 18", ROMX
