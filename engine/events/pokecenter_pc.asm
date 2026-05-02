@@ -225,13 +225,12 @@ if DEF(_ARENA)
 	call MenuTextBox
 	call YesNoBox
 	jr c, .nosave
-	call ExitMenu
 
+	call .quiet_save_overwrite
 	call PauseGameLogic
 	call _SavingDontTurnOffThePower
 	call ResumeGameLogic
-
-;	call SaveGameData
+	call ExitMenu
 
 	call PC_PlayChoosePCSound
 	ld hl, PokecenterPCText_MonBuilder
@@ -246,6 +245,18 @@ if DEF(_ARENA)
 .nosave
 	xor a
 	call ExitMenu
+	ret
+
+.quiet_save_overwrite
+	ld a, [wSaveFileExists]
+	and a
+	jr z, .erase
+	call CompareLoadedAndSavedPlayerID
+	jr z, .ok
+.erase
+	call ErasePreviousSave
+.ok
+	and a
 	ret
 
 PokecenterPCText_MonBuilder:

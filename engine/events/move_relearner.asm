@@ -368,8 +368,10 @@ GetValidEggMoves:
 	inc hl
 	cp -1 ; last entry in egg move table is -1
 	jr z, .done
+if !DEF(_ARENA)
 	cp DIVE_BOMB ; Dive Bomb is a secret move, skip it.
 	jr z, .loop_moves
+endc
 	ld c, a
 
 	call CheckAlreadyInList

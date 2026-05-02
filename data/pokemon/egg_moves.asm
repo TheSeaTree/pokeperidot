@@ -7,8 +7,11 @@ SECTION "Egg Moves", ROMX
 ; removed from egg move lists in Crystal.
 ; Sweet Scent and Steel Wing were redundant since they're TMs, and
 ; Charm and Lovely Kiss were unobtainable.
-
+if !DEF(_ARENA)
 INCLUDE "data/pokemon/egg_move_pointers.asm"
+else
+INCLUDE "data/pokemon/arena_egg_move_pointers.asm"
+endc
 
 BulbasaurEggMoves:
 	db AGILITY
