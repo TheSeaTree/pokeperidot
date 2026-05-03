@@ -37,12 +37,20 @@ Colosseum_MapScripts:
 .PreparePokecenter2F:
 	special UpdatePartyStats
 	special HealParty
+if !DEF(_ARENA)
 	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+else
+	setmapscene PVP_ARENA, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+endc
 	return
 
 .InitializeAndPreparePokecenter2F:
 	setscene SCENE_FINISHED
+if !DEF(_ARENA)
 	setmapscene POKECENTER_2F, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+else
+	setmapscene PVP_ARENA, SCENE_POKECENTER2F_LEAVE_COLOSSEUM
+endc
 	end
 
 ColosseumConsoleScript:
@@ -66,8 +74,13 @@ Colosseum_MapEvents:
 	db 0, 0 ; filler
 
 	db 2 ; warp events
+if !DEF(_ARENA)
 	warp_event  4,  7, POKECENTER_2F, 3
 	warp_event  5,  7, POKECENTER_2F, 3
+else
+	warp_event  4,  7, PVP_ARENA, 1
+	warp_event  5,  7, PVP_ARENA, 1
+endc
 
 	db 0 ; coord events
 

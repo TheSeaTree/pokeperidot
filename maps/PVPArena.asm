@@ -2,15 +2,16 @@
 	const PVPARENA_BATTLE_RECEPTIONIST
 
 PVPArena_MapScripts:
-	db 2 ; scene scripts
+	db 3 ; scene scripts
 	scene_script .Scene0 ; SCENE_DEFAULT
+	scene_script .Scene1 ; SCENE_POKECENTER2F_LEAVE_TRADE_CENTER
 	scene_script .Scene2 ; SCENE_POKECENTER2F_LEAVE_COLOSSEUM
 
 	db 0 ; callbacks
 
 .Scene0:
-	checkcode VAR_PARTYCOUNT
-	ifnotequal 0, .Nothing
+	checkitem TM_CALM_MIND
+	iftrue .Scene1
 	givepoke PORYGON, 5
 	giveitem TM_CALM_MIND
 	giveitem TM_BULK_UP
@@ -74,11 +75,26 @@ PVPArena_MapScripts:
 	giveitem TM_BULLDOZE
 	giveitem TM_PLAY_ROUGH
 	giveitem HM_SURF
-.Nothing
+.Scene1
 	end
 
 .Scene2:
-	priorityjump Script_LeftCableColosseum
+	priorityjump ArenaScript_LeftCableColosseum
+	end
+
+ArenaScript_LeftCableColosseum:
+	special WaitForOtherPlayerToExit
+	scall ArenaScript_WalkOutOfLinkBattleRoom
+	setscene SCENE_DEFAULT
+	setmapscene COLOSSEUM, SCENE_DEFAULT
+	special UpdatePartyStats
+	special HealParty
+	end
+
+ArenaScript_WalkOutOfLinkBattleRoom:
+	applymovement PVPARENA_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightLooksDown_3
+	applymovement PLAYER, Pokecenter2FMovementData_PlayerTakesThreeStepsDown
+	applymovement PVPARENA_BATTLE_RECEPTIONIST, Pokecenter2FMovementData_ReceptionistStepsRightAndDown
 	end
 
 Arena_EggTutor:
