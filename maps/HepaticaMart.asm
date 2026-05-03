@@ -30,6 +30,7 @@ HepaticaMartClerkScript:
 	end
 	
 .LowStock
+	writetext HepaticaMart_ClearText
 	pokemart MARTTYPE_PHARMACY, MART_CIANWOOD_ROBBED
 	closetext
 	end
@@ -74,6 +75,10 @@ HepaticaMartYoungsterText:
 	para "I've never heard"
 	line "of that happening"
 	cont "before!"
+	done
+
+HepaticaMart_ClearText:
+	text ""
 	done
 
 HepaticaMart_MapEvents:

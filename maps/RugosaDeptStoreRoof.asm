@@ -90,6 +90,7 @@ RugosaDeptStoreRoofNightClerkScript:
 	waitbutton
 
 RugosaDeptStoreRoofClerkMart:
+	writetext RugosaDeptStoreRoof_ClearText
 	pokemart MARTTYPE_ROOFTOP, 0
 	closetext
 	end
@@ -348,6 +349,10 @@ PokeDollVendingMachineText:
 
 	para "But it's complet-"
 	line "ely empty!"
+	done
+
+RugosaDeptStoreRoof_ClearText:
+	text ""
 	done
 
 RugosaDeptStoreRoof_MapEvents:
