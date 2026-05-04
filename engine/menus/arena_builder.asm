@@ -691,12 +691,12 @@ Arena_UpdateExpForLevel:
 
 ArenaMenu_PokemonBuilder_Page1Values:
 	db 6
-	paged_value wArenaTempMonBox,		1,   NUM_BOXES,   	$01,			Arena_BoxStructStrings.SendBox,  	NULL,					FALSE
-	paged_value wArenaTempMonSpecies,	1,   NUM_POKEMON, 	BULBASAUR,	  	Arena_BoxStructStrings.Pokemon,  	Arena_PrintPokemonName, FALSE
-	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	NULL,					FALSE
-	paged_value wArenaTempMonDVs+0,		$00, $ff,		 	$fe,			Arena_BoxStructStrings.PowerRnd0,	NULL,					TRUE
-	paged_value wArenaTempMonDVs+1,		$00, $ff,		 	$ff,			Arena_BoxStructStrings.PowerRnd1, 	NULL,					TRUE
-	paged_value wArenaTempMonHappiness,	$00, $ff,		 	$ff, 			Arena_BoxStructStrings.Friend,		NULL,					FALSE
+	paged_value wArenaTempMonBox,		1,   NUM_BOXES,   	$01,			Arena_BoxStructStrings.SendBox,  	NULL,						FALSE
+	paged_value wArenaTempMonSpecies,	1,   NUM_POKEMON, 	BULBASAUR,	  	Arena_BoxStructStrings.Pokemon,  	Arena_PrintPokemonName, 	FALSE
+	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	NULL,						FALSE
+	paged_value wArenaTempMonDVs+0,		$00, $ff,		 	$fe,			Arena_BoxStructStrings.PowerRnd0,	Arena_PrintHiddenPowerType,	TRUE
+	paged_value wArenaTempMonDVs+1,		$00, $ff,		 	$ff,			Arena_BoxStructStrings.PowerRnd1, 	Arena_PrintShinyIcon,		TRUE
+	paged_value wArenaTempMonHappiness,	$00, $ff,		 	$ff, 			Arena_BoxStructStrings.Friend,		NULL,						FALSE
 
 
 ArenaMenu_PokemonBuilder_Page2Values:
@@ -709,8 +709,8 @@ ArenaMenu_PokemonBuilder_Page2Values:
 
 Arena_BoxStructStrings:
 .Pokemon:   db "#MON@"
-.PowerRnd0: db "DV [ATK/DEF]<LF>  SHINY:FF@"
-.PowerRnd1: db "DV [SPD/SPC]<LF>  SHINY:FF@"
+.PowerRnd0: db "DV [ATK/DEF]@"
+.PowerRnd1: db "DV [SPD/SPC]@"
 .PP1:	   db "MOVE 1 PP@"
 .PP2:	   db "MOVE 2 PP@"
 .PP3:	   db "MOVE 3 PP@"
@@ -859,3 +859,34 @@ Arena_FillMoves:
 	pop de
 	pop hl
 	ret
+
+Arena_PrintHiddenPowerType:
+	ld hl, wArenaTempMonDVs
+	call GetHiddenPowerType
+	ld a, e
+	ld [wNamedObjectIndexBuffer], a
+	predef GetTypeName
+	hlcoord 4, 14
+	ld de, Arena_HiddenPowerString
+	call PlaceString
+	hlcoord 6, 15
+	push hl
+	lb bc, 1, 8
+	call ClearBox
+	pop hl
+	ld de, wStringBuffer1
+	call PlaceString
+	; fallthrough
+Arena_PrintShinyIcon:
+	ld bc, wArenaTempMonDVs
+	farcall CheckShininess
+	hlcoord 2, 5
+	jr c, .shiny
+	ld [hl], $7f
+	ret
+.shiny
+	ld [hl], $cd
+	ret
+
+Arena_HiddenPowerString:
+	db "HIDDEN POWER:@"

@@ -12,7 +12,7 @@ PVPArena_MapScripts:
 .Scene0:
 	checkitem TM_CALM_MIND
 	iftrue .Scene1
-	givepoke PORYGON, 5
+	givepoke XATU, 100
 	giveitem TM_CALM_MIND
 	giveitem TM_BULK_UP
 	giveitem TM_HIDDEN_POWER

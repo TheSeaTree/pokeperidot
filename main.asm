@@ -202,8 +202,9 @@ INCLUDE "engine/events/celebi.asm"
 INCLUDE "engine/menus/main_menu.asm"
 INCLUDE "engine/pokemon/search.asm"
 INCLUDE "mobile/mobile_12_2.asm"
-INCLUDE "engine/events/buena.asm"
-INCLUDE "engine/events/buena_menu.asm"
+if DEF(_ARENA)
+INCLUDE "engine/menus/arena_builder.asm"
+endc
 
 
 SECTION "bank13", ROMX
@@ -317,6 +318,8 @@ INCLUDE "engine/events/unown_walls.asm"
 INCLUDE "engine/events/giftmonmoves.asm"
 INCLUDE "engine/events/battle_tower/rules.asm"
 INCLUDE "mobile/mobile_22_2.asm"
+INCLUDE "engine/events/buena.asm"
+INCLUDE "engine/events/buena_menu.asm"
 
 
 SECTION "bank23", ROMX
