@@ -1801,15 +1801,19 @@ EggMoveTutorCancelText::
 	done
 
 SimulationMoveReminderCancelText::
-	text "All set?"
 if !DEF(_ARENA)
+	text "All set?"
+
 	para "Good luck with the"
 	line "rest of your"
 	cont "SIMULATION run!"
 else
-	para "I hope you can"
-	line "some use in those"
-	cont "old moves."
+	text "Come see me again"
+	line "any time."
+
+	para "I love to help"
+	line "#MON recover"
+	cont "lost moves."
 endc
 	done
 

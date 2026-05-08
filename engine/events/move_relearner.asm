@@ -103,6 +103,7 @@ MoveReminder_Simulation:
 	call YesNoBox
 	jp c, .cancel
 
+.select_party_mon
 	ld b, 6
 	farcall SelectMonFromParty
 	jr c, .cancel
@@ -128,8 +129,22 @@ MoveReminder_Simulation:
 	predef LearnMove
 	ld a, b
 	and a
+
+if DEF(_ARENA)
+	call ReturnToMapWithSpeechTextbox
+	ld hl, Text_ArenaTutorLearnMore
+	call PrintText
+	call YesNoBox
+	jr c, .cancel
+	ld hl, Text_EggMoveTutorWhichMon
+	call PrintText
+	call JoyWaitAorB
+	jr .select_party_mon
+endc
+
 .skip_learn
 	call ReturnToMapWithSpeechTextbox
+
 .cancel
 	ld hl, Text_SimulationMoveReminderCancel
 	jp PrintText
@@ -156,6 +171,7 @@ endc
 	call YesNoBox
 	jp c, .cancel
 
+.select_party_mon
 	ld hl, Text_EggMoveTutorWhichMon
 	call PrintText
 	call JoyWaitAorB
@@ -210,6 +226,7 @@ endc
 	ld c, HAPPINESS_LEARNMOVE
 	callfar ChangeHappiness
 
+if !DEF(_ARENA)
 	ld a, STAR_PIECE
 	ld [wCurItem], a
 	ld a, 1
@@ -222,6 +239,14 @@ endc
 	ld de, SFX_TRANSACTION
 	call PlaySFX
 	call WaitSFX
+else
+	call ReturnToMapWithSpeechTextbox
+	ld hl, Text_ArenaTutorLearnMore
+	call PrintText
+	call YesNoBox
+	jr c, .cancel
+	jr .select_party_mon
+endc
 
 .skip_learn
 	call ReturnToMapWithSpeechTextbox
@@ -741,3 +766,14 @@ Text_EggMoveTutorNoMoves:
 Text_EggMoveTutorNotHappy:
 	text_jump EggMoveTutorNotHappyText
 	db "@"
+
+if DEF(_ARENA)
+Text_ArenaTutorLearnMore:
+	text_jump ArenaTutorAnotherMoveText
+	db "@"
+
+ArenaTutorAnotherMoveText:
+	text "Would you like to"
+	line "learn more?"
+	done
+endc

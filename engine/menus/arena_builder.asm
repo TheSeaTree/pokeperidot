@@ -88,7 +88,6 @@ Arena_EditPagedValues:
 	jp c, Arena_NextPagedValue
 	pop hl
 .continue
-; call wArenaTempAutoFunction if it's not null, then jump to .resume
 	ld hl, .resume
 	push hl
 	ld a, [wArenaTempAutoFunction]
@@ -508,7 +507,7 @@ Arena_SavePokemon:
 	jr nz, .max_stat_exp_loop
 	call Arena_UpdateExpForLevel
 
-ld a, [wArenaTempMonSpecies]
+	ld a, [wArenaTempMonSpecies]
 	ld [wCurPartySpecies], a
 	ld a, [wArenaTempMonLevel]
 	ld [wCurPartyLevel], a
@@ -521,12 +520,7 @@ ld a, [wArenaTempMonSpecies]
 	ld [hli], a
 	ld [hl], a
 
-	; Call your custom local function
 	call Arena_FillMoves
-
-	; Handle PP (Standard predef is usually safe for PP if moves are valid)
-	ld hl, wArenaTempMonPP
-	predef FillPP
 
 	ld a, [wArenaTempMonBox]
 	dec a
@@ -545,7 +539,6 @@ ld a, [wArenaTempMonSpecies]
 	ld a, [hl]
 	cp MONS_PER_BOX
 	jp nc, .full
-	; update count and species list
 	push hl
 	inc [hl]
 	inc hl
@@ -556,10 +549,8 @@ ld a, [wArenaTempMonSpecies]
 	ld [hli], a
 	ld [hl], -1
 	pop hl
-	; skip count and species list
 	ld bc, 2 + MONS_PER_BOX
 	add hl, bc
-	; update Nth box mon
 	push de
 	push hl
 	ld a, e
@@ -652,14 +643,7 @@ Arena_PrintPokemonName:
 	ld de, wStringBuffer2
 	ld bc, MON_NAME_LENGTH
 	call CopyBytes
-	jr _Arena_FinishGetName
 
-Arena_PrintMoveName:
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	call GetMoveName
-
-_Arena_FinishGetName:
 	pop hl
 	push hl
 	lb bc, 1, 12
