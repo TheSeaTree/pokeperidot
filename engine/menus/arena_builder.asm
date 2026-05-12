@@ -45,8 +45,8 @@ Arena_EditPagedValues:
 	ld b, SCREEN_HEIGHT - 2
 	ld c, SCREEN_WIDTH - 2
 	call TextBox
-	hlcoord 6, 16
-	ld de, Arena_PageString
+	hlcoord 4, 16
+	ld de, Arena_SaveString
 	call PlaceString
 	call Arena_InitializePagedValues
 	xor a
@@ -104,6 +104,9 @@ Arena_EditPagedValues:
 	scf
 	ret
 
+Arena_SaveString:
+	db   "┌──────────┐<LF>┘START:SAVE└@"
+
 Arena_PagedValuePressedA:
 	ld hl, wArenaTempAFunction
 	jr _CallNonNullPointer
@@ -123,9 +126,6 @@ _CallNonNullPointer:
 	or h
 	ret z
 	jp hl
-
-Arena_PageString:
-	db   "┌──────┐<LF>┘PAGE  └@"
 
 Arena_IncrementPagedValue:
 	call Arena_GetCurPagedValuePointer
@@ -338,22 +338,6 @@ Arena_InitializePagedValues:
 	ret
 
 Arena_PrintPage:
-	push af
-	hlcoord 12, 17
-	add "1"
-	ld [hl], a
-	hlcoord 1, 1
-	lb bc, SCREEN_HEIGHT - 3, SCREEN_WIDTH - 2
-	call ClearBox
-
-	hlcoord 18, 1
-	ld de, .UpArrow
-	call PlaceString
-	hlcoord 18, 16
-	ld de, .DownArrow
-	call PlaceString
-
-	pop af
 	ld b, a
 	ld h, 0
 	ld l, a
@@ -375,12 +359,6 @@ Arena_PrintPage:
 	dec c
 	jr nz, .loop
 	ret
-
-.UpArrow
-	db $d8, $50
-
-.DownArrow
-	db $ee, $50
 
 Arena_PrintPageBValueC:
 	ld a, [wArenaTempCurPage]
@@ -493,9 +471,8 @@ ArenaMenu_PokemonBuilder:
 	dw NULL ; Select function
 	dw Arena_SavePokemon ; Start function
 	dw NULL ; Auto function
-	db 2 ; # pages
+	db 1 ; # pages
 	dw ArenaMenu_PokemonBuilder_Page1Values
-	dw ArenaMenu_PokemonBuilder_Page2Values
 
 Arena_SavePokemon:
 	ld hl, wArenaTempMonHPExp
@@ -674,33 +651,19 @@ Arena_UpdateExpForLevel:
 	ret
 
 ArenaMenu_PokemonBuilder_Page1Values:
-	db 6
+	db 5
 	paged_value wArenaTempMonBox,		1,   NUM_BOXES,   	$01,			Arena_BoxStructStrings.SendBox,  	NULL,						FALSE
 	paged_value wArenaTempMonSpecies,	1,   NUM_POKEMON, 	BULBASAUR,	  	Arena_BoxStructStrings.Pokemon,  	Arena_PrintPokemonName, 	FALSE
 	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	NULL,						FALSE
 	paged_value wArenaTempMonDVs+0,		$00, $ff,		 	$fe,			Arena_BoxStructStrings.PowerRnd0,	Arena_PrintHiddenPowerType,	TRUE
 	paged_value wArenaTempMonDVs+1,		$00, $ff,		 	$ff,			Arena_BoxStructStrings.PowerRnd1, 	Arena_PrintShinyIcon,		TRUE
-	paged_value wArenaTempMonHappiness,	$00, $ff,		 	$ff, 			Arena_BoxStructStrings.Friend,		NULL,						FALSE
-
-
-ArenaMenu_PokemonBuilder_Page2Values:
-	db 4
-	paged_value wArenaTempMonPP+0,		  $00, $ff,		 $ff,			Arena_BoxStructStrings.PP1,	   NULL,					   FALSE
-	paged_value wArenaTempMonPP+1,		  $00, $ff,		 $ff,			Arena_BoxStructStrings.PP2,	   NULL,					   FALSE
-	paged_value wArenaTempMonPP+2,		  $00, $ff,		 $ff,			Arena_BoxStructStrings.PP3,	   NULL,					   FALSE
-	paged_value wArenaTempMonPP+3,		  $00, $ff,		 $ff,			Arena_BoxStructStrings.PP4,	   NULL,					   FALSE
 
 
 Arena_BoxStructStrings:
 .Pokemon:   db "#MON@"
 .PowerRnd0: db "DV [ATK/DEF]@"
 .PowerRnd1: db "DV [SPD/SPC]@"
-.PP1:	   db "MOVE 1 PP@"
-.PP2:	   db "MOVE 2 PP@"
-.PP3:	   db "MOVE 3 PP@"
-.PP4:	   db "MOVE 4 PP<LF><LF><LF>  255▶3×PP UP@"
-.Friend:	db "HAPPINESS@"
-.Level:	 db "LEVEL@"
+.Level:	 	db "LEVEL@"
 .SendBox:   db "SEND BOX@"
 
 Arena_BoxAddresses:
@@ -759,6 +722,8 @@ Arena_FillMoves:
 	push hl
 	push de
 	push bc
+	ld a, $ff
+	ld [wArenaTempMonHappiness], a
 	ld a, [wCurPartySpecies]
 	ld hl, wArenaTempMonMoves
 	cp SMEARGLE
@@ -850,10 +815,10 @@ Arena_PrintHiddenPowerType:
 	ld a, e
 	ld [wNamedObjectIndexBuffer], a
 	predef GetTypeName
-	hlcoord 4, 14
+	hlcoord 4, 12
 	ld de, Arena_HiddenPowerString
 	call PlaceString
-	hlcoord 6, 15
+	hlcoord 6, 13
 	push hl
 	lb bc, 1, 8
 	call ClearBox

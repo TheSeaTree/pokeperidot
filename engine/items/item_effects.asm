@@ -3192,6 +3192,9 @@ GetMaxPPOfMove:
 	pop hl
 
 	push bc
+if DEF(_ARENA)
+	ld a, PP_UP_MASK
+else
 	ld bc, MON_PP - MON_MOVES
 	ld a, [wMonType]
 	cp WILDMON
@@ -3201,6 +3204,7 @@ GetMaxPPOfMove:
 	add hl, bc
 	ld a, [hl]
 	and PP_UP_MASK
+endc
 	pop bc
 
 	or b
