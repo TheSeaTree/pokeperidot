@@ -1981,7 +1981,7 @@ DefenseCurl:
 	statupmessage
 	statupfailtext
 	endmove
-	
+
 CalmMind:
 	checkobedience
 	usedmovetext
@@ -1989,9 +1989,8 @@ CalmMind:
 	lowersub
 	calmmind
 	raisesub
-	statupfailtext
 	endmove
-	
+
 BulkUp:
 	checkobedience
 	usedmovetext
@@ -1999,9 +1998,8 @@ BulkUp:
 	lowersub
 	bulkup
 	raisesub
-	statupfailtext
 	endmove
-	
+
 DragonDance:
 	checkobedience
 	usedmovetext
@@ -2018,9 +2016,8 @@ QuiverDance:
 	lowersub
 	quiverdance
 	raisesub
-	statupfailtext
 	endmove
-	
+
 CosmicPower:
 	checkobedience
 	usedmovetext
@@ -2028,9 +2025,8 @@ CosmicPower:
 	lowersub
 	cosmicpower
 	raisesub
-	statupfailtext
 	endmove
-	
+
 SpeedUpHit:
 	checkobedience
 	usedmovetext
@@ -2052,7 +2048,7 @@ SpeedUpHit:
 	checkfaint
 	buildopponentrage
 	endmove
-	
+
 BurnRecoilHit:
 	checkobedience
 	defrost
@@ -2076,7 +2072,7 @@ BurnRecoilHit:
 	effectchance
 	burntarget
 	endmove
-	
+
 ParaRecoilHit:
 	checkobedience
 	usedmovetext
@@ -2130,9 +2126,8 @@ Coil:
 	lowersub
 	coil
 	raisesub
-	statupfailtext
 	endmove
-	
+
 Growth:
 	checkobedience
 	usedmovetext
@@ -2140,9 +2135,8 @@ Growth:
 	lowersub
 	growth
 	raisesub
-	statupfailtext
 	endmove
-	
+
 SleepPowder:
 	checkobedience
 	usedmovetext

@@ -4427,7 +4427,6 @@ RaiseStat:
 	jr nz, .not_already_max
 	ld a, [hl]
 	sbc HIGH(MAX_STAT_VALUE)
-	jp z, .stats_already_max
 .not_already_max
 	ldh a, [hBattleTurn]
 	and a
@@ -4442,11 +4441,6 @@ RaiseStat:
 	xor a
 	ld [wFailedMessage], a
 	ret
-
-.stats_already_max
-	pop hl
-	dec [hl]
-	; fallthrough
 
 .cant_raise_stat
 	ld a, $2

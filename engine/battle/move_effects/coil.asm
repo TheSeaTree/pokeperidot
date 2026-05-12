@@ -1,5 +1,5 @@
 BattleCommand_Coil:
-;bulkup
+;coil
 
 	ld bc, wPlayerStatLevels
 	ldh a, [hBattleTurn]
@@ -8,7 +8,6 @@ BattleCommand_Coil:
 	ld bc, wEnemyStatLevels
 
 .go
-
 ; Attack
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -19,20 +18,16 @@ BattleCommand_Coil:
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr c, .raise
-	
+
 ; Accuracy
-rept 4
-	inc bc
-endr
+	ld a, c
+	add 4
+	ld c, a
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr nc, .cantraise
 
 .raise
-
-; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage
@@ -42,6 +37,6 @@ endr
 	call ResetMiss
 	call BattleCommand_AccuracyUp
 	jp   BattleCommand_StatUpMessage
-	
+
 .cantraise
 	jp CantRaiseStats

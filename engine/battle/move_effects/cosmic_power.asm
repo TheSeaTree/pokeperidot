@@ -1,5 +1,5 @@
 BattleCommand_CosmicPower:
-;bulkup
+;cosmicpower
 
 	ld bc, wPlayerStatLevels
 	ldh a, [hBattleTurn]
@@ -8,25 +8,21 @@ BattleCommand_CosmicPower:
 	ld bc, wEnemyStatLevels
 
 .go
-
-; Special Attack
-	inc bc
-	ld a, [bc]
+; Defense
+    inc c
+    ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr c, .raise
 
 ; Special Defense
-	inc bc
-	inc bc
-	ld a, [bc]
+	ld a, c
+    add 3
+    ld c, a
+    ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr nc, .cantraise
 
 .raise
-
-; Attack
-	ld a, $1
-	ld [wKickCounter], a
 	call AnimateCurrentMove
 	call BattleCommand_DefenseUp
 	call BattleCommand_StatUpMessage

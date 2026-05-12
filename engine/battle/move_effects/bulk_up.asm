@@ -8,7 +8,6 @@ BattleCommand_BulkUp:
 	ld bc, wEnemyStatLevels
 
 .go
-
 ; Attack
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
@@ -21,8 +20,6 @@ BattleCommand_BulkUp:
 	jr nc, .cantraise
 
 .raise
-
-; Attack
 	call AnimateCurrentMove
 	call BattleCommand_AttackUp
 	call BattleCommand_StatUpMessage

@@ -29,8 +29,6 @@ BattleCommand_QuiverDance:
 	jr nc, .cantraise
 
 .raise
-
-; Attack
 	call AnimateCurrentMove
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage
@@ -40,7 +38,7 @@ BattleCommand_QuiverDance:
 	call ResetMiss
 	call BattleCommand_SpeedUp
 	jp   BattleCommand_StatUpMessage
-	
+
 .cantraise
 	jp CantRaiseStats
 	

@@ -8,30 +8,27 @@ BattleCommand_CalmMind:
 	ld bc, wEnemyStatLevels
 
 .go
-
 ; Special Attack
-rept 3
-	inc bc
-endr
+	ld a, c
+	add 3
+	ld c, a
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr c, .raise
 
 ; Special Defense
-	inc bc
+	inc c
 	ld a, [bc]
 	cp MAX_STAT_LEVEL
 	jr nc, .cantraise
 
 .raise
-
-; Attack
 	call AnimateCurrentMove
 	call BattleCommand_SpecialAttackUp
 	call BattleCommand_StatUpMessage
 	call ResetMiss
 	call BattleCommand_SpecialDefenseUp
 	jp   BattleCommand_StatUpMessage
-	
+
 .cantraise
 	jp CantRaiseStats
