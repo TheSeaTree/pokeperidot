@@ -850,6 +850,7 @@ HoothootEggMoves:
 CubboltEggMoves:
 	db ENDURE
 	db FLARE_BLITZ
+	db PAY_DAY
 	db SIGNAL_BEAM
 	db THRASH
 	db ZAP_CANNON
