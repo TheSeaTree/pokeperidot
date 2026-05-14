@@ -4834,56 +4834,46 @@ INCLUDE "data/battle/stat_multipliers.asm"
 
 BattleCommand_AllStatsUp:
 ; allstatsup
-
-; Attack
-	call ResetMiss
 	call BattleCommand_AttackUp
-
-; Defense
-	call ResetMiss
+	call .CheckStatsRose
 	call BattleCommand_DefenseUp
-
-; Special Attack
-	call ResetMiss
+	call .CheckStatsRose
 	call BattleCommand_SpecialAttackUp
-
-; Special Defense
-	call ResetMiss
+	call .CheckStatsRose
 	call BattleCommand_SpecialDefenseUp
-
-; Speed
-	call ResetMiss
+	call .CheckStatsRose
 	call BattleCommand_SpeedUp
-
 	ld a, [wFailedMessage]
-	and a
+	and d
 	ret nz
 	ld hl, BattleText_AllStatsRose
 	jp StdBattleTextBox
-	
+
+.CheckStatsRose
+	ld a, [wFailedMessage]
+	and d
+	ld d, a
+	jp ResetMiss
+
 BattleCommand_LegendaryStatsBoost:
 ; allstatsup
 
 ; Attack
 	call BattleCommand_AttackUp2
 	call BattleCommand_AttackUp2
-
 ; Defense
 	call BattleCommand_DefenseUp2
 	call BattleCommand_DefenseUp2
 	call BattleCommand_DefenseUp2
-
 ; Special Attack
 	call BattleCommand_SpecialAttackUp2
 	call BattleCommand_SpecialAttackUp2
-
 ; Special Defense
 	call BattleCommand_SpecialDefenseUp2
 	call BattleCommand_SpecialDefenseUp2
 	call BattleCommand_SpecialDefenseUp2
-
 ; Speed
-	call BattleCommand_SpeedUp2
+	jp BattleCommand_SpeedUp2
 
 ResetMiss:
 	xor a

@@ -2,11 +2,13 @@ BattleCommand_Sharpen:
 ; sharpen
 
 	call BattleCommand_AttackUp
+	ld a, [wFailedMessage]
+	ld d, a
 	call ResetMiss
 	call BattleCommand_AttackUp2
-BattleCommand_SharpenMessage:
+
 	ld a, [wFailedMessage]
-	and a
+	and d
 	ret nz
 	call AnimateCurrentMove
 	ld a, [wLoweredStat]
@@ -14,6 +16,8 @@ BattleCommand_SharpenMessage:
 	ld b, a
 	inc b
 	call GetStatName
+	xor a
+    ld [wFailedMessage], a
 	ld hl, .stat
 	jp BattleTextBox
 

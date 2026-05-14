@@ -177,9 +177,7 @@ BattleTurn:
 	ld [wCurDamage], a
 	ld [wCurDamage + 1], a
 
-	call HandleBerserkGene
 	call HandleStatBoostingHeldItems
-	call HandleWeatherItem
 	call HandleLegendaryStatBoost
 	call UpdateBattleMonInParty
 	farcall AIChooseMove
@@ -304,7 +302,6 @@ HandleBetweenTurnEffects:
 	call HandleSafeguard
 	call HandleScreens
 	call HandleStatBoostingHeldItems
-	call HandleWeatherItem
 	call HandleHealingItems
 	call UpdateBattleMonInParty
 	call LoadTileMapToTempTileMap
@@ -358,228 +355,22 @@ CheckFaint_EnemyThenPlayer:
 	scf
 	ret
 
-HandleWeatherItem:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .player_1
-	call .DoPlayer
-	jp .DoEnemy
-
-.player_1
-	call .DoEnemy
-	jp .DoPlayer
-
-.DoPlayer:
-	call GetPartymonItem
-	ld a, $0
-	jp .HandleItem
-
-.DoEnemy:
-	call GetOTPartymonItem
-	ld a, $1
-.HandleItem:
-	ldh [hBattleTurn], a
-	ld d, h
-	ld e, l
-	push de
-	push bc
-	ld a, [bc]
-	ld b, a
-	callfar GetItemHeldEffect
-	ld hl, HeldWeatherItems
-.loop
-	ld a, [hli]
-	cp -1
-	jr z, .finish
-	inc hl
-	inc hl
-	cp b
-	jr nz, .loop
-	pop bc
-	ld a, [bc]
-	ld [wNamedObjectIndexBuffer], a
-	push bc
-	dec hl
-	dec hl
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
-	xor a
-	ld [hl], a
-	ld [wAttackMissed], a
-	ld a, BANK(BattleCommand_AttackUp)
-	rst FarCall
-	pop bc
-	pop de
-	xor a
-	ld [bc], a
-	ld [de], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextBox
-
-	push hl
-	push de
-	push bc
-	ld a, [wBattleWeather]
-	cp WEATHER_SUN
-	jr z, .SunAnim
-	cp WEATHER_SANDSTORM
-	jr z, .SandstormAnim
-	ld a, RAIN_DANCE
-	call BattleItemAnimCommon
-	ld hl, DownpourText
-	call StdBattleTextBox
-	jr .FinishAnim
-.SunAnim
-	ld a, SUNNY_DAY
-	call BattleItemAnimCommon
-	ld hl, SunGotBrightText
-	call StdBattleTextBox
-	jr .FinishAnim
-.SandstormAnim
-	ld a, SANDSTORM
-	call BattleItemAnimCommon
-	ld hl, SandstormBrewedText
-	call StdBattleTextBox
-.FinishAnim
-	pop hl
-.finish
-	pop bc
-	pop de
-	ret
-
-HandleBerserkGene:
-	ldh a, [hSerialConnectionStatus]
-	cp USING_EXTERNAL_CLOCK
-	jr z, .reverse
-
-	call .player
-	jr .enemy
-
-.reverse
-	call .enemy
-	; fallthrough
-
-.player
-	call SetPlayerTurn
-	ld de, wPartyMon1Item
-	ld a, [wCurBattleMon]
-	ld b, a
-	ld a, [wCurPartySpecies]
-	cp MEWTWO
-	ret z
-;	jp z, .mewtwo
-	jr .go
-
-.enemy
-	call SetEnemyTurn
-	ld de, wOTPartyMon1Item
-	ld a, [wCurOTMon]
-	ld b, a
-
-	ld a, [wTempEnemyMonSpecies]
-	cp MEWTWO
-	ret z
-;	jp z, .mewtwo
-	; fallthrough
-
-.go
-	push de
-	push bc
-	callfar GetUserItem
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	sub BERSERK_GENE
-	pop bc
-	pop de
-	ret nz
-
-	ld [hl], a
-
-	ld h, d
-	ld l, e
-	ld a, b
-	call GetPartyLocation
-	xor a
-	ld [hl], a
-	ld a, BATTLE_VARS_SUBSTATUS3
-	call GetBattleVarAddr
-	push af
-	set SUBSTATUS_CONFUSED, [hl]
-	ld a, BATTLE_VARS_MOVE_ANIM
-	call GetBattleVarAddr
-	push hl
-	push af
-	xor a
-	ld [hl], a
-	ld [wAttackMissed], a
-	ld [wEffectFailed], a
-	farcall BattleCommand_AttackUp2
-	pop af
-	pop hl
-	ld [hl], a
-	call GetItemName
-	ld hl, BattleText_UsersStringBuffer1Activated
-	call StdBattleTextBox
-	callfar BattleCommand_StatUpMessage
-	pop af
-	bit SUBSTATUS_CONFUSED, a
-	ret nz
-	xor a
-	ld [wNumHits], a
-	ld de, ANIM_CONFUSED
-	call Call_PlayBattleAnim_OnlyIfVisible
-	call SwitchTurnCore
-	ld hl, BecameConfusedText
-	jp StdBattleTextBox
-
-.mewtwo
-	ret
-
 HandleLegendaryStatBoost:
-	call SetEnemyTurn
-	ld de, wOTPartyMon1Item
-	ld a, [wCurOTMon]
-	ld b, a
-
-	push de
-	push bc
-	callfar GetUserItem
-	ld a, [hl]
-	ld [wNamedObjectIndexBuffer], a
-	sub LEGENDS_AURA
-	pop bc
-	pop de
+	ld a, [wBattleType]
+	cp BATTLETYPE_LEGENDARY
 	ret nz
-
-	ld [hl], a
-
-;	call GetPartyLocation
-
-;	xor a
-;	ld [hl], a
-	call GetBattleVarAddr
+	call SetEnemyTurn
+	ld a, [wEnemyMonItem]
+    cp LEGENDS_AURA
+    ret nz
+	xor a
+	ld [wEnemyMonItem], a
 	push af
-;	call GetBattleVarAddr
-	push hl
-	push af
-	pop hl
-	ld [hl], a
-	push hl
-	push de
-	push bc
 	call EmptyBattleTextBox
 	ld a, FOCUS_ENERGY
 	call BattleItemAnimCommon
-	pop bc
-	pop de
-	pop hl
 	ld hl, BattleText_LegendaryAura
 	call StdBattleTextBox
-	pop af
-	xor a
-	ld [hl], a
 	farcall BattleCommand_LegendaryStatsBoost
 	pop af
 	ret
@@ -1891,7 +1682,6 @@ HandleWeather:
 	dec [hl]
 	jr z, .ended
 
-	call HandleWeatherItem
 	ld hl, .WeatherMessages
 	call .PrintWeatherMessage
 
@@ -4879,12 +4669,11 @@ UseConfusionHealingItem:
 	ret
 
 HandleStatBoostingHeldItems:
-; The effects handled here are not used in-game.
 	ldh a, [hSerialConnectionStatus]
 	cp USING_EXTERNAL_CLOCK
 	jr z, .player_1
 	call .DoPlayer
-	jp .DoEnemy
+	jr .DoEnemy
 
 .player_1
 	call .DoEnemy
@@ -4892,7 +4681,7 @@ HandleStatBoostingHeldItems:
 .DoPlayer:
 	call GetPartymonItem
 	ld a, $0
-	jp .HandleItem
+	jr .HandleItem
 
 .DoEnemy:
 	call GetOTPartymonItem
@@ -4910,7 +4699,7 @@ HandleStatBoostingHeldItems:
 .loop
 	ld a, [hli]
 	cp -1
-	jr z, .finish
+	jp z, .finish
 	inc hl
 	inc hl
 	cp b
@@ -4932,6 +4721,16 @@ HandleStatBoostingHeldItems:
 	rst FarCall
 	pop bc
 	pop de
+
+	ld a, [de] ; Store the item ID
+	cp DAMP_CHARM
+    jr z, .do_weather
+    cp HEAT_CHARM
+    jr z, .do_weather
+    cp COARSE_CHARM
+    jr z, .do_weather
+	push af
+
 	ld a, [wFailedMessage]
 	and a
 	ret nz
@@ -4939,19 +4738,69 @@ HandleStatBoostingHeldItems:
 	ld [bc], a
 	ld [de], a
 	call GetItemName
-	push hl
-	push de
-	push bc
 	ld a, GROWTH
 	call BattleItemAnimCommon
-	pop bc
-	pop de
-	pop hl
 	ld hl, BattleText_UsersStringBuffer1Activated
 	call StdBattleTextBox
 	callfar BattleCommand_StatUpMessage
-	ret
 
+	pop af
+	ld b, a
+	cp BERSERK_GENE
+	ret nz
+	; Mewtwo cannot be confused by the Berserk Gene.
+    ld hl, wBattleMonSpecies
+	ldh a, [hBattleTurn]
+	and a
+	jr z, .get_species
+	ld hl, wEnemyMonSpecies
+.get_species
+	ld a, [hl]
+	cp MEWTWO
+	ret z
+
+	ld a, BATTLE_VARS_SUBSTATUS3
+	call GetBattleVarAddr
+	set SUBSTATUS_CONFUSED, [hl]
+
+	xor a
+	ld [wNumHits], a
+	ld de, ANIM_CONFUSED
+	call Call_PlayBattleAnim_OnlyIfVisible
+	call SwitchTurnCore
+	ld hl, BecameConfusedText
+	jp StdBattleTextBox
+
+.do_weather
+	xor a
+	ld [bc], a
+	ld [de], a
+	call GetItemName
+	ld hl, BattleText_UsersStringBuffer1Activated
+	call StdBattleTextBox
+
+	push bc
+	push de
+	ld a, [wBattleWeather]
+	cp WEATHER_SUN
+	jr z, .SunAnim
+	cp WEATHER_SANDSTORM
+	jr z, .SandstormAnim
+	ld a, RAIN_DANCE
+	call BattleItemAnimCommon
+	ld hl, DownpourText
+	jr .finish_weather
+.SunAnim
+	ld a, SUNNY_DAY
+	call BattleItemAnimCommon
+	ld hl, SunGotBrightText
+	jr .finish_weather
+.SandstormAnim
+	ld a, SANDSTORM
+	call BattleItemAnimCommon
+	ld hl, SandstormBrewedText
+.finish_weather
+	call StdBattleTextBox
 .finish
 	pop bc
 	pop de
