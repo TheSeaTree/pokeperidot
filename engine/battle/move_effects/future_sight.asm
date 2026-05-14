@@ -53,6 +53,9 @@ BattleCommand_FutureSight:
 	ld [hl], a
 	call BattleCommand_LowerSub
 	call BattleCommand_MoveDelay
+	ld a, $1
+	ld [wKickCounter], a
+	call AnimateCurrentMove
 	ld hl, ForesawAttackText
 	call StdBattleTextBox
 	call BattleCommand_RaiseSub

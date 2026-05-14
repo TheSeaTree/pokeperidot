@@ -4828,6 +4828,7 @@ BattleAnim_ShadowBall:
 	anim_ret
 
 BattleAnim_FutureSight:
+	anim_if_param_equal $1, .Charging
 	anim_1gfx ANIM_GFX_WIND
 	anim_bgeffect ANIM_BG_06, $0, $2, $0
 	anim_bgeffect ANIM_BG_ALTERNATE_HUES, $0, $2, $0
@@ -4845,6 +4846,15 @@ BattleAnim_FutureSight:
 	anim_wait 16
 	anim_loop 4, .loop
 	anim_incbgeffect ANIM_BG_PSYCHIC
+	anim_ret
+
+.Charging
+	anim_bgp $1b
+	anim_1gfx ANIM_GFX_SHINE
+	anim_bgeffect ANIM_BG_07, $0, $0, $0
+	anim_sound 0, 0, SFX_FORESIGHT
+	anim_obj ANIM_OBJ_FORESIGHT, 64, 88, $0
+	anim_wait 24
 	anim_ret
 
 BattleAnim_RockSmash:
