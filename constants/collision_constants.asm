@@ -76,7 +76,7 @@ COLL_GYM_DOOR          EQU $79
 COLL_STAIRCASE         EQU $7a
 COLL_CAVE              EQU $7b
 COLL_WARP_PANEL        EQU $7c
-COLL_DOOR_7D           EQU $7d ; unused
+COLL_DOOR_SHIP         EQU $7d
 COLL_WARP_CARPET_RIGHT EQU $7e
 COLL_FOUNTAIN          EQU $7f
 COLL_BOUNCE_UP         EQU $80

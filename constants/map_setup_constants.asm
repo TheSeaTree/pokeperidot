@@ -14,6 +14,7 @@
 	const MAPSETUP_BADWARP    ; fb
 	const MAPSETUP_FLY        ; fc
 	const MAPSETUP_TIMEOFDAY  ; fd
+	const MAPSETUP_STAIRCASE  ; fe
 
 ; MapSetupCommands indexes (see engine/overworld/map_setup.asm)
 ; Names taken from Condensation water's scripting compendium

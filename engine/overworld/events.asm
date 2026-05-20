@@ -343,9 +343,16 @@ CheckTileEvent:
 	ld a, [wPlayerStandingTile]
 	cp COLL_TERMINAL
 	jr z, .no_sound
+	cp COLL_STAIRCASE
+	jr z, .staircase
 	call CheckPitTile
 	jr nz, .not_pit
 	ld a, PLAYEREVENT_FALL
+	scf
+	ret
+
+.staircase
+	ld a, PLAYEREVENT_STAIRCASE
 	scf
 	ret
 
@@ -1058,6 +1065,7 @@ PlayerEventScriptPointers:
 	dba HatchEggScript           ; PLAYEREVENT_HATCH
 	dba ChangeDirectionScript    ; PLAYEREVENT_JOYCHANGEFACING
 	dba WapToNewMapSilentScript  ; PLAYEREVENT_WARP_SILENT
+	dba StaircaseWarpScript      ; PLAYEREVENT_STAIRCASE
 	dba Invalid_0x96c2d          ; (NUM_PLAYER_EVENTS)
 
 Invalid_0x96c2d:
@@ -1072,11 +1080,13 @@ HatchEggScript:
 
 WarpToNewMapScript:
 	warpsound
+WapToNewMapSilentScript:
 	newloadmap MAPSETUP_DOOR
 	end
 
-WapToNewMapSilentScript:
-	newloadmap MAPSETUP_DOOR
+StaircaseWarpScript:
+	warpsound
+	newloadmap MAPSETUP_STAIRCASE
 	end
 
 FallIntoMapScript:

@@ -13,6 +13,7 @@ MapSetupScripts:
 	dw MapSetupScript_BadWarp
 	dw MapSetupScript_Fly
 	dw MapSetupScript_TimeOfDay
+	dw MapSetupScript_Staircase
 
 MapSetupScript_Teleport:
 	db map_prolong_sprites
@@ -121,6 +122,30 @@ MapSetupScript_TimeOfDay:
 	db map_palettes
 	db map_lcd_on
 	db map_sprites
+	db map_fade_in_palettes
+	db map_animations_on
+	db map_wildmons
+	db map_end
+
+MapSetupScript_Staircase:
+	db map_fade_out_palettes
+	db map_face_down
+	db map_load_warp
+	db map_load_attributes
+	db map_warp_face
+	db map_change_callback
+	db map_player_coord
+	db map_load_blocks
+	db map_buffer_screen
+	db map_lcd_off
+	db map_load_graphics
+	db map_time_of_day
+	db map_fade_out_music
+	db map_lcd_on
+	db map_load_objects
+	db map_palettes
+	db map_sprites
+	db map_fade_music
 	db map_fade_in_palettes
 	db map_animations_on
 	db map_wildmons
