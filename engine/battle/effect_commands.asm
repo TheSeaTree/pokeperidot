@@ -2778,7 +2778,7 @@ PlayerAttackDamage:
 	ret z
 
 	ld a, [hl]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr nc, .special
 
 .physical
@@ -2973,7 +2973,7 @@ CheckDamageStatsCritical:
 	and a
 	jr nz, .enemy
 	ld a, [wPlayerMoveStructType]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 ; special
 	ld a, [wPlayerSAtkLevel]
 	ld b, a
@@ -2987,7 +2987,7 @@ CheckDamageStatsCritical:
 
 .enemy
 	ld a, [wEnemyMoveStructType]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 ; special
 	ld a, [wEnemySAtkLevel]
 	ld b, a
@@ -3181,7 +3181,7 @@ EnemyAttackDamage:
 	ret z
 
 	ld a, [hl]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr nc, .Special
 
 .physical

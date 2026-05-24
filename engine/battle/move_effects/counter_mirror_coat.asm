@@ -77,5 +77,5 @@ CounterMirrorCoat2:
 	jp z, BattleCommand_EndMoveEffect
 
 	ld a, [wStringBuffer1 + MOVE_TYPE]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	ret

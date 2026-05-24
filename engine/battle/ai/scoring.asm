@@ -1456,7 +1456,7 @@ AI_Smart_Counter:
 	jr z, .asm_38c0e
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr nc, .asm_38c0e
 
 	inc b
@@ -1484,7 +1484,7 @@ AI_Smart_Counter:
 	jr z, .asm_38c38
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr nc, .asm_38c38
 
 .asm_38c30
@@ -2620,7 +2620,7 @@ AI_Smart_MirrorCoat:
 	jr z, .asm_391a8
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr c, .asm_391a8
 
 	inc b
@@ -2648,7 +2648,7 @@ AI_Smart_MirrorCoat:
 	jr z, .asm_391d2
 
 	ld a, [wEnemyMoveStruct + MOVE_TYPE]
-	cp SPECIAL
+	cp SPECIAL - 1 ; ???-type deals special damage.
 	jr c, .asm_391d2
 
 .asm_391ca
