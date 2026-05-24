@@ -19,6 +19,9 @@ CarnationLassScript:
 CarnationTeacherScript:
 	jumptextfaceplayer CarnationTeacherText
 	
+CarnationSuperNerdScript:
+	jumptextfaceplayer CarnationSuperNerdText
+	
 CarnationTownSign:
 	jumptext CarnationTownSignText
 	
@@ -75,7 +78,21 @@ CarnationTeacherText:
 	cont "port small busin-"
 	cont "esses."
 	done
-	
+
+CarnationSuperNerdText:
+	text "Some #MON will"
+	line "instinctively know"
+	cont "how to use certain"
+	cont "items in a way"
+	cont "that other #MON"
+	cont "wouldn't think of."
+
+	para "My PARASECT will"
+	line "use a BIG MUSHROOM"
+	cont "to protect itself"
+	cont "from attacks."
+	done
+
 CarnationTownSignText:
 	text "CARNATION TOWN"
 	
@@ -117,9 +134,10 @@ CarnationTown_MapEvents:
 	bg_event  6,  9, BGEVENT_READ, CarnationZooSign
 	bg_event 20,  5, BGEVENT_READ, CarnationPokecenterSign
 
-	db 4 ; object events
+	db 5 ; object events
 	object_event 19, 12, SPRITE_BUG_CATCHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationKidScript, -1
 	object_event  9,  9, SPRITE_LASS, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationLassScript, -1
 	object_event 21,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 3, 1, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, CarnationTeacherScript, -1
+	object_event 15,  3, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WANDER, 3, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 0, CarnationSuperNerdScript, -1
 	object_event 27, 14, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, CarnationTownFruitTree, -1
 	

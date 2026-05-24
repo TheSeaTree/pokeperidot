@@ -101,7 +101,7 @@ SafariZoneGroupSprites:
 	db 0 ; end
 
 CarnationGroupSprites:
-; Carnation Town, Roputes 14-16
+; Carnation Town, Routes 14-16
 	db SPRITE_LASS
 	db SPRITE_BUENA
 	db SPRITE_POKEFAN_F
