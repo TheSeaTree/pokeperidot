@@ -645,6 +645,14 @@ StartTrainerBattle_LoadPokeBallGraphics:
 	sla a
 	jr nc, .no_load
 	ld [hl], BATTLETRANSITION_SQUARE
+; Remove tile attribute so every square is facing the same way
+	push hl
+	push de
+	ld de, wAttrMap - wTileMap
+	add hl, de
+	ld [hl], $7 ; Store the palette so it remains red
+	pop de
+	pop hl
 .no_load
 	inc hl
 	jr .loop4
