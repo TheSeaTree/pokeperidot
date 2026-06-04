@@ -286,7 +286,7 @@ INCLUDE "gfx/stats/stats.pal"
 
 _CGB_Pokedex:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_RB_GREENMON
 	call GetPredefPal
 	call LoadHLPaletteIntoDE ; dex interface palette
 	ld a, [wCurPartySpecies]
@@ -294,6 +294,9 @@ _CGB_Pokedex:
 	jr nz, .is_pokemon
 	ld hl, .PokedexQuestionMarkPalette
 	call LoadHLPaletteIntoDE ; green question mark palette
+	ld a, PREDEFPAL_POKEDEX
+	call GetPredefPal
+	call LoadHLPaletteIntoDE ; dex interface palette
 	jr .got_palette
 
 .is_pokemon
@@ -307,8 +310,8 @@ _CGB_Pokedex:
 	call FillBoxCGB
 	call InitPartyMenuOBPals
 	ld hl, .PokedexCursorPalette
-	ld de, wOBPals1 palette 7 ; green cursor palette
-	ld bc, 1 palettes
+	ld de, wOBPals1
+	ld bc, 2 palettes
 	ld a, BANK(wOBPals1)
 	call FarCopyWRAM
 	call ApplyAttrMap
@@ -322,6 +325,9 @@ INCLUDE "gfx/pokedex/question_mark.pal"
 
 .PokedexCursorPalette:
 INCLUDE "gfx/pokedex/cursor.pal"
+
+PokedexSlowpokePalette:
+INCLUDE "gfx/pokedex/slowpoke.pal"
 
 _CGB_BillsPC:
 	ld de, wBGPals1
@@ -379,7 +385,7 @@ INCLUDE "gfx/pc/orange.pal"
 
 _CGB_PokedexUnownMode:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_RB_GREENMON
 	call GetPredefPal
 	call LoadHLPaletteIntoDE
 	ld a, [wCurPartySpecies]
@@ -834,8 +840,11 @@ _CGB_BetaPikachuMinigame:
 
 _CGB_PokedexSearchOption:
 	ld de, wBGPals1
-	ld a, PREDEFPAL_POKEDEX
+	ld a, PREDEFPAL_RB_GREENMON
 	call GetPredefPal
+	call LoadHLPaletteIntoDE
+	ld hl, PokedexSlowpokePalette
+	ld de, wOBPals1
 	call LoadHLPaletteIntoDE
 	call WipeAttrMap
 	call ApplyAttrMap
