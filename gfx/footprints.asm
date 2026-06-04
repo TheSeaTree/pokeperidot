@@ -15,7 +15,7 @@ INCBIN "gfx/types/grass.1bpp",    primary_type ;Ivysaur
 INCBIN "gfx/types/grass.1bpp",   primary_type ;Venusaur
 INCBIN "gfx/types/none.1bpp", primary_type ;Charmander
 INCBIN "gfx/types/none.1bpp", primary_type ;Charmeleon
-INCBIN "gfx/types/none.1bpp",  primary_type ;Charizard
+INCBIN "gfx/types/fire.1bpp",  primary_type ;Charizard
 INCBIN "gfx/types/none.1bpp",   primary_type ;Squirtle
 INCBIN "gfx/types/none.1bpp",  primary_type ;Wartortle
 ; 001-008 second type
@@ -166,7 +166,7 @@ INCBIN "gfx/types/water.1bpp",  primary_type ;Tentacool
 INCBIN "gfx/types/psychic.1bpp",   secondary_type ;Alakazam
 INCBIN "gfx/types/fighting.1bpp",     secondary_type ;Machop
 INCBIN "gfx/types/fighting.1bpp",    secondary_type ;Machoke
-INCBIN "gfx/types/none.1bpp",    secondary_type ;Machamp
+INCBIN "gfx/types/fighting.1bpp",    secondary_type ;Machamp
 INCBIN "gfx/types/poison.1bpp", secondary_type ;Bellsprout
 INCBIN "gfx/types/poison.1bpp", secondary_type ;Weepinbell
 INCBIN "gfx/types/poison.1bpp", secondary_type ;Victreebel
