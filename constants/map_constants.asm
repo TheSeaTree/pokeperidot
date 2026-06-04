@@ -544,4 +544,5 @@ ENDM
 if DEF(_ARENA)
 	map_const PVP_ARENA,									7,  4
 	map_const PVP_ARENA_MART,								5,  3
+	map_const PVP_ARENA_RANDOM_BATTLE_ROOM,					5,  6
 endc

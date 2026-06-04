@@ -1019,4 +1019,7 @@ PVPArena_Blocks:
 
 PVPArenaMart_Blocks:
 	INCBIN "maps/PVPArenaMart.ablk"
+
+PVPArenaRandomBattleRoom_Blocks:
+	INCBIN "maps/PVPArenaRandomBattleRoom.ablk"
 endc

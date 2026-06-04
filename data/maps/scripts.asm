@@ -282,6 +282,7 @@ INCLUDE "maps/SSMakoLowerDeck.asm"
 if DEF(_ARENA)
 INCLUDE "maps/PVPArena.asm"
 INCLUDE "maps/PVPArenaMart.asm"
+INCLUDE "maps/PVPArenaRandomBattleRoom.asm"
 endc
 
 SECTION "Map Scripts 18", ROMX

@@ -307,9 +307,11 @@ Arena_EeveeEvolutionText:
 PVPArena_MapEvents:
 	db 0, 0 ; filler
 
-	db 2 ; warp events
+	db 4 ; warp events
 	warp_event  5,  0, COLOSSEUM, 1
 	warp_event  9,  0, PVP_ARENA_MART, 1
+	warp_event  5,  7, PVP_ARENA_RANDOM_BATTLE_ROOM, 1
+	warp_event  6,  7, PVP_ARENA_RANDOM_BATTLE_ROOM, 1
 
 	db 0 ; coord events
 
