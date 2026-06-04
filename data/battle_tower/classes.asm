@@ -1,6 +1,4 @@
 BattleTowerTrainers:
-; The trainer class is not used in Crystal 1.0 due to a bug.
-; Instead, the sixth character in the trainer's name is used.
 ; See BattleTowerText in engine/events/battle_tower/trainer_text.asm.
 	db "HANSON@@@@", FISHER
 	db "SAWYER@@@@", POKEMANIAC
@@ -23,7 +21,6 @@ BattleTowerTrainers:
 	db "KAUFMAN@@@", SWIMMERM
 	db "LANCASTER@", SKIER
 	db "McMAHILL@@", CAMPER
-; The following can only be sampled in Crystal 1.1.
 	db "OBRIEN@@@@", GENTLEMAN
 	db "FROST@@@@@", BEAUTY
 	db "MORSE@@@@@", SUPER_NERD
@@ -36,10 +33,10 @@ BattleTowerTrainers:
 	db "VALENTINO@", BEAUTY
 	db "WAGNER@@@@", CAMPER
 	db "YATES@@@@@", BIRD_KEEPER
-	db "ANDREWS@@@", PICNICKER
+	db "TOMITA@@@@", PICNICKER
 	db "BAHN@@@@@@", POKEMANIAC
 	db "MORI@@@@@@", SCIENTIST
-	db "BUCKMAN@@@", SAGE
+	db "BUCKMAN@@@", ENGINEER
 	db "COBB@@@@@@", SCHOOLBOY
 	db "HUGHES@@@@", FISHER
 	db "ARITA@@@@@", KIMONO_GIRL
@@ -66,8 +63,8 @@ BattleTowerTrainers:
 	db "JOHNSON@@@", LAD
 	db "ADAMS@@@@@", GUITARIST
 	db "SMITH@@@@@", BUG_CATCHER
-	db "TAJIRI@@@@", BUG_CATCHER
-	db "BAKER@@@@@", POKEMANIAC
+	db "TAJIRI@@@@", POKEMANIAC
+	db "BAKER@@@@@", BUG_CATCHER
 	db "COLLINS@@@", SCIENTIST
 	db "SMART@@@@@", SUPER_NERD
 	db "DYKSTRA@@@", SWIMMERF
