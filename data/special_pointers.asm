@@ -141,7 +141,7 @@ SpecialsPointers::
 	add_special Function170114
 	add_special BattleTowerBattle
 	add_special Function1704e1 ; $78
-	add_special DummySpecial_17021d
+	add_special BattleSubway_CheckFaintedPokemon
 	add_special LoadOpponentTrainerAndPokemonWithOTSprite
 	add_special Function11ba38
 	add_special CheckForBattleTowerRules

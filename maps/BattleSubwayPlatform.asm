@@ -165,6 +165,7 @@ Script_ChooseChallenge:
 
 	setflag ENGINE_BATTLE_SUBWAY_ACTIVE
 	special UpdatePartyStats
+	loadvar wBattleSubwayContinues, 0
 	
 	writebyte BATTLETOWERACTION_CHOOSEREWARD
 	special BattleTowerAction
@@ -221,21 +222,26 @@ Script_DontSaveAndEndTheSession:
 	writebyte BATTLETOWERACTION_06
 	special BattleTowerAction
 	closetext
+	playmusic MUSIC_NONE
+	playsound SFX_TRAIN_ARRIVED
+	pause 60
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain2
+	playsound SFX_EXIT_BUILDING
 	special FadeOutPalettes
-Script_BattleTowerChallengeEnded:
+	waitsfx
 	warpfacing RIGHT, BATTLE_SUBWAY_PLATFORM, 9, 7
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, LEFT
 	opentext
 
+Script_BattleTowerChallengeEnded:
+	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
+	special UpdatePartyStats
+	special HealParty
+	special DoQuickSave
 Script_BattleTowerHopeToServeYouAgain:
 	writetext Text_WeHopeToServeYouAgain
 	waitbutton
 	closetext
-
-	clearflag ENGINE_BATTLE_SUBWAY_ACTIVE
-	special UpdatePartyStats
-	special HealParty
 
 	turnobject BATTLESUBWAYPLATFORM_OFFICER1, DOWN
 	checkcode VAR_FACING
@@ -277,8 +283,7 @@ BattleTower_LeftWithoutSaving:
 	special BattleSubway_CompareStreaks
 	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
-	jump Script_BattleTowerHopeToServeYouAgain
-	
+	jump Script_BattleTowerChallengeEnded
 
 BattleTower_LeftWithoutSaving2:
 	disappear BATTLESUBWAYPLATFORM_OFFICER1
@@ -302,8 +307,7 @@ BattleTower_LeftWithoutSaving2:
 	special BattleSubway_CompareStreaks
 	special BattleSubway_ResetCurrentStreak
 	writecode VAR_SUBWAY_SET, 0
-	special DoQuickSave
-	jump Script_BattleTowerHopeToServeYouAgain
+	jump Script_BattleTowerChallengeEnded
 
 Script_BeatenAllTrainers2:
 	disappear BATTLESUBWAYPLATFORM_OFFICER1
@@ -346,7 +350,7 @@ Script_BeatenAllTrainers2:
 	special BattleTowerAction
 	setscene SCENE_FINISHED
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
-	jump Script_BattleTowerHopeToServeYouAgain
+	jump Script_BattleTowerChallengeEnded
 
 .FirstTime
 	setflag ENGINE_BATTLE_SUBWAY_LEVELS
@@ -381,7 +385,7 @@ Script_BeatenAllTrainers2:
 	setscene SCENE_FINISHED
 	disappear BATTLESUBWAYPLATFORM_OFFICER2
 	writecode VAR_SUBWAY_SET, 0
-	jump Script_BattleTowerHopeToServeYouAgain
+	jump Script_BattleTowerChallengeEnded
 
 CheckLevelGroup:
 	ldh a, [rSVBK]
@@ -781,9 +785,13 @@ Text_BattleTowerRules:
 
 	para "Certain #MON"
 	line "may also have"
+	cont "level restrictions"
+	cont "placed on them."
 
-	para "level restrictions"
-	line "placed on them."
+	para "Winning a battle"
+	line "with no #MON"
+	cont "fainting will"
+	cont "earn a CONTINUE."
 	done
 	
 BattleSubwayPlatformBugCatcherText:

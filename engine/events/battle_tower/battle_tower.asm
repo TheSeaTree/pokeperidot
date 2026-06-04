@@ -181,9 +181,6 @@ BattleTowerBattle:
 	call _BattleTowerBattle
 	ret
 
-DummySpecial_17021d:
-	ret
-
 InitBattleTowerChallengeRAM:
 	xor a
 	ld [wBattleTowerBattleEnded], a
@@ -237,8 +234,6 @@ RunBattleTowerTrainer:
 
 	predef StartBattle
 
-	farcall LoadPokemonData
-	farcall HealParty
 	ld a, [wBattleResult]
 	ld [wScriptVar], a
 	and a ; WIN?
@@ -1668,3 +1663,17 @@ BattleSubway_CompareStreaks:
 	ld a, [wBattleSubwayCurStreak + 1]
 	ld [wBattleSubwayBestStreak + 1], a
 	ret
+
+BattleSubway_CheckFaintedPokemon:
+; Check if any of the player's Pokemon fainted.
+	farcall CheckAnyFaintedMon
+	ret c
+	ld hl, wBattleSubwayContinues
+	inc [hl]
+	ld hl, .EarnedContinueText
+	call PrintText
+	jp WaitButton
+
+.EarnedContinueText
+	text_far BattleSubwayEarnedContinueText
+	text_end

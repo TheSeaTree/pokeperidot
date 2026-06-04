@@ -5458,9 +5458,19 @@ Text_UberRestriction:
 	done
 
 Text_CancelBattleRoomChallenge:
-	text "Cancel your BATTLE"
-	line "ROOM challenge?"
+	text "Cancel your"
+	line "registration?"
 	done
+
+BattleSubwayEarnedContinueText:
+	text "<PLAYER> earned a"
+	line "CONTINUE!@"
+	sound_dex_fanfare_50_79
+	text_start
+	para "Current CONTINUEs:"
+	line "@"
+	deciram wBattleSubwayContinues, 1, 2
+	text_end
 
 Text_ExitGymLeaderHonorRoll:
 	text "Exit GYM LEADER"

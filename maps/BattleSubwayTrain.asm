@@ -48,24 +48,27 @@ Script_BattleRoomLoop:
 	battletowertext BATTLETOWERTEXT_INTRO
 	buttonsound
 	closetext
+.Retry
 	special BattleTowerBattle ; calls predef startbattle
 	special FadeOutPalettes
 	reloadmap
-	ifnotequal $0, Script_FailedBattleTowerChallenge
+	ifnotequal $0, Script_LostBattleSubwayChallenge
 
 	special BattleSubway_IncreaseCurrentStreak
 
 	copybytetovar wNrOfBeatenBattleTowerTrainers
-;	ifequal 1, Script_BeatenAllTrainers
 	ifequal 6, Script_BeatenAllTrainers
 	applymovement BATTLETOWERBATTLEROOM_YOUNGSTER, MovementData_BattleTowerBattleRoomOpponentWalksOut
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceReceptionist
+
 	playsound SFX_FULL_HEAL
 	waitsfx
 	opentext
 	writetext Text_Got1BP
 	waitbutton
 	givecoins 1
+	special BattleSubway_CheckFaintedPokemon
+	special LoadPokemonData
 	writetext Text_NextUpOpponentNo
 	yesorno
 	iffalse Script_DontBattleNextOpponent
@@ -74,6 +77,18 @@ Script_ContinueAndBattleNextOpponent:
 	applymovement PLAYER, MovementData_BattleTowerBattleRoomPlayerTurnsToFaceNextOpponent
 	warpcheck
 	end
+
+Script_LostBattleSubwayChallenge:
+	copybytetovar wBattleSubwayContinues
+	ifequal 0, Script_FailedBattleTowerChallenge
+	opentext
+	writetext Text_AskPlayerContinue
+	yesorno
+	closetext
+	iffalse Script_FailedBattleTowerChallenge
+	addvar -1
+	copyvartobyte wBattleSubwayContinues
+	jump Script_BattleRoomLoop.Retry
 
 Script_DontBattleNextOpponent:
 	writetext Text_SaveAndEndTheSession
@@ -94,6 +109,7 @@ Script_DontBattleNextOpponent:
 	end
 
 Script_BeatenAllTrainers:
+	special LoadPokemonData
 	setmapscene BATTLE_SUBWAY_PLATFORM, SCENE_FINISHED
 
 	checkcode VAR_SUBWAY_SET
@@ -106,7 +122,6 @@ Script_BeatenAllTrainers:
 	playmusic MUSIC_NONE
 	playsound SFX_TRAIN_ARRIVED
 	waitsfx
-
 	applymovement PLAYER, MovementData_BattleSubwayTrainPlayerLeavesTrain
 	warpcheck
 	end
@@ -121,6 +136,12 @@ Script_SubwayBossFight:
 Text_Got1BP:
 	text "<PLAYER> got 1BP."
 	done
+
+Text_AskPlayerContinue:
+	text "Restart battle?"
+	line "CONTINUEs: @"
+	deciram wBattleSubwayContinues, 1, 2
+	text_end
 
 BattleSubwayTrain_MapEvents:
 	db 0, 0 ; filler

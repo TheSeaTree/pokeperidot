@@ -2540,8 +2540,9 @@ wBattleSubwayCurStreak:: dw
 wBattleSubwayBestStreak:: dw
 wSimulationPoints:: db ; d855
 wMewPosition:: db
+wBattleSubwayContinues:: db
 
-	ds 6
+	ds 5
 
 ; map scene ids
 wPokecenter2FSceneID::                            db ; d972
