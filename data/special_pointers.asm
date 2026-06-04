@@ -177,7 +177,7 @@ SpecialsPointers::
 	add_special BeastsCheck
 	add_special MonCheck
 	add_special SetPlayerPalette ; $98
-	add_special DummySpecial_170bd2
+	add_special BattleSubway_LoadSpritePalette
 	add_special Mobile_SelectThreeMons
 	add_special Function1037eb
 	add_special Function10383c

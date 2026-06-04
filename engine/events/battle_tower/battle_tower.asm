@@ -1586,8 +1586,28 @@ LoadOpponentTrainerAndPokemonWithOTSprite:
 
 INCLUDE "data/trainers/sprites.asm"
 
-DummySpecial_170bd2:
+BattleSubway_LoadSpritePalette:
+	ldh a, [rSVBK]
+	push af
+	ld a, $3
+	ldh [rSVBK], a
+	ld hl, wBT_OTTrainerClass
+	ld a, [hl]
+	sub 21
+	ld c, a
+	ld b, 0
+	ld hl, BTTrainerClassPalettes
+	add hl, bc
+	ld c, [hl]
+	pop af
+	ldh [rSVBK], a
+	ld hl, wObjectStructs + OBJECT_STRUCT_LENGTH + OBJECT_PALETTE
+	ld [hl], c
+	ld a, 1
+	ldh [hCGBPalUpdate], a
 	ret
+
+INCLUDE "data/trainers/sprites_palettes.asm"
 
 CheckForBattleTowerRules:
 	farcall _CheckForBattleTowerRules

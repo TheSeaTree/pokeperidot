@@ -28,6 +28,7 @@ BattleSubwayTrain_MapScripts:
 	writebyte BATTLETOWERBATTLEROOM_YOUNGSTER
 	special LoadOpponentTrainerAndPokemonWithOTSprite
 	appear BATTLETOWERBATTLEROOM_YOUNGSTER
+	special BattleSubway_LoadSpritePalette
 	return
 
 HidePlayerSprite:
