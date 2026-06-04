@@ -499,6 +499,9 @@ Arena_SavePokemon:
 
 	call Arena_FillMoves
 
+	call Arena_CheckMonLevel
+	jp c, .invalid_level
+
 	ld a, [wArenaTempMonBox]
 	dec a
 	ld b, a
@@ -598,6 +601,15 @@ Arena_SavePokemon:
 	call Arena_JoyWaitABSelect
 	jp CloseWindow
 
+.invalid_level
+	call CloseSRAM
+	ld hl, .InvalidLevelText
+	call MenuTextBox
+	ld de, SFX_WRONG
+	call PlaySFX
+	call WaitSFX
+	jp CloseWindow
+
 .CompletedText:
 	text "@"
 	text_ram wStringBuffer2
@@ -609,6 +621,10 @@ Arena_SavePokemon:
 
 .BoxIsFullText:
 	text "BOX IS FULL!"
+	done
+
+.InvalidLevelText:
+	text "Invalid level!"
 	done
 
 Arena_PrintPokemonName:
@@ -627,7 +643,8 @@ Arena_PrintPokemonName:
 	call ClearBox
 	pop hl
 	ld de, wStringBuffer1
-	jp PlaceString
+	call PlaceString
+	jp Arena_PlaceInvalidLevelMarker
 
 Arena_UpdateExpForLevel:
 	ld hl, BaseData + BASE_GROWTH_RATE
@@ -654,7 +671,7 @@ ArenaMenu_PokemonBuilder_Page1Values:
 	db 5
 	paged_value wArenaTempMonBox,		1,   NUM_BOXES,   	$01,			Arena_BoxStructStrings.SendBox,  	NULL,						FALSE
 	paged_value wArenaTempMonSpecies,	1,   NUM_POKEMON, 	BULBASAUR,	  	Arena_BoxStructStrings.Pokemon,  	Arena_PrintPokemonName, 	FALSE
-	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	NULL,						FALSE
+	paged_value wArenaTempMonLevel,		5,   MAX_LEVEL,   	MAX_LEVEL,		Arena_BoxStructStrings.Level,	 	Arena_PlaceInvalidLevelMarker,						FALSE
 	paged_value wArenaTempMonDVs+0,		$00, $ff,		 	$fe,			Arena_BoxStructStrings.PowerRnd0,	Arena_PrintHiddenPowerType,	TRUE
 	paged_value wArenaTempMonDVs+1,		$00, $ff,		 	$ff,			Arena_BoxStructStrings.PowerRnd1, 	Arena_PrintShinyIcon,		TRUE
 
@@ -839,3 +856,49 @@ Arena_PrintShinyIcon:
 
 Arena_HiddenPowerString:
 	db "HIDDEN POWER:@"
+
+Arena_PlaceInvalidLevelMarker:
+	call Arena_CheckMonLevel
+	hlcoord 18, 6
+	jr c, .invalid
+	ld [hl], $7f
+	ret
+
+.invalid
+	ld [hl], $ca
+	ret
+
+Arena_CheckMonLevel:
+	push hl
+	push bc
+	ld a, [wArenaTempMonSpecies]
+	ld b, a
+	ld hl, Arena_MinimumLevels
+.loop
+	ld a, [hli]
+	cp -1
+	jr z, .legal
+	cp b
+	jr z, .check_level
+	inc hl
+	jr .loop
+
+.check_level
+	ld a, [hl]
+	ld b, a
+	ld a, [wArenaTempMonLevel]
+	cp b
+	jp c, .invalid_level
+
+.legal
+	and a
+	pop hl
+	pop bc
+	ret
+
+.invalid_level
+	pop hl
+	pop bc
+	ret
+
+INCLUDE "data/pokemon/minimum_levels.asm"
