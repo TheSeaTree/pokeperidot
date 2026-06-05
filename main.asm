@@ -592,10 +592,7 @@ SECTION "Crystal Events", ROMX
 INCLUDE "engine/events/battle_tower/load_trainer.asm"
 
 
-SECTION "Type Icons", ROMX
-
-Footprints:
-INCLUDE "gfx/footprints.asm"
+SECTION "Type Icons", ROMX ; Unused
 
 
 SECTION "Mobile Stadium 2", ROMX

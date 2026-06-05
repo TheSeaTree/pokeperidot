@@ -325,16 +325,15 @@ Pokedex_InitDexEntryScreen:
 	xor a
 	ldh [hBGMapMode], a
 	call ClearSprites
-	call Pokedex_LoadCurrentFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
 	call WaitBGMap
 	ld a, $a7
 	ldh [hWX], a
+	call Pokedex_LoadCurrentTypeIcon
 	call Pokedex_GetSelectedMon
 	ld [wCurPartySpecies], a
 	ld a, SCGB_POKEDEX
@@ -397,11 +396,10 @@ Pokedex_ReinitDexEntryScreen:
 	ldh [hBGMapMode], a
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_InitArrowCursor
-	call Pokedex_LoadCurrentFootprint
+	call Pokedex_LoadCurrentTypeIcon
 	call Pokedex_GetSelectedMon
 	ld [wPrevDexEntry], a
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
 	call Pokedex_LoadSelectedMonTiles
 	call WaitBGMap
 	call Pokedex_GetSelectedMon
@@ -463,11 +461,10 @@ DexEntryScreen_MenuActionJumptable:
 
 Pokedex_RedisplayDexEntry:
 	call Pokedex_LoadGFX
-	call Pokedex_LoadAnyFootprint
 	call Pokedex_DrawDexEntryScreenBG
 	call Pokedex_GetSelectedMon
 	farcall DisplayDexEntry
-	call Pokedex_DrawFootprint
+	call Pokedex_LoadCurrentTypeIcon
 	ret
 
 Pokedex_InitOptionScreen:
@@ -600,8 +597,11 @@ Pokedex_UpdateSearchScreen:
 	call c, Pokedex_PlaceSearchScreenTypeStrings
 	ld hl, hJoyPressed
 	ld a, [hl]
-	and START | B_BUTTON
+	and B_BUTTON
 	jr nz, .cancel
+	ld a, [hl]
+	and START
+	jr nz, .MenuAction_BeginSearch
 	ld a, [hl]
 	and A_BUTTON
 	jr nz, .do_menu_action
@@ -1557,19 +1557,6 @@ Pokedex_PlaceDefaultStringIfNotSeen:
 .NameNotSeen:
 	db "-----@"
 
-Pokedex_DrawFootprint:
-	hlcoord 18, 1
-	ld a, $62
-	ld [hli], a
-;	inc a
-;	ld [hl], a
-	hlcoord 19, 1
-	ld a, $63
-	ld [hli], a
-;	inc a
-;	ld [hl], a
-	ret
-
 Pokedex_GetSelectedMon:
 ; Gets the species of the currently selected Pokémon. This corresponds to the
 ; position of the cursor in the main listing, but this function can be used
@@ -2360,48 +2347,87 @@ Pokedex_LoadSelectedMonTiles:
 	call CloseSRAM
 	ret
 
-Pokedex_LoadCurrentFootprint:
+Pokedex_LoadCurrentTypeIcon:
 	call Pokedex_GetSelectedMon
 
-Pokedex_LoadAnyFootprint:
+Pokedex_LoadTypeIcon:
 	ld a, [wTempSpecies]
-	dec a
-	and %11111000
-	srl a
-	srl a
-	srl a
-	ld e, 0
-	ld d, a
-	ld a, [wTempSpecies]
-	dec a
-	and %111
-	swap a ; * $10
-	ld l, a
-	ld h, 0
-	add hl, de
-	ld de, Footprints
-	add hl, de
-
-	push hl
-	ld e, l
+	ld [wCurSpecies], a
+	call GetBaseData
+	ld a, [wBaseType1]
+	call .type_index
+	ld hl, TypeIconGFX
+	ld bc, 4 * LEN_1BPP_TILE
+	call AddNTimes
 	ld d, h
-	ld hl, vTiles2 tile $62
-	lb bc, BANK(Footprints), 1
+	ld e, l
+	ld hl, vTiles2 tile $70
+	lb bc, BANK(TypeIconGFX), 4
 	call Request1bpp
-	pop hl
-
-	; Whoever was editing footprints forgot to fix their
-	; tile editor. Now each bottom half is 8 tiles off.
-	ld de, 8 tiles
-	add hl, de
-
-	ld e, l
+; 2nd Type
+	ld a, [wBaseType2]
+	call .type_index
+; load type 2 tiles
+	ld hl, TypeIconGFX
+	ld bc, 4 * LEN_1BPP_TILE
+	call AddNTimes
 	ld d, h
-	ld hl, vTiles2 tile $63
-	lb bc, BANK(Footprints), 1
+	ld e, l
+	ld hl, vTiles2 tile $74
+	lb bc, BANK(TypeIconGFX), 4
 	call Request1bpp
 
+	hlcoord 16, 0
+	call .draw_top_border
+	ld de, 17
+	add hl, de
+	ld [hl], $74
+	inc hl
+	ld [hl], $75
+	inc hl
+	ld [hl], $76
+	inc hl
+	ld [hl], $77
+	ld a, [wBaseType1]
+	ld b, a
+	ld a, [wBaseType2]
+	cp b
+	ret z ; Stop if there is only one type.
+	hlcoord 12, 0
+	call .draw_top_border
+	ld de, 17
+	add hl, de
+	ld [hl], $70
+	inc hl
+	ld [hl], $71
+	inc hl
+	ld [hl], $72
+	inc hl
+	ld [hl], $73
 	ret
+
+.draw_top_border
+	ld [hl], $62
+	inc hl
+	ld [hl], $63
+	inc hl
+	ld [hl], $63
+	inc hl
+	ld [hl], $64
+	ret
+
+.type_index
+	; Skip Bird
+	cp BIRD
+	ret c
+	cp UNUSED_TYPES
+	dec a
+	ret c
+	sub UNUSED_TYPES
+	ret
+
+TypeIconGFX:
+	INCBIN "gfx/pokedex/type_icons.1bpp"
 
 Pokedex_LoadGFX:
 	call DisableLCD
@@ -2509,11 +2535,9 @@ _NewPokedexEntry:
 	call LoadStandardFont
 	call LoadFontsExtra
 	call Pokedex_LoadGFX
-	call Pokedex_LoadAnyFootprint
 	ld a, [wTempSpecies]
 	ld [wCurPartySpecies], a
 	call Pokedex_DrawDexEntryScreenBG
-	call Pokedex_DrawFootprint
 	hlcoord 0, 17
 	ld bc, 19
 	ld a, $32
@@ -2526,6 +2550,7 @@ _NewPokedexEntry:
 	predef GetMonFrontpic
 	ld a, SCGB_POKEDEX
 	call Pokedex_GetSGBLayout
+	call Pokedex_LoadTypeIcon
 	ld a, [wCurPartySpecies]
 	call PlayMonCry
 	ret
