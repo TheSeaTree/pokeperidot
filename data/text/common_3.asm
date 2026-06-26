@@ -209,6 +209,13 @@ UnknownText_0x1c460d::
 	line "corrupted!"
 	prompt
 
+Text_IncompatibleSave::
+	text "The save file is"
+	line "incompatible with"
+	cont "this version of"
+	cont "#MON PERIDOT."
+	prompt
+
 UnknownText_0x1c462a::
 	text "When you change a"
 	line "#MON BOX, data"

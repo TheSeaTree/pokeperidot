@@ -563,6 +563,8 @@ TryLoadSaveFile:
 	call SaveBackupPlayerData
 	call SaveBackupPokemonData
 	call SaveBackupChecksum
+	call CheckArenaVersion
+	jr nz, .incompatible
 	and a
 	ret
 
@@ -592,6 +594,34 @@ TryLoadSaveFile:
 	pop af
 	ld [wOptions], a
 	scf
+	ret
+
+.incompatible
+	ld hl, Text_SaveFileIncompatible
+	call PrintText
+	scf
+	ret
+
+CheckArenaVersion:
+; Don't allow saves from each build to load in the other.
+	ld a, [wMapGroup]
+	cp GROUP_PAST_PAVONA_VILLAGE
+if DEF(_ARENA)
+	jr z, .pass
+	ld a, [wMapNumber]
+	cp 8 ; PVP_ARENA
+	jr nc, .pass
+else
+	jr nz, .pass
+	ld a, [wMapNumber]
+	cp 8 ; PVP_ARENA
+	jr c, .pass
+endc
+	and a
+	ret
+
+.pass
+	xor a
 	ret
 
 TryLoadSaveData:
@@ -1091,6 +1121,11 @@ Text_AnotherSaveFile:
 Text_SaveFileCorrupted:
 	; The save file is corrupted!
 	text_far UnknownText_0x1c460d
+	text_end
+
+Text_SaveFileIncompatible:
+	; The save file is incompatible with this version!
+	text_far Text_IncompatibleSave
 	text_end
 
 Text_SaveOnBoxSwitch:
