@@ -10,7 +10,6 @@ Landmarks:
 	landmark  68,  84, ElkhornTownName
 	landmark  68,  96, Route1Name
 	landmark  68, 108, PavonaVillageName
-	landmark  60, 108, PavonaOasisName
 	landmark  84, 116, Route2Name
 	landmark 100, 124, PectiniaCityName
 	landmark 108, 116, Route3Name
@@ -27,6 +26,7 @@ Landmarks:
 	landmark 100, 108, PalerockMountainName
 	landmark 100, 100, HepaticaTownName
 	landmark  60, 108, PavonaPassName
+	landmark  52, 108, PavonaOasisName
 	landmark  52,  92, Route9Name
 	landmark  52,  84, OccidentForestName
 	landmark  52,  68, StaghornTownName
@@ -65,8 +65,8 @@ Landmarks:
 	landmark 148,  36, Route23Name
 	landmark 132,  36, VictoryRoadName
 	landmark 121,  36, SeaRoute7Name
-	landmark 116,  24, Route24Name
-	landmark 116,  22, BoreasForestName
+	landmark 116,  28, Route24Name
+	landmark 116,  24, BoreasForestName
 	landmark 116,  20, BoreasCompoundName
 	landmark 132,  28, PokemonLeagueName
 	landmark 116,  34, FastShipName
