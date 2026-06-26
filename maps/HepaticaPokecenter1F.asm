@@ -8,20 +8,11 @@ HepaticaPokecenter1F_MapScripts:
 HepaticaPokecenter1FNurseScript:
 	jumpstd pokecenternurse
 
-HepaticaPokecenter1FLassScript:
-	jumptextfaceplayer HepaticaPokecenter1FLassText
-
 HepaticaPokecenter1FSuperNerdScript:
 	jumptextfaceplayer HepaticaPokecenter1FSuperNerdText
 
-HepaticaPokecenter1FLassText:
-	text "Have you met the"
-	line "# SEER?"
-
-	para "She will tell you"
-	line "all about your"
-	cont "#MON."
-	done
+HepaticaPokecenter1FYoungsterScript:
+	jumptextfaceplayer HepaticaPokecenter1FYoungsterText
 
 HepaticaPokecenter1FSuperNerdText:
 	text "I love showing off"
@@ -37,6 +28,17 @@ HepaticaPokecenter1FSuperNerdText:
 	line "off my #MON!"
 	done
 
+HepaticaPokecenter1FYoungsterText:
+	text "You have a TOWN"
+	line "MAP, right?"
+
+	para "I always use it to"
+	line "point me in the"
+	cont "right direction"
+	cont "when I don't know"
+	cont "where to go next."
+	done
+
 HepaticaPokecenter1F_MapEvents:
 	db 0, 0 ; filler
 
@@ -49,6 +51,7 @@ HepaticaPokecenter1F_MapEvents:
 
 	db 0 ; bg events
 
-	db 2 ; object events
+	db 3 ; object events
 	object_event  3,  1, SPRITE_NURSE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, HepaticaPokecenter1FNurseScript, -1
 	object_event  8,  6, SPRITE_SUPER_NERD, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, HepaticaPokecenter1FSuperNerdScript, -1
+	object_event  1,  4, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_UP_DOWN, 1, 2, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, HepaticaPokecenter1FYoungsterScript, -1
