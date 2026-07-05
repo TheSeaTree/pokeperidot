@@ -1415,8 +1415,12 @@ RareCandyEffect:
 
 	ld a, [hl]
 	cp MAX_LEVEL
-	jp nc, NoEffectMessage
+	jr c, .LevelUp
+	farcall RareCandyEvolutionCheck
+	jr c, .DoEvolution
+	jp NoEffectMessage
 
+.LevelUp
 	inc a
 	ld [hl], a
 	ld [wCurPartyLevel], a
@@ -1485,7 +1489,7 @@ RareCandyEffect:
 	ld a, [wCurPartySpecies]
 	ld [wTempSpecies], a
 	predef LearnLevelMoves
-
+.DoEvolution
 	xor a
 	ld [wForceEvolution], a
 	farcall EvolvePokemon

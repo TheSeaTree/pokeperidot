@@ -115,7 +115,7 @@ EvolveAfterBattle_MasterLoop:
 	cp NITE_F
 	jp z, .dont_evolve_3
 	jp .proceed
-	
+
 .hold
 	; Get current item
 	push hl
@@ -709,4 +709,105 @@ GetPreEvolution:
 	ld a, c
 	ld [wCurPartySpecies], a
 	scf
+	ret
+
+RareCandyEvolutionCheck:
+	ld a, MON_ITEM
+	call GetPartyParamLocation
+	ld a, [hl]
+	cp EVERSTONE
+	jr z, .NoEvolution
+
+	push bc
+	ld a, [wCurPartySpecies]
+	dec a
+	ld c, a
+	ld b, 0
+	ld hl, EvosAttacksPointers
+	add hl, bc
+	add hl, bc
+	ld a, BANK(EvosAttacksPointers)
+	call GetFarHalfword
+	pop bc
+
+.Evo_Loop
+	push bc
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	pop bc
+	inc hl
+	and a
+	jr z, .NoEvolution
+	cp EVOLVE_LEVEL
+	jr z, .CanEvolve
+	cp EVOLVE_HOLD
+	jr z, .Hold
+	cp EVOLVE_HAPPINESS
+	jr z, .Happiness
+	inc hl
+	inc hl
+	jr .Evo_Loop
+
+.Hold
+	push bc
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	pop bc
+	ld b, a
+
+	push hl
+	ld a, MON_ITEM
+	call GetPartyParamLocation
+	ld a, [hl]
+	pop hl
+
+	inc hl
+	cp b
+	jr nz, .Skip1Byte
+	jr .CanEvolve
+
+.Happiness
+	push hl
+	ld a, MON_HAPPINESS
+	call GetPartyParamLocation
+	ld a, [hl]
+	pop hl
+
+	cp HAPPINESS_TO_EVOLVE
+	jr c, .Skip2Byte
+
+	push bc
+	ld a, BANK("Evolutions and Attacks")
+	call GetFarByte
+	pop bc
+	inc hl
+
+	cp TR_ANYTIME
+	jr z, .CanEvolve
+	ld b, a
+	ld a, [wTimeOfDay]
+	cp NITE_F
+	jr z, .IsNight
+
+	ld a, b
+	cp TR_NITE
+	jr z, .Skip1Byte
+	jr .CanEvolve
+
+.IsNight
+	ld a, b
+	cp TR_MORNDAY
+	jr z, .Skip1Byte
+.CanEvolve
+	scf
+	ret
+
+.Skip2Byte
+	inc hl
+.Skip1Byte
+	inc hl
+	jr .Evo_Loop
+
+.NoEvolution
+	xor a
 	ret
