@@ -893,6 +893,60 @@ GrassWildMons:
 	db 36, PSYDUCK
 	db 37, PSYDUCK
 
+	map_id TIDAL_PASS_1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 35, GOLBAT
+	db 34, GRAVELER
+	db 33, KRABBY
+	db 35, SLOWPOKE
+	db 36, KINGLER
+	db 35, SLOWPOKE
+	db 37, SLOWBRO
+	; day
+	db 35, GOLBAT
+	db 34, GRAVELER
+	db 33, KRABBY
+	db 35, SLOWPOKE
+	db 36, KINGLER
+	db 36, SLOWPOKE
+	db 38, SLOWBRO
+	; nite
+	db 35, GOLBAT
+	db 34, GRAVELER
+	db 33, KRABBY
+	db 35, SLOWPOKE
+	db 36, KINGLER
+	db 36, SLOWPOKE
+	db 38, SLOWBRO
+
+	map_id TIDAL_PASS_B1F
+	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
+	; morn
+	db 36, GOLBAT
+	db 36, KINGLER
+	db 35, GOLBAT
+	db 35, ONIX
+	db 36, KINGLER
+	db 35, OCTILLERY
+	db 37, OCTILLERY
+	; day
+	db 35, GOLBAT
+	db 36, ONIX
+	db 35, KINGLER
+	db 35, GOLBAT
+	db 36, KINGLER
+	db 35, OCTILLERY
+	db 37, OCTILLERY
+	; nite
+	db 35, GOLBAT
+	db 36, ONIX
+	db 35, KINGLER
+	db 35, GOLBAT
+	db 36, KINGLER
+	db 35, OCTILLERY
+	db 37, OCTILLERY
+
 	map_id ROUTE_7
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn

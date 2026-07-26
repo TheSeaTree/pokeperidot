@@ -226,6 +226,22 @@ WaterWildMons:
 	db 48, SEADRA
 	db 50, SEADRA
 
+	map_id TIDAL_PASS_1F
+	db 4 percent ; encounter rate
+	db 34, KRABBY
+	db 34, STARYU
+	db 34, OCTILLERY
+	db 34, SHELLDER
+	db 34, SHELLDER
+
+	map_id TIDAL_PASS_B1F
+	db 4 percent ; encounter rate
+	db 34, KINGLER
+	db 34, TENTACOOL
+	db 34, LANTURN
+	db 34, TENTACOOL
+	db 34, LANTURN
+
 	map_id VICTORY_COAST
 	db 4 percent ; encounter rate
 	db 48, MANTINE
