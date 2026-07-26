@@ -1,14 +1,14 @@
 	const_def 2 ; object constants
-	const MEWTWOLAB_MEWTWO
+	const BOREASCOMPOUND_MEWTWO
 
-MewtwoLab1F_MapScripts:
+BoreasCompound1F_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
 	callback MAPCALLBACK_TILES, .Doors
 
 .Doors:
-	checkevent EVENT_MEWTWO_LAB_1F_DOOR_OPENED
+	checkevent EVENT_BOREAS_COMPOUND_1F_DOOR_OPENED
 	iffalse .CheckMewtwoDoor
 	changeblock 30, 14, $07
 .CheckMewtwoDoor:
@@ -17,7 +17,7 @@ MewtwoLab1F_MapScripts:
 	changeblock 16, 8, $67 ; open shutter
 	changeblock 18, 8, $B9 ; open shutter
 .CheckExitDoor:
-	checkevent EVENT_MEWTWO_LAB_EXIT_DOOR_OPENED
+	checkevent EVENT_BOREAS_COMPOUND_EXIT_DOOR_OPENED
 	iffalse .NoChange
 	changeblock  2, 14, $36
 	changeblock  2, 16, $24
@@ -34,7 +34,7 @@ Mewtwo:
 	loadwildmon MEWTWO, 70
 	startbattle
 	reloadmapafterbattle
-	disappear MEWTWOLAB_MEWTWO
+	disappear BOREASCOMPOUND_MEWTWO
 	setevent EVENT_FOUGHT_MEWTWO
 	special CheckCaughtCelebi
 	iffalse .FailedCapture
@@ -42,51 +42,51 @@ Mewtwo:
 .FailedCapture
 	end
 
-MewtwoLab1FShutterButton:
+BoreasCompound1FShutterButton:
 	opentext
 	checkflag ENGINE_FLASH
 	iffalse .NoPower
-	writetext MewtwoLabShutterButtonAskText
+	writetext BoreasCompoundShutterButtonAskText
 	yesorno
 	iffalse .Decline
-	writetext MewtwoLabShutterActivateButtonText
+	writetext BoreasCompoundShutterActivateButtonText
 	waitbutton
-	checkevent EVENT_MEWTWO_LAB_1F_DOOR_OPENED
+	checkevent EVENT_BOREAS_COMPOUND_1F_DOOR_OPENED
 	iftrue .AlreadyOpened
 	closetext
 	changeblock 30, 14, $07
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	opentext
-	writetext MewtwoLabShutterOpenedText
+	writetext BoreasCompoundShutterOpenedText
 	waitbutton
-	setevent EVENT_MEWTWO_LAB_1F_DOOR_OPENED
+	setevent EVENT_BOREAS_COMPOUND_1F_DOOR_OPENED
 .Decline
 	closetext
 	end
 
 .NoPower
-	writetext MewtwoLabUnresponsiveButtonsText
+	writetext BoreasCompoundUnresponsiveButtonsText
 	waitbutton
 	closetext
 	end
 
 .AlreadyOpened:
-	writetext MewtwoLabShutterDoorAlreadyOpenedText
+	writetext BoreasCompoundShutterDoorAlreadyOpenedText
 	waitbutton
 	closetext
 	end
 
-MewtwoLabExitShutter:
+BoreasCompoundExitShutter:
 	opentext
 	checkflag ENGINE_FLASH
 	iffalse .NoPower
-	writetext MewtwoLabShutterButtonAskText
+	writetext BoreasCompoundShutterButtonAskText
 	yesorno
 	iffalse .Decline
-	writetext MewtwoLabShutterActivateButtonText
+	writetext BoreasCompoundShutterActivateButtonText
 	waitbutton
-	checkevent EVENT_MEWTWO_LAB_EXIT_DOOR_OPENED
+	checkevent EVENT_BOREAS_COMPOUND_EXIT_DOOR_OPENED
 	iftrue .AlreadyOpened
 	closetext
 	changeblock  2, 14, $36
@@ -94,26 +94,26 @@ MewtwoLabExitShutter:
 	playsound SFX_ENTER_DOOR
 	reloadmappart
 	opentext
-	writetext MewtwoLabShutterOpenedText
+	writetext BoreasCompoundShutterOpenedText
 	waitbutton
-	setevent EVENT_MEWTWO_LAB_EXIT_DOOR_OPENED
+	setevent EVENT_BOREAS_COMPOUND_EXIT_DOOR_OPENED
 .Decline
 	closetext
 	end
 
 .NoPower
-	writetext MewtwoLabUnresponsiveButtonsText
+	writetext BoreasCompoundUnresponsiveButtonsText
 	waitbutton
 	closetext
 	end
 
 .AlreadyOpened:
-	writetext MewtwoLabShutterDoorAlreadyOpenedText
+	writetext BoreasCompoundShutterDoorAlreadyOpenedText
 	waitbutton
 	closetext
 	end
 
-MewtwoLabDoor:
+BoreasCompoundDoor:
 	opentext
 	checkevent EVENT_USED_LAB_KEY
 	iftrue .used
@@ -151,23 +151,23 @@ MewtwoLabDoor:
 	closetext
 	end
 
-MewtwoLab1FLabKey:
+BoreasCompound1FLabKey:
 	itemball LAB_KEY
 
-MewtwoLab1FCarbos:
+BoreasCompound1FCarbos:
 	itemball CARBOS
 
-MewtwoLab1FTwistedSpoon:
+BoreasCompound1FTwistedSpoon:
 	itemball TWISTEDSPOON
 
-MewtwoLabHiddenBerserkGene:
-	hiddenitem BERSERK_GENE, EVENT_MEWTWO_LAB_HIDDEN_BERSERK_GENE
+BoreasCompoundHiddenBerserkGene:
+	hiddenitem BERSERK_GENE, EVENT_BOREAS_COMPOUND_HIDDEN_BERSERK_GENE
 
-MewtwoLab1FHiddenXSpeed:
-	hiddenitem X_SPEED, EVENT_MEWTWO_LAB_HIDDEN_X_SPEED
+BoreasCompound1FHiddenXSpeed:
+	hiddenitem X_SPEED, EVENT_BOREAS_COMPOUND_HIDDEN_X_SPEED
 
-MewtwoLab1FHiddenFullRestore:
-	hiddenitem FULL_RESTORE, EVENT_MEWTWO_LAB_HIDDEN_FULL_RESTORE
+BoreasCompound1FHiddenFullRestore:
+	hiddenitem FULL_RESTORE, EVENT_BOREAS_COMPOUND_HIDDEN_FULL_RESTORE
 
 MewtwoText:
 	text "Mew!"
@@ -200,36 +200,36 @@ LabKeyNoPowerText:
 	line "to activate."
 	done
 
-MewtwoLab1F_MapEvents:
+BoreasCompound1F_MapEvents:
 	db 0, 0 ; filler
 
 	db 13 ; warp events
 	warp_event 16, 25, BOREAS_FOREST, 3
 	warp_event 17, 25, BOREAS_FOREST, 4
-	warp_event 35, 25, MEWTWO_LAB_B1F, 1
-	warp_event 22, 18, MEWTWO_LAB_B1F, 2
-	warp_event 14, 14, MEWTWO_LAB_B1F, 3
-	warp_event  3, 10, MEWTWO_LAB_B1F, 4
-	warp_event  0, 18, MEWTWO_LAB_2F, 1
-	warp_event 14, 16, MEWTWO_LAB_2F, 2
-	warp_event 16, 23, MEWTWO_LAB_2F, 3
-	warp_event 32, 16, MEWTWO_LAB_2F, 4
-	warp_event 27, 16, MEWTWO_LAB_B1F, 5
-	warp_event 30, 17, MEWTWO_LAB_B1F, 6
-	warp_event 28, 20, MEWTWO_LAB_B1F, 7
+	warp_event 35, 25, BOREAS_COMPOUND_B1F, 1
+	warp_event 22, 18, BOREAS_COMPOUND_B1F, 2
+	warp_event 14, 14, BOREAS_COMPOUND_B1F, 3
+	warp_event  3, 10, BOREAS_COMPOUND_B1F, 4
+	warp_event  0, 18, BOREAS_COMPOUND_2F, 1
+	warp_event 14, 16, BOREAS_COMPOUND_2F, 2
+	warp_event 16, 23, BOREAS_COMPOUND_2F, 3
+	warp_event 29, 16, BOREAS_COMPOUND_2F, 4
+	warp_event 27, 16, BOREAS_COMPOUND_B1F, 5
+	warp_event 30, 17, BOREAS_COMPOUND_B1F, 6
+	warp_event 28, 20, BOREAS_COMPOUND_B1F, 7
 	
 	db 0 ; coord events
 
 	db 6 ; bg events
-	bg_event 18,  4, BGEVENT_ITEM, MewtwoLabHiddenBerserkGene
-	bg_event 32, 14, BGEVENT_READ, MewtwoLab1FShutterButton
-	bg_event 19,  8, BGEVENT_UP, MewtwoLabDoor
-	bg_event  4, 14, BGEVENT_UP, MewtwoLabExitShutter
-	bg_event 26, 12, BGEVENT_ITEM, MewtwoLab1FHiddenXSpeed
-	bg_event 24, 23, BGEVENT_ITEM, MewtwoLab1FHiddenFullRestore
+	bg_event 18,  4, BGEVENT_ITEM, BoreasCompoundHiddenBerserkGene
+	bg_event 32, 14, BGEVENT_READ, BoreasCompound1FShutterButton
+	bg_event 19,  8, BGEVENT_UP, BoreasCompoundDoor
+	bg_event  4, 14, BGEVENT_UP, BoreasCompoundExitShutter
+	bg_event 26, 12, BGEVENT_ITEM, BoreasCompound1FHiddenXSpeed
+	bg_event 24, 23, BGEVENT_ITEM, BoreasCompound1FHiddenFullRestore
 
 	db 4 ; object events
 	object_event 18,  4, SPRITE_MEWTWO, SPRITEMOVEDATA_POKEMON, 0, 0, -1, -1, PAL_NPC_PURPLE, OBJECTTYPE_SCRIPT, 0, Mewtwo, EVENT_FOUGHT_MEWTWO
-	object_event 31,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FLabKey, EVENT_MEWTWO_LAB_LAB_KEY
-	object_event  0, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FCarbos, EVENT_MEWTWO_LAB_CARBOS
-	object_event  8,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, MewtwoLab1FTwistedSpoon, EVENT_MEWTWO_LAB_TWISTEDSPOON
+	object_event 31,  6, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BoreasCompound1FLabKey, EVENT_BOREAS_COMPOUND_LAB_KEY
+	object_event  0, 25, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BoreasCompound1FCarbos, EVENT_BOREAS_COMPOUND_CARBOS
+	object_event  8,  8, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, BoreasCompound1FTwistedSpoon, EVENT_BOREAS_COMPOUND_TWISTEDSPOON

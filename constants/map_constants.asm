@@ -441,9 +441,9 @@ ENDM
 	newgroup
 
 	map_const BOREAS_FOREST,					           20, 16
-	map_const MEWTWO_LAB_1F,						       18, 13
-	map_const MEWTWO_LAB_B1F,						       18,  8
-	map_const MEWTWO_LAB_2F,						       13,  8
+	map_const BOREAS_COMPOUND_1F,					       18, 13
+	map_const BOREAS_COMPOUND_B1F,					       18,  8
+	map_const BOREAS_COMPOUND_2F,					       15,  8
 	map_const GENESIS_ISLAND,				               29, 20
 	map_const GENESIS_ISLAND_INSIDE,		           	   15, 13
 	

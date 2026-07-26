@@ -597,9 +597,9 @@ ENDM
 	map_attributes PastRoute10House3, PAST_ROUTE_10_HOUSE_3, $00, 0
 	map_attributes PastRoute10House4, PAST_ROUTE_10_HOUSE_4, $00, 0
 	map_attributes PastRoute10House5, PAST_ROUTE_10_HOUSE_5, $00, 0
-	map_attributes MewtwoLab1F, MEWTWO_LAB_1F, $00, 0
-	map_attributes MewtwoLabB1F, MEWTWO_LAB_B1F, $00, 0
-	map_attributes MewtwoLab2F, MEWTWO_LAB_2F, $00, 0
+	map_attributes BoreasCompound1F, BOREAS_COMPOUND_1F, $00, 0
+	map_attributes BoreasCompoundB1F, BOREAS_COMPOUND_B1F, $00, 0
+	map_attributes BoreasCompound2F, BOREAS_COMPOUND_2F, $00, 0
 	map_attributes VictoryCoastOfficersHouse, VICTORY_COAST_OFFICERS_HOUSE, $00, 0
 ; Battle Simulation Maps
 	map_attributes SkyWorld1, BATTLE_SIM_SKY_1, $04, 0

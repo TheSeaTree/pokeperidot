@@ -424,9 +424,9 @@ INCLUDE "maps/PalerockMountainStrengthRoom.asm"
 INCLUDE "maps/PalerockMountainHiddenCave.asm"
 INCLUDE "maps/SkarmorysDen.asm"
 INCLUDE "maps/OverlookMaze.asm"
-INCLUDE "maps/MewtwoLab1F.asm"
-INCLUDE "maps/MewtwoLabB1F.asm"
-INCLUDE "maps/MewtwoLab2F.asm"
+INCLUDE "maps/BoreasCompound1F.asm"
+INCLUDE "maps/BoreasCompoundB1F.asm"
+INCLUDE "maps/BoreasCompound2F.asm"
 
 
 SECTION "Map Scripts 26", ROMX

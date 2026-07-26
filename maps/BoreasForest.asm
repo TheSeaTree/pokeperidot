@@ -267,8 +267,8 @@ BoreasForest_MapEvents:
 	db 4 ; warp events
 	warp_event 17, 27, ROUTE_24_GATE, 1
 	warp_event 18, 27, ROUTE_24_GATE, 2
-	warp_event 24,  6, MEWTWO_LAB_1F, 1
-	warp_event 25,  6, MEWTWO_LAB_1F, 2
+	warp_event 24,  6, BOREAS_COMPOUND_1F, 1
+	warp_event 25,  6, BOREAS_COMPOUND_1F, 2
 
 	db 2 ; coord events
 	coord_event 17, 26, SCENE_DEFAULT, BoreasForestRivalBattleLeft

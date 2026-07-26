@@ -923,14 +923,14 @@ PastPectiniaApartment3F_Blocks:
 DevelopersHouse_Blocks:
 	INCBIN "maps/DevelopersHouse.ablk"
 
-MewtwoLab1F_Blocks:
-	INCBIN "maps/MewtwoLab1F.ablk"
+BoreasCompound1F_Blocks:
+	INCBIN "maps/BoreasCompound1F.ablk"
 
-MewtwoLabB1F_Blocks:
-	INCBIN "maps/MewtwoLabB1F.ablk"
+BoreasCompoundB1F_Blocks:
+	INCBIN "maps/BoreasCompoundB1F.ablk"
 
-MewtwoLab2F_Blocks:
-	INCBIN "maps/MewtwoLab2F.ablk"
+BoreasCompound2F_Blocks:
+	INCBIN "maps/BoreasCompound2F.ablk"
 
 VictoryCoastOfficersHouse_Blocks:
 	INCBIN "maps/VictoryCoastOfficersHouse.ablk"

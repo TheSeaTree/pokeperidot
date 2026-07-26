@@ -2496,7 +2496,7 @@ GrassWildMons:
 	db 59, HERACROSS
 	db 60, HERACROSS
 
-	map_id MEWTWO_LAB_1F
+	map_id BOREAS_COMPOUND_1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 58, ELECTABUZZ
@@ -2523,7 +2523,7 @@ GrassWildMons:
 	db 59, WEEZING
 	db 60, WEEZING
 
-	map_id MEWTWO_LAB_B1F
+	map_id BOREAS_COMPOUND_B1F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 58, PIKACHU
@@ -2550,7 +2550,7 @@ GrassWildMons:
 	db 59, MISDREAVUS
 	db 60, DITTO
 
-	map_id MEWTWO_LAB_2F
+	map_id BOREAS_COMPOUND_2F
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 58, MAGNETON
