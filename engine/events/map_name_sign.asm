@@ -82,7 +82,7 @@ ReturnFromMapSetupScript::
 	ret z
 	cp PALEROCK_MOUNTAIN
 	ret z
-	cp DIGLETTS_CAVE
+	cp MACHOPS_DEN
 	ret z
 	cp BONEYARD
 	ret z

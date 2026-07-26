@@ -321,7 +321,7 @@ ENDM
 	map_attributes AcroporaGym, ACROPORA_GYM, $00, 0
 	map_attributes RugosaGym, RUGOSA_GYM, $00, 0
 	map_attributes RugosaPokecenter1F, RUGOSA_POKECENTER_1F, $00, 0
-	map_attributes DiglettsCave, DIGLETTS_CAVE, $09, 0
+	map_attributes MachopsDen, MACHOPS_DEN, $09, 0
 	map_attributes PalerockCave1F, PALEROCK_CAVE_1F, $09, 0
 	map_attributes PalerockCaveB1F, PALEROCK_CAVE_B1F, $09, 0
 	map_attributes StaghornPokecenter1F, STAGHORN_POKECENTER_1F, $00, 0
@@ -405,10 +405,10 @@ ENDM
 	map_attributes Route4ForestGate, ROUTE_4_FOREST_GATE, $00, 0
 	map_attributes Route4PectiniaGate, ROUTE_4_PECTINIA_GATE, $00, 0
 	map_attributes HiddenPowerCave, HIDDEN_POWER_CAVE, $09, 0
-	map_attributes Factory1F, FACTORY_1F, $00, 0
-	map_attributes FactoryB1, FACTORY_B1, $00, 0
-	map_attributes Factory2F, FACTORY_2F, $00, 0
-	map_attributes FactoryBack, FACTORY_BACK, $00, 0
+	map_attributes AbandonedFactory1F, ABANDONED_FACTORY_1F, $00, 0
+	map_attributes AbandonedFactoryB1, ABANDONED_FACTORY_B1, $00, 0
+	map_attributes AbandonedFactory2F, ABANDONED_FACTORY_2F, $00, 0
+	map_attributes AbandonedFactoryBack, ABANDONED_FACTORY_BACK, $00, 0
 	map_attributes HepaticaChurch, HEPATICA_CHURCH, $00, 0
 	map_attributes PectiniaApartmentLeft, PECTINIA_APARTMENT_LEFT, $00, 0
 	map_attributes PectiniaApartmentRight, PECTINIA_APARTMENT_RIGHT, $00, 0
@@ -501,8 +501,8 @@ ENDM
 	map_attributes EmilysHouse1F, EMILYS_HOUSE_1F, $00, 0
 	map_attributes EmilysHouse2F, EMILYS_HOUSE_2F, $00, 0
 	map_attributes Route4HiddenCave, ROUTE_4_HIDDEN_CAVE, $09, 0
-	map_attributes SeaRoute4Cave1F, SEA_ROUTE_4_CAVE_1F, $09, 0
-	map_attributes SeaRoute4CaveB1F, SEA_ROUTE_4_CAVE_B1F, $09, 0
+	map_attributes TidalPass1F, TIDAL_PASS_1F, $09, 0
+	map_attributes TidalPassB1F, TIDAL_PASS_B1F, $09, 0
 	map_attributes Route7HiddenCave, ROUTE_7_HIDDEN_CAVE, $09, 0
 	map_attributes PalerockMountainB2, PALEROCK_MOUNTAIN_B2, $09, 0
 	map_attributes PalerockCaveB2F, PALEROCK_CAVE_B2F, $09, 0
@@ -521,10 +521,10 @@ ENDM
 	map_attributes Route10HiddenCave, ROUTE_10_HIDDEN_CAVE, $09, 0
 	map_attributes Route6Gate, ROUTE_6_GATE, $00, 0
 	map_attributes Route6WaterfallHouse, ROUTE_6_WATERFALL_HOUSE, $00, 0
-	map_attributes LugiaCave1F, LUGIA_CAVE_1F, $09, 0
-	map_attributes LugiaCaveB1F, LUGIA_CAVE_B1F, $09, 0
-	map_attributes LugiaCaveB2F, LUGIA_CAVE_B2F, $09, 0
-	map_attributes LugiaCaveGateChamber, LUGIA_CAVE_GATE_CHAMBER, $09, 0
+	map_attributes ArgentDepths1F, ARGENT_DEPTHS_1F, $09, 0
+	map_attributes ArgentDepthsB1F, ARGENT_DEPTHS_B1F, $09, 0
+	map_attributes ArgentDepthsB2F, ARGENT_DEPTHS_B2F, $09, 0
+	map_attributes ArgentDepthsGateChamber, ARGENT_DEPTHS_GATE_CHAMBER, $09, 0
 	map_attributes CarnationZooGate, CARNATION_ZOO_GATE, $00, 0
 	map_attributes BattleSubwayTrain, BATTLE_SUBWAY_TRAIN, $00, 0
 	map_attributes BattleSubwayPlatform, BATTLE_SUBWAY_PLATFORM, $00, 0
@@ -532,13 +532,13 @@ ENDM
 	map_attributes Route13Gate, ROUTE_13_GATE, $00, 0
 	map_attributes PectiniaBedStore, PECTINIA_BED_STORE, $00, 0
 	map_attributes PectiniaDollStore, PECTINIA_DOLL_STORE, $00, 0
-	map_attributes HoOhCastle1FCentralRoom, HO_OH_CASTLE_1F_CENTER_ROOM, $00, 0
-	map_attributes HoOhCastle1FSideRooms, HO_OH_CASTLE_1F_SIDE_ROOMS, $00, 0
-	map_attributes HoOhCastle2F, HO_OH_CASTLE_2F, $00, 0
-	map_attributes HoOhCastle3F, HO_OH_CASTLE_3F, $00, 0
+	map_attributes GildedHall1FCentralRoom, GILDED_HALL_1F_CENTER_ROOM, $00, 0
+	map_attributes GildedHall1FSideRooms, GILDED_HALL_1F_SIDE_ROOMS, $00, 0
+	map_attributes GildedHall2F, GILDED_HALL_2F, $00, 0
+	map_attributes GildedHall3F, GILDED_HALL_3F, $00, 0
 	map_attributes Route16AcroporaGate, ROUTE_16_ACROPORA_GATE, $00, 0
 	map_attributes Route19, ROUTE_19, $05, 0
-	map_attributes HoOhCastleRoof, HO_OH_CASTLE_ROOF, $1c, 0
+	map_attributes GildedHallRoof, GILDED_HALL_ROOF, $1c, 0
 	map_attributes RemnantCave1F, REMNANT_CAVE_1F, $09, 0
 	map_attributes RemnantCave2F, REMNANT_CAVE_2F, $09, 0
 	map_attributes RemnantCaveOutside, REMNANT_CAVE_OUTSIDE, $21, 0

@@ -11,7 +11,7 @@ OrientemForest_MapScripts:
 	ifnotequal 52, .nope
 	checkcode VAR_YCOORD
 	ifnotequal  4, .nope
-	setevent EVENT_FACTORY_BACK_ROOM_SMASH_WALL
+	setevent EVENT_ABANDONED_FACTORY_BACK_ROOM_SMASH_WALL
 .nope
 	return
 
@@ -228,9 +228,9 @@ OrientemForest_MapEvents:
 	db 6 ; warp events
 	warp_event  4,  6, ROUTE_4_FOREST_GATE, 3
 	warp_event  4,  7, ROUTE_4_FOREST_GATE, 4
-	warp_event 50, 10, FACTORY_1F, 1
-	warp_event 51, 10, FACTORY_1F, 2
-	warp_event 52,  4, FACTORY_BACK, 3
+	warp_event 50, 10, ABANDONED_FACTORY_1F, 1
+	warp_event 51, 10, ABANDONED_FACTORY_1F, 2
+	warp_event 52,  4, ABANDONED_FACTORY_BACK, 3
 	warp_event 55,  1, RAIKOU_LAIR, 1
 
 	db 0 ; coord events

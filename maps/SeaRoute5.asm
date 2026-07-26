@@ -21,25 +21,25 @@ SeaRoute5_MapScripts:
 	return
 
 .ResetBoulders
-	checkevent EVENT_LUGIA_CAVE_GATE_1
+	checkevent EVENT_ARGENT_DEPTHS_GATE_1
 	iftrue .CheckBoulder5
-	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_1
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_1
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_4
+	clearevent EVENT_ARGENT_DEPTHS_B1F_BOULDER_1
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_1
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_4
 
 .CheckBoulder5
-	checkevent EVENT_LUGIA_CAVE_GATE_2
+	checkevent EVENT_ARGENT_DEPTHS_GATE_2
 	iftrue .CheckBoulder6
-	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_2
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_2
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_5
+	clearevent EVENT_ARGENT_DEPTHS_B1F_BOULDER_2
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_2
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_5
 
 .CheckBoulder6
-	checkevent EVENT_LUGIA_CAVE_GATE_3
+	checkevent EVENT_ARGENT_DEPTHS_GATE_3
 	iftrue .done
-	clearevent EVENT_LUGIA_CAVE_B1F_BOULDER_3
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_3
-	setevent EVENT_LUGIA_CAVE_B2F_BOULDER_6
+	clearevent EVENT_ARGENT_DEPTHS_B1F_BOULDER_3
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_3
+	setevent EVENT_ARGENT_DEPTHS_B2F_BOULDER_6
 	return
 
 .SmashWall:
@@ -222,7 +222,7 @@ SeaRoute5_MapEvents:
 	db 3 ; warp events
 	warp_event 15, 29, ROUTE_6_GATE, 1
 	warp_event 16, 29, ROUTE_6_GATE, 2
-	warp_event  4, 11, LUGIA_CAVE_1F, 1
+	warp_event  4, 11, ARGENT_DEPTHS_1F, 1
 
 	db 0 ; coord events
 

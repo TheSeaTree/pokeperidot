@@ -110,7 +110,7 @@ GrassWildMons:
 	db 31, PINSIR
 	db 33, PINSIR
 
-	map_id FACTORY_1F
+	map_id ABANDONED_FACTORY_1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, VOLTORB
@@ -137,7 +137,7 @@ GrassWildMons:
 	db 30, PIKACHU
 	db 35, PIKACHU
 
-	map_id FACTORY_B1
+	map_id ABANDONED_FACTORY_B1
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, KOFFING
@@ -164,7 +164,7 @@ GrassWildMons:
 	db 32, GRIMER
 	db 34, ELECTRODE
 
-	map_id FACTORY_2F
+	map_id ABANDONED_FACTORY_2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 29, VOLTORB
@@ -191,7 +191,7 @@ GrassWildMons:
 	db 30, ARIADOS
 	db 35, ARIADOS
 
-	map_id FACTORY_BACK
+	map_id ABANDONED_FACTORY_BACK
 	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
 	; morn
 	db 30, DITTO
@@ -299,7 +299,7 @@ GrassWildMons:
 	db 12, TEDDIURSA
 	db 12, TEDDIURSA
 	
-	map_id DIGLETTS_CAVE
+	map_id MACHOPS_DEN
 	db 4 percent, 2 percent, 8 percent ; encounter rates: morn/day/nite
 	; morn
 	db 14, MACHOP
@@ -2064,7 +2064,7 @@ GrassWildMons:
 	db 38, MAROWAK
 	db 38, MAROWAK
 
-	map_id HO_OH_CASTLE_1F_CENTER_ROOM
+	map_id GILDED_HALL_1F_CENTER_ROOM
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
@@ -2091,7 +2091,7 @@ GrassWildMons:
 	db 35, EEVEE
 	db 37, EEVEE
 
-	map_id HO_OH_CASTLE_1F_SIDE_ROOMS
+	map_id GILDED_HALL_1F_SIDE_ROOMS
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
@@ -2118,7 +2118,7 @@ GrassWildMons:
 	db 35, EEVEE
 	db 37, EEVEE
 
-	map_id HO_OH_CASTLE_2F
+	map_id GILDED_HALL_2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
@@ -2145,7 +2145,7 @@ GrassWildMons:
 	db 36, EEVEE
 	db 35, NINETALES
 
-	map_id HO_OH_CASTLE_3F
+	map_id GILDED_HALL_3F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, MEOWTH
@@ -2172,7 +2172,7 @@ GrassWildMons:
 	db 35, EEVEE
 	db 37, EEVEE
 
-	map_id LUGIA_CAVE_1F
+	map_id ARGENT_DEPTHS_1F
 	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
 	; morn
 	db 35, SLOWPOKE
@@ -2199,7 +2199,7 @@ GrassWildMons:
 	db 35, DUGTRIO
 	db 37, DUGTRIO
 	
-	map_id LUGIA_CAVE_B1F
+	map_id ARGENT_DEPTHS_B1F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 34, SWINUB
@@ -2226,7 +2226,7 @@ GrassWildMons:
 	db 35, SLOWKING
 	db 35, SLOWKING
 	
-	map_id LUGIA_CAVE_B2F
+	map_id ARGENT_DEPTHS_B2F
 	db 4 percent, 4 percent, 4 percent ; encounter rates: morn/day/nite
 	; morn
 	db 34, GOLBAT

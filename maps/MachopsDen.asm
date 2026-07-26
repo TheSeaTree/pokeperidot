@@ -1,8 +1,8 @@
 	const_def 2 ; object constants
-	const DIGLETTSCAVE_POKEFAN_M
-	const DIGLETTSCAVE_ROCK
+	const MACHOPSDEN_POKEFAN_M
+	const MACHOPSDEN_ROCK
 
-DiglettsCave_MapScripts:
+MachopsDen_MapScripts:
 	db 0 ; scene scripts
 
 	db 1 ; callbacks
@@ -48,11 +48,11 @@ TrainerBeautyBlaze:
 	closetext
 	end	
 
-DiglettsCaveBoulder:
+MachopsDenBoulder:
 	jumpstd strengthboulder	
 	
-DiglettsCaveHiddenEverstone:
-	hiddenitem EVERSTONE, EVENT_DIGLETTS_CAVE_HIDDEN_EVERSTONE
+MachopsDenHiddenEverstone:
+	hiddenitem EVERSTONE, EVENT_MACHOPS_DEN_HIDDEN_EVERSTONE
 	
 Route3BlackBelt:
 	itemball BLACKBELT
@@ -120,7 +120,7 @@ HikerAdamAfterText:
 	cont "me."
 	done
 	
-DiglettsCave_MapEvents:
+MachopsDen_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
@@ -131,11 +131,11 @@ DiglettsCave_MapEvents:
 	db 0 ; coord events
 
 	db 1 ; bg events
-	bg_event 20,  7, BGEVENT_ITEM, DiglettsCaveHiddenEverstone
+	bg_event 20,  7, BGEVENT_ITEM, MachopsDenHiddenEverstone
 
 	db 5 ; object events
 	object_event 13,  6, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_TRAINER, 2, TrainerBlackbeltAxel, -1
 	object_event  8, 11, SPRITE_POKEFAN_M, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_TRAINER, 2, TrainerHikerAdam, -1
 	object_event 14, 14, SPRITE_BUENA, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 1, TrainerBeautyBlaze, -1
 	object_event 11, 13, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, Route3BlackBelt, EVENT_ROUTE_3_BLACKBELT
-	object_event  6, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, DiglettsCaveBoulder, -1
+	object_event  6, 10, SPRITE_BOULDER, SPRITEMOVEDATA_STRENGTH_BOULDER, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MachopsDenBoulder, -1

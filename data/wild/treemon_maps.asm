@@ -63,8 +63,8 @@ RockMonMaps:
 	treemon_map SEA_ROUTE_4,       		   TREEMON_SET_KANTO
 	treemon_map ROUTE_7,           		   TREEMON_SET_KANTO
 	treemon_map RUGOSA_COAST,      		   TREEMON_SET_KANTO
-	treemon_map FACTORY_1F,      		   TREEMON_SET_ROCK
-	treemon_map FACTORY_2F,      		   TREEMON_SET_ROCK
+	treemon_map ABANDONED_FACTORY_1F,      TREEMON_SET_ROCK
+	treemon_map ABANDONED_FACTORY_2F,      TREEMON_SET_ROCK
 	treemon_map HEPATICA_TOWN,     		   TREEMON_SET_ROCK
 	treemon_map PALEROCK_MOUNTAIN_1F,	   TREEMON_SET_ROCK
 	treemon_map REMNANT_CAVE_3F,    	   TREEMON_SET_ROCK

@@ -77,7 +77,7 @@ TentacruelsDen_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event  6, 13, SEA_ROUTE_4_CAVE_B1F, 5
+	warp_event  6, 13, TIDAL_PASS_B1F, 5
 
 	db 0 ; coord events
 

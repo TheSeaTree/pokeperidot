@@ -27,8 +27,8 @@ TrainerBlackbeltTakeo:
 	closetext
 	end
 	
-SeaRoute4CaveGuy:
-	jumptextfaceplayer SeaRoute4CaveGuyText
+TidalPassGuy:
+	jumptextfaceplayer TidalPassGuyText
 	
 SeaRoute4SoftSand:
 	itemball SOFT_SAND
@@ -73,14 +73,14 @@ BlackbeltTakeoAfterText:
 	cont "really into this."
 	done
 	
-SeaRoute4CaveGuyText:
+TidalPassGuyText:
 	text "I need to build up"
 	line "my strength."
 	
 	para "There is a huge"
-	line "WATERFALL deep in"
-	cont "this cave."
-	
+	line "WATERFALL deep"
+	cont "within TIDAL PASS."
+
 	para "Some #MON might"
 	line "be able to swim up"
 	cont "it, but that's"
@@ -91,7 +91,7 @@ SeaRoute4_MapEvents:
 	db 0, 0 ; filler
 
 	db 1 ; warp events
-	warp_event 26,  5, SEA_ROUTE_4_CAVE_1F, 2
+	warp_event 26,  5, TIDAL_PASS_1F, 2
 	
 	db 0 ; coord events
 
@@ -100,6 +100,6 @@ SeaRoute4_MapEvents:
 	db 5 ; object events
 	object_event 11, 18, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltJun, -1
 	object_event  8, 23, SPRITE_BLACK_BELT, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 1, TrainerBlackbeltTakeo, -1
-	object_event 24,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, SeaRoute4CaveGuy, -1
+	object_event 24,  8, SPRITE_SWIMMER_GUY_LAND, SPRITEMOVEDATA_WANDER, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, TidalPassGuy, -1
 	object_event 13, 21, SPRITE_POKE_BALL, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_ITEMBALL, 0, SeaRoute4SoftSand, EVENT_SEA_ROUTE_4_SOFT_SAND
 	object_event 45, 17, SPRITE_ROCK, SPRITEMOVEDATA_SMASHABLE_ROCK, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, ObjectEvent, -1

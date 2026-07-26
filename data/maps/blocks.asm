@@ -362,11 +362,11 @@ AcroporaCity_Blocks:
 SeaRoute4_Blocks:
 	INCBIN "maps/SeaRoute4.ablk"
 
-SeaRoute4Cave1F_Blocks:
-	INCBIN "maps/SeaRoute4Cave1F.ablk"
+TidalPass1F_Blocks:
+	INCBIN "maps/TidalPass1F.ablk"
 
-SeaRoute4CaveB1F_Blocks:
-	INCBIN "maps/SeaRoute4CaveB1F.ablk"
+TidalPassB1F_Blocks:
+	INCBIN "maps/TidalPassB1F.ablk"
 
 TentacruelsDen_Blocks:
 	INCBIN "maps/TentacruelsDen.ablk"
@@ -477,8 +477,8 @@ PalerockCaveB1F_Blocks:
 PalerockCaveB2F_Blocks:
 	INCBIN "maps/PalerockCaveB2F.ablk"
 
-DiglettsCave_Blocks:
-	INCBIN "maps/DiglettsCave.ablk"
+MachopsDen_Blocks:
+	INCBIN "maps/MachopsDen.ablk"
 
 JosephsRoom_Blocks:
 	INCBIN "maps/JosephsRoom.ablk"
@@ -516,17 +516,17 @@ Route6_Blocks:
 HepaticaChurch_Blocks:
 	INCBIN "maps/HepaticaChurch.ablk"
 	
-LugiaCave1F_Blocks:
-	INCBIN "maps/LugiaCave1F.ablk"
+ArgentDepths1F_Blocks:
+	INCBIN "maps/ArgentDepths1F.ablk"
 
-LugiaCaveB1F_Blocks:
-	INCBIN "maps/LugiaCaveB1F.ablk"
+ArgentDepthsB1F_Blocks:
+	INCBIN "maps/ArgentDepthsB1F.ablk"
 
-LugiaCaveB2F_Blocks:
-	INCBIN "maps/LugiaCaveB2F.ablk"
+ArgentDepthsB2F_Blocks:
+	INCBIN "maps/ArgentDepthsB2F.ablk"
 
-LugiaCaveGateChamber_Blocks:
-	INCBIN "maps/LugiaCaveGateChamber.ablk"
+ArgentDepthsGateChamber_Blocks:
+	INCBIN "maps/ArgentDepthsGateChamber.ablk"
 
 LugiaLair_Blocks:
 	INCBIN "maps/LugiaLair.ablk"
@@ -584,17 +584,17 @@ HiddenPowerCave_Blocks:
 PastHiddenPowerCave_Blocks:
 	INCBIN "maps/HiddenPowerCave.ablk"
 	
-Factory1F_Blocks:
-	INCBIN "maps/Factory1F.ablk"
+AbandonedFactory1F_Blocks:
+	INCBIN "maps/AbandonedFactory1F.ablk"
 	
-Factory2F_Blocks:
-	INCBIN "maps/Factory2F.ablk"
+AbandonedFactory2F_Blocks:
+	INCBIN "maps/AbandonedFactory2F.ablk"
 
-FactoryB1_Blocks:
-	INCBIN "maps/FactoryB1.ablk"
+AbandonedFactoryB1_Blocks:
+	INCBIN "maps/AbandonedFactoryB1.ablk"
 
-FactoryBack_Blocks:
-	INCBIN "maps/FactoryBack.ablk"
+AbandonedFactoryBack_Blocks:
+	INCBIN "maps/AbandonedFactoryBack.ablk"
 
 PectiniaApartmentLeft_Blocks:
 RugosaApartment1F_Blocks:
@@ -844,20 +844,20 @@ UnownChamberOU_Blocks:
 UnownChamberVZ_Blocks:
 	INCBIN "maps/UnownChamber.6x7.ruins_of_alph.ablk"
 
-HoOhCastle1FCentralRoom_Blocks:
-	INCBIN "maps/HoOhCastle1FCentralRoom.ablk"
+GildedHall1FCentralRoom_Blocks:
+	INCBIN "maps/GildedHall1FCentralRoom.ablk"
 	
-HoOhCastle1FSideRooms_Blocks:
-	INCBIN "maps/HoOhCastle1FSideRooms.ablk"
+GildedHall1FSideRooms_Blocks:
+	INCBIN "maps/GildedHall1FSideRooms.ablk"
 
-HoOhCastle2F_Blocks:
-	INCBIN "maps/HoOhCastle2F.ablk"
+GildedHall2F_Blocks:
+	INCBIN "maps/GildedHall2F.ablk"
 
-HoOhCastle3F_Blocks:
-	INCBIN "maps/HoOhCastle3F.ablk"
+GildedHall3F_Blocks:
+	INCBIN "maps/GildedHall3F.ablk"
 
-HoOhCastleRoof_Blocks:
-	INCBIN "maps/HoOhCastleRoof.ablk"
+GildedHallRoof_Blocks:
+	INCBIN "maps/GildedHallRoof.ablk"
 
 OrchidTeachersHouse_Blocks:
 	INCBIN "maps/OrchidTeachersHouse.ablk"

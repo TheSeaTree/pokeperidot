@@ -362,7 +362,7 @@ WaterWildMons:
 	db 35, SLOWPOKE
 	db 36, YANMA
 
-	map_id LUGIA_CAVE_B1F
+	map_id ARGENT_DEPTHS_B1F
 	db 4 percent ; encounter rate
 	db 33, SEEL
 	db 36, SHELLDER
@@ -370,7 +370,7 @@ WaterWildMons:
 	db 35, SEADRA
 	db 34, STARMIE
 	
-	map_id LUGIA_CAVE_B2F
+	map_id ARGENT_DEPTHS_B2F
 	db 4 percent ; encounter rate
 	db 34, DEWGONG
 	db 36, SHELLDER

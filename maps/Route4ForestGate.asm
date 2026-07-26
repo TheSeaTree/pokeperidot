@@ -75,7 +75,7 @@ Route4ForestGateScientistText:
 	cont "FACTORY in the"
 	cont "forest that pro-"
 	cont "duced PORYGON."
-	
+
 	para "I've always wanted"
 	line "to see a PORYGON,"
 	cont "but I'm not brave"

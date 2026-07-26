@@ -18,7 +18,7 @@
 	const ROUTE_7           ; 0d
 	const FAVIA_TOWN        ; 0e
 	const ROUTE_8           ; 0f
-	const DIGLETTS_CAVE     ; 10
+	const MACHOPS_DEN       ; 10
 	const PALEROCK_MOUNTAIN ; 11
 	const HEPATICA_TOWN     ; 12
 	const PAVONA_PASS       ; 13

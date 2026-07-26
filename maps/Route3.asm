@@ -568,8 +568,8 @@ Route3_MapEvents:
 	db 10 ; warp events
 	warp_event 43,  39, ROUTE_3_PECTINIA_GATE, 1
 	warp_event 44,  39, ROUTE_3_PECTINIA_GATE, 2
-	warp_event 42,  29, DIGLETTS_CAVE, 1
-	warp_event 28,  31, DIGLETTS_CAVE, 2
+	warp_event 42,  29, MACHOPS_DEN, 1
+	warp_event 28,  31, MACHOPS_DEN, 2
 	warp_event 28,   5, PALEROCK_MOUNTAIN_1F, 1
 	warp_event 57,  14, ROUTE_3_ROUTE_4_GATE, 1
 	warp_event 57,  15, ROUTE_3_ROUTE_4_GATE, 2

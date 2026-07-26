@@ -67,7 +67,7 @@ LugiaLair_MapEvents:
 	db 0, 0 ; filler
 
 	db  1 ; warp events
-	warp_event 13, 13, LUGIA_CAVE_GATE_CHAMBER, 1
+	warp_event 13, 13, ARGENT_DEPTHS_GATE_CHAMBER, 1
 
 	db 0 ; coord events
 

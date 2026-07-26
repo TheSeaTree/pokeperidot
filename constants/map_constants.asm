@@ -70,7 +70,7 @@ ENDM
 
 	map_const PAVONA_PASS_1F,                              23, 10 ; 37
 	map_const PAVONA_PASS_B1F,                             20, 16 ; 38
-	map_const DIGLETTS_CAVE,                               13,  9 ; 84
+	map_const MACHOPS_DEN,                                 13,  9 ; 84
 	map_const DRAIN_PUNCH_CHAMBER,							5,  4
 	map_const PALEROCK_CAVE_1F,                            13, 16 ; 87
 	map_const PALEROCK_CAVE_B1F,                           21, 15 ; 88
@@ -83,8 +83,8 @@ ENDM
 	map_const BURGLAR_HIDEOUT_1F,							6,  5
 	map_const BURGLAR_HIDEOUT_B1F,						   15, 15
 	map_const BURGLAR_HIDEOUT_B2F,						   18, 11
-	map_const SEA_ROUTE_4_CAVE_1F,						   13, 10
-	map_const SEA_ROUTE_4_CAVE_B1F,						   21, 19
+	map_const TIDAL_PASS_1F,						       13, 10
+	map_const TIDAL_PASS_B1F,						   	   21, 19
 	map_const TENTACRUELS_DEN,						        8,  8
 
 	newgroup                                                      ;  4
@@ -182,12 +182,12 @@ ENDM
 
 	newgroup                                                      ;  9
 
-	map_const ORIENTEM_FOREST,                             30, 15
-	map_const FACTORY_1F,                                  16, 12
-	map_const FACTORY_B1,                                   7,  8
-	map_const FACTORY_2F,                                  14,  8
-	map_const FACTORY_BACK,                                 5,  8
-	map_const RAIKOU_LAIR,									7,  3
+	map_const ORIENTEM_FOREST,								30, 15
+	map_const ABANDONED_FACTORY_1F,							16, 12
+	map_const ABANDONED_FACTORY_B1,							 7,  8
+	map_const ABANDONED_FACTORY_2F,							14,  8
+	map_const ABANDONED_FACTORY_BACK,						 5,  8
+	map_const RAIKOU_LAIR,									 7,  3
 
 	newgroup                                                      ; 10
 
@@ -250,7 +250,7 @@ ENDM
 
 	newgroup                                                      ; 14
 	map_const RUGOSA_DEPT_STORE_ROOF,                      12,  8 ; 18
-	map_const HO_OH_CASTLE_ROOF,                            7,  9 ; 18
+	map_const GILDED_HALL_ROOF,                             7,  9 ; 18
 
 	newgroup                                                      ; 15
 	map_const ROUTE_19,									   	31, 14
@@ -327,19 +327,19 @@ ENDM
 	newgroup                                                      ; 21
 
 	map_const ROUTE_6_UNDERGROUND,                         18, 10 ; 53
-	map_const ROUTE_7_ROUTE_8_GATE,                        5,  4 ; 26
-	map_const LUGIA_CAVE_1F,                                5,  4 ;  3
-	map_const LUGIA_CAVE_B1F,                              16, 13 ;  3
-	map_const LUGIA_CAVE_B2F,                              22, 16 ;  3
-	map_const LUGIA_CAVE_GATE_CHAMBER,                      6,  9 ;  3
+	map_const ROUTE_7_ROUTE_8_GATE,                         5,  4 ; 26
+	map_const ARGENT_DEPTHS_1F,                             5,  4 ;  3
+	map_const ARGENT_DEPTHS_B1F,                           16, 13 ;  3
+	map_const ARGENT_DEPTHS_B2F,                           22, 16 ;  3
+	map_const ARGENT_DEPTHS_GATE_CHAMBER,                   6,  9 ;  3
 	map_const LUGIA_LAIR,                                  14, 12 ;  3
 
 	newgroup
 
-	map_const HO_OH_CASTLE_1F_CENTER_ROOM,                 12, 18 ;  4
-	map_const HO_OH_CASTLE_1F_SIDE_ROOMS,                  15, 12 ;  5
-	map_const HO_OH_CASTLE_2F,                             19, 13 ;  6
-	map_const HO_OH_CASTLE_3F,                             18,  9 ;  7
+	map_const GILDED_HALL_1F_CENTER_ROOM,                 12, 18 ;  4
+	map_const GILDED_HALL_1F_SIDE_ROOMS,                  15, 12 ;  5
+	map_const GILDED_HALL_2F,                             19, 13 ;  6
+	map_const GILDED_HALL_3F,                             18,  9 ;  7
 
 	newgroup                                                      ; 22
 

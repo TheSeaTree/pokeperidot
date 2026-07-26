@@ -27,8 +27,8 @@ Route19_MapEvents:
 	db 0, 0 ; filler
 
 	db 3 ; warp events
-	warp_event 18,  5, HO_OH_CASTLE_1F_CENTER_ROOM, 1 ; Entei Cave
-	warp_event 19,  5, HO_OH_CASTLE_1F_CENTER_ROOM, 2 ; Hidden Cave
+	warp_event 18,  5, GILDED_HALL_1F_CENTER_ROOM, 1
+	warp_event 19,  5, GILDED_HALL_1F_CENTER_ROOM, 2
 	warp_event 53, 15, ROUTE_19_GATE, 3
 
 	db 0 ; coord events
