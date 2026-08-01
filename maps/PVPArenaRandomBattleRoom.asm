@@ -13,6 +13,8 @@ Arena_RandomBattle:
 	writetext ArenaRandomBattleIntroText
 	yesorno
 	iffalse .Decline
+	special TryQuickSave
+	iffalse .Decline
 	special BattleTowerRoomMenu
 	ifequal $a, .Decline
 	writebyte BATTLETOWERACTION_11
