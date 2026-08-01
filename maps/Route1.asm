@@ -497,7 +497,7 @@ Route1_MapEvents:
 
 	db 2 ; bg events
 	bg_event  12, 26, BGEVENT_READ, Route1Sign
-	bg_event   4,  5, BGEVENT_READ, Route1HiddenPowerHerb
+	bg_event   4,  5, BGEVENT_ITEM, Route1HiddenPowerHerb
 
 	db 14 ; object events
 	object_event  18, 18, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, Route1Lass, -1
