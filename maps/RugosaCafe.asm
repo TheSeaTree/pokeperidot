@@ -1,5 +1,6 @@
 	const_def 2 ; object constants
 	const MAHOGANYCAFE_CLERK
+	const MAHOGANYCAFE_SLOWPOKE
 	const MAHOGANYCAFE_GRANNY
 	const MAHOGANYCAFE_COOLTRAINER_M
 
@@ -112,8 +113,69 @@ RugosaCafeScientist:
 	jumptextfaceplayer RugosaCafeScientistText
 	
 RugosaCafeChef:
-	jumptextfaceplayer RugosaCafeChefText
-	
+	opentext
+	writetext RugosaCafeChefIntroText
+	waitbutton
+	checkflag ENGINE_BOUGHT_SLOWPOKETAIL_TODAY
+	iftrue .OutOfStock
+	writetext RugosaCafeChefAskBuyText
+	special PlaceMoneyTopRight
+	yesorno
+	iffalse .Decline
+	checkmoney YOUR_MONEY, 5000
+	ifequal HAVE_LESS, .NotEnoughMoney
+	giveitem SLOWPOKETAIL
+	iffalse .NotEnoughSpace
+	takemoney YOUR_MONEY, 5000
+	playsound SFX_TRANSACTION
+	waitsfx
+	special PlaceMoneyTopRight
+	itemnotify
+	setflag ENGINE_BOUGHT_SLOWPOKETAIL_TODAY
+	jump .CheckBackTomorrow
+
+.OutOfStock
+	writetext RugosaCafeChefOutOfStockText
+	waitbutton
+.CheckBackTomorrow
+	writetext RugosaCafeChefCheckBackTomorrowText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughSpace:
+	writetext RugosaCafeChefNoSpaceText
+	waitbutton
+.Decline
+	writetext RugosaCafeChefDeclineText
+	waitbutton
+	closetext
+	end
+
+.NotEnoughMoney
+	writetext RugosaCafeChefNoMoneyText
+	waitbutton
+	closetext
+	end
+
+RugosaCafeSlowpoke:
+	opentext
+	writetext RugosaCafeSlowpokeText1
+	pause 60
+	writetext RugosaCafeSlowpokeText2
+	cry SLOWPOKE
+	waitbutton
+	checkflag ENGINE_BOUGHT_SLOWPOKETAIL_TODAY
+	iftrue .TailMissing
+	closetext
+	end
+
+.TailMissing
+	writetext RugosaCafeSlowpokeTailMissingText
+	waitbutton
+	closetext
+	end
+
 RugosaCafeFridge:
 	jumptext RugosaCafeFridgeText
 
@@ -170,18 +232,64 @@ RugosaCafeScientistText:
 	line "glass bottles."
 	done
 	
-RugosaCafeChefText:
-	text "You are welcome to"
-	line "visit the bar, but"
-	cont "this establishment"
-	cont "only serves food"
-	cont "to people."
-	
-	para "#MON must stay"
-	line "inside a BALL at"
-	cont "all times."
+RugosaCafeChefIntroText:
+	text "This establishment"
+	line "does not serve"
+	cont "food to #MON."
+
+	para "However, I do sell"
+	line "ethically-sourced"
+	cont "SLOWPOKETAIL."
 	done
-	
+
+RugosaCafeChefAskBuyText:
+	text "Would you like to"
+	line "buy one?"
+
+	para "It will cost"
+	line "¥5000."
+	done
+
+RugosaCafeChefOutOfStockText:
+	text "…Unfortunately, I"
+	line "don't have any more"
+	cont "to sell today."
+	done
+
+RugosaCafeChefCheckBackTomorrowText:
+	text "Check back"
+	line "tomorrow for more."
+
+	para "I want to give"
+	line "SLOWPOKE enough"
+	cont "time to grow back"
+	cont "its tail."
+	done
+
+RugosaCafeChefNoMoneyText:
+	text "I'm sorry, I can't"
+	line "afford to lower"
+	cont "the price any"
+	cont "further than that."
+
+	para "SLOWPOKETAIL is"
+	line "simply too rare."
+	done
+
+RugosaCafeChefNoSpaceText:
+	text "You can't carry any"
+	line "more items."
+
+	para "You'd better hurry"
+	line "and make room."
+	done
+
+RugosaCafeChefDeclineText:
+	text "I can't promise"
+	line "that I won't sell"
+	cont "out today."
+	done
+
 RugosaCafeCooltrainerMText:
 	text "I make sure to buy"
 	line "a few extra drinks"
@@ -216,6 +324,22 @@ RugosaCafeYoungsterText:
 	cont "kinds of tourists!"
 	done
 
+RugosaCafeSlowpokeText1:
+	text "SLOWPOKE: …"
+
+	para "<……> <……> <……>"
+	done
+
+RugosaCafeSlowpokeText2:
+	text "<……> <……>Yawn?"
+	done
+
+RugosaCafeSlowpokeTailMissingText:
+	text "SLOWPOKE's tail"
+	line "seems to be miss-"
+	cont "ing."
+	done
+
 RugosaCafeFridgeText:
 	text "It's stocked full"
 	line "of fresh seafood"
@@ -243,8 +367,9 @@ RugosaCafe_MapEvents:
 	bg_event  6,  1, BGEVENT_ITEM, RugosaCafeLeftovers
 	bg_event  6,  1, BGEVENT_READ, RugosaCafeTrash
 
-	db 9 ; object events
+	db 10 ; object events
 	object_event  9,  1, SPRITE_CHEF, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCafeChef, -1
+	object_event  8,  1, SPRITE_SLOWPOKE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCafeSlowpoke, -1
 	object_event  0,  3, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, RugosaCafeClerkScript, -1
 	object_event  2,  1, SPRITE_SCIENTIST, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_BROWN, OBJECTTYPE_SCRIPT, 0, RugosaCafeScientist, -1
 	object_event  2,  4, SPRITE_COOLTRAINER_M, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, RugosaCafeCooltrainerM, -1

@@ -265,7 +265,6 @@ INCLUDE "maps/Route23CaveB1F.asm"
 INCLUDE "maps/Route22Gate.asm"
 INCLUDE "maps/Route22.asm"
 INCLUDE "maps/Route21HiddenCave.asm"
-INCLUDE "maps/RugosaCafe.asm"
 
 SECTION "Map Scripts 17", ROMX
 
@@ -299,6 +298,7 @@ INCLUDE "maps/PavonaGymSpeechHouse.asm"
 INCLUDE "maps/PavonaInn.asm"
 INCLUDE "maps/Route2PectiniaGate.asm"
 INCLUDE "maps/StaghornRichardsHouse.asm"
+INCLUDE "maps/RugosaCafe.asm"
 
 
 SECTION "Map Scripts 19", ROMX
