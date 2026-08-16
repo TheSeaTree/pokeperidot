@@ -2706,6 +2706,12 @@ AI_Smart_FutureSight:
 
 	dec [hl]
 	dec [hl]
+
+; Greatly discourage this move if enemy's HP is below 50%.
+	call AICheckEnemyHalfHP
+	ret c
+	inc [hl]
+	inc [hl]
 	ret
 
 AI_Smart_Stomp:
