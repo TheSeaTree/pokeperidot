@@ -687,9 +687,10 @@ Pokedex_InitSearchResultsScreen:
 	hlcoord 0, 0, wAttrMap
 	ld bc, SCREEN_WIDTH * SCREEN_HEIGHT
 	call ByteFill
+
+	farcall DrawPokedexSearchResultsWindow
 	call Pokedex_SetBGMapMode4
 	call Pokedex_ResetBGMapMode
-	farcall DrawPokedexSearchResultsWindow
 	call Pokedex_PlaceSearchResultsTypeStrings
 	ld a, 4
 	ld [wDexListingHeight], a
@@ -1444,7 +1445,13 @@ Pokedex_PrintListing:
 	add a
 	inc a
 	ld b, a
-	ld a, " "
+	ld c, 11
+	push bc
+ 	ld a, " "
+ 	call Pokedex_FillBox
+	pop bc
+	hlcoord 0, 1, wAttrMap
+	ld a, 2
 	call Pokedex_FillBox
 
 ; Load de with wPokedexOrder + [wDexListingScrollOffset]
@@ -1536,13 +1543,6 @@ Pokedex_PlaceCaughtSymbolIfCaught:
 .place_caught_symbol
 	ld a, $4f
 	ld [hli], a
-; Retain the color
-	push hl
-	dec hl
-	ld de, wAttrMap - wTileMap
-	add hl, de
-	ld [hl], $2
-	pop hl
 	ret
 
 Pokedex_PlaceDefaultStringIfNotSeen:
@@ -1879,7 +1879,7 @@ Pokedex_SearchForMons:
 	jr z, .next_mon
 	ld [wTempSpecies], a
 	ld [wCurSpecies], a
-	call Pokedex_CheckCaught
+	call Pokedex_CheckSeen
 	jr z, .next_mon
 	push hl
 	push de

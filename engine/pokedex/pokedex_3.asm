@@ -109,6 +109,11 @@ DrawPokedexSearchResultsWindow:
 	ld de, .esults_D
 	hlcoord 0, 12
 	call PlaceString
+	; Color the Pokeball icons red.
+	hlcoord 0, 1, wAttrMap
+	lb bc, 8, 11
+	ld a, $2
+	call FillBoxWithByte
 	ret
 
 .esults_D
