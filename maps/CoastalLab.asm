@@ -424,7 +424,7 @@ ProfessorMapleSrAideHandOverPokedex:
 	done
 
 ProfessorMapleSrAideSurprisedText:
-	text "WOAH!"
+	text "WHOA!"
 	done
 
 ProfessorMapleSrAideUpgradePokedexText:

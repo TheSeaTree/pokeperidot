@@ -322,7 +322,7 @@ BlackthornGymGuyText:
 	done
 	
 BlackthornGymGuyFailureText:
-	text "Woah there! You"
+	text "Whoa there! You"
 	line "gave me quite the"
 	cont "scare!"
 	

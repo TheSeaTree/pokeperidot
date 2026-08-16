@@ -93,7 +93,7 @@ SafariZoneBinocularsNothing:
 	done
 	
 SafariZoneBinocularsChansey:
-	text "Woah!"
+	text "Whoa!"
 	
 	para "There's a CHANSEY"
 	line "outside!"

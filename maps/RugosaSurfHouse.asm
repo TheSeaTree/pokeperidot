@@ -53,7 +53,7 @@ RugosaSurfHouseMovement2:
 	step_resume
 
 RugosaSurfGuyText:
-	text "Woah, bro. Can't"
+	text "Whoa, bro. Can't"
 	line "you read? The sign"
 	cont "says members only."
 	

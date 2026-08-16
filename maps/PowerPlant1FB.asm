@@ -476,7 +476,7 @@ SkelegonCryText:
 	done
 	
 SabreFossilAfterText:
-	text "Woah!"
+	text "Whoa!"
 	
 	para "It looked like a"
 	line "GHOST #MON was"

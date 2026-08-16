@@ -658,7 +658,7 @@ Route13ExplainBlackGlasses:
 	done
 
 Route13BlackGlassesGuyBagFullText:
-	text "Woah, there!"
+	text "Whoa, there!"
 
 	para "It ain't cool to"
 	line "have a BAG overfl-"

@@ -570,7 +570,7 @@ PectiniaArcadeRewardReceiveText:
 	done
 
 PectiniaArcadeMaxStreakText:
-	text "Woah! You got a"
+	text "Whoa! You got a"
 	line "streak of 999 on"
 	cont "the BATTLE SUBWAY?"
 

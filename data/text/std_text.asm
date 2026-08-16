@@ -380,7 +380,7 @@ TVMovie1Text:
 	text "A man fastens his"
 	line "seatbelt and…"
 
-	para "Woah!"
+	para "Whoa!"
 
 	para "This is a really"
 	line "fast car chase!"

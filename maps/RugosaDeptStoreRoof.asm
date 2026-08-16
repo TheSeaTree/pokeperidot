@@ -322,7 +322,7 @@ Binoculars2Text:
 	done
 
 Binoculars3Text:
-	text "Woah! I can see"
+	text "Whoa! I can see"
 	line "the #MON LEAGUE"
 	cont "from here!"
 

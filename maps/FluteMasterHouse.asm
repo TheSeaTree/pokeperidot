@@ -221,7 +221,7 @@ FluteBurglarChallengeText:
 	done
 	
 FluteBurglarWinText:
-	text "Woah! The guys"
+	text "Whoa! The guys"
 	line "weren't kidding!"
 	done
 	

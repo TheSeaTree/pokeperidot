@@ -319,7 +319,7 @@ SailorRoscoeText:
 	done
 
 SailorRoscoeWinText:
-	text "Woah! Watch it!"
+	text "Whoa! Watch it!"
 
 	para "I nearly lost my"
 	line "balance!"
