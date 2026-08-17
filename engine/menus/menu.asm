@@ -455,12 +455,10 @@ _2DMenuInterpretJoypad:
 	jr z, .finish
 
 	call PlayClickSFX
-
-	ld a, $3
+	ld a, $5
 	ld [wMenuCursorX], a
-	ld a, $2
-	ld [wMenuCursorY], a
-	jr .finish
+	scf
+	ret
 
 .start_button
 	ld a, [wBattleType]
@@ -472,12 +470,10 @@ _2DMenuInterpretJoypad:
 	jr z, .finish
 
 	call PlayClickSFX
-
-	ld a, $4
+	ld a, $6
 	ld [wMenuCursorX], a
-	ld a, $4
-	ld [wMenuCursorY], a
-	jr .finish
+	scf
+	ret
 
 Move2DMenuCursor:
 	ld hl, wCursorCurrentTile
